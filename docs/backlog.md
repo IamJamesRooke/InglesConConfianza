@@ -1,24 +1,31 @@
 # Backlog
 
 ## Now
-- [ ] Using AI agent to help convert .excalidraw file into atomic .md files which contain all the teaching points of the course. These will later be converted again into .json objects when building the app lessons.
-    - [x] /foundations/pronouns + building general template
-    - [ ] /foundations/cognates
-        - [x] migrate and normalize verb cognates
-        - [ ] migrate the remaining cognates
-    - [ ] rest of course
+- [ ] Use an AI agent to convert the Excalidraw curriculum into atomic Markdown files containing the course's teaching points. Convert them into JSON only later, when building the application lessons.
+    - [x] `/foundations/pronouns` and the general curriculum template
+    - [x] `/foundations/cognates`
+        - [x] Migrate and normalize verb cognates
+        - [x] Migrate and normalize the remaining cognates
+    - [ ] Remaining curriculum
+
 ## Next
-- [ ] App Specifications
-    - [ ] Product Briefing
+- [ ] Application specifications
+    - [ ] Product brief
 
 ## Later
-- [ ] the curriculum will REALLY need to be cut down once we get to the app building
-    - [ ] cut the pronouns section down
-- [ ] convert the curriculum .md files into .json objects
-- [ ] README.md file
-    - [ ] explain origin of methodology
-        - [ ] direct instruction, MT, Siegfried Engelmann, etc.
+- [ ] **Content curation**
+    > Review the entire curriculum, remove material that is not necessary for the core course, and defer appropriate content to optional supplementary modules later in the program.
+    - [ ] Curate the cognates section
+    - [ ] Reduce the pronouns section
+    - [ ] Create a master curriculum inventory that consolidates the material from every curriculum Markdown file and classifies each item as critical, important, useful, low priority, or do not teach
+- [ ] **Chunking and sequencing**
+    - [ ] Create no more than 100 phrases from the course content that collectively teach all critical and important material
+    - [ ] Incorporate spaced repetition into the sequence
+- [ ] Convert the curriculum Markdown files into JSON objects
+- [ ] Create the repository `README.md`
+    - [ ] Explain the origin of the methodology
+        - [ ] Direct instruction, MT, Siegfried Engelmann, etc.
 
 ## Done
 - [x] Created repository and curriculum `AGENTS.md` guidance.
-- [x] Sent to /private/ the .excalidraw file which contains all the teaching points of the Foundations and Advanced course curriculum and the .docx file which contains the instruction manual from 2023. These will be used as reference material to build the app.
+- [x] Added the Excalidraw file containing the teaching points for the Foundations and Advanced curricula, along with the 2023 instruction manual, to `/private/` as source material for the application.

@@ -9,6 +9,7 @@ These Markdown files are human-readable curriculum specifications and the curren
 - Give every distinct meaning one strong, complete sentence example with enough context to resolve the pronoun, word, or grammatical distinction.
 - Prefer coherent master sentence sets: minimally different sentences that teach the full contrast together.
 - For cognates, organize examples around a visible, reusable spelling pattern so a learner can infer unfamiliar pairs from one or two examples.
+- Organize cognate lessons by learning difficulty: direct forms, spelling patterns, word families, memory bridges, then confusion sets. Treat parts of speech as secondary organization within those tiers.
 - Add a `## False Cognates` section when a similar-looking Spanish word could lead learners to infer the wrong English meaning. State the contrast directly and illustrate both meanings in context; do not add empty sections or remote, unlikely traps.
 - Preserve intentionally literal or humorous Spanish used as a bridge into English thinking, but label it as a teaching device and place the natural Spanish expression beside it. Do not present deliberately unnatural Spanish as a normal translation.
 - Use natural Colombian/Latin American Spanish and `ustedes`, never `vosotros`. Correct inaccurate or unnatural Spanish honestly.
