@@ -6,6 +6,10 @@
     - [x] `/foundations/cognates`
         - [x] Migrate and normalize verb cognates
         - [x] Migrate and normalize the remaining cognates
+        - [x] Migrate regular **-ed** and **-ing** form bridges
+    - [x] `/foundations/word-building`
+        - [x] Migrate the Excalidraw suffix families
+        - [x] Add other high-yield prefix and suffix families
     - [ ] Remaining curriculum
 
 ## Next
