@@ -82,6 +82,10 @@
         - [x] Cover the closed core-verb inventory
         - [x] Add **has, goes, does**, and pronounced **says** exceptions
         - [x] Add source-relevant **-es**, **-ies**, and modal patterns
+    - [x] `/foundations/verbs/cognate-verbs` — completed 2026-07-28
+        - [x] Copy verb-focused cognate lessons into the verb curriculum
+        - [x] Preserve direct, spelling, form, word-family, memory, and confusion groups
+        - [x] Create a master high-frequency selected-verb inventory
     - [ ] double check my NEW SCRACTCH
     - [ ] Remaining curriculum
 
