@@ -10,6 +10,13 @@
     - [x] `/foundations/word-building`
         - [x] Migrate the Excalidraw suffix families
         - [x] Add other high-yield prefix and suffix families
+    - [x] `/foundations/core-verbs`
+        - [x] Migrate all Excalidraw core-verb groups
+        - [x] Normalize the folder structure and atomic lesson boundaries
+        - [x] Audit the foundational verb scope, teaching contrasts, and examples
+    - [ ] /foundations/past
+    - [ ] /foundations/past-participle
+    - [ ] double check my NEW SCRACTCH
     - [ ] Remaining curriculum
 
 ## Next
