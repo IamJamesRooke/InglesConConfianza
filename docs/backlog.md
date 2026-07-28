@@ -29,7 +29,11 @@
         - [x] Migrate **be**, modal, and perfect-auxiliary drills
         - [x] Add progressive, perfect, and perfect-progressive comparison tables
         - [x] Audit high-confusion structures involving **have**, **have to**, and **there + be**
-    - [ ] `/foundations/time-elements`
+    - [x] `/foundations/time`
+        - [x] Migrate clock time, relative days, and parts of the day
+        - [x] Migrate sequence, duration, and frequency expressions
+        - [x] Add essential calendar vocabulary for conversational scheduling
+        - [x] Audit the minimal time vocabulary and key Spanish–English contrasts
     - [ ] double check my NEW SCRACTCH
     - [ ] Remaining curriculum
 
