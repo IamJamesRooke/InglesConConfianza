@@ -3,22 +3,31 @@
 ## Now
 - [ ] Migrate the complete Advanced course from Excalidraw into atomic Markdown curriculum files
     - [ ] Preserve the advanced course's teaching logic and detailed contrasts
+    - [ ] Complete the migration faithfully even if the resulting Advanced curriculum remains very large
+    - [ ] Do not curate or reduce the Advanced material during migration
     - [ ] `/advanced/translations`
         - [x] Establish the multiple-translation lesson format with **uses of even**
-        - [ ] Add other source words with context-dependent translations, including **way** and **either**
+        - [x] Add **uses of way**, including the supplemental **away** group
+        - [x] Add **uses of rather**
+        - [ ] Add other source words with context-dependent translations, including **either**
     - [ ] Audit the completed migration against the original Excalidraw material
-    - [ ] Defer cross-course curation, final hierarchy, and JSON design until both course migrations are complete
+    - [ ] Defer cross-course curation, final hierarchy, and application data-structure design until the Advanced migration is complete
 
 ## Next
-- [ ] Application specifications
-    - [ ] Product brief
+- [ ] Build the initial MVP from three Foundations lessons
+    - [ ] Select three representative lessons exclusively from the completed Foundations curriculum
+    - [ ] Design the initial lesson data structure around those three Foundations lessons
+    - [ ] Build the smallest complete learning flow using those lessons
+    - [ ] Leave the migrated Advanced curriculum untouched during the initial MVP
+    - [ ] Write the application product brief
 
 ## Later
 - [ ] **Content curation**
-    > Review the entire curriculum, remove material that is not necessary for the core course, and defer appropriate content to optional supplementary modules later in the program.
+    > After the MVP provides concrete evidence, develop the curation strategy while continuing to build the curriculum. Review the entire curriculum, remove material that is not necessary for the core course, and defer appropriate content to optional supplementary modules later in the program.
     - [ ] Curate the cognates section
     - [ ] Reduce the pronouns section
     - [ ] Create a master curriculum inventory that consolidates the material from every curriculum Markdown file and classifies each item as critical, important, useful, low priority, or do not teach
+    - [ ] need to add contractions such as wanna, gonna, gotta, etc.
 - [ ] **Chunking and sequencing**
     - [ ] Create no more than 100 phrases from the course content that collectively teach all critical and important material
     - [ ] Incorporate spaced repetition into the sequence
@@ -36,6 +45,9 @@
     - principles: curation, chunking, sequencing, presentation
     - information overload
     - spaced repetition
+    - the need for mastery based learning, not advancing until current section is perfect
+    - explaining System I and System II from Kahneman and how it relates to using examples and building intuition
+    - student can guess on words, but not grammar
 
 ## Done
 
