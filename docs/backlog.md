@@ -49,6 +49,11 @@
         - [x] Migrate core question words and the **how** family
         - [x] Add a focused foundation section for translations of **que**
         - [x] Audit omitted connectors and context-dependent translations
+    - [x] `/foundations/adjectives`
+        - [x] Migrate foundational description and state vocabulary
+        - [x] Add adjective position and adjective/adverb contrasts
+        - [x] Add comparative, superlative, and intensifier patterns
+        - [x] Audit comparison spelling rules and irregular forms
     - [ ] double check my NEW SCRACTCH
     - [ ] Remaining curriculum
 
