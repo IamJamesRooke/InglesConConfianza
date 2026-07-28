@@ -44,6 +44,11 @@
         - [x] Add possessive, distributive, and missing quantity determiners
         - [x] Distinguish determiners from related indefinite pronouns
         - [x] Audit countable and uncountable noun compatibility
+    - [x] `/foundations/sentence-building-words`
+        - [x] Migrate connectors and Spanish **a, de, para** translation bridges
+        - [x] Migrate core question words and the **how** family
+        - [x] Add a focused foundation section for translations of **que**
+        - [x] Audit omitted connectors and context-dependent translations
     - [ ] double check my NEW SCRACTCH
     - [ ] Remaining curriculum
 
