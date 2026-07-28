@@ -19,7 +19,12 @@
         - [x] Migrate foundational irregular-past sound and vowel-shift families
         - [x] Add **was/were** constructions
         - [x] Audit past-form coverage against core verbs and cognate tiers
-    - [ ] `/foundations/past-participle`
+    - [x] `/foundations/past-participle`
+        - [x] Migrate regular-participle formation and pronunciation groups
+        - [x] Migrate foundational irregular-participle phonetic families
+        - [x] Distinguish participle constructions from overlapping simple-past forms
+        - [x] Audit participle coverage against the closed core-verb curriculum
+    - [ ] `/foundations/verb-structures`
     - [ ] double check my NEW SCRACTCH
     - [ ] Remaining curriculum
 
