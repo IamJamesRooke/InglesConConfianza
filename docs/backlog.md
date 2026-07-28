@@ -3,6 +3,9 @@
 ## Now
 - [ ] Migrate the complete Advanced course from Excalidraw into atomic Markdown curriculum files
     - [ ] Preserve the advanced course's teaching logic and detailed contrasts
+    - [ ] `/advanced/translations`
+        - [x] Establish the multiple-translation lesson format with **uses of even**
+        - [ ] Add other source words with context-dependent translations, including **way** and **either**
     - [ ] Audit the completed migration against the original Excalidraw material
     - [ ] Defer cross-course curation, final hierarchy, and JSON design until both course migrations are complete
 
