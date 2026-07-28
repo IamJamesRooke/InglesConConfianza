@@ -2,63 +2,67 @@
 
 ## Now
 - [ ] Use an AI agent to convert the Excalidraw curriculum into atomic Markdown files containing the course's teaching points. Convert them into JSON only later, when building the application lessons.
-    - [x] `/foundations/pronouns` and the general curriculum template
-    - [x] `/foundations/cognates`
+    - [x] `/foundations/pronouns` and the general curriculum template — completed 2026-07-27
+    - [x] `/foundations/cognates` — completed 2026-07-27
         - [x] Migrate and normalize verb cognates
         - [x] Migrate and normalize the remaining cognates
         - [x] Migrate regular **-ed** and **-ing** form bridges
-    - [x] `/foundations/word-building`
+    - [x] `/foundations/word-building` — completed 2026-07-27
         - [x] Migrate the Excalidraw suffix families
         - [x] Add other high-yield prefix and suffix families
-    - [x] `/foundations/core-verbs`
+    - [x] `/foundations/core-verbs` — completed 2026-07-28
         - [x] Migrate all Excalidraw core-verb groups
         - [x] Normalize the folder structure and atomic lesson boundaries
         - [x] Audit the foundational verb scope, teaching contrasts, and examples
-    - [x] `/foundations/past`
+    - [x] `/foundations/past` — completed 2026-07-28
         - [x] Migrate regular-past formation and pronunciation groups
         - [x] Migrate foundational irregular-past sound and vowel-shift families
         - [x] Add **was/were** constructions
         - [x] Audit past-form coverage against core verbs and cognate tiers
-    - [x] `/foundations/past-participle`
+    - [x] `/foundations/past-participle` — completed 2026-07-28
         - [x] Migrate regular-participle formation and pronunciation groups
         - [x] Migrate foundational irregular-participle phonetic families
         - [x] Distinguish participle constructions from overlapping simple-past forms
         - [x] Audit participle coverage against the closed core-verb curriculum
-    - [x] `/foundations/verb-fluency-drills`
+    - [x] `/foundations/verb-fluency-drills` — completed 2026-07-28
         - [x] Migrate the **do, does, did** transformation drills
         - [x] Migrate **be**, modal, and perfect-auxiliary drills
         - [x] Add progressive, perfect, and perfect-progressive comparison tables
         - [x] Audit high-confusion structures involving **have**, **have to**, and **there + be**
-    - [x] `/foundations/time`
+    - [x] `/foundations/time` — completed 2026-07-28
         - [x] Migrate clock time, relative days, and parts of the day
         - [x] Migrate sequence, duration, and frequency expressions
         - [x] Add essential calendar vocabulary for conversational scheduling
         - [x] Audit the minimal time vocabulary and key Spanish–English contrasts
-    - [x] `/foundations/location`
+    - [x] `/foundations/location` — completed 2026-07-28
         - [x] Migrate the location-word and **at / in / on** groups
         - [x] Add essential distance, relative-position, and direction contrasts
         - [x] Keep place nouns limited to reusable conversational examples
         - [x] Audit location vocabulary and Spanish **en** contrasts
-    - [x] `/foundations/determiners`
+    - [x] `/foundations/determiners` — completed 2026-07-28
         - [x] Migrate articles, demonstratives, quantity words, alternatives, and numbers
         - [x] Add possessive, distributive, and missing quantity determiners
         - [x] Distinguish determiners from related indefinite pronouns
         - [x] Audit countable and uncountable noun compatibility
-    - [x] `/foundations/sentence-building-words`
+    - [x] `/foundations/sentence-building-words` — completed 2026-07-28
         - [x] Migrate connectors and Spanish **a, de, para** translation bridges
         - [x] Migrate core question words and the **how** family
         - [x] Add a focused foundation section for translations of **que**
         - [x] Audit omitted connectors and context-dependent translations
-    - [x] `/foundations/adjectives`
+    - [x] `/foundations/adjectives` — completed 2026-07-28
         - [x] Migrate foundational description and state vocabulary
         - [x] Add adjective position and adjective/adverb contrasts
         - [x] Add comparative, superlative, and intensifier patterns
         - [x] Audit comparison spelling rules and irregular forms
-    - [x] `/foundations/nouns`
+    - [x] `/foundations/nouns` — completed 2026-07-28
         - [x] Migrate the minimal essential and cognate-like noun groups
         - [x] Migrate foundational people and family nouns
         - [x] Add essential plural and noun-meaning contrasts
         - [x] Keep the explicit noun vocabulary intentionally limited
+    - [x] `/foundations/expressions` — completed 2026-07-28
+        - [x] Migrate the minimal polite-expression group
+        - [x] Preserve nonliteral Colombian Spanish bridges
+        - [x] Add essential responses to gratitude
     - [ ] double check my NEW SCRACTCH
     - [ ] Remaining curriculum
 
@@ -90,5 +94,5 @@
     - information overload
     - spaced repetition
 ## Done
-- [x] Created repository and curriculum `AGENTS.md` guidance.
-- [x] Added the Excalidraw file containing the teaching points for the Foundations and Advanced curricula, along with the 2023 instruction manual, to `/private/` as source material for the application.
+- [x] Created repository and curriculum `AGENTS.md` guidance — completed 2026-07-27.
+- [x] Added the Excalidraw file containing the teaching points for the Foundations and Advanced curricula, along with the 2023 instruction manual, to `/private/` as source material for the application — completed 2026-07-27.
