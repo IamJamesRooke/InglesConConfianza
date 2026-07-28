@@ -54,7 +54,10 @@
 - [ ] Create the repository `README.md`
     - [ ] Explain the origin of the methodology
         - [ ] Direct instruction, MT, Siegfried Engelmann, etc.
-
+        - [ ] explain how I made the methodology from scratch
+            - word frequency charts
+            - other language courses
+            - answering question: how can I teach English with minimal amount of material
 ## Done
 - [x] Created repository and curriculum `AGENTS.md` guidance.
 - [x] Added the Excalidraw file containing the teaching points for the Foundations and Advanced curricula, along with the 2023 instruction manual, to `/private/` as source material for the application.
