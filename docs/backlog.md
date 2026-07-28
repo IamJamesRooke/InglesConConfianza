@@ -34,6 +34,11 @@
         - [x] Migrate sequence, duration, and frequency expressions
         - [x] Add essential calendar vocabulary for conversational scheduling
         - [x] Audit the minimal time vocabulary and key Spanish–English contrasts
+    - [x] `/foundations/location`
+        - [x] Migrate the location-word and **at / in / on** groups
+        - [x] Add essential distance, relative-position, and direction contrasts
+        - [x] Keep place nouns limited to reusable conversational examples
+        - [x] Audit location vocabulary and Spanish **en** contrasts
     - [ ] double check my NEW SCRACTCH
     - [ ] Remaining curriculum
 
