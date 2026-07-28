@@ -39,6 +39,11 @@
         - [x] Add essential distance, relative-position, and direction contrasts
         - [x] Keep place nouns limited to reusable conversational examples
         - [x] Audit location vocabulary and Spanish **en** contrasts
+    - [x] `/foundations/determiners`
+        - [x] Migrate articles, demonstratives, quantity words, alternatives, and numbers
+        - [x] Add possessive, distributive, and missing quantity determiners
+        - [x] Distinguish determiners from related indefinite pronouns
+        - [x] Audit countable and uncountable noun compatibility
     - [ ] double check my NEW SCRACTCH
     - [ ] Remaining curriculum
 
