@@ -10,21 +10,21 @@
     - [x] `/foundations/word-building` — completed 2026-07-27
         - [x] Migrate the Excalidraw suffix families
         - [x] Add other high-yield prefix and suffix families
-    - [x] `/foundations/core-verbs` — completed 2026-07-28
+    - [x] `/foundations/verbs/core-verbs` — completed 2026-07-28
         - [x] Migrate all Excalidraw core-verb groups
         - [x] Normalize the folder structure and atomic lesson boundaries
         - [x] Audit the foundational verb scope, teaching contrasts, and examples
-    - [x] `/foundations/past` — completed 2026-07-28
+    - [x] `/foundations/verbs/verb-forms/past` — completed 2026-07-28
         - [x] Migrate regular-past formation and pronunciation groups
         - [x] Migrate foundational irregular-past sound and vowel-shift families
         - [x] Add **was/were** constructions
         - [x] Audit past-form coverage against core verbs and cognate tiers
-    - [x] `/foundations/past-participle` — completed 2026-07-28
+    - [x] `/foundations/verbs/verb-forms/past-participle` — completed 2026-07-28
         - [x] Migrate regular-participle formation and pronunciation groups
         - [x] Migrate foundational irregular-participle phonetic families
         - [x] Distinguish participle constructions from overlapping simple-past forms
         - [x] Audit participle coverage against the closed core-verb curriculum
-    - [x] `/foundations/verb-fluency-drills` — completed 2026-07-28
+    - [x] `/foundations/verbs/verb-fluency-drills` — completed 2026-07-28
         - [x] Migrate the **do, does, did** transformation drills
         - [x] Migrate **be**, modal, and perfect-auxiliary drills
         - [x] Add progressive, perfect, and perfect-progressive comparison tables
@@ -63,6 +63,25 @@
         - [x] Migrate the minimal polite-expression group
         - [x] Preserve nonliteral Colombian Spanish bridges
         - [x] Add essential responses to gratitude
+    - [x] `/foundations/verbs/verb-forms/bare-infinitive` — completed 2026-07-28
+        - [x] Migrate commands, **let's**, and foundational modal patterns
+        - [x] Add the overlapping **do, does, did** bare-infinitive pattern
+        - [x] Keep the bare-infinitive inventory closed to foundation structures
+    - [x] `/foundations/verbs/verb-forms/gerund-present-participle` — completed 2026-07-28
+        - [x] Migrate progressive, activity-noun, and selected verb patterns
+        - [x] Reuse the word-building **-ing** noun bridge in its verb-form context
+        - [x] Add the foundational **PING** preposition rule
+        - [x] Keep deeper gerund-versus-infinitive contrasts in advanced
+    - [x] `/foundations/verbs/verb-forms/full-infinitive` — completed 2026-07-28
+        - [x] Add handle-verb and another-person full-infinitive patterns
+        - [x] Add purpose translations for Spanish **para**
+        - [x] Add adjective connectors such as **important to do**
+        - [x] Document the six-form verb framework
+    - [x] `/foundations/verbs/verb-forms/third-person-present` — completed 2026-07-28
+        - [x] Add Spanish present **-a** and **-e** memory bridges
+        - [x] Cover the closed core-verb inventory
+        - [x] Add **has, goes, does**, and pronounced **says** exceptions
+        - [x] Add source-relevant **-es**, **-ies**, and modal patterns
     - [ ] double check my NEW SCRACTCH
     - [ ] Remaining curriculum
 
