@@ -24,7 +24,12 @@
         - [x] Migrate foundational irregular-participle phonetic families
         - [x] Distinguish participle constructions from overlapping simple-past forms
         - [x] Audit participle coverage against the closed core-verb curriculum
-    - [ ] `/foundations/verb-structures`
+    - [x] `/foundations/verb-fluency-drills`
+        - [x] Migrate the **do, does, did** transformation drills
+        - [x] Migrate **be**, modal, and perfect-auxiliary drills
+        - [x] Add progressive, perfect, and perfect-progressive comparison tables
+        - [x] Audit high-confusion structures involving **have**, **have to**, and **there + be**
+    - [ ] `/foundations/time-elements`
     - [ ] double check my NEW SCRACTCH
     - [ ] Remaining curriculum
 
