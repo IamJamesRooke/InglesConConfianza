@@ -30,7 +30,7 @@ Spanish can also use **intentar** with a task or challenge as its object.
 
 | Spanish | English |
 |---|---|
-| intentar algo | **to try something**, **to attempt something** |
+| intentar algo | **to try something** |
 
 **Voy a intentar el ejercicio otra vez.**<br>
 I am going to try the exercise again.

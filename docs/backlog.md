@@ -14,8 +14,12 @@
         - [x] Migrate all Excalidraw core-verb groups
         - [x] Normalize the folder structure and atomic lesson boundaries
         - [x] Audit the foundational verb scope, teaching contrasts, and examples
-    - [ ] /foundations/past
-    - [ ] /foundations/past-participle
+    - [x] `/foundations/past`
+        - [x] Migrate regular-past formation and pronunciation groups
+        - [x] Migrate foundational irregular-past sound and vowel-shift families
+        - [x] Add **was/were** constructions
+        - [x] Audit past-form coverage against core verbs and cognate tiers
+    - [ ] `/foundations/past-participle`
     - [ ] double check my NEW SCRACTCH
     - [ ] Remaining curriculum
 

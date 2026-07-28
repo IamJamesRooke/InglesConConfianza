@@ -28,13 +28,13 @@ I obtain a copy of the document at reception.
 
 **I get a copy at reception** is more common in everyday conversation.
 
-## Managing to get something
+## Getting something successfully
 
 Spanish **conseguir** often emphasizes finding, securing, or succeeding in obtaining something.
 
 | Spanish | English |
 |---|---|
-| conseguir algo | **to get something**, **to manage to get something** |
+| conseguir algo | **to get something** |
 
 **Consigo una cita para el viernes después de llamar varias veces.**<br>
-I manage to get an appointment for Friday after calling several times.
+I get an appointment for Friday after calling several times.
