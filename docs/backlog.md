@@ -54,6 +54,11 @@
         - [x] Add adjective position and adjective/adverb contrasts
         - [x] Add comparative, superlative, and intensifier patterns
         - [x] Audit comparison spelling rules and irregular forms
+    - [x] `/foundations/nouns`
+        - [x] Migrate the minimal essential and cognate-like noun groups
+        - [x] Migrate foundational people and family nouns
+        - [x] Add essential plural and noun-meaning contrasts
+        - [x] Keep the explicit noun vocabulary intentionally limited
     - [ ] double check my NEW SCRACTCH
     - [ ] Remaining curriculum
 
