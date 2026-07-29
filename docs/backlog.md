@@ -22,9 +22,9 @@
         - [x] Add the **in/out** concept map across core uses, physical movement, predictable extensions, fixed connections, whole expressions, and the productive **out-** prefix
         - [x] Add the **up/down** concept map across direction, position, completion/creation, intensity/control, and whole expressions
         - [ ] Add the remaining source words with context-dependent translations
-    - [x] `/advanced/intensifiers`
+    - [x] `/advanced/contextual-uses/intensifiers`
         - [x] Add the degree-and-quantity contrast across **very**, **too**, **so**, **that**, and **as**
-    - [x] `/advanced/to-too-and-two`
+    - [x] `/advanced/contextual-uses/to-too-and-two`
         - [x] Contrast full-infinitive, bare-infinitive, purpose, and prepositional **to**
         - [x] Add destination, recipient, relationship, PING, and **used to** patterns
         - [x] Add focused **too**, **two**, pronunciation, contraction, and homophone lessons
@@ -41,35 +41,55 @@
     - [ ] Write the application product brief
 
 ## Later
-- [ ] **Content curation**
+
+### Curriculum curation
+
+- [ ] Curate the migrated curriculum
     > After the MVP provides concrete evidence, develop the curation strategy while continuing to build the curriculum. Review the entire curriculum, remove material that is not necessary for the core course, and defer appropriate content to optional supplementary modules later in the program.
     - [ ] Curate the cognates section
     - [ ] Reduce the pronouns section
     - [ ] Create a master curriculum inventory that consolidates the material from every curriculum Markdown file and classifies each item as critical, important, useful, low priority, or do not teach
-    - [ ] need to add contractions such as wanna, gonna, gotta, etc.
-- [ ] **Chunking and sequencing**
-    - [ ] Create no more than 100 phrases, or some other arbitrary, yet reasonable number, from the course content that collectively teach all critical and important material
+    - [ ] Audit natural contractions and informal reductions such as **wanna**, **gonna**, and **gotta**
+
+- [ ] Chunk and sequence the curated curriculum
+    - [ ] Create no more than 100 phrases—or another arbitrary but reasonable number—that collectively teach all critical and important material
     - [ ] Incorporate spaced repetition into the sequence
     - [ ] Build the final sequence around minimal-difference sentences such as “She quit because it was too quiet and found it quite boring.”
+    - [ ] Consider dividing the course into **Foundations I**, **Foundations II**, and later stages with clear qualitative differences
+
+- [ ] Design for review and mastery
+    - [ ] Assume that returning students may have forgotten everything
+    - [ ] Require mastery of the current section before allowing advancement
+    - [ ] Allow students to guess vocabulary, but not grammar
+
+### Curriculum data and documentation
+
 - [ ] Convert the curriculum Markdown files into JSON objects
 - [ ] Create the repository `README.md`
     - [ ] Explain the origin of the methodology
-        - [ ] Direct instruction, MT, Siegfried Engelmann, etc.
-        - [ ] explain how I made the methodology from scratch
-            - word frequency charts
-            - other language courses
-            - answering question: how can I teach English with minimal amount of material
-- [ ] add to AGENTS.md file the methodology
-    - give example lessons
-    - the education equation
-    - principles: curation, chunking, sequencing, presentation
-    - information overload
-    - spaced repetition
-    - the need for mastery based learning, not advancing until current section is perfect
-    - explaining System I and System II from Kahneman and how it relates to using examples and building intuition
-    - student can guess on words, but not grammar
-- [ ] PENETRATION TESTING
-    - https://github.com/OWASP/wstg/tree/master/document/4-Web_Application_Security_Testing
+        - [ ] Describe direct instruction, **MT**, Siegfried Engelmann, and related influences
+        - [ ] Explain how the methodology was developed from scratch
+            - [ ] Word-frequency charts
+            - [ ] Other language courses
+            - [ ] The central question: How can English be taught with the minimum necessary material?
+
+- [ ] Document the teaching methodology in `AGENTS.md`
+    - [ ] Provide example lessons
+    - [ ] Explain the education equation
+    - [ ] Explain the principles of curation, chunking, sequencing, and presentation
+    - [ ] Explain the risks of information overload
+    - [ ] Explain spaced repetition
+    - [ ] Explain mastery-based learning
+    - [ ] Explain System 1 and System 2 from Kahneman and how examples build intuition
+
+### Product ideas
+
+- [ ] Add per-question learner feedback
+- [ ] Add a word-learning heatmap that becomes greener with additional repetitions
+
+### Security
+
+- [ ] Perform penetration testing using the [OWASP Web Security Testing Guide](https://github.com/OWASP/wstg/tree/master/document/4-Web_Application_Security_Testing)
 
 ## Done
 
