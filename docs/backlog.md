@@ -15,7 +15,8 @@
         - [x] Atomize the large multiple-use concept maps into numbered lesson folders with bilingual summaries and mastery phrases
         - [x] Add numbered concept maps for **as**, **ever/never**, **such**, **while**, and **well**
         - [x] Add numbered concept maps for **no/none/any**, **all/every**, **some**, **wise**, **else**, and **though**
-        - [ ] Add other source words with context-dependent translations, including **either**
+        - [x] Add numbered concept maps for **less/least**, **more/most**, **since**, **either/neither/whether**, and **just/only**
+        - [ ] Add the remaining source words with context-dependent translations
     - [x] `/advanced/intensifiers`
         - [x] Add the degree-and-quantity contrast across **very**, **too**, **so**, **that**, and **as**
     - [x] `/advanced/to-too-and-two`
