@@ -19,6 +19,8 @@
         - [x] Add completeness-first numbered concept maps for **make**, **use**, **long**, **mean**, and **keep**
         - [x] Add and pedagogically organize the complete **get** concept map across forms, obtaining, movement, becoming, phrasal verbs, causatives, passive voice, opportunity/obligation, and everyday replacements
         - [x] Add the **on/off** concept map organized by inferability: core uses, core picture, predictable extensions, fixed connections, and whole expressions
+        - [x] Add the **in/out** concept map across core uses, physical movement, predictable extensions, fixed connections, whole expressions, and the productive **out-** prefix
+        - [x] Add the **up/down** concept map across direction, position, completion/creation, intensity/control, and whole expressions
         - [ ] Add the remaining source words with context-dependent translations
     - [x] `/advanced/intensifiers`
         - [x] Add the degree-and-quantity contrast across **very**, **too**, **so**, **that**, and **as**
