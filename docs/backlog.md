@@ -16,6 +16,7 @@
         - [x] Add numbered concept maps for **as**, **ever/never**, **such**, **while**, and **well**
         - [x] Add numbered concept maps for **no/none/any**, **all/every**, **some**, **wise**, **else**, and **though**
         - [x] Add numbered concept maps for **less/least**, **more/most**, **since**, **either/neither/whether**, and **just/only**
+        - [x] Add completeness-first numbered concept maps for **make**, **use**, **long**, **mean**, and **keep**
         - [ ] Add the remaining source words with context-dependent translations
     - [x] `/advanced/intensifiers`
         - [x] Add the degree-and-quantity contrast across **very**, **too**, **so**, **that**, and **as**
