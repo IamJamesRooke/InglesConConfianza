@@ -13,6 +13,7 @@
         - [x] Add the related **but/yet** and **one** groups
         - [x] Add the focused **uses of so** lesson
         - [x] Atomize the large multiple-use concept maps into numbered lesson folders with bilingual summaries and mastery phrases
+        - [x] Add numbered concept maps for **as**, **ever/never**, **such**, **while**, and **well**
         - [ ] Add other source words with context-dependent translations, including **either**
     - [x] `/advanced/intensifiers`
         - [x] Add the degree-and-quantity contrast across **very**, **too**, **so**, **that**, and **as**
