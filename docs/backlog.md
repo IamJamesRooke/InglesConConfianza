@@ -15,6 +15,10 @@
         - [ ] Add other source words with context-dependent translations, including **either**
     - [x] `/advanced/intensifiers`
         - [x] Add the degree-and-quantity contrast across **very**, **too**, **so**, **that**, and **as**
+    - [x] `/advanced/to-too-and-two`
+        - [x] Contrast full-infinitive, bare-infinitive, purpose, and prepositional **to**
+        - [x] Add destination, recipient, relationship, PING, and **used to** patterns
+        - [x] Add focused **too**, **two**, pronunciation, contraction, and homophone lessons
     - [ ] Audit the completed migration against the original Excalidraw material
     - [ ] Defer cross-course curation, final hierarchy, and application data-structure design until the Advanced migration is complete
 
