@@ -5,7 +5,7 @@
     - [ ] Preserve the advanced course's teaching logic and detailed contrasts
     - [ ] Complete the migration faithfully even if the resulting Advanced curriculum remains very large
     - [ ] Do not curate or reduce the Advanced material during migration
-    - [ ] `/advanced/translations`
+    - [ ] `/advanced/contextual-uses`
         - [x] Establish the multiple-translation lesson format with **uses of even**
         - [x] Add **uses of way**, including the supplemental **away** group
         - [x] Add **uses of rather**
@@ -18,6 +18,7 @@
         - [x] Add numbered concept maps for **less/least**, **more/most**, **since**, **either/neither/whether**, and **just/only**
         - [x] Add completeness-first numbered concept maps for **make**, **use**, **long**, **mean**, and **keep**
         - [x] Add and pedagogically organize the complete **get** concept map across forms, obtaining, movement, becoming, phrasal verbs, causatives, passive voice, opportunity/obligation, and everyday replacements
+        - [x] Add the **on/off** concept map organized by inferability: core uses, core picture, predictable extensions, fixed connections, and whole expressions
         - [ ] Add the remaining source words with context-dependent translations
     - [x] `/advanced/intensifiers`
         - [x] Add the degree-and-quantity contrast across **very**, **too**, **so**, **that**, and **as**
