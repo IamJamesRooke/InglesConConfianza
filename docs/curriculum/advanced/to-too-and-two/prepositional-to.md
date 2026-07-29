@@ -85,6 +85,7 @@ Some English verbs include **to** before the person, thing or idea connected to 
 
 High-use combinations include:
 
+- **say to** (tell him, say *to* him)
 - **listen to**
 - **talk / speak to**
 - **explain / describe something to someone**
