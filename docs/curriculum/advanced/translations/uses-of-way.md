@@ -1,5 +1,7 @@
 # Uses of **Way**
 
+> **By the way, this way is way shorter.**
+
 **Way** can describe a physical route, a direction, a distance, or a method. It also appears in common expressions where translating it as **camino** would make no sense.
 
 ## **Way** Meaning Route

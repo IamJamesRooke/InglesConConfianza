@@ -9,7 +9,12 @@
         - [x] Establish the multiple-translation lesson format with **uses of even**
         - [x] Add **uses of way**, including the supplemental **away** group
         - [x] Add **uses of rather**
+        - [x] Add **uses of kind**, **pretty**, and **really**
+        - [x] Add the related **but/yet** and **one** groups
+        - [x] Add the focused **uses of so** lesson
         - [ ] Add other source words with context-dependent translations, including **either**
+    - [x] `/advanced/intensifiers`
+        - [x] Add the degree-and-quantity contrast across **very**, **too**, **so**, **that**, and **as**
     - [ ] Audit the completed migration against the original Excalidraw material
     - [ ] Defer cross-course curation, final hierarchy, and application data-structure design until the Advanced migration is complete
 
@@ -29,8 +34,9 @@
     - [ ] Create a master curriculum inventory that consolidates the material from every curriculum Markdown file and classifies each item as critical, important, useful, low priority, or do not teach
     - [ ] need to add contractions such as wanna, gonna, gotta, etc.
 - [ ] **Chunking and sequencing**
-    - [ ] Create no more than 100 phrases from the course content that collectively teach all critical and important material
+    - [ ] Create no more than 100 phrases, or some other arbitrary, yet reasonable number, from the course content that collectively teach all critical and important material
     - [ ] Incorporate spaced repetition into the sequence
+    - [ ] Build the final sequence around minimal-difference sentences such as “She quit because it was too quiet and found it quite boring.”
 - [ ] Convert the curriculum Markdown files into JSON objects
 - [ ] Create the repository `README.md`
     - [ ] Explain the origin of the methodology
@@ -48,6 +54,8 @@
     - the need for mastery based learning, not advancing until current section is perfect
     - explaining System I and System II from Kahneman and how it relates to using examples and building intuition
     - student can guess on words, but not grammar
+- [ ] PENETRATION TESTING
+    - https://github.com/OWASP/wstg/tree/master/document/4-Web_Application_Security_Testing
 
 ## Done
 

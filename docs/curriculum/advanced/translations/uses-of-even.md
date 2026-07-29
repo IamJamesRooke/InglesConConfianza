@@ -1,5 +1,7 @@
 # Uses of **Even**
 
+> **Even an even floor can have an odd number of tiles.**
+
 **Even** does not have one fixed translation. Read the complete expression and choose the meaning from context.
 
 ## **Even** for Surprising Inclusion

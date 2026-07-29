@@ -1,5 +1,7 @@
 # Uses of **Rather**
 
+> **I'd rather arrive rather early than rather late.**
+
 **Rather** can express degree, preference, an alternative, or a correction. Its Spanish translation and the grammar that follows it change with each use.
 
 ## **Rather** Meaning Fairly or Quite
