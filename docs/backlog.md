@@ -32,6 +32,10 @@
         - [x] Add the complete **de** map across core translations, English restructuring, fixed verb connections, expressions, and confusion sets
         - [x] Add the related **conocer** and **saber** maps, including **meet/know**, familiarity, learned ability, and **supe → found out**
         - [x] Add the related **esperar** and **recordar** maps across **wait/hope/expect/wish** and **remember/remind/recall**
+        - [x] Add the **deber** map across obligation, advice, expectation, deduction, debt, and the related **own/owner/ownership** family
+        - [x] Add the related **importar** and **molestar** maps across **matter/care/mind/bother/disturb/annoy**, including the false cognate **molest**
+        - [x] Add the **pedir** map across **ask/ask for/order/request/borrow**, permissions, appointments, and applications
+        - [x] Add the related **pensar** and **creer** maps across **think/believe/plan/intend/consider** and their fixed connections
     - [x] `/advanced/contextual-uses/intensifiers`
         - [x] Add the degree-and-quantity contrast across **very**, **too**, **so**, **that**, and **as**
     - [x] `/advanced/contextual-uses/to-too-and-two`
