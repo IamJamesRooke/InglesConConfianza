@@ -21,6 +21,8 @@
         - [x] Add the **on/off** concept map organized by inferability: core uses, core picture, predictable extensions, fixed connections, and whole expressions
         - [x] Add the **in/out** concept map across core uses, physical movement, predictable extensions, fixed connections, whole expressions, and the productive **out-** prefix
         - [x] Add the **up/down** concept map across direction, position, completion/creation, intensity/control, and whole expressions
+        - [x] Add the **over/under** concept map across physical paths and positions, comparisons with limits, productive prefixes, and whole expressions
+        - [x] Add the related **leave/left**, **right**, and **straight** maps, including translations of **dejar**, direction contrasts, and homophones
         - [ ] Add the remaining source words with context-dependent translations
     - [x] `/advanced/contextual-uses/intensifiers`
         - [x] Add the degree-and-quantity contrast across **very**, **too**, **so**, **that**, and **as**
