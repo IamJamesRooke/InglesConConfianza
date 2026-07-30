@@ -27,6 +27,7 @@
         - [x] Add the **back** concept map across rear position, return movement, core-verb particles, whole expressions, and related contrasts
         - [x] Add the interrelated **about**, **around**, and **of** concept maps, including Spanish **de** bridges and core-verb connections
         - [x] Add the **from** concept map across source, origin, starting points, movement, fixed connections, and contrasts with **to/for/of/since/away**
+        - [x] Add the combined **by-and-through** map across proximity, deadlines, methods, interior paths, fixed connections, and the **through/threw/throw/thorough** sound family
         - [ ] Add the remaining source words with context-dependent translations
     - [x] `/advanced/spanish-to-english-translations`
         - [x] Establish the Spanish-first translation-map structure
@@ -117,7 +118,12 @@
 - [ ] Perform penetration testing using the [OWASP Web Security Testing Guide](https://github.com/OWASP/wstg/tree/master/document/4-Web_Application_Security_Testing)
 
 ### Testing
-    - [ ] Create AI Test Users representing the typical student with mistakes they make.
+- [ ] Create AI Test Users representing the typical student with mistakes they make.
+    - memory-based as opposed to principles-based learners
+    - assume IQ two standard deviations below normal
+    - assume Tik-Tok addicted low attention span
+    - assume need for instant results
+    - assume little grit, and won't push through when things get difficult
 
 ### Scope Limitations
 > Deciding what the app will NOT be for now, to avoid feature creep.
