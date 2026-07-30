@@ -28,6 +28,7 @@
         - [x] Add the interrelated **about**, **around**, and **of** concept maps, including Spanish **de** bridges and core-verb connections
         - [x] Add the **from** concept map across source, origin, starting points, movement, fixed connections, and contrasts with **to/for/of/since/away**
         - [x] Add the combined **by-and-through** map across proximity, deadlines, methods, interior paths, fixed connections, and the **through/threw/throw/thorough** sound family
+        - [x] Add the related **into/onto** and **up-to/down-on** compound maps across movement, transformation, maximums, responsibility, evaluation, and fixed connections
         - [ ] Add the remaining source words with context-dependent translations
     - [x] `/advanced/spanish-to-english-translations`
         - [x] Establish the Spanish-first translation-map structure
