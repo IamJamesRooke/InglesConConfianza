@@ -24,7 +24,14 @@
         - [x] Add the **over/under** concept map across physical paths and positions, comparisons with limits, productive prefixes, and whole expressions
         - [x] Add the related **leave/left**, **right**, and **straight** maps, including translations of **dejar**, direction contrasts, and homophones
         - [x] Add the **at** concept map with Spanish **en → at/in/on** confusion sets, core uses, verb connections, and the **at/in** beginning contrast
+        - [x] Add the **back** concept map across rear position, return movement, core-verb particles, whole expressions, and related contrasts
+        - [x] Add the interrelated **about**, **around**, and **of** concept maps, including Spanish **de** bridges and core-verb connections
         - [ ] Add the remaining source words with context-dependent translations
+    - [x] `/advanced/spanish-to-english-translations`
+        - [x] Establish the Spanish-first translation-map structure
+        - [x] Add the complete **de** map across core translations, English restructuring, fixed verb connections, expressions, and confusion sets
+        - [x] Add the related **conocer** and **saber** maps, including **meet/know**, familiarity, learned ability, and **supe → found out**
+        - [x] Add the related **esperar** and **recordar** maps across **wait/hope/expect/wish** and **remember/remind/recall**
     - [x] `/advanced/contextual-uses/intensifiers`
         - [x] Add the degree-and-quantity contrast across **very**, **too**, **so**, **that**, and **as**
     - [x] `/advanced/contextual-uses/to-too-and-two`
