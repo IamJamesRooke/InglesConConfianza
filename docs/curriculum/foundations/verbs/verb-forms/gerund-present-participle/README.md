@@ -12,4 +12,4 @@ English uses the same **verb + -ing** form for several different jobs.
 
 The form is identical, but its role in the sentence changes.
 
-This folder contains only the foundational **-ing** patterns. The advanced curriculum can teach the longer inventory of verbs that select a gerund, an infinitive, or both with a change in meaning.
+The lessons in this folder develop these **-ing** jobs separately, including the verbs that select an **-ing** form and the contrast between infinitive **to** and prepositional **to**.

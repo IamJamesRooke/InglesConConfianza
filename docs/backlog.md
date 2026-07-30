@@ -142,6 +142,14 @@
 
 ## Done
 
+### 2026-07-30
+
+- [x] Consolidate advanced structural material into the Foundations curriculum
+    - [x] Expand `/foundations/verbs/verb-forms` around the six-form framework
+    - [x] Add full-infinitive, bare-infinitive, **-ing**, passive, and causative patterns as atomic lessons
+    - [x] Merge the remaining adjective vocabulary into `/foundations/adjectives`
+    - [x] Add dedicated comparison transformations for **easy, hard, difficult**, and **good**
+
 ### 2026-07-28
 
 - [x] Migrate the complete Foundation course from Excalidraw into atomic Markdown curriculum files

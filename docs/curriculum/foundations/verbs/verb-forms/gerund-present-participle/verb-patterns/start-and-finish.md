@@ -17,4 +17,4 @@ Use **-ing** after **finish**:
 - **She finishes doing it.**
 - Not: *She finishes to do it.*
 
-The advanced curriculum can cover other verbs and the cases where changing the form changes the meaning.
+Nearby lessons cover other verbs and the cases where changing the form changes the meaning.

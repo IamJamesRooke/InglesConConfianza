@@ -8,7 +8,7 @@ The **bare infinitive** is the base form of a verb without **to**:
 | to make | make |
 | to go | go |
 
-In the foundation course, use the bare infinitive in three core situations:
+Use the bare infinitive in these situations:
 
 | Structure | Example |
 |---|---|
@@ -16,10 +16,12 @@ In the foundation course, use the bare infinitive in three core situations:
 | **let's + verb** | **Let's do it.** |
 | modal + verb | **I can do it.** |
 | auxiliary **do/does/did + verb** | **Did they do it?** |
+| **let/make/have/help + somebody + verb** | They let me **do** it. |
+| **come/go + verb** | Come **see** this. |
 
 Never insert **to** in these patterns:
 
 - **I can do it.**
 - Not: *I can to do it.*
 
-This is a closed foundation list. Additional verbs and structures that take the bare infinitive belong in the advanced curriculum.
+The lessons in this folder develop each pattern separately, including less obvious cases in which English omits **to**.

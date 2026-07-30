@@ -12,6 +12,8 @@ In this course, **handle verbs** are verbs that can be followed by another actio
 | Decidí hacerlo. | I decided to do it. |
 | Elegí hacerlo. | I chose to do it. |
 | Intenté hacerlo. | I tried to do it. |
+| Prefiero hacerlo temprano. | I prefer to do it early. |
+| Ella comenzó a hacerlo. | She began to do it. |
 
 The next verb uses the full infinitive:
 
@@ -26,4 +28,4 @@ The next verb uses the full infinitive:
 |---|---|
 | I like to do it. | I like doing it. |
 
-The advanced curriculum can teach finer differences between verbs that select an infinitive, a gerund, or both.
+Other lessons in this verb-forms folder distinguish verbs that select an infinitive, an **-ing** form, or either form.

@@ -6,6 +6,9 @@ This folder contains foundational description vocabulary, comparison patterns, i
 |---|---|
 | qualities | **important, difficult, practical** |
 | evaluation | **good, bad, better, worse** |
+| color and appearance | **red, blue, light, dark** |
+| size, length, and age | **big, small, long, short, old, young** |
+| accuracy and specificity | **right, wrong, exact, specific** |
 | states | **busy, ready, hungry, cold** |
 | comparison | **harder, happier, more important** |
 | intensifiers | **very, too, so, really, enough** |

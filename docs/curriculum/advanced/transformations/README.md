@@ -10,7 +10,11 @@ These maps show how a familiar base word can generate a related form with a pred
 | [**Power → Powerful/Powerless → Powerlessness**](power - powerful - powerless - powerlessness/README.md) | A base thing branches into having/lacking descriptions and quality nouns. |
 | [**Weak → Weakness/Weaken → Weakening**](weak - weakness - weaken - weakening/README.md) | A description branches into a quality noun and a change verb. |
 | [**Long → Length → Lengthen → Lengthening**](long - length - lengthen - lengthening/README.md) | A changed noun stem supports a change verb. |
-| [**White → Whitish**](white - whitish/README.md) | Five uses of **-ish** across colors, approximation, degree, resemblance, and established identity words. |
+| [**White → Whitish**](-ish/README.md) | Five uses of **-ish** across colors, approximation, degree, resemblance, and established identity words. |
+| [**Easy → Easier → the Easiest**](easy - easier - the easiest/README.md) | Adjectives ending in consonant + **y** change **y** to **i** before **-er/-est**. |
+| [**Hard → Harder → the Hardest**](hard - harder - the hardest/README.md) | Most one-syllable adjectives add **-er/-est**. |
+| [**Difficult → More Difficult → the Most Difficult**](difficult - more difficult - the most difficult/README.md) | Most longer adjectives use **more/the most**. |
+| [**Good → Better → the Best**](good - better - the best/README.md) | Common irregular comparison forms are learned as a family. |
 | [**Also, Alone, Already**, and **Always**](also - alone - already - always/README.md) | Common **al-** spelling family whose whole meanings must be learned. |
 | [**Become, Because, Before**, and **Beside**](become - because - before - beside/README.md) | Common **be-** words and their distinct sentence patterns. |
 | [**Forearm, Foresee, Forward**, and **Foreword**](forearm - foresee - forward - foreword/README.md) | The reusable front/before picture of **fore-** and related spelling traps. |

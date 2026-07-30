@@ -16,4 +16,4 @@ With **like, love**, and **hate**, English can also use the full infinitive:
 | I love reading. | I love to read. |
 | I hate waiting. | I hate to wait. |
 
-The meanings often overlap in foundational conversation. The advanced curriculum can teach preferences and context differences between the two forms.
+The meanings often overlap. The **-ing** form commonly presents the action as an activity in general, while the full infinitive can emphasize a habit, choice, or particular situation. Context matters more than a rigid one-form rule.
