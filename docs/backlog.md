@@ -23,6 +23,7 @@
         - [x] Add the **up/down** concept map across direction, position, completion/creation, intensity/control, and whole expressions
         - [x] Add the **over/under** concept map across physical paths and positions, comparisons with limits, productive prefixes, and whole expressions
         - [x] Add the related **leave/left**, **right**, and **straight** maps, including translations of **dejar**, direction contrasts, and homophones
+        - [x] Add the **at** concept map with Spanish **en → at/in/on** confusion sets, core uses, verb connections, and the **at/in** beginning contrast
         - [ ] Add the remaining source words with context-dependent translations
     - [x] `/advanced/contextual-uses/intensifiers`
         - [x] Add the degree-and-quantity contrast across **very**, **too**, **so**, **that**, and **as**
@@ -83,15 +84,31 @@
     - [ ] Explain spaced repetition
     - [ ] Explain mastery-based learning
     - [ ] Explain System 1 and System 2 from Kahneman and how examples build intuition
+    - [ ] Explain the *flow* concept from Milhaly Csikszentmihalyi and how it applies to the course.
 
 ### Product ideas
 
 - [ ] Add per-question learner feedback
 - [ ] Add a word-learning heatmap that becomes greener with additional repetitions
+- [ ] Give progress indicators showing how far they are from A1, A2, B1, B2 levels (or IELTS) equivalent
+    - make that a marketing point, telling them what level they expect to achieve
+    - will need to analyze curriculum to determine exact points
+- [ ] Have rotating voiceovers in different accents: Canadian, British, American, etc.
+- [ ] when giving voiceovers, have two repetitions to improve listening and noticing contractions:
+    - Spanish and English: "quiero - I want, hablar - to speak, quiero hablar - I wanna speak, contigo - with you - with ya -- I wanna speak with ya'
+- [ ] Think about Creative Commons license, how to monitize but also allow others to fork the repo.
+- [ ] Have a model where, I create some lessons, and don't make any more until I get 100 completing it, then I make more again. This ensures I don't make a huge curriculum and app only to see that nobody uses it.
 
 ### Security
 
 - [ ] Perform penetration testing using the [OWASP Web Security Testing Guide](https://github.com/OWASP/wstg/tree/master/document/4-Web_Application_Security_Testing)
+
+### Testing
+    - [ ] Create AI Test Users representing the typical student with mistakes they make.
+
+### Scope Limitations
+> Deciding what the app will NOT be for now, to avoid feature creep.
+- Spanish-to-English only. No other languages. If others want to fork the repo, that's fine. And can give AGENT instructions explaining exactly how the method was made.
 
 ## Done
 
