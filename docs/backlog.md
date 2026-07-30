@@ -66,6 +66,11 @@
         - [x] Atomize **too** and **two** into numbered lesson folders with bilingual summaries and mastery phrases
     - [ ] Audit the completed migration against the original Excalidraw material
     - [ ] Defer cross-course curation, final hierarchy, and application data-structure design until the Advanced migration is complete
+- [x] Audit high-frequency English and Spanish for possible curriculum omissions
+    - [x] Review approximately 2,000 frequent entries in each language
+    - [x] Prioritize ambiguous translations, structural words, productive constructions, and likely Spanish interference
+    - [x] Exclude ordinary direct vocabulary and transparent cognates from routine consideration
+    - [x] Preserve missing, partial, and uncertain findings in `/curriculum/inclusion-candidates.md` for owner review
 
 ## Next
 - [ ] Build the initial MVP from three Foundations lessons
