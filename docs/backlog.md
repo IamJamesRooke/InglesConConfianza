@@ -30,6 +30,8 @@
         - [x] Add the combined **by-and-through** map across proximity, deadlines, methods, interior paths, fixed connections, and the **through/threw/throw/thorough** sound family
         - [x] Add the related **into/onto** and **up-to/down-on** compound maps across movement, transformation, maximums, responsibility, evaluation, and fixed connections
         - [x] Add the complete **be** map across **ser/estar/tener/haber/ir/poder** translations, fixed connections, existential forms, constructions, and meaning-changing adjective contrasts
+        - [x] Add the **side** word-building map across **inside/outside**, **upside/downside**, front/back and other-side positions, **across**, and **beside/besides**
+        - [x] Add the related **inner/outer** and **upper/lower** family as a standalone map integrated into the **in/out** and **up/down** core lessons
         - [ ] Add the remaining source words with context-dependent translations
     - [x] `/advanced/spanish-to-english-translations`
         - [x] Establish the Spanish-first translation-map structure
@@ -41,6 +43,11 @@
         - [x] Add the **pedir** map across **ask/ask for/order/request/borrow**, permissions, appointments, and applications
         - [x] Add the related **pensar** and **creer** maps across **think/believe/plan/intend/consider** and their fixed connections
         - [x] Add the complete **poder** map across ability, permission, possibility, opportunity, time forms, requests, and the **power** word family
+    - [ ] `/advanced/transformations`
+        - [x] Add the **in → inner** map for relative inner/outer and upper/lower forms
+        - [x] Add the **to → towards** map for the productive **-ward/-wards** directional family
+        - [x] Add the **north → northern** map across cardinal directions, descriptive **-ern** forms, directional **-ward(s)** forms, intermediate directions, and capitalization
+        - [x] Add the **suffix chains** map across **-ful, -less, -ness**, and **-en**, including complete **power/use/meaning/weak/short** families
     - [x] `/advanced/contextual-uses/intensifiers`
         - [x] Add the degree-and-quantity contrast across **very**, **too**, **so**, **that**, and **as**
     - [x] `/advanced/contextual-uses/to-too-and-two`

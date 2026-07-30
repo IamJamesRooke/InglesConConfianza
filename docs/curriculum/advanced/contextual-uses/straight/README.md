@@ -8,6 +8,7 @@
 | [**Look Forward To**](04-look-forward-to.md) | Espero con ilusión conocerlos. | I look forward to meeting you. |
 | [**Can't Wait**](05-cant-wait.md) | Tengo muchas ganas de verlos. | I can't wait to see you. |
 | [Homophones: **Straight** and **Strait**](06-homophones-straight-and-strait.md) | El barco siguió derecho por el estrecho. | The ship went straight through the strait. |
+| [**Forward** and **Forwards**](07-forward-and-forwards.md) | Mire hacia adelante y dé dos pasos hacia adelante. | Look forward and take two steps forwards. |
 | [Confusion Set: **Derecho** and **Derecha**](confusion-sets/README.md) | Sigue derecho; no gires a la derecha. | Go straight; don't turn right. |
 
 ## Mastery Phrases
