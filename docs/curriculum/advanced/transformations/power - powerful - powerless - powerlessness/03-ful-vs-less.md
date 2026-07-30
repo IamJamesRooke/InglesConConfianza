@@ -18,4 +18,4 @@ use
        useless
 ```
 
-For the introductory pattern, see the Foundations lesson [English **-ful** and **-less**](../../../foundations/word-building/care - careful - careless (-ful and -less).md).
+For a compact introduction to the pattern, see [**Care → Careful/Careless**](../care - careful - careless/README.md).

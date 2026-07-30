@@ -48,6 +48,8 @@
         - [x] Add the **to → towards** map for the productive **-ward/-wards** directional family
         - [x] Add the **north → northern** map across cardinal directions, descriptive **-ern** forms, directional **-ward(s)** forms, intermediate directions, and capitalization
         - [x] Add isolated transformation maps anchored by **power → powerful/powerless → powerlessness**, **weak → weakness/weaken → weakening**, and **long → length → lengthen → lengthening**
+        - [x] Add the five-use **white → whitish** map and separate **al-**, **be-**, and **fore-** word-family maps
+        - [x] Move the noncritical Foundations word-building families into fifteen concrete Advanced transformation maps
     - [x] `/advanced/contextual-uses/intensifiers`
         - [x] Add the degree-and-quantity contrast across **very**, **too**, **so**, **that**, and **as**
     - [x] `/advanced/contextual-uses/to-too-and-two`
@@ -148,7 +150,7 @@
         - [x] Migrate and normalize verb cognates
         - [x] Migrate and normalize the remaining cognates
         - [x] Migrate regular **-ed** and **-ing** form bridges
-    - [x] `/foundations/word-building`
+    - [x] Foundations word-building source material, now organized under `/advanced/transformations`
         - [x] Migrate the Excalidraw suffix families
         - [x] Add other high-yield prefix and suffix families
     - [x] `/foundations/verbs/core-verbs`

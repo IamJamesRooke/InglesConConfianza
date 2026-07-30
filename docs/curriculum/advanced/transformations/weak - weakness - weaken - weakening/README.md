@@ -20,7 +20,7 @@ weak ───
 | [The **Weak** Family](03-weak-weaken-family.md) | **weak → weakness / weaken → weakening** |
 | [The **Short** Family](04-short-shorten-family.md) | **short → shortness / shorten → shortening** |
 | [The **White** Family](05-white-family.md) | **white → whiteness / whiten → whitening** |
-| [**Whitish**](06-whitish.md) | **white + -ish** |
+| [**Whitish** and the **-ish** Transformation](../white - whitish/README.md) | **white + -ish** and four related uses |
 | [**Whiteness**](07-whiteness.md) | **white + -ness** |
 | [**Whiten**](08-whiten.md) | **white + -en** |
 | [**Whitening** and **Whitened**](09-whitening-and-whitened.md) | forms of **whiten** |
