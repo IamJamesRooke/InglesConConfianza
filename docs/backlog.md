@@ -50,6 +50,13 @@
         - [x] Add isolated transformation maps anchored by **power → powerful/powerless → powerlessness**, **weak → weakness/weaken → weakening**, and **long → length → lengthen → lengthening**
         - [x] Add the five-use **white → whitish** map and separate **al-**, **be-**, and **fore-** word-family maps
         - [x] Move the noncritical Foundations word-building families into fifteen concrete Advanced transformation maps
+    - [x] `/advanced/past-and-past-participle`
+        - [x] Migrate regular **-ed** pronunciation lessons for `/d/`, `/t/`, and `/ɪd/`
+        - [x] Move the complete section to the Advanced root
+        - [x] Unify the past and participle inventories into three-form lessons
+        - [x] Organize irregular verbs into exact-rhyme and vowel-shift micro-lessons
+        - [x] Add the complete modern head-verb and accepted-variant coverage index
+        - [x] Separate one-offs, meaning-dependent forms, regional alternatives, and uncommon current forms
     - [x] `/advanced/contextual-uses/intensifiers`
         - [x] Add the degree-and-quantity contrast across **very**, **too**, **so**, **that**, and **as**
     - [x] `/advanced/contextual-uses/to-too-and-two`

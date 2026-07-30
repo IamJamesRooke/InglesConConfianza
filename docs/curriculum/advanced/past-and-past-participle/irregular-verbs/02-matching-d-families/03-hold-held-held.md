@@ -1,0 +1,7 @@
+# **Hold → Held → Held**
+
+| Base | Past | Participle | Spanish |
+|---|---|---|---|
+| hold | held | held | sostener |
+
+**She held the baby yesterday, and she has held him many times.**
