@@ -47,7 +47,7 @@
         - [x] Add the **in → inner** map for relative inner/outer and upper/lower forms
         - [x] Add the **to → towards** map for the productive **-ward/-wards** directional family
         - [x] Add the **north → northern** map across cardinal directions, descriptive **-ern** forms, directional **-ward(s)** forms, intermediate directions, and capitalization
-        - [x] Add the **suffix chains** map across **-ful, -less, -ness**, and **-en**, including complete **power/use/meaning/weak/short** families
+        - [x] Add isolated transformation maps anchored by **power → powerful/powerless → powerlessness**, **weak → weakness/weaken → weakening**, and **long → length → lengthen → lengthening**
     - [x] `/advanced/contextual-uses/intensifiers`
         - [x] Add the degree-and-quantity contrast across **very**, **too**, **so**, **that**, and **as**
     - [x] `/advanced/contextual-uses/to-too-and-two`
