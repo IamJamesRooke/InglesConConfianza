@@ -25,3 +25,14 @@ Use either **not ... any** or **no**, but do not combine them:
 
 **Puedes elegir cualquier libro.**<br>
 You can choose any book.
+
+## Related families
+
+The same opening words build related expressions:
+
+| Family | **some** | **any** | **no** | **every** |
+|---|---|---|---|---|
+| place | [somewhere](places.md) | [anywhere](places.md) | [nowhere](places.md) | [everywhere](places.md) |
+| time | [sometime](time.md) | [anytime](time.md) | [no time](time.md) | [every time](time.md) |
+
+These related words do not determine a following noun, but the shared family makes their meanings and question/negative patterns easier to remember.

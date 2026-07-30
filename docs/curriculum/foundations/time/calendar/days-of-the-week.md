@@ -20,3 +20,19 @@ English days begin with a capital letter. Use **on** with a day:
 | Voy a llamarte el próximo lunes. | I am going to call you next Monday. |
 
 Do not add **on** before **last** or **next**: **last Monday**, not *on last Monday*.
+
+## Memory bridges in the English names
+
+The English names preserve old names for the sun, moon, planets, and Germanic or Norse gods:
+
+| Day | Memory bridge |
+|---|---|
+| Sunday | sun day |
+| Monday | moon day |
+| Tuesday | Tiw's day |
+| Wednesday | Woden's day |
+| Thursday | Thor's day |
+| Friday | Frigg's or Freya's day |
+| Saturday | Saturn's day |
+
+These origins are memory aids, not modern definitions of the days.

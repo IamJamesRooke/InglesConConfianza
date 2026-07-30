@@ -149,6 +149,10 @@
     - [x] Add full-infinitive, bare-infinitive, **-ing**, passive, and causative patterns as atomic lessons
     - [x] Merge the remaining adjective vocabulary into `/foundations/adjectives`
     - [x] Add dedicated comparison transformations for **easy, hard, difficult**, and **good**
+- [x] Expand foundational number, calendar, and indefinite-expression coverage
+    - [x] Add teens, tens, large numbers, ordinals, fractions, decimals, and phone-number patterns
+    - [x] Consolidate weekday, month, year, and complete-date instruction under `/foundations/time`
+    - [x] Add **some/any/no/every** place and time families with spelling and negative-pattern contrasts
 
 ### 2026-07-28
 

@@ -11,6 +11,6 @@ This folder contains the minimum time vocabulary needed to describe when somethi
 | sequence | **before, after, then** |
 | time relationships | **ago, in, for, since, until** |
 | frequency | **sometimes, often, every day** |
-| calendar | **on Monday, in July, next year** |
+| calendar | **on Thursday, January 21st, 1999** |
 
 The lessons are vocabulary specifications, not a required teaching sequence. Each table keeps related expressions together so they can later be selected and sequenced as needed.
