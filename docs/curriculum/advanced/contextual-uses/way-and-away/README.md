@@ -1,4 +1,4 @@
-# Uses of **Way**
+# Uses of **Way** and **Away**
 
 | Lesson | Spanish | English |
 |---|---|---|
@@ -35,7 +35,7 @@
 | [**Have a Way With**](31-have-a-way-with.md) | Los niños dejan de llorar cuando habla Natalia porque ella tiene un don especial para tranquilizarlos. | The children stop crying when Natalia speaks because she has a way with them. |
 | [**Way to Go!**](32-way-to-go.md) | Terminaste tu primera presentación completa en inglés sin mirar las notas; ¡muy bien hecho! | You finished your first complete presentation in English without looking at your notes; way to go! |
 | [**Way of Life**](33-way-of-life.md) | Para muchas familias de la región, cultivar café no es solo un trabajo, sino una forma de vida transmitida entre generaciones. | For many families in the region, growing coffee is not just a job but a way of life passed down through generations. |
-| [Supplemental: Uses of **Away**](34-supplemental-uses-of-away.md) | Cuando empezó la discusión, Camila se alejó de la mesa para evitar otro conflicto. | When the argument began, Camila walked away from the table to avoid another conflict. |
+| [Uses of **Away**](34-supplemental-uses-of-away.md) | Cuando empezó la discusión, Camila se alejó de la mesa para evitar otro conflicto. | When the argument began, Camila walked away from the table to avoid another conflict. |
 
 ## Mastery Phrases
 

@@ -7,7 +7,7 @@
     - [ ] Do not curate or reduce the Advanced material during migration
     - [ ] `/advanced/contextual-uses`
         - [x] Establish the multiple-translation lesson format with **uses of even**
-        - [x] Add **uses of way**, including the supplemental **away** group
+        - [x] Add the combined **way-and-away** map, including atomic **away** movement, distance, absence, removal, and expression lessons
         - [x] Add **uses of rather**
         - [x] Add **uses of kind**, **pretty**, and **really**
         - [x] Add the related **but/yet** and **one** groups
@@ -26,6 +26,7 @@
         - [x] Add the **at** concept map with Spanish **en → at/in/on** confusion sets, core uses, verb connections, and the **at/in** beginning contrast
         - [x] Add the **back** concept map across rear position, return movement, core-verb particles, whole expressions, and related contrasts
         - [x] Add the interrelated **about**, **around**, and **of** concept maps, including Spanish **de** bridges and core-verb connections
+        - [x] Add the **from** concept map across source, origin, starting points, movement, fixed connections, and contrasts with **to/for/of/since/away**
         - [ ] Add the remaining source words with context-dependent translations
     - [x] `/advanced/spanish-to-english-translations`
         - [x] Establish the Spanish-first translation-map structure
@@ -36,6 +37,7 @@
         - [x] Add the related **importar** and **molestar** maps across **matter/care/mind/bother/disturb/annoy**, including the false cognate **molest**
         - [x] Add the **pedir** map across **ask/ask for/order/request/borrow**, permissions, appointments, and applications
         - [x] Add the related **pensar** and **creer** maps across **think/believe/plan/intend/consider** and their fixed connections
+        - [x] Add the complete **poder** map across ability, permission, possibility, opportunity, time forms, requests, and the **power** word family
     - [x] `/advanced/contextual-uses/intensifiers`
         - [x] Add the degree-and-quantity contrast across **very**, **too**, **so**, **that**, and **as**
     - [x] `/advanced/contextual-uses/to-too-and-two`
