@@ -153,6 +153,10 @@
     - [x] Add teens, tens, large numbers, ordinals, fractions, decimals, and phone-number patterns
     - [x] Consolidate weekday, month, year, and complete-date instruction under `/foundations/time`
     - [x] Add **some/any/no/every** place and time families with spelling and negative-pattern contrasts
+- [x] Add the `/advanced/transformations/true - truth` family
+    - [x] Group **truth, length, strength, width, depth, warmth, growth, youth, birth**, and **death**
+    - [x] Cross-link the longer **lengthen** and **strengthen** transformation chains
+    - [x] Distinguish noun-family **-th** from ordinal **-th**
 
 ### 2026-07-28
 

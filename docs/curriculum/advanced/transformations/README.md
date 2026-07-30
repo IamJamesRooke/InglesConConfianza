@@ -10,6 +10,7 @@ These maps show how a familiar base word can generate a related form with a pred
 | [**Power → Powerful/Powerless → Powerlessness**](power - powerful - powerless - powerlessness/README.md) | A base thing branches into having/lacking descriptions and quality nouns. |
 | [**Weak → Weakness/Weaken → Weakening**](weak - weakness - weaken - weakening/README.md) | A description branches into a quality noun and a change verb. |
 | [**Long → Length → Lengthen → Lengthening**](long - length - lengthen - lengthening/README.md) | A changed noun stem supports a change verb. |
+| [**True → Truth**](true - truth/README.md) | Common **-th** noun families such as **truth, strength, width, warmth, growth, youth, birth**, and **death**. |
 | [**White → Whitish**](-ish/README.md) | Five uses of **-ish** across colors, approximation, degree, resemblance, and established identity words. |
 | [**Easy → Easier → the Easiest**](easy - easier - the easiest/README.md) | Adjectives ending in consonant + **y** change **y** to **i** before **-er/-est**. |
 | [**Hard → Harder → the Hardest**](hard - harder - the hardest/README.md) | Most one-syllable adjectives add **-er/-est**. |
