@@ -43,6 +43,10 @@
         - [x] Add the **pedir** map across **ask/ask for/order/request/borrow**, permissions, appointments, and applications
         - [x] Add the related **pensar** and **creer** maps across **think/believe/plan/intend/consider** and their fixed connections
         - [x] Add the complete **poder** map across ability, permission, possibility, opportunity, time forms, requests, and the **power** word family
+        - [x] Add the Spanish **se** map across reflexive, reciprocal, formal second-person, **le/les** replacement, and pronominal structures
+        - [x] Add standalone **para** and **por** maps across purpose, recipient, destination, cause, route, means, exchange, duration, rate, and agent
+        - [x] Add the approved high-frequency maps for **quedar, llevar, pasar, hacer, haber, dar, poner, salir, seguir, tocar, sacar, contar, tratar**, and **faltar**
+        - [x] Organize Spanish-first maps under verb, function-word/connector, and pronoun/pronominal-structure indexes
     - [ ] `/advanced/transformations`
         - [x] Add the **in → inner** map for relative inner/outer and upper/lower forms
         - [x] Add the **to → towards** map for the productive **-ward/-wards** directional family

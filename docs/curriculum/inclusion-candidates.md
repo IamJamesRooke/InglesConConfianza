@@ -172,7 +172,7 @@ These candidates have the strongest combination of frequency, ambiguity, product
 | - [ ] Include<br>- [ ] Reject<br>- [ ] Investigate | E 1–500 | **stand** | Partial | Stand upright, tolerate, represent, remain valid, be located, **stand for/out/by**. |
 | - [ ] Include<br>- [ ] Reject<br>- [ ] Investigate | E 1–500 | **fall** | Partial | Fall physically, become, occur on a date, decrease, **fall asleep/behind/apart/for**. |
 | - [ ] Include<br>- [ ] Reject<br>- [ ] Investigate | E 1–500 | **break** | Partial | Break an object/rule/record, take a break, reveal news, stop functioning, **break down/up/out**. |
-| - [ ] Include<br>- [ ] Reject<br>- [ ] Investigate | E 1–500 | **matter** | Partial/uncertain | **importar, asunto, materia**, **no matter**, **what matters**. Related material exists under [importar](advanced/spanish-to-english-translations/importar-y-molestar/README.md). |
+| - [ ] Include<br>- [ ] Reject<br>- [ ] Investigate | E 1–500 | **matter** | Partial/uncertain | **importar, asunto, materia**, **no matter**, **what matters**. Related material exists under [importar](advanced/spanish-to-english-translations/verbs/importar-y-molestar/README.md). |
 | - [ ] Include<br>- [ ] Reject<br>- [ ] Investigate | E 1–1,000 | **check** | Missing/partial | Verify, inspect, bill, check mark, baggage, restrain and **check in/out/on**. |
 | - [ ] Include<br>- [ ] Reject<br>- [ ] Investigate | E 1–1,000 | **pick** | Missing | Choose, harvest, remove, criticize and **pick up/out/on**. |
 | - [ ] Include<br>- [ ] Reject<br>- [ ] Investigate | E 1–1,000 | **wonder** | Missing | Ask oneself, polite request **I was wondering…**, surprise/awe and **no wonder**. |
