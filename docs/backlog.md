@@ -49,6 +49,7 @@
         - [x] Add the Spanish **se** map across reflexive, reciprocal, formal second-person, **le/les** replacement, and pronominal structures
         - [x] Add standalone **para** and **por** maps across purpose, recipient, destination, cause, route, means, exchange, duration, rate, and agent
         - [x] Add the approved high-frequency maps for **quedar, llevar, pasar, hacer, haber, dar, poner, salir, seguir, tocar, sacar, contar, tratar**, and **faltar**
+        - [x] Add the broader polysemous-verb set from **dejar, volver, llegar**, and **sentir** through **cargar, montar, lucir, extrañar, acordar**, and **resultar**
         - [x] Organize Spanish-first maps under verb, function-word/connector, and pronoun/pronominal-structure indexes
     - [ ] `/advanced/transformations`
         - [x] Add the **in → inner** map for relative inner/outer and upper/lower forms
