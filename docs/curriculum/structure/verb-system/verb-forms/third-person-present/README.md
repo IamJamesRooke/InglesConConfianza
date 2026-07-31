@@ -19,3 +19,9 @@ For Spanish speakers, the third-person Spanish form provides a strong signal:
 | Él corre. | He runs. |
 
 This is a memory bridge, not a spelling rule for deriving unknown vocabulary. The English spelling sometimes requires **-es** or **-ies**, and a small foundational group is irregular.
+
+## Directory Index
+
+- [Third-Person Exceptions and Spelling](exceptions-and-spelling.md)
+- [Spanish Present **-a** → English Third-Person **-s**](spanish-a-endings.md)
+- [Spanish Present **-e** → English Third-Person **-s**](spanish-e-endings.md)

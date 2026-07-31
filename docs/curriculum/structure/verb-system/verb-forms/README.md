@@ -16,3 +16,12 @@ The same six slots apply across the curriculum even when an irregular verb chang
 The verb **be** has additional visible present and past forms—**am, is, are, was, were**—but they perform the same present and past jobs within this teaching framework.
 
 Each subfolder teaches when English selects one of the six forms.
+
+## Directory Index
+
+- [The Bare Infinitive](bare-infinitive/README.md)
+- [The Full Infinitive](full-infinitive/README.md)
+- [Gerunds and Present Participles](gerund-present-participle/README.md)
+- [The Past](past/README.md)
+- [The Past Participle](past-participle/README.md)
+- [Third-Person Present](third-person-present/README.md)

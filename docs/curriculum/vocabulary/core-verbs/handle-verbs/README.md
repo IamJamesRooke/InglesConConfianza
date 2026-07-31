@@ -10,3 +10,12 @@ I want to do something.
 The core pattern is:
 
 **subject + handle verb + to + base verb**
+
+## Directory Index
+
+- [Handle Verbs: Deciding and Choosing](deciding-and-choosing.md)
+- [Handle Verbs: Liking](liking.md)
+- [Handle Verbs: Needing](needing.md)
+- [Handle Verbs: Trying](trying.md)
+- [Handle Verbs: Wanting Somebody to Do Something](wanting-somebody-to-do-something.md)
+- [Handle Verbs: Wanting](wanting.md)

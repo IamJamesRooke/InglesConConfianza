@@ -32,3 +32,7 @@ The pattern repeats with **south/southern/southward**, **east/eastern/eastward**
 | La carretera del norte atraviesa la región septentrional y luego gira hacia el norte. | The north road crosses the northern region and then turns northward. |
 | La tormenta del sur se desplazó hacia el este por la parte oriental del país. | The southern storm moved eastward across the eastern part of the country. |
 | Viajamos hacia el oeste desde el sur y terminamos en la región occidental. | We traveled westward from the south and ended up in the western region. |
+
+## Directory Index
+
+- [Cardinal-Direction Confusion Sets](confusion-sets/README.md)

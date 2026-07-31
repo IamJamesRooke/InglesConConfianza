@@ -10,3 +10,9 @@ This folder contains small, high-frequency words used to connect ideas, express 
 These expressions are organized by their structural function rather than by a final teaching sequence.
 
 The language-specific maps for Spanish **a, de, para**, and **que** belong to [Spanish-to-English Function Words and Connectors](../../spanish-english-bridges/spanish-to-english/function-words-and-connectors/README.md).
+
+## Directory Index
+
+- [Question Words](question-words/README.md)
+
+- [Connectors](connectors/README.md)

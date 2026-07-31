@@ -1,0 +1,26 @@
+# Verbs
+
+## Directory Index
+
+- [Verb Cognates: **-ply**](<aplicar - to apply.md>)
+- [Verb Cognates: **-ause**](<causar - to cause.md>)
+- [Verb Cognates: **-ute**](<contribuir - to contribute.md>)
+- [Verb Cognates: **-ate**](<crear - to create.md>)
+- [Verb Cognates: **-ide**](<decidir - to decide.md>)
+- [Verb Cognates: **-ine**](<definir - to define.md>)
+- [Verb Cognates: **-scribe**](<describir - to describe.md>)
+- [Verb Cognates: **-er**](<entrar - to enter.md>)
+- [Verb Cognates: **-ify**](<identificar - to identify.md>)
+- [Verb Cognates: **-ore**](<ignorar - to ignore.md>)
+- [Verb Cognates: **-ude**](<incluir - to include.md>)
+- [Verb Cognates: **-ale**](<inhalar - to inhale.md>)
+- [Verb Cognates: **-uce**](<introducir - to introduce.md>)
+- [Verb Cognates: **-ite**](<invitar - to invite.md>)
+- [Verb Cognates: **-serve**](<observar - to observe.md>)
+- [Verb Cognates: **-ize**](<organizar - to organize.md>)
+- [Verb Cognates: **-are**](<preparar - to prepare.md>)
+- [Verb Cognates: **-hibit**](<prohibir - to prohibit.md>)
+- [Verb Cognates: **-eive**](<recibir - to receive.md>)
+- [Verb Cognates: **-olve**](<resolver - to resolve.md>)
+- [Verb Cognates: **-ive**](<sobrevivir - to survive.md>)
+- [Verb Cognates: **-gest**](<sugerir - to suggest.md>)

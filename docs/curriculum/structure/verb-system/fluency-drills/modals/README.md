@@ -14,3 +14,12 @@ Modal verbs go before the base form of the main verb:
 To form a direct question, move the modal before the subject: **You can do it. → Can you do it?**
 
 After **I want to know**, keep statement order: **I want to know why you can't do it.**
+
+## Directory Index
+
+- [Fluency Drill: **Can**](can.md)
+- [Fluency Drill: **Could**](could.md)
+- [Fluency Drill: **Must**](must.md)
+- [Fluency Drill: **Should**](should.md)
+- [Fluency Drill: **Will**](will.md)
+- [Fluency Drill: **Would**](would.md)

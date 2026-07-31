@@ -33,3 +33,22 @@ These files are curriculum specifications, not a required teaching sequence. Fol
 - Repeated core verbs are intentional when they teach distinct meanings. Important examples include **get**, **have**, **leave**, **take**, and **work**.
 - Some core verbs are also cognates. Their core lessons teach the meaning or construction; their cognate lessons may separately teach how learners can recognize or build the word.
 - Examples may combine these core verbs with verbs already available through the cognate curriculum.
+
+## Directory Index
+
+- [Communication](communication/README.md)
+- [Doing And Making](doing-and-making/README.md)
+- [Eating And Drinking](eating-and-drinking/README.md)
+- [Handle Verbs](handle-verbs/README.md)
+- [Having](having/README.md)
+- [Living Learning And Working](living-learning-and-working/README.md)
+- [Money](money/README.md)
+- [Moving](moving/README.md)
+- [Opening And Closing](opening-and-closing/README.md)
+- [People](people/README.md)
+- [Seeing](seeing/README.md)
+- [Sending And Receiving](sending-and-receiving/README.md)
+- [Taking And Putting](taking-and-putting/README.md)
+- [Thinking And Feeling](thinking-and-feeling/README.md)
+- [Time](time/README.md)
+- [The Verb **To Be**](to-be/README.md)

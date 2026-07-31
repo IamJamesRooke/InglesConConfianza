@@ -12,3 +12,7 @@ These lessons organize high-frequency English words whose Spanish translation ch
 | [Connections and Clause Building](connections-and-clause-building/README.md) | Relationships between words, ideas, alternatives, reasons, results, and clauses. |
 | [Reference, Description, and Discourse](reference-description-and-discourse/README.md) | Reference words, classification, evaluation, manner, and conversational framing. |
 | [Constructions](constructions/README.md) | Cross-cutting English patterns involving modal meaning, particles, objects, and preposition placement. |
+
+## Directory Index
+
+- [English-to-Spanish Pronouns and Reference](pronouns-and-reference/README.md)

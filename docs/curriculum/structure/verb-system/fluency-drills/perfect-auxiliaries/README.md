@@ -9,3 +9,9 @@ The perfect forms use **have, has**, or **had + past participle**:
 | every subject in the past | **had** | They **had done** it. |
 
 In a direct question, move **have, has**, or **had** before the subject. In an embedded clause, keep statement order.
+
+## Directory Index
+
+- [Fluency Drill: **Had**](had.md)
+- [Fluency Drill: **Has**](has.md)
+- [Fluency Drill: **Have**](have.md)

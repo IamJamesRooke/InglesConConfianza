@@ -44,3 +44,7 @@
 | Esta carretera es el camino más rápido para llegar al aeropuerto porque evita el centro. | This road is the fastest way to the airport because it avoids downtown. |
 | Está lloviendo y olvidé el paraguas, pero de todos modos voy a caminar hasta la estación. | It is raining and I forgot my umbrella, but I am going to walk to the station anyway. |
 | Cuando empezó la discusión, Camila se alejó de la mesa para evitar otro conflicto. | When the argument began, Camila walked away from the table to avoid another conflict. |
+
+## Directory Index
+
+- [Away](away/README.md)

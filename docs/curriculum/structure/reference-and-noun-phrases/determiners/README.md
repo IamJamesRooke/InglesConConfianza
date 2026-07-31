@@ -21,3 +21,14 @@ Several related forms can also stand alone as pronouns:
 - **my cat → mine**
 
 Compounds such as **somebody, anything, nobody**, and **everything** are pronouns, not determiners, because no noun follows them.
+
+## Directory Index
+
+- [Alternatives](alternatives/README.md)
+- [Articles](articles/README.md)
+- [Demonstratives](demonstratives/README.md)
+- [Distribution](distribution/README.md)
+- [Numbers](numbers/README.md)
+- [Possession](possession/README.md)
+- [Quantity](quantity/README.md)
+- [Related Pronouns](related-pronouns/README.md)

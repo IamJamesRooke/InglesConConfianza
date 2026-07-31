@@ -8,3 +8,8 @@ The regular-past lessons separate two questions:
 2. How do we pronounce the written **-ed**?
 
 The irregular-past lessons group similar-sounding forms into small memory families.
+
+## Directory Index
+
+- [Irregular Verbs in the Past](irregular-verbs/README.md)
+- [Regular Verbs in the Past](regular-verbs/README.md)

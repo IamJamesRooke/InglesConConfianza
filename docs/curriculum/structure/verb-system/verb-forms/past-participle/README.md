@@ -18,3 +18,10 @@ The form overlaps with the past curriculum, but the teaching purpose differs: th
 | passive with **be** | It was **done** by Laura. |
 | event-focused passive with **get** | It got **done** on time. |
 | arranged result | I got it **done** before Friday. |
+
+## Directory Index
+
+- [Irregular Past Participles](irregular-verbs/README.md)
+- [Regular Past Participles](regular-verbs/README.md)
+- [**Be** and **Get** + Past Participle](be-and-get-passives.md)
+- [**Get** and **Have Something Done**](get-and-have-something-done.md)

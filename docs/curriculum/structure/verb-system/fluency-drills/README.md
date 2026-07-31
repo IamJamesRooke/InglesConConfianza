@@ -23,3 +23,13 @@ Each drill uses a coherent master sentence set. The meaning changes as little as
 - `high-confusion-structures/`: the different jobs of **have**, **have to**, and existential **there + be**
 - `form-comparisons/`: progressive, perfect, and perfect-progressive form families
 - `conditionals/`: explicit comparisons of real, possible, hypothetical, and past-unreal conditions
+
+## Directory Index
+
+- [Fluency Drills: **Be**](be/README.md)
+- [Conditional Meaning and Form](conditionals/README.md)
+- [Fluency Drills: **Do**, **Does**, and **Did**](do-does-did/README.md)
+- [Verb Form Comparisons](form-comparisons/README.md)
+- [High-Confusion Verb Structures](high-confusion-structures/README.md)
+- [Fluency Drills: Modal Verbs](modals/README.md)
+- [Fluency Drills: Perfect Auxiliaries](perfect-auxiliaries/README.md)

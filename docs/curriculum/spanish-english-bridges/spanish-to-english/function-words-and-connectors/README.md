@@ -14,3 +14,8 @@ Spanish-first maps for short words whose English equivalent changes with functio
 | [**Según**](segun/README.md) | [**Sino** and **Si No**](sino-y-si-no/README.md) |
 | [**Tan** and **Tanto**](tan-y-tanto/README.md) | [**Todavía** and **Aún**](todavia-y-aun/README.md) |
 | [**Tras**](tras/README.md) | [**Ya**](ya/README.md) |
+
+## Directory Index
+
+- [Preposition Bridges](preposition-bridges/README.md)
+- [Translations of **Que**](translations-of-que/README.md)

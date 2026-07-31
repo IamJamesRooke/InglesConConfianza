@@ -13,3 +13,12 @@ English uses the same **verb + -ing** form for several different jobs.
 The form is identical, but its role in the sentence changes.
 
 The lessons in this folder develop these **-ing** jobs separately, including the verbs that select an **-ing** form and the contrast between infinitive **to** and prepositional **to**.
+
+## Directory Index
+
+- [After Prepositions](after-prepositions/README.md)
+- [Form](form/README.md)
+- [Gerunds](gerunds/README.md)
+- [Nouns](nouns/README.md)
+- [Progressive](progressive/README.md)
+- [Verb Patterns](verb-patterns/README.md)

@@ -16,3 +16,11 @@ Spanish **que** and accented **qué** have several foundational English equivale
 | verb structure | no separate word | quiero que Laura... → I want Laura to... |
 
 The accent matters: interrogative or exclamative **qué** carries an accent; connector or relative **que** does not.
+
+## Lessons
+
+- [**Qué → What** and **Que → Than**](what-and-than.md)
+- [Relative **Que**: **Who, That**, and **Which**](relative-who-that-and-which.md)
+- [Connector **Que**: **That** or No Separate Word](that-or-no-word.md)
+- [**Lo Que** and **Para Que**](lo-que-and-para-que.md)
+- [Exclamative **Qué**: **What** and **How**](exclamative-what-and-how.md)

@@ -25,3 +25,11 @@ Never insert **to** in these patterns:
 - Not: *I can to do it.*
 
 The lessons in this folder develop each pattern separately, including less obvious cases in which English omits **to**.
+
+## Directory Index
+
+- [Auxiliary Do](auxiliary-do/README.md)
+- [Imperative](imperative/README.md)
+- [Modals](modals/README.md)
+- [**Let, Make, Have**, and **Help** + Bare Infinitive](causatives-and-permission.md)
+- [**Come** and **Go** + Bare Infinitive](come-and-go-do-something.md)

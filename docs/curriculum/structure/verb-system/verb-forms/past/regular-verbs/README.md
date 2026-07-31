@@ -26,3 +26,10 @@ That produces three possible endings:
 |---|---|---|
 | most other **-ed** forms | `/t/` or `/d/` | no |
 | **-ted** or **-ded** | `/ɪd/` | yes |
+
+## Directory Index
+
+- [Forming the Regular Past](forming-the-regular-past.md)
+- [Regular Past Pronounced `/d/`](past-pronounced-d.md)
+- [Regular Past Pronounced `/ɪd/`](past-pronounced-id.md)
+- [Regular Past Pronounced `/t/`](past-pronounced-t.md)

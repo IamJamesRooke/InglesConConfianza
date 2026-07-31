@@ -21,3 +21,9 @@ After **does** or **did**, use the base form **do**:
 - Not: *Did they did it?*
 
 The first **do/does/did** can be an auxiliary while the second **do** is the main verb.
+
+## Directory Index
+
+- [Fluency Drill: **Did**](did.md)
+- [Fluency Drill: **Do**](do.md)
+- [Fluency Drill: **Does**](does.md)

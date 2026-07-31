@@ -16,3 +16,11 @@ English adjectives do not change for grammatical gender or number:
 - **two good books**
 
 The core words used in these patterns live under [Core Adjectives and States](../../vocabulary/core-adjectives-and-states/README.md). These structural lessons are not a required teaching sequence.
+
+## Directory Index
+
+- [Adverbs](adverbs/README.md)
+- [Comparison](comparison/README.md)
+- [Confusion Sets](confusion-sets/README.md)
+- [Grammar](grammar/README.md)
+- [Intensifiers](intensifiers/README.md)
