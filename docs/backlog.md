@@ -1,11 +1,12 @@
 # Backlog
 
 ## Now
-- [ ] Merge `/curriculum/foundations` and `/curriculum/advanced` into one common body of knowledge
-    - [ ] Preserve this pre-merge checkpoint before moving or combining curriculum files
-    - [ ] Reconcile overlapping lessons without cutting teaching content during the merge
-    - [ ] Update curriculum indexes and internal links for the unified hierarchy
-    - [ ] Defer cutting, collating, and sequencing until the unified body of knowledge is complete
+- [ ] Cut and collate the unified curriculum body of knowledge
+    - [ ] Review adjacent and near-overlapping lessons without losing distinct teaching logic
+    - [ ] Combine material that teaches the same concept and remove unnecessary repetition
+    - [ ] Prioritize structural independence over breadth of vocabulary
+    - [ ] Preserve Spanish-specific translation and interference distinctions that cannot be inferred from general structure
+    - [ ] Prepare the curated body of knowledge for explicit prerequisite mapping and sequencing
 
 ## Completed migration record
 - [x] Migrate the complete Advanced course from Excalidraw into atomic Markdown curriculum files
@@ -179,6 +180,12 @@
 
 ### 2026-07-31
 
+- [x] Merge `/curriculum/foundations` and `/curriculum/advanced` into one definitive body of knowledge
+    - [x] Organize the canonical hierarchy around structure, vocabulary, and Spanish–English bridges
+    - [x] Preserve every unique migrated curriculum file and canonicalize 59 byte-identical cognate copies
+    - [x] Move structural, lexical, and bilingual material in separate reviewable Git checkpoints
+    - [x] Rebuild curriculum navigation so every atomic lesson is reachable from the master index
+    - [x] Verify zero broken links, duplicate-content groups, old hierarchy references, empty directories, or unindexed curriculum directories
 - [x] Complete the textbook-to-`/curriculum` migration
     - [x] Migrate Foundations and Advanced source material into atomic Markdown lessons
     - [x] Complete the bilingual high-frequency inclusion audit and add all owner-approved candidates
