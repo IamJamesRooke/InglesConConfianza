@@ -1,6 +1,9 @@
 # Backlog
 
-## Now
+> Current priorities and future work come first. Completed work is recorded below as a reverse-chronological timeline, with the exhaustive migration checklist preserved in the dated archive.
+
+## Current focus
+
 - [ ] Continue organizing and collating `/curriculum` into a clean canonical folder hierarchy before any other work
     - [ ] Review the complete curriculum tree and place every subject in the clearest conceptual home
     - [ ] Normalize folder names, category boundaries, and navigation so the hierarchy is easy to understand at a glance
@@ -14,108 +17,23 @@
     - [ ] Preserve Spanish-specific translation and interference distinctions that cannot be inferred from general structure
     - [ ] Prepare the curated body of knowledge for explicit prerequisite mapping and sequencing
 
-## Completed migration record
-- [x] Migrate the complete Advanced course from Excalidraw into atomic Markdown curriculum files
-    - [x] Preserve the advanced course's teaching logic and detailed contrasts
-    - [x] Complete the migration faithfully even if the resulting Advanced curriculum remains very large
-    - [x] Do not curate or reduce the Advanced material during migration
-    - [x] `/advanced/english-to-spanish-translations`
-        - [x] Establish the multiple-translation lesson format with **uses of even**
-        - [x] Add the combined **way-and-away** map, including atomic **away** movement, distance, absence, removal, and expression lessons
-        - [x] Add **uses of rather**
-        - [x] Add **uses of kind**, **pretty**, and **really**
-        - [x] Add the related **but/yet** and **one** groups
-        - [x] Add the focused **uses of so** lesson
-        - [x] Atomize the large multiple-use concept maps into numbered lesson folders with bilingual summaries and mastery phrases
-        - [x] Add numbered concept maps for **as**, **ever/never**, **such**, **while**, and **well**
-        - [x] Add numbered concept maps for **no/none/any**, **all/every**, **some**, **wise**, **else**, and **though**
-        - [x] Add numbered concept maps for **less/least**, **more/most**, **since**, **either/neither/whether**, and **just/only**
-        - [x] Add completeness-first numbered concept maps for **make**, **use**, **long**, **mean**, and **keep**
-        - [x] Add and pedagogically organize the complete **get** concept map across forms, obtaining, movement, becoming, phrasal verbs, causatives, passive voice, opportunity/obligation, and everyday replacements
-        - [x] Add the **on/off** concept map organized by inferability: core uses, core picture, predictable extensions, fixed connections, and whole expressions
-        - [x] Add the **in/out** concept map across core uses, physical movement, predictable extensions, fixed connections, whole expressions, and the productive **out-** prefix
-        - [x] Add the **up/down** concept map across direction, position, completion/creation, intensity/control, and whole expressions
-        - [x] Add the **over/under** concept map across physical paths and positions, comparisons with limits, productive prefixes, and whole expressions
-        - [x] Add the related **leave/left**, **right**, and **straight** maps, including translations of **dejar**, direction contrasts, and homophones
-        - [x] Add the **at** concept map with Spanish **en → at/in/on** confusion sets, core uses, verb connections, and the **at/in** beginning contrast
-        - [x] Add the **back** concept map across rear position, return movement, core-verb particles, whole expressions, and related contrasts
-        - [x] Add the interrelated **about**, **around**, and **of** concept maps, including Spanish **de** bridges and core-verb connections
-        - [x] Add the **from** concept map across source, origin, starting points, movement, fixed connections, and contrasts with **to/for/of/since/away**
-        - [x] Add the combined **by-and-through** map across proximity, deadlines, methods, interior paths, fixed connections, and the **through/threw/throw/thorough** sound family
-        - [x] Add the related **into/onto** and **up-to/down-on** compound maps across movement, transformation, maximums, responsibility, evaluation, and fixed connections
-        - [x] Add the complete **be** map across **ser/estar/tener/haber/ir/poder** translations, fixed connections, existential forms, constructions, and meaning-changing adjective contrasts
-        - [x] Add the **side** word-building map across **inside/outside**, **upside/downside**, front/back and other-side positions, **across**, and **beside/besides**
-        - [x] Add the related **inner/outer** and **upper/lower** family as a standalone map integrated into the **in/out** and **up/down** core lessons
-        - [x] Rename the English-first section from `/contextual-uses` and add a dedicated verb index
-        - [x] Organize the remaining English-first maps by space/direction, quantity/degree, clause-building connections, and reference/description/discourse
-        - [x] Add the approved high-frequency verb maps for **take, go, come, put, turn, set, run, work, call, play, hold, pass, miss, point**, and **deal/deal with**
-        - [x] Add the remaining approved English verb, function-word, fixed-construction, and interference candidates retained by the inclusion audit
-        - [x] Add cross-cutting English construction maps for **would**, particle placement, phrasal-verb separability, preposition stranding, and future time clauses
-        - [x] Add the remaining source words with context-dependent translations
-    - [x] `/advanced/spanish-to-english-translations`
-        - [x] Establish the Spanish-first translation-map structure
-        - [x] Add the complete **de** map across core translations, English restructuring, fixed verb connections, expressions, and confusion sets
-        - [x] Add the related **conocer** and **saber** maps, including **meet/know**, familiarity, learned ability, and **supe → found out**
-        - [x] Add the related **esperar** and **recordar** maps across **wait/hope/expect/wish** and **remember/remind/recall**
-        - [x] Add the **deber** map across obligation, advice, expectation, deduction, debt, and the related **own/owner/ownership** family
-        - [x] Add the related **importar** and **molestar** maps across **matter/care/mind/bother/disturb/annoy**, including the false cognate **molest**
-        - [x] Add the **pedir** map across **ask/ask for/order/request/borrow**, permissions, appointments, and applications
-        - [x] Add the related **pensar** and **creer** maps across **think/believe/plan/intend/consider** and their fixed connections
-        - [x] Add the complete **poder** map across ability, permission, possibility, opportunity, time forms, requests, and the **power** word family
-        - [x] Add the Spanish **se** map across reflexive, reciprocal, formal second-person, **le/les** replacement, and pronominal structures
-        - [x] Add standalone **para** and **por** maps across purpose, recipient, destination, cause, route, means, exchange, duration, rate, and agent
-        - [x] Add the approved high-frequency maps for **quedar, llevar, pasar, hacer, haber, dar, poner, salir, seguir, tocar, sacar, contar, tratar**, and **faltar**
-        - [x] Add the broader polysemous-verb set from **dejar, volver, llegar**, and **sentir** through **cargar, montar, lucir, extrañar, acordar**, and **resultar**
-        - [x] Add the approved Spanish function-word maps from **ya, todavía/aún**, and **apenas** through **pues, tras, entre**, and **hacia**
-        - [x] Add standalone Spanish-to-English construction maps for omitted subjects, **hay que**, duration/aspect, causatives, abstraction, and remaining quantity
-        - [x] Organize Spanish-first maps under verb, function-word/connector, and pronoun/pronominal-structure indexes
-    - [x] `/advanced/transformations`
-        - [x] Add the **in → inner** map for relative inner/outer and upper/lower forms
-        - [x] Add the **to → towards** map for the productive **-ward/-wards** directional family
-        - [x] Add the **north → northern** map across cardinal directions, descriptive **-ern** forms, directional **-ward(s)** forms, intermediate directions, and capitalization
-        - [x] Add isolated transformation maps anchored by **power → powerful/powerless → powerlessness**, **weak → weakness/weaken → weakening**, and **long → length → lengthen → lengthening**
-        - [x] Add the five-use **white → whitish** map and separate **al-**, **be-**, and **fore-** word-family maps
-        - [x] Move the noncritical Foundations word-building families into fifteen concrete Advanced transformation maps
-    - [x] `/advanced/verb-forms`
-        - [x] Add perception verbs with object + base verb versus object + **-ing**
-    - [x] `/advanced/false-friends-and-interference`
-        - [x] Add the approved false-friend and interference maps for current time, eventuality, sensitivity, career, success, compromise, argument, and negative-like degree
-    - [x] `/advanced/past-and-past-participle`
-        - [x] Migrate regular **-ed** pronunciation lessons for `/d/`, `/t/`, and `/ɪd/`
-        - [x] Move the complete section to the Advanced root
-        - [x] Unify the past and participle inventories into three-form lessons
-        - [x] Organize irregular verbs into exact-rhyme and vowel-shift micro-lessons
-        - [x] Add the complete modern head-verb and accepted-variant coverage index
-        - [x] Separate one-offs, meaning-dependent forms, regional alternatives, and uncommon current forms
-    - [x] `/advanced/english-to-spanish-translations/intensifiers`
-        - [x] Add the degree-and-quantity contrast across **very**, **too**, **so**, **that**, and **as**
-    - [x] `/advanced/english-to-spanish-translations/to-too-and-two`
-        - [x] Contrast full-infinitive, bare-infinitive, purpose, and prepositional **to**
-        - [x] Add destination, recipient, relationship, PING, and **used to** patterns
-        - [x] Add focused **too**, **two**, pronunciation, contraction, and homophone lessons
-        - [x] Atomize **too** and **two** into numbered lesson folders with bilingual summaries and mastery phrases
-    - [x] Audit the completed migration against the original Excalidraw material
-    - [x] Defer cross-course curation, final hierarchy, and application data-structure design until the Advanced migration is complete
-- [x] Audit high-frequency English and Spanish for possible curriculum omissions
-    - [x] Review approximately 2,000 frequent entries in each language
-    - [x] Prioritize ambiguous translations, structural words, productive constructions, and likely Spanish interference
-    - [x] Exclude ordinary direct vocabulary and transparent cognates from routine consideration
-    - [x] Preserve missing, partial, and uncertain findings in `/curriculum/inclusion-candidates.md` for owner review
+## Roadmap
 
-## Next
-- [ ] Build the initial MVP from three Foundations lessons
-    - [ ] Select three representative lessons exclusively from the completed Foundations curriculum
-    - [ ] Design the initial lesson data structure around those three Foundations lessons
+### Next
+
+- [ ] Build the initial MVP from three representative curriculum lessons
+    - [ ] Select three lessons from the organized and curated body of knowledge
+    - [ ] Design the initial lesson data structure around those three lessons
     - [ ] Build the smallest complete learning flow using those lessons
-    - [ ] Leave the migrated Advanced curriculum untouched during the initial MVP
+    - [ ] Leave the rest of the curriculum body of knowledge untouched during the initial MVP
     - [ ] Write the application product brief
 
-## Later
+### Later
 
-### Curriculum curation
+#### Curriculum curation
 
-- [ ] Curate the migrated curriculum
-    > After the MVP provides concrete evidence, develop the curation strategy while continuing to build the curriculum. Review the entire curriculum, remove material that is not necessary for the core course, and defer appropriate content to optional supplementary modules later in the program.
+- [ ] Continue evidence-based curriculum curation after the MVP
+    > Use evidence from the MVP to continue reducing material that is not necessary for the core course and defer appropriate content to optional supplementary modules later in the program.
     - [ ] Curate the cognates section
     - [ ] Reduce the pronouns section
     - [ ] Create a master curriculum inventory that consolidates the material from every curriculum Markdown file and classifies each item as critical, important, useful, low priority, or do not teach
@@ -132,7 +50,7 @@
     - [ ] Require mastery of the current section before allowing advancement
     - [ ] Allow students to guess vocabulary, but not grammar
 
-### Curriculum data and documentation
+#### Curriculum data and documentation
 
 - [ ] Convert the curriculum Markdown files into JSON objects
 - [ ] Create the repository `README.md`
@@ -153,7 +71,7 @@
     - [ ] Explain System 1 and System 2 from Kahneman and how examples build intuition
     - [ ] Explain the *flow* concept from Milhaly Csikszentmihalyi and how it applies to the course.
 
-### Product ideas
+#### Product ideas
 
 - [ ] Add per-question learner feedback
 - [ ] Add a word-learning heatmap that becomes greener with additional repetitions
@@ -166,11 +84,12 @@
 - [ ] Think about Creative Commons license, how to monitize but also allow others to fork the repo.
 - [ ] Have a model where, I create some lessons, and don't make any more until I get 100 completing it, then I make more again. This ensures I don't make a huge curriculum and app only to see that nobody uses it.
 
-### Security
+#### Security
 
 - [ ] Perform penetration testing using the [OWASP Web Security Testing Guide](https://github.com/OWASP/wstg/tree/master/document/4-Web_Application_Security_Testing)
 
-### Testing
+#### Testing
+
 - [ ] Create AI Test Users representing the typical student with mistakes they make.
     - memory-based as opposed to principles-based learners
     - assume IQ two standard deviations below normal
@@ -178,13 +97,14 @@
     - assume need for instant results
     - assume little grit, and won't push through when things get difficult
 
-### Scope Limitations
+#### Scope limitations
+
 > Deciding what the app will NOT be for now, to avoid feature creep.
 - Spanish-to-English only. No other languages. If others want to fork the repo, that's fine. And can give AGENT instructions explaining exactly how the method was made.
 
-## Done
+## Completed timeline
 
-### 2026-07-31
+### 2026-07-31 — Migration completed and curriculum unified
 
 - [x] Consolidate vocabulary and bilingual maps under `/curriculum/vocabulary`
     - [x] Organize vocabulary into `core`, `cognates`, `word-building`, `spanish-to-english`, and `english-to-spanish`
@@ -202,8 +122,15 @@
     - [x] Complete the bilingual high-frequency inclusion audit and add all owner-approved candidates
     - [x] Perform the final completeness review and explicitly consolidate conditional structures
     - [x] Establish the pre-merge checkpoint before unifying `/foundations` and `/advanced`
+    - [x] Finish and organize the approved English contextual maps, Spanish polysemous verbs, function words, constructions, and confusion sets
 
-### 2026-07-30
+### 2026-07-30 — Advanced expansion and structural consolidation
+
+- [x] Expand the Advanced bilingual and contextual-use curriculum
+    - [x] Add the **over/under, leave/left, right, straight, at, back, about, around, of, from, by/through, into/onto, up-to/down-on**, and **be** maps
+    - [x] Add the related Spanish maps for **de, conocer, saber, esperar, recordar, deber, importar, molestar, pedir, pensar, creer**, and **poder**
+    - [x] Reorganize word-building families and add the advanced past-and-participle inventories
+    - [x] Begin the bilingual high-frequency completeness audit
 
 - [x] Consolidate advanced structural material into the Foundations curriculum
     - [x] Expand `/foundations/verbs/verb-forms` around the six-form framework
@@ -219,7 +146,15 @@
     - [x] Cross-link the longer **lengthen** and **strengthen** transformation chains
     - [x] Distinguish noun-family **-th** from ordinal **-th**
 
-### 2026-07-28
+### 2026-07-29 — Advanced contextual maps
+
+- [x] Build the main Advanced English contextual-use system
+    - [x] Expand and atomize **to/too/two, as, ever/never, such, while, well, no/none/any, all/every, some, wise, else, though, less/least, more/most, since, either/neither/whether**, and **just/only**
+    - [x] Add complete maps for **make, use, long, mean, keep**, and **get**
+    - [x] Organize contextual uses into navigable translation-map folders
+    - [x] Add the **on/off, in/out**, and **up/down** concept maps
+
+### 2026-07-28 — Foundations migration
 
 - [x] Migrate the complete Foundation course from Excalidraw into atomic Markdown curriculum files
     - [x] `/foundations/pronouns` and the general curriculum template
@@ -306,8 +241,105 @@
         - [x] Copy verb-focused cognate lessons into the verb curriculum
         - [x] Preserve direct, spelling, form, word-family, memory, and confusion groups
         - [x] Create a master high-frequency selected-verb inventory
+- [x] Begin the Advanced course migration
+    - [x] Establish the contextual translation-map format with **even**
+    - [x] Add the first **way/away** and **rather** concept maps
 
-### 2026-07-27
+### 2026-07-27 — Project setup
 
 - [x] Created repository and curriculum `AGENTS.md` guidance
 - [x] Added the Excalidraw file containing the teaching points for the Foundations and Advanced curricula, along with the 2023 instruction manual, to `/private/` as source material for the application
+
+## Detailed migration archive
+
+### 2026-07-28 → 2026-07-31 — Advanced course migration
+
+- [x] Migrate the complete Advanced course from Excalidraw into atomic Markdown curriculum files
+    - [x] Preserve the advanced course's teaching logic and detailed contrasts
+    - [x] Complete the migration faithfully even if the resulting Advanced curriculum remains very large
+    - [x] Do not curate or reduce the Advanced material during migration
+    - [x] `/advanced/english-to-spanish-translations`
+        - [x] Establish the multiple-translation lesson format with **uses of even**
+        - [x] Add the combined **way-and-away** map, including atomic **away** movement, distance, absence, removal, and expression lessons
+        - [x] Add **uses of rather**
+        - [x] Add **uses of kind**, **pretty**, and **really**
+        - [x] Add the related **but/yet** and **one** groups
+        - [x] Add the focused **uses of so** lesson
+        - [x] Atomize the large multiple-use concept maps into numbered lesson folders with bilingual summaries and mastery phrases
+        - [x] Add numbered concept maps for **as**, **ever/never**, **such**, **while**, and **well**
+        - [x] Add numbered concept maps for **no/none/any**, **all/every**, **some**, **wise**, **else**, and **though**
+        - [x] Add numbered concept maps for **less/least**, **more/most**, **since**, **either/neither/whether**, and **just/only**
+        - [x] Add completeness-first numbered concept maps for **make**, **use**, **long**, **mean**, and **keep**
+        - [x] Add and pedagogically organize the complete **get** concept map across forms, obtaining, movement, becoming, phrasal verbs, causatives, passive voice, opportunity/obligation, and everyday replacements
+        - [x] Add the **on/off** concept map organized by inferability: core uses, core picture, predictable extensions, fixed connections, and whole expressions
+        - [x] Add the **in/out** concept map across core uses, physical movement, predictable extensions, fixed connections, whole expressions, and the productive **out-** prefix
+        - [x] Add the **up/down** concept map across direction, position, completion/creation, intensity/control, and whole expressions
+        - [x] Add the **over/under** concept map across physical paths and positions, comparisons with limits, productive prefixes, and whole expressions
+        - [x] Add the related **leave/left**, **right**, and **straight** maps, including translations of **dejar**, direction contrasts, and homophones
+        - [x] Add the **at** concept map with Spanish **en → at/in/on** confusion sets, core uses, verb connections, and the **at/in** beginning contrast
+        - [x] Add the **back** concept map across rear position, return movement, core-verb particles, whole expressions, and related contrasts
+        - [x] Add the interrelated **about**, **around**, and **of** concept maps, including Spanish **de** bridges and core-verb connections
+        - [x] Add the **from** concept map across source, origin, starting points, movement, fixed connections, and contrasts with **to/for/of/since/away**
+        - [x] Add the combined **by-and-through** map across proximity, deadlines, methods, interior paths, fixed connections, and the **through/threw/throw/thorough** sound family
+        - [x] Add the related **into/onto** and **up-to/down-on** compound maps across movement, transformation, maximums, responsibility, evaluation, and fixed connections
+        - [x] Add the complete **be** map across **ser/estar/tener/haber/ir/poder** translations, fixed connections, existential forms, constructions, and meaning-changing adjective contrasts
+        - [x] Add the **side** word-building map across **inside/outside**, **upside/downside**, front/back and other-side positions, **across**, and **beside/besides**
+        - [x] Add the related **inner/outer** and **upper/lower** family as a standalone map integrated into the **in/out** and **up/down** core lessons
+        - [x] Rename the English-first section from `/contextual-uses` and add a dedicated verb index
+        - [x] Organize the remaining English-first maps by space/direction, quantity/degree, clause-building connections, and reference/description/discourse
+        - [x] Add the approved high-frequency verb maps for **take, go, come, put, turn, set, run, work, call, play, hold, pass, miss, point**, and **deal/deal with**
+        - [x] Add the remaining approved English verb, function-word, fixed-construction, and interference candidates retained by the inclusion audit
+        - [x] Add cross-cutting English construction maps for **would**, particle placement, phrasal-verb separability, preposition stranding, and future time clauses
+        - [x] Add the remaining source words with context-dependent translations
+    - [x] `/advanced/spanish-to-english-translations`
+        - [x] Establish the Spanish-first translation-map structure
+        - [x] Add the complete **de** map across core translations, English restructuring, fixed verb connections, expressions, and confusion sets
+        - [x] Add the related **conocer** and **saber** maps, including **meet/know**, familiarity, learned ability, and **supe → found out**
+        - [x] Add the related **esperar** and **recordar** maps across **wait/hope/expect/wish** and **remember/remind/recall**
+        - [x] Add the **deber** map across obligation, advice, expectation, deduction, debt, and the related **own/owner/ownership** family
+        - [x] Add the related **importar** and **molestar** maps across **matter/care/mind/bother/disturb/annoy**, including the false cognate **molest**
+        - [x] Add the **pedir** map across **ask/ask for/order/request/borrow**, permissions, appointments, and applications
+        - [x] Add the related **pensar** and **creer** maps across **think/believe/plan/intend/consider** and their fixed connections
+        - [x] Add the complete **poder** map across ability, permission, possibility, opportunity, time forms, requests, and the **power** word family
+        - [x] Add the Spanish **se** map across reflexive, reciprocal, formal second-person, **le/les** replacement, and pronominal structures
+        - [x] Add standalone **para** and **por** maps across purpose, recipient, destination, cause, route, means, exchange, duration, rate, and agent
+        - [x] Add the approved high-frequency maps for **quedar, llevar, pasar, hacer, haber, dar, poner, salir, seguir, tocar, sacar, contar, tratar**, and **faltar**
+        - [x] Add the broader polysemous-verb set from **dejar, volver, llegar**, and **sentir** through **cargar, montar, lucir, extrañar, acordar**, and **resultar**
+        - [x] Add the approved Spanish function-word maps from **ya, todavía/aún**, and **apenas** through **pues, tras, entre**, and **hacia**
+        - [x] Add standalone Spanish-to-English construction maps for omitted subjects, **hay que**, duration/aspect, causatives, abstraction, and remaining quantity
+        - [x] Organize Spanish-first maps under verb, function-word/connector, and pronoun/pronominal-structure indexes
+    - [x] `/advanced/transformations`
+        - [x] Add the **in → inner** map for relative inner/outer and upper/lower forms
+        - [x] Add the **to → towards** map for the productive **-ward/-wards** directional family
+        - [x] Add the **north → northern** map across cardinal directions, descriptive **-ern** forms, directional **-ward(s)** forms, intermediate directions, and capitalization
+        - [x] Add isolated transformation maps anchored by **power → powerful/powerless → powerlessness**, **weak → weakness/weaken → weakening**, and **long → length → lengthen → lengthening**
+        - [x] Add the five-use **white → whitish** map and separate **al-**, **be-**, and **fore-** word-family maps
+        - [x] Move the noncritical Foundations word-building families into fifteen concrete Advanced transformation maps
+    - [x] `/advanced/verb-forms`
+        - [x] Add perception verbs with object + base verb versus object + **-ing**
+    - [x] `/advanced/false-friends-and-interference`
+        - [x] Add the approved false-friend and interference maps for current time, eventuality, sensitivity, career, success, compromise, argument, and negative-like degree
+    - [x] `/advanced/past-and-past-participle`
+        - [x] Migrate regular **-ed** pronunciation lessons for `/d/`, `/t/`, and `/ɪd/`
+        - [x] Move the complete section to the Advanced root
+        - [x] Unify the past and participle inventories into three-form lessons
+        - [x] Organize irregular verbs into exact-rhyme and vowel-shift micro-lessons
+        - [x] Add the complete modern head-verb and accepted-variant coverage index
+        - [x] Separate one-offs, meaning-dependent forms, regional alternatives, and uncommon current forms
+    - [x] `/advanced/english-to-spanish-translations/intensifiers`
+        - [x] Add the degree-and-quantity contrast across **very**, **too**, **so**, **that**, and **as**
+    - [x] `/advanced/english-to-spanish-translations/to-too-and-two`
+        - [x] Contrast full-infinitive, bare-infinitive, purpose, and prepositional **to**
+        - [x] Add destination, recipient, relationship, PING, and **used to** patterns
+        - [x] Add focused **too**, **two**, pronunciation, contraction, and homophone lessons
+        - [x] Atomize **too** and **two** into numbered lesson folders with bilingual summaries and mastery phrases
+    - [x] Audit the completed migration against the original Excalidraw material
+    - [x] Defer cross-course curation, final hierarchy, and application data-structure design until the Advanced migration is complete
+
+### 2026-07-30 → 2026-07-31 — High-frequency completeness audit
+
+- [x] Audit high-frequency English and Spanish for possible curriculum omissions
+    - [x] Review approximately 2,000 frequent entries in each language
+    - [x] Prioritize ambiguous translations, structural words, productive constructions, and likely Spanish interference
+    - [x] Exclude ordinary direct vocabulary and transparent cognates from routine consideration
+    - [x] Preserve missing, partial, and uncertain findings in `/curriculum/inclusion-candidates.md` for owner review
