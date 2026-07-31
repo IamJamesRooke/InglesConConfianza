@@ -1,11 +1,18 @@
 # Backlog
 
 ## Now
-- [ ] Migrate the complete Advanced course from Excalidraw into atomic Markdown curriculum files
-    - [ ] Preserve the advanced course's teaching logic and detailed contrasts
-    - [ ] Complete the migration faithfully even if the resulting Advanced curriculum remains very large
-    - [ ] Do not curate or reduce the Advanced material during migration
-    - [ ] `/advanced/english-to-spanish-translations`
+- [ ] Merge `/curriculum/foundations` and `/curriculum/advanced` into one common body of knowledge
+    - [ ] Preserve this pre-merge checkpoint before moving or combining curriculum files
+    - [ ] Reconcile overlapping lessons without cutting teaching content during the merge
+    - [ ] Update curriculum indexes and internal links for the unified hierarchy
+    - [ ] Defer cutting, collating, and sequencing until the unified body of knowledge is complete
+
+## Completed migration record
+- [x] Migrate the complete Advanced course from Excalidraw into atomic Markdown curriculum files
+    - [x] Preserve the advanced course's teaching logic and detailed contrasts
+    - [x] Complete the migration faithfully even if the resulting Advanced curriculum remains very large
+    - [x] Do not curate or reduce the Advanced material during migration
+    - [x] `/advanced/english-to-spanish-translations`
         - [x] Establish the multiple-translation lesson format with **uses of even**
         - [x] Add the combined **way-and-away** map, including atomic **away** movement, distance, absence, removal, and expression lessons
         - [x] Add **uses of rather**
@@ -37,7 +44,7 @@
         - [x] Add the approved high-frequency verb maps for **take, go, come, put, turn, set, run, work, call, play, hold, pass, miss, point**, and **deal/deal with**
         - [x] Add the remaining approved English verb, function-word, fixed-construction, and interference candidates retained by the inclusion audit
         - [x] Add cross-cutting English construction maps for **would**, particle placement, phrasal-verb separability, preposition stranding, and future time clauses
-        - [ ] Add the remaining source words with context-dependent translations
+        - [x] Add the remaining source words with context-dependent translations
     - [x] `/advanced/spanish-to-english-translations`
         - [x] Establish the Spanish-first translation-map structure
         - [x] Add the complete **de** map across core translations, English restructuring, fixed verb connections, expressions, and confusion sets
@@ -55,7 +62,7 @@
         - [x] Add the approved Spanish function-word maps from **ya, todavía/aún**, and **apenas** through **pues, tras, entre**, and **hacia**
         - [x] Add standalone Spanish-to-English construction maps for omitted subjects, **hay que**, duration/aspect, causatives, abstraction, and remaining quantity
         - [x] Organize Spanish-first maps under verb, function-word/connector, and pronoun/pronominal-structure indexes
-    - [ ] `/advanced/transformations`
+    - [x] `/advanced/transformations`
         - [x] Add the **in → inner** map for relative inner/outer and upper/lower forms
         - [x] Add the **to → towards** map for the productive **-ward/-wards** directional family
         - [x] Add the **north → northern** map across cardinal directions, descriptive **-ern** forms, directional **-ward(s)** forms, intermediate directions, and capitalization
@@ -80,8 +87,8 @@
         - [x] Add destination, recipient, relationship, PING, and **used to** patterns
         - [x] Add focused **too**, **two**, pronunciation, contraction, and homophone lessons
         - [x] Atomize **too** and **two** into numbered lesson folders with bilingual summaries and mastery phrases
-    - [ ] Audit the completed migration against the original Excalidraw material
-    - [ ] Defer cross-course curation, final hierarchy, and application data-structure design until the Advanced migration is complete
+    - [x] Audit the completed migration against the original Excalidraw material
+    - [x] Defer cross-course curation, final hierarchy, and application data-structure design until the Advanced migration is complete
 - [x] Audit high-frequency English and Spanish for possible curriculum omissions
     - [x] Review approximately 2,000 frequent entries in each language
     - [x] Prioritize ambiguous translations, structural words, productive constructions, and likely Spanish interference
@@ -169,6 +176,14 @@
 - Spanish-to-English only. No other languages. If others want to fork the repo, that's fine. And can give AGENT instructions explaining exactly how the method was made.
 
 ## Done
+
+### 2026-07-31
+
+- [x] Complete the textbook-to-`/curriculum` migration
+    - [x] Migrate Foundations and Advanced source material into atomic Markdown lessons
+    - [x] Complete the bilingual high-frequency inclusion audit and add all owner-approved candidates
+    - [x] Perform the final completeness review and explicitly consolidate conditional structures
+    - [x] Establish the pre-merge checkpoint before unifying `/foundations` and `/advanced`
 
 ### 2026-07-30
 
