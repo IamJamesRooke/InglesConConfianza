@@ -1,6 +1,12 @@
 # Backlog
 
 ## Now
+- [ ] Continue organizing and collating `/curriculum` into a clean canonical folder hierarchy before any other work
+    - [ ] Review the complete curriculum tree and place every subject in the clearest conceptual home
+    - [ ] Normalize folder names, category boundaries, and navigation so the hierarchy is easy to understand at a glance
+    - [ ] Consolidate misplaced or overlapping branches while preserving distinct lessons and teaching logic
+    - [ ] Keep reorganizing until the curriculum looks coherent, clean, and intentionally designed rather than merely migrated
+    - [ ] Finish the canonical hierarchy before designing the database schema so the schema can follow the curriculum naturally
 - [ ] Cut and collate the unified curriculum body of knowledge
     - [ ] Review adjacent and near-overlapping lessons without losing distinct teaching logic
     - [ ] Combine material that teaches the same concept and remove unnecessary repetition
