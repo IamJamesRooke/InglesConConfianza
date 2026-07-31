@@ -20,10 +20,10 @@ The pronunciation of regular **-ed** depends on the final sound of the base verb
 
 | Group | Model |
 |---|---|
-| [final voiced sound + `/d/`](-d ending/README.md) | **call → called** |
-| [final voiceless sound + `/t/`](-t ending/README.md) | **help → helped** |
-| [final `/d/` + `/ɪd/`](-ded ending/README.md) | **need → needed** |
-| [final `/t/` + `/ɪd/`](-ted ending/README.md) | **want → wanted** |
+| [final voiced sound + `/d/`](<-d ending/README.md>) | **call → called** |
+| [final voiceless sound + `/t/`](<-t ending/README.md>) | **help → helped** |
+| [final `/d/` + `/ɪd/`](<-ded ending/README.md>) | **need → needed** |
+| [final `/t/` + `/ɪd/`](<-ted ending/README.md>) | **want → wanted** |
 
 ## Irregular memory families
 

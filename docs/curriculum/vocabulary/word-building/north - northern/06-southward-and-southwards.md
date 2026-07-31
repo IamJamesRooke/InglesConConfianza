@@ -8,4 +8,4 @@
 
 Use **southward** before a noun: **the southward route**. For direction after a verb, both **southward** and **southwards** are standard.
 
-See the productive [**-ward/-wards** transformation](../to - towards/README.md).
+See the productive [**-ward/-wards** transformation](<../to - towards/README.md>).

@@ -18,4 +18,4 @@ The suffix **-en** can turn certain short descriptions into verbs meaning “bec
 
 This pattern is limited to established words: English has **weaken**, but not every description accepts **-en**.
 
-The related but less direct families **long → length → lengthen** and **strong → strength → strengthen** have their own [**Long → Length → Lengthen → Lengthening**](../long - length - lengthen - lengthening/README.md) map.
+The related but less direct families **long → length → lengthen** and **strong → strength → strengthen** have their own [**Long → Length → Lengthen → Lengthening**](<../long - length - lengthen - lengthening/README.md>) map.

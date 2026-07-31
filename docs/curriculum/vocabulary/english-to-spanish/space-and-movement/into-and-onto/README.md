@@ -21,5 +21,5 @@
 
 - [**Get In** and **Get Into** a Car](../../verbs/get/movement/05-get-in-and-into-a-car.md)
 - [**Get On** and **Get Onto** Public Transport](../../verbs/get/movement/07-get-on-and-onto-public-transport.md)
-- [Core uses of **In** and **Out**](../../space-direction-and-movement/in-and-out/README.md)
-- [Core uses of **On** and **Off**](../../space-direction-and-movement/on-and-off/README.md)
+- [Core uses of **In** and **Out**](../in-and-out/README.md)
+- [Core uses of **On** and **Off**](../on-and-off/README.md)

@@ -24,7 +24,7 @@ These Markdown files are human-readable curriculum specifications and the curren
 
 ## English-to-Spanish words and particles
 
-- Put high-frequency words whose meaning or function changes substantially with context under `/spanish-english-bridges/english-to-spanish/`; do not force them into a single part-of-speech folder merely because one use is a preposition, adverb, adjective, connector, or phrasal-verb particle.
+- Put high-frequency words whose meaning or function changes substantially with context under `/vocabulary/english-to-spanish/`; do not force them into a single part-of-speech folder merely because one use is a preposition, adverb, adjective, connector, or phrasal-verb particle.
 - For multi-function words such as **on** and **off**, organize lessons by how much meaning a learner can infer: **core uses**, a visible **core picture**, **predictable extensions**, **fixed connections**, then **whole expressions** that must be memorized.
 - Teach the reusable physical or conceptual image before idiomatic meanings. Clearly say when the image remains helpful and when context or memorization must carry the meaning.
 - Keep ordinary preposition uses separate from phrasal verbs. Keep fixed combinations such as **depend on** or **plan on doing** separate from expressions whose complete meaning is not predictable, such as **put off** or **show off**.

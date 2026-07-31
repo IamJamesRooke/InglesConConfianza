@@ -18,4 +18,4 @@ use
        useless
 ```
 
-For a compact introduction to the pattern, see [**Care → Careful/Careless**](../care - careful - careless/README.md).
+For a compact introduction to the pattern, see [**Care → Careful/Careless**](<../care - careful - careless/README.md>).

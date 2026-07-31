@@ -12,4 +12,4 @@ For movement from one side to the other, use **across** without **from**:
 |---|---|
 | Cruzamos la calle para llegar al banco. | We walked across the street to get to the bank. |
 
-For an interior path versus a path over an area or surface, see [**Through** vs **Across**](../../space-direction-and-movement/by-and-through/confusion-sets/04-through-vs-across.md).
+For an interior path versus a path over an area or surface, see [**Through** vs **Across**](../by-and-through/confusion-sets/04-through-vs-across.md).

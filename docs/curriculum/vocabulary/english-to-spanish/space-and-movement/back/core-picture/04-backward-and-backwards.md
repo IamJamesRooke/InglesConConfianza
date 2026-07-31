@@ -12,4 +12,4 @@ Only **backward** normally goes before a noun: **a backward movement**, not *a b
 |---|---|
 | Mire atrás antes de caminar hacia atrás. | Look back before walking backward. |
 
-See the productive transformation under [**To → Towards**](../../../../../vocabulary/transformations/to - towards/07-backward-and-backwards.md).
+See the productive transformation under [**To → Towards**](<../../../../word-building/to - towards/07-backward-and-backwards.md>).

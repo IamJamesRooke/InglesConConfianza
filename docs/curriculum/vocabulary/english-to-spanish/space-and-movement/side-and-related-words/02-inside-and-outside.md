@@ -12,6 +12,6 @@ The same words can describe position:
 |---|---|
 | Los niños están adentro y los perros están afuera. | The children are inside, and the dogs are outside. |
 
-For the larger contrast among **in, inside, out**, and **outside**, see [**In/Inside** and **Out/Outside**](../../space-direction-and-movement/in-and-out/core-uses/01-inside-and-outside.md).
+For the larger contrast among **in, inside, out**, and **outside**, see [**In/Inside** and **Out/Outside**](../in-and-out/core-uses/01-inside-and-outside.md).
 
-For parts relative to a center, see [**Inner, Outer, Upper**, and **Lower**](../../../../vocabulary/transformations/in - inner/README.md).
+For parts relative to a center, see [**Inner, Outer, Upper**, and **Lower**](<../../../word-building/in - inner/README.md>).

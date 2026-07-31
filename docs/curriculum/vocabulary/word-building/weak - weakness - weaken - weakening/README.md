@@ -25,7 +25,7 @@ weak ───
 | [**Whiten**](08-whiten.md) | **white + -en** |
 | [**Whitening** and **Whitened**](09-whitening-and-whitened.md) | forms of **whiten** |
 | [**Whitener**](10-whitener.md) | a product that whitens |
-| [Established **White** Compounds](white compounds/README.md) | lexical extensions outside the suffix pattern |
+| [Established **White** Compounds](<white compounds/README.md>) | lexical extensions outside the suffix pattern |
 
 ## Mastery Phrase
 

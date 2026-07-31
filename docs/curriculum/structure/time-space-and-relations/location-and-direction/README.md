@@ -12,7 +12,7 @@ This folder contains the reusable language needed to ask where something is, des
 | vertical position | **above / below** |
 | basic directions | **left / right / straight ahead** |
 
-The separate [minimal place vocabulary](../../../vocabulary/everyday-domains/places/minimal-place-vocabulary.md) remains deliberately limited. The focus here is the reusable location language around those nouns.
+The separate [minimal place vocabulary](../../../vocabulary/core/everyday/places/minimal-place-vocabulary.md) remains deliberately limited. The focus here is the reusable location language around those nouns.
 
 ## Directory Index
 

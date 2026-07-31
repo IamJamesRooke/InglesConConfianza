@@ -12,4 +12,4 @@ In many contexts, English naturally shortens these expressions to **the front** 
 |---|---|
 | La entrada está en la parte delantera del edificio y el jardín está en la parte de atrás. | The entrance is at the front of the building, and the garden is at the back. |
 
-For the larger physical contrast, see [The **Back** and the **Front**](../../space-direction-and-movement/back/core-picture/01-the-back-and-the-front.md).
+For the larger physical contrast, see [The **Back** and the **Front**](../back/core-picture/01-the-back-and-the-front.md).

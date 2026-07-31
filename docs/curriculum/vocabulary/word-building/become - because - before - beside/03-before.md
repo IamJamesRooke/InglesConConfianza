@@ -10,4 +10,4 @@
 - **before signing**
 - **before you sign**
 
-For **beforehand**, see the related [time expression](../to - towards/11-beforehand.md).
+For **beforehand**, see the related [time expression](<../to - towards/11-beforehand.md>).

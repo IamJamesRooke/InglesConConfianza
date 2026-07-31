@@ -21,7 +21,7 @@
 
 ## Related Lessons Elsewhere
 
-- [**By Way Of**](../../space-direction-and-movement/way-and-away/16-by-way-of.md)
-- [**By the Way**](../../space-direction-and-movement/way-and-away/17-by-the-way.md)
-- [Pronunciation: **Though, Thought, Through**, and **Tough**](../../connections-and-clause-building/though/13-pronunciation-though-thought-through-tough.md)
+- [**By Way Of**](../way-and-away/16-by-way-of.md)
+- [**By the Way**](../way-and-away/17-by-the-way.md)
+- [Pronunciation: **Though, Thought, Through**, and **Tough**](../../connectors/though/13-pronunciation-though-thought-through-tough.md)
 - [**Made Of, Made From**, and **Made By**](../../verbs/make/08-made-of-from-and-by.md)

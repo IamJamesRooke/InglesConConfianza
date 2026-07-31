@@ -14,4 +14,4 @@ Compare the base position and the direction:
 |---|---|
 | Mire adentro y luego dé un paso hacia adentro. | Look inside, and then step inward. |
 
-See the productive transformation under [**To → Towards**](../../../../../vocabulary/transformations/to - towards/02-inward-and-inwards.md).
+See the productive transformation under [**To → Towards**](<../../../../word-building/to - towards/02-inward-and-inwards.md>).

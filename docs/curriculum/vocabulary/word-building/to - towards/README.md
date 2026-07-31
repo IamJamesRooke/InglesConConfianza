@@ -17,7 +17,7 @@
 | [**Beforehand**](11-beforehand.md) | Prepárese de antemano. | Prepare beforehand. |
 | [**Onward** and **Onwards**](12-onward-and-onwards.md) | Seguimos adelante. | We continued onward. |
 | [**Homeward** and **Homewards**](13-homeward-and-homewards.md) | Nos dirigimos hacia casa. | We headed homeward. |
-| [Compass Directions with **-ward(s)**](../north - northern/README.md) | La tormenta avanzó hacia el norte y luego hacia el este. | The storm moved northward and then eastward. |
+| [Compass Directions with **-ward(s)**](<../north - northern/README.md>) | La tormenta avanzó hacia el norte y luego hacia el este. | The storm moved northward and then eastward. |
 
 ## Productive Pattern
 

@@ -1,4 +1,4 @@
-# English-to-Spanish Translation Maps
+# English-to-Spanish Vocabulary Maps
 
 > **Even a pretty familiar word can work in a rather different way depending on the kind of sentence.**
 
@@ -7,12 +7,10 @@ These lessons organize high-frequency English words whose Spanish translation ch
 | Category | Scope |
 |---|---|
 | [Verbs](verbs/README.md) | Verbs whose Spanish equivalent changes with meaning, structure, or particle. |
-| [Space, Direction, and Movement](space-direction-and-movement/README.md) | Position, paths, orientation, destinations, movement, and related particles. |
-| [Quantity, Degree, and Scope](quantity-degree-and-scope/README.md) | Amount, comparison, intensity, frequency, limitation, and emphasis. |
-| [Connections and Clause Building](connections-and-clause-building/README.md) | Relationships between words, ideas, alternatives, reasons, results, and clauses. |
-| [Reference, Description, and Discourse](reference-description-and-discourse/README.md) | Reference words, classification, evaluation, manner, and conversational framing. |
+| [Space and Movement](space-and-movement/README.md) | Position, paths, orientation, destinations, movement, and related particles. |
+| [Quantity and Degree](quantity-and-degree/README.md) | Amount, comparison, intensity, frequency, limitation, and emphasis. |
+| [Connectors](connectors/README.md) | Relationships between words, ideas, alternatives, reasons, results, and clauses. |
+| [Reference and Discourse](reference-and-discourse/README.md) | Reference words, classification, evaluation, manner, and conversational framing. |
+| [Pronouns](pronouns/README.md) | English reference forms whose natural Spanish equivalent depends on role and context. |
 | [Constructions](constructions/README.md) | Cross-cutting English patterns involving modal meaning, particles, objects, and preposition placement. |
-
-## Directory Index
-
-- [English-to-Spanish Pronouns and Reference](pronouns-and-reference/README.md)
+| [Confusion Sets](confusion-sets/README.md) | False friends, misleading similarities, and recurring transfer errors. |

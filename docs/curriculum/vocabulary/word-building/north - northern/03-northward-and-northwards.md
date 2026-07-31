@@ -8,4 +8,4 @@
 
 Use **northward** before a noun: **the northward route**. For direction after a verb, both **northward** and **northwards** are standard.
 
-See the productive [**-ward/-wards** transformation](../to - towards/README.md).
+See the productive [**-ward/-wards** transformation](<../to - towards/README.md>).

@@ -8,4 +8,4 @@
 
 Use **westward** before a noun: **the westward route**. For direction after a verb, both **westward** and **westwards** are standard.
 
-See the productive [**-ward/-wards** transformation](../to - towards/README.md).
+See the productive [**-ward/-wards** transformation](<../to - towards/README.md>).

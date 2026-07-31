@@ -10,4 +10,4 @@
 |---|---|
 | Llámeme antes de salir y avíseme de antemano. | Call me before leaving, and let me know beforehand. |
 
-See the atomic [**Beforehand** lesson](../to - towards/11-beforehand.md).
+See the atomic [**Beforehand** lesson](<../to - towards/11-beforehand.md>).

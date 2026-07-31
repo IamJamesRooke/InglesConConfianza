@@ -1,4 +1,4 @@
-# False Friends and Interference Maps
+# English-to-Spanish Confusion Sets
 
 | Map | Core contrast |
 |---|---|

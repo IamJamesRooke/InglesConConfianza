@@ -180,8 +180,13 @@
 
 ### 2026-07-31
 
+- [x] Consolidate vocabulary and bilingual maps under `/curriculum/vocabulary`
+    - [x] Organize vocabulary into `core`, `cognates`, `word-building`, `spanish-to-english`, and `english-to-spanish`
+    - [x] Route standalone interference lessons into English-to-Spanish confusion sets instead of preserving a separate interference branch
+    - [x] Shorten directional category names while preserving every atomic lesson
+    - [x] Rebuild navigation and verify the reorganized body of knowledge before curation
 - [x] Merge `/curriculum/foundations` and `/curriculum/advanced` into one definitive body of knowledge
-    - [x] Organize the canonical hierarchy around structure, vocabulary, and Spanish–English bridges
+    - [x] Organize the initial canonical hierarchy around structure, vocabulary, and Spanish–English bridges before the bridge material was consolidated under vocabulary
     - [x] Preserve every unique migrated curriculum file and canonicalize 59 byte-identical cognate copies
     - [x] Move structural, lexical, and bilingual material in separate reviewable Git checkpoints
     - [x] Rebuild curriculum navigation so every atomic lesson is reachable from the master index

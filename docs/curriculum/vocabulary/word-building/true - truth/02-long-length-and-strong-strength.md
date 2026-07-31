@@ -10,4 +10,4 @@ Both families change their internal vowel and end in **-ngth**:
 - **long → length**
 - **strong → strength**
 
-Learn the spelling and pronunciation as complete families. Their change verbs continue into **lengthen** and **strengthen** in the [**Long → Length → Lengthen → Lengthening**](../long - length - lengthen - lengthening/README.md) map.
+Learn the spelling and pronunciation as complete families. Their change verbs continue into **lengthen** and **strengthen** in the [**Long → Length → Lengthen → Lengthening**](<../long - length - lengthen - lengthening/README.md>) map.

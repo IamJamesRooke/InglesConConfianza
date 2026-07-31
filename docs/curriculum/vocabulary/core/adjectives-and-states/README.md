@@ -7,7 +7,7 @@ This area contains the small adjective vocabulary reused throughout structural e
 | [Core Vocabulary](core-vocabulary/) | Accuracy, evaluation, color, size, age, speed, price, possibility, and importance. |
 | [States](states/) | Readiness, availability, safety, hunger, thirst, temperature, and related conditions. |
 
-Adjective position, adverb formation, comparison, and intensification belong to [Description and Comparison](../../structure/description-and-comparison/README.md).
+Adjective position, adverb formation, comparison, and intensification belong to [Description and Comparison](../../../structure/description-and-comparison/README.md).
 
 ## Directory Index
 

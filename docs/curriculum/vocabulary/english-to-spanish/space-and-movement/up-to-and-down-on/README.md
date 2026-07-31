@@ -18,5 +18,5 @@ The combinations **up to** and **down on** preserve vertical imagery in some use
 
 ## Related Lessons Elsewhere
 
-- [Earlier **Up To** and **Down To** overview](../../space-direction-and-movement/up-and-down/whole-expressions/07-up-to-and-down-to.md)
-- [Earlier **Look Up To** and **Look Down On** contrast](../../space-direction-and-movement/up-and-down/whole-expressions/06-look-up-to-and-look-down-on.md)
+- [Earlier **Up To** and **Down To** overview](../up-and-down/whole-expressions/07-up-to-and-down-to.md)
+- [Earlier **Look Up To** and **Look Down On** contrast](../up-and-down/whole-expressions/06-look-up-to-and-look-down-on.md)

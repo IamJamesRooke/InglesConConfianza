@@ -6,4 +6,4 @@
 
 The visible parts—**up + side** and **down + side**—make the contrast memorable. In this common figurative pair, **upside** means **advantage** and **downside** means **disadvantage**.
 
-For the larger **up/down** map, see [**Upside** and **Downside**](../../space-direction-and-movement/up-and-down/core-uses/04-upside-and-downside.md).
+For the larger **up/down** map, see [**Upside** and **Downside**](../up-and-down/core-uses/04-upside-and-downside.md).

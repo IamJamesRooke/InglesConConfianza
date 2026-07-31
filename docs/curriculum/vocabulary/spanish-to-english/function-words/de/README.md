@@ -20,6 +20,6 @@ Spanish **de** does not have one automatic English translation. First identify t
 
 ## Related English-Word Maps
 
-- [Contextual uses of **of**](../../../english-to-spanish/connections-and-clause-building/of/README.md)
-- [Contextual uses of **about**](../../../english-to-spanish/space-direction-and-movement/about/README.md)
+- [Contextual uses of **of**](../../../english-to-spanish/connectors/of/README.md)
+- [Contextual uses of **about**](../../../english-to-spanish/space-and-movement/about/README.md)
 - [Foundation translations of **de**](../preposition-bridges/translations-of-de.md)

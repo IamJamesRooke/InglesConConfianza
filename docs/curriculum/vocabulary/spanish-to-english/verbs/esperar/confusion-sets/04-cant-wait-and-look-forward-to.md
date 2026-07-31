@@ -6,4 +6,4 @@
 
 Both express eager anticipation. **Can't wait to + verb** is enthusiastic and informal. **Look forward to + noun/-ing** is neutral and also common in professional messages.
 
-See the fuller [**can't wait** lesson](../../../../english-to-spanish/space-direction-and-movement/straight/05-cant-wait.md).
+See the fuller [**can't wait** lesson](../../../../english-to-spanish/space-and-movement/straight/05-cant-wait.md).
