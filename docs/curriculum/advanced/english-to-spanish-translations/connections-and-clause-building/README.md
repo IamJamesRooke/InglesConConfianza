@@ -1,12 +1,14 @@
 # Connections and Clause Building
 
-These English-first maps are grouped by their main teaching function, even when an individual word can serve several parts of speech.
+Maps for relationships between words, ideas, alternatives, reasons, results, and clauses.
 
 | Translation map | Translation map |
 |---|---|
-| [**As**](as/README.md) | [**But and Yet**](but-and-yet/README.md) |
-| [**Either Neither and Whether**](either-neither-and-whether/README.md) | [**Like**](like/README.md) |
-| [**Of**](of/README.md) | [**Since**](since/README.md) |
-| [**So**](so/README.md) | [**Such**](such/README.md) |
-| [**That**](that/README.md) | [**Though**](though/README.md) |
-| [**While**](while/README.md) |  |
+| [Uses of **As**](as/README.md) | [Uses of **But** and **Yet**](but-and-yet/README.md) |
+| [**despite and in spite of**](despite-and-in-spite-of/README.md) | [**due and due to**](due-and-due-to/README.md) |
+| [Uses of **Either, Neither**, and **Whether**](either-neither-and-whether/README.md) | [**future time connectors**](future-time-connectors/README.md) |
+| [**in case and in case of**](in-case-and-in-case-of/README.md) | [Uses of **Like**](like/README.md) |
+| [Contextual Uses of **Of**](of/README.md) | [Uses of **Since**](since/README.md) |
+| [Uses of **So**](so/README.md) | [Uses of **Such**](such/README.md) |
+| [Uses of **That**](that/README.md) | [Uses of **Though**](though/README.md) |
+| [Uses of **While**](while/README.md) |  |

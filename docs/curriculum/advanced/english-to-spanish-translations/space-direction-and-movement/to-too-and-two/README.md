@@ -14,6 +14,7 @@ This folder separates the system into focused lessons:
 
 - [**To** Before a Verb](to-before-verbs.md)
 - [Prepositional **To**](prepositional-to.md)
+- [Motion Destinations Without **To**](motion-without-to.md)
 - [**Used To, Be Used To**, and **Get Used To**](used-to-be-used-to-and-get-used-to.md)
 - [Uses of **Too**](too/README.md)
 - [Uses of **Two** and Related Forms](two/README.md)

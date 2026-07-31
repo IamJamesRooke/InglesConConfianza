@@ -35,6 +35,8 @@
         - [x] Rename the English-first section from `/contextual-uses` and add a dedicated verb index
         - [x] Organize the remaining English-first maps by space/direction, quantity/degree, clause-building connections, and reference/description/discourse
         - [x] Add the approved high-frequency verb maps for **take, go, come, put, turn, set, run, work, call, play, hold, pass, miss, point**, and **deal/deal with**
+        - [x] Add the remaining approved English verb, function-word, fixed-construction, and interference candidates retained by the inclusion audit
+        - [x] Add cross-cutting English construction maps for **would**, particle placement, phrasal-verb separability, preposition stranding, and future time clauses
         - [ ] Add the remaining source words with context-dependent translations
     - [x] `/advanced/spanish-to-english-translations`
         - [x] Establish the Spanish-first translation-map structure
@@ -50,6 +52,8 @@
         - [x] Add standalone **para** and **por** maps across purpose, recipient, destination, cause, route, means, exchange, duration, rate, and agent
         - [x] Add the approved high-frequency maps for **quedar, llevar, pasar, hacer, haber, dar, poner, salir, seguir, tocar, sacar, contar, tratar**, and **faltar**
         - [x] Add the broader polysemous-verb set from **dejar, volver, llegar**, and **sentir** through **cargar, montar, lucir, extrañar, acordar**, and **resultar**
+        - [x] Add the approved Spanish function-word maps from **ya, todavía/aún**, and **apenas** through **pues, tras, entre**, and **hacia**
+        - [x] Add standalone Spanish-to-English construction maps for omitted subjects, **hay que**, duration/aspect, causatives, abstraction, and remaining quantity
         - [x] Organize Spanish-first maps under verb, function-word/connector, and pronoun/pronominal-structure indexes
     - [ ] `/advanced/transformations`
         - [x] Add the **in → inner** map for relative inner/outer and upper/lower forms
@@ -58,6 +62,10 @@
         - [x] Add isolated transformation maps anchored by **power → powerful/powerless → powerlessness**, **weak → weakness/weaken → weakening**, and **long → length → lengthen → lengthening**
         - [x] Add the five-use **white → whitish** map and separate **al-**, **be-**, and **fore-** word-family maps
         - [x] Move the noncritical Foundations word-building families into fifteen concrete Advanced transformation maps
+    - [x] `/advanced/verb-forms`
+        - [x] Add perception verbs with object + base verb versus object + **-ing**
+    - [x] `/advanced/false-friends-and-interference`
+        - [x] Add the approved false-friend and interference maps for current time, eventuality, sensitivity, career, success, compromise, argument, and negative-like degree
     - [x] `/advanced/past-and-past-participle`
         - [x] Migrate regular **-ed** pronunciation lessons for `/d/`, `/t/`, and `/ɪd/`
         - [x] Move the complete section to the Advanced root
