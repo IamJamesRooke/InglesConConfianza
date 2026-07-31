@@ -14,4 +14,4 @@ Compare the base position and the direction:
 |---|---|
 | Mire afuera y luego extienda los brazos hacia afuera. | Look outside, and then stretch your arms outward. |
 
-See the productive transformation under [**To → Towards**](../../../../transformations/to - towards/03-outward-and-outwards.md).
+See the productive transformation under [**To → Towards**](../../../../../vocabulary/transformations/to - towards/03-outward-and-outwards.md).

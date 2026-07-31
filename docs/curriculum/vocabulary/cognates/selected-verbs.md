@@ -1,6 +1,6 @@
 # Selected High-Frequency Cognate Verbs
 
-This is the compact cognate-verb inventory for the foundation course. The complete cognate lessons contain larger word families; this page keeps the verbs that are most useful in everyday conversation, work, study, travel, and basic problem-solving.
+This is the compact high-frequency cognate-verb inventory. The complete cognate lessons contain larger word families; this page keeps the verbs that are most useful in everyday conversation, work, study, travel, and basic problem-solving.
 
 The arrow shows a memory bridge, not a rule that works for every Spanish verb.
 

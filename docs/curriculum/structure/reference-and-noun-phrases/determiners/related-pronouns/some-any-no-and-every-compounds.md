@@ -33,4 +33,4 @@ In ordinary negative English, use **not + any** or a negative pronoun, not both:
 - **I know nobody.**
 - Not: *I don't know nobody.*
 
-The detailed affirmative, question, and negative patterns belong to the related lessons in `/foundations/pronouns/indefinite/`.
+The detailed affirmative, question, and negative patterns belong to the related lessons under [indefinite pronouns](../../pronouns/indefinite/).

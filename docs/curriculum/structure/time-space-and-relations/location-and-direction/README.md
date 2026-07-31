@@ -1,6 +1,6 @@
 # Location
 
-This folder contains the minimum vocabulary needed to ask where something is, describe its position, and talk about movement between places.
+This folder contains the reusable language needed to ask where something is, describe its position, and talk about movement between places.
 
 | Area | Core example |
 |---|---|
@@ -12,4 +12,4 @@ This folder contains the minimum vocabulary needed to ask where something is, de
 | vertical position | **above / below** |
 | basic directions | **left / right / straight ahead** |
 
-Place nouns remain deliberately limited. The focus is the reusable location language around them.
+The separate [minimal place vocabulary](../../../vocabulary/everyday-domains/places/minimal-place-vocabulary.md) remains deliberately limited. The focus here is the reusable location language around those nouns.

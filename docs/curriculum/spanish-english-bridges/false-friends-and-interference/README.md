@@ -10,3 +10,4 @@
 | [**Compromise** and **Compromiso**](compromise-and-compromiso/README.md) | concession, commitment, engagement, and risk |
 | [**Argument** and **Argumento**](argument-and-argumento/README.md) | dispute, reasoning, plot, and technical argument |
 | [**Hardly, Barely**, and **Scarcely**](hardly-barely-and-scarcely/README.md) | negative-like small degree and narrow margins |
+| [Noun Confusion Sets](noun-confusion-sets/README.md) | **dirección, piso**, and **plaza** versus their English lookalikes and context-dependent equivalents |

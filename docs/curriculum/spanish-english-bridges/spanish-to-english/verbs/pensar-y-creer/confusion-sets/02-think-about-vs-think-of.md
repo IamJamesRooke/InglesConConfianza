@@ -6,4 +6,4 @@
 
 **Think about** means consider over time. **Think of** can mean form an opinion, produce an idea, or bring something to mind.
 
-This contrast also appears in the English-first [**about** map](../../../../english-to-spanish-translations/space-direction-and-movement/about/confusion-sets/03-think-about-vs-think-of.md).
+This contrast also appears in the English-first [**about** map](../../../../english-to-spanish/space-direction-and-movement/about/confusion-sets/03-think-about-vs-think-of.md).

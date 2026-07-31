@@ -21,7 +21,7 @@ English **be** can translate Spanish **ser, estar, tener, haber, ir**, or part o
 
 ## Related Lessons Elsewhere
 
-- [Translations of **Poder**](../../../spanish-to-english-translations/verbs/poder/README.md)
-- [Foundation **be** fluency drills](../../../../foundations/verbs/verb-fluency-drills/be/README.md)
-- [Foundation **there be**](../../../../foundations/verbs/verb-fluency-drills/high-confusion-structures/there-be.md)
+- [Translations of **Poder**](../../../spanish-to-english/verbs/poder/README.md)
+- [Foundation **be** fluency drills](../../../../structure/verb-system/fluency-drills/be/README.md)
+- [Foundation **there be**](../../../../structure/verb-system/fluency-drills/high-confusion-structures/there-be.md)
 - [**Be** vs **Get** for a state and change](../get/become/01-be-the-state-get-the-change.md)

@@ -1,6 +1,6 @@
 # Core Verbs
 
-This directory defines the closed set of English verb meanings and constructions taught explicitly as core material and reused throughout the foundational curriculum. Outside this set, the foundation course introduces new verbs through the cognate curriculum.
+This directory defines the closed set of English verb meanings and constructions taught explicitly as core material and reused throughout the structural curriculum. Outside this set, learners can acquire many new verbs through the cognate curriculum.
 
 These files are curriculum specifications, not a required teaching sequence. Folders organize related meanings and constructions; individual lessons remain small enough to be selected and sequenced later.
 

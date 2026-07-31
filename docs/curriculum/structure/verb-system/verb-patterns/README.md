@@ -1,4 +1,4 @@
-# Advanced Verb Forms
+# Verb Patterns
 
 | Section | Core contrast |
 |---|---|

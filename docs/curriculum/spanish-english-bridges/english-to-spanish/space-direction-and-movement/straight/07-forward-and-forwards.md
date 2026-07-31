@@ -10,4 +10,4 @@ Only **forward** normally goes before a noun: **a forward movement**, not *a for
 
 For a physical gaze, **look forward** means look ahead. The fixed connection **look forward to** has the different meaning **esperar con ilusión**.
 
-See the productive transformation under [**To → Towards**](../../../transformations/to - towards/06-forward-and-forwards.md).
+See the productive transformation under [**To → Towards**](../../../../vocabulary/transformations/to - towards/06-forward-and-forwards.md).

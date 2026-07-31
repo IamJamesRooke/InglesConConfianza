@@ -6,7 +6,7 @@
 
 Spanish **de** may become **of**, noun order, **'s**, or no separate word. Choose the English relationship: contents (**a cup of coffee**), purpose/type (**a coffee cup**), possession (**Ana's cup**), or a describing noun (**the kitchen table**).
 
-This advanced contrast extends the foundation [translations of **de** bridge](../../../../../foundations/sentence-building-words/preposition-bridges/translations-of-de.md).
+This advanced contrast extends the foundation [translations of **de** bridge](../../../../spanish-to-english/function-words-and-connectors/preposition-bridges/translations-of-de.md).
 
 ## Related Advanced Lessons
 

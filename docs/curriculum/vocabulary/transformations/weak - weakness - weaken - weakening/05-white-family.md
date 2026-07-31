@@ -5,7 +5,7 @@
 | Form | Transformation | Spanish |
 |---|---|---|
 | **white** | base color | blanco |
-| [**whitish**](../white - whitish/01-white-to-whitish.md) | **white + -ish** | blanquecino / blancuzco |
+| [**whitish**](../-ish/01-white-to-whitish.md) | **white + -ish** | blanquecino / blancuzco |
 | [**whiteness**](07-whiteness.md) | **white + -ness** | blancura |
 | [**whiten**](08-whiten.md) | **white + -en** | blanquear(se) |
 | [**whitening**](09-whitening-and-whitened.md) | **whiten + -ing** | blanqueamiento / blanqueando |

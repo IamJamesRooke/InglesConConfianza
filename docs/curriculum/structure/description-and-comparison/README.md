@@ -1,15 +1,10 @@
-# Adjectives
+# Description and Comparison
 
-This folder contains foundational description vocabulary, comparison patterns, intensifiers, and closely related adverbs.
+This folder contains the structural behavior of adjectives and adverbs, comparison patterns, intensifiers, and focused form contrasts.
 
 | Area | Core examples |
 |---|---|
-| qualities | **important, difficult, practical** |
 | evaluation | **good, bad, better, worse** |
-| color and appearance | **red, blue, light, dark** |
-| size, length, and age | **big, small, long, short, old, young** |
-| accuracy and specificity | **right, wrong, exact, specific** |
-| states | **busy, ready, hungry, cold** |
 | comparison | **harder, happier, more important** |
 | intensifiers | **very, too, so, really, enough** |
 | adjective/adverb contrasts | **good/well, slow/slowly** |
@@ -20,4 +15,4 @@ English adjectives do not change for grammatical gender or number:
 - **a good idea**
 - **two good books**
 
-The lessons are vocabulary specifications, not a required teaching sequence.
+The core words used in these patterns live under [Core Adjectives and States](../../vocabulary/core-adjectives-and-states/README.md). These structural lessons are not a required teaching sequence.

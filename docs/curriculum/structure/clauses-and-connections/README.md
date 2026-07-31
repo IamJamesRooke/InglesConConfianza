@@ -1,12 +1,12 @@
-# Sentence-Building Words
+# Clauses and Connections
 
 This folder contains small, high-frequency words used to connect ideas, express relationships, and build questions.
 
 | Area | Core examples |
 |---|---|
 | connectors | **and, or, but, if, that** |
-| Spanish preposition bridges | **a, de, para** |
 | question words | **who, what, which, where, when, why, how** |
-| translations of **que** | **what, than, that, who, which**, or no separate word |
 
-These expressions are organized by function rather than by a one-word translation. The same Spanish word can require different English structures in different contexts.
+These expressions are organized by their structural function rather than by a final teaching sequence.
+
+The language-specific maps for Spanish **a, de, para**, and **que** belong to [Spanish-to-English Function Words and Connectors](../../spanish-english-bridges/spanish-to-english/function-words-and-connectors/README.md).

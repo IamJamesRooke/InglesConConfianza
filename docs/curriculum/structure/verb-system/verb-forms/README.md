@@ -1,6 +1,6 @@
 # The Six Verb Forms
 
-The foundation course organizes English verbs around six forms. Every verb structure in the course selects one of these forms.
+The curriculum organizes English verbs around six forms. Every verb structure in the course selects one of these forms.
 
 | Form | Model with **do** | Foundation example |
 |---|---|---|

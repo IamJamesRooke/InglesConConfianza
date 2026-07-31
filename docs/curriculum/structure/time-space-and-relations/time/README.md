@@ -1,6 +1,6 @@
 # Time
 
-This folder contains the minimum time vocabulary needed to describe when something happens, arrange plans, relate events, and talk about frequency.
+This folder contains the time system needed to describe when something happens, arrange plans, relate events, and talk about frequency.
 
 | Area | Core question or example |
 |---|---|
@@ -13,4 +13,4 @@ This folder contains the minimum time vocabulary needed to describe when somethi
 | frequency | **sometimes, often, every day** |
 | calendar | **on Thursday, January 21st, 1999** |
 
-The lessons are vocabulary specifications, not a required teaching sequence. Each table keeps related expressions together so they can later be selected and sequenced as needed.
+The lessons are concept specifications, not a required teaching sequence. Each table keeps related expressions together so they can later be selected and sequenced as needed.

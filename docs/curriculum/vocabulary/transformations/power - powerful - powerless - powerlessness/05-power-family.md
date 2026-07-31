@@ -13,4 +13,4 @@ The true family branches from **power**:
 - **power + -less → powerless**
 - **powerless + -ness → powerlessness**
 
-For the complete translation map, see [Power and Related Words](../../spanish-to-english-translations/verbs/poder/power-and-related-words/README.md).
+For the complete translation map, see [Power and Related Words](../../../spanish-english-bridges/spanish-to-english/verbs/poder/power-and-related-words/README.md).
