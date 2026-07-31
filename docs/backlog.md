@@ -5,7 +5,7 @@
     - [ ] Preserve the advanced course's teaching logic and detailed contrasts
     - [ ] Complete the migration faithfully even if the resulting Advanced curriculum remains very large
     - [ ] Do not curate or reduce the Advanced material during migration
-    - [ ] `/advanced/contextual-uses`
+    - [ ] `/advanced/english-to-spanish-translations`
         - [x] Establish the multiple-translation lesson format with **uses of even**
         - [x] Add the combined **way-and-away** map, including atomic **away** movement, distance, absence, removal, and expression lessons
         - [x] Add **uses of rather**
@@ -32,6 +32,9 @@
         - [x] Add the complete **be** map across **ser/estar/tener/haber/ir/poder** translations, fixed connections, existential forms, constructions, and meaning-changing adjective contrasts
         - [x] Add the **side** word-building map across **inside/outside**, **upside/downside**, front/back and other-side positions, **across**, and **beside/besides**
         - [x] Add the related **inner/outer** and **upper/lower** family as a standalone map integrated into the **in/out** and **up/down** core lessons
+        - [x] Rename the English-first section from `/contextual-uses` and add a dedicated verb index
+        - [x] Organize the remaining English-first maps by space/direction, quantity/degree, clause-building connections, and reference/description/discourse
+        - [x] Add the approved high-frequency verb maps for **take, go, come, put, turn, set, run, work, call, play, hold, pass, miss, point**, and **deal/deal with**
         - [ ] Add the remaining source words with context-dependent translations
     - [x] `/advanced/spanish-to-english-translations`
         - [x] Establish the Spanish-first translation-map structure
@@ -61,9 +64,9 @@
         - [x] Organize irregular verbs into exact-rhyme and vowel-shift micro-lessons
         - [x] Add the complete modern head-verb and accepted-variant coverage index
         - [x] Separate one-offs, meaning-dependent forms, regional alternatives, and uncommon current forms
-    - [x] `/advanced/contextual-uses/intensifiers`
+    - [x] `/advanced/english-to-spanish-translations/intensifiers`
         - [x] Add the degree-and-quantity contrast across **very**, **too**, **so**, **that**, and **as**
-    - [x] `/advanced/contextual-uses/to-too-and-two`
+    - [x] `/advanced/english-to-spanish-translations/to-too-and-two`
         - [x] Contrast full-infinitive, bare-infinitive, purpose, and prepositional **to**
         - [x] Add destination, recipient, relationship, PING, and **used to** patterns
         - [x] Add focused **too**, **two**, pronunciation, contraction, and homophone lessons

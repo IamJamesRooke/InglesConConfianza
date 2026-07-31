@@ -104,7 +104,7 @@ These candidates have the strongest combination of frequency, ambiguity, product
 
 | Decision | Band | Candidate | Status | Translation branches or constructions to review |
 |---|---|---|---|---|
-| - [ ] Include<br>- [ ] Reject<br>- [ ] Investigate | S 1–500 | **dejar** | Partial | **leave, let, allow, stop doing, lend, abandon, leave behind**. Existing [three translations](advanced/contextual-uses/leave-and-left/05-three-translations-of-dejar.md) are strong but may not cover **dejar + adjective**, **dejar plantado**, or lending. |
+| - [ ] Include<br>- [ ] Reject<br>- [ ] Investigate | S 1–500 | **dejar** | Partial | **leave, let, allow, stop doing, lend, abandon, leave behind**. Existing [three translations](advanced/english-to-spanish-translations/verbs/leave-and-left/05-three-translations-of-dejar.md) are strong but may not cover **dejar + adjective**, **dejar plantado**, or lending. |
 | - [ ] Include<br>- [ ] Reject<br>- [ ] Investigate | S 1–500 | **volver / volverse** | Partial | **return, come/go back, do again, become**: **volver a hacer**, **volverse difícil**. |
 | - [ ] Include<br>- [ ] Reject<br>- [ ] Investigate | S 1–500 | **llegar** | Partial | **arrive, reach, get to, manage to, become**, emphatic **llegar a**. Basic arrival is covered. |
 | - [ ] Include<br>- [ ] Reject<br>- [ ] Investigate | S 1–500 | **sentir / sentirse** | Partial | Physical/emotional **feel**, regret **I’m sorry**, sensing and **feel like** contrasts. |

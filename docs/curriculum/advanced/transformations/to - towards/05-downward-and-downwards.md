@@ -8,4 +8,4 @@
 
 Use **downward** before a noun: **a downward trend**. For direction after a verb, both **downward** and **downwards** are standard.
 
-See the atomic [**Downward** lesson](../../contextual-uses/up-and-down/core-uses/06-downward-and-downwards.md).
+See the atomic [**Downward** lesson](../../english-to-spanish-translations/space-direction-and-movement/up-and-down/core-uses/06-downward-and-downwards.md).

@@ -8,4 +8,4 @@
 
 Because **to** belongs to this fixed connection, a following verb takes **-ing**: **look forward to meeting**, not *look forward to meet*.
 
-See the complete contextual lesson: [**Look Forward To**](../../contextual-uses/straight/04-look-forward-to.md).
+See the complete contextual lesson: [**Look Forward To**](../../english-to-spanish-translations/space-direction-and-movement/straight/04-look-forward-to.md).

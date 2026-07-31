@@ -8,4 +8,4 @@
 
 Use **backward** before a noun: **a backward movement**. For direction after a verb, both forms are standard.
 
-See the atomic [**Backward** lesson](../../contextual-uses/back/core-picture/04-backward-and-backwards.md).
+See the atomic [**Backward** lesson](../../english-to-spanish-translations/space-direction-and-movement/back/core-picture/04-backward-and-backwards.md).

@@ -22,14 +22,14 @@ These Markdown files are human-readable curriculum specifications and the curren
 - Preserve useful source examples, but improve them when a clearer contextual sentence set teaches the same distinction better.
 - Match the closest files' Markdown structure and established directory organization. Put focused contrasts under an appropriate `confusion-sets/` directory.
 
-## Contextual-use words and particles
+## English-to-Spanish words and particles
 
-- Put high-frequency words whose meaning or function changes substantially with context under `/advanced/contextual-uses/`; do not force them into a single part-of-speech folder merely because one use is a preposition, adverb, adjective, connector, or phrasal-verb particle.
+- Put high-frequency words whose meaning or function changes substantially with context under `/advanced/english-to-spanish-translations/`; do not force them into a single part-of-speech folder merely because one use is a preposition, adverb, adjective, connector, or phrasal-verb particle.
 - For multi-function words such as **on** and **off**, organize lessons by how much meaning a learner can infer: **core uses**, a visible **core picture**, **predictable extensions**, **fixed connections**, then **whole expressions** that must be memorized.
 - Teach the reusable physical or conceptual image before idiomatic meanings. Clearly say when the image remains helpful and when context or memorization must carry the meaning.
 - Keep ordinary preposition uses separate from phrasal verbs. Keep fixed combinations such as **depend on** or **plan on doing** separate from expressions whose complete meaning is not predictable, such as **put off** or **show off**.
 - Use parts-of-speech terminology only when it resolves a real ambiguity. Prefer the learner-facing question “What does this word mean here?” and transparent Spanish bridges.
-- Give every large contextual-use folder a master README for fast review and every pedagogical subfolder its own linked summary table and one to three mastery phrases.
+- Give every large translation-map folder a master README for fast review and every pedagogical subfolder its own linked summary table and one to three mastery phrases.
 
 ## Scope and uncertainty
 
