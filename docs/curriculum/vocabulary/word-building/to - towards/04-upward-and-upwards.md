@@ -8,4 +8,4 @@
 
 Use **upward** before a noun: **an upward trend**. For direction after a verb, both **upward** and **upwards** are standard.
 
-See the atomic [**Upward** lesson](../../english-to-spanish/space-and-movement/up-and-down/core-uses/01-upward-and-upwards.md).
+See the atomic [**Upward** lesson](../../../mappings/english-to-spanish/translations-up-and-down/core-uses/01-upward-and-upwards.md).

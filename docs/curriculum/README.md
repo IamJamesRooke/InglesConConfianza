@@ -5,7 +5,8 @@ This directory is the definitive source of truth for the Inglés Con Confianza c
 | Pillar | Purpose |
 |---|---|
 | [Structure](structure/README.md) | Reusable machinery for building statements, questions, negations, descriptions, and connected ideas. |
-| [Vocabulary](vocabulary/README.md) | Core words, productive word-building systems, and directional maps for non-obvious Spanish–English choices. |
+| [Mappings](mappings/README.md) | The translation core: source-form families whose natural expression changes with meaning, function, and context. |
+| [Vocabulary](vocabulary/README.md) | Core supporting words, cognates, and productive word-building systems. |
 
 Each lesson has one canonical home. Indexes may cross-link a lesson when it supports more than one area. The future teaching sequence should express prerequisites and reinforcement without duplicating curriculum files or encoding difficulty into this folder hierarchy.
 

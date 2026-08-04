@@ -13,9 +13,5 @@ The core pattern is:
 
 ## Directory Index
 
-- [Handle Verbs: Deciding and Choosing](deciding-and-choosing.md)
-- [Handle Verbs: Liking](liking.md)
-- [Handle Verbs: Needing](needing.md)
-- [Handle Verbs: Trying](trying.md)
-- [Handle Verbs: Wanting Somebody to Do Something](wanting-somebody-to-do-something.md)
-- [Handle Verbs: Wanting](wanting.md)
+- The Spanish-to-English mappings of **decidir/elegir**, **gustar**, **necesitar**, and **intentar/probar** now live in the [Spanish-to-English mappings](../../../../mappings/spanish-to-english/README.md).
+- The Spanish-to-English mapping of **querer** now lives in [Translations of **Querer**](../../../../mappings/spanish-to-english/translations-querer/README.md).
