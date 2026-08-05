@@ -104,6 +104,21 @@
 
 ## Completed timeline
 
+### 2026-08-05 — English-to-Spanish canonical collation
+
+- [x] Collate `/curriculum/mappings/english-to-spanish` around one qualifying English source per top-level folder
+    - [x] Document the asymmetric rule: a source must be frequent and have multiple useful translations; reverse folders are not created merely for symmetry
+    - [x] Split the bundled **all/every/each**, **but/yet**, **by/through**, **ever/never/however**, **just/only**, **leave/left**, **less/least**, **no/none/any**, **over/under**, **up/down**, and **way/away** families
+    - [x] Consolidate **deal**, **due**, **one**, **some**, **tend**, and **side** under concise source-word folders
+    - [x] Place **in case** under **in**, **up to** under **up**, and **down on** under **down**
+    - [x] Keep the complete **-side** family under **side** while mirroring **inside/outside** under **in** and **out**
+    - [x] Nest **myself** under **me** and **ourselves** under **us**, matching the existing **you/yourself/yourselves** pattern
+    - [x] Move **actual/actually/currently**, **eventually/finally/the end**, **despite/in spite of**, intensifier material, and unresolved category lessons to `/curriculum/unsorted`
+    - [x] Move **sensible/sensitive** to the cognate confusion sets
+    - [x] Distribute future-time connector lessons to **when**, **as**, **once**, and **until**
+    - [x] Verify all 1,342 baseline lessons remain accounted for; 1,338 are byte-identical and four changed only through repaired links
+    - [x] Verify zero broken scoped links and complete README coverage after the collation
+
 ### 2026-08-05 — Asymmetric source-word mapping pass
 
 - [x] Correct the mapping rule so canonical folders are created for high-frequency source words with multiple useful translations, not as forced English/Spanish mirrors

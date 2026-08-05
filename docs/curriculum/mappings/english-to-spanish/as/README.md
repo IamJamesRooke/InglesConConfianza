@@ -25,6 +25,7 @@
 | [Pronunciation: **As, Ass**, and **Ask**](21-pronunciation-as-ass-and-ask.md) | Como asistente, pregunta si el burro puede actuar como mascota. | As an assistant, ask whether the ass can act as a pet. |
 | [**As Well** Meaning **Too**](22-as-well.md) | Laura va a revisar el contrato y yo también voy a revisarlo. | Laura's going to review the contract, and I'll review it as well. |
 | [**Might As Well**](23-might-as-well.md) | Ya que estamos aquí y la fila es corta, mejor entremos de una vez. | Since we're already here and the line's short, we might as well go in. |
+| [Future-time **As Soon As**](24-future-time-as-soon-as.md) | Saldré apenas llegue. | I'll leave as soon as she arrives. |
 
 ## Mastery Phrases
 

@@ -10,3 +10,5 @@ This bucket contains English **out**, including exterior direction, removal, dis
 - [Figure out and find out](02-figure-out-and-find-out.md)
 
 Related paired lessons remain in the [English **In**](../in/README.md) bucket.
+
+- [The **inside/outside** side family](side-family-inside-and-outside.md)

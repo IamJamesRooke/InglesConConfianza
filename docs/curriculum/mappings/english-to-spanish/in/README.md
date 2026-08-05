@@ -20,3 +20,5 @@ This bucket contains English **in** and its common extensions. Paired lessons re
 
 - [English **Out**](../out/README.md)
 - [English **Into**](into/README.md)
+- [**In case** and **in case of**](in-case/README.md)
+- [The **inside/outside** side family](side-family-inside-and-outside.md)

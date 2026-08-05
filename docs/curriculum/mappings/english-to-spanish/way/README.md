@@ -1,0 +1,40 @@
+# English **Way**
+
+This bucket collects the contextual Spanish mappings and related contrasts for English **way**.
+
+## Lessons
+
+- [01 way meaning route.md](01-way-meaning-route.md)
+- [02 which way.md](02-which-way.md)
+- [03 the other way around.md](03-the-other-way-around.md)
+- [04 a long way.md](04-a-long-way.md)
+- [05 come a long way.md](05-come-a-long-way.md)
+- [06 a long way to go.md](06-a-long-way-to-go.md)
+- [07 way meaning method.md](07-way-meaning-method.md)
+- [08 the way someone does something.md](08-the-way-someone-does-something.md)
+- [09 the best way to do something.md](09-the-best-way-to-do-something.md)
+- [10 this way and that way.md](10-this-way-and-that-way.md)
+- [11 on the way.md](11-on-the-way.md)
+- [12 in the way.md](12-in-the-way.md)
+- [13 out of the way.md](13-out-of-the-way.md)
+- [14 make way.md](14-make-way.md)
+- [15 all the way.md](15-all-the-way.md)
+- [16 by way of.md](16-by-way-of.md)
+- [17 by the way.md](17-by-the-way.md)
+- [18 anyway.md](18-anyway.md)
+- [19 no way.md](19-no-way.md)
+- [20 no way for disbelief.md](20-no-way-for-disbelief.md)
+- [21 in a way.md](21-in-a-way.md)
+- [22 in many ways.md](22-in-many-ways.md)
+- [23 way as an informal intensifier.md](23-way-as-an-informal-intensifier.md)
+- [24 way too.md](24-way-too.md)
+- [25 find a way.md](25-find-a-way.md)
+- [26 have it your way.md](26-have-it-your-way.md)
+- [27 get your own way.md](27-get-your-own-way.md)
+- [28 cannot have it both ways.md](28-cannot-have-it-both-ways.md)
+- [29 make your way.md](29-make-your-way.md)
+- [30 go out of your way.md](30-go-out-of-your-way.md)
+- [31 have a way with.md](31-have-a-way-with.md)
+- [32 way to go.md](32-way-to-go.md)
+- [33 way of life.md](33-way-of-life.md)
+

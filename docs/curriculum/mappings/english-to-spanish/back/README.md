@@ -20,5 +20,5 @@ The reusable picture behind **back** is the rear part of something, movement in 
 ## Related Lessons Elsewhere
 
 - [**Back Off**](../off/08-back-off-and-log-on-or-off.md) means move away or stop pressuring someone.
-- [**Back Down**](../up-and-down/whole-expressions/03-give-up-and-back-down.md) means withdraw from a position or demand.
+- [**Back Down**](../up/whole-expressions/03-give-up-and-back-down.md) means withdraw from a position or demand.
 - [**Keep Back**](../keep/28-keep-back.md) means remain at a distance, restrain, or withhold.

@@ -4,3 +4,4 @@
 
 - [False Cognates: Nouns, Adjectives and Adverbs](non-verb-false-cognates.md)
 - [False Cognates: Verbs](verb-false-cognates.md)
+- [**Sensible** and **Sensitive**](sensible-and-sensitive/README.md)

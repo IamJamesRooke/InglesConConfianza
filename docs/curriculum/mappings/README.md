@@ -4,6 +4,8 @@ Mappings are the practical translation core of Inglés Con Confianza. They teach
 
 The hierarchy is intentionally flat. Each direction contains individual source-form map families rather than categories such as verbs, pronouns, or connectors.
 
+A canonical mapping folder is intentionally asymmetric: the source word or fixed expression must be frequent and must have multiple useful translations in the other language. A reverse folder is not created merely for symmetry. Related forms may appear under more than one retrieval path when that materially helps the learner, as with **inside/outside** under both the **side** family and **in/out**.
+
 | Direction | Starting point |
 |---|---|
 | [Spanish to English](spanish-to-english/README.md) | Choose the natural English form from a Spanish word, form, or construction. |
