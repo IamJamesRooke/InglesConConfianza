@@ -62,6 +62,7 @@ Each folder represents one source form or one deliberate pedagogical family. A f
 - [**lugar**](lugar/README.md)
 - [**mandar**](mandar/README.md)
 - [**marcar**](marcar/README.md)
+- [**mas**](mas/README.md)
 - [**me**](me/README.md)
 - [**meter**](meter/README.md)
 - [**mientras**](mientras/README.md)

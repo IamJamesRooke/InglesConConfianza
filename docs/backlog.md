@@ -104,6 +104,16 @@
 
 ## Completed timeline
 
+### 2026-08-05 — Asymmetric source-word mapping pass
+
+- [x] Correct the mapping rule so canonical folders are created for high-frequency source words with multiple useful translations, not as forced English/Spanish mirrors
+    - [x] Consolidate **hardly**, **barely**, and **scarcely** under the single Spanish source map **apenas**
+    - [x] Split **more** and **most** into separate English source buckets
+    - [x] Add the Spanish **más** map for **more**, **the most**, **more than**, and **lo más**
+    - [x] Preserve all original contrast and usage lessons, including the **hardly** inversion and **more/most** family material
+    - [x] Place the separate **a lot of** lesson in `/curriculum/unsorted` pending a canonical source-word decision
+    - [x] Verify the targeted mapping and unsorted links after the move
+
 ### 2026-08-05 — Canonical mapping normalization
 
 - [x] Reorganize `/curriculum/mappings` into source-word buckets without deleting lessons
