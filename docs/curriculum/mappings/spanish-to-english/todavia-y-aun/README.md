@@ -8,6 +8,8 @@
 | [even-more](04-even-more.md) | Es aún más difícil. | It's even more difficult. |
 | [still-even-so](05-still-even-so.md) | Aun así, continuamos. | Even so, we continued. |
 
+The English-side contrasts are collected under [**still**](../../english-to-spanish/still/README.md) and [**yet**](../../english-to-spanish/yet/README.md).
+
 ## Mastery Phrases
 
 | Spanish | English |

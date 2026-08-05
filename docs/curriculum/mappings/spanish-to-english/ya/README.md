@@ -9,6 +9,8 @@
 | [enough](05-enough.md) | ¡Ya basta! | Enough already! |
 | [ya-que](06-ya-que.md) | Ya que estás aquí, ayúdame. | Since you're here, help me. |
 
+The English-side contrasts are collected under [**no longer**](../../english-to-spanish/no-longer/README.md) and [**anymore**](../../english-to-spanish/anymore/README.md).
+
 ## Mastery Phrases
 
 | Spanish | English |

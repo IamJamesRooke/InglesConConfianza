@@ -1,7 +1,7 @@
-# **Seguir → Keep Going / Continue**
+# directions
 
 | Spanish | English |
 |---|---|
-| Sigue recto dos cuadras. | Keep going straight for two blocks. |
+| Sigue recto. | Keep going straight. |
 
-In directions, **seguir** commonly becomes **keep going, continue**, or **go on**.
+Continued movement.

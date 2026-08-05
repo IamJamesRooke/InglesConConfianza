@@ -4,8 +4,8 @@ These words describe relative parts: **inner/outer** contrast distance from a ce
 
 | Lesson | Spanish | English |
 |---|---|---|
-| [**Inner** and **Outer**](../../../mappings/english-to-spanish/in-and-out/core-uses/05-inner-and-outer.md) | La pared interior es blanca y la pared exterior es gris. | The inner wall is white, and the outer wall is gray. |
-| [**Inward**](../../../mappings/english-to-spanish/in-and-out/core-uses/06-inward-and-inwards.md) and [**Outward**](../../../mappings/english-to-spanish/in-and-out/core-uses/07-outward-and-outwards.md) | La puerta se abre hacia adentro, no hacia afuera. | The door opens inward, not outward. |
+| [**Inner** and **Outer**](../../../mappings/english-to-spanish/in/05-inner-and-outer.md) | La pared interior es blanca y la pared exterior es gris. | The inner wall is white, and the outer wall is gray. |
+| [**Inward**](../../../mappings/english-to-spanish/in/06-inward-and-inwards.md) and [**Outward**](../../../mappings/english-to-spanish/out/07-outward-and-outwards.md) | La puerta se abre hacia adentro, no hacia afuera. | The door opens inward, not outward. |
 | [**Inside/Outside** vs **Inner/Outer**](01-inside-outside-vs-inner-outer.md) | Estoy afuera, pintando la pared exterior. | I'm outside, painting the outer wall. |
 | [**Internal** and **External**](02-internal-and-external.md) | Revisaron los daños internos y externos. | They inspected the internal and external damage. |
 | [The **Inner Circle** and **Outer Space**](03-inner-circle-and-outer-space.md) | Su círculo íntimo estudia el espacio exterior. | Her inner circle studies outer space. |

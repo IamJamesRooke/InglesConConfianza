@@ -104,6 +104,17 @@
 
 ## Completed timeline
 
+### 2026-08-05 — Canonical mapping normalization
+
+- [x] Reorganize `/curriculum/mappings` into source-word buckets without deleting lessons
+    - [x] Remove the `translations-` folder prefix and rebuild both directional indexes
+    - [x] Split mixed source families such as **either/neither/whether**, **in/out**, and **on/off**
+    - [x] Nest related forms such as **into** under **in**, **onto** under **on**, and reflexive pronouns under **you**
+    - [x] Consolidate same-word Spanish families such as **quedar**, **llevar**, **seguir**, and **mientras**
+    - [x] Add the English **will** mapping for future statements, requests, decisions, and willingness
+    - [x] Move clearly non-word grammar buckets into `/curriculum/unsorted` for a later organization pass
+    - [x] Verify mapping links, indexes, and preservation after the reorganization
+
 ### 2026-07-31 — Migration completed and curriculum unified
 
 - [x] Consolidate vocabulary and bilingual maps under `/curriculum/vocabulary`

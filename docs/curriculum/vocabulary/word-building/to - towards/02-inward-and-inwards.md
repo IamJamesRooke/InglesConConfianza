@@ -8,4 +8,4 @@
 
 Use **inward** before a noun: **an inward movement**. For direction after a verb, both **inward** and **inwards** are standard.
 
-See the atomic [**Inward** lesson](../../../mappings/english-to-spanish/in-and-out/core-uses/06-inward-and-inwards.md).
+See the atomic [**Inward** lesson](../../../mappings/english-to-spanish/in/06-inward-and-inwards.md).
