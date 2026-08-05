@@ -14,4 +14,4 @@ The core pattern is:
 ## Directory Index
 
 - The Spanish-to-English mappings of **decidir/elegir**, **gustar**, **necesitar**, and **intentar/probar** now live in the [Spanish-to-English mappings](../../../../mappings/spanish-to-english/README.md).
-- The Spanish-to-English mapping of **querer** now lives in [Translations of **Querer**](../../../../mappings/spanish-to-english/translations-querer/README.md).
+- The Spanish-to-English mapping of **querer** now lives in [Translations of **Querer**](../../../../mappings/spanish-to-english/querer/README.md).

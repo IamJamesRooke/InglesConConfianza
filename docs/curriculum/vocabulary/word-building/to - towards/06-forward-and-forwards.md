@@ -6,4 +6,4 @@
 
 **Forward/forwards** marks direction toward the front. Use **forward** before a noun: **a forward movement**. For direction after a verb, both forms are standard.
 
-See the atomic [**Forward** lesson](../../../mappings/english-to-spanish/translations-straight/07-forward-and-forwards.md).
+See the atomic [**Forward** lesson](../../../mappings/english-to-spanish/straight/07-forward-and-forwards.md).
