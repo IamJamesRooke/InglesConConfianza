@@ -7,3 +7,5 @@ Material placed here does not belong in the canonical word mappings yet. It is p
 The `mappings/` subfolder currently holds grammar and construction lessons that are valuable curriculum content but do not represent one source word.
 
 It also holds unresolved interference and phrase families such as **actual/actually/currently**, **eventually/finally/the end**, **despite/in spite of**, intensifier categories, and material awaiting a canonical source decision.
+
+The Spanish-to-English branch also preserves the original mixed-source folders from the canonical split. These archives guarantee that no lesson or comparison was discarded while **decidir/elegir**, **importar/molestar**, **pensar/creer**, **subir/bajar**, **tan/tanto**, and **todavía/aun** were reorganized into one-source reference folders.

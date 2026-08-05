@@ -1,3 +1,6 @@
 # Translations of **La**
 
-This map collects the English choices for Spanish **la** according to the person or thing it refers to. See the micro-lesson in this folder for the complete contrast.
+Spanish **la** can be the article **the** or a direct-object pronoun meaning **her, it**, or formal **you**.
+
+- [**la** → the](01-article-the.md)
+- [direct-object **la** → her / it / formal you](la%20(pronoun%20translations).md)

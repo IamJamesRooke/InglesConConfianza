@@ -12,6 +12,10 @@ Beyond the core **do/make** contrast, Spanish **hacer** builds weather, elapsed-
 | [**Hacer Que Hagan Algo → Have It Done**](06-have-something-done.md) | Hice reparar el carro. | I had the car repaired. |
 | [Effects and Fixed Combinations with **Hacer**](07-effect-and-fixed-combinations.md) | El ejercicio me hace bien. | Exercise is good for me. |
 
+## Construction Maps
+
+- [**hacer que** → make / have something done](hacer-que/README.md)
+
 ## Mastery Phrases
 
 | Spanish | English |

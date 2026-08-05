@@ -12,6 +12,10 @@ Spanish **volver** and **volverse** express return, repeated action, restoration
 | [**Volverse / Convertirse → Turn Into**](06-turn-into.md) | El agua se volvió hielo. | The water turned into ice. |
 | [**Volverse → Turn Around**](07-turn-around.md) | Se volvió para mirarme. | She turned around to look at me. |
 
+## Construction Maps
+
+- [**volver a + infinitive** → do something again](volver-a/README.md)
+
 ## Mastery Phrases
 
 | Spanish | English |

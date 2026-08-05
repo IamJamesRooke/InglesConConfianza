@@ -9,6 +9,7 @@ Spanish **se** does not have one English translation. In pronoun structures, it 
 | [Formal **Yourself** and **Yourselves**](03-formal-yourself-and-yourselves.md) | Usted se ve en el espejo y ustedes se ven en la foto. | You see yourself in the mirror, and you see yourselves in the photo. |
 | [**Se** Replacing **Le** or **Les**](04-se-replacing-le-and-les.md) | Le doy el libro a Ana: se lo doy. | I give Ana the book: I give it to her. |
 | [Pronominal Verbs with **Se**](05-pronominal-verbs.md) | María se llama Ana. | Her name is Ana. |
+| [Combined Personal-Pronoun Overview](personal-pronoun-uses.md) | Se lo doy. | I give it to him, her, you, or them. |
 
 ## Mastery Phrases
 

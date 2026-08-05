@@ -12,6 +12,12 @@ Spanish **dejar** maps to leaving, allowing, stopping, lending, abandoning, caus
 | [**Dejar Atrás → Leave Behind**](06-leave-behind.md) | Dejamos atrás los problemas del año pasado. | We left last year's problems behind. |
 | [**Dejar + Adjective → Leave / Make**](07-cause-a-state.md) | La noticia me dejó preocupado. | The news left me worried. |
 | [Fixed Expressions with **Dejar**](08-fixed-expressions.md) | Me dejó plantado y dejó pasar la oportunidad. | She stood me up and let the opportunity pass. |
+| [Three High-Frequency Translations](09-three-translations-of-dejar.md) | Dejé las llaves, dejé de fumar y dejé entrar a Ana. | I left the keys, stopped smoking, and let Ana in. |
+
+## Construction Maps
+
+- [**dejar de** → stop doing / no longer](dejar-de/README.md)
+- [**dejar que** → let / allow](dejar-que/README.md)
 
 ## Mastery Phrases
 

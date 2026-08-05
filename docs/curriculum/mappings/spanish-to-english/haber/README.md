@@ -12,6 +12,10 @@ Spanish **haber** works as a perfect auxiliary and in impersonal structures for 
 | [**Debe de Haber → There Must Be**](06-debe-de-haber.md) | Debe de haber una explicación. | There must be an explanation. |
 | [Formal Impersonal **Haber**](07-formal-impersonal-uses.md) | No habiendo más preguntas, terminó la reunión. | There being no further questions, the meeting ended. |
 
+## Construction Maps
+
+- [**hay que** → you/we have to, one must, it is necessary](hay-que/README.md)
+
 ## Mastery Phrases
 
 | Spanish | English |

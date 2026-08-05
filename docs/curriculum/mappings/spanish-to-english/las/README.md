@@ -1,3 +1,6 @@
 # Translations of **Las**
 
-This map collects the English choices for Spanish **las** according to the people or things it refers to. See the micro-lesson in this folder for the complete contrast.
+Spanish **las** can be the article **the** or a direct-object pronoun meaning **them** or plural **you**.
+
+- [**las** → the](01-article-the.md)
+- [direct-object **las** → them / plural you](las%20(pronoun%20translations).md)

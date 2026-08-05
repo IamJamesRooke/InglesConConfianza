@@ -10,6 +10,15 @@
 
 The former English-first **among and between** lessons were moved here because their Spanish source is **entre**. They now appear as concrete **entre** micro-lessons in this folder.
 
+## Concrete Micro-Lessons
+
+- [**entre** → among a group](entre%20(among%20a%20group).md)
+- [**entre** → between distinct items](entre%20(between%20distinct%20items).md)
+- [**entre** → between people](entre%20(between%20people).md)
+- [**entre** → distribution among](entre%20(distribution).md)
+- [**entre ellos** → among themselves](entre%20ellos%20(among%20themselves).md)
+- [Preserved **among/between** source index](README-former-among-and-between.md)
+
 ## Mastery Phrases
 
 | Spanish | English |

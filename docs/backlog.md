@@ -104,6 +104,19 @@
 
 ## Completed timeline
 
+### 2026-08-05 — Spanish-to-English canonical collation
+
+- [x] Collate `/curriculum/mappings/spanish-to-english` around one Spanish source per top-level folder while preserving complete reference access
+    - [x] Split **decidir/elegir**, **importar/molestar**, **intentar/probar**, **pensar/creer**, **subir/bajar**, **tan/tanto**, and **todavía/aun** into canonical source folders
+    - [x] Place **dejar de** and **dejar que** under **dejar**, **hacer que** under **hacer**, **hay que** under **haber**, **enterarse de** under **enterar**, and **volver a** under **volver**
+    - [x] Rename **tener expressions** to the canonical **tener** map and organize **sino / si no** as a spelling-contrast family
+    - [x] Keep **lo, la, los, las, le**, and **les** top-level and add complete top-level reference maps for **el, él, ella, ellas, ello, ellos, yo, tú, usted, ustedes, nosotros**, and **nosotras**
+    - [x] Add pronoun micro-lessons for subject and common **para, con, a/por**, and **de** forms
+    - [x] Keep **lugar/plaza** comparison material solely under **lugar** and move non-word **required English subject** grammar material to `/curriculum/unsorted`
+    - [x] Rebuild incomplete indexes for **llevar, quedar, seguir**, pronoun maps, and previously unindexed local lessons
+    - [x] Preserve the original mixed-source folders under `/curriculum/unsorted` for the later cutting and deduplication pass
+    - [x] Verify all 742 unique baseline lesson bodies remain present, all 123 top-level folders are indexed, every canonical directory has a README, and there are zero unindexed local lessons or broken scoped links
+
 ### 2026-08-05 — English-to-Spanish canonical collation
 
 - [x] Collate `/curriculum/mappings/english-to-spanish` around one qualifying English source per top-level folder

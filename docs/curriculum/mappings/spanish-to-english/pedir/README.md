@@ -13,6 +13,11 @@ English chooses a different verb according to what is requested: information, a 
 | [Nouns: **Order, Request**, and **Application**](07-related-nouns.md) | Revisé el pedido, la solicitud y la postulación. | I reviewed the order, request, and application. |
 | [**Ask, Ask For, Order**, and **Request**](confusion-sets/README.md) | Hice una pregunta, pedí ayuda y pedí el almuerzo. | I asked a question, asked for help, and ordered lunch. |
 
+## Supplemental Source Lessons
+
+- [asking for something](asking-for-something.md)
+- [asking somebody to do something](asking-somebody-to-do-something.md)
+
 ## Mastery Phrases
 
 | Spanish | English |

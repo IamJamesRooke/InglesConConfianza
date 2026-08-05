@@ -13,6 +13,8 @@
 | [hardly-inversion](09-hardly-inversion.md) | Hardly had I arrived when she left. | Apenas había llegado cuando ella se fue. |
 | [hardly-wait](10-hardly-wait.md) | I can hardly wait. | Estoy ansioso por que llegue. |
 
+- [Preserved **hardly/barely/scarcely** source index](README-former-hardly-barely-scarcely.md)
+
 ## Mastery Phrases
 
 | Spanish | English |
