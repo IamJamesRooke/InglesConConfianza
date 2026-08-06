@@ -104,6 +104,15 @@
 
 ## Completed timeline
 
+### 2026-08-06 — Reference and noun-phrase material routed to canonical homes
+
+- [x] Retire `/curriculum/unsorted/reference-and-noun-phrases` after migrating its word-based lessons into canonical mappings
+    - [x] Route articles, demonstratives, distribution words, alternatives, quantity words, indefinite compounds, and pronoun families into English-to-Spanish or Spanish-to-English source buckets
+    - [x] Preserve the complete personal-pronoun reference sets under the existing Spanish pronoun maps
+    - [x] Keep the genuinely non-word **countable/uncountable nouns** and **zero article** concepts under `/structure/reference-and-noun-phrases`
+    - [x] Preserve the number material already moved to `/vocabulary/numbers` and repair its calendar cross-link
+    - [x] Verify every original bilingual row remains under mappings or structure and remove the obsolete unsorted branch
+
 ### 2026-08-06 — Time and date vocabulary migrated into mappings
 
 - [x] Retire `/curriculum/unsorted/time-space-and-relations` after routing its complete time curriculum into canonical mapping buckets

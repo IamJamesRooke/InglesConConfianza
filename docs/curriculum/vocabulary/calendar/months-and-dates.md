@@ -56,4 +56,4 @@ When the day of the week is included, separate it with a comma. In the American 
 
 Numeric dates such as **01/02/2026** are ambiguous: Americans may read this as January 2, while many other readers understand February 1. Spell out the month when clarity matters.
 
-General ordinal formation is taught in [**Numbers**](../../../reference-and-noun-phrases/determiners/numbers/README.md).
+General ordinal formation is taught in [**Numbers**](../numbers/README.md).

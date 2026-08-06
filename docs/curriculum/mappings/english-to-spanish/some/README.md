@@ -15,4 +15,10 @@ This bucket collects the contextual Spanish mappings and related contrasts for E
 - [14 somehow.md](14-somehow.md)
 - [15 some meaning impressive.md](15-some-meaning-impressive.md)
 - [16 homophones some and sum.md](16-homophones-some-and-sum.md)
-
+- [14 somewhere anywhere nowhere and everywhere.md](14-somewhere-anywhere-nowhere-and-everywhere.md)
+- [15 sometime anytime no time and every time.md](15-sometime-anytime-no-time-and-every-time.md)
+- [16 some any no and every compounds.md](16-some-any-no-and-every-compounds.md)
+- [17 somebody anybody nobody and everybody.md](17-somebody-anybody-nobody-and-everybody.md)
+- [18 something anything nothing and everything.md](18-something-anything-nothing-and-everything.md)
+- [19 indefinite pronouns people.md](19-indefinite-pronouns-people.md)
+- [20 indefinite pronouns things.md](20-indefinite-pronouns-things.md)

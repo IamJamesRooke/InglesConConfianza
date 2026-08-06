@@ -13,6 +13,7 @@ English **more** maps to several Spanish forms depending on whether it means an 
 - [More and more](14-more-and-more.md)
 - [The more..., the more...](15-the-more-the-more.md)
 - [More than](16-more-than.md)
+- [More fewer and less](17-more-fewer-and-less.md)
 - [What's more](18-whats-more.md)
 - [More like](19-more-like.md)
 - [More and moor](23-homophones-more-and-moor.md)
