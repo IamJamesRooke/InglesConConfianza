@@ -11,4 +11,4 @@ Transformations are the productive vocabulary core of the course: a familiar Eng
 | [Past II — Needs Merging](<past-II%20(needs%20merging)/README.md>) | Preserved past-form branch awaiting collation. |
 | [Past Participle II — Needs Merging](<past-participle-II%20(needs%20merging)/README.md>) | Preserved participle-form branch awaiting collation. |
 
-Mixed legacy word-building families are preserved under [root curriculum unsorted](../unsorted/transformation-source-families/README.md). Material that does not clearly belong to a canonical transformation remains in that single shared unsorted area.
+The former mixed word-building families have been distributed into the canonical prefix and suffix branches. Material that does not clearly represent a productive transformation remains in the single shared [root curriculum unsorted](../unsorted/README.md) area.

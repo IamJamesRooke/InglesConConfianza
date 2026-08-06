@@ -10,6 +10,6 @@ It also holds unresolved interference and phrase families such as **actual/actua
 
 The Spanish-to-English branch also preserves the original mixed-source folders from the canonical split. These archives guarantee that no lesson or comparison was discarded while **decidir/elegir**, **importar/molestar**, **pensar/creer**, **subir/bajar**, **tan/tanto**, and **todavía/aun** were reorganized into one-source reference folders.
 
-## Transformation source material
+## Unresolved word-building material
 
-The [transformation source families](transformation-source-families/README.md) preserve the former mixed `word-building` organization. Canonical copies now appear under `/curriculum/transformations/suffix-transformations` and `/curriculum/transformations/prefix-transformations`, while this single curriculum-level unsorted bucket protects the original combined teaching context until deduplication.
+The [established **white** compounds](white-compounds/README.md) are preserved here because they are lexical combinations rather than productive prefix or suffix transformations. The former mixed `word-building` source families have been deduplicated; their canonical lessons now appear under `/curriculum/transformations/suffix-transformations` and `/curriculum/transformations/prefix-transformations`.
