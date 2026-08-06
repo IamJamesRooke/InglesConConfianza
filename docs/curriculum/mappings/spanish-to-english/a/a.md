@@ -15,3 +15,5 @@ The Spanish personal **a** before a person is not translated separately when tha
 - Not: *I see to Laura.*
 
 Use **to** when the person is a recipient: **I give the book to Laura.**
+
+For a destination, Spanish **a** can also correspond to **toward** when direction is emphasized. See [**A** → **To** a destination](02-destination.md).
