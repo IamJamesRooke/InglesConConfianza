@@ -6,7 +6,7 @@
 | [**More + Description**](02-more-with-a-description.md) | La segunda explicación es más útil que la primera. | The second explanation's more helpful than the first one. |
 | [**The Most + Description**](../most/03-the-most-with-a-description.md) | Esta es la explicación más útil de las tres. | This is the most helpful explanation of the three. |
 | [**More Of**](04-more-of.md) | Quiero leer más del libro antes de opinar. | I want to read more of the book before giving my opinion. |
-| [**A Lot Of**](../../../unsorted/mappings/english-to-spanish/a-lot-of/05-a-lot-of.md) | Leí gran parte del libro y tomé muchas notas. | I read a lot of the book and took a lot of notes. |
+| [**Mucho / Muchos → A Lot Of**](../../spanish-to-english/mucho/03-a-lot-of.md) | Leí gran parte del libro y tomé muchas notas. | I read a lot of the book and took a lot of notes. |
 | [**Most Of** a Known Group](../most/06-most-of-a-known-group.md) | La mayoría de los libros estaba disponible en formato digital. | Most of the books were available digitally. |
 | [**Most Of** an Amount or Thing](../most/07-most-of-an-amount-or-thing.md) | Leí la mayor parte del libro durante el vuelo. | I read most of the book during the flight. |
 | [**Most** Meaning the Majority Generally](../most/08-most-meaning-the-majority-generally.md) | La mayoría de los estudiantes prefiere ejemplos cortos. | Most students prefer short examples. |

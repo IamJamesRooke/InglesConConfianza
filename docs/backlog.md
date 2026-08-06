@@ -104,6 +104,17 @@
 
 ## Completed timeline
 
+### 2026-08-06 — Unsorted mappings resolved by source direction
+
+- [x] Retire the active `/curriculum/unsorted/mappings` holding area after routing its lessons by their true source word or construction
+    - [x] Establish Spanish-to-English maps for **mucho**, **a pesar de**, and **aunque**, including the inflected **mucho/mucha/muchos/muchas** family and context-dependent English outputs
+    - [x] Keep **a lot of** under Spanish **mucho** rather than forcing a low-value symmetric English map
+    - [x] Move future-time connectors, required English subjects, intensifier systems, phrasal-verb placement and separability, preposition stranding, quantity contrasts, and demonstrative use into `/structure`
+    - [x] Preserve the mixed **intentar / tratar de / probar** contrast as a focused confusion lesson while keeping each source's canonical map separate
+    - [x] Merge the unique deciding, choosing, trying, caring, bothering, thinking, and believing patterns and mastery phrases from the source-pair archives into their canonical maps
+    - [x] Remove 68 redundant archive files only after verifying that all 67 unique archived teaching rows remain present exactly
+    - [x] Update all inbound references, remove stale `/unsorted/mappings` links, and verify zero broken links across the 76 affected lessons
+
 ### 2026-08-06 — Past transformations flattened into atomic teaching sets
 
 - [x] Reorganize `/transformations/past-and-past-participle` around the relationship between the base, past, and past participle

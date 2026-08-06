@@ -2,6 +2,8 @@
 
 Spanish **tratar** changes with its complement: it can describe treatment, handling a subject, an attempt, what something is about, or how people relate to one another.
 
+The attempt pattern is **tratar de hacer algo → to try to do something**.
+
 | Lesson | Spanish | English |
 |---|---|---|
 | [**Tratar → Treat** Someone](01-treat-someone.md) | Me trataron muy bien en el hotel. | They treated me very well at the hotel. |

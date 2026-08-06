@@ -1,5 +1,5 @@
 # Intensifiers
 
-## Directory Index
-
-- [**Very, Too, So, Really**, and **Enough**](very-too-so-really-and-enough.md)
+| Lesson | Core contrast |
+|---|---|
+| [Degree and Quantity Contrasts](degree-and-quantity-contrasts.md) | **very, too, so, that**, and **as** |

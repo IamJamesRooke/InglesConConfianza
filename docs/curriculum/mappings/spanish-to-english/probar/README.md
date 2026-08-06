@@ -2,6 +2,8 @@
 
 Spanish **probar** and **probarse** map to trying, trying on, tasting, testing, proving, and demonstrating.
 
+The basic testing or sampling pattern is **probar algo → to try something**.
+
 | Lesson | Spanish | English |
 |---|---|---|
 | [**Probar → Try**](01-try-an-activity.md) | Prueba usar una contraseña diferente. | Try using a different password. |
