@@ -174,3 +174,19 @@ Personal-pronoun maps are intentionally complete reference families. Subject for
 - [**volver**](volver/README.md)
 - [**ya**](ya/README.md)
 - [**yo**](yo/README.md)
+
+## Additional adjective maps
+
+- [**bueno**](bueno/README.md)
+- [**claro**](claro/README.md)
+- [**despacio**](despacio/README.md)
+- [**duro**](duro/README.md)
+- [**facil**](facil/README.md)
+- [**gratuito**](gratuito/README.md)
+- [**importante**](importante/README.md)
+- [**joven**](joven/README.md)
+- [**lento**](lento/README.md)
+- [**malo**](malo/README.md)
+- [**necesario**](necesario/README.md)
+- [**oscuro**](oscuro/README.md)
+- [**viejo**](viejo/README.md)

@@ -569,3 +569,11 @@
 - [x] Remove stale unsorted references from the curriculum indexes
 - [x] Remove the empty `remember/confusion-sets` mapping scaffold
 - [x] Preserve prior unsorted paths in this backlog as historical migration records
+
+### 2026-08-06 — Adjective and state vocabulary routed to canonical homes
+
+- [x] Retire `/curriculum/vocabulary/adjectives-and-states` after preserving its teaching points
+- [x] Extend the canonical **bien**, **tener**, **mismo**, and **barato** maps with the missing examples and distinctions
+- [x] Add Spanish-to-English adjective maps for **bueno**, **malo**, **fácil**, **duro**, **importante**, **necesario**, **viejo**, **joven**, **lento**, **despacio**, and **gratuito**
+- [x] Keep cognate and adjective-to-adverb material under `/transformations` rather than duplicating it in vocabulary
+- [x] Preserve basic color vocabulary in `/vocabulary/supplemental-adjectives.md`, with shade usage linked to the **claro** and **oscuro** maps

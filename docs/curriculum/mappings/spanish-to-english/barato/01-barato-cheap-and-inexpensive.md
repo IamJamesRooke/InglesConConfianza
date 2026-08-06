@@ -2,7 +2,7 @@
 
 | Spanish | English |
 |---|---|
-| barato / económica | cheap / inexpensive |
+| barato / económico | cheap / inexpensive |
 
 | Spanish | English |
 |---|---|
