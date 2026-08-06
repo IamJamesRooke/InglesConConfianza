@@ -10,4 +10,4 @@ Structure teaches how English combines a limited vocabulary into complete statem
 | [Phrasal-Verb Placement](verb-system/phrasal-verbs/object-particle-placement/README.md) | Particle placement and separability. |
 | [Degree and Quantity](description-and-comparison/intensifiers/README.md) | Focused intensifier and quantity contrasts retained under structure. |
 
-The folders are conceptual categories, not a required teaching order. Material whose final structural home is not yet settled lives in the curriculum-level `/unsorted` holding area for later collation.
+The folders are conceptual categories, not a required teaching order. Final lesson sequencing remains a separate curation task.

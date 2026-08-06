@@ -7,7 +7,6 @@ This directory is the definitive source of truth for the Inglés Con Confianza c
 | [Mappings](mappings/README.md) | The translation core: source-form families whose natural expression changes with meaning, function, and context. |
 | [Transformations](transformations/README.md) | The productive vocabulary core: cognates and visible changes from one useful word or form to another. |
 | [Structure](structure/README.md) | Reusable machinery for building statements, questions, negations, descriptions, and connected ideas. |
-| [Unsorted vocabulary source](<unsorted/README (from vocabulary folder).md>) | Vocabulary material awaiting its next canonical collation pass. |
 
 Each lesson has one canonical home. Indexes may cross-link a lesson when it supports more than one area. The future teaching sequence should express prerequisites and reinforcement without duplicating curriculum files or encoding difficulty into this folder hierarchy.
 

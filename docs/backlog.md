@@ -561,3 +561,11 @@
     - [x] Preserve the **hermano/hermana** and **hermandad** distinctions across brother, sister, sibling, brotherhood, and sisterhood
     - [x] Keep direct slot vocabulary such as **libro**, **inglés**, **español**, and **nacionalidad** under `/vocabulary`
     - [x] Verify the source branch is empty and all new mapping links resolve
+
+### 2026-08-06 — Retire the curriculum unsorted scaffold
+
+- [x] Confirm `/curriculum/unsorted` contains no remaining curriculum lessons
+- [x] Remove the obsolete root and `/core` README scaffolds
+- [x] Remove stale unsorted references from the curriculum indexes
+- [x] Remove the empty `remember/confusion-sets` mapping scaffold
+- [x] Preserve prior unsorted paths in this backlog as historical migration records
