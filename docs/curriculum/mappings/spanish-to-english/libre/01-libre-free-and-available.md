@@ -1,11 +1,8 @@
-# **Libre** → **Free** and **Available**
+# **Libre** → **Free** or **Available**
 
 | Spanish | English |
 |---|---|
-| libre | free / available |
+| Estoy libre después de la clase. | I'm free after class. |
+| El asiento está libre. | The seat is available. |
 
-| Spanish | English |
-|---|---|
-| Estoy libre después de la reunión. | I am free after the meeting. |
-
-**Free** can mean not busy, while **available** emphasizes that someone or something can be used or contacted.
+Use **free** for a person's time or freedom. Use **available** when a place, seat, resource, or option can be used.

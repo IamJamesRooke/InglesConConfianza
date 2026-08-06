@@ -532,6 +532,19 @@
     - [x] Exclude ordinary direct vocabulary and transparent cognates from routine consideration
     - [x] Preserve missing, partial, and uncertain findings in `/curriculum/inclusion-candidates.md` for owner review
 
+### 2026-08-06 — Description, comparison, and question-word branches collated
+
+- [x] Retire `/curriculum/unsorted/description-and-comparison` after routing its content to canonical homes
+    - [x] Add English-first maps for **free**, **good**, **bad**, **far**, **fast**, **hard**, and **very**, while extending existing **too**, **so**, **really**, **enough**, **more**, and **most** maps
+    - [x] Expand the Spanish **disponible** family with **available**, **free**, and **availability**, and preserve the related **libre** map
+    - [x] Move productive adjective-to-adverb and regular comparative/superlative patterns into `/transformations`
+    - [x] Move adjective position and comparative **than/the** rules into `/structure/description-and-comparison`
+    - [x] Preserve irregular comparison families for **good**, **bad**, and **far** in their canonical English maps
+- [x] Retire `/curriculum/unsorted/question-words` after routing its bilingual question-word families into mappings
+    - [x] Add English-first maps for **how**, **what**, **which**, **why**, **because**, and **who**, and extend **when**
+    - [x] Add Spanish-first maps for **cómo**, **cuál**, **cuánto**, **cuántos**, **quién**, **dónde**, **cuándo**, and **porque**
+    - [x] Extend the existing **qué**, **qué tan**, and **por qué** maps and verify the source branches are empty
+
 ### 2026-08-06 — Clause connectors routed into canonical mappings
 
 - [x] Retire the redundant future-time connector and preposition-stranding lessons from `/structure/clauses-and-connections`

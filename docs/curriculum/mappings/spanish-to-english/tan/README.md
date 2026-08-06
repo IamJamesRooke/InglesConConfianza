@@ -7,5 +7,6 @@ Spanish **tan** changes with the English comparison structure around the adjecti
 | [so + adjective](01-so-adjective.md) | Es tan alto. | He's so tall. |
 | [as ... as](02-as-as.md) | Es tan alto como Ana. | He's as tall as Ana. |
 | [such](03-such.md) | Fue un día tan difícil. | It was such a difficult day. |
+| [**Qué Tan** → **How**](04-que-tan-how.md) | ¿Qué tan grande es la oficina? | How big is the office? |
 
 See [**tanto**](../tanto/README.md) for quantities, actions, and **mientras tanto**.

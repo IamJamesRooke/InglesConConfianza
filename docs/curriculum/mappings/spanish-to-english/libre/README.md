@@ -1,3 +1,5 @@
 # Translations of Spanish **Libre**
 
-- [**Libre** → **Free** and **Available**](01-libre-free-and-available.md)
+| Lesson | Spanish | English |
+|---|---|---|
+| [**Libre** → **Free** or **Available**](01-libre-free-and-available.md) | libre | free / available |

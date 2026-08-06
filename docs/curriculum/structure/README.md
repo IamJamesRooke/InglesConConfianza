@@ -6,6 +6,7 @@ Structure teaches how English combines a limited vocabulary into complete statem
 |---|---|
 | [Verb Forms](verb-forms/README.md) | The forms selected by English verb structures. |
 | [Fluency Drills](fluency-drills/README.md) | Rapid production of auxiliaries, questions, negations, modality, and conditions. |
+| [Description and Comparison](description-and-comparison/README.md) | Adjective position, comparisons, and degree structures. |
 | [Phrasal-Verb Placement](verb-system/phrasal-verbs/object-particle-placement/README.md) | Particle placement and separability. |
 | [Degree and Quantity](description-and-comparison/intensifiers/README.md) | Focused intensifier and quantity contrasts retained under structure. |
 

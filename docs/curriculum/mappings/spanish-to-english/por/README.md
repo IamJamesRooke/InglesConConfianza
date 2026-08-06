@@ -12,6 +12,7 @@ Spanish **por** covers cause, route, means, exchange, duration, rate, agent, and
 | [**Por → Per**](06-rate-and-distribution.md) | La medicina se toma dos veces por día. | The medicine is taken twice per day. |
 | [**Por → By** the Agent](07-passive-agent.md) | La canción fue escrita por Ana. | The song was written by Ana. |
 | [**Por → For** a Motive or Cause](08-motive-and-on-behalf-of.md) | Lo hice por ti, no para ti. | I did it because of you, not for you. |
+| [**Por Qué** → **Why**](09-por-que-why.md) | ¿Por qué lo necesitas? | Why do you need it? |
 
 ## Mastery Phrases
 

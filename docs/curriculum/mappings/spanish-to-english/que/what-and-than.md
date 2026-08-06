@@ -8,6 +8,7 @@ Use **what** when **qué** asks for open information.
 |---|---|
 | ¿Qué quieres? | What do you want? |
 | ¿Qué necesitas? | What do you need? |
+| ¿A qué hora empieza? | At what time does it start? |
 
 ## Comparative **que**
 
