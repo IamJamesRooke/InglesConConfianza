@@ -552,3 +552,12 @@
     - [x] Route preposition-stranding examples into the relevant **to**, **with**, **of**, **about**, **con**, and **de** maps in both directions
     - [x] Add the missing English-first **with** map and repair mapping and structure indexes
     - [x] Preserve the owner’s concurrent removal of the required-English-subject branch without restoring it
+
+### 2026-08-06 — Core nouns routed into canonical curriculum homes
+
+- [x] Retire `/curriculum/unsorted/core/nouns` after routing its reusable noun material
+    - [x] Expand the existing **kind**, **lugar**, and noun-quantity lessons
+    - [x] Add Spanish-source maps for people, family relationships, general nouns, reservations, and money/business vocabulary
+    - [x] Preserve the **hermano/hermana** and **hermandad** distinctions across brother, sister, sibling, brotherhood, and sisterhood
+    - [x] Keep direct slot vocabulary such as **libro**, **inglés**, **español**, and **nacionalidad** under `/vocabulary`
+    - [x] Verify the source branch is empty and all new mapping links resolve

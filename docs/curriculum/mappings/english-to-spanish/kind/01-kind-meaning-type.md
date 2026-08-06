@@ -11,6 +11,7 @@ Use **kind of + noun** to identify a category. In questions, **what kind of...?*
 | Spanish | English |
 |---|---|
 | ¿Qué tipo de música escucha Natalia cuando está trabajando? | What kind of music does Natalia listen to while she is working? |
+| Este es un tipo diferente de problema. | This is a different kind of problem. |
 
 After **this** and **that**, use singular **kind**; after **these**, **those** and numbers, use plural **kinds**.
 
