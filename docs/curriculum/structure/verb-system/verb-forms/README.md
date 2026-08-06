@@ -23,5 +23,5 @@ Each subfolder teaches when English selects one of the six forms.
 - [The Full Infinitive](full-infinitive/README.md)
 - [Gerunds and Present Participles](gerund-present-participle/README.md)
 - [Canonical Past and Past-Participle Transformation Inventory](../../../transformations/past-and-past-participle/README.md)
-- [Complete Three-Form Coverage Index](../../../transformations/past-and-past-participle/reference/complete-three-form-index.md)
+- [Complete Three-Form Coverage Index](../../../transformations/past-and-past-participle/all-verbs-index.md)
 - [Third-Person Present](third-person-present/README.md)

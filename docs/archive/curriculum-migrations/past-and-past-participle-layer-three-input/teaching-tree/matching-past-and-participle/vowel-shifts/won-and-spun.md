@@ -1,0 +1,14 @@
+# **Won and Spun**
+
+The past and participle share the same short-vowel form.
+
+## **Won, Spun**
+
+| Base | Past | Participle | Spanish |
+|---|---|---|---|
+| win | won | won | ganar |
+| spin | spun | spun | girar |
+
+In standard pronunciation, **won** and **spun** rhyme.
+
+**I won while the wheel spun.**

@@ -1,0 +1,9 @@
+# **Begin → Began → Begun**
+
+These forms are easiest to retain as one complete three-form pattern rather than as two forced derivations.
+
+## Forms
+
+| Base | Past | Past participle | Spanish |
+|---|---|---|---|
+| begin | **began** | **begun** | empezar |

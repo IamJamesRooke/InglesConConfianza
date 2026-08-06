@@ -29,3 +29,4 @@ Do not invert the embedded clause: *I want to know why wasn't he doing it*.
 - [Fluency Drill: **Was He Going to Do It?**](was-he-going-to-do-it.md)
 - [Fluency Drill: **Were You Doing It?**](were-you-doing-it.md)
 - [Fluency Drill: **Were You Going to Do It?**](were-you-going-to-do-it.md)
+- [Past Plans with **Was/Were Going To**](past-plans-with-was-and-were-going-to.md)

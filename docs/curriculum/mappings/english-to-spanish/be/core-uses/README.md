@@ -8,6 +8,7 @@
 | [Time, Date, and Price](04-time-date-and-price.md) | Son las ocho y son veinte mil pesos. | It's eight, and it's twenty thousand pesos. |
 | [Presence and Absence](05-presence-and-absence.md) | Ana no está; está de viaje. | Ana isn't here; she's away. |
 | [Being](06-being.md) | Deja de ser grosero. | Stop being rude. |
+| [**Be Hungry → Tener Hambre**](09-be-hungry.md) | Tenía hambre. | I was hungry. |
 
 ## Mastery Phrase
 

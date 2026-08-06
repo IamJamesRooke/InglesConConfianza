@@ -104,6 +104,35 @@
 
 ## Completed timeline
 
+### 2026-08-06 — Past transformations flattened into atomic teaching sets
+
+- [x] Reorganize `/transformations/past-and-past-participle` around the relationship between the base, past, and past participle
+    - [x] Establish five learner-facing roots: matching past and participle, past from base, participle from base, participle from past, and integrated unique patterns
+    - [x] Divide matching forms into regular **/d/**, **/t/**, and **/ɪd/** pronunciations plus irregular **-d**, **-t**, vowel-shift, no-change, and memorized sets
+    - [x] Give each Markdown lesson one compact teaching set without filename numbering or competing classification layers
+    - [x] Name every teaching-set file after one canonical anchor transformation, such as `drink-drank-drunk.md`, while keeping the complete family inside the lesson
+    - [x] Re-audit the complete collection by sound, uniting split families such as **slide → slid / hide → hid**, **begin → began → begun / sing → sang → sung**, and **show/mow/sew/sow → -owed → -own**
+    - [x] Replace the broad uncommon, regional, meaning-dependent, and **-ed/-t** catch-all tables with anchored sound or usage sets
+    - [x] Consolidate complete comparison families such as **bite/smite/write**, **beat/eat**, and **draw/saw** when the rhyming forms make the contrast easier to retain
+    - [x] Teach independent transformations independently, including **go → went** under past-from-base and **go → gone / do → done** under participle-from-base
+    - [x] Keep inseparable three-way patterns such as **begin → began → begun** together under unique patterns
+    - [x] Rebuild `all-verbs-index.md` so every verb links separately to its past lesson and participle lesson
+    - [x] Preserve all 190 indexed current verb entries and every indexed form exactly, while archiving both the complete 107-file structural input and the complete 158-file pre-sound-audit tree
+    - [x] Reduce the live collection to 134 sound-grouped Markdown files, remove every obsolete lesson file and empty directory, and verify complete reachability, one H1 per file, zero broken links, and zero stale legacy-path references
+
+### 2026-08-06 — Past and participle teaching families canonicalized
+
+- [x] Tighten `/transformations/past-and-past-participle` from overlapping source views into one universal collection
+    - [x] Replace six competing live branches with three exhaustive categories: regular forms, matching irregular forms, and different past/participle forms
+    - [x] Flatten regular **-ed** lessons under `/pronounced-d`, `/pronounced-t`, and `/pronounced-id`, merging past-only and participle-only practice into complete form lessons
+    - [x] Organize matching forms under `/no-change`, `/vowel-shifts`, `/final-consonant-shifts`, and `/standard-alternatives`
+    - [x] Establish `/different-past-and-participle` with `/add-n-to-past`, `/add-n-to-base`, `/change-vowel-and-add-en`, `/i-a-u`, `/ew-to-own-or-awn`, `/returns-to-base`, `/one-offs`, and `/standard-alternatives`
+    - [x] Distribute the former special-case tables according to their real transformations, including **steal → stole → stolen**, **behold → beheld → beheld**, and **tread → trod → trodden/trod**
+    - [x] Move **there was/were**, **ser/estar with was/were**, **could vs was able to**, **was/were going to**, and **was/were hungry** to their mapping or verb-system teaching homes
+    - [x] Retire the live `/reference` branch, replace it with the root `all-verbs-index.md`, and archive migration-only audits and source overviews outside the teaching tree
+    - [x] Preserve all 190 indexed non-archaic head verbs and every indexed form unchanged; preserve 125 consolidated source bodies exactly after navigation normalization and adapt the remaining ten mixed or structural lessons without dropping their teaching content
+    - [x] Reduce the live collection from 186 to 107 Markdown files, with every file reachable from the root and zero broken scoped links
+
 ### 2026-08-06 — Past and past-participle source of truth established
 
 - [x] Merge the three overlapping past-form inventories into `/transformations/past-and-past-participle`
