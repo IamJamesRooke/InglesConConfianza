@@ -8,6 +8,7 @@
 | [not-anymore](04-not-anymore.md) | Ya no trabajo allí. | I don't work there anymore. |
 | [enough](05-enough.md) | ¡Ya basta! | Enough already! |
 | [ya-que](06-ya-que.md) | Ya que estás aquí, ayúdame. | Since you're here, help me. |
+| [just/already/yet/still](07-just-already-yet-and-still.md) | Ya lo he terminado; todavía no lo he terminado. | I've already finished it; I haven't finished it yet. |
 
 The English-side contrasts are collected under [**no longer**](../../english-to-spanish/no-longer/README.md) and [**anymore**](../../english-to-spanish/anymore/README.md).
 

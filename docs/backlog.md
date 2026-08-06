@@ -104,6 +104,15 @@
 
 ## Completed timeline
 
+### 2026-08-06 — Time and date vocabulary migrated into mappings
+
+- [x] Retire `/curriculum/unsorted/time-space-and-relations` after routing its complete time curriculum into canonical mapping buckets
+    - [x] Add English-to-Spanish **tomorrow** lessons for **tomorrow** and **the day after tomorrow**
+    - [x] Add Spanish-source maps for clock time, duration, frequency, repeated periods, relative days, parts of the day, sequence, and order words
+    - [x] Extend the existing **ya** map with the **just/already/yet/still** contrast
+    - [x] Preserve every original bilingual mapping row and remove the obsolete unsorted navigation files
+    - [x] Verify zero stale references and zero unmigrated source files
+
 ### 2026-08-06 — Curriculum holding branches separated from canonical structure
 
 - [x] Record the owner's concurrent folder pass as a distinct migration layer without folding it into the mappings commit
