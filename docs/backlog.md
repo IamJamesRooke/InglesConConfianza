@@ -104,6 +104,14 @@
 
 ## Completed timeline
 
+### 2026-08-06 — Adjectives and states migrated into mappings and vocabulary
+
+- [x] Retire `/curriculum/unsorted/core/adjectives-and-states` after routing its material to canonical homes
+    - [x] Preserve the complete thematic adjective and state lessons under `/vocabulary/adjectives-and-states` for later curation
+    - [x] Add focused Spanish-source maps for accuracy, specificity, color, difficulty, size, length, speed, price, sufficiency, possibility, difference, safety, readiness, availability, and activity states
+    - [x] Expand the existing **bien**, **tener**, and **poder** maps with the **okay/fine/all right**, physical-state, and **ser capaz de** lessons
+    - [x] Verify every original bilingual row remains present and remove the obsolete unsorted branch
+
 ### 2026-08-06 — Clauses and connections migrated into mappings
 
 - [x] Retire `/curriculum/unsorted/clauses-and-connections` after routing its connector lessons into canonical source-word maps

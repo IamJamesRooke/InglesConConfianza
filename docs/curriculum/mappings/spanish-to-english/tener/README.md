@@ -12,3 +12,4 @@ Spanish **tener** maps far beyond literal **have**. Its common expressions becom
 | [right](06-right.md) | Tienes razón. | You're right. |
 | [**Have To / Have Got To**](07-have-to-and-have-got-to.md) | Tengo que hacerlo. | I have to do it / I've got to do it. |
 | [Possession](08-possession.md) | Tengo una reserva. | I have a reservation. |
+| [Hungry, thirsty, hot, and cold](09-hungry-thirsty-hot-and-cold.md) | Tengo hambre, sed, calor y frío. | I am hungry, thirsty, hot, and cold. |

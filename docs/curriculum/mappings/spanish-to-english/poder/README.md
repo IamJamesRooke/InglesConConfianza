@@ -24,5 +24,6 @@ Spanish **poder** can describe ability, permission, possibility, opportunity, or
 ## Related Lessons Elsewhere
 
 - [**Know How To** and **Can**](../saber/confusion-sets/03-know-how-to-vs-can.md)
+- [**Ser Capaz De** → **Be Able To**](ability/07-ser-capaz-de.md)
 - [Translations of **Deber**](../deber/README.md)
 - [Foundation modal drills](../../../structure/fluency-drills/modals/README.md)

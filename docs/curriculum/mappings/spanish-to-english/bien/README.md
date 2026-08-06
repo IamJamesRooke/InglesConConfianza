@@ -9,6 +9,7 @@
 | [quite](05-quite.md) | Es bien difícil. | It's quite difficult. |
 | [si-bien](06-si-bien.md) | Si bien es caro, funciona. | Although it's expensive, it works. |
 | [bien-bien](07-bien-bien.md) | Bien estudias, bien trabajas. | Either you study or you work. |
+| [okay-fine-alright](08-okay-fine-alright.md) | Estoy bien. | I am okay, fine, or all right. |
 
 ## Mastery Phrases
 
