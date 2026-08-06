@@ -9,4 +9,4 @@ This area contains the small, reusable lexicon used to make structural contrasts
 | [Everyday](everyday/README.md) | Small contextual sets such as the place vocabulary used in location lessons. |
 | [Expressions](expressions/README.md) | High-frequency social and conversational expressions. |
 
-High-frequency verbs now live in the canonical [mapping curriculum](../../mappings/README.md), where each English or Spanish source word can branch into its natural contextual translations. Direct one-to-one verb lessons remain in [root unsorted](../../unsorted/direct-verbs/README.md) until they justify a canonical map.
+High-frequency verbs now live in the canonical [mapping curriculum](../../mappings/README.md), where each English or Spanish source word can branch into its natural contextual translations. Supplemental one-to-one vocabulary is preserved under [vocabulary](../../vocabulary/README.md) for later curation.

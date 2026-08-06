@@ -104,6 +104,14 @@
 
 ## Completed timeline
 
+### 2026-08-06 — Direct verbs migrated into Spanish source mappings
+
+- [x] Retire `/curriculum/unsorted/direct-verbs` after routing its verb lessons into canonical Spanish-source maps
+    - [x] Split the mixed buying/selling and hearing/listening lessons into one source-word folder per Spanish verb
+    - [x] Add reusable extensions such as **buy into**, **sell out**, **hear from/about**, **listen to/up**, **live in/with**, **pay for/back/up**, **read up on/through**, **walk into/away**, and **write down/up**
+    - [x] Preserve every original direct-verb example and bilingual mapping row
+    - [x] Update the unsorted-core navigation and verify zero stale references
+
 ### 2026-08-06 — Adjectives and states migrated into mappings and vocabulary
 
 - [x] Retire `/curriculum/unsorted/core/adjectives-and-states` after routing its material to canonical homes
