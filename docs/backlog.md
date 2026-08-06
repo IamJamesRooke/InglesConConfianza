@@ -104,6 +104,13 @@
 
 ## Completed timeline
 
+### 2026-08-06 — User-directed curriculum cleanup accepted
+
+- [x] Accept the owner’s concurrent folder moves and deletions as intentional repository cleanup
+    - [x] Keep the moved number and plural material under `/vocabulary`
+    - [x] Accept removal of superseded past-and-participle migration archives after the canonical live collection was established
+    - [x] Commit the resulting worktree state without restoring or discarding the owner’s changes
+
 ### 2026-08-06 — Reference and noun-phrase material routed to canonical homes
 
 - [x] Retire `/curriculum/unsorted/reference-and-noun-phrases` after migrating its word-based lessons into canonical mappings
