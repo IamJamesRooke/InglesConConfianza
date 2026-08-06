@@ -160,6 +160,7 @@ A canonical folder exists only when the English source is frequent and has multi
 - [**while**](while/README.md)
 - [**will**](will/README.md)
 - [**wise**](wise/README.md)
+- [**with**](with/README.md)
 - [**wonder**](wonder/README.md)
 - [**work**](work/README.md)
 - [**would**](would/README.md)

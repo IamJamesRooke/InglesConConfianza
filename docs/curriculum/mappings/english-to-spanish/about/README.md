@@ -10,6 +10,7 @@
 | [**Be About To**](04-be-about-to.md) | Estoy a punto de salir. | I'm about to leave. |
 | [**Think, Know**, and **Worry About**](05-think-know-and-worry-about.md) | Pienso en el problema, sé del riesgo y me preocupa el costo. | I think about the problem, know about the risk, and worry about the cost. |
 | [**Hear About**](06-hear-about.md) | Me enteré del cambio ayer. | I heard about the change yesterday. |
+| [**About** in Questions](07-about-in-questions.md) | ¿De qué estás hablando? | What are you talking about? |
 | [**About, Around**, and **Of**](confusion-sets/README.md) | Sé de la empresa y me enteré de unos veinte cambios. | I know of the company and heard about around twenty changes. |
 
 ## Mastery Phrases

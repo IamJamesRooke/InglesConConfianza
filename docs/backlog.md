@@ -531,3 +531,11 @@
     - [x] Prioritize ambiguous translations, structural words, productive constructions, and likely Spanish interference
     - [x] Exclude ordinary direct vocabulary and transparent cognates from routine consideration
     - [x] Preserve missing, partial, and uncertain findings in `/curriculum/inclusion-candidates.md` for owner review
+
+### 2026-08-06 — Clause connectors routed into canonical mappings
+
+- [x] Retire the redundant future-time connector and preposition-stranding lessons from `/structure/clauses-and-connections`
+    - [x] Verify **when**, **as soon as**, **once**, and **until** already have canonical English-to-Spanish maps
+    - [x] Route preposition-stranding examples into the relevant **to**, **with**, **of**, **about**, **con**, and **de** maps in both directions
+    - [x] Add the missing English-first **with** map and repair mapping and structure indexes
+    - [x] Preserve the owner’s concurrent removal of the required-English-subject branch without restoring it

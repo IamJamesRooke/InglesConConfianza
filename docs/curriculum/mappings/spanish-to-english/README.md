@@ -26,6 +26,7 @@ Personal-pronoun maps are intentionally complete reference families. Subject for
 - [**coger**](coger/README.md)
 - [**comer**](comer/README.md)
 - [**compromiso**](compromiso/README.md)
+- [**con**](con/README.md)
 - [**conocer**](conocer/README.md)
 - [**contar**](contar/README.md)
 - [**costar**](costar/README.md)

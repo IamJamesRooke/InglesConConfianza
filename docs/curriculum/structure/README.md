@@ -6,8 +6,6 @@ Structure teaches how English combines a limited vocabulary into complete statem
 |---|---|
 | [Verb Forms](verb-forms/README.md) | The forms selected by English verb structures. |
 | [Fluency Drills](fluency-drills/README.md) | Rapid production of auxiliaries, questions, negations, modality, and conditions. |
-| [Preposition Stranding](clauses-and-connections/preposition-stranding/README.md) | English questions and relative clauses that leave the preposition at the end. |
-| [Required English Subjects](clauses-and-connections/required-english-subject/README.md) | Subjects that English states where Spanish can leave them implicit. |
 | [Phrasal-Verb Placement](verb-system/phrasal-verbs/object-particle-placement/README.md) | Particle placement and separability. |
 | [Degree and Quantity](description-and-comparison/intensifiers/README.md) | Focused intensifier and quantity contrasts retained under structure. |
 
