@@ -22,5 +22,5 @@ Spanish **deber** can express debt, obligation, advice, expectation, probability
 ## Related Lessons Elsewhere
 
 - [**Have To, Have Got To**, and **Gotta**](../../english-to-spanish/get/opportunity-and-obligation/04-have-to-have-got-to-and-gotta.md)
-- [Foundation **must** drill](../../../structure/verb-system/fluency-drills/modals/must.md)
-- [Foundation **should** drill](../../../structure/verb-system/fluency-drills/modals/should.md)
+- [Foundation **must** drill](../../../structure/fluency-drills/modals/must.md)
+- [Foundation **should** drill](../../../structure/fluency-drills/modals/should.md)

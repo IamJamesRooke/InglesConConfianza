@@ -15,7 +15,7 @@ English adjectives do not change for grammatical gender or number:
 - **a good idea**
 - **two good books**
 
-The core words used in these patterns live under [Core Adjectives and States](../../vocabulary/core/adjectives-and-states/README.md). These structural lessons are not a required teaching sequence.
+The core words used in these patterns live under [Core Adjectives and States](../core/adjectives-and-states/README.md). These structural lessons are not a required teaching sequence.
 
 ## Directory Index
 

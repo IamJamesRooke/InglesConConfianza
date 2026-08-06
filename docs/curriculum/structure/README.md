@@ -4,10 +4,11 @@ Structure teaches how English combines a limited vocabulary into complete statem
 
 | Area | Focus |
 |---|---|
-| [Verb System](verb-system/README.md) | Six verb forms, auxiliaries, tense and aspect, modality, conditionals, voice, causation, and fluency transformations. |
-| [Reference and Noun Phrases](reference-and-noun-phrases/README.md) | Pronouns, determiners, possession, quantity, number, and noun grammar. |
-| [Description and Comparison](description-and-comparison/README.md) | Adjective position, adverbs, comparison, degree, and intensification. |
-| [Clauses and Connections](clauses-and-connections/README.md) | Connectors, question words, and the language used to join ideas. |
-| [Time, Space, and Relations](time-space-and-relations/README.md) | Time, location, direction, distance, sequence, frequency, and relational words. |
+| [Verb Forms](verb-forms/README.md) | The forms selected by English verb structures. |
+| [Fluency Drills](fluency-drills/README.md) | Rapid production of auxiliaries, questions, negations, modality, and conditions. |
+| [Preposition Stranding](clauses-and-connections/preposition-stranding/README.md) | English questions and relative clauses that leave the preposition at the end. |
+| [Required English Subjects](clauses-and-connections/required-english-subject/README.md) | Subjects that English states where Spanish can leave them implicit. |
+| [Phrasal-Verb Placement](verb-system/phrasal-verbs/object-particle-placement/README.md) | Particle placement and separability. |
+| [Degree and Quantity](description-and-comparison/intensifiers/README.md) | Focused intensifier and quantity contrasts retained under structure. |
 
-The folders are conceptual categories, not a required teaching order. Later sequencing should begin with a deliberately small vocabulary and use prior structures as prerequisites for each new structure.
+The folders are conceptual categories, not a required teaching order. Material whose final structural home is not yet settled lives in the curriculum-level `/unsorted` holding area for later collation.

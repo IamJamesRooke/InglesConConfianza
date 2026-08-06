@@ -25,4 +25,4 @@ Spanish **poder** can describe ability, permission, possibility, opportunity, or
 
 - [**Know How To** and **Can**](../saber/confusion-sets/03-know-how-to-vs-can.md)
 - [Translations of **Deber**](../deber/README.md)
-- [Foundation modal drills](../../../structure/verb-system/fluency-drills/modals/README.md)
+- [Foundation modal drills](../../../structure/fluency-drills/modals/README.md)

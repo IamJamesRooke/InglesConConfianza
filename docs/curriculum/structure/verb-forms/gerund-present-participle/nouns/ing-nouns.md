@@ -19,4 +19,4 @@ English can use a verb's **-ing** form as the name of an activity, process, or e
 
 The determiner can reveal a countable event: **the meeting** means **la reunión**, not the action **reuniéndose**.
 
-This lesson intentionally overlaps with [**Meet → Meeting**](../../../../../transformations/suffix-transformations/-ing/01-meet-to-meeting.md): that lesson teaches the transformation, while this one identifies the noun-like job of the **-ing** form.
+This lesson intentionally overlaps with [**Meet → Meeting**](../../../../transformations/suffix-transformations/-ing/01-meet-to-meeting.md): that lesson teaches the transformation, while this one identifies the noun-like job of the **-ing** form.

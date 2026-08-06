@@ -32,7 +32,7 @@ The sound transformation—not an isolated verb—is the canonical teaching unit
 | burn | burned/burnt | burned/burnt | [past lesson](matching-past-and-past-participle/memorize/burn-burned-or-burnt.md) | [participle lesson](matching-past-and-past-participle/memorize/burn-burned-or-burnt.md) |
 | burst | burst | burst | [past lesson](matching-past-and-past-participle/irregular-no-change/hurt-hurt.md) | [participle lesson](matching-past-and-past-participle/irregular-no-change/hurt-hurt.md) |
 | buy | bought | bought | [past lesson](matching-past-and-past-participle/irregular-t-sound/think-thought.md) | [participle lesson](matching-past-and-past-participle/irregular-t-sound/think-thought.md) |
-| can | could | — | [modal lesson](../../structure/verb-system/verb-forms/bare-infinitive/modals/can-and-could.md) | [no participle](../../structure/verb-system/verb-forms/bare-infinitive/modals/can-and-could.md) |
+| can | could | — | [modal lesson](../../structure/verb-forms/bare-infinitive/modals/can-and-could.md) | [no participle](../../structure/verb-forms/bare-infinitive/modals/can-and-could.md) |
 | cast | cast | cast | [past lesson](matching-past-and-past-participle/irregular-no-change/cost-cost.md) | [participle lesson](matching-past-and-past-participle/irregular-no-change/cost-cost.md) |
 | catch | caught | caught | [past lesson](matching-past-and-past-participle/irregular-t-sound/think-thought.md) | [participle lesson](matching-past-and-past-participle/irregular-t-sound/think-thought.md) |
 | choose | chose | chosen | [past lesson](unique-patterns/choose-chose-chosen.md) | [participle lesson](unique-patterns/choose-chose-chosen.md) |

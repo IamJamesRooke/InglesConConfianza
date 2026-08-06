@@ -13,6 +13,6 @@ The language-specific maps for Spanish **a, de, para**, and **que** belong to th
 
 ## Directory Index
 
-- [Question Words](question-words/README.md)
+- [Question Words](../question-words/README.md)
 
 - [Connectors](connectors/README.md)

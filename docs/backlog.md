@@ -104,6 +104,19 @@
 
 ## Completed timeline
 
+### 2026-08-06 — Curriculum holding branches separated from canonical structure
+
+- [x] Record the owner's concurrent folder pass as a distinct migration layer without folding it into the mappings commit
+    - [x] Move unresolved clause, question-word, description, comparison, reference, noun-phrase, time, space, relation, and core-vocabulary branches into the single curriculum-level `/unsorted` holding area
+    - [x] Preserve the former vocabulary README with an explicit source label so its origin remains visible during later collation
+    - [x] Lift `/fluency-drills` and `/verb-forms` out of the extra `/structure/verb-system` nesting and make them direct structure roots
+    - [x] Place perception-verb lessons under the base-form and **-ing** form branches while preserving a root contrast index
+    - [x] Keep focused preposition-stranding, required-subject, phrasal-verb, and intensifier constructions in their existing structure homes
+    - [x] Audit apparent deletions and restore the unmatched **explain**, **study**, and **white-compound** lessons to `/unsorted` rather than lose course material
+    - [x] Retire only the superseded verb-system navigation READMEs after preserving their useful form and perception contrasts
+    - [x] Repair cross-links affected by the changed folder depth and verify zero broken local links across all 3,442 curriculum Markdown files
+    - [x] Leave final classification and collation of every `/unsorted` branch for subsequent normalization passes
+
 ### 2026-08-06 — Unsorted mappings resolved by source direction
 
 - [x] Retire the active `/curriculum/unsorted/mappings` holding area after routing its lessons by their true source word or construction
