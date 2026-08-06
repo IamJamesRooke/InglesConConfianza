@@ -23,3 +23,7 @@ Spanish **haber** works as a perfect auxiliary and in impersonal structures for 
 | He terminado el informe. | I have finished the report. |
 | Hay una mesa y hay dos sillas. | There is one table, and there are two chairs. |
 | Había mucha gente y hubo dos problemas. | There were many people, and there were two problems. |
+
+## Core Existential Pattern
+
+- [There is and there are](08-core-there-is-and-are.md)

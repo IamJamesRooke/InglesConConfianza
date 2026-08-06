@@ -23,3 +23,7 @@ Spanish **volver** and **volverse** express return, repeated action, restoration
 | Volví a Bogotá el lunes. | I returned to Bogotá on Monday. |
 | Vuelve aquí y luego vuelve a casa. | Come back here, and then go back home. |
 | Volvió a llamar esta mañana. | She called again this morning. |
+
+## Core Direction Contrast
+
+- [Come back and go back](08-come-and-go-back.md)

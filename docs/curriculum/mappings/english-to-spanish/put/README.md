@@ -20,3 +20,7 @@ English **put** covers placement, expression, writing, investment, assignment, a
 | Put the keys on the table. | Pon las llaves sobre la mesa. |
 | I don't know how to put it politely. | No sé cómo expresarlo con cortesía. |
 | Please put the agreement in writing. | Por favor, pon el acuerdo por escrito. |
+
+## Core Placement
+
+- [Put something somewhere](09-core-placement.md)

@@ -13,3 +13,7 @@
 | Spanish | English |
 |---|---|
 | De niña podía nadar, y ayer logré cruzar el río aunque la corriente estaba fuerte. | As a child, I could swim, and yesterday I managed to cross the river although the current was strong. |
+
+## Foundation Retrieval Lesson
+
+- [Can and be able to](06-foundation-can-and-be-able-to.md)

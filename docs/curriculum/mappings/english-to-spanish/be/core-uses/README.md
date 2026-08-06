@@ -14,3 +14,8 @@
 | Spanish | English |
 |---|---|
 | Ana es médica, está cansada, está en Bogotá y estará aquí a las ocho. | Ana is a doctor, is tired, is in Bogotá, and will be here at eight. |
+
+## Foundation Retrieval Lessons
+
+- [Be with **estar**](07-foundation-estar.md)
+- [Be with **ser**](08-foundation-ser.md)

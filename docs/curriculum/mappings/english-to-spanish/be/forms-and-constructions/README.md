@@ -15,3 +15,9 @@
 | Spanish | English |
 |---|---|
 | Si yo fuera usted, estaría trabajando ahora para poder terminar antes de que el informe sea revisado. | If I were you, I'd be working now to be able to finish before the report is reviewed. |
+
+## Foundation Retrieval Lessons
+
+- [Be going to](08-foundation-be-going-to.md)
+- [Present forms and contractions](09-present-forms-and-contractions.md)
+- [Be able to and can](10-foundation-be-able-to-and-can.md)

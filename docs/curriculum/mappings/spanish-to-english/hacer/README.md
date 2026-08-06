@@ -23,3 +23,7 @@ Beyond the core **do/make** contrast, Spanish **hacer** builds weather, elapsed-
 | Hago la tarea y hago café. | I do the homework and make coffee. |
 | Hace frío, pero hace sol. | It's cold, but it's sunny. |
 | Llegué hace dos años. | I arrived two years ago. |
+
+## Core Contrast
+
+- [Do and make](08-core-do-and-make.md)

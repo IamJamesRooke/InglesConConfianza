@@ -20,3 +20,7 @@ English **run** covers physical movement, operation, management, duration, candi
 | I run in the park every morning. | Corro en el parque todas las mañanas. |
 | The machine runs on batteries. | La máquina funciona con pilas. |
 | She runs a small company. | Ella dirige una empresa pequeña. |
+
+## Core Use
+
+- [Run physically](09-core-running.md)

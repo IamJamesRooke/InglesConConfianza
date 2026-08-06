@@ -13,3 +13,7 @@
 | Spanish | English |
 |---|---|
 | Hubo un error, ha habido varias quejas y va a haber una reunión, pero podría haber una solución. | There was an error, there have been several complaints, and there's going to be a meeting, but there could be a solution. |
+
+## Foundation Retrieval Lesson
+
+- [There is and there are](06-foundation-there-is-and-are.md)

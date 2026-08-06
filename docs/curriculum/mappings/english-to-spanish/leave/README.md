@@ -6,5 +6,6 @@ This bucket collects the contextual Spanish mappings and related contrasts for E
 
 - [01 leave and left meaning depart.md](01-leave-and-left-meaning-depart.md)
 - [02 leave and left something somewhere.md](02-leave-and-left-something-somewhere.md)
+- [04 leave a place](04-core-depart.md)
+- [05 leave something somewhere](05-leave-something-somewhere.md)
 - [06 pronunciation leave leaf and left.md](06-pronunciation-leave-leaf-and-left.md)
-

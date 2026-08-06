@@ -20,3 +20,7 @@ Spanish **sentir** and **sentirse** cover sensations, emotions, sensing, regret,
 | Siento frío y siento dolor en la espalda. | I feel cold, and I feel pain in my back. |
 | Me siento feliz, pero Ana se siente nerviosa. | I feel happy, but Ana feels nervous. |
 | Sentí que alguien me estaba mirando. | I sensed that someone was watching me. |
+
+## Core State Pattern
+
+- [Feel plus an adjective](09-core-feel.md)

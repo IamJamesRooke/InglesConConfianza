@@ -25,3 +25,7 @@
 |---|---|
 | Recibí el mensaje, conseguí permiso, compré las entradas y obtuve el trabajo. | I got the message, got permission, got the tickets, and got the job. |
 | Conseguí el contrato, pero no pude comunicarme con el abogado para obtener su aprobación. | I got hold of the contract, but I couldn't get hold of the lawyer to get his approval. |
+
+## Core Translation Bridge
+
+- [Receive, obtain, and get](17-receive-obtain-and-get.md)

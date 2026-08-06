@@ -20,3 +20,8 @@ English **take** maps to different Spanish verbs for receiving, carrying away, t
 | Take this, and take the coffee to Ana. | Toma esto y llévale el café a Ana. |
 | It takes an hour, but the trip took me two. | Tarda una hora, pero el viaje me tomó dos. |
 | We take the bus to work. | Tomamos el bus para ir al trabajo. |
+
+## Core Movement Lessons
+
+- [Take it there](09-direction-away.md)
+- [Take something](10-pick-up-or-select.md)

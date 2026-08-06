@@ -20,3 +20,7 @@ English **work** maps to labor, operation, suitability, successful results, exer
 | I work from home three days a week. | Trabajo desde casa tres días a la semana. |
 | The printer doesn't work. | La impresora no funciona. |
 | Friday works for me. | El viernes me sirve. |
+
+## Core Contrast
+
+- [Work at a job vs function correctly](09-core-work-and-function.md)

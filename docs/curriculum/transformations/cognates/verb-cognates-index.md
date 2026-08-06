@@ -5,7 +5,7 @@ This page identifies the verb lessons within the unified cognate curriculum and 
 The overlap is intentional:
 
 - In [Cognates](README.md), students encounter these verbs as a way to infer English vocabulary from Spanish.
-- In [Core Verbs](../../vocabulary/core/verbs/README.md), selected meanings become part of the usable verb inventory and combine with the six English verb forms.
+- In [Mappings](../../mappings/README.md), selected high-frequency verbs become contextual translation families and combine with the six English verb forms.
 
 Start with `selected-verbs.md` for the closed, high-frequency foundation inventory. Use the lesson folders when a cognate rule needs more examples, exceptions, or false-cognate contrasts.
 

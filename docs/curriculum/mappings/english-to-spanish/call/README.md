@@ -20,3 +20,7 @@ English **call** covers telephone contact, naming, summoning, describing, decisi
 | Call Ana when you arrive. | Llama a Ana cuando llegues. |
 | This dish is called a tamal, and the restaurant is called El Patio. | Este plato se llama tamal y el restaurante se llama El Patio. |
 | Call the doctor immediately. | Llama al médico de inmediato. |
+
+## Core Pattern
+
+- [Call somebody without **to**](09-call-somebody-direct-object.md)

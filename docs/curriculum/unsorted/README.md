@@ -13,3 +13,7 @@ The Spanish-to-English branch also preserves the original mixed-source folders f
 ## Unresolved word-building material
 
 The [established **white** compounds](white-compounds/README.md) are preserved here because they are lexical combinations rather than productive prefix or suffix transformations. The former mixed `word-building` source families have been deduplicated; their canonical lessons now appear under `/curriculum/transformations/suffix-transformations` and `/curriculum/transformations/prefix-transformations`.
+
+## Direct verb lessons
+
+The [direct verb lessons](direct-verbs/README.md) preserve useful core examples that currently show only one natural mapping in either direction. They remain here instead of being forced into canonical one-to-many word maps.

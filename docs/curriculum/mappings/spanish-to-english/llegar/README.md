@@ -20,3 +20,7 @@ Spanish **llegar** maps to arrival, reaching a place or level, managing an actio
 | Llegamos al aeropuerto a las seis. | We arrived at the airport at six. |
 | ¿Cómo llego a la estación? | How do I get to the station? |
 | Llegamos a la cima antes del mediodía. | We reached the summit before noon. |
+
+## Core Destination Pattern
+
+- [Arrive at/in and get to a place](09-arrive-and-get-to.md)

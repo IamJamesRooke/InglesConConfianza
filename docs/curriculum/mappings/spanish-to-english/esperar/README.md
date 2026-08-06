@@ -19,3 +19,7 @@ Spanish **esperar** can mean remain until something happens, desire a possible r
 |---|---|
 | Espera a Ana; espero que llegue pronto y calculo que llegará a las diez. | Wait for Ana; I hope she arrives soon, and I expect her to arrive at ten. |
 | Ojalá no tuviéramos que esperar, pero tengo muchas ganas de conocerla. | I wish we didn't have to wait, but I can't wait to meet her. |
+
+## Core Object Pattern
+
+- [Wait for somebody or something](08-core-wait-for.md)

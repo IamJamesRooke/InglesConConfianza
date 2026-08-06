@@ -20,3 +20,7 @@ Spanish **dar** and **darse** extend far beyond physical giving. English selects
 | Le di el libro a Ana. | I gave Ana the book. |
 | Me da miedo caminar solo. | Walking alone scares me. / I'm afraid to walk alone. |
 | La ventana da al norte. | The window faces north. |
+
+## Core Transfer Pattern
+
+- [Give somebody something](09-core-give.md)

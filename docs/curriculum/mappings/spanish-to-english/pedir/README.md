@@ -24,3 +24,7 @@ English chooses a different verb according to what is requested: information, a 
 |---|---|
 | Le pedí ayuda a Ana, le pedí que llamara y pedí el almuerzo mientras esperaba. | I asked Ana for help, asked her to call, and ordered lunch while I waited. |
 | Pedí permiso, solicité una visa y pedí prestado el carro para ir a la cita. | I asked for permission, applied for a visa, and borrowed the car to go to the appointment. |
+
+## Core Restaurant Pattern
+
+- [Ordering something in a restaurant](08-ordering-in-a-restaurant.md)

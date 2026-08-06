@@ -104,6 +104,18 @@
 
 ## Completed timeline
 
+### 2026-08-06 — Core verbs migrated into canonical mappings
+
+- [x] Retire `/curriculum/vocabulary/core/verbs` after routing all 52 teaching lessons by source word
+    - [x] Move 40 single-source lessons intact and split 12 mixed topical lessons into atomic mapping destinations
+    - [x] Establish 19 English-to-Spanish maps for **can, close, drink, drive, feel, finish, forget, give, have, help, introduce, open, remember, send, show, spend, start, stay**, and **think**
+    - [x] Establish 8 Spanish-to-English maps for **buscar, comer, costar, entender, hablar, mirar, regresar**, and **ver**
+    - [x] Merge core examples into existing maps such as **be, get, call, come, go, leave, make, run, take, work, decir, hacer, llegar, pedir, poder, saber, tener**, and **volver**
+    - [x] Make useful overlap explicit, including **have got to** under English **have**, English **get**, and Spanish **tener**
+    - [x] Preserve nine direct verb lessons and the non-word **handle verbs** course term in the single root `/curriculum/unsorted` area instead of forcing them into canonical maps
+    - [x] Expand missed high-frequency branches such as **open up/opening**, money/time uses of **spend**, and the contextual uses of **stay, help, feel, start**, and **finish**
+    - [x] Verify all 211 original bilingual example and table lines remain exact, with zero stale source references, zero broken curriculum links, and zero affected index gaps
+
 ### 2026-08-06 — Transformation curriculum established
 
 - [x] Establish `/curriculum/transformations` as the productive vocabulary pillar immediately after mappings
@@ -111,7 +123,7 @@
     - [x] Move **actual/actually/currently** and **eventually/eventualmente/finally** false-cognate families from unsorted into cognate confusion sets
     - [x] Distribute the former word-building curriculum into canonical `/suffix-transformations` folders such as **-ness, -ish, -en, -er, -th**, and **-ward**
     - [x] Build `/prefix-transformations` for **al-, be-, fore-, un-, re-, dis-, mis-, over-**, and **under-**, distinguishing productive prefixes from recognition-only beginning families
-    - [x] Preserve the complete original 129-file mixed word-building tree under the single curriculum-level `/unsorted` bucket
+    - [x] Deduplicate the former 129-file mixed word-building archive after its preservation audit, retaining the unique **white** compound lessons in the single curriculum-level `/unsorted` bucket
     - [x] Keep **past-and-past-participle**, **past-II**, and **past-participle-II** intact for their dedicated next collation pass
     - [x] Keep passive and causative uses of past participles under structure while linking their form inventories from transformations
     - [x] Update the curriculum, vocabulary, structure, mapping, cognate, prefix, and suffix indexes for the new pillar

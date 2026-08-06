@@ -18,3 +18,7 @@ Spanish **conocer** can describe first contact, an existing relationship, famili
 |---|---|
 | Conocí a Ana ayer, pero quiero conocerla mejor antes de decir que la conozco bien. | I met Ana yesterday, but I want to get to know her better before saying I know her well. |
 | Conozco Bogotá porque he estado allí muchas veces, y estoy familiarizado con su sistema de transporte. | I know Bogotá because I've been there many times, and I'm familiar with its transportation system. |
+
+## Core People Contrast
+
+- [Know and meet somebody](07-core-know-and-meet.md)

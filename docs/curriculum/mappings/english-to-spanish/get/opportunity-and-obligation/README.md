@@ -16,3 +16,7 @@ This section keeps the easily confused forms **get to**, **got to**, **have got*
 |---|---|
 | Tengo una entrada, tuve la oportunidad de ir ayer y hoy me toca ir otra vez. | I've got a ticket, I got to go yesterday, and I gotta go again today. |
 | Tengo una entrada, pero tengo que conseguir otra. | I've got a ticket, but I've gotta get another one. |
+
+## Overlapping Core Construction
+
+- [Have to, have got to, and gotta](06-have-got-to-core-pattern.md)

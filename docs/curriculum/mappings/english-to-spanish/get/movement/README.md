@@ -17,3 +17,7 @@
 |---|---|
 | Me levanté, subí al carro, llegué al aeropuerto, subí al avión y bajé en Medellín. | I got up, got into the car, got to the airport, got on the plane, and got off in Medellín. |
 | Llegué aquí, llegué allá y llegué a casa sin usar **to**. | I got here, got there, and got home without using **to**. |
+
+## Foundation Retrieval Lesson
+
+- [Get up](09-foundation-get-up.md)

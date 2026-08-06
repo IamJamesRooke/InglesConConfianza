@@ -21,3 +21,7 @@ Spanish **saber** covers factual knowledge, knowing how to do something, becomin
 | Conozco a Ana, sé dónde trabaja y sé usar el sistema que diseñó. | I know Ana, know where she works, and know how to use the system she designed. |
 | No sabía la respuesta, pero ayer supe la verdad y ahora ya la sé. | I didn't know the answer, but yesterday I found out the truth, and now I know it. |
 | Que yo sepa, ella sabe mucho de café y puede reconocer uno que sabe a chocolate. | As far as I know, she knows a lot about coffee and can recognize one that tastes like chocolate. |
+
+## Core Information Pattern
+
+- [Know information](09-core-knowing-information.md)

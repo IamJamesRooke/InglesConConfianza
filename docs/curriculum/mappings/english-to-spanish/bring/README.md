@@ -16,3 +16,7 @@
 | Bring the book here; take it there. | Trae el libro aquí; llévalo allá. |
 | The news brought relief. | La noticia trajo alivio. |
 | Let me bring Ana into the discussion. | Déjame incluir a Ana en la conversación. |
+
+## Core Direction Contrast
+
+- [Bring it here](07-direction-here.md)
