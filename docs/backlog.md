@@ -104,6 +104,14 @@
 
 ## Completed timeline
 
+### 2026-08-06 — Clauses and connections migrated into mappings
+
+- [x] Retire `/curriculum/unsorted/clauses-and-connections` after routing its connector lessons into canonical source-word maps
+    - [x] Add Spanish-source maps for **y/e**, **o/u**, **pero**, **con**, **si**, **sí**, **así que**, **entonces**, and **luego**
+    - [x] Extend the existing **para**, **que**, **o**, and **luego** maps with purpose, connector, alternative, and sequence lessons
+    - [x] Preserve the distinction between **si** → **if/whether**, **sí** → **yes**, and **si no** → **if not/otherwise**
+    - [x] Verify every original bilingual row remains present and remove the obsolete unsorted branch
+
 ### 2026-08-06 — User-directed curriculum cleanup accepted
 
 - [x] Accept the owner’s concurrent folder moves and deletions as intentional repository cleanup

@@ -22,5 +22,6 @@ The accent matters: interrogative or exclamative **qué** carries an accent; con
 - [**Qué → What** and **Que → Than**](what-and-than.md)
 - [Relative **Que**: **Who, That**, and **Which**](relative-who-that-and-which.md)
 - [Connector **Que**: **That** or No Separate Word](that-or-no-word.md)
+- [Connector **Que** → **That**](06-connector-that.md)
 - [**Lo Que** and **Para Que**](lo-que-and-para-que.md)
 - [Exclamative **Qué**: **What** and **How**](exclamative-what-and-how.md)

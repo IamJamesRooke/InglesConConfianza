@@ -10,6 +10,7 @@ Spanish **para** points toward a recipient, purpose, destination, deadline, stan
 | [**Para → By** a Deadline](04-deadline.md) | Necesito el informe para el viernes. | I need the report by Friday. |
 | [**Para → For** a Standard or Perspective](05-standard-and-perspective.md) | Para un principiante, habla muy bien. | For a beginner, she speaks very well. |
 | [**Para Que → So That**](06-para-que.md) | Hablo despacio para que puedas entender. | I speak slowly so that you can understand. |
+| [**Para Que → So That**](07-purpose-so-that.md) | Hablo despacio para que puedas entender. | I speak slowly so that you can understand. |
 
 ## Mastery Phrases
 
