@@ -1,32 +1,20 @@
 # Past and Past Participle Transformations
 
-This map treats verb forms as transformations of a known base verb.
+This is the single source of truth for English past and past-participle forms. It organizes the forms as small teaching sets instead of one alphabetical list.
 
-| Base | Past | Past participle |
+| Teaching branch | What changes | Example |
 |---|---|---|
-| call | called | called |
-| go | went | gone |
+| [Regular verbs](regular-verbs/README.md) | The written forms match; the final **-ed** sound changes | **wait → waited → waited** |
+| [Matching past and participle](matching-past-and-participle/README.md) | Both irregular forms match each other | **feel → felt → felt** |
+| [Unique past](unique-past/README.md) | The past needs its own teaching set | **go → went** |
+| [Unique past participle](unique-past-participle/README.md) | The participle needs its own teaching set | **go → gone** |
+| [Special cases and variants](special-cases-and-variants/README.md) | Meaning, dialect, or accepted alternatives affect the form | **hang → hung/hanged** |
+| [Reference](reference/README.md) | Complete coverage and preserved source overviews | **write → wrote → written** |
 
-For regular verbs, the past and past participle have the same written form. Their sentence jobs differ:
+## How the branches work together
 
-- **Laura called me yesterday.** — past
-- **Laura has called me twice.** — past participle after **has**
+A verb may appear in more than one branch when its past and participle belong to different teaching patterns. For example, **go → went** belongs under unique past, while **go → gone** belongs under unique past participle.
 
-Irregular verbs may change differently in the two slots: **go → went → gone**.
+The `complete-families`, `past-focus`, `participle-focus`, and `core-teaching-sets` folders intentionally overlap in this first collation layer. No lesson or useful source example has been discarded. A later editing pass can select the best lesson sequence after the source material is safely unified.
 
-## Regular pronunciation groups
-
-The pronunciation of regular **-ed** depends on the final sound of the base verb, not simply its final letter.
-
-| Group | Model |
-|---|---|
-| [final voiced sound + `/d/`](<-d ending/README.md>) | **call → called** |
-| [final voiceless sound + `/t/`](<-t ending/README.md>) | **help → helped** |
-| [final `/d/` + `/ɪd/`](<-ded ending/README.md>) | **need → needed** |
-| [final `/t/` + `/ɪd/`](<-ted ending/README.md>) | **want → wanted** |
-
-## Irregular memory families
-
-[Irregular verbs by memory family](irregular-verbs/README.md) keep the base, past, and participle together. Students learn a limited set of sound transformations such as **sing → sang → sung**, then attach the other verbs in the same family instead of memorizing a long alphabetical table.
-
-The [complete coverage index](irregular-verbs/coverage-index.md) provides the reference table without controlling the teaching order.
+Use the [complete three-form index](reference/complete-three-form-index.md) to verify coverage; use the teaching branches to decide lesson order.

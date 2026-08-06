@@ -104,6 +104,18 @@
 
 ## Completed timeline
 
+### 2026-08-06 — Past and past-participle source of truth established
+
+- [x] Merge the three overlapping past-form inventories into `/transformations/past-and-past-participle`
+    - [x] Organize regular verbs by spoken **-ed** ending: `/d/`, `/t/`, and `/ɪd/`, without creating a spelling-teaching branch
+    - [x] Organize irregular forms into matching past-and-participle forms, unique pasts, unique participles, and special variants
+    - [x] Preserve past-focused, participle-focused, complete-family, and core teaching sets as labeled source views for later lesson-level collation
+    - [x] Add the requested teaching sets **want–wanted / start–started / wait–waited**, **be–been / see–seen**, and **do–done / go–gone**
+    - [x] Correct the prior coverage gap for **begin → began → begun** and add a safety-net lesson for current lower-frequency and regional forms
+    - [x] Retire the two `needs merging` folders and update all curriculum references to the canonical source
+    - [x] Preserve all 158 source Markdown files: 146 survive byte-for-byte, while the remaining 12 are navigation or index files rebuilt without omitting a lesson body
+    - [x] Verify all 186 canonical Markdown files are reachable with zero broken scoped links, zero stale source-folder references, and an explicit modern-coverage audit
+
 ### 2026-08-06 — Core verbs migrated into canonical mappings
 
 - [x] Retire `/curriculum/vocabulary/core/verbs` after routing all 52 teaching lessons by source word
