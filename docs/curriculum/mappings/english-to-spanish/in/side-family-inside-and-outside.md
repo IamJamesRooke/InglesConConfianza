@@ -14,4 +14,4 @@ The same words can describe position:
 
 For the larger contrast among **in, inside, out**, and **outside**, see [**In/Inside** and **Out/Outside**](../in/01-inside-and-outside.md).
 
-For parts relative to a center, see [**Inner, Outer, Upper**, and **Lower**](<../../../vocabulary/word-building/in - inner/README.md>).
+For parts relative to a center, see [**Inner, Outer, Upper**, and **Lower**](../../../transformations/suffix-transformations/-er/other-forms/README.md).

@@ -1,6 +1,6 @@
 # Structure
 
-Structure is the highest-priority curriculum pillar. These lessons teach how English combines a limited vocabulary into complete statements, questions, negations, descriptions, and connected ideas.
+Structure teaches how English combines a limited vocabulary into complete statements, questions, negations, descriptions, and connected ideas. Word-form inventories now live under transformations, while this pillar keeps the machinery that selects and combines those forms.
 
 | Area | Focus |
 |---|---|

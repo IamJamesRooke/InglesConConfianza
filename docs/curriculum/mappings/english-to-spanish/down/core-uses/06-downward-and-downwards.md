@@ -14,4 +14,4 @@ Compare the base direction and the extended form:
 |---|---|
 | Mire abajo y apunte hacia abajo. | Look down and point downward. |
 
-See the productive transformation under [**To → Towards**](<../../../../vocabulary/word-building/to - towards/05-downward-and-downwards.md>).
+See the productive transformation under [**-ward**](../../../../transformations/suffix-transformations/-ward/05-downward-and-downwards.md).

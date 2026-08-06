@@ -10,4 +10,4 @@
 |---|---|
 | Guarde las llaves en el bolsillo interior, no en el exterior. | Keep the keys in the inner pocket, not the outer pocket. |
 
-Unlike **inside** and **outside**, **inner** and **outer** normally go before the part they describe. See [**Inside/Outside** vs **Inner/Outer**](<../../../vocabulary/word-building/in - inner/01-inside-outside-vs-inner-outer.md>).
+Unlike **inside** and **outside**, **inner** and **outer** normally go before the part they describe. See [**Inside/Outside** vs **Inner/Outer**](../../../transformations/suffix-transformations/-er/other-forms/01-inside-outside-vs-inner-outer.md).

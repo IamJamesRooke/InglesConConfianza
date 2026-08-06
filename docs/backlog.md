@@ -104,6 +104,19 @@
 
 ## Completed timeline
 
+### 2026-08-06 — Transformation curriculum established
+
+- [x] Establish `/curriculum/transformations` as the productive vocabulary pillar immediately after mappings
+    - [x] Move the existing cognate curriculum intact under `/transformations/cognates`
+    - [x] Move **actual/actually/currently** and **eventually/eventualmente/finally** false-cognate families from unsorted into cognate confusion sets
+    - [x] Distribute the former word-building curriculum into canonical `/suffix-transformations` folders such as **-ness, -ish, -en, -er, -th**, and **-ward**
+    - [x] Build `/prefix-transformations` for **al-, be-, fore-, un-, re-, dis-, mis-, over-**, and **under-**, distinguishing productive prefixes from recognition-only beginning families
+    - [x] Preserve the complete original 129-file mixed word-building tree under the single curriculum-level `/unsorted` bucket
+    - [x] Keep **past-and-past-participle**, **past-II**, and **past-participle-II** intact for their dedicated next collation pass
+    - [x] Keep passive and causative uses of past participles under structure while linking their form inventories from transformations
+    - [x] Update the curriculum, vocabulary, structure, mapping, cognate, prefix, and suffix indexes for the new pillar
+    - [x] Verify zero broken curriculum links, zero transformation index gaps, and preservation of every original lesson; four files changed only to repair relocated links
+
 ### 2026-08-05 — Spanish-to-English canonical collation
 
 - [x] Collate `/curriculum/mappings/spanish-to-english` around one Spanish source per top-level folder while preserving complete reference access
