@@ -104,6 +104,16 @@
 
 ## Completed timeline
 
+### 2026-08-07 — Obsolete curriculum collation artifacts removed
+
+- [x] Audit the curriculum tree for migration-only indexes, explicit duplicates, stale scaffolding, and empty directories
+    - [x] Remove all 51 `README-former-*` files after confirming their linked lessons remain in canonical source folders
+    - [x] Remove stale “preserved source index” links and migration commentary from the active mapping READMEs
+    - [x] Remove the duplicate **él** personal-reference lesson while indexing the retained complete reference lesson
+    - [x] Remove four byte-identical duplicate **-ward** lessons and their repeated index entries
+    - [x] Preserve intentional duplicate teaching access across mapping directions and source buckets
+    - [x] Verify canonical README coverage, local links, empty directories, stale artifact names, and Markdown formatting after cleanup
+
 ### 2026-08-07 — Bilingual mapping completeness audit
 
 - [x] Re-audit the canonical mapping collection against high-frequency English and Spanish source words

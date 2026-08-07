@@ -9,3 +9,4 @@ This top-level pronoun map keeps the subject form and its common prepositional f
 | **con él** | I work with him | [open](03-con.md) |
 | **a él** | They delivered it to him | [open](04-a-or-por.md) |
 | **de él** | They're talking about him | [open](05-de.md) |
+| **él / lo / le / su / suyo / él mismo** | Complete masculine personal-reference set | [open](08-personal-reference.md) |

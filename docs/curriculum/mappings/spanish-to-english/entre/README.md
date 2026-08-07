@@ -9,8 +9,6 @@
 | [reciprocal](04-reciprocal.md) | Hablaron entre ellos. | They talked among themselves. |
 | [the-more](05-the-more.md) | Entre más practicas, más aprendes. | The more you practice, the more you learn. |
 
-The former English-first **among and between** lessons were moved here because their Spanish source is **entre**. They now appear as concrete **entre** micro-lessons in this folder.
-
 ## Concrete Micro-Lessons
 
 - [**entre** → among a group](entre%20(among%20a%20group).md)
@@ -18,7 +16,6 @@ The former English-first **among and between** lessons were moved here because t
 - [**entre** → between people](entre%20(between%20people).md)
 - [**entre** → distribution among](entre%20(distribution).md)
 - [**entre ellos** → among themselves](entre%20ellos%20(among%20themselves).md)
-- [Preserved **among/between** source index](README-former-among-and-between.md)
 
 ## Mastery Phrases
 

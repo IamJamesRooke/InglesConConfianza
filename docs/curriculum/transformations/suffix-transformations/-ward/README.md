@@ -21,7 +21,3 @@ Movement or orientation in a direction: north → northward.
 - [beforehand](11-beforehand.md)
 - [onward and onwards](12-onward-and-onwards.md)
 - [homeward and homewards](13-homeward-and-homewards.md)
-- [northward and northwards](14-northward-and-northwards.md)
-- [southward and southwards](15-southward-and-southwards.md)
-- [eastward and eastwards](16-eastward-and-eastwards.md)
-- [westward and westwards](17-westward-and-westwards.md)
