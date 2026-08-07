@@ -104,6 +104,63 @@
 
 ## Completed timeline
 
+### 2026-08-07 — Bilingual mapping completeness audit
+
+- [x] Re-audit the canonical mapping collection against high-frequency English and Spanish source words
+    - [x] Review approximately 2,000 frequent entries in each language alongside the earlier inclusion-candidate audit
+    - [x] Apply the asymmetric source-word rule: add a map only when one frequent source has multiple useful translations, without forcing a reverse map
+    - [x] Add 123 English-to-Spanish source maps, emphasizing high-frequency verbs, modal verbs, function words, connectors, and context-sensitive description words
+    - [x] Add 154 Spanish-to-English source maps, emphasizing polysemous verbs, function words, connectors, false-cognate risks, and context-sensitive description words
+    - [x] Cover high-value additions such as **for**, **do**, **know**, **ask**, **need**, **become**, **meet**, **save**, and **lie**, plus **ser**, **estar**, **ir**, **conseguir**, **ganar**, **significar**, **andar**, **discutir**, **asistir**, and **pretender**
+    - [x] Repair the missing **a/an** source README and index every newly added source in the appropriate directional master README
+    - [x] Verify all top-level mapping folders have a README, all new index links resolve, all new lessons contain bilingual contextual examples, and no existing lessons were deleted
+
+### 2026-08-06 — Adjective and state vocabulary routed to canonical homes
+
+- [x] Retire `/curriculum/vocabulary/adjectives-and-states` after preserving its teaching points
+- [x] Extend the canonical **bien**, **tener**, **mismo**, and **barato** maps with the missing examples and distinctions
+- [x] Add Spanish-to-English adjective maps for **bueno**, **malo**, **fácil**, **duro**, **importante**, **necesario**, **viejo**, **joven**, **lento**, **despacio**, and **gratuito**
+- [x] Keep cognate and adjective-to-adverb material under `/transformations` rather than duplicating it in vocabulary
+- [x] Preserve basic color vocabulary in `/vocabulary/supplemental-adjectives.md`, with shade usage linked to the **claro** and **oscuro** maps
+
+### 2026-08-06 — Retire the curriculum unsorted scaffold
+
+- [x] Confirm `/curriculum/unsorted` contains no remaining curriculum lessons
+- [x] Remove the obsolete root and `/core` README scaffolds
+- [x] Remove stale unsorted references from the curriculum indexes
+- [x] Remove the empty `remember/confusion-sets` mapping scaffold
+- [x] Preserve prior unsorted paths in this backlog as historical migration records
+
+### 2026-08-06 — Core nouns routed into canonical curriculum homes
+
+- [x] Retire `/curriculum/unsorted/core/nouns` after routing its reusable noun material
+    - [x] Expand the existing **kind**, **lugar**, and noun-quantity lessons
+    - [x] Add Spanish-source maps for people, family relationships, general nouns, reservations, and money/business vocabulary
+    - [x] Preserve the **hermano/hermana** and **hermandad** distinctions across brother, sister, sibling, brotherhood, and sisterhood
+    - [x] Keep direct slot vocabulary such as **libro**, **inglés**, **español**, and **nacionalidad** under `/vocabulary`
+    - [x] Verify the source branch is empty and all new mapping links resolve
+
+### 2026-08-06 — Description, comparison, and question-word branches collated
+
+- [x] Retire `/curriculum/unsorted/description-and-comparison` after routing its content to canonical homes
+    - [x] Add English-first maps for **free**, **good**, **bad**, **far**, **fast**, **hard**, and **very**, while extending existing **too**, **so**, **really**, **enough**, **more**, and **most** maps
+    - [x] Expand the Spanish **disponible** family with **available**, **free**, and **availability**, and preserve the related **libre** map
+    - [x] Move productive adjective-to-adverb and regular comparative/superlative patterns into `/transformations`
+    - [x] Move adjective position and comparative **than/the** rules into `/structure/description-and-comparison`
+    - [x] Preserve irregular comparison families for **good**, **bad**, and **far** in their canonical English maps
+- [x] Retire `/curriculum/unsorted/question-words` after routing its bilingual question-word families into mappings
+    - [x] Add English-first maps for **how**, **what**, **which**, **why**, **because**, and **who**, and extend **when**
+    - [x] Add Spanish-first maps for **cómo**, **cuál**, **cuánto**, **cuántos**, **quién**, **dónde**, **cuándo**, and **porque**
+    - [x] Extend the existing **qué**, **qué tan**, and **por qué** maps and verify the source branches are empty
+
+### 2026-08-06 — Clause connectors routed into canonical mappings
+
+- [x] Retire the redundant future-time connector and preposition-stranding lessons from `/structure/clauses-and-connections`
+    - [x] Verify **when**, **as soon as**, **once**, and **until** already have canonical English-to-Spanish maps
+    - [x] Route preposition-stranding examples into the relevant **to**, **with**, **of**, **about**, **con**, and **de** maps in both directions
+    - [x] Add the missing English-first **with** map and repair mapping and structure indexes
+    - [x] Preserve the owner’s concurrent removal of the required-English-subject branch without restoring it
+
 ### 2026-08-06 — Direct verbs migrated into Spanish source mappings
 
 - [x] Retire `/curriculum/unsorted/direct-verbs` after routing its verb lessons into canonical Spanish-source maps
@@ -531,49 +588,3 @@
     - [x] Prioritize ambiguous translations, structural words, productive constructions, and likely Spanish interference
     - [x] Exclude ordinary direct vocabulary and transparent cognates from routine consideration
     - [x] Preserve missing, partial, and uncertain findings in `/curriculum/inclusion-candidates.md` for owner review
-
-### 2026-08-06 — Description, comparison, and question-word branches collated
-
-- [x] Retire `/curriculum/unsorted/description-and-comparison` after routing its content to canonical homes
-    - [x] Add English-first maps for **free**, **good**, **bad**, **far**, **fast**, **hard**, and **very**, while extending existing **too**, **so**, **really**, **enough**, **more**, and **most** maps
-    - [x] Expand the Spanish **disponible** family with **available**, **free**, and **availability**, and preserve the related **libre** map
-    - [x] Move productive adjective-to-adverb and regular comparative/superlative patterns into `/transformations`
-    - [x] Move adjective position and comparative **than/the** rules into `/structure/description-and-comparison`
-    - [x] Preserve irregular comparison families for **good**, **bad**, and **far** in their canonical English maps
-- [x] Retire `/curriculum/unsorted/question-words` after routing its bilingual question-word families into mappings
-    - [x] Add English-first maps for **how**, **what**, **which**, **why**, **because**, and **who**, and extend **when**
-    - [x] Add Spanish-first maps for **cómo**, **cuál**, **cuánto**, **cuántos**, **quién**, **dónde**, **cuándo**, and **porque**
-    - [x] Extend the existing **qué**, **qué tan**, and **por qué** maps and verify the source branches are empty
-
-### 2026-08-06 — Clause connectors routed into canonical mappings
-
-- [x] Retire the redundant future-time connector and preposition-stranding lessons from `/structure/clauses-and-connections`
-    - [x] Verify **when**, **as soon as**, **once**, and **until** already have canonical English-to-Spanish maps
-    - [x] Route preposition-stranding examples into the relevant **to**, **with**, **of**, **about**, **con**, and **de** maps in both directions
-    - [x] Add the missing English-first **with** map and repair mapping and structure indexes
-    - [x] Preserve the owner’s concurrent removal of the required-English-subject branch without restoring it
-
-### 2026-08-06 — Core nouns routed into canonical curriculum homes
-
-- [x] Retire `/curriculum/unsorted/core/nouns` after routing its reusable noun material
-    - [x] Expand the existing **kind**, **lugar**, and noun-quantity lessons
-    - [x] Add Spanish-source maps for people, family relationships, general nouns, reservations, and money/business vocabulary
-    - [x] Preserve the **hermano/hermana** and **hermandad** distinctions across brother, sister, sibling, brotherhood, and sisterhood
-    - [x] Keep direct slot vocabulary such as **libro**, **inglés**, **español**, and **nacionalidad** under `/vocabulary`
-    - [x] Verify the source branch is empty and all new mapping links resolve
-
-### 2026-08-06 — Retire the curriculum unsorted scaffold
-
-- [x] Confirm `/curriculum/unsorted` contains no remaining curriculum lessons
-- [x] Remove the obsolete root and `/core` README scaffolds
-- [x] Remove stale unsorted references from the curriculum indexes
-- [x] Remove the empty `remember/confusion-sets` mapping scaffold
-- [x] Preserve prior unsorted paths in this backlog as historical migration records
-
-### 2026-08-06 — Adjective and state vocabulary routed to canonical homes
-
-- [x] Retire `/curriculum/vocabulary/adjectives-and-states` after preserving its teaching points
-- [x] Extend the canonical **bien**, **tener**, **mismo**, and **barato** maps with the missing examples and distinctions
-- [x] Add Spanish-to-English adjective maps for **bueno**, **malo**, **fácil**, **duro**, **importante**, **necesario**, **viejo**, **joven**, **lento**, **despacio**, and **gratuito**
-- [x] Keep cognate and adjective-to-adverb material under `/transformations` rather than duplicating it in vocabulary
-- [x] Preserve basic color vocabulary in `/vocabulary/supplemental-adjectives.md`, with shade usage linked to the **claro** and **oscuro** maps
