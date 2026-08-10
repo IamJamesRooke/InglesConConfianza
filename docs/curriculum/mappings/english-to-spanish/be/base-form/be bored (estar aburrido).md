@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - base-form
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-estar-aburrido--en-be-bored
 status: draft
 examples:
   - source: "The students may be bored during a long meeting."

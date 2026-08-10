@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - are
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-son--en-they-you-are
 status: draft
 examples:
   - source: "They are doctors, and you are their teachers."

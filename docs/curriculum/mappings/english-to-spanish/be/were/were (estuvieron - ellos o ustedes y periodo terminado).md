@@ -13,8 +13,10 @@ aliases: []
 index_under:
   - be
   - were
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-estuvieron-preterite-third-plural-bounded-state-or-location--en-they-were
+  - es-estuvieron-preterite-you-plural-bounded-state-or-location--en-you-were
 status: draft
 examples:
   - source: "They were in Bogotá for three days."

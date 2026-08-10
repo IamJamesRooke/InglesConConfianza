@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - base-form
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-ser-consciente-de--en-be-aware-of
 status: draft
 examples:
   - source: "Managers need to be aware of the risk."

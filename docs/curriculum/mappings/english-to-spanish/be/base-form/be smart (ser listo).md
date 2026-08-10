@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - base-form
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-ser-listo--en-be-smart
 status: draft
 examples:
   - source: "The child appears to be smart for his age."

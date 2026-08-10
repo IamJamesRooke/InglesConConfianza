@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - were
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-estuvieramos-imperfect-subjunctive-first-plural-hypothetical--en-were
 status: draft
 examples:
   - source: "If we were ready, we would leave now."

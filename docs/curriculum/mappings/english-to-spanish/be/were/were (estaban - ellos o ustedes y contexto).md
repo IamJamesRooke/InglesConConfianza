@@ -13,8 +13,10 @@ aliases: []
 index_under:
   - be
   - were
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-estaban-imperfect-third-plural-background-state-or-location--en-they-were
+  - es-estaban-imperfect-you-plural-background-state-or-location--en-you-were
 status: draft
 examples:
   - source: "The offices were open when we arrived."

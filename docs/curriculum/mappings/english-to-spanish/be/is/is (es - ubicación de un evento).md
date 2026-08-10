@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - is
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-es-event-location--en-is
 status: draft
 examples:
   - source: "The meeting is in Ana's office."

@@ -13,8 +13,10 @@ aliases: []
 index_under:
   - be
   - are
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-estan-present-third-plural-state--en-they-are
+  - es-estan-present-you-plural-state--en-you-are
 status: draft
 examples:
   - source: "They are ready, and you are in the right room."

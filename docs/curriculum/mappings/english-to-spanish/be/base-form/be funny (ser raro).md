@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - base-form
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-ser-raro--en-be-funny
 status: draft
 examples:
   - source: "His explanation was funny, but it wasn't humorous."

@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - base-form
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-estar-fuera--en-be-out
 status: draft
 examples:
   - source: "The children want to be out of the house all afternoon."

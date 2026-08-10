@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - base-form
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-va-a-haber-planned-singular-existence--en-there-is-going-to-be
 status: draft
 examples:
   - source: "There is going to be a meeting tomorrow."

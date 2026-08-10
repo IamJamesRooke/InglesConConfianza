@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - is
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-hay-present-singular-existence--en-there-is
 status: draft
 examples:
   - source: "There is a book on the table."

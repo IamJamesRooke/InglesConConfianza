@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - was
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-era-third--en-he-she-was
 status: draft
 examples:
   - source: "The old office was small but practical."

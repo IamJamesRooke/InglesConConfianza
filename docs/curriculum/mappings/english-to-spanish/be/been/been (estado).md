@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - been
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-estado-past-participle-state-or-location--en-been
 status: draft
 examples:
   - source: "Ana has been here all morning."

@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - were
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-eramos--en-we-were
 status: draft
 examples:
   - source: "We were very young then."

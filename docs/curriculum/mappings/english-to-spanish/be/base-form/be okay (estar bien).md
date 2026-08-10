@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - base-form
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-estar-bien--en-be-okay
 status: draft
 examples:
   - source: "The schedule should be okay after the change."

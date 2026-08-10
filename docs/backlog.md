@@ -9,6 +9,8 @@
     - [x] Phase 2: pilot the contract on Spanish **lo** and split the former **to / too / two** bundle by canonical ownership
     - [x] Phase 3: normalize English **be** forms and high-value expressions
     - [ ] Phase 4: normalize the reverse **ser / estar / haber / tener / poder** hub
+        - [x] Phase 4A: normalize **ser, estar**, and **haber**, including their source-form topologies and reciprocal **be** edges
+        - [ ] Phase 4B: normalize **tener** and especially **poder**, then cross-audit **have, can, could, manage**, and remaining **be** expressions
     - [ ] Phase 5: rehome top-level multiword expressions under canonical headwords
     - [ ] Phase 6: normalize the remaining high-frequency bilingual hubs in bounded batches
     - [ ] Phase 7: complete the remaining mapping normalization
@@ -113,6 +115,20 @@
 - Spanish-to-English only. No other languages. If others want to fork the repo, that's fine. And can give AGENT instructions explaining exactly how the method was made.
 
 ## Completed timeline
+
+### 2026-08-09 — Reverse **be** hub Phase 4A normalized
+
+- [x] Normalize Spanish **ser, estar**, and **haber** on Sol XHigh without filtering source material
+    - [x] Inventory the 16 original source files and 156 lines before migration
+    - [x] Create 298 atomic Spanish-to-English mapping objects: 106 under **ser**, 114 under **estar**, and 78 under **haber**
+    - [x] Organize present, past, future, conditional, subjunctive, participle, gerund, command, existential, obligation, and high-value expression forms under their canonical Spanish lemmas
+    - [x] Add modern alternate imperfect-subjunctive families such as **fuese, estuviese**, and **hubiese** instead of silently omitting non-archaic variants
+    - [x] Expand English **be** from 230 to 321 atomic objects by adding 91 real reverse-coverage mappings for subordinate forms, commands, subject-specific future and conditional forms, material and purpose expressions, and existential perfect forms
+    - [x] Cross-link 218 English **be** objects and 225 reciprocal bilingual edges; leave auxiliary **have / has / had** and unrelated lexical heads pending for their own canonical hubs
+    - [x] Preserve all 16 pre-normalization source files byte-for-byte under **teaching-sets**, while retaining their synthesis value separately from atomic YAML
+    - [x] Apply the owner's completeness rule by duplicating uncertain but useful reverse paths now and deferring deconfliction
+    - [x] Validate 629 globally unique mapping IDs, YAML fields, direction and language pairs, one-to-three examples, reciprocal reverse IDs, README coverage, source hashes, empty directories, stale paths, formatting, and 5,144 local curriculum links
+    - [x] Keep **tener** and **poder** unchanged for the separately approved Phase 4B checkpoint
 
 ### 2026-08-09 — English **be** form topology normalized
 

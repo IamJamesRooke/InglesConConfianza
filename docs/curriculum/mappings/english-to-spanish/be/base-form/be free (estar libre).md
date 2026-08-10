@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - base-form
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-estar-libre--en-be-free
 status: draft
 examples:
   - source: "Will you be free after the meeting?"

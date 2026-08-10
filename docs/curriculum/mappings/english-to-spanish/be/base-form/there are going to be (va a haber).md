@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - base-form
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-va-a-haber-planned-plural-existence--en-there-are-going-to-be
 status: draft
 examples:
   - source: "There are going to be several changes."

@@ -1,29 +1,49 @@
-# Translations of Spanish **Haber**
+# Spanish **haber** mappings
 
-Spanish **haber** works as a perfect auxiliary and in impersonal structures for existence, obligation, and probability. English chooses different forms for each job.
+Spanish **haber** maps perfect auxiliaries, existence, obligation, probability, and formal impersonal constructions into different English choices.
 
-| Lesson | Spanish | English |
-|---|---|---|
-| [Perfect Forms with **Haber**](01-perfect-auxiliary.md) | He terminado el informe. | I have finished the report. |
-| [**Hay → There Is / There Are**](02-hay.md) | Hay una mesa y hay dos sillas. | There is one table, and there are two chairs. |
-| [Past **Haber → There Was / Were**](03-past-existence.md) | Había mucha gente y hubo dos problemas. | There were many people, and there were two problems. |
-| [Future and Conditional **Haber**](04-future-and-conditional-existence.md) | Habrá cambios, pero habría menos problemas con tiempo. | There will be changes, but there would be fewer problems with time. |
-| [**Hay Que → Have To / Need To**](05-hay-que.md) | Hay que salir temprano. | We have to leave early. / You need to leave early. |
-| [**Debe de Haber → There Must Be**](06-debe-de-haber.md) | Debe de haber una explicación. | There must be an explanation. |
-| [Formal Impersonal **Haber**](07-formal-impersonal-uses.md) | No habiendo más preguntas, terminó la reunión. | There being no further questions, the meeting ended. |
+This hub contains **78 atomic mappings**. Inflected forms remain under **haber** so the source lemma stays canonical while each surface form is easy to retrieve.
 
-## Construction Maps
+| Source form | Atomic mappings |
+|---|---:|
+| [base-form](base-form/README.md) | 11 |
+| [he](he/README.md) | 1 |
+| [has](has/README.md) | 1 |
+| [ha](ha/README.md) | 4 |
+| [hemos](hemos/README.md) | 1 |
+| [han](han/README.md) | 1 |
+| [hay](hay/README.md) | 7 |
+| [había](hab%C3%ADa/README.md) | 6 |
+| [habías](hab%C3%ADas/README.md) | 1 |
+| [habíamos](hab%C3%ADamos/README.md) | 1 |
+| [habían](hab%C3%ADan/README.md) | 1 |
+| [hubo](hubo/README.md) | 3 |
+| [habré](habr%C3%A9/README.md) | 1 |
+| [habrás](habr%C3%A1s/README.md) | 1 |
+| [habrá](habr%C3%A1/README.md) | 4 |
+| [habremos](habremos/README.md) | 1 |
+| [habrán](habr%C3%A1n/README.md) | 1 |
+| [habría](habr%C3%ADa/README.md) | 4 |
+| [habrías](habr%C3%ADas/README.md) | 1 |
+| [habríamos](habr%C3%ADamos/README.md) | 1 |
+| [habrían](habr%C3%ADan/README.md) | 1 |
+| [haya](haya/README.md) | 5 |
+| [hayas](hayas/README.md) | 1 |
+| [hayamos](hayamos/README.md) | 1 |
+| [hayan](hayan/README.md) | 1 |
+| [hubiera](hubiera/README.md) | 4 |
+| [hubieras](hubieras/README.md) | 1 |
+| [hubiéramos](hubi%C3%A9ramos/README.md) | 1 |
+| [hubieran](hubieran/README.md) | 1 |
+| [hubiese](hubiese/README.md) | 4 |
+| [hubieses](hubieses/README.md) | 1 |
+| [hubiésemos](hubi%C3%A9semos/README.md) | 1 |
+| [hubiesen](hubiesen/README.md) | 1 |
+| [habido](habido/README.md) | 1 |
+| [habiendo](habiendo/README.md) | 2 |
 
-- [**hay que** → you/we have to, one must, it is necessary](hay-que/README.md)
+## Preserved teaching sets
 
-## Mastery Phrases
+The pre-normalization lessons remain available under [teaching sets](teaching-sets/README.md). They are retained for synthesis and loss auditing; the YAML files above are the atomic machine-readable source.
 
-| Spanish | English |
-|---|---|
-| He terminado el informe. | I have finished the report. |
-| Hay una mesa y hay dos sillas. | There is one table, and there are two chairs. |
-| Había mucha gente y hubo dos problemas. | There were many people, and there were two problems. |
-
-## Core Existential Pattern
-
-- [There is and there are](08-core-there-is-and-are.md)
+Return to [Spanish-to-English mappings](../README.md).

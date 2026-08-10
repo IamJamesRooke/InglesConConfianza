@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - being
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-siendo--en-being
 status: draft
 examples:
   - source: "He is being rude today."

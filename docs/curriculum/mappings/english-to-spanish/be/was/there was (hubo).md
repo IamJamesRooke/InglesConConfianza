@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - was
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-hubo-preterite-singular-existence--en-there-was
 status: draft
 examples:
   - source: "There was an error yesterday."

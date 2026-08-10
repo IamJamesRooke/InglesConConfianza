@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - base-form
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-ser-malo-para--en-be-bad-for
 status: draft
 examples:
   - source: "Too much sugar can be bad for your health."

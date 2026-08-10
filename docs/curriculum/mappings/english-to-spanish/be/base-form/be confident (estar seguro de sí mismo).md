@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - base-form
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-estar-seguro-de-si-mismo--en-be-confident
 status: draft
 examples:
   - source: "She wants to be more confident when speaking English."

@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - was
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-fui--en-i-was
 status: draft
 examples:
   - source: "I was the project manager last year."

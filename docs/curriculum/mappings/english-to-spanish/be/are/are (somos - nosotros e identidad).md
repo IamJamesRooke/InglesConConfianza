@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - are
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-somos--en-we-are
 status: draft
 examples:
   - source: "We are from Bogotá."

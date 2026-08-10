@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - being
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-estando-gerund-state-or-location--en-being
 status: draft
 examples:
   - source: "Being in Bogotá, I could visit Ana easily."

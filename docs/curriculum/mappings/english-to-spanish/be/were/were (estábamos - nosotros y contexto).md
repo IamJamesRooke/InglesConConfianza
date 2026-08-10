@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - were
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-estabamos-imperfect-first-plural-background-state-or-location--en-we-were
 status: draft
 examples:
   - source: "We were working when Ana arrived."

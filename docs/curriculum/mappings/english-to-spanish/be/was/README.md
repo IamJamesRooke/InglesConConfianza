@@ -25,3 +25,16 @@ These atomic lessons separate the Spanish meanings hidden inside English **was**
 | **was able to** | **logró** | [open](was%20able%20to%20(logr%C3%B3).md) |
 
 For the uninflected form and fixed expressions, return to [Base Form and Expressions](../base-form/README.md).
+
+## Phase 4A reverse-coverage additions
+
+These objects close Spanish-to-English edges found while normalizing **ser**, **estar**, and **haber**.
+
+| English source | Spanish target | Atomic lesson |
+|---|---|---|
+| **was** | **fuera** | [open](was%20(fuera%20-%20subordinate-third-person-identity).md) |
+| **was** | **fuese** | [open](was%20(fuese%20-%20subordinate-third-person-identity).md) |
+| **was** | **estuviera** | [open](was%20(estuviera%20-%20subordinate-third-person-state).md) |
+| **was** | **estuviese** | [open](was%20(estuviese%20-%20subordinate-third-person-state).md) |
+| **there was** | **hubiera** | [open](there%20was%20(hubiera%20-%20hypothetical-singular-existence).md) |
+| **there was** | **hubiese** | [open](there%20was%20(hubiese%20-%20hypothetical-singular-existence).md) |

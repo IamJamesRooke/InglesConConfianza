@@ -17,3 +17,12 @@ These atomic lessons organize the frequent Spanish mappings of English **am**. S
 | **am in a hurry** | **tengo afán** | [open](am%20in%20a%20hurry%20(tengo%20af%C3%A1n).md) |
 
 For the uninflected form and fixed expressions, return to [Base Form and Expressions](../base-form/README.md).
+
+## Phase 4A reverse-coverage additions
+
+These objects close Spanish-to-English edges found while normalizing **ser**, **estar**, and **haber**.
+
+| English source | Spanish target | Atomic lesson |
+|---|---|---|
+| **am** | **sea** | [open](am%20(sea%20-%20first-person-subordinate-identity).md) |
+| **am** | **esté** | [open](am%20(est%C3%A9%20-%20first-person-subordinate-state).md) |

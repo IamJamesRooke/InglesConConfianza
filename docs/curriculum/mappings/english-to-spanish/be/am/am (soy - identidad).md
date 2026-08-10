@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - am
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-soy-identity--en-i-am
 status: draft
 examples:
   - source: "I am an English teacher."

@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - am
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-estoy-present-first-singular-state--en-i-am
 status: draft
 examples:
   - source: "I am tired after work."

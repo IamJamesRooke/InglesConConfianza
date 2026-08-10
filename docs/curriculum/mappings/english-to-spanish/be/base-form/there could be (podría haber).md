@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - base-form
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-podria-haber-possible-existence--en-there-could-be
 status: draft
 examples:
   - source: "There could be an error in the report."

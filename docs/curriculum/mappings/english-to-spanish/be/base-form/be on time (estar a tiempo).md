@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - base-form
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-estar-a-tiempo--en-be-on-time
 status: draft
 examples:
   - source: "We may still be on time to change the reservation."

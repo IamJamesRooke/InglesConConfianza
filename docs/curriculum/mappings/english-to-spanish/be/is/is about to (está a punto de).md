@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - is
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-esta-a-punto-de-present-third-singular-immediate-future--en-is-about-to
 status: draft
 examples:
   - source: "Ana is about to leave."

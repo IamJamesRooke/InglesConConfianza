@@ -16,3 +16,16 @@ These atomic lessons separate the Spanish meanings hidden inside English **been*
 | **has been able to** | **ha podido** | [open](has%20been%20able%20to%20(ha%20podido).md) |
 
 For the uninflected form and fixed expressions, return to [Base Form and Expressions](../base-form/README.md).
+
+## Phase 4A reverse-coverage additions
+
+These objects close Spanish-to-English edges found while normalizing **ser**, **estar**, and **haber**.
+
+| English source | Spanish target | Atomic lesson |
+|---|---|---|
+| **been** | **habido** | [open](been%20(habido%20-%20existential-past-participle).md) |
+| **there had been** | **había habido** | [open](there%20had%20been%20(hab%C3%ADa%20habido%20-%20prior-existence).md) |
+| **there had been** | **hubiera habido** | [open](there%20had%20been%20(hubiera%20habido%20-%20hypothetical-prior-existence).md) |
+| **there will have been** | **habrá habido** | [open](there%20will%20have%20been%20(habr%C3%A1%20habido%20-%20future-prior-existence).md) |
+| **there would have been** | **habría habido** | [open](there%20would%20have%20been%20(habr%C3%ADa%20habido%20-%20conditional-prior-existence).md) |
+| **there had been** | **hubiese habido** | [open](there%20had%20been%20(hubiese%20habido%20-%20hypothetical-prior-existence).md) |

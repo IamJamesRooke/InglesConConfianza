@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - base-form
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-estar-interesado-en--en-be-interested-in
 status: draft
 examples:
   - source: "Ana may be interested in studying photography."

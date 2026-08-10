@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - is
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-esta-present-third-singular-state--en-is
 status: draft
 examples:
   - source: "Ana is tired today."

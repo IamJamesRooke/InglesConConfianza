@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - were
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-hubo-preterite-plural-existence--en-there-were
 status: draft
 examples:
   - source: "There were three errors yesterday."

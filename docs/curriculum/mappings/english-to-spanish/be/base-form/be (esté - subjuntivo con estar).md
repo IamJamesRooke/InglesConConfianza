@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - base-form
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-este-present-subjunctive-third-singular-state-or-location--en-be
 status: draft
 examples:
   - source: "It is important that Ana be here on time."

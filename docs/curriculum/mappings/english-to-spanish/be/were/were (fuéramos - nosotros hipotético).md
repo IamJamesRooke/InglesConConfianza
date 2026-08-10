@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - were
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-fueramos--en-were
 status: draft
 examples:
   - source: "If we were the owners, we would close earlier."

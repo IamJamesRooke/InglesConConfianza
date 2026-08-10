@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - being
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-ser-humano--en-human-being
 status: draft
 examples:
   - source: "Every human being needs water."

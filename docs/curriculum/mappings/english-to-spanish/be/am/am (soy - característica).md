@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - am
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-soy-characteristic--en-i-am
 status: draft
 examples:
   - source: "I am patient with new students."

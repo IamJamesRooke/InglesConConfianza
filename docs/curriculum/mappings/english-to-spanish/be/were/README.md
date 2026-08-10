@@ -28,3 +28,26 @@ These atomic lessons separate the Spanish meanings hidden inside English **were*
 | **were able to** | **lograron** | [open](were%20able%20to%20(lograron).md) |
 
 For the uninflected form and fixed expressions, return to [Base Form and Expressions](../base-form/README.md).
+
+## Phase 4A reverse-coverage additions
+
+These objects close Spanish-to-English edges found while normalizing **ser**, **estar**, and **haber**.
+
+| English source | Spanish target | Atomic lesson |
+|---|---|---|
+| **were** | **fuera** | [open](were%20(fuera%20-%20hypothetical-third-person-identity).md) |
+| **were** | **estuviera** | [open](were%20(estuviera%20-%20hypothetical-third-person-state).md) |
+| **were** | **estuvieras** | [open](were%20(estuvieras%20-%20hypothetical-you-singular-state).md) |
+| **were** | **estuvieran** | [open](were%20(estuvieran%20-%20hypothetical-plural-state).md) |
+| **there were** | **hubiera** | [open](there%20were%20(hubiera%20-%20hypothetical-existence).md) |
+| **were** | **fuese** | [open](were%20(fuese%20-%20hypothetical-first-person-identity).md) |
+| **were** | **fuese** | [open](were%20(fuese%20-%20hypothetical-third-person-identity).md) |
+| **were** | **fueses** | [open](were%20(fueses%20-%20hypothetical-you-singular-identity).md) |
+| **were** | **fuésemos** | [open](were%20(fu%C3%A9semos%20-%20hypothetical-first-plural-identity).md) |
+| **were** | **fuesen** | [open](were%20(fuesen%20-%20hypothetical-plural-identity).md) |
+| **were** | **estuviese** | [open](were%20(estuviese%20-%20hypothetical-first-person-state).md) |
+| **were** | **estuviese** | [open](were%20(estuviese%20-%20hypothetical-third-person-state).md) |
+| **were** | **estuvieses** | [open](were%20(estuvieses%20-%20hypothetical-you-singular-state).md) |
+| **were** | **estuviésemos** | [open](were%20(estuvi%C3%A9semos%20-%20hypothetical-first-plural-state).md) |
+| **were** | **estuviesen** | [open](were%20(estuviesen%20-%20hypothetical-plural-state).md) |
+| **there were** | **hubiese** | [open](there%20were%20(hubiese%20-%20hypothetical-existence).md) |

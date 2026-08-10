@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - base-form
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-estar-listo--en-be-ready
 status: draft
 examples:
   - source: "Ana wants to be ready before eight."

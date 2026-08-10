@@ -1,0 +1,26 @@
+---
+id: es-sea-concession--en-may-be
+kind: mapping
+direction: spanish-to-english
+source_language: es
+source: "sea"
+source_lemma: ser
+source_variant: concessive-possibility
+target_language: en
+target: "may be"
+sense: concession
+aliases: []
+index_under:
+  - ser
+  - sea
+reverse_status: pending
+reverse_ids: []
+status: draft
+examples:
+  - source: "Puede que sea difícil, pero tenemos que intentarlo."
+    target: "It may be difficult, but we have to try."
+---
+
+# **sea** → **may be**
+
+Use **may be** when **sea** appears inside a possibility construction such as **puede que**.

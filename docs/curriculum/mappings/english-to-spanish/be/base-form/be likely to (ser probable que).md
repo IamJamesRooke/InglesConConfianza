@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - base-form
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-ser-probable-que--en-be-likely-to
 status: draft
 examples:
   - source: "The meeting is likely to end early."

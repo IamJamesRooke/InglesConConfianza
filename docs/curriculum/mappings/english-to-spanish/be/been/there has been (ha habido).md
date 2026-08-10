@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - been
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-ha-habido-present-perfect-singular-existence--en-there-has-been
 status: draft
 examples:
   - source: "There has been an error."

@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - base-form
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-estar-a-punto-de--en-be-about-to
 status: draft
 examples:
   - source: "I'm about to call Ana."

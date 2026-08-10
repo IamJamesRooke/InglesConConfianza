@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - base-form
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-estar-interesado--en-be-interested
 status: draft
 examples:
   - source: "New students may be interested in the topic."

@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - base-form
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-estar-casado-con--en-be-married-to
 status: draft
 examples:
   - source: "Ana has been married to Carlos for ten years."

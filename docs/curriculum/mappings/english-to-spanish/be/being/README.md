@@ -11,3 +11,11 @@ These atomic lessons separate the Spanish meanings hidden inside English **being
 | **human being** | **ser humano** | [open](human%20being%20(ser%20humano).md) |
 
 For the uninflected form and fixed expressions, return to [Base Form and Expressions](../base-form/README.md).
+
+## Phase 4A reverse-coverage additions
+
+These objects close Spanish-to-English edges found while normalizing **ser**, **estar**, and **haber**.
+
+| English source | Spanish target | Atomic lesson |
+|---|---|---|
+| **there being** | **habiendo** | [open](there%20being%20(habiendo%20-%20formal-impersonal-existence).md) |

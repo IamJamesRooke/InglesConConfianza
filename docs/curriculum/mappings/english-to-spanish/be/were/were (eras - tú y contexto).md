@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - were
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-eras--en-you-were
 status: draft
 examples:
   - source: "You were very quiet when we met."

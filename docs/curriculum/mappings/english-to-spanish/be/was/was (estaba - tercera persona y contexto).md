@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - was
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-estaba-imperfect-third-singular-background-state-or-location--en-was
 status: draft
 examples:
   - source: "Ana was at home when I called."

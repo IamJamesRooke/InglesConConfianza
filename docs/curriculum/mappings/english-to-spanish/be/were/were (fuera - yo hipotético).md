@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - were
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-fuera-i--en-were
 status: draft
 examples:
   - source: "If I were you, I wouldn't do it."

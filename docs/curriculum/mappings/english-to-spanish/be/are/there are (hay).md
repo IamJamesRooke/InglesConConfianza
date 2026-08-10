@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - are
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-hay-present-plural-existence--en-there-are
 status: draft
 examples:
   - source: "There are three books on the table."

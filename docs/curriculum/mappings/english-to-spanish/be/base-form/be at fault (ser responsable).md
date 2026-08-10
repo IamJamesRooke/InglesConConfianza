@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - base-form
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-ser-responsable--en-be-at-fault
 status: draft
 examples:
   - source: "The company may be at fault for the error."

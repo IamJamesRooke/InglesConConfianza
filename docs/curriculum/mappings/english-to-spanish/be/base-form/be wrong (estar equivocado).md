@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - base-form
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-estar-equivocado--en-be-wrong
 status: draft
 examples:
   - source: "I may be wrong about the date."

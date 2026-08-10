@@ -140,3 +140,51 @@ Each lesson below is one English source expression mapped to one Spanish meaning
 | **be in agreement** | **estar de acuerdo** | [open](be%20in%20agreement%20(estar%20de%20acuerdo).md) |
 
 Broader explanations of passive **be**, progressive **be**, and the English subjunctive remain in [preserved teaching sets](../teaching-sets/README.md), because those sentence-building rules are larger than their individual contextual mappings.
+
+## Phase 4A reverse-coverage additions
+
+These objects close Spanish-to-English edges found while normalizing **ser**, **estar**, and **haber**.
+
+| English source | Spanish target | Atomic lesson |
+|---|---|---|
+| **be made of** | **ser de** | [open](be%20made%20of%20(ser%20de%20-%20material).md) |
+| **be for** | **ser para** | [open](be%20for%20(ser%20para%20-%20recipient).md) |
+| **be meant for** | **ser para** | [open](be%20meant%20for%20(ser%20para%20-%20intended-purpose).md) |
+| **be about to** | **estar por** | [open](be%20about%20to%20(estar%20por%20-%20immediate-future).md) |
+| **be available** | **estar libre** | [open](be%20available%20(estar%20libre%20-%20available-time).md) |
+| **be well** | **estar bien** | [open](be%20well%20(estar%20bien%20-%20health).md) |
+| **be right** | **estar en lo cierto** | [open](be%20right%20(estar%20en%20lo%20cierto%20-%20correctness).md) |
+| **be wrong** | **estar mal** | [open](be%20wrong%20(estar%20mal%20-%20incorrect).md) |
+| **be in favor of** | **estar a favor de** | [open](be%20in%20favor%20of%20(estar%20a%20favor%20de%20-%20support).md) |
+| **be against** | **estar en contra de** | [open](be%20against%20(estar%20en%20contra%20de%20-%20opposition).md) |
+| **be standing** | **estar de pie** | [open](be%20standing%20(estar%20de%20pie%20-%20body-position).md) |
+| **be sitting** | **estar sentado** | [open](be%20sitting%20(estar%20sentado%20-%20body-position).md) |
+| **be on vacation** | **estar de vacaciones** | [open](be%20on%20vacation%20(estar%20de%20vacaciones%20-%20vacation).md) |
+| **be to** | **haber de** | [open](be%20to%20(haber%20de%20-%20formal-future-or-duty).md) |
+| **there must be** | **debe de haber** | [open](there%20must%20be%20(debe%20de%20haber%20-%20deduced-existence).md) |
+| **be** | **sé** | [open](be%20(s%C3%A9%20-%20command-identity-or-characteristic).md) |
+| **be** | **seas** | [open](be%20(seas%20-%20subjunctive-you-identity-or-characteristic).md) |
+| **be** | **seamos** | [open](be%20(seamos%20-%20subjunctive-we-identity-or-characteristic).md) |
+| **be** | **sean** | [open](be%20(sean%20-%20subjunctive-plural-identity-or-characteristic).md) |
+| **be** | **estemos** | [open](be%20(estemos%20-%20subjunctive-we-state-or-location).md) |
+| **be** | **estén** | [open](be%20(est%C3%A9n%20-%20subjunctive-plural-state-or-location).md) |
+| **be** | **estate** | [open](be%20(estate%20-%20informal-command-state).md) |
+| **be** | **esté** | [open](be%20(est%C3%A9%20-%20formal-command-state).md) |
+| **be** | **estén** | [open](be%20(est%C3%A9n%20-%20plural-command-state).md) |
+| **let's be** | **seamos** | [open](let's%20be%20(seamos%20-%20inclusive-identity-or-characteristic-command).md) |
+| **let's be** | **estemos** | [open](let's%20be%20(estemos%20-%20inclusive-state-or-location-command).md) |
+| **will be** | **seré** | [open](will%20be%20(ser%C3%A9%20-%20future-first-singular-identity-or-characteristic).md) |
+| **will be** | **serás** | [open](will%20be%20(ser%C3%A1s%20-%20future-you-singular-identity-or-characteristic).md) |
+| **will be** | **seremos** | [open](will%20be%20(seremos%20-%20future-we-identity-or-characteristic).md) |
+| **will be** | **serán** | [open](will%20be%20(ser%C3%A1n%20-%20future-plural-identity-or-characteristic).md) |
+| **will be** | **estaré** | [open](will%20be%20(estar%C3%A9%20-%20future-first-singular-state-or-location).md) |
+| **will be** | **estarás** | [open](will%20be%20(estar%C3%A1s%20-%20future-you-singular-state-or-location).md) |
+| **will be** | **estaremos** | [open](will%20be%20(estaremos%20-%20future-we-state-or-location).md) |
+| **will be** | **estarán** | [open](will%20be%20(estar%C3%A1n%20-%20future-plural-state-or-location).md) |
+| **would be** | **serías** | [open](would%20be%20(ser%C3%ADas%20-%20conditional-you-singular-identity-or-characteristic).md) |
+| **would be** | **seríamos** | [open](would%20be%20(ser%C3%ADamos%20-%20conditional-we-identity-or-characteristic).md) |
+| **would be** | **serían** | [open](would%20be%20(ser%C3%ADan%20-%20conditional-plural-identity-or-characteristic).md) |
+| **would be** | **estarías** | [open](would%20be%20(estar%C3%ADas%20-%20conditional-you-singular-state-or-location).md) |
+| **would be** | **estaríamos** | [open](would%20be%20(estar%C3%ADamos%20-%20conditional-we-state-or-location).md) |
+| **would be** | **estarían** | [open](would%20be%20(estar%C3%ADan%20-%20conditional-plural-state-or-location).md) |
+| **let there be** | **haya** | [open](let%20there%20be%20(haya%20-%20jussive-existence).md) |

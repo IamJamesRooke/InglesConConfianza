@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - base-form
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-estar-hecho-a-partir-de--en-be-made-from
 status: draft
 examples:
   - source: "Paper can be made from recycled material."

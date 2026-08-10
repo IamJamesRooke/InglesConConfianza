@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - been
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-ha-habido-present-perfect-plural-existence--en-there-have-been
 status: draft
 examples:
   - source: "There have been several complaints."

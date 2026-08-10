@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - base-form
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-estar-retrasado--en-be-late
 status: draft
 examples:
   - source: "The bus may be late because of traffic."

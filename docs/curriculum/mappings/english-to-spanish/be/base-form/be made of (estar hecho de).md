@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - base-form
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-estar-hecho-de--en-be-made-of
 status: draft
 examples:
   - source: "The table appears to be made of wood."

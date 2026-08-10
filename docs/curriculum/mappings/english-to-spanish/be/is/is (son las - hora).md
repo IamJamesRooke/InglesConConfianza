@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - is
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-son-las--en-it-is
 status: draft
 examples:
   - source: "It is eight o'clock."

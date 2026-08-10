@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - are
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-estas-present-you-singular-state--en-you-are
 status: draft
 examples:
   - source: "You are ready to begin."

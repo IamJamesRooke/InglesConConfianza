@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - been
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-sido--en-been
 status: draft
 examples:
   - source: "Ana has been a doctor for ten years."

@@ -13,8 +13,9 @@ aliases: []
 index_under:
   - be
   - base-form
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+  - es-estar-acostumbrado-a--en-be-used-to
 status: draft
 examples:
   - source: "You need to be used to working at night."
