@@ -1,0 +1,26 @@
+---
+id: en-be-called-name--es-llamarse
+kind: mapping
+direction: english-to-spanish
+source_language: en
+source: "be called"
+source_lemma: be
+source_variant: name-expression
+target_language: es
+target: "llamarse"
+sense: have-a-name
+aliases: []
+index_under:
+  - be
+  - base-form
+reverse_status: pending
+reverse_ids: []
+status: draft
+examples:
+  - source: "The new program will be called English with Confidence."
+    target: "El nuevo programa se llamará Inglés con Confianza."
+---
+
+# **be called** → **llamarse**
+
+Use llamarse when be called gives a name.

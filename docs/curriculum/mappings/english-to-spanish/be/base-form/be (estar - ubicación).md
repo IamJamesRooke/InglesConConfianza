@@ -1,0 +1,26 @@
+---
+id: en-be-location--es-estar
+kind: mapping
+direction: english-to-spanish
+source_language: en
+source: "be"
+source_lemma: be
+source_variant: base-location
+target_language: es
+target: "estar"
+sense: person-or-thing-location
+aliases: []
+index_under:
+  - be
+  - base-form
+reverse_status: pending
+reverse_ids: []
+status: draft
+examples:
+  - source: "I want to be in Bogotá tomorrow."
+    target: "Quiero estar en Bogotá mañana."
+---
+
+# **be** → **estar**
+
+Use estar for the location of a person or thing.

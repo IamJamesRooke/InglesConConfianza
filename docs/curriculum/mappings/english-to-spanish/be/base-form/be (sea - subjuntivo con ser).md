@@ -1,0 +1,26 @@
+---
+id: en-be-subjunctive-ser--es-sea
+kind: mapping
+direction: english-to-spanish
+source_language: en
+source: "be"
+source_lemma: be
+source_variant: subjunctive-ser
+target_language: es
+target: "sea"
+sense: mandative-or-evaluative-identity
+aliases: []
+index_under:
+  - be
+  - base-form
+reverse_status: pending
+reverse_ids: []
+status: draft
+examples:
+  - source: "They insist that Ana be the manager."
+    target: "Insisten en que Ana sea la gerente."
+---
+
+# **be** → **sea**
+
+English unchanged subjunctive be can correspond to Spanish sea.

@@ -1,0 +1,26 @@
+---
+id: en-be-smart--es-ser-listo
+kind: mapping
+direction: english-to-spanish
+source_language: en
+source: "be smart"
+source_lemma: be
+source_variant: cleverness
+target_language: es
+target: "ser listo"
+sense: clever
+aliases: []
+index_under:
+  - be
+  - base-form
+reverse_status: pending
+reverse_ids: []
+status: draft
+examples:
+  - source: "The child appears to be smart for his age."
+    target: "El niño parece ser muy listo para su edad."
+---
+
+# **be smart** → **ser listo**
+
+Ser listo can mean clever in context.

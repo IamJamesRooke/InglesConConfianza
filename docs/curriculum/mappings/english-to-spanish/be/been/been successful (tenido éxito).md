@@ -1,0 +1,26 @@
+---
+id: en-been-successful--es-tenido-exito
+kind: mapping
+direction: english-to-spanish
+source_language: en
+source: "been successful"
+source_lemma: be
+source_variant: perfect-success
+target_language: es
+target: "tenido éxito"
+sense: achieved-success
+aliases: []
+index_under:
+  - be
+  - been
+reverse_status: pending
+reverse_ids: []
+status: draft
+examples:
+  - source: "Ana has been very successful in her career."
+    target: "Ana ha tenido mucho éxito en su carrera."
+---
+
+# **been successful** → **tenido éxito**
+
+Spanish uses tenido éxito where English uses been successful.

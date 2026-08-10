@@ -1,0 +1,26 @@
+---
+id: en-be-smart--es-ser-inteligente
+kind: mapping
+direction: english-to-spanish
+source_language: en
+source: "be smart"
+source_lemma: be
+source_variant: intelligence
+target_language: es
+target: "ser inteligente"
+sense: intelligent
+aliases: []
+index_under:
+  - be
+  - base-form
+reverse_status: pending
+reverse_ids: []
+status: draft
+examples:
+  - source: "Ana seems to be very smart."
+    target: "Ana parece ser muy inteligente."
+---
+
+# **be smart** → **ser inteligente**
+
+Use ser inteligente for general intelligence.

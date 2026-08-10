@@ -7,7 +7,7 @@
 - [ ] Normalize `/curriculum/mappings` into an atomic, bidirectional, machine-readable source of truth
     - [x] Phase 1: define the canonical ownership, filename, YAML, reverse-link, validation, and phase-gate contract
     - [x] Phase 2: pilot the contract on Spanish **lo** and split the former **to / too / two** bundle by canonical ownership
-    - [ ] Phase 3: normalize English **be** forms and high-value expressions
+    - [x] Phase 3: normalize English **be** forms and high-value expressions
     - [ ] Phase 4: normalize the reverse **ser / estar / haber / tener / poder** hub
     - [ ] Phase 5: rehome top-level multiword expressions under canonical headwords
     - [ ] Phase 6: normalize the remaining high-frequency bilingual hubs in bounded batches
@@ -113,6 +113,20 @@
 - Spanish-to-English only. No other languages. If others want to fork the repo, that's fine. And can give AGENT instructions explaining exactly how the method was made.
 
 ## Completed timeline
+
+### 2026-08-09 — English **be** form topology normalized
+
+- [x] Complete Phase 3 of the mapping normalization roadmap on Sol High
+    - [x] Inventory all 55 source files, 622 lines, and 132 existing table teaching rows before migration
+    - [x] Organize the canonical **be** hub into **base-form, am, is, are, was, were, been**, and **being** form buckets
+    - [x] Create 230 atomic English-to-Spanish YAML mapping objects with stable IDs, readable filenames, one target meaning, and contextual examples
+    - [x] Separate **ser / estar**, subject forms, completed versus background past, existential **haber**, modal forms, age and physical-state **tener** expressions, ability, and frequent fixed connections
+    - [x] Add missing high-value branches such as **be supposed to, be allowed to, be expected to, be late, be careful, be in charge, be done, be over**, and modal or existential **be** forms
+    - [x] Preserve all 54 moved teaching files byte-for-byte and retain the original whole-topic overview with only four relative-link corrections
+    - [x] Keep passive, progressive, contraction, subjunctive, contrast, and retrieval explanations under **teaching-sets** rather than misclassifying broad rules as atomic mappings
+    - [x] Apply the owner's rule to duplicate uncertain overlaps now and defer deconfliction until a later curation phase
+    - [x] Leave the reverse **ser / estar / haber / tener / poder** hub unchanged for Phase 4
+    - [x] Validate YAML syntax, required fields, direction and language pairs, 240 globally unique mapping IDs, README coverage, empty directories, stale paths, formatting, and 4,510 local curriculum links
 
 ### 2026-08-09 — Atomic **lo** pilot and **to / too / two** ownership split
 

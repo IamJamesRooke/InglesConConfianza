@@ -1,15 +1,25 @@
-# Contextual Uses and Translations of **Be**
+# English **Be**: Atomic Translation Map
 
-English **be** can translate Spanish **ser, estar, tener, haber, ir**, or part of **poder**, depending on the complete structure. Learn the meaning from the whole connection, not from **be** alone.
+English **be** collapses distinctions that Spanish expresses through **ser, estar, tener, haber, ir, poder, costar**, and several fixed expressions. The canonical map is organized by the English form a learner sees or hears.
 
-| Section | Spanish | English |
-|---|---|---|
-| [Core Uses](core-uses/README.md) | Ana es médica y está en Bogotá. | Ana is a doctor and is in Bogotá. |
-| [Fixed Connections](fixed-connections/README.md) | Nació aquí, vale mucho y está a punto de salir. | She was born here, is worth a lot, and is about to leave. |
-| [Spanish **Tener** with English **Be**](tener-with-be/README.md) | Tengo hambre, frío y veinte años. | I'm hungry, cold, and twenty years old. |
-| [**There Be** for **Haber**](there-be/README.md) | Hay un problema y hubo dos errores. | There is a problem, and there were two errors. |
-| [Forms and Constructions](forms-and-constructions/README.md) | Voy a salir, puedo ayudar y me golpearon. | I'm going to leave, I'm able to help, and I was hit. |
-| [Meaning-Changing Contrasts](confusion-sets/README.md) | Ana es lista, pero todavía no está lista. | Ana is smart, but she isn't ready yet. |
+## Machine-Readable Form Buckets
+
+| English form | Atomic mappings | What the folder separates |
+|---|---:|---|
+| [Base form and expressions](base-form/README.md) | 134 | **be**, modal forms, frequent **be + complement** expressions, and existential **there be** |
+| [**am**](am/README.md) | 11 | first-person **soy / estoy**, future, ability, age, and common **tener** expressions |
+| [**is**](is/README.md) | 16 | **es / está**, clock time, price, existence, age, and fixed present expressions |
+| [**are**](are/README.md) | 13 | **eres / estás / somos / estamos / son / están**, existence, future, and ability |
+| [**was**](was/README.md) | 19 | subject, **ser / estar**, completed versus background past, **haber**, ability, and fixed expressions |
+| [**were**](were/README.md) | 22 | subject, **ser / estar**, completed versus background past, existence, ability, and hypotheticals |
+| [**been**](been/README.md) | 10 | **sido / estado / habido** and frequent perfect expressions |
+| [**being**](being/README.md) | 5 | **siendo / estando / ser / estar** and **human being** |
+
+Every non-README file in these eight folders is one English source form or expression mapped to one Spanish meaning. Repeated source forms are deliberate: context and subject determine which Spanish output applies.
+
+## Preserved Teaching Sets
+
+The original concept maps, grammar explanations, contrasts, retrieval tables, and mastery phrases remain intact under [Teaching Sets](teaching-sets/README.md); only links affected by relocation were adjusted. They are not atomic mapping objects. This keeps passive **be**, progressive **be**, contractions, the subjunctive, **ser/estar** contrasts, and other sentence-building material available without pretending each rule is a standalone translation.
 
 ## Whole-Topic Mastery Phrases
 

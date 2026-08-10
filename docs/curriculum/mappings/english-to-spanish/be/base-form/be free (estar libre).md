@@ -1,0 +1,26 @@
+---
+id: en-be-free-available--es-estar-libre
+kind: mapping
+direction: english-to-spanish
+source_language: en
+source: "be free"
+source_lemma: be
+source_variant: availability
+target_language: es
+target: "estar libre"
+sense: available-time
+aliases: []
+index_under:
+  - be
+  - base-form
+reverse_status: pending
+reverse_ids: []
+status: draft
+examples:
+  - source: "Will you be free after the meeting?"
+    target: "¿Estarás libre después de la reunión?"
+---
+
+# **be free** → **estar libre**
+
+Use estar libre when free means available.

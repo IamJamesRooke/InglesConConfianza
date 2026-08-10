@@ -1,0 +1,26 @@
+---
+id: en-be-supposed-to-requirement--es-tener-que
+kind: mapping
+direction: english-to-spanish
+source_language: en
+source: "be supposed to"
+source_lemma: be
+source_variant: practical-requirement
+target_language: es
+target: "tener que"
+sense: required-action
+aliases: []
+index_under:
+  - be
+  - base-form
+reverse_status: pending
+reverse_ids: []
+status: draft
+examples:
+  - source: "What am I supposed to do now?"
+    target: "¿Qué tengo que hacer ahora?"
+---
+
+# **be supposed to** → **tener que**
+
+Use tener que when be supposed to asks about a practical requirement.

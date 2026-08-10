@@ -27,6 +27,7 @@ Completeness currently matters more than brevity. Preserve useful teaching mater
 - Put a multiword expression under its most useful lexical headword. Default to atomic files directly inside that source bucket; create another expression subfolder only when a genuine internal hierarchy is necessary and the owner approves it.
 - Keep pronominal variants under the unmarked lemma, such as `quedarse` under `quedar`.
 - A lesson has one canonical physical file but may be linked from multiple README indexes when that materially improves retrieval. Do not copy the same directional object into several locations merely for navigation.
+- During the current normalization and completeness passes, follow the owner's preservation rule: **when in doubt, duplicate** uncertain or overlapping teaching content into plausible retrieval locations instead of filtering it out. Canonicalize and deconflict only in a later approved curation phase. Stable IDs must still prevent two files from accidentally claiming to be the same machine object.
 - Preserve intentional owner-approved exceptions, but update the durable rule when the owner revises an earlier decision. The former `to-too-and-two` bundle was split in Phase 2: `to` and `too` are canonical maps, while direct `two` material belongs in supplemental number vocabulary and the shared sound contrast is indexed from both maps.
 
 Known top-level ownership corrections identified in Phase 1:
@@ -115,7 +116,7 @@ IDs must be unique, stable, ASCII slugs. Allowed review states are `draft`, `rev
 
 1. **Contract and inventory — Sol High.** Establish these rules, record the baseline, classify top-level expression ownership, and select the pilot. Completed 2026-08-09.
 2. **Atomic `lo` pilot and `to/too/two` topology correction — Sol High.** Apply the YAML contract and human filenames to the individual `lo` meanings, preserve all examples, remove the combined lesson only after a loss audit, test validation, split `to` and `too`, and route direct `two` material to supplemental number vocabulary.
-3. **English `be` form topology — Sol High.** Organize `be`, `am`, `is`, `are`, `was`, `were`, `been`, `being`, and high-value expressions without flattening grammar into mappings.
+3. **English `be` form topology — Sol High.** Organize `be`, `am`, `is`, `are`, `was`, `were`, `been`, `being`, and high-value expressions without flattening grammar into mappings. Completed 2026-08-09 with 230 atomic objects and all original teaching sets retained.
 4. **Reverse `be` hub — Sol High or XHigh.** Normalize and cross-audit `ser`, `estar`, `haber`, `tener`, and especially `poder`, including source forms such as `puedo`, `pude`, `podía`, and `podría`.
 5. **Top-level expression ownership cleanup — Sol High.** Rehome the known ownership violations and audit all remaining top-level buckets under the approved rules.
 6. **High-frequency bilingual hubs — Terra High for specified batches, with separate Sol review when judgment remains.** Normalize `have/tener/haber`, `do/make/hacer`, `get`, movement verbs, perception/knowledge verbs, request verbs, pronouns, particles, and connectors in reviewable commits.
