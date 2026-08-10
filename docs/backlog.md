@@ -4,6 +4,16 @@
 
 ## Current focus
 
+- [ ] Normalize `/curriculum/mappings` into an atomic, bidirectional, machine-readable source of truth
+    - [x] Phase 1: define the canonical ownership, filename, YAML, reverse-link, validation, and phase-gate contract
+    - [ ] Phase 2: pilot the contract on the individual Spanish **lo** mappings
+    - [ ] Phase 3: normalize English **be** forms and high-value expressions
+    - [ ] Phase 4: normalize the reverse **ser / estar / haber / tener / poder** hub
+    - [ ] Phase 5: rehome top-level multiword expressions under canonical headwords
+    - [ ] Phase 6: normalize the remaining high-frequency bilingual hubs in bounded batches
+    - [ ] Phase 7: complete the remaining mapping normalization
+    - [ ] Phase 8: perform the final bidirectional completeness and reverse-coverage audit
+    - [ ] Phase 9: perform a YAML-to-JSON dry run without replacing Markdown as the editable source
 - [ ] Continue organizing and collating `/curriculum` into a clean canonical folder hierarchy before any other work
     - [ ] Review the complete curriculum tree and place every subject in the clearest conceptual home
     - [ ] Normalize folder names, category boundaries, and navigation so the hierarchy is easy to understand at a glance
@@ -103,6 +113,17 @@
 - Spanish-to-English only. No other languages. If others want to fork the repo, that's fine. And can give AGENT instructions explaining exactly how the method was made.
 
 ## Completed timeline
+
+### 2026-08-09 — Atomic mapping normalization contract established
+
+- [x] Complete Phase 1 of the mapping normalization roadmap without moving or rewriting lessons
+    - [x] Record the baseline of 699 top-level source buckets, 3,222 mapping Markdown files, and 2,417 non-README lesson files
+    - [x] Establish canonical ownership for source lemmas, inflected variants, multiword expressions, and intentionally shared retrieval paths
+    - [x] Identify six top-level expression families for later rehoming while preserving `to-too-and-two` as an owner-approved sound-family exception
+    - [x] Define the atomic YAML contract, stable-ID rule, human-readable filename convention, reverse-coverage states, and review statuses
+    - [x] Define loss-prevention and validation requirements for every migration phase
+    - [x] Preserve the complete nine-phase roadmap and model guidance in `/curriculum/mappings/AGENTS.md` so future Codex sessions inherit it
+    - [x] Select **lo**, **be**, and the reverse **poder** hub as the staged normalization pilots
 
 ### 2026-08-07 — Obsolete curriculum collation artifacts removed
 

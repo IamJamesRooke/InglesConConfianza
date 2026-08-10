@@ -14,3 +14,5 @@ A canonical mapping folder is intentionally asymmetric: the source word or fixed
 Each map folder contains a README and concrete micro-lessons. The README explains the full map; the micro-lessons teach individual choices such as **querer algo**, **querer hacer algo**, and **querer que alguien haga algo**.
 
 Mappings may link to reusable machinery in [`structure/`](../structure/README.md), but the learner-facing translation decision belongs here. This folder is a canonical body of knowledge, not a final course sequence.
+
+The durable atomic-file, YAML, canonical-ownership, reverse-coverage, and phased-normalization contract is recorded in [`AGENTS.md`](AGENTS.md).
