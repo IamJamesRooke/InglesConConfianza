@@ -8,11 +8,31 @@ source_lemma: lo
 source_variant: formal-masculine-person-direct-object
 target_language: en
 target: you
+target_lemma: you
 sense: formal-masculine-direct-object
+register: formal
+taxonomy:
+  category: pronoun
+  subcategory: personal-pronoun
+source_features:
+  person: third
+  number: singular
+  gender: masculine
+  animacy: person
+  function: direct-object
+target_features:
+  person: second
+  number: singular
+  gender: common
+  animacy: person
+  function: direct-object
 aliases: []
 index_under:
   - lo
   - usted
+contrast_ids:
+  - es-lo-man--en-him
+  - es-lo-thing--en-it
 reverse_status: pending
 reverse_ids: []
 status: draft

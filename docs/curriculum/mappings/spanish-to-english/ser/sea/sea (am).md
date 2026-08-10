@@ -8,7 +8,23 @@ source_lemma: ser
 source_variant: present-subjunctive-first-singular
 target_language: en
 target: "am"
+target_lemma: be
 sense: first-person-subordinate-identity
+taxonomy:
+  category: verb
+  subcategory: copula
+source_features:
+  person: first
+  number: singular
+  tense: present
+  mood: subjunctive
+  verb_form: finite
+target_features:
+  person: first
+  number: singular
+  tense: present
+  mood: indicative
+  verb_form: finite
 aliases: []
 index_under:
   - ser

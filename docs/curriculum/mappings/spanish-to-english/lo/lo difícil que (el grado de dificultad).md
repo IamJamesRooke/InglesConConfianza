@@ -8,7 +8,11 @@ source_lemma: lo
 source_variant: lo-plus-adjective-degree
 target_language: en
 target: how difficult
+target_lemma: difficult
 sense: degree-of-difficulty
+taxonomy:
+  category: expression
+  subcategory: degree-expression
 aliases: []
 index_under:
   - lo

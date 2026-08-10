@@ -8,7 +8,25 @@ source_lemma: be
 source_variant: present-first-singular-hunger
 target_language: es
 target: "tengo hambre"
+target_lemma: tener hambre
 sense: hunger
+taxonomy:
+  category: expression
+  subcategory: state-expression
+source_features:
+  person: first
+  number: singular
+  tense: present
+  mood: indicative
+  verb_form: finite
+  function: predicate
+target_features:
+  person: first
+  number: singular
+  tense: present
+  mood: indicative
+  verb_form: finite
+  function: predicate
 aliases: []
 index_under:
   - be

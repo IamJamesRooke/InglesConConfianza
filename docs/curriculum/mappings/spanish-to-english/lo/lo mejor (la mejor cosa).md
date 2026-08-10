@@ -8,11 +8,17 @@ source_lemma: lo
 source_variant: lo-plus-superlative
 target_language: en
 target: the best thing
+target_lemma: good
 sense: best-abstract-choice
+taxonomy:
+  category: expression
+  subcategory: adjective-nominalization
 aliases: []
 index_under:
   - lo
   - mejor
+contrast_ids:
+  - es-lo-mejor-part--en-the-best-part
 reverse_status: pending
 reverse_ids: []
 status: draft

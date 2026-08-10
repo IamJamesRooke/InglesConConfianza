@@ -8,7 +8,23 @@ source_lemma: be
 source_variant: subordinate-ser-first-singular
 target_language: es
 target: "sea"
+target_lemma: ser
 sense: first-person-subordinate-identity
+taxonomy:
+  category: verb
+  subcategory: copula
+source_features:
+  person: first
+  number: singular
+  tense: present
+  mood: indicative
+  verb_form: finite
+target_features:
+  person: first
+  number: singular
+  tense: present
+  mood: subjunctive
+  verb_form: finite
 aliases: []
 index_under:
   - be

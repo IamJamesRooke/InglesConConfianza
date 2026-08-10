@@ -8,7 +8,11 @@ source_lemma: lo
 source_variant: lo-plus-adjective
 target_language: en
 target: the important thing
+target_lemma: important
 sense: important-abstract-aspect
+taxonomy:
+  category: expression
+  subcategory: adjective-nominalization
 aliases: []
 index_under:
   - lo

@@ -8,10 +8,29 @@ source_lemma: lo
 source_variant: masculine-person-direct-object
 target_language: en
 target: him
+target_lemma: he
 sense: masculine-person-direct-object
+taxonomy:
+  category: pronoun
+  subcategory: personal-pronoun
+source_features:
+  person: third
+  number: singular
+  gender: masculine
+  animacy: person
+  function: direct-object
+target_features:
+  person: third
+  number: singular
+  gender: masculine
+  animacy: person
+  function: direct-object
 aliases: []
 index_under:
   - lo
+contrast_ids:
+  - es-lo-thing--en-it
+  - es-lo-formal-masculine-you--en-you
 reverse_status: pending
 reverse_ids: []
 status: draft

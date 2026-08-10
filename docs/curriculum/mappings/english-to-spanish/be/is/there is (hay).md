@@ -8,7 +8,23 @@ source_lemma: be
 source_variant: present-existential-singular
 target_language: es
 target: "hay"
+target_lemma: haber
 sense: existence
+taxonomy:
+  category: verb
+  subcategory: existential
+source_features:
+  person: impersonal
+  number: singular
+  tense: present
+  mood: indicative
+  verb_form: finite
+target_features:
+  person: impersonal
+  number: invariant
+  tense: present
+  mood: indicative
+  verb_form: finite
 aliases: []
 index_under:
   - be

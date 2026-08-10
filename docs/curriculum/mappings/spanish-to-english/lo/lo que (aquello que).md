@@ -8,7 +8,11 @@ source_lemma: lo
 source_variant: neutral-relative
 target_language: en
 target: what
+target_lemma: what
 sense: neutral-relative-what
+taxonomy:
+  category: expression
+  subcategory: relative-pronoun
 aliases: []
 index_under:
   - lo

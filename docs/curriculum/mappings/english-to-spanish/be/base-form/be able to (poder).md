@@ -8,7 +8,15 @@ source_lemma: be
 source_variant: ability
 target_language: es
 target: "poder"
+target_lemma: poder
 sense: ability
+taxonomy:
+  category: expression
+  subcategory: ability-expression
+source_features:
+  verb_form: base
+target_features:
+  verb_form: infinitive
 aliases: []
 index_under:
   - be

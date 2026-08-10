@@ -8,7 +8,11 @@ source_lemma: lo
 source_variant: lo-plus-adjective
 target_language: en
 target: the only thing
+target_lemma: only
 sense: only-abstract-option
+taxonomy:
+  category: expression
+  subcategory: adjective-nominalization
 aliases: []
 index_under:
   - lo

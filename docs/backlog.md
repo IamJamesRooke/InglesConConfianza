@@ -10,6 +10,7 @@
     - [x] Phase 3: normalize English **be** forms and high-value expressions
     - [ ] Phase 4: normalize the reverse **ser / estar / haber / tener / poder** hub
         - [x] Phase 4A: normalize **ser, estar**, and **haber**, including their source-form topologies and reciprocal **be** edges
+        - [x] Mappings-only data-readiness checkpoint: pilot optional query metadata and define the boundary between mapping concepts and future app records
         - [ ] Phase 4B: normalize **tener** and especially **poder**, then cross-audit **have, can, could, manage**, and remaining **be** expressions
     - [ ] Phase 5: rehome top-level multiword expressions under canonical headwords
     - [ ] Phase 6: normalize the remaining high-frequency bilingual hubs in bounded batches
@@ -115,6 +116,17 @@
 - Spanish-to-English only. No other languages. If others want to fork the repo, that's fine. And can give AGENT instructions explaining exactly how the method was made.
 
 ## Completed timeline
+
+### 2026-08-09 — Mapping data-readiness metadata piloted
+
+- [x] Refine the atomic mapping contract for future app queries without starting the database migration
+    - [x] Keep mapping objects as stable curriculum concepts and explicitly exclude lesson position, taught state, exposure counts, errors, mastery, and spaced-repetition state
+    - [x] Define backward-compatible optional fields for canonical target lemmas, accepted target forms, controlled taxonomy, source and target grammatical features, and concept contrasts
+    - [x] Clarify that source-side variants use `aliases`, while target-side contractions such as **I'm** and **there's** use `accepted_targets`
+    - [x] Apply the metadata pilot to 20 existing atomic objects across **lo, be, ser**, and **haber** without rewriting unnormalized teaching sets
+    - [x] Demonstrate machine retrieval of personal-pronoun, direct-object, copular, state, ability, and existential concepts without relying on filenames
+    - [x] Document the future exercise-block boundary as a non-canonical example only; create no tables, exercise bank, lesson engine, or learner-state files
+    - [x] Preserve compatibility with all 629 existing atomic mapping objects and verify unique IDs, examples, reverse edges, controlled values, contrasts, local links, and Markdown formatting
 
 ### 2026-08-09 — Reverse **be** hub Phase 4A normalized
 

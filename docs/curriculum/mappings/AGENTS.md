@@ -94,6 +94,8 @@ examples:
 
 Required pilot fields are `id`, `kind`, `direction`, `source_language`, `source`, `source_lemma`, `target_language`, `target`, `sense`, `reverse_status`, `status`, and `examples`. Use `source_variant`, `aliases`, `index_under`, and `reverse_ids` when applicable. Add fields such as `register`, `region`, `constraints`, or migration provenance only when a real lesson requires them.
 
+Use the optional controlled metadata in [`DATA-READINESS.md`](DATA-READINESS.md) when it helps future retrieval or migration. In particular, distinguish source-side `aliases` from target-side `accepted_targets`, use `target_lemma` for canonical target lookup, and keep source and target grammatical features separate. These additions are backward-compatible: do not invent values merely to fill fields.
+
 IDs must be unique, stable, ASCII slugs. Allowed review states are `draft`, `reviewed`, and `owner-approved`.
 
 ## Mapping boundaries
@@ -102,7 +104,8 @@ IDs must be unique, stable, ASCII slugs. Allowed review states are `draft`, `rev
 - A reusable sentence-building rule belongs in structure, even if mapping lessons link to it.
 - Productive word formation belongs in transformations.
 - A contrast lesson may remain for teaching, but mark it separately from an atomic mapping object when YAML is introduced. Only `kind: mapping` becomes a basic translation JSON object.
-- Contractions and spelling variants are aliases unless they change meaning, use, register, or another teaching choice enough to require an independent object.
+- Source-side contractions and spelling variants are `aliases`; target-side equivalents are `accepted_targets`. Either becomes an independent object when it changes meaning, use, register, or another teaching choice.
+- Mapping examples are explanatory evidence, not learner-tracked exercises. Lesson membership, exposure counts, answers, errors, mastery, and spaced-repetition state must eventually reference mapping IDs from separate records rather than being embedded in mapping YAML.
 
 ## Loss prevention and validation
 
@@ -117,7 +120,7 @@ IDs must be unique, stable, ASCII slugs. Allowed review states are `draft`, `rev
 1. **Contract and inventory — Sol High.** Establish these rules, record the baseline, classify top-level expression ownership, and select the pilot. Completed 2026-08-09.
 2. **Atomic `lo` pilot and `to/too/two` topology correction — Sol High.** Apply the YAML contract and human filenames to the individual `lo` meanings, preserve all examples, remove the combined lesson only after a loss audit, test validation, split `to` and `too`, and route direct `two` material to supplemental number vocabulary.
 3. **English `be` form topology — Sol High.** Organize `be`, `am`, `is`, `are`, `was`, `were`, `been`, `being`, and high-value expressions without flattening grammar into mappings. Completed 2026-08-09 with 230 atomic objects and all original teaching sets retained.
-4. **Reverse `be` hub — Sol High or XHigh.** Phase 4A completed 2026-08-09: normalize and cross-audit `ser`, `estar`, and `haber` as 298 atomic Spanish objects, expand English `be` to 321 objects, preserve all 16 source lessons, and link 225 reciprocal edges. Phase 4B remains pending: normalize `tener` and especially `poder`, including source forms such as `puedo`, `pude`, `podía`, and `podría`, then audit their real reverse hubs.
+4. **Reverse `be` hub — Sol High or XHigh.** Phase 4A completed 2026-08-09: normalize and cross-audit `ser`, `estar`, and `haber` as 298 atomic Spanish objects, expand English `be` to 321 objects, preserve all 16 source lessons, and link 225 reciprocal edges. A mappings-only data-readiness checkpoint then tested optional query metadata while preserving the boundary between curriculum concepts and future exercise or learner records. Phase 4B remains pending: normalize `tener` and especially `poder`, including source forms such as `puedo`, `pude`, `podía`, and `podría`, then audit their real reverse hubs.
 5. **Top-level expression ownership cleanup — Sol High.** Rehome the known ownership violations and audit all remaining top-level buckets under the approved rules.
 6. **High-frequency bilingual hubs — Terra High for specified batches, with separate Sol review when judgment remains.** Normalize `have/tener/haber`, `do/make/hacer`, `get`, movement verbs, perception/knowledge verbs, request verbs, pronouns, particles, and connectors in reviewable commits.
 7. **Remaining mapping normalization — Terra High in bounded batches.** Split mixed files, add YAML, preserve contrasts, and update indexes.

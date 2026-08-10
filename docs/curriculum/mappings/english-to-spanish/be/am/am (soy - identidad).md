@@ -8,7 +8,23 @@ source_lemma: be
 source_variant: present-first-singular-identity
 target_language: es
 target: "soy"
+target_lemma: ser
 sense: identity
+taxonomy:
+  category: verb
+  subcategory: copula
+source_features:
+  person: first
+  number: singular
+  tense: present
+  mood: indicative
+  verb_form: finite
+target_features:
+  person: first
+  number: singular
+  tense: present
+  mood: indicative
+  verb_form: finite
 aliases: []
 index_under:
   - be

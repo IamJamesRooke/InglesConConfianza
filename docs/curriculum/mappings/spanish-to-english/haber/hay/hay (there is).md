@@ -8,7 +8,25 @@ source_lemma: haber
 source_variant: present-singular-existence
 target_language: en
 target: "there is"
+target_lemma: there be
+accepted_targets:
+  - "there's"
 sense: existence
+taxonomy:
+  category: verb
+  subcategory: existential
+source_features:
+  person: impersonal
+  number: invariant
+  tense: present
+  mood: indicative
+  verb_form: finite
+target_features:
+  person: impersonal
+  number: singular
+  tense: present
+  mood: indicative
+  verb_form: finite
 aliases: []
 index_under:
   - haber
