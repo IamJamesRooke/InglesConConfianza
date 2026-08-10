@@ -1,30 +1,20 @@
-# Translations of **Lo**
+# Translations of Spanish **Lo**
 
-Spanish **lo** has several mapping families. The direct-object pronoun and the abstract **lo + adjective** construction look alike, but they do different jobs and must be learned through context.
+Spanish **lo** has several mapping families. The direct-object pronoun and the abstract **lo + adjective** construction look alike, but context determines the English choice.
 
-| Spanish form | Natural English |
-|---|---|
-| lo veo, referring to a man | I see him |
-| lo veo, referring to an object | I see it |
-| lo veo a usted | I see you |
-| lo importante | the important thing |
-| lo bueno | the good thing |
-| lo único | the only thing |
-| lo mejor | the best part / the best thing |
-| lo que quiero | what I want |
-| lo difícil que fue | how difficult it was |
+| Spanish source | Natural English | Atomic lesson |
+|---|---|---|
+| **lo**, referring to a man | him | [open](lo%20(a%20un%20hombre).md) |
+| **lo**, referring to a thing | it | [open](lo%20(a%20una%20cosa).md) |
+| **lo**, referring formally to a man | you | [open](lo%20(a%20usted).md) |
+| **lo bueno** | the good thing | [open](lo%20bueno%20(la%20parte%20positiva).md) |
+| **lo importante** | the important thing | [open](lo%20importante%20(la%20cosa%20importante).md) |
+| **lo único** | the only thing | [open](lo%20único%20(la%20única%20cosa).md) |
+| **lo mejor** | the best part | [open](lo%20mejor%20(la%20mejor%20parte).md) |
+| **lo mejor** | the best thing | [open](lo%20mejor%20(la%20mejor%20cosa).md) |
+| **lo que** | what | [open](lo%20que%20(aquello%20que).md) |
+| **lo difícil que** | how difficult | [open](lo%20difícil%20que%20(el%20grado%20de%20dificultad).md) |
 
-## Micro-lessons
+Each linked micro-lesson is one machine-readable source-to-target mapping with one or two self-disambiguating examples.
 
-- [**lo** → him](lo%20(him).md)
-- [**lo** → it](lo%20(it).md)
-- [**lo** → formal you](lo%20(you%20formal).md)
-- [**lo importante** → the important thing](lo%20importante%20(the%20important%20thing).md)
-- [**lo bueno** → the good thing](lo%20bueno%20(the%20good%20thing).md)
-- [**lo único** → the only thing](lo%20único%20(the%20only%20thing).md)
-- [**lo mejor** → the best part](lo%20mejor%20(the%20best%20part).md)
-- [**lo que** → what](lo%20que%20(what).md)
-- [**lo difícil que** → how difficult](lo%20dif%C3%ADcil%20(how%20difficult).md)
-- [Combined direct-object forms](lo%20(him%20it%20and%20formal%20you).md)
-
-The related **lo que** and **para que** contrast also appears in [Translations of **Que**](../que/lo-que-and-para-que.md).
+For **se lo**, where **se** identifies the recipient and **lo** identifies the thing, use the canonical [Spanish **se** map](../se/04-se-replacing-le-and-les.md). The related **lo que** and **para que** contrast also appears in [Translations of **que**](../que/lo-que-and-para-que.md).

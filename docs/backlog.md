@@ -6,7 +6,7 @@
 
 - [ ] Normalize `/curriculum/mappings` into an atomic, bidirectional, machine-readable source of truth
     - [x] Phase 1: define the canonical ownership, filename, YAML, reverse-link, validation, and phase-gate contract
-    - [ ] Phase 2: pilot the contract on the individual Spanish **lo** mappings
+    - [x] Phase 2: pilot the contract on Spanish **lo** and split the former **to / too / two** bundle by canonical ownership
     - [ ] Phase 3: normalize English **be** forms and high-value expressions
     - [ ] Phase 4: normalize the reverse **ser / estar / haber / tener / poder** hub
     - [ ] Phase 5: rehome top-level multiword expressions under canonical headwords
@@ -114,12 +114,23 @@
 
 ## Completed timeline
 
+### 2026-08-09 — Atomic **lo** pilot and **to / too / two** ownership split
+
+- [x] Complete Phase 2 of the mapping normalization roadmap without losing existing teaching material
+    - [x] Replace the mixed Spanish **lo** lessons with ten atomic source-to-target objects using the approved YAML contract and readable filenames
+    - [x] Split **lo mejor** into separate **the best part** and **the best thing** objects while retaining the direct-object, abstract-adjective, degree, and relative-clause meanings
+    - [x] Retire the combined **lo** lesson only after confirming its **him**, **it**, and formal **you** meanings are atomic and its **se lo** explanation remains in the canonical **se** map
+    - [x] Split the former English **to / too / two** sound-family folder into canonical top-level **to** and **too** maps
+    - [x] Route the direct **two** teaching set to supplemental number vocabulary because **two → dos** is not independently one-to-many
+    - [x] Preserve all 28 moved **to**, **too**, and **two** lesson files byte-for-byte, retain the shared sound contrasts, and index the previously hidden positive-agreement lesson
+    - [x] Validate YAML syntax, required fields, unique IDs, example counts, mapping direction, README coverage, and 4,251 local curriculum links
+
 ### 2026-08-09 — Atomic mapping normalization contract established
 
 - [x] Complete Phase 1 of the mapping normalization roadmap without moving or rewriting lessons
     - [x] Record the baseline of 699 top-level source buckets, 3,222 mapping Markdown files, and 2,417 non-README lesson files
     - [x] Establish canonical ownership for source lemmas, inflected variants, multiword expressions, and intentionally shared retrieval paths
-    - [x] Identify six top-level expression families for later rehoming while preserving `to-too-and-two` as an owner-approved sound-family exception
+    - [x] Identify six top-level expression families for later rehoming while recording the then-approved `to-too-and-two` sound-family exception, later revised in Phase 2
     - [x] Define the atomic YAML contract, stable-ID rule, human-readable filename convention, reverse-coverage states, and review statuses
     - [x] Define loss-prevention and validation requirements for every migration phase
     - [x] Preserve the complete nine-phase roadmap and model guidance in `/curriculum/mappings/AGENTS.md` so future Codex sessions inherit it

@@ -11,6 +11,7 @@
 | [**Not Too**](07-not-too.md) | El examen no estuvo muy difícil, así que terminé temprano. | The exam wasn't too difficult, so I finished early. |
 | [**Too** Meaning Also](08-too-meaning-also.md) | Laura va a asistir y yo también voy. | Laura's going to attend, and I'm going too. |
 | [**Me Too**](09-me-too.md) | —Quiero ir a Cartagena. —Yo también. | “I want to go to Cartagena.” “Me too.” |
+| [Positive Agreement: **Me Too** and **So Do I**](09-positive-agreement-me-too.md) | —Me gusta este libro. —A mí también. | “I like this book.” “Me too. / So do I.” |
 | [Formal or Emphatic **Too**](10-formal-or-emphatic-too.md) | Laura también vio el error, aunque no dijo nada durante la reunión. | Laura, too, saw the error, although she said nothing during the meeting. |
 | [**All Too**](11-all-too.md) | Es demasiado común que una contraseña débil permita el acceso a datos privados. | It's all too common for a weak password to expose private data. |
 | [**Only Too**](12-only-too.md) | Con mucho gusto revisaré el contrato antes de que lo firmes. | I'll be only too happy to review the contract before you sign it. |
@@ -23,3 +24,8 @@
 | Los dos sastres están demasiado cansados para confeccionar dos tutús también. | The two tailors are too tired to tailor two tutus too. |
 | El material es demasiado caro y cuesta demasiado; además, el diseño es demasiado complejo para que lo terminemos hoy. | The material is much too expensive and costs too much; the design is far too complex for us to finish today too. |
 | —Yo también revisaré las cifras. —Yo también; nunca se puede ser demasiado cuidadoso. | “I'll check the figures too.” “Me too; you can't be too careful.” |
+
+## Related Sources
+
+- [English **To** and the **to/too/two** sound contrast](../to/pronunciation-and-homophones.md)
+- [Supplemental **Two** and related number forms](../../../vocabulary/numbers/two-and-related-forms/README.md)

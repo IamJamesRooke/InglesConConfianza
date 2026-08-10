@@ -1,4 +1,6 @@
-# Uses of **Two** and Related Forms
+# Supplemental **Two** and Related Number Forms
+
+English **two** maps directly to Spanish **dos**, so it does not need a canonical mapping bucket. This supplemental number set preserves the related contrasts with **the two, both, a couple, a pair, twins, twice, second, half**, and **double**.
 
 | Lesson | Spanish | English |
 |---|---|---|

@@ -27,7 +27,7 @@ Completeness currently matters more than brevity. Preserve useful teaching mater
 - Put a multiword expression under its most useful lexical headword. Default to atomic files directly inside that source bucket; create another expression subfolder only when a genuine internal hierarchy is necessary and the owner approves it.
 - Keep pronominal variants under the unmarked lemma, such as `quedarse` under `quedar`.
 - A lesson has one canonical physical file but may be linked from multiple README indexes when that materially improves retrieval. Do not copy the same directional object into several locations merely for navigation.
-- Preserve intentional owner-approved exceptions. In particular, `to-too-and-two` remains together because the shared sound is the teaching point.
+- Preserve intentional owner-approved exceptions, but update the durable rule when the owner revises an earlier decision. The former `to-too-and-two` bundle was split in Phase 2: `to` and `too` are canonical maps, while direct `two` material belongs in supplemental number vocabulary and the shared sound contrast is indexed from both maps.
 
 Known top-level ownership corrections identified in Phase 1:
 
@@ -37,6 +37,7 @@ Known top-level ownership corrections identified in Phase 1:
 - English `no-longer` → reconcile with the existing `long` lesson
 - Spanish `a-pesar-de` → `pesar`
 - Spanish `asi-que` → `asi`
+- English `to-too-and-two` → separate `to` and `too`; route direct `two` material to supplemental number vocabulary
 
 ## Direction and reverse coverage
 
@@ -113,7 +114,7 @@ IDs must be unique, stable, ASCII slugs. Allowed review states are `draft`, `rev
 ## Durable normalization roadmap
 
 1. **Contract and inventory — Sol High.** Establish these rules, record the baseline, classify top-level expression ownership, and select the pilot. Completed 2026-08-09.
-2. **Atomic `lo` pilot — Sol High.** Apply the YAML contract and human filenames to the individual `lo` meanings, preserve all examples, remove the combined lesson only after a loss audit, and test validation.
+2. **Atomic `lo` pilot and `to/too/two` topology correction — Sol High.** Apply the YAML contract and human filenames to the individual `lo` meanings, preserve all examples, remove the combined lesson only after a loss audit, test validation, split `to` and `too`, and route direct `two` material to supplemental number vocabulary.
 3. **English `be` form topology — Sol High.** Organize `be`, `am`, `is`, `are`, `was`, `were`, `been`, `being`, and high-value expressions without flattening grammar into mappings.
 4. **Reverse `be` hub — Sol High or XHigh.** Normalize and cross-audit `ser`, `estar`, `haber`, `tener`, and especially `poder`, including source forms such as `puedo`, `pude`, `podía`, and `podría`.
 5. **Top-level expression ownership cleanup — Sol High.** Rehome the known ownership violations and audit all remaining top-level buckets under the approved rules.
