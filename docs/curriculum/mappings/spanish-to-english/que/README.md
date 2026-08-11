@@ -14,6 +14,7 @@ Spanish **que** and accented **qué** have several foundational English equivale
 | **para que** | so that | para que entiendas → so that you understand |
 | exclamative **qué** | what / how | ¡Qué interesante! → How interesting! |
 | verb structure | no separate word | quiero que Laura... → I want Laura to... |
+| **porque** | because / since / as | porque estaba cansada → because she was tired |
 
 The accent matters: interrogative or exclamative **qué** carries an accent; connector or relative **que** does not.
 
@@ -25,3 +26,4 @@ The accent matters: interrogative or exclamative **qué** carries an accent; con
 - [Connector **Que** → **That**](06-connector-that.md)
 - [**Lo Que** and **Para Que**](lo-que-and-para-que.md)
 - [Exclamative **Qué**: **What** and **How**](exclamative-what-and-how.md)
+- [**Porque**: **Because**, **Since**, or **As**](porque/README.md)

@@ -9,3 +9,7 @@
 | El bus para en la esquina. | The bus stops at the corner. |
 
 **Parar** can become **stop** or, in travel, **stay**. **No parar de** emphasizes continuous repeated action.
+
+## Related source family
+
+- [**detener** → stop, arrest, detain, or hold back](detener/README.md)

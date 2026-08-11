@@ -6,3 +6,7 @@ Spanish **ver** maps to **see** for perception and often to **watch** for sustai
 |---|---|---|
 | [See or Watch](01-see-or-watch.md) | Veo una foto y una película. | I see a photo and watch a movie. |
 | [See vs Look At](confusion-sets/README.md) | Veo la foto y luego la miro. | I see the photo and then look at it. |
+
+## Related source family
+
+- [**mirar** → look at or watch](mirar/README.md)

@@ -13,6 +13,10 @@ Spanish **mandar** covers sending, ordering, being in charge, arranging services
 | [**Mandar A Alguien A Hacer Algo**](07-mandar-a-alguien-a.md) | Mandé a Luis a comprar pan. | I sent Luis to buy bread. |
 | [**Mandar Parar / Callar → Tell To Stop / Be Quiet**](08-mandar-parar.md) | La profesora los mandó callar. | The teacher told them to be quiet. |
 
+## Related source family
+
+- [**enviar** → send, ship, forward, or refer](enviar/README.md)
+
 ## Mastery Phrases
 
 | Spanish | English |

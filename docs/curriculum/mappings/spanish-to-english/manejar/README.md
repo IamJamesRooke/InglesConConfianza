@@ -8,3 +8,7 @@
 | Él maneja la máquina. | He operates the machine. |
 
 **Manejar** can become **drive, manage, handle**, or **operate**, according to what is controlled.
+
+## Related source family
+
+- [**conducir** → drive, lead, host, or conduct](conducir/README.md)

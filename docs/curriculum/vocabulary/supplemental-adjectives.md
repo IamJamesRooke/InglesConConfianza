@@ -26,7 +26,7 @@ These are useful direct vocabulary items, but they do not currently need a large
 | juvenil | youthful |
 | menor de edad | minor |
 
-For shades, use the existing mapping for [**claro**](../mappings/spanish-to-english/claro/README.md): **azul claro** is **light blue**, while **verde oscuro** is **dark green**. The English shade word comes before the color. For example, **Laura lleva una chaqueta verde oscuro. → Laura is wearing a dark green jacket.**
+For shades, use the supplemental [**claro** lesson](supplemental/spanish/claro/README.md): **azul claro** is **light blue**, while **verde oscuro** is **dark green**. The English shade word comes before the color. For example, **Laura lleva una chaqueta verde oscuro. → Laura is wearing a dark green jacket.**
 
 ## Register and usage notes
 

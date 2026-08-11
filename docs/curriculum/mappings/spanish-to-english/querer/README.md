@@ -17,6 +17,7 @@ Spanish **querer** changes its English pattern according to what follows it and 
 - [**querer que alguien haga algo** → want somebody to do something](querer%20que%20alguien%20haga%20algo%20(want%20somebody%20to%20do%20something).md)
 - [Combined wanting patterns](querer%20algo%20and%20querer%20hacer%20algo.md)
 - [Wanting somebody to do something and related patterns](querer%20que%20alguien%20haga%20algo.md)
+- [Related **desear** family: wish, want, and would like](desear/README.md)
 
 ## Mastery sentence
 

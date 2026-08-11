@@ -15,5 +15,7 @@ The curriculum keeps this category small. Additional idioms and fixed expression
 
 - [**Please**](please.md)
 - [**I'm Sorry** and **Excuse Me**](sorry-and-excuse-me.md)
+- [Spanish **disculpar** expressions](disculpar/README.md)
+- [Spanish **perdonar** expressions](perdonar/README.md)
 - [**Thank You for Doing Something**](thank-you-for-doing-something.md)
 - [**Thank You, Thanks**, and Responses](thanks-and-responses.md)

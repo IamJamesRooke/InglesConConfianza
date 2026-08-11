@@ -23,6 +23,7 @@
         - [x] Phase 5C Pass 2: move nine owner-approved ordinary Spanish vocabulary sets out of mappings while retaining **suficiente**
         - [x] Phase 5C Pass 3: move **ahora** to core vocabulary, move **argumento** to false cognates, and nest **ahí** under **allí**
         - [x] Phase 5C Pass 4: move 40 ordinary or cognate-first roots out of mappings and consolidate seven approved Spanish families
+        - [x] Phase 5C Pass 5: move 25 vocabulary-, expression-, or cognate-first roots out of mappings and consolidate 11 approved Spanish families
     - [ ] Phase 6: normalize the remaining high-frequency bilingual hubs in bounded batches
         - [x] Phase 6A: normalize the English **do / make** and Spanish **hacer** bilingual hub
         - [ ] Phase 6B: normalize the English **get** hub and its qualifying Spanish reverse sources
@@ -128,6 +129,18 @@
 - Spanish-to-English only. No other languages. If others want to fork the repo, that's fine. And can give AGENT instructions explaining exactly how the method was made.
 
 ## Completed timeline
+
+### 2026-08-11 — Spanish mapping index reduced to contextual teaching hubs
+
+- [x] Complete Phase 5C Pass 5 on Sol High using the owner's second full-folder review
+    - [x] Move seven foundational words into Spanish core vocabulary and eleven owner-deferred words into supplemental Spanish vocabulary
+    - [x] Preserve **porque** as core vocabulary while duplicating its complete lesson set beneath **que** for visible **por + que** retrieval
+    - [x] Move **disculpar** and **perdonar** into vocabulary expressions and move **atender, discutir, interesar, pretender**, and **soportar** into false-cognate transformations
+    - [x] Consolidate **desear, detener, conducir, enviar, obtener, lograr, encantar, mirar**, and **oír** beneath approved source-family owners
+    - [x] Consolidate **nosotros / nosotras** and **usted / ustedes** as two top-level reference families while preserving every individual form lesson
+    - [x] Keep **comer, vez, tarde, último, entonces, hablar, terminar, acabar, mostrar**, and **enseñar** as independent mapping roots under explicit owner decisions
+    - [x] Preserve all 74 affected source files, 736 source lines, 302 teaching-table lines, and four YAML objects
+    - [x] Reduce the exhaustive Spanish mapping index from 292 to 256 exact top-level source folders
 
 ### 2026-08-11 — Spanish mapping workload reduced to core contextual choices
 
