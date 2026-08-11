@@ -13,3 +13,5 @@ Accent and context matter: **aún** often overlaps with **todavía** as **still/
 The overlapping [**todavía**](todavia/README.md) map lives inside this family for its canonical **still/yet** reference.
 
 The related [**aunque** family](aunque/README.md) covers **although, though, even though**, and **even if**.
+
+The related [**incluso** source set](incluso/README.md) covers **even, including**, and **even if**.

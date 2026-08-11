@@ -12,3 +12,7 @@ Spanish **subir** can become **go up, come up, raise, get on, upload, turn up, r
 | [prices and levels](06-prices-and-levels.md) | rise |
 | [bring something up](07-pick-up-or-drop-off.md) | bring up |
 | [weight](08-weight.md) | gain weight |
+
+## Related source family
+
+- [**levantar** → lift, raise, pick up, get up, or remove](levantar/README.md)

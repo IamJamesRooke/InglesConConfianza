@@ -25,6 +25,7 @@
         - [x] Phase 5C Pass 4: move 40 ordinary or cognate-first roots out of mappings and consolidate seven approved Spanish families
         - [x] Phase 5C Pass 5: move 25 vocabulary-, expression-, or cognate-first roots out of mappings and consolidate 11 approved Spanish families
         - [x] Phase 5C Pass 6: move nine vocabulary- or cognate-first roots out of mappings, consolidate 11 source families, and repair mixed-source ownership
+        - [x] Phase 5C Pass 7: move 12 cognate-first or supplemental roots out of mappings and consolidate eight approved Spanish families
     - [ ] Phase 6: normalize the remaining high-frequency bilingual hubs in bounded batches
         - [x] Phase 6A: normalize the English **do / make** and Spanish **hacer** bilingual hub
         - [ ] Phase 6B: normalize the English **get** hub and its qualifying Spanish reverse sources
@@ -130,6 +131,17 @@
 - Spanish-to-English only. No other languages. If others want to fork the repo, that's fine. And can give AGENT instructions explaining exactly how the method was made.
 
 ## Completed timeline
+
+### 2026-08-11 — Spanish mapping index sharpened again
+
+- [x] Complete Phase 5C Pass 7 on Sol High using the owner's fourth full-folder review
+    - [x] Move **confiar, convertir, mayor, ocurrir, preocupar, propio, recibir, resultar**, and **único** into cognate transformations without filtering their contextual source lessons
+    - [x] Keep the associated **convertir / recibir** teaching coverage visible in the English **get** hub while removing their unnecessary independent Spanish mapping roots
+    - [x] Move **casar, partir**, and **sentar** into supplemental Spanish vocabulary for possible later promotion
+    - [x] Nest **aparecer, entregar, incluso, levantar, luego, mal, ordenar**, and **despertar** beneath approved human-facing source-family owners
+    - [x] Preserve **también, tampoco**, and **ni** as separate top-level mapping sources under the owner's explicit decision
+    - [x] Preserve all 34 retired-root files byte-for-byte, including 322 source lines and 181 teaching-table lines
+    - [x] Reduce the exhaustive Spanish mapping index from 236 to 216 exact top-level source folders
 
 ### 2026-08-11 — Spanish mapping families consolidated further
 

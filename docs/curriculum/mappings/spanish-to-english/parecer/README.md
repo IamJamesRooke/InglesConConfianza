@@ -14,6 +14,10 @@ Spanish **parecer** and **parecerse** map to seeming, appearance, opinions, impr
 | [**Al Parecer → Apparently**](08-as-far-as-i-can-tell.md) | Al parecer, cancelaron la reunión. | Apparently, they canceled the meeting. |
 | [**Parecido** → **Similar / Alike**](<parecido (similar and alike).md>) | Los dos libros son similares. | The two books are similar. |
 
+## Related source family
+
+- [**aparecer** → appear, show up, come up, or emerge](aparecer/README.md)
+
 ## Mastery Phrases
 
 | Spanish | English |

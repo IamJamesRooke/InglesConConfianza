@@ -16,6 +16,10 @@ Spanish **dar** and **darse** extend far beyond physical giving. English selects
 | [**Dar poder → Give power**](<dar poder (give power).md>) | La regla les da poder a los supervisores. | The rule gives power to the supervisors. |
 | [**Darle poder a alguien → Authorize**](<darle poder a alguien para hacer algo (authorize someone to do something).md>) | Le da poder a Ana para firmar. | It authorizes Ana to sign. |
 
+## Related source family
+
+- [**entregar** → deliver, hand in, hand over, or surrender](entregar/README.md)
+
 ## Mastery Phrases
 
 | Spanish | English |

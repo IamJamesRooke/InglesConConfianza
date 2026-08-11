@@ -16,6 +16,7 @@ Spanish **mandar** covers sending, ordering, being in charge, arranging services
 ## Related source family
 
 - [**enviar** → send, ship, forward, or refer](enviar/README.md)
+- [**ordenar** → order, arrange, sort, command, or tidy](ordenar/README.md)
 
 ## Mastery Phrases
 

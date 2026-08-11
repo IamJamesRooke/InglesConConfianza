@@ -8,3 +8,5 @@
 | Dormí al bebé. | I put the baby to sleep. |
 
 Basic **dormir** is **sleep**. Pronominal, overnight-stay, and causative uses require **fall asleep, stay overnight**, or **put to sleep**.
+
+The related [**despertar** source set](despertar/README.md) covers **wake up, awaken, arouse**, and **spark**.
