@@ -101,7 +101,7 @@ The 51 **poder** concept files contain 140 atomic mappings, 46 trackable surface
 | **can** vs **may / might** | **Can** often describes a general possibility; **may** and **might** normally describe one uncertain event. |
 | **could** vs **could have** | **Could** can concern the present or a condition; **could have** points to a past possibility or unrealized past ability. |
 | **get to** vs **have got to** | **Get to** is an opportunity; **have got to** is an obligation and belongs with **tener que / have to**. |
-| **may be** vs **maybe** | **May be** is a verb phrase; **maybe** is an adverb. Spanish may use **puede que** or [**quizá**](../quizá/README.md). |
+| **may be** vs **maybe** | **May be** is a verb phrase; **maybe** is an adverb. Spanish may use **puede que** or [**quizá**](../../../vocabulary/core-vocabulary/spanish/quizá/README.md). |
 | **power** vs **authority** | **Power** is broad control or influence; **authority** is an official right to decide or act. |
 | **can't** vs **may not** | **Can't** normally marks inability or impossibility. **May not** can mark uncertain non-occurrence or formal prohibition. |
 | **Can you...?** ability vs request | Keep the same words as separate concepts because the communicative job changes what the learner is practicing. |
@@ -132,7 +132,7 @@ In ordinary speech, affirmative **can** is often reduced while negative **can't*
 - [**ser capaz de** → **be able to**](<../ser/base-form/ser capaz de (be able to).md>)
 - [**lograr hacer algo** → **manage to do something**](<../conseguir/lograr/lograr hacer algo (manage to do something).md>)
 - [**dejar que alguien haga algo** → **let someone do something**](<../dejar/dejar que alguien haga algo (let someone do something).md>)
-- [**permitirle a alguien hacer algo** → **allow someone to do something**](<../permitir/permitirle a alguien hacer algo (allow someone to do something).md>)
+- [**permitirle a alguien hacer algo** → **allow someone to do something**](<../../../transformations/cognates/05-confusion-sets/spanish/permitir/permitirle a alguien hacer algo (allow someone to do something).md>)
 - [**dar poder** → **empower**](<../dar/dar poder (empower).md>)
 - [**luz** → **power / light**](../../../vocabulary/supplemental/spanish/luz/README.md)
 - **Poderoso**, **impotente**, and **todopoderoso** are indexed above as members of this power word family.

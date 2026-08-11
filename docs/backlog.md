@@ -26,6 +26,7 @@
         - [x] Phase 5C Pass 5: move 25 vocabulary-, expression-, or cognate-first roots out of mappings and consolidate 11 approved Spanish families
         - [x] Phase 5C Pass 6: move nine vocabulary- or cognate-first roots out of mappings, consolidate 11 source families, and repair mixed-source ownership
         - [x] Phase 5C Pass 7: move 12 cognate-first or supplemental roots out of mappings and consolidate eight approved Spanish families
+        - [x] Phase 5C Pass 8: move 28 cognate-led or vocabulary-first Spanish roots out of mappings
     - [ ] Phase 6: normalize the remaining high-frequency bilingual hubs in bounded batches
         - [x] Phase 6A: normalize the English **do / make** and Spanish **hacer** bilingual hub
         - [ ] Phase 6B: normalize the English **get** hub and its qualifying Spanish reverse sources
@@ -131,6 +132,18 @@
 - Spanish-to-English only. No other languages. If others want to fork the repo, that's fine. And can give AGENT instructions explaining exactly how the method was made.
 
 ## Completed timeline
+
+### 2026-08-11 — Spanish mapping index reduced to contextual essentials
+
+- [x] Complete Phase 5C Pass 8 on Sol High using the owner's fifth full-folder review
+    - [x] Move **descubrir, disponible, enterar, entrar, fijar, importar, justo, manejar, molestar, montar, mover, permitir, probar, servir, terminar, tratar, usar**, and **vivir** into cognate transformations
+    - [x] Preserve related families such as **conducir** beneath **manejar**, **vivo** beneath **vivir**, and the existing false-cognate and contextual sublessons beneath their source owners
+    - [x] Move **allí / ahí, apagar, doler, dormir / despertar, encender, poco**, and **quizá / quizás** into Spanish core vocabulary
+    - [x] Move **blanco, despedir**, and **lucir** into supplemental Spanish vocabulary
+    - [x] Repair the three dependent links from **casi** and **poder** to the relocated **poco, quizá**, and **permitir** lessons
+    - [x] Preserve all 100 retired-root files byte-for-byte, including 1,013 source lines, 427 teaching-table lines, and two YAML documents
+    - [x] Reduce the exhaustive Spanish mapping index from 216 to 188 exact top-level source folders
+    - [x] Revalidate all 1,308 unique machine-object IDs, 1,249 atomic mappings, 59 concepts, reciprocal links, local Markdown links, and destination indexes
 
 ### 2026-08-11 — Spanish mapping index sharpened again
 
