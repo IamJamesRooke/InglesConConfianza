@@ -2,13 +2,19 @@
 
 These extremely useful Spanish source words remain available for curriculum sequencing, but they do not require independent contextual mapping hubs.
 
+- [**aguantar**](aguantar/README.md)
 - [**allí / ahí**](alli/README.md)
 - [**apagar**](apagar/README.md)
 - [**buscar**](buscar/README.md)
+- [**caber**](caber/README.md)
 - [**casa**](casa/README.md)
 - [**casi**](casi/README.md)
+- [**cerrar**](cerrar/README.md)
+- [**cobrar**](cobrar/README.md)
+- [**coger**](coger/README.md)
 - [**comprar**](comprar/README.md)
 - [**correcto**](correcto/README.md)
+- [**correr**](correr/README.md)
 - [**cosa**](cosa/README.md)
 - [**dirección**](direccion/README.md)
 - [**doler**](doler/README.md)
@@ -26,6 +32,7 @@ These extremely useful Spanish source words remain available for curriculum sequ
 - [**hermano**](hermano/README.md)
 - [**hombre**](hombre/README.md)
 - [**hora**](hora/README.md)
+- [**jugar**](jugar/README.md)
 - [**junto**](junto/README.md)
 - [**lugar**](lugar/README.md)
 - [**matar**](matar/README.md)
