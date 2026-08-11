@@ -20,8 +20,9 @@ target_features:
 aliases: []
 index_under:
 - manage
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+- es-lograr-hacer-algo-successful-effort--en-manage-to-do-something
 status: draft
 examples:
 - source: We managed to arrive on time.

@@ -67,6 +67,8 @@ mappings:
   teaching_note: Use **I could have** for this poder meaning in the context shown.
   concept_id: es-poder-unrealized-past-possibility--en-could-have-concept
   form_surface: habría podido
+  clause_type: declarative
+  polarity: affirmative
 - id: es-habriamos-podido-unrealized-past-possibility--en-we-could-have
   kind: mapping
   direction: spanish-to-english
@@ -110,6 +112,10 @@ mappings:
   teaching_note: Use **we could have** for this poder meaning in the context shown.
   concept_id: es-poder-unrealized-past-possibility--en-could-have-concept
   form_surface: habríamos podido
+  clause_type: declarative
+  polarity: affirmative
+clause_type: declarative
+polarity: affirmative
 ---
 # **poder** → **could have**
 

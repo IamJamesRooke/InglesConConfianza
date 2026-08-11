@@ -18,6 +18,7 @@ Spanish **dejar** maps to leaving, allowing, stopping, lending, abandoning, caus
 
 - [**dejar de** → stop doing / no longer](dejar-de/README.md)
 - [**dejar que** → let / allow](dejar-que/README.md)
+- [Atomic **dejar que alguien haga algo** → **let someone do something**](<dejar que alguien haga algo (let someone do something).md>)
 
 ## Mastery Phrases
 

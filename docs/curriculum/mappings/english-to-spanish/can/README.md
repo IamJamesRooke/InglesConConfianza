@@ -46,3 +46,22 @@ These database-ready objects were added while normalizing the **tener / poder** 
 | **they can't** | **no pueden** | [open](they%20can%27t%20%28no%20pueden%20-%20present-inability%29.md) |
 | **we can't** | **no podemos** | [open](we%20can%27t%20%28no%20podemos%20-%20present-inability%29.md) |
 | **you can't** | **no puedes** | [open](you%20can%27t%20%28no%20puedes%20-%20present-inability%29.md) |
+
+### Clause-shape mappings
+
+Ability questions are tracked separately from requests so the application can review the intended communicative skill.
+
+| Source | Target | Atomic lesson |
+|---|---|---|
+| **Can I...?** | **¿puedo...?** | [open](<Can I... (puedo... - ability-question).md>) |
+| **Can you...?** | **¿puedes...?** | [open](<Can you... (puedes... - ability-question).md>) |
+| **Can she...?** | **¿puede...?** | [open](<Can she... (puede... - ability-question).md>) |
+| **Can we...?** | **¿podemos...?** | [open](<Can we... (podemos... - ability-question).md>) |
+| **Can they...?** | **¿pueden...?** | [open](<Can they... (pueden... - ability-question).md>) |
+| **Can't I...?** | **¿no puedo...?** | [open](<Can't I... (no puedo... - negative-ability-question).md>) |
+| **Can't you...?** | **¿no puedes...?** | [open](<Can't you... (no puedes... - negative-ability-question).md>) |
+| **Can't she...?** | **¿no puede...?** | [open](<Can't she... (no puede... - negative-ability-question).md>) |
+| **Can't we...?** | **¿no podemos...?** | [open](<Can't we... (no podemos... - negative-ability-question).md>) |
+| **Can't they...?** | **¿no pueden...?** | [open](<Can't they... (no pueden... - negative-ability-question).md>) |
+| **can be** | **puede ser** | [open](<can be (puede ser - general-possibility).md>) |
+| **can be** | **pueden ser** | [open](<can be (pueden ser - general-possibility).md>) |

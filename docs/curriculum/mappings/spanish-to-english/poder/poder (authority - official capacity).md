@@ -7,7 +7,7 @@ source: el poder
 source_lemma: poder
 target_language: en
 target: authority
-target_lemma: power
+target_lemma: authority
 sense: official-capacity
 family_id: es-poder-noun-family
 form_family: noun
@@ -28,7 +28,7 @@ mappings:
   source_variant: official-capacity
   target_language: en
   target: authority
-  target_lemma: power
+  target_lemma: authority
   sense: official-capacity
   taxonomy:
     category: noun

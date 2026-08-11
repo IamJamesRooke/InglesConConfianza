@@ -79,6 +79,8 @@ mappings:
   teaching_note: Use **I could** for this poder meaning in the context shown.
   concept_id: es-poder-conditional-ability--en-could-concept
   form_surface: podría
+  clause_type: declarative
+  polarity: affirmative
 - id: es-podriamos-conditional-ability--en-we-could
   kind: mapping
   direction: spanish-to-english
@@ -122,6 +124,8 @@ mappings:
   teaching_note: Use **we could** for this poder meaning in the context shown.
   concept_id: es-poder-conditional-ability--en-could-concept
   form_surface: podríamos
+  clause_type: declarative
+  polarity: affirmative
 - id: es-podrian-conditional-ability--en-they-could
   kind: mapping
   direction: spanish-to-english
@@ -171,6 +175,8 @@ mappings:
   teaching_note: Use **they could** for this poder meaning in the context shown.
   concept_id: es-poder-conditional-ability--en-could-concept
   form_surface: podrían
+  clause_type: declarative
+  polarity: affirmative
 - id: es-podrias-conditional-ability--en-you-could
   kind: mapping
   direction: spanish-to-english
@@ -214,6 +220,10 @@ mappings:
   teaching_note: Use **you could** for this poder meaning in the context shown.
   concept_id: es-poder-conditional-ability--en-could-concept
   form_surface: podrías
+  clause_type: declarative
+  polarity: affirmative
+clause_type: declarative
+polarity: affirmative
 ---
 # **poder** → **could**
 

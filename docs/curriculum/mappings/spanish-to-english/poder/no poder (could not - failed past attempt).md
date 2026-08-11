@@ -65,6 +65,8 @@ mappings:
   teaching_note: Use **I couldn't** for this poder meaning in the context shown.
   concept_id: es-poder-failed-past-attempt--en-could-not-concept
   form_surface: pude
+  clause_type: declarative
+  polarity: negative
 - id: es-no-pudieron-failed-past-attempt--en-they-couldn-t
   kind: mapping
   direction: spanish-to-english
@@ -112,6 +114,8 @@ mappings:
   teaching_note: Use **they couldn't** for this poder meaning in the context shown.
   concept_id: es-poder-failed-past-attempt--en-could-not-concept
   form_surface: pudieron
+  clause_type: declarative
+  polarity: negative
 - id: es-no-pudimos-failed-past-attempt--en-we-couldn-t
   kind: mapping
   direction: spanish-to-english
@@ -155,6 +159,8 @@ mappings:
   teaching_note: Use **we couldn't** for this poder meaning in the context shown.
   concept_id: es-poder-failed-past-attempt--en-could-not-concept
   form_surface: pudimos
+  clause_type: declarative
+  polarity: negative
 - id: es-no-pudiste-failed-past-attempt--en-you-couldn-t
   kind: mapping
   direction: spanish-to-english
@@ -198,6 +204,8 @@ mappings:
   teaching_note: Use **you couldn't** for this poder meaning in the context shown.
   concept_id: es-poder-failed-past-attempt--en-could-not-concept
   form_surface: pudiste
+  clause_type: declarative
+  polarity: negative
 - id: es-no-pudo-failed-past-attempt--en-she-couldn-t
   kind: mapping
   direction: spanish-to-english
@@ -245,6 +253,10 @@ mappings:
   teaching_note: Use **she couldn't** for this poder meaning in the context shown.
   concept_id: es-poder-failed-past-attempt--en-could-not-concept
   form_surface: pudo
+  clause_type: declarative
+  polarity: negative
+clause_type: declarative
+polarity: negative
 ---
 # **no poder** → **could not**
 

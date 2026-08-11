@@ -65,6 +65,8 @@ mappings:
   teaching_note: Use **we get to** for this poder meaning in the context shown.
   concept_id: es-poder-present-opportunity--en-get-to-concept
   form_surface: podemos
+  clause_type: declarative
+  polarity: affirmative
 - id: es-puede-present-opportunity--en-she-gets-to
   kind: mapping
   direction: spanish-to-english
@@ -112,6 +114,8 @@ mappings:
   teaching_note: Use **she gets to** for this poder meaning in the context shown.
   concept_id: es-poder-present-opportunity--en-get-to-concept
   form_surface: puede
+  clause_type: declarative
+  polarity: affirmative
 - id: es-pueden-present-opportunity--en-they-get-to
   kind: mapping
   direction: spanish-to-english
@@ -159,6 +163,8 @@ mappings:
   teaching_note: Use **they get to** for this poder meaning in the context shown.
   concept_id: es-poder-present-opportunity--en-get-to-concept
   form_surface: pueden
+  clause_type: declarative
+  polarity: affirmative
 - id: es-puedes-present-opportunity--en-you-get-to
   kind: mapping
   direction: spanish-to-english
@@ -202,6 +208,8 @@ mappings:
   teaching_note: Use **you get to** for this poder meaning in the context shown.
   concept_id: es-poder-present-opportunity--en-get-to-concept
   form_surface: puedes
+  clause_type: declarative
+  polarity: affirmative
 - id: es-puedo-present-opportunity--en-i-get-to
   kind: mapping
   direction: spanish-to-english
@@ -245,6 +253,10 @@ mappings:
   teaching_note: Use **I get to** for this poder meaning in the context shown.
   concept_id: es-poder-present-opportunity--en-get-to-concept
   form_surface: puedo
+  clause_type: declarative
+  polarity: affirmative
+clause_type: declarative
+polarity: affirmative
 ---
 # **poder** → **get to**
 

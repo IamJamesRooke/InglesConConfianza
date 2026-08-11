@@ -22,3 +22,5 @@ These database-ready objects were added while normalizing the **tener / poder** 
 | **they might** | **podrían** | [open](they%20might%20%28podr%C3%ADan%20-%20uncertain-possibility%29.md) |
 | **we might** | **podríamos** | [open](we%20might%20%28podr%C3%ADamos%20-%20uncertain-possibility%29.md) |
 | **you might** | **podrías** | [open](you%20might%20%28podr%C3%ADas%20-%20uncertain-possibility%29.md) |
+| **might have** | **puede que haya** | [uncertain past event](<might have (puede que haya - uncertain-past-event).md>) |
+| **might have** | **podría haber** | [speculative past event](<might have (podría haber - speculative-past-event).md>) |

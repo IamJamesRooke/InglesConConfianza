@@ -65,6 +65,8 @@ mappings:
   teaching_note: Use **we can** for this poder meaning in the context shown.
   concept_id: es-poder-present-permission--en-can-concept
   form_surface: podemos
+  clause_type: declarative
+  polarity: affirmative
 - id: es-puede-present-permission--en-she-can
   kind: mapping
   direction: spanish-to-english
@@ -116,6 +118,8 @@ mappings:
   teaching_note: Use **she can** for this poder meaning in the context shown.
   concept_id: es-poder-present-permission--en-can-concept
   form_surface: puede
+  clause_type: declarative
+  polarity: affirmative
 - id: es-pueden-present-permission--en-they-can
   kind: mapping
   direction: spanish-to-english
@@ -165,6 +169,8 @@ mappings:
   teaching_note: Use **they can** for this poder meaning in the context shown.
   concept_id: es-poder-present-permission--en-can-concept
   form_surface: pueden
+  clause_type: declarative
+  polarity: affirmative
 - id: es-puedes-present-permission--en-you-can
   kind: mapping
   direction: spanish-to-english
@@ -208,6 +214,8 @@ mappings:
   teaching_note: Use **you can** for this poder meaning in the context shown.
   concept_id: es-poder-present-permission--en-can-concept
   form_surface: puedes
+  clause_type: declarative
+  polarity: affirmative
 - id: es-puedo-present-permission--en-i-can
   kind: mapping
   direction: spanish-to-english
@@ -251,6 +259,10 @@ mappings:
   teaching_note: Use **I can** for this poder meaning in the context shown.
   concept_id: es-poder-present-permission--en-can-concept
   form_surface: puedo
+  clause_type: declarative
+  polarity: affirmative
+clause_type: declarative
+polarity: affirmative
 ---
 # **poder** → **can**
 

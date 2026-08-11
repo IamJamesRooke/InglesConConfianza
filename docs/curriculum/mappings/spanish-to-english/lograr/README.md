@@ -1,5 +1,11 @@
 # Spanish **Lograr**
 
+## Atomic mappings
+
+- [**lograr hacer algo** → **manage to do something**](<lograr hacer algo (manage to do something).md>)
+
+## Teaching overview
+
 | Spanish | English |
 |---|---|
 | Logró terminar a tiempo. | She managed to finish on time. |

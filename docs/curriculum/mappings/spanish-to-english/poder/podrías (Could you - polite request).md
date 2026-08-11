@@ -65,6 +65,12 @@ mappings:
   teaching_note: Use **Could you...?** for this poder meaning in the context shown.
   concept_id: es-poder-polite-request--en-could-you-concept
   form_surface: podrías
+  clause_type: interrogative
+  polarity: affirmative
+  question_type: yes-no
+clause_type: interrogative
+polarity: affirmative
+question_type: yes-no
 ---
 # **¿podrías...?** → **Could you...?**
 

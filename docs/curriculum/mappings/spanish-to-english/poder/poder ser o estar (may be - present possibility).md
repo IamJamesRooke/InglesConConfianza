@@ -67,6 +67,8 @@ mappings:
   teaching_note: Use **may be** for this poder expression in the context shown.
   concept_id: es-poder-present-possibility--en-may-be-concept
   form_surface: puede
+  clause_type: declarative
+  polarity: affirmative
 - id: es-puede-ser-possible-identity-characteristic--en-may-be
   kind: mapping
   direction: spanish-to-english
@@ -112,6 +114,10 @@ mappings:
   teaching_note: Use **may be** for this poder expression in the context shown.
   concept_id: es-poder-present-possibility--en-may-be-concept
   form_surface: puede
+  clause_type: declarative
+  polarity: affirmative
+clause_type: declarative
+polarity: affirmative
 ---
 # **poder ser o estar** → **may be**
 

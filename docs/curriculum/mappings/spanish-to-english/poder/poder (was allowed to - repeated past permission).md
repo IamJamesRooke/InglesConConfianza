@@ -79,6 +79,8 @@ mappings:
   teaching_note: Use **I was allowed to** for this poder meaning in the context shown.
   concept_id: es-poder-repeated-past-permission--en-was-allowed-to-concept
   form_surface: podía
+  clause_type: declarative
+  polarity: affirmative
 - id: es-podiamos-repeated-past-permission--en-we-were-allowed-to
   kind: mapping
   direction: spanish-to-english
@@ -123,6 +125,8 @@ mappings:
     shown.
   concept_id: es-poder-repeated-past-permission--en-was-allowed-to-concept
   form_surface: podíamos
+  clause_type: declarative
+  polarity: affirmative
 - id: es-podian-repeated-past-permission--en-they-were-allowed-to
   kind: mapping
   direction: spanish-to-english
@@ -173,6 +177,8 @@ mappings:
     shown.
   concept_id: es-poder-repeated-past-permission--en-was-allowed-to-concept
   form_surface: podían
+  clause_type: declarative
+  polarity: affirmative
 - id: es-podias-repeated-past-permission--en-you-were-allowed-to
   kind: mapping
   direction: spanish-to-english
@@ -217,6 +223,10 @@ mappings:
     shown.
   concept_id: es-poder-repeated-past-permission--en-was-allowed-to-concept
   form_surface: podías
+  clause_type: declarative
+  polarity: affirmative
+clause_type: declarative
+polarity: affirmative
 ---
 # **poder** → **was allowed to**
 

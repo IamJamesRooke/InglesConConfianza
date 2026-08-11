@@ -65,6 +65,8 @@ mappings:
   teaching_note: Use **I was able to** for this poder meaning in the context shown.
   concept_id: es-poder-specific-past-success--en-was-able-to-concept
   form_surface: pude
+  clause_type: declarative
+  polarity: affirmative
 - id: es-pudieron-past-plural-ability-or-success--en-were-able-to
   kind: mapping
   direction: spanish-to-english
@@ -110,6 +112,8 @@ mappings:
   teaching_note: Use **were able to** for this poder expression in the context shown.
   concept_id: es-poder-specific-past-success--en-was-able-to-concept
   form_surface: pudieron
+  clause_type: declarative
+  polarity: affirmative
 - id: es-pudimos-specific-past-success--en-we-were-able-to
   kind: mapping
   direction: spanish-to-english
@@ -153,6 +157,8 @@ mappings:
   teaching_note: Use **we were able to** for this poder meaning in the context shown.
   concept_id: es-poder-specific-past-success--en-was-able-to-concept
   form_surface: pudimos
+  clause_type: declarative
+  polarity: affirmative
 - id: es-pudiste-specific-past-success--en-you-were-able-to
   kind: mapping
   direction: spanish-to-english
@@ -196,6 +202,8 @@ mappings:
   teaching_note: Use **you were able to** for this poder meaning in the context shown.
   concept_id: es-poder-specific-past-success--en-was-able-to-concept
   form_surface: pudiste
+  clause_type: declarative
+  polarity: affirmative
 - id: es-pudo-past-ability-or-success--en-was-able-to
   kind: mapping
   direction: spanish-to-english
@@ -243,6 +251,10 @@ mappings:
   teaching_note: Use **was able to** for this poder expression in the context shown.
   concept_id: es-poder-specific-past-success--en-was-able-to-concept
   form_surface: pudo
+  clause_type: declarative
+  polarity: affirmative
+clause_type: declarative
+polarity: affirmative
 ---
 # **poder** → **was able to**
 

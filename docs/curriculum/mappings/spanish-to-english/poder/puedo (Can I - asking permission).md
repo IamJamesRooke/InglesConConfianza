@@ -65,6 +65,12 @@ mappings:
   teaching_note: Use **Can I...?** for this poder meaning in the context shown.
   concept_id: es-poder-asking-permission--en-can-i-concept
   form_surface: puedo
+  clause_type: interrogative
+  polarity: affirmative
+  question_type: yes-no
+clause_type: interrogative
+polarity: affirmative
+question_type: yes-no
 ---
 # **¿puedo...?** → **Can I...?**
 

@@ -75,6 +75,8 @@ mappings:
   teaching_note: Use **I might** for this poder meaning in the context shown.
   concept_id: es-poder-uncertain-possibility--en-might-concept
   form_surface: podría
+  clause_type: declarative
+  polarity: affirmative
 - id: es-podriamos-uncertain-possibility--en-we-might
   kind: mapping
   direction: spanish-to-english
@@ -118,6 +120,8 @@ mappings:
   teaching_note: Use **we might** for this poder meaning in the context shown.
   concept_id: es-poder-uncertain-possibility--en-might-concept
   form_surface: podríamos
+  clause_type: declarative
+  polarity: affirmative
 - id: es-podrian-uncertain-possibility--en-they-might
   kind: mapping
   direction: spanish-to-english
@@ -165,6 +169,8 @@ mappings:
   teaching_note: Use **they might** for this poder meaning in the context shown.
   concept_id: es-poder-uncertain-possibility--en-might-concept
   form_surface: podrían
+  clause_type: declarative
+  polarity: affirmative
 - id: es-podrias-uncertain-possibility--en-you-might
   kind: mapping
   direction: spanish-to-english
@@ -208,6 +214,10 @@ mappings:
   teaching_note: Use **you might** for this poder meaning in the context shown.
   concept_id: es-poder-uncertain-possibility--en-might-concept
   form_surface: podrías
+  clause_type: declarative
+  polarity: affirmative
+clause_type: declarative
+polarity: affirmative
 ---
 # **poder** → **might**
 

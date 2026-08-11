@@ -45,3 +45,14 @@ These database-ready objects were added while normalizing the **tener / poder** 
 | **you could** | **pudieras** | [open](you%20could%20%28pudieras%20-%20hypothetical-ability-ra%29.md) |
 | **you could** | **pudieses** | [open](you%20could%20%28pudieses%20-%20hypothetical-ability-se%29.md) |
 | **you couldn't** | **no pudiste** | [open](you%20couldn%27t%20%28no%20pudiste%20-%20failed-past-attempt%29.md) |
+
+### Additional permission and past-possibility mappings
+
+| Source | Target | Atomic lesson |
+|---|---|---|
+| **I could** | **podía** | [repeated past permission](<I could (podía - repeated-past-permission).md>) |
+| **you could** | **podías** | [repeated past permission](<you could (podías - repeated-past-permission).md>) |
+| **we could** | **podíamos** | [repeated past permission](<we could (podíamos - repeated-past-permission).md>) |
+| **they could** | **podían** | [repeated past permission](<they could (podían - repeated-past-permission).md>) |
+| **could have** | **puede que haya** | [uncertain past event](<could have (puede que haya - uncertain-past-event).md>) |
+| **could have** | **podría haber** | [speculative past event](<could have (podría haber - speculative-past-event).md>) |

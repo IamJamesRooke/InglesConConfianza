@@ -65,6 +65,8 @@ mappings:
   teaching_note: Use **I didn't get to** for this poder meaning in the context shown.
   concept_id: es-poder-missed-past-opportunity--en-did-not-get-to-concept
   form_surface: pude
+  clause_type: declarative
+  polarity: negative
 - id: es-no-pudieron-missed-past-opportunity--en-they-didn-t-get-to
   kind: mapping
   direction: spanish-to-english
@@ -113,6 +115,8 @@ mappings:
     shown.
   concept_id: es-poder-missed-past-opportunity--en-did-not-get-to-concept
   form_surface: pudieron
+  clause_type: declarative
+  polarity: negative
 - id: es-no-pudimos-missed-past-opportunity--en-we-didn-t-get-to
   kind: mapping
   direction: spanish-to-english
@@ -156,6 +160,8 @@ mappings:
   teaching_note: Use **we didn't get to** for this poder meaning in the context shown.
   concept_id: es-poder-missed-past-opportunity--en-did-not-get-to-concept
   form_surface: pudimos
+  clause_type: declarative
+  polarity: negative
 - id: es-no-pudiste-missed-past-opportunity--en-you-didn-t-get-to
   kind: mapping
   direction: spanish-to-english
@@ -199,6 +205,8 @@ mappings:
   teaching_note: Use **you didn't get to** for this poder meaning in the context shown.
   concept_id: es-poder-missed-past-opportunity--en-did-not-get-to-concept
   form_surface: pudiste
+  clause_type: declarative
+  polarity: negative
 - id: es-no-pudo-missed-past-opportunity--en-she-didn-t-get-to
   kind: mapping
   direction: spanish-to-english
@@ -246,6 +254,10 @@ mappings:
   teaching_note: Use **she didn't get to** for this poder meaning in the context shown.
   concept_id: es-poder-missed-past-opportunity--en-did-not-get-to-concept
   form_surface: pudo
+  clause_type: declarative
+  polarity: negative
+clause_type: declarative
+polarity: negative
 ---
 # **no poder** → **did not get to**
 

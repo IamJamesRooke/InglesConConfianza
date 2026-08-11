@@ -66,6 +66,10 @@ mappings:
   teaching_note: Use **you may not** for this poder meaning in the context shown.
   concept_id: es-poder-formal-denied-permission--en-may-not-concept
   form_surface: puede
+  clause_type: declarative
+  polarity: negative
+clause_type: declarative
+polarity: negative
 ---
 # **no puede** → **may not**
 

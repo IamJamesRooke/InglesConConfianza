@@ -65,6 +65,12 @@ mappings:
   teaching_note: Use **Can you...?** for this poder meaning in the context shown.
   concept_id: es-poder-ordinary-request--en-can-you-concept
   form_surface: puedes
+  clause_type: interrogative
+  polarity: affirmative
+  question_type: yes-no
+clause_type: interrogative
+polarity: affirmative
+question_type: yes-no
 ---
 # **¿puedes...?** → **Can you...?**
 

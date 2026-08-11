@@ -4,7 +4,7 @@ kind: mapping
 direction: english-to-spanish
 source_language: en
 source: authority
-source_lemma: power
+source_lemma: authority
 source_variant: official-capacity
 target_language: es
 target: el poder
@@ -15,7 +15,7 @@ taxonomy:
   subcategory: noun-expression
 aliases: []
 index_under:
-- power
+- authority
 reverse_status: linked
 reverse_ids:
 - es-el-poder-official-capacity--en-authority
@@ -27,4 +27,4 @@ examples:
 
 # **authority** → **el poder**
 
-Use **el poder** for this power meaning in the context shown.
+Use **el poder** when **authority** means an official right to decide or act.

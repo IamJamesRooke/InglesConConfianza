@@ -63,6 +63,10 @@ mappings:
     shown.
   concept_id: es-poder-negative-present-perfect-ability--en-have-not-been-able-to-concept
   form_surface: hemos podido
+  clause_type: declarative
+  polarity: negative
+clause_type: declarative
+polarity: negative
 ---
 # **no poder** → **have not been able to**
 

@@ -65,6 +65,8 @@ mappings:
   teaching_note: Use **I got to** for this poder meaning in the context shown.
   concept_id: es-poder-past-opportunity--en-got-to-concept
   form_surface: pude
+  clause_type: declarative
+  polarity: affirmative
 - id: es-pudieron-past-opportunity--en-they-got-to
   kind: mapping
   direction: spanish-to-english
@@ -112,6 +114,8 @@ mappings:
   teaching_note: Use **they got to** for this poder meaning in the context shown.
   concept_id: es-poder-past-opportunity--en-got-to-concept
   form_surface: pudieron
+  clause_type: declarative
+  polarity: affirmative
 - id: es-pudimos-past-opportunity--en-we-got-to
   kind: mapping
   direction: spanish-to-english
@@ -155,6 +159,8 @@ mappings:
   teaching_note: Use **we got to** for this poder meaning in the context shown.
   concept_id: es-poder-past-opportunity--en-got-to-concept
   form_surface: pudimos
+  clause_type: declarative
+  polarity: affirmative
 - id: es-pudiste-past-opportunity--en-you-got-to
   kind: mapping
   direction: spanish-to-english
@@ -198,6 +204,8 @@ mappings:
   teaching_note: Use **you got to** for this poder meaning in the context shown.
   concept_id: es-poder-past-opportunity--en-got-to-concept
   form_surface: pudiste
+  clause_type: declarative
+  polarity: affirmative
 - id: es-pudo-past-opportunity--en-she-got-to
   kind: mapping
   direction: spanish-to-english
@@ -245,6 +253,10 @@ mappings:
   teaching_note: Use **she got to** for this poder meaning in the context shown.
   concept_id: es-poder-past-opportunity--en-got-to-concept
   form_surface: pudo
+  clause_type: declarative
+  polarity: affirmative
+clause_type: declarative
+polarity: affirmative
 ---
 # **poder** → **got to**
 

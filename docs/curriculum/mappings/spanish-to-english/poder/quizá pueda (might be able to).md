@@ -70,6 +70,10 @@ mappings:
   teaching_note: Use **might be able to** for this poder meaning in the context shown.
   concept_id: es-poder-possible-ability--en-might-be-able-to-concept
   form_surface: pueda
+  clause_type: declarative
+  polarity: affirmative
+clause_type: declarative
+polarity: affirmative
 ---
 # **quizá pueda** → **might be able to**
 

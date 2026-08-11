@@ -67,6 +67,8 @@ mappings:
     shown.
   concept_id: es-poder-present-perfect-ability--en-have-been-able-to-concept
   form_surface: ha podido
+  clause_type: declarative
+  polarity: affirmative
 - id: es-he-podido-first-singular-perfect-ability--en-have-been-able-to
   kind: mapping
   direction: spanish-to-english
@@ -114,6 +116,8 @@ mappings:
     shown.
   concept_id: es-poder-present-perfect-ability--en-have-been-able-to-concept
   form_surface: he podido
+  clause_type: declarative
+  polarity: affirmative
 - id: es-he-podido-present-perfect-ability--en-i-have-been-able-to
   kind: mapping
   direction: spanish-to-english
@@ -158,6 +162,8 @@ mappings:
     shown.
   concept_id: es-poder-present-perfect-ability--en-have-been-able-to-concept
   form_surface: he podido
+  clause_type: declarative
+  polarity: affirmative
 - id: es-hemos-podido-present-perfect-ability--en-we-have-been-able-to
   kind: mapping
   direction: spanish-to-english
@@ -202,6 +208,10 @@ mappings:
     shown.
   concept_id: es-poder-present-perfect-ability--en-have-been-able-to-concept
   form_surface: hemos podido
+  clause_type: declarative
+  polarity: affirmative
+clause_type: declarative
+polarity: affirmative
 ---
 # **poder** → **have been able to**
 

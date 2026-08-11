@@ -68,6 +68,10 @@ mappings:
     shown.
   concept_id: es-poder-past-perfect-ability--en-had-been-able-to-concept
   form_surface: había podido
+  clause_type: declarative
+  polarity: affirmative
+clause_type: declarative
+polarity: affirmative
 ---
 # **poder** → **had been able to**
 

@@ -83,6 +83,8 @@ mappings:
     shown.
   concept_id: es-poder-conditional-ability--en-would-be-able-to-concept
   form_surface: podría
+  clause_type: declarative
+  polarity: affirmative
 - id: es-podriamos-conditional-explicit-ability--en-we-would-be-able-to
   kind: mapping
   direction: spanish-to-english
@@ -127,6 +129,8 @@ mappings:
     shown.
   concept_id: es-poder-conditional-ability--en-would-be-able-to-concept
   form_surface: podríamos
+  clause_type: declarative
+  polarity: affirmative
 - id: es-podrian-conditional-explicit-ability--en-they-would-be-able-to
   kind: mapping
   direction: spanish-to-english
@@ -175,6 +179,8 @@ mappings:
     shown.
   concept_id: es-poder-conditional-ability--en-would-be-able-to-concept
   form_surface: podrían
+  clause_type: declarative
+  polarity: affirmative
 - id: es-podrias-conditional-explicit-ability--en-you-would-be-able-to
   kind: mapping
   direction: spanish-to-english
@@ -219,6 +225,10 @@ mappings:
     shown.
   concept_id: es-poder-conditional-ability--en-would-be-able-to-concept
   form_surface: podrías
+  clause_type: declarative
+  polarity: affirmative
+clause_type: declarative
+polarity: affirmative
 ---
 # **poder** → **would be able to**
 

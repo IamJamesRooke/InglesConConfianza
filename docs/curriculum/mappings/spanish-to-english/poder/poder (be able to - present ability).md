@@ -68,6 +68,8 @@ mappings:
   teaching_note: Use **are able to** for this poder expression in the context shown.
   concept_id: es-poder-present-explicit-ability--en-be-able-to-concept
   form_surface: podemos
+  clause_type: declarative
+  polarity: affirmative
 - id: es-puede-ability--en-is-able-to
   kind: mapping
   direction: spanish-to-english
@@ -118,6 +120,8 @@ mappings:
   teaching_note: Use **is able to** for this poder expression in the context shown.
   concept_id: es-poder-present-explicit-ability--en-be-able-to-concept
   form_surface: puede
+  clause_type: declarative
+  polarity: affirmative
 - id: es-pueden-they-or-you-plural-ability--en-are-able-to
   kind: mapping
   direction: spanish-to-english
@@ -172,6 +176,8 @@ mappings:
   teaching_note: Use **are able to** for this poder expression in the context shown.
   concept_id: es-poder-present-explicit-ability--en-be-able-to-concept
   form_surface: pueden
+  clause_type: declarative
+  polarity: affirmative
 - id: es-puedes-you-singular-ability--en-are-able-to
   kind: mapping
   direction: spanish-to-english
@@ -218,6 +224,8 @@ mappings:
   teaching_note: Use **are able to** for this poder expression in the context shown.
   concept_id: es-poder-present-explicit-ability--en-be-able-to-concept
   form_surface: puedes
+  clause_type: declarative
+  polarity: affirmative
 - id: es-puedo-ability--en-am-able-to
   kind: mapping
   direction: spanish-to-english
@@ -264,6 +272,10 @@ mappings:
   teaching_note: Use **am able to** for this poder expression in the context shown.
   concept_id: es-poder-present-explicit-ability--en-be-able-to-concept
   form_surface: puedo
+  clause_type: declarative
+  polarity: affirmative
+clause_type: declarative
+polarity: affirmative
 ---
 # **poder** → **be able to**
 

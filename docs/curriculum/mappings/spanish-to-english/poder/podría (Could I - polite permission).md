@@ -70,6 +70,12 @@ mappings:
   teaching_note: Use **Could I...?** for this poder meaning in the context shown.
   concept_id: es-poder-polite-permission--en-could-i-concept
   form_surface: podría
+  clause_type: interrogative
+  polarity: affirmative
+  question_type: yes-no
+clause_type: interrogative
+polarity: affirmative
+question_type: yes-no
 ---
 # **¿podría...?** → **Could I...?**
 

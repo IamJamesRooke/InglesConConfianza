@@ -15,6 +15,7 @@
         - [x] Phase 4B: normalize **tener** and especially **poder**, then cross-audit **have, can, could, manage**, and remaining **be** expressions
         - [x] Phase 4C: compress **poder** into trackable lemma, form-family, surface-form, and atomic-mapping levels before normalizing more hubs
         - [x] Phase 4D: replace the compression pilot with the canonical human-readable mapping-concept template
+        - [x] Phase 4E: retire the temporary **poder** teaching scaffold and make clause shape, polarity, questions, and neighboring lexical mappings database-ready
     - [ ] Phase 5: rehome top-level multiword expressions under canonical headwords
     - [ ] Phase 6: normalize the remaining high-frequency bilingual hubs in bounded batches
     - [ ] Phase 7: complete the remaining mapping normalization
@@ -119,6 +120,19 @@
 - Spanish-to-English only. No other languages. If others want to fork the repo, that's fine. And can give AGENT instructions explaining exactly how the method was made.
 
 ## Completed timeline
+
+### 2026-08-11 — Canonical **poder** hub finalized for future database export
+
+- [x] Complete Phase 4E on Sol XHigh without filtering useful teaching content
+    - [x] Audit all 42 non-index legacy lessons and 60 explicit teaching rows before retiring the temporary `poder/teaching-sets` scaffold
+    - [x] Expand the hub from 41 to 51 human-readable mapping-concept files and from 118 to 140 independently trackable atomic **poder** mappings
+    - [x] Add affirmative ability questions, negative ability questions, formal permission, repeated past permission, general **can be**, and uncertain or speculative **may/might/could have** mappings
+    - [x] Add `clause_type`, `polarity`, and conditional `question_type` metadata so future database queries can distinguish statements, negatives, questions, ability, and requests without reading filenames or prose
+    - [x] Add or normalize 22 direct English reverse objects under **can, could, may**, and **might**, including reciprocal question and negative-question edges
+    - [x] Move neighboring lexical material into canonical **quizá, luz, poderoso, impotente, todopoderoso, dar, dejar, permitir**, and **lograr** hubs instead of hiding it under **poder**
+    - [x] Preserve the longer contrasts and mastery examples in the canonical **poder** README while removing only the redundant teaching scaffold
+    - [x] Correct the canonical target lemma for **authority**, repair transformation links, and replace the vague **may → poder** object with the trackable finite mapping **you may → puede**
+    - [x] Validate 1,111 globally unique YAML mapping objects, 927 linked objects, 184 pending objects, complete reciprocal IDs, one-to-three examples, all 51 indexed **poder** concepts, touched links, and zero stale scaffold paths
 
 ### 2026-08-11 — Canonical **poder** mapping-concept template established
 

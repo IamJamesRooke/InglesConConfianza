@@ -76,6 +76,8 @@ mappings:
   teaching_note: Use **could be** for this poder expression in the context shown.
   concept_id: es-poder-conditional-possibility--en-could-be-concept
   form_surface: podría
+  clause_type: declarative
+  polarity: affirmative
 - id: es-podria-ser-possible-identity-characteristic--en-could-be
   kind: mapping
   direction: spanish-to-english
@@ -130,6 +132,10 @@ mappings:
   teaching_note: Use **could be** for this poder expression in the context shown.
   concept_id: es-poder-conditional-possibility--en-could-be-concept
   form_surface: podría
+  clause_type: declarative
+  polarity: affirmative
+clause_type: declarative
+polarity: affirmative
 ---
 # **poder ser o estar** → **could be**
 

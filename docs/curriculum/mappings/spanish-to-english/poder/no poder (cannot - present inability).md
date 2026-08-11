@@ -67,6 +67,8 @@ mappings:
   teaching_note: Use **we can't** for this poder meaning in the context shown.
   concept_id: es-poder-present-inability--en-cannot-concept
   form_surface: podemos
+  clause_type: declarative
+  polarity: negative
 - id: es-no-puede-present-inability--en-she-can-t
   kind: mapping
   direction: spanish-to-english
@@ -116,6 +118,8 @@ mappings:
   teaching_note: Use **she can't** for this poder meaning in the context shown.
   concept_id: es-poder-present-inability--en-cannot-concept
   form_surface: puede
+  clause_type: declarative
+  polarity: negative
 - id: es-no-pueden-present-inability--en-they-can-t
   kind: mapping
   direction: spanish-to-english
@@ -165,6 +169,8 @@ mappings:
   teaching_note: Use **they can't** for this poder meaning in the context shown.
   concept_id: es-poder-present-inability--en-cannot-concept
   form_surface: pueden
+  clause_type: declarative
+  polarity: negative
 - id: es-no-puedes-present-inability--en-you-can-t
   kind: mapping
   direction: spanish-to-english
@@ -210,6 +216,8 @@ mappings:
   teaching_note: Use **you can't** for this poder meaning in the context shown.
   concept_id: es-poder-present-inability--en-cannot-concept
   form_surface: puedes
+  clause_type: declarative
+  polarity: negative
 - id: es-no-puedo-present-inability--en-i-can-t
   kind: mapping
   direction: spanish-to-english
@@ -255,6 +263,10 @@ mappings:
   teaching_note: Use **I can't** for this poder meaning in the context shown.
   concept_id: es-poder-present-inability--en-cannot-concept
   form_surface: puedo
+  clause_type: declarative
+  polarity: negative
+clause_type: declarative
+polarity: negative
 ---
 # **no poder** → **cannot**
 

@@ -1,5 +1,11 @@
 # English **Maybe**
 
+## Atomic mappings
+
+- [**maybe** → **quizá / quizás**](<maybe (quizá - uncertain possibility).md>)
+
+## Teaching overview
+
 | English | Spanish |
 |---|---|
 | Maybe Laura is at home. | Quizás Laura esté en casa. |

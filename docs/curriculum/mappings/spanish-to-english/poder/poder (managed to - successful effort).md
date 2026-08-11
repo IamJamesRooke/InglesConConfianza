@@ -65,6 +65,8 @@ mappings:
   teaching_note: Use **I managed to** for this poder meaning in the context shown.
   concept_id: es-poder-successful-effort--en-managed-to-concept
   form_surface: pude
+  clause_type: declarative
+  polarity: affirmative
 - id: es-pudieron-successful-effort--en-they-managed-to
   kind: mapping
   direction: spanish-to-english
@@ -112,6 +114,8 @@ mappings:
   teaching_note: Use **they managed to** for this poder meaning in the context shown.
   concept_id: es-poder-successful-effort--en-managed-to-concept
   form_surface: pudieron
+  clause_type: declarative
+  polarity: affirmative
 - id: es-pudimos-successful-effort--en-we-managed-to
   kind: mapping
   direction: spanish-to-english
@@ -155,6 +159,8 @@ mappings:
   teaching_note: Use **we managed to** for this poder meaning in the context shown.
   concept_id: es-poder-successful-effort--en-managed-to-concept
   form_surface: pudimos
+  clause_type: declarative
+  polarity: affirmative
 - id: es-pudiste-successful-effort--en-you-managed-to
   kind: mapping
   direction: spanish-to-english
@@ -198,6 +204,8 @@ mappings:
   teaching_note: Use **you managed to** for this poder meaning in the context shown.
   concept_id: es-poder-successful-effort--en-managed-to-concept
   form_surface: pudiste
+  clause_type: declarative
+  polarity: affirmative
 - id: es-pudo-successful-effort--en-she-managed-to
   kind: mapping
   direction: spanish-to-english
@@ -245,6 +253,10 @@ mappings:
   teaching_note: Use **she managed to** for this poder meaning in the context shown.
   concept_id: es-poder-successful-effort--en-managed-to-concept
   form_surface: pudo
+  clause_type: declarative
+  polarity: affirmative
+clause_type: declarative
+polarity: affirmative
 ---
 # **poder** → **managed to**
 

@@ -73,6 +73,8 @@ mappings:
     shown.
   concept_id: es-poder-future-ability--en-will-be-able-to-concept
   form_surface: podrá
+  clause_type: declarative
+  polarity: affirmative
 - id: es-podran-future-ability--en-they-will-be-able-to
   kind: mapping
   direction: spanish-to-english
@@ -124,6 +126,8 @@ mappings:
     shown.
   concept_id: es-poder-future-ability--en-will-be-able-to-concept
   form_surface: podrán
+  clause_type: declarative
+  polarity: affirmative
 - id: es-podras-future-ability--en-you-will-be-able-to
   kind: mapping
   direction: spanish-to-english
@@ -170,6 +174,8 @@ mappings:
     shown.
   concept_id: es-poder-future-ability--en-will-be-able-to-concept
   form_surface: podrás
+  clause_type: declarative
+  polarity: affirmative
 - id: es-podre-future-ability--en-i-will-be-able-to
   kind: mapping
   direction: spanish-to-english
@@ -215,6 +221,8 @@ mappings:
   teaching_note: Use **I will be able to** for this poder meaning in the context shown.
   concept_id: es-poder-future-ability--en-will-be-able-to-concept
   form_surface: podré
+  clause_type: declarative
+  polarity: affirmative
 - id: es-podremos-future-ability--en-we-will-be-able-to
   kind: mapping
   direction: spanish-to-english
@@ -261,6 +269,10 @@ mappings:
     shown.
   concept_id: es-poder-future-ability--en-will-be-able-to-concept
   form_surface: podremos
+  clause_type: declarative
+  polarity: affirmative
+clause_type: declarative
+polarity: affirmative
 ---
 # **poder** → **will be able to**
 

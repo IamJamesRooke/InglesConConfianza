@@ -71,6 +71,7 @@ Use `kind: mapping-concept` when a conjugated hub would otherwise create repetit
 - `concept_id` identifies the particular translation concept exercised.
 - `family_id` and `form_family` let an atomic mapping roll up to a tense-and-mood family.
 - `form_id` and `form_surface` identify the particular bare conjugated form used by an exercise.
+- `clause_type`, `polarity`, and conditional `question_type` let the application retrieve affirmative statements, negative statements, affirmative questions, and negative questions without interpreting prose or filenames.
 - `source_lemma` supplies the lemma-level roll-up.
 - `family_features` records only features genuinely shared by the family.
 - `form_count` and `mapping_count` are validated summaries, not learner statistics.
@@ -102,6 +103,14 @@ The controlled vocabulary grows only when a real normalization batch requires a 
 ### Controlled form-family values
 
 - `form_family`: `nonfinite`, `present-indicative`, `imperfect-indicative`, `preterite-indicative`, `future-indicative`, `conditional-indicative`, `present-subjunctive`, `imperfect-subjunctive`, `perfect-constructions`, `noun`
+
+### Clause shape
+
+- `clause_type`: `declarative`, `interrogative`
+- `polarity`: `affirmative`, `negative`
+- `question_type`: `yes-no`
+
+Use these fields for a reusable clause frame, not an isolated dictionary word. Meaning remains in `sense`: two concepts may share the same clause shape while teaching different jobs such as ability, permission, or a polite request.
 
 Do not force every field onto every object. For example, person and number help with `soy`, but not with the abstract expression `lo bueno`.
 

@@ -79,6 +79,8 @@ mappings:
   teaching_note: Use **I could** for this poder meaning in the context shown.
   concept_id: es-poder-general-past-ability--en-could-concept
   form_surface: podía
+  clause_type: declarative
+  polarity: affirmative
 - id: es-podiamos-general-past-ability--en-we-could
   kind: mapping
   direction: spanish-to-english
@@ -122,6 +124,8 @@ mappings:
   teaching_note: Use **we could** for this poder meaning in the context shown.
   concept_id: es-poder-general-past-ability--en-could-concept
   form_surface: podíamos
+  clause_type: declarative
+  polarity: affirmative
 - id: es-podian-general-past-ability--en-they-could
   kind: mapping
   direction: spanish-to-english
@@ -171,6 +175,8 @@ mappings:
   teaching_note: Use **they could** for this poder meaning in the context shown.
   concept_id: es-poder-general-past-ability--en-could-concept
   form_surface: podían
+  clause_type: declarative
+  polarity: affirmative
 - id: es-podias-general-past-ability--en-you-could
   kind: mapping
   direction: spanish-to-english
@@ -214,6 +220,10 @@ mappings:
   teaching_note: Use **you could** for this poder meaning in the context shown.
   concept_id: es-poder-general-past-ability--en-could-concept
   form_surface: podías
+  clause_type: declarative
+  polarity: affirmative
+clause_type: declarative
+polarity: affirmative
 ---
 # **poder** → **could**
 

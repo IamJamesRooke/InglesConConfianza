@@ -16,8 +16,9 @@ taxonomy:
 aliases: []
 index_under:
 - power
-reverse_status: pending
-reverse_ids: []
+reverse_status: linked
+reverse_ids:
+- es-luz-electric-service--en-power
 status: draft
 examples:
 - source: The power went out during the storm.

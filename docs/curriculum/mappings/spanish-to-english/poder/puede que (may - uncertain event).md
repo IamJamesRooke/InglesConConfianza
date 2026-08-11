@@ -65,6 +65,10 @@ mappings:
   teaching_note: Use **may** for this poder meaning in the context shown.
   concept_id: es-poder-uncertain-event--en-may-concept
   form_surface: puede
+  clause_type: declarative
+  polarity: affirmative
+clause_type: declarative
+polarity: affirmative
 ---
 # **puede que** → **may**
 

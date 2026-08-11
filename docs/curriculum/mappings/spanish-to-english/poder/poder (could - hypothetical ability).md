@@ -79,6 +79,8 @@ mappings:
   teaching_note: Use **I could** for this poder meaning in the context shown.
   concept_id: es-poder-hypothetical-ability--en-could-concept
   form_surface: pudiera
+  clause_type: declarative
+  polarity: affirmative
 - id: es-pudieramos-hypothetical-ability-ra--en-we-could
   kind: mapping
   direction: spanish-to-english
@@ -122,6 +124,8 @@ mappings:
   teaching_note: Use **we could** for this poder meaning in the context shown.
   concept_id: es-poder-hypothetical-ability--en-could-concept
   form_surface: pudiéramos
+  clause_type: declarative
+  polarity: affirmative
 - id: es-pudieran-hypothetical-ability-ra--en-they-could
   kind: mapping
   direction: spanish-to-english
@@ -171,6 +175,8 @@ mappings:
   teaching_note: Use **they could** for this poder meaning in the context shown.
   concept_id: es-poder-hypothetical-ability--en-could-concept
   form_surface: pudieran
+  clause_type: declarative
+  polarity: affirmative
 - id: es-pudieras-hypothetical-ability-ra--en-you-could
   kind: mapping
   direction: spanish-to-english
@@ -214,6 +220,8 @@ mappings:
   teaching_note: Use **you could** for this poder meaning in the context shown.
   concept_id: es-poder-hypothetical-ability--en-could-concept
   form_surface: pudieras
+  clause_type: declarative
+  polarity: affirmative
 - id: es-pudiese-hypothetical-ability-se--en-i-could
   kind: mapping
   direction: spanish-to-english
@@ -271,6 +279,8 @@ mappings:
   teaching_note: Use **I could** for this poder meaning in the context shown.
   concept_id: es-poder-hypothetical-ability--en-could-concept
   form_surface: pudiese
+  clause_type: declarative
+  polarity: affirmative
 - id: es-pudiesemos-hypothetical-ability-se--en-we-could
   kind: mapping
   direction: spanish-to-english
@@ -314,6 +324,8 @@ mappings:
   teaching_note: Use **we could** for this poder meaning in the context shown.
   concept_id: es-poder-hypothetical-ability--en-could-concept
   form_surface: pudiésemos
+  clause_type: declarative
+  polarity: affirmative
 - id: es-pudiesen-hypothetical-ability-se--en-they-could
   kind: mapping
   direction: spanish-to-english
@@ -363,6 +375,8 @@ mappings:
   teaching_note: Use **they could** for this poder meaning in the context shown.
   concept_id: es-poder-hypothetical-ability--en-could-concept
   form_surface: pudiesen
+  clause_type: declarative
+  polarity: affirmative
 - id: es-pudieses-hypothetical-ability-se--en-you-could
   kind: mapping
   direction: spanish-to-english
@@ -406,6 +420,10 @@ mappings:
   teaching_note: Use **you could** for this poder meaning in the context shown.
   concept_id: es-poder-hypothetical-ability--en-could-concept
   form_surface: pudieses
+  clause_type: declarative
+  polarity: affirmative
+clause_type: declarative
+polarity: affirmative
 ---
 # **poder** → **could**
 
