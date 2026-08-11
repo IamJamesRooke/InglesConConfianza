@@ -77,7 +77,19 @@ These are separate from requests. **¿Puedes levantar esto?** can test ability; 
 - [**el poder** → **authority**](<poder (authority - official capacity).md>)
 - [**poder notarial** → **power of attorney**](<poder notarial (power of attorney).md>)
 
-The 51 concept files contain 140 atomic mappings, 46 trackable surface forms, and ten reusable form families.
+### Power word family
+
+- [**poderoso** → **powerful**](<poderoso (powerful).md>)
+- [**poderoso** → **influential**](<poderoso (influential).md>)
+- [**poderoso** → **mighty**](<poderoso (mighty).md>)
+- [**impotente** → **powerless**](<impotente (powerless).md>)
+- [**impotente** → **helpless**](<impotente (helpless).md>)
+- [**impotente** → **impotent**](<impotente (impotent - formal or medical).md>)
+- [**todopoderoso** → **all-powerful**](<todopoderoso (all-powerful).md>)
+- [**todopoderoso** → **almighty**](<todopoderoso (almighty).md>)
+- [**todopoderoso** → **omnipotent**](<todopoderoso (omnipotent).md>)
+
+The 51 **poder** concept files contain 140 atomic mappings, 46 trackable surface forms, and ten reusable form families. Nine additional atomic adjective mappings keep the related **poderoso**, **impotente**, and **todopoderoso** choices in this human-facing word family.
 
 ## High-value contrasts
 
@@ -123,8 +135,6 @@ In ordinary speech, affirmative **can** is often reduced while negative **can't*
 - [**permitirle a alguien hacer algo** → **allow someone to do something**](<../permitir/permitirle a alguien hacer algo (allow someone to do something).md>)
 - [**dar poder** → **empower**](<../dar/dar poder (empower).md>)
 - [**luz** → **power / light**](../luz/README.md)
-- [**poderoso** → **powerful / influential / mighty**](../poderoso/README.md)
-- [**impotente** → **powerless / helpless / impotent**](../impotente/README.md)
-- [**todopoderoso** → **all-powerful / almighty / omnipotent**](../todopoderoso/README.md)
+- **Poderoso**, **impotente**, and **todopoderoso** are indexed above as members of this power word family.
 - [translations of **deber**](../deber/README.md)
 - [foundation modal drills](../../../structure/fluency-drills/modals/README.md)

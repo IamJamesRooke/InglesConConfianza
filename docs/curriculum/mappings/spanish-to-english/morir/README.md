@@ -8,3 +8,7 @@
 | Me muero por conocerla. | I am dying to meet her. |
 
 Literal death and devices can use **die**. **Morirse de** and **morirse por** often become an emphatic adjective or **be dying to**.
+
+## Related forms
+
+- [**Muerto** → **Dead**, **Died**, **Exhausted**, or **Slow**](<muerto (dead, died, exhausted, slow).md>)

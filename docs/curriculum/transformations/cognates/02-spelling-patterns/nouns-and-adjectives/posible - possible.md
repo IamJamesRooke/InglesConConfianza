@@ -20,3 +20,5 @@ These Spanish and English cognates share the ending **-ible**, although some req
 | compatible | **compatible** | **Este programa no es compatible con el sistema anterior.**<br>This program is not compatible with the previous system. |
 | responsable | **responsible** | **Cada gerente es responsable de su equipo.**<br>Each manager is responsible for their team. |
 | increíble | **incredible** | **La presentación mostró un progreso increíble.**<br>The presentation showed incredible progress. |
+
+Foundation example: **Es posible terminar hoy. → It is possible to finish today.**

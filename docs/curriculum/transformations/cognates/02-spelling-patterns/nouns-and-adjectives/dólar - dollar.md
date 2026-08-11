@@ -26,3 +26,12 @@ Spanish **familiar** normally means related to the family or can refer to a rela
 |---|---|
 | **Un familiar me acompañó al hospital.** | A **relative** accompanied me to the hospital. |
 | **Esa canción me resulta conocida.** | That song sounds **familiar** to me. |
+
+## Informal alternative
+
+**Dollar** is standard in every context. Informal **buck** usually refers to one dollar or dollars in everyday conversation.
+
+| Spanish | English |
+|---|---|
+| El libro cuesta veinte dólares. | The book costs twenty dollars. |
+| Ese libro cuesta veinte dólares. | That book costs twenty bucks. |

@@ -29,3 +29,34 @@ The next verb uses the full infinitive:
 | I like to do it. | I like doing it. |
 
 Other lessons in this verb-forms folder distinguish verbs that select an infinitive, an **-ing** form, or either form.
+
+## Foundational verb patterns
+
+### Need
+
+Use **need + full infinitive** when the subject must perform an action.
+
+| Spanish | English |
+|---|---|
+| necesitar algo | need something |
+| necesitar hacer algo | need to do something |
+
+**Necesito más tiempo. → I need more time.**
+
+**Necesito terminar el informe hoy. → I need to finish the report today.**
+
+### Decide
+
+Use **decide + full infinitive** for a decision to perform an action.
+
+| Spanish | English |
+|---|---|
+| decidir hacer algo | decide to do something |
+
+**Decidimos hacer la reserva hoy. → We decided to make the reservation today.**
+
+### Try
+
+Use **try + full infinitive** when someone makes an effort to perform an action.
+
+**Intento hablar en inglés durante la clase. → I try to speak English during class.**

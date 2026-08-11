@@ -12,6 +12,7 @@ Spanish **parecer** and **parecerse** map to seeming, appearance, opinions, impr
 | [**Parecerse A → Look Like / Resemble**](06-resemble.md) | Ana se parece a su mamá. | Ana looks like her mother. |
 | [**Parecer → Seem Like**](07-seem-like.md) | Parece una buena idea. | It seems like a good idea. |
 | [**Al Parecer → Apparently**](08-as-far-as-i-can-tell.md) | Al parecer, cancelaron la reunión. | Apparently, they canceled the meeting. |
+| [**Parecido** → **Similar / Alike**](<parecido (similar and alike).md>) | Los dos libros son similares. | The two books are similar. |
 
 ## Mastery Phrases
 

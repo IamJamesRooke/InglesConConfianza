@@ -17,3 +17,9 @@ Before certain consonant groups, Spanish often begins a cognate with **es-** whe
 | estándar | **standard** | **El producto cumple con el estándar internacional.**<br>The product meets the international standard. |
 | estable | **stable** | **La condición del paciente permaneció estable durante la noche.**<br>The patient's condition remained stable overnight. |
 | espacio | **space** | **No hay suficiente espacio para otra mesa.**<br>There is not enough space for another table. |
+
+## **Special** Is Not **Specific**
+
+**Esta ocasión es especial para nuestra familia. → This occasion is special for our family.**
+
+Do not use **specific** for Spanish **especial**. **Specific** corresponds to **específico**.

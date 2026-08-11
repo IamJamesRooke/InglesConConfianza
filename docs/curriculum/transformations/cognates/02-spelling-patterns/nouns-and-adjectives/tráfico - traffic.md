@@ -22,3 +22,5 @@ In these cognates, Spanish **-ico** corresponds to English **-ic**. English spel
 | electrónico | **electronic** | **Recibirás un comprobante electrónico por correo.**<br>You will receive an electronic receipt by email. |
 | histórico | **historic** | **El acuerdo representa un cambio histórico.**<br>The agreement represents a historic change. |
 | político | **political** | **El debate político comenzó esta mañana.**<br>The political debate began this morning. |
+
+Spanish **específico / específica** maps directly to English **specific**: **Laura dio una razón específica. → Laura gave a specific reason.**

@@ -88,6 +88,8 @@ Use **attend** for going to an event:
 
 ## Suceder / Succeed
 
+**¿Qué sucedió? → What happened?**
+
 **Nadie sabe qué sucedió después de la reunión.**
 
 ❌ Nobody knows what succeeded after the meeting.

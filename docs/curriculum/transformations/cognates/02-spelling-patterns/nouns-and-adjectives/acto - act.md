@@ -17,3 +17,5 @@ Remove the final **-o** from Spanish **-acto** to find English **-act**.
 | abstracto | **abstract** | **El concepto parece abstracto sin un ejemplo.**<br>The concept seems abstract without an example. |
 | compacto | **compact** | **Compramos un escritorio compacto para la oficina.**<br>We bought a compact desk for the office. |
 | intacto | **intact** | **El paquete llegó intacto después del viaje.**<br>The package arrived intact after the journey. |
+
+For Spanish **exacto / exacta**, everyday English normally uses **exact**; **precise** emphasizes exact measurement or wording. **Necesito la hora exacta. → I need the exact time.**

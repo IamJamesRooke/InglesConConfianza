@@ -19,6 +19,7 @@
     - [x] Phase 5: rehome top-level multiword expressions under canonical headwords
         - [x] Phase 5A: audit and normalize English top-level source ownership
         - [x] Phase 5B: audit and normalize Spanish top-level source ownership
+        - [x] Phase 5C Pass 1: curate weak Spanish top-level sources into lexical families, structure, transformations, vocabulary, or the correct mapping direction
     - [ ] Phase 6: normalize the remaining high-frequency bilingual hubs in bounded batches
         - [x] Phase 6A: normalize the English **do / make** and Spanish **hacer** bilingual hub
         - [ ] Phase 6B: normalize the English **get** hub and its qualifying Spanish reverse sources
@@ -124,6 +125,20 @@
 - Spanish-to-English only. No other languages. If others want to fork the repo, that's fine. And can give AGENT instructions explaining exactly how the method was made.
 
 ## Completed timeline
+
+### 2026-08-11 — Spanish top-level mapping curation completed
+
+- [x] Complete Phase 5C Pass 1 on Sol High without filtering teaching content
+    - [x] Audit all 389 Spanish-to-English top-level buckets for genuine contextual mapping value, stronger lexical ownership, ordinary vocabulary, grammar, cognates, and incorrect direction
+    - [x] Reduce the human-facing index from 389 to 350 exact top-level sources by retiring 39 weak or misplaced buckets
+    - [x] Consolidate **poderoso, impotente**, and **todopoderoso** under `poder` while preserving all nine stable YAML mapping IDs and adding `poder` retrieval metadata
+    - [x] Consolidate **llamado** under `llamar`, **muerto** under `morir`, **vivo** under `vivir`, **costo** under `costar`, **parecido** under `parecer`, and **pregunta** under `preguntar`
+    - [x] Apply the close-form rule by placing **ante** under `antes`, **abajo/debajo** under `bajo`, **cuán** under `cuánto`, **tan** under `tanto`, and accented **sí** under `si`
+    - [x] Route direct nouns and adjectives to supplemental vocabulary; route **dólar, especial, específico, exacto, posible**, and the **suceder/succeed** contrast to cognates
+    - [x] Move frequency, clock-time, sequence, time-versus-tense, connector, and full-infinitive systems into structure while retaining the genuine **hora → hour/time** mapping
+    - [x] Correct the reversed **walk, write**, and **read** families by preserving their particle and lexical contrasts under English-to-Spanish
+    - [x] Audit all 160 teaching-table rows from deleted source files: preserve 97 verbatim and trace the remaining 63 through deliberate consolidation or direction-aware reformatting
+    - [x] Validate all YAML parsing, the nine moved object contracts, 350 indexed sources against 350 physical source folders, touched local links, stale paths, empty directories, and Markdown whitespace
 
 ### 2026-08-11 — **Do / make ↔ hacer** hub normalized
 
