@@ -1,0 +1,26 @@
+# Spanish Core Vocabulary
+
+These extremely useful Spanish source words remain available for curriculum sequencing, but they do not require independent contextual mapping hubs.
+
+- [**casa**](casa/README.md)
+- [**correcto**](correcto/README.md)
+- [**elegir**](elegir/README.md)
+- [**esposa**](esposa/README.md)
+- [**esposo**](esposo/README.md)
+- [**familia**](familia/README.md)
+- [**grande**](grande/README.md)
+- [**hermana**](hermana/README.md)
+- [**hermandad**](hermandad/README.md)
+- [**hermano**](hermano/README.md)
+- [**hombre**](hombre/README.md)
+- [**lugar**](lugar/README.md)
+- [**matar**](matar/README.md)
+- [**mesa**](mesa/README.md)
+- [**mujer**](mujer/README.md)
+- [**niña**](nina/README.md)
+- [**niño**](nino/README.md)
+- [**pequeño**](pequeno/README.md)
+- [**pero**](pero/README.md)
+- [**persona**](persona/README.md)
+- [**rápido**](rapido/README.md)
+- [**respuesta**](respuesta/README.md)

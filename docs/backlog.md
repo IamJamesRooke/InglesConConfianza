@@ -22,6 +22,7 @@
         - [x] Phase 5C Pass 1: curate weak Spanish top-level sources into lexical families, structure, transformations, vocabulary, or the correct mapping direction
         - [x] Phase 5C Pass 2: move nine owner-approved ordinary Spanish vocabulary sets out of mappings while retaining **suficiente**
         - [x] Phase 5C Pass 3: move **ahora** to core vocabulary, move **argumento** to false cognates, and nest **ahí** under **allí**
+        - [x] Phase 5C Pass 4: move 40 ordinary or cognate-first roots out of mappings and consolidate seven approved Spanish families
     - [ ] Phase 6: normalize the remaining high-frequency bilingual hubs in bounded batches
         - [x] Phase 6A: normalize the English **do / make** and Spanish **hacer** bilingual hub
         - [ ] Phase 6B: normalize the English **get** hub and its qualifying Spanish reverse sources
@@ -127,6 +128,18 @@
 - Spanish-to-English only. No other languages. If others want to fork the repo, that's fine. And can give AGENT instructions explaining exactly how the method was made.
 
 ## Completed timeline
+
+### 2026-08-11 — Spanish mapping workload reduced to core contextual choices
+
+- [x] Complete Phase 5C Pass 4 on Sol High using the owner's full-folder audit decisions
+    - [x] Move 22 foundational but non-mapping roots into `vocabulary/core-vocabulary/spanish` while keeping **trabajar** in mappings for its particle and complement teaching value
+    - [x] Move 12 incidental roots into `vocabulary/supplemental/spanish` for later vocabulary organization
+    - [x] Move **asistir, carrera, compromiso, diferente, genial**, and **realizar** into the false-cognate transformation system
+    - [x] Nest **extraño** under **extrañar**, **todavía** under **aun / aún**, **regresar** under **volver**, and **encima** under **sobre**
+    - [x] Make **bueno** the owner of **mejor / el mejor**, **malo** the owner of **peor / el peor**, and **seguro** the owner of **asegurar**
+    - [x] Keep **bien** independent and preserve separate top-level maps for **direccion, siguiente**, and **seguir**
+    - [x] Preserve all 87 source files and all 338 source table lines while repairing only links and owner indexes affected by their new physical locations
+    - [x] Reduce the exhaustive Spanish mapping index from 339 to 292 exact top-level source folders
 
 ### 2026-08-11 — Core vocabulary and close-form ownership refined
 

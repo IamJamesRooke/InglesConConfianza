@@ -6,4 +6,4 @@
 - [Not yet](08-not-yet.md)
 - [Have yet to](09-have-yet-to.md)
 
-Related Spanish source maps are under [**todavía**](../../spanish-to-english/todavia/README.md) and [**aun/aún**](../../spanish-to-english/aun/README.md).
+Related Spanish source maps are under [**todavía**](../../spanish-to-english/aun/todavia/README.md) and [**aun/aún**](../../spanish-to-english/aun/README.md).

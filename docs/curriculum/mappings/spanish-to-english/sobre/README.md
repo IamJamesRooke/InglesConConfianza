@@ -8,3 +8,7 @@
 | Guardé la carta en un sobre. | I put the letter in an envelope. |
 
 **Sobre** can become **on, about, over**, or the noun **envelope**.
+
+## Related Location Source
+
+- [**Encima** → **above** or **over**](encima/README.md)

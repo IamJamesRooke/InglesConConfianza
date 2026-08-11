@@ -27,3 +27,7 @@ Spanish **volver** and **volverse** express return, repeated action, restoration
 ## Core Direction Contrast
 
 - [Come back and go back](08-come-and-go-back.md)
+
+## Related Return Verb
+
+- [**Regresar** → **return, come back**, or **go back**](regresar/README.md)

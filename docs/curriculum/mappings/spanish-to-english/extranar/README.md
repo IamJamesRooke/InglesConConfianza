@@ -13,6 +13,10 @@ In Colombian and Latin American Spanish, **extrañar** commonly means miss someo
 | [**Extrañar vs Perder → Miss**](07-missing-someone-vs-losing.md) | La extraño, pero también perdí su llamada. | I miss her, but I also missed her call. |
 | [**Extrañar / Echar De Menos → Miss**](08-echar-de-menos.md) | La extraño y echo de menos nuestras conversaciones. | I miss her and miss our conversations. |
 
+## Related Source Form
+
+- [**Extraño** → **strange, odd, weird, stranger**, or **I miss**](extrano/README.md)
+
 ## Mastery Phrases
 
 | Spanish | English |

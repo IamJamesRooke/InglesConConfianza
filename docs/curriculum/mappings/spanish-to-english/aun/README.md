@@ -10,4 +10,4 @@ Accent and context matter: **aún** often overlaps with **todavía** as **still/
 | [even more](04-even-more.md) | Es aún más difícil. | It's even more difficult. |
 | [even so](05-still-even-so.md) | Aun así, continuamos. | Even so, we continued. |
 
-See the separate [**todavía**](../todavia/README.md) map for its canonical **still/yet** reference.
+The overlapping [**todavía**](todavia/README.md) map lives inside this family for its canonical **still/yet** reference.
