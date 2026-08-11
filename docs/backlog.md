@@ -20,6 +20,7 @@
         - [x] Phase 5A: audit and normalize English top-level source ownership
         - [x] Phase 5B: audit and normalize Spanish top-level source ownership
         - [x] Phase 5C Pass 1: curate weak Spanish top-level sources into lexical families, structure, transformations, vocabulary, or the correct mapping direction
+        - [x] Phase 5C Pass 2: move nine owner-approved ordinary Spanish vocabulary sets out of mappings while retaining **suficiente**
     - [ ] Phase 6: normalize the remaining high-frequency bilingual hubs in bounded batches
         - [x] Phase 6A: normalize the English **do / make** and Spanish **hacer** bilingual hub
         - [ ] Phase 6B: normalize the English **get** hub and its qualifying Spanish reverse sources
@@ -125,6 +126,16 @@
 - Spanish-to-English only. No other languages. If others want to fork the repo, that's fine. And can give AGENT instructions explaining exactly how the method was made.
 
 ## Completed timeline
+
+### 2026-08-11 — Supplemental Spanish vocabulary extracted from mappings
+
+- [x] Complete Phase 5C Pass 2 on Sol High as an owner-selected curation batch
+    - [x] Move **empresa, dinero, joven, importante, necesario, incorrecto, difícil, fácil**, and **gratuito** from top-level Spanish mappings into the existing supplemental noun and adjective vocabulary lists
+    - [x] Preserve **suficiente** as a top-level contextual mapping exactly as requested
+    - [x] Correct mixed-source lessons by recording **empresa/compañía, negocio, firma, dinero, efectivo, fondos, joven, juvenil, menor de edad, incorrecto**, and **equivocado** as neighboring vocabulary rather than pretending each set begins with one Spanish source
+    - [x] Preserve and trace all 32 teaching-table rows from the 18 retired source files, including all original examples and usage distinctions
+    - [x] Reduce the exhaustive Spanish mapping index from 350 to 341 exact top-level source folders
+    - [x] Validate YAML parsing, index parity, stale paths, local links, empty directories, and Markdown whitespace
 
 ### 2026-08-11 — Spanish top-level mapping curation completed
 
