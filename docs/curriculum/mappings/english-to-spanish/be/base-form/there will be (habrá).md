@@ -3,12 +3,30 @@ id: en-there-will-be--es-habra
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "there will be"
+source: there will be
 source_lemma: be
 source_variant: future-existential
 target_language: es
-target: "habrá"
+target: habrá
+target_lemma: haber
 sense: future-existence
+taxonomy:
+  category: expression
+  subcategory: existential
+source_features:
+  grammatical_person: impersonal
+  referent_person: impersonal
+  number: invariant
+  tense: future
+  mood: indicative
+  verb_form: finite
+target_features:
+  grammatical_person: impersonal
+  referent_person: impersonal
+  number: invariant
+  tense: future
+  mood: indicative
+  verb_form: finite
 aliases: []
 index_under:
   - be
@@ -18,8 +36,8 @@ reverse_ids:
   - es-habra-future-existence--en-there-will-be
 status: draft
 examples:
-  - source: "There will be a meeting tomorrow."
-    target: "Habrá una reunión mañana."
+  - source: There will be a meeting tomorrow.
+    target: Habrá una reunión mañana.
 ---
 
 # **there will be** → **habrá**

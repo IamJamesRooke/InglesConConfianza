@@ -3,12 +3,20 @@ id: en-be-missing--es-faltar
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "be missing"
+source: be missing
 source_lemma: be
 source_variant: expected-absence
 target_language: es
-target: "faltar"
+target: faltar
+target_lemma: faltar
 sense: missing-required-item
+taxonomy:
+  category: expression
+  subcategory: fixed-expression
+source_features:
+  verb_form: base
+target_features:
+  verb_form: infinitive
 aliases: []
 index_under:
   - be
@@ -17,8 +25,8 @@ reverse_status: pending
 reverse_ids: []
 status: draft
 examples:
-  - source: "One signature may still be missing."
-    target: "Todavía puede faltar una firma."
+  - source: One signature may still be missing.
+    target: Todavía puede faltar una firma.
 ---
 
 # **be missing** → **faltar**

@@ -14,13 +14,15 @@ taxonomy:
   category: pronoun
   subcategory: personal-pronoun
 source_features:
-  person: third
+  grammatical_person: third
+  referent_person: third
   number: singular
   gender: masculine
   animacy: inanimate
   function: direct-object
 target_features:
-  person: third
+  grammatical_person: third
+  referent_person: third
   number: singular
   gender: neuter
   animacy: inanimate
@@ -35,12 +37,12 @@ reverse_status: pending
 reverse_ids: []
 status: draft
 examples:
-  - source: "Veo el libro. Lo veo."
-    target: "I see the book. I see it."
-  - source: "Compré el libro, pero todavía no lo he leído."
-    target: "I bought the book, but I haven't read it yet."
-  - source: "El carro está afuera. Lo veo desde la ventana."
-    target: "The car is outside. I see it from the window."
+  - source: Veo el libro. Lo veo.
+    target: I see the book. I see it.
+  - source: Compré el libro, pero todavía no lo he leído.
+    target: I bought the book, but I haven't read it yet.
+  - source: El carro está afuera. Lo veo desde la ventana.
+    target: The car is outside. I see it from the window.
 ---
 
 # **Lo** → **It**

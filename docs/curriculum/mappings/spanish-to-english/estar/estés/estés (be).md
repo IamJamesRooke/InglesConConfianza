@@ -3,13 +3,31 @@ id: es-estes-present-subjunctive-you-singular-state-or-location--en-be
 kind: mapping
 direction: spanish-to-english
 source_language: es
-source: "estés"
+source: estés
 source_lemma: estar
 source_variant: present-subjunctive-you-singular-state-or-location
 target_language: en
-target: "be"
+target: be
+target_lemma: be
 sense: subjunctive-you-state-or-location
-aliases: []
+taxonomy:
+  category: verb
+  subcategory: copula
+source_features:
+  grammatical_person: second
+  referent_person: second
+  number: singular
+  tense: present
+  mood: subjunctive
+  verb_form: finite
+target_features:
+  grammatical_person: second
+  referent_person: second
+  number: singular
+  tense: present
+  verb_form: base
+aliases:
+  - tú estés
 index_under:
   - estar
   - estés
@@ -18,8 +36,8 @@ reverse_ids:
   - en-be-subjunctive-estar-you--es-estes
 status: draft
 examples:
-  - source: "Es importante que estés aquí temprano."
-    target: "It is important that you be here early."
+  - source: Es importante que estés aquí temprano.
+    target: It is important that you be here early.
 ---
 
 # **estés** → **be**

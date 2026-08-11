@@ -15,13 +15,15 @@ taxonomy:
   category: pronoun
   subcategory: personal-pronoun
 source_features:
-  person: third
+  grammatical_person: third
+  referent_person: second
   number: singular
   gender: masculine
   animacy: person
   function: direct-object
 target_features:
-  person: second
+  grammatical_person: second
+  referent_person: second
   number: singular
   gender: common
   animacy: person
@@ -37,12 +39,12 @@ reverse_status: pending
 reverse_ids: []
 status: draft
 examples:
-  - source: "Lo veo a usted."
-    target: "I see you."
-  - source: "Señor Gómez, lo veo mañana."
-    target: "Mr. Gómez, I'll see you tomorrow."
-  - source: "Profesor, no lo escuché bien."
-    target: "Professor, I didn't hear you clearly."
+  - source: Lo veo a usted.
+    target: I see you.
+  - source: Señor Gómez, lo veo mañana.
+    target: Mr. Gómez, I'll see you tomorrow.
+  - source: Profesor, no lo escuché bien.
+    target: Professor, I didn't hear you clearly.
 ---
 
 # **Lo** → Formal **You**

@@ -3,12 +3,20 @@ id: en-be-good-at--es-ser-bueno-para
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "be good at"
+source: be good at
 source_lemma: be
 source_variant: skill
 target_language: es
-target: "ser bueno para"
+target: ser bueno para
+target_lemma: ser bueno para
 sense: ability-skill
+taxonomy:
+  category: expression
+  subcategory: ability-expression
+source_features:
+  verb_form: base
+target_features:
+  verb_form: infinitive
 aliases: []
 index_under:
   - be
@@ -18,8 +26,8 @@ reverse_ids:
   - es-ser-bueno-para-skill--en-be-good-at
 status: draft
 examples:
-  - source: "Ana wants to be good at explaining difficult ideas."
-    target: "Ana quiere ser buena para explicar ideas difíciles."
+  - source: Ana wants to be good at explaining difficult ideas.
+    target: Ana quiere ser buena para explicar ideas difíciles.
 ---
 
 # **be good at** → **ser bueno para**

@@ -3,12 +3,20 @@ id: en-be-time-date--es-ser
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "be"
+source: be
 source_lemma: be
 source_variant: base-time-date
 target_language: es
-target: "ser"
+target: ser
+target_lemma: ser
 sense: time-or-date
+taxonomy:
+  category: verb
+  subcategory: copula
+source_features:
+  verb_form: base
+target_features:
+  verb_form: infinitive
 aliases: []
 index_under:
   - be
@@ -18,8 +26,8 @@ reverse_ids:
   - es-ser-time-date--en-be
 status: draft
 examples:
-  - source: "Tomorrow will be Friday."
-    target: "Mañana será viernes."
+  - source: Tomorrow will be Friday.
+    target: Mañana será viernes.
 ---
 
 # **be** → **ser**

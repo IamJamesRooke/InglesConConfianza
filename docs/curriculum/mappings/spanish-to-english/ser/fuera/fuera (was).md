@@ -3,13 +3,37 @@ id: es-fuera-imperfect-subjunctive-third-singular-indicative-english--en-was
 kind: mapping
 direction: spanish-to-english
 source_language: es
-source: "fuera"
+source: fuera
 source_lemma: ser
 source_variant: imperfect-subjunctive-third-singular-indicative-english
 target_language: en
-target: "was"
+target: was
+target_lemma: be
+accepted_targets:
+  - he was
+  - she was
+  - it was
 sense: subordinate-third-person-identity
-aliases: []
+taxonomy:
+  category: verb
+  subcategory: copula
+source_features:
+  grammatical_person: third
+  referent_person: third
+  number: singular
+  tense: past
+  mood: subjunctive
+  verb_form: finite
+target_features:
+  grammatical_person: third
+  referent_person: third
+  number: singular
+  tense: past
+  mood: indicative
+  verb_form: finite
+aliases:
+  - él fuera
+  - ella fuera
 index_under:
   - ser
   - fuera
@@ -18,8 +42,8 @@ reverse_ids:
   - en-was-subordinate-ser-third-singular--es-fuera
 status: draft
 examples:
-  - source: "No sabía que fuera tan importante."
-    target: "I didn't know it was so important."
+  - source: No sabía que fuera tan importante.
+    target: I didn't know it was so important.
 ---
 
 # **fuera** → **was**

@@ -3,12 +3,30 @@ id: es-debe-de-haber-deduced-existence--en-there-must-be
 kind: mapping
 direction: spanish-to-english
 source_language: es
-source: "debe de haber"
+source: debe de haber
 source_lemma: haber
 source_variant: deduced-existence
 target_language: en
-target: "there must be"
+target: there must be
+target_lemma: there be
 sense: deduced-existence
+taxonomy:
+  category: expression
+  subcategory: existential
+source_features:
+  grammatical_person: impersonal
+  referent_person: impersonal
+  number: invariant
+  tense: present
+  mood: indicative
+  verb_form: finite
+target_features:
+  grammatical_person: impersonal
+  referent_person: impersonal
+  number: invariant
+  tense: present
+  mood: indicative
+  verb_form: finite
 aliases: []
 index_under:
   - haber
@@ -18,8 +36,8 @@ reverse_ids:
   - en-there-must-be-deduced-existence--es-debe-de-haber
 status: draft
 examples:
-  - source: "Debe de haber una explicación."
-    target: "There must be an explanation."
+  - source: Debe de haber una explicación.
+    target: There must be an explanation.
 ---
 
 # **debe de haber** → **there must be**

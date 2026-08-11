@@ -3,13 +3,35 @@ id: es-estaran-future-third-plural-state-or-location--en-they-will-be
 kind: mapping
 direction: spanish-to-english
 source_language: es
-source: "estarán"
+source: estarán
 source_lemma: estar
 source_variant: future-third-plural-state-or-location
 target_language: en
-target: "they will be"
+target: they will be
+target_lemma: be
+accepted_targets:
+  - they'll be
 sense: future-state-or-location
-aliases: []
+taxonomy:
+  category: verb
+  subcategory: copula
+source_features:
+  grammatical_person: third
+  referent_person: third
+  number: plural
+  tense: future
+  mood: indicative
+  verb_form: finite
+target_features:
+  grammatical_person: third
+  referent_person: third
+  number: plural
+  tense: future
+  mood: indicative
+  verb_form: finite
+aliases:
+  - ellos estarán
+  - ellas estarán
 index_under:
   - estar
   - estarán
@@ -18,8 +40,8 @@ reverse_ids:
   - en-will-be-future-estar-they-or-you-plural--es-estaran
 status: draft
 examples:
-  - source: "Ellos estarán listos a las ocho."
-    target: "They will be ready at eight."
+  - source: Ellos estarán listos a las ocho.
+    target: They will be ready at eight.
 ---
 
 # **estarán** → **they will be**

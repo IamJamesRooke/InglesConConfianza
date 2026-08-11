@@ -3,12 +3,20 @@ id: en-be-funny-strange--es-ser-raro
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "be funny"
+source: be funny
 source_lemma: be
 source_variant: strange
 target_language: es
-target: "ser raro"
+target: ser raro
+target_lemma: ser raro
 sense: strange
+taxonomy:
+  category: expression
+  subcategory: fixed-expression
+source_features:
+  verb_form: base
+target_features:
+  verb_form: infinitive
 aliases: []
 index_under:
   - be
@@ -18,8 +26,8 @@ reverse_ids:
   - es-ser-raro--en-be-funny
 status: draft
 examples:
-  - source: "His explanation was funny, but it wasn't humorous."
-    target: "Su explicación fue rara, pero no fue chistosa."
+  - source: His explanation was funny, but it wasn't humorous.
+    target: Su explicación fue rara, pero no fue chistosa.
 ---
 
 # **be funny** → **ser raro**

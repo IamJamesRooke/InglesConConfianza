@@ -3,13 +3,34 @@ id: es-estaras-future-you-singular-state-or-location--en-you-will-be
 kind: mapping
 direction: spanish-to-english
 source_language: es
-source: "estarás"
+source: estarás
 source_lemma: estar
 source_variant: future-you-singular-state-or-location
 target_language: en
-target: "you will be"
+target: you will be
+target_lemma: be
+accepted_targets:
+  - you'll be
 sense: future-state-or-location
-aliases: []
+taxonomy:
+  category: verb
+  subcategory: copula
+source_features:
+  grammatical_person: second
+  referent_person: second
+  number: singular
+  tense: future
+  mood: indicative
+  verb_form: finite
+target_features:
+  grammatical_person: second
+  referent_person: second
+  number: singular
+  tense: future
+  mood: indicative
+  verb_form: finite
+aliases:
+  - tú estarás
 index_under:
   - estar
   - estarás
@@ -18,8 +39,8 @@ reverse_ids:
   - en-will-be-future-estar-you-singular--es-estaras
 status: draft
 examples:
-  - source: "Estarás bien mañana."
-    target: "You will be fine tomorrow."
+  - source: Estarás bien mañana.
+    target: You will be fine tomorrow.
 ---
 
 # **estarás** → **you will be**

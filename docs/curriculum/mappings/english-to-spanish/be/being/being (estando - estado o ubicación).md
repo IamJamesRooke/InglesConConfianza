@@ -3,12 +3,20 @@ id: en-being-state-location--es-estando
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "being"
+source: being
 source_lemma: be
 source_variant: progressive-estar
 target_language: es
-target: "estando"
+target: estando
+target_lemma: estar
 sense: state-or-location-gerund
+taxonomy:
+  category: verb
+  subcategory: copula
+source_features:
+  verb_form: gerund
+target_features:
+  verb_form: gerund
 aliases: []
 index_under:
   - be
@@ -18,8 +26,8 @@ reverse_ids:
   - es-estando-gerund-state-or-location--en-being
 status: draft
 examples:
-  - source: "Being in Bogotá, I could visit Ana easily."
-    target: "Estando en Bogotá, podía visitar a Ana fácilmente."
+  - source: Being in Bogotá, I could visit Ana easily.
+    target: Estando en Bogotá, podía visitar a Ana fácilmente.
 ---
 
 # **being** → **estando**

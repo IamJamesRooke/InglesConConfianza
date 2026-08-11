@@ -3,41 +3,46 @@ id: es-soy-identity--en-i-am
 kind: mapping
 direction: spanish-to-english
 source_language: es
-source: "soy"
+source: soy
 source_lemma: ser
 source_variant: present-first-singular-identity
 target_language: en
-target: "I am"
+target: I am
 target_lemma: be
 accepted_targets:
-  - "I'm"
+  - I'm
 sense: identity
 taxonomy:
   category: verb
   subcategory: copula
 source_features:
-  person: first
+  grammatical_person: first
+  referent_person: first
   number: singular
   tense: present
   mood: indicative
   verb_form: finite
 target_features:
-  person: first
+  grammatical_person: first
+  referent_person: first
   number: singular
   tense: present
   mood: indicative
   verb_form: finite
-aliases: []
+aliases:
+  - yo soy
 index_under:
   - ser
   - soy
+contrast_ids:
+  - es-soy-characteristic--en-i-am
 reverse_status: linked
 reverse_ids:
   - en-am-identity--es-soy
 status: draft
 examples:
-  - source: "Soy profesor de inglés."
-    target: "I am an English teacher."
+  - source: Soy profesor de inglés.
+    target: I am an English teacher.
 ---
 
 # **soy** → **I am**

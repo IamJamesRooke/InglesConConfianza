@@ -3,12 +3,20 @@ id: en-be-in-a-hurry--es-tener-afan
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "be in a hurry"
+source: be in a hurry
 source_lemma: be
 source_variant: hurry
 target_language: es
-target: "tener afán"
+target: tener afán
+target_lemma: tener afán
 sense: time-pressure
+taxonomy:
+  category: expression
+  subcategory: fixed-expression
+source_features:
+  verb_form: base
+target_features:
+  verb_form: infinitive
 aliases: []
 index_under:
   - be
@@ -17,8 +25,8 @@ reverse_status: pending
 reverse_ids: []
 status: draft
 examples:
-  - source: "I don't want to be in a hurry tomorrow."
-    target: "No quiero tener afán mañana."
+  - source: I don't want to be in a hurry tomorrow.
+    target: No quiero tener afán mañana.
 ---
 
 # **be in a hurry** → **tener afán**

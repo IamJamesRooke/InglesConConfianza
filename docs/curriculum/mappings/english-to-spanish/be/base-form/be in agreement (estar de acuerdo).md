@@ -3,12 +3,20 @@ id: en-be-in-agreement--es-estar-de-acuerdo
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "be in agreement"
+source: be in agreement
 source_lemma: be
 source_variant: agreement-state
 target_language: es
-target: "estar de acuerdo"
+target: estar de acuerdo
+target_lemma: estar de acuerdo
 sense: agreement
+taxonomy:
+  category: expression
+  subcategory: state-expression
+source_features:
+  verb_form: base
+target_features:
+  verb_form: infinitive
 aliases: []
 index_under:
   - be
@@ -18,8 +26,8 @@ reverse_ids:
   - es-estar-de-acuerdo--en-be-in-agreement
 status: draft
 examples:
-  - source: "The two managers seem to be in agreement."
-    target: "Los dos gerentes parecen estar de acuerdo."
+  - source: The two managers seem to be in agreement.
+    target: Los dos gerentes parecen estar de acuerdo.
 ---
 
 # **be in agreement** → **estar de acuerdo**

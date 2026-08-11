@@ -3,12 +3,26 @@ id: es-haber-existential-infinitive--en-there-be
 kind: mapping
 direction: spanish-to-english
 source_language: es
-source: "haber"
+source: haber
 source_lemma: haber
 source_variant: existential-infinitive
 target_language: en
-target: "there be"
+target: there be
+target_lemma: there be
 sense: existence
+taxonomy:
+  category: verb
+  subcategory: existential
+source_features:
+  grammatical_person: impersonal
+  referent_person: impersonal
+  number: invariant
+  verb_form: infinitive
+target_features:
+  grammatical_person: impersonal
+  referent_person: impersonal
+  number: invariant
+  verb_form: base
 aliases: []
 index_under:
   - haber
@@ -18,8 +32,8 @@ reverse_ids:
   - en-there-be--es-haber
 status: draft
 examples:
-  - source: "Puede haber otra solución."
-    target: "There may be another solution."
+  - source: Puede haber otra solución.
+    target: There may be another solution.
 ---
 
 # **haber** → **there be**

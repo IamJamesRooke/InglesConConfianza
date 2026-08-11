@@ -3,12 +3,20 @@ id: es-estar-seguro--en-be-sure
 kind: mapping
 direction: spanish-to-english
 source_language: es
-source: "estar seguro"
+source: estar seguro
 source_lemma: estar
 source_variant: certainty
 target_language: en
-target: "be sure"
+target: be sure
+target_lemma: be sure
 sense: certainty
+taxonomy:
+  category: expression
+  subcategory: state-expression
+source_features:
+  verb_form: infinitive
+target_features:
+  verb_form: base
 aliases: []
 index_under:
   - estar
@@ -18,8 +26,8 @@ reverse_ids:
   - en-be-sure--es-estar-seguro
 status: draft
 examples:
-  - source: "Quiero estar seguro de que la dirección es correcta."
-    target: "I want to be sure that the address is correct."
+  - source: Quiero estar seguro de que la dirección es correcta.
+    target: I want to be sure that the address is correct.
 ---
 
 # **estar seguro** → **be sure**

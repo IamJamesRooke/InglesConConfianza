@@ -3,12 +3,20 @@ id: en-be-in-favor-of-support--es-estar-a-favor-de
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "be in favor of"
+source: be in favor of
 source_lemma: be
 source_variant: support
 target_language: es
-target: "estar a favor de"
+target: estar a favor de
+target_lemma: estar a favor de
 sense: support
+taxonomy:
+  category: expression
+  subcategory: fixed-expression
+source_features:
+  verb_form: base
+target_features:
+  verb_form: infinitive
 aliases: []
 index_under:
   - be
@@ -18,8 +26,8 @@ reverse_ids:
   - es-estar-a-favor-de--en-be-in-favor-of
 status: draft
 examples:
-  - source: "They may be in favor of the change."
-    target: "Puede que estén a favor del cambio."
+  - source: They may be in favor of the change.
+    target: Puede que estén a favor del cambio.
 ---
 
 # **be in favor of** → **estar a favor de**

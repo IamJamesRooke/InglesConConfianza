@@ -3,12 +3,20 @@ id: en-be-about-to--es-estar-a-punto-de
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "be about to"
+source: be about to
 source_lemma: be
 source_variant: immediate-future
 target_language: es
-target: "estar a punto de"
+target: estar a punto de
+target_lemma: estar a punto de
 sense: immediate-future
+taxonomy:
+  category: expression
+  subcategory: future-expression
+source_features:
+  verb_form: base
+target_features:
+  verb_form: infinitive
 aliases: []
 index_under:
   - be
@@ -18,8 +26,8 @@ reverse_ids:
   - es-estar-a-punto-de--en-be-about-to
 status: draft
 examples:
-  - source: "I'm about to call Ana."
-    target: "Estoy a punto de llamar a Ana."
+  - source: I'm about to call Ana.
+    target: Estoy a punto de llamar a Ana.
 ---
 
 # **be about to** → **estar a punto de**

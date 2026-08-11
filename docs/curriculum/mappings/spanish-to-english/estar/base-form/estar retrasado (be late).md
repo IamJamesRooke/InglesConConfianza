@@ -3,12 +3,20 @@ id: es-estar-retrasado--en-be-late
 kind: mapping
 direction: spanish-to-english
 source_language: es
-source: "estar retrasado"
+source: estar retrasado
 source_lemma: estar
 source_variant: delayed-schedule
 target_language: en
-target: "be late"
+target: be late
+target_lemma: be late
 sense: running-late
+taxonomy:
+  category: expression
+  subcategory: state-expression
+source_features:
+  verb_form: infinitive
+target_features:
+  verb_form: base
 aliases: []
 index_under:
   - estar
@@ -18,8 +26,8 @@ reverse_ids:
   - en-be-late-delayed--es-estar-retrasado
 status: draft
 examples:
-  - source: "El bus puede estar retrasado por el tráfico."
-    target: "The bus may be late because of traffic."
+  - source: El bus puede estar retrasado por el tráfico.
+    target: The bus may be late because of traffic.
 ---
 
 # **estar retrasado** → **be late**

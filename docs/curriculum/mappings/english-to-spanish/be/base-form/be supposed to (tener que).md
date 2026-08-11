@@ -3,12 +3,20 @@ id: en-be-supposed-to-requirement--es-tener-que
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "be supposed to"
+source: be supposed to
 source_lemma: be
 source_variant: practical-requirement
 target_language: es
-target: "tener que"
+target: tener que
+target_lemma: tener que
 sense: required-action
+taxonomy:
+  category: expression
+  subcategory: obligation-expression
+source_features:
+  verb_form: base
+target_features:
+  verb_form: infinitive
 aliases: []
 index_under:
   - be
@@ -17,7 +25,7 @@ reverse_status: pending
 reverse_ids: []
 status: draft
 examples:
-  - source: "What am I supposed to do now?"
+  - source: What am I supposed to do now?
     target: "¿Qué tengo que hacer ahora?"
 ---
 

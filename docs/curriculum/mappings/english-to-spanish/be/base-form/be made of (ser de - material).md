@@ -3,12 +3,20 @@ id: en-be-made-of-material-ser-de--es-ser-de
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "be made of"
+source: be made of
 source_lemma: be
 source_variant: material-ser-de
 target_language: es
-target: "ser de"
+target: ser de
+target_lemma: ser de
 sense: material
+taxonomy:
+  category: expression
+  subcategory: passive-expression
+source_features:
+  verb_form: base
+target_features:
+  verb_form: infinitive
 aliases: []
 index_under:
   - be
@@ -18,8 +26,8 @@ reverse_ids:
   - es-ser-de-material--en-be-made-of
 status: draft
 examples:
-  - source: "The table may be made of wood."
-    target: "La mesa puede ser de madera."
+  - source: The table may be made of wood.
+    target: La mesa puede ser de madera.
 ---
 
 # **be made of** → **ser de**

@@ -3,13 +3,41 @@ id: en-might-be-ser--es-podria-ser
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "might be"
+source: might be
 source_lemma: be
 source_variant: tentative-possibility-ser
 target_language: es
-target: "podría ser"
+target: podría ser
+target_lemma: poder ser
 sense: tentative-identity-characteristic
-aliases: []
+taxonomy:
+  category: expression
+  subcategory: modal-expression
+source_features:
+  grammatical_person:
+    - first
+    - third
+  referent_person:
+    - first
+    - third
+  number: singular
+  verb_form: finite
+target_features:
+  grammatical_person:
+    - first
+    - third
+  referent_person:
+    - first
+    - third
+  number: singular
+  tense: conditional
+  mood: indicative
+  verb_form: finite
+aliases:
+  - I might be
+  - he might be
+  - she might be
+  - it might be
 index_under:
   - be
   - base-form
@@ -17,8 +45,8 @@ reverse_status: pending
 reverse_ids: []
 status: draft
 examples:
-  - source: "That might be the best option."
-    target: "Esa podría ser la mejor opción."
+  - source: That might be the best option.
+    target: Esa podría ser la mejor opción.
 ---
 
 # **might be** → **podría ser**

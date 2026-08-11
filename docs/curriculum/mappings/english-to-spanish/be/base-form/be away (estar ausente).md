@@ -3,12 +3,20 @@ id: en-be-away-absent--es-estar-ausente
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "be away"
+source: be away
 source_lemma: be
 source_variant: away-absent
 target_language: es
-target: "estar ausente"
+target: estar ausente
+target_lemma: estar ausente
 sense: general-absence
+taxonomy:
+  category: expression
+  subcategory: state-expression
+source_features:
+  verb_form: base
+target_features:
+  verb_form: infinitive
 aliases: []
 index_under:
   - be
@@ -18,8 +26,8 @@ reverse_ids:
   - es-estar-ausente--en-be-away
 status: draft
 examples:
-  - source: "The manager may be away this morning."
-    target: "El gerente puede estar ausente esta mañana."
+  - source: The manager may be away this morning.
+    target: El gerente puede estar ausente esta mañana.
 ---
 
 # **be away** → **estar ausente**

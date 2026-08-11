@@ -3,13 +3,34 @@ id: es-estoy-present-first-singular-state--en-i-am
 kind: mapping
 direction: spanish-to-english
 source_language: es
-source: "estoy"
+source: estoy
 source_lemma: estar
 source_variant: present-first-singular-state
 target_language: en
-target: "I am"
+target: I am
+target_lemma: be
+accepted_targets:
+  - I'm
 sense: state
-aliases: []
+taxonomy:
+  category: verb
+  subcategory: copula
+source_features:
+  grammatical_person: first
+  referent_person: first
+  number: singular
+  tense: present
+  mood: indicative
+  verb_form: finite
+target_features:
+  grammatical_person: first
+  referent_person: first
+  number: singular
+  tense: present
+  mood: indicative
+  verb_form: finite
+aliases:
+  - yo estoy
 index_under:
   - estar
   - estoy
@@ -18,8 +39,8 @@ reverse_ids:
   - en-am-state--es-estoy
 status: draft
 examples:
-  - source: "Estoy cansado después del viaje."
-    target: "I am tired after the trip."
+  - source: Estoy cansado después del viaje.
+    target: I am tired after the trip.
 ---
 
 # **estoy** → **I am**

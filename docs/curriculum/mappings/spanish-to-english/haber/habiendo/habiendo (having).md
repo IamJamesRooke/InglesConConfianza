@@ -3,12 +3,20 @@ id: es-habiendo-perfect-gerund-auxiliary--en-having
 kind: mapping
 direction: spanish-to-english
 source_language: es
-source: "habiendo"
+source: habiendo
 source_lemma: haber
 source_variant: perfect-gerund-auxiliary
 target_language: en
-target: "having"
+target: having
+target_lemma: have
 sense: perfect-gerund
+taxonomy:
+  category: verb
+  subcategory: auxiliary
+source_features:
+  verb_form: gerund
+target_features:
+  verb_form: gerund
 aliases: []
 index_under:
   - haber
@@ -17,8 +25,8 @@ reverse_status: pending
 reverse_ids: []
 status: draft
 examples:
-  - source: "Habiendo terminado el trabajo, se fue a casa."
-    target: "Having finished the work, she went home."
+  - source: Habiendo terminado el trabajo, se fue a casa.
+    target: Having finished the work, she went home.
 ---
 
 # **habiendo** → **having**

@@ -3,13 +3,35 @@ id: es-estarian-conditional-third-plural-state-or-location--en-they-would-be
 kind: mapping
 direction: spanish-to-english
 source_language: es
-source: "estarían"
+source: estarían
 source_lemma: estar
 source_variant: conditional-third-plural-state-or-location
 target_language: en
-target: "they would be"
+target: they would be
+target_lemma: be
+accepted_targets:
+  - they'd be
 sense: conditional-state-or-location
-aliases: []
+taxonomy:
+  category: verb
+  subcategory: copula
+source_features:
+  grammatical_person: third
+  referent_person: third
+  number: plural
+  tense: conditional
+  mood: indicative
+  verb_form: finite
+target_features:
+  grammatical_person: third
+  referent_person: third
+  number: plural
+  tense: conditional
+  mood: indicative
+  verb_form: finite
+aliases:
+  - ellos estarían
+  - ellas estarían
 index_under:
   - estar
   - estarían
@@ -18,8 +40,8 @@ reverse_ids:
   - en-would-be-conditional-estar-they-or-you-plural--es-estarian
 status: draft
 examples:
-  - source: "Ellos estarían disponibles por la tarde."
-    target: "They would be available in the afternoon."
+  - source: Ellos estarían disponibles por la tarde.
+    target: They would be available in the afternoon.
 ---
 
 # **estarían** → **they would be**

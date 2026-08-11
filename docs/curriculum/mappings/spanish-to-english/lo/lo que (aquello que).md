@@ -13,6 +13,9 @@ sense: neutral-relative-what
 taxonomy:
   category: expression
   subcategory: relative-pronoun
+source_features:
+  number: singular
+  gender: neuter
 aliases: []
 index_under:
   - lo
@@ -21,10 +24,10 @@ reverse_status: pending
 reverse_ids: []
 status: draft
 examples:
-  - source: "Lo que quiero es tiempo."
-    target: "What I want is time."
-  - source: "No entiendo lo que dices."
-    target: "I don't understand what you're saying."
+  - source: Lo que quiero es tiempo.
+    target: What I want is time.
+  - source: No entiendo lo que dices.
+    target: I don't understand what you're saying.
 ---
 
 # **Lo Que** → **What**

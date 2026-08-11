@@ -11,6 +11,7 @@
     - [ ] Phase 4: normalize the reverse **ser / estar / haber / tener / poder** hub
         - [x] Phase 4A: normalize **ser, estar**, and **haber**, including their source-form topologies and reciprocal **be** edges
         - [x] Mappings-only data-readiness checkpoint: pilot optional query metadata and define the boundary between mapping concepts and future app records
+        - [x] Audit all 629 normalized mapping objects for complete canonical lemmas, taxonomy, grammatical features, aliases, accepted targets, and machine-safe target values
         - [ ] Phase 4B: normalize **tener** and especially **poder**, then cross-audit **have, can, could, manage**, and remaining **be** expressions
     - [ ] Phase 5: rehome top-level multiword expressions under canonical headwords
     - [ ] Phase 6: normalize the remaining high-frequency bilingual hubs in bounded batches
@@ -116,6 +117,18 @@
 - Spanish-to-English only. No other languages. If others want to fork the repo, that's fine. And can give AGENT instructions explaining exactly how the method was made.
 
 ## Completed timeline
+
+### 2026-08-10 — Normalized mapping metadata completed
+
+- [x] Complete the enriched YAML audit for every mapping object already normalized
+    - [x] Add canonical `target_lemma` and controlled `taxonomy` metadata to all 629 objects under **lo, be, ser, estar**, and **haber**
+    - [x] Add source-side grammatical features to 626 applicable objects and target-side features to 620 applicable objects, while leaving only genuinely nonverbal expressions unforced
+    - [x] Distinguish grammatical person from referent person for **usted**, formal **lo**, shared plural forms, and other cross-language mismatches
+    - [x] Add meaningful source aliases to 307 objects and accepted target forms to 211 objects, including contractions and explicit subject forms
+    - [x] Replace seven slash-style machine targets with one canonical target plus enumerated accepted forms without deleting any translation
+    - [x] Add reciprocal identity-versus-characteristic contrast edges for **soy** and English **am**
+    - [x] Preserve all 629 IDs, senses, examples, statuses, index ownership, and reverse edges; change only two Markdown headings to reflect the full retained subject coverage
+    - [x] Keep **tener**, **poder**, non-YAML teaching sets, application tables, lessons, and learner state outside this audit
 
 ### 2026-08-09 — Mapping data-readiness metadata piloted
 

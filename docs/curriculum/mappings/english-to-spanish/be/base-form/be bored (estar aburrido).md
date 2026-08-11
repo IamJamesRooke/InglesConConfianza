@@ -3,12 +3,20 @@ id: en-be-bored--es-estar-aburrido
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "be bored"
+source: be bored
 source_lemma: be
 source_variant: affected-state
 target_language: es
-target: "estar aburrido"
+target: estar aburrido
+target_lemma: estar aburrido
 sense: experience-boredom
+taxonomy:
+  category: expression
+  subcategory: fixed-expression
+source_features:
+  verb_form: base
+target_features:
+  verb_form: infinitive
 aliases: []
 index_under:
   - be
@@ -18,8 +26,8 @@ reverse_ids:
   - es-estar-aburrido--en-be-bored
 status: draft
 examples:
-  - source: "The students may be bored during a long meeting."
-    target: "Los estudiantes pueden estar aburridos durante una reunión larga."
+  - source: The students may be bored during a long meeting.
+    target: Los estudiantes pueden estar aburridos durante una reunión larga.
 ---
 
 # **be bored** → **estar aburrido**

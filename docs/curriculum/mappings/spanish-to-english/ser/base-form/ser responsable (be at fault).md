@@ -3,12 +3,20 @@ id: es-ser-responsable--en-be-at-fault
 kind: mapping
 direction: spanish-to-english
 source_language: es
-source: "ser responsable"
+source: ser responsable
 source_lemma: ser
 source_variant: responsibility
 target_language: en
-target: "be at fault"
+target: be at fault
+target_lemma: be at fault
 sense: responsibility
+taxonomy:
+  category: expression
+  subcategory: fixed-expression
+source_features:
+  verb_form: infinitive
+target_features:
+  verb_form: base
 aliases: []
 index_under:
   - ser
@@ -18,8 +26,8 @@ reverse_ids:
   - en-be-at-fault--es-ser-responsable
 status: draft
 examples:
-  - source: "La empresa puede ser responsable del error."
-    target: "The company may be at fault for the error."
+  - source: La empresa puede ser responsable del error.
+    target: The company may be at fault for the error.
 ---
 
 # **ser responsable** → **be at fault**

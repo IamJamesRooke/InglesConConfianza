@@ -3,12 +3,20 @@ id: en-be-confident--es-tener-confianza
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "be confident"
+source: be confident
 source_lemma: be
 source_variant: confidence
 target_language: es
-target: "tener confianza"
+target: tener confianza
+target_lemma: tener confianza
 sense: self-confidence
+taxonomy:
+  category: expression
+  subcategory: fixed-expression
+source_features:
+  verb_form: base
+target_features:
+  verb_form: infinitive
 aliases: []
 index_under:
   - be
@@ -17,8 +25,8 @@ reverse_status: pending
 reverse_ids: []
 status: draft
 examples:
-  - source: "You need to be confident during the interview."
-    target: "Necesitas tener confianza durante la entrevista."
+  - source: You need to be confident during the interview.
+    target: Necesitas tener confianza durante la entrevista.
 ---
 
 # **be confident** → **tener confianza**

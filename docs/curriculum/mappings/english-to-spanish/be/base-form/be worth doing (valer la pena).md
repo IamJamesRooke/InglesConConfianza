@@ -3,12 +3,20 @@ id: en-be-worth-doing--es-valer-la-pena
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "be worth doing"
+source: be worth doing
 source_lemma: be
 source_variant: worth-action
 target_language: es
-target: "valer la pena"
+target: valer la pena
+target_lemma: valer la pena
 sense: worthwhile-action
+taxonomy:
+  category: expression
+  subcategory: fixed-expression
+source_features:
+  verb_form: base
+target_features:
+  verb_form: infinitive
 aliases: []
 index_under:
   - be
@@ -17,8 +25,8 @@ reverse_status: pending
 reverse_ids: []
 status: draft
 examples:
-  - source: "The book may be worth reading twice."
-    target: "Puede valer la pena leer el libro dos veces."
+  - source: The book may be worth reading twice.
+    target: Puede valer la pena leer el libro dos veces.
 ---
 
 # **be worth doing** → **valer la pena**

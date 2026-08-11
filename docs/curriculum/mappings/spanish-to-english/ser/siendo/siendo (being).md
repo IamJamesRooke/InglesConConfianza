@@ -3,12 +3,20 @@ id: es-siendo--en-being
 kind: mapping
 direction: spanish-to-english
 source_language: es
-source: "siendo"
+source: siendo
 source_lemma: ser
 source_variant: gerund
 target_language: en
-target: "being"
+target: being
+target_lemma: be
 sense: progressive-behavior
+taxonomy:
+  category: verb
+  subcategory: copula
+source_features:
+  verb_form: gerund
+target_features:
+  verb_form: gerund
 aliases: []
 index_under:
   - ser
@@ -18,8 +26,8 @@ reverse_ids:
   - en-being-behavior--es-siendo
 status: draft
 examples:
-  - source: "Está siendo grosero hoy."
-    target: "He is being rude today."
+  - source: Está siendo grosero hoy.
+    target: He is being rude today.
 ---
 
 # **siendo** → **being**

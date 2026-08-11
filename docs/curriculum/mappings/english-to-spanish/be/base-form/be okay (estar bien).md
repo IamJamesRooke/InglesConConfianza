@@ -3,12 +3,20 @@ id: en-be-okay-state--es-estar-bien
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "be okay"
+source: be okay
 source_lemma: be
 source_variant: acceptable-state
 target_language: es
-target: "estar bien"
+target: estar bien
+target_lemma: estar bien
 sense: acceptable-or-well
+taxonomy:
+  category: expression
+  subcategory: fixed-expression
+source_features:
+  verb_form: base
+target_features:
+  verb_form: infinitive
 aliases: []
 index_under:
   - be
@@ -18,8 +26,8 @@ reverse_ids:
   - es-estar-bien--en-be-okay
 status: draft
 examples:
-  - source: "The schedule should be okay after the change."
-    target: "El horario debería estar bien después del cambio."
+  - source: The schedule should be okay after the change.
+    target: El horario debería estar bien después del cambio.
 ---
 
 # **be okay** → **estar bien**

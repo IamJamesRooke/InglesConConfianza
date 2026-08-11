@@ -3,11 +3,11 @@ id: en-be-able-to--es-poder
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "be able to"
+source: be able to
 source_lemma: be
 source_variant: ability
 target_language: es
-target: "poder"
+target: poder
 target_lemma: poder
 sense: ability
 taxonomy:
@@ -25,8 +25,8 @@ reverse_status: pending
 reverse_ids: []
 status: draft
 examples:
-  - source: "I want to be able to explain the activity in English."
-    target: "Quiero poder explicar la actividad en inglés."
+  - source: I want to be able to explain the activity in English.
+    target: Quiero poder explicar la actividad en inglés.
 ---
 
 # **be able to** → **poder**

@@ -13,6 +13,11 @@ sense: best-part-of-experience
 taxonomy:
   category: expression
   subcategory: adjective-nominalization
+source_features:
+  number: singular
+  gender: neuter
+target_features:
+  number: singular
 aliases: []
 index_under:
   - lo
@@ -23,12 +28,12 @@ reverse_status: pending
 reverse_ids: []
 status: draft
 examples:
-  - source: "Lo mejor fue el final."
-    target: "The best part was the ending."
-  - source: "Lo mejor de la película fue el final."
-    target: "The best part of the movie was the ending."
-  - source: "Lo mejor del viaje fue la comida."
-    target: "The best part of the trip was the food."
+  - source: Lo mejor fue el final.
+    target: The best part was the ending.
+  - source: Lo mejor de la película fue el final.
+    target: The best part of the movie was the ending.
+  - source: Lo mejor del viaje fue la comida.
+    target: The best part of the trip was the food.
 ---
 
 # **Lo Mejor** → **The Best Part**

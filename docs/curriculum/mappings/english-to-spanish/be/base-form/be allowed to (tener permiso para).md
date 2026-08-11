@@ -3,12 +3,20 @@ id: en-be-allowed-to--es-tener-permiso-para
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "be allowed to"
+source: be allowed to
 source_lemma: be
 source_variant: explicit-permission
 target_language: es
-target: "tener permiso para"
+target: tener permiso para
+target_lemma: tener permiso para
 sense: permission
+taxonomy:
+  category: expression
+  subcategory: modal-expression
+source_features:
+  verb_form: base
+target_features:
+  verb_form: infinitive
 aliases: []
 index_under:
   - be
@@ -17,8 +25,8 @@ reverse_status: pending
 reverse_ids: []
 status: draft
 examples:
-  - source: "Visitors are not allowed to enter this room."
-    target: "Los visitantes no tienen permiso para entrar a este salón."
+  - source: Visitors are not allowed to enter this room.
+    target: Los visitantes no tienen permiso para entrar a este salón.
 ---
 
 # **be allowed to** → **tener permiso para**

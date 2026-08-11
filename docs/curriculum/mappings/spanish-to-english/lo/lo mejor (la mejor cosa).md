@@ -13,6 +13,11 @@ sense: best-abstract-choice
 taxonomy:
   category: expression
   subcategory: adjective-nominalization
+source_features:
+  number: singular
+  gender: neuter
+target_features:
+  number: singular
 aliases: []
 index_under:
   - lo
@@ -23,10 +28,10 @@ reverse_status: pending
 reverse_ids: []
 status: draft
 examples:
-  - source: "Lo mejor es esperar."
-    target: "The best thing is to wait."
-  - source: "Lo mejor que puedes hacer es llamar."
-    target: "The best thing you can do is call."
+  - source: Lo mejor es esperar.
+    target: The best thing is to wait.
+  - source: Lo mejor que puedes hacer es llamar.
+    target: The best thing you can do is call.
 ---
 
 # **Lo Mejor** → **The Best Thing**

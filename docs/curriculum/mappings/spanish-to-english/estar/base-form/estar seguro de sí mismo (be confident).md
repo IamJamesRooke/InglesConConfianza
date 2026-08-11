@@ -3,12 +3,20 @@ id: es-estar-seguro-de-si-mismo--en-be-confident
 kind: mapping
 direction: spanish-to-english
 source_language: es
-source: "estar seguro de sí mismo"
+source: estar seguro de sí mismo
 source_lemma: estar
 source_variant: self-assurance
 target_language: en
-target: "be confident"
+target: be confident
+target_lemma: be confident
 sense: self-assurance
+taxonomy:
+  category: expression
+  subcategory: state-expression
+source_features:
+  verb_form: infinitive
+target_features:
+  verb_form: base
 aliases: []
 index_under:
   - estar
@@ -18,8 +26,8 @@ reverse_ids:
   - en-be-confident--es-estar-seguro-de-si-mismo
 status: draft
 examples:
-  - source: "Quiere estar más segura de sí misma al hablar inglés."
-    target: "She wants to be more confident when speaking English."
+  - source: Quiere estar más segura de sí misma al hablar inglés.
+    target: She wants to be more confident when speaking English.
 ---
 
 # **estar seguro de sí mismo** → **be confident**

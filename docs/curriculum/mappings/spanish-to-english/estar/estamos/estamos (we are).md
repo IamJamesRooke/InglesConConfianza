@@ -3,13 +3,35 @@ id: es-estamos-present-first-plural-state--en-we-are
 kind: mapping
 direction: spanish-to-english
 source_language: es
-source: "estamos"
+source: estamos
 source_lemma: estar
 source_variant: present-first-plural-state
 target_language: en
-target: "we are"
+target: we are
+target_lemma: be
+accepted_targets:
+  - we're
 sense: state
-aliases: []
+taxonomy:
+  category: verb
+  subcategory: copula
+source_features:
+  grammatical_person: first
+  referent_person: first
+  number: plural
+  tense: present
+  mood: indicative
+  verb_form: finite
+target_features:
+  grammatical_person: first
+  referent_person: first
+  number: plural
+  tense: present
+  mood: indicative
+  verb_form: finite
+aliases:
+  - nosotros estamos
+  - nosotras estamos
 index_under:
   - estar
   - estamos
@@ -18,8 +40,8 @@ reverse_ids:
   - en-are-we-state--es-estamos
 status: draft
 examples:
-  - source: "Estamos listos para salir."
-    target: "We are ready to leave."
+  - source: Estamos listos para salir.
+    target: We are ready to leave.
 ---
 
 # **estamos** → **we are**

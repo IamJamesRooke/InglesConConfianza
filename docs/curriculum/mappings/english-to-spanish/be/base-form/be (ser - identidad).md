@@ -3,12 +3,20 @@ id: en-be-identity--es-ser
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "be"
+source: be
 source_lemma: be
 source_variant: base-identity
 target_language: es
-target: "ser"
+target: ser
+target_lemma: ser
 sense: identity
+taxonomy:
+  category: verb
+  subcategory: copula
+source_features:
+  verb_form: base
+target_features:
+  verb_form: infinitive
 aliases: []
 index_under:
   - be
@@ -18,8 +26,8 @@ reverse_ids:
   - es-ser-identity--en-be
 status: draft
 examples:
-  - source: "I want to be a doctor."
-    target: "Quiero ser médico."
+  - source: I want to be a doctor.
+    target: Quiero ser médico.
 ---
 
 # **be** → **ser**

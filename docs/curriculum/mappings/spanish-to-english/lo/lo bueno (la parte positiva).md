@@ -13,6 +13,11 @@ sense: positive-abstract-aspect
 taxonomy:
   category: expression
   subcategory: adjective-nominalization
+source_features:
+  number: singular
+  gender: neuter
+target_features:
+  number: singular
 aliases: []
 index_under:
   - lo
@@ -21,10 +26,10 @@ reverse_status: pending
 reverse_ids: []
 status: draft
 examples:
-  - source: "Lo bueno es que tenemos tiempo."
-    target: "The good thing is that we have time."
-  - source: "Lo bueno del trabajo es el horario."
-    target: "The good thing about the job is the schedule."
+  - source: Lo bueno es que tenemos tiempo.
+    target: The good thing is that we have time.
+  - source: Lo bueno del trabajo es el horario.
+    target: The good thing about the job is the schedule.
 ---
 
 # **Lo Bueno** → **The Good Thing**

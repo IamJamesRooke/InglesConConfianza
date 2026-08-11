@@ -3,12 +3,20 @@ id: en-be-out-of--es-quedarse-sin
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "be out of"
+source: be out of
 source_lemma: be
 source_variant: none-remaining
 target_language: es
-target: "quedarse sin"
+target: quedarse sin
+target_lemma: quedarse sin
 sense: exhausted-supply
+taxonomy:
+  category: expression
+  subcategory: fixed-expression
+source_features:
+  verb_form: base
+target_features:
+  verb_form: infinitive
 aliases: []
 index_under:
   - be
@@ -17,8 +25,8 @@ reverse_status: pending
 reverse_ids: []
 status: draft
 examples:
-  - source: "We don't want to be out of coffee tomorrow."
-    target: "No queremos quedarnos sin café mañana."
+  - source: We don't want to be out of coffee tomorrow.
+    target: No queremos quedarnos sin café mañana.
 ---
 
 # **be out of** → **quedarse sin**

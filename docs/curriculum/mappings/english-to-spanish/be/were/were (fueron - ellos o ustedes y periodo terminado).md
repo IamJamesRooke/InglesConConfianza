@@ -3,13 +3,43 @@ id: en-were-they-you-plural-completed-ser--es-fueron
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "were"
+source: were
 source_lemma: be
 source_variant: past-they-you-plural-completed-ser
 target_language: es
-target: "fueron"
+target: fueron
+target_lemma: ser
+accepted_targets:
+  - ellos fueron
+  - ellas fueron
+  - ustedes fueron
 sense: they-or-you-plural-completed-identity
-aliases: []
+taxonomy:
+  category: verb
+  subcategory: copula
+source_features:
+  grammatical_person:
+    - second
+    - third
+  referent_person:
+    - second
+    - third
+  number: plural
+  tense: past
+  mood: indicative
+  verb_form: finite
+target_features:
+  grammatical_person: third
+  referent_person:
+    - second
+    - third
+  number: plural
+  tense: past
+  mood: indicative
+  verb_form: finite
+aliases:
+  - you were
+  - they were
 index_under:
   - be
   - were
@@ -18,8 +48,8 @@ reverse_ids:
   - es-fueron--en-they-you-were
 status: draft
 examples:
-  - source: "They were the first students to finish."
-    target: "Ellos fueron los primeros estudiantes en terminar."
+  - source: They were the first students to finish.
+    target: Ellos fueron los primeros estudiantes en terminar.
 ---
 
 # **were** → **fueron**

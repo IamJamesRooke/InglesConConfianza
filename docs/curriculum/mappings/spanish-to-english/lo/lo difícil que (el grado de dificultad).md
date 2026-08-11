@@ -13,6 +13,9 @@ sense: degree-of-difficulty
 taxonomy:
   category: expression
   subcategory: degree-expression
+source_features:
+  number: singular
+  gender: neuter
 aliases: []
 index_under:
   - lo
@@ -21,10 +24,10 @@ reverse_status: pending
 reverse_ids: []
 status: draft
 examples:
-  - source: "No sabes lo difícil que fue."
-    target: "You don't know how difficult it was."
-  - source: "No imaginaba lo difícil que era el examen."
-    target: "I didn't realize how difficult the exam was."
+  - source: No sabes lo difícil que fue.
+    target: You don't know how difficult it was.
+  - source: No imaginaba lo difícil que era el examen.
+    target: I didn't realize how difficult the exam was.
 ---
 
 # **Lo Difícil Que** → **How Difficult**

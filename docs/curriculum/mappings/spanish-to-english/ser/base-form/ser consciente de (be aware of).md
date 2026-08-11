@@ -3,12 +3,20 @@ id: es-ser-consciente-de--en-be-aware-of
 kind: mapping
 direction: spanish-to-english
 source_language: es
-source: "ser consciente de"
+source: ser consciente de
 source_lemma: ser
 source_variant: awareness
 target_language: en
-target: "be aware of"
+target: be aware of
+target_lemma: be aware of
 sense: awareness
+taxonomy:
+  category: expression
+  subcategory: fixed-expression
+source_features:
+  verb_form: infinitive
+target_features:
+  verb_form: base
 aliases: []
 index_under:
   - ser
@@ -18,8 +26,8 @@ reverse_ids:
   - en-be-aware-of--es-ser-consciente-de
 status: draft
 examples:
-  - source: "Debes ser consciente del riesgo."
-    target: "You need to be aware of the risk."
+  - source: Debes ser consciente del riesgo.
+    target: You need to be aware of the risk.
 ---
 
 # **ser consciente de** → **be aware of**

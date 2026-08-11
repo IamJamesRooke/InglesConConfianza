@@ -3,12 +3,30 @@ id: en-there-were-event--es-hubo
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "there were"
+source: there were
 source_lemma: be
 source_variant: past-existential-plural-event
 target_language: es
-target: "hubo"
+target: hubo
+target_lemma: haber
 sense: completed-existence
+taxonomy:
+  category: expression
+  subcategory: existential
+source_features:
+  grammatical_person: impersonal
+  referent_person: impersonal
+  number: plural
+  tense: past
+  mood: indicative
+  verb_form: finite
+target_features:
+  grammatical_person: impersonal
+  referent_person: impersonal
+  number: invariant
+  tense: past
+  mood: indicative
+  verb_form: finite
 aliases: []
 index_under:
   - be
@@ -18,8 +36,8 @@ reverse_ids:
   - es-hubo-preterite-plural-existence--en-there-were
 status: draft
 examples:
-  - source: "There were three errors yesterday."
-    target: "Hubo tres errores ayer."
+  - source: There were three errors yesterday.
+    target: Hubo tres errores ayer.
 ---
 
 # **there were** → **hubo**

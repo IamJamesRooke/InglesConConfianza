@@ -3,13 +3,34 @@ id: es-estoy-present-first-singular-location--en-i-am
 kind: mapping
 direction: spanish-to-english
 source_language: es
-source: "estoy"
+source: estoy
 source_lemma: estar
 source_variant: present-first-singular-location
 target_language: en
-target: "I am"
+target: I am
+target_lemma: be
+accepted_targets:
+  - I'm
 sense: location
-aliases: []
+taxonomy:
+  category: verb
+  subcategory: copula
+source_features:
+  grammatical_person: first
+  referent_person: first
+  number: singular
+  tense: present
+  mood: indicative
+  verb_form: finite
+target_features:
+  grammatical_person: first
+  referent_person: first
+  number: singular
+  tense: present
+  mood: indicative
+  verb_form: finite
+aliases:
+  - yo estoy
 index_under:
   - estar
   - estoy
@@ -18,8 +39,8 @@ reverse_ids:
   - en-am-location--es-estoy
 status: draft
 examples:
-  - source: "Estoy en la oficina."
-    target: "I am at the office."
+  - source: Estoy en la oficina.
+    target: I am at the office.
 ---
 
 # **estoy** → **I am**

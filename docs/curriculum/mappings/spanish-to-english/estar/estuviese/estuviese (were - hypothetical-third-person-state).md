@@ -3,13 +3,37 @@ id: es-estuviese-imperfect-subjunctive-third-singular-hypothetical--en-were
 kind: mapping
 direction: spanish-to-english
 source_language: es
-source: "estuviese"
+source: estuviese
 source_lemma: estar
 source_variant: imperfect-subjunctive-third-singular-hypothetical
 target_language: en
-target: "were"
+target: were
+target_lemma: be
+accepted_targets:
+  - he were
+  - she were
+  - it were
 sense: hypothetical-third-person-state
-aliases: []
+taxonomy:
+  category: verb
+  subcategory: copula
+source_features:
+  grammatical_person: third
+  referent_person: third
+  number: singular
+  tense: past
+  mood: subjunctive
+  verb_form: finite
+target_features:
+  grammatical_person: third
+  referent_person: third
+  number: singular
+  tense: past
+  mood: subjunctive
+  verb_form: finite
+aliases:
+  - él estuviese
+  - ella estuviese
 index_under:
   - estar
   - estuviese
@@ -18,8 +42,8 @@ reverse_ids:
   - en-were-hypothetical-estar-third-singular--es-estuviese
 status: draft
 examples:
-  - source: "Si Ana estuviese aquí, sabría qué hacer."
-    target: "If Ana were here, she would know what to do."
+  - source: Si Ana estuviese aquí, sabría qué hacer.
+    target: If Ana were here, she would know what to do.
 ---
 
 # **estuviese** → **were**

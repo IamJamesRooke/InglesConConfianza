@@ -14,13 +14,15 @@ taxonomy:
   category: pronoun
   subcategory: personal-pronoun
 source_features:
-  person: third
+  grammatical_person: third
+  referent_person: third
   number: singular
   gender: masculine
   animacy: person
   function: direct-object
 target_features:
-  person: third
+  grammatical_person: third
+  referent_person: third
   number: singular
   gender: masculine
   animacy: person
@@ -35,12 +37,12 @@ reverse_status: pending
 reverse_ids: []
 status: draft
 examples:
-  - source: "Veo al hombre. Lo veo."
-    target: "I see the man. I see him."
-  - source: "Veo a Carlos todos los días. Lo veo en la oficina."
-    target: "I see Carlos every day. I see him at the office."
+  - source: Veo al hombre. Lo veo.
+    target: I see the man. I see him.
+  - source: Veo a Carlos todos los días. Lo veo en la oficina.
+    target: I see Carlos every day. I see him at the office.
   - source: "¿Dónde está Juan? No lo veo."
-    target: "Where is Juan? I don't see him."
+    target: Where is Juan? I don't see him.
 ---
 
 # **Lo** → **Him**

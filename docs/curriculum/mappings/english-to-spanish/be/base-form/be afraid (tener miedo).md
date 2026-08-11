@@ -3,12 +3,20 @@ id: en-be-afraid--es-tener-miedo
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "be afraid"
+source: be afraid
 source_lemma: be
 source_variant: fear
 target_language: es
-target: "tener miedo"
+target: tener miedo
+target_lemma: tener miedo
 sense: fear
+taxonomy:
+  category: expression
+  subcategory: fixed-expression
+source_features:
+  verb_form: base
+target_features:
+  verb_form: infinitive
 aliases: []
 index_under:
   - be
@@ -17,8 +25,8 @@ reverse_status: pending
 reverse_ids: []
 status: draft
 examples:
-  - source: "You don't need to be afraid of making mistakes."
-    target: "No necesitas tener miedo de cometer errores."
+  - source: You don't need to be afraid of making mistakes.
+    target: No necesitas tener miedo de cometer errores.
 ---
 
 # **be afraid** → **tener miedo**

@@ -3,12 +3,20 @@ id: en-be-on-time-arrival--es-llegar-a-tiempo
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "be on time"
+source: be on time
 source_lemma: be
 source_variant: punctual-arrival
 target_language: es
-target: "llegar a tiempo"
+target: llegar a tiempo
+target_lemma: llegar a tiempo
 sense: arrive-on-time
+taxonomy:
+  category: expression
+  subcategory: fixed-expression
+source_features:
+  verb_form: base
+target_features:
+  verb_form: infinitive
 aliases: []
 index_under:
   - be
@@ -17,8 +25,8 @@ reverse_status: pending
 reverse_ids: []
 status: draft
 examples:
-  - source: "We need to be on time for the interview."
-    target: "Necesitamos llegar a tiempo a la entrevista."
+  - source: We need to be on time for the interview.
+    target: Necesitamos llegar a tiempo a la entrevista.
 ---
 
 # **be on time** → **llegar a tiempo**

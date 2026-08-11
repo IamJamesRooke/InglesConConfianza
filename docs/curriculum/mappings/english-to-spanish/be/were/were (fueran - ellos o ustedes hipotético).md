@@ -3,13 +3,43 @@ id: en-were-hypothetical-they-you-plural-ser--es-fueran
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "were"
+source: were
 source_lemma: be
 source_variant: hypothetical-they-you-plural-ser
 target_language: es
-target: "fueran"
+target: fueran
+target_lemma: ser
+accepted_targets:
+  - ellos fueran
+  - ellas fueran
+  - ustedes fueran
 sense: hypothetical-they-or-you-plural-identity
-aliases: []
+taxonomy:
+  category: verb
+  subcategory: copula
+source_features:
+  grammatical_person:
+    - second
+    - third
+  referent_person:
+    - second
+    - third
+  number: plural
+  tense: past
+  mood: subjunctive
+  verb_form: finite
+target_features:
+  grammatical_person: third
+  referent_person:
+    - second
+    - third
+  number: plural
+  tense: past
+  mood: subjunctive
+  verb_form: finite
+aliases:
+  - you were
+  - they were
 index_under:
   - be
   - were
@@ -18,8 +48,8 @@ reverse_ids:
   - es-fueran--en-were
 status: draft
 examples:
-  - source: "If they were the owners, they would decide."
-    target: "Si fueran los dueños, decidirían ellos."
+  - source: If they were the owners, they would decide.
+    target: Si fueran los dueños, decidirían ellos.
 ---
 
 # **were** → **fueran**

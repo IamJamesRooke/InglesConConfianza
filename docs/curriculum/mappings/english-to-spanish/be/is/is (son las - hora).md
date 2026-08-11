@@ -3,13 +3,36 @@ id: en-is-clock-time--es-son-las
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "is"
+source: is
 source_lemma: be
 source_variant: present-clock-time
 target_language: es
-target: "son las"
+target: son las
+target_lemma: ser
+accepted_targets:
+  - ellos son las
+  - ellas son las
 sense: clock-time
-aliases: []
+taxonomy:
+  category: verb
+  subcategory: copula
+source_features:
+  grammatical_person: third
+  referent_person: third
+  number: singular
+  tense: present
+  mood: indicative
+  verb_form: finite
+target_features:
+  grammatical_person: third
+  referent_person: third
+  number: plural
+  tense: present
+  mood: indicative
+  verb_form: finite
+aliases:
+  - it is
+  - it's
 index_under:
   - be
   - is
@@ -18,8 +41,8 @@ reverse_ids:
   - es-son-las--en-it-is
 status: draft
 examples:
-  - source: "It is eight o'clock."
-    target: "Son las ocho."
+  - source: It is eight o'clock.
+    target: Son las ocho.
 ---
 
 # **is** → **son las**

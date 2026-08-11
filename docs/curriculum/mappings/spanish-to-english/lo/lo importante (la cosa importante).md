@@ -13,6 +13,11 @@ sense: important-abstract-aspect
 taxonomy:
   category: expression
   subcategory: adjective-nominalization
+source_features:
+  number: singular
+  gender: neuter
+target_features:
+  number: singular
 aliases: []
 index_under:
   - lo
@@ -21,10 +26,10 @@ reverse_status: pending
 reverse_ids: []
 status: draft
 examples:
-  - source: "Lo importante es practicar."
-    target: "The important thing is to practice."
-  - source: "Lo importante es que estás aquí."
-    target: "The important thing is that you're here."
+  - source: Lo importante es practicar.
+    target: The important thing is to practice.
+  - source: Lo importante es que estás aquí.
+    target: The important thing is that you're here.
 ---
 
 # **Lo Importante** → **The Important Thing**

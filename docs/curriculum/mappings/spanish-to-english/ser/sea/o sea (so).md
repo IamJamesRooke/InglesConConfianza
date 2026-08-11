@@ -3,12 +3,16 @@ id: es-o-sea--en-so
 kind: mapping
 direction: spanish-to-english
 source_language: es
-source: "o sea"
+source: o sea
 source_lemma: ser
 source_variant: inference
 target_language: en
-target: "so"
+target: so
+target_lemma: so
 sense: inference
+taxonomy:
+  category: expression
+  subcategory: fixed-expression
 aliases: []
 index_under:
   - ser
@@ -17,8 +21,8 @@ reverse_status: pending
 reverse_ids: []
 status: draft
 examples:
-  - source: "O sea, ¿no quieres ir?"
-    target: "So, you don't want to go?"
+  - source: O sea, ¿no quieres ir?
+    target: So, you don't want to go?
 ---
 
 # **o sea** → **so**

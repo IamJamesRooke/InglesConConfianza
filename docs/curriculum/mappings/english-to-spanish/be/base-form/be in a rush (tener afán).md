@@ -3,12 +3,20 @@ id: en-be-in-a-rush--es-tener-afan
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "be in a rush"
+source: be in a rush
 source_lemma: be
 source_variant: rush
 target_language: es
-target: "tener afán"
+target: tener afán
+target_lemma: tener afán
 sense: time-pressure
+taxonomy:
+  category: expression
+  subcategory: fixed-expression
+source_features:
+  verb_form: base
+target_features:
+  verb_form: infinitive
 aliases: []
 index_under:
   - be
@@ -17,8 +25,8 @@ reverse_status: pending
 reverse_ids: []
 status: draft
 examples:
-  - source: "We may be in a rush after the meeting."
-    target: "Puede que tengamos afán después de la reunión."
+  - source: We may be in a rush after the meeting.
+    target: Puede que tengamos afán después de la reunión.
 ---
 
 # **be in a rush** → **tener afán**

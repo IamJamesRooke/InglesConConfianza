@@ -3,12 +3,20 @@ id: en-be-away-trip--es-estar-de-viaje
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "be away"
+source: be away
 source_lemma: be
 source_variant: away-on-trip
 target_language: es
-target: "estar de viaje"
+target: estar de viaje
+target_lemma: estar de viaje
 sense: travel-absence
+taxonomy:
+  category: expression
+  subcategory: state-expression
+source_features:
+  verb_form: base
+target_features:
+  verb_form: infinitive
 aliases: []
 index_under:
   - be
@@ -18,8 +26,8 @@ reverse_ids:
   - es-estar-de-viaje--en-be-away
 status: draft
 examples:
-  - source: "She'll be away all week on business."
-    target: "Estará de viaje toda la semana por trabajo."
+  - source: She'll be away all week on business.
+    target: Estará de viaje toda la semana por trabajo.
 ---
 
 # **be away** → **estar de viaje**

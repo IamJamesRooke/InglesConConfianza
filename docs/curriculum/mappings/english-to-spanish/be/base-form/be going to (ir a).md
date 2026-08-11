@@ -3,12 +3,20 @@ id: en-be-going-to--es-ir-a
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "be going to"
+source: be going to
 source_lemma: be
 source_variant: future-construction
 target_language: es
-target: "ir a"
+target: ir a
+target_lemma: ir a
 sense: plan-or-evidence-based-future
+taxonomy:
+  category: expression
+  subcategory: future-expression
+source_features:
+  verb_form: base
+target_features:
+  verb_form: infinitive
 aliases: []
 index_under:
   - be
@@ -17,8 +25,8 @@ reverse_status: pending
 reverse_ids: []
 status: draft
 examples:
-  - source: "I'm going to call Ana because it's going to rain."
-    target: "Voy a llamar a Ana porque va a llover."
+  - source: I'm going to call Ana because it's going to rain.
+    target: Voy a llamar a Ana porque va a llover.
 ---
 
 # **be going to** → **ir a**

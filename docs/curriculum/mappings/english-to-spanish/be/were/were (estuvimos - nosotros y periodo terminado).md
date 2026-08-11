@@ -3,13 +3,35 @@ id: en-were-we-completed-estar--es-estuvimos
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "were"
+source: were
 source_lemma: be
 source_variant: past-we-completed-estar
 target_language: es
-target: "estuvimos"
+target: estuvimos
+target_lemma: estar
+accepted_targets:
+  - nosotros estuvimos
+  - nosotras estuvimos
 sense: we-bounded-state-location
-aliases: []
+taxonomy:
+  category: verb
+  subcategory: copula
+source_features:
+  grammatical_person: first
+  referent_person: first
+  number: plural
+  tense: past
+  mood: indicative
+  verb_form: finite
+target_features:
+  grammatical_person: first
+  referent_person: first
+  number: plural
+  tense: past
+  mood: indicative
+  verb_form: finite
+aliases:
+  - we were
 index_under:
   - be
   - were
@@ -18,8 +40,8 @@ reverse_ids:
   - es-estuvimos-preterite-first-plural-bounded-state-or-location--en-we-were
 status: draft
 examples:
-  - source: "We were in Bogotá for three days."
-    target: "Estuvimos en Bogotá durante tres días."
+  - source: We were in Bogotá for three days.
+    target: Estuvimos en Bogotá durante tres días.
 ---
 
 # **were** → **estuvimos**

@@ -3,12 +3,20 @@ id: en-be-expected-to--es-deber
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "be expected to"
+source: be expected to
 source_lemma: be
 source_variant: expected-duty
 target_language: es
-target: "deber"
+target: deber
+target_lemma: deber
 sense: expected-behavior
+taxonomy:
+  category: expression
+  subcategory: obligation-expression
+source_features:
+  verb_form: base
+target_features:
+  verb_form: infinitive
 aliases: []
 index_under:
   - be
@@ -17,8 +25,8 @@ reverse_status: pending
 reverse_ids: []
 status: draft
 examples:
-  - source: "Employees are expected to arrive on time."
-    target: "Los empleados deben llegar a tiempo."
+  - source: Employees are expected to arrive on time.
+    target: Los empleados deben llegar a tiempo.
 ---
 
 # **be expected to** → **deber**

@@ -3,12 +3,20 @@ id: en-being-complement-ser--es-ser
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "being"
+source: being
 source_lemma: be
 source_variant: gerund-complement-ser
 target_language: es
-target: "ser"
+target: ser
+target_lemma: ser
 sense: identity-as-complement
+taxonomy:
+  category: verb
+  subcategory: copula
+source_features:
+  verb_form: gerund
+target_features:
+  verb_form: infinitive
 aliases: []
 index_under:
   - be
@@ -17,8 +25,8 @@ reverse_status: pending
 reverse_ids: []
 status: draft
 examples:
-  - source: "I like being a teacher."
-    target: "Me gusta ser profesor."
+  - source: I like being a teacher.
+    target: Me gusta ser profesor.
 ---
 
 # **being** → **ser**

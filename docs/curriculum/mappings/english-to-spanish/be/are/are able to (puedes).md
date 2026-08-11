@@ -3,13 +3,33 @@ id: en-are-able-to-you--es-puedes
 kind: mapping
 direction: english-to-spanish
 source_language: en
-source: "are able to"
+source: are able to
 source_lemma: be
 source_variant: present-you-singular-ability
 target_language: es
-target: "puedes"
+target: puedes
+target_lemma: poder
 sense: you-singular-ability
-aliases: []
+taxonomy:
+  category: expression
+  subcategory: ability-expression
+source_features:
+  grammatical_person: second
+  referent_person: second
+  number: singular
+  tense: present
+  mood: indicative
+  verb_form: finite
+target_features:
+  grammatical_person: second
+  referent_person: second
+  number: singular
+  tense: present
+  mood: indicative
+  verb_form: finite
+aliases:
+  - you are able to
+  - you're able to
 index_under:
   - be
   - are
@@ -17,8 +37,8 @@ reverse_status: pending
 reverse_ids: []
 status: draft
 examples:
-  - source: "You are able to do it alone."
-    target: "Puedes hacerlo solo."
+  - source: You are able to do it alone.
+    target: Puedes hacerlo solo.
 ---
 
 # **are able to** → **puedes**

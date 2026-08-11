@@ -3,12 +3,30 @@ id: es-como-estas-present-you-singular-wellbeing-question--en-how-are-you
 kind: mapping
 direction: spanish-to-english
 source_language: es
-source: "cómo estás"
+source: cómo estás
 source_lemma: estar
 source_variant: present-you-singular-wellbeing-question
 target_language: en
-target: "how are you"
+target: how are you
+target_lemma: how be
 sense: wellbeing-question
+taxonomy:
+  category: expression
+  subcategory: state-expression
+source_features:
+  grammatical_person: second
+  referent_person: second
+  number: singular
+  tense: present
+  mood: indicative
+  verb_form: finite
+target_features:
+  grammatical_person: second
+  referent_person: second
+  number: singular
+  tense: present
+  mood: indicative
+  verb_form: finite
 aliases: []
 index_under:
   - estar
@@ -18,7 +36,7 @@ reverse_ids: []
 status: draft
 examples:
   - source: "¿Cómo estás después del viaje?"
-    target: "How are you after the trip?"
+    target: How are you after the trip?
 ---
 
 # **cómo estás** → **how are you**
