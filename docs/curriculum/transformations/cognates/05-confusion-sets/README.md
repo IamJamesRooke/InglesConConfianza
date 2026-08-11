@@ -45,6 +45,7 @@
 - [Spanish **resolver / resolve** source set](spanish/resolver/README.md)
 - [Spanish **resultar / result** source set](spanish/resultar/README.md)
 - [Spanish **servir / serve** source set](spanish/servir/README.md)
+- [Spanish **sonar / SONAR / soñar** confusion](spanish/sonar/README.md)
 - [Spanish **soportar / support** confusion](spanish/soportar/README.md)
 - [Spanish **terminar / terminate** source set](spanish/terminar/README.md)
 - [Spanish **tratar / treat** source set](spanish/tratar/README.md)

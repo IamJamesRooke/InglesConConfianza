@@ -27,6 +27,7 @@
         - [x] Phase 5C Pass 6: move nine vocabulary- or cognate-first roots out of mappings, consolidate 11 source families, and repair mixed-source ownership
         - [x] Phase 5C Pass 7: move 12 cognate-first or supplemental roots out of mappings and consolidate eight approved Spanish families
         - [x] Phase 5C Pass 8: move 28 cognate-led or vocabulary-first Spanish roots out of mappings
+        - [x] Phase 5C Pass 9: move one false-cognate-led and seven vocabulary-first Spanish roots out of mappings
     - [ ] Phase 6: normalize the remaining high-frequency bilingual hubs in bounded batches
         - [x] Phase 6A: normalize the English **do / make** and Spanish **hacer** bilingual hub
         - [ ] Phase 6B: normalize the English **get** hub and its qualifying Spanish reverse sources
@@ -132,6 +133,16 @@
 - Spanish-to-English only. No other languages. If others want to fork the repo, that's fine. And can give AGENT instructions explaining exactly how the method was made.
 
 ## Completed timeline
+
+### 2026-08-11 — Spanish mapping index reduced to qualifying source hubs
+
+- [x] Complete Phase 5C Pass 9 on Sol High using the owner's sixth full-folder review
+    - [x] Move **sonar / SONAR / soñar** into cognate transformations
+    - [x] Move **casi, comprar, junto, morir, nuevo, pagar**, and **vender** into Spanish core vocabulary
+    - [x] Retain their contextual reverse distinctions under qualifying English mapping hubs such as **almost, buy, together, die, new, pay**, and **sell**
+    - [x] Preserve all teaching content across 13 retired-root files, including 124 source lines and 67 teaching-table lines; 12 files remain byte-for-byte identical and the thirteenth changes only its relative link to **poco**
+    - [x] Reduce the exhaustive Spanish mapping index from 188 to 180 exact top-level source folders
+    - [x] Revalidate all 1,308 unique machine-object IDs, 1,249 atomic mappings, 59 concepts, reciprocal links, 5,717 local Markdown links, and the exact 180 / 46 / 29 / 45 destination indexes
 
 ### 2026-08-11 — Spanish mapping index reduced to contextual essentials
 
