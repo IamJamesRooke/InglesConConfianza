@@ -20,3 +20,7 @@ Spanish **cargar** and **cargarse** cover carrying, loading, charging, burdening
 | Carga la caja con las dos manos. | Carry the box with both hands. |
 | Cargaron el camión antes del amanecer. | They loaded the truck before dawn. |
 | Tengo que cargar el teléfono. | I have to charge my phone. |
+
+## Related source family
+
+- [**encargar / encargarse de** → order, commission, assign, take care of, or be in charge](encargar/README.md)

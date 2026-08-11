@@ -7,3 +7,5 @@
 | Tampoco es tan difícil. | It isn't that difficult either. |
 
 **Tampoco** becomes negative **either**, **neither + auxiliary**, or **not...either**, depending on sentence position.
+
+- [Focused **tampoco** negative-agreement example](either-negative.md)

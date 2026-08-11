@@ -1,4 +1,4 @@
-# Translations of Spanish **Recordar**
+# Translations of Spanish **Recordar / Acordar**
 
 Spanish **recordar** can mean retain or retrieve a memory, cause another person to remember, or resemble something in a way that brings it to mind. English separates these meanings with **remember, remind**, and sometimes **recall**.
 
@@ -10,6 +10,8 @@ Spanish **recordar** can mean retain or retrieve a memory, cause another person 
 | [**Recordar A → Remind Of**](04-remind-someone-of.md) | Ella me recuerda a su hermana. | She reminds me of her sister. |
 | [**Recuerdo** as a Noun](05-recuerdo-as-a-noun.md) | Tengo un recuerdo bonito y compré un recuerdo del viaje. | I have a beautiful memory, and I bought a souvenir from the trip. |
 | [**Remember, Remind, Recall**, and **Realize**](confusion-sets/README.md) | Recordé la cita, se la recordé a Ana y luego me di cuenta del error. | I remembered the appointment, reminded Ana, and then realized the mistake. |
+
+The related [**acordar / acordarse de** family](acordar/README.md) preserves the contrast between **agree / decide** and **remember**.
 
 ## Mastery Phrases
 

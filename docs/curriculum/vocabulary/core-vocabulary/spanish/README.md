@@ -2,11 +2,13 @@
 
 These extremely useful Spanish source words remain available for curriculum sequencing, but they do not require independent contextual mapping hubs.
 
+- [**buscar**](buscar/README.md)
 - [**casa**](casa/README.md)
 - [**correcto**](correcto/README.md)
 - [**cosa**](cosa/README.md)
 - [**dirección**](direccion/README.md)
 - [**elegir**](elegir/README.md)
+- [**empezar**](empezar/README.md)
 - [**entender**](entender/README.md)
 - [**esposa**](esposa/README.md)
 - [**esposo**](esposo/README.md)
@@ -28,6 +30,7 @@ These extremely useful Spanish source words remain available for curriculum sequ
 - [**persona**](persona/README.md)
 - [**piso**](piso/README.md)
 - [**porque**](porque/README.md)
+- [**próximo**](proximo/README.md)
 - [**rápido**](rapido/README.md)
 - [**respuesta**](respuesta/README.md)
 - [**siguiente**](siguiente/README.md)

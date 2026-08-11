@@ -20,3 +20,7 @@ In Colombian Spanish, **coger** is an ordinary high-frequency verb for taking, c
 | Coge una silla y siéntate. | Take a chair and sit down. |
 | Cogió la pelota con una mano. | She caught the ball with one hand. |
 | Cogí las llaves del piso. | I picked up the keys from the floor. |
+
+## Related source family
+
+- [**recoger** → pick up, collect, gather, tidy, retrieve, harvest, or take in](recoger/README.md)

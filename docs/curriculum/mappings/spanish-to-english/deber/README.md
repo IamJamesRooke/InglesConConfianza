@@ -10,6 +10,8 @@ Spanish **deber** can express debt, obligation, advice, expectation, probability
 | [Duty and Related Words](related-words/README.md) | Le debo dinero a la dueña, que es propietaria del edificio. | I owe money to the owner, who owns the building. |
 | [Confusion Sets](confusion-sets/README.md) | Debe estar cansada, debe llegar a las diez y tiene que presentar el informe. | She must be tired, is supposed to arrive at ten, and has to submit the report. |
 
+- [**debido a que** → **because / since / due to the fact that**](<debido a que (because or since).md>)
+
 ## Whole-Topic Mastery Phrases
 
 | Spanish | English |

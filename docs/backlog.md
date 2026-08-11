@@ -24,6 +24,7 @@
         - [x] Phase 5C Pass 3: move **ahora** to core vocabulary, move **argumento** to false cognates, and nest **ahí** under **allí**
         - [x] Phase 5C Pass 4: move 40 ordinary or cognate-first roots out of mappings and consolidate seven approved Spanish families
         - [x] Phase 5C Pass 5: move 25 vocabulary-, expression-, or cognate-first roots out of mappings and consolidate 11 approved Spanish families
+        - [x] Phase 5C Pass 6: move nine vocabulary- or cognate-first roots out of mappings, consolidate 11 source families, and repair mixed-source ownership
     - [ ] Phase 6: normalize the remaining high-frequency bilingual hubs in bounded batches
         - [x] Phase 6A: normalize the English **do / make** and Spanish **hacer** bilingual hub
         - [ ] Phase 6B: normalize the English **get** hub and its qualifying Spanish reverse sources
@@ -129,6 +130,18 @@
 - Spanish-to-English only. No other languages. If others want to fork the repo, that's fine. And can give AGENT instructions explaining exactly how the method was made.
 
 ## Completed timeline
+
+### 2026-08-11 — Spanish mapping families consolidated further
+
+- [x] Complete Phase 5C Pass 6 on Sol High using the owner's third full-folder review
+    - [x] Move **buscar, empezar**, and **próximo** into Spanish core vocabulary
+    - [x] Move **funcionar, ofrecer, presentar, raro, referir**, and **resolver** into cognate transformations without filtering their contextual translations
+    - [x] Nest **bastar, devolver, encargar, mantener, recoger, siquiera, sino / si no, tardar, tras, aunque**, and **acordar / acordarse de** beneath approved human-facing owners
+    - [x] Keep **suponer** independent because **se supone que / be supposed to** needs its own visible explanation
+    - [x] Move **por poco** to **poco**, negative-agreement **tampoco** to **tampoco**, and subjunctive **fuera** to its already-normalized **ser** family
+    - [x] Give **porque, ya que**, and **debido a que** separate source owners while preserving their reason-connector cross-links
+    - [x] Preserve all 62 retired-root files byte-for-byte, including 546 source lines and 276 teaching-table lines
+    - [x] Reduce the exhaustive Spanish mapping index from 256 to 236 exact top-level source folders
 
 ### 2026-08-11 — Spanish mapping index reduced to contextual teaching hubs
 

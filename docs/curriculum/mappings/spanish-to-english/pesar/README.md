@@ -20,4 +20,4 @@ Literal **pesar** is **weigh**. Regret, concession with **a pesar de**, and figu
 | A pesar de estar cansada, trabajó. | In spite of being tired, she worked. |
 | A pesar de que llovió, salimos. | Despite the fact that it rained, we left. |
 
-For **aunque → although / though / even though / even if**, see the separate [**aunque** map](../aunque/README.md).
+For **aunque → although / though / even though / even if**, see the related [**aunque** map](../aun/aunque/README.md).

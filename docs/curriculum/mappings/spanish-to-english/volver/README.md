@@ -31,3 +31,4 @@ Spanish **volver** and **volverse** express return, repeated action, restoration
 ## Related Return Verb
 
 - [**Regresar** → **return, come back**, or **go back**](regresar/README.md)
+- [**Devolver** → **return, give back, refund**, or **return a call**](devolver/README.md)

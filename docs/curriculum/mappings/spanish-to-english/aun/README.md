@@ -11,3 +11,5 @@ Accent and context matter: **aún** often overlaps with **todavía** as **still/
 | [even so](05-still-even-so.md) | Aun así, continuamos. | Even so, we continued. |
 
 The overlapping [**todavía**](todavia/README.md) map lives inside this family for its canonical **still/yet** reference.
+
+The related [**aunque** family](aunque/README.md) covers **although, though, even though**, and **even if**.
