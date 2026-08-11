@@ -2,7 +2,7 @@
 
 | Spanish | English |
 |---|---|
-| Trabajamos juntos. | We work together. |
+| [Trabajamos juntos.](juntos%20y%20juntas%20%28together%29.md) | We work together. |
 | Siéntate junto a mí. | Sit next to me. |
 | Envié el formulario junto con la copia. | I sent the form along with the copy. |
 | Las dos piezas están juntas. | The two pieces are joined together. |

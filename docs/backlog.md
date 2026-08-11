@@ -16,9 +16,9 @@
         - [x] Phase 4C: compress **poder** into trackable lemma, form-family, surface-form, and atomic-mapping levels before normalizing more hubs
         - [x] Phase 4D: replace the compression pilot with the canonical human-readable mapping-concept template
         - [x] Phase 4E: retire the temporary **poder** teaching scaffold and make clause shape, polarity, questions, and neighboring lexical mappings database-ready
-    - [ ] Phase 5: rehome top-level multiword expressions under canonical headwords
+    - [x] Phase 5: rehome top-level multiword expressions under canonical headwords
         - [x] Phase 5A: audit and normalize English top-level source ownership
-        - [ ] Phase 5B: audit and normalize Spanish top-level source ownership
+        - [x] Phase 5B: audit and normalize Spanish top-level source ownership
     - [ ] Phase 6: normalize the remaining high-frequency bilingual hubs in bounded batches
     - [ ] Phase 7: complete the remaining mapping normalization
     - [ ] Phase 8: perform the final bidirectional completeness and reverse-coverage audit
@@ -122,6 +122,17 @@
 - Spanish-to-English only. No other languages. If others want to fork the repo, that's fine. And can give AGENT instructions explaining exactly how the method was made.
 
 ## Completed timeline
+
+### 2026-08-11 — Spanish mapping source ownership normalized
+
+- [x] Complete Phase 5B on Sol High without deleting teaching material or broadly rewriting legacy lessons as YAML
+    - [x] Audit all 394 top-level Spanish mapping buckets, normalized `source_lemma` metadata, multiword slugs, and likely inflected source families
+    - [x] Move **a pesar de** under `pesar`, **así que** under `así`, **hace** under `hacer`, **cuántos/cuántas** under `cuánto`, and **juntos/juntas** under `junto`
+    - [x] Retain lexicalized sources such as **pasado, muerto, llamado, dispuesto**, and **vivo** because their noun and adjective mappings are not merely conjugated aliases
+    - [x] Preserve all seven relocated lesson files byte-for-byte and merge all five retired README indexes and teaching notes into their canonical destinations
+    - [x] Replace the layered and incomplete Spanish root index with one exhaustive alphabetical index covering all 389 canonical source buckets exactly once
+    - [x] Verify that no multiword slug remains at the Spanish top level, no retired path remains referenced, and no mapping directory is empty
+    - [x] Revalidate all 1,112 globally unique YAML mapping objects, 927 linked objects, 185 pending objects, reciprocal IDs, examples, 407 affected local links, and clean Markdown whitespace
 
 ### 2026-08-11 — English mapping source ownership normalized
 
