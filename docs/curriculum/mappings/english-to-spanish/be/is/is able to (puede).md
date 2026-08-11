@@ -28,21 +28,22 @@ target_features:
   mood: indicative
   verb_form: finite
 aliases:
-  - he is able to
-  - he's able to
-  - she is able to
-  - she's able to
-  - it is able to
-  - it's able to
+- he is able to
+- he's able to
+- she is able to
+- she's able to
+- it is able to
+- it's able to
 index_under:
-  - be
-  - is
-reverse_status: pending
-reverse_ids: []
+- be
+- is
+reverse_status: linked
+reverse_ids:
+- es-puede-ability--en-is-able-to
 status: draft
 examples:
-  - source: Ana is able to explain the activity.
-    target: Ana puede explicar la actividad.
+- source: Ana is able to explain the activity.
+  target: Ana puede explicar la actividad.
 ---
 
 # **is able to** → **puede**

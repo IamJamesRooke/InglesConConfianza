@@ -19,14 +19,15 @@ target_features:
   verb_form: infinitive
 aliases: []
 index_under:
-  - be
-  - base-form
-reverse_status: pending
-reverse_ids: []
+- be
+- base-form
+reverse_status: linked
+reverse_ids:
+- es-tener-cuidado-caution--en-be-careful
 status: draft
 examples:
-  - source: You need to be careful with that glass.
-    target: Necesitas tener cuidado con ese vaso.
+- source: You need to be careful with that glass.
+  target: Necesitas tener cuidado con ese vaso.
 ---
 
 # **be careful** → **tener cuidado**

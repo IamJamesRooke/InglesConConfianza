@@ -19,14 +19,15 @@ target_features:
   verb_form: participle
 aliases: []
 index_under:
-  - be
-  - been
-reverse_status: pending
-reverse_ids: []
+- be
+- been
+reverse_status: linked
+reverse_ids:
+- es-tenido-hambre-perfect-hunger--en-been-hungry
 status: draft
 examples:
-  - source: I have been hungry all morning.
-    target: He tenido hambre toda la mañana.
+- source: I have been hungry all morning.
+  target: He tenido hambre toda la mañana.
 ---
 
 # **been hungry** → **tenido hambre**

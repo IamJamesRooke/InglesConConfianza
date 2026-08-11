@@ -28,21 +28,22 @@ target_features:
   mood: indicative
   verb_form: finite
 aliases:
-  - he is ... years old
-  - he's ... years old
-  - she is ... years old
-  - she's ... years old
-  - it is ... years old
-  - it's ... years old
+- he is ... years old
+- he's ... years old
+- she is ... years old
+- she's ... years old
+- it is ... years old
+- it's ... years old
 index_under:
-  - be
-  - is
-reverse_status: pending
-reverse_ids: []
+- be
+- is
+reverse_status: linked
+reverse_ids:
+- es-tiene-anos-age--en-is-years-old
 status: draft
 examples:
-  - source: Ana is thirty years old.
-    target: Ana tiene treinta años.
+- source: Ana is thirty years old.
+  target: Ana tiene treinta años.
 ---
 
 # **is ... years old** → **tiene ... años**

@@ -19,14 +19,15 @@ target_features:
   verb_form: infinitive
 aliases: []
 index_under:
-  - be
-  - base-form
-reverse_status: pending
-reverse_ids: []
+- be
+- base-form
+reverse_status: linked
+reverse_ids:
+- es-poder-ability--en-be-able-to
 status: draft
 examples:
-  - source: I want to be able to explain the activity in English.
-    target: Quiero poder explicar la actividad en inglés.
+- source: I want to be able to explain the activity in English.
+  target: Quiero poder explicar la actividad en inglés.
 ---
 
 # **be able to** → **poder**

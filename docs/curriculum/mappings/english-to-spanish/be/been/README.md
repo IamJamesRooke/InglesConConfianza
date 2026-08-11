@@ -29,3 +29,14 @@ These objects close Spanish-to-English edges found while normalizing **ser**, **
 | **there will have been** | **habrá habido** | [open](there%20will%20have%20been%20(habr%C3%A1%20habido%20-%20future-prior-existence).md) |
 | **there would have been** | **habría habido** | [open](there%20would%20have%20been%20(habr%C3%ADa%20habido%20-%20conditional-prior-existence).md) |
 | **there had been** | **hubiese habido** | [open](there%20had%20been%20(hubiese%20habido%20-%20hypothetical-prior-existence).md) |
+
+## Phase 4B Atomic Mappings
+
+These database-ready objects were added while normalizing the **tener / poder** bilingual hub. Existing teaching and contrast lessons above remain unchanged.
+
+| Source | Target | Atomic lesson |
+|---|---|---|
+| **I had been able to** | **había podido** | [open](I%20had%20been%20able%20to%20%28hab%C3%ADa%20podido%20-%20past-perfect-ability%29.md) |
+| **I have been able to** | **he podido** | [open](I%20have%20been%20able%20to%20%28he%20podido%20-%20present-perfect-ability%29.md) |
+| **we have been able to** | **hemos podido** | [open](we%20have%20been%20able%20to%20%28hemos%20podido%20-%20present-perfect-ability%29.md) |
+| **we haven't been able to** | **no hemos podido** | [open](we%20haven%27t%20been%20able%20to%20%28no%20hemos%20podido%20-%20negative-present-perfect-ability%29.md) |

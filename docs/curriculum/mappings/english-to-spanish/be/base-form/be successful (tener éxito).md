@@ -19,14 +19,15 @@ target_features:
   verb_form: infinitive
 aliases: []
 index_under:
-  - be
-  - base-form
-reverse_status: pending
-reverse_ids: []
+- be
+- base-form
+reverse_status: linked
+reverse_ids:
+- es-tener-exito-achieve-success--en-be-successful
 status: draft
 examples:
-  - source: The project can be successful with a clear plan.
-    target: El proyecto puede tener éxito con un plan claro.
+- source: The project can be successful with a clear plan.
+  target: El proyecto puede tener éxito con un plan claro.
 ---
 
 # **be successful** → **tener éxito**

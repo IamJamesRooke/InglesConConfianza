@@ -19,14 +19,15 @@ target_features:
   verb_form: infinitive
 aliases: []
 index_under:
-  - be
-  - base-form
-reverse_status: pending
-reverse_ids: []
+- be
+- base-form
+reverse_status: linked
+reverse_ids:
+- es-tener-permiso-para-permission--en-be-allowed-to
 status: draft
 examples:
-  - source: Visitors are not allowed to enter this room.
-    target: Los visitantes no tienen permiso para entrar a este salón.
+- source: Visitors are not allowed to enter this room.
+  target: Los visitantes no tienen permiso para entrar a este salón.
 ---
 
 # **be allowed to** → **tener permiso para**

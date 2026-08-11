@@ -8,11 +8,11 @@
     - [x] Phase 1: define the canonical ownership, filename, YAML, reverse-link, validation, and phase-gate contract
     - [x] Phase 2: pilot the contract on Spanish **lo** and split the former **to / too / two** bundle by canonical ownership
     - [x] Phase 3: normalize English **be** forms and high-value expressions
-    - [ ] Phase 4: normalize the reverse **ser / estar / haber / tener / poder** hub
+    - [x] Phase 4: normalize the reverse **ser / estar / haber / tener / poder** hub
         - [x] Phase 4A: normalize **ser, estar**, and **haber**, including their source-form topologies and reciprocal **be** edges
         - [x] Mappings-only data-readiness checkpoint: pilot optional query metadata and define the boundary between mapping concepts and future app records
         - [x] Audit all 629 normalized mapping objects for complete canonical lemmas, taxonomy, grammatical features, aliases, accepted targets, and machine-safe target values
-        - [ ] Phase 4B: normalize **tener** and especially **poder**, then cross-audit **have, can, could, manage**, and remaining **be** expressions
+        - [x] Phase 4B: normalize **tener** and especially **poder**, then cross-audit **have, can, could, manage**, and remaining **be** expressions
     - [ ] Phase 5: rehome top-level multiword expressions under canonical headwords
     - [ ] Phase 6: normalize the remaining high-frequency bilingual hubs in bounded batches
     - [ ] Phase 7: complete the remaining mapping normalization
@@ -117,6 +117,20 @@
 - Spanish-to-English only. No other languages. If others want to fork the repo, that's fine. And can give AGENT instructions explaining exactly how the method was made.
 
 ## Completed timeline
+
+### 2026-08-11 — **Tener / poder** bilingual hub normalized
+
+- [x] Complete Phase 4B on Sol XHigh without filtering the retained teaching layer
+    - [x] Inventory 60 existing **tener / poder** source files, 607 lines, and 51 non-README teaching or contrast lessons before normalization
+    - [x] Preserve all 51 original teaching and contrast files byte-for-byte while extending only the two root READMEs with atomic form indexes
+    - [x] Add 99 Spanish **tener** objects covering possession, all modern non-**vosotros** simple forms, high-value perfect forms, age, physical states, obligation, desire, success, correctness, caution, and frequent fixed expressions
+    - [x] Add 118 Spanish **poder** objects covering all modern non-**vosotros** simple forms, positive and negative present ability, permission, requests, possibility, opportunity, successful and failed past attempts, perfect forms, and noun **poder**
+    - [x] Add 199 English reverse-hub objects under **have, can, could, manage, may, might, power, get**, remaining **be** forms, and directly relevant lexical heads
+    - [x] Create 171 new reciprocal bilingual pairs, close 46 previously pending **be → tener / poder** edges, and retain 28 independently useful English-source objects as explicitly pending rather than manufacturing reverse folders
+    - [x] Reuse the three existing canonical **haber** objects for **puede/podría haber** instead of creating duplicate IDs under **poder**
+    - [x] Keep **have got to** canonically under **have**, index it from **get**, and keep informal **gotta** as its own register-marked mapping
+    - [x] Extend the controlled taxonomy with possession, permission, possibility, opportunity, request, desire, success, and lexical-verb retrieval categories
+    - [x] Validate 1,045 globally unique mapping objects, complete Phase 4B metadata, reciprocal reverse surfaces and grammatical features, all modern simple **tener / poder** forms, JSON round trips, README coverage, 5,768 local links, and zero empty directories or formatting errors
 
 ### 2026-08-10 — Normalized mapping metadata completed
 

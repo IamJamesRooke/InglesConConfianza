@@ -27,15 +27,15 @@ target_features:
   verb_form: finite
 aliases: []
 index_under:
-  - be
-  - base-form
+- be
+- base-form
 reverse_status: linked
 reverse_ids:
-  - es-puede-haber-possible-existence--en-there-may-be
+- es-puede-haber-possible-existence--en-there-may-be
 status: draft
 examples:
-  - source: There may be another option.
-    target: Puede haber otra opción.
+- source: There may be another option.
+  target: Puede haber otra opción.
 ---
 
 # **there may be** → **puede haber**

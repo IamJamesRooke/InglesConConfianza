@@ -19,14 +19,15 @@ target_features:
   verb_form: infinitive
 aliases: []
 index_under:
-  - be
-  - base-form
-reverse_status: pending
-reverse_ids: []
+- be
+- base-form
+reverse_status: linked
+reverse_ids:
+- es-tener-calor-felt-temperature--en-be-hot
 status: draft
 examples:
-  - source: You may be hot in that jacket.
-    target: Puede que tengas calor con esa chaqueta.
+- source: You may be hot in that jacket.
+  target: Puede que tengas calor con esa chaqueta.
 ---
 
 # **be hot** → **tener calor**

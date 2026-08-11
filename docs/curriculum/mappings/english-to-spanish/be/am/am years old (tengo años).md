@@ -28,17 +28,18 @@ target_features:
   mood: indicative
   verb_form: finite
 aliases:
-  - I am ... years old
-  - I'm ... years old
+- I am ... years old
+- I'm ... years old
 index_under:
-  - be
-  - am
-reverse_status: pending
-reverse_ids: []
+- be
+- am
+reverse_status: linked
+reverse_ids:
+- es-tengo-anos-age--en-am-years-old
 status: draft
 examples:
-  - source: I am thirty years old.
-    target: Tengo treinta años.
+- source: I am thirty years old.
+  target: Tengo treinta años.
 ---
 
 # **am ... years old** → **tengo ... años**

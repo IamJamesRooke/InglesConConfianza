@@ -27,15 +27,15 @@ target_features:
   verb_form: finite
 aliases: []
 index_under:
-  - be
-  - base-form
+- be
+- base-form
 reverse_status: linked
 reverse_ids:
-  - es-podria-haber-possible-existence--en-there-could-be
+- es-podria-haber-possible-existence--en-there-could-be
 status: draft
 examples:
-  - source: There could be an error in the report.
-    target: Podría haber un error en el informe.
+- source: There could be an error in the report.
+  target: Podría haber un error en el informe.
 ---
 
 # **there could be** → **podría haber**

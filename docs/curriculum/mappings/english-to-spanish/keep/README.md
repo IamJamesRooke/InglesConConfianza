@@ -46,3 +46,11 @@
 | Sigue practicando, mantén la calma, ten en cuenta el plazo y asegúrate de mantenerme informada. | Keep practicing, keep calm, keep the deadline in mind, and make sure you keep me posted. |
 | La lluvia nos impidió avanzar, pero seguimos adelante, nos mantuvimos al día con el grupo y seguimos en contacto. | The rain kept us from moving, but we kept going, kept up with the group, and kept in touch. |
 | Ayer guardé el recibo, cumplí mi promesa y mantuve el secreto que siempre había guardado. | Yesterday I kept the receipt, kept my promise, and kept the secret I'd always kept. |
+
+## Phase 4B Atomic Mappings
+
+These database-ready objects were added while normalizing the **tener / poder** bilingual hub. Existing teaching and contrast lessons above remain unchanged.
+
+| Source | Target | Atomic lesson |
+|---|---|---|
+| **keep in mind** | **tener en cuenta** | [open](keep%20in%20mind%20%28tener%20en%20cuenta%20-%20remember-consideration%29.md) |

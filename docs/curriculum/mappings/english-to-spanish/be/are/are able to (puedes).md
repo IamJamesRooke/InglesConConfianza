@@ -28,17 +28,18 @@ target_features:
   mood: indicative
   verb_form: finite
 aliases:
-  - you are able to
-  - you're able to
+- you are able to
+- you're able to
 index_under:
-  - be
-  - are
-reverse_status: pending
-reverse_ids: []
+- be
+- are
+reverse_status: linked
+reverse_ids:
+- es-puedes-you-singular-ability--en-are-able-to
 status: draft
 examples:
-  - source: You are able to do it alone.
-    target: Puedes hacerlo solo.
+- source: You are able to do it alone.
+  target: Puedes hacerlo solo.
 ---
 
 # **are able to** → **puedes**

@@ -19,14 +19,15 @@ target_features:
   verb_form: infinitive
 aliases: []
 index_under:
-  - be
-  - base-form
-reverse_status: pending
-reverse_ids: []
+- be
+- base-form
+reverse_status: linked
+reverse_ids:
+- es-tener-sueno-sleepiness--en-be-sleepy
 status: draft
 examples:
-  - source: The children will be sleepy after dinner.
-    target: Los niños tendrán sueño después de la cena.
+- source: The children will be sleepy after dinner.
+  target: Los niños tendrán sueño después de la cena.
 ---
 
 # **be sleepy** → **tener sueño**

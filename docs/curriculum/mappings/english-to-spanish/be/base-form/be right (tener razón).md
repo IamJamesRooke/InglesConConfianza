@@ -19,14 +19,15 @@ target_features:
   verb_form: infinitive
 aliases: []
 index_under:
-  - be
-  - base-form
-reverse_status: pending
-reverse_ids: []
+- be
+- base-form
+reverse_status: linked
+reverse_ids:
+- es-tener-razon-correctness--en-be-right
 status: draft
 examples:
-  - source: You may be right about the schedule.
-    target: Puede que tengas razón sobre el horario.
+- source: You may be right about the schedule.
+  target: Puede que tengas razón sobre el horario.
 ---
 
 # **be right** → **tener razón**

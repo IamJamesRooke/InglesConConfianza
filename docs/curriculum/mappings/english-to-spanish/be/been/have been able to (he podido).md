@@ -28,17 +28,18 @@ target_features:
   mood: indicative
   verb_form: finite
 aliases:
-  - I have been able to
-  - I've been able to
+- I have been able to
+- I've been able to
 index_under:
-  - be
-  - been
-reverse_status: pending
-reverse_ids: []
+- be
+- been
+reverse_status: linked
+reverse_ids:
+- es-he-podido-first-singular-perfect-ability--en-have-been-able-to
 status: draft
 examples:
-  - source: I have been able to practice every day.
-    target: He podido practicar todos los días.
+- source: I have been able to practice every day.
+  target: He podido practicar todos los días.
 ---
 
 # **have been able to** → **he podido**

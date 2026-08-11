@@ -19,14 +19,15 @@ target_features:
   verb_form: infinitive
 aliases: []
 index_under:
-  - be
-  - base-form
-reverse_status: pending
-reverse_ids: []
+- be
+- base-form
+reverse_status: linked
+reverse_ids:
+- es-tener-suerte-good-fortune--en-be-lucky
 status: draft
 examples:
-  - source: We may be lucky and find a taxi quickly.
-    target: Puede que tengamos suerte y encontremos un taxi rápido.
+- source: We may be lucky and find a taxi quickly.
+  target: Puede que tengamos suerte y encontremos un taxi rápido.
 ---
 
 # **be lucky** → **tener suerte**

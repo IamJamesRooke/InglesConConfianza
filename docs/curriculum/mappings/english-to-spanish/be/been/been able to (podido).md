@@ -19,14 +19,15 @@ target_features:
   verb_form: participle
 aliases: []
 index_under:
-  - be
-  - been
-reverse_status: pending
-reverse_ids: []
+- be
+- been
+reverse_status: linked
+reverse_ids:
+- es-podido-perfect-ability--en-been-able-to
 status: draft
 examples:
-  - source: I haven't been able to call Ana yet.
-    target: Todavía no he podido llamar a Ana.
+- source: I haven't been able to call Ana yet.
+  target: Todavía no he podido llamar a Ana.
 ---
 
 # **been able to** → **podido**

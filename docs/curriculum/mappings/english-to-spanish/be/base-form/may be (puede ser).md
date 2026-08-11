@@ -26,18 +26,19 @@ target_features:
   mood: indicative
   verb_form: finite
 aliases:
-  - he may be
-  - she may be
-  - it may be
+- he may be
+- she may be
+- it may be
 index_under:
-  - be
-  - base-form
-reverse_status: pending
-reverse_ids: []
+- be
+- base-form
+reverse_status: linked
+reverse_ids:
+- es-puede-ser-possible-identity-characteristic--en-may-be
 status: draft
 examples:
-  - source: The delay may be a problem.
-    target: La demora puede ser un problema.
+- source: The delay may be a problem.
+  target: La demora puede ser un problema.
 ---
 
 # **may be** → **puede ser**

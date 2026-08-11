@@ -19,14 +19,15 @@ target_features:
   verb_form: participle
 aliases: []
 index_under:
-  - be
-  - been
-reverse_status: pending
-reverse_ids: []
+- be
+- been
+reverse_status: linked
+reverse_ids:
+- es-tenido-exito-achieved-success--en-been-successful
 status: draft
 examples:
-  - source: Ana has been very successful in her career.
-    target: Ana ha tenido mucho éxito en su carrera.
+- source: Ana has been very successful in her career.
+  target: Ana ha tenido mucho éxito en su carrera.
 ---
 
 # **been successful** → **tenido éxito**

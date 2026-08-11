@@ -6,14 +6,14 @@ English **be** collapses distinctions that Spanish expresses through **ser, esta
 
 | English form | Atomic mappings | What the folder separates |
 |---|---:|---|
-| [Base form and expressions](base-form/README.md) | 175 | **be**, modal forms, frequent **be + complement** expressions, subject-specific future and conditional forms, and existential **there be** |
+| [Base form and expressions](base-form/README.md) | 189 | **be**, modal forms, frequent **be + complement** expressions, subject-specific future and conditional forms, and existential **there be** |
 | [**am**](am/README.md) | 13 | first-person **soy / estoy**, subordinate **sea / esté**, future, ability, age, and common **tener** expressions |
-| [**is**](is/README.md) | 24 | **es / está / sea / esté**, clock time, price, existence, age, and fixed present expressions |
-| [**are**](are/README.md) | 24 | **eres / estás / somos / estamos / son / están**, subordinate forms, existence, future, and ability |
-| [**was**](was/README.md) | 25 | subject, **ser / estar**, completed versus background past, **haber**, subordinate forms, ability, and fixed expressions |
-| [**were**](were/README.md) | 38 | subject, **ser / estar**, completed versus background past, existence, alternate subjunctive forms, ability, and hypotheticals |
-| [**been**](been/README.md) | 16 | **sido / estado / habido** and frequent perfect or existential expressions |
-| [**being**](being/README.md) | 6 | **siendo / estando / habiendo / ser / estar** and **human being** |
+| [**is**](is/README.md) | 25 | **es / está / sea / esté**, clock time, price, existence, age, and fixed present expressions |
+| [**are**](are/README.md) | 27 | **eres / estás / somos / estamos / son / están**, subordinate forms, existence, future, ability, and frequent **tener** expressions |
+| [**was**](was/README.md) | 28 | subject, **ser / estar**, completed versus background past, **haber**, ability, permission, and fixed expressions |
+| [**were**](were/README.md) | 43 | subject, **ser / estar**, completed versus background past, existence, ability, permission, and hypotheticals |
+| [**been**](been/README.md) | 20 | **sido / estado / habido / podido** and frequent perfect or existential expressions |
+| [**being**](being/README.md) | 7 | **siendo / estando / habiendo / pudiendo / ser / estar** and **human being** |
 
 Every non-README file in these eight folders is one English source form or expression mapped to one Spanish meaning. Repeated source forms are deliberate: context and subject determine which Spanish output applies.
 

@@ -27,15 +27,15 @@ target_features:
   verb_form: finite
 aliases: []
 index_under:
-  - be
-  - base-form
+- be
+- base-form
 reverse_status: linked
 reverse_ids:
-  - es-podria-haber-tentative-existence--en-there-might-be
+- es-podria-haber-tentative-existence--en-there-might-be
 status: draft
 examples:
-  - source: There might be a delay this afternoon.
-    target: Podría haber una demora esta tarde.
+- source: There might be a delay this afternoon.
+  target: Podría haber una demora esta tarde.
 ---
 
 # **there might be** → **podría haber**

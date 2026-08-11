@@ -19,14 +19,15 @@ target_features:
   verb_form: infinitive
 aliases: []
 index_under:
-  - be
-  - base-form
-reverse_status: pending
-reverse_ids: []
+- be
+- base-form
+reverse_status: linked
+reverse_ids:
+- es-tener-afan-time-pressure--en-be-in-a-hurry
 status: draft
 examples:
-  - source: I don't want to be in a hurry tomorrow.
-    target: No quiero tener afán mañana.
+- source: I don't want to be in a hurry tomorrow.
+  target: No quiero tener afán mañana.
 ---
 
 # **be in a hurry** → **tener afán**

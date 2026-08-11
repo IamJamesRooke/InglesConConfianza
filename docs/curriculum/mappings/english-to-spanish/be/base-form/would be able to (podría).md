@@ -15,44 +15,45 @@ taxonomy:
   subcategory: ability-expression
 source_features:
   grammatical_person:
-    - first
-    - third
+  - first
+  - third
   referent_person:
-    - first
-    - third
+  - first
+  - third
   number: singular
   tense: conditional
   mood: indicative
   verb_form: finite
 target_features:
   grammatical_person:
-    - first
-    - third
+  - first
+  - third
   referent_person:
-    - first
-    - third
+  - first
+  - third
   number: singular
   tense: conditional
   mood: indicative
   verb_form: finite
 aliases:
-  - I would be able to
-  - I'd be able to
-  - he would be able to
-  - he'd be able to
-  - she would be able to
-  - she'd be able to
-  - it would be able to
-  - it'd be able to
+- I would be able to
+- I'd be able to
+- he would be able to
+- he'd be able to
+- she would be able to
+- she'd be able to
+- it would be able to
+- it'd be able to
 index_under:
-  - be
-  - base-form
-reverse_status: pending
-reverse_ids: []
+- be
+- base-form
+reverse_status: linked
+reverse_ids:
+- es-podria-conditional-ability--en-would-be-able-to
 status: draft
 examples:
-  - source: Ana would be able to help with more time.
-    target: Ana podría ayudar si tuviera más tiempo.
+- source: Ana would be able to help with more time.
+  target: Ana podría ayudar si tuviera más tiempo.
 ---
 
 # **would be able to** → **podría**

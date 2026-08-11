@@ -19,14 +19,15 @@ target_features:
   verb_form: infinitive
 aliases: []
 index_under:
-  - be
-  - base-form
-reverse_status: pending
-reverse_ids: []
+- be
+- base-form
+reverse_status: linked
+reverse_ids:
+- es-tener-frio-felt-temperature--en-be-cold
 status: draft
 examples:
-  - source: I don't want to be cold on the bus.
-    target: No quiero tener frío en el bus.
+- source: I don't want to be cold on the bus.
+  target: No quiero tener frío en el bus.
 ---
 
 # **be cold** → **tener frío**

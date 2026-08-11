@@ -15,40 +15,41 @@ taxonomy:
   subcategory: fixed-expression
 source_features:
   grammatical_person:
-    - first
-    - third
+  - first
+  - third
   referent_person:
-    - first
-    - third
+  - first
+  - third
   number: singular
   tense: past
   mood: indicative
   verb_form: finite
 target_features:
   grammatical_person:
-    - first
-    - third
+  - first
+  - third
   referent_person:
-    - first
-    - third
+  - first
+  - third
   number: singular
   tense: past
   mood: indicative
   verb_form: finite
 aliases:
-  - I was hungry
-  - he was hungry
-  - she was hungry
-  - it was hungry
+- I was hungry
+- he was hungry
+- she was hungry
+- it was hungry
 index_under:
-  - be
-  - was
-reverse_status: pending
-reverse_ids: []
+- be
+- was
+reverse_status: linked
+reverse_ids:
+- es-tenia-hambre-background-hunger--en-was-hungry
 status: draft
 examples:
-  - source: I was hungry after the meeting.
-    target: Tenía hambre después de la reunión.
+- source: I was hungry after the meeting.
+  target: Tenía hambre después de la reunión.
 ---
 
 # **was hungry** → **tenía hambre**

@@ -15,38 +15,39 @@ taxonomy:
   subcategory: modal-expression
 source_features:
   grammatical_person:
-    - first
-    - third
+  - first
+  - third
   referent_person:
-    - first
-    - third
+  - first
+  - third
   number: singular
   verb_form: finite
 target_features:
   grammatical_person:
-    - first
-    - third
+  - first
+  - third
   referent_person:
-    - first
-    - third
+  - first
+  - third
   number: singular
   tense: conditional
   mood: indicative
   verb_form: finite
 aliases:
-  - I could be
-  - he could be
-  - she could be
-  - it could be
+- I could be
+- he could be
+- she could be
+- it could be
 index_under:
-  - be
-  - base-form
-reverse_status: pending
-reverse_ids: []
+- be
+- base-form
+reverse_status: linked
+reverse_ids:
+- es-podria-ser-possible-identity-characteristic--en-could-be
 status: draft
 examples:
-  - source: The noise could be a problem.
-    target: El ruido podría ser un problema.
+- source: The noise could be a problem.
+  target: El ruido podría ser un problema.
 ---
 
 # **could be** → **podría ser**

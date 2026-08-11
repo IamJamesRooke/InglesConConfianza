@@ -37,3 +37,13 @@ These objects close Spanish-to-English edges found while normalizing **ser**, **
 | **are** | **estemos** | [open](are%20(estemos%20-%20we-subordinate-state).md) |
 | **are** | **estén** | [open](are%20(est%C3%A9n%20-%20plural-subordinate-state).md) |
 | **there are** | **haya** | [open](there%20are%20(haya%20-%20subordinate-existence).md) |
+
+## Phase 4B Atomic Mappings
+
+These database-ready objects were added while normalizing the **tener / poder** bilingual hub. Existing teaching and contrast lessons above remain unchanged.
+
+| Source | Target | Atomic lesson |
+|---|---|---|
+| **they are cold** | **tienen frío** | [open](they%20are%20cold%20%28tienen%20fr%C3%ADo%20-%20cold%29.md) |
+| **we are hot** | **tenemos calor** | [open](we%20are%20hot%20%28tenemos%20calor%20-%20heat%29.md) |
+| **you are right** | **tienes razón** | [open](you%20are%20right%20%28tienes%20raz%C3%B3n%20-%20correctness%29.md) |

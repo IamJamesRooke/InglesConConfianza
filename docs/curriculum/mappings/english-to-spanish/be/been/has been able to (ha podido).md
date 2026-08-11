@@ -28,18 +28,19 @@ target_features:
   mood: indicative
   verb_form: finite
 aliases:
-  - he has been able to
-  - she has been able to
-  - it has been able to
+- he has been able to
+- she has been able to
+- it has been able to
 index_under:
-  - be
-  - been
-reverse_status: pending
-reverse_ids: []
+- be
+- been
+reverse_status: linked
+reverse_ids:
+- es-ha-podido-third-singular-perfect-ability--en-has-been-able-to
 status: draft
 examples:
-  - source: Ana has been able to practice every day.
-    target: Ana ha podido practicar todos los días.
+- source: Ana has been able to practice every day.
+  target: Ana ha podido practicar todos los días.
 ---
 
 # **has been able to** → **ha podido**

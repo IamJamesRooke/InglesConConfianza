@@ -37,3 +37,11 @@ These objects close Spanish-to-English edges found while normalizing **ser**, **
 | **is meant for** | **es para** | [open](is%20meant%20for%20(es%20para%20-%20intended-purpose).md) |
 | **there is** | **haya** | [open](there%20is%20(haya%20-%20subordinate-existence).md) |
 | **it is necessary to** | **hay que** | [open](it%20is%20necessary%20to%20(hay%20que%20-%20necessity).md) |
+
+## Phase 4B Atomic Mappings
+
+These database-ready objects were added while normalizing the **tener / poder** bilingual hub. Existing teaching and contrast lessons above remain unchanged.
+
+| Source | Target | Atomic lesson |
+|---|---|---|
+| **she is thirsty** | **tiene sed** | [open](she%20is%20thirsty%20%28tiene%20sed%20-%20thirst%29.md) |

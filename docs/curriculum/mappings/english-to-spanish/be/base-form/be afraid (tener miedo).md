@@ -19,14 +19,15 @@ target_features:
   verb_form: infinitive
 aliases: []
 index_under:
-  - be
-  - base-form
-reverse_status: pending
-reverse_ids: []
+- be
+- base-form
+reverse_status: linked
+reverse_ids:
+- es-tener-miedo-fear--en-be-afraid
 status: draft
 examples:
-  - source: You don't need to be afraid of making mistakes.
-    target: No necesitas tener miedo de cometer errores.
+- source: You don't need to be afraid of making mistakes.
+  target: No necesitas tener miedo de cometer errores.
 ---
 
 # **be afraid** → **tener miedo**

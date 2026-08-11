@@ -19,3 +19,11 @@ These objects close Spanish-to-English edges found while normalizing **ser**, **
 | English source | Spanish target | Atomic lesson |
 |---|---|---|
 | **there being** | **habiendo** | [open](there%20being%20(habiendo%20-%20formal-impersonal-existence).md) |
+
+## Phase 4B Atomic Mappings
+
+These database-ready objects were added while normalizing the **tener / poder** bilingual hub. Existing teaching and contrast lessons above remain unchanged.
+
+| Source | Target | Atomic lesson |
+|---|---|---|
+| **being able to** | **pudiendo** | [open](being%20able%20to%20%28pudiendo%20-%20ability%29.md) |

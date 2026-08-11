@@ -15,40 +15,41 @@ taxonomy:
   subcategory: fixed-expression
 source_features:
   grammatical_person:
-    - first
-    - third
+  - first
+  - third
   referent_person:
-    - first
-    - third
+  - first
+  - third
   number: singular
   tense: past
   mood: indicative
   verb_form: finite
 target_features:
   grammatical_person:
-    - first
-    - third
+  - first
+  - third
   referent_person:
-    - first
-    - third
+  - first
+  - third
   number: singular
   tense: past
   mood: indicative
   verb_form: finite
 aliases:
-  - I was ... years old
-  - he was ... years old
-  - she was ... years old
-  - it was ... years old
+- I was ... years old
+- he was ... years old
+- she was ... years old
+- it was ... years old
 index_under:
-  - be
-  - was
-reverse_status: pending
-reverse_ids: []
+- be
+- was
+reverse_status: linked
+reverse_ids:
+- es-tenia-anos-past-age--en-was-years-old
 status: draft
 examples:
-  - source: Ana was five years old when she moved.
-    target: Ana tenía cinco años cuando se mudó.
+- source: Ana was five years old when she moved.
+  target: Ana tenía cinco años cuando se mudó.
 ---
 
 # **was ... years old** → **tenía ... años**

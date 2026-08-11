@@ -19,14 +19,15 @@ target_features:
   verb_form: infinitive
 aliases: []
 index_under:
-  - be
-  - base-form
-reverse_status: pending
-reverse_ids: []
+- be
+- base-form
+reverse_status: linked
+reverse_ids:
+- es-tener-hambre-hunger--en-be-hungry
 status: draft
 examples:
-  - source: I don't want to be hungry during the meeting.
-    target: No quiero tener hambre durante la reunión.
+- source: I don't want to be hungry during the meeting.
+  target: No quiero tener hambre durante la reunión.
 ---
 
 # **be hungry** → **tener hambre**

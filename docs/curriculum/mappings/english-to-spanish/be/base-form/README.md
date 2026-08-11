@@ -188,3 +188,24 @@ These objects close Spanish-to-English edges found while normalizing **ser**, **
 | **would be** | **estaríamos** | [open](would%20be%20(estar%C3%ADamos%20-%20conditional-we-state-or-location).md) |
 | **would be** | **estarían** | [open](would%20be%20(estar%C3%ADan%20-%20conditional-plural-state-or-location).md) |
 | **let there be** | **haya** | [open](let%20there%20be%20(haya%20-%20jussive-existence).md) |
+
+## Phase 4B Atomic Mappings
+
+These database-ready objects were added while normalizing the **tener / poder** bilingual hub. Existing teaching and contrast lessons above remain unchanged.
+
+| Source | Target | Atomic lesson |
+|---|---|---|
+| **I will be able to** | **podré** | [open](I%20will%20be%20able%20to%20%28podr%C3%A9%20-%20future-ability%29.md) |
+| **be careful** | **ten cuidado** | [open](be%20careful%20%28ten%20cuidado%20-%20informal-warning%29.md) |
+| **be careful** | **tenga cuidado** | [open](be%20careful%20%28tenga%20cuidado%20-%20formal-warning%29.md) |
+| **be careful** | **tengan cuidado** | [open](be%20careful%20%28tengan%20cuidado%20-%20plural-warning%29.md) |
+| **be in a hurry** | **tener prisa** | [open](be%20in%20a%20hurry%20%28tener%20prisa%20-%20hurry%29.md) |
+| **be patient** | **tener paciencia** | [open](be%20patient%20%28tener%20paciencia%20-%20patience%29.md) |
+| **don't be afraid** | **no tengas miedo** | [open](don%27t%20be%20afraid%20%28no%20tengas%20miedo%20-%20negative-informal-reassurance%29.md) |
+| **might be able to** | **quizá pueda** | [open](might%20be%20able%20to%20%28quiz%C3%A1%20pueda%20-%20possible-ability%29.md) |
+| **they will be able to** | **podrán** | [open](they%20will%20be%20able%20to%20%28podr%C3%A1n%20-%20future-ability%29.md) |
+| **they would be able to** | **podrían** | [open](they%20would%20be%20able%20to%20%28podr%C3%ADan%20-%20conditional-explicit-ability%29.md) |
+| **we will be able to** | **podremos** | [open](we%20will%20be%20able%20to%20%28podremos%20-%20future-ability%29.md) |
+| **we would be able to** | **podríamos** | [open](we%20would%20be%20able%20to%20%28podr%C3%ADamos%20-%20conditional-explicit-ability%29.md) |
+| **you will be able to** | **podrás** | [open](you%20will%20be%20able%20to%20%28podr%C3%A1s%20-%20future-ability%29.md) |
+| **you would be able to** | **podrías** | [open](you%20would%20be%20able%20to%20%28podr%C3%ADas%20-%20conditional-explicit-ability%29.md) |

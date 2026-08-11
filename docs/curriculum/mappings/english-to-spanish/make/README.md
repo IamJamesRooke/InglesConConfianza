@@ -28,3 +28,11 @@
 | Hice café, hice una llamada, tomé una decisión y me aseguré de no cometer ningún error. | I made coffee, made a call, made a decision, and made sure I didn't make any mistakes. |
 | El retraso nos hizo cambiar de plan, pero nos las arreglamos, progresamos y logramos llegar. | The delay made us change our plans, but we made do, made progress, and made it. |
 | La empleada hizo una mesa de madera y aseguró que el trabajo bien hecho marcaría una diferencia. | The maid made a table made of wood and made sure the well-made work would make a difference. |
+
+## Phase 4B Atomic Mappings
+
+These database-ready objects were added while normalizing the **tener / poder** bilingual hub. Existing teaching and contrast lessons above remain unchanged.
+
+| Source | Target | Atomic lesson |
+|---|---|---|
+| **make sense** | **tener sentido** | [open](make%20sense%20%28tener%20sentido%20-%20logical-coherence%29.md) |

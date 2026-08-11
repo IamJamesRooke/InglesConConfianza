@@ -28,17 +28,18 @@ target_features:
   mood: indicative
   verb_form: finite
 aliases:
-  - we are able to
-  - we're able to
+- we are able to
+- we're able to
 index_under:
-  - be
-  - are
-reverse_status: pending
-reverse_ids: []
+- be
+- are
+reverse_status: linked
+reverse_ids:
+- es-podemos-we-ability--en-are-able-to
 status: draft
 examples:
-  - source: We are able to finish today.
-    target: Podemos terminar hoy.
+- source: We are able to finish today.
+  target: Podemos terminar hoy.
 ---
 
 # **are able to** → **podemos**

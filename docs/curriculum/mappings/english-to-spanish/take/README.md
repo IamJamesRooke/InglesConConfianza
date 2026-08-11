@@ -25,3 +25,11 @@ English **take** maps to different Spanish verbs for receiving, carrying away, t
 
 - [Take it there](09-direction-away.md)
 - [Take something](10-pick-up-or-select.md)
+
+## Phase 4B Atomic Mappings
+
+These database-ready objects were added while normalizing the **tener / poder** bilingual hub. Existing teaching and contrast lessons above remain unchanged.
+
+| Source | Target | Atomic lesson |
+|---|---|---|
+| **take into account** | **tener en cuenta** | [open](take%20into%20account%20%28tener%20en%20cuenta%20-%20consideration%29.md) |

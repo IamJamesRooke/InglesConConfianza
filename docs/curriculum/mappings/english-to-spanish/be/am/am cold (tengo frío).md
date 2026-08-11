@@ -28,17 +28,18 @@ target_features:
   mood: indicative
   verb_form: finite
 aliases:
-  - I am cold
-  - I'm cold
+- I am cold
+- I'm cold
 index_under:
-  - be
-  - am
-reverse_status: pending
-reverse_ids: []
+- be
+- am
+reverse_status: linked
+reverse_ids:
+- es-tengo-frio-felt-temperature--en-am-cold
 status: draft
 examples:
-  - source: I am cold, but the coffee is hot.
-    target: Tengo frío, pero el café está caliente.
+- source: I am cold, but the coffee is hot.
+  target: Tengo frío, pero el café está caliente.
 ---
 
 # **am cold** → **tengo frío**

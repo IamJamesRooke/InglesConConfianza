@@ -35,3 +35,28 @@ The learner should be able to answer these without translating word by word:
 7. How does **it got sold** differ from **it was sold**?
 8. Why are **I got to do it** and **I gotta do it** different?
 9. How can **I got it** and **I'll get it to you** replace more specific verbs?
+
+## Phase 4B Atomic Mappings
+
+These database-ready objects were added while normalizing the **tener / poder** bilingual hub. Existing teaching and contrast lessons above remain unchanged.
+
+| Source | Target | Atomic lesson |
+|---|---|---|
+| **I didn't get to** | **no pude** | [open](I%20didn%27t%20get%20to%20%28no%20pude%20-%20missed-past-opportunity%29.md) |
+| **I get to** | **puedo** | [open](I%20get%20to%20%28puedo%20-%20present-opportunity%29.md) |
+| **I got to** | **pude** | [open](I%20got%20to%20%28pude%20-%20past-opportunity%29.md) |
+| **get a chance to** | **tener oportunidad de** | [open](get%20a%20chance%20to%20%28tener%20oportunidad%20de%20-%20opportunity%29.md) |
+| **she didn't get to** | **no pudo** | [open](she%20didn%27t%20get%20to%20%28no%20pudo%20-%20missed-past-opportunity%29.md) |
+| **she gets to** | **puede** | [open](she%20gets%20to%20%28puede%20-%20present-opportunity%29.md) |
+| **she got to** | **pudo** | [open](she%20got%20to%20%28pudo%20-%20past-opportunity%29.md) |
+| **they didn't get to** | **no pudieron** | [open](they%20didn%27t%20get%20to%20%28no%20pudieron%20-%20missed-past-opportunity%29.md) |
+| **they get to** | **pueden** | [open](they%20get%20to%20%28pueden%20-%20present-opportunity%29.md) |
+| **they got to** | **pudieron** | [open](they%20got%20to%20%28pudieron%20-%20past-opportunity%29.md) |
+| **we didn't get to** | **no pudimos** | [open](we%20didn%27t%20get%20to%20%28no%20pudimos%20-%20missed-past-opportunity%29.md) |
+| **we get to** | **podemos** | [open](we%20get%20to%20%28podemos%20-%20present-opportunity%29.md) |
+| **we got to** | **pudimos** | [open](we%20got%20to%20%28pudimos%20-%20past-opportunity%29.md) |
+| **you didn't get to** | **no pudiste** | [open](you%20didn%27t%20get%20to%20%28no%20pudiste%20-%20missed-past-opportunity%29.md) |
+| **you get to** | **puedes** | [open](you%20get%20to%20%28puedes%20-%20present-opportunity%29.md) |
+| **you got to** | **pudiste** | [open](you%20got%20to%20%28pudiste%20-%20past-opportunity%29.md) |
+
+The obligation expression **have got to** is canonically stored under [**have**](../have/expressions/have%20got%20to%20%28tener%20que%20-%20present-obligation%29.md) and indexed here because students also retrieve it through the **get / got** sound family. Informal **gotta** remains a separate register-marked object.

@@ -28,18 +28,19 @@ target_features:
   mood: indicative
   verb_form: finite
 aliases:
-  - he was able to
-  - she was able to
-  - it was able to
+- he was able to
+- she was able to
+- it was able to
 index_under:
-  - be
-  - was
-reverse_status: pending
-reverse_ids: []
+- be
+- was
+reverse_status: linked
+reverse_ids:
+- es-pudo-past-ability-or-success--en-was-able-to
 status: draft
 examples:
-  - source: Ana was able to finish the report.
-    target: Ana pudo terminar el informe.
+- source: Ana was able to finish the report.
+  target: Ana pudo terminar el informe.
 ---
 
 # **was able to** → **pudo**

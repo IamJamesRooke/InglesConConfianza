@@ -19,14 +19,15 @@ target_features:
   verb_form: infinitive
 aliases: []
 index_under:
-  - be
-  - base-form
-reverse_status: pending
-reverse_ids: []
+- be
+- base-form
+reverse_status: linked
+reverse_ids:
+- es-tener-afan-time-pressure--en-be-in-a-rush
 status: draft
 examples:
-  - source: We may be in a rush after the meeting.
-    target: Puede que tengamos afán después de la reunión.
+- source: We may be in a rush after the meeting.
+  target: Puede que tengamos afán después de la reunión.
 ---
 
 # **be in a rush** → **tener afán**

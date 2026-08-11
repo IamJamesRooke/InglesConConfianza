@@ -15,38 +15,39 @@ taxonomy:
   subcategory: modal-expression
 source_features:
   grammatical_person:
-    - first
-    - third
+  - first
+  - third
   referent_person:
-    - first
-    - third
+  - first
+  - third
   number: singular
   verb_form: finite
 target_features:
   grammatical_person:
-    - first
-    - third
+  - first
+  - third
   referent_person:
-    - first
-    - third
+  - first
+  - third
   number: singular
   tense: conditional
   mood: indicative
   verb_form: finite
 aliases:
-  - I might be
-  - he might be
-  - she might be
-  - it might be
+- I might be
+- he might be
+- she might be
+- it might be
 index_under:
-  - be
-  - base-form
-reverse_status: pending
-reverse_ids: []
+- be
+- base-form
+reverse_status: linked
+reverse_ids:
+- es-podria-ser-tentative-identity-characteristic--en-might-be
 status: draft
 examples:
-  - source: That might be the best option.
-    target: Esa podría ser la mejor opción.
+- source: That might be the best option.
+  target: Esa podría ser la mejor opción.
 ---
 
 # **might be** → **podría ser**

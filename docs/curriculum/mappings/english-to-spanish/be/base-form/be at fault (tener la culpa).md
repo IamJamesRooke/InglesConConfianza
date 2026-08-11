@@ -19,14 +19,15 @@ target_features:
   verb_form: infinitive
 aliases: []
 index_under:
-  - be
-  - base-form
-reverse_status: pending
-reverse_ids: []
+- be
+- base-form
+reverse_status: linked
+reverse_ids:
+- es-tener-la-culpa-blame--en-be-at-fault
 status: draft
 examples:
-  - source: Neither driver wants to be at fault.
-    target: Ninguno de los conductores quiere tener la culpa.
+- source: Neither driver wants to be at fault.
+  target: Ninguno de los conductores quiere tener la culpa.
 ---
 
 # **be at fault** → **tener la culpa**

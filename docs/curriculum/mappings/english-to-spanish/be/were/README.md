@@ -51,3 +51,15 @@ These objects close Spanish-to-English edges found while normalizing **ser**, **
 | **were** | **estuviésemos** | [open](were%20(estuvi%C3%A9semos%20-%20hypothetical-first-plural-state).md) |
 | **were** | **estuviesen** | [open](were%20(estuviesen%20-%20hypothetical-plural-state).md) |
 | **there were** | **hubiese** | [open](there%20were%20(hubiese%20-%20hypothetical-existence).md) |
+
+## Phase 4B Atomic Mappings
+
+These database-ready objects were added while normalizing the **tener / poder** bilingual hub. Existing teaching and contrast lessons above remain unchanged.
+
+| Source | Target | Atomic lesson |
+|---|---|---|
+| **they were allowed to** | **podían** | [open](they%20were%20allowed%20to%20%28pod%C3%ADan%20-%20repeated-past-permission%29.md) |
+| **we were able to** | **pudimos** | [open](we%20were%20able%20to%20%28pudimos%20-%20specific-past-success%29.md) |
+| **we were allowed to** | **podíamos** | [open](we%20were%20allowed%20to%20%28pod%C3%ADamos%20-%20repeated-past-permission%29.md) |
+| **you were able to** | **pudiste** | [open](you%20were%20able%20to%20%28pudiste%20-%20specific-past-success%29.md) |
+| **you were allowed to** | **podías** | [open](you%20were%20allowed%20to%20%28pod%C3%ADas%20-%20repeated-past-permission%29.md) |

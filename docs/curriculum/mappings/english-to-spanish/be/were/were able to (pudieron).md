@@ -28,16 +28,17 @@ target_features:
   mood: indicative
   verb_form: finite
 aliases:
-  - they were able to
+- they were able to
 index_under:
-  - be
-  - were
-reverse_status: pending
-reverse_ids: []
+- be
+- were
+reverse_status: linked
+reverse_ids:
+- es-pudieron-past-plural-ability-or-success--en-were-able-to
 status: draft
 examples:
-  - source: They were able to finish the report.
-    target: Pudieron terminar el informe.
+- source: They were able to finish the report.
+  target: Pudieron terminar el informe.
 ---
 
 # **were able to** → **pudieron**

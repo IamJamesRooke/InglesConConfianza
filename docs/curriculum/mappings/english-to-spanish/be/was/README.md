@@ -38,3 +38,13 @@ These objects close Spanish-to-English edges found while normalizing **ser**, **
 | **was** | **estuviese** | [open](was%20(estuviese%20-%20subordinate-third-person-state).md) |
 | **there was** | **hubiera** | [open](there%20was%20(hubiera%20-%20hypothetical-singular-existence).md) |
 | **there was** | **hubiese** | [open](there%20was%20(hubiese%20-%20hypothetical-singular-existence).md) |
+
+## Phase 4B Atomic Mappings
+
+These database-ready objects were added while normalizing the **tener / poder** bilingual hub. Existing teaching and contrast lessons above remain unchanged.
+
+| Source | Target | Atomic lesson |
+|---|---|---|
+| **I was able to** | **pude** | [open](I%20was%20able%20to%20%28pude%20-%20specific-past-success%29.md) |
+| **I was allowed to** | **podía** | [open](I%20was%20allowed%20to%20%28pod%C3%ADa%20-%20repeated-past-permission%29.md) |
+| **she was lucky** | **tuvo suerte** | [open](she%20was%20lucky%20%28tuvo%20suerte%20-%20luck%29.md) |

@@ -28,21 +28,22 @@ target_features:
   mood: indicative
   verb_form: finite
 aliases:
-  - he will be able to
-  - he'll be able to
-  - she will be able to
-  - she'll be able to
-  - it will be able to
-  - it'll be able to
+- he will be able to
+- he'll be able to
+- she will be able to
+- she'll be able to
+- it will be able to
+- it'll be able to
 index_under:
-  - be
-  - base-form
-reverse_status: pending
-reverse_ids: []
+- be
+- base-form
+reverse_status: linked
+reverse_ids:
+- es-podra-future-ability--en-will-be-able-to
 status: draft
 examples:
-  - source: Ana will be able to help tomorrow.
-    target: Ana podrá ayudar mañana.
+- source: Ana will be able to help tomorrow.
+  target: Ana podrá ayudar mañana.
 ---
 
 # **will be able to** → **podrá**

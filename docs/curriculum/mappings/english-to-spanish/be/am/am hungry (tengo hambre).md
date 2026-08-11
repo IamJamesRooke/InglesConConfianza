@@ -28,17 +28,18 @@ target_features:
   mood: indicative
   verb_form: finite
 aliases:
-  - I am hungry
-  - I'm hungry
+- I am hungry
+- I'm hungry
 index_under:
-  - be
-  - am
-reverse_status: pending
-reverse_ids: []
+- be
+- am
+reverse_status: linked
+reverse_ids:
+- es-tengo-hambre-hunger--en-am-hungry
 status: draft
 examples:
-  - source: I am hungry after the meeting.
-    target: Tengo hambre después de la reunión.
+- source: I am hungry after the meeting.
+  target: Tengo hambre después de la reunión.
 ---
 
 # **am hungry** → **tengo hambre**

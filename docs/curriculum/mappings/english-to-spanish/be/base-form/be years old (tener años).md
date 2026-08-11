@@ -19,14 +19,15 @@ target_features:
   verb_form: infinitive
 aliases: []
 index_under:
-  - be
-  - base-form
-reverse_status: pending
-reverse_ids: []
+- be
+- base-form
+reverse_status: linked
+reverse_ids:
+- es-tener-anos-age--en-be-years-old
 status: draft
 examples:
-  - source: You have to be eighteen years old to vote.
-    target: Tienes que tener dieciocho años para votar.
+- source: You have to be eighteen years old to vote.
+  target: Tienes que tener dieciocho años para votar.
 ---
 
 # **be ... years old** → **tener ... años**

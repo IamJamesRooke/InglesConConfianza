@@ -28,17 +28,18 @@ target_features:
   mood: indicative
   verb_form: finite
 aliases:
-  - I am in a hurry
-  - I'm in a hurry
+- I am in a hurry
+- I'm in a hurry
 index_under:
-  - be
-  - am
-reverse_status: pending
-reverse_ids: []
+- be
+- am
+reverse_status: linked
+reverse_ids:
+- es-tengo-afan-time-pressure--en-am-in-a-hurry
 status: draft
 examples:
-  - source: I am in a hurry, so I'll call you later.
-    target: Tengo afán, así que te llamo más tarde.
+- source: I am in a hurry, so I'll call you later.
+  target: Tengo afán, así que te llamo más tarde.
 ---
 
 # **am in a hurry** → **tengo afán**

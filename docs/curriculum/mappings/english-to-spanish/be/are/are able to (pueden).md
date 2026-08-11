@@ -15,11 +15,11 @@ taxonomy:
   subcategory: ability-expression
 source_features:
   grammatical_person:
-    - second
-    - third
+  - second
+  - third
   referent_person:
-    - second
-    - third
+  - second
+  - third
   number: plural
   tense: present
   mood: indicative
@@ -27,26 +27,27 @@ source_features:
 target_features:
   grammatical_person: third
   referent_person:
-    - second
-    - third
+  - second
+  - third
   number: plural
   tense: present
   mood: indicative
   verb_form: finite
 aliases:
-  - you are able to
-  - you're able to
-  - they are able to
-  - they're able to
+- you are able to
+- you're able to
+- they are able to
+- they're able to
 index_under:
-  - be
-  - are
-reverse_status: pending
-reverse_ids: []
+- be
+- are
+reverse_status: linked
+reverse_ids:
+- es-pueden-they-or-you-plural-ability--en-are-able-to
 status: draft
 examples:
-  - source: They are able to help, and you are able to wait.
-    target: Ellos pueden ayudar y ustedes pueden esperar.
+- source: They are able to help, and you are able to wait.
+  target: Ellos pueden ayudar y ustedes pueden esperar.
 ---
 
 # **are able to** → **pueden**

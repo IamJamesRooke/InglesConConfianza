@@ -28,17 +28,18 @@ target_features:
   mood: indicative
   verb_form: finite
 aliases:
-  - I am able to
-  - I'm able to
+- I am able to
+- I'm able to
 index_under:
-  - be
-  - am
-reverse_status: pending
-reverse_ids: []
+- be
+- am
+reverse_status: linked
+reverse_ids:
+- es-puedo-ability--en-am-able-to
 status: draft
 examples:
-  - source: I am able to explain the activity in English.
-    target: Puedo explicar la actividad en inglés.
+- source: I am able to explain the activity in English.
+  target: Puedo explicar la actividad en inglés.
 ---
 
 # **am able to** → **puedo**

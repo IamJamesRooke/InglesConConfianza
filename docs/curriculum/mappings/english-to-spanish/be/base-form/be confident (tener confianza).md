@@ -19,14 +19,15 @@ target_features:
   verb_form: infinitive
 aliases: []
 index_under:
-  - be
-  - base-form
-reverse_status: pending
-reverse_ids: []
+- be
+- base-form
+reverse_status: linked
+reverse_ids:
+- es-tener-confianza-self-confidence--en-be-confident
 status: draft
 examples:
-  - source: You need to be confident during the interview.
-    target: Necesitas tener confianza durante la entrevista.
+- source: You need to be confident during the interview.
+  target: Necesitas tener confianza durante la entrevista.
 ---
 
 # **be confident** → **tener confianza**

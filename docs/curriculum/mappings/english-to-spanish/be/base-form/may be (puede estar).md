@@ -26,18 +26,19 @@ target_features:
   mood: indicative
   verb_form: finite
 aliases:
-  - he may be
-  - she may be
-  - it may be
+- he may be
+- she may be
+- it may be
 index_under:
-  - be
-  - base-form
-reverse_status: pending
-reverse_ids: []
+- be
+- base-form
+reverse_status: linked
+reverse_ids:
+- es-puede-estar-possible-state-location--en-may-be
 status: draft
 examples:
-  - source: Ana may be in her office.
-    target: Ana puede estar en su oficina.
+- source: Ana may be in her office.
+  target: Ana puede estar en su oficina.
 ---
 
 # **may be** → **puede estar**

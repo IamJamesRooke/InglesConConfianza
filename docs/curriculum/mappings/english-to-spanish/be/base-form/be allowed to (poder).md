@@ -19,14 +19,15 @@ target_features:
   verb_form: infinitive
 aliases: []
 index_under:
-  - be
-  - base-form
-reverse_status: pending
-reverse_ids: []
+- be
+- base-form
+reverse_status: linked
+reverse_ids:
+- es-poder-permission--en-be-allowed-to
 status: draft
 examples:
-  - source: Are we allowed to park here?
-    target: "¿Podemos parquear aquí?"
+- source: Are we allowed to park here?
+  target: "¿Podemos parquear aquí?"
 ---
 
 # **be allowed to** → **poder**

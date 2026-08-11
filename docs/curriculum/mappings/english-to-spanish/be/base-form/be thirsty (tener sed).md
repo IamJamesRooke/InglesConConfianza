@@ -19,14 +19,15 @@ target_features:
   verb_form: infinitive
 aliases: []
 index_under:
-  - be
-  - base-form
-reverse_status: pending
-reverse_ids: []
+- be
+- base-form
+reverse_status: linked
+reverse_ids:
+- es-tener-sed-thirst--en-be-thirsty
 status: draft
 examples:
-  - source: The children may be thirsty after the walk.
-    target: Los niños pueden tener sed después de la caminata.
+- source: The children may be thirsty after the walk.
+  target: Los niños pueden tener sed después de la caminata.
 ---
 
 # **be thirsty** → **tener sed**
