@@ -1,4 +1,6 @@
-# **Now, Soon, Early**, and **Late**
+# Core Time Words: **Ahora, Pronto, Temprano**, and **Tarde**
+
+These high-frequency time words are foundational vocabulary. **Ahora** remains especially important even though its central translation is simply **now**.
 
 | Spanish | English |
 |---|---|

@@ -21,6 +21,7 @@
         - [x] Phase 5B: audit and normalize Spanish top-level source ownership
         - [x] Phase 5C Pass 1: curate weak Spanish top-level sources into lexical families, structure, transformations, vocabulary, or the correct mapping direction
         - [x] Phase 5C Pass 2: move nine owner-approved ordinary Spanish vocabulary sets out of mappings while retaining **suficiente**
+        - [x] Phase 5C Pass 3: move **ahora** to core vocabulary, move **argumento** to false cognates, and nest **ahí** under **allí**
     - [ ] Phase 6: normalize the remaining high-frequency bilingual hubs in bounded batches
         - [x] Phase 6A: normalize the English **do / make** and Spanish **hacer** bilingual hub
         - [ ] Phase 6B: normalize the English **get** hub and its qualifying Spanish reverse sources
@@ -126,6 +127,16 @@
 - Spanish-to-English only. No other languages. If others want to fork the repo, that's fine. And can give AGENT instructions explaining exactly how the method was made.
 
 ## Completed timeline
+
+### 2026-08-11 — Core vocabulary and close-form ownership refined
+
+- [x] Complete Phase 5C Pass 3 on Sol High as an owner-directed curation batch
+    - [x] Retain **abrir** because its contextual extensions support later phrasal-verb instruction
+    - [x] Retain **además** as a high-frequency connector map
+    - [x] Move the complete **ahora / pronto / temprano / tarde** teaching set into a new high-priority `vocabulary/core-vocabulary` collection
+    - [x] Move the **argumento / argument** storyline trap and technical cognate example into the consolidated non-verb false-cognate lesson
+    - [x] Make **allí** the human-facing top-level location family and preserve all four contextual **ahí** examples beneath it
+    - [x] Reduce the exhaustive Spanish mapping index from 341 to 339 exact top-level source folders
 
 ### 2026-08-11 — Supplemental Spanish vocabulary extracted from mappings
 

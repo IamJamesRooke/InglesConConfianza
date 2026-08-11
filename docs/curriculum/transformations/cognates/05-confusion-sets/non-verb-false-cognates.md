@@ -133,3 +133,19 @@ As an adjective, **efectivo** can mean **effective**:
 
 **El tratamiento fue efectivo.**
 ✅ The treatment was effective.
+
+## Argumento / Argument
+
+When **argumento** means the storyline of a movie, book, or play, English uses **plot**, not **argument**:
+
+**El argumento de la película es simple.**
+
+❌ The argument of the movie is simple.
+✅ The plot of the movie is simple.
+
+English **argument** can mean a disagreement or a reasoned case. Depending on the context, Spanish may use **discusión** or **argumento**.
+
+The technical programming use is a true cognate:
+
+**La función recibe dos argumentos.**
+✅ The function takes two arguments.
