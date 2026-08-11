@@ -14,6 +14,7 @@
         - [x] Audit all 629 normalized mapping objects for complete canonical lemmas, taxonomy, grammatical features, aliases, accepted targets, and machine-safe target values
         - [x] Phase 4B: normalize **tener** and especially **poder**, then cross-audit **have, can, could, manage**, and remaining **be** expressions
         - [x] Phase 4C: compress **poder** into trackable lemma, form-family, surface-form, and atomic-mapping levels before normalizing more hubs
+        - [x] Phase 4D: replace the compression pilot with the canonical human-readable mapping-concept template
     - [ ] Phase 5: rehome top-level multiword expressions under canonical headwords
     - [ ] Phase 6: normalize the remaining high-frequency bilingual hubs in bounded batches
     - [ ] Phase 7: complete the remaining mapping normalization
@@ -118,6 +119,18 @@
 - Spanish-to-English only. No other languages. If others want to fork the repo, that's fine. And can give AGENT instructions explaining exactly how the method was made.
 
 ## Completed timeline
+
+### 2026-08-11 — Canonical **poder** mapping-concept template established
+
+- [x] Complete corrective Phase 4D on Sol XHigh before using **poder** as the template for other conjugated mapping hubs
+    - [x] Replace the ten oversized tense-family containers with 41 source-first, meaning-disambiguated concept files such as `poder (can - present ability).md`
+    - [x] Keep grammatical family as queryable metadata rather than the physical file boundary, while retaining stable lemma, family, form, concept, and atomic-mapping references
+    - [x] Preserve all 118 atomic mapping IDs, examples, grammatical features, teaching notes, statuses, and reciprocal reverse edges
+    - [x] Remove explicit-subject aliases such as **yo puedo** and **ellos pueden**; preserve the 46 independently trackable subjectless forms through stable `form_id` and `form_surface` fields
+    - [x] Rehome all 42 longer teaching and contrast files under `teaching-sets/`, remove sequence numbers from their filenames, and verify that every non-README file remains byte-identical
+    - [x] Separate machine-facing concepts from teaching progression, update the **poder** index, and repair three transformation links affected by the teaching-set move
+    - [x] Prove that **puedo** plus **puede** produces two lemma, present-family, and present-ability-concept exposures while retaining one exposure for each surface form
+    - [x] Validate 1,045 atomic mappings, 41 mapping concepts, 46 **poder** forms, ten **poder** families, 877 linked objects, 168 pending objects, YAML-to-JSON round trips, 5,602 local links, and zero errors
 
 ### 2026-08-11 — **Poder** form-family compression piloted
 

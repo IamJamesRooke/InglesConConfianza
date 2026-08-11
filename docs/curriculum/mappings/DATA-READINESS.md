@@ -8,7 +8,7 @@ A mapping object records one reusable translation choice:
 
 > one source word, form, or expression → one target meaning
 
-A mapping family records a stable curriculum grouping for related surface forms. It does not replace the atomic choices; it contains them. For example, the **present indicative of poder** is one family, **puedo** and **puede** are independently trackable forms, and **puedo → I can** remains an atomic mapping.
+A mapping concept groups atomic surface variants that express the same directional translation choice. It does not replace the atomic choices. For example, **poder → can** for present ability is one concept, **puedo** and **puede** are independently trackable forms, and **puedo → I can** remains an atomic mapping. The present indicative is shared metadata across concepts, not the physical file boundary.
 
 The mapping owns stable linguistic facts: its source and target, its meaning, examples, grammatical features, reverse edges, and useful contrasts.
 
@@ -64,18 +64,19 @@ contrast_ids:
 
 Do not infer prerequisites during ordinary metadata normalization. Concept dependencies need their own deliberate audit, and course order belongs to future lesson records.
 
-## Compressed mapping families
+## Conjugated mapping concepts
 
-Use `kind: mapping-family` when a conjugated hub would otherwise create repetitive person- or number-specific files. A family has its own stable ID and `form_family` key. Its `forms` list contains stable form IDs and its `mappings` list contains complete atomic mapping objects.
+Use `kind: mapping-concept` when a conjugated hub would otherwise create repetitive person- or number-specific files. The file represents one translation concept and its `mappings` list contains the complete atomic surface variants.
 
-- `family_id` lets an atomic mapping roll up to a tense-and-mood family.
-- `form_id` identifies the particular surface form used by an exercise.
+- `concept_id` identifies the particular translation concept exercised.
+- `family_id` and `form_family` let an atomic mapping roll up to a tense-and-mood family.
+- `form_id` and `form_surface` identify the particular bare conjugated form used by an exercise.
 - `source_lemma` supplies the lemma-level roll-up.
 - `family_features` records only features genuinely shared by the family.
 - `form_count` and `mapping_count` are validated summaries, not learner statistics.
-- Nested mapping IDs and reverse IDs remain unchanged when files are compressed.
+- Nested mapping IDs and reverse IDs remain unchanged when files are collated.
 
-Do not treat person-changing conjugations as aliases. **Puedo** and **puede** are sibling forms because they provide different morphology and subject evidence. Use aliases only when the course deliberately treats two source surfaces as the same retrievable choice; otherwise preserve both forms and connect them through the family.
+Do not treat person-changing conjugations as aliases. **Puedo** and **puede** are sibling forms because they provide different morphology and subject evidence. Explicit-subject phrases such as **yo puedo** and **él puede** are example contexts, not aliases. Use aliases only for genuinely interchangeable source surfaces; otherwise preserve both forms and connect them through `family_id`.
 
 ## Controlled values introduced by the pilot
 
@@ -98,7 +99,7 @@ The controlled vocabulary grows only when a real normalization batch requires a 
 - `mood`: `indicative`, `subjunctive`, `imperative`
 - `verb_form`: `base`, `finite`, `infinitive`, `gerund`, `participle`
 
-### Form families introduced by the compression pilot
+### Controlled form-family values
 
 - `form_family`: `nonfinite`, `present-indicative`, `imperfect-indicative`, `preterite-indicative`, `future-indicative`, `conditional-indicative`, `present-subjunctive`, `imperfect-subjunctive`, `perfect-constructions`, `noun`
 
@@ -131,4 +132,4 @@ The complete sentence, its position in a lesson, and a learner's history belong 
 
 ## Completeness rule
 
-The original mapping fields remain required for both top-level and nested atomic mappings. In addition, every normalized atomic object must contain a nonempty canonical `target_lemma` and a controlled `taxonomy`. Grammatical features are conditionally required as described above; `aliases`, `accepted_targets`, and `contrast_ids` remain conditional because empty or invented alternatives add no value. A mapping family must contain valid unique family and form IDs, accurate counts, and complete nested mappings whose `family_id` and `form_id` resolve inside the same file. Later batches can add controlled values without changing the meaning of earlier objects.
+The original mapping fields remain required for both top-level and nested atomic mappings. In addition, every normalized atomic object must contain a nonempty canonical `target_lemma` and a controlled `taxonomy`. Grammatical features are conditionally required as described above; `aliases`, `accepted_targets`, and `contrast_ids` remain conditional because empty or invented alternatives add no value. A mapping concept must contain accurate counts and complete nested mappings whose `concept_id`, `family_id`, `form_id`, and `form_surface` agree with the container and with every reuse of the same form reference. Later batches can add controlled values without changing the meaning of earlier objects.
