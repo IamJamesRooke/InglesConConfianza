@@ -10,7 +10,7 @@
 | [ya-que](06-ya-que.md) | Ya que estás aquí, ayúdame. | Since you're here, help me. |
 | [just/already/yet/still](07-just-already-yet-and-still.md) | Ya lo he terminado; todavía no lo he terminado. | I've already finished it; I haven't finished it yet. |
 
-The English-side contrasts are collected under [**no longer**](../../english-to-spanish/no-longer/README.md) and [**anymore**](../../english-to-spanish/anymore/README.md).
+The English-side contrasts are collected under [**long**](../../english-to-spanish/long/README.md), especially **no longer**, and [**anymore**](../../english-to-spanish/anymore/README.md).
 
 ## Mastery Phrases
 

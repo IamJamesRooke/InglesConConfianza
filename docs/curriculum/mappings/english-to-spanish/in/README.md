@@ -7,6 +7,7 @@ This bucket contains English **in** and its common extensions. Paired lessons re
 | [Inside and Outside](01-inside-and-outside.md) | Los niños están adentro y los perros afuera. | The children are inside, and the dogs are outside. |
 | [Time, Place, and Language](02-time-place-and-language.md) | En enero viviré en Bogotá y trabajaré en inglés. | In January, I'll live in Bogotá and work in English. |
 | [A Period from Now](03-in-a-few-minutes.md) | Terminaré en unos minutos. | I'll finish in a few minutes. |
+| [**In front of**](<in front of.md>) | Estoy frente a la oficina. | I am in front of the office. |
 | [**Inner** and **Outer**](05-inner-and-outer.md) | La pared interior es blanca y la pared exterior es gris. | The inner wall is white, and the outer wall is gray. |
 | [**Inward** and **Inwards**](06-inward-and-inwards.md) | La puerta se abre hacia adentro. | The door opens inward. |
 

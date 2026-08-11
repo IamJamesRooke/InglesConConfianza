@@ -11,6 +11,7 @@
 | [**As Long As** for Duration](07-as-long-as-duration.md) | Puedes quedarte todo el tiempo que quieras. | You can stay as long as you want. |
 | [**As Long As** for a Condition](08-as-long-as-condition.md) | Puedes quedarte siempre y cuando cierres la puerta. | You can stay as long as you lock the door. |
 | [**No Longer** and **Not...Any Longer**](09-no-longer.md) | Ya no trabajo allí y Laura tampoco vive allí. | I no longer work there, and Laura doesn't live there any longer. |
+| [Concise **No Longer** Map](<no longer (concise map).md>) | Ya no trabaja aquí. | She no longer works here. |
 | [**Take Long**](10-take-long.md) | ¿Tardará mucho? No debería tardar más de una hora. | Will it take long? It shouldn't take longer than an hour. |
 | [**Before Long**](11-before-long.md) | Empezó a llover y al poco tiempo las calles se inundaron. | It started raining, and before long, the streets flooded. |
 | [**Long Ago**](12-long-ago.md) | Ese edificio fue una estación hace mucho tiempo. | That building was a station long ago. |
@@ -28,3 +29,5 @@
 | ¿Cuánto tardará el puente largo? Puedes quedarte todo el tiempo que quieras, siempre y cuando no tardes demasiado. | How long will the long bridge take? You can stay as long as you want as long as you don't take too long. |
 | Ya no trabajamos allí, pero al poco tiempo caminamos juntos por el río y volvimos a llevarnos bien. | We no longer work there, but before long, we walked along the river together and got along again. |
 | Mientras caminábamos por el largo sendero todo el día, añorábamos el lugar al que pertenecíamos. | As we walked along the long trail all day long, we longed for the place where we belonged. |
+
+Related Spanish source mappings are under [**ya**](../../spanish-to-english/ya/README.md), especially **ya no**.

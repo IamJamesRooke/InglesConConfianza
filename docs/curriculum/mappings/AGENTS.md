@@ -32,15 +32,17 @@ Completeness currently matters more than brevity. Preserve useful teaching mater
 - During the current normalization and completeness passes, follow the owner's preservation rule: **when in doubt, duplicate** uncertain or overlapping teaching content into plausible retrieval locations instead of filtering it out. Canonicalize and deconflict only in a later approved curation phase. Stable IDs must still prevent two files from accidentally claiming to be the same machine object.
 - Preserve intentional owner-approved exceptions, but update the durable rule when the owner revises an earlier decision. The former `to-too-and-two` bundle was split in Phase 2: `to` and `too` are canonical maps, while direct `two` material belongs in supplemental number vocabulary and the shared sound contrast is indexed from both maps.
 
-Known top-level ownership corrections identified in Phase 1:
+Completed English ownership corrections:
 
-- English `end-up` → `end`
-- English `in-front-of` → `in`
-- English `next-to` → `next`
-- English `no-longer` → reconcile with the existing `long` lesson
+- Phase 2 split English `to-too-and-two` into canonical `to` and `too` maps and routed direct `two` material to supplemental number vocabulary.
+- Phase 5A moved English `end up` under `end`, `in front of` under `in`, `next to` under `next`, and `no longer` under `long`.
+- Phase 5A consolidated the `aside` lessons under the owner-approved `side` family and moved the misplaced English source object `authority` out of `power` into its own canonical bucket.
+- The English directional root README is the exhaustive alphabetical index of canonical top-level source buckets. Do not restore historical “frequency additions” or separate expression sections there.
+
+Known Spanish ownership corrections reserved for Phase 5B:
+
 - Spanish `a-pesar-de` → `pesar`
 - Spanish `asi-que` → `asi`
-- English `to-too-and-two` → separate `to` and `too`; route direct `two` material to supplemental number vocabulary
 
 ## Direction and reverse coverage
 
@@ -170,7 +172,7 @@ IDs must be unique, stable, ASCII slugs. Allowed review states are `draft`, `rev
 2. **Atomic `lo` pilot and `to/too/two` topology correction — Sol High.** Apply the YAML contract and human filenames to the individual `lo` meanings, preserve all examples, remove the combined lesson only after a loss audit, test validation, split `to` and `too`, and route direct `two` material to supplemental number vocabulary.
 3. **English `be` form topology — Sol High.** Organize `be`, `am`, `is`, `are`, `was`, `were`, `been`, `being`, and high-value expressions without flattening grammar into mappings. Completed 2026-08-09 with 230 atomic objects and all original teaching sets retained.
 4. **Reverse `be` hub — Sol High or XHigh.** Phase 4A completed 2026-08-09: normalize and cross-audit `ser`, `estar`, and `haber` as 298 atomic Spanish objects, expand English `be` to 321 objects, preserve all 16 source lessons, and link 225 reciprocal edges. A mappings-only data-readiness pilot was followed on 2026-08-10 by a complete metadata audit of all 629 normalized objects. Phase 4B completed 2026-08-11: add 99 atomic `tener` objects and 118 atomic `poder` objects, add 199 reverse-hub objects across `have`, `can`, `could`, `manage`, `may`, `might`, `power`, `get`, `be`, and directly related lexical heads, close 46 pending `be` edges, and preserve all 51 original non-README teaching and contrast files unchanged. Phase 4C completed 2026-08-11 as a lossless compression experiment. Phase 4D replaced its oversized tense-family containers with the canonical mapping-concept template. Phase 4E retired the temporary `poder/teaching-sets` scaffold after a 42-file and 60-row loss audit, expanded `poder` to 51 concept files and 140 atomic mappings, added queryable clause and polarity metadata, and moved neighboring lexical concepts to their own canonical source hubs.
-5. **Top-level expression ownership cleanup — Sol High.** Rehome the known ownership violations and audit all remaining top-level buckets under the approved rules.
+5. **Top-level expression ownership cleanup — Sol High.** Phase 5A completed 2026-08-11: audit all 313 English top-level buckets, consolidate five misplaced source buckets, move `authority` out of `power`, preserve 13 relocated lessons byte-for-byte, and rebuild an exhaustive index of 310 canonical English sources. Phase 5B will separately audit and correct Spanish top-level ownership.
 6. **High-frequency bilingual hubs — Terra High for specified batches, with separate Sol review when judgment remains.** Normalize `have/tener/haber`, `do/make/hacer`, `get`, movement verbs, perception/knowledge verbs, request verbs, pronouns, particles, and connectors in reviewable commits.
 7. **Remaining mapping normalization — Terra High in bounded batches.** Split mixed files, add YAML, preserve contrasts, and update indexes.
 8. **Bidirectional completeness audit — Sol XHigh.** Recheck frequency coverage, missing reverse edges, variants, false cognates, and Spanish-speaker interference.
