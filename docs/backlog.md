@@ -20,6 +20,8 @@
         - [x] Phase 5A: audit and normalize English top-level source ownership
         - [x] Phase 5B: audit and normalize Spanish top-level source ownership
     - [ ] Phase 6: normalize the remaining high-frequency bilingual hubs in bounded batches
+        - [x] Phase 6A: normalize the English **do / make** and Spanish **hacer** bilingual hub
+        - [ ] Phase 6B: normalize the English **get** hub and its qualifying Spanish reverse sources
     - [ ] Phase 7: complete the remaining mapping normalization
     - [ ] Phase 8: perform the final bidirectional completeness and reverse-coverage audit
     - [ ] Phase 9: perform a YAML-to-JSON dry run without replacing Markdown as the editable source
@@ -122,6 +124,18 @@
 - Spanish-to-English only. No other languages. If others want to fork the repo, that's fine. And can give AGENT instructions explaining exactly how the method was made.
 
 ## Completed timeline
+
+### 2026-08-11 — **Do / make ↔ hacer** hub normalized
+
+- [x] Complete Phase 6A on Sol High as a bounded bilingual normalization phase
+    - [x] Establish a loss baseline covering the three hub READMEs and 30 pre-existing non-index teaching lessons
+    - [x] Preserve all 30 non-index lessons byte-for-byte and retain every original README line, including the existing reciprocal **make sense ↔ tener sentido** object
+    - [x] Add 105 physical YAML files containing 137 new atomic mappings and eight compressed present/past form concepts
+    - [x] Keep **hago, haces, hace, hacemos, hacen** and **hice, hiciste, hizo, hicimos, hicieron** independently trackable while rolling them up to shared task and creation concepts
+    - [x] Separate high-value **do** and **make** collocations, Spanish weather and elapsed-time expressions, causatives, fixed **hacer** expressions, and English auxiliary **do** question/negative frames
+    - [x] Create 43 new reciprocal translation pairs inside the bounded hub and mark genuinely external reverse work as pending rather than manufacturing symmetry
+    - [x] Extend the controlled taxonomy with `causative-expression`, `weather-expression`, and `time-expression`
+    - [x] Validate 1,249 globally unique atomic mappings, 1,013 linked objects, 230 pending objects, six not-applicable auxiliary objects, 59 concepts, consistent form references, and 135 hub links
 
 ### 2026-08-11 — Spanish mapping source ownership normalized
 

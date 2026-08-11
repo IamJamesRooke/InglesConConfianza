@@ -36,3 +36,48 @@ These database-ready objects were added while normalizing the **tener / poder** 
 | Source | Target | Atomic lesson |
 |---|---|---|
 | **make sense** | **tener sentido** | [open](make%20sense%20%28tener%20sentido%20-%20logical-coherence%29.md) |
+
+## Canonical mapping objects
+
+These YAML objects are the machine-facing source of truth. The teaching lessons above remain preserved as contrast and synthesis material.
+
+| Source | Target | Sense | Object | File |
+|---|---|---|---|---|
+| **be made to do something** | **ser obligado a hacer algo** | `forced-action` | atomic | [open](be%20made%20to%20do%20something%20%28ser%20obligado%20a%20hacer%20algo%29.md) |
+| **made** | **hecho** | `completed-product` | atomic | [open](made%20%28hecho%20-%20completed%20product%29.md) |
+| **made by** | **hecho por** | `creator` | atomic | [open](made%20by%20%28hecho%20por%29.md) |
+| **made from** | **hecho a partir de** | `transformed-material` | atomic | [open](made%20from%20%28hecho%20a%20partir%20de%29.md) |
+| **made of** | **hecho de** | `visible-material` | atomic | [open](made%20of%20%28hecho%20de%29.md) |
+| **make** | **hacer** | `past-creation` | concept | [open](made%20%28hacer%20-%20completed%20creation%29.md) |
+| **make** | **hacer** | `present-creation` | concept | [open](make%20%28hacer%20-%20present%20creation%29.md) |
+| **make a call** | **hacer una llamada** | `telephone-call` | atomic | [open](make%20a%20call%20%28hacer%20una%20llamada%29.md) |
+| **make a decision** | **tomar una decisión** | `decision` | atomic | [open](make%20a%20decision%20%28tomar%20una%20decisi%C3%B3n%29.md) |
+| **make a difference** | **marcar la diferencia** | `effect` | atomic | [open](make%20a%20difference%20%28marcar%20la%20diferencia%29.md) |
+| **make a living** | **ganarse la vida** | `earn-living` | atomic | [open](make%20a%20living%20%28ganarse%20la%20vida%29.md) |
+| **make a mistake** | **cometer un error** | `mistake` | atomic | [open](make%20a%20mistake%20%28cometer%20un%20error%29.md) |
+| **make a promise** | **prometer** | `promise` | atomic | [open](make%20a%20promise%20%28prometer%29.md) |
+| **make a reservation** | **hacer una reserva** | `reservation` | atomic | [open](make%20a%20reservation%20%28hacer%20una%20reserva%29.md) |
+| **make a suggestion** | **hacer una sugerencia** | `suggestion` | atomic | [open](make%20a%20suggestion%20%28hacer%20una%20sugerencia%29.md) |
+| **make a table** | **construir una mesa** | `build-object` | atomic | [open](make%20a%20table%20%28construir%20una%20mesa%29.md) |
+| **make an effort** | **hacer un esfuerzo** | `effort` | atomic | [open](make%20an%20effort%20%28hacer%20un%20esfuerzo%29.md) |
+| **make coffee** | **hacer café** | `prepare-coffee` | atomic | [open](make%20coffee%20%28hacer%20caf%C3%A9%29.md) |
+| **make dinner** | **preparar la cena** | `prepare-food` | atomic | [open](make%20dinner%20%28preparar%20la%20cena%29.md) |
+| **make do with** | **arreglárselas con** | `manage-with-imperfect-option` | atomic | [open](make%20do%20with%20%28arregl%C3%A1rselas%20con%29.md) |
+| **make friends** | **hacer amigos** | `form-friendships` | atomic | [open](make%20friends%20%28hacer%20amigos%29.md) |
+| **make it** | **llegar** | `arrive` | atomic | [open](make%20it%20%28llegar%29.md) |
+| **make it** | **poder asistir** | `be-available` | atomic | [open](make%20it%20%28poder%20asistir%29.md) |
+| **make it** | **tener éxito** | `succeed` | atomic | [open](make%20it%20%28tener%20%C3%A9xito%29.md) |
+| **make it** | **sobrevivir** | `survive` | atomic | [open](make%20it%20%28sobrevivir%29.md) |
+| **make money** | **ganar dinero** | `earn-money` | atomic | [open](make%20money%20%28ganar%20dinero%29.md) |
+| **make progress** | **progresar** | `progress` | atomic | [open](make%20progress%20%28progresar%29.md) |
+| **make sense** | **tener sentido** | `logical-coherence` | atomic | [open](make%20sense%20%28tener%20sentido%20-%20logical-coherence%29.md) |
+| **make someone + adjective** | **hacer + adjetivo a alguien** | `cause-state` | atomic | [open](make%20someone%20%2B%20adjective%20%28hacer%20%2B%20adjetivo%20a%20alguien%29.md) |
+| **make someone + base verb** | **hacer + infinitivo** | `direct-cause-action` | atomic | [open](make%20someone%20%2B%20base%20verb%20%28hacer%20%2B%20infinitivo%29.md) |
+| **make someone do something** | **hacer que alguien haga algo** | `cause-action` | atomic | [open](make%20someone%20do%20something%20%28hacer%20que%20alguien%20haga%20algo%29.md) |
+| **make someone feel** | **hacer sentir a alguien** | `cause-feeling` | atomic | [open](make%20someone%20feel%20%28hacer%20sentir%20a%20alguien%29.md) |
+| **make sure** | **asegurarse de** | `ensure` | atomic | [open](make%20sure%20%28asegurarse%20de%29.md) |
+| **make up** | **formar** | `constitute-whole` | atomic | [open](make%20up%20%28formar%29.md) |
+| **make up** | **inventar** | `invent-story` | atomic | [open](make%20up%20%28inventar%29.md) |
+| **make up with someone** | **hacer las paces con alguien** | `reconcile` | atomic | [open](make%20up%20with%20someone%20%28hacer%20las%20paces%20con%20alguien%29.md) |
+| **making** | **haciendo** | `creation-in-progress` | atomic | [open](making%20%28haciendo%20-%20creation%29.md) |
+| **to make** | **hacer** | `creation` | atomic | [open](to%20make%20%28hacer%20-%20creation%29.md) |

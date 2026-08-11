@@ -86,7 +86,7 @@ The controlled vocabulary grows only when a real normalization batch requires a 
 ### Taxonomy
 
 - `category`: `pronoun`, `verb`, `expression`, `noun`
-- `subcategory`: `personal-pronoun`, `adjective-nominalization`, `degree-expression`, `relative-pronoun`, `noun-expression`, `copula`, `existential`, `auxiliary`, `lexical-verb`, `state-expression`, `possession-expression`, `ability-expression`, `permission-expression`, `possibility-expression`, `opportunity-expression`, `request-expression`, `desire-expression`, `success-expression`, `obligation-expression`, `future-expression`, `passive-expression`, `modal-expression`, `fixed-expression`
+- `subcategory`: `personal-pronoun`, `adjective-nominalization`, `degree-expression`, `relative-pronoun`, `noun-expression`, `copula`, `existential`, `auxiliary`, `lexical-verb`, `state-expression`, `possession-expression`, `ability-expression`, `permission-expression`, `possibility-expression`, `opportunity-expression`, `request-expression`, `desire-expression`, `success-expression`, `obligation-expression`, `future-expression`, `passive-expression`, `modal-expression`, `fixed-expression`, `causative-expression`, `weather-expression`, `time-expression`
 
 ### Grammatical features
 
