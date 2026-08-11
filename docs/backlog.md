@@ -13,6 +13,7 @@
         - [x] Mappings-only data-readiness checkpoint: pilot optional query metadata and define the boundary between mapping concepts and future app records
         - [x] Audit all 629 normalized mapping objects for complete canonical lemmas, taxonomy, grammatical features, aliases, accepted targets, and machine-safe target values
         - [x] Phase 4B: normalize **tener** and especially **poder**, then cross-audit **have, can, could, manage**, and remaining **be** expressions
+        - [x] Phase 4C: compress **poder** into trackable lemma, form-family, surface-form, and atomic-mapping levels before normalizing more hubs
     - [ ] Phase 5: rehome top-level multiword expressions under canonical headwords
     - [ ] Phase 6: normalize the remaining high-frequency bilingual hubs in bounded batches
     - [ ] Phase 7: complete the remaining mapping normalization
@@ -117,6 +118,17 @@
 - Spanish-to-English only. No other languages. If others want to fork the repo, that's fine. And can give AGENT instructions explaining exactly how the method was made.
 
 ## Completed timeline
+
+### 2026-08-11 — **Poder** form-family compression piloted
+
+- [x] Complete Phase 4C on Sol XHigh before extending the atomic contract to more conjugated hubs
+    - [x] Replace 45 generated one-form directories with 10 form-family files and one compact index while retaining the complete teaching layer
+    - [x] Define 46 independently trackable surface forms under nonfinite, present, imperfect, preterite, future, conditional, present-subjunctive, imperfect-subjunctive, perfect, and noun families
+    - [x] Preserve all 118 atomic **poder** mapping IDs, metadata fields, examples, teaching notes, statuses, and reverse edges inside the compressed families
+    - [x] Preserve all 42 preexisting non-README **poder** teaching and contrast files unchanged
+    - [x] Extend the mapping contract with stable family and form IDs so future exercise occurrences can roll up to a lemma and tense/mood family without treating **puedo** and **puede** as unrelated concepts
+    - [x] Prove the intended tracking result: one **puedo** question plus one **puede** question produces two **poder → present indicative** exposures and one exposure for each surface form
+    - [x] Validate 1,045 atomic mapping objects, 10 mapping families, 46 trackable **poder** forms, 877 linked objects, 168 pending objects, JSON round trips, all reciprocal IDs, the complete loss audit, 5,581 local links, and zero errors or broken links
 
 ### 2026-08-11 — **Tener / poder** bilingual hub normalized
 

@@ -18,6 +18,8 @@ Treat mappings as the primary practical vocabulary system of Inglés Con Confian
 
 > one source word, form, or expression → one target meaning, supported by one to three self-disambiguating examples
 
+The atomic translation choice remains the database-ready unit, but it does not always require its own physical Markdown file. A conjugated verb hub may use a `mapping-family` file to group related surface forms while retaining every atomic mapping as a nested object with its original stable ID.
+
 Completeness currently matters more than brevity. Preserve useful teaching material during normalization; cutting and final course sequencing happen later.
 
 ## Canonical ownership
@@ -49,7 +51,10 @@ Known top-level ownership corrections identified in Phase 1:
 
 ## Atomic mapping files
 
-- Every non-README file with `kind: mapping` represents exactly one source-to-target meaning.
+- Every top-level or nested object with `kind: mapping` represents exactly one source-to-target meaning.
+- A file with `kind: mapping` contains one atomic object. A file with `kind: mapping-family` is a compact container for a shared lemma and grammatical family; its `mappings` remain atomic objects rather than aliases or combined targets.
+- Use a mapping family when separate person, number, or equivalent conjugation files would repeat the same curriculum family. Do not use it merely to combine unrelated meanings.
+- Give each family a stable ID, each trackable surface form a stable form ID, and each nested mapping its existing stable mapping ID. A nested mapping references its container through `family_id` and the form it exercises through `form_id`.
 - The target may be a word or a natural expression, such as `pude` → `managed to`.
 - Split context-dependent outputs into separate files. Do not create files such as `pude (could and managed to).md`.
 - Use one to three simple, natural examples whose context resolves the intended referent or meaning without relying on the filename.
@@ -66,7 +71,7 @@ Known top-level ownership corrections identified in Phase 1:
 
 ## YAML contract
 
-Use this initial contract for pilot mapping objects. Refine it only through an approved phase after testing it on real lessons.
+Use this contract for atomic mapping objects. Refine it only through an approved phase after testing it on real lessons.
 
 ```yaml
 ---
@@ -94,6 +99,44 @@ examples:
 
 Required atomic fields are `id`, `kind`, `direction`, `source_language`, `source`, `source_lemma`, `target_language`, `target`, `target_lemma`, `sense`, `taxonomy`, `reverse_status`, `status`, and `examples`. Use `source_variant`, `aliases`, `index_under`, and `reverse_ids` when applicable. Add `source_features` and `target_features` whenever the corresponding side encodes an inflected verb, nonfinite verb form, grammatical person or number, or pronominal function. Add fields such as `register`, `region`, `constraints`, or migration provenance only when a real lesson requires them.
 
+A compressed family uses this container shape:
+
+```yaml
+---
+id: es-poder-present-indicative-family
+kind: mapping-family
+direction: spanish-to-english
+source_language: es
+source_lemma: poder
+target_language: en
+form_family: present-indicative
+family_features:
+  tense: present
+  mood: indicative
+  verb_form: finite
+status: draft
+form_count: 5
+mapping_count: 34
+forms:
+  - id: es-poder-present-indicative-form-puedo
+    surface: puedo
+    source_features:
+      grammatical_person: first
+      number: singular
+      tense: present
+      mood: indicative
+      verb_form: finite
+mappings:
+  - id: es-puedo-present-ability--en-i-can
+    kind: mapping
+    # complete atomic mapping fields remain here
+    family_id: es-poder-present-indicative-family
+    form_id: es-poder-present-indicative-form-puedo
+---
+```
+
+Required family fields are `id`, `kind`, `direction`, `source_language`, `source_lemma`, `target_language`, `form_family`, `status`, `form_count`, `mapping_count`, `forms`, and `mappings`. Each form requires `id` and `surface`, plus `source_features` when grammatically applicable. Every nested mapping must still satisfy the complete atomic contract. Family and form IDs share the global stable-ID namespace and must be unique.
+
 Follow the complete metadata contract in [`DATA-READINESS.md`](DATA-READINESS.md). In particular, distinguish source-side `aliases` from target-side `accepted_targets`, use `target_lemma` for canonical target lookup, distinguish grammatical person from referent person, and keep source and target features separate. Do not invent conditional values merely to fill fields.
 
 IDs must be unique, stable, ASCII slugs. Allowed review states are `draft`, `reviewed`, and `owner-approved`.
@@ -103,7 +146,7 @@ IDs must be unique, stable, ASCII slugs. Allowed review states are `draft`, `rev
 - A contextual translation choice belongs in mappings.
 - A reusable sentence-building rule belongs in structure, even if mapping lessons link to it.
 - Productive word formation belongs in transformations.
-- A contrast lesson may remain for teaching, but mark it separately from an atomic mapping object when YAML is introduced. Only `kind: mapping` becomes a basic translation JSON object.
+- A contrast lesson may remain for teaching, but mark it separately from an atomic mapping object when YAML is introduced. A top-level or nested `kind: mapping` becomes a basic translation record; `kind: mapping-family` becomes the curriculum grouping record that supports roll-up queries.
 - Source-side contractions and spelling variants are `aliases`; target-side equivalents are `accepted_targets`. Either becomes an independent object when it changes meaning, use, register, or another teaching choice.
 - Mapping examples are explanatory evidence, not learner-tracked exercises. Lesson membership, exposure counts, answers, errors, mastery, and spaced-repetition state must eventually reference mapping IDs from separate records rather than being embedded in mapping YAML.
 
@@ -112,7 +155,7 @@ IDs must be unique, stable, ASCII slugs. Allowed review states are `draft`, `rev
 - Before each migration phase, inventory the exact source files and extract or count their unique teaching rows.
 - Do not delete or replace a source lesson until every useful meaning and example is represented in a canonical destination or deliberately retained contrast lesson.
 - Preserve the owner's concurrent changes and never restore intentionally moved or deleted material without evidence.
-- Validate YAML syntax, required fields, unique IDs, direction/language agreement, one-to-three examples, reverse IDs, README coverage, local links, unindexed lessons, empty directories, and stale paths.
+- Validate YAML syntax, required fields, unique family, form, and mapping IDs, direction/language agreement, one-to-three examples, nested family references, reverse IDs, README coverage, local links, unindexed lessons, empty directories, and stale paths.
 - Use small commits organized by bilingual hub or narrowly defined batch.
 
 ## Durable normalization roadmap
@@ -120,7 +163,7 @@ IDs must be unique, stable, ASCII slugs. Allowed review states are `draft`, `rev
 1. **Contract and inventory — Sol High.** Establish these rules, record the baseline, classify top-level expression ownership, and select the pilot. Completed 2026-08-09.
 2. **Atomic `lo` pilot and `to/too/two` topology correction — Sol High.** Apply the YAML contract and human filenames to the individual `lo` meanings, preserve all examples, remove the combined lesson only after a loss audit, test validation, split `to` and `too`, and route direct `two` material to supplemental number vocabulary.
 3. **English `be` form topology — Sol High.** Organize `be`, `am`, `is`, `are`, `was`, `were`, `been`, `being`, and high-value expressions without flattening grammar into mappings. Completed 2026-08-09 with 230 atomic objects and all original teaching sets retained.
-4. **Reverse `be` hub — Sol High or XHigh.** Phase 4A completed 2026-08-09: normalize and cross-audit `ser`, `estar`, and `haber` as 298 atomic Spanish objects, expand English `be` to 321 objects, preserve all 16 source lessons, and link 225 reciprocal edges. A mappings-only data-readiness pilot was followed on 2026-08-10 by a complete metadata audit of all 629 normalized objects. Phase 4B completed 2026-08-11: add 99 atomic `tener` objects and 118 atomic `poder` objects, add 199 reverse-hub objects across `have`, `can`, `could`, `manage`, `may`, `might`, `power`, `get`, `be`, and directly related lexical heads, close 46 pending `be` edges, and preserve all 51 original non-README teaching and contrast files unchanged.
+4. **Reverse `be` hub — Sol High or XHigh.** Phase 4A completed 2026-08-09: normalize and cross-audit `ser`, `estar`, and `haber` as 298 atomic Spanish objects, expand English `be` to 321 objects, preserve all 16 source lessons, and link 225 reciprocal edges. A mappings-only data-readiness pilot was followed on 2026-08-10 by a complete metadata audit of all 629 normalized objects. Phase 4B completed 2026-08-11: add 99 atomic `tener` objects and 118 atomic `poder` objects, add 199 reverse-hub objects across `have`, `can`, `could`, `manage`, `may`, `might`, `power`, `get`, `be`, and directly related lexical heads, close 46 pending `be` edges, and preserve all 51 original non-README teaching and contrast files unchanged. Phase 4C completed 2026-08-11: replace 45 generated `poder` form directories with 10 mapping-family files, retain all 118 atomic IDs and edges, define 46 trackable forms, and prove lemma → family → form → mapping exposure roll-ups without changing the retained teaching files.
 5. **Top-level expression ownership cleanup — Sol High.** Rehome the known ownership violations and audit all remaining top-level buckets under the approved rules.
 6. **High-frequency bilingual hubs — Terra High for specified batches, with separate Sol review when judgment remains.** Normalize `have/tener/haber`, `do/make/hacer`, `get`, movement verbs, perception/knowledge verbs, request verbs, pronouns, particles, and connectors in reviewable commits.
 7. **Remaining mapping normalization — Terra High in bounded batches.** Split mixed files, add YAML, preserve contrasts, and update indexes.

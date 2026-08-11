@@ -28,54 +28,21 @@ Spanish **poder** can describe ability, permission, possibility, opportunity, or
 - [Translations of **Deber**](../deber/README.md)
 - [Foundation modal drills](../../../structure/fluency-drills/modals/README.md)
 
-## Atomic Form Index
+## Compressed Form-Family Index
 
-The original sections above remain the teaching and contrast layer. These folders separate the machine-readable forms and meanings of **poder**.
+The original sections above remain the teaching and contrast layer. The files below group conjugated surface forms by the curriculum family that future exercises and learner progress will reference. Every previous atomic mapping ID remains nested inside its family.
 
-| Form bucket | Atomic mappings |
-|---|---:|
-| [**base-form**](base-form/README.md) | 2 |
-| [**ha-podido**](ha-podido/README.md) | 1 |
-| [**habría-podido**](habr%C3%ADa-podido/README.md) | 1 |
-| [**habríamos-podido**](habr%C3%ADamos-podido/README.md) | 1 |
-| [**había-podido**](hab%C3%ADa-podido/README.md) | 1 |
-| [**he-podido**](he-podido/README.md) | 2 |
-| [**hemos-podido**](hemos-podido/README.md) | 2 |
-| [**noun**](noun/README.md) | 3 |
-| [**podamos**](podamos/README.md) | 1 |
-| [**podemos**](podemos/README.md) | 5 |
-| [**podido**](podido/README.md) | 1 |
-| [**podremos**](podremos/README.md) | 1 |
-| [**podrá**](podr%C3%A1/README.md) | 1 |
-| [**podrán**](podr%C3%A1n/README.md) | 1 |
-| [**podrás**](podr%C3%A1s/README.md) | 1 |
-| [**podré**](podr%C3%A9/README.md) | 1 |
-| [**podría**](podr%C3%ADa/README.md) | 8 |
-| [**podríamos**](podr%C3%ADamos/README.md) | 3 |
-| [**podrían**](podr%C3%ADan/README.md) | 3 |
-| [**podrías**](podr%C3%ADas/README.md) | 4 |
-| [**podía**](pod%C3%ADa/README.md) | 2 |
-| [**podíamos**](pod%C3%ADamos/README.md) | 2 |
-| [**podían**](pod%C3%ADan/README.md) | 2 |
-| [**podías**](pod%C3%ADas/README.md) | 2 |
-| [**pude**](pude/README.md) | 5 |
-| [**pudiendo**](pudiendo/README.md) | 1 |
-| [**pudiera**](pudiera/README.md) | 1 |
-| [**pudieran**](pudieran/README.md) | 1 |
-| [**pudieras**](pudieras/README.md) | 1 |
-| [**pudieron**](pudieron/README.md) | 5 |
-| [**pudiese**](pudiese/README.md) | 1 |
-| [**pudiesen**](pudiesen/README.md) | 1 |
-| [**pudieses**](pudieses/README.md) | 1 |
-| [**pudimos**](pudimos/README.md) | 5 |
-| [**pudiste**](pudiste/README.md) | 5 |
-| [**pudiéramos**](pudi%C3%A9ramos/README.md) | 1 |
-| [**pudiésemos**](pudi%C3%A9semos/README.md) | 1 |
-| [**pudo**](pudo/README.md) | 5 |
-| [**pueda**](pueda/README.md) | 2 |
-| [**puedan**](puedan/README.md) | 1 |
-| [**puedas**](puedas/README.md) | 1 |
-| [**puede**](puede/README.md) | 11 |
-| [**pueden**](pueden/README.md) | 5 |
-| [**puedes**](puedes/README.md) | 6 |
-| [**puedo**](puedo/README.md) | 7 |
+| Family | Trackable forms | Atomic mappings |
+|---|---:|---:|
+| [Infinitive and Nonfinite Forms](form-families/nonfinite.md) | 3 | 4 |
+| [Present Indicative](form-families/present-indicative.md) | 5 | 34 |
+| [Imperfect Indicative](form-families/imperfect-indicative.md) | 4 | 8 |
+| [Preterite Indicative](form-families/preterite-indicative.md) | 5 | 25 |
+| [Future Indicative](form-families/future-indicative.md) | 5 | 5 |
+| [Conditional Indicative](form-families/conditional-indicative.md) | 4 | 18 |
+| [Present Subjunctive](form-families/present-subjunctive.md) | 4 | 5 |
+| [Imperfect Subjunctive](form-families/imperfect-subjunctive.md) | 8 | 8 |
+| [Perfect Constructions](form-families/perfect-constructions.md) | 6 | 8 |
+| [Noun Uses](form-families/noun.md) | 2 | 3 |
+
+See the [form-family tracking guide](form-families/README.md) for the roll-up model.

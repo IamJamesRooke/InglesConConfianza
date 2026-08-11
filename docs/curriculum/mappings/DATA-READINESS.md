@@ -8,11 +8,22 @@ A mapping object records one reusable translation choice:
 
 > one source word, form, or expression → one target meaning
 
+A mapping family records a stable curriculum grouping for related surface forms. It does not replace the atomic choices; it contains them. For example, the **present indicative of poder** is one family, **puedo** and **puede** are independently trackable forms, and **puedo → I can** remains an atomic mapping.
+
 The mapping owns stable linguistic facts: its source and target, its meaning, examples, grammatical features, reverse edges, and useful contrasts.
 
 The mapping does **not** own facts that change by lesson or learner. Do not put lesson position, taught/not-taught state, exposure counts, answers, errors, mastery, due dates, or review intervals in mapping YAML. Those will eventually reference mapping IDs from separate course, exercise, and learner records.
 
 The examples inside a mapping object are concise evidence and explanation for the translation choice. They are not yet an exercise bank and do not need exercise IDs.
+
+This creates four reusable curriculum levels without storing learner history in Markdown:
+
+1. lemma: `poder`
+2. form family: `present-indicative`
+3. surface form: `puedo`
+4. atomic translation choice: `puedo → I can`
+
+An eventual exercise occurrence can reference all four. Two questions using **puedo** and **puede** therefore produce two exposures to the **present indicative of poder**, while preserving one exposure for each surface form and the particular meaning exercised by each sentence.
 
 ## Complete normalized metadata
 
@@ -53,6 +64,19 @@ contrast_ids:
 
 Do not infer prerequisites during ordinary metadata normalization. Concept dependencies need their own deliberate audit, and course order belongs to future lesson records.
 
+## Compressed mapping families
+
+Use `kind: mapping-family` when a conjugated hub would otherwise create repetitive person- or number-specific files. A family has its own stable ID and `form_family` key. Its `forms` list contains stable form IDs and its `mappings` list contains complete atomic mapping objects.
+
+- `family_id` lets an atomic mapping roll up to a tense-and-mood family.
+- `form_id` identifies the particular surface form used by an exercise.
+- `source_lemma` supplies the lemma-level roll-up.
+- `family_features` records only features genuinely shared by the family.
+- `form_count` and `mapping_count` are validated summaries, not learner statistics.
+- Nested mapping IDs and reverse IDs remain unchanged when files are compressed.
+
+Do not treat person-changing conjugations as aliases. **Puedo** and **puede** are sibling forms because they provide different morphology and subject evidence. Use aliases only when the course deliberately treats two source surfaces as the same retrievable choice; otherwise preserve both forms and connect them through the family.
+
 ## Controlled values introduced by the pilot
 
 The controlled vocabulary grows only when a real normalization batch requires a new value. Use lowercase ASCII slugs.
@@ -74,6 +98,10 @@ The controlled vocabulary grows only when a real normalization batch requires a 
 - `mood`: `indicative`, `subjunctive`, `imperative`
 - `verb_form`: `base`, `finite`, `infinitive`, `gerund`, `participle`
 
+### Form families introduced by the compression pilot
+
+- `form_family`: `nonfinite`, `present-indicative`, `imperfect-indicative`, `preterite-indicative`, `future-indicative`, `conditional-indicative`, `present-subjunctive`, `imperfect-subjunctive`, `perfect-constructions`, `noun`
+
 Do not force every field onto every object. For example, person and number help with `soy`, but not with the abstract expression `lo bueno`.
 
 A feature may be a list when the same surface form is genuinely ambiguous. For example, `sería` can be first- or third-person singular. Do not use a list merely to combine mappings that should be separate.
@@ -92,11 +120,15 @@ accepted_target_texts:
   - "I'm an English teacher"
 primary_mapping_ids:
   - es-soy-identity--en-i-am
+primary_family_ids:
+  - es-ser-present-indicative-family
+primary_form_ids:
+  - es-ser-present-indicative-form-soy
 reinforces_mapping_ids: []
 ```
 
-The complete sentence, its position in a lesson, and a learner's history belong outside the mapping. The stable mapping ID is the bridge between those future records and the curriculum source of truth.
+The complete sentence, its position in a lesson, and a learner's history belong outside the mapping. Stable family, form, and mapping IDs are the bridge between those future records and the curriculum source of truth. The example shape remains illustrative; no exercise record is created during mapping normalization.
 
 ## Completeness rule
 
-The original mapping fields remain required. In addition, every normalized object must contain a nonempty canonical `target_lemma` and a controlled `taxonomy`. Grammatical features are conditionally required as described above; `aliases`, `accepted_targets`, and `contrast_ids` remain conditional because empty or invented alternatives add no value. Later batches can add controlled values without changing the meaning of earlier objects.
+The original mapping fields remain required for both top-level and nested atomic mappings. In addition, every normalized atomic object must contain a nonempty canonical `target_lemma` and a controlled `taxonomy`. Grammatical features are conditionally required as described above; `aliases`, `accepted_targets`, and `contrast_ids` remain conditional because empty or invented alternatives add no value. A mapping family must contain valid unique family and form IDs, accurate counts, and complete nested mappings whose `family_id` and `form_id` resolve inside the same file. Later batches can add controlled values without changing the meaning of earlier objects.
