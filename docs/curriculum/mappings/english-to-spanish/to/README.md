@@ -37,4 +37,4 @@ The difference becomes visible when another verb follows:
 ## Related Sources
 
 - [English **Too**](../too/README.md)
-- [Supplemental **Two** and related number forms](../../../vocabulary/numbers/two-and-related-forms/README.md)
+- [Supplemental **Two** and related number forms](../../../vocabulary/cardinal-numbers.md)

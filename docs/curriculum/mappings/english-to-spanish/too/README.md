@@ -28,4 +28,4 @@
 ## Related Sources
 
 - [English **To** and the **to/too/two** sound contrast](../to/pronunciation-and-homophones.md)
-- [Supplemental **Two** and related number forms](../../../vocabulary/numbers/two-and-related-forms/README.md)
+- [Supplemental **Two** and related number forms](../../../vocabulary/cardinal-numbers.md)
