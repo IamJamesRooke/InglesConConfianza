@@ -2,6 +2,17 @@
 
 These Markdown files are human-readable curriculum specifications and the current intermediate source of truth. Source material comes from the owner's textbook and Excalidraw notes. Preserve the owner's accurate teaching logic and terminology while correcting errors and filling genuine conceptual gaps.
 
+## Canonical pillars
+
+- Use [`mappings/`](mappings/README.md) for frequent one-to-many translation choices. Its additional object and phase rules live in [`mappings/AGENTS.md`](mappings/AGENTS.md).
+- Use [`cognates/`](cognates/README.md) for Spanish-English similarity, memory bridges, and false-cognate confusion sets.
+- Use [`past-and-past-participle/`](past-and-past-participle/README.md) for the canonical sound-based inventory of English past and participle forms.
+- Use [`transformations/`](transformations/README.md) for productive or memorable English prefix and suffix relationships.
+- Use [`structure/`](structure/README.md) for reusable sentence-building rules.
+- Use [`vocabulary/`](vocabulary/README.md) for flat, table-first reference categories that do not justify independent mapping families.
+
+The hierarchy is an authoring reference, not a course sequence. Lessons and learner state will eventually reference curriculum objects from separate data layers.
+
 ## Writing and organization
 
 - Before editing or adding material, inspect the nearest related lessons and `confusion-sets/` for structure, terminology, duplication, and filename conventions.
@@ -21,6 +32,7 @@ These Markdown files are human-readable curriculum specifications and the curren
 - Identify real English–Spanish distinctions that the source omits; do not mechanically preserve an incomplete mapping.
 - Preserve useful source examples, but improve them when a clearer contextual sentence set teaches the same distinction better.
 - Match the closest files' Markdown structure and established directory organization. Put focused contrasts under an appropriate `confusion-sets/` directory.
+- Keep vocabulary flat: add material to the most useful root-level category file and express core versus supplemental status inside the document rather than recreating directory trees.
 
 ## English-to-Spanish words and particles
 
@@ -35,5 +47,5 @@ These Markdown files are human-readable curriculum specifications and the curren
 
 - When converting source material, recommend its filename and location.
 - Do not expand beyond the lesson's atomic scope or propose unrelated curriculum, architecture, automation, or maintenance work.
-- Do not design or produce JSON schemas, database models, lesson engines, or import pipelines unless explicitly requested.
+- Do not design or produce JSON schemas, database models, lesson engines, or import pipelines unless explicitly requested. Add metadata incrementally when an approved lesson or migration task demonstrates the need.
 - If the source or intended distinction is unclear, identify the uncertainty instead of silently inventing content.

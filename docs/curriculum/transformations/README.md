@@ -1,4 +1,4 @@
-# Affix Transformations
+# Transformations
 
 These families show how a familiar English base becomes another useful word or form through a visible beginning or ending. Productive patterns are learning bridges, not permission to invent words mechanically; every result shown here is an established English word.
 

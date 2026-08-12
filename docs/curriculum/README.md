@@ -1,6 +1,6 @@
 # Curriculum Body of Knowledge
 
-This directory is the definitive source of truth for the Inglés Con Confianza curriculum. It is organized by what a lesson teaches, not by a fixed course level or final teaching sequence.
+This directory is the working source of truth for the Inglés Con Confianza body of knowledge. It is organized by what a lesson teaches, not by a fixed course level or final teaching sequence.
 
 | Pillar | Purpose |
 |---|---|
@@ -11,8 +11,22 @@ This directory is the definitive source of truth for the Inglés Con Confianza c
 | [Structure](structure/README.md) | Reusable machinery for building statements, questions, negations, descriptions, and connected ideas. |
 | [Vocabulary](vocabulary/README.md) | Compact reference tables for useful words that do not require independent mapping lessons. |
 
-Each lesson has one canonical home. Indexes may cross-link a lesson when it supports more than one area. The future teaching sequence should express prerequisites and reinforcement without duplicating curriculum files or encoding difficulty into this folder hierarchy.
+Each lesson has one canonical home. Indexes may cross-link a lesson when it supports more than one area. The future teaching sequence should express prerequisites and reinforcement without duplicating curriculum objects or encoding difficulty into this folder hierarchy.
+
+## How to use this curriculum
+
+- Use **mappings** when a frequent source form has several context-dependent translations.
+- Use **structure** for reusable sentence-building rules.
+- Use **transformations**, **cognates**, and **past and past participle** for visible word- or form-building relationships.
+- Use **vocabulary** for compact reference material that does not currently justify an independent lesson family.
+- Build course lessons separately by referencing the smallest relevant curriculum objects and deliberately revisiting earlier ones.
+
+## Current maturity
+
+Mappings contain the most developed machine-readable pilots, including stable IDs, atomic translation records, and compressed mapping concepts for conjugated families. The other pillars remain primarily human-facing references and should gain metadata only when real lesson authoring or import work requires it. Vocabulary is intentionally flat and table-first.
+
+The immediate product step is not another repository-wide normalization pass. It is a five-lesson vertical slice that will test how curriculum objects become prompts, accepted answers, lesson membership, and learner-history references. See the [product brief](../product-brief.md) and [active backlog](../backlog.md).
 
 ## Curation Boundary
 
-This body of knowledge preserves the complete migrated curriculum. Merging the former level-based trees did not establish the final lesson sequence or decide what the application will teach. Cutting, collating, prioritizing, and sequencing are separate later stages.
+This body of knowledge preserves the useful migrated curriculum as an authoring reference. It is deliberately “good enough,” not frozen or complete. Building real lessons may promote supplemental material, expose missing mappings, or reveal that two objects should be merged. Those changes should be driven by teaching and product evidence rather than by a requirement to perfect every folder before implementation begins.

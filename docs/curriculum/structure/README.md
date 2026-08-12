@@ -5,11 +5,11 @@ Structure teaches how English combines a limited vocabulary into complete statem
 | Area | Focus |
 |---|---|
 | [Verb Forms](verb-forms/README.md) | The forms selected by English verb structures. |
+| [Verb System](verb-system/README.md) | Phrasal-verb separability and object/particle placement. |
 | [Fluency Drills](fluency-drills/README.md) | Rapid production of auxiliaries, questions, negations, modality, and conditions. |
+| [Reference and Noun Phrases](reference-and-noun-phrases/README.md) | Articles, demonstratives, quantity, and noun-phrase choices. |
 | [Description and Comparison](description-and-comparison/README.md) | Adjective position, comparisons, and degree structures. |
 | [Time and Sequencing](time-and-sequencing/README.md) | Clock time, frequency, ordering, and time-versus-tense distinctions. |
 | [Connectors](connectors/README.md) | Reusable rules for joining words and ideas. |
-| [Phrasal-Verb Placement](verb-system/phrasal-verbs/object-particle-placement/README.md) | Particle placement and separability. |
-| [Degree and Quantity](description-and-comparison/intensifiers/README.md) | Focused intensifier and quantity contrasts retained under structure. |
 
 The folders are conceptual categories, not a required teaching order. Final lesson sequencing remains a separate curation task.

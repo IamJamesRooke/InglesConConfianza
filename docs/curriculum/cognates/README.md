@@ -1,4 +1,4 @@
-# Cognate Curriculum
+# Cognates
 
 The folders progress from the easiest, most reliable inferences to the least mechanical material:
 

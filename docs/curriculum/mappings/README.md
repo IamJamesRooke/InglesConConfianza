@@ -11,8 +11,8 @@ A canonical mapping folder is intentionally asymmetric: the source word or fixed
 | [Spanish to English](spanish-to-english/README.md) | Choose the natural English form from a Spanish word, form, or construction. |
 | [English to Spanish](english-to-spanish/README.md) | Choose the natural Spanish form from an English word, form, or construction. |
 
-Each map folder contains a README and concrete micro-lessons. The README explains the full map; the micro-lessons teach individual choices such as **querer algo**, **querer hacer algo**, and **querer que alguien haga algo**.
+Each map folder contains a README and concrete micro-lessons or mapping-concept files. The README explains the full map; the records teach individual choices such as **querer algo**, **querer hacer algo**, and **querer que alguien haga algo**. Conjugated concepts may group several surface forms while retaining every atomic, independently trackable translation edge.
 
 Mappings may link to reusable machinery in [`structure/`](../structure/README.md), but the learner-facing translation decision belongs here. This folder is a canonical body of knowledge, not a final course sequence.
 
-The durable atomic-file, YAML, canonical-ownership, reverse-coverage, and phased-normalization contract is recorded in [`AGENTS.md`](AGENTS.md). The optional query metadata and the boundary between mapping concepts and future app records are documented in [`DATA-READINESS.md`](DATA-READINESS.md).
+The durable atomic-object, YAML, canonical-ownership, reverse-coverage, and phased-normalization contract is recorded in [`AGENTS.md`](AGENTS.md). Query metadata and the boundary between mapping concepts, lessons, and future learner records are documented in [`DATA-READINESS.md`](DATA-READINESS.md). Remaining normalization should be driven by the approved five-lesson product slice or another explicitly approved bounded phase.
