@@ -14,4 +14,4 @@ Compare the base direction and the extended form:
 |---|---|
 | Mire arriba y apunte hacia arriba. | Look up and point upward. |
 
-See the productive transformation under [**-ward**](../../../../transformations/suffix-transformations/-ward/04-upward-and-upwards.md).
+See the productive transformation under [**-ward**](../../../../transformations/-ward/04-upward-and-upwards.md).

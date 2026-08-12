@@ -10,4 +10,4 @@
 - **before signing**
 - **before you sign**
 
-For **beforehand**, see the related [**-ward** family lesson](../../suffix-transformations/-ward/11-beforehand.md).
+For **beforehand**, see the related [**-ward** family lesson](../-ward/11-beforehand.md).

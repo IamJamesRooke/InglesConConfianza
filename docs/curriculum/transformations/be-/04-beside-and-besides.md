@@ -6,4 +6,4 @@
 
 **Beside** means **al lado de**. **Besides** means **además de** before a thing or person, or **además** when adding another point.
 
-See the complete [**Beside** vs **Besides** confusion set](../../../mappings/english-to-spanish/side/confusion-sets/01-beside-vs-besides.md).
+See the complete [**Beside** vs **Besides** confusion set](../../mappings/english-to-spanish/side/confusion-sets/01-beside-vs-besides.md).

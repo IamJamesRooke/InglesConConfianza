@@ -10,4 +10,4 @@
 
 **Useful** and **useless** are contrasting branches from **use**. Adding **-ness** names each resulting quality.
 
-For the contextual uses, see [**Usefulness** and **Uselessness**](../../../mappings/english-to-spanish/use/14-usefulness-and-uselessness.md).
+For the contextual uses, see [**Usefulness** and **Uselessness**](../../mappings/english-to-spanish/use/14-usefulness-and-uselessness.md).

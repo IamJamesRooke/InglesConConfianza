@@ -23,6 +23,6 @@ Each subfolder teaches when English selects one of the six forms.
 - [The Full Infinitive](full-infinitive/README.md)
 - [Gerunds and Present Participles](gerund-present-participle/README.md)
 - [Perception Verb Form Contrast](perception-verbs.md)
-- [Canonical Past and Past-Participle Transformation Inventory](../../transformations/past-and-past-participle/README.md)
-- [Complete Three-Form Coverage Index](../../transformations/past-and-past-participle/all-verbs-index.md)
+- [Canonical Past and Past-Participle Transformation Inventory](../../past-and-past-participle/README.md)
+- [Complete Three-Form Coverage Index](../../past-and-past-participle/all-verbs-index.md)
 - [Third-Person Present](third-person-present/README.md)

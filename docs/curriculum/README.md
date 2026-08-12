@@ -5,8 +5,11 @@ This directory is the definitive source of truth for the Inglés Con Confianza c
 | Pillar | Purpose |
 |---|---|
 | [Mappings](mappings/README.md) | The translation core: source-form families whose natural expression changes with meaning, function, and context. |
-| [Transformations](transformations/README.md) | The productive vocabulary core: cognates and visible changes from one useful word or form to another. |
+| [Cognates](cognates/README.md) | Reliable Spanish-English similarities, spelling patterns, memory bridges, and confusion sets. |
+| [Past and Past Participle](past-and-past-participle/README.md) | The canonical sound-based inventory of English past and participle forms. |
+| [Transformations](transformations/README.md) | Productive prefix and suffix families that turn one useful English word or form into another. |
 | [Structure](structure/README.md) | Reusable machinery for building statements, questions, negations, descriptions, and connected ideas. |
+| [Vocabulary](vocabulary/README.md) | Compact reference tables for useful words that do not require independent mapping lessons. |
 
 Each lesson has one canonical home. Indexes may cross-link a lesson when it supports more than one area. The future teaching sequence should express prerequisites and reinforcement without duplicating curriculum files or encoding difficulty into this folder hierarchy.
 
