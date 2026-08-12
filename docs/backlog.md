@@ -29,6 +29,7 @@
         - [x] Phase 5C Pass 8: move 28 cognate-led or vocabulary-first Spanish roots out of mappings
         - [x] Phase 5C Pass 9: move one false-cognate-led and seven vocabulary-first Spanish roots out of mappings
         - [x] Phase 5C Pass 10: move one cognate-led and seven vocabulary-first Spanish roots out of mappings
+        - [x] Phase 5C Pass 11: move 20 ordinary vocabulary-first Spanish roots out of mappings
     - [ ] Phase 6: normalize the remaining high-frequency bilingual hubs in bounded batches
         - [x] Phase 6A: normalize the English **do / make** and Spanish **hacer** bilingual hub
         - [ ] Phase 6B: normalize the English **get** hub and its qualifying Spanish reverse sources
@@ -134,6 +135,15 @@
 - Spanish-to-English only. No other languages. If others want to fork the repo, that's fine. And can give AGENT instructions explaining exactly how the method was made.
 
 ## Completed timeline
+
+### 2026-08-11 — Spanish mapping index reduced to 152 source hubs
+
+- [x] Complete Phase 5C Pass 11 on Sol High using the owner's eighth full-folder review
+    - [x] Move **aprovechar, arreglar, averiguar, avisar, bajar, cambiar, cargar / encargar, cuidar, encontrar, gastar, guardar, llave, meter, mostrar, olvidar, pegar, romper**, and **subir / levantar** into Spanish core vocabulary
+    - [x] Move **apuntar** and **tirar** into supplemental Spanish vocabulary
+    - [x] Preserve all 84 retired-root files byte-for-byte, including 741 source lines and 383 teaching-table lines
+    - [x] Reduce the exhaustive Spanish mapping index from 172 to 152 exact top-level source folders
+    - [x] Revalidate all 1,308 unique machine-object IDs, 1,249 atomic mappings, 59 concepts, reciprocal links, 5,717 local Markdown links, and the exact 152 / 71 / 31 / 46 destination indexes
 
 ### 2026-08-11 — Spanish mapping index reduced to 172 source hubs
 

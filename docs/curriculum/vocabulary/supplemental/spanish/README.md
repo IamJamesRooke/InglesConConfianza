@@ -1,6 +1,7 @@
 # Supplemental Spanish Vocabulary
 
 - [**andar**](andar/README.md)
+- [**apuntar**](apuntar/README.md)
 - [**ayudar**](ayudar/README.md)
 - [**blanco**](blanco/README.md)
 - [**callar**](callar/README.md)
@@ -28,4 +29,5 @@
 - [**rendir**](rendir/README.md)
 - [**salvar**](salvar/README.md)
 - [**sentar**](sentar/README.md)
+- [**tirar**](tirar/README.md)
 - [**viejo**](viejo/README.md)
