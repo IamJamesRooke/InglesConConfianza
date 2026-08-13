@@ -20,7 +20,9 @@ VALUES
 
 INSERT INTO sentences (title, english_translation)
 VALUES
-  ('Wanting to go to the store', 'I want to go to the store to buy something.');
+  ('Sentence 1 · Neutral English', 'I want to go to the store.'),
+  ('Sentence 2 · Conversational English', 'I wanna go to the store.'),
+  ('Sentence 3 · Extended sentence', 'I want to go to the store to buy something.');
 
 INSERT INTO sentence_answer_groups
   (sentence_id, position, accepted_answers, explanation)
@@ -30,8 +32,17 @@ VALUES
   (1, 3, '["to"]', NULL),
   (1, 4, '["the"]', NULL),
   (1, 5, '["store"]', NULL),
-  (1, 6, '["to buy", "in order to buy"]', 'This phrase expresses purpose. English usually uses to + verb; in order to + verb is also correct.'),
-  (1, 7, '["something"]', NULL);
+  (2, 1, '["I wanna go", "I want to go"]', 'Both answers are correct. I want to go is neutral; I wanna go is conversational.'),
+  (2, 2, '["to"]', NULL),
+  (2, 3, '["the"]', NULL),
+  (2, 4, '["store"]', NULL),
+  (3, 1, '["I want"]', NULL),
+  (3, 2, '["to go"]', NULL),
+  (3, 3, '["to"]', NULL),
+  (3, 4, '["the"]', NULL),
+  (3, 5, '["store"]', NULL),
+  (3, 6, '["to buy", "in order to buy"]', 'This phrase expresses purpose. English usually uses to + verb; in order to + verb is also correct.'),
+  (3, 7, '["something"]', NULL);
 
 INSERT INTO sentence_blocks (sentence_id, answer_group_id, block_id, position)
 VALUES
@@ -40,9 +51,19 @@ VALUES
   (1, 3, 6, 3),
   (1, 4, 8, 4),
   (1, 5, 9, 5),
-  (1, 6, 10, 6),
-  (1, 6, 11, 7),
-  (1, 7, 3, 8);
+  (2, 6, 1, 1),
+  (2, 6, 5, 2),
+  (2, 7, 6, 3),
+  (2, 8, 8, 4),
+  (2, 9, 9, 5),
+  (3, 10, 1, 1),
+  (3, 11, 5, 2),
+  (3, 12, 6, 3),
+  (3, 13, 8, 4),
+  (3, 14, 9, 5),
+  (3, 15, 10, 6),
+  (3, 15, 11, 7),
+  (3, 16, 3, 8);
 
 INSERT INTO constructions (name, source_pattern, target_pattern, explanation)
 VALUES

@@ -94,6 +94,20 @@ export function SentenceExercise({ sentence }: { sentence: Sentence }) {
                     : "border-stone-200 bg-stone-50 text-stone-900"
                   }`}
                 />
+                {isCorrect && group.acceptedAnswers.length > 1 && (
+                  <div className="mt-2 rounded-md border border-stone-200 bg-stone-100 px-3 py-2 text-xs text-stone-600">
+                    <span className="font-medium text-stone-700">
+                      Also accepted:
+                    </span>{" "}
+                    {group.acceptedAnswers
+                      .filter(
+                        (answer) =>
+                          normalizeAnswer(answer) !==
+                          normalizeAnswer(answers[index]),
+                      )
+                      .join(" · ")}
+                  </div>
+                )}
                 {group.explanation && (
                   <span className="mt-2 block text-xs leading-relaxed text-stone-500">
                     {group.explanation}
