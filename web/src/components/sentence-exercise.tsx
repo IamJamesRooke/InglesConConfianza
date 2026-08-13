@@ -68,11 +68,11 @@ export function SentenceExercise({ sentence }: { sentence: Sentence }) {
               .join(" · ");
 
             return (
-              <label key={group.id} className="block">
-                <div className="rounded-t-lg bg-stone-900 px-4 py-3 text-center text-sm font-semibold text-white">
+              <label key={group.id} className="flex h-full flex-col">
+                <div className="flex h-28 flex-col justify-center rounded-t-lg bg-stone-900 px-4 py-3 text-center text-lg font-semibold text-white">
                   {spanishPhrase}
                   {contexts && (
-                    <span className="mt-1 block text-[11px] font-normal text-stone-400">
+                    <span className="mt-2 block text-sm font-normal leading-snug text-stone-300">
                       {contexts}
                     </span>
                   )}
@@ -88,15 +88,15 @@ export function SentenceExercise({ sentence }: { sentence: Sentence }) {
                   }
                   aria-label={`English translation for ${spanishPhrase}`}
                   autoComplete="off"
-                  className={`w-full rounded-b-lg border px-4 py-3 text-center text-base outline-none transition focus:ring-2 focus:ring-stone-400 ${
+                  className={`h-16 w-full shrink-0 rounded-b-lg border px-4 py-3 text-center text-lg outline-none transition focus:ring-2 focus:ring-stone-400 ${
                     isCorrect
                       ? "border-emerald-500 bg-emerald-50 text-emerald-900"
                     : "border-stone-200 bg-stone-50 text-stone-900"
                   }`}
                 />
                 {isCorrect && group.acceptedAnswers.length > 1 && (
-                  <div className="mt-2 rounded-md border border-stone-200 bg-stone-100 px-3 py-2 text-xs text-stone-600">
-                    <span className="font-medium text-stone-700">
+                  <div className="mt-3 rounded-md border border-stone-200 bg-stone-100 px-3 py-2 text-sm leading-5 text-stone-600">
+                    <span className="font-medium text-stone-800">
                       Also accepted:
                     </span>{" "}
                     {group.acceptedAnswers
@@ -109,7 +109,7 @@ export function SentenceExercise({ sentence }: { sentence: Sentence }) {
                   </div>
                 )}
                 {group.explanation && (
-                  <span className="mt-2 block text-xs leading-relaxed text-stone-500">
+                  <span className="mt-3 block text-sm leading-6 text-stone-600">
                     {group.explanation}
                   </span>
                 )}
