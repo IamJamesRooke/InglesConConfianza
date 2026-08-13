@@ -4,7 +4,7 @@
 
 ## Current objective
 
-Build five representative lessons and let those lessons reveal the smallest useful curriculum, question, and learner-data contracts. The curriculum does not need to be perfectly normalized first; it needs to be coherent enough to serve as a reliable authoring reference.
+Build the smallest useful database-backed curriculum foundation. Start with reusable language blocks, let actual authoring reveal the data model, and postpone lessons and learner history until the foundation is useful.
 
 ## Now
 
@@ -12,6 +12,10 @@ Build five representative lessons and let those lessons reveal the smallest usef
 - [x] Promote cognates and past forms to curriculum-level pillars and flatten prefix/suffix families under transformations.
 - [x] Flatten vocabulary into one root-level Markdown file per category, preserving every prior source in a [collation manifest](history/vocabulary-collation-manifest.md).
 - [x] Professionalize curriculum navigation and separate active work from migration history.
+- [x] Create a minimal SQLite database with a `blocks` table.
+- [x] Seed the first Spanish-to-English blocks for a representative sentence.
+- [x] Create a minimal Next.js application that reads and displays the database blocks.
+- [x] Add Tailwind CSS and shadcn/ui for a simple visual foundation.
 - [ ] Build five representative lessons as the first vertical slice.
     - [ ] Include straightforward vocabulary retrieval.
     - [ ] Include a Spanish-to-English one-to-many mapping.
@@ -29,6 +33,8 @@ Build five representative lessons and let those lessons reveal the smallest usef
 
 ## Next
 
+- [ ] Decide the smallest block metadata needed for context-specific meanings and form families.
+- [ ] Add one authoring workflow for creating and inspecting blocks.
 - [ ] YAMLize or normalize only the curriculum objects required by the five-lesson slice.
 - [ ] Run a Markdown-to-data dry run for those objects and verify stable IDs, accepted answers, and references.
 - [ ] Build the smallest complete application flow: choose a lesson, answer Spanish-to-English text boxes, receive feedback, and save progress.
