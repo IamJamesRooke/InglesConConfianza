@@ -9,7 +9,7 @@ VALUES
   ('a', 'at', 'clock time'),
   ('la', 'the', 'feminine singular article'),
   ('tienda', 'store', NULL),
-  ('para', 'to', 'purpose before an infinitive'),
+  ('para', NULL, 'purpose marker before an infinitive'),
   ('comprar', 'to buy', 'infinitive'),
   ('que', NULL, 'subordinator in querer que'),
   ('nosotros', 'us', 'object of want in an English infinitive construction'),
@@ -17,6 +17,32 @@ VALUES
   ('allá', 'there', NULL),
   ('las', 'the', 'feminine plural article'),
   ('10:00', '10:00', 'clock time');
+
+INSERT INTO sentences (title, english_translation)
+VALUES
+  ('Wanting to go to the store', 'I want to go to the store to buy something.');
+
+INSERT INTO sentence_answer_groups
+  (sentence_id, position, accepted_answers, explanation)
+VALUES
+  (1, 1, '["I want"]', NULL),
+  (1, 2, '["to go"]', NULL),
+  (1, 3, '["to"]', NULL),
+  (1, 4, '["the"]', NULL),
+  (1, 5, '["store"]', NULL),
+  (1, 6, '["to buy", "in order to buy"]', 'This phrase expresses purpose. English usually uses to + verb; in order to + verb is also correct.'),
+  (1, 7, '["something"]', NULL);
+
+INSERT INTO sentence_blocks (sentence_id, answer_group_id, block_id, position)
+VALUES
+  (1, 1, 1, 1),
+  (1, 2, 5, 2),
+  (1, 3, 6, 3),
+  (1, 4, 8, 4),
+  (1, 5, 9, 5),
+  (1, 6, 10, 6),
+  (1, 6, 11, 7),
+  (1, 7, 3, 8);
 
 INSERT INTO constructions (name, source_pattern, target_pattern, explanation)
 VALUES
