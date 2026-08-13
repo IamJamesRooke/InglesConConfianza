@@ -21,6 +21,12 @@ export function SiteHeader() {
           >
             Sentences
           </Link>
+          <Link
+            href="/demo-lesson"
+            className="rounded-full px-4 py-2 text-stone-700 transition hover:bg-white hover:text-stone-950"
+          >
+            Demo Lesson
+          </Link>
         </nav>
       </div>
     </header>
