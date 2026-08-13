@@ -33,6 +33,7 @@ Build the smallest useful database-backed curriculum foundation. Start with reus
 
 ## Next
 
+- [ ] Use the [teaching methodology reference](teaching-methodology.md) when designing lesson steps, feedback, and learner-facing UI.
 - [ ] Decide the smallest block metadata needed for context-specific meanings and form families.
 - [ ] Add one authoring workflow for creating and inspecting blocks.
 - [ ] YAMLize or normalize only the curriculum objects required by the five-lesson slice.

@@ -16,7 +16,24 @@ VALUES
   ('vayamos', 'to go', 'subjunctive form inside querer que'),
   ('allá', 'there', NULL),
   ('las', 'the', 'feminine plural article'),
-  ('10:00', '10:00', 'clock time');
+  ('10:00', '10:00', 'clock time'),
+  ('visitando', 'visiting', 'estar + -ando form'),
+  ('limitando', 'limiting', 'Spanish -ando form'),
+  ('confirmando', 'confirming', 'Spanish -ando form'),
+  ('cancelando', 'cancelling', 'Spanish -ando form'),
+  ('continuando', 'continuing', 'Spanish -ando form'),
+  ('decidiendo', 'deciding', 'Spanish -iendo form'),
+  ('dividiendo', 'dividing', 'Spanish -iendo form'),
+  ('definiendo', 'defining', 'Spanish -iendo form'),
+  ('admitiendo', 'admitting', 'Spanish -iendo form'),
+  ('permitiendo', 'permitting', 'Spanish -iendo form'),
+  ('existiendo', 'existing', 'Spanish -iendo form'),
+  ('resistiendo', 'resisting', 'Spanish -iendo form'),
+  ('insistiendo', 'insisting', 'Spanish -iendo form'),
+  ('estoy', NULL, 'first-person form of estar'),
+  ('preparando', 'preparing', 'Spanish -ando form'),
+  ('a mi amigo', 'my friend', 'phrase-level mapping; the Spanish a is not translated separately'),
+  ('ahora', 'now', NULL);
 
 INSERT INTO sentences (title, english_translation)
 VALUES
