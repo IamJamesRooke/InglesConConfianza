@@ -1,6 +1,6 @@
 # Backlog
 
-> Last updated: 2026-08-11. This file contains current decisions and executable work only. Completed migration detail is preserved in the [curriculum migration log](history/curriculum-migration-log.md).
+> Last updated: 2026-08-19. This file contains current decisions and executable work only. Completed migration detail is preserved in the [curriculum migration log](history/curriculum-migration-log.md).
 
 ## Current objective
 
@@ -16,6 +16,7 @@ Build the smallest useful database-backed curriculum foundation. Start with reus
 - [x] Seed the first Spanish-to-English blocks for a representative sentence.
 - [x] Create a minimal Next.js application that reads and displays the database blocks.
 - [x] Add Tailwind CSS and shadcn/ui for a simple visual foundation.
+- [x] Create the frontend Lesson Builder foundation with reorderable and renumbered lessons, optional names, deletion, an expandable content-block picker, and Markdown-backed WYSIWYG explanation blocks.
 - [ ] Build five representative lessons as the first vertical slice.
     - [ ] Include straightforward vocabulary retrieval.
     - [ ] Include a Spanish-to-English one-to-many mapping.
