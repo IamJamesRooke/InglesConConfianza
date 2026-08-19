@@ -1,6 +1,19 @@
 "use client";
 
-import { FileText, GripVertical, Languages, Plus, Trash2 } from "lucide-react";
+import {
+  ArrowDown,
+  ArrowLeft,
+  ArrowRight,
+  ArrowUp,
+  ChevronDown,
+  ChevronUp,
+  FileText,
+  GripVertical,
+  Languages,
+  Plus,
+  Trash2,
+  X,
+} from "lucide-react";
 import { useRef, useState, type DragEvent } from "react";
 
 import { MarkdownEditor } from "@/components/lesson-builder/markdown-editor";
@@ -31,6 +44,7 @@ type SentenceBlock = {
 type LanguageBlock = {
   id: number;
   spanish: string;
+  callout: string | null;
   acceptedAnswers: string[];
 };
 
@@ -43,9 +57,17 @@ export default function LessonBuilderPage() {
   const [openBlockPickerLessonId, setOpenBlockPickerLessonId] = useState<
     number | null
   >(null);
+  const [collapsedContentBlocks, setCollapsedContentBlocks] = useState(
+    () => new Set<string>(),
+  );
+  const [collapsedLanguageBlocks, setCollapsedLanguageBlocks] = useState(
+    () => new Set<string>(),
+  );
   const languageBlockSpanishRefs = useRef(
     new Map<string, HTMLInputElement>(),
   );
+  const acceptedAnswerRefs = useRef(new Map<string, HTMLInputElement>());
+  const languageBlockCalloutRefs = useRef(new Map<string, HTMLInputElement>());
 
   function createLesson() {
     setLessons((currentLessons) => {
@@ -75,6 +97,66 @@ export default function LessonBuilderPage() {
     );
     setOpenBlockPickerLessonId((currentLessonId) =>
       currentLessonId === lessonId ? null : currentLessonId,
+    );
+  }
+
+  function toggleContentBlock(lessonId: number, blockId: number) {
+    const key = `${lessonId}-${blockId}`;
+    setCollapsedContentBlocks((currentKeys) => {
+      const nextKeys = new Set(currentKeys);
+      if (nextKeys.has(key)) {
+        nextKeys.delete(key);
+      } else {
+        nextKeys.add(key);
+      }
+      return nextKeys;
+    });
+  }
+
+  function deleteContentBlock(lessonId: number, blockId: number) {
+    setLessons((currentLessons) =>
+      currentLessons.map((lesson) =>
+        lesson.id === lessonId
+          ? {
+              ...lesson,
+              blocks: lesson.blocks.filter((block) => block.id !== blockId),
+            }
+          : lesson,
+      ),
+    );
+  }
+
+  function moveContentBlock(
+    lessonId: number,
+    blockId: number,
+    direction: -1 | 1,
+  ) {
+    setLessons((currentLessons) =>
+      currentLessons.map((lesson) => {
+        if (lesson.id !== lessonId) {
+          return lesson;
+        }
+
+        const currentIndex = lesson.blocks.findIndex(
+          (block) => block.id === blockId,
+        );
+        const targetIndex = currentIndex + direction;
+
+        if (
+          currentIndex === -1 ||
+          targetIndex < 0 ||
+          targetIndex >= lesson.blocks.length
+        ) {
+          return lesson;
+        }
+
+        const blocks = [...lesson.blocks];
+        [blocks[currentIndex], blocks[targetIndex]] = [
+          blocks[targetIndex],
+          blocks[currentIndex],
+        ];
+        return { ...lesson, blocks };
+      }),
     );
   }
 
@@ -125,6 +207,7 @@ export default function LessonBuilderPage() {
                 {
                   id: 1,
                   spanish: "",
+                  callout: null,
                   acceptedAnswers: [""],
                 },
               ],
@@ -134,6 +217,54 @@ export default function LessonBuilderPage() {
       }),
     );
     setOpenBlockPickerLessonId(null);
+  }
+
+  function updateLanguageBlockCallout(
+    lessonId: number,
+    sentenceBlockId: number,
+    languageBlockId: number,
+    callout: string | null,
+  ) {
+    setLessons((currentLessons) =>
+      currentLessons.map((lesson) =>
+        lesson.id === lessonId
+          ? {
+              ...lesson,
+              blocks: lesson.blocks.map((block) =>
+                block.id === sentenceBlockId && block.type === "sentence"
+                  ? {
+                      ...block,
+                      languageBlocks: block.languageBlocks.map(
+                        (languageBlock) =>
+                          languageBlock.id === languageBlockId
+                            ? { ...languageBlock, callout }
+                            : languageBlock,
+                      ),
+                    }
+                  : block,
+              ),
+            }
+          : lesson,
+      ),
+    );
+  }
+
+  function addLanguageBlockCallout(
+    lessonId: number,
+    sentenceBlockId: number,
+    languageBlockId: number,
+  ) {
+    updateLanguageBlockCallout(
+      lessonId,
+      sentenceBlockId,
+      languageBlockId,
+      "",
+    );
+    window.setTimeout(() => {
+      languageBlockCalloutRefs.current
+        .get(`${lessonId}-${sentenceBlockId}-${languageBlockId}`)
+        ?.focus();
+    }, 0);
   }
 
   function updateExplanationBlock(
@@ -157,11 +288,10 @@ export default function LessonBuilderPage() {
     );
   }
 
-  function updateLanguageBlock(
+  function updateSpanishPrompt(
     lessonId: number,
     sentenceBlockId: number,
     languageBlockId: number,
-    field: "spanish" | "answer",
     value: string,
   ) {
     setLessons((currentLessons) =>
@@ -176,12 +306,128 @@ export default function LessonBuilderPage() {
                       languageBlocks: block.languageBlocks.map(
                         (languageBlock) =>
                           languageBlock.id === languageBlockId
-                            ? field === "spanish"
-                              ? { ...languageBlock, spanish: value }
-                              : {
-                                  ...languageBlock,
-                                  acceptedAnswers: [value],
-                                }
+                            ? { ...languageBlock, spanish: value }
+                            : languageBlock,
+                      ),
+                    }
+                  : block,
+              ),
+            }
+          : lesson,
+      ),
+    );
+  }
+
+  function updateAcceptedAnswer(
+    lessonId: number,
+    sentenceBlockId: number,
+    languageBlockId: number,
+    answerIndex: number,
+    value: string,
+  ) {
+    setLessons((currentLessons) =>
+      currentLessons.map((lesson) =>
+        lesson.id === lessonId
+          ? {
+              ...lesson,
+              blocks: lesson.blocks.map((block) =>
+                block.id === sentenceBlockId && block.type === "sentence"
+                  ? {
+                      ...block,
+                      languageBlocks: block.languageBlocks.map(
+                        (languageBlock) =>
+                          languageBlock.id === languageBlockId
+                            ? {
+                                ...languageBlock,
+                                acceptedAnswers:
+                                  languageBlock.acceptedAnswers.map(
+                                    (answer, currentAnswerIndex) =>
+                                      currentAnswerIndex === answerIndex
+                                        ? value
+                                        : answer,
+                                  ),
+                              }
+                            : languageBlock,
+                      ),
+                    }
+                  : block,
+              ),
+            }
+          : lesson,
+      ),
+    );
+  }
+
+  function addAcceptedAnswer(
+    lessonId: number,
+    sentenceBlockId: number,
+    languageBlockId: number,
+    answerIndex: number,
+  ) {
+    setLessons((currentLessons) =>
+      currentLessons.map((lesson) =>
+        lesson.id === lessonId
+          ? {
+              ...lesson,
+              blocks: lesson.blocks.map((block) =>
+                block.id === sentenceBlockId && block.type === "sentence"
+                  ? {
+                      ...block,
+                      languageBlocks: block.languageBlocks.map(
+                        (languageBlock) =>
+                          languageBlock.id === languageBlockId
+                            ? {
+                                ...languageBlock,
+                                acceptedAnswers: [
+                                  ...languageBlock.acceptedAnswers,
+                                  "",
+                                ],
+                              }
+                            : languageBlock,
+                      ),
+                    }
+                  : block,
+              ),
+            }
+          : lesson,
+      ),
+    );
+
+    window.setTimeout(() => {
+      acceptedAnswerRefs.current
+        .get(
+          `${lessonId}-${sentenceBlockId}-${languageBlockId}-${answerIndex}`,
+        )
+        ?.focus();
+    }, 0);
+  }
+
+  function removeAcceptedAnswer(
+    lessonId: number,
+    sentenceBlockId: number,
+    languageBlockId: number,
+    answerIndex: number,
+  ) {
+    setLessons((currentLessons) =>
+      currentLessons.map((lesson) =>
+        lesson.id === lessonId
+          ? {
+              ...lesson,
+              blocks: lesson.blocks.map((block) =>
+                block.id === sentenceBlockId && block.type === "sentence"
+                  ? {
+                      ...block,
+                      languageBlocks: block.languageBlocks.map(
+                        (languageBlock) =>
+                          languageBlock.id === languageBlockId
+                            ? {
+                                ...languageBlock,
+                                acceptedAnswers:
+                                  languageBlock.acceptedAnswers.filter(
+                                    (_, currentAnswerIndex) =>
+                                      currentAnswerIndex !== answerIndex,
+                                  ),
+                              }
                             : languageBlock,
                       ),
                     }
@@ -212,6 +458,7 @@ export default function LessonBuilderPage() {
                         {
                           id: languageBlockId,
                           spanish: "",
+                          callout: null,
                           acceptedAnswers: [""],
                         },
                       ],
@@ -228,6 +475,94 @@ export default function LessonBuilderPage() {
         .get(`${lessonId}-${sentenceBlockId}-${languageBlockId}`)
         ?.focus();
     }, 0);
+  }
+
+  function toggleLanguageBlock(
+    lessonId: number,
+    sentenceBlockId: number,
+    languageBlockId: number,
+  ) {
+    const key = `${lessonId}-${sentenceBlockId}-${languageBlockId}`;
+    setCollapsedLanguageBlocks((currentKeys) => {
+      const nextKeys = new Set(currentKeys);
+      if (nextKeys.has(key)) {
+        nextKeys.delete(key);
+      } else {
+        nextKeys.add(key);
+      }
+      return nextKeys;
+    });
+  }
+
+  function deleteLanguageBlock(
+    lessonId: number,
+    sentenceBlockId: number,
+    languageBlockId: number,
+  ) {
+    setLessons((currentLessons) =>
+      currentLessons.map((lesson) =>
+        lesson.id === lessonId
+          ? {
+              ...lesson,
+              blocks: lesson.blocks.map((block) =>
+                block.id === sentenceBlockId && block.type === "sentence"
+                  ? {
+                      ...block,
+                      languageBlocks: block.languageBlocks.filter(
+                        (languageBlock) =>
+                          languageBlock.id !== languageBlockId,
+                      ),
+                    }
+                  : block,
+              ),
+            }
+          : lesson,
+      ),
+    );
+  }
+
+  function moveLanguageBlock(
+    lessonId: number,
+    sentenceBlockId: number,
+    languageBlockId: number,
+    direction: -1 | 1,
+  ) {
+    setLessons((currentLessons) =>
+      currentLessons.map((lesson) => {
+        if (lesson.id !== lessonId) {
+          return lesson;
+        }
+
+        return {
+          ...lesson,
+          blocks: lesson.blocks.map((block) => {
+            if (block.id !== sentenceBlockId || block.type !== "sentence") {
+              return block;
+            }
+
+            const currentIndex = block.languageBlocks.findIndex(
+              (languageBlock) => languageBlock.id === languageBlockId,
+            );
+            const targetIndex = currentIndex + direction;
+
+            if (
+              currentIndex === -1 ||
+              targetIndex < 0 ||
+              targetIndex >= block.languageBlocks.length
+            ) {
+              return block;
+            }
+
+            const languageBlocks = [...block.languageBlocks];
+            [languageBlocks[currentIndex], languageBlocks[targetIndex]] = [
+              languageBlocks[targetIndex],
+              languageBlocks[currentIndex],
+            ];
+            return { ...block, languageBlocks };
+          }),
+        };
+      }),
+    );
   }
 
   function updateDropTarget(
@@ -364,42 +699,158 @@ export default function LessonBuilderPage() {
               </header>
 
               <div className="space-y-4 p-6">
-                {lesson.blocks.map((block) => (
-                  <div
-                    key={block.id}
-                    className="overflow-hidden rounded-xl border border-stone-200 bg-white shadow-sm"
-                  >
+                {lesson.blocks.map((block, blockIndex) => {
+                  const contentBlockKey = `${lesson.id}-${block.id}`;
+                  const isContentBlockCollapsed =
+                    collapsedContentBlocks.has(contentBlockKey);
+
+                  return (
+                    <div
+                      key={block.id}
+                      className="overflow-hidden rounded-xl border border-stone-200 bg-white shadow-sm"
+                    >
                     {block.type === "explanation" ? (
                       <>
-                        <div className="flex items-center gap-3 border-b border-stone-200 bg-stone-50 px-5 py-3">
-                          <span className="flex size-9 items-center justify-center rounded-lg bg-violet-50 text-violet-700">
-                            <FileText className="size-4" aria-hidden="true" />
-                          </span>
-                          <p className="font-semibold text-stone-900">
-                            Explanation
-                          </p>
+                        <div className="flex items-center justify-between gap-3 border-b border-stone-200 bg-stone-50 px-5 py-3">
+                          <div className="flex items-center gap-3">
+                            <span className="flex size-9 items-center justify-center rounded-lg bg-violet-50 text-violet-700">
+                              <FileText className="size-4" aria-hidden="true" />
+                            </span>
+                            <p className="font-semibold text-stone-900">
+                              Explanation
+                            </p>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <button
+                              type="button"
+                              onClick={() =>
+                                moveContentBlock(lesson.id, block.id, -1)
+                              }
+                              disabled={blockIndex === 0}
+                              aria-label="Move explanation up"
+                              title="Move up"
+                              className="flex size-8 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200 disabled:cursor-not-allowed disabled:opacity-25"
+                            >
+                              <ArrowUp className="size-4" aria-hidden="true" />
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() =>
+                                moveContentBlock(lesson.id, block.id, 1)
+                              }
+                              disabled={blockIndex === lesson.blocks.length - 1}
+                              aria-label="Move explanation down"
+                              title="Move down"
+                              className="flex size-8 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200 disabled:cursor-not-allowed disabled:opacity-25"
+                            >
+                              <ArrowDown className="size-4" aria-hidden="true" />
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() =>
+                                toggleContentBlock(lesson.id, block.id)
+                              }
+                              aria-label={`${isContentBlockCollapsed ? "Expand" : "Collapse"} explanation`}
+                              title={isContentBlockCollapsed ? "Expand" : "Collapse"}
+                              className="flex size-8 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200"
+                            >
+                              {isContentBlockCollapsed ? (
+                                <ChevronDown className="size-4" aria-hidden="true" />
+                              ) : (
+                                <ChevronUp className="size-4" aria-hidden="true" />
+                              )}
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() =>
+                                deleteContentBlock(lesson.id, block.id)
+                              }
+                              aria-label="Delete explanation"
+                              title="Delete explanation"
+                              className="flex size-8 items-center justify-center rounded-md text-stone-400 transition hover:bg-red-50 hover:text-red-600"
+                            >
+                              <Trash2 className="size-4" aria-hidden="true" />
+                            </button>
+                          </div>
                         </div>
-                        <MarkdownEditor
-                          markdown={block.contentMarkdown}
-                          onChange={(markdown) =>
-                            updateExplanationBlock(
-                              lesson.id,
-                              block.id,
-                              markdown,
-                            )
-                          }
-                        />
+                        {!isContentBlockCollapsed && (
+                          <MarkdownEditor
+                            markdown={block.contentMarkdown}
+                            onChange={(markdown) =>
+                              updateExplanationBlock(
+                                lesson.id,
+                                block.id,
+                                markdown,
+                              )
+                            }
+                          />
+                        )}
                       </>
                     ) : (
                       <>
-                        <div className="flex items-center gap-3 border-b border-stone-200 bg-stone-50 px-5 py-3">
-                          <span className="flex size-9 items-center justify-center rounded-lg bg-blue-50 text-blue-700">
-                            <Languages className="size-4" aria-hidden="true" />
-                          </span>
-                          <p className="font-semibold text-stone-900">
-                            Sentence
-                          </p>
+                        <div className="flex items-center justify-between gap-3 border-b border-stone-200 bg-stone-50 px-5 py-3">
+                          <div className="flex items-center gap-3">
+                            <span className="flex size-9 items-center justify-center rounded-lg bg-blue-50 text-blue-700">
+                              <Languages className="size-4" aria-hidden="true" />
+                            </span>
+                            <p className="font-semibold text-stone-900">
+                              Sentence
+                            </p>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <button
+                              type="button"
+                              onClick={() =>
+                                moveContentBlock(lesson.id, block.id, -1)
+                              }
+                              disabled={blockIndex === 0}
+                              aria-label="Move sentence up"
+                              title="Move up"
+                              className="flex size-8 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200 disabled:cursor-not-allowed disabled:opacity-25"
+                            >
+                              <ArrowUp className="size-4" aria-hidden="true" />
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() =>
+                                moveContentBlock(lesson.id, block.id, 1)
+                              }
+                              disabled={blockIndex === lesson.blocks.length - 1}
+                              aria-label="Move sentence down"
+                              title="Move down"
+                              className="flex size-8 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200 disabled:cursor-not-allowed disabled:opacity-25"
+                            >
+                              <ArrowDown className="size-4" aria-hidden="true" />
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() =>
+                                toggleContentBlock(lesson.id, block.id)
+                              }
+                              aria-label={`${isContentBlockCollapsed ? "Expand" : "Collapse"} sentence`}
+                              title={isContentBlockCollapsed ? "Expand" : "Collapse"}
+                              className="flex size-8 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200"
+                            >
+                              {isContentBlockCollapsed ? (
+                                <ChevronDown className="size-4" aria-hidden="true" />
+                              ) : (
+                                <ChevronUp className="size-4" aria-hidden="true" />
+                              )}
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() =>
+                                deleteContentBlock(lesson.id, block.id)
+                              }
+                              aria-label="Delete sentence"
+                              title="Delete sentence"
+                              className="flex size-8 items-center justify-center rounded-md text-stone-400 transition hover:bg-red-50 hover:text-red-600"
+                            >
+                              <Trash2 className="size-4" aria-hidden="true" />
+                            </button>
+                          </div>
                         </div>
+                        {!isContentBlockCollapsed && (
                         <div className="p-6">
                           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                             {block.languageBlocks.map(
@@ -414,81 +865,373 @@ export default function LessonBuilderPage() {
                                       (currentBlock) => currentBlock.id,
                                     ),
                                   ) + 1;
+                                const languageBlockKey = `${lesson.id}-${block.id}-${languageBlock.id}`;
+                                const isLanguageBlockCollapsed =
+                                  collapsedLanguageBlocks.has(languageBlockKey);
 
                                 return (
                                   <div
                                     key={languageBlock.id}
                                     className="overflow-hidden rounded-xl border border-stone-300 bg-white shadow-md shadow-stone-200/60"
                                   >
-                                    <label className="flex min-h-28 items-center justify-center px-4 py-6">
-                                      <span className="sr-only">
-                                        Spanish prompt
+                                    <div className="flex items-center justify-between gap-2 border-b border-stone-200 bg-stone-100 px-2 py-1.5">
+                                      <span className="px-1 text-xs font-semibold text-stone-500">
+                                        Block {languageBlockIndex + 1}
                                       </span>
-                                      <input
-                                        ref={(element) => {
-                                          const key = `${lesson.id}-${block.id}-${languageBlock.id}`;
-                                          if (element) {
-                                            languageBlockSpanishRefs.current.set(
-                                              key,
-                                              element,
-                                            );
-                                          } else {
-                                            languageBlockSpanishRefs.current.delete(
-                                              key,
-                                            );
-                                          }
-                                        }}
-                                        type="text"
-                                        value={languageBlock.spanish}
-                                        onChange={(event) =>
-                                          updateLanguageBlock(
-                                            lesson.id,
-                                            block.id,
-                                            languageBlock.id,
-                                            "spanish",
-                                            event.target.value,
-                                          )
-                                        }
-                                        placeholder="Spanish prompt"
-                                        className="w-full bg-transparent text-center text-xl font-semibold tracking-tight text-stone-900 outline-none placeholder:text-stone-300"
-                                      />
-                                    </label>
-                                    <label className="flex min-h-14 items-center justify-center border-t border-stone-800 bg-stone-900 px-4 py-3">
-                                      <span className="sr-only">
-                                        English answer
-                                      </span>
-                                      <input
-                                        type="text"
-                                        value={
-                                          languageBlock.acceptedAnswers[0] ?? ""
-                                        }
-                                        onChange={(event) =>
-                                          updateLanguageBlock(
-                                            lesson.id,
-                                            block.id,
-                                            languageBlock.id,
-                                            "answer",
-                                            event.target.value,
-                                          )
-                                        }
-                                        onKeyDown={(event) => {
-                                          if (
-                                            event.key === "Tab" &&
-                                            !event.shiftKey &&
-                                            isLastLanguageBlock
-                                          ) {
-                                            event.preventDefault();
-                                            addLanguageBlock(
+                                      <div className="flex items-center gap-0.5">
+                                        <button
+                                          type="button"
+                                          onClick={() =>
+                                            moveLanguageBlock(
                                               lesson.id,
                                               block.id,
-                                              nextLanguageBlockId,
-                                            );
+                                              languageBlock.id,
+                                              -1,
+                                            )
                                           }
-                                        }}
-                                        placeholder="English answer"
-                                        className="w-full bg-transparent text-center text-sm font-semibold text-white outline-none placeholder:text-stone-500"
-                                      />
-                                    </label>
+                                          disabled={languageBlockIndex === 0}
+                                          aria-label={`Move language block ${languageBlockIndex + 1} left`}
+                                          title="Move left"
+                                          className="flex size-7 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200 disabled:cursor-not-allowed disabled:opacity-25"
+                                        >
+                                          <ArrowLeft className="size-3.5" aria-hidden="true" />
+                                        </button>
+                                        <button
+                                          type="button"
+                                          onClick={() =>
+                                            moveLanguageBlock(
+                                              lesson.id,
+                                              block.id,
+                                              languageBlock.id,
+                                              1,
+                                            )
+                                          }
+                                          disabled={isLastLanguageBlock}
+                                          aria-label={`Move language block ${languageBlockIndex + 1} right`}
+                                          title="Move right"
+                                          className="flex size-7 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200 disabled:cursor-not-allowed disabled:opacity-25"
+                                        >
+                                          <ArrowRight className="size-3.5" aria-hidden="true" />
+                                        </button>
+                                        <button
+                                          type="button"
+                                          onClick={() =>
+                                            toggleLanguageBlock(
+                                              lesson.id,
+                                              block.id,
+                                              languageBlock.id,
+                                            )
+                                          }
+                                          aria-label={`${isLanguageBlockCollapsed ? "Expand" : "Collapse"} language block ${languageBlockIndex + 1}`}
+                                          title={isLanguageBlockCollapsed ? "Expand" : "Collapse"}
+                                          className="flex size-7 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200"
+                                        >
+                                          {isLanguageBlockCollapsed ? (
+                                            <ChevronDown className="size-3.5" aria-hidden="true" />
+                                          ) : (
+                                            <ChevronUp className="size-3.5" aria-hidden="true" />
+                                          )}
+                                        </button>
+                                        <button
+                                          type="button"
+                                          onClick={() =>
+                                            deleteLanguageBlock(
+                                              lesson.id,
+                                              block.id,
+                                              languageBlock.id,
+                                            )
+                                          }
+                                          aria-label={`Delete language block ${languageBlockIndex + 1}`}
+                                          title="Delete language block"
+                                          className="flex size-7 items-center justify-center rounded-md text-stone-400 transition hover:bg-red-50 hover:text-red-600"
+                                        >
+                                          <Trash2 className="size-3.5" aria-hidden="true" />
+                                        </button>
+                                      </div>
+                                    </div>
+                                    {isLanguageBlockCollapsed ? (
+                                      <div className="px-4 py-3 text-sm text-stone-600">
+                                        <span className="font-medium text-stone-800">
+                                          {languageBlock.spanish || "Spanish prompt"}
+                                        </span>
+                                        <span className="mx-2 text-stone-300">→</span>
+                                        <span>
+                                          {languageBlock.acceptedAnswers[0] ||
+                                            "English answer"}
+                                        </span>
+                                      </div>
+                                    ) : (
+                                      <>
+                                    <div className="flex min-h-28 flex-col items-center justify-center gap-2 px-4 py-5">
+                                      <label className="w-full">
+                                        <span className="sr-only">
+                                          Spanish prompt
+                                        </span>
+                                        <input
+                                          ref={(element) => {
+                                            const key = `${lesson.id}-${block.id}-${languageBlock.id}`;
+                                            if (element) {
+                                              languageBlockSpanishRefs.current.set(
+                                                key,
+                                                element,
+                                              );
+                                            } else {
+                                              languageBlockSpanishRefs.current.delete(
+                                                key,
+                                              );
+                                            }
+                                          }}
+                                          type="text"
+                                          value={languageBlock.spanish}
+                                          onChange={(event) =>
+                                            updateSpanishPrompt(
+                                              lesson.id,
+                                              block.id,
+                                              languageBlock.id,
+                                              event.target.value,
+                                            )
+                                          }
+                                          placeholder="Spanish prompt"
+                                          className="w-full bg-transparent text-center text-xl font-semibold tracking-tight text-stone-900 outline-none placeholder:text-stone-300"
+                                        />
+                                      </label>
+                                      {languageBlock.callout == null ? (
+                                        <button
+                                          type="button"
+                                          onClick={() =>
+                                            addLanguageBlockCallout(
+                                              lesson.id,
+                                              block.id,
+                                              languageBlock.id,
+                                            )
+                                          }
+                                          className="rounded-md px-2 py-1 text-xs font-medium text-amber-600 transition hover:bg-amber-50 hover:text-amber-700"
+                                        >
+                                          Add context
+                                        </button>
+                                      ) : (
+                                        <div className="flex w-full items-center rounded-lg bg-amber-50 px-2.5 py-1.5 text-amber-800">
+                                          <label className="min-w-0 flex-1">
+                                            <span className="sr-only">
+                                              Spanish context
+                                            </span>
+                                            <input
+                                              ref={(element) => {
+                                                const key = `${lesson.id}-${block.id}-${languageBlock.id}`;
+                                                if (element) {
+                                                  languageBlockCalloutRefs.current.set(
+                                                    key,
+                                                    element,
+                                                  );
+                                                } else {
+                                                  languageBlockCalloutRefs.current.delete(
+                                                    key,
+                                                  );
+                                                }
+                                              }}
+                                              type="text"
+                                              value={languageBlock.callout ?? ""}
+                                              onChange={(event) =>
+                                                updateLanguageBlockCallout(
+                                                  lesson.id,
+                                                  block.id,
+                                                  languageBlock.id,
+                                                  event.target.value,
+                                                )
+                                              }
+                                              placeholder="Add hint or context note."
+                                              className="w-full bg-transparent text-center text-sm font-medium italic outline-none placeholder:text-amber-500/60"
+                                            />
+                                          </label>
+                                          <button
+                                            type="button"
+                                            onClick={() =>
+                                              updateLanguageBlockCallout(
+                                                lesson.id,
+                                                block.id,
+                                                languageBlock.id,
+                                                null,
+                                              )
+                                            }
+                                            aria-label="Remove context"
+                                            title="Remove context"
+                                            className="flex size-6 shrink-0 items-center justify-center rounded text-amber-500 transition hover:bg-amber-100 hover:text-amber-700"
+                                          >
+                                            <X
+                                              className="size-3.5"
+                                              aria-hidden="true"
+                                            />
+                                          </button>
+                                        </div>
+                                      )}
+                                    </div>
+                                    <div className="border-t border-stone-800 bg-stone-900 px-3 py-3">
+                                      <div className="space-y-2">
+                                        {languageBlock.acceptedAnswers.map(
+                                          (answer, answerIndex) => {
+                                            const isPrimaryAnswer =
+                                              answerIndex === 0;
+                                            const isLastAnswer =
+                                              answerIndex ===
+                                              languageBlock.acceptedAnswers
+                                                .length -
+                                                1;
+                                            const nextLanguageBlock =
+                                              block.languageBlocks[
+                                                languageBlockIndex + 1
+                                              ];
+
+                                            return (
+                                              <label
+                                                key={answerIndex}
+                                                className="block"
+                                              >
+                                                <span className="mb-1 block text-[10px] font-semibold uppercase tracking-[0.14em] text-stone-500">
+                                                  {isPrimaryAnswer
+                                                    ? "English answer"
+                                                    : "Also accepted"}
+                                                </span>
+                                                <span className="flex items-center gap-1.5">
+                                                  <input
+                                                    ref={(element) => {
+                                                      const key = `${lesson.id}-${block.id}-${languageBlock.id}-${answerIndex}`;
+                                                      if (element) {
+                                                        acceptedAnswerRefs.current.set(
+                                                          key,
+                                                          element,
+                                                        );
+                                                      } else {
+                                                        acceptedAnswerRefs.current.delete(
+                                                          key,
+                                                        );
+                                                      }
+                                                    }}
+                                                    type="text"
+                                                    value={answer}
+                                                    onChange={(event) =>
+                                                      updateAcceptedAnswer(
+                                                        lesson.id,
+                                                        block.id,
+                                                        languageBlock.id,
+                                                        answerIndex,
+                                                        event.target.value,
+                                                      )
+                                                    }
+                                                    onKeyDown={(event) => {
+                                                      if (
+                                                        event.altKey &&
+                                                        event.key === "Enter"
+                                                      ) {
+                                                        event.preventDefault();
+                                                        addAcceptedAnswer(
+                                                          lesson.id,
+                                                          block.id,
+                                                          languageBlock.id,
+                                                          languageBlock
+                                                            .acceptedAnswers
+                                                            .length,
+                                                        );
+                                                        return;
+                                                      }
+
+                                                      if (
+                                                        event.key === "Enter" &&
+                                                        !isPrimaryAnswer
+                                                      ) {
+                                                        event.preventDefault();
+                                                        addAcceptedAnswer(
+                                                          lesson.id,
+                                                          block.id,
+                                                          languageBlock.id,
+                                                          languageBlock
+                                                            .acceptedAnswers
+                                                            .length,
+                                                        );
+                                                        return;
+                                                      }
+
+                                                      if (
+                                                        event.key === "Tab" &&
+                                                        !event.shiftKey &&
+                                                        isLastAnswer
+                                                      ) {
+                                                        event.preventDefault();
+
+                                                        if (
+                                                          isLastLanguageBlock
+                                                        ) {
+                                                          addLanguageBlock(
+                                                            lesson.id,
+                                                            block.id,
+                                                            nextLanguageBlockId,
+                                                          );
+                                                        } else if (
+                                                          nextLanguageBlock
+                                                        ) {
+                                                          languageBlockSpanishRefs.current
+                                                            .get(
+                                                              `${lesson.id}-${block.id}-${nextLanguageBlock.id}`,
+                                                            )
+                                                            ?.focus();
+                                                        }
+                                                      }
+                                                    }}
+                                                    placeholder={
+                                                      isPrimaryAnswer
+                                                        ? "English answer"
+                                                        : "Alternative answer"
+                                                    }
+                                                    className="min-w-0 flex-1 rounded-md bg-stone-800 px-2.5 py-2 text-sm font-semibold text-white outline-none transition placeholder:text-stone-500 focus:bg-stone-700 focus:ring-2 focus:ring-blue-400/50"
+                                                  />
+                                                  {!isPrimaryAnswer && (
+                                                    <button
+                                                      type="button"
+                                                      onClick={() =>
+                                                        removeAcceptedAnswer(
+                                                          lesson.id,
+                                                          block.id,
+                                                          languageBlock.id,
+                                                          answerIndex,
+                                                        )
+                                                      }
+                                                      aria-label="Remove alternative answer"
+                                                      title="Remove alternative answer"
+                                                      className="flex size-8 shrink-0 items-center justify-center rounded-md text-stone-500 transition hover:bg-red-950/50 hover:text-red-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400/60"
+                                                    >
+                                                      <X
+                                                        className="size-4"
+                                                        aria-hidden="true"
+                                                      />
+                                                    </button>
+                                                  )}
+                                                </span>
+                                              </label>
+                                            );
+                                          },
+                                        )}
+                                      </div>
+                                      <button
+                                        type="button"
+                                        onClick={() =>
+                                          addAcceptedAnswer(
+                                            lesson.id,
+                                            block.id,
+                                            languageBlock.id,
+                                            languageBlock.acceptedAnswers.length,
+                                          )
+                                        }
+                                        title="Add alternative answer (Alt+Enter)"
+                                        className="mt-2 flex items-center gap-1 rounded-md px-2 py-1.5 text-xs font-medium text-stone-400 transition hover:bg-stone-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/60"
+                                      >
+                                        <Plus
+                                          className="size-3.5"
+                                          aria-hidden="true"
+                                        />
+                                        Add alternative
+                                      </button>
+                                    </div>
+                                      </>
+                                    )}
                                   </div>
                                 );
                               },
@@ -517,10 +1260,12 @@ export default function LessonBuilderPage() {
                             </button>
                           </div>
                         </div>
+                        )}
                       </>
                     )}
-                  </div>
-                ))}
+                    </div>
+                  );
+                })}
 
                 <button
                   type="button"

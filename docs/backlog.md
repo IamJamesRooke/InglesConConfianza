@@ -18,6 +18,7 @@ Build the smallest useful database-backed curriculum foundation. Start with reus
 - [x] Add Tailwind CSS and shadcn/ui for a simple visual foundation.
 - [x] Create the frontend Lesson Builder foundation with reorderable and renumbered lessons, optional names, deletion, an expandable content-block picker, and Markdown-backed WYSIWYG explanation blocks.
 - [x] Add the first Sentence block authoring slice with ordered Spanish prompts, accepted English answers, automatic first-card creation, and keyboard-first card entry.
+- [x] Add practical Sentence block editing controls: multiple accepted answers, content and language-block reordering, collapsing and deletion, and optional per-block hint or context notes.
 - [ ] Build five representative lessons as the first vertical slice.
     - [ ] Include straightforward vocabulary retrieval.
     - [ ] Include a Spanish-to-English one-to-many mapping.
