@@ -52,6 +52,52 @@ type LanguageBlock = {
 
 type LessonBlock = ExplanationBlock | SentenceBlock;
 
+function normalizeAnswer(answer: string) {
+  return answer.trim().toLocaleLowerCase();
+}
+
+function getAnswerValidationMessage(
+  answers: string[],
+  answerIndex: number,
+) {
+  const normalizedAnswer = normalizeAnswer(answers[answerIndex] ?? "");
+
+  if (!normalizedAnswer) {
+    return answerIndex === 0
+      ? "Primary English answer is required."
+      : "Complete or remove this alternative.";
+  }
+
+  const duplicateCount = answers.filter(
+    (answer) => normalizeAnswer(answer) === normalizedAnswer,
+  ).length;
+
+  return duplicateCount > 1 ? "This answer is duplicated." : null;
+}
+
+function getSentenceValidationIssueCount(sentence: SentenceBlock) {
+  if (sentence.languageBlocks.length === 0) {
+    return 1;
+  }
+
+  return sentence.languageBlocks.reduce((issueCount, languageBlock) => {
+    const spanishIssueCount = languageBlock.spanish.trim() ? 0 : 1;
+    const answerIssueCount = languageBlock.acceptedAnswers.reduce(
+      (answerIssues, _, answerIndex) =>
+        answerIssues +
+        (getAnswerValidationMessage(
+          languageBlock.acceptedAnswers,
+          answerIndex,
+        )
+          ? 1
+          : 0),
+      0,
+    );
+
+    return issueCount + spanishIssueCount + answerIssueCount;
+  }, 0);
+}
+
 export default function LessonBuilderPage() {
   const [lessons, setLessons] = useState<Lesson[]>([]);
   const [draggedLessonId, setDraggedLessonId] = useState<number | null>(null);
@@ -813,6 +859,10 @@ export default function LessonBuilderPage() {
                   const contentBlockKey = `${lesson.id}-${block.id}`;
                   const isContentBlockCollapsed =
                     collapsedContentBlocks.has(contentBlockKey);
+                  const sentenceValidationIssueCount =
+                    block.type === "sentence"
+                      ? getSentenceValidationIssueCount(block)
+                      : 0;
 
                   return (
                     <div
@@ -924,6 +974,17 @@ export default function LessonBuilderPage() {
                                 </p>
                               </div>
                             </div>
+                            <span
+                              className={`hidden shrink-0 rounded-full px-2.5 py-1 text-xs font-semibold sm:inline-flex ${
+                                sentenceValidationIssueCount === 0
+                                  ? "bg-emerald-100 text-emerald-700"
+                                  : "bg-red-100 text-red-700"
+                              }`}
+                            >
+                              {sentenceValidationIssueCount === 0
+                                ? "Ready"
+                                : `${sentenceValidationIssueCount} ${sentenceValidationIssueCount === 1 ? "issue" : "issues"}`}
+                            </span>
                           </div>
                           <div className="flex shrink-0 items-center gap-1">
                             <button
@@ -1058,11 +1119,24 @@ export default function LessonBuilderPage() {
                                 const languageBlockKey = `${lesson.id}-${block.id}-${languageBlock.id}`;
                                 const isLanguageBlockCollapsed =
                                   collapsedLanguageBlocks.has(languageBlockKey);
+                                const isSpanishMissing =
+                                  !languageBlock.spanish.trim();
 
                                 return (
                                   <div
                                     key={languageBlock.id}
-                                    className="overflow-hidden rounded-xl border border-stone-300 bg-white shadow-md shadow-stone-200/60"
+                                    className={`overflow-hidden rounded-xl border bg-white shadow-md shadow-stone-200/60 ${
+                                      isSpanishMissing ||
+                                      languageBlock.acceptedAnswers.some(
+                                        (_, answerIndex) =>
+                                          getAnswerValidationMessage(
+                                            languageBlock.acceptedAnswers,
+                                            answerIndex,
+                                          ),
+                                      )
+                                        ? "border-red-300"
+                                        : "border-stone-300"
+                                    }`}
                                   >
                                     <div className="flex items-center justify-between gap-2 border-b border-stone-200 bg-stone-100 px-2 py-1.5">
                                       <span className="px-1 text-xs font-semibold text-stone-500">
@@ -1173,6 +1247,7 @@ export default function LessonBuilderPage() {
                                           }}
                                           type="text"
                                           value={languageBlock.spanish}
+                                          aria-invalid={isSpanishMissing}
                                           onChange={(event) =>
                                             updateSpanishPrompt(
                                               lesson.id,
@@ -1198,6 +1273,11 @@ export default function LessonBuilderPage() {
                                           className="w-full bg-transparent text-center text-xl font-semibold tracking-tight text-stone-900 outline-none placeholder:text-stone-300"
                                         />
                                       </label>
+                                      {isSpanishMissing && (
+                                        <p className="text-xs font-medium text-red-600">
+                                          Spanish text is required.
+                                        </p>
+                                      )}
                                       {languageBlock.callout == null ? (
                                         <button
                                           type="button"
@@ -1283,6 +1363,11 @@ export default function LessonBuilderPage() {
                                               block.languageBlocks[
                                                 languageBlockIndex + 1
                                               ];
+                                            const answerValidationMessage =
+                                              getAnswerValidationMessage(
+                                                languageBlock.acceptedAnswers,
+                                                answerIndex,
+                                              );
 
                                             return (
                                               <label
@@ -1311,6 +1396,11 @@ export default function LessonBuilderPage() {
                                                     }}
                                                     type="text"
                                                     value={answer}
+                                                    aria-invalid={
+                                                      Boolean(
+                                                        answerValidationMessage,
+                                                      )
+                                                    }
                                                     onChange={(event) =>
                                                       updateAcceptedAnswer(
                                                         lesson.id,
@@ -1408,6 +1498,11 @@ export default function LessonBuilderPage() {
                                                     </button>
                                                   )}
                                                 </span>
+                                                {answerValidationMessage && (
+                                                  <span className="mt-1 block text-xs font-medium text-red-300">
+                                                    {answerValidationMessage}
+                                                  </span>
+                                                )}
                                               </label>
                                             );
                                           },

@@ -21,6 +21,7 @@ Build the smallest useful database-backed curriculum foundation. Start with reus
 - [x] Add practical Sentence block editing controls: multiple accepted answers, content and language-block reordering, collapsing and deletion, and optional per-block hint or context notes.
 - [x] Add optional Sentence explainer text, direct Spanish-to-English Tab navigation, and persistent bilingual header summaries for faster authoring and review.
 - [x] Add optional post-answer feedback to Sentence blocks and lesson-level collapsing for managing longer authoring sessions.
+- [x] Add live, non-blocking Sentence validation for required prompts and answers, empty alternatives, duplicate answers, and empty sentences.
 - [ ] Build five representative lessons as the first vertical slice.
     - [ ] Include straightforward vocabulary retrieval.
     - [ ] Include a Spanish-to-English one-to-many mapping.
