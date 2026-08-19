@@ -15,5 +15,5 @@ Inglés Con Confianza is a language-learning application built from the owner's 
 - Do not add microservices, Kubernetes, enterprise patterns, or speculative abstractions for portfolio signalling.
 - Favor professional work the owner can understand, explain in an interview, and maintain independently.
 - When implementation begins, treat security as part of design and testing. The long-term security portfolio should include threat modeling, authorization tests, a controlled penetration test, findings, and hardening—not unsupported claims of security.
+- When updating the backlog after implementation work, record any security practice actually applied and the evidence that supports it. Keep implemented controls separate from planned security work, and do not claim protection that has not been tested.
 - Keep changes within the requested scope. Do not turn focused work into unrelated architecture, automation, or maintenance.
-

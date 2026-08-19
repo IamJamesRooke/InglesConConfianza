@@ -38,6 +38,7 @@ type ExplanationBlock = {
 type SentenceBlock = {
   id: number;
   type: "sentence";
+  explainerText: string | null;
   languageBlocks: LanguageBlock[];
 };
 
@@ -68,6 +69,9 @@ export default function LessonBuilderPage() {
   );
   const acceptedAnswerRefs = useRef(new Map<string, HTMLInputElement>());
   const languageBlockCalloutRefs = useRef(new Map<string, HTMLInputElement>());
+  const sentenceExplainerTextRefs = useRef(
+    new Map<string, HTMLTextAreaElement>(),
+  );
 
   function createLesson() {
     setLessons((currentLessons) => {
@@ -203,6 +207,7 @@ export default function LessonBuilderPage() {
             {
               id: nextBlockId,
               type: "sentence",
+              explainerText: null,
               languageBlocks: [
                 {
                   id: 1,
@@ -217,6 +222,36 @@ export default function LessonBuilderPage() {
       }),
     );
     setOpenBlockPickerLessonId(null);
+  }
+
+  function updateSentenceExplainerText(
+    lessonId: number,
+    sentenceBlockId: number,
+    explainerText: string | null,
+  ) {
+    setLessons((currentLessons) =>
+      currentLessons.map((lesson) =>
+        lesson.id === lessonId
+          ? {
+              ...lesson,
+              blocks: lesson.blocks.map((block) =>
+                block.id === sentenceBlockId && block.type === "sentence"
+                  ? { ...block, explainerText }
+                  : block,
+              ),
+            }
+          : lesson,
+      ),
+    );
+  }
+
+  function addSentenceExplainerText(lessonId: number, sentenceBlockId: number) {
+    updateSentenceExplainerText(lessonId, sentenceBlockId, "");
+    window.setTimeout(() => {
+      sentenceExplainerTextRefs.current
+        .get(`${lessonId}-${sentenceBlockId}`)
+        ?.focus();
+    }, 0);
   }
 
   function updateLanguageBlockCallout(
@@ -789,15 +824,33 @@ export default function LessonBuilderPage() {
                     ) : (
                       <>
                         <div className="flex items-center justify-between gap-3 border-b border-stone-200 bg-stone-50 px-5 py-3">
-                          <div className="flex items-center gap-3">
+                          <div className="flex min-w-0 items-center gap-3">
                             <span className="flex size-9 items-center justify-center rounded-lg bg-blue-50 text-blue-700">
                               <Languages className="size-4" aria-hidden="true" />
                             </span>
-                            <p className="font-semibold text-stone-900">
-                              Sentence
-                            </p>
+                            <div className="min-w-0">
+                              <span className="sr-only">Sentence block</span>
+                              <div className="space-y-0.5 text-sm">
+                                <p className="truncate font-medium text-stone-700">
+                                  {block.languageBlocks
+                                    .map((languageBlock) =>
+                                      languageBlock.spanish.trim(),
+                                    )
+                                    .filter(Boolean)
+                                    .join(" ") || "No Spanish text yet"}
+                                </p>
+                                <p className="truncate text-stone-500">
+                                  {block.languageBlocks
+                                    .map((languageBlock) =>
+                                      languageBlock.acceptedAnswers[0]?.trim(),
+                                    )
+                                    .filter(Boolean)
+                                    .join(" ") || "No English answer yet"}
+                                </p>
+                              </div>
+                            </div>
                           </div>
-                          <div className="flex items-center gap-1">
+                          <div className="flex shrink-0 items-center gap-1">
                             <button
                               type="button"
                               onClick={() =>
@@ -852,6 +905,68 @@ export default function LessonBuilderPage() {
                         </div>
                         {!isContentBlockCollapsed && (
                         <div className="p-6">
+                          {block.explainerText == null ? (
+                            <button
+                              type="button"
+                              onClick={() =>
+                                addSentenceExplainerText(lesson.id, block.id)
+                              }
+                              className="mb-4 rounded-lg border border-dashed border-stone-300 px-3 py-2 text-sm font-medium text-stone-500 transition hover:border-violet-300 hover:bg-violet-50 hover:text-violet-700"
+                            >
+                              Add explainer text
+                            </button>
+                          ) : (
+                            <div className="mb-5 rounded-xl border border-violet-200 bg-violet-50/60 p-4">
+                              <div className="mb-2 flex items-center justify-between gap-3">
+                                <label
+                                  htmlFor={`sentence-explainer-${lesson.id}-${block.id}`}
+                                  className="text-xs font-semibold uppercase tracking-[0.12em] text-violet-700"
+                                >
+                                  Explainer text
+                                </label>
+                                <button
+                                  type="button"
+                                  onClick={() =>
+                                    updateSentenceExplainerText(
+                                      lesson.id,
+                                      block.id,
+                                      null,
+                                    )
+                                  }
+                                  aria-label="Remove explainer text"
+                                  title="Remove explainer text"
+                                  className="flex size-7 items-center justify-center rounded-md text-violet-400 transition hover:bg-violet-100 hover:text-violet-700"
+                                >
+                                  <X className="size-4" aria-hidden="true" />
+                                </button>
+                              </div>
+                              <textarea
+                                ref={(element) => {
+                                  const key = `${lesson.id}-${block.id}`;
+                                  if (element) {
+                                    sentenceExplainerTextRefs.current.set(
+                                      key,
+                                      element,
+                                    );
+                                  } else {
+                                    sentenceExplainerTextRefs.current.delete(key);
+                                  }
+                                }}
+                                id={`sentence-explainer-${lesson.id}-${block.id}`}
+                                value={block.explainerText ?? ""}
+                                onChange={(event) =>
+                                  updateSentenceExplainerText(
+                                    lesson.id,
+                                    block.id,
+                                    event.target.value,
+                                  )
+                                }
+                                rows={2}
+                                placeholder="Add instructions or context for this question."
+                                className="block w-full resize-y bg-transparent text-sm leading-6 text-stone-800 outline-none placeholder:text-stone-400"
+                              />
+                            </div>
+                          )}
                           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                             {block.languageBlocks.map(
                               (languageBlock, languageBlockIndex) => {
@@ -991,6 +1106,19 @@ export default function LessonBuilderPage() {
                                               event.target.value,
                                             )
                                           }
+                                          onKeyDown={(event) => {
+                                            if (
+                                              event.key === "Tab" &&
+                                              !event.shiftKey
+                                            ) {
+                                              event.preventDefault();
+                                              acceptedAnswerRefs.current
+                                                .get(
+                                                  `${lesson.id}-${block.id}-${languageBlock.id}-0`,
+                                                )
+                                                ?.focus();
+                                            }
+                                          }}
                                           placeholder="Spanish prompt"
                                           className="w-full bg-transparent text-center text-xl font-semibold tracking-tight text-stone-900 outline-none placeholder:text-stone-300"
                                         />

@@ -19,6 +19,7 @@ Build the smallest useful database-backed curriculum foundation. Start with reus
 - [x] Create the frontend Lesson Builder foundation with reorderable and renumbered lessons, optional names, deletion, an expandable content-block picker, and Markdown-backed WYSIWYG explanation blocks.
 - [x] Add the first Sentence block authoring slice with ordered Spanish prompts, accepted English answers, automatic first-card creation, and keyboard-first card entry.
 - [x] Add practical Sentence block editing controls: multiple accepted answers, content and language-block reordering, collapsing and deletion, and optional per-block hint or context notes.
+- [x] Add optional Sentence explainer text, direct Spanish-to-English Tab navigation, and persistent bilingual header summaries for faster authoring and review.
 - [ ] Build five representative lessons as the first vertical slice.
     - [ ] Include straightforward vocabulary retrieval.
     - [ ] Include a Spanish-to-English one-to-many mapping.
@@ -52,6 +53,15 @@ Build the smallest useful database-backed curriculum foundation. Start with reus
 - [ ] Add mastery gates, per-question feedback, and progress visualization after the basic learning loop works.
 - [ ] Evaluate authentication, payments, deployment, security testing, and broader product infrastructure only when the MVP requires them.
 - [ ] Document the teaching methodology and repository setup for maintainers and portfolio review.
+
+## Security practice record
+
+This section records controls and security work actually applied during development. Planned work remains unchecked; implementation alone is not evidence that a control is effective.
+
+- [x] Audit the dependency tree when introducing the Markdown editor and pin the vulnerable transitive `js-yaml` dependency to patched version `4.3.1` through the package override.
+- [ ] Create an initial threat model when the application gains persistent lesson authoring, authentication, or other meaningful trust boundaries.
+- [ ] Add authorization tests alongside the first protected authoring or learner-data endpoints.
+- [ ] Perform a controlled OWASP-based security assessment after the first complete application flow is deployable, preserve findings, and document the resulting hardening.
 
 ## Deliberate non-goals for the current phase
 
