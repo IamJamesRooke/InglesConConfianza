@@ -11,6 +11,7 @@ import {
   FileText,
   GripVertical,
   Languages,
+  Lightbulb,
   Pencil,
   Plus,
   Trash2,
@@ -113,7 +114,7 @@ function SentenceLearnerPreview({ sentence }: { sentence: SentenceBlock }) {
     sentence.languageBlocks.map(() => ""),
   );
   const [isFeedbackVisible, setIsFeedbackVisible] = useState(false);
-  const [isHelpVisible, setIsHelpVisible] = useState(false);
+  const [helpedBlockIndex, setHelpedBlockIndex] = useState<number | null>(null);
   const inputRefs = useRef<Array<HTMLInputElement | null>>([]);
   const helpTimerRef = useRef<number | null>(null);
   const hasFeedback = Boolean(sentence.answerFeedback?.trim());
@@ -129,7 +130,7 @@ function SentenceLearnerPreview({ sentence }: { sentence: SentenceBlock }) {
     },
   );
   const isComplete =
-    !isHelpVisible &&
+    helpedBlockIndex === null &&
     sentence.languageBlocks.length > 0 &&
     correctAnswers.every(Boolean);
 
@@ -140,30 +141,41 @@ function SentenceLearnerPreview({ sentence }: { sentence: SentenceBlock }) {
     }
   }, []);
 
-  const showHelp = useCallback(() => {
+  const showHelp = useCallback((languageBlockIndex: number) => {
     clearHelpTimer();
-    setAnswers(
-      sentence.languageBlocks.map(
-        (languageBlock) => languageBlock.acceptedAnswers[0] ?? "",
-      ),
-    );
-    setIsHelpVisible(true);
+    setAnswers((currentAnswers) => {
+      const nextAnswers = [...currentAnswers];
+      if (
+        helpedBlockIndex !== null &&
+        helpedBlockIndex !== languageBlockIndex
+      ) {
+        nextAnswers[helpedBlockIndex] = "";
+      }
+      nextAnswers[languageBlockIndex] =
+        sentence.languageBlocks[languageBlockIndex]?.acceptedAnswers[0] ?? "";
+      return nextAnswers;
+    });
+    setHelpedBlockIndex(languageBlockIndex);
     setIsFeedbackVisible(false);
 
     helpTimerRef.current = window.setTimeout(() => {
-      setAnswers(sentence.languageBlocks.map(() => ""));
-      setIsHelpVisible(false);
+      setAnswers((currentAnswers) => {
+        const nextAnswers = [...currentAnswers];
+        nextAnswers[languageBlockIndex] = "";
+        return nextAnswers;
+      });
+      setHelpedBlockIndex(null);
       helpTimerRef.current = null;
-      inputRefs.current[0]?.focus();
+      inputRefs.current[languageBlockIndex]?.focus();
     }, 2500);
-  }, [clearHelpTimer, sentence.languageBlocks]);
+  }, [clearHelpTimer, helpedBlockIndex, sentence.languageBlocks]);
 
   useEffect(() => clearHelpTimer, [clearHelpTimer]);
 
   function updatePreviewAnswer(answer: string, languageBlockIndex: number) {
-    if (isHelpVisible) {
+    if (helpedBlockIndex === languageBlockIndex) {
       clearHelpTimer();
-      setIsHelpVisible(false);
+      setHelpedBlockIndex(null);
     }
 
     const nextAnswers = [...answers];
@@ -208,15 +220,7 @@ function SentenceLearnerPreview({ sentence }: { sentence: SentenceBlock }) {
   }
 
   return (
-    <div
-      className="rounded-xl border border-stone-300 bg-stone-100/80 p-5 shadow-sm"
-      onKeyDown={(event) => {
-        if (event.altKey && event.key.toLowerCase() === "h") {
-          event.preventDefault();
-          showHelp();
-        }
-      }}
-    >
+    <div className="rounded-xl border border-stone-300 bg-stone-100/80 p-5 shadow-sm">
       {sentence.promptLabel.trim() && (
         <p className="text-sm font-medium uppercase tracking-[0.2em] text-stone-500">
           {sentence.promptLabel}
@@ -231,10 +235,7 @@ function SentenceLearnerPreview({ sentence }: { sentence: SentenceBlock }) {
       {sentence.languageBlocks.length > 0 ? (
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           {sentence.languageBlocks.map((languageBlock, languageBlockIndex) => (
-            <label
-              key={languageBlock.id}
-              className="block"
-            >
+            <div key={languageBlock.id}>
               <span className="mb-2 block text-center text-lg font-bold text-stone-800">
                 {languageBlock.spanish || "Spanish prompt"}
               </span>
@@ -252,17 +253,40 @@ function SentenceLearnerPreview({ sentence }: { sentence: SentenceBlock }) {
                 onChange={(event) =>
                   updatePreviewAnswer(event.target.value, languageBlockIndex)
                 }
+                onKeyDown={(event) => {
+                  if (event.altKey && event.key.toLowerCase() === "h") {
+                    event.preventDefault();
+                    showHelp(languageBlockIndex);
+                  }
+                }}
                 aria-label={`Traducción de ${languageBlock.spanish || `bloque ${languageBlockIndex + 1}`}`}
                 autoComplete="off"
                 className={`w-full rounded-xl border px-5 py-4 text-center text-xl outline-none transition-colors focus:ring-2 focus:ring-stone-400 ${
-                  correctAnswers[languageBlockIndex] && !isHelpVisible
+                  correctAnswers[languageBlockIndex] &&
+                  helpedBlockIndex !== languageBlockIndex
                     ? "border-emerald-500 bg-emerald-50 text-emerald-950"
-                    : isHelpVisible
+                    : helpedBlockIndex === languageBlockIndex
                       ? "border-amber-300 bg-amber-50 text-stone-500 italic"
                       : "border-stone-300 bg-white text-stone-950"
                 }`}
               />
-            </label>
+              <div className="mt-1.5 flex min-h-7 items-start justify-between gap-2">
+                <span aria-hidden="true" />
+                <button
+                  type="button"
+                  onClick={() => showHelp(languageBlockIndex)}
+                  aria-label={`Mostrar pista para ${languageBlock.spanish || `bloque ${languageBlockIndex + 1}`}`}
+                  title="Mostrar pista"
+                  className={`flex size-7 shrink-0 items-center justify-center rounded-md transition ${
+                    helpedBlockIndex === languageBlockIndex
+                      ? "bg-amber-100 text-amber-700"
+                      : "text-stone-400 hover:bg-white hover:text-amber-600"
+                  }`}
+                >
+                  <Lightbulb className="size-4" aria-hidden="true" />
+                </button>
+              </div>
+            </div>
           ))}
         </div>
       ) : (
@@ -271,27 +295,9 @@ function SentenceLearnerPreview({ sentence }: { sentence: SentenceBlock }) {
         </p>
       )}
 
-      {isHelpVisible && (
-        <p className="mt-4 text-sm font-medium text-stone-500" aria-live="polite">
-          Pista ✨ La respuesta aparece solo por un momento.
-        </p>
+      {sentence.helperText?.trim() && (
+        <p className="mt-5 text-sm text-stone-500">{sentence.helperText}</p>
       )}
-
-      <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
-        {sentence.helperText?.trim() ? (
-          <p className="text-sm text-stone-500">{sentence.helperText}</p>
-        ) : (
-          <span aria-hidden="true" />
-        )}
-        <button
-          type="button"
-          onClick={showHelp}
-          disabled={sentence.languageBlocks.length === 0}
-          className="rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm font-semibold text-stone-700 transition hover:bg-stone-50 disabled:cursor-not-allowed disabled:opacity-40"
-        >
-          Ayuda <span className="ml-1 text-xs opacity-60">Alt + H</span>
-        </button>
-      </div>
 
       {isComplete && (
         <p className="mt-4 text-sm font-semibold text-emerald-700" role="status">
