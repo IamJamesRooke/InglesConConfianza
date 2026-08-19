@@ -17,6 +17,7 @@ Build the smallest useful database-backed curriculum foundation. Start with reus
 - [x] Create a minimal Next.js application that reads and displays the database blocks.
 - [x] Add Tailwind CSS and shadcn/ui for a simple visual foundation.
 - [x] Create the frontend Lesson Builder foundation with reorderable and renumbered lessons, optional names, deletion, an expandable content-block picker, and Markdown-backed WYSIWYG explanation blocks.
+- [x] Add the first Sentence block authoring slice with ordered Spanish prompts, accepted English answers, automatic first-card creation, and keyboard-first card entry.
 - [ ] Build five representative lessons as the first vertical slice.
     - [ ] Include straightforward vocabulary retrieval.
     - [ ] Include a Spanish-to-English one-to-many mapping.
