@@ -39,6 +39,12 @@ export function SiteHeader() {
           >
             Lección de demostración
           </Link>
+          <Link
+            href="/lesson-builder"
+            className={linkClassName("/lesson-builder")}
+          >
+            Lesson Builder
+          </Link>
         </nav>
       </div>
     </header>
