@@ -14,6 +14,7 @@ import {
   Lightbulb,
   Pencil,
   Plus,
+  Save,
   Trash2,
   X,
 } from "lucide-react";
@@ -28,24 +29,24 @@ import {
 import { MarkdownEditor } from "@/components/lesson-builder/markdown-editor";
 
 type DropTarget = {
-  lessonId: number;
+  lessonId: string;
   position: "before" | "after";
 };
 
 type Lesson = {
-  id: number;
+  id: string;
   name: string | null;
   blocks: LessonBlock[];
 };
 
 type ExplanationBlock = {
-  id: number;
+  id: string;
   type: "explanation";
   contentMarkdown: string;
 };
 
 type SentenceBlock = {
-  id: number;
+  id: string;
   type: "sentence";
   promptLabel: string;
   promptText: string;
@@ -55,7 +56,7 @@ type SentenceBlock = {
 };
 
 type LanguageBlock = {
-  id: number;
+  id: string;
   spanish: string;
   callout: string | null;
   acceptedAnswers: string[];
@@ -63,8 +64,17 @@ type LanguageBlock = {
 
 type LessonBlock = ExplanationBlock | SentenceBlock;
 
+type LessonFile = {
+  version: 1;
+  lessons: Lesson[];
+};
+
 function normalizeAnswer(answer: string) {
   return answer.trim().replace(/\s+/g, " ").toLocaleLowerCase();
+}
+
+function createId(prefix: string) {
+  return `${prefix}_${crypto.randomUUID()}`;
 }
 
 function getAnswerValidationMessage(
@@ -316,13 +326,18 @@ function SentenceLearnerPreview({ sentence }: { sentence: SentenceBlock }) {
 
 export default function LessonBuilderPage() {
   const [lessons, setLessons] = useState<Lesson[]>([]);
-  const [draggedLessonId, setDraggedLessonId] = useState<number | null>(null);
+  const [isLoadingLessons, setIsLoadingLessons] = useState(true);
+  const [isDirty, setIsDirty] = useState(false);
+  const [saveStatus, setSaveStatus] = useState<
+    "idle" | "saving" | "saved" | "error"
+  >("idle");
+  const [draggedLessonId, setDraggedLessonId] = useState<string | null>(null);
   const [dropTarget, setDropTarget] = useState<DropTarget | null>(null);
   const [openBlockPickerLessonId, setOpenBlockPickerLessonId] = useState<
-    number | null
+    string | null
   >(null);
   const [collapsedLessons, setCollapsedLessons] = useState(
-    () => new Set<number>(),
+    () => new Set<string>(),
   );
   const [collapsedContentBlocks, setCollapsedContentBlocks] = useState(
     () => new Set<string>(),
@@ -341,20 +356,86 @@ export default function LessonBuilderPage() {
   const sentenceAnswerFeedbackRefs = useRef(
     new Map<string, HTMLTextAreaElement>(),
   );
+  const savedLessonsJsonRef = useRef(JSON.stringify([]));
 
-  function createLesson() {
-    setLessons((currentLessons) => {
-      const nextLessonId =
-        Math.max(0, ...currentLessons.map((lesson) => lesson.id)) + 1;
+  useEffect(() => {
+    let isMounted = true;
 
-      return [
-        ...currentLessons,
-        { id: nextLessonId, name: null, blocks: [] },
-      ];
-    });
+    async function loadLessons() {
+      try {
+        const response = await fetch("/api/lesson-builder/lessons");
+        if (!response.ok) {
+          throw new Error("Unable to load lessons.");
+        }
+
+        const lessonFile = (await response.json()) as LessonFile;
+        const lessonsJson = JSON.stringify(lessonFile.lessons);
+
+        if (isMounted) {
+          savedLessonsJsonRef.current = lessonsJson;
+          setLessons(lessonFile.lessons);
+          setIsDirty(false);
+          setSaveStatus("idle");
+        }
+      } catch {
+        if (isMounted) {
+          setSaveStatus("error");
+        }
+      } finally {
+        if (isMounted) {
+          setIsLoadingLessons(false);
+        }
+      }
+    }
+
+    void loadLessons();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isLoadingLessons) {
+      const nextIsDirty = JSON.stringify(lessons) !== savedLessonsJsonRef.current;
+      setIsDirty(nextIsDirty);
+      if (nextIsDirty && saveStatus === "saved") {
+        setSaveStatus("idle");
+      }
+    }
+  }, [isLoadingLessons, lessons, saveStatus]);
+
+  async function saveLessons() {
+    setSaveStatus("saving");
+
+    try {
+      const lessonFile: LessonFile = { version: 1, lessons };
+      const response = await fetch("/api/lesson-builder/lessons", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(lessonFile),
+      });
+
+      if (!response.ok) {
+        throw new Error("Unable to save lessons.");
+      }
+
+      savedLessonsJsonRef.current = JSON.stringify(lessons);
+      setIsDirty(false);
+      setSaveStatus("saved");
+    } catch {
+      setSaveStatus("error");
+    }
   }
 
-  function renameLesson(lessonId: number, name: string) {
+  function createLesson() {
+    setLessons((currentLessons) => [
+      ...currentLessons,
+      { id: createId("lesson"), name: null, blocks: [] },
+    ]);
+  }
+
+  function renameLesson(lessonId: string, name: string) {
     setLessons((currentLessons) =>
       currentLessons.map((lesson) =>
         lesson.id === lessonId
@@ -364,7 +445,7 @@ export default function LessonBuilderPage() {
     );
   }
 
-  function deleteLesson(lessonId: number) {
+  function deleteLesson(lessonId: string) {
     setLessons((currentLessons) =>
       currentLessons.filter((lesson) => lesson.id !== lessonId),
     );
@@ -378,7 +459,7 @@ export default function LessonBuilderPage() {
     });
   }
 
-  function toggleLesson(lessonId: number) {
+  function toggleLesson(lessonId: string) {
     setCollapsedLessons((currentLessonIds) => {
       const nextLessonIds = new Set(currentLessonIds);
       if (nextLessonIds.has(lessonId)) {
@@ -390,7 +471,7 @@ export default function LessonBuilderPage() {
     });
   }
 
-  function toggleContentBlock(lessonId: number, blockId: number) {
+  function toggleContentBlock(lessonId: string, blockId: string) {
     const key = `${lessonId}-${blockId}`;
     setCollapsedContentBlocks((currentKeys) => {
       const nextKeys = new Set(currentKeys);
@@ -403,7 +484,7 @@ export default function LessonBuilderPage() {
     });
   }
 
-  function toggleSentencePreview(lessonId: number, sentenceBlockId: number) {
+  function toggleSentencePreview(lessonId: string, sentenceBlockId: string) {
     const key = `${lessonId}-${sentenceBlockId}`;
     setPreviewSentenceBlocks((currentKeys) => {
       const nextKeys = new Set(currentKeys);
@@ -416,7 +497,7 @@ export default function LessonBuilderPage() {
     });
   }
 
-  function deleteContentBlock(lessonId: number, blockId: number) {
+  function deleteContentBlock(lessonId: string, blockId: string) {
     setLessons((currentLessons) =>
       currentLessons.map((lesson) =>
         lesson.id === lessonId
@@ -430,8 +511,8 @@ export default function LessonBuilderPage() {
   }
 
   function moveContentBlock(
-    lessonId: number,
-    blockId: number,
+    lessonId: string,
+    blockId: string,
     direction: -1 | 1,
   ) {
     setLessons((currentLessons) =>
@@ -463,22 +544,19 @@ export default function LessonBuilderPage() {
     );
   }
 
-  function addExplanationBlock(lessonId: number) {
+  function addExplanationBlock(lessonId: string) {
     setLessons((currentLessons) =>
       currentLessons.map((lesson) => {
         if (lesson.id !== lessonId) {
           return lesson;
         }
 
-        const nextBlockId =
-          Math.max(0, ...lesson.blocks.map((block) => block.id)) + 1;
-
         return {
           ...lesson,
           blocks: [
             ...lesson.blocks,
             {
-              id: nextBlockId,
+              id: createId("block"),
               type: "explanation",
               contentMarkdown: "",
             },
@@ -489,22 +567,19 @@ export default function LessonBuilderPage() {
     setOpenBlockPickerLessonId(null);
   }
 
-  function addSentenceBlock(lessonId: number) {
+  function addSentenceBlock(lessonId: string) {
     setLessons((currentLessons) =>
       currentLessons.map((lesson) => {
         if (lesson.id !== lessonId) {
           return lesson;
         }
 
-        const nextBlockId =
-          Math.max(0, ...lesson.blocks.map((block) => block.id)) + 1;
-
         return {
           ...lesson,
           blocks: [
             ...lesson.blocks,
             {
-              id: nextBlockId,
+              id: createId("block"),
               type: "sentence",
               promptLabel: "",
               promptText: "",
@@ -512,7 +587,7 @@ export default function LessonBuilderPage() {
               answerFeedback: null,
               languageBlocks: [
                 {
-                  id: 1,
+                  id: createId("lang"),
                   spanish: "",
                   callout: null,
                   acceptedAnswers: [""],
@@ -527,8 +602,8 @@ export default function LessonBuilderPage() {
   }
 
   function updateSentencePromptText(
-    lessonId: number,
-    sentenceBlockId: number,
+    lessonId: string,
+    sentenceBlockId: string,
     promptText: string,
   ) {
     setLessons((currentLessons) =>
@@ -548,8 +623,8 @@ export default function LessonBuilderPage() {
   }
 
   function updateSentencePromptLabel(
-    lessonId: number,
-    sentenceBlockId: number,
+    lessonId: string,
+    sentenceBlockId: string,
     promptLabel: string,
   ) {
     setLessons((currentLessons) =>
@@ -569,8 +644,8 @@ export default function LessonBuilderPage() {
   }
 
   function updateSentenceHelperText(
-    lessonId: number,
-    sentenceBlockId: number,
+    lessonId: string,
+    sentenceBlockId: string,
     helperText: string,
   ) {
     setLessons((currentLessons) =>
@@ -590,8 +665,8 @@ export default function LessonBuilderPage() {
   }
 
   function updateSentenceAnswerFeedback(
-    lessonId: number,
-    sentenceBlockId: number,
+    lessonId: string,
+    sentenceBlockId: string,
     answerFeedback: string | null,
   ) {
     setLessons((currentLessons) =>
@@ -611,8 +686,8 @@ export default function LessonBuilderPage() {
   }
 
   function addSentenceAnswerFeedback(
-    lessonId: number,
-    sentenceBlockId: number,
+    lessonId: string,
+    sentenceBlockId: string,
   ) {
     updateSentenceAnswerFeedback(lessonId, sentenceBlockId, "");
     window.setTimeout(() => {
@@ -623,9 +698,9 @@ export default function LessonBuilderPage() {
   }
 
   function updateLanguageBlockCallout(
-    lessonId: number,
-    sentenceBlockId: number,
-    languageBlockId: number,
+    lessonId: string,
+    sentenceBlockId: string,
+    languageBlockId: string,
     callout: string | null,
   ) {
     setLessons((currentLessons) =>
@@ -653,9 +728,9 @@ export default function LessonBuilderPage() {
   }
 
   function addLanguageBlockCallout(
-    lessonId: number,
-    sentenceBlockId: number,
-    languageBlockId: number,
+    lessonId: string,
+    sentenceBlockId: string,
+    languageBlockId: string,
   ) {
     updateLanguageBlockCallout(
       lessonId,
@@ -671,8 +746,8 @@ export default function LessonBuilderPage() {
   }
 
   function updateExplanationBlock(
-    lessonId: number,
-    blockId: number,
+    lessonId: string,
+    blockId: string,
     contentMarkdown: string,
   ) {
     setLessons((currentLessons) =>
@@ -692,9 +767,9 @@ export default function LessonBuilderPage() {
   }
 
   function updateSpanishPrompt(
-    lessonId: number,
-    sentenceBlockId: number,
-    languageBlockId: number,
+    lessonId: string,
+    sentenceBlockId: string,
+    languageBlockId: string,
     value: string,
   ) {
     setLessons((currentLessons) =>
@@ -722,9 +797,9 @@ export default function LessonBuilderPage() {
   }
 
   function updateAcceptedAnswer(
-    lessonId: number,
-    sentenceBlockId: number,
-    languageBlockId: number,
+    lessonId: string,
+    sentenceBlockId: string,
+    languageBlockId: string,
     answerIndex: number,
     value: string,
   ) {
@@ -762,9 +837,9 @@ export default function LessonBuilderPage() {
   }
 
   function addAcceptedAnswer(
-    lessonId: number,
-    sentenceBlockId: number,
-    languageBlockId: number,
+    lessonId: string,
+    sentenceBlockId: string,
+    languageBlockId: string,
     answerIndex: number,
   ) {
     setLessons((currentLessons) =>
@@ -806,9 +881,9 @@ export default function LessonBuilderPage() {
   }
 
   function removeAcceptedAnswer(
-    lessonId: number,
-    sentenceBlockId: number,
-    languageBlockId: number,
+    lessonId: string,
+    sentenceBlockId: string,
+    languageBlockId: string,
     answerIndex: number,
   ) {
     setLessons((currentLessons) =>
@@ -843,9 +918,9 @@ export default function LessonBuilderPage() {
   }
 
   function addLanguageBlock(
-    lessonId: number,
-    sentenceBlockId: number,
-    languageBlockId: number,
+    lessonId: string,
+    sentenceBlockId: string,
+    languageBlockId: string,
   ) {
     setLessons((currentLessons) =>
       currentLessons.map((lesson) =>
@@ -881,9 +956,9 @@ export default function LessonBuilderPage() {
   }
 
   function toggleLanguageBlock(
-    lessonId: number,
-    sentenceBlockId: number,
-    languageBlockId: number,
+    lessonId: string,
+    sentenceBlockId: string,
+    languageBlockId: string,
   ) {
     const key = `${lessonId}-${sentenceBlockId}-${languageBlockId}`;
     setCollapsedLanguageBlocks((currentKeys) => {
@@ -898,9 +973,9 @@ export default function LessonBuilderPage() {
   }
 
   function deleteLanguageBlock(
-    lessonId: number,
-    sentenceBlockId: number,
-    languageBlockId: number,
+    lessonId: string,
+    sentenceBlockId: string,
+    languageBlockId: string,
   ) {
     setLessons((currentLessons) =>
       currentLessons.map((lesson) =>
@@ -925,9 +1000,9 @@ export default function LessonBuilderPage() {
   }
 
   function moveLanguageBlock(
-    lessonId: number,
-    sentenceBlockId: number,
-    languageBlockId: number,
+    lessonId: string,
+    sentenceBlockId: string,
+    languageBlockId: string,
     direction: -1 | 1,
   ) {
     setLessons((currentLessons) =>
@@ -970,7 +1045,7 @@ export default function LessonBuilderPage() {
 
   function updateDropTarget(
     event: DragEvent<HTMLElement>,
-    lessonId: number,
+    lessonId: string,
   ) {
     event.preventDefault();
 
@@ -1022,6 +1097,34 @@ export default function LessonBuilderPage() {
   return (
     <main className="flex-1 bg-background px-4 py-8 sm:px-6 sm:py-12">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-6">
+        <div className="flex items-center justify-between gap-4">
+          <div>
+            <h1 className="text-2xl font-semibold tracking-tight text-foreground">
+              Lesson Builder
+            </h1>
+            <p className="mt-1 text-sm text-muted-foreground">
+              {isLoadingLessons
+                ? "Loading saved lessons..."
+                : isDirty
+                  ? "Unsaved changes"
+                  : saveStatus === "saved"
+                    ? "All changes saved"
+                    : saveStatus === "error"
+                      ? "Could not load or save lessons"
+                      : "Loaded from lessons.json"}
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={saveLessons}
+            disabled={isLoadingLessons || !isDirty || saveStatus === "saving"}
+            className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-45 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
+          >
+            <Save className="size-4" aria-hidden="true" />
+            {saveStatus === "saving" ? "Saving..." : "Save"}
+          </button>
+        </div>
+
         {lessons.map((lesson, lessonIndex) => {
           const lessonNumber = lessonIndex + 1;
           const isDragging = draggedLessonId === lesson.id;
@@ -1403,13 +1506,6 @@ export default function LessonBuilderPage() {
                                 const isLastLanguageBlock =
                                   languageBlockIndex ===
                                   block.languageBlocks.length - 1;
-                                const nextLanguageBlockId =
-                                  Math.max(
-                                    0,
-                                    ...block.languageBlocks.map(
-                                      (currentBlock) => currentBlock.id,
-                                    ),
-                                  ) + 1;
                                 const languageBlockKey = `${lesson.id}-${block.id}-${languageBlock.id}`;
                                 const isLanguageBlockCollapsed =
                                   collapsedLanguageBlocks.has(languageBlockKey);
@@ -1750,7 +1846,7 @@ export default function LessonBuilderPage() {
                                                           addLanguageBlock(
                                                             lesson.id,
                                                             block.id,
-                                                            nextLanguageBlockId,
+                                                            createId("lang"),
                                                           );
                                                         } else if (
                                                           nextLanguageBlock
@@ -1834,12 +1930,7 @@ export default function LessonBuilderPage() {
                                 addLanguageBlock(
                                   lesson.id,
                                   block.id,
-                                  Math.max(
-                                    0,
-                                    ...block.languageBlocks.map(
-                                      (languageBlock) => languageBlock.id,
-                                    ),
-                                  ) + 1,
+                                  createId("lang"),
                                 )
                               }
                               aria-label="Add language block"

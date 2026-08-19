@@ -1,0 +1,132 @@
+{
+  "version": 1,
+  "lessons": [
+    {
+      "id": "lesson_145f8299-ce08-4e65-b5a1-77621b536c1a",
+      "name": "Demo Lesson",
+      "blocks": [
+        {
+          "id": "block_a1bedb1a-7382-40d0-b77b-1852adacdd2e",
+          "type": "explanation",
+          "contentMarkdown": "# This is a demo lesson.\n\nTo help decide how to best structure the database."
+        },
+        {
+          "id": "block_7d2c4ade-6e49-46f1-bec6-e9c03661879c",
+          "type": "explanation",
+          "contentMarkdown": "==Yo== es ==I==."
+        },
+        {
+          "id": "block_dd3d34da-c19a-451e-85d9-b3e001e86828",
+          "type": "sentence",
+          "promptLabel": "Label",
+          "promptText": "Prompt Text",
+          "helperText": "This is some helper text.",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_0f8581e1-8148-426b-aba9-41811afad971",
+              "spanish": "yo",
+              "callout": null,
+              "acceptedAnswers": [
+                "I"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_8e944303-67ab-4456-9f35-e85f2a347c16",
+          "type": "explanation",
+          "contentMarkdown": "==quiero== o ==yo quiero== es ==I want=="
+        },
+        {
+          "id": "block_08f8f545-06e7-471f-9d64-202ea2db71c4",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_369030ce-53d4-4f3b-97f3-bd6706dd99b0",
+              "spanish": "quiero / yo quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_07d6d175-cd98-4906-a6c1-448432012c54",
+          "type": "explanation",
+          "contentMarkdown": "==comer== es ==to eat=="
+        },
+        {
+          "id": "block_fe75f49c-2bc5-46dc-b848-620a4fd132ed",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_1b7b4aad-f2db-4e8b-b227-cb1bd1389aa4",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ]
+            },
+            {
+              "id": "lang_2385f60b-fca3-49d1-bd6f-e2c0aefd05af",
+              "spanish": "comer.",
+              "callout": null,
+              "acceptedAnswers": [
+                "to eat."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_813dfcc4-e511-4b30-ac11-79b4fd25200e",
+          "type": "explanation",
+          "contentMarkdown": "==alguna== o ==alguna== es ==some==\n\n==cosa== es ==thing==\n\ny ==algo== es literalmente \"alguna cosa\", ==something==, una palabra"
+        },
+        {
+          "id": "block_4d714bfc-0268-4089-8fd2-f66fd2d45c44",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_f6c6e1cd-63b7-4bd4-b098-f43ce3542f1a",
+              "spanish": "algún / alguna",
+              "callout": null,
+              "acceptedAnswers": [
+                "some"
+              ]
+            },
+            {
+              "id": "lang_ec492827-2132-400b-b599-6391fb8b927b",
+              "spanish": "cosa",
+              "callout": null,
+              "acceptedAnswers": [
+                "thing"
+              ]
+            },
+            {
+              "id": "lang_392dbecc-d99d-4950-a574-76fd8ac2e96c",
+              "spanish": "algo",
+              "callout": "\"alguna cosa\", pero una palabra",
+              "acceptedAnswers": [
+                "something"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
