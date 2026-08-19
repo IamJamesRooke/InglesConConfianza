@@ -4,7 +4,7 @@
 
 ## Current objective
 
-Build the smallest useful database-backed curriculum foundation. Start with reusable language blocks, let actual authoring reveal the data model, and postpone lessons and learner history until the foundation is useful.
+Build the smallest useful JSON-backed lesson-authoring foundation. Let actual handcrafted lessons reveal the curriculum and learner-history data model before choosing the database shape.
 
 ## Now
 
@@ -12,9 +12,6 @@ Build the smallest useful database-backed curriculum foundation. Start with reus
 - [x] Promote cognates and past forms to curriculum-level pillars and flatten prefix/suffix families under transformations.
 - [x] Flatten vocabulary into one root-level Markdown file per category, preserving every prior source in a [collation manifest](history/vocabulary-collation-manifest.md).
 - [x] Professionalize curriculum navigation and separate active work from migration history.
-- [x] Create a minimal SQLite database with a `blocks` table.
-- [x] Seed the first Spanish-to-English blocks for a representative sentence.
-- [x] Create a minimal Next.js application that reads and displays the database blocks.
 - [x] Add Tailwind CSS and shadcn/ui for a simple visual foundation.
 - [x] Create the frontend Lesson Builder foundation with reorderable and renumbered lessons, optional names, deletion, an expandable content-block picker, and Markdown-backed WYSIWYG explanation blocks.
 - [x] Add the first Sentence block authoring slice with ordered Spanish prompts, accepted English answers, automatic first-card creation, and keyboard-first card entry.
@@ -24,6 +21,7 @@ Build the smallest useful database-backed curriculum foundation. Start with reus
 - [x] Add live, non-blocking Sentence validation for required prompts and answers, empty alternatives, duplicate answers, and empty sentences.
 - [x] Add an interactive learner preview with authored Label, Prompt, and Helper text; automatic answer recognition and focus progression; temporary help; and post-completion feedback.
 - [x] Add global settings with persistent theme selection and theme-aware surface layers for clearer Lesson Builder visual hierarchy.
+- [x] Retire the initial SQLite/demo lesson prototype in favor of JSON-backed handcrafted lesson authoring while the curriculum database is redesigned from real lesson examples.
 - [ ] Build five representative lessons as the first vertical slice.
     - [ ] Include straightforward vocabulary retrieval.
     - [ ] Include a Spanish-to-English one-to-many mapping.

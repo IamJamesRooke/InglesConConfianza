@@ -56,18 +56,6 @@ export function SiteHeader() {
             Contenido del curso
           </Link>
           <Link
-            href="/sentences"
-            className={linkClassName("/sentences")}
-          >
-            Oraciones
-          </Link>
-          <Link
-            href="/demo-lesson"
-            className={linkClassName("/demo-lesson")}
-          >
-            Lección de demostración
-          </Link>
-          <Link
             href="/lesson-builder"
             className={linkClassName("/lesson-builder")}
           >
