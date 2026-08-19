@@ -23,6 +23,7 @@ Build the smallest useful database-backed curriculum foundation. Start with reus
 - [x] Add optional post-answer feedback to Sentence blocks and lesson-level collapsing for managing longer authoring sessions.
 - [x] Add live, non-blocking Sentence validation for required prompts and answers, empty alternatives, duplicate answers, and empty sentences.
 - [x] Add an interactive learner preview with authored Label, Prompt, and Helper text; automatic answer recognition and focus progression; temporary help; and post-completion feedback.
+- [x] Add global settings with persistent theme selection and theme-aware surface layers for clearer Lesson Builder visual hierarchy.
 - [ ] Build five representative lessons as the first vertical slice.
     - [ ] Include straightforward vocabulary retrieval.
     - [ ] Include a Spanish-to-English one-to-many mapping.
@@ -62,6 +63,7 @@ Build the smallest useful database-backed curriculum foundation. Start with reus
 This section records controls and security work actually applied during development. Planned work remains unchecked; implementation alone is not evidence that a control is effective.
 
 - [x] Audit the dependency tree when introducing the Markdown editor and pin the vulnerable transitive `js-yaml` dependency to patched version `4.3.1` through the package override.
+- [x] Keep theme preference storage client-only and non-sensitive by persisting only a theme identifier in `localStorage`.
 - [ ] Create an initial threat model when the application gains persistent lesson authoring, authentication, or other meaningful trust boundaries.
 - [ ] Add authorization tests alongside the first protected authoring or learner-data endpoints.
 - [ ] Perform a controlled OWASP-based security assessment after the first complete application flow is deployable, preserve findings, and document the resulting hardening.

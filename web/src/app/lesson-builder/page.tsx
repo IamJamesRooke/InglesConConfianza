@@ -220,14 +220,14 @@ function SentenceLearnerPreview({ sentence }: { sentence: SentenceBlock }) {
   }
 
   return (
-    <div className="rounded-xl border border-stone-300 bg-stone-100/80 p-5 shadow-sm">
+    <div className="rounded-xl border border-border bg-[var(--surface-sunken)] p-5 shadow-sm">
       {sentence.promptLabel.trim() && (
-        <p className="text-sm font-medium uppercase tracking-[0.2em] text-stone-500">
+        <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
           {sentence.promptLabel}
         </p>
       )}
       {sentence.promptText?.trim() && (
-        <h3 className="mt-2 whitespace-pre-wrap text-3xl font-semibold leading-tight text-stone-950">
+        <h3 className="mt-2 whitespace-pre-wrap text-3xl font-semibold leading-tight text-foreground">
           {sentence.promptText}
         </h3>
       )}
@@ -1020,7 +1020,7 @@ export default function LessonBuilderPage() {
   }
 
   return (
-    <main className="flex-1 bg-stone-50 px-4 py-8 sm:px-6 sm:py-12">
+    <main className="flex-1 bg-background px-4 py-8 sm:px-6 sm:py-12">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-6">
         {lessons.map((lesson, lessonIndex) => {
           const lessonNumber = lessonIndex + 1;
@@ -1043,12 +1043,12 @@ export default function LessonBuilderPage() {
                 }
                 finishDragging();
               }}
-              className={`relative w-full overflow-hidden rounded-2xl border bg-white shadow-md transition ${
+              className={`relative w-full overflow-hidden rounded-2xl border bg-[var(--surface)] shadow-md transition ${
                 isLessonCollapsed ? "" : "min-h-72"
               } ${
                 isDragging
                   ? "border-violet-300 opacity-45 shadow-none"
-                  : "border-stone-300 shadow-stone-200/70"
+                  : "border-border shadow-stone-200/70"
               }`}
             >
               {dropPosition && (
@@ -1060,7 +1060,7 @@ export default function LessonBuilderPage() {
                 />
               )}
 
-              <header className="flex items-center gap-4 border-b border-stone-200 bg-stone-100 px-6 py-4">
+              <header className="flex items-center gap-4 border-b border-border bg-[var(--surface-sunken)] px-6 py-4">
                 <h2 className="shrink-0 text-xl font-semibold tracking-tight text-stone-900">
                   Lesson {lessonNumber}
                 </h2>
@@ -1134,11 +1134,11 @@ export default function LessonBuilderPage() {
                   return (
                     <div
                       key={block.id}
-                      className="overflow-hidden rounded-xl border border-stone-200 bg-white shadow-sm"
+                      className="overflow-hidden rounded-xl border border-border bg-[var(--surface-raised)] shadow-sm"
                     >
                     {block.type === "explanation" ? (
                       <>
-                        <div className="flex items-center justify-between gap-3 border-b border-stone-200 bg-stone-50 px-5 py-3">
+                        <div className="flex items-center justify-between gap-3 border-b border-border bg-[var(--surface-sunken)] px-5 py-3">
                           <div className="flex items-center gap-3">
                             <span className="flex size-9 items-center justify-center rounded-lg bg-violet-50 text-violet-700">
                               <FileText className="size-4" aria-hidden="true" />
@@ -1215,7 +1215,7 @@ export default function LessonBuilderPage() {
                       </>
                     ) : (
                       <>
-                        <div className="flex items-center justify-between gap-3 border-b border-stone-200 bg-stone-50 px-5 py-3">
+                        <div className="flex items-center justify-between gap-3 border-b border-border bg-[var(--surface-sunken)] px-5 py-3">
                           <div className="flex min-w-0 items-center gap-3">
                             <span className="flex size-9 items-center justify-center rounded-lg bg-blue-50 text-blue-700">
                               <Languages className="size-4" aria-hidden="true" />
