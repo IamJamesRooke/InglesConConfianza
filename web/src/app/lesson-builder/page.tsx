@@ -7,14 +7,22 @@ import {
   ArrowUp,
   ChevronDown,
   ChevronUp,
+  Eye,
   FileText,
   GripVertical,
   Languages,
+  Pencil,
   Plus,
   Trash2,
   X,
 } from "lucide-react";
-import { useRef, useState, type DragEvent } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type DragEvent,
+} from "react";
 
 import { MarkdownEditor } from "@/components/lesson-builder/markdown-editor";
 
@@ -38,7 +46,9 @@ type ExplanationBlock = {
 type SentenceBlock = {
   id: number;
   type: "sentence";
-  explainerText: string | null;
+  promptLabel: string;
+  promptText: string;
+  helperText: string;
   answerFeedback: string | null;
   languageBlocks: LanguageBlock[];
 };
@@ -53,7 +63,7 @@ type LanguageBlock = {
 type LessonBlock = ExplanationBlock | SentenceBlock;
 
 function normalizeAnswer(answer: string) {
-  return answer.trim().toLocaleLowerCase();
+  return answer.trim().replace(/\s+/g, " ").toLocaleLowerCase();
 }
 
 function getAnswerValidationMessage(
@@ -98,6 +108,206 @@ function getSentenceValidationIssueCount(sentence: SentenceBlock) {
   }, 0);
 }
 
+function SentenceLearnerPreview({ sentence }: { sentence: SentenceBlock }) {
+  const [answers, setAnswers] = useState<string[]>(() =>
+    sentence.languageBlocks.map(() => ""),
+  );
+  const [isFeedbackVisible, setIsFeedbackVisible] = useState(false);
+  const [isHelpVisible, setIsHelpVisible] = useState(false);
+  const inputRefs = useRef<Array<HTMLInputElement | null>>([]);
+  const helpTimerRef = useRef<number | null>(null);
+  const hasFeedback = Boolean(sentence.answerFeedback?.trim());
+  const correctAnswers = sentence.languageBlocks.map(
+    (languageBlock, languageBlockIndex) => {
+      const currentAnswer = normalizeAnswer(answers[languageBlockIndex] ?? "");
+      return (
+        Boolean(currentAnswer) &&
+        languageBlock.acceptedAnswers.some(
+          (acceptedAnswer) => normalizeAnswer(acceptedAnswer) === currentAnswer,
+        )
+      );
+    },
+  );
+  const isComplete =
+    !isHelpVisible &&
+    sentence.languageBlocks.length > 0 &&
+    correctAnswers.every(Boolean);
+
+  const clearHelpTimer = useCallback(() => {
+    if (helpTimerRef.current !== null) {
+      window.clearTimeout(helpTimerRef.current);
+      helpTimerRef.current = null;
+    }
+  }, []);
+
+  const showHelp = useCallback(() => {
+    clearHelpTimer();
+    setAnswers(
+      sentence.languageBlocks.map(
+        (languageBlock) => languageBlock.acceptedAnswers[0] ?? "",
+      ),
+    );
+    setIsHelpVisible(true);
+    setIsFeedbackVisible(false);
+
+    helpTimerRef.current = window.setTimeout(() => {
+      setAnswers(sentence.languageBlocks.map(() => ""));
+      setIsHelpVisible(false);
+      helpTimerRef.current = null;
+      inputRefs.current[0]?.focus();
+    }, 2500);
+  }, [clearHelpTimer, sentence.languageBlocks]);
+
+  useEffect(() => clearHelpTimer, [clearHelpTimer]);
+
+  function updatePreviewAnswer(answer: string, languageBlockIndex: number) {
+    if (isHelpVisible) {
+      clearHelpTimer();
+      setIsHelpVisible(false);
+    }
+
+    const nextAnswers = [...answers];
+    nextAnswers[languageBlockIndex] = answer;
+    setAnswers(nextAnswers);
+
+    const languageBlock = sentence.languageBlocks[languageBlockIndex];
+    const normalizedAnswer = normalizeAnswer(answer);
+    const isCorrect =
+      Boolean(normalizedAnswer) &&
+      languageBlock.acceptedAnswers.some(
+        (acceptedAnswer) => normalizeAnswer(acceptedAnswer) === normalizedAnswer,
+      );
+
+    if (isCorrect && languageBlockIndex < sentence.languageBlocks.length - 1) {
+      window.setTimeout(
+        () => inputRefs.current[languageBlockIndex + 1]?.focus(),
+        0,
+      );
+    }
+
+    const allAnswersCorrect = sentence.languageBlocks.every(
+      (currentBlock, currentBlockIndex) => {
+        const currentAnswer = normalizeAnswer(
+          nextAnswers[currentBlockIndex] ?? "",
+        );
+        return (
+          Boolean(currentAnswer) &&
+          currentBlock.acceptedAnswers.some(
+            (acceptedAnswer) =>
+              normalizeAnswer(acceptedAnswer) === currentAnswer,
+          )
+        );
+      },
+    );
+
+    if (allAnswersCorrect && hasFeedback) {
+      setIsFeedbackVisible(true);
+    } else if (!allAnswersCorrect) {
+      setIsFeedbackVisible(false);
+    }
+  }
+
+  return (
+    <div
+      className="rounded-xl border border-stone-300 bg-stone-100/80 p-5 shadow-sm"
+      onKeyDown={(event) => {
+        if (event.altKey && event.key.toLowerCase() === "h") {
+          event.preventDefault();
+          showHelp();
+        }
+      }}
+    >
+      {sentence.promptLabel.trim() && (
+        <p className="text-sm font-medium uppercase tracking-[0.2em] text-stone-500">
+          {sentence.promptLabel}
+        </p>
+      )}
+      {sentence.promptText?.trim() && (
+        <h3 className="mt-2 whitespace-pre-wrap text-3xl font-semibold leading-tight text-stone-950">
+          {sentence.promptText}
+        </h3>
+      )}
+
+      {sentence.languageBlocks.length > 0 ? (
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {sentence.languageBlocks.map((languageBlock, languageBlockIndex) => (
+            <label
+              key={languageBlock.id}
+              className="block"
+            >
+              <span className="mb-2 block text-center text-lg font-bold text-stone-800">
+                {languageBlock.spanish || "Spanish prompt"}
+              </span>
+              {languageBlock.callout?.trim() && (
+                <span className="mb-2 block text-center text-sm font-medium italic text-amber-700">
+                  {languageBlock.callout}
+                </span>
+              )}
+              <input
+                ref={(element) => {
+                  inputRefs.current[languageBlockIndex] = element;
+                }}
+                type="text"
+                value={answers[languageBlockIndex] ?? ""}
+                onChange={(event) =>
+                  updatePreviewAnswer(event.target.value, languageBlockIndex)
+                }
+                aria-label={`Traducción de ${languageBlock.spanish || `bloque ${languageBlockIndex + 1}`}`}
+                autoComplete="off"
+                className={`w-full rounded-xl border px-5 py-4 text-center text-xl outline-none transition-colors focus:ring-2 focus:ring-stone-400 ${
+                  correctAnswers[languageBlockIndex] && !isHelpVisible
+                    ? "border-emerald-500 bg-emerald-50 text-emerald-950"
+                    : isHelpVisible
+                      ? "border-amber-300 bg-amber-50 text-stone-500 italic"
+                      : "border-stone-300 bg-white text-stone-950"
+                }`}
+              />
+            </label>
+          ))}
+        </div>
+      ) : (
+        <p className="rounded-lg border border-dashed border-red-300 bg-white px-4 py-6 text-center text-sm font-medium text-red-600">
+          Add a language block to preview this sentence.
+        </p>
+      )}
+
+      {isHelpVisible && (
+        <p className="mt-4 text-sm font-medium text-stone-500" aria-live="polite">
+          Pista ✨ La respuesta aparece solo por un momento.
+        </p>
+      )}
+
+      <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
+        {sentence.helperText?.trim() ? (
+          <p className="text-sm text-stone-500">{sentence.helperText}</p>
+        ) : (
+          <span aria-hidden="true" />
+        )}
+        <button
+          type="button"
+          onClick={showHelp}
+          disabled={sentence.languageBlocks.length === 0}
+          className="rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm font-semibold text-stone-700 transition hover:bg-stone-50 disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          Ayuda <span className="ml-1 text-xs opacity-60">Alt + H</span>
+        </button>
+      </div>
+
+      {isComplete && (
+        <p className="mt-4 text-sm font-semibold text-emerald-700" role="status">
+          ¡Correcto!
+        </p>
+      )}
+
+      {hasFeedback && isFeedbackVisible && (
+        <div className="mt-4 whitespace-pre-wrap rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-sm leading-6 text-stone-700">
+          {sentence.answerFeedback}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function LessonBuilderPage() {
   const [lessons, setLessons] = useState<Lesson[]>([]);
   const [draggedLessonId, setDraggedLessonId] = useState<number | null>(null);
@@ -114,14 +324,14 @@ export default function LessonBuilderPage() {
   const [collapsedLanguageBlocks, setCollapsedLanguageBlocks] = useState(
     () => new Set<string>(),
   );
+  const [previewSentenceBlocks, setPreviewSentenceBlocks] = useState(
+    () => new Set<string>(),
+  );
   const languageBlockSpanishRefs = useRef(
     new Map<string, HTMLInputElement>(),
   );
   const acceptedAnswerRefs = useRef(new Map<string, HTMLInputElement>());
   const languageBlockCalloutRefs = useRef(new Map<string, HTMLInputElement>());
-  const sentenceExplainerTextRefs = useRef(
-    new Map<string, HTMLTextAreaElement>(),
-  );
   const sentenceAnswerFeedbackRefs = useRef(
     new Map<string, HTMLTextAreaElement>(),
   );
@@ -177,6 +387,19 @@ export default function LessonBuilderPage() {
   function toggleContentBlock(lessonId: number, blockId: number) {
     const key = `${lessonId}-${blockId}`;
     setCollapsedContentBlocks((currentKeys) => {
+      const nextKeys = new Set(currentKeys);
+      if (nextKeys.has(key)) {
+        nextKeys.delete(key);
+      } else {
+        nextKeys.add(key);
+      }
+      return nextKeys;
+    });
+  }
+
+  function toggleSentencePreview(lessonId: number, sentenceBlockId: number) {
+    const key = `${lessonId}-${sentenceBlockId}`;
+    setPreviewSentenceBlocks((currentKeys) => {
       const nextKeys = new Set(currentKeys);
       if (nextKeys.has(key)) {
         nextKeys.delete(key);
@@ -277,7 +500,9 @@ export default function LessonBuilderPage() {
             {
               id: nextBlockId,
               type: "sentence",
-              explainerText: null,
+              promptLabel: "",
+              promptText: "",
+              helperText: "",
               answerFeedback: null,
               languageBlocks: [
                 {
@@ -295,10 +520,10 @@ export default function LessonBuilderPage() {
     setOpenBlockPickerLessonId(null);
   }
 
-  function updateSentenceExplainerText(
+  function updateSentencePromptText(
     lessonId: number,
     sentenceBlockId: number,
-    explainerText: string | null,
+    promptText: string,
   ) {
     setLessons((currentLessons) =>
       currentLessons.map((lesson) =>
@@ -307,7 +532,7 @@ export default function LessonBuilderPage() {
               ...lesson,
               blocks: lesson.blocks.map((block) =>
                 block.id === sentenceBlockId && block.type === "sentence"
-                  ? { ...block, explainerText }
+                  ? { ...block, promptText }
                   : block,
               ),
             }
@@ -316,13 +541,46 @@ export default function LessonBuilderPage() {
     );
   }
 
-  function addSentenceExplainerText(lessonId: number, sentenceBlockId: number) {
-    updateSentenceExplainerText(lessonId, sentenceBlockId, "");
-    window.setTimeout(() => {
-      sentenceExplainerTextRefs.current
-        .get(`${lessonId}-${sentenceBlockId}`)
-        ?.focus();
-    }, 0);
+  function updateSentencePromptLabel(
+    lessonId: number,
+    sentenceBlockId: number,
+    promptLabel: string,
+  ) {
+    setLessons((currentLessons) =>
+      currentLessons.map((lesson) =>
+        lesson.id === lessonId
+          ? {
+              ...lesson,
+              blocks: lesson.blocks.map((block) =>
+                block.id === sentenceBlockId && block.type === "sentence"
+                  ? { ...block, promptLabel }
+                  : block,
+              ),
+            }
+          : lesson,
+      ),
+    );
+  }
+
+  function updateSentenceHelperText(
+    lessonId: number,
+    sentenceBlockId: number,
+    helperText: string,
+  ) {
+    setLessons((currentLessons) =>
+      currentLessons.map((lesson) =>
+        lesson.id === lessonId
+          ? {
+              ...lesson,
+              blocks: lesson.blocks.map((block) =>
+                block.id === sentenceBlockId && block.type === "sentence"
+                  ? { ...block, helperText }
+                  : block,
+              ),
+            }
+          : lesson,
+      ),
+    );
   }
 
   function updateSentenceAnswerFeedback(
@@ -863,6 +1121,9 @@ export default function LessonBuilderPage() {
                     block.type === "sentence"
                       ? getSentenceValidationIssueCount(block)
                       : 0;
+                  const isSentencePreviewVisible =
+                    block.type === "sentence" &&
+                    previewSentenceBlocks.has(contentBlockKey);
 
                   return (
                     <div
@@ -990,6 +1251,30 @@ export default function LessonBuilderPage() {
                             <button
                               type="button"
                               onClick={() =>
+                                toggleSentencePreview(lesson.id, block.id)
+                              }
+                              aria-pressed={isSentencePreviewVisible}
+                              aria-label={`${isSentencePreviewVisible ? "Edit" : "Preview"} sentence`}
+                              title={
+                                isSentencePreviewVisible
+                                  ? "Return to editing"
+                                  : "Preview as learner"
+                              }
+                              className={`flex size-8 items-center justify-center rounded-md transition ${
+                                isSentencePreviewVisible
+                                  ? "bg-blue-100 text-blue-700"
+                                  : "text-stone-500 hover:bg-stone-200"
+                              }`}
+                            >
+                              {isSentencePreviewVisible ? (
+                                <Pencil className="size-4" aria-hidden="true" />
+                              ) : (
+                                <Eye className="size-4" aria-hidden="true" />
+                              )}
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() =>
                                 moveContentBlock(lesson.id, block.id, -1)
                               }
                               disabled={blockIndex === 0}
@@ -1041,68 +1326,71 @@ export default function LessonBuilderPage() {
                         </div>
                         {!isContentBlockCollapsed && (
                         <div className="p-6">
-                          {block.explainerText == null ? (
-                            <button
-                              type="button"
-                              onClick={() =>
-                                addSentenceExplainerText(lesson.id, block.id)
-                              }
-                              className="mb-4 rounded-lg border border-dashed border-stone-300 px-3 py-2 text-sm font-medium text-stone-500 transition hover:border-violet-300 hover:bg-violet-50 hover:text-violet-700"
-                            >
-                              Add explainer text
-                            </button>
+                          {isSentencePreviewVisible ? (
+                            <SentenceLearnerPreview sentence={block} />
                           ) : (
+                          <>
                             <div className="mb-5 rounded-xl border border-violet-200 bg-violet-50/60 p-4">
-                              <div className="mb-2 flex items-center justify-between gap-3">
-                                <label
-                                  htmlFor={`sentence-explainer-${lesson.id}-${block.id}`}
-                                  className="text-xs font-semibold uppercase tracking-[0.12em] text-violet-700"
-                                >
-                                  Explainer text
-                                </label>
-                                <button
-                                  type="button"
-                                  onClick={() =>
-                                    updateSentenceExplainerText(
+                              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-violet-700">
+                                Question prompt
+                              </p>
+                              <label className="mb-3 block">
+                                <span className="mb-1 block text-xs font-medium text-stone-500">
+                                  Label (optional)
+                                </span>
+                                <input
+                                  type="text"
+                                  value={block.promptLabel}
+                                  onChange={(event) =>
+                                    updateSentencePromptLabel(
                                       lesson.id,
                                       block.id,
-                                      null,
+                                      event.target.value,
                                     )
                                   }
-                                  aria-label="Remove explainer text"
-                                  title="Remove explainer text"
-                                  className="flex size-7 items-center justify-center rounded-md text-violet-400 transition hover:bg-violet-100 hover:text-violet-700"
-                                >
-                                  <X className="size-4" aria-hidden="true" />
-                                </button>
-                              </div>
+                                  placeholder="For example: Tu turno"
+                                  className="w-full rounded-lg border border-violet-200 bg-white px-3 py-2 text-sm font-medium outline-none transition placeholder:text-stone-400 focus:border-violet-400 focus:ring-2 focus:ring-violet-100"
+                                />
+                              </label>
+                              <label
+                                htmlFor={`sentence-prompt-${lesson.id}-${block.id}`}
+                                className="mb-1 block text-xs font-medium text-stone-500"
+                              >
+                                Prompt (optional)
+                              </label>
                               <textarea
-                                ref={(element) => {
-                                  const key = `${lesson.id}-${block.id}`;
-                                  if (element) {
-                                    sentenceExplainerTextRefs.current.set(
-                                      key,
-                                      element,
-                                    );
-                                  } else {
-                                    sentenceExplainerTextRefs.current.delete(key);
-                                  }
-                                }}
-                                id={`sentence-explainer-${lesson.id}-${block.id}`}
-                                value={block.explainerText ?? ""}
+                                id={`sentence-prompt-${lesson.id}-${block.id}`}
+                                value={block.promptText}
                                 onChange={(event) =>
-                                  updateSentenceExplainerText(
+                                  updateSentencePromptText(
                                     lesson.id,
                                     block.id,
                                     event.target.value,
                                   )
                                 }
                                 rows={2}
-                                placeholder="Add instructions or context for this question."
-                                className="block w-full resize-y bg-transparent text-sm leading-6 text-stone-800 outline-none placeholder:text-stone-400"
+                                placeholder="For example: ¿Cómo se dice “Estoy preparando”?"
+                                className="block w-full resize-y rounded-lg border border-violet-200 bg-white px-3 py-2 text-sm leading-6 text-stone-800 outline-none transition placeholder:text-stone-400 focus:border-violet-400 focus:ring-2 focus:ring-violet-100"
                               />
+                              <label className="mt-3 block">
+                                <span className="mb-1 block text-xs font-medium text-stone-500">
+                                  Helper text (optional)
+                                </span>
+                                <input
+                                  type="text"
+                                  value={block.helperText ?? ""}
+                                  onChange={(event) =>
+                                    updateSentenceHelperText(
+                                      lesson.id,
+                                      block.id,
+                                      event.target.value,
+                                    )
+                                  }
+                                  placeholder="For example: No hay penalización por equivocarse."
+                                  className="w-full rounded-lg border border-violet-200 bg-white px-3 py-2 text-sm outline-none transition placeholder:text-stone-400 focus:border-violet-400 focus:ring-2 focus:ring-violet-100"
+                                />
+                              </label>
                             </div>
-                          )}
                           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                             {block.languageBlocks.map(
                               (languageBlock, languageBlockIndex) => {
@@ -1620,6 +1908,8 @@ export default function LessonBuilderPage() {
                                 className="block w-full resize-y bg-transparent text-sm leading-6 text-stone-800 outline-none placeholder:text-stone-400"
                               />
                             </div>
+                          )}
+                          </>
                           )}
                         </div>
                         )}
