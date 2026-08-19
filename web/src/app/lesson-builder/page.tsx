@@ -39,6 +39,7 @@ type SentenceBlock = {
   id: number;
   type: "sentence";
   explainerText: string | null;
+  answerFeedback: string | null;
   languageBlocks: LanguageBlock[];
 };
 
@@ -58,6 +59,9 @@ export default function LessonBuilderPage() {
   const [openBlockPickerLessonId, setOpenBlockPickerLessonId] = useState<
     number | null
   >(null);
+  const [collapsedLessons, setCollapsedLessons] = useState(
+    () => new Set<number>(),
+  );
   const [collapsedContentBlocks, setCollapsedContentBlocks] = useState(
     () => new Set<string>(),
   );
@@ -70,6 +74,9 @@ export default function LessonBuilderPage() {
   const acceptedAnswerRefs = useRef(new Map<string, HTMLInputElement>());
   const languageBlockCalloutRefs = useRef(new Map<string, HTMLInputElement>());
   const sentenceExplainerTextRefs = useRef(
+    new Map<string, HTMLTextAreaElement>(),
+  );
+  const sentenceAnswerFeedbackRefs = useRef(
     new Map<string, HTMLTextAreaElement>(),
   );
 
@@ -102,6 +109,23 @@ export default function LessonBuilderPage() {
     setOpenBlockPickerLessonId((currentLessonId) =>
       currentLessonId === lessonId ? null : currentLessonId,
     );
+    setCollapsedLessons((currentLessonIds) => {
+      const nextLessonIds = new Set(currentLessonIds);
+      nextLessonIds.delete(lessonId);
+      return nextLessonIds;
+    });
+  }
+
+  function toggleLesson(lessonId: number) {
+    setCollapsedLessons((currentLessonIds) => {
+      const nextLessonIds = new Set(currentLessonIds);
+      if (nextLessonIds.has(lessonId)) {
+        nextLessonIds.delete(lessonId);
+      } else {
+        nextLessonIds.add(lessonId);
+      }
+      return nextLessonIds;
+    });
   }
 
   function toggleContentBlock(lessonId: number, blockId: number) {
@@ -208,6 +232,7 @@ export default function LessonBuilderPage() {
               id: nextBlockId,
               type: "sentence",
               explainerText: null,
+              answerFeedback: null,
               languageBlocks: [
                 {
                   id: 1,
@@ -249,6 +274,39 @@ export default function LessonBuilderPage() {
     updateSentenceExplainerText(lessonId, sentenceBlockId, "");
     window.setTimeout(() => {
       sentenceExplainerTextRefs.current
+        .get(`${lessonId}-${sentenceBlockId}`)
+        ?.focus();
+    }, 0);
+  }
+
+  function updateSentenceAnswerFeedback(
+    lessonId: number,
+    sentenceBlockId: number,
+    answerFeedback: string | null,
+  ) {
+    setLessons((currentLessons) =>
+      currentLessons.map((lesson) =>
+        lesson.id === lessonId
+          ? {
+              ...lesson,
+              blocks: lesson.blocks.map((block) =>
+                block.id === sentenceBlockId && block.type === "sentence"
+                  ? { ...block, answerFeedback }
+                  : block,
+              ),
+            }
+          : lesson,
+      ),
+    );
+  }
+
+  function addSentenceAnswerFeedback(
+    lessonId: number,
+    sentenceBlockId: number,
+  ) {
+    updateSentenceAnswerFeedback(lessonId, sentenceBlockId, "");
+    window.setTimeout(() => {
+      sentenceAnswerFeedbackRefs.current
         .get(`${lessonId}-${sentenceBlockId}`)
         ?.focus();
     }, 0);
@@ -657,6 +715,7 @@ export default function LessonBuilderPage() {
         {lessons.map((lesson, lessonIndex) => {
           const lessonNumber = lessonIndex + 1;
           const isDragging = draggedLessonId === lesson.id;
+          const isLessonCollapsed = collapsedLessons.has(lesson.id);
           const dropPosition =
             dropTarget && dropTarget.lessonId === lesson.id
               ? dropTarget.position
@@ -674,7 +733,9 @@ export default function LessonBuilderPage() {
                 }
                 finishDragging();
               }}
-              className={`relative min-h-72 w-full overflow-hidden rounded-2xl border bg-white shadow-md transition ${
+              className={`relative w-full overflow-hidden rounded-2xl border bg-white shadow-md transition ${
+                isLessonCollapsed ? "" : "min-h-72"
+              } ${
                 isDragging
                   ? "border-violet-300 opacity-45 shadow-none"
                   : "border-stone-300 shadow-stone-200/70"
@@ -705,6 +766,19 @@ export default function LessonBuilderPage() {
                 />
                 <button
                   type="button"
+                  onClick={() => toggleLesson(lesson.id)}
+                  aria-label={`${isLessonCollapsed ? "Expand" : "Collapse"} lesson ${lessonNumber}`}
+                  title={isLessonCollapsed ? "Expand lesson" : "Collapse lesson"}
+                  className="flex size-9 shrink-0 items-center justify-center rounded-lg text-stone-500 transition hover:bg-stone-200 hover:text-stone-700 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-violet-200"
+                >
+                  {isLessonCollapsed ? (
+                    <ChevronDown className="size-4" aria-hidden="true" />
+                  ) : (
+                    <ChevronUp className="size-4" aria-hidden="true" />
+                  )}
+                </button>
+                <button
+                  type="button"
                   onClick={() => deleteLesson(lesson.id)}
                   aria-label={`Delete lesson ${lessonNumber}`}
                   title="Delete lesson"
@@ -733,6 +807,7 @@ export default function LessonBuilderPage() {
                 </button>
               </header>
 
+              {!isLessonCollapsed && (
               <div className="space-y-4 p-6">
                 {lesson.blocks.map((block, blockIndex) => {
                   const contentBlockKey = `${lesson.id}-${block.id}`;
@@ -1387,6 +1462,70 @@ export default function LessonBuilderPage() {
                               </span>
                             </button>
                           </div>
+                          {block.answerFeedback == null ? (
+                            <button
+                              type="button"
+                              onClick={() =>
+                                addSentenceAnswerFeedback(lesson.id, block.id)
+                              }
+                              className="mt-4 rounded-lg border border-dashed border-stone-300 px-3 py-2 text-sm font-medium text-stone-500 transition hover:border-emerald-300 hover:bg-emerald-50 hover:text-emerald-700"
+                            >
+                              Add answer feedback
+                            </button>
+                          ) : (
+                            <div className="mt-5 rounded-xl border border-emerald-200 bg-emerald-50/60 p-4">
+                              <div className="mb-2 flex items-center justify-between gap-3">
+                                <label
+                                  htmlFor={`sentence-feedback-${lesson.id}-${block.id}`}
+                                  className="text-xs font-semibold uppercase tracking-[0.12em] text-emerald-700"
+                                >
+                                  Answer feedback
+                                </label>
+                                <button
+                                  type="button"
+                                  onClick={() =>
+                                    updateSentenceAnswerFeedback(
+                                      lesson.id,
+                                      block.id,
+                                      null,
+                                    )
+                                  }
+                                  aria-label="Remove answer feedback"
+                                  title="Remove answer feedback"
+                                  className="flex size-7 items-center justify-center rounded-md text-emerald-500 transition hover:bg-emerald-100 hover:text-emerald-700"
+                                >
+                                  <X className="size-4" aria-hidden="true" />
+                                </button>
+                              </div>
+                              <textarea
+                                ref={(element) => {
+                                  const key = `${lesson.id}-${block.id}`;
+                                  if (element) {
+                                    sentenceAnswerFeedbackRefs.current.set(
+                                      key,
+                                      element,
+                                    );
+                                  } else {
+                                    sentenceAnswerFeedbackRefs.current.delete(
+                                      key,
+                                    );
+                                  }
+                                }}
+                                id={`sentence-feedback-${lesson.id}-${block.id}`}
+                                value={block.answerFeedback ?? ""}
+                                onChange={(event) =>
+                                  updateSentenceAnswerFeedback(
+                                    lesson.id,
+                                    block.id,
+                                    event.target.value,
+                                  )
+                                }
+                                rows={2}
+                                placeholder="Explain the answer or reinforce the key idea."
+                                className="block w-full resize-y bg-transparent text-sm leading-6 text-stone-800 outline-none placeholder:text-stone-400"
+                              />
+                            </div>
+                          )}
                         </div>
                         )}
                       </>
@@ -1453,6 +1592,7 @@ export default function LessonBuilderPage() {
                   </div>
                 )}
               </div>
+              )}
             </section>
           );
         })}
