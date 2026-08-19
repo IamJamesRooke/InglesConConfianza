@@ -29,6 +29,7 @@ type SentenceBlock = {
   promptText: string;
   helperText: string;
   answerFeedback: string | null;
+  conceptLinks?: ConceptLink[];
   languageBlocks: LanguageBlock[];
 };
 
@@ -37,9 +38,64 @@ type LanguageBlock = {
   spanish: string;
   callout: string | null;
   acceptedAnswers: string[];
+  conceptLinks?: ConceptLink[];
 };
 
 type LessonBlock = ExplanationBlock | SentenceBlock;
+
+type ConceptRole =
+  | "primary"
+  | "introduced"
+  | "reinforced"
+  | "required"
+  | "incidental";
+
+type ConceptType =
+  | "mapping"
+  | "vocabulary"
+  | "grammar_pattern"
+  | "morpheme"
+  | "concept_group";
+
+type MappingDirection =
+  | "es_to_en"
+  | "en_to_es"
+  | "bidirectional"
+  | "not_directional";
+
+type ConceptLink = {
+  id: string;
+  label: string;
+  type?: ConceptType;
+  direction?: MappingDirection;
+  sourceText?: string;
+  targetText?: string;
+  contextLabel?: string;
+  role: ConceptRole;
+};
+
+const conceptRoles = [
+  "primary",
+  "introduced",
+  "reinforced",
+  "required",
+  "incidental",
+];
+
+const conceptTypes = [
+  "mapping",
+  "vocabulary",
+  "grammar_pattern",
+  "morpheme",
+  "concept_group",
+];
+
+const mappingDirections = [
+  "es_to_en",
+  "en_to_es",
+  "bidirectional",
+  "not_directional",
+];
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -49,12 +105,50 @@ function isStringOrNull(value: unknown): value is string | null {
   return typeof value === "string" || value === null;
 }
 
+function isConceptRole(value: unknown): value is ConceptRole {
+  return typeof value === "string" && conceptRoles.includes(value);
+}
+
+function isConceptType(value: unknown): value is ConceptType {
+  return typeof value === "string" && conceptTypes.includes(value);
+}
+
+function isMappingDirection(value: unknown): value is MappingDirection {
+  return typeof value === "string" && mappingDirections.includes(value);
+}
+
+function isConceptLink(value: unknown): value is ConceptLink {
+  return (
+    isRecord(value) &&
+    typeof value.id === "string" &&
+    typeof value.label === "string" &&
+    (value.type === undefined || isConceptType(value.type)) &&
+    (value.direction === undefined ||
+      isMappingDirection(value.direction)) &&
+    (value.sourceText === undefined ||
+      typeof value.sourceText === "string") &&
+    (value.targetText === undefined ||
+      typeof value.targetText === "string") &&
+    (value.contextLabel === undefined ||
+      typeof value.contextLabel === "string") &&
+    isConceptRole(value.role)
+  );
+}
+
+function isOptionalConceptLinks(value: unknown) {
+  return (
+    value === undefined ||
+    (Array.isArray(value) && value.every(isConceptLink))
+  );
+}
+
 function isLanguageBlock(value: unknown): value is LanguageBlock {
   return (
     isRecord(value) &&
     typeof value.id === "string" &&
     typeof value.spanish === "string" &&
     isStringOrNull(value.callout) &&
+    isOptionalConceptLinks(value.conceptLinks) &&
     Array.isArray(value.acceptedAnswers) &&
     value.acceptedAnswers.every((answer) => typeof answer === "string")
   );
@@ -75,6 +169,7 @@ function isLessonBlock(value: unknown): value is LessonBlock {
       typeof value.promptText === "string" &&
       typeof value.helperText === "string" &&
       isStringOrNull(value.answerFeedback) &&
+      isOptionalConceptLinks(value.conceptLinks) &&
       Array.isArray(value.languageBlocks) &&
       value.languageBlocks.every(isLanguageBlock)
     );

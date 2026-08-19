@@ -52,6 +52,7 @@ type SentenceBlock = {
   promptText: string;
   helperText: string;
   answerFeedback: string | null;
+  conceptLinks: ConceptLink[];
   languageBlocks: LanguageBlock[];
 };
 
@@ -60,6 +61,7 @@ type LanguageBlock = {
   spanish: string;
   callout: string | null;
   acceptedAnswers: string[];
+  conceptLinks: ConceptLink[];
 };
 
 type LessonBlock = ExplanationBlock | SentenceBlock;
@@ -69,12 +71,114 @@ type LessonFile = {
   lessons: Lesson[];
 };
 
+type ConceptRole =
+  | "primary"
+  | "introduced"
+  | "reinforced"
+  | "required"
+  | "incidental";
+
+type ConceptType =
+  | "mapping"
+  | "vocabulary"
+  | "grammar_pattern"
+  | "morpheme"
+  | "concept_group";
+
+type MappingDirection =
+  | "es_to_en"
+  | "en_to_es"
+  | "bidirectional"
+  | "not_directional";
+
+type ConceptLink = {
+  id: string;
+  label: string;
+  type: ConceptType;
+  direction: MappingDirection;
+  sourceText: string;
+  targetText: string;
+  contextLabel: string;
+  role: ConceptRole;
+};
+
+const conceptRoleOptions = [
+  { value: "primary", label: "Primary" },
+  { value: "introduced", label: "Introduced" },
+  { value: "reinforced", label: "Reinforced" },
+  { value: "required", label: "Required" },
+  { value: "incidental", label: "Incidental" },
+] satisfies Array<{ value: ConceptRole; label: string }>;
+
+const conceptTypeOptions = [
+  { value: "mapping", label: "Mapping" },
+  { value: "vocabulary", label: "Vocabulary" },
+  { value: "grammar_pattern", label: "Grammar pattern" },
+  { value: "morpheme", label: "Morpheme" },
+  { value: "concept_group", label: "Concept group" },
+] satisfies Array<{ value: ConceptType; label: string }>;
+
+const mappingDirectionOptions = [
+  { value: "es_to_en", label: "Spanish → English" },
+  { value: "en_to_es", label: "English → Spanish" },
+  { value: "bidirectional", label: "Both directions" },
+  { value: "not_directional", label: "Not directional" },
+] satisfies Array<{ value: MappingDirection; label: string }>;
+
 function normalizeAnswer(answer: string) {
   return answer.trim().replace(/\s+/g, " ").toLocaleLowerCase();
 }
 
 function createId(prefix: string) {
   return `${prefix}_${crypto.randomUUID()}`;
+}
+
+function createConceptLink(): ConceptLink {
+  return {
+    id: createId("concept_link"),
+    label: "",
+    type: "mapping",
+    direction: "es_to_en",
+    sourceText: "",
+    targetText: "",
+    contextLabel: "",
+    role: "introduced",
+  };
+}
+
+function normalizeConceptLink(conceptLink: Partial<ConceptLink>): ConceptLink {
+  return {
+    id: conceptLink.id ?? createId("concept_link"),
+    label: conceptLink.label ?? "",
+    type: conceptLink.type ?? "mapping",
+    direction: conceptLink.direction ?? "es_to_en",
+    sourceText: conceptLink.sourceText ?? "",
+    targetText: conceptLink.targetText ?? "",
+    contextLabel: conceptLink.contextLabel ?? "",
+    role: conceptLink.role ?? "introduced",
+  };
+}
+
+function normalizeLessons(lessons: Lesson[]) {
+  return lessons.map((lesson) => ({
+    ...lesson,
+    blocks: lesson.blocks.map((block) => {
+      if (block.type === "explanation") {
+        return block;
+      }
+
+      return {
+        ...block,
+        conceptLinks: (block.conceptLinks ?? []).map(normalizeConceptLink),
+        languageBlocks: block.languageBlocks.map((languageBlock) => ({
+          ...languageBlock,
+          conceptLinks: (languageBlock.conceptLinks ?? []).map(
+            normalizeConceptLink,
+          ),
+        })),
+      };
+    }),
+  }));
 }
 
 function getAnswerValidationMessage(
@@ -369,11 +473,12 @@ export default function LessonBuilderPage() {
         }
 
         const lessonFile = (await response.json()) as LessonFile;
-        const lessonsJson = JSON.stringify(lessonFile.lessons);
+        const lessons = normalizeLessons(lessonFile.lessons);
+        const lessonsJson = JSON.stringify(lessons);
 
         if (isMounted) {
           savedLessonsJsonRef.current = lessonsJson;
-          setLessons(lessonFile.lessons);
+          setLessons(lessons);
           setIsDirty(false);
           setSaveStatus("idle");
         }
@@ -585,12 +690,14 @@ export default function LessonBuilderPage() {
               promptText: "",
               helperText: "",
               answerFeedback: null,
+              conceptLinks: [],
               languageBlocks: [
                 {
                   id: createId("lang"),
                   spanish: "",
                   callout: null,
                   acceptedAnswers: [""],
+                  conceptLinks: [],
                 },
               ],
             },
@@ -695,6 +802,195 @@ export default function LessonBuilderPage() {
         .get(`${lessonId}-${sentenceBlockId}`)
         ?.focus();
     }, 0);
+  }
+
+  function addSentenceConceptLink(lessonId: string, sentenceBlockId: string) {
+    setLessons((currentLessons) =>
+      currentLessons.map((lesson) =>
+        lesson.id === lessonId
+          ? {
+              ...lesson,
+              blocks: lesson.blocks.map((block) =>
+                block.id === sentenceBlockId && block.type === "sentence"
+                  ? {
+                      ...block,
+                      conceptLinks: [
+                        ...block.conceptLinks,
+                        createConceptLink(),
+                      ],
+                    }
+                  : block,
+              ),
+            }
+          : lesson,
+      ),
+    );
+  }
+
+  function updateSentenceConceptLink(
+    lessonId: string,
+    sentenceBlockId: string,
+    conceptLinkId: string,
+    updates: Partial<Omit<ConceptLink, "id">>,
+  ) {
+    setLessons((currentLessons) =>
+      currentLessons.map((lesson) =>
+        lesson.id === lessonId
+          ? {
+              ...lesson,
+              blocks: lesson.blocks.map((block) =>
+                block.id === sentenceBlockId && block.type === "sentence"
+                  ? {
+                      ...block,
+                      conceptLinks: block.conceptLinks.map((conceptLink) =>
+                        conceptLink.id === conceptLinkId
+                          ? { ...conceptLink, ...updates }
+                          : conceptLink,
+                      ),
+                    }
+                  : block,
+              ),
+            }
+          : lesson,
+      ),
+    );
+  }
+
+  function removeSentenceConceptLink(
+    lessonId: string,
+    sentenceBlockId: string,
+    conceptLinkId: string,
+  ) {
+    setLessons((currentLessons) =>
+      currentLessons.map((lesson) =>
+        lesson.id === lessonId
+          ? {
+              ...lesson,
+              blocks: lesson.blocks.map((block) =>
+                block.id === sentenceBlockId && block.type === "sentence"
+                  ? {
+                      ...block,
+                      conceptLinks: block.conceptLinks.filter(
+                        (conceptLink) => conceptLink.id !== conceptLinkId,
+                      ),
+                    }
+                  : block,
+              ),
+            }
+          : lesson,
+      ),
+    );
+  }
+
+  function addLanguageBlockConceptLink(
+    lessonId: string,
+    sentenceBlockId: string,
+    languageBlockId: string,
+  ) {
+    setLessons((currentLessons) =>
+      currentLessons.map((lesson) =>
+        lesson.id === lessonId
+          ? {
+              ...lesson,
+              blocks: lesson.blocks.map((block) =>
+                block.id === sentenceBlockId && block.type === "sentence"
+                  ? {
+                      ...block,
+                      languageBlocks: block.languageBlocks.map(
+                        (languageBlock) =>
+                          languageBlock.id === languageBlockId
+                            ? {
+                                ...languageBlock,
+                                conceptLinks: [
+                                  ...languageBlock.conceptLinks,
+                                  createConceptLink(),
+                                ],
+                              }
+                            : languageBlock,
+                      ),
+                    }
+                  : block,
+              ),
+            }
+          : lesson,
+      ),
+    );
+  }
+
+  function updateLanguageBlockConceptLink(
+    lessonId: string,
+    sentenceBlockId: string,
+    languageBlockId: string,
+    conceptLinkId: string,
+    updates: Partial<Omit<ConceptLink, "id">>,
+  ) {
+    setLessons((currentLessons) =>
+      currentLessons.map((lesson) =>
+        lesson.id === lessonId
+          ? {
+              ...lesson,
+              blocks: lesson.blocks.map((block) =>
+                block.id === sentenceBlockId && block.type === "sentence"
+                  ? {
+                      ...block,
+                      languageBlocks: block.languageBlocks.map(
+                        (languageBlock) =>
+                          languageBlock.id === languageBlockId
+                            ? {
+                                ...languageBlock,
+                                conceptLinks: languageBlock.conceptLinks.map(
+                                  (conceptLink) =>
+                                    conceptLink.id === conceptLinkId
+                                      ? { ...conceptLink, ...updates }
+                                      : conceptLink,
+                                ),
+                              }
+                            : languageBlock,
+                      ),
+                    }
+                  : block,
+              ),
+            }
+          : lesson,
+      ),
+    );
+  }
+
+  function removeLanguageBlockConceptLink(
+    lessonId: string,
+    sentenceBlockId: string,
+    languageBlockId: string,
+    conceptLinkId: string,
+  ) {
+    setLessons((currentLessons) =>
+      currentLessons.map((lesson) =>
+        lesson.id === lessonId
+          ? {
+              ...lesson,
+              blocks: lesson.blocks.map((block) =>
+                block.id === sentenceBlockId && block.type === "sentence"
+                  ? {
+                      ...block,
+                      languageBlocks: block.languageBlocks.map(
+                        (languageBlock) =>
+                          languageBlock.id === languageBlockId
+                            ? {
+                                ...languageBlock,
+                                conceptLinks:
+                                  languageBlock.conceptLinks.filter(
+                                    (conceptLink) =>
+                                      conceptLink.id !== conceptLinkId,
+                                  ),
+                              }
+                            : languageBlock,
+                      ),
+                    }
+                  : block,
+              ),
+            }
+          : lesson,
+      ),
+    );
   }
 
   function updateLanguageBlockCallout(
@@ -938,6 +1234,7 @@ export default function LessonBuilderPage() {
                           spanish: "",
                           callout: null,
                           acceptedAnswers: [""],
+                          conceptLinks: [],
                         },
                       ],
                     }
@@ -1500,6 +1797,189 @@ export default function LessonBuilderPage() {
                                 />
                               </label>
                             </div>
+                            <div className="mb-5 rounded-xl border border-blue-200 bg-blue-50/60 p-4">
+                              <div className="mb-3 flex items-center justify-between gap-3">
+                                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-blue-700">
+                                  Concepts Taught
+                                </p>
+                                <button
+                                  type="button"
+                                  onClick={() =>
+                                    addSentenceConceptLink(lesson.id, block.id)
+                                  }
+                                  className="rounded-md px-2 py-1 text-xs font-medium text-blue-700 transition hover:bg-blue-100"
+                                >
+                                  Add concept
+                                </button>
+                              </div>
+                              {block.conceptLinks.length > 0 ? (
+                                <div className="space-y-2">
+                                  {block.conceptLinks.map((conceptLink) => (
+                                    <div
+                                      key={conceptLink.id}
+                                      className="rounded-lg bg-white p-3"
+                                    >
+                                      <div className="flex flex-col gap-2 sm:flex-row">
+                                        <select
+                                          value={conceptLink.type}
+                                          onChange={(event) =>
+                                            updateSentenceConceptLink(
+                                              lesson.id,
+                                              block.id,
+                                              conceptLink.id,
+                                              {
+                                                type: event.target
+                                                  .value as ConceptType,
+                                              },
+                                            )
+                                          }
+                                          className="rounded-md border border-blue-100 bg-white px-2.5 py-2 text-sm outline-none transition focus:border-blue-300 focus:ring-2 focus:ring-blue-100"
+                                        >
+                                          {conceptTypeOptions.map((option) => (
+                                            <option
+                                              key={option.value}
+                                              value={option.value}
+                                            >
+                                              {option.label}
+                                            </option>
+                                          ))}
+                                        </select>
+                                        <select
+                                          value={conceptLink.direction}
+                                          onChange={(event) =>
+                                            updateSentenceConceptLink(
+                                              lesson.id,
+                                              block.id,
+                                              conceptLink.id,
+                                              {
+                                                direction: event.target
+                                                  .value as MappingDirection,
+                                              },
+                                            )
+                                          }
+                                          className="rounded-md border border-blue-100 bg-white px-2.5 py-2 text-sm outline-none transition focus:border-blue-300 focus:ring-2 focus:ring-blue-100"
+                                        >
+                                          {mappingDirectionOptions.map(
+                                            (option) => (
+                                              <option
+                                                key={option.value}
+                                                value={option.value}
+                                              >
+                                                {option.label}
+                                              </option>
+                                            ),
+                                          )}
+                                        </select>
+                                        <select
+                                          value={conceptLink.role}
+                                          onChange={(event) =>
+                                            updateSentenceConceptLink(
+                                              lesson.id,
+                                              block.id,
+                                              conceptLink.id,
+                                              {
+                                                role: event.target
+                                                  .value as ConceptRole,
+                                              },
+                                            )
+                                          }
+                                          className="rounded-md border border-blue-100 bg-white px-2.5 py-2 text-sm outline-none transition focus:border-blue-300 focus:ring-2 focus:ring-blue-100"
+                                        >
+                                          {conceptRoleOptions.map((option) => (
+                                            <option
+                                              key={option.value}
+                                              value={option.value}
+                                            >
+                                              {option.label}
+                                            </option>
+                                          ))}
+                                        </select>
+                                        <button
+                                          type="button"
+                                          onClick={() =>
+                                            removeSentenceConceptLink(
+                                              lesson.id,
+                                              block.id,
+                                              conceptLink.id,
+                                            )
+                                          }
+                                          aria-label="Remove sentence concept"
+                                          title="Remove concept"
+                                          className="flex size-9 shrink-0 items-center justify-center rounded-md text-stone-400 transition hover:bg-red-50 hover:text-red-600"
+                                        >
+                                          <X className="size-4" aria-hidden="true" />
+                                        </button>
+                                      </div>
+                                      <div className="mt-2 grid gap-2 sm:grid-cols-3">
+                                        <input
+                                          type="text"
+                                          value={conceptLink.sourceText}
+                                          onChange={(event) =>
+                                            updateSentenceConceptLink(
+                                              lesson.id,
+                                              block.id,
+                                              conceptLink.id,
+                                              { sourceText: event.target.value },
+                                            )
+                                          }
+                                          placeholder="Source"
+                                          className="min-w-0 rounded-md border border-blue-100 px-2.5 py-2 text-sm outline-none transition placeholder:text-stone-400 focus:border-blue-300 focus:ring-2 focus:ring-blue-100"
+                                        />
+                                        <input
+                                          type="text"
+                                          value={conceptLink.targetText}
+                                          onChange={(event) =>
+                                            updateSentenceConceptLink(
+                                              lesson.id,
+                                              block.id,
+                                              conceptLink.id,
+                                              { targetText: event.target.value },
+                                            )
+                                          }
+                                          placeholder="Target"
+                                          className="min-w-0 rounded-md border border-blue-100 px-2.5 py-2 text-sm outline-none transition placeholder:text-stone-400 focus:border-blue-300 focus:ring-2 focus:ring-blue-100"
+                                        />
+                                        <input
+                                          type="text"
+                                          value={conceptLink.contextLabel}
+                                          onChange={(event) =>
+                                            updateSentenceConceptLink(
+                                              lesson.id,
+                                              block.id,
+                                              conceptLink.id,
+                                              {
+                                                contextLabel:
+                                                  event.target.value,
+                                              },
+                                            )
+                                          }
+                                          placeholder="Context"
+                                          className="min-w-0 rounded-md border border-blue-100 px-2.5 py-2 text-sm outline-none transition placeholder:text-stone-400 focus:border-blue-300 focus:ring-2 focus:ring-blue-100"
+                                        />
+                                      </div>
+                                      <input
+                                        type="text"
+                                        value={conceptLink.label}
+                                        onChange={(event) =>
+                                          updateSentenceConceptLink(
+                                            lesson.id,
+                                            block.id,
+                                            conceptLink.id,
+                                            { label: event.target.value },
+                                          )
+                                        }
+                                        placeholder="Optional display label"
+                                        className="mt-2 w-full rounded-md border border-blue-100 px-2.5 py-2 text-sm outline-none transition placeholder:text-stone-400 focus:border-blue-300 focus:ring-2 focus:ring-blue-100"
+                                      />
+                                    </div>
+                                  ))}
+                                </div>
+                              ) : (
+                                <p className="text-sm text-blue-700/70">
+                                  Add phrase or sentence-level concepts here.
+                                </p>
+                              )}
+                            </div>
                           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                             {block.languageBlocks.map(
                               (languageBlock, languageBlockIndex) => {
@@ -1737,6 +2217,226 @@ export default function LessonBuilderPage() {
                                           </button>
                                         </div>
                                       )}
+                                      <div className="w-full rounded-lg border border-stone-200 bg-stone-50 p-2">
+                                        <div className="mb-2 flex items-center justify-between gap-2">
+                                          <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-stone-500">
+                                            Concepts
+                                          </span>
+                                          <button
+                                            type="button"
+                                            onClick={() =>
+                                              addLanguageBlockConceptLink(
+                                                lesson.id,
+                                                block.id,
+                                                languageBlock.id,
+                                              )
+                                            }
+                                            className="rounded px-1.5 py-0.5 text-xs font-medium text-blue-700 transition hover:bg-blue-50"
+                                          >
+                                            Add
+                                          </button>
+                                        </div>
+                                        {languageBlock.conceptLinks.length >
+                                        0 ? (
+                                          <div className="space-y-1.5">
+                                            {languageBlock.conceptLinks.map(
+                                              (conceptLink) => (
+                                                <div
+                                                  key={conceptLink.id}
+                                                  className="space-y-1.5 rounded-md bg-white p-2"
+                                                >
+                                                  <div className="flex items-center gap-1.5">
+                                                    <select
+                                                      value={conceptLink.type}
+                                                      onChange={(event) =>
+                                                        updateLanguageBlockConceptLink(
+                                                          lesson.id,
+                                                          block.id,
+                                                          languageBlock.id,
+                                                          conceptLink.id,
+                                                          {
+                                                            type: event.target
+                                                              .value as ConceptType,
+                                                          },
+                                                        )
+                                                      }
+                                                      className="min-w-0 flex-1 rounded-md border border-stone-200 bg-white px-1.5 py-1.5 text-xs outline-none transition focus:border-blue-300 focus:ring-2 focus:ring-blue-100"
+                                                    >
+                                                      {conceptTypeOptions.map(
+                                                        (option) => (
+                                                          <option
+                                                            key={option.value}
+                                                            value={option.value}
+                                                          >
+                                                            {option.label}
+                                                          </option>
+                                                        ),
+                                                      )}
+                                                    </select>
+                                                    <select
+                                                      value={conceptLink.role}
+                                                      onChange={(event) =>
+                                                        updateLanguageBlockConceptLink(
+                                                          lesson.id,
+                                                          block.id,
+                                                          languageBlock.id,
+                                                          conceptLink.id,
+                                                          {
+                                                            role: event.target
+                                                              .value as ConceptRole,
+                                                          },
+                                                        )
+                                                      }
+                                                      className="w-28 rounded-md border border-stone-200 bg-white px-1.5 py-1.5 text-xs outline-none transition focus:border-blue-300 focus:ring-2 focus:ring-blue-100"
+                                                    >
+                                                      {conceptRoleOptions.map(
+                                                        (option) => (
+                                                          <option
+                                                            key={option.value}
+                                                            value={option.value}
+                                                          >
+                                                            {option.label}
+                                                          </option>
+                                                        ),
+                                                      )}
+                                                    </select>
+                                                    <button
+                                                      type="button"
+                                                      onClick={() =>
+                                                        removeLanguageBlockConceptLink(
+                                                          lesson.id,
+                                                          block.id,
+                                                          languageBlock.id,
+                                                          conceptLink.id,
+                                                        )
+                                                      }
+                                                      aria-label="Remove language block concept"
+                                                      title="Remove concept"
+                                                      className="flex size-7 shrink-0 items-center justify-center rounded-md text-stone-400 transition hover:bg-red-50 hover:text-red-600"
+                                                    >
+                                                      <X
+                                                        className="size-3.5"
+                                                        aria-hidden="true"
+                                                      />
+                                                    </button>
+                                                  </div>
+                                                  <select
+                                                    value={conceptLink.direction}
+                                                    onChange={(event) =>
+                                                      updateLanguageBlockConceptLink(
+                                                        lesson.id,
+                                                        block.id,
+                                                        languageBlock.id,
+                                                        conceptLink.id,
+                                                        {
+                                                          direction: event.target
+                                                            .value as MappingDirection,
+                                                        },
+                                                      )
+                                                    }
+                                                    className="w-full rounded-md border border-stone-200 bg-white px-1.5 py-1.5 text-xs outline-none transition focus:border-blue-300 focus:ring-2 focus:ring-blue-100"
+                                                  >
+                                                    {mappingDirectionOptions.map(
+                                                      (option) => (
+                                                        <option
+                                                          key={option.value}
+                                                          value={option.value}
+                                                        >
+                                                          {option.label}
+                                                        </option>
+                                                      ),
+                                                    )}
+                                                  </select>
+                                                  <div className="grid grid-cols-2 gap-1.5">
+                                                    <input
+                                                      type="text"
+                                                      value={
+                                                        conceptLink.sourceText
+                                                      }
+                                                      onChange={(event) =>
+                                                        updateLanguageBlockConceptLink(
+                                                          lesson.id,
+                                                          block.id,
+                                                          languageBlock.id,
+                                                          conceptLink.id,
+                                                          {
+                                                            sourceText:
+                                                              event.target.value,
+                                                          },
+                                                        )
+                                                      }
+                                                      placeholder="Source"
+                                                      className="min-w-0 rounded-md border border-stone-200 bg-white px-2 py-1.5 text-xs outline-none transition placeholder:text-stone-400 focus:border-blue-300 focus:ring-2 focus:ring-blue-100"
+                                                    />
+                                                    <input
+                                                      type="text"
+                                                      value={
+                                                        conceptLink.targetText
+                                                      }
+                                                      onChange={(event) =>
+                                                        updateLanguageBlockConceptLink(
+                                                          lesson.id,
+                                                          block.id,
+                                                          languageBlock.id,
+                                                          conceptLink.id,
+                                                          {
+                                                            targetText:
+                                                              event.target.value,
+                                                          },
+                                                        )
+                                                      }
+                                                      placeholder="Target"
+                                                      className="min-w-0 rounded-md border border-stone-200 bg-white px-2 py-1.5 text-xs outline-none transition placeholder:text-stone-400 focus:border-blue-300 focus:ring-2 focus:ring-blue-100"
+                                                    />
+                                                  </div>
+                                                  <input
+                                                    type="text"
+                                                    value={
+                                                      conceptLink.contextLabel
+                                                    }
+                                                    onChange={(event) =>
+                                                      updateLanguageBlockConceptLink(
+                                                        lesson.id,
+                                                        block.id,
+                                                        languageBlock.id,
+                                                        conceptLink.id,
+                                                        {
+                                                          contextLabel:
+                                                            event.target.value,
+                                                        },
+                                                      )
+                                                    }
+                                                    placeholder="Context"
+                                                    className="w-full rounded-md border border-stone-200 bg-white px-2 py-1.5 text-xs outline-none transition placeholder:text-stone-400 focus:border-blue-300 focus:ring-2 focus:ring-blue-100"
+                                                  />
+                                                  <input
+                                                    type="text"
+                                                    value={conceptLink.label}
+                                                    onChange={(event) =>
+                                                      updateLanguageBlockConceptLink(
+                                                        lesson.id,
+                                                        block.id,
+                                                        languageBlock.id,
+                                                        conceptLink.id,
+                                                        {
+                                                          label:
+                                                            event.target.value,
+                                                        },
+                                                      )
+                                                    }
+                                                    placeholder="Optional label"
+                                                    className="w-full rounded-md border border-stone-200 bg-white px-2 py-1.5 text-xs outline-none transition placeholder:text-stone-400 focus:border-blue-300 focus:ring-2 focus:ring-blue-100"
+                                                  />
+                                                </div>
+                                              ),
+                                            )}
+                                          </div>
+                                        ) : (
+                                          <p className="text-xs text-stone-400">
+                                            No concepts yet.
+                                          </p>
+                                        )}
+                                      </div>
                                     </div>
                                     <div className="border-t border-stone-800 bg-stone-900 px-3 py-3">
                                       <div className="space-y-2">

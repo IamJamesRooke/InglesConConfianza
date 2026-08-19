@@ -22,6 +22,7 @@ Build the smallest useful JSON-backed lesson-authoring foundation. Let actual ha
 - [x] Add an interactive learner preview with authored Label, Prompt, and Helper text; automatic answer recognition and focus progression; temporary help; and post-completion feedback.
 - [x] Add global settings with persistent theme selection and theme-aware surface layers for clearer Lesson Builder visual hierarchy.
 - [x] Retire the initial SQLite/demo lesson prototype in favor of JSON-backed handcrafted lesson authoring while the curriculum database is redesigned from real lesson examples.
+- [x] Add the first experimental curriculum graph draft with directional Spanish-to-English and English-to-Spanish mapping cards, lesson evidence, and speaking-priority metadata.
 - [ ] Build five representative lessons as the first vertical slice.
     - [ ] Include straightforward vocabulary retrieval.
     - [ ] Include a Spanish-to-English one-to-many mapping.
@@ -62,6 +63,7 @@ This section records controls and security work actually applied during developm
 
 - [x] Audit the dependency tree when introducing the Markdown editor and pin the vulnerable transitive `js-yaml` dependency to patched version `4.3.1` through the package override.
 - [x] Keep theme preference storage client-only and non-sensitive by persisting only a theme identifier in `localStorage`.
+- [x] Keep JSON lesson persistence scoped to a fixed repository data file and validate saved lesson payload shape at the API boundary while the final database model is still being discovered.
 - [ ] Create an initial threat model when the application gains persistent lesson authoring, authentication, or other meaningful trust boundaries.
 - [ ] Add authorization tests alongside the first protected authoring or learner-data endpoints.
 - [ ] Perform a controlled OWASP-based security assessment after the first complete application flow is deployable, preserve findings, and document the resulting hardening.

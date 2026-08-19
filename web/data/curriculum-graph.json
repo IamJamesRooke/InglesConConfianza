@@ -1,0 +1,712 @@
+{
+  "version": 1,
+  "nodes": [
+    {
+      "id": "node_es_yo",
+      "label": "yo",
+      "language": "es",
+      "type": "form",
+      "aliases": [],
+      "description": "Spanish explicit first-person singular subject pronoun.",
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
+      "id": "node_en_i",
+      "label": "I",
+      "language": "en",
+      "type": "form",
+      "aliases": [],
+      "description": "English first-person singular subject pronoun.",
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
+      "id": "node_es_querer",
+      "label": "querer",
+      "language": "es",
+      "type": "lemma",
+      "aliases": [],
+      "description": "Spanish verb lemma for wanting.",
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
+      "id": "node_es_quiero",
+      "label": "quiero",
+      "language": "es",
+      "type": "form",
+      "aliases": [
+        "yo quiero",
+        "Quiero"
+      ],
+      "description": "First-person singular present form of querer.",
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
+      "id": "node_en_want",
+      "label": "want",
+      "language": "en",
+      "type": "lemma",
+      "aliases": [],
+      "description": "English verb for wanting.",
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
+      "id": "node_en_i_want",
+      "label": "I want",
+      "language": "en",
+      "type": "phrase",
+      "aliases": [],
+      "description": "English first-person present expression of wanting.",
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
+      "id": "node_es_comer",
+      "label": "comer",
+      "language": "es",
+      "type": "lemma",
+      "aliases": [
+        "comer."
+      ],
+      "description": "Spanish infinitive verb meaning to eat.",
+      "speakingPriority": "common_vocabulary",
+      "learningTags": []
+    },
+    {
+      "id": "node_en_to_eat",
+      "label": "to eat",
+      "language": "en",
+      "type": "infinitive",
+      "aliases": [
+        "eat"
+      ],
+      "description": "English infinitive form. Presentation punctuation is not part of the canonical mapping.",
+      "speakingPriority": "common_vocabulary",
+      "learningTags": []
+    },
+    {
+      "id": "node_es_algun",
+      "label": "algún",
+      "language": "es",
+      "type": "form",
+      "aliases": [],
+      "description": "Spanish masculine singular indefinite adjective form meaning some.",
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
+      "id": "node_es_alguna",
+      "label": "alguna",
+      "language": "es",
+      "type": "form",
+      "aliases": [],
+      "description": "Spanish feminine singular indefinite adjective form meaning some.",
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
+      "id": "node_en_some",
+      "label": "some",
+      "language": "en",
+      "type": "morpheme_or_determiner",
+      "aliases": [
+        "some-"
+      ],
+      "description": "English some/some- idea used in some and something.",
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
+      "id": "node_es_cosa",
+      "label": "cosa",
+      "language": "es",
+      "type": "noun",
+      "aliases": [],
+      "description": "Spanish noun meaning thing.",
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
+      "id": "node_en_thing",
+      "label": "thing",
+      "language": "en",
+      "type": "noun_or_morpheme",
+      "aliases": [
+        "-thing"
+      ],
+      "description": "English thing/-thing idea used in thing and something.",
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
+      "id": "node_es_algo",
+      "label": "algo",
+      "language": "es",
+      "type": "indefinite_pronoun",
+      "aliases": [],
+      "description": "Spanish indefinite pronoun meaning something.",
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
+      "id": "node_en_something",
+      "label": "something",
+      "language": "en",
+      "type": "indefinite_pronoun",
+      "aliases": [],
+      "description": "English indefinite pronoun built from some + thing.",
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
+      "id": "node_subject_pronouns",
+      "label": "subject pronouns",
+      "language": "cross_linguistic",
+      "type": "category",
+      "aliases": [],
+      "description": "Pronouns used as sentence subjects.",
+      "speakingPriority": "high_utility",
+      "learningTags": []
+    },
+    {
+      "id": "node_first_person_singular",
+      "label": "first person singular",
+      "language": "cross_linguistic",
+      "type": "feature",
+      "aliases": [],
+      "description": "Speaker referring to themself as one person.",
+      "speakingPriority": "high_utility",
+      "learningTags": []
+    },
+    {
+      "id": "node_infinitives",
+      "label": "infinitives",
+      "language": "cross_linguistic",
+      "type": "category",
+      "aliases": [],
+      "description": "Unconjugated verb forms such as comer and to eat.",
+      "speakingPriority": "common_vocabulary",
+      "learningTags": []
+    },
+    {
+      "id": "node_indefinite_expressions",
+      "label": "indefinite expressions",
+      "language": "cross_linguistic",
+      "type": "category",
+      "aliases": [],
+      "description": "Words and phrases such as some, thing, and something.",
+      "speakingPriority": "high_utility",
+      "learningTags": []
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_yo_maps_to_i",
+      "type": "maps_to",
+      "direction": "es_to_en",
+      "from": "node_es_yo",
+      "to": "node_en_i",
+      "context": "explicit subject pronoun",
+      "evidence": [
+        {
+          "lessonId": "lesson_145f8299-ce08-4e65-b5a1-77621b536c1a",
+          "blockId": "block_dd3d34da-c19a-451e-85d9-b3e001e86828",
+          "languageBlockId": "lang_0f8581e1-8148-426b-aba9-41811afad971",
+          "presentationSpanish": "yo",
+          "presentationEnglish": "I"
+        }
+      ],
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
+      "id": "edge_yo_belongs_to_subject_pronouns",
+      "type": "belongs_to",
+      "direction": "not_directional",
+      "from": "node_es_yo",
+      "to": "node_subject_pronouns",
+      "context": "",
+      "evidence": [],
+      "speakingPriority": "high_utility",
+      "learningTags": []
+    },
+    {
+      "id": "edge_i_belongs_to_subject_pronouns",
+      "type": "belongs_to",
+      "direction": "not_directional",
+      "from": "node_en_i",
+      "to": "node_subject_pronouns",
+      "context": "",
+      "evidence": [],
+      "speakingPriority": "high_utility",
+      "learningTags": []
+    },
+    {
+      "id": "edge_yo_has_first_person_singular",
+      "type": "has_feature",
+      "direction": "not_directional",
+      "from": "node_es_yo",
+      "to": "node_first_person_singular",
+      "context": "",
+      "evidence": [],
+      "speakingPriority": "high_utility",
+      "learningTags": []
+    },
+    {
+      "id": "edge_i_has_first_person_singular",
+      "type": "has_feature",
+      "direction": "not_directional",
+      "from": "node_en_i",
+      "to": "node_first_person_singular",
+      "context": "",
+      "evidence": [],
+      "speakingPriority": "high_utility",
+      "learningTags": []
+    },
+    {
+      "id": "edge_quiero_form_of_querer",
+      "type": "form_of",
+      "direction": "not_directional",
+      "from": "node_es_quiero",
+      "to": "node_es_querer",
+      "context": "first-person singular present",
+      "evidence": [],
+      "speakingPriority": "high_utility",
+      "learningTags": []
+    },
+    {
+      "id": "edge_quiero_implies_i",
+      "type": "implies",
+      "direction": "es_to_en",
+      "from": "node_es_quiero",
+      "to": "node_en_i",
+      "context": "Spanish conjugation carries first-person subject information",
+      "evidence": [
+        {
+          "lessonId": "lesson_145f8299-ce08-4e65-b5a1-77621b536c1a",
+          "blockId": "block_08f8f545-06e7-471f-9d64-202ea2db71c4",
+          "languageBlockId": "lang_369030ce-53d4-4f3b-97f3-bd6706dd99b0",
+          "presentationSpanish": "quiero / yo quiero",
+          "presentationEnglish": "I want"
+        },
+        {
+          "lessonId": "lesson_145f8299-ce08-4e65-b5a1-77621b536c1a",
+          "blockId": "block_fe75f49c-2bc5-46dc-b848-620a4fd132ed",
+          "languageBlockId": "lang_1b7b4aad-f2db-4e8b-b227-cb1bd1389aa4",
+          "presentationSpanish": "Quiero",
+          "presentationEnglish": "I want"
+        }
+      ],
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
+      "id": "edge_quiero_maps_to_i_want",
+      "type": "maps_to",
+      "direction": "es_to_en",
+      "from": "node_es_quiero",
+      "to": "node_en_i_want",
+      "context": "first-person present querer",
+      "evidence": [
+        {
+          "lessonId": "lesson_145f8299-ce08-4e65-b5a1-77621b536c1a",
+          "blockId": "block_08f8f545-06e7-471f-9d64-202ea2db71c4",
+          "languageBlockId": "lang_369030ce-53d4-4f3b-97f3-bd6706dd99b0",
+          "presentationSpanish": "quiero / yo quiero",
+          "presentationEnglish": "I want"
+        },
+        {
+          "lessonId": "lesson_145f8299-ce08-4e65-b5a1-77621b536c1a",
+          "blockId": "block_fe75f49c-2bc5-46dc-b848-620a4fd132ed",
+          "languageBlockId": "lang_1b7b4aad-f2db-4e8b-b227-cb1bd1389aa4",
+          "presentationSpanish": "Quiero",
+          "presentationEnglish": "I want"
+        }
+      ],
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
+      "id": "edge_i_want_contains_i",
+      "type": "contains",
+      "direction": "not_directional",
+      "from": "node_en_i_want",
+      "to": "node_en_i",
+      "context": "",
+      "evidence": [],
+      "speakingPriority": "high_utility",
+      "learningTags": []
+    },
+    {
+      "id": "edge_i_want_contains_want",
+      "type": "contains",
+      "direction": "not_directional",
+      "from": "node_en_i_want",
+      "to": "node_en_want",
+      "context": "",
+      "evidence": [],
+      "speakingPriority": "high_utility",
+      "learningTags": []
+    },
+    {
+      "id": "edge_comer_maps_to_to_eat",
+      "type": "maps_to",
+      "direction": "es_to_en",
+      "from": "node_es_comer",
+      "to": "node_en_to_eat",
+      "context": "infinitive verb",
+      "evidence": [
+        {
+          "lessonId": "lesson_145f8299-ce08-4e65-b5a1-77621b536c1a",
+          "blockId": "block_fe75f49c-2bc5-46dc-b848-620a4fd132ed",
+          "languageBlockId": "lang_2385f60b-fca3-49d1-bd6f-e2c0aefd05af",
+          "presentationSpanish": "comer.",
+          "presentationEnglish": "to eat."
+        }
+      ],
+      "speakingPriority": "common_vocabulary",
+      "learningTags": []
+    },
+    {
+      "id": "edge_comer_belongs_to_infinitives",
+      "type": "belongs_to",
+      "direction": "not_directional",
+      "from": "node_es_comer",
+      "to": "node_infinitives",
+      "context": "",
+      "evidence": [],
+      "speakingPriority": "common_vocabulary",
+      "learningTags": []
+    },
+    {
+      "id": "edge_to_eat_belongs_to_infinitives",
+      "type": "belongs_to",
+      "direction": "not_directional",
+      "from": "node_en_to_eat",
+      "to": "node_infinitives",
+      "context": "",
+      "evidence": [],
+      "speakingPriority": "common_vocabulary",
+      "learningTags": []
+    },
+    {
+      "id": "edge_algun_maps_to_some",
+      "type": "maps_to",
+      "direction": "es_to_en",
+      "from": "node_es_algun",
+      "to": "node_en_some",
+      "context": "masculine singular indefinite adjective",
+      "evidence": [
+        {
+          "lessonId": "lesson_145f8299-ce08-4e65-b5a1-77621b536c1a",
+          "blockId": "block_4d714bfc-0268-4089-8fd2-f66fd2d45c44",
+          "languageBlockId": "lang_f6c6e1cd-63b7-4bd4-b098-f43ce3542f1a",
+          "presentationSpanish": "algún / alguna",
+          "presentationEnglish": "some"
+        }
+      ],
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
+      "id": "edge_alguna_maps_to_some",
+      "type": "maps_to",
+      "direction": "es_to_en",
+      "from": "node_es_alguna",
+      "to": "node_en_some",
+      "context": "feminine singular indefinite adjective",
+      "evidence": [
+        {
+          "lessonId": "lesson_145f8299-ce08-4e65-b5a1-77621b536c1a",
+          "blockId": "block_4d714bfc-0268-4089-8fd2-f66fd2d45c44",
+          "languageBlockId": "lang_f6c6e1cd-63b7-4bd4-b098-f43ce3542f1a",
+          "presentationSpanish": "algún / alguna",
+          "presentationEnglish": "some"
+        }
+      ],
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
+      "id": "edge_algo_related_to_algun",
+      "type": "related_to",
+      "direction": "not_directional",
+      "from": "node_es_algo",
+      "to": "node_es_algun",
+      "context": "algo is explained as related to alguna cosa; algún is a related masculine form in the same indefinite family",
+      "evidence": [],
+      "speakingPriority": "high_utility",
+      "learningTags": []
+    },
+    {
+      "id": "edge_algo_related_to_alguna",
+      "type": "related_to",
+      "direction": "not_directional",
+      "from": "node_es_algo",
+      "to": "node_es_alguna",
+      "context": "algo is explained as related to alguna cosa",
+      "evidence": [],
+      "speakingPriority": "high_utility",
+      "learningTags": []
+    },
+    {
+      "id": "edge_cosa_maps_to_thing",
+      "type": "maps_to",
+      "direction": "es_to_en",
+      "from": "node_es_cosa",
+      "to": "node_en_thing",
+      "context": "noun",
+      "evidence": [
+        {
+          "lessonId": "lesson_145f8299-ce08-4e65-b5a1-77621b536c1a",
+          "blockId": "block_4d714bfc-0268-4089-8fd2-f66fd2d45c44",
+          "languageBlockId": "lang_ec492827-2132-400b-b599-6391fb8b927b",
+          "presentationSpanish": "cosa",
+          "presentationEnglish": "thing"
+        }
+      ],
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
+      "id": "edge_algo_maps_to_something",
+      "type": "maps_to",
+      "direction": "es_to_en",
+      "from": "node_es_algo",
+      "to": "node_en_something",
+      "context": "single-word indefinite pronoun",
+      "evidence": [
+        {
+          "lessonId": "lesson_145f8299-ce08-4e65-b5a1-77621b536c1a",
+          "blockId": "block_4d714bfc-0268-4089-8fd2-f66fd2d45c44",
+          "languageBlockId": "lang_392dbecc-d99d-4950-a574-76fd8ac2e96c",
+          "presentationSpanish": "algo",
+          "presentationEnglish": "something"
+        }
+      ],
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
+      "id": "edge_algo_related_to_cosa",
+      "type": "related_to",
+      "direction": "not_directional",
+      "from": "node_es_algo",
+      "to": "node_es_cosa",
+      "context": "algo is explained as related to alguna cosa",
+      "evidence": [],
+      "speakingPriority": "high_utility",
+      "learningTags": []
+    },
+    {
+      "id": "edge_something_contains_some",
+      "type": "contains",
+      "direction": "not_directional",
+      "from": "node_en_something",
+      "to": "node_en_some",
+      "context": "",
+      "evidence": [],
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
+      "id": "edge_something_contains_thing",
+      "type": "contains",
+      "direction": "not_directional",
+      "from": "node_en_something",
+      "to": "node_en_thing",
+      "context": "",
+      "evidence": [],
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
+      "id": "edge_some_belongs_to_indefinite_expressions",
+      "type": "belongs_to",
+      "direction": "not_directional",
+      "from": "node_en_some",
+      "to": "node_indefinite_expressions",
+      "context": "",
+      "evidence": [],
+      "speakingPriority": "high_utility",
+      "learningTags": []
+    },
+    {
+      "id": "edge_thing_belongs_to_indefinite_expressions",
+      "type": "belongs_to",
+      "direction": "not_directional",
+      "from": "node_en_thing",
+      "to": "node_indefinite_expressions",
+      "context": "",
+      "evidence": [],
+      "speakingPriority": "high_utility",
+      "learningTags": []
+    },
+    {
+      "id": "edge_something_belongs_to_indefinite_expressions",
+      "type": "belongs_to",
+      "direction": "not_directional",
+      "from": "node_en_something",
+      "to": "node_indefinite_expressions",
+      "context": "",
+      "evidence": [],
+      "speakingPriority": "high_utility",
+      "learningTags": []
+    },
+    {
+      "id": "edge_algo_belongs_to_indefinite_expressions",
+      "type": "belongs_to",
+      "direction": "not_directional",
+      "from": "node_es_algo",
+      "to": "node_indefinite_expressions",
+      "context": "",
+      "evidence": [],
+      "speakingPriority": "high_utility",
+      "learningTags": []
+    },
+    {
+      "id": "edge_i_maps_to_yo",
+      "type": "maps_to",
+      "direction": "en_to_es",
+      "from": "node_en_i",
+      "to": "node_es_yo",
+      "context": "explicit subject pronoun",
+      "evidence": [
+        {
+          "lessonId": "lesson_145f8299-ce08-4e65-b5a1-77621b536c1a",
+          "blockId": "block_dd3d34da-c19a-451e-85d9-b3e001e86828",
+          "languageBlockId": "lang_0f8581e1-8148-426b-aba9-41811afad971",
+          "presentationSpanish": "yo",
+          "presentationEnglish": "I"
+        }
+      ],
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
+      "id": "edge_i_want_maps_to_quiero",
+      "type": "maps_to",
+      "direction": "en_to_es",
+      "from": "node_en_i_want",
+      "to": "node_es_quiero",
+      "context": "first-person present querer",
+      "evidence": [
+        {
+          "lessonId": "lesson_145f8299-ce08-4e65-b5a1-77621b536c1a",
+          "blockId": "block_08f8f545-06e7-471f-9d64-202ea2db71c4",
+          "languageBlockId": "lang_369030ce-53d4-4f3b-97f3-bd6706dd99b0",
+          "presentationSpanish": "quiero",
+          "presentationEnglish": "I want"
+        },
+        {
+          "lessonId": "lesson_145f8299-ce08-4e65-b5a1-77621b536c1a",
+          "blockId": "block_fe75f49c-2bc5-46dc-b848-620a4fd132ed",
+          "languageBlockId": "lang_1b7b4aad-f2db-4e8b-b227-cb1bd1389aa4",
+          "presentationSpanish": "quiero",
+          "presentationEnglish": "I want"
+        }
+      ],
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
+      "id": "edge_to_eat_maps_to_comer",
+      "type": "maps_to",
+      "direction": "en_to_es",
+      "from": "node_en_to_eat",
+      "to": "node_es_comer",
+      "context": "infinitive verb",
+      "evidence": [
+        {
+          "lessonId": "lesson_145f8299-ce08-4e65-b5a1-77621b536c1a",
+          "blockId": "block_fe75f49c-2bc5-46dc-b848-620a4fd132ed",
+          "languageBlockId": "lang_2385f60b-fca3-49d1-bd6f-e2c0aefd05af",
+          "presentationSpanish": "comer",
+          "presentationEnglish": "to eat"
+        }
+      ],
+      "speakingPriority": "common_vocabulary",
+      "learningTags": []
+    },
+    {
+      "id": "edge_some_maps_to_algun",
+      "type": "maps_to",
+      "direction": "en_to_es",
+      "from": "node_en_some",
+      "to": "node_es_algun",
+      "context": "masculine singular indefinite adjective",
+      "evidence": [
+        {
+          "lessonId": "lesson_145f8299-ce08-4e65-b5a1-77621b536c1a",
+          "blockId": "block_4d714bfc-0268-4089-8fd2-f66fd2d45c44",
+          "languageBlockId": "lang_f6c6e1cd-63b7-4bd4-b098-f43ce3542f1a",
+          "presentationSpanish": "algún",
+          "presentationEnglish": "some"
+        }
+      ],
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
+      "id": "edge_some_maps_to_alguna",
+      "type": "maps_to",
+      "direction": "en_to_es",
+      "from": "node_en_some",
+      "to": "node_es_alguna",
+      "context": "feminine singular indefinite adjective",
+      "evidence": [
+        {
+          "lessonId": "lesson_145f8299-ce08-4e65-b5a1-77621b536c1a",
+          "blockId": "block_4d714bfc-0268-4089-8fd2-f66fd2d45c44",
+          "languageBlockId": "lang_f6c6e1cd-63b7-4bd4-b098-f43ce3542f1a",
+          "presentationSpanish": "alguna",
+          "presentationEnglish": "some"
+        }
+      ],
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
+      "id": "edge_thing_maps_to_cosa",
+      "type": "maps_to",
+      "direction": "en_to_es",
+      "from": "node_en_thing",
+      "to": "node_es_cosa",
+      "context": "noun",
+      "evidence": [
+        {
+          "lessonId": "lesson_145f8299-ce08-4e65-b5a1-77621b536c1a",
+          "blockId": "block_4d714bfc-0268-4089-8fd2-f66fd2d45c44",
+          "languageBlockId": "lang_ec492827-2132-400b-b599-6391fb8b927b",
+          "presentationSpanish": "cosa",
+          "presentationEnglish": "thing"
+        }
+      ],
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
+      "id": "edge_something_maps_to_algo",
+      "type": "maps_to",
+      "direction": "en_to_es",
+      "from": "node_en_something",
+      "to": "node_es_algo",
+      "context": "single-word indefinite pronoun",
+      "evidence": [
+        {
+          "lessonId": "lesson_145f8299-ce08-4e65-b5a1-77621b536c1a",
+          "blockId": "block_4d714bfc-0268-4089-8fd2-f66fd2d45c44",
+          "languageBlockId": "lang_392dbecc-d99d-4950-a574-76fd8ac2e96c",
+          "presentationSpanish": "algo",
+          "presentationEnglish": "something"
+        }
+      ],
+      "speakingPriority": "core_function",
+      "learningTags": []
+    }
+  ]
+}
