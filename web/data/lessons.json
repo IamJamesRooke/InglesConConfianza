@@ -36,6 +36,98 @@
           "conceptLinks": []
         },
         {
+          "id": "block_0cc0a26e-0e40-498c-8257-6e4bbaa9cd9b",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_565ec08f-41f3-4549-91fe-3b49e33d4ab9",
+              "spanish": "hola",
+              "callout": null,
+              "acceptedAnswers": [
+                "Hello"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_dc5e6e9a-f24a-4a44-8fa4-546214b6e149",
+              "spanish": "quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_86366db4-72d7-4d0c-97a5-d39ee8f064cf",
+              "spanish": "hablar",
+              "callout": null,
+              "acceptedAnswers": [
+                "to speak"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_c9dcc524-950e-4790-94f5-32c5c1b003de",
+              "spanish": "contigo",
+              "callout": null,
+              "acceptedAnswers": [
+                "with you"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_32d268a4-a46f-481f-916f-cf43dd352875",
+              "spanish": "hoy",
+              "callout": null,
+              "acceptedAnswers": [
+                "today"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_9cb7573b-5949-47d9-8241-8ac79df8a9b9",
+              "spanish": "porque",
+              "callout": null,
+              "acceptedAnswers": [
+                "because"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_285d215f-15bc-4d28-9189-5f2ba69c105a",
+              "spanish": "es",
+              "callout": null,
+              "acceptedAnswers": [
+                "it's"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_fb6dcb37-da6f-4a0b-812e-5991a317b2d9",
+              "spanish": "muy",
+              "callout": null,
+              "acceptedAnswers": [
+                "very"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_89f87311-221f-4a73-b99b-ff7f9ea85ebd",
+              "spanish": "importante.",
+              "callout": null,
+              "acceptedAnswers": [
+                "important."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
           "id": "block_8e944303-67ab-4456-9f35-e85f2a347c16",
           "type": "explanation",
           "contentMarkdown": "==quiero== o ==yo quiero== es ==I want=="

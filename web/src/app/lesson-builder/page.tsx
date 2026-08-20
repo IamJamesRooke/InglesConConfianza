@@ -1,8 +1,6 @@
 "use client";
 
 import {
-  ArrowLeft,
-  ArrowRight,
   ChevronDown,
   ChevronUp,
   Copy,
@@ -18,6 +16,7 @@ import {
   X,
 } from "lucide-react";
 import {
+  Fragment,
   useCallback,
   useEffect,
   useRef,
@@ -49,6 +48,56 @@ import {
   normalizeLessons,
 } from "@/lib/lesson-builder/utils";
 
+function ContentBlockPicker({
+  onAddExplanation,
+  onAddSentence,
+}: {
+  onAddExplanation: () => void;
+  onAddSentence: () => void;
+}) {
+  return (
+    <div className="rounded-xl border border-stone-200 bg-stone-50 p-4 shadow-sm">
+      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">
+        Choose a block type
+      </p>
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <button
+          type="button"
+          onClick={onAddExplanation}
+          className="group flex items-start gap-3 rounded-xl border border-stone-200 bg-white p-4 text-left transition hover:border-violet-300 hover:shadow-sm focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-violet-100"
+        >
+          <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-violet-50 text-violet-700 transition group-hover:bg-violet-100">
+            <FileText className="size-5" aria-hidden="true" />
+          </span>
+          <span>
+            <span className="block font-semibold text-stone-900">
+              Explanation
+            </span>
+            <span className="mt-1 block text-sm leading-5 text-stone-500">
+              Introduce an idea with formatted text.
+            </span>
+          </span>
+        </button>
+        <button
+          type="button"
+          onClick={onAddSentence}
+          className="group flex items-start gap-3 rounded-xl border border-stone-200 bg-white p-4 text-left transition hover:border-blue-300 hover:shadow-sm focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-100"
+        >
+          <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition group-hover:bg-blue-100">
+            <Languages className="size-5" aria-hidden="true" />
+          </span>
+          <span>
+            <span className="block font-semibold text-stone-900">Sentence</span>
+            <span className="mt-1 block text-sm leading-5 text-stone-500">
+              Build a prompt with learner answer blocks.
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+  );
+}
+
 export default function LessonBuilderPage() {
   const [lessons, setLessons] = useState<Lesson[]>([]);
   const [isLoadingLessons, setIsLoadingLessons] = useState(true);
@@ -67,9 +116,21 @@ export default function LessonBuilderPage() {
     blockId: string;
     position: "before" | "after";
   } | null>(null);
-  const [openBlockPickerLessonId, setOpenBlockPickerLessonId] = useState<
-    string | null
-  >(null);
+  const [draggedLanguageBlock, setDraggedLanguageBlock] = useState<{
+    lessonId: string;
+    sentenceBlockId: string;
+    languageBlockId: string;
+  } | null>(null);
+  const [languageBlockDropTarget, setLanguageBlockDropTarget] = useState<{
+    lessonId: string;
+    sentenceBlockId: string;
+    languageBlockId: string;
+    position: "before" | "after";
+  } | null>(null);
+  const [openBlockPicker, setOpenBlockPicker] = useState<{
+    lessonId: string;
+    insertionIndex: number;
+  } | null>(null);
   const [collapsedLessons, setCollapsedLessons] = useState(
     () => new Set<string>(),
   );
@@ -92,9 +153,6 @@ export default function LessonBuilderPage() {
   );
   const acceptedAnswerRefs = useRef(new Map<string, HTMLInputElement>());
   const languageBlockCalloutRefs = useRef(new Map<string, HTMLInputElement>());
-  const sentenceAnswerFeedbackRefs = useRef(
-    new Map<string, HTMLTextAreaElement>(),
-  );
   const savedLessonsJsonRef = useRef(JSON.stringify([]));
 
   useEffect(() => {
@@ -120,6 +178,20 @@ export default function LessonBuilderPage() {
             new Set(
               lessons.flatMap((lesson) =>
                 lesson.blocks.map((block) => `${lesson.id}-${block.id}`),
+              ),
+            ),
+          );
+          setCollapsedLanguageBlocks(
+            new Set(
+              lessons.flatMap((lesson) =>
+                lesson.blocks.flatMap((block) =>
+                  block.type === "sentence"
+                    ? block.languageBlocks.map(
+                        (languageBlock) =>
+                          `${lesson.id}-${block.id}-${languageBlock.id}`,
+                      )
+                    : [],
+                ),
               ),
             ),
           );
@@ -435,8 +507,8 @@ export default function LessonBuilderPage() {
     setLessons((currentLessons) =>
       currentLessons.filter((lesson) => lesson.id !== lessonId),
     );
-    setOpenBlockPickerLessonId((currentLessonId) =>
-      currentLessonId === lessonId ? null : currentLessonId,
+    setOpenBlockPicker((currentPicker) =>
+      currentPicker?.lessonId === lessonId ? null : currentPicker,
     );
     setCollapsedLessons((currentLessonIds) => {
       const nextLessonIds = new Set(currentLessonIds);
@@ -554,7 +626,7 @@ export default function LessonBuilderPage() {
     );
   }
 
-  function addExplanationBlock(lessonId: string) {
+  function addExplanationBlock(lessonId: string, insertionIndex: number) {
     const blockId = createId("block");
 
     setLessons((currentLessons) =>
@@ -565,14 +637,11 @@ export default function LessonBuilderPage() {
 
         return {
           ...lesson,
-          blocks: [
-            ...lesson.blocks,
-            {
-              id: blockId,
-              type: "explanation",
-              contentMarkdown: "",
-            },
-          ],
+          blocks: lesson.blocks.toSpliced(insertionIndex, 0, {
+            id: blockId,
+            type: "explanation",
+            contentMarkdown: "",
+          }),
         };
       }),
     );
@@ -583,10 +652,10 @@ export default function LessonBuilderPage() {
         ),
       ),
     );
-    setOpenBlockPickerLessonId(null);
+    setOpenBlockPicker(null);
   }
 
-  function addSentenceBlock(lessonId: string) {
+  function addSentenceBlock(lessonId: string, insertionIndex: number) {
     const blockId = createId("block");
     const languageBlockId = createId("lang");
 
@@ -598,8 +667,9 @@ export default function LessonBuilderPage() {
 
         return {
           ...lesson,
-          blocks: [
-            ...lesson.blocks,
+          blocks: lesson.blocks.toSpliced(
+            insertionIndex,
+            0,
             {
               id: blockId,
               type: "sentence",
@@ -618,7 +688,7 @@ export default function LessonBuilderPage() {
                 },
               ],
             },
-          ],
+          ),
         };
       }),
     );
@@ -629,7 +699,7 @@ export default function LessonBuilderPage() {
         ),
       ),
     );
-    setOpenBlockPickerLessonId(null);
+    setOpenBlockPicker(null);
 
     window.setTimeout(() => {
       languageBlockSpanishRefs.current
@@ -722,18 +792,6 @@ export default function LessonBuilderPage() {
     );
   }
 
-  function addSentenceAnswerFeedback(
-    lessonId: string,
-    sentenceBlockId: string,
-  ) {
-    updateSentenceAnswerFeedback(lessonId, sentenceBlockId, "");
-    window.setTimeout(() => {
-      sentenceAnswerFeedbackRefs.current
-        .get(`${lessonId}-${sentenceBlockId}`)
-        ?.focus();
-    }, 0);
-  }
-
   function addSentenceConceptLink(lessonId: string, sentenceBlockId: string) {
     setLessons((currentLessons) =>
       currentLessons.map((lesson) =>
@@ -802,117 +860,6 @@ export default function LessonBuilderPage() {
                       ...block,
                       conceptLinks: block.conceptLinks.filter(
                         (conceptLink) => conceptLink.id !== conceptLinkId,
-                      ),
-                    }
-                  : block,
-              ),
-            }
-          : lesson,
-      ),
-    );
-  }
-
-  function addLanguageBlockConceptLink(
-    lessonId: string,
-    sentenceBlockId: string,
-    languageBlockId: string,
-  ) {
-    setLessons((currentLessons) =>
-      currentLessons.map((lesson) =>
-        lesson.id === lessonId
-          ? {
-              ...lesson,
-              blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && block.type === "sentence"
-                  ? {
-                      ...block,
-                      languageBlocks: block.languageBlocks.map(
-                        (languageBlock) =>
-                          languageBlock.id === languageBlockId
-                            ? {
-                                ...languageBlock,
-                                conceptLinks: [
-                                  ...languageBlock.conceptLinks,
-                                  createConceptLink(),
-                                ],
-                              }
-                            : languageBlock,
-                      ),
-                    }
-                  : block,
-              ),
-            }
-          : lesson,
-      ),
-    );
-  }
-
-  function updateLanguageBlockConceptLink(
-    lessonId: string,
-    sentenceBlockId: string,
-    languageBlockId: string,
-    conceptLinkId: string,
-    updates: Partial<Omit<ConceptLink, "id">>,
-  ) {
-    setLessons((currentLessons) =>
-      currentLessons.map((lesson) =>
-        lesson.id === lessonId
-          ? {
-              ...lesson,
-              blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && block.type === "sentence"
-                  ? {
-                      ...block,
-                      languageBlocks: block.languageBlocks.map(
-                        (languageBlock) =>
-                          languageBlock.id === languageBlockId
-                            ? {
-                                ...languageBlock,
-                                conceptLinks: languageBlock.conceptLinks.map(
-                                  (conceptLink) =>
-                                    conceptLink.id === conceptLinkId
-                                      ? { ...conceptLink, ...updates }
-                                      : conceptLink,
-                                ),
-                              }
-                            : languageBlock,
-                      ),
-                    }
-                  : block,
-              ),
-            }
-          : lesson,
-      ),
-    );
-  }
-
-  function removeLanguageBlockConceptLink(
-    lessonId: string,
-    sentenceBlockId: string,
-    languageBlockId: string,
-    conceptLinkId: string,
-  ) {
-    setLessons((currentLessons) =>
-      currentLessons.map((lesson) =>
-        lesson.id === lessonId
-          ? {
-              ...lesson,
-              blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && block.type === "sentence"
-                  ? {
-                      ...block,
-                      languageBlocks: block.languageBlocks.map(
-                        (languageBlock) =>
-                          languageBlock.id === languageBlockId
-                            ? {
-                                ...languageBlock,
-                                conceptLinks:
-                                  languageBlock.conceptLinks.filter(
-                                    (conceptLink) =>
-                                      conceptLink.id !== conceptLinkId,
-                                  ),
-                              }
-                            : languageBlock,
                       ),
                     }
                   : block,
@@ -1174,6 +1121,20 @@ export default function LessonBuilderPage() {
           : lesson,
       ),
     );
+    setCollapsedLanguageBlocks(
+      new Set(
+        lessons.flatMap((lesson) =>
+          lesson.blocks.flatMap((block) =>
+            block.type === "sentence"
+              ? block.languageBlocks.map(
+                  (languageBlock) =>
+                    `${lesson.id}-${block.id}-${languageBlock.id}`,
+                )
+              : [],
+          ),
+        ),
+      ),
+    );
 
     window.setTimeout(() => {
       languageBlockSpanishRefs.current
@@ -1182,21 +1143,67 @@ export default function LessonBuilderPage() {
     }, 0);
   }
 
-  function toggleLanguageBlock(
+  function openLanguageBlockAndFocusAnswer(
+    lessonId: string,
+    sentenceBlockId: string,
+    languageBlockId: string,
+    answerIndex: number,
+  ) {
+    const key = `${lessonId}-${sentenceBlockId}-${languageBlockId}`;
+    setCollapsedLanguageBlocks(
+      new Set(
+        lessons
+          .flatMap((lesson) =>
+            lesson.blocks.flatMap((block) =>
+              block.type === "sentence"
+                ? block.languageBlocks.map(
+                    (languageBlock) =>
+                      `${lesson.id}-${block.id}-${languageBlock.id}`,
+                  )
+                : [],
+            ),
+          )
+          .filter((languageBlockKey) => languageBlockKey !== key),
+      ),
+    );
+
+    window.setTimeout(() => {
+      acceptedAnswerRefs.current
+        .get(
+          `${lessonId}-${sentenceBlockId}-${languageBlockId}-${answerIndex}`,
+        )
+        ?.focus();
+    }, 0);
+  }
+
+  function openLanguageBlockAndFocusSpanish(
     lessonId: string,
     sentenceBlockId: string,
     languageBlockId: string,
   ) {
     const key = `${lessonId}-${sentenceBlockId}-${languageBlockId}`;
-    setCollapsedLanguageBlocks((currentKeys) => {
-      const nextKeys = new Set(currentKeys);
-      if (nextKeys.has(key)) {
-        nextKeys.delete(key);
-      } else {
-        nextKeys.add(key);
-      }
-      return nextKeys;
-    });
+    setCollapsedLanguageBlocks(
+      new Set(
+        lessons
+          .flatMap((lesson) =>
+            lesson.blocks.flatMap((block) =>
+              block.type === "sentence"
+                ? block.languageBlocks.map(
+                    (languageBlock) =>
+                      `${lesson.id}-${block.id}-${languageBlock.id}`,
+                  )
+                : [],
+            ),
+          )
+          .filter((languageBlockKey) => languageBlockKey !== key),
+      ),
+    );
+
+    window.setTimeout(() => {
+      languageBlockSpanishRefs.current
+        .get(`${lessonId}-${sentenceBlockId}-${languageBlockId}`)
+        ?.focus();
+    }, 0);
   }
 
   function deleteLanguageBlock(
@@ -1226,48 +1233,118 @@ export default function LessonBuilderPage() {
     );
   }
 
-  function moveLanguageBlock(
+  function startDraggingLanguageBlock(
+    event: DragEvent<HTMLElement>,
     lessonId: string,
     sentenceBlockId: string,
     languageBlockId: string,
-    direction: -1 | 1,
   ) {
+    event.stopPropagation();
+    event.dataTransfer.effectAllowed = "move";
+    event.dataTransfer.setData("text/plain", languageBlockId);
+    setDraggedLanguageBlock({
+      lessonId,
+      sentenceBlockId,
+      languageBlockId,
+    });
+    setLanguageBlockDropTarget(null);
+  }
+
+  function updateLanguageBlockDropTarget(
+    event: DragEvent<HTMLDivElement>,
+    lessonId: string,
+    sentenceBlockId: string,
+    languageBlockId: string,
+  ) {
+    if (!draggedLanguageBlock) {
+      return;
+    }
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (
+      draggedLanguageBlock.lessonId !== lessonId ||
+      draggedLanguageBlock.sentenceBlockId !== sentenceBlockId ||
+      draggedLanguageBlock.languageBlockId === languageBlockId
+    ) {
+      setLanguageBlockDropTarget(null);
+      return;
+    }
+
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const position =
+      event.clientX < bounds.left + bounds.width / 2 ? "before" : "after";
+    setLanguageBlockDropTarget({
+      lessonId,
+      sentenceBlockId,
+      languageBlockId,
+      position,
+    });
+  }
+
+  function moveDraggedLanguageBlock() {
+    if (!draggedLanguageBlock || !languageBlockDropTarget) {
+      return;
+    }
+
+    if (
+      draggedLanguageBlock.lessonId !== languageBlockDropTarget.lessonId ||
+      draggedLanguageBlock.sentenceBlockId !==
+        languageBlockDropTarget.sentenceBlockId
+    ) {
+      return;
+    }
+
     setLessons((currentLessons) =>
       currentLessons.map((lesson) => {
-        if (lesson.id !== lessonId) {
+        if (lesson.id !== draggedLanguageBlock.lessonId) {
           return lesson;
         }
 
         return {
           ...lesson,
           blocks: lesson.blocks.map((block) => {
-            if (block.id !== sentenceBlockId || block.type !== "sentence") {
-              return block;
-            }
-
-            const currentIndex = block.languageBlocks.findIndex(
-              (languageBlock) => languageBlock.id === languageBlockId,
-            );
-            const targetIndex = currentIndex + direction;
-
             if (
-              currentIndex === -1 ||
-              targetIndex < 0 ||
-              targetIndex >= block.languageBlocks.length
+              block.id !== draggedLanguageBlock.sentenceBlockId ||
+              block.type !== "sentence"
             ) {
               return block;
             }
 
+            const draggedIndex = block.languageBlocks.findIndex(
+              (languageBlock) =>
+                languageBlock.id === draggedLanguageBlock.languageBlockId,
+            );
+            const targetIndex = block.languageBlocks.findIndex(
+              (languageBlock) =>
+                languageBlock.id ===
+                languageBlockDropTarget.languageBlockId,
+            );
+
+            if (draggedIndex === -1 || targetIndex === -1) {
+              return block;
+            }
+
             const languageBlocks = [...block.languageBlocks];
-            [languageBlocks[currentIndex], languageBlocks[targetIndex]] = [
-              languageBlocks[targetIndex],
-              languageBlocks[currentIndex],
-            ];
+            const [draggedBlock] = languageBlocks.splice(draggedIndex, 1);
+            const adjustedTargetIndex =
+              targetIndex > draggedIndex ? targetIndex - 1 : targetIndex;
+            const insertionIndex =
+              languageBlockDropTarget.position === "after"
+                ? adjustedTargetIndex + 1
+                : adjustedTargetIndex;
+            languageBlocks.splice(insertionIndex, 0, draggedBlock);
             return { ...block, languageBlocks };
           }),
         };
       }),
     );
+  }
+
+  function finishDraggingLanguageBlock() {
+    setDraggedLanguageBlock(null);
+    setLanguageBlockDropTarget(null);
   }
 
   function startDraggingContentBlock(
@@ -1617,7 +1694,7 @@ export default function LessonBuilderPage() {
 
               {!isLessonCollapsed && (
               <div className="space-y-4 p-6">
-                {lesson.blocks.map((block) => {
+                {lesson.blocks.map((block, blockIndex) => {
                   const contentBlockKey = `${lesson.id}-${block.id}`;
                   const isContentBlockCollapsed =
                     collapsedContentBlocks.has(contentBlockKey);
@@ -1638,8 +1715,8 @@ export default function LessonBuilderPage() {
                     draggedContentBlock.blockId === block.id;
 
                   return (
+                    <Fragment key={block.id}>
                     <div
-                      key={block.id}
                       onDragOver={(event) =>
                         updateContentBlockDropTarget(
                           event,
@@ -1958,12 +2035,12 @@ export default function LessonBuilderPage() {
                           </div>
                         </div>
                         {!isContentBlockCollapsed && (
-                        <div className="p-6">
+                        <div className="flex flex-col p-6">
                           {isSentencePreviewVisible ? (
                             <SentencePracticeCard sentence={block} />
                           ) : (
                           <>
-                            <div className="mb-5 rounded-xl border border-violet-200 bg-violet-50/60 p-4">
+                            <div className="order-1 mb-5 rounded-xl border border-violet-200 bg-violet-50/60 p-4">
                               <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-violet-700">
                                 Question prompt
                               </p>
@@ -2005,26 +2082,8 @@ export default function LessonBuilderPage() {
                                 placeholder="For example: ¿Cómo se dice “Estoy preparando”?"
                                 className="block w-full resize-y rounded-lg border border-violet-200 bg-white px-3 py-2 text-sm leading-6 text-stone-800 outline-none transition placeholder:text-stone-400 focus:border-violet-400 focus:ring-2 focus:ring-violet-100"
                               />
-                              <label className="mt-3 block">
-                                <span className="mb-1 block text-xs font-medium text-stone-500">
-                                  Helper text (optional)
-                                </span>
-                                <input
-                                  type="text"
-                                  value={block.helperText ?? ""}
-                                  onChange={(event) =>
-                                    updateSentenceHelperText(
-                                      lesson.id,
-                                      block.id,
-                                      event.target.value,
-                                    )
-                                  }
-                                  placeholder="For example: No hay penalización por equivocarse."
-                                  className="w-full rounded-lg border border-violet-200 bg-white px-3 py-2 text-sm outline-none transition placeholder:text-stone-400 focus:border-violet-400 focus:ring-2 focus:ring-violet-100"
-                                />
-                              </label>
                             </div>
-                            <div className="mb-5 rounded-xl border border-blue-200 bg-blue-50/60 p-4">
+                            <div className="order-5 mt-5 rounded-xl border border-blue-200 bg-blue-50/60 p-4">
                               <div className="mb-3 flex items-center justify-between gap-3">
                                 <p className="text-xs font-semibold uppercase tracking-[0.12em] text-blue-700">
                                   Concepts Taught
@@ -2207,22 +2266,82 @@ export default function LessonBuilderPage() {
                                 </p>
                               )}
                             </div>
-                          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                          <div className="order-2 grid items-start grid-cols-[repeat(auto-fit,minmax(min(100%,13rem),1fr))] gap-3">
                             {block.languageBlocks.map(
                               (languageBlock, languageBlockIndex) => {
                                 const isLastLanguageBlock =
                                   languageBlockIndex ===
                                   block.languageBlocks.length - 1;
+                                const previousLanguageBlock =
+                                  block.languageBlocks[languageBlockIndex - 1];
                                 const languageBlockKey = `${lesson.id}-${block.id}-${languageBlock.id}`;
                                 const isLanguageBlockCollapsed =
                                   collapsedLanguageBlocks.has(languageBlockKey);
                                 const isSpanishMissing =
                                   !languageBlock.spanish.trim();
+                                const languageDropPosition =
+                                  languageBlockDropTarget?.lessonId ===
+                                    lesson.id &&
+                                  languageBlockDropTarget.sentenceBlockId ===
+                                    block.id &&
+                                  languageBlockDropTarget.languageBlockId ===
+                                    languageBlock.id
+                                    ? languageBlockDropTarget.position
+                                    : null;
+                                const isDraggingLanguageBlock =
+                                  draggedLanguageBlock?.lessonId === lesson.id &&
+                                  draggedLanguageBlock.sentenceBlockId ===
+                                    block.id &&
+                                  draggedLanguageBlock.languageBlockId ===
+                                    languageBlock.id;
 
                                 return (
                                   <div
                                     key={languageBlock.id}
-                                    className={`overflow-hidden rounded-xl border bg-white shadow-md shadow-stone-200/60 ${
+                                    onClick={(event) => {
+                                      if (
+                                        event.target instanceof Element &&
+                                          event.target.closest(
+                                            "button, input, textarea, select, a, [contenteditable='true']",
+                                          )
+                                      ) {
+                                        return;
+                                      }
+
+                                      if (isLanguageBlockCollapsed) {
+                                        openLanguageBlockAndFocusSpanish(
+                                          lesson.id,
+                                          block.id,
+                                          languageBlock.id,
+                                        );
+                                      } else {
+                                        setCollapsedLanguageBlocks(
+                                          (currentKeys) =>
+                                            new Set(currentKeys).add(
+                                              languageBlockKey,
+                                            ),
+                                        );
+                                      }
+                                    }}
+                                    onDragOver={(event) =>
+                                      updateLanguageBlockDropTarget(
+                                        event,
+                                        lesson.id,
+                                        block.id,
+                                        languageBlock.id,
+                                      )
+                                    }
+                                    onDrop={(event) => {
+                                      event.preventDefault();
+                                      event.stopPropagation();
+                                      moveDraggedLanguageBlock();
+                                      finishDraggingLanguageBlock();
+                                    }}
+                                    className={`relative overflow-hidden rounded-xl border bg-white transition ${
+                                      isLanguageBlockCollapsed
+                                        ? "cursor-pointer shadow-sm"
+                                        : "cursor-pointer shadow-md shadow-stone-200/60"
+                                    } ${
                                       isSpanishMissing ||
                                       languageBlock.acceptedAnswers.some(
                                         (_, answerIndex) =>
@@ -2233,66 +2352,41 @@ export default function LessonBuilderPage() {
                                       )
                                         ? "border-red-300"
                                         : "border-stone-300"
-                                    }`}
+                                    } ${isDraggingLanguageBlock ? "opacity-45" : ""}`}
                                   >
+                                    {languageDropPosition && (
+                                      <span
+                                        aria-hidden="true"
+                                        className={`absolute inset-y-2 z-20 w-1 rounded-full bg-blue-500 ${
+                                          languageDropPosition === "before"
+                                            ? "left-0"
+                                            : "right-0"
+                                        }`}
+                                      />
+                                    )}
                                     <div className="flex items-center justify-between gap-2 border-b border-stone-200 bg-stone-100 px-2 py-1.5">
-                                      <span className="px-1 text-xs font-semibold text-stone-500">
-                                        Block {languageBlockIndex + 1}
-                                      </span>
+                                      <button
+                                        type="button"
+                                        draggable
+                                        onDragStart={(event) =>
+                                          startDraggingLanguageBlock(
+                                            event,
+                                            lesson.id,
+                                            block.id,
+                                            languageBlock.id,
+                                          )
+                                        }
+                                        onDragEnd={(event) => {
+                                          event.stopPropagation();
+                                          finishDraggingLanguageBlock();
+                                        }}
+                                        aria-label={`Drag language block ${languageBlockIndex + 1} to reorder`}
+                                        title="Drag to reorder"
+                                        className="flex size-7 cursor-grab items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200 active:cursor-grabbing"
+                                      >
+                                        <GripVertical className="size-3.5" aria-hidden="true" />
+                                      </button>
                                       <div className="flex items-center gap-0.5">
-                                        <button
-                                          type="button"
-                                          onClick={() =>
-                                            moveLanguageBlock(
-                                              lesson.id,
-                                              block.id,
-                                              languageBlock.id,
-                                              -1,
-                                            )
-                                          }
-                                          disabled={languageBlockIndex === 0}
-                                          aria-label={`Move language block ${languageBlockIndex + 1} left`}
-                                          title="Move left"
-                                          className="flex size-7 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200 disabled:cursor-not-allowed disabled:opacity-25"
-                                        >
-                                          <ArrowLeft className="size-3.5" aria-hidden="true" />
-                                        </button>
-                                        <button
-                                          type="button"
-                                          onClick={() =>
-                                            moveLanguageBlock(
-                                              lesson.id,
-                                              block.id,
-                                              languageBlock.id,
-                                              1,
-                                            )
-                                          }
-                                          disabled={isLastLanguageBlock}
-                                          aria-label={`Move language block ${languageBlockIndex + 1} right`}
-                                          title="Move right"
-                                          className="flex size-7 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200 disabled:cursor-not-allowed disabled:opacity-25"
-                                        >
-                                          <ArrowRight className="size-3.5" aria-hidden="true" />
-                                        </button>
-                                        <button
-                                          type="button"
-                                          onClick={() =>
-                                            toggleLanguageBlock(
-                                              lesson.id,
-                                              block.id,
-                                              languageBlock.id,
-                                            )
-                                          }
-                                          aria-label={`${isLanguageBlockCollapsed ? "Expand" : "Collapse"} language block ${languageBlockIndex + 1}`}
-                                          title={isLanguageBlockCollapsed ? "Expand" : "Collapse"}
-                                          className="flex size-7 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200"
-                                        >
-                                          {isLanguageBlockCollapsed ? (
-                                            <ChevronDown className="size-3.5" aria-hidden="true" />
-                                          ) : (
-                                            <ChevronUp className="size-3.5" aria-hidden="true" />
-                                          )}
-                                        </button>
                                         <button
                                           type="button"
                                           onClick={() =>
@@ -2311,15 +2405,47 @@ export default function LessonBuilderPage() {
                                       </div>
                                     </div>
                                     {isLanguageBlockCollapsed ? (
-                                      <div className="px-4 py-3 text-sm text-stone-600">
-                                        <span className="font-medium text-stone-800">
+                                      <div
+                                        role="button"
+                                        tabIndex={0}
+                                        onKeyDown={(event) => {
+                                          if (
+                                            event.key === "Enter" ||
+                                            event.key === " "
+                                          ) {
+                                            event.preventDefault();
+                                            openLanguageBlockAndFocusSpanish(
+                                              lesson.id,
+                                              block.id,
+                                              languageBlock.id,
+                                            );
+                                          }
+                                        }}
+                                        className="cursor-pointer px-3 py-3 text-sm text-stone-600 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-inset focus-visible:ring-blue-200"
+                                      >
+                                        <p className="font-bold text-stone-900">
                                           {languageBlock.spanish || "Spanish prompt"}
-                                        </span>
-                                        <span className="mx-2 text-stone-300">→</span>
-                                        <span>
-                                          {languageBlock.acceptedAnswers[0] ||
-                                            "English answer"}
-                                        </span>
+                                        </p>
+                                        <div className="mt-1 space-y-0.5">
+                                          {languageBlock.acceptedAnswers.some(
+                                            (answer) => answer.trim(),
+                                          ) ? (
+                                            languageBlock.acceptedAnswers
+                                              .filter((answer) => answer.trim())
+                                              .map((answer, answerIndex) => (
+                                                <p
+                                                  key={`${answer}-${answerIndex}`}
+                                                  className="italic text-stone-500"
+                                                >
+                                                  {answer}
+                                                </p>
+                                              ))
+                                          ) : (
+                                            <p className="italic text-stone-400">
+                                              English answer
+                                            </p>
+                                          )}
+                                        </div>
                                       </div>
                                     ) : (
                                       <>
@@ -2356,6 +2482,25 @@ export default function LessonBuilderPage() {
                                           onKeyDown={(event) => {
                                             if (
                                               event.key === "Tab" &&
+                                              event.shiftKey &&
+                                              previousLanguageBlock
+                                            ) {
+                                              event.preventDefault();
+                                              openLanguageBlockAndFocusAnswer(
+                                                lesson.id,
+                                                block.id,
+                                                previousLanguageBlock.id,
+                                                Math.max(
+                                                  previousLanguageBlock
+                                                    .acceptedAnswers.length - 1,
+                                                  0,
+                                                ),
+                                              );
+                                              return;
+                                            }
+
+                                            if (
+                                              event.key === "Tab" &&
                                               !event.shiftKey
                                             ) {
                                               event.preventDefault();
@@ -2387,7 +2532,7 @@ export default function LessonBuilderPage() {
                                           }
                                           className="rounded-md px-2 py-1 text-xs font-medium text-amber-600 transition hover:bg-amber-50 hover:text-amber-700"
                                         >
-                                          Add context
+                                          Add context hint
                                         </button>
                                       ) : (
                                         <div className="flex w-full items-center rounded-lg bg-amber-50 px-2.5 py-1.5 text-amber-800">
@@ -2444,226 +2589,6 @@ export default function LessonBuilderPage() {
                                           </button>
                                         </div>
                                       )}
-                                      <div className="w-full rounded-lg border border-stone-200 bg-stone-50 p-2">
-                                        <div className="mb-2 flex items-center justify-between gap-2">
-                                          <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-stone-500">
-                                            Concepts
-                                          </span>
-                                          <button
-                                            type="button"
-                                            onClick={() =>
-                                              addLanguageBlockConceptLink(
-                                                lesson.id,
-                                                block.id,
-                                                languageBlock.id,
-                                              )
-                                            }
-                                            className="rounded px-1.5 py-0.5 text-xs font-medium text-blue-700 transition hover:bg-blue-50"
-                                          >
-                                            Add
-                                          </button>
-                                        </div>
-                                        {languageBlock.conceptLinks.length >
-                                        0 ? (
-                                          <div className="space-y-1.5">
-                                            {languageBlock.conceptLinks.map(
-                                              (conceptLink) => (
-                                                <div
-                                                  key={conceptLink.id}
-                                                  className="space-y-1.5 rounded-md bg-white p-2"
-                                                >
-                                                  <div className="flex items-center gap-1.5">
-                                                    <select
-                                                      value={conceptLink.type}
-                                                      onChange={(event) =>
-                                                        updateLanguageBlockConceptLink(
-                                                          lesson.id,
-                                                          block.id,
-                                                          languageBlock.id,
-                                                          conceptLink.id,
-                                                          {
-                                                            type: event.target
-                                                              .value as ConceptType,
-                                                          },
-                                                        )
-                                                      }
-                                                      className="min-w-0 flex-1 rounded-md border border-stone-200 bg-white px-1.5 py-1.5 text-xs outline-none transition focus:border-blue-300 focus:ring-2 focus:ring-blue-100"
-                                                    >
-                                                      {conceptTypeOptions.map(
-                                                        (option) => (
-                                                          <option
-                                                            key={option.value}
-                                                            value={option.value}
-                                                          >
-                                                            {option.label}
-                                                          </option>
-                                                        ),
-                                                      )}
-                                                    </select>
-                                                    <select
-                                                      value={conceptLink.role}
-                                                      onChange={(event) =>
-                                                        updateLanguageBlockConceptLink(
-                                                          lesson.id,
-                                                          block.id,
-                                                          languageBlock.id,
-                                                          conceptLink.id,
-                                                          {
-                                                            role: event.target
-                                                              .value as ConceptRole,
-                                                          },
-                                                        )
-                                                      }
-                                                      className="w-28 rounded-md border border-stone-200 bg-white px-1.5 py-1.5 text-xs outline-none transition focus:border-blue-300 focus:ring-2 focus:ring-blue-100"
-                                                    >
-                                                      {conceptRoleOptions.map(
-                                                        (option) => (
-                                                          <option
-                                                            key={option.value}
-                                                            value={option.value}
-                                                          >
-                                                            {option.label}
-                                                          </option>
-                                                        ),
-                                                      )}
-                                                    </select>
-                                                    <button
-                                                      type="button"
-                                                      onClick={() =>
-                                                        removeLanguageBlockConceptLink(
-                                                          lesson.id,
-                                                          block.id,
-                                                          languageBlock.id,
-                                                          conceptLink.id,
-                                                        )
-                                                      }
-                                                      aria-label="Remove language block concept"
-                                                      title="Remove concept"
-                                                      className="flex size-7 shrink-0 items-center justify-center rounded-md text-stone-400 transition hover:bg-red-50 hover:text-red-600"
-                                                    >
-                                                      <X
-                                                        className="size-3.5"
-                                                        aria-hidden="true"
-                                                      />
-                                                    </button>
-                                                  </div>
-                                                  <select
-                                                    value={conceptLink.direction}
-                                                    onChange={(event) =>
-                                                      updateLanguageBlockConceptLink(
-                                                        lesson.id,
-                                                        block.id,
-                                                        languageBlock.id,
-                                                        conceptLink.id,
-                                                        {
-                                                          direction: event.target
-                                                            .value as MappingDirection,
-                                                        },
-                                                      )
-                                                    }
-                                                    className="w-full rounded-md border border-stone-200 bg-white px-1.5 py-1.5 text-xs outline-none transition focus:border-blue-300 focus:ring-2 focus:ring-blue-100"
-                                                  >
-                                                    {mappingDirectionOptions.map(
-                                                      (option) => (
-                                                        <option
-                                                          key={option.value}
-                                                          value={option.value}
-                                                        >
-                                                          {option.label}
-                                                        </option>
-                                                      ),
-                                                    )}
-                                                  </select>
-                                                  <div className="grid grid-cols-2 gap-1.5">
-                                                    <input
-                                                      type="text"
-                                                      value={
-                                                        conceptLink.sourceText
-                                                      }
-                                                      onChange={(event) =>
-                                                        updateLanguageBlockConceptLink(
-                                                          lesson.id,
-                                                          block.id,
-                                                          languageBlock.id,
-                                                          conceptLink.id,
-                                                          {
-                                                            sourceText:
-                                                              event.target.value,
-                                                          },
-                                                        )
-                                                      }
-                                                      placeholder="Source"
-                                                      className="min-w-0 rounded-md border border-stone-200 bg-white px-2 py-1.5 text-xs outline-none transition placeholder:text-stone-400 focus:border-blue-300 focus:ring-2 focus:ring-blue-100"
-                                                    />
-                                                    <input
-                                                      type="text"
-                                                      value={
-                                                        conceptLink.targetText
-                                                      }
-                                                      onChange={(event) =>
-                                                        updateLanguageBlockConceptLink(
-                                                          lesson.id,
-                                                          block.id,
-                                                          languageBlock.id,
-                                                          conceptLink.id,
-                                                          {
-                                                            targetText:
-                                                              event.target.value,
-                                                          },
-                                                        )
-                                                      }
-                                                      placeholder="Target"
-                                                      className="min-w-0 rounded-md border border-stone-200 bg-white px-2 py-1.5 text-xs outline-none transition placeholder:text-stone-400 focus:border-blue-300 focus:ring-2 focus:ring-blue-100"
-                                                    />
-                                                  </div>
-                                                  <input
-                                                    type="text"
-                                                    value={
-                                                      conceptLink.contextLabel
-                                                    }
-                                                    onChange={(event) =>
-                                                      updateLanguageBlockConceptLink(
-                                                        lesson.id,
-                                                        block.id,
-                                                        languageBlock.id,
-                                                        conceptLink.id,
-                                                        {
-                                                          contextLabel:
-                                                            event.target.value,
-                                                        },
-                                                      )
-                                                    }
-                                                    placeholder="Context"
-                                                    className="w-full rounded-md border border-stone-200 bg-white px-2 py-1.5 text-xs outline-none transition placeholder:text-stone-400 focus:border-blue-300 focus:ring-2 focus:ring-blue-100"
-                                                  />
-                                                  <input
-                                                    type="text"
-                                                    value={conceptLink.label}
-                                                    onChange={(event) =>
-                                                      updateLanguageBlockConceptLink(
-                                                        lesson.id,
-                                                        block.id,
-                                                        languageBlock.id,
-                                                        conceptLink.id,
-                                                        {
-                                                          label:
-                                                            event.target.value,
-                                                        },
-                                                      )
-                                                    }
-                                                    placeholder="Optional label"
-                                                    className="w-full rounded-md border border-stone-200 bg-white px-2 py-1.5 text-xs outline-none transition placeholder:text-stone-400 focus:border-blue-300 focus:ring-2 focus:ring-blue-100"
-                                                  />
-                                                </div>
-                                              ),
-                                            )}
-                                          </div>
-                                        ) : (
-                                          <p className="text-xs text-stone-400">
-                                            No concepts yet.
-                                          </p>
-                                        )}
-                                      </div>
                                     </div>
                                     <div className="border-t border-stone-800 bg-stone-900 px-3 py-3">
                                       <div className="space-y-2">
@@ -2778,11 +2703,11 @@ export default function LessonBuilderPage() {
                                                         } else if (
                                                           nextLanguageBlock
                                                         ) {
-                                                          languageBlockSpanishRefs.current
-                                                            .get(
-                                                              `${lesson.id}-${block.id}-${nextLanguageBlock.id}`,
-                                                            )
-                                                            ?.focus();
+                                                          openLanguageBlockAndFocusSpanish(
+                                                            lesson.id,
+                                                            block.id,
+                                                            nextLanguageBlock.id,
+                                                          );
                                                         }
                                                       }
                                                     }}
@@ -2869,70 +2794,42 @@ export default function LessonBuilderPage() {
                               </span>
                             </button>
                           </div>
-                          {block.answerFeedback == null ? (
-                            <button
-                              type="button"
-                              onClick={() =>
-                                addSentenceAnswerFeedback(lesson.id, block.id)
+                          <label className="order-3 mt-4 block rounded-xl border border-violet-200 bg-violet-50/50 p-4">
+                            <span className="mb-1.5 block text-xs font-semibold uppercase tracking-[0.12em] text-violet-700">
+                              Helper text (optional)
+                            </span>
+                            <input
+                              type="text"
+                              value={block.helperText ?? ""}
+                              onChange={(event) =>
+                                updateSentenceHelperText(
+                                  lesson.id,
+                                  block.id,
+                                  event.target.value,
+                                )
                               }
-                              className="mt-4 rounded-lg border border-dashed border-stone-300 px-3 py-2 text-sm font-medium text-stone-500 transition hover:border-emerald-300 hover:bg-emerald-50 hover:text-emerald-700"
-                            >
-                              Add answer feedback
-                            </button>
-                          ) : (
-                            <div className="mt-5 rounded-xl border border-emerald-200 bg-emerald-50/60 p-4">
-                              <div className="mb-2 flex items-center justify-between gap-3">
-                                <label
-                                  htmlFor={`sentence-feedback-${lesson.id}-${block.id}`}
-                                  className="text-xs font-semibold uppercase tracking-[0.12em] text-emerald-700"
-                                >
-                                  Answer feedback
-                                </label>
-                                <button
-                                  type="button"
-                                  onClick={() =>
-                                    updateSentenceAnswerFeedback(
-                                      lesson.id,
-                                      block.id,
-                                      null,
-                                    )
-                                  }
-                                  aria-label="Remove answer feedback"
-                                  title="Remove answer feedback"
-                                  className="flex size-7 items-center justify-center rounded-md text-emerald-500 transition hover:bg-emerald-100 hover:text-emerald-700"
-                                >
-                                  <X className="size-4" aria-hidden="true" />
-                                </button>
-                              </div>
-                              <textarea
-                                ref={(element) => {
-                                  const key = `${lesson.id}-${block.id}`;
-                                  if (element) {
-                                    sentenceAnswerFeedbackRefs.current.set(
-                                      key,
-                                      element,
-                                    );
-                                  } else {
-                                    sentenceAnswerFeedbackRefs.current.delete(
-                                      key,
-                                    );
-                                  }
-                                }}
-                                id={`sentence-feedback-${lesson.id}-${block.id}`}
-                                value={block.answerFeedback ?? ""}
-                                onChange={(event) =>
-                                  updateSentenceAnswerFeedback(
-                                    lesson.id,
-                                    block.id,
-                                    event.target.value,
-                                  )
-                                }
-                                rows={2}
-                                placeholder="Explain the answer or reinforce the key idea."
-                                className="block w-full resize-y bg-transparent text-sm leading-6 text-stone-800 outline-none placeholder:text-stone-400"
-                              />
-                            </div>
-                          )}
+                              placeholder="For example: No hay penalización por equivocarse."
+                              className="w-full rounded-lg border border-violet-200 bg-white px-3 py-2.5 text-sm outline-none transition placeholder:text-stone-400 focus:border-violet-400 focus:ring-2 focus:ring-violet-100"
+                            />
+                          </label>
+                          <label className="order-4 mt-5 block rounded-xl border border-emerald-200 bg-emerald-50/60 p-4">
+                            <span className="mb-1.5 block text-xs font-semibold uppercase tracking-[0.12em] text-emerald-700">
+                              Answer feedback (optional)
+                            </span>
+                            <input
+                              type="text"
+                              value={block.answerFeedback ?? ""}
+                              onChange={(event) =>
+                                updateSentenceAnswerFeedback(
+                                  lesson.id,
+                                  block.id,
+                                  event.target.value || null,
+                                )
+                              }
+                              placeholder="For example: Correcto. Ahora puedes usar la frase completa."
+                              className="w-full rounded-lg border border-emerald-200 bg-white px-3 py-2.5 text-sm outline-none transition placeholder:text-stone-400 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100"
+                            />
+                          </label>
                           </>
                           )}
                         </div>
@@ -2940,65 +2837,85 @@ export default function LessonBuilderPage() {
                       </>
                     )}
                     </div>
+                    {blockIndex < lesson.blocks.length - 1 && (
+                      <>
+                        <div className="relative !mt-0 h-0">
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setOpenBlockPicker((currentPicker) =>
+                                currentPicker?.lessonId === lesson.id &&
+                                currentPicker.insertionIndex === blockIndex + 1
+                                  ? null
+                                  : {
+                                      lessonId: lesson.id,
+                                      insertionIndex: blockIndex + 1,
+                                    },
+                              )
+                            }
+                            aria-label={`Insert content after block ${blockIndex + 1}`}
+                            aria-expanded={
+                              openBlockPicker?.lessonId === lesson.id &&
+                              openBlockPicker.insertionIndex === blockIndex + 1
+                            }
+                            className="absolute left-1/2 top-2 z-10 flex size-5 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-background text-muted-foreground opacity-45 shadow-sm transition hover:scale-110 hover:border-violet-300 hover:bg-violet-50 hover:text-violet-700 hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-violet-200"
+                          >
+                            <Plus className="size-3" aria-hidden="true" />
+                          </button>
+                        </div>
+                        {openBlockPicker?.lessonId === lesson.id &&
+                          openBlockPicker.insertionIndex === blockIndex + 1 && (
+                            <ContentBlockPicker
+                              onAddExplanation={() =>
+                                addExplanationBlock(
+                                  lesson.id,
+                                  blockIndex + 1,
+                                )
+                              }
+                              onAddSentence={() =>
+                                addSentenceBlock(lesson.id, blockIndex + 1)
+                              }
+                            />
+                          )}
+                      </>
+                    )}
+                    </Fragment>
                   );
                 })}
 
                 <button
                   type="button"
                   onClick={() =>
-                    setOpenBlockPickerLessonId((currentLessonId) =>
-                      currentLessonId === lesson.id ? null : lesson.id,
+                    setOpenBlockPicker((currentPicker) =>
+                      currentPicker?.lessonId === lesson.id &&
+                      currentPicker.insertionIndex === lesson.blocks.length
+                        ? null
+                        : {
+                            lessonId: lesson.id,
+                            insertionIndex: lesson.blocks.length,
+                          },
                     )
                   }
-                  aria-expanded={openBlockPickerLessonId === lesson.id}
+                  aria-expanded={
+                    openBlockPicker?.lessonId === lesson.id &&
+                    openBlockPicker.insertionIndex === lesson.blocks.length
+                  }
                   className="group flex min-h-20 w-full items-center justify-center gap-2 rounded-xl border-2 border-dashed border-stone-200 bg-stone-50 px-4 font-medium text-stone-500 transition hover:border-violet-300 hover:bg-violet-50 hover:text-violet-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-violet-100"
                 >
                   <Plus className="size-4" aria-hidden="true" />
                   Add content block
                 </button>
 
-                {openBlockPickerLessonId === lesson.id && (
-                  <div className="rounded-xl border border-stone-200 bg-stone-50 p-4 shadow-sm">
-                    <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">
-                      Choose a block type
-                    </p>
-                    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                      <button
-                        type="button"
-                        onClick={() => addExplanationBlock(lesson.id)}
-                        className="group flex items-start gap-3 rounded-xl border border-stone-200 bg-white p-4 text-left transition hover:border-violet-300 hover:shadow-sm focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-violet-100"
-                      >
-                        <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-violet-50 text-violet-700 transition group-hover:bg-violet-100">
-                          <FileText className="size-5" aria-hidden="true" />
-                        </span>
-                        <span>
-                          <span className="block font-semibold text-stone-900">
-                            Explanation
-                          </span>
-                          <span className="mt-1 block text-sm leading-5 text-stone-500">
-                            Introduce an idea with formatted text.
-                          </span>
-                        </span>
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => addSentenceBlock(lesson.id)}
-                        className="group flex items-start gap-3 rounded-xl border border-stone-200 bg-white p-4 text-left transition hover:border-blue-300 hover:shadow-sm focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-100"
-                      >
-                        <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-blue-700 transition group-hover:bg-blue-100">
-                          <Languages className="size-5" aria-hidden="true" />
-                        </span>
-                        <span>
-                          <span className="block font-semibold text-stone-900">
-                            Sentence
-                          </span>
-                          <span className="mt-1 block text-sm leading-5 text-stone-500">
-                            Build a prompt with learner answer blocks.
-                          </span>
-                        </span>
-                      </button>
-                    </div>
-                  </div>
+                {openBlockPicker?.lessonId === lesson.id &&
+                  openBlockPicker.insertionIndex === lesson.blocks.length && (
+                  <ContentBlockPicker
+                    onAddExplanation={() =>
+                      addExplanationBlock(lesson.id, lesson.blocks.length)
+                    }
+                    onAddSentence={() =>
+                      addSentenceBlock(lesson.id, lesson.blocks.length)
+                    }
+                  />
                 )}
               </div>
               )}

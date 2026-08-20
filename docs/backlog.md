@@ -29,6 +29,7 @@ Build the smallest useful JSON-backed lesson-authoring foundation. Let actual ha
 - [x] Refine the Practice response loop with reliable backward navigation, centered explanations, immediate per-answer success styling, learner-controlled sentence advancement, and prominent neutral post-answer feedback.
 - [x] Make multi-block sentence practice automatically fit available card width and wrap responsively instead of using a fixed two-column layout.
 - [x] Streamline Lesson Builder authoring with one expanded content block at a time, compact clickable summaries, handle-only block reordering, duplication with fresh nested IDs, creation autofocus, keyboard-assisted explanation closing, and lesson-deletion confirmation.
+- [x] Refine Sentence authoring with inline block insertion, responsive compact word cards, one open word editor at a time, click-to-toggle cards, handle-based word reordering, sentence-level concepts, and consistently ordered prompt, helper, feedback, and concept fields.
 - [ ] Build five representative lessons as the first vertical slice.
     - [ ] Include straightforward vocabulary retrieval.
     - [ ] Include a Spanish-to-English one-to-many mapping.
