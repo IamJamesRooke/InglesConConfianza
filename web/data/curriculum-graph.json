@@ -1,5 +1,21 @@
 {
-  "version": 1,
+  "version": 2,
+  "formFamilies": [
+    {
+      "id": "family_es_querer_present",
+      "label": "querer present forms",
+      "language": "es",
+      "lemmaNodeId": "node_es_querer",
+      "formNodeIds": [
+        "node_es_quiero",
+        "node_es_quieres",
+        "node_es_quiere",
+        "node_es_queremos",
+        "node_es_quieren"
+      ],
+      "description": "Present-tense forms that carry Spanish subject information."
+    }
+  ],
   "nodes": [
     {
       "id": "node_es_yo",
@@ -45,11 +61,52 @@
       "learningTags": []
     },
     {
+      "id": "node_es_quieres",
+      "label": "quieres",
+      "language": "es",
+      "type": "form",
+      "aliases": [],
+      "description": "Second-person singular present form of querer.",
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
+      "id": "node_es_quiere",
+      "label": "quiere",
+      "language": "es",
+      "type": "form",
+      "aliases": [],
+      "description": "Third-person singular or formal second-person present form of querer.",
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
+      "id": "node_es_queremos",
+      "label": "queremos",
+      "language": "es",
+      "type": "form",
+      "aliases": [],
+      "description": "First-person plural present form of querer.",
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
+      "id": "node_es_quieren",
+      "label": "quieren",
+      "language": "es",
+      "type": "form",
+      "aliases": [],
+      "description": "Third-person plural or plural second-person present form of querer.",
+      "speakingPriority": "core_function",
+      "learningTags": []
+    },
+    {
       "id": "node_en_want",
       "label": "want",
       "language": "en",
       "type": "lemma",
       "aliases": [],
+      "citationForm": "to want",
       "description": "English verb for wanting.",
       "speakingPriority": "core_function",
       "learningTags": []

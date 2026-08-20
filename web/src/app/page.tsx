@@ -1,26 +1,27 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 
-import Link from "next/link";
-
 import {
   CourseContentDashboard,
   type GraphMappingItem,
 } from "@/components/course-content-dashboard";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 
 export const dynamic = "force-dynamic";
 
 type CurriculumGraph = {
-  version: 1;
+  version: 2;
+  formFamilies: FormFamily[];
   nodes: GraphNode[];
   edges: GraphEdge[];
+};
+
+type FormFamily = {
+  id: string;
+  label: string;
+  language: string;
+  lemmaNodeId: string;
+  formNodeIds: string[];
+  description: string;
 };
 
 type GraphNode = {
@@ -29,6 +30,7 @@ type GraphNode = {
   language: string;
   type: string;
   aliases: string[];
+  citationForm?: string;
   description: string;
   speakingPriority: string;
   learningTags: string[];
@@ -60,7 +62,12 @@ async function getCurriculumGraph() {
     );
     return JSON.parse(file) as CurriculumGraph;
   } catch {
-    return { version: 1, nodes: [], edges: [] } satisfies CurriculumGraph;
+    return {
+      version: 2,
+      formFamilies: [],
+      nodes: [],
+      edges: [],
+    } satisfies CurriculumGraph;
   }
 }
 
@@ -72,6 +79,16 @@ function getGraphMappingItems(graph: CurriculumGraph) {
   const nodesById = new Map(
     graph.nodes.map((node) => [node.id, node]),
   );
+  const formFamilyByNodeId = new Map(
+    graph.formFamilies.flatMap((family) =>
+      family.formNodeIds.map((nodeId) => [nodeId, family] as const),
+    ),
+  );
+  const lemmaNodeIdByNodeId = new Map(
+    graph.edges
+      .filter((edge) => edge.type === "form_of" || edge.type === "contains")
+      .map((edge) => [edge.from, edge.to]),
+  );
 
   return graph.edges
     .filter(
@@ -79,18 +96,42 @@ function getGraphMappingItems(graph: CurriculumGraph) {
         edge.type === "maps_to" &&
         ["es_to_en", "en_to_es", "bidirectional"].includes(edge.direction),
     )
-    .map<GraphMappingItem>((edge) => {
+    .map((edge) => {
       const fromLabel = nodesById.get(edge.from)?.label ?? edge.from;
       const toLabel = nodesById.get(edge.to)?.label ?? edge.to;
       const spanish =
         edge.direction === "en_to_es" ? toLabel : fromLabel;
       const english =
         edge.direction === "en_to_es" ? fromLabel : toLabel;
+      const source = edge.direction === "en_to_es" ? english : spanish;
+      const target = edge.direction === "en_to_es" ? spanish : english;
+      const sourceNode = nodesById.get(edge.from);
+      const targetNode = nodesById.get(edge.to);
+      const sourceFamily = formFamilyByNodeId.get(edge.from);
+      const sourceLemmaNode = sourceFamily
+        ? nodesById.get(sourceFamily.lemmaNodeId)
+        : nodesById.get(lemmaNodeIdByNodeId.get(edge.from) ?? edge.from);
+      const targetLemmaNode = nodesById.get(
+        lemmaNodeIdByNodeId.get(edge.to) ?? edge.to,
+      );
 
       return {
         id: edge.id,
-        spanish,
-        english,
+        source,
+        target,
+        sourceLanguage: edge.direction === "en_to_es" ? "English" : "Spanish",
+        targetLanguage: edge.direction === "en_to_es" ? "Spanish" : "English",
+        sourceType: sourceNode?.type ?? "concept",
+        targetType: targetNode?.type ?? "concept",
+        sourceLemma: sourceLemmaNode?.label ?? sourceNode?.label ?? edge.from,
+        targetLemma: targetLemmaNode?.label ?? targetNode?.label ?? edge.to,
+        sourceCitationForm:
+          sourceLemmaNode?.citationForm ?? sourceLemmaNode?.label ?? source,
+        targetCitationForm:
+          targetLemmaNode?.citationForm ?? targetLemmaNode?.label ?? target,
+        sourceFormFamily: sourceFamily?.label ?? null,
+        sourceFormFamilySize: sourceFamily?.formNodeIds.length ?? null,
+        coveredForm: `${source} → ${target}`,
         direction: edge.direction,
         context: edge.context,
         speakingPriority: edge.speakingPriority,
@@ -105,8 +146,28 @@ function getGraphMappingItems(graph: CurriculumGraph) {
         })),
       };
     })
+    .reduce<GraphMappingItem[]>((items, mapping) => {
+      const existing = items.find(
+        (item) =>
+          item.direction === mapping.direction &&
+          item.sourceLemma === mapping.sourceLemma &&
+          item.targetLemma === mapping.targetLemma &&
+          item.context === mapping.context,
+      );
+
+      if (existing) {
+        if (!existing.coveredForms.includes(mapping.coveredForm)) {
+          existing.coveredForms.push(mapping.coveredForm);
+        }
+        existing.evidence.push(...mapping.evidence);
+        return items;
+      }
+
+      items.push({ ...mapping, coveredForms: [mapping.coveredForm] });
+      return items;
+    }, [])
     .sort((firstItem, secondItem) =>
-      firstItem.spanish.localeCompare(secondItem.spanish),
+      firstItem.sourceLemma.localeCompare(secondItem.sourceLemma),
     );
 }
 
@@ -122,31 +183,9 @@ export default async function Home() {
             Inglés Con Confianza
           </p>
           <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-            Contenido del curso
+            Course Contents
           </h1>
-          <p className="mt-3 max-w-2xl text-muted-foreground">
-            A simple view of the English-Spanish and Spanish-English mapping
-            cards currently drafted in the curriculum graph.
-          </p>
         </div>
-
-        <Card className="border-border bg-[var(--surface)]">
-          <CardHeader>
-            <CardTitle>Current authoring workflow</CardTitle>
-            <CardDescription>
-              Lessons are still authored in the Lesson Builder. The course
-              content view is currently focused on the separate curriculum graph.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Link
-              href="/lesson-builder"
-              className="inline-flex rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
-            >
-              Open Lesson Builder
-            </Link>
-          </CardContent>
-        </Card>
 
         <CourseContentDashboard graphMappings={graphMappings} />
       </div>
