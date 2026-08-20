@@ -1,12 +1,11 @@
 "use client";
 
 import {
-  ArrowDown,
   ArrowLeft,
   ArrowRight,
-  ArrowUp,
   ChevronDown,
   ChevronUp,
+  Copy,
   Eye,
   FileText,
   GripVertical,
@@ -59,6 +58,15 @@ export default function LessonBuilderPage() {
   >("idle");
   const [draggedLessonId, setDraggedLessonId] = useState<string | null>(null);
   const [dropTarget, setDropTarget] = useState<DropTarget | null>(null);
+  const [draggedContentBlock, setDraggedContentBlock] = useState<{
+    lessonId: string;
+    blockId: string;
+  } | null>(null);
+  const [contentBlockDropTarget, setContentBlockDropTarget] = useState<{
+    lessonId: string;
+    blockId: string;
+    position: "before" | "after";
+  } | null>(null);
   const [openBlockPickerLessonId, setOpenBlockPickerLessonId] = useState<
     string | null
   >(null);
@@ -108,6 +116,13 @@ export default function LessonBuilderPage() {
           setLessons(lessons);
           setCollapsedLessons(new Set(lessons.map((lesson) => lesson.id)));
           setFullyCollapsedLessons(new Set());
+          setCollapsedContentBlocks(
+            new Set(
+              lessons.flatMap((lesson) =>
+                lesson.blocks.map((block) => `${lesson.id}-${block.id}`),
+              ),
+            ),
+          );
           setActiveLessonId(lessons[0]?.id ?? null);
           setIsDirty(false);
           setSaveStatus("idle");
@@ -179,6 +194,13 @@ export default function LessonBuilderPage() {
   }
 
   const openLessonEditor = useCallback((lessonId: string) => {
+    setCollapsedContentBlocks(
+      new Set(
+        lessons.flatMap((lesson) =>
+          lesson.blocks.map((block) => `${lesson.id}-${block.id}`),
+        ),
+      ),
+    );
     setCollapsedLessons((currentLessonIds) => {
       const nextLessonIds = new Set(currentLessonIds);
       nextLessonIds.delete(lessonId);
@@ -189,7 +211,7 @@ export default function LessonBuilderPage() {
       nextLessonIds.delete(lessonId);
       return nextLessonIds;
     });
-  }, []);
+  }, [lessons]);
 
   const cycleLessonDisplayMode = useCallback((lessonId: string) => {
     const isFullyCollapsed = fullyCollapsedLessons.has(lessonId);
@@ -290,6 +312,24 @@ export default function LessonBuilderPage() {
   useEffect(() => {
     function handleLessonBuilderShortcut(event: KeyboardEvent) {
       if (
+        event.key === "Escape" &&
+        !event.repeat &&
+        !event.isComposing &&
+        event.target instanceof HTMLElement &&
+        event.target.closest(".lesson-markdown-editor")
+      ) {
+        event.preventDefault();
+        setCollapsedContentBlocks(
+          new Set(
+            lessons.flatMap((lesson) =>
+              lesson.blocks.map((block) => `${lesson.id}-${block.id}`),
+            ),
+          ),
+        );
+        return;
+      }
+
+      if (
         event.altKey &&
         !event.ctrlKey &&
         !event.metaKey &&
@@ -363,6 +403,7 @@ export default function LessonBuilderPage() {
     createLesson,
     cycleActiveLessonCollapseMode,
     cycleAllLessonDisplayModes,
+    lessons,
     saveLessons,
   ]);
 
@@ -377,6 +418,20 @@ export default function LessonBuilderPage() {
   }
 
   function deleteLesson(lessonId: string) {
+    const lessonIndex = lessons.findIndex((lesson) => lesson.id === lessonId);
+    const lesson = lessons[lessonIndex];
+    const lessonLabel = `Lesson ${lessonIndex + 1}${
+      lesson?.name ? ` · ${lesson.name}` : ""
+    }`;
+
+    if (
+      !window.confirm(
+        `Delete ${lessonLabel}? This will remove all of its content blocks.`,
+      )
+    ) {
+      return;
+    }
+
     setLessons((currentLessons) =>
       currentLessons.filter((lesson) => lesson.id !== lessonId),
     );
@@ -401,12 +456,18 @@ export default function LessonBuilderPage() {
   function toggleContentBlock(lessonId: string, blockId: string) {
     const key = `${lessonId}-${blockId}`;
     setCollapsedContentBlocks((currentKeys) => {
-      const nextKeys = new Set(currentKeys);
-      if (nextKeys.has(key)) {
+      if (currentKeys.has(key)) {
+        const nextKeys = new Set(
+          lessons.flatMap((lesson) =>
+            lesson.blocks.map((block) => `${lesson.id}-${block.id}`),
+          ),
+        );
         nextKeys.delete(key);
-      } else {
-        nextKeys.add(key);
+        return nextKeys;
       }
+
+      const nextKeys = new Set(currentKeys);
+      nextKeys.add(key);
       return nextKeys;
     });
   }
@@ -437,41 +498,65 @@ export default function LessonBuilderPage() {
     );
   }
 
-  function moveContentBlock(
-    lessonId: string,
-    blockId: string,
-    direction: -1 | 1,
-  ) {
+  function duplicateContentBlock(lessonId: string, blockId: string) {
+    const duplicateBlockId = createId("block");
+
     setLessons((currentLessons) =>
       currentLessons.map((lesson) => {
         if (lesson.id !== lessonId) {
           return lesson;
         }
 
-        const currentIndex = lesson.blocks.findIndex(
+        const sourceIndex = lesson.blocks.findIndex(
           (block) => block.id === blockId,
         );
-        const targetIndex = currentIndex + direction;
 
-        if (
-          currentIndex === -1 ||
-          targetIndex < 0 ||
-          targetIndex >= lesson.blocks.length
-        ) {
+        if (sourceIndex === -1) {
           return lesson;
         }
 
+        const sourceBlock = lesson.blocks[sourceIndex];
+        const duplicatedBlock =
+          sourceBlock.type === "explanation"
+            ? { ...sourceBlock, id: duplicateBlockId }
+            : {
+                ...sourceBlock,
+                id: duplicateBlockId,
+                conceptLinks: sourceBlock.conceptLinks.map((conceptLink) => ({
+                  ...conceptLink,
+                  id: createId("concept_link"),
+                })),
+                languageBlocks: sourceBlock.languageBlocks.map(
+                  (languageBlock) => ({
+                    ...languageBlock,
+                    id: createId("lang"),
+                    acceptedAnswers: [...languageBlock.acceptedAnswers],
+                    conceptLinks: languageBlock.conceptLinks.map(
+                      (conceptLink) => ({
+                        ...conceptLink,
+                        id: createId("concept_link"),
+                      }),
+                    ),
+                  }),
+                ),
+              };
         const blocks = [...lesson.blocks];
-        [blocks[currentIndex], blocks[targetIndex]] = [
-          blocks[targetIndex],
-          blocks[currentIndex],
-        ];
+        blocks.splice(sourceIndex + 1, 0, duplicatedBlock);
         return { ...lesson, blocks };
       }),
+    );
+    setCollapsedContentBlocks(
+      new Set(
+        lessons.flatMap((lesson) =>
+          lesson.blocks.map((block) => `${lesson.id}-${block.id}`),
+        ),
+      ),
     );
   }
 
   function addExplanationBlock(lessonId: string) {
+    const blockId = createId("block");
+
     setLessons((currentLessons) =>
       currentLessons.map((lesson) => {
         if (lesson.id !== lessonId) {
@@ -483,7 +568,7 @@ export default function LessonBuilderPage() {
           blocks: [
             ...lesson.blocks,
             {
-              id: createId("block"),
+              id: blockId,
               type: "explanation",
               contentMarkdown: "",
             },
@@ -491,10 +576,20 @@ export default function LessonBuilderPage() {
         };
       }),
     );
+    setCollapsedContentBlocks(
+      new Set(
+        lessons.flatMap((lesson) =>
+          lesson.blocks.map((block) => `${lesson.id}-${block.id}`),
+        ),
+      ),
+    );
     setOpenBlockPickerLessonId(null);
   }
 
   function addSentenceBlock(lessonId: string) {
+    const blockId = createId("block");
+    const languageBlockId = createId("lang");
+
     setLessons((currentLessons) =>
       currentLessons.map((lesson) => {
         if (lesson.id !== lessonId) {
@@ -506,7 +601,7 @@ export default function LessonBuilderPage() {
           blocks: [
             ...lesson.blocks,
             {
-              id: createId("block"),
+              id: blockId,
               type: "sentence",
               promptLabel: "",
               promptText: "",
@@ -515,7 +610,7 @@ export default function LessonBuilderPage() {
               conceptLinks: [],
               languageBlocks: [
                 {
-                  id: createId("lang"),
+                  id: languageBlockId,
                   spanish: "",
                   callout: null,
                   acceptedAnswers: [""],
@@ -527,7 +622,20 @@ export default function LessonBuilderPage() {
         };
       }),
     );
+    setCollapsedContentBlocks(
+      new Set(
+        lessons.flatMap((lesson) =>
+          lesson.blocks.map((block) => `${lesson.id}-${block.id}`),
+        ),
+      ),
+    );
     setOpenBlockPickerLessonId(null);
+
+    window.setTimeout(() => {
+      languageBlockSpanishRefs.current
+        .get(`${lessonId}-${blockId}-${languageBlockId}`)
+        ?.focus();
+    }, 0);
   }
 
   function updateSentencePromptText(
@@ -1162,6 +1270,91 @@ export default function LessonBuilderPage() {
     );
   }
 
+  function startDraggingContentBlock(
+    event: DragEvent<HTMLElement>,
+    lessonId: string,
+    blockId: string,
+  ) {
+    event.stopPropagation();
+    event.dataTransfer.effectAllowed = "move";
+    event.dataTransfer.setData("text/plain", blockId);
+    setDraggedContentBlock({ lessonId, blockId });
+    setContentBlockDropTarget(null);
+  }
+
+  function updateContentBlockDropTarget(
+    event: DragEvent<HTMLDivElement>,
+    lessonId: string,
+    blockId: string,
+  ) {
+    if (!draggedContentBlock) {
+      return;
+    }
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (
+      draggedContentBlock.lessonId !== lessonId ||
+      draggedContentBlock.blockId === blockId
+    ) {
+      setContentBlockDropTarget(null);
+      return;
+    }
+
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const position =
+      event.clientY < bounds.top + bounds.height / 2 ? "before" : "after";
+
+    setContentBlockDropTarget({ lessonId, blockId, position });
+  }
+
+  function moveDraggedContentBlock() {
+    if (!draggedContentBlock || !contentBlockDropTarget) {
+      return;
+    }
+
+    if (draggedContentBlock.lessonId !== contentBlockDropTarget.lessonId) {
+      return;
+    }
+
+    setLessons((currentLessons) =>
+      currentLessons.map((lesson) => {
+        if (lesson.id !== draggedContentBlock.lessonId) {
+          return lesson;
+        }
+
+        const draggedIndex = lesson.blocks.findIndex(
+          (block) => block.id === draggedContentBlock.blockId,
+        );
+        const targetIndex = lesson.blocks.findIndex(
+          (block) => block.id === contentBlockDropTarget.blockId,
+        );
+
+        if (draggedIndex === -1 || targetIndex === -1) {
+          return lesson;
+        }
+
+        const blocks = [...lesson.blocks];
+        const [draggedBlock] = blocks.splice(draggedIndex, 1);
+        const adjustedTargetIndex =
+          targetIndex > draggedIndex ? targetIndex - 1 : targetIndex;
+        const insertionIndex =
+          contentBlockDropTarget.position === "after"
+            ? adjustedTargetIndex + 1
+            : adjustedTargetIndex;
+
+        blocks.splice(insertionIndex, 0, draggedBlock);
+        return { ...lesson, blocks };
+      }),
+    );
+  }
+
+  function finishDraggingContentBlock() {
+    setDraggedContentBlock(null);
+    setContentBlockDropTarget(null);
+  }
+
   function updateDropTarget(
     event: DragEvent<HTMLElement>,
     lessonId: string,
@@ -1298,7 +1491,19 @@ export default function LessonBuilderPage() {
                 />
               )}
 
-              <header className="flex items-center gap-4 border-b border-border bg-[var(--surface-sunken)] px-6 py-4">
+              <header
+                onClick={(event) => {
+                  if (
+                    !isLessonCollapsed &&
+                    !isInteractiveLessonTarget(event.target)
+                  ) {
+                    cycleLessonDisplayMode(lesson.id);
+                  }
+                }}
+                className={`flex items-center gap-4 border-b border-border bg-[var(--surface-sunken)] px-6 py-4 ${
+                  !isLessonCollapsed ? "cursor-pointer" : ""
+                }`}
+              >
                 <h2 className="shrink-0 text-xl font-semibold tracking-tight text-stone-900">
                   Lesson {lessonNumber}
                 </h2>
@@ -1412,7 +1617,7 @@ export default function LessonBuilderPage() {
 
               {!isLessonCollapsed && (
               <div className="space-y-4 p-6">
-                {lesson.blocks.map((block, blockIndex) => {
+                {lesson.blocks.map((block) => {
                   const contentBlockKey = `${lesson.id}-${block.id}`;
                   const isContentBlockCollapsed =
                     collapsedContentBlocks.has(contentBlockKey);
@@ -1423,16 +1628,107 @@ export default function LessonBuilderPage() {
                   const isSentencePreviewVisible =
                     block.type === "sentence" &&
                     previewSentenceBlocks.has(contentBlockKey);
+                  const contentDropPosition =
+                    contentBlockDropTarget?.lessonId === lesson.id &&
+                    contentBlockDropTarget.blockId === block.id
+                      ? contentBlockDropTarget.position
+                      : null;
+                  const isDraggingContentBlock =
+                    draggedContentBlock?.lessonId === lesson.id &&
+                    draggedContentBlock.blockId === block.id;
 
                   return (
                     <div
                       key={block.id}
-                      className="overflow-hidden rounded-xl border border-border bg-[var(--surface-raised)] shadow-sm"
+                      onDragOver={(event) =>
+                        updateContentBlockDropTarget(
+                          event,
+                          lesson.id,
+                          block.id,
+                        )
+                      }
+                      onDrop={(event) => {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        moveDraggedContentBlock();
+                        finishDraggingContentBlock();
+                      }}
+                      className={`relative overflow-hidden rounded-xl border border-border bg-[var(--surface-raised)] transition ${
+                        block.type === "explanation" &&
+                        isContentBlockCollapsed
+                          ? "shadow-none"
+                          : "shadow-sm"
+                      } ${isDraggingContentBlock ? "opacity-45" : ""}`}
                     >
+                    {contentDropPosition && (
+                      <span
+                        aria-hidden="true"
+                        className={`absolute inset-x-2 z-20 h-1 rounded-full bg-violet-500 ${
+                          contentDropPosition === "before"
+                            ? "top-0"
+                            : "bottom-0"
+                        }`}
+                      />
+                    )}
                     {block.type === "explanation" ? (
                       <>
-                        <div className="flex items-center justify-between gap-3 border-b border-border bg-[var(--surface-sunken)] px-5 py-3">
-                          <div className="flex items-center gap-3">
+                        <div
+                          className={`flex items-center justify-between gap-3 ${
+                            isContentBlockCollapsed
+                              ? "bg-[var(--surface)] px-4 py-3"
+                              : "border-b border-border bg-[var(--surface-sunken)] px-5 py-3"
+                          }`}
+                        >
+                          {isContentBlockCollapsed ? (
+                            <div
+                              role="button"
+                              tabIndex={0}
+                              aria-label="Edit explanation"
+                              onClick={() =>
+                                toggleContentBlock(lesson.id, block.id)
+                              }
+                              onKeyDown={(event) => {
+                                if (
+                                  event.key === "Enter" ||
+                                  event.key === " "
+                                ) {
+                                  event.preventDefault();
+                                  toggleContentBlock(lesson.id, block.id);
+                                }
+                              }}
+                              className="flex min-w-0 flex-1 cursor-pointer items-start gap-3 rounded-md text-sm leading-5 text-foreground focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-violet-200"
+                            >
+                              <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-violet-50 text-violet-700">
+                                <FileText className="size-4" aria-hidden="true" />
+                              </span>
+                              <div className="min-w-0 flex-1 pt-1">
+                                {block.contentMarkdown.trim() ? (
+                                  <OverviewMarkdown
+                                    markdown={block.contentMarkdown}
+                                  />
+                                ) : (
+                                  <p className="italic text-muted-foreground">
+                                    Empty explanation — click to edit
+                                  </p>
+                                )}
+                              </div>
+                            </div>
+                          ) : (
+                          <div
+                            role="button"
+                            tabIndex={0}
+                            aria-label="Collapse explanation"
+                            onClick={() =>
+                              toggleContentBlock(lesson.id, block.id)
+                            }
+                            onKeyDown={(event) => {
+                              if (event.key === "Enter" || event.key === " ") {
+                                event.preventDefault();
+                                toggleContentBlock(lesson.id, block.id);
+                              }
+                            }}
+                            className="flex min-w-0 flex-1 cursor-pointer items-center gap-3 rounded-md focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-violet-200"
+                          >
                             <span className="flex size-9 items-center justify-center rounded-lg bg-violet-50 text-violet-700">
                               <FileText className="size-4" aria-hidden="true" />
                             </span>
@@ -1440,30 +1736,38 @@ export default function LessonBuilderPage() {
                               Explanation
                             </p>
                           </div>
+                          )}
                           <div className="flex items-center gap-1">
                             <button
                               type="button"
-                              onClick={() =>
-                                moveContentBlock(lesson.id, block.id, -1)
+                              draggable
+                              onDragStart={(event) =>
+                                startDraggingContentBlock(
+                                  event,
+                                  lesson.id,
+                                  block.id,
+                                )
                               }
-                              disabled={blockIndex === 0}
-                              aria-label="Move explanation up"
-                              title="Move up"
-                              className="flex size-8 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200 disabled:cursor-not-allowed disabled:opacity-25"
+                              onDragEnd={(event) => {
+                                event.stopPropagation();
+                                finishDraggingContentBlock();
+                              }}
+                              aria-label="Drag explanation to reorder"
+                              title="Drag to reorder"
+                              className="flex size-8 cursor-grab items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200 active:cursor-grabbing"
                             >
-                              <ArrowUp className="size-4" aria-hidden="true" />
+                              <GripVertical className="size-4" aria-hidden="true" />
                             </button>
                             <button
                               type="button"
                               onClick={() =>
-                                moveContentBlock(lesson.id, block.id, 1)
+                                duplicateContentBlock(lesson.id, block.id)
                               }
-                              disabled={blockIndex === lesson.blocks.length - 1}
-                              aria-label="Move explanation down"
-                              title="Move down"
-                              className="flex size-8 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200 disabled:cursor-not-allowed disabled:opacity-25"
+                              aria-label="Duplicate explanation"
+                              title="Duplicate explanation"
+                              className="flex size-8 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200"
                             >
-                              <ArrowDown className="size-4" aria-hidden="true" />
+                              <Copy className="size-4" aria-hidden="true" />
                             </button>
                             <button
                               type="button"
@@ -1472,12 +1776,21 @@ export default function LessonBuilderPage() {
                               }
                               aria-label={`${isContentBlockCollapsed ? "Expand" : "Collapse"} explanation`}
                               title={isContentBlockCollapsed ? "Expand" : "Collapse"}
-                              className="flex size-8 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200"
+                              className={`flex h-8 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200 ${
+                                isContentBlockCollapsed
+                                  ? "w-8"
+                                  : "gap-2 px-2.5 text-xs font-semibold"
+                              }`}
                             >
                               {isContentBlockCollapsed ? (
                                 <ChevronDown className="size-4" aria-hidden="true" />
                               ) : (
-                                <ChevronUp className="size-4" aria-hidden="true" />
+                                <>
+                                  Done
+                                  <kbd className="rounded border border-stone-300 bg-white px-1.5 py-0.5 font-mono text-[10px] leading-none text-stone-500 shadow-sm">
+                                    Esc
+                                  </kbd>
+                                </>
                               )}
                             </button>
                             <button
@@ -1509,7 +1822,21 @@ export default function LessonBuilderPage() {
                     ) : (
                       <>
                         <div className="flex items-center justify-between gap-3 border-b border-border bg-[var(--surface-sunken)] px-5 py-3">
-                          <div className="flex min-w-0 items-center gap-3">
+                          <div
+                            role="button"
+                            tabIndex={0}
+                            aria-label={`${isContentBlockCollapsed ? "Expand" : "Collapse"} sentence`}
+                            onClick={() =>
+                              toggleContentBlock(lesson.id, block.id)
+                            }
+                            onKeyDown={(event) => {
+                              if (event.key === "Enter" || event.key === " ") {
+                                event.preventDefault();
+                                toggleContentBlock(lesson.id, block.id);
+                              }
+                            }}
+                            className="flex min-w-0 flex-1 cursor-pointer items-center gap-3 rounded-md focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-200"
+                          >
                             <span className="flex size-9 items-center justify-center rounded-lg bg-blue-50 text-blue-700">
                               <Languages className="size-4" aria-hidden="true" />
                             </span>
@@ -1549,6 +1876,26 @@ export default function LessonBuilderPage() {
                           <div className="flex shrink-0 items-center gap-1">
                             <button
                               type="button"
+                              draggable
+                              onDragStart={(event) =>
+                                startDraggingContentBlock(
+                                  event,
+                                  lesson.id,
+                                  block.id,
+                                )
+                              }
+                              onDragEnd={(event) => {
+                                event.stopPropagation();
+                                finishDraggingContentBlock();
+                              }}
+                              aria-label="Drag sentence to reorder"
+                              title="Drag to reorder"
+                              className="flex size-8 cursor-grab items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200 active:cursor-grabbing"
+                            >
+                              <GripVertical className="size-4" aria-hidden="true" />
+                            </button>
+                            <button
+                              type="button"
                               onClick={() =>
                                 toggleSentencePreview(lesson.id, block.id)
                               }
@@ -1574,26 +1921,13 @@ export default function LessonBuilderPage() {
                             <button
                               type="button"
                               onClick={() =>
-                                moveContentBlock(lesson.id, block.id, -1)
+                                duplicateContentBlock(lesson.id, block.id)
                               }
-                              disabled={blockIndex === 0}
-                              aria-label="Move sentence up"
-                              title="Move up"
-                              className="flex size-8 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200 disabled:cursor-not-allowed disabled:opacity-25"
+                              aria-label="Duplicate sentence"
+                              title="Duplicate sentence"
+                              className="flex size-8 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200"
                             >
-                              <ArrowUp className="size-4" aria-hidden="true" />
-                            </button>
-                            <button
-                              type="button"
-                              onClick={() =>
-                                moveContentBlock(lesson.id, block.id, 1)
-                              }
-                              disabled={blockIndex === lesson.blocks.length - 1}
-                              aria-label="Move sentence down"
-                              title="Move down"
-                              className="flex size-8 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200 disabled:cursor-not-allowed disabled:opacity-25"
-                            >
-                              <ArrowDown className="size-4" aria-hidden="true" />
+                              <Copy className="size-4" aria-hidden="true" />
                             </button>
                             <button
                               type="button"

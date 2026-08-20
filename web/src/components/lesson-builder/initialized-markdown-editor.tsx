@@ -8,6 +8,7 @@ import {
   HighlightToggle,
   ListsToggle,
   MDXEditor,
+  type MDXEditorMethods,
   Separator,
   UndoRedo,
   headingsPlugin,
@@ -21,7 +22,7 @@ import {
 } from "@mdxeditor/editor";
 import { usePublisher } from "@mdxeditor/gurx";
 import "@mdxeditor/editor/style.css";
-import { useMemo } from "react";
+import { useEffect, useMemo, useRef } from "react";
 
 type InitializedMarkdownEditorProps = {
   markdown: string;
@@ -56,6 +57,19 @@ export function InitializedMarkdownEditor({
   onChange,
   onBlur,
 }: InitializedMarkdownEditorProps) {
+  const editorRef = useRef<MDXEditorMethods>(null);
+
+  useEffect(() => {
+    const focusTimer = window.setTimeout(() => {
+      editorRef.current?.focus(undefined, {
+        defaultSelection: "rootEnd",
+        preventScroll: true,
+      });
+    }, 0);
+
+    return () => window.clearTimeout(focusTimer);
+  }, []);
+
   const plugins = useMemo(
     () => [
       headingsPlugin({ allowedHeadingLevels: [1, 2, 3] }),
@@ -86,6 +100,7 @@ export function InitializedMarkdownEditor({
 
   return (
     <MDXEditor
+      ref={editorRef}
       markdown={markdown}
       onChange={onChange}
       onBlur={onBlur}

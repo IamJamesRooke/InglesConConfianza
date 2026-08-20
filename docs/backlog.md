@@ -28,6 +28,7 @@ Build the smallest useful JSON-backed lesson-authoring foundation. Let actual ha
 - [x] Turn `Practice` into the first lesson-running flow with focused step navigation, reusable sentence practice, keyboard controls, rendered explanation Markdown, and authorable keyboard-shortcut callouts.
 - [x] Refine the Practice response loop with reliable backward navigation, centered explanations, immediate per-answer success styling, learner-controlled sentence advancement, and prominent neutral post-answer feedback.
 - [x] Make multi-block sentence practice automatically fit available card width and wrap responsively instead of using a fixed two-column layout.
+- [x] Streamline Lesson Builder authoring with one expanded content block at a time, compact clickable summaries, handle-only block reordering, duplication with fresh nested IDs, creation autofocus, keyboard-assisted explanation closing, and lesson-deletion confirmation.
 - [ ] Build five representative lessons as the first vertical slice.
     - [ ] Include straightforward vocabulary retrieval.
     - [ ] Include a Spanish-to-English one-to-many mapping.
@@ -53,6 +54,14 @@ Build the smallest useful JSON-backed lesson-authoring foundation. Let actual ha
 - [ ] Build the smallest complete application flow: choose a lesson, answer Spanish-to-English text boxes, receive feedback, and save progress.
 - [ ] Use authoring friction and learner evidence to decide which mapping hub or curriculum branch to normalize next.
 - [ ] Continue bounded mapping work, beginning with the English **get** hub only when the lesson slice needs it.
+
+## Database modeling considerations
+
+- [ ] Derive each lesson's newly introduced concepts and words from stable concept references and the current lesson order.
+    - [ ] Treat the earliest ordered occurrence of a concept as its first course exposure; do not rely on the author remembering to move or remove an `introduced` tag.
+    - [ ] Recompute first-exposure status whenever lessons or concept-bearing blocks are added, removed, moved, or reordered. For example, moving the first **to speak** block from Lesson 2 to Lesson 1 must make Lesson 1 its introduction automatically.
+    - [ ] Decide whether `introduced` remains an authored pedagogical role, becomes a computed status, or is split into separate authored-intent and derived-first-exposure fields. Avoid storing two editable sources of truth for the same fact.
+    - [ ] Use the derived result to show the new concepts and words introduced by each lesson in Practice and authoring views.
 
 ## Later
 
