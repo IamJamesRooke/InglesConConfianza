@@ -49,10 +49,10 @@
         {
           "id": "block_34c88335-797e-4c5d-afc2-d4d4ee5390e6",
           "type": "sentence",
-          "promptLabel": "",
-          "promptText": "",
+          "promptLabel": "this is the eyebrow",
+          "promptText": "and this is the prompt text",
           "helperText": "Una palabra en español, dos palabras en inglés.",
-          "answerFeedback": null,
+          "answerFeedback": "and this is the answer feedback",
           "conceptLinks": [],
           "languageBlocks": [
             {

@@ -34,6 +34,7 @@ Build the smallest useful JSON-backed lesson-authoring foundation. Let actual ha
 - [x] Intentionally clear the prototype lessons and experimental curriculum graph while preserving their versioned JSON schemas, establishing a clean starting point for new handcrafted lessons and later curriculum-database population.
 - [x] Keep Practice and author previews on the same lesson runner, autofocus the first learner answer, support live and rendered `==highlight==` syntax, and keep invalid Sentence blocks open and unavailable for preview until their issues are resolved.
 - [x] Add `Alt+Up` and `Alt+Down` navigation between lesson content blocks, a first-position insertion control, issue-only status badges, and prominent bottom-aligned context hints in authoring and learner views.
+- [x] Polish the learner lesson runner with clearer lesson hierarchy, compact content-aware cards, one consistent footer navigation system, platform-style keycaps, unobtrusive corner hints, readable teaching notes, and distinct input, hint, context, and feedback states.
 - [ ] Build five representative lessons as the first vertical slice.
     - [ ] Include straightforward vocabulary retrieval.
     - [ ] Include a Spanish-to-English one-to-many mapping.
@@ -96,6 +97,14 @@ Build the smallest useful JSON-backed lesson-authoring foundation. Let actual ha
 - [ ] Continue evidence-based cutting, collation, and sequencing across the curriculum.
 - [ ] Design spaced repetition from real exposure and error data.
 - [ ] Add mastery gates, per-question feedback, and progress visualization after the basic learning loop works.
+- [ ] Show students an estimated completion time for each lesson, such as “3 minutos.”
+    - [ ] Derive the estimate from lesson structure and expected learner interaction time rather than requiring authors to maintain it manually.
+    - [ ] Define initial timing weights for explanation reading, sentence answering, hints, and expected retries, then calibrate the formula against real completion data when learner analytics exist.
+    - [ ] Decide where estimates should appear on lesson cards and inside the active lesson without adding unnecessary pressure for the learner.
+- [ ] Make displayed keyboard shortcuts adapt to the learner's operating system.
+    - [ ] Detect macOS, Windows, and other platforms without storing unnecessary device information.
+    - [ ] Display familiar platform-specific modifier names and symbols, such as `⌥` or `⌘` on macOS and `Alt` or `Ctrl` on Windows and Linux.
+    - [ ] Keep shortcut reminders, tooltips, keycaps, and actual keyboard handling driven by one shared shortcut definition so displayed instructions cannot drift from behavior.
 - [ ] Evaluate authentication, payments, deployment, security testing, and broader product infrastructure only when the MVP requires them.
 - [ ] Document the teaching methodology and repository setup for maintainers and portfolio review.
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { Lightbulb, Sun } from "lucide-react";
+import { CheckCircle2, Info, Lightbulb, Sun } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import type { SentenceBlock } from "@/lib/lesson-builder/types";
@@ -136,28 +136,43 @@ export function SentencePracticeCard({
   }
 
   const isSingleLanguageBlock = sentence.languageBlocks.length === 1;
+  const hasAuthoredPrompt = Boolean(
+    sentence.promptLabel.trim() || sentence.promptText?.trim(),
+  );
 
   return (
-    <div className="mx-auto max-w-4xl rounded-3xl border border-border bg-[var(--surface)] p-8 shadow-sm sm:p-10">
+    <div
+      className={`mx-auto rounded-3xl border border-border bg-[var(--surface)] shadow-sm ${
+        isSingleLanguageBlock
+          ? "max-w-2xl p-6 sm:p-7"
+          : "max-w-4xl p-8 sm:p-10"
+      }`}
+    >
       {sentence.promptLabel.trim() && (
         <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
           {sentence.promptLabel}
         </p>
       )}
       {sentence.promptText?.trim() && (
-        <h3 className="mt-2 whitespace-pre-wrap text-3xl font-semibold leading-tight text-foreground sm:text-4xl">
+        <h3 className="mt-2 max-w-2xl whitespace-pre-wrap text-2xl font-semibold leading-tight text-foreground sm:text-3xl">
           {sentence.promptText}
         </h3>
       )}
+      {!hasAuthoredPrompt && (
+        <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+          Escribe en inglés
+        </p>
+      )}
 
       {sentence.languageBlocks.length > 0 ? (
-        <div
-          className={`mt-8 grid gap-x-8 gap-y-9 ${
-            isSingleLanguageBlock
-              ? "mx-auto max-w-xl"
-              : "grid-cols-[repeat(auto-fit,minmax(min(100%,12rem),1fr))]"
-          }`}
-        >
+        <>
+          <div
+            className={`${hasAuthoredPrompt ? "mt-7" : "mt-5"} grid gap-x-8 gap-y-7 ${
+              isSingleLanguageBlock
+                ? "mx-auto max-w-xl"
+                : "grid-cols-[repeat(auto-fit,minmax(min(100%,12rem),1fr))]"
+            }`}
+          >
           {sentence.languageBlocks.map((languageBlock, languageBlockIndex) => (
             <div
               key={languageBlock.id}
@@ -186,7 +201,7 @@ export function SentencePracticeCard({
                   }}
                   aria-label={`Traducción de ${languageBlock.spanish || `bloque ${languageBlockIndex + 1}`}`}
                   autoComplete="off"
-                  className={`w-full rounded-2xl border px-5 py-5 pr-14 text-center text-2xl font-semibold outline-none transition-colors focus:ring-4 focus:ring-ring/25 ${
+                  className={`w-full rounded-2xl border px-5 py-5 text-center text-2xl font-semibold outline-none transition-colors focus:ring-4 focus:ring-ring/25 ${
                     correctAnswers[languageBlockIndex] &&
                     helpedBlockIndex !== languageBlockIndex
                       ? "border-emerald-500 bg-emerald-50 text-emerald-950 ring-4 ring-emerald-500/15 dark:border-emerald-500 dark:bg-emerald-950/35 dark:text-emerald-100"
@@ -199,14 +214,21 @@ export function SentencePracticeCard({
                   type="button"
                   onClick={() => showHelp(languageBlockIndex)}
                   aria-label={`Mostrar pista para ${languageBlock.spanish || `bloque ${languageBlockIndex + 1}`}`}
-                  title="Mostrar pista"
-                  className={`absolute right-3 top-1/2 flex size-8 -translate-y-1/2 shrink-0 items-center justify-center rounded-full transition ${
+                  title="Mostrar pista (Alt+H)"
+                  className={`absolute -right-2 -top-2 flex size-9 items-center justify-center rounded-full border shadow-sm transition hover:scale-105 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-amber-400/50 ${
                     helpedBlockIndex === languageBlockIndex
-                      ? "bg-primary/10 text-primary"
-                      : "text-muted-foreground/70 hover:bg-muted hover:text-foreground"
+                      ? "border-amber-500 bg-amber-300 text-amber-950"
+                      : "border-amber-300 bg-amber-100 text-amber-700 hover:border-amber-400 hover:bg-amber-200 hover:text-amber-900 dark:border-amber-700 dark:bg-amber-950 dark:text-amber-300 dark:hover:bg-amber-900"
                   }`}
                 >
-                  <Lightbulb className="size-4" aria-hidden="true" />
+                  <Lightbulb
+                    className={`size-5 ${
+                      helpedBlockIndex === languageBlockIndex
+                        ? "fill-amber-500"
+                        : "fill-amber-300 dark:fill-amber-700"
+                    }`}
+                    aria-hidden="true"
+                  />
                 </button>
               </div>
               {languageBlock.callout?.trim() && (
@@ -222,7 +244,8 @@ export function SentencePracticeCard({
               )}
             </div>
           ))}
-        </div>
+          </div>
+        </>
       ) : (
         <p className="rounded-lg border border-dashed border-border bg-background px-4 py-6 text-center text-sm font-medium text-destructive">
           Agrega un bloque de idioma para previsualizar esta frase.
@@ -230,14 +253,32 @@ export function SentencePracticeCard({
       )}
 
       {sentence.helperText?.trim() && (
-        <p className="mt-5 text-sm text-muted-foreground">
-          {sentence.helperText}
-        </p>
+        <aside className="mx-auto mt-4 max-w-xl rounded-xl border border-violet-200 bg-violet-50/70 px-4 py-3 text-left text-violet-950 dark:border-violet-800 dark:bg-violet-950/35 dark:text-violet-100">
+          <div className="flex items-start gap-2.5">
+            <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-violet-100/80 text-violet-700 dark:bg-violet-900/80 dark:text-violet-300">
+              <Info className="size-4" aria-hidden="true" />
+            </span>
+            <div className="min-w-0">
+              <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-violet-700 dark:text-violet-300">
+                Ten en cuenta
+              </p>
+              <p className="mt-0.5 text-sm font-medium leading-5.5 text-violet-950 dark:text-violet-100">
+                {sentence.helperText}
+              </p>
+            </div>
+          </div>
+        </aside>
       )}
 
       {hasFeedback && isFeedbackVisible && (
-        <div className="mt-6 whitespace-pre-wrap rounded-2xl border border-border bg-muted/60 p-5 text-center text-xl font-semibold leading-8 text-foreground shadow-sm">
-          {sentence.answerFeedback}
+        <div className="mx-auto mt-5 max-w-xl border-t border-emerald-200 px-2 pt-4 text-center text-foreground dark:border-emerald-800">
+          <p className="flex items-start justify-center gap-2.5 whitespace-pre-wrap text-lg font-semibold leading-7 sm:text-xl sm:leading-8">
+            <CheckCircle2
+              className="mt-1 size-5 shrink-0 text-emerald-600 dark:text-emerald-300"
+              aria-hidden="true"
+            />
+            <span>{sentence.answerFeedback}</span>
+          </p>
         </div>
       )}
     </div>

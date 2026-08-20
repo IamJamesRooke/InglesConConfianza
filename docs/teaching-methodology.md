@@ -50,6 +50,19 @@ One major inspiration is Mihaly Csikszentmihalyi's concept of **flow**: the lear
 
 This matters especially because the learner experience should compete with modern attention patterns. Practice should feel focused and paced like a short-form interaction without becoming shallow: no distractions, no admin chrome, one clear action, immediate response, and visible movement through the lesson.
 
+## The student is never wrong
+
+The learner may give an answer that does not yet match the target, but the student is never treated as wrong. An unsuccessful attempt is useful evidence about what bridge, hint, or repetition they need next—not a failure and never a source of shame.
+
+- Make every attempt feel safe. Do not scold, subtract points, play a failure sound, or use language and visuals that embarrass the learner.
+- Let the learner request help as many times as needed. Hints and revealed answers carry no penalty.
+- Treat using help as continued participation and forward movement, not as cheating or a lesser kind of success.
+- When an answer does not match, keep the response neutral and useful: preserve the learner's momentum, offer a smaller bridge, or let them try again immediately.
+- Design each interaction so it can end in a win. If retrieval does not happen today, repeated supported exposure can make it happen later.
+- Future learner analytics may use attempts and help requests to choose better review, but never to shame the learner or portray them as incapable.
+
+The product should communicate patient confidence: **you are not failing; you are still learning, and we will stay with you until this becomes familiar.**
+
 ## Discovery over memorization
 
 - Prefer reusable patterns over isolated vocabulary lists.
@@ -69,7 +82,7 @@ This matters especially because the learner experience should compete with moder
 - The learner should be able to type the answer directly.
 - Correct answers should be recognized while typing, visibly marked, and move the lesson forward automatically.
 - There is no penalty for an incorrect answer.
-- A learner can request help with a visible help control or the `Alt + H` shortcut.
+- A learner can request help as often as needed with a visible help control or the `Alt + H` shortcut, without penalty.
 - Help may briefly reveal the answer, then fade away so the learner can try again.
 - Accept natural alternatives when the lesson is teaching that variability.
 - Contractions are important. For example, accept both `I want to go` and `I wanna go` when the lesson is teaching that conversational contrast.

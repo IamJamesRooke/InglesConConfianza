@@ -61,17 +61,6 @@ export function LessonSelector({
     onCloseLesson?.();
   }, [onCloseLesson]);
 
-  const advanceStep = useCallback(() => {
-    if (!openLesson) {
-      return;
-    }
-
-    setIsCurrentSentenceComplete(false);
-    setCurrentStepIndex((currentIndex) =>
-      Math.min(currentIndex + 1, openLesson.blocks.length),
-    );
-  }, [openLesson]);
-
   const canManuallyAdvance =
     isComplete ||
     currentBlock?.type === "explanation" ||
@@ -320,9 +309,9 @@ export function LessonSelector({
         aria-labelledby="practice-lesson-title"
         tabIndex={-1}
       >
-        <div className="mx-auto flex min-h-screen w-full max-w-5xl flex-col px-5 py-5 sm:px-8">
-          <div className="shrink-0">
-            <div className="mb-4 flex items-center justify-between gap-4">
+        <div className="mx-auto flex min-h-screen w-full max-w-5xl flex-col px-5 pt-5 sm:px-8 sm:pt-6">
+          <header className="shrink-0">
+            <div className="flex items-center justify-between gap-4">
               <button
                 type="button"
                 onClick={closeLessonPractice}
@@ -341,20 +330,27 @@ export function LessonSelector({
                 <Keyboard className="size-4" aria-hidden="true" />
                 Atajos
               </button>
-              <div className="text-right text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+            </div>
+            <div className="mt-5 flex items-end justify-between gap-6">
+              <div className="min-w-0">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                  Lección {openLesson.lessonNumber}
+                </p>
+                <h2
+                  id="practice-lesson-title"
+                  className="mt-1 truncate text-xl font-semibold tracking-tight text-foreground sm:text-2xl"
+                >
+                  {openLesson.name || `Lección ${openLesson.lessonNumber}`}
+                </h2>
+              </div>
+              <p className="shrink-0 pb-0.5 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
                 {isComplete
                   ? "Completa"
-                  : `${currentStepIndex + 1} / ${Math.max(totalSteps, 1)}`}
-              </div>
-            </div>
-            <div className="mb-2 flex items-center justify-between gap-4 text-sm font-medium text-muted-foreground">
-              <h2 id="practice-lesson-title">
-                Lección {openLesson.lessonNumber}
-                {openLesson.name ? ` · ${openLesson.name}` : ""}
-              </h2>
+                  : `Paso ${currentStepIndex + 1} de ${Math.max(totalSteps, 1)}`}
+              </p>
             </div>
             <div
-              className="h-2 overflow-hidden rounded-full bg-muted"
+              className="mt-4 h-2.5 overflow-hidden rounded-full bg-muted"
               role="progressbar"
               aria-label="Progreso de la lección"
               aria-valuemin={0}
@@ -366,9 +362,9 @@ export function LessonSelector({
                 style={{ width: `${progressPercent}%` }}
               />
             </div>
-          </div>
+          </header>
 
-          <div className="flex flex-1 items-center py-8 sm:py-12">
+          <div className="flex flex-1 items-center py-8 sm:pb-16 sm:pt-10">
             <div className="w-full">
               {isComplete ? (
                 <div
@@ -396,7 +392,6 @@ export function LessonSelector({
               ) : currentBlock?.type === "explanation" ? (
                 <PracticeExplanationStep
                   markdown={currentBlock.contentMarkdown}
-                  onContinue={advanceStep}
                 />
               ) : currentBlock?.type === "sentence" ? (
                 <SentencePracticeCard
@@ -408,44 +403,32 @@ export function LessonSelector({
             </div>
           </div>
 
-          <div className="flex shrink-0 items-center justify-between gap-3 pb-2">
+          <footer className="-mx-5 flex shrink-0 items-start justify-between gap-3 border-t border-border bg-background/95 px-5 py-3.5 backdrop-blur sm:-mx-8 sm:px-8">
             <button
               type="button"
               onClick={goToPreviousStep}
               disabled={currentStepIndex === 0}
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-[var(--surface)] px-4 py-2.5 text-sm font-semibold text-muted-foreground shadow-sm transition hover:bg-muted hover:text-foreground disabled:cursor-not-allowed disabled:opacity-30 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/30"
+              className="inline-flex min-w-32 items-center justify-center gap-2 rounded-full border border-border bg-[var(--surface)] px-4 py-2.5 text-sm font-semibold text-muted-foreground shadow-sm transition hover:bg-muted hover:text-foreground disabled:cursor-not-allowed disabled:opacity-30 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/30"
             >
               <ArrowLeft className="size-4" aria-hidden="true" />
               Anterior
             </button>
-            <div className="hidden text-center text-xs text-muted-foreground sm:block">
-              {currentBlock?.type === "sentence"
-                ? isCurrentSentenceComplete
-                  ? "¡Muy bien! Presiona Enter o Siguiente cuando estés listo."
-                  : "Responde correctamente para continuar. PageUp siempre vuelve atrás."
-                : "Enter, → o PageDown para continuar."}
+            <div className="flex min-w-32 flex-col items-center gap-1.5">
+              <button
+                type="button"
+                onClick={goToNextStep}
+                disabled={!canManuallyAdvance || isComplete}
+                className="inline-flex min-w-32 items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-30 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/30"
+              >
+                {currentStepIndex >= totalSteps - 1 ? "Terminar" : "Siguiente"}
+                <ArrowRight className="size-4" aria-hidden="true" />
+              </button>
+              {canManuallyAdvance && !isComplete && (
+                <PracticeKey>Enter</PracticeKey>
+              )}
             </div>
-            <button
-              type="button"
-              onClick={goToNextStep}
-              disabled={!canManuallyAdvance || isComplete}
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-30 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/30"
-            >
-              {currentStepIndex >= totalSteps - 1 ? "Terminar" : "Siguiente"}
-              <ArrowRight className="size-4" aria-hidden="true" />
-            </button>
-          </div>
+          </footer>
         </div>
-
-        <button
-          type="button"
-          onClick={() => setIsShortcutReminderOpen(true)}
-          aria-label="Ver atajos de teclado"
-          title="Atajos de teclado (Alt+K)"
-          className="fixed bottom-5 right-5 z-10 flex size-12 items-center justify-center rounded-full border border-border bg-popover text-popover-foreground shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/30"
-        >
-          <Keyboard className="size-5" aria-hidden="true" />
-        </button>
 
         {isShortcutReminderOpen && (
           <PracticeShortcutReminder
@@ -601,31 +584,26 @@ function PracticeShortcutReminderRow({
   );
 }
 
+function PracticeKey({ children }: { children: string }) {
+  return (
+    <kbd className="inline-flex min-w-6 items-center justify-center rounded-md border border-border bg-[var(--surface)] px-1.5 py-1 font-mono text-[10px] font-semibold leading-none text-foreground shadow-sm">
+      {children}
+    </kbd>
+  );
+}
+
 function PracticeExplanationStep({
   markdown,
-  onContinue,
 }: {
   markdown: string;
-  onContinue: () => void;
 }) {
   return (
-    <div className="mx-auto max-w-3xl rounded-3xl border border-border bg-[var(--surface)] p-8 shadow-sm sm:p-10">
+    <div className="mx-auto w-full max-w-xl rounded-3xl border border-border bg-[var(--surface)] px-6 py-8 text-center shadow-sm sm:px-10 sm:py-9">
       {markdown.trim() ? (
         <PracticeMarkdown markdown={markdown} />
       ) : (
         <p className="text-muted-foreground">Explicación vacía</p>
       )}
-      <button
-        type="button"
-        onClick={onContinue}
-        className="mt-8 inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/30"
-      >
-        Continuar
-        <ArrowRight className="size-4" aria-hidden="true" />
-      </button>
-      <p className="mt-3 text-xs text-muted-foreground">
-        Presiona Enter para continuar.
-      </p>
     </div>
   );
 }
