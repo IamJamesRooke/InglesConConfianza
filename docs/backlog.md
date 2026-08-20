@@ -23,6 +23,7 @@ Build the smallest useful JSON-backed lesson-authoring foundation. Let actual ha
 - [x] Add global settings with persistent theme selection and theme-aware surface layers for clearer Lesson Builder visual hierarchy.
 - [x] Retire the initial SQLite/demo lesson prototype in favor of JSON-backed handcrafted lesson authoring while the curriculum database is redesigned from real lesson examples.
 - [x] Add the first experimental curriculum graph draft with directional Spanish-to-English and English-to-Spanish mapping cards, lesson evidence, and speaking-priority metadata.
+- [x] Begin keyboard-first Lesson Builder ergonomics with `Alt+N`, a keyboard shortcut reminder, and a small no-behavior-change refactor to keep authoring work maintainable.
 - [ ] Build five representative lessons as the first vertical slice.
     - [ ] Include straightforward vocabulary retrieval.
     - [ ] Include a Spanish-to-English one-to-many mapping.

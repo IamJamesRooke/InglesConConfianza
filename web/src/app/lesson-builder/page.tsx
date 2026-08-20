@@ -10,6 +10,7 @@ import {
   Eye,
   FileText,
   GripVertical,
+  Keyboard,
   Languages,
   Lightbulb,
   Pencil,
@@ -24,233 +25,32 @@ import {
   useRef,
   useState,
   type DragEvent,
-  type ReactNode,
 } from "react";
 
+import { HotkeyReminder } from "@/components/lesson-builder/hotkey-reminder";
 import { MarkdownEditor } from "@/components/lesson-builder/markdown-editor";
-
-type DropTarget = {
-  lessonId: string;
-  position: "before" | "after";
-};
-
-type Lesson = {
-  id: string;
-  name: string | null;
-  blocks: LessonBlock[];
-};
-
-type ExplanationBlock = {
-  id: string;
-  type: "explanation";
-  contentMarkdown: string;
-};
-
-type SentenceBlock = {
-  id: string;
-  type: "sentence";
-  promptLabel: string;
-  promptText: string;
-  helperText: string;
-  answerFeedback: string | null;
-  conceptLinks: ConceptLink[];
-  languageBlocks: LanguageBlock[];
-};
-
-type LanguageBlock = {
-  id: string;
-  spanish: string;
-  callout: string | null;
-  acceptedAnswers: string[];
-  conceptLinks: ConceptLink[];
-};
-
-type LessonBlock = ExplanationBlock | SentenceBlock;
-
-type LessonFile = {
-  version: 1;
-  lessons: Lesson[];
-};
-
-type ConceptRole =
-  | "primary"
-  | "introduced"
-  | "reinforced"
-  | "required"
-  | "incidental";
-
-type ConceptType =
-  | "mapping"
-  | "vocabulary"
-  | "grammar_pattern"
-  | "morpheme"
-  | "concept_group";
-
-type MappingDirection =
-  | "es_to_en"
-  | "en_to_es"
-  | "bidirectional"
-  | "not_directional";
-
-type ConceptLink = {
-  id: string;
-  label: string;
-  type: ConceptType;
-  direction: MappingDirection;
-  sourceText: string;
-  targetText: string;
-  contextLabel: string;
-  role: ConceptRole;
-};
-
-const conceptRoleOptions = [
-  { value: "primary", label: "Primary" },
-  { value: "introduced", label: "Introduced" },
-  { value: "reinforced", label: "Reinforced" },
-  { value: "required", label: "Required" },
-  { value: "incidental", label: "Incidental" },
-] satisfies Array<{ value: ConceptRole; label: string }>;
-
-const conceptTypeOptions = [
-  { value: "mapping", label: "Mapping" },
-  { value: "vocabulary", label: "Vocabulary" },
-  { value: "grammar_pattern", label: "Grammar pattern" },
-  { value: "morpheme", label: "Morpheme" },
-  { value: "concept_group", label: "Concept group" },
-] satisfies Array<{ value: ConceptType; label: string }>;
-
-const mappingDirectionOptions = [
-  { value: "es_to_en", label: "Spanish → English" },
-  { value: "en_to_es", label: "English → Spanish" },
-  { value: "bidirectional", label: "Both directions" },
-  { value: "not_directional", label: "Not directional" },
-] satisfies Array<{ value: MappingDirection; label: string }>;
-
-function normalizeAnswer(answer: string) {
-  return answer.trim().replace(/\s+/g, " ").toLocaleLowerCase();
-}
-
-function renderOverviewMarkdown(markdown: string): ReactNode {
-  const lines = markdown
-    .split(/\r?\n/u)
-    .map((line) => line.replace(/^#{1,6}\s*/u, "").trim())
-    .filter(Boolean);
-
-  return lines.map((line, lineIndex) => {
-    const parts = line.split(/(==[^=]+==)/u);
-
-    return (
-      <p key={`${line}-${lineIndex}`} className="whitespace-pre-wrap">
-        {parts.map((part, partIndex) =>
-          part.startsWith("==") && part.endsWith("==") ? (
-            <strong
-              key={`${part}-${partIndex}`}
-              className="font-bold text-stone-900"
-            >
-              {part.slice(2, -2)}
-            </strong>
-          ) : (
-            part
-          ),
-        )}
-      </p>
-    );
-  });
-}
-
-function createId(prefix: string) {
-  return `${prefix}_${crypto.randomUUID()}`;
-}
-
-function createConceptLink(): ConceptLink {
-  return {
-    id: createId("concept_link"),
-    label: "",
-    type: "mapping",
-    direction: "es_to_en",
-    sourceText: "",
-    targetText: "",
-    contextLabel: "",
-    role: "introduced",
-  };
-}
-
-function normalizeConceptLink(conceptLink: Partial<ConceptLink>): ConceptLink {
-  return {
-    id: conceptLink.id ?? createId("concept_link"),
-    label: conceptLink.label ?? "",
-    type: conceptLink.type ?? "mapping",
-    direction: conceptLink.direction ?? "es_to_en",
-    sourceText: conceptLink.sourceText ?? "",
-    targetText: conceptLink.targetText ?? "",
-    contextLabel: conceptLink.contextLabel ?? "",
-    role: conceptLink.role ?? "introduced",
-  };
-}
-
-function normalizeLessons(lessons: Lesson[]) {
-  return lessons.map((lesson) => ({
-    ...lesson,
-    blocks: lesson.blocks.map((block) => {
-      if (block.type === "explanation") {
-        return block;
-      }
-
-      return {
-        ...block,
-        conceptLinks: (block.conceptLinks ?? []).map(normalizeConceptLink),
-        languageBlocks: block.languageBlocks.map((languageBlock) => ({
-          ...languageBlock,
-          conceptLinks: (languageBlock.conceptLinks ?? []).map(
-            normalizeConceptLink,
-          ),
-        })),
-      };
-    }),
-  }));
-}
-
-function getAnswerValidationMessage(
-  answers: string[],
-  answerIndex: number,
-) {
-  const normalizedAnswer = normalizeAnswer(answers[answerIndex] ?? "");
-
-  if (!normalizedAnswer) {
-    return answerIndex === 0
-      ? "Primary English answer is required."
-      : "Complete or remove this alternative.";
-  }
-
-  const duplicateCount = answers.filter(
-    (answer) => normalizeAnswer(answer) === normalizedAnswer,
-  ).length;
-
-  return duplicateCount > 1 ? "This answer is duplicated." : null;
-}
-
-function getSentenceValidationIssueCount(sentence: SentenceBlock) {
-  if (sentence.languageBlocks.length === 0) {
-    return 1;
-  }
-
-  return sentence.languageBlocks.reduce((issueCount, languageBlock) => {
-    const spanishIssueCount = languageBlock.spanish.trim() ? 0 : 1;
-    const answerIssueCount = languageBlock.acceptedAnswers.reduce(
-      (answerIssues, _, answerIndex) =>
-        answerIssues +
-        (getAnswerValidationMessage(
-          languageBlock.acceptedAnswers,
-          answerIndex,
-        )
-          ? 1
-          : 0),
-      0,
-    );
-
-    return issueCount + spanishIssueCount + answerIssueCount;
-  }, 0);
-}
+import { OverviewMarkdown } from "@/components/lesson-builder/overview-markdown";
+import type {
+  ConceptLink,
+  ConceptRole,
+  ConceptType,
+  DropTarget,
+  Lesson,
+  LessonFile,
+  MappingDirection,
+  SentenceBlock,
+} from "@/lib/lesson-builder/types";
+import {
+  conceptRoleOptions,
+  conceptTypeOptions,
+  createConceptLink,
+  createId,
+  getAnswerValidationMessage,
+  getSentenceValidationIssueCount,
+  mappingDirectionOptions,
+  normalizeAnswer,
+  normalizeLessons,
+} from "@/lib/lesson-builder/utils";
 
 function SentenceLearnerPreview({ sentence }: { sentence: SentenceBlock }) {
   const [answers, setAnswers] = useState<string[]>(() =>
@@ -481,6 +281,7 @@ export default function LessonBuilderPage() {
   const [previewSentenceBlocks, setPreviewSentenceBlocks] = useState(
     () => new Set<string>(),
   );
+  const [isHotkeyReminderOpen, setIsHotkeyReminderOpen] = useState(false);
   const languageBlockSpanishRefs = useRef(
     new Map<string, HTMLInputElement>(),
   );
@@ -563,12 +364,54 @@ export default function LessonBuilderPage() {
     }
   }
 
-  function createLesson() {
+  const createLesson = useCallback(() => {
+    const lessonId = createId("lesson");
+
     setLessons((currentLessons) => [
       ...currentLessons,
-      { id: createId("lesson"), name: null, blocks: [] },
+      { id: lessonId, name: null, blocks: [] },
     ]);
-  }
+    setCollapsedLessons((currentLessonIds) => {
+      const nextLessonIds = new Set(currentLessonIds);
+      nextLessonIds.delete(lessonId);
+      return nextLessonIds;
+    });
+  }, []);
+
+  useEffect(() => {
+    function handleLessonBuilderShortcut(event: KeyboardEvent) {
+      if (
+        event.altKey &&
+        !event.ctrlKey &&
+        !event.metaKey &&
+        event.key.toLowerCase() === "n" &&
+        !event.repeat &&
+        !event.isComposing
+      ) {
+        event.preventDefault();
+        createLesson();
+        return;
+      }
+
+      if (
+        event.altKey &&
+        !event.ctrlKey &&
+        !event.metaKey &&
+        event.key.toLowerCase() === "k" &&
+        !event.repeat &&
+        !event.isComposing
+      ) {
+        event.preventDefault();
+        setIsHotkeyReminderOpen(true);
+      }
+    }
+
+    document.addEventListener("keydown", handleLessonBuilderShortcut);
+
+    return () => {
+      document.removeEventListener("keydown", handleLessonBuilderShortcut);
+    };
+  }, [createLesson]);
 
   function renameLesson(lessonId: string, name: string) {
     setLessons((currentLessons) =>
@@ -1566,7 +1409,9 @@ export default function LessonBuilderPage() {
                         {block.type === "explanation" ? (
                           <div className="space-y-0 text-sm leading-5 text-foreground">
                             {block.contentMarkdown.trim() ? (
-                              renderOverviewMarkdown(block.contentMarkdown)
+                              <OverviewMarkdown
+                                markdown={block.contentMarkdown}
+                              />
                             ) : (
                               <p>Empty explanation</p>
                             )}
@@ -2863,14 +2708,32 @@ export default function LessonBuilderPage() {
         <button
           type="button"
           onClick={createLesson}
+          title="Create new lesson (Alt+N)"
           className="group flex min-h-40 w-full items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-stone-300 bg-white px-6 text-lg font-semibold text-stone-700 shadow-sm transition hover:border-violet-400 hover:bg-violet-50 hover:text-violet-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-violet-200"
         >
           <span className="flex size-10 items-center justify-center rounded-full bg-stone-100 transition group-hover:bg-violet-100">
             <Plus className="size-5" aria-hidden="true" />
           </span>
           Create new lesson
+          <kbd className="rounded-md border border-stone-200 bg-stone-100 px-2 py-1 text-xs font-semibold text-stone-500">
+            Alt+N
+          </kbd>
         </button>
       </div>
+
+      <button
+        type="button"
+        onClick={() => setIsHotkeyReminderOpen(true)}
+        aria-label="Show keyboard shortcuts"
+        title="Keyboard shortcuts (Alt+K)"
+        className="fixed bottom-5 right-5 z-40 flex size-12 items-center justify-center rounded-full border border-border bg-popover text-popover-foreground shadow-lg transition hover:-translate-y-0.5 hover:bg-muted focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/30"
+      >
+        <Keyboard className="size-5" aria-hidden="true" />
+      </button>
+
+      {isHotkeyReminderOpen && (
+        <HotkeyReminder onClose={() => setIsHotkeyReminderOpen(false)} />
+      )}
     </main>
   );
 }
