@@ -155,7 +155,7 @@ export function SentencePracticeCard({
           className={`mt-8 grid gap-x-8 gap-y-9 ${
             isSingleLanguageBlock
               ? "mx-auto max-w-xl"
-              : "sm:grid-cols-2"
+              : "grid-cols-[repeat(auto-fit,minmax(min(100%,12rem),1fr))]"
           }`}
         >
           {sentence.languageBlocks.map((languageBlock, languageBlockIndex) => (

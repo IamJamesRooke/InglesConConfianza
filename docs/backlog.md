@@ -27,6 +27,7 @@ Build the smallest useful JSON-backed lesson-authoring foundation. Let actual ha
 - [x] Add the admin `Practice` page skeleton and improve Lesson Builder scanning with partial/header-only collapse modes plus single-lesson and all-lesson keyboard shortcuts.
 - [x] Turn `Practice` into the first lesson-running flow with focused step navigation, reusable sentence practice, keyboard controls, rendered explanation Markdown, and authorable keyboard-shortcut callouts.
 - [x] Refine the Practice response loop with reliable backward navigation, centered explanations, immediate per-answer success styling, learner-controlled sentence advancement, and prominent neutral post-answer feedback.
+- [x] Make multi-block sentence practice automatically fit available card width and wrap responsively instead of using a fixed two-column layout.
 - [ ] Build five representative lessons as the first vertical slice.
     - [ ] Include straightforward vocabulary retrieval.
     - [ ] Include a Spanish-to-English one-to-many mapping.
