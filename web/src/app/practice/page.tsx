@@ -1,4 +1,68 @@
-export default function PracticePage() {
+import { readFile } from "node:fs/promises";
+import path from "node:path";
+
+import {
+  LessonSelector,
+  type PracticeLesson,
+} from "@/components/practice/lesson-selector";
+import type { Lesson, LessonFile } from "@/lib/lesson-builder/types";
+
+export const dynamic = "force-dynamic";
+
+async function getLessons() {
+  try {
+    const file = await readFile(
+      path.join(process.cwd(), "data", "lessons.json"),
+      "utf8",
+    );
+    const lessonFile = JSON.parse(file) as LessonFile;
+    return lessonFile.lessons;
+  } catch {
+    return [];
+  }
+}
+
+function getLessonPreviewText(lesson: Lesson) {
+  const firstSentenceBlock = lesson.blocks.find(
+    (block) => block.type === "sentence",
+  );
+
+  if (firstSentenceBlock) {
+    return firstSentenceBlock.languageBlocks
+      .map((languageBlock) => languageBlock.spanish.trim())
+      .filter(Boolean)
+      .join(" ");
+  }
+
+  const firstExplanationBlock = lesson.blocks.find(
+    (block) => block.type === "explanation",
+  );
+
+  return firstExplanationBlock?.contentMarkdown
+    .replace(/^#{1,6}\s*/gmu, "")
+    .replace(/==([^=]+)==/gu, "$1")
+    .trim() ?? "";
+}
+
+function getPracticeLessonSummaries(lessons: Lesson[]) {
+  return lessons.map<PracticeLesson>((lesson, lessonIndex) => ({
+    id: lesson.id,
+    lessonNumber: lessonIndex + 1,
+    name: lesson.name,
+    explanationCount: lesson.blocks.filter(
+      (block) => block.type === "explanation",
+    ).length,
+    sentenceCount: lesson.blocks.filter((block) => block.type === "sentence")
+      .length,
+    previewText: getLessonPreviewText(lesson),
+    blocks: lesson.blocks,
+  }));
+}
+
+export default async function PracticePage() {
+  const lessons = await getLessons();
+  const lessonSummaries = getPracticeLessonSummaries(lessons);
+
   return (
     <main className="min-h-screen bg-background px-6 py-12 text-foreground">
       <div className="mx-auto max-w-5xl">
@@ -7,9 +71,14 @@ export default function PracticePage() {
             Inglés Con Confianza
           </p>
           <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-            Practice
+            Práctica
           </h1>
+          <p className="mt-3 max-w-2xl text-muted-foreground">
+            Elige una lección guardada para practicar.
+          </p>
         </div>
+
+        <LessonSelector lessons={lessonSummaries} />
       </div>
     </main>
   );

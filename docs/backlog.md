@@ -1,6 +1,6 @@
 # Backlog
 
-> Last updated: 2026-08-19. This file contains current decisions and executable work only. Completed migration detail is preserved in the [curriculum migration log](history/curriculum-migration-log.md).
+> Last updated: 2026-08-20. This file contains current decisions and executable work only. Completed migration detail is preserved in the [curriculum migration log](history/curriculum-migration-log.md).
 
 ## Current objective
 
@@ -25,6 +25,7 @@ Build the smallest useful JSON-backed lesson-authoring foundation. Let actual ha
 - [x] Add the first experimental curriculum graph draft with directional Spanish-to-English and English-to-Spanish mapping cards, lesson evidence, and speaking-priority metadata.
 - [x] Begin keyboard-first Lesson Builder ergonomics with `Alt+N`, a keyboard shortcut reminder, and a small no-behavior-change refactor to keep authoring work maintainable.
 - [x] Add the admin `Practice` page skeleton and improve Lesson Builder scanning with partial/header-only collapse modes plus single-lesson and all-lesson keyboard shortcuts.
+- [x] Turn `Practice` into the first lesson-running flow with focused step navigation, reusable sentence practice, keyboard controls, rendered explanation Markdown, and authorable keyboard-shortcut callouts.
 - [ ] Build five representative lessons as the first vertical slice.
     - [ ] Include straightforward vocabulary retrieval.
     - [ ] Include a Spanish-to-English one-to-many mapping.

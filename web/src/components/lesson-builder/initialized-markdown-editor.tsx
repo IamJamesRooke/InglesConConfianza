@@ -3,6 +3,7 @@
 import {
   BlockTypeSelect,
   BoldItalicUnderlineToggles,
+  ButtonWithTooltip,
   CreateLink,
   HighlightToggle,
   ListsToggle,
@@ -10,6 +11,7 @@ import {
   Separator,
   UndoRedo,
   headingsPlugin,
+  insertMarkdown$,
   linkDialogPlugin,
   linkPlugin,
   listsPlugin,
@@ -17,6 +19,7 @@ import {
   quotePlugin,
   toolbarPlugin,
 } from "@mdxeditor/editor";
+import { usePublisher } from "@mdxeditor/gurx";
 import "@mdxeditor/editor/style.css";
 import { useMemo } from "react";
 
@@ -25,6 +28,28 @@ type InitializedMarkdownEditorProps = {
   onChange: (markdown: string) => void;
   onBlur: () => void;
 };
+
+function InsertKeyboardShortcut() {
+  const insertMarkdown = usePublisher(insertMarkdown$);
+
+  function insertKeyboardShortcut() {
+    const shortcut = window.prompt("Keyboard shortcut", "Alt + H")?.trim();
+
+    if (shortcut) {
+      insertMarkdown(`\\<kbd>${shortcut}\\</kbd>`);
+    }
+  }
+
+  return (
+    <ButtonWithTooltip
+      title="Insert keyboard shortcut"
+      aria-label="Insert keyboard shortcut"
+      onClick={insertKeyboardShortcut}
+    >
+      <span className="font-mono text-[11px] font-semibold">Kbd</span>
+    </ButtonWithTooltip>
+  );
+}
 
 export function InitializedMarkdownEditor({
   markdown,
@@ -51,6 +76,7 @@ export function InitializedMarkdownEditor({
             <Separator />
             <ListsToggle options={["bullet", "number"]} />
             <CreateLink />
+            <InsertKeyboardShortcut />
           </>
         ),
       }),

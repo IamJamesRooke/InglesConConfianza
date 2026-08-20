@@ -13,14 +13,14 @@
         {
           "id": "block_7d2c4ade-6e49-46f1-bec6-e9c03661879c",
           "type": "explanation",
-          "contentMarkdown": "==Yo== es ==I==."
+          "contentMarkdown": "# ¿Olvidaste la respuesta?\n\n\\<kbd>Alt + H\\</kbd> para recibir una pista.\n\nNo hay penalización por errores."
         },
         {
           "id": "block_dd3d34da-c19a-451e-85d9-b3e001e86828",
           "type": "sentence",
-          "promptLabel": "Label",
-          "promptText": "Prompt Text",
-          "helperText": "This is some helper text.",
+          "promptLabel": "",
+          "promptText": "yo es I",
+          "helperText": "",
           "answerFeedback": null,
           "languageBlocks": [
             {

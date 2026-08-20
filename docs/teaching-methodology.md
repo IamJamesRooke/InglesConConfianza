@@ -35,6 +35,21 @@ The core lesson rhythm is:
 
 The application should feel like a patient teacher guiding a live conversation, not like a worksheet full of instructions.
 
+## Flow, challenge, and momentum
+
+One major inspiration is Mihaly Csikszentmihalyi's concept of **flow**: the learner should stay in the sweet spot where the task is not so easy that it becomes boring and not so difficult that it becomes frustrating.
+
+- Lessons should create constant small wins.
+- Progress should feel incremental, visible, and earned.
+- Each step should ask for one reachable action, then quickly move forward.
+- If a learner is getting everything instantly, increase challenge by combining known pieces into larger phrases.
+- If a learner stalls, reduce difficulty with hints, smaller blocks, clearer contrast, or a near-identical easier question.
+- Avoid long stretches of passive reading before the learner gets to act.
+- Do not punish mistakes; use them as signals that the next step needs a smaller bridge.
+- The ideal Practice rhythm is rapid but not frantic: glance, understand, answer, win, continue.
+
+This matters especially because the learner experience should compete with modern attention patterns. Practice should feel focused and paced like a short-form interaction without becoming shallow: no distractions, no admin chrome, one clear action, immediate response, and visible movement through the lesson.
+
 ## Discovery over memorization
 
 - Prefer reusable patterns over isolated vocabulary lists.
