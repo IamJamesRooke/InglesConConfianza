@@ -35,7 +35,7 @@ Build the smallest useful JSON-backed lesson-authoring foundation. Let actual ha
 - [x] Keep Practice and author previews on the same lesson runner, autofocus the first learner answer, support live and rendered `==highlight==` syntax, and keep invalid Sentence blocks open and unavailable for preview until their issues are resolved.
 - [x] Add `Alt+Up` and `Alt+Down` navigation between lesson content blocks, a first-position insertion control, issue-only status badges, and prominent bottom-aligned context hints in authoring and learner views.
 - [x] Polish the learner lesson runner with clearer lesson hierarchy, compact content-aware cards, one consistent footer navigation system, platform-style keycaps, unobtrusive corner hints, readable teaching notes, and distinct input, hint, context, and feedback states.
-- [x] Add compact Markdown authoring for sentence labels, prompts, helper text, and answer feedback; place language cards first in the sentence editor; render that formatting consistently for learners; and turn each completed answer's hint control into a locked success check.
+- [x] Add compact Markdown authoring for sentence labels, prompts, helper text, and answer feedback; place language cards first in the sentence editor; group empty optional fields behind concise add controls; render formatting consistently for learners; and turn each completed answer's hint control into a locked success check.
 - [ ] Build five representative lessons as the first vertical slice.
     - [ ] Include straightforward vocabulary retrieval.
     - [ ] Include a Spanish-to-English one-to-many mapping.

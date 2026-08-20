@@ -148,6 +148,24 @@ function SentenceMarkdownFieldEditor({
       ? "border-emerald-200 bg-emerald-50/45 text-emerald-800"
       : "border-violet-200 bg-violet-50/45 text-violet-800";
 
+  if (!isOpen && !markdown.trim()) {
+    return (
+      <button
+        type="button"
+        onClick={onOpen}
+        className={`flex min-h-11 w-full items-center justify-between gap-3 rounded-xl border border-dashed px-3 py-2 text-left transition hover:bg-white focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-current/15 ${toneClasses}`}
+      >
+        <span className="text-[11px] font-semibold uppercase tracking-[0.12em]">
+          {label}
+        </span>
+        <span className="flex shrink-0 items-center gap-1 text-xs font-semibold">
+          <Plus className="size-3.5" aria-hidden="true" />
+          Add
+        </span>
+      </button>
+    );
+  }
+
   return (
     <section className={`overflow-hidden rounded-xl border ${toneClasses}`}>
       <div className="flex min-h-10 items-center justify-between gap-3 px-3 py-2">
@@ -2698,8 +2716,15 @@ export default function LessonBuilderPage() {
                         {!isContentBlockCollapsed && (
                         <div className="flex flex-col p-6">
                             <div className="order-2 mt-4 space-y-3">
+                              <div className="flex items-center gap-3 text-stone-400">
+                                <span className="h-px flex-1 bg-stone-200" />
+                                <span className="text-[10px] font-semibold uppercase tracking-[0.18em]">
+                                  Optional fields
+                                </span>
+                                <span className="h-px flex-1 bg-stone-200" />
+                              </div>
                               <SentenceMarkdownFieldEditor
-                                label="Label (optional)"
+                                label="Label"
                                 markdown={block.promptLabel}
                                 placeholder="For example: Tu turno"
                                 isOpen={
@@ -2729,7 +2754,7 @@ export default function LessonBuilderPage() {
                                 }
                               />
                               <SentenceMarkdownFieldEditor
-                                label="Prompt (optional)"
+                                label="Prompt"
                                 markdown={block.promptText}
                                 placeholder="For example: ¿Cómo se dice “Estoy preparando”?"
                                 isOpen={
@@ -3498,7 +3523,7 @@ export default function LessonBuilderPage() {
                           </div>
                           <div className="order-3 mt-3">
                             <SentenceMarkdownFieldEditor
-                              label="Helper text (optional)"
+                              label="Helper text"
                               markdown={block.helperText ?? ""}
                               placeholder="For example: No hay penalización por equivocarse."
                               isOpen={
@@ -3530,7 +3555,7 @@ export default function LessonBuilderPage() {
                           </div>
                           <div className="order-4 mt-3">
                             <SentenceMarkdownFieldEditor
-                              label="Answer feedback (optional)"
+                              label="Answer feedback"
                               markdown={block.answerFeedback ?? ""}
                               placeholder="For example: Correcto. Ahora puedes usar la frase completa."
                               tone="emerald"
