@@ -272,6 +272,9 @@ export default function LessonBuilderPage() {
   const [collapsedLessons, setCollapsedLessons] = useState(
     () => new Set<string>(),
   );
+  const [fullyCollapsedLessons, setFullyCollapsedLessons] = useState(
+    () => new Set<string>(),
+  );
   const [collapsedContentBlocks, setCollapsedContentBlocks] = useState(
     () => new Set<string>(),
   );
@@ -282,6 +285,7 @@ export default function LessonBuilderPage() {
     () => new Set<string>(),
   );
   const [isHotkeyReminderOpen, setIsHotkeyReminderOpen] = useState(false);
+  const [activeLessonId, setActiveLessonId] = useState<string | null>(null);
   const languageBlockSpanishRefs = useRef(
     new Map<string, HTMLInputElement>(),
   );
@@ -310,6 +314,8 @@ export default function LessonBuilderPage() {
           savedLessonsJsonRef.current = lessonsJson;
           setLessons(lessons);
           setCollapsedLessons(new Set(lessons.map((lesson) => lesson.id)));
+          setFullyCollapsedLessons(new Set());
+          setActiveLessonId(lessons[0]?.id ?? null);
           setIsDirty(false);
           setSaveStatus("idle");
         }
@@ -341,7 +347,11 @@ export default function LessonBuilderPage() {
     }
   }, [isLoadingLessons, lessons, saveStatus]);
 
-  async function saveLessons() {
+  const saveLessons = useCallback(async () => {
+    if (isLoadingLessons || !isDirty || saveStatus === "saving") {
+      return;
+    }
+
     setSaveStatus("saving");
 
     try {
@@ -362,7 +372,107 @@ export default function LessonBuilderPage() {
     } catch {
       setSaveStatus("error");
     }
+  }, [isDirty, isLoadingLessons, lessons, saveStatus]);
+
+  function isInteractiveLessonTarget(target: EventTarget | null) {
+    return (
+      target instanceof HTMLElement &&
+      Boolean(
+        target.closest(
+          "a, button, input, textarea, select, [role='button'], [draggable='true']",
+        ),
+      )
+    );
   }
+
+  const openLessonEditor = useCallback((lessonId: string) => {
+    setCollapsedLessons((currentLessonIds) => {
+      const nextLessonIds = new Set(currentLessonIds);
+      nextLessonIds.delete(lessonId);
+      return nextLessonIds;
+    });
+    setFullyCollapsedLessons((currentLessonIds) => {
+      const nextLessonIds = new Set(currentLessonIds);
+      nextLessonIds.delete(lessonId);
+      return nextLessonIds;
+    });
+  }, []);
+
+  const cycleLessonDisplayMode = useCallback((lessonId: string) => {
+    const isFullyCollapsed = fullyCollapsedLessons.has(lessonId);
+
+    setCollapsedLessons((currentLessonIds) => {
+      const nextLessonIds = new Set(currentLessonIds);
+      nextLessonIds.add(lessonId);
+      return nextLessonIds;
+    });
+    setFullyCollapsedLessons((currentLessonIds) => {
+      const nextLessonIds = new Set(currentLessonIds);
+      if (isFullyCollapsed) {
+        nextLessonIds.delete(lessonId);
+      } else {
+        nextLessonIds.add(lessonId);
+      }
+      return nextLessonIds;
+    });
+  }, [fullyCollapsedLessons]);
+
+  const cycleActiveLessonCollapseMode = useCallback(() => {
+    const lessonId =
+      lessons.find((lesson) => lesson.id === activeLessonId)?.id ??
+      lessons[0]?.id;
+
+    if (lessonId) {
+      const isFullyCollapsed = fullyCollapsedLessons.has(lessonId);
+
+      setCollapsedLessons((currentLessonIds) => {
+        const nextLessonIds = new Set(currentLessonIds);
+        nextLessonIds.add(lessonId);
+        return nextLessonIds;
+      });
+      setFullyCollapsedLessons((currentLessonIds) => {
+        const nextLessonIds = new Set(currentLessonIds);
+        if (isFullyCollapsed) {
+          nextLessonIds.delete(lessonId);
+        } else {
+          nextLessonIds.add(lessonId);
+        }
+        return nextLessonIds;
+      });
+    }
+  }, [activeLessonId, fullyCollapsedLessons, lessons]);
+
+  const cycleAllLessonDisplayModes = useCallback(() => {
+    const lessonIds = lessons.map((lesson) => lesson.id);
+
+    if (lessonIds.length === 0) {
+      return;
+    }
+
+    const areAllPartiallyCollapsed = lessonIds.every(
+      (lessonId) =>
+        collapsedLessons.has(lessonId) &&
+        !fullyCollapsedLessons.has(lessonId),
+    );
+    const areAllFullyCollapsed = lessonIds.every((lessonId) =>
+      fullyCollapsedLessons.has(lessonId),
+    );
+
+    if (areAllPartiallyCollapsed) {
+      setCollapsedLessons(new Set(lessonIds));
+      setFullyCollapsedLessons(new Set(lessonIds));
+      return;
+    }
+
+    if (areAllFullyCollapsed) {
+      setCollapsedLessons(new Set(lessonIds));
+      setFullyCollapsedLessons(new Set());
+      return;
+    }
+
+    setCollapsedLessons(new Set(lessonIds));
+    setFullyCollapsedLessons(new Set());
+  }, [collapsedLessons, fullyCollapsedLessons, lessons]);
 
   const createLesson = useCallback(() => {
     const lessonId = createId("lesson");
@@ -376,6 +486,12 @@ export default function LessonBuilderPage() {
       nextLessonIds.delete(lessonId);
       return nextLessonIds;
     });
+    setFullyCollapsedLessons((currentLessonIds) => {
+      const nextLessonIds = new Set(currentLessonIds);
+      nextLessonIds.delete(lessonId);
+      return nextLessonIds;
+    });
+    setActiveLessonId(lessonId);
   }, []);
 
   useEffect(() => {
@@ -390,6 +506,45 @@ export default function LessonBuilderPage() {
       ) {
         event.preventDefault();
         createLesson();
+        return;
+      }
+
+      if (
+        event.altKey &&
+        event.ctrlKey &&
+        !event.metaKey &&
+        event.key.toLowerCase() === "m" &&
+        !event.repeat &&
+        !event.isComposing
+      ) {
+        event.preventDefault();
+        cycleAllLessonDisplayModes();
+        return;
+      }
+
+      if (
+        event.altKey &&
+        !event.ctrlKey &&
+        !event.metaKey &&
+        event.key.toLowerCase() === "m" &&
+        !event.repeat &&
+        !event.isComposing
+      ) {
+        event.preventDefault();
+        cycleActiveLessonCollapseMode();
+        return;
+      }
+
+      if (
+        event.altKey &&
+        !event.ctrlKey &&
+        !event.metaKey &&
+        event.key.toLowerCase() === "s" &&
+        !event.repeat &&
+        !event.isComposing
+      ) {
+        event.preventDefault();
+        void saveLessons();
         return;
       }
 
@@ -411,7 +566,12 @@ export default function LessonBuilderPage() {
     return () => {
       document.removeEventListener("keydown", handleLessonBuilderShortcut);
     };
-  }, [createLesson]);
+  }, [
+    createLesson,
+    cycleActiveLessonCollapseMode,
+    cycleAllLessonDisplayModes,
+    saveLessons,
+  ]);
 
   function renameLesson(lessonId: string, name: string) {
     setLessons((currentLessons) =>
@@ -435,18 +595,14 @@ export default function LessonBuilderPage() {
       nextLessonIds.delete(lessonId);
       return nextLessonIds;
     });
-  }
-
-  function toggleLesson(lessonId: string) {
-    setCollapsedLessons((currentLessonIds) => {
+    setFullyCollapsedLessons((currentLessonIds) => {
       const nextLessonIds = new Set(currentLessonIds);
-      if (nextLessonIds.has(lessonId)) {
-        nextLessonIds.delete(lessonId);
-      } else {
-        nextLessonIds.add(lessonId);
-      }
+      nextLessonIds.delete(lessonId);
       return nextLessonIds;
     });
+    setActiveLessonId((currentLessonId) =>
+      currentLessonId === lessonId ? null : currentLessonId,
+    );
   }
 
   function toggleContentBlock(lessonId: string, blockId: string) {
@@ -1288,6 +1444,7 @@ export default function LessonBuilderPage() {
             type="button"
             onClick={saveLessons}
             disabled={isLoadingLessons || !isDirty || saveStatus === "saving"}
+            title="Save lessons (Alt+S)"
             className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-45 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
           >
             <Save className="size-4" aria-hidden="true" />
@@ -1299,6 +1456,9 @@ export default function LessonBuilderPage() {
           const lessonNumber = lessonIndex + 1;
           const isDragging = draggedLessonId === lesson.id;
           const isLessonCollapsed = collapsedLessons.has(lesson.id);
+          const isLessonFullyCollapsed = fullyCollapsedLessons.has(lesson.id);
+          const isLessonEditableOnClick =
+            isLessonCollapsed || isLessonFullyCollapsed;
           const dropPosition =
             dropTarget && dropTarget.lessonId === lesson.id
               ? dropTarget.position
@@ -1308,6 +1468,16 @@ export default function LessonBuilderPage() {
             <section
               key={lesson.id}
               aria-label={`Lesson ${lessonNumber}`}
+              onMouseEnter={() => setActiveLessonId(lesson.id)}
+              onFocusCapture={() => setActiveLessonId(lesson.id)}
+              onClick={(event) => {
+                if (
+                  isLessonEditableOnClick &&
+                  !isInteractiveLessonTarget(event.target)
+                ) {
+                  openLessonEditor(lesson.id);
+                }
+              }}
               onDragOver={(event) => updateDropTarget(event, lesson.id)}
               onDrop={(event) => {
                 event.preventDefault();
@@ -1317,7 +1487,9 @@ export default function LessonBuilderPage() {
                 finishDragging();
               }}
               className={`relative w-full overflow-hidden rounded-2xl border bg-[var(--surface)] shadow-md transition ${
-                isLessonCollapsed ? "" : "min-h-72"
+                isLessonEditableOnClick
+                  ? "cursor-pointer hover:-translate-y-0.5 hover:border-violet-300 hover:shadow-lg hover:ring-4 hover:ring-violet-100/60"
+                  : "min-h-72"
               } ${
                 isDragging
                   ? "border-violet-300 opacity-45 shadow-none"
@@ -1349,15 +1521,17 @@ export default function LessonBuilderPage() {
                 />
                 <button
                   type="button"
-                  onClick={() => toggleLesson(lesson.id)}
-                  aria-label={`${isLessonCollapsed ? "Expand" : "Collapse"} lesson ${lessonNumber}`}
-                  title={isLessonCollapsed ? "Expand lesson" : "Collapse lesson"}
+                  onClick={() => cycleLessonDisplayMode(lesson.id)}
+                  aria-label={`Cycle lesson ${lessonNumber} display mode`}
+                  title="Cycle display mode (Alt+M)"
                   className="flex size-9 shrink-0 items-center justify-center rounded-lg text-stone-500 transition hover:bg-stone-200 hover:text-stone-700 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-violet-200"
                 >
-                  {isLessonCollapsed ? (
+                  {!isLessonCollapsed ? (
+                    <ChevronUp className="size-4" aria-hidden="true" />
+                  ) : isLessonFullyCollapsed ? (
                     <ChevronDown className="size-4" aria-hidden="true" />
                   ) : (
-                    <ChevronUp className="size-4" aria-hidden="true" />
+                    <ChevronDown className="size-4 rotate-90" aria-hidden="true" />
                   )}
                 </button>
                 <button
@@ -1390,7 +1564,7 @@ export default function LessonBuilderPage() {
                 </button>
               </header>
 
-              {isLessonCollapsed && (
+              {isLessonCollapsed && !isLessonFullyCollapsed && (
                 <div className="space-y-3 border-t border-border bg-[var(--surface)] px-6 py-3">
                   {lesson.blocks.length === 0 ? (
                     <p className="text-sm text-muted-foreground">
@@ -1402,7 +1576,7 @@ export default function LessonBuilderPage() {
                         key={block.id}
                         className={
                           block.type === "explanation"
-                            ? "rounded-lg bg-stone-200 px-3 py-2 text-stone-800"
+                            ? "rounded-lg bg-[var(--surface-sunken)] px-3 py-2 text-foreground"
                             : "px-1"
                         }
                       >

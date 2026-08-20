@@ -183,7 +183,7 @@ export default async function Home() {
             Inglés Con Confianza
           </p>
           <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-            Course Contents
+            Curriculum
           </h1>
         </div>
 

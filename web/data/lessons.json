@@ -29,9 +29,11 @@
               "callout": null,
               "acceptedAnswers": [
                 "I"
-              ]
+              ],
+              "conceptLinks": []
             }
-          ]
+          ],
+          "conceptLinks": []
         },
         {
           "id": "block_8e944303-67ab-4456-9f35-e85f2a347c16",
@@ -52,9 +54,11 @@
               "callout": null,
               "acceptedAnswers": [
                 "I want"
-              ]
+              ],
+              "conceptLinks": []
             }
-          ]
+          ],
+          "conceptLinks": []
         },
         {
           "id": "block_07d6d175-cd98-4906-a6c1-448432012c54",
@@ -75,7 +79,8 @@
               "callout": null,
               "acceptedAnswers": [
                 "I want"
-              ]
+              ],
+              "conceptLinks": []
             },
             {
               "id": "lang_2385f60b-fca3-49d1-bd6f-e2c0aefd05af",
@@ -83,9 +88,11 @@
               "callout": null,
               "acceptedAnswers": [
                 "to eat."
-              ]
+              ],
+              "conceptLinks": []
             }
-          ]
+          ],
+          "conceptLinks": []
         },
         {
           "id": "block_813dfcc4-e511-4b30-ac11-79b4fd25200e",
@@ -106,7 +113,8 @@
               "callout": null,
               "acceptedAnswers": [
                 "some"
-              ]
+              ],
+              "conceptLinks": []
             },
             {
               "id": "lang_ec492827-2132-400b-b599-6391fb8b927b",
@@ -114,7 +122,8 @@
               "callout": null,
               "acceptedAnswers": [
                 "thing"
-              ]
+              ],
+              "conceptLinks": []
             },
             {
               "id": "lang_392dbecc-d99d-4950-a574-76fd8ac2e96c",
@@ -122,7 +131,93 @@
               "callout": "\"alguna cosa\", pero una palabra",
               "acceptedAnswers": [
                 "something"
-              ]
+              ],
+              "conceptLinks": []
+            }
+          ],
+          "conceptLinks": []
+        }
+      ]
+    },
+    {
+      "id": "lesson_4bc64143-1934-4deb-a0fc-46a585a6f959",
+      "name": "Second Demo Lesson",
+      "blocks": [
+        {
+          "id": "block_78913c86-4f4e-420b-87df-2cc7ff050bb4",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "Hablar es to speak.\nOtra traducción es to talk, pero por ahora, sólo vamos a usar to speak.",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_de298cbc-7423-4506-b9c9-a332d23da408",
+              "spanish": "hablar",
+              "callout": null,
+              "acceptedAnswers": [
+                "to speak"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_12046718-176e-47ce-a5ed-cb0723526a08",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "Con es with y contigo es with you, dos palabras.",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_5374dad4-b278-49c3-b116-209320d966c7",
+              "spanish": "contigo",
+              "callout": null,
+              "acceptedAnswers": [
+                "with you"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_36ebc98a-2b99-4aac-a398-320748dceb9e",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "Armemos la frase.",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_6fb6a036-9c22-46dc-818d-6fee795c4d28",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_8cefe58f-f9f3-4b49-a17e-d8116b89584c",
+              "spanish": "hablar",
+              "callout": null,
+              "acceptedAnswers": [
+                "to speak"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_894e89bd-3819-49e7-94c7-eb15e12e4a7e",
+              "spanish": "contigo.",
+              "callout": null,
+              "acceptedAnswers": [
+                "with you."
+              ],
+              "conceptLinks": []
             }
           ]
         }

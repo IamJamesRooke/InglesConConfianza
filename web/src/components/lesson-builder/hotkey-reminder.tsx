@@ -50,6 +50,15 @@ export function HotkeyReminder({
             keys={["Alt", "N"]}
             description="Create a new lesson"
           />
+          <HotkeyReminderRow
+            keys={["Alt", "M"]}
+            description="Toggle active lesson collapsed form"
+          />
+          <HotkeyReminderRow
+            keys={["Ctrl", "Alt", "M"]}
+            description="Toggle all lesson collapsed forms"
+          />
+          <HotkeyReminderRow keys={["Alt", "S"]} description="Save lessons" />
         </div>
       </div>
     </div>

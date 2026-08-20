@@ -49,17 +49,17 @@ export function SiteHeader() {
         </Link>
 
         <nav className="flex items-center gap-1 rounded-full bg-background/45 p-1 text-sm font-medium shadow-inner">
-          <Link
-            href="/"
-            className={linkClassName("/")}
-          >
-            Contenido del curso
+          <Link href="/practice" className={linkClassName("/practice")}>
+            Practice
           </Link>
           <Link
             href="/lesson-builder"
             className={linkClassName("/lesson-builder")}
           >
             Lesson Builder
+          </Link>
+          <Link href="/" className={linkClassName("/")}>
+            Curriculum
           </Link>
         </nav>
 
