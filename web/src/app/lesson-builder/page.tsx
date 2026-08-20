@@ -9,7 +9,6 @@ import {
   GripVertical,
   Keyboard,
   Languages,
-  Pencil,
   Plus,
   Save,
   Trash2,
@@ -26,7 +25,10 @@ import {
 
 import { HotkeyReminder } from "@/components/lesson-builder/hotkey-reminder";
 import { MarkdownEditor } from "@/components/lesson-builder/markdown-editor";
-import { SentencePracticeCard } from "@/components/practice/sentence-practice-card";
+import {
+  LessonSelector,
+  type PracticeLesson,
+} from "@/components/practice/lesson-selector";
 import { OverviewMarkdown } from "@/components/lesson-builder/overview-markdown";
 import type {
   ConceptLink,
@@ -51,15 +53,32 @@ import {
 function ContentBlockPicker({
   onAddExplanation,
   onAddSentence,
+  onClose,
 }: {
   onAddExplanation: () => void;
   onAddSentence: () => void;
+  onClose: () => void;
 }) {
   return (
-    <div className="rounded-xl border border-stone-200 bg-stone-50 p-4 shadow-sm">
-      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">
-        Choose a block type
-      </p>
+    <div
+      role="group"
+      aria-label="Choose a block type"
+      className="rounded-xl border border-stone-200 bg-stone-50 p-4 shadow-sm"
+    >
+      <div className="mb-3 flex items-center justify-between gap-3">
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-stone-500">
+          Choose a block type
+        </p>
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Close block picker"
+          title="Close (Esc)"
+          className="flex size-7 items-center justify-center rounded-md text-stone-400 transition hover:bg-stone-200 hover:text-stone-700 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-violet-200"
+        >
+          <X className="size-4" aria-hidden="true" />
+        </button>
+      </div>
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         <button
           type="button"
@@ -100,6 +119,9 @@ function ContentBlockPicker({
 
 export default function LessonBuilderPage() {
   const [lessons, setLessons] = useState<Lesson[]>([]);
+  const [savedLessonsSnapshot, setSavedLessonsSnapshot] = useState<Lesson[]>(
+    [],
+  );
   const [isLoadingLessons, setIsLoadingLessons] = useState(true);
   const [isDirty, setIsDirty] = useState(false);
   const [saveStatus, setSaveStatus] = useState<
@@ -143,17 +165,23 @@ export default function LessonBuilderPage() {
   const [collapsedLanguageBlocks, setCollapsedLanguageBlocks] = useState(
     () => new Set<string>(),
   );
-  const [previewSentenceBlocks, setPreviewSentenceBlocks] = useState(
-    () => new Set<string>(),
-  );
   const [isHotkeyReminderOpen, setIsHotkeyReminderOpen] = useState(false);
+  const [previewLessonId, setPreviewLessonId] = useState<string | null>(null);
+  const [previewBlockId, setPreviewBlockId] = useState<string | null>(null);
   const [activeLessonId, setActiveLessonId] = useState<string | null>(null);
+  const [savingLessonId, setSavingLessonId] = useState<string | null>(null);
+  const [isSavingLessonOrder, setIsSavingLessonOrder] = useState(false);
+  const [pendingLessonExitId, setPendingLessonExitId] = useState<string | null>(
+    null,
+  );
   const languageBlockSpanishRefs = useRef(
     new Map<string, HTMLInputElement>(),
   );
   const acceptedAnswerRefs = useRef(new Map<string, HTMLInputElement>());
   const languageBlockCalloutRefs = useRef(new Map<string, HTMLInputElement>());
   const savedLessonsJsonRef = useRef(JSON.stringify([]));
+  const pendingLessonExitActionRef = useRef<(() => void) | null>(null);
+  const bypassLessonExitWarningRef = useRef(false);
 
   useEffect(() => {
     let isMounted = true;
@@ -172,6 +200,7 @@ export default function LessonBuilderPage() {
         if (isMounted) {
           savedLessonsJsonRef.current = lessonsJson;
           setLessons(lessons);
+          setSavedLessonsSnapshot(lessons);
           setCollapsedLessons(new Set(lessons.map((lesson) => lesson.id)));
           setFullyCollapsedLessons(new Set());
           setCollapsedContentBlocks(
@@ -227,32 +256,148 @@ export default function LessonBuilderPage() {
     }
   }, [isLoadingLessons, lessons, saveStatus]);
 
-  const saveLessons = useCallback(async () => {
-    if (isLoadingLessons || !isDirty || saveStatus === "saving") {
+  useEffect(() => {
+    if (!isDirty) {
       return;
     }
 
+    function warnBeforeLeaving(event: BeforeUnloadEvent) {
+      event.preventDefault();
+    }
+
+    window.addEventListener("beforeunload", warnBeforeLeaving);
+    return () => window.removeEventListener("beforeunload", warnBeforeLeaving);
+  }, [isDirty]);
+
+  const saveLesson = useCallback(async (lessonId: string) => {
+    const lessonIndex = lessons.findIndex((lesson) => lesson.id === lessonId);
+    const lesson = lessons[lessonIndex];
+    const savedLesson = savedLessonsSnapshot.find(
+      (candidate) => candidate.id === lessonId,
+    );
+
+    if (
+      !lesson ||
+      isLoadingLessons ||
+      JSON.stringify(lesson) === JSON.stringify(savedLesson) ||
+      saveStatus === "saving"
+    ) {
+      return false;
+    }
+
     setSaveStatus("saving");
+    setSavingLessonId(lessonId);
 
     try {
-      const lessonFile: LessonFile = { version: 1, lessons };
-      const response = await fetch("/api/lesson-builder/lessons", {
+      const response = await fetch(
+        `/api/lesson-builder/lessons/${encodeURIComponent(lessonId)}`,
+        {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(lessonFile),
-      });
+          body: JSON.stringify({ lesson, insertionIndex: lessonIndex }),
+        },
+      );
 
       if (!response.ok) {
-        throw new Error("Unable to save lessons.");
+        throw new Error("Unable to save lesson.");
       }
 
-      savedLessonsJsonRef.current = JSON.stringify(lessons);
-      setIsDirty(false);
+      const lessonFile = (await response.json()) as LessonFile;
+      const savedLessons = normalizeLessons(lessonFile.lessons);
+      savedLessonsJsonRef.current = JSON.stringify(savedLessons);
+      setSavedLessonsSnapshot(savedLessons);
       setSaveStatus("saved");
+      return true;
     } catch {
       setSaveStatus("error");
+      return false;
+    } finally {
+      setSavingLessonId(null);
     }
-  }, [isDirty, isLoadingLessons, lessons, saveStatus]);
+  }, [
+    isLoadingLessons,
+    lessons,
+    savedLessonsSnapshot,
+    saveStatus,
+  ]);
+
+  const isLessonDirty = useCallback(
+    (lessonId: string) => {
+      const lesson = lessons.find((candidate) => candidate.id === lessonId);
+      const savedLesson = savedLessonsSnapshot.find(
+        (candidate) => candidate.id === lessonId,
+      );
+
+      return JSON.stringify(lesson) !== JSON.stringify(savedLesson);
+    },
+    [lessons, savedLessonsSnapshot],
+  );
+
+  const confirmDiscardLessonChanges = useCallback(
+    (lessonId: string, continueAction: () => void) => {
+      if (bypassLessonExitWarningRef.current) {
+        bypassLessonExitWarningRef.current = false;
+        return true;
+      }
+
+      if (!isLessonDirty(lessonId)) {
+        return true;
+      }
+
+      pendingLessonExitActionRef.current = continueAction;
+      setPendingLessonExitId(lessonId);
+      return false;
+    },
+    [isLessonDirty],
+  );
+
+  const continuePendingLessonExit = useCallback(() => {
+    const continueAction = pendingLessonExitActionRef.current;
+    pendingLessonExitActionRef.current = null;
+    setPendingLessonExitId(null);
+    bypassLessonExitWarningRef.current = true;
+    continueAction?.();
+  }, []);
+
+  const discardPendingLessonChanges = useCallback(() => {
+    if (!pendingLessonExitId) {
+      return;
+    }
+
+    const savedLesson = savedLessonsSnapshot.find(
+      (candidate) => candidate.id === pendingLessonExitId,
+    );
+
+    setLessons((currentLessons) =>
+      savedLesson
+        ? currentLessons.map((lesson) =>
+            lesson.id === pendingLessonExitId ? savedLesson : lesson,
+          )
+        : currentLessons.filter(
+            (lesson) => lesson.id !== pendingLessonExitId,
+          ),
+    );
+    continuePendingLessonExit();
+  }, [
+    continuePendingLessonExit,
+    pendingLessonExitId,
+    savedLessonsSnapshot,
+  ]);
+
+  const savePendingLessonChanges = useCallback(async () => {
+    if (!pendingLessonExitId) {
+      return;
+    }
+
+    if (await saveLesson(pendingLessonExitId)) {
+      continuePendingLessonExit();
+    }
+  }, [continuePendingLessonExit, pendingLessonExitId, saveLesson]);
+
+  const cancelPendingLessonExit = useCallback(() => {
+    pendingLessonExitActionRef.current = null;
+    setPendingLessonExitId(null);
+  }, []);
 
   function isInteractiveLessonTarget(target: EventTarget | null) {
     return (
@@ -265,51 +410,33 @@ export default function LessonBuilderPage() {
     );
   }
 
-  const openLessonEditor = useCallback((lessonId: string) => {
-    setCollapsedContentBlocks(
-      new Set(
-        lessons.flatMap((lesson) =>
-          lesson.blocks.map((block) => `${lesson.id}-${block.id}`),
+  const openLessonEditorNow = useCallback(
+    (lessonId: string) => {
+      setCollapsedContentBlocks(
+        new Set(
+          lessons.flatMap((lesson) =>
+            lesson.blocks.map((block) => `${lesson.id}-${block.id}`),
+          ),
         ),
-      ),
-    );
-    setCollapsedLessons((currentLessonIds) => {
-      const nextLessonIds = new Set(currentLessonIds);
-      nextLessonIds.delete(lessonId);
-      return nextLessonIds;
-    });
-    setFullyCollapsedLessons((currentLessonIds) => {
-      const nextLessonIds = new Set(currentLessonIds);
-      nextLessonIds.delete(lessonId);
-      return nextLessonIds;
-    });
-  }, [lessons]);
-
-  const cycleLessonDisplayMode = useCallback((lessonId: string) => {
-    const isFullyCollapsed = fullyCollapsedLessons.has(lessonId);
-
-    setCollapsedLessons((currentLessonIds) => {
-      const nextLessonIds = new Set(currentLessonIds);
-      nextLessonIds.add(lessonId);
-      return nextLessonIds;
-    });
-    setFullyCollapsedLessons((currentLessonIds) => {
-      const nextLessonIds = new Set(currentLessonIds);
-      if (isFullyCollapsed) {
+      );
+      setCollapsedLessons(
+        new Set(
+          lessons
+            .map((lesson) => lesson.id)
+            .filter((currentLessonId) => currentLessonId !== lessonId),
+        ),
+      );
+      setFullyCollapsedLessons((currentLessonIds) => {
+        const nextLessonIds = new Set(currentLessonIds);
         nextLessonIds.delete(lessonId);
-      } else {
-        nextLessonIds.add(lessonId);
-      }
-      return nextLessonIds;
-    });
-  }, [fullyCollapsedLessons]);
+        return nextLessonIds;
+      });
+    },
+    [lessons],
+  );
 
-  const cycleActiveLessonCollapseMode = useCallback(() => {
-    const lessonId =
-      lessons.find((lesson) => lesson.id === activeLessonId)?.id ??
-      lessons[0]?.id;
-
-    if (lessonId) {
+  const cycleLessonDisplayModeNow = useCallback(
+    (lessonId: string) => {
       const isFullyCollapsed = fullyCollapsedLessons.has(lessonId);
 
       setCollapsedLessons((currentLessonIds) => {
@@ -326,10 +453,76 @@ export default function LessonBuilderPage() {
         }
         return nextLessonIds;
       });
-    }
-  }, [activeLessonId, fullyCollapsedLessons, lessons]);
+    },
+    [fullyCollapsedLessons],
+  );
 
-  const cycleAllLessonDisplayModes = useCallback(() => {
+  const openLessonEditor = useCallback((lessonId: string) => {
+    const openLesson = lessons.find(
+      (lesson) => !collapsedLessons.has(lesson.id),
+    );
+
+    if (
+      openLesson &&
+      openLesson.id !== lessonId &&
+      !confirmDiscardLessonChanges(openLesson.id, () =>
+        openLessonEditorNow(lessonId),
+      )
+    ) {
+      return;
+    }
+
+    openLessonEditorNow(lessonId);
+  }, [
+    collapsedLessons,
+    confirmDiscardLessonChanges,
+    lessons,
+    openLessonEditorNow,
+  ]);
+
+  const cycleLessonDisplayMode = useCallback((lessonId: string) => {
+    if (
+      !collapsedLessons.has(lessonId) &&
+      !confirmDiscardLessonChanges(lessonId, () =>
+        cycleLessonDisplayModeNow(lessonId),
+      )
+    ) {
+      return;
+    }
+
+    cycleLessonDisplayModeNow(lessonId);
+  }, [
+    collapsedLessons,
+    confirmDiscardLessonChanges,
+    cycleLessonDisplayModeNow,
+  ]);
+
+  const cycleActiveLessonCollapseMode = useCallback(() => {
+    const lessonId =
+      lessons.find((lesson) => lesson.id === activeLessonId)?.id ??
+      lessons[0]?.id;
+
+    if (lessonId) {
+      if (
+        !collapsedLessons.has(lessonId) &&
+        !confirmDiscardLessonChanges(lessonId, () =>
+          cycleLessonDisplayModeNow(lessonId),
+        )
+      ) {
+        return;
+      }
+
+      cycleLessonDisplayModeNow(lessonId);
+    }
+  }, [
+    activeLessonId,
+    collapsedLessons,
+    confirmDiscardLessonChanges,
+    cycleLessonDisplayModeNow,
+    lessons,
+  ]);
+
+  const cycleAllLessonDisplayModesNow = useCallback(() => {
     const lessonIds = lessons.map((lesson) => lesson.id);
 
     if (lessonIds.length === 0) {
@@ -361,28 +554,177 @@ export default function LessonBuilderPage() {
     setFullyCollapsedLessons(new Set());
   }, [collapsedLessons, fullyCollapsedLessons, lessons]);
 
-  const createLesson = useCallback(() => {
+  const cycleAllLessonDisplayModes = useCallback(() => {
+    const openLesson = lessons.find(
+      (lesson) => !collapsedLessons.has(lesson.id),
+    );
+
+    if (
+      openLesson &&
+      !confirmDiscardLessonChanges(
+        openLesson.id,
+        cycleAllLessonDisplayModesNow,
+      )
+    ) {
+      return;
+    }
+
+    cycleAllLessonDisplayModesNow();
+  }, [
+    collapsedLessons,
+    confirmDiscardLessonChanges,
+    cycleAllLessonDisplayModesNow,
+    lessons,
+  ]);
+
+  const createLessonNow = useCallback(() => {
     const lessonId = createId("lesson");
 
     setLessons((currentLessons) => [
       ...currentLessons,
       { id: lessonId, name: null, blocks: [] },
     ]);
-    setCollapsedLessons((currentLessonIds) => {
-      const nextLessonIds = new Set(currentLessonIds);
-      nextLessonIds.delete(lessonId);
-      return nextLessonIds;
-    });
+    setCollapsedLessons(new Set(lessons.map((lesson) => lesson.id)));
     setFullyCollapsedLessons((currentLessonIds) => {
       const nextLessonIds = new Set(currentLessonIds);
       nextLessonIds.delete(lessonId);
       return nextLessonIds;
     });
     setActiveLessonId(lessonId);
-  }, []);
+  }, [lessons]);
+
+  const createLesson = useCallback(() => {
+    const openLesson = lessons.find(
+      (lesson) => !collapsedLessons.has(lesson.id),
+    );
+
+    if (
+      openLesson &&
+      !confirmDiscardLessonChanges(openLesson.id, createLessonNow)
+    ) {
+      return;
+    }
+
+    createLessonNow();
+  }, [
+    collapsedLessons,
+    confirmDiscardLessonChanges,
+    createLessonNow,
+    lessons,
+  ]);
+
+  const addExplanationBlock = useCallback(
+    (lessonId: string, insertionIndex: number) => {
+      const blockId = createId("block");
+
+      setLessons((currentLessons) =>
+        currentLessons.map((lesson) => {
+          if (lesson.id !== lessonId) {
+            return lesson;
+          }
+
+          return {
+            ...lesson,
+            blocks: lesson.blocks.toSpliced(insertionIndex, 0, {
+              id: blockId,
+              type: "explanation",
+              contentMarkdown: "",
+            }),
+          };
+        }),
+      );
+      setCollapsedContentBlocks(
+        new Set(
+          lessons.flatMap((lesson) =>
+            lesson.blocks.map((block) => `${lesson.id}-${block.id}`),
+          ),
+        ),
+      );
+      setOpenBlockPicker(null);
+    },
+    [lessons],
+  );
+
+  const addSentenceBlock = useCallback(
+    (lessonId: string, insertionIndex: number) => {
+      const blockId = createId("block");
+      const languageBlockId = createId("lang");
+
+      setLessons((currentLessons) =>
+        currentLessons.map((lesson) => {
+          if (lesson.id !== lessonId) {
+            return lesson;
+          }
+
+          return {
+            ...lesson,
+            blocks: lesson.blocks.toSpliced(insertionIndex, 0, {
+              id: blockId,
+              type: "sentence",
+              promptLabel: "",
+              promptText: "",
+              helperText: "",
+              answerFeedback: null,
+              conceptLinks: [],
+              languageBlocks: [
+                {
+                  id: languageBlockId,
+                  spanish: "",
+                  callout: null,
+                  acceptedAnswers: [""],
+                  conceptLinks: [],
+                },
+              ],
+            }),
+          };
+        }),
+      );
+      setCollapsedContentBlocks(
+        new Set(
+          lessons.flatMap((lesson) =>
+            lesson.blocks.map((block) => `${lesson.id}-${block.id}`),
+          ),
+        ),
+      );
+      setOpenBlockPicker(null);
+
+      window.setTimeout(() => {
+        languageBlockSpanishRefs.current
+          .get(`${lessonId}-${blockId}-${languageBlockId}`)
+          ?.focus();
+      }, 0);
+    },
+    [lessons],
+  );
 
   useEffect(() => {
     function handleLessonBuilderShortcut(event: KeyboardEvent) {
+      if (
+        event.key === "Escape" &&
+        !event.repeat &&
+        !event.isComposing &&
+        pendingLessonExitId
+      ) {
+        event.preventDefault();
+        cancelPendingLessonExit();
+        return;
+      }
+
+      if (pendingLessonExitId) {
+        return;
+      }
+
+      if (
+        event.key === "Escape" &&
+        !event.repeat &&
+        !event.isComposing &&
+        openBlockPicker
+      ) {
+        event.preventDefault();
+        setOpenBlockPicker(null);
+        return;
+      }
+
       if (
         event.key === "Escape" &&
         !event.repeat &&
@@ -398,6 +740,33 @@ export default function LessonBuilderPage() {
             ),
           ),
         );
+        return;
+      }
+
+      if (
+        event.altKey &&
+        !event.ctrlKey &&
+        !event.metaKey &&
+        ["e", "p"].includes(event.key.toLowerCase()) &&
+        !event.repeat &&
+        !event.isComposing
+      ) {
+        event.preventDefault();
+
+        const targetLesson =
+          lessons.find((lesson) => !collapsedLessons.has(lesson.id)) ??
+          lessons.find((lesson) => lesson.id === activeLessonId) ??
+          lessons[0];
+
+        if (targetLesson) {
+          openLessonEditor(targetLesson.id);
+
+          if (event.key.toLowerCase() === "e") {
+            addExplanationBlock(targetLesson.id, targetLesson.blocks.length);
+          } else {
+            addSentenceBlock(targetLesson.id, targetLesson.blocks.length);
+          }
+        }
         return;
       }
 
@@ -449,7 +818,13 @@ export default function LessonBuilderPage() {
         !event.isComposing
       ) {
         event.preventDefault();
-        void saveLessons();
+        const targetLesson =
+          lessons.find((lesson) => !collapsedLessons.has(lesson.id)) ??
+          lessons.find((lesson) => lesson.id === activeLessonId);
+
+        if (targetLesson && isLessonDirty(targetLesson.id)) {
+          void saveLesson(targetLesson.id);
+        }
         return;
       }
 
@@ -472,11 +847,20 @@ export default function LessonBuilderPage() {
       document.removeEventListener("keydown", handleLessonBuilderShortcut);
     };
   }, [
+    activeLessonId,
+    addExplanationBlock,
+    addSentenceBlock,
+    cancelPendingLessonExit,
+    collapsedLessons,
     createLesson,
     cycleActiveLessonCollapseMode,
     cycleAllLessonDisplayModes,
+    isLessonDirty,
     lessons,
-    saveLessons,
+    openLessonEditor,
+    openBlockPicker,
+    pendingLessonExitId,
+    saveLesson,
   ]);
 
   function renameLesson(lessonId: string, name: string) {
@@ -489,7 +873,7 @@ export default function LessonBuilderPage() {
     );
   }
 
-  function deleteLesson(lessonId: string) {
+  async function deleteLesson(lessonId: string) {
     const lessonIndex = lessons.findIndex((lesson) => lesson.id === lessonId);
     const lesson = lessons[lessonIndex];
     const lessonLabel = `Lesson ${lessonIndex + 1}${
@@ -501,6 +885,28 @@ export default function LessonBuilderPage() {
         `Delete ${lessonLabel}? This will remove all of its content blocks.`,
       )
     ) {
+      return;
+    }
+
+    setSaveStatus("saving");
+
+    try {
+      const response = await fetch(
+        `/api/lesson-builder/lessons/${encodeURIComponent(lessonId)}`,
+        { method: "DELETE" },
+      );
+
+      if (!response.ok) {
+        throw new Error("Unable to delete lesson.");
+      }
+
+      const lessonFile = (await response.json()) as LessonFile;
+      const savedLessons = normalizeLessons(lessonFile.lessons);
+      savedLessonsJsonRef.current = JSON.stringify(savedLessons);
+      setSavedLessonsSnapshot(savedLessons);
+      setSaveStatus("saved");
+    } catch {
+      setSaveStatus("error");
       return;
     }
 
@@ -540,19 +946,6 @@ export default function LessonBuilderPage() {
 
       const nextKeys = new Set(currentKeys);
       nextKeys.add(key);
-      return nextKeys;
-    });
-  }
-
-  function toggleSentencePreview(lessonId: string, sentenceBlockId: string) {
-    const key = `${lessonId}-${sentenceBlockId}`;
-    setPreviewSentenceBlocks((currentKeys) => {
-      const nextKeys = new Set(currentKeys);
-      if (nextKeys.has(key)) {
-        nextKeys.delete(key);
-      } else {
-        nextKeys.add(key);
-      }
       return nextKeys;
     });
   }
@@ -624,88 +1017,6 @@ export default function LessonBuilderPage() {
         ),
       ),
     );
-  }
-
-  function addExplanationBlock(lessonId: string, insertionIndex: number) {
-    const blockId = createId("block");
-
-    setLessons((currentLessons) =>
-      currentLessons.map((lesson) => {
-        if (lesson.id !== lessonId) {
-          return lesson;
-        }
-
-        return {
-          ...lesson,
-          blocks: lesson.blocks.toSpliced(insertionIndex, 0, {
-            id: blockId,
-            type: "explanation",
-            contentMarkdown: "",
-          }),
-        };
-      }),
-    );
-    setCollapsedContentBlocks(
-      new Set(
-        lessons.flatMap((lesson) =>
-          lesson.blocks.map((block) => `${lesson.id}-${block.id}`),
-        ),
-      ),
-    );
-    setOpenBlockPicker(null);
-  }
-
-  function addSentenceBlock(lessonId: string, insertionIndex: number) {
-    const blockId = createId("block");
-    const languageBlockId = createId("lang");
-
-    setLessons((currentLessons) =>
-      currentLessons.map((lesson) => {
-        if (lesson.id !== lessonId) {
-          return lesson;
-        }
-
-        return {
-          ...lesson,
-          blocks: lesson.blocks.toSpliced(
-            insertionIndex,
-            0,
-            {
-              id: blockId,
-              type: "sentence",
-              promptLabel: "",
-              promptText: "",
-              helperText: "",
-              answerFeedback: null,
-              conceptLinks: [],
-              languageBlocks: [
-                {
-                  id: languageBlockId,
-                  spanish: "",
-                  callout: null,
-                  acceptedAnswers: [""],
-                  conceptLinks: [],
-                },
-              ],
-            },
-          ),
-        };
-      }),
-    );
-    setCollapsedContentBlocks(
-      new Set(
-        lessons.flatMap((lesson) =>
-          lesson.blocks.map((block) => `${lesson.id}-${block.id}`),
-        ),
-      ),
-    );
-    setOpenBlockPicker(null);
-
-    window.setTimeout(() => {
-      languageBlockSpanishRefs.current
-        .get(`${lessonId}-${blockId}-${languageBlockId}`)
-        ?.focus();
-    }, 0);
   }
 
   function updateSentencePromptText(
@@ -1450,31 +1761,73 @@ export default function LessonBuilderPage() {
     setDropTarget({ lessonId, position });
   }
 
+  async function persistLessonOrder(reorderedLessons: Lesson[]) {
+    setIsSavingLessonOrder(true);
+
+    try {
+      const response = await fetch("/api/lesson-builder/lesson-order", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          lessonIds: reorderedLessons.map((lesson) => lesson.id),
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Unable to save lesson order.");
+      }
+
+      const lessonFile = (await response.json()) as LessonFile;
+      const savedLessons = normalizeLessons(lessonFile.lessons);
+      savedLessonsJsonRef.current = JSON.stringify(savedLessons);
+      setSavedLessonsSnapshot(savedLessons);
+      setSaveStatus("saved");
+      return true;
+    } catch {
+      setSaveStatus("error");
+      return false;
+    } finally {
+      setIsSavingLessonOrder(false);
+    }
+  }
+
   function moveLesson(target: DropTarget) {
     if (draggedLessonId === null || draggedLessonId === target.lessonId) {
       return;
     }
 
-    setLessons((currentLessons) => {
-      const reorderedLessons = currentLessons.filter(
-        (lesson) => lesson.id !== draggedLessonId,
-      );
-      const targetIndex = reorderedLessons.findIndex(
-        (lesson) => lesson.id === target.lessonId,
-      );
-      const draggedLesson = currentLessons.find(
-        (lesson) => lesson.id === draggedLessonId,
-      );
+    const previousLessonIds = lessons.map((lesson) => lesson.id);
+    const reorderedLessons = lessons.filter(
+      (lesson) => lesson.id !== draggedLessonId,
+    );
+    const targetIndex = reorderedLessons.findIndex(
+      (lesson) => lesson.id === target.lessonId,
+    );
+    const draggedLesson = lessons.find(
+      (lesson) => lesson.id === draggedLessonId,
+    );
 
-      if (!draggedLesson || targetIndex === -1) {
-        return currentLessons;
+    if (!draggedLesson || targetIndex === -1) {
+      return;
+    }
+
+    const insertionIndex =
+      target.position === "after" ? targetIndex + 1 : targetIndex;
+
+    reorderedLessons.splice(insertionIndex, 0, draggedLesson);
+    setLessons(reorderedLessons);
+
+    void persistLessonOrder(reorderedLessons).then((didSave) => {
+      if (!didSave) {
+        setLessons((currentLessons) => {
+          const lessonById = new Map(
+            currentLessons.map((lesson) => [lesson.id, lesson]),
+          );
+          return previousLessonIds
+            .map((lessonId) => lessonById.get(lessonId))
+            .filter((lesson): lesson is Lesson => Boolean(lesson));
+        });
       }
-
-      const insertionIndex =
-        target.position === "after" ? targetIndex + 1 : targetIndex;
-
-      reorderedLessons.splice(insertionIndex, 0, draggedLesson);
-      return reorderedLessons;
     });
   }
 
@@ -1483,10 +1836,47 @@ export default function LessonBuilderPage() {
     setDropTarget(null);
   }
 
+  const previewLessonIndex = lessons.findIndex(
+    (lesson) => lesson.id === previewLessonId,
+  );
+  const hasUnsavedNewLesson = lessons.some(
+    (lesson) =>
+      !savedLessonsSnapshot.some(
+        (savedLesson) => savedLesson.id === lesson.id,
+      ),
+  );
+  const previewLesson =
+    previewLessonIndex >= 0 ? lessons[previewLessonIndex] : null;
+  const previewBlocks = previewLesson
+    ? previewBlockId
+      ? previewLesson.blocks.filter((block) => block.id === previewBlockId)
+      : previewLesson.blocks
+    : [];
+  const practicePreviewLesson: PracticeLesson | null = previewLesson
+    ? {
+        id: previewLesson.id,
+        lessonNumber: previewLessonIndex + 1,
+        name: previewLesson.name,
+        explanationCount: previewBlocks.filter(
+          (block) => block.type === "explanation",
+        ).length,
+        sentenceCount: previewBlocks.filter(
+          (block) => block.type === "sentence",
+        ).length,
+        previewText: "",
+        blocks: previewBlocks,
+      }
+    : null;
+  const pendingLessonExitIndex = lessons.findIndex(
+    (lesson) => lesson.id === pendingLessonExitId,
+  );
+  const pendingLessonExit =
+    pendingLessonExitIndex >= 0 ? lessons[pendingLessonExitIndex] : null;
+
   return (
     <main className="flex-1 bg-background px-4 py-8 sm:px-6 sm:py-12">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-6">
-        <div className="flex items-center justify-between gap-4">
+        <div>
           <div>
             <h1 className="text-2xl font-semibold tracking-tight text-foreground">
               Lesson Builder
@@ -1494,6 +1884,8 @@ export default function LessonBuilderPage() {
             <p className="mt-1 text-sm text-muted-foreground">
               {isLoadingLessons
                 ? "Loading saved lessons..."
+                : isSavingLessonOrder
+                  ? "Saving lesson order..."
                 : isDirty
                   ? "Unsaved changes"
                   : saveStatus === "saved"
@@ -1503,16 +1895,6 @@ export default function LessonBuilderPage() {
                       : "Loaded from lessons.json"}
             </p>
           </div>
-          <button
-            type="button"
-            onClick={saveLessons}
-            disabled={isLoadingLessons || !isDirty || saveStatus === "saving"}
-            title="Save lessons (Alt+S)"
-            className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-45 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
-          >
-            <Save className="size-4" aria-hidden="true" />
-            {saveStatus === "saving" ? "Saving..." : "Save"}
-          </button>
         </div>
 
         {lessons.map((lesson, lessonIndex) => {
@@ -1522,6 +1904,8 @@ export default function LessonBuilderPage() {
           const isLessonFullyCollapsed = fullyCollapsedLessons.has(lesson.id);
           const isLessonEditableOnClick =
             isLessonCollapsed || isLessonFullyCollapsed;
+          const lessonIsDirty = isLessonDirty(lesson.id);
+          const isThisLessonSaving = savingLessonId === lesson.id;
           const dropPosition =
             dropTarget && dropTarget.lessonId === lesson.id
               ? dropTarget.position
@@ -1584,6 +1968,12 @@ export default function LessonBuilderPage() {
                 <h2 className="shrink-0 text-xl font-semibold tracking-tight text-stone-900">
                   Lesson {lessonNumber}
                 </h2>
+                {lessonIsDirty && (
+                  <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-800">
+                    <span className="size-1.5 rounded-full bg-amber-500" />
+                    Unsaved
+                  </span>
+                )}
                 <input
                   type="text"
                   value={lesson.name ?? ""}
@@ -1594,6 +1984,36 @@ export default function LessonBuilderPage() {
                   aria-label={`Name for lesson ${lessonNumber}`}
                   className="min-w-0 flex-1 rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-violet-400 focus:ring-3 focus:ring-violet-100"
                 />
+                <button
+                  type="button"
+                  onClick={() => {
+                    setPreviewLessonId(lesson.id);
+                    setPreviewBlockId(null);
+                  }}
+                  aria-label={`Preview lesson ${lessonNumber}`}
+                  title="Preview lesson"
+                  className="inline-flex h-9 shrink-0 items-center gap-2 rounded-lg px-3 text-sm font-semibold text-stone-500 transition hover:bg-stone-200 hover:text-stone-800 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-violet-200"
+                >
+                  <Eye className="size-4" aria-hidden="true" />
+                  <span className="hidden lg:inline">Preview</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => void saveLesson(lesson.id)}
+                  disabled={
+                    isLoadingLessons ||
+                    !lessonIsDirty ||
+                    saveStatus === "saving"
+                  }
+                  aria-label={`Save lesson ${lessonNumber}`}
+                  title="Save lesson (Alt+S)"
+                  className="inline-flex h-9 shrink-0 items-center gap-2 rounded-lg bg-primary px-3 text-sm font-semibold text-primary-foreground shadow-sm transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
+                >
+                  <Save className="size-4" aria-hidden="true" />
+                  <span className="hidden lg:inline">
+                    {isThisLessonSaving ? "Saving..." : "Save"}
+                  </span>
+                </button>
                 <button
                   type="button"
                   onClick={() => cycleLessonDisplayMode(lesson.id)}
@@ -1620,7 +2040,8 @@ export default function LessonBuilderPage() {
                 </button>
                 <button
                   type="button"
-                  draggable
+                  draggable={!hasUnsavedNewLesson && !isSavingLessonOrder}
+                  disabled={hasUnsavedNewLesson || isSavingLessonOrder}
                   onDragStart={(event) => {
                     event.dataTransfer.effectAllowed = "move";
                     event.dataTransfer.setData(
@@ -1631,8 +2052,12 @@ export default function LessonBuilderPage() {
                   }}
                   onDragEnd={finishDragging}
                   aria-label={`Drag lesson ${lessonNumber} to reorder`}
-                  title="Drag to reorder"
-                  className="flex shrink-0 cursor-grab items-center gap-2 rounded-lg px-2 py-2 text-sm font-medium text-stone-500 transition hover:bg-stone-200 hover:text-stone-700 active:cursor-grabbing"
+                  title={
+                    hasUnsavedNewLesson
+                      ? "Save new lessons before reordering"
+                      : "Drag to reorder"
+                  }
+                  className="flex shrink-0 cursor-grab items-center gap-2 rounded-lg px-2 py-2 text-sm font-medium text-stone-500 transition hover:bg-stone-200 hover:text-stone-700 active:cursor-grabbing disabled:cursor-not-allowed disabled:opacity-40"
                 >
                   <span className="hidden sm:inline">Drag to reorder</span>
                   <GripVertical className="size-5" aria-hidden="true" />
@@ -1702,9 +2127,6 @@ export default function LessonBuilderPage() {
                     block.type === "sentence"
                       ? getSentenceValidationIssueCount(block)
                       : 0;
-                  const isSentencePreviewVisible =
-                    block.type === "sentence" &&
-                    previewSentenceBlocks.has(contentBlockKey);
                   const contentDropPosition =
                     contentBlockDropTarget?.lessonId === lesson.id &&
                     contentBlockDropTarget.blockId === block.id
@@ -1834,6 +2256,18 @@ export default function LessonBuilderPage() {
                               className="flex size-8 cursor-grab items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200 active:cursor-grabbing"
                             >
                               <GripVertical className="size-4" aria-hidden="true" />
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => {
+                                setPreviewLessonId(lesson.id);
+                                setPreviewBlockId(block.id);
+                              }}
+                              aria-label="Preview explanation as learner"
+                              title="Preview as learner"
+                              className="flex size-8 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200 hover:text-violet-700"
+                            >
+                              <Eye className="size-4" aria-hidden="true" />
                             </button>
                             <button
                               type="button"
@@ -1973,27 +2407,15 @@ export default function LessonBuilderPage() {
                             </button>
                             <button
                               type="button"
-                              onClick={() =>
-                                toggleSentencePreview(lesson.id, block.id)
-                              }
-                              aria-pressed={isSentencePreviewVisible}
-                              aria-label={`${isSentencePreviewVisible ? "Edit" : "Preview"} sentence`}
-                              title={
-                                isSentencePreviewVisible
-                                  ? "Return to editing"
-                                  : "Preview as learner"
-                              }
-                              className={`flex size-8 items-center justify-center rounded-md transition ${
-                                isSentencePreviewVisible
-                                  ? "bg-blue-100 text-blue-700"
-                                  : "text-stone-500 hover:bg-stone-200"
-                              }`}
+                              onClick={() => {
+                                setPreviewLessonId(lesson.id);
+                                setPreviewBlockId(block.id);
+                              }}
+                              aria-label="Preview sentence as learner"
+                              title="Preview as learner"
+                              className="flex size-8 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200 hover:text-blue-700"
                             >
-                              {isSentencePreviewVisible ? (
-                                <Pencil className="size-4" aria-hidden="true" />
-                              ) : (
-                                <Eye className="size-4" aria-hidden="true" />
-                              )}
+                              <Eye className="size-4" aria-hidden="true" />
                             </button>
                             <button
                               type="button"
@@ -2036,10 +2458,6 @@ export default function LessonBuilderPage() {
                         </div>
                         {!isContentBlockCollapsed && (
                         <div className="flex flex-col p-6">
-                          {isSentencePreviewVisible ? (
-                            <SentencePracticeCard sentence={block} />
-                          ) : (
-                          <>
                             <div className="order-1 mb-5 rounded-xl border border-violet-200 bg-violet-50/60 p-4">
                               <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-violet-700">
                                 Question prompt
@@ -2830,8 +3248,6 @@ export default function LessonBuilderPage() {
                               className="w-full rounded-lg border border-emerald-200 bg-white px-3 py-2.5 text-sm outline-none transition placeholder:text-stone-400 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100"
                             />
                           </label>
-                          </>
-                          )}
                         </div>
                         )}
                       </>
@@ -2866,6 +3282,7 @@ export default function LessonBuilderPage() {
                         {openBlockPicker?.lessonId === lesson.id &&
                           openBlockPicker.insertionIndex === blockIndex + 1 && (
                             <ContentBlockPicker
+                              onClose={() => setOpenBlockPicker(null)}
                               onAddExplanation={() =>
                                 addExplanationBlock(
                                   lesson.id,
@@ -2909,6 +3326,7 @@ export default function LessonBuilderPage() {
                 {openBlockPicker?.lessonId === lesson.id &&
                   openBlockPicker.insertionIndex === lesson.blocks.length && (
                   <ContentBlockPicker
+                    onClose={() => setOpenBlockPicker(null)}
                     onAddExplanation={() =>
                       addExplanationBlock(lesson.id, lesson.blocks.length)
                     }
@@ -2951,6 +3369,71 @@ export default function LessonBuilderPage() {
 
       {isHotkeyReminderOpen && (
         <HotkeyReminder onClose={() => setIsHotkeyReminderOpen(false)} />
+      )}
+
+      {practicePreviewLesson && (
+        <LessonSelector
+          lessons={[practicePreviewLesson]}
+          initialLessonId={practicePreviewLesson.id}
+          isUnsavedPreview={isLessonDirty(practicePreviewLesson.id)}
+          onCloseLesson={() => {
+            setPreviewLessonId(null);
+            setPreviewBlockId(null);
+          }}
+        />
+      )}
+
+      {pendingLessonExit && (
+        <div
+          className="fixed inset-0 z-[70] flex items-center justify-center bg-black/35 p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="unsaved-lesson-title"
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) {
+              cancelPendingLessonExit();
+            }
+          }}
+        >
+          <div className="w-full max-w-md rounded-2xl border border-border bg-popover p-6 text-popover-foreground shadow-2xl">
+            <h2
+              id="unsaved-lesson-title"
+              className="text-xl font-semibold tracking-tight"
+            >
+              Save changes to Lesson {pendingLessonExitIndex + 1}?
+            </h2>
+            <p className="mt-2 text-sm leading-6 text-muted-foreground">
+              This lesson has unsaved changes. Save them before leaving, discard
+              them, or return to editing.
+            </p>
+            <div className="mt-6 flex flex-wrap justify-end gap-2">
+              <button
+                type="button"
+                onClick={cancelPendingLessonExit}
+                className="rounded-lg px-4 py-2 text-sm font-semibold text-muted-foreground transition hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                onClick={discardPendingLessonChanges}
+                className="rounded-lg border border-red-200 bg-background px-4 py-2 text-sm font-semibold text-red-700 transition hover:bg-red-50 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-red-200"
+              >
+                Discard
+              </button>
+              <button
+                type="button"
+                onClick={() => void savePendingLessonChanges()}
+                disabled={savingLessonId === pendingLessonExit.id}
+                className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:opacity-90 disabled:cursor-wait disabled:opacity-60 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
+              >
+                {savingLessonId === pendingLessonExit.id
+                  ? "Saving..."
+                  : "Save and leave"}
+              </button>
+            </div>
+          </div>
+        </div>
       )}
     </main>
   );

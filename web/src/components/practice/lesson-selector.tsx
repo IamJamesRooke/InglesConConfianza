@@ -26,10 +26,18 @@ export type PracticeLesson = {
 
 export function LessonSelector({
   lessons,
+  initialLessonId = null,
+  onCloseLesson,
+  isUnsavedPreview = false,
 }: {
   lessons: PracticeLesson[];
+  initialLessonId?: string | null;
+  onCloseLesson?: () => void;
+  isUnsavedPreview?: boolean;
 }) {
-  const [openLessonId, setOpenLessonId] = useState<string | null>(null);
+  const [openLessonId, setOpenLessonId] = useState<string | null>(
+    initialLessonId,
+  );
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const [isCurrentSentenceComplete, setIsCurrentSentenceComplete] =
     useState(false);
@@ -52,7 +60,8 @@ export function LessonSelector({
     setOpenLessonId(null);
     setCurrentStepIndex(0);
     setIsCurrentSentenceComplete(false);
-  }, []);
+    onCloseLesson?.();
+  }, [onCloseLesson]);
 
   const advanceStep = useCallback(() => {
     if (!openLesson) {
@@ -334,6 +343,11 @@ export function LessonSelector({
                 Lección {openLesson.lessonNumber}
                 {openLesson.name ? ` · ${openLesson.name}` : ""}
               </h2>
+              {isUnsavedPreview && (
+                <span className="rounded-full bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-800">
+                  Vista previa · cambios sin guardar
+                </span>
+              )}
             </div>
             <div
               className="h-2 overflow-hidden rounded-full bg-muted"

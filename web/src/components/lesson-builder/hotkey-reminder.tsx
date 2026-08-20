@@ -51,6 +51,14 @@ export function HotkeyReminder({
             description="Create a new lesson"
           />
           <HotkeyReminderRow
+            keys={["Alt", "E"]}
+            description="Append an explanation block"
+          />
+          <HotkeyReminderRow
+            keys={["Alt", "P"]}
+            description="Append a sentence block"
+          />
+          <HotkeyReminderRow
             keys={["Alt", "M"]}
             description="Toggle active lesson collapsed form"
           />
@@ -58,7 +66,10 @@ export function HotkeyReminder({
             keys={["Ctrl", "Alt", "M"]}
             description="Toggle all lesson collapsed forms"
           />
-          <HotkeyReminderRow keys={["Alt", "S"]} description="Save lessons" />
+          <HotkeyReminderRow
+            keys={["Alt", "S"]}
+            description="Save the active lesson"
+          />
           <HotkeyReminderRow
             keys={["Esc"]}
             description="Finish editing an explanation"

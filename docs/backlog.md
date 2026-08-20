@@ -30,6 +30,7 @@ Build the smallest useful JSON-backed lesson-authoring foundation. Let actual ha
 - [x] Make multi-block sentence practice automatically fit available card width and wrap responsively instead of using a fixed two-column layout.
 - [x] Streamline Lesson Builder authoring with one expanded content block at a time, compact clickable summaries, handle-only block reordering, duplication with fresh nested IDs, creation autofocus, keyboard-assisted explanation closing, and lesson-deletion confirmation.
 - [x] Refine Sentence authoring with inline block insertion, responsive compact word cards, one open word editor at a time, click-to-toggle cards, handle-based word reordering, sentence-level concepts, and consistently ordered prompt, helper, feedback, and concept fields.
+- [x] Make Lesson Builder persistence and previews lesson-scoped with one open lesson editor, lesson-specific saves, autosaved ordering, persisted deletion, visible dirty state, Save/Discard/Cancel leave protection, reusable Practice previews for lessons and individual blocks, dismissible insertion pickers, and block-creation hotkeys.
 - [ ] Build five representative lessons as the first vertical slice.
     - [ ] Include straightforward vocabulary retrieval.
     - [ ] Include a Spanish-to-English one-to-many mapping.
@@ -58,11 +59,34 @@ Build the smallest useful JSON-backed lesson-authoring foundation. Let actual ha
 
 ## Database modeling considerations
 
+- [ ] Define how lesson context maps to canonical curriculum data before replacing the JSON authoring model.
+    - [ ] Keep the learner-facing language-block context hint (currently stored as `callout`) separate from the structured context or sense that qualifies a canonical mapping.
+    - [ ] Decide whether canonical mapping context is represented by a stable `contextId`, `senseId`, structured constraints, or a dedicated graph node rather than another editable label.
+    - [ ] Link lesson and language-block occurrences to canonical mappings as evidence without restoring per-word concept controls to the authoring UI.
+    - [ ] Define which context is authored, which is derived, and which system owns each value so `callout`, `ConceptLink.contextLabel`, and curriculum-edge `context` cannot become competing sources of truth.
 - [ ] Derive each lesson's newly introduced concepts and words from stable concept references and the current lesson order.
     - [ ] Treat the earliest ordered occurrence of a concept as its first course exposure; do not rely on the author remembering to move or remove an `introduced` tag.
     - [ ] Recompute first-exposure status whenever lessons or concept-bearing blocks are added, removed, moved, or reordered. For example, moving the first **to speak** block from Lesson 2 to Lesson 1 must make Lesson 1 its introduction automatically.
     - [ ] Decide whether `introduced` remains an authored pedagogical role, becomes a computed status, or is split into separate authored-intent and derived-first-exposure fields. Avoid storing two editable sources of truth for the same fact.
     - [ ] Use the derived result to show the new concepts and words introduced by each lesson in Practice and authoring views.
+
+## Future onboarding
+
+- [ ] Design a low-friction learner onboarding flow for the account-enabled product.
+    - [ ] Let a new student begin lessons immediately without first providing an email address.
+    - [ ] Decide when to ask the student to create or connect an account after they have completed a small number of lessons, and preserve their pre-account progress when they do.
+    - [ ] Build small personalization commitments into the tutorial lesson, such as choosing a preferred theme and answering “What should we call you?”
+    - [ ] Research evidence-based onboarding and learning-product UI/UX practices before finalizing the flow, with retention as an explicit product outcome.
+    - [ ] Define the minimum temporary learner state needed before account creation and the privacy, expiry, and account-linking behavior for that state.
+
+## Future AI-assisted lesson authoring
+
+- [ ] Let an author request an AI-generated lesson draft from the Lesson Builder.
+    - [ ] Connect generation to the canonical curriculum database so the system can inspect what has already been taught and what remains available.
+    - [ ] Use prior lessons and learner-sequence history to decide what should be reviewed, introduced, or taught next.
+    - [ ] Provide the teaching methodology as explicit generation context so lesson structure and explanations follow the course’s pedagogical approach.
+    - [ ] Preserve continuity across lessons instead of generating each lesson as an isolated artifact.
+    - [ ] Keep generated lessons editable and require author review before they become saved course content.
 
 ## Later
 
@@ -79,6 +103,7 @@ This section records controls and security work actually applied during developm
 - [x] Audit the dependency tree when introducing the Markdown editor and pin the vulnerable transitive `js-yaml` dependency to patched version `4.3.1` through the package override.
 - [x] Keep theme preference storage client-only and non-sensitive by persisting only a theme identifier in `localStorage`.
 - [x] Keep JSON lesson persistence scoped to a fixed repository data file and validate saved lesson payload shape at the API boundary while the final database model is still being discovered.
+- [x] Serialize JSON lesson mutations and replace the lesson file atomically so lesson saves, ordering, and deletion cannot interleave partial writes.
 - [ ] Create an initial threat model when the application gains persistent lesson authoring, authentication, or other meaningful trust boundaries.
 - [ ] Add authorization tests alongside the first protected authoring or learner-data endpoints.
 - [ ] Perform a controlled OWASP-based security assessment after the first complete application flow is deployable, preserve findings, and document the resulting hardening.
