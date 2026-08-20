@@ -6,6 +6,7 @@ import {
   type PracticeLesson,
 } from "@/components/practice/lesson-selector";
 import type { Lesson, LessonFile } from "@/lib/lesson-builder/types";
+import { normalizeLessonMarkdown } from "@/lib/lesson-builder/markdown";
 
 export const dynamic = "force-dynamic";
 
@@ -38,10 +39,10 @@ function getLessonPreviewText(lesson: Lesson) {
     (block) => block.type === "explanation",
   );
 
-  return firstExplanationBlock?.contentMarkdown
+  return normalizeLessonMarkdown(firstExplanationBlock?.contentMarkdown ?? "")
     .replace(/^#{1,6}\s*/gmu, "")
     .replace(/==([^=]+)==/gu, "$1")
-    .trim() ?? "";
+    .trim();
 }
 
 function getPracticeLessonSummaries(lessons: Lesson[]) {

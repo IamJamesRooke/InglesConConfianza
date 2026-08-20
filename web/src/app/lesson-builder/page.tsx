@@ -934,6 +934,21 @@ export default function LessonBuilderPage() {
   function toggleContentBlock(lessonId: string, blockId: string) {
     const key = `${lessonId}-${blockId}`;
     setCollapsedContentBlocks((currentKeys) => {
+      const expandedInvalidSentence = lessons
+        .flatMap((lesson) =>
+          lesson.blocks.map((block) => ({ lessonId: lesson.id, block })),
+        )
+        .find(
+          ({ lessonId: currentLessonId, block }) =>
+            block.type === "sentence" &&
+            !currentKeys.has(`${currentLessonId}-${block.id}`) &&
+            getSentenceValidationIssueCount(block) > 0,
+        );
+
+      if (expandedInvalidSentence) {
+        return currentKeys;
+      }
+
       if (currentKeys.has(key)) {
         const nextKeys = new Set(
           lessons.flatMap((lesson) =>
@@ -1906,6 +1921,14 @@ export default function LessonBuilderPage() {
             isLessonCollapsed || isLessonFullyCollapsed;
           const lessonIsDirty = isLessonDirty(lesson.id);
           const isThisLessonSaving = savingLessonId === lesson.id;
+          const lessonValidationIssueCount = lesson.blocks.reduce(
+            (issueCount, block) =>
+              issueCount +
+              (block.type === "sentence"
+                ? getSentenceValidationIssueCount(block)
+                : 0),
+            0,
+          );
           const dropPosition =
             dropTarget && dropTarget.lessonId === lesson.id
               ? dropTarget.position
@@ -1990,9 +2013,14 @@ export default function LessonBuilderPage() {
                     setPreviewLessonId(lesson.id);
                     setPreviewBlockId(null);
                   }}
+                  disabled={lessonValidationIssueCount > 0}
                   aria-label={`Preview lesson ${lessonNumber}`}
-                  title="Preview lesson"
-                  className="inline-flex h-9 shrink-0 items-center gap-2 rounded-lg px-3 text-sm font-semibold text-stone-500 transition hover:bg-stone-200 hover:text-stone-800 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-violet-200"
+                  title={
+                    lessonValidationIssueCount > 0
+                      ? `Resolve ${lessonValidationIssueCount} ${lessonValidationIssueCount === 1 ? "issue" : "issues"} before previewing this lesson`
+                      : "Preview lesson"
+                  }
+                  className="inline-flex h-9 shrink-0 items-center gap-2 rounded-lg px-3 text-sm font-semibold text-stone-500 transition hover:bg-stone-200 hover:text-stone-800 disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:bg-transparent disabled:hover:text-stone-500 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-violet-200"
                 >
                   <Eye className="size-4" aria-hidden="true" />
                   <span className="hidden lg:inline">Preview</span>
@@ -2119,6 +2147,44 @@ export default function LessonBuilderPage() {
 
               {!isLessonCollapsed && (
               <div className="space-y-4 p-6">
+                {lesson.blocks.length > 0 && (
+                  <>
+                    <div className="relative h-0">
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setOpenBlockPicker((currentPicker) =>
+                            currentPicker?.lessonId === lesson.id &&
+                            currentPicker.insertionIndex === 0
+                              ? null
+                              : {
+                                  lessonId: lesson.id,
+                                  insertionIndex: 0,
+                                },
+                          )
+                        }
+                        aria-label="Insert content before the first block"
+                        aria-expanded={
+                          openBlockPicker?.lessonId === lesson.id &&
+                          openBlockPicker.insertionIndex === 0
+                        }
+                        className="absolute left-1/2 top-0 z-10 flex size-5 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-background text-muted-foreground opacity-45 shadow-sm transition hover:scale-110 hover:border-violet-300 hover:bg-violet-50 hover:text-violet-700 hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-violet-200"
+                      >
+                        <Plus className="size-3" aria-hidden="true" />
+                      </button>
+                    </div>
+                    {openBlockPicker?.lessonId === lesson.id &&
+                      openBlockPicker.insertionIndex === 0 && (
+                        <ContentBlockPicker
+                          onClose={() => setOpenBlockPicker(null)}
+                          onAddExplanation={() =>
+                            addExplanationBlock(lesson.id, 0)
+                          }
+                          onAddSentence={() => addSentenceBlock(lesson.id, 0)}
+                        />
+                      )}
+                  </>
+                )}
                 {lesson.blocks.map((block, blockIndex) => {
                   const contentBlockKey = `${lesson.id}-${block.id}`;
                   const isContentBlockCollapsed =
@@ -2336,7 +2402,17 @@ export default function LessonBuilderPage() {
                           <div
                             role="button"
                             tabIndex={0}
+                            aria-disabled={
+                              !isContentBlockCollapsed &&
+                              sentenceValidationIssueCount > 0
+                            }
                             aria-label={`${isContentBlockCollapsed ? "Expand" : "Collapse"} sentence`}
+                            title={
+                              !isContentBlockCollapsed &&
+                              sentenceValidationIssueCount > 0
+                                ? `Resolve ${sentenceValidationIssueCount} ${sentenceValidationIssueCount === 1 ? "issue" : "issues"} before closing this sentence.`
+                                : undefined
+                            }
                             onClick={() =>
                               toggleContentBlock(lesson.id, block.id)
                             }
@@ -2372,17 +2448,17 @@ export default function LessonBuilderPage() {
                                 </p>
                               </div>
                             </div>
-                            <span
-                              className={`hidden shrink-0 rounded-full px-2.5 py-1 text-xs font-semibold sm:inline-flex ${
-                                sentenceValidationIssueCount === 0
-                                  ? "bg-emerald-100 text-emerald-700"
-                                  : "bg-red-100 text-red-700"
-                              }`}
-                            >
-                              {sentenceValidationIssueCount === 0
-                                ? "Ready"
-                                : `${sentenceValidationIssueCount} ${sentenceValidationIssueCount === 1 ? "issue" : "issues"}`}
-                            </span>
+                            {sentenceValidationIssueCount > 0 && (
+                              <span
+                                role="status"
+                                className="hidden shrink-0 rounded-full bg-red-100 px-2.5 py-1 text-xs font-semibold text-red-700 sm:inline-flex"
+                              >
+                                {sentenceValidationIssueCount}{" "}
+                                {sentenceValidationIssueCount === 1
+                                  ? "issue"
+                                  : "issues"}
+                              </span>
+                            )}
                           </div>
                           <div className="flex shrink-0 items-center gap-1">
                             <button
@@ -2411,9 +2487,14 @@ export default function LessonBuilderPage() {
                                 setPreviewLessonId(lesson.id);
                                 setPreviewBlockId(block.id);
                               }}
+                              disabled={sentenceValidationIssueCount > 0}
                               aria-label="Preview sentence as learner"
-                              title="Preview as learner"
-                              className="flex size-8 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200 hover:text-blue-700"
+                              title={
+                                sentenceValidationIssueCount > 0
+                                  ? `Resolve ${sentenceValidationIssueCount} ${sentenceValidationIssueCount === 1 ? "issue" : "issues"} before previewing`
+                                  : "Preview as learner"
+                              }
+                              className="flex size-8 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200 hover:text-blue-700 disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:bg-transparent disabled:hover:text-stone-500"
                             >
                               <Eye className="size-4" aria-hidden="true" />
                             </button>
@@ -2433,9 +2514,20 @@ export default function LessonBuilderPage() {
                               onClick={() =>
                                 toggleContentBlock(lesson.id, block.id)
                               }
+                              disabled={
+                                !isContentBlockCollapsed &&
+                                sentenceValidationIssueCount > 0
+                              }
                               aria-label={`${isContentBlockCollapsed ? "Expand" : "Collapse"} sentence`}
-                              title={isContentBlockCollapsed ? "Expand" : "Collapse"}
-                              className="flex size-8 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200"
+                              title={
+                                !isContentBlockCollapsed &&
+                                sentenceValidationIssueCount > 0
+                                  ? `Resolve ${sentenceValidationIssueCount} ${sentenceValidationIssueCount === 1 ? "issue" : "issues"} before closing`
+                                  : isContentBlockCollapsed
+                                    ? "Expand"
+                                    : "Collapse"
+                              }
+                              className="flex size-8 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200 disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:bg-transparent"
                             >
                               {isContentBlockCollapsed ? (
                                 <ChevronDown className="size-4" aria-hidden="true" />
@@ -3375,7 +3467,6 @@ export default function LessonBuilderPage() {
         <LessonSelector
           lessons={[practicePreviewLesson]}
           initialLessonId={practicePreviewLesson.id}
-          isUnsavedPreview={isLessonDirty(practicePreviewLesson.id)}
           onCloseLesson={() => {
             setPreviewLessonId(null);
             setPreviewBlockId(null);

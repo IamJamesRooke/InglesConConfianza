@@ -11,6 +11,7 @@ import {
   type MDXEditorMethods,
   Separator,
   UndoRedo,
+  addComposerChild$,
   headingsPlugin,
   insertMarkdown$,
   linkDialogPlugin,
@@ -18,9 +19,12 @@ import {
   listsPlugin,
   markdownShortcutPlugin,
   quotePlugin,
+  realmPlugin,
   toolbarPlugin,
 } from "@mdxeditor/editor";
 import { usePublisher } from "@mdxeditor/gurx";
+import { HIGHLIGHT } from "@lexical/markdown";
+import { MarkdownShortcutPlugin } from "@lexical/react/LexicalMarkdownShortcutPlugin";
 import "@mdxeditor/editor/style.css";
 import { useEffect, useMemo, useRef } from "react";
 
@@ -29,6 +33,16 @@ type InitializedMarkdownEditorProps = {
   onChange: (markdown: string) => void;
   onBlur: () => void;
 };
+
+function HighlightMarkdownShortcut() {
+  return <MarkdownShortcutPlugin transformers={[HIGHLIGHT]} />;
+}
+
+const highlightMarkdownShortcutPlugin = realmPlugin({
+  init(realm) {
+    realm.pub(addComposerChild$, HighlightMarkdownShortcut);
+  },
+});
 
 function InsertKeyboardShortcut() {
   const insertMarkdown = usePublisher(insertMarkdown$);
@@ -78,6 +92,7 @@ export function InitializedMarkdownEditor({
       linkPlugin(),
       linkDialogPlugin(),
       markdownShortcutPlugin(),
+      highlightMarkdownShortcutPlugin(),
       toolbarPlugin({
         toolbarContents: () => (
           <>

@@ -177,6 +177,8 @@ export function SentencePracticeCard({
                     inputRefs.current[languageBlockIndex] = element;
                   }}
                   type="text"
+                  data-practice-answer
+                  autoFocus={languageBlockIndex === 0}
                   value={answers[languageBlockIndex] ?? ""}
                   onChange={(event) =>
                     updatePreviewAnswer(event.target.value, languageBlockIndex)

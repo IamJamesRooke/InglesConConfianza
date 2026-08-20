@@ -28,12 +28,10 @@ export function LessonSelector({
   lessons,
   initialLessonId = null,
   onCloseLesson,
-  isUnsavedPreview = false,
 }: {
   lessons: PracticeLesson[];
   initialLessonId?: string | null;
   onCloseLesson?: () => void;
-  isUnsavedPreview?: boolean;
 }) {
   const [openLessonId, setOpenLessonId] = useState<string | null>(
     initialLessonId,
@@ -103,9 +101,20 @@ export function LessonSelector({
 
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    window.setTimeout(() => lessonModeRef.current?.focus(), 0);
+    const focusTimer = window.setTimeout(() => {
+      const lessonMode = lessonModeRef.current;
+      const firstAnswerInput =
+        lessonMode?.querySelector<HTMLInputElement>("[data-practice-answer]");
+
+      if (firstAnswerInput) {
+        firstAnswerInput.focus();
+      } else {
+        lessonMode?.focus();
+      }
+    }, 0);
 
     return () => {
+      window.clearTimeout(focusTimer);
       document.body.style.overflow = previousOverflow;
     };
   }, [openLesson]);
@@ -343,11 +352,6 @@ export function LessonSelector({
                 Lección {openLesson.lessonNumber}
                 {openLesson.name ? ` · ${openLesson.name}` : ""}
               </h2>
-              {isUnsavedPreview && (
-                <span className="rounded-full bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-800">
-                  Vista previa · cambios sin guardar
-                </span>
-              )}
             </div>
             <div
               className="h-2 overflow-hidden rounded-full bg-muted"

@@ -1,5 +1,7 @@
+import { normalizeLessonMarkdown } from "@/lib/lesson-builder/markdown";
+
 export function OverviewMarkdown({ markdown }: { markdown: string }) {
-  const lines = markdown
+  const lines = normalizeLessonMarkdown(markdown)
     .split(/\r?\n/u)
     .map((line) => line.replace(/^#{1,6}\s*/u, "").trim())
     .filter(Boolean);

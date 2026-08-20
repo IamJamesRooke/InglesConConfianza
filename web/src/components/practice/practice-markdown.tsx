@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
 
+import { normalizeLessonMarkdown } from "@/lib/lesson-builder/markdown";
+
 type MarkdownLine =
   | {
       kind: "heading";
@@ -23,7 +25,7 @@ const inlineMarkdownPattern =
   /(\\?<kbd>[^<]+?\\?<\/kbd>|==[^=]+==|\*\*[^*]+?\*\*|__[^_]+?__|\*[^*\s][^*]*\*|_[^_\s][^_]*_)/gu;
 
 export function PracticeMarkdown({ markdown }: { markdown: string }) {
-  const blocks = parseMarkdown(markdown);
+  const blocks = parseMarkdown(normalizeLessonMarkdown(markdown));
 
   return (
     <div className="space-y-4 text-center text-foreground">

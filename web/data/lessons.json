@@ -1,4 +1,204 @@
 {
   "version": 1,
-  "lessons": []
+  "lessons": [
+    {
+      "id": "lesson_5edb2bb5-d6d2-4c09-9c5f-0f13dbf5bfce",
+      "name": "Tutorial Lesson",
+      "blocks": [
+        {
+          "id": "block_1ac50ff3-4882-4ffa-bb45-2cd80bc79549",
+          "type": "explanation",
+          "contentMarkdown": "This is a placeholder for now, but this lesson will teach the student the interface."
+        }
+      ]
+    },
+    {
+      "id": "lesson_2a098380-a025-4d1a-a5a7-9adfd3ca08a5",
+      "name": "I want to do something.",
+      "blocks": [
+        {
+          "id": "block_3b5bef78-634a-4168-9db6-d833712108ab",
+          "type": "explanation",
+          "contentMarkdown": "==Yo== es ==I==."
+        },
+        {
+          "id": "block_d92f439b-82e1-4ec9-bb76-b2a410b7df51",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": "Bien.... Well. Hecho... Done. ¡Bien hecho! Well done!",
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_213f23e1-e4f2-46d8-b891-80de21fc57e3",
+              "spanish": "yo",
+              "callout": null,
+              "acceptedAnswers": [
+                "I"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_6341d545-a474-4f25-a771-6bcabdc0d879",
+          "type": "explanation",
+          "contentMarkdown": "==Quiero== o ==yo quiero== es ==I want==."
+        },
+        {
+          "id": "block_34c88335-797e-4c5d-afc2-d4d4ee5390e6",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "Una palabra en español, dos palabras en inglés.",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_faadc7ae-968e-4c10-bcc3-214d7a1cfd0b",
+              "spanish": "quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_952923de-27bd-4f99-87db-36d488329af6",
+          "type": "sentence",
+          "promptLabel": "algo: something",
+          "promptText": "algo es something",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_76a1f946-78f0-4656-b1f5-f602ae3671b0",
+              "spanish": "algo",
+              "callout": null,
+              "acceptedAnswers": [
+                "something"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_82178c07-6b53-4a18-90ff-4f0a33d1f8a5",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_cbeeabff-b892-421f-94a0-2f32a81f8da3",
+              "spanish": "quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_b445e6ef-bdde-48b5-94a7-3f3c315b56b4",
+              "spanish": "algo",
+              "callout": null,
+              "acceptedAnswers": [
+                "something"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_27635676-7728-4322-9782-77920e8daa33",
+          "type": "sentence",
+          "promptLabel": "hacer: to do",
+          "promptText": "Hacer es to do.",
+          "helperText": "Hay otras traducciones de hacer, tales como to make, pero por ahora, usamos to do.",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_bb6eee95-8cda-434b-9fac-4f7dda750662",
+              "spanish": "hacer",
+              "callout": null,
+              "acceptedAnswers": [
+                "to do"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_435e5d56-1a72-4f56-a356-5b7295b8e134",
+          "type": "explanation",
+          "contentMarkdown": "==Hacer== es ==to do==."
+        },
+        {
+          "id": "block_c0029cc7-013a-40c4-8887-6c2c6a7483b3",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_75473214-ad0a-43ed-9ec6-9a702a29737c",
+              "spanish": "hacer",
+              "callout": null,
+              "acceptedAnswers": [
+                "to do"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_a5aaeca2-e19a-4851-a1b4-7fae4405595e",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_af47deac-df19-44bb-80e5-41526f22a3c8",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_55beea2f-1b07-4645-85bd-7bd610a8df1b",
+              "spanish": "hacer",
+              "callout": null,
+              "acceptedAnswers": [
+                "to do"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_0d505ffa-ff15-4fa1-a1db-9ce27b8a8e3c",
+              "spanish": "algo.",
+              "callout": "NO OLVIDES EL PUNTO!",
+              "acceptedAnswers": [
+                "something."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
