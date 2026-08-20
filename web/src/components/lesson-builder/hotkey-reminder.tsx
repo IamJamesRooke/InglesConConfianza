@@ -59,6 +59,10 @@ export function HotkeyReminder({
             description="Append a sentence block"
           />
           <HotkeyReminderRow
+            keys={["Alt", "↑ / ↓"]}
+            description="Open the previous or next block"
+          />
+          <HotkeyReminderRow
             keys={["Alt", "M"]}
             description="Toggle active lesson collapsed form"
           />

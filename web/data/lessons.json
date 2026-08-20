@@ -67,10 +67,15 @@
           ]
         },
         {
+          "id": "block_43116d7f-45b2-4e0d-96d6-05ff52686074",
+          "type": "explanation",
+          "contentMarkdown": "==Algo== es ==something==."
+        },
+        {
           "id": "block_952923de-27bd-4f99-87db-36d488329af6",
           "type": "sentence",
-          "promptLabel": "algo: something",
-          "promptText": "algo es something",
+          "promptLabel": "",
+          "promptText": "",
           "helperText": "",
           "answerFeedback": null,
           "conceptLinks": [],
@@ -90,14 +95,14 @@
           "id": "block_82178c07-6b53-4a18-90ff-4f0a33d1f8a5",
           "type": "sentence",
           "promptLabel": "",
-          "promptText": "",
+          "promptText": "Armemos una frase.",
           "helperText": "",
           "answerFeedback": null,
           "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_cbeeabff-b892-421f-94a0-2f32a81f8da3",
-              "spanish": "quiero",
+              "spanish": "Quiero",
               "callout": null,
               "acceptedAnswers": [
                 "I want"
@@ -106,8 +111,8 @@
             },
             {
               "id": "lang_b445e6ef-bdde-48b5-94a7-3f3c315b56b4",
-              "spanish": "algo",
-              "callout": null,
+              "spanish": "algo.",
+              "callout": "¡¡¡PUNTO AL FINAL!!!!",
               "acceptedAnswers": [
                 "something"
               ],
@@ -116,10 +121,15 @@
           ]
         },
         {
+          "id": "block_bd82f7d4-0f8a-413c-bc15-82a2832807b7",
+          "type": "explanation",
+          "contentMarkdown": "==Hacer== es ==to do==, **DOS PALABRAS**."
+        },
+        {
           "id": "block_27635676-7728-4322-9782-77920e8daa33",
           "type": "sentence",
-          "promptLabel": "hacer: to do",
-          "promptText": "Hacer es to do.",
+          "promptLabel": "",
+          "promptText": "",
           "helperText": "Hay otras traducciones de hacer, tales como to make, pero por ahora, usamos to do.",
           "answerFeedback": null,
           "conceptLinks": [],
@@ -136,35 +146,10 @@
           ]
         },
         {
-          "id": "block_435e5d56-1a72-4f56-a356-5b7295b8e134",
-          "type": "explanation",
-          "contentMarkdown": "==Hacer== es ==to do==."
-        },
-        {
-          "id": "block_c0029cc7-013a-40c4-8887-6c2c6a7483b3",
-          "type": "sentence",
-          "promptLabel": "",
-          "promptText": "",
-          "helperText": "",
-          "answerFeedback": null,
-          "conceptLinks": [],
-          "languageBlocks": [
-            {
-              "id": "lang_75473214-ad0a-43ed-9ec6-9a702a29737c",
-              "spanish": "hacer",
-              "callout": null,
-              "acceptedAnswers": [
-                "to do"
-              ],
-              "conceptLinks": []
-            }
-          ]
-        },
-        {
           "id": "block_a5aaeca2-e19a-4851-a1b4-7fae4405595e",
           "type": "sentence",
           "promptLabel": "",
-          "promptText": "",
+          "promptText": "Armemos una frase completa.",
           "helperText": "",
           "answerFeedback": null,
           "conceptLinks": [],

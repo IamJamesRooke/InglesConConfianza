@@ -11,6 +11,7 @@ import {
   Languages,
   Plus,
   Save,
+  Sun,
   Trash2,
   X,
 } from "lucide-react";
@@ -747,6 +748,67 @@ export default function LessonBuilderPage() {
         event.altKey &&
         !event.ctrlKey &&
         !event.metaKey &&
+        ["ArrowUp", "ArrowDown"].includes(event.key) &&
+        !event.repeat &&
+        !event.isComposing
+      ) {
+        event.preventDefault();
+
+        const targetLesson =
+          lessons.find((lesson) => !collapsedLessons.has(lesson.id)) ??
+          lessons.find((lesson) => lesson.id === activeLessonId);
+
+        if (!targetLesson || targetLesson.blocks.length === 0) {
+          return;
+        }
+
+        const expandedBlockIndex = targetLesson.blocks.findIndex(
+          (block) =>
+            !collapsedContentBlocks.has(`${targetLesson.id}-${block.id}`),
+        );
+        const destinationBlockIndex =
+          expandedBlockIndex === -1
+            ? event.key === "ArrowDown"
+              ? 0
+              : targetLesson.blocks.length - 1
+            : expandedBlockIndex + (event.key === "ArrowDown" ? 1 : -1);
+
+        if (
+          destinationBlockIndex < 0 ||
+          destinationBlockIndex >= targetLesson.blocks.length
+        ) {
+          return;
+        }
+
+        const expandedBlock = targetLesson.blocks[expandedBlockIndex];
+        if (
+          expandedBlock?.type === "sentence" &&
+          getSentenceValidationIssueCount(expandedBlock) > 0
+        ) {
+          return;
+        }
+
+        const destinationBlock = targetLesson.blocks[destinationBlockIndex];
+        const destinationKey = `${targetLesson.id}-${destinationBlock.id}`;
+
+        setCollapsedContentBlocks(
+          new Set(
+            lessons.flatMap((lesson) =>
+              lesson.blocks
+                .map((block) => `${lesson.id}-${block.id}`)
+                .filter((key) => key !== destinationKey),
+            ),
+          ),
+        );
+        setOpenBlockPicker(null);
+        setActiveLessonId(targetLesson.id);
+        return;
+      }
+
+      if (
+        event.altKey &&
+        !event.ctrlKey &&
+        !event.metaKey &&
         ["e", "p"].includes(event.key.toLowerCase()) &&
         !event.repeat &&
         !event.isComposing
@@ -851,6 +913,7 @@ export default function LessonBuilderPage() {
     addExplanationBlock,
     addSentenceBlock,
     cancelPendingLessonExit,
+    collapsedContentBlocks,
     collapsedLessons,
     createLesson,
     cycleActiveLessonCollapseMode,
@@ -2915,48 +2978,62 @@ export default function LessonBuilderPage() {
                                       </div>
                                     </div>
                                     {isLanguageBlockCollapsed ? (
-                                      <div
-                                        role="button"
-                                        tabIndex={0}
-                                        onKeyDown={(event) => {
-                                          if (
-                                            event.key === "Enter" ||
-                                            event.key === " "
-                                          ) {
-                                            event.preventDefault();
-                                            openLanguageBlockAndFocusSpanish(
-                                              lesson.id,
-                                              block.id,
-                                              languageBlock.id,
-                                            );
-                                          }
-                                        }}
-                                        className="cursor-pointer px-3 py-3 text-sm text-stone-600 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-inset focus-visible:ring-blue-200"
-                                      >
-                                        <p className="font-bold text-stone-900">
-                                          {languageBlock.spanish || "Spanish prompt"}
-                                        </p>
-                                        <div className="mt-1 space-y-0.5">
-                                          {languageBlock.acceptedAnswers.some(
-                                            (answer) => answer.trim(),
-                                          ) ? (
-                                            languageBlock.acceptedAnswers
-                                              .filter((answer) => answer.trim())
-                                              .map((answer, answerIndex) => (
-                                                <p
-                                                  key={`${answer}-${answerIndex}`}
-                                                  className="italic text-stone-500"
-                                                >
-                                                  {answer}
-                                                </p>
-                                              ))
-                                          ) : (
-                                            <p className="italic text-stone-400">
-                                              English answer
-                                            </p>
-                                          )}
+                                      <>
+                                        <div
+                                          role="button"
+                                          tabIndex={0}
+                                          onKeyDown={(event) => {
+                                            if (
+                                              event.key === "Enter" ||
+                                              event.key === " "
+                                            ) {
+                                              event.preventDefault();
+                                              openLanguageBlockAndFocusSpanish(
+                                                lesson.id,
+                                                block.id,
+                                                languageBlock.id,
+                                              );
+                                            }
+                                          }}
+                                          className="cursor-pointer px-3 py-3 text-sm text-stone-600 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-inset focus-visible:ring-blue-200"
+                                        >
+                                          <p className="font-bold text-stone-900">
+                                            {languageBlock.spanish || "Spanish prompt"}
+                                          </p>
+                                          <div className="mt-1 space-y-0.5">
+                                            {languageBlock.acceptedAnswers.some(
+                                              (answer) => answer.trim(),
+                                            ) ? (
+                                              languageBlock.acceptedAnswers
+                                                .filter((answer) => answer.trim())
+                                                .map((answer, answerIndex) => (
+                                                  <p
+                                                    key={`${answer}-${answerIndex}`}
+                                                    className="italic text-stone-500"
+                                                  >
+                                                    {answer}
+                                                  </p>
+                                                ))
+                                            ) : (
+                                              <p className="italic text-stone-400">
+                                                English answer
+                                              </p>
+                                            )}
+                                          </div>
                                         </div>
-                                      </div>
+                                        {languageBlock.callout != null && (
+                                          <div className="flex items-center gap-2 border-t border-amber-300 bg-gradient-to-r from-amber-100 via-yellow-200 to-orange-100 px-3 py-2 text-sm font-semibold text-amber-950">
+                                            <Sun
+                                              className="size-4 shrink-0 text-orange-600"
+                                              aria-hidden="true"
+                                            />
+                                            <p className="min-w-0 truncate italic">
+                                              {languageBlock.callout ||
+                                                "Empty context hint"}
+                                            </p>
+                                          </div>
+                                        )}
+                                      </>
                                     ) : (
                                       <>
                                     <div className="flex min-h-28 flex-col items-center justify-center gap-2 px-4 py-5">
@@ -3029,75 +3106,6 @@ export default function LessonBuilderPage() {
                                         <p className="text-xs font-medium text-red-600">
                                           Spanish text is required.
                                         </p>
-                                      )}
-                                      {languageBlock.callout == null ? (
-                                        <button
-                                          type="button"
-                                          onClick={() =>
-                                            addLanguageBlockCallout(
-                                              lesson.id,
-                                              block.id,
-                                              languageBlock.id,
-                                            )
-                                          }
-                                          className="rounded-md px-2 py-1 text-xs font-medium text-amber-600 transition hover:bg-amber-50 hover:text-amber-700"
-                                        >
-                                          Add context hint
-                                        </button>
-                                      ) : (
-                                        <div className="flex w-full items-center rounded-lg bg-amber-50 px-2.5 py-1.5 text-amber-800">
-                                          <label className="min-w-0 flex-1">
-                                            <span className="sr-only">
-                                              Spanish context
-                                            </span>
-                                            <input
-                                              ref={(element) => {
-                                                const key = `${lesson.id}-${block.id}-${languageBlock.id}`;
-                                                if (element) {
-                                                  languageBlockCalloutRefs.current.set(
-                                                    key,
-                                                    element,
-                                                  );
-                                                } else {
-                                                  languageBlockCalloutRefs.current.delete(
-                                                    key,
-                                                  );
-                                                }
-                                              }}
-                                              type="text"
-                                              value={languageBlock.callout ?? ""}
-                                              onChange={(event) =>
-                                                updateLanguageBlockCallout(
-                                                  lesson.id,
-                                                  block.id,
-                                                  languageBlock.id,
-                                                  event.target.value,
-                                                )
-                                              }
-                                              placeholder="Add hint or context note."
-                                              className="w-full bg-transparent text-center text-sm font-medium italic outline-none placeholder:text-amber-500/60"
-                                            />
-                                          </label>
-                                          <button
-                                            type="button"
-                                            onClick={() =>
-                                              updateLanguageBlockCallout(
-                                                lesson.id,
-                                                block.id,
-                                                languageBlock.id,
-                                                null,
-                                              )
-                                            }
-                                            aria-label="Remove context"
-                                            title="Remove context"
-                                            className="flex size-6 shrink-0 items-center justify-center rounded text-amber-500 transition hover:bg-amber-100 hover:text-amber-700"
-                                          >
-                                            <X
-                                              className="size-3.5"
-                                              aria-hidden="true"
-                                            />
-                                          </button>
-                                        </div>
                                       )}
                                     </div>
                                     <div className="border-t border-stone-800 bg-stone-900 px-3 py-3">
@@ -3280,6 +3288,87 @@ export default function LessonBuilderPage() {
                                         Add alternative
                                       </button>
                                     </div>
+                                    {languageBlock.callout == null ? (
+                                      <button
+                                        type="button"
+                                        onClick={() =>
+                                          addLanguageBlockCallout(
+                                            lesson.id,
+                                            block.id,
+                                            languageBlock.id,
+                                          )
+                                        }
+                                        className="group flex min-h-12 w-full items-center justify-center gap-2 border-t border-amber-300 bg-gradient-to-r from-amber-100 via-yellow-200 to-orange-100 px-3 py-3 text-sm font-bold text-amber-900 transition hover:from-amber-200 hover:via-yellow-300 hover:to-orange-200 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-inset focus-visible:ring-amber-400"
+                                      >
+                                        <span className="flex size-7 items-center justify-center rounded-full bg-white/75 text-orange-600 shadow-sm transition group-hover:rotate-12 group-hover:scale-105">
+                                          <Sun
+                                            className="size-4"
+                                            aria-hidden="true"
+                                          />
+                                        </span>
+                                        Add context hint
+                                      </button>
+                                    ) : (
+                                      <div className="flex min-h-14 w-full items-center gap-2.5 border-t border-amber-300 bg-gradient-to-r from-amber-100 via-yellow-200 to-orange-100 px-3 py-3 text-amber-950">
+                                        <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-white/75 text-orange-600 shadow-sm">
+                                          <Sun
+                                            className="size-4.5"
+                                            aria-hidden="true"
+                                          />
+                                        </span>
+                                        <label className="min-w-0 flex-1">
+                                          <span className="sr-only">
+                                            Spanish context
+                                          </span>
+                                          <input
+                                            ref={(element) => {
+                                              const key = `${lesson.id}-${block.id}-${languageBlock.id}`;
+                                              if (element) {
+                                                languageBlockCalloutRefs.current.set(
+                                                  key,
+                                                  element,
+                                                );
+                                              } else {
+                                                languageBlockCalloutRefs.current.delete(
+                                                  key,
+                                                );
+                                              }
+                                            }}
+                                            type="text"
+                                            value={languageBlock.callout ?? ""}
+                                            onChange={(event) =>
+                                              updateLanguageBlockCallout(
+                                                lesson.id,
+                                                block.id,
+                                                languageBlock.id,
+                                                event.target.value,
+                                              )
+                                            }
+                                            placeholder="Add hint or context note."
+                                            className="w-full bg-transparent text-sm font-semibold italic outline-none placeholder:text-amber-700/55"
+                                          />
+                                        </label>
+                                        <button
+                                          type="button"
+                                          onClick={() =>
+                                            updateLanguageBlockCallout(
+                                              lesson.id,
+                                              block.id,
+                                              languageBlock.id,
+                                              null,
+                                            )
+                                          }
+                                          aria-label="Remove context hint"
+                                          title="Remove context hint"
+                                          className="flex size-7 shrink-0 items-center justify-center rounded-md text-amber-700 transition hover:bg-white/60 hover:text-red-600"
+                                        >
+                                          <X
+                                            className="size-4"
+                                            aria-hidden="true"
+                                          />
+                                        </button>
+                                      </div>
+                                    )}
                                       </>
                                     )}
                                   </div>

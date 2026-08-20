@@ -1,6 +1,6 @@
 "use client";
 
-import { Lightbulb } from "lucide-react";
+import { Lightbulb, Sun } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import type { SentenceBlock } from "@/lib/lesson-builder/types";
@@ -166,11 +166,6 @@ export function SentencePracticeCard({
               <span className="block text-center text-2xl font-bold leading-tight text-foreground">
                 {languageBlock.spanish || "Texto en español"}
               </span>
-              {languageBlock.callout?.trim() && (
-                <span className="block text-center text-sm font-medium italic text-muted-foreground">
-                  {languageBlock.callout}
-                </span>
-              )}
               <div className="relative">
                 <input
                   ref={(element) => {
@@ -214,6 +209,17 @@ export function SentencePracticeCard({
                   <Lightbulb className="size-4" aria-hidden="true" />
                 </button>
               </div>
+              {languageBlock.callout?.trim() && (
+                <div className="rounded-2xl border border-amber-300 bg-gradient-to-br from-amber-100 via-yellow-200 to-orange-100 px-4 py-3 text-center text-amber-950 shadow-sm dark:border-amber-700 dark:from-amber-950/80 dark:via-yellow-950/70 dark:to-orange-950/80 dark:text-amber-100">
+                  <p className="flex items-center justify-center gap-2 text-base font-bold italic leading-6">
+                    <Sun
+                      className="size-5 shrink-0 text-orange-600 dark:text-amber-400"
+                      aria-hidden="true"
+                    />
+                    {languageBlock.callout}
+                  </p>
+                </div>
+              )}
             </div>
           ))}
         </div>

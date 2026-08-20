@@ -33,6 +33,7 @@ Build the smallest useful JSON-backed lesson-authoring foundation. Let actual ha
 - [x] Make Lesson Builder persistence and previews lesson-scoped with one open lesson editor, lesson-specific saves, autosaved ordering, persisted deletion, visible dirty state, Save/Discard/Cancel leave protection, reusable Practice previews for lessons and individual blocks, dismissible insertion pickers, and block-creation hotkeys.
 - [x] Intentionally clear the prototype lessons and experimental curriculum graph while preserving their versioned JSON schemas, establishing a clean starting point for new handcrafted lessons and later curriculum-database population.
 - [x] Keep Practice and author previews on the same lesson runner, autofocus the first learner answer, support live and rendered `==highlight==` syntax, and keep invalid Sentence blocks open and unavailable for preview until their issues are resolved.
+- [x] Add `Alt+Up` and `Alt+Down` navigation between lesson content blocks, a first-position insertion control, issue-only status badges, and prominent bottom-aligned context hints in authoring and learner views.
 - [ ] Build five representative lessons as the first vertical slice.
     - [ ] Include straightforward vocabulary retrieval.
     - [ ] Include a Spanish-to-English one-to-many mapping.
