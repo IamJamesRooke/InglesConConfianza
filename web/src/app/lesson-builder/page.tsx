@@ -24,6 +24,7 @@ import {
   useRef,
   useState,
   type DragEvent,
+  type ReactNode,
 } from "react";
 
 import { MarkdownEditor } from "@/components/lesson-builder/markdown-editor";
@@ -127,6 +128,34 @@ const mappingDirectionOptions = [
 
 function normalizeAnswer(answer: string) {
   return answer.trim().replace(/\s+/g, " ").toLocaleLowerCase();
+}
+
+function renderOverviewMarkdown(markdown: string): ReactNode {
+  const lines = markdown
+    .split(/\r?\n/u)
+    .map((line) => line.replace(/^#{1,6}\s*/u, "").trim())
+    .filter(Boolean);
+
+  return lines.map((line, lineIndex) => {
+    const parts = line.split(/(==[^=]+==)/u);
+
+    return (
+      <p key={`${line}-${lineIndex}`} className="whitespace-pre-wrap">
+        {parts.map((part, partIndex) =>
+          part.startsWith("==") && part.endsWith("==") ? (
+            <strong
+              key={`${part}-${partIndex}`}
+              className="font-bold text-stone-900"
+            >
+              {part.slice(2, -2)}
+            </strong>
+          ) : (
+            part
+          ),
+        )}
+      </p>
+    );
+  });
 }
 
 function createId(prefix: string) {
@@ -479,6 +508,7 @@ export default function LessonBuilderPage() {
         if (isMounted) {
           savedLessonsJsonRef.current = lessonsJson;
           setLessons(lessons);
+          setCollapsedLessons(new Set(lessons.map((lesson) => lesson.id)));
           setIsDirty(false);
           setSaveStatus("idle");
         }
@@ -1516,6 +1546,57 @@ export default function LessonBuilderPage() {
                   <GripVertical className="size-5" aria-hidden="true" />
                 </button>
               </header>
+
+              {isLessonCollapsed && (
+                <div className="space-y-3 border-t border-border bg-[var(--surface)] px-6 py-3">
+                  {lesson.blocks.length === 0 ? (
+                    <p className="text-sm text-muted-foreground">
+                      No content blocks yet.
+                    </p>
+                  ) : (
+                    lesson.blocks.map((block) => (
+                      <div
+                        key={block.id}
+                        className={
+                          block.type === "explanation"
+                            ? "rounded-lg bg-stone-200 px-3 py-2 text-stone-800"
+                            : "px-1"
+                        }
+                      >
+                        {block.type === "explanation" ? (
+                          <div className="space-y-0 text-sm leading-5 text-foreground">
+                            {block.contentMarkdown.trim() ? (
+                              renderOverviewMarkdown(block.contentMarkdown)
+                            ) : (
+                              <p>Empty explanation</p>
+                            )}
+                          </div>
+                        ) : (
+                          <div className="text-sm text-foreground">
+                            <p className="font-semibold">
+                              {block.languageBlocks
+                                .map((languageBlock) => languageBlock.spanish.trim())
+                                .filter(Boolean)
+                                .join(" ") || "Empty Spanish prompt"}
+                            </p>
+                            <p className="text-muted-foreground italic">
+                              {block.languageBlocks
+                                .map(
+                                  (languageBlock) =>
+                                    languageBlock.acceptedAnswers.find(
+                                      (answer) => answer.trim(),
+                                    )?.trim() ?? "",
+                                )
+                                .filter(Boolean)
+                                .join(" ") || "No answer"}
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    ))
+                  )}
+                </div>
+              )}
 
               {!isLessonCollapsed && (
               <div className="space-y-4 p-6">
