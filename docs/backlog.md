@@ -31,6 +31,7 @@ Build the smallest useful JSON-backed lesson-authoring foundation. Let actual ha
 - [x] Streamline Lesson Builder authoring with one expanded content block at a time, compact clickable summaries, handle-only block reordering, duplication with fresh nested IDs, creation autofocus, keyboard-assisted explanation closing, and lesson-deletion confirmation.
 - [x] Refine Sentence authoring with inline block insertion, responsive compact word cards, one open word editor at a time, click-to-toggle cards, handle-based word reordering, sentence-level concepts, and consistently ordered prompt, helper, feedback, and concept fields.
 - [x] Make Lesson Builder persistence and previews lesson-scoped with one open lesson editor, lesson-specific saves, autosaved ordering, persisted deletion, visible dirty state, Save/Discard/Cancel leave protection, reusable Practice previews for lessons and individual blocks, dismissible insertion pickers, and block-creation hotkeys.
+- [x] Intentionally clear the prototype lessons and experimental curriculum graph while preserving their versioned JSON schemas, establishing a clean starting point for new handcrafted lessons and later curriculum-database population.
 - [ ] Build five representative lessons as the first vertical slice.
     - [ ] Include straightforward vocabulary retrieval.
     - [ ] Include a Spanish-to-English one-to-many mapping.
