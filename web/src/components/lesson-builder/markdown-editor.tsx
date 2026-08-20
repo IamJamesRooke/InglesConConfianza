@@ -19,6 +19,7 @@ const InitializedMarkdownEditor = dynamic(
 type MarkdownEditorProps = {
   markdown: string;
   onChange: (markdown: string) => void;
+  placeholder?: string;
 };
 
 export function MarkdownEditor(props: MarkdownEditorProps) {
@@ -73,6 +74,7 @@ export function MarkdownEditor(props: MarkdownEditorProps) {
       markdown={props.markdown}
       onChange={handleChange}
       onBlur={syncMarkdown}
+      placeholder={props.placeholder}
     />
   );
 }

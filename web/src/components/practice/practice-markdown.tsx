@@ -24,20 +24,49 @@ type MarkdownLine =
 const inlineMarkdownPattern =
   /(\\?<kbd>[^<]+?\\?<\/kbd>|==[^=]+==|\*\*[^*]+?\*\*|__[^_]+?__|\*[^*\s][^*]*\*|_[^_\s][^_]*_)/gu;
 
-export function PracticeMarkdown({ markdown }: { markdown: string }) {
+type PracticeMarkdownVariant =
+  | "explanation"
+  | "eyebrow"
+  | "prompt"
+  | "helper"
+  | "feedback";
+
+export function PracticeMarkdown({
+  markdown,
+  variant = "explanation",
+}: {
+  markdown: string;
+  variant?: PracticeMarkdownVariant;
+}) {
   const blocks = parseMarkdown(normalizeLessonMarkdown(markdown));
+  const isExplanation = variant === "explanation";
 
   return (
-    <div className="space-y-4 text-center text-foreground">
+    <div
+      className={
+        isExplanation
+          ? "space-y-4 text-center text-foreground"
+          : variant === "feedback"
+            ? "space-y-2 text-center"
+            : "space-y-2 text-left"
+      }
+    >
       {blocks.map((block, blockIndex) => {
         if (block.kind === "heading") {
           const HeadingTag = `h${block.level}` as const;
-          const headingClassName =
-            block.level === 1
+          const headingClassName = isExplanation
+            ? block.level === 1
               ? "text-4xl font-bold leading-tight tracking-tight sm:text-5xl"
               : block.level === 2
                 ? "text-3xl font-bold leading-tight tracking-tight sm:text-4xl"
-                : "text-2xl font-semibold leading-snug sm:text-3xl";
+                : "text-2xl font-semibold leading-snug sm:text-3xl"
+            : variant === "eyebrow"
+              ? "text-sm font-semibold uppercase tracking-[0.2em]"
+              : variant === "prompt"
+                ? "text-2xl font-semibold leading-tight sm:text-3xl"
+                : variant === "feedback"
+                  ? "text-lg font-semibold leading-7 sm:text-xl"
+                  : "text-sm font-semibold leading-5.5";
 
           return (
             <HeadingTag
@@ -53,7 +82,11 @@ export function PracticeMarkdown({ markdown }: { markdown: string }) {
           return (
             <ol
               key={`${block.kind}-${blockIndex}`}
-              className="list-inside list-decimal space-y-2 text-2xl font-semibold leading-9 sm:text-3xl sm:leading-10"
+              className={
+                isExplanation
+                  ? "list-inside list-decimal space-y-2 text-2xl font-semibold leading-9 sm:text-3xl sm:leading-10"
+                  : "list-inside list-decimal space-y-1"
+              }
             >
               {block.items.map((item, itemIndex) => (
                 <li key={`${item}-${itemIndex}`} className="pl-1">
@@ -68,7 +101,11 @@ export function PracticeMarkdown({ markdown }: { markdown: string }) {
           return (
             <ul
               key={`${block.kind}-${blockIndex}`}
-              className="list-inside list-disc space-y-2 text-2xl font-semibold leading-9 sm:text-3xl sm:leading-10"
+              className={
+                isExplanation
+                  ? "list-inside list-disc space-y-2 text-2xl font-semibold leading-9 sm:text-3xl sm:leading-10"
+                  : "list-inside list-disc space-y-1"
+              }
             >
               {block.items.map((item, itemIndex) => (
                 <li key={`${item}-${itemIndex}`} className="pl-1">
@@ -82,7 +119,17 @@ export function PracticeMarkdown({ markdown }: { markdown: string }) {
         return (
           <p
             key={`${block.kind}-${blockIndex}-${block.content}`}
-            className="whitespace-pre-wrap text-2xl font-semibold leading-9 sm:text-3xl sm:leading-10"
+            className={`whitespace-pre-wrap ${
+              isExplanation
+                ? "text-2xl font-semibold leading-9 sm:text-3xl sm:leading-10"
+                : variant === "eyebrow"
+                  ? "text-sm font-medium uppercase tracking-[0.2em]"
+                  : variant === "prompt"
+                    ? "text-2xl font-semibold leading-tight sm:text-3xl"
+                    : variant === "feedback"
+                      ? "text-lg font-semibold leading-7 sm:text-xl sm:leading-8"
+                      : "text-sm font-medium leading-5.5"
+            }`}
           >
             {renderInlineMarkdown(block.content)}
           </p>

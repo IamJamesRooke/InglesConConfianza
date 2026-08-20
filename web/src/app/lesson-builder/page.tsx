@@ -118,6 +118,81 @@ function ContentBlockPicker({
   );
 }
 
+type SentenceMarkdownFieldName =
+  | "promptLabel"
+  | "promptText"
+  | "helperText"
+  | "answerFeedback";
+
+function SentenceMarkdownFieldEditor({
+  label,
+  markdown,
+  placeholder,
+  tone = "violet",
+  isOpen,
+  onOpen,
+  onClose,
+  onChange,
+}: {
+  label: string;
+  markdown: string;
+  placeholder: string;
+  tone?: "violet" | "emerald";
+  isOpen: boolean;
+  onOpen: () => void;
+  onClose: () => void;
+  onChange: (markdown: string) => void;
+}) {
+  const toneClasses =
+    tone === "emerald"
+      ? "border-emerald-200 bg-emerald-50/45 text-emerald-800"
+      : "border-violet-200 bg-violet-50/45 text-violet-800";
+
+  return (
+    <section className={`overflow-hidden rounded-xl border ${toneClasses}`}>
+      <div className="flex min-h-10 items-center justify-between gap-3 px-3 py-2">
+        <button
+          type="button"
+          onClick={isOpen ? onClose : onOpen}
+          className="min-w-0 flex-1 text-left text-[11px] font-semibold uppercase tracking-[0.12em] focus-visible:outline-none"
+        >
+          {label}
+        </button>
+        {isOpen && (
+          <button
+            type="button"
+            onClick={onClose}
+            className="rounded-md px-2 py-1 text-xs font-semibold transition hover:bg-white/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current/20"
+          >
+            Done
+          </button>
+        )}
+      </div>
+      {isOpen ? (
+        <div className="border-t border-current/10 bg-white text-stone-900">
+          <MarkdownEditor
+            markdown={markdown}
+            onChange={onChange}
+            placeholder={placeholder}
+          />
+        </div>
+      ) : (
+        <button
+          type="button"
+          onClick={onOpen}
+          className="block w-full border-t border-current/10 bg-white/75 px-3 py-3 text-left text-sm leading-5 text-stone-700 transition hover:bg-white focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-inset focus-visible:ring-current/15"
+        >
+          {markdown.trim() ? (
+            <OverviewMarkdown markdown={markdown} />
+          ) : (
+            <span className="italic text-stone-400">{placeholder}</span>
+          )}
+        </button>
+      )}
+    </section>
+  );
+}
+
 export default function LessonBuilderPage() {
   const [lessons, setLessons] = useState<Lesson[]>([]);
   const [savedLessonsSnapshot, setSavedLessonsSnapshot] = useState<Lesson[]>(
@@ -170,6 +245,12 @@ export default function LessonBuilderPage() {
   const [previewLessonId, setPreviewLessonId] = useState<string | null>(null);
   const [previewBlockId, setPreviewBlockId] = useState<string | null>(null);
   const [activeLessonId, setActiveLessonId] = useState<string | null>(null);
+  const [activeSentenceMarkdownField, setActiveSentenceMarkdownField] =
+    useState<{
+      lessonId: string;
+      blockId: string;
+      field: SentenceMarkdownFieldName;
+    } | null>(null);
   const [savingLessonId, setSavingLessonId] = useState<string | null>(null);
   const [isSavingLessonOrder, setIsSavingLessonOrder] = useState(false);
   const [pendingLessonExitId, setPendingLessonExitId] = useState<string | null>(
@@ -413,6 +494,7 @@ export default function LessonBuilderPage() {
 
   const openLessonEditorNow = useCallback(
     (lessonId: string) => {
+      setActiveSentenceMarkdownField(null);
       setCollapsedContentBlocks(
         new Set(
           lessons.flatMap((lesson) =>
@@ -440,6 +522,7 @@ export default function LessonBuilderPage() {
     (lessonId: string) => {
       const isFullyCollapsed = fullyCollapsedLessons.has(lessonId);
 
+      setActiveSentenceMarkdownField(null);
       setCollapsedLessons((currentLessonIds) => {
         const nextLessonIds = new Set(currentLessonIds);
         nextLessonIds.add(lessonId);
@@ -662,7 +745,7 @@ export default function LessonBuilderPage() {
             blocks: lesson.blocks.toSpliced(insertionIndex, 0, {
               id: blockId,
               type: "sentence",
-              promptLabel: "",
+              promptLabel: "Escribe En Inglés",
               promptText: "",
               helperText: "",
               answerFeedback: null,
@@ -996,6 +1079,7 @@ export default function LessonBuilderPage() {
 
   function toggleContentBlock(lessonId: string, blockId: string) {
     const key = `${lessonId}-${blockId}`;
+    setActiveSentenceMarkdownField(null);
     setCollapsedContentBlocks((currentKeys) => {
       const expandedInvalidSentence = lessons
         .flatMap((lesson) =>
@@ -2613,47 +2697,66 @@ export default function LessonBuilderPage() {
                         </div>
                         {!isContentBlockCollapsed && (
                         <div className="flex flex-col p-6">
-                            <div className="order-1 mb-5 rounded-xl border border-violet-200 bg-violet-50/60 p-4">
-                              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-violet-700">
-                                Question prompt
-                              </p>
-                              <label className="mb-3 block">
-                                <span className="mb-1 block text-xs font-medium text-stone-500">
-                                  Label (optional)
-                                </span>
-                                <input
-                                  type="text"
-                                  value={block.promptLabel}
-                                  onChange={(event) =>
-                                    updateSentencePromptLabel(
-                                      lesson.id,
-                                      block.id,
-                                      event.target.value,
-                                    )
-                                  }
-                                  placeholder="For example: Tu turno"
-                                  className="w-full rounded-lg border border-violet-200 bg-white px-3 py-2 text-sm font-medium outline-none transition placeholder:text-stone-400 focus:border-violet-400 focus:ring-2 focus:ring-violet-100"
-                                />
-                              </label>
-                              <label
-                                htmlFor={`sentence-prompt-${lesson.id}-${block.id}`}
-                                className="mb-1 block text-xs font-medium text-stone-500"
-                              >
-                                Prompt (optional)
-                              </label>
-                              <textarea
-                                id={`sentence-prompt-${lesson.id}-${block.id}`}
-                                value={block.promptText}
-                                onChange={(event) =>
+                            <div className="order-2 mt-4 space-y-3">
+                              <SentenceMarkdownFieldEditor
+                                label="Label (optional)"
+                                markdown={block.promptLabel}
+                                placeholder="For example: Tu turno"
+                                isOpen={
+                                  activeSentenceMarkdownField?.lessonId ===
+                                    lesson.id &&
+                                  activeSentenceMarkdownField.blockId ===
+                                    block.id &&
+                                  activeSentenceMarkdownField.field ===
+                                    "promptLabel"
+                                }
+                                onOpen={() =>
+                                  setActiveSentenceMarkdownField({
+                                    lessonId: lesson.id,
+                                    blockId: block.id,
+                                    field: "promptLabel",
+                                  })
+                                }
+                                onClose={() =>
+                                  setActiveSentenceMarkdownField(null)
+                                }
+                                onChange={(markdown) =>
+                                  updateSentencePromptLabel(
+                                    lesson.id,
+                                    block.id,
+                                    markdown,
+                                  )
+                                }
+                              />
+                              <SentenceMarkdownFieldEditor
+                                label="Prompt (optional)"
+                                markdown={block.promptText}
+                                placeholder="For example: ¿Cómo se dice “Estoy preparando”?"
+                                isOpen={
+                                  activeSentenceMarkdownField?.lessonId ===
+                                    lesson.id &&
+                                  activeSentenceMarkdownField.blockId ===
+                                    block.id &&
+                                  activeSentenceMarkdownField.field ===
+                                    "promptText"
+                                }
+                                onOpen={() =>
+                                  setActiveSentenceMarkdownField({
+                                    lessonId: lesson.id,
+                                    blockId: block.id,
+                                    field: "promptText",
+                                  })
+                                }
+                                onClose={() =>
+                                  setActiveSentenceMarkdownField(null)
+                                }
+                                onChange={(markdown) =>
                                   updateSentencePromptText(
                                     lesson.id,
                                     block.id,
-                                    event.target.value,
+                                    markdown,
                                   )
                                 }
-                                rows={2}
-                                placeholder="For example: ¿Cómo se dice “Estoy preparando”?"
-                                className="block w-full resize-y rounded-lg border border-violet-200 bg-white px-3 py-2 text-sm leading-6 text-stone-800 outline-none transition placeholder:text-stone-400 focus:border-violet-400 focus:ring-2 focus:ring-violet-100"
                               />
                             </div>
                             <div className="order-5 mt-5 rounded-xl border border-blue-200 bg-blue-50/60 p-4">
@@ -2839,7 +2942,7 @@ export default function LessonBuilderPage() {
                                 </p>
                               )}
                             </div>
-                          <div className="order-2 grid items-start grid-cols-[repeat(auto-fit,minmax(min(100%,13rem),1fr))] gap-3">
+                          <div className="order-1 grid items-start grid-cols-[repeat(auto-fit,minmax(min(100%,13rem),1fr))] gap-3">
                             {block.languageBlocks.map(
                               (languageBlock, languageBlockIndex) => {
                                 const isLastLanguageBlock =
@@ -3393,42 +3496,71 @@ export default function LessonBuilderPage() {
                               </span>
                             </button>
                           </div>
-                          <label className="order-3 mt-4 block rounded-xl border border-violet-200 bg-violet-50/50 p-4">
-                            <span className="mb-1.5 block text-xs font-semibold uppercase tracking-[0.12em] text-violet-700">
-                              Helper text (optional)
-                            </span>
-                            <input
-                              type="text"
-                              value={block.helperText ?? ""}
-                              onChange={(event) =>
+                          <div className="order-3 mt-3">
+                            <SentenceMarkdownFieldEditor
+                              label="Helper text (optional)"
+                              markdown={block.helperText ?? ""}
+                              placeholder="For example: No hay penalización por equivocarse."
+                              isOpen={
+                                activeSentenceMarkdownField?.lessonId ===
+                                  lesson.id &&
+                                activeSentenceMarkdownField.blockId ===
+                                  block.id &&
+                                activeSentenceMarkdownField.field ===
+                                  "helperText"
+                              }
+                              onOpen={() =>
+                                setActiveSentenceMarkdownField({
+                                  lessonId: lesson.id,
+                                  blockId: block.id,
+                                  field: "helperText",
+                                })
+                              }
+                              onClose={() =>
+                                setActiveSentenceMarkdownField(null)
+                              }
+                              onChange={(markdown) =>
                                 updateSentenceHelperText(
                                   lesson.id,
                                   block.id,
-                                  event.target.value,
+                                  markdown,
                                 )
                               }
-                              placeholder="For example: No hay penalización por equivocarse."
-                              className="w-full rounded-lg border border-violet-200 bg-white px-3 py-2.5 text-sm outline-none transition placeholder:text-stone-400 focus:border-violet-400 focus:ring-2 focus:ring-violet-100"
                             />
-                          </label>
-                          <label className="order-4 mt-5 block rounded-xl border border-emerald-200 bg-emerald-50/60 p-4">
-                            <span className="mb-1.5 block text-xs font-semibold uppercase tracking-[0.12em] text-emerald-700">
-                              Answer feedback (optional)
-                            </span>
-                            <input
-                              type="text"
-                              value={block.answerFeedback ?? ""}
-                              onChange={(event) =>
+                          </div>
+                          <div className="order-4 mt-3">
+                            <SentenceMarkdownFieldEditor
+                              label="Answer feedback (optional)"
+                              markdown={block.answerFeedback ?? ""}
+                              placeholder="For example: Correcto. Ahora puedes usar la frase completa."
+                              tone="emerald"
+                              isOpen={
+                                activeSentenceMarkdownField?.lessonId ===
+                                  lesson.id &&
+                                activeSentenceMarkdownField.blockId ===
+                                  block.id &&
+                                activeSentenceMarkdownField.field ===
+                                  "answerFeedback"
+                              }
+                              onOpen={() =>
+                                setActiveSentenceMarkdownField({
+                                  lessonId: lesson.id,
+                                  blockId: block.id,
+                                  field: "answerFeedback",
+                                })
+                              }
+                              onClose={() =>
+                                setActiveSentenceMarkdownField(null)
+                              }
+                              onChange={(markdown) =>
                                 updateSentenceAnswerFeedback(
                                   lesson.id,
                                   block.id,
-                                  event.target.value || null,
+                                  markdown || null,
                                 )
                               }
-                              placeholder="For example: Correcto. Ahora puedes usar la frase completa."
-                              className="w-full rounded-lg border border-emerald-200 bg-white px-3 py-2.5 text-sm outline-none transition placeholder:text-stone-400 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100"
                             />
-                          </label>
+                          </div>
                         </div>
                         )}
                       </>

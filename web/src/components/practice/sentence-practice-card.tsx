@@ -5,6 +5,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 import type { SentenceBlock } from "@/lib/lesson-builder/types";
 import { normalizeAnswer } from "@/lib/lesson-builder/utils";
+import { PracticeMarkdown } from "./practice-markdown";
 
 export function SentencePracticeCard({
   sentence,
@@ -149,25 +150,22 @@ export function SentencePracticeCard({
       }`}
     >
       {sentence.promptLabel.trim() && (
-        <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
-          {sentence.promptLabel}
-        </p>
+        <div className="text-muted-foreground">
+          <PracticeMarkdown
+            markdown={sentence.promptLabel}
+            variant="eyebrow"
+          />
+        </div>
       )}
       {sentence.promptText?.trim() && (
-        <h3 className="mt-2 max-w-2xl whitespace-pre-wrap text-2xl font-semibold leading-tight text-foreground sm:text-3xl">
-          {sentence.promptText}
-        </h3>
+        <div className="mt-2 max-w-2xl text-foreground">
+          <PracticeMarkdown markdown={sentence.promptText} variant="prompt" />
+        </div>
       )}
-      {!hasAuthoredPrompt && (
-        <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-          Escribe en inglés
-        </p>
-      )}
-
       {sentence.languageBlocks.length > 0 ? (
         <>
           <div
-            className={`${hasAuthoredPrompt ? "mt-7" : "mt-5"} grid gap-x-8 gap-y-7 ${
+            className={`${hasAuthoredPrompt ? "mt-7" : ""} grid gap-x-8 gap-y-7 ${
               isSingleLanguageBlock
                 ? "mx-auto max-w-xl"
                 : "grid-cols-[repeat(auto-fit,minmax(min(100%,12rem),1fr))]"
@@ -196,7 +194,12 @@ export function SentencePracticeCard({
                   onKeyDown={(event) => {
                     if (event.altKey && event.key.toLowerCase() === "h") {
                       event.preventDefault();
-                      showHelp(languageBlockIndex);
+                      if (
+                        !correctAnswers[languageBlockIndex] ||
+                        helpedBlockIndex === languageBlockIndex
+                      ) {
+                        showHelp(languageBlockIndex);
+                      }
                     }
                   }}
                   aria-label={`Traducción de ${languageBlock.spanish || `bloque ${languageBlockIndex + 1}`}`}
@@ -213,22 +216,44 @@ export function SentencePracticeCard({
                 <button
                   type="button"
                   onClick={() => showHelp(languageBlockIndex)}
-                  aria-label={`Mostrar pista para ${languageBlock.spanish || `bloque ${languageBlockIndex + 1}`}`}
-                  title="Mostrar pista (Alt+H)"
-                  className={`absolute -right-2 -top-2 flex size-9 items-center justify-center rounded-full border shadow-sm transition hover:scale-105 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-amber-400/50 ${
-                    helpedBlockIndex === languageBlockIndex
+                  disabled={
+                    correctAnswers[languageBlockIndex] &&
+                    helpedBlockIndex !== languageBlockIndex
+                  }
+                  aria-label={
+                    correctAnswers[languageBlockIndex] &&
+                    helpedBlockIndex !== languageBlockIndex
+                      ? `Respuesta correcta para ${languageBlock.spanish || `bloque ${languageBlockIndex + 1}`}`
+                      : `Mostrar pista para ${languageBlock.spanish || `bloque ${languageBlockIndex + 1}`}`
+                  }
+                  title={
+                    correctAnswers[languageBlockIndex] &&
+                    helpedBlockIndex !== languageBlockIndex
+                      ? "Respuesta correcta"
+                      : "Mostrar pista (Alt+H)"
+                  }
+                  className={`absolute -right-2 -top-2 flex size-9 items-center justify-center rounded-full border shadow-sm transition focus-visible:outline-none focus-visible:ring-3 ${
+                    correctAnswers[languageBlockIndex] &&
+                    helpedBlockIndex !== languageBlockIndex
+                      ? "cursor-default border-emerald-400 bg-emerald-100 text-emerald-700 focus-visible:ring-emerald-400/50 dark:border-emerald-700 dark:bg-emerald-950 dark:text-emerald-300"
+                      : helpedBlockIndex === languageBlockIndex
                       ? "border-amber-500 bg-amber-300 text-amber-950"
-                      : "border-amber-300 bg-amber-100 text-amber-700 hover:border-amber-400 hover:bg-amber-200 hover:text-amber-900 dark:border-amber-700 dark:bg-amber-950 dark:text-amber-300 dark:hover:bg-amber-900"
+                      : "border-amber-300 bg-amber-100 text-amber-700 hover:scale-105 hover:border-amber-400 hover:bg-amber-200 hover:text-amber-900 focus-visible:ring-amber-400/50 dark:border-amber-700 dark:bg-amber-950 dark:text-amber-300 dark:hover:bg-amber-900"
                   }`}
                 >
-                  <Lightbulb
-                    className={`size-5 ${
-                      helpedBlockIndex === languageBlockIndex
-                        ? "fill-amber-500"
-                        : "fill-amber-300 dark:fill-amber-700"
-                    }`}
-                    aria-hidden="true"
-                  />
+                  {correctAnswers[languageBlockIndex] &&
+                  helpedBlockIndex !== languageBlockIndex ? (
+                    <CheckCircle2 className="size-5" aria-hidden="true" />
+                  ) : (
+                    <Lightbulb
+                      className={`size-5 ${
+                        helpedBlockIndex === languageBlockIndex
+                          ? "fill-amber-500"
+                          : "fill-amber-300 dark:fill-amber-700"
+                      }`}
+                      aria-hidden="true"
+                    />
+                  )}
                 </button>
               </div>
               {languageBlock.callout?.trim() && (
@@ -262,23 +287,23 @@ export function SentencePracticeCard({
               <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-violet-700 dark:text-violet-300">
                 Ten en cuenta
               </p>
-              <p className="mt-0.5 text-sm font-medium leading-5.5 text-violet-950 dark:text-violet-100">
-                {sentence.helperText}
-              </p>
+              <div className="mt-0.5 text-violet-950 dark:text-violet-100">
+                <PracticeMarkdown
+                  markdown={sentence.helperText}
+                  variant="helper"
+                />
+              </div>
             </div>
           </div>
         </aside>
       )}
 
       {hasFeedback && isFeedbackVisible && (
-        <div className="mx-auto mt-5 max-w-xl border-t border-emerald-200 px-2 pt-4 text-center text-foreground dark:border-emerald-800">
-          <p className="flex items-start justify-center gap-2.5 whitespace-pre-wrap text-lg font-semibold leading-7 sm:text-xl sm:leading-8">
-            <CheckCircle2
-              className="mt-1 size-5 shrink-0 text-emerald-600 dark:text-emerald-300"
-              aria-hidden="true"
-            />
-            <span>{sentence.answerFeedback}</span>
-          </p>
+        <div className="mx-auto mt-5 max-w-xl px-2 text-center text-foreground">
+          <PracticeMarkdown
+            markdown={sentence.answerFeedback ?? ""}
+            variant="feedback"
+          />
         </div>
       )}
     </div>

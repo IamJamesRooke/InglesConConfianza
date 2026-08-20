@@ -1,5 +1,8 @@
 import { normalizeLessonMarkdown } from "@/lib/lesson-builder/markdown";
 
+const inlineMarkdownPattern =
+  /(\\?<kbd>[^<]+?\\?<\/kbd>|==[^=]+==|\*\*[^*]+?\*\*|__[^_]+?__|\*[^*\s][^*]*\*|_[^_\s][^_]*_)/gu;
+
 export function OverviewMarkdown({ markdown }: { markdown: string }) {
   const lines = normalizeLessonMarkdown(markdown)
     .split(/\r?\n/u)
@@ -7,7 +10,7 @@ export function OverviewMarkdown({ markdown }: { markdown: string }) {
     .filter(Boolean);
 
   return lines.map((line, lineIndex) => {
-    const parts = line.split(/(\\?<kbd>[^<]+?\\?<\/kbd>|==[^=]+==)/u);
+    const parts = line.split(inlineMarkdownPattern);
 
     return (
       <p key={`${line}-${lineIndex}`} className="whitespace-pre-wrap">
@@ -26,15 +29,48 @@ export function OverviewMarkdown({ markdown }: { markdown: string }) {
             );
           }
 
-          return part.startsWith("==") && part.endsWith("==") ? (
-            <strong
+          if (part.startsWith("==") && part.endsWith("==")) {
+            return (
+              <mark
+                key={`${part}-${partIndex}`}
+                className="rounded bg-amber-200 px-1 font-bold text-stone-950"
+              >
+                {part.slice(2, -2)}
+              </mark>
+            );
+          }
+
+          if (
+            (part.startsWith("**") && part.endsWith("**")) ||
+            (part.startsWith("__") && part.endsWith("__"))
+          ) {
+            return (
+              <strong
+                key={`${part}-${partIndex}`}
+                className="font-bold text-stone-900"
+              >
+                {part.slice(2, -2)}
+              </strong>
+            );
+          }
+
+          if (
+            (part.startsWith("*") && part.endsWith("*")) ||
+            (part.startsWith("_") && part.endsWith("_"))
+          ) {
+            return (
+              <em key={`${part}-${partIndex}`} className="italic">
+                {part.slice(1, -1)}
+              </em>
+            );
+          }
+
+          return (
+            <span
               key={`${part}-${partIndex}`}
-              className="font-bold text-stone-900"
             >
-              {part.slice(2, -2)}
-            </strong>
-          ) : (
-            part
+              {part}
+            </span>
           );
         })}
       </p>

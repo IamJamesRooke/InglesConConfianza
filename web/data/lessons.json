@@ -27,7 +27,7 @@
           "promptLabel": "",
           "promptText": "",
           "helperText": "",
-          "answerFeedback": "Bien.... Well. Hecho... Done. ¡Bien hecho! Well done!",
+          "answerFeedback": "==Bien==.... ==Well==.\n\n==Hecho==... ==Done==.\n\n¡Bien hecho! Well done!",
           "conceptLinks": [],
           "languageBlocks": [
             {

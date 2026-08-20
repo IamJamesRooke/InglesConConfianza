@@ -32,6 +32,7 @@ type InitializedMarkdownEditorProps = {
   markdown: string;
   onChange: (markdown: string) => void;
   onBlur: () => void;
+  placeholder?: string;
 };
 
 function HighlightMarkdownShortcut() {
@@ -70,6 +71,7 @@ export function InitializedMarkdownEditor({
   markdown,
   onChange,
   onBlur,
+  placeholder = "Start explaining the idea…",
 }: InitializedMarkdownEditorProps) {
   const editorRef = useRef<MDXEditorMethods>(null);
 
@@ -119,7 +121,7 @@ export function InitializedMarkdownEditor({
       markdown={markdown}
       onChange={onChange}
       onBlur={onBlur}
-      placeholder="Start explaining the idea…"
+      placeholder={placeholder}
       className="lesson-markdown-editor"
       contentEditableClassName="lesson-markdown-content min-h-36 px-4 py-4 text-base leading-7 text-stone-800 outline-none"
       plugins={plugins}

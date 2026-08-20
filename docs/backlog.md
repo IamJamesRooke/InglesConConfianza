@@ -35,6 +35,7 @@ Build the smallest useful JSON-backed lesson-authoring foundation. Let actual ha
 - [x] Keep Practice and author previews on the same lesson runner, autofocus the first learner answer, support live and rendered `==highlight==` syntax, and keep invalid Sentence blocks open and unavailable for preview until their issues are resolved.
 - [x] Add `Alt+Up` and `Alt+Down` navigation between lesson content blocks, a first-position insertion control, issue-only status badges, and prominent bottom-aligned context hints in authoring and learner views.
 - [x] Polish the learner lesson runner with clearer lesson hierarchy, compact content-aware cards, one consistent footer navigation system, platform-style keycaps, unobtrusive corner hints, readable teaching notes, and distinct input, hint, context, and feedback states.
+- [x] Add compact Markdown authoring for sentence labels, prompts, helper text, and answer feedback; place language cards first in the sentence editor; render that formatting consistently for learners; and turn each completed answer's hint control into a locked success check.
 - [ ] Build five representative lessons as the first vertical slice.
     - [ ] Include straightforward vocabulary retrieval.
     - [ ] Include a Spanish-to-English one-to-many mapping.
@@ -91,6 +92,17 @@ Build the smallest useful JSON-backed lesson-authoring foundation. Let actual ha
     - [ ] Provide the teaching methodology as explicit generation context so lesson structure and explanations follow the course’s pedagogical approach.
     - [ ] Preserve continuity across lessons instead of generating each lesson as an isolated artifact.
     - [ ] Keep generated lessons editable and require author review before they become saved course content.
+
+## Future alpha feedback
+
+- [ ] After user accounts exist, let approved alpha learners report mistakes and provide feedback from inside a lesson.
+    - [ ] Add a lightweight feedback action tied to the exact lesson, content block, sentence, and learner-visible state where the issue was noticed.
+    - [ ] Offer useful report categories such as incorrect translation, unclear explanation, missing accepted answer, typo, and interface problem, plus an optional comment.
+    - [ ] Preserve enough authored-content version information to understand a report even if the lesson is edited afterward.
+    - [ ] Provide an author-facing queue for reviewing, resolving, and deduplicating reports without allowing feedback to directly modify lesson content.
+- [ ] Evaluate a comment or discussion board attached to each sentence after the simpler reporting workflow proves useful.
+    - [ ] Define moderation, visibility, notification, privacy, deletion, abuse-reporting, and account-blocking behavior before enabling learner-to-learner discussion.
+    - [ ] Decide whether discussion should be public to alpha learners, private between a learner and the course owner, or replaced by curated frequently asked questions.
 
 ## Later
 
