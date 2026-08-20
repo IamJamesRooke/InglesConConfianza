@@ -8,12 +8,10 @@ import { normalizeAnswer } from "@/lib/lesson-builder/utils";
 
 export function SentencePracticeCard({
   sentence,
-  onComplete,
-  completionDelayMs = 700,
+  onCompletionChange,
 }: {
   sentence: SentenceBlock;
-  onComplete?: () => void;
-  completionDelayMs?: number;
+  onCompletionChange?: (isComplete: boolean) => void;
 }) {
   const [answers, setAnswers] = useState<string[]>(() =>
     sentence.languageBlocks.map(() => ""),
@@ -22,8 +20,6 @@ export function SentencePracticeCard({
   const [helpedBlockIndex, setHelpedBlockIndex] = useState<number | null>(null);
   const inputRefs = useRef<Array<HTMLInputElement | null>>([]);
   const helpTimerRef = useRef<number | null>(null);
-  const completionTimerRef = useRef<number | null>(null);
-  const hasAnnouncedCompletionRef = useRef(false);
   const hasFeedback = Boolean(sentence.answerFeedback?.trim());
   const correctAnswers = sentence.languageBlocks.map(
     (languageBlock, languageBlockIndex) => {
@@ -45,13 +41,6 @@ export function SentencePracticeCard({
     if (helpTimerRef.current !== null) {
       window.clearTimeout(helpTimerRef.current);
       helpTimerRef.current = null;
-    }
-  }, []);
-
-  const clearCompletionTimer = useCallback(() => {
-    if (completionTimerRef.current !== null) {
-      window.clearTimeout(completionTimerRef.current);
-      completionTimerRef.current = null;
     }
   }, []);
 
@@ -85,25 +74,14 @@ export function SentencePracticeCard({
   }, [clearHelpTimer, helpedBlockIndex, sentence.languageBlocks]);
 
   useEffect(() => {
-    if (!isComplete || !onComplete || hasAnnouncedCompletionRef.current) {
-      return;
-    }
-
-    hasAnnouncedCompletionRef.current = true;
-    completionTimerRef.current = window.setTimeout(() => {
-      completionTimerRef.current = null;
-      onComplete();
-    }, completionDelayMs);
-
-    return clearCompletionTimer;
-  }, [clearCompletionTimer, completionDelayMs, isComplete, onComplete]);
+    onCompletionChange?.(isComplete);
+  }, [isComplete, onCompletionChange]);
 
   useEffect(
     () => () => {
       clearHelpTimer();
-      clearCompletionTimer();
     },
-    [clearCompletionTimer, clearHelpTimer],
+    [clearHelpTimer],
   );
 
   useEffect(() => {
@@ -214,7 +192,7 @@ export function SentencePracticeCard({
                   className={`w-full rounded-2xl border px-5 py-5 pr-14 text-center text-2xl font-semibold outline-none transition-colors focus:ring-4 focus:ring-ring/25 ${
                     correctAnswers[languageBlockIndex] &&
                     helpedBlockIndex !== languageBlockIndex
-                      ? "border-primary bg-background text-foreground ring-4 ring-ring/15"
+                      ? "border-emerald-500 bg-emerald-50 text-emerald-950 ring-4 ring-emerald-500/15 dark:border-emerald-500 dark:bg-emerald-950/35 dark:text-emerald-100"
                       : helpedBlockIndex === languageBlockIndex
                         ? "border-ring bg-muted text-muted-foreground italic"
                         : "border-input bg-background text-foreground"
@@ -249,14 +227,8 @@ export function SentencePracticeCard({
         </p>
       )}
 
-      {isComplete && (
-        <p className="mt-4 text-sm font-semibold text-primary" role="status">
-          ¡Correcto!
-        </p>
-      )}
-
       {hasFeedback && isFeedbackVisible && (
-        <div className="mt-4 whitespace-pre-wrap rounded-xl border border-border bg-[var(--surface)] p-4 text-sm leading-6 text-foreground">
+        <div className="mt-6 whitespace-pre-wrap rounded-2xl border border-border bg-muted/60 p-5 text-center text-xl font-semibold leading-8 text-foreground shadow-sm">
           {sentence.answerFeedback}
         </div>
       )}

@@ -26,7 +26,7 @@ export function PracticeMarkdown({ markdown }: { markdown: string }) {
   const blocks = parseMarkdown(markdown);
 
   return (
-    <div className="space-y-4 text-foreground">
+    <div className="space-y-4 text-center text-foreground">
       {blocks.map((block, blockIndex) => {
         if (block.kind === "heading") {
           const HeadingTag = `h${block.level}` as const;
@@ -51,7 +51,7 @@ export function PracticeMarkdown({ markdown }: { markdown: string }) {
           return (
             <ol
               key={`${block.kind}-${blockIndex}`}
-              className="list-decimal space-y-2 pl-7 text-2xl font-semibold leading-9 sm:text-3xl sm:leading-10"
+              className="list-inside list-decimal space-y-2 text-2xl font-semibold leading-9 sm:text-3xl sm:leading-10"
             >
               {block.items.map((item, itemIndex) => (
                 <li key={`${item}-${itemIndex}`} className="pl-1">
@@ -66,7 +66,7 @@ export function PracticeMarkdown({ markdown }: { markdown: string }) {
           return (
             <ul
               key={`${block.kind}-${blockIndex}`}
-              className="list-disc space-y-2 pl-7 text-2xl font-semibold leading-9 sm:text-3xl sm:leading-10"
+              className="list-inside list-disc space-y-2 text-2xl font-semibold leading-9 sm:text-3xl sm:leading-10"
             >
               {block.items.map((item, itemIndex) => (
                 <li key={`${item}-${itemIndex}`} className="pl-1">

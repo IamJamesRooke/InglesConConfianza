@@ -31,6 +31,8 @@ export function LessonSelector({
 }) {
   const [openLessonId, setOpenLessonId] = useState<string | null>(null);
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
+  const [isCurrentSentenceComplete, setIsCurrentSentenceComplete] =
+    useState(false);
   const [isShortcutReminderOpen, setIsShortcutReminderOpen] = useState(false);
   const lessonModeRef = useRef<HTMLElement | null>(null);
   const openLesson = lessons.find((lesson) => lesson.id === openLessonId);
@@ -42,12 +44,14 @@ export function LessonSelector({
   const openLessonPractice = useCallback((lessonId: string) => {
     setOpenLessonId(lessonId);
     setCurrentStepIndex(0);
+    setIsCurrentSentenceComplete(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
   const closeLessonPractice = useCallback(() => {
     setOpenLessonId(null);
     setCurrentStepIndex(0);
+    setIsCurrentSentenceComplete(false);
   }, []);
 
   const advanceStep = useCallback(() => {
@@ -55,15 +59,20 @@ export function LessonSelector({
       return;
     }
 
+    setIsCurrentSentenceComplete(false);
     setCurrentStepIndex((currentIndex) =>
       Math.min(currentIndex + 1, openLesson.blocks.length),
     );
   }, [openLesson]);
 
   const canManuallyAdvance =
-    isComplete || currentBlock?.type === "explanation" || totalSteps === 0;
+    isComplete ||
+    currentBlock?.type === "explanation" ||
+    (currentBlock?.type === "sentence" && isCurrentSentenceComplete) ||
+    totalSteps === 0;
 
   const goToPreviousStep = useCallback(() => {
+    setIsCurrentSentenceComplete(false);
     setCurrentStepIndex((currentIndex) => Math.max(currentIndex - 1, 0));
   }, []);
 
@@ -72,6 +81,7 @@ export function LessonSelector({
       return;
     }
 
+    setIsCurrentSentenceComplete(false);
     setCurrentStepIndex((currentIndex) =>
       Math.min(currentIndex + 1, openLesson.blocks.length),
     );
@@ -111,6 +121,14 @@ export function LessonSelector({
       return (
         target instanceof HTMLElement &&
         Boolean(target.closest("input, textarea, [contenteditable='true']"))
+      );
+    }
+
+    function isEmptyTextEntryTarget(target: EventTarget | null) {
+      return (
+        (target instanceof HTMLInputElement ||
+          target instanceof HTMLTextAreaElement) &&
+        target.value.length === 0
       );
     }
 
@@ -187,7 +205,11 @@ export function LessonSelector({
         return;
       }
 
-      if (!isTextEntryTarget(event.target) && event.key === "ArrowLeft") {
+      if (
+        event.key === "ArrowLeft" &&
+        (!isTextEntryTarget(event.target) ||
+          isEmptyTextEntryTarget(event.target))
+      ) {
         event.preventDefault();
         goToPreviousStep();
         return;
@@ -196,6 +218,16 @@ export function LessonSelector({
       if (event.key === "Enter" && isComplete) {
         event.preventDefault();
         closeLessonPractice();
+        return;
+      }
+
+      if (
+        event.key === "Enter" &&
+        currentBlock?.type === "sentence" &&
+        isCurrentSentenceComplete
+      ) {
+        event.preventDefault();
+        goToNextStep();
         return;
       }
 
@@ -233,6 +265,7 @@ export function LessonSelector({
     goToPreviousStep,
     isShortcutReminderOpen,
     isComplete,
+    isCurrentSentenceComplete,
     openLesson,
   ]);
 
@@ -351,7 +384,7 @@ export function LessonSelector({
                 <SentencePracticeCard
                   key={currentBlock.id}
                   sentence={currentBlock}
-                  onComplete={advanceStep}
+                  onCompletionChange={setIsCurrentSentenceComplete}
                 />
               ) : null}
             </div>
@@ -369,7 +402,9 @@ export function LessonSelector({
             </button>
             <div className="hidden text-center text-xs text-muted-foreground sm:block">
               {currentBlock?.type === "sentence"
-                ? "Responde correctamente para continuar. ← vuelve atrás."
+                ? isCurrentSentenceComplete
+                  ? "¡Muy bien! Presiona Enter o Siguiente cuando estés listo."
+                  : "Responde correctamente para continuar. PageUp siempre vuelve atrás."
                 : "Enter, → o PageDown para continuar."}
             </div>
             <button
@@ -499,12 +534,16 @@ function PracticeShortcutReminder({
             description="Avanzar cuando sea posible"
           />
           <PracticeShortcutReminderRow
+            keys={["PageUp"]}
+            description="Volver siempre al paso anterior"
+          />
+          <PracticeShortcutReminderRow
             keys={["←"]}
-            description="Volver al paso anterior"
+            description="Volver desde una respuesta vacía"
           />
           <PracticeShortcutReminderRow
             keys={["Enter"]}
-            description="Continuar en explicaciones"
+            description="Continuar cuando el paso esté listo"
           />
           <PracticeShortcutReminderRow
             keys={["Alt", "H"]}
