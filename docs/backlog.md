@@ -42,6 +42,7 @@ Build the smallest useful JSON-backed lesson-authoring foundation. Let actual ha
 - [x] Editorially refine the initial lesson sequence by separating cognate patterns and spelling exceptions, splitting the long third lesson at a natural confidence milestone, correcting misleading phrase composition such as `important for me`, adding missing prerequisite retrieval, shortening cumulative challenges, and explicitly teaching non-obvious pronunciation needed by Spanish-speaking learners.
 - [x] Establish the Spanish-first JSON curriculum discovery store with atomic mappings, bilingual examples, reusable collections, and an editable three-role `core`, `supporting`, and `reference` classification.
 - [x] Give Curriculum its own `/curriculum` section with an approved database page plus visible Review inbox and Migration progress route shells for the next workflow slices.
+- [x] Complete and migrate the first `querer` completeness-audit batch through the Review inbox, preserve owner notes, and archive its completed source folder.
 - [ ] Build five representative lessons as the first vertical slice.
     - [ ] Include straightforward vocabulary retrieval.
     - [ ] Include a Spanish-to-English one-to-many mapping.

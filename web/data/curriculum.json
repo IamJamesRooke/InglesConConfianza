@@ -31,7 +31,7 @@
     },
     {
       "id": "querer-que-alguien-haga-algo",
-      "spanish": "querer que [alguien] [hacer algo]",
+      "spanish": "querer que [alguien] [haga algo]",
       "english": "to want [somebody] [to do something]",
       "example": {
         "spanish": "Quiero que lo haga.",
@@ -56,7 +56,7 @@
         "querer",
         "love"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "querer-decir",
@@ -104,7 +104,7 @@
     },
     {
       "id": "quisiera-que-alguien-hiciera-algo",
-      "spanish": "quisiera que [alguien] [hacer algo]",
+      "spanish": "quisiera que [alguien] [hiciera algo]",
       "english": "would like [somebody] [to do something]",
       "example": {
         "spanish": "Quisiera que lo hiciera.",
@@ -185,7 +185,7 @@
       "collections": [
         "querer"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "sin-querer-unintentionally",
@@ -323,16 +323,105 @@
     {
       "id": "quiera-o-no",
       "spanish": "quiera o no",
-      "english": "whether one likes it or not",
+      "english": "whether [someone] wants to or not",
       "example": {
-        "spanish": "Quiera o no.",
-        "english": "Whether he likes it or not."
+        "spanish": "Quiera o no, tendrá que decidir.",
+        "english": "Whether he wants to or not, he will have to decide."
       },
       "collections": [
         "querer",
         "whether",
-        "like",
+        "want",
         "not"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "quiere-algo-polite",
+      "spanish": "¿quiere [algo]?",
+      "english": "would like [something]",
+      "example": {
+        "spanish": "¿Quiere café?",
+        "english": "Would you like coffee?"
+      },
+      "collections": [
+        "querer",
+        "would",
+        "like"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "quiere-hacer-algo-polite",
+      "spanish": "¿quiere [hacer algo]?",
+      "english": "would like [to do something]",
+      "example": {
+        "spanish": "¿Quiere sentarse?",
+        "english": "Would you like to sit down?"
+      },
+      "collections": [
+        "querer",
+        "would",
+        "like"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "quiero-decir-discourse",
+      "spanish": "quiero decir",
+      "english": "I mean",
+      "example": {
+        "spanish": "Nos vemos el jueves; quiero decir, el viernes.",
+        "english": "I'll see you Thursday—I mean, Friday."
+      },
+      "collections": [
+        "querer",
+        "mean",
+        "discourse repair"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "cuando-quieras-anytime",
+      "spanish": "cuando quieras",
+      "english": "anytime",
+      "example": {
+        "spanish": "Puedes llamarme cuando quieras.",
+        "english": "You can call me anytime."
+      },
+      "collections": [
+        "querer",
+        "when",
+        "anytime",
+        "any",
+        "time"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "querido-nombre-salutation",
+      "spanish": "querido/a [nombre]",
+      "english": "Dear [name]",
+      "example": {
+        "spanish": "Querida Laura:",
+        "english": "Dear Laura,"
+      },
+      "collections": [
+        "querer",
+        "letter writing"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "querido-adjective",
+      "spanish": "querido/a",
+      "english": "beloved",
+      "example": {
+        "spanish": "Era una amiga querida.",
+        "english": "She was a beloved friend."
+      },
+      "collections": [
+        "querer"
       ],
       "curriculumRole": "reference"
     }

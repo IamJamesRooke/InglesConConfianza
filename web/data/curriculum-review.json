@@ -1,0 +1,185 @@
+{
+  "version": 1,
+  "batches": [
+    {
+      "id": "querer-completeness-audit-2026-08-21",
+      "title": "Querer completeness audit",
+      "sourcePaths": [
+        "docs/curriculum/mappings/spanish-to-english/querer",
+        "docs/curriculum/mappings/english-to-spanish/want",
+        "docs/curriculum/mappings/english-to-spanish/like",
+        "docs/curriculum/mappings/english-to-spanish/mean"
+      ],
+      "createdAt": "2026-08-21",
+      "status": "migrated",
+      "migratedAt": "2026-08-21",
+      "archivePath": "docs/curriculum-archive/mappings/spanish-to-english/querer",
+      "candidates": [
+        {
+          "id": "quiere-algo-polite",
+          "action": "add",
+          "suggestedCurriculumRole": "core",
+          "spanish": "¿quiere [algo]?",
+          "english": "would like [something]",
+          "example": {
+            "spanish": "¿Quiere café?",
+            "english": "Would you like coffee?"
+          },
+          "collections": [
+            "querer",
+            "would",
+            "like"
+          ],
+          "curriculumRole": "supporting",
+          "sourcePaths": [
+            "docs/curriculum/mappings/spanish-to-english/querer",
+            "docs/curriculum/mappings/english-to-spanish/like/03-would-like.md"
+          ],
+          "rationale": "A polite present-tense offer changes the natural English realization from want to would like, so ordinary querer coverage is not enough.",
+          "approved": true,
+          "ownerNote": "too much cognitive load to explain that quiere can also mean would like, for now, only want student to know want -- should be supporting"
+        },
+        {
+          "id": "quiere-hacer-algo-polite",
+          "action": "add",
+          "suggestedCurriculumRole": "core",
+          "spanish": "¿quiere [hacer algo]?",
+          "english": "would like [to do something]",
+          "example": {
+            "spanish": "¿Quiere sentarse?",
+            "english": "Would you like to sit down?"
+          },
+          "collections": [
+            "querer",
+            "would",
+            "like"
+          ],
+          "curriculumRole": "supporting",
+          "sourcePaths": [
+            "docs/curriculum/mappings/spanish-to-english/querer",
+            "docs/curriculum/mappings/english-to-spanish/like/03-would-like.md"
+          ],
+          "rationale": "The polite question has a distinct English strategy and is a high-utility invitation or service interaction pattern.",
+          "approved": true,
+          "ownerNote": "too much cognitive load for a beginner explaining that querer is to want and would like -- students at beginner level should only be learning the most common translation of a word"
+        },
+        {
+          "id": "quiero-decir-discourse",
+          "action": "add",
+          "suggestedCurriculumRole": "supporting",
+          "spanish": "quiero decir",
+          "english": "I mean",
+          "example": {
+            "spanish": "Nos vemos el jueves; quiero decir, el viernes.",
+            "english": "I'll see you Thursday—I mean, Friday."
+          },
+          "collections": [
+            "querer",
+            "mean",
+            "discourse repair"
+          ],
+          "curriculumRole": "supporting",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/mean/06-i-mean.md"
+          ],
+          "rationale": "The fixed discourse use repairs or reformulates speech; its teaching behavior differs from querer decir meaning signify.",
+          "approved": true,
+          "ownerNote": "expressions shouldn't be part of core"
+        },
+        {
+          "id": "cuando-quieras-anytime",
+          "action": "add",
+          "suggestedCurriculumRole": "supporting",
+          "spanish": "cuando quieras",
+          "english": "anytime",
+          "example": {
+            "spanish": "Puedes llamarme cuando quieras.",
+            "english": "You can call me anytime."
+          },
+          "collections": [
+            "querer",
+            "when",
+            "anytime",
+            "any",
+            "time"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/some/15-sometime-anytime-no-time-and-every-time.md"
+          ],
+          "rationale": "The source explicitly uses anytime as a natural realization alongside the approved whenever you want mapping.",
+          "approved": true,
+          "ownerNote": "because the english is anytime, we also need to tag \"any\" and \"time\"\nalso made reference because I really don't want to teach this right away"
+        },
+        {
+          "id": "querido-nombre-salutation",
+          "action": "add",
+          "suggestedCurriculumRole": "supporting",
+          "spanish": "querido/a [nombre]",
+          "english": "Dear [name]",
+          "example": {
+            "spanish": "Querida Laura:",
+            "english": "Dear Laura,"
+          },
+          "collections": [
+            "querer",
+            "letter writing"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/DATABASE-DISCOVERY.md"
+          ],
+          "rationale": "Querido/a is lexicalized in salutations and requires a different English realization from the verb family.",
+          "approved": true,
+          "ownerNote": "situationally specific, reference"
+        },
+        {
+          "id": "querido-adjective",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "querido/a",
+          "english": "beloved",
+          "example": {
+            "spanish": "Era una amiga querida.",
+            "english": "She was a beloved friend."
+          },
+          "collections": [
+            "querer"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/DATABASE-DISCOVERY.md"
+          ],
+          "rationale": "This lexicalized adjective changes both meaning and part of speech, but its literary English realization is not a current teaching target.",
+          "approved": true,
+          "ownerNote": "situationally specific and archaic"
+        },
+        {
+          "id": "quiera-o-no-correction",
+          "action": "revise",
+          "existingConceptId": "quiera-o-no",
+          "suggestedCurriculumRole": "supporting",
+          "spanish": "quiera o no",
+          "english": "whether [someone] wants to or not",
+          "example": {
+            "spanish": "Quiera o no, tendrá que decidir.",
+            "english": "Whether he wants to or not, he will have to decide."
+          },
+          "collections": [
+            "querer",
+            "whether",
+            "want",
+            "not"
+          ],
+          "curriculumRole": "supporting",
+          "sourcePaths": [
+            "docs/curriculum/mappings/spanish-to-english/querer"
+          ],
+          "rationale": "The approved record currently says whether one likes it or not, which is more naturally le guste o no. Quiera o no expresses wanting or willingness.",
+          "approved": true,
+          "ownerNote": "whether is useful, but not a priority because you can replace it with if\n\nwhether you like it or not... if you like it or not...\n\nif a beginner uses if instead of whether, we understand"
+        }
+      ]
+    }
+  ]
+}

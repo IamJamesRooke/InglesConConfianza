@@ -2,6 +2,13 @@
 
 This document records the working decisions that emerge while representative curriculum data is entered in JSON. These are migration checkpoints, not a frozen relational schema.
 
+## 2026-08-21 — First approved review batch migrated
+
+- Completed the `querer` completeness audit through the Review inbox.
+- Migrated six approved additions and one approved correction into `web/data/curriculum.json`, preserving the owner's final roles, collections, examples, and review notes.
+- Marked the batch migrated in `web/data/curriculum-review.json` and moved the completed source folder to `docs/curriculum-archive/mappings/spanish-to-english/querer`.
+- Archived source folders are excluded from normal audits and should be reopened only when the owner explicitly requests a correction or re-audit.
+
 ## 2026-08-21 — Store concepts, not complete conjugation tables
 
 - The curriculum database stores reusable language concepts that may combine vocabulary, grammar, meaning, and sentence structure.
@@ -38,8 +45,8 @@ This document records the working decisions that emerge while representative cur
 - Bracket the complete replaceable constituent, not every individual word. In **to want [to do something]**, the bracketed phrase can be replaced by another full infinitive phrase.
 - Placeholder text explains the shape of the construction; it is not a mapping owned by that concept and must not automatically produce mapping tags.
 - Text outside brackets expresses the stable mapping or structure taught by the concept.
-- Write verbs inside replaceable Spanish slots in their root infinitive form. For example, use **querer que [alguien] [hacer algo]**, not **querer que [alguien] [haga algo]**, and **quisiera que [alguien] [hacer algo]**, not **[hiciera algo]**.
-- Preserve a conjugated form outside a placeholder when that form is itself responsible for a distinct English mapping. **Quisiera** remains visible because it produces polite **would like**; only its replaceable action slot is normalized to **[hacer algo]**.
+- Write the Spanish verb inside a replaceable slot in the form the construction actually requires. For example, use **querer que [alguien] [haga algo]** and **quisiera que [alguien] [hiciera algo]**. The slot represents a real Spanish subordinate clause, not an infinitive dictionary form.
+- Preserve a conjugated form outside a placeholder when that form is itself responsible for a distinct English mapping. **Quisiera** remains visible because it produces polite **would like**; its subordinate-action slot remains **[hiciera algo]** because Spanish requires the imperfect subjunctive there.
 
 ## 2026-08-21 — Curriculum role replaces teaching priority
 
@@ -48,7 +55,7 @@ This document records the working decisions that emerge while representative cur
 - **Supporting** (blue) is useful language taught incidentally around a Core focus rather than treated as the key lesson target.
 - **Reference** (gray) is retained for completeness, future consideration, uncommon or situational use, or historical value; it is not a current teaching target.
 - Curriculum role describes instructional treatment, not exact lesson order. Prerequisites, scaffolding, lesson clarity, and useful sentences still determine sequence.
-- Review state is separate. Pending, approved, rejected, or deferred candidates belong to the review workflow and must not be represented through `curriculumRole`.
+- Review state is separate from curriculum role. A candidate remains in the inbox until the owner checks its approval control. Unchecked candidates return in the next review round; the owner's notes explain what should change or guide future audits. A checked candidate is ready for migration but is not copied into the approved database automatically.
 
 ### Completeness-audit workflow
 

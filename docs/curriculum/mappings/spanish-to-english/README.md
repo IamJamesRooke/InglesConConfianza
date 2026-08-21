@@ -115,7 +115,7 @@ Personal-pronoun and article maps remain intentionally complete top-level refere
 - [**pues**](pues/README.md)
 - [**que**](que/README.md)
 - [**quedar**](quedar/README.md)
-- [**querer**](querer/README.md)
+- [**querer** (archived)](../../../curriculum-archive/mappings/spanish-to-english/querer/README.md)
 - [**quien**](quien/README.md)
 - [**quitar**](quitar/README.md)
 - [**recordar**](recordar/README.md)

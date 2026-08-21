@@ -6,10 +6,10 @@ This is a bounded inventory for testing the curriculum database against existing
 
 The inventory covers these existing files:
 
-- [Querer README](mappings/spanish-to-english/querer/README.md)
-- [Querer algo](mappings/spanish-to-english/querer/querer%20algo%20(want%20something).md)
-- [Querer hacer algo](mappings/spanish-to-english/querer/querer%20hacer%20algo%20(want%20to%20do%20something).md)
-- [Querer que alguien haga algo](mappings/spanish-to-english/querer/querer%20que%20alguien%20haga%20algo%20(want%20somebody%20to%20do%20something).md)
+- [Archived Querer README](../curriculum-archive/mappings/spanish-to-english/querer/README.md)
+- [Archived Querer algo](../curriculum-archive/mappings/spanish-to-english/querer/querer%20algo%20(want%20something).md)
+- [Archived Querer hacer algo](../curriculum-archive/mappings/spanish-to-english/querer/querer%20hacer%20algo%20(want%20to%20do%20something).md)
+- [Archived Querer que alguien haga algo](../curriculum-archive/mappings/spanish-to-english/querer/querer%20que%20alguien%20haga%20algo%20(want%20somebody%20to%20do%20something).md)
 - [A → destination](mappings/spanish-to-english/a/02-destination.md)
 - [Para + infinitive](mappings/spanish-to-english/para/02-purpose-with-infinitive.md)
 - [Purpose with para](structure/verb-forms/full-infinitive/purpose-with-para.md)
@@ -20,7 +20,7 @@ The last two files overlap intentionally. They help us distinguish a translation
 
 ### 1. Querer algo → Want something
 
-Source: [querer algo](mappings/spanish-to-english/querer/querer%20algo%20(want%20something).md)
+Source: [archived querer algo](../curriculum-archive/mappings/spanish-to-english/querer/querer%20algo%20(want%20something).md)
 
 | Field | Inventory value |
 |---|---|
@@ -42,7 +42,7 @@ Schema pressure:
 
 ### 2. Querer hacer algo → Want to do something
 
-Source: [querer hacer algo](mappings/spanish-to-english/querer/querer%20hacer%20algo%20(want%20to%20do%20something).md)
+Source: [archived querer hacer algo](../curriculum-archive/mappings/spanish-to-english/querer/querer%20hacer%20algo%20(want%20to%20do%20something).md)
 
 | Field | Inventory value |
 |---|---|
@@ -64,7 +64,7 @@ Schema pressure:
 
 ### 3. Querer que alguien haga algo → Want somebody to do something
 
-Source: [querer que alguien haga algo](mappings/spanish-to-english/querer/querer%20que%20alguien%20haga%20algo%20(want%20somebody%20to%20do%20something).md)
+Source: [archived querer que alguien haga algo](../curriculum-archive/mappings/spanish-to-english/querer/querer%20que%20alguien%20haga%20algo%20(want%20somebody%20to%20do%20something).md)
 
 | Field | Inventory value |
 |---|---|
