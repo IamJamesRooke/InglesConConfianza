@@ -6,7 +6,7 @@ import path from "node:path";
 import type {
   CurriculumConcept,
   CurriculumFile,
-  TeachingPriority,
+  CurriculumRole,
 } from "@/lib/curriculum/types";
 
 const curriculumFilePath = path.join(
@@ -17,14 +17,7 @@ const curriculumFilePath = path.join(
 
 let mutationQueue = Promise.resolve();
 
-const teachingPriorities = [
-  "essential",
-  "important",
-  "post_mastery",
-  "enrichment",
-  "supplemental",
-  "reference",
-] as const;
+const curriculumRoles = ["core", "supporting", "reference"] as const;
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -55,8 +48,8 @@ export function isCurriculumConcept(
         collection === collection.trim(),
     ) &&
     new Set(value.collections).size === value.collections.length &&
-    typeof value.teachingPriority === "string" &&
-    teachingPriorities.includes(value.teachingPriority as TeachingPriority)
+    typeof value.curriculumRole === "string" &&
+    curriculumRoles.includes(value.curriculumRole as CurriculumRole)
   );
 }
 

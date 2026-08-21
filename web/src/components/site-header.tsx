@@ -58,7 +58,10 @@ export function SiteHeader() {
           >
             Lesson Builder
           </Link>
-          <Link href="/" className={linkClassName("/")}>
+          <Link
+            href="/curriculum"
+            className={linkClassName("/curriculum")}
+          >
             Curriculum
           </Link>
         </nav>

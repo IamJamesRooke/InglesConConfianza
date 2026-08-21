@@ -7,16 +7,10 @@ export type CurriculumConcept = {
     english: string;
   };
   collections: string[];
-  teachingPriority: TeachingPriority;
+  curriculumRole: CurriculumRole;
 };
 
-export type TeachingPriority =
-  | "essential"
-  | "important"
-  | "post_mastery"
-  | "enrichment"
-  | "supplemental"
-  | "reference";
+export type CurriculumRole = "core" | "supporting" | "reference";
 
 export type CurriculumFile = {
   version: 1;

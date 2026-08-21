@@ -32,7 +32,7 @@ The hierarchy is an authoring reference, not a course sequence. Lessons and lear
 - Identify real English–Spanish distinctions that the source omits; do not mechanically preserve an incomplete mapping.
 - Preserve useful source examples, but improve them when a clearer contextual sentence set teaches the same distinction better.
 - Match the closest files' Markdown structure and established directory organization. Put focused contrasts under an appropriate `confusion-sets/` directory.
-- Keep vocabulary flat: add material to the most useful root-level category file and express core versus supplemental status inside the document rather than recreating directory trees.
+- Keep vocabulary flat: add material to the most useful root-level category file and express Core versus Supporting or Reference status inside the document rather than recreating directory trees.
 
 ## English-to-Spanish words and particles
 
@@ -49,3 +49,14 @@ The hierarchy is an authoring reference, not a course sequence. Lessons and lear
 - Do not expand beyond the lesson's atomic scope or propose unrelated curriculum, architecture, automation, or maintenance work.
 - Do not design or produce JSON schemas, database models, lesson engines, or import pipelines unless explicitly requested. Add metadata incrementally when an approved lesson or migration task demonstrates the need.
 - If the source or intended distinction is unclear, identify the uncertainty instead of silently inventing content.
+
+## Current machine-readable migration problem
+
+- The active discovery database is `web/data/curriculum.json`. The detailed record-shape decisions and migration checkpoints live in [`DATABASE-DISCOVERY.md`](DATABASE-DISCOVERY.md).
+- The near-term success criterion is complete coverage of **Core Functional Language**, not perfect population of the entire curriculum database. Supporting and Reference classifications can remain provisional until Core coverage is secure.
+- Work in small verb-family batches, normally one Spanish verb such as **querer** or **necesitar** at a time. Search this curriculum source for evidence, then audit for basic complements, infinitive and person-plus-action constructions, independently useful meanings, meaning-changing forms, common fixed expressions, and nonliteral English realizations.
+- Present the proposed batch for owner review before migration. Make Core candidates especially easy to inspect. The owner should be able to approve them, change their curriculum role, correct or split a mapping, or delete low-value material without constructing the records manually.
+- It is acceptable to include too many plausible non-Core mappings with provisional curriculum roles; they do not enter the main teaching path merely by existing. Avoid silently omitting a plausible independent mapping during a completeness audit.
+- Still apply the compositionality test: do not create a separate record when the learner can reliably produce the result by combining concepts already taught. Do create a record when form, context, register, or construction changes the natural English mapping or teaching behavior.
+- Every migrated mapping currently needs one Spanish concept, exactly one English target, one minimal generic bilingual example, appropriate collections, and a provisional curriculum role. Every verb-family record belongs to that verb's collection; add construction collections when they support reusable lesson planning.
+- Collections may represent vocabulary, semantic collisions, grammatical patterns, or lesson-plan groupings. Do not duplicate them with a separate grammar field unless actual migration work repeatedly exposes information that collections cannot represent.

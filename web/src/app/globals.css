@@ -81,56 +81,38 @@
   color: oklch(0.96 0.035 var(--collection-hue));
 }
 
-.priority-select {
-  border-color: var(--priority-border);
-  background: var(--priority-background);
-  color: var(--priority-foreground);
+.role-select {
+  border-color: var(--role-border);
+  background: var(--role-background);
+  color: var(--role-foreground);
 }
 
-.priority-essential {
-  --priority-border: oklch(0.68 0.14 155);
-  --priority-background: oklch(0.92 0.075 155);
-  --priority-foreground: oklch(0.31 0.11 155);
+.role-core {
+  --role-border: oklch(0.68 0.14 155);
+  --role-background: oklch(0.92 0.075 155);
+  --role-foreground: oklch(0.31 0.11 155);
 }
 
-.priority-important {
-  --priority-border: oklch(0.68 0.13 245);
-  --priority-background: oklch(0.92 0.065 245);
-  --priority-foreground: oklch(0.31 0.11 245);
+.role-supporting {
+  --role-border: oklch(0.68 0.13 245);
+  --role-background: oklch(0.92 0.065 245);
+  --role-foreground: oklch(0.31 0.11 245);
 }
 
-.priority-post_mastery {
-  --priority-border: oklch(0.68 0.13 295);
-  --priority-background: oklch(0.93 0.06 295);
-  --priority-foreground: oklch(0.34 0.11 295);
+.role-reference {
+  --role-border: oklch(0.72 0.02 260);
+  --role-background: oklch(0.92 0.015 260);
+  --role-foreground: oklch(0.4 0.025 260);
 }
 
-.priority-enrichment {
-  --priority-border: oklch(0.72 0.14 75);
-  --priority-background: oklch(0.94 0.08 80);
-  --priority-foreground: oklch(0.38 0.1 65);
-}
-
-.priority-supplemental {
-  --priority-border: oklch(0.73 0.12 15);
-  --priority-background: oklch(0.94 0.06 15);
-  --priority-foreground: oklch(0.38 0.1 15);
-}
-
-.priority-reference {
-  --priority-border: oklch(0.72 0.02 260);
-  --priority-background: oklch(0.92 0.015 260);
-  --priority-foreground: oklch(0.4 0.025 260);
-}
-
-:root[data-theme="night"] .priority-select,
-.dark .priority-select {
-  --priority-background: color-mix(
+:root[data-theme="night"] .role-select,
+.dark .role-select {
+  --role-background: color-mix(
     in oklch,
-    var(--priority-border) 22%,
+    var(--role-border) 22%,
     var(--card)
   );
-  --priority-foreground: var(--foreground);
+  --role-foreground: var(--foreground);
 }
 
 :root {

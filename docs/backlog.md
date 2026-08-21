@@ -1,6 +1,6 @@
 # Backlog
 
-> Last updated: 2026-08-20. This file contains current decisions and executable work only. Completed migration detail is preserved in the [curriculum migration log](history/curriculum-migration-log.md).
+> Last updated: 2026-08-21. This file contains current decisions and executable work only. Completed migration detail is preserved in the [curriculum migration log](history/curriculum-migration-log.md).
 
 ## Current objective
 
@@ -40,6 +40,8 @@ Build the smallest useful JSON-backed lesson-authoring foundation. Let actual ha
 - [x] Make practice answer matching case-sensitive, support nested Markdown highlighting without visually splitting highlighted word endings, and remove automatic label copy from new practice blocks.
 - [x] Establish the working teaching-methodology rules revealed by the first handcrafted lessons: first-attempt answerability, one focus at a time, example-first discovery, information/application micro-steps, limited incidental-vocabulary hints, short-lesson momentum, confidence-building endings, and learner-friendly North American pronunciation bridges without learner-facing IPA.
 - [x] Editorially refine the initial lesson sequence by separating cognate patterns and spelling exceptions, splitting the long third lesson at a natural confidence milestone, correcting misleading phrase composition such as `important for me`, adding missing prerequisite retrieval, shortening cumulative challenges, and explicitly teaching non-obvious pronunciation needed by Spanish-speaking learners.
+- [x] Establish the Spanish-first JSON curriculum discovery store with atomic mappings, bilingual examples, reusable collections, and an editable three-role `core`, `supporting`, and `reference` classification.
+- [x] Give Curriculum its own `/curriculum` section with an approved database page plus visible Review inbox and Migration progress route shells for the next workflow slices.
 - [ ] Build five representative lessons as the first vertical slice.
     - [ ] Include straightforward vocabulary retrieval.
     - [ ] Include a Spanish-to-English one-to-many mapping.

@@ -6,7 +6,7 @@ import { useMemo, useState } from "react";
 
 import type {
   CurriculumConcept,
-  TeachingPriority,
+  CurriculumRole,
 } from "@/lib/curriculum/types";
 
 type EditableField = "spanish" | "english" | "exampleSpanish" | "exampleEnglish";
@@ -17,28 +17,29 @@ type ActiveEditor = {
   value: string;
 };
 
-const teachingPriorities: Array<{
-  value: TeachingPriority;
+const curriculumRoles: Array<{
+  value: CurriculumRole;
   label: string;
   description: string;
 }> = [
-  { value: "essential", label: "Essential", description: "Must be taught" },
-  { value: "important", label: "Important", description: "Common, but later" },
+  { value: "core", label: "Core", description: "Must be explicitly taught" },
   {
-    value: "post_mastery",
-    label: "Post-Mastery",
-    description: "After earlier material is mastered",
+    value: "supporting",
+    label: "Supporting",
+    description: "Useful language taught incidentally",
   },
-  { value: "enrichment", label: "Enrichment", description: "Nice to know" },
-  { value: "supplemental", label: "Supplemental", description: "Optional" },
-  { value: "reference", label: "Reference", description: "Do not teach" },
+  {
+    value: "reference",
+    label: "Reference",
+    description: "Retained, but not a current teaching target",
+  },
 ];
-const priorityRank = new Map(
-  teachingPriorities.map((priority, index) => [priority.value, index]),
+const roleRank = new Map(
+  curriculumRoles.map((role, index) => [role.value, index]),
 );
 
-function getPriorityLabel(priority: TeachingPriority) {
-  return teachingPriorities.find((option) => option.value === priority)?.label;
+function getRoleLabel(role: CurriculumRole) {
+  return curriculumRoles.find((option) => option.value === role)?.label;
 }
 const collectionHues = [25, 55, 90, 145, 190, 235, 275, 315, 350];
 
@@ -110,8 +111,8 @@ export function CurriculumTable({
   const [selectedCollection, setSelectedCollection] = useState<string | null>(
     null,
   );
-  const [maximumPriority, setMaximumPriority] = useState<
-    TeachingPriority | "all"
+  const [maximumRole, setMaximumRole] = useState<
+    CurriculumRole | "all"
   >("all");
   const normalizedMappingSearch = mappingSearch.trim().toLocaleLowerCase();
   const availableCollections = useMemo(
@@ -129,13 +130,12 @@ export function CurriculumTable({
         getSearchableMapping(concept.english).includes(normalizedMappingSearch)) &&
       (!selectedCollection ||
         concept.collections.includes(selectedCollection)) &&
-      (maximumPriority === "all" ||
-        priorityRank.get(concept.teachingPriority)! <=
-          priorityRank.get(maximumPriority)!),
+      (maximumRole === "all" ||
+        roleRank.get(concept.curriculumRole)! <= roleRank.get(maximumRole)!),
   ).sort(
     (firstConcept, secondConcept) =>
-      priorityRank.get(firstConcept.teachingPriority)! -
-      priorityRank.get(secondConcept.teachingPriority)!,
+      roleRank.get(firstConcept.curriculumRole)! -
+      roleRank.get(secondConcept.curriculumRole)!,
   );
 
   async function saveActiveEditor() {
@@ -283,18 +283,18 @@ export function CurriculumTable({
     }
   }
 
-  async function updatePriority(
+  async function updateRole(
     concept: CurriculumConcept,
-    teachingPriority: TeachingPriority,
+    curriculumRole: CurriculumRole,
   ) {
     if (
       pendingConceptId ||
-      concept.teachingPriority === teachingPriority
+      concept.curriculumRole === curriculumRole
     ) {
       return;
     }
 
-    const updatedConcept = { ...concept, teachingPriority };
+    const updatedConcept = { ...concept, curriculumRole };
     setPendingConceptId(concept.id);
     setError(null);
 
@@ -467,22 +467,22 @@ export function CurriculumTable({
           )}
         </label>
         <label className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
-          Maximum teaching priority
+          Curriculum roles
           <select
-            value={maximumPriority}
+            value={maximumRole}
             onChange={(event) =>
-              setMaximumPriority(
+              setMaximumRole(
                 event.target.value === "all"
                   ? "all"
-                  : (event.target.value as TeachingPriority),
+                  : (event.target.value as CurriculumRole),
               )
             }
             className="rounded-lg border border-input bg-card px-3 py-2 text-sm font-medium text-foreground outline-none focus:border-ring focus:ring-3 focus:ring-ring/20"
           >
             <option value="all">Show all</option>
-            {teachingPriorities.map((priority) => (
-              <option key={priority.value} value={priority.value}>
-                Through {priority.label}
+            {curriculumRoles.map((role) => (
+              <option key={role.value} value={role.value}>
+                Through {role.label}
               </option>
             ))}
           </select>
@@ -521,7 +521,7 @@ export function CurriculumTable({
 
       {(normalizedMappingSearch ||
         selectedCollection ||
-        maximumPriority !== "all") && (
+        maximumRole !== "all") && (
         <p className="mb-3 text-sm text-muted-foreground">
           Showing {filteredConcepts.length} of {concepts.length} concepts
           {normalizedMappingSearch && (
@@ -540,12 +540,12 @@ export function CurriculumTable({
               </span>
             </>
           )}
-          {maximumPriority !== "all" && (
+          {maximumRole !== "all" && (
             <>
               {normalizedMappingSearch || selectedCollection ? " and" : " with"}{" "}
-              teaching priority through{" "}
+              curriculum role through{" "}
               <span className="font-semibold text-foreground">
-                {getPriorityLabel(maximumPriority)}
+                {getRoleLabel(maximumRole)}
               </span>
             </>
           )}
@@ -562,7 +562,7 @@ export function CurriculumTable({
               <th className="px-5 py-3 font-semibold">Example</th>
               <th className="px-5 py-3 font-semibold">Collections</th>
               <th className="w-32 px-5 py-3 font-semibold">
-                Teaching priority
+                Curriculum role
               </th>
               <th className="w-16 px-3 py-3">
                 <span className="sr-only">Actions</span>
@@ -587,26 +587,25 @@ export function CurriculumTable({
                 <td className="p-2">{renderCollections(concept)}</td>
                 <td className="p-2">
                   <select
-                    value={concept.teachingPriority}
+                    value={concept.curriculumRole}
                     disabled={pendingConceptId !== null}
                     onChange={(event) =>
-                      void updatePriority(
+                      void updateRole(
                         concept,
-                        event.target.value as TeachingPriority,
+                        event.target.value as CurriculumRole,
                       )
                     }
-                    aria-label={`Teaching priority for ${concept.spanish}`}
+                    aria-label={`Curriculum role for ${concept.spanish}`}
                     title={
-                      teachingPriorities.find(
-                        (priority) =>
-                          priority.value === concept.teachingPriority,
+                      curriculumRoles.find(
+                        (role) => role.value === concept.curriculumRole,
                       )?.description
                     }
-                    className={`priority-select priority-${concept.teachingPriority} w-full rounded-md border px-3 py-2 text-sm font-semibold outline-none transition focus:ring-3 focus:ring-ring/20 disabled:opacity-60`}
+                    className={`role-select role-${concept.curriculumRole} w-full rounded-md border px-3 py-2 text-sm font-semibold outline-none transition focus:ring-3 focus:ring-ring/20 disabled:opacity-60`}
                   >
-                    {teachingPriorities.map((priority) => (
-                      <option key={priority.value} value={priority.value}>
-                        {priority.label}
+                    {curriculumRoles.map((role) => (
+                      <option key={role.value} value={role.value}>
+                        {role.label}
                       </option>
                     ))}
                   </select>
