@@ -424,6 +424,101 @@
         "querer"
       ],
       "curriculumRole": "reference"
+    },
+    {
+      "id": "necesitar-algo",
+      "spanish": "necesitar [algo]",
+      "english": "to need [something]",
+      "example": {
+        "spanish": "Necesito más tiempo.",
+        "english": "I need more time."
+      },
+      "collections": [
+        "necesitar",
+        "need",
+        "something"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "necesitar-hacer-algo",
+      "spanish": "necesitar [hacer algo]",
+      "english": "to need [to do something]",
+      "example": {
+        "spanish": "Necesito terminar el informe hoy.",
+        "english": "I need to finish the report today."
+      },
+      "collections": [
+        "necesitar",
+        "need",
+        "followed by full infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "necesitar-que-alguien-haga-algo",
+      "spanish": "necesitar que [alguien] [haga algo]",
+      "english": "to need [somebody] [to do something]",
+      "example": {
+        "spanish": "Necesito que Laura lo haga.",
+        "english": "I need Laura to do it."
+      },
+      "collections": [
+        "necesitar",
+        "need",
+        "somebody to do something",
+        "followed by full infinitive",
+        "que"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "se-necesita-algo",
+      "spanish": "se necesita [algo]",
+      "english": "[something] is needed",
+      "example": {
+        "spanish": "Se necesita más tiempo.",
+        "english": "More time is needed."
+      },
+      "collections": [
+        "necesitar",
+        "need",
+        "passive",
+        "something is needed"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "querer-hacer-algo-wanna",
+      "spanish": "querer [hacer algo]",
+      "english": "wanna [do something]",
+      "example": {
+        "spanish": "Quiero irme.",
+        "english": "I wanna leave."
+      },
+      "collections": [
+        "querer",
+        "wanna",
+        "informal spoken reduction",
+        "followed by full infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "necesitar-hacer-algo-needa",
+      "spanish": "necesitar [hacer algo]",
+      "english": "needa [do something]",
+      "example": {
+        "spanish": "Necesito irme.",
+        "english": "I needa leave."
+      },
+      "collections": [
+        "necesitar",
+        "needa",
+        "informal spoken reduction",
+        "followed by full infinitive"
+      ],
+      "curriculumRole": "supporting"
     }
   ]
 }

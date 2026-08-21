@@ -2,6 +2,12 @@
 
 This document records the working decisions that emerge while representative curriculum data is entered in JSON. These are migration checkpoints, not a frozen relational schema.
 
+## 2026-08-21 — Migrate necesitar and spoken-reduction follow-ups
+
+- Migrated the approved `necesitar` audit: personal need, need + full infinitive, need somebody + full infinitive, and impersonal `se necesita`.
+- Migrated the approved Supporting spoken reductions `wanna` and `needa` as separate entries under their parent full-infinitive constructions.
+- No dedicated `necesitar` source folder existed to archive. Shared structure and pronunciation files remain active because they support multiple verb families.
+
 ## 2026-08-21 — First approved review batch migrated
 
 - Completed the `querer` completeness audit through the Review inbox.

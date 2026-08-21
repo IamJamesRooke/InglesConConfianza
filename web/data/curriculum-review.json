@@ -180,6 +180,188 @@
           "ownerNote": "whether is useful, but not a priority because you can replace it with if\n\nwhether you like it or not... if you like it or not...\n\nif a beginner uses if instead of whether, we understand"
         }
       ]
+    },
+    {
+      "id": "necesitar-completeness-audit-2026-08-21",
+      "title": "Necesitar completeness audit",
+      "sourcePaths": [
+        "docs/curriculum/structure/verb-forms/full-infinitive/handle-verbs.md",
+        "docs/curriculum/structure/verb-forms/full-infinitive/somebody-to-do-something.md",
+        "docs/curriculum/structure/verb-forms/full-infinitive/purpose-with-para.md",
+        "docs/curriculum/reference-slice-inventory.md",
+        "docs/curriculum/vocabulary/verbs-and-actions.md",
+        "docs/curriculum/vocabulary/people-and-family.md",
+        "docs/curriculum/vocabulary/places-and-directions.md",
+        "docs/curriculum/structure/time-and-sequencing/basic-units-and-clock-time.md",
+        "docs/curriculum/mappings/english-to-spanish/need/README.md",
+        "docs/curriculum/vocabulary/adjectives-and-states.md"
+      ],
+      "createdAt": "2026-08-21",
+      "status": "migrated",
+      "migratedAt": "2026-08-21",
+      "candidates": [
+        {
+          "id": "necesitar-algo",
+          "action": "add",
+          "suggestedCurriculumRole": "core",
+          "spanish": "necesitar [algo]",
+          "english": "to need [something]",
+          "example": {
+            "spanish": "Necesito más tiempo.",
+            "english": "I need more time."
+          },
+          "collections": [
+            "necesitar",
+            "need",
+            "something"
+          ],
+          "curriculumRole": "core",
+          "sourcePaths": [
+            "docs/curriculum/structure/verb-forms/full-infinitive/handle-verbs.md",
+            "docs/curriculum/mappings/english-to-spanish/need/README.md"
+          ],
+          "rationale": "This is the direct, high-frequency personal-need mapping and the clearest starting point for the verb family.",
+          "approved": true,
+          "ownerNote": "yep, you got it"
+        },
+        {
+          "id": "necesitar-hacer-algo",
+          "action": "add",
+          "suggestedCurriculumRole": "core",
+          "spanish": "necesitar [hacer algo]",
+          "english": "to need to do something",
+          "example": {
+            "spanish": "Necesito terminar el informe hoy.",
+            "english": "I need to finish the report today."
+          },
+          "collections": [
+            "necesitar",
+            "need",
+            "full infinitive",
+            "followed by full infinitive"
+          ],
+          "curriculumRole": "core",
+          "sourcePaths": [
+            "docs/curriculum/structure/verb-forms/full-infinitive/handle-verbs.md",
+            "docs/curriculum/structure/verb-forms/full-infinitive/purpose-with-para.md"
+          ],
+          "rationale": "The Spanish infinitive maps to English need + to + verb, a meaning-changing construction that learners must produce accurately.",
+          "approved": true,
+          "ownerNote": "can't speak english without this -- however, you shouldn't be adding to do something as a tag, that is nothing more than  the placeholder text,\n\ngood job with full infinitive because verbs have six forms: to do something (full infinitive), do something, does something, did something, done something, doing something and it's important to mark down which to use\n\nperhaps \"followed by full infinitive\" would be a better name\n\nhoweever the \"full infinitive\" tag doesnt make sense because necesitar is just the root lemma form, which we convert to present, past. etc.\n\nin fact, need to go through database and mark down verbs that are naturally followed by full infinitive, bare infinitive, etc.\n\nalso place holder text needs to be marked in square brackets  to need [to do something]"
+        },
+        {
+          "id": "necesitar-que-alguien-haga-algo",
+          "action": "add",
+          "suggestedCurriculumRole": "core",
+          "spanish": "necesitar que [alguien] [haga algo]",
+          "english": "to need [somebody] [to do something]",
+          "example": {
+            "spanish": "Necesito que Laura lo haga.",
+            "english": "I need Laura to do it."
+          },
+          "collections": [
+            "necesitar",
+            "need",
+            "somebody to do something",
+            "followed by full infinitive",
+            "que"
+          ],
+          "curriculumRole": "core",
+          "sourcePaths": [
+            "docs/curriculum/structure/verb-forms/full-infinitive/somebody-to-do-something.md"
+          ],
+          "rationale": "A different subject for the second action requires the reusable English somebody + to-infinitive construction; it is independently teachable rather than an ordinary conjugation.",
+          "approved": true,
+          "ownerNote": "so this would need \"followed by full infinitive\" tag"
+        },
+        {
+          "id": "se-necesita-algo",
+          "action": "add",
+          "suggestedCurriculumRole": "supporting",
+          "spanish": "se necesita [algo]",
+          "english": "[something] is needed",
+          "example": {
+            "spanish": "Se necesita más tiempo.",
+            "english": "More time is needed."
+          },
+          "collections": [
+            "necesitar",
+            "need",
+            "passive",
+            "something is needed"
+          ],
+          "curriculumRole": "supporting",
+          "sourcePaths": [
+            "docs/curriculum/vocabulary/adjectives-and-states.md",
+            "docs/curriculum/mappings/english-to-spanish/need/README.md"
+          ],
+          "rationale": "The impersonal se necesita form changes the English subject and voice. It is common and useful, but less foundational than personal necesitar patterns.",
+          "approved": true,
+          "ownerNote": "great catch! I forgot about that one"
+        }
+      ]
+    },
+    {
+      "id": "verb-family-contraction-followups-2026-08-21",
+      "title": "Querer and necesitar contraction follow-ups",
+      "sourcePaths": [
+        "docs/curriculum/structure/verb-forms/full-infinitive/handle-verbs.md",
+        "docs/curriculum/structure/verb-forms/full-infinitive/somebody-to-do-something.md",
+        "docs/curriculum/mappings/english-to-spanish/to/pronunciation-and-homophones.md"
+      ],
+      "createdAt": "2026-08-21",
+      "status": "migrated",
+      "migratedAt": "2026-08-21",
+      "candidates": [
+        {
+          "id": "querer-hacer-algo-wanna",
+          "action": "add",
+          "suggestedCurriculumRole": "supporting",
+          "spanish": "querer [hacer algo]",
+          "english": "wanna [do something]",
+          "example": {
+            "spanish": "Quiero irme.",
+            "english": "I wanna leave."
+          },
+          "collections": [
+            "querer",
+            "wanna",
+            "informal spoken reduction",
+            "followed by full infinitive"
+          ],
+          "curriculumRole": "supporting",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/to/pronunciation-and-homophones.md"
+          ],
+          "rationale": "Wanna is the common informal spoken reduction of want to. It belongs under the querer + action construction but should remain a separate Supporting entry because its register differs from standard want to.",
+          "approved": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "necesitar-hacer-algo-needa",
+          "action": "add",
+          "suggestedCurriculumRole": "supporting",
+          "spanish": "necesitar [hacer algo]",
+          "english": "needa [do something]",
+          "example": {
+            "spanish": "Necesito irme.",
+            "english": "I needa leave."
+          },
+          "collections": [
+            "necesitar",
+            "needa",
+            "informal spoken reduction",
+            "followed by full infinitive"
+          ],
+          "curriculumRole": "supporting",
+          "sourcePaths": [
+            "docs/curriculum/structure/verb-forms/full-infinitive/handle-verbs.md"
+          ],
+          "rationale": "Needa represents the informal spoken reduction of need to. It belongs under necesitar + action but is a separate Supporting entry because it is pronunciation/register guidance, not the standard written form.",
+          "approved": true,
+          "ownerNote": ""
+        }
+      ]
     }
   ]
 }
