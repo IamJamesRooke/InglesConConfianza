@@ -40,9 +40,6 @@ const completedVerbFamilies = [
   "prestar",
   "quedar",
   "quitar",
-];
-
-const todoVerbFamilies = [
   "abrir",
   "acabar",
   "alcanzar",
@@ -55,6 +52,9 @@ const todoVerbFamilies = [
   "deber",
   "dejar",
   "echar",
+];
+
+const todoVerbFamilies = [
   "recordar",
   "robar",
   "saber",

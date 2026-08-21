@@ -1,9 +1,7 @@
-# Uses of **Open**
+# English **Opening** Meaning **Vacante**
 
-The **open** family maps to **abrir**, complete opening or emotional **sincerarse**, and nouns such as **apertura, inauguración**, and **vacante**.
+| Spanish | English |
+|---|---|
+| Hay una vacante en la oficina. | There is a job opening at the office. |
 
-| Lesson | Spanish | English |
-|---|---|---|
-| [Open Something](01-open-something.md) | Abro la ventana. | I open the window. |
-| [Open Up](02-open-up.md) | Abrió completamente la caja y luego se sinceró. | She opened up the box and then opened up emotionally. |
-| [Opening](03-opening.md) | La inauguración anunció una nueva vacante. | The opening announced a new job opening. |
+A position available for a new employee is a **job opening**. Spanish uses **una vacante**.

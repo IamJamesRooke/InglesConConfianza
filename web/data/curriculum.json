@@ -2263,6 +2263,7 @@
       },
       "collections": [
         "dar",
+        "contar",
         "realize",
         "reflexive",
         "verb + preposition",
@@ -2439,6 +2440,7 @@
       },
       "collections": [
         "dar",
+        "dejar",
         "give",
         "verb + preposition",
         "to",
@@ -3396,6 +3398,7 @@
       },
       "collections": [
         "poner",
+        "dejar",
         "put",
         "verb + preposition",
         "in",
@@ -4680,6 +4683,7 @@
       },
       "collections": [
         "decir",
+        "contar",
         "tell",
         "double object",
         "story"
@@ -4696,6 +4700,7 @@
       },
       "collections": [
         "decir",
+        "contar",
         "tell",
         "perception",
         "that",
@@ -6454,6 +6459,7 @@
       },
       "collections": [
         "haber",
+        "deber",
         "there be",
         "singular"
       ],
@@ -8072,6 +8078,7 @@
       },
       "collections": [
         "llevar",
+        "contar",
         "fixed expression",
         "verb + preposition",
         "of",
@@ -11243,6 +11250,3453 @@
         "con => on",
         "des-",
         "reflexive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "abrir-algo-open",
+      "spanish": "abrir [algo]",
+      "english": "to open [something]",
+      "example": {
+        "spanish": "Abre la puerta.",
+        "english": "Open the door."
+      },
+      "collections": [
+        "abrir",
+        "open"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "abrir-negocio-start",
+      "spanish": "abrir [un negocio]",
+      "english": "to start [a business]",
+      "example": {
+        "spanish": "Abrió un negocio pequeño.",
+        "english": "She started a small business."
+      },
+      "collections": [
+        "abrir",
+        "start",
+        "business"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "abrir-evento-open",
+      "spanish": "abrir [una reunión o un evento]",
+      "english": "to open [a meeting or event]",
+      "example": {
+        "spanish": "La directora abrió la reunión.",
+        "english": "The director opened the meeting."
+      },
+      "collections": [
+        "abrir",
+        "open",
+        "event"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "abrirse-con-open-up-to",
+      "spanish": "abrirse con [alguien]",
+      "english": "to open up to [somebody]",
+      "example": {
+        "spanish": "Se abrió con su amiga.",
+        "english": "He opened up to his friend."
+      },
+      "collections": [
+        "abrir",
+        "open",
+        "phrasal verb",
+        "up",
+        "to",
+        "con => to",
+        "reflexive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "abrirse-a-open-up-to",
+      "spanish": "abrirse a [algo]",
+      "english": "to open up to [something]",
+      "example": {
+        "spanish": "Se abrió a nuevas ideas.",
+        "english": "She opened up to new ideas."
+      },
+      "collections": [
+        "abrir",
+        "open",
+        "phrasal verb",
+        "up",
+        "to",
+        "a => to",
+        "reflexive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "abrir-por-completo-open-up",
+      "spanish": "abrir [algo] por completo",
+      "english": "to open [something] up",
+      "example": {
+        "spanish": "Abre la caja por completo.",
+        "english": "Open the box up."
+      },
+      "collections": [
+        "abrir",
+        "open",
+        "phrasal verb",
+        "up"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "abrir-a-open-onto",
+      "spanish": "abrir a [un lugar]",
+      "english": "to open onto [a place]",
+      "example": {
+        "spanish": "La puerta abre al jardín.",
+        "english": "The door opens onto the garden."
+      },
+      "collections": [
+        "abrir",
+        "open",
+        "verb + preposition",
+        "onto",
+        "a => onto"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "abrir-cuenta-open-account",
+      "spanish": "abrir [una cuenta]",
+      "english": "to open [an account]",
+      "example": {
+        "spanish": "Quiero abrir una cuenta.",
+        "english": "I want to open an account."
+      },
+      "collections": [
+        "abrir",
+        "open",
+        "account"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "abrir-fuego-open-fire",
+      "spanish": "abrir fuego",
+      "english": "to open fire",
+      "example": {
+        "spanish": "Les ordenaron no abrir fuego.",
+        "english": "They were ordered not to open fire."
+      },
+      "collections": [
+        "abrir",
+        "open",
+        "fixed expression"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-abierto-be-open",
+      "spanish": "estar abierto/a",
+      "english": "to be open",
+      "example": {
+        "spanish": "La tienda está abierta.",
+        "english": "The store is open."
+      },
+      "collections": [
+        "abrir",
+        "open",
+        "adjective",
+        "participle",
+        "state"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "la-apertura-opening",
+      "spanish": "la apertura",
+      "english": "the opening",
+      "example": {
+        "spanish": "La apertura de la cuenta fue rápida.",
+        "english": "The opening of the account was quick."
+      },
+      "collections": [
+        "abrir",
+        "open",
+        "noun"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "la-inauguracion-opening",
+      "spanish": "la inauguración",
+      "english": "the opening",
+      "example": {
+        "spanish": "La inauguración es mañana.",
+        "english": "The opening is tomorrow."
+      },
+      "collections": [
+        "abrir",
+        "open",
+        "noun",
+        "event"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "acabar-algo-finish",
+      "spanish": "acabar [algo]",
+      "english": "to finish [something]",
+      "example": {
+        "spanish": "Acabé el informe.",
+        "english": "I finished the report."
+      },
+      "collections": [
+        "acabar",
+        "finish"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "acabar-de-hacer-finish-doing",
+      "spanish": "acabar de [hacer algo]",
+      "english": "to finish [doing something]",
+      "example": {
+        "spanish": "Acabé de leer el libro.",
+        "english": "I finished reading the book."
+      },
+      "collections": [
+        "acabar",
+        "finish",
+        "de",
+        "gerund",
+        "de => gerund"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "acabar-de-have-just",
+      "spanish": "acabar de [hacer algo]",
+      "english": "to have just [done something]",
+      "example": {
+        "spanish": "Acabo de llegar.",
+        "english": "I've just arrived."
+      },
+      "collections": [
+        "acabar",
+        "just",
+        "verb + preposition",
+        "de",
+        "present perfect",
+        "de => just"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "acababa-de-had-just",
+      "spanish": "acababa de [hacer algo]",
+      "english": "to have just [done something]",
+      "example": {
+        "spanish": "Acababa de salir cuando llamaste.",
+        "english": "I had just left when you called."
+      },
+      "collections": [
+        "acabar",
+        "just",
+        "verb + preposition",
+        "de",
+        "past perfect",
+        "imperfect"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "acabar-haciendo-end-up",
+      "spanish": "acabar [haciendo algo]",
+      "english": "to end up [doing something]",
+      "example": {
+        "spanish": "Acabó trabajando toda la noche.",
+        "english": "He ended up working all night."
+      },
+      "collections": [
+        "acabar",
+        "end",
+        "phrasal verb",
+        "up",
+        "gerund"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "acabar-por-end-up",
+      "spanish": "acabar por [hacer algo]",
+      "english": "to end up [doing something]",
+      "example": {
+        "spanish": "Acabamos por quedarnos en casa.",
+        "english": "We ended up staying home."
+      },
+      "collections": [
+        "acabar",
+        "end",
+        "phrasal verb",
+        "up",
+        "por",
+        "gerund",
+        "por => gerund"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "acabarse-algo-finish",
+      "spanish": "acabarse [algo]",
+      "english": "to finish [something]",
+      "example": {
+        "spanish": "Nos acabamos el café.",
+        "english": "We finished the coffee."
+      },
+      "collections": [
+        "acabar",
+        "finish",
+        "reflexive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "acabarse-suministro-run-out-of",
+      "spanish": "acabarse [algo]",
+      "english": "to run out of [something]",
+      "example": {
+        "spanish": "Se acabó el café.",
+        "english": "We ran out of coffee."
+      },
+      "collections": [
+        "acabar",
+        "run",
+        "phrasal verb",
+        "out",
+        "of",
+        "depletion",
+        "reflexive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "acabarse-evento-be-over",
+      "spanish": "acabarse [un evento]",
+      "english": "to be over",
+      "example": {
+        "spanish": "La reunión se acabó.",
+        "english": "The meeting is over."
+      },
+      "collections": [
+        "acabar",
+        "be over",
+        "event",
+        "reflexive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "acabarse-evento-end",
+      "spanish": "acabarse [un evento]",
+      "english": "to end",
+      "example": {
+        "spanish": "La reunión se acabó a las cinco.",
+        "english": "The meeting ended at five."
+      },
+      "collections": [
+        "acabar",
+        "end",
+        "event",
+        "reflexive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "acabar-con-suministro-use-up",
+      "spanish": "acabar con [algo]",
+      "english": "to use up [something]",
+      "example": {
+        "spanish": "Acabaron con toda la comida.",
+        "english": "They used up all the food."
+      },
+      "collections": [
+        "acabar",
+        "use",
+        "phrasal verb",
+        "up",
+        "with",
+        "con => object",
+        "depletion"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "acabar-con-put-end-to",
+      "spanish": "acabar con [algo]",
+      "english": "to put an end to [something]",
+      "example": {
+        "spanish": "Tenemos que acabar con ese problema.",
+        "english": "We have to put an end to that problem."
+      },
+      "collections": [
+        "acabar",
+        "put",
+        "fixed expression",
+        "verb + preposition",
+        "to",
+        "con => to"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "acabar-con-do-away-with",
+      "spanish": "acabar con [algo]",
+      "english": "to do away with [something]",
+      "example": {
+        "spanish": "Quieren acabar con esa regla.",
+        "english": "They want to do away with that rule."
+      },
+      "collections": [
+        "acabar",
+        "do",
+        "phrasal verb",
+        "away",
+        "with",
+        "con => with"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "acabar-con-kill",
+      "spanish": "acabar con [algo]",
+      "english": "to kill [something]",
+      "example": {
+        "spanish": "Ese comentario acabó con la conversación.",
+        "english": "That comment killed the conversation."
+      },
+      "collections": [
+        "acabar",
+        "kill",
+        "fixed expression"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-acabado-be-finished",
+      "spanish": "estar acabado/a",
+      "english": "to be finished",
+      "example": {
+        "spanish": "El trabajo está acabado.",
+        "english": "The work is finished."
+      },
+      "collections": [
+        "acabar",
+        "finish",
+        "adjective",
+        "participle",
+        "state"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "inacabado-unfinished",
+      "spanish": "inacabado/a",
+      "english": "unfinished",
+      "example": {
+        "spanish": "El informe está inacabado.",
+        "english": "The report is unfinished."
+      },
+      "collections": [
+        "acabar",
+        "adjective",
+        "prefix",
+        "in-",
+        "un-",
+        "participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "alcanzar-algo-reach",
+      "spanish": "alcanzar [algo]",
+      "english": "to reach [something]",
+      "example": {
+        "spanish": "No alcanzo el estante.",
+        "english": "I can't reach the shelf."
+      },
+      "collections": [
+        "alcanzar",
+        "reach"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "alcanzar-transporte-catch",
+      "spanish": "alcanzar [un medio de transporte]",
+      "english": "to catch [transportation]",
+      "example": {
+        "spanish": "Alcancé el último bus.",
+        "english": "I caught the last bus."
+      },
+      "collections": [
+        "alcanzar",
+        "catch",
+        "transportation"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "alcanzar-meta-achieve",
+      "spanish": "alcanzar [una meta]",
+      "english": "to achieve [a goal]",
+      "example": {
+        "spanish": "Alcanzó su meta.",
+        "english": "She achieved her goal."
+      },
+      "collections": [
+        "alcanzar",
+        "achieve",
+        "goal"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "alcanzar-be-enough",
+      "spanish": "alcanzar",
+      "english": "to be enough",
+      "example": {
+        "spanish": "El dinero no alcanza.",
+        "english": "The money isn't enough."
+      },
+      "collections": [
+        "alcanzar",
+        "enough",
+        "quantity"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "no-alcanzarle-afford",
+      "spanish": "no alcanzarle a [alguien] para [algo]",
+      "english": "to be unable to afford [something]",
+      "example": {
+        "spanish": "No me alcanza para ese apartamento.",
+        "english": "I can't afford that apartment."
+      },
+      "collections": [
+        "alcanzar",
+        "afford",
+        "verb + preposition",
+        "para",
+        "para => object",
+        "money"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "alcanzar-a-alguien-catch-up-with",
+      "spanish": "alcanzar a [alguien]",
+      "english": "to catch up with [somebody]",
+      "example": {
+        "spanish": "Corrí para alcanzar a Ana.",
+        "english": "I ran to catch up with Ana."
+      },
+      "collections": [
+        "alcanzar",
+        "catch",
+        "phrasal verb",
+        "up",
+        "with",
+        "a => with"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "alcanzar-a-hacer-manage-to",
+      "spanish": "alcanzar a [hacer algo]",
+      "english": "to manage to [do something]",
+      "example": {
+        "spanish": "Alcancé a terminar a tiempo.",
+        "english": "I managed to finish on time."
+      },
+      "collections": [
+        "alcanzar",
+        "manage",
+        "verb + infinitive",
+        "to",
+        "a => to",
+        "Colombian Spanish"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "alcanzar-a-hacer-have-time-to",
+      "spanish": "alcanzar a [hacer algo]",
+      "english": "to have time to [do something]",
+      "example": {
+        "spanish": "No alcancé a llamar.",
+        "english": "I didn't have time to call."
+      },
+      "collections": [
+        "alcanzar",
+        "time",
+        "verb + infinitive",
+        "to",
+        "a => to",
+        "Colombian Spanish"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "el-alcance-reach",
+      "spanish": "el alcance",
+      "english": "the reach",
+      "example": {
+        "spanish": "Está fuera de mi alcance.",
+        "english": "It's beyond my reach."
+      },
+      "collections": [
+        "alcanzar",
+        "reach",
+        "noun"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "el-alcance-scope",
+      "spanish": "el alcance",
+      "english": "the scope",
+      "example": {
+        "spanish": "Definieron el alcance del proyecto.",
+        "english": "They defined the scope of the project."
+      },
+      "collections": [
+        "alcanzar",
+        "scope",
+        "noun"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "fuera-alcance-out-of-reach",
+      "spanish": "fuera del alcance de [alguien]",
+      "english": "out of [somebody's] reach",
+      "example": {
+        "spanish": "El estante está fuera de mi alcance.",
+        "english": "The shelf is out of my reach."
+      },
+      "collections": [
+        "alcanzar",
+        "reach",
+        "fixed expression",
+        "out",
+        "of",
+        "de => of"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "alcanzable-reachable",
+      "spanish": "alcanzable",
+      "english": "reachable",
+      "example": {
+        "spanish": "La meta es alcanzable.",
+        "english": "The goal is reachable."
+      },
+      "collections": [
+        "alcanzar",
+        "adjective",
+        "-able",
+        "cognate",
+        "cognate -able => -able"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "inalcanzable-unattainable",
+      "spanish": "inalcanzable",
+      "english": "unattainable",
+      "example": {
+        "spanish": "Esa meta parece inalcanzable.",
+        "english": "That goal seems unattainable."
+      },
+      "collections": [
+        "alcanzar",
+        "adjective",
+        "-able",
+        "prefix",
+        "in-",
+        "un-",
+        "cognate"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "caerse-fall",
+      "spanish": "caerse",
+      "english": "to fall",
+      "example": {
+        "spanish": "Se cayó.",
+        "english": "She fell."
+      },
+      "collections": [
+        "caer",
+        "fall",
+        "reflexive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "caerse-de-fall-off",
+      "spanish": "caerse de [algo]",
+      "english": "to fall off [something]",
+      "example": {
+        "spanish": "Se cayó de la bicicleta.",
+        "english": "She fell off the bicycle."
+      },
+      "collections": [
+        "caer",
+        "fall",
+        "phrasal verb",
+        "off",
+        "de => off",
+        "reflexive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "caer-desde-fall-from",
+      "spanish": "caer desde [un lugar]",
+      "english": "to fall from [a place]",
+      "example": {
+        "spanish": "Cayó desde el segundo piso.",
+        "english": "He fell from the second floor."
+      },
+      "collections": [
+        "caer",
+        "fall",
+        "verb + preposition",
+        "from",
+        "desde => from"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "caersele-algo-drop",
+      "spanish": "caérsele [algo] a [alguien]",
+      "english": "to drop [something]",
+      "example": {
+        "spanish": "Se me cayó el vaso.",
+        "english": "I dropped the glass."
+      },
+      "collections": [
+        "caer",
+        "drop",
+        "accidental se",
+        "perspective change"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "caer-fecha-fall-on",
+      "spanish": "caer en [un día o una fecha]",
+      "english": "to fall on [a day or date]",
+      "example": {
+        "spanish": "El festivo cae en lunes.",
+        "english": "The holiday falls on Monday."
+      },
+      "collections": [
+        "caer",
+        "fall",
+        "verb + preposition",
+        "on",
+        "en => on",
+        "calendar"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "caer-en-cuenta-realize",
+      "spanish": "caer en cuenta de que [algo sucede]",
+      "english": "to realize that [something happens]",
+      "example": {
+        "spanish": "Caí en cuenta de que era tarde.",
+        "english": "I realized that it was late."
+      },
+      "collections": [
+        "caer",
+        "realize",
+        "fixed expression",
+        "en",
+        "de que => that",
+        "Colombian Spanish"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "caer-bien-like-somebody",
+      "spanish": "[alguien] caerle bien a [alguien]",
+      "english": "[somebody] to like [somebody]",
+      "example": {
+        "spanish": "Ana me cae bien.",
+        "english": "I like Ana."
+      },
+      "collections": [
+        "caer",
+        "like",
+        "perspective change"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "caer-mal-not-like",
+      "spanish": "[alguien] caerle mal a [alguien]",
+      "english": "[somebody] not to like [somebody]",
+      "example": {
+        "spanish": "Su jefe me cae mal.",
+        "english": "I don't like her boss."
+      },
+      "collections": [
+        "caer",
+        "like",
+        "negative",
+        "perspective change"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "caer-bien-impression",
+      "spanish": "caer bien",
+      "english": "to make a good impression",
+      "example": {
+        "spanish": "El gerente nuevo cayó bien.",
+        "english": "The new manager made a good impression."
+      },
+      "collections": [
+        "caer",
+        "impression",
+        "fixed expression"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "caer-mal-agree-with",
+      "spanish": "caerle mal a [alguien]",
+      "english": "not to agree with [somebody]",
+      "example": {
+        "spanish": "La comida pesada me cae mal.",
+        "english": "Heavy food doesn't agree with me."
+      },
+      "collections": [
+        "caer",
+        "agree",
+        "verb + preposition",
+        "with",
+        "a => with",
+        "physical effect"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "caer-enfermo-fall-ill",
+      "spanish": "caer enfermo/a",
+      "english": "to fall ill",
+      "example": {
+        "spanish": "Cayó enfermo después del viaje.",
+        "english": "He fell ill after the trip."
+      },
+      "collections": [
+        "caer",
+        "fall",
+        "fixed expression",
+        "health"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "caer-dormido-fall-asleep",
+      "spanish": "caer dormido/a",
+      "english": "to fall asleep",
+      "example": {
+        "spanish": "Cayó dormida en el sofá.",
+        "english": "She fell asleep on the sofa."
+      },
+      "collections": [
+        "caer",
+        "fall",
+        "fixed expression",
+        "sleep"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "caer-en-trampa-fall-into",
+      "spanish": "caer en [una trampa]",
+      "english": "to fall into [a trap]",
+      "example": {
+        "spanish": "Cayó en la trampa.",
+        "english": "He fell into the trap."
+      },
+      "collections": [
+        "caer",
+        "fall",
+        "verb + preposition",
+        "into",
+        "en => into"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "caerse-pedazos-fall-apart",
+      "spanish": "caerse a pedazos",
+      "english": "to fall apart",
+      "example": {
+        "spanish": "La silla se está cayendo a pedazos.",
+        "english": "The chair is falling apart."
+      },
+      "collections": [
+        "caer",
+        "fall",
+        "phrasal verb",
+        "apart",
+        "reflexive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "caer-por-debajo-fall-below",
+      "spanish": "caer por debajo de [un nivel]",
+      "english": "to fall below [a level]",
+      "example": {
+        "spanish": "La temperatura cayó por debajo de cero.",
+        "english": "The temperature fell below zero."
+      },
+      "collections": [
+        "caer",
+        "fall",
+        "verb + preposition",
+        "below",
+        "por debajo de => below"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "la-caida-fall",
+      "spanish": "la caída",
+      "english": "the fall",
+      "example": {
+        "spanish": "La caída no fue grave.",
+        "english": "The fall wasn't serious."
+      },
+      "collections": [
+        "caer",
+        "fall",
+        "noun"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "la-caida-decline",
+      "spanish": "la caída",
+      "english": "the decline",
+      "example": {
+        "spanish": "La caída de las ventas continuó.",
+        "english": "The decline in sales continued."
+      },
+      "collections": [
+        "caer",
+        "decline",
+        "noun"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "conocer-a-know",
+      "spanish": "conocer a [alguien]",
+      "english": "to know [somebody]",
+      "example": {
+        "spanish": "Conozco a Laura.",
+        "english": "I know Laura."
+      },
+      "collections": [
+        "conocer",
+        "know",
+        "person"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "conocer-primera-vez-meet",
+      "spanish": "conocer a [alguien] por primera vez",
+      "english": "to meet [somebody]",
+      "example": {
+        "spanish": "Conocí a Laura ayer.",
+        "english": "I met Laura yesterday."
+      },
+      "collections": [
+        "conocer",
+        "meet",
+        "person",
+        "first encounter"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "haber-conocido-have-met",
+      "spanish": "haber conocido a [alguien]",
+      "english": "to have met [somebody]",
+      "example": {
+        "spanish": "He conocido a Laura.",
+        "english": "I've met Laura."
+      },
+      "collections": [
+        "conocer",
+        "meet",
+        "present perfect",
+        "person"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "conocer-mejor-get-to-know",
+      "spanish": "conocer mejor a [alguien]",
+      "english": "to get to know [somebody]",
+      "example": {
+        "spanish": "Quiero conocerla mejor.",
+        "english": "I want to get to know her."
+      },
+      "collections": [
+        "conocer",
+        "get",
+        "verb + infinitive",
+        "to",
+        "person"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "conocer-lugar-know",
+      "spanish": "conocer [un lugar]",
+      "english": "to know [a place]",
+      "example": {
+        "spanish": "Conozco bien Bogotá.",
+        "english": "I know Bogotá well."
+      },
+      "collections": [
+        "conocer",
+        "know",
+        "place"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "conocer-lugar-primera-vez-visit",
+      "spanish": "conocer [un lugar] por primera vez",
+      "english": "to visit [a place] for the first time",
+      "example": {
+        "spanish": "Conocí Bogotá en 2018.",
+        "english": "I visited Bogotá for the first time in 2018."
+      },
+      "collections": [
+        "conocer",
+        "visit",
+        "place",
+        "first encounter"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "conocer-tema-be-familiar-with",
+      "spanish": "conocer [un tema o sistema]",
+      "english": "to be familiar with [a topic or system]",
+      "example": {
+        "spanish": "Conozco el sistema.",
+        "english": "I'm familiar with the system."
+      },
+      "collections": [
+        "conocer",
+        "familiar",
+        "verb + preposition",
+        "with"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "conocer-de-vista-know-by-sight",
+      "spanish": "conocer de vista a [alguien]",
+      "english": "to know [somebody] by sight",
+      "example": {
+        "spanish": "La conozco de vista.",
+        "english": "I know her by sight."
+      },
+      "collections": [
+        "conocer",
+        "know",
+        "fixed expression",
+        "by",
+        "de => by",
+        "person"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ser-conocido-well-known",
+      "spanish": "ser conocido/a",
+      "english": "to be well-known",
+      "example": {
+        "spanish": "Es una autora conocida.",
+        "english": "She's a well-known author."
+      },
+      "collections": [
+        "conocer",
+        "known",
+        "adjective",
+        "participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "un-conocido-acquaintance",
+      "spanish": "un conocido / una conocida",
+      "english": "an acquaintance",
+      "example": {
+        "spanish": "Ana es una conocida mía.",
+        "english": "Ana is an acquaintance of mine."
+      },
+      "collections": [
+        "conocer",
+        "acquaintance",
+        "noun",
+        "person",
+        "participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ser-conocido-por-known-for",
+      "spanish": "ser conocido/a por [algo]",
+      "english": "to be known for [something]",
+      "example": {
+        "spanish": "La ciudad es conocida por sus parques.",
+        "english": "The city is known for its parks."
+      },
+      "collections": [
+        "conocer",
+        "known",
+        "verb + preposition",
+        "for",
+        "por => for",
+        "participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ser-conocido-como-known-as",
+      "spanish": "ser conocido/a como [algo]",
+      "english": "to be known as [something]",
+      "example": {
+        "spanish": "Es conocido como el mejor del equipo.",
+        "english": "He's known as the best on the team."
+      },
+      "collections": [
+        "conocer",
+        "known",
+        "verb + preposition",
+        "as",
+        "como => as",
+        "participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "darse-a-conocer-become-known",
+      "spanish": "darse a conocer",
+      "english": "to become known",
+      "example": {
+        "spanish": "La artista se dio a conocer en línea.",
+        "english": "The artist became known online."
+      },
+      "collections": [
+        "conocer",
+        "known",
+        "fixed expression",
+        "reflexive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "darse-a-conocer-make-oneself-known",
+      "spanish": "darse a conocer",
+      "english": "to make oneself known",
+      "example": {
+        "spanish": "Se dio a conocer en la comunidad.",
+        "english": "She made herself known in the community."
+      },
+      "collections": [
+        "conocer",
+        "known",
+        "fixed expression",
+        "reflexive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "el-conocimiento-knowledge",
+      "spanish": "el conocimiento",
+      "english": "the knowledge",
+      "example": {
+        "spanish": "Su conocimiento del tema es amplio.",
+        "english": "His knowledge of the topic is broad."
+      },
+      "collections": [
+        "conocer",
+        "know",
+        "noun"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "desconocido-unknown",
+      "spanish": "desconocido/a",
+      "english": "unknown",
+      "example": {
+        "spanish": "La causa sigue siendo desconocida.",
+        "english": "The cause remains unknown."
+      },
+      "collections": [
+        "conocer",
+        "known",
+        "adjective",
+        "participle",
+        "prefix",
+        "des-",
+        "un-"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "conseguir-algo-get",
+      "spanish": "conseguir [algo]",
+      "english": "to get [something]",
+      "example": {
+        "spanish": "Conseguí una cita.",
+        "english": "I got an appointment."
+      },
+      "collections": [
+        "conseguir",
+        "get"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "conseguir-algo-obtain",
+      "spanish": "conseguir [algo]",
+      "english": "to obtain [something]",
+      "example": {
+        "spanish": "Conseguimos el permiso.",
+        "english": "We obtained permission."
+      },
+      "collections": [
+        "conseguir",
+        "obtain",
+        "formal"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "conseguir-algo-secure",
+      "spanish": "conseguir [algo]",
+      "english": "to secure [something]",
+      "example": {
+        "spanish": "Consiguieron el apoyo necesario.",
+        "english": "They secured the necessary support."
+      },
+      "collections": [
+        "conseguir",
+        "secure"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "conseguir-hacer-manage-to",
+      "spanish": "conseguir [hacer algo]",
+      "english": "to manage to [do something]",
+      "example": {
+        "spanish": "Conseguimos terminar a tiempo.",
+        "english": "We managed to finish on time."
+      },
+      "collections": [
+        "conseguir",
+        "manage",
+        "verb + infinitive",
+        "to"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "no-conseguir-hacer-cant-seem-to",
+      "spanish": "no conseguir [hacer algo]",
+      "english": "not to seem able to [do something]",
+      "example": {
+        "spanish": "No consigo entenderlo.",
+        "english": "I don't seem able to understand it."
+      },
+      "collections": [
+        "conseguir",
+        "seem",
+        "negative",
+        "verb + infinitive",
+        "to"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "no-conseguir-hacer-fail-to",
+      "spanish": "no conseguir [hacer algo]",
+      "english": "to fail to [do something]",
+      "example": {
+        "spanish": "No consiguió terminar.",
+        "english": "She failed to finish."
+      },
+      "collections": [
+        "conseguir",
+        "fail",
+        "negative",
+        "verb + infinitive",
+        "to"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "conseguirle-algo-get-somebody-something",
+      "spanish": "conseguirle [algo] a [alguien]",
+      "english": "to get [somebody] [something]",
+      "example": {
+        "spanish": "¿Me consigues una entrada?",
+        "english": "Can you get me a ticket?"
+      },
+      "collections": [
+        "conseguir",
+        "get",
+        "double object",
+        "person"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "conseguir-algo-para-get-for",
+      "spanish": "conseguir [algo] para [alguien]",
+      "english": "to get [something] for [somebody]",
+      "example": {
+        "spanish": "Conseguí una entrada para Ana.",
+        "english": "I got a ticket for Ana."
+      },
+      "collections": [
+        "conseguir",
+        "get",
+        "verb + preposition",
+        "for",
+        "para => for"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "conseguir-que-get-somebody-to",
+      "spanish": "conseguir que [alguien] [haga algo]",
+      "english": "to get [somebody] to [do something]",
+      "example": {
+        "spanish": "Conseguí que Ana me ayudara.",
+        "english": "I got Ana to help me."
+      },
+      "collections": [
+        "conseguir",
+        "get",
+        "somebody to do something",
+        "causative",
+        "to"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "conseguir-que-quede-get-done",
+      "spanish": "conseguir que [algo] quede [hecho]",
+      "english": "to get [something] done",
+      "example": {
+        "spanish": "Conseguí que el informe quedara listo.",
+        "english": "I got the report done."
+      },
+      "collections": [
+        "conseguir",
+        "get",
+        "causative",
+        "past participle",
+        "result"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "conseguir-trabajo-get-job",
+      "spanish": "conseguir trabajo",
+      "english": "to get a job",
+      "example": {
+        "spanish": "Consiguió trabajo este mes.",
+        "english": "She got a job this month."
+      },
+      "collections": [
+        "conseguir",
+        "get",
+        "job",
+        "fixed expression"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "conseguir-apoyo-win-support",
+      "spanish": "conseguir apoyo",
+      "english": "to win support",
+      "example": {
+        "spanish": "La propuesta consiguió apoyo.",
+        "english": "The proposal won support."
+      },
+      "collections": [
+        "conseguir",
+        "win",
+        "support",
+        "fixed expression"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "conseguir-algo-get-hold-of",
+      "spanish": "conseguir [algo]",
+      "english": "to get hold of [something]",
+      "example": {
+        "spanish": "Por fin conseguí una copia.",
+        "english": "I finally got hold of a copy."
+      },
+      "collections": [
+        "conseguir",
+        "get",
+        "phrasal verb",
+        "hold",
+        "of"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "conseguir-algo-get-hands-on",
+      "spanish": "conseguir [algo difícil de encontrar]",
+      "english": "to get one's hands on [something]",
+      "example": {
+        "spanish": "Consiguió una copia anticipada.",
+        "english": "She got her hands on an early copy."
+      },
+      "collections": [
+        "conseguir",
+        "get",
+        "fixed expression",
+        "on",
+        "informal"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "contar-algo-count",
+      "spanish": "contar [algo]",
+      "english": "to count [something]",
+      "example": {
+        "spanish": "Cuenta el dinero.",
+        "english": "Count the money."
+      },
+      "collections": [
+        "contar",
+        "count"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "contarle-algo-tell",
+      "spanish": "contarle [algo] a [alguien]",
+      "english": "to tell [somebody] [something]",
+      "example": {
+        "spanish": "Cuéntame qué pasó.",
+        "english": "Tell me what happened."
+      },
+      "collections": [
+        "contar",
+        "tell",
+        "double object",
+        "person"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "contarle-que-tell-that",
+      "spanish": "contarle a [alguien] que [algo sucedió]",
+      "english": "to tell [somebody] that [something happened]",
+      "example": {
+        "spanish": "Le conté a Ana que llegaría tarde.",
+        "english": "I told Ana that I'd be late."
+      },
+      "collections": [
+        "contar",
+        "tell",
+        "that",
+        "que => that",
+        "person"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "contar-incluir-include",
+      "spanish": "contar [algo] dentro de [un total]",
+      "english": "to include [something] in [a total]",
+      "example": {
+        "spanish": "Cuenta el envío dentro del total.",
+        "english": "Include shipping in the total."
+      },
+      "collections": [
+        "contar",
+        "include",
+        "verb + preposition",
+        "in",
+        "dentro de => in"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "contar-como-count-as",
+      "spanish": "contar [algo] como [algo]",
+      "english": "to count [something] as [something]",
+      "example": {
+        "spanish": "Eso cuenta como experiencia.",
+        "english": "That counts as experience."
+      },
+      "collections": [
+        "contar",
+        "count",
+        "verb + preposition",
+        "as",
+        "como => as"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "contar-con-count-on",
+      "spanish": "contar con [alguien]",
+      "english": "to count on [somebody]",
+      "example": {
+        "spanish": "Puedes contar conmigo.",
+        "english": "You can count on me."
+      },
+      "collections": [
+        "contar",
+        "count",
+        "phrasal verb",
+        "on",
+        "con => on"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "contar-con-rely-on",
+      "spanish": "contar con [alguien]",
+      "english": "to rely on [somebody]",
+      "example": {
+        "spanish": "Contamos con Ana.",
+        "english": "We rely on Ana."
+      },
+      "collections": [
+        "contar",
+        "rely",
+        "phrasal verb",
+        "on",
+        "con => on"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "contar-con-have",
+      "spanish": "contar con [algo]",
+      "english": "to have [something]",
+      "example": {
+        "spanish": "El equipo cuenta con tres diseñadores.",
+        "english": "The team has three designers."
+      },
+      "collections": [
+        "contar",
+        "have",
+        "verb + preposition",
+        "con => object",
+        "resources"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "contar-con-have-available",
+      "spanish": "contar con [algo]",
+      "english": "to have [something] available",
+      "example": {
+        "spanish": "Contamos con suficiente tiempo.",
+        "english": "We have enough time available."
+      },
+      "collections": [
+        "contar",
+        "have",
+        "available",
+        "resources"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "contar-hacia-atras-count-down",
+      "spanish": "contar hacia atrás",
+      "english": "to count down",
+      "example": {
+        "spanish": "Cuenta hacia atrás desde diez.",
+        "english": "Count down from ten."
+      },
+      "collections": [
+        "contar",
+        "count",
+        "phrasal verb",
+        "down"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "contar-total-count-up",
+      "spanish": "contar [un total]",
+      "english": "to count up [a total]",
+      "example": {
+        "spanish": "Contó todos los votos.",
+        "english": "She counted up all the votes."
+      },
+      "collections": [
+        "contar",
+        "count",
+        "phrasal verb",
+        "up"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "contar-a-alguien-entre-count-among",
+      "spanish": "contar a [alguien] entre [un grupo]",
+      "english": "to count [somebody] among [a group]",
+      "example": {
+        "spanish": "La cuento entre mis amigas.",
+        "english": "I count her among my friends."
+      },
+      "collections": [
+        "contar",
+        "count",
+        "verb + preposition",
+        "among",
+        "entre => among"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "sin-contar-not-counting",
+      "spanish": "sin contar [algo]",
+      "english": "not counting [something]",
+      "example": {
+        "spanish": "Somos cinco, sin contar a Ana.",
+        "english": "There are five of us, not counting Ana."
+      },
+      "collections": [
+        "contar",
+        "count",
+        "fixed expression",
+        "without",
+        "sin => not"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "la-cuenta-bill",
+      "spanish": "la cuenta",
+      "english": "the bill",
+      "example": {
+        "spanish": "¿Me trae la cuenta?",
+        "english": "Can you bring me the bill?"
+      },
+      "collections": [
+        "contar",
+        "count",
+        "noun",
+        "restaurant"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "la-cuenta-account",
+      "spanish": "la cuenta",
+      "english": "the account",
+      "example": {
+        "spanish": "Abrí una cuenta nueva.",
+        "english": "I opened a new account."
+      },
+      "collections": [
+        "contar",
+        "count",
+        "noun",
+        "account"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "el-contador-accountant",
+      "spanish": "el contador / la contadora",
+      "english": "the accountant",
+      "example": {
+        "spanish": "La contadora revisó los números.",
+        "english": "The accountant checked the numbers."
+      },
+      "collections": [
+        "contar",
+        "noun",
+        "person",
+        "-dor"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "contable-countable",
+      "spanish": "contable",
+      "english": "countable",
+      "example": {
+        "spanish": "Es un sustantivo contable.",
+        "english": "It's a countable noun."
+      },
+      "collections": [
+        "contar",
+        "adjective",
+        "-able",
+        "cognate",
+        "cognate -able => -able"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "costar-precio-cost",
+      "spanish": "costar [una cantidad]",
+      "english": "to cost [an amount]",
+      "example": {
+        "spanish": "El libro cuesta veinte dólares.",
+        "english": "The book costs twenty dollars."
+      },
+      "collections": [
+        "costar",
+        "cost",
+        "money",
+        "cognate"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "costarle-hacer-struggle-to",
+      "spanish": "costarle a [alguien] [hacer algo]",
+      "english": "to struggle to [do something]",
+      "example": {
+        "spanish": "Me cuesta entenderlo.",
+        "english": "I struggle to understand it."
+      },
+      "collections": [
+        "costar",
+        "struggle",
+        "verb + infinitive",
+        "to",
+        "perspective change"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "costarle-hacer-difficult-for",
+      "spanish": "costarle a [alguien] [hacer algo]",
+      "english": "to be difficult for [somebody] to [do something]",
+      "example": {
+        "spanish": "Me cuesta hablar en público.",
+        "english": "It's difficult for me to speak in public."
+      },
+      "collections": [
+        "costar",
+        "difficult",
+        "for",
+        "to",
+        "perspective change"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "costarle-algo-cost-somebody",
+      "spanish": "costarle [algo] a [alguien]",
+      "english": "to cost [somebody] [something]",
+      "example": {
+        "spanish": "El error le costó el trabajo.",
+        "english": "The mistake cost him his job."
+      },
+      "collections": [
+        "costar",
+        "cost",
+        "double object",
+        "person"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "costar-trabajo-have-hard-time",
+      "spanish": "costarle trabajo a [alguien] [hacer algo]",
+      "english": "to have a hard time [doing something]",
+      "example": {
+        "spanish": "Me costó trabajo encontrarlo.",
+        "english": "I had a hard time finding it."
+      },
+      "collections": [
+        "costar",
+        "difficulty",
+        "fixed expression",
+        "gerund"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "el-costo-cost",
+      "spanish": "el costo",
+      "english": "the cost",
+      "example": {
+        "spanish": "El costo total es alto.",
+        "english": "The total cost is high."
+      },
+      "collections": [
+        "costar",
+        "cost",
+        "noun",
+        "cognate"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "el-costo-expense",
+      "spanish": "el costo",
+      "english": "the expense",
+      "example": {
+        "spanish": "No podemos asumir ese costo.",
+        "english": "We can't take on that expense."
+      },
+      "collections": [
+        "costar",
+        "expense",
+        "noun"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "costoso-expensive",
+      "spanish": "costoso/a",
+      "english": "expensive",
+      "example": {
+        "spanish": "La reparación fue costosa.",
+        "english": "The repair was expensive."
+      },
+      "collections": [
+        "costar",
+        "cost",
+        "adjective",
+        "-oso"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "costoso-costly",
+      "spanish": "costoso/a",
+      "english": "costly",
+      "example": {
+        "spanish": "Fue un error costoso.",
+        "english": "It was a costly mistake."
+      },
+      "collections": [
+        "costar",
+        "cost",
+        "adjective",
+        "-ly"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "a-toda-costa-at-all-costs",
+      "spanish": "a toda costa",
+      "english": "at all costs",
+      "example": {
+        "spanish": "Quieren ganar a toda costa.",
+        "english": "They want to win at all costs."
+      },
+      "collections": [
+        "costar",
+        "cost",
+        "fixed expression",
+        "at",
+        "a => at"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "cueste-lo-que-cueste-whatever-it-takes",
+      "spanish": "cueste lo que cueste",
+      "english": "whatever it takes",
+      "example": {
+        "spanish": "Lo terminaré cueste lo que cueste.",
+        "english": "I'll finish it whatever it takes."
+      },
+      "collections": [
+        "costar",
+        "fixed expression",
+        "free-choice construction"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "sin-costo-free-of-charge",
+      "spanish": "sin costo",
+      "english": "free of charge",
+      "example": {
+        "spanish": "La entrega es sin costo.",
+        "english": "Delivery is free of charge."
+      },
+      "collections": [
+        "costar",
+        "cost",
+        "fixed expression",
+        "of",
+        "sin => free"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "creer-que-think",
+      "spanish": "creer que [algo es cierto]",
+      "english": "to think that [something is true]",
+      "example": {
+        "spanish": "Creo que funcionará.",
+        "english": "I think it will work."
+      },
+      "collections": [
+        "creer",
+        "think",
+        "that",
+        "que => that",
+        "opinion"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "creer-algo-believe",
+      "spanish": "creer [algo]",
+      "english": "to believe [something]",
+      "example": {
+        "spanish": "Creo su explicación.",
+        "english": "I believe her explanation."
+      },
+      "collections": [
+        "creer",
+        "believe"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "creerle-a-believe-somebody",
+      "spanish": "creerle a [alguien]",
+      "english": "to believe [somebody]",
+      "example": {
+        "spanish": "Le creo a Ana.",
+        "english": "I believe Ana."
+      },
+      "collections": [
+        "creer",
+        "believe",
+        "person",
+        "a => object"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "creer-en-algo-believe-in",
+      "spanish": "creer en [algo]",
+      "english": "to believe in [something]",
+      "example": {
+        "spanish": "Creo en el proyecto.",
+        "english": "I believe in the project."
+      },
+      "collections": [
+        "creer",
+        "believe",
+        "verb + preposition",
+        "in",
+        "en => in"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "creer-en-alguien-believe-in",
+      "spanish": "creer en [alguien]",
+      "english": "to believe in [somebody]",
+      "example": {
+        "spanish": "Creo en ti.",
+        "english": "I believe in you."
+      },
+      "collections": [
+        "creer",
+        "believe",
+        "verb + preposition",
+        "in",
+        "en => in",
+        "person"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "creer-que-si-think-so",
+      "spanish": "creer que sí",
+      "english": "to think so",
+      "example": {
+        "spanish": "Creo que sí.",
+        "english": "I think so."
+      },
+      "collections": [
+        "creer",
+        "think",
+        "so",
+        "que sí => so"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "creer-que-no-not-think-so",
+      "spanish": "creer que no",
+      "english": "not to think so",
+      "example": {
+        "spanish": "Creo que no.",
+        "english": "I don't think so."
+      },
+      "collections": [
+        "creer",
+        "think",
+        "so",
+        "negative",
+        "que no => not so"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "no-poder-creer-cant-believe",
+      "spanish": "no poder creer [algo]",
+      "english": "not to be able to believe [something]",
+      "example": {
+        "spanish": "No puedo creerlo.",
+        "english": "I can't believe it."
+      },
+      "collections": [
+        "creer",
+        "believe",
+        "fixed expression",
+        "be able to",
+        "negative"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "creerse-algo-fall-for",
+      "spanish": "creerse [algo falso]",
+      "english": "to fall for [something]",
+      "example": {
+        "spanish": "Se creyó la mentira.",
+        "english": "He fell for the lie."
+      },
+      "collections": [
+        "creer",
+        "fall",
+        "phrasal verb",
+        "for",
+        "reflexive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "creerse-adjetivo-think-one-is",
+      "spanish": "creerse [adjetivo o sustantivo]",
+      "english": "to think one is [an adjective or noun]",
+      "example": {
+        "spanish": "Se cree experto.",
+        "english": "He thinks he's an expert."
+      },
+      "collections": [
+        "creer",
+        "think",
+        "reflexive",
+        "perspective change"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hacer-creer-make-believe",
+      "spanish": "hacerle creer [algo] a [alguien]",
+      "english": "to make [somebody] believe [something]",
+      "example": {
+        "spanish": "Le hizo creer una mentira.",
+        "english": "She made him believe a lie."
+      },
+      "collections": [
+        "creer",
+        "believe",
+        "causative",
+        "person"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "aunque-no-lo-creas-believe-it-or-not",
+      "spanish": "aunque no lo creas",
+      "english": "believe it or not",
+      "example": {
+        "spanish": "Aunque no lo creas, funcionó.",
+        "english": "Believe it or not, it worked."
+      },
+      "collections": [
+        "creer",
+        "believe",
+        "fixed expression",
+        "discourse connector"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "la-creencia-belief",
+      "spanish": "la creencia",
+      "english": "the belief",
+      "example": {
+        "spanish": "Es una creencia común.",
+        "english": "It's a common belief."
+      },
+      "collections": [
+        "creer",
+        "believe",
+        "noun"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ser-creible-believable",
+      "spanish": "ser creíble",
+      "english": "to be believable",
+      "example": {
+        "spanish": "La explicación es creíble.",
+        "english": "The explanation is believable."
+      },
+      "collections": [
+        "creer",
+        "believe",
+        "adjective",
+        "-ible",
+        "-able"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "increible-incredible",
+      "spanish": "increíble",
+      "english": "incredible",
+      "example": {
+        "spanish": "Fue una experiencia increíble.",
+        "english": "It was an incredible experience."
+      },
+      "collections": [
+        "creer",
+        "adjective",
+        "cognate",
+        "-ible",
+        "prefix",
+        "in-"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "increiblemente-incredibly",
+      "spanish": "increíblemente",
+      "english": "incredibly",
+      "example": {
+        "spanish": "Fue increíblemente útil.",
+        "english": "It was incredibly useful."
+      },
+      "collections": [
+        "creer",
+        "adverb",
+        "cognate",
+        "-mente",
+        "-ly",
+        "cognate -mente => -ly"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "deberle-algo-owe-somebody",
+      "spanish": "deberle [algo] a [alguien]",
+      "english": "to owe [somebody] [something]",
+      "example": {
+        "spanish": "Le debo dinero a Ana.",
+        "english": "I owe Ana money."
+      },
+      "collections": [
+        "deber",
+        "owe",
+        "double object",
+        "person"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "deber-algo-a-owe-to",
+      "spanish": "deber [algo] a [alguien]",
+      "english": "to owe [something] to [somebody]",
+      "example": {
+        "spanish": "Debo dinero al banco.",
+        "english": "I owe money to the bank."
+      },
+      "collections": [
+        "deber",
+        "owe",
+        "verb + preposition",
+        "to",
+        "a => to"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "deber-hacer-must",
+      "spanish": "deber [hacer algo]",
+      "english": "must [do something]",
+      "example": {
+        "spanish": "Debo terminar hoy.",
+        "english": "I must finish today."
+      },
+      "collections": [
+        "deber",
+        "must",
+        "modal",
+        "bare infinitive",
+        "obligation"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "deber-hacer-have-to",
+      "spanish": "deber [hacer algo]",
+      "english": "to have to [do something]",
+      "example": {
+        "spanish": "Debo terminar hoy.",
+        "english": "I have to finish today."
+      },
+      "collections": [
+        "deber",
+        "have to",
+        "full infinitive",
+        "obligation"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "deberia-hacer-should",
+      "spanish": "debería [hacer algo]",
+      "english": "should [do something]",
+      "example": {
+        "spanish": "Deberías descansar.",
+        "english": "You should rest."
+      },
+      "collections": [
+        "deber",
+        "should",
+        "modal",
+        "bare infinitive",
+        "advice",
+        "conditional"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "deberia-hacer-ought-to",
+      "spanish": "debería [hacer algo]",
+      "english": "ought to [do something]",
+      "example": {
+        "spanish": "Deberíamos cumplir la promesa.",
+        "english": "We ought to keep the promise."
+      },
+      "collections": [
+        "deber",
+        "ought",
+        "verb + infinitive",
+        "to",
+        "advice",
+        "conditional"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "deber-hacer-supposed-to",
+      "spanish": "deber [hacer algo]",
+      "english": "to be supposed to [do something]",
+      "example": {
+        "spanish": "Ana debe llegar a las diez.",
+        "english": "Ana is supposed to arrive at ten."
+      },
+      "collections": [
+        "deber",
+        "supposed to",
+        "expectation",
+        "full infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "deber-hacer-expected-to",
+      "spanish": "deber [hacer algo]",
+      "english": "to be expected to [do something]",
+      "example": {
+        "spanish": "Los empleados deben llegar temprano.",
+        "english": "Employees are expected to arrive early."
+      },
+      "collections": [
+        "deber",
+        "expected to",
+        "expectation",
+        "full infinitive",
+        "formal"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "deber-estar-must-be",
+      "spanish": "deber estar [en un estado o lugar]",
+      "english": "must be [in a state or place]",
+      "example": {
+        "spanish": "Debe estar cansada.",
+        "english": "She must be tired."
+      },
+      "collections": [
+        "deber",
+        "must",
+        "deduction",
+        "state",
+        "location"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "deber-ser-must-be",
+      "spanish": "deber ser [algo]",
+      "english": "must be [something]",
+      "example": {
+        "spanish": "Debe ser la respuesta.",
+        "english": "That must be the answer."
+      },
+      "collections": [
+        "deber",
+        "must",
+        "deduction",
+        "identity"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "no-deber-hacer-must-not",
+      "spanish": "no deber [hacer algo]",
+      "english": "must not [do something]",
+      "example": {
+        "spanish": "No debes entrar.",
+        "english": "You must not enter."
+      },
+      "collections": [
+        "deber",
+        "must",
+        "modal",
+        "negative",
+        "prohibition"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "no-deber-hacer-mustnt",
+      "spanish": "no deber [hacer algo]",
+      "english": "mustn't [do something]",
+      "example": {
+        "spanish": "No debes entrar.",
+        "english": "You mustn't enter."
+      },
+      "collections": [
+        "deber",
+        "must",
+        "contraction",
+        "negative",
+        "prohibition"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "no-deberia-hacer-should-not",
+      "spanish": "no debería [hacer algo]",
+      "english": "should not [do something]",
+      "example": {
+        "spanish": "No deberías preocuparte.",
+        "english": "You should not worry."
+      },
+      "collections": [
+        "deber",
+        "should",
+        "modal",
+        "negative",
+        "advice",
+        "conditional"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "no-deberia-hacer-shouldnt",
+      "spanish": "no debería [hacer algo]",
+      "english": "shouldn't [do something]",
+      "example": {
+        "spanish": "No deberías preocuparte.",
+        "english": "You shouldn't worry."
+      },
+      "collections": [
+        "deber",
+        "should",
+        "contraction",
+        "negative",
+        "advice",
+        "conditional"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "debi-haber-should-have",
+      "spanish": "debí haber [hecho algo]",
+      "english": "should have [done something]",
+      "example": {
+        "spanish": "Debí haber llamado.",
+        "english": "I should have called."
+      },
+      "collections": [
+        "deber",
+        "should",
+        "perfect modal",
+        "past participle",
+        "regret"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "deber-haber-must-have",
+      "spanish": "deber haber [hecho algo]",
+      "english": "must have [done something]",
+      "example": {
+        "spanish": "Debe haber olvidado la reunión.",
+        "english": "She must have forgotten the meeting."
+      },
+      "collections": [
+        "deber",
+        "must",
+        "perfect modal",
+        "past participle",
+        "deduction"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "debia-hacer-was-supposed-to",
+      "spanish": "debía [hacer algo]",
+      "english": "to have been supposed to [do something]",
+      "example": {
+        "spanish": "Debía llegar a las diez.",
+        "english": "She was supposed to arrive at ten."
+      },
+      "collections": [
+        "deber",
+        "supposed to",
+        "imperfect",
+        "past expectation"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "debera-hacer-will-have-to",
+      "spanish": "deberá [hacer algo]",
+      "english": "will have to [do something]",
+      "example": {
+        "spanish": "Deberá presentar el informe mañana.",
+        "english": "She'll have to submit the report tomorrow."
+      },
+      "collections": [
+        "deber",
+        "have to",
+        "future",
+        "obligation"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "deberse-a-be-due-to",
+      "spanish": "deberse a [algo]",
+      "english": "to be due to [something]",
+      "example": {
+        "spanish": "El retraso se debió al tráfico.",
+        "english": "The delay was due to traffic."
+      },
+      "collections": [
+        "deber",
+        "due",
+        "verb + preposition",
+        "to",
+        "a => to",
+        "reflexive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "debido-a-due-to",
+      "spanish": "debido a [algo]",
+      "english": "due to [something]",
+      "example": {
+        "spanish": "Se canceló debido a la lluvia.",
+        "english": "It was canceled due to the rain."
+      },
+      "collections": [
+        "deber",
+        "due",
+        "fixed connector",
+        "to",
+        "a => to",
+        "participle"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "debido-a-que-because",
+      "spanish": "debido a que [algo sucede]",
+      "english": "because [something happens]",
+      "example": {
+        "spanish": "Se canceló debido a que llovía.",
+        "english": "It was canceled because it was raining."
+      },
+      "collections": [
+        "deber",
+        "because",
+        "discourse connector",
+        "a que => because",
+        "participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "debido-a-que-since",
+      "spanish": "debido a que [algo sucede]",
+      "english": "since [something happens]",
+      "example": {
+        "spanish": "Debido a que ya terminamos, podemos salir.",
+        "english": "Since we've finished, we can leave."
+      },
+      "collections": [
+        "deber",
+        "since",
+        "discourse connector",
+        "a que => since",
+        "participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "el-deber-duty",
+      "spanish": "el deber",
+      "english": "the duty",
+      "example": {
+        "spanish": "Es mi deber ayudar.",
+        "english": "It's my duty to help."
+      },
+      "collections": [
+        "deber",
+        "duty",
+        "noun"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "los-deberes-duties",
+      "spanish": "los deberes",
+      "english": "the duties",
+      "example": {
+        "spanish": "Cumplió con sus deberes.",
+        "english": "She performed her duties."
+      },
+      "collections": [
+        "deber",
+        "duty",
+        "noun",
+        "plural"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "deberle-una-owe-one",
+      "spanish": "deberle una a [alguien]",
+      "english": "to owe [somebody] one",
+      "example": {
+        "spanish": "Te debo una.",
+        "english": "I owe you one."
+      },
+      "collections": [
+        "deber",
+        "owe",
+        "fixed expression",
+        "person"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dejar-algo-lugar-leave",
+      "spanish": "dejar [algo] [en algún lugar]",
+      "english": "to leave [something] [somewhere]",
+      "example": {
+        "spanish": "Dejé las llaves en la oficina.",
+        "english": "I left the keys at the office."
+      },
+      "collections": [
+        "dejar",
+        "leave",
+        "placement"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "dejar-algo-lugar-forget",
+      "spanish": "dejar [algo] [en algún lugar]",
+      "english": "to forget [something] [somewhere]",
+      "example": {
+        "spanish": "Dejé las llaves en la oficina.",
+        "english": "I forgot the keys at the office."
+      },
+      "collections": [
+        "dejar",
+        "forget",
+        "placement"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dejar-lugar-leave",
+      "spanish": "dejar [un lugar]",
+      "english": "to leave [a place]",
+      "example": {
+        "spanish": "Dejó la oficina temprano.",
+        "english": "She left the office early."
+      },
+      "collections": [
+        "dejar",
+        "leave",
+        "place"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "dejar-que-let",
+      "spanish": "dejar que [alguien] [haga algo]",
+      "english": "to let [somebody] [do something]",
+      "example": {
+        "spanish": "Deja que Ana entre.",
+        "english": "Let Ana come in."
+      },
+      "collections": [
+        "dejar",
+        "let",
+        "bare infinitive",
+        "permission",
+        "somebody do something"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "dejar-que-allow",
+      "spanish": "dejar que [alguien] [haga algo]",
+      "english": "to allow [somebody] to [do something]",
+      "example": {
+        "spanish": "Dejó que Ana entrara.",
+        "english": "She allowed Ana to enter."
+      },
+      "collections": [
+        "dejar",
+        "allow",
+        "full infinitive",
+        "permission",
+        "somebody to do something",
+        "to"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dejame-hacer-let-me",
+      "spanish": "déjame [hacer algo]",
+      "english": "let me [do something]",
+      "example": {
+        "spanish": "Déjame explicar.",
+        "english": "Let me explain."
+      },
+      "collections": [
+        "dejar",
+        "let",
+        "bare infinitive",
+        "permission",
+        "first person"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "dejame-hacer-lemme",
+      "spanish": "déjame [hacer algo]",
+      "english": "lemme [do something]",
+      "example": {
+        "spanish": "Déjame ver.",
+        "english": "Lemme see."
+      },
+      "collections": [
+        "dejar",
+        "let",
+        "spoken reduction",
+        "informal",
+        "bare infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "dejar-de-stop-doing",
+      "spanish": "dejar de [hacer algo]",
+      "english": "to stop [doing something]",
+      "example": {
+        "spanish": "Dejó de fumar.",
+        "english": "He stopped smoking."
+      },
+      "collections": [
+        "dejar",
+        "stop",
+        "verb + preposition",
+        "de",
+        "gerund",
+        "de => gerund"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "dejar-de-no-longer",
+      "spanish": "dejar de [hacer algo]",
+      "english": "to no longer [do something]",
+      "example": {
+        "spanish": "Dejó de trabajar allí.",
+        "english": "He no longer works there."
+      },
+      "collections": [
+        "dejar",
+        "no longer",
+        "verb + preposition",
+        "de",
+        "perspective change"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "dejar-prestado-lend",
+      "spanish": "dejarle [algo] a [alguien]",
+      "english": "to lend [somebody] [something]",
+      "example": {
+        "spanish": "¿Me dejas tu carro?",
+        "english": "Will you lend me your car?"
+      },
+      "collections": [
+        "dejar",
+        "lend",
+        "double object",
+        "person"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dejar-usar-let-use",
+      "spanish": "dejarle [algo] a [alguien]",
+      "english": "to let [somebody] use [something]",
+      "example": {
+        "spanish": "Me dejó su carro.",
+        "english": "She let me use her car."
+      },
+      "collections": [
+        "dejar",
+        "let",
+        "bare infinitive",
+        "use",
+        "person"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dejar-proyecto-abandon",
+      "spanish": "dejar [un proyecto o responsabilidad]",
+      "english": "to abandon [a project or responsibility]",
+      "example": {
+        "spanish": "Dejaron el proyecto.",
+        "english": "They abandoned the project."
+      },
+      "collections": [
+        "dejar",
+        "abandon"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dejar-proyecto-give-up",
+      "spanish": "dejar [un proyecto o actividad]",
+      "english": "to give up [a project or activity]",
+      "example": {
+        "spanish": "Dejó el curso.",
+        "english": "She gave up the course."
+      },
+      "collections": [
+        "dejar",
+        "give",
+        "phrasal verb",
+        "up"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dejar-atras-leave-behind",
+      "spanish": "dejar [algo] atrás",
+      "english": "to leave [something] behind",
+      "example": {
+        "spanish": "Dejamos atrás los problemas.",
+        "english": "We left the problems behind."
+      },
+      "collections": [
+        "dejar",
+        "leave",
+        "phrasal verb",
+        "behind"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dejar-adjetivo-leave-state",
+      "spanish": "dejar a [alguien] [en un estado]",
+      "english": "to leave [somebody] [in a state]",
+      "example": {
+        "spanish": "La noticia me dejó preocupado.",
+        "english": "The news left me worried."
+      },
+      "collections": [
+        "dejar",
+        "leave",
+        "resulting state",
+        "adjective"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dejar-adjetivo-make",
+      "spanish": "dejar a [alguien] [en un estado]",
+      "english": "to make [somebody] [an adjective]",
+      "example": {
+        "spanish": "La noticia me dejó triste.",
+        "english": "The news made me sad."
+      },
+      "collections": [
+        "dejar",
+        "make",
+        "causative",
+        "adjective"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dejar-plantado-stand-up",
+      "spanish": "dejar plantado/a a [alguien]",
+      "english": "to stand [somebody] up",
+      "example": {
+        "spanish": "Me dejó plantado.",
+        "english": "She stood me up."
+      },
+      "collections": [
+        "dejar",
+        "stand",
+        "phrasal verb",
+        "up",
+        "fixed expression"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dejar-pasar-let-pass",
+      "spanish": "dejar pasar [una oportunidad]",
+      "english": "to let [an opportunity] pass",
+      "example": {
+        "spanish": "Dejó pasar la oportunidad.",
+        "english": "She let the opportunity pass."
+      },
+      "collections": [
+        "dejar",
+        "let",
+        "fixed expression",
+        "opportunity"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dejar-pasar-pass-up",
+      "spanish": "dejar pasar [una oportunidad]",
+      "english": "to pass up [an opportunity]",
+      "example": {
+        "spanish": "No dejes pasar esa oportunidad.",
+        "english": "Don't pass up that opportunity."
+      },
+      "collections": [
+        "dejar",
+        "pass",
+        "phrasal verb",
+        "up",
+        "opportunity"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dejar-claro-make-clear",
+      "spanish": "dejar [algo] claro",
+      "english": "to make [something] clear",
+      "example": {
+        "spanish": "Dejó clara su decisión.",
+        "english": "She made her decision clear."
+      },
+      "collections": [
+        "dejar",
+        "make",
+        "fixed expression",
+        "adjective"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dejar-en-paz-leave-alone",
+      "spanish": "dejar en paz a [alguien]",
+      "english": "to leave [somebody] alone",
+      "example": {
+        "spanish": "Déjame en paz.",
+        "english": "Leave me alone."
+      },
+      "collections": [
+        "dejar",
+        "leave",
+        "fixed expression",
+        "person"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "dejar-encendido-leave-on",
+      "spanish": "dejar [algo] encendido",
+      "english": "to leave [something] on",
+      "example": {
+        "spanish": "Dejaste la luz encendida.",
+        "english": "You left the light on."
+      },
+      "collections": [
+        "dejar",
+        "leave",
+        "particle",
+        "on",
+        "resulting state"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dejar-fuera-leave-out",
+      "spanish": "dejar [algo o alguien] por fuera",
+      "english": "to leave [something or somebody] out",
+      "example": {
+        "spanish": "No dejes a Ana por fuera.",
+        "english": "Don't leave Ana out."
+      },
+      "collections": [
+        "dejar",
+        "leave",
+        "phrasal verb",
+        "out",
+        "Colombian Spanish"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "dejar-salir-let-out",
+      "spanish": "dejar salir a [alguien o algo]",
+      "english": "to let [somebody or something] out",
+      "example": {
+        "spanish": "Deja salir al perro.",
+        "english": "Let the dog out."
+      },
+      "collections": [
+        "dejar",
+        "let",
+        "phrasal verb",
+        "out",
+        "bare infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "dejarse-llevar-get-carried-away",
+      "spanish": "dejarse llevar",
+      "english": "to get carried away",
+      "example": {
+        "spanish": "No te dejes llevar.",
+        "english": "Don't get carried away."
+      },
+      "collections": [
+        "dejar",
+        "get",
+        "phrasal verb",
+        "away",
+        "fixed expression",
+        "reflexive",
+        "past participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dejar-encargado-leave-in-care",
+      "spanish": "dejar [algo o alguien] encargado con [alguien]",
+      "english": "to leave [something or somebody] in [somebody's] care",
+      "example": {
+        "spanish": "Dejé el perro encargado con mi hermana.",
+        "english": "I left the dog in my sister's care."
+      },
+      "collections": [
+        "dejar",
+        "leave",
+        "fixed expression",
+        "in",
+        "care",
+        "con => in the care of"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dejar-mucho-desear-leave-to-be-desired",
+      "spanish": "dejar mucho que desear",
+      "english": "to leave much to be desired",
+      "example": {
+        "spanish": "El servicio deja mucho que desear.",
+        "english": "The service leaves much to be desired."
+      },
+      "collections": [
+        "dejar",
+        "leave",
+        "fixed expression",
+        "to",
+        "passive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "echar-algo-throw",
+      "spanish": "echar [algo]",
+      "english": "to throw [something]",
+      "example": {
+        "spanish": "Echó la pelota por la ventana.",
+        "english": "He threw the ball through the window."
+      },
+      "collections": [
+        "echar",
+        "throw"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "echar-algo-toss",
+      "spanish": "echar [algo]",
+      "english": "to toss [something]",
+      "example": {
+        "spanish": "Echó la pelota al aire.",
+        "english": "He tossed the ball into the air."
+      },
+      "collections": [
+        "echar",
+        "toss"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "echar-ingrediente-add",
+      "spanish": "echarle [un ingrediente] a [algo]",
+      "english": "to add [an ingredient] to [something]",
+      "example": {
+        "spanish": "Échale sal a la sopa.",
+        "english": "Add salt to the soup."
+      },
+      "collections": [
+        "echar",
+        "add",
+        "verb + preposition",
+        "to",
+        "a => to",
+        "ingredient"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "echar-liquido-pour-into",
+      "spanish": "echar [un líquido] en [un recipiente]",
+      "english": "to pour [a liquid] into [a container]",
+      "example": {
+        "spanish": "Echa el café en la taza.",
+        "english": "Pour the coffee into the cup."
+      },
+      "collections": [
+        "echar",
+        "pour",
+        "verb + preposition",
+        "into",
+        "en => into",
+        "liquid"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "echar-persona-fuera-throw-out",
+      "spanish": "echar a [alguien] de [un lugar]",
+      "english": "to throw [somebody] out of [a place]",
+      "example": {
+        "spanish": "Lo echaron del bar.",
+        "english": "They threw him out of the bar."
+      },
+      "collections": [
+        "echar",
+        "throw",
+        "phrasal verb",
+        "out",
+        "of",
+        "de => out of",
+        "person"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "echar-persona-fuera-kick-out",
+      "spanish": "echar a [alguien] de [un lugar]",
+      "english": "to kick [somebody] out of [a place]",
+      "example": {
+        "spanish": "Lo echaron del bar.",
+        "english": "They kicked him out of the bar."
+      },
+      "collections": [
+        "echar",
+        "kick",
+        "phrasal verb",
+        "out",
+        "of",
+        "de => out of",
+        "person"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "echar-trabajo-fire",
+      "spanish": "echar a [alguien] del trabajo",
+      "english": "to fire [somebody]",
+      "example": {
+        "spanish": "Lo echaron del trabajo.",
+        "english": "They fired him."
+      },
+      "collections": [
+        "echar",
+        "fire",
+        "employment",
+        "person"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "echar-de-menos-miss",
+      "spanish": "echar de menos a [alguien]",
+      "english": "to miss [somebody]",
+      "example": {
+        "spanish": "Echo de menos a mi familia.",
+        "english": "I miss my family."
+      },
+      "collections": [
+        "echar",
+        "miss",
+        "fixed expression",
+        "de",
+        "person",
+        "regional Spanish"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "echarse-a-reir-burst-out-laughing",
+      "spanish": "echarse a reír",
+      "english": "to burst out laughing",
+      "example": {
+        "spanish": "Se echó a reír.",
+        "english": "She burst out laughing."
+      },
+      "collections": [
+        "echar",
+        "burst",
+        "phrasal verb",
+        "out",
+        "gerund",
+        "fixed expression",
+        "reflexive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "echarse-a-hacer-start-doing",
+      "spanish": "echarse a [hacer algo]",
+      "english": "to start [doing something]",
+      "example": {
+        "spanish": "Se echó a correr.",
+        "english": "He started running."
+      },
+      "collections": [
+        "echar",
+        "start",
+        "verb + preposition",
+        "a",
+        "gerund",
+        "reflexive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "echar-a-perder-ruin",
+      "spanish": "echar a perder [algo]",
+      "english": "to ruin [something]",
+      "example": {
+        "spanish": "La lluvia echó a perder el picnic.",
+        "english": "The rain ruined the picnic."
+      },
+      "collections": [
+        "echar",
+        "ruin",
+        "fixed expression"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "echar-a-perder-spoil",
+      "spanish": "echar a perder [algo]",
+      "english": "to spoil [something]",
+      "example": {
+        "spanish": "El calor echó a perder la comida.",
+        "english": "The heat spoiled the food."
+      },
+      "collections": [
+        "echar",
+        "spoil",
+        "fixed expression"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "echar-humo-give-off",
+      "spanish": "echar [humo u olor]",
+      "english": "to give off [smoke or a smell]",
+      "example": {
+        "spanish": "La estufa echa humo.",
+        "english": "The stove gives off smoke."
+      },
+      "collections": [
+        "echar",
+        "give",
+        "phrasal verb",
+        "off",
+        "emission"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "echar-raices-take-root",
+      "spanish": "echar raíces",
+      "english": "to take root",
+      "example": {
+        "spanish": "La planta echó raíces.",
+        "english": "The plant took root."
+      },
+      "collections": [
+        "echar",
+        "take",
+        "fixed expression",
+        "growth"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "echar-basura-throw-away",
+      "spanish": "echar [algo] a la basura",
+      "english": "to throw [something] away",
+      "example": {
+        "spanish": "Echa eso a la basura.",
+        "english": "Throw that away."
+      },
+      "collections": [
+        "echar",
+        "throw",
+        "phrasal verb",
+        "away",
+        "trash"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "echarse-atras-back-out",
+      "spanish": "echarse atrás",
+      "english": "to back out",
+      "example": {
+        "spanish": "Se echó atrás en el último momento.",
+        "english": "She backed out at the last moment."
+      },
+      "collections": [
+        "echar",
+        "back",
+        "phrasal verb",
+        "out",
+        "reflexive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "echar-vistazo-take-look",
+      "spanish": "echar un vistazo a [algo]",
+      "english": "to take a look at [something]",
+      "example": {
+        "spanish": "Échale un vistazo al informe.",
+        "english": "Take a look at the report."
+      },
+      "collections": [
+        "echar",
+        "take",
+        "fixed expression",
+        "verb + preposition",
+        "at",
+        "a => at"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "echar-mano-give-hand",
+      "spanish": "echarle una mano a [alguien]",
+      "english": "to give [somebody] a hand",
+      "example": {
+        "spanish": "Échame una mano.",
+        "english": "Give me a hand."
+      },
+      "collections": [
+        "echar",
+        "give",
+        "fixed expression",
+        "person"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "echar-culpa-blame-for",
+      "spanish": "echarle la culpa de [algo] a [alguien]",
+      "english": "to blame [somebody] for [something]",
+      "example": {
+        "spanish": "Le echó la culpa del error a Ana.",
+        "english": "He blamed Ana for the mistake."
+      },
+      "collections": [
+        "echar",
+        "blame",
+        "verb + preposition",
+        "for",
+        "de => for",
+        "perspective change"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "echar-a-andar-get-going",
+      "spanish": "echar a andar [algo]",
+      "english": "to get [something] going",
+      "example": {
+        "spanish": "Echaron a andar el proyecto.",
+        "english": "They got the project going."
+      },
+      "collections": [
+        "echar",
+        "get",
+        "fixed expression",
+        "gerund",
+        "causative"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "echarse-a-andar-set-off",
+      "spanish": "echarse a andar",
+      "english": "to set off",
+      "example": {
+        "spanish": "Nos echamos a andar temprano.",
+        "english": "We set off early."
+      },
+      "collections": [
+        "echar",
+        "set",
+        "phrasal verb",
+        "off",
+        "movement",
+        "reflexive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "echar-abajo-knock-down",
+      "spanish": "echar abajo [algo]",
+      "english": "to knock [something] down",
+      "example": {
+        "spanish": "Echaron abajo la pared.",
+        "english": "They knocked the wall down."
+      },
+      "collections": [
+        "echar",
+        "knock",
+        "phrasal verb",
+        "down"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "echar-cuentas-work-out",
+      "spanish": "echar cuentas",
+      "english": "to work [something] out",
+      "example": {
+        "spanish": "Echamos cuentas antes de comprarlo.",
+        "english": "We worked it out before buying it."
+      },
+      "collections": [
+        "echar",
+        "work",
+        "phrasal verb",
+        "out",
+        "calculation"
       ],
       "curriculumRole": "reference"
     }

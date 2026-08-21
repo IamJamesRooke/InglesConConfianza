@@ -5,7 +5,6 @@ English **miss** maps to affection, failed transport or opportunities, failed ai
 | Lesson | English | Spanish |
 |---|---|---|
 | [**Miss → Extrañar**](01-miss-someone.md) | I miss my family. | Extraño a mi familia. |
-| [**Miss → Dejar Pasar**](03-miss-an-opportunity.md) | Don't miss this opportunity. | No dejes pasar esta oportunidad. |
 | [**Miss → Fallar / No Acertar**](04-miss-a-target.md) | He shot but missed the target. | Disparó, pero no acertó en el blanco. |
 | [**Miss → Faltar A**](05-miss-an-event.md) | She missed class yesterday. | Faltó a clase ayer. |
 | [**Miss → No Notar**](06-fail-to-notice.md) | I missed the error in the report. | No noté el error en el informe. |
@@ -17,4 +16,3 @@ English **miss** maps to affection, failed transport or opportunities, failed ai
 | English | Spanish |
 |---|---|
 | I miss my family. | Extraño a mi familia. |
-| Don't miss this opportunity. | No dejes pasar esta oportunidad. |

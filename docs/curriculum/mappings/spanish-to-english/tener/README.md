@@ -14,6 +14,10 @@ Spanish **tener** maps far beyond literal **have**. Its common expressions becom
 | [Possession](08-possession.md) | Tengo una reserva. | I have a reservation. |
 | [Hungry, thirsty, hot, and cold](09-hungry-thirsty-hot-and-cold.md) | Tengo hambre, sed, calor y frío. | I am hungry, thirsty, hot, and cold. |
 
+## Obligation across time
+
+- [**Tener que** across present, past, future, and perfect forms](obligation-across-time/README.md)
+
 ## Atomic Form Index
 
 The original lessons above remain the synthesis layer. These folders are the machine-readable source-form and expression objects.

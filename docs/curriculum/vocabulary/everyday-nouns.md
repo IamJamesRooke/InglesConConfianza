@@ -150,7 +150,17 @@ For **película**, **movie** is the usual everyday word in American English. **F
 
 Use **money** generally, **cash** for physical or immediately available money, and **funds** for money reserved for a purpose. These are neighboring vocabulary items rather than three contextual translations of one Spanish source.
 
-Use the mapping folders for related high-value noun contrasts such as **cosa**, **persona**, **respuesta**, **llave**, **mesa**, **reserva**, and **precio**. The noun **pregunta** is indexed under **preguntar**, and **costo** is indexed under **costar**.
+Use the mapping folders for related high-value noun contrasts such as **cosa**, **persona**, **respuesta**, **llave**, **mesa**, **reserva**, and **precio**. The noun **pregunta** is indexed under **preguntar**.
+
+### Duties and responsibilities
+
+| Spanish | English | Example |
+|---|---|---|
+| la tarea | homework | Mi hijo terminó la tarea. → My son finished his homework. |
+| la obligación | obligation | Tenemos la obligación de informar el cambio. → We have an obligation to report the change. |
+| la responsabilidad | responsibility | Es mi responsabilidad revisar el informe. → It's my responsibility to review the report. |
+
+Colombian Spanish normally uses **la tarea** for school homework. **La obligación** emphasizes a requirement or commitment; **la responsabilidad** emphasizes a task or area for which someone is accountable.
 
 ## Core vocabulary
 

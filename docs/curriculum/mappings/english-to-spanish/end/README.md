@@ -7,7 +7,7 @@
 | They ended up staying home. | Terminaron quedándose en casa. |
 | I read the book from beginning to end. | Leí el libro de principio a fin. |
 
-Verb **end** uses **terminar, acabar**, or **poner fin**. Resultative **end up** requires a complete construction, and noun **end** is **fin** or **final**.
+Verb **end** uses **terminar** or **poner fin**. Resultative **end up** requires a complete construction, and noun **end** is **fin** or **final**.
 
 ## **End up** lessons
 

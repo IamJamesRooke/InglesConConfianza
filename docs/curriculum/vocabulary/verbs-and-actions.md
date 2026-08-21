@@ -410,7 +410,6 @@ Spanish **encargar** and **encargarse de** cover ordering, commissioning, assign
 | **Encargarle Algo A Alguien → Ask To Do** | Le encargué a Luis que enviara el informe. | I asked Luis to send the report. |
 | **Encargarse De → Take Care Of** | Yo me encargo de las reservas. | I'll take care of the reservations. |
 | **Encargarse De → Be In Charge Of** | Ana se encarga del equipo de ventas. | Ana is in charge of the sales team. |
-| **Dejar Encargado → Leave In Someone's Care** | Dejé el perro encargado con mi hermana. | I left the dog in my sister's care. |
 | **Encargo → Order / Errand / Assignment** | Tengo que recoger un encargo y hacer un mandado. | I have to pick up an order and run an errand. |
 
 ##### Mastery Phrases
@@ -532,14 +531,6 @@ For accepting responsibility for a task, use **take care of, handle**, or **deal
 | Ana se encarga del equipo de ventas. | Ana is in charge of the sales team. |
 
 For an ongoing role, use **be in charge of, manage**, or **oversee**.
-
-##### **Dejar Encargado → Leave In Someone's Care**
-
-| Spanish | English |
-|---|---|
-| Dejé el perro encargado con mi hermana. | I left the dog in my sister's care. |
-
-For temporary care, use **leave with, leave in someone's care**, or **ask someone to look after**.
 
 ##### **Encargo → Order / Errand / Assignment**
 
