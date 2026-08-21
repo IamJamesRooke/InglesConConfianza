@@ -690,6 +690,7 @@
       },
       "collections": [
         "tomar",
+        "llevar",
         "take",
         "transport"
       ],
@@ -3627,6 +3628,7 @@
       },
       "collections": [
         "poner",
+        "llevar",
         "wear",
         "clothing",
         "state",
@@ -3649,7 +3651,7 @@
         "a",
         "gerund"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ponerse-a-begin-to",
@@ -3683,7 +3685,7 @@
         "adjective",
         "reflexive"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ponerse-adjetivo-become",
@@ -4890,6 +4892,3179 @@
         "take",
         "course",
         "education"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ensenar-algo-teach",
+      "spanish": "enseñar [algo]",
+      "english": "to teach [something]",
+      "example": {
+        "spanish": "Ana enseña inglés.",
+        "english": "Ana teaches English."
+      },
+      "collections": [
+        "enseñar"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "ensenarle-algo-a-alguien-teach",
+      "spanish": "enseñarle [algo] a [alguien]",
+      "english": "to teach [somebody] [something]",
+      "example": {
+        "spanish": "Le enseño inglés a Laura.",
+        "english": "I teach Laura English."
+      },
+      "collections": [
+        "enseñar",
+        "somebody something"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "ensenarle-a-alguien-a-hacer-algo",
+      "spanish": "enseñarle a [alguien] a [hacer algo]",
+      "english": "to teach [somebody] to [do something]",
+      "example": {
+        "spanish": "Mi abuelo me enseñó a manejar.",
+        "english": "My grandfather taught me to drive."
+      },
+      "collections": [
+        "enseñar",
+        "somebody to do something",
+        "a => to"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "ensenarle-algo-a-alguien-show",
+      "spanish": "enseñarle [algo] a [alguien]",
+      "english": "to show [somebody] [something]",
+      "example": {
+        "spanish": "Enséñame la foto.",
+        "english": "Show me the photo."
+      },
+      "collections": [
+        "enseñar",
+        "somebody something"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "ensenarle-a-alguien-como-hacer-algo",
+      "spanish": "enseñarle a [alguien] cómo [hacer algo]",
+      "english": "to show [somebody] how to [do something]",
+      "example": {
+        "spanish": "Enséñame cómo usarlo.",
+        "english": "Show me how to use it."
+      },
+      "collections": [
+        "enseñar",
+        "somebody how to do something"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "escuchar-listen",
+      "spanish": "escuchar",
+      "english": "to listen",
+      "example": {
+        "spanish": "Escucha con atención.",
+        "english": "Listen carefully."
+      },
+      "collections": [
+        "escuchar"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "escuchar-algo-o-alguien-listen-to",
+      "spanish": "escuchar [algo o a alguien]",
+      "english": "to listen to [something or somebody]",
+      "example": {
+        "spanish": "Escucho a la profesora.",
+        "english": "I listen to the teacher."
+      },
+      "collections": [
+        "escuchar",
+        "verb + preposition",
+        "to",
+        "a => to"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "escucha-listen-up",
+      "spanish": "¡escucha!",
+      "english": "listen up!",
+      "example": {
+        "spanish": "¡Escucha! Esto es importante.",
+        "english": "Listen up! This is important."
+      },
+      "collections": [
+        "escuchar",
+        "phrasal verb",
+        "up",
+        "imperative"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "escuchar-a-escondidas-listen-in",
+      "spanish": "escuchar a escondidas",
+      "english": "to listen in",
+      "example": {
+        "spanish": "Escucharon a escondidas.",
+        "english": "They listened in."
+      },
+      "collections": [
+        "escuchar",
+        "phrasal verb",
+        "in"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "oir-algo-hear",
+      "spanish": "oír [algo]",
+      "english": "to hear [something]",
+      "example": {
+        "spanish": "Oigo música.",
+        "english": "I hear music."
+      },
+      "collections": [
+        "escuchar",
+        "oír"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "oir-de-alguien-hear-from",
+      "spanish": "oír de [alguien]",
+      "english": "to hear from [somebody]",
+      "example": {
+        "spanish": "No he oído de Ana esta semana.",
+        "english": "I haven't heard from Ana this week."
+      },
+      "collections": [
+        "escuchar",
+        "oír",
+        "verb + preposition",
+        "from",
+        "de => from"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "oir-hablar-de-algo-hear-about",
+      "spanish": "oír hablar de [algo]",
+      "english": "to hear about [something]",
+      "example": {
+        "spanish": "Oí hablar del cambio.",
+        "english": "I heard about the change."
+      },
+      "collections": [
+        "escuchar",
+        "oír",
+        "verb + preposition",
+        "about",
+        "de => about"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "oir-a-alguien-hacer-algo",
+      "spanish": "oír a [alguien] [hacer algo]",
+      "english": "to hear [somebody] [do something]",
+      "example": {
+        "spanish": "Oí a Ana cerrar la puerta.",
+        "english": "I heard Ana close the door."
+      },
+      "collections": [
+        "escuchar",
+        "oír",
+        "perception verb",
+        "somebody do something"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "esperar-wait",
+      "spanish": "esperar",
+      "english": "to wait",
+      "example": {
+        "spanish": "Espera aquí.",
+        "english": "Wait here."
+      },
+      "collections": [
+        "esperar"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "esperar-a-alguien-o-algo-wait-for",
+      "spanish": "esperar [a alguien o algo]",
+      "english": "to wait for [somebody or something]",
+      "example": {
+        "spanish": "Espero el bus.",
+        "english": "I wait for the bus."
+      },
+      "collections": [
+        "esperar",
+        "verb + preposition",
+        "for",
+        "a => for"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "esperar-a-que-alguien-haga-algo",
+      "spanish": "esperar a que [alguien] [haga algo]",
+      "english": "to wait for [somebody] to [do something]",
+      "example": {
+        "spanish": "Espera a que Ana llegue.",
+        "english": "Wait for Ana to arrive."
+      },
+      "collections": [
+        "esperar",
+        "somebody to do something",
+        "for",
+        "a que => for"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "esperar-hasta-que-wait-until",
+      "spanish": "esperar hasta que [ocurra algo]",
+      "english": "to wait until [something happens]",
+      "example": {
+        "spanish": "Espera hasta que termine.",
+        "english": "Wait until it ends."
+      },
+      "collections": [
+        "esperar",
+        "verb + connector",
+        "until",
+        "hasta que => until"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "esperar-que-hope",
+      "spanish": "esperar que [ocurra algo]",
+      "english": "to hope [something happens]",
+      "example": {
+        "spanish": "Espero que Ana venga.",
+        "english": "I hope Ana comes."
+      },
+      "collections": [
+        "esperar",
+        "hope"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "esperar-hacer-algo-hope-to",
+      "spanish": "esperar [hacer algo]",
+      "english": "to hope to [do something]",
+      "example": {
+        "spanish": "Espero verla pronto.",
+        "english": "I hope to see her soon."
+      },
+      "collections": [
+        "esperar",
+        "full infinitive",
+        "hope"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "esperar-algo-hope-for",
+      "spanish": "esperar [algo deseado]",
+      "english": "to hope for [something]",
+      "example": {
+        "spanish": "Esperamos buenas noticias.",
+        "english": "We hope for good news."
+      },
+      "collections": [
+        "esperar",
+        "verb + preposition",
+        "for",
+        "hope"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "esperar-algo-expect",
+      "spanish": "esperar [algo probable]",
+      "english": "to expect [something]",
+      "example": {
+        "spanish": "Esperamos cambios.",
+        "english": "We expect changes."
+      },
+      "collections": [
+        "esperar",
+        "expect"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "esperar-que-alguien-haga-expect",
+      "spanish": "esperar que [alguien] [haga algo]",
+      "english": "to expect [somebody] to [do something]",
+      "example": {
+        "spanish": "Espero que Ana llegue temprano.",
+        "english": "I expect Ana to arrive early."
+      },
+      "collections": [
+        "esperar",
+        "expect",
+        "somebody to do something"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "se-espera-que-be-expected",
+      "spanish": "se espera que [ocurra algo]",
+      "english": "[something] is expected to [happen]",
+      "example": {
+        "spanish": "Se espera que la reunión empiece a tiempo.",
+        "english": "The meeting is expected to start on time."
+      },
+      "collections": [
+        "esperar",
+        "passive",
+        "expect"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "la-espera-wait-noun",
+      "spanish": "la espera",
+      "english": "the wait",
+      "example": {
+        "spanish": "La espera fue larga.",
+        "english": "The wait was long."
+      },
+      "collections": [
+        "esperar",
+        "noun"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "la-esperanza-hope-noun",
+      "spanish": "la esperanza",
+      "english": "hope",
+      "example": {
+        "spanish": "Todavía tengo esperanza.",
+        "english": "I still have hope."
+      },
+      "collections": [
+        "esperar",
+        "noun"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "la-expectativa-expectation",
+      "spanish": "la expectativa",
+      "english": "an expectation",
+      "example": {
+        "spanish": "Era una expectativa realista.",
+        "english": "It was a realistic expectation."
+      },
+      "collections": [
+        "esperar",
+        "noun",
+        "cognate"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "esperado-expected-adjective",
+      "spanish": "ser esperado/a",
+      "english": "to be expected",
+      "example": {
+        "spanish": "El cambio era esperado.",
+        "english": "The change was expected."
+      },
+      "collections": [
+        "esperar",
+        "adjective",
+        "past participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "inesperado-unexpected",
+      "spanish": "ser inesperado/a",
+      "english": "to be unexpected",
+      "example": {
+        "spanish": "El cambio fue inesperado.",
+        "english": "The change was unexpected."
+      },
+      "collections": [
+        "esperar",
+        "adjective",
+        "in-",
+        "un-"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-en-un-estado-be",
+      "spanish": "estar [en un estado]",
+      "english": "to be [in a state]",
+      "example": {
+        "spanish": "Estoy cansado.",
+        "english": "I am tired."
+      },
+      "collections": [
+        "estar",
+        "state"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "estar-en-un-lugar-be",
+      "spanish": "estar [en un lugar]",
+      "english": "to be [in a place]",
+      "example": {
+        "spanish": "Ana está en casa.",
+        "english": "Ana is at home."
+      },
+      "collections": [
+        "estar",
+        "location",
+        "en => in"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "estar-haciendo-algo-progressive",
+      "spanish": "estar [haciendo algo]",
+      "english": "to be [doing something]",
+      "example": {
+        "spanish": "Estoy trabajando.",
+        "english": "I am working."
+      },
+      "collections": [
+        "estar",
+        "progressive",
+        "be + -ing"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "como-estar-feeling",
+      "spanish": "¿cómo estar [alguien]?",
+      "english": "how is [somebody] feeling?",
+      "example": {
+        "spanish": "¿Cómo estás?",
+        "english": "How are you feeling?"
+      },
+      "collections": [
+        "estar",
+        "question",
+        "feeling"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "estar-de-acuerdo-agree",
+      "spanish": "estar de acuerdo",
+      "english": "to agree",
+      "example": {
+        "spanish": "Estoy de acuerdo.",
+        "english": "I agree."
+      },
+      "collections": [
+        "estar",
+        "fixed expression"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "estar-a-punto-de-be-about-to",
+      "spanish": "estar a punto de [hacer algo]",
+      "english": "to be about to [do something]",
+      "example": {
+        "spanish": "Estoy a punto de salir.",
+        "english": "I am about to leave."
+      },
+      "collections": [
+        "estar",
+        "verb + preposition",
+        "about",
+        "de => to"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "estar-por-be-about-to",
+      "spanish": "estar por [hacer algo]",
+      "english": "to be about to [do something]",
+      "example": {
+        "spanish": "Estamos por salir.",
+        "english": "We are about to leave."
+      },
+      "collections": [
+        "estar",
+        "verb + preposition",
+        "about",
+        "por => about"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-acostumbrado-a-be-used-to",
+      "spanish": "estar acostumbrado/a a [algo]",
+      "english": "to be used to [something]",
+      "example": {
+        "spanish": "Estoy acostumbrado al ruido.",
+        "english": "I am used to the noise."
+      },
+      "collections": [
+        "estar",
+        "adjective",
+        "verb + preposition",
+        "to",
+        "a => to"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "estar-interesado-en",
+      "spanish": "estar interesado/a en [algo]",
+      "english": "to be interested in [something]",
+      "example": {
+        "spanish": "Estoy interesada en el curso.",
+        "english": "I am interested in the course."
+      },
+      "collections": [
+        "estar",
+        "adjective",
+        "verb + preposition",
+        "in",
+        "en => in"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "estar-al-tanto-de",
+      "spanish": "estar al tanto de [algo]",
+      "english": "to be aware of [something]",
+      "example": {
+        "spanish": "Estoy al tanto del cambio.",
+        "english": "I am aware of the change."
+      },
+      "collections": [
+        "estar",
+        "verb + preposition",
+        "of",
+        "de => of"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-a-cargo-de",
+      "spanish": "estar a cargo de [algo]",
+      "english": "to be in charge of [something]",
+      "example": {
+        "spanish": "Ana está a cargo del proyecto.",
+        "english": "Ana is in charge of the project."
+      },
+      "collections": [
+        "estar",
+        "verb + preposition",
+        "of",
+        "de => of"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-casado-con",
+      "spanish": "estar casado/a con [alguien]",
+      "english": "to be married to [somebody]",
+      "example": {
+        "spanish": "Ana está casada con Luis.",
+        "english": "Ana is married to Luis."
+      },
+      "collections": [
+        "estar",
+        "adjective",
+        "verb + preposition",
+        "to",
+        "con => to"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-enamorado-de",
+      "spanish": "estar enamorado/a de [alguien]",
+      "english": "to be in love with [somebody]",
+      "example": {
+        "spanish": "Está enamorado de Ana.",
+        "english": "He is in love with Ana."
+      },
+      "collections": [
+        "estar",
+        "adjective",
+        "verb + preposition",
+        "with",
+        "de => with"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-listo-be-ready",
+      "spanish": "estar listo/a",
+      "english": "to be ready",
+      "example": {
+        "spanish": "Estoy listo.",
+        "english": "I am ready."
+      },
+      "collections": [
+        "estar",
+        "adjective"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "estar-bien-be-okay",
+      "spanish": "estar bien",
+      "english": "to be okay",
+      "example": {
+        "spanish": "Ahora estoy bien.",
+        "english": "I am okay now."
+      },
+      "collections": [
+        "estar",
+        "state"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "estar-mal-be-unwell",
+      "spanish": "estar mal",
+      "english": "to be unwell",
+      "example": {
+        "spanish": "Hoy estoy mal.",
+        "english": "I am unwell today."
+      },
+      "collections": [
+        "estar",
+        "state"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-seguro-be-sure",
+      "spanish": "estar seguro/a de [algo]",
+      "english": "to be sure about [something]",
+      "example": {
+        "spanish": "Estoy segura de la respuesta.",
+        "english": "I am sure about the answer."
+      },
+      "collections": [
+        "estar",
+        "adjective",
+        "verb + preposition",
+        "about",
+        "de => about"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "estar-equivocado-be-wrong",
+      "spanish": "estar equivocado/a",
+      "english": "to be wrong",
+      "example": {
+        "spanish": "Creo que estoy equivocado.",
+        "english": "I think I am wrong."
+      },
+      "collections": [
+        "estar",
+        "adjective"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "estar-disponible-be-available",
+      "spanish": "estar disponible",
+      "english": "to be available",
+      "example": {
+        "spanish": "La sala está disponible.",
+        "english": "The room is available."
+      },
+      "collections": [
+        "estar",
+        "adjective",
+        "cognate"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "estar-encendido-be-on",
+      "spanish": "estar encendido/a",
+      "english": "to be on",
+      "example": {
+        "spanish": "La luz está encendida.",
+        "english": "The light is on."
+      },
+      "collections": [
+        "estar",
+        "particle",
+        "on"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-apagado-be-off",
+      "spanish": "estar apagado/a",
+      "english": "to be off",
+      "example": {
+        "spanish": "La luz está apagada.",
+        "english": "The light is off."
+      },
+      "collections": [
+        "estar",
+        "particle",
+        "off"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-fuera-be-out",
+      "spanish": "estar fuera",
+      "english": "to be out",
+      "example": {
+        "spanish": "Ana está fuera.",
+        "english": "Ana is out."
+      },
+      "collections": [
+        "estar",
+        "particle",
+        "out"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-a-tiempo-be-on-time",
+      "spanish": "estar a tiempo",
+      "english": "to be on time",
+      "example": {
+        "spanish": "Estamos a tiempo.",
+        "english": "We are on time."
+      },
+      "collections": [
+        "estar",
+        "verb + preposition",
+        "on"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "estar-de-vacaciones",
+      "spanish": "estar de vacaciones",
+      "english": "to be on vacation",
+      "example": {
+        "spanish": "Ana está de vacaciones.",
+        "english": "Ana is on vacation."
+      },
+      "collections": [
+        "estar",
+        "verb + preposition",
+        "on",
+        "de => on"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-a-favor-de",
+      "spanish": "estar a favor de [algo]",
+      "english": "to be in favor of [something]",
+      "example": {
+        "spanish": "Estoy a favor del cambio.",
+        "english": "I am in favor of the change."
+      },
+      "collections": [
+        "estar",
+        "verb + preposition",
+        "of",
+        "de => of"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-en-contra-de",
+      "spanish": "estar en contra de [algo]",
+      "english": "to be against [something]",
+      "example": {
+        "spanish": "Estoy en contra del cambio.",
+        "english": "I am against the change."
+      },
+      "collections": [
+        "estar",
+        "verb + preposition",
+        "against",
+        "de => against"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-terminado-be-done",
+      "spanish": "estar terminado/a",
+      "english": "to be done",
+      "example": {
+        "spanish": "El trabajo está terminado.",
+        "english": "The work is done."
+      },
+      "collections": [
+        "estar",
+        "adjective",
+        "particle",
+        "done"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-hecho-de-be-made-of",
+      "spanish": "estar hecho/a de [un material]",
+      "english": "to be made of [a material]",
+      "example": {
+        "spanish": "La mesa está hecha de madera.",
+        "english": "The table is made of wood."
+      },
+      "collections": [
+        "estar",
+        "verb + preposition",
+        "of",
+        "de => of",
+        "past participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-hecho-a-partir-de-be-made-from",
+      "spanish": "estar hecho/a a partir de [un material]",
+      "english": "to be made from [a material]",
+      "example": {
+        "spanish": "El papel está hecho a partir de madera.",
+        "english": "Paper is made from wood."
+      },
+      "collections": [
+        "estar",
+        "verb + preposition",
+        "from",
+        "de => from",
+        "past participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-libre-be-free",
+      "spanish": "estar libre",
+      "english": "to be free",
+      "example": {
+        "spanish": "Estoy libre esta tarde.",
+        "english": "I am free this afternoon."
+      },
+      "collections": [
+        "estar",
+        "adjective"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-aqui-be-here",
+      "spanish": "estar aquí",
+      "english": "to be here",
+      "example": {
+        "spanish": "Ana está aquí.",
+        "english": "Ana is here."
+      },
+      "collections": [
+        "estar",
+        "location"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-ausente-be-away",
+      "spanish": "estar ausente",
+      "english": "to be away",
+      "example": {
+        "spanish": "Ana está ausente esta semana.",
+        "english": "Ana is away this week."
+      },
+      "collections": [
+        "estar",
+        "adjective",
+        "particle",
+        "away"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-retrasado-be-late",
+      "spanish": "estar retrasado/a",
+      "english": "to be late",
+      "example": {
+        "spanish": "El vuelo está retrasado.",
+        "english": "The flight is late."
+      },
+      "collections": [
+        "estar",
+        "adjective"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-aburrido-be-bored",
+      "spanish": "estar aburrido/a",
+      "english": "to be bored",
+      "example": {
+        "spanish": "Estoy aburrido.",
+        "english": "I am bored."
+      },
+      "collections": [
+        "estar",
+        "adjective"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-previsto-be-due",
+      "spanish": "estar previsto/a",
+      "english": "to be due",
+      "example": {
+        "spanish": "El informe está previsto para mañana.",
+        "english": "The report is due tomorrow."
+      },
+      "collections": [
+        "estar",
+        "adjective"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-de-pie-be-standing",
+      "spanish": "estar de pie",
+      "english": "to be standing",
+      "example": {
+        "spanish": "Ana está de pie.",
+        "english": "Ana is standing."
+      },
+      "collections": [
+        "estar",
+        "progressive",
+        "de => state"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-sentado-be-sitting",
+      "spanish": "estar sentado/a",
+      "english": "to be sitting",
+      "example": {
+        "spanish": "Ana está sentada.",
+        "english": "Ana is sitting."
+      },
+      "collections": [
+        "estar",
+        "progressive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-en-lo-cierto-be-right",
+      "spanish": "estar en lo cierto",
+      "english": "to be right",
+      "example": {
+        "spanish": "Ana estaba en lo cierto.",
+        "english": "Ana was right."
+      },
+      "collections": [
+        "estar",
+        "fixed expression"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-mal-be-wrong",
+      "spanish": "estar mal",
+      "english": "to be wrong",
+      "example": {
+        "spanish": "Eso está mal.",
+        "english": "That is wrong."
+      },
+      "collections": [
+        "estar",
+        "state"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "extranar-a-alguien-miss",
+      "spanish": "extrañar a [alguien]",
+      "english": "to miss [somebody]",
+      "example": {
+        "spanish": "Extraño a mi familia.",
+        "english": "I miss my family."
+      },
+      "collections": [
+        "extrañar"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "extranar-algo-miss",
+      "spanish": "extrañar [algo]",
+      "english": "to miss [something]",
+      "example": {
+        "spanish": "Extraño la comida de Bogotá.",
+        "english": "I miss the food from Bogotá."
+      },
+      "collections": [
+        "extrañar"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "me-extrana-que-find-strange",
+      "spanish": "me extraña que [ocurra algo]",
+      "english": "I find it strange that [something happens]",
+      "example": {
+        "spanish": "Me extraña que no llame.",
+        "english": "I find it strange that she does not call."
+      },
+      "collections": [
+        "extrañar",
+        "find + object + adjective"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "algo-extrana-a-alguien-puzzle",
+      "spanish": "[algo] extraña a [alguien]",
+      "english": "[something] puzzles [somebody]",
+      "example": {
+        "spanish": "Su silencio me extrañó.",
+        "english": "His silence puzzled me."
+      },
+      "collections": [
+        "extrañar"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ser-extrano-strange",
+      "spanish": "ser extraño/a",
+      "english": "to be strange",
+      "example": {
+        "spanish": "Ese ruido es extraño.",
+        "english": "That noise is strange."
+      },
+      "collections": [
+        "extrañar",
+        "adjective"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "sentirse-extrano-feel-weird",
+      "spanish": "sentirse extraño/a",
+      "english": "to feel weird",
+      "example": {
+        "spanish": "Hoy me siento extraño.",
+        "english": "I feel weird today."
+      },
+      "collections": [
+        "extrañar",
+        "adjective",
+        "state"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "un-extrano-stranger",
+      "spanish": "un extraño o una extraña",
+      "english": "a stranger",
+      "example": {
+        "spanish": "Un extraño llamó a la puerta.",
+        "english": "A stranger knocked on the door."
+      },
+      "collections": [
+        "extrañar",
+        "noun",
+        "person"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "faltar-algo-be-missing",
+      "spanish": "faltar [algo]",
+      "english": "[something] is missing",
+      "example": {
+        "spanish": "Falta una página.",
+        "english": "One page is missing."
+      },
+      "collections": [
+        "faltar"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "faltarle-algo-a-algo-lack",
+      "spanish": "faltarle [algo] a [algo]",
+      "english": "[something] lacks [something]",
+      "example": {
+        "spanish": "Al proyecto le falta claridad.",
+        "english": "The project lacks clarity."
+      },
+      "collections": [
+        "faltar"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "faltarle-algo-a-alguien-need",
+      "spanish": "faltarle [algo] a [alguien]",
+      "english": "[somebody] needs [something]",
+      "example": {
+        "spanish": "Me falta dinero.",
+        "english": "I need money."
+      },
+      "collections": [
+        "faltar"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "faltar-cantidad-be-left",
+      "spanish": "faltar [varias unidades]",
+      "english": "there are [units] left",
+      "example": {
+        "spanish": "Faltan cinco minutos.",
+        "english": "There are five minutes left."
+      },
+      "collections": [
+        "faltar",
+        "particle",
+        "left",
+        "there be"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "faltar-cantidad-to-go",
+      "spanish": "faltar [una cantidad]",
+      "english": "[an amount] to go",
+      "example": {
+        "spanish": "Faltan dos kilómetros.",
+        "english": "Two kilometers to go."
+      },
+      "collections": [
+        "faltar",
+        "particle",
+        "to go"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "faltar-a-un-evento-miss",
+      "spanish": "faltar a [un evento]",
+      "english": "to miss [an event]",
+      "example": {
+        "spanish": "Ana faltó a clase.",
+        "english": "Ana missed class."
+      },
+      "collections": [
+        "faltar",
+        "verb + preposition",
+        "a => direct object"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "faltar-a-un-evento-be-absent",
+      "spanish": "faltar a [un evento]",
+      "english": "to be absent from [an event]",
+      "example": {
+        "spanish": "Ana faltó a clase.",
+        "english": "Ana was absent from class."
+      },
+      "collections": [
+        "faltar",
+        "verb + preposition",
+        "from",
+        "a => from"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "faltar-a-una-promesa-break",
+      "spanish": "faltar a [una promesa]",
+      "english": "to break [a promise]",
+      "example": {
+        "spanish": "Faltó a su promesa.",
+        "english": "He broke his promise."
+      },
+      "collections": [
+        "faltar",
+        "fixed expression"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "sin-falta-without-fail",
+      "spanish": "sin falta",
+      "english": "without fail",
+      "example": {
+        "spanish": "Llámame mañana sin falta.",
+        "english": "Call me tomorrow without fail."
+      },
+      "collections": [
+        "faltar",
+        "fixed expression",
+        "without",
+        "sin => without"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "la-falta-lack-noun",
+      "spanish": "la falta de [algo]",
+      "english": "the lack of [something]",
+      "example": {
+        "spanish": "La falta de tiempo es un problema.",
+        "english": "The lack of time is a problem."
+      },
+      "collections": [
+        "faltar",
+        "noun",
+        "of",
+        "de => of"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ganar-una-competencia-win",
+      "spanish": "ganar [una competencia]",
+      "english": "to win [a competition]",
+      "example": {
+        "spanish": "Ganamos el partido.",
+        "english": "We won the game."
+      },
+      "collections": [
+        "ganar"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "ganar-un-premio-win",
+      "spanish": "ganar [un premio]",
+      "english": "to win [a prize]",
+      "example": {
+        "spanish": "Ana ganó el premio.",
+        "english": "Ana won the prize."
+      },
+      "collections": [
+        "ganar"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ganar-dinero-earn",
+      "spanish": "ganar [dinero]",
+      "english": "to earn [money]",
+      "example": {
+        "spanish": "Gano dos millones al mes.",
+        "english": "I earn two million pesos a month."
+      },
+      "collections": [
+        "ganar"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "ganar-apoyo-gain",
+      "spanish": "ganar [apoyo o una ventaja]",
+      "english": "to gain [support or an advantage]",
+      "example": {
+        "spanish": "El proyecto ganó apoyo.",
+        "english": "The project gained support."
+      },
+      "collections": [
+        "ganar"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ganarle-a-alguien-beat",
+      "spanish": "ganarle a [alguien]",
+      "english": "to beat [somebody]",
+      "example": {
+        "spanish": "Bogotá le ganó a Cali.",
+        "english": "Bogotá beat Cali."
+      },
+      "collections": [
+        "ganar",
+        "a => direct object"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ganarse-algo-earn",
+      "spanish": "ganarse [algo]",
+      "english": "to earn [something]",
+      "example": {
+        "spanish": "Se ganó mi respeto.",
+        "english": "She earned my respect."
+      },
+      "collections": [
+        "ganar",
+        "pronominal verb"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ganarse-la-vida-make-a-living",
+      "spanish": "ganarse la vida",
+      "english": "to make a living",
+      "example": {
+        "spanish": "Se gana la vida enseñando.",
+        "english": "She makes a living teaching."
+      },
+      "collections": [
+        "ganar",
+        "fixed expression"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "el-ganador-winner",
+      "spanish": "el ganador o la ganadora",
+      "english": "the winner",
+      "example": {
+        "spanish": "Ana fue la ganadora.",
+        "english": "Ana was the winner."
+      },
+      "collections": [
+        "ganar",
+        "noun",
+        "person",
+        "-dor",
+        "-er"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "la-ganancia-profit",
+      "spanish": "la ganancia",
+      "english": "profit",
+      "example": {
+        "spanish": "La ganancia fue pequeña.",
+        "english": "The profit was small."
+      },
+      "collections": [
+        "ganar",
+        "noun"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "gustarle-algo-a-alguien-like",
+      "spanish": "gustarle [algo] a [alguien]",
+      "english": "[somebody] likes [something]",
+      "example": {
+        "spanish": "Me gusta esta canción.",
+        "english": "I like this song."
+      },
+      "collections": [
+        "gustar",
+        "handle verb"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "gustarle-hacer-algo-a-alguien-like-doing",
+      "spanish": "gustarle [hacer algo] a [alguien]",
+      "english": "[somebody] likes [doing something]",
+      "example": {
+        "spanish": "Me gusta leer.",
+        "english": "I like reading."
+      },
+      "collections": [
+        "gustar",
+        "handle verb",
+        "gerund"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "gustarle-hacer-algo-a-alguien-like-to",
+      "spanish": "gustarle [hacer algo] a [alguien]",
+      "english": "[somebody] likes to [do something]",
+      "example": {
+        "spanish": "Me gusta leer por la noche.",
+        "english": "I like to read at night."
+      },
+      "collections": [
+        "gustar",
+        "handle verb",
+        "full infinitive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "gustaria-hacer-algo-would-like",
+      "spanish": "gustaría [hacer algo]",
+      "english": "would like to [do something]",
+      "example": {
+        "spanish": "Me gustaría reservar una mesa.",
+        "english": "I would like to reserve a table."
+      },
+      "collections": [
+        "gustar",
+        "polite request",
+        "full infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "gustaria-algo-would-like",
+      "spanish": "gustaría [algo]",
+      "english": "would like [something]",
+      "example": {
+        "spanish": "Me gustaría un café.",
+        "english": "I would like a coffee."
+      },
+      "collections": [
+        "gustar",
+        "polite request"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "encantarle-algo-a-alguien-love",
+      "spanish": "encantarle [algo] a [alguien]",
+      "english": "[somebody] loves [something]",
+      "example": {
+        "spanish": "Me encanta esta canción.",
+        "english": "I love this song."
+      },
+      "collections": [
+        "gustar",
+        "encantar",
+        "handle verb"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "encantaria-hacer-algo-would-love",
+      "spanish": "encantaría [hacer algo]",
+      "english": "would love to [do something]",
+      "example": {
+        "spanish": "Me encantaría ir.",
+        "english": "I would love to go."
+      },
+      "collections": [
+        "gustar",
+        "encantar",
+        "full infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "el-gusto-taste",
+      "spanish": "el gusto",
+      "english": "taste",
+      "example": {
+        "spanish": "Tiene buen gusto.",
+        "english": "She has good taste."
+      },
+      "collections": [
+        "gustar",
+        "noun"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "con-gusto-gladly",
+      "spanish": "con gusto",
+      "english": "gladly",
+      "example": {
+        "spanish": "Con gusto te ayudo.",
+        "english": "I will gladly help you."
+      },
+      "collections": [
+        "gustar",
+        "adverb",
+        "fixed expression"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "mucho-gusto-nice-to-meet-you",
+      "spanish": "mucho gusto",
+      "english": "nice to meet you",
+      "example": {
+        "spanish": "Mucho gusto, soy Ana.",
+        "english": "Nice to meet you, I am Ana."
+      },
+      "collections": [
+        "gustar",
+        "social expression"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "haber-participio-perfect",
+      "spanish": "haber [hecho algo]",
+      "english": "to have [done something]",
+      "example": {
+        "spanish": "He terminado el informe.",
+        "english": "I have finished the report."
+      },
+      "collections": [
+        "haber",
+        "perfect",
+        "past participle"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "hay-singular-there-is",
+      "spanish": "hay [algo singular]",
+      "english": "there is [something singular]",
+      "example": {
+        "spanish": "Hay un libro.",
+        "english": "There is a book."
+      },
+      "collections": [
+        "haber",
+        "there be",
+        "singular"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "hay-singular-theres",
+      "spanish": "hay [algo singular]",
+      "english": "there's [something singular]",
+      "example": {
+        "spanish": "Hay un problema.",
+        "english": "There's a problem."
+      },
+      "collections": [
+        "haber",
+        "there be",
+        "singular",
+        "contraction"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "hay-plural-there-are",
+      "spanish": "hay [cosas plurales]",
+      "english": "there are [plural things]",
+      "example": {
+        "spanish": "Hay dos sillas.",
+        "english": "There are two chairs."
+      },
+      "collections": [
+        "haber",
+        "there be",
+        "plural"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "no-hay-singular-there-isnt",
+      "spanish": "no hay [algo singular]",
+      "english": "there isn't [something singular]",
+      "example": {
+        "spanish": "No hay problema.",
+        "english": "There isn't a problem."
+      },
+      "collections": [
+        "haber",
+        "there be",
+        "negative",
+        "singular",
+        "contraction"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "no-hay-plural-there-arent",
+      "spanish": "no hay [cosas plurales]",
+      "english": "there aren't [plural things]",
+      "example": {
+        "spanish": "No hay sillas.",
+        "english": "There aren't any chairs."
+      },
+      "collections": [
+        "haber",
+        "there be",
+        "negative",
+        "plural",
+        "contraction"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "hay-singular-question-is-there",
+      "spanish": "¿hay [algo singular]?",
+      "english": "is there [something singular]?",
+      "example": {
+        "spanish": "¿Hay un baño aquí?",
+        "english": "Is there a bathroom here?"
+      },
+      "collections": [
+        "haber",
+        "there be",
+        "question",
+        "singular"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "hay-plural-question-are-there",
+      "spanish": "¿hay [cosas plurales]?",
+      "english": "are there [plural things]?",
+      "example": {
+        "spanish": "¿Hay mesas libres?",
+        "english": "Are there any free tables?"
+      },
+      "collections": [
+        "haber",
+        "there be",
+        "question",
+        "plural"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "habia-singular-there-was",
+      "spanish": "había [algo singular]",
+      "english": "there was [something singular]",
+      "example": {
+        "spanish": "Había un libro.",
+        "english": "There was a book."
+      },
+      "collections": [
+        "haber",
+        "there be",
+        "past",
+        "singular"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "habia-plural-there-were",
+      "spanish": "había [cosas plurales]",
+      "english": "there were [plural things]",
+      "example": {
+        "spanish": "Había tres libros.",
+        "english": "There were three books."
+      },
+      "collections": [
+        "haber",
+        "there be",
+        "past",
+        "plural"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "hubo-algo-there-was",
+      "spanish": "hubo [algo]",
+      "english": "there was [something]",
+      "example": {
+        "spanish": "Hubo un problema.",
+        "english": "There was a problem."
+      },
+      "collections": [
+        "haber",
+        "there be",
+        "preterite"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "habra-algo-there-will-be",
+      "spanish": "habrá [algo]",
+      "english": "there will be [something]",
+      "example": {
+        "spanish": "Habrá cambios.",
+        "english": "There will be changes."
+      },
+      "collections": [
+        "haber",
+        "there be",
+        "future"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "habria-algo-there-would-be",
+      "spanish": "habría [algo]",
+      "english": "there would be [something]",
+      "example": {
+        "spanish": "Habría menos problemas.",
+        "english": "There would be fewer problems."
+      },
+      "collections": [
+        "haber",
+        "there be",
+        "conditional"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hay-que-hacer-algo-you-have-to",
+      "spanish": "hay que [hacer algo]",
+      "english": "you have to [do something]",
+      "example": {
+        "spanish": "Hay que registrarse primero.",
+        "english": "You have to register first."
+      },
+      "collections": [
+        "haber",
+        "impersonal necessity",
+        "have to"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "hay-que-hacer-algo-we-need-to",
+      "spanish": "hay que [hacer algo]",
+      "english": "we need to [do something]",
+      "example": {
+        "spanish": "Hay que salir temprano.",
+        "english": "We need to leave early."
+      },
+      "collections": [
+        "haber",
+        "impersonal necessity",
+        "need to"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "debe-de-haber-there-must-be",
+      "spanish": "debe de haber [algo]",
+      "english": "there must be [something]",
+      "example": {
+        "spanish": "Debe de haber una explicación.",
+        "english": "There must be an explanation."
+      },
+      "collections": [
+        "haber",
+        "there be",
+        "modal",
+        "must",
+        "de => probability"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "puede-haber-there-may-be",
+      "spanish": "puede haber [algo]",
+      "english": "there may be [something]",
+      "example": {
+        "spanish": "Puede haber cambios.",
+        "english": "There may be changes."
+      },
+      "collections": [
+        "haber",
+        "there be",
+        "modal",
+        "may"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "va-a-haber-there-is-going-to-be",
+      "spanish": "va a haber [algo singular]",
+      "english": "there is going to be [something singular]",
+      "example": {
+        "spanish": "Va a haber una reunión.",
+        "english": "There is going to be a meeting."
+      },
+      "collections": [
+        "haber",
+        "there be",
+        "going to",
+        "a => to"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "va-a-haber-there-are-going-to-be",
+      "spanish": "va a haber [cosas plurales]",
+      "english": "there are going to be [plural things]",
+      "example": {
+        "spanish": "Va a haber cambios.",
+        "english": "There are going to be changes."
+      },
+      "collections": [
+        "haber",
+        "there be",
+        "going to",
+        "a => to",
+        "plural"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hacer-algo-do",
+      "spanish": "hacer [una tarea o actividad]",
+      "english": "to do [a task or activity]",
+      "example": {
+        "spanish": "Hago la tarea.",
+        "english": "I do the homework."
+      },
+      "collections": [
+        "hacer",
+        "do"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "hacer-algo-make",
+      "spanish": "hacer [algo creado o preparado]",
+      "english": "to make [something]",
+      "example": {
+        "spanish": "Hago café.",
+        "english": "I make coffee."
+      },
+      "collections": [
+        "hacer",
+        "make"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "hacer-que-alguien-haga-make",
+      "spanish": "hacer que [alguien] [haga algo]",
+      "english": "to make [somebody] [do something]",
+      "example": {
+        "spanish": "La película me hizo llorar.",
+        "english": "The movie made me cry."
+      },
+      "collections": [
+        "hacer",
+        "causative",
+        "somebody do something"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "hacer-adjetivo-a-alguien",
+      "spanish": "hacer [adjetivo] a [alguien]",
+      "english": "to make [somebody] [adjective]",
+      "example": {
+        "spanish": "La noticia me hizo feliz.",
+        "english": "The news made me happy."
+      },
+      "collections": [
+        "hacer",
+        "causative",
+        "somebody + adjective"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "hacer-reparar-algo-have-done",
+      "spanish": "hacer [reparar algo]",
+      "english": "to have [something] repaired",
+      "example": {
+        "spanish": "Hice reparar el carro.",
+        "english": "I had the car repaired."
+      },
+      "collections": [
+        "hacer",
+        "causative",
+        "have something done",
+        "past participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hace-tiempo-ago",
+      "spanish": "hace [un período de tiempo]",
+      "english": "[a period of time] ago",
+      "example": {
+        "spanish": "Llegué hace dos años.",
+        "english": "I arrived two years ago."
+      },
+      "collections": [
+        "hacer",
+        "time",
+        "ago"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "hace-tiempo-que-for",
+      "spanish": "hace [tiempo] que [ocurre algo]",
+      "english": "[something] has been happening for [time]",
+      "example": {
+        "spanish": "Hace dos años que vivo aquí.",
+        "english": "I have been living here for two years."
+      },
+      "collections": [
+        "hacer",
+        "time",
+        "for",
+        "present perfect progressive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "cuanto-hace-que-how-long",
+      "spanish": "¿cuánto hace que [ocurre algo]?",
+      "english": "how long has [something] been happening?",
+      "example": {
+        "spanish": "¿Cuánto hace que vives aquí?",
+        "english": "How long have you been living here?"
+      },
+      "collections": [
+        "hacer",
+        "time",
+        "question",
+        "present perfect progressive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hace-frio-it-is-cold",
+      "spanish": "hace frío",
+      "english": "it is cold",
+      "example": {
+        "spanish": "Hoy hace frío.",
+        "english": "It is cold today."
+      },
+      "collections": [
+        "hacer",
+        "weather",
+        "it + be"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "hace-calor-it-is-hot",
+      "spanish": "hace calor",
+      "english": "it is hot",
+      "example": {
+        "spanish": "Hoy hace calor.",
+        "english": "It is hot today."
+      },
+      "collections": [
+        "hacer",
+        "weather",
+        "it + be"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "hace-sol-it-is-sunny",
+      "spanish": "hace sol",
+      "english": "it is sunny",
+      "example": {
+        "spanish": "Hoy hace sol.",
+        "english": "It is sunny today."
+      },
+      "collections": [
+        "hacer",
+        "weather",
+        "it + be",
+        "adjective"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hace-viento-it-is-windy",
+      "spanish": "hace viento",
+      "english": "it is windy",
+      "example": {
+        "spanish": "Hoy hace viento.",
+        "english": "It is windy today."
+      },
+      "collections": [
+        "hacer",
+        "weather",
+        "it + be",
+        "adjective"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hacer-falta-be-needed",
+      "spanish": "hacer falta",
+      "english": "to be needed",
+      "example": {
+        "spanish": "Hace falta otra silla.",
+        "english": "Another chair is needed."
+      },
+      "collections": [
+        "hacer",
+        "faltar",
+        "passive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "hacerle-falta-a-alguien-miss",
+      "spanish": "hacerle falta a [alguien]",
+      "english": "[somebody] misses [someone or something]",
+      "example": {
+        "spanish": "Me haces falta.",
+        "english": "I miss you."
+      },
+      "collections": [
+        "hacer",
+        "faltar"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hacerle-bien-a-alguien",
+      "spanish": "hacerle bien a [alguien]",
+      "english": "to be good for [somebody]",
+      "example": {
+        "spanish": "Caminar me hace bien.",
+        "english": "Walking is good for me."
+      },
+      "collections": [
+        "hacer",
+        "fixed expression",
+        "for",
+        "a => for"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hacerle-dano-a-alguien",
+      "spanish": "hacerle daño a [alguien]",
+      "english": "to hurt [somebody]",
+      "example": {
+        "spanish": "Eso puede hacerte daño.",
+        "english": "That can hurt you."
+      },
+      "collections": [
+        "hacer",
+        "fixed expression"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hacer-ejercicio-work-out",
+      "spanish": "hacer ejercicio",
+      "english": "to work out",
+      "example": {
+        "spanish": "Hago ejercicio cada mañana.",
+        "english": "I work out every morning."
+      },
+      "collections": [
+        "hacer",
+        "phrasal verb",
+        "out"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hacer-las-paces-make-up",
+      "spanish": "hacer las paces con [alguien]",
+      "english": "to make up with [somebody]",
+      "example": {
+        "spanish": "Hice las paces con Ana.",
+        "english": "I made up with Ana."
+      },
+      "collections": [
+        "hacer",
+        "phrasal verb",
+        "up",
+        "with",
+        "con => with"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hacer-amigos-make-friends",
+      "spanish": "hacer amigos",
+      "english": "to make friends",
+      "example": {
+        "spanish": "Hice amigos en el curso.",
+        "english": "I made friends in the course."
+      },
+      "collections": [
+        "hacer",
+        "fixed expression"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hacer-caso-pay-attention",
+      "spanish": "hacerle caso a [alguien]",
+      "english": "to pay attention to [somebody]",
+      "example": {
+        "spanish": "Hazle caso a la profesora.",
+        "english": "Pay attention to the teacher."
+      },
+      "collections": [
+        "hacer",
+        "verb + preposition",
+        "to",
+        "a => to"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hacerle-un-favor-a-alguien",
+      "spanish": "hacerle un favor a [alguien]",
+      "english": "to do [somebody] a favor",
+      "example": {
+        "spanish": "Hazme un favor.",
+        "english": "Do me a favor."
+      },
+      "collections": [
+        "hacer",
+        "somebody something",
+        "fixed expression"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "hacer-un-esfuerzo-make",
+      "spanish": "hacer un esfuerzo",
+      "english": "to make an effort",
+      "example": {
+        "spanish": "Hice un esfuerzo.",
+        "english": "I made an effort."
+      },
+      "collections": [
+        "hacer",
+        "fixed expression"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "hacer-una-pregunta-ask",
+      "spanish": "hacer una pregunta",
+      "english": "to ask a question",
+      "example": {
+        "spanish": "Quiero hacer una pregunta.",
+        "english": "I want to ask a question."
+      },
+      "collections": [
+        "hacer",
+        "fixed expression"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "hacer-una-llamada-make",
+      "spanish": "hacer una llamada",
+      "english": "to make a call",
+      "example": {
+        "spanish": "Tengo que hacer una llamada.",
+        "english": "I have to make a call."
+      },
+      "collections": [
+        "hacer",
+        "fixed expression"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hacer-una-reserva-make",
+      "spanish": "hacer una reserva",
+      "english": "to make a reservation",
+      "example": {
+        "spanish": "Quiero hacer una reserva.",
+        "english": "I want to make a reservation."
+      },
+      "collections": [
+        "hacer",
+        "fixed expression"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "hacer-una-sugerencia-make",
+      "spanish": "hacer una sugerencia",
+      "english": "to make a suggestion",
+      "example": {
+        "spanish": "Quiero hacer una sugerencia.",
+        "english": "I want to make a suggestion."
+      },
+      "collections": [
+        "hacer",
+        "fixed expression"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hacer-un-viaje-take",
+      "spanish": "hacer un viaje",
+      "english": "to take a trip",
+      "example": {
+        "spanish": "Hicimos un viaje corto.",
+        "english": "We took a short trip."
+      },
+      "collections": [
+        "hacer",
+        "fixed expression"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hacer-tiempo-kill",
+      "spanish": "hacer tiempo",
+      "english": "to kill time",
+      "example": {
+        "spanish": "Hicimos tiempo en la cafetería.",
+        "english": "We killed time in the café."
+      },
+      "collections": [
+        "hacer",
+        "fixed expression"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hacerse-el-tonto-pretend",
+      "spanish": "hacerse el tonto",
+      "english": "to pretend not to understand",
+      "example": {
+        "spanish": "No te hagas el tonto.",
+        "english": "Do not pretend not to understand."
+      },
+      "collections": [
+        "hacer",
+        "pronominal verb",
+        "fixed expression"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hacerse-tarde-get-late",
+      "spanish": "hacerse tarde",
+      "english": "to get late",
+      "example": {
+        "spanish": "Se está haciendo tarde.",
+        "english": "It is getting late."
+      },
+      "collections": [
+        "hacer",
+        "pronominal verb",
+        "change of state"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hecho-producto-made",
+      "spanish": "hecho/a",
+      "english": "made",
+      "example": {
+        "spanish": "La mesa fue hecha ayer.",
+        "english": "The table was made yesterday."
+      },
+      "collections": [
+        "hacer",
+        "adjective",
+        "past participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "tarea-hecha-done",
+      "spanish": "hecho/a",
+      "english": "done",
+      "example": {
+        "spanish": "La tarea está hecha.",
+        "english": "The homework is done."
+      },
+      "collections": [
+        "hacer",
+        "adjective",
+        "past participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hecho-de-made-of",
+      "spanish": "hecho/a de [un material visible]",
+      "english": "made of [a visible material]",
+      "example": {
+        "spanish": "La mesa está hecha de madera.",
+        "english": "The table is made of wood."
+      },
+      "collections": [
+        "hacer",
+        "past participle",
+        "verb + preposition",
+        "of",
+        "de => of"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "hecho-a-partir-de-made-from",
+      "spanish": "hecho/a a partir de [un material transformado]",
+      "english": "made from [a transformed material]",
+      "example": {
+        "spanish": "El papel está hecho a partir de madera.",
+        "english": "Paper is made from wood."
+      },
+      "collections": [
+        "hacer",
+        "past participle",
+        "verb + preposition",
+        "from",
+        "de => from"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hecho-por-made-by",
+      "spanish": "hecho/a por [alguien]",
+      "english": "made by [somebody]",
+      "example": {
+        "spanish": "Fue hecho por Ana.",
+        "english": "It was made by Ana."
+      },
+      "collections": [
+        "hacer",
+        "past participle",
+        "verb + preposition",
+        "by",
+        "por => by"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hacer-cola-stand-in-line",
+      "spanish": "hacer cola",
+      "english": "to stand in line",
+      "example": {
+        "spanish": "Hicimos cola afuera.",
+        "english": "We stood in line outside."
+      },
+      "collections": [
+        "hacer",
+        "fixed expression",
+        "in"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hacer-las-maletas-pack",
+      "spanish": "hacer las maletas",
+      "english": "to pack",
+      "example": {
+        "spanish": "Voy a hacer las maletas.",
+        "english": "I am going to pack."
+      },
+      "collections": [
+        "hacer",
+        "fixed expression"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hacerse-become",
+      "spanish": "hacerse [algo]",
+      "english": "to become [something]",
+      "example": {
+        "spanish": "Se hizo médico.",
+        "english": "He became a doctor."
+      },
+      "collections": [
+        "hacer",
+        "pronominal verb",
+        "change of state"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "el-hecho-fact",
+      "spanish": "el hecho",
+      "english": "the fact",
+      "example": {
+        "spanish": "Ese hecho es importante.",
+        "english": "That fact is important."
+      },
+      "collections": [
+        "hacer",
+        "noun"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "de-hecho-in-fact",
+      "spanish": "de hecho",
+      "english": "in fact",
+      "example": {
+        "spanish": "De hecho, ya terminé.",
+        "english": "In fact, I already finished."
+      },
+      "collections": [
+        "hacer",
+        "adverb",
+        "connector",
+        "de => in"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "ir-a-un-lugar-go-to",
+      "spanish": "ir a [un lugar]",
+      "english": "to go to [a place]",
+      "example": {
+        "spanish": "Voy a la oficina.",
+        "english": "I am going to the office."
+      },
+      "collections": [
+        "ir",
+        "verb + preposition",
+        "to",
+        "a => to"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "ir-a-casa-go-home",
+      "spanish": "ir a casa",
+      "english": "to go home",
+      "example": {
+        "spanish": "Voy a casa.",
+        "english": "I am going home."
+      },
+      "collections": [
+        "ir",
+        "home",
+        "no preposition"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "ir-a-hacer-algo-going-to",
+      "spanish": "ir a [hacer algo]",
+      "english": "to be going to [do something]",
+      "example": {
+        "spanish": "Voy a llamar a Ana.",
+        "english": "I am going to call Ana."
+      },
+      "collections": [
+        "ir",
+        "going to",
+        "future",
+        "a => to"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "ir-a-hacer-algo-gonna",
+      "spanish": "ir a [hacer algo]",
+      "english": "gonna [do something]",
+      "example": {
+        "spanish": "Voy a salir.",
+        "english": "I'm gonna leave."
+      },
+      "collections": [
+        "ir",
+        "going to",
+        "future",
+        "spoken reduction"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "irse-leave",
+      "spanish": "irse",
+      "english": "to leave",
+      "example": {
+        "spanish": "Ya me voy.",
+        "english": "I am leaving now."
+      },
+      "collections": [
+        "ir",
+        "pronominal verb"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "irse-go-away",
+      "spanish": "irse",
+      "english": "to go away",
+      "example": {
+        "spanish": "Vete de aquí.",
+        "english": "Go away from here."
+      },
+      "collections": [
+        "ir",
+        "pronominal verb",
+        "phrasal verb",
+        "away"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "irle-bien-a-alguien-go-well",
+      "spanish": "irle bien a [alguien]",
+      "english": "to go well for [somebody]",
+      "example": {
+        "spanish": "El trabajo me va bien.",
+        "english": "The job is going well for me."
+      },
+      "collections": [
+        "ir",
+        "verb + preposition",
+        "for",
+        "a => for"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "como-le-fue-how-did-it-go",
+      "spanish": "¿cómo le fue a [alguien]?",
+      "english": "how did it go for [somebody]?",
+      "example": {
+        "spanish": "¿Cómo te fue en la reunión?",
+        "english": "How did it go for you in the meeting?"
+      },
+      "collections": [
+        "ir",
+        "question",
+        "for",
+        "a => for"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "como-va-algo-how-is-going",
+      "spanish": "¿cómo va [algo]?",
+      "english": "how is [something] going?",
+      "example": {
+        "spanish": "¿Cómo va el proyecto?",
+        "english": "How is the project going?"
+      },
+      "collections": [
+        "ir",
+        "question"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ir-con-algo-go-with",
+      "spanish": "ir con [algo]",
+      "english": "to go with [something]",
+      "example": {
+        "spanish": "Esta camisa va con esos pantalones.",
+        "english": "This shirt goes with those pants."
+      },
+      "collections": [
+        "ir",
+        "verb + preposition",
+        "with",
+        "con => with"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ir-de-compras-go-shopping",
+      "spanish": "ir de compras",
+      "english": "to go shopping",
+      "example": {
+        "spanish": "Voy de compras mañana.",
+        "english": "I am going shopping tomorrow."
+      },
+      "collections": [
+        "ir",
+        "go + -ing",
+        "gerund"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ir-en-transporte-go-by",
+      "spanish": "ir en [un medio de transporte]",
+      "english": "to go by [a means of transport]",
+      "example": {
+        "spanish": "Voy en bus.",
+        "english": "I go by bus."
+      },
+      "collections": [
+        "ir",
+        "verb + preposition",
+        "by",
+        "en => by"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "ir-a-pie-go-on-foot",
+      "spanish": "ir a pie",
+      "english": "to go on foot",
+      "example": {
+        "spanish": "Voy a pie.",
+        "english": "I go on foot."
+      },
+      "collections": [
+        "ir",
+        "verb + preposition",
+        "on",
+        "a => on"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "llamar-a-alguien-call",
+      "spanish": "llamar a [alguien]",
+      "english": "to call [somebody]",
+      "example": {
+        "spanish": "Llama a Ana.",
+        "english": "Call Ana."
+      },
+      "collections": [
+        "llamar",
+        "a => direct object"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "llamar-por-telefono-phone",
+      "spanish": "llamar por teléfono a [alguien]",
+      "english": "to phone [somebody]",
+      "example": {
+        "spanish": "Llamé por teléfono a Ana.",
+        "english": "I phoned Ana."
+      },
+      "collections": [
+        "llamar",
+        "a => direct object"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "llamarse-be-called",
+      "spanish": "llamarse [nombre]",
+      "english": "to be called [name]",
+      "example": {
+        "spanish": "El restaurante se llama El Patio.",
+        "english": "The restaurant is called El Patio."
+      },
+      "collections": [
+        "llamar",
+        "pronominal verb",
+        "passive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "me-llamo-my-name-is",
+      "spanish": "me llamo [nombre]",
+      "english": "my name is [name]",
+      "example": {
+        "spanish": "Me llamo Laura.",
+        "english": "My name is Laura."
+      },
+      "collections": [
+        "llamar",
+        "introduction"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "como-se-llama-whats-name",
+      "spanish": "¿cómo se llama [alguien]?",
+      "english": "what is [somebody's] name?",
+      "example": {
+        "spanish": "¿Cómo se llama ella?",
+        "english": "What is her name?"
+      },
+      "collections": [
+        "llamar",
+        "question",
+        "introduction"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "llamar-algo-nombre-name",
+      "spanish": "llamar [nombre] a [algo o alguien]",
+      "english": "to name [something or somebody] [name]",
+      "example": {
+        "spanish": "Llamaron al perro Bruno.",
+        "english": "They named the dog Bruno."
+      },
+      "collections": [
+        "llamar",
+        "object complement"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "llamar-algo-descripcion-call",
+      "spanish": "llamar [descripción] a [algo]",
+      "english": "to call [something] [a description]",
+      "example": {
+        "spanish": "A eso lo llamo una buena idea.",
+        "english": "I call that a good idea."
+      },
+      "collections": [
+        "llamar",
+        "object complement"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "llamar-la-atencion-attract",
+      "spanish": "llamar la atención",
+      "english": "to attract attention",
+      "example": {
+        "spanish": "El color rojo llama la atención.",
+        "english": "The red color attracts attention."
+      },
+      "collections": [
+        "llamar",
+        "fixed expression"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "llamar-la-atencion-sobre-draw",
+      "spanish": "llamar la atención sobre [algo]",
+      "english": "to draw attention to [something]",
+      "example": {
+        "spanish": "El informe llama la atención sobre el problema.",
+        "english": "The report draws attention to the problem."
+      },
+      "collections": [
+        "llamar",
+        "verb + preposition",
+        "to",
+        "sobre => to"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "llamarle-la-atencion-a-alguien-tell-off",
+      "spanish": "llamarle la atención a [alguien]",
+      "english": "to tell [somebody] off",
+      "example": {
+        "spanish": "La profesora le llamó la atención.",
+        "english": "The teacher told him off."
+      },
+      "collections": [
+        "llamar",
+        "phrasal verb",
+        "off"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "volver-a-llamar-call-back",
+      "spanish": "volver a llamar a [alguien]",
+      "english": "to call [somebody] back",
+      "example": {
+        "spanish": "Te vuelvo a llamar después.",
+        "english": "I will call you back later."
+      },
+      "collections": [
+        "llamar",
+        "phrasal verb",
+        "back"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "la-llamada-call-noun",
+      "spanish": "la llamada",
+      "english": "a call",
+      "example": {
+        "spanish": "Recibí una llamada.",
+        "english": "I received a call."
+      },
+      "collections": [
+        "llamar",
+        "noun"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hacer-un-llamado-a-call-for",
+      "spanish": "hacer un llamado a [algo]",
+      "english": "to call for [something]",
+      "example": {
+        "spanish": "Hicieron un llamado a la calma.",
+        "english": "They called for calm."
+      },
+      "collections": [
+        "llamar",
+        "noun",
+        "phrasal verb",
+        "for",
+        "a => for"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "llegar-a-un-lugar-arrive-at",
+      "spanish": "llegar a [un lugar específico]",
+      "english": "to arrive at [a specific place]",
+      "example": {
+        "spanish": "Llegamos al aeropuerto.",
+        "english": "We arrived at the airport."
+      },
+      "collections": [
+        "llegar",
+        "verb + preposition",
+        "at",
+        "a => at"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "llegar-a-ciudad-arrive-in",
+      "spanish": "llegar a [una ciudad o país]",
+      "english": "to arrive in [a city or country]",
+      "example": {
+        "spanish": "Llegamos a Bogotá.",
+        "english": "We arrived in Bogotá."
+      },
+      "collections": [
+        "llegar",
+        "verb + preposition",
+        "in",
+        "a => in"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "llegar-a-un-lugar-get-to",
+      "spanish": "llegar a [un lugar]",
+      "english": "to get to [a place]",
+      "example": {
+        "spanish": "¿Cómo llego a la estación?",
+        "english": "How do I get to the station?"
+      },
+      "collections": [
+        "llegar",
+        "verb + preposition",
+        "to",
+        "a => to"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "llegar-a-un-lugar-reach",
+      "spanish": "llegar a [un lugar]",
+      "english": "to reach [a place]",
+      "example": {
+        "spanish": "Llegamos a la cima.",
+        "english": "We reached the summit."
+      },
+      "collections": [
+        "llegar",
+        "a => direct object"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "llegar-a-hacer-algo-manage",
+      "spanish": "llegar a [hacer algo]",
+      "english": "to manage to [do something]",
+      "example": {
+        "spanish": "Llegó a terminar a tiempo.",
+        "english": "She managed to finish on time."
+      },
+      "collections": [
+        "llegar",
+        "full infinitive",
+        "a => to"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "llegar-a-ser-become",
+      "spanish": "llegar a ser [algo]",
+      "english": "to become [something]",
+      "example": {
+        "spanish": "Llegó a ser directora.",
+        "english": "She became a director."
+      },
+      "collections": [
+        "llegar",
+        "change of state"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "llegar-a-ser-go-on-to-become",
+      "spanish": "llegar a ser [algo]",
+      "english": "to go on to become [something]",
+      "example": {
+        "spanish": "Llegó a ser directora.",
+        "english": "She went on to become a director."
+      },
+      "collections": [
+        "llegar",
+        "phrasal verb",
+        "on",
+        "full infinitive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "llegar-a-un-nivel-reach",
+      "spanish": "llegar a [un nivel o cantidad]",
+      "english": "to reach [a level or amount]",
+      "example": {
+        "spanish": "La temperatura llegó a cuarenta grados.",
+        "english": "The temperature reached forty degrees."
+      },
+      "collections": [
+        "llegar",
+        "a => direct object"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "llegar-a-un-acuerdo-reach",
+      "spanish": "llegar a un acuerdo",
+      "english": "to reach an agreement",
+      "example": {
+        "spanish": "Llegamos a un acuerdo.",
+        "english": "We reached an agreement."
+      },
+      "collections": [
+        "llegar",
+        "fixed expression"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "llegar-a-tiempo-arrive-on-time",
+      "spanish": "llegar a tiempo",
+      "english": "to arrive on time",
+      "example": {
+        "spanish": "Llegamos a tiempo.",
+        "english": "We arrived on time."
+      },
+      "collections": [
+        "llegar",
+        "verb + preposition",
+        "on",
+        "a => on"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "la-llegada-arrival",
+      "spanish": "la llegada",
+      "english": "the arrival",
+      "example": {
+        "spanish": "La llegada está prevista para las nueve.",
+        "english": "The arrival is scheduled for nine."
+      },
+      "collections": [
+        "llegar",
+        "noun",
+        "-al"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "llevar-algo-a-un-lugar-take",
+      "spanish": "llevar [algo] a [un lugar]",
+      "english": "to take [something] to [a place]",
+      "example": {
+        "spanish": "Lleva esta caja a la oficina.",
+        "english": "Take this box to the office."
+      },
+      "collections": [
+        "llevar",
+        "verb + preposition",
+        "to",
+        "a => to"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "llevar-algo-carry",
+      "spanish": "llevar [algo físicamente]",
+      "english": "to carry [something]",
+      "example": {
+        "spanish": "Lleva la caja con cuidado.",
+        "english": "Carry the box carefully."
+      },
+      "collections": [
+        "llevar"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "llevar-ropa-wear",
+      "spanish": "llevar [ropa o accesorios]",
+      "english": "to wear [clothing or accessories]",
+      "example": {
+        "spanish": "Ana lleva una camisa azul.",
+        "english": "Ana is wearing a blue shirt."
+      },
+      "collections": [
+        "llevar"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "llevar-tiempo-haciendo-have-been-doing",
+      "spanish": "llevar [tiempo] [haciendo algo]",
+      "english": "to have been [doing something] for [time]",
+      "example": {
+        "spanish": "Llevo dos años trabajando aquí.",
+        "english": "I have been working here for two years."
+      },
+      "collections": [
+        "llevar",
+        "duration",
+        "present perfect progressive",
+        "for"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "llevar-tiempo-en-estado-have-been",
+      "spanish": "llevar [tiempo] [en un estado]",
+      "english": "to have been [in a state] for [time]",
+      "example": {
+        "spanish": "Lleva una semana enfermo.",
+        "english": "He has been sick for a week."
+      },
+      "collections": [
+        "llevar",
+        "duration",
+        "present perfect",
+        "for"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "cuanto-llevas-haciendo-how-long",
+      "spanish": "¿cuánto llevas [haciendo algo]?",
+      "english": "how long have you been [doing something]?",
+      "example": {
+        "spanish": "¿Cuánto llevas esperando?",
+        "english": "How long have you been waiting?"
+      },
+      "collections": [
+        "llevar",
+        "duration",
+        "question",
+        "present perfect progressive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "algo-lleva-tiempo-takes",
+      "spanish": "[algo] lleva [tiempo]",
+      "english": "[something] takes [time]",
+      "example": {
+        "spanish": "El viaje lleva tres horas.",
+        "english": "The trip takes three hours."
+      },
+      "collections": [
+        "llevar",
+        "duration"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "llevarse-bien-con-get-along",
+      "spanish": "llevarse bien con [alguien]",
+      "english": "to get along well with [somebody]",
+      "example": {
+        "spanish": "Me llevo bien con mis vecinos.",
+        "english": "I get along well with my neighbors."
+      },
+      "collections": [
+        "llevar",
+        "pronominal verb",
+        "phrasal verb",
+        "along",
+        "with",
+        "con => with"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "llevar-a-cabo-carry-out",
+      "spanish": "llevar a cabo [algo]",
+      "english": "to carry out [something]",
+      "example": {
+        "spanish": "Llevaron a cabo el plan.",
+        "english": "They carried out the plan."
+      },
+      "collections": [
+        "llevar",
+        "phrasal verb",
+        "out"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "llevar-a-un-resultado-lead-to",
+      "spanish": "llevar a [un resultado]",
+      "english": "to lead to [a result]",
+      "example": {
+        "spanish": "El error llevó a un retraso.",
+        "english": "The error led to a delay."
+      },
+      "collections": [
+        "llevar",
+        "verb + preposition",
+        "to",
+        "a => to"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "llevar-a-alguien-en-carro-give-ride",
+      "spanish": "llevar a [alguien] en carro",
+      "english": "to give [somebody] a ride",
+      "example": {
+        "spanish": "Te llevo en carro.",
+        "english": "I will give you a ride."
+      },
+      "collections": [
+        "llevar",
+        "somebody something",
+        "transport"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "llevar-la-cuenta-keep-track",
+      "spanish": "llevar la cuenta de [algo]",
+      "english": "to keep track of [something]",
+      "example": {
+        "spanish": "Llevo la cuenta de los gastos.",
+        "english": "I keep track of the expenses."
+      },
+      "collections": [
+        "llevar",
+        "fixed expression",
+        "verb + preposition",
+        "of",
+        "de => of"
       ],
       "curriculumRole": "reference"
     }
