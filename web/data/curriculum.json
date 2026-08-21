@@ -645,6 +645,202 @@
         "through"
       ],
       "curriculumRole": "reference"
+    },
+    {
+      "id": "tomar-algo-take",
+      "spanish": "tomar [algo]",
+      "english": "to take [something]",
+      "example": {"spanish": "Toma este documento.", "english": "Take this document."},
+      "collections": ["tomar", "take"], "curriculumRole": "core"
+    },
+    {
+      "id": "tomar-bebida-drink",
+      "spanish": "tomar [una bebida]",
+      "english": "to drink [a beverage]",
+      "example": {"spanish": "Tomamos café después del almuerzo.", "english": "We drink coffee after lunch."},
+      "collections": ["tomar", "drink", "beverage"], "curriculumRole": "supporting"
+    },
+    {
+      "id": "tomar-transporte-take",
+      "spanish": "tomar [transporte]",
+      "english": "to take [transport]",
+      "example": {"spanish": "Tomé el bus hasta el centro.", "english": "I took the bus downtown."},
+      "collections": ["tomar", "take", "transport"], "curriculumRole": "core"
+    },
+    {
+      "id": "tomar-decision-make",
+      "spanish": "tomar una decisión",
+      "english": "to make a decision",
+      "example": {"spanish": "Tomamos una decisión difícil.", "english": "We made a difficult decision."},
+      "collections": ["tomar", "make", "decision", "collocation"], "curriculumRole": "supporting"
+    },
+    {
+      "id": "tomar-tiempo-take",
+      "spanish": "tomar [tiempo]",
+      "english": "to take [time]",
+      "example": {"spanish": "El trámite tomó dos horas.", "english": "The process took two hours."},
+      "collections": ["tomar", "take", "time"], "curriculumRole": "core"
+    },
+    {
+      "id": "tomar-control-take-over",
+      "spanish": "tomar el control de [algo]",
+      "english": "to take over [something]",
+      "example": {"spanish": "Los manifestantes tomaron el control del edificio.", "english": "The protesters took over the building."},
+      "collections": ["tomar", "take", "phrasal verb", "over"], "curriculumRole": "supporting"
+    },
+    {
+      "id": "beber-algo-drink",
+      "spanish": "beber [algo]",
+      "english": "to drink [something]",
+      "example": {"spanish": "Bebo agua durante el almuerzo.", "english": "I drink water during lunch."},
+      "collections": ["beber", "drink", "beverage"], "curriculumRole": "supporting"
+    },
+    {
+      "id": "beber-algo-have",
+      "spanish": "beber [algo]",
+      "english": "to have [a beverage]",
+      "example": {"spanish": "Bebo un café después del almuerzo.", "english": "I have a coffee after lunch."},
+      "collections": ["beber", "have", "beverage"], "curriculumRole": "supporting"
+    },
+    {
+      "id": "take-off",
+      "spanish": "despegar",
+      "english": "to take off",
+      "example": {"spanish": "El avión despegó a las ocho.", "english": "The plane took off at eight."},
+      "collections": ["tomar", "take", "phrasal verb", "off"], "curriculumRole": "reference"
+    },
+    {
+      "id": "take-off-clothing",
+      "spanish": "quitarse [algo]",
+      "english": "to take off [something]",
+      "example": {"spanish": "Quítate los zapatos.", "english": "Take off your shoes."},
+      "collections": ["tomar", "take", "phrasal verb", "off"], "curriculumRole": "supporting"
+    },
+    {
+      "id": "take-on",
+      "spanish": "asumir [algo]",
+      "english": "to take on [something]",
+      "example": {"spanish": "Aceptó una responsabilidad nueva.", "english": "She took on a new responsibility."},
+      "collections": ["tomar", "take", "phrasal verb", "on"], "curriculumRole": "reference"
+    },
+    {
+      "id": "take-up",
+      "spanish": "empezar [una actividad]",
+      "english": "to take up [something]",
+      "example": {"spanish": "Empezó a practicar natación.", "english": "She took up swimming."},
+      "collections": ["tomar", "take", "phrasal verb", "up"], "curriculumRole": "reference"
+    },
+    {
+      "id": "take-in",
+      "spanish": "engañar [a alguien]",
+      "english": "to take in [somebody/something]",
+      "example": {"spanish": "La historia me engañó por completo.", "english": "The story took me in completely."},
+      "collections": ["tomar", "take", "phrasal verb", "in"], "curriculumRole": "reference"
+    },
+    {
+      "id": "take-out",
+      "spanish": "sacar [algo]",
+      "english": "to take out [something]",
+      "example": {"spanish": "Saca el libro de la bolsa.", "english": "Take the book out of the bag."},
+      "collections": ["tomar", "take", "phrasal verb", "out"], "curriculumRole": "supporting"
+    },
+    {
+      "id": "take-back",
+      "spanish": "devolver [algo]",
+      "english": "to take back [something]",
+      "example": {"spanish": "Devuélvelo a la tienda.", "english": "Take it back to the store."},
+      "collections": ["tomar", "take", "phrasal verb", "back"], "curriculumRole": "supporting"
+    },
+    {
+      "id": "take-down",
+      "spanish": "bajar [algo]",
+      "english": "to take down [something]",
+      "example": {"spanish": "Baja el cartel de la pared.", "english": "Take the sign down from the wall."},
+      "collections": ["tomar", "take", "phrasal verb", "down"], "curriculumRole": "supporting"
+    },
+    {
+      "id": "take-apart",
+      "spanish": "desarmar [algo]",
+      "english": "to take apart [something]",
+      "example": {"spanish": "Desarmó la máquina para repararla.", "english": "He took the machine apart to repair it."},
+      "collections": ["tomar", "take", "phrasal verb", "apart"], "curriculumRole": "reference"
+    },
+    {
+      "id": "take-after",
+      "spanish": "parecerse a [alguien]",
+      "english": "to take after [somebody]",
+      "example": {"spanish": "Se parece a su madre.", "english": "She takes after her mother."},
+      "collections": ["tomar", "take", "phrasal verb", "after"], "curriculumRole": "reference"
+    },
+    {
+      "id": "take-away",
+      "spanish": "llevarse [algo]",
+      "english": "to take away [something]",
+      "example": {"spanish": "Llévate estos documentos.", "english": "Take these documents away."},
+      "collections": ["tomar", "take", "phrasal verb", "away"], "curriculumRole": "supporting"
+    },
+    {
+      "id": "take-to",
+      "spanish": "empezar a gustarle [algo] a alguien",
+      "english": "to take to [something/somebody]",
+      "example": {"spanish": "Al niño le gustó rápidamente su nueva escuela.", "english": "The child took to his new school quickly."},
+      "collections": ["tomar", "take", "phrasal verb", "to"], "curriculumRole": "reference"
+    },
+    {
+      "id": "take-care-of",
+      "spanish": "cuidar de [alguien/algo]",
+      "english": "to take care of [somebody/something]",
+      "example": {"spanish": "Cuida a los niños esta tarde.", "english": "Take care of the children this afternoon."},
+      "collections": ["tomar", "take", "verb + preposition", "of"], "curriculumRole": "supporting"
+    },
+    {
+      "id": "take-part-in",
+      "spanish": "participar en [algo]",
+      "english": "to take part in [something]",
+      "example": {"spanish": "Participó en la reunión.", "english": "She took part in the meeting."},
+      "collections": ["tomar", "take", "verb + preposition", "in"], "curriculumRole": "reference"
+    },
+    {
+      "id": "take-advantage-of",
+      "spanish": "aprovecharse de [algo/alguien]",
+      "english": "to take advantage of [something/somebody]",
+      "example": {"spanish": "Aprovechó la oportunidad.", "english": "She took advantage of the opportunity."},
+      "collections": ["tomar", "take", "verb + preposition", "of"], "curriculumRole": "supporting"
+    },
+    {
+      "id": "drink-up",
+      "spanish": "beber [algo] todo",
+      "english": "to drink [something] up",
+      "example": {"spanish": "Bébete todo el jugo.", "english": "Drink up all the juice."},
+      "collections": ["beber", "drink", "phrasal verb", "up"], "curriculumRole": "supporting"
+    },
+    {
+      "id": "drink-in",
+      "spanish": "absorber [algo]",
+      "english": "to drink in [something]",
+      "example": {"spanish": "Absorbió el paisaje con los ojos.", "english": "She drank in the beautiful landscape."},
+      "collections": ["beber", "drink", "phrasal verb", "in"], "curriculumRole": "reference"
+    },
+    {
+      "id": "drink-to",
+      "spanish": "brindar por [alguien/algo]",
+      "english": "to drink to [somebody/something]",
+      "example": {"spanish": "Brindemos por el nuevo proyecto.", "english": "Let's drink to the new project."},
+      "collections": ["beber", "drink", "verb + preposition", "to"], "curriculumRole": "reference"
+    },
+    {
+      "id": "drink-away",
+      "spanish": "beber [algo] para olvidar",
+      "english": "to drink away [something]",
+      "example": {"spanish": "Intentó olvidar sus problemas bebiendo.", "english": "He tried to drink his problems away."},
+      "collections": ["beber", "drink", "phrasal verb", "away"], "curriculumRole": "reference"
+    },
+    {
+      "id": "drink-out-of",
+      "spanish": "beber de [un recipiente]",
+      "english": "to drink out of [a container]",
+      "example": {"spanish": "El niño bebió del vaso grande.", "english": "The child drank out of the large cup."},
+      "collections": ["beber", "drink", "verb + preposition", "out", "of"], "curriculumRole": "reference"
     }
   ]
 }

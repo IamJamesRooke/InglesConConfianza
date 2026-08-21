@@ -7,6 +7,7 @@ export type ReviewCandidate = CurriculumConcept & {
   sourcePaths: string[];
   rationale: string;
   approved: boolean;
+  deleted?: boolean;
   ownerNote: string;
 };
 

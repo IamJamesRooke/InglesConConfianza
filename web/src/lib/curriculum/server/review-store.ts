@@ -49,6 +49,7 @@ export function isReviewCandidate(value: unknown): value is ReviewCandidate {
     typeof candidate.rationale === "string" &&
     candidate.rationale.trim().length > 0 &&
     typeof candidate.approved === "boolean" &&
+    (candidate.deleted === undefined || typeof candidate.deleted === "boolean") &&
     typeof candidate.ownerNote === "string"
   );
 }

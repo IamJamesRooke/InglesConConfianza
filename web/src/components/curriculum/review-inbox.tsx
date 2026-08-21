@@ -1,6 +1,5 @@
 "use client";
 
-import { Check } from "lucide-react";
 import { useState } from "react";
 
 import {
@@ -70,10 +69,13 @@ export function ReviewInbox({ initialBatches }: { initialBatches: ReviewBatch[] 
         <section key={batch.id} className="rounded-xl border border-border bg-card shadow-sm">
           {(() => {
             const pendingCandidates = batch.candidates.filter(
-              (candidate) => !candidate.approved,
+              (candidate) => !candidate.approved && !candidate.deleted,
             );
             const approvedCandidates = batch.candidates.filter(
-              (candidate) => candidate.approved,
+              (candidate) => candidate.approved && !candidate.deleted,
+            );
+            const deletedCandidates = batch.candidates.filter(
+              (candidate) => candidate.deleted,
             );
 
             if (batch.candidates.length === 0) return null;
@@ -88,6 +90,8 @@ export function ReviewInbox({ initialBatches }: { initialBatches: ReviewBatch[] 
             <p className="mt-2 text-sm text-muted-foreground">
               {pendingCandidates.length > 0
                 ? `${pendingCandidates.length} candidate${pendingCandidates.length === 1 ? "" : "s"} awaiting approval. Choose a final role, add a note if needed, and check the approval button when it is ready to migrate.`
+                : approvedCandidates.length === 0 && deletedCandidates.length > 0
+                  ? "All remaining candidates have been deleted. Deleted entries stay in the review history with their notes."
                 : "All candidates in this batch are approved and ready to migrate."}
             </p>
             <p className="mt-3 text-xs text-muted-foreground">
@@ -158,14 +162,31 @@ export function ReviewInbox({ initialBatches }: { initialBatches: ReviewBatch[] 
                           onClick={() =>
                             void saveCandidate(batch.id, {
                               ...candidate,
+                              approved: false,
+                              deleted: true,
+                            })
+                          }
+                          aria-pressed={candidate.deleted === true}
+                          className={`rounded-md border px-2 py-1 text-sm font-semibold transition disabled:opacity-60 ${
+                            candidate.deleted
+                              ? "border-red-600 bg-red-600 text-white"
+                              : "border-input bg-background text-muted-foreground hover:text-foreground"
+                          }`}
+                        >
+                          Delete
+                        </button>
+                        <button
+                          type="button"
+                          disabled={savingCandidateId !== null}
+                          onClick={() =>
+                            void saveCandidate(batch.id, {
+                              ...candidate,
                               approved: true,
                             })
                           }
-                          aria-label="Approve for migration"
-                          title="Approve for migration"
-                          className="inline-flex size-8 items-center justify-center rounded-md border border-emerald-600 bg-emerald-600 text-white transition hover:bg-emerald-700 disabled:opacity-60"
+                          className="rounded-md border border-emerald-600 bg-emerald-600 px-3 py-1 text-sm font-semibold text-white transition hover:bg-emerald-700 disabled:opacity-60"
                         >
-                          <Check className="size-4" aria-hidden="true" />
+                          Done
                         </button>
                       </div>
                     </div>
@@ -258,6 +279,45 @@ export function ReviewInbox({ initialBatches }: { initialBatches: ReviewBatch[] 
                       className="rounded-md border border-input bg-background px-2.5 py-1 text-xs font-semibold text-muted-foreground transition hover:text-foreground disabled:opacity-60"
                     >
                       Undo approval
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+          {deletedCandidates.length > 0 && (
+            <div className="border-t border-border bg-red-500/5 p-5">
+              <h3 className="text-sm font-semibold text-foreground">
+                Deleted ({deletedCandidates.length})
+              </h3>
+              <div className="mt-3 space-y-2">
+                {deletedCandidates.map((candidate) => (
+                  <div
+                    key={candidate.id}
+                    className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-red-600/25 bg-card px-3 py-2"
+                  >
+                    <div className="text-sm">
+                      <span className="font-medium">{candidate.spanish}</span>
+                      <span className="mx-2 text-muted-foreground">→</span>
+                      <span className="text-muted-foreground">{candidate.english}</span>
+                      {candidate.ownerNote && (
+                        <p className="mt-1 text-xs text-muted-foreground">
+                          Note: {candidate.ownerNote}
+                        </p>
+                      )}
+                    </div>
+                    <button
+                      type="button"
+                      disabled={savingCandidateId !== null}
+                      onClick={() =>
+                        void saveCandidate(batch.id, {
+                          ...candidate,
+                          deleted: false,
+                        })
+                      }
+                      className="rounded-md border border-input bg-background px-2.5 py-1 text-xs font-semibold text-muted-foreground transition hover:text-foreground disabled:opacity-60"
+                    >
+                      Undo delete
                     </button>
                   </div>
                 ))}

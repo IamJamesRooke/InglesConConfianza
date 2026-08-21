@@ -2,6 +2,13 @@
 
 This document records the working decisions that emerge while representative curriculum data is entered in JSON. These are migration checkpoints, not a frozen relational schema.
 
+## 2026-08-21 — Migrate tomar and beber
+
+- Migrated 28 approved mappings across `tomar` and `beber`, including their overlapping `drink` and conversational `have` realizations.
+- Added broad `take` and `drink` phrasal-verb and connector coverage, keeping only foundational meanings Core and retaining advanced constructions as Supporting or Reference.
+- Excluded the owner's deleted measurement and route duplicates from the database while preserving their review notes.
+- Archived the dedicated `tomar` source folder at `docs/curriculum-archive/mappings/spanish-to-english/tomar`; `beber` had no dedicated Spanish-to-English folder.
+
 ## 2026-08-21 — Migrate comer and phrasal-verb family
 
 - Migrated the approved `comer` mappings, including direct food meanings and the broader phrasal-verb family: `eat up`, `eat out`, `eat in`, `eat away at`, `eat into`, and `eat through`.
