@@ -519,6 +519,132 @@
         "followed by full infinitive"
       ],
       "curriculumRole": "supporting"
+    },
+    {
+      "id": "comer-algo-eat",
+      "spanish": "comer [algo]",
+      "english": "to eat [something]",
+      "example": {
+        "spanish": "Como una arepa en el desayuno.",
+        "english": "I eat an arepa for breakfast."
+      },
+      "collections": [
+        "comer",
+        "eat"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "comer-algo-have-food",
+      "spanish": "comer [algo]",
+      "english": "to have [something]",
+      "example": {
+        "spanish": "Como una arepa en el desayuno.",
+        "english": "I have an arepa for breakfast."
+      },
+      "collections": [
+        "comer",
+        "have",
+        "food"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "comer-algo-eat-up",
+      "spanish": "comer [algo] todo",
+      "english": "to eat [something] up",
+      "example": {
+        "spanish": "Cómete toda la comida.",
+        "english": "Eat up all the food."
+      },
+      "collections": [
+        "comer",
+        "eat",
+        "phrasal verb",
+        "up"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "comer-fuera-eat-out",
+      "spanish": "comer fuera",
+      "english": "to eat out",
+      "example": {
+        "spanish": "Comemos fuera los viernes.",
+        "english": "We eat out on Fridays."
+      },
+      "collections": [
+        "comer",
+        "eat",
+        "phrasal verb",
+        "out"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "comer-en-casa-eat-in",
+      "spanish": "comer en casa",
+      "english": "to eat in",
+      "example": {
+        "spanish": "Hoy comemos en casa.",
+        "english": "We're eating in today."
+      },
+      "collections": [
+        "comer",
+        "eat",
+        "phrasal verb",
+        "in"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "comer-desgastar-eat-away-at",
+      "spanish": "desgastar [algo] poco a poco",
+      "english": "to eat away at [something]",
+      "example": {
+        "spanish": "La humedad desgasta poco a poco la pared.",
+        "english": "The moisture is eating away at the wall."
+      },
+      "collections": [
+        "comer",
+        "eat",
+        "phrasal verb",
+        "away",
+        "at"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "comer-reducir-eat-into",
+      "spanish": "reducir [algo] gradualmente",
+      "english": "to eat into [something]",
+      "example": {
+        "spanish": "Los gastos reducen poco a poco nuestros ahorros.",
+        "english": "The expenses are eating into our savings."
+      },
+      "collections": [
+        "comer",
+        "eat",
+        "phrasal verb",
+        "into"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "comer-consumir-eat-through",
+      "spanish": "consumir [algo] por completo",
+      "english": "to eat through [something]",
+      "example": {
+        "spanish": "La familia consumió todas las provisiones durante el viaje.",
+        "english": "The family ate through all the supplies during the trip."
+      },
+      "collections": [
+        "comer",
+        "eat",
+        "phrasal verb",
+        "through"
+      ],
+      "curriculumRole": "reference"
     }
   ]
 }

@@ -362,6 +362,209 @@
           "ownerNote": ""
         }
       ]
+    },
+    {
+      "id": "comer-completeness-audit-2026-08-21",
+      "title": "Comer completeness audit",
+      "sourcePaths": [
+        "docs/curriculum/mappings/spanish-to-english/comer"
+      ],
+      "createdAt": "2026-08-21",
+      "status": "migrated",
+      "migratedAt": "2026-08-21",
+      "archivePath": "docs/curriculum-archive/mappings/spanish-to-english/comer",
+      "candidates": [
+        {
+          "id": "comer-algo-eat",
+          "action": "add",
+          "suggestedCurriculumRole": "core",
+          "spanish": "comer [algo]",
+          "english": "to eat [something]",
+          "example": {
+            "spanish": "Como una arepa en el desayuno.",
+            "english": "I eat an arepa for breakfast."
+          },
+          "collections": [
+            "comer",
+            "eat"
+          ],
+          "curriculumRole": "core",
+          "sourcePaths": [
+            "docs/curriculum/mappings/spanish-to-english/comer/01-eat-or-have.md"
+          ],
+          "rationale": "Eat is the direct, high-frequency English mapping and the foundational choice for the Spanish verb.",
+          "approved": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "comer-algo-have-food",
+          "action": "add",
+          "suggestedCurriculumRole": "supporting",
+          "spanish": "comer [algo]",
+          "english": "to have [something]",
+          "example": {
+            "spanish": "Como una arepa en el desayuno.",
+            "english": "I have an arepa for breakfast."
+          },
+          "collections": [
+            "comer",
+            "have",
+            "food"
+          ],
+          "curriculumRole": "supporting",
+          "sourcePaths": [
+            "docs/curriculum/mappings/spanish-to-english/comer/01-eat-or-have.md"
+          ],
+          "rationale": "Conversational English often uses have for eating a meal or food, but eat is the clearer foundational mapping and should be taught first.",
+          "approved": true,
+          "ownerNote": "you got the idea.. if there are two mappings, the most common one should be taught in higher priority than the least common one"
+        },
+        {
+          "id": "comer-algo-eat-up",
+          "action": "add",
+          "suggestedCurriculumRole": "supporting",
+          "spanish": "comer [algo] todo",
+          "english": "to eat [something] up",
+          "example": {
+            "spanish": "Cómete toda la comida.",
+            "english": "Eat up all the food."
+          },
+          "collections": [
+            "comer",
+            "eat",
+            "phrasal verb",
+            "up"
+          ],
+          "curriculumRole": "supporting",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/up/completion-and-creation/01-finish-eat-and-use-up.md"
+          ],
+          "rationale": "Eat up adds the particle up to emphasize consuming everything or reaching completion. It is a distinct phrasal-verb teaching target rather than ordinary eat.",
+          "approved": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "comer-fuera-eat-out",
+          "action": "add",
+          "suggestedCurriculumRole": "supporting",
+          "spanish": "comer fuera",
+          "english": "to eat out",
+          "example": {
+            "spanish": "Comemos fuera los viernes.",
+            "english": "We eat out on Fridays."
+          },
+          "collections": [
+            "comer",
+            "eat",
+            "phrasal verb",
+            "out"
+          ],
+          "curriculumRole": "supporting",
+          "sourcePaths": [
+            "owner-requested phrasal-verb completeness audit"
+          ],
+          "rationale": "Eat out is a common everyday phrasal verb meaning eat at a restaurant or away from home. It deserves a separate Supporting entry from ordinary eat.",
+          "approved": true,
+          "ownerNote": "also, another point, eat out can have a sexual connotation of oral sex -- we do not want to include sexual vocabulary in the course, students will figure that out on their own"
+        },
+        {
+          "id": "comer-en-casa-eat-in",
+          "action": "add",
+          "suggestedCurriculumRole": "supporting",
+          "spanish": "comer en casa",
+          "english": "to eat in",
+          "example": {
+            "spanish": "Hoy comemos en casa.",
+            "english": "We're eating in today."
+          },
+          "collections": [
+            "comer",
+            "eat",
+            "phrasal verb",
+            "in"
+          ],
+          "curriculumRole": "supporting",
+          "sourcePaths": [
+            "owner-requested phrasal-verb completeness audit"
+          ],
+          "rationale": "Eat in contrasts naturally with eat out and is useful for everyday meal plans, but it is not a first-priority Core mapping.",
+          "approved": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "comer-desgastar-eat-away-at",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "desgastar [algo] poco a poco",
+          "english": "to eat away at [something]",
+          "example": {
+            "spanish": "La humedad desgasta poco a poco la pared.",
+            "english": "The moisture is eating away at the wall."
+          },
+          "collections": [
+            "comer",
+            "eat",
+            "phrasal verb",
+            "away",
+            "at"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "owner-requested phrasal-verb completeness audit"
+          ],
+          "rationale": "Eat away at is a figurative erosion or gradual-damage phrasal verb. It belongs in the family for retrieval, but its meaning is advanced and nonliteral.",
+          "approved": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "comer-reducir-eat-into",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "reducir [algo] gradualmente",
+          "english": "to eat into [something]",
+          "example": {
+            "spanish": "Los gastos reducen poco a poco nuestros ahorros.",
+            "english": "The expenses are eating into our savings."
+          },
+          "collections": [
+            "comer",
+            "eat",
+            "phrasal verb",
+            "into"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "owner-requested phrasal-verb completeness audit"
+          ],
+          "rationale": "Eat into means gradually reduce a resource such as time, money, or savings. It is useful advanced language but not a foundational food meaning.",
+          "approved": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "comer-consumir-eat-through",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "consumir [algo] por completo",
+          "english": "to eat through [something]",
+          "example": {
+            "spanish": "La familia consumió todas las provisiones durante el viaje.",
+            "english": "The family ate through all the supplies during the trip."
+          },
+          "collections": [
+            "comer",
+            "eat",
+            "phrasal verb",
+            "through"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "owner-requested phrasal-verb completeness audit"
+          ],
+          "rationale": "Eat through describes consuming an entire supply or resource. It is a legitimate particle construction, but less frequent and more advanced than eat out or eat up.",
+          "approved": true,
+          "ownerNote": ""
+        }
+      ]
     }
   ]
 }

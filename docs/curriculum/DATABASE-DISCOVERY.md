@@ -2,6 +2,12 @@
 
 This document records the working decisions that emerge while representative curriculum data is entered in JSON. These are migration checkpoints, not a frozen relational schema.
 
+## 2026-08-21 — Migrate comer and phrasal-verb family
+
+- Migrated the approved `comer` mappings, including direct food meanings and the broader phrasal-verb family: `eat up`, `eat out`, `eat in`, `eat away at`, `eat into`, and `eat through`.
+- Kept the neutral food meaning for `eat out`; the owner explicitly does not want sexual vocabulary or senses included in course content.
+- Archived the dedicated source folder at `docs/curriculum-archive/mappings/spanish-to-english/comer`.
+
 ## 2026-08-21 — Migrate necesitar and spoken-reduction follow-ups
 
 - Migrated the approved `necesitar` audit: personal need, need + full infinitive, need somebody + full infinitive, and impersonal `se necesita`.
