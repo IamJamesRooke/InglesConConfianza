@@ -52,9 +52,6 @@ const completedVerbFamilies = [
   "deber",
   "dejar",
   "echar",
-];
-
-const todoVerbFamilies = [
   "recordar",
   "robar",
   "saber",
@@ -75,6 +72,8 @@ const todoVerbFamilies = [
   "ver",
   "volver",
 ];
+
+const todoVerbFamilies: string[] = [];
 
 export default async function CurriculumProgressPage() {
   const [curriculum, review] = await Promise.all([

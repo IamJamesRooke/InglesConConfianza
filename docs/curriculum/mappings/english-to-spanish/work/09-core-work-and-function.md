@@ -1,17 +1,6 @@
-# Living, Learning, and Working: **Work**
+# Functioning Correctly: **Work**
 
-English **work** can refer to a person's job or to something functioning correctly.
-
-## Doing a job
-
-| Spanish | English |
-|---|---|
-| trabajar | **to work** |
-
-**Trabajo en una oficina cerca de mi casa.**<br>
-I work in an office near my home.
-
-## Functioning correctly
+When **work** means operate correctly, Spanish uses **funcionar**.
 
 | Spanish | English |
 |---|---|
@@ -20,4 +9,4 @@ I work in an office near my home.
 **La impresora no funciona hoy.**<br>
 The printer does not work today.
 
-**Function** is more formal than **work** in this meaning.
+**Function** is more formal than **work** in this meaning. Employment meanings headed by **trabajar** are now in the curriculum database.

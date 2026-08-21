@@ -134,7 +134,6 @@ These maps begin with a frequent English source word whose natural Spanish chang
 - [**keep**](keep/README.md)
 - [**kill**](kill/README.md)
 - [**kind**](kind/README.md)
-- [**know**](know/README.md)
 - [**late**](late/README.md)
 - [**later**](later/README.md)
 - [**lead**](lead/README.md)

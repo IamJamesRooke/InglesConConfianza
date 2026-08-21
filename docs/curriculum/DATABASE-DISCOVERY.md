@@ -2,6 +2,15 @@
 
 This document records the working decisions that emerge while representative curriculum data is entered in JSON. These are migration checkpoints, not a frozen relational schema.
 
+## 2026-08-21 — Complete the remaining verb-family migration
+
+- Migrated the 57 remaining Todo verb families directly into the JSON discovery database after the owner accepted the established curation workflow for bulk use. Review history remains intact, but this pass did not create artificial review batches for already-authorized migration work.
+- Large inflection-heavy source hubs such as `ser`, `estar`, `haber`, and `tener` confirmed the concept-compression rule: ordinary person, number, tense, and mood forms are evidence for a reusable concept, not independent database rows. Preserve a surface form only when it changes the natural English mapping, register, or learner behavior.
+- Before consuming a parent source family, relocate genuinely unprocessed nested families to canonical top-level locations. This pass separated families such as `lograr`, `obtener`, `enviar`, `ordenar`, `detener`, `aparecer`, `acordar`, `mantener`, `mirar`, `devolver`, and `regresar` rather than deleting or silently absorbing them.
+- When a newly audited family reaches an exact Spanish–English edge already present under another family, retain the existing stable ID and add the new family collection. Cross-family membership is metadata; it is not a reason to duplicate the concept.
+- Reverse English hubs and mixed vocabulary, structure, transformation, and confusion-set files remain row-level sources. Remove only captured material and preserve unrelated future-family content; fully dedicated consumed sources continue to be deleted under the one-look policy.
+- Bulk completeness work still uses asymmetric curation: protect plausible independent language from loss, keep Core elite, reserve Supporting for broadly reusable everyday constructions, and place most alternate targets, advanced particles, formal distinctions, and narrow word-family forms in Reference.
+
 ## 2026-08-21 — Tighten curriculum-role selection
 
 - **Core** is an elite, highly selective tier. Every recommendation needs a strong functional-necessity justification; commonness alone is insufficient.

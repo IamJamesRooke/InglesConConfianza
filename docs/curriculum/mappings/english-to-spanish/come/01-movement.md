@@ -1,7 +1,7 @@
-# **Come → Venir**
+# **Come Home → Regresar**
 
 | English | Spanish |
 |---|---|
-| Come here, and come home early. | Ven aquí y regresa temprano a casa. |
+| Come home early. | Regresa temprano a casa. |
 
-Movement toward the speaker commonly uses **venir**, but **come home** may naturally become **volver/regresar a casa**.
+English **come home** may naturally become **regresar a casa**. Direct movement headed by **venir** is now in the curriculum database.

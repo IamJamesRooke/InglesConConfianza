@@ -1,8 +1,8 @@
 # Uses of **Remember**
 
-English **remember** maps to **recordar**, **acordarse de**, or the negative bridge **no olvidar**.
+The remaining English **remember** sources map to **acordarse de** or the negative bridge **no olvidar**. The consumed **recordar** family now lives in the curriculum database.
 
 | Lesson | Spanish | English |
 |---|---|---|
-| [Remember Information](01-remember-information.md) | Recuerdo su nombre. | I remember her name. |
+| [Remember with **No Olvidar**](01-remember-information.md) | No olvides la cita. | Remember the appointment. |
 | [Remember with **Acordarse**](02-remember-with-acordarse.md) | Me acuerdo de su nombre. | I remember her name. |

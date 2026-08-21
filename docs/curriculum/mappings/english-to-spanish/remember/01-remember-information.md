@@ -1,10 +1,10 @@
-# **Remember** Information
+# **Remember → No Olvidar**
 
-Use **remember** when information remains in or returns to your mind.
+Spanish can express an instruction to remember something through the negative bridge **no olvidar**.
 
 | Spanish | English |
 |---|---|
-| recordar, no olvidar | **to remember** |
+| no olvidar [algo] | **to remember [something]** |
 
-**Recuerdo el nombre de la profesora.**<br>
-I remember the teacher's name.
+**No olvides la cita de mañana.**<br>
+Remember tomorrow's appointment.
