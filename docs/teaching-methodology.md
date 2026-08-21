@@ -173,6 +173,26 @@ The preferred sequence is:
 
 The rule confirms what the learner has begun to notice; it is not the first thing they must decipher.
 
+## Verbs as the spine of language
+
+Verbs are the organizing spine of language. A learner who masters how verbs express actions, states, intentions, possibilities, and relationships gains the machinery needed to build and understand complete thoughts.
+
+- Let verbs provide the backbone for curriculum discovery and organization.
+- Teach a verb as more than an isolated dictionary translation: include its useful meanings, forms, sentence patterns, and context-dependent English realizations.
+- Prioritize high-utility verbs and the constructions they unlock so a limited vocabulary can produce a large amount of useful language.
+- Build outward from verbs into subjects, objects, complements, questions, negations, time, and connected ideas.
+- Treat verb mastery as usable production across forms and contexts, not simple recognition or memorization of an infinitive pair.
+
+## The three disciplines of curriculum design
+
+Effective curriculum design depends on three connected disciplines:
+
+1. **Curation:** Teach only what is necessary and useful. Protect the learner from low-value, excessively situational, archaic, or merely dictionary-complete material.
+2. **Information architecture:** Organize language into clear, reusable concepts and chunk each concept at the level that makes it easiest to understand, retrieve, and combine.
+3. **Sequencing:** Arrange lessons so each one scaffolds logically onto what came before, introduces only answerable next steps, and schedules deliberate Anki-like retrieval over time for long-term retention.
+
+Curriculum priority supports curation but does not replace sequencing. Concepts receive one of six color-coded tiers: **Essential**, **Important**, **Post-Mastery**, **Enrichment**, **Supplemental**, or **Reference**. The course should concentrate on stronger-priority language before lower-value material, while ordering concepts according to prerequisites, teaching clarity, and lesson flow rather than treating the tier as a fixed lesson sequence.
+
 ## Questions and answers
 
 - Questions should be short and written in Spanish.

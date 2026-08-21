@@ -1,0 +1,271 @@
+{
+  "version": 1,
+  "concepts": [
+    {
+      "id": "querer-algo",
+      "spanish": "querer [algo]",
+      "english": "to want [something]",
+      "example": { "spanish": "Quiero algo.", "english": "I want something." },
+      "collections": [
+        "querer",
+        "want"
+      ],
+      "teachingPriority": "essential"
+    },
+    {
+      "id": "querer-hacer-algo",
+      "spanish": "querer [hacer algo]",
+      "english": "to want [to do something]",
+      "example": { "spanish": "Quiero hacerlo.", "english": "I want to do it." },
+      "collections": [
+        "querer",
+        "want"
+      ],
+      "teachingPriority": "essential"
+    },
+    {
+      "id": "querer-que-alguien-haga-algo",
+      "spanish": "querer que [alguien] [hacer algo]",
+      "english": "to want [somebody] [to do something]",
+      "example": { "spanish": "Quiero que lo haga.", "english": "I want him to do it." },
+      "collections": [
+        "querer",
+        "want",
+        "somebody to do something"
+      ],
+      "teachingPriority": "essential"
+    },
+    {
+      "id": "querer-a-alguien",
+      "spanish": "querer a [alguien]",
+      "english": "to love [somebody]",
+      "example": { "spanish": "Lo quiero.", "english": "I love him." },
+      "collections": [
+        "querer",
+        "love"
+      ],
+      "teachingPriority": "essential"
+    },
+    {
+      "id": "querer-decir",
+      "spanish": "querer decir",
+      "english": "to mean",
+      "example": { "spanish": "¿Qué quiere decir?", "english": "What does it mean?" },
+      "collections": [
+        "querer",
+        "mean"
+      ],
+      "teachingPriority": "essential"
+    },
+    {
+      "id": "quisiera-algo",
+      "spanish": "quisiera [algo]",
+      "english": "would like [something]",
+      "example": { "spanish": "Quisiera algo.", "english": "I would like something." },
+      "collections": [
+        "querer",
+        "would",
+        "like"
+      ],
+      "teachingPriority": "important"
+    },
+    {
+      "id": "quisiera-hacer-algo",
+      "spanish": "quisiera [hacer algo]",
+      "english": "would like [to do something]",
+      "example": { "spanish": "Quisiera hacerlo.", "english": "I would like to do it." },
+      "collections": [
+        "querer",
+        "would",
+        "like"
+      ],
+      "teachingPriority": "important"
+    },
+    {
+      "id": "quisiera-que-alguien-hiciera-algo",
+      "spanish": "quisiera que [alguien] [hacer algo]",
+      "english": "would like [somebody] [to do something]",
+      "example": { "spanish": "Quisiera que lo hiciera.", "english": "I would like him to do it." },
+      "collections": [
+        "querer",
+        "would",
+        "like",
+        "somebody to do something"
+      ],
+      "teachingPriority": "important"
+    },
+    {
+      "id": "quiso-hacer-algo-intento-no-logrado",
+      "spanish": "quiso [hacer algo] (intento no logrado)",
+      "english": "tried [to do something]",
+      "example": { "spanish": "Quiso hacerlo, pero no pudo.", "english": "He tried to do it, but he couldn't." },
+      "collections": [
+        "querer",
+        "try"
+      ],
+      "teachingPriority": "enrichment"
+    },
+    {
+      "id": "no-quiso-hacer-algo",
+      "spanish": "no quiso [hacer algo]",
+      "english": "refused [to do something]",
+      "example": { "spanish": "No quiso hacerlo.", "english": "He refused to do it." },
+      "collections": [
+        "querer"
+      ],
+      "teachingPriority": "enrichment"
+    },
+    {
+      "id": "no-quiso-hacer-algo-would-not",
+      "spanish": "no quiso [hacer algo]",
+      "english": "wouldn't [do something]",
+      "example": { "spanish": "No quiso hacerlo.", "english": "He wouldn't do it." },
+      "collections": [
+        "querer",
+        "would",
+        "not"
+      ],
+      "teachingPriority": "enrichment"
+    },
+    {
+      "id": "querer-hacer-algo-intencion",
+      "spanish": "querer [hacer algo] (tener la intención)",
+      "english": "to mean [to do something]",
+      "example": { "spanish": "Quería hacerlo.", "english": "I meant to do it." },
+      "collections": [
+        "querer",
+        "mean"
+      ],
+      "teachingPriority": "enrichment"
+    },
+    {
+      "id": "sin-querer",
+      "spanish": "sin querer",
+      "english": "accidentally",
+      "example": { "spanish": "Lo hice sin querer.", "english": "I did it accidentally." },
+      "collections": [
+        "querer"
+      ],
+      "teachingPriority": "post_mastery"
+    },
+    {
+      "id": "sin-querer-unintentionally",
+      "spanish": "sin querer",
+      "english": "unintentionally",
+      "example": { "spanish": "Lo hice sin querer.", "english": "I did it unintentionally." },
+      "collections": [
+        "querer"
+      ],
+      "teachingPriority": "supplemental"
+    },
+    {
+      "id": "hacerlo-queriendo",
+      "spanish": "[hacer algo] queriendo",
+      "english": "[to do something] on purpose",
+      "example": { "spanish": "Lo hice queriendo.", "english": "I did it on purpose." },
+      "collections": [
+        "querer",
+        "on"
+      ],
+      "teachingPriority": "enrichment"
+    },
+    {
+      "id": "hacerlo-queriendo-deliberately",
+      "spanish": "[hacer algo] queriendo",
+      "english": "[to do something] deliberately",
+      "example": { "spanish": "Lo hice queriendo.", "english": "I did it deliberately." },
+      "collections": [
+        "querer"
+      ],
+      "teachingPriority": "supplemental"
+    },
+    {
+      "id": "donde-quieras",
+      "spanish": "donde quieras",
+      "english": "wherever you want",
+      "example": { "spanish": "Donde quieras.", "english": "Wherever you want." },
+      "collections": [
+        "querer",
+        "where",
+        "ever",
+        "want"
+      ],
+      "teachingPriority": "post_mastery"
+    },
+    {
+      "id": "cuando-quieras",
+      "spanish": "cuando quieras",
+      "english": "whenever you want",
+      "example": { "spanish": "Cuando quieras.", "english": "Whenever you want." },
+      "collections": [
+        "querer",
+        "when",
+        "ever",
+        "want"
+      ],
+      "teachingPriority": "post_mastery"
+    },
+    {
+      "id": "lo-que-quieras",
+      "spanish": "lo que quieras",
+      "english": "whatever you want",
+      "example": { "spanish": "Lo que quieras.", "english": "Whatever you want." },
+      "collections": [
+        "querer",
+        "what",
+        "ever",
+        "want"
+      ],
+      "teachingPriority": "post_mastery"
+    },
+    {
+      "id": "quien-quiera",
+      "spanish": "quien quiera",
+      "english": "whoever wants to",
+      "example": { "spanish": "Quien quiera puede hacerlo.", "english": "Whoever wants to can do it." },
+      "collections": [
+        "querer",
+        "who",
+        "ever",
+        "want"
+      ],
+      "teachingPriority": "post_mastery"
+    },
+    {
+      "id": "como-quieras",
+      "spanish": "como quieras",
+      "english": "however you want",
+      "example": { "spanish": "Hazlo como quieras.", "english": "Do it however you want." },
+      "collections": [
+        "querer",
+        "how",
+        "ever",
+        "want"
+      ],
+      "teachingPriority": "post_mastery"
+    },
+    {
+      "id": "como-quieras-as-you-wish",
+      "spanish": "como quieras",
+      "english": "as you wish",
+      "example": { "spanish": "Como quieras.", "english": "As you wish." },
+      "collections": [
+        "querer"
+      ],
+      "teachingPriority": "enrichment"
+    },
+    {
+      "id": "quiera-o-no",
+      "spanish": "quiera o no",
+      "english": "whether one likes it or not",
+      "example": { "spanish": "Quiera o no.", "english": "Whether he likes it or not." },
+      "collections": [
+        "querer",
+        "whether",
+        "like",
+        "not"
+      ],
+      "teachingPriority": "enrichment"
+    }
+  ]
+}
