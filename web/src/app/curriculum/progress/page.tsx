@@ -3,7 +3,18 @@ import { readReviewFile } from "@/lib/curriculum/server/review-store";
 
 export const dynamic = "force-dynamic";
 
-const completedVerbFamilies = ["querer", "necesitar", "comer", "tomar", "beber"];
+const completedVerbFamilies = [
+  "querer",
+  "necesitar",
+  "comer",
+  "tomar",
+  "beber",
+  "hablar",
+  "decir",
+  "dar",
+  "pedir",
+  "poner",
+];
 
 const todoVerbFamilies = [
   "abrir",
@@ -15,9 +26,7 @@ const todoVerbFamilies = [
   "contar",
   "costar",
   "creer",
-  "dar",
   "deber",
-  "decir",
   "dejar",
   "echar",
   "enseñar",
@@ -29,7 +38,6 @@ const todoVerbFamilies = [
   "ganar",
   "gustar",
   "haber",
-  "hablar",
   "hacer",
   "ir",
   "llamar",
@@ -39,12 +47,10 @@ const todoVerbFamilies = [
   "parar",
   "parecer",
   "pasar",
-  "pedir",
   "pensar",
   "perder",
   "pesar",
   "poder",
-  "poner",
   "preguntar",
   "prestar",
   "quedar",
