@@ -58,6 +58,12 @@ Build the smallest useful JSON-backed lesson-authoring foundation. Let actual ha
 ## Next
 
 - [ ] Use the [teaching methodology reference](teaching-methodology.md) when designing lesson steps, feedback, and learner-facing UI.
+- [ ] Revisit the Spanish-first curriculum-scope hypothesis before making further graph or database changes.
+    - [ ] Decide whether canonical teaching mappings should exclusively represent Spanish words, phrases, and constructions producing natural English, because the course currently assesses only Spanish-to-English production.
+    - [ ] Evaluate English target forms such as `him`, `so`, `such`, and `that` as derived indexes or collision views over Spanish-to-English mappings rather than canonical reverse-direction lessons.
+    - [ ] Define a bounded expansion rule: start from frequent Spanish, enumerate context-specific English realizations, and add related Spanish sources only when frequency, speaking priority, learner confusion, or stage appropriateness justifies the contrast.
+    - [ ] Verify that the model supports phrase- and construction-level mappings, not only word-to-word pairs.
+    - [ ] Reconcile or retire the experimental graph's current directionality assumptions only after the owner approves the revised scope.
 - [ ] Decide the smallest block metadata needed for context-specific meanings and form families.
 - [ ] Add one authoring workflow for creating and inspecting blocks.
 - [ ] YAMLize or normalize only the curriculum objects required by the five-lesson slice.
