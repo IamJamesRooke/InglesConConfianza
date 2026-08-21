@@ -1,7 +1,7 @@
-# **Take → Tomar / Presentar**
+# **Take → Presentar** an Exam
 
 | English | Spanish |
 |---|---|
-| I'm taking an English course and an exam tomorrow. | Estoy tomando un curso de inglés y mañana presento un examen. |
+| I'm taking an exam tomorrow. | Mañana presento un examen. |
 
-Use **tomar** for enrolling in a course. In Colombian Spanish, **presentar un examen** is natural for sitting an exam.
+In Colombian Spanish, **presentar un examen** is natural for sitting an exam.

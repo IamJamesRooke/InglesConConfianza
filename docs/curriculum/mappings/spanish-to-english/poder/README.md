@@ -133,7 +133,6 @@ In ordinary speech, affirmative **can** is often reduced while negative **can't*
 - [**lograr hacer algo** → **manage to do something**](<../conseguir/lograr/lograr hacer algo (manage to do something).md>)
 - [**dejar que alguien haga algo** → **let someone do something**](<../dejar/dejar que alguien haga algo (let someone do something).md>)
 - [**permitirle a alguien hacer algo** → **allow someone to do something**](<../../../cognates/05-confusion-sets/spanish/permitir/permitirle a alguien hacer algo (allow someone to do something).md>)
-- [**dar poder** → **empower**](<../dar/dar poder (empower).md>)
 - [**luz** → **power / light**](../../../vocabulary/everyday-nouns.md)
 - **Poderoso**, **impotente**, and **todopoderoso** are indexed above as members of this power word family.
 - [translations of **deber**](../deber/README.md)

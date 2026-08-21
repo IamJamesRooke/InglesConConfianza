@@ -68,6 +68,7 @@
       },
       "collections": [
         "querer",
+        "decir",
         "mean"
       ],
       "curriculumRole": "core"
@@ -376,6 +377,7 @@
       },
       "collections": [
         "querer",
+        "decir",
         "mean",
         "discourse repair"
       ],
@@ -408,7 +410,8 @@
       },
       "collections": [
         "querer",
-        "letter writing"
+        "letter writing",
+        "-ido"
       ],
       "curriculumRole": "reference"
     },
@@ -421,7 +424,9 @@
         "english": "She was a beloved friend."
       },
       "collections": [
-        "querer"
+        "querer",
+        "adjective",
+        "-ido"
       ],
       "curriculumRole": "reference"
     },
@@ -650,197 +655,4243 @@
       "id": "tomar-algo-take",
       "spanish": "tomar [algo]",
       "english": "to take [something]",
-      "example": {"spanish": "Toma este documento.", "english": "Take this document."},
-      "collections": ["tomar", "take"], "curriculumRole": "core"
+      "example": {
+        "spanish": "Toma este documento.",
+        "english": "Take this document."
+      },
+      "collections": [
+        "tomar",
+        "take"
+      ],
+      "curriculumRole": "core"
     },
     {
       "id": "tomar-bebida-drink",
       "spanish": "tomar [una bebida]",
       "english": "to drink [a beverage]",
-      "example": {"spanish": "Tomamos café después del almuerzo.", "english": "We drink coffee after lunch."},
-      "collections": ["tomar", "drink", "beverage"], "curriculumRole": "supporting"
+      "example": {
+        "spanish": "Tomamos café después del almuerzo.",
+        "english": "We drink coffee after lunch."
+      },
+      "collections": [
+        "tomar",
+        "drink",
+        "beverage"
+      ],
+      "curriculumRole": "supporting"
     },
     {
       "id": "tomar-transporte-take",
       "spanish": "tomar [transporte]",
       "english": "to take [transport]",
-      "example": {"spanish": "Tomé el bus hasta el centro.", "english": "I took the bus downtown."},
-      "collections": ["tomar", "take", "transport"], "curriculumRole": "core"
+      "example": {
+        "spanish": "Tomé el bus hasta el centro.",
+        "english": "I took the bus downtown."
+      },
+      "collections": [
+        "tomar",
+        "take",
+        "transport"
+      ],
+      "curriculumRole": "core"
     },
     {
       "id": "tomar-decision-make",
       "spanish": "tomar una decisión",
       "english": "to make a decision",
-      "example": {"spanish": "Tomamos una decisión difícil.", "english": "We made a difficult decision."},
-      "collections": ["tomar", "make", "decision", "collocation"], "curriculumRole": "supporting"
+      "example": {
+        "spanish": "Tomamos una decisión difícil.",
+        "english": "We made a difficult decision."
+      },
+      "collections": [
+        "tomar",
+        "make",
+        "decision",
+        "collocation"
+      ],
+      "curriculumRole": "supporting"
     },
     {
       "id": "tomar-tiempo-take",
       "spanish": "tomar [tiempo]",
       "english": "to take [time]",
-      "example": {"spanish": "El trámite tomó dos horas.", "english": "The process took two hours."},
-      "collections": ["tomar", "take", "time"], "curriculumRole": "core"
+      "example": {
+        "spanish": "El trámite tomó dos horas.",
+        "english": "The process took two hours."
+      },
+      "collections": [
+        "tomar",
+        "take",
+        "time"
+      ],
+      "curriculumRole": "core"
     },
     {
       "id": "tomar-control-take-over",
       "spanish": "tomar el control de [algo]",
       "english": "to take over [something]",
-      "example": {"spanish": "Los manifestantes tomaron el control del edificio.", "english": "The protesters took over the building."},
-      "collections": ["tomar", "take", "phrasal verb", "over"], "curriculumRole": "supporting"
+      "example": {
+        "spanish": "Los manifestantes tomaron el control del edificio.",
+        "english": "The protesters took over the building."
+      },
+      "collections": [
+        "tomar",
+        "take",
+        "phrasal verb",
+        "over"
+      ],
+      "curriculumRole": "supporting"
     },
     {
       "id": "beber-algo-drink",
       "spanish": "beber [algo]",
       "english": "to drink [something]",
-      "example": {"spanish": "Bebo agua durante el almuerzo.", "english": "I drink water during lunch."},
-      "collections": ["beber", "drink", "beverage"], "curriculumRole": "supporting"
+      "example": {
+        "spanish": "Bebo agua durante el almuerzo.",
+        "english": "I drink water during lunch."
+      },
+      "collections": [
+        "beber",
+        "drink",
+        "beverage"
+      ],
+      "curriculumRole": "supporting"
     },
     {
       "id": "beber-algo-have",
       "spanish": "beber [algo]",
       "english": "to have [a beverage]",
-      "example": {"spanish": "Bebo un café después del almuerzo.", "english": "I have a coffee after lunch."},
-      "collections": ["beber", "have", "beverage"], "curriculumRole": "supporting"
+      "example": {
+        "spanish": "Bebo un café después del almuerzo.",
+        "english": "I have a coffee after lunch."
+      },
+      "collections": [
+        "beber",
+        "have",
+        "beverage"
+      ],
+      "curriculumRole": "supporting"
     },
     {
       "id": "take-off",
       "spanish": "despegar",
       "english": "to take off",
-      "example": {"spanish": "El avión despegó a las ocho.", "english": "The plane took off at eight."},
-      "collections": ["tomar", "take", "phrasal verb", "off"], "curriculumRole": "reference"
+      "example": {
+        "spanish": "El avión despegó a las ocho.",
+        "english": "The plane took off at eight."
+      },
+      "collections": [
+        "tomar",
+        "take",
+        "phrasal verb",
+        "off"
+      ],
+      "curriculumRole": "reference"
     },
     {
       "id": "take-off-clothing",
       "spanish": "quitarse [algo]",
       "english": "to take off [something]",
-      "example": {"spanish": "Quítate los zapatos.", "english": "Take off your shoes."},
-      "collections": ["tomar", "take", "phrasal verb", "off"], "curriculumRole": "supporting"
+      "example": {
+        "spanish": "Quítate los zapatos.",
+        "english": "Take off your shoes."
+      },
+      "collections": [
+        "tomar",
+        "take",
+        "phrasal verb",
+        "off"
+      ],
+      "curriculumRole": "supporting"
     },
     {
       "id": "take-on",
       "spanish": "asumir [algo]",
       "english": "to take on [something]",
-      "example": {"spanish": "Aceptó una responsabilidad nueva.", "english": "She took on a new responsibility."},
-      "collections": ["tomar", "take", "phrasal verb", "on"], "curriculumRole": "reference"
+      "example": {
+        "spanish": "Aceptó una responsabilidad nueva.",
+        "english": "She took on a new responsibility."
+      },
+      "collections": [
+        "tomar",
+        "take",
+        "phrasal verb",
+        "on"
+      ],
+      "curriculumRole": "reference"
     },
     {
       "id": "take-up",
       "spanish": "empezar [una actividad]",
       "english": "to take up [something]",
-      "example": {"spanish": "Empezó a practicar natación.", "english": "She took up swimming."},
-      "collections": ["tomar", "take", "phrasal verb", "up"], "curriculumRole": "reference"
+      "example": {
+        "spanish": "Empezó a practicar natación.",
+        "english": "She took up swimming."
+      },
+      "collections": [
+        "tomar",
+        "take",
+        "phrasal verb",
+        "up"
+      ],
+      "curriculumRole": "reference"
     },
     {
       "id": "take-in",
       "spanish": "engañar [a alguien]",
       "english": "to take in [somebody/something]",
-      "example": {"spanish": "La historia me engañó por completo.", "english": "The story took me in completely."},
-      "collections": ["tomar", "take", "phrasal verb", "in"], "curriculumRole": "reference"
+      "example": {
+        "spanish": "La historia me engañó por completo.",
+        "english": "The story took me in completely."
+      },
+      "collections": [
+        "tomar",
+        "take",
+        "phrasal verb",
+        "in"
+      ],
+      "curriculumRole": "reference"
     },
     {
       "id": "take-out",
       "spanish": "sacar [algo]",
       "english": "to take out [something]",
-      "example": {"spanish": "Saca el libro de la bolsa.", "english": "Take the book out of the bag."},
-      "collections": ["tomar", "take", "phrasal verb", "out"], "curriculumRole": "supporting"
+      "example": {
+        "spanish": "Saca el libro de la bolsa.",
+        "english": "Take the book out of the bag."
+      },
+      "collections": [
+        "tomar",
+        "take",
+        "phrasal verb",
+        "out"
+      ],
+      "curriculumRole": "supporting"
     },
     {
       "id": "take-back",
       "spanish": "devolver [algo]",
       "english": "to take back [something]",
-      "example": {"spanish": "Devuélvelo a la tienda.", "english": "Take it back to the store."},
-      "collections": ["tomar", "take", "phrasal verb", "back"], "curriculumRole": "supporting"
+      "example": {
+        "spanish": "Devuélvelo a la tienda.",
+        "english": "Take it back to the store."
+      },
+      "collections": [
+        "tomar",
+        "take",
+        "phrasal verb",
+        "back"
+      ],
+      "curriculumRole": "supporting"
     },
     {
       "id": "take-down",
       "spanish": "bajar [algo]",
       "english": "to take down [something]",
-      "example": {"spanish": "Baja el cartel de la pared.", "english": "Take the sign down from the wall."},
-      "collections": ["tomar", "take", "phrasal verb", "down"], "curriculumRole": "supporting"
+      "example": {
+        "spanish": "Baja el cartel de la pared.",
+        "english": "Take the sign down from the wall."
+      },
+      "collections": [
+        "tomar",
+        "take",
+        "phrasal verb",
+        "down"
+      ],
+      "curriculumRole": "supporting"
     },
     {
       "id": "take-apart",
       "spanish": "desarmar [algo]",
       "english": "to take apart [something]",
-      "example": {"spanish": "Desarmó la máquina para repararla.", "english": "He took the machine apart to repair it."},
-      "collections": ["tomar", "take", "phrasal verb", "apart"], "curriculumRole": "reference"
+      "example": {
+        "spanish": "Desarmó la máquina para repararla.",
+        "english": "He took the machine apart to repair it."
+      },
+      "collections": [
+        "tomar",
+        "take",
+        "phrasal verb",
+        "apart"
+      ],
+      "curriculumRole": "reference"
     },
     {
       "id": "take-after",
       "spanish": "parecerse a [alguien]",
       "english": "to take after [somebody]",
-      "example": {"spanish": "Se parece a su madre.", "english": "She takes after her mother."},
-      "collections": ["tomar", "take", "phrasal verb", "after"], "curriculumRole": "reference"
+      "example": {
+        "spanish": "Se parece a su madre.",
+        "english": "She takes after her mother."
+      },
+      "collections": [
+        "tomar",
+        "take",
+        "phrasal verb",
+        "after"
+      ],
+      "curriculumRole": "reference"
     },
     {
       "id": "take-away",
       "spanish": "llevarse [algo]",
       "english": "to take away [something]",
-      "example": {"spanish": "Llévate estos documentos.", "english": "Take these documents away."},
-      "collections": ["tomar", "take", "phrasal verb", "away"], "curriculumRole": "supporting"
+      "example": {
+        "spanish": "Llévate estos documentos.",
+        "english": "Take these documents away."
+      },
+      "collections": [
+        "tomar",
+        "take",
+        "phrasal verb",
+        "away"
+      ],
+      "curriculumRole": "supporting"
     },
     {
       "id": "take-to",
       "spanish": "empezar a gustarle [algo] a alguien",
       "english": "to take to [something/somebody]",
-      "example": {"spanish": "Al niño le gustó rápidamente su nueva escuela.", "english": "The child took to his new school quickly."},
-      "collections": ["tomar", "take", "phrasal verb", "to"], "curriculumRole": "reference"
+      "example": {
+        "spanish": "Al niño le gustó rápidamente su nueva escuela.",
+        "english": "The child took to his new school quickly."
+      },
+      "collections": [
+        "tomar",
+        "take",
+        "phrasal verb",
+        "to"
+      ],
+      "curriculumRole": "reference"
     },
     {
       "id": "take-care-of",
       "spanish": "cuidar de [alguien/algo]",
       "english": "to take care of [somebody/something]",
-      "example": {"spanish": "Cuida a los niños esta tarde.", "english": "Take care of the children this afternoon."},
-      "collections": ["tomar", "take", "verb + preposition", "of"], "curriculumRole": "supporting"
+      "example": {
+        "spanish": "Cuida a los niños esta tarde.",
+        "english": "Take care of the children this afternoon."
+      },
+      "collections": [
+        "tomar",
+        "take",
+        "verb + preposition",
+        "of"
+      ],
+      "curriculumRole": "supporting"
     },
     {
       "id": "take-part-in",
       "spanish": "participar en [algo]",
       "english": "to take part in [something]",
-      "example": {"spanish": "Participó en la reunión.", "english": "She took part in the meeting."},
-      "collections": ["tomar", "take", "verb + preposition", "in"], "curriculumRole": "reference"
+      "example": {
+        "spanish": "Participó en la reunión.",
+        "english": "She took part in the meeting."
+      },
+      "collections": [
+        "tomar",
+        "take",
+        "verb + preposition",
+        "in"
+      ],
+      "curriculumRole": "reference"
     },
     {
       "id": "take-advantage-of",
       "spanish": "aprovecharse de [algo/alguien]",
       "english": "to take advantage of [something/somebody]",
-      "example": {"spanish": "Aprovechó la oportunidad.", "english": "She took advantage of the opportunity."},
-      "collections": ["tomar", "take", "verb + preposition", "of"], "curriculumRole": "supporting"
+      "example": {
+        "spanish": "Aprovechó la oportunidad.",
+        "english": "She took advantage of the opportunity."
+      },
+      "collections": [
+        "tomar",
+        "take",
+        "verb + preposition",
+        "of"
+      ],
+      "curriculumRole": "supporting"
     },
     {
       "id": "drink-up",
       "spanish": "beber [algo] todo",
       "english": "to drink [something] up",
-      "example": {"spanish": "Bébete todo el jugo.", "english": "Drink up all the juice."},
-      "collections": ["beber", "drink", "phrasal verb", "up"], "curriculumRole": "supporting"
+      "example": {
+        "spanish": "Bébete todo el jugo.",
+        "english": "Drink up all the juice."
+      },
+      "collections": [
+        "beber",
+        "drink",
+        "phrasal verb",
+        "up"
+      ],
+      "curriculumRole": "supporting"
     },
     {
       "id": "drink-in",
       "spanish": "absorber [algo]",
       "english": "to drink in [something]",
-      "example": {"spanish": "Absorbió el paisaje con los ojos.", "english": "She drank in the beautiful landscape."},
-      "collections": ["beber", "drink", "phrasal verb", "in"], "curriculumRole": "reference"
+      "example": {
+        "spanish": "Absorbió el paisaje con los ojos.",
+        "english": "She drank in the beautiful landscape."
+      },
+      "collections": [
+        "beber",
+        "drink",
+        "phrasal verb",
+        "in"
+      ],
+      "curriculumRole": "reference"
     },
     {
       "id": "drink-to",
       "spanish": "brindar por [alguien/algo]",
       "english": "to drink to [somebody/something]",
-      "example": {"spanish": "Brindemos por el nuevo proyecto.", "english": "Let's drink to the new project."},
-      "collections": ["beber", "drink", "verb + preposition", "to"], "curriculumRole": "reference"
+      "example": {
+        "spanish": "Brindemos por el nuevo proyecto.",
+        "english": "Let's drink to the new project."
+      },
+      "collections": [
+        "beber",
+        "drink",
+        "verb + preposition",
+        "to"
+      ],
+      "curriculumRole": "reference"
     },
     {
       "id": "drink-away",
       "spanish": "beber [algo] para olvidar",
       "english": "to drink away [something]",
-      "example": {"spanish": "Intentó olvidar sus problemas bebiendo.", "english": "He tried to drink his problems away."},
-      "collections": ["beber", "drink", "phrasal verb", "away"], "curriculumRole": "reference"
+      "example": {
+        "spanish": "Intentó olvidar sus problemas bebiendo.",
+        "english": "He tried to drink his problems away."
+      },
+      "collections": [
+        "beber",
+        "drink",
+        "phrasal verb",
+        "away"
+      ],
+      "curriculumRole": "reference"
     },
     {
       "id": "drink-out-of",
       "spanish": "beber de [un recipiente]",
       "english": "to drink out of [a container]",
-      "example": {"spanish": "El niño bebió del vaso grande.", "english": "The child drank out of the large cup."},
-      "collections": ["beber", "drink", "verb + preposition", "out", "of"], "curriculumRole": "reference"
+      "example": {
+        "spanish": "El niño bebió del vaso grande.",
+        "english": "The child drank out of the large cup."
+      },
+      "collections": [
+        "beber",
+        "drink",
+        "verb + preposition",
+        "out",
+        "of"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "comida-food",
+      "spanish": "la comida",
+      "english": "food",
+      "example": {
+        "spanish": "La comida está lista.",
+        "english": "The food is ready."
+      },
+      "collections": [
+        "comer",
+        "food",
+        "noun"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "comida-meal",
+      "spanish": "la comida",
+      "english": "the meal",
+      "example": {
+        "spanish": "La comida empieza al mediodía.",
+        "english": "The meal starts at noon."
+      },
+      "collections": [
+        "comer",
+        "meal",
+        "noun"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "necesidad-the-need",
+      "spanish": "la necesidad",
+      "english": "the need",
+      "example": {
+        "spanish": "La necesidad de ayuda es urgente.",
+        "english": "The need for help is urgent."
+      },
+      "collections": [
+        "necesitar",
+        "need",
+        "noun"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "ser-necesario",
+      "spanish": "ser necesario",
+      "english": "to be necessary",
+      "example": {
+        "spanish": "Es necesario confirmar la reserva.",
+        "english": "It is necessary to confirm the reservation."
+      },
+      "collections": [
+        "necesitar",
+        "necessary",
+        "adjective",
+        "ser",
+        "cognate -ario => -ary"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "bebida-beverage",
+      "spanish": "la bebida",
+      "english": "the beverage",
+      "example": {
+        "spanish": "La bebida está fría.",
+        "english": "The beverage is cold."
+      },
+      "collections": [
+        "beber",
+        "drink",
+        "beverage",
+        "noun"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "necesariamente-necessarily",
+      "spanish": "necesariamente",
+      "english": "necessarily",
+      "example": {
+        "spanish": "No necesariamente necesitamos más tiempo.",
+        "english": "We don't necessarily need more time."
+      },
+      "collections": [
+        "necesitar",
+        "necessary",
+        "adverb",
+        "-mente",
+        "-ly",
+        "cognate -mente => -ly"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "innecesariamente-unnecessarily",
+      "spanish": "innecesariamente",
+      "english": "unnecessarily",
+      "example": {
+        "spanish": "No compliques innecesariamente la explicación.",
+        "english": "Don't make the explanation unnecessarily complicated."
+      },
+      "collections": [
+        "necesitar",
+        "necessary",
+        "adverb",
+        "-mente",
+        "-ly",
+        "cognate -mente => -ly"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "comestible-edible",
+      "spanish": "ser comestible",
+      "english": "to be edible",
+      "example": {
+        "spanish": "Esta planta no es comestible.",
+        "english": "This plant is not edible."
+      },
+      "collections": [
+        "comer",
+        "edible",
+        "adjective",
+        "ser",
+        "-ible",
+        "cognate -ible => -ible"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "el-comedor-dining-room",
+      "spanish": "el comedor",
+      "english": "the dining room",
+      "example": {
+        "spanish": "La mesa está en el comedor.",
+        "english": "The table is in the dining room."
+      },
+      "collections": [
+        "comer",
+        "dining room",
+        "noun",
+        "-dor"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "el-bebedor-drinker",
+      "spanish": "el bebedor / la bebedora",
+      "english": "the drinker",
+      "example": {
+        "spanish": "No es un bebedor habitual.",
+        "english": "He is not a habitual drinker."
+      },
+      "collections": [
+        "beber",
+        "drinker",
+        "noun",
+        "-er",
+        "-dor",
+        "person"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ser-bebible-drinkable",
+      "spanish": "ser bebible",
+      "english": "to be drinkable",
+      "example": {
+        "spanish": "El agua es bebible después de filtrarla.",
+        "english": "The water is drinkable after filtering it."
+      },
+      "collections": [
+        "beber",
+        "drinkable",
+        "adjective",
+        "ser",
+        "-ible",
+        "-able"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hablar-idioma-speak",
+      "spanish": "hablar [un idioma]",
+      "english": "to speak [a language]",
+      "example": {
+        "spanish": "Hablo inglés.",
+        "english": "I speak English."
+      },
+      "collections": [
+        "hablar",
+        "speak",
+        "language"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "hablar-conversar-talk",
+      "spanish": "hablar",
+      "english": "to talk",
+      "example": {
+        "spanish": "Tenemos que hablar.",
+        "english": "We need to talk."
+      },
+      "collections": [
+        "hablar",
+        "talk"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "hablar-con-talk-to",
+      "spanish": "hablar con [alguien]",
+      "english": "to talk to [somebody]",
+      "example": {
+        "spanish": "Hablé con Ana.",
+        "english": "I talked to Ana."
+      },
+      "collections": [
+        "hablar",
+        "talk",
+        "verb + preposition",
+        "to",
+        "con => to"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "hablar-con-talk-with",
+      "spanish": "hablar con [alguien]",
+      "english": "to talk with [somebody]",
+      "example": {
+        "spanish": "Hablé con Ana después de clase.",
+        "english": "I talked with Ana after class."
+      },
+      "collections": [
+        "hablar",
+        "talk",
+        "verb + preposition",
+        "with",
+        "con => with"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "hablarle-a-speak-to",
+      "spanish": "hablarle a [alguien]",
+      "english": "to speak to [somebody]",
+      "example": {
+        "spanish": "Le hablé a la gerente.",
+        "english": "I spoke to the manager."
+      },
+      "collections": [
+        "hablar",
+        "speak",
+        "verb + preposition",
+        "to",
+        "a => to"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "hablar-con-speak-with",
+      "spanish": "hablar con [alguien]",
+      "english": "to speak with [somebody]",
+      "example": {
+        "spanish": "Hablé con la médica.",
+        "english": "I spoke with the doctor."
+      },
+      "collections": [
+        "hablar",
+        "speak",
+        "verb + preposition",
+        "with",
+        "con => with"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "hablar-de-talk-about",
+      "spanish": "hablar de [algo]",
+      "english": "to talk about [something]",
+      "example": {
+        "spanish": "Hablamos del problema.",
+        "english": "We talked about the problem."
+      },
+      "collections": [
+        "hablar",
+        "talk",
+        "verb + preposition",
+        "about",
+        "de => about"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "hablar-sobre-speak-about",
+      "spanish": "hablar sobre [algo]",
+      "english": "to speak about [something]",
+      "example": {
+        "spanish": "Habló sobre el proyecto.",
+        "english": "She spoke about the project."
+      },
+      "collections": [
+        "hablar",
+        "speak",
+        "verb + preposition",
+        "about",
+        "sobre => about"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "hablar-por-telefono-talk-on",
+      "spanish": "hablar por teléfono con [alguien]",
+      "english": "to talk to [somebody] on the phone",
+      "example": {
+        "spanish": "Hablé por teléfono con Ana.",
+        "english": "I talked to Ana on the phone."
+      },
+      "collections": [
+        "hablar",
+        "talk",
+        "verb + preposition",
+        "to",
+        "on",
+        "con => to",
+        "por teléfono => on the phone"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "hablar-por-speak-for",
+      "spanish": "hablar por [alguien]",
+      "english": "to speak for [somebody]",
+      "example": {
+        "spanish": "Ana habla por el equipo.",
+        "english": "Ana speaks for the team."
+      },
+      "collections": [
+        "hablar",
+        "speak",
+        "verb + preposition",
+        "for",
+        "por => for"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "hablar-en-nombre-speak-on-behalf-of",
+      "spanish": "hablar en nombre de [alguien]",
+      "english": "to speak on behalf of [somebody]",
+      "example": {
+        "spanish": "Hablo en nombre del equipo.",
+        "english": "I speak on behalf of the team."
+      },
+      "collections": [
+        "hablar",
+        "speak",
+        "verb + preposition",
+        "on",
+        "of",
+        "en nombre de => on behalf of"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hablar-mas-fuerte-speak-up",
+      "spanish": "hablar más fuerte",
+      "english": "to speak up",
+      "example": {
+        "spanish": "Habla más fuerte, por favor.",
+        "english": "Speak up, please."
+      },
+      "collections": [
+        "hablar",
+        "speak",
+        "phrasal verb",
+        "up"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "pronunciarse-speak-out",
+      "spanish": "pronunciarse sobre [algo]",
+      "english": "to speak out about [something]",
+      "example": {
+        "spanish": "Se pronunció sobre el problema.",
+        "english": "She spoke out about the problem."
+      },
+      "collections": [
+        "hablar",
+        "speak",
+        "phrasal verb",
+        "out",
+        "about"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hablar-algo-talk-over",
+      "spanish": "hablar de [algo] antes de decidir",
+      "english": "to talk [something] over",
+      "example": {
+        "spanish": "Hablemos del plan antes de decidir.",
+        "english": "Let's talk the plan over before deciding."
+      },
+      "collections": [
+        "hablar",
+        "talk",
+        "phrasal verb",
+        "over"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "explicar-hablando-talk-through",
+      "spanish": "explicarle [algo] paso a paso a [alguien]",
+      "english": "to talk [somebody] through [something]",
+      "example": {
+        "spanish": "Explícame los pasos.",
+        "english": "Talk me through the steps."
+      },
+      "collections": [
+        "hablar",
+        "talk",
+        "phrasal verb",
+        "through"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "convencer-talk-into",
+      "spanish": "convencer a [alguien] de [hacer algo]",
+      "english": "to talk [somebody] into [doing something]",
+      "example": {
+        "spanish": "Convencí a Ana de postularse.",
+        "english": "I talked Ana into applying."
+      },
+      "collections": [
+        "hablar",
+        "talk",
+        "phrasal verb",
+        "into"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "disuadir-talk-out-of",
+      "spanish": "convencer a [alguien] de no [hacer algo]",
+      "english": "to talk [somebody] out of [doing something]",
+      "example": {
+        "spanish": "Convencí a Ana de no renunciar.",
+        "english": "I talked Ana out of quitting."
+      },
+      "collections": [
+        "hablar",
+        "talk",
+        "phrasal verb",
+        "out",
+        "of"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hablar-condescendencia-talk-down-to",
+      "spanish": "hablarle con condescendencia a [alguien]",
+      "english": "to talk down to [somebody]",
+      "example": {
+        "spanish": "Le habla con condescendencia al equipo.",
+        "english": "She talks down to the team."
+      },
+      "collections": [
+        "hablar",
+        "talk",
+        "phrasal verb",
+        "down",
+        "to"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "contestar-talk-back-to",
+      "spanish": "contestarle mal a [alguien]",
+      "english": "to talk back to [somebody]",
+      "example": {
+        "spanish": "No le contestes mal a tu mamá.",
+        "english": "Don't talk back to your mother."
+      },
+      "collections": [
+        "hablar",
+        "talk",
+        "phrasal verb",
+        "back",
+        "to"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hablar-consigo-talk-to-oneself",
+      "spanish": "hablar consigo mismo/a",
+      "english": "to talk to oneself",
+      "example": {
+        "spanish": "Habla consigo misma cuando trabaja.",
+        "english": "She talks to herself when she works."
+      },
+      "collections": [
+        "hablar",
+        "talk",
+        "verb + preposition",
+        "to",
+        "reflexive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "el-habla-speech",
+      "spanish": "el habla",
+      "english": "speech",
+      "example": {
+        "spanish": "El habla cambia según la región.",
+        "english": "Speech varies by region."
+      },
+      "collections": [
+        "hablar",
+        "speech",
+        "noun"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "el-hablante-speaker",
+      "spanish": "el/la hablante",
+      "english": "the speaker",
+      "example": {
+        "spanish": "Cada hablante tiene un turno.",
+        "english": "Each speaker has a turn."
+      },
+      "collections": [
+        "hablar",
+        "speaker",
+        "noun",
+        "-ante",
+        "-er",
+        "person"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "ser-hablador-talkative",
+      "spanish": "ser hablador/a",
+      "english": "to be talkative",
+      "example": {
+        "spanish": "Mi hermano es muy hablador.",
+        "english": "My brother is very talkative."
+      },
+      "collections": [
+        "hablar",
+        "talkative",
+        "adjective",
+        "ser",
+        "-dor",
+        "-ative",
+        "person"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "decir-algo-say",
+      "spanish": "decir [algo]",
+      "english": "to say [something]",
+      "example": {
+        "spanish": "Dijo la respuesta.",
+        "english": "She said the answer."
+      },
+      "collections": [
+        "decir",
+        "say"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "decir-que-say-that",
+      "spanish": "decir que [algo sucede]",
+      "english": "to say that [something happens]",
+      "example": {
+        "spanish": "Dice que la reunión empieza a las nueve.",
+        "english": "She says that the meeting starts at nine."
+      },
+      "collections": [
+        "decir",
+        "say",
+        "clause",
+        "that"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "decirle-algo-tell",
+      "spanish": "decirle [algo] a [alguien]",
+      "english": "to tell [somebody] [something]",
+      "example": {
+        "spanish": "Ana me dijo la verdad.",
+        "english": "Ana told me the truth."
+      },
+      "collections": [
+        "decir",
+        "tell",
+        "double object"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "decir-algo-a-say-to",
+      "spanish": "decirle [algo] a [alguien]",
+      "english": "to say [something] to [somebody]",
+      "example": {
+        "spanish": "Ana me dijo algo importante.",
+        "english": "Ana said something important to me."
+      },
+      "collections": [
+        "decir",
+        "say",
+        "verb + preposition",
+        "to",
+        "a => to"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "decirle-que-tell-to",
+      "spanish": "decirle a [alguien] que [haga algo]",
+      "english": "to tell [somebody] to [do something]",
+      "example": {
+        "spanish": "Dile a Ana que espere.",
+        "english": "Tell Ana to wait."
+      },
+      "collections": [
+        "decir",
+        "tell",
+        "somebody to do something",
+        "verb + infinitive",
+        "to"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "decirle-sobre-tell-about",
+      "spanish": "decirle a [alguien] algo sobre [algo]",
+      "english": "to tell [somebody] about [something]",
+      "example": {
+        "spanish": "Dime algo sobre el proyecto.",
+        "english": "Tell me about the project."
+      },
+      "collections": [
+        "decir",
+        "tell",
+        "verb + preposition",
+        "about",
+        "sobre => about"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "decir-verdad-tell-truth",
+      "spanish": "decir la verdad",
+      "english": "to tell the truth",
+      "example": {
+        "spanish": "Dime la verdad.",
+        "english": "Tell me the truth."
+      },
+      "collections": [
+        "decir",
+        "tell",
+        "collocation",
+        "truth"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "decir-mentira-tell-lie",
+      "spanish": "decir una mentira",
+      "english": "to tell a lie",
+      "example": {
+        "spanish": "Dijo una mentira.",
+        "english": "He told a lie."
+      },
+      "collections": [
+        "decir",
+        "tell",
+        "collocation",
+        "lie"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "decir-que-si-say-yes",
+      "spanish": "decir que sí",
+      "english": "to say yes",
+      "example": {
+        "spanish": "Ana dijo que sí.",
+        "english": "Ana said yes."
+      },
+      "collections": [
+        "decir",
+        "say",
+        "yes"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "decir-que-no-say-no",
+      "spanish": "decir que no",
+      "english": "to say no",
+      "example": {
+        "spanish": "Ana dijo que no.",
+        "english": "Ana said no."
+      },
+      "collections": [
+        "decir",
+        "say",
+        "no"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "como-se-dice-how-say",
+      "spanish": "¿Cómo se dice [algo] en inglés?",
+      "english": "How do you say [something] in English?",
+      "example": {
+        "spanish": "¿Cómo se dice «cuenta» en inglés?",
+        "english": "How do you say “cuenta” in English?"
+      },
+      "collections": [
+        "decir",
+        "say",
+        "classroom language",
+        "question"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "decir-en-voz-alta-say-out-loud",
+      "spanish": "decir [algo] en voz alta",
+      "english": "to say [something] out loud",
+      "example": {
+        "spanish": "Dilo en voz alta.",
+        "english": "Say it out loud."
+      },
+      "collections": [
+        "decir",
+        "say",
+        "verb + particle",
+        "out",
+        "loud"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "es-decir-that-is",
+      "spanish": "es decir",
+      "english": "that is",
+      "example": {
+        "spanish": "Llegará el viernes, es decir, mañana.",
+        "english": "She'll arrive Friday, that is, tomorrow."
+      },
+      "collections": [
+        "decir",
+        "discourse connector",
+        "that is"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "es-decir-in-other-words",
+      "spanish": "es decir",
+      "english": "in other words",
+      "example": {
+        "spanish": "No está disponible; es decir, tenemos que esperar.",
+        "english": "It isn't available; in other words, we have to wait."
+      },
+      "collections": [
+        "decir",
+        "discourse connector",
+        "in",
+        "other words"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "dicho-esto-that-said",
+      "spanish": "dicho esto",
+      "english": "that said",
+      "example": {
+        "spanish": "Dicho esto, estoy de acuerdo.",
+        "english": "That said, I agree."
+      },
+      "collections": [
+        "decir",
+        "discourse connector",
+        "participle",
+        "that said"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dicho-otra-manera-put-another-way",
+      "spanish": "dicho de otra manera",
+      "english": "put another way",
+      "example": {
+        "spanish": "Dicho de otra manera, necesitamos más tiempo.",
+        "english": "Put another way, we need more time."
+      },
+      "collections": [
+        "decir",
+        "discourse connector",
+        "put",
+        "another way"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "digamos-que-lets-say",
+      "spanish": "digamos que [algo sucede]",
+      "english": "let's say [something happens]",
+      "example": {
+        "spanish": "Digamos que llega tarde.",
+        "english": "Let's say she arrives late."
+      },
+      "collections": [
+        "decir",
+        "say",
+        "discourse",
+        "let's"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "por-asi-decirlo-so-to-speak",
+      "spanish": "por así decirlo",
+      "english": "so to speak",
+      "example": {
+        "spanish": "Es el motor del equipo, por así decirlo.",
+        "english": "He's the engine of the team, so to speak."
+      },
+      "collections": [
+        "decir",
+        "speak",
+        "discourse connector",
+        "to"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "distinguir-tell-apart",
+      "spanish": "distinguir a [alguien] de [alguien]",
+      "english": "to tell [somebody] apart",
+      "example": {
+        "spanish": "No puedo distinguir a los gemelos.",
+        "english": "I can't tell the twins apart."
+      },
+      "collections": [
+        "decir",
+        "tell",
+        "phrasal verb",
+        "apart"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "reprender-tell-off",
+      "spanish": "reprender a [alguien]",
+      "english": "to tell [somebody] off",
+      "example": {
+        "spanish": "La jefa lo reprendió.",
+        "english": "The manager told him off."
+      },
+      "collections": [
+        "decir",
+        "tell",
+        "phrasal verb",
+        "off"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "delatar-tell-on",
+      "spanish": "delatar a [alguien]",
+      "english": "to tell on [somebody]",
+      "example": {
+        "spanish": "El niño delató a su hermano.",
+        "english": "The child told on his brother."
+      },
+      "collections": [
+        "decir",
+        "tell",
+        "phrasal verb",
+        "on"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "distinguir-tell-from",
+      "spanish": "distinguir [algo] de [algo]",
+      "english": "to tell [something] from [something]",
+      "example": {
+        "spanish": "No distingo la copia del original.",
+        "english": "I can't tell the copy from the original."
+      },
+      "collections": [
+        "decir",
+        "tell",
+        "verb + preposition",
+        "from",
+        "de => from"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "el-dicho-saying",
+      "spanish": "el dicho",
+      "english": "the saying",
+      "example": {
+        "spanish": "Ese dicho es muy conocido.",
+        "english": "That saying is well known."
+      },
+      "collections": [
+        "decir",
+        "saying",
+        "noun",
+        "participle"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "contradecir-contradict",
+      "spanish": "contradecir a [alguien]",
+      "english": "to contradict [somebody]",
+      "example": {
+        "spanish": "No quiero contradecirte.",
+        "english": "I don't want to contradict you."
+      },
+      "collections": [
+        "decir",
+        "contradict",
+        "prefix",
+        "contra-",
+        "cognate"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "predecir-predict",
+      "spanish": "predecir [algo]",
+      "english": "to predict [something]",
+      "example": {
+        "spanish": "Es difícil predecir el resultado.",
+        "english": "It's difficult to predict the result."
+      },
+      "collections": [
+        "decir",
+        "predict",
+        "prefix",
+        "pre-",
+        "cognate"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "bendecir-bless",
+      "spanish": "bendecir a [alguien]",
+      "english": "to bless [somebody]",
+      "example": {
+        "spanish": "El sacerdote bendijo a la familia.",
+        "english": "The priest blessed the family."
+      },
+      "collections": [
+        "decir",
+        "bless",
+        "prefix",
+        "ben-"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "maldecir-curse",
+      "spanish": "maldecir a [alguien]",
+      "english": "to curse [somebody]",
+      "example": {
+        "spanish": "Maldijo al responsable.",
+        "english": "She cursed the person responsible."
+      },
+      "collections": [
+        "decir",
+        "curse",
+        "prefix",
+        "mal-"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ser-indecible-unspeakable",
+      "spanish": "ser indecible",
+      "english": "to be unspeakable",
+      "example": {
+        "spanish": "El dolor era indecible.",
+        "english": "The pain was unspeakable."
+      },
+      "collections": [
+        "decir",
+        "unspeakable",
+        "adjective",
+        "ser",
+        "in-",
+        "-ible",
+        "un-",
+        "-able"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "darle-algo-give-somebody",
+      "spanish": "darle [algo] a [alguien]",
+      "english": "to give [somebody] [something]",
+      "example": {
+        "spanish": "Le doy las llaves a Ana.",
+        "english": "I give Ana the keys."
+      },
+      "collections": [
+        "dar",
+        "give",
+        "double object"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "dar-algo-a-give-to",
+      "spanish": "dar [algo] a [alguien]",
+      "english": "to give [something] to [somebody]",
+      "example": {
+        "spanish": "Le doy las llaves a Ana.",
+        "english": "I give the keys to Ana."
+      },
+      "collections": [
+        "dar",
+        "give",
+        "verb + preposition",
+        "to",
+        "a => to"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "dar-permiso-give-permission",
+      "spanish": "dar permiso",
+      "english": "to give permission",
+      "example": {
+        "spanish": "La jefa dio permiso.",
+        "english": "The manager gave permission."
+      },
+      "collections": [
+        "dar",
+        "give",
+        "permission",
+        "collocation"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "darle-permiso-allow-to",
+      "spanish": "darle permiso a [alguien] para [hacer algo]",
+      "english": "to allow [somebody] to [do something]",
+      "example": {
+        "spanish": "Le dieron permiso a Ana para entrar.",
+        "english": "They allowed Ana to enter."
+      },
+      "collections": [
+        "dar",
+        "allow",
+        "somebody to do something",
+        "verb + infinitive",
+        "to",
+        "para => to"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "dar-acceso-give-access-to",
+      "spanish": "dar acceso a [algo]",
+      "english": "to give access to [something]",
+      "example": {
+        "spanish": "La tarjeta da acceso al edificio.",
+        "english": "The card gives access to the building."
+      },
+      "collections": [
+        "dar",
+        "give",
+        "verb + preposition",
+        "to",
+        "a => to",
+        "access"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dar-tiempo-give-time-to",
+      "spanish": "darle tiempo a [alguien] para [hacer algo]",
+      "english": "to give [somebody] time to [do something]",
+      "example": {
+        "spanish": "Dale tiempo a Ana para responder.",
+        "english": "Give Ana time to answer."
+      },
+      "collections": [
+        "dar",
+        "give",
+        "verb + infinitive",
+        "to",
+        "para => to",
+        "time"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "dar-a-face",
+      "spanish": "dar a [una dirección]",
+      "english": "to face [a direction]",
+      "example": {
+        "spanish": "La ventana da al norte.",
+        "english": "The window faces north."
+      },
+      "collections": [
+        "dar",
+        "face",
+        "verb + preposition",
+        "a"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dar-a-overlook",
+      "spanish": "dar a [un lugar]",
+      "english": "to overlook [a place]",
+      "example": {
+        "spanish": "El balcón da al parque.",
+        "english": "The balcony overlooks the park."
+      },
+      "collections": [
+        "dar",
+        "overlook",
+        "verb + preposition",
+        "a"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "darse-cuenta-realize",
+      "spanish": "darse cuenta de que [algo sucede]",
+      "english": "to realize that [something happens]",
+      "example": {
+        "spanish": "Me di cuenta de que estaba equivocado.",
+        "english": "I realized that I was wrong."
+      },
+      "collections": [
+        "dar",
+        "realize",
+        "reflexive",
+        "verb + preposition",
+        "de => that"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "dar-igual-not-matter",
+      "spanish": "dar igual",
+      "english": "not to matter",
+      "example": {
+        "spanish": "Me da igual cuál elijas.",
+        "english": "It doesn't matter which one you choose."
+      },
+      "collections": [
+        "dar",
+        "matter",
+        "fixed expression"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "me-da-igual-dont-mind",
+      "spanish": "me da igual",
+      "english": "I don't mind",
+      "example": {
+        "spanish": "Podemos ir hoy o mañana; me da igual.",
+        "english": "We can go today or tomorrow; I don't mind."
+      },
+      "collections": [
+        "dar",
+        "mind",
+        "fixed expression",
+        "negative"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "darle-boton-press",
+      "spanish": "darle a [un botón]",
+      "english": "to press [a button]",
+      "example": {
+        "spanish": "Dale al botón verde.",
+        "english": "Press the green button."
+      },
+      "collections": [
+        "dar",
+        "press",
+        "verb + preposition",
+        "a"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "darle-interruptor-flip",
+      "spanish": "darle a [un interruptor]",
+      "english": "to flip [a switch]",
+      "example": {
+        "spanish": "Dale al interruptor.",
+        "english": "Flip the switch."
+      },
+      "collections": [
+        "dar",
+        "flip",
+        "switch"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "darle-video-play",
+      "spanish": "darle a [un video]",
+      "english": "to play [a video]",
+      "example": {
+        "spanish": "Dale al video.",
+        "english": "Play the video."
+      },
+      "collections": [
+        "dar",
+        "play",
+        "media"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "se-dio-take-place",
+      "spanish": "darse [un evento]",
+      "english": "to take place",
+      "example": {
+        "spanish": "La reunión se dio ayer.",
+        "english": "The meeting took place yesterday."
+      },
+      "collections": [
+        "dar",
+        "take",
+        "verb + particle",
+        "place",
+        "event"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "se-dio-happen",
+      "spanish": "darse [un evento]",
+      "english": "to happen",
+      "example": {
+        "spanish": "El cambio se dio de repente.",
+        "english": "The change happened suddenly."
+      },
+      "collections": [
+        "dar",
+        "happen",
+        "event"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dar-resultado-work",
+      "spanish": "dar resultado",
+      "english": "to work",
+      "example": {
+        "spanish": "El plan dio resultado.",
+        "english": "The plan worked."
+      },
+      "collections": [
+        "dar",
+        "work",
+        "result",
+        "fixed expression"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dar-resultado-pay-off",
+      "spanish": "dar resultado",
+      "english": "to pay off",
+      "example": {
+        "spanish": "La práctica dio resultado.",
+        "english": "The practice paid off."
+      },
+      "collections": [
+        "dar",
+        "pay",
+        "phrasal verb",
+        "off",
+        "result"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dar-lugar-lead-to",
+      "spanish": "dar lugar a [algo]",
+      "english": "to lead to [something]",
+      "example": {
+        "spanish": "El error dio lugar a una revisión.",
+        "english": "The error led to a review."
+      },
+      "collections": [
+        "dar",
+        "lead",
+        "verb + preposition",
+        "to",
+        "a => to"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dar-lugar-give-rise-to",
+      "spanish": "dar lugar a [algo]",
+      "english": "to give rise to [something]",
+      "example": {
+        "spanish": "El cambio dio lugar a nuevas preguntas.",
+        "english": "The change gave rise to new questions."
+      },
+      "collections": [
+        "dar",
+        "give",
+        "verb + preposition",
+        "to",
+        "rise"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dar-ganas-feel-like",
+      "spanish": "darle ganas de [hacer algo] a [alguien]",
+      "english": "to feel like [doing something]",
+      "example": {
+        "spanish": "Me dan ganas de salir.",
+        "english": "I feel like going out."
+      },
+      "collections": [
+        "dar",
+        "feel",
+        "verb + preposition",
+        "like",
+        "de => like",
+        "gerund"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "dar-miedo-scare",
+      "spanish": "darle miedo a [alguien]",
+      "english": "to scare [somebody]",
+      "example": {
+        "spanish": "Caminar solo me da miedo.",
+        "english": "Walking alone scares me."
+      },
+      "collections": [
+        "dar",
+        "scare",
+        "feeling"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dar-sueno-make-sleepy",
+      "spanish": "darle sueño a [alguien]",
+      "english": "to make [somebody] sleepy",
+      "example": {
+        "spanish": "La medicina me da sueño.",
+        "english": "The medicine makes me sleepy."
+      },
+      "collections": [
+        "dar",
+        "make",
+        "feeling",
+        "sleepy"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dar-hambre-make-hungry",
+      "spanish": "darle hambre a [alguien]",
+      "english": "to make [somebody] hungry",
+      "example": {
+        "spanish": "El ejercicio me da hambre.",
+        "english": "Exercise makes me hungry."
+      },
+      "collections": [
+        "dar",
+        "make",
+        "feeling",
+        "hungry"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dar-sed-make-thirsty",
+      "spanish": "darle sed a [alguien]",
+      "english": "to make [somebody] thirsty",
+      "example": {
+        "spanish": "El calor me da sed.",
+        "english": "The heat makes me thirsty."
+      },
+      "collections": [
+        "dar",
+        "make",
+        "feeling",
+        "thirsty"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dar-verguenza-embarrass",
+      "spanish": "darle vergüenza a [alguien]",
+      "english": "to embarrass [somebody]",
+      "example": {
+        "spanish": "La situación me da vergüenza.",
+        "english": "The situation embarrasses me."
+      },
+      "collections": [
+        "dar",
+        "embarrass",
+        "feeling"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "me-da-pena-embarrassed",
+      "spanish": "me da pena [hacer algo]",
+      "english": "I'm embarrassed to [do something]",
+      "example": {
+        "spanish": "Me da pena preguntar.",
+        "english": "I'm embarrassed to ask."
+      },
+      "collections": [
+        "dar",
+        "embarrassed",
+        "feeling",
+        "Colombian Spanish",
+        "verb + infinitive",
+        "to"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dar-risa-make-laugh",
+      "spanish": "darle risa a [alguien]",
+      "english": "to make [somebody] laugh",
+      "example": {
+        "spanish": "Ese video me da risa.",
+        "english": "That video makes me laugh."
+      },
+      "collections": [
+        "dar",
+        "make",
+        "feeling",
+        "laugh"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dar-asco-disgust",
+      "spanish": "darle asco a [alguien]",
+      "english": "to disgust [somebody]",
+      "example": {
+        "spanish": "Ese olor me da asco.",
+        "english": "That smell disgusts me."
+      },
+      "collections": [
+        "dar",
+        "disgust",
+        "feeling"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "darse-por-vencido-give-up",
+      "spanish": "darse por vencido/a",
+      "english": "to give up",
+      "example": {
+        "spanish": "No te des por vencido.",
+        "english": "Don't give up."
+      },
+      "collections": [
+        "dar",
+        "give",
+        "phrasal verb",
+        "up",
+        "reflexive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ceder-give-in",
+      "spanish": "ceder",
+      "english": "to give in",
+      "example": {
+        "spanish": "Finalmente cedió.",
+        "english": "She finally gave in."
+      },
+      "collections": [
+        "dar",
+        "give",
+        "phrasal verb",
+        "in"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "regalar-give-away",
+      "spanish": "regalar [algo]",
+      "english": "to give [something] away",
+      "example": {
+        "spanish": "Regaló la ropa vieja.",
+        "english": "She gave the old clothes away."
+      },
+      "collections": [
+        "dar",
+        "give",
+        "phrasal verb",
+        "away"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "revelar-give-away",
+      "spanish": "revelar [un secreto]",
+      "english": "to give [a secret] away",
+      "example": {
+        "spanish": "Su sonrisa reveló la sorpresa.",
+        "english": "Her smile gave the surprise away."
+      },
+      "collections": [
+        "dar",
+        "give",
+        "phrasal verb",
+        "away"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "devolver-give-back",
+      "spanish": "devolver [algo]",
+      "english": "to give [something] back",
+      "example": {
+        "spanish": "Devuélveme el libro.",
+        "english": "Give me the book back."
+      },
+      "collections": [
+        "dar",
+        "give",
+        "phrasal verb",
+        "back"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "repartir-give-out",
+      "spanish": "repartir [algo]",
+      "english": "to give [something] out",
+      "example": {
+        "spanish": "Repartieron las hojas.",
+        "english": "They gave the sheets out."
+      },
+      "collections": [
+        "dar",
+        "give",
+        "phrasal verb",
+        "out"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dejar-de-funcionar-give-out",
+      "spanish": "dejar de funcionar",
+      "english": "to give out",
+      "example": {
+        "spanish": "La batería dejó de funcionar.",
+        "english": "The battery gave out."
+      },
+      "collections": [
+        "dar",
+        "give",
+        "phrasal verb",
+        "out"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "emitir-give-off",
+      "spanish": "emitir [algo]",
+      "english": "to give off [something]",
+      "example": {
+        "spanish": "La lámpara emite mucho calor.",
+        "english": "The lamp gives off a lot of heat."
+      },
+      "collections": [
+        "dar",
+        "give",
+        "phrasal verb",
+        "off"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ayudar-give-hand",
+      "spanish": "ayudar a [alguien]",
+      "english": "to give [somebody] a hand",
+      "example": {
+        "spanish": "Ayúdame con esta caja.",
+        "english": "Give me a hand with this box."
+      },
+      "collections": [
+        "dar",
+        "give",
+        "fixed expression",
+        "hand",
+        "verb + preposition",
+        "with"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dar-a-luz-give-birth",
+      "spanish": "dar a luz a [un bebé]",
+      "english": "to give birth to [a baby]",
+      "example": {
+        "spanish": "Dio a luz a una niña.",
+        "english": "She gave birth to a girl."
+      },
+      "collections": [
+        "dar",
+        "give",
+        "verb + preposition",
+        "to",
+        "birth"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dar-poder-empower",
+      "spanish": "dar poder a [alguien]",
+      "english": "to empower [somebody]",
+      "example": {
+        "spanish": "La capacitación les da poder a los empleados.",
+        "english": "The training empowers employees."
+      },
+      "collections": [
+        "dar",
+        "power",
+        "empower",
+        "cognate",
+        "prefix",
+        "em-"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dar-poder-give-power",
+      "spanish": "dar poder a [alguien]",
+      "english": "to give power to [somebody]",
+      "example": {
+        "spanish": "La regla da poder a los supervisores.",
+        "english": "The rule gives power to supervisors."
+      },
+      "collections": [
+        "dar",
+        "give",
+        "power",
+        "verb + preposition",
+        "to",
+        "a => to"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "darle-poder-authorize",
+      "spanish": "darle poder a [alguien] para [hacer algo]",
+      "english": "to authorize [somebody] to [do something]",
+      "example": {
+        "spanish": "El contrato autoriza a Ana a firmar.",
+        "english": "The contract authorizes Ana to sign."
+      },
+      "collections": [
+        "dar",
+        "authorize",
+        "somebody to do something",
+        "verb + infinitive",
+        "to",
+        "cognate"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dado-que-given-that",
+      "spanish": "dado que [algo sucede]",
+      "english": "given that [something happens]",
+      "example": {
+        "spanish": "Dado que es tarde, debemos irnos.",
+        "english": "Given that it's late, we should leave."
+      },
+      "collections": [
+        "dar",
+        "given",
+        "discourse connector",
+        "participle",
+        "that"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "el-dador-giver",
+      "spanish": "el/la dador/a",
+      "english": "the giver",
+      "example": {
+        "spanish": "El dador decide la cantidad.",
+        "english": "The giver decides the amount."
+      },
+      "collections": [
+        "dar",
+        "giver",
+        "noun",
+        "-dor",
+        "-er",
+        "person"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pedir-algo-ask-for",
+      "spanish": "pedir [algo]",
+      "english": "to ask for [something]",
+      "example": {
+        "spanish": "Pedí ayuda.",
+        "english": "I asked for help."
+      },
+      "collections": [
+        "pedir",
+        "ask",
+        "phrasal verb",
+        "for"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "pedirle-algo-ask-for",
+      "spanish": "pedirle [algo] a [alguien]",
+      "english": "to ask [somebody] for [something]",
+      "example": {
+        "spanish": "Le pedí ayuda a Ana.",
+        "english": "I asked Ana for help."
+      },
+      "collections": [
+        "pedir",
+        "ask",
+        "verb + preposition",
+        "for",
+        "a => object"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "pedirle-que-ask-to",
+      "spanish": "pedirle a [alguien] que [haga algo]",
+      "english": "to ask [somebody] to [do something]",
+      "example": {
+        "spanish": "Le pedí a Ana que esperara.",
+        "english": "I asked Ana to wait."
+      },
+      "collections": [
+        "pedir",
+        "ask",
+        "somebody to do something",
+        "verb + infinitive",
+        "to"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "pedir-comida-order",
+      "spanish": "pedir [comida o bebida]",
+      "english": "to order [food or a drink]",
+      "example": {
+        "spanish": "Pedí un café.",
+        "english": "I ordered a coffee."
+      },
+      "collections": [
+        "pedir",
+        "order",
+        "restaurant"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "pedir-producto-order",
+      "spanish": "pedir [un producto]",
+      "english": "to order [a product]",
+      "example": {
+        "spanish": "Pedí el libro por internet.",
+        "english": "I ordered the book online."
+      },
+      "collections": [
+        "pedir",
+        "order",
+        "shopping"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "pedir-prestado-borrow-from",
+      "spanish": "pedirle prestado [algo] a [alguien]",
+      "english": "to borrow [something] from [somebody]",
+      "example": {
+        "spanish": "Le pedí prestado el carro a Ana.",
+        "english": "I borrowed the car from Ana."
+      },
+      "collections": [
+        "pedir",
+        "borrow",
+        "verb + preposition",
+        "from",
+        "a => from"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "pedir-permiso-ask-for-permission",
+      "spanish": "pedir permiso para [hacer algo]",
+      "english": "to ask for permission to [do something]",
+      "example": {
+        "spanish": "Pedí permiso para salir.",
+        "english": "I asked for permission to leave."
+      },
+      "collections": [
+        "pedir",
+        "ask",
+        "verb + preposition",
+        "for",
+        "verb + infinitive",
+        "to",
+        "para => to",
+        "permission"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "pedir-cita-make-with",
+      "spanish": "pedir una cita con [alguien]",
+      "english": "to make an appointment with [somebody]",
+      "example": {
+        "spanish": "Pedí una cita con la médica.",
+        "english": "I made an appointment with the doctor."
+      },
+      "collections": [
+        "pedir",
+        "make",
+        "appointment",
+        "verb + preposition",
+        "with",
+        "con => with"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pedir-cita-book-with",
+      "spanish": "pedir una cita con [alguien]",
+      "english": "to book an appointment with [somebody]",
+      "example": {
+        "spanish": "Pedí una cita con la dentista.",
+        "english": "I booked an appointment with the dentist."
+      },
+      "collections": [
+        "pedir",
+        "book",
+        "appointment",
+        "verb + preposition",
+        "with",
+        "con => with"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pedir-visa-apply-for",
+      "spanish": "pedir [una visa]",
+      "english": "to apply for [a visa]",
+      "example": {
+        "spanish": "Pedí una visa de trabajo.",
+        "english": "I applied for a work visa."
+      },
+      "collections": [
+        "pedir",
+        "apply",
+        "phrasal verb",
+        "for",
+        "application"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pedir-formalmente-request",
+      "spanish": "pedir formalmente [algo]",
+      "english": "to request [something]",
+      "example": {
+        "spanish": "Pedí formalmente una copia.",
+        "english": "I requested a copy."
+      },
+      "collections": [
+        "pedir",
+        "request",
+        "formal"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pedir-disculpas-apologize",
+      "spanish": "pedir disculpas por [algo]",
+      "english": "to apologize for [something]",
+      "example": {
+        "spanish": "Pidió disculpas por el error.",
+        "english": "She apologized for the mistake."
+      },
+      "collections": [
+        "pedir",
+        "apologize",
+        "verb + preposition",
+        "for",
+        "por => for",
+        "cognate"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pedir-perdon-ask-for-forgiveness",
+      "spanish": "pedir perdón por [algo]",
+      "english": "to ask for forgiveness for [something]",
+      "example": {
+        "spanish": "Pidió perdón por el error.",
+        "english": "He asked for forgiveness for the mistake."
+      },
+      "collections": [
+        "pedir",
+        "ask",
+        "phrasal verb",
+        "for",
+        "forgiveness",
+        "por => for"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "pedir-deseo-make-wish",
+      "spanish": "pedir un deseo",
+      "english": "to make a wish",
+      "example": {
+        "spanish": "Pidió un deseo.",
+        "english": "She made a wish."
+      },
+      "collections": [
+        "pedir",
+        "make",
+        "wish",
+        "collocation"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "pedir-limosna-beg",
+      "spanish": "pedir limosna",
+      "english": "to beg",
+      "example": {
+        "spanish": "Pedía limosna en la calle.",
+        "english": "He begged in the street."
+      },
+      "collections": [
+        "pedir",
+        "beg",
+        "fixed expression"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pedir-domicilio-order-delivery",
+      "spanish": "pedir [comida] a domicilio",
+      "english": "to order [food] for delivery",
+      "example": {
+        "spanish": "Pedimos pizza a domicilio.",
+        "english": "We ordered pizza for delivery."
+      },
+      "collections": [
+        "pedir",
+        "order",
+        "verb + preposition",
+        "for",
+        "delivery"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pedir-para-llevar-order-takeout",
+      "spanish": "pedir [comida] para llevar",
+      "english": "to order [food] to go",
+      "example": {
+        "spanish": "Pedí el almuerzo para llevar.",
+        "english": "I ordered lunch to go."
+      },
+      "collections": [
+        "pedir",
+        "order",
+        "verb + infinitive",
+        "to",
+        "to go",
+        "takeout"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pedir-cuentas-demand-explanation",
+      "spanish": "pedirle cuentas a [alguien]",
+      "english": "to demand an explanation from [somebody]",
+      "example": {
+        "spanish": "Le pidieron cuentas al gerente.",
+        "english": "They demanded an explanation from the manager."
+      },
+      "collections": [
+        "pedir",
+        "demand",
+        "verb + preposition",
+        "from",
+        "fixed expression"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "preguntar-sobre-ask-about",
+      "spanish": "preguntar sobre [algo]",
+      "english": "to ask about [something]",
+      "example": {
+        "spanish": "Pregunté sobre el horario.",
+        "english": "I asked about the schedule."
+      },
+      "collections": [
+        "pedir",
+        "ask",
+        "verb + preposition",
+        "about",
+        "sobre => about"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "preguntar-a-varias-personas-ask-around",
+      "spanish": "preguntarles a varias personas",
+      "english": "to ask around",
+      "example": {
+        "spanish": "Pregunté a varias personas.",
+        "english": "I asked around."
+      },
+      "collections": [
+        "pedir",
+        "ask",
+        "phrasal verb",
+        "around"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "invitar-a-salir-ask-out",
+      "spanish": "invitar a salir a [alguien]",
+      "english": "to ask [somebody] out",
+      "example": {
+        "spanish": "Mateo invitó a Diana a salir.",
+        "english": "Mateo asked Diana out."
+      },
+      "collections": [
+        "pedir",
+        "ask",
+        "phrasal verb",
+        "out",
+        "dating"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "preguntar-por-salud-ask-after",
+      "spanish": "preguntar por [alguien]",
+      "english": "to ask after [somebody]",
+      "example": {
+        "spanish": "Preguntó por tu mamá.",
+        "english": "She asked after your mother."
+      },
+      "collections": [
+        "pedir",
+        "ask",
+        "phrasal verb",
+        "after",
+        "por => after"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "invitar-casa-ask-over",
+      "spanish": "invitar a [alguien] a casa",
+      "english": "to ask [somebody] over",
+      "example": {
+        "spanish": "Invitamos a Ana a casa.",
+        "english": "We asked Ana over."
+      },
+      "collections": [
+        "pedir",
+        "ask",
+        "phrasal verb",
+        "over"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "invitar-entrar-ask-in",
+      "spanish": "invitar a entrar a [alguien]",
+      "english": "to ask [somebody] in",
+      "example": {
+        "spanish": "La invité a entrar.",
+        "english": "I asked her in."
+      },
+      "collections": [
+        "pedir",
+        "ask",
+        "phrasal verb",
+        "in"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pedirle-algo-request-from",
+      "spanish": "pedir [algo] a [alguien] formalmente",
+      "english": "to request [something] from [somebody]",
+      "example": {
+        "spanish": "Solicité una copia al banco.",
+        "english": "I requested a copy from the bank."
+      },
+      "collections": [
+        "pedir",
+        "request",
+        "verb + preposition",
+        "from",
+        "a => from",
+        "formal"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pedir-a-negocio-order-from",
+      "spanish": "pedir [algo] a [un negocio]",
+      "english": "to order [something] from [a business]",
+      "example": {
+        "spanish": "Pedí el libro a una tienda local.",
+        "english": "I ordered the book from a local store."
+      },
+      "collections": [
+        "pedir",
+        "order",
+        "verb + preposition",
+        "from",
+        "a => from"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "pedir-comida-casa-order-in",
+      "spanish": "pedir [comida] a domicilio",
+      "english": "to order in",
+      "example": {
+        "spanish": "Esta noche vamos a pedir comida.",
+        "english": "We're going to order in tonight."
+      },
+      "collections": [
+        "pedir",
+        "order",
+        "phrasal verb",
+        "in",
+        "delivery"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "mandar-order-around",
+      "spanish": "mandar a [alguien] de un lado a otro",
+      "english": "to order [somebody] around",
+      "example": {
+        "spanish": "El jefe manda a todos de un lado a otro.",
+        "english": "The boss orders everyone around."
+      },
+      "collections": [
+        "pedir",
+        "order",
+        "phrasal verb",
+        "around"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "mandar-salir-order-out",
+      "spanish": "ordenarle salir a [alguien]",
+      "english": "to order [somebody] out",
+      "example": {
+        "spanish": "El juez le ordenó salir.",
+        "english": "The judge ordered him out."
+      },
+      "collections": [
+        "pedir",
+        "order",
+        "phrasal verb",
+        "out"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "el-pedido-order",
+      "spanish": "el pedido",
+      "english": "the order",
+      "example": {
+        "spanish": "El pedido llegó temprano.",
+        "english": "The order arrived early."
+      },
+      "collections": [
+        "pedir",
+        "order",
+        "noun",
+        "participle"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "la-peticion-request",
+      "spanish": "la petición",
+      "english": "the request",
+      "example": {
+        "spanish": "La petición fue aprobada.",
+        "english": "The request was approved."
+      },
+      "collections": [
+        "pedir",
+        "request",
+        "noun",
+        "cognate",
+        "-ción",
+        "-tion",
+        "cognate -ción => -tion"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "poner-algo-put",
+      "spanish": "poner [algo] [en algún lugar]",
+      "english": "to put [something] [somewhere]",
+      "example": {
+        "spanish": "Pon las llaves sobre la mesa.",
+        "english": "Put the keys on the table."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "placement"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "poner-en-put-in",
+      "spanish": "poner [algo] en [un lugar]",
+      "english": "to put [something] in [a place]",
+      "example": {
+        "spanish": "Pon el libro en la caja.",
+        "english": "Put the book in the box."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "verb + preposition",
+        "in",
+        "en => in"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "poner-sobre-put-on",
+      "spanish": "poner [algo] sobre [una superficie]",
+      "english": "to put [something] on [a surface]",
+      "example": {
+        "spanish": "Pon las llaves sobre la mesa.",
+        "english": "Put the keys on the table."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "verb + preposition",
+        "on",
+        "sobre => on"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "poner-dentro-put-into",
+      "spanish": "poner [algo] dentro de [un lugar]",
+      "english": "to put [something] into [a place]",
+      "example": {
+        "spanish": "Pon el documento dentro del sobre.",
+        "english": "Put the document into the envelope."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "verb + preposition",
+        "into",
+        "dentro de => into"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "poner-debajo-put-under",
+      "spanish": "poner [algo] debajo de [algo]",
+      "english": "to put [something] under [something]",
+      "example": {
+        "spanish": "Pon la caja debajo de la mesa.",
+        "english": "Put the box under the table."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "verb + preposition",
+        "under",
+        "debajo de => under"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "poner-junto-put-next-to",
+      "spanish": "poner [algo] junto a [algo]",
+      "english": "to put [something] next to [something]",
+      "example": {
+        "spanish": "Pon la silla junto a la ventana.",
+        "english": "Put the chair next to the window."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "verb + preposition",
+        "next",
+        "to",
+        "junto a => next to"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "poner-algo-place",
+      "spanish": "poner [algo] [en algún lugar]",
+      "english": "to place [something] [somewhere]",
+      "example": {
+        "spanish": "Ponga el formulario en la bandeja.",
+        "english": "Place the form in the tray."
+      },
+      "collections": [
+        "poner",
+        "place",
+        "placement",
+        "formal"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "poner-mesa-set",
+      "spanish": "poner la mesa",
+      "english": "to set the table",
+      "example": {
+        "spanish": "Pon la mesa para cuatro personas.",
+        "english": "Set the table for four."
+      },
+      "collections": [
+        "poner",
+        "set",
+        "collocation",
+        "table"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "poner-alarma-set",
+      "spanish": "poner una alarma para [una hora]",
+      "english": "to set an alarm for [a time]",
+      "example": {
+        "spanish": "Pon la alarma para las seis.",
+        "english": "Set the alarm for six."
+      },
+      "collections": [
+        "poner",
+        "set",
+        "verb + preposition",
+        "for",
+        "para => for",
+        "device"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "poner-fecha-set",
+      "spanish": "poner una fecha para [algo]",
+      "english": "to set a date for [something]",
+      "example": {
+        "spanish": "Pongamos una fecha para la reunión.",
+        "english": "Let's set a date for the meeting."
+      },
+      "collections": [
+        "poner",
+        "set",
+        "verb + preposition",
+        "for",
+        "para => for",
+        "date"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "poner-precio-set",
+      "spanish": "ponerle un precio a [algo]",
+      "english": "to set a price for [something]",
+      "example": {
+        "spanish": "Le pusieron un precio al servicio.",
+        "english": "They set a price for the service."
+      },
+      "collections": [
+        "poner",
+        "set",
+        "verb + preposition",
+        "for",
+        "a => for",
+        "price"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "poner-luz-turn-on",
+      "spanish": "poner [una luz o un aparato]",
+      "english": "to turn on [a light or device]",
+      "example": {
+        "spanish": "Pon la luz.",
+        "english": "Turn on the light."
+      },
+      "collections": [
+        "poner",
+        "turn",
+        "phrasal verb",
+        "on",
+        "device"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "poner-musica-put-on",
+      "spanish": "poner [música o un video]",
+      "english": "to put on [music or a video]",
+      "example": {
+        "spanish": "Pon algo de música.",
+        "english": "Put on some music."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "phrasal verb",
+        "on",
+        "media"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "poner-video-play",
+      "spanish": "poner [música o un video]",
+      "english": "to play [music or a video]",
+      "example": {
+        "spanish": "Pon el video otra vez.",
+        "english": "Play the video again."
+      },
+      "collections": [
+        "poner",
+        "play",
+        "media"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "ponerse-ropa-put-on",
+      "spanish": "ponerse [una prenda]",
+      "english": "to put on [an item of clothing]",
+      "example": {
+        "spanish": "Ponte la chaqueta.",
+        "english": "Put on your jacket."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "phrasal verb",
+        "on",
+        "clothing",
+        "reflexive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "llevar-puesto-wear",
+      "spanish": "llevar puesto/a [una prenda]",
+      "english": "to wear [an item of clothing]",
+      "example": {
+        "spanish": "Lleva puesta una chaqueta.",
+        "english": "She's wearing a jacket."
+      },
+      "collections": [
+        "poner",
+        "wear",
+        "clothing",
+        "state",
+        "participle"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "ponerse-a-start-doing",
+      "spanish": "ponerse a [hacer algo]",
+      "english": "to start [doing something]",
+      "example": {
+        "spanish": "Se puso a trabajar.",
+        "english": "She started working."
+      },
+      "collections": [
+        "poner",
+        "start",
+        "verb + preposition",
+        "a",
+        "gerund"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "ponerse-a-begin-to",
+      "spanish": "ponerse a [hacer algo]",
+      "english": "to begin to [do something]",
+      "example": {
+        "spanish": "Se puso a leer.",
+        "english": "She began to read."
+      },
+      "collections": [
+        "poner",
+        "begin",
+        "verb + infinitive",
+        "to",
+        "a => to"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "ponerse-adjetivo-get",
+      "spanish": "ponerse [adjetivo]",
+      "english": "to get [adjective]",
+      "example": {
+        "spanish": "Se puso triste.",
+        "english": "She got sad."
+      },
+      "collections": [
+        "poner",
+        "get",
+        "change of state",
+        "adjective",
+        "reflexive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "ponerse-adjetivo-become",
+      "spanish": "ponerse [adjetivo]",
+      "english": "to become [adjective]",
+      "example": {
+        "spanish": "Se puso nervioso.",
+        "english": "He became nervous."
+      },
+      "collections": [
+        "poner",
+        "become",
+        "change of state",
+        "adjective",
+        "reflexive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "ponerse-de-pie-stand-up",
+      "spanish": "ponerse de pie",
+      "english": "to stand up",
+      "example": {
+        "spanish": "Se puso de pie.",
+        "english": "She stood up."
+      },
+      "collections": [
+        "poner",
+        "stand",
+        "phrasal verb",
+        "up",
+        "reflexive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "ponerse-contacto-get-in-touch-with",
+      "spanish": "ponerse en contacto con [alguien]",
+      "english": "to get in touch with [somebody]",
+      "example": {
+        "spanish": "Me puse en contacto con Ana.",
+        "english": "I got in touch with Ana."
+      },
+      "collections": [
+        "poner",
+        "get",
+        "fixed expression",
+        "in",
+        "with",
+        "en => in",
+        "con => with"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ponerse-acuerdo-agree-with",
+      "spanish": "ponerse de acuerdo con [alguien]",
+      "english": "to agree with [somebody]",
+      "example": {
+        "spanish": "Me puse de acuerdo con Ana.",
+        "english": "I agreed with Ana."
+      },
+      "collections": [
+        "poner",
+        "agree",
+        "verb + preposition",
+        "with",
+        "con => with",
+        "reflexive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "poner-riesgo-put-at-risk",
+      "spanish": "poner [algo] en riesgo",
+      "english": "to put [something] at risk",
+      "example": {
+        "spanish": "El error puso la seguridad en riesgo.",
+        "english": "The error put security at risk."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "verb + preposition",
+        "at",
+        "risk",
+        "en => at"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "poner-fin-put-end-to",
+      "spanish": "poner fin a [algo]",
+      "english": "to put an end to [something]",
+      "example": {
+        "spanish": "Pusieron fin al conflicto.",
+        "english": "They put an end to the conflict."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "verb + preposition",
+        "to",
+        "a => to",
+        "end"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "poner-escrito-put-in-writing",
+      "spanish": "poner [algo] por escrito",
+      "english": "to put [something] in writing",
+      "example": {
+        "spanish": "Pon el acuerdo por escrito.",
+        "english": "Put the agreement in writing."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "verb + preposition",
+        "in",
+        "por escrito => in writing"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "poner-cargo-put-in-charge-of",
+      "spanish": "poner a [alguien] a cargo de [algo]",
+      "english": "to put [somebody] in charge of [something]",
+      "example": {
+        "spanish": "Pusieron a Ana a cargo del equipo.",
+        "english": "They put Ana in charge of the team."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "verb + preposition",
+        "in",
+        "of",
+        "a cargo de => in charge of"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "poner-practica-put-into-practice",
+      "spanish": "poner [algo] en práctica",
+      "english": "to put [something] into practice",
+      "example": {
+        "spanish": "Pusimos el plan en práctica.",
+        "english": "We put the plan into practice."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "verb + preposition",
+        "into",
+        "en => into",
+        "practice"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ponerse-al-dia-catch-up-with",
+      "spanish": "ponerse al día con [algo o alguien]",
+      "english": "to catch up with [something or somebody]",
+      "example": {
+        "spanish": "Tengo que ponerme al día con el trabajo.",
+        "english": "I have to catch up with the work."
+      },
+      "collections": [
+        "poner",
+        "catch",
+        "phrasal verb",
+        "up",
+        "with",
+        "con => with",
+        "reflexive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "poner-atencion-pay-attention-to",
+      "spanish": "poner atención a [algo]",
+      "english": "to pay attention to [something]",
+      "example": {
+        "spanish": "Pon atención a las instrucciones.",
+        "english": "Pay attention to the instructions."
+      },
+      "collections": [
+        "poner",
+        "pay",
+        "verb + preposition",
+        "to",
+        "a => to",
+        "attention",
+        "Colombian Spanish"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ponerle-nombre-name",
+      "spanish": "ponerle nombre a [algo]",
+      "english": "to name [something]",
+      "example": {
+        "spanish": "Le pusieron nombre al proyecto.",
+        "english": "They named the project."
+      },
+      "collections": [
+        "poner",
+        "name",
+        "fixed expression"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "el-puesto-job",
+      "spanish": "el puesto",
+      "english": "the job position",
+      "example": {
+        "spanish": "Solicitó un puesto nuevo.",
+        "english": "She applied for a new position."
+      },
+      "collections": [
+        "poner",
+        "position",
+        "noun",
+        "participle",
+        "job"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "el-puesto-stand",
+      "spanish": "el puesto",
+      "english": "the stand",
+      "example": {
+        "spanish": "Compramos fruta en un puesto.",
+        "english": "We bought fruit at a stand."
+      },
+      "collections": [
+        "poner",
+        "stand",
+        "noun",
+        "participle",
+        "market"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "puesto-que-since",
+      "spanish": "puesto que [algo sucede]",
+      "english": "since [something happens]",
+      "example": {
+        "spanish": "Puesto que es tarde, debemos irnos.",
+        "english": "Since it's late, we should leave."
+      },
+      "collections": [
+        "poner",
+        "discourse connector",
+        "participle",
+        "since"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "la-puesta-sol-sunset",
+      "spanish": "la puesta de sol",
+      "english": "the sunset",
+      "example": {
+        "spanish": "Vimos la puesta de sol.",
+        "english": "We watched the sunset."
+      },
+      "collections": [
+        "poner",
+        "sunset",
+        "noun",
+        "participle",
+        "de"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "posponer-put-off",
+      "spanish": "posponer [algo]",
+      "english": "to put [something] off",
+      "example": {
+        "spanish": "Pospusieron la reunión.",
+        "english": "They put the meeting off."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "phrasal verb",
+        "off",
+        "prefix",
+        "pos-"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "desanimar-put-off",
+      "spanish": "desanimar a [alguien]",
+      "english": "to put [somebody] off",
+      "example": {
+        "spanish": "Su actitud me desanimó.",
+        "english": "His attitude put me off."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "phrasal verb",
+        "off"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "guardar-put-away",
+      "spanish": "guardar [algo]",
+      "english": "to put [something] away",
+      "example": {
+        "spanish": "Guarda los libros.",
+        "english": "Put the books away."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "phrasal verb",
+        "away"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "dejar-put-down",
+      "spanish": "dejar [algo] sobre [una superficie]",
+      "english": "to put [something] down",
+      "example": {
+        "spanish": "Deja la caja en el piso.",
+        "english": "Put the box down."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "phrasal verb",
+        "down"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "menospreciar-put-down",
+      "spanish": "menospreciar a [alguien]",
+      "english": "to put [somebody] down",
+      "example": {
+        "spanish": "Siempre menosprecia a sus compañeros.",
+        "english": "She always puts her coworkers down."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "phrasal verb",
+        "down"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "volver-a-poner-put-back",
+      "spanish": "volver a poner [algo] en su lugar",
+      "english": "to put [something] back",
+      "example": {
+        "spanish": "Vuelve a poner el libro en su lugar.",
+        "english": "Put the book back."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "phrasal verb",
+        "back"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "apagar-incendio-put-out",
+      "spanish": "apagar [un incendio]",
+      "english": "to put out [a fire]",
+      "example": {
+        "spanish": "Apagaron el incendio.",
+        "english": "They put out the fire."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "phrasal verb",
+        "out"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "publicar-put-out",
+      "spanish": "publicar [algo]",
+      "english": "to put [something] out",
+      "example": {
+        "spanish": "La empresa publicó un comunicado.",
+        "english": "The company put out a statement."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "phrasal verb",
+        "out"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "molestar-put-out",
+      "spanish": "molestar a [alguien]",
+      "english": "to put [somebody] out",
+      "example": {
+        "spanish": "Espero no molestarte.",
+        "english": "I hope I'm not putting you out."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "phrasal verb",
+        "out"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "colgar-put-up",
+      "spanish": "colgar [algo]",
+      "english": "to put [something] up",
+      "example": {
+        "spanish": "Colgaron el aviso.",
+        "english": "They put the notice up."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "phrasal verb",
+        "up"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "alojar-put-up",
+      "spanish": "alojar a [alguien]",
+      "english": "to put [somebody] up",
+      "example": {
+        "spanish": "Alojamos a Ana por una noche.",
+        "english": "We put Ana up for one night."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "phrasal verb",
+        "up",
+        "for"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "aguantar-put-up-with",
+      "spanish": "aguantar [algo]",
+      "english": "to put up with [something]",
+      "example": {
+        "spanish": "No voy a aguantar ese ruido.",
+        "english": "I won't put up with that noise."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "phrasal verb",
+        "up",
+        "with"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "comunicar-llamada-put-through",
+      "spanish": "comunicar a [alguien] por teléfono",
+      "english": "to put [somebody] through",
+      "example": {
+        "spanish": "Voy a comunicarlo con Ana.",
+        "english": "I'll put you through to Ana."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "phrasal verb",
+        "through",
+        "to"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hacer-pasar-put-through",
+      "spanish": "hacer pasar a [alguien] por [algo]",
+      "english": "to put [somebody] through [something]",
+      "example": {
+        "spanish": "Lo hicieron pasar por una prueba difícil.",
+        "english": "They put him through a difficult test."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "phrasal verb",
+        "through"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "comunicar-idea-put-across",
+      "spanish": "comunicar [una idea]",
+      "english": "to put [an idea] across",
+      "example": {
+        "spanish": "Comunicó la idea con claridad.",
+        "english": "She put the idea across clearly."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "phrasal verb",
+        "across"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "apartar-put-aside",
+      "spanish": "apartar [algo]",
+      "english": "to put [something] aside",
+      "example": {
+        "spanish": "Aparta un poco de dinero.",
+        "english": "Put some money aside."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "phrasal verb",
+        "aside"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "proponer-put-forward",
+      "spanish": "proponer [una idea]",
+      "english": "to put [an idea] forward",
+      "example": {
+        "spanish": "Propuso una solución.",
+        "english": "She put a solution forward."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "phrasal verb",
+        "forward",
+        "prefix",
+        "pro-"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "armar-put-together",
+      "spanish": "armar [algo]",
+      "english": "to put [something] together",
+      "example": {
+        "spanish": "Armamos la mesa.",
+        "english": "We put the table together."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "phrasal verb",
+        "together"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "presentar-solicitud-put-in",
+      "spanish": "presentar [una solicitud]",
+      "english": "to put in [an application]",
+      "example": {
+        "spanish": "Presentó una solicitud.",
+        "english": "She put in an application."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "phrasal verb",
+        "in",
+        "application"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dedicar-esfuerzo-put-in",
+      "spanish": "dedicar [tiempo o esfuerzo] a [algo]",
+      "english": "to put [time or effort] into [something]",
+      "example": {
+        "spanish": "Dedicó mucho tiempo al proyecto.",
+        "english": "She put a lot of time into the project."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "verb + preposition",
+        "into",
+        "effort"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "atribuir-put-down-to",
+      "spanish": "atribuir [algo] a [algo]",
+      "english": "to put [something] down to [something]",
+      "example": {
+        "spanish": "Atribuyó el error al cansancio.",
+        "english": "She put the error down to fatigue."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "phrasal verb",
+        "down",
+        "to"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "avisar-put-onto",
+      "spanish": "avisar a [alguien] sobre [algo]",
+      "english": "to put [somebody] onto [something]",
+      "example": {
+        "spanish": "Ana me avisó sobre esa oportunidad.",
+        "english": "Ana put me onto that opportunity."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "phrasal verb",
+        "onto"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "enfrentar-put-against",
+      "spanish": "enfrentar a [alguien] con [alguien]",
+      "english": "to put [somebody] against [somebody]",
+      "example": {
+        "spanish": "La competencia enfrentó a los dos equipos.",
+        "english": "The competition put the two teams against each other."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "verb + preposition",
+        "against",
+        "con => against"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "organizar-evento-put-on",
+      "spanish": "organizar [un evento]",
+      "english": "to put on [an event]",
+      "example": {
+        "spanish": "Organizaron un espectáculo.",
+        "english": "They put on a show."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "phrasal verb",
+        "on",
+        "event"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "subir-peso-put-on",
+      "spanish": "subir de peso",
+      "english": "to put on weight",
+      "example": {
+        "spanish": "Subió de peso durante el invierno.",
+        "english": "He put on weight during the winter."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "phrasal verb",
+        "on",
+        "weight"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "instalar-set-up",
+      "spanish": "instalar [algo]",
+      "english": "to set [something] up",
+      "example": {
+        "spanish": "Instalaron el equipo.",
+        "english": "They set the equipment up."
+      },
+      "collections": [
+        "poner",
+        "set",
+        "phrasal verb",
+        "up",
+        "equipment"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "organizar-reunion-set-up",
+      "spanish": "organizar [una reunión]",
+      "english": "to set up [a meeting]",
+      "example": {
+        "spanish": "Organizaron una reunión.",
+        "english": "They set up a meeting."
+      },
+      "collections": [
+        "poner",
+        "set",
+        "phrasal verb",
+        "up",
+        "meeting"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "fundar-set-up",
+      "spanish": "fundar [una organización]",
+      "english": "to set up [an organization]",
+      "example": {
+        "spanish": "Fundaron una empresa pequeña.",
+        "english": "They set up a small company."
+      },
+      "collections": [
+        "poner",
+        "set",
+        "phrasal verb",
+        "up",
+        "organization"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "tender-trampa-set-up",
+      "spanish": "tenderle una trampa a [alguien]",
+      "english": "to set [somebody] up",
+      "example": {
+        "spanish": "Le tendieron una trampa.",
+        "english": "They set him up."
+      },
+      "collections": [
+        "poner",
+        "set",
+        "phrasal verb",
+        "up"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "salir-viaje-set-off",
+      "spanish": "salir de viaje",
+      "english": "to set off",
+      "example": {
+        "spanish": "Salimos temprano.",
+        "english": "We set off early."
+      },
+      "collections": [
+        "poner",
+        "set",
+        "phrasal verb",
+        "off",
+        "travel"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "activar-set-off",
+      "spanish": "activar [una alarma]",
+      "english": "to set off [an alarm]",
+      "example": {
+        "spanish": "El humo activó la alarma.",
+        "english": "The smoke set off the alarm."
+      },
+      "collections": [
+        "poner",
+        "set",
+        "phrasal verb",
+        "off",
+        "alarm"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "emprender-viaje-set-out",
+      "spanish": "emprender un viaje",
+      "english": "to set out",
+      "example": {
+        "spanish": "Emprendimos el viaje al amanecer.",
+        "english": "We set out at dawn."
+      },
+      "collections": [
+        "poner",
+        "set",
+        "phrasal verb",
+        "out",
+        "travel"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "exponer-set-out",
+      "spanish": "exponer [una idea]",
+      "english": "to set out [an idea]",
+      "example": {
+        "spanish": "Expuso el plan con claridad.",
+        "english": "She set out the plan clearly."
+      },
+      "collections": [
+        "poner",
+        "set",
+        "phrasal verb",
+        "out"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "reservar-set-aside",
+      "spanish": "reservar [algo]",
+      "english": "to set [something] aside",
+      "example": {
+        "spanish": "Reservamos tiempo para hablar.",
+        "english": "We set time aside to talk."
+      },
+      "collections": [
+        "poner",
+        "set",
+        "phrasal verb",
+        "aside"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "retrasar-set-back",
+      "spanish": "retrasar [algo]",
+      "english": "to set [something] back",
+      "example": {
+        "spanish": "El error retrasó el proyecto.",
+        "english": "The error set the project back."
+      },
+      "collections": [
+        "poner",
+        "set",
+        "phrasal verb",
+        "back"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "instalarse-set-in",
+      "spanish": "instalarse [una condición]",
+      "english": "to set in",
+      "example": {
+        "spanish": "Se instaló el frío.",
+        "english": "The cold set in."
+      },
+      "collections": [
+        "poner",
+        "set",
+        "phrasal verb",
+        "in"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "distinguir-set-apart",
+      "spanish": "distinguir a [alguien o algo]",
+      "english": "to set [somebody or something] apart",
+      "example": {
+        "spanish": "Su experiencia la distingue.",
+        "english": "Her experience sets her apart."
+      },
+      "collections": [
+        "poner",
+        "set",
+        "phrasal verb",
+        "apart"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ponerse-a-set-about",
+      "spanish": "ponerse a [hacer algo]",
+      "english": "to set about [doing something]",
+      "example": {
+        "spanish": "Se puso a resolver el problema.",
+        "english": "She set about solving the problem."
+      },
+      "collections": [
+        "poner",
+        "set",
+        "phrasal verb",
+        "about",
+        "gerund"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "anotar-set-down",
+      "spanish": "anotar [algo]",
+      "english": "to set [something] down",
+      "example": {
+        "spanish": "Anotó las reglas.",
+        "english": "She set the rules down."
+      },
+      "collections": [
+        "poner",
+        "set",
+        "phrasal verb",
+        "down"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hablar-por-si-speak-for-itself",
+      "spanish": "hablar por sí solo/a",
+      "english": "to speak for itself",
+      "example": {
+        "spanish": "La evidencia habla por sí sola.",
+        "english": "The evidence speaks for itself."
+      },
+      "collections": [
+        "hablar",
+        "speak",
+        "fixed expression",
+        "verb + preposition",
+        "for",
+        "por => for"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "saludar-say-hello",
+      "spanish": "saludar a [alguien]",
+      "english": "to say hello to [somebody]",
+      "example": {
+        "spanish": "Saluda a tu mamá.",
+        "english": "Say hello to your mother."
+      },
+      "collections": [
+        "decir",
+        "say",
+        "fixed expression",
+        "verb + preposition",
+        "to",
+        "a => to"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "rezar-say-prayer",
+      "spanish": "rezar [una oración]",
+      "english": "to say [a prayer]",
+      "example": {
+        "spanish": "Rezaron antes de cenar.",
+        "english": "They said a prayer before dinner."
+      },
+      "collections": [
+        "decir",
+        "say",
+        "fixed expression",
+        "prayer"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "contar-historia-tell",
+      "spanish": "contarle [una historia] a [alguien]",
+      "english": "to tell [somebody] [a story]",
+      "example": {
+        "spanish": "Cuéntame una historia.",
+        "english": "Tell me a story."
+      },
+      "collections": [
+        "decir",
+        "tell",
+        "double object",
+        "story"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "darse-cuenta-can-tell-that",
+      "spanish": "darse cuenta de que [algo sucede]",
+      "english": "to be able to tell that [something happens]",
+      "example": {
+        "spanish": "Me doy cuenta de que está cansado.",
+        "english": "I can tell that he's tired."
+      },
+      "collections": [
+        "decir",
+        "tell",
+        "perception",
+        "that",
+        "be able to"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ceder-paso-give-way",
+      "spanish": "ceder el paso",
+      "english": "to give way",
+      "example": {
+        "spanish": "Cedió el paso al peatón.",
+        "english": "She gave way to the pedestrian."
+      },
+      "collections": [
+        "dar",
+        "give",
+        "fixed expression",
+        "way",
+        "verb + preposition",
+        "to"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "expresar-put-words",
+      "spanish": "expresar [algo] de cierta manera",
+      "english": "to put [something] a certain way",
+      "example": {
+        "spanish": "No sé cómo expresarlo con cortesía.",
+        "english": "I don't know how to put it politely."
+      },
+      "collections": [
+        "poner",
+        "put",
+        "expression",
+        "manner"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-ambientado-be-set-in",
+      "spanish": "estar ambientado/a en [un lugar o época]",
+      "english": "to be set in [a place or time]",
+      "example": {
+        "spanish": "La historia está ambientada en Bogotá.",
+        "english": "The story is set in Bogotá."
+      },
+      "collections": [
+        "poner",
+        "set",
+        "phrasal verb",
+        "in",
+        "story"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "cuajar-set",
+      "spanish": "cuajar",
+      "english": "to set",
+      "example": {
+        "spanish": "Deja que la gelatina cuaje.",
+        "english": "Let the gelatin set."
+      },
+      "collections": [
+        "poner",
+        "set",
+        "substance",
+        "change of state"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "establecer-regla-set",
+      "spanish": "establecer [una regla o límite]",
+      "english": "to set [a rule or limit]",
+      "example": {
+        "spanish": "Establecieron reglas claras.",
+        "english": "They set clear rules."
+      },
+      "collections": [
+        "poner",
+        "set",
+        "rule",
+        "limit"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "fijarse-meta-set-goal",
+      "spanish": "fijarse una meta",
+      "english": "to set a goal",
+      "example": {
+        "spanish": "Se fijó una meta realista.",
+        "english": "She set a realistic goal."
+      },
+      "collections": [
+        "poner",
+        "set",
+        "collocation",
+        "goal"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "liberar-set-free",
+      "spanish": "liberar a [alguien]",
+      "english": "to set [somebody] free",
+      "example": {
+        "spanish": "Liberaron al prisionero.",
+        "english": "They set the prisoner free."
+      },
+      "collections": [
+        "poner",
+        "set",
+        "fixed expression",
+        "free"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "poner-marcha-set-in-motion",
+      "spanish": "poner [algo] en marcha",
+      "english": "to set [something] in motion",
+      "example": {
+        "spanish": "Pusieron el plan en marcha.",
+        "english": "They set the plan in motion."
+      },
+      "collections": [
+        "poner",
+        "set",
+        "verb + preposition",
+        "in",
+        "motion",
+        "en => in"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "regalar-give-as-gift",
+      "spanish": "regalarle [algo] a [alguien]",
+      "english": "to give [somebody] [something] as a gift",
+      "example": {
+        "spanish": "Le regalé un libro a Ana.",
+        "english": "I gave Ana a book as a gift."
+      },
+      "collections": [
+        "dar",
+        "give",
+        "gift",
+        "verb + preposition",
+        "as"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "poner-algo-set-place",
+      "spanish": "poner [algo] [en algún lugar]",
+      "english": "to set [something] [somewhere]",
+      "example": {
+        "spanish": "Pon la caja en el piso.",
+        "english": "Set the box on the floor."
+      },
+      "collections": [
+        "poner",
+        "set",
+        "placement"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "tomar-foto-take",
+      "spanish": "tomar una foto de [algo]",
+      "english": "to take a photo of [something]",
+      "example": {
+        "spanish": "Tomé una foto del atardecer.",
+        "english": "I took a photo of the sunset."
+      },
+      "collections": [
+        "tomar",
+        "take",
+        "photo",
+        "verb + preposition",
+        "of",
+        "de => of"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "tomar-curso-take",
+      "spanish": "tomar [un curso]",
+      "english": "to take [a course]",
+      "example": {
+        "spanish": "Tomé un curso de inglés.",
+        "english": "I took an English course."
+      },
+      "collections": [
+        "tomar",
+        "take",
+        "course",
+        "education"
+      ],
+      "curriculumRole": "reference"
     }
   ]
 }

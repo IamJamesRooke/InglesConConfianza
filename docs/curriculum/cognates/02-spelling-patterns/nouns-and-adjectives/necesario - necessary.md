@@ -4,7 +4,6 @@ In these cognates, Spanish **-ario** corresponds to English **-ary**. Some words
 
 | Spanish | English | Example |
 |---|---|---|
-| necesario | **necessary** | **Es necesario presentar un documento de identidad.**<br>It is necessary to show an identity document. |
 | ordinario | **ordinary** | **Parecía un día ordinario hasta que llegó la noticia.**<br>It seemed like an ordinary day until the news arrived. |
 | primario | **primary** | **La seguridad es nuestro objetivo primario.**<br>Security is our primary objective. |
 | salario | **salary** | **El salario depende de la experiencia del candidato.**<br>The salary depends on the candidate's experience. |

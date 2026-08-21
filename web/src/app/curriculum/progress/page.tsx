@@ -3,6 +3,73 @@ import { readReviewFile } from "@/lib/curriculum/server/review-store";
 
 export const dynamic = "force-dynamic";
 
+const completedVerbFamilies = ["querer", "necesitar", "comer", "tomar", "beber"];
+
+const todoVerbFamilies = [
+  "abrir",
+  "acabar",
+  "alcanzar",
+  "caer",
+  "conocer",
+  "conseguir",
+  "contar",
+  "costar",
+  "creer",
+  "dar",
+  "deber",
+  "decir",
+  "dejar",
+  "echar",
+  "enseñar",
+  "escuchar",
+  "esperar",
+  "estar",
+  "extrañar",
+  "faltar",
+  "ganar",
+  "gustar",
+  "haber",
+  "hablar",
+  "hacer",
+  "ir",
+  "llamar",
+  "llegar",
+  "llevar",
+  "mandar",
+  "parar",
+  "parecer",
+  "pasar",
+  "pedir",
+  "pensar",
+  "perder",
+  "pesar",
+  "poder",
+  "poner",
+  "preguntar",
+  "prestar",
+  "quedar",
+  "quitar",
+  "recordar",
+  "robar",
+  "saber",
+  "sacar",
+  "salir",
+  "seguir",
+  "sentir",
+  "ser",
+  "significar",
+  "soler",
+  "suponer",
+  "tener",
+  "tocar",
+  "trabajar",
+  "traer",
+  "valer",
+  "venir",
+  "ver",
+  "volver",
+];
+
 export default async function CurriculumProgressPage() {
   const [curriculum, review] = await Promise.all([
     readCurriculumFile(),
@@ -31,9 +98,9 @@ export default async function CurriculumProgressPage() {
 
         <section className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <div className="rounded-xl border bg-card p-5">
-            <p className="text-sm text-muted-foreground">Batches complete</p>
-            <p className="mt-2 text-3xl font-semibold">{completedBatches.length}</p>
-            <p className="mt-1 text-sm text-muted-foreground">across querer and necesitar</p>
+            <p className="text-sm text-muted-foreground">Verb families complete</p>
+            <p className="mt-2 text-3xl font-semibold">{completedVerbFamilies.length}</p>
+            <p className="mt-1 text-sm text-muted-foreground">{completedBatches.length} migration batches</p>
           </div>
           <div className="rounded-xl border bg-card p-5">
             <p className="text-sm text-muted-foreground">Concepts migrated</p>
@@ -95,6 +162,33 @@ export default async function CurriculumProgressPage() {
                 </article>
               );
             })}
+          </div>
+        </section>
+
+        <section className="mt-10">
+          <div className="flex flex-wrap items-baseline justify-between gap-2">
+            <div>
+              <h2 className="text-xl font-semibold">Verb-family Todo list</h2>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Active Spanish-to-English mapping folders still awaiting their completeness audit.
+              </p>
+            </div>
+            <span className="rounded-full bg-amber-100 px-3 py-1 text-sm font-medium text-amber-900">
+              {todoVerbFamilies.length} remaining
+            </span>
+          </div>
+
+          <div className="mt-4 rounded-xl border bg-card p-5">
+            <div className="flex flex-wrap gap-2">
+              {todoVerbFamilies.map((verb) => (
+                <span
+                  key={verb}
+                  className="rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-1 text-sm font-medium text-amber-950"
+                >
+                  Todo · {verb}
+                </span>
+              ))}
+            </div>
           </div>
         </section>
       </div>

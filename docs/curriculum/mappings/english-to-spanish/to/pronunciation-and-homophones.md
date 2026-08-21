@@ -18,11 +18,10 @@ The final **to** carries the understood meaning **to go**, so it remains strong.
 
 In normal connected speech, **to** before a verb or destination is often unstressed.
 
-- **I want to go** → approximately **I wanna go** in very informal speech;
 - **I'm going to call** → approximately **I'm gonna call** in very informal speech;
 - **I have got to leave** → approximately **I've gotta leave** in very informal speech.
 
-**Wanna, gonna**, and **gotta** represent relaxed pronunciation. Use **want to, going to**, and **have got to** in standard writing.
+**Gonna** and **gotta** represent relaxed pronunciation. Use **going to** and **have got to** in standard writing.
 
 Do not reduce **to** mechanically when it ends the phrase or receives contrastive stress: **I don't want to, but I have to.**
 

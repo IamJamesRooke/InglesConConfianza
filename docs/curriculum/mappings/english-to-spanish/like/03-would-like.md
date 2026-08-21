@@ -4,7 +4,6 @@
 
 | Spanish | English |
 |---|---|
-| Quisiera reservar una mesa para dos esta noche. | I'd like to reserve a table for two tonight. |
 | ¿Te gustaría tomar café? | Would you like to have coffee? |
 
 **I'd** is the standard contraction of **I would** here. Compare:

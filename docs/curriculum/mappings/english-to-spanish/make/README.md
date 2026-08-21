@@ -51,7 +51,6 @@ These YAML objects are the machine-facing source of truth. The teaching lessons 
 | **make** | **hacer** | `past-creation` | concept | [open](made%20%28hacer%20-%20completed%20creation%29.md) |
 | **make** | **hacer** | `present-creation` | concept | [open](make%20%28hacer%20-%20present%20creation%29.md) |
 | **make a call** | **hacer una llamada** | `telephone-call` | atomic | [open](make%20a%20call%20%28hacer%20una%20llamada%29.md) |
-| **make a decision** | **tomar una decisión** | `decision` | atomic | [open](make%20a%20decision%20%28tomar%20una%20decisi%C3%B3n%29.md) |
 | **make a difference** | **marcar la diferencia** | `effect` | atomic | [open](make%20a%20difference%20%28marcar%20la%20diferencia%29.md) |
 | **make a living** | **ganarse la vida** | `earn-living` | atomic | [open](make%20a%20living%20%28ganarse%20la%20vida%29.md) |
 | **make a mistake** | **cometer un error** | `mistake` | atomic | [open](make%20a%20mistake%20%28cometer%20un%20error%29.md) |

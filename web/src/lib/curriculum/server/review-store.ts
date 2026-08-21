@@ -50,6 +50,7 @@ export function isReviewCandidate(value: unknown): value is ReviewCandidate {
     candidate.rationale.trim().length > 0 &&
     typeof candidate.approved === "boolean" &&
     (candidate.deleted === undefined || typeof candidate.deleted === "boolean") &&
+    (candidate.migrated === undefined || typeof candidate.migrated === "boolean") &&
     typeof candidate.ownerNote === "string"
   );
 }
@@ -64,7 +65,6 @@ function isReviewBatch(value: unknown): value is ReviewBatch {
     typeof value.createdAt === "string" &&
     (value.status === "open" || value.status === "migrated") &&
     (value.migratedAt === undefined || typeof value.migratedAt === "string") &&
-    (value.archivePath === undefined || typeof value.archivePath === "string") &&
     isStringList(value.sourcePaths) &&
     Array.isArray(value.candidates) &&
     value.candidates.every(isReviewCandidate) &&

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 import {
   curriculumRoles,
@@ -15,20 +15,67 @@ const roleLabels: Record<CurriculumRole, string> = {
   reference: "Reference",
 };
 
+type CandidateReviewUpdate = Partial<
+  Pick<
+    ReviewCandidate,
+    "curriculumRole" | "approved" | "deleted" | "ownerNote"
+  >
+>;
+
 export function ReviewInbox({ initialBatches }: { initialBatches: ReviewBatch[] }) {
   const [batches, setBatches] = useState(initialBatches);
-  const [savingCandidateId, setSavingCandidateId] = useState<string | null>(null);
+  const batchesRef = useRef(initialBatches);
+  const saveQueuesRef = useRef(new Map<string, Promise<void>>());
+  const [savingCandidateIds, setSavingCandidateIds] = useState<Set<string>>(
+    () => new Set(),
+  );
   const [error, setError] = useState<string | null>(null);
 
-  async function saveCandidate(batchId: string, candidate: ReviewCandidate) {
-    if (savingCandidateId) return;
+  function updateCandidate(
+    batchId: string,
+    candidateId: string,
+    updates: CandidateReviewUpdate,
+  ) {
+    let nextCandidate: ReviewCandidate | null = null;
 
-    setSavingCandidateId(candidate.id);
+    const nextBatches = batchesRef.current.map((batch) =>
+      batch.id === batchId
+        ? {
+            ...batch,
+            candidates: batch.candidates.map((candidate) => {
+              if (candidate.id !== candidateId) return candidate;
+
+              nextCandidate = { ...candidate, ...updates };
+              return nextCandidate;
+            }),
+          }
+        : batch,
+    );
+
+    if (!nextCandidate) return null;
+
+    batchesRef.current = nextBatches;
+    setBatches(nextBatches);
+    return nextCandidate;
+  }
+
+  function saveCandidate(
+    batchId: string,
+    candidateId: string,
+    updates: CandidateReviewUpdate,
+  ) {
+    const candidate = updateCandidate(batchId, candidateId, updates);
+    if (!candidate) return;
+
     setError(null);
+    setSavingCandidateIds((current) => new Set(current).add(candidateId));
 
-    try {
+    const queueKey = `${batchId}:${candidateId}`;
+    const previousSave = saveQueuesRef.current.get(queueKey) ?? Promise.resolve();
+
+    const save = previousSave.catch(() => undefined).then(async () => {
       const response = await fetch(
-        `/api/curriculum/review/batches/${encodeURIComponent(batchId)}/candidates/${encodeURIComponent(candidate.id)}`,
+        `/api/curriculum/review/batches/${encodeURIComponent(batchId)}/candidates/${encodeURIComponent(candidateId)}`,
         {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
@@ -37,24 +84,24 @@ export function ReviewInbox({ initialBatches }: { initialBatches: ReviewBatch[] 
       );
 
       if (!response.ok) throw new Error("Unable to save the review candidate.");
+    });
 
-      setBatches((currentBatches) =>
-        currentBatches.map((batch) =>
-          batch.id === batchId
-            ? {
-                ...batch,
-                candidates: batch.candidates.map((item) =>
-                  item.id === candidate.id ? candidate : item,
-                ),
-              }
-            : batch,
-        ),
-      );
-    } catch {
-      setError("Unable to save the review candidate. Please try again.");
-    } finally {
-      setSavingCandidateId(null);
-    }
+    saveQueuesRef.current.set(queueKey, save);
+
+    void save
+      .catch(() => {
+        setError("Unable to save the review candidate. Please try again.");
+      })
+      .finally(() => {
+        if (saveQueuesRef.current.get(queueKey) !== save) return;
+
+        saveQueuesRef.current.delete(queueKey);
+        setSavingCandidateIds((current) => {
+          const next = new Set(current);
+          next.delete(candidateId);
+          return next;
+        });
+      });
   }
 
   return (
@@ -69,10 +116,15 @@ export function ReviewInbox({ initialBatches }: { initialBatches: ReviewBatch[] 
         <section key={batch.id} className="rounded-xl border border-border bg-card shadow-sm">
           {(() => {
             const pendingCandidates = batch.candidates.filter(
-              (candidate) => !candidate.approved && !candidate.deleted,
+              (candidate) =>
+                !candidate.approved && !candidate.deleted && !candidate.migrated,
             );
             const approvedCandidates = batch.candidates.filter(
-              (candidate) => candidate.approved && !candidate.deleted,
+              (candidate) =>
+                candidate.approved && !candidate.deleted && !candidate.migrated,
+            );
+            const migratedCandidates = batch.candidates.filter(
+              (candidate) => candidate.migrated && !candidate.deleted,
             );
             const deletedCandidates = batch.candidates.filter(
               (candidate) => candidate.deleted,
@@ -89,9 +141,11 @@ export function ReviewInbox({ initialBatches }: { initialBatches: ReviewBatch[] 
             </div>
             <p className="mt-2 text-sm text-muted-foreground">
               {pendingCandidates.length > 0
-                ? `${pendingCandidates.length} candidate${pendingCandidates.length === 1 ? "" : "s"} awaiting approval. Choose a final role, add a note if needed, and check the approval button when it is ready to migrate.`
+                ? `${pendingCandidates.length} candidate${pendingCandidates.length === 1 ? "" : "s"} awaiting approval. Choose a final role, add a note if needed, and click Done when it is ready to migrate.`
                 : approvedCandidates.length === 0 && deletedCandidates.length > 0
                   ? "All remaining candidates have been deleted. Deleted entries stay in the review history with their notes."
+                : approvedCandidates.length === 0 && migratedCandidates.length > 0
+                  ? "All approved candidates have been migrated. Pending candidates remain for a later review round."
                 : "All candidates in this batch are approved and ready to migrate."}
             </p>
             <p className="mt-3 text-xs text-muted-foreground">
@@ -101,7 +155,7 @@ export function ReviewInbox({ initialBatches }: { initialBatches: ReviewBatch[] 
 
           <div className="divide-y divide-border">
             {pendingCandidates.map((candidate) => {
-              const isSaving = savingCandidateId === candidate.id;
+              const isSaving = savingCandidateIds.has(candidate.id);
 
               return (
                 <article key={candidate.id} className="p-5">
@@ -139,10 +193,8 @@ export function ReviewInbox({ initialBatches }: { initialBatches: ReviewBatch[] 
                           <button
                             key={role}
                             type="button"
-                            disabled={savingCandidateId !== null}
                             onClick={() =>
-                              void saveCandidate(batch.id, {
-                                ...candidate,
+                              saveCandidate(batch.id, candidate.id, {
                                 curriculumRole: role,
                               })
                             }
@@ -158,10 +210,8 @@ export function ReviewInbox({ initialBatches }: { initialBatches: ReviewBatch[] 
                         ))}
                         <button
                           type="button"
-                          disabled={savingCandidateId !== null}
                           onClick={() =>
-                            void saveCandidate(batch.id, {
-                              ...candidate,
+                            saveCandidate(batch.id, candidate.id, {
                               approved: false,
                               deleted: true,
                             })
@@ -177,10 +227,8 @@ export function ReviewInbox({ initialBatches }: { initialBatches: ReviewBatch[] 
                         </button>
                         <button
                           type="button"
-                          disabled={savingCandidateId !== null}
                           onClick={() =>
-                            void saveCandidate(batch.id, {
-                              ...candidate,
+                            saveCandidate(batch.id, candidate.id, {
                               approved: true,
                             })
                           }
@@ -229,13 +277,15 @@ export function ReviewInbox({ initialBatches }: { initialBatches: ReviewBatch[] 
                   <label className="mt-4 block text-sm font-medium text-muted-foreground">
                     Your note
                     <textarea
-                      defaultValue={candidate.ownerNote}
-                      disabled={savingCandidateId !== null}
+                      value={candidate.ownerNote}
+                      onChange={(event) =>
+                        updateCandidate(batch.id, candidate.id, {
+                          ownerNote: event.target.value,
+                        })
+                      }
                       onBlur={(event) => {
                         const ownerNote = event.target.value.trim();
-                        if (ownerNote !== candidate.ownerNote) {
-                          void saveCandidate(batch.id, { ...candidate, ownerNote });
-                        }
+                        saveCandidate(batch.id, candidate.id, { ownerNote });
                       }}
                       placeholder="Optional correction, rationale, or follow-up request"
                       className="mt-2 min-h-20 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground outline-none focus:border-ring focus:ring-3 focus:ring-ring/20 disabled:opacity-60"
@@ -269,10 +319,8 @@ export function ReviewInbox({ initialBatches }: { initialBatches: ReviewBatch[] 
                     </div>
                     <button
                       type="button"
-                      disabled={savingCandidateId !== null}
                       onClick={() =>
-                        void saveCandidate(batch.id, {
-                          ...candidate,
+                        saveCandidate(batch.id, candidate.id, {
                           approved: false,
                         })
                       }
@@ -280,6 +328,30 @@ export function ReviewInbox({ initialBatches }: { initialBatches: ReviewBatch[] 
                     >
                       Undo approval
                     </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+          {migratedCandidates.length > 0 && (
+            <div className="border-t border-border bg-muted/40 p-5">
+              <h3 className="text-sm font-semibold text-foreground">
+                Migrated to curriculum ({migratedCandidates.length})
+              </h3>
+              <div className="mt-3 space-y-2">
+                {migratedCandidates.map((candidate) => (
+                  <div
+                    key={candidate.id}
+                    className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-border bg-card px-3 py-2"
+                  >
+                    <div className="text-sm">
+                      <span className="font-medium">{candidate.spanish}</span>
+                      <span className="mx-2 text-muted-foreground">→</span>
+                      <span className="text-muted-foreground">{candidate.english}</span>
+                      <span className="ml-3 rounded-full bg-muted px-2 py-0.5 text-xs font-semibold text-muted-foreground">
+                        {roleLabels[candidate.curriculumRole]}
+                      </span>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -308,10 +380,8 @@ export function ReviewInbox({ initialBatches }: { initialBatches: ReviewBatch[] 
                     </div>
                     <button
                       type="button"
-                      disabled={savingCandidateId !== null}
                       onClick={() =>
-                        void saveCandidate(batch.id, {
-                          ...candidate,
+                        saveCandidate(batch.id, candidate.id, {
                           deleted: false,
                         })
                       }

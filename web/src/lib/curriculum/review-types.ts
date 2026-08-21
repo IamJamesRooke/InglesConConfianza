@@ -8,6 +8,7 @@ export type ReviewCandidate = CurriculumConcept & {
   rationale: string;
   approved: boolean;
   deleted?: boolean;
+  migrated?: boolean;
   ownerNote: string;
 };
 
@@ -18,7 +19,6 @@ export type ReviewBatch = {
   createdAt: string;
   status: "open" | "migrated";
   migratedAt?: string;
-  archivePath?: string;
   candidates: ReviewCandidate[];
 };
 

@@ -2,31 +2,71 @@
 
 This document records the working decisions that emerge while representative curriculum data is entered in JSON. These are migration checkpoints, not a frozen relational schema.
 
+## 2026-08-21 — Tighten curriculum-role selection
+
+- **Core** is an elite, highly selective tier. Every recommendation needs a strong functional-necessity justification; commonness alone is insufficient.
+- **Supporting** is reserved for extremely useful, broadly reusable language that materially improves everyday expression but does not need to be the lesson's central target.
+- **Reference** is the normal home for non-everyday, situational, secondary, or readily inferable material that remains useful for later retrieval.
+- Completeness-first review may still surface borderline candidates, but it must not inflate Supporting. Material without enough retrieval value should be proposed for deletion.
+
+## 2026-08-21 — Partially migrate the five-family review batch
+
+- Migrated the 128 owner-approved candidates from the open `hablar`, `decir`, `dar`, `pedir`, and `poner` audit: 19 Core, 34 Supporting, and 75 Reference concepts.
+- Added 126 new concepts and revised the two existing `querer decir` concepts to include the `decir` collection.
+- Migrated the remaining 89 approved candidates after owner review: 5 Core, 19 Supporting, and 65 Reference. The four deleted candidates remain only in review history.
+- Migrated two `tomar` follow-ups: `tomar una foto de [algo]` → `to take a photo of [something]` and `tomar [un curso]` → `to take [a course]`, both Supporting.
+- Both batches are now marked migrated. Each migrated candidate carries explicit migration state, so later partial migrations cannot duplicate it and the inbox can distinguish ready work from completed work.
+
+## 2026-08-21 — Adopt one-look source consumption
+
+- Git history is now the only recovery layer for consumed curriculum sources; the repository no longer keeps a second migration archive.
+- Deleted 104 fully consumed tracked files covering the completed `querer`, `necesitar`, `comer`, `tomar`, and `beber` audits plus the open `hablar`, `decir`, `dar`, `pedir`, and `poner` review batch.
+- Preserved unrelated future material by splitting `entregar`, `solicitar`, `postular`, and `buscar` into their own source families and retaining focused material under `preguntar`, `prestar`, `gustar`, and `ordenar`.
+- Mixed structure, vocabulary, pronunciation, spelling, and particle files lost only their consumed sections. Historical review `sourcePaths` remain as provenance and are not expected to resolve in the live tree.
+- The permanent workflow is now: read a source once, capture every useful concept or move unrelated material, validate the review batch, and delete the consumed source immediately.
+
+## 2026-08-21 — Open five-family particle-completeness review
+
+- Opened one review batch for `hablar`, `decir`, `dar`, `pedir`, and `poner`, expanding the workload to test whether the owner can efficiently curate several verb families together.
+- Enumerated independently teachable person, topic, infinitive, and other complement frames in addition to the English phrasal-verb families associated with each principal target verb.
+- Particle metadata now records true phrasal verbs, fixed verb-plus-preposition constructions, each stable English particle, and useful bilingual connector mappings such as `con => with` and `de => about`.
+- The batch also proposes word-family nouns, adjectives, cognates, and prefix/suffix tags, plus focused revisions that add the `decir` collection to existing `querer decir` concepts without duplicating them.
+
+## 2026-08-21 — Migrate adverbs and extended derivations
+
+- Migrated the approved adverb, adjective, and noun derivations from the completed `querer`, `necesitar`, `comer`, and `beber` families.
+- Preserved suffix and cognate-pattern collections such as `-mente`, `-ly`, and `cognate -mente => -ly`; deleted candidates remain only in the review history.
+
+## 2026-08-21 — Migrate completed-family word forms
+
+- Migrated the approved word-family additions for `comer`, `necesitar`, and `beber`, plus the `adjective` grammar-tag revision for `querido/a`.
+- Applied the owner's substitutability judgment: specific nouns such as `la comida` are Supporting when a learner can communicate the immediate need with a generic referent such as `this`, `that`, or `it`.
+
 ## 2026-08-21 — Migrate tomar and beber
 
 - Migrated 28 approved mappings across `tomar` and `beber`, including their overlapping `drink` and conversational `have` realizations.
 - Added broad `take` and `drink` phrasal-verb and connector coverage, keeping only foundational meanings Core and retaining advanced constructions as Supporting or Reference.
 - Excluded the owner's deleted measurement and route duplicates from the database while preserving their review notes.
-- Archived the dedicated `tomar` source folder at `docs/curriculum-archive/mappings/spanish-to-english/tomar`; `beber` had no dedicated Spanish-to-English folder.
+- The dedicated `tomar` source and the fully consumed reverse `drink` source were subsequently deleted under the one-look policy; `beber` had no dedicated Spanish-to-English folder.
 
 ## 2026-08-21 — Migrate comer and phrasal-verb family
 
 - Migrated the approved `comer` mappings, including direct food meanings and the broader phrasal-verb family: `eat up`, `eat out`, `eat in`, `eat away at`, `eat into`, and `eat through`.
 - Kept the neutral food meaning for `eat out`; the owner explicitly does not want sexual vocabulary or senses included in course content.
-- Archived the dedicated source folder at `docs/curriculum-archive/mappings/spanish-to-english/comer`.
+- The dedicated `comer` source was subsequently deleted under the one-look policy.
 
 ## 2026-08-21 — Migrate necesitar and spoken-reduction follow-ups
 
 - Migrated the approved `necesitar` audit: personal need, need + full infinitive, need somebody + full infinitive, and impersonal `se necesita`.
 - Migrated the approved Supporting spoken reductions `wanna` and `needa` as separate entries under their parent full-infinitive constructions.
-- No dedicated `necesitar` source folder existed to archive. Shared structure and pronunciation files remain active because they support multiple verb families.
+- No dedicated `necesitar` source folder existed. Consumed `necesitar` sections were removed from mixed files while unrelated structure and pronunciation material remained active.
 
 ## 2026-08-21 — First approved review batch migrated
 
 - Completed the `querer` completeness audit through the Review inbox.
 - Migrated six approved additions and one approved correction into `web/data/curriculum.json`, preserving the owner's final roles, collections, examples, and review notes.
-- Marked the batch migrated in `web/data/curriculum-review.json` and moved the completed source folder to `docs/curriculum-archive/mappings/spanish-to-english/querer`.
-- Archived source folders are excluded from normal audits and should be reopened only when the owner explicitly requests a correction or re-audit.
+- Marked the batch migrated in `web/data/curriculum-review.json`; the completed source was subsequently deleted under the one-look policy.
+- Routine audits must not reopen consumed sources. Git history may be consulted only when the owner explicitly requests a correction or recovery.
 
 ## 2026-08-21 — Store concepts, not complete conjugation tables
 

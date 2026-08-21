@@ -6,8 +6,6 @@ In this course, **handle verbs** are verbs that can be followed by another actio
 
 | Spanish | English |
 |---|---|
-| Quiero hacerlo. | I want to do it. |
-| Necesito hacerlo. | I need to do it. |
 | Me gustaría hacerlo. | I would like to do it. |
 | Decidí hacerlo. | I decided to do it. |
 | Elegí hacerlo. | I chose to do it. |
@@ -17,8 +15,8 @@ In this course, **handle verbs** are verbs that can be followed by another actio
 
 The next verb uses the full infinitive:
 
-- **I want to do it.**
-- Not: *I want do it.*
+- **I decided to do it.**
+- Not: *I decided do it.*
 
 ## **Like**
 
@@ -31,19 +29,6 @@ The next verb uses the full infinitive:
 Other lessons in this verb-forms folder distinguish verbs that select an infinitive, an **-ing** form, or either form.
 
 ## Foundational verb patterns
-
-### Need
-
-Use **need + full infinitive** when the subject must perform an action.
-
-| Spanish | English |
-|---|---|
-| necesitar algo | need something |
-| necesitar hacer algo | need to do something |
-
-**Necesito más tiempo. → I need more time.**
-
-**Necesito terminar el informe hoy. → I need to finish the report today.**
 
 ### Decide
 

@@ -1,7 +1,7 @@
-# **Take → Tardar / Tomar Tiempo**
+# **Take → Tardar**
 
 | English | Spanish |
 |---|---|
-| It takes an hour, but the trip took me two. | Tarda una hora, pero el viaje me tomó dos. |
+| It takes an hour. | Tarda una hora. |
 
-For required time, Spanish commonly uses **tardar** or **tomar tiempo**. The subject structure often changes.
+For required time, Spanish commonly uses **tardar**. The subject structure often changes.
