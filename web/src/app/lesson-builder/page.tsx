@@ -12,6 +12,7 @@ import {
   Plus,
   Save,
   Sun,
+  Table2,
   Trash2,
   X,
 } from "lucide-react";
@@ -37,6 +38,7 @@ import type {
   ConceptType,
   DropTarget,
   Lesson,
+  LessonBlock,
   LessonFile,
   MappingDirection,
 } from "@/lib/lesson-builder/types";
@@ -51,13 +53,21 @@ import {
   normalizeLessons,
 } from "@/lib/lesson-builder/utils";
 
+function isPracticeBlock(
+  block: LessonBlock,
+): block is Extract<LessonBlock, { type: "sentence" }> {
+  return block.type === "sentence";
+}
+
 function ContentBlockPicker({
   onAddExplanation,
   onAddSentence,
+  onAddVocabulary,
   onClose,
 }: {
   onAddExplanation: () => void;
   onAddSentence: () => void;
+  onAddVocabulary: () => void;
   onClose: () => void;
 }) {
   return (
@@ -110,6 +120,23 @@ function ContentBlockPicker({
             <span className="block font-semibold text-stone-900">Sentence</span>
             <span className="mt-1 block text-sm leading-5 text-stone-500">
               Build a prompt with learner answer blocks.
+            </span>
+          </span>
+        </button>
+        <button
+          type="button"
+          onClick={onAddVocabulary}
+          className="group flex items-start gap-3 rounded-xl border border-stone-200 bg-white p-4 text-left transition hover:border-emerald-300 hover:shadow-sm focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-100"
+        >
+          <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-700 transition group-hover:bg-emerald-100">
+            <Table2 className="size-5" aria-hidden="true" />
+          </span>
+          <span>
+            <span className="block font-semibold text-stone-900">
+              Vocabulary table
+            </span>
+            <span className="mt-1 block text-sm leading-5 text-stone-500">
+              Practice a vertical list of word pairs.
             </span>
           </span>
         </button>
@@ -314,7 +341,7 @@ export default function LessonBuilderPage() {
             new Set(
               lessons.flatMap((lesson) =>
                 lesson.blocks.flatMap((block) =>
-                  block.type === "sentence"
+                  isPracticeBlock(block)
                     ? block.languageBlocks.map(
                         (languageBlock) =>
                           `${lesson.id}-${block.id}-${languageBlock.id}`,
@@ -763,7 +790,60 @@ export default function LessonBuilderPage() {
             blocks: lesson.blocks.toSpliced(insertionIndex, 0, {
               id: blockId,
               type: "sentence",
-              promptLabel: "Escribe En Inglés",
+              promptLabel: "",
+              promptText: "",
+              helperText: "",
+              answerFeedback: null,
+              conceptLinks: [],
+              languageBlocks: [
+                {
+                  id: languageBlockId,
+                  spanish: "",
+                  callout: null,
+                  acceptedAnswers: [""],
+                  conceptLinks: [],
+                },
+              ],
+            }),
+          };
+        }),
+      );
+      setCollapsedContentBlocks(
+        new Set(
+          lessons.flatMap((lesson) =>
+            lesson.blocks.map((block) => `${lesson.id}-${block.id}`),
+          ),
+        ),
+      );
+      setOpenBlockPicker(null);
+
+      window.setTimeout(() => {
+        languageBlockSpanishRefs.current
+          .get(`${lessonId}-${blockId}-${languageBlockId}`)
+          ?.focus();
+      }, 0);
+    },
+    [lessons],
+  );
+
+  const addVocabularyBlock = useCallback(
+    (lessonId: string, insertionIndex: number) => {
+      const blockId = createId("block");
+      const languageBlockId = createId("lang");
+
+      setLessons((currentLessons) =>
+        currentLessons.map((lesson) => {
+          if (lesson.id !== lessonId) {
+            return lesson;
+          }
+
+          return {
+            ...lesson,
+            blocks: lesson.blocks.toSpliced(insertionIndex, 0, {
+              id: blockId,
+              type: "sentence",
+              layout: "vocabulary_table",
+              promptLabel: "",
               promptText: "",
               helperText: "",
               answerFeedback: null,
@@ -883,7 +963,8 @@ export default function LessonBuilderPage() {
 
         const expandedBlock = targetLesson.blocks[expandedBlockIndex];
         if (
-          expandedBlock?.type === "sentence" &&
+          expandedBlock &&
+          isPracticeBlock(expandedBlock) &&
           getSentenceValidationIssueCount(expandedBlock) > 0
         ) {
           return;
@@ -1105,7 +1186,7 @@ export default function LessonBuilderPage() {
         )
         .find(
           ({ lessonId: currentLessonId, block }) =>
-            block.type === "sentence" &&
+            isPracticeBlock(block) &&
             !currentKeys.has(`${currentLessonId}-${block.id}`) &&
             getSentenceValidationIssueCount(block) > 0,
         );
@@ -1210,7 +1291,7 @@ export default function LessonBuilderPage() {
           ? {
               ...lesson,
               blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && block.type === "sentence"
+                block.id === sentenceBlockId && isPracticeBlock(block)
                   ? { ...block, promptText }
                   : block,
               ),
@@ -1231,7 +1312,7 @@ export default function LessonBuilderPage() {
           ? {
               ...lesson,
               blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && block.type === "sentence"
+                block.id === sentenceBlockId && isPracticeBlock(block)
                   ? { ...block, promptLabel }
                   : block,
               ),
@@ -1252,7 +1333,7 @@ export default function LessonBuilderPage() {
           ? {
               ...lesson,
               blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && block.type === "sentence"
+                block.id === sentenceBlockId && isPracticeBlock(block)
                   ? { ...block, helperText }
                   : block,
               ),
@@ -1273,7 +1354,7 @@ export default function LessonBuilderPage() {
           ? {
               ...lesson,
               blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && block.type === "sentence"
+                block.id === sentenceBlockId && isPracticeBlock(block)
                   ? { ...block, answerFeedback }
                   : block,
               ),
@@ -1290,7 +1371,7 @@ export default function LessonBuilderPage() {
           ? {
               ...lesson,
               blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && block.type === "sentence"
+                block.id === sentenceBlockId && isPracticeBlock(block)
                   ? {
                       ...block,
                       conceptLinks: [
@@ -1318,7 +1399,7 @@ export default function LessonBuilderPage() {
           ? {
               ...lesson,
               blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && block.type === "sentence"
+                block.id === sentenceBlockId && isPracticeBlock(block)
                   ? {
                       ...block,
                       conceptLinks: block.conceptLinks.map((conceptLink) =>
@@ -1346,7 +1427,7 @@ export default function LessonBuilderPage() {
           ? {
               ...lesson,
               blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && block.type === "sentence"
+                block.id === sentenceBlockId && isPracticeBlock(block)
                   ? {
                       ...block,
                       conceptLinks: block.conceptLinks.filter(
@@ -1373,7 +1454,7 @@ export default function LessonBuilderPage() {
           ? {
               ...lesson,
               blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && block.type === "sentence"
+                block.id === sentenceBlockId && isPracticeBlock(block)
                   ? {
                       ...block,
                       languageBlocks: block.languageBlocks.map(
@@ -1442,7 +1523,7 @@ export default function LessonBuilderPage() {
           ? {
               ...lesson,
               blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && block.type === "sentence"
+                block.id === sentenceBlockId && isPracticeBlock(block)
                   ? {
                       ...block,
                       languageBlocks: block.languageBlocks.map(
@@ -1473,7 +1554,7 @@ export default function LessonBuilderPage() {
           ? {
               ...lesson,
               blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && block.type === "sentence"
+                block.id === sentenceBlockId && isPracticeBlock(block)
                   ? {
                       ...block,
                       languageBlocks: block.languageBlocks.map(
@@ -1512,7 +1593,7 @@ export default function LessonBuilderPage() {
           ? {
               ...lesson,
               blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && block.type === "sentence"
+                block.id === sentenceBlockId && isPracticeBlock(block)
                   ? {
                       ...block,
                       languageBlocks: block.languageBlocks.map(
@@ -1556,7 +1637,7 @@ export default function LessonBuilderPage() {
           ? {
               ...lesson,
               blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && block.type === "sentence"
+                block.id === sentenceBlockId && isPracticeBlock(block)
                   ? {
                       ...block,
                       languageBlocks: block.languageBlocks.map(
@@ -1592,7 +1673,7 @@ export default function LessonBuilderPage() {
           ? {
               ...lesson,
               blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && block.type === "sentence"
+                block.id === sentenceBlockId && isPracticeBlock(block)
                   ? {
                       ...block,
                       languageBlocks: [
@@ -1616,7 +1697,7 @@ export default function LessonBuilderPage() {
       new Set(
         lessons.flatMap((lesson) =>
           lesson.blocks.flatMap((block) =>
-            block.type === "sentence"
+                  isPracticeBlock(block)
               ? block.languageBlocks.map(
                   (languageBlock) =>
                     `${lesson.id}-${block.id}-${languageBlock.id}`,
@@ -1646,7 +1727,7 @@ export default function LessonBuilderPage() {
         lessons
           .flatMap((lesson) =>
             lesson.blocks.flatMap((block) =>
-              block.type === "sentence"
+                  isPracticeBlock(block)
                 ? block.languageBlocks.map(
                     (languageBlock) =>
                       `${lesson.id}-${block.id}-${languageBlock.id}`,
@@ -1678,7 +1759,7 @@ export default function LessonBuilderPage() {
         lessons
           .flatMap((lesson) =>
             lesson.blocks.flatMap((block) =>
-              block.type === "sentence"
+                  isPracticeBlock(block)
                 ? block.languageBlocks.map(
                     (languageBlock) =>
                       `${lesson.id}-${block.id}-${languageBlock.id}`,
@@ -1708,7 +1789,7 @@ export default function LessonBuilderPage() {
           ? {
               ...lesson,
               blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && block.type === "sentence"
+                block.id === sentenceBlockId && isPracticeBlock(block)
                   ? {
                       ...block,
                       languageBlocks: block.languageBlocks.filter(
@@ -1798,7 +1879,7 @@ export default function LessonBuilderPage() {
           blocks: lesson.blocks.map((block) => {
             if (
               block.id !== draggedLanguageBlock.sentenceBlockId ||
-              block.type !== "sentence"
+              !isPracticeBlock(block)
             ) {
               return block;
             }
@@ -2040,9 +2121,7 @@ export default function LessonBuilderPage() {
         explanationCount: previewBlocks.filter(
           (block) => block.type === "explanation",
         ).length,
-        sentenceCount: previewBlocks.filter(
-          (block) => block.type === "sentence",
-        ).length,
+        practiceCount: previewBlocks.filter(isPracticeBlock).length,
         previewText: "",
         blocks: previewBlocks,
       }
@@ -2089,7 +2168,7 @@ export default function LessonBuilderPage() {
           const lessonValidationIssueCount = lesson.blocks.reduce(
             (issueCount, block) =>
               issueCount +
-              (block.type === "sentence"
+              (isPracticeBlock(block)
                 ? getSentenceValidationIssueCount(block)
                 : 0),
             0,
@@ -2289,7 +2368,8 @@ export default function LessonBuilderPage() {
                               {block.languageBlocks
                                 .map((languageBlock) => languageBlock.spanish.trim())
                                 .filter(Boolean)
-                                .join(" ") || "Empty Spanish prompt"}
+                                .join(block.layout === "vocabulary_table" ? ", " : " ") ||
+                                "Empty Spanish prompt"}
                             </p>
                             <p className="text-muted-foreground italic">
                               {block.languageBlocks
@@ -2300,7 +2380,8 @@ export default function LessonBuilderPage() {
                                     )?.trim() ?? "",
                                 )
                                 .filter(Boolean)
-                                .join(" ") || "No answer"}
+                                .join(block.layout === "vocabulary_table" ? ", " : " ") ||
+                                "No answer"}
                             </p>
                           </div>
                         )}
@@ -2346,6 +2427,9 @@ export default function LessonBuilderPage() {
                             addExplanationBlock(lesson.id, 0)
                           }
                           onAddSentence={() => addSentenceBlock(lesson.id, 0)}
+                          onAddVocabulary={() =>
+                            addVocabularyBlock(lesson.id, 0)
+                          }
                         />
                       )}
                   </>
@@ -2355,7 +2439,7 @@ export default function LessonBuilderPage() {
                   const isContentBlockCollapsed =
                     collapsedContentBlocks.has(contentBlockKey);
                   const sentenceValidationIssueCount =
-                    block.type === "sentence"
+                  isPracticeBlock(block)
                       ? getSentenceValidationIssueCount(block)
                       : 0;
                   const contentDropPosition =
@@ -2590,10 +2674,18 @@ export default function LessonBuilderPage() {
                             className="flex min-w-0 flex-1 cursor-pointer items-center gap-3 rounded-md focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-200"
                           >
                             <span className="flex size-9 items-center justify-center rounded-lg bg-blue-50 text-blue-700">
-                              <Languages className="size-4" aria-hidden="true" />
+                              {block.layout === "vocabulary_table" ? (
+                                <Table2 className="size-4" aria-hidden="true" />
+                              ) : (
+                                <Languages className="size-4" aria-hidden="true" />
+                              )}
                             </span>
                             <div className="min-w-0">
-                              <span className="sr-only">Sentence block</span>
+                              <span className="sr-only">
+                                {block.layout === "vocabulary_table"
+                                  ? "Vocabulary table block"
+                                  : "Sentence block"}
+                              </span>
                               <div className="space-y-0.5 text-sm">
                                 <p className="truncate font-medium text-stone-700">
                                   {block.languageBlocks
@@ -2601,7 +2693,8 @@ export default function LessonBuilderPage() {
                                       languageBlock.spanish.trim(),
                                     )
                                     .filter(Boolean)
-                                    .join(" ") || "No Spanish text yet"}
+                                    .join(block.layout === "vocabulary_table" ? ", " : " ") ||
+                                    "No Spanish text yet"}
                                 </p>
                                 <p className="truncate text-stone-500">
                                   {block.languageBlocks
@@ -2609,7 +2702,8 @@ export default function LessonBuilderPage() {
                                       languageBlock.acceptedAnswers[0]?.trim(),
                                     )
                                     .filter(Boolean)
-                                    .join(" ") || "No English answer yet"}
+                                    .join(block.layout === "vocabulary_table" ? ", " : " ") ||
+                                    "No English answer yet"}
                                 </p>
                               </div>
                             </div>
@@ -2715,7 +2809,7 @@ export default function LessonBuilderPage() {
                         </div>
                         {!isContentBlockCollapsed && (
                         <div className="flex flex-col p-6">
-                            <div className="order-2 mt-4 space-y-3">
+                            <div className="order-1 space-y-3">
                               <div className="flex items-center gap-3 text-stone-400">
                                 <span className="h-px flex-1 bg-stone-200" />
                                 <span className="text-[10px] font-semibold uppercase tracking-[0.18em]">
@@ -2967,7 +3061,13 @@ export default function LessonBuilderPage() {
                                 </p>
                               )}
                             </div>
-                          <div className="order-1 grid items-start grid-cols-[repeat(auto-fit,minmax(min(100%,13rem),1fr))] gap-3">
+                          <div
+                            className={`order-2 mt-4 grid items-start gap-3 ${
+                              block.layout === "vocabulary_table"
+                                ? "grid-cols-1"
+                                : "grid-cols-[repeat(auto-fit,minmax(min(100%,13rem),1fr))]"
+                            }`}
+                          >
                             {block.languageBlocks.map(
                               (languageBlock, languageBlockIndex) => {
                                 const isLastLanguageBlock =
@@ -3630,6 +3730,9 @@ export default function LessonBuilderPage() {
                               onAddSentence={() =>
                                 addSentenceBlock(lesson.id, blockIndex + 1)
                               }
+                              onAddVocabulary={() =>
+                                addVocabularyBlock(lesson.id, blockIndex + 1)
+                              }
                             />
                           )}
                       </>
@@ -3670,6 +3773,9 @@ export default function LessonBuilderPage() {
                     }
                     onAddSentence={() =>
                       addSentenceBlock(lesson.id, lesson.blocks.length)
+                    }
+                    onAddVocabulary={() =>
+                      addVocabularyBlock(lesson.id, lesson.blocks.length)
                     }
                   />
                 )}

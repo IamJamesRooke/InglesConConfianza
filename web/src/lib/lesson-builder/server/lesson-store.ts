@@ -115,6 +115,9 @@ function isLessonBlock(value: unknown): value is LessonBlock {
 
   if (value.type === "sentence") {
     return (
+      (value.layout === undefined ||
+        value.layout === "sentence" ||
+        value.layout === "vocabulary_table") &&
       typeof value.promptLabel === "string" &&
       typeof value.promptText === "string" &&
       typeof value.helperText === "string" &&

@@ -234,9 +234,9 @@ function renderInlineMarkdown(text: string) {
       nodes.push(
         <mark
           key={`${part}-${partIndex}`}
-          className="box-decoration-clone rounded-md bg-amber-200 px-1.5 py-0.5 font-bold text-stone-950"
+          className="-mx-0.5 box-decoration-clone rounded-md bg-amber-200 px-0.5 py-0.5 font-bold text-stone-950"
         >
-          {part.slice(2, -2)}
+          {renderInlineMarkdown(part.slice(2, -2))}
         </mark>,
       );
       return;
@@ -248,7 +248,7 @@ function renderInlineMarkdown(text: string) {
     ) {
       nodes.push(
         <strong key={`${part}-${partIndex}`} className="font-bold">
-          {part.slice(2, -2)}
+          {renderInlineMarkdown(part.slice(2, -2))}
         </strong>,
       );
       return;
@@ -260,7 +260,7 @@ function renderInlineMarkdown(text: string) {
     ) {
       nodes.push(
         <em key={`${part}-${partIndex}`} className="italic">
-          {part.slice(1, -1)}
+          {renderInlineMarkdown(part.slice(1, -1))}
         </em>,
       );
       return;

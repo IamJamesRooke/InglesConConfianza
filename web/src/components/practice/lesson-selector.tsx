@@ -19,7 +19,7 @@ export type PracticeLesson = {
   lessonNumber: number;
   name: string | null;
   explanationCount: number;
-  sentenceCount: number;
+  practiceCount: number;
   previewText: string;
   blocks: LessonBlock[];
 };
@@ -468,8 +468,8 @@ export function LessonSelector({
 
           <div className="mt-5 flex gap-2 text-xs font-semibold text-muted-foreground">
             <span className="rounded-full bg-muted px-2.5 py-1">
-              {lesson.sentenceCount}{" "}
-              {lesson.sentenceCount === 1 ? "frase" : "frases"}
+              {lesson.practiceCount}{" "}
+              {lesson.practiceCount === 1 ? "práctica" : "prácticas"}
             </span>
             <span className="rounded-full bg-muted px-2.5 py-1">
               {lesson.explanationCount}{" "}

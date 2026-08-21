@@ -24,15 +24,17 @@ async function getLessons() {
 }
 
 function getLessonPreviewText(lesson: Lesson) {
-  const firstSentenceBlock = lesson.blocks.find(
+  const firstPracticeBlock = lesson.blocks.find(
     (block) => block.type === "sentence",
   );
 
-  if (firstSentenceBlock) {
-    return firstSentenceBlock.languageBlocks
+  if (firstPracticeBlock) {
+    return firstPracticeBlock.languageBlocks
       .map((languageBlock) => languageBlock.spanish.trim())
       .filter(Boolean)
-      .join(" ");
+      .join(
+        firstPracticeBlock.layout === "vocabulary_table" ? ", " : " ",
+      );
   }
 
   const firstExplanationBlock = lesson.blocks.find(
@@ -53,7 +55,7 @@ function getPracticeLessonSummaries(lessons: Lesson[]) {
     explanationCount: lesson.blocks.filter(
       (block) => block.type === "explanation",
     ).length,
-    sentenceCount: lesson.blocks.filter((block) => block.type === "sentence")
+    practiceCount: lesson.blocks.filter((block) => block.type === "sentence")
       .length,
     previewText: getLessonPreviewText(lesson),
     blocks: lesson.blocks,

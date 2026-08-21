@@ -31,7 +31,7 @@ export const mappingDirectionOptions = [
 ] satisfies Array<{ value: MappingDirection; label: string }>;
 
 export function normalizeAnswer(answer: string) {
-  return answer.trim().replace(/\s+/g, " ").toLocaleLowerCase();
+  return answer.trim().replace(/\s+/g, " ");
 }
 
 export function createId(prefix: string) {

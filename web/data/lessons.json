@@ -19,7 +19,7 @@
         {
           "id": "block_3b5bef78-634a-4168-9db6-d833712108ab",
           "type": "explanation",
-          "contentMarkdown": "==Yo== es ==I==."
+          "contentMarkdown": "==Yo== es ==I==.\n\n==I== se pronuncia **AI**: una sílaba.\n\n**AI.**"
         },
         {
           "id": "block_d92f439b-82e1-4ec9-bb76-b2a410b7df51",
@@ -44,15 +44,15 @@
         {
           "id": "block_6341d545-a474-4f25-a771-6bcabdc0d879",
           "type": "explanation",
-          "contentMarkdown": "==Quiero== o ==yo quiero== es ==I want==."
+          "contentMarkdown": "==Quiero== o ==yo quiero== es ==I want==.\n\nEn Norteamérica se pronuncia **AI WAHNT**.\n\n**AI WAHNT.**"
         },
         {
           "id": "block_34c88335-797e-4c5d-afc2-d4d4ee5390e6",
           "type": "sentence",
-          "promptLabel": "this is the eyebrow",
-          "promptText": "and this is the prompt text",
+          "promptLabel": "",
+          "promptText": "",
           "helperText": "Una palabra en español, dos palabras en inglés.",
-          "answerFeedback": "and this is the answer feedback",
+          "answerFeedback": null,
           "conceptLinks": [],
           "languageBlocks": [
             {
@@ -69,7 +69,7 @@
         {
           "id": "block_43116d7f-45b2-4e0d-96d6-05ff52686074",
           "type": "explanation",
-          "contentMarkdown": "==Algo== es ==something==."
+          "contentMarkdown": "==Algo== es ==something==.\n\nEn Norteamérica se pronuncia **SUM-thing**: dos sílabas.\n\n**SUM-thing.**"
         },
         {
           "id": "block_952923de-27bd-4f99-87db-36d488329af6",
@@ -114,7 +114,7 @@
               "spanish": "algo.",
               "callout": "¡¡¡PUNTO AL FINAL!!!!",
               "acceptedAnswers": [
-                "something"
+                "something."
               ],
               "conceptLinks": []
             }
@@ -123,7 +123,7 @@
         {
           "id": "block_bd82f7d4-0f8a-413c-bc15-82a2832807b7",
           "type": "explanation",
-          "contentMarkdown": "==Hacer== es ==to do==, **DOS PALABRAS**."
+          "contentMarkdown": "==Hacer== es ==to do==, **DOS PALABRAS**.\n\nAl hablar, ==to do== normalmente suena **tuh-DOO**.\n\n**tuh-DOO.**"
         },
         {
           "id": "block_27635676-7728-4322-9782-77920e8daa33",
@@ -178,6 +178,814 @@
               "callout": "NO OLVIDES EL PUNTO!",
               "acceptedAnswers": [
                 "something."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson_17c87248-a3cb-4db0-b5e4-8cc0d2b7f604",
+      "name": "It's important.",
+      "blocks": [
+        {
+          "id": "block_0bef647b-47b5-49cb-bad9-4ab814d5c932",
+          "type": "explanation",
+          "contentMarkdown": "Mira esto:\n\n**Import==ante==** es **import==ant==**.\n\n**Const==ante==** es **const==ant==**."
+        },
+        {
+          "id": "block_ff925d63-9566-4f10-8acd-605c33900bf5",
+          "type": "sentence",
+          "layout": "vocabulary_table",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_45604f07-6242-4ed6-90b4-b803e113054a",
+              "spanish": "importante",
+              "callout": null,
+              "acceptedAnswers": [
+                "important"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_7ccb8852-e35b-47f8-9370-c7621314d555",
+              "spanish": "constante",
+              "callout": null,
+              "acceptedAnswers": [
+                "constant"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_55c01a04-c00c-40df-ad70-7cbee9713cf8",
+          "type": "explanation",
+          "contentMarkdown": "Como puedes ver, muchas palabras que terminan en ==-ante== cambian a ==-ant== en inglés.\n\nSolo quitamos la ==e==.\n\nHay cientos de palabras así."
+        },
+        {
+          "id": "block_d46a2d99-2bfd-49bf-a52e-bfcabbf159be",
+          "type": "sentence",
+          "layout": "vocabulary_table",
+          "promptLabel": "",
+          "promptText": "Adivina los siguientes.",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_d6bc53c5-0206-435d-8abd-3539b92be181",
+              "spanish": "instante",
+              "callout": null,
+              "acceptedAnswers": [
+                "instant"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_ee109b71-f68e-470d-8a4e-90d1f9c18fac",
+              "spanish": "distante",
+              "callout": null,
+              "acceptedAnswers": [
+                "distant"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_49906138-c812-442c-a2bd-0b175889cd7d",
+          "type": "explanation",
+          "contentMarkdown": "Ahora la pronunciación:\n\n**Important** se pronuncia **im-POR-tent**: tres sílabas.\n\n**Constant** se pronuncia **KAHN-stent**: dos sílabas.\n\nAl final, ==-ant== suele sonar parecido a **ent**."
+        },
+        {
+          "id": "block_d90b38e9-cf78-44a6-8499-2f511af08426",
+          "type": "explanation",
+          "contentMarkdown": "Ahora mira estos:\n\n**Perman==ente==** es **perman==ent==**.\n\n**Pres==ente==** es **pres==ent==**."
+        },
+        {
+          "id": "block_4d05fde4-af9e-4889-a0ba-3bbb1e69541f",
+          "type": "sentence",
+          "layout": "vocabulary_table",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_c090b702-f706-43c0-b38e-9ebaff45e74e",
+              "spanish": "permanente",
+              "callout": null,
+              "acceptedAnswers": [
+                "permanent"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_64abb4b8-dbdf-48b0-b3d4-9a3ef570c6a0",
+              "spanish": "presente",
+              "callout": null,
+              "acceptedAnswers": [
+                "present"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_5469b7a1-a2d8-4adc-ad62-b95fec33c936",
+          "type": "explanation",
+          "contentMarkdown": "Como puedes ver, muchas palabras que terminan en ==-ente== cambian a ==-ent== en inglés.\n\nSolo quitamos la ==e==.\n\nTambién hay muchas palabras así."
+        },
+        {
+          "id": "block_11169bc2-bab8-44e2-9df9-b3c66c57822d",
+          "type": "sentence",
+          "layout": "vocabulary_table",
+          "promptLabel": "",
+          "promptText": "Adivina los siguientes.",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_0628ae1d-f2f7-4bd1-8072-c1e207078eeb",
+              "spanish": "competente",
+              "callout": null,
+              "acceptedAnswers": [
+                "competent"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_74de734a-cd55-420e-b7e8-6c007be8ad21",
+              "spanish": "urgente",
+              "callout": null,
+              "acceptedAnswers": [
+                "urgent"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_ef05770a-83e6-4c73-b70b-7c8f3e8840bf",
+          "type": "explanation",
+          "contentMarkdown": "Ahora la pronunciación:\n\n**Permanent** se pronuncia **PER-muh-nent**: tres sílabas.\n\n**Present** se pronuncia **PREZ-ent**: dos sílabas."
+        },
+        {
+          "id": "block_f84b15d1-2ae7-4854-b2bf-58e3f5ddbc3a",
+          "type": "explanation",
+          "contentMarkdown": "Mira este cambio:\n\n**Diferente** es **different**.\n\nEn inglés, recuerda las dos efes: ==diff...==\n\nEn Norteamérica se pronuncia **DIFF-rent**: dos sílabas.\n\n**DIFF-rent.**"
+        },
+        {
+          "id": "block_52577bde-5122-42bf-a2ca-f32155d55a8a",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_e9a11f6d-80fa-413b-897f-a1b81046f1be",
+              "spanish": "diferente",
+              "callout": null,
+              "acceptedAnswers": [
+                "different"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_354782e3-c4dc-4464-85c8-a1782779c2e1",
+          "type": "explanation",
+          "contentMarkdown": "Mira este cambio:\n\n**Paciente** es **patient**.\n\nLa ==c== de paciente cambia a ==t==: ==pati...==\n\nEn Norteamérica se pronuncia **PAY-shent**: dos sílabas.\n\n**PAY-shent.**"
+        },
+        {
+          "id": "block_a39f0792-cb84-4c22-b615-880622cbeb7b",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_2e2a1e06-32de-47f3-add9-6f88967fdf7d",
+              "spanish": "paciente",
+              "callout": null,
+              "acceptedAnswers": [
+                "patient"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_6053d86f-d95e-4991-b4e2-f40d1fc917bb",
+          "type": "explanation",
+          "contentMarkdown": "==Es== puede ser ==it is==. La contracción es ==it's==, con apóstrofo. Aquí significan lo mismo.\n\n==It is== se pronuncia **it-IZ**: dos sílabas.\n\n==It's== se pronuncia **ITS**: una sílaba."
+        },
+        {
+          "id": "block_bed7e3e0-8e00-45e8-9d6d-22d43f30a84a",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "==It is== y ==it's== son iguales.",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_85ea970b-533b-492e-86a9-a609ed9dc72e",
+              "spanish": "Es",
+              "callout": "¡Mayúscula!",
+              "acceptedAnswers": [
+                "It is",
+                "It's"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_d2273583-43c5-43b4-8bca-8fbec6d6b563",
+              "spanish": "importante.",
+              "callout": "¡Punto!",
+              "acceptedAnswers": [
+                "important."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson_ad45b47f-60d2-4a12-89f4-4c441d130e07",
+      "name": "It's very important to me.",
+      "blocks": [
+        {
+          "id": "block_1001a945-6b1e-4b6e-a0f2-0458da361395",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "Entonces, ¿cómo se dice ==es importante==?",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_b1755cec-cc42-46d4-89ca-8c40a6efd952",
+              "spanish": "Es",
+              "callout": null,
+              "acceptedAnswers": [
+                "It is",
+                "It's"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_37f83f9d-e02d-4ddd-a35d-d180b50caf24",
+              "spanish": "importante",
+              "callout": null,
+              "acceptedAnswers": [
+                "important"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_e5397a96-6b69-4f1e-be30-b67a88fe4169",
+          "type": "explanation",
+          "contentMarkdown": "==Para mí== normalmente es ==for me==. Pero para decir que algo tiene importancia personal, usamos ==important to me==: ==importante para mí==.\n\nAl hablar, ==for me== normalmente suena **fer-MEE**.\n\n==Important to me== suena **im-POR-tent tuh-MEE**."
+        },
+        {
+          "id": "block_a1ede8bd-0408-4213-926d-ae15e1617574",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_3b7e58b6-6395-4e3f-a616-4a33fadf22df",
+              "spanish": "para mí",
+              "callout": null,
+              "acceptedAnswers": [
+                "for me"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_f56862e2-b19d-420b-b04e-93d566d8401e",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_c9822979-9fcf-4032-b8e4-eced6f704060",
+              "spanish": "Es",
+              "callout": null,
+              "acceptedAnswers": [
+                "It is",
+                "It's"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_733b33bc-fa68-4b64-8fa2-e64ffce170b9",
+              "spanish": "importante para mí.",
+              "callout": null,
+              "acceptedAnswers": [
+                "important to me."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_4097a39e-3142-4636-904d-909ed83a7fa1",
+          "type": "explanation",
+          "contentMarkdown": "==Muy== es ==very==.\n\n==Very== se pronuncia **VAIR-ee**: dos sílabas.\n\n**VAIR-ee.**"
+        },
+        {
+          "id": "block_f07036f1-c1e3-4b2a-9846-abe2b2de426d",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_28ce91a7-be42-42ce-89f3-992b107a9fe8",
+              "spanish": "muy",
+              "callout": null,
+              "acceptedAnswers": [
+                "very"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_d5ad84f5-886a-465e-9934-c89cf77d5668",
+              "spanish": "importante",
+              "callout": null,
+              "acceptedAnswers": [
+                "important"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_d12d4a62-b0ec-4524-9678-36a815120f68",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_d3991c99-13a8-4de1-a8ba-f47b802678ed",
+              "spanish": "Es",
+              "callout": null,
+              "acceptedAnswers": [
+                "It is",
+                "It's"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_8ec9e6a4-c82c-4457-95cf-ed8becc95c71",
+              "spanish": "muy importante para mí.",
+              "callout": null,
+              "acceptedAnswers": [
+                "very important to me."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_69452fa0-37b4-42dd-a4f1-30c4d4776ef2",
+          "type": "explanation",
+          "contentMarkdown": "==Contigo== es ==with you==.\n\n==With you== se pronuncia **WITH-yoo**.\n\n**WITH-yoo.**"
+        },
+        {
+          "id": "block_f2641750-ed62-446d-a4eb-1a5d36c67a1d",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_c229deda-f148-4ae1-b190-17552fc9e157",
+              "spanish": "contigo",
+              "callout": null,
+              "acceptedAnswers": [
+                "with you"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_1b83b87b-3d17-4e96-82cc-427f45f9ce67",
+          "type": "explanation",
+          "contentMarkdown": "==Porque== es ==because==.\n\n==Because== se pronuncia **bih-KUZ**: dos sílabas.\n\n**bih-KUZ.**"
+        },
+        {
+          "id": "block_3f42026f-21e8-45a5-a5ff-fb49ed947b26",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "Armemos una frase más larga.",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_402e7b65-5285-4f91-9de9-b7c72b26a657",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_ca6833d5-9bc6-4d2e-a52f-0606420d5bc7",
+              "spanish": "hacer",
+              "callout": null,
+              "acceptedAnswers": [
+                "to do"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_5f422a4a-8e80-4553-a891-f72a1bbc5a41",
+              "spanish": "algo",
+              "callout": null,
+              "acceptedAnswers": [
+                "something"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_287d5905-506f-43ee-868a-57323b01ab75",
+              "spanish": "contigo",
+              "callout": null,
+              "acceptedAnswers": [
+                "with you"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_de5e10a0-fe25-4dd9-a3d0-793aa8572394",
+              "spanish": "porque",
+              "callout": null,
+              "acceptedAnswers": [
+                "because"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_ecbdd381-254f-4376-ab99-e35a51965ded",
+              "spanish": "es",
+              "callout": null,
+              "acceptedAnswers": [
+                "it is",
+                "it's"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_399ef6d8-515c-4880-bff6-1c95bda022c1",
+              "spanish": "muy importante para mí.",
+              "callout": null,
+              "acceptedAnswers": [
+                "very important to me."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson_c002bc79-bb85-41f4-ba7c-817f9d6e0642",
+      "name": "I want to go there today.",
+      "blocks": [
+        {
+          "id": "block_4b44eebe-80f0-4fb1-97be-3f4b893cb46a",
+          "type": "explanation",
+          "contentMarkdown": "==Ir== es ==to go==.\n\nAl hablar, ==to go== normalmente suena **tuh-GO**.\n\n**tuh-GO.**"
+        },
+        {
+          "id": "block_9d5bc68d-805c-4880-8775-21e2fa1b8130",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_20e92bc7-7eaa-4fad-a4ed-8e51440c6aa3",
+              "spanish": "ir",
+              "callout": null,
+              "acceptedAnswers": [
+                "to go"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_11f5f735-1f00-4a7e-9fe7-7b87a5e3ec08",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_aedeecfd-23ad-410c-bed2-d25e3e3c5f04",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_68c19b04-9c81-42b5-9d28-9a519a44aafa",
+              "spanish": "ir.",
+              "callout": "¡Punto!",
+              "acceptedAnswers": [
+                "to go."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_2de22212-9373-401d-8b58-2c5dcf683afe",
+          "type": "explanation",
+          "contentMarkdown": "==Día== es ==day== y ==hoy== es ==today==.\n\n==Today== se pronuncia **tuh-DAY**: dos sílabas.\n\n**tuh-DAY.**"
+        },
+        {
+          "id": "block_6cf2f39c-9d93-4f29-9e2b-31f3b25f5944",
+          "type": "sentence",
+          "layout": "vocabulary_table",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_87f17b2b-1465-4e50-81eb-604ffc76eea3",
+              "spanish": "día",
+              "callout": null,
+              "acceptedAnswers": [
+                "day"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_6e2200b9-ded2-4369-a5f2-83268ef121c3",
+              "spanish": "hoy",
+              "callout": null,
+              "acceptedAnswers": [
+                "today"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_fb316c7e-f916-40b8-a5d6-ee24671bd3b3",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_ba969431-023d-4654-85b2-b23cd9f9675a",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_e242833e-e74f-414f-9ce9-d5dd95729fb6",
+              "spanish": "ir",
+              "callout": null,
+              "acceptedAnswers": [
+                "to go"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_38b57b88-840a-44b8-a482-bf1143ed4f29",
+              "spanish": "hoy.",
+              "callout": null,
+              "acceptedAnswers": [
+                "today."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_8d4c4959-cfda-4ed1-a3e3-6c863436c036",
+          "type": "explanation",
+          "contentMarkdown": "==Allí== y ==allá== normalmente son ==there== en inglés. En español pueden expresar distancias un poco diferentes, pero en esta lección ambas respuestas son ==there==.\n\n==There== se pronuncia **THAIR**: una sílaba.\n\n**THAIR.**"
+        },
+        {
+          "id": "block_2709adfe-2d44-4520-8636-9be67987d8cd",
+          "type": "sentence",
+          "layout": "vocabulary_table",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_64621928-0212-437d-856c-7b59fb6b7a2e",
+              "spanish": "allí",
+              "callout": null,
+              "acceptedAnswers": [
+                "there"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_f345ea87-9d48-4c85-b49b-8e1fddb94cbe",
+              "spanish": "allá",
+              "callout": null,
+              "acceptedAnswers": [
+                "there"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_31309402-c00b-4bf4-a42e-cef6b159dbff",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "Armemos la frase de esta lección.",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_d03bf60d-e280-4a08-9030-a6052fcefb90",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_e653a2cf-30a2-454c-8025-909b3afb9cbc",
+              "spanish": "ir",
+              "callout": null,
+              "acceptedAnswers": [
+                "to go"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_a0dc4c44-7603-4104-b46b-24549e5e75a9",
+              "spanish": "allá",
+              "callout": null,
+              "acceptedAnswers": [
+                "there"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_f099ad8c-6454-4fb2-beeb-700db0c40bd2",
+              "spanish": "hoy.",
+              "callout": null,
+              "acceptedAnswers": [
+                "today."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_45d674b1-b359-461f-adc3-c045f5575da3",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_0444d3d7-1a64-4a4b-8051-313bf9181d51",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_e0dd86bf-3e6d-4ee4-af83-52cb80d6ffd1",
+              "spanish": "ir",
+              "callout": null,
+              "acceptedAnswers": [
+                "to go"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_bc24a52b-8097-451b-8f95-edef5ca53041",
+              "spanish": "allá",
+              "callout": null,
+              "acceptedAnswers": [
+                "there"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_1e316db0-df5a-415d-bc27-bcd5a9bdf655",
+              "spanish": "hoy",
+              "callout": null,
+              "acceptedAnswers": [
+                "today"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_033f31cc-409c-4093-81df-8a251bd4cf91",
+              "spanish": "porque",
+              "callout": null,
+              "acceptedAnswers": [
+                "because"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_f7014d1d-eb15-4032-8b4a-76d3f9c25a53",
+              "spanish": "quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_bb064fb1-7671-4983-9e18-22be88fc9a53",
+              "spanish": "hacer",
+              "callout": null,
+              "acceptedAnswers": [
+                "to do"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_4fa01445-51b6-49a0-8fe9-4f0c09a0ce65",
+              "spanish": "algo",
+              "callout": null,
+              "acceptedAnswers": [
+                "something"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_bcd7903c-fa32-4b95-99db-ea1e4d07e489",
+              "spanish": "contigo.",
+              "callout": null,
+              "acceptedAnswers": [
+                "with you."
               ],
               "conceptLinks": []
             }

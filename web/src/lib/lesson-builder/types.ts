@@ -18,6 +18,7 @@ export type ExplanationBlock = {
 export type SentenceBlock = {
   id: string;
   type: "sentence";
+  layout?: "sentence" | "vocabulary_table";
   promptLabel: string;
   promptText: string;
   helperText: string;

@@ -137,6 +137,7 @@ export function SentencePracticeCard({
   }
 
   const isSingleLanguageBlock = sentence.languageBlocks.length === 1;
+  const isVocabulary = sentence.layout === "vocabulary_table";
   const hasAuthoredPrompt = Boolean(
     sentence.promptLabel.trim() || sentence.promptText?.trim(),
   );
@@ -144,7 +145,7 @@ export function SentencePracticeCard({
   return (
     <div
       className={`mx-auto rounded-3xl border border-border bg-[var(--surface)] shadow-sm ${
-        isSingleLanguageBlock
+        isSingleLanguageBlock || isVocabulary
           ? "max-w-2xl p-6 sm:p-7"
           : "max-w-4xl p-8 sm:p-10"
       }`}
@@ -166,7 +167,9 @@ export function SentencePracticeCard({
         <>
           <div
             className={`${hasAuthoredPrompt ? "mt-7" : ""} grid gap-x-8 gap-y-7 ${
-              isSingleLanguageBlock
+              isVocabulary
+                ? "mx-auto max-w-xl grid-cols-1"
+                : isSingleLanguageBlock
                 ? "mx-auto max-w-xl"
                 : "grid-cols-[repeat(auto-fit,minmax(min(100%,12rem),1fr))]"
             }`}
@@ -174,12 +177,16 @@ export function SentencePracticeCard({
           {sentence.languageBlocks.map((languageBlock, languageBlockIndex) => (
             <div
               key={languageBlock.id}
-              className="space-y-3"
+              className={
+                isVocabulary
+                  ? "grid items-center gap-3 sm:grid-cols-[minmax(8rem,0.8fr)_minmax(12rem,1.2fr)_minmax(10rem,1fr)]"
+                  : "space-y-3"
+              }
             >
               <span className="block text-center text-2xl font-bold leading-tight text-foreground">
                 {languageBlock.spanish || "Texto en español"}
               </span>
-              <div className="relative">
+              <div className={`relative ${isVocabulary ? "min-w-0" : ""}`}>
                 <input
                   ref={(element) => {
                     inputRefs.current[languageBlockIndex] = element;
@@ -257,7 +264,9 @@ export function SentencePracticeCard({
                 </button>
               </div>
               {languageBlock.callout?.trim() && (
-                <div className="rounded-2xl border border-amber-300 bg-gradient-to-br from-amber-100 via-yellow-200 to-orange-100 px-4 py-3 text-center text-amber-950 shadow-sm dark:border-amber-700 dark:from-amber-950/80 dark:via-yellow-950/70 dark:to-orange-950/80 dark:text-amber-100">
+                <div className={`rounded-2xl border border-amber-300 bg-gradient-to-br from-amber-100 via-yellow-200 to-orange-100 px-4 py-3 text-center text-amber-950 shadow-sm dark:border-amber-700 dark:from-amber-950/80 dark:via-yellow-950/70 dark:to-orange-950/80 dark:text-amber-100 ${
+                  isVocabulary ? "sm:col-start-3 sm:row-start-1" : ""
+                }`}>
                   <p className="flex items-center justify-center gap-2 text-base font-bold italic leading-6">
                     <Sun
                       className="size-5 shrink-0 text-orange-600 dark:text-amber-400"
