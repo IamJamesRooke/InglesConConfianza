@@ -80,7 +80,6 @@ The end position normally uses a comma in writing.
 | Spanish | English |
 |---|---|
 | Lo siento. Llegué tarde. | I'm sorry. I arrived late. |
-| Disculpe, tengo una pregunta. | Excuse me, I have a question. |
 | Perdón, esa es mi llave. | Excuse me, that is my key. |
 
 Colombian **qué pena** frequently softens a request or apology. Choose **I'm sorry** when apologizing and **excuse me** when politely getting attention or interrupting.

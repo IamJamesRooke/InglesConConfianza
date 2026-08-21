@@ -722,6 +722,7 @@
       },
       "collections": [
         "tomar",
+        "quitar",
         "take",
         "time"
       ],
@@ -737,6 +738,7 @@
       },
       "collections": [
         "tomar",
+        "parecer",
         "take",
         "phrasal verb",
         "over"
@@ -2852,6 +2854,7 @@
       },
       "collections": [
         "pedir",
+        "preguntar",
         "ask",
         "phrasal verb",
         "for"
@@ -2868,6 +2871,7 @@
       },
       "collections": [
         "pedir",
+        "preguntar",
         "ask",
         "verb + preposition",
         "for",
@@ -2885,6 +2889,7 @@
       },
       "collections": [
         "pedir",
+        "preguntar",
         "ask",
         "somebody to do something",
         "verb + infinitive",
@@ -2902,6 +2907,7 @@
       },
       "collections": [
         "pedir",
+        "mandar",
         "order",
         "restaurant"
       ],
@@ -3374,6 +3380,7 @@
       },
       "collections": [
         "poner",
+        "pasar",
         "put",
         "placement"
       ],
@@ -6960,6 +6967,10 @@
       },
       "collections": [
         "hacer",
+        "preguntar",
+        "ask",
+        "question",
+        "collocation",
         "fixed expression"
       ],
       "curriculumRole": "reference"
@@ -8065,6 +8076,3173 @@
         "verb + preposition",
         "of",
         "de => of"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "mandar-algo-send",
+      "spanish": "mandar [algo]",
+      "english": "to send [something]",
+      "example": {
+        "spanish": "Mándame el archivo.",
+        "english": "Send me the file."
+      },
+      "collections": [
+        "mandar",
+        "send"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "mandarle-algo-a-alguien-send-to",
+      "spanish": "mandarle [algo] a [alguien]",
+      "english": "to send [something] to [somebody]",
+      "example": {
+        "spanish": "Le mandé el enlace a Ana.",
+        "english": "I sent the link to Ana."
+      },
+      "collections": [
+        "mandar",
+        "send",
+        "verb + preposition",
+        "to",
+        "a => to"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "mandar-a-alguien-hacer-algo-tell",
+      "spanish": "mandar a [alguien] [hacer algo]",
+      "english": "to tell [somebody] to [do something]",
+      "example": {
+        "spanish": "Me mandó esperar.",
+        "english": "She told me to wait."
+      },
+      "collections": [
+        "mandar",
+        "tell",
+        "somebody to do something"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "mandar-a-alguien-hacer-algo-order",
+      "spanish": "mandar a [alguien] [hacer algo]",
+      "english": "to order [somebody] to [do something]",
+      "example": {
+        "spanish": "El jefe les mandó salir.",
+        "english": "The boss ordered them to leave."
+      },
+      "collections": [
+        "mandar",
+        "order",
+        "somebody to do something"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "mandar-en-un-lugar-be-in-charge",
+      "spanish": "mandar (tener autoridad)",
+      "english": "to be in charge",
+      "example": {
+        "spanish": "Aquí manda Ana.",
+        "english": "Ana is in charge here."
+      },
+      "collections": [
+        "mandar",
+        "authority",
+        "fixed expression"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "mandar-hacer-algo-have-done",
+      "spanish": "mandar [hacer algo]",
+      "english": "to have [something done]",
+      "example": {
+        "spanish": "Mandé reparar el carro.",
+        "english": "I had the car repaired."
+      },
+      "collections": [
+        "mandar",
+        "causative",
+        "have something done",
+        "past participle"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "mandar-a-buscar-a-alguien-send-for",
+      "spanish": "mandar a buscar a [alguien]",
+      "english": "to send for [somebody]",
+      "example": {
+        "spanish": "Mandaron a buscar al médico.",
+        "english": "They sent for the doctor."
+      },
+      "collections": [
+        "mandar",
+        "send",
+        "phrasal verb",
+        "for",
+        "a buscar => for"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "mandar-a-alguien-a-hacer-algo-send-to-do",
+      "spanish": "mandar a [alguien] a [hacer algo]",
+      "english": "to send [somebody] to [do something]",
+      "example": {
+        "spanish": "Mandé a Luis a comprar pan.",
+        "english": "I sent Luis to buy bread."
+      },
+      "collections": [
+        "mandar",
+        "send",
+        "somebody to do something"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "mandar-a-alguien-a-otro-lugar-send-away",
+      "spanish": "mandar a [alguien] a otro lugar",
+      "english": "to send [somebody] away",
+      "example": {
+        "spanish": "Lo mandaron a otra oficina.",
+        "english": "They sent him away to another office."
+      },
+      "collections": [
+        "mandar",
+        "send",
+        "phrasal verb",
+        "away"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "mandar-algo-de-vuelta-send-back",
+      "spanish": "mandar [algo] de vuelta",
+      "english": "to send [something] back",
+      "example": {
+        "spanish": "Mandé el paquete de vuelta.",
+        "english": "I sent the package back."
+      },
+      "collections": [
+        "mandar",
+        "send",
+        "phrasal verb",
+        "back",
+        "de vuelta => back"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ser-mandon-bossy",
+      "spanish": "ser mandón/mandona",
+      "english": "to be bossy",
+      "example": {
+        "spanish": "Mi hermano es muy mandón.",
+        "english": "My brother is very bossy."
+      },
+      "collections": [
+        "mandar",
+        "adjective",
+        "person"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "parar-algo-stop",
+      "spanish": "parar [algo]",
+      "english": "to stop [something]",
+      "example": {
+        "spanish": "Para el carro aquí.",
+        "english": "Stop the car here."
+      },
+      "collections": [
+        "parar",
+        "stop"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "pararse-stop-moving",
+      "spanish": "pararse",
+      "english": "to stop moving",
+      "example": {
+        "spanish": "El bus se paró.",
+        "english": "The bus stopped moving."
+      },
+      "collections": [
+        "parar",
+        "stop",
+        "reflexive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "parar-de-hacer-algo-stop-doing",
+      "spanish": "parar de [hacer algo]",
+      "english": "to stop [doing something]",
+      "example": {
+        "spanish": "Paró de llover.",
+        "english": "It stopped raining."
+      },
+      "collections": [
+        "parar",
+        "stop",
+        "verb + preposition",
+        "de",
+        "de => -ing",
+        "gerund"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "no-parar-de-hacer-algo-keep-doing",
+      "spanish": "no parar de [hacer algo]",
+      "english": "to keep [doing something]",
+      "example": {
+        "spanish": "No para de hablar.",
+        "english": "She keeps talking."
+      },
+      "collections": [
+        "parar",
+        "keep",
+        "gerund"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "no-parar-de-hacer-algo-wont-stop",
+      "spanish": "no parar de [hacer algo]",
+      "english": "won't stop [doing something]",
+      "example": {
+        "spanish": "No para de hablar.",
+        "english": "She won't stop talking."
+      },
+      "collections": [
+        "parar",
+        "stop",
+        "gerund"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "parar-en-un-lugar-stop-at",
+      "spanish": "parar en [un lugar]",
+      "english": "to stop at [a place]",
+      "example": {
+        "spanish": "El bus para en la esquina.",
+        "english": "The bus stops at the corner."
+      },
+      "collections": [
+        "parar",
+        "stop",
+        "verb + preposition",
+        "at",
+        "en => at"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "parar-en-un-hotel-stay",
+      "spanish": "parar en [un hotel]",
+      "english": "to stay at [a hotel]",
+      "example": {
+        "spanish": "Paramos en un hotel pequeño.",
+        "english": "We stayed at a small hotel."
+      },
+      "collections": [
+        "parar",
+        "stay",
+        "verb + preposition",
+        "at",
+        "en => at"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "parar-a-un-lado-pull-over",
+      "spanish": "parar a un lado",
+      "english": "to pull over",
+      "example": {
+        "spanish": "Paró a un lado de la carretera.",
+        "english": "She pulled over."
+      },
+      "collections": [
+        "parar",
+        "phrasal verb",
+        "pull",
+        "over"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "parar-por-un-lugar-stop-by",
+      "spanish": "parar por [un lugar]",
+      "english": "to stop by [a place]",
+      "example": {
+        "spanish": "Para por mi oficina mañana.",
+        "english": "Stop by my office tomorrow."
+      },
+      "collections": [
+        "parar",
+        "stop",
+        "phrasal verb",
+        "by",
+        "por => by"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "la-parada-stop",
+      "spanish": "la parada",
+      "english": "the stop",
+      "example": {
+        "spanish": "La parada queda en la esquina.",
+        "english": "The stop is on the corner."
+      },
+      "collections": [
+        "parar",
+        "noun"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "parecer-adjetivo-seem",
+      "spanish": "parecer [adjetivo]",
+      "english": "to seem [adjective]",
+      "example": {
+        "spanish": "Parece cansado.",
+        "english": "He seems tired."
+      },
+      "collections": [
+        "parecer",
+        "seem",
+        "adjective"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "parecer-hacer-algo-seem-to",
+      "spanish": "parecer [hacer algo]",
+      "english": "to seem to [do something]",
+      "example": {
+        "spanish": "Parece entender.",
+        "english": "She seems to understand."
+      },
+      "collections": [
+        "parecer",
+        "seem",
+        "full infinitive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "parece-que-it-seems-that",
+      "spanish": "parece que [ocurre algo]",
+      "english": "it seems that [something is happening]",
+      "example": {
+        "spanish": "Parece que la oficina está cerrada.",
+        "english": "It seems that the office is closed."
+      },
+      "collections": [
+        "parecer",
+        "seem",
+        "impersonal",
+        "que => that"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "parecer-adjetivo-look",
+      "spanish": "parecer [adjetivo] (apariencia visible)",
+      "english": "to look [adjective]",
+      "example": {
+        "spanish": "Pareces preocupado.",
+        "english": "You look worried."
+      },
+      "collections": [
+        "parecer",
+        "look",
+        "adjective"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "parecer-hacer-algo-appear-to",
+      "spanish": "parecer [hacer algo] (formal)",
+      "english": "to appear to [do something]",
+      "example": {
+        "spanish": "El problema parece ser serio.",
+        "english": "The problem appears to be serious."
+      },
+      "collections": [
+        "parecer",
+        "appear",
+        "full infinitive",
+        "formal"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "que-te-parece-de-algo-what-think-of",
+      "spanish": "¿Qué te parece [algo]?",
+      "english": "What do you think of [something]?",
+      "example": {
+        "spanish": "¿Qué te parece mi propuesta?",
+        "english": "What do you think of my proposal?"
+      },
+      "collections": [
+        "parecer",
+        "think",
+        "verb + preposition",
+        "of"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "que-te-parece-si-how-about",
+      "spanish": "¿Qué te parece si [hacemos algo]?",
+      "english": "How about [doing something]?",
+      "example": {
+        "spanish": "¿Qué te parece si salimos temprano?",
+        "english": "How about leaving early?"
+      },
+      "collections": [
+        "parecer",
+        "suggestion",
+        "about",
+        "gerund"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "que-te-parece-si-what-if",
+      "spanish": "¿Qué te parece si [hacemos algo]?",
+      "english": "What if [we do something]?",
+      "example": {
+        "spanish": "¿Qué te parece si vamos mañana?",
+        "english": "What if we go tomorrow?"
+      },
+      "collections": [
+        "parecer",
+        "suggestion",
+        "if",
+        "si => if"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "parecerse-a-alguien-look-like",
+      "spanish": "parecerse a [alguien]",
+      "english": "to look like [somebody]",
+      "example": {
+        "spanish": "Ana se parece a su mamá.",
+        "english": "Ana looks like her mother."
+      },
+      "collections": [
+        "parecer",
+        "look",
+        "verb + preposition",
+        "like",
+        "a => like",
+        "reflexive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "parecerse-a-alguien-resemble",
+      "spanish": "parecerse a [alguien]",
+      "english": "to resemble [somebody]",
+      "example": {
+        "spanish": "Ana se parece a su mamá.",
+        "english": "Ana resembles her mother."
+      },
+      "collections": [
+        "parecer",
+        "resemble",
+        "reflexive",
+        "formal"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "parecer-un-sustantivo-seem-like",
+      "spanish": "parecer [un sustantivo]",
+      "english": "to seem like [a noun]",
+      "example": {
+        "spanish": "Parece una buena idea.",
+        "english": "It seems like a good idea."
+      },
+      "collections": [
+        "parecer",
+        "seem",
+        "verb + preposition",
+        "like",
+        "noun"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "al-parecer-apparently",
+      "spanish": "al parecer",
+      "english": "apparently",
+      "example": {
+        "spanish": "Al parecer, ya salieron.",
+        "english": "Apparently, they already left."
+      },
+      "collections": [
+        "parecer",
+        "adverb"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "ser-parecido-a-be-similar-to",
+      "spanish": "ser parecido/a a [algo]",
+      "english": "to be similar to [something]",
+      "example": {
+        "spanish": "Este diseño es parecido al otro.",
+        "english": "This design is similar to the other one."
+      },
+      "collections": [
+        "parecer",
+        "adjective",
+        "verb + preposition",
+        "to",
+        "a => to",
+        "similarity"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "parecerse-entre-si-look-alike",
+      "spanish": "parecerse entre sí",
+      "english": "to look alike",
+      "example": {
+        "spanish": "Los hermanos se parecen entre sí.",
+        "english": "The brothers look alike."
+      },
+      "collections": [
+        "parecer",
+        "look",
+        "alike",
+        "reflexive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pasar-happen",
+      "spanish": "pasar (ocurrir)",
+      "english": "to happen",
+      "example": {
+        "spanish": "¿Qué pasó?",
+        "english": "What happened?"
+      },
+      "collections": [
+        "pasar",
+        "happen"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "pasar-por-un-lugar-go-through",
+      "spanish": "pasar por [un lugar]",
+      "english": "to go through [a place]",
+      "example": {
+        "spanish": "Pasamos por el centro.",
+        "english": "We went through downtown."
+      },
+      "collections": [
+        "pasar",
+        "go",
+        "phrasal verb",
+        "through",
+        "por => through"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "pasar-por-un-lugar-pass-by",
+      "spanish": "pasar por [un lugar]",
+      "english": "to pass by [a place]",
+      "example": {
+        "spanish": "El bus pasó por la oficina.",
+        "english": "The bus passed by the office."
+      },
+      "collections": [
+        "pasar",
+        "pass",
+        "phrasal verb",
+        "by",
+        "por => by"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pasar-frente-a-go-past",
+      "spanish": "pasar frente a [un lugar]",
+      "english": "to go past [a place]",
+      "example": {
+        "spanish": "Pasé frente al colegio.",
+        "english": "I went past the school."
+      },
+      "collections": [
+        "pasar",
+        "go",
+        "phrasal verb",
+        "past",
+        "frente a => past"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pasar-por-un-puente-cross",
+      "spanish": "pasar por [un puente]",
+      "english": "to cross [a bridge]",
+      "example": {
+        "spanish": "El bus pasó por el puente.",
+        "english": "The bus crossed the bridge."
+      },
+      "collections": [
+        "pasar",
+        "cross",
+        "verb + preposition",
+        "por"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pasar-tiempo-con-spend-time-with",
+      "spanish": "pasar [tiempo] con [alguien]",
+      "english": "to spend [time] with [somebody]",
+      "example": {
+        "spanish": "Paso tiempo con mi familia.",
+        "english": "I spend time with my family."
+      },
+      "collections": [
+        "pasar",
+        "spend",
+        "verb + preposition",
+        "with",
+        "con => with"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "pasa-come-in",
+      "spanish": "¡Pasa!",
+      "english": "Come in!",
+      "example": {
+        "spanish": "Pasa, la puerta está abierta.",
+        "english": "Come in; the door is open."
+      },
+      "collections": [
+        "pasar",
+        "come",
+        "phrasal verb",
+        "in",
+        "invitation"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "pasa-go-ahead",
+      "spanish": "¡Pasa! (dar permiso para continuar)",
+      "english": "Go ahead!",
+      "example": {
+        "spanish": "Sí, pasa.",
+        "english": "Yes, go ahead."
+      },
+      "collections": [
+        "pasar",
+        "go",
+        "phrasal verb",
+        "ahead",
+        "permission"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pasarle-algo-a-alguien-pass",
+      "spanish": "pasarle [algo] a [alguien]",
+      "english": "to pass [somebody] [something]",
+      "example": {
+        "spanish": "Pásame la sal.",
+        "english": "Pass me the salt."
+      },
+      "collections": [
+        "pasar",
+        "pass",
+        "double object"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "pasarle-algo-a-alguien-hand",
+      "spanish": "pasarle [algo] a [alguien]",
+      "english": "to hand [something] to [somebody]",
+      "example": {
+        "spanish": "Le pasé el documento a Ana.",
+        "english": "I handed the document to Ana."
+      },
+      "collections": [
+        "pasar",
+        "hand",
+        "verb + preposition",
+        "to",
+        "a => to"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pasarla-bien-have-good-time",
+      "spanish": "pasarla bien",
+      "english": "to have a good time",
+      "example": {
+        "spanish": "La pasamos muy bien.",
+        "english": "We had a great time."
+      },
+      "collections": [
+        "pasar",
+        "have",
+        "fixed expression"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "pasarla-mal-have-bad-time",
+      "spanish": "pasarla mal",
+      "english": "to have a bad time",
+      "example": {
+        "spanish": "La pasé mal ayer.",
+        "english": "I had a bad time yesterday."
+      },
+      "collections": [
+        "pasar",
+        "have",
+        "fixed expression"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "que-te-pasa-whats-wrong",
+      "spanish": "¿Qué te pasa?",
+      "english": "What's wrong?",
+      "example": {
+        "spanish": "¿Qué te pasa?",
+        "english": "What's wrong?"
+      },
+      "collections": [
+        "pasar",
+        "question",
+        "fixed expression"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "pasar-por-algo-go-through",
+      "spanish": "pasar por [algo difícil]",
+      "english": "to go through [something difficult]",
+      "example": {
+        "spanish": "Pasó por un momento difícil.",
+        "english": "She went through a difficult time."
+      },
+      "collections": [
+        "pasar",
+        "go",
+        "phrasal verb",
+        "through",
+        "por => through"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "pasar-a-otra-cosa-move-on-to",
+      "spanish": "pasar a [otra cosa]",
+      "english": "to move on to [something else]",
+      "example": {
+        "spanish": "Pasemos al siguiente punto.",
+        "english": "Let's move on to the next point."
+      },
+      "collections": [
+        "pasar",
+        "move",
+        "phrasal verb",
+        "on",
+        "to",
+        "a => to"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pasar-por-alto-overlook",
+      "spanish": "pasar por alto [algo]",
+      "english": "to overlook [something]",
+      "example": {
+        "spanish": "Pasé por alto un error.",
+        "english": "I overlooked an error."
+      },
+      "collections": [
+        "pasar",
+        "fixed expression"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pasarse-go-too-far",
+      "spanish": "pasarse",
+      "english": "to go too far",
+      "example": {
+        "spanish": "Te pasaste con ese comentario.",
+        "english": "You went too far with that comment."
+      },
+      "collections": [
+        "pasar",
+        "go",
+        "fixed expression",
+        "reflexive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "periodo-pasado-last",
+      "spanish": "[período] pasado/a",
+      "english": "last [period]",
+      "example": {
+        "spanish": "Viajé el año pasado.",
+        "english": "I traveled last year."
+      },
+      "collections": [
+        "pasar",
+        "adjective",
+        "time"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "el-pasado-the-past",
+      "spanish": "el pasado",
+      "english": "the past",
+      "example": {
+        "spanish": "Eso ocurrió en el pasado.",
+        "english": "That happened in the past."
+      },
+      "collections": [
+        "pasar",
+        "noun",
+        "time"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "pensar-que-think",
+      "spanish": "pensar que [ocurre algo]",
+      "english": "to think [that something is happening]",
+      "example": {
+        "spanish": "Pienso que funcionará.",
+        "english": "I think it will work."
+      },
+      "collections": [
+        "pensar",
+        "think",
+        "que => that",
+        "opinion"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "pensar-en-algo-think-about",
+      "spanish": "pensar en [algo]",
+      "english": "to think about [something]",
+      "example": {
+        "spanish": "Pienso en el problema.",
+        "english": "I think about the problem."
+      },
+      "collections": [
+        "pensar",
+        "think",
+        "verb + preposition",
+        "about",
+        "en => about"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "pensar-en-algo-think-of",
+      "spanish": "pensar en [algo]",
+      "english": "to think of [something]",
+      "example": {
+        "spanish": "Pensé en una solución.",
+        "english": "I thought of a solution."
+      },
+      "collections": [
+        "pensar",
+        "think",
+        "verb + preposition",
+        "of",
+        "en => of"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pensar-hacer-algo-plan-to",
+      "spanish": "pensar [hacer algo]",
+      "english": "to plan to [do something]",
+      "example": {
+        "spanish": "Pienso viajar en diciembre.",
+        "english": "I plan to travel in December."
+      },
+      "collections": [
+        "pensar",
+        "plan",
+        "full infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "pensar-hacer-algo-intend-to",
+      "spanish": "pensar [hacer algo]",
+      "english": "to intend to [do something]",
+      "example": {
+        "spanish": "Pienso terminar hoy.",
+        "english": "I intend to finish today."
+      },
+      "collections": [
+        "pensar",
+        "intend",
+        "full infinitive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pensar-en-hacer-algo-consider",
+      "spanish": "pensar en [hacer algo]",
+      "english": "to consider [doing something]",
+      "example": {
+        "spanish": "Pienso en cambiar de trabajo.",
+        "english": "I'm considering changing jobs."
+      },
+      "collections": [
+        "pensar",
+        "consider",
+        "gerund",
+        "en => -ing"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "que-piensas-de-algo-what-think-of",
+      "spanish": "¿Qué piensas de [algo]?",
+      "english": "What do you think of [something]?",
+      "example": {
+        "spanish": "¿Qué piensas del plan?",
+        "english": "What do you think of the plan?"
+      },
+      "collections": [
+        "pensar",
+        "think",
+        "verb + preposition",
+        "of",
+        "de => of"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "pensarlo-bien-think-over",
+      "spanish": "pensar bien [algo]",
+      "english": "to think [something] over",
+      "example": {
+        "spanish": "Tengo que pensarlo bien.",
+        "english": "I have to think it over."
+      },
+      "collections": [
+        "pensar",
+        "think",
+        "phrasal verb",
+        "over"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "pensar-algo-detenidamente-think-through",
+      "spanish": "pensar detenidamente [algo]",
+      "english": "to think [something] through",
+      "example": {
+        "spanish": "Pensamos detenidamente el plan.",
+        "english": "We thought the plan through."
+      },
+      "collections": [
+        "pensar",
+        "think",
+        "phrasal verb",
+        "through"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "pensar-que-si-think-so",
+      "spanish": "pensar que sí",
+      "english": "to think so",
+      "example": {
+        "spanish": "Pienso que sí.",
+        "english": "I think so."
+      },
+      "collections": [
+        "pensar",
+        "think",
+        "pro-form"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "el-pensamiento-thought",
+      "spanish": "el pensamiento",
+      "english": "the thought",
+      "example": {
+        "spanish": "Fue un pensamiento interesante.",
+        "english": "It was an interesting thought."
+      },
+      "collections": [
+        "pensar",
+        "noun"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-pensativo-pensive",
+      "spanish": "estar pensativo/a",
+      "english": "to be pensive",
+      "example": {
+        "spanish": "Ana está pensativa.",
+        "english": "Ana is pensive."
+      },
+      "collections": [
+        "pensar",
+        "adjective",
+        "cognate"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "bien-pensado-thought-out",
+      "spanish": "estar bien pensado/a",
+      "english": "to be well thought out",
+      "example": {
+        "spanish": "El plan está bien pensado.",
+        "english": "The plan is well thought out."
+      },
+      "collections": [
+        "pensar",
+        "adjective",
+        "phrasal verb",
+        "out",
+        "past participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "perder-algo-lose",
+      "spanish": "perder [algo]",
+      "english": "to lose [something]",
+      "example": {
+        "spanish": "Perdí las llaves.",
+        "english": "I lost my keys."
+      },
+      "collections": [
+        "perder",
+        "lose"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "perder-transporte-miss",
+      "spanish": "perder [un medio de transporte]",
+      "english": "to miss [transportation]",
+      "example": {
+        "spanish": "Perdimos el bus.",
+        "english": "We missed the bus."
+      },
+      "collections": [
+        "perder",
+        "miss",
+        "transportation"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "perder-una-oportunidad-miss",
+      "spanish": "perder [una oportunidad]",
+      "english": "to miss [an opportunity]",
+      "example": {
+        "spanish": "No pierdas esta oportunidad.",
+        "english": "Don't miss this opportunity."
+      },
+      "collections": [
+        "perder",
+        "miss",
+        "opportunity"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "perder-el-tiempo-waste",
+      "spanish": "perder el tiempo",
+      "english": "to waste time",
+      "example": {
+        "spanish": "No pierdas el tiempo.",
+        "english": "Don't waste time."
+      },
+      "collections": [
+        "perder",
+        "waste",
+        "time"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "perderse-get-lost",
+      "spanish": "perderse",
+      "english": "to get lost",
+      "example": {
+        "spanish": "Me perdí en el centro.",
+        "english": "I got lost downtown."
+      },
+      "collections": [
+        "perder",
+        "get",
+        "adjective",
+        "reflexive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "estar-perdido-be-lost",
+      "spanish": "estar perdido/a",
+      "english": "to be lost",
+      "example": {
+        "spanish": "Estoy perdido.",
+        "english": "I'm lost."
+      },
+      "collections": [
+        "perder",
+        "adjective",
+        "state"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "perderse-un-evento-miss",
+      "spanish": "perderse [un evento]",
+      "english": "to miss [an event]",
+      "example": {
+        "spanish": "Me perdí la reunión.",
+        "english": "I missed the meeting."
+      },
+      "collections": [
+        "perder",
+        "miss",
+        "reflexive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "perder-contra-alguien-lose-to",
+      "spanish": "perder contra [alguien]",
+      "english": "to lose to [somebody]",
+      "example": {
+        "spanish": "Perdimos contra el otro equipo.",
+        "english": "We lost to the other team."
+      },
+      "collections": [
+        "perder",
+        "lose",
+        "verb + preposition",
+        "to",
+        "contra => to"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "perder-contacto-con-lose-touch",
+      "spanish": "perder el contacto con [alguien]",
+      "english": "to lose touch with [somebody]",
+      "example": {
+        "spanish": "Perdí el contacto con Ana.",
+        "english": "I lost touch with Ana."
+      },
+      "collections": [
+        "perder",
+        "lose",
+        "verb + preposition",
+        "with",
+        "con => with"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "perder-nocion-de-lose-track-of",
+      "spanish": "perder la noción de [algo]",
+      "english": "to lose track of [something]",
+      "example": {
+        "spanish": "Perdí la noción del tiempo.",
+        "english": "I lost track of time."
+      },
+      "collections": [
+        "perder",
+        "lose",
+        "verb + preposition",
+        "of",
+        "de => of"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "algo-pierde-agua-leak",
+      "spanish": "[algo] pierde agua",
+      "english": "[something] leaks",
+      "example": {
+        "spanish": "La llave pierde agua.",
+        "english": "The faucet leaks."
+      },
+      "collections": [
+        "perder",
+        "leak"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "la-perdida-loss",
+      "spanish": "la pérdida",
+      "english": "the loss",
+      "example": {
+        "spanish": "La pérdida fue inesperada.",
+        "english": "The loss was unexpected."
+      },
+      "collections": [
+        "perder",
+        "noun"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "el-perdedor-loser",
+      "spanish": "el/la perdedor/a",
+      "english": "the loser",
+      "example": {
+        "spanish": "Nadie quiere ser el perdedor.",
+        "english": "Nobody wants to be the loser."
+      },
+      "collections": [
+        "perder",
+        "noun",
+        "person",
+        "-dor",
+        "-er"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "algo-pesa-cantidad-weigh",
+      "spanish": "[algo] pesa [una cantidad]",
+      "english": "[something] weighs [an amount]",
+      "example": {
+        "spanish": "La caja pesa diez kilos.",
+        "english": "The box weighs ten kilograms."
+      },
+      "collections": [
+        "pesar",
+        "weigh",
+        "measurement"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "pesar-algo-weigh",
+      "spanish": "pesar [algo]",
+      "english": "to weigh [something]",
+      "example": {
+        "spanish": "Pesé el paquete.",
+        "english": "I weighed the package."
+      },
+      "collections": [
+        "pesar",
+        "weigh"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pesarle-haber-hecho-algo-regret",
+      "spanish": "pesarle a [alguien] haber [hecho algo]",
+      "english": "to regret [having done something]",
+      "example": {
+        "spanish": "Me pesa haber mentido.",
+        "english": "I regret having lied."
+      },
+      "collections": [
+        "pesar",
+        "regret",
+        "gerund"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "a-pesar-de-despite",
+      "spanish": "a pesar de [algo]",
+      "english": "despite [something]",
+      "example": {
+        "spanish": "A pesar de la lluvia, salimos.",
+        "english": "Despite the rain, we left."
+      },
+      "collections": [
+        "pesar",
+        "connector",
+        "despite",
+        "de"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "a-pesar-de-in-spite-of",
+      "spanish": "a pesar de [algo]",
+      "english": "in spite of [something]",
+      "example": {
+        "spanish": "A pesar del cansancio, trabajó.",
+        "english": "In spite of the fatigue, she worked."
+      },
+      "collections": [
+        "pesar",
+        "connector",
+        "verb + preposition",
+        "in",
+        "spite",
+        "of"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "a-pesar-de-que-even-though",
+      "spanish": "a pesar de que [ocurrió algo]",
+      "english": "even though [something happened]",
+      "example": {
+        "spanish": "A pesar de que llovió, salimos.",
+        "english": "Even though it rained, we left."
+      },
+      "collections": [
+        "pesar",
+        "connector",
+        "though",
+        "que"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "a-pesar-de-que-despite-fact",
+      "spanish": "a pesar de que [ocurrió algo]",
+      "english": "despite the fact that [something happened]",
+      "example": {
+        "spanish": "A pesar de que llovió, salimos.",
+        "english": "Despite the fact that it rained, we left."
+      },
+      "collections": [
+        "pesar",
+        "connector",
+        "despite",
+        "that",
+        "que => that"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pesar-en-un-resultado-weigh-on",
+      "spanish": "pesar en [un resultado]",
+      "english": "to weigh on [an outcome]",
+      "example": {
+        "spanish": "La decisión pesó en el resultado.",
+        "english": "The decision weighed on the outcome."
+      },
+      "collections": [
+        "pesar",
+        "weigh",
+        "verb + preposition",
+        "on",
+        "en => on"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "el-peso-weight",
+      "spanish": "el peso",
+      "english": "the weight",
+      "example": {
+        "spanish": "El peso del paquete es exacto.",
+        "english": "The weight of the package is exact."
+      },
+      "collections": [
+        "pesar",
+        "noun"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ser-pesado-heavy",
+      "spanish": "ser pesado/a",
+      "english": "to be heavy",
+      "example": {
+        "spanish": "La caja es pesada.",
+        "english": "The box is heavy."
+      },
+      "collections": [
+        "pesar",
+        "adjective"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "pesadamente-heavily",
+      "spanish": "pesadamente",
+      "english": "heavily",
+      "example": {
+        "spanish": "Respiraba pesadamente.",
+        "english": "He was breathing heavily."
+      },
+      "collections": [
+        "pesar",
+        "adverb",
+        "-mente",
+        "-ly",
+        "adverb formation"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "poder-hacer-algo-can-ability",
+      "spanish": "poder [hacer algo] (capacidad)",
+      "english": "can [do something]",
+      "example": {
+        "spanish": "Puedo ayudar.",
+        "english": "I can help."
+      },
+      "collections": [
+        "poder",
+        "can",
+        "ability",
+        "bare infinitive",
+        "modal"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "poder-hacer-algo-can-permission",
+      "spanish": "poder [hacer algo] (permiso)",
+      "english": "can [do something]",
+      "example": {
+        "spanish": "Puedes usar esta sala.",
+        "english": "You can use this room."
+      },
+      "collections": [
+        "poder",
+        "can",
+        "permission",
+        "bare infinitive",
+        "modal"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "no-poder-hacer-algo-cant",
+      "spanish": "no poder [hacer algo]",
+      "english": "can't [do something]",
+      "example": {
+        "spanish": "No puedo terminar hoy.",
+        "english": "I can't finish today."
+      },
+      "collections": [
+        "poder",
+        "can",
+        "not",
+        "inability",
+        "contraction",
+        "modal"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "no-poder-hacer-algo-cannot",
+      "spanish": "no poder [hacer algo]",
+      "english": "cannot [do something]",
+      "example": {
+        "spanish": "No podemos entrar.",
+        "english": "We cannot enter."
+      },
+      "collections": [
+        "poder",
+        "can",
+        "not",
+        "inability",
+        "formal",
+        "modal"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "poder-hacer-algo-be-able-to",
+      "spanish": "poder [hacer algo]",
+      "english": "to be able to [do something]",
+      "example": {
+        "spanish": "Quiero poder ayudar.",
+        "english": "I want to be able to help."
+      },
+      "collections": [
+        "poder",
+        "ability",
+        "be able to",
+        "full infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "poder-hacer-algo-be-allowed-to",
+      "spanish": "poder [hacer algo] (tener permiso)",
+      "english": "to be allowed to [do something]",
+      "example": {
+        "spanish": "Aquí podemos estacionar.",
+        "english": "We're allowed to park here."
+      },
+      "collections": [
+        "poder",
+        "permission",
+        "be allowed to",
+        "full infinitive",
+        "past participle"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "puede-hacer-algo-may-permission",
+      "spanish": "puede [hacer algo] (permiso formal)",
+      "english": "may [do something]",
+      "example": {
+        "spanish": "Puede comenzar ahora.",
+        "english": "You may begin now."
+      },
+      "collections": [
+        "poder",
+        "may",
+        "permission",
+        "formal",
+        "modal"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "no-puede-hacer-algo-may-not",
+      "spanish": "no puede [hacer algo] (prohibición formal)",
+      "english": "may not [do something]",
+      "example": {
+        "spanish": "No puede entrar.",
+        "english": "You may not enter."
+      },
+      "collections": [
+        "poder",
+        "may",
+        "not",
+        "permission",
+        "formal",
+        "modal"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "puede-hacer-algo-get-to",
+      "spanish": "puede [hacer algo] (oportunidad)",
+      "english": "gets to [do something]",
+      "example": {
+        "spanish": "Puede trabajar desde casa.",
+        "english": "She gets to work from home."
+      },
+      "collections": [
+        "poder",
+        "get",
+        "phrasal verb",
+        "to",
+        "opportunity"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pudo-hacer-algo-got-to",
+      "spanish": "pudo [hacer algo] (oportunidad)",
+      "english": "got to [do something]",
+      "example": {
+        "spanish": "Ayer pudo visitar el museo.",
+        "english": "Yesterday she got to visit the museum."
+      },
+      "collections": [
+        "poder",
+        "get",
+        "phrasal verb",
+        "to",
+        "opportunity",
+        "preterite"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "no-pudo-hacer-algo-didnt-get-to",
+      "spanish": "no pudo [hacer algo] (oportunidad perdida)",
+      "english": "didn't get to [do something]",
+      "example": {
+        "spanish": "No pudo ver la exposición.",
+        "english": "She didn't get to see the exhibition."
+      },
+      "collections": [
+        "poder",
+        "get",
+        "phrasal verb",
+        "to",
+        "opportunity",
+        "preterite",
+        "contraction"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "podia-hacer-algo-could-general",
+      "spanish": "podía [hacer algo] (capacidad general)",
+      "english": "could [do something]",
+      "example": {
+        "spanish": "De niña podía nadar.",
+        "english": "As a child, she could swim."
+      },
+      "collections": [
+        "poder",
+        "could",
+        "ability",
+        "past",
+        "modal"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "pudo-hacer-algo-managed-to",
+      "spanish": "pudo [hacer algo] (éxito específico)",
+      "english": "managed to [do something]",
+      "example": {
+        "spanish": "Pudo abrir la puerta.",
+        "english": "She managed to open the door."
+      },
+      "collections": [
+        "poder",
+        "manage",
+        "ability",
+        "preterite",
+        "full infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "pudo-hacer-algo-was-able-to",
+      "spanish": "pudo [hacer algo] (éxito específico)",
+      "english": "was able to [do something]",
+      "example": {
+        "spanish": "Pudo abrir la puerta.",
+        "english": "She was able to open the door."
+      },
+      "collections": [
+        "poder",
+        "ability",
+        "be able to",
+        "preterite"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "no-pudo-hacer-algo-couldnt",
+      "spanish": "no pudo [hacer algo] (intento fallido)",
+      "english": "couldn't [do something]",
+      "example": {
+        "spanish": "No pudo abrir la puerta.",
+        "english": "She couldn't open the door."
+      },
+      "collections": [
+        "poder",
+        "could",
+        "not",
+        "ability",
+        "preterite",
+        "contraction",
+        "modal"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "podra-hacer-algo-will-be-able",
+      "spanish": "podrá [hacer algo]",
+      "english": "will be able to [do something]",
+      "example": {
+        "spanish": "Podrá ayudar mañana.",
+        "english": "She'll be able to help tomorrow."
+      },
+      "collections": [
+        "poder",
+        "ability",
+        "be able to",
+        "future"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "podria-hacer-algo-could",
+      "spanish": "podría [hacer algo] (condición)",
+      "english": "could [do something]",
+      "example": {
+        "spanish": "Podría ayudar si tuviera tiempo.",
+        "english": "She could help if she had time."
+      },
+      "collections": [
+        "poder",
+        "could",
+        "ability",
+        "conditional",
+        "modal"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "he-podido-hacer-algo-have-been-able",
+      "spanish": "he podido [hacer algo]",
+      "english": "have been able to [do something]",
+      "example": {
+        "spanish": "He podido practicar.",
+        "english": "I have been able to practice."
+      },
+      "collections": [
+        "poder",
+        "ability",
+        "be able to",
+        "present perfect"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "no-he-podido-hacer-algo-havent-been-able",
+      "spanish": "no he podido [hacer algo]",
+      "english": "haven't been able to [do something]",
+      "example": {
+        "spanish": "No he podido llamarla.",
+        "english": "I haven't been able to call her."
+      },
+      "collections": [
+        "poder",
+        "ability",
+        "be able to",
+        "present perfect",
+        "not",
+        "contraction"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "habria-podido-hacer-algo-could-have",
+      "spanish": "habría podido [hacer algo]",
+      "english": "could have [done something]",
+      "example": {
+        "spanish": "Habría podido ayudar.",
+        "english": "I could have helped."
+      },
+      "collections": [
+        "poder",
+        "could",
+        "perfect conditional",
+        "modal perfect"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "habria-podido-hacer-algo-couldve",
+      "spanish": "habría podido [hacer algo] (hablado)",
+      "english": "could've [done something]",
+      "example": {
+        "spanish": "Habría podido ayudar.",
+        "english": "I could've helped."
+      },
+      "collections": [
+        "poder",
+        "could",
+        "perfect conditional",
+        "modal perfect",
+        "contraction",
+        "spoken English"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pueda-hacer-algo-can-subordinate",
+      "spanish": "pueda [hacer algo] (cláusula subordinada)",
+      "english": "can [do something]",
+      "example": {
+        "spanish": "Espero que pueda ayudar.",
+        "english": "I hope she can help."
+      },
+      "collections": [
+        "poder",
+        "can",
+        "subjunctive",
+        "subordinate clause",
+        "modal"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "si-pudiera-hacer-algo-if-could",
+      "spanish": "si pudiera [hacer algo]",
+      "english": "if [somebody] could [do something]",
+      "example": {
+        "spanish": "Si pudiera ayudar, lo haría.",
+        "english": "If I could help, I would."
+      },
+      "collections": [
+        "poder",
+        "could",
+        "if",
+        "si => if",
+        "subjunctive",
+        "conditional"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pregunta-puedes-capacidad-can",
+      "spanish": "¿Puedes [hacer algo]? (capacidad)",
+      "english": "Can you [do something]?",
+      "example": {
+        "spanish": "¿Puedes levantar esto?",
+        "english": "Can you lift this?"
+      },
+      "collections": [
+        "poder",
+        "can",
+        "ability",
+        "question",
+        "modal"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "pregunta-puedes-peticion-can",
+      "spanish": "¿Puedes [hacer algo]? (petición)",
+      "english": "Can you [do something]?",
+      "example": {
+        "spanish": "¿Puedes cerrar la ventana?",
+        "english": "Can you close the window?"
+      },
+      "collections": [
+        "poder",
+        "can",
+        "request",
+        "question",
+        "modal"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "pregunta-puedo-permiso-can-i",
+      "spanish": "¿Puedo [hacer algo]?",
+      "english": "Can I [do something]?",
+      "example": {
+        "spanish": "¿Puedo usar su teléfono?",
+        "english": "Can I use your phone?"
+      },
+      "collections": [
+        "poder",
+        "can",
+        "permission",
+        "question",
+        "modal"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "pregunta-puedo-permiso-may-i",
+      "spanish": "¿Puedo [hacer algo]? (formal)",
+      "english": "May I [do something]?",
+      "example": {
+        "spanish": "¿Puedo pasar?",
+        "english": "May I come in?"
+      },
+      "collections": [
+        "poder",
+        "may",
+        "permission",
+        "question",
+        "formal",
+        "modal"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pregunta-podria-permiso-could-i",
+      "spanish": "¿Podría [hacer algo]?",
+      "english": "Could I [do something]?",
+      "example": {
+        "spanish": "¿Podría usar su teléfono?",
+        "english": "Could I use your phone?"
+      },
+      "collections": [
+        "poder",
+        "could",
+        "permission",
+        "polite request",
+        "question",
+        "modal"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "pregunta-podrias-peticion-could-you",
+      "spanish": "¿Podrías [hacer algo]?",
+      "english": "Could you [do something]?",
+      "example": {
+        "spanish": "¿Podrías ayudarme?",
+        "english": "Could you help me?"
+      },
+      "collections": [
+        "poder",
+        "could",
+        "request",
+        "polite request",
+        "question",
+        "modal"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "puede-que-ocurra-algo-may",
+      "spanish": "puede que [ocurra algo]",
+      "english": "[something] may happen",
+      "example": {
+        "spanish": "Puede que Ana llegue tarde.",
+        "english": "Ana may arrive late."
+      },
+      "collections": [
+        "poder",
+        "may",
+        "possibility",
+        "subjunctive",
+        "modal"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "puede-que-ocurra-algo-might",
+      "spanish": "puede que [ocurra algo]",
+      "english": "[something] might happen",
+      "example": {
+        "spanish": "Puede que llueva.",
+        "english": "It might rain."
+      },
+      "collections": [
+        "poder",
+        "might",
+        "possibility",
+        "subjunctive",
+        "modal"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "poder-ser-can-be",
+      "spanish": "poder ser [algo]",
+      "english": "can be [something]",
+      "example": {
+        "spanish": "Bogotá puede ser fría.",
+        "english": "Bogotá can be cold."
+      },
+      "collections": [
+        "poder",
+        "can",
+        "possibility",
+        "be",
+        "modal"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "poder-ser-o-estar-may-be",
+      "spanish": "puede estar [en un estado o lugar]",
+      "english": "may be [in a state or place]",
+      "example": {
+        "spanish": "Ana puede estar ocupada.",
+        "english": "Ana may be busy."
+      },
+      "collections": [
+        "poder",
+        "may",
+        "possibility",
+        "be",
+        "modal"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "podria-ser-o-estar-could-be",
+      "spanish": "podría estar [en un estado o lugar]",
+      "english": "could be [in a state or place]",
+      "example": {
+        "spanish": "Podría estar cansada.",
+        "english": "She could be tired."
+      },
+      "collections": [
+        "poder",
+        "could",
+        "possibility",
+        "be",
+        "conditional",
+        "modal"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "podria-haber-hecho-algo-might-have",
+      "spanish": "podría haber [hecho algo]",
+      "english": "might have [done something]",
+      "example": {
+        "spanish": "Podría haber tomado otro bus.",
+        "english": "She might have taken another bus."
+      },
+      "collections": [
+        "poder",
+        "might",
+        "possibility",
+        "modal perfect"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "el-poder-power",
+      "spanish": "el poder",
+      "english": "power",
+      "example": {
+        "spanish": "La información da poder.",
+        "english": "Information gives people power."
+      },
+      "collections": [
+        "poder",
+        "noun"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "el-poder-authority",
+      "spanish": "el poder (capacidad oficial)",
+      "english": "authority",
+      "example": {
+        "spanish": "La directora tiene el poder de decidir.",
+        "english": "The director has the authority to decide."
+      },
+      "collections": [
+        "poder",
+        "noun",
+        "authority"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "poder-notarial-power-of-attorney",
+      "spanish": "el poder notarial",
+      "english": "power of attorney",
+      "example": {
+        "spanish": "Necesitamos un poder notarial.",
+        "english": "We need a power of attorney."
+      },
+      "collections": [
+        "poder",
+        "noun",
+        "legal"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ser-poderoso-powerful",
+      "spanish": "ser poderoso/a",
+      "english": "to be powerful",
+      "example": {
+        "spanish": "Es una herramienta poderosa.",
+        "english": "It's a powerful tool."
+      },
+      "collections": [
+        "poder",
+        "adjective",
+        "-ful"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "ser-poderoso-influential",
+      "spanish": "ser poderoso/a (tener influencia)",
+      "english": "to be influential",
+      "example": {
+        "spanish": "Es una empresaria poderosa.",
+        "english": "She's an influential businesswoman."
+      },
+      "collections": [
+        "poder",
+        "adjective",
+        "influence"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "sentirse-impotente-powerless",
+      "spanish": "sentirse impotente (sin poder)",
+      "english": "to feel powerless",
+      "example": {
+        "spanish": "Sin acceso, me sentí impotente.",
+        "english": "Without access, I felt powerless."
+      },
+      "collections": [
+        "poder",
+        "adjective",
+        "-less"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "sentirse-impotente-helpless",
+      "spanish": "sentirse impotente (sin poder ayudar)",
+      "english": "to feel helpless",
+      "example": {
+        "spanish": "Me sentí impotente al no poder ayudar.",
+        "english": "I felt helpless because I couldn't help."
+      },
+      "collections": [
+        "poder",
+        "adjective",
+        "-less"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "la-impotencia-powerlessness",
+      "spanish": "la impotencia (falta de poder)",
+      "english": "powerlessness",
+      "example": {
+        "spanish": "Su impotencia causó frustración.",
+        "english": "Her powerlessness caused frustration."
+      },
+      "collections": [
+        "poder",
+        "noun",
+        "-less",
+        "-ness"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ser-todopoderoso-all-powerful",
+      "spanish": "ser todopoderoso/a",
+      "english": "to be all-powerful",
+      "example": {
+        "spanish": "Nadie es todopoderoso.",
+        "english": "Nobody is all-powerful."
+      },
+      "collections": [
+        "poder",
+        "adjective",
+        "todo-",
+        "all-",
+        "-ful"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "poderosamente-powerfully",
+      "spanish": "poderosamente",
+      "english": "powerfully",
+      "example": {
+        "spanish": "La historia está poderosamente contada.",
+        "english": "The story is powerfully told."
+      },
+      "collections": [
+        "poder",
+        "adverb",
+        "-mente",
+        "-ly",
+        "adverb formation"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pregunta-no-puedes-capacidad-cant",
+      "spanish": "¿No puedes [hacer algo]? (capacidad)",
+      "english": "Can't you [do something]?",
+      "example": {
+        "spanish": "¿No puedes abrir la puerta?",
+        "english": "Can't you open the door?"
+      },
+      "collections": [
+        "poder",
+        "can",
+        "not",
+        "ability",
+        "question",
+        "contraction",
+        "modal"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "podia-hacer-algo-could-permission",
+      "spanish": "podía [hacer algo] (permiso habitual)",
+      "english": "could [do something]",
+      "example": {
+        "spanish": "De niño podía jugar afuera.",
+        "english": "As a child, he could play outside."
+      },
+      "collections": [
+        "poder",
+        "could",
+        "permission",
+        "past",
+        "modal"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "podia-hacer-algo-was-allowed",
+      "spanish": "podía [hacer algo] (permiso habitual)",
+      "english": "was allowed to [do something]",
+      "example": {
+        "spanish": "De niño podía jugar afuera.",
+        "english": "As a child, he was allowed to play outside."
+      },
+      "collections": [
+        "poder",
+        "permission",
+        "be allowed to",
+        "past"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "habia-podido-hacer-algo-had-been-able",
+      "spanish": "había podido [hacer algo]",
+      "english": "had been able to [do something]",
+      "example": {
+        "spanish": "Hasta entonces había podido trabajar.",
+        "english": "Until then, she had been able to work."
+      },
+      "collections": [
+        "poder",
+        "ability",
+        "be able to",
+        "past perfect"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "podria-hacer-algo-would-be-able",
+      "spanish": "podría [hacer algo] (capacidad condicional explícita)",
+      "english": "would be able to [do something]",
+      "example": {
+        "spanish": "Podría ayudar con más tiempo.",
+        "english": "She would be able to help with more time."
+      },
+      "collections": [
+        "poder",
+        "ability",
+        "be able to",
+        "conditional"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "podria-ocurrir-algo-might",
+      "spanish": "podría [ocurrir algo] (posibilidad incierta)",
+      "english": "[something] might happen",
+      "example": {
+        "spanish": "Podría llegar tarde.",
+        "english": "She might arrive late."
+      },
+      "collections": [
+        "poder",
+        "might",
+        "possibility",
+        "conditional",
+        "modal"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "puede-que-ocurra-algo-could",
+      "spanish": "puede que [ocurra algo]",
+      "english": "[something] could happen",
+      "example": {
+        "spanish": "Puede que el paquete llegue hoy.",
+        "english": "The package could arrive today."
+      },
+      "collections": [
+        "poder",
+        "could",
+        "possibility",
+        "subjunctive",
+        "modal"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "puede-que-haya-hecho-algo-may-have",
+      "spanish": "puede que haya [hecho algo]",
+      "english": "may have [done something]",
+      "example": {
+        "spanish": "Puede que Ana haya olvidado la cita.",
+        "english": "Ana may have forgotten the appointment."
+      },
+      "collections": [
+        "poder",
+        "may",
+        "possibility",
+        "subjunctive",
+        "modal perfect"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "puede-que-haya-hecho-algo-might-have",
+      "spanish": "puede que haya [hecho algo]",
+      "english": "might have [done something]",
+      "example": {
+        "spanish": "Puede que Ana haya tomado otro bus.",
+        "english": "Ana might have taken another bus."
+      },
+      "collections": [
+        "poder",
+        "might",
+        "possibility",
+        "subjunctive",
+        "modal perfect"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "puede-que-haya-hecho-algo-could-have",
+      "spanish": "puede que haya [hecho algo]",
+      "english": "could have [done something]",
+      "example": {
+        "spanish": "Puede que Ana haya tomado otro bus.",
+        "english": "Ana could have taken another bus."
+      },
+      "collections": [
+        "poder",
+        "could",
+        "possibility",
+        "subjunctive",
+        "modal perfect"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "podria-haber-hecho-algo-could-have-speculation",
+      "spanish": "podría haber [hecho algo] (especulación)",
+      "english": "could have [done something]",
+      "example": {
+        "spanish": "Podría haber tomado otro bus.",
+        "english": "She could have taken another bus."
+      },
+      "collections": [
+        "poder",
+        "could",
+        "possibility",
+        "modal perfect"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "quiza-pueda-hacer-algo-might-be-able",
+      "spanish": "quizá pueda [hacer algo]",
+      "english": "might be able to [do something]",
+      "example": {
+        "spanish": "Quizá pueda ayudar mañana.",
+        "english": "I might be able to help tomorrow."
+      },
+      "collections": [
+        "poder",
+        "might",
+        "ability",
+        "subjunctive",
+        "modal"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ser-poderoso-mighty",
+      "spanish": "ser poderoso/a (gran fuerza)",
+      "english": "to be mighty",
+      "example": {
+        "spanish": "Era un rey poderoso.",
+        "english": "He was a mighty king."
+      },
+      "collections": [
+        "poder",
+        "adjective",
+        "-ful"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ser-todopoderoso-almighty",
+      "spanish": "ser todopoderoso/a (religioso)",
+      "english": "to be almighty",
+      "example": {
+        "spanish": "Creían que era todopoderoso.",
+        "english": "They believed he was almighty."
+      },
+      "collections": [
+        "poder",
+        "adjective",
+        "religion",
+        "todo-",
+        "all-"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ser-todopoderoso-omnipotent",
+      "spanish": "ser todopoderoso/a (formal)",
+      "english": "to be omnipotent",
+      "example": {
+        "spanish": "Lo presentaban como todopoderoso.",
+        "english": "They presented him as omnipotent."
+      },
+      "collections": [
+        "poder",
+        "adjective",
+        "formal",
+        "cognate"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "preguntar-algo-ask",
+      "spanish": "preguntar [algo]",
+      "english": "to ask [something]",
+      "example": {
+        "spanish": "Pregunté la hora.",
+        "english": "I asked the time."
+      },
+      "collections": [
+        "preguntar",
+        "ask"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "preguntarle-algo-a-alguien-ask",
+      "spanish": "preguntarle [algo] a [alguien]",
+      "english": "to ask [somebody] [something]",
+      "example": {
+        "spanish": "Le pregunté la dirección a Ana.",
+        "english": "I asked Ana the address."
+      },
+      "collections": [
+        "preguntar",
+        "ask",
+        "double object"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "preguntar-si-ask-if",
+      "spanish": "preguntar si [ocurre algo]",
+      "english": "to ask if [something is happening]",
+      "example": {
+        "spanish": "Pregunté si estaba abierto.",
+        "english": "I asked if it was open."
+      },
+      "collections": [
+        "preguntar",
+        "ask",
+        "connector",
+        "if",
+        "si => if"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "preguntar-si-ask-whether",
+      "spanish": "preguntar si [ocurre algo]",
+      "english": "to ask whether [something is happening]",
+      "example": {
+        "spanish": "Pregunté si estaba listo.",
+        "english": "I asked whether it was ready."
+      },
+      "collections": [
+        "preguntar",
+        "ask",
+        "connector",
+        "whether",
+        "si => whether",
+        "formal"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "preguntarse-wonder",
+      "spanish": "preguntarse [qué ocurre]",
+      "english": "to wonder [what is happening]",
+      "example": {
+        "spanish": "Me pregunto dónde está.",
+        "english": "I wonder where she is."
+      },
+      "collections": [
+        "preguntar",
+        "wonder",
+        "reflexive",
+        "embedded question"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "la-pregunta-question",
+      "spanish": "la pregunta",
+      "english": "the question",
+      "example": {
+        "spanish": "Tengo una pregunta.",
+        "english": "I have a question."
+      },
+      "collections": [
+        "preguntar",
+        "noun"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "prestarle-algo-a-alguien-lend",
+      "spanish": "prestarle [algo] a [alguien]",
+      "english": "to lend [somebody] [something]",
+      "example": {
+        "spanish": "¿Me prestas tu bolígrafo?",
+        "english": "Can you lend me your pen?"
+      },
+      "collections": [
+        "prestar",
+        "lend",
+        "double object"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "prestar-algo-a-alguien-lend-to",
+      "spanish": "prestar [algo] a [alguien]",
+      "english": "to lend [something] to [somebody]",
+      "example": {
+        "spanish": "Le presté el libro a Ana.",
+        "english": "I lent the book to Ana."
+      },
+      "collections": [
+        "prestar",
+        "lend",
+        "verb + preposition",
+        "to",
+        "a => to"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "prestar-atencion-a-pay-attention",
+      "spanish": "prestar atención a [algo]",
+      "english": "to pay attention to [something]",
+      "example": {
+        "spanish": "Presta atención a las instrucciones.",
+        "english": "Pay attention to the instructions."
+      },
+      "collections": [
+        "prestar",
+        "pay",
+        "verb + preposition",
+        "to",
+        "a => to",
+        "collocation"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "prestar-servicios-provide",
+      "spanish": "prestar [servicios]",
+      "english": "to provide [services]",
+      "example": {
+        "spanish": "La empresa presta servicios legales.",
+        "english": "The company provides legal services."
+      },
+      "collections": [
+        "prestar",
+        "provide",
+        "work"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "prestarse-para-hacer-algo-volunteer",
+      "spanish": "prestarse para [hacer algo]",
+      "english": "to volunteer to [do something]",
+      "example": {
+        "spanish": "Se prestó para ayudar.",
+        "english": "She volunteered to help."
+      },
+      "collections": [
+        "prestar",
+        "volunteer",
+        "verb + preposition",
+        "para",
+        "para => to",
+        "reflexive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "prestarse-a-algo-lend-itself-to",
+      "spanish": "prestarse a [algo]",
+      "english": "to lend itself to [something]",
+      "example": {
+        "spanish": "La idea se presta a varias interpretaciones.",
+        "english": "The idea lends itself to several interpretations."
+      },
+      "collections": [
+        "prestar",
+        "lend",
+        "verb + preposition",
+        "to",
+        "a => to",
+        "reflexive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "prestar-algo-lend-out",
+      "spanish": "prestar [algo] a otras personas",
+      "english": "to lend [something] out",
+      "example": {
+        "spanish": "La biblioteca presta libros.",
+        "english": "The library lends books out."
+      },
+      "collections": [
+        "prestar",
+        "lend",
+        "phrasal verb",
+        "out"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "el-prestamo-loan",
+      "spanish": "el préstamo",
+      "english": "the loan",
+      "example": {
+        "spanish": "Solicité un préstamo.",
+        "english": "I applied for a loan."
+      },
+      "collections": [
+        "prestar",
+        "noun"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "quedar-cantidad-there-left",
+      "spanish": "quedar [una cantidad]",
+      "english": "there are [an amount] left",
+      "example": {
+        "spanish": "Quedan cinco minutos.",
+        "english": "There are five minutes left."
+      },
+      "collections": [
+        "quedar",
+        "be left",
+        "there be",
+        "left"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "quedar-algo-remain",
+      "spanish": "quedar [algo]",
+      "english": "[something] remains",
+      "example": {
+        "spanish": "Solo queda una opción.",
+        "english": "Only one option remains."
+      },
+      "collections": [
+        "quedar",
+        "remain",
+        "formal"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "cuanto-queda-how-much-left",
+      "spanish": "¿Cuánto queda?",
+      "english": "How much is left?",
+      "example": {
+        "spanish": "¿Cuánto queda?",
+        "english": "How much is left?"
+      },
+      "collections": [
+        "quedar",
+        "be left",
+        "question",
+        "left"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "quedarle-bien-algo-fit",
+      "spanish": "quedarle bien [algo] a [alguien] (talla)",
+      "english": "[something] fits [somebody] well",
+      "example": {
+        "spanish": "La chaqueta me queda bien.",
+        "english": "The jacket fits me well."
+      },
+      "collections": [
+        "quedar",
+        "fit",
+        "clothing"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "quedarle-bien-algo-look-good-on",
+      "spanish": "quedarle bien [algo] a [alguien] (apariencia)",
+      "english": "[something] looks good on [somebody]",
+      "example": {
+        "spanish": "Ese color te queda bien.",
+        "english": "That color looks good on you."
+      },
+      "collections": [
+        "quedar",
+        "look",
+        "verb + preposition",
+        "on",
+        "a => on",
+        "clothing"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "quedar-en-un-lugar-be-located",
+      "spanish": "quedar en [un lugar]",
+      "english": "to be located in [a place]",
+      "example": {
+        "spanish": "El banco queda frente al parque.",
+        "english": "The bank is located across from the park."
+      },
+      "collections": [
+        "quedar",
+        "location",
+        "verb + preposition",
+        "in",
+        "en => in"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "quedar-con-alguien-meet",
+      "spanish": "quedar con [alguien]",
+      "english": "to arrange to meet [somebody]",
+      "example": {
+        "spanish": "Quedé con Ana a las ocho.",
+        "english": "I arranged to meet Ana at eight."
+      },
+      "collections": [
+        "quedar",
+        "meet",
+        "verb + preposition",
+        "with",
+        "con => with"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "quedar-en-hacer-algo-agree-to",
+      "spanish": "quedar en [hacer algo]",
+      "english": "to agree to [do something]",
+      "example": {
+        "spanish": "Quedamos en llamar mañana.",
+        "english": "We agreed to call tomorrow."
+      },
+      "collections": [
+        "quedar",
+        "agree",
+        "verb + preposition",
+        "to",
+        "en => to",
+        "full infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "quedarse-en-un-lugar-stay",
+      "spanish": "quedarse en [un lugar]",
+      "english": "to stay in [a place]",
+      "example": {
+        "spanish": "Me quedo en casa.",
+        "english": "I'm staying home."
+      },
+      "collections": [
+        "quedar",
+        "stay",
+        "verb + preposition",
+        "in",
+        "en => in",
+        "reflexive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "algo-quedar-bien-turn-out",
+      "spanish": "[algo] quedar bien",
+      "english": "[something] turns out well",
+      "example": {
+        "spanish": "La presentación quedó bien.",
+        "english": "The presentation turned out well."
+      },
+      "collections": [
+        "quedar",
+        "turn",
+        "phrasal verb",
+        "out",
+        "result"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "quedarse-con-algo-keep",
+      "spanish": "quedarse con [algo]",
+      "english": "to keep [something]",
+      "example": {
+        "spanish": "Me quedo con este.",
+        "english": "I'll keep this one."
+      },
+      "collections": [
+        "quedar",
+        "keep",
+        "verb + preposition",
+        "with",
+        "con"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "quedarse-sin-algo-run-out-of",
+      "spanish": "quedarse sin [algo]",
+      "english": "to run out of [something]",
+      "example": {
+        "spanish": "Nos quedamos sin leche.",
+        "english": "We ran out of milk."
+      },
+      "collections": [
+        "quedar",
+        "run",
+        "phrasal verb",
+        "out",
+        "of",
+        "sin => out of",
+        "reflexive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "quedarse-sin-algo-be-out-of",
+      "spanish": "quedarse sin [algo] (estado)",
+      "english": "to be out of [something]",
+      "example": {
+        "spanish": "Nos quedamos sin leche.",
+        "english": "We're out of milk."
+      },
+      "collections": [
+        "quedar",
+        "be",
+        "verb + preposition",
+        "out",
+        "of",
+        "sin => out of",
+        "reflexive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "quedarse-dormido-fall-asleep",
+      "spanish": "quedarse dormido/a",
+      "english": "to fall asleep",
+      "example": {
+        "spanish": "Me quedé dormido.",
+        "english": "I fell asleep."
+      },
+      "collections": [
+        "quedar",
+        "fall",
+        "adjective",
+        "reflexive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "quedarse-callado-keep-quiet",
+      "spanish": "quedarse callado/a",
+      "english": "to keep quiet",
+      "example": {
+        "spanish": "Se quedó callado.",
+        "english": "He kept quiet."
+      },
+      "collections": [
+        "quedar",
+        "keep",
+        "adjective",
+        "reflexive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "quedarse-atras-fall-behind",
+      "spanish": "quedarse atrás",
+      "english": "to fall behind",
+      "example": {
+        "spanish": "Me quedé atrás.",
+        "english": "I fell behind."
+      },
+      "collections": [
+        "quedar",
+        "fall",
+        "phrasal verb",
+        "behind",
+        "reflexive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "quedarse-fuera-be-left-out",
+      "spanish": "quedarse fuera",
+      "english": "to be left out",
+      "example": {
+        "spanish": "Ana se quedó fuera del grupo.",
+        "english": "Ana was left out of the group."
+      },
+      "collections": [
+        "quedar",
+        "be left",
+        "phrasal verb",
+        "out",
+        "reflexive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "no-quedar-mas-remedio-have-no-choice",
+      "spanish": "no quedar más remedio que [hacer algo]",
+      "english": "to have no choice but to [do something]",
+      "example": {
+        "spanish": "No queda más remedio que esperar.",
+        "english": "We have no choice but to wait."
+      },
+      "collections": [
+        "quedar",
+        "have",
+        "fixed expression",
+        "but"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "quitar-algo-de-un-lugar-remove-from",
+      "spanish": "quitar [algo] de [un lugar]",
+      "english": "to remove [something] from [a place]",
+      "example": {
+        "spanish": "Quitaron la mancha de la camisa.",
+        "english": "They removed the stain from the shirt."
+      },
+      "collections": [
+        "quitar",
+        "remove",
+        "verb + preposition",
+        "from",
+        "de => from"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "quitarle-algo-a-alguien-take-away",
+      "spanish": "quitarle [algo] a [alguien]",
+      "english": "to take [something] away from [somebody]",
+      "example": {
+        "spanish": "Le quitaron el teléfono.",
+        "english": "They took the phone away from him."
+      },
+      "collections": [
+        "quitar",
+        "take",
+        "phrasal verb",
+        "away",
+        "from",
+        "a => from"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "quitar-musica-turn-off",
+      "spanish": "quitar [música o sonido]",
+      "english": "to turn off [music or sound]",
+      "example": {
+        "spanish": "Quita la música.",
+        "english": "Turn off the music."
+      },
+      "collections": [
+        "quitar",
+        "turn",
+        "phrasal verb",
+        "off"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "quitarle-concentracion-a-alguien-keep-from",
+      "spanish": "quitarle la concentración a [alguien]",
+      "english": "to keep [somebody] from concentrating",
+      "example": {
+        "spanish": "El ruido me quita la concentración.",
+        "english": "The noise keeps me from concentrating."
+      },
+      "collections": [
+        "quitar",
+        "keep",
+        "verb + preposition",
+        "from",
+        "somebody from doing something"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "quitarse-algo-no-deseado-get-rid-of",
+      "spanish": "quitarse [algo no deseado]",
+      "english": "to get rid of [something unwanted]",
+      "example": {
+        "spanish": "No puedo quitarme esta preocupación.",
+        "english": "I can't get rid of this worry."
+      },
+      "collections": [
+        "quitar",
+        "get",
+        "phrasal verb",
+        "rid",
+        "of",
+        "reflexive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "algo-no-se-quita-wont-go-away",
+      "spanish": "[algo] no se quita",
+      "english": "[something] won't go away",
+      "example": {
+        "spanish": "El dolor no se quita.",
+        "english": "The pain won't go away."
+      },
+      "collections": [
+        "quitar",
+        "go",
+        "phrasal verb",
+        "away",
+        "reflexive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "quitarse-del-camino-get-out-way",
+      "spanish": "quitarse del camino",
+      "english": "to get out of the way",
+      "example": {
+        "spanish": "Quítate del camino.",
+        "english": "Get out of the way."
+      },
+      "collections": [
+        "quitar",
+        "get",
+        "phrasal verb",
+        "out",
+        "of",
+        "reflexive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "quitar-algo-del-camino-get-out-way",
+      "spanish": "quitar [algo] del camino",
+      "english": "to get [something] out of the way",
+      "example": {
+        "spanish": "Quita la caja del camino.",
+        "english": "Get the box out of the way."
+      },
+      "collections": [
+        "quitar",
+        "get",
+        "phrasal verb",
+        "out",
+        "of"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "quitar-importancia-a-downplay",
+      "spanish": "quitar importancia a [algo]",
+      "english": "to downplay [something]",
+      "example": {
+        "spanish": "No le quites importancia al problema.",
+        "english": "Don't downplay the problem."
+      },
+      "collections": [
+        "quitar",
+        "verb + preposition",
+        "a"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "quitarse-un-peso-de-encima-weight-off-mind",
+      "spanish": "quitarse un peso de encima",
+      "english": "to get a weight off [somebody's] mind",
+      "example": {
+        "spanish": "Contarlo me quitó un peso de encima.",
+        "english": "Telling her got a weight off my mind."
+      },
+      "collections": [
+        "quitar",
+        "get",
+        "phrasal verb",
+        "off",
+        "fixed expression",
+        "reflexive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "desquitarse-con-alguien-take-out-on",
+      "spanish": "desquitarse con [alguien]",
+      "english": "to take it out on [somebody]",
+      "example": {
+        "spanish": "No te desquites conmigo.",
+        "english": "Don't take it out on me."
+      },
+      "collections": [
+        "quitar",
+        "take",
+        "phrasal verb",
+        "out",
+        "on",
+        "verb + preposition",
+        "con => on",
+        "des-",
+        "reflexive"
       ],
       "curriculumRole": "reference"
     }

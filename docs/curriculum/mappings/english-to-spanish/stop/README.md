@@ -6,6 +6,5 @@
 | Stop talking. | Deja de hablar. |
 | The rain stopped. | Dejó de llover. |
 | Nothing can stop us. | Nada puede impedirnos avanzar. |
-| Stop by my office tomorrow. | Pasa por mi oficina mañana. |
 
-Halting movement uses **parar** or **detener**. Ending an activity, preventing something, and making a brief visit require different constructions.
+Halting movement uses **detener**. Ending an activity and preventing something require different constructions.
