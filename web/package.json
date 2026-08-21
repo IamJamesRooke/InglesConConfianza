@@ -4,19 +4,39 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "prisma generate",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "postinstall": "prisma generate",
+    "db:up": "docker compose up -d --wait postgres",
+    "db:down": "docker compose down",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:deploy": "prisma migrate deploy",
+    "db:seed": "prisma db seed",
+    "db:verify": "tsx scripts/verify-curriculum-database.ts",
+    "db:test": "tsx --test tests/curriculum-database.test.ts",
+    "db:studio": "prisma studio",
+    "curriculum:review:import": "tsx scripts/import-review-batch.ts",
+    "curriculum:migrate": "tsx scripts/migrate-review-batch.ts"
+  },
+  "engines": {
+    "node": ">=24 <25"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
     "@lexical/markdown": "^0.48.0",
     "@lexical/react": "^0.48.0",
     "@mdxeditor/editor": "^4.2.0",
+    "@prisma/adapter-pg": "^7.9.1",
+    "@prisma/client": "^7.9.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "dotenv": "^17.4.2",
     "lucide-react": "^1.31.0",
     "next": "16.3.0",
+    "pg": "^8.23.0",
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "shadcn": "^4.17.0",
@@ -25,15 +45,19 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
+    "@types/node": "^24.13.3",
+    "@types/pg": "^8.23.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.0",
+    "prisma": "^7.9.1",
     "tailwindcss": "^4",
+    "tsx": "^4.23.12",
     "typescript": "^5"
   },
   "overrides": {
+    "deepmerge-ts": "8.0.1",
     "js-yaml": "4.3.1"
   }
 }

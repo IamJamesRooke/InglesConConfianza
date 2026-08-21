@@ -1,108 +1,147 @@
 import "server-only";
 
-import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
-import path from "node:path";
-
+import type { Prisma } from "@/generated/prisma/client";
 import type {
   CurriculumConcept,
   CurriculumFile,
   CurriculumRole,
 } from "@/lib/curriculum/types";
+import { isCurriculumConcept } from "@/lib/curriculum/validation";
+import { prisma } from "@/lib/database/prisma";
 
-const curriculumFilePath = path.join(
-  process.cwd(),
-  "data",
-  "curriculum.json",
-);
+type ConceptRow = {
+  id: string;
+  spanish: string;
+  english: string;
+  exampleSpanish: string;
+  exampleEnglish: string;
+  curriculumRole: CurriculumRole;
+  collections: Array<{ collectionName: string }>;
+};
 
-let mutationQueue = Promise.resolve();
+const conceptRelations = {
+  collections: {
+    orderBy: { position: "asc" },
+    select: { collectionName: true },
+  },
+} satisfies Prisma.CurriculumConceptInclude;
 
-const curriculumRoles = ["core", "supporting", "reference"] as const;
-
-function isRecord(value: unknown): value is Record<string, unknown> {
-  return typeof value === "object" && value !== null && !Array.isArray(value);
-}
-
-export function isCurriculumConcept(
-  value: unknown,
-): value is CurriculumConcept {
-  return (
-    isRecord(value) &&
-    typeof value.id === "string" &&
-    value.id.length > 0 &&
-    typeof value.spanish === "string" &&
-    value.spanish.trim().length > 0 &&
-    typeof value.english === "string" &&
-    value.english.trim().length > 0 &&
-    !value.english.includes(" / ") &&
-    isRecord(value.example) &&
-    typeof value.example.spanish === "string" &&
-    value.example.spanish.trim().length > 0 &&
-    typeof value.example.english === "string" &&
-    value.example.english.trim().length > 0 &&
-    Array.isArray(value.collections) &&
-    value.collections.every(
-      (collection) =>
-        typeof collection === "string" &&
-        collection.trim().length > 0 &&
-        collection === collection.trim(),
-    ) &&
-    new Set(value.collections).size === value.collections.length &&
-    typeof value.curriculumRole === "string" &&
-    curriculumRoles.includes(value.curriculumRole as CurriculumRole)
-  );
-}
-
-function isCurriculumFile(value: unknown): value is CurriculumFile {
-  if (
-    !isRecord(value) ||
-    value.version !== 1 ||
-    !Array.isArray(value.concepts) ||
-    !value.concepts.every(isCurriculumConcept)
-  ) {
-    return false;
+export class CurriculumConceptNotFoundError extends Error {
+  constructor() {
+    super("Concept not found.");
   }
-
-  const ids = value.concepts.map((concept) => concept.id);
-  return new Set(ids).size === ids.length;
 }
+
+function toCurriculumConcept(row: ConceptRow): CurriculumConcept {
+  return {
+    id: row.id,
+    spanish: row.spanish,
+    english: row.english,
+    example: {
+      spanish: row.exampleSpanish,
+      english: row.exampleEnglish,
+    },
+    collections: row.collections.map((membership) => membership.collectionName),
+    curriculumRole: row.curriculumRole,
+  };
+}
+
+async function ensureCollections(
+  transaction: Prisma.TransactionClient,
+  collectionNames: string[],
+) {
+  if (collectionNames.length === 0) return;
+
+  await transaction.collection.createMany({
+    data: collectionNames.map((name) => ({ name })),
+    skipDuplicates: true,
+  });
+}
+
+export async function removeUnusedCollections(
+  transaction: Prisma.TransactionClient,
+) {
+  await transaction.collection.deleteMany({
+    where: {
+      conceptMemberships: { none: {} },
+      candidateMemberships: { none: {} },
+    },
+  });
+}
+
+export { isCurriculumConcept };
 
 export async function readCurriculumFile(): Promise<CurriculumFile> {
-  const file = await readFile(curriculumFilePath, "utf8");
-  const parsed: unknown = JSON.parse(file);
-
-  if (!isCurriculumFile(parsed)) {
-    throw new Error("Saved curriculum file has an invalid shape.");
-  }
-
-  return parsed;
-}
-
-async function writeCurriculumFile(curriculumFile: CurriculumFile) {
-  const temporaryPath = `${curriculumFilePath}.tmp`;
-
-  await mkdir(path.dirname(curriculumFilePath), { recursive: true });
-  await writeFile(
-    temporaryPath,
-    `${JSON.stringify(curriculumFile, null, 2)}\n`,
-  );
-  await rename(temporaryPath, curriculumFilePath);
-}
-
-export function mutateCurriculumFile(
-  mutate: (curriculumFile: CurriculumFile) => CurriculumFile,
-) {
-  const mutation = mutationQueue.then(async () => {
-    const curriculumFile = await readCurriculumFile();
-    const nextCurriculumFile = mutate(curriculumFile);
-    await writeCurriculumFile(nextCurriculumFile);
-    return nextCurriculumFile;
+  const concepts = await prisma.curriculumConcept.findMany({
+    orderBy: { sortOrder: "asc" },
+    include: conceptRelations,
   });
 
-  mutationQueue = mutation.then(
-    () => undefined,
-    () => undefined,
-  );
+  return {
+    version: 1,
+    concepts: concepts.map(toCurriculumConcept),
+  };
+}
 
-  return mutation;
+export async function updateCurriculumConcept(
+  concept: CurriculumConcept,
+): Promise<CurriculumConcept> {
+  return prisma.$transaction(async (transaction) => {
+    const existing = await transaction.curriculumConcept.findUnique({
+      where: { id: concept.id },
+      select: { id: true },
+    });
+
+    if (!existing) throw new CurriculumConceptNotFoundError();
+
+    const collections = concept.collections.map((collection) =>
+      collection.trim(),
+    );
+    await ensureCollections(transaction, collections);
+    await transaction.conceptCollection.deleteMany({
+      where: { conceptId: concept.id },
+    });
+    await transaction.curriculumConcept.update({
+      where: { id: concept.id },
+      data: {
+        spanish: concept.spanish.trim(),
+        english: concept.english.trim(),
+        exampleSpanish: concept.example.spanish.trim(),
+        exampleEnglish: concept.example.english.trim(),
+        curriculumRole: concept.curriculumRole,
+      },
+    });
+
+    if (collections.length > 0) {
+      await transaction.conceptCollection.createMany({
+        data: collections.map((collectionName, position) => ({
+          conceptId: concept.id,
+          collectionName,
+          position,
+        })),
+      });
+    }
+
+    await removeUnusedCollections(transaction);
+    const updated = await transaction.curriculumConcept.findUniqueOrThrow({
+      where: { id: concept.id },
+      include: conceptRelations,
+    });
+    return toCurriculumConcept(updated);
+  });
+}
+
+export async function deleteCurriculumConcept(conceptId: string) {
+  return prisma.$transaction(async (transaction) => {
+    const existing = await transaction.curriculumConcept.findUnique({
+      where: { id: conceptId },
+      select: { id: true },
+    });
+
+    if (!existing) throw new CurriculumConceptNotFoundError();
+
+    await transaction.curriculumConcept.delete({ where: { id: conceptId } });
+    await removeUnusedCollections(transaction);
+    return conceptId;
+  });
 }

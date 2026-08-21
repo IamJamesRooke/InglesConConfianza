@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ingles_con_confianza
+      POSTGRES_PASSWORD: confianza
+      POSTGRES_USER: ingles
+    ports:
+      - "127.0.0.1:5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ingles -d ingles_con_confianza"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - curriculum_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  curriculum_postgres_data:

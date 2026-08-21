@@ -1,10 +1,11 @@
 # Backlog
 
 > Last updated: 2026-08-21. This file contains current decisions and executable work only. Completed migration detail is preserved in the [curriculum migration log](history/curriculum-migration-log.md).
+> Quick handoff: curriculum and review data are now in PostgreSQL; Lesson Builder remains JSON-backed. Start with the five-lesson vertical slice and the lesson/question/learner-history contract.
 
 ## Current objective
 
-Build the smallest useful JSON-backed lesson-authoring foundation. Let actual handcrafted lessons reveal the curriculum and learner-history data model before choosing the database shape.
+Build the smallest useful lesson-authoring foundation. Lessons remain JSON-backed while the discovered curriculum and review model now use PostgreSQL; let the remaining handcrafted lessons reveal the later lesson and learner-history schemas.
 
 ## Now
 
@@ -43,6 +44,7 @@ Build the smallest useful JSON-backed lesson-authoring foundation. Let actual ha
 - [x] Establish the Spanish-first JSON curriculum discovery store with atomic mappings, bilingual examples, reusable collections, and an editable three-role `core`, `supporting`, and `reference` classification.
 - [x] Give Curriculum its own `/curriculum` section with an approved database page plus visible Review inbox and Migration progress route shells for the next workflow slices.
 - [x] Complete and migrate the first `querer` completeness-audit batch through the Review inbox and preserve owner notes; consumed curriculum sources now live only in Git history rather than a repository archive.
+- [x] Move approved curriculum concepts and review history from runtime JSON files to PostgreSQL with Prisma, Docker-based local development, transactional authoring workflows, immutable seed snapshots, and exact import verification while leaving Lesson Builder persistence unchanged.
 - [ ] Build five representative lessons as the first vertical slice.
     - [ ] Include straightforward vocabulary retrieval.
     - [ ] Include a Spanish-to-English one-to-many mapping.
@@ -141,6 +143,8 @@ This section records controls and security work actually applied during developm
 - [x] Keep theme preference storage client-only and non-sensitive by persisting only a theme identifier in `localStorage`.
 - [x] Keep JSON lesson persistence scoped to a fixed repository data file and validate saved lesson payload shape at the API boundary while the final database model is still being discovered.
 - [x] Serialize JSON lesson mutations and replace the lesson file atomically so lesson saves, ordering, and deletion cannot interleave partial writes.
+- [x] Protect curriculum writes with PostgreSQL transactions, relational uniqueness and foreign-key constraints, an empty-database seed guard, and exact post-import parity verification.
+- [x] Pin the patched `deepmerge-ts` release after the Prisma CLI introduced a vulnerable transitive version; `npm audit` reports no remaining known vulnerabilities after the override.
 - [ ] Create an initial threat model when the application gains persistent lesson authoring, authentication, or other meaningful trust boundaries.
 - [ ] Add authorization tests alongside the first protected authoring or learner-data endpoints.
 - [ ] Perform a controlled OWASP-based security assessment after the first complete application flow is deployable, preserve findings, and document the resulting hardening.

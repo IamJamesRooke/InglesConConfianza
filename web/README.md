@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Inglés Con Confianza web application
 
-## Getting Started
+The Next.js application uses PostgreSQL for approved curriculum concepts and curriculum review history. Lesson Builder and Practice still use `data/lessons.json`; they are intentionally outside this database migration.
 
-First, run the development server:
+## Local setup
+
+Use Node 24 and Docker:
 
 ```bash
+nvm use
+npm install
+cp .env.example .env
+npm run db:up
+npm run db:deploy
+npm run db:seed
+npm run db:verify
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`db:seed` imports the immutable snapshots under `prisma/seed-data/` and refuses to run when curriculum tables contain data. `db:verify` reconstructs the complete curriculum and review data from PostgreSQL and compares it with those snapshots. `db:down` stops PostgreSQL without deleting its named volume.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Use `npm run db:migrate -- --name <migration-name>` when changing the Prisma schema and `npm run db:studio` for local database inspection.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Curriculum review workflow
 
-## Learn More
+A new audit batch is a temporary JSON object matching `ReviewBatch`. Validate it without writing first, then import it:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run curriculum:review:import -- --file /path/to/batch.json
+npm run curriculum:review:import -- --file /path/to/batch.json --apply
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+After the owner reviews candidates in the Review inbox, validate and apply the approved candidates transactionally:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run curriculum:migrate -- --batch <batch-id>
+npm run curriculum:migrate -- --batch <batch-id> --apply
+```
 
-## Deploy on Vercel
+Both commands default to a rollback-only dry run. Curriculum migration includes only approved, non-deleted, non-migrated candidates and marks the batch complete only when no unresolved candidates remain.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Validation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run lint
+npm run build
+npm run db:test
+npm audit
+```

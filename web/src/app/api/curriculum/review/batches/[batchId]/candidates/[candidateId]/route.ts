@@ -1,8 +1,10 @@
 import { NextResponse } from "next/server";
 
 import {
+  ReviewBatchNotFoundError,
+  ReviewCandidateNotFoundError,
   isReviewCandidate,
-  mutateReviewFile,
+  updateReviewCandidate,
 } from "@/lib/curriculum/server/review-store";
 
 type RouteContext = {
@@ -27,44 +29,13 @@ export async function PATCH(request: Request, context: RouteContext) {
   }
 
   try {
-    const reviewFile = await mutateReviewFile((currentFile) => {
-      const batchIndex = currentFile.batches.findIndex(
-        (batch) => batch.id === batchId,
-      );
-
-      if (batchIndex < 0) throw new Error("Batch not found.");
-
-      const batch = currentFile.batches[batchIndex];
-      const candidateIndex = batch.candidates.findIndex(
-        (item) => item.id === candidateId,
-      );
-
-      if (candidateIndex < 0) throw new Error("Candidate not found.");
-
-      const candidates = [...batch.candidates];
-      candidates[candidateIndex] = {
-        ...candidate,
-        spanish: candidate.spanish.trim(),
-        english: candidate.english.trim(),
-        example: {
-          spanish: candidate.example.spanish.trim(),
-          english: candidate.example.english.trim(),
-        },
-        collections: candidate.collections.map((collection) => collection.trim()),
-        sourcePaths: candidate.sourcePaths.map((sourcePath) => sourcePath.trim()),
-        rationale: candidate.rationale.trim(),
-        ownerNote: candidate.ownerNote.trim(),
-      };
-
-      const batches = [...currentFile.batches];
-      batches[batchIndex] = { ...batch, candidates };
-      return { ...currentFile, batches };
-    });
-
-    return NextResponse.json(reviewFile);
+    const updatedCandidate = await updateReviewCandidate(batchId, candidate);
+    return NextResponse.json({ candidate: updatedCandidate });
   } catch (error) {
+    const notFound =
+      error instanceof ReviewBatchNotFoundError ||
+      error instanceof ReviewCandidateNotFoundError;
     const message = error instanceof Error ? error.message : "";
-    const notFound = message === "Batch not found." || message === "Candidate not found.";
     return NextResponse.json(
       { error: notFound ? message : "Unable to save review candidate." },
       { status: notFound ? 404 : 500 },

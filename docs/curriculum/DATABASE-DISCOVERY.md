@@ -1,6 +1,14 @@
 # Curriculum Database Discovery
 
-This document records the working decisions that emerge while representative curriculum data is entered in JSON. These are migration checkpoints, not a frozen relational schema.
+This document records the working decisions that emerged while representative curriculum data was discovered in JSON and now continues in PostgreSQL. These are migration checkpoints, not a frozen schema.
+
+## 2026-08-21 — Move the curriculum runtime store to PostgreSQL
+
+- PostgreSQL is now the canonical runtime store for approved curriculum concepts and curriculum review history. Lesson Builder and learner-facing lessons remain separately persisted in `web/data/lessons.json`.
+- The relational model preserves stable concept IDs, one Spanish concept and one English target, separately queryable Spanish and English examples, ordered collection memberships, review batches, candidates, source paths, owner decisions, and historical migration state.
+- The former runtime JSON files now live under `web/prisma/seed-data/` as immutable bootstrap fixtures. The seed refuses to overwrite populated tables, and the parity verifier reconstructs both domain files from PostgreSQL and compares every field and authored order with those snapshots.
+- Future audits enter the review inbox through the guarded `curriculum:review:import` CLI. Approved candidates move to the curriculum through the dry-run-first, transactional `curriculum:migrate` CLI; additions, revisions, and review-state updates commit together or roll back together.
+- The application keeps the learner-facing `example: { spanish, english }` shape. PostgreSQL stores the two languages in separate columns rather than combining them into a display string.
 
 ## 2026-08-21 — Complete the remaining verb-family migration
 

@@ -1,8 +1,10 @@
 import { NextResponse } from "next/server";
 
 import {
+  CurriculumConceptNotFoundError,
+  deleteCurriculumConcept,
   isCurriculumConcept,
-  mutateCurriculumFile,
+  updateCurriculumConcept,
 } from "@/lib/curriculum/server/curriculum-store";
 
 type RouteContext = {
@@ -27,34 +29,10 @@ export async function PATCH(request: Request, context: RouteContext) {
   }
 
   try {
-    const curriculumFile = await mutateCurriculumFile((currentFile) => {
-      const conceptIndex = currentFile.concepts.findIndex(
-        (candidate) => candidate.id === conceptId,
-      );
-
-      if (conceptIndex < 0) {
-        throw new Error("Concept not found.");
-      }
-
-      const concepts = [...currentFile.concepts];
-      concepts[conceptIndex] = {
-        ...concept,
-        spanish: concept.spanish.trim(),
-        english: concept.english.trim(),
-        example: {
-          spanish: concept.example.spanish.trim(),
-          english: concept.example.english.trim(),
-        },
-        collections: concept.collections.map((collection) => collection.trim()),
-      };
-
-      return { ...currentFile, concepts };
-    });
-
-    return NextResponse.json(curriculumFile);
+    const updatedConcept = await updateCurriculumConcept(concept);
+    return NextResponse.json({ concept: updatedConcept });
   } catch (error) {
-    const notFound =
-      error instanceof Error && error.message === "Concept not found.";
+    const notFound = error instanceof CurriculumConceptNotFoundError;
     return NextResponse.json(
       { error: notFound ? "Concept not found." : "Unable to save concept." },
       { status: notFound ? 404 : 500 },
@@ -66,23 +44,10 @@ export async function DELETE(_request: Request, context: RouteContext) {
   const { conceptId } = await context.params;
 
   try {
-    const curriculumFile = await mutateCurriculumFile((currentFile) => {
-      if (!currentFile.concepts.some((concept) => concept.id === conceptId)) {
-        throw new Error("Concept not found.");
-      }
-
-      return {
-        ...currentFile,
-        concepts: currentFile.concepts.filter(
-          (concept) => concept.id !== conceptId,
-        ),
-      };
-    });
-
-    return NextResponse.json(curriculumFile);
+    const deletedId = await deleteCurriculumConcept(conceptId);
+    return NextResponse.json({ deletedId });
   } catch (error) {
-    const notFound =
-      error instanceof Error && error.message === "Concept not found.";
+    const notFound = error instanceof CurriculumConceptNotFoundError;
     return NextResponse.json(
       { error: notFound ? "Concept not found." : "Unable to delete concept." },
       { status: notFound ? 404 : 500 },
