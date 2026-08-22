@@ -6,7 +6,7 @@
 
 Spanish **de** may become **of**, noun order, **'s**, or no separate word. Choose the English relationship: contents (**a cup of coffee**), purpose/type (**a coffee cup**), possession (**Ana's cup**), or a describing noun (**the kitchen table**).
 
-This focused contrast extends the [translations of **de** map](../../../spanish-to-english/de/README.md).
+This focused contrast extends the **de** mappings in the PostgreSQL curriculum database.
 
 ## Related Lessons
 

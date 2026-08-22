@@ -18,4 +18,4 @@ English **more** maps to several Spanish forms depending on whether it means an 
 - [More like](19-more-like.md)
 - [More and moor](23-homophones-more-and-moor.md)
 
-Related superlative uses are under [English **Most**](../most/README.md), and the reverse Spanish map is [**más**](../../spanish-to-english/mas/README.md).
+Related superlative uses are under [English **Most**](../most/README.md), and the reverse Spanish map is **más** in the PostgreSQL curriculum database.

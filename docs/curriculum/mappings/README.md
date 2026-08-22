@@ -8,7 +8,7 @@ A canonical mapping folder is intentionally asymmetric: the source word or fixed
 
 | Direction | Starting point |
 |---|---|
-| [Spanish to English](spanish-to-english/README.md) | Choose the natural English form from a Spanish word, form, or construction. |
+| Spanish to English (migrated to PostgreSQL) | Choose the natural English form from a Spanish word, form, or construction. |
 | [English to Spanish](english-to-spanish/README.md) | Choose the natural Spanish form from an English word, form, or construction. |
 
 Each map folder contains a README and concrete micro-lessons or mapping-concept files. The README explains the full map; the records teach individual choices such as **querer algo**, **querer hacer algo**, and **querer que alguien haga algo**. Conjugated concepts may group several surface forms while retaining every atomic, independently trackable translation edge.

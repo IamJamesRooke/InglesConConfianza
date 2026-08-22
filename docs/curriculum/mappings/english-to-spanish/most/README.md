@@ -11,4 +11,4 @@ English **most** maps to Spanish **el/la/los/las más**, **la mayoría**, **la m
 - [For the most part](21-for-the-most-part.md)
 - [Make the most of](22-make-the-most-of.md)
 
-Related comparative uses are under [English **More**](../more/README.md), and the reverse Spanish map is [**más**](../../spanish-to-english/mas/README.md).
+Related comparative uses are under [English **More**](../more/README.md), and the reverse Spanish map is **más** in the PostgreSQL curriculum database.

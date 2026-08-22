@@ -45,6 +45,8 @@ Build the smallest useful lesson-authoring foundation. Lessons remain JSON-backe
 - [x] Give Curriculum its own `/curriculum` section with an approved database page plus visible Review inbox and Migration progress route shells for the next workflow slices.
 - [x] Complete and migrate the first `querer` completeness-audit batch through the Review inbox and preserve owner notes; consumed curriculum sources now live only in Git history rather than a repository archive.
 - [x] Move approved curriculum concepts and review history from runtime JSON files to PostgreSQL with Prisma, Docker-based local development, transactional authoring workflows, immutable seed snapshots, and exact import verification while leaving Lesson Builder persistence unchanged.
+- [x] Finish the Spanish-to-English mapping-source consumption sweep by migrating remaining source-table material into PostgreSQL review/curriculum history, exporting updated immutable seed snapshots, verifying parity, and deleting the consumed `docs/curriculum/mappings/spanish-to-english` source tree.
+- [x] Add a project-local Pi todo extension so long migration sessions can show visible progress and keep agent work organized.
 - [ ] Build five representative lessons as the first vertical slice.
     - [ ] Include straightforward vocabulary retrieval.
     - [ ] Include a Spanish-to-English one-to-many mapping.
@@ -75,7 +77,8 @@ Build the smallest useful lesson-authoring foundation. Lessons remain JSON-backe
 - [ ] Run a Markdown-to-data dry run for those objects and verify stable IDs, accepted answers, and references.
 - [ ] Build the smallest complete application flow: choose a lesson, answer Spanish-to-English text boxes, receive feedback, and save progress.
 - [ ] Use authoring friction and learner evidence to decide which mapping hub or curriculum branch to normalize next.
-- [ ] Continue bounded mapping work, beginning with the English **get** hub only when the lesson slice needs it.
+- [ ] Continue bounded mapping work from PostgreSQL-backed curriculum data; the old Spanish-to-English Markdown source tree has been consumed and deleted.
+- [ ] Continue English-to-Spanish mapping work only when the lesson slice needs it, beginning with the English **get** hub if it becomes necessary.
 
 ## Database modeling considerations
 
@@ -144,6 +147,7 @@ This section records controls and security work actually applied during developm
 - [x] Keep JSON lesson persistence scoped to a fixed repository data file and validate saved lesson payload shape at the API boundary while the final database model is still being discovered.
 - [x] Serialize JSON lesson mutations and replace the lesson file atomically so lesson saves, ordering, and deletion cannot interleave partial writes.
 - [x] Protect curriculum writes with PostgreSQL transactions, relational uniqueness and foreign-key constraints, an empty-database seed guard, and exact post-import parity verification.
+- [x] Preserve the one-look source-consumption rule during the Spanish-to-English migration by deleting the consumed Markdown source tree only after PostgreSQL migration, seed-snapshot export, `db:verify`, and `db:test` passed.
 - [x] Pin the patched `deepmerge-ts` release after the Prisma CLI introduced a vulnerable transitive version; `npm audit` reports no remaining known vulnerabilities after the override.
 - [ ] Create an initial threat model when the application gains persistent lesson authoring, authentication, or other meaningful trust boundaries.
 - [ ] Add authorization tests alongside the first protected authoring or learner-data endpoints.

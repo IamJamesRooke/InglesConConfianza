@@ -21,15 +21,15 @@ async function main() {
     prisma.reviewCandidateCollection.count(),
   ]);
 
-  assert.equal(expected.curriculum.concepts.length, 1_196);
-  assert.equal(expected.review.batches.length, 9);
+  assert.equal(expected.curriculum.concepts.length, 1_872);
+  assert.equal(expected.review.batches.length, 15);
   assert.equal(
     expected.review.batches.flatMap((batch) => batch.candidates).length,
-    291,
+    975,
   );
-  assert.equal(collections, 712);
-  assert.equal(conceptLinks, 4_649);
-  assert.equal(candidateLinks, 1_298);
+  assert.equal(collections, 884);
+  assert.equal(conceptLinks, 6_187);
+  assert.equal(candidateLinks, 2_857);
 
   console.log(
     "Curriculum database exactly matches the immutable seed snapshots.",

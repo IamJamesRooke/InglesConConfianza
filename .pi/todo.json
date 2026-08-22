@@ -1,0 +1,87 @@
+{
+	"version": 1,
+	"nextId": 17,
+	"showWidget": true,
+	"items": [
+		{
+			"id": 1,
+			"text": "Audit remaining Spanish-to-English verb folders",
+			"done": true
+		},
+		{
+			"id": 2,
+			"text": "Classify each residual folder as migrated, unmigrated, partial, or empty leftover",
+			"done": true
+		},
+		{
+			"id": 3,
+			"text": "Delete empty leftover folders after owner confirmation",
+			"done": true
+		},
+		{
+			"id": 4,
+			"text": "Create review candidates for unmigrated residual verbs",
+			"done": true
+		},
+		{
+			"id": 5,
+			"text": "Migrate approved residual verbs into PostgreSQL",
+			"done": true
+		},
+		{
+			"id": 6,
+			"text": "Run db tests and parity verification",
+			"done": true
+		},
+		{
+			"id": 7,
+			"text": "Begin pronoun/article import plan after residual verbs are reconciled",
+			"done": true
+		},
+		{
+			"id": 8,
+			"text": "Sweep remaining Spanish-to-English source families in bounded batches",
+			"done": true
+		},
+		{
+			"id": 9,
+			"text": "Review any remaining unmigrated or partial families and decide migrate vs retain vs delete",
+			"done": true
+		},
+		{
+			"id": 10,
+			"text": "Export updated curriculum snapshots and re-run db verify/test after each batch",
+			"done": true
+		},
+		{
+			"id": 11,
+			"text": "Batch: migrate acordar, aparecer, and buscar; then export snapshots and delete consumed source folders",
+			"done": true
+		},
+		{
+			"id": 12,
+			"text": "Next batch: migrate remaining live source families and delete consumed folders immediately after verification",
+			"done": true
+		},
+		{
+			"id": 13,
+			"text": "Sweep remaining live families: consultar, detener, devolver, entregar, enviar, lograr, mantener, mirar, obtener, ordenar, postular, regresar, solicitar, conocer, deber, pensar",
+			"done": true
+		},
+		{
+			"id": 14,
+			"text": "Sweep remaining live families: consultar, lograr, mantener, mirar, obtener, ordenar, postular, regresar, solicitar",
+			"done": true
+		},
+		{
+			"id": 15,
+			"text": "Catch-all migration of remaining Spanish-to-English Markdown tables into PostgreSQL",
+			"done": true
+		},
+		{
+			"id": 16,
+			"text": "Delete consumed docs/curriculum/mappings/spanish-to-english folder and remove stale links",
+			"done": true
+		}
+	]
+}

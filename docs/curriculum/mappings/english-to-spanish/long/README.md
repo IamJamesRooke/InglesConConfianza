@@ -30,4 +30,4 @@
 | Ya no trabajamos allí, pero al poco tiempo caminamos juntos por el río y volvimos a llevarnos bien. | We no longer work there, but before long, we walked along the river together and got along again. |
 | Mientras caminábamos por el largo sendero todo el día, añorábamos el lugar al que pertenecíamos. | As we walked along the long trail all day long, we longed for the place where we belonged. |
 
-Related Spanish source mappings are under [**ya**](../../spanish-to-english/ya/README.md), especially **ya no**.
+Related Spanish source mappings are under **ya** in the PostgreSQL curriculum database, especially **ya no**.
