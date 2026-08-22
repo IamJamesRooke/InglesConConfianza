@@ -46,6 +46,7 @@ Build the smallest useful lesson-authoring foundation. Lessons remain JSON-backe
 - [x] Complete and migrate the first `querer` completeness-audit batch through the Review inbox and preserve owner notes; consumed curriculum sources now live only in Git history rather than a repository archive.
 - [x] Move approved curriculum concepts and review history from runtime JSON files to PostgreSQL with Prisma, Docker-based local development, transactional authoring workflows, immutable seed snapshots, and exact import verification while leaving Lesson Builder persistence unchanged.
 - [x] Finish the Spanish-to-English mapping-source consumption sweep by migrating remaining source-table material into PostgreSQL review/curriculum history, exporting updated immutable seed snapshots, verifying parity, and deleting the consumed `docs/curriculum/mappings/spanish-to-english` source tree.
+- [x] Repair the attempted English-to-Spanish reverse import by removing malformed sentence-shaped additions, retaining only safe exact-match collection revisions, and restoring the `docs/curriculum/mappings/english-to-spanish` source tree for proper future canonicalization.
 - [x] Add a project-local Pi todo extension so long migration sessions can show visible progress and keep agent work organized.
 - [ ] Build five representative lessons as the first vertical slice.
     - [ ] Include straightforward vocabulary retrieval.
@@ -78,7 +79,7 @@ Build the smallest useful lesson-authoring foundation. Lessons remain JSON-backe
 - [ ] Build the smallest complete application flow: choose a lesson, answer Spanish-to-English text boxes, receive feedback, and save progress.
 - [ ] Use authoring friction and learner evidence to decide which mapping hub or curriculum branch to normalize next.
 - [ ] Continue bounded mapping work from PostgreSQL-backed curriculum data; the old Spanish-to-English Markdown source tree has been consumed and deleted.
-- [ ] Continue English-to-Spanish mapping work only when the lesson slice needs it, beginning with the English **get** hub if it becomes necessary.
+- [ ] Reprocess `docs/curriculum/mappings/english-to-spanish` hub-by-hub only after manually generalizing each useful example into a neutral Spanish-first concept such as `estar bien` → `to be okay`; never migrate full example sentences as canonical concept fields.
 
 ## Database modeling considerations
 

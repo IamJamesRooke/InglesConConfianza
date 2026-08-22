@@ -22,14 +22,14 @@ async function main() {
   ]);
 
   assert.equal(expected.curriculum.concepts.length, 1_872);
-  assert.equal(expected.review.batches.length, 15);
+  assert.equal(expected.review.batches.length, 16);
   assert.equal(
     expected.review.batches.flatMap((batch) => batch.candidates).length,
-    975,
+    3_738,
   );
-  assert.equal(collections, 884);
-  assert.equal(conceptLinks, 6_187);
-  assert.equal(candidateLinks, 2_857);
+  assert.equal(collections, 1_042);
+  assert.equal(conceptLinks, 6_278);
+  assert.equal(candidateLinks, 8_471);
 
   console.log(
     "Curriculum database exactly matches the immutable seed snapshots.",

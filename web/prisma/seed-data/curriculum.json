@@ -5410,7 +5410,8 @@
         "estar",
         "verb + preposition",
         "about",
-        "de => to"
+        "de => to",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "supporting"
     },
@@ -7558,7 +7559,9 @@
       },
       "collections": [
         "llamar",
-        "a => direct object"
+        "a => direct object",
+        "call",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "core"
     },
@@ -20822,7 +20825,9 @@
       },
       "collections": [
         "alto",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "high",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -22054,7 +22059,10 @@
       },
       "collections": [
         "bien",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "fine",
+        "english-to-spanish reverse audit",
+        "good"
       ],
       "curriculumRole": "reference"
     },
@@ -22320,7 +22328,9 @@
       },
       "collections": [
         "como",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "how",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -22362,7 +22372,9 @@
       },
       "collections": [
         "con",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "with",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -22376,7 +22388,9 @@
       },
       "collections": [
         "con",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "with",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -22390,7 +22404,9 @@
       },
       "collections": [
         "con",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "to",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -22404,7 +22420,9 @@
       },
       "collections": [
         "con",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "to",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -22418,7 +22436,9 @@
       },
       "collections": [
         "con",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "to",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -22432,7 +22452,9 @@
       },
       "collections": [
         "contra",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "against",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -22488,7 +22510,9 @@
       },
       "collections": [
         "cual",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "which",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -22544,7 +22568,9 @@
       },
       "collections": [
         "cuando",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "when",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -22572,7 +22598,9 @@
       },
       "collections": [
         "cuanto",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "how",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -22586,7 +22614,9 @@
       },
       "collections": [
         "cuanto",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "how",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -22600,7 +22630,9 @@
       },
       "collections": [
         "cuanto",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "how",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -22670,7 +22702,9 @@
       },
       "collections": [
         "cuanto",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "how",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -22684,7 +22718,9 @@
       },
       "collections": [
         "cuanto",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "how",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -22712,7 +22748,9 @@
       },
       "collections": [
         "de",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "of",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -22880,7 +22918,9 @@
       },
       "collections": [
         "de",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "of",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -22964,7 +23004,9 @@
       },
       "collections": [
         "de",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "about",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -22992,7 +23034,9 @@
       },
       "collections": [
         "de",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "of",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -23496,7 +23540,9 @@
       },
       "collections": [
         "demasiado",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "too",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -23818,7 +23864,9 @@
       },
       "collections": [
         "donde",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "where",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -23832,7 +23880,9 @@
       },
       "collections": [
         "donde",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "where",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -23860,7 +23910,9 @@
       },
       "collections": [
         "durante",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "during",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -25190,7 +25242,9 @@
       },
       "collections": [
         "manana",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "tomorrow",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -25204,7 +25258,9 @@
       },
       "collections": [
         "manana",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "tomorrow",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -25260,7 +25316,9 @@
       },
       "collections": [
         "manana",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "tomorrow",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -26506,7 +26564,9 @@
       },
       "collections": [
         "por",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "why",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -27010,7 +27070,9 @@
       },
       "collections": [
         "que",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "because",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -27024,7 +27086,9 @@
       },
       "collections": [
         "que",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "because",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -27136,7 +27200,9 @@
       },
       "collections": [
         "que",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "to",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -27178,7 +27244,9 @@
       },
       "collections": [
         "que",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "what",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -27206,7 +27274,9 @@
       },
       "collections": [
         "que",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "what",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -27262,7 +27332,9 @@
       },
       "collections": [
         "quien",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "who",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -27276,7 +27348,9 @@
       },
       "collections": [
         "quien",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "who",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -27654,7 +27728,9 @@
       },
       "collections": [
         "siempre",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "always",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -27724,7 +27800,9 @@
       },
       "collections": [
         "sin",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "without",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -27962,7 +28040,10 @@
       },
       "collections": [
         "suficiente",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "enough",
+        "english-to-spanish reverse audit",
+        "several"
       ],
       "curriculumRole": "reference"
     },
@@ -28018,7 +28099,9 @@
       },
       "collections": [
         "tampoco",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "also",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -28158,7 +28241,9 @@
       },
       "collections": [
         "tanto",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "how",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -28172,7 +28257,9 @@
       },
       "collections": [
         "tarde",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "late",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -28452,7 +28539,9 @@
       },
       "collections": [
         "ya",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "already",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -28508,7 +28597,9 @@
       },
       "collections": [
         "ya",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "already",
+        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },

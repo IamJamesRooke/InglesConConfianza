@@ -2,6 +2,14 @@
 
 This document records the working decisions that emerged while representative curriculum data was discovered in JSON and now continues in PostgreSQL. These are migration checkpoints, not a frozen schema.
 
+## 2026-08-22 — Repair attempted English-to-Spanish reverse import
+
+- The English-to-Spanish reverse import initially treated example sentences as canonical `spanish` and `english` concept fields. That was incorrect: the approved database still requires a neutral Spanish concept or construction mapped to exactly one neutral English target, with full sentences stored only in `exampleSpanish` and `exampleEnglish`.
+- The malformed additions were removed from the approved curriculum before commit. Their review candidates remain in the `english-to-spanish-reverse-consumption-2026-08-22` batch as deleted, with source paths, examples, and repair notes preserved for later hub-by-hub canonicalization.
+- The 43 exact Spanish/English matches from the reverse audit were retained as revision candidates and migrated only as collection updates on existing Spanish-first concepts. These are safe because they did not create new sentence-shaped concepts.
+- The `docs/curriculum/mappings/english-to-spanish` source tree was restored and remains active. It has not been consumed; future work must manually generalize each useful reverse row into a neutral Spanish-first mapping before migration.
+- Durable rule: reverse-source examples are evidence, not concepts. A row such as `Estoy bien, gracias. → I'm fine, thanks.` must become a concept like `estar bien → to be okay` with the original sentence as the example, or it must stay un-migrated.
+
 ## 2026-08-21 — Move the curriculum runtime store to PostgreSQL
 
 - PostgreSQL is now the canonical runtime store for approved curriculum concepts and curriculum review history. Lesson Builder and learner-facing lessons remain separately persisted in `web/data/lessons.json`.

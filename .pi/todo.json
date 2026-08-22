@@ -1,6 +1,6 @@
 {
 	"version": 1,
-	"nextId": 17,
+	"nextId": 20,
 	"showWidget": true,
 	"items": [
 		{
@@ -81,6 +81,21 @@
 		{
 			"id": 16,
 			"text": "Delete consumed docs/curriculum/mappings/spanish-to-english folder and remove stale links",
+			"done": true
+		},
+		{
+			"id": 17,
+			"text": "Plan English-to-Spanish migration: schema direction decision, collection policy, import batches, verification, and source deletion workflow",
+			"done": true
+		},
+		{
+			"id": 18,
+			"text": "Migrate English-to-Spanish source as Spanish-first PostgreSQL concepts with English-hub collections, preserving completeness",
+			"done": true
+		},
+		{
+			"id": 19,
+			"text": "Repair bad English-to-Spanish reverse import: rollback malformed batch, restore snapshots, redesign generic Spanish-first extraction workflow",
 			"done": true
 		}
 	]
