@@ -16937,15 +16937,18 @@
       "spanish": "tener [número] años",
       "english": "to be [number] years old",
       "example": {
-        "spanish": "Tengo treinta años.",
-        "english": "I am thirty years old."
+        "spanish": "Tiene diez años.",
+        "english": "She is ten years old."
       },
       "collections": [
         "tener",
+        "old",
         "age",
-        "number"
+        "to be",
+        "number",
+        "english-to-spanish mappings"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "reference"
     },
     {
       "id": "tener-que-hacer-have-to",
@@ -31144,6 +31147,302 @@
         "lonely",
         "adjective",
         "reflexive",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "mucha-gente-many-people",
+      "spanish": "mucha gente",
+      "english": "many people",
+      "example": {
+        "spanish": "Vino mucha gente.",
+        "english": "Many people came."
+      },
+      "collections": [
+        "mucho",
+        "many",
+        "people",
+        "quantity",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "muchos-as-many",
+      "spanish": "muchos/as",
+      "english": "many",
+      "example": {
+        "spanish": "Vinieron muchas personas.",
+        "english": "Many people came."
+      },
+      "collections": [
+        "mucho",
+        "many",
+        "determiner",
+        "quantity",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "cuantos-as-how-many",
+      "spanish": "cuántos/as",
+      "english": "how many",
+      "example": {
+        "spanish": "¿Cuántas sillas necesitamos?",
+        "english": "How many chairs do we need?"
+      },
+      "collections": [
+        "cuánto",
+        "many",
+        "how many",
+        "question",
+        "quantity",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "muchos-as-de-algo-many-of-something",
+      "spanish": "muchos/as de [algo]",
+      "english": "many of [something]",
+      "example": {
+        "spanish": "Muchos de ellos estuvieron de acuerdo.",
+        "english": "Many of them agreed."
+      },
+      "collections": [
+        "mucho",
+        "many",
+        "of",
+        "quantity",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "muchisimos-as-a-great-many",
+      "spanish": "muchísimos/as",
+      "english": "a great many",
+      "example": {
+        "spanish": "Muchísimos estudiantes trabajan de noche.",
+        "english": "A great many students work at night."
+      },
+      "collections": [
+        "mucho",
+        "many",
+        "a great many",
+        "quantity",
+        "intensifier",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "tener-que-hacer-algo-must-do-something",
+      "spanish": "tener que [hacer algo]",
+      "english": "must [do something]",
+      "example": {
+        "spanish": "Tienes que mostrar tu documento.",
+        "english": "You must show your ID."
+      },
+      "collections": [
+        "tener",
+        "must",
+        "obligation",
+        "verb + bare infinitive",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "nuevo-a-new",
+      "spanish": "nuevo/a",
+      "english": "new",
+      "example": {
+        "spanish": "Compré un teléfono nuevo.",
+        "english": "I bought a new phone."
+      },
+      "collections": [
+        "nuevo",
+        "new",
+        "adjective",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ser-nuevo-aqui-be-new-here",
+      "spanish": "ser nuevo/a aquí",
+      "english": "to be new here",
+      "example": {
+        "spanish": "¿Eres nuevo aquí?",
+        "english": "Are you new here?"
+      },
+      "collections": [
+        "ser",
+        "nuevo",
+        "new",
+        "to be",
+        "location",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "otro-a-new-replacement",
+      "spanish": "otro/a",
+      "english": "new [replacement]",
+      "example": {
+        "spanish": "Necesitamos otro plan.",
+        "english": "We need a new plan."
+      },
+      "collections": [
+        "otro",
+        "new",
+        "adjective",
+        "replacement",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "que-hay-de-nuevo-whats-new",
+      "spanish": "¿qué hay de nuevo?",
+      "english": "what is new?",
+      "example": {
+        "spanish": "¿Qué hay de nuevo?",
+        "english": "What is new?"
+      },
+      "collections": [
+        "nuevo",
+        "new",
+        "question",
+        "fixed expression",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ahora-now",
+      "spanish": "ahora",
+      "english": "now",
+      "example": {
+        "spanish": "Estoy ocupado ahora.",
+        "english": "I am busy now."
+      },
+      "collections": [
+        "ahora",
+        "now",
+        "adverb",
+        "time",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ya-now",
+      "spanish": "ya",
+      "english": "now",
+      "example": {
+        "spanish": "Hazlo ya.",
+        "english": "Do it now."
+      },
+      "collections": [
+        "ya",
+        "now",
+        "urgency",
+        "adverb",
+        "time",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ahora-que-now-that",
+      "spanish": "ahora que [ocurrió algo]",
+      "english": "now that [something happened]",
+      "example": {
+        "spanish": "Ahora que estás aquí, podemos empezar.",
+        "english": "Now that you are here, we can begin."
+      },
+      "collections": [
+        "ahora",
+        "now",
+        "now that",
+        "connector",
+        "time",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "por-ahora-for-now",
+      "spanish": "por ahora",
+      "english": "for now",
+      "example": {
+        "spanish": "Por ahora, esto es suficiente.",
+        "english": "For now, this is enough."
+      },
+      "collections": [
+        "por",
+        "ahora",
+        "now",
+        "for now",
+        "time",
+        "fixed expression",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "viejo-a-old",
+      "spanish": "viejo/a",
+      "english": "old",
+      "example": {
+        "spanish": "El edificio es viejo.",
+        "english": "The building is old."
+      },
+      "collections": [
+        "viejo",
+        "old",
+        "adjective",
+        "age",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "antiguo-a-old",
+      "spanish": "antiguo/a",
+      "english": "old",
+      "example": {
+        "spanish": "Es una tradición antigua.",
+        "english": "It is an old tradition."
+      },
+      "collections": [
+        "antiguo",
+        "old",
+        "adjective",
+        "tradition",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "anterior-old-role",
+      "spanish": "anterior",
+      "english": "old [role]",
+      "example": {
+        "spanish": "Mi trabajo anterior era estresante.",
+        "english": "My old job was stressful."
+      },
+      "collections": [
+        "anterior",
+        "old",
+        "former",
+        "adjective",
+        "role",
         "english-to-spanish mappings"
       ],
       "curriculumRole": "reference"

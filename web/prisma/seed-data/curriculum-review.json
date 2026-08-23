@@ -92176,6 +92176,499 @@
           "ownerNote": ""
         }
       ]
+    },
+    {
+      "id": "terra-quantifier-time-state-hubs-2026-08-23",
+      "title": "Terra sweep: many, must, new, now, and old",
+      "sourcePaths": [
+        "docs/curriculum/mappings/english-to-spanish/many",
+        "docs/curriculum/mappings/english-to-spanish/must",
+        "docs/curriculum/mappings/english-to-spanish/new",
+        "docs/curriculum/mappings/english-to-spanish/now",
+        "docs/curriculum/mappings/english-to-spanish/old"
+      ],
+      "createdAt": "2026-08-23",
+      "status": "migrated",
+      "migratedAt": "2026-08-23",
+      "candidates": [
+        {
+          "id": "mucha-gente-many-people",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "mucha gente",
+          "english": "many people",
+          "example": {
+            "spanish": "Vino mucha gente.",
+            "english": "Many people came."
+          },
+          "collections": [
+            "mucho",
+            "many",
+            "people",
+            "quantity",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/many/README.md"
+          ],
+          "rationale": "Mucha gente is the common singular collective realization for many people.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "muchos-as-many",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "muchos/as",
+          "english": "many",
+          "example": {
+            "spanish": "Vinieron muchas personas.",
+            "english": "Many people came."
+          },
+          "collections": [
+            "mucho",
+            "many",
+            "determiner",
+            "quantity",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/many/README.md"
+          ],
+          "rationale": "Muchos/as is the regular plural many determiner.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "cuantos-as-how-many",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "cuántos/as",
+          "english": "how many",
+          "example": {
+            "spanish": "¿Cuántas sillas necesitamos?",
+            "english": "How many chairs do we need?"
+          },
+          "collections": [
+            "cuánto",
+            "many",
+            "how many",
+            "question",
+            "quantity",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/many/README.md"
+          ],
+          "rationale": "Cuántos/as is the interrogative many form.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "muchos-as-de-algo-many-of-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "muchos/as de [algo]",
+          "english": "many of [something]",
+          "example": {
+            "spanish": "Muchos de ellos estuvieron de acuerdo.",
+            "english": "Many of them agreed."
+          },
+          "collections": [
+            "mucho",
+            "many",
+            "of",
+            "quantity",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/many/README.md"
+          ],
+          "rationale": "Many of a known group uses muchos/as de.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "muchisimos-as-a-great-many",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "muchísimos/as",
+          "english": "a great many",
+          "example": {
+            "spanish": "Muchísimos estudiantes trabajan de noche.",
+            "english": "A great many students work at night."
+          },
+          "collections": [
+            "mucho",
+            "many",
+            "a great many",
+            "quantity",
+            "intensifier",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/many/README.md"
+          ],
+          "rationale": "Muchísimos/as is the intensified many form.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "tener-que-hacer-algo-must-do-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "tener que [hacer algo]",
+          "english": "must [do something]",
+          "example": {
+            "spanish": "Tienes que mostrar tu documento.",
+            "english": "You must show your ID."
+          },
+          "collections": [
+            "tener",
+            "must",
+            "obligation",
+            "verb + bare infinitive",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/must/README.md"
+          ],
+          "rationale": "Strong obligation is tener que plus an infinitive in Spanish.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "nuevo-a-new",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "nuevo/a",
+          "english": "new",
+          "example": {
+            "spanish": "Compré un teléfono nuevo.",
+            "english": "I bought a new phone."
+          },
+          "collections": [
+            "nuevo",
+            "new",
+            "adjective",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/new/README.md"
+          ],
+          "rationale": "Nuevo/a is the direct novelty adjective.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "ser-nuevo-aqui-be-new-here",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "ser nuevo/a aquí",
+          "english": "to be new here",
+          "example": {
+            "spanish": "¿Eres nuevo aquí?",
+            "english": "Are you new here?"
+          },
+          "collections": [
+            "ser",
+            "nuevo",
+            "new",
+            "to be",
+            "location",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/new/README.md"
+          ],
+          "rationale": "Being a newcomer in a place uses ser nuevo/a aquí.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "otro-a-new-replacement",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "otro/a",
+          "english": "new [replacement]",
+          "example": {
+            "spanish": "Necesitamos otro plan.",
+            "english": "We need a new plan."
+          },
+          "collections": [
+            "otro",
+            "new",
+            "adjective",
+            "replacement",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/new/README.md"
+          ],
+          "rationale": "A replacement new item is otro/a rather than nuevo/a.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "que-hay-de-nuevo-whats-new",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "¿qué hay de nuevo?",
+          "english": "what is new?",
+          "example": {
+            "spanish": "¿Qué hay de nuevo?",
+            "english": "What is new?"
+          },
+          "collections": [
+            "nuevo",
+            "new",
+            "question",
+            "fixed expression",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/new/README.md"
+          ],
+          "rationale": "What is new is a fixed complete question in Spanish.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "ahora-now",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "ahora",
+          "english": "now",
+          "example": {
+            "spanish": "Estoy ocupado ahora.",
+            "english": "I am busy now."
+          },
+          "collections": [
+            "ahora",
+            "now",
+            "adverb",
+            "time",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/now/README.md"
+          ],
+          "rationale": "Ahora is the direct present-moment adverb.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "ya-now",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "ya",
+          "english": "now",
+          "example": {
+            "spanish": "Hazlo ya.",
+            "english": "Do it now."
+          },
+          "collections": [
+            "ya",
+            "now",
+            "urgency",
+            "adverb",
+            "time",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/now/README.md"
+          ],
+          "rationale": "Urgent now is ya in Spanish.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "ahora-que-now-that",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "ahora que [ocurrió algo]",
+          "english": "now that [something happened]",
+          "example": {
+            "spanish": "Ahora que estás aquí, podemos empezar.",
+            "english": "Now that you are here, we can begin."
+          },
+          "collections": [
+            "ahora",
+            "now",
+            "now that",
+            "connector",
+            "time",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/now/README.md"
+          ],
+          "rationale": "Ahora que is the causal-present connector now that.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "por-ahora-for-now",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "por ahora",
+          "english": "for now",
+          "example": {
+            "spanish": "Por ahora, esto es suficiente.",
+            "english": "For now, this is enough."
+          },
+          "collections": [
+            "por",
+            "ahora",
+            "now",
+            "for now",
+            "time",
+            "fixed expression",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/now/README.md"
+          ],
+          "rationale": "Por ahora limits a statement to the present interval.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "viejo-a-old",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "viejo/a",
+          "english": "old",
+          "example": {
+            "spanish": "El edificio es viejo.",
+            "english": "The building is old."
+          },
+          "collections": [
+            "viejo",
+            "old",
+            "adjective",
+            "age",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/old/README.md"
+          ],
+          "rationale": "Age of an ordinary object uses viejo/a.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "antiguo-a-old",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "antiguo/a",
+          "english": "old",
+          "example": {
+            "spanish": "Es una tradición antigua.",
+            "english": "It is an old tradition."
+          },
+          "collections": [
+            "antiguo",
+            "old",
+            "adjective",
+            "tradition",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/old/README.md"
+          ],
+          "rationale": "Antiquity or longstanding traditions use antiguo/a.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "anterior-old-role",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "anterior",
+          "english": "old [role]",
+          "example": {
+            "spanish": "Mi trabajo anterior era estresante.",
+            "english": "My old job was stressful."
+          },
+          "collections": [
+            "anterior",
+            "old",
+            "former",
+            "adjective",
+            "role",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/old/README.md"
+          ],
+          "rationale": "A prior role or job is anterior in Spanish.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-tener-edad-be-years-old--terra-source",
+          "action": "revise",
+          "existingConceptId": "tener-edad-be-years-old",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "tener [número] años",
+          "english": "to be [number] years old",
+          "example": {
+            "spanish": "Tiene diez años.",
+            "english": "She is ten years old."
+          },
+          "collections": [
+            "tener",
+            "old",
+            "age",
+            "to be",
+            "number",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/old/README.md"
+          ],
+          "rationale": "The age construction already exists; revise it with source evidence and collections.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        }
+      ]
     }
   ]
 }

@@ -4190,6 +4190,31 @@
       "disposition": "reviewed",
       "destinationIds": ["sentirse-solo-a-lonely"],
       "note": "README navigation is represented by the migrated lonely concept."
+    },
+    "docs/curriculum/mappings/english-to-spanish/many/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["mucha-gente-many-people", "muchos-as-many", "cuantos-as-how-many", "muchos-as-de-algo-many-of-something", "muchisimos-as-a-great-many"],
+      "note": "Collective, plural, interrogative, partitive, and intensified many meanings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/must/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["tener-que-hacer-algo-must-do-something"],
+      "note": "The strong-obligation must construction migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/new/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["nuevo-a-new", "ser-nuevo-aqui-be-new-here", "otro-a-new-replacement", "que-hay-de-nuevo-whats-new"],
+      "note": "Novelty, newcomer, replacement, and fixed-question new meanings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/now/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["ahora-now", "ya-now", "ahora-que-now-that", "por-ahora-for-now"],
+      "note": "Present-time, urgent, connector, and temporary-now meanings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/old/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["viejo-a-old", "antiguo-a-old", "anterior-old-role", "tener-edad-be-years-old"],
+      "note": "Age, antiquity, prior-role, and years-old meanings migrated or revised."
     }
   }
 }
