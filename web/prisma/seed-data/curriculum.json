@@ -2403,15 +2403,17 @@
       "spanish": "dar resultado",
       "english": "to pay off",
       "example": {
-        "spanish": "La práctica dio resultado.",
-        "english": "The practice paid off."
+        "spanish": "La práctica adicional dio resultado.",
+        "english": "The extra practice paid off."
       },
       "collections": [
         "dar",
         "pay",
-        "phrasal verb",
         "off",
-        "result"
+        "phrasal verb",
+        "result",
+        "fixed expression",
+        "english-to-spanish mappings"
       ],
       "curriculumRole": "reference"
     },
@@ -31443,6 +31445,382 @@
         "former",
         "adjective",
         "role",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ofrecer-alguien-algo-offer-somebody-something",
+      "spanish": "ofrecerle [algo] a [alguien]",
+      "english": "to offer [somebody] [something]",
+      "example": {
+        "spanish": "Me ofreció café.",
+        "english": "She offered me coffee."
+      },
+      "collections": [
+        "ofrecer",
+        "offer",
+        "somebody",
+        "verb + indirect object",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "brindar-algo-offer-something",
+      "spanish": "brindar [algo]",
+      "english": "to offer [something]",
+      "example": {
+        "spanish": "El curso brinda experiencia práctica.",
+        "english": "The course offers practical experience."
+      },
+      "collections": [
+        "brindar",
+        "offer",
+        "verb + direct object",
+        "service",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ofrecerse-a-hacer-algo-offer-to-do-something",
+      "spanish": "ofrecerse a [hacer algo]",
+      "english": "to offer to [do something]",
+      "example": {
+        "spanish": "Se ofreció a ayudar.",
+        "english": "He offered to help."
+      },
+      "collections": [
+        "ofrecer",
+        "offer",
+        "reflexive",
+        "verb + full infinitive",
+        "followed by full infinitive",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "proponer-pagar-por-algo-offer-money-for-something",
+      "spanish": "proponer pagar [cantidad] por [algo]",
+      "english": "to offer [an amount] for [something]",
+      "example": {
+        "spanish": "Propusieron pagar diez dólares por eso.",
+        "english": "They offered ten dollars for it."
+      },
+      "collections": [
+        "proponer",
+        "offer",
+        "pay",
+        "for",
+        "money",
+        "verb + preposition",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "otro-a-nombre-another-noun",
+      "spanish": "otro/a [sustantivo]",
+      "english": "another [noun]",
+      "example": {
+        "spanish": "Quiero otro libro.",
+        "english": "I want another book."
+      },
+      "collections": [
+        "otro",
+        "other",
+        "another",
+        "determiner",
+        "quantity",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "otros-as-nombres-other-nouns",
+      "spanish": "otros/as [sustantivos]",
+      "english": "other [nouns]",
+      "example": {
+        "spanish": "Quiero otros libros.",
+        "english": "I want other books."
+      },
+      "collections": [
+        "otro",
+        "other",
+        "determiner",
+        "plural",
+        "quantity",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "el-la-otro-a-nombre-the-other-noun",
+      "spanish": "el/la otro/a [sustantivo]",
+      "english": "the other [noun]",
+      "example": {
+        "spanish": "Quiero el otro libro.",
+        "english": "I want the other book."
+      },
+      "collections": [
+        "otro",
+        "other",
+        "the other",
+        "determiner",
+        "singular",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "los-las-otros-as-nombres-the-other-nouns",
+      "spanish": "los/las otros/as [sustantivos]",
+      "english": "the other [nouns]",
+      "example": {
+        "spanish": "Quiero los otros libros.",
+        "english": "I want the other books."
+      },
+      "collections": [
+        "otro",
+        "other",
+        "the other",
+        "determiner",
+        "plural",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "propio-a-own",
+      "spanish": "propio/a",
+      "english": "own",
+      "example": {
+        "spanish": "Tengo mi propia oficina.",
+        "english": "I have my own office."
+      },
+      "collections": [
+        "propio",
+        "own",
+        "adjective",
+        "possession",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ser-dueno-a-de-algo-own-something",
+      "spanish": "ser dueño/a de [algo]",
+      "english": "to own [something]",
+      "example": {
+        "spanish": "Es dueña del apartamento.",
+        "english": "She owns the apartment."
+      },
+      "collections": [
+        "dueño",
+        "own",
+        "possession",
+        "verb + preposition",
+        "de => of",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "solo-a-on-ones-own",
+      "spanish": "solo/a",
+      "english": "on one's own",
+      "example": {
+        "spanish": "Lo hizo solo.",
+        "english": "He did it on his own."
+      },
+      "collections": [
+        "solo",
+        "own",
+        "on",
+        "phrasal verb",
+        "independence",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "admitir-algo-own-up-to-something",
+      "spanish": "admitir [algo]",
+      "english": "to own up to [something]",
+      "example": {
+        "spanish": "Admite el error.",
+        "english": "Own up to the mistake."
+      },
+      "collections": [
+        "admitir",
+        "own",
+        "up",
+        "to",
+        "phrasal verb",
+        "verb + preposition",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "el-la-dueno-a-owner",
+      "spanish": "el/la dueño/a",
+      "english": "the owner",
+      "example": {
+        "spanish": "Ana es la dueña de la tienda.",
+        "english": "Ana is the owner of the store."
+      },
+      "collections": [
+        "dueño",
+        "own",
+        "owner",
+        "noun",
+        "possession",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ser-propietario-a-de-algo-own-something",
+      "spanish": "ser propietario/a de [algo]",
+      "english": "to own [something]",
+      "example": {
+        "spanish": "Ana es propietaria de la tienda.",
+        "english": "Ana owns the store."
+      },
+      "collections": [
+        "propietario",
+        "own",
+        "possession",
+        "formal",
+        "verb + preposition",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "la-propiedad-ownership",
+      "spanish": "la propiedad",
+      "english": "ownership",
+      "example": {
+        "spanish": "Conserva la propiedad total del negocio.",
+        "english": "She retains full ownership of the business."
+      },
+      "collections": [
+        "propiedad",
+        "own",
+        "ownership",
+        "noun",
+        "possession",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pagar-algo-pay-something",
+      "spanish": "pagar [algo]",
+      "english": "to pay [something]",
+      "example": {
+        "spanish": "Pagué la cuenta.",
+        "english": "I paid the bill."
+      },
+      "collections": [
+        "pagar",
+        "pay",
+        "money",
+        "verb + direct object",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pagarle-a-alguien-pay-somebody",
+      "spanish": "pagarle a [alguien]",
+      "english": "to pay [somebody]",
+      "example": {
+        "spanish": "Le pagué a Laura ayer.",
+        "english": "I paid Laura yesterday."
+      },
+      "collections": [
+        "pagar",
+        "pay",
+        "somebody",
+        "money",
+        "verb + indirect object",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "saldar-deuda-pay-off-debt",
+      "spanish": "saldar [una deuda]",
+      "english": "to pay off [a debt]",
+      "example": {
+        "spanish": "Saldamos la deuda.",
+        "english": "We paid off the debt."
+      },
+      "collections": [
+        "saldar",
+        "pay",
+        "off",
+        "phrasal verb",
+        "debt",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ofrecer-capacitacion-provide-training",
+      "spanish": "ofrecer [capacitación]",
+      "english": "to provide [training]",
+      "example": {
+        "spanish": "La empresa ofrece capacitación.",
+        "english": "The company provides training."
+      },
+      "collections": [
+        "ofrecer",
+        "provide",
+        "training",
+        "verb + direct object",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dar-algo-a-alguien-provide-somebody-with-something",
+      "spanish": "darle [algo] a [alguien]",
+      "english": "to provide [somebody] with [something]",
+      "example": {
+        "spanish": "Les damos alimentos a las familias.",
+        "english": "We provide food to the families."
+      },
+      "collections": [
+        "dar",
+        "provide",
+        "with",
+        "somebody",
+        "verb + preposition",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "establecer-que-provide-that",
+      "spanish": "establecer que [ocurrió algo]",
+      "english": "to provide that [something happened]",
+      "example": {
+        "spanish": "La ley establece que los pagos deben ser mensuales.",
+        "english": "The law provides that payments must be monthly."
+      },
+      "collections": [
+        "establecer",
+        "provide",
+        "that",
+        "formal",
+        "law",
+        "connector",
         "english-to-spanish mappings"
       ],
       "curriculumRole": "reference"

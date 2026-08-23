@@ -65,6 +65,7 @@ Migrate every useful curriculum concept from `docs/curriculum` into PostgreSQL w
     - [x] Complete the seventh grouped Terra sweep: migrate the verified `current`, `fine`, `full`, `great`, `high`, and `hard` batch, consume its source files, and verify snapshot parity.
     - [x] Complete the eighth grouped Terra sweep: migrate the verified `former`, `late`, and `lonely` batch, consume its source files, and verify snapshot parity.
     - [x] Complete the ninth grouped Terra sweep: migrate the verified `many`, `must`, `new`, `now`, and `old` batch, consume its source files, and verify snapshot parity.
+    - [x] Complete the tenth grouped Terra sweep: migrate the verified `offer`, `other`, `own`, `pay`, and `provide` batch, consume its source files, and verify snapshot parity.
     - [ ] Rewrite source evidence as neutral Spanish-first concepts with exactly one English target and one minimal bilingual example.
     - [ ] Compare every batch with PostgreSQL and other candidates before review import.
     - [ ] Preserve all useful material; default uncertain but valid entries to `reference` and defer promotion or demotion.

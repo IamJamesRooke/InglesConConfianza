@@ -4215,6 +4215,36 @@
       "disposition": "migrated",
       "destinationIds": ["viejo-a-old", "antiguo-a-old", "anterior-old-role", "tener-edad-be-years-old"],
       "note": "Age, antiquity, prior-role, and years-old meanings migrated or revised."
+    },
+    "docs/curriculum/mappings/english-to-spanish/offer/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["ofrecer-alguien-algo-offer-somebody-something", "brindar-algo-offer-something", "ofrecerse-a-hacer-algo-offer-to-do-something", "proponer-pagar-por-algo-offer-money-for-something"],
+      "note": "Item, benefit, volunteering, and price-offer meanings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/other/01-other-another-and-the-other.md": {
+      "disposition": "migrated",
+      "destinationIds": ["otro-a-nombre-another-noun", "otros-as-nombres-other-nouns", "el-la-otro-a-nombre-the-other-noun", "los-las-otros-as-nombres-the-other-nouns"],
+      "note": "Another, other, and the-other determiner contrasts migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/other/README.md": {
+      "disposition": "reviewed",
+      "destinationIds": ["otro-a-nombre-another-noun", "otros-as-nombres-other-nouns", "el-la-otro-a-nombre-the-other-noun", "los-las-otros-as-nombres-the-other-nouns"],
+      "note": "README navigation is represented by the migrated determiner concepts."
+    },
+    "docs/curriculum/mappings/english-to-spanish/own/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["propio-a-own", "ser-dueno-a-de-algo-own-something", "solo-a-on-ones-own", "admitir-algo-own-up-to-something", "el-la-dueno-a-owner", "ser-propietario-a-de-algo-own-something", "la-propiedad-ownership"],
+      "note": "Possessive, ownership, independence, phrasal, owner, and ownership-noun meanings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/pay/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["pagar-algo-pay-something", "pagarle-a-alguien-pay-somebody", "saldar-deuda-pay-off-debt", "dar-resultado-pay-off"],
+      "note": "Direct payment, person payment, debt, and figurative-result meanings migrated or revised."
+    },
+    "docs/curriculum/mappings/english-to-spanish/provide/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["ofrecer-capacitacion-provide-training", "dar-algo-a-alguien-provide-somebody-with-something", "establecer-que-provide-that"],
+      "note": "Service, material supply, and formal-law provide meanings migrated."
     }
   }
 }
