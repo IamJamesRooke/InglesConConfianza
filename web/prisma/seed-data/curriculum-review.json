@@ -90477,6 +90477,312 @@
           "ownerNote": ""
         }
       ]
+    },
+    {
+      "id": "terra-comparison-build-hubs-2026-08-23",
+      "title": "Terra sweep: bad, big, and build",
+      "sourcePaths": [
+        "docs/curriculum/mappings/english-to-spanish/bad",
+        "docs/curriculum/mappings/english-to-spanish/big",
+        "docs/curriculum/mappings/english-to-spanish/build"
+      ],
+      "createdAt": "2026-08-23",
+      "status": "migrated",
+      "migratedAt": "2026-08-23",
+      "candidates": [
+        {
+          "id": "malo-a-bad",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "malo/a",
+          "english": "bad",
+          "example": {
+            "spanish": "Esta opción es mala.",
+            "english": "This option is bad."
+          },
+          "collections": [
+            "malo",
+            "bad",
+            "adjective",
+            "comparison",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/bad/01-bad-worse-worst.md",
+            "docs/curriculum/mappings/english-to-spanish/bad/README.md"
+          ],
+          "rationale": "Malo/a is the base adjective in the irregular bad comparison family.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "peor-worse",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "peor",
+          "english": "worse",
+          "example": {
+            "spanish": "Esta opción es peor que esa.",
+            "english": "This option is worse than that one."
+          },
+          "collections": [
+            "malo",
+            "bad",
+            "worse",
+            "adjective",
+            "comparison",
+            "irregular comparison",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/bad/01-bad-worse-worst.md"
+          ],
+          "rationale": "Peor is the comparative member of the bad-worse-worst family.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "el-la-peor-the-worst",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "el/la peor",
+          "english": "the worst",
+          "example": {
+            "spanish": "Esta es la peor opción.",
+            "english": "This is the worst option."
+          },
+          "collections": [
+            "malo",
+            "bad",
+            "worst",
+            "adjective",
+            "comparison",
+            "irregular comparison",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/bad/01-bad-worse-worst.md"
+          ],
+          "rationale": "El/la peor is the superlative member of the irregular comparison family.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "grande-big",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "grande",
+          "english": "big",
+          "example": {
+            "spanish": "Viven en una casa grande.",
+            "english": "They live in a big house."
+          },
+          "collections": [
+            "grande",
+            "big",
+            "adjective",
+            "size",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/big/README.md"
+          ],
+          "rationale": "Grande is the direct physical-size realization for big.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "importante-big",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "importante",
+          "english": "important",
+          "example": {
+            "spanish": "Fue una decisión importante.",
+            "english": "It was a big decision."
+          },
+          "collections": [
+            "importante",
+            "big",
+            "important",
+            "adjective",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/big/README.md"
+          ],
+          "rationale": "Figurative big in an importance sense is importante in Spanish and important as the neutral English concept.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "ser-aficionado-a-equipo-big-fan",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "ser muy aficionado/a a [un equipo]",
+          "english": "to be a big fan of [a team]",
+          "example": {
+            "spanish": "Es muy aficionada al equipo.",
+            "english": "She is a big fan of the team."
+          },
+          "collections": [
+            "ser",
+            "aficionado",
+            "big",
+            "fan",
+            "to be",
+            "fixed expression",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/big/README.md"
+          ],
+          "rationale": "Strong fandom uses a Spanish aficionado/a expression, not physical grande.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "algo-muy-importante-big-deal",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "algo muy importante",
+          "english": "a big deal",
+          "example": {
+            "spanish": "La noticia se volvió algo muy importante.",
+            "english": "The news became a big deal."
+          },
+          "collections": [
+            "importante",
+            "big",
+            "big deal",
+            "noun",
+            "fixed expression",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/big/README.md"
+          ],
+          "rationale": "The idiom big deal is represented by an importance expression in Spanish.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "construir-algo-build-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "construir [algo]",
+          "english": "to build [something]",
+          "example": {
+            "spanish": "Construyeron una casa.",
+            "english": "They built a house."
+          },
+          "collections": [
+            "construir",
+            "build",
+            "verb + direct object",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/build/README.md"
+          ],
+          "rationale": "Construir is the direct construction action for build something.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "formar-equipo-build-team",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "formar [un equipo]",
+          "english": "to build [a team]",
+          "example": {
+            "spanish": "Estamos formando un equipo nuevo.",
+            "english": "We are building a new team."
+          },
+          "collections": [
+            "formar",
+            "build",
+            "team",
+            "verb + direct object",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/build/README.md"
+          ],
+          "rationale": "Building a group or team is formar in Spanish rather than physical construir.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "aumentar-build",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "aumentar",
+          "english": "to build",
+          "example": {
+            "spanish": "La presión está aumentando.",
+            "english": "Pressure is building."
+          },
+          "collections": [
+            "aumentar",
+            "build",
+            "change of state",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/build/README.md"
+          ],
+          "rationale": "Accumulating pressure uses aumentar in Spanish and the intransitive build sense in English.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "desarrollar-algo-build-on-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "desarrollar [algo]",
+          "english": "to build on [something]",
+          "example": {
+            "spanish": "Desarrolla lo que ya sabes.",
+            "english": "Build on what you already know."
+          },
+          "collections": [
+            "desarrollar",
+            "build",
+            "on",
+            "phrasal verb",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/build/README.md"
+          ],
+          "rationale": "Developing an existing base is the build-on sense in the source.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        }
+      ]
     }
   ]
 }

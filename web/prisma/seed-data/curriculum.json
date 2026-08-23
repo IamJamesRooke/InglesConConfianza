@@ -30086,6 +30086,198 @@
         "english-to-spanish mappings"
       ],
       "curriculumRole": "reference"
+    },
+    {
+      "id": "malo-a-bad",
+      "spanish": "malo/a",
+      "english": "bad",
+      "example": {
+        "spanish": "Esta opción es mala.",
+        "english": "This option is bad."
+      },
+      "collections": [
+        "malo",
+        "bad",
+        "adjective",
+        "comparison",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "peor-worse",
+      "spanish": "peor",
+      "english": "worse",
+      "example": {
+        "spanish": "Esta opción es peor que esa.",
+        "english": "This option is worse than that one."
+      },
+      "collections": [
+        "malo",
+        "bad",
+        "worse",
+        "adjective",
+        "comparison",
+        "irregular comparison",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "el-la-peor-the-worst",
+      "spanish": "el/la peor",
+      "english": "the worst",
+      "example": {
+        "spanish": "Esta es la peor opción.",
+        "english": "This is the worst option."
+      },
+      "collections": [
+        "malo",
+        "bad",
+        "worst",
+        "adjective",
+        "comparison",
+        "irregular comparison",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "grande-big",
+      "spanish": "grande",
+      "english": "big",
+      "example": {
+        "spanish": "Viven en una casa grande.",
+        "english": "They live in a big house."
+      },
+      "collections": [
+        "grande",
+        "big",
+        "adjective",
+        "size",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "importante-big",
+      "spanish": "importante",
+      "english": "important",
+      "example": {
+        "spanish": "Fue una decisión importante.",
+        "english": "It was a big decision."
+      },
+      "collections": [
+        "importante",
+        "big",
+        "important",
+        "adjective",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ser-aficionado-a-equipo-big-fan",
+      "spanish": "ser muy aficionado/a a [un equipo]",
+      "english": "to be a big fan of [a team]",
+      "example": {
+        "spanish": "Es muy aficionada al equipo.",
+        "english": "She is a big fan of the team."
+      },
+      "collections": [
+        "ser",
+        "aficionado",
+        "big",
+        "fan",
+        "to be",
+        "fixed expression",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "algo-muy-importante-big-deal",
+      "spanish": "algo muy importante",
+      "english": "a big deal",
+      "example": {
+        "spanish": "La noticia se volvió algo muy importante.",
+        "english": "The news became a big deal."
+      },
+      "collections": [
+        "importante",
+        "big",
+        "big deal",
+        "noun",
+        "fixed expression",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "construir-algo-build-something",
+      "spanish": "construir [algo]",
+      "english": "to build [something]",
+      "example": {
+        "spanish": "Construyeron una casa.",
+        "english": "They built a house."
+      },
+      "collections": [
+        "construir",
+        "build",
+        "verb + direct object",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "formar-equipo-build-team",
+      "spanish": "formar [un equipo]",
+      "english": "to build [a team]",
+      "example": {
+        "spanish": "Estamos formando un equipo nuevo.",
+        "english": "We are building a new team."
+      },
+      "collections": [
+        "formar",
+        "build",
+        "team",
+        "verb + direct object",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "aumentar-build",
+      "spanish": "aumentar",
+      "english": "to build",
+      "example": {
+        "spanish": "La presión está aumentando.",
+        "english": "Pressure is building."
+      },
+      "collections": [
+        "aumentar",
+        "build",
+        "change of state",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "desarrollar-algo-build-on-something",
+      "spanish": "desarrollar [algo]",
+      "english": "to build on [something]",
+      "example": {
+        "spanish": "Desarrolla lo que ya sabes.",
+        "english": "Build on what you already know."
+      },
+      "collections": [
+        "desarrollar",
+        "build",
+        "on",
+        "phrasal verb",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
     }
   ]
 }

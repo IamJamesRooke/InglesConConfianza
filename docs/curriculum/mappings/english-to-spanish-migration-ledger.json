@@ -4090,6 +4090,26 @@
       "disposition": "reviewed",
       "destinationIds": ["cada-each"],
       "note": "README navigation is represented by the migrated each concept."
+    },
+    "docs/curriculum/mappings/english-to-spanish/bad/01-bad-worse-worst.md": {
+      "disposition": "migrated",
+      "destinationIds": ["malo-a-bad", "peor-worse", "el-la-peor-the-worst"],
+      "note": "The complete irregular comparison family migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/bad/README.md": {
+      "disposition": "reviewed",
+      "destinationIds": ["malo-a-bad", "peor-worse", "el-la-peor-the-worst"],
+      "note": "README synthesis is represented by the migrated comparison family."
+    },
+    "docs/curriculum/mappings/english-to-spanish/big/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["grande-big", "importante-big", "ser-aficionado-a-equipo-big-fan", "algo-muy-importante-big-deal"],
+      "note": "Physical, importance, fandom, and idiomatic big meanings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/build/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["construir-algo-build-something", "formar-equipo-build-team", "aumentar-build", "desarrollar-algo-build-on-something"],
+      "note": "Construction, group formation, accumulation, and base-development meanings migrated."
     }
   }
 }
