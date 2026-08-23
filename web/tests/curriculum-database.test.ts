@@ -19,6 +19,71 @@ test("the imported curriculum is exact and protected", async (context) => {
   const actual = await exportCurriculumDatabase(prisma);
   assert.deepStrictEqual(actual, expected);
 
+  const cognates = actual.curriculum.concepts.filter((concept) =>
+    concept.collections.includes("cognate"),
+  );
+  const partOfSpeechCollections = new Set([
+    "adjective",
+    "adverb",
+    "expression",
+    "noun",
+    "participle-or-progressive",
+    "verb",
+  ]);
+  assert.deepStrictEqual(
+    cognates.filter(
+      (concept) =>
+        !concept.collections.some((collection) =>
+          partOfSpeechCollections.has(collection),
+        ),
+    ),
+    [],
+    "Every cognate concept must have a part-of-speech collection.",
+  );
+  assert.deepStrictEqual(
+    cognates.filter(
+      (concept) =>
+        concept.collections.includes("noun") &&
+        !/^(?:el|la|los|las|lo|el\/la|la\/el) /iu.test(concept.spanish),
+    ),
+    [],
+    "Cognate nouns must include their natural Spanish article.",
+  );
+  assert.deepStrictEqual(
+    cognates.filter(
+      (concept) =>
+        concept.collections.includes("adjective") &&
+        concept.id !== "valer-ser-valido" &&
+        !/^(?:ser|estar|tener) /iu.test(concept.spanish),
+    ),
+    [],
+    "Cognate adjectives must use a natural Spanish support verb.",
+  );
+  assert.equal(
+    cognates.some(
+      (concept) =>
+        concept.spanish === "el territorio" && concept.english === "territory",
+    ),
+    true,
+  );
+  assert.equal(
+    actual.curriculum.concepts.some(
+      (concept) =>
+        concept.collections.includes("noun or adjective") ||
+        concept.collections.includes("noun-or-adjective"),
+    ),
+    false,
+  );
+  assert.equal(
+    cognates.some(
+      (concept) =>
+        concept.id.startsWith("cognate-") &&
+        (concept.spanish.includes(",") || concept.english.includes(",")),
+    ),
+    false,
+    "Imported cognate mappings must have one Spanish and one English target.",
+  );
+
   await assert.rejects(
     seedCurriculumDatabase(
       prisma,
