@@ -2,6 +2,14 @@
 
 This document records the working decisions that emerged while representative curriculum data was discovered in JSON and now continues in PostgreSQL. These are migration checkpoints, not a frozen schema.
 
+## 2026-08-23 — Capture and structure the cognates pillar
+
+- Captured all 265 cognate files verbatim in the generalized curriculum source archive: 240,286 bytes and 1,250 extracted table rows verified against the live tree before deletion.
+- Added 751 structured cognate items with part of speech, teaching tier, true versus false/contextual status, group/rule label, provisional curriculum role, tags, provenance, and exact canonical-concept links where available.
+- Conservatively assigned 181 selected high-frequency cognates to Supporting and 570 to Reference; no item was promoted to Core merely because it is transparent or common.
+- `npm run curriculum:cognates:query` supports search, group, part-of-speech, role, and false-cognate filters. Ambiguous noun/adjective rows remain explicitly `noun-or-adjective` for later database cleanup.
+- Exported the structured catalog to `web/prisma/seed-data/cognates.json` and retired `docs/curriculum/cognates` only after source and snapshot parity passed.
+
 ## 2026-08-23 — Capture and retire the mappings source tree
 
 - Replaced the slow file-by-file ingestion gate with a lossless PostgreSQL source archive so completeness no longer depends on making final curation decisions during import.

@@ -53,6 +53,7 @@ Migrate every useful curriculum concept from `docs/curriculum` into PostgreSQL w
     - [x] Inventory every English-to-Spanish hub and require file-level disposition before source consumption.
     - [x] Add database-backed review-batch preflight for exact duplicates, normalized probable duplicates, revision targets, source paths, and suspicious sentence-shaped concepts.
 - [x] Capture and retire the entire `docs/curriculum/mappings` tree: preserve all 2,225 files and 1,524,163 source bytes verbatim in PostgreSQL with SHA-256 hashes, extract 4,322 queryable Markdown table rows, export immutable seed parity, and delete the verified source folder.
+- [x] Capture and retire the entire `docs/curriculum/cognates` tree: preserve all 265 files and 240,286 source bytes verbatim, extract 1,250 source rows, create 751 POS/group/status/tag/priority-aware cognate records, verify immutable parity, and delete the source folder.
 - [ ] Normalize the PostgreSQL mappings archive into canonical Spanish-first concepts in broad database-driven passes.
     - [ ] Compare extracted rows with existing concepts and review candidates; link or revise exact matches and flag probable duplicates.
     - [ ] Default uncertain but useful mappings to `reference`; reserve `supporting` and especially `core` for later deliberate promotion.

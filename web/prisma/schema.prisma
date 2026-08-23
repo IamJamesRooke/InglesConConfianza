@@ -111,6 +111,7 @@ model ReviewCandidateCollection {
 
 model MappingSourceDocument {
   path       String               @id @db.Text
+  pillar     String               @default("mappings") @db.Text
   direction  String               @db.Text
   hub        String               @db.Text
   kind       String               @db.Text
@@ -125,8 +126,30 @@ model MappingSourceDocument {
   entries    MappingSourceEntry[]
 
   @@index([direction, hub])
+  @@index([pillar])
   @@index([sha256])
   @@map("mapping_source_documents")
+}
+
+model CognateItem {
+  id                String         @id @db.Text
+  spanish           String         @db.Text
+  english           String         @db.Text
+  partOfSpeech      String         @map("part_of_speech") @db.Text
+  cognateType       String         @map("cognate_type") @db.Text
+  cognateStatus     String         @map("cognate_status") @db.Text
+  groupLabel        String         @map("group_label") @db.Text
+  pattern           String         @db.Text
+  curriculumRole    CurriculumRole @map("curriculum_role")
+  tags              String[]
+  sourcePaths       String[]       @map("source_paths")
+  existingConceptId String?        @map("existing_concept_id") @db.Text
+  sortOrder         Int            @unique @map("sort_order")
+
+  @@unique([spanish, english])
+  @@index([partOfSpeech, curriculumRole])
+  @@index([cognateType, cognateStatus])
+  @@map("cognate_items")
 }
 
 model MappingSourceEntry {

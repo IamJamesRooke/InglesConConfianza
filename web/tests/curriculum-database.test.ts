@@ -25,6 +25,7 @@ test("the imported curriculum is exact and protected", async (context) => {
       expected.curriculum,
       expected.review,
       expected.sources,
+      expected.cognates,
     ),
     /refuses to overwrite existing data/,
   );

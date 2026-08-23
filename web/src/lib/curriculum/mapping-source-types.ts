@@ -1,5 +1,6 @@
 export type MappingSourceDocument = {
   path: string;
+  pillar: string;
   direction: string;
   hub: string;
   kind: string;
@@ -27,7 +28,7 @@ export type MappingSourceEntry = {
 
 export type MappingSourceArchive = {
   version: 1;
-  sourceRoot: "docs/curriculum/mappings";
+  sourceRoot: "docs/curriculum";
   documents: MappingSourceDocument[];
   entries: MappingSourceEntry[];
 };

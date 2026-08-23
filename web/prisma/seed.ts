@@ -4,10 +4,10 @@ import { loadSeedData, seedCurriculumDatabase } from "../scripts/curriculum-data
 import { prisma } from "../src/lib/database/prisma";
 
 async function main() {
-  const { curriculum, review, sources } = await loadSeedData();
-  await seedCurriculumDatabase(prisma, curriculum, review, sources);
+  const { curriculum, review, sources, cognates } = await loadSeedData();
+  await seedCurriculumDatabase(prisma, curriculum, review, sources, cognates);
   console.log(
-    `Seeded ${curriculum.concepts.length} concepts, ${review.batches.length} review batches, and ${sources.documents.length} mapping source documents.`,
+    `Seeded ${curriculum.concepts.length} concepts, ${review.batches.length} review batches, ${sources.documents.length} source documents, and ${cognates.items.length} cognates.`,
   );
 }
 

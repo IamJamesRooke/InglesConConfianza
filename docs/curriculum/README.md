@@ -5,7 +5,7 @@ This directory is the working source of truth for the Inglés Con Confianza body
 | Pillar | Purpose |
 |---|---|
 | Mappings (PostgreSQL) | The translation core, now preserved as canonical concepts plus a lossless queryable source archive. |
-| [Cognates](cognates/README.md) | Reliable Spanish-English similarities, spelling patterns, memory bridges, and confusion sets. |
+| Cognates (PostgreSQL) | Reliable similarities, spelling patterns, word families, memory bridges, and false-cognate confusion sets. |
 | [Past and Past Participle](past-and-past-participle/README.md) | The canonical sound-based inventory of English past and participle forms. |
 | [Transformations](transformations/README.md) | Productive prefix and suffix families that turn one useful English word or form into another. |
 | [Structure](structure/README.md) | Reusable machinery for building statements, questions, negations, descriptions, and connected ideas. |
@@ -17,7 +17,7 @@ Each lesson has one canonical home. Indexes may cross-link a lesson when it supp
 
 - Use the PostgreSQL **mappings** archive when a frequent source form has several context-dependent translations.
 - Use **structure** for reusable sentence-building rules.
-- Use **transformations**, **cognates**, and **past and past participle** for visible word- or form-building relationships.
+- Use **transformations**, PostgreSQL **cognates**, and **past and past participle** for visible word- or form-building relationships.
 - Use **vocabulary** for compact reference material that does not currently justify an independent lesson family.
 - Build course lessons separately by referencing the smallest relevant curriculum objects and deliberately revisiting earlier ones.
 

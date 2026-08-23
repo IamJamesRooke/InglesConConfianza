@@ -12,7 +12,6 @@ export const mappingSourceRoot = "docs/curriculum/mappings" as const;
 export const mappingSourceCapturedAt = "2026-08-23";
 
 const repositoryRoot = path.resolve(process.cwd(), "..");
-const absoluteSourceRoot = path.join(repositoryRoot, mappingSourceRoot);
 
 async function listFiles(directory: string): Promise<string[]> {
   const items = await readdir(directory, { withFileTypes: true });
@@ -38,16 +37,16 @@ function filenameTags(filePath: string) {
     .filter((value) => value.length > 1);
 }
 
-function documentMetadata(filePath: string) {
+function documentMetadata(filePath: string, absoluteRoot: string, pillar: string) {
   const relativeToRoot = path
-    .relative(absoluteSourceRoot, filePath)
+    .relative(absoluteRoot, filePath)
     .split(path.sep);
   const first = relativeToRoot[0] ?? "root";
-  const direction =
+  const direction = pillar === "cognates" ? "spanish-to-english" :
     first === "english-to-spanish" || first === "spanish-to-english"
       ? first
       : "undirected";
-  const hub = direction === "undirected" ? "root" : (relativeToRoot[1] ?? "root");
+  const hub = pillar === "cognates" ? first : direction === "undirected" ? "root" : (relativeToRoot[1] ?? "root");
   const basename = path.basename(filePath);
   const extension = path.extname(filePath).slice(1).toLowerCase();
   const kind =
@@ -67,7 +66,7 @@ function documentMetadata(filePath: string) {
     extension,
     ...filenameTags(filePath),
   ]);
-  return { direction, hub, kind, extension, tags };
+  return { pillar, direction, hub, kind, extension, tags: unique([...tags, pillar]) };
 }
 
 function parseTableLine(line: string) {
@@ -185,8 +184,9 @@ function extractEntries(
   return entries;
 }
 
-export async function buildMappingSourceArchive(): Promise<MappingSourceArchive> {
-  const files = (await listFiles(absoluteSourceRoot)).sort((left, right) =>
+export async function buildSourceArchive(relativeRoot: string, pillar: string): Promise<MappingSourceArchive> {
+  const absoluteRoot = path.join(repositoryRoot, relativeRoot);
+  const files = (await listFiles(absoluteRoot)).sort((left, right) =>
     left.localeCompare(right),
   );
   const documents: MappingSourceDocument[] = [];
@@ -196,7 +196,7 @@ export async function buildMappingSourceArchive(): Promise<MappingSourceArchive>
     const buffer = await readFile(filePath);
     const content = new TextDecoder("utf-8", { fatal: true }).decode(buffer);
     const documentPath = path.relative(repositoryRoot, filePath).split(path.sep).join("/");
-    const metadata = documentMetadata(filePath);
+    const metadata = documentMetadata(filePath, absoluteRoot, pillar);
     documents.push({
       path: documentPath,
       ...metadata,
@@ -217,5 +217,9 @@ export async function buildMappingSourceArchive(): Promise<MappingSourceArchive>
     );
   }
 
-  return { version: 1, sourceRoot: mappingSourceRoot, documents, entries };
+  return { version: 1, sourceRoot: "docs/curriculum", documents, entries };
+}
+
+export async function buildMappingSourceArchive() {
+  return buildSourceArchive(mappingSourceRoot, "mappings");
 }
