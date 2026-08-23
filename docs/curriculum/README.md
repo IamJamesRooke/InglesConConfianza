@@ -25,7 +25,7 @@ Each lesson has one canonical home. Indexes may cross-link a lesson when it supp
 
 Mappings contain the most developed machine-readable pilots, including stable IDs, atomic translation records, and compressed mapping concepts for conjugated families. The other pillars remain primarily human-facing references and should gain metadata only when real lesson authoring or import work requires it. Vocabulary is intentionally flat and table-first.
 
-The immediate product step is not another repository-wide normalization pass. It is a five-lesson vertical slice that will test how curriculum objects become prompts, accepted answers, lesson membership, and learner-history references. See the [product brief](../product-brief.md) and [active backlog](../backlog.md).
+The active step is completeness-first migration of this curriculum into PostgreSQL, beginning with the remaining English-to-Spanish mapping sources. The [active backlog](../backlog.md) and [mappings migration plan](mappings/POSTGRES-MIGRATION-PLAN.md) define the current order and completion gates; lesson-contract discovery is paused until the owner changes priority.
 
 ## Curation Boundary
 

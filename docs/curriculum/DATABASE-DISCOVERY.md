@@ -2,6 +2,15 @@
 
 This document records the working decisions that emerged while representative curriculum data was discovered in JSON and now continues in PostgreSQL. These are migration checkpoints, not a frozen schema.
 
+## 2026-08-23 — Make full curriculum migration the active objective
+
+- The active objective is to migrate every useful item under `docs/curriculum` into PostgreSQL, beginning with `docs/curriculum/mappings/english-to-spanish`. The five-lesson vertical slice and final curriculum curation no longer gate this migration.
+- Completeness and curation are deliberately separated. Preserve uncertain but valid material as provisional Reference data so it can be queried and curated later; keep Core elite and do not create a parallel Core collection.
+- Collections remain the current tagging mechanism. The migration adds consistent family, construction, grammatical, semantic, provenance, and exceptional surface-form collections instead of introducing a speculative second tag table.
+- English-to-Spanish sources remain evidence rather than database direction. Each useful row must be rewritten as a neutral Spanish-first concept with exactly one English target and one minimal bilingual example.
+- English `be` is an approved exception to ordinary surface-form compression: independently useful `be`, `am`, `is`, `are`, `was`, `were`, `been`, and `being` records may remain visible and receive both `to be` and surface-form collections.
+- Every source file requires a recorded disposition before deletion, and every proposed batch must be compared with PostgreSQL before import. Git history remains recovery, but the manifest is the proof that nothing was skipped.
+
 ## 2026-08-22 — Repair attempted English-to-Spanish reverse import
 
 - The English-to-Spanish reverse import initially treated example sentences as canonical `spanish` and `english` concept fields. That was incorrect: the approved database still requires a neutral Spanish concept or construction mapped to exactly one neutral English target, with full sentences stored only in `exampleSpanish` and `exampleEnglish`.

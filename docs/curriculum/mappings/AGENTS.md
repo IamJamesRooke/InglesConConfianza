@@ -5,7 +5,7 @@ These instructions govern everything under `docs/curriculum/mappings/`. Mappings
 ## Phase gate
 
 - Work in bounded, reviewable phases.
-- Before a new normalization phase, tell the owner its exact scope, the recommended Codex model and reasoning level, and what will remain unchanged. Wait for approval before editing.
+- The owner has approved the full completeness-first mappings migration. Continue in hub-sized phases, state the next scope and recommended model/reasoning level, and validate and commit each phase; separate approval is not required for each hub unless the proposed work changes the data contract or scope.
 - Validate and commit each approved phase before proposing the next one.
 - Do not resume a historical roadmap automatically. The active priorities live in [`docs/backlog.md`](../../backlog.md), and completed decisions live in the [curriculum migration log](../../history/curriculum-migration-log.md).
 
@@ -95,4 +95,4 @@ IDs are globally unique, stable ASCII slugs. Allowed review states are `draft`, 
 
 ## Current boundary
 
-The normalized pilots prove that the Markdown-to-data approach can represent atomic mappings, compressed conjugated concepts, reciprocal edges, clause shape, and form-family exposure. Do not normalize the remaining repository merely for uniformity. The next mapping batch should be selected because the five-lesson product slice needs it or because the owner explicitly approves another bounded audit.
+The active phase is complete migration of `english-to-spanish/` into the Spanish-first PostgreSQL concept model. Process one English hub or a small group of simple hubs at a time. Every useful source item must become a normalized concept, a revision to an existing concept, retained review evidence, or an explicit non-concept/moved-source disposition before its file can be consumed. Promotion, demotion, and tag cleanup are later passes; completeness, normalization, duplicate prevention, and traceability are the current gates.

@@ -15,4 +15,4 @@ Each map folder contains a README plus concrete micro-lessons or mapping-concept
 
 Mappings may link to reusable machinery in [`structure/`](../structure/README.md), but the learner-facing translation decision belongs here. This pillar is a canonical body of knowledge, not a final course sequence.
 
-The durable atomic-object, YAML, canonical-ownership, reverse-coverage, and phased-normalization contract is recorded in [`AGENTS.md`](AGENTS.md). Query metadata and the boundary between mapping concepts, lessons, and future learner records are documented in [`DATA-READINESS.md`](DATA-READINESS.md). Remaining normalization should be driven by the approved five-lesson product slice or another explicitly approved bounded phase.
+The durable atomic-object, canonical-ownership, and phased-normalization rules are recorded in [`AGENTS.md`](AGENTS.md). Query metadata and the boundary between mapping concepts, lessons, and future learner records are documented in [`DATA-READINESS.md`](DATA-READINESS.md). The active PostgreSQL migration plan, canonical concept forms, and collection/tag vocabulary live in [`POSTGRES-MIGRATION-PLAN.md`](POSTGRES-MIGRATION-PLAN.md).

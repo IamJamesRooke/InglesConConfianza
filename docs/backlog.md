@@ -1,11 +1,11 @@
 # Backlog
 
-> Last updated: 2026-08-21. This file contains current decisions and executable work only. Completed migration detail is preserved in the [curriculum migration log](history/curriculum-migration-log.md).
-> Quick handoff: curriculum and review data are now in PostgreSQL; Lesson Builder remains JSON-backed. Start with the five-lesson vertical slice and the lesson/question/learner-history contract.
+> Last updated: 2026-08-23. This file contains current decisions and executable work only. Completed migration detail is preserved in the [curriculum migration log](history/curriculum-migration-log.md).
+> Quick handoff: PostgreSQL is the canonical curriculum store; Lesson Builder remains JSON-backed. The active work is the completeness-first migration of `docs/curriculum`, beginning with `docs/curriculum/mappings/english-to-spanish`.
 
 ## Current objective
 
-Build the smallest useful lesson-authoring foundation. Lessons remain JSON-backed while the discovered curriculum and review model now use PostgreSQL; let the remaining handcrafted lessons reveal the later lesson and learner-history schemas.
+Migrate every useful curriculum concept from `docs/curriculum` into PostgreSQL without losing source material. Complete the mappings pillar first, normalizing English-to-Spanish source evidence into Spanish-first concepts, assigning provisional roles, and adding queryable collections before later curation.
 
 ## Now
 
@@ -48,6 +48,23 @@ Build the smallest useful lesson-authoring foundation. Lessons remain JSON-backe
 - [x] Finish the Spanish-to-English mapping-source consumption sweep by migrating remaining source-table material into PostgreSQL review/curriculum history, exporting updated immutable seed snapshots, verifying parity, and deleting the consumed `docs/curriculum/mappings/spanish-to-english` source tree.
 - [x] Repair the attempted English-to-Spanish reverse import by removing malformed sentence-shaped additions, retaining only safe exact-match collection revisions, and restoring the `docs/curriculum/mappings/english-to-spanish` source tree for proper future canonicalization.
 - [x] Add a project-local Pi todo extension so long migration sessions can show visible progress and keep agent work organized.
+- [ ] Establish the mappings-migration operating contract and safeguards.
+    - [ ] Record canonical concept, placeholder, role, and collection/tag rules, including the deliberate surface-form exception for English `be`.
+    - [ ] Inventory every English-to-Spanish hub and require file-level disposition before source consumption.
+    - [ ] Add database-backed review-batch preflight for exact duplicates, normalized probable duplicates, revision targets, source paths, and suspicious sentence-shaped concepts.
+- [ ] Migrate `docs/curriculum/mappings/english-to-spanish` hub by hub.
+    - [ ] Rewrite source evidence as neutral Spanish-first concepts with exactly one English target and one minimal bilingual example.
+    - [ ] Compare every batch with PostgreSQL and other candidates before review import.
+    - [ ] Preserve all useful material; default uncertain but valid entries to `reference` and defer promotion or demotion.
+    - [ ] Record every source file as migrated, represented in review history, intentionally non-conceptual, or moved to another curriculum pillar before deleting it.
+    - [ ] Verify PostgreSQL and seed-snapshot parity after every migrated batch and commit each coherent hub or small hub group.
+- [ ] Prove the mappings pillar complete: no pending hubs, no undisposed source files, no unresolved imported candidates, and all database tests passing.
+- [ ] Plan the same inventory-to-PostgreSQL process for the remaining curriculum pillars.
+
+## Paused product work
+
+Resume these items after the curriculum migration objective or when the owner explicitly changes priority.
+
 - [ ] Build five representative lessons as the first vertical slice.
     - [ ] Include straightforward vocabulary retrieval.
     - [ ] Include a Spanish-to-English one-to-many mapping.
@@ -66,12 +83,7 @@ Build the smallest useful lesson-authoring foundation. Lessons remain JSON-backe
 ## Next
 
 - [ ] Use the [teaching methodology reference](teaching-methodology.md) when designing lesson steps, feedback, and learner-facing UI.
-- [ ] Revisit the Spanish-first curriculum-scope hypothesis before making further graph or database changes.
-    - [ ] Decide whether canonical teaching mappings should exclusively represent Spanish words, phrases, and constructions producing natural English, because the course currently assesses only Spanish-to-English production.
-    - [ ] Evaluate English target forms such as `him`, `so`, `such`, and `that` as derived indexes or collision views over Spanish-to-English mappings rather than canonical reverse-direction lessons.
-    - [ ] Define a bounded expansion rule: start from frequent Spanish, enumerate context-specific English realizations, and add related Spanish sources only when frequency, speaking priority, learner confusion, or stage appropriateness justifies the contrast.
-    - [ ] Verify that the model supports phrase- and construction-level mappings, not only word-to-word pairs.
-    - [ ] Reconcile or retire the experimental graph's current directionality assumptions only after the owner approves the revised scope.
+- [x] Resolve the Spanish-first curriculum-scope hypothesis for migration: PostgreSQL concepts are canonical Spanish-to-English mappings; English-to-Spanish files are evidence that must be generalized into that direction.
 - [ ] Decide the smallest block metadata needed for context-specific meanings and form families.
 - [ ] Add one authoring workflow for creating and inspecting blocks.
 - [ ] YAMLize or normalize only the curriculum objects required by the five-lesson slice.
@@ -79,7 +91,7 @@ Build the smallest useful lesson-authoring foundation. Lessons remain JSON-backe
 - [ ] Build the smallest complete application flow: choose a lesson, answer Spanish-to-English text boxes, receive feedback, and save progress.
 - [ ] Use authoring friction and learner evidence to decide which mapping hub or curriculum branch to normalize next.
 - [ ] Continue bounded mapping work from PostgreSQL-backed curriculum data; the old Spanish-to-English Markdown source tree has been consumed and deleted.
-- [ ] Reprocess `docs/curriculum/mappings/english-to-spanish` hub-by-hub only after manually generalizing each useful example into a neutral Spanish-first concept such as `estar bien` → `to be okay`; never migrate full example sentences as canonical concept fields.
+- [ ] Revisit mapping curation, promotion, demotion, and collection cleanup after the completeness-first mappings migration is finished.
 
 ## Database modeling considerations
 
