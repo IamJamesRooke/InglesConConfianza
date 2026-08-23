@@ -18,14 +18,14 @@ async function main() {
     }),
   ]);
 
-  console.log(`Archived source documents: ${documents}`);
-  console.log(`Archived source bytes: ${byteTotal._sum.byteLength ?? 0}`);
-  console.log(`Extracted table rows: ${entries}`);
+  console.log(`Archived curriculum source documents: ${documents}`);
+  console.log(`Archived curriculum source bytes: ${byteTotal._sum.byteLength ?? 0}`);
+  console.log(`Extracted curriculum source rows: ${entries}`);
   console.log(`Queryable hubs: ${hubs.length}`);
   for (const direction of directions) {
     console.log(`${direction.direction}: ${direction._count._all}`);
   }
-  console.log("PostgreSQL mapping source inventory passed.");
+  console.log("PostgreSQL curriculum source inventory passed.");
 }
 
 main()

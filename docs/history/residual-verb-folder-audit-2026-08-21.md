@@ -1,5 +1,7 @@
 # Residual Spanish-to-English verb-folder audit
 
+> Archived historical planning document. Its live-source assumptions were superseded by the 2026-08-23 full source capture; the original review state remains in PostgreSQL and immutable snapshots.
+
 > Created: 2026-08-21. This is an inspection report only; it does not migrate or delete source material.
 
 ## Scope

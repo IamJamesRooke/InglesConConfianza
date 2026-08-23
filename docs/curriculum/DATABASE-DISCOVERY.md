@@ -76,7 +76,7 @@ This document records the working decisions that emerged while representative cu
 - `mapping_source_documents` is immutable source evidence; `mapping_source_entries` is the first queryable extraction surface. Neither table pretends that sentence-shaped source rows are canonical concepts.
 - PostgreSQL was compared field-for-field with the live source tree before deletion. `web/prisma/seed-data/curriculum-sources.json` provides reproducible bootstrap and parity verification after the source folder's retirement.
 - Future mapping cleanup works from PostgreSQL. Exact matches may link or revise existing concepts; uncertain useful material defaults to Reference; role promotion, deduplication, placeholder normalization, and collection enrichment happen after capture.
-- `npm run curriculum:mappings:inventory` reports archived coverage, and `npm run curriculum:sources:query -- --search <text>` queries extracted rows without restoring the Markdown tree.
+- `npm run curriculum:sources:inventory` reports archived coverage, and `npm run curriculum:sources:query -- --search <text>` queries extracted rows without restoring the Markdown tree.
 
 ## 2026-08-23 — Make full curriculum migration the active objective
 

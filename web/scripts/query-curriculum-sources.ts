@@ -67,7 +67,7 @@ async function main() {
       }),
     );
   }
-  console.log(`Returned ${rows.length} archived mapping rows.`);
+  console.log(`Returned ${rows.length} archived curriculum source rows.`);
 }
 
 main()

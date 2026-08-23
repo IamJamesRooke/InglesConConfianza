@@ -1,5 +1,7 @@
 # Residual Spanish-First Verb Review Candidates
 
+> Archived historical planning document. Its live-source assumptions were superseded by the 2026-08-23 full source capture; the original review state remains in PostgreSQL and immutable snapshots.
+
 > Drafted from the residual-folder audit on 2026-08-21. These are proposed review candidates only; nothing here is migrated yet.
 
 ## Batch intent
