@@ -88857,6 +88857,943 @@
           "ownerNote": ""
         }
       ]
+    },
+    {
+      "id": "terra-short-mapping-hubs-2026-08-23",
+      "title": "Terra sweep: ten short English-to-Spanish mapping hubs",
+      "sourcePaths": [
+        "docs/curriculum/mappings/english-to-spanish/across",
+        "docs/curriculum/mappings/english-to-spanish/agree",
+        "docs/curriculum/mappings/english-to-spanish/allow",
+        "docs/curriculum/mappings/english-to-spanish/almost",
+        "docs/curriculum/mappings/english-to-spanish/alone",
+        "docs/curriculum/mappings/english-to-spanish/also",
+        "docs/curriculum/mappings/english-to-spanish/although",
+        "docs/curriculum/mappings/english-to-spanish/always",
+        "docs/curriculum/mappings/english-to-spanish/and",
+        "docs/curriculum/mappings/english-to-spanish/appear"
+      ],
+      "createdAt": "2026-08-23",
+      "status": "migrated",
+      "migratedAt": "2026-08-23",
+      "candidates": [
+        {
+          "id": "cruzar-algo-cross-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "cruzar [algo]",
+          "english": "to cross [something]",
+          "example": {
+            "spanish": "Cruzó la calle.",
+            "english": "She walked across the street."
+          },
+          "collections": [
+            "cruzar",
+            "across",
+            "cross",
+            "verb + direct object",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/across/README.md"
+          ],
+          "rationale": "Cruzar is the direct reusable Spanish action for crossing a bounded place or route.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "estar-frente-a-algo-across-from-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "estar frente a [algo]",
+          "english": "to be across from [something]",
+          "example": {
+            "spanish": "El banco está frente al hotel.",
+            "english": "The bank is across from the hotel."
+          },
+          "collections": [
+            "estar",
+            "frente a",
+            "across",
+            "across from",
+            "to be",
+            "location",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/across/README.md"
+          ],
+          "rationale": "Opposite location is a distinct Spanish estar frente a construction, not the crossing action.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "por-todo-lugar-across-place",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "por todo [un lugar]",
+          "english": "across [a place]",
+          "example": {
+            "spanish": "La noticia se difundió por todo el país.",
+            "english": "The news spread across the country."
+          },
+          "collections": [
+            "por",
+            "todo",
+            "across",
+            "preposition",
+            "location",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/across/README.md"
+          ],
+          "rationale": "Por todo expresses distribution across the extent of a place.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "estar-de-acuerdo-con-alguien-agree-with-somebody",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "estar de acuerdo con [alguien]",
+          "english": "to agree with [somebody]",
+          "example": {
+            "spanish": "Estoy de acuerdo con Laura.",
+            "english": "I agree with Laura."
+          },
+          "collections": [
+            "estar",
+            "acuerdo",
+            "agree",
+            "with",
+            "verb + preposition",
+            "con => with",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/agree/README.md"
+          ],
+          "rationale": "Estar de acuerdo con expresses personal agreement and is distinct from ponerse de acuerdo on reaching an agreement.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-acordar-agree-on--terra-source",
+          "action": "revise",
+          "existingConceptId": "acordar-agree-on",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "acordar [algo]",
+          "english": "to agree on [something]",
+          "example": {
+            "spanish": "Acordamos una fecha.",
+            "english": "We agreed on a date."
+          },
+          "collections": [
+            "acordar",
+            "agree",
+            "agree on",
+            "on",
+            "verb + preposition",
+            "noun/decision",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/agree/README.md"
+          ],
+          "rationale": "The direct agreement-on-a-decision concept already exists; revise it with current source evidence and queryable collections.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "aceptar-algo-agree-to-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "aceptar [algo]",
+          "english": "to agree to [something]",
+          "example": {
+            "spanish": "Acepté la propuesta.",
+            "english": "I agreed to the proposal."
+          },
+          "collections": [
+            "aceptar",
+            "agree",
+            "agree to",
+            "to",
+            "verb + preposition",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/agree/README.md"
+          ],
+          "rationale": "Agreeing to a proposal is naturally aceptar in Spanish and differs from agreeing with a person or on a decision.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "coincidir-agree",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "coincidir",
+          "english": "to agree",
+          "example": {
+            "spanish": "Los dos informes coinciden.",
+            "english": "The two reports agree."
+          },
+          "collections": [
+            "coincidir",
+            "agree",
+            "information",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/agree/README.md"
+          ],
+          "rationale": "Coincidir expresses matching information, not personal agreement or a negotiated decision.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "permitir-que-alguien-haga-algo-allow-somebody-to-do",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "permitir que [alguien] [haga algo]",
+          "english": "to allow [somebody] to [do something]",
+          "example": {
+            "spanish": "Permiten que entren los niños.",
+            "english": "They allow children to enter."
+          },
+          "collections": [
+            "permitir",
+            "allow",
+            "permission",
+            "verb + full infinitive",
+            "somebody to do something",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/allow/README.md"
+          ],
+          "rationale": "Permitir que plus a person and action is the source's reusable permission construction.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "calcular-tiempo-para-algo-allow-time-for-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "calcular [cantidad de tiempo] para [algo]",
+          "english": "to allow [an amount of time] for [something]",
+          "example": {
+            "spanish": "Calcula dos horas para el viaje.",
+            "english": "Allow two hours for the trip."
+          },
+          "collections": [
+            "calcular",
+            "allow",
+            "time",
+            "for",
+            "verb + preposition",
+            "para => for",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/allow/README.md"
+          ],
+          "rationale": "The time-budget sense of allow is calcular rather than granting permission.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-dar-acceso-give-access-to--terra-source",
+          "action": "revise",
+          "existingConceptId": "dar-acceso-give-access-to",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "dar acceso a [algo]",
+          "english": "to give access to [something]",
+          "example": {
+            "spanish": "Esta tarjeta da acceso al edificio.",
+            "english": "This card gives access to the building."
+          },
+          "collections": [
+            "dar",
+            "give",
+            "allow",
+            "access",
+            "verb + preposition",
+            "to",
+            "a => to",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/allow/README.md"
+          ],
+          "rationale": "The existing concept is the canonical natural rendering of the source's access-enabling sense; revise its collections and provenance without duplicating a near-synonym.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "casi-almost",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "casi",
+          "english": "almost",
+          "example": {
+            "spanish": "Casi terminé.",
+            "english": "I almost finished."
+          },
+          "collections": [
+            "casi",
+            "almost",
+            "adverb",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/almost/README.md"
+          ],
+          "rationale": "Casi is the default direct adverbial mapping for almost.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "por-poco-almost",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "por poco",
+          "english": "almost",
+          "example": {
+            "spanish": "Por poco me caigo.",
+            "english": "I almost fell."
+          },
+          "collections": [
+            "por poco",
+            "almost",
+            "adverb",
+            "fixed expression",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/almost/README.md"
+          ],
+          "rationale": "Por poco is the fixed Spanish near-miss expression that differs from default casi.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "practicamente-practically",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "prácticamente",
+          "english": "practically",
+          "example": {
+            "spanish": "Es prácticamente imposible.",
+            "english": "It is practically impossible."
+          },
+          "collections": [
+            "prácticamente",
+            "almost",
+            "practically",
+            "adverb",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/almost/README.md"
+          ],
+          "rationale": "Prácticamente is the approximation adverb used with descriptions such as impossible.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "solo-a-alone",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "solo/a",
+          "english": "alone",
+          "example": {
+            "spanish": "Diana fue sola a la conferencia.",
+            "english": "Diana went to the conference alone."
+          },
+          "collections": [
+            "solo",
+            "alone",
+            "adjective",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/alone/09-alone-versus-only.md",
+            "docs/curriculum/mappings/english-to-spanish/alone/README.md"
+          ],
+          "rationale": "Solo/a expresses absence of company and must remain distinct from limiting only.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "el-la-unico-a-the-only-one",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "el/la único/a",
+          "english": "the only one",
+          "example": {
+            "spanish": "Era la única de su equipo con una entrada.",
+            "english": "She was the only one on her team with a ticket."
+          },
+          "collections": [
+            "único",
+            "only",
+            "alone",
+            "adjective",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/alone/09-alone-versus-only.md"
+          ],
+          "rationale": "The contrast source establishes a useful independent uniqueness mapping alongside solo/a meaning alone.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "tambien-also",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "también",
+          "english": "also",
+          "example": {
+            "spanish": "Laura también habla francés.",
+            "english": "Laura also speaks French."
+          },
+          "collections": [
+            "también",
+            "also",
+            "addition",
+            "adverb",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/also/README.md"
+          ],
+          "rationale": "También is the direct positive-addition mapping for also.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "ademas-also",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "además",
+          "english": "also",
+          "example": {
+            "spanish": "El plan es costoso; además, es arriesgado.",
+            "english": "The plan is expensive; it is also risky."
+          },
+          "collections": [
+            "además",
+            "also",
+            "addition",
+            "connector",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/also/README.md"
+          ],
+          "rationale": "Además adds a separate point and differs from también's more direct additive placement.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "tampoco-either",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "tampoco",
+          "english": "either",
+          "example": {
+            "spanish": "Yo tampoco quiero ir.",
+            "english": "I do not want to go either."
+          },
+          "collections": [
+            "tampoco",
+            "also",
+            "either",
+            "negative",
+            "addition",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/also/README.md"
+          ],
+          "rationale": "Tampoco is the negative-addition realization corresponding to either.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "no-solo-alguien-sino-tambien-alguien-not-only-but-also",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "no solo [alguien], sino también [alguien]",
+          "english": "not only [somebody], but also [somebody]",
+          "example": {
+            "spanish": "No solo vino Laura, sino también Mateo.",
+            "english": "Not only Laura but also Mateo came."
+          },
+          "collections": [
+            "solo",
+            "también",
+            "also",
+            "not only",
+            "but also",
+            "connector",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/also/README.md"
+          ],
+          "rationale": "No solo ... sino también is a fixed paired-addition construction with a distinct English realization.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "aunque-ocurrio-algo-although-something-happened",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "aunque [ocurrió algo]",
+          "english": "although [something happened]",
+          "example": {
+            "spanish": "Aunque llovía, salimos.",
+            "english": "Although it was raining, we left."
+          },
+          "collections": [
+            "aunque",
+            "although",
+            "concession",
+            "connector",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/although/README.md"
+          ],
+          "rationale": "Aunque introduces a full concessive clause and is the direct reusable mapping for although.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "a-pesar-de-ser-algo-despite-being-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "a pesar de ser [algo]",
+          "english": "despite being [something]",
+          "example": {
+            "spanish": "A pesar de ser difícil, el examen fue justo.",
+            "english": "Despite being difficult, the exam was fair."
+          },
+          "collections": [
+            "pesar",
+            "a pesar de",
+            "although",
+            "despite",
+            "connector",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/although/README.md"
+          ],
+          "rationale": "The reduced concessive source construction has a distinct despite being realization beyond the existing noun phrase pattern.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "pero-but",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "pero",
+          "english": "but",
+          "example": {
+            "spanish": "Es útil, pero es costoso.",
+            "english": "It is useful, but it is expensive."
+          },
+          "collections": [
+            "pero",
+            "although",
+            "but",
+            "contrast",
+            "connector",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/although/README.md"
+          ],
+          "rationale": "The source identifies pero as the natural afterthought contrast where English may use although.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "siempre-always",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "siempre",
+          "english": "always",
+          "example": {
+            "spanish": "Siempre llego temprano.",
+            "english": "I always arrive early."
+          },
+          "collections": [
+            "siempre",
+            "always",
+            "adverb",
+            "time",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/always/README.md"
+          ],
+          "rationale": "Siempre is the direct habitual-time mapping for always.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "no-dejar-de-hacer-algo-keep-doing-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "no dejar de [hacer algo]",
+          "english": "to keep [doing something]",
+          "example": {
+            "spanish": "No deja de quejarse.",
+            "english": "She keeps complaining."
+          },
+          "collections": [
+            "dejar",
+            "always",
+            "keep",
+            "negative",
+            "verb + gerund",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/always/README.md"
+          ],
+          "rationale": "The source's annoying-repetition use is naturally no dejar de in Spanish and keep doing something in English.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "en-todo-caso-in-any-case",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "en todo caso",
+          "english": "in any case",
+          "example": {
+            "spanish": "En todo caso, puedes llamarme.",
+            "english": "In any case, you can call me."
+          },
+          "collections": [
+            "todo",
+            "always",
+            "in any case",
+            "connector",
+            "fixed expression",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/always/README.md"
+          ],
+          "rationale": "En todo caso supplies the fallback-option meaning shown by the source rather than habitual always.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "todo-el-tiempo-all-the-time",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "todo el tiempo",
+          "english": "all the time",
+          "example": {
+            "spanish": "La puerta está abierta todo el tiempo.",
+            "english": "The door is open all the time."
+          },
+          "collections": [
+            "todo",
+            "tiempo",
+            "always",
+            "all the time",
+            "time",
+            "fixed expression",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/always/README.md"
+          ],
+          "rationale": "Todo el tiempo expresses uninterrupted duration rather than simple habitual siempre.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "y-and",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "y",
+          "english": "and",
+          "example": {
+            "spanish": "Laura y Mateo llegaron.",
+            "english": "Laura and Mateo arrived."
+          },
+          "collections": [
+            "y",
+            "and",
+            "connector",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/and/README.md"
+          ],
+          "rationale": "Y is the default Spanish coordination connector for and.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "e-and",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "e",
+          "english": "and",
+          "example": {
+            "spanish": "El español e inglés son útiles.",
+            "english": "Spanish and English are useful."
+          },
+          "collections": [
+            "y",
+            "e",
+            "and",
+            "connector",
+            "before i sound",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/and/README.md"
+          ],
+          "rationale": "Spanish changes y to e before an i or hi sound; retaining the surface form supports accurate retrieval.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "intentar-hacer-algo-try-to-do-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "intentar [hacer algo]",
+          "english": "to try to [do something]",
+          "example": {
+            "spanish": "Intenta llamarme esta noche.",
+            "english": "Try to call me tonight."
+          },
+          "collections": [
+            "intentar",
+            "try",
+            "and",
+            "verb + full infinitive",
+            "followed by full infinitive",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/and/README.md"
+          ],
+          "rationale": "The try and source pattern is naturally intentar plus an infinitive in Spanish and try to plus a full infinitive in English.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "cada-vez-mas-adjetivo-more-and-more-adjective",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "cada vez más [adjetivo]",
+          "english": "more and more [adjective]",
+          "example": {
+            "spanish": "El ruido se hizo cada vez más fuerte.",
+            "english": "The noise grew louder and louder."
+          },
+          "collections": [
+            "cada vez más",
+            "and",
+            "more and more",
+            "adjective",
+            "comparison",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/and/README.md"
+          ],
+          "rationale": "Cada vez más is the productive Spanish increase pattern behind English repeated-comparative coordination.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-aparecer-appear--terra-source",
+          "action": "revise",
+          "existingConceptId": "aparecer-appear",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "aparecer",
+          "english": "to appear",
+          "example": {
+            "spanish": "Apareció un problema.",
+            "english": "A problem appeared."
+          },
+          "collections": [
+            "aparecer",
+            "appear",
+            "verb",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/appear/README.md"
+          ],
+          "rationale": "The direct becoming-visible concept already exists; revise it with current-source provenance and collections.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-parecer-adjetivo-seem--terra-source",
+          "action": "revise",
+          "existingConceptId": "parecer-adjetivo-seem",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "parecer [adjetivo]",
+          "english": "to seem [adjective]",
+          "example": {
+            "spanish": "Parece cansada.",
+            "english": "She seems tired."
+          },
+          "collections": [
+            "parecer",
+            "appear",
+            "seem",
+            "adjective",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/appear/README.md"
+          ],
+          "rationale": "The source's apparent-state meaning is already a normalized parecer-to-seem concept; revise its current-source collections.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "salir-en-publicacion-appear-in-publication",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "salir en [una publicación]",
+          "english": "to appear in [a publication]",
+          "example": {
+            "spanish": "El artículo salió en el periódico.",
+            "english": "The article appeared in the newspaper."
+          },
+          "collections": [
+            "salir",
+            "appear",
+            "appear in",
+            "publication",
+            "in",
+            "verb + preposition",
+            "en => in",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/appear/README.md"
+          ],
+          "rationale": "Publication appearance is naturally salir en in Spanish and differs from becoming visible.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "comparecer-ante-autoridad-appear-before-authority",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "comparecer ante [una autoridad]",
+          "english": "to appear before [an authority]",
+          "example": {
+            "spanish": "Compareció ante el tribunal.",
+            "english": "He appeared in court."
+          },
+          "collections": [
+            "comparecer",
+            "appear",
+            "appear before",
+            "authority",
+            "before",
+            "verb + preposition",
+            "ante => before",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/appear/README.md"
+          ],
+          "rationale": "Formal appearance before an authority has a distinct Spanish legal-register realization.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        }
+      ]
     }
   ]
 }

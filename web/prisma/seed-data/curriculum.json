@@ -2190,16 +2190,18 @@
       "spanish": "dar acceso a [algo]",
       "english": "to give access to [something]",
       "example": {
-        "spanish": "La tarjeta da acceso al edificio.",
-        "english": "The card gives access to the building."
+        "spanish": "Esta tarjeta da acceso al edificio.",
+        "english": "This card gives access to the building."
       },
       "collections": [
         "dar",
         "give",
+        "allow",
+        "access",
         "verb + preposition",
         "to",
         "a => to",
-        "access"
+        "english-to-spanish mappings"
       ],
       "curriculumRole": "reference"
     },
@@ -8433,15 +8435,17 @@
       "spanish": "parecer [adjetivo]",
       "english": "to seem [adjective]",
       "example": {
-        "spanish": "Parece cansado.",
-        "english": "He seems tired."
+        "spanish": "Parece cansada.",
+        "english": "She seems tired."
       },
       "collections": [
         "parecer",
+        "appear",
         "seem",
-        "adjective"
+        "adjective",
+        "english-to-spanish mappings"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "reference"
     },
     {
       "id": "parecer-hacer-algo-seem-to",
@@ -19036,9 +19040,11 @@
       },
       "collections": [
         "aparecer",
-        "appear"
+        "appear",
+        "verb",
+        "english-to-spanish mappings"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "buscar-look-for",
@@ -19873,15 +19879,19 @@
       "spanish": "acordar [algo]",
       "english": "to agree on [something]",
       "example": {
-        "spanish": "Las partes acordaron el precio.",
-        "english": "The parties agreed on the price."
+        "spanish": "Acordamos una fecha.",
+        "english": "We agreed on a date."
       },
       "collections": [
         "acordar",
+        "agree",
         "agree on",
-        "noun/decision"
+        "on",
+        "verb + preposition",
+        "noun/decision",
+        "english-to-spanish mappings"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "acordarse-remember",
@@ -29154,6 +29164,539 @@
         "then",
         "time",
         "fixed expression",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "cruzar-algo-cross-something",
+      "spanish": "cruzar [algo]",
+      "english": "to cross [something]",
+      "example": {
+        "spanish": "Cruzó la calle.",
+        "english": "She walked across the street."
+      },
+      "collections": [
+        "cruzar",
+        "across",
+        "cross",
+        "verb + direct object",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-frente-a-algo-across-from-something",
+      "spanish": "estar frente a [algo]",
+      "english": "to be across from [something]",
+      "example": {
+        "spanish": "El banco está frente al hotel.",
+        "english": "The bank is across from the hotel."
+      },
+      "collections": [
+        "estar",
+        "frente a",
+        "across",
+        "across from",
+        "to be",
+        "location",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "por-todo-lugar-across-place",
+      "spanish": "por todo [un lugar]",
+      "english": "across [a place]",
+      "example": {
+        "spanish": "La noticia se difundió por todo el país.",
+        "english": "The news spread across the country."
+      },
+      "collections": [
+        "por",
+        "todo",
+        "across",
+        "preposition",
+        "location",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-de-acuerdo-con-alguien-agree-with-somebody",
+      "spanish": "estar de acuerdo con [alguien]",
+      "english": "to agree with [somebody]",
+      "example": {
+        "spanish": "Estoy de acuerdo con Laura.",
+        "english": "I agree with Laura."
+      },
+      "collections": [
+        "estar",
+        "acuerdo",
+        "agree",
+        "with",
+        "verb + preposition",
+        "con => with",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "aceptar-algo-agree-to-something",
+      "spanish": "aceptar [algo]",
+      "english": "to agree to [something]",
+      "example": {
+        "spanish": "Acepté la propuesta.",
+        "english": "I agreed to the proposal."
+      },
+      "collections": [
+        "aceptar",
+        "agree",
+        "agree to",
+        "to",
+        "verb + preposition",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "coincidir-agree",
+      "spanish": "coincidir",
+      "english": "to agree",
+      "example": {
+        "spanish": "Los dos informes coinciden.",
+        "english": "The two reports agree."
+      },
+      "collections": [
+        "coincidir",
+        "agree",
+        "information",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "permitir-que-alguien-haga-algo-allow-somebody-to-do",
+      "spanish": "permitir que [alguien] [haga algo]",
+      "english": "to allow [somebody] to [do something]",
+      "example": {
+        "spanish": "Permiten que entren los niños.",
+        "english": "They allow children to enter."
+      },
+      "collections": [
+        "permitir",
+        "allow",
+        "permission",
+        "verb + full infinitive",
+        "somebody to do something",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "calcular-tiempo-para-algo-allow-time-for-something",
+      "spanish": "calcular [cantidad de tiempo] para [algo]",
+      "english": "to allow [an amount of time] for [something]",
+      "example": {
+        "spanish": "Calcula dos horas para el viaje.",
+        "english": "Allow two hours for the trip."
+      },
+      "collections": [
+        "calcular",
+        "allow",
+        "time",
+        "for",
+        "verb + preposition",
+        "para => for",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "casi-almost",
+      "spanish": "casi",
+      "english": "almost",
+      "example": {
+        "spanish": "Casi terminé.",
+        "english": "I almost finished."
+      },
+      "collections": [
+        "casi",
+        "almost",
+        "adverb",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "por-poco-almost",
+      "spanish": "por poco",
+      "english": "almost",
+      "example": {
+        "spanish": "Por poco me caigo.",
+        "english": "I almost fell."
+      },
+      "collections": [
+        "por poco",
+        "almost",
+        "adverb",
+        "fixed expression",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "practicamente-practically",
+      "spanish": "prácticamente",
+      "english": "practically",
+      "example": {
+        "spanish": "Es prácticamente imposible.",
+        "english": "It is practically impossible."
+      },
+      "collections": [
+        "prácticamente",
+        "almost",
+        "practically",
+        "adverb",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "solo-a-alone",
+      "spanish": "solo/a",
+      "english": "alone",
+      "example": {
+        "spanish": "Diana fue sola a la conferencia.",
+        "english": "Diana went to the conference alone."
+      },
+      "collections": [
+        "solo",
+        "alone",
+        "adjective",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "el-la-unico-a-the-only-one",
+      "spanish": "el/la único/a",
+      "english": "the only one",
+      "example": {
+        "spanish": "Era la única de su equipo con una entrada.",
+        "english": "She was the only one on her team with a ticket."
+      },
+      "collections": [
+        "único",
+        "only",
+        "alone",
+        "adjective",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "tambien-also",
+      "spanish": "también",
+      "english": "also",
+      "example": {
+        "spanish": "Laura también habla francés.",
+        "english": "Laura also speaks French."
+      },
+      "collections": [
+        "también",
+        "also",
+        "addition",
+        "adverb",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ademas-also",
+      "spanish": "además",
+      "english": "also",
+      "example": {
+        "spanish": "El plan es costoso; además, es arriesgado.",
+        "english": "The plan is expensive; it is also risky."
+      },
+      "collections": [
+        "además",
+        "also",
+        "addition",
+        "connector",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "tampoco-either",
+      "spanish": "tampoco",
+      "english": "either",
+      "example": {
+        "spanish": "Yo tampoco quiero ir.",
+        "english": "I do not want to go either."
+      },
+      "collections": [
+        "tampoco",
+        "also",
+        "either",
+        "negative",
+        "addition",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "no-solo-alguien-sino-tambien-alguien-not-only-but-also",
+      "spanish": "no solo [alguien], sino también [alguien]",
+      "english": "not only [somebody], but also [somebody]",
+      "example": {
+        "spanish": "No solo vino Laura, sino también Mateo.",
+        "english": "Not only Laura but also Mateo came."
+      },
+      "collections": [
+        "solo",
+        "también",
+        "also",
+        "not only",
+        "but also",
+        "connector",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "aunque-ocurrio-algo-although-something-happened",
+      "spanish": "aunque [ocurrió algo]",
+      "english": "although [something happened]",
+      "example": {
+        "spanish": "Aunque llovía, salimos.",
+        "english": "Although it was raining, we left."
+      },
+      "collections": [
+        "aunque",
+        "although",
+        "concession",
+        "connector",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "a-pesar-de-ser-algo-despite-being-something",
+      "spanish": "a pesar de ser [algo]",
+      "english": "despite being [something]",
+      "example": {
+        "spanish": "A pesar de ser difícil, el examen fue justo.",
+        "english": "Despite being difficult, the exam was fair."
+      },
+      "collections": [
+        "pesar",
+        "a pesar de",
+        "although",
+        "despite",
+        "connector",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pero-but",
+      "spanish": "pero",
+      "english": "but",
+      "example": {
+        "spanish": "Es útil, pero es costoso.",
+        "english": "It is useful, but it is expensive."
+      },
+      "collections": [
+        "pero",
+        "although",
+        "but",
+        "contrast",
+        "connector",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "siempre-always",
+      "spanish": "siempre",
+      "english": "always",
+      "example": {
+        "spanish": "Siempre llego temprano.",
+        "english": "I always arrive early."
+      },
+      "collections": [
+        "siempre",
+        "always",
+        "adverb",
+        "time",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "no-dejar-de-hacer-algo-keep-doing-something",
+      "spanish": "no dejar de [hacer algo]",
+      "english": "to keep [doing something]",
+      "example": {
+        "spanish": "No deja de quejarse.",
+        "english": "She keeps complaining."
+      },
+      "collections": [
+        "dejar",
+        "always",
+        "keep",
+        "negative",
+        "verb + gerund",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "en-todo-caso-in-any-case",
+      "spanish": "en todo caso",
+      "english": "in any case",
+      "example": {
+        "spanish": "En todo caso, puedes llamarme.",
+        "english": "In any case, you can call me."
+      },
+      "collections": [
+        "todo",
+        "always",
+        "in any case",
+        "connector",
+        "fixed expression",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "todo-el-tiempo-all-the-time",
+      "spanish": "todo el tiempo",
+      "english": "all the time",
+      "example": {
+        "spanish": "La puerta está abierta todo el tiempo.",
+        "english": "The door is open all the time."
+      },
+      "collections": [
+        "todo",
+        "tiempo",
+        "always",
+        "all the time",
+        "time",
+        "fixed expression",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "y-and",
+      "spanish": "y",
+      "english": "and",
+      "example": {
+        "spanish": "Laura y Mateo llegaron.",
+        "english": "Laura and Mateo arrived."
+      },
+      "collections": [
+        "y",
+        "and",
+        "connector",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "e-and",
+      "spanish": "e",
+      "english": "and",
+      "example": {
+        "spanish": "El español e inglés son útiles.",
+        "english": "Spanish and English are useful."
+      },
+      "collections": [
+        "y",
+        "e",
+        "and",
+        "connector",
+        "before i sound",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "intentar-hacer-algo-try-to-do-something",
+      "spanish": "intentar [hacer algo]",
+      "english": "to try to [do something]",
+      "example": {
+        "spanish": "Intenta llamarme esta noche.",
+        "english": "Try to call me tonight."
+      },
+      "collections": [
+        "intentar",
+        "try",
+        "and",
+        "verb + full infinitive",
+        "followed by full infinitive",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "cada-vez-mas-adjetivo-more-and-more-adjective",
+      "spanish": "cada vez más [adjetivo]",
+      "english": "more and more [adjective]",
+      "example": {
+        "spanish": "El ruido se hizo cada vez más fuerte.",
+        "english": "The noise grew louder and louder."
+      },
+      "collections": [
+        "cada vez más",
+        "and",
+        "more and more",
+        "adjective",
+        "comparison",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "salir-en-publicacion-appear-in-publication",
+      "spanish": "salir en [una publicación]",
+      "english": "to appear in [a publication]",
+      "example": {
+        "spanish": "El artículo salió en el periódico.",
+        "english": "The article appeared in the newspaper."
+      },
+      "collections": [
+        "salir",
+        "appear",
+        "appear in",
+        "publication",
+        "in",
+        "verb + preposition",
+        "en => in",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "comparecer-ante-autoridad-appear-before-authority",
+      "spanish": "comparecer ante [una autoridad]",
+      "english": "to appear before [an authority]",
+      "example": {
+        "spanish": "Compareció ante el tribunal.",
+        "english": "He appeared in court."
+      },
+      "collections": [
+        "comparecer",
+        "appear",
+        "appear before",
+        "authority",
+        "before",
+        "verb + preposition",
+        "ante => before",
         "english-to-spanish mappings"
       ],
       "curriculumRole": "reference"

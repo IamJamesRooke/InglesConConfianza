@@ -3975,6 +3975,61 @@
         "a-esa-hora-then"
       ],
       "note": "Consequence, sequence, past-time, and established-time then mappings migrated or revised."
+    },
+    "docs/curriculum/mappings/english-to-spanish/across/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["cruzar-algo-cross-something", "estar-frente-a-algo-across-from-something", "por-todo-lugar-across-place"],
+      "note": "Crossing, opposite-location, and distribution-across-place mappings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/agree/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["estar-de-acuerdo-con-alguien-agree-with-somebody", "acordar-agree-on", "aceptar-algo-agree-to-something", "coincidir-agree"],
+      "note": "Personal agreement, negotiated decisions, acceptance, and matching-information meanings migrated or revised."
+    },
+    "docs/curriculum/mappings/english-to-spanish/allow/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["permitir-que-alguien-haga-algo-allow-somebody-to-do", "calcular-tiempo-para-algo-allow-time-for-something", "dar-acceso-give-access-to"],
+      "note": "Permission, time-budget, and access-enabling senses migrated or revised."
+    },
+    "docs/curriculum/mappings/english-to-spanish/almost/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["casi-almost", "por-poco-almost", "practicamente-practically"],
+      "note": "Default, near-miss, and descriptive-approximation mappings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/alone/09-alone-versus-only.md": {
+      "disposition": "migrated",
+      "destinationIds": ["solo-a-alone", "el-la-unico-a-the-only-one"],
+      "note": "The source contrast was split into absence-of-company and uniqueness concepts."
+    },
+    "docs/curriculum/mappings/english-to-spanish/alone/README.md": {
+      "disposition": "reviewed",
+      "destinationIds": ["solo-a-alone", "el-la-unico-a-the-only-one"],
+      "note": "README navigation is represented by the migrated alone-versus-only concepts."
+    },
+    "docs/curriculum/mappings/english-to-spanish/also/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["tambien-also", "ademas-also", "tampoco-either", "no-solo-alguien-sino-tambien-alguien-not-only-but-also"],
+      "note": "Positive, discourse, negative, and paired-addition mappings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/although/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["aunque-ocurrio-algo-although-something-happened", "a-pesar-de-ser-algo-despite-being-something", "pero-but"],
+      "note": "Full-clause, reduced, and afterthought concessive mappings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/always/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["siempre-always", "no-dejar-de-hacer-algo-keep-doing-something", "en-todo-caso-in-any-case", "todo-el-tiempo-all-the-time"],
+      "note": "Habitual, persistent-action, fallback-option, and uninterrupted-duration mappings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/and/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["y-and", "e-and", "intentar-hacer-algo-try-to-do-something", "cada-vez-mas-adjetivo-more-and-more-adjective"],
+      "note": "Default and conditioned coordination plus two restructured English patterns migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/appear/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["aparecer-appear", "parecer-adjetivo-seem", "salir-en-publicacion-appear-in-publication", "comparecer-ante-autoridad-appear-before-authority"],
+      "note": "Literal appearance, seeming, publication, and formal-authority senses migrated or revised."
     }
   }
 }
