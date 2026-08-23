@@ -1,32 +1,57 @@
-# Curriculum Body of Knowledge
+# Curriculum Database Contract
 
-This directory is the human-readable handoff for the Inglés Con Confianza body of knowledge. PostgreSQL is the working curriculum source of truth, organized by queryable concepts and collections rather than a fixed course level or final teaching sequence.
+PostgreSQL is the curriculum source of truth. The former mappings, cognates, vocabulary, transformations, structure, and past-form folders have been captured and retired. Their raw documents remain immutable database provenance; all teachable content now lives in the single `curriculum_concepts` catalog.
 
-| Pillar | Purpose |
-|---|---|
-| Mappings (PostgreSQL) | The translation core, now preserved as canonical concepts plus a lossless queryable source archive. |
-| Cognates (PostgreSQL) | Reliable similarities, spelling patterns, word families, memory bridges, and false-cognate confusion sets. |
-| Past and Past Participle (PostgreSQL) | The canonical sound-based inventory of English past and participle forms, with reviewed and pending pronunciation metadata kept distinct. |
-| Transformations (PostgreSQL) | Productive, limited, irregular, and recognition-only English word-family relationships stored with normalized bilingual transformation notation and flat query collections. |
-| Structure (PostgreSQL) | Reusable machinery for building statements, questions, negations, descriptions, comparisons, and connected ideas. |
-| Vocabulary (PostgreSQL) | Searchable words, expressions, semantic categories, and verb families preserved as canonical concepts plus a lossless source archive. |
+## Concept shape
 
-Each concept has one canonical database record and may belong to multiple query collections. The future teaching sequence should express prerequisites and reinforcement without duplicating curriculum objects or encoding difficulty into a filesystem hierarchy.
+Every curriculum concept has:
 
-## How to use this curriculum
+- one normalized Spanish source;
+- exactly one normalized English target;
+- one generic Spanish example and its natural English equivalent;
+- reusable collections for retrieval and lesson building; and
+- exactly one curriculum role: `core`, `supporting`, or `reference`.
 
-- Use the PostgreSQL **mappings** archive when a frequent source form has several context-dependent translations.
-- Use PostgreSQL concepts tagged `structure` for reusable sentence-building rules.
-- Use PostgreSQL **transformations** and **cognates**, plus **past and past participle**, for visible word- or form-building relationships.
-- Use PostgreSQL concepts tagged `vocabulary` for compact reference material that does not currently justify an independent lesson family.
-- Build course lessons separately by referencing the smallest relevant curriculum objects and deliberately revisiting earlier ones.
+The database is a Spanish-to-English map. Only Spanish belongs in Spanish fields and only English belongs in English fields. Keep independently teachable phrases and constructions intact instead of reducing everything to dictionary words.
 
-## Current maturity
+## Normalization
 
-All six pillars are captured in PostgreSQL. Mappings contain 2,225 immutable source documents and 4,322 extracted rows. Cognates contain 265 documents and 1,250 rows. Vocabulary contains 17 documents and 972 rows, normalized into 592 concepts. Transformations contain 178 documents and 594 rows, originally normalized into 312 concepts and later enriched by comparison and verb-form transformations. Structure contains 124 documents and 600 rows across two passes, normalized into 405 concepts. Past and past participle contains 134 documents and 1,077 rows, normalized into 478 atomic form concepts across 190 verb bases.
+- Store ordinary verbs as infinitives with meaningful slots: `comer [algo]` -> `to eat [something]`.
+- Store nouns with natural Spanish articles when the concept is nominal: `el territorio` -> `territory`.
+- Store adjective and state mappings with the support verb that expresses the intended meaning: `ser listo` -> `to be smart`, `estar listo` -> `to be ready`, and `tener hambre` -> `to be hungry`.
+- Use stable bracket placeholders such as `[algo]`, `[alguien]`, `[hacer algo]`, `[something]`, `[somebody]`, and `[to do something]`.
+- Preserve one target per concept. Split bundled alternatives when they have different meanings or teaching behavior.
+- Store transformations as one normalized relationship on each side using ` ==> `, for example `el poder ==> ser poderoso/a` and `the power ==> to be powerful`.
+- Keep English `be` forms independently searchable when their surface form matters. Use collections such as `to be`, `am`, `is`, and `are` without changing the Spanish-first record direction.
 
-The active step is database-driven normalization and curation of the captured mappings archive. The [active backlog](../backlog.md) defines the current order and completion gates; lesson-contract discovery is paused until the owner changes priority.
+## Collections
 
-## Curation Boundary
+Collections are flat, reusable query labels. They may describe:
 
-This body of knowledge preserves the useful migrated curriculum as an authoring reference. It is deliberately “good enough,” not frozen or complete. Building real lessons may promote supplemental material, expose missing mappings, or reveal that two objects should be merged. Those changes should be driven by teaching and product evidence rather than by a requirement to perfect every folder before implementation begins.
+- part of speech: `verb`, `noun`, `adjective`, `adverb`;
+- semantic families: `days of the week`, `date`, `time`, `location`;
+- constructions: `followed by full infinitive`, `followed by bare infinitive`, `followed by gerund`, `uses past participle`;
+- transformations and morphology: `transformation: -ful`, `transformation: noun => adjective`, `prefix: be-`;
+- cognate and spelling families, including false cognates;
+- phrasal verbs, including both the lexical root and every stable particle; and
+- pronunciation families and homophones.
+
+Prefer controlled, predictable labels. During curation, merge spelling variants, vague one-off labels, and collections that encode the same idea. Do not introduce a second tag system until demonstrated needs exceed collections.
+
+## Curriculum roles
+
+- `core`: language learners must explicitly master to make basic English function. Frequency alone is insufficient; every concept must earn this role.
+- `supporting`: highly useful, broadly reusable language that directly strengthens Core instruction. This tier is also selective.
+- `reference`: useful but secondary, situational, specialized, readily inferable, or retained for later retrieval.
+
+Promotion and demotion are curation decisions. Deleting genuinely low-value material is expected now that lossless source provenance is secure.
+
+## Curation workflow
+
+1. Select a bounded database slice by role, collection, source family, or suspicious pattern.
+2. Inspect canonical concepts and likely duplicates together.
+3. Delete low-value or malformed concepts, merge true duplicates, normalize retained records, and simplify their collections.
+4. Check that examples remain generic, bilingual, and natural.
+5. Export updated immutable snapshots through the established script when the batch is approved, then run database regression tests and snapshot parity verification.
+
+Do not attempt to perfect all curriculum records before lesson building. Complete the broad correctness and priority pass, then let Module 1 expose the next high-value curation work.
