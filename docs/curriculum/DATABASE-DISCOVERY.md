@@ -2,6 +2,16 @@
 
 This document records the working decisions that emerged while representative curriculum data was discovered in JSON and now continues in PostgreSQL. These are migration checkpoints, not a frozen schema.
 
+## 2026-08-23 — Capture, normalize, and retire remaining structure
+
+- Captured 21 live structure documents plus 52 historical fluency-drill and verb-system documents recovered from commit `7fda3e68`: 73 documents, 56,558 UTF-8 bytes, SHA-256 hashes, and 332 extracted rows. Row dispositions are 21 canonical candidates, 233 bilingual-evidence rows, 77 reference patterns, and 1 source warning.
+- Normalized a 209-concept Spanish-first catalog in the one canonical `curriculum_concepts` table. The transaction added 170 concepts, enriched 39 exact matches without replacing their stronger existing examples, promoted 12 existing roles, and replaced the malformed `o / u -> or`, `comparison que -> than`, and `suficiente / suficientes -> enough` catchalls with atomic records.
+- Stored all 16 comparative and 16 superlative families as transformation relationships using ` ==> ` on both language sides. Collections distinguish comparative versus superlative, one-syllable versus multi-syllable and irregular patterns, spelling behavior, and each searchable word family.
+- Added broad and specific flat collections for connectors and function words, adjective position, degree and quantity, articles and demonstratives, clock time and frequency, conditionals and wishes, auxiliary questions and negatives, progressive and perfect contrasts, the three jobs of **have**, `there be`, and phrasal-verb roots, particles, separability, and object placement.
+- Corrected the historical prohibition evidence during normalization: **estar prohibido [hacer algo] -> must not [do something]** is canonical; the original `No, no debo hacerlo -> mustn't` row remains losslessly archived and explicitly tagged `disposition: source warning` rather than copied as a concept.
+- PostgreSQL now has 405 concepts tagged `structure` across both passes: 75 Core, 129 Supporting, and 201 Reference. These roles remain provisional and can be promoted or demoted in the database after completion-oriented capture.
+- Verified the source archive byte-for-byte, verified all canonical pairs and removal of the three malformed catchalls, exported exact immutable snapshot parity, and retired the complete `docs/curriculum/structure` folder.
+
 ## 2026-08-23 — Capture, normalize, and retire verb forms
 
 - Captured all 51 documents under `structure/verb-forms` verbatim in PostgreSQL: 33,905 UTF-8 bytes, SHA-256 hashes, searchable branch metadata, and 268 extracted rows. Every row has exactly one disposition: 12 canonical candidates, 92 example-evidence rows, 130 reference patterns, and 34 indexes.

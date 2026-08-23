@@ -1,7 +1,7 @@
 # Backlog
 
 > Last updated: 2026-08-23. This file contains current decisions and executable work only. Completed migration detail is preserved in the [curriculum migration log](history/curriculum-migration-log.md).
-> Quick handoff: PostgreSQL is the canonical curriculum store; Lesson Builder remains JSON-backed. The former mappings, cognates, vocabulary, transformations, and structure/verb-forms trees are preserved losslessly in PostgreSQL and its immutable seed snapshot, so normalization and curation now work from the database.
+> Quick handoff: PostgreSQL is the canonical curriculum store; Lesson Builder remains JSON-backed. The former mappings, cognates, vocabulary, transformations, and structure trees are preserved losslessly in PostgreSQL and its immutable seed snapshot, so normalization and curation now work from the database.
 
 ## Current objective
 
@@ -60,13 +60,14 @@ Migrate every useful curriculum concept from `docs/curriculum` into PostgreSQL w
 - [x] Capture, normalize, and retire the entire `docs/curriculum/vocabulary` pillar: preserve all 17 files and 127,594 source bytes verbatim, dispose all 972 extracted rows, normalize 592 single-target concepts with category, semantic, grammatical, phrasal-root, particle, and priority metadata, merge 36 existing concepts, add 556 concepts, verify source and snapshot parity, and delete the source folder.
 - [x] Capture, normalize, and retire the entire `docs/curriculum/transformations` pillar: preserve all 178 documents and 101,277 source bytes verbatim, dispose all 594 extracted rows, normalize 267 explicit relationships plus 45 recognition mappings in the canonical concept table, merge 7 existing concepts, add 305 concepts, verify source and snapshot parity, and delete the source folder.
 - [x] Capture, normalize, and retire `docs/curriculum/structure/verb-forms`: preserve all 51 documents and 33,905 source bytes verbatim, dispose all 268 extracted rows, normalize 199 six-form, selector, usage, and form-relationship concepts, merge 26 existing concepts, add 173 concepts, verify source and snapshot parity, and delete the source folder.
+- [x] Capture, normalize, and retire the remaining `docs/curriculum/structure` pillar: preserve 21 live documents plus 52 historical fluency and verb-system documents, 56,558 source bytes, and 332 extracted rows; normalize 209 connector, comparison-transformation, description, quantity, article, time, conditional, auxiliary, tense, and phrasal-placement concepts; enrich 39 exact matches, add 170 concepts, replace 3 malformed catchalls, verify source and snapshot parity, and delete the source folder.
 - [ ] Normalize the PostgreSQL mappings archive into canonical Spanish-first concepts in broad database-driven passes.
     - [ ] Compare extracted rows with existing concepts and review candidates; link or revise exact matches and flag probable duplicates.
     - [ ] Default uncertain but useful mappings to `reference`; reserve `supporting` and especially `core` for later deliberate promotion.
     - [ ] Normalize infinitives, placeholders, adjective support verbs, examples, phrasal roots and particles, morphemes, and pronunciation families without reopening filesystem sources.
     - [ ] Keep raw source documents immutable while recording extraction and curation progress separately.
 - [ ] Prove the mappings pillar curated: every extracted source row is linked, normalized, deliberately retained as evidence, or explicitly dismissed, with all database tests passing.
-- [ ] Plan the same inventory-to-PostgreSQL process for past and past participle and the remaining structure branches.
+- [ ] Plan the same inventory-to-PostgreSQL process for past and past participle.
 
 ## Paused product work
 

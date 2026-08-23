@@ -99,7 +99,7 @@ test("the imported curriculum is exact and protected", async (context) => {
       counts[concept.curriculumRole] = (counts[concept.curriculumRole] ?? 0) + 1;
       return counts;
     }, {}),
-    { core: 2, supporting: 18, reference: 572 },
+    { core: 4, supporting: 21, reference: 567 },
   );
   assert.deepStrictEqual(
     vocabulary.filter(
@@ -202,13 +202,13 @@ test("the imported curriculum is exact and protected", async (context) => {
   const transformations = actual.curriculum.concepts.filter((concept) =>
     concept.collections.includes("transformation"),
   );
-  assert.equal(transformations.length, 312);
+  assert.equal(transformations.length, 326);
   assert.deepStrictEqual(
     transformations.reduce<Record<string, number>>((counts, concept) => {
       counts[concept.curriculumRole] = (counts[concept.curriculumRole] ?? 0) + 1;
       return counts;
     }, {}),
-    { supporting: 15, reference: 297 },
+    { core: 1, supporting: 24, reference: 301 },
   );
 
   const transformationRelationships = transformations.filter((concept) =>
@@ -217,7 +217,7 @@ test("the imported curriculum is exact and protected", async (context) => {
   const recognitionMappings = transformations.filter(
     (concept) => !concept.collections.includes("transformation relationship"),
   );
-  assert.equal(transformationRelationships.length, 267);
+  assert.equal(transformationRelationships.length, 281);
   assert.equal(recognitionMappings.length, 45);
   assert.deepStrictEqual(
     transformationRelationships.filter(
@@ -316,6 +316,78 @@ test("the imported curriculum is exact and protected", async (context) => {
       "disposition: example evidence": 302,
       "disposition: reference pattern": 7,
       "disposition: index": 69,
+    },
+  );
+
+  const structure = actual.curriculum.concepts.filter((concept) =>
+    concept.collections.includes("structure"),
+  );
+  assert.equal(structure.length, 405);
+  assert.deepStrictEqual(
+    structure.reduce<Record<string, number>>((counts, concept) => {
+      counts[concept.curriculumRole] = (counts[concept.curriculumRole] ?? 0) + 1;
+      return counts;
+    }, {}),
+    { core: 75, supporting: 129, reference: 201 },
+  );
+  assert.equal(
+    structure.filter((concept) => concept.collections.includes("comparative")).length,
+    16,
+  );
+  assert.equal(
+    structure.filter((concept) => concept.collections.includes("superlative")).length,
+    16,
+  );
+  assert.deepStrictEqual(
+    structure.filter(
+      (concept) =>
+        (concept.collections.includes("comparative") ||
+          concept.collections.includes("superlative")) &&
+        (!concept.collections.includes("transformation") ||
+          !concept.collections.includes("transformation relationship") ||
+          concept.spanish.split(" ==> ").length !== 2 ||
+          concept.english.split(" ==> ").length !== 2),
+    ),
+    [],
+    "Comparative and superlative concepts must remain explicit transformation relationships.",
+  );
+  assert.equal(
+    structure.some(
+      (concept) =>
+        concept.spanish === "o / u" ||
+        concept.spanish === "comparison que" ||
+        concept.spanish === "suficiente / suficientes",
+    ),
+    false,
+  );
+
+  const structureDocuments = actual.sources.documents.filter(
+    (document) => document.pillar === "structure",
+  );
+  const structureDocumentPaths = new Set(
+    structureDocuments.map((document) => document.path),
+  );
+  const structureEntries = actual.sources.entries.filter((entry) =>
+    structureDocumentPaths.has(entry.documentPath),
+  );
+  assert.equal(structureDocuments.length, 73);
+  assert.equal(
+    structureDocuments.reduce((total, document) => total + document.byteLength, 0),
+    56_558,
+  );
+  assert.equal(structureEntries.length, 332);
+  assert.deepStrictEqual(
+    structureEntries.reduce<Record<string, number>>((counts, entry) => {
+      const dispositions = entry.tags.filter((tag) => tag.startsWith("disposition:"));
+      assert.equal(dispositions.length, 1);
+      counts[dispositions[0]] = (counts[dispositions[0]] ?? 0) + 1;
+      return counts;
+    }, {}),
+    {
+      "disposition: canonical candidate": 21,
+      "disposition: bilingual evidence": 233,
+      "disposition: reference pattern": 77,
+      "disposition: source warning": 1,
     },
   );
 

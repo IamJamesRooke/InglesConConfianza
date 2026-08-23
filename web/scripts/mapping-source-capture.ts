@@ -44,6 +44,7 @@ function documentMetadata(filePath: string, absoluteRoot: string, pillar: string
   const first = relativeToRoot[0] ?? "root";
   const direction = [
     "cognates",
+    "structure",
     "structure-verb-forms",
     "transformations",
     "vocabulary",
@@ -54,7 +55,7 @@ function documentMetadata(filePath: string, absoluteRoot: string, pillar: string
       : "undirected";
   const hub = pillar === "cognates" || pillar === "transformations"
     ? first
-    : pillar === "structure-verb-forms"
+    : pillar === "structure" || pillar === "structure-verb-forms"
       ? first === "README.md"
         ? "root"
         : first
@@ -78,6 +79,8 @@ function documentMetadata(filePath: string, absoluteRoot: string, pillar: string
       ? "vocabulary source"
       : pillar === "transformations"
         ? "transformation source"
+        : pillar === "structure"
+          ? "structure source"
         : pillar === "structure-verb-forms"
           ? "verb-form source"
         : "mapping source",
@@ -155,7 +158,7 @@ function languageIndexes(headers: string[], direction: string) {
   return { spanish, english };
 }
 
-function extractEntries(
+export function extractMappingSourceEntries(
   documentPath: string,
   content: string,
   documentTags: string[],
@@ -230,7 +233,7 @@ export async function buildSourceArchive(relativeRoot: string, pillar: string): 
       capturedAt: mappingSourceCapturedAt,
     });
     entries.push(
-      ...extractEntries(
+      ...extractMappingSourceEntries(
         documentPath,
         content,
         metadata.tags,

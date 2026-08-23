@@ -4,6 +4,13 @@
 
 The closing professionalization sprint promoted cognates and past forms to curriculum-level pillars in commit `54b4d54`, then replaced 298 vocabulary source files with 16 flat category files plus a preservation manifest in commit `ae0e487`.
 
+## 2026-08-23 — PostgreSQL remaining-structure migration
+
+- Preserved 21 live documents and 52 historical fluency and verb-system documents, totaling 56,558 source bytes and 332 extracted rows, in the immutable PostgreSQL archive.
+- Normalized 209 structure concepts in the canonical table: 170 additions, 39 exact-match enrichments, 12 role promotions, and replacement of 3 malformed catchalls.
+- Kept all comparative and superlative forms as 32 explicit transformation relationships, and added query collections spanning connectors, quantity, articles, time, conditionals, auxiliaries, tense families, and phrasal placement.
+- Verified source and snapshot parity and retired the complete `docs/curriculum/structure` folder. Structure now has 405 canonical concepts across both migration passes.
+
 ## 2026-08-23 — PostgreSQL verb-forms migration
 
 - Preserved all 51 verb-form documents, 33,905 source bytes, and 268 extracted rows in PostgreSQL with exact hashes and one explicit disposition per row.

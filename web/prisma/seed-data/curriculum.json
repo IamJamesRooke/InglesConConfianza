@@ -5408,7 +5408,8 @@
         "verb forms",
         "be + present participle",
         "verb form: present participle",
-        "uses present participle"
+        "uses present participle",
+        "present progressive"
       ],
       "curriculumRole": "core"
     },
@@ -6534,7 +6535,11 @@
         "verb forms",
         "have + past participle",
         "verb form: past participle",
-        "uses past participle"
+        "uses past participle",
+        "present perfect",
+        "have",
+        "three jobs of have",
+        "perfect auxiliary"
       ],
       "curriculumRole": "core"
     },
@@ -9697,7 +9702,11 @@
         "not",
         "inability",
         "contraction",
-        "modal"
+        "modal",
+        "structure",
+        "negative",
+        "can't",
+        "followed by bare infinitive"
       ],
       "curriculumRole": "core"
     },
@@ -9715,9 +9724,13 @@
         "not",
         "inability",
         "formal",
-        "modal"
+        "modal",
+        "structure",
+        "negative",
+        "cannot",
+        "followed by bare infinitive"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "poder-hacer-algo-be-able-to",
@@ -10147,9 +10160,11 @@
         "request",
         "polite request",
         "question",
-        "modal"
+        "modal",
+        "structure",
+        "followed by bare infinitive"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "puede-que-ocurra-algo-may",
@@ -16139,7 +16154,11 @@
       "collections": [
         "sentir",
         "reflexive",
-        "adjective"
+        "adjective",
+        "structure",
+        "adjective position",
+        "linking verb + adjective",
+        "feel + adjective"
       ],
       "curriculumRole": "core"
     },
@@ -17096,7 +17115,11 @@
       },
       "collections": [
         "tener",
-        "possession"
+        "possession",
+        "structure",
+        "have",
+        "three jobs of have",
+        "uses auxiliary do for questions"
       ],
       "curriculumRole": "core"
     },
@@ -17135,7 +17158,10 @@
         "have to",
         "followed by full infinitive",
         "verb form: full infinitive",
-        "uses full infinitive"
+        "uses full infinitive",
+        "have",
+        "three jobs of have",
+        "uses auxiliary do for questions"
       ],
       "curriculumRole": "core"
     },
@@ -21512,9 +21538,15 @@
       },
       "collections": [
         "asi",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "structure",
+        "function word",
+        "connector",
+        "coordinating connector",
+        "result",
+        "so"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "core"
     },
     {
       "id": "asi-no-tengo-tiempo-asi-que-voy-a-hacerlo-manana-i-don-t-have-time-so-i-am-going-to-do-it-tomorrow",
@@ -26551,20 +26583,6 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "o-o-u-or",
-      "spanish": "o / u",
-      "english": "or",
-      "example": {
-        "spanish": "o / u",
-        "english": "or"
-      },
-      "collections": [
-        "o",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "o-quieres-cafe-o-agua-do-you-want-coffee-or-water",
       "spanish": "¿Quieres café o agua?",
       "english": "Do you want coffee or water?",
@@ -27043,20 +27061,6 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "que-comparison-que-than",
-      "spanish": "comparison que",
-      "english": "than",
-      "example": {
-        "spanish": "comparison que",
-        "english": "than"
-      },
-      "collections": [
-        "que",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "que-idea-connector-que-that-or-no-separate-word",
       "spanish": "idea connector que",
       "english": "that or no separate word",
@@ -27215,9 +27219,11 @@
         "transformation",
         "recognition family",
         "prefix: be-",
-        "be-"
+        "be-",
+        "structure",
+        "subordinating connector"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "core"
     },
     {
       "id": "que-porque-since",
@@ -27853,9 +27859,16 @@
       },
       "collections": [
         "si",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "structure",
+        "function word",
+        "connector",
+        "subordinating connector",
+        "condition",
+        "if",
+        "si vs sí"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "core"
     },
     {
       "id": "si-si-whether",
@@ -28291,20 +28304,6 @@
       },
       "collections": [
         "solo",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "suficiente-suficiente-suficientes-enough",
-      "spanish": "suficiente / suficientes",
-      "english": "enough",
-      "example": {
-        "spanish": "suficiente / suficientes",
-        "english": "enough"
-      },
-      "collections": [
-        "suficiente",
         "spanish-to-english catchall"
       ],
       "curriculumRole": "reference"
@@ -29808,9 +29807,11 @@
         "english-to-spanish mappings",
         "vocabulary",
         "function words",
-        "connector"
+        "connector",
+        "structure",
+        "coordinating connector"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "core"
     },
     {
       "id": "siempre-always",
@@ -29829,9 +29830,12 @@
         "transformation",
         "recognition family",
         "prefix: al-",
-        "al-"
+        "al-",
+        "structure",
+        "frequency",
+        "frequency adverb"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "no-dejar-de-hacer-algo-keep-doing-something",
@@ -29900,9 +29904,12 @@
         "y",
         "and",
         "connector",
-        "english-to-spanish mappings"
+        "english-to-spanish mappings",
+        "structure",
+        "function word",
+        "coordinating connector"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "core"
     },
     {
       "id": "e-and",
@@ -29918,9 +29925,12 @@
         "and",
         "connector",
         "before i sound",
-        "english-to-spanish mappings"
+        "english-to-spanish mappings",
+        "structure",
+        "function word",
+        "coordinating connector"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "intentar-hacer-algo-try-to-do-something",
@@ -50950,9 +50960,14 @@
         "ordinal number",
         "order",
         "date",
-        "number"
+        "number",
+        "structure",
+        "time",
+        "sequence",
+        "order word",
+        "first"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "vocabulary-segundo-second-26c03082fd",
@@ -50968,7 +50983,13 @@
         "ordinal number",
         "order",
         "date",
-        "number"
+        "number",
+        "structure",
+        "time",
+        "sequence",
+        "order word",
+        "second",
+        "second ambiguity"
       ],
       "curriculumRole": "reference"
     },
@@ -50986,7 +51007,12 @@
         "ordinal number",
         "order",
         "date",
-        "number"
+        "number",
+        "structure",
+        "time",
+        "sequence",
+        "order word",
+        "third"
       ],
       "curriculumRole": "reference"
     },
@@ -52348,9 +52374,12 @@
         "phrasal verb",
         "turn",
         "off",
-        "verb"
+        "verb",
+        "structure",
+        "separable phrasal verb",
+        "noun object after particle"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "vocabulary-apagar-un-dispositivo-to-shut-down-a-device-816ba33920",
@@ -53803,9 +53832,15 @@
         "vocabulary",
         "verbs and actions",
         "cuidar",
-        "verb"
+        "verb",
+        "structure",
+        "phrasal verb",
+        "look",
+        "after",
+        "inseparable phrasal verb",
+        "dictionary check"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "vocabulary-cuidar-algo-to-watch-something-29e13fa705",
@@ -56828,7 +56863,11 @@
         "time words",
         "time",
         "duration",
-        "noun"
+        "noun",
+        "structure",
+        "time unit",
+        "hour",
+        "an before vowel sound"
       ],
       "curriculumRole": "reference"
     },
@@ -60803,7 +60842,11 @@
         "-er",
         "suffix: -er",
         "productive transformation",
-        "comparative"
+        "comparative",
+        "structure",
+        "comparison",
+        "hard",
+        "comparison pattern: one syllable"
       ],
       "curriculumRole": "supporting"
     },
@@ -60824,7 +60867,11 @@
         "-est",
         "suffix: -est",
         "productive transformation",
-        "superlative"
+        "superlative",
+        "structure",
+        "comparison",
+        "hard",
+        "comparison pattern: one syllable"
       ],
       "curriculumRole": "supporting"
     },
@@ -60845,7 +60892,11 @@
         "-er",
         "suffix: -er",
         "productive transformation",
-        "comparative"
+        "comparative",
+        "structure",
+        "comparison",
+        "fast",
+        "comparison pattern: one syllable"
       ],
       "curriculumRole": "reference"
     },
@@ -60866,7 +60917,11 @@
         "-est",
         "suffix: -est",
         "productive transformation",
-        "superlative"
+        "superlative",
+        "structure",
+        "comparison",
+        "fast",
+        "comparison pattern: one syllable"
       ],
       "curriculumRole": "reference"
     },
@@ -60887,7 +60942,11 @@
         "-er",
         "suffix: -er",
         "productive transformation",
-        "comparative"
+        "comparative",
+        "structure",
+        "comparison",
+        "slow",
+        "comparison pattern: one syllable"
       ],
       "curriculumRole": "reference"
     },
@@ -60908,7 +60967,11 @@
         "-est",
         "suffix: -est",
         "productive transformation",
-        "superlative"
+        "superlative",
+        "structure",
+        "comparison",
+        "slow",
+        "comparison pattern: one syllable"
       ],
       "curriculumRole": "reference"
     },
@@ -60929,7 +60992,11 @@
         "-er",
         "suffix: -er",
         "productive transformation",
-        "comparative"
+        "comparative",
+        "structure",
+        "comparison",
+        "cheap",
+        "comparison pattern: one syllable"
       ],
       "curriculumRole": "reference"
     },
@@ -60950,7 +61017,11 @@
         "-est",
         "suffix: -est",
         "productive transformation",
-        "superlative"
+        "superlative",
+        "structure",
+        "comparison",
+        "cheap",
+        "comparison pattern: one syllable"
       ],
       "curriculumRole": "reference"
     },
@@ -60971,7 +61042,12 @@
         "-er",
         "suffix: -er",
         "productive transformation",
-        "comparative"
+        "comparative",
+        "structure",
+        "comparison",
+        "safe",
+        "comparison pattern: one syllable",
+        "spelling: final e"
       ],
       "curriculumRole": "reference"
     },
@@ -60992,7 +61068,12 @@
         "-est",
         "suffix: -est",
         "productive transformation",
-        "superlative"
+        "superlative",
+        "structure",
+        "comparison",
+        "safe",
+        "comparison pattern: one syllable",
+        "spelling: final e"
       ],
       "curriculumRole": "reference"
     },
@@ -61013,7 +61094,12 @@
         "-er",
         "suffix: -er",
         "productive transformation",
-        "comparative"
+        "comparative",
+        "structure",
+        "comparison",
+        "funny",
+        "comparison pattern: consonant + y",
+        "spelling: y => i"
       ],
       "curriculumRole": "reference"
     },
@@ -61034,7 +61120,12 @@
         "-est",
         "suffix: -est",
         "productive transformation",
-        "superlative"
+        "superlative",
+        "structure",
+        "comparison",
+        "funny",
+        "comparison pattern: consonant + y",
+        "spelling: y => i"
       ],
       "curriculumRole": "reference"
     },
@@ -61055,7 +61146,12 @@
         "-er",
         "suffix: -er",
         "productive transformation",
-        "comparative"
+        "comparative",
+        "structure",
+        "comparison",
+        "happy",
+        "comparison pattern: consonant + y",
+        "spelling: y => i"
       ],
       "curriculumRole": "reference"
     },
@@ -61076,7 +61172,12 @@
         "-est",
         "suffix: -est",
         "productive transformation",
-        "superlative"
+        "superlative",
+        "structure",
+        "comparison",
+        "happy",
+        "comparison pattern: consonant + y",
+        "spelling: y => i"
       ],
       "curriculumRole": "reference"
     },
@@ -61097,7 +61198,12 @@
         "-er",
         "suffix: -er",
         "productive transformation",
-        "comparative"
+        "comparative",
+        "structure",
+        "comparison",
+        "easy",
+        "comparison pattern: consonant + y",
+        "spelling: y => i"
       ],
       "curriculumRole": "supporting"
     },
@@ -61118,7 +61224,12 @@
         "-est",
         "suffix: -est",
         "productive transformation",
-        "superlative"
+        "superlative",
+        "structure",
+        "comparison",
+        "easy",
+        "comparison pattern: consonant + y",
+        "spelling: y => i"
       ],
       "curriculumRole": "supporting"
     },
@@ -61139,7 +61250,12 @@
         "-er",
         "suffix: -er",
         "productive transformation",
-        "comparative"
+        "comparative",
+        "structure",
+        "comparison",
+        "big",
+        "comparison pattern: one syllable",
+        "spelling: double final consonant"
       ],
       "curriculumRole": "reference"
     },
@@ -61160,7 +61276,12 @@
         "-est",
         "suffix: -est",
         "productive transformation",
-        "superlative"
+        "superlative",
+        "structure",
+        "comparison",
+        "big",
+        "comparison pattern: one syllable",
+        "spelling: double final consonant"
       ],
       "curriculumRole": "reference"
     },
@@ -67192,6 +67313,3070 @@
         "followed by full infinitive",
         "verb form: full infinitive",
         "uses full infinitive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-eda34b34a00237d7",
+      "spanish": "o",
+      "english": "or",
+      "example": {
+        "spanish": "¿Café o té?",
+        "english": "Coffee or tea?"
+      },
+      "collections": [
+        "structure",
+        "function word",
+        "connector",
+        "coordinating connector",
+        "or"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-85dcb5a8cad408ef",
+      "spanish": "u",
+      "english": "or",
+      "example": {
+        "spanish": "¿Siete u ocho?",
+        "english": "Seven or eight?"
+      },
+      "collections": [
+        "structure",
+        "function word",
+        "connector",
+        "coordinating connector",
+        "or",
+        "before o sound"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-0d0a1de909cacce2",
+      "spanish": "que (comparación)",
+      "english": "than",
+      "example": {
+        "spanish": "Laura es más rápida que Diana.",
+        "english": "Laura is faster than Diana."
+      },
+      "collections": [
+        "structure",
+        "function word",
+        "connector",
+        "comparison connector",
+        "than"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-59dc92c8b2fb539b",
+      "spanish": "que (cláusula)",
+      "english": "that",
+      "example": {
+        "spanish": "Creo que es importante.",
+        "english": "I think that it is important."
+      },
+      "collections": [
+        "structure",
+        "function word",
+        "connector",
+        "clause connector",
+        "that"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-c1fcfd03b741d36d",
+      "spanish": "cuando (conector)",
+      "english": "when",
+      "example": {
+        "spanish": "Llámame cuando llegues.",
+        "english": "Call me when you arrive."
+      },
+      "collections": [
+        "structure",
+        "function word",
+        "connector",
+        "time connector",
+        "when",
+        "cuando vs cuándo"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-f7b0e00272619843",
+      "spanish": "mientras",
+      "english": "while",
+      "example": {
+        "spanish": "Trabaja mientras esperas.",
+        "english": "Work while you wait."
+      },
+      "collections": [
+        "structure",
+        "function word",
+        "connector",
+        "time connector",
+        "while"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-306c776f11b9c56e",
+      "spanish": "antes de que [ocurra algo]",
+      "english": "before [something happens]",
+      "example": {
+        "spanish": "Llámame antes de que salgas.",
+        "english": "Call me before you leave."
+      },
+      "collections": [
+        "structure",
+        "connector",
+        "time connector",
+        "before"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-a2d2f0960679ad6d",
+      "spanish": "después de que [ocurra algo]",
+      "english": "after [something happens]",
+      "example": {
+        "spanish": "Llámame después de que llegues.",
+        "english": "Call me after you arrive."
+      },
+      "collections": [
+        "structure",
+        "connector",
+        "time connector",
+        "after"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-495d3a66f30a8873",
+      "spanish": "aunque [ocurra algo]",
+      "english": "although [something happens]",
+      "example": {
+        "spanish": "Aunque llueva, iremos.",
+        "english": "Although it rains, we will go."
+      },
+      "collections": [
+        "structure",
+        "connector",
+        "contrast",
+        "concession",
+        "although"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-e0f7980775429777",
+      "spanish": "a menos que [ocurra algo]",
+      "english": "unless [something happens]",
+      "example": {
+        "spanish": "No firmaré a menos que entienda.",
+        "english": "I won't sign unless I understand."
+      },
+      "collections": [
+        "structure",
+        "connector",
+        "condition",
+        "unless"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-6bf67b065cf53067",
+      "spanish": "siempre y cuando [ocurra algo]",
+      "english": "as long as [something happens]",
+      "example": {
+        "spanish": "Puedes quedarte siempre y cuando cierres la puerta.",
+        "english": "You can stay as long as you lock the door."
+      },
+      "collections": [
+        "structure",
+        "connector",
+        "condition",
+        "as long as"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-66f238dd6a9b6de4",
+      "spanish": "con tal de que [ocurra algo]",
+      "english": "provided that [something happens]",
+      "example": {
+        "spanish": "Firmaremos con tal de que todos estén de acuerdo.",
+        "english": "We will sign provided that everyone agrees."
+      },
+      "collections": [
+        "structure",
+        "connector",
+        "condition",
+        "provided that",
+        "formal"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-4bdeab7c936e499c",
+      "spanish": "incluso si [ocurre algo]",
+      "english": "even if [something happens]",
+      "example": {
+        "spanish": "Incluso si llueve, jugaremos.",
+        "english": "Even if it rains, we will play."
+      },
+      "collections": [
+        "structure",
+        "connector",
+        "condition",
+        "concession",
+        "even if"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-b40826ec55b9b845",
+      "spanish": "por si [ocurre algo]",
+      "english": "in case [something happens]",
+      "example": {
+        "spanish": "Lleva un paraguas por si llueve.",
+        "english": "Take an umbrella in case it rains."
+      },
+      "collections": [
+        "structure",
+        "connector",
+        "condition",
+        "precaution",
+        "in case"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-392b85863ee59243",
+      "spanish": "un segundo",
+      "english": "a second",
+      "example": {
+        "spanish": "Espera un segundo.",
+        "english": "Wait a second."
+      },
+      "collections": [
+        "structure",
+        "time",
+        "time unit",
+        "second",
+        "noun"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-df530104b6352a31",
+      "spanish": "un minuto",
+      "english": "a minute",
+      "example": {
+        "spanish": "Espera un minuto.",
+        "english": "Wait a minute."
+      },
+      "collections": [
+        "structure",
+        "time",
+        "time unit",
+        "minute",
+        "noun"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-0d70b161fd1e8db6",
+      "spanish": "la hora",
+      "english": "the time",
+      "example": {
+        "spanish": "¿Sabes la hora?",
+        "english": "Do you know the time?"
+      },
+      "collections": [
+        "structure",
+        "time",
+        "clock time",
+        "the time",
+        "noun"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-ceb661633ef002fb",
+      "spanish": "tiempo",
+      "english": "time",
+      "example": {
+        "spanish": "Necesito más tiempo.",
+        "english": "I need more time."
+      },
+      "collections": [
+        "structure",
+        "time",
+        "duration",
+        "uncountable noun",
+        "noun"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-7b92c03be4440afc",
+      "spanish": "¿qué hora es?",
+      "english": "what time is it?",
+      "example": {
+        "spanish": "¿Qué hora es?",
+        "english": "What time is it?"
+      },
+      "collections": [
+        "structure",
+        "time",
+        "clock time",
+        "question",
+        "what time"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-e291c4738ba49f57",
+      "spanish": "son las [hora]",
+      "english": "it's [time]",
+      "example": {
+        "spanish": "Son las doce.",
+        "english": "It's twelve o'clock."
+      },
+      "collections": [
+        "structure",
+        "time",
+        "clock time",
+        "telling time",
+        "it is"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-e1d6d5cb5669f521",
+      "spanish": "son las [hora y minutos]",
+      "english": "it's [hour and minutes]",
+      "example": {
+        "spanish": "Son las doce y treinta.",
+        "english": "It's twelve thirty."
+      },
+      "collections": [
+        "structure",
+        "time",
+        "clock time",
+        "telling time",
+        "it is"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-34bab09541155670",
+      "spanish": "ser mediodía",
+      "english": "to be noon",
+      "example": {
+        "spanish": "Es mediodía.",
+        "english": "It's noon."
+      },
+      "collections": [
+        "structure",
+        "time",
+        "clock time",
+        "noon"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-6f420f60aa68786e",
+      "spanish": "ser medianoche",
+      "english": "to be midnight",
+      "example": {
+        "spanish": "Es medianoche.",
+        "english": "It's midnight."
+      },
+      "collections": [
+        "structure",
+        "time",
+        "clock time",
+        "midnight"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-28ee86791be8c748",
+      "spanish": "a las [hora]",
+      "english": "at [time]",
+      "example": {
+        "spanish": "La reunión es a las doce.",
+        "english": "The meeting is at twelve."
+      },
+      "collections": [
+        "structure",
+        "time",
+        "clock time",
+        "at + clock time",
+        "a => at",
+        "at"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-95c7f5c5c7d14330",
+      "spanish": "nunca",
+      "english": "never",
+      "example": {
+        "spanish": "Nunca llego tarde.",
+        "english": "I never arrive late."
+      },
+      "collections": [
+        "structure",
+        "time",
+        "frequency",
+        "adverb",
+        "frequency adverb",
+        "never"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-e0c66bf7bf2f8fc9",
+      "spanish": "casi nunca",
+      "english": "almost never",
+      "example": {
+        "spanish": "Casi nunca llego tarde.",
+        "english": "I almost never arrive late."
+      },
+      "collections": [
+        "structure",
+        "time",
+        "frequency",
+        "adverb",
+        "frequency adverb",
+        "almost never"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-34dfd28de01cf29e",
+      "spanish": "a veces",
+      "english": "sometimes",
+      "example": {
+        "spanish": "A veces llego tarde.",
+        "english": "I sometimes arrive late."
+      },
+      "collections": [
+        "structure",
+        "time",
+        "frequency",
+        "adverb",
+        "frequency adverb",
+        "sometimes"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-324ffe6764c1179e",
+      "spanish": "a menudo",
+      "english": "often",
+      "example": {
+        "spanish": "A menudo llego temprano.",
+        "english": "I often arrive early."
+      },
+      "collections": [
+        "structure",
+        "time",
+        "frequency",
+        "adverb",
+        "frequency adverb",
+        "often"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-3a0a93e84798dce0",
+      "spanish": "con frecuencia",
+      "english": "often",
+      "example": {
+        "spanish": "Llamo con frecuencia.",
+        "english": "I often call."
+      },
+      "collections": [
+        "structure",
+        "time",
+        "frequency",
+        "adverb",
+        "frequency adverb",
+        "often"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-47564dd74ecaf2f7",
+      "spanish": "casi siempre",
+      "english": "almost always",
+      "example": {
+        "spanish": "Casi siempre está aquí.",
+        "english": "She is almost always here."
+      },
+      "collections": [
+        "structure",
+        "time",
+        "frequency",
+        "adverb",
+        "frequency adverb",
+        "almost always"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-bc0aeae4633d7b14",
+      "spanish": "[adverbio de frecuencia] [verbo principal]",
+      "english": "[frequency adverb] [main verb]",
+      "example": {
+        "spanish": "Siempre preparo café.",
+        "english": "I always make coffee."
+      },
+      "collections": [
+        "structure",
+        "time",
+        "frequency",
+        "frequency adverb position",
+        "before main verb"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-643cc8212257fd15",
+      "spanish": "ser [adverbio de frecuencia] [estado]",
+      "english": "to be [frequency adverb] [state]",
+      "example": {
+        "spanish": "Ella casi siempre está aquí.",
+        "english": "She is almost always here."
+      },
+      "collections": [
+        "structure",
+        "time",
+        "frequency",
+        "frequency adverb position",
+        "after be"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-5261118813485578",
+      "spanish": "todos los días",
+      "english": "every day",
+      "example": {
+        "spanish": "Trabajo todos los días.",
+        "english": "I work every day."
+      },
+      "collections": [
+        "structure",
+        "time",
+        "frequency",
+        "repeated period",
+        "every day"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-959fc52d6910132d",
+      "spanish": "todo el día",
+      "english": "all day",
+      "example": {
+        "spanish": "Trabajo todo el día.",
+        "english": "I work all day."
+      },
+      "collections": [
+        "structure",
+        "time",
+        "duration",
+        "continuous period",
+        "all day"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-44f4aae2f4e8e13d",
+      "spanish": "todas las semanas",
+      "english": "every week",
+      "example": {
+        "spanish": "Llamo todas las semanas.",
+        "english": "I call every week."
+      },
+      "collections": [
+        "structure",
+        "time",
+        "frequency",
+        "repeated period",
+        "every week"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-d0d26294a1bcbbd3",
+      "spanish": "toda la semana",
+      "english": "all week",
+      "example": {
+        "spanish": "Trabajo toda la semana.",
+        "english": "I work all week."
+      },
+      "collections": [
+        "structure",
+        "time",
+        "duration",
+        "continuous period",
+        "all week"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-fd8bf7fc099d0ab5",
+      "spanish": "próximo/a",
+      "english": "next",
+      "example": {
+        "spanish": "La próxima reunión es a las tres.",
+        "english": "The next meeting is at three."
+      },
+      "collections": [
+        "structure",
+        "time",
+        "sequence",
+        "order word",
+        "next",
+        "adjective"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-89a8280bde3747ca",
+      "spanish": "siguiente",
+      "english": "next",
+      "example": {
+        "spanish": "La siguiente reunión es a las tres.",
+        "english": "The next meeting is at three."
+      },
+      "collections": [
+        "structure",
+        "time",
+        "sequence",
+        "order word",
+        "next",
+        "adjective"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-2c7396a4d94c787a",
+      "spanish": "último/a",
+      "english": "last",
+      "example": {
+        "spanish": "Esta es la última reunión.",
+        "english": "This is the last meeting."
+      },
+      "collections": [
+        "structure",
+        "time",
+        "sequence",
+        "order word",
+        "last",
+        "adjective"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-1ef05171084a8076",
+      "spanish": "el presente",
+      "english": "the present",
+      "example": {
+        "spanish": "Necesito hacerlo en el presente.",
+        "english": "I need to do it in the present."
+      },
+      "collections": [
+        "structure",
+        "time",
+        "time and tense",
+        "present",
+        "noun"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-7bd9f0d2f72dd1b4",
+      "spanish": "el futuro",
+      "english": "the future",
+      "example": {
+        "spanish": "Voy a hacerlo en el futuro.",
+        "english": "I am going to do it in the future."
+      },
+      "collections": [
+        "structure",
+        "time",
+        "time and tense",
+        "future",
+        "noun"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-58118d10e2eba90a",
+      "spanish": "tiempo pasado",
+      "english": "past time",
+      "example": {
+        "spanish": "Eso ocurrió en el pasado.",
+        "english": "That happened in past time."
+      },
+      "collections": [
+        "structure",
+        "time",
+        "time and tense",
+        "past time"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-0d78ee3daccee46d",
+      "spanish": "tiempo presente",
+      "english": "present time",
+      "example": {
+        "spanish": "Esto ocurre en el presente.",
+        "english": "This happens in present time."
+      },
+      "collections": [
+        "structure",
+        "time",
+        "time and tense",
+        "present time"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-888bc09b8fd1c9c5",
+      "spanish": "tiempo futuro",
+      "english": "future time",
+      "example": {
+        "spanish": "Eso ocurrirá en el futuro.",
+        "english": "That will happen in future time."
+      },
+      "collections": [
+        "structure",
+        "time",
+        "time and tense",
+        "future time"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-07d0f2c3b155e85e",
+      "spanish": "tiempo verbal",
+      "english": "verb tense",
+      "example": {
+        "spanish": "El presente es un tiempo verbal.",
+        "english": "The present is a verb tense."
+      },
+      "collections": [
+        "structure",
+        "time",
+        "time and tense",
+        "grammar term",
+        "tense"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-c2cfc4777d80bb16",
+      "spanish": "si [ocurre algo], [ocurre un resultado general]",
+      "english": "if [something happens], [a general result happens]",
+      "example": {
+        "spanish": "Si presionas este botón, la pantalla se apaga.",
+        "english": "If you press this button, the screen turns off."
+      },
+      "collections": [
+        "structure",
+        "conditional",
+        "zero conditional",
+        "general condition",
+        "present + present",
+        "if clause"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-5b169170390ada15",
+      "spanish": "si [ocurre algo], [ocurrirá un resultado]",
+      "english": "if [something happens], [a result] will [happen]",
+      "example": {
+        "spanish": "Si ella llama, le contaré lo que pasó.",
+        "english": "If she calls, I will tell her what happened."
+      },
+      "collections": [
+        "structure",
+        "conditional",
+        "first conditional",
+        "real future condition",
+        "present + will",
+        "if clause"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-88ea1deeff782ed3",
+      "spanish": "si [ocurriera algo], [ocurriría un resultado]",
+      "english": "if [something happened], [a result] would [happen]",
+      "example": {
+        "spanish": "Si tuviera tiempo, terminaría el informe.",
+        "english": "If I had time, I would finish the report."
+      },
+      "collections": [
+        "structure",
+        "conditional",
+        "second conditional",
+        "hypothetical condition",
+        "past form + would",
+        "if clause"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-a20ef9d816fa5ddb",
+      "spanish": "si fuera [alguien], [haría algo]",
+      "english": "if I were [somebody], I would [do something]",
+      "example": {
+        "spanish": "Si yo fuera tú, no aceptaría la oferta.",
+        "english": "If I were you, I would not accept the offer."
+      },
+      "collections": [
+        "structure",
+        "conditional",
+        "second conditional",
+        "hypothetical condition",
+        "if I were you",
+        "subjunctive were"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-f41b21f2d2579cce",
+      "spanish": "si hubiera [ocurrido algo], habría [ocurrido un resultado]",
+      "english": "if [something] had [happened], [a result] would have [happened]",
+      "example": {
+        "spanish": "Si me hubieras llamado, te habría ayudado.",
+        "english": "If you had called me, I would have helped you."
+      },
+      "collections": [
+        "structure",
+        "conditional",
+        "third conditional",
+        "impossible past",
+        "past perfect + would have",
+        "if clause",
+        "uses past participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-06d97545cca1c443",
+      "spanish": "si hubiera [ocurrido algo], ahora [ocurriría un resultado]",
+      "english": "if [something] had [happened], [a result] would [happen] now",
+      "example": {
+        "spanish": "Si hubiera aceptado el trabajo, ahora viviría en Medellín.",
+        "english": "If I had accepted the job, I would live in Medellín now."
+      },
+      "collections": [
+        "structure",
+        "conditional",
+        "mixed conditional",
+        "past condition + present result",
+        "if clause"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-70e335b82d20c61b",
+      "spanish": "si [una situación fuera diferente], habría [ocurrido otro resultado]",
+      "english": "if [a situation were different], [another result] would have [happened]",
+      "example": {
+        "spanish": "Si fuera más organizado, no habría perdido la fecha límite.",
+        "english": "If I were more organized, I would not have missed the deadline."
+      },
+      "collections": [
+        "structure",
+        "conditional",
+        "mixed conditional",
+        "present condition + past result",
+        "if clause"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-2925798c703eb6c0",
+      "spanish": "ojalá tuviera [algo]",
+      "english": "I wish I had [something]",
+      "example": {
+        "spanish": "Ojalá tuviera más tiempo.",
+        "english": "I wish I had more time."
+      },
+      "collections": [
+        "structure",
+        "wish",
+        "present wish",
+        "past form for distance",
+        "hypothetical"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-3ffb1478a273e303",
+      "spanish": "ojalá pudiera [hacer algo]",
+      "english": "if only I could [do something]",
+      "example": {
+        "spanish": "Ojalá pudiera hacerlo.",
+        "english": "If only I could do it."
+      },
+      "collections": [
+        "structure",
+        "wish",
+        "if only",
+        "present wish",
+        "past form for distance",
+        "hypothetical"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-8e24b6c53f7baaa1",
+      "spanish": "ojalá hubiera [hecho algo]",
+      "english": "I wish I had [done something]",
+      "example": {
+        "spanish": "Ojalá hubiera leído el contrato.",
+        "english": "I wish I had read the contract."
+      },
+      "collections": [
+        "structure",
+        "wish",
+        "past regret",
+        "past perfect",
+        "uses past participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-1ecdbe4a72f49fdc",
+      "spanish": "ojalá [alguien] cambiara [una conducta]",
+      "english": "I wish [somebody] would change [a behavior]",
+      "example": {
+        "spanish": "Ojalá dejaran de hacer tanto ruido.",
+        "english": "I wish they would stop making so much noise."
+      },
+      "collections": [
+        "structure",
+        "wish",
+        "desired change",
+        "wish + would"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-a105bf4cbf7a7bb6",
+      "spanish": "¿[haces algo]?",
+      "english": "do you [do something]?",
+      "example": {
+        "spanish": "¿Lo haces?",
+        "english": "Do you do it?"
+      },
+      "collections": [
+        "structure",
+        "auxiliary do",
+        "question",
+        "present",
+        "do",
+        "direct question",
+        "followed by bare infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-f52e54c5500b2107",
+      "spanish": "¿[alguien] [hace algo]?",
+      "english": "does [somebody] [do something]?",
+      "example": {
+        "spanish": "¿Ella lo hace?",
+        "english": "Does she do it?"
+      },
+      "collections": [
+        "structure",
+        "auxiliary do",
+        "question",
+        "third-person present",
+        "does",
+        "direct question",
+        "followed by bare infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-b763399233754cd7",
+      "spanish": "¿[alguien] [hizo algo]?",
+      "english": "did [somebody] [do something]?",
+      "example": {
+        "spanish": "¿Ellos lo hicieron?",
+        "english": "Did they do it?"
+      },
+      "collections": [
+        "structure",
+        "auxiliary do",
+        "question",
+        "past",
+        "did",
+        "direct question",
+        "followed by bare infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-d1f473ce9388804d",
+      "spanish": "no [hago algo]",
+      "english": "I don't [do something]",
+      "example": {
+        "spanish": "No lo hago.",
+        "english": "I don't do it."
+      },
+      "collections": [
+        "structure",
+        "auxiliary do",
+        "negative",
+        "present",
+        "do",
+        "contraction",
+        "don't",
+        "followed by bare infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-abd5e0ba08993397",
+      "spanish": "[alguien] no [hace algo]",
+      "english": "[somebody] doesn't [do something]",
+      "example": {
+        "spanish": "Ella no lo hace.",
+        "english": "She doesn't do it."
+      },
+      "collections": [
+        "structure",
+        "auxiliary do",
+        "negative",
+        "third-person present",
+        "does",
+        "contraction",
+        "doesn't",
+        "followed by bare infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-43a05a09e4b36142",
+      "spanish": "[alguien] no [hizo algo]",
+      "english": "[somebody] didn't [do something]",
+      "example": {
+        "spanish": "Ellos no lo hicieron.",
+        "english": "They didn't do it."
+      },
+      "collections": [
+        "structure",
+        "auxiliary do",
+        "negative",
+        "past",
+        "did",
+        "contraction",
+        "didn't",
+        "followed by bare infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-0205815fd0521530",
+      "spanish": "sí [hago algo] (énfasis)",
+      "english": "I do [do something]",
+      "example": {
+        "spanish": "Sí, sí lo hago.",
+        "english": "I do do it."
+      },
+      "collections": [
+        "structure",
+        "auxiliary do",
+        "emphatic affirmative",
+        "present",
+        "stressed do"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-e21a96f9068b619e",
+      "spanish": "sí [alguien] [hizo algo] (énfasis)",
+      "english": "[somebody] did [do something]",
+      "example": {
+        "spanish": "Sí, ellos sí lo hicieron.",
+        "english": "They did do it."
+      },
+      "collections": [
+        "structure",
+        "auxiliary do",
+        "emphatic affirmative",
+        "past",
+        "stressed did"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-dec4d688e73180a5",
+      "spanish": "querer saber si [alguien] [hace algo]",
+      "english": "to want to know if [somebody] [does something]",
+      "example": {
+        "spanish": "Quiero saber si él lo hace.",
+        "english": "I want to know if he does it."
+      },
+      "collections": [
+        "structure",
+        "embedded question",
+        "if clause",
+        "statement order",
+        "auxiliary do"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-56db96eacbb7f917",
+      "spanish": "querer saber por qué [alguien] no [hace algo]",
+      "english": "to want to know why [somebody] doesn't [do something]",
+      "example": {
+        "spanish": "Quiero saber por qué él no lo hace.",
+        "english": "I want to know why he doesn't do it."
+      },
+      "collections": [
+        "structure",
+        "embedded question",
+        "why clause",
+        "statement order",
+        "auxiliary do"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-da551429ef673c08",
+      "spanish": "¿has [hecho algo]?",
+      "english": "have you [done something]?",
+      "example": {
+        "spanish": "¿Lo has hecho?",
+        "english": "Have you done it?"
+      },
+      "collections": [
+        "structure",
+        "perfect",
+        "present perfect",
+        "have",
+        "question",
+        "direct question",
+        "uses past participle"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-abfa55cd4ab7ed85",
+      "spanish": "¿[alguien] ha [hecho algo]?",
+      "english": "has [somebody] [done something]?",
+      "example": {
+        "spanish": "¿Él lo ha hecho?",
+        "english": "Has he done it?"
+      },
+      "collections": [
+        "structure",
+        "perfect",
+        "present perfect",
+        "has",
+        "question",
+        "direct question",
+        "uses past participle"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-167e51f9fb22176d",
+      "spanish": "¿[alguien] había [hecho algo]?",
+      "english": "had [somebody] [done something]?",
+      "example": {
+        "spanish": "¿Ellos lo habían hecho?",
+        "english": "Had they done it?"
+      },
+      "collections": [
+        "structure",
+        "perfect",
+        "past perfect",
+        "had",
+        "question",
+        "direct question",
+        "uses past participle"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-a70f884162788ab1",
+      "spanish": "no haber [hecho algo]",
+      "english": "not to have [done something]",
+      "example": {
+        "spanish": "No lo he hecho.",
+        "english": "I have not done it."
+      },
+      "collections": [
+        "structure",
+        "perfect",
+        "negative",
+        "have not",
+        "uses past participle"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-cefcec26d235ce2a",
+      "spanish": "no haber [hecho algo] (hablado)",
+      "english": "haven't [done something]",
+      "example": {
+        "spanish": "No lo he hecho.",
+        "english": "I haven't done it."
+      },
+      "collections": [
+        "structure",
+        "perfect",
+        "negative",
+        "contraction",
+        "haven't",
+        "uses past participle"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-4426111ca95a3420",
+      "spanish": "[alguien] estaba [haciendo algo]",
+      "english": "[somebody] was [doing something]",
+      "example": {
+        "spanish": "Lo estaba haciendo.",
+        "english": "I was doing it."
+      },
+      "collections": [
+        "structure",
+        "progressive",
+        "past progressive",
+        "be + present participle",
+        "uses present participle"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-35459934ce7ed37d",
+      "spanish": "[alguien] estará [haciendo algo]",
+      "english": "[somebody] will be [doing something]",
+      "example": {
+        "spanish": "Lo estará haciendo.",
+        "english": "She will be doing it."
+      },
+      "collections": [
+        "structure",
+        "progressive",
+        "future progressive",
+        "will be + present participle",
+        "uses present participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-a3139039c42fa0d5",
+      "spanish": "[alguien] estaría [haciendo algo]",
+      "english": "[somebody] would be [doing something]",
+      "example": {
+        "spanish": "Lo estaría haciendo.",
+        "english": "She would be doing it."
+      },
+      "collections": [
+        "structure",
+        "progressive",
+        "conditional progressive",
+        "would be + present participle",
+        "uses present participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-09967cb7767dca0b",
+      "spanish": "[alguien] había [hecho algo]",
+      "english": "[somebody] had [done something]",
+      "example": {
+        "spanish": "Lo había hecho.",
+        "english": "I had done it."
+      },
+      "collections": [
+        "structure",
+        "perfect",
+        "past perfect",
+        "had + past participle",
+        "uses past participle"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-643fa87f40b99b8f",
+      "spanish": "[alguien] habrá [hecho algo]",
+      "english": "[somebody] will have [done something]",
+      "example": {
+        "spanish": "Lo habrá hecho.",
+        "english": "She will have done it."
+      },
+      "collections": [
+        "structure",
+        "perfect",
+        "future perfect",
+        "will have + past participle",
+        "uses past participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-a0be21c209102def",
+      "spanish": "[alguien] habría [hecho algo]",
+      "english": "[somebody] would have [done something]",
+      "example": {
+        "spanish": "Lo habría hecho.",
+        "english": "She would have done it."
+      },
+      "collections": [
+        "structure",
+        "perfect",
+        "conditional perfect",
+        "would have + past participle",
+        "uses past participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-15bedab501e47eca",
+      "spanish": "haber estado [haciendo algo]",
+      "english": "to have been [doing something]",
+      "example": {
+        "spanish": "Lo he estado haciendo.",
+        "english": "I have been doing it."
+      },
+      "collections": [
+        "structure",
+        "perfect progressive",
+        "present perfect progressive",
+        "have been + present participle",
+        "uses past participle",
+        "uses present participle"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-18c187c850867e7d",
+      "spanish": "[alguien] había estado [haciendo algo]",
+      "english": "[somebody] had been [doing something]",
+      "example": {
+        "spanish": "Lo había estado haciendo.",
+        "english": "I had been doing it."
+      },
+      "collections": [
+        "structure",
+        "perfect progressive",
+        "past perfect progressive",
+        "had been + present participle",
+        "uses past participle",
+        "uses present participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-5a780d72cffa8227",
+      "spanish": "[alguien] habrá estado [haciendo algo]",
+      "english": "[somebody] will have been [doing something]",
+      "example": {
+        "spanish": "Lo habrá estado haciendo.",
+        "english": "She will have been doing it."
+      },
+      "collections": [
+        "structure",
+        "perfect progressive",
+        "future perfect progressive",
+        "will have been + present participle",
+        "uses past participle",
+        "uses present participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-d0189c519d0d9264",
+      "spanish": "[alguien] habría estado [haciendo algo]",
+      "english": "[somebody] would have been [doing something]",
+      "example": {
+        "spanish": "Lo habría estado haciendo.",
+        "english": "She would have been doing it."
+      },
+      "collections": [
+        "structure",
+        "perfect progressive",
+        "conditional perfect progressive",
+        "would have been + present participle",
+        "uses past participle",
+        "uses present participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-b143a57f89e4f35d",
+      "spanish": "¿tienes que [hacer algo]?",
+      "english": "do you have to [do something]?",
+      "example": {
+        "spanish": "¿Tienes que hacerlo?",
+        "english": "Do you have to do it?"
+      },
+      "collections": [
+        "structure",
+        "have to",
+        "obligation",
+        "question",
+        "auxiliary do",
+        "followed by full infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-fc1876ce820d30f7",
+      "spanish": "¿[alguien] tiene que [hacer algo]?",
+      "english": "does [somebody] have to [do something]?",
+      "example": {
+        "spanish": "¿Ella tiene que hacerlo?",
+        "english": "Does she have to do it?"
+      },
+      "collections": [
+        "structure",
+        "have to",
+        "obligation",
+        "question",
+        "auxiliary does",
+        "followed by full infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-c7737e99997e9b13",
+      "spanish": "¿[alguien] tenía que [hacer algo]?",
+      "english": "did [somebody] have to [do something]?",
+      "example": {
+        "spanish": "¿Ellos tenían que hacerlo?",
+        "english": "Did they have to do it?"
+      },
+      "collections": [
+        "structure",
+        "have to",
+        "past obligation",
+        "question",
+        "auxiliary did",
+        "followed by full infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-73a84c6a073e3684",
+      "spanish": "no tener que [hacer algo]",
+      "english": "not to have to [do something]",
+      "example": {
+        "spanish": "No tienes que hacerlo.",
+        "english": "You don't have to do it."
+      },
+      "collections": [
+        "structure",
+        "have to",
+        "negative",
+        "absence of obligation",
+        "not prohibition",
+        "auxiliary do",
+        "followed by full infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-584e1f168a20d1db",
+      "spanish": "tener que [hacer algo] (hablado)",
+      "english": "gotta [do something]",
+      "example": {
+        "spanish": "Tengo que hacerlo.",
+        "english": "I gotta do it."
+      },
+      "collections": [
+        "structure",
+        "have to",
+        "obligation",
+        "spoken English",
+        "very informal",
+        "gotta",
+        "followed by bare infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-e56117c56320f6da",
+      "spanish": "haber [algo] (presente singular)",
+      "english": "there is [something]",
+      "example": {
+        "spanish": "Hay un problema.",
+        "english": "There is a problem."
+      },
+      "collections": [
+        "structure",
+        "there be",
+        "existence",
+        "present",
+        "singular",
+        "there is"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-4cd7df4b99fc5d4b",
+      "spanish": "haber [cosas] (presente plural)",
+      "english": "there are [things]",
+      "example": {
+        "spanish": "Hay dos problemas.",
+        "english": "There are two problems."
+      },
+      "collections": [
+        "structure",
+        "there be",
+        "existence",
+        "present",
+        "plural",
+        "there are"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-40d5c343f38a6ee5",
+      "spanish": "haber [algo] (pasado singular)",
+      "english": "there was [something]",
+      "example": {
+        "spanish": "Había un problema.",
+        "english": "There was a problem."
+      },
+      "collections": [
+        "structure",
+        "there be",
+        "existence",
+        "past",
+        "singular",
+        "there was"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-4af3e3c5c6c2c160",
+      "spanish": "haber [cosas] (pasado plural)",
+      "english": "there were [things]",
+      "example": {
+        "spanish": "Había dos problemas.",
+        "english": "There were two problems."
+      },
+      "collections": [
+        "structure",
+        "there be",
+        "existence",
+        "past",
+        "plural",
+        "there were"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-1420a81e5199ad06",
+      "spanish": "¿hay [algo]?",
+      "english": "is there [something]?",
+      "example": {
+        "spanish": "¿Hay un problema?",
+        "english": "Is there a problem?"
+      },
+      "collections": [
+        "structure",
+        "there be",
+        "existence",
+        "question",
+        "present",
+        "singular",
+        "inversion"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-5e563212a0305d0a",
+      "spanish": "querer saber si hay [algo]",
+      "english": "to want to know if there is [something]",
+      "example": {
+        "spanish": "Quiero saber si hay un problema.",
+        "english": "I want to know if there is a problem."
+      },
+      "collections": [
+        "structure",
+        "there be",
+        "embedded question",
+        "statement order",
+        "if there is"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-1709c3002c3db5f0",
+      "spanish": "apagar [algo]",
+      "english": "to turn [something] off",
+      "example": {
+        "spanish": "Apaga la luz.",
+        "english": "Turn the light off."
+      },
+      "collections": [
+        "structure",
+        "phrasal verb",
+        "turn",
+        "off",
+        "separable phrasal verb",
+        "noun object between verb and particle"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-7cfc98edff703090",
+      "spanish": "apagarlo/la",
+      "english": "to turn it off",
+      "example": {
+        "spanish": "Apágala.",
+        "english": "Turn it off."
+      },
+      "collections": [
+        "structure",
+        "phrasal verb",
+        "turn",
+        "off",
+        "separable phrasal verb",
+        "pronoun object",
+        "pronoun between verb and particle"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-76569d192dcfee69",
+      "spanish": "apagar [un objeto largo]",
+      "english": "to turn off [a long object]",
+      "example": {
+        "spanish": "Apaga la luz del pasillo.",
+        "english": "Turn off the light in the hall."
+      },
+      "collections": [
+        "structure",
+        "phrasal verb",
+        "turn",
+        "off",
+        "separable phrasal verb",
+        "long object after particle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-c351946d62b9daf3",
+      "spanish": "recogerlo/la",
+      "english": "to pick it up",
+      "example": {
+        "spanish": "Recógelo.",
+        "english": "Pick it up."
+      },
+      "collections": [
+        "structure",
+        "phrasal verb",
+        "pick",
+        "up",
+        "separable phrasal verb",
+        "pronoun object",
+        "pronoun between verb and particle"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-a19f0601e5c00c0b",
+      "spanish": "cuidarlo/la",
+      "english": "to look after it",
+      "example": {
+        "spanish": "Cuídalo.",
+        "english": "Look after it."
+      },
+      "collections": [
+        "structure",
+        "phrasal verb",
+        "look",
+        "after",
+        "inseparable phrasal verb",
+        "object after full verb"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-82ae2bac829fe05c",
+      "spanish": "chocar con [algo]",
+      "english": "to run into [something]",
+      "example": {
+        "spanish": "Chocó con eso.",
+        "english": "She ran into it."
+      },
+      "collections": [
+        "structure",
+        "verb + preposition",
+        "run",
+        "into",
+        "prepositional verb",
+        "object after preposition"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-980f36b19e1395d1",
+      "spanish": "buscar [algo] en una referencia",
+      "english": "to look [something] up",
+      "example": {
+        "spanish": "Busca la palabra.",
+        "english": "Look the word up."
+      },
+      "collections": [
+        "structure",
+        "phrasal verb",
+        "look",
+        "up",
+        "separable phrasal verb",
+        "dictionary check"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-fc5e20f9664e231f",
+      "spanish": "¿[estás haciendo algo]?",
+      "english": "are you [doing something]?",
+      "example": {
+        "spanish": "¿Lo estás haciendo?",
+        "english": "Are you doing it?"
+      },
+      "collections": [
+        "structure",
+        "be",
+        "question",
+        "progressive",
+        "are",
+        "direct question",
+        "uses present participle"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-69170327b519c117",
+      "spanish": "¿[alguien] está [haciendo algo]?",
+      "english": "is [somebody] [doing something]?",
+      "example": {
+        "spanish": "¿Él lo está haciendo?",
+        "english": "Is he doing it?"
+      },
+      "collections": [
+        "structure",
+        "be",
+        "question",
+        "progressive",
+        "is",
+        "direct question",
+        "uses present participle"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-a99cb901eddaf6af",
+      "spanish": "¿[estabas haciendo algo]?",
+      "english": "were you [doing something]?",
+      "example": {
+        "spanish": "¿Lo estabas haciendo?",
+        "english": "Were you doing it?"
+      },
+      "collections": [
+        "structure",
+        "be",
+        "question",
+        "past progressive",
+        "were",
+        "direct question",
+        "uses present participle"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-6b6c9c82b9be1812",
+      "spanish": "¿[alguien] estaba [haciendo algo]?",
+      "english": "was [somebody] [doing something]?",
+      "example": {
+        "spanish": "¿Él lo estaba haciendo?",
+        "english": "Was he doing it?"
+      },
+      "collections": [
+        "structure",
+        "be",
+        "question",
+        "past progressive",
+        "was",
+        "direct question",
+        "uses present participle"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-79a26be04d629968",
+      "spanish": "¿vas a [hacer algo]?",
+      "english": "are you going to [do something]?",
+      "example": {
+        "spanish": "¿Lo vas a hacer?",
+        "english": "Are you going to do it?"
+      },
+      "collections": [
+        "structure",
+        "be",
+        "question",
+        "be going to",
+        "future plan",
+        "are",
+        "followed by full infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-1ab217d57ab1002e",
+      "spanish": "¿[alguien] va a [hacer algo]?",
+      "english": "is [somebody] going to [do something]?",
+      "example": {
+        "spanish": "¿Él lo va a hacer?",
+        "english": "Is he going to do it?"
+      },
+      "collections": [
+        "structure",
+        "be",
+        "question",
+        "be going to",
+        "future plan",
+        "is",
+        "followed by full infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-aae30a435ca417f5",
+      "spanish": "¿ibas a [hacer algo]?",
+      "english": "were you going to [do something]?",
+      "example": {
+        "spanish": "¿Lo ibas a hacer?",
+        "english": "Were you going to do it?"
+      },
+      "collections": [
+        "structure",
+        "be",
+        "question",
+        "was/were going to",
+        "past plan",
+        "were",
+        "followed by full infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-30f2c8835906cb38",
+      "spanish": "¿[alguien] iba a [hacer algo]?",
+      "english": "was [somebody] going to [do something]?",
+      "example": {
+        "spanish": "¿Él lo iba a hacer?",
+        "english": "Was he going to do it?"
+      },
+      "collections": [
+        "structure",
+        "be",
+        "question",
+        "was/were going to",
+        "past plan",
+        "was",
+        "followed by full infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-8b21026f10353965",
+      "spanish": "iba a [hacer algo]",
+      "english": "I/he/she was going to [do something]",
+      "example": {
+        "spanish": "Iba a hacerlo.",
+        "english": "I was going to do it."
+      },
+      "collections": [
+        "structure",
+        "be",
+        "was/were going to",
+        "past plan",
+        "was",
+        "followed by full infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-e60e68a80b516475",
+      "spanish": "íbamos a [hacer algo]",
+      "english": "we were going to [do something]",
+      "example": {
+        "spanish": "Íbamos a hacerlo.",
+        "english": "We were going to do it."
+      },
+      "collections": [
+        "structure",
+        "be",
+        "was/were going to",
+        "past plan",
+        "were",
+        "followed by full infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-65abb3ac606c9769",
+      "spanish": "iban a [hacer algo]",
+      "english": "they were going to [do something]",
+      "example": {
+        "spanish": "Iban a hacerlo.",
+        "english": "They were going to do it."
+      },
+      "collections": [
+        "structure",
+        "be",
+        "was/were going to",
+        "past plan",
+        "were",
+        "followed by full infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-d9fcb7a0fff79797",
+      "spanish": "¿puedes [hacer algo]?",
+      "english": "can you [do something]?",
+      "example": {
+        "spanish": "¿Lo puedes hacer?",
+        "english": "Can you do it?"
+      },
+      "collections": [
+        "structure",
+        "modal",
+        "can",
+        "question",
+        "direct question",
+        "followed by bare infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-211043763880ded2",
+      "spanish": "no podría [hacer algo]",
+      "english": "couldn't [do something]",
+      "example": {
+        "spanish": "No podría hacerlo.",
+        "english": "I couldn't do it."
+      },
+      "collections": [
+        "structure",
+        "modal",
+        "could",
+        "negative",
+        "contraction",
+        "couldn't",
+        "followed by bare infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-f07c7ce152792498",
+      "spanish": "¿debes [hacer algo]?",
+      "english": "must you [do something]?",
+      "example": {
+        "spanish": "¿Lo debes hacer?",
+        "english": "Must you do it?"
+      },
+      "collections": [
+        "structure",
+        "modal",
+        "must",
+        "question",
+        "formal",
+        "followed by bare infinitive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-fd1071615c6295b6",
+      "spanish": "estar prohibido [hacer algo]",
+      "english": "must not [do something]",
+      "example": {
+        "spanish": "Está prohibido hacerlo.",
+        "english": "You must not do it."
+      },
+      "collections": [
+        "structure",
+        "modal",
+        "must",
+        "negative",
+        "prohibition",
+        "must not",
+        "followed by bare infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-f78ff3dc95ef3e56",
+      "spanish": "estar prohibido [hacer algo]",
+      "english": "mustn't [do something]",
+      "example": {
+        "spanish": "Está prohibido hacerlo.",
+        "english": "You mustn't do it."
+      },
+      "collections": [
+        "structure",
+        "modal",
+        "must",
+        "negative",
+        "prohibition",
+        "contraction",
+        "mustn't",
+        "followed by bare infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-9834b3d6e0f185f1",
+      "spanish": "¿deberías [hacer algo]?",
+      "english": "should you [do something]?",
+      "example": {
+        "spanish": "¿Lo deberías hacer?",
+        "english": "Should you do it?"
+      },
+      "collections": [
+        "structure",
+        "modal",
+        "should",
+        "question",
+        "advice",
+        "followed by bare infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-6480858c2a8a2e2c",
+      "spanish": "¿[harás algo]?",
+      "english": "will you [do something]?",
+      "example": {
+        "spanish": "¿Lo harás?",
+        "english": "Will you do it?"
+      },
+      "collections": [
+        "structure",
+        "modal",
+        "will",
+        "question",
+        "future",
+        "followed by bare infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-0627690b6b2d1f6e",
+      "spanish": "no [haré algo]",
+      "english": "won't [do something]",
+      "example": {
+        "spanish": "No lo haré.",
+        "english": "I won't do it."
+      },
+      "collections": [
+        "structure",
+        "modal",
+        "will",
+        "negative",
+        "future",
+        "contraction",
+        "won't",
+        "followed by bare infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-c7a9533b9b148356",
+      "spanish": "¿[harías algo]?",
+      "english": "would you [do something]?",
+      "example": {
+        "spanish": "¿Lo harías?",
+        "english": "Would you do it?"
+      },
+      "collections": [
+        "structure",
+        "modal",
+        "would",
+        "question",
+        "conditional",
+        "followed by bare infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-7892dfe1ea199479",
+      "spanish": "no [haría algo]",
+      "english": "wouldn't [do something]",
+      "example": {
+        "spanish": "No lo haría.",
+        "english": "I wouldn't do it."
+      },
+      "collections": [
+        "structure",
+        "modal",
+        "would",
+        "negative",
+        "conditional",
+        "contraction",
+        "wouldn't",
+        "followed by bare infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-7c9e8829574562da",
+      "spanish": "ser grande ==> ser más grande",
+      "english": "to be large ==> to be larger",
+      "example": {
+        "spanish": "El comparativo de «grande» es «más grande».",
+        "english": "The comparative of “large” is “larger.”"
+      },
+      "collections": [
+        "structure",
+        "transformation",
+        "transformation relationship",
+        "comparison",
+        "large",
+        "word family: large",
+        "comparison pattern: one syllable",
+        "comparative",
+        "transformation: adjective => comparative",
+        "spelling: final e"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-9fb071e0462972ab",
+      "spanish": "ser grande ==> ser el/la más grande",
+      "english": "to be large ==> to be the largest",
+      "example": {
+        "spanish": "El superlativo de «grande» es «el/la más grande».",
+        "english": "The superlative of “large” is “the largest.”"
+      },
+      "collections": [
+        "structure",
+        "transformation",
+        "transformation relationship",
+        "comparison",
+        "large",
+        "word family: large",
+        "comparison pattern: one syllable",
+        "superlative",
+        "transformation: adjective => superlative",
+        "spelling: final e"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-3a5eed02d8494660",
+      "spanish": "ser rápido/a ==> ser más rápido/a",
+      "english": "to be quick ==> to be quicker",
+      "example": {
+        "spanish": "El comparativo de «rápido/a» es «más rápido/a».",
+        "english": "The comparative of “quick” is “quicker.”"
+      },
+      "collections": [
+        "structure",
+        "transformation",
+        "transformation relationship",
+        "comparison",
+        "quick",
+        "word family: quick",
+        "comparison pattern: one syllable",
+        "comparative",
+        "transformation: adjective => comparative"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-597601356b82533c",
+      "spanish": "ser rápido/a ==> ser el/la más rápido/a",
+      "english": "to be quick ==> to be the quickest",
+      "example": {
+        "spanish": "El superlativo de «rápido/a» es «el/la más rápido/a».",
+        "english": "The superlative of “quick” is “the quickest.”"
+      },
+      "collections": [
+        "structure",
+        "transformation",
+        "transformation relationship",
+        "comparison",
+        "quick",
+        "word family: quick",
+        "comparison pattern: one syllable",
+        "superlative",
+        "transformation: adjective => superlative"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-d8763ac1a54e45e6",
+      "spanish": "ser rápido/a ==> ser más rápido/a",
+      "english": "to be rapid ==> to be more rapid",
+      "example": {
+        "spanish": "El comparativo de «rápido/a» es «más rápido/a».",
+        "english": "The comparative of “rapid” is “more rapid.”"
+      },
+      "collections": [
+        "structure",
+        "transformation",
+        "transformation relationship",
+        "comparison",
+        "rapid",
+        "word family: rapid",
+        "comparison pattern: multiple syllables",
+        "comparative",
+        "transformation: adjective => comparative"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-436b4a4148e60d8e",
+      "spanish": "ser rápido/a ==> ser el/la más rápido/a",
+      "english": "to be rapid ==> to be the most rapid",
+      "example": {
+        "spanish": "El superlativo de «rápido/a» es «el/la más rápido/a».",
+        "english": "The superlative of “rapid” is “the most rapid.”"
+      },
+      "collections": [
+        "structure",
+        "transformation",
+        "transformation relationship",
+        "comparison",
+        "rapid",
+        "word family: rapid",
+        "comparison pattern: multiple syllables",
+        "superlative",
+        "transformation: adjective => superlative"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-516343f91c4ed081",
+      "spanish": "ser difícil ==> ser más difícil",
+      "english": "to be difficult ==> to be more difficult",
+      "example": {
+        "spanish": "El comparativo de «difícil» es «más difícil».",
+        "english": "The comparative of “difficult” is “more difficult.”"
+      },
+      "collections": [
+        "structure",
+        "transformation",
+        "transformation relationship",
+        "comparison",
+        "difficult",
+        "word family: difficult",
+        "comparison pattern: multiple syllables",
+        "comparative",
+        "transformation: adjective => comparative"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-ec14a988bd72176a",
+      "spanish": "ser difícil ==> ser el/la más difícil",
+      "english": "to be difficult ==> to be the most difficult",
+      "example": {
+        "spanish": "El superlativo de «difícil» es «el/la más difícil».",
+        "english": "The superlative of “difficult” is “the most difficult.”"
+      },
+      "collections": [
+        "structure",
+        "transformation",
+        "transformation relationship",
+        "comparison",
+        "difficult",
+        "word family: difficult",
+        "comparison pattern: multiple syllables",
+        "superlative",
+        "transformation: adjective => superlative"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-331d56a361ed820a",
+      "spanish": "ser importante ==> ser más importante",
+      "english": "to be important ==> to be more important",
+      "example": {
+        "spanish": "El comparativo de «importante» es «más importante».",
+        "english": "The comparative of “important” is “more important.”"
+      },
+      "collections": [
+        "structure",
+        "transformation",
+        "transformation relationship",
+        "comparison",
+        "important",
+        "word family: important",
+        "comparison pattern: multiple syllables",
+        "comparative",
+        "transformation: adjective => comparative"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-69d978766e57d73d",
+      "spanish": "ser importante ==> ser el/la más importante",
+      "english": "to be important ==> to be the most important",
+      "example": {
+        "spanish": "El superlativo de «importante» es «el/la más importante».",
+        "english": "The superlative of “important” is “the most important.”"
+      },
+      "collections": [
+        "structure",
+        "transformation",
+        "transformation relationship",
+        "comparison",
+        "important",
+        "word family: important",
+        "comparison pattern: multiple syllables",
+        "superlative",
+        "transformation: adjective => superlative"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-ca7c305dc0eeacf0",
+      "spanish": "ser bueno/a ==> ser mejor",
+      "english": "to be good ==> to be better",
+      "example": {
+        "spanish": "El comparativo de «bueno/a» es «mejor».",
+        "english": "The comparative of “good” is “better.”"
+      },
+      "collections": [
+        "structure",
+        "transformation",
+        "transformation relationship",
+        "comparison",
+        "good",
+        "word family: good",
+        "irregular comparison",
+        "comparative",
+        "transformation: adjective => comparative"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-b6682cfe5d7e072d",
+      "spanish": "ser bueno/a ==> ser el/la mejor",
+      "english": "to be good ==> to be the best",
+      "example": {
+        "spanish": "El superlativo de «bueno/a» es «el/la mejor».",
+        "english": "The superlative of “good” is “the best.”"
+      },
+      "collections": [
+        "structure",
+        "transformation",
+        "transformation relationship",
+        "comparison",
+        "good",
+        "word family: good",
+        "irregular comparison",
+        "superlative",
+        "transformation: adjective => superlative"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-e77dcab14fbbf7a3",
+      "spanish": "ser malo/a ==> ser peor",
+      "english": "to be bad ==> to be worse",
+      "example": {
+        "spanish": "El comparativo de «malo/a» es «peor».",
+        "english": "The comparative of “bad” is “worse.”"
+      },
+      "collections": [
+        "structure",
+        "transformation",
+        "transformation relationship",
+        "comparison",
+        "bad",
+        "word family: bad",
+        "irregular comparison",
+        "comparative",
+        "transformation: adjective => comparative"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-e522a21dd1f5c5d3",
+      "spanish": "ser malo/a ==> ser el/la peor",
+      "english": "to be bad ==> to be the worst",
+      "example": {
+        "spanish": "El superlativo de «malo/a» es «el/la peor».",
+        "english": "The superlative of “bad” is “the worst.”"
+      },
+      "collections": [
+        "structure",
+        "transformation",
+        "transformation relationship",
+        "comparison",
+        "bad",
+        "word family: bad",
+        "irregular comparison",
+        "superlative",
+        "transformation: adjective => superlative"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-aad560ab09ef2239",
+      "spanish": "[artículo] [sustantivo] [adjetivo]",
+      "english": "[article] [adjective] [noun]",
+      "example": {
+        "spanish": "Es una reunión importante.",
+        "english": "It is an important meeting."
+      },
+      "collections": [
+        "structure",
+        "adjective",
+        "adjective position",
+        "adjective before noun",
+        "noun phrase"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-37f21c9c68d91022",
+      "spanish": "ser [adjetivo]",
+      "english": "to be [adjective]",
+      "example": {
+        "spanish": "La reunión es importante.",
+        "english": "The meeting is important."
+      },
+      "collections": [
+        "structure",
+        "adjective",
+        "adjective position",
+        "linking verb + adjective",
+        "be + adjective"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-a91c7b5f7ee0e115",
+      "spanish": "muy [adjetivo]",
+      "english": "very [adjective]",
+      "example": {
+        "spanish": "Estoy muy ocupado.",
+        "english": "I am very busy."
+      },
+      "collections": [
+        "structure",
+        "function word",
+        "intensifier",
+        "degree",
+        "very",
+        "adjective modifier"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-87605f107528d910",
+      "spanish": "demasiado/a [adjetivo]",
+      "english": "too [adjective]",
+      "example": {
+        "spanish": "Estoy demasiado ocupado.",
+        "english": "I am too busy."
+      },
+      "collections": [
+        "structure",
+        "function word",
+        "intensifier",
+        "degree",
+        "excess",
+        "too",
+        "adjective modifier",
+        "🔊 to-too-two"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-e112a6a9812c09d6",
+      "spanish": "tan [adjetivo]",
+      "english": "so [adjective]",
+      "example": {
+        "spanish": "Estoy tan ocupado que no puedo ir.",
+        "english": "I am so busy that I can't go."
+      },
+      "collections": [
+        "structure",
+        "function word",
+        "intensifier",
+        "degree",
+        "so",
+        "adjective modifier",
+        "result"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-8a98521f2965064d",
+      "spanish": "no tan [adjetivo]",
+      "english": "not that [adjective]",
+      "example": {
+        "spanish": "No estoy tan ocupado.",
+        "english": "I am not that busy."
+      },
+      "collections": [
+        "structure",
+        "function word",
+        "intensifier",
+        "referenced degree",
+        "not that"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-285cdb839bd69751",
+      "spanish": "tan [adjetivo] como",
+      "english": "as [adjective] as",
+      "example": {
+        "spanish": "Estoy tan ocupado como Laura.",
+        "english": "I am as busy as Laura."
+      },
+      "collections": [
+        "structure",
+        "comparison",
+        "equal comparison",
+        "as ... as",
+        "adjective"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-6e4ea1098f1526e5",
+      "spanish": "demasiado/a [sustantivo no contable]",
+      "english": "too much [uncountable noun]",
+      "example": {
+        "spanish": "Hay demasiado tráfico.",
+        "english": "There is too much traffic."
+      },
+      "collections": [
+        "structure",
+        "quantity",
+        "excess",
+        "too much",
+        "uncountable noun",
+        "determiner"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-22863ae4f8a89814",
+      "spanish": "demasiados/as [sustantivos contables]",
+      "english": "too many [countable nouns]",
+      "example": {
+        "spanish": "Hay demasiados carros.",
+        "english": "There are too many cars."
+      },
+      "collections": [
+        "structure",
+        "quantity",
+        "excess",
+        "too many",
+        "countable noun",
+        "determiner"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-c75a372b4c0a6d4d",
+      "spanish": "tanto/a [sustantivo no contable]",
+      "english": "so much [uncountable noun]",
+      "example": {
+        "spanish": "Hay tanto tráfico que llegaremos tarde.",
+        "english": "There is so much traffic that we will be late."
+      },
+      "collections": [
+        "structure",
+        "quantity",
+        "emphatic quantity",
+        "so much",
+        "uncountable noun",
+        "determiner"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-3415a381a0279c19",
+      "spanish": "tantos/as [sustantivos contables]",
+      "english": "so many [countable nouns]",
+      "example": {
+        "spanish": "Hay tantos carros que no podemos pasar.",
+        "english": "There are so many cars that we cannot pass."
+      },
+      "collections": [
+        "structure",
+        "quantity",
+        "emphatic quantity",
+        "so many",
+        "countable noun",
+        "determiner"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-bce7c3e97e370d58",
+      "spanish": "no tanto/a [sustantivo no contable]",
+      "english": "not that much [uncountable noun]",
+      "example": {
+        "spanish": "No hay tanto tráfico.",
+        "english": "There is not that much traffic."
+      },
+      "collections": [
+        "structure",
+        "quantity",
+        "referenced quantity",
+        "not that much",
+        "uncountable noun"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-e453a40819be55dc",
+      "spanish": "no tantos/as [sustantivos contables]",
+      "english": "not that many [countable nouns]",
+      "example": {
+        "spanish": "No hay tantos carros.",
+        "english": "There are not that many cars."
+      },
+      "collections": [
+        "structure",
+        "quantity",
+        "referenced quantity",
+        "not that many",
+        "countable noun"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-5d5190c96fc199ed",
+      "spanish": "tanto/a [sustantivo no contable] como",
+      "english": "as much [uncountable noun] as",
+      "example": {
+        "spanish": "Tengo tanto trabajo como Laura.",
+        "english": "I have as much work as Laura."
+      },
+      "collections": [
+        "structure",
+        "quantity",
+        "equal comparison",
+        "as much as",
+        "uncountable noun"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-91deeb839f91030a",
+      "spanish": "tantos/as [sustantivos contables] como",
+      "english": "as many [countable nouns] as",
+      "example": {
+        "spanish": "Tengo tantas reuniones como Laura.",
+        "english": "I have as many meetings as Laura."
+      },
+      "collections": [
+        "structure",
+        "quantity",
+        "equal comparison",
+        "as many as",
+        "countable noun"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-49419814075e2c00",
+      "spanish": "mucho/a [sustantivo no contable]",
+      "english": "a lot of [uncountable noun]",
+      "example": {
+        "spanish": "Hay mucho tráfico.",
+        "english": "There is a lot of traffic."
+      },
+      "collections": [
+        "structure",
+        "quantity",
+        "a lot of",
+        "uncountable noun",
+        "determiner"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-5f976658f944287b",
+      "spanish": "muchos/as [sustantivos contables]",
+      "english": "a lot of [countable nouns]",
+      "example": {
+        "spanish": "Hay muchos carros.",
+        "english": "There are a lot of cars."
+      },
+      "collections": [
+        "structure",
+        "quantity",
+        "a lot of",
+        "countable noun",
+        "determiner"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-bffe3db344652636",
+      "spanish": "muchos/as [sustantivos contables]",
+      "english": "many [countable nouns]",
+      "example": {
+        "spanish": "Hay muchos carros.",
+        "english": "There are many cars."
+      },
+      "collections": [
+        "structure",
+        "quantity",
+        "many",
+        "countable noun",
+        "determiner"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-27f485424cdd75d1",
+      "spanish": "mucho/a [sustantivo no contable] (pregunta o negación)",
+      "english": "much [uncountable noun]",
+      "example": {
+        "spanish": "No hay mucho tráfico.",
+        "english": "There is not much traffic."
+      },
+      "collections": [
+        "structure",
+        "quantity",
+        "much",
+        "uncountable noun",
+        "question or negative",
+        "determiner"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-452d876dbf8796d6",
+      "spanish": "muchos/as [sustantivos contables]",
+      "english": "lots of [countable nouns]",
+      "example": {
+        "spanish": "Tenemos muchos libros.",
+        "english": "We have lots of books."
+      },
+      "collections": [
+        "structure",
+        "quantity",
+        "lots of",
+        "countable noun",
+        "informal",
+        "determiner"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-047020fa5e98d0e1",
+      "spanish": "más que suficiente [sustantivo]",
+      "english": "plenty of [noun]",
+      "example": {
+        "spanish": "Tenemos más que suficiente tiempo.",
+        "english": "We have plenty of time."
+      },
+      "collections": [
+        "structure",
+        "quantity",
+        "plenty of",
+        "more than enough",
+        "determiner"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-ef7811e4f920cbe8",
+      "spanish": "suficiente [sustantivo no contable]",
+      "english": "enough [uncountable noun]",
+      "example": {
+        "spanish": "Tenemos suficiente tiempo.",
+        "english": "We have enough time."
+      },
+      "collections": [
+        "structure",
+        "quantity",
+        "enough",
+        "uncountable noun",
+        "determiner"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-76fc5a657ef05005",
+      "spanish": "suficientes [sustantivos contables]",
+      "english": "enough [countable nouns]",
+      "example": {
+        "spanish": "Tenemos suficientes libros.",
+        "english": "We have enough books."
+      },
+      "collections": [
+        "structure",
+        "quantity",
+        "enough",
+        "countable noun",
+        "determiner"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-bd8d20f6bbebbf14",
+      "spanish": "un montón de [sustantivo]",
+      "english": "a pile of [noun]",
+      "example": {
+        "spanish": "Hay un montón de libros en la mesa.",
+        "english": "There is a pile of books on the table."
+      },
+      "collections": [
+        "structure",
+        "quantity",
+        "a pile of",
+        "literal pile",
+        "noun phrase"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-7de5518c48a30355",
+      "spanish": "un poco de [sustantivo no contable]",
+      "english": "a little [uncountable noun]",
+      "example": {
+        "spanish": "Tengo un poco de tiempo.",
+        "english": "I have a little time."
+      },
+      "collections": [
+        "structure",
+        "quantity",
+        "a little",
+        "uncountable noun",
+        "determiner"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-855897654144f9db",
+      "spanish": "unos/as pocos/as [sustantivos contables]",
+      "english": "a few [countable nouns]",
+      "example": {
+        "spanish": "Tengo unos pocos libros.",
+        "english": "I have a few books."
+      },
+      "collections": [
+        "structure",
+        "quantity",
+        "a few",
+        "countable noun",
+        "determiner"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-69bcb2dbd1ee3477",
+      "spanish": "menos [sustantivo no contable]",
+      "english": "less [uncountable noun]",
+      "example": {
+        "spanish": "Necesitamos menos información.",
+        "english": "We need less information."
+      },
+      "collections": [
+        "structure",
+        "quantity",
+        "less",
+        "uncountable noun",
+        "determiner"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-b2025c8a09ece6de",
+      "spanish": "menos [sustantivos contables]",
+      "english": "fewer [countable nouns]",
+      "example": {
+        "spanish": "Necesitamos menos reuniones.",
+        "english": "We need fewer meetings."
+      },
+      "collections": [
+        "structure",
+        "quantity",
+        "fewer",
+        "countable noun",
+        "determiner"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-e28b4c9b378a038e",
+      "spanish": "este/esta",
+      "english": "this",
+      "example": {
+        "spanish": "Este libro es importante.",
+        "english": "This book is important."
+      },
+      "collections": [
+        "structure",
+        "function word",
+        "demonstrative",
+        "singular",
+        "near",
+        "noun phrase"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-7fdc3fb0a78d333e",
+      "spanish": "ese/esa",
+      "english": "that",
+      "example": {
+        "spanish": "Ese libro es importante.",
+        "english": "That book is important."
+      },
+      "collections": [
+        "structure",
+        "function word",
+        "demonstrative",
+        "singular",
+        "far",
+        "noun phrase"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "structure-57a4781f60338703",
+      "spanish": "estos/estas",
+      "english": "these",
+      "example": {
+        "spanish": "Estos zapatos me quedan bien.",
+        "english": "These shoes fit me."
+      },
+      "collections": [
+        "structure",
+        "function word",
+        "demonstrative",
+        "plural",
+        "near",
+        "noun phrase",
+        "stands alone",
+        "no ones required"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-d9cbae73bd2ae709",
+      "spanish": "esos/esas",
+      "english": "those",
+      "example": {
+        "spanish": "Esos son demasiado grandes.",
+        "english": "Those are too big."
+      },
+      "collections": [
+        "structure",
+        "function word",
+        "demonstrative",
+        "plural",
+        "far",
+        "noun phrase",
+        "stands alone",
+        "no ones required"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-8021eb0f8f0f60e3",
+      "spanish": "gustarle los gatos a [alguien] (en general)",
+      "english": "[somebody] likes cats",
+      "example": {
+        "spanish": "Me gustan los gatos.",
+        "english": "I like cats."
+      },
+      "collections": [
+        "structure",
+        "article",
+        "zero article",
+        "no article",
+        "general plural",
+        "countable noun"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-5ce7b9f44e939f15",
+      "spanish": "necesitar información (en general)",
+      "english": "to need information",
+      "example": {
+        "spanish": "Necesito información.",
+        "english": "I need information."
+      },
+      "collections": [
+        "structure",
+        "article",
+        "zero article",
+        "no article",
+        "general idea",
+        "uncountable noun"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "structure-552d1dbc35d9e61c",
+      "spanish": "gustarle los gatos específicos a [alguien]",
+      "english": "[somebody] likes the specific cats",
+      "example": {
+        "spanish": "Me gustan los gatos de Laura.",
+        "english": "I like Laura's cats."
+      },
+      "collections": [
+        "structure",
+        "article",
+        "definite article",
+        "specific plural",
+        "countable noun"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "structure-56c4d01e29514996",
+      "spanish": "necesitar la información específica",
+      "english": "to need the specific information",
+      "example": {
+        "spanish": "Necesito la información del documento.",
+        "english": "I need the information from the document."
+      },
+      "collections": [
+        "structure",
+        "article",
+        "definite article",
+        "specific idea",
+        "uncountable noun"
       ],
       "curriculumRole": "reference"
     }

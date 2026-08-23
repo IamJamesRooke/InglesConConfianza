@@ -1,6 +1,6 @@
 # Curriculum guidance
 
-These Markdown files are human-readable curriculum specifications and the current intermediate source of truth. Source material comes from the owner's textbook and Excalidraw notes. Preserve the owner's accurate teaching logic and terminology while correcting errors and filling genuine conceptual gaps.
+The remaining Markdown files are human-readable curriculum specifications. PostgreSQL is the canonical machine-readable curriculum store, including the lossless archive of retired pillars. Source material comes from the owner's textbook and Excalidraw notes. Preserve the owner's accurate teaching logic and terminology while correcting errors and filling genuine conceptual gaps.
 
 ## Canonical pillars
 
@@ -8,8 +8,7 @@ These Markdown files are human-readable curriculum specifications and the curren
 - Use canonical concepts tagged with the `cognate` collection for Spanish-English similarity, memory bridges, and false-cognate confusion sets formerly under `cognates/`.
 - Use [`past-and-past-participle/`](past-and-past-participle/README.md) for the canonical sound-based inventory of English past and participle forms.
 - Use canonical PostgreSQL concepts tagged `transformation` for productive, limited, irregular, or memorable English prefix and suffix relationships; the former `transformations/` source pillar is captured and retired.
-- Use [`structure/`](structure/README.md) for reusable sentence-building rules.
-- Use canonical PostgreSQL concepts tagged `verb forms` for the six-form framework, form relationships, and structures that select a specific English verb form; the former `structure/verb-forms/` source branch is captured and retired.
+- Use canonical PostgreSQL concepts tagged `structure` for reusable sentence-building rules, comparison transformations, connectors, quantity and article behavior, conditionals, auxiliary patterns, tense contrasts, and phrasal-verb placement. Use the narrower `verb forms` collection for the six-form framework and constructions that select a specific English verb form. The former `structure/` source pillar is captured and retired.
 - Use canonical PostgreSQL concepts tagged `vocabulary` for reference categories that do not justify independent mapping families; the former `vocabulary/` source pillar is captured and retired.
 
 The hierarchy is an authoring reference, not a course sequence. Lessons and learner state will eventually reference curriculum objects from separate data layers.
@@ -55,7 +54,7 @@ The hierarchy is an authoring reference, not a course sequence. Lessons and lear
 
 - The active curriculum database is PostgreSQL, modeled in `web/prisma/schema.prisma`. Immutable snapshots under `web/prisma/seed-data/` are bootstrap and verification fixtures, not runtime stores. The detailed record-shape decisions and migration checkpoints live in [`DATABASE-DISCOVERY.md`](DATABASE-DISCOVERY.md).
 - For a quick handoff, start with `docs/backlog.md`, then `DATABASE-DISCOVERY.md`, then the PostgreSQL schema and server store code under `web/prisma/` and `web/src/lib/curriculum/server/`.
-- The former mappings, cognates, vocabulary, transformations, and structure/verb-forms trees are now captured losslessly in PostgreSQL and retired from the filesystem. Normalize their immutable source documents and extracted table rows from the database; curation, promotion, and demotion follow capture. Missing useful language is expensive, while temporarily retaining uncertain but valid language as Reference is cheap.
+- The former mappings, cognates, vocabulary, transformations, and structure trees are now captured losslessly in PostgreSQL and retired from the filesystem. Normalize their immutable source documents and extracted table rows from the database; curation, promotion, and demotion follow capture. Missing useful language is expensive, while temporarily retaining uncertain but valid language as Reference is cheap.
 - Keep verb-form selection queryable through controlled collections such as `followed by full infinitive`, `followed by bare infinitive`, `followed by gerund`, `uses present participle`, `uses past participle`, and `uses third-person present`. Keep gerund and present-participle jobs distinct even though both use the English `-ing` surface form. Record explicit form relationships with ` ==> `, but do not add all six ordinary forms to every lexical verb.
 - Transformation relationships stay in `curriculum_concepts`; do not create a second transformation catalog. Put exactly one normalized relationship on each language side with ` ==> `, for example **el poder ==> ser poderoso/a** and **the power ==> to be powerful**. Normalize both halves independently: nouns use natural articles, adjectives and states use support verbs, and verbs use infinitive patterns.
 - Tag transformation relationships with `transformation`, `transformation relationship`, their affix family such as `transformation: -ful`, their grammatical direction such as `transformation: noun => adjective`, and a searchable `word family:` collection. Recognition-only families remain ordinary lexical concepts without `==>` and receive collections such as `recognition family` and `prefix: al-` or `prefix: be-`.
