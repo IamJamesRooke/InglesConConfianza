@@ -25,7 +25,12 @@
       },
       "collections": [
         "querer",
-        "want"
+        "want",
+        "structure",
+        "verb forms",
+        "followed by full infinitive",
+        "verb form: full infinitive",
+        "uses full infinitive"
       ],
       "curriculumRole": "core"
     },
@@ -5122,7 +5127,15 @@
         "escuchar",
         "oír",
         "perception verb",
-        "somebody do something"
+        "somebody do something",
+        "structure",
+        "verb forms",
+        "hear",
+        "allows bare infinitive or present participle",
+        "whole event",
+        "followed by bare infinitive",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
       ],
       "curriculumRole": "reference"
     },
@@ -5390,7 +5403,12 @@
       "collections": [
         "estar",
         "progressive",
-        "be + -ing"
+        "be + -ing",
+        "structure",
+        "verb forms",
+        "be + present participle",
+        "verb form: present participle",
+        "uses present participle"
       ],
       "curriculumRole": "core"
     },
@@ -6359,7 +6377,14 @@
       "collections": [
         "gustar",
         "handle verb",
-        "gerund"
+        "gerund",
+        "structure",
+        "verb forms",
+        "like",
+        "allows full infinitive or gerund",
+        "followed by gerund",
+        "verb form: present participle",
+        "uses present participle"
       ],
       "curriculumRole": "supporting"
     },
@@ -6374,7 +6399,14 @@
       "collections": [
         "gustar",
         "handle verb",
-        "full infinitive"
+        "full infinitive",
+        "structure",
+        "verb forms",
+        "like",
+        "allows full infinitive or gerund",
+        "followed by full infinitive",
+        "verb form: full infinitive",
+        "uses full infinitive"
       ],
       "curriculumRole": "reference"
     },
@@ -6389,7 +6421,13 @@
       "collections": [
         "gustar",
         "polite request",
-        "full infinitive"
+        "full infinitive",
+        "structure",
+        "verb forms",
+        "would like",
+        "followed by full infinitive",
+        "verb form: full infinitive",
+        "uses full infinitive"
       ],
       "curriculumRole": "core"
     },
@@ -6491,7 +6529,12 @@
       "collections": [
         "haber",
         "perfect",
-        "past participle"
+        "past participle",
+        "structure",
+        "verb forms",
+        "have + past participle",
+        "verb form: past participle",
+        "uses past participle"
       ],
       "curriculumRole": "core"
     },
@@ -7561,7 +7604,12 @@
       "collections": [
         "ir",
         "go + -ing",
-        "gerund"
+        "gerund",
+        "structure",
+        "verb forms",
+        "activity",
+        "followed by gerund",
+        "uses gerund"
       ],
       "curriculumRole": "reference"
     },
@@ -9604,7 +9652,12 @@
         "can",
         "ability",
         "bare infinitive",
-        "modal"
+        "modal",
+        "structure",
+        "verb forms",
+        "followed by bare infinitive",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
       ],
       "curriculumRole": "core"
     },
@@ -9621,7 +9674,12 @@
         "can",
         "permission",
         "bare infinitive",
-        "modal"
+        "modal",
+        "structure",
+        "verb forms",
+        "followed by bare infinitive",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
       ],
       "curriculumRole": "core"
     },
@@ -12697,7 +12755,12 @@
         "get",
         "somebody to do something",
         "causative",
-        "to"
+        "to",
+        "structure",
+        "verb forms",
+        "followed by full infinitive",
+        "verb form: full infinitive",
+        "uses full infinitive"
       ],
       "curriculumRole": "supporting"
     },
@@ -12714,7 +12777,12 @@
         "get",
         "causative",
         "past participle",
-        "result"
+        "result",
+        "structure",
+        "verb forms",
+        "get something done",
+        "verb form: past participle",
+        "uses past participle"
       ],
       "curriculumRole": "reference"
     },
@@ -13581,7 +13649,12 @@
         "must",
         "modal",
         "bare infinitive",
-        "obligation"
+        "obligation",
+        "structure",
+        "verb forms",
+        "followed by bare infinitive",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
       ],
       "curriculumRole": "supporting"
     },
@@ -13615,7 +13688,12 @@
         "modal",
         "bare infinitive",
         "advice",
-        "conditional"
+        "conditional",
+        "structure",
+        "verb forms",
+        "followed by bare infinitive",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
       ],
       "curriculumRole": "core"
     },
@@ -14014,7 +14092,14 @@
         "let",
         "bare infinitive",
         "permission",
-        "somebody do something"
+        "somebody do something",
+        "structure",
+        "verb forms",
+        "causative",
+        "somebody + bare infinitive",
+        "followed by bare infinitive",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
       ],
       "curriculumRole": "core"
     },
@@ -15703,7 +15788,13 @@
       },
       "collections": [
         "seguir",
-        "gerund"
+        "gerund",
+        "structure",
+        "verb forms",
+        "keep",
+        "followed by gerund",
+        "verb form: present participle",
+        "uses present participle"
       ],
       "curriculumRole": "core"
     },
@@ -17038,7 +17129,13 @@
       "collections": [
         "tener",
         "obligation",
-        "full infinitive"
+        "full infinitive",
+        "structure",
+        "verb forms",
+        "have to",
+        "followed by full infinitive",
+        "verb form: full infinitive",
+        "uses full infinitive"
       ],
       "curriculumRole": "core"
     },
@@ -17408,7 +17505,13 @@
         "tener",
         "permission",
         "passive",
-        "para => to"
+        "para => to",
+        "structure",
+        "verb forms",
+        "allowed to",
+        "followed by full infinitive",
+        "verb form: full infinitive",
+        "uses full infinitive"
       ],
       "curriculumRole": "reference"
     },
@@ -18605,7 +18708,15 @@
       "collections": [
         "ver",
         "perception verb",
-        "somebody do something"
+        "somebody do something",
+        "structure",
+        "verb forms",
+        "see",
+        "allows bare infinitive or present participle",
+        "whole event",
+        "followed by bare infinitive",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
       ],
       "curriculumRole": "supporting"
     },
@@ -18621,7 +18732,15 @@
         "ver",
         "perception verb",
         "somebody doing something",
-        "gerund"
+        "gerund",
+        "structure",
+        "verb forms",
+        "see",
+        "allows bare infinitive or present participle",
+        "event in progress",
+        "uses present participle",
+        "followed by gerund",
+        "verb form: present participle"
       ],
       "curriculumRole": "reference"
     },
@@ -61062,7 +61181,11 @@
         "-ing",
         "suffix: -ing",
         "productive transformation",
-        "activity noun"
+        "activity noun",
+        "structure",
+        "verb forms",
+        "-ing noun",
+        "verb => noun"
       ],
       "curriculumRole": "reference"
     },
@@ -61083,7 +61206,11 @@
         "-ing",
         "suffix: -ing",
         "productive transformation",
-        "activity noun"
+        "activity noun",
+        "structure",
+        "verb forms",
+        "-ing noun",
+        "verb => noun"
       ],
       "curriculumRole": "reference"
     },
@@ -61104,7 +61231,11 @@
         "-ing",
         "suffix: -ing",
         "productive transformation",
-        "activity noun"
+        "activity noun",
+        "structure",
+        "verb forms",
+        "-ing noun",
+        "verb => noun"
       ],
       "curriculumRole": "reference"
     },
@@ -61125,7 +61256,11 @@
         "-ing",
         "suffix: -ing",
         "productive transformation",
-        "activity noun"
+        "activity noun",
+        "structure",
+        "verb forms",
+        "-ing noun",
+        "verb => noun"
       ],
       "curriculumRole": "reference"
     },
@@ -61167,7 +61302,11 @@
         "-ing",
         "suffix: -ing",
         "productive transformation",
-        "activity noun"
+        "activity noun",
+        "structure",
+        "verb forms",
+        "-ing noun",
+        "verb => noun"
       ],
       "curriculumRole": "reference"
     },
@@ -61209,7 +61348,11 @@
         "-ing",
         "suffix: -ing",
         "productive transformation",
-        "activity noun"
+        "activity noun",
+        "structure",
+        "verb forms",
+        "-ing noun",
+        "verb => noun"
       ],
       "curriculumRole": "reference"
     },
@@ -63757,6 +63900,3298 @@
         "adjective",
         "fixed expression",
         "forewarned is forearmed"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-5e2df5f65c494bcd",
+      "spanish": "hacer",
+      "english": "to do",
+      "example": {
+        "spanish": "Quiero hacerlo.",
+        "english": "I want to do it."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "six verb forms",
+        "surface form",
+        "do",
+        "verb form: full infinitive",
+        "uses full infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "verb-form-3659abfa71b38091",
+      "spanish": "hacer",
+      "english": "do",
+      "example": {
+        "spanish": "Puedo hacerlo.",
+        "english": "I can do it."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "six verb forms",
+        "surface form",
+        "do",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "verb-form-11e12345552e33bd",
+      "spanish": "haciendo",
+      "english": "doing",
+      "example": {
+        "spanish": "Estoy haciéndolo.",
+        "english": "I am doing it."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "six verb forms",
+        "surface form",
+        "do",
+        "verb form: present participle",
+        "uses present participle"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "verb-form-11e1695d5d043fc3",
+      "spanish": "hizo",
+      "english": "did",
+      "example": {
+        "spanish": "Lo hizo ayer.",
+        "english": "She did it yesterday."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "six verb forms",
+        "surface form",
+        "do",
+        "verb form: past",
+        "uses past"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "verb-form-a0ddd5763f8e42b9",
+      "spanish": "hecho",
+      "english": "done",
+      "example": {
+        "spanish": "Ya lo he hecho.",
+        "english": "I have already done it."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "six verb forms",
+        "surface form",
+        "do",
+        "verb form: past participle",
+        "uses past participle"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "verb-form-2033685baa2c3b7c",
+      "spanish": "hace",
+      "english": "does",
+      "example": {
+        "spanish": "Ella lo hace.",
+        "english": "She does it."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "six verb forms",
+        "surface form",
+        "do",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "verb-form-b4ba195dedd1b72d",
+      "spanish": "decidir [hacer algo]",
+      "english": "to decide [to do something]",
+      "example": {
+        "spanish": "Decidí hacerlo.",
+        "english": "I decided to do it."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "decide",
+        "followed by full infinitive",
+        "verb form: full infinitive",
+        "uses full infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-ce961687ea8ba03d",
+      "spanish": "elegir [hacer algo]",
+      "english": "to choose [to do something]",
+      "example": {
+        "spanish": "Elegí hacerlo.",
+        "english": "I chose to do it."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "choose",
+        "followed by full infinitive",
+        "verb form: full infinitive",
+        "uses full infinitive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-91356d2578627427",
+      "spanish": "intentar [hacer algo]",
+      "english": "to try [to do something]",
+      "example": {
+        "spanish": "Intenté hacerlo.",
+        "english": "I tried to do it."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "try",
+        "followed by full infinitive",
+        "verb form: full infinitive",
+        "uses full infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-5c0defd4acffcda2",
+      "spanish": "preferir [hacer algo]",
+      "english": "to prefer [to do something]",
+      "example": {
+        "spanish": "Prefiero hacerlo temprano.",
+        "english": "I prefer to do it early."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "prefer",
+        "followed by full infinitive",
+        "verb form: full infinitive",
+        "uses full infinitive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-6fc33b1df83c10e5",
+      "spanish": "empezar a [hacer algo]",
+      "english": "to start [to do something]",
+      "example": {
+        "spanish": "Empecé a hacerlo.",
+        "english": "I started to do it."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "start",
+        "allows full infinitive or gerund",
+        "followed by full infinitive",
+        "verb form: full infinitive",
+        "uses full infinitive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-902be4ba8bbd3d69",
+      "spanish": "comenzar a [hacer algo]",
+      "english": "to begin [to do something]",
+      "example": {
+        "spanish": "Ella comenzó a hacerlo.",
+        "english": "She began to do it."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "begin",
+        "allows full infinitive or gerund",
+        "followed by full infinitive",
+        "verb form: full infinitive",
+        "uses full infinitive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-4de4e01b5125764c",
+      "spanish": "continuar [haciendo algo]",
+      "english": "to continue [to do something]",
+      "example": {
+        "spanish": "Continuaron hablando.",
+        "english": "They continued to talk."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "continue",
+        "allows full infinitive or gerund",
+        "followed by full infinitive",
+        "verb form: full infinitive",
+        "uses full infinitive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-48067adeafdaa7bd",
+      "spanish": "gustaría que [alguien] [hiciera algo]",
+      "english": "would like [somebody] to [do something]",
+      "example": {
+        "spanish": "Me gustaría que ellos lo hicieran.",
+        "english": "I would like them to do it."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "would like",
+        "somebody to do something",
+        "followed by full infinitive",
+        "verb form: full infinitive",
+        "uses full infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-702bef65ec855b32",
+      "spanish": "ser [adjetivo] [hacer algo]",
+      "english": "it is [adjective] [to do something]",
+      "example": {
+        "spanish": "Es importante hacerlo.",
+        "english": "It is important to do it."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "adjective + full infinitive",
+        "adjective connector",
+        "followed by full infinitive",
+        "verb form: full infinitive",
+        "uses full infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "verb-form-bc3c1464407548f2",
+      "spanish": "para [hacer algo]",
+      "english": "to [do something]",
+      "example": {
+        "spanish": "Llamo para confirmar la reunión.",
+        "english": "I am calling to confirm the meeting."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "purpose",
+        "para => full infinitive",
+        "followed by full infinitive",
+        "verb form: full infinitive",
+        "uses full infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "verb-form-8fcffac796121047",
+      "spanish": "encantarle [hacer algo] a [alguien]",
+      "english": "[somebody] loves to [do something]",
+      "example": {
+        "spanish": "A Laura le encanta leer.",
+        "english": "Laura loves to read."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "love",
+        "allows full infinitive or gerund",
+        "followed by full infinitive",
+        "verb form: full infinitive",
+        "uses full infinitive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-1c21252c0d8ba619",
+      "spanish": "encantarle [hacer algo] a [alguien]",
+      "english": "[somebody] loves [doing something]",
+      "example": {
+        "spanish": "A Laura le encanta leer.",
+        "english": "Laura loves reading."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "love",
+        "allows full infinitive or gerund",
+        "followed by gerund",
+        "verb form: present participle",
+        "uses present participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-efbf6fa357bdd54e",
+      "spanish": "odiar [hacer algo]",
+      "english": "to hate [to do something]",
+      "example": {
+        "spanish": "Odio esperar.",
+        "english": "I hate to wait."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "hate",
+        "allows full infinitive or gerund",
+        "followed by full infinitive",
+        "verb form: full infinitive",
+        "uses full infinitive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-34422cca4de72b18",
+      "spanish": "odiar [hacer algo]",
+      "english": "to hate [doing something]",
+      "example": {
+        "spanish": "Odio esperar.",
+        "english": "I hate waiting."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "hate",
+        "allows full infinitive or gerund",
+        "followed by gerund",
+        "verb form: present participle",
+        "uses present participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-38c35eda34f4383c",
+      "spanish": "empezar a [hacer algo]",
+      "english": "to start [doing something]",
+      "example": {
+        "spanish": "Ella empieza a hacerlo.",
+        "english": "She starts doing it."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "start",
+        "allows full infinitive or gerund",
+        "followed by gerund",
+        "verb form: present participle",
+        "uses present participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-a042061d8eb9bcd1",
+      "spanish": "comenzar a [hacer algo]",
+      "english": "to begin [doing something]",
+      "example": {
+        "spanish": "Ella comenzó a hacerlo.",
+        "english": "She began doing it."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "begin",
+        "allows full infinitive or gerund",
+        "followed by gerund",
+        "verb form: present participle",
+        "uses present participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-9bd115ac5743fa9b",
+      "spanish": "continuar [haciendo algo]",
+      "english": "to continue [doing something]",
+      "example": {
+        "spanish": "Continúan hablando.",
+        "english": "They continue talking."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "continue",
+        "allows full infinitive or gerund",
+        "followed by gerund",
+        "verb form: present participle",
+        "uses present participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-2ddb61d464e61db8",
+      "spanish": "poder [hacer algo] (pasado)",
+      "english": "could [do something]",
+      "example": {
+        "spanish": "Él podía hacerlo.",
+        "english": "He could do it."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "modal",
+        "could",
+        "past ability",
+        "followed by bare infinitive",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-661d2617a68d4b8e",
+      "spanish": "podría [hacer algo]",
+      "english": "could [do something]",
+      "example": {
+        "spanish": "Él podría hacerlo.",
+        "english": "He could do it."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "modal",
+        "could",
+        "conditional",
+        "followed by bare infinitive",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-16e520850bde0fe1",
+      "spanish": "es posible que [alguien] [haga algo]",
+      "english": "[somebody] may [do something]",
+      "example": {
+        "spanish": "Es posible que ella lo haga.",
+        "english": "She may do it."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "modal",
+        "may",
+        "possibility",
+        "followed by bare infinitive",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-904653b97a7ea78a",
+      "spanish": "puede que [alguien] [haga algo]",
+      "english": "[somebody] might [do something]",
+      "example": {
+        "spanish": "Puede que ella lo haga.",
+        "english": "She might do it."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "modal",
+        "might",
+        "possibility",
+        "followed by bare infinitive",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-6efca78269070bf1",
+      "spanish": "¿[hacemos algo]?",
+      "english": "shall we [do something]?",
+      "example": {
+        "spanish": "¿Lo hacemos?",
+        "english": "Shall we do it?"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "modal",
+        "shall",
+        "suggestion",
+        "followed by bare infinitive",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-7dab781fcbcc43cd",
+      "spanish": "[hacer algo] (futuro)",
+      "english": "will [do something]",
+      "example": {
+        "spanish": "Él lo hará.",
+        "english": "He will do it."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "modal",
+        "will",
+        "future",
+        "followed by bare infinitive",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "verb-form-6925e05211a99e22",
+      "spanish": "[hacer algo] (condicional)",
+      "english": "would [do something]",
+      "example": {
+        "spanish": "Él lo haría.",
+        "english": "He would do it."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "modal",
+        "would",
+        "conditional",
+        "followed by bare infinitive",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "verb-form-9ce2e5a3031100ed",
+      "spanish": "obligar a [alguien] a [hacer algo]",
+      "english": "to make [somebody] [do something]",
+      "example": {
+        "spanish": "Me obligan a hacerlo.",
+        "english": "They make me do it."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "make",
+        "causative",
+        "somebody + bare infinitive",
+        "followed by bare infinitive",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-655fa7eb24f96e6a",
+      "spanish": "hacer que [alguien] [haga algo]",
+      "english": "to have [somebody] [do something]",
+      "example": {
+        "spanish": "Hacen que yo lo haga.",
+        "english": "They have me do it."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "have",
+        "causative",
+        "somebody + bare infinitive",
+        "followed by bare infinitive",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-b268a7c7a549e46a",
+      "spanish": "ayudarle a [alguien] a [hacer algo]",
+      "english": "to help [somebody] [do something]",
+      "example": {
+        "spanish": "Me ayudan a hacerlo.",
+        "english": "They help me do it."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "help",
+        "somebody + bare infinitive",
+        "allows full infinitive or bare infinitive",
+        "followed by bare infinitive",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-f5ac5241be2ec6bf",
+      "spanish": "venir a [hacer algo]",
+      "english": "to come [do something]",
+      "example": {
+        "spanish": "Ven a verlo.",
+        "english": "Come see it."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "come",
+        "come + bare infinitive",
+        "followed by bare infinitive",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-afd09737de5e8568",
+      "spanish": "ir a [hacer algo]",
+      "english": "to go [do something]",
+      "example": {
+        "spanish": "Ve a hacerlo.",
+        "english": "Go do it."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "go",
+        "go + bare infinitive",
+        "followed by bare infinitive",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-d912777d01c9939b",
+      "spanish": "ayudarle a [alguien] a [hacer algo]",
+      "english": "to help [somebody] [to do something]",
+      "example": {
+        "spanish": "Me ayudan a hacerlo.",
+        "english": "They help me to do it."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "help",
+        "allows full infinitive or bare infinitive",
+        "followed by full infinitive",
+        "verb form: full infinitive",
+        "uses full infinitive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-af9bed76b5b33608",
+      "spanish": "hazlo",
+      "english": "do it",
+      "example": {
+        "spanish": "Hazlo ahora.",
+        "english": "Do it now."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "imperative",
+        "command",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-04dbf6a9bf8e0d72",
+      "spanish": "hágalo",
+      "english": "do it",
+      "example": {
+        "spanish": "Hágalo ahora, por favor.",
+        "english": "Do it now, please."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "imperative",
+        "command",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-677a0c20842476a2",
+      "spanish": "háganlo",
+      "english": "do it",
+      "example": {
+        "spanish": "Háganlo juntos.",
+        "english": "Do it together."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "imperative",
+        "command",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-a7c6042f4683726b",
+      "spanish": "háganoslo",
+      "english": "do it for us",
+      "example": {
+        "spanish": "Háganoslo hoy, por favor.",
+        "english": "Do it for us today, please."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "imperative",
+        "command",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-11665691ec9a1a45",
+      "spanish": "no lo hagas",
+      "english": "don't do it",
+      "example": {
+        "spanish": "No lo hagas todavía.",
+        "english": "Don't do it yet."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "imperative",
+        "command",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-e612b549904f2020",
+      "spanish": "hagámoslo",
+      "english": "let's do it",
+      "example": {
+        "spanish": "Hagámoslo ahora.",
+        "english": "Let's do it now."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "imperative",
+        "command",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-568aa9f733a01739",
+      "spanish": "vamos",
+      "english": "let's go",
+      "example": {
+        "spanish": "Vamos juntos.",
+        "english": "Let's go together."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "imperative",
+        "command",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-081314edfeae0ff1",
+      "spanish": "no lo hagamos",
+      "english": "let's not do it",
+      "example": {
+        "spanish": "No lo hagamos hoy.",
+        "english": "Let's not do it today."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "imperative",
+        "command",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-9803d08814a3dedd",
+      "spanish": "¿lo haces?",
+      "english": "do you do it?",
+      "example": {
+        "spanish": "¿Lo haces todos los días?",
+        "english": "Do you do it every day?"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "auxiliary do",
+        "do support",
+        "followed by bare infinitive",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "verb-form-31a88838a151e560",
+      "spanish": "¿ella lo hace?",
+      "english": "does she do it?",
+      "example": {
+        "spanish": "¿Ella lo hace sola?",
+        "english": "Does she do it alone?"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "auxiliary do",
+        "do support",
+        "followed by bare infinitive",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "verb-form-dfe12b69b0460c24",
+      "spanish": "¿ellos lo hicieron?",
+      "english": "did they do it?",
+      "example": {
+        "spanish": "¿Ellos lo hicieron ayer?",
+        "english": "Did they do it yesterday?"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "auxiliary do",
+        "do support",
+        "followed by bare infinitive",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "verb-form-eceb7b83d9c51ece",
+      "spanish": "no lo hago",
+      "english": "I don't do it",
+      "example": {
+        "spanish": "No lo hago los domingos.",
+        "english": "I don't do it on Sundays."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "auxiliary do",
+        "do support",
+        "followed by bare infinitive",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "verb-form-10a9b761c8d5e621",
+      "spanish": "no lo hicieron",
+      "english": "they didn't do it",
+      "example": {
+        "spanish": "No lo hicieron ayer.",
+        "english": "They didn't do it yesterday."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "auxiliary do",
+        "do support",
+        "followed by bare infinitive",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "verb-form-d80af7b70f513938",
+      "spanish": "sí lo hago",
+      "english": "I do do it",
+      "example": {
+        "spanish": "Sí lo hago; de verdad.",
+        "english": "I do do it; really."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "auxiliary do",
+        "do support",
+        "followed by bare infinitive",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "verb-form-8bbb6efacfb406b6",
+      "spanish": "oír a [alguien] [haciendo algo]",
+      "english": "to hear [somebody] [doing something]",
+      "example": {
+        "spanish": "Oí a Laura cerrando la puerta.",
+        "english": "I heard Laura closing the door."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "hear",
+        "perception verb",
+        "allows bare infinitive or present participle",
+        "event in progress",
+        "uses present participle",
+        "followed by gerund",
+        "verb form: present participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-9d3125aaac051b80",
+      "spanish": "observar a [alguien] [hacer algo]",
+      "english": "to watch [somebody] [do something]",
+      "example": {
+        "spanish": "Observé a Laura terminar la tarea.",
+        "english": "I watched Laura finish the task."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "watch",
+        "perception verb",
+        "allows bare infinitive or present participle",
+        "whole event",
+        "followed by bare infinitive",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-b5cb5f7c4590a774",
+      "spanish": "observar a [alguien] [haciendo algo]",
+      "english": "to watch [somebody] [doing something]",
+      "example": {
+        "spanish": "Observé a Laura terminando la tarea.",
+        "english": "I watched Laura finishing the task."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "watch",
+        "perception verb",
+        "allows bare infinitive or present participle",
+        "event in progress",
+        "uses present participle",
+        "followed by gerund",
+        "verb form: present participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-9834fb233eab2b6c",
+      "spanish": "sentir a [alguien o algo] [hacer algo]",
+      "english": "to feel [somebody or something] [do something]",
+      "example": {
+        "spanish": "Sentí el piso moverse.",
+        "english": "I felt the floor move."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "feel",
+        "perception verb",
+        "allows bare infinitive or present participle",
+        "whole event",
+        "followed by bare infinitive",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-7e70b363f0795b72",
+      "spanish": "sentir a [alguien o algo] [haciendo algo]",
+      "english": "to feel [somebody or something] [doing something]",
+      "example": {
+        "spanish": "Sentí el piso moviéndose.",
+        "english": "I felt the floor moving."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "feel",
+        "perception verb",
+        "allows bare infinitive or present participle",
+        "event in progress",
+        "uses present participle",
+        "followed by gerund",
+        "verb form: present participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-6a368b97f4290ed1",
+      "spanish": "notar a [alguien] [hacer algo]",
+      "english": "to notice [somebody] [do something]",
+      "example": {
+        "spanish": "Noté a Laura salir.",
+        "english": "I noticed Laura leave."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "notice",
+        "perception verb",
+        "allows bare infinitive or present participle",
+        "whole event",
+        "followed by bare infinitive",
+        "verb form: bare infinitive",
+        "uses bare infinitive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-540521b697c371a0",
+      "spanish": "notar a [alguien] [haciendo algo]",
+      "english": "to notice [somebody] [doing something]",
+      "example": {
+        "spanish": "Noté a Laura saliendo.",
+        "english": "I noticed Laura leaving."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "notice",
+        "perception verb",
+        "allows bare infinitive or present participle",
+        "event in progress",
+        "uses present participle",
+        "followed by gerund",
+        "verb form: present participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-a5eab1654228c9a3",
+      "spanish": "ser visto/a [hacer algo]",
+      "english": "to be seen to [do something]",
+      "example": {
+        "spanish": "La vieron salir.",
+        "english": "She was seen to leave."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "see",
+        "perception verb",
+        "passive perception",
+        "followed by full infinitive",
+        "verb form: full infinitive",
+        "uses full infinitive"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-a707bb13b6c4d4d4",
+      "spanish": "antes de [hacer algo]",
+      "english": "before [doing something]",
+      "example": {
+        "spanish": "Llámame antes de salir.",
+        "english": "Call me before leaving."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "preposition + gerund",
+        "PING",
+        "before",
+        "followed by gerund",
+        "verb form: present participle",
+        "uses present participle"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-f294706768ffa517",
+      "spanish": "después de [hacer algo]",
+      "english": "after [doing something]",
+      "example": {
+        "spanish": "Llámame después de llegar.",
+        "english": "Call me after arriving."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "preposition + gerund",
+        "PING",
+        "after",
+        "followed by gerund",
+        "verb form: present participle",
+        "uses present participle"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-5a28c838c70ed2d7",
+      "spanish": "por [hacer algo]",
+      "english": "for [doing something]",
+      "example": {
+        "spanish": "Gracias por ayudarme.",
+        "english": "Thank you for helping me."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "preposition + gerund",
+        "PING",
+        "for",
+        "followed by gerund",
+        "verb form: present participle",
+        "uses present participle"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-4eacd9ad9af53711",
+      "spanish": "sin [hacer algo]",
+      "english": "without [doing something]",
+      "example": {
+        "spanish": "Salió sin decir nada.",
+        "english": "She left without saying anything."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "preposition + gerund",
+        "PING",
+        "without",
+        "followed by gerund",
+        "verb form: present participle",
+        "uses present participle"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-fdf0b259aba6521d",
+      "spanish": "en vez de [hacer algo]",
+      "english": "instead of [doing something]",
+      "example": {
+        "spanish": "Llamó en vez de escribir.",
+        "english": "She called instead of writing."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "preposition + gerund",
+        "PING",
+        "instead of",
+        "followed by gerund",
+        "verb form: present participle",
+        "uses present participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-b553ab84850d5e8e",
+      "spanish": "esperar con ilusión [hacer algo]",
+      "english": "to look forward to [doing something]",
+      "example": {
+        "spanish": "Espero con ilusión verte.",
+        "english": "I look forward to seeing you."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "preposition + gerund",
+        "PING",
+        "look",
+        "forward",
+        "to",
+        "followed by gerund",
+        "verb form: present participle",
+        "uses present participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-2f285d3244130321",
+      "spanish": "evitar [hacer algo]",
+      "english": "to avoid [doing something]",
+      "example": {
+        "spanish": "Evito manejar de noche.",
+        "english": "I avoid driving at night."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "avoid",
+        "followed by gerund",
+        "verb form: present participle",
+        "uses present participle"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-b12cbc378d3fd05f",
+      "spanish": "disfrutar [hacer algo]",
+      "english": "to enjoy [doing something]",
+      "example": {
+        "spanish": "Disfruto leer en inglés.",
+        "english": "I enjoy reading in English."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "enjoy",
+        "followed by gerund",
+        "verb form: present participle",
+        "uses present participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-6898562d0cd59e37",
+      "spanish": "recomendar [hacer algo]",
+      "english": "to recommend [doing something]",
+      "example": {
+        "spanish": "Recomiendo llamar primero.",
+        "english": "I recommend calling first."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "recommend",
+        "followed by gerund",
+        "verb form: present participle",
+        "uses present participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-c85175390fea4497",
+      "spanish": "sugerir [hacer algo]",
+      "english": "to suggest [doing something]",
+      "example": {
+        "spanish": "Sugiero esperar aquí.",
+        "english": "I suggest waiting here."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "suggest",
+        "followed by gerund",
+        "verb form: present participle",
+        "uses present participle"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-c0cf9965075ad738",
+      "spanish": "terminar de [hacer algo]",
+      "english": "to finish [doing something]",
+      "example": {
+        "spanish": "Ella termina de hacerlo.",
+        "english": "She finishes doing it."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "finish",
+        "followed by gerund",
+        "verb form: present participle",
+        "uses present participle"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-aaf97c5d8b0c41e4",
+      "spanish": "[hacer algo] es [adjetivo]",
+      "english": "[doing something] is [adjective]",
+      "example": {
+        "spanish": "Leer en inglés es práctico.",
+        "english": "Reading in English is practical."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "gerund",
+        "activity as noun",
+        "uses gerund"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-70d071069b5ce493",
+      "spanish": "ir a correr",
+      "english": "to go running",
+      "example": {
+        "spanish": "Vamos a correr en el parque.",
+        "english": "We go running in the park."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "go + -ing",
+        "activity",
+        "followed by gerund",
+        "uses gerund"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-ba9f13800eabf618",
+      "spanish": "ir a bailar",
+      "english": "to go dancing",
+      "example": {
+        "spanish": "Fueron a bailar anoche.",
+        "english": "They went dancing last night."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "go + -ing",
+        "activity",
+        "followed by gerund",
+        "uses gerund"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-a1dcbe753f4d484d",
+      "spanish": "hacer ==> haciendo",
+      "english": "to do ==> doing",
+      "example": {
+        "spanish": "Estoy haciéndolo.",
+        "english": "I am doing it."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "verb form: present participle",
+        "uses present participle",
+        "spelling: add -ing"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-28aee5701b712b09",
+      "spanish": "hacer ==> haciendo",
+      "english": "to make ==> making",
+      "example": {
+        "spanish": "Estoy haciendo la cena.",
+        "english": "I am making dinner."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "verb form: present participle",
+        "uses present participle",
+        "spelling: drop final e"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-01c51c1190fc4566",
+      "spanish": "ver ==> viendo",
+      "english": "to see ==> seeing",
+      "example": {
+        "spanish": "Estoy viendo a Laura.",
+        "english": "I am seeing Laura."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "verb form: present participle",
+        "uses present participle",
+        "spelling: keep final ee"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-84d768ee890c072e",
+      "spanish": "correr ==> corriendo",
+      "english": "to run ==> running",
+      "example": {
+        "spanish": "Estoy corriendo.",
+        "english": "I am running."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "verb form: present participle",
+        "uses present participle",
+        "spelling: double final consonant"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-335f099620d966b4",
+      "spanish": "ser [hecho] por [alguien]",
+      "english": "to be [done] by [somebody]",
+      "example": {
+        "spanish": "Fue hecho por Laura.",
+        "english": "It was done by Laura."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "passive",
+        "be + past participle",
+        "verb form: past participle",
+        "uses past participle"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "verb-form-dfb5404eb43ef83b",
+      "spanish": "quedar [hecho]",
+      "english": "to get [done]",
+      "example": {
+        "spanish": "Se hizo a tiempo.",
+        "english": "It got done on time."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "passive",
+        "get + past participle",
+        "change of state",
+        "verb form: past participle",
+        "uses past participle"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-83a510840dcd2ba8",
+      "spanish": "mandar [hacer algo]",
+      "english": "to get [something] [done]",
+      "example": {
+        "spanish": "Mandé reparar el teléfono.",
+        "english": "I got the phone repaired."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "causative",
+        "get something done",
+        "verb form: past participle",
+        "uses past participle"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-945bce2b1df8ae42",
+      "spanish": "hacer [hacer algo]",
+      "english": "to have [something] [done]",
+      "example": {
+        "spanish": "Ella hace revisar el carro cada año.",
+        "english": "She has the car checked every year."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "causative",
+        "have something done",
+        "verb form: past participle",
+        "uses past participle"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-a43fc50b5cc78ed6",
+      "spanish": "hablar ==> habla",
+      "english": "to speak ==> speaks",
+      "example": {
+        "spanish": "La forma es «habla».",
+        "english": "The form is “speaks.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-9774f71ed8c8b3b6",
+      "spanish": "hablar ==> habla",
+      "english": "to talk ==> talks",
+      "example": {
+        "spanish": "La forma es «habla».",
+        "english": "The form is “talks.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-b7d33a23deeb51f2",
+      "spanish": "reparar ==> repara",
+      "english": "to repair ==> repairs",
+      "example": {
+        "spanish": "La forma es «repara».",
+        "english": "The form is “repairs.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-1d8da7e3dff299c1",
+      "spanish": "pensar ==> piensa",
+      "english": "to think ==> thinks",
+      "example": {
+        "spanish": "La forma es «piensa».",
+        "english": "The form is “thinks.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-f5caaeeade0648c7",
+      "spanish": "preguntar ==> pregunta",
+      "english": "to ask ==> asks",
+      "example": {
+        "spanish": "La forma es «pregunta».",
+        "english": "The form is “asks.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-1faff72d722d755e",
+      "spanish": "llamar ==> llama",
+      "english": "to call ==> calls",
+      "example": {
+        "spanish": "La forma es «llama».",
+        "english": "The form is “calls.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-a81d791a9cd54f00",
+      "spanish": "explicar ==> explica",
+      "english": "to explain ==> explains",
+      "example": {
+        "spanish": "La forma es «explica».",
+        "english": "The form is “explains.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-f2986d9bd80c54c1",
+      "spanish": "escuchar ==> escucha",
+      "english": "to listen ==> listens",
+      "example": {
+        "spanish": "La forma es «escucha».",
+        "english": "The form is “listens.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-092222a5a58938d6",
+      "spanish": "ordenar ==> ordena",
+      "english": "to order ==> orders",
+      "example": {
+        "spanish": "La forma es «ordena».",
+        "english": "The form is “orders.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-005dfe64bdf19394",
+      "spanish": "trabajar ==> trabaja",
+      "english": "to work ==> works",
+      "example": {
+        "spanish": "La forma es «trabaja».",
+        "english": "The form is “works.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-41595c96fffcf39d",
+      "spanish": "funcionar ==> funciona",
+      "english": "to function ==> functions",
+      "example": {
+        "spanish": "La forma es «funciona».",
+        "english": "The form is “functions.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-7a20aed0ddb683fb",
+      "spanish": "estudiar ==> estudia",
+      "english": "to study ==> studies",
+      "example": {
+        "spanish": "La forma es «estudia».",
+        "english": "The form is “studies.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: consonant y => ies",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-ac346f098db49b9e",
+      "spanish": "tratar ==> trata",
+      "english": "to try ==> tries",
+      "example": {
+        "spanish": "La forma es «trata».",
+        "english": "The form is “tries.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: consonant y => ies",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-5968528b0a3524c5",
+      "spanish": "comprar ==> compra",
+      "english": "to buy ==> buys",
+      "example": {
+        "spanish": "La forma es «compra».",
+        "english": "The form is “buys.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-df2e86f0958fa37c",
+      "spanish": "pagar ==> paga",
+      "english": "to pay ==> pays",
+      "example": {
+        "spanish": "La forma es «paga».",
+        "english": "The form is “pays.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-2e117c52954b0505",
+      "spanish": "costar ==> cuesta",
+      "english": "to cost ==> costs",
+      "example": {
+        "spanish": "La forma es «cuesta».",
+        "english": "The form is “costs.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-7689447e244a43ec",
+      "spanish": "gastar ==> gasta",
+      "english": "to spend ==> spends",
+      "example": {
+        "spanish": "La forma es «gasta».",
+        "english": "The form is “spends.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-33d60b0c2b98f710",
+      "spanish": "llegar ==> llega",
+      "english": "to arrive ==> arrives",
+      "example": {
+        "spanish": "La forma es «llega».",
+        "english": "The form is “arrives.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-b557dc83f6e406ec",
+      "spanish": "llegar ==> llega",
+      "english": "to get to ==> gets to",
+      "example": {
+        "spanish": "La forma es «llega».",
+        "english": "The form is “gets to.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-9595a510a9a080e9",
+      "spanish": "regresar ==> regresa",
+      "english": "to return ==> returns",
+      "example": {
+        "spanish": "La forma es «regresa».",
+        "english": "The form is “returns.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-91dd7b2798b076cc",
+      "spanish": "regresar ==> regresa",
+      "english": "to come back ==> comes back",
+      "example": {
+        "spanish": "La forma es «regresa».",
+        "english": "The form is “comes back.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-2cb6298ef0031e8a",
+      "spanish": "regresar ==> regresa",
+      "english": "to go back ==> goes back",
+      "example": {
+        "spanish": "La forma es «regresa».",
+        "english": "The form is “goes back.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-df1f871b7d89d0ba",
+      "spanish": "manejar ==> maneja",
+      "english": "to drive ==> drives",
+      "example": {
+        "spanish": "La forma es «maneja».",
+        "english": "The form is “drives.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-cc5f7507cd0278ce",
+      "spanish": "levantarse ==> se levanta",
+      "english": "to get up ==> gets up",
+      "example": {
+        "spanish": "La forma es «se levanta».",
+        "english": "The form is “gets up.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-41a10ab90b6c85f7",
+      "spanish": "quedarse ==> se queda",
+      "english": "to stay ==> stays",
+      "example": {
+        "spanish": "La forma es «se queda».",
+        "english": "The form is “stays.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-fb7b1ed764af6e68",
+      "spanish": "caminar ==> camina",
+      "english": "to walk ==> walks",
+      "example": {
+        "spanish": "La forma es «camina».",
+        "english": "The form is “walks.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-3ffbc3eeacbdc05a",
+      "spanish": "cerrar ==> cierra",
+      "english": "to close ==> closes",
+      "example": {
+        "spanish": "La forma es «cierra».",
+        "english": "The form is “closes.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-b5592f3763e052e3",
+      "spanish": "ayudar ==> ayuda",
+      "english": "to help ==> helps",
+      "example": {
+        "spanish": "La forma es «ayuda».",
+        "english": "The form is “helps.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-2706ceb980d3af66",
+      "spanish": "presentar ==> presenta",
+      "english": "to introduce ==> introduces",
+      "example": {
+        "spanish": "La forma es «presenta».",
+        "english": "The form is “introduces.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-013fe7eba23ed900",
+      "spanish": "encontrar ==> encuentra",
+      "english": "to find ==> finds",
+      "example": {
+        "spanish": "La forma es «encuentra».",
+        "english": "The form is “finds.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-9b380535cbc0501e",
+      "spanish": "buscar ==> busca",
+      "english": "to look for ==> looks for",
+      "example": {
+        "spanish": "La forma es «busca».",
+        "english": "The form is “looks for.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-f1516a38b07348ee",
+      "spanish": "mirar ==> mira",
+      "english": "to look at ==> looks at",
+      "example": {
+        "spanish": "La forma es «mira».",
+        "english": "The form is “looks at.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-034b424d4d1d13ea",
+      "spanish": "mostrar ==> muestra",
+      "english": "to show ==> shows",
+      "example": {
+        "spanish": "La forma es «muestra».",
+        "english": "The form is “shows.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-cf12fa37ec2ab7a3",
+      "spanish": "dar ==> da",
+      "english": "to give ==> gives",
+      "example": {
+        "spanish": "La forma es «da».",
+        "english": "The form is “gives.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-5a9465f7fb9c73ba",
+      "spanish": "enviar ==> envía",
+      "english": "to send ==> sends",
+      "example": {
+        "spanish": "La forma es «envía».",
+        "english": "The form is “sends.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-b952b4f48eae47eb",
+      "spanish": "tomar ==> toma",
+      "english": "to take ==> takes",
+      "example": {
+        "spanish": "La forma es «toma».",
+        "english": "The form is “takes.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-259bbd0639da9bc6",
+      "spanish": "llevar ==> lleva",
+      "english": "to take ==> takes",
+      "example": {
+        "spanish": "La forma es «lleva».",
+        "english": "The form is “takes.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-ecc8d3a541cd1912",
+      "spanish": "dejar ==> deja",
+      "english": "to leave ==> leaves",
+      "example": {
+        "spanish": "La forma es «deja».",
+        "english": "The form is “leaves.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-087fc8ad04215476",
+      "spanish": "recordar ==> recuerda",
+      "english": "to remember ==> remembers",
+      "example": {
+        "spanish": "La forma es «recuerda».",
+        "english": "The form is “remembers.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-938f3d7fd647b318",
+      "spanish": "olvidar ==> olvida",
+      "english": "to forget ==> forgets",
+      "example": {
+        "spanish": "La forma es «olvida».",
+        "english": "The form is “forgets.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-ad534d0c82ef37b1",
+      "spanish": "pasar ==> pasa",
+      "english": "to spend time ==> spends time",
+      "example": {
+        "spanish": "La forma es «pasa».",
+        "english": "The form is “spends time.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-ebba74609e89f18a",
+      "spanish": "empezar ==> empieza",
+      "english": "to start ==> starts",
+      "example": {
+        "spanish": "La forma es «empieza».",
+        "english": "The form is “starts.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-0b881b110d3a13a4",
+      "spanish": "terminar ==> termina",
+      "english": "to finish ==> finishes",
+      "example": {
+        "spanish": "La forma es «termina».",
+        "english": "The form is “finishes.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -es",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-b333687c80da71ad",
+      "spanish": "esperar ==> espera",
+      "english": "to wait for ==> waits for",
+      "example": {
+        "spanish": "La forma es «espera».",
+        "english": "The form is “waits for.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-de5996c449cb332f",
+      "spanish": "gustar ==> gusta",
+      "english": "to like ==> likes",
+      "example": {
+        "spanish": "La forma es «gusta».",
+        "english": "The form is “likes.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-d0bfccb40f9dbd3c",
+      "spanish": "necesitar ==> necesita",
+      "english": "to need ==> needs",
+      "example": {
+        "spanish": "La forma es «necesita».",
+        "english": "The form is “needs.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-a824305cde01f8af",
+      "spanish": "intentar ==> intenta",
+      "english": "to try ==> tries",
+      "example": {
+        "spanish": "La forma es «intenta».",
+        "english": "The form is “tries.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: consonant y => ies",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-c0c20afca744662d",
+      "spanish": "desayunar ==> desayuna",
+      "english": "to have breakfast ==> has breakfast",
+      "example": {
+        "spanish": "La forma es «desayuna».",
+        "english": "The form is “has breakfast.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-d95c442b4d48a1eb",
+      "spanish": "almorzar ==> almuerza",
+      "english": "to have lunch ==> has lunch",
+      "example": {
+        "spanish": "La forma es «almuerza».",
+        "english": "The form is “has lunch.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-ed0b6510c314c7c8",
+      "spanish": "cenar ==> cena",
+      "english": "to have dinner ==> has dinner",
+      "example": {
+        "spanish": "La forma es «cena».",
+        "english": "The form is “has dinner.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-8c2b67343525211a",
+      "spanish": "correr ==> corre",
+      "english": "to run ==> runs",
+      "example": {
+        "spanish": "La forma es «corre».",
+        "english": "The form is “runs.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-ecf5e7577c7e7ba2",
+      "spanish": "decir ==> dice",
+      "english": "to tell ==> tells",
+      "example": {
+        "spanish": "La forma es «dice».",
+        "english": "The form is “tells.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-740ea274301e35f8",
+      "spanish": "decir ==> dice",
+      "english": "to say ==> says",
+      "example": {
+        "spanish": "La forma es «dice».",
+        "english": "The form is “says.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person irregular",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-ec49e455df9c7b11",
+      "spanish": "decidir ==> decide",
+      "english": "to decide ==> decides",
+      "example": {
+        "spanish": "La forma es «decide».",
+        "english": "The form is “decides.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-e954d94ed4915a01",
+      "spanish": "pedir ==> pide",
+      "english": "to ask for ==> asks for",
+      "example": {
+        "spanish": "La forma es «pide».",
+        "english": "The form is “asks for.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-93356d51f0f1834b",
+      "spanish": "pedir ==> pide",
+      "english": "to ask somebody to ==> asks somebody to",
+      "example": {
+        "spanish": "La forma es «pide».",
+        "english": "The form is “asks somebody to.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-60422824789d4e56",
+      "spanish": "pedir ==> pide",
+      "english": "to order ==> orders",
+      "example": {
+        "spanish": "La forma es «pide».",
+        "english": "The form is “orders.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-d9f643a0d3d6f8f4",
+      "spanish": "oír ==> oye",
+      "english": "to hear ==> hears",
+      "example": {
+        "spanish": "La forma es «oye».",
+        "english": "The form is “hears.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-0baa551f2aa07ab8",
+      "spanish": "leer ==> lee",
+      "english": "to read ==> reads",
+      "example": {
+        "spanish": "La forma es «lee».",
+        "english": "The form is “reads.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-bde04de70c203409",
+      "spanish": "escribir ==> escribe",
+      "english": "to write ==> writes",
+      "example": {
+        "spanish": "La forma es «escribe».",
+        "english": "The form is “writes.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-072100e7ace614b4",
+      "spanish": "hacer ==> hace",
+      "english": "to make ==> makes",
+      "example": {
+        "spanish": "La forma es «hace».",
+        "english": "The form is “makes.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-e155b746b0cc2aeb",
+      "spanish": "comer ==> come",
+      "english": "to eat ==> eats",
+      "example": {
+        "spanish": "La forma es «come».",
+        "english": "The form is “eats.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-96a30e11c9f02be8",
+      "spanish": "beber ==> bebe",
+      "english": "to drink ==> drinks",
+      "example": {
+        "spanish": "La forma es «bebe».",
+        "english": "The form is “drinks.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-fc7213cbc4f63599",
+      "spanish": "tener ==> tiene",
+      "english": "to have ==> has",
+      "example": {
+        "spanish": "La forma es «tiene».",
+        "english": "The form is “has.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person irregular",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-968604a5b9ca66fa",
+      "spanish": "elegir ==> elige",
+      "english": "to choose ==> chooses",
+      "example": {
+        "spanish": "La forma es «elige».",
+        "english": "The form is “chooses.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-717c8c30722c55bb",
+      "spanish": "querer ==> quiere",
+      "english": "to want ==> wants",
+      "example": {
+        "spanish": "La forma es «quiere».",
+        "english": "The form is “wants.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-ffedcd9fa163f115",
+      "spanish": "vivir ==> vive",
+      "english": "to live ==> lives",
+      "example": {
+        "spanish": "La forma es «vive».",
+        "english": "The form is “lives.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-d64292ebe3d353e1",
+      "spanish": "vender ==> vende",
+      "english": "to sell ==> sells",
+      "example": {
+        "spanish": "La forma es «vende».",
+        "english": "The form is “sells.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-0fd343274d611e81",
+      "spanish": "venir ==> viene",
+      "english": "to come ==> comes",
+      "example": {
+        "spanish": "La forma es «viene».",
+        "english": "The form is “comes.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-e37569706e0a684f",
+      "spanish": "ir ==> va",
+      "english": "to go ==> goes",
+      "example": {
+        "spanish": "La forma es «va».",
+        "english": "The form is “goes.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person irregular",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-284b13620c7d73d7",
+      "spanish": "volver ==> vuelve",
+      "english": "to return ==> returns",
+      "example": {
+        "spanish": "La forma es «vuelve».",
+        "english": "The form is “returns.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-0d39cf1bea6c7fc6",
+      "spanish": "volver ==> vuelve",
+      "english": "to come back ==> comes back",
+      "example": {
+        "spanish": "La forma es «vuelve».",
+        "english": "The form is “comes back.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-8cea76e7faff136f",
+      "spanish": "volver ==> vuelve",
+      "english": "to go back ==> goes back",
+      "example": {
+        "spanish": "La forma es «vuelve».",
+        "english": "The form is “goes back.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-45df1ca93497ac29",
+      "spanish": "conducir ==> conduce",
+      "english": "to drive ==> drives",
+      "example": {
+        "spanish": "La forma es «conduce».",
+        "english": "The form is “drives.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-ce7673def9b0fade",
+      "spanish": "salir ==> sale",
+      "english": "to leave ==> leaves",
+      "example": {
+        "spanish": "La forma es «sale».",
+        "english": "The form is “leaves.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-fc71fcb1f9dda52e",
+      "spanish": "abrir ==> abre",
+      "english": "to open ==> opens",
+      "example": {
+        "spanish": "La forma es «abre».",
+        "english": "The form is “opens.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-355bfda799596293",
+      "spanish": "conocer ==> conoce",
+      "english": "to know a person ==> knows a person",
+      "example": {
+        "spanish": "La forma es «conoce».",
+        "english": "The form is “knows a person.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-3a072c3d4d4eea31",
+      "spanish": "conocer ==> conoce",
+      "english": "to meet ==> meets",
+      "example": {
+        "spanish": "La forma es «conoce».",
+        "english": "The form is “meets.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-4445d6d0e3808ce8",
+      "spanish": "ver ==> ve",
+      "english": "to see ==> sees",
+      "example": {
+        "spanish": "La forma es «ve».",
+        "english": "The form is “sees.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-b5d6b82b18ccc04e",
+      "spanish": "recibir ==> recibe",
+      "english": "to receive ==> receives",
+      "example": {
+        "spanish": "La forma es «recibe».",
+        "english": "The form is “receives.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-92e74a03bcbed0ef",
+      "spanish": "obtener ==> obtiene",
+      "english": "to obtain ==> obtains",
+      "example": {
+        "spanish": "La forma es «obtiene».",
+        "english": "The form is “obtains.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-1b248cdc151d3503",
+      "spanish": "obtener ==> obtiene",
+      "english": "to get ==> gets",
+      "example": {
+        "spanish": "La forma es «obtiene».",
+        "english": "The form is “gets.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-1dbda76f74f36820",
+      "spanish": "traer ==> trae",
+      "english": "to bring ==> brings",
+      "example": {
+        "spanish": "La forma es «trae».",
+        "english": "The form is “brings.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-31a9c1ca839aa5ee",
+      "spanish": "poner ==> pone",
+      "english": "to put ==> puts",
+      "example": {
+        "spanish": "La forma es «pone».",
+        "english": "The form is “puts.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-bf71aee9b8ebb9b8",
+      "spanish": "sentir ==> siente",
+      "english": "to feel ==> feels",
+      "example": {
+        "spanish": "La forma es «siente».",
+        "english": "The form is “feels.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-2395105281e4cb79",
+      "spanish": "saber ==> sabe",
+      "english": "to know information ==> knows information",
+      "example": {
+        "spanish": "La forma es «sabe».",
+        "english": "The form is “knows information.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-20d5309808902508",
+      "spanish": "entender ==> entiende",
+      "english": "to understand ==> understands",
+      "example": {
+        "spanish": "La forma es «entiende».",
+        "english": "The form is “understands.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-eb2bcfe50d1b9230",
+      "spanish": "entender ==> entiende",
+      "english": "to get an idea ==> gets an idea",
+      "example": {
+        "spanish": "La forma es «entiende».",
+        "english": "The form is “gets an idea.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-86df5d569f092208",
+      "spanish": "creer ==> cree",
+      "english": "to believe ==> believes",
+      "example": {
+        "spanish": "La forma es «cree».",
+        "english": "The form is “believes.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person spelling: add -s",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "verb-form-ee7e8fd10f30b30a",
+      "spanish": "hacer ==> hace",
+      "english": "to do ==> does",
+      "example": {
+        "spanish": "La forma es «hace».",
+        "english": "The form is “does.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person irregular",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-8016f89839489fd8",
+      "spanish": "ser ==> es",
+      "english": "to be ==> is",
+      "example": {
+        "spanish": "La forma es «es».",
+        "english": "The form is “is.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person irregular",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-851634684ca3510e",
+      "spanish": "estar ==> está",
+      "english": "to be ==> is",
+      "example": {
+        "spanish": "La forma es «está».",
+        "english": "The form is “is.”"
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "verb form relationship",
+        "Spanish -a/-e memory bridge",
+        "third-person irregular",
+        "verb form: third-person present",
+        "uses third-person present"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "verb-form-f4e1ba3bad25e19f",
+      "spanish": "tener permiso para [hacer algo]",
+      "english": "to be permitted to [do something]",
+      "example": {
+        "spanish": "Ella tiene permiso para entrar.",
+        "english": "She is permitted to enter."
+      },
+      "collections": [
+        "structure",
+        "verb forms",
+        "permitted to",
+        "permission",
+        "followed by full infinitive",
+        "verb form: full infinitive",
+        "uses full infinitive"
       ],
       "curriculumRole": "reference"
     }

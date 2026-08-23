@@ -42,17 +42,27 @@ function documentMetadata(filePath: string, absoluteRoot: string, pillar: string
     .relative(absoluteRoot, filePath)
     .split(path.sep);
   const first = relativeToRoot[0] ?? "root";
-  const direction = ["cognates", "transformations", "vocabulary"].includes(pillar) ? "spanish-to-english" :
-    first === "english-to-spanish" || first === "spanish-to-english"
+  const direction = [
+    "cognates",
+    "structure-verb-forms",
+    "transformations",
+    "vocabulary",
+  ].includes(pillar)
+    ? "spanish-to-english"
+    : first === "english-to-spanish" || first === "spanish-to-english"
       ? first
       : "undirected";
   const hub = pillar === "cognates" || pillar === "transformations"
     ? first
-    : pillar === "vocabulary"
-      ? path.basename(filePath, path.extname(filePath))
-      : direction === "undirected"
+    : pillar === "structure-verb-forms"
+      ? first === "README.md"
         ? "root"
-        : (relativeToRoot[1] ?? "root");
+        : first
+      : pillar === "vocabulary"
+        ? path.basename(filePath, path.extname(filePath))
+        : direction === "undirected"
+          ? "root"
+          : (relativeToRoot[1] ?? "root");
   const basename = path.basename(filePath);
   const extension = path.extname(filePath).slice(1).toLowerCase();
   const kind =
@@ -68,6 +78,8 @@ function documentMetadata(filePath: string, absoluteRoot: string, pillar: string
       ? "vocabulary source"
       : pillar === "transformations"
         ? "transformation source"
+        : pillar === "structure-verb-forms"
+          ? "verb-form source"
         : "mapping source",
     "source archive",
     direction,

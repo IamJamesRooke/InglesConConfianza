@@ -1,10 +1,10 @@
 # Structure
 
-Structure teaches how English combines a limited vocabulary into complete statements, questions, negations, descriptions, and connected ideas. Word-form inventories now live under transformations, while this pillar keeps the machinery that selects and combines those forms.
+Structure teaches how English combines a limited vocabulary into complete statements, questions, negations, descriptions, and connected ideas. Retired structural source sets live in PostgreSQL, while this folder keeps the remaining authoring references.
 
 | Area | Focus |
 |---|---|
-| [Verb Forms](verb-forms/README.md) | The forms selected by English verb structures. |
+| Verb Forms (PostgreSQL) | Six-form relationships and the structures that select full infinitives, bare infinitives, gerunds, present participles, past participles, and third-person forms. |
 | [Verb System](verb-system/README.md) | Phrasal-verb separability and object/particle placement. |
 | [Fluency Drills](fluency-drills/README.md) | Rapid production of auxiliaries, questions, negations, modality, and conditions. |
 | [Reference and Noun Phrases](reference-and-noun-phrases/README.md) | Articles, demonstratives, quantity, and noun-phrase choices. |

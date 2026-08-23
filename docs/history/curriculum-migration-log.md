@@ -4,6 +4,13 @@
 
 The closing professionalization sprint promoted cognates and past forms to curriculum-level pillars in commit `54b4d54`, then replaced 298 vocabulary source files with 16 flat category files plus a preservation manifest in commit `ae0e487`.
 
+## 2026-08-23 — PostgreSQL verb-forms migration
+
+- Preserved all 51 verb-form documents, 33,905 source bytes, and 268 extracted rows in PostgreSQL with exact hashes and one explicit disposition per row.
+- Normalized 199 concepts in the canonical table, resulting in 173 additions and 26 exact collection merges across the six-form model, selectors, usage constructions, contrasts, and explicit form relationships.
+- Added controlled collections for infinitive, gerund, participle, and third-person queries while keeping gerund and present-participle jobs distinct and leaving the separate past-form inventory for its own later batch.
+- Verified source and snapshot parity, repaired external references, and retired `docs/curriculum/structure/verb-forms`.
+
 ## 2026-08-23 — PostgreSQL transformations migration
 
 - Preserved all 178 transformation documents, 101,277 source bytes, and 594 extracted rows in the immutable PostgreSQL archive with one explicit disposition per row.

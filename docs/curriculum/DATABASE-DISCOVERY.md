@@ -2,6 +2,16 @@
 
 This document records the working decisions that emerged while representative curriculum data was discovered in JSON and now continues in PostgreSQL. These are migration checkpoints, not a frozen schema.
 
+## 2026-08-23 — Capture, normalize, and retire verb forms
+
+- Captured all 51 documents under `structure/verb-forms` verbatim in PostgreSQL: 33,905 UTF-8 bytes, SHA-256 hashes, searchable branch metadata, and 268 extracted rows. Every row has exactly one disposition: 12 canonical candidates, 92 example-evidence rows, 130 reference patterns, and 34 indexes.
+- Normalized 199 Spanish-first concepts in the canonical table: the six foundational **do** forms, full- and bare-infinitive selectors, gerund and present-participle jobs, modal and auxiliary constructions, imperatives, perception contrasts, passives, causatives, and all explicit third-person form bridges. The final catalog added 173 concepts and enriched 26 exact existing mappings.
+- Added controlled query collections for `followed by full infinitive`, `followed by bare infinitive`, `followed by gerund`, `uses present participle`, `uses past participle`, and `uses third-person present`, plus contrast tags for allowed alternatives, whole events, events in progress, spelling behavior, and grammatical jobs.
+- Stored the six-form framework once as **hacer/to do**, **hacer/do**, **haciendo/doing**, **hizo/did**, **hecho/done**, and **hace/does**. Explicit source relationships such as **hablar ==> habla** and **to speak ==> speaks** remain queryable, but ordinary lexical verbs were not mechanically expanded into six redundant records each.
+- Kept gerunds and present participles distinct by job despite their shared `-ing` surface form. Kept the separate `past-and-past-participle` inventory outside this batch; this migration covers the generic **did/done** framework and constructions that select a past participle, not the later verb-by-verb sound inventory.
+- Preserved existing curriculum roles on exact matches. The resulting 199-concept set is 27 Core, 36 Supporting, and 136 Reference; the six forms are Core because the owner identified this framework as foundational, while most spelling bridges and alternate constructions remain Reference.
+- Verified all 199 catalog edges through a second duplicate preflight, verified the source archive byte-for-byte and row-for-row, exported immutable snapshot parity, and retired `docs/curriculum/structure/verb-forms` after repairing its two external links.
+
 ## 2026-08-23 — Capture, normalize, and retire transformations
 
 - Captured all 178 transformation documents verbatim in PostgreSQL: 101,277 UTF-8 bytes, SHA-256 hashes, searchable family metadata, and 594 extracted rows. Every row has exactly one disposition: 216 canonical candidates, 302 example-evidence rows, 7 reference patterns, and 69 indexes.
