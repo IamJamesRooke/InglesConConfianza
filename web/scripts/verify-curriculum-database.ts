@@ -14,6 +14,7 @@ async function main() {
 
   assert.deepStrictEqual(actual.curriculum, expected.curriculum);
   assert.deepStrictEqual(actual.review, expected.review);
+  assert.deepStrictEqual(actual.sources, expected.sources);
 
   const [collections, conceptLinks, candidateLinks] = await Promise.all([
     prisma.collection.count(),
@@ -31,6 +32,17 @@ async function main() {
     collections,
     expectedCollectionNames.size,
     "Collection count differs from the snapshots.",
+  );
+
+  assert.equal(
+    await prisma.mappingSourceDocument.count(),
+    expected.sources.documents.length,
+    "Mapping source document count differs from the snapshot.",
+  );
+  assert.equal(
+    await prisma.mappingSourceEntry.count(),
+    expected.sources.entries.length,
+    "Mapping source entry count differs from the snapshot.",
   );
   assert.equal(
     conceptLinks,

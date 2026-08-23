@@ -2,6 +2,15 @@
 
 This document records the working decisions that emerged while representative curriculum data was discovered in JSON and now continues in PostgreSQL. These are migration checkpoints, not a frozen schema.
 
+## 2026-08-23 — Capture and retire the mappings source tree
+
+- Replaced the slow file-by-file ingestion gate with a lossless PostgreSQL source archive so completeness no longer depends on making final curation decisions during import.
+- Captured all 2,225 remaining files under `docs/curriculum/mappings` verbatim: 1,524,163 UTF-8 bytes, one SHA-256 hash and searchable metadata record per file, and 4,322 extracted Markdown table rows with Spanish, English, source path, section, line, and tags where available.
+- `mapping_source_documents` is immutable source evidence; `mapping_source_entries` is the first queryable extraction surface. Neither table pretends that sentence-shaped source rows are canonical concepts.
+- PostgreSQL was compared field-for-field with the live source tree before deletion. `web/prisma/seed-data/curriculum-sources.json` provides reproducible bootstrap and parity verification after the source folder's retirement.
+- Future mapping cleanup works from PostgreSQL. Exact matches may link or revise existing concepts; uncertain useful material defaults to Reference; role promotion, deduplication, placeholder normalization, and collection enrichment happen after capture.
+- `npm run curriculum:mappings:inventory` reports archived coverage, and `npm run curriculum:sources:query -- --search <text>` queries extracted rows without restoring the Markdown tree.
+
 ## 2026-08-23 — Make full curriculum migration the active objective
 
 - The active objective is to migrate every useful item under `docs/curriculum` into PostgreSQL, beginning with `docs/curriculum/mappings/english-to-spanish`. The five-lesson vertical slice and final curriculum curation no longer gate this migration.

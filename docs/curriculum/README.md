@@ -4,7 +4,7 @@ This directory is the working source of truth for the Inglés Con Confianza body
 
 | Pillar | Purpose |
 |---|---|
-| [Mappings](mappings/README.md) | The translation core: source-form families whose natural expression changes with meaning, function, and context. |
+| Mappings (PostgreSQL) | The translation core, now preserved as canonical concepts plus a lossless queryable source archive. |
 | [Cognates](cognates/README.md) | Reliable Spanish-English similarities, spelling patterns, memory bridges, and confusion sets. |
 | [Past and Past Participle](past-and-past-participle/README.md) | The canonical sound-based inventory of English past and participle forms. |
 | [Transformations](transformations/README.md) | Productive prefix and suffix families that turn one useful English word or form into another. |
@@ -15,7 +15,7 @@ Each lesson has one canonical home. Indexes may cross-link a lesson when it supp
 
 ## How to use this curriculum
 
-- Use **mappings** when a frequent source form has several context-dependent translations.
+- Use the PostgreSQL **mappings** archive when a frequent source form has several context-dependent translations.
 - Use **structure** for reusable sentence-building rules.
 - Use **transformations**, **cognates**, and **past and past participle** for visible word- or form-building relationships.
 - Use **vocabulary** for compact reference material that does not currently justify an independent lesson family.
@@ -23,9 +23,9 @@ Each lesson has one canonical home. Indexes may cross-link a lesson when it supp
 
 ## Current maturity
 
-Mappings contain the most developed machine-readable pilots, including stable IDs, atomic translation records, and compressed mapping concepts for conjugated families. The other pillars remain primarily human-facing references and should gain metadata only when real lesson authoring or import work requires it. Vocabulary is intentionally flat and table-first.
+Mappings are fully captured in PostgreSQL as 2,225 immutable source documents, 4,322 extracted table rows, and the canonical concepts migrated so far. The other pillars remain primarily human-facing references and should gain metadata only when real lesson authoring or import work requires it. Vocabulary is intentionally flat and table-first.
 
-The active step is completeness-first migration of this curriculum into PostgreSQL, beginning with the remaining English-to-Spanish mapping sources. The [active backlog](../backlog.md) and [mappings migration plan](mappings/POSTGRES-MIGRATION-PLAN.md) define the current order and completion gates; lesson-contract discovery is paused until the owner changes priority.
+The active step is database-driven normalization and curation of the captured mappings archive. The [active backlog](../backlog.md) defines the current order and completion gates; lesson-contract discovery is paused until the owner changes priority.
 
 ## Curation Boundary
 

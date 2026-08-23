@@ -11,8 +11,14 @@ import type {
   CurriculumConcept,
   CurriculumFile,
 } from "../src/lib/curriculum/types";
+import type {
+  MappingSourceArchive,
+  MappingSourceDocument,
+  MappingSourceEntry,
+} from "../src/lib/curriculum/mapping-source-types";
 import {
   isCurriculumFile,
+  isMappingSourceArchive,
   isReviewBatch,
   isReviewFile,
 } from "../src/lib/curriculum/validation";
@@ -28,9 +34,10 @@ async function readJson(filePath: string): Promise<unknown> {
 }
 
 export async function loadSeedData() {
-  const [curriculumValue, reviewValue] = await Promise.all([
+  const [curriculumValue, reviewValue, sourceValue] = await Promise.all([
     readJson(path.join(seedDataDirectory, "curriculum.json")),
     readJson(path.join(seedDataDirectory, "curriculum-review.json")),
+    readJson(path.join(seedDataDirectory, "curriculum-sources.json")),
   ]);
 
   if (!isCurriculumFile(curriculumValue)) {
@@ -39,8 +46,15 @@ export async function loadSeedData() {
   if (!isReviewFile(reviewValue)) {
     throw new Error("The review seed snapshot has an invalid shape.");
   }
+  if (!isMappingSourceArchive(sourceValue)) {
+    throw new Error("The mapping-source seed snapshot has an invalid shape.");
+  }
 
-  return { curriculum: curriculumValue, review: reviewValue };
+  return {
+    curriculum: curriculumValue,
+    review: reviewValue,
+    sources: sourceValue,
+  };
 }
 
 export async function loadReviewBatch(filePath: string) {
@@ -67,18 +81,35 @@ export async function seedCurriculumDatabase(
   client: PrismaClient,
   curriculum: CurriculumFile,
   review: ReviewFile,
+  sources: MappingSourceArchive,
 ) {
   await client.$transaction(
     async (transaction) => {
-      const [conceptCount, batchCount, candidateCount, collectionCount] =
+      const [
+        conceptCount,
+        batchCount,
+        candidateCount,
+        collectionCount,
+        sourceDocumentCount,
+        sourceEntryCount,
+      ] =
         await Promise.all([
           transaction.curriculumConcept.count(),
           transaction.reviewBatch.count(),
           transaction.reviewCandidate.count(),
           transaction.collection.count(),
+          transaction.mappingSourceDocument.count(),
+          transaction.mappingSourceEntry.count(),
         ]);
 
-      if (conceptCount || batchCount || candidateCount || collectionCount) {
+      if (
+        conceptCount ||
+        batchCount ||
+        candidateCount ||
+        collectionCount ||
+        sourceDocumentCount ||
+        sourceEntryCount
+      ) {
         throw new Error(
           "Curriculum tables are not empty. Seeding refuses to overwrite existing data.",
         );
@@ -164,8 +195,40 @@ export async function seedCurriculumDatabase(
           ),
         ),
       });
+      await transaction.mappingSourceDocument.createMany({
+        data: sources.documents.map((document, sortOrder) => ({
+          path: document.path,
+          direction: document.direction,
+          hub: document.hub,
+          kind: document.kind,
+          extension: document.extension,
+          content: document.content,
+          sha256: document.sha256,
+          byteLength: document.byteLength,
+          lineCount: document.lineCount,
+          tags: document.tags,
+          capturedAt: databaseDate(document.capturedAt),
+          sortOrder,
+        })),
+      });
+      for (let index = 0; index < sources.entries.length; index += 500) {
+        await transaction.mappingSourceEntry.createMany({
+          data: sources.entries.slice(index, index + 500).map((entry) => ({
+            id: entry.id,
+            documentPath: entry.documentPath,
+            position: entry.position,
+            lineNumber: entry.lineNumber,
+            section: entry.section,
+            rawText: entry.rawText,
+            cells: entry.cells,
+            spanish: entry.spanish ?? null,
+            english: entry.english ?? null,
+            tags: entry.tags,
+          })),
+        });
+      }
     },
-    { timeout: 30_000 },
+    { timeout: 120_000 },
   );
 }
 
@@ -175,6 +238,8 @@ type ConceptRow = Prisma.CurriculumConceptGetPayload<{
 type BatchRow = Prisma.ReviewBatchGetPayload<{
   include: { candidates: { include: { collections: true } } };
 }>;
+type SourceDocumentRow = Prisma.MappingSourceDocumentGetPayload<object>;
+type SourceEntryRow = Prisma.MappingSourceEntryGetPayload<object>;
 
 function conceptFromRow(row: ConceptRow): CurriculumConcept {
   return {
@@ -225,22 +290,66 @@ function batchFromRow(row: BatchRow): ReviewBatch {
   };
 }
 
+function sourceDocumentFromRow(
+  row: SourceDocumentRow,
+): MappingSourceDocument {
+  return {
+    path: row.path,
+    direction: row.direction,
+    hub: row.hub,
+    kind: row.kind,
+    extension: row.extension,
+    content: row.content,
+    sha256: row.sha256,
+    byteLength: row.byteLength,
+    lineCount: row.lineCount,
+    tags: row.tags,
+    capturedAt: formatDatabaseDate(row.capturedAt),
+  };
+}
+
+function sourceEntryFromRow(row: SourceEntryRow): MappingSourceEntry {
+  const cells = Array.isArray(row.cells)
+    ? row.cells.filter((cell): cell is string => typeof cell === "string")
+    : [];
+  return {
+    id: row.id,
+    documentPath: row.documentPath,
+    position: row.position,
+    lineNumber: row.lineNumber,
+    section: row.section,
+    rawText: row.rawText,
+    cells,
+    ...(row.spanish ? { spanish: row.spanish } : {}),
+    ...(row.english ? { english: row.english } : {}),
+    tags: row.tags,
+  };
+}
+
 export async function exportCurriculumDatabase(client: PrismaClient) {
-  const [conceptRows, batchRows] = await Promise.all([
-    client.curriculumConcept.findMany({
-      orderBy: { sortOrder: "asc" },
-      include: { collections: { orderBy: { position: "asc" } } },
-    }),
-    client.reviewBatch.findMany({
-      orderBy: { sortOrder: "asc" },
-      include: {
-        candidates: {
-          orderBy: { sortOrder: "asc" },
-          include: { collections: { orderBy: { position: "asc" } } },
+  const [conceptRows, batchRows, sourceDocumentRows, sourceEntryRows] =
+    await Promise.all([
+      client.curriculumConcept.findMany({
+        orderBy: { sortOrder: "asc" },
+        include: { collections: { orderBy: { position: "asc" } } },
+      }),
+      client.reviewBatch.findMany({
+        orderBy: { sortOrder: "asc" },
+        include: {
+          candidates: {
+            orderBy: { sortOrder: "asc" },
+            include: { collections: { orderBy: { position: "asc" } } },
+          },
         },
-      },
-    }),
-  ]);
+      }),
+      client.mappingSourceDocument.findMany({ orderBy: { sortOrder: "asc" } }),
+      client.mappingSourceEntry.findMany({
+        orderBy: [
+          { document: { sortOrder: "asc" } },
+          { position: "asc" },
+        ],
+      }),
+    ]);
 
   return {
     curriculum: {
@@ -251,5 +360,11 @@ export async function exportCurriculumDatabase(client: PrismaClient) {
       version: 1,
       batches: batchRows.map(batchFromRow),
     } satisfies ReviewFile,
+    sources: {
+      version: 1,
+      sourceRoot: "docs/curriculum/mappings",
+      documents: sourceDocumentRows.map(sourceDocumentFromRow),
+      entries: sourceEntryRows.map(sourceEntryFromRow),
+    } satisfies MappingSourceArchive,
   };
 }

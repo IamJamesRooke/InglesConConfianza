@@ -3,6 +3,11 @@ import type {
   CurriculumFile,
   CurriculumRole,
 } from "@/lib/curriculum/types";
+import type {
+  MappingSourceArchive,
+  MappingSourceDocument,
+  MappingSourceEntry,
+} from "@/lib/curriculum/mapping-source-types";
 import {
   curriculumRoles,
   type ReviewBatch,
@@ -122,5 +127,78 @@ export function isReviewFile(value: unknown): value is ReviewFile {
     value.batches.every(isReviewBatch) &&
     new Set(value.batches.map((batch) => batch.id)).size ===
       value.batches.length
+  );
+}
+
+function isMappingSourceDocument(
+  value: unknown,
+): value is MappingSourceDocument {
+  return (
+    isRecord(value) &&
+    typeof value.path === "string" &&
+    value.path.startsWith("docs/curriculum/mappings/") &&
+    typeof value.direction === "string" &&
+    value.direction.length > 0 &&
+    typeof value.hub === "string" &&
+    value.hub.length > 0 &&
+    typeof value.kind === "string" &&
+    value.kind.length > 0 &&
+    typeof value.extension === "string" &&
+    typeof value.content === "string" &&
+    typeof value.sha256 === "string" &&
+    /^[0-9a-f]{64}$/.test(value.sha256) &&
+    Number.isInteger(value.byteLength) &&
+    (value.byteLength as number) >= 0 &&
+    Number.isInteger(value.lineCount) &&
+    (value.lineCount as number) >= 0 &&
+    isStringList(value.tags) &&
+    typeof value.capturedAt === "string" &&
+    /^\d{4}-\d{2}-\d{2}$/.test(value.capturedAt)
+  );
+}
+
+function isMappingSourceEntry(value: unknown): value is MappingSourceEntry {
+  return (
+    isRecord(value) &&
+    typeof value.id === "string" &&
+    value.id.length > 0 &&
+    typeof value.documentPath === "string" &&
+    value.documentPath.startsWith("docs/curriculum/mappings/") &&
+    Number.isInteger(value.position) &&
+    (value.position as number) >= 0 &&
+    Number.isInteger(value.lineNumber) &&
+    (value.lineNumber as number) > 0 &&
+    typeof value.section === "string" &&
+    typeof value.rawText === "string" &&
+    Array.isArray(value.cells) &&
+    value.cells.every((cell) => typeof cell === "string") &&
+    (value.spanish === undefined || typeof value.spanish === "string") &&
+    (value.english === undefined || typeof value.english === "string") &&
+    isStringList(value.tags)
+  );
+}
+
+export function isMappingSourceArchive(
+  value: unknown,
+): value is MappingSourceArchive {
+  if (
+    !isRecord(value) ||
+    value.version !== 1 ||
+    value.sourceRoot !== "docs/curriculum/mappings" ||
+    !Array.isArray(value.documents) ||
+    !value.documents.every(isMappingSourceDocument) ||
+    !Array.isArray(value.entries) ||
+    !value.entries.every(isMappingSourceEntry)
+  ) {
+    return false;
+  }
+
+  const documentPaths = value.documents.map((document) => document.path);
+  const entryIds = value.entries.map((entry) => entry.id);
+  const knownPaths = new Set(documentPaths);
+  return (
+    knownPaths.size === documentPaths.length &&
+    new Set(entryIds).size === entryIds.length &&
+    value.entries.every((entry) => knownPaths.has(entry.documentPath))
   );
 }

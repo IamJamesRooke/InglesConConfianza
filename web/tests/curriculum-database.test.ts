@@ -20,7 +20,12 @@ test("the imported curriculum is exact and protected", async (context) => {
   assert.deepStrictEqual(actual, expected);
 
   await assert.rejects(
-    seedCurriculumDatabase(prisma, expected.curriculum, expected.review),
+    seedCurriculumDatabase(
+      prisma,
+      expected.curriculum,
+      expected.review,
+      expected.sources,
+    ),
     /refuses to overwrite existing data/,
   );
 

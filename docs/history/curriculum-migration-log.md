@@ -4,6 +4,12 @@
 
 The closing professionalization sprint promoted cognates and past forms to curriculum-level pillars in commit `54b4d54`, then replaced 298 vocabulary source files with 16 flat category files plus a preservation manifest in commit `ae0e487`.
 
+## 2026-08-23 — Lossless PostgreSQL mappings capture
+
+- Replaced the slow hub-by-hub source-deletion gate with an immutable PostgreSQL archive containing all 2,225 remaining mapping files, 1,524,163 exact source bytes, SHA-256 hashes, searchable metadata, and 4,322 extracted Markdown table rows.
+- Verified the database archive field-for-field against the live source tree, exported `web/prisma/seed-data/curriculum-sources.json`, and retired the complete `docs/curriculum/mappings` directory.
+- Mapping normalization, deduplication, role curation, and collection enrichment now operate from PostgreSQL without risking source loss or recreating the retired filesystem hierarchy.
+
 ## Archived backlog snapshot
 
 ## Current focus

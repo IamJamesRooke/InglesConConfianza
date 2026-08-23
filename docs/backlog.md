@@ -1,11 +1,11 @@
 # Backlog
 
 > Last updated: 2026-08-23. This file contains current decisions and executable work only. Completed migration detail is preserved in the [curriculum migration log](history/curriculum-migration-log.md).
-> Quick handoff: PostgreSQL is the canonical curriculum store; Lesson Builder remains JSON-backed. The active work is the completeness-first migration of `docs/curriculum`, beginning with `docs/curriculum/mappings/english-to-spanish`.
+> Quick handoff: PostgreSQL is the canonical curriculum store; Lesson Builder remains JSON-backed. The former `docs/curriculum/mappings` tree is preserved losslessly in PostgreSQL and its immutable seed snapshot, so mapping normalization and curation now work from the database.
 
 ## Current objective
 
-Migrate every useful curriculum concept from `docs/curriculum` into PostgreSQL without losing source material. Complete the mappings pillar first, normalizing English-to-Spanish source evidence into Spanish-first concepts, assigning provisional roles, and adding queryable collections before later curation.
+Migrate every useful curriculum concept from `docs/curriculum` into PostgreSQL without losing source material. Normalize the captured mappings archive into Spanish-first concepts from inside PostgreSQL, assigning provisional roles and queryable collections before later curation.
 
 ## Now
 
@@ -52,27 +52,13 @@ Migrate every useful curriculum concept from `docs/curriculum` into PostgreSQL w
     - [x] Record canonical concept, placeholder, role, and collection/tag rules, including the deliberate surface-form exception for English `be`.
     - [x] Inventory every English-to-Spanish hub and require file-level disposition before source consumption.
     - [x] Add database-backed review-batch preflight for exact duplicates, normalized probable duplicates, revision targets, source paths, and suspicious sentence-shaped concepts.
-- [ ] Migrate `docs/curriculum/mappings/english-to-spanish` hub by hub.
-    - [x] Prove the end-to-end workflow on `open`: account for and consume four source files, revise two existing concepts, add two normalized concepts, close the review batch, and verify snapshot parity.
-    - [x] Migrate `here`: account for and consume two source files, add direct `aquí` and `acá` mappings, revise the existing `estar aquí` construction, and verify snapshot parity.
-    - [x] Migrate `behind`: account for and consume two source files, add the neutral `detrás de [algo]` construction, and verify snapshot parity.
-    - [x] Complete the first grouped Terra sweep: account for and consume ten files across `success`, `successful`, `tomorrow`, and `start`; migrate nine normalized additions or revisions; and verify snapshot parity.
-    - [x] Complete the second grouped Terra sweep: account for and consume four source files across `according`, `during`, `later`, and `then`; migrate fourteen normalized additions or revisions; and verify snapshot parity.
-    - [x] Complete the third grouped Terra sweep: account for and consume eleven files across `across`, `agree`, `allow`, `almost`, `alone`, `also`, `although`, `always`, `and`, and `appear`; migrate thirty-four normalized additions or revisions; and verify snapshot parity.
-    - [x] Complete the fourth grouped Terra sweep: account for and consume twelve files across `after`, `again`, `along`, `anymore`, `because`, `before`, `both`, and `each`; migrate twenty-five normalized additions or revisions; and verify snapshot parity.
-    - [x] Complete the fifth grouped Terra sweep: migrate the verified `bad`, `big`, and `build` batch, consume its four source files, and verify snapshot parity.
-    - [x] Complete the sixth grouped Terra sweep: migrate the verified `buy`, `care`, `catch`, `change`, and `clear` batch, consume its source files, and verify snapshot parity.
-    - [x] Complete the seventh grouped Terra sweep: migrate the verified `current`, `fine`, `full`, `great`, `high`, and `hard` batch, consume its source files, and verify snapshot parity.
-    - [x] Complete the eighth grouped Terra sweep: migrate the verified `former`, `late`, and `lonely` batch, consume its source files, and verify snapshot parity.
-    - [x] Complete the ninth grouped Terra sweep: migrate the verified `many`, `must`, `new`, `now`, and `old` batch, consume its source files, and verify snapshot parity.
-    - [x] Complete the tenth grouped Terra sweep: migrate the verified `offer`, `other`, `own`, `pay`, and `provide` batch, consume its source files, and verify snapshot parity.
-    - [x] Complete the eleventh grouped Terra sweep: migrate the verified `reach`, `remain`, `require`, and `return` batch, consume its source files, and verify snapshot parity.
-    - [ ] Rewrite source evidence as neutral Spanish-first concepts with exactly one English target and one minimal bilingual example.
-    - [ ] Compare every batch with PostgreSQL and other candidates before review import.
-    - [ ] Preserve all useful material; default uncertain but valid entries to `reference` and defer promotion or demotion.
-    - [ ] Record every source file as migrated, represented in review history, intentionally non-conceptual, or moved to another curriculum pillar before deleting it.
-    - [ ] Verify PostgreSQL and seed-snapshot parity after every migrated batch and commit each coherent hub or small hub group.
-- [ ] Prove the mappings pillar complete: no pending hubs, no undisposed source files, no unresolved imported candidates, and all database tests passing.
+- [x] Capture and retire the entire `docs/curriculum/mappings` tree: preserve all 2,225 files and 1,524,163 source bytes verbatim in PostgreSQL with SHA-256 hashes, extract 4,322 queryable Markdown table rows, export immutable seed parity, and delete the verified source folder.
+- [ ] Normalize the PostgreSQL mappings archive into canonical Spanish-first concepts in broad database-driven passes.
+    - [ ] Compare extracted rows with existing concepts and review candidates; link or revise exact matches and flag probable duplicates.
+    - [ ] Default uncertain but useful mappings to `reference`; reserve `supporting` and especially `core` for later deliberate promotion.
+    - [ ] Normalize infinitives, placeholders, adjective support verbs, examples, phrasal roots and particles, morphemes, and pronunciation families without reopening filesystem sources.
+    - [ ] Keep raw source documents immutable while recording extraction and curation progress separately.
+- [ ] Prove the mappings pillar curated: every extracted source row is linked, normalized, deliberately retained as evidence, or explicitly dismissed, with all database tests passing.
 - [ ] Plan the same inventory-to-PostgreSQL process for the remaining curriculum pillars.
 
 ## Paused product work
