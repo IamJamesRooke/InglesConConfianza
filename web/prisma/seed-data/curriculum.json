@@ -11273,7 +11273,8 @@
       },
       "collections": [
         "abrir",
-        "open"
+        "open",
+        "english-to-spanish mappings"
       ],
       "curriculumRole": "core"
     },
@@ -11357,7 +11358,8 @@
         "abrir",
         "open",
         "phrasal verb",
-        "up"
+        "up",
+        "english-to-spanish mappings"
       ],
       "curriculumRole": "reference"
     },
@@ -28740,6 +28742,43 @@
       "collections": [
         "ya",
         "spanish-to-english catchall"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "sincerarse-con-alguien-open-up-to",
+      "spanish": "sincerarse con [alguien]",
+      "english": "to open up to [somebody]",
+      "example": {
+        "spanish": "Finalmente se sinceró conmigo.",
+        "english": "She finally opened up to me."
+      },
+      "collections": [
+        "sincerarse",
+        "open",
+        "phrasal verb",
+        "up",
+        "to",
+        "con => to",
+        "reflexive",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "la-vacante-job-opening",
+      "spanish": "la vacante",
+      "english": "a job opening",
+      "example": {
+        "spanish": "Hay una vacante en la nueva oficina.",
+        "english": "There is a job opening at the new office."
+      },
+      "collections": [
+        "vacante",
+        "open",
+        "noun",
+        "work",
+        "english-to-spanish mappings"
       ],
       "curriculumRole": "reference"
     }

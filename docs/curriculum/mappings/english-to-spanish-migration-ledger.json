@@ -3800,5 +3800,35 @@
       ]
     }
   ],
-  "dispositions": {}
+  "dispositions": {
+    "docs/curriculum/mappings/english-to-spanish/open/01-open-something.md": {
+      "disposition": "migrated",
+      "destinationIds": [
+        "abrir-algo-open"
+      ],
+      "note": "Existing concept revised with English-to-Spanish migration provenance."
+    },
+    "docs/curriculum/mappings/english-to-spanish/open/02-open-up.md": {
+      "disposition": "migrated",
+      "destinationIds": [
+        "abrir-por-completo-open-up",
+        "sincerarse-con-alguien-open-up-to"
+      ],
+      "note": "Both complete-opening and emotional-disclosure meanings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/open/03-opening.md": {
+      "disposition": "migrated",
+      "destinationIds": [
+        "la-vacante-job-opening"
+      ],
+      "note": "Job-opening noun concept migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/open/README.md": {
+      "disposition": "reviewed",
+      "destinationIds": [
+        "la-vacante-job-opening"
+      ],
+      "note": "README synthesis repeats the migrated job-opening concept."
+    }
+  }
 }

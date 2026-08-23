@@ -21,6 +21,7 @@
     "curriculum:mappings:inventory": "tsx scripts/inventory-mapping-sources.ts",
     "curriculum:review:preflight": "tsx scripts/preflight-review-batch.ts",
     "curriculum:review:import": "tsx scripts/import-review-batch.ts",
+    "curriculum:review:approve": "tsx scripts/approve-review-batch.ts",
     "curriculum:migrate": "tsx scripts/migrate-review-batch.ts",
     "curriculum:snapshots:export": "tsx scripts/export-curriculum-snapshots.ts"
   },

@@ -87969,6 +87969,126 @@
           "ownerNote": "Auto-approved as provisional Reference during completeness-first English-to-Spanish source consumption; delete or consolidate in a later curation pass.\nRepaired after import: canonical Spanish/English fields were generalized from the source lesson; original full sentence remains only as the example.\nRemoved during repair: automated canonicalization still produced a sentence fragment or title label rather than a neutral Spanish-first concept. Preserve source/example in review history for a later manual hub pass."
         }
       ]
+    },
+    {
+      "id": "english-open-hub-2026-08-23",
+      "title": "English open hub completeness migration",
+      "sourcePaths": [
+        "docs/curriculum/mappings/english-to-spanish/open"
+      ],
+      "createdAt": "2026-08-23",
+      "status": "migrated",
+      "migratedAt": "2026-08-23",
+      "candidates": [
+        {
+          "id": "revise-abrir-algo-open--english-open-source",
+          "action": "revise",
+          "existingConceptId": "abrir-algo-open",
+          "suggestedCurriculumRole": "core",
+          "spanish": "abrir [algo]",
+          "english": "to open [something]",
+          "example": {
+            "spanish": "Abre la puerta.",
+            "english": "Open the door."
+          },
+          "collections": [
+            "abrir",
+            "open",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "core",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/open/01-open-something.md"
+          ],
+          "rationale": "The neutral object-opening concept already exists; revise it only to record coverage from the English open hub.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-abrir-por-completo-open-up--english-open-source",
+          "action": "revise",
+          "existingConceptId": "abrir-por-completo-open-up",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "abrir [algo] por completo",
+          "english": "to open [something] up",
+          "example": {
+            "spanish": "Abre la caja por completo.",
+            "english": "Open the box up."
+          },
+          "collections": [
+            "abrir",
+            "open",
+            "phrasal verb",
+            "up",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/open/02-open-up.md"
+          ],
+          "rationale": "The complete-opening use already exists; revise it only to record coverage from the English open hub.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "sincerarse-con-alguien-open-up-to",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "sincerarse con [alguien]",
+          "english": "to open up to [somebody]",
+          "example": {
+            "spanish": "Finalmente se sinceró conmigo.",
+            "english": "She finally opened up to me."
+          },
+          "collections": [
+            "sincerarse",
+            "open",
+            "phrasal verb",
+            "up",
+            "to",
+            "con => to",
+            "reflexive",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/open/02-open-up.md"
+          ],
+          "rationale": "Spanish sincerarse is an independently useful source for the nonliteral emotional meaning of open up to somebody.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "la-vacante-job-opening",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "la vacante",
+          "english": "a job opening",
+          "example": {
+            "spanish": "Hay una vacante en la nueva oficina.",
+            "english": "There is a job opening at the new office."
+          },
+          "collections": [
+            "vacante",
+            "open",
+            "noun",
+            "work",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/open/03-opening.md",
+            "docs/curriculum/mappings/english-to-spanish/open/README.md"
+          ],
+          "rationale": "Job opening is a useful nonliteral English realization of the Spanish noun vacante and is not present in PostgreSQL.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        }
+      ]
     }
   ]
 }
