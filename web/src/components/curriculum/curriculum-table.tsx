@@ -489,34 +489,24 @@ export function CurriculumTable({
         </label>
       </div>
 
-      <div className="mb-4 flex flex-wrap items-center gap-2">
-        <span className="text-sm font-medium text-muted-foreground">
-          Collections
-        </span>
-        {availableCollections.map((collection) => (
-          <button
-            key={collection}
-            type="button"
-            onClick={() =>
-              setSelectedCollection(
-                selectedCollection === collection ? null : collection,
-              )
+      <div className="mb-4">
+        <label className="flex w-full max-w-sm items-center gap-2 text-sm font-medium text-muted-foreground">
+          Collection
+          <select
+            value={selectedCollection ?? ""}
+            onChange={(event) =>
+              setSelectedCollection(event.target.value || null)
             }
-            style={getCollectionStyle(collection)}
-            className={`collection-pill rounded-full border px-2.5 py-1 text-xs font-semibold transition ${selectedCollection === collection ? "collection-pill-selected" : ""}`}
+            className="min-w-0 flex-1 rounded-lg border border-input bg-card px-3 py-2 text-sm font-medium text-foreground outline-none focus:border-ring focus:ring-3 focus:ring-ring/20"
           >
-            {collection}
-          </button>
-        ))}
-        {selectedCollection && (
-          <button
-            type="button"
-            onClick={() => setSelectedCollection(null)}
-            className="inline-flex items-center gap-1 rounded-md px-2 py-1 text-xs text-muted-foreground hover:bg-muted"
-          >
-            <X className="size-3.5" aria-hidden="true" /> Clear
-          </button>
-        )}
+            <option value="">All collections ({availableCollections.length})</option>
+            {availableCollections.map((collection) => (
+              <option key={collection} value={collection}>
+                {collection}
+              </option>
+            ))}
+          </select>
+        </label>
       </div>
 
       {(normalizedMappingSearch ||
