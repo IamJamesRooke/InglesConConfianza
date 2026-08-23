@@ -922,15 +922,15 @@
       "spanish": "parecerse a [alguien]",
       "english": "to take after [somebody]",
       "example": {
-        "spanish": "Se parece a su madre.",
-        "english": "She takes after her mother."
+        "spanish": "Laura se parece a su mamá.",
+        "english": "Laura takes after her mother."
       },
       "collections": [
-        "tomar",
+        "parecer",
         "take",
-        "phrasal verb",
         "after",
-        "parecer"
+        "phrasal verb",
+        "english-to-spanish mappings"
       ],
       "curriculumRole": "reference"
     },
@@ -18851,9 +18851,11 @@
       "collections": [
         "volver",
         "again",
-        "a => again"
+        "verb + full infinitive",
+        "followed by full infinitive",
+        "english-to-spanish mappings"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "reference"
     },
     {
       "id": "no-volver-a-hacer-not-again",
@@ -26951,12 +26953,15 @@
       "spanish": "porque",
       "english": "because",
       "example": {
-        "spanish": "porque",
-        "english": "because"
+        "spanish": "Se fue porque estaba cansada.",
+        "english": "She left because she was tired."
       },
       "collections": [
-        "que",
-        "spanish-to-english catchall"
+        "porque",
+        "because",
+        "reason",
+        "connector",
+        "english-to-spanish mappings"
       ],
       "curriculumRole": "reference"
     },
@@ -29697,6 +29702,387 @@
         "before",
         "verb + preposition",
         "ante => before",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "despues-de-algo-after-something",
+      "spanish": "después de [algo]",
+      "english": "after [something]",
+      "example": {
+        "spanish": "Salimos después del almuerzo.",
+        "english": "We left after lunch."
+      },
+      "collections": [
+        "después",
+        "after",
+        "preposition",
+        "time",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "despues-de-que-ocurrio-algo-after-something-happened",
+      "spanish": "después de que [ocurrió algo]",
+      "english": "after [something happened]",
+      "example": {
+        "spanish": "Llámame después de que llegues.",
+        "english": "Call me after you arrive."
+      },
+      "collections": [
+        "después",
+        "after",
+        "connector",
+        "time",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "tras-algo-after-something",
+      "spanish": "tras [algo]",
+      "english": "after [something]",
+      "example": {
+        "spanish": "Apareció un problema tras otro.",
+        "english": "One problem after another appeared."
+      },
+      "collections": [
+        "tras",
+        "after",
+        "preposition",
+        "time",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "otra-vez-again",
+      "spanish": "otra vez",
+      "english": "again",
+      "example": {
+        "spanish": "Dilo otra vez, por favor.",
+        "english": "Please say it again."
+      },
+      "collections": [
+        "vez",
+        "again",
+        "adverb",
+        "fixed expression",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "de-nuevo-again",
+      "spanish": "de nuevo",
+      "english": "again",
+      "example": {
+        "spanish": "Estamos juntos de nuevo.",
+        "english": "We are together again."
+      },
+      "collections": [
+        "nuevo",
+        "again",
+        "adverb",
+        "fixed expression",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pensandolo-bien-then-again",
+      "spanish": "pensándolo bien",
+      "english": "then again",
+      "example": {
+        "spanish": "Aunque, pensándolo bien, la opción más barata puede ser mejor.",
+        "english": "Then again, the cheaper option may be better."
+      },
+      "collections": [
+        "pensar",
+        "again",
+        "then again",
+        "discourse",
+        "fixed expression",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "a-lo-largo-de-ruta-along-route",
+      "spanish": "a lo largo de [una ruta]",
+      "english": "along [a route]",
+      "example": {
+        "spanish": "Caminamos a lo largo del río.",
+        "english": "We walked along the river."
+      },
+      "collections": [
+        "a lo largo de",
+        "along",
+        "preposition",
+        "location",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "por-calle-along-street",
+      "spanish": "por [una calle]",
+      "english": "along [a street]",
+      "example": {
+        "spanish": "Hay cafés por esta calle.",
+        "english": "There are cafés along this street."
+      },
+      "collections": [
+        "por",
+        "along",
+        "preposition",
+        "location",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "traer-alguien-contigo-bring-somebody-along",
+      "spanish": "traer [alguien] contigo",
+      "english": "to bring [somebody] along",
+      "example": {
+        "spanish": "Trae a Laura contigo.",
+        "english": "Bring Laura along."
+      },
+      "collections": [
+        "traer",
+        "bring",
+        "along",
+        "phrasal verb",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ir-bien-come-along-well",
+      "spanish": "ir bien",
+      "english": "to come along well",
+      "example": {
+        "spanish": "El proyecto va bien.",
+        "english": "The project is coming along well."
+      },
+      "collections": [
+        "ir",
+        "come",
+        "along",
+        "phrasal verb",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ya-no-not-anymore",
+      "spanish": "ya no",
+      "english": "not anymore",
+      "example": {
+        "spanish": "Ya no trabaja aquí.",
+        "english": "She does not work here anymore."
+      },
+      "collections": [
+        "ya",
+        "anymore",
+        "not anymore",
+        "negative",
+        "time",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ya-que-because",
+      "spanish": "ya que",
+      "english": "because",
+      "example": {
+        "spanish": "Ya que estás aquí, ayúdame.",
+        "english": "Because you are here, help me."
+      },
+      "collections": [
+        "ya",
+        "because",
+        "reason",
+        "connector",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "debido-a-que-because--terra-source",
+      "spanish": "debido a que",
+      "english": "because",
+      "example": {
+        "spanish": "Debido a que llovía, cancelaron el evento.",
+        "english": "Because it was raining, they canceled the event."
+      },
+      "collections": [
+        "debido",
+        "because",
+        "reason",
+        "connector",
+        "formal",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "antes-de-algo-before-something",
+      "spanish": "antes de [algo]",
+      "english": "before [something]",
+      "example": {
+        "spanish": "Comimos antes de la reunión.",
+        "english": "We ate before the meeting."
+      },
+      "collections": [
+        "antes",
+        "before",
+        "preposition",
+        "time",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "antes-de-que-ocurrio-algo-before-something-happened",
+      "spanish": "antes de que [ocurrió algo]",
+      "english": "before [something happened]",
+      "example": {
+        "spanish": "Llámame antes de que salgas.",
+        "english": "Call me before you leave."
+      },
+      "collections": [
+        "antes",
+        "before",
+        "connector",
+        "time",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ya-before",
+      "spanish": "ya",
+      "english": "before",
+      "example": {
+        "spanish": "Ya la había visto.",
+        "english": "I had seen her before."
+      },
+      "collections": [
+        "ya",
+        "before",
+        "past experience",
+        "time",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ante-autoridad-before-authority",
+      "spanish": "ante [una autoridad]",
+      "english": "before [an authority]",
+      "example": {
+        "spanish": "El caso llegó ante el tribunal.",
+        "english": "The case came before the court."
+      },
+      "collections": [
+        "ante",
+        "before",
+        "authority",
+        "preposition",
+        "formal",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ambos-as-both",
+      "spanish": "ambos/as",
+      "english": "both",
+      "example": {
+        "spanish": "Ambos libros son útiles.",
+        "english": "Both books are useful."
+      },
+      "collections": [
+        "ambos",
+        "both",
+        "determiner",
+        "quantity",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "los-dos-both",
+      "spanish": "los dos",
+      "english": "both",
+      "example": {
+        "spanish": "Los dos libros son útiles.",
+        "english": "Both books are useful."
+      },
+      "collections": [
+        "dos",
+        "both",
+        "determiner",
+        "quantity",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "cualquiera-de-los-dos-either",
+      "spanish": "cualquiera de los dos",
+      "english": "either",
+      "example": {
+        "spanish": "Cualquiera de los dos libros está bien.",
+        "english": "Either book is fine."
+      },
+      "collections": [
+        "cualquiera",
+        "both",
+        "either",
+        "determiner",
+        "quantity",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ninguno-de-los-dos-neither",
+      "spanish": "ninguno de los dos",
+      "english": "neither",
+      "example": {
+        "spanish": "Ninguno de los dos libros está disponible.",
+        "english": "Neither book is available."
+      },
+      "collections": [
+        "ninguno",
+        "both",
+        "neither",
+        "negative",
+        "determiner",
+        "quantity",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "cada-each",
+      "spanish": "cada",
+      "english": "each",
+      "example": {
+        "spanish": "Cada estudiante recibió comentarios diferentes.",
+        "english": "Each student received different feedback."
+      },
+      "collections": [
+        "cada",
+        "each",
+        "determiner",
+        "quantity",
         "english-to-spanish mappings"
       ],
       "curriculumRole": "reference"

@@ -4030,6 +4030,66 @@
       "disposition": "migrated",
       "destinationIds": ["aparecer-appear", "parecer-adjetivo-seem", "salir-en-publicacion-appear-in-publication", "comparecer-ante-autoridad-appear-before-authority"],
       "note": "Literal appearance, seeming, publication, and formal-authority senses migrated or revised."
+    },
+    "docs/curriculum/mappings/english-to-spanish/after/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["despues-de-algo-after-something", "despues-de-que-ocurrio-algo-after-something-happened", "tras-algo-after-something", "take-after"],
+      "note": "Time, sequence, and phrasal resemblance meanings migrated or revised."
+    },
+    "docs/curriculum/mappings/english-to-spanish/again/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["otra-vez-again", "volver-a-hacer-again", "de-nuevo-again", "pensandolo-bien-then-again"],
+      "note": "Direct, repeated-action, renewed-state, and reconsideration meanings migrated or revised."
+    },
+    "docs/curriculum/mappings/english-to-spanish/along/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["a-lo-largo-de-ruta-along-route", "por-calle-along-street", "traer-alguien-contigo-bring-somebody-along", "ir-bien-come-along-well"],
+      "note": "Route, distribution, accompaniment, and progress meanings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/anymore/not-anymore.md": {
+      "disposition": "migrated",
+      "destinationIds": ["ya-no-not-anymore"],
+      "note": "The direct ya no continuation-ending expression migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/anymore/README.md": {
+      "disposition": "reviewed",
+      "destinationIds": ["ya-no-not-anymore"],
+      "note": "README navigation is represented by the migrated not-anymore concept."
+    },
+    "docs/curriculum/mappings/english-to-spanish/because/01-because.md": {
+      "disposition": "migrated",
+      "destinationIds": ["que-porque-because", "ya-que-because", "debido-a-que-because--terra-source"],
+      "note": "Everyday and alternate reason connectors migrated or revised."
+    },
+    "docs/curriculum/mappings/english-to-spanish/because/README.md": {
+      "disposition": "reviewed",
+      "destinationIds": ["que-porque-because", "ya-que-because", "debido-a-que-because--terra-source"],
+      "note": "README synthesis is represented by the migrated reason connectors."
+    },
+    "docs/curriculum/mappings/english-to-spanish/before/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["antes-de-algo-before-something", "antes-de-que-ocurrio-algo-before-something-happened", "ya-before", "ante-autoridad-before-authority"],
+      "note": "Noun, clause, past-experience, and formal-authority before meanings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/both/01-both-either-and-neither.md": {
+      "disposition": "migrated",
+      "destinationIds": ["ambos-as-both", "los-dos-both", "cualquiera-de-los-dos-either", "ninguno-de-los-dos-neither"],
+      "note": "Two-member positive, alternative, and negative determiner mappings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/both/README.md": {
+      "disposition": "reviewed",
+      "destinationIds": ["ambos-as-both", "los-dos-both", "cualquiera-de-los-dos-either", "ninguno-de-los-dos-neither"],
+      "note": "README navigation is represented by the migrated determiner concepts."
+    },
+    "docs/curriculum/mappings/english-to-spanish/each/05-each.md": {
+      "disposition": "migrated",
+      "destinationIds": ["cada-each"],
+      "note": "The individual-member determiner mapping migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/each/README.md": {
+      "disposition": "reviewed",
+      "destinationIds": ["cada-each"],
+      "note": "README navigation is represented by the migrated each concept."
     }
   }
 }

@@ -89794,6 +89794,689 @@
           "ownerNote": ""
         }
       ]
+    },
+    {
+      "id": "terra-connectors-quantifiers-hubs-2026-08-23",
+      "title": "Terra sweep: after, again, along, anymore, because, before, both, and each",
+      "sourcePaths": [
+        "docs/curriculum/mappings/english-to-spanish/after",
+        "docs/curriculum/mappings/english-to-spanish/again",
+        "docs/curriculum/mappings/english-to-spanish/along",
+        "docs/curriculum/mappings/english-to-spanish/anymore",
+        "docs/curriculum/mappings/english-to-spanish/because",
+        "docs/curriculum/mappings/english-to-spanish/before",
+        "docs/curriculum/mappings/english-to-spanish/both",
+        "docs/curriculum/mappings/english-to-spanish/each"
+      ],
+      "createdAt": "2026-08-23",
+      "status": "migrated",
+      "migratedAt": "2026-08-23",
+      "candidates": [
+        {
+          "id": "despues-de-algo-after-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "después de [algo]",
+          "english": "after [something]",
+          "example": {
+            "spanish": "Salimos después del almuerzo.",
+            "english": "We left after lunch."
+          },
+          "collections": [
+            "después",
+            "after",
+            "preposition",
+            "time",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/after/README.md"
+          ],
+          "rationale": "Después de is the direct time relation before a noun phrase.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "despues-de-que-ocurrio-algo-after-something-happened",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "después de que [ocurrió algo]",
+          "english": "after [something happened]",
+          "example": {
+            "spanish": "Llámame después de que llegues.",
+            "english": "Call me after you arrive."
+          },
+          "collections": [
+            "después",
+            "after",
+            "connector",
+            "time",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/after/README.md"
+          ],
+          "rationale": "Después de que introduces the time clause counterpart to después de plus a noun.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "tras-algo-after-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "tras [algo]",
+          "english": "after [something]",
+          "example": {
+            "spanish": "Apareció un problema tras otro.",
+            "english": "One problem after another appeared."
+          },
+          "collections": [
+            "tras",
+            "after",
+            "preposition",
+            "time",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/after/README.md"
+          ],
+          "rationale": "Tras is a compact after relation used in repeated-sequence expressions.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-take-after--terra-source",
+          "action": "revise",
+          "existingConceptId": "take-after",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "parecerse a [alguien]",
+          "english": "to take after [somebody]",
+          "example": {
+            "spanish": "Laura se parece a su mamá.",
+            "english": "Laura takes after her mother."
+          },
+          "collections": [
+            "parecer",
+            "take",
+            "after",
+            "phrasal verb",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/after/README.md"
+          ],
+          "rationale": "The existing take-after concept is the distinct resemblance meaning shown by the after source; revise its provenance and root-plus-particle collections.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "otra-vez-again",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "otra vez",
+          "english": "again",
+          "example": {
+            "spanish": "Dilo otra vez, por favor.",
+            "english": "Please say it again."
+          },
+          "collections": [
+            "vez",
+            "again",
+            "adverb",
+            "fixed expression",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/again/README.md"
+          ],
+          "rationale": "Otra vez is the direct repetition expression for again.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-volver-a-hacer-again--terra-source",
+          "action": "revise",
+          "existingConceptId": "volver-a-hacer-again",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "volver a [hacer algo]",
+          "english": "to [do something] again",
+          "example": {
+            "spanish": "Volvió a llamar.",
+            "english": "She called again."
+          },
+          "collections": [
+            "volver",
+            "again",
+            "verb + full infinitive",
+            "followed by full infinitive",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/again/README.md"
+          ],
+          "rationale": "The direct repetition construction already exists; revise it with current-source evidence and collections.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "de-nuevo-again",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "de nuevo",
+          "english": "again",
+          "example": {
+            "spanish": "Estamos juntos de nuevo.",
+            "english": "We are together again."
+          },
+          "collections": [
+            "nuevo",
+            "again",
+            "adverb",
+            "fixed expression",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/again/README.md"
+          ],
+          "rationale": "De nuevo is a separate repeated-state expression from otra vez.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "pensandolo-bien-then-again",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "pensándolo bien",
+          "english": "then again",
+          "example": {
+            "spanish": "Aunque, pensándolo bien, la opción más barata puede ser mejor.",
+            "english": "Then again, the cheaper option may be better."
+          },
+          "collections": [
+            "pensar",
+            "again",
+            "then again",
+            "discourse",
+            "fixed expression",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/again/README.md"
+          ],
+          "rationale": "Pensándolo bien introduces reconsideration, the discourse use of then again.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "a-lo-largo-de-ruta-along-route",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "a lo largo de [una ruta]",
+          "english": "along [a route]",
+          "example": {
+            "spanish": "Caminamos a lo largo del río.",
+            "english": "We walked along the river."
+          },
+          "collections": [
+            "a lo largo de",
+            "along",
+            "preposition",
+            "location",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/along/README.md"
+          ],
+          "rationale": "A lo largo de marks movement beside the length of a route, distinct from its period-wide use.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "por-calle-along-street",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "por [una calle]",
+          "english": "along [a street]",
+          "example": {
+            "spanish": "Hay cafés por esta calle.",
+            "english": "There are cafés along this street."
+          },
+          "collections": [
+            "por",
+            "along",
+            "preposition",
+            "location",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/along/README.md"
+          ],
+          "rationale": "Por a street expresses distribution along that street.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "traer-alguien-contigo-bring-somebody-along",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "traer [alguien] contigo",
+          "english": "to bring [somebody] along",
+          "example": {
+            "spanish": "Trae a Laura contigo.",
+            "english": "Bring Laura along."
+          },
+          "collections": [
+            "traer",
+            "bring",
+            "along",
+            "phrasal verb",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/along/README.md"
+          ],
+          "rationale": "Bringing someone along requires the Spanish accompaniment expression contigo.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "ir-bien-come-along-well",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "ir bien",
+          "english": "to come along well",
+          "example": {
+            "spanish": "El proyecto va bien.",
+            "english": "The project is coming along well."
+          },
+          "collections": [
+            "ir",
+            "come",
+            "along",
+            "phrasal verb",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/along/README.md"
+          ],
+          "rationale": "Project progress is ir bien in Spanish and the phrasal verb come along in English.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "ya-no-not-anymore",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "ya no",
+          "english": "not anymore",
+          "example": {
+            "spanish": "Ya no trabaja aquí.",
+            "english": "She does not work here anymore."
+          },
+          "collections": [
+            "ya",
+            "anymore",
+            "not anymore",
+            "negative",
+            "time",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/anymore/not-anymore.md",
+            "docs/curriculum/mappings/english-to-spanish/anymore/README.md"
+          ],
+          "rationale": "Ya no is the direct Spanish expression for a state or action that no longer continues.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-que-porque-because--terra-source",
+          "action": "revise",
+          "existingConceptId": "que-porque-because",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "porque",
+          "english": "because",
+          "example": {
+            "spanish": "Se fue porque estaba cansada.",
+            "english": "She left because she was tired."
+          },
+          "collections": [
+            "porque",
+            "because",
+            "reason",
+            "connector",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/because/01-because.md",
+            "docs/curriculum/mappings/english-to-spanish/because/README.md"
+          ],
+          "rationale": "The direct everyday reason connector already exists; revise it with the current source example and collections.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "ya-que-because",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "ya que",
+          "english": "because",
+          "example": {
+            "spanish": "Ya que estás aquí, ayúdame.",
+            "english": "Because you are here, help me."
+          },
+          "collections": [
+            "ya",
+            "because",
+            "reason",
+            "connector",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/because/01-because.md"
+          ],
+          "rationale": "Ya que is an alternate reason connector identified by the source.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "debido-a-que-because--terra-source",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "debido a que",
+          "english": "because",
+          "example": {
+            "spanish": "Debido a que llovía, cancelaron el evento.",
+            "english": "Because it was raining, they canceled the event."
+          },
+          "collections": [
+            "debido",
+            "because",
+            "reason",
+            "connector",
+            "formal",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/because/01-because.md"
+          ],
+          "rationale": "Debido a que is the source's more formal reason connector.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "antes-de-algo-before-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "antes de [algo]",
+          "english": "before [something]",
+          "example": {
+            "spanish": "Comimos antes de la reunión.",
+            "english": "We ate before the meeting."
+          },
+          "collections": [
+            "antes",
+            "before",
+            "preposition",
+            "time",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/before/README.md"
+          ],
+          "rationale": "Antes de is the direct time relation before a noun phrase.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "antes-de-que-ocurrio-algo-before-something-happened",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "antes de que [ocurrió algo]",
+          "english": "before [something happened]",
+          "example": {
+            "spanish": "Llámame antes de que salgas.",
+            "english": "Call me before you leave."
+          },
+          "collections": [
+            "antes",
+            "before",
+            "connector",
+            "time",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/before/README.md"
+          ],
+          "rationale": "Antes de que introduces the time clause counterpart to antes de plus a noun.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "ya-before",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "ya",
+          "english": "before",
+          "example": {
+            "spanish": "Ya la había visto.",
+            "english": "I had seen her before."
+          },
+          "collections": [
+            "ya",
+            "before",
+            "past experience",
+            "time",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/before/README.md"
+          ],
+          "rationale": "In a past-perfect experience context, ya supplies the English before meaning shown by the source.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "ante-autoridad-before-authority",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "ante [una autoridad]",
+          "english": "before [an authority]",
+          "example": {
+            "spanish": "El caso llegó ante el tribunal.",
+            "english": "The case came before the court."
+          },
+          "collections": [
+            "ante",
+            "before",
+            "authority",
+            "preposition",
+            "formal",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/before/README.md"
+          ],
+          "rationale": "Formal presence before an authority uses ante rather than a time relation.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "ambos-as-both",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "ambos/as",
+          "english": "both",
+          "example": {
+            "spanish": "Ambos libros son útiles.",
+            "english": "Both books are useful."
+          },
+          "collections": [
+            "ambos",
+            "both",
+            "determiner",
+            "quantity",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/both/01-both-either-and-neither.md",
+            "docs/curriculum/mappings/english-to-spanish/both/README.md"
+          ],
+          "rationale": "Ambos/as identifies the two members together.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "los-dos-both",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "los dos",
+          "english": "both",
+          "example": {
+            "spanish": "Los dos libros son útiles.",
+            "english": "Both books are useful."
+          },
+          "collections": [
+            "dos",
+            "both",
+            "determiner",
+            "quantity",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/both/01-both-either-and-neither.md"
+          ],
+          "rationale": "Los dos is the common two-member alternative to ambos/as.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "cualquiera-de-los-dos-either",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "cualquiera de los dos",
+          "english": "either",
+          "example": {
+            "spanish": "Cualquiera de los dos libros está bien.",
+            "english": "Either book is fine."
+          },
+          "collections": [
+            "cualquiera",
+            "both",
+            "either",
+            "determiner",
+            "quantity",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/both/01-both-either-and-neither.md"
+          ],
+          "rationale": "Cualquiera de los dos selects one of exactly two options.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "ninguno-de-los-dos-neither",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "ninguno de los dos",
+          "english": "neither",
+          "example": {
+            "spanish": "Ninguno de los dos libros está disponible.",
+            "english": "Neither book is available."
+          },
+          "collections": [
+            "ninguno",
+            "both",
+            "neither",
+            "negative",
+            "determiner",
+            "quantity",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/both/01-both-either-and-neither.md"
+          ],
+          "rationale": "Ninguno de los dos rejects both members of a two-option set.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "cada-each",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "cada",
+          "english": "each",
+          "example": {
+            "spanish": "Cada estudiante recibió comentarios diferentes.",
+            "english": "Each student received different feedback."
+          },
+          "collections": [
+            "cada",
+            "each",
+            "determiner",
+            "quantity",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/each/05-each.md",
+            "docs/curriculum/mappings/english-to-spanish/each/README.md"
+          ],
+          "rationale": "Cada focuses on individual members of a group.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        }
+      ]
     }
   ]
 }
