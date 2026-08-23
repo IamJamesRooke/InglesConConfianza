@@ -2,6 +2,15 @@
 
 This document records the working decisions that emerged while representative curriculum data was discovered in JSON and now continues in PostgreSQL. These are migration checkpoints, not a frozen schema.
 
+## 2026-08-23 — Capture, normalize, and retire transformations
+
+- Captured all 178 transformation documents verbatim in PostgreSQL: 101,277 UTF-8 bytes, SHA-256 hashes, searchable family metadata, and 594 extracted rows. Every row has exactly one disposition: 216 canonical candidates, 302 example-evidence rows, 7 reference patterns, and 69 indexes.
+- Normalized the pillar into 312 Spanish-first concepts in the one canonical `curriculum_concepts` table: 267 explicit transformation relationships and 45 ordinary recognition mappings. The transaction added 305 concepts and enriched 7 exact existing mappings; no parallel transformation table was created.
+- Transformation relationships use exactly one ` ==> ` on both language sides, with each half normalized independently. For example, **el poder ==> ser poderoso/a** maps to **the power ==> to be powerful**. Nouns use natural articles, adjectives and states use support verbs, and verbs use infinitive patterns.
+- Added flat query collections for the broad transformation family, affix or prefix, grammatical direction, word family, productivity status, spelling behavior, variants, and relevant contrasts. Recognition-only words such as **also** and **because** remain ordinary mappings tagged `prefix: al-` or `prefix: be-` rather than pretending those prefixes are productive learner rules.
+- Kept priority conservative: 297 transformation concepts are Reference and 15 are Supporting, with no new Core. Productive does not mean Core, and common recognition words do not earn Core through this import.
+- Verified the PostgreSQL archive byte-for-byte and row-for-row against the live tree, exported immutable snapshot parity, and retired `docs/curriculum/transformations`. Future cleanup, promotion, demotion, and collection nesting happen in PostgreSQL.
+
 ## 2026-08-23 — Capture, normalize, and retire vocabulary
 
 - Captured all 17 vocabulary Markdown documents verbatim in PostgreSQL: 127,594 UTF-8 bytes, SHA-256 hashes, searchable metadata, and 972 extracted table rows. Every row has exactly one explicit disposition: 102 indexes, 224 canonical candidates, 572 example-evidence rows, 67 reference patterns, and 7 memory aids.

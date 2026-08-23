@@ -42,11 +42,11 @@ function documentMetadata(filePath: string, absoluteRoot: string, pillar: string
     .relative(absoluteRoot, filePath)
     .split(path.sep);
   const first = relativeToRoot[0] ?? "root";
-  const direction = pillar === "cognates" || pillar === "vocabulary" ? "spanish-to-english" :
+  const direction = ["cognates", "transformations", "vocabulary"].includes(pillar) ? "spanish-to-english" :
     first === "english-to-spanish" || first === "spanish-to-english"
       ? first
       : "undirected";
-  const hub = pillar === "cognates"
+  const hub = pillar === "cognates" || pillar === "transformations"
     ? first
     : pillar === "vocabulary"
       ? path.basename(filePath, path.extname(filePath))
@@ -64,7 +64,11 @@ function documentMetadata(filePath: string, absoluteRoot: string, pillar: string
           ? "manifest"
           : "mapping-source";
   const tags = unique([
-    pillar === "vocabulary" ? "vocabulary source" : "mapping source",
+    pillar === "vocabulary"
+      ? "vocabulary source"
+      : pillar === "transformations"
+        ? "transformation source"
+        : "mapping source",
     "source archive",
     direction,
     hub,

@@ -199,6 +199,126 @@ test("the imported curriculum is exact and protected", async (context) => {
     },
   );
 
+  const transformations = actual.curriculum.concepts.filter((concept) =>
+    concept.collections.includes("transformation"),
+  );
+  assert.equal(transformations.length, 312);
+  assert.deepStrictEqual(
+    transformations.reduce<Record<string, number>>((counts, concept) => {
+      counts[concept.curriculumRole] = (counts[concept.curriculumRole] ?? 0) + 1;
+      return counts;
+    }, {}),
+    { supporting: 15, reference: 297 },
+  );
+
+  const transformationRelationships = transformations.filter((concept) =>
+    concept.collections.includes("transformation relationship"),
+  );
+  const recognitionMappings = transformations.filter(
+    (concept) => !concept.collections.includes("transformation relationship"),
+  );
+  assert.equal(transformationRelationships.length, 267);
+  assert.equal(recognitionMappings.length, 45);
+  assert.deepStrictEqual(
+    transformationRelationships.filter(
+      (concept) =>
+        concept.spanish.split(" ==> ").length !== 2 ||
+        concept.english.split(" ==> ").length !== 2 ||
+        concept.collections.filter((collection) =>
+          /^transformation: .+ => .+$/u.test(collection),
+        ).length !== 1 ||
+        concept.collections.filter((collection) =>
+          collection.startsWith("word family: "),
+        ).length !== 1,
+    ),
+    [],
+    "Transformation relationships must remain atomic, normalized, and queryable by type and word family.",
+  );
+  assert.deepStrictEqual(
+    recognitionMappings.filter(
+      (concept) => concept.spanish.includes("==>") || concept.english.includes("==>"),
+    ),
+    [],
+    "Recognition-only words remain ordinary Spanish-to-English mappings.",
+  );
+
+  const powerTransformation = transformationRelationships.find(
+    (concept) =>
+      concept.spanish === "el poder ==> ser poderoso/a" &&
+      concept.english === "the power ==> to be powerful",
+  );
+  assert.ok(powerTransformation);
+  assert.equal(powerTransformation.curriculumRole, "supporting");
+  assert.equal(
+    [
+      "transformation: -ful",
+      "transformation: noun => adjective",
+      "word family: power",
+      "suffix: -ful",
+    ].every((collection) => powerTransformation.collections.includes(collection)),
+    true,
+  );
+  assert.equal(
+    transformationRelationships.some(
+      (concept) =>
+        concept.spanish === "ser rojo/a ==> ser rojizo/a" &&
+        concept.english === "to be red ==> to be reddish" &&
+        concept.collections.includes("word family: red"),
+    ),
+    true,
+  );
+
+  const also = transformations.find(
+    (concept) => concept.spanish === "también" && concept.english === "also",
+  );
+  const because = transformations.find(
+    (concept) => concept.spanish === "porque" && concept.english === "because",
+  );
+  assert.ok(also);
+  assert.ok(because);
+  assert.equal(also.collections.includes("prefix: al-"), true);
+  assert.equal(because.collections.includes("prefix: be-"), true);
+  assert.equal(
+    transformations.some(
+      (concept) =>
+        concept.english === "to look forward to [something]" &&
+        ["look", "forward", "to"].every((collection) =>
+          concept.collections.includes(collection),
+        ),
+    ),
+    true,
+  );
+
+  const transformationDocuments = actual.sources.documents.filter(
+    (document) => document.pillar === "transformations",
+  );
+  const transformationEntries = actual.sources.entries.filter((entry) =>
+    entry.documentPath.startsWith("docs/curriculum/transformations/"),
+  );
+  assert.equal(transformationDocuments.length, 178);
+  assert.equal(
+    transformationDocuments.reduce(
+      (total, document) => total + document.byteLength,
+      0,
+    ),
+    101_277,
+  );
+  assert.equal(transformationEntries.length, 594);
+  assert.deepStrictEqual(
+    transformationEntries.reduce<Record<string, number>>((counts, entry) => {
+      const dispositions = entry.tags.filter((tag) => tag.startsWith("disposition:"));
+      assert.equal(dispositions.length, 1);
+      counts[dispositions[0]] = (counts[dispositions[0]] ?? 0) + 1;
+      return counts;
+    }, {}),
+    {
+      "disposition: canonical candidate": 216,
+      "disposition: example evidence": 302,
+      "disposition: reference pattern": 7,
+      "disposition: index": 69,
+    },
+  );
+
   await assert.rejects(
     seedCurriculumDatabase(
       prisma,

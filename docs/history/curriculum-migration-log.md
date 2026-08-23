@@ -4,6 +4,13 @@
 
 The closing professionalization sprint promoted cognates and past forms to curriculum-level pillars in commit `54b4d54`, then replaced 298 vocabulary source files with 16 flat category files plus a preservation manifest in commit `ae0e487`.
 
+## 2026-08-23 — PostgreSQL transformations migration
+
+- Preserved all 178 transformation documents, 101,277 source bytes, and 594 extracted rows in the immutable PostgreSQL archive with one explicit disposition per row.
+- Normalized 312 concepts in the canonical table: 267 bilingual transformation relationships and 45 recognition mappings, resulting in 305 additions and 7 exact collection merges.
+- Standardized relationship notation and tags around ` ==> `, affix, grammatical direction, word family, and productivity while keeping priority conservative at 15 Supporting, 297 Reference, and no new Core.
+- Verified source parity and immutable snapshot parity, added regression coverage, and retired `docs/curriculum/transformations`.
+
 ## 2026-08-23 — PostgreSQL vocabulary migration
 
 - Preserved all 17 final vocabulary documents, 127,594 source bytes, and 972 extracted rows in the immutable PostgreSQL source archive with complete row dispositions.
