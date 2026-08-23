@@ -4,7 +4,6 @@ import type { Prisma } from "@/generated/prisma/client";
 import type {
   ReviewBatch,
   ReviewCandidate,
-  ReviewFile,
 } from "@/lib/curriculum/review-types";
 import type { CurriculumRole } from "@/lib/curriculum/types";
 import {
@@ -104,8 +103,9 @@ function toReviewBatch(row: BatchRow): ReviewBatch {
 
 export { isReviewCandidate };
 
-export async function readReviewFile(): Promise<ReviewFile> {
+export async function readOpenReviewBatches(): Promise<ReviewBatch[]> {
   const batches = await prisma.reviewBatch.findMany({
+    where: { status: "open" },
     orderBy: { sortOrder: "asc" },
     include: {
       candidates: {
@@ -115,10 +115,7 @@ export async function readReviewFile(): Promise<ReviewFile> {
     },
   });
 
-  return {
-    version: 1,
-    batches: batches.map(toReviewBatch),
-  };
+  return batches.map(toReviewBatch);
 }
 
 export async function updateReviewCandidate(

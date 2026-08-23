@@ -1,13 +1,10 @@
 import { ReviewInbox } from "@/components/curriculum/review-inbox";
-import { readReviewFile } from "@/lib/curriculum/server/review-store";
+import { readOpenReviewBatches } from "@/lib/curriculum/server/review-store";
 
 export const dynamic = "force-dynamic";
 
 export default async function CurriculumReviewPage() {
-  const reviewFile = await readReviewFile();
-  const openBatches = reviewFile.batches.filter(
-    (batch) => batch.status === "open",
-  );
+  const openBatches = await readOpenReviewBatches();
 
   return (
     <main className="flex-1 bg-background px-6 py-12 text-foreground">
@@ -22,8 +19,8 @@ export default async function CurriculumReviewPage() {
             <ReviewInbox initialBatches={openBatches} />
           ) : (
             <p className="rounded-lg border border-emerald-600/30 bg-emerald-500/10 px-4 py-3 text-sm text-foreground">
-              The review inbox is empty. Migrated batches remain in the review
-              history and will not reappear here.
+              The review inbox is empty. Completed batches remain in the
+              review history and will not reappear here.
             </p>
           )}
         </div>

@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 const curriculumLinks = [
   { href: "/curriculum", label: "Database" },
   { href: "/curriculum/review", label: "Review inbox" },
-  { href: "/curriculum/progress", label: "Migration progress" },
 ];
 
 export function CurriculumNav() {

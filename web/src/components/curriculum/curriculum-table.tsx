@@ -34,7 +34,7 @@ const curriculumRoles: Array<{
   {
     value: "supporting",
     label: "Supporting",
-    description: "Useful language taught incidentally",
+    description: "Broadly reusable language taught around Core",
   },
   {
     value: "reference",
@@ -110,7 +110,7 @@ export function CurriculumTable({
   filters: {
     search: string;
     collection: string;
-    maximumRole: CurriculumRole | "all";
+    role: CurriculumRole | "all";
   };
 }) {
   const router = useRouter();
@@ -126,7 +126,7 @@ export function CurriculumTable({
   const [error, setError] = useState<string | null>(null);
   const [mappingSearch, setMappingSearch] = useState(filters.search);
   const selectedCollection = filters.collection || null;
-  const maximumRole = filters.maximumRole;
+  const selectedRole = filters.role;
   const firstVisibleConcept = totalConcepts === 0 ? 0 : (page - 1) * 50 + 1;
   const lastVisibleConcept =
     totalConcepts === 0
@@ -491,14 +491,14 @@ export function CurriculumTable({
         <label className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
           Curriculum roles
           <select
-            value={maximumRole}
+            value={selectedRole}
             onChange={(event) => navigate({ role: event.target.value })}
             className="rounded-lg border border-input bg-card px-3 py-2 text-sm font-medium text-foreground outline-none focus:border-ring focus:ring-3 focus:ring-ring/20"
           >
             <option value="all">Show all</option>
             {curriculumRoles.map((role) => (
               <option key={role.value} value={role.value}>
-                Through {role.label}
+                {role.label}
               </option>
             ))}
           </select>
@@ -544,12 +544,12 @@ export function CurriculumTable({
             </span>
           </>
         )}
-        {maximumRole !== "all" && (
+        {selectedRole !== "all" && (
           <>
             {filters.search || selectedCollection ? " and" : " with"}{" "}
-            curriculum role through{" "}
+            curriculum role{" "}
             <span className="font-semibold text-foreground">
-              {getRoleLabel(maximumRole)}
+              {getRoleLabel(selectedRole)}
             </span>
           </>
         )}

@@ -6,6 +6,10 @@
 
 Curate the curriculum into a selective, trustworthy teaching catalog, then build and validate the first course module.
 
+## Milestone: Pre-curation readiness
+
+- [x] Retire obsolete migration and prototype surfaces, remove unused assets and loaders, align product documentation and metadata, preserve guarded concept inserts, and prepare exact role filtering for database curation.
+
 ## Phase 1: Curriculum curation
 
 - [ ] Establish a database baseline: counts by role and collection, duplicate candidates, malformed-record patterns, and oversized or inconsistent collection families.

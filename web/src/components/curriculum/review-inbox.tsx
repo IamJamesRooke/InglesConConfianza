@@ -141,12 +141,12 @@ export function ReviewInbox({ initialBatches }: { initialBatches: ReviewBatch[] 
             </div>
             <p className="mt-2 text-sm text-muted-foreground">
               {pendingCandidates.length > 0
-                ? `${pendingCandidates.length} candidate${pendingCandidates.length === 1 ? "" : "s"} awaiting approval. Choose a final role, add a note if needed, and click Done when it is ready to migrate.`
+                ? `${pendingCandidates.length} candidate${pendingCandidates.length === 1 ? "" : "s"} awaiting approval. Choose a final role, add a note if needed, and click Done when it is ready to apply.`
                 : approvedCandidates.length === 0 && deletedCandidates.length > 0
                   ? "All remaining candidates have been deleted. Deleted entries stay in the review history with their notes."
                 : approvedCandidates.length === 0 && migratedCandidates.length > 0
-                  ? "All approved candidates have been migrated. Pending candidates remain for a later review round."
-                : "All candidates in this batch are approved and ready to migrate."}
+                  ? "All approved candidates have been applied. Pending candidates remain for a later review round."
+                  : "All candidates in this batch are approved and ready to apply."}
             </p>
             <p className="mt-3 text-xs text-muted-foreground">
               Sources: {batch.sourcePaths.join(" · ")}
@@ -301,7 +301,7 @@ export function ReviewInbox({ initialBatches }: { initialBatches: ReviewBatch[] 
           {approvedCandidates.length > 0 && (
             <div className="border-t border-border bg-emerald-500/5 p-5">
               <h3 className="text-sm font-semibold text-foreground">
-                Approved / Ready to migrate ({approvedCandidates.length})
+                Approved / Ready to apply ({approvedCandidates.length})
               </h3>
               <div className="mt-3 space-y-2">
                 {approvedCandidates.map((candidate) => (
@@ -336,7 +336,7 @@ export function ReviewInbox({ initialBatches }: { initialBatches: ReviewBatch[] 
           {migratedCandidates.length > 0 && (
             <div className="border-t border-border bg-muted/40 p-5">
               <h3 className="text-sm font-semibold text-foreground">
-                Migrated to curriculum ({migratedCandidates.length})
+                Applied to curriculum ({migratedCandidates.length})
               </h3>
               <div className="mt-3 space-y-2">
                 {migratedCandidates.map((candidate) => (

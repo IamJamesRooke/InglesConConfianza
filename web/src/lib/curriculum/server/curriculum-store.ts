@@ -3,7 +3,6 @@ import "server-only";
 import type { Prisma } from "@/generated/prisma/client";
 import type {
   CurriculumConcept,
-  CurriculumFile,
   CurriculumRole,
 } from "@/lib/curriculum/types";
 import { isCurriculumConcept } from "@/lib/curriculum/validation";
@@ -24,7 +23,7 @@ export const curriculumPageSize = 50;
 export type CurriculumPageFilters = {
   search: string;
   collection: string;
-  maximumRole: CurriculumRole | "all";
+  role: CurriculumRole | "all";
 };
 
 export type CurriculumPageResult = CurriculumPageFilters & {
@@ -87,32 +86,12 @@ export async function removeUnusedCollections(
 
 export { isCurriculumConcept };
 
-export async function readCurriculumFile(): Promise<CurriculumFile> {
-  const concepts = await prisma.curriculumConcept.findMany({
-    orderBy: { sortOrder: "asc" },
-    include: conceptRelations,
-  });
-
-  return {
-    version: 1,
-    concepts: concepts.map(toCurriculumConcept),
-  };
-}
-
 export async function readCurriculumPage({
   page: requestedPage,
   search,
   collection,
-  maximumRole,
+  role,
 }: CurriculumPageFilters & { page: number }): Promise<CurriculumPageResult> {
-  const roles: CurriculumRole[] | undefined =
-    maximumRole === "all"
-      ? undefined
-      : maximumRole === "reference"
-        ? ["core", "supporting", "reference"]
-        : maximumRole === "supporting"
-          ? ["core", "supporting"]
-          : ["core"];
   const where = {
     ...(search
       ? {
@@ -125,7 +104,7 @@ export async function readCurriculumPage({
     ...(collection
       ? { collections: { some: { collectionName: collection } } }
       : {}),
-    ...(roles ? { curriculumRole: { in: roles } } : {}),
+    ...(role === "all" ? {} : { curriculumRole: role }),
   } satisfies Prisma.CurriculumConceptWhereInput;
 
   const totalConcepts = await prisma.curriculumConcept.count({ where });
@@ -157,7 +136,7 @@ export async function readCurriculumPage({
     totalConcepts,
     search,
     collection,
-    maximumRole,
+    role,
   };
 }
 

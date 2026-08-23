@@ -18,16 +18,18 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
     firstParameter(parameters.page) ?? "1",
     10,
   );
-  const role = firstParameter(parameters.role);
-  const maximumRole: CurriculumRole | "all" =
-    role === "core" || role === "supporting" || role === "reference"
-      ? role
+  const requestedRole = firstParameter(parameters.role);
+  const role: CurriculumRole | "all" =
+    requestedRole === "core" ||
+    requestedRole === "supporting" ||
+    requestedRole === "reference"
+      ? requestedRole
       : "all";
   const curriculum = await readCurriculumPage({
     page: Number.isFinite(requestedPage) ? requestedPage : 1,
     search: (firstParameter(parameters.search) ?? "").trim(),
     collection: (firstParameter(parameters.collection) ?? "").trim(),
-    maximumRole,
+    role,
   });
 
   return (
@@ -41,7 +43,7 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
         </div>
 
         <CurriculumTable
-          key={`${curriculum.page}:${curriculum.totalConcepts}:${curriculum.search}:${curriculum.collection}:${curriculum.maximumRole}`}
+          key={`${curriculum.page}:${curriculum.totalConcepts}:${curriculum.search}:${curriculum.collection}:${curriculum.role}`}
           initialConcepts={curriculum.concepts}
           availableCollections={curriculum.availableCollections}
           totalConcepts={curriculum.totalConcepts}
@@ -50,7 +52,7 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
           filters={{
             search: curriculum.search,
             collection: curriculum.collection,
-            maximumRole: curriculum.maximumRole,
+            role: curriculum.role,
           }}
         />
       </div>

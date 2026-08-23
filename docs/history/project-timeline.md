@@ -214,6 +214,14 @@ The final architectural boundaries are now explicit:
 
 Commits `3ae77c67` and `2332eb40` reset the handoff for curation and removed the retired source-era project directories.
 
+## August 23: Reach the pre-curation milestone
+
+A final repository audit removed the completed Migration Progress route, the abandoned curriculum-graph dashboard, unused demo and default public assets, empty prototype routes, and stale full-database loaders. Product metadata and documentation were rewritten around the real PostgreSQL architecture and Module 1 objective.
+
+The Curriculum database changed from cumulative priority filtering to exact `core`, `supporting`, or `reference` filtering so each tier can be audited directly. Review inbox now queries only open batches and uses apply-oriented language while preserving the guarded candidate workflow and historical schema fields. The `shadcn` generator moved from runtime to development dependencies without changing its version.
+
+This completed the transition from migration tooling to curation tooling. Lint, TypeScript, the production build, database regression tests, dependency audit, and immutable snapshot parity all passed before the milestone was recorded.
+
 ## The next chapter
 
 The project now moves through two connected phases.
