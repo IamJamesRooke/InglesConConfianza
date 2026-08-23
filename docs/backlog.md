@@ -57,6 +57,7 @@ Migrate every useful curriculum concept from `docs/curriculum` into PostgreSQL w
     - [x] Migrate `here`: account for and consume two source files, add direct `aquí` and `acá` mappings, revise the existing `estar aquí` construction, and verify snapshot parity.
     - [x] Migrate `behind`: account for and consume two source files, add the neutral `detrás de [algo]` construction, and verify snapshot parity.
     - [x] Complete the first grouped Terra sweep: account for and consume ten files across `success`, `successful`, `tomorrow`, and `start`; migrate nine normalized additions or revisions; and verify snapshot parity.
+    - [x] Complete the second grouped Terra sweep: account for and consume four source files across `according`, `during`, `later`, and `then`; migrate fourteen normalized additions or revisions; and verify snapshot parity.
     - [ ] Rewrite source evidence as neutral Spanish-first concepts with exactly one English target and one minimal bilingual example.
     - [ ] Compare every batch with PostgreSQL and other candidates before review import.
     - [ ] Preserve all useful material; default uncertain but valid entries to `reference` and defer promotion or demotion.

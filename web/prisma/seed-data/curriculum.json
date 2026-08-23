@@ -23839,12 +23839,15 @@
       "spanish": "luego",
       "english": "then",
       "example": {
-        "spanish": "luego",
-        "english": "then"
+        "spanish": "Comimos y luego nos fuimos.",
+        "english": "We ate and then left."
       },
       "collections": [
-        "despues",
-        "spanish-to-english catchall"
+        "luego",
+        "then",
+        "sequence",
+        "connector",
+        "english-to-spanish mappings"
       ],
       "curriculumRole": "reference"
     },
@@ -24461,12 +24464,15 @@
       "spanish": "entonces",
       "english": "then",
       "example": {
-        "spanish": "entonces",
-        "english": "then"
+        "spanish": "Si estás de acuerdo, entonces firma aquí.",
+        "english": "If you agree, then sign here."
       },
       "collections": [
         "entonces",
-        "spanish-to-english catchall"
+        "then",
+        "consequence",
+        "connector",
+        "english-to-spanish mappings"
       ],
       "curriculumRole": "reference"
     },
@@ -28940,6 +28946,214 @@
         "start",
         "vehicle",
         "machine",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "segun-algo-alguien-according-to",
+      "spanish": "según [algo o alguien]",
+      "english": "according to [something or somebody]",
+      "example": {
+        "spanish": "Según Laura, la oficina está cerrada.",
+        "english": "According to Laura, the office is closed."
+      },
+      "collections": [
+        "según",
+        "according",
+        "according to",
+        "preposition",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "de-acuerdo-con-algo-according-to",
+      "spanish": "de acuerdo con [algo]",
+      "english": "according to [something]",
+      "example": {
+        "spanish": "De acuerdo con el contrato, el pago es mensual.",
+        "english": "According to the contract, payment is monthly."
+      },
+      "collections": [
+        "acuerdo",
+        "according",
+        "according to",
+        "preposition",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "segun-algo-depending-on",
+      "spanish": "según [algo]",
+      "english": "depending on [something]",
+      "example": {
+        "spanish": "El precio cambia según el tamaño.",
+        "english": "The price varies depending on the size."
+      },
+      "collections": [
+        "según",
+        "according",
+        "depending on",
+        "preposition",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "durante-algo-during-something",
+      "spanish": "durante [algo]",
+      "english": "during [something]",
+      "example": {
+        "spanish": "Dormí durante la película.",
+        "english": "I slept during the movie."
+      },
+      "collections": [
+        "durante",
+        "during",
+        "preposition",
+        "time",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "por-la-noche-at-night",
+      "spanish": "por la noche",
+      "english": "at night",
+      "example": {
+        "spanish": "Llovió por la noche.",
+        "english": "It rained at night."
+      },
+      "collections": [
+        "por",
+        "night",
+        "at",
+        "time",
+        "fixed expression",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "a-lo-largo-de-periodo-throughout-period",
+      "spanish": "a lo largo de [un período]",
+      "english": "throughout [a period]",
+      "example": {
+        "spanish": "Nos reunimos varias veces a lo largo del año.",
+        "english": "We met several times throughout the year."
+      },
+      "collections": [
+        "a lo largo de",
+        "during",
+        "throughout",
+        "preposition",
+        "time",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "mas-tarde-later",
+      "spanish": "más tarde",
+      "english": "later",
+      "example": {
+        "spanish": "Te llamo más tarde.",
+        "english": "I will call you later."
+      },
+      "collections": [
+        "tarde",
+        "later",
+        "adverb",
+        "time",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "periodo-despues-amount-of-time-later",
+      "spanish": "[un período] después",
+      "english": "[an amount of time] later",
+      "example": {
+        "spanish": "Dos días después, Laura volvió.",
+        "english": "Two days later, Laura returned."
+      },
+      "collections": [
+        "después",
+        "later",
+        "adverb",
+        "time",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "nos-vemos-luego-see-you-later",
+      "spanish": "nos vemos luego",
+      "english": "see you later",
+      "example": {
+        "spanish": "Nos vemos luego.",
+        "english": "See you later."
+      },
+      "collections": [
+        "ver",
+        "luego",
+        "later",
+        "farewell",
+        "fixed expression",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "posterior-later",
+      "spanish": "posterior",
+      "english": "later",
+      "example": {
+        "spanish": "Los capítulos posteriores son más difíciles.",
+        "english": "The later chapters are more difficult."
+      },
+      "collections": [
+        "posterior",
+        "later",
+        "adjective",
+        "time",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "en-aquel-entonces-back-then",
+      "spanish": "en aquel entonces",
+      "english": "back then",
+      "example": {
+        "spanish": "En aquel entonces, vivía en Cali.",
+        "english": "Back then, I lived in Cali."
+      },
+      "collections": [
+        "entonces",
+        "then",
+        "back then",
+        "time",
+        "fixed expression",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "a-esa-hora-then",
+      "spanish": "a esa hora",
+      "english": "then",
+      "example": {
+        "spanish": "Nos vemos a esa hora.",
+        "english": "See you then."
+      },
+      "collections": [
+        "hora",
+        "then",
+        "time",
+        "fixed expression",
         "english-to-spanish mappings"
       ],
       "curriculumRole": "reference"

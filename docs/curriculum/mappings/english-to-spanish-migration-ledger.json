@@ -3937,6 +3937,44 @@
         "arrancar-vehicle-start"
       ],
       "note": "README synthesis, including comenzar, is represented by the migrated start concepts."
+    },
+    "docs/curriculum/mappings/english-to-spanish/according/README.md": {
+      "disposition": "migrated",
+      "destinationIds": [
+        "segun-algo-alguien-according-to",
+        "de-acuerdo-con-algo-according-to",
+        "segun-algo-depending-on"
+      ],
+      "note": "Attribution and basis-for-variation mappings migrated as distinct normalized concepts."
+    },
+    "docs/curriculum/mappings/english-to-spanish/during/README.md": {
+      "disposition": "migrated",
+      "destinationIds": [
+        "durante-algo-during-something",
+        "por-la-noche-at-night",
+        "a-lo-largo-de-periodo-throughout-period"
+      ],
+      "note": "Event, nighttime, and distribution-across-a-period time expressions migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/later/README.md": {
+      "disposition": "migrated",
+      "destinationIds": [
+        "mas-tarde-later",
+        "periodo-despues-amount-of-time-later",
+        "nos-vemos-luego-see-you-later",
+        "posterior-later"
+      ],
+      "note": "Adverbial, measured-time, leave-taking, and adjectival later mappings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/then/README.md": {
+      "disposition": "migrated",
+      "destinationIds": [
+        "entonces-entonces-then",
+        "despues-luego-then",
+        "en-aquel-entonces-back-then",
+        "a-esa-hora-then"
+      ],
+      "note": "Consequence, sequence, past-time, and established-time then mappings migrated or revised."
     }
   }
 }

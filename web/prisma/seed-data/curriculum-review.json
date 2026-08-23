@@ -88472,6 +88472,391 @@
           "ownerNote": ""
         }
       ]
+    },
+    {
+      "id": "terra-connectors-time-hubs-2026-08-23",
+      "title": "Terra sweep: according, during, later, and then",
+      "sourcePaths": [
+        "docs/curriculum/mappings/english-to-spanish/according",
+        "docs/curriculum/mappings/english-to-spanish/during",
+        "docs/curriculum/mappings/english-to-spanish/later",
+        "docs/curriculum/mappings/english-to-spanish/then"
+      ],
+      "createdAt": "2026-08-23",
+      "status": "migrated",
+      "migratedAt": "2026-08-23",
+      "candidates": [
+        {
+          "id": "segun-algo-alguien-according-to",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "según [algo o alguien]",
+          "english": "according to [something or somebody]",
+          "example": {
+            "spanish": "Según Laura, la oficina está cerrada.",
+            "english": "According to Laura, the office is closed."
+          },
+          "collections": [
+            "según",
+            "according",
+            "according to",
+            "preposition",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/according/README.md"
+          ],
+          "rationale": "Según is the direct reusable Spanish realization for attributing information to a person or source.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "de-acuerdo-con-algo-according-to",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "de acuerdo con [algo]",
+          "english": "according to [something]",
+          "example": {
+            "spanish": "De acuerdo con el contrato, el pago es mensual.",
+            "english": "According to the contract, payment is monthly."
+          },
+          "collections": [
+            "acuerdo",
+            "according",
+            "according to",
+            "preposition",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/according/README.md"
+          ],
+          "rationale": "De acuerdo con is a distinct attribution phrase and should not be conflated with ponerse de acuerdo con somebody.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "segun-algo-depending-on",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "según [algo]",
+          "english": "depending on [something]",
+          "example": {
+            "spanish": "El precio cambia según el tamaño.",
+            "english": "The price varies depending on the size."
+          },
+          "collections": [
+            "según",
+            "according",
+            "depending on",
+            "preposition",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/according/README.md"
+          ],
+          "rationale": "The same Spanish preposition has a separately teachable English realization when it states the basis on which something varies.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "durante-algo-during-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "durante [algo]",
+          "english": "during [something]",
+          "example": {
+            "spanish": "Dormí durante la película.",
+            "english": "I slept during the movie."
+          },
+          "collections": [
+            "durante",
+            "during",
+            "preposition",
+            "time",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/during/README.md"
+          ],
+          "rationale": "Durante is the direct reusable event-or-period marker for during something.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "por-la-noche-at-night",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "por la noche",
+          "english": "at night",
+          "example": {
+            "spanish": "Llovió por la noche.",
+            "english": "It rained at night."
+          },
+          "collections": [
+            "por",
+            "night",
+            "at",
+            "time",
+            "fixed expression",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/during/README.md"
+          ],
+          "rationale": "The source shows that por la noche is the natural Spanish time expression where literal during the night is not the normal target.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "a-lo-largo-de-periodo-throughout-period",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "a lo largo de [un período]",
+          "english": "throughout [a period]",
+          "example": {
+            "spanish": "Nos reunimos varias veces a lo largo del año.",
+            "english": "We met several times throughout the year."
+          },
+          "collections": [
+            "a lo largo de",
+            "during",
+            "throughout",
+            "preposition",
+            "time",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/during/README.md"
+          ],
+          "rationale": "A lo largo de expresses distribution across a period, which is more naturally throughout than a direct durante mapping.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "mas-tarde-later",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "más tarde",
+          "english": "later",
+          "example": {
+            "spanish": "Te llamo más tarde.",
+            "english": "I will call you later."
+          },
+          "collections": [
+            "tarde",
+            "later",
+            "adverb",
+            "time",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/later/README.md"
+          ],
+          "rationale": "Más tarde is the direct adverbial Spanish mapping for later.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "periodo-despues-amount-of-time-later",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "[un período] después",
+          "english": "[an amount of time] later",
+          "example": {
+            "spanish": "Dos días después, Laura volvió.",
+            "english": "Two days later, Laura returned."
+          },
+          "collections": [
+            "después",
+            "later",
+            "adverb",
+            "time",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/later/README.md"
+          ],
+          "rationale": "A measured time followed by después maps to the English time-plus-later pattern.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "nos-vemos-luego-see-you-later",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "nos vemos luego",
+          "english": "see you later",
+          "example": {
+            "spanish": "Nos vemos luego.",
+            "english": "See you later."
+          },
+          "collections": [
+            "ver",
+            "luego",
+            "later",
+            "farewell",
+            "fixed expression",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/later/README.md"
+          ],
+          "rationale": "The leave-taking phrase has a fixed English realization distinct from adverbial later.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "posterior-later",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "posterior",
+          "english": "later",
+          "example": {
+            "spanish": "Los capítulos posteriores son más difíciles.",
+            "english": "The later chapters are more difficult."
+          },
+          "collections": [
+            "posterior",
+            "later",
+            "adjective",
+            "time",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/later/README.md"
+          ],
+          "rationale": "Posterior is an adjective whose English realization is later, not the adverb más tarde.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-entonces-then--terra-source",
+          "action": "revise",
+          "existingConceptId": "entonces-entonces-then",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "entonces",
+          "english": "then",
+          "example": {
+            "spanish": "Si estás de acuerdo, entonces firma aquí.",
+            "english": "If you agree, then sign here."
+          },
+          "collections": [
+            "entonces",
+            "then",
+            "consequence",
+            "connector",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/then/README.md"
+          ],
+          "rationale": "The direct entonces mapping already exists; revise it with a consequence example and current-source collections.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-luego-then--terra-source",
+          "action": "revise",
+          "existingConceptId": "despues-luego-then",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "luego",
+          "english": "then",
+          "example": {
+            "spanish": "Comimos y luego nos fuimos.",
+            "english": "We ate and then left."
+          },
+          "collections": [
+            "luego",
+            "then",
+            "sequence",
+            "connector",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/then/README.md"
+          ],
+          "rationale": "The direct luego mapping already exists as a catchall record; revise it with a sequence example and queryable current-source collections.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "en-aquel-entonces-back-then",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "en aquel entonces",
+          "english": "back then",
+          "example": {
+            "spanish": "En aquel entonces, vivía en Cali.",
+            "english": "Back then, I lived in Cali."
+          },
+          "collections": [
+            "entonces",
+            "then",
+            "back then",
+            "time",
+            "fixed expression",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/then/README.md"
+          ],
+          "rationale": "En aquel entonces is a fixed past-time expression, naturally realized in English as back then.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "a-esa-hora-then",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "a esa hora",
+          "english": "then",
+          "example": {
+            "spanish": "Nos vemos a esa hora.",
+            "english": "See you then."
+          },
+          "collections": [
+            "hora",
+            "then",
+            "time",
+            "fixed expression",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/then/README.md"
+          ],
+          "rationale": "A esa hora refers to an established time and has a distinct English then realization.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        }
+      ]
     }
   ]
 }
