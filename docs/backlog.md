@@ -60,7 +60,8 @@ Migrate every useful curriculum concept from `docs/curriculum` into PostgreSQL w
     - [x] Complete the second grouped Terra sweep: account for and consume four source files across `according`, `during`, `later`, and `then`; migrate fourteen normalized additions or revisions; and verify snapshot parity.
     - [x] Complete the third grouped Terra sweep: account for and consume eleven files across `across`, `agree`, `allow`, `almost`, `alone`, `also`, `although`, `always`, `and`, and `appear`; migrate thirty-four normalized additions or revisions; and verify snapshot parity.
     - [x] Complete the fourth grouped Terra sweep: account for and consume twelve files across `after`, `again`, `along`, `anymore`, `because`, `before`, `both`, and `each`; migrate twenty-five normalized additions or revisions; and verify snapshot parity.
-    - [ ] Complete the fifth grouped Terra sweep: migrate the verified `bad`, `big`, and `build` batch, consume its four source files, and verify snapshot parity.
+    - [x] Complete the fifth grouped Terra sweep: migrate the verified `bad`, `big`, and `build` batch, consume its four source files, and verify snapshot parity.
+    - [x] Complete the sixth grouped Terra sweep: migrate the verified `buy`, `care`, `catch`, `change`, and `clear` batch, consume its source files, and verify snapshot parity.
     - [ ] Rewrite source evidence as neutral Spanish-first concepts with exactly one English target and one minimal bilingual example.
     - [ ] Compare every batch with PostgreSQL and other candidates before review import.
     - [ ] Preserve all useful material; default uncertain but valid entries to `reference` and defer promotion or demotion.

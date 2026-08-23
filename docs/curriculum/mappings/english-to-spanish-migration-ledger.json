@@ -4110,6 +4110,31 @@
       "disposition": "migrated",
       "destinationIds": ["construir-algo-build-something", "formar-equipo-build-team", "aumentar-build", "desarrollar-algo-build-on-something"],
       "note": "Construction, group formation, accumulation, and base-development meanings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/buy/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["comprar-algo-buy-something", "creer-algo-buy-something", "convencerse-de-algo-buy-into-something", "darle-tiempo-a-alguien-buy-somebody-time"],
+      "note": "Purchase, disbelief, buy-into, and buy-time meanings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/care/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["importarle-algo-care-about-something", "preocuparse-por-algo-care-about-something", "cuidar-alguien-care-for-somebody", "te-gustaria-algo-would-you-care-for-something"],
+      "note": "Concern, caregiving, and polite-offer care meanings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/catch/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["atrapar-algo-catch-something", "alcanzar-transporte-catch-transport", "resfriarse-catch-a-cold", "entender-algo-catch-something", "sorprender-alguien-haciendo-algo-catch-somebody-doing"],
+      "note": "Capture, transport, illness, understanding, and discovery-in-the-act meanings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/change/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["cambiar-algo-change-something", "cambiarse-de-ropa-change-clothes", "cambiar-dinero-change-money", "el-cambio-change", "hacer-transbordo-change-transport"],
+      "note": "Alteration, clothes, money exchange, returned money, and transport-switch meanings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/clear/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["claro-a-clear", "despejado-clear", "despejar-algo-clear-something", "procesar-pago-clear-payment"],
+      "note": "Understanding, weather, removal, and financial-processing clear meanings migrated."
     }
   }
 }

@@ -90783,6 +90783,598 @@
           "ownerNote": ""
         }
       ]
+    },
+    {
+      "id": "terra-semantic-action-hubs-2026-08-23",
+      "title": "Terra sweep: buy, care, catch, change, and clear",
+      "sourcePaths": [
+        "docs/curriculum/mappings/english-to-spanish/buy",
+        "docs/curriculum/mappings/english-to-spanish/care",
+        "docs/curriculum/mappings/english-to-spanish/catch",
+        "docs/curriculum/mappings/english-to-spanish/change",
+        "docs/curriculum/mappings/english-to-spanish/clear"
+      ],
+      "createdAt": "2026-08-23",
+      "status": "migrated",
+      "migratedAt": "2026-08-23",
+      "candidates": [
+        {
+          "id": "comprar-algo-buy-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "comprar [algo]",
+          "english": "to buy [something]",
+          "example": {
+            "spanish": "Compré un teléfono nuevo.",
+            "english": "I bought a new phone."
+          },
+          "collections": [
+            "comprar",
+            "buy",
+            "verb + direct object",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/buy/README.md"
+          ],
+          "rationale": "Comprar is the direct purchase action.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "creer-algo-buy-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "creer [algo]",
+          "english": "to buy [something]",
+          "example": {
+            "spanish": "No me creo esa excusa.",
+            "english": "I do not buy that excuse."
+          },
+          "collections": [
+            "creer",
+            "buy",
+            "disbelief",
+            "verb + direct object",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/buy/README.md"
+          ],
+          "rationale": "Buying an explanation is creer rather than purchasing it.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "convencerse-de-algo-buy-into-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "convencerse de [algo]",
+          "english": "to buy into [something]",
+          "example": {
+            "spanish": "Se convenció de la idea.",
+            "english": "She bought into the idea."
+          },
+          "collections": [
+            "convencer",
+            "buy",
+            "into",
+            "phrasal verb",
+            "de => into",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/buy/README.md"
+          ],
+          "rationale": "Accepting an idea uses convencerse de and the buy-into phrasal verb.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "darle-tiempo-a-alguien-buy-somebody-time",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "darle tiempo a [alguien]",
+          "english": "to buy [somebody] time",
+          "example": {
+            "spanish": "Este dinero puede darnos tiempo.",
+            "english": "This money can buy us time."
+          },
+          "collections": [
+            "dar",
+            "buy",
+            "time",
+            "somebody",
+            "fixed expression",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/buy/README.md"
+          ],
+          "rationale": "Buying time is expressed with dar tiempo in Spanish.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "importarle-algo-care-about-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "importarle [algo]",
+          "english": "to care about [something]",
+          "example": {
+            "spanish": "Este proyecto me importa.",
+            "english": "I care about this project."
+          },
+          "collections": [
+            "importar",
+            "care",
+            "about",
+            "verb + preposition",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/care/README.md"
+          ],
+          "rationale": "Personal concern is importar in Spanish.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "preocuparse-por-algo-care-about-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "preocuparse por [algo]",
+          "english": "to care about [something]",
+          "example": {
+            "spanish": "Se preocupa por el proyecto.",
+            "english": "She cares about the project."
+          },
+          "collections": [
+            "preocupar",
+            "care",
+            "about",
+            "por => about",
+            "reflexive",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/care/README.md"
+          ],
+          "rationale": "Preocuparse por is the concern alternative identified by the source.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "cuidar-alguien-care-for-somebody",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "cuidar [alguien]",
+          "english": "to care for [somebody]",
+          "example": {
+            "spanish": "Ella cuida a su padre.",
+            "english": "She cares for her father."
+          },
+          "collections": [
+            "cuidar",
+            "care",
+            "for",
+            "verb + preposition",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/care/README.md"
+          ],
+          "rationale": "Caregiving uses cuidar and the care-for construction.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "te-gustaria-algo-would-you-care-for-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "¿te gustaría [algo]?",
+          "english": "would you care for [something]?",
+          "example": {
+            "spanish": "¿Te gustaría un café?",
+            "english": "Would you care for some coffee?"
+          },
+          "collections": [
+            "gustar",
+            "care",
+            "for",
+            "polite offer",
+            "question",
+            "fixed expression",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/care/README.md"
+          ],
+          "rationale": "Polite care-for offers naturally use gustaría in Spanish.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "atrapar-algo-catch-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "atrapar [algo]",
+          "english": "to catch [something]",
+          "example": {
+            "spanish": "Atrapa la pelota.",
+            "english": "Catch the ball."
+          },
+          "collections": [
+            "atrapar",
+            "catch",
+            "verb + direct object",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/catch/README.md"
+          ],
+          "rationale": "Atrapar is the direct capture sense of catch.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "alcanzar-transporte-catch-transport",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "alcanzar [un transporte]",
+          "english": "to catch [transport]",
+          "example": {
+            "spanish": "Alcancé el bus de las siete.",
+            "english": "I caught the seven o'clock bus."
+          },
+          "collections": [
+            "alcanzar",
+            "catch",
+            "transport",
+            "verb + direct object",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/catch/README.md"
+          ],
+          "rationale": "Reaching a bus or train uses alcanzar in Spanish.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "resfriarse-catch-a-cold",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "resfriarse",
+          "english": "to catch a cold",
+          "example": {
+            "spanish": "Se resfrió.",
+            "english": "She caught a cold."
+          },
+          "collections": [
+            "resfriar",
+            "catch",
+            "cold",
+            "illness",
+            "reflexive",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/catch/README.md"
+          ],
+          "rationale": "Contracting a cold uses the pronominal Spanish illness verb.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "entender-algo-catch-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "entender [algo]",
+          "english": "to catch [something]",
+          "example": {
+            "spanish": "No entendí tu nombre.",
+            "english": "I did not catch your name."
+          },
+          "collections": [
+            "entender",
+            "catch",
+            "understanding",
+            "verb + direct object",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/catch/README.md"
+          ],
+          "rationale": "Catching spoken information is entender in Spanish.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "sorprender-alguien-haciendo-algo-catch-somebody-doing",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "sorprender a [alguien] [haciendo algo]",
+          "english": "to catch [somebody] [doing something]",
+          "example": {
+            "spanish": "Lo sorprendí tomando el dinero.",
+            "english": "I caught him taking the money."
+          },
+          "collections": [
+            "sorprender",
+            "catch",
+            "somebody",
+            "verb + gerund",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/catch/README.md"
+          ],
+          "rationale": "Discovering someone in the act is sorprender plus a gerund.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "cambiar-algo-change-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "cambiar [algo]",
+          "english": "to change [something]",
+          "example": {
+            "spanish": "Cambia el plan.",
+            "english": "Change the plan."
+          },
+          "collections": [
+            "cambiar",
+            "change",
+            "verb + direct object",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/change/README.md"
+          ],
+          "rationale": "Cambiar is the direct alteration action.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "cambiarse-de-ropa-change-clothes",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "cambiarse de ropa",
+          "english": "to change clothes",
+          "example": {
+            "spanish": "Necesito cambiarme de ropa.",
+            "english": "I need to change clothes."
+          },
+          "collections": [
+            "cambiar",
+            "change",
+            "clothes",
+            "reflexive",
+            "fixed expression",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/change/README.md"
+          ],
+          "rationale": "Changing one's clothes is the pronominal cambiarse de ropa expression.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "cambiar-dinero-change-money",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "cambiar [dinero]",
+          "english": "to change [money]",
+          "example": {
+            "spanish": "¿Puedes cambiar un billete de veinte dólares?",
+            "english": "Can you change a twenty-dollar bill?"
+          },
+          "collections": [
+            "cambiar",
+            "change",
+            "money",
+            "verb + direct object",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/change/README.md"
+          ],
+          "rationale": "Exchanging bills or currency uses cambiar in a distinct money sense.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "el-cambio-change",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "el cambio",
+          "english": "change",
+          "example": {
+            "spanish": "Quédate con el cambio.",
+            "english": "Keep the change."
+          },
+          "collections": [
+            "cambio",
+            "change",
+            "money",
+            "noun",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/change/README.md"
+          ],
+          "rationale": "Returned coins or bills are the noun el cambio.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "hacer-transbordo-change-transport",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "hacer transbordo",
+          "english": "to change [transport]",
+          "example": {
+            "spanish": "Hicimos transbordo en el centro.",
+            "english": "We changed buses downtown."
+          },
+          "collections": [
+            "transbordo",
+            "change",
+            "transport",
+            "fixed expression",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/change/README.md"
+          ],
+          "rationale": "Switching buses or trains uses hacer transbordo rather than direct cambiar.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "claro-a-clear",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "claro/a",
+          "english": "clear",
+          "example": {
+            "spanish": "Las instrucciones son claras.",
+            "english": "The instructions are clear."
+          },
+          "collections": [
+            "claro",
+            "clear",
+            "adjective",
+            "understanding",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/clear/README.md"
+          ],
+          "rationale": "Clarity of instructions uses claro/a.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "despejado-clear",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "despejado",
+          "english": "clear",
+          "example": {
+            "spanish": "El cielo está despejado.",
+            "english": "The sky is clear."
+          },
+          "collections": [
+            "despejar",
+            "clear",
+            "adjective",
+            "weather",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/clear/README.md"
+          ],
+          "rationale": "A clear sky is despejado in Spanish.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "despejar-algo-clear-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "despejar [algo]",
+          "english": "to clear [something]",
+          "example": {
+            "spanish": "Despeja la mesa.",
+            "english": "Clear the table."
+          },
+          "collections": [
+            "despejar",
+            "clear",
+            "verb + direct object",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/clear/README.md"
+          ],
+          "rationale": "Removing objects from a surface uses despejar.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "procesar-pago-clear-payment",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "procesar [un pago]",
+          "english": "to clear [a payment]",
+          "example": {
+            "spanish": "El pago fue procesado.",
+            "english": "The payment cleared."
+          },
+          "collections": [
+            "procesar",
+            "clear",
+            "payment",
+            "finance",
+            "verb + direct object",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/clear/README.md"
+          ],
+          "rationale": "Financial clearing is processed-payment language in Spanish.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        }
+      ]
     }
   ]
 }
