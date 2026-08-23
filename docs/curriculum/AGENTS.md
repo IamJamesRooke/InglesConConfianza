@@ -9,7 +9,7 @@ These Markdown files are human-readable curriculum specifications and the curren
 - Use [`past-and-past-participle/`](past-and-past-participle/README.md) for the canonical sound-based inventory of English past and participle forms.
 - Use [`transformations/`](transformations/README.md) for productive or memorable English prefix and suffix relationships.
 - Use [`structure/`](structure/README.md) for reusable sentence-building rules.
-- Use [`vocabulary/`](vocabulary/README.md) for flat, table-first reference categories that do not justify independent mapping families.
+- Use canonical PostgreSQL concepts tagged `vocabulary` for reference categories that do not justify independent mapping families; the former `vocabulary/` source pillar is captured and retired.
 
 The hierarchy is an authoring reference, not a course sequence. Lessons and learner state will eventually reference curriculum objects from separate data layers.
 
@@ -32,7 +32,7 @@ The hierarchy is an authoring reference, not a course sequence. Lessons and lear
 - Identify real English–Spanish distinctions that the source omits; do not mechanically preserve an incomplete mapping.
 - Preserve useful source examples, but improve them when a clearer contextual sentence set teaches the same distinction better.
 - Match the closest files' Markdown structure and established directory organization. Put focused contrasts under an appropriate `confusion-sets/` directory.
-- Keep vocabulary flat: add material to the most useful root-level category file and express Core versus Supporting or Reference status inside the document rather than recreating directory trees.
+- Keep vocabulary queryable through flat collections and the existing curriculum-role field; do not recreate the retired Markdown hierarchy.
 
 ## English-to-Spanish words and particles
 
@@ -54,7 +54,7 @@ The hierarchy is an authoring reference, not a course sequence. Lessons and lear
 
 - The active curriculum database is PostgreSQL, modeled in `web/prisma/schema.prisma`. Immutable snapshots under `web/prisma/seed-data/` are bootstrap and verification fixtures, not runtime stores. The detailed record-shape decisions and migration checkpoints live in [`DATABASE-DISCOVERY.md`](DATABASE-DISCOVERY.md).
 - For a quick handoff, start with `docs/backlog.md`, then `DATABASE-DISCOVERY.md`, then the PostgreSQL schema and server store code under `web/prisma/` and `web/src/lib/curriculum/server/`.
-- The former mappings tree is now captured losslessly in PostgreSQL and retired from the filesystem. Normalize its immutable source documents and extracted table rows from the database; curation, promotion, and demotion follow capture. Missing useful language is expensive, while temporarily retaining uncertain but valid language as Reference is cheap.
+- The former mappings, cognates, and vocabulary trees are now captured losslessly in PostgreSQL and retired from the filesystem. Normalize their immutable source documents and extracted table rows from the database; curation, promotion, and demotion follow capture. Missing useful language is expensive, while temporarily retaining uncertain but valid language as Reference is cheap.
 - `core`, `supporting`, and `reference` are the existing curriculum-role field, not collections. Core remains an elite, highly selective tier and every Core recommendation needs an explicit functional-necessity justification. Supporting is also selective. Default non-everyday, situational, secondary, readily inferable, or uncertain but valid material to Reference during migration.
 - Work in broad, queryable database batches selected by direction, hub, tag, or search. Treat archived English-to-Spanish rows as evidence and rewrite useful items as neutral Spanish-first concepts. Audit basic complements, infinitive and person-plus-action constructions, independently useful meanings, meaning-changing forms, common fixed expressions, and nonliteral English realizations.
 - After the verb and construction pass, run a word-family pass: look for independently useful nouns, adjectives, adverbs, and related grammar constructions derived from or tightly associated with the family. Use article forms for nouns (for example **la necesidad**) and natural support verbs for adjectives or states (for example **ser necesario**, **estar listo**, **tener hambre**). Tag these entries with grammar collections such as `noun`, `adjective`, or `adverb` in addition to the family collection.

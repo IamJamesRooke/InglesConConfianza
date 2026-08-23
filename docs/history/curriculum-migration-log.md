@@ -4,6 +4,12 @@
 
 The closing professionalization sprint promoted cognates and past forms to curriculum-level pillars in commit `54b4d54`, then replaced 298 vocabulary source files with 16 flat category files plus a preservation manifest in commit `ae0e487`.
 
+## 2026-08-23 — PostgreSQL vocabulary migration
+
+- Preserved all 17 final vocabulary documents, 127,594 source bytes, and 972 extracted rows in the immutable PostgreSQL source archive with complete row dispositions.
+- Normalized 592 vocabulary mappings into the canonical concept table: 556 additions and 36 existing-concept merges, with 2 preserved Core, 18 Supporting, and 572 Reference roles.
+- Verified source parity, exported immutable database snapshots, and retired `docs/curriculum/vocabulary`; vocabulary is now queried through collections instead of a parallel filesystem or table.
+
 ## 2026-08-23 — Lossless PostgreSQL mappings capture
 
 - Replaced the slow hub-by-hub source-deletion gate with an immutable PostgreSQL archive containing all 2,225 remaining mapping files, 1,524,163 exact source bytes, SHA-256 hashes, searchable metadata, and 4,322 extracted Markdown table rows.

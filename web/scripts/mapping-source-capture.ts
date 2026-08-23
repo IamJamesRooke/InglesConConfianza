@@ -42,11 +42,17 @@ function documentMetadata(filePath: string, absoluteRoot: string, pillar: string
     .relative(absoluteRoot, filePath)
     .split(path.sep);
   const first = relativeToRoot[0] ?? "root";
-  const direction = pillar === "cognates" ? "spanish-to-english" :
+  const direction = pillar === "cognates" || pillar === "vocabulary" ? "spanish-to-english" :
     first === "english-to-spanish" || first === "spanish-to-english"
       ? first
       : "undirected";
-  const hub = pillar === "cognates" ? first : direction === "undirected" ? "root" : (relativeToRoot[1] ?? "root");
+  const hub = pillar === "cognates"
+    ? first
+    : pillar === "vocabulary"
+      ? path.basename(filePath, path.extname(filePath))
+      : direction === "undirected"
+        ? "root"
+        : (relativeToRoot[1] ?? "root");
   const basename = path.basename(filePath);
   const extension = path.extname(filePath).slice(1).toLowerCase();
   const kind =
@@ -58,7 +64,7 @@ function documentMetadata(filePath: string, absoluteRoot: string, pillar: string
           ? "manifest"
           : "mapping-source";
   const tags = unique([
-    "mapping source",
+    pillar === "vocabulary" ? "vocabulary source" : "mapping source",
     "source archive",
     direction,
     hub,

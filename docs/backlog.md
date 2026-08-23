@@ -1,7 +1,7 @@
 # Backlog
 
 > Last updated: 2026-08-23. This file contains current decisions and executable work only. Completed migration detail is preserved in the [curriculum migration log](history/curriculum-migration-log.md).
-> Quick handoff: PostgreSQL is the canonical curriculum store; Lesson Builder remains JSON-backed. The former mappings and cognates trees are preserved losslessly in PostgreSQL and its immutable seed snapshot, so normalization and curation now work from the database.
+> Quick handoff: PostgreSQL is the canonical curriculum store; Lesson Builder remains JSON-backed. The former mappings, cognates, and vocabulary trees are preserved losslessly in PostgreSQL and its immutable seed snapshot, so normalization and curation now work from the database.
 
 ## Current objective
 
@@ -57,13 +57,14 @@ Migrate every useful curriculum concept from `docs/curriculum` into PostgreSQL w
 - [x] Unify cognates with the canonical `curriculum_concepts` table, remove the temporary cognate table and snapshot, split multi-target mappings, and retain raw cognate documents only in the lossless source archive.
 - [x] Repair the unified cognate catalog: normalize 252 noun source rows with articles, normalize 150 adjective items with support verbs, separate the lone adverb, atomize all remaining bundled mappings, merge normalized duplicates, correct contextual-cognate tags, and ensure every cognate concept has a part-of-speech collection.
 - [x] Paginate the Curriculum database page with server-side search, collection and role filters, indexed queries, and 50 concepts per page.
+- [x] Capture, normalize, and retire the entire `docs/curriculum/vocabulary` pillar: preserve all 17 files and 127,594 source bytes verbatim, dispose all 972 extracted rows, normalize 592 single-target concepts with category, semantic, grammatical, phrasal-root, particle, and priority metadata, merge 36 existing concepts, add 556 concepts, verify source and snapshot parity, and delete the source folder.
 - [ ] Normalize the PostgreSQL mappings archive into canonical Spanish-first concepts in broad database-driven passes.
     - [ ] Compare extracted rows with existing concepts and review candidates; link or revise exact matches and flag probable duplicates.
     - [ ] Default uncertain but useful mappings to `reference`; reserve `supporting` and especially `core` for later deliberate promotion.
     - [ ] Normalize infinitives, placeholders, adjective support verbs, examples, phrasal roots and particles, morphemes, and pronunciation families without reopening filesystem sources.
     - [ ] Keep raw source documents immutable while recording extraction and curation progress separately.
 - [ ] Prove the mappings pillar curated: every extracted source row is linked, normalized, deliberately retained as evidence, or explicitly dismissed, with all database tests passing.
-- [ ] Plan the same inventory-to-PostgreSQL process for the remaining curriculum pillars.
+- [ ] Plan the same inventory-to-PostgreSQL process for past and past participle, transformations, and structure.
 
 ## Paused product work
 

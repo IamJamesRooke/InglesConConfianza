@@ -2,6 +2,15 @@
 
 This document records the working decisions that emerged while representative curriculum data was discovered in JSON and now continues in PostgreSQL. These are migration checkpoints, not a frozen schema.
 
+## 2026-08-23 — Capture, normalize, and retire vocabulary
+
+- Captured all 17 vocabulary Markdown documents verbatim in PostgreSQL: 127,594 UTF-8 bytes, SHA-256 hashes, searchable metadata, and 972 extracted table rows. Every row has exactly one explicit disposition: 102 indexes, 224 canonical candidates, 572 example-evidence rows, 67 reference patterns, and 7 memory aids.
+- Normalized the pillar into 592 atomic Spanish-first concepts in the one canonical `curriculum_concepts` table. The migration added 556 concepts, enriched 33 exact matches, and merged 3 article/support-verb normalized matches; no parallel vocabulary catalog or table was created.
+- Kept migration priority conservative: 572 vocabulary concepts are Reference and 18 are Supporting. The 2 Core concepts were pre-existing mappings whose roles were preserved; the import itself promoted nothing to Core.
+- Added flat, queryable collections for `vocabulary`, source category, exactly one grammatical type, semantic themes such as `days of the week`, `date`, `time`, and `location`, and reusable number, false-cognate, connector, phrasal-root, and particle patterns.
+- Normalized nouns with natural Spanish articles except intentional calendar and language-name forms, adjectives with `ser`, `estar`, or `tener`, verbs as infinitive patterns with controlled placeholders, and English targets as single atomic values. Corrected ambiguous source-example selection before export.
+- Verified the PostgreSQL source archive byte-for-byte and row-for-row against the live tree, exported immutable snapshot parity, and retired `docs/curriculum/vocabulary`. Future curation, promotion, demotion, and collection nesting happen in the database.
+
 ## 2026-08-23 — Unify cognates with canonical curriculum concepts
 
 - Promoted all 751 captured cognate catalog items into `curriculum_concepts`, splitting the two bundled English alternatives so 753 single-target mappings were considered. The import created 748 concepts and merged cognate collections into 5 existing mappings.

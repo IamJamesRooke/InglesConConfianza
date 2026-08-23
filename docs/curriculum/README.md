@@ -9,7 +9,7 @@ This directory is the working source of truth for the Inglés Con Confianza body
 | [Past and Past Participle](past-and-past-participle/README.md) | The canonical sound-based inventory of English past and participle forms. |
 | [Transformations](transformations/README.md) | Productive prefix and suffix families that turn one useful English word or form into another. |
 | [Structure](structure/README.md) | Reusable machinery for building statements, questions, negations, descriptions, and connected ideas. |
-| [Vocabulary](vocabulary/README.md) | Compact reference tables for useful words that do not require independent mapping lessons. |
+| Vocabulary (PostgreSQL) | Searchable words, expressions, semantic categories, and verb families preserved as canonical concepts plus a lossless source archive. |
 
 Each lesson has one canonical home. Indexes may cross-link a lesson when it supports more than one area. The future teaching sequence should express prerequisites and reinforcement without duplicating curriculum objects or encoding difficulty into this folder hierarchy.
 
@@ -18,12 +18,12 @@ Each lesson has one canonical home. Indexes may cross-link a lesson when it supp
 - Use the PostgreSQL **mappings** archive when a frequent source form has several context-dependent translations.
 - Use **structure** for reusable sentence-building rules.
 - Use **transformations**, PostgreSQL **cognates**, and **past and past participle** for visible word- or form-building relationships.
-- Use **vocabulary** for compact reference material that does not currently justify an independent lesson family.
+- Use PostgreSQL concepts tagged `vocabulary` for compact reference material that does not currently justify an independent lesson family.
 - Build course lessons separately by referencing the smallest relevant curriculum objects and deliberately revisiting earlier ones.
 
 ## Current maturity
 
-Mappings are fully captured in PostgreSQL as 2,225 immutable source documents and 4,322 extracted table rows. Cognates are captured as 265 immutable documents and 1,250 extracted rows, with all 751 staged catalog items promoted into the same canonical concept table used by mappings. The remaining pillars are primarily human-facing references and should gain metadata only when real lesson authoring or import work requires it. Vocabulary is intentionally flat and table-first.
+Mappings are fully captured in PostgreSQL as 2,225 immutable source documents and 4,322 extracted table rows. Cognates are captured as 265 immutable documents and 1,250 extracted rows. Vocabulary is captured as 17 immutable documents and 972 extracted rows, normalized into 592 concepts in the same canonical table. The remaining pillars are primarily human-facing references and should gain metadata only when real lesson authoring or import work requires it.
 
 The active step is database-driven normalization and curation of the captured mappings archive. The [active backlog](../backlog.md) defines the current order and completion gates; lesson-contract discovery is paused until the owner changes priority.
 
