@@ -88217,6 +88217,261 @@
           "ownerNote": ""
         }
       ]
+    },
+    {
+      "id": "terra-foundation-hubs-2026-08-23",
+      "title": "Terra sweep: success, successful, tomorrow, and start",
+      "sourcePaths": [
+        "docs/curriculum/mappings/english-to-spanish/success",
+        "docs/curriculum/mappings/english-to-spanish/successful",
+        "docs/curriculum/mappings/english-to-spanish/tomorrow",
+        "docs/curriculum/mappings/english-to-spanish/start"
+      ],
+      "createdAt": "2026-08-23",
+      "status": "migrated",
+      "migratedAt": "2026-08-23",
+      "candidates": [
+        {
+          "id": "el-exito-success",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "el éxito",
+          "english": "success",
+          "example": {
+            "spanish": "El proyecto fue un éxito.",
+            "english": "The project was a success."
+          },
+          "collections": [
+            "éxito",
+            "success",
+            "noun",
+            "cognate",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/success/success.md"
+          ],
+          "rationale": "The noun éxito is the neutral Spanish concept for success and is not yet present as its own record.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-tener-exito-be-successful--terra-source",
+          "action": "revise",
+          "existingConceptId": "tener-exito-be-successful",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "tener éxito",
+          "english": "to be successful",
+          "example": {
+            "spanish": "La empresa tiene éxito.",
+            "english": "The company is successful."
+          },
+          "collections": [
+            "tener",
+            "success",
+            "successful",
+            "adjective",
+            "tener adjectives",
+            "cognate",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/successful/be-successful.md"
+          ],
+          "rationale": "The existing concept exactly represents the general successful state; revise its example and collections with current-source evidence.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "irle-bien-a-alguien-en-algo-do-well-at-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "irle bien a [alguien] en [algo]",
+          "english": "[somebody] does well at [something]",
+          "example": {
+            "spanish": "A él le va bien en el trabajo.",
+            "english": "He does well at work."
+          },
+          "collections": [
+            "ir",
+            "bien",
+            "successful",
+            "adverb",
+            "verb + preposition",
+            "at",
+            "en => at",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/successful/successful-at.md"
+          ],
+          "rationale": "Irle bien en algo is an independently useful Spanish success pattern; the source example is more naturally expressed in English as do well at something.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-manana-tomorrow--terra-source",
+          "action": "revise",
+          "existingConceptId": "manana-manana-tomorrow",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "mañana",
+          "english": "tomorrow",
+          "example": {
+            "spanish": "La reunión es mañana.",
+            "english": "The meeting is tomorrow."
+          },
+          "collections": [
+            "manana",
+            "tomorrow",
+            "time",
+            "english-to-spanish reverse audit",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/tomorrow/01-tomorrow-and-day-after-tomorrow.md"
+          ],
+          "rationale": "The direct tomorrow concept already exists; revise it with the source sentence and current migration provenance.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-pasado-manana-day-after-tomorrow--terra-source",
+          "action": "revise",
+          "existingConceptId": "manana-pasado-manana-the-day-after-tomorrow",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "pasado mañana",
+          "english": "the day after tomorrow",
+          "example": {
+            "spanish": "La reunión es pasado mañana.",
+            "english": "The meeting is the day after tomorrow."
+          },
+          "collections": [
+            "manana",
+            "tomorrow",
+            "time",
+            "english-to-spanish reverse audit",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/tomorrow/01-tomorrow-and-day-after-tomorrow.md"
+          ],
+          "rationale": "The direct day-after-tomorrow concept already exists; revise it with source evidence and current migration provenance.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "empezar-algo-start-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "empezar [algo]",
+          "english": "to start [something]",
+          "example": {
+            "spanish": "Empiezo el informe por la mañana.",
+            "english": "I start the report in the morning."
+          },
+          "collections": [
+            "empezar",
+            "start",
+            "verb + direct object",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/start/01-start-something.md"
+          ],
+          "rationale": "Empezar algo is the direct reusable Spanish pattern for to start something.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "comenzar-algo-start-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "comenzar [algo]",
+          "english": "to start [something]",
+          "example": {
+            "spanish": "Comenzamos la reunión a las nueve.",
+            "english": "We start the meeting at nine."
+          },
+          "collections": [
+            "comenzar",
+            "start",
+            "verb + direct object",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/start/README.md"
+          ],
+          "rationale": "The start README identifies comenzar as a distinct common Spanish source for the same English target.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "encender-aparato-start-machine",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "encender [un aparato]",
+          "english": "to start [a machine]",
+          "example": {
+            "spanish": "Encienda el computador.",
+            "english": "Start the computer."
+          },
+          "collections": [
+            "encender",
+            "start",
+            "machine",
+            "verb + direct object",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/start/02-start-a-machine-or-trip.md"
+          ],
+          "rationale": "Starting a machine has a natural Spanish encender realization distinct from beginning an activity.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "arrancar-vehicle-start",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "arrancar [un vehículo]",
+          "english": "to start [a vehicle]",
+          "example": {
+            "spanish": "El carro no arranca.",
+            "english": "The car won't start."
+          },
+          "collections": [
+            "arrancar",
+            "start",
+            "vehicle",
+            "machine",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/start/02-start-a-machine-or-trip.md"
+          ],
+          "rationale": "A vehicle or engine starting is a distinct Spanish arrancar meaning in the source material.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        }
+      ]
     }
   ]
 }

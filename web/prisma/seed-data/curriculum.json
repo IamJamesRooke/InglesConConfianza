@@ -17174,13 +17174,17 @@
       "spanish": "tener éxito",
       "english": "to be successful",
       "example": {
-        "spanish": "El proyecto tuvo éxito.",
-        "english": "The project was successful."
+        "spanish": "La empresa tiene éxito.",
+        "english": "The company is successful."
       },
       "collections": [
         "tener",
+        "success",
+        "successful",
         "adjective",
-        "cognate"
+        "tener adjectives",
+        "cognate",
+        "english-to-spanish mappings"
       ],
       "curriculumRole": "reference"
     },
@@ -25241,14 +25245,15 @@
       "spanish": "mañana",
       "english": "tomorrow",
       "example": {
-        "spanish": "mañana",
-        "english": "tomorrow"
+        "spanish": "La reunión es mañana.",
+        "english": "The meeting is tomorrow."
       },
       "collections": [
         "manana",
-        "spanish-to-english catchall",
         "tomorrow",
-        "english-to-spanish reverse audit"
+        "time",
+        "english-to-spanish reverse audit",
+        "english-to-spanish mappings"
       ],
       "curriculumRole": "reference"
     },
@@ -25257,14 +25262,15 @@
       "spanish": "pasado mañana",
       "english": "the day after tomorrow",
       "example": {
-        "spanish": "pasado mañana",
-        "english": "the day after tomorrow"
+        "spanish": "La reunión es pasado mañana.",
+        "english": "The meeting is the day after tomorrow."
       },
       "collections": [
         "manana",
-        "spanish-to-english catchall",
         "tomorrow",
-        "english-to-spanish reverse audit"
+        "time",
+        "english-to-spanish reverse audit",
+        "english-to-spanish mappings"
       ],
       "curriculumRole": "reference"
     },
@@ -28831,6 +28837,109 @@
         "behind",
         "preposition",
         "location",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "el-exito-success",
+      "spanish": "el éxito",
+      "english": "success",
+      "example": {
+        "spanish": "El proyecto fue un éxito.",
+        "english": "The project was a success."
+      },
+      "collections": [
+        "éxito",
+        "success",
+        "noun",
+        "cognate",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "irle-bien-a-alguien-en-algo-do-well-at-something",
+      "spanish": "irle bien a [alguien] en [algo]",
+      "english": "[somebody] does well at [something]",
+      "example": {
+        "spanish": "A él le va bien en el trabajo.",
+        "english": "He does well at work."
+      },
+      "collections": [
+        "ir",
+        "bien",
+        "successful",
+        "adverb",
+        "verb + preposition",
+        "at",
+        "en => at",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "empezar-algo-start-something",
+      "spanish": "empezar [algo]",
+      "english": "to start [something]",
+      "example": {
+        "spanish": "Empiezo el informe por la mañana.",
+        "english": "I start the report in the morning."
+      },
+      "collections": [
+        "empezar",
+        "start",
+        "verb + direct object",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "comenzar-algo-start-something",
+      "spanish": "comenzar [algo]",
+      "english": "to start [something]",
+      "example": {
+        "spanish": "Comenzamos la reunión a las nueve.",
+        "english": "We start the meeting at nine."
+      },
+      "collections": [
+        "comenzar",
+        "start",
+        "verb + direct object",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "encender-aparato-start-machine",
+      "spanish": "encender [un aparato]",
+      "english": "to start [a machine]",
+      "example": {
+        "spanish": "Encienda el computador.",
+        "english": "Start the computer."
+      },
+      "collections": [
+        "encender",
+        "start",
+        "machine",
+        "verb + direct object",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "arrancar-vehicle-start",
+      "spanish": "arrancar [un vehículo]",
+      "english": "to start [a vehicle]",
+      "example": {
+        "spanish": "El carro no arranca.",
+        "english": "The car won't start."
+      },
+      "collections": [
+        "arrancar",
+        "start",
+        "vehicle",
+        "machine",
         "english-to-spanish mappings"
       ],
       "curriculumRole": "reference"

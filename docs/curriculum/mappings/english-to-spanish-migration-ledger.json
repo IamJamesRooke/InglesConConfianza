@@ -3860,6 +3860,83 @@
         "detras-de-algo-behind-something"
       ],
       "note": "README navigation repeats the migrated behind construction."
+    },
+    "docs/curriculum/mappings/english-to-spanish/success/success.md": {
+      "disposition": "migrated",
+      "destinationIds": [
+        "el-exito-success"
+      ],
+      "note": "Neutral success noun migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/success/README.md": {
+      "disposition": "reviewed",
+      "destinationIds": [
+        "el-exito-success"
+      ],
+      "note": "README navigation repeats the migrated success noun."
+    },
+    "docs/curriculum/mappings/english-to-spanish/successful/be-successful.md": {
+      "disposition": "migrated",
+      "destinationIds": [
+        "tener-exito-be-successful"
+      ],
+      "note": "Existing successful-state concept revised with source evidence and collections."
+    },
+    "docs/curriculum/mappings/english-to-spanish/successful/successful-at.md": {
+      "disposition": "migrated",
+      "destinationIds": [
+        "irle-bien-a-alguien-en-algo-do-well-at-something"
+      ],
+      "note": "Contextual performance pattern migrated as do well at something."
+    },
+    "docs/curriculum/mappings/english-to-spanish/successful/README.md": {
+      "disposition": "reviewed",
+      "destinationIds": [
+        "tener-exito-be-successful",
+        "irle-bien-a-alguien-en-algo-do-well-at-something"
+      ],
+      "note": "README navigation is represented by the two migrated successful patterns."
+    },
+    "docs/curriculum/mappings/english-to-spanish/tomorrow/01-tomorrow-and-day-after-tomorrow.md": {
+      "disposition": "migrated",
+      "destinationIds": [
+        "manana-manana-tomorrow",
+        "manana-pasado-manana-the-day-after-tomorrow"
+      ],
+      "note": "Existing direct time concepts revised with source examples and provenance."
+    },
+    "docs/curriculum/mappings/english-to-spanish/tomorrow/README.md": {
+      "disposition": "reviewed",
+      "destinationIds": [
+        "manana-manana-tomorrow",
+        "manana-pasado-manana-the-day-after-tomorrow"
+      ],
+      "note": "README navigation repeats the two migrated time concepts."
+    },
+    "docs/curriculum/mappings/english-to-spanish/start/01-start-something.md": {
+      "disposition": "migrated",
+      "destinationIds": [
+        "empezar-algo-start-something"
+      ],
+      "note": "Direct start-something construction migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/start/02-start-a-machine-or-trip.md": {
+      "disposition": "migrated",
+      "destinationIds": [
+        "encender-aparato-start-machine",
+        "arrancar-vehicle-start"
+      ],
+      "note": "Machine and vehicle starting meanings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/start/README.md": {
+      "disposition": "reviewed",
+      "destinationIds": [
+        "empezar-algo-start-something",
+        "comenzar-algo-start-something",
+        "encender-aparato-start-machine",
+        "arrancar-vehicle-start"
+      ],
+      "note": "README synthesis, including comenzar, is represented by the migrated start concepts."
     }
   }
 }
