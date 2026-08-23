@@ -7191,8 +7191,11 @@
       },
       "collections": [
         "hacer",
-        "pronominal verb",
-        "change of state"
+        "late",
+        "time",
+        "change of state",
+        "fixed expression",
+        "english-to-spanish mappings"
       ],
       "curriculumRole": "reference"
     },
@@ -31020,6 +31023,127 @@
         "hard",
         "adjective",
         "physical property",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "antiguo-a-cargo-former-role",
+      "spanish": "antiguo/a [cargo]",
+      "english": "former [role]",
+      "example": {
+        "spanish": "Me llamó mi antiguo jefe.",
+        "english": "My former boss called."
+      },
+      "collections": [
+        "antiguo",
+        "former",
+        "adjective",
+        "role",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ex-cargo-former-role",
+      "spanish": "ex [cargo]",
+      "english": "former [role]",
+      "example": {
+        "spanish": "Habló el expresidente.",
+        "english": "The former president spoke."
+      },
+      "collections": [
+        "ex",
+        "former",
+        "prefix",
+        "role",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "el-primero-the-former",
+      "spanish": "el primero",
+      "english": "the former",
+      "example": {
+        "spanish": "Entre café y té, prefiero el primero.",
+        "english": "Of coffee and tea, I prefer the former."
+      },
+      "collections": [
+        "primero",
+        "former",
+        "noun",
+        "comparison",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "tarde-late",
+      "spanish": "tarde",
+      "english": "late",
+      "example": {
+        "spanish": "Llegué tarde.",
+        "english": "I arrived late."
+      },
+      "collections": [
+        "tarde",
+        "late",
+        "adverb",
+        "time",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "fallecido-a-late-person",
+      "spanish": "fallecido/a",
+      "english": "late [person]",
+      "example": {
+        "spanish": "El profesor fallecido escribió este libro.",
+        "english": "The late professor wrote this book."
+      },
+      "collections": [
+        "fallecer",
+        "late",
+        "adjective",
+        "death",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ultimo-a-latest",
+      "spanish": "último/a",
+      "english": "latest",
+      "example": {
+        "spanish": "Su último libro es excelente.",
+        "english": "Her latest book is excellent."
+      },
+      "collections": [
+        "último",
+        "late",
+        "latest",
+        "adjective",
+        "time",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "sentirse-solo-a-lonely",
+      "spanish": "sentirse solo/a",
+      "english": "to feel lonely",
+      "example": {
+        "spanish": "No se siente solo porque visita a sus amigos todos los días.",
+        "english": "He does not feel lonely because he visits his friends every day."
+      },
+      "collections": [
+        "sentir",
+        "solo",
+        "lonely",
+        "adjective",
+        "reflexive",
         "english-to-spanish mappings"
       ],
       "curriculumRole": "reference"

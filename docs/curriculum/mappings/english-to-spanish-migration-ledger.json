@@ -4170,6 +4170,26 @@
       "disposition": "reviewed",
       "destinationIds": ["dificil-hard", "con-esfuerzo-hard", "duro-a-hard"],
       "note": "README synthesis is represented by the migrated hard concepts."
+    },
+    "docs/curriculum/mappings/english-to-spanish/former/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["antiguo-a-cargo-former-role", "ex-cargo-former-role", "el-primero-the-former"],
+      "note": "Former-role and contrastive-former meanings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/late/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["tarde-late", "hacerse-tarde-get-late", "fallecido-a-late-person", "ultimo-a-latest"],
+      "note": "Time, becoming-late, deceased-person, and latest meanings migrated or revised."
+    },
+    "docs/curriculum/mappings/english-to-spanish/lonely/10-alone-versus-lonely.md": {
+      "disposition": "migrated",
+      "destinationIds": ["sentirse-solo-a-lonely"],
+      "note": "The emotional loneliness contrast migrated without duplicating alone."
+    },
+    "docs/curriculum/mappings/english-to-spanish/lonely/README.md": {
+      "disposition": "reviewed",
+      "destinationIds": ["sentirse-solo-a-lonely"],
+      "note": "README navigation is represented by the migrated lonely concept."
     }
   }
 }

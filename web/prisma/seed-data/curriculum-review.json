@@ -91949,6 +91949,233 @@
           "ownerNote": ""
         }
       ]
+    },
+    {
+      "id": "terra-former-late-lonely-hubs-2026-08-23",
+      "title": "Terra sweep: former, late, and lonely",
+      "sourcePaths": [
+        "docs/curriculum/mappings/english-to-spanish/former",
+        "docs/curriculum/mappings/english-to-spanish/late",
+        "docs/curriculum/mappings/english-to-spanish/lonely"
+      ],
+      "createdAt": "2026-08-23",
+      "status": "migrated",
+      "migratedAt": "2026-08-23",
+      "candidates": [
+        {
+          "id": "antiguo-a-cargo-former-role",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "antiguo/a [cargo]",
+          "english": "former [role]",
+          "example": {
+            "spanish": "Me llamó mi antiguo jefe.",
+            "english": "My former boss called."
+          },
+          "collections": [
+            "antiguo",
+            "former",
+            "adjective",
+            "role",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/former/README.md"
+          ],
+          "rationale": "A previous role uses antiguo/a.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "ex-cargo-former-role",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "ex [cargo]",
+          "english": "former [role]",
+          "example": {
+            "spanish": "Habló el expresidente.",
+            "english": "The former president spoke."
+          },
+          "collections": [
+            "ex",
+            "former",
+            "prefix",
+            "role",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/former/README.md"
+          ],
+          "rationale": "Ex- is the concise Spanish prefix for a previous office or role.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "el-primero-the-former",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "el primero",
+          "english": "the former",
+          "example": {
+            "spanish": "Entre café y té, prefiero el primero.",
+            "english": "Of coffee and tea, I prefer the former."
+          },
+          "collections": [
+            "primero",
+            "former",
+            "noun",
+            "comparison",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/former/README.md"
+          ],
+          "rationale": "The first of two mentioned items is el primero, the former.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "tarde-late",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "tarde",
+          "english": "late",
+          "example": {
+            "spanish": "Llegué tarde.",
+            "english": "I arrived late."
+          },
+          "collections": [
+            "tarde",
+            "late",
+            "adverb",
+            "time",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/late/README.md"
+          ],
+          "rationale": "Late arrival uses tarde.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-hacerse-tarde-get-late--terra-source",
+          "action": "revise",
+          "existingConceptId": "hacerse-tarde-get-late",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "hacerse tarde",
+          "english": "to get late",
+          "example": {
+            "spanish": "Se está haciendo tarde.",
+            "english": "It is getting late."
+          },
+          "collections": [
+            "hacer",
+            "late",
+            "time",
+            "change of state",
+            "fixed expression",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/late/README.md"
+          ],
+          "rationale": "The time-becoming-late concept already exists; revise it with current-source provenance and collections.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "fallecido-a-late-person",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "fallecido/a",
+          "english": "late [person]",
+          "example": {
+            "spanish": "El profesor fallecido escribió este libro.",
+            "english": "The late professor wrote this book."
+          },
+          "collections": [
+            "fallecer",
+            "late",
+            "adjective",
+            "death",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/late/README.md"
+          ],
+          "rationale": "Late referring to a deceased person is fallecido/a.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "ultimo-a-latest",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "último/a",
+          "english": "latest",
+          "example": {
+            "spanish": "Su último libro es excelente.",
+            "english": "Her latest book is excellent."
+          },
+          "collections": [
+            "último",
+            "late",
+            "latest",
+            "adjective",
+            "time",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/late/README.md"
+          ],
+          "rationale": "The most recent item is último/a in Spanish.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "sentirse-solo-a-lonely",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "sentirse solo/a",
+          "english": "to feel lonely",
+          "example": {
+            "spanish": "No se siente solo porque visita a sus amigos todos los días.",
+            "english": "He does not feel lonely because he visits his friends every day."
+          },
+          "collections": [
+            "sentir",
+            "solo",
+            "lonely",
+            "adjective",
+            "reflexive",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/lonely/10-alone-versus-lonely.md",
+            "docs/curriculum/mappings/english-to-spanish/lonely/README.md"
+          ],
+          "rationale": "Loneliness is the emotional state sentirse solo/a, distinct from merely being alone.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        }
+      ]
     }
   ]
 }
