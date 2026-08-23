@@ -25,11 +25,10 @@ async function main() {
   ).length;
   const sourceDocumentCount = exported.sources.documents.length;
   const sourceEntryCount = exported.sources.entries.length;
-  const cognateCount = exported.cognates.items.length;
 
   if (!apply) {
     console.log(
-      `Dry run: would export ${conceptCount} concepts, ${batchCount} review batches, ${candidateCount} review candidates, ${sourceDocumentCount} source documents, ${sourceEntryCount} source entries, and ${cognateCount} cognates. Re-run with --apply to write snapshots.`,
+      `Dry run: would export ${conceptCount} concepts, ${batchCount} review batches, ${candidateCount} review candidates, ${sourceDocumentCount} source documents, and ${sourceEntryCount} source entries. Re-run with --apply to write snapshots.`,
     );
     return;
   }
@@ -38,7 +37,6 @@ async function main() {
     path.join(seedDataDirectory, "curriculum.json"),
     exported.curriculum,
   );
-  await writeJsonAtomically(path.join(seedDataDirectory, "cognates.json"), exported.cognates);
   await writeJsonAtomically(
     path.join(seedDataDirectory, "curriculum-review.json"),
     exported.review,
@@ -48,7 +46,7 @@ async function main() {
     exported.sources,
   );
   console.log(
-    `Exported ${conceptCount} concepts, ${batchCount} review batches, ${candidateCount} review candidates, ${sourceDocumentCount} source documents, ${sourceEntryCount} source entries, and ${cognateCount} cognates.`,
+    `Exported ${conceptCount} concepts, ${batchCount} review batches, ${candidateCount} review candidates, ${sourceDocumentCount} source documents, and ${sourceEntryCount} source entries.`,
   );
 }
 

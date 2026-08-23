@@ -8,7 +8,6 @@ import type {
   MappingSourceDocument,
   MappingSourceEntry,
 } from "@/lib/curriculum/mapping-source-types";
-import type { CognateCatalog, CognateItem } from "@/lib/curriculum/cognate-types";
 import {
   curriculumRoles,
   type ReviewBatch,
@@ -204,28 +203,4 @@ export function isMappingSourceArchive(
     new Set(entryIds).size === entryIds.length &&
     value.entries.every((entry) => knownPaths.has(entry.documentPath))
   );
-}
-
-function isCognateItem(value: unknown): value is CognateItem {
-  return (
-    isRecord(value) &&
-    typeof value.id === "string" && value.id.length > 0 &&
-    typeof value.spanish === "string" && value.spanish.length > 0 &&
-    typeof value.english === "string" && value.english.length > 0 &&
-    typeof value.partOfSpeech === "string" && value.partOfSpeech.length > 0 &&
-    typeof value.cognateType === "string" && value.cognateType.length > 0 &&
-    typeof value.cognateStatus === "string" && value.cognateStatus.length > 0 &&
-    typeof value.groupLabel === "string" && value.groupLabel.length > 0 &&
-    typeof value.pattern === "string" &&
-    typeof value.curriculumRole === "string" &&
-    curriculumRoles.includes(value.curriculumRole as CurriculumRole) &&
-    isStringList(value.tags) && isStringList(value.sourcePaths) &&
-    (value.existingConceptId === undefined || typeof value.existingConceptId === "string")
-  );
-}
-
-export function isCognateCatalog(value: unknown): value is CognateCatalog {
-  return isRecord(value) && value.version === 1 && Array.isArray(value.items) &&
-    value.items.every(isCognateItem) &&
-    new Set(value.items.map((item) => item.id)).size === value.items.length;
 }

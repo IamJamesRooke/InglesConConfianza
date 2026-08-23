@@ -15,7 +15,6 @@ async function main() {
   assert.deepStrictEqual(actual.curriculum, expected.curriculum);
   assert.deepStrictEqual(actual.review, expected.review);
   assert.deepStrictEqual(actual.sources, expected.sources);
-  assert.deepStrictEqual(actual.cognates, expected.cognates);
 
   const [collections, conceptLinks, candidateLinks] = await Promise.all([
     prisma.collection.count(),

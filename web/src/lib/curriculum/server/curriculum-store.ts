@@ -19,6 +19,22 @@ type ConceptRow = {
   collections: Array<{ collectionName: string }>;
 };
 
+export const curriculumPageSize = 50;
+
+export type CurriculumPageFilters = {
+  search: string;
+  collection: string;
+  maximumRole: CurriculumRole | "all";
+};
+
+export type CurriculumPageResult = CurriculumPageFilters & {
+  concepts: CurriculumConcept[];
+  availableCollections: string[];
+  page: number;
+  pageCount: number;
+  totalConcepts: number;
+};
+
 const conceptRelations = {
   collections: {
     orderBy: { position: "asc" },
@@ -80,6 +96,68 @@ export async function readCurriculumFile(): Promise<CurriculumFile> {
   return {
     version: 1,
     concepts: concepts.map(toCurriculumConcept),
+  };
+}
+
+export async function readCurriculumPage({
+  page: requestedPage,
+  search,
+  collection,
+  maximumRole,
+}: CurriculumPageFilters & { page: number }): Promise<CurriculumPageResult> {
+  const roles: CurriculumRole[] | undefined =
+    maximumRole === "all"
+      ? undefined
+      : maximumRole === "reference"
+        ? ["core", "supporting", "reference"]
+        : maximumRole === "supporting"
+          ? ["core", "supporting"]
+          : ["core"];
+  const where = {
+    ...(search
+      ? {
+          OR: [
+            { spanish: { contains: search, mode: "insensitive" as const } },
+            { english: { contains: search, mode: "insensitive" as const } },
+          ],
+        }
+      : {}),
+    ...(collection
+      ? { collections: { some: { collectionName: collection } } }
+      : {}),
+    ...(roles ? { curriculumRole: { in: roles } } : {}),
+  } satisfies Prisma.CurriculumConceptWhereInput;
+
+  const totalConcepts = await prisma.curriculumConcept.count({ where });
+  const pageCount = Math.max(
+    1,
+    Math.ceil(totalConcepts / curriculumPageSize),
+  );
+  const page = Math.min(Math.max(1, requestedPage), pageCount);
+  const [concepts, collections] = await Promise.all([
+    prisma.curriculumConcept.findMany({
+      where,
+      orderBy: [{ curriculumRole: "asc" }, { sortOrder: "asc" }],
+      skip: (page - 1) * curriculumPageSize,
+      take: curriculumPageSize,
+      include: conceptRelations,
+    }),
+    prisma.collection.findMany({
+      where: { conceptMemberships: { some: {} } },
+      orderBy: { name: "asc" },
+      select: { name: true },
+    }),
+  ]);
+
+  return {
+    concepts: concepts.map(toCurriculumConcept),
+    availableCollections: collections.map(({ name }) => name),
+    page,
+    pageCount,
+    totalConcepts,
+    search,
+    collection,
+    maximumRole,
   };
 }
 

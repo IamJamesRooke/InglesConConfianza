@@ -2,13 +2,21 @@
 
 This document records the working decisions that emerged while representative curriculum data was discovered in JSON and now continues in PostgreSQL. These are migration checkpoints, not a frozen schema.
 
+## 2026-08-23 — Unify cognates with canonical curriculum concepts
+
+- Promoted all 751 captured cognate catalog items into `curriculum_concepts`, splitting the two bundled English alternatives so 753 single-target mappings were considered. The import created 748 concepts and merged cognate collections into 5 existing mappings.
+- Cognate metadata now uses the same flat collections as every other concept: part of speech, direct/spelling-pattern/word-family/memory-bridge/confusion-set type, true or false-cognate status, visible spelling pattern, morphemes, and source family. Curriculum priority remains the existing `curriculumRole` field.
+- Clear adjective mappings were normalized with a natural support verb, including **ser terrible → to be terrible** and **ser horrible → to be horrible**. Ambiguous source classifications were retained with broad collections for later cleanup rather than omitted.
+- Removed the temporary `cognate_items` table, cognate-only snapshot, types, and commands. The 265 immutable source documents and 1,250 extracted rows remain in the generalized source archive as lossless provenance, not as a second teachable-content catalog.
+- The Curriculum page now queries PostgreSQL in pages of 50. Search, collection filtering, curriculum-role filtering, result counts, and pagination are server-side, with trigram and collection-membership indexes supporting the browsing workflow.
+
 ## 2026-08-23 — Capture and structure the cognates pillar
 
 - Captured all 265 cognate files verbatim in the generalized curriculum source archive: 240,286 bytes and 1,250 extracted table rows verified against the live tree before deletion.
-- Added 751 structured cognate items with part of speech, teaching tier, true versus false/contextual status, group/rule label, provisional curriculum role, tags, provenance, and exact canonical-concept links where available.
+- Initially staged 751 structured cognate items with part of speech, teaching tier, true versus false/contextual status, group/rule label, provisional curriculum role, tags, provenance, and exact canonical-concept links where available.
 - Conservatively assigned 181 selected high-frequency cognates to Supporting and 570 to Reference; no item was promoted to Core merely because it is transparent or common.
-- `npm run curriculum:cognates:query` supports search, group, part-of-speech, role, and false-cognate filters. Ambiguous noun/adjective rows remain explicitly `noun-or-adjective` for later database cleanup.
-- Exported the structured catalog to `web/prisma/seed-data/cognates.json` and retired `docs/curriculum/cognates` only after source and snapshot parity passed.
+- This staging catalog was used to prove complete capture before source retirement, then promoted into canonical concepts and removed. Cognates are now queried through ordinary bilingual search and collections.
+- Retired `docs/curriculum/cognates` only after source and snapshot parity passed; its immutable documents remain in `web/prisma/seed-data/curriculum-sources.json`.
 
 ## 2026-08-23 — Capture and retire the mappings source tree
 

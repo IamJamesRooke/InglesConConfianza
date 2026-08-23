@@ -1,8 +1,16 @@
 "use client";
 
-import { Pencil, Search, Trash2, X } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  Pencil,
+  Search,
+  Trash2,
+  X,
+} from "lucide-react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import type { CSSProperties } from "react";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 
 import type {
   CurriculumConcept,
@@ -34,10 +42,6 @@ const curriculumRoles: Array<{
     description: "Retained, but not a current teaching target",
   },
 ];
-const roleRank = new Map(
-  curriculumRoles.map((role, index) => [role.value, index]),
-);
-
 function getRoleLabel(role: CurriculumRole) {
   return curriculumRoles.find((option) => option.value === role)?.label;
 }
@@ -70,10 +74,6 @@ function renderConceptPattern(value: string) {
   );
 }
 
-function getSearchableMapping(value: string) {
-  return value.replace(/\[[^\]]+\]/gu, " ").toLocaleLowerCase();
-}
-
 function getEditableValue(concept: CurriculumConcept, field: EditableField) {
   if (field === "exampleSpanish") return concept.example.spanish;
   if (field === "exampleEnglish") return concept.example.english;
@@ -96,9 +96,26 @@ function updateEditableValue(
 
 export function CurriculumTable({
   initialConcepts,
+  availableCollections,
+  totalConcepts,
+  page,
+  pageCount,
+  filters,
 }: {
   initialConcepts: CurriculumConcept[];
+  availableCollections: string[];
+  totalConcepts: number;
+  page: number;
+  pageCount: number;
+  filters: {
+    search: string;
+    collection: string;
+    maximumRole: CurriculumRole | "all";
+  };
 }) {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const [concepts, setConcepts] = useState(initialConcepts);
   const [activeEditor, setActiveEditor] = useState<ActiveEditor | null>(null);
   const [activeCollectionEditor, setActiveCollectionEditor] = useState<{
@@ -107,36 +124,31 @@ export function CurriculumTable({
   } | null>(null);
   const [pendingConceptId, setPendingConceptId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [mappingSearch, setMappingSearch] = useState("");
-  const [selectedCollection, setSelectedCollection] = useState<string | null>(
-    null,
-  );
-  const [maximumRole, setMaximumRole] = useState<
-    CurriculumRole | "all"
-  >("all");
-  const normalizedMappingSearch = mappingSearch.trim().toLocaleLowerCase();
-  const availableCollections = useMemo(
-    () =>
-      [...new Set(concepts.flatMap((concept) => concept.collections))].sort(
-        (firstCollection, secondCollection) =>
-          firstCollection.localeCompare(secondCollection),
-      ),
-    [concepts],
-  );
-  const filteredConcepts = concepts.filter(
-    (concept) =>
-      (!normalizedMappingSearch ||
-        getSearchableMapping(concept.spanish).includes(normalizedMappingSearch) ||
-        getSearchableMapping(concept.english).includes(normalizedMappingSearch)) &&
-      (!selectedCollection ||
-        concept.collections.includes(selectedCollection)) &&
-      (maximumRole === "all" ||
-        roleRank.get(concept.curriculumRole)! <= roleRank.get(maximumRole)!),
-  ).sort(
-    (firstConcept, secondConcept) =>
-      roleRank.get(firstConcept.curriculumRole)! -
-      roleRank.get(secondConcept.curriculumRole)!,
-  );
+  const [mappingSearch, setMappingSearch] = useState(filters.search);
+  const selectedCollection = filters.collection || null;
+  const maximumRole = filters.maximumRole;
+  const firstVisibleConcept = totalConcepts === 0 ? 0 : (page - 1) * 50 + 1;
+  const lastVisibleConcept =
+    totalConcepts === 0
+      ? 0
+      : Math.min(firstVisibleConcept + concepts.length - 1, totalConcepts);
+
+  function navigate(
+    updates: Record<string, string | number | null>,
+    resetPage = true,
+  ) {
+    const parameters = new URLSearchParams(searchParams.toString());
+    for (const [name, value] of Object.entries(updates)) {
+      if (value === null || value === "" || value === "all") {
+        parameters.delete(name);
+      } else {
+        parameters.set(name, String(value));
+      }
+    }
+    if (resetPage) parameters.delete("page");
+    const query = parameters.toString();
+    router.push(query ? `${pathname}?${query}` : pathname);
+  }
 
   async function saveActiveEditor() {
     if (!activeEditor || pendingConceptId) {
@@ -270,6 +282,7 @@ export function CurriculumTable({
       setConcepts((currentConcepts) =>
         currentConcepts.filter((candidate) => candidate.id !== concept.id),
       );
+      router.refresh();
       setActiveEditor((currentEditor) =>
         currentEditor?.conceptId === concept.id ? null : currentEditor,
       );
@@ -355,7 +368,7 @@ export function CurriculumTable({
           <button
             key={collection}
             type="button"
-            onClick={() => setSelectedCollection(collection)}
+            onClick={() => navigate({ collection })}
             style={getCollectionStyle(collection)}
             className={`collection-pill rounded-full border px-2 py-1 text-xs font-semibold transition ${selectedCollection === collection ? "collection-pill-selected" : ""}`}
           >
@@ -441,7 +454,13 @@ export function CurriculumTable({
         </p>
       )}
 
-      <div className="mb-4 flex flex-wrap items-center gap-3">
+      <form
+        className="mb-4 flex flex-wrap items-center gap-3"
+        onSubmit={(event) => {
+          event.preventDefault();
+          navigate({ search: mappingSearch.trim() });
+        }}
+      >
         <label className="relative min-w-64 flex-1 sm:max-w-sm">
           <span className="sr-only">Search Spanish or English mappings</span>
           <Search
@@ -458,7 +477,10 @@ export function CurriculumTable({
           {mappingSearch && (
             <button
               type="button"
-              onClick={() => setMappingSearch("")}
+              onClick={() => {
+                setMappingSearch("");
+                navigate({ search: null });
+              }}
               aria-label="Clear mapping search"
               className="absolute right-2 top-1/2 inline-flex size-7 -translate-y-1/2 items-center justify-center rounded-md text-muted-foreground transition hover:bg-muted hover:text-foreground"
             >
@@ -470,13 +492,7 @@ export function CurriculumTable({
           Curriculum roles
           <select
             value={maximumRole}
-            onChange={(event) =>
-              setMaximumRole(
-                event.target.value === "all"
-                  ? "all"
-                  : (event.target.value as CurriculumRole),
-              )
-            }
+            onChange={(event) => navigate({ role: event.target.value })}
             className="rounded-lg border border-input bg-card px-3 py-2 text-sm font-medium text-foreground outline-none focus:border-ring focus:ring-3 focus:ring-ring/20"
           >
             <option value="all">Show all</option>
@@ -487,7 +503,7 @@ export function CurriculumTable({
             ))}
           </select>
         </label>
-      </div>
+      </form>
 
       <div className="mb-4">
         <label className="flex w-full max-w-sm items-center gap-2 text-sm font-medium text-muted-foreground">
@@ -495,7 +511,7 @@ export function CurriculumTable({
           <select
             value={selectedCollection ?? ""}
             onChange={(event) =>
-              setSelectedCollection(event.target.value || null)
+              navigate({ collection: event.target.value || null })
             }
             className="min-w-0 flex-1 rounded-lg border border-input bg-card px-3 py-2 text-sm font-medium text-foreground outline-none focus:border-ring focus:ring-3 focus:ring-ring/20"
           >
@@ -509,39 +525,36 @@ export function CurriculumTable({
         </label>
       </div>
 
-      {(normalizedMappingSearch ||
-        selectedCollection ||
-        maximumRole !== "all") && (
-        <p className="mb-3 text-sm text-muted-foreground">
-          Showing {filteredConcepts.length} of {concepts.length} concepts
-          {normalizedMappingSearch && (
-            <>
-              {" "}whose Spanish or English mapping contains{" "}
-              <span className="font-semibold text-foreground">
-                {mappingSearch.trim()}
-              </span>
-            </>
-          )}
-          {selectedCollection && (
-            <>
-              {normalizedMappingSearch ? " and" : " in"} collection{" "}
-              <span className="font-semibold text-foreground">
-                {selectedCollection}
-              </span>
-            </>
-          )}
-          {maximumRole !== "all" && (
-            <>
-              {normalizedMappingSearch || selectedCollection ? " and" : " with"}{" "}
-              curriculum role through{" "}
-              <span className="font-semibold text-foreground">
-                {getRoleLabel(maximumRole)}
-              </span>
-            </>
-          )}
-          .
-        </p>
-      )}
+      <p className="mb-3 text-sm text-muted-foreground">
+        Showing {firstVisibleConcept}-{lastVisibleConcept} of {totalConcepts}{" "}
+        concepts
+        {filters.search && (
+          <>
+            {" "}whose Spanish or English mapping contains{" "}
+            <span className="font-semibold text-foreground">
+              {filters.search}
+            </span>
+          </>
+        )}
+        {selectedCollection && (
+          <>
+            {filters.search ? " and" : " in"} collection{" "}
+            <span className="font-semibold text-foreground">
+              {selectedCollection}
+            </span>
+          </>
+        )}
+        {maximumRole !== "all" && (
+          <>
+            {filters.search || selectedCollection ? " and" : " with"}{" "}
+            curriculum role through{" "}
+            <span className="font-semibold text-foreground">
+              {getRoleLabel(maximumRole)}
+            </span>
+          </>
+        )}
+        .
+      </p>
 
       <div className="overflow-hidden rounded-xl border border-border bg-card shadow-sm">
         <table className="w-full border-collapse text-left">
@@ -560,7 +573,7 @@ export function CurriculumTable({
             </tr>
           </thead>
           <tbody>
-            {filteredConcepts.map((concept) => (
+            {concepts.map((concept) => (
               <tr key={concept.id} className="border-t border-border">
                 <td className="p-2 pl-2 font-medium">
                   {renderEditableCell(concept, "spanish")}
@@ -614,9 +627,47 @@ export function CurriculumTable({
                 </td>
               </tr>
             ))}
+            {concepts.length === 0 && (
+              <tr className="border-t border-border">
+                <td
+                  colSpan={6}
+                  className="px-5 py-12 text-center text-sm text-muted-foreground"
+                >
+                  No concepts match these filters.
+                </td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>
+      <nav
+        aria-label="Curriculum pages"
+        className="mt-4 flex items-center justify-between gap-4"
+      >
+        <button
+          type="button"
+          disabled={page <= 1}
+          onClick={() => navigate({ page: page - 1 }, false)}
+          title="Previous page"
+          className="inline-flex size-9 items-center justify-center rounded-md border border-input bg-card text-foreground transition hover:bg-muted disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          <ChevronLeft className="size-4" aria-hidden="true" />
+          <span className="sr-only">Previous page</span>
+        </button>
+        <span className="text-sm font-medium text-muted-foreground">
+          Page <span className="text-foreground">{page}</span> of {pageCount}
+        </span>
+        <button
+          type="button"
+          disabled={page >= pageCount}
+          onClick={() => navigate({ page: page + 1 }, false)}
+          title="Next page"
+          className="inline-flex size-9 items-center justify-center rounded-md border border-input bg-card text-foreground transition hover:bg-muted disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          <ChevronRight className="size-4" aria-hidden="true" />
+          <span className="sr-only">Next page</span>
+        </button>
+      </nav>
     </div>
   );
 }

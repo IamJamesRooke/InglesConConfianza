@@ -16,10 +16,8 @@ import type {
   MappingSourceDocument,
   MappingSourceEntry,
 } from "../src/lib/curriculum/mapping-source-types";
-import type { CognateCatalog, CognateItem } from "../src/lib/curriculum/cognate-types";
 import {
   isCurriculumFile,
-  isCognateCatalog,
   isMappingSourceArchive,
   isReviewBatch,
   isReviewFile,
@@ -36,11 +34,10 @@ async function readJson(filePath: string): Promise<unknown> {
 }
 
 export async function loadSeedData() {
-  const [curriculumValue, reviewValue, sourceValue, cognateValue] = await Promise.all([
+  const [curriculumValue, reviewValue, sourceValue] = await Promise.all([
     readJson(path.join(seedDataDirectory, "curriculum.json")),
     readJson(path.join(seedDataDirectory, "curriculum-review.json")),
     readJson(path.join(seedDataDirectory, "curriculum-sources.json")),
-    readJson(path.join(seedDataDirectory, "cognates.json")),
   ]);
 
   if (!isCurriculumFile(curriculumValue)) {
@@ -52,13 +49,10 @@ export async function loadSeedData() {
   if (!isMappingSourceArchive(sourceValue)) {
     throw new Error("The mapping-source seed snapshot has an invalid shape.");
   }
-  if (!isCognateCatalog(cognateValue)) throw new Error("The cognate seed snapshot has an invalid shape.");
-
   return {
     curriculum: curriculumValue,
     review: reviewValue,
     sources: sourceValue,
-    cognates: cognateValue,
   };
 }
 
@@ -87,7 +81,6 @@ export async function seedCurriculumDatabase(
   curriculum: CurriculumFile,
   review: ReviewFile,
   sources: MappingSourceArchive,
-  cognates: CognateCatalog,
 ) {
   await client.$transaction(
     async (transaction) => {
@@ -98,7 +91,6 @@ export async function seedCurriculumDatabase(
         collectionCount,
         sourceDocumentCount,
         sourceEntryCount,
-        cognateCount,
       ] =
         await Promise.all([
           transaction.curriculumConcept.count(),
@@ -107,7 +99,6 @@ export async function seedCurriculumDatabase(
           transaction.collection.count(),
           transaction.mappingSourceDocument.count(),
           transaction.mappingSourceEntry.count(),
-          transaction.cognateItem.count(),
         ]);
 
       if (
@@ -117,7 +108,6 @@ export async function seedCurriculumDatabase(
         collectionCount ||
         sourceDocumentCount ||
         sourceEntryCount
-        || cognateCount
       ) {
         throw new Error(
           "Curriculum tables are not empty. Seeding refuses to overwrite existing data.",
@@ -237,7 +227,6 @@ export async function seedCurriculumDatabase(
           })),
         });
       }
-      await transaction.cognateItem.createMany({ data: cognates.items.map((item, sortOrder) => ({ ...item, existingConceptId: item.existingConceptId ?? null, sortOrder })) });
     },
     { timeout: 120_000 },
   );
@@ -251,7 +240,6 @@ type BatchRow = Prisma.ReviewBatchGetPayload<{
 }>;
 type SourceDocumentRow = Prisma.MappingSourceDocumentGetPayload<object>;
 type SourceEntryRow = Prisma.MappingSourceEntryGetPayload<object>;
-type CognateRow = Prisma.CognateItemGetPayload<object>;
 
 function conceptFromRow(row: ConceptRow): CurriculumConcept {
   return {
@@ -338,12 +326,8 @@ function sourceEntryFromRow(row: SourceEntryRow): MappingSourceEntry {
     tags: row.tags,
   };
 }
-function cognateFromRow(row: CognateRow): CognateItem {
-  return { id: row.id, spanish: row.spanish, english: row.english, partOfSpeech: row.partOfSpeech, cognateType: row.cognateType, cognateStatus: row.cognateStatus, groupLabel: row.groupLabel, pattern: row.pattern, curriculumRole: row.curriculumRole, tags: row.tags, sourcePaths: row.sourcePaths, ...(row.existingConceptId ? { existingConceptId: row.existingConceptId } : {}) };
-}
-
 export async function exportCurriculumDatabase(client: PrismaClient) {
-  const [conceptRows, batchRows, sourceDocumentRows, sourceEntryRows, cognateRows] =
+  const [conceptRows, batchRows, sourceDocumentRows, sourceEntryRows] =
     await Promise.all([
       client.curriculumConcept.findMany({
         orderBy: { sortOrder: "asc" },
@@ -365,7 +349,6 @@ export async function exportCurriculumDatabase(client: PrismaClient) {
           { position: "asc" },
         ],
       }),
-      client.cognateItem.findMany({ orderBy: { sortOrder: "asc" } }),
     ]);
 
   return {
@@ -383,6 +366,5 @@ export async function exportCurriculumDatabase(client: PrismaClient) {
       documents: sourceDocumentRows.map(sourceDocumentFromRow),
       entries: sourceEntryRows.map(sourceEntryFromRow),
     } satisfies MappingSourceArchive,
-    cognates: { version: 1, items: cognateRows.map(cognateFromRow) } satisfies CognateCatalog,
   };
 }

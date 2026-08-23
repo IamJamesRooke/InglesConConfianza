@@ -23,7 +23,7 @@ Each lesson has one canonical home. Indexes may cross-link a lesson when it supp
 
 ## Current maturity
 
-Mappings are fully captured in PostgreSQL as 2,225 immutable source documents, 4,322 extracted table rows, and the canonical concepts migrated so far. The other pillars remain primarily human-facing references and should gain metadata only when real lesson authoring or import work requires it. Vocabulary is intentionally flat and table-first.
+Mappings are fully captured in PostgreSQL as 2,225 immutable source documents and 4,322 extracted table rows. Cognates are captured as 265 immutable documents and 1,250 extracted rows, with all 751 staged catalog items promoted into the same canonical concept table used by mappings. The remaining pillars are primarily human-facing references and should gain metadata only when real lesson authoring or import work requires it. Vocabulary is intentionally flat and table-first.
 
 The active step is database-driven normalization and curation of the captured mappings archive. The [active backlog](../backlog.md) defines the current order and completion gates; lesson-contract discovery is paused until the owner changes priority.
 

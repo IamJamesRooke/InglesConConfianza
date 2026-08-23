@@ -4,8 +4,8 @@ These Markdown files are human-readable curriculum specifications and the curren
 
 ## Canonical pillars
 
-- Use [`mappings/`](mappings/README.md) for frequent one-to-many translation choices. Its additional object and phase rules live in [`mappings/AGENTS.md`](mappings/AGENTS.md).
-- Use [`cognates/`](cognates/README.md) for Spanish-English similarity, memory bridges, and false-cognate confusion sets.
+- Use PostgreSQL canonical concepts and the immutable source archive for frequent one-to-many translation choices formerly under `mappings/`.
+- Use canonical concepts tagged with the `cognate` collection for Spanish-English similarity, memory bridges, and false-cognate confusion sets formerly under `cognates/`.
 - Use [`past-and-past-participle/`](past-and-past-participle/README.md) for the canonical sound-based inventory of English past and participle forms.
 - Use [`transformations/`](transformations/README.md) for productive or memorable English prefix and suffix relationships.
 - Use [`structure/`](structure/README.md) for reusable sentence-building rules.

@@ -1,7 +1,7 @@
 # Backlog
 
 > Last updated: 2026-08-23. This file contains current decisions and executable work only. Completed migration detail is preserved in the [curriculum migration log](history/curriculum-migration-log.md).
-> Quick handoff: PostgreSQL is the canonical curriculum store; Lesson Builder remains JSON-backed. The former `docs/curriculum/mappings` tree is preserved losslessly in PostgreSQL and its immutable seed snapshot, so mapping normalization and curation now work from the database.
+> Quick handoff: PostgreSQL is the canonical curriculum store; Lesson Builder remains JSON-backed. The former mappings and cognates trees are preserved losslessly in PostgreSQL and its immutable seed snapshot, so normalization and curation now work from the database.
 
 ## Current objective
 
@@ -53,7 +53,9 @@ Migrate every useful curriculum concept from `docs/curriculum` into PostgreSQL w
     - [x] Inventory every English-to-Spanish hub and require file-level disposition before source consumption.
     - [x] Add database-backed review-batch preflight for exact duplicates, normalized probable duplicates, revision targets, source paths, and suspicious sentence-shaped concepts.
 - [x] Capture and retire the entire `docs/curriculum/mappings` tree: preserve all 2,225 files and 1,524,163 source bytes verbatim in PostgreSQL with SHA-256 hashes, extract 4,322 queryable Markdown table rows, export immutable seed parity, and delete the verified source folder.
-- [x] Capture and retire the entire `docs/curriculum/cognates` tree: preserve all 265 files and 240,286 source bytes verbatim, extract 1,250 source rows, create 751 POS/group/status/tag/priority-aware cognate records, verify immutable parity, and delete the source folder.
+- [x] Capture and retire the entire `docs/curriculum/cognates` tree: preserve all 265 files and 240,286 source bytes verbatim, extract 1,250 source rows, normalize 751 catalog items into canonical curriculum concepts with POS, pattern, status, group, and role collections, verify immutable parity, and delete the source folder.
+- [x] Unify cognates with the canonical `curriculum_concepts` table, remove the temporary cognate table and snapshot, split multi-target mappings, and retain raw cognate documents only in the lossless source archive.
+- [x] Paginate the Curriculum database page with server-side search, collection and role filters, indexed queries, and 50 concepts per page.
 - [ ] Normalize the PostgreSQL mappings archive into canonical Spanish-first concepts in broad database-driven passes.
     - [ ] Compare extracted rows with existing concepts and review candidates; link or revise exact matches and flag probable duplicates.
     - [ ] Default uncertain but useful mappings to `reference`; reserve `supporting` and especially `core` for later deliberate promotion.
