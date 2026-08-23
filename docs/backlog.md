@@ -1,6 +1,6 @@
 # Backlog
 
-> Last updated: 2026-08-23. Curriculum migration is complete. PostgreSQL is the canonical curriculum store; Lesson Builder remains JSON-backed.
+> Last updated: 2026-08-23. Curriculum migration is complete. PostgreSQL is the canonical curriculum store; Lesson Builder remains JSON-backed. The completed build narrative lives in the [project timeline](history/project-timeline.md).
 
 ## Current objective
 

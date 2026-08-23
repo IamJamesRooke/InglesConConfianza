@@ -12,6 +12,7 @@ Migration is complete. Do not recreate the retired Markdown source trees, build 
 ## Start here
 
 - `docs/backlog.md` records the active sequence and completion gates.
+- `docs/history/project-timeline.md` records how the product, curriculum model, and technical architecture evolved.
 - `docs/curriculum-database.md` defines the canonical curriculum record and curation rules.
 - `docs/teaching-methodology.md` defines lesson design and the intended learner experience.
 - `web/prisma/schema.prisma` models the PostgreSQL curriculum database.
