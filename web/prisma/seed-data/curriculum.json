@@ -7806,14 +7806,18 @@
       "spanish": "llegar a [un lugar]",
       "english": "to reach [a place]",
       "example": {
-        "spanish": "Llegamos a la cima.",
-        "english": "We reached the summit."
+        "spanish": "Llegamos a Bogotá al mediodía.",
+        "english": "We reached Bogotá at noon."
       },
       "collections": [
         "llegar",
-        "a => direct object"
+        "reach",
+        "location",
+        "verb + preposition",
+        "a => to",
+        "english-to-spanish mappings"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "llegar-a-hacer-algo-manage",
@@ -7884,9 +7888,12 @@
       },
       "collections": [
         "llegar",
-        "fixed expression"
+        "reach",
+        "agreement",
+        "fixed expression",
+        "english-to-spanish mappings"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "llegar-a-tiempo-arrive-on-time",
@@ -20089,9 +20096,11 @@
       },
       "collections": [
         "devolver",
-        "return"
+        "return",
+        "verb + direct object",
+        "english-to-spanish mappings"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "devolver-refund",
@@ -31821,6 +31830,165 @@
         "formal",
         "law",
         "connector",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "comunicarse-con-alguien-reach-somebody",
+      "spanish": "comunicarse con [alguien]",
+      "english": "to reach [somebody]",
+      "example": {
+        "spanish": "Puedes comunicarte conmigo por teléfono.",
+        "english": "You can reach me by phone."
+      },
+      "collections": [
+        "comunicar",
+        "reach",
+        "contact",
+        "with",
+        "verb + preposition",
+        "reflexive",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "permanecer-sentado-remain-seated",
+      "spanish": "permanecer sentado/a",
+      "english": "to remain seated",
+      "example": {
+        "spanish": "Por favor, permanezca sentado.",
+        "english": "Please remain seated."
+      },
+      "collections": [
+        "permanecer",
+        "remain",
+        "seated",
+        "formal",
+        "adjective",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "seguir-adjetivo-remain-adjective",
+      "spanish": "seguir [adjetivo]",
+      "english": "to remain [adjective]",
+      "example": {
+        "spanish": "Siguió tranquila.",
+        "english": "She remained calm."
+      },
+      "collections": [
+        "seguir",
+        "remain",
+        "adjective",
+        "continuation",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "seguir-sin-algo-remain-unanswered",
+      "spanish": "seguir sin [algo]",
+      "english": "to remain [adjective]",
+      "example": {
+        "spanish": "La pregunta sigue sin respuesta.",
+        "english": "The question remains unanswered."
+      },
+      "collections": [
+        "seguir",
+        "remain",
+        "negative",
+        "adjective",
+        "continuation",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "requerir-algo-require-something",
+      "spanish": "requerir [algo]",
+      "english": "to require [something]",
+      "example": {
+        "spanish": "El trabajo requiere experiencia.",
+        "english": "The job requires experience."
+      },
+      "collections": [
+        "requerir",
+        "require",
+        "formal",
+        "verb + direct object",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "necesitar-algo-require-something",
+      "spanish": "necesitar [algo]",
+      "english": "to require [something]",
+      "example": {
+        "spanish": "Esta planta necesita mucha agua.",
+        "english": "This plant requires a lot of water."
+      },
+      "collections": [
+        "necesitar",
+        "require",
+        "need",
+        "verb + direct object",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "exigir-que-alguien-haga-algo-require-somebody-to-do",
+      "spanish": "exigir que [alguien] [haga algo]",
+      "english": "to require [somebody] to [do something]",
+      "example": {
+        "spanish": "La ley exige que nos registremos.",
+        "english": "The law requires us to register."
+      },
+      "collections": [
+        "exigir",
+        "require",
+        "law",
+        "formal",
+        "somebody to do something",
+        "verb + full infinitive",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "reembolsar-alguien-algo-return-somebody-money",
+      "spanish": "reembolsarle [algo] a [alguien]",
+      "english": "to return [somebody's] money",
+      "example": {
+        "spanish": "La tienda me reembolsó el dinero.",
+        "english": "The store returned my money."
+      },
+      "collections": [
+        "reembolsar",
+        "return",
+        "money",
+        "verb + indirect object",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "devolverle-llamada-a-alguien-return-call",
+      "spanish": "devolverle la llamada a [alguien]",
+      "english": "to return [somebody's] call",
+      "example": {
+        "spanish": "Laura me devolvió la llamada.",
+        "english": "Laura returned my call."
+      },
+      "collections": [
+        "devolver",
+        "return",
+        "call",
+        "fixed expression",
         "english-to-spanish mappings"
       ],
       "curriculumRole": "reference"

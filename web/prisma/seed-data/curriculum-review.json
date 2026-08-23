@@ -93280,6 +93280,342 @@
           "ownerNote": ""
         }
       ]
+    },
+    {
+      "id": "terra-reach-remain-require-return-hubs-2026-08-23",
+      "title": "Terra sweep: reach, remain, require, and return",
+      "sourcePaths": [
+        "docs/curriculum/mappings/english-to-spanish/reach",
+        "docs/curriculum/mappings/english-to-spanish/remain",
+        "docs/curriculum/mappings/english-to-spanish/require",
+        "docs/curriculum/mappings/english-to-spanish/return"
+      ],
+      "createdAt": "2026-08-23",
+      "status": "migrated",
+      "migratedAt": "2026-08-23",
+      "candidates": [
+        {
+          "id": "revise-llegar-a-un-lugar-reach--terra-source",
+          "action": "revise",
+          "existingConceptId": "llegar-a-un-lugar-reach",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "llegar a [un lugar]",
+          "english": "to reach [a place]",
+          "example": {
+            "spanish": "Llegamos a Bogotá al mediodía.",
+            "english": "We reached Bogotá at noon."
+          },
+          "collections": [
+            "llegar",
+            "reach",
+            "location",
+            "verb + preposition",
+            "a => to",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/reach/README.md"
+          ],
+          "rationale": "The destination-reach concept already exists; revise it with source evidence and collections.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-llegar-a-un-acuerdo-reach--terra-source",
+          "action": "revise",
+          "existingConceptId": "llegar-a-un-acuerdo-reach",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "llegar a un acuerdo",
+          "english": "to reach an agreement",
+          "example": {
+            "spanish": "Llegamos a un acuerdo.",
+            "english": "We reached an agreement."
+          },
+          "collections": [
+            "llegar",
+            "reach",
+            "agreement",
+            "fixed expression",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/reach/README.md"
+          ],
+          "rationale": "The agreement-reach concept already exists; revise it with source evidence and collections.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "comunicarse-con-alguien-reach-somebody",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "comunicarse con [alguien]",
+          "english": "to reach [somebody]",
+          "example": {
+            "spanish": "Puedes comunicarte conmigo por teléfono.",
+            "english": "You can reach me by phone."
+          },
+          "collections": [
+            "comunicar",
+            "reach",
+            "contact",
+            "with",
+            "verb + preposition",
+            "reflexive",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/reach/README.md"
+          ],
+          "rationale": "Contacting a person is comunicarse con rather than destination arrival.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "permanecer-sentado-remain-seated",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "permanecer sentado/a",
+          "english": "to remain seated",
+          "example": {
+            "spanish": "Por favor, permanezca sentado.",
+            "english": "Please remain seated."
+          },
+          "collections": [
+            "permanecer",
+            "remain",
+            "seated",
+            "formal",
+            "adjective",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/remain/README.md"
+          ],
+          "rationale": "Formal instruction to continue in a position uses permanecer.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "seguir-adjetivo-remain-adjective",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "seguir [adjetivo]",
+          "english": "to remain [adjective]",
+          "example": {
+            "spanish": "Siguió tranquila.",
+            "english": "She remained calm."
+          },
+          "collections": [
+            "seguir",
+            "remain",
+            "adjective",
+            "continuation",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/remain/README.md"
+          ],
+          "rationale": "A continuing state is seguir plus an adjective.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "seguir-sin-algo-remain-unanswered",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "seguir sin [algo]",
+          "english": "to remain [adjective]",
+          "example": {
+            "spanish": "La pregunta sigue sin respuesta.",
+            "english": "The question remains unanswered."
+          },
+          "collections": [
+            "seguir",
+            "remain",
+            "negative",
+            "adjective",
+            "continuation",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/remain/README.md"
+          ],
+          "rationale": "Remaining without a result uses seguir sin.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "requerir-algo-require-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "requerir [algo]",
+          "english": "to require [something]",
+          "example": {
+            "spanish": "El trabajo requiere experiencia.",
+            "english": "The job requires experience."
+          },
+          "collections": [
+            "requerir",
+            "require",
+            "formal",
+            "verb + direct object",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/require/README.md"
+          ],
+          "rationale": "Formal requirements use requerir.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "necesitar-algo-require-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "necesitar [algo]",
+          "english": "to require [something]",
+          "example": {
+            "spanish": "Esta planta necesita mucha agua.",
+            "english": "This plant requires a lot of water."
+          },
+          "collections": [
+            "necesitar",
+            "require",
+            "need",
+            "verb + direct object",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/require/README.md"
+          ],
+          "rationale": "Practical requirements can be natural necesitar uses.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "exigir-que-alguien-haga-algo-require-somebody-to-do",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "exigir que [alguien] [haga algo]",
+          "english": "to require [somebody] to [do something]",
+          "example": {
+            "spanish": "La ley exige que nos registremos.",
+            "english": "The law requires us to register."
+          },
+          "collections": [
+            "exigir",
+            "require",
+            "law",
+            "formal",
+            "somebody to do something",
+            "verb + full infinitive",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/require/README.md"
+          ],
+          "rationale": "Imposed legal requirements use exigir que plus a person and action.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-devolver-return--terra-source",
+          "action": "revise",
+          "existingConceptId": "devolver-return",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "devolver [algo]",
+          "english": "to return [something]",
+          "example": {
+            "spanish": "Devuelve el libro mañana.",
+            "english": "Return the book tomorrow."
+          },
+          "collections": [
+            "devolver",
+            "return",
+            "verb + direct object",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/return/README.md"
+          ],
+          "rationale": "The direct object-return concept already exists; revise it with source evidence and collections.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "reembolsar-alguien-algo-return-somebody-money",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "reembolsarle [algo] a [alguien]",
+          "english": "to return [somebody's] money",
+          "example": {
+            "spanish": "La tienda me reembolsó el dinero.",
+            "english": "The store returned my money."
+          },
+          "collections": [
+            "reembolsar",
+            "return",
+            "money",
+            "verb + indirect object",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/return/README.md"
+          ],
+          "rationale": "Refunding money is reembolsar.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "devolverle-llamada-a-alguien-return-call",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "devolverle la llamada a [alguien]",
+          "english": "to return [somebody's] call",
+          "example": {
+            "spanish": "Laura me devolvió la llamada.",
+            "english": "Laura returned my call."
+          },
+          "collections": [
+            "devolver",
+            "return",
+            "call",
+            "fixed expression",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/return/README.md"
+          ],
+          "rationale": "Returning a phone call uses devolver la llamada.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        }
+      ]
     }
   ]
 }

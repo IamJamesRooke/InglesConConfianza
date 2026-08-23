@@ -4245,6 +4245,26 @@
       "disposition": "migrated",
       "destinationIds": ["ofrecer-capacitacion-provide-training", "dar-algo-a-alguien-provide-somebody-with-something", "establecer-que-provide-that"],
       "note": "Service, material supply, and formal-law provide meanings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/reach/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["llegar-a-un-lugar-reach", "llegar-a-un-acuerdo-reach", "comunicarse-con-alguien-reach-somebody"],
+      "note": "Destination, agreement, and contact reach meanings migrated or revised."
+    },
+    "docs/curriculum/mappings/english-to-spanish/remain/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["permanecer-sentado-remain-seated", "seguir-adjetivo-remain-adjective", "seguir-sin-algo-remain-unanswered"],
+      "note": "Formal position and ongoing-state remain meanings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/require/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["requerir-algo-require-something", "necesitar-algo-require-something", "exigir-que-alguien-haga-algo-require-somebody-to-do"],
+      "note": "Formal, practical, and imposed requirement meanings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/return/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["devolver-return", "reembolsar-alguien-algo-return-somebody-money", "devolverle-llamada-a-alguien-return-call"],
+      "note": "Object, money, and call return meanings migrated or revised."
     }
   }
 }
