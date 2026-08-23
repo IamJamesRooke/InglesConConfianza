@@ -48,10 +48,10 @@ Migrate every useful curriculum concept from `docs/curriculum` into PostgreSQL w
 - [x] Finish the Spanish-to-English mapping-source consumption sweep by migrating remaining source-table material into PostgreSQL review/curriculum history, exporting updated immutable seed snapshots, verifying parity, and deleting the consumed `docs/curriculum/mappings/spanish-to-english` source tree.
 - [x] Repair the attempted English-to-Spanish reverse import by removing malformed sentence-shaped additions, retaining only safe exact-match collection revisions, and restoring the `docs/curriculum/mappings/english-to-spanish` source tree for proper future canonicalization.
 - [x] Add a project-local Pi todo extension so long migration sessions can show visible progress and keep agent work organized.
-- [ ] Establish the mappings-migration operating contract and safeguards.
-    - [ ] Record canonical concept, placeholder, role, and collection/tag rules, including the deliberate surface-form exception for English `be`.
-    - [ ] Inventory every English-to-Spanish hub and require file-level disposition before source consumption.
-    - [ ] Add database-backed review-batch preflight for exact duplicates, normalized probable duplicates, revision targets, source paths, and suspicious sentence-shaped concepts.
+- [x] Establish the mappings-migration operating contract and safeguards.
+    - [x] Record canonical concept, placeholder, role, and collection/tag rules, including the deliberate surface-form exception for English `be`.
+    - [x] Inventory every English-to-Spanish hub and require file-level disposition before source consumption.
+    - [x] Add database-backed review-batch preflight for exact duplicates, normalized probable duplicates, revision targets, source paths, and suspicious sentence-shaped concepts.
 - [ ] Migrate `docs/curriculum/mappings/english-to-spanish` hub by hub.
     - [ ] Rewrite source evidence as neutral Spanish-first concepts with exactly one English target and one minimal bilingual example.
     - [ ] Compare every batch with PostgreSQL and other candidates before review import.

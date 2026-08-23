@@ -21,15 +21,39 @@ async function main() {
     prisma.reviewCandidateCollection.count(),
   ]);
 
-  assert.equal(expected.curriculum.concepts.length, 1_872);
-  assert.equal(expected.review.batches.length, 16);
+  const expectedCollectionNames = new Set([
+    ...expected.curriculum.concepts.flatMap((concept) => concept.collections),
+    ...expected.review.batches.flatMap((batch) =>
+      batch.candidates.flatMap((candidate) => candidate.collections),
+    ),
+  ]);
   assert.equal(
-    expected.review.batches.flatMap((batch) => batch.candidates).length,
-    3_738,
+    collections,
+    expectedCollectionNames.size,
+    "Collection count differs from the snapshots.",
   );
-  assert.equal(collections, 1_042);
-  assert.equal(conceptLinks, 6_278);
-  assert.equal(candidateLinks, 8_471);
+  assert.equal(
+    conceptLinks,
+    expected.curriculum.concepts.reduce(
+      (total, concept) => total + concept.collections.length,
+      0,
+    ),
+    "Concept-collection link count differs from the snapshot.",
+  );
+  assert.equal(
+    candidateLinks,
+    expected.review.batches.reduce(
+      (batchTotal, batch) =>
+        batchTotal +
+        batch.candidates.reduce(
+          (candidateTotal, candidate) =>
+            candidateTotal + candidate.collections.length,
+          0,
+        ),
+      0,
+    ),
+    "Candidate-collection link count differs from the snapshot.",
+  );
 
   console.log(
     "Curriculum database exactly matches the immutable seed snapshots.",

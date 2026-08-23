@@ -88,7 +88,7 @@ Promotion and demotion are not migration blockers. When uncertain, preserve the 
 6. Import the batch with a dry run and then apply it to the Review inbox.
 7. Approve completeness-pass candidates with provisional roles. Preserve deletions and rationale in review history.
 8. Migrate with a dry run and then apply it transactionally.
-9. Export/update immutable seed snapshots, run `db:verify` and `db:test`, and confirm the batch has no unresolved candidates.
+9. Run `curriculum:snapshots:export` without `--apply`, export the immutable snapshots with `--apply`, run `db:verify` and `db:test`, and confirm the batch has no unresolved candidates.
 10. Mark every hub file disposed, delete only fully consumed source files, update the backlog, and commit the coherent batch.
 
 ## Completion proof

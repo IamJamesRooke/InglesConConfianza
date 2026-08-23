@@ -1,7 +1,12 @@
 import "dotenv/config";
 
 import type { Prisma } from "../src/generated/prisma/client";
+import type { ReviewBatch } from "../src/lib/curriculum/review-types";
 import { loadReviewBatch, databaseDate } from "./curriculum-data";
+import {
+  preflightReviewBatch,
+  printPreflightIssues,
+} from "./review-batch-preflight";
 import { prisma } from "../src/lib/database/prisma";
 
 class DryRunRollback extends Error {}
@@ -13,9 +18,8 @@ function optionValue(name: string) {
 
 async function insertBatch(
   transaction: Prisma.TransactionClient,
-  filePath: string,
+  batch: ReviewBatch,
 ) {
-  const batch = await loadReviewBatch(filePath);
   if (batch.status !== "open" || batch.migratedAt) {
     throw new Error("A new review batch must have open status and no migration date.");
   }
@@ -130,10 +134,20 @@ async function main() {
     );
   }
 
+  const batch = await loadReviewBatch(filePath);
+  const issues = await preflightReviewBatch(prisma, batch);
+  printPreflightIssues(issues);
+  const errors = issues.filter((issue) => issue.severity === "error");
+  if (errors.length > 0) {
+    throw new Error(
+      `Review batch preflight failed with ${errors.length} error(s).`,
+    );
+  }
+
   try {
     const summary = await prisma.$transaction(
       async (transaction) => {
-        const result = await insertBatch(transaction, filePath);
+        const result = await insertBatch(transaction, batch);
         if (!apply) throw new DryRunRollback(JSON.stringify(result));
         return result;
       },
