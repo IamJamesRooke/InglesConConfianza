@@ -3829,6 +3829,23 @@
         "la-vacante-job-opening"
       ],
       "note": "README synthesis repeats the migrated job-opening concept."
+    },
+    "docs/curriculum/mappings/english-to-spanish/here/01-here.md": {
+      "disposition": "migrated",
+      "destinationIds": [
+        "aqui-here",
+        "aca-here",
+        "estar-aqui-be-here"
+      ],
+      "note": "Both direct location forms were added; the existing estar aquí construction received migration provenance."
+    },
+    "docs/curriculum/mappings/english-to-spanish/here/README.md": {
+      "disposition": "reviewed",
+      "destinationIds": [
+        "aqui-here",
+        "aca-here"
+      ],
+      "note": "README navigation repeats the two migrated direct location mappings."
     }
   }
 }

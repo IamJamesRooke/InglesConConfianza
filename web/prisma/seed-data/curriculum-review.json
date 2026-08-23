@@ -88089,6 +88089,96 @@
           "ownerNote": ""
         }
       ]
+    },
+    {
+      "id": "english-here-hub-2026-08-23",
+      "title": "English here hub completeness migration",
+      "sourcePaths": [
+        "docs/curriculum/mappings/english-to-spanish/here"
+      ],
+      "createdAt": "2026-08-23",
+      "status": "migrated",
+      "migratedAt": "2026-08-23",
+      "candidates": [
+        {
+          "id": "aqui-here",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "aquí",
+          "english": "here",
+          "example": {
+            "spanish": "Estoy aquí.",
+            "english": "I am here."
+          },
+          "collections": [
+            "aquí",
+            "here",
+            "adverb",
+            "location",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/here/01-here.md"
+          ],
+          "rationale": "Aquí is a direct reusable location mapping and is not present as its own PostgreSQL concept.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "aca-here",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "acá",
+          "english": "here",
+          "example": {
+            "spanish": "Ven acá.",
+            "english": "Come here."
+          },
+          "collections": [
+            "acá",
+            "here",
+            "adverb",
+            "location",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/here/01-here.md"
+          ],
+          "rationale": "Acá is a common Colombian/Latin American location form with the same English target and deserves independent retrieval coverage.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-estar-aqui-be-here--english-here-source",
+          "action": "revise",
+          "existingConceptId": "estar-aqui-be-here",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "estar aquí",
+          "english": "to be here",
+          "example": {
+            "spanish": "Ana está aquí.",
+            "english": "Ana is here."
+          },
+          "collections": [
+            "estar",
+            "location",
+            "here",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/here/01-here.md"
+          ],
+          "rationale": "The existing neutral location construction represents the source example; revise only to record English-here provenance and retrieval.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        }
+      ]
     }
   ]
 }

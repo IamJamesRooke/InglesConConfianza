@@ -54,6 +54,7 @@ Migrate every useful curriculum concept from `docs/curriculum` into PostgreSQL w
     - [x] Add database-backed review-batch preflight for exact duplicates, normalized probable duplicates, revision targets, source paths, and suspicious sentence-shaped concepts.
 - [ ] Migrate `docs/curriculum/mappings/english-to-spanish` hub by hub.
     - [x] Prove the end-to-end workflow on `open`: account for and consume four source files, revise two existing concepts, add two normalized concepts, close the review batch, and verify snapshot parity.
+    - [x] Migrate `here`: account for and consume two source files, add direct `aquí` and `acá` mappings, revise the existing `estar aquí` construction, and verify snapshot parity.
     - [ ] Rewrite source evidence as neutral Spanish-first concepts with exactly one English target and one minimal bilingual example.
     - [ ] Compare every batch with PostgreSQL and other candidates before review import.
     - [ ] Preserve all useful material; default uncertain but valid entries to `reference` and defer promotion or demotion.

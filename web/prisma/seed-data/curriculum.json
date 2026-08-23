@@ -5801,7 +5801,9 @@
       },
       "collections": [
         "estar",
-        "location"
+        "location",
+        "here",
+        "english-to-spanish mappings"
       ],
       "curriculumRole": "reference"
     },
@@ -28778,6 +28780,40 @@
         "open",
         "noun",
         "work",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "aqui-here",
+      "spanish": "aquí",
+      "english": "here",
+      "example": {
+        "spanish": "Estoy aquí.",
+        "english": "I am here."
+      },
+      "collections": [
+        "aquí",
+        "here",
+        "adverb",
+        "location",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "aca-here",
+      "spanish": "acá",
+      "english": "here",
+      "example": {
+        "spanish": "Ven acá.",
+        "english": "Come here."
+      },
+      "collections": [
+        "acá",
+        "here",
+        "adverb",
+        "location",
         "english-to-spanish mappings"
       ],
       "curriculumRole": "reference"
