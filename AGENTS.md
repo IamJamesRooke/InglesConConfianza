@@ -7,12 +7,12 @@ Ingles Con Confianza is a language-learning application built from the owner's t
 1. Curate the PostgreSQL curriculum: remove low-value material, correct normalization, merge duplicates, simplify collections, and make curriculum roles selective.
 2. Build the first course module from the curated database and validate the lesson-authoring and learner experience.
 
-Migration is complete. Do not recreate the retired `docs/curriculum` source trees, build another import pipeline, or add specialized curriculum tables. New curriculum work consists of deliberate database inserts, edits, merges, and deletions.
+Migration is complete. Do not recreate the retired Markdown source trees, build another import pipeline, or add specialized curriculum tables. New curriculum work consists of deliberate database inserts, edits, merges, and deletions.
 
 ## Start here
 
 - `docs/backlog.md` records the active sequence and completion gates.
-- `docs/curriculum/README.md` defines the canonical curriculum record and curation rules.
+- `docs/curriculum-database.md` defines the canonical curriculum record and curation rules.
 - `docs/teaching-methodology.md` defines lesson design and the intended learner experience.
 - `web/prisma/schema.prisma` models the PostgreSQL curriculum database.
 - `web/src/lib/curriculum/server/` owns curriculum reads and writes.
