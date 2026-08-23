@@ -91375,6 +91375,580 @@
           "ownerNote": ""
         }
       ]
+    },
+    {
+      "id": "terra-adjective-state-hubs-2026-08-23",
+      "title": "Terra sweep: current, fine, full, great, high, and hard",
+      "sourcePaths": [
+        "docs/curriculum/mappings/english-to-spanish/current",
+        "docs/curriculum/mappings/english-to-spanish/fine",
+        "docs/curriculum/mappings/english-to-spanish/full",
+        "docs/curriculum/mappings/english-to-spanish/great",
+        "docs/curriculum/mappings/english-to-spanish/high",
+        "docs/curriculum/mappings/english-to-spanish/hard"
+      ],
+      "createdAt": "2026-08-23",
+      "status": "migrated",
+      "migratedAt": "2026-08-23",
+      "candidates": [
+        {
+          "id": "actual-current",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "actual",
+          "english": "current",
+          "example": {
+            "spanish": "El precio actual es de diez dólares.",
+            "english": "The current price is ten dollars."
+          },
+          "collections": [
+            "actual",
+            "current",
+            "adjective",
+            "time",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/current/README.md"
+          ],
+          "rationale": "Actual is the present-time adjective for current.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "corriente-current",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "la corriente",
+          "english": "current",
+          "example": {
+            "spanish": "El río tiene una corriente fuerte.",
+            "english": "The river has a strong current."
+          },
+          "collections": [
+            "corriente",
+            "current",
+            "noun",
+            "water",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/current/README.md"
+          ],
+          "rationale": "Moving water is the noun corriente, distinct from actual.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "actualizado-a-current",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "actualizado/a",
+          "english": "current",
+          "example": {
+            "spanish": "Mantén actualizada tu información.",
+            "english": "Keep your information current."
+          },
+          "collections": [
+            "actual",
+            "current",
+            "adjective",
+            "information",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/current/README.md"
+          ],
+          "rationale": "Information kept current is actualizado/a in Spanish.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "asuntos-de-actualidad-current-affairs",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "los asuntos de actualidad",
+          "english": "current affairs",
+          "example": {
+            "spanish": "Le interesan los asuntos de actualidad.",
+            "english": "Current affairs interest her."
+          },
+          "collections": [
+            "actualidad",
+            "current",
+            "current affairs",
+            "noun",
+            "news",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/current/README.md"
+          ],
+          "rationale": "News matters are asuntos de actualidad.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "estar-bien-be-fine",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "estar bien",
+          "english": "to be fine",
+          "example": {
+            "spanish": "Estoy bien.",
+            "english": "I am fine."
+          },
+          "collections": [
+            "estar",
+            "bien",
+            "fine",
+            "to be",
+            "adjective",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/fine/README.md"
+          ],
+          "rationale": "Well-being uses estar bien.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "parecerle-bien-a-alguien-be-fine-with-somebody",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "parecerle bien a [alguien]",
+          "english": "to be fine with [somebody]",
+          "example": {
+            "spanish": "Me parece bien.",
+            "english": "That is fine with me."
+          },
+          "collections": [
+            "parecer",
+            "bien",
+            "fine",
+            "with",
+            "verb + preposition",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/fine/README.md"
+          ],
+          "rationale": "Acceptance of a proposal is parecerle bien, not well-being.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "la-multa-fine",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "la multa",
+          "english": "a fine",
+          "example": {
+            "spanish": "La empresa pagó una multa.",
+            "english": "The company paid a fine."
+          },
+          "collections": [
+            "multa",
+            "fine",
+            "noun",
+            "law",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/fine/README.md"
+          ],
+          "rationale": "A financial penalty is la multa.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "fino-a-fine",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "fino/a",
+          "english": "fine",
+          "example": {
+            "spanish": "El polvo es muy fino.",
+            "english": "The powder is very fine."
+          },
+          "collections": [
+            "fino",
+            "fine",
+            "adjective",
+            "texture",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/fine/README.md"
+          ],
+          "rationale": "Fine texture or delicacy uses fino/a.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "estar-lleno-be-full",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "estar lleno/a",
+          "english": "to be full",
+          "example": {
+            "spanish": "El vaso está lleno.",
+            "english": "The glass is full."
+          },
+          "collections": [
+            "estar",
+            "lleno",
+            "full",
+            "to be",
+            "adjective",
+            "capacity",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/full/README.md"
+          ],
+          "rationale": "Filled capacity uses estar lleno/a.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "ya-no-tener-hambre-be-full",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "ya no tener hambre",
+          "english": "to be full",
+          "example": {
+            "spanish": "Ya no tengo hambre.",
+            "english": "I am full."
+          },
+          "collections": [
+            "tener",
+            "hambre",
+            "full",
+            "to be",
+            "adjective",
+            "fixed expression",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/full/README.md"
+          ],
+          "rationale": "Satiety is naturally expressed as no longer being hungry.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "completo-a-full",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "completo/a",
+          "english": "full",
+          "example": {
+            "spanish": "Dame tu nombre completo.",
+            "english": "Give me your full name."
+          },
+          "collections": [
+            "completo",
+            "full",
+            "adjective",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/full/README.md"
+          ],
+          "rationale": "Completeness uses completo/a rather than capacity lleno/a.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "excelente-great",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "excelente",
+          "english": "great",
+          "example": {
+            "spanish": "Es una idea excelente.",
+            "english": "That is a great idea."
+          },
+          "collections": [
+            "excelente",
+            "great",
+            "adjective",
+            "quality",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/great/README.md"
+          ],
+          "rationale": "Excellent quality is excelente in Spanish.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "pasarla-muy-bien-have-a-great-time",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "pasarla muy bien",
+          "english": "to have a great time",
+          "example": {
+            "spanish": "La pasamos muy bien.",
+            "english": "We had a great time."
+          },
+          "collections": [
+            "pasar",
+            "great",
+            "time",
+            "fixed expression",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/great/README.md"
+          ],
+          "rationale": "Enjoying an experience uses pasarla muy bien.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "gran-nombre-great-noun",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "gran [sustantivo]",
+          "english": "great [noun]",
+          "example": {
+            "spanish": "Bolívar fue un gran líder.",
+            "english": "Bolívar was a great leader."
+          },
+          "collections": [
+            "gran",
+            "great",
+            "adjective",
+            "importance",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/great/README.md"
+          ],
+          "rationale": "Historical or social importance uses gran before a noun.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "genial-great",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "genial",
+          "english": "great",
+          "example": {
+            "spanish": "¡Genial! Nos vemos mañana.",
+            "english": "Great! See you tomorrow."
+          },
+          "collections": [
+            "genial",
+            "great",
+            "interjection",
+            "reaction",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/great/README.md"
+          ],
+          "rationale": "An enthusiastic reaction uses genial.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "alto-a-high",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "alto/a",
+          "english": "high",
+          "example": {
+            "spanish": "El muro es alto.",
+            "english": "The wall is high."
+          },
+          "collections": [
+            "alto",
+            "high",
+            "adjective",
+            "height",
+            "level",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/high/README.md"
+          ],
+          "rationale": "Height and settings such as volume use alto/a.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "elevado-a-high",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "elevado/a",
+          "english": "high",
+          "example": {
+            "spanish": "Los precios son elevados.",
+            "english": "Prices are high."
+          },
+          "collections": [
+            "elevado",
+            "high",
+            "adjective",
+            "price",
+            "level",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/high/README.md"
+          ],
+          "rationale": "Elevado/a is the common high-level price expression.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "ocupar-cargo-importante-hold-high-position",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "ocupar un cargo importante",
+          "english": "to hold a high position",
+          "example": {
+            "spanish": "Ocupa un cargo importante.",
+            "english": "She holds a high position."
+          },
+          "collections": [
+            "ocupar",
+            "cargo",
+            "high",
+            "position",
+            "importance",
+            "fixed expression",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/high/README.md"
+          ],
+          "rationale": "High rank is the fixed cargo importante expression.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "dificil-hard",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "difícil",
+          "english": "hard",
+          "example": {
+            "spanish": "El examen es difícil.",
+            "english": "The test is hard."
+          },
+          "collections": [
+            "difícil",
+            "hard",
+            "adjective",
+            "difficulty",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/hard/01-hard.md",
+            "docs/curriculum/mappings/english-to-spanish/hard/README.md"
+          ],
+          "rationale": "Difficult tasks use difícil.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "con-esfuerzo-hard",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "con esfuerzo",
+          "english": "hard",
+          "example": {
+            "spanish": "Trabajó con esfuerzo.",
+            "english": "She worked hard."
+          },
+          "collections": [
+            "esfuerzo",
+            "hard",
+            "adverb",
+            "effort",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/hard/01-hard.md"
+          ],
+          "rationale": "Hard work as an adverb is con esfuerzo in Spanish.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        },
+        {
+          "id": "duro-a-hard",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "duro/a",
+          "english": "hard",
+          "example": {
+            "spanish": "La silla es dura.",
+            "english": "The chair is hard."
+          },
+          "collections": [
+            "duro",
+            "hard",
+            "adjective",
+            "physical property",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/hard/01-hard.md"
+          ],
+          "rationale": "Physical firmness uses duro/a.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        }
+      ]
     }
   ]
 }

@@ -30656,6 +30656,373 @@
         "english-to-spanish mappings"
       ],
       "curriculumRole": "reference"
+    },
+    {
+      "id": "actual-current",
+      "spanish": "actual",
+      "english": "current",
+      "example": {
+        "spanish": "El precio actual es de diez dólares.",
+        "english": "The current price is ten dollars."
+      },
+      "collections": [
+        "actual",
+        "current",
+        "adjective",
+        "time",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "corriente-current",
+      "spanish": "la corriente",
+      "english": "current",
+      "example": {
+        "spanish": "El río tiene una corriente fuerte.",
+        "english": "The river has a strong current."
+      },
+      "collections": [
+        "corriente",
+        "current",
+        "noun",
+        "water",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "actualizado-a-current",
+      "spanish": "actualizado/a",
+      "english": "current",
+      "example": {
+        "spanish": "Mantén actualizada tu información.",
+        "english": "Keep your information current."
+      },
+      "collections": [
+        "actual",
+        "current",
+        "adjective",
+        "information",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "asuntos-de-actualidad-current-affairs",
+      "spanish": "los asuntos de actualidad",
+      "english": "current affairs",
+      "example": {
+        "spanish": "Le interesan los asuntos de actualidad.",
+        "english": "Current affairs interest her."
+      },
+      "collections": [
+        "actualidad",
+        "current",
+        "current affairs",
+        "noun",
+        "news",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-bien-be-fine",
+      "spanish": "estar bien",
+      "english": "to be fine",
+      "example": {
+        "spanish": "Estoy bien.",
+        "english": "I am fine."
+      },
+      "collections": [
+        "estar",
+        "bien",
+        "fine",
+        "to be",
+        "adjective",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "parecerle-bien-a-alguien-be-fine-with-somebody",
+      "spanish": "parecerle bien a [alguien]",
+      "english": "to be fine with [somebody]",
+      "example": {
+        "spanish": "Me parece bien.",
+        "english": "That is fine with me."
+      },
+      "collections": [
+        "parecer",
+        "bien",
+        "fine",
+        "with",
+        "verb + preposition",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "la-multa-fine",
+      "spanish": "la multa",
+      "english": "a fine",
+      "example": {
+        "spanish": "La empresa pagó una multa.",
+        "english": "The company paid a fine."
+      },
+      "collections": [
+        "multa",
+        "fine",
+        "noun",
+        "law",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "fino-a-fine",
+      "spanish": "fino/a",
+      "english": "fine",
+      "example": {
+        "spanish": "El polvo es muy fino.",
+        "english": "The powder is very fine."
+      },
+      "collections": [
+        "fino",
+        "fine",
+        "adjective",
+        "texture",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "estar-lleno-be-full",
+      "spanish": "estar lleno/a",
+      "english": "to be full",
+      "example": {
+        "spanish": "El vaso está lleno.",
+        "english": "The glass is full."
+      },
+      "collections": [
+        "estar",
+        "lleno",
+        "full",
+        "to be",
+        "adjective",
+        "capacity",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ya-no-tener-hambre-be-full",
+      "spanish": "ya no tener hambre",
+      "english": "to be full",
+      "example": {
+        "spanish": "Ya no tengo hambre.",
+        "english": "I am full."
+      },
+      "collections": [
+        "tener",
+        "hambre",
+        "full",
+        "to be",
+        "adjective",
+        "fixed expression",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "completo-a-full",
+      "spanish": "completo/a",
+      "english": "full",
+      "example": {
+        "spanish": "Dame tu nombre completo.",
+        "english": "Give me your full name."
+      },
+      "collections": [
+        "completo",
+        "full",
+        "adjective",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "excelente-great",
+      "spanish": "excelente",
+      "english": "great",
+      "example": {
+        "spanish": "Es una idea excelente.",
+        "english": "That is a great idea."
+      },
+      "collections": [
+        "excelente",
+        "great",
+        "adjective",
+        "quality",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pasarla-muy-bien-have-a-great-time",
+      "spanish": "pasarla muy bien",
+      "english": "to have a great time",
+      "example": {
+        "spanish": "La pasamos muy bien.",
+        "english": "We had a great time."
+      },
+      "collections": [
+        "pasar",
+        "great",
+        "time",
+        "fixed expression",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "gran-nombre-great-noun",
+      "spanish": "gran [sustantivo]",
+      "english": "great [noun]",
+      "example": {
+        "spanish": "Bolívar fue un gran líder.",
+        "english": "Bolívar was a great leader."
+      },
+      "collections": [
+        "gran",
+        "great",
+        "adjective",
+        "importance",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "genial-great",
+      "spanish": "genial",
+      "english": "great",
+      "example": {
+        "spanish": "¡Genial! Nos vemos mañana.",
+        "english": "Great! See you tomorrow."
+      },
+      "collections": [
+        "genial",
+        "great",
+        "interjection",
+        "reaction",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "alto-a-high",
+      "spanish": "alto/a",
+      "english": "high",
+      "example": {
+        "spanish": "El muro es alto.",
+        "english": "The wall is high."
+      },
+      "collections": [
+        "alto",
+        "high",
+        "adjective",
+        "height",
+        "level",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "elevado-a-high",
+      "spanish": "elevado/a",
+      "english": "high",
+      "example": {
+        "spanish": "Los precios son elevados.",
+        "english": "Prices are high."
+      },
+      "collections": [
+        "elevado",
+        "high",
+        "adjective",
+        "price",
+        "level",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ocupar-cargo-importante-hold-high-position",
+      "spanish": "ocupar un cargo importante",
+      "english": "to hold a high position",
+      "example": {
+        "spanish": "Ocupa un cargo importante.",
+        "english": "She holds a high position."
+      },
+      "collections": [
+        "ocupar",
+        "cargo",
+        "high",
+        "position",
+        "importance",
+        "fixed expression",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "dificil-hard",
+      "spanish": "difícil",
+      "english": "hard",
+      "example": {
+        "spanish": "El examen es difícil.",
+        "english": "The test is hard."
+      },
+      "collections": [
+        "difícil",
+        "hard",
+        "adjective",
+        "difficulty",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "con-esfuerzo-hard",
+      "spanish": "con esfuerzo",
+      "english": "hard",
+      "example": {
+        "spanish": "Trabajó con esfuerzo.",
+        "english": "She worked hard."
+      },
+      "collections": [
+        "esfuerzo",
+        "hard",
+        "adverb",
+        "effort",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "duro-a-hard",
+      "spanish": "duro/a",
+      "english": "hard",
+      "example": {
+        "spanish": "La silla es dura.",
+        "english": "The chair is hard."
+      },
+      "collections": [
+        "duro",
+        "hard",
+        "adjective",
+        "physical property",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
     }
   ]
 }

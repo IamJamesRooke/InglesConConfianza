@@ -4135,6 +4135,41 @@
       "disposition": "migrated",
       "destinationIds": ["claro-a-clear", "despejado-clear", "despejar-algo-clear-something", "procesar-pago-clear-payment"],
       "note": "Understanding, weather, removal, and financial-processing clear meanings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/current/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["actual-current", "corriente-current", "actualizado-a-current", "asuntos-de-actualidad-current-affairs"],
+      "note": "Present-time, water, information, and news current meanings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/fine/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["estar-bien-be-fine", "parecerle-bien-a-alguien-be-fine-with-somebody", "la-multa-fine", "fino-a-fine"],
+      "note": "Well-being, acceptance, penalty, and texture fine meanings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/full/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["estar-lleno-be-full", "ya-no-tener-hambre-be-full", "completo-a-full"],
+      "note": "Capacity, satiety, and completeness full meanings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/great/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["excelente-great", "pasarla-muy-bien-have-a-great-time", "gran-nombre-great-noun", "genial-great"],
+      "note": "Quality, enjoyment, importance, and reaction great meanings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/high/README.md": {
+      "disposition": "migrated",
+      "destinationIds": ["alto-a-high", "elevado-a-high", "ocupar-cargo-importante-hold-high-position"],
+      "note": "Height, price level, and rank high meanings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/hard/01-hard.md": {
+      "disposition": "migrated",
+      "destinationIds": ["dificil-hard", "con-esfuerzo-hard", "duro-a-hard"],
+      "note": "Difficulty, effort, and physical-firmness hard meanings migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/hard/README.md": {
+      "disposition": "reviewed",
+      "destinationIds": ["dificil-hard", "con-esfuerzo-hard", "duro-a-hard"],
+      "note": "README synthesis is represented by the migrated hard concepts."
     }
   }
 }
