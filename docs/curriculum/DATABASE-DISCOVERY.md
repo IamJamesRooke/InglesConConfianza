@@ -2,6 +2,15 @@
 
 This document records the working decisions that emerged while representative curriculum data was discovered in JSON and now continues in PostgreSQL. These are migration checkpoints, not a frozen schema.
 
+## 2026-08-23 — Capture, normalize, and retire past and past participle
+
+- Used the other agent's consolidated README as the sole canonical import table and archived it verbatim alongside 133 retired split documents recovered from commit `556aacfb`. The final archive contains 134 documents, 359,868 UTF-8 bytes, SHA-256 hashes, and 1,077 extracted rows: 478 canonical candidates and 599 historical-evidence rows.
+- Validated and added all 478 rows as atomic Spanish-first metalinguistic concepts across 190 verb bases: 235 past forms and 243 past participles. Every ordinary base has both forms; defective modal **can** is explicitly tagged `defective verb` and `no past participle` rather than receiving an invented participle.
+- Preserved accepted variants as separate English targets under the same Spanish concept. Every record has `transformation`, `past and past participle`, `verb form transformation`, form type, regularity, base, `word family: <base>`, and `base => past` or `base => past participle` collections.
+- Imported the source's provisional priorities unchanged: 12 Core, 286 Supporting, and 180 Reference. Role curation can now happen in PostgreSQL without risking coverage loss.
+- Kept pronunciation certainty explicit. The 141 reviewed rows retain their learner-readable sound family and secondary IPA query keys. The 337 `needs review` rows were imported with `sound metadata pending review` and no specific sound-family claim; their source evidence remains available for a later pronunciation pass.
+- Verified zero exact or probable database collisions, verified every source document byte-for-byte and every canonical pair with its required collections, exported exact snapshot parity, added regression coverage, and retired `docs/curriculum/past-and-past-participle`. All six curriculum pillars now live in PostgreSQL.
+
 ## 2026-08-23 — Capture, normalize, and retire remaining structure
 
 - Captured 21 live structure documents plus 52 historical fluency-drill and verb-system documents recovered from commit `7fda3e68`: 73 documents, 56,558 UTF-8 bytes, SHA-256 hashes, and 332 extracted rows. Row dispositions are 21 canonical candidates, 233 bilingual-evidence rows, 77 reference patterns, and 1 source warning.

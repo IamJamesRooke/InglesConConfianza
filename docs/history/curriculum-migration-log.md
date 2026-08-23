@@ -4,6 +4,13 @@
 
 The closing professionalization sprint promoted cognates and past forms to curriculum-level pillars in commit `54b4d54`, then replaced 298 vocabulary source files with 16 flat category files plus a preservation manifest in commit `ae0e487`.
 
+## 2026-08-23 — PostgreSQL past-form migration
+
+- Preserved the consolidated 478-row source and 133 retired split documents as 134 immutable documents, 359,868 source bytes, and 1,077 extracted rows.
+- Added 478 atomic past and participle transformations across 190 bases with separate targets for accepted variants and explicit form, regularity, word-family, sound-family, and teaching-priority collections.
+- Retained 141 reviewed pronunciation families and marked 337 rows `sound metadata pending review` without treating provisional sound groupings as finished metadata.
+- Verified source, concept, regression, and immutable snapshot parity, then retired the final `docs/curriculum/past-and-past-participle` source folder. Every curriculum pillar is now in PostgreSQL.
+
 ## 2026-08-23 — PostgreSQL remaining-structure migration
 
 - Preserved 21 live documents and 52 historical fluency and verb-system documents, totaling 56,558 source bytes and 332 extracted rows, in the immutable PostgreSQL archive.

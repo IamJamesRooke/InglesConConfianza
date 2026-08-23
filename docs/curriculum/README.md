@@ -1,17 +1,17 @@
 # Curriculum Body of Knowledge
 
-This directory is the working source of truth for the Inglés Con Confianza body of knowledge. It is organized by what a lesson teaches, not by a fixed course level or final teaching sequence.
+This directory is the human-readable handoff for the Inglés Con Confianza body of knowledge. PostgreSQL is the working curriculum source of truth, organized by queryable concepts and collections rather than a fixed course level or final teaching sequence.
 
 | Pillar | Purpose |
 |---|---|
 | Mappings (PostgreSQL) | The translation core, now preserved as canonical concepts plus a lossless queryable source archive. |
 | Cognates (PostgreSQL) | Reliable similarities, spelling patterns, word families, memory bridges, and false-cognate confusion sets. |
-| [Past and Past Participle](past-and-past-participle/README.md) | The canonical sound-based inventory of English past and participle forms. |
+| Past and Past Participle (PostgreSQL) | The canonical sound-based inventory of English past and participle forms, with reviewed and pending pronunciation metadata kept distinct. |
 | Transformations (PostgreSQL) | Productive, limited, irregular, and recognition-only English word-family relationships stored with normalized bilingual transformation notation and flat query collections. |
 | Structure (PostgreSQL) | Reusable machinery for building statements, questions, negations, descriptions, comparisons, and connected ideas. |
 | Vocabulary (PostgreSQL) | Searchable words, expressions, semantic categories, and verb families preserved as canonical concepts plus a lossless source archive. |
 
-Each lesson has one canonical home. Indexes may cross-link a lesson when it supports more than one area. The future teaching sequence should express prerequisites and reinforcement without duplicating curriculum objects or encoding difficulty into this folder hierarchy.
+Each concept has one canonical database record and may belong to multiple query collections. The future teaching sequence should express prerequisites and reinforcement without duplicating curriculum objects or encoding difficulty into a filesystem hierarchy.
 
 ## How to use this curriculum
 
@@ -23,7 +23,7 @@ Each lesson has one canonical home. Indexes may cross-link a lesson when it supp
 
 ## Current maturity
 
-Mappings are fully captured in PostgreSQL as 2,225 immutable source documents and 4,322 extracted table rows. Cognates are captured as 265 immutable documents and 1,250 extracted rows. Vocabulary is captured as 17 immutable documents and 972 extracted rows, normalized into 592 concepts. Transformations are captured as 178 immutable documents and 594 extracted rows, normalized into 312 concepts. Structure is captured as 124 immutable documents and 600 extracted rows across its two migration passes, normalized into 405 concepts in the same canonical table. Past and past participle remains the principal human-facing pillar awaiting migration.
+All six pillars are captured in PostgreSQL. Mappings contain 2,225 immutable source documents and 4,322 extracted rows. Cognates contain 265 documents and 1,250 rows. Vocabulary contains 17 documents and 972 rows, normalized into 592 concepts. Transformations contain 178 documents and 594 rows, originally normalized into 312 concepts and later enriched by comparison and verb-form transformations. Structure contains 124 documents and 600 rows across two passes, normalized into 405 concepts. Past and past participle contains 134 documents and 1,077 rows, normalized into 478 atomic form concepts across 190 verb bases.
 
 The active step is database-driven normalization and curation of the captured mappings archive. The [active backlog](../backlog.md) defines the current order and completion gates; lesson-contract discovery is paused until the owner changes priority.
 

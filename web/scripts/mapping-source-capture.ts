@@ -44,6 +44,7 @@ function documentMetadata(filePath: string, absoluteRoot: string, pillar: string
   const first = relativeToRoot[0] ?? "root";
   const direction = [
     "cognates",
+    "past-and-past-participle",
     "structure",
     "structure-verb-forms",
     "transformations",
@@ -55,7 +56,9 @@ function documentMetadata(filePath: string, absoluteRoot: string, pillar: string
       : "undirected";
   const hub = pillar === "cognates" || pillar === "transformations"
     ? first
-    : pillar === "structure" || pillar === "structure-verb-forms"
+    : pillar === "past-and-past-participle" ||
+        pillar === "structure" ||
+        pillar === "structure-verb-forms"
       ? first === "README.md"
         ? "root"
         : first
@@ -79,6 +82,8 @@ function documentMetadata(filePath: string, absoluteRoot: string, pillar: string
       ? "vocabulary source"
       : pillar === "transformations"
         ? "transformation source"
+        : pillar === "past-and-past-participle"
+          ? "past-form source"
         : pillar === "structure"
           ? "structure source"
         : pillar === "structure-verb-forms"

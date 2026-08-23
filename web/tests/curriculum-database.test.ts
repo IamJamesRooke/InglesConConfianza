@@ -202,22 +202,28 @@ test("the imported curriculum is exact and protected", async (context) => {
   const transformations = actual.curriculum.concepts.filter((concept) =>
     concept.collections.includes("transformation"),
   );
-  assert.equal(transformations.length, 326);
+  assert.equal(transformations.length, 804);
   assert.deepStrictEqual(
     transformations.reduce<Record<string, number>>((counts, concept) => {
       counts[concept.curriculumRole] = (counts[concept.curriculumRole] ?? 0) + 1;
       return counts;
     }, {}),
-    { core: 1, supporting: 24, reference: 301 },
+    { core: 13, supporting: 310, reference: 481 },
   );
 
   const transformationRelationships = transformations.filter((concept) =>
     concept.collections.includes("transformation relationship"),
   );
+  const pastFormTransformations = transformations.filter((concept) =>
+    concept.collections.includes("verb form transformation"),
+  );
   const recognitionMappings = transformations.filter(
-    (concept) => !concept.collections.includes("transformation relationship"),
+    (concept) =>
+      !concept.collections.includes("transformation relationship") &&
+      !concept.collections.includes("verb form transformation"),
   );
   assert.equal(transformationRelationships.length, 281);
+  assert.equal(pastFormTransformations.length, 478);
   assert.equal(recognitionMappings.length, 45);
   assert.deepStrictEqual(
     transformationRelationships.filter(
@@ -388,6 +394,114 @@ test("the imported curriculum is exact and protected", async (context) => {
       "disposition: bilingual evidence": 233,
       "disposition: reference pattern": 77,
       "disposition: source warning": 1,
+    },
+  );
+
+  const pastForms = actual.curriculum.concepts.filter((concept) =>
+    concept.collections.includes("past and past participle"),
+  );
+  assert.equal(pastForms.length, 478);
+  assert.deepStrictEqual(
+    pastForms.reduce<Record<string, number>>((counts, concept) => {
+      counts[concept.curriculumRole] = (counts[concept.curriculumRole] ?? 0) + 1;
+      return counts;
+    }, {}),
+    { core: 12, supporting: 286, reference: 180 },
+  );
+  assert.equal(
+    pastForms.filter((concept) => concept.collections.includes("past")).length,
+    235,
+  );
+  assert.equal(
+    pastForms.filter((concept) => concept.collections.includes("past participle"))
+      .length,
+    243,
+  );
+  assert.equal(
+    new Set(
+      pastForms.flatMap((concept) =>
+        concept.collections.filter((collection) =>
+          collection.startsWith("word family: "),
+        ),
+      ),
+    ).size,
+    190,
+  );
+  assert.deepStrictEqual(
+    pastForms.filter((concept) => {
+      const statuses = concept.collections.filter((collection) =>
+        collection.startsWith("sound metadata "),
+      );
+      const formTypes = ["past", "past participle"].filter((collection) =>
+        concept.collections.includes(collection),
+      );
+      return (
+        statuses.length !== 1 ||
+        formTypes.length !== 1 ||
+        !concept.collections.includes("transformation") ||
+        !concept.collections.includes("verb form transformation") ||
+        concept.english.includes(" / ")
+      );
+    }),
+    [],
+    "Every past-form concept must be atomic and have one form type and sound-review status.",
+  );
+  const pendingSound = pastForms.filter((concept) =>
+    concept.collections.includes("sound metadata pending review"),
+  );
+  const reviewedSound = pastForms.filter((concept) =>
+    concept.collections.includes("sound metadata reviewed"),
+  );
+  assert.equal(pendingSound.length, 337);
+  assert.equal(reviewedSound.length, 141);
+  assert.deepStrictEqual(
+    pendingSound.filter((concept) =>
+      concept.collections.some(
+        (collection) =>
+          collection.includes("🔊") ||
+          collection.startsWith("past - ") ||
+          collection.startsWith("past participle - "),
+      ),
+    ),
+    [],
+    "Pending pronunciation rows must not claim a finished sound family.",
+  );
+  assert.equal(
+    pastForms.some(
+      (concept) =>
+        concept.spanish === "pasado de can" &&
+        concept.english === "could" &&
+        concept.collections.includes("defective verb") &&
+        concept.collections.includes("no past participle"),
+    ),
+    true,
+  );
+
+  const pastFormDocuments = actual.sources.documents.filter(
+    (document) => document.pillar === "past-and-past-participle",
+  );
+  const pastFormDocumentPaths = new Set(
+    pastFormDocuments.map((document) => document.path),
+  );
+  const pastFormEntries = actual.sources.entries.filter((entry) =>
+    pastFormDocumentPaths.has(entry.documentPath),
+  );
+  assert.equal(pastFormDocuments.length, 134);
+  assert.equal(
+    pastFormDocuments.reduce((total, document) => total + document.byteLength, 0),
+    359_868,
+  );
+  assert.equal(pastFormEntries.length, 1_077);
+  assert.deepStrictEqual(
+    pastFormEntries.reduce<Record<string, number>>((counts, entry) => {
+      const dispositions = entry.tags.filter((tag) => tag.startsWith("disposition:"));
+      assert.equal(dispositions.length, 1);
+      counts[dispositions[0]] = (counts[dispositions[0]] ?? 0) + 1;
+      return counts;
+    }, {}),
+    {
+      "disposition: canonical candidate": 478,
+      "disposition: historical evidence": 599,
     },
   );
 
