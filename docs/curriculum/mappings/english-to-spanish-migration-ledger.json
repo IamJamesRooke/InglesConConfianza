@@ -3846,6 +3846,20 @@
         "aca-here"
       ],
       "note": "README navigation repeats the two migrated direct location mappings."
+    },
+    "docs/curriculum/mappings/english-to-spanish/behind/01-behind.md": {
+      "disposition": "migrated",
+      "destinationIds": [
+        "detras-de-algo-behind-something"
+      ],
+      "note": "Neutral behind location construction migrated."
+    },
+    "docs/curriculum/mappings/english-to-spanish/behind/README.md": {
+      "disposition": "reviewed",
+      "destinationIds": [
+        "detras-de-algo-behind-something"
+      ],
+      "note": "README navigation repeats the migrated behind construction."
     }
   }
 }

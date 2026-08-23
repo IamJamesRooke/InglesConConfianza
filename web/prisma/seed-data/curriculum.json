@@ -28817,6 +28817,23 @@
         "english-to-spanish mappings"
       ],
       "curriculumRole": "reference"
+    },
+    {
+      "id": "detras-de-algo-behind-something",
+      "spanish": "detrás de [algo]",
+      "english": "behind [something]",
+      "example": {
+        "spanish": "El parque está detrás de la oficina.",
+        "english": "The park is behind the office."
+      },
+      "collections": [
+        "detrás",
+        "behind",
+        "preposition",
+        "location",
+        "english-to-spanish mappings"
+      ],
+      "curriculumRole": "reference"
     }
   ]
 }

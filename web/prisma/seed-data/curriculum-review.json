@@ -88179,6 +88179,44 @@
           "ownerNote": ""
         }
       ]
+    },
+    {
+      "id": "english-behind-hub-2026-08-23",
+      "title": "English behind hub completeness migration",
+      "sourcePaths": [
+        "docs/curriculum/mappings/english-to-spanish/behind"
+      ],
+      "createdAt": "2026-08-23",
+      "status": "migrated",
+      "migratedAt": "2026-08-23",
+      "candidates": [
+        {
+          "id": "detras-de-algo-behind-something",
+          "action": "add",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "detrás de [algo]",
+          "english": "behind [something]",
+          "example": {
+            "spanish": "El parque está detrás de la oficina.",
+            "english": "The park is behind the office."
+          },
+          "collections": [
+            "detrás",
+            "behind",
+            "preposition",
+            "location",
+            "english-to-spanish mappings"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curriculum/mappings/english-to-spanish/behind/01-behind.md"
+          ],
+          "rationale": "Detrás de is a reusable Spanish location pattern for behind and is not present as a neutral PostgreSQL concept.",
+          "approved": true,
+          "migrated": true,
+          "ownerNote": ""
+        }
+      ]
     }
   ]
 }
