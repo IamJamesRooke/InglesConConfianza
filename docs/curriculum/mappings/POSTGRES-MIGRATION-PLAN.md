@@ -63,11 +63,11 @@ Add collections in this order when applicable:
 1. Spanish lexical family: `comer`, `ser`, `estar`, `tener`.
 2. English source hub or target family: `eat`, `to be`, `am`, `is`.
 3. Grammatical or construction pattern: `adjective`, `ser adjectives`, `verb + bare infinitive`, `verb + full infinitive`, `somebody to do something`, `phrasal verb`, `verb + preposition`.
-4. Stable particle or connector: `up`, `with`, `con => with`.
+4. Stable particle or connector: `up`, `with`, `con => with`. A true phrasal verb also needs its English lexical-root collection: `to hand over`, for example, receives `phrasal verb`, `hand`, and `over`.
 5. Semantic or lesson-planning collection only when it groups otherwise non-obvious concepts.
 6. Provenance collection: `english-to-spanish mappings` for concepts or revisions discovered in this pass.
 
-Use lowercase collection names. Prefer an existing collection when it expresses the same concept. During this completeness pass, useful extra collections are acceptable; cleanup comes later.
+Use lowercase collection names, except the deliberate `🔊 ` pronunciation-family prefix. Prefer an existing collection when it expresses the same concept. During this completeness pass, useful extra collections are acceptable; cleanup comes later. A dedicated post-migration enrichment pass will add consistent morpheme collections and shared-sound collections such as `🔊 here` for **here**/**hear**, then evaluate nested collection families such as `to be` → `am`, `is`, `are`.
 
 ## Role policy
 
