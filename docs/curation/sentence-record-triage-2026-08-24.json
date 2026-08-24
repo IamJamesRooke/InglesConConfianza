@@ -1,0 +1,2896 @@
+{
+  "deletes": [
+    {
+      "id": "oc8tpo7p7z",
+      "spanish": "Acabo de darme cuenta de que dejé de depender de Ana porque recordé cómo hacerlo y tengo ganas de intentarlo.",
+      "duplicatesConceptIds": [
+        "1jdy99z2dz",
+        "tef3nelk2n",
+        "yfjyb31b9b"
+      ],
+      "matchedOn": [
+        "acabo de",
+        "dejé de",
+        "tengo ganas"
+      ]
+    },
+    {
+      "id": "5g8uooefv6",
+      "spanish": "Acabo de enterarme de que dejó de depender de ellos.",
+      "duplicatesConceptIds": [
+        "tef3nelk2n",
+        "yfjyb31b9b"
+      ],
+      "matchedOn": [
+        "acabo de",
+        "dejó de"
+      ]
+    },
+    {
+      "id": "ph9s3wbzux",
+      "spanish": "Ante el peligro, salieron.",
+      "duplicatesConceptIds": [
+        "z1kohrhmbw"
+      ],
+      "matchedOn": [
+        "ante el"
+      ]
+    },
+    {
+      "id": "n2ithro0ii",
+      "spanish": "Apenas acabo de llegar.",
+      "duplicatesConceptIds": [
+        "4f0u4bjz5u",
+        "tef3nelk2n"
+      ],
+      "matchedOn": [
+        "acabo de",
+        "apenas"
+      ]
+    },
+    {
+      "id": "wk3ajcljme",
+      "spanish": "Apenas alcanzamos el bus.",
+      "duplicatesConceptIds": [
+        "4f0u4bjz5u"
+      ],
+      "matchedOn": [
+        "apenas"
+      ]
+    },
+    {
+      "id": "n8eqea5scj",
+      "spanish": "Apenas había llegado cuando ella se fue.",
+      "duplicatesConceptIds": [
+        "4f0u4bjz5u"
+      ],
+      "matchedOn": [
+        "apenas"
+      ]
+    },
+    {
+      "id": "azo0cxhoa4",
+      "spanish": "Apenas llegamos a tiempo.",
+      "duplicatesConceptIds": [
+        "4f0u4bjz5u",
+        "ovzll1ynso"
+      ],
+      "matchedOn": [
+        "apenas",
+        "a tiempo"
+      ]
+    },
+    {
+      "id": "w7grl48gx0",
+      "spanish": "Apenas llegues, llámame.",
+      "duplicatesConceptIds": [
+        "4f0u4bjz5u"
+      ],
+      "matchedOn": [
+        "apenas"
+      ]
+    },
+    {
+      "id": "w858mghbwm",
+      "spanish": "Aprendió de memoria mientras estudiaba de pie.",
+      "duplicatesConceptIds": [
+        "bjifboq9ja",
+        "myuguvt6ul"
+      ],
+      "matchedOn": [
+        "de memoria",
+        "de pie"
+      ]
+    },
+    {
+      "id": "k9ns1g29jm",
+      "spanish": "Aprendió el poema de memoria mientras estudiaba de pie.",
+      "duplicatesConceptIds": [
+        "bjifboq9ja",
+        "myuguvt6ul"
+      ],
+      "matchedOn": [
+        "de memoria",
+        "de pie"
+      ]
+    },
+    {
+      "id": "8rvpprzk9s",
+      "spanish": "Asegura bien la cuerda.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "rox3s26ah8",
+      "spanish": "Aun los expertos se equivocan.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "0a8f525c70",
+      "spanish": "Aunque estaba cansada, siguió trabajando.",
+      "duplicatesConceptIds": [
+        "elawsjkdck"
+      ],
+      "matchedOn": [
+        "aunque"
+      ]
+    },
+    {
+      "id": "ukdwfb6b2t",
+      "spanish": "Aunque llovió, salimos.",
+      "duplicatesConceptIds": [
+        "elawsjkdck"
+      ],
+      "matchedOn": [
+        "aunque"
+      ]
+    },
+    {
+      "id": "8h0mglroco",
+      "spanish": "Aunque llueva, saldremos.",
+      "duplicatesConceptIds": [
+        "elawsjkdck"
+      ],
+      "matchedOn": [
+        "aunque"
+      ]
+    },
+    {
+      "id": "b6hsgxghw9",
+      "spanish": "Aunque sabía la verdad, no dijo nada.",
+      "duplicatesConceptIds": [
+        "elawsjkdck"
+      ],
+      "matchedOn": [
+        "aunque"
+      ]
+    },
+    {
+      "id": "4yj9f8btrx",
+      "spanish": "Aún estoy trabajando.",
+      "duplicatesConceptIds": [
+        "2b50xdv2ra"
+      ],
+      "matchedOn": [
+        "aún"
+      ]
+    },
+    {
+      "id": "3wgodgaxb1",
+      "spanish": "Bogotá juega contra Cali.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "pgd9e1vjyo",
+      "spanish": "Caminamos hasta el parque.",
+      "duplicatesConceptIds": [
+        "16pwsfcg7n"
+      ],
+      "matchedOn": [
+        "hasta"
+      ]
+    },
+    {
+      "id": "1c38s7q7uf",
+      "spanish": "Caminamos por el parque y por la avenida.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "zgnaaq741j",
+      "spanish": "Caminó hacia el parque, no hasta el parque.",
+      "duplicatesConceptIds": [
+        "16pwsfcg7n",
+        "95yrl4jxn3"
+      ],
+      "matchedOn": [
+        "hacia",
+        "hasta"
+      ]
+    },
+    {
+      "id": "cl1k6vqt99",
+      "spanish": "Caminó hacia la estación.",
+      "duplicatesConceptIds": [
+        "95yrl4jxn3"
+      ],
+      "matchedOn": [
+        "hacia"
+      ]
+    },
+    {
+      "id": "7rv0zv9idd",
+      "spanish": "Cancelaron el vuelo por la tormenta.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "i7oypy7mz0",
+      "spanish": "Casi no había comida.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "w8zlfvy85b",
+      "spanish": "Cerró la puerta tras de sí.",
+      "duplicatesConceptIds": [
+        "ytz0ph603p"
+      ],
+      "matchedOn": [
+        "tras de"
+      ]
+    },
+    {
+      "id": "6rr0cf803b",
+      "spanish": "Cinco menos dos son tres.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "9tf607y1jw",
+      "spanish": "Compareció ante el juez.",
+      "duplicatesConceptIds": [
+        "z1kohrhmbw"
+      ],
+      "matchedOn": [
+        "ante el"
+      ]
+    },
+    {
+      "id": "0ng80hk54c",
+      "spanish": "Compramos más libros.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "s5ysq0nxhb",
+      "spanish": "Compré el libro por veinte mil pesos.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "06e1homzj2",
+      "spanish": "Creo que es importante.",
+      "duplicatesConceptIds": [
+        "wd6uku1ojd"
+      ],
+      "matchedOn": [
+        "creo que"
+      ]
+    },
+    {
+      "id": "sl8if6hw6i",
+      "spanish": "Cuesta hasta cien dólares.",
+      "duplicatesConceptIds": [
+        "16pwsfcg7n"
+      ],
+      "matchedOn": [
+        "hasta"
+      ]
+    },
+    {
+      "id": "d1gm0u24ev",
+      "spanish": "Date prisa; si no, llegaremos tarde.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "jaqmf5c9lr",
+      "spanish": "De noche estudiaba de pie, repetía todo de memoria y, de vez en cuando, empezaba de nuevo.",
+      "duplicatesConceptIds": [
+        "bjifboq9ja",
+        "myuguvt6ul"
+      ],
+      "matchedOn": [
+        "de memoria",
+        "de pie"
+      ]
+    },
+    {
+      "id": "puj09q8imq",
+      "spanish": "De noche estudio de pie y, de vez en cuando, repito todo de memoria.",
+      "duplicatesConceptIds": [
+        "bjifboq9ja",
+        "myuguvt6ul"
+      ],
+      "matchedOn": [
+        "de memoria",
+        "de pie"
+      ]
+    },
+    {
+      "id": "ac5ejxss8w",
+      "spanish": "De noche tomo una taza de café en la mesa de la cocina y estudio de vez en cuando con Ana.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "sifoketl51",
+      "spanish": "Dejé de depender de ellos cuando me di cuenta de que podía hacerlo de otra manera.",
+      "duplicatesConceptIds": [
+        "5zyk11qlrm",
+        "yfjyb31b9b"
+      ],
+      "matchedOn": [
+        "me di cuenta",
+        "dejé de"
+      ]
+    },
+    {
+      "id": "a27x087lln",
+      "spanish": "Discutieron entre ellos.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "6ctcc4ryet",
+      "spanish": "Dormí durante la película.",
+      "duplicatesConceptIds": [
+        "1x5p74ftvn",
+        "z1kohrhmbw"
+      ],
+      "matchedOn": [
+        "ante la",
+        "durante"
+      ]
+    },
+    {
+      "id": "0y8r76aqtx",
+      "spanish": "Día tras día, continuó.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "8rf3vajcyz",
+      "spanish": "El ascensor está fuera de servicio.",
+      "duplicatesConceptIds": [
+        "s5ul1ez30f"
+      ],
+      "matchedOn": [
+        "fuera de"
+      ]
+    },
+    {
+      "id": "tshs6gx71z",
+      "spanish": "El bolso está debajo de la mesa.",
+      "duplicatesConceptIds": [
+        "w3ipgpiocx"
+      ],
+      "matchedOn": [
+        "debajo de"
+      ]
+    },
+    {
+      "id": "8ce65ixpu3",
+      "spanish": "El documento está en el bolso.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "56v5jpe3ox",
+      "spanish": "El documento está sobre la mesa.",
+      "duplicatesConceptIds": [
+        "jfphg18mwh"
+      ],
+      "matchedOn": [
+        "sobre",
+        "sobre la mesa"
+      ]
+    },
+    {
+      "id": "03xttq2ywa",
+      "spanish": "El gato está bajo la mesa.",
+      "duplicatesConceptIds": [
+        "z9x61srsag"
+      ],
+      "matchedOn": [
+        "bajo la"
+      ]
+    },
+    {
+      "id": "y9ny4socwn",
+      "spanish": "El libro de Ana está aquí.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "i5zdqs7ods",
+      "spanish": "El libro de Ana está junto al escritorio de Carlos.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "kfjpygfe7l",
+      "spanish": "El libro de Ana está sobre la mesa de madera de la cocina junto a su taza de café.",
+      "duplicatesConceptIds": [
+        "jfphg18mwh"
+      ],
+      "matchedOn": [
+        "sobre",
+        "sobre la mesa"
+      ]
+    },
+    {
+      "id": "o3d24eo72o",
+      "spanish": "El libro está sobre la mesa.",
+      "duplicatesConceptIds": [
+        "jfphg18mwh"
+      ],
+      "matchedOn": [
+        "sobre",
+        "sobre la mesa"
+      ]
+    },
+    {
+      "id": "dqxwh6lo9z",
+      "spanish": "El libro que está sobre la mesa.",
+      "duplicatesConceptIds": [
+        "jfphg18mwh"
+      ],
+      "matchedOn": [
+        "sobre",
+        "sobre la mesa"
+      ]
+    },
+    {
+      "id": "olnfpaahh0",
+      "spanish": "El libro que necesito.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "7cqi2chge2",
+      "spanish": "El nombre aparece más abajo.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "v1nd7zu0yx",
+      "spanish": "El nombre de la tienda aparece al final de la primera página.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "tgzwuiok04",
+      "spanish": "El nombre de la tienda está al final de la calle.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "021zbt5l8o",
+      "spanish": "El parque está entre la tienda y la oficina.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "8h4gusucu0",
+      "spanish": "El país tuvo una mala cosecha.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "a7f3kcp75q",
+      "spanish": "El precio cambia según el día.",
+      "duplicatesConceptIds": [
+        "8iifdhj8ua"
+      ],
+      "matchedOn": [
+        "según"
+      ]
+    },
+    {
+      "id": "5u41r3wkkx",
+      "spanish": "El primer intento falló, así que hazlo de nuevo.",
+      "duplicatesConceptIds": [
+        "u109gx9ehn"
+      ],
+      "matchedOn": [
+        "así que"
+      ]
+    },
+    {
+      "id": "ar31f93fkf",
+      "spanish": "El testigo aseguró que lo vio.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "lp7k66flhe",
+      "spanish": "El viaje tarda dos horas.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "9b15cyognb",
+      "spanish": "Elige entre los tres planes.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "w3xpftx9z0",
+      "spanish": "Ella es la más rápida del equipo.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "dt2v7izogg",
+      "spanish": "Entonces, ya revisamos los costos.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "9rxqv5pm1l",
+      "spanish": "Entre todos, metieron la mesa.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "5jel2ljku4",
+      "spanish": "Entre tú y yo, está mal.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "2emz098psa",
+      "spanish": "Es tan alto como Ana.",
+      "duplicatesConceptIds": [
+        "r9zf5ny811"
+      ],
+      "matchedOn": [
+        " tan ",
+        "tan alto como"
+      ]
+    },
+    {
+      "id": "s1s506i18f",
+      "spanish": "Es un medio de transporte.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "yxmnnkbk4l",
+      "spanish": "Es un poco difícil, pues.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "mfu8cjncxt",
+      "spanish": "Es una clase de dos horas para adultos de treinta años.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "n9leyj6r7l",
+      "spanish": "Es una mesa de madera y el jugo está hecho de naranjas frescas.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "rgc1t50f00",
+      "spanish": "Es una mesa de madera.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "6hevipoaof",
+      "spanish": "Es una novela de Gabriel García Márquez.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "qm0yxb2gty",
+      "spanish": "Es una novela de García Márquez sobre una familia de Colombia que regresa de España.",
+      "duplicatesConceptIds": [
+        "jfphg18mwh"
+      ],
+      "matchedOn": [
+        "sobre"
+      ]
+    },
+    {
+      "id": "ednwoicxfz",
+      "spanish": "Es una novela de García Márquez sobre una familia de Colombia.",
+      "duplicatesConceptIds": [
+        "jfphg18mwh"
+      ],
+      "matchedOn": [
+        "sobre"
+      ]
+    },
+    {
+      "id": "ht6az2v6ff",
+      "spanish": "Es una persona fuerte.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "b3exfv3p6v",
+      "spanish": "Esa es la persona con quien hablé.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "82x1f5lhhs",
+      "spanish": "Espera hasta que llegue.",
+      "duplicatesConceptIds": [
+        "16pwsfcg7n",
+        "t8a1fhkjvh"
+      ],
+      "matchedOn": [
+        "hasta",
+        "hasta que"
+      ]
+    },
+    {
+      "id": "iztui98b0v",
+      "spanish": "Esta es la última pregunta.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "wrdk2z2dl6",
+      "spanish": "Estaba cerrado; no pudimos, pues, entrar.",
+      "duplicatesConceptIds": [
+        "jbzn0kwj0g"
+      ],
+      "matchedOn": [
+        "pues,"
+      ]
+    },
+    {
+      "id": "re9tqlpwh9",
+      "spanish": "Este café es para Laura.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "p92sl5npjg",
+      "spanish": "Esto es lo que necesito.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "jvcqmgarbr",
+      "spanish": "Esto es mejor que eso.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "hef250ow1r",
+      "spanish": "Estoy dentro de la oficina.",
+      "duplicatesConceptIds": [
+        "utt0pzt5s4"
+      ],
+      "matchedOn": [
+        "dentro de"
+      ]
+    },
+    {
+      "id": "quryjlxxqh",
+      "spanish": "Estoy dentro del parque.",
+      "duplicatesConceptIds": [
+        "utt0pzt5s4"
+      ],
+      "matchedOn": [
+        "dentro de",
+        "dentro del"
+      ]
+    },
+    {
+      "id": "262jd7tdw2",
+      "spanish": "Estoy en contra del plan.",
+      "duplicatesConceptIds": [
+        "nfursmvnpb"
+      ],
+      "matchedOn": [
+        "en contra de"
+      ]
+    },
+    {
+      "id": "4ls5cydn07",
+      "spanish": "Estoy en el parque para el evento.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "azwrfleibb",
+      "spanish": "Estoy en la oficina para una reunión.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "7vrsdi0axv",
+      "spanish": "Estoy seguro de que la reunión es hoy.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "utt0pzt5s4",
+      "spanish": "Está dentro de la caja.",
+      "duplicatesConceptIds": [
+        "utt0pzt5s4"
+      ],
+      "matchedOn": [
+        "dentro de"
+      ]
+    },
+    {
+      "id": "k2dt5wwv03",
+      "spanish": "Está detrás del edificio.",
+      "duplicatesConceptIds": [
+        "ytz0ph603p"
+      ],
+      "matchedOn": [
+        "detrás de"
+      ]
+    },
+    {
+      "id": "babdf3apgd",
+      "spanish": "Está entre la mesa y la puerta.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "s5ul1ez30f",
+      "spanish": "Está fuera de la casa.",
+      "duplicatesConceptIds": [
+        "s5ul1ez30f"
+      ],
+      "matchedOn": [
+        "fuera de"
+      ]
+    },
+    {
+      "id": "wadodvwhzi",
+      "spanish": "Fue el peor día del año.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "fqiwvsfta0",
+      "spanish": "Fue el último en llegar.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "7cedi5dgoo",
+      "spanish": "Fue un día tan difícil.",
+      "duplicatesConceptIds": [
+        "r9zf5ny811"
+      ],
+      "matchedOn": [
+        " tan "
+      ]
+    },
+    {
+      "id": "i7h6fe1rlm",
+      "spanish": "Guardé la carta en un sobre.",
+      "duplicatesConceptIds": [
+        "jfphg18mwh"
+      ],
+      "matchedOn": [
+        "sobre"
+      ]
+    },
+    {
+      "id": "1so3yn8cja",
+      "spanish": "Habla inglés muy bien.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "pkfok4advy",
+      "spanish": "Hablamos del problema y me enteré del cambio.",
+      "duplicatesConceptIds": [
+        "70esj4z10e"
+      ],
+      "matchedOn": [
+        "me enteré"
+      ]
+    },
+    {
+      "id": "5qmz3f6kjm",
+      "spanish": "Hablamos sobre el proyecto.",
+      "duplicatesConceptIds": [
+        "jfphg18mwh"
+      ],
+      "matchedOn": [
+        "sobre"
+      ]
+    },
+    {
+      "id": "wk2b7xk9ll",
+      "spanish": "Hablaron entre ellos.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "bw9ex8x6w9",
+      "spanish": "Hablo despacio para que puedas entender.",
+      "duplicatesConceptIds": [
+        "bw9ex8x6w9"
+      ],
+      "matchedOn": [
+        "para que"
+      ]
+    },
+    {
+      "id": "ryn0k76pz0",
+      "spanish": "Hardly had I arrived when she left.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "jgbuu1ca76",
+      "spanish": "Hay bastantes sillas.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "4hqx93vbuv",
+      "spanish": "Hay demasiadas personas.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "1prsajtwp2",
+      "spanish": "Hay muchos carros en la avenida porque cerraron el túnel.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "7uxnczanon",
+      "spanish": "Hay muchos carros en la avenida.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "1ic0vf38k1",
+      "spanish": "Hay una mesa en el cuarto.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "5w6h9hbck1",
+      "spanish": "Hazlo según te expliqué.",
+      "duplicatesConceptIds": [
+        "8iifdhj8ua"
+      ],
+      "matchedOn": [
+        "según"
+      ]
+    },
+    {
+      "id": "1jyqyn6l7o",
+      "spanish": "He estado allí muchas veces.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "5ziol3u62j",
+      "spanish": "He llamado dos veces.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "cusqk2h8f2",
+      "spanish": "Incluso si llueve, iremos.",
+      "duplicatesConceptIds": [
+        "ms6nhszap6"
+      ],
+      "matchedOn": [
+        "incluso si",
+        "incluso"
+      ]
+    },
+    {
+      "id": "9jp0aafddq",
+      "spanish": "Iremos según el clima.",
+      "duplicatesConceptIds": [
+        "8iifdhj8ua"
+      ],
+      "matchedOn": [
+        "según"
+      ]
+    },
+    {
+      "id": "bo8t7ablhb",
+      "spanish": "La canción fue escrita por Ana.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "x2sd9owsz4",
+      "spanish": "La estatua de piedra vino de Italia.",
+      "duplicatesConceptIds": [
+        "myuguvt6ul"
+      ],
+      "matchedOn": [
+        "de pie"
+      ]
+    },
+    {
+      "id": "phh460203z",
+      "spanish": "La información está en la página web.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "r7g3ix0kei",
+      "spanish": "La lámpara está sobre la mesa.",
+      "duplicatesConceptIds": [
+        "jfphg18mwh"
+      ],
+      "matchedOn": [
+        "sobre",
+        "sobre la mesa"
+      ]
+    },
+    {
+      "id": "ro4kzo4nt6",
+      "spanish": "La medicina se toma dos veces por día.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "dgyjup8smf",
+      "spanish": "La mesa de la cocina está limpia.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "h4roy0sxu9",
+      "spanish": "La novela de Ana trata de una familia de Bogotá que acaba de regresar de España.",
+      "duplicatesConceptIds": [
+        "tef3nelk2n"
+      ],
+      "matchedOn": [
+        "acaba de"
+      ]
+    },
+    {
+      "id": "0sub6dcnmn",
+      "spanish": "La oficina es más grande que el apartamento.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "laxmkjhzfy",
+      "spanish": "La oficina está arriba de la tienda.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "of3esmfezv",
+      "spanish": "La persona que necesito llamar.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "cyial2tf51",
+      "spanish": "La persona que trabaja con Laura.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "13fux8dsvq",
+      "spanish": "La policía fue tras el ladrón.",
+      "duplicatesConceptIds": [
+        "s2d4wcjbxo"
+      ],
+      "matchedOn": [
+        "tras el"
+      ]
+    },
+    {
+      "id": "3iujqhzp6e",
+      "spanish": "La reunión es a las tres.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "yvcs7qqm0w",
+      "spanish": "La reunión es mañana.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "8mcag7iq4g",
+      "spanish": "La reunión fue cancelada, lo cual entiendo.",
+      "duplicatesConceptIds": [
+        "7izjvheben"
+      ],
+      "matchedOn": [
+        "lo cual"
+      ]
+    },
+    {
+      "id": "53nvqr2fcw",
+      "spanish": "La silla está contra la pared.",
+      "duplicatesConceptIds": [
+        "s1v75khflh"
+      ],
+      "matchedOn": [
+        "contra la"
+      ]
+    },
+    {
+      "id": "ws07ufaqrb",
+      "spanish": "La taza de café de Ana está en la mesa de la cocina.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "nyyhyjcg8p",
+      "spanish": "La taza de café está sobre la mesa de la cocina.",
+      "duplicatesConceptIds": [
+        "jfphg18mwh"
+      ],
+      "matchedOn": [
+        "sobre",
+        "sobre la mesa"
+      ]
+    },
+    {
+      "id": "7vgrtjch7w",
+      "spanish": "La tienda está debajo de la oficina.",
+      "duplicatesConceptIds": [
+        "w3ipgpiocx"
+      ],
+      "matchedOn": [
+        "debajo de"
+      ]
+    },
+    {
+      "id": "r9zalg6wg8",
+      "spanish": "La ventana mira hacia el norte.",
+      "duplicatesConceptIds": [
+        "95yrl4jxn3"
+      ],
+      "matchedOn": [
+        "hacia"
+      ]
+    },
+    {
+      "id": "nqvl50klaw",
+      "spanish": "La votación quedó diez contra cinco.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "q0nhoouzks",
+      "spanish": "Las llaves están en el piso.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "plmxagk5yh",
+      "spanish": "Laura dice que la reunión empieza a las nueve.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "cso9u0csec",
+      "spanish": "Laura está a salvo en casa.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "fxlyixkuxc",
+      "spanish": "Laura está en el carro.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "g1scjgaznc",
+      "spanish": "Laura está en el evento.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "gt09shv21m",
+      "spanish": "Laura llegó más temprano que Diana.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "v123o439fb",
+      "spanish": "Laura no llamó y Mateo tampoco.",
+      "duplicatesConceptIds": [
+        "avsnfusolj"
+      ],
+      "matchedOn": [
+        "tampoco"
+      ]
+    },
+    {
+      "id": "gu7kggkxat",
+      "spanish": "Laura se sintió mal ayer, pero ahora está bien.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "gcs5expwd8",
+      "spanish": "Le digo a Laura que lo haga.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "1hurtnzjt2",
+      "spanish": "Le doy el libro a Laura.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "9aszt17eto",
+      "spanish": "Leí gran parte del libro y tomé muchas notas.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "o7dh49rgk7",
+      "spanish": "Leí una novela de Gabriel García Márquez y escuché una canción de Shakira.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "0bf6wv17i1",
+      "spanish": "Llegó hacia las ocho.",
+      "duplicatesConceptIds": [
+        "95yrl4jxn3"
+      ],
+      "matchedOn": [
+        "hacia"
+      ]
+    },
+    {
+      "id": "tpu07txh81",
+      "spanish": "Lleva el documento a la tienda.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "kt5hnrbp0c",
+      "spanish": "Llovió durante toda la noche.",
+      "duplicatesConceptIds": [
+        "1x5p74ftvn"
+      ],
+      "matchedOn": [
+        "durante"
+      ]
+    },
+    {
+      "id": "bhbtmapzyn",
+      "spanish": "Lo hice por ti, no para ti.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "9zek1c1603",
+      "spanish": "Lo más importante es practicar.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "whqrdfhy2y",
+      "spanish": "Lo que más quiero es descansar.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "0wdwxc8c2f",
+      "spanish": "Los medios informaron la noticia.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "0dacbeaor9",
+      "spanish": "Los valores son iguales.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "3caljvlo67",
+      "spanish": "Mateo habla inglés también.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "40nr3qme03",
+      "spanish": "Me acordé de la reunión y de llamar a Ana.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "e15j2syzhj",
+      "spanish": "Me acordé de la reunión.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "so436prsie",
+      "spanish": "Me di cuenta del error cuando revisé el informe.",
+      "duplicatesConceptIds": [
+        "5zyk11qlrm"
+      ],
+      "matchedOn": [
+        "me di cuenta"
+      ]
+    },
+    {
+      "id": "4cjqakug5h",
+      "spanish": "Me di cuenta del error.",
+      "duplicatesConceptIds": [
+        "5zyk11qlrm"
+      ],
+      "matchedOn": [
+        "me di cuenta"
+      ]
+    },
+    {
+      "id": "vsvn9xb5j9",
+      "spanish": "Me enteré del libro de Ana, una historia sobre una familia de Colombia escrita por una autora de Bogotá.",
+      "duplicatesConceptIds": [
+        "70esj4z10e",
+        "jfphg18mwh"
+      ],
+      "matchedOn": [
+        "me enteré",
+        "sobre"
+      ]
+    },
+    {
+      "id": "l0q6zjufkd",
+      "spanish": "Me enteré del libro, pero nunca había oído hablar del autor.",
+      "duplicatesConceptIds": [
+        "70esj4z10e"
+      ],
+      "matchedOn": [
+        "me enteré",
+        "oído hablar"
+      ]
+    },
+    {
+      "id": "z2323ca7hv",
+      "spanish": "Mi vecino es muy bueno con los niños.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "pfavgz02fa",
+      "spanish": "Muy dentro de sí, sabía la verdad.",
+      "duplicatesConceptIds": [
+        "utt0pzt5s4"
+      ],
+      "matchedOn": [
+        "dentro de"
+      ]
+    },
+    {
+      "id": "qcjl7aqc59",
+      "spanish": "Necesitamos el mismo libro.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "7o65fl5bsg",
+      "spanish": "Necesito el informe para el viernes.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "4rltqpbtiy",
+      "spanish": "Necesito que Laura lo haga.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "5kt3lqleje",
+      "spanish": "Necesito tiempo para hacerlo.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "lfvre8nht1",
+      "spanish": "Necesito tiempo para terminar el informe.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "7v242mbo1o",
+      "spanish": "No es azul, sino verde.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "pkapofhfqr",
+      "spanish": "No fui, pues estaba enfermo.",
+      "duplicatesConceptIds": [
+        "jbzn0kwj0g"
+      ],
+      "matchedOn": [
+        "pues "
+      ]
+    },
+    {
+      "id": "ktjutq40s3",
+      "spanish": "No hables mientras comes.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "v358vpk3wr",
+      "spanish": "No he estado nunca en Cali.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "y8rzsncrpd",
+      "spanish": "No salí hasta las ocho.",
+      "duplicatesConceptIds": [
+        "16pwsfcg7n"
+      ],
+      "matchedOn": [
+        "hasta"
+      ]
+    },
+    {
+      "id": "uzltzwj80z",
+      "spanish": "No te preocupes; todo está bien.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "h59od822k3",
+      "spanish": "No tengo mucho tiempo para terminarlo hoy.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "1j9ocitjxy",
+      "spanish": "No tengo mucho tiempo, pero tengo muchas ideas.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "0xxbw7tm06",
+      "spanish": "No tengo mucho tiempo.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "xx2ctug7ca",
+      "spanish": "No tengo tiempo, así que voy a hacerlo mañana.",
+      "duplicatesConceptIds": [
+        "u109gx9ehn"
+      ],
+      "matchedOn": [
+        "así que"
+      ]
+    },
+    {
+      "id": "qno91oqbr6",
+      "spanish": "Nos vemos en el aeropuerto.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "undi2oecoq",
+      "spanish": "Nos vemos esta tarde.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "8ryeikjlxv",
+      "spanish": "Para un principiante, habla muy bien.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "8cm5ev9up7",
+      "spanish": "Poco después, empezó a llover.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "gvu0thxfhe",
+      "spanish": "Porque tengo que terminar el informe.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "08gdd9cf3d",
+      "spanish": "Primero termino el informe; luego te llamo.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "rt7rka2gzv",
+      "spanish": "Puedes venir mientras avises.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "o9szadt42t",
+      "spanish": "Quiero que Laura lo haga.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "ajwin87x5s",
+      "spanish": "Quiero saber dónde está la oficina.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "n0dybqigqm",
+      "spanish": "Quiero saber lo que piensas.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "mrmi8cm86p",
+      "spanish": "Quiero saber si tienes tiempo.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "8wnybh7699",
+      "spanish": "Quiero saber si vas o no.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "y10yphpk0f",
+      "spanish": "Repartió el dinero entre todos.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "2yp22t9edb",
+      "spanish": "Repártelo entre los estudiantes.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "tueq3rv1ei",
+      "spanish": "Salgo para la oficina.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "ax8wo7571k",
+      "spanish": "Salimos después de la reunión.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "jj7t95xheh",
+      "spanish": "Salimos para Bogotá mañana.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "tosp9cng0o",
+      "spanish": "Se arrodilló ante la estatua.",
+      "duplicatesConceptIds": [
+        "z1kohrhmbw"
+      ],
+      "matchedOn": [
+        "ante la"
+      ]
+    },
+    {
+      "id": "s8c28w092m",
+      "spanish": "Se fue porque estaba cansada.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "je4w9jap6g",
+      "spanish": "Se fue sin despedirse.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "jsxwyvm7k8",
+      "spanish": "Según el informe, faltan datos.",
+      "duplicatesConceptIds": [
+        "8iifdhj8ua"
+      ],
+      "matchedOn": [
+        "según"
+      ]
+    },
+    {
+      "id": "1nhp8viq6q",
+      "spanish": "Según yo, eso no funciona.",
+      "duplicatesConceptIds": [
+        "8iifdhj8ua"
+      ],
+      "matchedOn": [
+        "según"
+      ]
+    },
+    {
+      "id": "ecnv7bdqpe",
+      "spanish": "Si no vienes, avísame.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "3r5ixt8d7j",
+      "spanish": "Si tengo tiempo, voy a hacerlo.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "lm4477wbaj",
+      "spanish": "Siempre llego temprano.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "7fia6s6ldp",
+      "spanish": "Sin tu ayuda, no puedo hacerlo.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "me6wuhz2gv",
+      "spanish": "Solo necesito cinco minutos.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "959de6phbr",
+      "spanish": "Su actitud hacia mí cambió.",
+      "duplicatesConceptIds": [
+        "95yrl4jxn3"
+      ],
+      "matchedOn": [
+        "hacia"
+      ]
+    },
+    {
+      "id": "hrozgnwghp",
+      "spanish": "Sé que Laura está aquí.",
+      "duplicatesConceptIds": [
+        "wd6uku1ojd"
+      ],
+      "matchedOn": [
+        "sé que"
+      ]
+    },
+    {
+      "id": "273y1rfcqv",
+      "spanish": "Tampoco es tan difícil.",
+      "duplicatesConceptIds": [
+        "avsnfusolj",
+        "r9zf5ny811"
+      ],
+      "matchedOn": [
+        "tampoco",
+        " tan "
+      ]
+    },
+    {
+      "id": "j6z42wz5kd",
+      "spanish": "Te aseguro que es verdad.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "j8q9rqzdo6",
+      "spanish": "Te llamo para que sepas dónde estoy.",
+      "duplicatesConceptIds": [
+        "bw9ex8x6w9"
+      ],
+      "matchedOn": [
+        "para que"
+      ]
+    },
+    {
+      "id": "lvb5to405c",
+      "spanish": "Te mando el documento por correo.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "1ccs80dyof",
+      "spanish": "Tenemos bastante comida.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "b40h6yt3mj",
+      "spanish": "Tenemos la misma edad, casi igual.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "6xrgtmp8re",
+      "spanish": "Tenemos muchos libros para revisar esta semana.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "aiwdxhqtda",
+      "spanish": "Tenemos muchos libros.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "ktw8p0vn2n",
+      "spanish": "Tenemos suficiente tiempo.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "eqa7bd5x78",
+      "spanish": "Tengo ganas de salir, pero Ana quiere quedarse.",
+      "duplicatesConceptIds": [
+        "1jdy99z2dz"
+      ],
+      "matchedOn": [
+        "tengo ganas"
+      ]
+    },
+    {
+      "id": "1r6f49dqte",
+      "spanish": "Tengo ganas de salir.",
+      "duplicatesConceptIds": [
+        "1jdy99z2dz"
+      ],
+      "matchedOn": [
+        "tengo ganas"
+      ]
+    },
+    {
+      "id": "hsegofbecd",
+      "spanish": "Tengo la oportunidad de practicar y una nueva forma de estudiar.",
+      "duplicatesConceptIds": [
+        "172vkaz4pw"
+      ],
+      "matchedOn": [
+        "la oportunidad de"
+      ]
+    },
+    {
+      "id": "tfrfrw8ztc",
+      "spanish": "Tengo que terminarlo hoy.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "l21tqhahm5",
+      "spanish": "Tengo tanto trabajo y tantas reuniones.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "8pvnfywq1t",
+      "spanish": "Terminamos y luego salimos.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "h6r8tep1l6",
+      "spanish": "There was scarcely any food.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "a0wznzeczk",
+      "spanish": "Todavía estoy trabajando.",
+      "duplicatesConceptIds": [
+        "bluzvvve73"
+      ],
+      "matchedOn": [
+        "todavía"
+      ]
+    },
+    {
+      "id": "u2iudk0y6o",
+      "spanish": "Todavía lo estoy haciendo.",
+      "duplicatesConceptIds": [
+        "bluzvvve73"
+      ],
+      "matchedOn": [
+        "todavía"
+      ]
+    },
+    {
+      "id": "8t39wuvyja",
+      "spanish": "Todavía no he terminado.",
+      "duplicatesConceptIds": [
+        "bluzvvve73"
+      ],
+      "matchedOn": [
+        "todavía"
+      ]
+    },
+    {
+      "id": "bm6xqj82sa",
+      "spanish": "Todavía no lo he terminado.",
+      "duplicatesConceptIds": [
+        "bluzvvve73"
+      ],
+      "matchedOn": [
+        "todavía"
+      ]
+    },
+    {
+      "id": "wr5uyep1rf",
+      "spanish": "Todos, incluso Mateo, estuvieron de acuerdo.",
+      "duplicatesConceptIds": [
+        "ms6nhszap6"
+      ],
+      "matchedOn": [
+        "incluso"
+      ]
+    },
+    {
+      "id": "ontq12vx30",
+      "spanish": "Trabaja bajo presión.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "mpyj2yvsgd",
+      "spanish": "Trabaja por la tarde.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "w2tswd8ssk",
+      "spanish": "Trabajo hasta las seis.",
+      "duplicatesConceptIds": [
+        "16pwsfcg7n"
+      ],
+      "matchedOn": [
+        "hasta"
+      ]
+    },
+    {
+      "id": "mt1qoofux8",
+      "spanish": "Trabajo mientras ella estudia.",
+      "duplicatesConceptIds": [
+        "s2d4wcjbxo"
+      ],
+      "matchedOn": [
+        "tras el"
+      ]
+    },
+    {
+      "id": "ahnilv7vae",
+      "spanish": "Trabajo mucho y tomo muchas notas.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "x9h1owbuib",
+      "spanish": "Trae el documento de la oficina.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "wepq9ntrdr",
+      "spanish": "Tras la reunión, salimos.",
+      "duplicatesConceptIds": [
+        "s2d4wcjbxo"
+      ],
+      "matchedOn": [
+        "tras la"
+      ]
+    },
+    {
+      "id": "sj0en2boa5",
+      "spanish": "Tuvimos una discusión fuerte.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "0rejpklcdb",
+      "spanish": "Vengo de Bogotá y acabo de salir de la oficina.",
+      "duplicatesConceptIds": [
+        "tef3nelk2n"
+      ],
+      "matchedOn": [
+        "acabo de"
+      ]
+    },
+    {
+      "id": "ojop0cbnjn",
+      "spanish": "Vivimos en la misma calle.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "95k8trmonv",
+      "spanish": "Vivo aquí desde enero.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "h43m94nrbd",
+      "spanish": "Viví allí durante dos años.",
+      "duplicatesConceptIds": [
+        "1x5p74ftvn"
+      ],
+      "matchedOn": [
+        "durante"
+      ]
+    },
+    {
+      "id": "wpwliypouz",
+      "spanish": "Viví allí por dos años.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "gdbg20vlv5",
+      "spanish": "Volamos sobre la ciudad.",
+      "duplicatesConceptIds": [
+        "jfphg18mwh"
+      ],
+      "matchedOn": [
+        "sobre"
+      ]
+    },
+    {
+      "id": "9avk8laca4",
+      "spanish": "Voy a la oficina para hablar con Laura.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "t2lj6kybym",
+      "spanish": "Voy a llamarte antes de la reunión.",
+      "duplicatesConceptIds": [
+        "v30numtk7s"
+      ],
+      "matchedOn": [
+        "antes de"
+      ]
+    },
+    {
+      "id": "3w0kso9780",
+      "spanish": "Voy a llamarte después de la reunión.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "dxsonzzi65",
+      "spanish": "We barely arrived on time.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "zym82pm7a6",
+      "spanish": "Ya debería estar aquí.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "75x4om9d9s",
+      "spanish": "Ya lo he terminado; todavía no lo he terminado.",
+      "duplicatesConceptIds": [
+        "bluzvvve73"
+      ],
+      "matchedOn": [
+        "todavía"
+      ]
+    },
+    {
+      "id": "smbwmgy6w0",
+      "spanish": "Ya que estás aquí, ayúdame.",
+      "duplicatesConceptIds": [
+        "f1z9yzj3sy"
+      ],
+      "matchedOn": [
+        "ya que"
+      ]
+    },
+    {
+      "id": "46wc4stbaf",
+      "spanish": "Yo quiero ir también.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "vb1lw4xx3h",
+      "spanish": "Yo tampoco fui ni Ana tampoco.",
+      "duplicatesConceptIds": [
+        "avsnfusolj"
+      ],
+      "matchedOn": [
+        "tampoco"
+      ]
+    },
+    {
+      "id": "r50of41clx",
+      "spanish": "Yo tampoco quiero ir.",
+      "duplicatesConceptIds": [
+        "avsnfusolj"
+      ],
+      "matchedOn": [
+        "tampoco"
+      ]
+    },
+    {
+      "id": "p0klj19lzw",
+      "spanish": "sobre / por encima de",
+      "duplicatesConceptIds": [
+        "jfphg18mwh"
+      ],
+      "matchedOn": [
+        "sobre"
+      ]
+    },
+    {
+      "id": "eg72jpdazi",
+      "spanish": "¿Cuántos libros necesitas?",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence, no distinctive uncovered construction"
+      ]
+    },
+    {
+      "id": "6qy4e6x3e0",
+      "spanish": "¿Quieres café o agua?",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    },
+    {
+      "id": "zhvghkhyww",
+      "spanish": "¿Qué tan grande es la oficina?",
+      "duplicatesConceptIds": [
+        "r9zf5ny811"
+      ],
+      "matchedOn": [
+        " tan "
+      ]
+    },
+    {
+      "id": "j22avntic8",
+      "spanish": "Últimamente trabajo desde casa.",
+      "duplicatesConceptIds": [],
+      "matchedOn": [
+        "generic sentence / basic already-covered vocabulary, no distinctive uncovered construction identified"
+      ]
+    }
+  ],
+  "gaps": [
+    {
+      "id": "wmmatrxzh1",
+      "spanish": "Además de inglés, habla francés.",
+      "english": "Besides English, she speaks French.",
+      "missingPoints": [
+        "además de"
+      ]
+    },
+    {
+      "id": "7xx1fimdtn",
+      "spanish": "Ana cocina, mientras que Luis limpia.",
+      "english": "Ana cooks, whereas Luis cleans.",
+      "missingPoints": [
+        "mientras que"
+      ]
+    },
+    {
+      "id": "xymr8kc90t",
+      "spanish": "Ante todo, mantén la calma.",
+      "english": "Above all, stay calm.",
+      "missingPoints": [
+        "ante todo"
+      ]
+    },
+    {
+      "id": "gwnpt7pmq9",
+      "spanish": "Asegura que la puerta esté cerrada.",
+      "english": "Make sure the door is locked.",
+      "missingPoints": [
+        "asegura que"
+      ]
+    },
+    {
+      "id": "vk183kq4k6",
+      "spanish": "Aun así, continuamos.",
+      "english": "Even so, we continued.",
+      "missingPoints": [
+        "aun así"
+      ]
+    },
+    {
+      "id": "8a3s9ew4ih",
+      "spanish": "Años atrás, vivía en Cali.",
+      "english": "Years ago, I lived in Cali.",
+      "missingPoints": [
+        "años atrás"
+      ]
+    },
+    {
+      "id": "dakptjtohz",
+      "spanish": "Basta con leer el primer párrafo.",
+      "english": "All you need to do is read the first paragraph.",
+      "missingPoints": [
+        "basta con"
+      ]
+    },
+    {
+      "id": "gw00aci88b",
+      "spanish": "Basta con una llamada.",
+      "english": "All it takes is one call.",
+      "missingPoints": [
+        "basta con"
+      ]
+    },
+    {
+      "id": "21gdf6imx4",
+      "spanish": "Bien estudias, bien trabajas.",
+      "english": "Either you study or you work.",
+      "missingPoints": [
+        "bien estudias, bien"
+      ]
+    },
+    {
+      "id": "uqw7qo48c9",
+      "spanish": "Caminamos más de cinco kilómetros.",
+      "english": "We walked more than five kilometers.",
+      "missingPoints": [
+        "más de cinco"
+      ]
+    },
+    {
+      "id": "wha5r4jqwd",
+      "spanish": "Cierta persona llamó.",
+      "english": "A certain person called.",
+      "missingPoints": [
+        "cierta persona"
+      ]
+    },
+    {
+      "id": "31la252ocl",
+      "spanish": "Dame siquiera cinco minutos.",
+      "english": "Give me at least five minutes.",
+      "missingPoints": [
+        "siquiera (at least/even)"
+      ]
+    },
+    {
+      "id": "zeorvyamau",
+      "spanish": "De ahora en adelante, llama primero.",
+      "english": "From now on, call first.",
+      "missingPoints": [
+        "de ahora en adelante"
+      ]
+    },
+    {
+      "id": "lcz2539dyj",
+      "spanish": "De pronto empezó a llover.",
+      "english": "Suddenly, it started raining.",
+      "missingPoints": [
+        "de pronto"
+      ]
+    },
+    {
+      "id": "0jle9bry8q",
+      "spanish": "De pronto está en casa.",
+      "english": "Maybe she is at home.",
+      "missingPoints": [
+        "de pronto"
+      ]
+    },
+    {
+      "id": "pwdq4vnqib",
+      "spanish": "Debes responder dentro del plazo.",
+      "english": "You must respond within the deadline.",
+      "missingPoints": [
+        "dentro del plazo"
+      ]
+    },
+    {
+      "id": "0rg57o7g76",
+      "spanish": "Desde mañana, abriremos más temprano.",
+      "english": "Starting tomorrow, we will open earlier.",
+      "missingPoints": [
+        "desde mañana"
+      ]
+    },
+    {
+      "id": "yhh3l4act9",
+      "spanish": "Desde mi punto de vista, es correcto.",
+      "english": "From my point of view, it is correct.",
+      "missingPoints": [
+        "desde mi punto de vista"
+      ]
+    },
+    {
+      "id": "wine5n6gd9",
+      "spanish": "El resultado depende de Ana y de que el sistema funcione.",
+      "english": "The result depends on Ana and on the system working.",
+      "missingPoints": [
+        "depender de [algo/alguien]"
+      ]
+    },
+    {
+      "id": "v7psmvhjff",
+      "spanish": "Entre más practicas, más aprendes.",
+      "english": "The more you practice, the more you learn.",
+      "missingPoints": [
+        "entre más"
+      ]
+    },
+    {
+      "id": "fzg570rb5k",
+      "spanish": "Es caro; además, queda lejos.",
+      "english": "It is expensive; moreover, it is far away.",
+      "missingPoints": [
+        "además (moreover, bare connector)"
+      ]
+    },
+    {
+      "id": "yv5pwer3eq",
+      "spanish": "Estaba cansado; aun así, salió.",
+      "english": "He was tired; even so, he went out.",
+      "missingPoints": [
+        "aun así"
+      ]
+    },
+    {
+      "id": "45izdwmxbd",
+      "spanish": "Estoy ansioso por que llegue.",
+      "english": "I can hardly wait.",
+      "missingPoints": [
+        "estoy ansioso"
+      ]
+    },
+    {
+      "id": "mhy4vnhbw9",
+      "spanish": "Está atrás de la casa.",
+      "english": "It is behind the house.",
+      "missingPoints": [
+        "en medio de [algo]"
+      ]
+    },
+    {
+      "id": "7nzdyaq2x1",
+      "spanish": "Está en medio de la calle.",
+      "english": "It is in the middle of the street.",
+      "missingPoints": [
+        "en medio de [algo]"
+      ]
+    },
+    {
+      "id": "2yywyl5i44",
+      "spanish": "Hay más de cien personas.",
+      "english": "There are more than one hundred people.",
+      "missingPoints": [
+        "más de cien"
+      ]
+    },
+    {
+      "id": "vmo1fuguve",
+      "spanish": "La respuesta tardó en llegar.",
+      "english": "The response was slow to arrive.",
+      "missingPoints": [
+        "tardar en [hacer algo]"
+      ]
+    },
+    {
+      "id": "m2oepphsrg",
+      "spanish": "La taza de café está llena, pero la taza para café está rota.",
+      "english": "The cup of coffee is full, but the coffee cup is broken.",
+      "missingPoints": [
+        "de vs para distinction (taza de café vs taza para café)"
+      ]
+    },
+    {
+      "id": "4icl1zhexf",
+      "spanish": "La taza de café está vacía, pero la taza para café está limpia.",
+      "english": "The cup of coffee is empty, but the coffee cup is clean.",
+      "missingPoints": [
+        "de vs para distinction (taza de café vs taza para café)"
+      ]
+    },
+    {
+      "id": "o4unfsl9d0",
+      "spanish": "La taza de café no es una taza para café.",
+      "english": "The cup of coffee isn't a coffee cup.",
+      "missingPoints": [
+        "de vs para distinction (taza de café vs taza para café)"
+      ]
+    },
+    {
+      "id": "zzy7poh40i",
+      "spanish": "Laura también viene y, además, trae café.",
+      "english": "Laura is coming too, and she is also bringing coffee.",
+      "missingPoints": [
+        "además (moreover, bare connector)"
+      ]
+    },
+    {
+      "id": "tpnbbxdlyr",
+      "spanish": "Llevo dos días sin dormir.",
+      "english": "I haven't slept for two days.",
+      "missingPoints": [
+        "llevar [tiempo] sin [hacer algo]"
+      ]
+    },
+    {
+      "id": "5r4vw18q4o",
+      "spanish": "Lo hizo por sí mismo.",
+      "english": "He did it by himself.",
+      "missingPoints": [
+        "por sí mismo"
+      ]
+    },
+    {
+      "id": "ub2iy1fuxk",
+      "spanish": "Mientras tanto, espera aquí.",
+      "english": "Meanwhile, wait here.",
+      "missingPoints": [
+        "mientras tanto (meanwhile)"
+      ]
+    },
+    {
+      "id": "3eolc3pz88",
+      "spanish": "Mientras tanto, esperaremos.",
+      "english": "Meanwhile, we'll wait.",
+      "missingPoints": [
+        "mientras tanto (meanwhile)"
+      ]
+    },
+    {
+      "id": "97h5zo76ab",
+      "spanish": "Más vale tarde que nunca.",
+      "english": "Better late than never.",
+      "missingPoints": [
+        "más vale tarde"
+      ]
+    },
+    {
+      "id": "i4tdzuamg4",
+      "spanish": "Ni Ana ni Luis vinieron.",
+      "english": "Neither Ana nor Luis came.",
+      "missingPoints": [
+        "ni...ni (neither...nor)"
+      ]
+    },
+    {
+      "id": "v96gg2fw1q",
+      "spanish": "Ni siquiera lo intentó.",
+      "english": "He didn't even try.",
+      "missingPoints": [
+        "siquiera (at least/even)"
+      ]
+    },
+    {
+      "id": "p3ekkb7u3j",
+      "spanish": "Ni siquiera respondió.",
+      "english": "She didn't even answer.",
+      "missingPoints": [
+        "siquiera (at least/even)"
+      ]
+    },
+    {
+      "id": "ksf8aynt7s",
+      "spanish": "No hace nada sino quejarse.",
+      "english": "He does nothing but complain.",
+      "missingPoints": [
+        "sino que"
+      ]
+    },
+    {
+      "id": "dhyt13en8w",
+      "spanish": "No llamó ni escribió.",
+      "english": "She neither called nor wrote.",
+      "missingPoints": [
+        "ni...ni (neither...nor)"
+      ]
+    },
+    {
+      "id": "52dbadce2l",
+      "spanish": "No llamó siquiera una vez.",
+      "english": "She didn't call even once.",
+      "missingPoints": [
+        "siquiera (at least/even)"
+      ]
+    },
+    {
+      "id": "etyzwht0ts",
+      "spanish": "No solo vino, sino que ayudó.",
+      "english": "She not only came but also helped.",
+      "missingPoints": [
+        "sino que"
+      ]
+    },
+    {
+      "id": "jdnb164lv0",
+      "spanish": "Pienso, luego existo.",
+      "english": "I think, therefore I am.",
+      "missingPoints": [
+        "pienso, luego"
+      ]
+    },
+    {
+      "id": "gaw97ecxke",
+      "spanish": "Por cierto, Laura llamó.",
+      "english": "By the way, Laura called.",
+      "missingPoints": [
+        "por cierto"
+      ]
+    },
+    {
+      "id": "0lold5fh3d",
+      "spanish": "Puedes llamarme siempre que quieras.",
+      "english": "You can call me whenever/as long as you want.",
+      "missingPoints": [
+        "siempre que"
+      ]
+    },
+    {
+      "id": "9zwpouaz61",
+      "spanish": "Será mejor llamar primero.",
+      "english": "We had better call first.",
+      "missingPoints": [
+        "será mejor"
+      ]
+    },
+    {
+      "id": "g9lxdgb2ld",
+      "spanish": "Si bien es caro, funciona.",
+      "english": "Although it's expensive, it works.",
+      "missingPoints": [
+        "si bien es"
+      ]
+    },
+    {
+      "id": "t114homehd",
+      "spanish": "Siempre que llama, estoy ocupado.",
+      "english": "Whenever she calls, I am busy.",
+      "missingPoints": [
+        "siempre que"
+      ]
+    },
+    {
+      "id": "23jqqwk28f",
+      "spanish": "Tardé una hora en terminar.",
+      "english": "It took me an hour to finish.",
+      "missingPoints": [
+        "tardar en [hacer algo]"
+      ]
+    },
+    {
+      "id": "5rr4zebvp7",
+      "spanish": "Temblaba de frío y lloraba de alegría.",
+      "english": "She was shaking with cold and crying with joy.",
+      "missingPoints": [
+        "de frío",
+        "de alegría"
+      ]
+    },
+    {
+      "id": "01slode9o8",
+      "spanish": "Tenemos mucho tiempo; no hay que apurarnos.",
+      "english": "We have plenty of time; there's no need to rush.",
+      "missingPoints": [
+        "no hay que [hacer algo] (there's no need to)"
+      ]
+    },
+    {
+      "id": "i7kngch29y",
+      "spanish": "Terminó más pronto de lo esperado.",
+      "english": "She finished earlier than expected.",
+      "missingPoints": [
+        "de lo esperado (comparative + expected)"
+      ]
+    },
+    {
+      "id": "6k3ek5jhqf",
+      "spanish": "Trabaja tanto como yo.",
+      "english": "She works as much as I do.",
+      "missingPoints": [
+        "tanto como"
+      ]
+    },
+    {
+      "id": "eyue78cz5h",
+      "spanish": "Trabajo de noche y descanso de vez en cuando.",
+      "english": "I work at night and rest from time to time.",
+      "missingPoints": [
+        "de vez en cuando (from time to time)"
+      ]
+    },
+    {
+      "id": "szn7fm8wsx",
+      "spanish": "Trabajo mucho entre semana, pero descanso los domingos.",
+      "english": "I work a lot during the week, but I rest on Sundays.",
+      "missingPoints": [
+        "entre semana (during the week)"
+      ]
+    },
+    {
+      "id": "o2ms964cwz",
+      "spanish": "Trabajo mucho entre semana.",
+      "english": "I work a lot during the week.",
+      "missingPoints": [
+        "entre semana (during the week)"
+      ]
+    },
+    {
+      "id": "8g59ojfuw4",
+      "spanish": "Vinieron todos menos Laura.",
+      "english": "Everyone except Laura came.",
+      "missingPoints": [
+        "menos [alguien] (except somebody)"
+      ]
+    },
+    {
+      "id": "20iwl9s0r5",
+      "spanish": "Vuelve dentro de una hora.",
+      "english": "Come back in an hour.",
+      "missingPoints": [
+        "dentro de una hora"
+      ]
+    },
+    {
+      "id": "rey5kzco3o",
+      "spanish": "¿Con quién está hablando?",
+      "english": "To whom are you speaking?",
+      "missingPoints": [
+        "WH-question sentence templates not verified beyond bare question words"
+      ]
+    },
+    {
+      "id": "xn3hhqqgv2",
+      "spanish": "¿Con quién estás hablando?",
+      "english": "Who are you talking to?",
+      "missingPoints": [
+        "WH-question sentence templates not verified beyond bare question words"
+      ]
+    },
+    {
+      "id": "kg63snjtds",
+      "spanish": "¿Con qué te puedo ayudar?",
+      "english": "What can I help you with?",
+      "missingPoints": [
+        "WH-question sentence templates not verified beyond bare question words"
+      ]
+    },
+    {
+      "id": "fwytkxeon9",
+      "spanish": "¿Cuál libro quieres, este o ese?",
+      "english": "Which book do you want, this one or that one?",
+      "missingPoints": [
+        "WH-question sentence templates not verified beyond bare question words"
+      ]
+    },
+    {
+      "id": "l0f7fdzag6",
+      "spanish": "¿Cuán grande es la oficina?",
+      "english": "How big is the office?",
+      "missingPoints": [
+        "cuán grande"
+      ]
+    },
+    {
+      "id": "lrfioq96ny",
+      "spanish": "¿Cuándo empieza la reunión?",
+      "english": "When does the meeting start?",
+      "missingPoints": [
+        "WH-question sentence templates not verified beyond bare question words"
+      ]
+    },
+    {
+      "id": "fnszz28inq",
+      "spanish": "¿Cuánto tiempo has estado aquí?",
+      "english": "How long have you been here?",
+      "missingPoints": [
+        "WH-question sentence templates not verified beyond bare question words"
+      ]
+    },
+    {
+      "id": "5fuqp9pz5z",
+      "spanish": "¿Cuánto tiempo necesitas?",
+      "english": "How much time do you need?",
+      "missingPoints": [
+        "WH-question sentence templates not verified beyond bare question words"
+      ]
+    },
+    {
+      "id": "n19h8scdqx",
+      "spanish": "¿De qué estás hablando?",
+      "english": "What are you talking about?",
+      "missingPoints": [
+        "WH-question sentence templates not verified beyond bare question words"
+      ]
+    },
+    {
+      "id": "cboe3ncvvg",
+      "spanish": "¿Dónde está la oficina?",
+      "english": "Where is the office?",
+      "missingPoints": [
+        "WH-question sentence templates not verified beyond bare question words"
+      ]
+    },
+    {
+      "id": "4sabms9mlz",
+      "spanish": "¿Nunca has viajado solo?",
+      "english": "Haven't you ever traveled alone?",
+      "missingPoints": [
+        "nunca has"
+      ]
+    },
+    {
+      "id": "dzhyd6xsd6",
+      "spanish": "¿Por qué lo necesitas?",
+      "english": "Why do you need it?",
+      "missingPoints": [
+        "WH-question sentence templates not verified beyond bare question words"
+      ]
+    }
+  ],
+  "skipped_not_actually_corrupted": [
+    {
+      "id": "aixmzqjpam",
+      "spanish": "debajo de / más abajo de",
+      "english": "below"
+    },
+    {
+      "id": "cl9enr8dnn",
+      "spanish": "el nombre de la tienda",
+      "english": "the name of the store"
+    },
+    {
+      "id": "lyttcoaldo",
+      "spanish": "en el cuarto / la habitación",
+      "english": "in the room"
+    },
+    {
+      "id": "9qwvwwgrlt",
+      "spanish": "encima de / arriba de",
+      "english": "above"
+    },
+    {
+      "id": "7c8rxvmsnl",
+      "spanish": "entre dos cosas o personas",
+      "english": "between"
+    },
+    {
+      "id": "yt3bjazug3",
+      "spanish": "la tarde / primeras horas de la noche",
+      "english": "the evening"
+    },
+    {
+      "id": "map0ad7rwe",
+      "spanish": "suficiente / suficientes",
+      "english": "sufficient"
+    }
+  ]
+}

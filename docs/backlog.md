@@ -15,8 +15,8 @@ Curate the curriculum into a selective, trustworthy teaching catalog, then build
 
 - [ ] Establish a database baseline: counts by role and collection, duplicate candidates, malformed-record patterns, and oversized or inconsistent collection families.
 - [ ] Remove obvious garbage, accidental sentence records, unusable fragments, and concepts with no teaching or retrieval value.
+- [ ] Normalize retained concepts consistently: infinitives, noun articles, adjective support verbs, placeholders, transformations, phrasal roots and particles, and bilingual examples. Do this before deduplication so near-duplicates that only differ by formatting (bracket conventions, accents, capitalization) actually surface as matches.
 - [ ] Merge true duplicates while preserving the strongest normalized concept, examples, useful collections, and provenance.
-- [ ] Normalize retained concepts consistently: infinitives, noun articles, adjective support verbs, placeholders, transformations, phrasal roots and particles, and bilingual examples.
 - [ ] Consolidate collections into a predictable taxonomy for grammar, constructions, semantics, cognates, transformations, morphology, and pronunciation.
 - [ ] Gut the `core` tier using the functional-necessity test; keep `supporting` selective and demote valid secondary material to `reference`.
 - [ ] Complete the pronunciation-family review for concepts still marked `sound metadata pending review` when it affects the first modules or high-priority retrieval.
