@@ -156,7 +156,7 @@
         {
           "id": "quiera-o-no-correction",
           "action": "revise",
-          "existingConceptId": "quiera-o-no",
+          "existingConceptId": "5jgulxtbag",
           "suggestedCurriculumRole": "supporting",
           "spanish": "quiera o no",
           "english": "whether [someone] wants to or not",
@@ -1430,7 +1430,7 @@
         {
           "id": "querido-adjective-grammar-tag",
           "action": "revise",
-          "existingConceptId": "querido-adjective",
+          "existingConceptId": "tamzftp6b6",
           "suggestedCurriculumRole": "reference",
           "spanish": "querido/a",
           "english": "beloved",
@@ -3131,7 +3131,7 @@
         {
           "id": "querer-decir-add-decir-collection",
           "action": "revise",
-          "existingConceptId": "querer-decir",
+          "existingConceptId": "592w2y5gz1",
           "suggestedCurriculumRole": "core",
           "spanish": "querer decir",
           "english": "to mean",
@@ -3156,7 +3156,7 @@
         {
           "id": "quiero-decir-add-decir-collection",
           "action": "revise",
-          "existingConceptId": "quiero-decir-discourse",
+          "existingConceptId": "okgrw0eqjz",
           "suggestedCurriculumRole": "supporting",
           "spanish": "quiero decir",
           "english": "I mean",
@@ -8878,7 +8878,7 @@
         {
           "id": "acordar-agree-to-do",
           "action": "revise",
-          "existingConceptId": "acordar-agree-to-do",
+          "existingConceptId": "rx423e30re",
           "suggestedCurriculumRole": "supporting",
           "spanish": "acordar [hacer algo]",
           "english": "to agree to [do something]",
@@ -9048,7 +9048,7 @@
         {
           "id": "aparecer-appear",
           "action": "revise",
-          "existingConceptId": "aparecer-appear",
+          "existingConceptId": "1j7btjr7um",
           "suggestedCurriculumRole": "supporting",
           "spanish": "aparecer",
           "english": "to appear",
@@ -9142,7 +9142,7 @@
         {
           "id": "buscar-look-for",
           "action": "revise",
-          "existingConceptId": "buscar-look-for",
+          "existingConceptId": "vzbnervzfr",
           "suggestedCurriculumRole": "core",
           "spanish": "buscar [algo]",
           "english": "to look for [something]",
@@ -9321,7 +9321,7 @@
         {
           "id": "devolver-give-back",
           "action": "revise",
-          "existingConceptId": "devolver-give-back",
+          "existingConceptId": "adhp7nfuvc",
           "suggestedCurriculumRole": "supporting",
           "spanish": "devolver [algo]",
           "english": "to give [something] back",
@@ -9391,7 +9391,7 @@
         {
           "id": "entregar-deliver",
           "action": "revise",
-          "existingConceptId": "entregar-deliver",
+          "existingConceptId": "my5u2xb3bf",
           "suggestedCurriculumRole": "reference",
           "spanish": "entregar [algo]",
           "english": "to deliver [something]",
@@ -9486,7 +9486,7 @@
         {
           "id": "enviar-send",
           "action": "revise",
-          "existingConceptId": "enviar-send",
+          "existingConceptId": "hzhx6yw5qb",
           "suggestedCurriculumRole": "core",
           "spanish": "enviar [algo]",
           "english": "to send [something]",
@@ -9649,7 +9649,7 @@
         {
           "id": "lograr-manage-to",
           "action": "revise",
-          "existingConceptId": "lograr-manage-to",
+          "existingConceptId": "p8bg3qqy9j",
           "suggestedCurriculumRole": "reference",
           "spanish": "lograr [hacer algo]",
           "english": "to manage to [do something]",
@@ -10073,7 +10073,7 @@
         {
           "id": "postularse-apply-for",
           "action": "revise",
-          "existingConceptId": "postularse-apply-for",
+          "existingConceptId": "kfalstjcfy",
           "suggestedCurriculumRole": "reference",
           "spanish": "postularse a [algo]",
           "english": "to apply for [something]",
@@ -23585,7 +23585,7 @@
         {
           "id": "revise-de-de-que-estas-hablando-what-are-you-talking-about--reverse-tags",
           "action": "revise",
-          "existingConceptId": "de-de-que-estas-hablando-what-are-you-talking-about",
+          "existingConceptId": "n19h8scdqx",
           "suggestedCurriculumRole": "reference",
           "spanish": "¿De qué estás hablando?",
           "english": "What are you talking about?",
@@ -23612,7 +23612,7 @@
         {
           "id": "revise-contra-la-silla-esta-contra-la-pared-the-chair-is-against-the-wall--reverse-tags",
           "action": "revise",
-          "existingConceptId": "contra-la-silla-esta-contra-la-pared-the-chair-is-against-the-wall",
+          "existingConceptId": "53nvqr2fcw",
           "suggestedCurriculumRole": "reference",
           "spanish": "La silla está contra la pared.",
           "english": "The chair is against the wall.",
@@ -23639,7 +23639,7 @@
         {
           "id": "revise-ya-ya-termine-i-ve-already-finished--reverse-tags",
           "action": "revise",
-          "existingConceptId": "ya-ya-termine-i-ve-already-finished",
+          "existingConceptId": "bht4te4k2k",
           "suggestedCurriculumRole": "reference",
           "spanish": "Ya terminé.",
           "english": "I've already finished.",
@@ -23666,7 +23666,7 @@
         {
           "id": "revise-ya-ya-basta-enough-already--reverse-tags",
           "action": "revise",
-          "existingConceptId": "ya-ya-basta-enough-already",
+          "existingConceptId": "lo8hzzt4fm",
           "suggestedCurriculumRole": "reference",
           "spanish": "¡Ya basta!",
           "english": "Enough already!",
@@ -23693,7 +23693,7 @@
         {
           "id": "revise-tampoco-yo-tampoco-quiero-ir-i-don-t-want-to-go-either--reverse-tags",
           "action": "revise",
-          "existingConceptId": "tampoco-yo-tampoco-quiero-ir-i-don-t-want-to-go-either",
+          "existingConceptId": "r50of41clx",
           "suggestedCurriculumRole": "reference",
           "spanish": "Yo tampoco quiero ir.",
           "english": "I don't want to go either.",
@@ -23719,7 +23719,7 @@
         {
           "id": "revise-siempre-siempre-llego-temprano-i-always-arrive-early--reverse-tags",
           "action": "revise",
-          "existingConceptId": "siempre-siempre-llego-temprano-i-always-arrive-early",
+          "existingConceptId": "lm4477wbaj",
           "suggestedCurriculumRole": "reference",
           "spanish": "Siempre llego temprano.",
           "english": "I always arrive early.",
@@ -23745,7 +23745,7 @@
         {
           "id": "revise-que-porque-tengo-que-terminar-el-informe-because-i-have-to-finish-the-report--reverse-tags",
           "action": "revise",
-          "existingConceptId": "que-porque-tengo-que-terminar-el-informe-because-i-have-to-finish-the-report",
+          "existingConceptId": "gvu0thxfhe",
           "suggestedCurriculumRole": "reference",
           "spanish": "Porque tengo que terminar el informe.",
           "english": "Because I have to finish the report.",
@@ -23771,7 +23771,7 @@
         {
           "id": "revise-que-se-fue-porque-estaba-cansada-she-left-because-she-was-tired--reverse-tags",
           "action": "revise",
-          "existingConceptId": "que-se-fue-porque-estaba-cansada-she-left-because-she-was-tired",
+          "existingConceptId": "s8c28w092m",
           "suggestedCurriculumRole": "reference",
           "spanish": "Se fue porque estaba cansada.",
           "english": "She left because she was tired.",
@@ -23797,7 +23797,7 @@
         {
           "id": "revise-durante-dormi-durante-la-pelicula-i-slept-during-the-movie--reverse-tags",
           "action": "revise",
-          "existingConceptId": "durante-dormi-durante-la-pelicula-i-slept-during-the-movie",
+          "existingConceptId": "6ctcc4ryet",
           "suggestedCurriculumRole": "reference",
           "spanish": "Dormí durante la película.",
           "english": "I slept during the movie.",
@@ -23823,7 +23823,7 @@
         {
           "id": "revise-suficiente-tenemos-suficiente-tiempo-we-have-enough-time--reverse-tags",
           "action": "revise",
-          "existingConceptId": "suficiente-tenemos-suficiente-tiempo-we-have-enough-time",
+          "existingConceptId": "ktw8p0vn2n",
           "suggestedCurriculumRole": "reference",
           "spanish": "Tenemos suficiente tiempo.",
           "english": "We have enough time.",
@@ -23852,7 +23852,7 @@
         {
           "id": "revise-bien-estoy-bien-i-am-fine--reverse-tags",
           "action": "revise",
-          "existingConceptId": "bien-estoy-bien-i-am-fine",
+          "existingConceptId": "v2svv5dy5c",
           "suggestedCurriculumRole": "reference",
           "spanish": "Estoy bien.",
           "english": "I am fine.",
@@ -23880,7 +23880,7 @@
         {
           "id": "revise-alto-el-muro-es-alto-the-wall-is-high--reverse-tags",
           "action": "revise",
-          "existingConceptId": "alto-el-muro-es-alto-the-wall-is-high",
+          "existingConceptId": "ffr5aig4sd",
           "suggestedCurriculumRole": "reference",
           "spanish": "El muro es alto.",
           "english": "The wall is high.",
@@ -23906,7 +23906,7 @@
         {
           "id": "revise-como-como-lo-haces-how-do-you-do-it--reverse-tags",
           "action": "revise",
-          "existingConceptId": "como-como-lo-haces-how-do-you-do-it",
+          "existingConceptId": "ltag03rg5k",
           "suggestedCurriculumRole": "reference",
           "spanish": "¿Cómo lo haces?",
           "english": "How do you do it?",
@@ -23932,7 +23932,7 @@
         {
           "id": "revise-tanto-que-tan-grande-es-la-oficina-how-big-is-the-office--reverse-tags",
           "action": "revise",
-          "existingConceptId": "tanto-que-tan-grande-es-la-oficina-how-big-is-the-office",
+          "existingConceptId": "zhvghkhyww",
           "suggestedCurriculumRole": "reference",
           "spanish": "¿Qué tan grande es la oficina?",
           "english": "How big is the office?",
@@ -23958,7 +23958,7 @@
         {
           "id": "revise-cuanto-cuan-grande-es-la-oficina-how-big-is-the-office--reverse-tags",
           "action": "revise",
-          "existingConceptId": "cuanto-cuan-grande-es-la-oficina-how-big-is-the-office",
+          "existingConceptId": "l0f7fdzag6",
           "suggestedCurriculumRole": "reference",
           "spanish": "¿Cuán grande es la oficina?",
           "english": "How big is the office?",
@@ -23984,7 +23984,7 @@
         {
           "id": "revise-cuanto-cuanto-necesitas-how-much-do-you-need--reverse-tags",
           "action": "revise",
-          "existingConceptId": "cuanto-cuanto-necesitas-how-much-do-you-need",
+          "existingConceptId": "ccia5llxwh",
           "suggestedCurriculumRole": "reference",
           "spanish": "¿Cuánto necesitas?",
           "english": "How much do you need?",
@@ -24010,7 +24010,7 @@
         {
           "id": "revise-cuanto-cuantos-libros-necesitas-how-many-books-do-you-need--reverse-tags",
           "action": "revise",
-          "existingConceptId": "cuanto-cuantos-libros-necesitas-how-many-books-do-you-need",
+          "existingConceptId": "eg72jpdazi",
           "suggestedCurriculumRole": "reference",
           "spanish": "¿Cuántos libros necesitas?",
           "english": "How many books do you need?",
@@ -24036,7 +24036,7 @@
         {
           "id": "revise-cuanto-cuanto-tiempo-necesitas-how-much-time-do-you-need--reverse-tags",
           "action": "revise",
-          "existingConceptId": "cuanto-cuanto-tiempo-necesitas-how-much-time-do-you-need",
+          "existingConceptId": "5fuqp9pz5z",
           "suggestedCurriculumRole": "reference",
           "spanish": "¿Cuánto tiempo necesitas?",
           "english": "How much time do you need?",
@@ -24062,7 +24062,7 @@
         {
           "id": "revise-cuanto-cuanto-tiempo-has-estado-aqui-how-long-have-you-been-here--reverse-tags",
           "action": "revise",
-          "existingConceptId": "cuanto-cuanto-tiempo-has-estado-aqui-how-long-have-you-been-here",
+          "existingConceptId": "fnszz28inq",
           "suggestedCurriculumRole": "reference",
           "spanish": "¿Cuánto tiempo has estado aquí?",
           "english": "How long have you been here?",
@@ -24088,7 +24088,7 @@
         {
           "id": "revise-tarde-llegue-tarde-i-arrived-late--reverse-tags",
           "action": "revise",
-          "existingConceptId": "tarde-llegue-tarde-i-arrived-late",
+          "existingConceptId": "feiqarcmnl",
           "suggestedCurriculumRole": "reference",
           "spanish": "Llegué tarde.",
           "english": "I arrived late.",
@@ -24114,7 +24114,7 @@
         {
           "id": "revise-de-la-taza-de-cafe-de-ana-esta-en-la-mesa-de-la-cocina-ana-s-coffee-cup-is-on-the-kitchen-table--reverse-tags",
           "action": "revise",
-          "existingConceptId": "de-la-taza-de-cafe-de-ana-esta-en-la-mesa-de-la-cocina-ana-s-coffee-cup-is-on-the-kitchen-table",
+          "existingConceptId": "ws07ufaqrb",
           "suggestedCurriculumRole": "reference",
           "spanish": "La taza de café de Ana está en la mesa de la cocina.",
           "english": "Ana's coffee cup is on the kitchen table.",
@@ -24140,7 +24140,7 @@
         {
           "id": "revise-de-el-nombre-de-la-tienda-aparece-al-final-de-la-primera-pagina-the-name-of-the-store-appears-at-the-end-of-th--reverse-tags",
           "action": "revise",
-          "existingConceptId": "de-el-nombre-de-la-tienda-aparece-al-final-de-la-primera-pagina-the-name-of-the-store-appears-at-the-end-of-th",
+          "existingConceptId": "v1nd7zu0yx",
           "suggestedCurriculumRole": "reference",
           "spanish": "El nombre de la tienda aparece al final de la primera página.",
           "english": "The name of the store appears at the end of the first page.",
@@ -24166,7 +24166,7 @@
         {
           "id": "revise-de-el-nombre-de-la-tienda-esta-al-final-de-la-calle-the-name-of-the-store-is-at-the-end-of-the-street--reverse-tags",
           "action": "revise",
-          "existingConceptId": "de-el-nombre-de-la-tienda-esta-al-final-de-la-calle-the-name-of-the-store-is-at-the-end-of-the-street",
+          "existingConceptId": "tgzwuiok04",
           "suggestedCurriculumRole": "reference",
           "spanish": "El nombre de la tienda está al final de la calle.",
           "english": "The name of the store is at the end of the street.",
@@ -24192,7 +24192,7 @@
         {
           "id": "revise-con-con-quien-estas-hablando-who-are-you-talking-to--reverse-tags",
           "action": "revise",
-          "existingConceptId": "con-con-quien-estas-hablando-who-are-you-talking-to",
+          "existingConceptId": "xn3hhqqgv2",
           "suggestedCurriculumRole": "reference",
           "spanish": "¿Con quién estás hablando?",
           "english": "Who are you talking to?",
@@ -24218,7 +24218,7 @@
         {
           "id": "revise-con-esa-es-la-persona-con-quien-hable-that-s-the-person-i-spoke-to--reverse-tags",
           "action": "revise",
-          "existingConceptId": "con-esa-es-la-persona-con-quien-hable-that-s-the-person-i-spoke-to",
+          "existingConceptId": "b3exfv3p6v",
           "suggestedCurriculumRole": "reference",
           "spanish": "Esa es la persona con quien hablé.",
           "english": "That's the person I spoke to.",
@@ -24244,7 +24244,7 @@
         {
           "id": "revise-con-con-quien-esta-hablando-to-whom-are-you-speaking--reverse-tags",
           "action": "revise",
-          "existingConceptId": "con-con-quien-esta-hablando-to-whom-are-you-speaking",
+          "existingConceptId": "rey5kzco3o",
           "suggestedCurriculumRole": "reference",
           "spanish": "¿Con quién está hablando?",
           "english": "To whom are you speaking?",
@@ -24270,7 +24270,7 @@
         {
           "id": "revise-que-tengo-que-hacerlo-i-have-to-do-it--reverse-tags",
           "action": "revise",
-          "existingConceptId": "que-tengo-que-hacerlo-i-have-to-do-it",
+          "existingConceptId": "w247huyx2z",
           "suggestedCurriculumRole": "reference",
           "spanish": "Tengo que hacerlo.",
           "english": "I have to do it.",
@@ -24296,7 +24296,7 @@
         {
           "id": "revise-manana-manana-tomorrow--reverse-tags",
           "action": "revise",
-          "existingConceptId": "manana-manana-tomorrow",
+          "existingConceptId": "uklvuftocv",
           "suggestedCurriculumRole": "reference",
           "spanish": "mañana",
           "english": "tomorrow",
@@ -24322,7 +24322,7 @@
         {
           "id": "revise-manana-pasado-manana-the-day-after-tomorrow--reverse-tags",
           "action": "revise",
-          "existingConceptId": "manana-pasado-manana-the-day-after-tomorrow",
+          "existingConceptId": "is83ex1r7e",
           "suggestedCurriculumRole": "reference",
           "spanish": "pasado mañana",
           "english": "the day after tomorrow",
@@ -24348,7 +24348,7 @@
         {
           "id": "revise-manana-la-reunion-es-manana-the-meeting-is-tomorrow--reverse-tags",
           "action": "revise",
-          "existingConceptId": "manana-la-reunion-es-manana-the-meeting-is-tomorrow",
+          "existingConceptId": "yvcs7qqm0w",
           "suggestedCurriculumRole": "reference",
           "spanish": "La reunión es mañana.",
           "english": "The meeting is tomorrow.",
@@ -24374,7 +24374,7 @@
         {
           "id": "revise-demasiado-es-demasiado-caro-it-is-too-expensive--reverse-tags",
           "action": "revise",
-          "existingConceptId": "demasiado-es-demasiado-caro-it-is-too-expensive",
+          "existingConceptId": "jdccnlripe",
           "suggestedCurriculumRole": "reference",
           "spanish": "Es demasiado caro.",
           "english": "It is too expensive.",
@@ -24400,7 +24400,7 @@
         {
           "id": "revise-que-que-quieres-what-do-you-want--reverse-tags",
           "action": "revise",
-          "existingConceptId": "que-que-quieres-what-do-you-want",
+          "existingConceptId": "b0uvykqv53",
           "suggestedCurriculumRole": "reference",
           "spanish": "¿Qué quieres?",
           "english": "What do you want?",
@@ -24426,7 +24426,7 @@
         {
           "id": "revise-que-a-que-hora-empieza-at-what-time-does-it-start--reverse-tags",
           "action": "revise",
-          "existingConceptId": "que-a-que-hora-empieza-at-what-time-does-it-start",
+          "existingConceptId": "erzbzs0gzc",
           "suggestedCurriculumRole": "reference",
           "spanish": "¿A qué hora empieza?",
           "english": "At what time does it start?",
@@ -24452,7 +24452,7 @@
         {
           "id": "revise-cuando-cuando-empieza-la-reunion-when-does-the-meeting-start--reverse-tags",
           "action": "revise",
-          "existingConceptId": "cuando-cuando-empieza-la-reunion-when-does-the-meeting-start",
+          "existingConceptId": "lrfioq96ny",
           "suggestedCurriculumRole": "reference",
           "spanish": "¿Cuándo empieza la reunión?",
           "english": "When does the meeting start?",
@@ -24478,7 +24478,7 @@
         {
           "id": "revise-donde-donde-esta-la-oficina-where-is-the-office--reverse-tags",
           "action": "revise",
-          "existingConceptId": "donde-donde-esta-la-oficina-where-is-the-office",
+          "existingConceptId": "cboe3ncvvg",
           "suggestedCurriculumRole": "reference",
           "spanish": "¿Dónde está la oficina?",
           "english": "Where is the office?",
@@ -24504,7 +24504,7 @@
         {
           "id": "revise-donde-quiero-saber-donde-esta-la-oficina-i-want-to-know-where-the-office-is--reverse-tags",
           "action": "revise",
-          "existingConceptId": "donde-quiero-saber-donde-esta-la-oficina-i-want-to-know-where-the-office-is",
+          "existingConceptId": "ajwin87x5s",
           "suggestedCurriculumRole": "reference",
           "spanish": "Quiero saber dónde está la oficina.",
           "english": "I want to know where the office is.",
@@ -24530,7 +24530,7 @@
         {
           "id": "revise-cual-cual-libro-quieres-este-o-ese-which-book-do-you-want-this-one-or-that-one--reverse-tags",
           "action": "revise",
-          "existingConceptId": "cual-cual-libro-quieres-este-o-ese-which-book-do-you-want-this-one-or-that-one",
+          "existingConceptId": "fwytkxeon9",
           "suggestedCurriculumRole": "reference",
           "spanish": "¿Cuál libro quieres, este o ese?",
           "english": "Which book do you want, this one or that one?",
@@ -24556,7 +24556,7 @@
         {
           "id": "revise-quien-quien-esta-aqui-who-is-here--reverse-tags",
           "action": "revise",
-          "existingConceptId": "quien-quien-esta-aqui-who-is-here",
+          "existingConceptId": "ju968jjo7u",
           "suggestedCurriculumRole": "reference",
           "spanish": "¿Quién está aquí?",
           "english": "Who is here?",
@@ -24582,7 +24582,7 @@
         {
           "id": "revise-quien-quien-who--reverse-tags",
           "action": "revise",
-          "existingConceptId": "quien-quien-who",
+          "existingConceptId": "d11xp5btf2",
           "suggestedCurriculumRole": "reference",
           "spanish": "quién",
           "english": "who",
@@ -24608,7 +24608,7 @@
         {
           "id": "revise-por-por-que-lo-necesitas-why-do-you-need-it--reverse-tags",
           "action": "revise",
-          "existingConceptId": "por-por-que-lo-necesitas-why-do-you-need-it",
+          "existingConceptId": "dzhyd6xsd6",
           "suggestedCurriculumRole": "reference",
           "spanish": "¿Por qué lo necesitas?",
           "english": "Why do you need it?",
@@ -24634,7 +24634,7 @@
         {
           "id": "revise-con-trabajo-con-laura-i-work-with-laura--reverse-tags",
           "action": "revise",
-          "existingConceptId": "con-trabajo-con-laura-i-work-with-laura",
+          "existingConceptId": "cp6wab3abs",
           "suggestedCurriculumRole": "reference",
           "spanish": "Trabajo con Laura.",
           "english": "I work with Laura.",
@@ -24661,7 +24661,7 @@
         {
           "id": "revise-con-con-que-te-puedo-ayudar-what-can-i-help-you-with--reverse-tags",
           "action": "revise",
-          "existingConceptId": "con-con-que-te-puedo-ayudar-what-can-i-help-you-with",
+          "existingConceptId": "kg63snjtds",
           "suggestedCurriculumRole": "reference",
           "spanish": "¿Con qué te puedo ayudar?",
           "english": "What can I help you with?",
@@ -24688,7 +24688,7 @@
         {
           "id": "revise-sin-se-fue-sin-despedirse-she-left-without-saying-goodbye--reverse-tags",
           "action": "revise",
-          "existingConceptId": "sin-se-fue-sin-despedirse-she-left-without-saying-goodbye",
+          "existingConceptId": "je4w9jap6g",
           "suggestedCurriculumRole": "reference",
           "spanish": "Se fue sin despedirse.",
           "english": "She left without saying goodbye.",
@@ -87983,7 +87983,7 @@
         {
           "id": "revise-abrir-algo-open--english-open-source",
           "action": "revise",
-          "existingConceptId": "abrir-algo-open",
+          "existingConceptId": "9dbk50wj9u",
           "suggestedCurriculumRole": "core",
           "spanish": "abrir [algo]",
           "english": "to open [something]",
@@ -88008,7 +88008,7 @@
         {
           "id": "revise-abrir-por-completo-open-up--english-open-source",
           "action": "revise",
-          "existingConceptId": "abrir-por-completo-open-up",
+          "existingConceptId": "mrytj7kn57",
           "suggestedCurriculumRole": "reference",
           "spanish": "abrir [algo] por completo",
           "english": "to open [something] up",
@@ -88155,7 +88155,7 @@
         {
           "id": "revise-estar-aqui-be-here--english-here-source",
           "action": "revise",
-          "existingConceptId": "estar-aqui-be-here",
+          "existingConceptId": "jo1ruoxv9h",
           "suggestedCurriculumRole": "reference",
           "spanish": "estar aquí",
           "english": "to be here",
@@ -88260,7 +88260,7 @@
         {
           "id": "revise-tener-exito-be-successful--terra-source",
           "action": "revise",
-          "existingConceptId": "tener-exito-be-successful",
+          "existingConceptId": "eupe6m3e72",
           "suggestedCurriculumRole": "reference",
           "spanish": "tener éxito",
           "english": "to be successful",
@@ -88318,7 +88318,7 @@
         {
           "id": "revise-manana-tomorrow--terra-source",
           "action": "revise",
-          "existingConceptId": "manana-manana-tomorrow",
+          "existingConceptId": "uklvuftocv",
           "suggestedCurriculumRole": "reference",
           "spanish": "mañana",
           "english": "tomorrow",
@@ -88345,7 +88345,7 @@
         {
           "id": "revise-pasado-manana-day-after-tomorrow--terra-source",
           "action": "revise",
-          "existingConceptId": "manana-pasado-manana-the-day-after-tomorrow",
+          "existingConceptId": "is83ex1r7e",
           "suggestedCurriculumRole": "reference",
           "spanish": "pasado mañana",
           "english": "the day after tomorrow",
@@ -88752,7 +88752,7 @@
         {
           "id": "revise-entonces-then--terra-source",
           "action": "revise",
-          "existingConceptId": "entonces-entonces-then",
+          "existingConceptId": "rakstubyz7",
           "suggestedCurriculumRole": "reference",
           "spanish": "entonces",
           "english": "then",
@@ -88779,7 +88779,7 @@
         {
           "id": "revise-luego-then--terra-source",
           "action": "revise",
-          "existingConceptId": "despues-luego-then",
+          "existingConceptId": "2i2eb7xpzj",
           "suggestedCurriculumRole": "reference",
           "spanish": "luego",
           "english": "then",
@@ -88989,7 +88989,7 @@
         {
           "id": "revise-acordar-agree-on--terra-source",
           "action": "revise",
-          "existingConceptId": "acordar-agree-on",
+          "existingConceptId": "476g3r2k4a",
           "suggestedCurriculumRole": "reference",
           "spanish": "acordar [algo]",
           "english": "to agree on [something]",
@@ -89125,7 +89125,7 @@
         {
           "id": "revise-dar-acceso-give-access-to--terra-source",
           "action": "revise",
-          "existingConceptId": "dar-acceso-give-access-to",
+          "existingConceptId": "y78uyi9c5c",
           "suggestedCurriculumRole": "reference",
           "spanish": "dar acceso a [algo]",
           "english": "to give access to [something]",
@@ -89685,7 +89685,7 @@
         {
           "id": "revise-aparecer-appear--terra-source",
           "action": "revise",
-          "existingConceptId": "aparecer-appear",
+          "existingConceptId": "1j7btjr7um",
           "suggestedCurriculumRole": "reference",
           "spanish": "aparecer",
           "english": "to appear",
@@ -89711,7 +89711,7 @@
         {
           "id": "revise-parecer-adjetivo-seem--terra-source",
           "action": "revise",
-          "existingConceptId": "parecer-adjetivo-seem",
+          "existingConceptId": "8kyqh0y19m",
           "suggestedCurriculumRole": "reference",
           "spanish": "parecer [adjetivo]",
           "english": "to seem [adjective]",
@@ -89893,7 +89893,7 @@
         {
           "id": "revise-take-after--terra-source",
           "action": "revise",
-          "existingConceptId": "take-after",
+          "existingConceptId": "k3o01kfput",
           "suggestedCurriculumRole": "reference",
           "spanish": "parecerse a [alguien]",
           "english": "to take after [somebody]",
@@ -89946,7 +89946,7 @@
         {
           "id": "revise-volver-a-hacer-again--terra-source",
           "action": "revise",
-          "existingConceptId": "volver-a-hacer-again",
+          "existingConceptId": "8zwhpsdgt7",
           "suggestedCurriculumRole": "reference",
           "spanish": "volver a [hacer algo]",
           "english": "to [do something] again",
@@ -90158,7 +90158,7 @@
         {
           "id": "revise-que-porque-because--terra-source",
           "action": "revise",
-          "existingConceptId": "que-porque-because",
+          "existingConceptId": "wjbh6m5ek1",
           "suggestedCurriculumRole": "reference",
           "spanish": "porque",
           "english": "because",
@@ -92069,7 +92069,7 @@
         {
           "id": "revise-hacerse-tarde-get-late--terra-source",
           "action": "revise",
-          "existingConceptId": "hacerse-tarde-get-late",
+          "existingConceptId": "hk3p7tmczh",
           "suggestedCurriculumRole": "reference",
           "spanish": "hacerse tarde",
           "english": "to get late",
@@ -92643,7 +92643,7 @@
         {
           "id": "revise-tener-edad-be-years-old--terra-source",
           "action": "revise",
-          "existingConceptId": "tener-edad-be-years-old",
+          "existingConceptId": "ccrgp9wvgz",
           "suggestedCurriculumRole": "reference",
           "spanish": "tener [número] años",
           "english": "to be [number] years old",
@@ -93172,7 +93172,7 @@
         {
           "id": "revise-dar-resultado-pay-off--terra-source",
           "action": "revise",
-          "existingConceptId": "dar-resultado-pay-off",
+          "existingConceptId": "gbxjc99tyx",
           "suggestedCurriculumRole": "reference",
           "spanish": "dar resultado",
           "english": "to pay off",
@@ -93297,7 +93297,7 @@
         {
           "id": "revise-llegar-a-un-lugar-reach--terra-source",
           "action": "revise",
-          "existingConceptId": "llegar-a-un-lugar-reach",
+          "existingConceptId": "cvb5pdwpwg",
           "suggestedCurriculumRole": "reference",
           "spanish": "llegar a [un lugar]",
           "english": "to reach [a place]",
@@ -93325,7 +93325,7 @@
         {
           "id": "revise-llegar-a-un-acuerdo-reach--terra-source",
           "action": "revise",
-          "existingConceptId": "llegar-a-un-acuerdo-reach",
+          "existingConceptId": "bptzo9fcux",
           "suggestedCurriculumRole": "reference",
           "spanish": "llegar a un acuerdo",
           "english": "to reach an agreement",
@@ -93540,7 +93540,7 @@
         {
           "id": "revise-devolver-return--terra-source",
           "action": "revise",
-          "existingConceptId": "devolver-return",
+          "existingConceptId": "o4dhqa488k",
           "suggestedCurriculumRole": "reference",
           "spanish": "devolver [algo]",
           "english": "to return [something]",
