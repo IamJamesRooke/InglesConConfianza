@@ -1,6 +1,6 @@
 # Backlog
 
-> Last updated: 2026-08-23. Curriculum migration is complete. PostgreSQL is the canonical curriculum store; Lesson Builder remains JSON-backed. The completed build narrative lives in the [project timeline](history/project-timeline.md).
+> Last updated: 2026-08-24. Curriculum migration is complete. PostgreSQL is the canonical curriculum store; Lesson Builder remains JSON-backed. The completed build narrative lives in the [project timeline](history/project-timeline.md).
 
 ## Current objective
 
@@ -9,6 +9,7 @@ Curate the curriculum into a selective, trustworthy teaching catalog, then build
 ## Milestone: Pre-curation readiness
 
 - [x] Retire obsolete migration and prototype surfaces, remove unused assets and loaders, align product documentation and metadata, preserve guarded concept inserts, and prepare exact role filtering for database curation.
+- [x] Reslug `curriculum_concepts.id` from human-readable slugs to opaque nanoids, updating dependent `review_candidates` references and logging the old-to-new mapping.
 
 ## Phase 1: Curriculum curation
 
