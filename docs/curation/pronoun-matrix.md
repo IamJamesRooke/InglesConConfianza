@@ -72,15 +72,20 @@ Tag `grammar:subordinate-subject-pronoun` + `construction:object-control`.
 
 ## Contrasts (`contrast:` facet — the teaching payload)
 
-| Facet | The confusion |
-|---|---|
-| `contrast:lo-vs-le` | direct `lo` (him) vs indirect `le` (to him) |
-| `contrast:mi-vs-mi-tilde` | `mi` (my) vs `mí` (me, after preposition) |
-| `contrast:tu-vs-tu-tilde` | `tu` (your) vs `tú` (you) |
-| `contrast:este-vs-esto` | `este libro` (determiner) but `esto es` (neuter pronoun) — never `esto libro` |
-| `contrast:tu-vs-usted` | informal `tú` vs formal `usted`, both → you |
-| `contrast:dropped-subject` | Spanish drops the subject (`Hablo` → **I** speak); English requires it |
-| `contrast:se-reflexive-vs-reciprocal` | `se lavan` = wash themselves OR each other |
-| `contrast:su-ambiguity` | `su` → his / her / its / their / your |
-| `contrast:you-collapse` | English "you" = tú / usted / ustedes / te / le / os |
-| `contrast:el-vs-lo` | subject `él` (he) vs object `lo` (him); and `que él` → "him to" |
+Each contrast is a tag applied to the real concept rows it links (not a
+pseudo-concept). All also carry `contrast:confusable`, which drives the
+"Confusions" filter on the page. `contrast:dropped-subject` is the one
+standalone anchor, since Spanish has no word there.
+
+| Facet | Applied to | The confusion |
+|---|---|---|
+| `contrast:lo-vs-le` | `lo → him`, `le → to him` | direct vs indirect object |
+| `contrast:mi-vs-mi-tilde` | `mi → my`, `para mí → for me` | `mi` (my) vs `mí` (me, after preposition) |
+| `contrast:tu-vs-tu-tilde` | `tu → your`, `tú → you` | the accent flips the word |
+| `contrast:este-vs-esto` | `este → this`, `esto → this` | `este libro` but `esto es` — never `esto libro` |
+| `contrast:tu-vs-usted` | `tú → you`, `usted → you` | informal vs formal, both → you |
+| `contrast:se-reflexive-vs-reciprocal` | `se → himself`, `se → each other` | `se lavan` = themselves OR each other |
+| `contrast:su-ambiguity` | the five `su` rows | his / her / its / their / your |
+| `contrast:you-collapse` | `tú`, `usted`, `ustedes`, `te` (all → you) | English "you" swallows the lot |
+| `contrast:el-vs-lo` | `él → he`, `lo → him` | subject vs object; and `que él` → "him to" |
+| `contrast:dropped-subject` | `hablar sin pronombre de sujeto → to speak (subject dropped)` | Spanish drops the subject; English requires it |

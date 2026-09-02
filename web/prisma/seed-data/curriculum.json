@@ -20273,7 +20273,11 @@
         "register:informal",
         "es:tú",
         "en:you",
-        "topic:pronoun"
+        "topic:pronoun",
+        "contrast:tu-vs-tu-tilde",
+        "contrast:tu-vs-usted",
+        "contrast:you-collapse",
+        "contrast:confusable"
       ],
       "curriculumRole": "core"
     },
@@ -20293,7 +20297,9 @@
         "es:tu",
         "en:your",
         "topic:pronoun",
-        "pos:function-word"
+        "pos:function-word",
+        "contrast:tu-vs-tu-tilde",
+        "contrast:confusable"
       ],
       "curriculumRole": "core"
     },
@@ -20313,7 +20319,10 @@
         "register:formal",
         "es:usted",
         "en:you",
-        "topic:pronoun"
+        "topic:pronoun",
+        "contrast:tu-vs-usted",
+        "contrast:you-collapse",
+        "contrast:confusable"
       ],
       "curriculumRole": "core"
     },
@@ -20333,7 +20342,9 @@
         "grammar:masculine",
         "es:él",
         "en:he",
-        "topic:pronoun"
+        "topic:pronoun",
+        "contrast:el-vs-lo",
+        "contrast:confusable"
       ],
       "curriculumRole": "core"
     },
@@ -20473,7 +20484,9 @@
         "register:formal",
         "es:ustedes",
         "en:you",
-        "topic:pronoun"
+        "topic:pronoun",
+        "contrast:you-collapse",
+        "contrast:confusable"
       ],
       "curriculumRole": "core"
     },
@@ -20512,7 +20525,9 @@
         "register:informal",
         "es:te",
         "en:you",
-        "topic:pronoun"
+        "topic:pronoun",
+        "contrast:you-collapse",
+        "contrast:confusable"
       ],
       "curriculumRole": "core"
     },
@@ -20550,7 +20565,9 @@
         "es:le",
         "en:him",
         "grammar:object-pronoun",
-        "topic:pronoun"
+        "topic:pronoun",
+        "contrast:lo-vs-le",
+        "contrast:confusable"
       ],
       "curriculumRole": "core"
     },
@@ -20589,7 +20606,10 @@
         "grammar:masculine",
         "en:him",
         "grammar:object-pronoun",
-        "topic:pronoun"
+        "topic:pronoun",
+        "contrast:lo-vs-le",
+        "contrast:el-vs-lo",
+        "contrast:confusable"
       ],
       "curriculumRole": "core"
     },
@@ -20788,7 +20808,9 @@
         "grammar:reflexive-pronoun",
         "grammar:singular",
         "en:himself",
-        "topic:pronoun"
+        "topic:pronoun",
+        "contrast:se-reflexive-vs-reciprocal",
+        "contrast:confusable"
       ],
       "curriculumRole": "supporting"
     },
@@ -20823,7 +20845,9 @@
         "pos:pronoun",
         "grammar:reciprocal-pronoun",
         "en:each",
-        "topic:pronoun"
+        "topic:pronoun",
+        "contrast:se-reflexive-vs-reciprocal",
+        "contrast:confusable"
       ],
       "curriculumRole": "supporting"
     },
@@ -22708,8 +22732,8 @@
       "spanish": "cuál",
       "english": "which",
       "example": {
-        "spanish": "cuál",
-        "english": "which"
+        "spanish": "¿Cuál prefieres, el rojo o el azul?",
+        "english": "Which one do you prefer, the red or the blue?"
       },
       "collections": [
         "es:cuál",
@@ -22725,8 +22749,8 @@
       "spanish": "cuál",
       "english": "what",
       "example": {
-        "spanish": "cuál",
-        "english": "what"
+        "spanish": "¿Cuál es tu número de teléfono?",
+        "english": "What is your phone number?"
       },
       "collections": [
         "es:cuál",
@@ -24711,8 +24735,8 @@
       "spanish": "qué (interrogativo)",
       "english": "what",
       "example": {
-        "spanish": "question qué",
-        "english": "what"
+        "spanish": "¿Qué quieres comer?",
+        "english": "What do you want to eat?"
       },
       "collections": [
         "es:que",
@@ -24742,8 +24766,8 @@
       "spanish": "que (relativo, persona)",
       "english": "who",
       "example": {
-        "spanish": "relative que: person",
-        "english": "who"
+        "spanish": "La mujer que llamó es mi jefa.",
+        "english": "The woman who called is my boss."
       },
       "collections": [
         "es:que",
@@ -24759,8 +24783,8 @@
       "spanish": "que (relativo, persona)",
       "english": "that",
       "example": {
-        "spanish": "relative que: person",
-        "english": "that"
+        "spanish": "El amigo que te presenté vive aquí.",
+        "english": "The friend that I introduced you to lives here."
       },
       "collections": [
         "es:que",
@@ -24776,8 +24800,8 @@
       "spanish": "que (relativo, cosa)",
       "english": "that",
       "example": {
-        "spanish": "relative que: thing",
-        "english": "that"
+        "spanish": "El libro que compré es interesante.",
+        "english": "The book that I bought is interesting."
       },
       "collections": [
         "es:que",
@@ -24793,8 +24817,8 @@
       "spanish": "que (relativo, cosa)",
       "english": "which",
       "example": {
-        "spanish": "relative que: thing",
-        "english": "which"
+        "spanish": "La casa, que es azul, está en venta.",
+        "english": "The house, which is blue, is for sale."
       },
       "collections": [
         "es:que",
@@ -24810,8 +24834,8 @@
       "spanish": "lo que",
       "english": "what",
       "example": {
-        "spanish": "lo que",
-        "english": "what"
+        "spanish": "No entiendo lo que dijo.",
+        "english": "I don't understand what she said."
       },
       "collections": [
         "es:que",
@@ -24827,8 +24851,8 @@
       "spanish": "lo cual",
       "english": "which",
       "example": {
-        "spanish": "lo cual",
-        "english": "which"
+        "spanish": "Llegó tarde, lo cual me molestó.",
+        "english": "He arrived late, which annoyed me."
       },
       "collections": [
         "es:que",
@@ -24845,8 +24869,8 @@
       "spanish": "qué (exclamativo)",
       "english": "what",
       "example": {
-        "spanish": "exclamative qué",
-        "english": "what"
+        "spanish": "¡Qué sorpresa!",
+        "english": "What a surprise!"
       },
       "collections": [
         "es:que",
@@ -24862,8 +24886,8 @@
       "spanish": "qué (exclamativo)",
       "english": "how",
       "example": {
-        "spanish": "exclamative qué",
-        "english": "how"
+        "spanish": "¡Qué rápido corres!",
+        "english": "How fast you run!"
       },
       "collections": [
         "es:que",
@@ -25050,8 +25074,8 @@
       "spanish": "quién",
       "english": "who",
       "example": {
-        "spanish": "quién",
-        "english": "who"
+        "spanish": "¿Quién llamó?",
+        "english": "Who called?"
       },
       "collections": [
         "es:quien",
@@ -73640,7 +73664,9 @@
         "grammar:singular",
         "topic:pronoun",
         "es:mi",
-        "en:my"
+        "en:my",
+        "contrast:mi-vs-mi-tilde",
+        "contrast:confusable"
       ],
       "curriculumRole": "core"
     },
@@ -73675,7 +73701,9 @@
         "grammar:possessive-determiner",
         "topic:pronoun",
         "es:su",
-        "en:his"
+        "en:his",
+        "contrast:su-ambiguity",
+        "contrast:confusable"
       ],
       "curriculumRole": "core"
     },
@@ -73692,7 +73720,9 @@
         "grammar:possessive-determiner",
         "topic:pronoun",
         "es:su",
-        "en:her"
+        "en:her",
+        "contrast:su-ambiguity",
+        "contrast:confusable"
       ],
       "curriculumRole": "core"
     },
@@ -73709,7 +73739,9 @@
         "grammar:possessive-determiner",
         "topic:pronoun",
         "es:su",
-        "en:its"
+        "en:its",
+        "contrast:su-ambiguity",
+        "contrast:confusable"
       ],
       "curriculumRole": "reference"
     },
@@ -73727,7 +73759,9 @@
         "grammar:plural",
         "topic:pronoun",
         "es:su",
-        "en:their"
+        "en:their",
+        "contrast:su-ambiguity",
+        "contrast:confusable"
       ],
       "curriculumRole": "core"
     },
@@ -73745,7 +73779,9 @@
         "register:formal",
         "topic:pronoun",
         "es:su",
-        "en:your"
+        "en:your",
+        "contrast:su-ambiguity",
+        "contrast:confusable"
       ],
       "curriculumRole": "supporting"
     },
@@ -73941,7 +73977,9 @@
         "es:para",
         "es:mí",
         "en:for",
-        "en:me"
+        "en:me",
+        "contrast:mi-vs-mi-tilde",
+        "contrast:confusable"
       ],
       "curriculumRole": "supporting"
     },
@@ -74072,8 +74110,8 @@
       "spanish": "a mí",
       "english": "to me",
       "example": {
-        "spanish": "A mí me gusta.",
-        "english": "It appeals to me."
+        "spanish": "Dame el libro a mí, no a él.",
+        "english": "Give the book to me, not to him."
       },
       "collections": [
         "pos:pronoun",
@@ -74400,8 +74438,8 @@
       "spanish": "en ningún lugar",
       "english": "nowhere",
       "example": {
-        "spanish": "No lo encuentro en ningún lugar.",
-        "english": "I can't find it anywhere."
+        "spanish": "Ese pueblo no aparece en ningún lugar del mapa.",
+        "english": "That town is nowhere on the map."
       },
       "collections": [
         "pos:pronoun",
@@ -74552,7 +74590,9 @@
         "grammar:neuter",
         "topic:pronoun",
         "es:esto",
-        "en:this"
+        "en:this",
+        "contrast:este-vs-esto",
+        "contrast:confusable"
       ],
       "curriculumRole": "core"
     },
@@ -74733,7 +74773,9 @@
         "grammar:masculine",
         "topic:pronoun",
         "es:este",
-        "en:this"
+        "en:this",
+        "contrast:este-vs-esto",
+        "contrast:confusable"
       ],
       "curriculumRole": "core"
     },
@@ -75667,8 +75709,8 @@
     },
     {
       "id": "hh9lhwdnn0",
-      "spanish": "Hablo. (sin \"yo\")",
-      "english": "I speak.",
+      "spanish": "hablar sin pronombre de sujeto",
+      "english": "to speak (subject dropped)",
       "example": {
         "spanish": "Hablo inglés todos los días.",
         "english": "I speak English every day."
@@ -75680,164 +75722,6 @@
         "topic:pronoun",
         "es:hablar",
         "en:i",
-        "contrast:confusable"
-      ],
-      "curriculumRole": "core"
-    },
-    {
-      "id": "x1av7vxsfq",
-      "spanish": "Lo vi y le hablé.",
-      "english": "I saw him and spoke to him.",
-      "example": {
-        "spanish": "\"Lo\" es objeto directo; \"le\" es objeto indirecto.",
-        "english": "\"Lo\" is the direct object; \"le\" is the indirect object."
-      },
-      "collections": [
-        "pos:pronoun",
-        "grammar:object-pronoun",
-        "contrast:lo-vs-le",
-        "topic:pronoun",
-        "es:lo",
-        "es:le",
-        "en:him",
-        "contrast:confusable"
-      ],
-      "curriculumRole": "core"
-    },
-    {
-      "id": "1knkh582bu",
-      "spanish": "Es mi carro; es para mí.",
-      "english": "It's my car; it's for me.",
-      "example": {
-        "spanish": "\"mi\" (posesivo) frente a \"mí\" (después de preposición).",
-        "english": "\"mi\" (possessive) versus \"mí\" (after a preposition)."
-      },
-      "collections": [
-        "pos:pronoun",
-        "contrast:mi-vs-mi-tilde",
-        "topic:pronoun",
-        "es:mi",
-        "es:mí",
-        "en:my",
-        "contrast:confusable"
-      ],
-      "curriculumRole": "supporting"
-    },
-    {
-      "id": "tkxpoi9nqs",
-      "spanish": "Tú tienes tu libro.",
-      "english": "You have your book.",
-      "example": {
-        "spanish": "\"tú\" es el pronombre; \"tu\" es el posesivo.",
-        "english": "\"tú\" is the pronoun; \"tu\" is the possessive."
-      },
-      "collections": [
-        "pos:pronoun",
-        "contrast:tu-vs-tu-tilde",
-        "topic:pronoun",
-        "es:tú",
-        "es:tu",
-        "en:you",
-        "contrast:confusable"
-      ],
-      "curriculumRole": "supporting"
-    },
-    {
-      "id": "kdbj3vw37e",
-      "spanish": "Este libro es mío; esto es difícil.",
-      "english": "This book is mine; this is hard.",
-      "example": {
-        "spanish": "\"este\" acompaña a un sustantivo; \"esto\" va solo y es neutro.",
-        "english": "\"este\" goes with a noun; \"esto\" stands alone and is neuter."
-      },
-      "collections": [
-        "pos:pronoun",
-        "grammar:demonstrative",
-        "contrast:este-vs-esto",
-        "topic:pronoun",
-        "es:este",
-        "es:esto",
-        "en:this",
-        "contrast:confusable"
-      ],
-      "curriculumRole": "supporting"
-    },
-    {
-      "id": "rts0m9zrct",
-      "spanish": "Tú eres mi amigo; usted es mi jefe.",
-      "english": "You are my friend; you are my boss.",
-      "example": {
-        "spanish": "\"tú\" para confianza; \"usted\" para respeto. En inglés, solo \"you\".",
-        "english": "\"tú\" for closeness; \"usted\" for respect. In English, just \"you\"."
-      },
-      "collections": [
-        "pos:pronoun",
-        "grammar:subject-pronoun",
-        "contrast:tu-vs-usted",
-        "contrast:you-collapse",
-        "topic:pronoun",
-        "es:tú",
-        "es:usted",
-        "en:you",
-        "contrast:confusable"
-      ],
-      "curriculumRole": "core"
-    },
-    {
-      "id": "uc56hzo3rq",
-      "spanish": "Se miran; también se miran el uno al otro.",
-      "english": "They look at themselves; they also look at each other.",
-      "example": {
-        "spanish": "El mismo \"se\" puede ser reflexivo o recíproco.",
-        "english": "The same \"se\" can be reflexive or reciprocal."
-      },
-      "collections": [
-        "pos:pronoun",
-        "grammar:reflexive-pronoun",
-        "grammar:reciprocal-pronoun",
-        "contrast:se-reflexive-vs-reciprocal",
-        "topic:pronoun",
-        "es:se",
-        "en:themselves",
-        "contrast:confusable"
-      ],
-      "curriculumRole": "supporting"
-    },
-    {
-      "id": "9b8z571il4",
-      "spanish": "Su casa: de él, de ella, de ellos o de usted.",
-      "english": "Their house: his, hers, theirs, or yours.",
-      "example": {
-        "spanish": "Un solo \"su\" para his, her, its, their y your.",
-        "english": "One \"su\" for his, her, its, their, and your."
-      },
-      "collections": [
-        "pos:function-word",
-        "grammar:possessive-determiner",
-        "contrast:su-ambiguity",
-        "topic:pronoun",
-        "es:su",
-        "en:their",
-        "contrast:confusable"
-      ],
-      "curriculumRole": "supporting"
-    },
-    {
-      "id": "g7ter1hcnu",
-      "spanish": "Él lo sabe; yo lo veo a él.",
-      "english": "He knows it; I see him.",
-      "example": {
-        "spanish": "\"él\" es sujeto (he); \"lo\" es objeto (him).",
-        "english": "\"él\" is the subject (he); \"lo\" is the object (him)."
-      },
-      "collections": [
-        "pos:pronoun",
-        "grammar:subject-pronoun",
-        "contrast:el-vs-lo",
-        "topic:pronoun",
-        "es:él",
-        "es:lo",
-        "en:he",
         "contrast:confusable"
       ],
       "curriculumRole": "core"

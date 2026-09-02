@@ -1,0 +1,15 @@
+# Fix broken/weak pronoun examples. id / spanish / english / role / +collections / reason / exampleSpanish / exampleEnglish
+3015o113yw	cuál	which	core	pos:pronoun|grammar:interrogative-pronoun|topic:pronoun	fix junk example	¿Cuál prefieres, el rojo o el azul?	Which one do you prefer, the red or the blue?
+g585r84tc1	cuál	what	reference	pos:pronoun|grammar:interrogative-pronoun|topic:pronoun	fix junk example	¿Cuál es tu número de teléfono?	What is your phone number?
+hnd0boisxm	qué (interrogativo)	what	core	pos:pronoun|grammar:interrogative-pronoun|topic:pronoun	fix junk example	¿Qué quieres comer?	What do you want to eat?
+juf9q9vio8	que (relativo, persona)	who	supporting	pos:pronoun|grammar:relative-pronoun|topic:pronoun	fix junk example	La mujer que llamó es mi jefa.	The woman who called is my boss.
+5gd7ah01d5	que (relativo, persona)	that	supporting	pos:pronoun|grammar:relative-pronoun|topic:pronoun	fix junk example	El amigo que te presenté vive aquí.	The friend that I introduced you to lives here.
+waj2eefdj7	que (relativo, cosa)	that	supporting	pos:pronoun|grammar:relative-pronoun|topic:pronoun	fix junk example	El libro que compré es interesante.	The book that I bought is interesting.
+4z2b5kkbjr	que (relativo, cosa)	which	supporting	pos:pronoun|grammar:relative-pronoun|topic:pronoun	fix junk example	La casa, que es azul, está en venta.	The house, which is blue, is for sale.
+jyx1d6zq9f	lo que	what	supporting	pos:pronoun|grammar:relative-pronoun|topic:pronoun	fix junk example	No entiendo lo que dijo.	I don't understand what she said.
+7izjvheben	lo cual	which	reference	pos:pronoun|grammar:relative-pronoun|topic:pronoun	fix junk example	Llegó tarde, lo cual me molestó.	He arrived late, which annoyed me.
+2f7mb9mt9a	qué (exclamativo)	what	reference	pos:pronoun|grammar:exclamative|topic:pronoun	fix junk example	¡Qué sorpresa!	What a surprise!
+y1roq1cyk2	qué (exclamativo)	how	reference	pos:pronoun|grammar:exclamative|topic:pronoun	fix junk example	¡Qué rápido corres!	How fast you run!
+d11xp5btf2	quién	who	core	pos:pronoun|grammar:interrogative-pronoun|topic:pronoun	fix junk example	¿Quién llamó?	Who called?
+bfer5mn6yu	a mí	to me	supporting	pos:pronoun|grammar:prepositional-pronoun|particle:to|topic:pronoun|es:a|es:mí|en:to|en:me	weak example	Dame el libro a mí, no a él.	Give the book to me, not to him.
+3wvyjj7lp9	en ningún lugar	nowhere	reference	pos:pronoun|grammar:indefinite-pronoun|grammar:negative|topic:pronoun|topic:location|es:lugar|en:nowhere	english/spanish mismatch	Ese pueblo no aparece en ningún lugar del mapa.	That town is nowhere on the map.
