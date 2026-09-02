@@ -22,6 +22,7 @@
     "curriculum:sources:query": "tsx scripts/query-curriculum-sources.ts",
     "curriculum:roles:apply": "tsx scripts/apply-role-manifest.ts",
     "curriculum:concepts:apply": "tsx scripts/apply-concept-manifest.ts",
+    "curriculum:collections:apply": "tsx scripts/apply-collection-manifest.ts",
     "curriculum:snapshots:export": "tsx scripts/export-curriculum-snapshots.ts"
   },
   "engines": {

@@ -1,0 +1,15 @@
+# Phase 1: kill migration artifacts, fold exact-synonym families.
+# Migration provenance — the direction/source of a mapping lives in mapping_source_* tables, not here.
+DELETE	spanish-to-english catchall	migration provenance noise, not a teaching group
+DELETE	english-to-spanish mappings	migration provenance noise
+DELETE	english-to-spanish reverse audit	migration QA artifact
+DELETE	dictionary check	migration QA artifact
+# Exact-synonym spelling-pattern family: 547 concepts carry all three names
+MERGE	02-spelling-patterns	spelling pattern	numeric folder name, identical set
+MERGE	spelling pattern cognate	spelling pattern	identical set, "cognate" is already implied by co-tags
+# The two "sound needs review" names are the same 335 concepts
+MERGE	sound group needs review	sound metadata pending review	identical set
+# "verbs and actions" is a near-subset of "verb"
+MERGE	verbs and actions	verb	migration-era duplicate of the part-of-speech tag
+# Also, direct fix: dropped stray `verb` link from el encargo -> assignment (chyzg2k9qg)
+# and el encargo -> errand (hcj1t8t78h); both are nouns mis-tagged verbs-and-actions in migration.
