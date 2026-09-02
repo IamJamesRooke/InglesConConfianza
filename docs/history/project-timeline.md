@@ -222,6 +222,12 @@ The Curriculum database changed from cumulative priority filtering to exact `cor
 
 This completed the transition from migration tooling to curation tooling. Lint, TypeScript, the production build, database regression tests, dependency audit, and immutable snapshot parity all passed before the milestone was recorded.
 
+## September 2: Curate the tiers and retire the review inbox
+
+A full promote/demote pass sorted every concept into a defensible role tier, the corrupted sentence-shaped records were normalized into the constructions they illustrated, and a `trash` role was adopted as a staging tier so deletion candidates can be parked, filtered, and bulk-removed without losing anything.
+
+With direct manifest-driven curation working well, the `ReviewCandidate` pipeline was removed entirely: the `review_batches`, `review_candidates`, and `review_candidate_collections` tables and their enums, the `/curriculum/review` inbox and its API route, the import, preflight, approve, and migrate scripts, and the `curriculum-review.json` snapshot. Curation now edits `curriculum_concepts` directly from reviewed TSV manifests recorded under `docs/curation/`, and `trash` is the safety net that the review queue used to provide.
+
 ## The next chapter
 
 The project now moves through two connected phases.

@@ -9,11 +9,12 @@ each source document answered "what does *además* become in English?" and illus
 the answer with a sentence. The migration stored the illustration and lost the answer.
 
 Every affected record carries a `spanish-to-english catchall` collection plus a
-collection naming the Spanish function word it was filed under, and each one still has
-recoverable provenance in `review_candidates.source_paths`. Those source paths name the
-teaching target directly — `apenas/10-hardly-wait.md`, `mismo/07-by-oneself.md`,
-`entre/05-the-more.md` — which is what makes the normalization determinable rather than
-invented.
+collection naming the Spanish function word it was filed under, and each one still had
+recoverable provenance in the review-candidate rows that the concept-id reslug migration
+had populated (those rows have since been dropped with the review pipeline). Those source
+paths named the teaching target directly — `apenas/10-hardly-wait.md`,
+`mismo/07-by-oneself.md`, `entre/05-the-more.md` — which is what makes the normalization
+determinable rather than invented.
 
 The retired source trees no longer exist on disk, so this document is the source of
 record for the batch. The original provenance path for each concept is preserved below.
@@ -26,8 +27,9 @@ inflected instance of it, each record is rewritten so that:
 - `spanish` / `english` hold the construction the sentence illustrates;
 - `example_spanish` / `example_english` keep the original sentence unchanged.
 
-Records whose construction is already held by another concept are staged as `trash`
-instead of rewritten.
+The 74 rewrites in this document were applied directly via
+`curriculum:concepts:apply`. Records whose construction is already held by another
+concept were moved to `trash` instead of rewritten.
 
 Two bundled rows are split into one teachable unit per row, per the one-entry-per-row
 rule. `etyzwht0ts` becomes `no solo [algo]` and the previously bundled

@@ -14,16 +14,6 @@ enum CurriculumRole {
   trash
 }
 
-enum ReviewAction {
-  add
-  revise
-}
-
-enum ReviewBatchStatus {
-  open
-  migrated
-}
-
 model CurriculumConcept {
   id             String              @id @db.Text
   spanish        String              @db.Text
@@ -39,9 +29,8 @@ model CurriculumConcept {
 }
 
 model Collection {
-  name                 String                      @id @db.Text
-  conceptMemberships   ConceptCollection[]
-  candidateMemberships ReviewCandidateCollection[]
+  name               String              @id @db.Text
+  conceptMemberships ConceptCollection[]
 
   @@map("collections")
 }
@@ -56,58 +45,6 @@ model ConceptCollection {
   @@id([conceptId, collectionName])
   @@unique([conceptId, position])
   @@map("concept_collections")
-}
-
-model ReviewBatch {
-  id          String            @id @db.Text
-  title       String            @db.Text
-  sourcePaths String[]          @map("source_paths")
-  createdAt   DateTime          @map("created_at") @db.Date
-  status      ReviewBatchStatus
-  migratedAt  DateTime?         @map("migrated_at") @db.Date
-  sortOrder   Int               @unique @map("sort_order")
-  candidates  ReviewCandidate[]
-
-  @@map("review_batches")
-}
-
-model ReviewCandidate {
-  batchId                 String                      @map("batch_id") @db.Text
-  id                      String                      @db.Text
-  action                  ReviewAction
-  existingConceptId       String?                     @map("existing_concept_id") @db.Text
-  suggestedCurriculumRole CurriculumRole              @map("suggested_curriculum_role")
-  spanish                 String                      @db.Text
-  english                 String                      @db.Text
-  exampleSpanish          String                      @map("example_spanish") @db.Text
-  exampleEnglish          String                      @map("example_english") @db.Text
-  curriculumRole          CurriculumRole              @map("curriculum_role")
-  sourcePaths             String[]                    @map("source_paths")
-  rationale               String                      @db.Text
-  approved                Boolean                     @default(false)
-  deleted                 Boolean                     @default(false)
-  migrated                Boolean                     @default(false)
-  ownerNote               String                      @default("") @map("owner_note") @db.Text
-  sortOrder               Int                         @map("sort_order")
-  batch                   ReviewBatch                 @relation(fields: [batchId], references: [id], onDelete: Cascade)
-  collections             ReviewCandidateCollection[]
-
-  @@id([batchId, id])
-  @@unique([batchId, sortOrder])
-  @@map("review_candidates")
-}
-
-model ReviewCandidateCollection {
-  batchId        String          @map("batch_id") @db.Text
-  candidateId    String          @map("candidate_id") @db.Text
-  collectionName String          @map("collection_name") @db.Text
-  position       Int
-  candidate      ReviewCandidate @relation(fields: [batchId, candidateId], references: [batchId, id], onDelete: Cascade)
-  collection     Collection      @relation(fields: [collectionName], references: [name], onDelete: Cascade)
-
-  @@id([batchId, candidateId, collectionName])
-  @@unique([batchId, candidateId, position])
-  @@map("review_candidate_collections")
 }
 
 model MappingSourceDocument {

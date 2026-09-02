@@ -12,6 +12,13 @@ export type CurriculumConcept = {
 
 export type CurriculumRole = "core" | "supporting" | "reference" | "trash";
 
+export const curriculumRoles: CurriculumRole[] = [
+  "core",
+  "supporting",
+  "reference",
+  "trash",
+];
+
 export type CurriculumFile = {
   version: 1;
   concepts: CurriculumConcept[];

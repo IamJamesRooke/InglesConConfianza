@@ -13,21 +13,16 @@ async function main() {
   const actual = await exportCurriculumDatabase(prisma);
 
   assert.deepStrictEqual(actual.curriculum, expected.curriculum);
-  assert.deepStrictEqual(actual.review, expected.review);
   assert.deepStrictEqual(actual.sources, expected.sources);
 
-  const [collections, conceptLinks, candidateLinks] = await Promise.all([
+  const [collections, conceptLinks] = await Promise.all([
     prisma.collection.count(),
     prisma.conceptCollection.count(),
-    prisma.reviewCandidateCollection.count(),
   ]);
 
-  const expectedCollectionNames = new Set([
-    ...expected.curriculum.concepts.flatMap((concept) => concept.collections),
-    ...expected.review.batches.flatMap((batch) =>
-      batch.candidates.flatMap((candidate) => candidate.collections),
-    ),
-  ]);
+  const expectedCollectionNames = new Set(
+    expected.curriculum.concepts.flatMap((concept) => concept.collections),
+  );
   assert.equal(
     collections,
     expectedCollectionNames.size,
@@ -51,20 +46,6 @@ async function main() {
       0,
     ),
     "Concept-collection link count differs from the snapshot.",
-  );
-  assert.equal(
-    candidateLinks,
-    expected.review.batches.reduce(
-      (batchTotal, batch) =>
-        batchTotal +
-        batch.candidates.reduce(
-          (candidateTotal, candidate) =>
-            candidateTotal + candidate.collections.length,
-          0,
-        ),
-      0,
-    ),
-    "Candidate-collection link count differs from the snapshot.",
   );
 
   console.log(

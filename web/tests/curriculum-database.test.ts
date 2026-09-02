@@ -506,12 +506,7 @@ test("the imported curriculum is exact and protected", async (context) => {
   );
 
   await assert.rejects(
-    seedCurriculumDatabase(
-      prisma,
-      expected.curriculum,
-      expected.review,
-      expected.sources,
-    ),
+    seedCurriculumDatabase(prisma, expected.curriculum, expected.sources),
     /refuses to overwrite existing data/,
   );
 

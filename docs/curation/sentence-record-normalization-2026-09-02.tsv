@@ -1,0 +1,78 @@
+# Sentence-record normalization manifest, 2026-09-02
+# Applied via: npm run curriculum:concepts:apply -- <this file> --apply
+# Columns: concept-id, spanish, english, role, collections-to-add (|-sep), rationale
+#
+zeorvyamau	de ahora en adelante	from now on	reference	fixed expression|time	Sentence demoted to the example; the concept is the fixed time expression the row was filed under (adelante).
+wmmatrxzh1	además de [algo]	besides [something]	reference	connector|additive	Concept is the preposition, not the sentence. Distinct from the bare additive adverb además.
+fzg570rb5k	además	moreover	reference	connector|additive	Third distinct English target for además, alongside also and besides.
+xymr8kc90t	ante todo	above all	reference	fixed expression|connector	Source file names this target: ante (… above all).
+9gk6xesysy	casi no [hacer algo]	to hardly [do something]	reference	apenas|negative|degree	Source file 06-hardly-context. Teaches casi no => hardly, not the literal almost not.
+45izdwmxbd	estar ansioso/a por que [ocurra algo]	can hardly wait for [something] to happen	reference	apenas|fixed expression	Source file 10-hardly-wait. The Spanish never contains apenas; the mapping is idiomatic.
+yv5pwer3eq	aun así	even so	reference	connector|concession	Concept is the concessive connector.
+mhy4vnhbw9	atrás de [algo]	behind [something]	reference	location|preposition	Latin American variant of detrás de, which already exists separately.
+8a3s9ew4ih	[período] atrás	[a period] ago	reference	time|past	Variant of hace [un período de tiempo]; the postposed atrás form.
+gw00aci88b	bastar con [algo]	all it takes is [something]	reference	bastar|quantity	Concept is the bastar con construction.
+dakptjtohz	bastar con [hacer algo]	all you need to do is [do something]	reference	bastar|full infinitive	The verb-complement form of bastar con.
+g9lxdgb2ld	si bien [ocurre algo]	although [something happens]	reference	connector|concession	Formal concessive connector; aunque already covers the everyday register.
+21gdf6imx4	bien [ocurre algo], bien [ocurre otra cosa]	either [something happens] or [something else happens]	reference	connector|alternative	Correlative bien...bien; rare in Latin American Spanish, kept at reference.
+9zwpouaz61	ser mejor [hacer algo]	had better [do something]	reference	advice|modal	Parallel Spanish route to had better alongside mas vale [hacer algo].
+gaw97ecxke	por cierto	by the way	reference	discourse connector	Concept is the discourse marker.
+kg63snjtds	¿con qué [ocurre algo]?	what [does something happen] with?	reference	question|preposition stranding	Teaches Spanish fronted preposition vs English stranded preposition.
+xn3hhqqgv2	¿con quién [ocurre algo]?	who [does something happen] with?	reference	question|preposition stranding	Informal stranded form; the formal to whom variant is a separate row.
+rey5kzco3o	¿con quién [ocurre algo]?	to whom [does something happen]?	reference	question|formal register	Formal fronted-preposition register, deliberately split from the stranded form.
+fwytkxeon9	¿cuál [sustantivo]?	which [noun]?	reference	question|limited choice	Source file 01-which-limited-choice.
+17mqfzfrq1	¿cuál es [algo]?	what is [something]?	reference	question|false friend	The cual-is-not-which trap: Spanish cual maps to English what here.
+lrfioq96ny	¿cuándo [ocurre algo]?	when does [something happen]?	reference	question|time	Question frame; the bare interrogative cuándo is held separately in core.
+fnszz28inq	¿cuánto tiempo [ocurre algo]?	how long [has something been happening]?	reference	question|duration	Question frame for duration.
+l0f7fdzag6	¿cuán [adjetivo]?	how [adjective]?	reference	question|degree|formal register	Literary cuán; the everyday Colombian form is qué tan.
+n19h8scdqx	¿de qué [ocurre algo]?	what [does something happen] about?	reference	question|preposition stranding	Parallel to the con que and con quien stranding rows.
+eyue78cz5h	de vez en cuando	from time to time	reference	time|frequency|fixed expression	Original row bundled de noche and de vez en cuando; de noche is already covered by por la noche, so this keeps the uncovered half.
+5rr4zebvp7	[hacer algo] de [una emoción]	to [do something] with [an emotion]	reference	de => with|cause	Source file 03-cause-and-reaction: de marks cause, English uses with.
+wine5n6gd9	depender de que [ocurra algo]	to depend on [something] happening	reference	depender|de que => on|clause	The clause-complement form; depender de [algo] already exists.
+20iwl9s0r5	dentro de [un tiempo]	in [an amount of time]	reference	time|preposition	Future-time dentro de.
+pwdq4vnqib	dentro de [un límite]	within [a limit]	reference	preposition|limit	The boundary sense, distinct from the future-time sense.
+0rg57o7g76	desde [un momento]	starting [a time]	reference	time|preposition	Starting-point sense of desde.
+yhh3l4act9	desde mi punto de vista	from my point of view	reference	fixed expression|opinion	Fixed opinion phrase.
+6827l0k1ob	desde luego	of course	reference	fixed expression|agreement	Fixed agreement expression.
+cboe3ncvvg	¿dónde está [algo]?	where is [something]?	reference	question|location	Question frame; bare donde is held in core.
+v7psmvhjff	entre más [ocurre algo], más [ocurre otra cosa]	the more [something happens], the more [something else happens]	reference	comparison|correlative	Latin American entre mas correlative; the more...the more construction.
+2yywyl5i44	más de [una cantidad]	more than [an amount]	reference	quantity|comparison	More-than with numbers, where Spanish uses de rather than que.
+7nzdyaq2x1	en medio de [algo]	in the middle of [something]	reference	location|preposition	Concept is the locative phrase.
+8g59ojfuw4	todos menos [alguien]	everyone except [somebody]	reference	exception|quantity	Exception sense of menos.
+7xx1fimdtn	mientras que [ocurre algo]	whereas [something happens]	reference	connector|contrast	Source file 02-whereas: contrastive, not temporal, mientras.
+5r4vw18q4o	por sí mismo/a	by oneself	reference	reflexive|fixed expression	Source file 07-by-oneself.
+szn7fm8wsx	[hacer algo] mucho	to [do something] a lot	reference	quantity|adverb	Adverbial mucho modifying a verb.
+01slode9o8	mucho [sustantivo]	plenty of [noun]	reference	quantity|determiner	Plenty-of sense of mucho.
+dhyt13en8w	no [hacer algo] ni [hacer otra cosa]	neither [to do something] nor [to do something else]	reference	ni|negative|correlative	Verb-phrase neither/nor.
+i4tdzuamg4	ni [alguien] ni [alguien]	neither [somebody] nor [somebody]	reference	ni|negative|correlative	Noun-phrase neither/nor, distinct from the verb form.
+52dbadce2l	no [hacer algo] siquiera [una vez]	not to [do something] even [once]	reference	siquiera|negative|emphasis	Siquiera as even in a negative clause.
+v96gg2fw1q	ni siquiera [hacer algo]	not even to [do something]	reference	siquiera|negative|emphasis	The ni siquiera intensifier.
+31la252ocl	siquiera [una cantidad]	at least [an amount]	reference	siquiera|quantity	Positive at-least sense of siquiera.
+4sabms9mlz	¿nunca has [hecho algo]?	haven't you ever [done something]?	reference	question|never|ever	The Spanish nunca to English ever swap in questions.
+dzhyd6xsd6	¿por qué [ocurre algo]?	why [does something happen]?	reference	question|reason	Question frame for why.
+i7kngch29y	más pronto de lo esperado	earlier than expected	reference	comparison|time|fixed expression	Fixed comparative phrase.
+lcz2539dyj	de pronto	suddenly	reference	time|adverb	Standard sense of de pronto.
+0jle9bry8q	de pronto	maybe	reference	adverb|Colombian Spanish	Colombian sense of de pronto; a genuine regional split from suddenly.
+erzbzs0gzc	¿a qué hora [ocurre algo]?	what time [does something happen]?	reference	question|time	Question frame for clock time.
+gwnpt7pmq9	asegurarse de que [algo]	to make sure [something]	reference	asegurar|clause|de que => that	Base construction; the original row stored an imperative.
+etyzwht0ts	no solo [algo]	not only [something]	reference	correlative|no|solo|only	First half of the split correlative; one teachable unit per row.
+zn6dojvjv8	sino también [algo]	but also [something]	reference	correlative|sino|also	Second half of the split correlative, taking over the previously bundled row.
+ksf8aynt7s	no [hacer nada] sino [hacer algo]	to do nothing but [do something]	reference	sino|exception	Source file 03-except: sino as but/except.
+t114homehd	siempre que [ocurre algo]	whenever [something happens]	reference	connector|time|condition	Temporal whenever sense.
+0lold5fh3d	siempre que [ocurra algo]	as long as [something happens]	reference	connector|condition	Conditional sense; the original English bundled whenever/as long as into one field.
+tpnbbxdlyr	llevar [tiempo] sin [hacer algo]	not to have [done something] for [a period of time]	reference	llevar|duration|negative	Negative counterpart of llevar [tiempo] [haciendo algo].
+6k3ek5jhqf	[hacer algo] tanto como [alguien]	to [do something] as much as [somebody]	reference	comparison|equal comparison	Verb-phrase as-much-as; the noun form already exists.
+ub2iy1fuxk	mientras tanto	meanwhile	reference	connector|time	Concept is the discourse connector.
+97h5zo76ab	más vale tarde que nunca	better late than never	reference	proverb|fixed expression	A proverb; legitimately stored whole, but the example no longer mirrors the concept field.
+23jqqwk28f	tardar [tiempo] en [hacer algo]	to take [an amount of time] to [do something]	reference	tardar|duration	Duration construction with an explicit amount.
+vmo1fuguve	tardar en [hacer algo]	to be slow to [do something]	reference	tardar|delay	The delay sense, without an explicit amount.
+m83xfkgld1	¿Qué hay de nuevo?	What is new?	reference	fixed expression|greeting	Sentence-case normalization only; the concept field was lowercased.
+3c8uaa6qwh	así [ocurre algo]	that is how [something happens]	reference	asi|manner	Concept is the manner adverb, not the sentence.
+wha5r4jqwd	cierto/a [sustantivo]	a certain [noun]	reference	cierto|determiner	Determiner sense of cierto.
+ltag03rg5k	¿cómo [hacer algo]?	how do you [do something]?	reference	question|manner	Question frame; bare como is held in core.
+jdnb164lv0	luego	therefore	reference	connector|consequence	Consequence sense of luego, distinct from its time sense.
+me1ci2uana	pues	then	reference	discourse connector|Colombian Spanish	Very common Colombian discourse marker.
+b1uohuf8wn	¡qué [adjetivo] [sustantivo]!	what a [adjective] [noun]!	reference	exclamative|que	Exclamative construction with a noun.
+dhxw09o9vs	¡qué [adjetivo]!	how [adjective]!	reference	exclamative|que	Exclamative construction with a bare adjective.
+wmzhjqoerd	sin [algo]	without [something]	reference	preposition|negative	Noun-complement sin; the gerund form already exists.
+56dupg98qa	¡abajo [algo]!	down with [something]!	reference	exclamative|protest	Fixed protest exclamation.

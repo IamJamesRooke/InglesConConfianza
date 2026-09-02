@@ -24,8 +24,10 @@ Migration is complete. Do not recreate the retired Markdown source trees, build 
 - PostgreSQL is the only canonical machine-readable curriculum store. Teachable content belongs in `curriculum_concepts`; collections provide queryable grouping without parallel catalogs.
 - Immutable JSON snapshots under `web/prisma/seed-data/` exist for reproducible bootstrap and parity verification. Update them through the established export workflow after approved database changes; do not edit them as the primary store.
 - The archived source documents and extracted rows in PostgreSQL are immutable provenance. They do not create an obligation to retain every imported concept.
-- Each concept is Spanish-first, has exactly one English target, one generic bilingual example, reusable collections, and one role: `core`, `supporting`, or `reference`.
-- `core` is an elite functional tier. `supporting` is selective and broadly reusable. `reference` is the default home for valid but secondary, situational, inferable, or specialized material.
+- Each concept is Spanish-first, has exactly one English target, one generic bilingual example, reusable collections, and one role: `core`, `supporting`, `reference`, or `trash`.
+- `core` is an elite functional tier. `supporting` is selective and broadly reusable. `reference` is the default home for valid but secondary, situational, inferable, or specialized material. `trash` is a staging tier for deletion candidates only; nothing teaching-facing reads it.
+- Never delete a concept outright as a curation judgement. Set its role to `trash`, so it stays filterable and recoverable, and let the owner bulk-delete the `/curriculum?role=trash` survivors after a second look.
+- Curation is applied directly from reviewed TSV manifests via `curriculum:roles:apply` and `curriculum:concepts:apply`; record each applied manifest with its per-row rationale under `docs/curation/`. There is no review-candidate queue.
 - Compare proposed inserts and merges with PostgreSQL before writing. Prefer small, reversible curation batches with tests and snapshot parity after each batch.
 - Do not perform database curation concurrently with the owner unless responsibility for the current batch is explicit.
 

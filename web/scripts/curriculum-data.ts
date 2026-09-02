@@ -3,11 +3,6 @@ import path from "node:path";
 
 import type { Prisma, PrismaClient } from "../src/generated/prisma/client";
 import type {
-  ReviewBatch,
-  ReviewCandidate,
-  ReviewFile,
-} from "../src/lib/curriculum/review-types";
-import type {
   CurriculumConcept,
   CurriculumFile,
 } from "../src/lib/curriculum/types";
@@ -19,8 +14,6 @@ import type {
 import {
   isCurriculumFile,
   isMappingSourceArchive,
-  isReviewBatch,
-  isReviewFile,
 } from "../src/lib/curriculum/validation";
 
 export const seedDataDirectory = path.join(
@@ -34,34 +27,21 @@ async function readJson(filePath: string): Promise<unknown> {
 }
 
 export async function loadSeedData() {
-  const [curriculumValue, reviewValue, sourceValue] = await Promise.all([
+  const [curriculumValue, sourceValue] = await Promise.all([
     readJson(path.join(seedDataDirectory, "curriculum.json")),
-    readJson(path.join(seedDataDirectory, "curriculum-review.json")),
     readJson(path.join(seedDataDirectory, "curriculum-sources.json")),
   ]);
 
   if (!isCurriculumFile(curriculumValue)) {
     throw new Error("The curriculum seed snapshot has an invalid shape.");
   }
-  if (!isReviewFile(reviewValue)) {
-    throw new Error("The review seed snapshot has an invalid shape.");
-  }
   if (!isMappingSourceArchive(sourceValue)) {
     throw new Error("The mapping-source seed snapshot has an invalid shape.");
   }
   return {
     curriculum: curriculumValue,
-    review: reviewValue,
     sources: sourceValue,
   };
-}
-
-export async function loadReviewBatch(filePath: string) {
-  const value = await readJson(path.resolve(filePath));
-  if (!isReviewBatch(value)) {
-    throw new Error("The review batch file has an invalid shape.");
-  }
-  return value;
 }
 
 export function databaseDate(value: string) {
@@ -79,32 +59,24 @@ export function formatDatabaseDate(value: Date) {
 export async function seedCurriculumDatabase(
   client: PrismaClient,
   curriculum: CurriculumFile,
-  review: ReviewFile,
   sources: MappingSourceArchive,
 ) {
   await client.$transaction(
     async (transaction) => {
       const [
         conceptCount,
-        batchCount,
-        candidateCount,
         collectionCount,
         sourceDocumentCount,
         sourceEntryCount,
-      ] =
-        await Promise.all([
-          transaction.curriculumConcept.count(),
-          transaction.reviewBatch.count(),
-          transaction.reviewCandidate.count(),
-          transaction.collection.count(),
-          transaction.mappingSourceDocument.count(),
-          transaction.mappingSourceEntry.count(),
-        ]);
+      ] = await Promise.all([
+        transaction.curriculumConcept.count(),
+        transaction.collection.count(),
+        transaction.mappingSourceDocument.count(),
+        transaction.mappingSourceEntry.count(),
+      ]);
 
       if (
         conceptCount ||
-        batchCount ||
-        candidateCount ||
         collectionCount ||
         sourceDocumentCount ||
         sourceEntryCount
@@ -115,12 +87,9 @@ export async function seedCurriculumDatabase(
       }
 
       const collectionNames = [
-        ...new Set([
-          ...curriculum.concepts.flatMap((concept) => concept.collections),
-          ...review.batches.flatMap((batch) =>
-            batch.candidates.flatMap((candidate) => candidate.collections),
-          ),
-        ]),
+        ...new Set(
+          curriculum.concepts.flatMap((concept) => concept.collections),
+        ),
       ];
 
       await transaction.collection.createMany({
@@ -144,54 +113,6 @@ export async function seedCurriculumDatabase(
             collectionName,
             position,
           })),
-        ),
-      });
-      await transaction.reviewBatch.createMany({
-        data: review.batches.map((batch, sortOrder) => ({
-          id: batch.id,
-          title: batch.title,
-          sourcePaths: batch.sourcePaths,
-          createdAt: databaseDate(batch.createdAt),
-          status: batch.status,
-          migratedAt: batch.migratedAt
-            ? databaseDate(batch.migratedAt)
-            : null,
-          sortOrder,
-        })),
-      });
-      await transaction.reviewCandidate.createMany({
-        data: review.batches.flatMap((batch) =>
-          batch.candidates.map((candidate, sortOrder) => ({
-            batchId: batch.id,
-            id: candidate.id,
-            action: candidate.action,
-            existingConceptId: candidate.existingConceptId ?? null,
-            suggestedCurriculumRole: candidate.suggestedCurriculumRole,
-            spanish: candidate.spanish,
-            english: candidate.english,
-            exampleSpanish: candidate.example.spanish,
-            exampleEnglish: candidate.example.english,
-            curriculumRole: candidate.curriculumRole,
-            sourcePaths: candidate.sourcePaths,
-            rationale: candidate.rationale,
-            approved: candidate.approved,
-            deleted: candidate.deleted ?? false,
-            migrated: candidate.migrated ?? false,
-            ownerNote: candidate.ownerNote,
-            sortOrder,
-          })),
-        ),
-      });
-      await transaction.reviewCandidateCollection.createMany({
-        data: review.batches.flatMap((batch) =>
-          batch.candidates.flatMap((candidate) =>
-            candidate.collections.map((collectionName, position) => ({
-              batchId: batch.id,
-              candidateId: candidate.id,
-              collectionName,
-              position,
-            })),
-          ),
         ),
       });
       await transaction.mappingSourceDocument.createMany({
@@ -235,9 +156,6 @@ export async function seedCurriculumDatabase(
 type ConceptRow = Prisma.CurriculumConceptGetPayload<{
   include: { collections: true };
 }>;
-type BatchRow = Prisma.ReviewBatchGetPayload<{
-  include: { candidates: { include: { collections: true } } };
-}>;
 type SourceDocumentRow = Prisma.MappingSourceDocumentGetPayload<object>;
 type SourceEntryRow = Prisma.MappingSourceEntryGetPayload<object>;
 
@@ -249,44 +167,6 @@ function conceptFromRow(row: ConceptRow): CurriculumConcept {
     example: { spanish: row.exampleSpanish, english: row.exampleEnglish },
     collections: row.collections.map((item) => item.collectionName),
     curriculumRole: row.curriculumRole,
-  };
-}
-
-function candidateFromRow(
-  row: BatchRow["candidates"][number],
-): ReviewCandidate {
-  return {
-    id: row.id,
-    action: row.action,
-    ...(row.existingConceptId
-      ? { existingConceptId: row.existingConceptId }
-      : {}),
-    suggestedCurriculumRole: row.suggestedCurriculumRole,
-    spanish: row.spanish,
-    english: row.english,
-    example: { spanish: row.exampleSpanish, english: row.exampleEnglish },
-    collections: row.collections.map((item) => item.collectionName),
-    curriculumRole: row.curriculumRole,
-    sourcePaths: row.sourcePaths,
-    rationale: row.rationale,
-    approved: row.approved,
-    ...(row.deleted ? { deleted: true } : {}),
-    ...(row.migrated ? { migrated: true } : {}),
-    ownerNote: row.ownerNote,
-  };
-}
-
-function batchFromRow(row: BatchRow): ReviewBatch {
-  return {
-    id: row.id,
-    title: row.title,
-    sourcePaths: row.sourcePaths,
-    createdAt: formatDatabaseDate(row.createdAt),
-    status: row.status,
-    ...(row.migratedAt
-      ? { migratedAt: formatDatabaseDate(row.migratedAt) }
-      : {}),
-    candidates: row.candidates.map(candidateFromRow),
   };
 }
 
@@ -326,40 +206,24 @@ function sourceEntryFromRow(row: SourceEntryRow): MappingSourceEntry {
     tags: row.tags,
   };
 }
+
 export async function exportCurriculumDatabase(client: PrismaClient) {
-  const [conceptRows, batchRows, sourceDocumentRows, sourceEntryRows] =
-    await Promise.all([
-      client.curriculumConcept.findMany({
-        orderBy: { sortOrder: "asc" },
-        include: { collections: { orderBy: { position: "asc" } } },
-      }),
-      client.reviewBatch.findMany({
-        orderBy: { sortOrder: "asc" },
-        include: {
-          candidates: {
-            orderBy: { sortOrder: "asc" },
-            include: { collections: { orderBy: { position: "asc" } } },
-          },
-        },
-      }),
-      client.mappingSourceDocument.findMany({ orderBy: { sortOrder: "asc" } }),
-      client.mappingSourceEntry.findMany({
-        orderBy: [
-          { document: { sortOrder: "asc" } },
-          { position: "asc" },
-        ],
-      }),
-    ]);
+  const [conceptRows, sourceDocumentRows, sourceEntryRows] = await Promise.all([
+    client.curriculumConcept.findMany({
+      orderBy: { sortOrder: "asc" },
+      include: { collections: { orderBy: { position: "asc" } } },
+    }),
+    client.mappingSourceDocument.findMany({ orderBy: { sortOrder: "asc" } }),
+    client.mappingSourceEntry.findMany({
+      orderBy: [{ document: { sortOrder: "asc" } }, { position: "asc" }],
+    }),
+  ]);
 
   return {
     curriculum: {
       version: 1,
       concepts: conceptRows.map(conceptFromRow),
     } satisfies CurriculumFile,
-    review: {
-      version: 1,
-      batches: batchRows.map(batchFromRow),
-    } satisfies ReviewFile,
     sources: {
       version: 1,
       sourceRoot: "docs/curriculum",

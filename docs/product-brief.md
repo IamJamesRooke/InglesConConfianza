@@ -62,8 +62,7 @@ Raw migrated source documents remain immutable PostgreSQL provenance. They prote
 
 ## Current product surfaces
 
-- Curriculum provides bilingual search, exact role and collection filters, pagination, inline editing, role changes, collection editing, and deletion.
-- Review inbox provides a guarded workflow for inspecting proposed additions and revisions before applying them to the canonical curriculum.
+- Curriculum provides bilingual search, exact role and collection filters, pagination, inline editing, role changes, collection editing, bulk selection, and deletion. Curation is applied directly, in bounded batches, from reviewed manifests; concepts headed for removal are parked in the `trash` role and bulk-deleted after a filtered second look.
 - Lesson Builder supports handcrafted explanations and sentence practice with accepted alternatives, hints, feedback, validation, reordering, duplication, previews, and JSON persistence.
 - Practice runs the authored lesson model with immediate answer recognition, help, feedback, and lesson navigation.
 

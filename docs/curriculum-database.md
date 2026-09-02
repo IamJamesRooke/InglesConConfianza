@@ -10,7 +10,7 @@ Every curriculum concept has:
 - exactly one normalized English target;
 - one generic Spanish example and its natural English equivalent;
 - reusable collections for retrieval and lesson building; and
-- exactly one curriculum role: `core`, `supporting`, or `reference`.
+- exactly one curriculum role: `core`, `supporting`, `reference`, or `trash`.
 
 The database is a Spanish-to-English map. Only Spanish belongs in Spanish fields and only English belongs in English fields. Keep independently teachable phrases and constructions intact instead of reducing everything to dictionary words.
 
@@ -43,15 +43,16 @@ Prefer controlled, predictable labels. During curation, merge spelling variants,
 - `core`: language learners must explicitly master to make basic English function. Frequency alone is insufficient; every concept must earn this role.
 - `supporting`: highly useful, broadly reusable language that directly strengthens Core instruction. This tier is also selective.
 - `reference`: useful but secondary, situational, specialized, readily inferable, or retained for later retrieval.
+- `trash`: a staging tier for deletion candidates only. Nothing teaching-facing reads it. Concepts sit here, filterable and recoverable, until the owner bulk-deletes the `/curriculum?role=trash` survivors.
 
-Promotion and demotion are curation decisions. Deleting genuinely low-value material is expected now that lossless source provenance is secure.
+Promotion and demotion are curation decisions. Retiring genuinely low-value material is expected now that lossless source provenance is secure — move it to `trash` rather than deleting it as a judgement call.
 
 ## Curation workflow
 
 1. Select a bounded database slice by role, collection, source family, or suspicious pattern.
 2. Inspect canonical concepts and likely duplicates together.
-3. Delete low-value or malformed concepts, merge true duplicates, normalize retained records, and simplify their collections.
+3. Move low-value or malformed concepts to `trash`, merge true duplicates, normalize retained records, and simplify their collections.
 4. Check that examples remain generic, bilingual, and natural.
-5. Export updated immutable snapshots through the established script when the batch is approved, then run database regression tests and snapshot parity verification.
+5. Apply the batch from a reviewed TSV manifest (`curriculum:roles:apply`, `curriculum:concepts:apply`), recorded under `docs/curation/`. Export updated immutable snapshots, then run database regression tests and snapshot parity verification.
 
 Do not attempt to perfect all curriculum records before lesson building. Complete the broad correctness and priority pass, then let Module 1 expose the next high-value curation work.

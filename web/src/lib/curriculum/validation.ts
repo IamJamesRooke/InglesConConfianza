@@ -1,19 +1,14 @@
-import type {
-  CurriculumConcept,
-  CurriculumFile,
-  CurriculumRole,
+import {
+  curriculumRoles,
+  type CurriculumConcept,
+  type CurriculumFile,
+  type CurriculumRole,
 } from "@/lib/curriculum/types";
 import type {
   MappingSourceArchive,
   MappingSourceDocument,
   MappingSourceEntry,
 } from "@/lib/curriculum/mapping-source-types";
-import {
-  curriculumRoles,
-  type ReviewBatch,
-  type ReviewCandidate,
-  type ReviewFile,
-} from "@/lib/curriculum/review-types";
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -72,61 +67,6 @@ export function isCurriculumFile(value: unknown): value is CurriculumFile {
   return (
     new Set(ids).size === ids.length &&
     new Set(edges).size === edges.length
-  );
-}
-
-export function isReviewCandidate(value: unknown): value is ReviewCandidate {
-  if (!isRecord(value) || !isCurriculumConcept(value)) return false;
-
-  const candidate = value as CurriculumConcept & Record<string, unknown>;
-
-  return (
-    (candidate.action === "add" || candidate.action === "revise") &&
-    (candidate.existingConceptId === undefined ||
-      (typeof candidate.existingConceptId === "string" &&
-        candidate.existingConceptId.length > 0)) &&
-    typeof candidate.suggestedCurriculumRole === "string" &&
-    curriculumRoles.includes(
-      candidate.suggestedCurriculumRole as (typeof curriculumRoles)[number],
-    ) &&
-    isStringList(candidate.sourcePaths) &&
-    typeof candidate.rationale === "string" &&
-    candidate.rationale.trim().length > 0 &&
-    typeof candidate.approved === "boolean" &&
-    (candidate.deleted === undefined ||
-      typeof candidate.deleted === "boolean") &&
-    (candidate.migrated === undefined ||
-      typeof candidate.migrated === "boolean") &&
-    typeof candidate.ownerNote === "string"
-  );
-}
-
-export function isReviewBatch(value: unknown): value is ReviewBatch {
-  return (
-    isRecord(value) &&
-    typeof value.id === "string" &&
-    value.id.length > 0 &&
-    typeof value.title === "string" &&
-    value.title.trim().length > 0 &&
-    typeof value.createdAt === "string" &&
-    (value.status === "open" || value.status === "migrated") &&
-    (value.migratedAt === undefined || typeof value.migratedAt === "string") &&
-    isStringList(value.sourcePaths) &&
-    Array.isArray(value.candidates) &&
-    value.candidates.every(isReviewCandidate) &&
-    new Set(value.candidates.map((candidate) => candidate.id)).size ===
-      value.candidates.length
-  );
-}
-
-export function isReviewFile(value: unknown): value is ReviewFile {
-  return (
-    isRecord(value) &&
-    value.version === 1 &&
-    Array.isArray(value.batches) &&
-    value.batches.every(isReviewBatch) &&
-    new Set(value.batches.map((batch) => batch.id)).size ===
-      value.batches.length
   );
 }
 

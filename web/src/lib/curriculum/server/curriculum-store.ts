@@ -77,10 +77,7 @@ export async function removeUnusedCollections(
   transaction: Prisma.TransactionClient,
 ) {
   await transaction.collection.deleteMany({
-    where: {
-      conceptMemberships: { none: {} },
-      candidateMemberships: { none: {} },
-    },
+    where: { conceptMemberships: { none: {} } },
   });
 }
 

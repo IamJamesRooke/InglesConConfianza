@@ -985,3 +985,22 @@ u1f7kuozok	supporting	despacio -> slowly
 # --- trash: bundled Spanish alternatives on stale pre-reslug ids, already covered unbundled ---
 take-up	trash	bundles empezar una actividad / ocupar espacio; tyi7ultt7w already holds empezar -> to take up
 take-in	trash	bundles enganar a alguien / absorber informacion; b9jycma895 already holds enganar -> to take in
+# Sentence-record duplicates moved to trash, 2026-09-02
+# Applied via: npm run curriculum:roles:apply -- <this file> --apply
+# Sentence records whose construction is already held by another concept.
+zzy7poh40i	trash	Laura tambien viene y, ademas, trae cafe; ademas -> also is already held by jhcycetbge
+o4unfsl9d0	trash	La taza de cafe no es una taza para cafe; a contrast demo for the de/para pair already held by ray0xga2me and h85lbubyqe
+m2oepphsrg	trash	La taza de cafe esta llena...; second contrast demo for the same de/para pair
+4icl1zhexf	trash	La taza de cafe esta vacia...; third contrast demo for the same de/para pair
+uqw7qo48c9	trash	Caminamos mas de cinco kilometros; same mas de [cantidad] construction as 2yywyl5i44
+o2ms964cwz	trash	Trabajo mucho entre semana; shorter duplicate of szn7fm8wsx, same adverbial mucho
+vk183kq4k6	trash	Aun asi, continuamos; same aun asi connector as yv5pwer3eq
+3eolc3pz88	trash	Mientras tanto, esperaremos; same mientras tanto connector as ub2iy1fuxk
+p3ekkb7u3j	trash	Ni siquiera respondio; same ni siquiera intensifier as v96gg2fw1q
+ccia5llxwh	trash	¿Cuanto necesitas?; adds nothing to the interrogative cuanto now held in core
+5fuqp9pz5z	trash	¿Cuanto tiempo necesitas?; same duration question frame as fnszz28inq
+rle284p40k	trash	Despues llamo Laura; despues -> then is already held alongside entonces and luego
+skmppmerju	trash	¡Que temprano!; same bare-adjective exclamative as dhxw09o9vs
+b0uvykqv53	trash	¿Que quieres?; adds nothing to interrogative que plus querer
+oa7zov8vyl	trash	¿Que necesitas?; adds nothing to interrogative que plus necesitar
+ju968jjo7u	trash	¿Quien esta aqui?; adds nothing to the interrogative quien now held in core

@@ -1,6 +1,6 @@
 # Ingles Con Confianza web application
 
-The Next.js application uses PostgreSQL for canonical curriculum concepts, collections, review history, and immutable source provenance. Lesson Builder and Practice use `data/lessons.json`; that boundary remains intentional while Module 1 proves the lesson contract.
+The Next.js application uses PostgreSQL for canonical curriculum concepts, collections, and immutable source provenance. Lesson Builder and Practice use `data/lessons.json`; that boundary remains intentional while Module 1 proves the lesson contract.
 
 ## Local setup
 
@@ -17,7 +17,7 @@ npm run db:verify
 npm run dev
 ```
 
-`db:seed` imports the immutable snapshots under `prisma/seed-data/` and refuses to run when curriculum tables already contain data. `db:verify` reconstructs the complete PostgreSQL curriculum and review state and compares it with those snapshots. `db:down` stops PostgreSQL without deleting its named volume.
+`db:seed` imports the immutable snapshots under `prisma/seed-data/` and refuses to run when curriculum tables already contain data. `db:verify` reconstructs the complete PostgreSQL curriculum state and compares it with those snapshots. `db:down` stops PostgreSQL without deleting its named volume.
 
 Use `npm run db:migrate -- --name <migration-name>` when changing the Prisma schema and `npm run db:studio` for direct local inspection.
 
@@ -36,24 +36,35 @@ npm run db:test
 
 The first export command is a dry run. The second writes the snapshots.
 
-## Guarded additions and revisions
+## Curation manifests
 
-Review batches remain the protected path for proposing new concepts or bulk revisions. Preflight a temporary `ReviewBatch` JSON file before importing it:
+Bulk curation is applied from reviewed TSV manifests. Both commands default to a
+dry run and take `--apply` to write, transactionally, and re-clean orphan
+collections afterward.
 
-```bash
-npm run curriculum:review:preflight -- --file /path/to/batch.json
-npm run curriculum:review:import -- --file /path/to/batch.json
-npm run curriculum:review:import -- --file /path/to/batch.json --apply
-```
-
-Inspect the candidates in Review inbox, then apply only approved, non-deleted candidates transactionally:
+`curriculum:roles:apply` moves concepts between the `core`, `supporting`,
+`reference`, and `trash` tiers. Each line is `concept-id`, new role, and a reason:
 
 ```bash
-npm run curriculum:migrate -- --batch <batch-id>
-npm run curriculum:migrate -- --batch <batch-id> --apply
+npm run curriculum:roles:apply -- manifest.tsv
+npm run curriculum:roles:apply -- manifest.tsv --apply
 ```
 
-These commands default to rollback-only dry runs. The historical database field is still named `migrated`; in the current workflow it means that an approved review candidate was applied to the canonical curriculum.
+`curriculum:concepts:apply` rewrites a concept's `spanish`, `english`, role, and
+adds collections. Each line is `concept-id`, spanish, english, role,
+`|`-separated collections to add, and a reason. It guards the unique
+`(spanish, english)` constraint before writing:
+
+```bash
+npm run curriculum:concepts:apply -- manifest.tsv
+npm run curriculum:concepts:apply -- manifest.tsv --apply
+```
+
+Record each applied manifest under `docs/curation/` with its per-row rationale.
+
+Deletion is deferred: set a concept's role to `trash`, review the
+`/curriculum?role=trash` filter, then bulk-delete the survivors from the
+Curriculum table. Nothing is lost until that final delete.
 
 ## Source provenance
 

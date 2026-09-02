@@ -19,16 +19,12 @@ async function main() {
   const apply = process.argv.includes("--apply");
   const exported = await exportCurriculumDatabase(prisma);
   const conceptCount = exported.curriculum.concepts.length;
-  const batchCount = exported.review.batches.length;
-  const candidateCount = exported.review.batches.flatMap(
-    (batch) => batch.candidates,
-  ).length;
   const sourceDocumentCount = exported.sources.documents.length;
   const sourceEntryCount = exported.sources.entries.length;
 
   if (!apply) {
     console.log(
-      `Dry run: would export ${conceptCount} concepts, ${batchCount} review batches, ${candidateCount} review candidates, ${sourceDocumentCount} source documents, and ${sourceEntryCount} source entries. Re-run with --apply to write snapshots.`,
+      `Dry run: would export ${conceptCount} concepts, ${sourceDocumentCount} source documents, and ${sourceEntryCount} source entries. Re-run with --apply to write snapshots.`,
     );
     return;
   }
@@ -38,15 +34,11 @@ async function main() {
     exported.curriculum,
   );
   await writeJsonAtomically(
-    path.join(seedDataDirectory, "curriculum-review.json"),
-    exported.review,
-  );
-  await writeJsonAtomically(
     path.join(seedDataDirectory, "curriculum-sources.json"),
     exported.sources,
   );
   console.log(
-    `Exported ${conceptCount} concepts, ${batchCount} review batches, ${candidateCount} review candidates, ${sourceDocumentCount} source documents, and ${sourceEntryCount} source entries.`,
+    `Exported ${conceptCount} concepts, ${sourceDocumentCount} source documents, and ${sourceEntryCount} source entries.`,
   );
 }
 
