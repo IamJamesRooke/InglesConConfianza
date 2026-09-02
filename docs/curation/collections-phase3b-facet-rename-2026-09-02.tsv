@@ -1,0 +1,1345 @@
+DELETE	transformation	meaningless umbrella tag
+DELETE	cognate	meaningless umbrella tag
+MERGE	true cognate	cognate:true
+DELETE	vocabulary	meaningless umbrella tag
+RENAME	verb	pos:verb
+RENAME	spelling pattern	cognate:spelling-pattern
+DELETE	past and past participle	meaningless umbrella tag
+MERGE	verb form transformation	morphology:inflection
+RENAME	noun	pos:noun
+DELETE	structure	meaningless umbrella tag
+RENAME	irregular	form:irregular
+RENAME	adjective	pos:adjective
+RENAME	sound metadata pending review	sound:needs-review
+RENAME	phrasal verb	grammar:phrasal-verb
+RENAME	past equals past participle	form:past-equals-participle
+MERGE	transformation relationship	morphology:derivation
+RENAME	verb + preposition	construction:prepositional-verb
+RENAME	past participle	form:past-participle
+RENAME	past	form:past
+DELETE	base => past participle	redundant with form: facet
+DELETE	base => past	redundant with form: facet
+MERGE	verb forms	construction:verb-forms
+RENAME	selected high-frequency cognate	cognate:high-frequency
+RENAME	limited transformation	morphology:limited
+RENAME	sound metadata reviewed	sound:reviewed
+RENAME	time	topic:time
+MERGE	verb form relationship	morphology:inflection
+RENAME	regular variant	form:regular-variant
+MERGE	uses third-person present	form:third-person
+MERGE	verb form: third-person present	form:third-person
+MERGE	Spanish -a/-e memory bridge	cognate:memory-bridge
+DELETE	01-direct	numeric migration folder name
+MERGE	direct	cognate:direct
+MERGE	direct cognate	cognate:direct
+RENAME	reflexive	grammar:reflexive
+DELETE	adjectives and states	meaningless umbrella tag
+RENAME	adverb	pos:adverb
+RENAME	direction	topic:direction
+RENAME	number	pos:number
+RENAME	date	topic:date
+RENAME	productive transformation	morphology:productive
+RENAME	question	grammar:question
+DELETE	03-word-families	numeric migration folder name
+DELETE	word family	meaningless umbrella tag
+MERGE	word family cognate	cognate:word-family
+DELETE	04-memory-bridges	numeric migration folder name
+RENAME	connector	pos:connector
+MERGE	memory bridge	cognate:memory-bridge
+MERGE	memory bridge cognate	cognate:memory-bridge
+RENAME	up	particle:up
+RENAME	out	particle:out
+RENAME	modal	grammar:modal
+RENAME	recognition family	morphology:recognition
+RENAME	transformation: noun => adjective	morphology:noun-to-adjective
+RENAME	transformation: verb => noun	morphology:verb-to-noun
+RENAME	followed by bare infinitive	construction:followed-by-bare-infinitive
+RENAME	negative	grammar:negative
+RENAME	in	particle:in
+RENAME	location	topic:location
+RENAME	on	particle:on
+RENAME	a => to	construction:map-a-to
+RENAME	followed by full infinitive	construction:followed-by-full-infinitive
+MERGE	uses present participle	form:present-participle
+RENAME	transformation: adjective => noun	morphology:adjective-to-noun
+MERGE	uses bare infinitive	form:bare-infinitive
+MERGE	verb form: bare infinitive	form:bare-infinitive
+RENAME	pronoun	pos:pronoun
+RENAME	gerund	grammar:gerund
+MERGE	-er	morphology:suffix-er
+MERGE	-ward	morphology:suffix-ward
+RENAME	calendar	topic:calendar
+RENAME	suffix: -ward	morphology:suffix-ward
+MERGE	-ly	morphology:suffix-ly
+RENAME	off	particle:off
+MERGE	verb form: present participle	form:present-participle
+MERGE	-ing	morphology:suffix-ing
+RENAME	determiner	pos:determiner
+RENAME	transformation: noun => noun	morphology:noun-to-noun
+RENAME	followed by gerund	construction:followed-by-gerund
+RENAME	family	topic:family
+RENAME	suffix: -er	morphology:suffix-er
+RENAME	there be	construction:there-be
+RENAME	transformation: -ward	morphology:ward
+RENAME	transformation: expression => adverb	morphology:expression-to-adverb
+MERGE	-able	morphology:suffix-able
+MERGE	-ect	morphology:suffix-ect
+MERGE	-ish	morphology:suffix-ish
+MERGE	-ity	morphology:suffix-ity
+MERGE	-ty	morphology:suffix-ty
+MERGE	-y	morphology:suffix-y
+RENAME	con => with	construction:map-con-with
+RENAME	suffix: -ish	morphology:suffix-ish
+RENAME	transformation: -ish	morphology:ish
+MERGE	-al	morphology:suffix-al
+MERGE	somebody to do something	construction:object-plus-complement
+MERGE	uses full infinitive	form:full-infinitive
+MERGE	verb form: full infinitive	form:full-infinitive
+RENAME	conditional	grammar:conditional
+MERGE	uses past participle	form:past-participle
+RENAME	verb + direct object	grammar:verb-direct-object
+MERGE	-ic	morphology:suffix-ic
+MERGE	-mente	morphology:suffix-mente
+MERGE	-tion	morphology:suffix-tion
+RENAME	transformation: adjective => superlative	morphology:adjective-to-superlative
+MERGE	-ness	morphology:suffix-ness
+RENAME	about	particle:about
+RENAME	away	particle:away
+RENAME	preposition	pos:preposition
+RENAME	third person	grammar:third-person
+MERGE	-act	morphology:suffix-act
+MERGE	-ent	morphology:suffix-ent
+MERGE	-ful	morphology:suffix-ful
+MERGE	-ible	morphology:suffix-ible
+MERGE	auxiliary do	construction:auxiliary-do
+RENAME	de => of	construction:map-de-of
+MERGE	function word	pos:function-word
+RENAME	suffix: -ness	morphology:suffix-ness
+RENAME	transformation: -ness	morphology:ness
+MERGE	-ance	morphology:suffix-ance
+MERGE	-ed	morphology:suffix-ed
+MERGE	-ive	morphology:suffix-ive
+MERGE	-less	morphology:suffix-less
+RENAME	comparative	grammar:comparative
+RENAME	comparison pattern: one syllable	sound:comparison-pattern-one-syllable
+RENAME	down	particle:down
+MERGE	function words	pos:function-word
+RENAME	superlative	grammar:superlative
+RENAME	transformation: adjective => comparative	morphology:adjective-to-comparative
+RENAME	🔊 /ɔt/	rhyme:ɔt
+RENAME	🔊 bought-thought-taught	sound:bought-thought-taught
+MERGE	-dad	morphology:suffix-dad
+MERGE	-ia	morphology:suffix-ia
+MERGE	-idad	morphology:suffix-idad
+RENAME	back	particle:back
+RENAME	causative	grammar:causative
+RENAME	cognate f => ph	construction:map-cognate-f-ph
+MERGE	noun cognates: spanish -dad / -idad and english -ty / -ity	cognate:spelling-pattern
+MERGE	noun cognates: spanish -ía / -ia and english -y	cognate:spelling-pattern
+RENAME	🔊 -teen vs -ty	sound:teen-vs-ty
+RENAME	suffix: -ful	morphology:suffix-ful
+RENAME	suffix: -ing	morphology:suffix-ing
+RENAME	transformation: -er	morphology:er
+RENAME	transformation: -ful	morphology:ful
+RENAME	transformation: -ing	morphology:ing
+MERGE	-ar	morphology:suffix-ar
+MERGE	-ate	morphology:suffix-ate
+MERGE	-ico	morphology:suffix-ico
+MERGE	-ido	morphology:suffix-ido
+MERGE	-o	morphology:suffix-o
+MERGE	-sion	morphology:suffix-sion
+MERGE	fore-	morphology:prefix-fore
+RENAME	imperative	grammar:imperative
+MERGE	noun cognates: remove the final -o	cognate:spelling-pattern
+RENAME	prefix: fore-	morphology:prefix-fore
+RENAME	transformation: verb => adjective	morphology:verb-to-adjective
+MERGE	verb cognates: -ate	cognate:spelling-pattern
+MERGE	-a	morphology:suffix-a
+MERGE	-ante	morphology:suffix-ante
+MERGE	-ecto	morphology:suffix-ecto
+MERGE	-ence	morphology:suffix-ence
+MERGE	-encia	morphology:suffix-encia
+MERGE	-ivo	morphology:suffix-ivo
+MERGE	-or	morphology:suffix-or
+RENAME	de => from	construction:map-de-from
+RENAME	en => in	construction:map-en-in
+MERGE	noun cognates: -encia → -ence	cognate:spelling-pattern
+MERGE	noun cognates: remove the final -a	cognate:spelling-pattern
+RENAME	suffix: -less	morphology:suffix-less
+RENAME	🔊 /ɛd/	rhyme:ɛd
+RENAME	🔊 fed-bled-led	sound:fed-bled-led
+MERGE	-ant	morphology:suffix-ant
+MERGE	-ario	morphology:suffix-ario
+MERGE	-ary	morphology:suffix-ary
+MERGE	-id	morphology:suffix-id
+MERGE	-ism	morphology:suffix-ism
+MERGE	-ismo	morphology:suffix-ismo
+MERGE	-oso	morphology:suffix-oso
+MERGE	-ura	morphology:suffix-ura
+MERGE	-ure	morphology:suffix-ure
+MERGE	-uro	morphology:suffix-uro
+RENAME	double object	construction:double-object
+MERGE	noun cognates: -ismo → -ism	cognate:spelling-pattern
+RENAME	para => for	construction:map-para-for
+RENAME	personal pronoun	grammar:personal-pronoun
+RENAME	subject pronoun	grammar:subject-pronoun
+RENAME	suffix: -er/-or	morphology:suffix-er-or
+RENAME	transformation: -er/-or	morphology:er-or
+RENAME	transformation: verb => verb	morphology:verb-to-verb
+MERGE	verb cognates: -ect	cognate:spelling-pattern
+MERGE	-ancia	morphology:suffix-ancia
+MERGE	-dor	morphology:suffix-dor
+MERGE	-ente	morphology:suffix-ente
+MERGE	-ify	morphology:suffix-ify
+MERGE	-il	morphology:suffix-il
+MERGE	-ile	morphology:suffix-ile
+MERGE	-ine	morphology:suffix-ine
+MERGE	-ize	morphology:suffix-ize
+MERGE	-ous	morphology:suffix-ous
+MERGE	-th	morphology:suffix-th
+MERGE	al-	morphology:prefix-al
+MERGE	be-	morphology:prefix-be
+RENAME	direct object pronoun	grammar:direct-object-pronoun
+MERGE	noun cognates: -ancia → -ance	cognate:spelling-pattern
+MERGE	noun cognates: spanish -ción and english -tion	cognate:spelling-pattern
+RENAME	prefix: al-	morphology:prefix-al
+RENAME	prefix: be-	morphology:prefix-be
+RENAME	suffix: -th	morphology:suffix-th
+RENAME	through	particle:through
+RENAME	transformation: -less	morphology:less
+RENAME	transformation: -th	morphology:th
+MERGE	verb cognates: -act	cognate:spelling-pattern
+MERGE	verb cognates: -ify	cognate:spelling-pattern
+MERGE	verb cognates: -ine	cognate:spelling-pattern
+MERGE	verb cognates: -ize	cognate:spelling-pattern
+RENAME	🔊 /ɛnt/	rhyme:ɛnt
+RENAME	🔊 /ɛpt/	rhyme:ɛpt
+RENAME	🔊 kept-slept-swept	sound:kept-slept-swept
+RENAME	🔊 sent-bent-lent-spent	sound:sent-bent-lent-spent
+MERGE	-ain	morphology:suffix-ain
+MERGE	-en	morphology:suffix-en
+MERGE	-end	morphology:suffix-end
+MERGE	-est	morphology:suffix-est
+MERGE	-fer	morphology:suffix-fer
+MERGE	-ose	morphology:suffix-ose
+MERGE	-rm	morphology:suffix-rm
+RENAME	contextual cognate	cognate:contextual
+MERGE	noun cognates: spanish -sión and english -sion	cognate:spelling-pattern
+RENAME	passive	grammar:passive
+RENAME	perfect	grammar:perfect
+RENAME	subjunctive	grammar:subjunctive
+RENAME	suffix: -en	morphology:suffix-en
+RENAME	suffix: -est	morphology:suffix-est
+RENAME	transformation: -en	morphology:en
+RENAME	transformation: -est	morphology:est
+MERGE	verb cognates: -ain	cognate:spelling-pattern
+MERGE	verb cognates: -end	cognate:spelling-pattern
+MERGE	verb cognates: -fer	cognate:spelling-pattern
+MERGE	verb cognates: -ose	cognate:spelling-pattern
+MERGE	verb cognates: -rm	cognate:spelling-pattern
+MERGE	-acto	morphology:suffix-acto
+MERGE	-an	morphology:suffix-an
+MERGE	-ano	morphology:suffix-ano
+MERGE	-ern	morphology:suffix-ern
+MERGE	-hood	morphology:suffix-hood
+MERGE	-ian	morphology:suffix-ian
+MERGE	-iano	morphology:suffix-iano
+MERGE	-ire	morphology:suffix-ire
+MERGE	-lish	morphology:suffix-lish
+MERGE	-ment	morphology:suffix-ment
+MERGE	-mit	morphology:suffix-mit
+MERGE	-ship	morphology:suffix-ship
+MERGE	-use	morphology:suffix-use
+RENAME	a => direct object	construction:map-a-direct-object
+MERGE	adverb cognates: spanish -mente and english -ly	cognate:spelling-pattern
+RENAME	cognate t => th	construction:map-cognate-t-th
+MERGE	cognates: spanish -ano / -iano and english -an / -ian	cognate:spelling-pattern
+MERGE	cognates: spanish and english -al	cognate:spelling-pattern
+MERGE	confusion set	cognate:confusion-set
+RENAME	money	topic:money
+RENAME	progressive	grammar:progressive
+RENAME	suffix: -al	morphology:suffix-al
+RENAME	suffix: -ern	morphology:suffix-ern
+RENAME	suffix: -hood	morphology:suffix-hood
+RENAME	suffix: -ity	morphology:suffix-ity
+RENAME	suffix: -ly	morphology:suffix-ly
+RENAME	suffix: -ment	morphology:suffix-ment
+RENAME	suffix: -ship	morphology:suffix-ship
+RENAME	suffix: -y	morphology:suffix-y
+RENAME	transformation: -al	morphology:al
+RENAME	transformation: -ern	morphology:ern
+RENAME	transformation: -hood	morphology:hood
+RENAME	transformation: -ity	morphology:ity
+RENAME	transformation: -ly	morphology:ly
+RENAME	transformation: -ment	morphology:ment
+RENAME	transformation: -ship	morphology:ship
+RENAME	transformation: -y	morphology:y
+RENAME	transformation: adjective => adjective	morphology:adjective-to-adjective
+RENAME	transformation: adjective => adverb	morphology:adjective-to-adverb
+RENAME	transformation: fore-	morphology:fore
+MERGE	verb cognates: -ent	cognate:spelling-pattern
+MERGE	verb cognates: -ire	cognate:spelling-pattern
+MERGE	verb cognates: -lish	cognate:spelling-pattern
+MERGE	verb cognates: -mit	cognate:spelling-pattern
+MERGE	verb cognates: -use	cognate:spelling-pattern
+RENAME	🔊 /aʊnd/	rhyme:aʊnd
+RENAME	🔊 /oʊn/	rhyme:oʊn
+RENAME	🔊 found-bound-ground-wound	sound:found-bound-ground-wound
+RENAME	🔊 known-grown-thrown	sound:known-grown-thrown
+MERGE	-anza	morphology:suffix-anza
+MERGE	-ctor	morphology:suffix-ctor
+MERGE	-el	morphology:suffix-el
+MERGE	-ical	morphology:suffix-ical
+MERGE	-ist	morphology:suffix-ist
+MERGE	-it	morphology:suffix-it
+MERGE	-orio	morphology:suffix-orio
+MERGE	-ory	morphology:suffix-ory
+MERGE	-teen	morphology:suffix-teen
+MERGE	-tud	morphology:suffix-tud
+MERGE	-tude	morphology:suffix-tude
+MERGE	-uce	morphology:suffix-uce
+MERGE	-ute	morphology:suffix-ute
+DELETE	05-confusion-sets	numeric migration folder name
+RENAME	a => for	construction:map-a-for
+MERGE	cognates: -ico → -ic	cognate:spelling-pattern
+MERGE	cognates: spanish -orio and english -ory	cognate:spelling-pattern
+RENAME	con => to	construction:map-con-to
+MERGE	confusion set cognate	cognate:confusion-set
+RENAME	days of the week	topic:days-of-the-week
+MERGE	direct noun cognates: -or / -ctor	cognate:spelling-pattern
+MERGE	in-	morphology:prefix-in
+MERGE	noun cognates: spanish -tud and english -tude	cognate:spelling-pattern
+MERGE	noun cognates: spanish f and english ph	cognate:spelling-pattern
+RENAME	para => to	construction:map-para-to
+RENAME	por => for	construction:map-por-for
+RENAME	transformation: adjective => verb	morphology:adjective-to-verb
+MERGE	verb cognates: -ist	cognate:spelling-pattern
+MERGE	verb cognates: -it	cognate:spelling-pattern
+MERGE	verb cognates: -uce	cognate:spelling-pattern
+MERGE	verb cognates: -ute	cognate:spelling-pattern
+MERGE	verb form: past participle	form:past-participle
+RENAME	🔊 /ən/	rhyme:ən
+RENAME	🔊 /ʌŋk/	rhyme:ʌŋk
+RENAME	🔊 drunk-sunk-shrunk	sound:drunk-sunk-shrunk
+MERGE	-ando	morphology:suffix-ando
+MERGE	-dom	morphology:suffix-dom
+MERGE	-ict	morphology:suffix-ict
+MERGE	-icto	morphology:suffix-icto
+MERGE	-ide	morphology:suffix-ide
+MERGE	-iendo	morphology:suffix-iendo
+MERGE	-ite	morphology:suffix-ite
+MERGE	-sis	morphology:suffix-sis
+MERGE	-uct	morphology:suffix-uct
+MERGE	-ue	morphology:suffix-ue
+MERGE	-ult	morphology:suffix-ult
+RENAME	a => from	construction:map-a-from
+RENAME	along	particle:along
+RENAME	clothing	topic:clothing
+MERGE	cognates: -ante → -ant	cognate:spelling-pattern
+MERGE	cognates: -ecto → -ect	cognate:spelling-pattern
+MERGE	cognates: -ente → -ent	cognate:spelling-pattern
+MERGE	cognates: -ido → -id	cognate:spelling-pattern
+MERGE	cognates: -ivo → -ive	cognate:spelling-pattern
+MERGE	cognates: -oso → -ous	cognate:spelling-pattern
+MERGE	cognates: -uro / -ura → -ure	cognate:spelling-pattern
+MERGE	cognates: spanish -able and english -able	cognate:spelling-pattern
+MERGE	cognates: spanish -ar and english -ar	cognate:spelling-pattern
+MERGE	cognates: spanish -ario and english -ary	cognate:spelling-pattern
+MERGE	cognates: spanish -ible and english -ible	cognate:spelling-pattern
+RENAME	comparison pattern: multiple syllables	sound:comparison-pattern-multiple-syllables
+MERGE	coordinating connector	grammar:sentence-structure
+RENAME	de => to	construction:map-de-to
+MERGE	do support	construction:auxiliary-do
+RENAME	en => at	construction:map-en-at
+RENAME	first person	grammar:first-person
+MERGE	noun cognates: shorter english forms	cognate:spelling-pattern
+RENAME	over	particle:over
+RENAME	regular -ed pronounced /d/: prepared	sound:regular-ed-pronounced-d-prepared
+MERGE	six verb forms	construction:verb-forms
+RENAME	suffix: -dom	morphology:suffix-dom
+MERGE	surface form	construction:verb-forms
+RENAME	transformation: -dom	morphology:dom
+MERGE	un-	morphology:prefix-un
+RENAME	verb => noun	construction:map-verb-noun
+MERGE	verb cognates: -ide	cognate:spelling-pattern
+MERGE	verb cognates: -ite	cognate:spelling-pattern
+MERGE	verb cognates: -uct	cognate:spelling-pattern
+MERGE	verb cognates: -ue	cognate:spelling-pattern
+RENAME	🔊 /eɪd/	rhyme:eɪd
+RENAME	🔊 /ɛlt/	rhyme:ɛlt
+RENAME	🔊 /ɪlt/	rhyme:ɪlt
+RENAME	🔊 built-gilt-spilt	sound:built-gilt-spilt
+RENAME	🔊 felt-dealt-knelt	sound:felt-dealt-knelt
+RENAME	🔊 made-paid-laid	sound:made-paid-laid
+MERGE	-age	morphology:suffix-age
+MERGE	-agen	morphology:suffix-agen
+MERGE	-aje	morphology:suffix-aje
+MERGE	-am	morphology:suffix-am
+MERGE	-ama	morphology:suffix-ama
+MERGE	-ck	morphology:suffix-ck
+MERGE	-ded	morphology:suffix-ded
+MERGE	-dido	morphology:suffix-dido
+MERGE	-ion	morphology:suffix-ion
+MERGE	-k	morphology:suffix-k
+MERGE	-ore	morphology:suffix-ore
+MERGE	-pt	morphology:suffix-pt
+MERGE	-que	morphology:suffix-que
+MERGE	-rt	morphology:suffix-rt
+MERGE	-scribe	morphology:suffix-scribe
+MERGE	-tado	morphology:suffix-tado
+MERGE	-ted	morphology:suffix-ted
+MERGE	-tido	morphology:suffix-tido
+MERGE	-ude	morphology:suffix-ude
+RENAME	by	particle:by
+MERGE	cognate forms: spanish -tado / -tido and english -ted	cognate:spelling-pattern
+MERGE	cognates: -acto → -act	cognate:spelling-pattern
+MERGE	cognates: -il → -ile	cognate:spelling-pattern
+MERGE	cognates: english -ult	cognate:spelling-pattern
+MERGE	cognates: spanish -el and english -el	cognate:spelling-pattern
+RENAME	de => about	construction:map-de-about
+MERGE	direct noun cognates: -or	cognate:spelling-pattern
+MERGE	noun cognates: -ama → -am	cognate:spelling-pattern
+MERGE	noun cognates: -que → -k / -ck	cognate:spelling-pattern
+MERGE	noun cognates: spanish -aje / -agen and english -age	cognate:spelling-pattern
+RENAME	que => that	construction:map-que-that
+RENAME	reflexive pronoun	grammar:reflexive-pronoun
+RENAME	regular -ed pronounced /t/: finished	sound:regular-ed-pronounced-t-finished
+RENAME	second person	grammar:second-person
+RENAME	suffix: -able	morphology:suffix-able
+RENAME	suffix: -ed	morphology:suffix-ed
+RENAME	transformation: -able	morphology:able
+RENAME	transformation: -ed	morphology:ed
+MERGE	verb cognates: -ion	cognate:spelling-pattern
+MERGE	verb cognates: -ore	cognate:spelling-pattern
+MERGE	verb cognates: -pt	cognate:spelling-pattern
+MERGE	verb cognates: -rt	cognate:spelling-pattern
+MERGE	verb cognates: -scribe	cognate:spelling-pattern
+MERGE	verb cognates: -ude	cognate:spelling-pattern
+RENAME	weather	topic:weather
+RENAME	🔊 /ʌŋ/	rhyme:ʌŋ
+RENAME	🔊 begun-rung-sung	sound:begun-rung-sung
+MERGE	-are	morphology:suffix-are
+MERGE	-cede	morphology:suffix-cede
+MERGE	-ceed	morphology:suffix-ceed
+MERGE	-ease	morphology:suffix-ease
+MERGE	-em	morphology:suffix-em
+MERGE	-ema	morphology:suffix-ema
+MERGE	-ice	morphology:suffix-ice
+MERGE	-most	morphology:suffix-most
+MERGE	-nish	morphology:suffix-nish
+MERGE	-press	morphology:suffix-press
+MERGE	-serve	morphology:suffix-serve
+RENAME	a => at	construction:map-a-at
+RENAME	a => on	construction:map-a-on
+RENAME	across	particle:across
+RENAME	apart	particle:apart
+RENAME	around	particle:around
+MERGE	cognates: -icto → -ict	cognate:spelling-pattern
+MERGE	cognates: initial spanish es- and english s-	cognate:spelling-pattern
+MERGE	cognates: one spanish consonant and two english consonants	cognate:spelling-pattern
+MERGE	cognates: spanish t and english th	cognate:spelling-pattern
+RENAME	con => on	construction:map-con-on
+MERGE	confusion set: direction adjective vs person	cognate:confusion-set
+RENAME	de => out of	construction:map-de-out-of
+RENAME	en => on	construction:map-en-on
+RENAME	forward	particle:forward
+RENAME	indirect object	grammar:indirect-object
+MERGE	noun cognates: -ema → -em	cognate:spelling-pattern
+MERGE	noun cognates: spanish -anza and english -ance	cognate:spelling-pattern
+MERGE	somebody do something	construction:object-plus-complement
+RENAME	suffix: -most	morphology:suffix-most
+RENAME	suffix: -sion	morphology:suffix-sion
+RENAME	suffix: -tion	morphology:suffix-tion
+RENAME	transformation: -most	morphology:most
+RENAME	transformation: -sion	morphology:sion
+RENAME	transformation: -tion	morphology:tion
+RENAME	transport	topic:transport
+MERGE	uses gerund	form:gerund
+MERGE	verb cognates: -are	cognate:spelling-pattern
+MERGE	verb cognates: -cede and -ceed	cognate:spelling-pattern
+MERGE	verb cognates: -ease	cognate:spelling-pattern
+MERGE	verb cognates: -ice	cognate:spelling-pattern
+MERGE	verb cognates: -ive	cognate:spelling-pattern
+MERGE	verb cognates: -nish	cognate:spelling-pattern
+MERGE	verb cognates: -press	cognate:spelling-pattern
+MERGE	verb cognates: -serve	cognate:spelling-pattern
+MERGE	verb cognates: remove -ar	cognate:spelling-pattern
+MERGE	verb cognates: “remove the e”	cognate:spelling-pattern
+RENAME	work	topic:work
+RENAME	🔊 /oʊkən/	rhyme:oʊkən
+RENAME	🔊 /oʊld/	rhyme:oʊld
+RENAME	🔊 /æŋ/	rhyme:æŋ
+RENAME	🔊 /æŋk/	rhyme:æŋk
+RENAME	🔊 /ɛld/	rhyme:ɛld
+RENAME	🔊 /ɪd/	rhyme:ɪd
+RENAME	🔊 /ʊd/	rhyme:ʊd
+RENAME	🔊 began-rang-sang	sound:began-rang-sang
+RENAME	🔊 did-hid-slid	sound:did-hid-slid
+RENAME	🔊 drank-sank-shrank	sound:drank-sank-shrank
+RENAME	🔊 held-beheld	sound:held-beheld
+RENAME	🔊 hidden-written	sound:hidden-written
+RENAME	🔊 sold-told	sound:sold-told
+RENAME	🔊 spoken-broken-woken	sound:spoken-broken-woken
+RENAME	🔊 stood-understood	sound:stood-understood
+MERGE	-art	morphology:suffix-art
+MERGE	-arte	morphology:suffix-arte
+MERGE	-eive	morphology:suffix-eive
+MERGE	-gest	morphology:suffix-gest
+MERGE	-hibit	morphology:suffix-hibit
+MERGE	-olve	morphology:suffix-olve
+MERGE	-ply	morphology:suffix-ply
+MERGE	-vert	morphology:suffix-vert
+RENAME	clause	grammar:clause
+MERGE	cognates: -arte → -art	cognate:spelling-pattern
+MERGE	cognates: spanish -sis and english -sis	cognate:spelling-pattern
+RENAME	como => as	construction:map-como-as
+RENAME	direct object	grammar:direct-object
+RENAME	en => into	construction:map-en-into
+RENAME	food	topic:food
+RENAME	object pronoun	grammar:object-pronoun
+RENAME	por => by	construction:map-por-by
+RENAME	quantifier	pos:quantifier
+RENAME	si => if	construction:map-si-if
+RENAME	sobre => about	construction:map-sobre-about
+RENAME	suffix: -ible	morphology:suffix-ible
+RENAME	transformation: -ible	morphology:ible
+RENAME	transformation: number => expression	morphology:number-to-expression
+RENAME	verb + indirect object	grammar:verb-indirect-object
+MERGE	verb cognates: -eive	cognate:spelling-pattern
+MERGE	verb cognates: -er	cognate:spelling-pattern
+MERGE	verb cognates: -gest	cognate:spelling-pattern
+MERGE	verb cognates: -hibit	cognate:spelling-pattern
+MERGE	verb cognates: -olve	cognate:spelling-pattern
+MERGE	verb cognates: -ply	cognate:spelling-pattern
+MERGE	verb cognates: -vert	cognate:spelling-pattern
+RENAME	🔊 /eɪkən/	rhyme:eɪkən
+RENAME	🔊 /ɪdən/	rhyme:ɪdən
+RENAME	🔊 driven-ridden-stridden	sound:driven-ridden-stridden
+RENAME	🔊 gotten-forgotten	sound:gotten-forgotten
+RENAME	🔊 taken-shaken-forsaken	sound:taken-shaken-forsaken
+MERGE	-ale	morphology:suffix-ale
+MERGE	-ause	morphology:suffix-ause
+MERGE	-cur	morphology:suffix-cur
+MERGE	-hend	morphology:suffix-hend
+MERGE	-ond	morphology:suffix-ond
+RENAME	a => like	construction:map-a-like
+RENAME	a => object	construction:map-a-object
+RENAME	a => with	construction:map-a-with
+MERGE	all-	morphology:prefix-all
+MERGE	cognate forms: spanish -ando and english -ing	cognate:spelling-pattern
+MERGE	cognate forms: spanish -dido and english -ded	cognate:spelling-pattern
+MERGE	cognate forms: spanish -iendo and english -ing	cognate:spelling-pattern
+RENAME	con => object	construction:map-con-object
+RENAME	consigo => with	construction:map-consigo-with
+RENAME	de => for	construction:map-de-for
+RENAME	de => gerund	construction:map-de-gerund
+RENAME	de => like	construction:map-de-like
+RENAME	de => with	construction:map-de-with
+RENAME	de que => that	construction:map-de-que-that
+MERGE	des-	morphology:prefix-des
+RENAME	desde => from	construction:map-desde-from
+MERGE	dis-	morphology:prefix-dis
+MERGE	false cognate	cognate:false-friend
+RENAME	indirect object pronoun	grammar:indirect-object-pronoun
+MERGE	mis-	morphology:prefix-mis
+MERGE	over-	morphology:prefix-over
+RENAME	por => about	construction:map-por-about
+RENAME	por => through	construction:map-por-through
+RENAME	prefix: dis-	morphology:prefix-dis
+RENAME	prefix: mis-	morphology:prefix-mis
+RENAME	prefix: over-	morphology:prefix-over
+RENAME	pronoun between verb and particle	grammar:pronoun-between-verb-and-particle
+RENAME	pronoun object	grammar:pronoun-object
+MERGE	re-	morphology:prefix-re
+RENAME	si => whether	construction:map-si-whether
+RENAME	sin => out of	construction:map-sin-out-of
+MERGE	subordinating connector	grammar:sentence-structure
+MERGE	third-person present	form:third-person
+MERGE	todo-	morphology:prefix-todo
+RENAME	transformation: dis-	morphology:dis
+RENAME	transformation: mis-	morphology:mis
+RENAME	transformation: noun => verb	morphology:noun-to-verb
+RENAME	transformation: over-	morphology:over
+RENAME	transportation	topic:transportation
+MERGE	verb cognates: -ale	cognate:spelling-pattern
+MERGE	verb cognates: -ause	cognate:spelling-pattern
+MERGE	verb cognates: -cur	cognate:spelling-pattern
+MERGE	verb cognates: -hend	cognate:spelling-pattern
+MERGE	verb cognates: -ond	cognate:spelling-pattern
+RENAME	🔊 /oʊzən/	rhyme:oʊzən
+RENAME	🔊 /ɪvən/	rhyme:ɪvən
+RENAME	🔊 chosen-frozen	sound:chosen-frozen
+RENAME	🔊 done-gone	sound:done-gone
+RENAME	🔊 given-forgiven	sound:given-forgiven
+MERGE	-ative	morphology:suffix-ative
+RENAME	a => in	construction:map-a-in
+RENAME	a => of	construction:map-a-of
+RENAME	a => onto	construction:map-a-onto
+RENAME	a buscar => for	construction:map-a-buscar-for
+RENAME	a cargo de => in charge of	construction:map-a-cargo-de-in-charge-of
+RENAME	a que => because	construction:map-a-que-because
+RENAME	a que => for	construction:map-a-que-for
+RENAME	a que => since	construction:map-a-que-since
+RENAME	al => upon	construction:map-al-upon
+RENAME	an before vowel sound	sound:an-before-vowel-sound
+RENAME	ante => before	construction:map-ante-before
+MERGE	ben-	morphology:prefix-ben
+MERGE	clause connector	grammar:sentence-structure
+RENAME	con => against	construction:map-con-against
+RENAME	con => direct object	construction:map-con-direct-object
+RENAME	con => in the care of	construction:map-con-in-the-care-of
+MERGE	confusion set: careless vs reckless	cognate:confusion-set
+MERGE	confusion set: meaningless vs insignificant	cognate:confusion-set
+RENAME	contra => to	construction:map-contra-to
+MERGE	contra-	morphology:prefix-contra
+RENAME	de => -ing	construction:map-de-ing
+RENAME	de => against	construction:map-de-against
+RENAME	de => by	construction:map-de-by
+RENAME	de => in	construction:map-de-in
+RENAME	de => into	construction:map-de-into
+RENAME	de => just	construction:map-de-just
+RENAME	de => leave	construction:map-de-leave
+RENAME	de => off	construction:map-de-off
+RENAME	de => on	construction:map-de-on
+RENAME	de => possessive	construction:map-de-possessive
+RENAME	de => probability	construction:map-de-probability
+RENAME	de => state	construction:map-de-state
+RENAME	de => that	construction:map-de-that
+RENAME	de que => on	construction:map-de-que-on
+RENAME	de vuelta => back	construction:map-de-vuelta-back
+RENAME	debajo de => under	construction:map-debajo-de-under
+RENAME	dentro de => in	construction:map-dentro-de-in
+RENAME	dentro de => into	construction:map-dentro-de-into
+RENAME	direct object => on	construction:map-direct-object-on
+MERGE	em-	morphology:prefix-em
+RENAME	en => -ing	construction:map-en-ing
+RENAME	en => about	construction:map-en-about
+RENAME	en => by	construction:map-en-by
+RENAME	en => of	construction:map-en-of
+RENAME	en => to	construction:map-en-to
+RENAME	en nombre de => on behalf of	construction:map-en-nombre-de-on-behalf-of
+RENAME	entre => among	construction:map-entre-among
+RENAME	frente a => past	construction:map-frente-a-past
+RENAME	hasta que => until	construction:map-hasta-que-until
+RENAME	health	topic:health
+RENAME	interjection	pos:interjection
+RENAME	junto a => next to	construction:map-junto-a-next-to
+MERGE	mal-	morphology:prefix-mal
+RENAME	para => at	construction:map-para-at
+RENAME	para => full infinitive	construction:map-para-full-infinitive
+RENAME	para => gerund	construction:map-para-gerund
+RENAME	para => object	construction:map-para-object
+RENAME	para => toward	construction:map-para-toward
+RENAME	por => after	construction:map-por-after
+RENAME	por => gerund	construction:map-por-gerund
+RENAME	por debajo de => below	construction:map-por-debajo-de-below
+RENAME	por escrito => in writing	construction:map-por-escrito-in-writing
+RENAME	por teléfono => on the phone	construction:map-por-telefono-on-the-phone
+MERGE	pos-	morphology:prefix-pos
+RENAME	possessive determiner	grammar:possessive-determiner
+MERGE	pre-	morphology:prefix-pre
+RENAME	prefix: re-	morphology:prefix-re
+RENAME	prefix: un-	morphology:prefix-un
+RENAME	prefix: under-	morphology:prefix-under
+MERGE	pro-	morphology:prefix-pro
+RENAME	que no => not so	construction:map-que-no-not-so
+RENAME	que sí => so	construction:map-que-si-so
+RENAME	reciprocal pronoun	grammar:reciprocal-pronoun
+RENAME	sin => free	construction:map-sin-free
+RENAME	sin => not	construction:map-sin-not
+RENAME	sin => without	construction:map-sin-without
+RENAME	sobre => on	construction:map-sobre-on
+RENAME	sobre => to	construction:map-sobre-to
+MERGE	somebody + adjective	construction:object-plus-complement
+RENAME	stressed did	sound:stressed-did
+RENAME	stressed do	sound:stressed-do
+RENAME	together	particle:together
+RENAME	transformation: expression => adjective	morphology:expression-to-adjective
+RENAME	transformation: re-	morphology:re
+RENAME	transformation: un-	morphology:un
+RENAME	transformation: under-	morphology:under
+RENAME	under	particle:under
+MERGE	under-	morphology:prefix-under
+MERGE	uses past	form:past
+MERGE	verb form: past	form:past
+RENAME	🔊 /ɔːn/	rhyme:ɔːn
+RENAME	🔊 /ʌn/	rhyme:ʌn
+RENAME	🔊 to-too-two	sound:to-too-two
+MERGE	to	en:to	bare lemma straggler
+MERGE	poner	es:poner	bare lemma straggler
+MERGE	poder	es:poder	bare lemma straggler
+MERGE	for	en:for	bare lemma straggler
+MERGE	expression	en:expression	bare lemma straggler
+MERGE	dar	es:dar	bare lemma straggler
+MERGE	of	en:of	bare lemma straggler
+MERGE	order	en:order	bare lemma straggler
+MERGE	with	en:with	bare lemma straggler
+MERGE	hacer	es:hacer	bare lemma straggler
+MERGE	person	en:person	bare lemma straggler
+MERGE	place	en:place	bare lemma straggler
+MERGE	singular	es:singular	bare lemma straggler
+MERGE	decir	es:decir	bare lemma straggler
+MERGE	pedir	es:pedir	bare lemma straggler
+MERGE	querer	es:querer	bare lemma straggler
+MERGE	deber	es:deber	bare lemma straggler
+MERGE	tomar	es:tomar	bare lemma straggler
+MERGE	people	en:people	bare lemma straggler
+MERGE	seguir	es:seguir	bare lemma straggler
+MERGE	de	es:de	bare lemma straggler
+MERGE	from	en:from	bare lemma straggler
+MERGE	hablar	es:hablar	bare lemma straggler
+MERGE	be	es:be	bare lemma straggler
+MERGE	ver	es:ver	bare lemma straggler
+MERGE	contar	es:contar	bare lemma straggler
+MERGE	pasar	es:pasar	bare lemma straggler
+MERGE	que	es:que	bare lemma straggler
+MERGE	haber	es:haber	bare lemma straggler
+MERGE	caer	es:caer	bare lemma straggler
+MERGE	creer	es:creer	bare lemma straggler
+MERGE	possibility	en:possibility	bare lemma straggler
+MERGE	saber	es:saber	bare lemma straggler
+MERGE	volver	es:volver	bare lemma straggler
+MERGE	acabar	es:acabar	bare lemma straggler
+MERGE	at	en:at	bare lemma straggler
+MERGE	cargar	es:cargar	bare lemma straggler
+MERGE	coger	es:coger	bare lemma straggler
+MERGE	conocer	es:conocer	bare lemma straggler
+MERGE	could	en:could	bare lemma straggler
+MERGE	salir	es:salir	bare lemma straggler
+MERGE	trabajar	es:trabajar	bare lemma straggler
+MERGE	valer	es:valer	bare lemma straggler
+MERGE	esperar	es:esperar	bare lemma straggler
+MERGE	have	es:have	bare lemma straggler
+MERGE	ir	es:ir	bare lemma straggler
+MERGE	parecer	es:parecer	bare lemma straggler
+MERGE	sentir	es:sentir	bare lemma straggler
+MERGE	alcanzar	es:alcanzar	bare lemma straggler
+MERGE	like	en:like	bare lemma straggler
+MERGE	pensar	es:pensar	bare lemma straggler
+MERGE	subir	es:subir	bare lemma straggler
+MERGE	venir	es:venir	bare lemma straggler
+MERGE	llamar	es:llamar	bare lemma straggler
+MERGE	open	en:open	bare lemma straggler
+MERGE	perder	es:perder	bare lemma straggler
+MERGE	tocar	es:tocar	bare lemma straggler
+MERGE	abrir	es:abrir	bare lemma straggler
+MERGE	can	es:can	bare lemma straggler
+MERGE	comer	es:comer	bare lemma straggler
+MERGE	costar	es:costar	bare lemma straggler
+MERGE	do	es:do	bare lemma straggler
+MERGE	faltar	es:faltar	bare lemma straggler
+MERGE	obligation	en:obligation	bare lemma straggler
+MERGE	pesar	es:pesar	bare lemma straggler
+MERGE	quitar	es:quitar	bare lemma straggler
+MERGE	recordar	es:recordar	bare lemma straggler
+MERGE	future	en:future	bare lemma straggler
+MERGE	gustar	es:gustar	bare lemma straggler
+MERGE	malo	es:malo	bare lemma straggler
+MERGE	must	en:must	bare lemma straggler
+MERGE	necesitar	es:necesitar	bare lemma straggler
+MERGE	preguntar	es:preguntar	bare lemma straggler
+MERGE	beber	es:beber	bare lemma straggler
+MERGE	significar	es:significar	bare lemma straggler
+MERGE	ya	es:ya	bare lemma straggler
+MERGE	after	en:after	bare lemma straggler
+MERGE	believe	en:believe	bare lemma straggler
+MERGE	bien	es:bien	bare lemma straggler
+MERGE	cost	es:cost	bare lemma straggler
+MERGE	count	en:count	bare lemma straggler
+MERGE	feeling	en:feeling	bare lemma straggler
+MERGE	ganar	es:ganar	bare lemma straggler
+MERGE	want	en:want	bare lemma straggler
+MERGE	would	en:would	bare lemma straggler
+MERGE	condition	en:condition	bare lemma straggler
+MERGE	dormir	es:dormir	bare lemma straggler
+MERGE	escuchar	es:escuchar	bare lemma straggler
+MERGE	may	en:may	bare lemma straggler
+MERGE	mucho	es:mucho	bare lemma straggler
+MERGE	nationality	en:nationality	bare lemma straggler
+MERGE	not	en:not	bare lemma straggler
+MERGE	robar	es:robar	bare lemma straggler
+MERGE	that	en:that	bare lemma straggler
+MERGE	event	en:event	bare lemma straggler
+MERGE	extrañar	es:extrañar	bare lemma straggler
+MERGE	morir	es:morir	bare lemma straggler
+MERGE	need	en:need	bare lemma straggler
+MERGE	ni	es:ni	bare lemma straggler
+MERGE	own	en:own	bare lemma straggler
+MERGE	por	es:por	bare lemma straggler
+MERGE	possession	en:possession	bare lemma straggler
+MERGE	present	en:present	bare lemma straggler
+MERGE	request	en:request	bare lemma straggler
+MERGE	solo	es:solo	bare lemma straggler
+MERGE	suponer	es:suponer	bare lemma straggler
+MERGE	tarde	es:tarde	bare lemma straggler
+MERGE	antes	es:antes	bare lemma straggler
+MERGE	cuidar	es:cuidar	bare lemma straggler
+MERGE	how	en:how	bare lemma straggler
+MERGE	known	en:known	bare lemma straggler
+MERGE	many	en:many	bare lemma straggler
+MERGE	might	en:might	bare lemma straggler
+MERGE	pagar	es:pagar	bare lemma straggler
+MERGE	reach	en:reach	bare lemma straggler
+MERGE	result	en:result	bare lemma straggler
+MERGE	return	en:return	bare lemma straggler
+MERGE	si	es:si	bare lemma straggler
+MERGE	vez	es:vez	bare lemma straggler
+MERGE	again	en:again	bare lemma straggler
+MERGE	allow	en:allow	bare lemma straggler
+MERGE	appear	en:appear	bare lemma straggler
+MERGE	aprovechar	es:aprovechar	bare lemma straggler
+MERGE	bad	en:bad	bare lemma straggler
+MERGE	bastante	es:bastante	bare lemma straggler
+MERGE	bueno	es:bueno	bare lemma straggler
+MERGE	callar	es:callar	bare lemma straggler
+MERGE	care	en:care	bare lemma straggler
+MERGE	con	es:con	bare lemma straggler
+MERGE	empezar	es:empezar	bare lemma straggler
+MERGE	finish	en:finish	bare lemma straggler
+MERGE	late	en:late	bare lemma straggler
+MERGE	otro	es:otro	bare lemma straggler
+MERGE	seem	en:seem	bare lemma straggler
+MERGE	should	en:should	bare lemma straggler
+MERGE	somebody	en:somebody	bare lemma straggler
+MERGE	adelante	es:adelante	bare lemma straggler
+MERGE	also	en:also	bare lemma straggler
+MERGE	although	en:although	bare lemma straggler
+MERGE	alto	es:alto	bare lemma straggler
+MERGE	always	en:always	bare lemma straggler
+MERGE	and	en:and	bare lemma straggler
+MERGE	application	en:application	bare lemma straggler
+MERGE	as	en:as	bare lemma straggler
+MERGE	authority	en:authority	bare lemma straggler
+MERGE	beverage	en:beverage	bare lemma straggler
+MERGE	both	en:both	bare lemma straggler
+MERGE	cierto	es:cierto	bare lemma straggler
+MERGE	cual	es:cual	bare lemma straggler
+MERGE	doler	es:doler	bare lemma straggler
+MERGE	end	en:end	bare lemma straggler
+MERGE	entre	es:entre	bare lemma straggler
+MERGE	former	en:former	bare lemma straggler
+MERGE	high	en:high	bare lemma straggler
+MERGE	if	en:if	bare lemma straggler
+MERGE	later	en:later	bare lemma straggler
+MERGE	new	en:new	bare lemma straggler
+MERGE	now	en:now	bare lemma straggler
+MERGE	nuevo	es:nuevo	bare lemma straggler
+MERGE	old	en:old	bare lemma straggler
+MERGE	olvidar	es:olvidar	bare lemma straggler
+MERGE	other	en:other	bare lemma straggler
+MERGE	price	en:price	bare lemma straggler
+MERGE	pronto	es:pronto	bare lemma straggler
+MERGE	remain	en:remain	bare lemma straggler
+MERGE	seguro	es:seguro	bare lemma straggler
+MERGE	siempre	es:siempre	bare lemma straggler
+MERGE	so	en:so	bare lemma straggler
+MERGE	solicitar	es:solicitar	bare lemma straggler
+MERGE	then	en:then	bare lemma straggler
+MERGE	use	en:use	bare lemma straggler
+MERGE	were	en:were	bare lemma straggler
+MERGE	when	en:when	bare lemma straggler
+MERGE	according	en:according	bare lemma straggler
+MERGE	activity	en:activity	bare lemma straggler
+MERGE	ahora	es:ahora	bare lemma straggler
+MERGE	almost	en:almost	bare lemma straggler
+MERGE	apenas	es:apenas	bare lemma straggler
+MERGE	aun	es:aun	bare lemma straggler
+MERGE	behind	en:behind	bare lemma straggler
+MERGE	cause	en:cause	bare lemma straggler
+MERGE	entonces	es:entonces	bare lemma straggler
+MERGE	exclamative	es:exclamative	bare lemma straggler
+MERGE	expect	en:expect	bare lemma straggler
+MERGE	left	en:left	bare lemma straggler
+MERGE	los	es:los	bare lemma straggler
+MERGE	love	en:love	bare lemma straggler
+MERGE	manage	en:manage	bare lemma straggler
+MERGE	medio	es:medio	bare lemma straggler
+MERGE	necessary	en:necessary	bare lemma straggler
+MERGE	next	en:next	bare lemma straggler
+MERGE	opinion	en:opinion	bare lemma straggler
+MERGE	para	es:para	bare lemma straggler
+MERGE	siquiera	es:siquiera	bare lemma straggler
+MERGE	todo	es:todo	bare lemma straggler
+MERGE	try	en:try	bare lemma straggler
+MERGE	was	en:was	bare lemma straggler
+MERGE	weigh	en:weigh	bare lemma straggler
+MERGE	what	en:what	bare lemma straggler
+MERGE	who	en:who	bare lemma straggler
+MERGE	will	en:will	bare lemma straggler
+MERGE	without	en:without	bare lemma straggler
+MERGE	account	en:account	bare lemma straggler
+MERGE	actual	es:actual	bare lemma straggler
+MERGE	against	en:against	bare lemma straggler
+MERGE	alone	en:alone	bare lemma straggler
+MERGE	but	en:but	bare lemma straggler
+MERGE	call	en:call	bare lemma straggler
+MERGE	como	es:como	bare lemma straggler
+MERGE	consequence	en:consequence	bare lemma straggler
+MERGE	cuando	es:cuando	bare lemma straggler
+MERGE	despejar	es:despejar	bare lemma straggler
+MERGE	did	en:did	bare lemma straggler
+MERGE	does	en:does	bare lemma straggler
+MERGE	donde	es:donde	bare lemma straggler
+MERGE	dueño	es:dueño	bare lemma straggler
+MERGE	during	en:during	bare lemma straggler
+MERGE	duty	en:duty	bare lemma straggler
+MERGE	encargar	es:encargar	bare lemma straggler
+MERGE	expectation	en:expectation	bare lemma straggler
+MERGE	far	en:far	bare lemma straggler
+MERGE	hand	en:hand	bare lemma straggler
+MERGE	home	en:home	bare lemma straggler
+MERGE	identity	en:identity	bare lemma straggler
+MERGE	importance	en:importance	bare lemma straggler
+MERGE	information	en:information	bare lemma straggler
+MERGE	job	en:job	bare lemma straggler
+MERGE	level	en:level	bare lemma straggler
+MERGE	limit	en:limit	bare lemma straggler
+MERGE	luego	es:luego	bare lemma straggler
+MERGE	menos	es:menos	bare lemma straggler
+MERGE	mientras	es:mientras	bare lemma straggler
+MERGE	mismo	es:mismo	bare lemma straggler
+MERGE	near	en:near	bare lemma straggler
+MERGE	never	en:never	bare lemma straggler
+MERGE	position	en:position	bare lemma straggler
+MERGE	postular	es:postular	bare lemma straggler
+MERGE	power	en:power	bare lemma straggler
+MERGE	quien	es:quien	bare lemma straggler
+MERGE	regret	en:regret	bare lemma straggler
+MERGE	restaurant	en:restaurant	bare lemma straggler
+MERGE	sin	es:sin	bare lemma straggler
+MERGE	success	en:success	bare lemma straggler
+MERGE	successful	en:successful	bare lemma straggler
+MERGE	support	en:support	bare lemma straggler
+MERGE	también	es:también	bare lemma straggler
+MERGE	tanto	es:tanto	bare lemma straggler
+MERGE	tomorrow	en:tomorrow	bare lemma straggler
+MERGE	where	en:where	bare lemma straggler
+MERGE	whether	en:whether	bare lemma straggler
+MERGE	access	en:access	bare lemma straggler
+MERGE	alarm	en:alarm	bare lemma straggler
+MERGE	already	en:already	bare lemma straggler
+MERGE	among	en:among	bare lemma straggler
+MERGE	below	en:below	bare lemma straggler
+MERGE	business	en:business	bare lemma straggler
+MERGE	cold	en:cold	bare lemma straggler
+MERGE	color	es:color	bare lemma straggler
+MERGE	contact	en:contact	bare lemma straggler
+MERGE	cuánto	es:cuánto	bare lemma straggler
+MERGE	decision	en:decision	bare lemma straggler
+MERGE	demasiado	es:demasiado	bare lemma straggler
+MERGE	education	en:education	bare lemma straggler
+MERGE	finance	en:finance	bare lemma straggler
+MERGE	free	en:free	bare lemma straggler
+MERGE	gratitude	en:gratitude	bare lemma straggler
+MERGE	hora	es:hora	bare lemma straggler
+MERGE	hungry	en:hungry	bare lemma straggler
+MERGE	influence	en:influence	bare lemma straggler
+MERGE	language	en:language	bare lemma straggler
+MERGE	liquid	en:liquid	bare lemma straggler
+MERGE	lonely	en:lonely	bare lemma straggler
+MERGE	movement	en:movement	bare lemma straggler
+MERGE	night	en:night	bare lemma straggler
+MERGE	organization	en:organization	bare lemma straggler
+MERGE	photo	en:photo	bare lemma straggler
+MERGE	practice	en:practice	bare lemma straggler
+MERGE	profit	en:profit	bare lemma straggler
+MERGE	propietario	es:propietario	bare lemma straggler
+MERGE	publish	en:publish	bare lemma straggler
+MERGE	quality	en:quality	bare lemma straggler
+MERGE	sleepy	en:sleepy	bare lemma straggler
+MERGE	sobre	es:sobre	bare lemma straggler
+MERGE	switch	en:switch	bare lemma straggler
+MERGE	table	en:table	bare lemma straggler
+MERGE	thing	en:thing	bare lemma straggler
+MERGE	thirsty	en:thirsty	bare lemma straggler
+MERGE	tiempo	es:tiempo	bare lemma straggler
+MERGE	toward	en:toward	bare lemma straggler
+MERGE	way	en:way	bare lemma straggler
+MERGE	weight	en:weight	bare lemma straggler
+MERGE	yes	en:yes	bare lemma straggler
+MERGE	ser adjectives	grammar:ser-adjective	facet pass 2
+MERGE	fixed expression	grammar:fixed-expression	facet pass 2
+MERGE	third-person spelling: add -s	form:third-person	facet pass 2
+MERGE	quantity	grammar:quantifier	facet pass 2
+MERGE	comparison	grammar:comparison	facet pass 2
+MERGE	everyday nouns	topic:everyday-objects	facet pass 2
+MERGE	plural	grammar:plural	facet pass 2
+MERGE	participle-or-progressive	form:participle	facet pass 2
+MERGE	cardinal number	grammar:cardinal-number	facet pass 2
+MERGE	ordinal number	grammar:ordinal-number	facet pass 2
+MERGE	ordinal numbers	grammar:ordinal-number	facet pass 2
+MERGE	formal	register:formal	facet pass 2
+MERGE	places and directions	topic:places	facet pass 2
+MERGE	full infinitive	construction:full-infinitive	facet pass 2
+MERGE	cardinal numbers	grammar:cardinal-number	facet pass 2
+MERGE	people and family	topic:people	facet pass 2
+MERGE	state	grammar:adjective-state	facet pass 2
+MERGE	contraction	grammar:contraction	facet pass 2
+MERGE	estar adjectives	grammar:estar-adjective	facet pass 2
+MERGE	informal	register:informal	facet pass 2
+MERGE	participle	form:participle	facet pass 2
+MERGE	social expression	topic:social-expression	facet pass 2
+MERGE	cognate -mente => -ly	cognate:mente-to-ly	facet pass 2
+MERGE	verb + infinitive	construction:verb-plus-infinitive	facet pass 2
+MERGE	-ción	morphology:suffix-cion	facet pass 2
+MERGE	cognate -ción => -tion	cognate:cion-to-tion	facet pass 2
+MERGE	recognition transformation	morphology:recognition	facet pass 2
+MERGE	social expressions	topic:social-expression	facet pass 2
+MERGE	-ía	morphology:suffix-ia	facet pass 2
+MERGE	American English preference	dialect:american	facet pass 2
+MERGE	British English variant	dialect:british	facet pass 2
+MERGE	perception verb	grammar:perception-verb	facet pass 2
+MERGE	cognate -ico → -ic	cognate:ico-to-ic	facet pass 2
+MERGE	cognate spanish and english -al	cognate:al	facet pass 2
+MERGE	frequency	grammar:frequency-adverb	facet pass 2
+MERGE	cognate -able => -able	cognate:able-to-able	facet pass 2
+MERGE	cognate -ario => -ary	cognate:ario-to-ary	facet pass 2
+MERGE	cognate -ecto → -ect	cognate:ecto-to-ect	facet pass 2
+MERGE	cognate -ible => -ible	cognate:ible-to-ible	facet pass 2
+MERGE	cognate -ivo → -ive	cognate:ivo-to-ive	facet pass 2
+MERGE	countable noun	grammar:countable	facet pass 2
+MERGE	dates and calendar periods	topic:date	facet pass 2
+MERGE	discourse connector	pos:connector	facet pass 2
+MERGE	months of the year	topic:date	facet pass 2
+MERGE	prefix	morphology:prefix	facet pass 2
+MERGE	time expression	topic:time	facet pass 2
+MERGE	uncountable noun	grammar:uncountable	facet pass 2
+MERGE	agent noun	morphology:agent-noun	facet pass 2
+MERGE	change of state	grammar:change-of-state	facet pass 2
+MERGE	cognate -ante → -ant	cognate:ante-to-ant	facet pass 2
+MERGE	cognate -ido → -id	cognate:ido-to-id	facet pass 2
+MERGE	cognate -uro / -ura → -ure	cognate:uro-ura-to-ure	facet pass 2
+MERGE	direct question	grammar:question	facet pass 2
+MERGE	duration	topic:time	facet pass 2
+MERGE	irregular transformation	morphology:irregular	facet pass 2
+MERGE	cognate -ente → -ent	cognate:ente-to-ent	facet pass 2
+MERGE	cognate -il → -ile	cognate:il-to-ile	facet pass 2
+MERGE	cognate -oso → -ous	cognate:oso-to-ous	facet pass 2
+MERGE	collocation	grammar:collocation	facet pass 2
+MERGE	irregular word family	morphology:irregular	facet pass 2
+MERGE	se	grammar:se	facet pass 2
+MERGE	-sión	morphology:suffix-sion	facet pass 2
+MERGE	Colombian Spanish	dialect:colombian-spanish	facet pass 2
+MERGE	activity noun	morphology:activity-noun	facet pass 2
+MERGE	bare infinitive	construction:bare-infinitive	facet pass 2
+MERGE	be able to	grammar:modal	facet pass 2
+MERGE	cognate -ar => -ar	cognate:ar-to-ar	facet pass 2
+MERGE	cognate -sión => -sion	cognate:sion-to-sion	facet pass 2
+MERGE	have to	grammar:modal	facet pass 2
+MERGE	plurals	grammar:plural	facet pass 2
+MERGE	time words	topic:time	facet pass 2
+MERGE	cognate -acto → -act	cognate:acto-to-act	facet pass 2
+MERGE	past - irregular - 🔊 bought-thought-taught	sound:past-irregular-bought-thought-taught	facet pass 2
+MERGE	past participle - irregular - 🔊 bought-thought-taught	sound:past-participle-irregular-bought-thought-taught	facet pass 2
+MERGE	past participle - irregular - 🔊 known-grown-thrown	sound:past-participle-irregular-known-grown-thrown	facet pass 2
+MERGE	perspective change	grammar:perspective-change	facet pass 2
+MERGE	cognate -anza => -ance	cognate:anza-to-ance	facet pass 2
+MERGE	cognate -el => -el	cognate:el-to-el	facet pass 2
+MERGE	cognate -orio => -ory	cognate:orio-to-ory	facet pass 2
+MERGE	cognate -tud => -tude	cognate:tud-to-tude	facet pass 2
+MERGE	frequency adverb	grammar:frequency-adverb	facet pass 2
+MERGE	more -ico → -ical cognates	cognate:spelling-pattern	facet pass 2
+MERGE	cognate -ando => -ing	cognate:ando-to-ing	facet pass 2
+MERGE	cognate -icto → -ict	cognate:icto-to-ict	facet pass 2
+MERGE	cognate -iendo => -ing	cognate:iendo-to-ing	facet pass 2
+MERGE	cognate -sis => -sis	cognate:sis-to-sis	facet pass 2
+MERGE	cognate es- => s-	cognate:es-to-s	facet pass 2
+MERGE	embedded question	grammar:question	facet pass 2
+MERGE	irregular comparison	grammar:comparison	facet pass 2
+MERGE	past - irregular - 🔊 fed-bled-led	sound:past-irregular-fed-bled-led	facet pass 2
+MERGE	past participle - irregular - 🔊 fed-bled-led	sound:past-participle-irregular-fed-bled-led	facet pass 2
+MERGE	cognate -dido => -ded	cognate:dido-to-ded	facet pass 2
+MERGE	past - irregular - 🔊 kept-slept-swept	sound:past-irregular-kept-slept-swept	facet pass 2
+MERGE	past - irregular - 🔊 sent-bent-lent-spent	sound:past-irregular-sent-bent-lent-spent	facet pass 2
+MERGE	past participle - irregular - 🔊 kept-slept-swept	sound:past-participle-irregular-kept-slept-swept	facet pass 2
+MERGE	past participle - irregular - 🔊 sent-bent-lent-spent	sound:past-participle-irregular-sent-bent-lent-spent	facet pass 2
+MERGE	was/were going to	sound:was-were-going-to	facet pass 2
+MERGE	equal comparison	grammar:comparison	facet pass 2
+MERGE	handle verb	grammar:handle-verb	facet pass 2
+MERGE	past - irregular - 🔊 began-rang-sang	sound:past-irregular-began-rang-sang	facet pass 2
+MERGE	past - irregular - 🔊 drank-sank-shrank	sound:past-irregular-drank-sank-shrank	facet pass 2
+MERGE	past - irregular - 🔊 found-bound-ground-wound	sound:past-irregular-found-bound-ground-wound	facet pass 2
+MERGE	past participle - irregular - 🔊 begun-rung-sung	sound:past-participle-irregular-begun-rung-sung	facet pass 2
+MERGE	past participle - irregular - 🔊 drunk-sunk-shrunk	sound:past-participle-irregular-drunk-sunk-shrunk	facet pass 2
+MERGE	past participle - irregular - 🔊 found-bound-ground-wound	sound:past-participle-irregular-found-bound-ground-wound	facet pass 2
+MERGE	past participle - irregular - 🔊 hidden-written	sound:past-participle-irregular-hidden-written	facet pass 2
+MERGE	past participle - irregular - 🔊 spoken-broken-woken	sound:past-participle-irregular-spoken-broken-woken	facet pass 2
+MERGE	replacement for le/les	sound:replacement-for-le-les	facet pass 2
+MERGE	cognate -arte → -art	cognate:arte-to-art	facet pass 2
+MERGE	past - irregular - 🔊 built-gilt-spilt	sound:past-irregular-built-gilt-spilt	facet pass 2
+MERGE	past - irregular - 🔊 did-hid-slid	sound:past-irregular-did-hid-slid	facet pass 2
+MERGE	past - irregular - 🔊 drunk-sunk-shrunk	sound:past-irregular-drunk-sunk-shrunk	facet pass 2
+MERGE	past - irregular - 🔊 felt-dealt-knelt	sound:past-irregular-felt-dealt-knelt	facet pass 2
+MERGE	past - irregular - 🔊 made-paid-laid	sound:past-irregular-made-paid-laid	facet pass 2
+MERGE	past participle - irregular - 🔊 built-gilt-spilt	sound:past-participle-irregular-built-gilt-spilt	facet pass 2
+MERGE	past participle - irregular - 🔊 driven-ridden-stridden	sound:past-participle-irregular-driven-ridden-stridden	facet pass 2
+MERGE	past participle - irregular - 🔊 felt-dealt-knelt	sound:past-participle-irregular-felt-dealt-knelt	facet pass 2
+MERGE	past participle - irregular - 🔊 gotten-forgotten	sound:past-participle-irregular-gotten-forgotten	facet pass 2
+MERGE	past participle - irregular - 🔊 made-paid-laid	sound:past-participle-irregular-made-paid-laid	facet pass 2
+MERGE	past participle - irregular - 🔊 taken-shaken-forsaken	sound:past-participle-irregular-taken-shaken-forsaken	facet pass 2
+MERGE	spoken reduction	register:spoken	facet pass 2
+MERGE	third-person spelling: consonant y => ies	form:third-person	facet pass 2
+MERGE	formal register	register:formal	facet pass 2
+MERGE	frequency adverb position	grammar:frequency-adverb	facet pass 2
+MERGE	informal spoken reduction	register:spoken	facet pass 2
+MERGE	meaning-changing imperfect	grammar:meaning-changing-preterite	facet pass 2
+MERGE	past - irregular - 🔊 held-beheld	sound:past-irregular-held-beheld	facet pass 2
+MERGE	past - irregular - 🔊 sold-told	sound:past-irregular-sold-told	facet pass 2
+MERGE	past - irregular - 🔊 stood-understood	sound:past-irregular-stood-understood	facet pass 2
+MERGE	past participle - irregular - 🔊 chosen-frozen	sound:past-participle-irregular-chosen-frozen	facet pass 2
+MERGE	past participle - irregular - 🔊 done-gone	sound:past-participle-irregular-done-gone	facet pass 2
+MERGE	past participle - irregular - 🔊 given-forgiven	sound:past-participle-irregular-given-forgiven	facet pass 2
+MERGE	past participle - irregular - 🔊 held-beheld	sound:past-participle-irregular-held-beheld	facet pass 2
+MERGE	past participle - irregular - 🔊 sold-told	sound:past-participle-irregular-sold-told	facet pass 2
+MERGE	past participle - irregular - 🔊 stood-understood	sound:past-participle-irregular-stood-understood	facet pass 2
+MERGE	spoken English	register:spoken	facet pass 2
+MERGE	accidental se	grammar:se	facet pass 2
+MERGE	activity as noun	morphology:activity-noun	facet pass 2
+MERGE	comparison connector	grammar:comparison	facet pass 2
+MERGE	have got to	grammar:modal	facet pass 2
+MERGE	meaning-changing preterite	grammar:meaning-changing-preterite	facet pass 2
+MERGE	noun/decision	sound:noun-decision	facet pass 2
+MERGE	past - irregular - 🔊 begun-rung-sung	sound:past-irregular-begun-rung-sung	facet pass 2
+MERGE	past participle - irregular - 🔊 did-hid-slid	sound:past-participle-irregular-did-hid-slid	facet pass 2
+MERGE	question or negative	grammar:question	facet pass 2
+MERGE	third-person spelling: add -es	form:third-person	facet pass 2
+MERGE	verb + connector	construction:verb-plus-connector	facet pass 2
+MERGE	very informal	register:informal	facet pass 2
+MERGE	manana	es:mañana	facet pass 4
+MERGE	permission	grammar:permission	facet pass 4
+MERGE	ability	grammar:ability	facet pass 4
+MERGE	allows full infinitive or gerund	construction:allows-full-infinitive-or-gerund	facet pass 4
+MERGE	allows bare infinitive or present participle	construction:allows-bare-infinitive-or-present-participle	facet pass 4
+MERGE	article	grammar:article	facet pass 4
+MERGE	clock time	topic:clock-time	facet pass 4
+MERGE	cognate spanish -ano / -iano and english -an / -ian	cognate:spelling-pattern	facet pass 4
+MERGE	command	grammar:command	facet pass 4
+MERGE	cuanto	es:cuánto	facet pass 4
+MERGE	present perfect	form:present-perfect	facet pass 4
+MERGE	spelling: y => i	cognate:spelling-pattern	facet pass 4
+MERGE	that-clause	construction:that-clause	facet pass 4
+MERGE	cognate families: english -ic and -ical	cognate:spelling-pattern	facet pass 4
+MERGE	feminine	grammar:feminine	facet pass 4
+MERGE	if clause	construction:if-clause	facet pass 4
+MERGE	location expression	topic:location-expression	facet pass 4
+MERGE	modal perfect	form:modal-perfect	facet pass 4
+MERGE	pronominal verb	grammar:pronominal-verb	facet pass 4
+MERGE	sequence	grammar:sequence	facet pass 4
+MERGE	-ing noun	grammar:ing-noun	facet pass 4
+MERGE	advice	grammar:advice	facet pass 4
+DELETE	cleave	archaic verb lemma; members are trash-tier
+MERGE	cognate english -ult	cognate:spelling-pattern	facet pass 4
+MERGE	comparison pattern: consonant + y	cognate:spelling-pattern	facet pass 4
+MERGE	definite article	grammar:definite-article	facet pass 4
+MERGE	despues	es:después	facet pass 4
+MERGE	fractions decimals and phone numbers	topic:fractions-decimals-and-phone-numbers	facet pass 4
+MERGE	masculine	grammar:masculine	facet pass 4
+MERGE	noun phrase	grammar:noun-phrase	facet pass 4
+MERGE	opportunity	grammar:opportunity	facet pass 4
+MERGE	order word	topic:order-word	facet pass 4
+MERGE	preposition + gerund	construction:preposition-gerund	facet pass 4
+MERGE	preterite	form:preterite	facet pass 4
+MERGE	reason	grammar:reason	facet pass 4
+MERGE	separable phrasal verb	construction:separable-phrasal-verb	facet pass 4
+DELETE	shit	archaic verb lemma; members are trash-tier
+MERGE	third-person irregular	form:third-person-irregular	facet pass 4
+MERGE	time and tense	topic:time-and-tense	facet pass 4
+MERGE	concession	grammar:concession	facet pass 4
+MERGE	correlative	grammar:correlative	facet pass 4
+MERGE	degree	grammar:degree	facet pass 4
+MERGE	event in progress	form:event-in-progress	facet pass 4
+MERGE	existence	grammar:existence	facet pass 4
+MERGE	intensifier	grammar:intensifier	facet pass 4
+MERGE	large numbers	topic:large-numbers	facet pass 4
+MERGE	past perfect	form:past-perfect	facet pass 4
+MERGE	past plan	grammar:past-plan	facet pass 4
+MERGE	placement	construction:placement	facet pass 4
+MERGE	present perfect progressive	form:present-perfect-progressive	facet pass 4
+MERGE	somebody something	construction:somebody-something	facet pass 4
+MERGE	verb + full infinitive	construction:verb-full-infinitive	facet pass 4
+MERGE	whole event	form:whole-event	facet pass 4
+MERGE	wish	grammar:wish	facet pass 4
+DELETE	abide	archaic verb lemma; members are trash-tier
+DELETE	alight	archaic verb lemma; members are trash-tier
+DELETE	bereave	archaic verb lemma; members are trash-tier
+DELETE	beseech	archaic verb lemma; members are trash-tier
+MERGE	cognate one spanish consonant and two english consonants	cognate:spelling-pattern	facet pass 4
+MERGE	compound direction	topic:compound-direction	facet pass 4
+MERGE	demonstrative	grammar:demonstrative	facet pass 4
+DELETE	dwell	archaic verb lemma; members are trash-tier
+MERGE	extreme relative position	topic:extreme-relative-position	facet pass 4
+DELETE	gild	archaic verb lemma; members are trash-tier
+MERGE	going to	grammar:going-to	facet pass 4
+MERGE	irregular plural	grammar:irregular-plural	facet pass 4
+MERGE	it + be	construction:it-be	facet pass 4
+MERGE	perfect progressive	form:perfect-progressive	facet pass 4
+MERGE	person noun	grammar:person-noun	facet pass 4
+MERGE	polite request	grammar:polite-request	facet pass 4
+MERGE	prohibition	grammar:prohibition	facet pass 4
+DELETE	shoe	archaic verb lemma; members are trash-tier
+MERGE	somebody + bare infinitive	construction:somebody-bare-infinitive	facet pass 4
+MERGE	spelling: final e	cognate:spelling-pattern	facet pass 4
+DELETE	stave	archaic verb lemma; members are trash-tier
+MERGE	time connector	topic:time-connector	facet pass 4
+MERGE	addition	grammar:addition	facet pass 4
+MERGE	ademas	es:además	facet pass 4
+MERGE	adjective modifier	grammar:adjective-modifier	facet pass 4
+MERGE	adjective position	grammar:adjective-position	facet pass 4
+MERGE	asi	es:así	facet pass 4
+MERGE	atras	es:atrás	facet pass 4
+DELETE	beget	archaic verb lemma; members are trash-tier
+MERGE	contrast	grammar:contrast	facet pass 4
+DELETE	crow	archaic verb lemma; members are trash-tier
+MERGE	deduction	grammar:deduction	facet pass 4
+MERGE	electricity	topic:electricity	facet pass 4
+MERGE	excess	grammar:excess	facet pass 4
+MERGE	go + -ing	construction:go-ing	facet pass 4
+MERGE	have something done	construction:have-something-done	facet pass 4
+DELETE	hew	archaic verb lemma; members are trash-tier
+MERGE	infinitive construction	construction:infinitive-construction	facet pass 4
+MERGE	law	topic:law	facet pass 4
+MERGE	manner	grammar:manner	facet pass 4
+MERGE	mas	es:más	facet pass 4
+MERGE	media	topic:media	facet pass 4
+MERGE	neuter	grammar:neuter	facet pass 4
+MERGE	past progressive	form:past-progressive	facet pass 4
+MERGE	preposition stranding	grammar:preposition-stranding	facet pass 4
+MERGE	pronominal	grammar:pronominal	facet pass 4
+MERGE	role	grammar:role	facet pass 4
+DELETE	saw	archaic verb lemma; members are trash-tier
+DELETE	shear	archaic verb lemma; members are trash-tier
+MERGE	spelling: double final consonant	cognate:spelling-pattern	facet pass 4
+MERGE	statement order	grammar:statement-order	facet pass 4
+DELETE	strew	archaic verb lemma; members are trash-tier
+MERGE	suggestion	grammar:suggestion	facet pass 4
+MERGE	three jobs of have	grammar:three-jobs-of-have	facet pass 4
+MERGE	time unit	topic:time-unit	facet pass 4
+MERGE	translations of spanish disponible	cognate:confusion-set	facet pass 4
+MERGE	vivir → live, live in, and live with	cognate:confusion-set	facet pass 4
+MERGE	additive	grammar:additive	facet pass 4
+MERGE	adverb formation	grammar:adverb-formation	facet pass 4
+MERGE	age	grammar:age	facet pass 4
+MERGE	agreement	grammar:agreement	facet pass 4
+MERGE	allows full infinitive or bare infinitive	construction:allows-full-infinitive-or-bare-infinitive	facet pass 4
+MERGE	appointment	topic:appointment	facet pass 4
+MERGE	be + present participle	construction:be-present-participle	facet pass 4
+MERGE	be allowed to	grammar:be-allowed-to	facet pass 4
+MERGE	be going to	grammar:be-going-to	facet pass 4
+DELETE	behold	archaic verb lemma; members are trash-tier
+MERGE	billion vs billón	cognate:confusion-set	facet pass 4
+DELETE	clad	archaic verb lemma; members are trash-tier
+MERGE	continuation	grammar:continuation	facet pass 4
+MERGE	continuous period	topic:continuous-period	facet pass 4
+MERGE	delivery	topic:delivery	facet pass 4
+MERGE	depletion	grammar:depletion	facet pass 4
+MERGE	device	topic:device	facet pass 4
+MERGE	diferente → different and unlike	cognate:confusion-set	facet pass 4
+MERGE	difficulty	grammar:difficulty	facet pass 4
+MERGE	discourse	grammar:discourse	facet pass 4
+MERGE	disponible → available and free	cognate:confusion-set	facet pass 4
+MERGE	effort	grammar:effort	facet pass 4
+MERGE	emphasis	grammar:emphasis	facet pass 4
+MERGE	emphatic affirmative	grammar:emphatic-affirmative	facet pass 4
+MERGE	emphatic quantity	grammar:emphatic-quantity	facet pass 4
+MERGE	exception	grammar:exception	facet pass 4
+MERGE	first encounter	grammar:first-encounter	facet pass 4
+DELETE	forsake	archaic verb lemma; members are trash-tier
+MERGE	future plan	grammar:future-plan	facet pass 4
+MERGE	get something done	construction:get-something-done	facet pass 4
+MERGE	goal	grammar:goal	facet pass 4
+MERGE	hypothetical	grammar:hypothetical	facet pass 4
+MERGE	hypothetical condition	grammar:hypothetical-condition	facet pass 4
+MERGE	imperfect	form:imperfect	facet pass 4
+MERGE	impersonal necessity	grammar:impersonal-necessity	facet pass 4
+MERGE	inability	grammar:inability	facet pass 4
+MERGE	inseparable phrasal verb	construction:inseparable-phrasal-verb	facet pass 4
+MERGE	introduction	grammar:introduction	facet pass 4
+MERGE	it is	construction:it-is	facet pass 4
+MERGE	linking verb + adjective	grammar:linking-verb-adjective	facet pass 4
+MERGE	machine	topic:machine	facet pass 4
+MERGE	mixed conditional	form:mixed-conditional	facet pass 4
+MERGE	mixed group	grammar:mixed-group	facet pass 4
+MERGE	no article	grammar:no-article	facet pass 4
+MERGE	no ones required	grammar:no-ones-required	facet pass 4
+MERGE	object complement	grammar:object-complement	facet pass 4
+MERGE	past form for distance	grammar:past-form-for-distance	facet pass 4
+MERGE	perfect conditional	form:perfect-conditional	facet pass 4
+MERGE	perfect modal	form:perfect-modal	facet pass 4
+MERGE	power outage	topic:power-outage	facet pass 4
+MERGE	present wish	grammar:present-wish	facet pass 4
+MERGE	referenced quantity	grammar:referenced-quantity	facet pass 4
+DELETE	rend	archaic verb lemma; members are trash-tier
+MERGE	repeated period	topic:repeated-period	facet pass 4
+MERGE	resulting state	grammar:resulting-state	facet pass 4
+MERGE	second conditional	form:second-conditional	facet pass 4
+DELETE	slay	archaic verb lemma; members are trash-tier
+DELETE	sling	archaic verb lemma; members are trash-tier
+DELETE	slink	archaic verb lemma; members are trash-tier
+DELETE	slit	archaic verb lemma; members are trash-tier
+DELETE	smite	archaic verb lemma; members are trash-tier
+MERGE	somebody doing something	construction:somebody-doing-something	facet pass 4
+MERGE	spelling change	cognate:spelling-pattern	facet pass 4
+MERGE	spelling: drop final e	cognate:spelling-pattern	facet pass 4
+MERGE	stands alone	grammar:stands-alone	facet pass 4
+MERGE	story	topic:story	facet pass 4
+MERGE	supposed to	grammar:supposed-to	facet pass 4
+MERGE	telling time	construction:telling-time	facet pass 4
+MERGE	the other	grammar:the-other	facet pass 4
+MERGE	to go	construction:to-go	facet pass 4
+MERGE	travel	topic:travel	facet pass 4
+MERGE	uses auxiliary do for questions	grammar:uses-auxiliary-do-for-questions	facet pass 4
+MERGE	verb + gerund	construction:verb-gerund	facet pass 4
+MERGE	verb + particle	construction:verb-particle	facet pass 4
+MERGE	would like	grammar:would-like	facet pass 4
+DELETE	wring	archaic verb lemma; members are trash-tier
+MERGE	zero article	grammar:zero-article	facet pass 4
+MERGE	Spain	en:spain	facet pass 4
+MERGE	adjective + full infinitive	construction:adjective-full-infinitive	facet pass 4
+MERGE	adjective connector	construction:adjective-connector	facet pass 4
+MERGE	classroom language	topic:classroom-language	facet pass 4
+MERGE	el	es:él	facet pass 4
+MERGE	first conditional	form:first-conditional	facet pass 4
+MERGE	greeting	topic:greeting	facet pass 4
+MERGE	noun object after particle	construction:noun-object-after-particle	facet pass 4
+MERGE	noun object between verb and particle	construction:noun-object-between-verb-and-particle	facet pass 4
+MERGE	object after full verb	construction:object-after-full-verb	facet pass 4
+MERGE	origin	grammar:origin	facet pass 4
+MERGE	precaution	grammar:precaution	facet pass 4
+MERGE	present progressive	form:present-progressive	facet pass 4
+MERGE	purpose	grammar:purpose	facet pass 4
+MERGE	referenced degree	grammar:referenced-degree	facet pass 4
+MERGE	spelling: add -ing	cognate:spelling-pattern	facet pass 4
+MERGE	spelling: keep final e	cognate:spelling-pattern	facet pass 4
+MERGE	spelling: keep final ee	cognate:spelling-pattern	facet pass 4
+MERGE	warning	grammar:warning	facet pass 4
+MERGE	zero conditional	form:zero-conditional	facet pass 4
+MERGE	into	particle:into	facet pass 4
+MERGE	a	es:a	facet pass 4
+MERGE	la	es:la	facet pass 4
+MERGE	las	es:las	facet pass 4
+MERGE	lo	es:lo	facet pass 4
+MERGE	bajo	es:bajo	facet pass 4
+MERGE	ever	en:ever	facet pass 4
+MERGE	to be	grammar:be	facet pass 4
+MERGE	be left	grammar:be	facet pass 4
+MERGE	PING	construction:preposition-plus-gerund	facet pass 4
+MERGE	preposition + gerund	construction:preposition-plus-gerund	facet pass 4
+MERGE	particle	grammar:particle	facet pass 4
+MERGE	-er/-or	morphology:suffix-er-or	facet pass 4
+MERGE	capitalization	grammar:capitalization	facet pass 4
+MERGE	-er/-or	morphology:suffix-er-or	cleanup
+MERGE	particle	grammar:particle	cleanup
+MERGE	capitalization	grammar:capitalization	cleanup
+MERGE	until	construction:verb-plus-connector	cleanup
+MERGE	onto	particle:onto	cleanup
+MERGE	aside	particle:aside	cleanup
+MERGE	acuerdo	es:acuerdo	cleanup
+MERGE	consultar	es:consultar	cleanup
+MERGE	fuerte	es:fuerte	cleanup
+MERGE	y	es:y	cleanup
+MERGE	resources	topic:resources	cleanup
+MERGE	understanding	grammar:comprehension	cleanup
+MERGE	according to	construction:map-segun-according-to	cleanup
+MERGE	a lot of	grammar:quantifier	cleanup
+MERGE	a lo largo de	construction:map-a-lo-largo-de-along	cleanup
+MERGE	apply for	en:apply	cleanup

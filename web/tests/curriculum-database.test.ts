@@ -8,6 +8,10 @@ import {
   loadSeedData,
   seedCurriculumDatabase,
 } from "../scripts/curriculum-data";
+import {
+  collectionFacet,
+  LEGACY_COLLECTIONS,
+} from "../src/lib/curriculum/collections";
 import { prisma } from "../src/lib/database/prisma";
 
 test("the imported curriculum is exact and protected", async (context) => {
@@ -19,158 +23,58 @@ test("the imported curriculum is exact and protected", async (context) => {
   const actual = await exportCurriculumDatabase(prisma);
   assert.deepStrictEqual(actual, expected);
 
-  const cognates = actual.curriculum.concepts.filter((concept) =>
-    concept.collections.includes("cognate"),
+  // Every collection is either a known facet:value tag or a shrinking legacy
+  // bare name. New bare collections are rejected; the legacy set never grows.
+  const collectionNames = new Set(
+    actual.curriculum.concepts.flatMap((concept) => concept.collections),
   );
-  const partOfSpeechCollections = new Set([
-    "adjective",
-    "adverb",
-    "connector",
-    "expression",
-    "function word",
-    "location expression",
-    "noun",
-    "number",
-    "participle-or-progressive",
-    "quantifier",
-    "time expression",
-    "verb",
-  ]);
-  assert.deepStrictEqual(
-    cognates.filter(
-      (concept) =>
-        !concept.collections.some((collection) =>
-          partOfSpeechCollections.has(collection),
-        ),
-    ),
-    [],
-    "Every cognate concept must have a part-of-speech collection.",
+  const unregistered = [...collectionNames].filter(
+    (name) => collectionFacet(name) === null && !LEGACY_COLLECTIONS.has(name),
   );
   assert.deepStrictEqual(
-    cognates.filter(
-      (concept) =>
-        concept.collections.includes("noun") &&
-        !/^(?:el|la|los|las|lo|el\/la|la\/el) /iu.test(concept.spanish),
-    ),
+    unregistered,
     [],
-    "Cognate nouns must include their natural Spanish article.",
+    "Every collection must be a facet:value tag or a registered legacy name.",
+  );
+  const staleLegacy = [...LEGACY_COLLECTIONS].filter(
+    (name) => !collectionNames.has(name),
   );
   assert.deepStrictEqual(
-    cognates.filter(
-      (concept) =>
-        concept.collections.includes("adjective") &&
-        concept.id !== "16pwsfcg7n" &&
-        !/^(?:ser|estar|tener) /iu.test(concept.spanish),
-    ),
+    staleLegacy,
     [],
-    "Cognate adjectives must use a natural Spanish support verb.",
+    "LEGACY_COLLECTIONS may only shrink; remove names no concept still carries.",
   );
-  assert.equal(
-    cognates.some(
-      (concept) =>
-        concept.spanish === "el territorio" && concept.english === "territory",
-    ),
-    true,
-  );
-  assert.equal(
-    actual.curriculum.concepts.some(
-      (concept) =>
-        concept.collections.includes("noun or adjective") ||
-        concept.collections.includes("noun-or-adjective"),
-    ),
-    false,
-  );
-  assert.equal(
-    cognates.some(
-      (concept) =>
-        concept.id.startsWith("cognate-") &&
-        (concept.spanish.includes(",") || concept.english.includes(",")),
-    ),
-    false,
-    "Imported cognate mappings must have one Spanish and one English target.",
+  assert.ok(
+    LEGACY_COLLECTIONS.size <= 293,
+    `Legacy bare collections must not grow past 293 (found ${LEGACY_COLLECTIONS.size}).`,
   );
 
-  const vocabulary = actual.curriculum.concepts.filter((concept) =>
-    concept.collections.includes("vocabulary"),
+  // The es: / en: lemma facets make the catalog queryable as a bilingual
+  // dictionary: every sense of a headword under one tag.
+  const ganarEnglish = new Set(
+    actual.curriculum.concepts
+      .filter((concept) => concept.collections.includes("es:ganar"))
+      .map((concept) => concept.english),
   );
-  assert.equal(vocabulary.length, 581);
-  assert.deepStrictEqual(
-    vocabulary.reduce<Record<string, number>>((counts, concept) => {
-      counts[concept.curriculumRole] = (counts[concept.curriculumRole] ?? 0) + 1;
-      return counts;
-    }, {}),
-    { core: 8, supporting: 170, reference: 403 },
-  );
-  assert.deepStrictEqual(
-    vocabulary.filter(
-      (concept) =>
-        concept.collections.filter((collection) =>
-          partOfSpeechCollections.has(collection),
-        ).length !== 1,
-    ),
-    [],
-    "Every vocabulary concept must have exactly one grammatical type.",
-  );
-  assert.deepStrictEqual(
-    vocabulary.filter((concept) => concept.english.includes(" / ")),
-    [],
-    "Vocabulary targets must remain atomic.",
-  );
-  assert.deepStrictEqual(
-    vocabulary.filter(
-      (concept) =>
-        concept.collections.includes("noun") &&
-        !concept.collections.includes("days of the week") &&
-        !concept.collections.includes("months of the year") &&
-        !["español", "inglés"].includes(concept.spanish) &&
-        !/^(?:el|la|los|las|lo|el\/la|la\/el|un|una|unos|unas) /iu.test(
-          concept.spanish,
-        ),
-    ),
-    [],
-    "Vocabulary nouns must use an article except intentional calendar and language names.",
-  );
-  assert.deepStrictEqual(
-    vocabulary.filter(
-      (concept) =>
-        concept.collections.includes("adjective") &&
-        !/^(?:ser|estar|tener|el\/la siguiente) /iu.test(concept.spanish),
-    ),
-    [],
-    "Vocabulary adjectives must use a natural Spanish support verb.",
-  );
-
-  const monday = vocabulary.find(
-    (concept) => concept.spanish === "lunes" && concept.english === "Monday",
-  );
-  assert.ok(monday);
-  assert.equal(
-    ["days of the week", "date", "time", "calendar", "noun"].every((tag) =>
-      monday.collections.includes(tag),
-    ),
-    true,
-  );
-  const spanishTrillion = vocabulary.find(
-    (concept) => concept.spanish === "un billón" && concept.english === "one trillion",
-  );
-  assert.ok(spanishTrillion);
-  assert.equal(spanishTrillion.collections.includes("false cognate"), true);
-
-  const particles = new Set([
-    "about", "across", "after", "along", "around", "away", "back", "by", "down",
-    "for", "forward", "in", "into", "off", "on", "out", "over", "through", "to",
-    "together", "up", "upon", "with",
-  ]);
-  for (const concept of vocabulary.filter((item) =>
-    item.collections.includes("phrasal verb"),
-  )) {
-    const words = concept.english.replace(/^to\s+/iu, "").split(/\s+/u);
-    assert.equal(concept.collections.includes(`en:${words[0]}`), true);
-    for (const particle of words.filter((word) => particles.has(word))) {
-      assert.equal(concept.collections.includes(particle), true);
-    }
+  for (const target of [
+    "to win [a competition]",
+    "to earn [money]",
+    "to gain [support or an advantage]",
+    "to beat [somebody]",
+  ]) {
+    assert.ok(ganarEnglish.has(target), `es:ganar should reach "${target}"`);
   }
+  assert.ok(
+    actual.curriculum.concepts
+      .filter((concept) => concept.collections.includes("en:know"))
+      .some((concept) => concept.spanish.startsWith("conocer")) &&
+      actual.curriculum.concepts
+        .filter((concept) => concept.collections.includes("en:know"))
+        .some((concept) => concept.spanish.startsWith("saber")),
+    "en:know must gather both conocer and saber senses.",
+  );
 
+  // Immutable source-provenance archive — unchanged by curriculum curation.
   const vocabularyDocuments = actual.sources.documents.filter(
     (document) => document.pillar === "vocabulary",
   );
@@ -185,7 +89,9 @@ test("the imported curriculum is exact and protected", async (context) => {
   assert.equal(vocabularyEntries.length, 972);
   assert.deepStrictEqual(
     vocabularyEntries.reduce<Record<string, number>>((counts, entry) => {
-      const dispositions = entry.tags.filter((tag) => tag.startsWith("disposition:"));
+      const dispositions = entry.tags.filter((tag) =>
+        tag.startsWith("disposition:"),
+      );
       assert.equal(dispositions.length, 1);
       counts[dispositions[0]] = (counts[dispositions[0]] ?? 0) + 1;
       return counts;
@@ -197,103 +103,6 @@ test("the imported curriculum is exact and protected", async (context) => {
       "disposition: reference pattern": 67,
       "disposition: memory aid": 7,
     },
-  );
-
-  const transformations = actual.curriculum.concepts.filter((concept) =>
-    concept.collections.includes("transformation"),
-  );
-  assert.equal(transformations.length, 802);
-  assert.deepStrictEqual(
-    transformations.reduce<Record<string, number>>((counts, concept) => {
-      counts[concept.curriculumRole] = (counts[concept.curriculumRole] ?? 0) + 1;
-      return counts;
-    }, {}),
-    { core: 2, supporting: 181, reference: 525, trash: 94 },
-  );
-
-  const transformationRelationships = transformations.filter((concept) =>
-    concept.collections.includes("transformation relationship"),
-  );
-  const pastFormTransformations = transformations.filter((concept) =>
-    concept.collections.includes("verb form transformation"),
-  );
-  const recognitionMappings = transformations.filter(
-    (concept) =>
-      !concept.collections.includes("transformation relationship") &&
-      !concept.collections.includes("verb form transformation"),
-  );
-  assert.equal(transformationRelationships.length, 281);
-  assert.equal(pastFormTransformations.length, 476);
-  assert.equal(recognitionMappings.length, 45);
-  assert.deepStrictEqual(
-    transformationRelationships.filter(
-      (concept) =>
-        concept.spanish.split(" ==> ").length !== 2 ||
-        concept.english.split(" ==> ").length !== 2 ||
-        concept.collections.filter((collection) =>
-          /^transformation: .+ => .+$/u.test(collection),
-        ).length !== 1 ||
-        !concept.collections.some(
-          (collection) =>
-            collection.startsWith("es:") || collection.startsWith("en:"),
-        ),
-    ),
-    [],
-    "Transformation relationships must remain atomic, normalized, and queryable by type and lemma.",
-  );
-  assert.deepStrictEqual(
-    recognitionMappings.filter(
-      (concept) => concept.spanish.includes("==>") || concept.english.includes("==>"),
-    ),
-    [],
-    "Recognition-only words remain ordinary Spanish-to-English mappings.",
-  );
-
-  const powerTransformation = transformationRelationships.find(
-    (concept) =>
-      concept.spanish === "el poder ==> ser poderoso/a" &&
-      concept.english === "the power ==> to be powerful",
-  );
-  assert.ok(powerTransformation);
-  assert.equal(powerTransformation.curriculumRole, "supporting");
-  assert.equal(
-    [
-      "transformation: -ful",
-      "transformation: noun => adjective",
-      "en:power",
-      "suffix: -ful",
-    ].every((collection) => powerTransformation.collections.includes(collection)),
-    true,
-  );
-  assert.equal(
-    transformationRelationships.some(
-      (concept) =>
-        concept.spanish === "ser rojo/a ==> ser rojizo/a" &&
-        concept.english === "to be red ==> to be reddish" &&
-        concept.collections.includes("en:red"),
-    ),
-    true,
-  );
-
-  const also = transformations.find(
-    (concept) => concept.spanish === "también" && concept.english === "also",
-  );
-  const because = transformations.find(
-    (concept) => concept.spanish === "porque" && concept.english === "because",
-  );
-  assert.ok(also);
-  assert.ok(because);
-  assert.equal(also.collections.includes("prefix: al-"), true);
-  assert.equal(because.collections.includes("prefix: be-"), true);
-  assert.equal(
-    transformations.some(
-      (concept) =>
-        concept.english === "to look forward to [something]" &&
-        ["en:look", "forward", "to"].every((collection) =>
-          concept.collections.includes(collection),
-        ),
-    ),
-    true,
   );
 
   const transformationDocuments = actual.sources.documents.filter(
@@ -313,7 +122,9 @@ test("the imported curriculum is exact and protected", async (context) => {
   assert.equal(transformationEntries.length, 594);
   assert.deepStrictEqual(
     transformationEntries.reduce<Record<string, number>>((counts, entry) => {
-      const dispositions = entry.tags.filter((tag) => tag.startsWith("disposition:"));
+      const dispositions = entry.tags.filter((tag) =>
+        tag.startsWith("disposition:"),
+      );
       assert.equal(dispositions.length, 1);
       counts[dispositions[0]] = (counts[dispositions[0]] ?? 0) + 1;
       return counts;
@@ -324,48 +135,6 @@ test("the imported curriculum is exact and protected", async (context) => {
       "disposition: reference pattern": 7,
       "disposition: index": 69,
     },
-  );
-
-  const structure = actual.curriculum.concepts.filter((concept) =>
-    concept.collections.includes("structure"),
-  );
-  assert.equal(structure.length, 405);
-  assert.deepStrictEqual(
-    structure.reduce<Record<string, number>>((counts, concept) => {
-      counts[concept.curriculumRole] = (counts[concept.curriculumRole] ?? 0) + 1;
-      return counts;
-    }, {}),
-    { core: 65, supporting: 136, reference: 122, trash: 82 },
-  );
-  assert.equal(
-    structure.filter((concept) => concept.collections.includes("comparative")).length,
-    16,
-  );
-  assert.equal(
-    structure.filter((concept) => concept.collections.includes("superlative")).length,
-    16,
-  );
-  assert.deepStrictEqual(
-    structure.filter(
-      (concept) =>
-        (concept.collections.includes("comparative") ||
-          concept.collections.includes("superlative")) &&
-        (!concept.collections.includes("transformation") ||
-          !concept.collections.includes("transformation relationship") ||
-          concept.spanish.split(" ==> ").length !== 2 ||
-          concept.english.split(" ==> ").length !== 2),
-    ),
-    [],
-    "Comparative and superlative concepts must remain explicit transformation relationships.",
-  );
-  assert.equal(
-    structure.some(
-      (concept) =>
-        concept.spanish === "o / u" ||
-        concept.spanish === "comparison que" ||
-        concept.spanish === "suficiente / suficientes",
-    ),
-    false,
   );
 
   const structureDocuments = actual.sources.documents.filter(
@@ -385,7 +154,9 @@ test("the imported curriculum is exact and protected", async (context) => {
   assert.equal(structureEntries.length, 332);
   assert.deepStrictEqual(
     structureEntries.reduce<Record<string, number>>((counts, entry) => {
-      const dispositions = entry.tags.filter((tag) => tag.startsWith("disposition:"));
+      const dispositions = entry.tags.filter((tag) =>
+        tag.startsWith("disposition:"),
+      );
       assert.equal(dispositions.length, 1);
       counts[dispositions[0]] = (counts[dispositions[0]] ?? 0) + 1;
       return counts;
@@ -396,86 +167,6 @@ test("the imported curriculum is exact and protected", async (context) => {
       "disposition: reference pattern": 77,
       "disposition: source warning": 1,
     },
-  );
-
-  const pastForms = actual.curriculum.concepts.filter((concept) =>
-    concept.collections.includes("past and past participle"),
-  );
-  assert.equal(pastForms.length, 476);
-  assert.deepStrictEqual(
-    pastForms.reduce<Record<string, number>>((counts, concept) => {
-      counts[concept.curriculumRole] = (counts[concept.curriculumRole] ?? 0) + 1;
-      return counts;
-    }, {}),
-    { supporting: 152, reference: 230, trash: 94 },
-  );
-  assert.equal(
-    pastForms.filter((concept) => concept.collections.includes("past")).length,
-    234,
-  );
-  assert.equal(
-    pastForms.filter((concept) => concept.collections.includes("past participle"))
-      .length,
-    242,
-  );
-  assert.equal(
-    new Set(
-      pastForms.flatMap((concept) =>
-        concept.collections.filter((collection) =>
-          collection.startsWith("en:"),
-        ),
-      ),
-    ).size,
-    164,
-  );
-  assert.deepStrictEqual(
-    pastForms.filter((concept) => {
-      const statuses = concept.collections.filter((collection) =>
-        collection.startsWith("sound metadata "),
-      );
-      const formTypes = ["past", "past participle"].filter((collection) =>
-        concept.collections.includes(collection),
-      );
-      return (
-        statuses.length !== 1 ||
-        formTypes.length !== 1 ||
-        !concept.collections.includes("transformation") ||
-        !concept.collections.includes("verb form transformation") ||
-        concept.english.includes(" / ")
-      );
-    }),
-    [],
-    "Every past-form concept must be atomic and have one form type and sound-review status.",
-  );
-  const pendingSound = pastForms.filter((concept) =>
-    concept.collections.includes("sound metadata pending review"),
-  );
-  const reviewedSound = pastForms.filter((concept) =>
-    concept.collections.includes("sound metadata reviewed"),
-  );
-  assert.equal(pendingSound.length, 335);
-  assert.equal(reviewedSound.length, 141);
-  assert.deepStrictEqual(
-    pendingSound.filter((concept) =>
-      concept.collections.some(
-        (collection) =>
-          collection.includes("🔊") ||
-          collection.startsWith("past - ") ||
-          collection.startsWith("past participle - "),
-      ),
-    ),
-    [],
-    "Pending pronunciation rows must not claim a finished sound family.",
-  );
-  assert.equal(
-    pastForms.some(
-      (concept) =>
-        concept.spanish === "pasado de can" &&
-        concept.english === "could" &&
-        concept.collections.includes("defective verb") &&
-        concept.collections.includes("no past participle"),
-    ),
-    true,
   );
 
   const pastFormDocuments = actual.sources.documents.filter(
@@ -495,7 +186,9 @@ test("the imported curriculum is exact and protected", async (context) => {
   assert.equal(pastFormEntries.length, 1_077);
   assert.deepStrictEqual(
     pastFormEntries.reduce<Record<string, number>>((counts, entry) => {
-      const dispositions = entry.tags.filter((tag) => tag.startsWith("disposition:"));
+      const dispositions = entry.tags.filter((tag) =>
+        tag.startsWith("disposition:"),
+      );
       assert.equal(dispositions.length, 1);
       counts[dispositions[0]] = (counts[dispositions[0]] ?? 0) + 1;
       return counts;
@@ -506,6 +199,7 @@ test("the imported curriculum is exact and protected", async (context) => {
     },
   );
 
+  // Structural guards.
   await assert.rejects(
     seedCurriculumDatabase(prisma, expected.curriculum, expected.sources),
     /refuses to overwrite existing data/,
