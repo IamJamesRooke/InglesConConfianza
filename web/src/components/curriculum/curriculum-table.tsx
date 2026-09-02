@@ -103,6 +103,7 @@ function updateEditableValue(
 }
 
 type QuickFacet = { collection: string; label: string };
+type Macrotag = { slug: string; title: string };
 
 export function CurriculumTable({
   initialConcepts,
@@ -110,9 +111,10 @@ export function CurriculumTable({
   page,
   pageCount,
   filters,
-  lockedCollections = [],
   quickFacets = [],
   activeFacets = [],
+  macrotags = [],
+  activeTopic = null,
 }: {
   initialConcepts: CurriculumConcept[];
   totalConcepts: number;
@@ -124,9 +126,10 @@ export function CurriculumTable({
     role: CurriculumRole | "all";
     sort: "default" | "spanish" | "spanish-desc" | "role";
   };
-  lockedCollections?: string[];
   quickFacets?: QuickFacet[];
   activeFacets?: string[];
+  macrotags?: Macrotag[];
+  activeTopic?: { slug: string; title: string } | null;
 }) {
   const router = useRouter();
   const pathname = usePathname();
@@ -629,16 +632,39 @@ export function CurriculumTable({
         </label>
       </form>
 
+      {macrotags.length > 0 && (
+        <div className="mb-4 flex flex-wrap items-center gap-2">
+          <span className="text-sm font-medium text-muted-foreground">Topic</span>
+          {macrotags.map((tag) => {
+            const on = activeTopic?.slug === tag.slug;
+            return (
+              <button
+                key={tag.slug}
+                type="button"
+                onClick={() =>
+                  navigate({ topic: on ? null : tag.slug, facets: null })
+                }
+                aria-pressed={on}
+                className={`rounded-full border px-4 py-1.5 text-sm font-semibold transition ${
+                  on
+                    ? "border-primary bg-primary text-primary-foreground"
+                    : "border-border bg-card text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {tag.title}
+              </button>
+            );
+          })}
+        </div>
+      )}
+
       {quickFacets.length > 0 && (
         <div className="mb-4 flex flex-wrap items-center gap-2">
-          {lockedCollections.map((collection) => (
-            <span
-              key={collection}
-              className="rounded-full border border-border bg-muted px-3 py-1 text-xs font-semibold text-muted-foreground"
-            >
-              {collection}
+          {activeTopic && (
+            <span className="rounded-full border border-border bg-muted px-3 py-1 text-xs font-semibold text-muted-foreground">
+              {activeTopic.title}
             </span>
-          ))}
+          )}
           {quickFacets.map((facet) => {
             const on = activeFacets.includes(facet.collection);
             return (

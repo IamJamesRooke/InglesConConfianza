@@ -1,6 +1,6 @@
-// Curriculum topic subpages. Each entry is a curated browse view scoped to one
-// base collection, with quick-filter buttons for its sub-facets. The page renders
-// the same CurriculumTable as /curriculum.
+// Curriculum macrotags. Each is a curated view of /curriculum scoped to one
+// base collection, with quick-filter buttons for its sub-facets, shown inline
+// on the curriculum table.
 
 export type CurriculumTopic = {
   slug: string;
@@ -15,7 +15,7 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
     slug: "pronouns",
     title: "Pronouns",
     description:
-      "Every pronoun in the curriculum, Spanish to English, with its grammatical role. Click en:her to see every Spanish form.",
+      "Every pronoun, Spanish to English, with its grammatical role. Click a Spanish or English chip to trace one form across the whole system.",
     baseCollection: "topic:pronoun",
     facetButtons: [
       { collection: "grammar:subject-pronoun", label: "Subject" },
