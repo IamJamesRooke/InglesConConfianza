@@ -99,7 +99,7 @@ test("the imported curriculum is exact and protected", async (context) => {
       counts[concept.curriculumRole] = (counts[concept.curriculumRole] ?? 0) + 1;
       return counts;
     }, {}),
-    { core: 4, supporting: 19, reference: 558 },
+    { core: 8, supporting: 170, reference: 403 },
   );
   assert.deepStrictEqual(
     vocabulary.filter(
@@ -208,7 +208,7 @@ test("the imported curriculum is exact and protected", async (context) => {
       counts[concept.curriculumRole] = (counts[concept.curriculumRole] ?? 0) + 1;
       return counts;
     }, {}),
-    { core: 13, supporting: 310, reference: 479 },
+    { core: 2, supporting: 181, reference: 525, trash: 94 },
   );
 
   const transformationRelationships = transformations.filter((concept) =>
@@ -334,7 +334,7 @@ test("the imported curriculum is exact and protected", async (context) => {
       counts[concept.curriculumRole] = (counts[concept.curriculumRole] ?? 0) + 1;
       return counts;
     }, {}),
-    { core: 75, supporting: 128, reference: 202 },
+    { core: 65, supporting: 136, reference: 122, trash: 82 },
   );
   assert.equal(
     structure.filter((concept) => concept.collections.includes("comparative")).length,
@@ -406,7 +406,7 @@ test("the imported curriculum is exact and protected", async (context) => {
       counts[concept.curriculumRole] = (counts[concept.curriculumRole] ?? 0) + 1;
       return counts;
     }, {}),
-    { core: 12, supporting: 286, reference: 178 },
+    { supporting: 152, reference: 230, trash: 94 },
   );
   assert.equal(
     pastForms.filter((concept) => concept.collections.includes("past")).length,

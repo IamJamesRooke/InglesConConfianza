@@ -31,4 +31,5 @@ export const curriculumRoles: CurriculumRole[] = [
   "core",
   "supporting",
   "reference",
+  "trash",
 ];

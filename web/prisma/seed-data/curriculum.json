@@ -76,7 +76,7 @@
         "decir",
         "mean"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "dvodf0y7wx",
@@ -91,7 +91,7 @@
         "would",
         "like"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "dnwd7gmll5",
@@ -106,7 +106,7 @@
         "would",
         "like"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "9h3jno3320",
@@ -122,7 +122,7 @@
         "like",
         "somebody to do something"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "lennoglnrf",
@@ -218,7 +218,7 @@
         "querer",
         "on"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "yfd5jg73vc",
@@ -340,7 +340,7 @@
         "want",
         "not"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "18xj8sphod",
@@ -355,7 +355,7 @@
         "would",
         "like"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "5zjqxkzep9",
@@ -370,7 +370,7 @@
         "would",
         "like"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "okgrw0eqjz",
@@ -496,7 +496,7 @@
         "passive",
         "something is needed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "2dedeo0gb6",
@@ -528,7 +528,7 @@
         "informal spoken reduction",
         "followed by full infinitive"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "blyn87wx6n",
@@ -573,7 +573,7 @@
         "phrasal verb",
         "up"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "exl1pngeii",
@@ -605,7 +605,7 @@
         "phrasal verb",
         "in"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "scx4soq3es",
@@ -698,7 +698,7 @@
         "take",
         "transport"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "gb1zklln37",
@@ -729,7 +729,7 @@
         "take",
         "time"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "0cpl9zogy8",
@@ -775,7 +775,7 @@
         "have",
         "beverage"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "oieith38tf",
@@ -1022,7 +1022,7 @@
         "verb + preposition",
         "of"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "n9z42gcs3h",
@@ -1038,7 +1038,7 @@
         "phrasal verb",
         "up"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "y8vz5i8ugg",
@@ -1133,7 +1133,7 @@
         "meal",
         "noun"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "g2nzrxh5ae",
@@ -1148,7 +1148,7 @@
         "need",
         "noun"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "47i1df0k0i",
@@ -1207,7 +1207,7 @@
         "-ly",
         "cognate -mente => -ly"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "7ro4xgurxb",
@@ -1392,7 +1392,7 @@
         "with",
         "con => with"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "pfr7szkobd",
@@ -1426,7 +1426,7 @@
         "about",
         "sobre => about"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "tiss70p00o",
@@ -1445,7 +1445,7 @@
         "con => to",
         "por teléfono => on the phone"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "kf0u7n45dt",
@@ -1462,7 +1462,7 @@
         "for",
         "por => for"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "kb26bvucsb",
@@ -1662,7 +1662,7 @@
         "-er",
         "person"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "e1plhjrtby",
@@ -1777,7 +1777,7 @@
         "about",
         "sobre => about"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "a7tobu5j5o",
@@ -1855,7 +1855,7 @@
         "classroom language",
         "question"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "4pmy3sue86",
@@ -1872,7 +1872,7 @@
         "out",
         "loud"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "uy518ih9t7",
@@ -1887,7 +1887,7 @@
         "discourse connector",
         "that is"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "6mwi5bt3ax",
@@ -1903,7 +1903,7 @@
         "in",
         "other words"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "1x6wkh4a4p",
@@ -1951,7 +1951,7 @@
         "discourse",
         "let's"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "h9qi6jkdmp",
@@ -2048,7 +2048,7 @@
         "noun",
         "participle"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "8ck7889dtr",
@@ -2240,7 +2240,7 @@
         "para => to",
         "time"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "cgzwyy7tb0",
@@ -2352,7 +2352,7 @@
         "flip",
         "switch"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "6oqdoh7ax7",
@@ -2486,7 +2486,7 @@
         "de => like",
         "gerund"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "chpomdclwr",
@@ -2630,7 +2630,7 @@
         "up",
         "reflexive"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "6r69ejgtqp",
@@ -3089,7 +3089,7 @@
         "forgiveness",
         "por => for"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "439x0r7xja",
@@ -3105,7 +3105,7 @@
         "wish",
         "collocation"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "070rfgth5n",
@@ -3190,7 +3190,7 @@
         "sobre => about",
         "preguntar"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "sfix1omn3j",
@@ -3309,7 +3309,7 @@
         "from",
         "a => from"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "i0ry42yzcl",
@@ -3326,7 +3326,7 @@
         "in",
         "delivery"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "f03pn31r0v",
@@ -3375,7 +3375,7 @@
         "noun",
         "participle"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "bd134x1q1x",
@@ -3426,7 +3426,7 @@
         "in",
         "en => in"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "zm3v8qtrgj",
@@ -3443,7 +3443,7 @@
         "on",
         "sobre => on"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "5bq8gctf3g",
@@ -3511,7 +3511,7 @@
         "placement",
         "formal"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "xy9ovfmmwc",
@@ -3981,7 +3981,7 @@
         "participle",
         "since"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "tr18eklsol",
@@ -4401,7 +4401,7 @@
         "on",
         "event"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "uenjlmb8j9",
@@ -5212,7 +5212,7 @@
         "esperar",
         "hope"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "0h3qydzurd",
@@ -5426,7 +5426,7 @@
         "question",
         "feeling"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "f5h0hvcv1d",
@@ -5440,7 +5440,7 @@
         "estar",
         "fixed expression"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "e6gbegp44a",
@@ -5556,7 +5556,7 @@
         "to",
         "con => to"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "afevkeg23w",
@@ -5691,7 +5691,7 @@
         "particle",
         "on"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "fbhhwzgo6j",
@@ -5706,7 +5706,7 @@
         "particle",
         "off"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "gha0bijm3j",
@@ -5800,7 +5800,7 @@
         "particle",
         "done"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "8ayvn6jpi6",
@@ -5867,7 +5867,7 @@
         "here",
         "english-to-spanish mappings"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ta7tkxiwoz",
@@ -5897,7 +5897,7 @@
         "estar",
         "adjective"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "vfjhy0rgs4",
@@ -5911,7 +5911,7 @@
         "estar",
         "adjective"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "sk7qkjn915",
@@ -5995,7 +5995,7 @@
       "collections": [
         "extrañar"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "it72cwjhed",
@@ -6092,7 +6092,7 @@
       "collections": [
         "faltar"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "5ym0n1ham4",
@@ -6118,7 +6118,7 @@
       "collections": [
         "faltar"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "6xmbf44uey",
@@ -6134,7 +6134,7 @@
         "left",
         "there be"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "jggi2296px",
@@ -6164,7 +6164,7 @@
         "verb + preposition",
         "a => direct object"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "6wu6m8g0qn",
@@ -6239,7 +6239,7 @@
       "collections": [
         "ganar"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "xzu44okx8u",
@@ -6265,7 +6265,7 @@
       "collections": [
         "ganar"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "iz4606mcoe",
@@ -6320,7 +6320,7 @@
         "ganar",
         "fixed expression"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "nkeko9z633",
@@ -6503,7 +6503,7 @@
         "adverb",
         "fixed expression"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "3u7b3fgws0",
@@ -6517,7 +6517,7 @@
         "gustar",
         "social expression"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "rvo8g5gv94",
@@ -6779,7 +6779,7 @@
         "de => probability",
         "deber"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "ofxncx6grm",
@@ -6917,7 +6917,7 @@
         "time",
         "ago"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "smz7y58q4p",
@@ -7026,7 +7026,7 @@
         "faltar",
         "passive"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "ej9dspwxv3",
@@ -7120,7 +7120,7 @@
         "hacer",
         "fixed expression"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "qwj72o0pgh",
@@ -7165,7 +7165,7 @@
         "hacer",
         "fixed expression"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "irvw3l9fwm",
@@ -7425,7 +7425,7 @@
         "hacer",
         "noun"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "seq1qsjokh",
@@ -7441,7 +7441,7 @@
         "connector",
         "de => in"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "2iiyjrogmc",
@@ -7550,7 +7550,7 @@
         "for",
         "a => for"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "omzzomx3m9",
@@ -7566,7 +7566,7 @@
         "for",
         "a => for"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "bqohigg3pm",
@@ -7616,7 +7616,7 @@
         "followed by gerund",
         "uses gerund"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "nsdu5c6q9d",
@@ -7707,7 +7707,7 @@
         "llamar",
         "introduction"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "8uhr5m0dkf",
@@ -7722,7 +7722,7 @@
         "question",
         "introduction"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "9701k29zz9",
@@ -7859,7 +7859,7 @@
         "at",
         "a => at"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "g8o1myn1jr",
@@ -7875,7 +7875,7 @@
         "in",
         "a => in"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "bioalll4vj",
@@ -8032,7 +8032,7 @@
         "to",
         "a => to"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ev8gdc8deh",
@@ -8138,7 +8138,7 @@
         "with",
         "con => with"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "za3b558g1u",
@@ -8233,7 +8233,7 @@
         "to",
         "a => to"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "kai7mys6il",
@@ -8294,7 +8294,7 @@
         "have something done",
         "past participle"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "mo76rkcg2d",
@@ -8403,7 +8403,7 @@
         "stop",
         "reflexive"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "9q3ezcaa3k",
@@ -8421,7 +8421,7 @@
         "de => -ing",
         "gerund"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "9sc3t5iw76",
@@ -8549,7 +8549,7 @@
         "adjective",
         "english-to-spanish mappings"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "id2e6gz2kt",
@@ -8627,7 +8627,7 @@
         "verb + preposition",
         "of"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "824fssdui6",
@@ -8677,7 +8677,7 @@
         "a => like",
         "reflexive"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "sx2usy0kyp",
@@ -8708,7 +8708,7 @@
         "parecer",
         "adverb"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "nhqct1dhzu",
@@ -8889,7 +8889,7 @@
         "pass",
         "double object"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "komqoyh86l",
@@ -8951,7 +8951,7 @@
         "question",
         "fixed expression"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "uuq5sdflxk",
@@ -8968,7 +8968,7 @@
         "through",
         "por => through"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "euubcqf5w0",
@@ -9031,7 +9031,7 @@
         "adjective",
         "time"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "zcxqshq3iu",
@@ -9046,7 +9046,7 @@
         "noun",
         "time"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "9jo5861xgs",
@@ -9111,7 +9111,7 @@
         "plan",
         "full infinitive"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "spqggf97ma",
@@ -9159,7 +9159,7 @@
         "of",
         "de => of"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "isr1jrl9yx",
@@ -9175,7 +9175,7 @@
         "phrasal verb",
         "over"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "xavuiuomaj",
@@ -9191,7 +9191,7 @@
         "phrasal verb",
         "through"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "k57gp6u41b",
@@ -9206,7 +9206,7 @@
         "think",
         "pro-form"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "4vuklzq5ed",
@@ -9281,7 +9281,7 @@
         "miss",
         "transportation"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "umiayx5iyo",
@@ -9327,7 +9327,7 @@
         "adjective",
         "reflexive"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ml2usxu7by",
@@ -9342,7 +9342,7 @@
         "adjective",
         "state"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "s9leem6i29",
@@ -9391,7 +9391,7 @@
         "with",
         "con => with"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "wtfoq5ttro",
@@ -9408,7 +9408,7 @@
         "of",
         "de => of"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "inhrs98gy2",
@@ -9468,7 +9468,7 @@
         "weigh",
         "measurement"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "zr2o52sx7y",
@@ -9513,7 +9513,7 @@
         "despite",
         "de"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "01gzy2c71x",
@@ -9609,7 +9609,7 @@
         "pesar",
         "adjective"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "32lecsnkbn",
@@ -9670,7 +9670,7 @@
         "verb form: bare infinitive",
         "uses bare infinitive"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "jwk81y46bp",
@@ -9714,7 +9714,7 @@
         "cannot",
         "followed by bare infinitive"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "mxguwwzrxk",
@@ -9972,7 +9972,7 @@
         "not",
         "contraction"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "3qq5q3d71a",
@@ -10075,7 +10075,7 @@
         "question",
         "modal"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "jdd2lebx6x",
@@ -10199,7 +10199,7 @@
         "be",
         "modal"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "zy6xwkoq5s",
@@ -10216,7 +10216,7 @@
         "be",
         "modal"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "wew9sag3jl",
@@ -10264,7 +10264,7 @@
         "poder",
         "noun"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "n5gllks2an",
@@ -10309,7 +10309,7 @@
         "adjective",
         "-ful"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "j89bqvhlm0",
@@ -10772,7 +10772,7 @@
         "lend",
         "double object"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "v6af13c50w",
@@ -10807,7 +10807,7 @@
         "a => to",
         "collocation"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "l1mjp8ohc0",
@@ -10888,7 +10888,7 @@
         "prestar",
         "noun"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "bwmfe9nhs1",
@@ -10904,7 +10904,7 @@
         "there be",
         "left"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "398l0y1m6b",
@@ -10935,7 +10935,7 @@
         "question",
         "left"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "lqk4xtsbz1",
@@ -10950,7 +10950,7 @@
         "fit",
         "clothing"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "qbsolsmmo9",
@@ -11002,7 +11002,7 @@
         "with",
         "con => with"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "zl1e6hnb04",
@@ -11020,7 +11020,7 @@
         "en => to",
         "full infinitive"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "lzwwxzjt9z",
@@ -11091,7 +11091,7 @@
         "sin => out of",
         "reflexive"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "go9ggtice2",
@@ -11209,7 +11209,7 @@
         "from",
         "de => from"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "sogja55oo0",
@@ -11227,7 +11227,7 @@
         "from",
         "a => from"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "6u7a74ndy9",
@@ -11295,7 +11295,7 @@
         "away",
         "reflexive"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "a4mugyra2a",
@@ -11313,7 +11313,7 @@
         "of",
         "reflexive"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "2axlxx1nzw",
@@ -11448,7 +11448,7 @@
         "con => to",
         "reflexive"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "6a0qr8eums",
@@ -11867,7 +11867,7 @@
         "alcanzar",
         "reach"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "mmnv7qavpx",
@@ -11882,7 +11882,7 @@
         "catch",
         "transportation"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "0mp393y24p",
@@ -11912,7 +11912,7 @@
         "enough",
         "quantity"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "dvjojvxntx",
@@ -11930,7 +11930,7 @@
         "para => object",
         "money"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "204wng99bx",
@@ -11984,7 +11984,7 @@
         "a => to",
         "Colombian Spanish"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "gh92p4vhuj",
@@ -12085,7 +12085,7 @@
         "fall",
         "reflexive"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "kz0e1id4s4",
@@ -12172,7 +12172,7 @@
         "de que => that",
         "Colombian Spanish"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "cnqk3msdez",
@@ -12460,7 +12460,7 @@
         "verb + preposition",
         "with"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "ty4a0kmfe9",
@@ -12863,7 +12863,7 @@
         "contar",
         "count"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "u9mhk0r7wd",
@@ -12879,7 +12879,7 @@
         "double object",
         "person"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "pjr9m3okp5",
@@ -12981,7 +12981,7 @@
         "con => object",
         "resources"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "vjzoqo7829",
@@ -13079,7 +13079,7 @@
         "noun",
         "restaurant"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "16jugpou1c",
@@ -13163,7 +13163,7 @@
         "to",
         "perspective change"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "zkpnfrk8ch",
@@ -13411,7 +13411,7 @@
         "en => in",
         "person"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "k29o9xq2bp",
@@ -13427,7 +13427,7 @@
         "so",
         "que sí => so"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "dav762mjhb",
@@ -13444,7 +13444,7 @@
         "negative",
         "que no => not so"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "nkzffs81a6",
@@ -13461,7 +13461,7 @@
         "be able to",
         "negative"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "ar5ze0bqlr",
@@ -13671,7 +13671,7 @@
         "full infinitive",
         "obligation"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "yrb2jzggm4",
@@ -13778,7 +13778,7 @@
         "deduction",
         "identity"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "i4siv85tf9",
@@ -13898,7 +13898,7 @@
         "imperfect",
         "past expectation"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "5qa1ueater",
@@ -13932,7 +13932,7 @@
         "a => to",
         "reflexive"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "6uhgsiqvvf",
@@ -13950,7 +13950,7 @@
         "a => to",
         "participle"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "gxnygskyt7",
@@ -14076,7 +14076,7 @@
         "leave",
         "place"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "e7nedtjuof",
@@ -14135,7 +14135,7 @@
         "permission",
         "first person"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "n27dfso39e",
@@ -14152,7 +14152,7 @@
         "informal",
         "bare infinitive"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "yfjyb31b9b",
@@ -14187,7 +14187,7 @@
         "de",
         "perspective change"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "cz1u7ybmyj",
@@ -14381,7 +14381,7 @@
         "fixed expression",
         "person"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "hyx4uupf61",
@@ -14432,7 +14432,7 @@
         "out",
         "bare infinitive"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "goxootramx",
@@ -14550,7 +14550,7 @@
         "en => into",
         "liquid"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "36riiosdmx",
@@ -14569,7 +14569,7 @@
         "de => out of",
         "person"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "5vfdd7g6pp",
@@ -14604,7 +14604,7 @@
         "employment",
         "person"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "0yil0wwbgv",
@@ -14790,7 +14790,7 @@
         "fixed expression",
         "person"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "c5032rvam7",
@@ -14917,7 +14917,7 @@
         "recordar",
         "gerund"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "o8w71qqdrb",
@@ -14931,7 +14931,7 @@
         "recordar",
         "somebody to do something"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ea80tvxv9q",
@@ -14977,7 +14977,7 @@
         "of",
         "a => of"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "wx0aqskuor",
@@ -15060,7 +15060,7 @@
       "collections": [
         "robar"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "nvywv2tlgk",
@@ -15073,7 +15073,7 @@
       "collections": [
         "robar"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "61rt52kj37",
@@ -15243,7 +15243,7 @@
         "saber",
         "modal"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "kjs3avsme6",
@@ -15259,7 +15259,7 @@
         "phrasal verb",
         "out"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "tb9cpc7ypj",
@@ -15291,7 +15291,7 @@
         "from",
         "de => from"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "bjifboq9ja",
@@ -15322,7 +15322,7 @@
         "like",
         "a => like"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "o4nv333v8c",
@@ -15336,7 +15336,7 @@
         "saber",
         "fixed expression"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "kafdnl1n7j",
@@ -15350,7 +15350,7 @@
         "saber",
         "fixed expression"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "ugu6mryvd1",
@@ -15364,7 +15364,7 @@
         "saber",
         "fixed expression"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "g4s8ww83pl",
@@ -15379,7 +15379,7 @@
         "fixed expression",
         "negative"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "9dj6rqtp3w",
@@ -15643,7 +15643,7 @@
       "collections": [
         "salir"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "gn6wgqx5vo",
@@ -15733,7 +15733,7 @@
         "salir",
         "noun"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "4hc7hecq4n",
@@ -15749,7 +15749,7 @@
         "phrasal verb",
         "out"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "m1asnh0c8n",
@@ -15762,7 +15762,7 @@
       "collections": [
         "seguir"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "f0z126w2cy",
@@ -15775,7 +15775,7 @@
       "collections": [
         "seguir"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "6fi09q216i",
@@ -15852,7 +15852,7 @@
         "phrasal verb",
         "on"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "fhohvsakmg",
@@ -15886,7 +15886,7 @@
         "verb + preposition",
         "a => on"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "snuyccf6qe",
@@ -15920,7 +15920,7 @@
         "with",
         "con => with"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "5qdmpxi8us",
@@ -15951,7 +15951,7 @@
         "phrasal verb",
         "on"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "vupb12qdkr",
@@ -15967,7 +15967,7 @@
         "up",
         "fixed expression"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "2liqgudpe2",
@@ -15985,7 +15985,7 @@
         "verb + preposition",
         "con => with"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "h2zqc61fwq",
@@ -16002,7 +16002,7 @@
         "from",
         "de => from"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "7505bgiyyc",
@@ -16079,7 +16079,7 @@
         "at",
         "fixed expression"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "p1ln5nyupv",
@@ -16125,7 +16125,7 @@
       "collections": [
         "sentir"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "mm9jg6sy57",
@@ -16158,7 +16158,7 @@
         "sentir",
         "that-clause"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "421wv4rocg",
@@ -16177,7 +16177,7 @@
         "social expression",
         "expression"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "3qtux13rre",
@@ -16193,7 +16193,7 @@
         "for",
         "por => for"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "wtwbsaolgx",
@@ -16222,7 +16222,7 @@
         "reflexive",
         "adverb"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "b0zp4e4wz9",
@@ -16271,7 +16271,7 @@
         "like",
         "de => like"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "wbo46b952m",
@@ -16319,7 +16319,7 @@
         "sentir",
         "noun"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "64zpt713l1",
@@ -16408,7 +16408,7 @@
         "en => at",
         "event location"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "2z3yhpg9ve",
@@ -16472,7 +16472,7 @@
         "for",
         "para => for"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "nyb1ocmvpw",
@@ -16488,7 +16488,7 @@
         "for",
         "para => for"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "sz0g4jfbie",
@@ -16505,7 +16505,7 @@
         "de => to",
         "full infinitive"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "ralwup7tfh",
@@ -16570,7 +16570,7 @@
         "of",
         "de => possessive"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "lg9p46b73r",
@@ -16587,7 +16587,7 @@
         "de => of",
         "adjective"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "czjjg08c25",
@@ -16601,7 +16601,7 @@
         "ser",
         "adjective"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "f601zyn02o",
@@ -16672,7 +16672,7 @@
         "ser",
         "adjective"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "yft1hv038t",
@@ -16702,7 +16702,7 @@
         "fixed expression",
         "negative"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "0pj00hx6vk",
@@ -16733,7 +16733,7 @@
         "contraction",
         "that-clause"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "ihr1107fvl",
@@ -16788,7 +16788,7 @@
         "phrasal verb",
         "for"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "0v6um8pq7g",
@@ -16804,7 +16804,7 @@
         "to",
         "para => to"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "iku0m5311z",
@@ -16833,7 +16833,7 @@
         "noun",
         "-ing"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "ka80affc74",
@@ -16911,7 +16911,7 @@
         "soler",
         "adverb"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "30rrpal2u2",
@@ -16925,7 +16925,7 @@
         "soler",
         "full infinitive"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "2oiqu0kcxf",
@@ -16939,7 +16939,7 @@
         "soler",
         "meaning-changing imperfect"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "li9fwc94cq",
@@ -16983,7 +16983,7 @@
         "negative",
         "adverb"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "kp75v3jgay",
@@ -17013,7 +17013,7 @@
         "suponer",
         "that-clause"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "be41h3a6k4",
@@ -17041,7 +17041,7 @@
         "reflexive",
         "somebody to do something"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "s2s9tmt9pc",
@@ -17123,7 +17123,7 @@
         "number",
         "english-to-spanish mappings"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "core"
     },
     {
       "id": "7s7vnrgxud",
@@ -17252,7 +17252,7 @@
         "state",
         "adjective"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "3t5jjwz0t5",
@@ -17347,7 +17347,7 @@
         "state",
         "adjective"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "960sk4aws1",
@@ -17441,7 +17441,7 @@
         "tener",
         "fixed expression"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "86v2tii41j",
@@ -17456,7 +17456,7 @@
         "fixed expression",
         "in"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "7xfrxi3jd5",
@@ -17540,7 +17540,7 @@
         "with",
         "con => with"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "5awfswdavw",
@@ -17558,7 +17558,7 @@
         "with",
         "con => with"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "5qr32psjlf",
@@ -17618,7 +17618,7 @@
       "collections": [
         "tocar"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "kb4ibauh35",
@@ -17646,7 +17646,7 @@
         "tocar",
         "turn"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ykm7fr9btb",
@@ -17661,7 +17661,7 @@
         "obligation",
         "full infinitive"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "fqbky20fmo",
@@ -17722,7 +17722,7 @@
         "tocar",
         "fixed expression"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "bzurrkgjau",
@@ -17810,7 +17810,7 @@
         "at",
         "en => at"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "edf5jy4zrf",
@@ -17842,7 +17842,7 @@
         "on",
         "en => on"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "55moihfqeu",
@@ -17964,7 +17964,7 @@
         "trabajar",
         "noun"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "492gbx234m",
@@ -17978,7 +17978,7 @@
         "trabajar",
         "noun"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ekmtzz5ms0",
@@ -18038,7 +18038,7 @@
         "traer",
         "direction"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "qdd1gcrv5r",
@@ -18171,7 +18171,7 @@
         "with",
         "consigo => with"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "m1qskewn43",
@@ -18231,7 +18231,7 @@
         "valer",
         "price"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "wjd0q608lr",
@@ -18246,7 +18246,7 @@
         "price",
         "question"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "16pwsfcg7n",
@@ -18326,7 +18326,7 @@
         "modal",
         "full infinitive"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "ivhec4s22m",
@@ -18540,7 +18540,7 @@
         "in",
         "en => in"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "kk3nkycmqg",
@@ -18556,7 +18556,7 @@
         "for",
         "a => for"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "c9e47xxxqj",
@@ -18571,7 +18571,7 @@
         "fixed expression",
         "on"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "2xv5qqprqp",
@@ -18768,7 +18768,7 @@
         "with",
         "con => direct object"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "5wxhecilm0",
@@ -18814,7 +18814,7 @@
         "fixed expression",
         "contraction"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "kxen1brnbt",
@@ -18861,7 +18861,7 @@
         "to",
         "con => to"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "ei20exbswc",
@@ -19053,7 +19053,7 @@
         "back",
         "direction"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "tly9ldi8kr",
@@ -19071,7 +19071,7 @@
         "to",
         "a => to"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "8zwhpsdgt7",
@@ -19263,7 +19263,7 @@
         "agree",
         "infinitive construction"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "1j7btjr7um",
@@ -19313,7 +19313,7 @@
         "detener",
         "stop"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "my5u2xb3bf",
@@ -19341,7 +19341,7 @@
         "enviar",
         "send"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "p8bg3qqy9j",
@@ -19445,7 +19445,7 @@
         "singular",
         "formal"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "hdl7zq5rij",
@@ -19522,7 +19522,7 @@
         "masculine",
         "mixed group"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "vl5s55aiq3",
@@ -19597,7 +19597,7 @@
         "plural",
         "formal"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "9rsyb41dmz",
@@ -19669,7 +19669,7 @@
         "third person",
         "singular"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "tne070no4d",
@@ -19686,7 +19686,7 @@
         "third person",
         "plural"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "mbu3bynmc3",
@@ -19813,7 +19813,7 @@
         "masculine",
         "mixed group"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "kz7ntpcrhd",
@@ -19849,7 +19849,7 @@
         "plural",
         "feminine"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "d2156w0qop",
@@ -20410,7 +20410,7 @@
         "enviar",
         "ship"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "ietq3i884j",
@@ -20424,7 +20424,7 @@
         "enviar",
         "forward"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "1j4lftiq84",
@@ -20614,7 +20614,7 @@
         "obtener",
         "get"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "1pgc6cfhvt",
@@ -20672,7 +20672,7 @@
         "order",
         "food"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "9vw489mt1w",
@@ -20747,7 +20747,7 @@
         "come back",
         "return"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "zxuys2r8q2",
@@ -20762,7 +20762,7 @@
         "go back",
         "return"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "m0mgste8it",
@@ -20850,7 +20850,7 @@
         "a",
         "spanish-to-english catchall"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "wsttz3une0",
@@ -21476,7 +21476,7 @@
         "bien",
         "spanish-to-english catchall"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "3iomqnzseh",
@@ -21518,7 +21518,7 @@
         "bueno",
         "spanish-to-english catchall"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "nuca0ssha7",
@@ -21660,7 +21660,7 @@
         "como",
         "spanish-to-english catchall"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "core"
     },
     {
       "id": "ovnw5edm1p",
@@ -21766,7 +21766,7 @@
         "cual",
         "spanish-to-english catchall"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "core"
     },
     {
       "id": "g585r84tc1",
@@ -21810,7 +21810,7 @@
         "cuando",
         "spanish-to-english catchall"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "core"
     },
     {
       "id": "ccia5llxwh",
@@ -21872,7 +21872,7 @@
         "cuanto",
         "spanish-to-english catchall"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "core"
     },
     {
       "id": "alantrg9q4",
@@ -21900,7 +21900,7 @@
         "cuanto",
         "spanish-to-english catchall"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "core"
     },
     {
       "id": "iina5o4u5x",
@@ -22343,7 +22343,7 @@
         "donde",
         "spanish-to-english catchall"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "core"
     },
     {
       "id": "h79dh4z5r9",
@@ -22983,7 +22983,7 @@
         "calendar",
         "time expression"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "uklvuftocv",
@@ -23005,7 +23005,7 @@
         "calendar",
         "time expression"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "is83ex1r7e",
@@ -23042,7 +23042,7 @@
         "calendar",
         "time expression"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "70f495461k",
@@ -23070,7 +23070,7 @@
         "manana",
         "spanish-to-english catchall"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "4abmpsiu46",
@@ -23084,7 +23084,7 @@
         "manana",
         "spanish-to-english catchall"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "yt3bjazug3",
@@ -23112,7 +23112,7 @@
         "manana",
         "spanish-to-english catchall"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "qeasfm79hz",
@@ -23224,7 +23224,7 @@
         "manana",
         "spanish-to-english catchall"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ze0uol6k43",
@@ -23828,7 +23828,7 @@
         "que",
         "spanish-to-english catchall"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "wjbh6m5ek1",
@@ -24009,7 +24009,7 @@
         "who",
         "english-to-spanish reverse audit"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "core"
     },
     {
       "id": "22lgqfjinn",
@@ -24396,7 +24396,7 @@
         "ultimo",
         "spanish-to-english catchall"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "core"
     },
     {
       "id": "v2n44iz4vk",
@@ -24515,7 +24515,7 @@
         "al-",
         "adverb"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "bluzvvve73",
@@ -24611,7 +24611,7 @@
         "location",
         "english-to-spanish mappings"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "avrqqne85a",
@@ -24703,7 +24703,7 @@
         "verb + direct object",
         "english-to-spanish mappings"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "8sroghkesj",
@@ -25129,7 +25129,7 @@
         "prefix: al-",
         "al-"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "mklavcovyq",
@@ -25181,7 +25181,7 @@
         "adjective",
         "english-to-spanish mappings"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "489z76bx0v",
@@ -25219,7 +25219,7 @@
         "prefix: al-",
         "al-"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "jhcycetbge",
@@ -25254,7 +25254,7 @@
         "addition",
         "english-to-spanish mappings"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "zn6dojvjv8",
@@ -25354,7 +25354,7 @@
         "frequency",
         "frequency adverb"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "dzzngcl5ri",
@@ -25449,7 +25449,7 @@
         "function word",
         "coordinating connector"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "zz67343f4y",
@@ -25593,7 +25593,7 @@
         "fixed expression",
         "english-to-spanish mappings"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "9kggcuh0hp",
@@ -25716,7 +25716,7 @@
         "time",
         "english-to-spanish mappings"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "f1z9yzj3sy",
@@ -25842,7 +25842,7 @@
         "quantity",
         "english-to-spanish mappings"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "sc7ha1u7ec",
@@ -25913,7 +25913,7 @@
         "quantity",
         "english-to-spanish mappings"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "lkmlvytfdx",
@@ -25930,7 +25930,7 @@
         "comparison",
         "english-to-spanish mappings"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "wx26juw5jo",
@@ -25988,7 +25988,7 @@
         "ser adjectives",
         "adjective"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "4fpgdvwxzu",
@@ -26041,7 +26041,7 @@
         "verb + direct object",
         "english-to-spanish mappings"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "xo44xzb3jh",
@@ -26110,7 +26110,7 @@
         "verbs and actions",
         "verb"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "core"
     },
     {
       "id": "fdeqgbcts4",
@@ -26338,7 +26338,7 @@
         "verbs and actions",
         "verb"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "cqxhnvo543",
@@ -27088,7 +27088,7 @@
         "adjective",
         "english-to-spanish mappings"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "kh64q1xdfp",
@@ -27159,7 +27159,7 @@
         "time words",
         "adverb"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ylf4grer5k",
@@ -27231,7 +27231,7 @@
         "age",
         "english-to-spanish mappings"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "sp9vpwtyfk",
@@ -27355,7 +27355,7 @@
         "quantity",
         "english-to-spanish mappings"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "4mjcl48qdl",
@@ -27373,7 +27373,7 @@
         "quantity",
         "english-to-spanish mappings"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "q4y77eka9u",
@@ -27552,7 +27552,7 @@
         "verb + direct object",
         "english-to-spanish mappings"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "core"
     },
     {
       "id": "gs1i2tjs8s",
@@ -28628,7 +28628,7 @@
         "selected high-frequency cognate",
         "01-direct"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "lidfbq7lxa",
@@ -28649,7 +28649,7 @@
         "selected high-frequency cognate",
         "01-direct"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "n4p1guor4u",
@@ -28772,7 +28772,7 @@
         "selected high-frequency cognate",
         "01-direct"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "bm5xv1t2ju",
@@ -28915,7 +28915,7 @@
         "selected high-frequency cognate",
         "01-direct"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "dpcbf2wx7l",
@@ -29142,7 +29142,7 @@
         "selected high-frequency cognate",
         "01-direct"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "zkqs98jt1l",
@@ -29225,7 +29225,7 @@
         "selected high-frequency cognate",
         "01-direct"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "uzmwwefycv",
@@ -29266,7 +29266,7 @@
         "selected high-frequency cognate",
         "01-direct"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "w9bz3hfyb4",
@@ -29389,7 +29389,7 @@
         "selected high-frequency cognate",
         "01-direct"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "7fbf1yrpcu",
@@ -29410,7 +29410,7 @@
         "selected high-frequency cognate",
         "01-direct"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "psvaz2wxvv",
@@ -29431,7 +29431,7 @@
         "selected high-frequency cognate",
         "01-direct"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "buxp2vht7l",
@@ -29493,7 +29493,7 @@
         "selected high-frequency cognate",
         "01-direct"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "s2ykj8ztvj",
@@ -29576,7 +29576,7 @@
         "selected high-frequency cognate",
         "01-direct"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "4vjw5ypya0",
@@ -31873,7 +31873,7 @@
         "cognates: initial spanish es- and english s-",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "5hvo5dc978",
@@ -32291,7 +32291,7 @@
         "family",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "i58gx9ufoe",
@@ -32931,7 +32931,7 @@
         "noun cognates: spanish f and english ph",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "92pcswj82t",
@@ -36534,7 +36534,7 @@
         "spelling pattern",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "aw6dx0k65p",
@@ -38782,7 +38782,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "bp593daco9",
@@ -38803,7 +38803,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "yxxk3scerp",
@@ -38845,7 +38845,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "4r07khungy",
@@ -38866,7 +38866,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "779ynouu11",
@@ -38887,7 +38887,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "c3amoye6xz",
@@ -38908,7 +38908,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "ecvnd0ir3u",
@@ -39051,7 +39051,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "yenl2lq9oq",
@@ -39072,7 +39072,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "8c3fxz63mh",
@@ -39236,7 +39236,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "9gngsscsy0",
@@ -39339,7 +39339,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "ustq836daj",
@@ -39646,7 +39646,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "gjh5b0lek7",
@@ -39667,7 +39667,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "xjwylsxod0",
@@ -39729,7 +39729,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "ky42p9r4c6",
@@ -39812,7 +39812,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "5e1wj91ui6",
@@ -40015,7 +40015,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "0r24apl3e1",
@@ -40097,7 +40097,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "pe06lzc5y3",
@@ -40118,7 +40118,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "919255rvxl",
@@ -40179,7 +40179,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "qup86o9vnn",
@@ -40200,7 +40200,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "t8xl5ujrhi",
@@ -40284,7 +40284,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "ljjs4igbh8",
@@ -40386,7 +40386,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "ull88y8rzv",
@@ -40407,7 +40407,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "qdcruk7002",
@@ -40428,7 +40428,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "teeid30z0y",
@@ -40489,7 +40489,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "invu1lmtuw",
@@ -40510,7 +40510,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "gbkix5lyv6",
@@ -40531,7 +40531,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "alnivw5ja6",
@@ -40615,7 +40615,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "hl9cjbokrp",
@@ -40636,7 +40636,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "nq7pa5v7aj",
@@ -40657,7 +40657,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "2xwe3j8ujy",
@@ -40678,7 +40678,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "lsvapg7c2c",
@@ -40821,7 +40821,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "9oke1wki5z",
@@ -40863,7 +40863,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "hzw88e00ad",
@@ -40884,7 +40884,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "ahkjwrez5w",
@@ -40946,7 +40946,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "286sjydeon",
@@ -41008,7 +41008,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "55iitmw0d7",
@@ -41070,7 +41070,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "ph4y9pkwf1",
@@ -41091,7 +41091,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "6vrwq0uujo",
@@ -41153,7 +41153,7 @@
         "selected high-frequency cognate",
         "02-spelling-patterns"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "6hc9qj9an6",
@@ -41215,7 +41215,7 @@
         "selected high-frequency cognate",
         "03-word-families"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "905ihja4zo",
@@ -41379,7 +41379,7 @@
         "selected high-frequency cognate",
         "03-word-families"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "98sen5xp7y",
@@ -41400,7 +41400,7 @@
         "selected high-frequency cognate",
         "03-word-families"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "9nxtl23uza",
@@ -41441,7 +41441,7 @@
         "selected high-frequency cognate",
         "03-word-families"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "nk0a8snhq8",
@@ -41524,7 +41524,7 @@
         "selected high-frequency cognate",
         "03-word-families"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "xltdt2bpq9",
@@ -41567,7 +41567,7 @@
         "selected high-frequency cognate",
         "03-word-families"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "ihevpwrjl9",
@@ -41589,7 +41589,7 @@
         "selected high-frequency cognate",
         "03-word-families"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "hyjsumzen7",
@@ -41631,7 +41631,7 @@
         "selected high-frequency cognate",
         "03-word-families"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "vmofgr1p4a",
@@ -41796,7 +41796,7 @@
         "selected high-frequency cognate",
         "03-word-families"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "0weozcxz12",
@@ -41857,7 +41857,7 @@
         "selected high-frequency cognate",
         "03-word-families"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "w5ymlrexk6",
@@ -41898,7 +41898,7 @@
         "selected high-frequency cognate",
         "03-word-families"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "n0v5y8wx0o",
@@ -42204,7 +42204,7 @@
         "selected high-frequency cognate",
         "03-word-families"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "g05qdfu47y",
@@ -42225,7 +42225,7 @@
         "selected high-frequency cognate",
         "03-word-families"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "mt3fyxp4nv",
@@ -42246,7 +42246,7 @@
         "selected high-frequency cognate",
         "03-word-families"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "x2avxaorkd",
@@ -42308,7 +42308,7 @@
         "selected high-frequency cognate",
         "03-word-families"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "3x6gdy36k9",
@@ -42387,7 +42387,7 @@
         "memory bridge",
         "04-memory-bridges"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "pnr1qwchct",
@@ -42454,7 +42454,7 @@
         "adjectives and states",
         "adjective"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "vrd2xusmjs",
@@ -42601,7 +42601,7 @@
         "memory bridge",
         "04-memory-bridges"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "q4hcooj6w7",
@@ -42664,7 +42664,7 @@
         "selected high-frequency cognate",
         "04-memory-bridges"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "j7ecz0bqjs",
@@ -42706,7 +42706,7 @@
         "selected high-frequency cognate",
         "04-memory-bridges"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "2y6u1mwiqm",
@@ -42727,7 +42727,7 @@
         "selected high-frequency cognate",
         "04-memory-bridges"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "ukwulq0hup",
@@ -42950,7 +42950,7 @@
         "selected high-frequency cognate",
         "04-memory-bridges"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "azzxq4wu4n",
@@ -43338,7 +43338,7 @@
         "selected high-frequency cognate",
         "04-memory-bridges"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "l12jegmf94",
@@ -43398,7 +43398,7 @@
         "memory bridge",
         "04-memory-bridges"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "04f7x5sjwc",
@@ -43440,7 +43440,7 @@
         "selected high-frequency cognate",
         "04-memory-bridges"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "3xlw2zhcdr",
@@ -43563,7 +43563,7 @@
         "05-confusion-sets",
         "contextual cognate"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "core"
     },
     {
       "id": "z2tltbudld",
@@ -43582,7 +43582,7 @@
         "05-confusion-sets",
         "contextual cognate"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "6g3l09qji4",
@@ -43601,7 +43601,7 @@
         "05-confusion-sets",
         "contextual cognate"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "rd4s3p0ahf",
@@ -43805,7 +43805,7 @@
         "ser adjectives",
         "adjective"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "wof9vipshg",
@@ -43821,7 +43821,7 @@
         "ser adjectives",
         "adjective"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ij9kh31g9s",
@@ -43837,7 +43837,7 @@
         "ser adjectives",
         "adjective"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "dypln0ds39",
@@ -43853,7 +43853,7 @@
         "ser adjectives",
         "adjective"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "zitwttv8hl",
@@ -43870,7 +43870,7 @@
         "ser adjectives",
         "adjective"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "hkvahmcgwi",
@@ -43886,7 +43886,7 @@
         "ser adjectives",
         "adjective"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "6msmcahhki",
@@ -43902,7 +43902,7 @@
         "ser adjectives",
         "adjective"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ap3fcdf0yn",
@@ -43966,7 +43966,7 @@
         "ser adjectives",
         "adjective"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "qxaqglea0l",
@@ -43998,7 +43998,7 @@
         "ser adjectives",
         "adjective"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "sxsp9okeyb",
@@ -44030,7 +44030,7 @@
         "ser adjectives",
         "adjective"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "7ew1qah5mw",
@@ -44062,7 +44062,7 @@
         "ser adjectives",
         "adjective"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "du2i421xic",
@@ -44078,7 +44078,7 @@
         "ser adjectives",
         "adjective"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "zogyll26ke",
@@ -44094,7 +44094,7 @@
         "ser adjectives",
         "adjective"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "xq3smx6et4",
@@ -44190,7 +44190,7 @@
         "ser adjectives",
         "adjective"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "eumyulu0a5",
@@ -44286,7 +44286,7 @@
         "ser adjectives",
         "adjective"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "5r6yy0jg6s",
@@ -44318,7 +44318,7 @@
         "ser adjectives",
         "adjective"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "sjbeb14kqn",
@@ -44478,7 +44478,7 @@
         "estar adjectives",
         "adjective"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ltyh3i8eqd",
@@ -44559,7 +44559,7 @@
         "quantity",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "sg0mhmy1g3",
@@ -44576,7 +44576,7 @@
         "quantity",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "916fz6l1gh",
@@ -44593,7 +44593,7 @@
         "quantity",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "sj02ormmtw",
@@ -44610,7 +44610,7 @@
         "quantity",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "wt98samedo",
@@ -44627,7 +44627,7 @@
         "quantity",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "oy8v5zvn8b",
@@ -44644,7 +44644,7 @@
         "quantity",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "51gbegi9xv",
@@ -44661,7 +44661,7 @@
         "quantity",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "qakubdvxn4",
@@ -44678,7 +44678,7 @@
         "quantity",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "8kk62n54ek",
@@ -44695,7 +44695,7 @@
         "quantity",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "2rx2xhdh4h",
@@ -44712,7 +44712,7 @@
         "quantity",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "jv6ldncrer",
@@ -44729,7 +44729,7 @@
         "quantity",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "g04obyf6c6",
@@ -44746,7 +44746,7 @@
         "quantity",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "2595sz61k6",
@@ -44765,7 +44765,7 @@
         "🔊 -teen vs -ty",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "zxxuc9rbeo",
@@ -44784,7 +44784,7 @@
         "🔊 -teen vs -ty",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "81mkho1vkn",
@@ -44803,7 +44803,7 @@
         "🔊 -teen vs -ty",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "feji8uhi1z",
@@ -44822,7 +44822,7 @@
         "🔊 -teen vs -ty",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "262y5pq2yi",
@@ -44841,7 +44841,7 @@
         "🔊 -teen vs -ty",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "051wgcuarr",
@@ -44860,7 +44860,7 @@
         "🔊 -teen vs -ty",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "renlsnx9th",
@@ -44879,7 +44879,7 @@
         "🔊 -teen vs -ty",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "vv3m29x1n3",
@@ -44898,7 +44898,7 @@
         "🔊 -teen vs -ty",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "d3js97oguz",
@@ -44917,7 +44917,7 @@
         "🔊 -teen vs -ty",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "6i07a6cfgd",
@@ -44936,7 +44936,7 @@
         "🔊 -teen vs -ty",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "887il2wd8y",
@@ -44955,7 +44955,7 @@
         "🔊 -teen vs -ty",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ezhc4jm343",
@@ -44974,7 +44974,7 @@
         "🔊 -teen vs -ty",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "bhyg7mtanw",
@@ -44993,7 +44993,7 @@
         "🔊 -teen vs -ty",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "bdzltbyuwl",
@@ -45012,7 +45012,7 @@
         "🔊 -teen vs -ty",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "pdr584zg3c",
@@ -45031,7 +45031,7 @@
         "🔊 -teen vs -ty",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "q9tuqos4be",
@@ -45049,7 +45049,7 @@
         "calendar",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "jwz58gd92h",
@@ -45067,7 +45067,7 @@
         "calendar",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "z4zh0vz9g7",
@@ -45085,7 +45085,7 @@
         "calendar",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "9dultormoy",
@@ -45103,7 +45103,7 @@
         "calendar",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "8t5gcxfjja",
@@ -45121,7 +45121,7 @@
         "calendar",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "4vqpc9njvy",
@@ -45139,7 +45139,7 @@
         "calendar",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "1y17lp2kym",
@@ -45157,7 +45157,7 @@
         "calendar",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "0j3b8dq5ol",
@@ -45175,7 +45175,7 @@
         "calendar",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "up01db9skk",
@@ -45193,7 +45193,7 @@
         "calendar",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "9q7ietsmy0",
@@ -45211,7 +45211,7 @@
         "calendar",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "iv25rev3nx",
@@ -45229,7 +45229,7 @@
         "calendar",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "i9xzj22sh8",
@@ -45247,7 +45247,7 @@
         "calendar",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "b5bellazox",
@@ -45265,7 +45265,7 @@
         "calendar",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "dmds1ataaw",
@@ -45283,7 +45283,7 @@
         "calendar",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "vdmuuz7ozq",
@@ -45301,7 +45301,7 @@
         "calendar",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "kpscphg0bi",
@@ -45319,7 +45319,7 @@
         "calendar",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "hwpige4nqc",
@@ -45337,7 +45337,7 @@
         "calendar",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "dtrbrlnt7k",
@@ -45355,7 +45355,7 @@
         "calendar",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "7cm192p84m",
@@ -45373,7 +45373,7 @@
         "calendar",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "2h3rzc2x6s",
@@ -45388,7 +45388,7 @@
         "everyday nouns",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "9rswx58qx1",
@@ -45403,7 +45403,7 @@
         "everyday nouns",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "0r3hwsp9ge",
@@ -45418,7 +45418,7 @@
         "everyday nouns",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "yrjum3vv1w",
@@ -45433,7 +45433,7 @@
         "everyday nouns",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "nq73s5l3lz",
@@ -45448,7 +45448,7 @@
         "everyday nouns",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "d9y1w0dh2h",
@@ -45463,7 +45463,7 @@
         "everyday nouns",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "0rvw4dkalt",
@@ -45523,7 +45523,7 @@
         "everyday nouns",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ne9ewy4gyy",
@@ -45568,7 +45568,7 @@
         "everyday nouns",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "zd1m5yy2wo",
@@ -45613,7 +45613,7 @@
         "everyday nouns",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "u8ffmygjqi",
@@ -45658,7 +45658,7 @@
         "everyday nouns",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "hpiz3izlaw",
@@ -45703,7 +45703,7 @@
         "everyday nouns",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "0kp3n4tcx0",
@@ -45733,7 +45733,7 @@
         "everyday nouns",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "4h3zre0pgl",
@@ -45778,7 +45778,7 @@
         "everyday nouns",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "m8g7uv9h3o",
@@ -45809,7 +45809,7 @@
         "everyday nouns",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "mr5xljej8s",
@@ -45884,7 +45884,7 @@
         "fractions decimals and phone numbers",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "rqt46d3561",
@@ -45975,7 +45975,7 @@
         "possibility",
         "adverb"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "b6sllrim7m",
@@ -46025,7 +46025,7 @@
         "quantity",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ctd9xdzidv",
@@ -46042,7 +46042,7 @@
         "quantity",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "sdy4rgtwmm",
@@ -46378,7 +46378,7 @@
         "second",
         "second ambiguity"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "tjcqfkkqiu",
@@ -46401,7 +46401,7 @@
         "order word",
         "third"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "wyiqfycbnf",
@@ -46419,7 +46419,7 @@
         "date",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "zx0826h1su",
@@ -46437,7 +46437,7 @@
         "date",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "9xwjaxx2ka",
@@ -46455,7 +46455,7 @@
         "date",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "bfnuu0ozjx",
@@ -46473,7 +46473,7 @@
         "date",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "t6wkqhpm57",
@@ -46491,7 +46491,7 @@
         "date",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "eoj808qjm7",
@@ -46509,7 +46509,7 @@
         "date",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "t4ckxs8du4",
@@ -46527,7 +46527,7 @@
         "date",
         "number"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "aprfxkmesv",
@@ -46706,7 +46706,7 @@
         "family",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "z8xm9uqiox",
@@ -46740,7 +46740,7 @@
         "family",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "6yss2iyg90",
@@ -46808,7 +46808,7 @@
         "family",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "0l8y0chxte",
@@ -46893,7 +46893,7 @@
         "family",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "g7st4i3f1w",
@@ -46927,7 +46927,7 @@
         "singular",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "r2qjh18oon",
@@ -46978,7 +46978,7 @@
         "singular",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "3lzqrwju25",
@@ -47046,7 +47046,7 @@
         "family",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "fb4v0olqo7",
@@ -47080,7 +47080,7 @@
         "singular",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "e0ljw8aj5i",
@@ -47097,7 +47097,7 @@
         "family",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "wk98ucmw9z",
@@ -47131,7 +47131,7 @@
         "singular",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "aiktgq5j7u",
@@ -47183,7 +47183,7 @@
         "direction",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "jerljir3i3",
@@ -47201,7 +47201,7 @@
         "direction",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "94xmzhpqs2",
@@ -47237,7 +47237,7 @@
         "direction",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "z4gqxgd1ln",
@@ -47255,7 +47255,7 @@
         "direction",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "graetcx43j",
@@ -47291,7 +47291,7 @@
         "direction",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "eqgkxdihiu",
@@ -47327,7 +47327,7 @@
         "direction",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "x3fde0xia4",
@@ -47345,7 +47345,7 @@
         "direction",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "3z3dcdm7iy",
@@ -47363,7 +47363,7 @@
         "direction",
         "location expression"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "3j18tf1yhr",
@@ -47417,7 +47417,7 @@
         "direction",
         "location expression"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "0bxkcfqexz",
@@ -47453,7 +47453,7 @@
         "direction",
         "location expression"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "0wx9x5ccnb",
@@ -47613,7 +47613,7 @@
         "time",
         "adverb"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "v103p7ixjh",
@@ -47629,7 +47629,7 @@
         "time",
         "adverb"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "nhzn8b4wuw",
@@ -48065,7 +48065,7 @@
         "down",
         "verb"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ciqmuidd85",
@@ -49090,7 +49090,7 @@
         "correr",
         "verb"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "7ahutb8oat",
@@ -49297,7 +49297,7 @@
         "dormir",
         "verb"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "mhrr71qehn",
@@ -49431,7 +49431,7 @@
         "elegir",
         "verb"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "mnsgd6cvbc",
@@ -49581,7 +49581,7 @@
         "encontrar",
         "verb"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "core"
     },
     {
       "id": "qvh1dhowu6",
@@ -49667,7 +49667,7 @@
         "entender",
         "verb"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "core"
     },
     {
       "id": "q1wk0yi0eo",
@@ -49699,7 +49699,7 @@
         "gastar",
         "verb"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ng08o0l6bt",
@@ -49852,7 +49852,7 @@
         "jugar",
         "verb"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "z3mhhaiia2",
@@ -50119,7 +50119,7 @@
         "morir",
         "verb"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "jyvm1fkdq7",
@@ -50186,7 +50186,7 @@
         "mostrar",
         "verb"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "4ljeo66brr",
@@ -50250,7 +50250,7 @@
         "olvidar",
         "verb"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "core"
     },
     {
       "id": "99ewwc904m",
@@ -50527,7 +50527,7 @@
         "romper",
         "verb"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "i20yai9d87",
@@ -50617,7 +50617,7 @@
         "up",
         "verb"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "rbub08uirg",
@@ -50827,7 +50827,7 @@
         "up",
         "verb"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "6ts6qcxven",
@@ -50859,7 +50859,7 @@
         "vender",
         "verb"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "core"
     },
     {
       "id": "bh82sh21dr",
@@ -50913,7 +50913,7 @@
         "andar",
         "verb"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "w8obyhwxnh",
@@ -51140,7 +51140,7 @@
         "with",
         "verb"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "l9nbah9qj7",
@@ -51255,7 +51255,7 @@
         "casar",
         "verb"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "27wshog3ea",
@@ -51906,7 +51906,7 @@
         "down",
         "verb"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ed3n0mj0i5",
@@ -51957,7 +51957,7 @@
         "tirar",
         "verb"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "khn4nszu77",
@@ -52042,7 +52042,7 @@
         "calendar",
         "time expression"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "hszvzaxmcv",
@@ -52060,7 +52060,7 @@
         "calendar",
         "time expression"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ntzn66pmxo",
@@ -52078,7 +52078,7 @@
         "calendar",
         "time expression"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ywmu9udgpo",
@@ -52096,7 +52096,7 @@
         "calendar",
         "time expression"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "dicbiznsu7",
@@ -52114,7 +52114,7 @@
         "calendar",
         "time expression"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "uqb2qipaq0",
@@ -52132,7 +52132,7 @@
         "calendar",
         "time expression"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "0wlhrfyp5n",
@@ -52150,7 +52150,7 @@
         "calendar",
         "time expression"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "6uqtv5ndip",
@@ -52168,7 +52168,7 @@
         "calendar",
         "time expression"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "0nw2v2tg59",
@@ -52186,7 +52186,7 @@
         "calendar",
         "time expression"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "3d0ts98lfb",
@@ -52224,7 +52224,7 @@
         "hour",
         "an before vowel sound"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "wwclre1oia",
@@ -52308,7 +52308,7 @@
         "aprovechar",
         "expression"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "hb47hyqftz",
@@ -52379,7 +52379,7 @@
         "imperative",
         "expression"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "r4wshfw0zl",
@@ -52398,7 +52398,7 @@
         "informal",
         "expression"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "2n962u3uuf",
@@ -52432,7 +52432,7 @@
         "direction",
         "adverb"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "0srx55tuxj",
@@ -52523,7 +52523,7 @@
         "address",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "btcf40lgg6",
@@ -52632,7 +52632,7 @@
         "collective noun",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "0bnotvdld0",
@@ -52649,7 +52649,7 @@
         "irregular plural",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "43qxgonexo",
@@ -52760,7 +52760,7 @@
         "function words",
         "quantifier"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ifdijt1kj7",
@@ -52930,7 +52930,7 @@
         "adjectives and states",
         "adverb"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ij91wzxwe8",
@@ -55310,7 +55310,7 @@
         "suffix: -less",
         "limited transformation"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "h28wsvlqw7",
@@ -58666,7 +58666,7 @@
         "be-",
         "expression"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "3gfoetx7za",
@@ -58987,7 +58987,7 @@
         "-er",
         "expression"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "27pb5p676r",
@@ -59004,7 +59004,7 @@
         "-er",
         "expression"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "o75m406e73",
@@ -59158,7 +59158,7 @@
         "expression",
         "American English preference"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "l5hk1zrmge",
@@ -59548,7 +59548,7 @@
         "verb form: full infinitive",
         "uses full infinitive"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "h4it1wwpn1",
@@ -59719,7 +59719,7 @@
         "verb form: full infinitive",
         "uses full infinitive"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "gzx4e3lkp6",
@@ -59738,7 +59738,7 @@
         "verb form: present participle",
         "uses present participle"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ext92eedsy",
@@ -59815,7 +59815,7 @@
         "verb form: bare infinitive",
         "uses bare infinitive"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "r2y6wfhr6z",
@@ -59835,7 +59835,7 @@
         "verb form: bare infinitive",
         "uses bare infinitive"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "uwy1l647pg",
@@ -60088,7 +60088,7 @@
         "verb form: bare infinitive",
         "uses bare infinitive"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "t46e4xr47y",
@@ -60106,7 +60106,7 @@
         "verb form: bare infinitive",
         "uses bare infinitive"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "xuna1emcr1",
@@ -60124,7 +60124,7 @@
         "verb form: bare infinitive",
         "uses bare infinitive"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "aojc7un24g",
@@ -60215,7 +60215,7 @@
         "verb form: bare infinitive",
         "uses bare infinitive"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "mk6oc0jtgw",
@@ -60234,7 +60234,7 @@
         "verb form: bare infinitive",
         "uses bare infinitive"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "0krc7ykvx4",
@@ -60253,7 +60253,7 @@
         "verb form: bare infinitive",
         "uses bare infinitive"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "m5xw7iodne",
@@ -60272,7 +60272,7 @@
         "verb form: bare infinitive",
         "uses bare infinitive"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "bt7rdzvto5",
@@ -60291,7 +60291,7 @@
         "verb form: bare infinitive",
         "uses bare infinitive"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "azpvrshi2u",
@@ -60310,7 +60310,7 @@
         "verb form: bare infinitive",
         "uses bare infinitive"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "nescdc4of4",
@@ -60832,7 +60832,7 @@
         "verb form: past participle",
         "uses past participle"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "tw7e8xdtme",
@@ -60869,7 +60869,7 @@
         "verb form: past participle",
         "uses past participle"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "b9jbbszwof",
@@ -60906,7 +60906,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "2uz7doxb0e",
@@ -60925,7 +60925,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "rd9cl3utqc",
@@ -60944,7 +60944,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "1t5e3bthnt",
@@ -60963,7 +60963,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "77mteahr6q",
@@ -60982,7 +60982,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "8xusoe4ji6",
@@ -61001,7 +61001,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "uu837c53z3",
@@ -61020,7 +61020,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "tmepzdp40w",
@@ -61039,7 +61039,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "fqj30hu4ah",
@@ -61058,7 +61058,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "elvzhkveh1",
@@ -61077,7 +61077,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "v0vu2ohvcn",
@@ -61096,7 +61096,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "leowvp7a8n",
@@ -61153,7 +61153,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "v6vyzkn2nj",
@@ -61172,7 +61172,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "11sz2r4g1y",
@@ -61191,7 +61191,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "hg5trk5m8x",
@@ -61210,7 +61210,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "2yr92m1n2r",
@@ -61229,7 +61229,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "mgb97an5x2",
@@ -61248,7 +61248,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "tgqcg4224t",
@@ -61267,7 +61267,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "dn85m54o0p",
@@ -61286,7 +61286,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "mywl0jkxa9",
@@ -61305,7 +61305,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "fhqfl6ldk5",
@@ -61324,7 +61324,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "gxeg783kdj",
@@ -61343,7 +61343,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "qdby5l1goe",
@@ -61362,7 +61362,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "5a08vs88rm",
@@ -61381,7 +61381,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "gulh6smc4n",
@@ -61400,7 +61400,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "rdc2qi3b74",
@@ -61419,7 +61419,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "0a8ddzno6l",
@@ -61438,7 +61438,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "dzly2zd7z1",
@@ -61457,7 +61457,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "i91j01io89",
@@ -61476,7 +61476,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "ysmtek0hjq",
@@ -61495,7 +61495,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "yxrvotszmc",
@@ -61514,7 +61514,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "s89u6kepr1",
@@ -61533,7 +61533,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "u67ltzqcub",
@@ -61552,7 +61552,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "71ntxcl7jf",
@@ -61571,7 +61571,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "gnfeiwj04t",
@@ -61590,7 +61590,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "83vpzgu6by",
@@ -61609,7 +61609,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "cujeusywvb",
@@ -61628,7 +61628,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "lkkqeyfbmr",
@@ -61647,7 +61647,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "x794hz009u",
@@ -61666,7 +61666,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "qmd3xtyjpa",
@@ -61685,7 +61685,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "an6awlzdv1",
@@ -61723,7 +61723,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "r7oo6fra9g",
@@ -61742,7 +61742,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "4ie7bcx345",
@@ -61761,7 +61761,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "v7ltrzxban",
@@ -61799,7 +61799,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "1l4vskv6hz",
@@ -61818,7 +61818,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "bn5xjkp8v3",
@@ -61837,7 +61837,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "3aq7o7dnnd",
@@ -61856,7 +61856,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "6aoqsfs8xs",
@@ -61875,7 +61875,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "32c7r6jugo",
@@ -61913,7 +61913,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "47f7wun903",
@@ -61932,7 +61932,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "myw9988gx7",
@@ -61951,7 +61951,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "5yvimm2cqb",
@@ -61970,7 +61970,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "sqr33lw1xk",
@@ -61989,7 +61989,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "l71v641a97",
@@ -62008,7 +62008,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "cy5zk8m406",
@@ -62027,7 +62027,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "8ysr2gccyh",
@@ -62046,7 +62046,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "gmjxk7k5oa",
@@ -62065,7 +62065,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "z43zn0n2a6",
@@ -62084,7 +62084,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "0qlz0zv1z5",
@@ -62122,7 +62122,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "d33g5goqca",
@@ -62141,7 +62141,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "choa4lgi17",
@@ -62160,7 +62160,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "w3zl3mk1uq",
@@ -62179,7 +62179,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "htwjktam41",
@@ -62198,7 +62198,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "wlbaxqy8wx",
@@ -62236,7 +62236,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "ky952w1mt6",
@@ -62255,7 +62255,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "vfl1ikiqsl",
@@ -62274,7 +62274,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "o365ieku96",
@@ -62293,7 +62293,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "wpp6l0ck24",
@@ -62312,7 +62312,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "8wtqwtl8bv",
@@ -62331,7 +62331,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "3s8svu6w1e",
@@ -62350,7 +62350,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "1nle9omkmy",
@@ -62369,7 +62369,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "dhvbry32aa",
@@ -62388,7 +62388,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "t2hy9htn41",
@@ -62407,7 +62407,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "xnwshio7xr",
@@ -62426,7 +62426,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "l8njlz1l55",
@@ -62445,7 +62445,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "kq192vxydp",
@@ -62464,7 +62464,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "yof54y2bp0",
@@ -62483,7 +62483,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "3dldosanl0",
@@ -62502,7 +62502,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "rbdmjzr0bc",
@@ -62521,7 +62521,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "w4xcawon02",
@@ -62540,7 +62540,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "beoprg47gr",
@@ -62559,7 +62559,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "s9kkkwedud",
@@ -62578,7 +62578,7 @@
         "verb form: third-person present",
         "uses third-person present"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "sfknobofbx",
@@ -62689,7 +62689,7 @@
         "or",
         "before o sound"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "ke36yx8rke",
@@ -62890,7 +62890,7 @@
         "precaution",
         "in case"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "k5lmf4gy2r",
@@ -62907,7 +62907,7 @@
         "second",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "a980sdxliv",
@@ -62924,7 +62924,7 @@
         "minute",
         "noun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "4uh4nkfock",
@@ -63009,7 +63009,7 @@
         "telling time",
         "it is"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "mac4komrt9",
@@ -63025,7 +63025,7 @@
         "clock time",
         "noon"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ceyrr3ohg9",
@@ -63041,7 +63041,7 @@
         "clock time",
         "midnight"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "isv86hh4tc",
@@ -63077,7 +63077,7 @@
         "frequency adverb",
         "never"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "jv2hb5h14i",
@@ -63131,7 +63131,7 @@
         "frequency adverb",
         "often"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "mul6vzbji9",
@@ -63305,7 +63305,7 @@
         "next",
         "adjective"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "nuuwniplla",
@@ -63458,7 +63458,7 @@
         "present + will",
         "if clause"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "uzrso1e91g",
@@ -63749,7 +63749,7 @@
         "present",
         "stressed do"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "xvgmxfgcrd",
@@ -63766,7 +63766,7 @@
         "past",
         "stressed did"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "lr3gy47etf",
@@ -64158,7 +64158,7 @@
         "gotta",
         "followed by bare infinitive"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "6j9mgb7b17",
@@ -64176,7 +64176,7 @@
         "singular",
         "there is"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "7yqanblhbj",
@@ -64194,7 +64194,7 @@
         "plural",
         "there are"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "89ut7cha5j",
@@ -64249,7 +64249,7 @@
         "singular",
         "inversion"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "lxes3mwyig",
@@ -64674,7 +64674,7 @@
         "must not",
         "followed by bare infinitive"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ytzftmquqs",
@@ -65628,7 +65628,7 @@
         "stands alone",
         "no ones required"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "cmwi64osep",
@@ -65648,7 +65648,7 @@
         "stands alone",
         "no ones required"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "s06vm98ww1",
@@ -65741,7 +65741,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "mjelhw21zn",
@@ -65764,7 +65764,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "xk5lhrv21k",
@@ -65787,7 +65787,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "qd9kse2gd1",
@@ -65810,7 +65810,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "oamyo4v4h5",
@@ -65833,7 +65833,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "atcbfgbc5i",
@@ -65856,7 +65856,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "qg72rbp694",
@@ -65879,7 +65879,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "y42bc2kw7c",
@@ -65902,7 +65902,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "g1rutwdphd",
@@ -66058,7 +66058,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "gtp0cakjyi",
@@ -66080,7 +66080,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "sia3vl9zuh",
@@ -66102,7 +66102,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "284324xwnq",
@@ -66278,7 +66278,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "ul8ifbtaqm",
@@ -66302,7 +66302,7 @@
         "🔊 /ən/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "19mtj0vx3s",
@@ -66324,7 +66324,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "j6uswnegvw",
@@ -66397,7 +66397,7 @@
         "🔊 /ɛld/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "dox4hoda4i",
@@ -66422,7 +66422,7 @@
         "🔊 /ɛld/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "zwehatba0w",
@@ -66447,7 +66447,7 @@
         "🔊 /ɛnt/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "eangpz65s8",
@@ -66472,7 +66472,7 @@
         "🔊 /ɛnt/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "bz6hcgsd88",
@@ -66495,7 +66495,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "qiu7pf0psq",
@@ -66518,7 +66518,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "1276ck89cp",
@@ -66541,7 +66541,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "61ytxqxsb9",
@@ -66564,7 +66564,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "pzjzprr5gv",
@@ -66589,7 +66589,7 @@
         "🔊 /ɔt/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "vko2le6zyp",
@@ -66612,7 +66612,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "uich1zjdna",
@@ -66637,7 +66637,7 @@
         "🔊 /ɔt/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "7h07mnfit6",
@@ -66660,7 +66660,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "mllnyzs7zr",
@@ -66683,7 +66683,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "svtoxcx6b0",
@@ -66706,7 +66706,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "4sk3bwdr8h",
@@ -66797,7 +66797,7 @@
         "🔊 /aʊnd/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "6c0uxx7uu9",
@@ -66822,7 +66822,7 @@
         "🔊 /aʊnd/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "pvjomq5jkz",
@@ -66844,7 +66844,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "hqskibtcl1",
@@ -66868,7 +66868,7 @@
         "🔊 /ən/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "kosp2rzf7h",
@@ -66893,7 +66893,7 @@
         "🔊 /ɛd/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "qn1ohmgeli",
@@ -66918,7 +66918,7 @@
         "🔊 /ɛd/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "yw0r4qe03n",
@@ -66940,7 +66940,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "d1hnk98p24",
@@ -66964,7 +66964,7 @@
         "🔊 /oʊn/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "8xe7hazr9w",
@@ -67133,7 +67133,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "z3kamqz76n",
@@ -67156,7 +67156,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "4i10zqiqjp",
@@ -67229,7 +67229,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "q5sk9vcx1o",
@@ -67252,7 +67252,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "w5jumzobua",
@@ -67275,7 +67275,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "f6oadawhhp",
@@ -67298,7 +67298,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "dfzbacmzy5",
@@ -67321,7 +67321,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "pnwix23mmu",
@@ -67344,7 +67344,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "rugw6w9oay",
@@ -67418,7 +67418,7 @@
         "defective verb",
         "no past participle"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "hub84vedvz",
@@ -67583,7 +67583,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "zsscsfexzx",
@@ -67606,7 +67606,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "yz949z5pu7",
@@ -67628,7 +67628,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "euo4wpu2mg",
@@ -67650,7 +67650,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "4uyymw0t56",
@@ -67672,7 +67672,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "42riw0k2jk",
@@ -67694,7 +67694,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "nrvu1lxi3q",
@@ -67716,7 +67716,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "ky5g8oc4q2",
@@ -67738,7 +67738,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "2gmqjxemef",
@@ -67991,7 +67991,7 @@
         "🔊 /ɛpt/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "ptwl0aih6e",
@@ -68016,7 +68016,7 @@
         "🔊 /ɛpt/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "tvl9oxg8za",
@@ -68038,7 +68038,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "gcyl1yaxu4",
@@ -68060,7 +68060,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "8vrtai0klg",
@@ -68082,7 +68082,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "no7v9kkvhq",
@@ -68153,7 +68153,7 @@
         "🔊 /ɛlt/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "t0j14amubg",
@@ -68178,7 +68178,7 @@
         "🔊 /ɛlt/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "0nan92o13z",
@@ -68201,7 +68201,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "1yfqckbbl1",
@@ -68224,7 +68224,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "msi48xyv0q",
@@ -68246,7 +68246,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "eydd859tgk",
@@ -68268,7 +68268,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "gkinlwurxm",
@@ -68290,7 +68290,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "9nyqu8uehx",
@@ -68314,7 +68314,7 @@
         "🔊 /ɪd/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "m2led45ghj",
@@ -68338,7 +68338,7 @@
         "🔊 /ʌn/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "mll3xsnqqe",
@@ -68405,7 +68405,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "t6n1a8sts2",
@@ -68428,7 +68428,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "in3djophq4",
@@ -68451,7 +68451,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "1z3vqrnpos",
@@ -68474,7 +68474,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "r2gyv054my",
@@ -68591,7 +68591,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "at31xyfxef",
@@ -68614,7 +68614,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "ji4tjzxym6",
@@ -68637,7 +68637,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "cfbb2e6ndf",
@@ -68660,7 +68660,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "nds3rzq7f8",
@@ -68773,7 +68773,7 @@
         "🔊 /ɛd/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "9khmf2u9eb",
@@ -68798,7 +68798,7 @@
         "🔊 /ɛd/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "x1nx1z1a1p",
@@ -68971,7 +68971,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "agoglocbab",
@@ -68994,7 +68994,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "e6lte4vuoz",
@@ -69017,7 +69017,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "tgsgs5lsmk",
@@ -69040,7 +69040,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "dz3lxqyat3",
@@ -69294,7 +69294,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "omxrh0oml4",
@@ -69318,7 +69318,7 @@
         "🔊 /eɪkən/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "hnih2u3kpa",
@@ -69340,7 +69340,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "1xuraraznf",
@@ -69364,7 +69364,7 @@
         "🔊 /ɪvən/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "ghx4osdo9o",
@@ -69386,7 +69386,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "6f3b5muinr",
@@ -69410,7 +69410,7 @@
         "🔊 /oʊzən/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "e61dms0hq3",
@@ -69432,7 +69432,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "8k1ayyt6pc",
@@ -69454,7 +69454,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "3r70xx9t9s",
@@ -69478,7 +69478,7 @@
         "🔊 /ən/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "67l6z8efvd",
@@ -69501,7 +69501,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "5xv9qpxbli",
@@ -69526,7 +69526,7 @@
         "🔊 /ɪlt/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "pxltlrh82l",
@@ -69549,7 +69549,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "r1p6ejcnea",
@@ -69574,7 +69574,7 @@
         "🔊 /ɪlt/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "62spkcg55w",
@@ -69642,7 +69642,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "j75hzql7s8",
@@ -69666,7 +69666,7 @@
         "🔊 /ɔːn/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "h8v7gva74y",
@@ -69785,7 +69785,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "s72csld91t",
@@ -69831,7 +69831,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "5ig0y87gzs",
@@ -69877,7 +69877,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "rv6qhto601",
@@ -69900,7 +69900,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "9dwskqsjd0",
@@ -69968,7 +69968,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "0r0rimmdjo",
@@ -69990,7 +69990,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "d07arp0ezo",
@@ -70012,7 +70012,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "16srcng7up",
@@ -70511,7 +70511,7 @@
         "🔊 /eɪd/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "w3xwt1is0s",
@@ -70536,7 +70536,7 @@
         "🔊 /eɪd/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "moa509gjfs",
@@ -70561,7 +70561,7 @@
         "🔊 /ɛd/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "yiyb24ixan",
@@ -70586,7 +70586,7 @@
         "🔊 /ɛd/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "w0p74y9naa",
@@ -70609,7 +70609,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "a3kagw94mr",
@@ -70632,7 +70632,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "fhpmbsbpaw",
@@ -70655,7 +70655,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "ira1jgm5oy",
@@ -70678,7 +70678,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "6ybadbgc6g",
@@ -70701,7 +70701,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "dzos9x7akn",
@@ -70726,7 +70726,7 @@
         "🔊 /ɛpt/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "u5bhiwm7ld",
@@ -70749,7 +70749,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "1xsyoeejxk",
@@ -70774,7 +70774,7 @@
         "🔊 /ɛpt/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "3ykv4stp4a",
@@ -70797,7 +70797,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "vswircmc48",
@@ -70820,7 +70820,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "04poz5wtji",
@@ -70843,7 +70843,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "g2r92k80lg",
@@ -70866,7 +70866,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "hrbq6s2j6w",
@@ -71030,7 +71030,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "ejdik4gc6k",
@@ -71052,7 +71052,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "lyxzmxkdz8",
@@ -71075,7 +71075,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "xfqmtcs67o",
@@ -71098,7 +71098,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "jw2dkuzufk",
@@ -71121,7 +71121,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "x0fy3ae2fn",
@@ -71144,7 +71144,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "e2vj5fksnk",
@@ -71564,7 +71564,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "rvqzozxvlv",
@@ -71586,7 +71586,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "3vmu206qps",
@@ -71608,7 +71608,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "vd3nut7nkt",
@@ -71677,7 +71677,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "u6notwo6my",
@@ -71700,7 +71700,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "59yagpqbix",
@@ -71771,7 +71771,7 @@
         "🔊 /ɛnt/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "xycoghopey",
@@ -71796,7 +71796,7 @@
         "🔊 /ɛnt/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "rexmxhv2ih",
@@ -71912,7 +71912,7 @@
         "🔊 /æŋ/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "3pco7273dr",
@@ -71936,7 +71936,7 @@
         "🔊 /ʌŋ/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "km1b8rim8n",
@@ -71958,7 +71958,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "d9oxjrwfue",
@@ -71980,7 +71980,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "oiferzi4zi",
@@ -72046,7 +72046,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "wwa9rna2ic",
@@ -72068,7 +72068,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "pc6c574ra8",
@@ -72090,7 +72090,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "cij7k51kqk",
@@ -72205,7 +72205,7 @@
         "🔊 /ɔt/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "z6bg9qle6t",
@@ -72230,7 +72230,7 @@
         "🔊 /ɔt/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "mpfyf2ovqk",
@@ -72398,7 +72398,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "6k127x124p",
@@ -72420,7 +72420,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "lxvwbr6d7x",
@@ -72442,7 +72442,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "42qzrcv99x",
@@ -72510,7 +72510,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "b1ssq646sy",
@@ -72532,7 +72532,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "4juijftxrq",
@@ -72554,7 +72554,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "s71ht9ghft",
@@ -72576,7 +72576,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "2blx2liryn",
@@ -72598,7 +72598,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "d7blt3q1ln",
@@ -72620,7 +72620,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "m1ax3ny7qf",
@@ -72643,7 +72643,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "4vr9rm80nf",
@@ -72666,7 +72666,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "e4rrbwczr7",
@@ -72689,7 +72689,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "e363thvvnn",
@@ -72712,7 +72712,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "vydsonuqwl",
@@ -72735,7 +72735,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "x09hotrdb1",
@@ -72758,7 +72758,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "rnbndcwcpx",
@@ -72781,7 +72781,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "2db2dm6fmi",
@@ -72804,7 +72804,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "6h1vmxoteo",
@@ -72827,7 +72827,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "1lmmhpskfy",
@@ -72850,7 +72850,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "ces2knhhdp",
@@ -72873,7 +72873,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "13vaiw0om5",
@@ -72896,7 +72896,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "kqf0k219aq",
@@ -72919,7 +72919,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "e8dxg0rcgv",
@@ -72942,7 +72942,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "i5v8ev923n",
@@ -72965,7 +72965,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "vondbiomh2",
@@ -72988,7 +72988,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "qczwgbuzwe",
@@ -73080,7 +73080,7 @@
         "🔊 /æŋk/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "rol2mcvlrq",
@@ -73104,7 +73104,7 @@
         "🔊 /ʌŋk/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "c9of0pgjjt",
@@ -73128,7 +73128,7 @@
         "🔊 /ʌŋk/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "fc2clq9pib",
@@ -73246,7 +73246,7 @@
         "🔊 /æŋk/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "yp8kmo62ix",
@@ -73270,7 +73270,7 @@
         "🔊 /ʌŋk/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "poq5iuw2pj",
@@ -73294,7 +73294,7 @@
         "🔊 /ʌŋk/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "nesbuszvq7",
@@ -73362,7 +73362,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "qipz8vj41q",
@@ -73384,7 +73384,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "nntgjqr7v0",
@@ -73459,7 +73459,7 @@
         "🔊 /ɪd/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "0sb6k8lwlg",
@@ -73484,7 +73484,7 @@
         "🔊 /ɪd/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "v2iux3h0q2",
@@ -73507,7 +73507,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "ghudevgsg8",
@@ -73530,7 +73530,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "u2p45s0gbc",
@@ -73553,7 +73553,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "zfusxl519i",
@@ -73576,7 +73576,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "gx4nh7ly3p",
@@ -73599,7 +73599,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "6c6zg0hrym",
@@ -73622,7 +73622,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "l64sml5vb4",
@@ -73645,7 +73645,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "qj21s7e75n",
@@ -73668,7 +73668,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "9flbcl8ewb",
@@ -73691,7 +73691,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "i7s2dwmv0x",
@@ -73714,7 +73714,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "6ro5rchp41",
@@ -73736,7 +73736,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "hazrr94gja",
@@ -73760,7 +73760,7 @@
         "🔊 /ən/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "x7dbibyw8v",
@@ -73783,7 +73783,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "bro8xnas57",
@@ -73806,7 +73806,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "wkyh1rzgay",
@@ -73829,7 +73829,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "1mv50oka9h",
@@ -73852,7 +73852,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "5oxardz26e",
@@ -73991,7 +73991,7 @@
         "🔊 /ɛd/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "er9pgbwvmu",
@@ -74014,7 +74014,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "tv4q566jil",
@@ -74039,7 +74039,7 @@
         "🔊 /ɛd/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "09nr4ep7eh",
@@ -74062,7 +74062,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "azp87kfl3o",
@@ -74085,7 +74085,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "c7xhfvg2lc",
@@ -74108,7 +74108,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "qmy73bs4c3",
@@ -74131,7 +74131,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "308tmfvnvk",
@@ -74154,7 +74154,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "c0tgz8x0rs",
@@ -74227,7 +74227,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "g8r0qoiuly",
@@ -74252,7 +74252,7 @@
         "🔊 /ɪlt/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "15tjmych75",
@@ -74275,7 +74275,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "y6fsz37jss",
@@ -74300,7 +74300,7 @@
         "🔊 /ɪlt/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "3ie6p4mi4t",
@@ -74323,7 +74323,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "r0tmuj75ts",
@@ -74346,7 +74346,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "qcqywantdf",
@@ -74461,7 +74461,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "37mg3fllxt",
@@ -74484,7 +74484,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "nk4kcnfxfj",
@@ -74507,7 +74507,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "r10a1r51f2",
@@ -74530,7 +74530,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "t89x2qfisn",
@@ -74553,7 +74553,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "m5bq0f5gft",
@@ -74576,7 +74576,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "sm75s0jenr",
@@ -74599,7 +74599,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "nwmckpzbms",
@@ -74622,7 +74622,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "snq1ha8d7o",
@@ -74646,7 +74646,7 @@
         "🔊 /æŋ/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "29y2qd6vwx",
@@ -74670,7 +74670,7 @@
         "🔊 /ʌŋ/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "mn12dzvwpe",
@@ -74694,7 +74694,7 @@
         "🔊 /ʌŋ/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "ff26wwceho",
@@ -74767,7 +74767,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "4twv0egolm",
@@ -74790,7 +74790,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "odcj74uola",
@@ -74813,7 +74813,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "p198pn8ikh",
@@ -74836,7 +74836,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "9epbm61h1n",
@@ -74949,7 +74949,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "crrzitua6k",
@@ -74972,7 +74972,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "sih56dd7uj",
@@ -74996,7 +74996,7 @@
         "🔊 /æŋk/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "jf80q4laj8",
@@ -75020,7 +75020,7 @@
         "🔊 /ʌŋk/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "emnewbc2e3",
@@ -75044,7 +75044,7 @@
         "🔊 /ʌŋk/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "6d945hvmzt",
@@ -75066,7 +75066,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "ra9hiwzwsu",
@@ -75088,7 +75088,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "dd8iojfn1q",
@@ -75110,7 +75110,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "dn2x9hvejb",
@@ -75179,7 +75179,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "sdc2jo9nqh",
@@ -75202,7 +75202,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "qkeb68iney",
@@ -75358,7 +75358,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "5ypcg469un",
@@ -75380,7 +75380,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "0vtxy7v8ys",
@@ -75403,7 +75403,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "1swwzn0q0a",
@@ -75426,7 +75426,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "r5f0ivakc5",
@@ -75449,7 +75449,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "76zr8d5t1t",
@@ -75472,7 +75472,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "j3kykzhfru",
@@ -75497,7 +75497,7 @@
         "🔊 /ɛpt/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "tm3az2k3ko",
@@ -75522,7 +75522,7 @@
         "🔊 /ɛpt/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "y6x3jrcw5g",
@@ -75544,7 +75544,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "bok9wjvhqm",
@@ -75566,7 +75566,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "y64klyxplv",
@@ -75588,7 +75588,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "os9brbkhnw",
@@ -75655,7 +75655,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "pn5iblu8kg",
@@ -75678,7 +75678,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "s0htompife",
@@ -75796,7 +75796,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "1itmjjorc8",
@@ -75818,7 +75818,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "hwmvhbt7if",
@@ -76509,7 +76509,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "alf1zcitdg",
@@ -76532,7 +76532,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "fbxh30hccl",
@@ -76555,7 +76555,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "po63s9d46g",
@@ -76578,7 +76578,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "9p16t4wp8z",
@@ -76649,7 +76649,7 @@
         "🔊 /aʊnd/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "4zcbk693q2",
@@ -76674,7 +76674,7 @@
         "🔊 /aʊnd/",
         "sound metadata reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "4a2nkafytd",
@@ -76697,7 +76697,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "jdps9qicez",
@@ -76720,7 +76720,7 @@
         "sound group needs review",
         "sound metadata pending review"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "k7qkmwozei",
@@ -76782,7 +76782,7 @@
         "full infinitive",
         "followed by full infinitive"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "trash"
     },
     {
       "id": "take-up",
@@ -76798,7 +76798,7 @@
         "phrasal verb",
         "up"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "take-in",
@@ -76814,7 +76814,7 @@
         "phrasal verb",
         "in"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "take-back",
@@ -76830,7 +76830,7 @@
         "phrasal verb",
         "back"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "trash"
     },
     {
       "id": "take-down",
@@ -76846,7 +76846,7 @@
         "phrasal verb",
         "down"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "trash"
     },
     {
       "id": "take-away",
@@ -76862,7 +76862,7 @@
         "phrasal verb",
         "away"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "trash"
     }
   ]
 }

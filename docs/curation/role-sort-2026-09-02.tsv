@@ -1,0 +1,987 @@
+# Curriculum role sort, 2026-09-02
+#
+# One promote/demote pass over every concept. Format: concept id, new role, rationale.
+# Applied with web/scripts/apply-role-manifest.ts. Result: core 291->199,
+# supporting 1011->954, reference 2861->2826, trash 0->184.
+#
+
+## 01-core
+# Core demotions. Test: can a learner build/understand basic English without explicitly controlling this?
+# --- duplicate English target already held by another core row ---
+592w2y5gz1	supporting	querer decir -> to mean duplicates significar [algo] -> to mean [something]
+dvodf0y7wx	supporting	quisiera [algo] duplicates gustaría [algo] -> would like [something]
+dnwd7gmll5	supporting	quisiera [hacer algo] duplicates gustaría [hacer algo]
+9h3jno3320	supporting	quisiera que [alguien] [hiciera algo]; subjunctive politeness register, secondary
+nk4hb2zaok	supporting	poder (permiso) has identical English to poder (capacidad); one core row is enough
+rdpiq554g6	supporting	no poder -> cannot duplicates no poder -> can't; keep the contracted core form
+7hwvhzgxxt	supporting	¿Puedes? (peticion) has identical English to ¿Puedes? (capacidad)
+u9mhk0r7wd	supporting	contarle [algo] a [alguien] duplicates decirle [algo] a [alguien] -> to tell
+g8bhd7ipvu	supporting	deber [hacer algo] -> to have to duplicates tener que [hacer algo]
+h2ubrz9hyw	supporting	valer [un precio] -> to cost duplicates costar [una cantidad]
+zeloe6s3qo	supporting	verse con [alguien] -> to see [somebody] duplicates ver a [alguien]
+hzhx6yw5qb	supporting	enviar [algo] -> to send duplicates mandar [algo] -> to send
+05ugh62h83	supporting	¿Que te parece? duplicates ¿Que piensas de? -> What do you think of
+el9irxyl46	supporting	¿Que piensas de [algo]? question form; pensar en [algo] carries the core mapping
+9q3ezcaa3k	supporting	parar de [hacer algo] duplicates dejar de [hacer algo] -> to stop [doing something]
+6j9mgb7b17	supporting	haber [algo] (presente singular) duplicates hay [algo singular]
+7yqanblhbj	supporting	haber [cosas] (presente plural) duplicates hay [cosas plurales]
+ttxd6h84lo	supporting	¿hay [algo]? duplicates ¿hay [algo singular]?
+# --- preposition/collocation variants of a core verb already held in core ---
+ggqsaeyv8u	supporting	tomar [transporte] collocation variant of tomar [algo]
+2hxj5syqcm	supporting	tomar [tiempo] collocation variant of tomar [algo]
+xo18pm756n	supporting	hablar con [alguien] preposition variant; hablarle a [alguien] stays core
+hyz7cpy9fj	supporting	hablar sobre [algo] preposition variant
+zo168jw53x	supporting	decirle a [alguien] algo sobre [algo] preposition variant
+x850nhvcaj	supporting	preguntar sobre [algo] preposition variant; preguntar [algo] stays core
+dmc4ep05eo	supporting	poner [algo] en [un lugar] preposition variant of poner [algo] [en algun lugar]
+zm3v8qtrgj	supporting	poner [algo] sobre [una superficie] preposition variant
+kzc0zugsvr	supporting	llegar a -> to arrive at; preposition subtlety, llegar a -> to get to stays core
+g8o1myn1jr	supporting	llegar a -> to arrive in; preposition subtlety
+3vjeid1zyd	supporting	llevar [algo] a [un lugar] secondary to tomar/traer
+atwozfqm04	supporting	mandarle [algo] a [alguien] preposition variant of mandar [algo]
+o8yyqw9k2g	supporting	trabajar en [un lugar u organizacion] preposition variant; trabajar stays core
+xrqc4586p2	supporting	trabajar en [una tarea o proyecto] preposition variant
+dawn4c9rf4	supporting	traer [algo] aqui directional variant; traerle [algo] a [alguien] stays core
+m5t33xosbe	supporting	quitar [algo] de [un lugar] preposition variant
+sogja55oo0	supporting	quitarle [algo] a [alguien] phrasal variant
+obznlhzdxe	supporting	ser en [un lugar] -> to be at; event-location subtlety, not basic machinery
+ekxerzzusv	supporting	ser para [alguien] preposition variant
+ksg6li9jy7	supporting	volver aqui directional variant
+tly9ldi8kr	supporting	volver a [otro lugar] directional variant
+# --- concrete instances of a generic structure pattern already held in core ---
+s1qoakwebg	supporting	¿lo haces? is one instance of the generic ¿[haces algo]? do-support pattern
+mk6oc0jtgw	supporting	¿ella lo hace? instance of ¿[alguien] [hace algo]?
+0krc7ykvx4	supporting	¿ellos lo hicieron? instance of ¿[alguien] [hizo algo]?
+m5xw7iodne	supporting	no lo hago instance of no [hago algo]
+bt7rdzvto5	supporting	no lo hicieron instance of [alguien] no [hizo algo]
+azpvrshi2u	supporting	si lo hago emphatic-do instance; not basic machinery
+# --- verb-form transformation rows: no form-transformation record belongs in core ---
+srl7scbt4x	supporting	pasado de be -> was; verb form transformation, belongs with the past/participle family
+gtp0cakjyi	supporting	pasado de be -> were; verb form transformation
+sia3vl9zuh	supporting	participio de be -> been; verb form transformation
+9nyqu8uehx	supporting	pasado de do -> did; verb form transformation
+m2led45ghj	supporting	participio de do -> done; verb form transformation
+e61dms0hq3	supporting	pasado de get -> got; verb form transformation
+8k1ayyt6pc	supporting	participio de get -> got; verb form transformation
+3r70xx9t9s	supporting	participio de get -> gotten; verb form transformation
+l3jqtqp7we	supporting	pasado de go -> went; verb form transformation
+j75hzql7s8	supporting	participio de go -> gone; verb form transformation
+dyfhan9nwo	supporting	pasado de have -> had; verb form transformation
+rv6qhto601	supporting	participio de have -> had; verb form transformation
+# --- fixed social/discourse expressions: useful vocabulary, not functional machinery ---
+3u7b3fgws0	supporting	mucho gusto -> nice to meet you; social expression
+ifurkwv06w	supporting	me llamo [nombre]; introduction formula, not core machinery
+8uhr5m0dkf	supporting	¿como se llama [alguien]?; introduction formula
+g4s8ww83pl	supporting	no se -> I don't know; fixed expression
+421wv4rocg	supporting	lo siento -> I'm sorry; fixed expression
+c4sr1lkkhf	supporting	¿Que te pasa? -> What's wrong?; fixed expression
+qj0lhiuc75	supporting	dejar en paz a [alguien]; fixed expression
+p80swouyaq	supporting	tener sentido -> to make sense; fixed expression
+z3umj7sj0q	supporting	digamos que -> let's say; discourse marker, not basic
+b4j9ji5u4s	supporting	¿Como se dice [algo] en ingles?; classroom language
+k29o9xq2bp	supporting	creer que si -> to think so; secondary response formula
+dav762mjhb	supporting	creer que no -> not to think so; secondary response formula
+# --- useful but not functionally necessary to make basic English work ---
+4fpkte1t8z	supporting	esperar que -> to hope; esperar -> to wait carries the core mapping
+dnm638drfa	supporting	¿como estar [alguien]?; also malformed Spanish, needs normalization
+f5h0hvcv1d	supporting	estar de acuerdo -> to agree
+69tvlt4ak1	supporting	extranar a [alguien] -> to miss [somebody]
+m2w116dh9a	supporting	faltar [algo] -> [something] is missing
+p225bjj0un	supporting	ganar [una competencia] -> to win
+bz7tv4xn1k	supporting	ganar [dinero] -> to earn [money]
+vh56in634m	supporting	hace [un periodo de tiempo] -> ago; time construction, secondary
+sopqak93z8	supporting	parecerse a [alguien] -> to look like
+cld2cnhb2w	supporting	pasarle [algo] a [alguien] -> to pass
+sjlvvxcwpy	supporting	[periodo] pasado/a -> last [period]
+2bsn8536de	supporting	pensar [hacer algo] -> to plan to
+iiwmj1y2af	supporting	perder [un medio de transporte] -> to miss [transportation]
+6ljzqgv7vh	supporting	perderse -> to get lost
+ml2usxu7by	supporting	estar perdido/a -> to be lost
+yome0dqotg	supporting	ser pesado/a -> to be heavy; single adjective, not core
+a377qba56u	supporting	poder ser [algo] -> can be
+erwsyenslz	supporting	prestarle [algo] a [alguien] -> to lend
+we8gzmevo2	supporting	prestar atencion a [algo] -> to pay attention to; collocation
+bwmfe9nhs1	supporting	quedar [una cantidad] -> there are [an amount] left
+upotfiz0jx	supporting	¿Cuanto queda? -> How much is left?
+1vb3s8ps5j	supporting	quedarse sin [algo] -> to run out of
+kgmn4o9bd5	supporting	alcanzar [algo] -> to reach
+dvjojvxntx	supporting	no alcanzarle a [alguien] para [algo] -> to be unable to afford; highly situational
+gff4ny55ob	supporting	caerse -> to fall
+eb73rheyc0	supporting	contar [algo] -> to count
+zmz6t98hlf	supporting	dejame [hacer algo] -> let me; dejar que [alguien] [haga algo] stays core
+o8w71qqdrb	supporting	recordarle a [alguien] [hacer algo] -> to remind
+15kcw4vn4r	supporting	robar [algo] -> to steal
+kjs3avsme6	supporting	supe [algo] -> found out; meaning-changing preterite, advanced
+ab3fpexagc	supporting	la salida -> exit; noun, not core machinery
+m1asnh0c8n	supporting	seguir a [alguien] -> to follow
+f0z126w2cy	supporting	seguir [instrucciones] -> to follow instructions
+89g0nxntpb	supporting	seguir recto -> to keep going straight; directions vocabulary
+qa5k2yvbpz	supporting	sentir [una sensacion]; sentirse [adjetivo] carries the core mapping
+zcsk0uorhv	supporting	sentirse bien -> to feel well
+1jdy99z2dz	supporting	tener ganas de [hacer algo] -> to feel like [doing something]
+czjjg08c25	supporting	ser gratis -> to be free
+nkxypzw7lg	supporting	soler [hacer algo] -> to usually
+2oiqu0kcxf	supporting	solia [hacer algo] -> used to
+ptmw5b6egl	supporting	se supone que [alguien] [haga algo] -> is supposed to
+5uycd7m1nu	supporting	tocar [algo] -> to touch
+er9xiz8dqv	supporting	tocarle a [alguien] -> to be somebody's turn
+em4gm5945w	supporting	el trabajo -> work; noun, not core machinery
+492gbx234m	supporting	el trabajo -> a job; noun, not core machinery
+wjd0q608lr	supporting	¿cuanto vale [algo]?; question form of a demoted mapping
+emji2mg22t	supporting	ser [hecho] por [alguien] -> passive; not basic-function for a beginner
+nibfz58mag	supporting	first conditional; intermediate structure
+5unz3dwyz7	supporting	estar prohibido [hacer algo] -> must not; low-frequency modal
+# --- malformed duplicate carrying a stale pre-reslug slug id ---
+necesitar-hacer-algo	trash	unbracketed duplicate of 1eotkqfnjg necesitar [hacer algo]; also still on the old human-readable id
+
+## 02-supporting-a
+# Supporting rows 1-340. Demotions to reference: situational, formal-register, low-frequency,
+# regional, or duplicating a mapping already held at a higher tier.
+etjg9ef1sp	reference	[hacer algo] queriendo -> on purpose; marginal regional construction
+5jgulxtbag	reference	quiera o no -> whether [someone] wants to or not; situational
+18xj8sphod	reference	¿quiere [algo]? formal usted register; duplicates quisiera/gustaria -> would like
+5zjqxkzep9	reference	¿quiere [hacer algo]? formal usted register; duplicate would like
+5dd27yg0l5	reference	se necesita [algo] -> is needed; passive, inferable
+nmfskm5zko	reference	needa [do something]; far rarer spoken reduction than wanna
+39jd5tl1td	reference	comer [algo] todo -> to eat up; situational phrasal
+dtnqrb3lqk	reference	comer en casa -> to eat in; situational phrasal
+n9z42gcs3h	reference	beber [algo] todo -> to drink up; situational phrasal
+7hhmppjsyi	reference	beber [algo] -> to have [a beverage]; duplicates comer [algo] -> to have [something]
+dw6w3t8zih	reference	aprovecharse de -> to take advantage of; specialized
+aamqdep4ti	supporting	la comida -> food; high-frequency noun, stays
+p7ouvs75tf	reference	la comida -> the meal; secondary sense
+g2nzrxh5ae	reference	la necesidad -> the need; derived noun
+00axi6sqac	reference	necesariamente -> necessarily; low-frequency adverb
+vnc1p295cf	reference	el/la hablante -> the speaker; derived noun
+tiss70p00o	reference	hablar por telefono con -> to talk on the phone; situational
+kf0u7n45dt	reference	hablar por [alguien] -> to speak for; specialized
+4pmy3sue86	reference	decir [algo] en voz alta -> to say out loud; situational
+uy518ih9t7	reference	es decir -> that is; formal discourse connector
+6mwi5bt3ax	reference	es decir -> in other words; formal discourse connector
+g6s2hpc2m4	reference	el dicho -> the saying; derived noun
+xzcldfjhmu	reference	darle tiempo a [alguien] para; situational
+qrb7i9y47p	reference	darle a [un interruptor] -> to flip a switch; highly situational
+53wi0qwjcm	reference	darle ganas de -> to feel like; duplicates tener ganas de
+27fbkeb2et	reference	pedir perdon por -> to ask for forgiveness; situational
+439x0r7xja	reference	pedir un deseo -> to make a wish; situational
+0h2i95gmp3	reference	pedir [algo] a [un negocio] -> to order from; situational
+i0ry42yzcl	reference	pedir a domicilio -> to order in; situational
+yy1wmnythy	reference	el pedido -> the order; derived noun
+3ysg9glgjj	reference	poner -> to place; formal register variant of to put
+bjms2exzmh	reference	organizar [un evento] -> to put on an event; situational phrasal
+0iqu22mwnf	reference	puesto que -> since; formal connector
+swyolg0a4s	reference	faltarle [algo] a [alguien] -> somebody needs something; perspective-change duplicate
+6xmbf44uey	reference	faltar [varias unidades] -> there are units left; situational
+fwzmjvs06n	reference	faltar a [un evento] -> to miss an event; situational
+53ak6stp8u	reference	ganarse la vida -> to make a living; idiomatic
+ugaflsdk03	reference	con gusto -> gladly; formal register adverb
+hswwpga0wq	reference	debe de haber -> there must be; low-frequency modal deduction
+lxhfegmolo	reference	hacer falta -> to be needed; duplicates faltar family
+mu7bumpulx	reference	hacer un esfuerzo -> to make an effort; collocation, secondary
+69iqgmw2nb	reference	el hecho -> the fact; derived noun
+seq1qsjokh	reference	de hecho -> in fact; discourse connector, secondary
+bnj5p17mrm	reference	irle bien a [alguien] -> to go well for; perspective-change, situational
+omzzomx3m9	reference	¿como le fue a [alguien]? question form of a demoted mapping
+8kpshof0nv	reference	mandar [hacer algo] -> to have [something done]; advanced causative passive
+6y6hoqee9p	reference	pararse -> to stop moving; secondary sense
+fe9o47t8x2	reference	al parecer -> apparently; discourse adverb
+uuq5sdflxk	reference	pasar por [algo dificil] -> to go through something difficult; figurative sense
+zcxqshq3iu	reference	el pasado -> the past; derived noun
+isr1jrl9yx	reference	pensar bien [algo] -> to think over; secondary phrasal
+xavuiuomaj	reference	pensar detenidamente -> to think through; secondary phrasal
+k57gp6u41b	reference	pensar que si -> to think so; duplicates creer que si
+bm5ashr6qu	reference	perder el contacto con -> to lose touch with; idiomatic
+wtfoq5ttro	reference	perder la nocion de -> to lose track of; idiomatic
+3f5fh22xm8	reference	[algo] pesa [una cantidad] -> weighs; measurement, specialized
+4ufi7f1zmi	reference	a pesar de -> despite; formal connector
+yhchadk82l	reference	no he podido -> haven't been able to; compound tense, inferable
+zy6xwkoq5s	reference	puede estar -> may be; inferable from puede que + estar
+tu44lpd4ms	reference	el poder -> power; derived noun
+zxr6a7pbp5	reference	ser poderoso/a -> to be powerful; derived adjective
+wf4a9cx0j2	reference	el prestamo -> the loan; derived noun
+lqk4xtsbz1	reference	quedarle bien [algo] (talla) -> fits somebody well; clothing-specific
+op3olm4hh3	reference	quedar con [alguien] -> to arrange to meet; situational
+zl1e6hnb04	reference	quedar en [hacer algo] -> to agree to; duplicates ponerse de acuerdo family
+ag32yiat6v	reference	[algo] no se quita -> won't go away; idiomatic
+a4mugyra2a	reference	quitarse del camino -> to get out of the way; idiomatic
+0ngr08140i	reference	abrirse con [alguien] -> to open up to; figurative phrasal
+dcbjy0grcq	reference	alcanzar -> to be enough; secondary sense
+v7qsq6oet3	reference	alcanzar a -> to have time to; regional secondary sense
+rgpsxhe7h3	reference	caer en cuenta de que -> to realize; regional duplicate of darse cuenta de que
+bb7fukdi26	reference	conocer [un tema o sistema] -> to be familiar with; formal register
+0ubq3z55bc	reference	contar con [algo] -> to have; vague secondary sense
+9y6wrrzjfz	reference	costarle a [alguien] [hacer algo] -> to struggle to; duplicates the be-difficult-for row
+2egwnfg7jz	reference	creer en [alguien] duplicates creer en [algo] -> to believe in
+nkzffs81a6	reference	no poder creer -> not to be able to believe; inferable
+qj3wvut2bw	reference	debia [hacer algo] -> to have been supposed to; rare compound tense
+w4ubw2gv4e	reference	deberse a -> to be due to; formal register
+6uhgsiqvvf	reference	debido a -> due to; formal connector
+87vmd83t1p	reference	deber ser [algo] -> must be; duplicates deber estar deduction row
+egh1emsv3k	reference	dejar [un lugar] -> to leave a place; duplicates salir de [un lugar]
+n27dfso39e	reference	dejame -> lemme; very informal spoken reduction
+skfxdss0cs	reference	dejar de -> to no longer; perspective-change duplicate
+od0g56sefd	reference	dejar salir a -> to let out; situational phrasal
+1yt28hn07y	reference	echar [un liquido] en -> to pour; specialized
+36riiosdmx	reference	echar a [alguien] de -> to throw somebody out; situational
+wyiru8eg9q	reference	echar a [alguien] del trabajo -> to fire; specialized
+6o8pv6rvtp	reference	echarle una mano -> to give somebody a hand; idiomatic
+pxkiokdofk	reference	recordarle a [alguien] a [otra persona] -> to remind of; low-frequency sense
+nvywv2tlgk	reference	robar [un lugar] -> to rob a place; specialized rob/steal split
+5qnuapk321	reference	saber [hacer algo] -> can; duplicates saber -> to know how to
+32xfxi2fjv	reference	saber de [alguien] -> to hear from; duplicates oir de [alguien]
+y86m7wjo50	reference	saber a [algo] -> to taste like; specialized sense
+o4nv333v8c	reference	que yo sepa -> as far as I know; idiomatic
+kafdnl1n7j	reference	quien sabe -> who knows; idiomatic
+ugu6mryvd1	reference	ya se -> I know; discourse formula
+tc4o4z8jnt	reference	salir mal -> to go badly; secondary
+4hc7hecq4n	reference	la salida -> way out; derived noun sense
+uxzgvill2p	reference	dar seguimiento a -> to follow up on; business register
+5irs9gdyqv	reference	mantenerse al dia con -> to keep up with; idiomatic
+ef4ltamqsa	reference	seguir adelante -> to carry on; idiomatic
+vupb12qdkr	reference	seguir asi -> to keep it up; fixed encouragement formula
+2liqgudpe2	reference	mantenerse en contacto con -> to keep in touch; idiomatic
+h2zqc61fwq	reference	mantenerse alejado de -> to keep away from; idiomatic
+d5m00zj2i4	reference	seguir intentandolo -> to keep at it; idiomatic
+fshhqe3d9f	reference	sentir que -> to sense that; the to-feel-that row is the useful one
+3qtux13rre	reference	sentirlo por -> to be sorry for; situational
+5uvtfc7eda	reference	el sentimiento -> feeling; derived noun
+sz0g4jfbie	reference	ser capaz de -> to be able to; duplicates poder -> to be able to
+98gwx9pls1	reference	ser culpa de -> to be somebody's fault; idiomatic
+lg9p46b73r	reference	ser consciente de -> to be aware of; formal register
+nyb1ocmvpw	reference	ser para [un uso] -> to be meant for; specialized
+jyk96g78cb	reference	no ser para tanto -> not to be a big deal; idiomatic
+2d97zs6np0	reference	es que -> it's just that; discourse formula
+8pzhwaykz8	reference	significar -> to stand for; specialized abbreviation sense
+0v6um8pq7g	reference	significar mucho para -> to mean a lot to; collocation
+0a33zqj9ql	reference	el significado -> meaning; derived noun
+30rrpal2u2	reference	soler -> to tend to; formal register variant
+xhm0xh7x5i	reference	no soler -> not to usually; inferable negation
+9kyo88v7jf	reference	suponer -> to assume; duplicates suponer -> to suppose
+86v2tii41j	reference	tener en cuenta -> to keep in mind; idiomatic
+15khny2b9v	reference	tener que ver con -> to have to do with; idiomatic
+5awfswdavw	reference	no tener nada que ver con -> to have nothing to do with; idiomatic
+ykm7fr9btb	reference	tocarle a [alguien] [hacer algo] -> has to; duplicates tener que obligation
+8ic82zfjqz	reference	tocar el timbre -> to ring the doorbell; situational
+yv532a42h2	reference	traer [algo] consigo -> to have with you; situational
+
+## 02-supporting-b
+# Supporting rows 341-680.
+# --- promotions: basic pronoun paradigm and frequency adverbs that core half-contains ---
+d6oilpcif8	core	usted -> you; formal subject pronoun, completes the core subject-pronoun set
+hh4dfyokmh	core	ellos -> they; core has yo/tu/el/ella/nosotros but no third-person plural
+em3gcm8fcl	core	ustedes -> you; the Latin American plural you, basic
+qtybwfahhd	core	le -> to him; completes the object-pronoun paradigm core already half-holds
+tne070no4d	core	les -> to them; completes the object-pronoun paradigm
+5cest1aute	core	los -> them; plural direct object pronoun, basic
+zf3sq9mld5	core	las -> them; plural direct object pronoun, basic
+8aag559cpt	core	siempre -> always; basic frequency adverb, none currently in core
+d7uycdog37	core	nunca -> never; basic frequency adverb
+# --- demotions: duplicate mappings already held elsewhere ---
+rx423e30re	reference	acordar [hacer algo] -> to agree to; duplicates quedar en / ponerse de acuerdo
+htgjdwiqzm	reference	detener [algo] -> to stop; duplicates parar [algo]
+6vpv4m0g02	reference	tener que ver con -> to be related to; duplicates the have-to-do-with row
+dugiwco70z	reference	poder (pasado) -> could; duplicates podia [hacer algo] -> could
+r2y6wfhr6z	reference	podria -> could; duplicates the poder conditional row
+lzbsoi01yv	reference	mandar [hacer algo] -> to get something done; duplicate Spanish with two other causative rows
+dtnmnb60nj	reference	tener que -> gotta; duplicates the tener que gotta row in the tener family
+c4ekkqs73f	reference	si [hago algo] emphatic do; duplicates si lo hago
+xvgmxfgcrd	reference	si [alguien] [hizo algo] emphatic did; duplicates the emphatic-do row
+dczcf3gaak	reference	regresar -> to come back; duplicates volver aqui
+zxuys2r8q2	reference	regresar -> to go back; duplicates volver a [otro lugar]
+nl064twuml	reference	obtener [algo] -> to get; duplicates conseguir/sacar -> to get
+g54z8h8ci6	reference	ordenar [comida] -> to order; duplicates pedir -> to order
+d6zpr2z5kx	reference	siguiente -> next; duplicates proximo/a -> next
+ux2hr6u37r	reference	hagalo -> do it; formal variant, identical English to hazlo
+t46e4xr47y	reference	haganlo -> do it; plural variant, identical English to hazlo
+xuna1emcr1	reference	haganoslo -> do it for us; rare imperative variant
+shzp9wzrxq	reference	son las [hora y minutos]; variant of son las [hora]
+j0cpc9akol	reference	e -> and; phonological spelling variant of y
+7d1mtpky92	reference	u -> or; phonological spelling variant of o
+# --- demotions: situational, formal register, or low-frequency ---
+1insnlihbx	reference	mas vale [hacer algo] -> had better; low-frequency modal
+w66regabe9	reference	venir en [colores o tamanos] -> to come in; retail-specific
+kk3nkycmqg	reference	venirle bien a [alguien] -> to work for somebody; idiomatic
+c9e47xxxqj	reference	venir en camino -> to be on the way; situational
+r8h281yx98	reference	a ver -> let's see; discourse filler
+bg83x0k5kp	reference	enviar [algo] -> to ship; specialized sense
+ietq3i884j	reference	enviar [algo] -> to forward; specialized sense
+7wxq9lkzoj	reference	que aproveche -> enjoy your meal; situational expression
+rrxe7cd85d	reference	callate -> be quiet; situational imperative
+r4wshfw0zl	reference	callate -> shut up; rude register
+rfob016mlk	reference	el poder ==> ser impotente; impotente is not the natural Spanish for powerless
+tgdih9ksry	reference	por si [ocurre algo] -> in case; secondary connector
+# --- demotions: cognates the pattern already predicts, too specialized for the teaching tier ---
+lidfbq7lxa	reference	posicionar -> to position; low-frequency cognate
+qw412q5w2q	reference	cuestionar -> to question; verb sense is rare
+se694g3es1	reference	cometer -> to commit; specialized
+ll708ai2nl	reference	diferir -> to differ; formal register
+oaj6w40rgj	reference	implementar -> to implement; business register
+34qked2yf9	reference	corresponder -> to correspond; formal register
+i3832a491z	reference	depositar -> to deposit; specialized
+uu1cnr3a36	reference	multiplicar -> to multiply; specialized
+bp593daco9	reference	implicar -> to imply; formal register
+ujfd2cjj1t	reference	pausar -> to pause; low-frequency
+4r07khungy	reference	contribuir -> to contribute; formal register
+779ynouu11	reference	distribuir -> to distribute; business register
+c3amoye6xz	reference	sustituir -> to substitute; formal register
+lfg0ejcjnq	reference	estimar -> to estimate; specialized
+yenl2lq9oq	reference	negociar -> to negotiate; business register
+6em7hpnut9	reference	operar -> to operate; specialized
+pnp6pglvyd	reference	guiar -> to guide; low-frequency
+b6wua9uv0p	reference	prescribir -> to prescribe; medical register
+gjh5b0lek7	reference	suscribirse -> to subscribe; specialized
+qqt1bizdh7	reference	centrar -> to center; low-frequency
+d74s6zcq9j	reference	justificar -> to justify; formal register
+noyh1gv4we	reference	restaurar -> to restore; specialized
+xklnks32qd	reference	excluir -> to exclude; formal register
+pe06lzc5y3	reference	concluir -> to conclude; formal register
+4u8htj8ocd	reference	inhalar -> to inhale; medical register
+qup86o9vnn	reference	exhalar -> to exhale; medical register
+4w4rj5i3g0	reference	deducir -> to deduce; formal register
+7yc3ljvgss	reference	unir -> to unite; low-frequency
+ull88y8rzv	reference	reunir -> to reunite; low-frequency
+qdcruk7002	reference	citar -> to cite; academic register
+invu1lmtuw	reference	conservar -> to conserve; specialized
+gbkix5lyv6	reference	preservar -> to preserve; specialized
+if5o5uocfp	reference	especializar -> to specialize; formal register
+hl9cjbokrp	reference	finalizar -> to finalize; business register
+nq7pa5v7aj	reference	minimizar -> to minimize; specialized
+2xwe3j8ujy	reference	maximizar -> to maximize; specialized
+q6rkgiwa5d	reference	declarar -> to declare; formal register
+3qo4l6ua2u	reference	prohibir -> to prohibit; formal register
+hzw88e00ad	reference	exhibir -> to exhibit; specialized
+a2ujxq83pk	reference	percibir -> to perceive; formal register
+vuqfy6bg06	reference	disolver -> to dissolve; specialized
+v6l6ujop47	reference	revivir -> to revive; low-frequency
+ph4y9pkwf1	reference	derivar -> to derive; academic register
+gqqod0k0fl	reference	digerir -> to digest; specialized
+4rbp4wgwso	reference	distraer -> to distract; secondary
+qhthbncgk7	reference	interactuar -> to interact; formal register
+4yf8ijcj19	reference	comprimir -> to compress; specialized
+o3l6oubtj6	reference	conceder -> to concede; formal register
+zb1r0lavqo	reference	exceder -> to exceed; formal register
+ihevpwrjl9	reference	proceder -> to proceed; formal register
+bwkdp2bsi4	reference	revertir -> to revert; specialized
+sieanaw5b9	reference	detectar -> to detect; specialized
+u9hxahpvn8	reference	coleccionar -> to collect; hobby-specific sense
+3scspzwt5d	reference	instruir -> to instruct; formal register
+4fc2kcqip3	reference	proponer -> to propose; formal register
+g05qdfu47y	reference	oponerse -> to oppose; formal register
+mt3fyxp4nv	reference	exponer -> to expose; formal register
+inf9g9dmd7	reference	imponer -> to impose; formal register
+f8vxtpc7m8	reference	adquirir -> to acquire; formal register
+ggkqe82rdu	reference	retirarse -> to retire; specialized
+2y6u1mwiqm	reference	expirar -> to expire; specialized
+3tel071upm	reference	distinguir -> to distinguish; formal register
+f5l6clhdf8	reference	castigar -> to punish; low-frequency
+t7xdhmoj13	reference	acusar -> to accuse; specialized
+98sen5xp7y	reference	comprender -> to comprehend; comprehend is rare, understand is the real word
+ydrx4jlj20	reference	transportar -> to transport; specialized
+psvaz2wxvv	reference	exportar -> to export; business register
+7fbf1yrpcu	reference	importar -> to import; business register sense
+nd8kd8q9fc	reference	extender -> to extend; formal register
+p0abu0rm9f	reference	ofender -> to offend; secondary
+5g4fbayz0u	reference	observar -> to observe; formal register
+
+## 02-supporting-c
+zwehatba0w	reference	pasado de bend -> bent; irregular form of a low-frequency verb
+eangpz65s8	reference	participio de bend -> bent; irregular form of a low-frequency verb
+mllnyzs7zr	reference	pasado de bet -> bet; irregular form of a low-frequency verb
+svtoxcx6b0	reference	participio de bet -> bet; irregular form of a low-frequency verb
+uf2e7r7bol	reference	pasado de bind -> bound; irregular form of a low-frequency verb
+6c0uxx7uu9	reference	participio de bind -> bound; irregular form of a low-frequency verb
+pvjomq5jkz	reference	pasado de bite -> bit; irregular form of a low-frequency verb
+hqskibtcl1	reference	participio de bite -> bitten; irregular form of a low-frequency verb
+kosp2rzf7h	reference	pasado de bleed -> bled; irregular form of a low-frequency verb
+qn1ohmgeli	reference	participio de bleed -> bled; irregular form of a low-frequency verb
+yw0r4qe03n	reference	pasado de blow -> blew; irregular form of a low-frequency verb
+d1hnk98p24	reference	participio de blow -> blown; irregular form of a low-frequency verb
+p85salreqo	reference	pasado de broadcast -> broadcast; irregular form of a low-frequency verb
+z3kamqz76n	reference	participio de broadcast -> broadcast; irregular form of a low-frequency verb
+4ou8sxbjxk	reference	pasado de burn -> burned; irregular form of a low-frequency verb
+q5sk9vcx1o	reference	pasado de burn -> burnt; irregular form of a low-frequency verb
+w5jumzobua	reference	participio de burn -> burned; irregular form of a low-frequency verb
+f6oadawhhp	reference	participio de burn -> burnt; irregular form of a low-frequency verb
+dfzbacmzy5	reference	pasado de burst -> burst; irregular form of a low-frequency verb
+pnwix23mmu	reference	participio de burst -> burst; irregular form of a low-frequency verb
+okfppdbnlq	reference	pasado de creep -> crept; irregular form of a low-frequency verb
+ptwl0aih6e	reference	participio de creep -> crept; irregular form of a low-frequency verb
+79go7y7jek	reference	pasado de deal -> dealt; irregular form of a low-frequency verb
+t0j14amubg	reference	participio de deal -> dealt; irregular form of a low-frequency verb
+0nan92o13z	reference	pasado de dig -> dug; irregular form of a low-frequency verb
+1yfqckbbl1	reference	participio de dig -> dug; irregular form of a low-frequency verb
+msi48xyv0q	reference	pasado de dive -> dived; irregular form of a low-frequency verb
+eydd859tgk	reference	pasado de dive -> dove; irregular form of a low-frequency verb
+gkinlwurxm	reference	participio de dive -> dived; irregular form of a low-frequency verb
+y1b6i0a0r9	reference	pasado de dream -> dreamed; irregular form of a low-frequency verb
+t6n1a8sts2	reference	pasado de dream -> dreamt; irregular form of a low-frequency verb
+in3djophq4	reference	participio de dream -> dreamed; irregular form of a low-frequency verb
+1z3vqrnpos	reference	participio de dream -> dreamt; irregular form of a low-frequency verb
+lqkjvqvga0	reference	pasado de feed -> fed; irregular form of a low-frequency verb
+9khmf2u9eb	reference	participio de feed -> fed; irregular form of a low-frequency verb
+biczrdqgdd	reference	pasado de fit -> fit; irregular form of a low-frequency verb
+agoglocbab	reference	pasado de fit -> fitted; irregular form of a low-frequency verb
+e6lte4vuoz	reference	participio de fit -> fit; irregular form of a low-frequency verb
+tgsgs5lsmk	reference	participio de fit -> fitted; irregular form of a low-frequency verb
+hnih2u3kpa	reference	pasado de forgive -> forgave; irregular form of a low-frequency verb
+1xuraraznf	reference	participio de forgive -> forgiven; irregular form of a low-frequency verb
+ghx4osdo9o	reference	pasado de freeze -> froze; irregular form of a low-frequency verb
+6f3b5muinr	reference	participio de freeze -> frozen; irregular form of a low-frequency verb
+jwdtzs5t6a	reference	pasado de hang -> hung; irregular form of a low-frequency verb
+miby128ryy	reference	participio de hang -> hung; irregular form of a low-frequency verb
+5vg8sjndmp	reference	pasado de lay -> laid; irregular form of a low-frequency verb
+w3xwt1is0s	reference	participio de lay -> laid; irregular form of a low-frequency verb
+moa509gjfs	reference	pasado de lead -> led; irregular form of a low-frequency verb
+yiyb24ixan	reference	participio de lead -> led; irregular form of a low-frequency verb
+w0p74y9naa	reference	pasado de lean -> leaned; irregular form of a low-frequency verb
+fhpmbsbpaw	reference	participio de lean -> leaned; irregular form of a low-frequency verb
+6ybadbgc6g	reference	pasado de leap -> leaped; irregular form of a low-frequency verb
+u5bhiwm7ld	reference	participio de leap -> leaped; irregular form of a low-frequency verb
+3ykv4stp4a	reference	pasado de learn -> learned; irregular form of a low-frequency verb
+04poz5wtji	reference	participio de learn -> learned; irregular form of a low-frequency verb
+lno5ht42qg	reference	pasado de lie -> lay; irregular form of a low-frequency verb
+ejdik4gc6k	reference	participio de lie -> lain; irregular form of a low-frequency verb
+lyxzmxkdz8	reference	pasado de light -> lit; irregular form of a low-frequency verb
+xfqmtcs67o	reference	pasado de light -> lighted; irregular form of a low-frequency verb
+jw2dkuzufk	reference	participio de light -> lit; irregular form of a low-frequency verb
+x0fy3ae2fn	reference	participio de light -> lighted; irregular form of a low-frequency verb
+a52hbmvqbe	reference	pasado de prove -> proved; irregular form of a low-frequency verb
+rvqzozxvlv	reference	participio de prove -> proven; irregular form of a low-frequency verb
+3vmu206qps	reference	participio de prove -> proved; irregular form of a low-frequency verb
+9pqsf0ud6d	reference	pasado de quit -> quit; irregular form of a low-frequency verb
+u6notwo6my	reference	participio de quit -> quit; irregular form of a low-frequency verb
+rxho2fn8fn	reference	pasado de ring -> rang; irregular form of a low-frequency verb
+3pco7273dr	reference	participio de ring -> rung; irregular form of a low-frequency verb
+km1b8rim8n	reference	pasado de rise -> rose; irregular form of a low-frequency verb
+d9oxjrwfue	reference	participio de rise -> risen; irregular form of a low-frequency verb
+k1zeafjyeu	reference	pasado de seek -> sought; irregular form of a low-frequency verb
+z6bg9qle6t	reference	participio de seek -> sought; irregular form of a low-frequency verb
+yz9g9ykdb9	reference	pasado de sew -> sewed; irregular form of a low-frequency verb
+6k127x124p	reference	participio de sew -> sewn; irregular form of a low-frequency verb
+lxvwbr6d7x	reference	participio de sew -> sewed; irregular form of a low-frequency verb
+9mq6n0oaz0	reference	pasado de shave -> shaved; irregular form of a low-frequency verb
+b1ssq646sy	reference	participio de shave -> shaven; irregular form of a low-frequency verb
+4juijftxrq	reference	participio de shave -> shaved; irregular form of a low-frequency verb
+m1ax3ny7qf	reference	pasado de shed -> shed; irregular form of a low-frequency verb
+4vr9rm80nf	reference	participio de shed -> shed; irregular form of a low-frequency verb
+e4rrbwczr7	reference	pasado de shine -> shone; irregular form of a low-frequency verb
+e363thvvnn	reference	participio de shine -> shone; irregular form of a low-frequency verb
+i5v8ev923n	reference	pasado de shoot -> shot; irregular form of a low-frequency verb
+vondbiomh2	reference	participio de shoot -> shot; irregular form of a low-frequency verb
+c96ukshr12	reference	pasado de shrink -> shrank; irregular form of a low-frequency verb
+rol2mcvlrq	reference	pasado de shrink -> shrunk; irregular form of a low-frequency verb
+c9of0pgjjt	reference	participio de shrink -> shrunk; irregular form of a low-frequency verb
+q0in967hnc	reference	pasado de sink -> sank; irregular form of a low-frequency verb
+yp8kmo62ix	reference	pasado de sink -> sunk; irregular form of a low-frequency verb
+poq5iuw2pj	reference	participio de sink -> sunk; irregular form of a low-frequency verb
+48mt7mqm4p	reference	pasado de slide -> slid; irregular form of a low-frequency verb
+0sb6k8lwlg	reference	participio de slide -> slid; irregular form of a low-frequency verb
+l64sml5vb4	reference	pasado de smell -> smelled; irregular form of a low-frequency verb
+qj21s7e75n	reference	pasado de smell -> smelt; irregular form of a low-frequency verb
+9flbcl8ewb	reference	participio de smell -> smelled; irregular form of a low-frequency verb
+i7s2dwmv0x	reference	participio de smell -> smelt; irregular form of a low-frequency verb
+x7dbibyw8v	reference	pasado de sneak -> sneaked; irregular form of a low-frequency verb
+bro8xnas57	reference	pasado de sneak -> snuck; irregular form of a low-frequency verb
+wkyh1rzgay	reference	participio de sneak -> sneaked; irregular form of a low-frequency verb
+1mv50oka9h	reference	participio de sneak -> snuck; irregular form of a low-frequency verb
+u0upjdj9xz	reference	pasado de speed -> sped; irregular form of a low-frequency verb
+er9pgbwvmu	reference	pasado de speed -> speeded; irregular form of a low-frequency verb
+tv4q566jil	reference	participio de speed -> sped; irregular form of a low-frequency verb
+09nr4ep7eh	reference	participio de speed -> speeded; irregular form of a low-frequency verb
+azp87kfl3o	reference	pasado de spell -> spelled; irregular form of a low-frequency verb
+c7xhfvg2lc	reference	pasado de spell -> spelt; irregular form of a low-frequency verb
+qmy73bs4c3	reference	participio de spell -> spelled; irregular form of a low-frequency verb
+308tmfvnvk	reference	participio de spell -> spelt; irregular form of a low-frequency verb
+v3pmktibjc	reference	pasado de spill -> spilled; irregular form of a low-frequency verb
+15tjmych75	reference	participio de spill -> spilled; irregular form of a low-frequency verb
+3ie6p4mi4t	reference	pasado de spin -> spun; irregular form of a low-frequency verb
+r0tmuj75ts	reference	participio de spin -> spun; irregular form of a low-frequency verb
+ft4yjt47fc	reference	pasado de split -> split; irregular form of a low-frequency verb
+37mg3fllxt	reference	participio de split -> split; irregular form of a low-frequency verb
+nk4kcnfxfj	reference	pasado de spoil -> spoiled; irregular form of a low-frequency verb
+t89x2qfisn	reference	participio de spoil -> spoiled; irregular form of a low-frequency verb
+sm75s0jenr	reference	pasado de spread -> spread; irregular form of a low-frequency verb
+nwmckpzbms	reference	participio de spread -> spread; irregular form of a low-frequency verb
+snq1ha8d7o	reference	pasado de spring -> sprang; irregular form of a low-frequency verb
+29y2qd6vwx	reference	pasado de spring -> sprung; irregular form of a low-frequency verb
+mn12dzvwpe	reference	participio de spring -> sprung; irregular form of a low-frequency verb
+4zgjpzcib1	reference	pasado de sting -> stung; irregular form of a low-frequency verb
+crrzitua6k	reference	participio de sting -> stung; irregular form of a low-frequency verb
+sih56dd7uj	reference	pasado de stink -> stank; irregular form of a low-frequency verb
+jf80q4laj8	reference	pasado de stink -> stunk; irregular form of a low-frequency verb
+emnewbc2e3	reference	participio de stink -> stunk; irregular form of a low-frequency verb
+tsz0335ozx	reference	pasado de strike -> struck; irregular form of a low-frequency verb
+sdc2jo9nqh	reference	participio de strike -> struck; irregular form of a low-frequency verb
+74yqz3gffe	reference	pasado de swear -> swore; irregular form of a low-frequency verb
+5ypcg469un	reference	participio de swear -> sworn; irregular form of a low-frequency verb
+0vtxy7v8ys	reference	pasado de sweat -> sweated; irregular form of a low-frequency verb
+1swwzn0q0a	reference	pasado de sweat -> sweat; irregular form of a low-frequency verb
+r5f0ivakc5	reference	participio de sweat -> sweated; irregular form of a low-frequency verb
+76zr8d5t1t	reference	participio de sweat -> sweat; irregular form of a low-frequency verb
+j3kykzhfru	reference	pasado de sweep -> swept; irregular form of a low-frequency verb
+tm3az2k3ko	reference	participio de sweep -> swept; irregular form of a low-frequency verb
+y6x3jrcw5g	reference	pasado de swell -> swelled; irregular form of a low-frequency verb
+bok9wjvhqm	reference	participio de swell -> swollen; irregular form of a low-frequency verb
+y64klyxplv	reference	participio de swell -> swelled; irregular form of a low-frequency verb
+rgbzp5u6k1	reference	pasado de swing -> swung; irregular form of a low-frequency verb
+pn5iblu8kg	reference	participio de swing -> swung; irregular form of a low-frequency verb
+j17yzfti0u	reference	pasado de tear -> tore; irregular form of a low-frequency verb
+1itmjjorc8	reference	participio de tear -> torn; irregular form of a low-frequency verb
+nblh1qgt26	reference	pasado de wet -> wet; irregular form of a low-frequency verb
+fbxh30hccl	reference	participio de wet -> wet; irregular form of a low-frequency verb
+ywshdrwtq9	reference	pasado de wind -> wound; irregular form of a low-frequency verb
+4zcbk693q2	reference	participio de wind -> wound; irregular form of a low-frequency verb
+
+## 02-supporting-d
+# Supporting rows 681-722 and the tail.
+# --- promotions: complete the demonstrative set core already half-holds ---
+n7ckq60x6x	core	estos/estas -> these; core holds este/esta -> this but no plural
+cmwi64osep	core	esos/esas -> those; core holds ese/esa -> that but no plural
+# --- trash: bundled-alternative rows, stale pre-reslug ids, already covered unbundled ---
+take-back	trash	devolver / retractarse bundled in one row; djoaiftk25 already holds devolver -> to take back
+take-down	trash	bajar / desmontar bundled in one row; g1ya205lb7 already holds bajar -> to take down
+take-away	trash	llevarse / quitar bundled in one row; y3salsw4an already holds llevarse -> to take away
+
+## 03-reference-forms
+# Reference verb-form rows: archaic/obsolete verbs and British-variant spellings.
+iiysx4yx7o	supporting	pasado de can -> could; the modal past belongs with the other core modal forms
+gpe0vp0dv6	trash	pasado de abide -> abode; archaic or obsolete verb, no teaching value
+mjelhw21zn	trash	pasado de abide -> abided; archaic or obsolete verb, no teaching value
+xk5lhrv21k	trash	participio de abide -> abode; archaic or obsolete verb, no teaching value
+qd9kse2gd1	trash	participio de abide -> abided; archaic or obsolete verb, no teaching value
+oamyo4v4h5	trash	pasado de alight -> alit; archaic or obsolete verb, no teaching value
+atcbfgbc5i	trash	pasado de alight -> alighted; archaic or obsolete verb, no teaching value
+qg72rbp694	trash	participio de alight -> alit; archaic or obsolete verb, no teaching value
+y42bc2kw7c	trash	participio de alight -> alighted; archaic or obsolete verb, no teaching value
+ahk4e41zi4	trash	pasado de beget -> begot; archaic or obsolete verb, no teaching value
+ul8ifbtaqm	trash	participio de beget -> begotten; archaic or obsolete verb, no teaching value
+19mtj0vx3s	trash	participio de beget -> begot; archaic or obsolete verb, no teaching value
+t4ok9k51qs	trash	pasado de behold -> beheld; archaic or obsolete verb, no teaching value
+dox4hoda4i	trash	participio de behold -> beheld; archaic or obsolete verb, no teaching value
+bz6hcgsd88	trash	pasado de bereave -> bereaved; archaic or obsolete verb, no teaching value
+qiu7pf0psq	trash	pasado de bereave -> bereft; archaic or obsolete verb, no teaching value
+1276ck89cp	trash	participio de bereave -> bereaved; archaic or obsolete verb, no teaching value
+61ytxqxsb9	trash	participio de bereave -> bereft; archaic or obsolete verb, no teaching value
+pzjzprr5gv	trash	pasado de beseech -> besought; archaic or obsolete verb, no teaching value
+vko2le6zyp	trash	pasado de beseech -> beseeched; archaic or obsolete verb, no teaching value
+uich1zjdna	trash	participio de beseech -> besought; archaic or obsolete verb, no teaching value
+7h07mnfit6	trash	participio de beseech -> beseeched; archaic or obsolete verb, no teaching value
+19hpxwpcr5	trash	pasado de clad -> cladded; archaic or obsolete verb, no teaching value
+zsscsfexzx	trash	participio de clad -> cladded; archaic or obsolete verb, no teaching value
+yz949z5pu7	trash	pasado de cleave -> cleaved; archaic or obsolete verb, no teaching value
+euo4wpu2mg	trash	pasado de cleave -> cleft; archaic or obsolete verb, no teaching value
+4uyymw0t56	trash	pasado de cleave -> clove; archaic or obsolete verb, no teaching value
+42riw0k2jk	trash	participio de cleave -> cleaved; archaic or obsolete verb, no teaching value
+nrvu1lxi3q	trash	participio de cleave -> cleft; archaic or obsolete verb, no teaching value
+ky5g8oc4q2	trash	participio de cleave -> cloven; archaic or obsolete verb, no teaching value
+tvl9oxg8za	trash	pasado de crow -> crowed; archaic or obsolete verb, no teaching value
+gcyl1yaxu4	trash	pasado de crow -> crew; archaic or obsolete verb, no teaching value
+8vrtai0klg	trash	participio de crow -> crowed; archaic or obsolete verb, no teaching value
+wrzqjzrsm5	trash	pasado de dwell -> dwelled; archaic or obsolete verb, no teaching value
+at31xyfxef	trash	pasado de dwell -> dwelt; archaic or obsolete verb, no teaching value
+ji4tjzxym6	trash	participio de dwell -> dwelled; archaic or obsolete verb, no teaching value
+cfbb2e6ndf	trash	participio de dwell -> dwelt; archaic or obsolete verb, no teaching value
+dqljw2g3fb	trash	pasado de forsake -> forsook; archaic or obsolete verb, no teaching value
+omxrh0oml4	trash	participio de forsake -> forsaken; archaic or obsolete verb, no teaching value
+67l6z8efvd	trash	pasado de gild -> gilded; archaic or obsolete verb, no teaching value
+5xv9qpxbli	trash	pasado de gild -> gilt; archaic or obsolete verb, no teaching value
+pxltlrh82l	trash	participio de gild -> gilded; archaic or obsolete verb, no teaching value
+r1p6ejcnea	trash	participio de gild -> gilt; archaic or obsolete verb, no teaching value
+ngp2txs8sl	trash	pasado de hew -> hewed; archaic or obsolete verb, no teaching value
+0r0rimmdjo	trash	participio de hew -> hewn; archaic or obsolete verb, no teaching value
+d07arp0ezo	trash	participio de hew -> hewed; archaic or obsolete verb, no teaching value
+lkgs5vybk7	trash	pasado de rend -> rent; archaic or obsolete verb, no teaching value
+xycoghopey	trash	participio de rend -> rent; archaic or obsolete verb, no teaching value
+b1jlkc3n60	trash	pasado de saw -> sawed; archaic or obsolete verb, no teaching value
+wwa9rna2ic	trash	participio de saw -> sawn; archaic or obsolete verb, no teaching value
+pc6c574ra8	trash	participio de saw -> sawed; archaic or obsolete verb, no teaching value
+s71ht9ghft	trash	pasado de shear -> sheared; archaic or obsolete verb, no teaching value
+2blx2liryn	trash	participio de shear -> shorn; archaic or obsolete verb, no teaching value
+d7blt3q1ln	trash	participio de shear -> sheared; archaic or obsolete verb, no teaching value
+vydsonuqwl	trash	pasado de shit -> shit; archaic or obsolete verb, no teaching value
+x09hotrdb1	trash	pasado de shit -> shat; archaic or obsolete verb, no teaching value
+rnbndcwcpx	trash	pasado de shit -> shitted; archaic or obsolete verb, no teaching value
+2db2dm6fmi	trash	participio de shit -> shit; archaic or obsolete verb, no teaching value
+6h1vmxoteo	trash	participio de shit -> shat; archaic or obsolete verb, no teaching value
+1lmmhpskfy	trash	participio de shit -> shitted; archaic or obsolete verb, no teaching value
+ces2knhhdp	trash	pasado de shoe -> shod; archaic or obsolete verb, no teaching value
+13vaiw0om5	trash	pasado de shoe -> shoed; archaic or obsolete verb, no teaching value
+kqf0k219aq	trash	participio de shoe -> shod; archaic or obsolete verb, no teaching value
+e8dxg0rcgv	trash	participio de shoe -> shoed; archaic or obsolete verb, no teaching value
+gbic14c1bl	trash	pasado de slay -> slew; archaic or obsolete verb, no teaching value
+qipz8vj41q	trash	participio de slay -> slain; archaic or obsolete verb, no teaching value
+v2iux3h0q2	trash	pasado de sling -> slung; archaic or obsolete verb, no teaching value
+ghudevgsg8	trash	participio de sling -> slung; archaic or obsolete verb, no teaching value
+u2p45s0gbc	trash	pasado de slink -> slunk; archaic or obsolete verb, no teaching value
+zfusxl519i	trash	participio de slink -> slunk; archaic or obsolete verb, no teaching value
+gx4nh7ly3p	trash	pasado de slit -> slit; archaic or obsolete verb, no teaching value
+6c6zg0hrym	trash	participio de slit -> slit; archaic or obsolete verb, no teaching value
+6ro5rchp41	trash	pasado de smite -> smote; archaic or obsolete verb, no teaching value
+hazrr94gja	trash	participio de smite -> smitten; archaic or obsolete verb, no teaching value
+rao69o1r3o	trash	pasado de stave -> staved; archaic or obsolete verb, no teaching value
+4twv0egolm	trash	pasado de stave -> stove; archaic or obsolete verb, no teaching value
+odcj74uola	trash	participio de stave -> staved; archaic or obsolete verb, no teaching value
+p198pn8ikh	trash	participio de stave -> stove; archaic or obsolete verb, no teaching value
+6d945hvmzt	trash	pasado de strew -> strewed; archaic or obsolete verb, no teaching value
+ra9hiwzwsu	trash	participio de strew -> strewn; archaic or obsolete verb, no teaching value
+dd8iojfn1q	trash	participio de strew -> strewed; archaic or obsolete verb, no teaching value
+4a2nkafytd	trash	pasado de wring -> wrung; archaic or obsolete verb, no teaching value
+jdps9qicez	trash	participio de wring -> wrung; archaic or obsolete verb, no teaching value
+a3kagw94mr	trash	pasado de lean -> leant; British-variant form, course reference is North American
+ira1jgm5oy	trash	participio de lean -> leant; British-variant form, course reference is North American
+dzos9x7akn	trash	pasado de leap -> leapt; British-variant form, course reference is North American
+1xsyoeejxk	trash	participio de leap -> leapt; British-variant form, course reference is North American
+vswircmc48	trash	pasado de learn -> learnt; British-variant form, course reference is North American
+g2r92k80lg	trash	participio de learn -> learnt; British-variant form, course reference is North American
+g8r0qoiuly	trash	pasado de spill -> spilt; British-variant form, course reference is North American
+y6fsz37jss	trash	participio de spill -> spilt; British-variant form, course reference is North American
+r10a1r51f2	trash	pasado de spoil -> spoilt; British-variant form, course reference is North American
+m5bq0f5gft	trash	participio de spoil -> spoilt; British-variant form, course reference is North American
+alf1zcitdg	trash	pasado de wet -> wetted; British-variant form, course reference is North American
+po63s9d46g	trash	participio de wet -> wetted; British-variant form, course reference is North American
+
+## 03-reference-thirdperson
+# Third-person conjugation instances that only restate the trivial add -s rule.
+pl5xxt5y4g	trash	hablar ==> habla -> to speak ==> speaks; one of 82 identical add-s instances, the rule is taught generically
+2uz7doxb0e	trash	hablar ==> habla -> to talk ==> talks; one of 82 identical add-s instances, the rule is taught generically
+rd9cl3utqc	trash	reparar ==> repara -> to repair ==> repairs; one of 82 identical add-s instances, the rule is taught generically
+1t5e3bthnt	trash	pensar ==> piensa -> to think ==> thinks; one of 82 identical add-s instances, the rule is taught generically
+77mteahr6q	trash	preguntar ==> pregunta -> to ask ==> asks; one of 82 identical add-s instances, the rule is taught generically
+8xusoe4ji6	trash	llamar ==> llama -> to call ==> calls; one of 82 identical add-s instances, the rule is taught generically
+uu837c53z3	trash	explicar ==> explica -> to explain ==> explains; one of 82 identical add-s instances, the rule is taught generically
+tmepzdp40w	trash	escuchar ==> escucha -> to listen ==> listens; one of 82 identical add-s instances, the rule is taught generically
+fqj30hu4ah	trash	ordenar ==> ordena -> to order ==> orders; one of 82 identical add-s instances, the rule is taught generically
+elvzhkveh1	trash	trabajar ==> trabaja -> to work ==> works; one of 82 identical add-s instances, the rule is taught generically
+v0vu2ohvcn	trash	funcionar ==> funciona -> to function ==> functions; one of 82 identical add-s instances, the rule is taught generically
+j65rseyqdu	trash	comprar ==> compra -> to buy ==> buys; one of 82 identical add-s instances, the rule is taught generically
+v6vyzkn2nj	trash	pagar ==> paga -> to pay ==> pays; one of 82 identical add-s instances, the rule is taught generically
+11sz2r4g1y	trash	costar ==> cuesta -> to cost ==> costs; one of 82 identical add-s instances, the rule is taught generically
+hg5trk5m8x	trash	gastar ==> gasta -> to spend ==> spends; one of 82 identical add-s instances, the rule is taught generically
+2yr92m1n2r	trash	llegar ==> llega -> to arrive ==> arrives; one of 82 identical add-s instances, the rule is taught generically
+mgb97an5x2	trash	llegar ==> llega -> to get to ==> gets to; one of 82 identical add-s instances, the rule is taught generically
+tgqcg4224t	trash	regresar ==> regresa -> to return ==> returns; one of 82 identical add-s instances, the rule is taught generically
+dn85m54o0p	trash	regresar ==> regresa -> to come back ==> comes back; one of 82 identical add-s instances, the rule is taught generically
+mywl0jkxa9	trash	regresar ==> regresa -> to go back ==> goes back; one of 82 identical add-s instances, the rule is taught generically
+fhqfl6ldk5	trash	manejar ==> maneja -> to drive ==> drives; one of 82 identical add-s instances, the rule is taught generically
+gxeg783kdj	trash	levantarse ==> se levanta -> to get up ==> gets up; one of 82 identical add-s instances, the rule is taught generically
+qdby5l1goe	trash	quedarse ==> se queda -> to stay ==> stays; one of 82 identical add-s instances, the rule is taught generically
+5a08vs88rm	trash	caminar ==> camina -> to walk ==> walks; one of 82 identical add-s instances, the rule is taught generically
+gulh6smc4n	trash	cerrar ==> cierra -> to close ==> closes; one of 82 identical add-s instances, the rule is taught generically
+rdc2qi3b74	trash	ayudar ==> ayuda -> to help ==> helps; one of 82 identical add-s instances, the rule is taught generically
+0a8ddzno6l	trash	presentar ==> presenta -> to introduce ==> introduces; one of 82 identical add-s instances, the rule is taught generically
+dzly2zd7z1	trash	encontrar ==> encuentra -> to find ==> finds; one of 82 identical add-s instances, the rule is taught generically
+i91j01io89	trash	buscar ==> busca -> to look for ==> looks for; one of 82 identical add-s instances, the rule is taught generically
+ysmtek0hjq	trash	mirar ==> mira -> to look at ==> looks at; one of 82 identical add-s instances, the rule is taught generically
+yxrvotszmc	trash	mostrar ==> muestra -> to show ==> shows; one of 82 identical add-s instances, the rule is taught generically
+s89u6kepr1	trash	dar ==> da -> to give ==> gives; one of 82 identical add-s instances, the rule is taught generically
+u67ltzqcub	trash	enviar ==> envía -> to send ==> sends; one of 82 identical add-s instances, the rule is taught generically
+71ntxcl7jf	trash	tomar ==> toma -> to take ==> takes; one of 82 identical add-s instances, the rule is taught generically
+gnfeiwj04t	trash	llevar ==> lleva -> to take ==> takes; one of 82 identical add-s instances, the rule is taught generically
+83vpzgu6by	trash	dejar ==> deja -> to leave ==> leaves; one of 82 identical add-s instances, the rule is taught generically
+cujeusywvb	trash	recordar ==> recuerda -> to remember ==> remembers; one of 82 identical add-s instances, the rule is taught generically
+lkkqeyfbmr	trash	olvidar ==> olvida -> to forget ==> forgets; one of 82 identical add-s instances, the rule is taught generically
+x794hz009u	trash	pasar ==> pasa -> to spend time ==> spends time; one of 82 identical add-s instances, the rule is taught generically
+qmd3xtyjpa	trash	empezar ==> empieza -> to start ==> starts; one of 82 identical add-s instances, the rule is taught generically
+x1rrmaacai	trash	esperar ==> espera -> to wait for ==> waits for; one of 82 identical add-s instances, the rule is taught generically
+r7oo6fra9g	trash	gustar ==> gusta -> to like ==> likes; one of 82 identical add-s instances, the rule is taught generically
+4ie7bcx345	trash	necesitar ==> necesita -> to need ==> needs; one of 82 identical add-s instances, the rule is taught generically
+obwi9y9vbu	trash	desayunar ==> desayuna -> to have breakfast ==> has breakfast; one of 82 identical add-s instances, the rule is taught generically
+1l4vskv6hz	trash	almorzar ==> almuerza -> to have lunch ==> has lunch; one of 82 identical add-s instances, the rule is taught generically
+bn5xjkp8v3	trash	cenar ==> cena -> to have dinner ==> has dinner; one of 82 identical add-s instances, the rule is taught generically
+3aq7o7dnnd	trash	correr ==> corre -> to run ==> runs; one of 82 identical add-s instances, the rule is taught generically
+6aoqsfs8xs	trash	decir ==> dice -> to tell ==> tells; one of 82 identical add-s instances, the rule is taught generically
+ftrvt6qd6t	trash	decidir ==> decide -> to decide ==> decides; one of 82 identical add-s instances, the rule is taught generically
+47f7wun903	trash	pedir ==> pide -> to ask for ==> asks for; one of 82 identical add-s instances, the rule is taught generically
+myw9988gx7	trash	pedir ==> pide -> to ask somebody to ==> asks somebody to; one of 82 identical add-s instances, the rule is taught generically
+5yvimm2cqb	trash	pedir ==> pide -> to order ==> orders; one of 82 identical add-s instances, the rule is taught generically
+sqr33lw1xk	trash	oír ==> oye -> to hear ==> hears; one of 82 identical add-s instances, the rule is taught generically
+l71v641a97	trash	leer ==> lee -> to read ==> reads; one of 82 identical add-s instances, the rule is taught generically
+cy5zk8m406	trash	escribir ==> escribe -> to write ==> writes; one of 82 identical add-s instances, the rule is taught generically
+8ysr2gccyh	trash	hacer ==> hace -> to make ==> makes; one of 82 identical add-s instances, the rule is taught generically
+gmjxk7k5oa	trash	comer ==> come -> to eat ==> eats; one of 82 identical add-s instances, the rule is taught generically
+z43zn0n2a6	trash	beber ==> bebe -> to drink ==> drinks; one of 82 identical add-s instances, the rule is taught generically
+klmzk7d2nc	trash	elegir ==> elige -> to choose ==> chooses; one of 82 identical add-s instances, the rule is taught generically
+d33g5goqca	trash	querer ==> quiere -> to want ==> wants; one of 82 identical add-s instances, the rule is taught generically
+choa4lgi17	trash	vivir ==> vive -> to live ==> lives; one of 82 identical add-s instances, the rule is taught generically
+w3zl3mk1uq	trash	vender ==> vende -> to sell ==> sells; one of 82 identical add-s instances, the rule is taught generically
+htwjktam41	trash	venir ==> viene -> to come ==> comes; one of 82 identical add-s instances, the rule is taught generically
+delqwlil7c	trash	volver ==> vuelve -> to return ==> returns; one of 82 identical add-s instances, the rule is taught generically
+ky952w1mt6	trash	volver ==> vuelve -> to come back ==> comes back; one of 82 identical add-s instances, the rule is taught generically
+vfl1ikiqsl	trash	volver ==> vuelve -> to go back ==> goes back; one of 82 identical add-s instances, the rule is taught generically
+o365ieku96	trash	conducir ==> conduce -> to drive ==> drives; one of 82 identical add-s instances, the rule is taught generically
+wpp6l0ck24	trash	salir ==> sale -> to leave ==> leaves; one of 82 identical add-s instances, the rule is taught generically
+8wtqwtl8bv	trash	abrir ==> abre -> to open ==> opens; one of 82 identical add-s instances, the rule is taught generically
+3s8svu6w1e	trash	conocer ==> conoce -> to know a person ==> knows a person; one of 82 identical add-s instances, the rule is taught generically
+1nle9omkmy	trash	conocer ==> conoce -> to meet ==> meets; one of 82 identical add-s instances, the rule is taught generically
+dhvbry32aa	trash	ver ==> ve -> to see ==> sees; one of 82 identical add-s instances, the rule is taught generically
+t2hy9htn41	trash	recibir ==> recibe -> to receive ==> receives; one of 82 identical add-s instances, the rule is taught generically
+xnwshio7xr	trash	obtener ==> obtiene -> to obtain ==> obtains; one of 82 identical add-s instances, the rule is taught generically
+l8njlz1l55	trash	obtener ==> obtiene -> to get ==> gets; one of 82 identical add-s instances, the rule is taught generically
+kq192vxydp	trash	traer ==> trae -> to bring ==> brings; one of 82 identical add-s instances, the rule is taught generically
+yof54y2bp0	trash	poner ==> pone -> to put ==> puts; one of 82 identical add-s instances, the rule is taught generically
+3dldosanl0	trash	sentir ==> siente -> to feel ==> feels; one of 82 identical add-s instances, the rule is taught generically
+rbdmjzr0bc	trash	saber ==> sabe -> to know information ==> knows information; one of 82 identical add-s instances, the rule is taught generically
+w4xcawon02	trash	entender ==> entiende -> to understand ==> understands; one of 82 identical add-s instances, the rule is taught generically
+beoprg47gr	trash	entender ==> entiende -> to get an idea ==> gets an idea; one of 82 identical add-s instances, the rule is taught generically
+s9kkkwedud	trash	creer ==> cree -> to believe ==> believes; one of 82 identical add-s instances, the rule is taught generically
+
+## 03-reference-a
+# Reference rows 1-560: promotions for genuinely mis-tiered high-utility language.
+24de35h6nw	supporting	darse por vencido/a -> to give up; very high-frequency phrasal verb
+0v47ifpsxd	supporting	estar casado/a con -> to be married to; basic personal-description language
+vx5dkts0j1	supporting	estar encendido/a -> to be on; basic device state, pairs with to be off
+fbhhwzgo6j	supporting	estar apagado/a -> to be off; basic device state
+km539emf2l	supporting	estar terminado/a -> to be done; high-frequency state
+jo1ruoxv9h	supporting	estar aqui -> to be here; basic location statement
+xc8k68t746	supporting	estar retrasado/a -> to be late; high-frequency everyday state
+vfjhy0rgs4	supporting	estar aburrido/a -> to be bored; the bored/boring contrast pairs with ser aburrido in supporting
+vuhn72n7gd	supporting	hacer amigos -> to make friends; high-frequency collocation
+dv55nncur9	supporting	ir de compras -> to go shopping; high-frequency everyday activity
+dbx7pnzub5	supporting	llevarse bien con -> to get along well with; high-frequency social language
+8kyqh0y19m	supporting	parecer [adjetivo] -> to seem [adjective]; the plain seem+adjective mapping
+mmnv7qavpx	supporting	alcanzar [un medio de transporte] -> to catch; pairs with core perder -> to miss transportation
+ev6a0etitd	supporting	la cuenta -> the bill; high-utility everyday noun
+wivk576p42	supporting	recordar haber [hecho algo] -> to remember [doing something]; completes the remember to-do vs -ing contrast
+mxhymxu0dx	supporting	ser listo/a -> to be smart; the canonical ser/estar contrast the database contract itself cites, and core holds estar listo/a
+
+## 03-reference-b
+# Reference rows 561-1120.
+# --- promotions to core: interrogatives and everyday verbs core is missing outright ---
+7lxhk2vc3g	core	como -> how; core holds question frames but no interrogative words at all
+3015o113yw	core	cual -> which; interrogative
+3ov21pqb58	core	cuando -> when; interrogative (core holds only cuando as a time connector)
+ci48dn458g	core	cuanto -> how much; interrogative
+v7852oe8df	core	cuantos/cuantas -> how many; interrogative
+0t9g2lohg7	core	donde -> where; interrogative
+d11xp5btf2	core	quien -> who; interrogative
+ccrgp9wvgz	core	tener [numero] anos -> to be [number] years old; the most common tener->be construction, core holds the rest of that family
+y4njcsmrzn	core	comprar [algo] -> to buy [something]; basic everyday verb absent from core
+l71bpvl4t0	core	pagar [algo] -> to pay [something]; basic transactional verb absent from core
+z5hsuuicna	core	leer [algo] -> to read [something]; basic everyday verb absent from core
+# --- promotions to supporting: high-frequency everyday language ---
+pe1f869we7	supporting	tener sueno -> to be sleepy; tener->be adjective family
+smffkflaqu	supporting	tener suerte -> to be lucky; tener->be adjective family
+5ai1ief8xm	supporting	bien -> okay; basic response word
+5p9qv88nn3	supporting	bueno/a -> good; basic adjective
+lkmlvytfdx	supporting	malo/a -> bad; basic adjective
+rf7wttxz5x	supporting	hoy -> today; basic time word
+uklvuftocv	supporting	manana -> tomorrow; basic time word
+ozs312yyzn	supporting	ayer -> yesterday; basic time word
+k2k4xsq191	supporting	la manana -> the morning; basic time-of-day word
+4abmpsiu46	supporting	la tarde -> the afternoon; basic time-of-day word
+rwj2zcgfcm	supporting	la noche -> the night; basic time-of-day word
+v2bifwqn7l	supporting	esta noche -> tonight; high-frequency time expression
+8rgf1v3z6t	supporting	ya -> already; basic time adverb
+gdwcgcevlo	supporting	aqui -> here; basic location word
+lslyoa2sdp	supporting	casi -> almost; basic degree adverb
+4f77g5k631	supporting	solo/a -> alone; basic adjective
+gjot4oxazn	supporting	tambien -> also; basic additive connector
+avsnfusolj	supporting	tampoco -> either; basic negative additive
+4xvfonkewz	supporting	otra vez -> again; basic repetition adverb
+cecjai7o3s	supporting	ya no -> not anymore; basic time adverb
+nkh76gulrq	supporting	ambos/as -> both; basic quantifier
+kdnvsz6v6j	supporting	cada -> each; basic quantifier
+sjrhmb2fr3	supporting	ser grande -> to be big; basic adjective
+4z5hy6veqe	supporting	construir [algo] -> to build; common everyday verb
+kp2hkv6bhh	supporting	cambiar [algo] -> to change; common everyday verb
+b0w5xppllc	supporting	nuevo/a -> new; basic adjective
+44tis0284q	supporting	ahora -> now; basic time word
+u6e7l73thm	supporting	viejo/a -> old; basic adjective
+p3iz88j7nj	supporting	otro/a [sustantivo] -> another [noun]; basic determiner
+4mjcl48qdl	supporting	otros/as [sustantivos] -> other [nouns]; basic determiner
+16421aymo4	supporting	empezar [algo] -> to start [something]; basic everyday verb
+# --- trash: meaningless or bundled-duplicate rows ---
+2c2lwpddfw	trash	"verb structure" -> "no separate word"; not a teachable concept, corrupt record
+gmjqldx7xe	trash	"a / hacia un lugar" bundles two prepositions and duplicates wsttz3une0 a un lugar -> to a place
+
+## 03-reference-c
+# Reference rows 1121-1690: basic adjectives, colors, numbers and everyday nouns sitting below their tier.
+aawalesw7o	core	vivir -> to live; basic everyday verb absent from core
+z2tltbudld	supporting	vivir en [un lugar] -> to live in [a place]
+6g3l09qji4	supporting	vivir con [alguien] -> to live with [somebody]
+svksm10h8x	supporting	usar -> to use; basic everyday verb
+# --- colors ---
+41sk71d7jq	supporting	ser rojo -> to be red; basic color vocabulary
+wof9vipshg	supporting	ser azul -> to be blue; basic color vocabulary
+ij9kh31g9s	supporting	ser verde -> to be green; basic color vocabulary
+dypln0ds39	supporting	ser amarillo -> to be yellow; basic color vocabulary
+zitwttv8hl	supporting	ser blanco -> to be white; basic color vocabulary
+hkvahmcgwi	supporting	ser negro -> to be black; basic color vocabulary
+# --- basic descriptive adjectives ---
+6msmcahhki	supporting	ser barato -> to be cheap; basic everyday adjective
+il1qcnb04w	supporting	ser caro -> to be expensive; basic everyday adjective
+d36nx7wrvf	supporting	ser corto -> to be short; basic everyday adjective
+v1a7c89j32	supporting	ser largo -> to be long; basic everyday adjective
+tn4zxjyp3o	supporting	ser lento -> to be slow; basic everyday adjective
+du2i421xic	supporting	ser oscuro -> to be dark; basic everyday adjective
+zogyll26ke	supporting	ser facil -> to be easy; basic everyday adjective
+ksmdrxloop	supporting	ser dificil -> to be difficult; basic everyday adjective
+o76acaxaxw	supporting	ser joven -> to be young; basic everyday adjective
+eqr05lh2tu	supporting	ser pequeno -> to be small; basic everyday adjective
+vjesp1jbub	supporting	ser rapido -> to be fast; basic everyday adjective
+61km55vsoh	supporting	estar ocupado -> to be busy; basic everyday state
+# --- high-frequency nouns ---
+rgkaoqx4c0	supporting	el carro -> car; basic everyday noun, not a transparent cognate
+5mcu9ayadt	supporting	la escuela -> school; basic everyday noun
+6dxba6d2ag	supporting	el telefono -> phone; very high-frequency noun
+116vm30sv8	supporting	la familia -> family; very high-frequency noun
+pq0vcgmueh	supporting	el/la estudiante -> student; high-frequency person noun
+6xf273imwi	supporting	el problema -> problem; high-frequency noun
+# --- cardinal numbers: foundational vocabulary, none currently above reference ---
+b1u0tt59t0	supporting	uno -> one
+sg0mhmy1g3	supporting	dos -> two
+916fz6l1gh	supporting	tres -> three
+sj02ormmtw	supporting	cuatro -> four
+wt98samedo	supporting	cinco -> five
+oy8v5zvn8b	supporting	seis -> six
+51gbegi9xv	supporting	siete -> seven
+qakubdvxn4	supporting	ocho -> eight
+8kk62n54ek	supporting	nueve -> nine
+2rx2xhdh4h	supporting	diez -> ten
+jv6ldncrer	supporting	once -> eleven
+g04obyf6c6	supporting	doce -> twelve
+2595sz61k6	supporting	trece -> thirteen
+zxxuc9rbeo	supporting	catorce -> fourteen
+81mkho1vkn	supporting	quince -> fifteen
+feji8uhi1z	supporting	dieciseis -> sixteen
+262y5pq2yi	supporting	diecisiete -> seventeen
+051wgcuarr	supporting	dieciocho -> eighteen
+renlsnx9th	supporting	diecinueve -> nineteen
+vv3m29x1n3	supporting	veinte -> twenty
+d3js97oguz	supporting	treinta -> thirty
+6i07a6cfgd	supporting	cuarenta -> forty
+887il2wd8y	supporting	cincuenta -> fifty
+ezhc4jm343	supporting	sesenta -> sixty
+bhyg7mtanw	supporting	setenta -> seventy
+bdzltbyuwl	supporting	ochenta -> eighty
+pdr584zg3c	supporting	noventa -> ninety
+
+## 03-reference-d
+# Reference rows 1691-2261.
+# --- promotions to core: basic everyday verbs core lacks entirely ---
+ytf51bteap	core	encontrar [algo] -> to find [something]; basic everyday verb absent from core
+rfz1qo5i8n	core	entender [algo] -> to understand [something]; essential comprehension verb absent from core
+93aj677j3n	core	olvidar [algo] -> to forget [something]; pairs with recordar, which core holds
+vcu1zud7v6	core	vender [algo] -> to sell [something]; pairs with comprar
+# --- months ---
+q9tuqos4be	supporting	enero -> January
+jwz58gd92h	supporting	febrero -> February
+z4zh0vz9g7	supporting	marzo -> March
+9dultormoy	supporting	abril -> April
+8t5gcxfjja	supporting	mayo -> May
+4vqpc9njvy	supporting	junio -> June
+1y17lp2kym	supporting	julio -> July
+0j3b8dq5ol	supporting	agosto -> August
+up01db9skk	supporting	septiembre -> September
+9q7ietsmy0	supporting	octubre -> October
+iv25rev3nx	supporting	noviembre -> November
+i9xzj22sh8	supporting	diciembre -> December
+# --- days of the week ---
+b5bellazox	supporting	lunes -> Monday
+dmds1ataaw	supporting	martes -> Tuesday
+vdmuuz7ozq	supporting	miercoles -> Wednesday
+kpscphg0bi	supporting	jueves -> Thursday
+hwpige4nqc	supporting	viernes -> Friday
+dtrbrlnt7k	supporting	sabado -> Saturday
+7cm192p84m	supporting	domingo -> Sunday
+# --- low ordinals: supporting already holds primero -> first ---
+b873sqi6dn	supporting	segundo -> second
+tjcqfkkqiu	supporting	tercero -> third
+wyiqfycbnf	supporting	cuarto -> fourth
+zx0826h1su	supporting	quinto -> fifth
+9xwjaxx2ka	supporting	sexto -> sixth
+bfnuu0ozjx	supporting	septimo -> seventh
+t6wkqhpm57	supporting	octavo -> eighth
+eoj808qjm7	supporting	noveno -> ninth
+t4ckxs8du4	supporting	decimo -> tenth
+03cqmjtz6k	supporting	cien -> one hundred; completes the cardinal set
+ctd9xdzidv	supporting	mil -> one thousand; completes the cardinal set
+# --- people and family ---
+gcoihxt1nd	supporting	la esposa -> wife
+j7296c3d60	supporting	el esposo -> husband
+19ya004i8h	supporting	la hermana -> sister
+knrpc1el8z	supporting	el hermano -> brother
+za4fiubic9	supporting	el hombre -> man
+e03ov1snu4	supporting	la mujer -> woman
+5cbtxjya9w	supporting	la nina -> girl
+e0ljw8aj5i	supporting	el nino -> boy
+0ytjmo9vca	supporting	el nino -> child
+j48zuk79f7	supporting	la persona -> person
+yrjum3vv1w	supporting	el amigo -> friend
+nq73s5l3lz	supporting	la amiga -> friend
+g2ecn2oi1k	supporting	la gente -> people
+0bnotvdld0	supporting	los ninos -> children
+# --- everyday places and objects ---
+oy7x5xmtxf	supporting	el lugar -> place
+jerljir3i3	supporting	la casa -> home
+ikrf0t6hcc	supporting	la tienda -> store
+z4gqxgd1ln	supporting	el cuarto -> room
+7w31zud2ye	supporting	el bano -> bathroom
+m0woso3bh0	supporting	la ciudad -> city
+x3fde0xia4	supporting	el pais -> country
+3z3dcdm7iy	supporting	en casa -> at home
+2h3rzc2x6s	supporting	el libro -> book
+d9y1w0dh2h	supporting	la pelicula -> movie
+2lpvfuekos	supporting	el dinero -> money
+4iu89gjrym	supporting	la tarea -> homework
+tzymzgnepe	supporting	la cosa -> thing
+kb60ft9vlh	supporting	la llave -> key
+lajv8m56q4	supporting	la mesa -> table
+ja9mynizmv	supporting	la respuesta -> answer
+1ngo1jbzh2	supporting	la luz -> light
+8d89ksf4c0	supporting	el precio -> price
+ezf2ocstyu	supporting	la mitad -> half
+iswcllbips	supporting	la direccion -> address
+9rswx58qx1	supporting	ingles -> English; the target language of the course
+0r3hwsp9ge	supporting	espanol -> Spanish; the learner's own language
+# --- everyday verbs ---
+oxdrdskeju	supporting	correr -> to run
+b29ry1lt3n	supporting	dormir -> to sleep
+abycyirnp6	supporting	elegir [algo] -> to choose
+rvq2d8l5eq	supporting	gastar [algo] -> to spend
+5x31mxhcwq	supporting	jugar [un juego o deporte] -> to play
+12bywx3jpk	supporting	morir -> to die
+wkajwgr1vb	supporting	mostrar [algo] -> to show [something]
+espkmj03d4	supporting	romper [algo] -> to break [something]
+9cyb4wa5a3	supporting	subir -> to go up
+1fuuisjsfo	supporting	bajar -> to go down
+e4wn19bujr	supporting	levantarse -> to get up
+wrm972d75x	supporting	andar -> to walk
+zg737wtrp2	supporting	ayudar a [alguien] con [algo] -> to help
+h4e5zg4qih	supporting	casarse -> to get married
+372sudzh0b	supporting	sentarse -> to sit down
+jjamoxjs7y	supporting	tirar [algo] -> to throw
+krnfpdxa43	supporting	preferir [hacer algo] -> to prefer to [do something]
+kfgyouvdqj	supporting	odiar [hacer algo] -> to hate to [do something]
+gzx4e3lkp6	supporting	odiar [hacer algo] -> to hate [doing something]
+# --- time and place expressions ---
+1l248n0d9p	supporting	esta semana -> this week
+hszvzaxmcv	supporting	la proxima semana -> next week
+ntzn66pmxo	supporting	la semana pasada -> last week
+ywmu9udgpo	supporting	este mes -> this month
+dicbiznsu7	supporting	el proximo mes -> next month
+uqb2qipaq0	supporting	el mes pasado -> last month
+0wlhrfyp5n	supporting	este ano -> this year
+6uqtv5ndip	supporting	el proximo ano -> next year
+0nw2v2tg59	supporting	el ano pasado -> last year
+dqtov5ojkf	supporting	una hora -> an hour
+k5lmf4gy2r	supporting	un segundo -> a second
+a980sdxliv	supporting	un minuto -> a minute
+mac4komrt9	supporting	ser mediodia -> to be noon
+ceyrr3ohg9	supporting	ser medianoche -> to be midnight
+20vcqfxz7x	supporting	a menudo -> often
+v5g3ptkmgk	supporting	pronto -> soon
+v103p7ixjh	supporting	temprano -> early
+wyrj7k8thq	supporting	alli -> there
+4240qxyqxs	supporting	cerca de un lugar -> near a place
+jlm6vadinl	supporting	lejos de un lugar -> far from a place
+em6f63veig	supporting	al lado de [algo] -> beside [something]
+e1kkk7zc7e	supporting	estar adentro -> to be inside
+27pb5p676r	supporting	estar afuera -> to be outside
+95yrl4jxn3	supporting	hacia [algo] -> toward [something]
+zkp7daj58t	supporting	quiza -> maybe
+37lvgw6mdi	supporting	un poco -> a little
+u1f7kuozok	supporting	despacio -> slowly
+# --- trash: bundled Spanish alternatives on stale pre-reslug ids, already covered unbundled ---
+take-up	trash	bundles empezar una actividad / ocupar espacio; tyi7ultt7w already holds empezar -> to take up
+take-in	trash	bundles enganar a alguien / absorber informacion; b9jycma895 already holds enganar -> to take in
