@@ -20292,7 +20292,8 @@
         "accent contrast",
         "es:tu",
         "en:your",
-        "topic:pronoun"
+        "topic:pronoun",
+        "pos:function-word"
       ],
       "curriculumRole": "core"
     },
@@ -20810,43 +20811,6 @@
       "curriculumRole": "supporting"
     },
     {
-      "id": "9xzv8domtf",
-      "spanish": "se",
-      "english": "yourself",
-      "example": {
-        "spanish": "Usted se ve en el espejo.",
-        "english": "You see yourself in the mirror."
-      },
-      "collections": [
-        "grammar:se",
-        "pos:pronoun",
-        "grammar:reflexive-pronoun",
-        "register:formal",
-        "en:yourself",
-        "topic:pronoun"
-      ],
-      "curriculumRole": "supporting"
-    },
-    {
-      "id": "5x4sfd3lvo",
-      "spanish": "se",
-      "english": "yourselves",
-      "example": {
-        "spanish": "Ustedes se ven en la foto.",
-        "english": "You see yourselves in the photo."
-      },
-      "collections": [
-        "grammar:se",
-        "pos:pronoun",
-        "grammar:reflexive-pronoun",
-        "register:formal",
-        "grammar:plural",
-        "en:yourselves",
-        "topic:pronoun"
-      ],
-      "curriculumRole": "supporting"
-    },
-    {
       "id": "lojl4a497b",
       "spanish": "se",
       "english": "each other",
@@ -20896,25 +20860,6 @@
         "sound:replacement-for-le-les",
         "grammar:indirect-object-pronoun",
         "en:her",
-        "grammar:object-pronoun",
-        "topic:pronoun"
-      ],
-      "curriculumRole": "supporting"
-    },
-    {
-      "id": "mgmd8az85i",
-      "spanish": "se",
-      "english": "to you",
-      "example": {
-        "spanish": "Le doy el libro a usted: se lo doy.",
-        "english": "I give you the book: I give it to you."
-      },
-      "collections": [
-        "grammar:se",
-        "pos:pronoun",
-        "sound:replacement-for-le-les",
-        "grammar:indirect-object-pronoun",
-        "en:you",
         "grammar:object-pronoun",
         "topic:pronoun"
       ],
@@ -26973,7 +26918,9 @@
         "pos:determiner",
         "grammar:quantifier",
         "es:cada",
-        "en:each"
+        "en:each",
+        "topic:pronoun",
+        "grammar:indefinite-pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -73764,7 +73711,7 @@
         "es:su",
         "en:its"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "29p1fsasc0",
@@ -75064,7 +75011,9 @@
         "grammar:quantifier",
         "grammar:masculine",
         "es:ambos",
-        "en:both"
+        "en:both",
+        "topic:pronoun",
+        "grammar:indefinite-pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -75623,6 +75572,291 @@
         "topic:pronoun",
         "es:aquellas",
         "en:those"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "how83ta0cg",
+      "spanish": "se",
+      "english": "themselves",
+      "example": {
+        "spanish": "Ellos se cuidan.",
+        "english": "They take care of themselves."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:reflexive-pronoun",
+        "grammar:plural",
+        "topic:pronoun",
+        "es:se",
+        "en:themselves"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "riyxs3nm2u",
+      "spanish": "nos",
+      "english": "each other",
+      "example": {
+        "spanish": "Nos ayudamos mucho.",
+        "english": "We help each other a lot."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:reciprocal-pronoun",
+        "grammar:plural",
+        "topic:pronoun",
+        "es:nos",
+        "en:each"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "hbcd9ibgfk",
+      "spanish": "a quién",
+      "english": "whom",
+      "example": {
+        "spanish": "¿A quién llamaste?",
+        "english": "Whom did you call?"
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:interrogative-pronoun",
+        "topic:pronoun",
+        "es:a",
+        "es:quién",
+        "en:whom"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "tpr473mus1",
+      "spanish": "en algún lugar",
+      "english": "anywhere",
+      "example": {
+        "spanish": "¿Lo viste en algún lugar?",
+        "english": "Did you see it anywhere?"
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:indefinite-pronoun",
+        "grammar:question",
+        "topic:pronoun",
+        "topic:location",
+        "es:lugar",
+        "en:anywhere"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "kvxg5q1l06",
+      "spanish": "cada uno",
+      "english": "each one",
+      "example": {
+        "spanish": "Cada uno trajo algo.",
+        "english": "Each one brought something."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:indefinite-pronoun",
+        "topic:pronoun",
+        "es:cada",
+        "en:each"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "hh9lhwdnn0",
+      "spanish": "Hablo. (sin \"yo\")",
+      "english": "I speak.",
+      "example": {
+        "spanish": "Hablo inglés todos los días.",
+        "english": "I speak English every day."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:subject-pronoun",
+        "contrast:dropped-subject",
+        "topic:pronoun",
+        "es:hablar",
+        "en:i",
+        "contrast:confusable"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "x1av7vxsfq",
+      "spanish": "Lo vi y le hablé.",
+      "english": "I saw him and spoke to him.",
+      "example": {
+        "spanish": "\"Lo\" es objeto directo; \"le\" es objeto indirecto.",
+        "english": "\"Lo\" is the direct object; \"le\" is the indirect object."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:object-pronoun",
+        "contrast:lo-vs-le",
+        "topic:pronoun",
+        "es:lo",
+        "es:le",
+        "en:him",
+        "contrast:confusable"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "1knkh582bu",
+      "spanish": "Es mi carro; es para mí.",
+      "english": "It's my car; it's for me.",
+      "example": {
+        "spanish": "\"mi\" (posesivo) frente a \"mí\" (después de preposición).",
+        "english": "\"mi\" (possessive) versus \"mí\" (after a preposition)."
+      },
+      "collections": [
+        "pos:pronoun",
+        "contrast:mi-vs-mi-tilde",
+        "topic:pronoun",
+        "es:mi",
+        "es:mí",
+        "en:my",
+        "contrast:confusable"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "tkxpoi9nqs",
+      "spanish": "Tú tienes tu libro.",
+      "english": "You have your book.",
+      "example": {
+        "spanish": "\"tú\" es el pronombre; \"tu\" es el posesivo.",
+        "english": "\"tú\" is the pronoun; \"tu\" is the possessive."
+      },
+      "collections": [
+        "pos:pronoun",
+        "contrast:tu-vs-tu-tilde",
+        "topic:pronoun",
+        "es:tú",
+        "es:tu",
+        "en:you",
+        "contrast:confusable"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "kdbj3vw37e",
+      "spanish": "Este libro es mío; esto es difícil.",
+      "english": "This book is mine; this is hard.",
+      "example": {
+        "spanish": "\"este\" acompaña a un sustantivo; \"esto\" va solo y es neutro.",
+        "english": "\"este\" goes with a noun; \"esto\" stands alone and is neuter."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:demonstrative",
+        "contrast:este-vs-esto",
+        "topic:pronoun",
+        "es:este",
+        "es:esto",
+        "en:this",
+        "contrast:confusable"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "rts0m9zrct",
+      "spanish": "Tú eres mi amigo; usted es mi jefe.",
+      "english": "You are my friend; you are my boss.",
+      "example": {
+        "spanish": "\"tú\" para confianza; \"usted\" para respeto. En inglés, solo \"you\".",
+        "english": "\"tú\" for closeness; \"usted\" for respect. In English, just \"you\"."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:subject-pronoun",
+        "contrast:tu-vs-usted",
+        "contrast:you-collapse",
+        "topic:pronoun",
+        "es:tú",
+        "es:usted",
+        "en:you",
+        "contrast:confusable"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "uc56hzo3rq",
+      "spanish": "Se miran; también se miran el uno al otro.",
+      "english": "They look at themselves; they also look at each other.",
+      "example": {
+        "spanish": "El mismo \"se\" puede ser reflexivo o recíproco.",
+        "english": "The same \"se\" can be reflexive or reciprocal."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:reflexive-pronoun",
+        "grammar:reciprocal-pronoun",
+        "contrast:se-reflexive-vs-reciprocal",
+        "topic:pronoun",
+        "es:se",
+        "en:themselves",
+        "contrast:confusable"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "9b8z571il4",
+      "spanish": "Su casa: de él, de ella, de ellos o de usted.",
+      "english": "Their house: his, hers, theirs, or yours.",
+      "example": {
+        "spanish": "Un solo \"su\" para his, her, its, their y your.",
+        "english": "One \"su\" for his, her, its, their, and your."
+      },
+      "collections": [
+        "pos:function-word",
+        "grammar:possessive-determiner",
+        "contrast:su-ambiguity",
+        "topic:pronoun",
+        "es:su",
+        "en:their",
+        "contrast:confusable"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "g7ter1hcnu",
+      "spanish": "Él lo sabe; yo lo veo a él.",
+      "english": "He knows it; I see him.",
+      "example": {
+        "spanish": "\"él\" es sujeto (he); \"lo\" es objeto (him).",
+        "english": "\"él\" is the subject (he); \"lo\" is the object (him)."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:subject-pronoun",
+        "contrast:el-vs-lo",
+        "topic:pronoun",
+        "es:él",
+        "es:lo",
+        "en:he",
+        "contrast:confusable"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "erpggh3iyy",
+      "spanish": "se",
+      "english": "yourselves",
+      "example": {
+        "spanish": "Ustedes se cuidan.",
+        "english": "You take care of yourselves."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:reflexive-pronoun",
+        "grammar:plural",
+        "topic:pronoun",
+        "es:se",
+        "en:yourselves"
       ],
       "curriculumRole": "reference"
     }

@@ -20,7 +20,8 @@ export type CollectionFacet =
   | "particle"
   | "topic"
   | "register"
-  | "dialect";
+  | "dialect"
+  | "contrast";
 
 export const COLLECTION_FACETS: Record<CollectionFacet, string> = {
   es: "Spanish headword — every sense and construction of one lemma",
@@ -38,6 +39,7 @@ export const COLLECTION_FACETS: Record<CollectionFacet, string> = {
   topic: "semantic domain",
   register: "formality / spoken vs written",
   dialect: "regional variety",
+  contrast: "a confusable pair a Spanish speaker must actively distinguish",
 };
 
 export function collectionFacet(name: string): CollectionFacet | null {

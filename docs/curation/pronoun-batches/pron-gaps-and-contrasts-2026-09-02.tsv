@@ -1,0 +1,17 @@
+# Phase 2 gap fills
+se	themselves	Ellos se cuidan.	They take care of themselves.	supporting	pos:pronoun|grammar:reflexive-pronoun|grammar:plural|topic:pronoun|es:se|en:themselves
+nos	each other	Nos ayudamos mucho.	We help each other a lot.	supporting	pos:pronoun|grammar:reciprocal-pronoun|grammar:plural|topic:pronoun|es:nos|en:each
+a quién	whom	¿A quién llamaste?	Whom did you call?	reference	pos:pronoun|grammar:interrogative-pronoun|topic:pronoun|es:a|es:quién|en:whom
+en algún lugar	anywhere	¿Lo viste en algún lugar?	Did you see it anywhere?	reference	pos:pronoun|grammar:indefinite-pronoun|grammar:question|topic:pronoun|topic:location|es:lugar|en:anywhere
+cada uno	each one	Cada uno trajo algo.	Each one brought something.	supporting	pos:pronoun|grammar:indefinite-pronoun|topic:pronoun|es:cada|en:each
+# Phase 3 contrast anchors: real bilingual sentences that put the pair side by side
+Hablo. (sin "yo")	I speak.	En español no digo "yo"; en inglés siempre digo "I".	In Spanish I drop "yo"; in English I always say "I".	core	pos:pronoun|grammar:subject-pronoun|contrast:dropped-subject|topic:pronoun|es:hablar|en:i
+Lo vi y le hablé.	I saw him and spoke to him.	"Lo" es objeto directo; "le" es objeto indirecto.	"Lo" is the direct object; "le" is the indirect object.	core	pos:pronoun|grammar:object-pronoun|contrast:lo-vs-le|topic:pronoun|es:lo|es:le|en:him
+Es mi carro; es para mí.	It's my car; it's for me.	"mi" (posesivo) frente a "mí" (después de preposición).	"mi" (possessive) versus "mí" (after a preposition).	supporting	pos:pronoun|contrast:mi-vs-mi-tilde|topic:pronoun|es:mi|es:mí|en:my
+Tú tienes tu libro.	You have your book.	"tú" es el pronombre; "tu" es el posesivo.	"tú" is the pronoun; "tu" is the possessive.	supporting	pos:pronoun|contrast:tu-vs-tu-tilde|topic:pronoun|es:tú|es:tu|en:you
+Este libro es mío; esto es difícil.	This book is mine; this is hard.	"este" acompaña a un sustantivo; "esto" va solo y es neutro.	"este" goes with a noun; "esto" stands alone and is neuter.	supporting	pos:pronoun|grammar:demonstrative|contrast:este-vs-esto|topic:pronoun|es:este|es:esto|en:this
+Tú eres mi amigo; usted es mi jefe.	You are my friend; you are my boss.	"tú" para confianza; "usted" para respeto. En inglés, solo "you".	"tú" for closeness; "usted" for respect. In English, just "you".	core	pos:pronoun|grammar:subject-pronoun|contrast:tu-vs-usted|contrast:you-collapse|topic:pronoun|es:tú|es:usted|en:you
+Se miran; también se miran el uno al otro.	They look at themselves; they also look at each other.	El mismo "se" puede ser reflexivo o recíproco.	The same "se" can be reflexive or reciprocal.	supporting	pos:pronoun|grammar:reflexive-pronoun|grammar:reciprocal-pronoun|contrast:se-reflexive-vs-reciprocal|topic:pronoun|es:se|en:themselves
+Su casa: de él, de ella, de ellos o de usted.	Their house: his, hers, theirs, or yours.	Un solo "su" para his, her, its, their y your.	One "su" for his, her, its, their, and your.	supporting	pos:function-word|grammar:possessive-determiner|contrast:su-ambiguity|topic:pronoun|es:su|en:their
+Él lo sabe; yo lo veo a él.	He knows it; I see him.	"él" es sujeto (he); "lo" es objeto (him).	"él" is the subject (he); "lo" is the object (him).	core	pos:pronoun|grammar:subject-pronoun|contrast:el-vs-lo|topic:pronoun|es:él|es:lo|en:he
+se	yourselves	Ustedes se cuidan.	You take care of yourselves.	reference	pos:pronoun|grammar:reflexive-pronoun|grammar:plural|topic:pronoun|es:se|en:yourselves

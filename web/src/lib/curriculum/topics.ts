@@ -30,7 +30,8 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       { collection: "grammar:indefinite-pronoun", label: "Indefinite" },
       { collection: "grammar:interrogative-pronoun", label: "Interrogative" },
       { collection: "grammar:relative-pronoun", label: "Relative" },
-      { collection: "grammar:subordinate-subject-pronoun", label: "In “want X to”" },
+      { collection: "grammar:subordinate-subject-pronoun", label: "él → him" },
+      { collection: "contrast:confusable", label: "Confusions" },
     ],
   },
 ];
