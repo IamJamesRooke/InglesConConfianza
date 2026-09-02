@@ -28,7 +28,6 @@ export type CurriculumPageFilters = {
 
 export type CurriculumPageResult = CurriculumPageFilters & {
   concepts: CurriculumConcept[];
-  availableCollections: string[];
   page: number;
   pageCount: number;
   totalConcepts: number;
@@ -119,24 +118,16 @@ export async function readCurriculumPage({
     Math.ceil(totalConcepts / curriculumPageSize),
   );
   const page = Math.min(Math.max(1, requestedPage), pageCount);
-  const [concepts, collections] = await Promise.all([
-    prisma.curriculumConcept.findMany({
-      where,
-      orderBy: [{ curriculumRole: "asc" }, { sortOrder: "asc" }],
-      skip: (page - 1) * curriculumPageSize,
-      take: curriculumPageSize,
-      include: conceptRelations,
-    }),
-    prisma.collection.findMany({
-      where: { conceptMemberships: { some: {} } },
-      orderBy: { name: "asc" },
-      select: { name: true },
-    }),
-  ]);
+  const concepts = await prisma.curriculumConcept.findMany({
+    where,
+    orderBy: [{ curriculumRole: "asc" }, { sortOrder: "asc" }],
+    skip: (page - 1) * curriculumPageSize,
+    take: curriculumPageSize,
+    include: conceptRelations,
+  });
 
   return {
     concepts: concepts.map(toCurriculumConcept),
-    availableCollections: collections.map(({ name }) => name),
     page,
     pageCount,
     totalConcepts,

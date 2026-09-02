@@ -63,7 +63,6 @@ export default async function CurriculumTopicPage({
         <CurriculumTable
           key={`${slug}:${activeFacets.join(",")}:${curriculum.page}:${curriculum.totalConcepts}:${curriculum.search}:${curriculum.collection}:${curriculum.role}`}
           initialConcepts={curriculum.concepts}
-          availableCollections={curriculum.availableCollections}
           totalConcepts={curriculum.totalConcepts}
           page={curriculum.page}
           pageCount={curriculum.pageCount}

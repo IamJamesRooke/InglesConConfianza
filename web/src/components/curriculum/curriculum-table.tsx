@@ -52,19 +52,6 @@ function getRoleLabel(role: CurriculumRole) {
 }
 const collectionHues = [25, 55, 90, 145, 190, 235, 275, 315, 350];
 
-function groupCollectionsByFacet(names: string[]): Array<[string, string[]]> {
-  const groups = new Map<string, string[]>();
-  for (const name of names) {
-    const facet = name.includes(":") ? name.slice(0, name.indexOf(":")) : "other";
-    const bucket = groups.get(facet) ?? [];
-    bucket.push(name);
-    groups.set(facet, bucket);
-  }
-  return [...groups.entries()].sort(([a], [b]) =>
-    a === "other" ? 1 : b === "other" ? -1 : a.localeCompare(b),
-  );
-}
-
 function getCollectionStyle(collection: string) {
   const hash = [...collection].reduce(
     (currentHash, character) =>
@@ -116,7 +103,6 @@ type QuickFacet = { collection: string; label: string };
 
 export function CurriculumTable({
   initialConcepts,
-  availableCollections,
   totalConcepts,
   page,
   pageCount,
@@ -126,7 +112,6 @@ export function CurriculumTable({
   activeFacets = [],
 }: {
   initialConcepts: CurriculumConcept[];
-  availableCollections: string[];
   totalConcepts: number;
   page: number;
   pageCount: number;
@@ -657,31 +642,19 @@ export function CurriculumTable({
         </div>
       )}
 
-      <div className="mb-4">
-        <label className="flex w-full max-w-sm items-center gap-2 text-sm font-medium text-muted-foreground">
-          Collection
-          <select
-            value={selectedCollection ?? ""}
-            onChange={(event) =>
-              navigate({ collection: event.target.value || null })
-            }
-            className="min-w-0 flex-1 rounded-lg border border-input bg-card px-3 py-2 text-sm font-medium text-foreground outline-none focus:border-ring focus:ring-3 focus:ring-ring/20"
+      {selectedCollection && (
+        <div className="mb-4 flex items-center gap-2 text-sm text-muted-foreground">
+          Filtered to
+          <button
+            type="button"
+            onClick={() => navigate({ collection: null })}
+            className="inline-flex items-center gap-1 rounded-full border border-primary bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground"
           >
-            <option value="">All collections ({availableCollections.length})</option>
-            {groupCollectionsByFacet(availableCollections).map(
-              ([facet, names]) => (
-                <optgroup key={facet} label={facet}>
-                  {names.map((collection) => (
-                    <option key={collection} value={collection}>
-                      {collection}
-                    </option>
-                  ))}
-                </optgroup>
-              ),
-            )}
-          </select>
-        </label>
-      </div>
+            {selectedCollection}
+            <X className="size-3" aria-hidden="true" />
+          </button>
+        </div>
+      )}
 
       <p className="mb-3 text-sm text-muted-foreground">
         Showing {firstVisibleConcept}-{lastVisibleConcept} of {totalConcepts}{" "}

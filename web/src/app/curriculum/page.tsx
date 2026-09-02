@@ -46,7 +46,6 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
         <CurriculumTable
           key={`${curriculum.page}:${curriculum.totalConcepts}:${curriculum.search}:${curriculum.collection}:${curriculum.role}`}
           initialConcepts={curriculum.concepts}
-          availableCollections={curriculum.availableCollections}
           totalConcepts={curriculum.totalConcepts}
           page={curriculum.page}
           pageCount={curriculum.pageCount}

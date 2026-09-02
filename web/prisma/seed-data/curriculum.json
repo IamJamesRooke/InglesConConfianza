@@ -44,9 +44,7 @@
         "construction:object-plus-complement",
         "es:querer",
         "en:want",
-        "grammar:object-control",
-        "grammar:subordinate-subject-pronoun",
-        "topic:pronoun"
+        "grammar:object-control"
       ],
       "curriculumRole": "core"
     },
@@ -122,9 +120,7 @@
         "construction:object-plus-complement",
         "es:querer",
         "en:like",
-        "grammar:object-control",
-        "grammar:subordinate-subject-pronoun",
-        "topic:pronoun"
+        "grammar:object-control"
       ],
       "curriculumRole": "supporting"
     },
@@ -510,9 +506,7 @@
         "es:que",
         "es:necesitar",
         "en:need",
-        "grammar:object-control",
-        "grammar:subordinate-subject-pronoun",
-        "topic:pronoun"
+        "grammar:object-control"
       ],
       "curriculumRole": "core"
     },
@@ -1824,8 +1818,7 @@
         "en:to",
         "es:decir",
         "en:tell",
-        "grammar:object-control",
-        "topic:pronoun"
+        "grammar:object-control"
       ],
       "curriculumRole": "core"
     },
@@ -3011,8 +3004,7 @@
         "en:to",
         "es:pedir",
         "en:ask",
-        "grammar:object-control",
-        "topic:pronoun"
+        "grammar:object-control"
       ],
       "curriculumRole": "core"
     },
@@ -5436,9 +5428,7 @@
         "construction:object-plus-complement",
         "es:esperar",
         "en:expect",
-        "grammar:object-control",
-        "grammar:subordinate-subject-pronoun",
-        "topic:pronoun"
+        "grammar:object-control"
       ],
       "curriculumRole": "supporting"
     },
@@ -7134,8 +7124,7 @@
         "construction:object-plus-complement",
         "es:hacer",
         "en:make",
-        "grammar:object-control",
-        "topic:pronoun"
+        "grammar:object-control"
       ],
       "curriculumRole": "supporting"
     },
@@ -13290,8 +13279,7 @@
         "form:full-infinitive",
         "es:conseguir",
         "en:get",
-        "grammar:object-control",
-        "topic:pronoun"
+        "grammar:object-control"
       ],
       "curriculumRole": "supporting"
     },
@@ -14675,8 +14663,7 @@
         "form:bare-infinitive",
         "es:dejar",
         "en:let",
-        "grammar:object-control",
-        "topic:pronoun"
+        "grammar:object-control"
       ],
       "curriculumRole": "core"
     },
@@ -26269,8 +26256,7 @@
         "construction:object-plus-complement",
         "es:permitir",
         "en:allow",
-        "grammar:object-control",
-        "topic:pronoun"
+        "grammar:object-control"
       ],
       "curriculumRole": "reference"
     },
@@ -59279,8 +59265,7 @@
         "form:full-infinitive",
         "es:ayudar",
         "en:help",
-        "grammar:object-control",
-        "topic:pronoun"
+        "grammar:object-control"
       ],
       "curriculumRole": "supporting"
     },
