@@ -45,11 +45,19 @@ export default async function CurriculumTopicPage({
     );
   const requestedPage = Number.parseInt(first(parameters.page) ?? "1", 10);
 
+  const sortParam = first(parameters.sort);
+  const sort =
+    sortParam === "spanish" ||
+    sortParam === "spanish-desc" ||
+    sortParam === "role"
+      ? sortParam
+      : ("default" as const);
   const curriculum = await readCurriculumPage({
     page: Number.isFinite(requestedPage) ? requestedPage : 1,
     search: (first(parameters.search) ?? "").trim(),
     collection: (first(parameters.collection) ?? "").trim(),
     role,
+    sort,
     requireCollections: [topic.baseCollection, ...activeFacets],
   });
 
@@ -61,7 +69,7 @@ export default async function CurriculumTopicPage({
           <p className="mt-2 text-muted-foreground">{topic.description}</p>
         </div>
         <CurriculumTable
-          key={`${slug}:${activeFacets.join(",")}:${curriculum.page}:${curriculum.totalConcepts}:${curriculum.search}:${curriculum.collection}:${curriculum.role}`}
+          key={`${slug}:${activeFacets.join(",")}:${curriculum.page}:${curriculum.totalConcepts}:${curriculum.search}:${curriculum.collection}:${curriculum.role}:${curriculum.sort}`}
           initialConcepts={curriculum.concepts}
           totalConcepts={curriculum.totalConcepts}
           page={curriculum.page}
@@ -70,6 +78,7 @@ export default async function CurriculumTopicPage({
             search: curriculum.search,
             collection: curriculum.collection,
             role: curriculum.role,
+            sort: curriculum.sort,
           }}
           lockedCollections={[topic.baseCollection]}
           quickFacets={topic.facetButtons}

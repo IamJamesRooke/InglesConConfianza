@@ -26,11 +26,19 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
     requestedRole === "trash"
       ? requestedRole
       : "all";
+  const sortParam = firstParameter(parameters.sort);
+  const sort =
+    sortParam === "spanish" ||
+    sortParam === "spanish-desc" ||
+    sortParam === "role"
+      ? sortParam
+      : ("default" as const);
   const curriculum = await readCurriculumPage({
     page: Number.isFinite(requestedPage) ? requestedPage : 1,
     search: (firstParameter(parameters.search) ?? "").trim(),
     collection: (firstParameter(parameters.collection) ?? "").trim(),
     role,
+    sort,
   });
 
   return (
@@ -44,7 +52,7 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
         </div>
 
         <CurriculumTable
-          key={`${curriculum.page}:${curriculum.totalConcepts}:${curriculum.search}:${curriculum.collection}:${curriculum.role}`}
+          key={`${curriculum.page}:${curriculum.totalConcepts}:${curriculum.search}:${curriculum.collection}:${curriculum.role}:${curriculum.sort}`}
           initialConcepts={curriculum.concepts}
           totalConcepts={curriculum.totalConcepts}
           page={curriculum.page}
@@ -53,6 +61,7 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
             search: curriculum.search,
             collection: curriculum.collection,
             role: curriculum.role,
+            sort: curriculum.sort,
           }}
         />
       </div>

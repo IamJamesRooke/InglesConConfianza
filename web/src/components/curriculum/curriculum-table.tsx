@@ -1,6 +1,9 @@
 "use client";
 
 import {
+  ArrowDown,
+  ArrowUp,
+  ArrowUpDown,
   ChevronLeft,
   ChevronRight,
   Pencil,
@@ -119,6 +122,7 @@ export function CurriculumTable({
     search: string;
     collection: string;
     role: CurriculumRole | "all";
+    sort: "default" | "spanish" | "spanish-desc" | "role";
   };
   lockedCollections?: string[];
   quickFacets?: QuickFacet[];
@@ -147,6 +151,29 @@ export function CurriculumTable({
   const [mappingSearch, setMappingSearch] = useState(filters.search);
   const selectedCollection = filters.collection || null;
   const selectedRole = filters.role;
+  const sort = filters.sort;
+
+  function sortButton(
+    label: string,
+    cycle: Array<typeof sort>,
+    icons: Partial<Record<typeof sort, typeof ArrowUp>>,
+  ) {
+    const index = cycle.indexOf(sort);
+    const next = cycle[(index + 1) % cycle.length];
+    const Icon = icons[sort] ?? ArrowUpDown;
+    return (
+      <button
+        type="button"
+        onClick={() => navigate({ sort: next === "default" ? null : next })}
+        className={`inline-flex items-center gap-1 transition hover:text-foreground ${
+          index > 0 ? "text-foreground" : ""
+        }`}
+      >
+        {label}
+        <Icon className="size-3.5" aria-hidden="true" />
+      </button>
+    );
+  }
   const firstVisibleConcept = totalConcepts === 0 ? 0 : (page - 1) * 50 + 1;
   const lastVisibleConcept =
     totalConcepts === 0
@@ -730,13 +757,23 @@ export function CurriculumTable({
                   className="size-4 cursor-pointer"
                 />
               </th>
-              <th className="px-5 py-3 font-semibold">Spanish concept</th>
+              <th className="w-32 px-5 py-3 font-semibold">
+                {sortButton(
+                  "Curriculum role",
+                  ["default", "role"],
+                  { role: ArrowUp },
+                )}
+              </th>
+              <th className="px-5 py-3 font-semibold">
+                {sortButton(
+                  "Spanish concept",
+                  ["default", "spanish", "spanish-desc"],
+                  { spanish: ArrowUp, "spanish-desc": ArrowDown },
+                )}
+              </th>
               <th className="px-5 py-3 font-semibold">English concept</th>
               <th className="px-5 py-3 font-semibold">Example</th>
               <th className="px-5 py-3 font-semibold">Collections</th>
-              <th className="w-32 px-5 py-3 font-semibold">
-                Curriculum role
-              </th>
               <th className="w-16 px-3 py-3">
                 <span className="sr-only">Actions</span>
               </th>
@@ -754,19 +791,6 @@ export function CurriculumTable({
                     className="size-4 cursor-pointer"
                   />
                 </td>
-                <td className="p-2 pl-2 font-medium">
-                  {renderEditableCell(concept, "spanish")}
-                </td>
-                <td className="p-2">{renderEditableCell(concept, "english")}</td>
-                <td className="p-2">
-                  <div className="min-w-56">
-                    {renderEditableCell(concept, "exampleSpanish")}
-                    <div className="border-t border-border/60">
-                      {renderEditableCell(concept, "exampleEnglish")}
-                    </div>
-                  </div>
-                </td>
-                <td className="p-2">{renderCollections(concept)}</td>
                 <td className="p-2">
                   <select
                     value={concept.curriculumRole}
@@ -792,6 +816,19 @@ export function CurriculumTable({
                     ))}
                   </select>
                 </td>
+                <td className="p-2 pl-2 font-medium">
+                  {renderEditableCell(concept, "spanish")}
+                </td>
+                <td className="p-2">{renderEditableCell(concept, "english")}</td>
+                <td className="p-2">
+                  <div className="min-w-56">
+                    {renderEditableCell(concept, "exampleSpanish")}
+                    <div className="border-t border-border/60">
+                      {renderEditableCell(concept, "exampleEnglish")}
+                    </div>
+                  </div>
+                </td>
+                <td className="p-2">{renderCollections(concept)}</td>
                 <td className="p-2 pr-3 text-right">
                   <button
                     type="button"

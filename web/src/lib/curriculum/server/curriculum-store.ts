@@ -20,10 +20,27 @@ type ConceptRow = {
 
 export const curriculumPageSize = 50;
 
+export type CurriculumSort =
+  | "default"
+  | "spanish"
+  | "spanish-desc"
+  | "role";
+
 export type CurriculumPageFilters = {
   search: string;
   collection: string;
   role: CurriculumRole | "all";
+  sort: CurriculumSort;
+};
+
+const SORT_ORDER_BY: Record<
+  CurriculumSort,
+  Prisma.CurriculumConceptOrderByWithRelationInput[]
+> = {
+  default: [{ curriculumRole: "asc" }, { sortOrder: "asc" }],
+  spanish: [{ spanish: "asc" }],
+  "spanish-desc": [{ spanish: "desc" }],
+  role: [{ curriculumRole: "asc" }, { spanish: "asc" }],
 };
 
 export type CurriculumPageResult = CurriculumPageFilters & {
@@ -87,6 +104,7 @@ export async function readCurriculumPage({
   search,
   collection,
   role,
+  sort,
   requireCollections = [],
 }: CurriculumPageFilters & {
   page: number;
@@ -120,7 +138,7 @@ export async function readCurriculumPage({
   const page = Math.min(Math.max(1, requestedPage), pageCount);
   const concepts = await prisma.curriculumConcept.findMany({
     where,
-    orderBy: [{ curriculumRole: "asc" }, { sortOrder: "asc" }],
+    orderBy: SORT_ORDER_BY[sort] ?? SORT_ORDER_BY.default,
     skip: (page - 1) * curriculumPageSize,
     take: curriculumPageSize,
     include: conceptRelations,
@@ -134,6 +152,7 @@ export async function readCurriculumPage({
     search,
     collection,
     role,
+    sort,
   };
 }
 
