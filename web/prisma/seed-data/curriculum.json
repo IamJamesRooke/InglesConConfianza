@@ -1322,7 +1322,7 @@
         "pos:noun",
         "morphology:suffix-er",
         "morphology:suffix-dor",
-        "en:person",
+        "grammar:human-object",
         "es:bebedor",
         "en:drinker"
       ],
@@ -1714,7 +1714,7 @@
         "pos:noun",
         "morphology:suffix-ante",
         "morphology:suffix-er",
-        "en:person",
+        "grammar:human-object",
         "es:hablante",
         "en:speaker"
       ],
@@ -1733,7 +1733,7 @@
         "pos:adjective",
         "morphology:suffix-dor",
         "morphology:suffix-ative",
-        "en:person",
+        "grammar:human-object",
         "es:ser",
         "en:talkative"
       ],
@@ -2947,7 +2947,7 @@
         "pos:noun",
         "morphology:suffix-dor",
         "morphology:suffix-er",
-        "en:person",
+        "grammar:human-object",
         "es:dador",
         "en:giver"
       ],
@@ -6272,7 +6272,7 @@
       "collections": [
         "es:extrañar",
         "pos:noun",
-        "en:person",
+        "grammar:human-object",
         "es:extraño",
         "en:stranger"
       ],
@@ -6548,7 +6548,7 @@
       "collections": [
         "es:ganar",
         "pos:noun",
-        "en:person",
+        "grammar:human-object",
         "morphology:suffix-dor",
         "morphology:suffix-er",
         "es:ganador",
@@ -6778,7 +6778,7 @@
       "collections": [
         "es:deber",
         "construction:there-be",
-        "es:singular",
+        "grammar:singular",
         "es:haber",
         "en:there"
       ],
@@ -6794,7 +6794,7 @@
       },
       "collections": [
         "construction:there-be",
-        "es:singular",
+        "grammar:singular",
         "grammar:contraction",
         "es:haber",
         "en:there"
@@ -6828,7 +6828,7 @@
       "collections": [
         "construction:there-be",
         "grammar:negative",
-        "es:singular",
+        "grammar:singular",
         "grammar:contraction",
         "es:haber",
         "en:there"
@@ -6864,7 +6864,7 @@
       "collections": [
         "construction:there-be",
         "grammar:question",
-        "es:singular",
+        "grammar:singular",
         "es:haber",
         "en:is"
       ],
@@ -6898,7 +6898,7 @@
       "collections": [
         "construction:there-be",
         "form:past",
-        "es:singular",
+        "grammar:singular",
         "es:haber",
         "en:there"
       ],
@@ -8718,7 +8718,7 @@
       "collections": [
         "es:mandar",
         "pos:adjective",
-        "en:person",
+        "grammar:human-object",
         "es:ser",
         "en:bossy"
       ],
@@ -9834,7 +9834,7 @@
       "collections": [
         "es:perder",
         "pos:noun",
-        "en:person",
+        "grammar:human-object",
         "morphology:suffix-dor",
         "morphology:suffix-er",
         "es:perdedor",
@@ -12859,7 +12859,7 @@
         "english": "I know Laura."
       },
       "collections": [
-        "en:person",
+        "grammar:human-object",
         "es:conocer",
         "en:know"
       ],
@@ -12874,7 +12874,7 @@
         "english": "I met Laura yesterday."
       },
       "collections": [
-        "en:person",
+        "grammar:human-object",
         "grammar:first-encounter",
         "es:conocer",
         "en:meet"
@@ -12893,7 +12893,7 @@
         "es:conocer",
         "en:meet",
         "form:present-perfect",
-        "en:person",
+        "grammar:human-object",
         "es:haber",
         "en:met"
       ],
@@ -12910,7 +12910,7 @@
       "collections": [
         "construction:verb-plus-infinitive",
         "en:to",
-        "en:person",
+        "grammar:human-object",
         "es:conocer",
         "en:get"
       ],
@@ -12975,7 +12975,7 @@
         "grammar:fixed-expression",
         "particle:by",
         "construction:map-de-by",
-        "en:person",
+        "grammar:human-object",
         "es:conocer",
         "en:know"
       ],
@@ -13010,7 +13010,7 @@
       "collections": [
         "es:conocer",
         "pos:noun",
-        "en:person",
+        "grammar:human-object",
         "form:participle",
         "es:conocido",
         "en:acquaintance"
@@ -13232,7 +13232,7 @@
       },
       "collections": [
         "construction:double-object",
-        "en:person",
+        "grammar:human-object",
         "es:conseguir",
         "en:get"
       ],
@@ -13384,7 +13384,7 @@
       },
       "collections": [
         "construction:double-object",
-        "en:person",
+        "grammar:human-object",
         "es:contar",
         "en:tell"
       ],
@@ -13401,7 +13401,7 @@
       "collections": [
         "en:that",
         "construction:map-que-that",
-        "en:person",
+        "grammar:human-object",
         "es:contar",
         "en:tell"
       ],
@@ -13623,7 +13623,7 @@
       "collections": [
         "es:contar",
         "pos:noun",
-        "en:person",
+        "grammar:human-object",
         "morphology:suffix-dor",
         "es:contador",
         "en:accountant"
@@ -13711,7 +13711,7 @@
       "collections": [
         "es:cost",
         "construction:double-object",
-        "en:person",
+        "grammar:human-object",
         "es:costar",
         "en:cost"
       ],
@@ -13899,7 +13899,7 @@
         "english": "I believe Ana."
       },
       "collections": [
-        "en:person",
+        "grammar:human-object",
         "construction:map-a-object",
         "es:creer",
         "en:believe"
@@ -13935,7 +13935,7 @@
         "construction:prepositional-verb",
         "particle:in",
         "construction:map-en-in",
-        "en:person",
+        "grammar:human-object",
         "es:creer",
         "en:believe"
       ],
@@ -14038,7 +14038,7 @@
         "es:creer",
         "en:believe",
         "grammar:causative",
-        "en:person",
+        "grammar:human-object",
         "es:hacer",
         "en:make"
       ],
@@ -14149,7 +14149,7 @@
       },
       "collections": [
         "construction:double-object",
-        "en:person",
+        "grammar:human-object",
         "es:deber",
         "en:owe"
       ],
@@ -14585,7 +14585,7 @@
       },
       "collections": [
         "grammar:fixed-expression",
-        "en:person",
+        "grammar:human-object",
         "es:deber",
         "en:owe"
       ],
@@ -14759,7 +14759,7 @@
       },
       "collections": [
         "construction:double-object",
-        "en:person",
+        "grammar:human-object",
         "es:dejar",
         "en:lend"
       ],
@@ -14776,7 +14776,7 @@
       "collections": [
         "construction:bare-infinitive",
         "en:use",
-        "en:person",
+        "grammar:human-object",
         "es:dejar",
         "en:let"
       ],
@@ -14937,7 +14937,7 @@
       },
       "collections": [
         "grammar:fixed-expression",
-        "en:person",
+        "grammar:human-object",
         "es:dejar",
         "en:leave"
       ],
@@ -15125,7 +15125,7 @@
         "particle:out",
         "en:of",
         "construction:map-de-out-of",
-        "en:person",
+        "grammar:human-object",
         "es:echar",
         "en:throw"
       ],
@@ -15144,7 +15144,7 @@
         "particle:out",
         "en:of",
         "construction:map-de-out-of",
-        "en:person",
+        "grammar:human-object",
         "es:echar",
         "en:kick"
       ],
@@ -15160,7 +15160,7 @@
       },
       "collections": [
         "employment",
-        "en:person",
+        "grammar:human-object",
         "es:echar",
         "en:fire"
       ],
@@ -15177,7 +15177,7 @@
       "collections": [
         "grammar:fixed-expression",
         "es:de",
-        "en:person",
+        "grammar:human-object",
         "regional Spanish",
         "es:echar",
         "en:miss"
@@ -15347,7 +15347,7 @@
       },
       "collections": [
         "grammar:fixed-expression",
-        "en:person",
+        "grammar:human-object",
         "es:echar",
         "en:give"
       ],
@@ -15742,7 +15742,7 @@
       "collections": [
         "es:robar",
         "pos:noun",
-        "en:person",
+        "grammar:human-object",
         "es:ladrón",
         "en:thief"
       ],
@@ -16770,7 +16770,7 @@
       "collections": [
         "es:seguir",
         "pos:noun",
-        "en:person",
+        "grammar:human-object",
         "morphology:suffix-dor",
         "morphology:suffix-er",
         "es:seguidor",
@@ -18772,7 +18772,7 @@
       "collections": [
         "es:trabajar",
         "pos:noun",
-        "en:person",
+        "grammar:human-object",
         "morphology:suffix-dor",
         "morphology:suffix-er",
         "es:trabajador",
@@ -20242,8 +20242,10 @@
         "grammar:personal-pronoun",
         "grammar:subject-pronoun",
         "grammar:first-person",
-        "es:singular",
-        "es:yo"
+        "grammar:singular",
+        "es:yo",
+        "en:i",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -20260,10 +20262,11 @@
         "grammar:personal-pronoun",
         "grammar:subject-pronoun",
         "grammar:second-person",
-        "es:singular",
+        "grammar:singular",
         "register:informal",
         "es:tú",
-        "en:you"
+        "en:you",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -20278,11 +20281,12 @@
       "collections": [
         "grammar:possessive-determiner",
         "grammar:second-person",
-        "es:singular",
+        "grammar:singular",
         "register:informal",
         "accent contrast",
         "es:tu",
-        "en:your"
+        "en:your",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -20299,10 +20303,11 @@
         "grammar:personal-pronoun",
         "grammar:subject-pronoun",
         "grammar:second-person",
-        "es:singular",
+        "grammar:singular",
         "register:formal",
         "es:usted",
-        "en:you"
+        "en:you",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -20319,10 +20324,11 @@
         "grammar:personal-pronoun",
         "grammar:subject-pronoun",
         "grammar:third-person",
-        "es:singular",
+        "grammar:singular",
         "grammar:masculine",
         "es:él",
-        "en:he"
+        "en:he",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -20339,10 +20345,11 @@
         "grammar:personal-pronoun",
         "grammar:subject-pronoun",
         "grammar:third-person",
-        "es:singular",
+        "grammar:singular",
         "grammar:feminine",
         "es:ella",
-        "en:she"
+        "en:she",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -20359,10 +20366,11 @@
         "grammar:personal-pronoun",
         "grammar:subject-pronoun",
         "grammar:third-person",
-        "es:singular",
+        "grammar:singular",
         "grammar:neuter",
         "es:ello",
-        "en:it"
+        "en:it",
+        "topic:pronoun"
       ],
       "curriculumRole": "reference"
     },
@@ -20383,7 +20391,8 @@
         "grammar:masculine",
         "grammar:mixed-group",
         "es:ellos",
-        "en:they"
+        "en:they",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -20403,7 +20412,8 @@
         "grammar:plural",
         "grammar:feminine",
         "es:ellas",
-        "en:they"
+        "en:they",
+        "topic:pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -20422,7 +20432,8 @@
         "grammar:first-person",
         "grammar:plural",
         "es:nosotros",
-        "en:we"
+        "en:we",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -20442,7 +20453,8 @@
         "grammar:plural",
         "grammar:feminine",
         "es:nosotras",
-        "en:we"
+        "en:we",
+        "topic:pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -20462,7 +20474,8 @@
         "grammar:plural",
         "register:formal",
         "es:ustedes",
-        "en:you"
+        "en:you",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -20479,9 +20492,10 @@
         "grammar:object-pronoun",
         "grammar:direct-object-pronoun",
         "grammar:first-person",
-        "es:singular",
+        "grammar:singular",
         "es:me",
-        "en:me"
+        "en:me",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -20498,10 +20512,11 @@
         "grammar:object-pronoun",
         "grammar:direct-object-pronoun",
         "grammar:second-person",
-        "es:singular",
+        "grammar:singular",
         "register:informal",
         "es:te",
-        "en:you"
+        "en:you",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -20520,7 +20535,8 @@
         "grammar:first-person",
         "grammar:plural",
         "es:nos",
-        "en:us"
+        "en:us",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -20536,10 +20552,11 @@
         "pos:pronoun",
         "grammar:indirect-object-pronoun",
         "grammar:third-person",
-        "es:singular",
+        "grammar:singular",
         "es:le",
         "en:him",
-        "grammar:object-pronoun"
+        "grammar:object-pronoun",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -20558,7 +20575,8 @@
         "grammar:plural",
         "es:les",
         "en:them",
-        "grammar:object-pronoun"
+        "grammar:object-pronoun",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -20575,10 +20593,11 @@
         "pos:pronoun",
         "grammar:direct-object-pronoun",
         "grammar:third-person",
-        "es:singular",
+        "grammar:singular",
         "grammar:masculine",
         "en:him",
-        "grammar:object-pronoun"
+        "grammar:object-pronoun",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -20595,10 +20614,11 @@
         "pos:pronoun",
         "grammar:direct-object-pronoun",
         "grammar:third-person",
-        "es:singular",
+        "grammar:singular",
         "grammar:neuter",
         "en:it",
-        "grammar:object-pronoun"
+        "grammar:object-pronoun",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -20615,10 +20635,11 @@
         "pos:pronoun",
         "grammar:direct-object-pronoun",
         "grammar:third-person",
-        "es:singular",
+        "grammar:singular",
         "register:formal",
         "en:you",
-        "grammar:object-pronoun"
+        "grammar:object-pronoun",
+        "topic:pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -20635,10 +20656,11 @@
         "pos:pronoun",
         "grammar:direct-object-pronoun",
         "grammar:third-person",
-        "es:singular",
+        "grammar:singular",
         "grammar:feminine",
         "en:her",
-        "grammar:object-pronoun"
+        "grammar:object-pronoun",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -20655,10 +20677,11 @@
         "pos:pronoun",
         "grammar:direct-object-pronoun",
         "grammar:third-person",
-        "es:singular",
+        "grammar:singular",
         "grammar:neuter",
         "en:it",
-        "grammar:object-pronoun"
+        "grammar:object-pronoun",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -20675,10 +20698,11 @@
         "pos:pronoun",
         "grammar:direct-object-pronoun",
         "grammar:third-person",
-        "es:singular",
+        "grammar:singular",
         "register:formal",
         "en:you",
-        "grammar:object-pronoun"
+        "grammar:object-pronoun",
+        "topic:pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -20699,7 +20723,8 @@
         "grammar:masculine",
         "grammar:mixed-group",
         "en:them",
-        "grammar:object-pronoun"
+        "grammar:object-pronoun",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -20719,7 +20744,8 @@
         "grammar:plural",
         "register:formal",
         "en:you",
-        "grammar:object-pronoun"
+        "grammar:object-pronoun",
+        "topic:pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -20739,7 +20765,8 @@
         "grammar:plural",
         "grammar:feminine",
         "en:them",
-        "grammar:object-pronoun"
+        "grammar:object-pronoun",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -20759,7 +20786,8 @@
         "grammar:plural",
         "register:formal",
         "en:you",
-        "grammar:object-pronoun"
+        "grammar:object-pronoun",
+        "topic:pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -20776,8 +20804,9 @@
         "pos:pronoun",
         "grammar:reflexive-pronoun",
         "grammar:third-person",
-        "es:singular",
-        "en:himself"
+        "grammar:singular",
+        "en:himself",
+        "topic:pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -20794,8 +20823,9 @@
         "pos:pronoun",
         "grammar:reflexive-pronoun",
         "grammar:third-person",
-        "es:singular",
-        "en:herself"
+        "grammar:singular",
+        "en:herself",
+        "topic:pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -20812,7 +20842,8 @@
         "pos:pronoun",
         "grammar:reflexive-pronoun",
         "register:formal",
-        "en:yourself"
+        "en:yourself",
+        "topic:pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -20830,7 +20861,8 @@
         "grammar:reflexive-pronoun",
         "register:formal",
         "grammar:plural",
-        "en:yourselves"
+        "en:yourselves",
+        "topic:pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -20846,7 +20878,8 @@
         "grammar:se",
         "pos:pronoun",
         "grammar:reciprocal-pronoun",
-        "en:each"
+        "en:each",
+        "topic:pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -20864,7 +20897,8 @@
         "sound:replacement-for-le-les",
         "grammar:indirect-object-pronoun",
         "en:him",
-        "grammar:object-pronoun"
+        "grammar:object-pronoun",
+        "topic:pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -20882,7 +20916,8 @@
         "sound:replacement-for-le-les",
         "grammar:indirect-object-pronoun",
         "en:her",
-        "grammar:object-pronoun"
+        "grammar:object-pronoun",
+        "topic:pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -20900,7 +20935,8 @@
         "sound:replacement-for-le-les",
         "grammar:indirect-object-pronoun",
         "en:you",
-        "grammar:object-pronoun"
+        "grammar:object-pronoun",
+        "topic:pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -20918,7 +20954,8 @@
         "sound:replacement-for-le-les",
         "grammar:indirect-object-pronoun",
         "en:them",
-        "grammar:object-pronoun"
+        "grammar:object-pronoun",
+        "topic:pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -20935,7 +20972,8 @@
         "pos:pronoun",
         "grammar:reflexive-pronoun",
         "en:thing",
-        "en:itself"
+        "en:itself",
+        "topic:pronoun"
       ],
       "curriculumRole": "reference"
     },
@@ -20952,7 +20990,7 @@
         "grammar:article",
         "grammar:definite-article",
         "grammar:masculine",
-        "es:singular",
+        "grammar:singular",
         "el vs él",
         "en:the"
       ],
@@ -20971,7 +21009,7 @@
         "grammar:article",
         "grammar:definite-article",
         "grammar:feminine",
-        "es:singular",
+        "grammar:singular",
         "en:the"
       ],
       "curriculumRole": "core"
@@ -21476,7 +21514,7 @@
         "english": "She supports her family."
       },
       "collections": [
-        "en:person",
+        "grammar:human-object",
         "es:mantener",
         "en:support"
       ],
@@ -22274,7 +22312,7 @@
       },
       "collections": [
         "es:bajo",
-        "es:exclamative",
+        "grammar:exclamative",
         "protest",
         "es:abajo",
         "en:down"
@@ -22717,7 +22755,6 @@
         "english": "Which book do you want, this one or that one?"
       },
       "collections": [
-        "es:cual",
         "grammar:question",
         "limited choice",
         "es:cuál",
@@ -22734,7 +22771,6 @@
         "english": "What is your name?"
       },
       "collections": [
-        "es:cual",
         "grammar:question",
         "false friend",
         "es:cuál",
@@ -22751,9 +22787,11 @@
         "english": "which"
       },
       "collections": [
-        "es:cual",
         "es:cuál",
-        "en:which"
+        "en:which",
+        "pos:pronoun",
+        "grammar:interrogative-pronoun",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -22766,9 +22804,11 @@
         "english": "what"
       },
       "collections": [
-        "es:cual",
         "es:cuál",
-        "en:what"
+        "en:what",
+        "pos:pronoun",
+        "grammar:interrogative-pronoun",
+        "topic:pronoun"
       ],
       "curriculumRole": "reference"
     },
@@ -24758,7 +24798,7 @@
     },
     {
       "id": "hnd0boisxm",
-      "spanish": "question qué",
+      "spanish": "qué (interrogativo)",
       "english": "what",
       "example": {
         "spanish": "question qué",
@@ -24766,10 +24806,12 @@
       },
       "collections": [
         "es:que",
-        "es:question",
-        "en:what"
+        "grammar:interrogative-pronoun",
+        "en:what",
+        "pos:pronoun",
+        "topic:pronoun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "core"
     },
     {
       "id": "7h7vii1lbc",
@@ -24781,14 +24823,13 @@
       },
       "collections": [
         "es:que",
-        "es:idea",
         "en:that"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "juf9q9vio8",
-      "spanish": "relative que: person",
+      "spanish": "que (relativo, persona)",
       "english": "who",
       "example": {
         "spanish": "relative que: person",
@@ -24796,14 +24837,16 @@
       },
       "collections": [
         "es:que",
-        "es:relative",
-        "en:who"
+        "grammar:relative-pronoun",
+        "en:who",
+        "pos:pronoun",
+        "topic:pronoun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "5gd7ah01d5",
-      "spanish": "relative que: person",
+      "spanish": "que (relativo, persona)",
       "english": "that",
       "example": {
         "spanish": "relative que: person",
@@ -24811,14 +24854,16 @@
       },
       "collections": [
         "es:que",
-        "es:relative",
-        "en:that"
+        "grammar:relative-pronoun",
+        "en:that",
+        "pos:pronoun",
+        "topic:pronoun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "waj2eefdj7",
-      "spanish": "relative que: thing",
+      "spanish": "que (relativo, cosa)",
       "english": "that",
       "example": {
         "spanish": "relative que: thing",
@@ -24826,14 +24871,16 @@
       },
       "collections": [
         "es:que",
-        "es:relative",
-        "en:that"
+        "grammar:relative-pronoun",
+        "en:that",
+        "pos:pronoun",
+        "topic:pronoun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "4z2b5kkbjr",
-      "spanish": "relative que: thing",
+      "spanish": "que (relativo, cosa)",
       "english": "which",
       "example": {
         "spanish": "relative que: thing",
@@ -24841,10 +24888,12 @@
       },
       "collections": [
         "es:que",
-        "es:relative",
-        "en:which"
+        "grammar:relative-pronoun",
+        "en:which",
+        "pos:pronoun",
+        "topic:pronoun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "jyx1d6zq9f",
@@ -24856,9 +24905,12 @@
       },
       "collections": [
         "es:que",
-        "en:what"
+        "en:what",
+        "pos:pronoun",
+        "grammar:relative-pronoun",
+        "topic:pronoun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "7izjvheben",
@@ -24870,14 +24922,17 @@
       },
       "collections": [
         "es:que",
-        "es:cual",
-        "en:which"
+        "es:cuál",
+        "en:which",
+        "pos:pronoun",
+        "grammar:relative-pronoun",
+        "topic:pronoun"
       ],
       "curriculumRole": "reference"
     },
     {
       "id": "2f7mb9mt9a",
-      "spanish": "exclamative qué",
+      "spanish": "qué (exclamativo)",
       "english": "what",
       "example": {
         "spanish": "exclamative qué",
@@ -24885,14 +24940,16 @@
       },
       "collections": [
         "es:que",
-        "es:exclamative",
-        "en:what"
+        "grammar:exclamative",
+        "en:what",
+        "pos:pronoun",
+        "topic:pronoun"
       ],
       "curriculumRole": "reference"
     },
     {
       "id": "y1roq1cyk2",
-      "spanish": "exclamative qué",
+      "spanish": "qué (exclamativo)",
       "english": "how",
       "example": {
         "spanish": "exclamative qué",
@@ -24900,8 +24957,10 @@
       },
       "collections": [
         "es:que",
-        "es:exclamative",
-        "en:how"
+        "grammar:exclamative",
+        "en:how",
+        "pos:pronoun",
+        "topic:pronoun"
       ],
       "curriculumRole": "reference"
     },
@@ -24984,7 +25043,7 @@
       },
       "collections": [
         "es:que",
-        "es:exclamative",
+        "grammar:exclamative",
         "es:qué",
         "en:what"
       ],
@@ -25000,7 +25059,7 @@
       },
       "collections": [
         "es:que",
-        "es:exclamative",
+        "grammar:exclamative",
         "es:qué",
         "en:how"
       ],
@@ -25087,7 +25146,10 @@
       "collections": [
         "es:quien",
         "es:quién",
-        "en:who"
+        "en:who",
+        "pos:pronoun",
+        "grammar:interrogative-pronoun",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -28367,7 +28429,7 @@
       "collections": [
         "grammar:the-other",
         "pos:determiner",
-        "es:singular",
+        "grammar:singular",
         "es:otro",
         "en:other"
       ],
@@ -32802,7 +32864,7 @@
         "cognate:ar-to-ar",
         "morphology:suffix-ar",
         "cognate:spelling-pattern",
-        "es:singular",
+        "grammar:singular",
         "en:singular"
       ],
       "curriculumRole": "reference"
@@ -46702,7 +46764,7 @@
       },
       "collections": [
         "grammar:plural",
-        "es:singular",
+        "grammar:singular",
         "pos:noun",
         "es:hombre",
         "en:man"
@@ -46755,7 +46817,7 @@
       },
       "collections": [
         "grammar:plural",
-        "es:singular",
+        "grammar:singular",
         "pos:noun",
         "es:mujer",
         "en:woman"
@@ -46862,7 +46924,7 @@
       },
       "collections": [
         "grammar:plural",
-        "es:singular",
+        "grammar:singular",
         "pos:noun",
         "es:niño",
         "en:child"
@@ -46915,10 +46977,10 @@
       },
       "collections": [
         "grammar:plural",
-        "es:singular",
+        "grammar:singular",
         "pos:noun",
         "es:persona",
-        "en:person"
+        "grammar:human-object"
       ],
       "curriculumRole": "supporting"
     },
@@ -47217,7 +47279,7 @@
         "topic:direction",
         "topic:location-expression",
         "es:cerca",
-        "en:near"
+        "grammar:proximal"
       ],
       "curriculumRole": "supporting"
     },
@@ -47255,7 +47317,7 @@
         "topic:direction",
         "topic:location-expression",
         "es:lejos",
-        "en:far"
+        "grammar:distal"
       ],
       "curriculumRole": "supporting"
     },
@@ -63060,7 +63122,7 @@
         "construction:there-be",
         "grammar:existence",
         "en:present",
-        "es:singular",
+        "grammar:singular",
         "there is",
         "es:haber",
         "en:there"
@@ -63098,7 +63160,7 @@
         "construction:there-be",
         "grammar:existence",
         "form:past",
-        "es:singular",
+        "grammar:singular",
         "there was",
         "es:haber",
         "en:there"
@@ -63137,7 +63199,7 @@
         "grammar:existence",
         "grammar:question",
         "en:present",
-        "es:singular",
+        "grammar:singular",
         "inversion",
         "es:haber",
         "en:is"
@@ -64458,11 +64520,14 @@
       "collections": [
         "pos:function-word",
         "grammar:demonstrative",
-        "es:singular",
-        "en:near",
+        "grammar:singular",
+        "grammar:proximal",
         "grammar:noun-phrase",
         "es:este",
-        "en:this"
+        "en:this",
+        "pos:pronoun",
+        "grammar:demonstrative-determiner",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -64477,11 +64542,14 @@
       "collections": [
         "pos:function-word",
         "grammar:demonstrative",
-        "es:singular",
-        "en:far",
+        "grammar:singular",
+        "grammar:distal",
         "grammar:noun-phrase",
         "es:ese",
-        "en:that"
+        "en:that",
+        "pos:pronoun",
+        "grammar:demonstrative-determiner",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -64497,12 +64565,15 @@
         "pos:function-word",
         "grammar:demonstrative",
         "grammar:plural",
-        "en:near",
+        "grammar:proximal",
         "grammar:noun-phrase",
         "grammar:stands-alone",
         "grammar:no-ones-required",
         "es:estos",
-        "en:these"
+        "en:these",
+        "pos:pronoun",
+        "grammar:demonstrative-determiner",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -64518,12 +64589,15 @@
         "pos:function-word",
         "grammar:demonstrative",
         "grammar:plural",
-        "en:far",
+        "grammar:distal",
         "grammar:noun-phrase",
         "grammar:stands-alone",
         "grammar:no-ones-required",
         "es:esos",
-        "en:those"
+        "en:those",
+        "pos:pronoun",
+        "grammar:demonstrative-determiner",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },

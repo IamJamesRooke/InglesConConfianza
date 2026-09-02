@@ -1,0 +1,24 @@
+RENAME	es:question	grammar:interrogative-pronoun	derive bug: English grammar term, not a Spanish lemma
+RENAME	es:relative	grammar:relative-pronoun	derive bug
+RENAME	es:exclamative	grammar:exclamative	derive bug
+DELETE	es:idea	derive bug from "idea connector que", meaningless
+RENAME	en:near	grammar:proximal	derive bug: "this" is not the word "near"
+RENAME	en:far	grammar:distal	derive bug: "that" is not the word "far"
+MERGE	es:cual	es:cuál	accent-stripped duplicate lemma
+hnd0boisxm	qué (interrogativo)	what	core	pos:pronoun|grammar:interrogative-pronoun|topic:pronoun	normalize junk "question qué" spanish field
+2f7mb9mt9a	qué (exclamativo)	what	reference	pos:pronoun|grammar:exclamative|topic:pronoun	normalize "exclamative qué"
+y1roq1cyk2	qué (exclamativo)	how	reference	pos:pronoun|grammar:exclamative|topic:pronoun	normalize "exclamative qué"; distinct English target
+juf9q9vio8	que (relativo, persona)	who	supporting	pos:pronoun|grammar:relative-pronoun|topic:pronoun	normalize "relative que: person"
+5gd7ah01d5	que (relativo, persona)	that	supporting	pos:pronoun|grammar:relative-pronoun|topic:pronoun	normalize "relative que: person"; that-form
+waj2eefdj7	que (relativo, cosa)	that	supporting	pos:pronoun|grammar:relative-pronoun|topic:pronoun	normalize "relative que: thing"
+4z2b5kkbjr	que (relativo, cosa)	which	supporting	pos:pronoun|grammar:relative-pronoun|topic:pronoun	normalize "relative que: thing"; which-form
+jyx1d6zq9f	lo que	what	supporting	pos:pronoun|grammar:relative-pronoun|topic:pronoun	relative "what"
+7izjvheben	lo cual	which	reference	pos:pronoun|grammar:relative-pronoun|topic:pronoun	relative "which" (non-restrictive)
+3015o113yw	cuál	which	core	pos:pronoun|grammar:interrogative-pronoun|topic:pronoun	interrogative pronoun
+g585r84tc1	cuál	what	reference	pos:pronoun|grammar:interrogative-pronoun|topic:pronoun	interrogative cuál => what before ser
+d11xp5btf2	quién	who	core	pos:pronoun|grammar:interrogative-pronoun|topic:pronoun	interrogative pronoun
+umj0jwueww	este/esta	this	core	pos:pronoun|grammar:demonstrative-determiner|grammar:proximal|topic:pronoun	fix en:near tag; keep as determiner (pronoun sense split in authoring batch)
+5xqlvi8o8k	ese/esa	that	core	pos:pronoun|grammar:demonstrative-determiner|grammar:distal|topic:pronoun	fix en:far tag
+n7ckq60x6x	estos/estas	these	core	pos:pronoun|grammar:demonstrative-determiner|grammar:proximal|grammar:plural|topic:pronoun	fix en:near tag
+cmwi64osep	esos/esas	those	core	pos:pronoun|grammar:demonstrative-determiner|grammar:distal|grammar:plural|topic:pronoun	fix en:far tag
+7h7vii1lbc	trash	"idea connector que -> that or no separate word" duplicates 9qaylitnlb que (cláusula) -> that

@@ -1,0 +1,2 @@
+RENAME	es:singular	grammar:singular	grammar term wrongly derived as a Spanish lemma
+RENAME	en:person	grammar:human-object	semantic "person" tag polluted by the straggler merge; not the la-persona lemma
