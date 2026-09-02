@@ -73,6 +73,17 @@ export async function auditPronounTopic() {
     (word) => !englishSeen.has(word.toLowerCase()),
   );
 
+  // Compound indefinites must carry their prefix/suffix morphology.
+  for (const c of concepts) {
+    const m = c.english.match(/^(some|any|no|every)\s?(body|one|thing|where)$/);
+    if (!m) continue;
+    const tags = c.collections.map((x) => x.collectionName);
+    if (!tags.includes(`morphology:prefix-${m[1]}`))
+      problems.push(`NO prefix    ${c.spanish} → ${c.english}`);
+    if (!tags.includes(`morphology:suffix-${m[2]}`))
+      problems.push(`NO suffix    ${c.spanish} → ${c.english}`);
+  }
+
   return { count: concepts.length, problems: problems.sort(), missingEnglish };
 }
 

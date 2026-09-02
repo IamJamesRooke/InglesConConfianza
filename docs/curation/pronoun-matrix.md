@@ -62,6 +62,10 @@ que (persona) → who/that · que (cosa) → that/which · lo que → what · lo
 | no- | nadie → nobody | nada → nothing | en ningún lugar → nowhere |
 | every- | todos → everybody · todo el mundo → everyone | todo → everything | en todas partes → everywhere |
 
+Every compound indefinite carries its analysable English parts as
+`morphology:prefix-{some,any,no,every}` and `morphology:suffix-{body,one,thing,where}`,
+so "all the some- words" or "all the -body words" is one filter click.
+
 Quantity indefinites: uno → one (impersonal) · ninguno → none · alguno → some · varios → several · cualquiera → anyone · ambos → both · cada uno → each one
 
 ## "want X to" — object-control shift

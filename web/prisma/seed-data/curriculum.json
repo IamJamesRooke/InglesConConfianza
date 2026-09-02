@@ -74218,7 +74218,9 @@
         "grammar:indefinite-pronoun",
         "topic:pronoun",
         "es:alguien",
-        "en:somebody"
+        "en:somebody",
+        "morphology:prefix-some",
+        "morphology:suffix-body"
       ],
       "curriculumRole": "core"
     },
@@ -74235,7 +74237,9 @@
         "grammar:indefinite-pronoun",
         "topic:pronoun",
         "es:alguien",
-        "en:someone"
+        "en:someone",
+        "morphology:prefix-some",
+        "morphology:suffix-one"
       ],
       "curriculumRole": "core"
     },
@@ -74253,7 +74257,9 @@
         "grammar:question",
         "topic:pronoun",
         "es:alguien",
-        "en:anybody"
+        "en:anybody",
+        "morphology:prefix-any",
+        "morphology:suffix-body"
       ],
       "curriculumRole": "supporting"
     },
@@ -74271,7 +74277,9 @@
         "grammar:question",
         "topic:pronoun",
         "es:alguien",
-        "en:anyone"
+        "en:anyone",
+        "morphology:prefix-any",
+        "morphology:suffix-one"
       ],
       "curriculumRole": "supporting"
     },
@@ -74288,7 +74296,9 @@
         "grammar:indefinite-pronoun",
         "topic:pronoun",
         "es:algo",
-        "en:something"
+        "en:something",
+        "morphology:prefix-some",
+        "morphology:suffix-thing"
       ],
       "curriculumRole": "core"
     },
@@ -74306,7 +74316,9 @@
         "grammar:question",
         "topic:pronoun",
         "es:algo",
-        "en:anything"
+        "en:anything",
+        "morphology:prefix-any",
+        "morphology:suffix-thing"
       ],
       "curriculumRole": "supporting"
     },
@@ -74324,7 +74336,9 @@
         "grammar:negative",
         "topic:pronoun",
         "es:nadie",
-        "en:nobody"
+        "en:nobody",
+        "morphology:prefix-no",
+        "morphology:suffix-body"
       ],
       "curriculumRole": "core"
     },
@@ -74342,7 +74356,9 @@
         "grammar:negative",
         "topic:pronoun",
         "es:nadie",
-        "en:no-one"
+        "en:no-one",
+        "morphology:prefix-no",
+        "morphology:suffix-one"
       ],
       "curriculumRole": "supporting"
     },
@@ -74360,7 +74376,9 @@
         "grammar:negative",
         "topic:pronoun",
         "es:nada",
-        "en:nothing"
+        "en:nothing",
+        "morphology:prefix-no",
+        "morphology:suffix-thing"
       ],
       "curriculumRole": "core"
     },
@@ -74377,7 +74395,9 @@
         "grammar:indefinite-pronoun",
         "topic:pronoun",
         "es:todo",
-        "en:everybody"
+        "en:everybody",
+        "morphology:prefix-every",
+        "morphology:suffix-body"
       ],
       "curriculumRole": "core"
     },
@@ -74394,7 +74414,9 @@
         "grammar:indefinite-pronoun",
         "topic:pronoun",
         "es:todo",
-        "en:everyone"
+        "en:everyone",
+        "morphology:prefix-every",
+        "morphology:suffix-one"
       ],
       "curriculumRole": "core"
     },
@@ -74411,7 +74433,9 @@
         "grammar:indefinite-pronoun",
         "topic:pronoun",
         "es:todo",
-        "en:everything"
+        "en:everything",
+        "morphology:prefix-every",
+        "morphology:suffix-thing"
       ],
       "curriculumRole": "core"
     },
@@ -74429,7 +74453,9 @@
         "topic:pronoun",
         "topic:location",
         "es:lugar",
-        "en:somewhere"
+        "en:somewhere",
+        "morphology:prefix-some",
+        "morphology:suffix-where"
       ],
       "curriculumRole": "supporting"
     },
@@ -74448,7 +74474,9 @@
         "topic:pronoun",
         "topic:location",
         "es:lugar",
-        "en:nowhere"
+        "en:nowhere",
+        "morphology:prefix-no",
+        "morphology:suffix-where"
       ],
       "curriculumRole": "reference"
     },
@@ -74466,7 +74494,9 @@
         "topic:pronoun",
         "topic:location",
         "es:parte",
-        "en:everywhere"
+        "en:everywhere",
+        "morphology:prefix-every",
+        "morphology:suffix-where"
       ],
       "curriculumRole": "supporting"
     },
@@ -74484,7 +74514,8 @@
         "grammar:impersonal",
         "topic:pronoun",
         "es:uno",
-        "en:one"
+        "en:one",
+        "morphology:suffix-one"
       ],
       "curriculumRole": "supporting"
     },
@@ -74553,7 +74584,9 @@
         "grammar:indefinite-pronoun",
         "topic:pronoun",
         "es:cualquiera",
-        "en:anyone"
+        "en:anyone",
+        "morphology:prefix-any",
+        "morphology:suffix-one"
       ],
       "curriculumRole": "supporting"
     },
@@ -74571,7 +74604,9 @@
         "grammar:fixed-expression",
         "topic:pronoun",
         "es:mundo",
-        "en:everyone"
+        "en:everyone",
+        "morphology:prefix-every",
+        "morphology:suffix-one"
       ],
       "curriculumRole": "supporting"
     },
@@ -75686,7 +75721,9 @@
         "topic:pronoun",
         "topic:location",
         "es:lugar",
-        "en:anywhere"
+        "en:anywhere",
+        "morphology:prefix-any",
+        "morphology:suffix-where"
       ],
       "curriculumRole": "reference"
     },
@@ -75703,7 +75740,8 @@
         "grammar:indefinite-pronoun",
         "topic:pronoun",
         "es:cada",
-        "en:each"
+        "en:each",
+        "morphology:suffix-one"
       ],
       "curriculumRole": "supporting"
     },
