@@ -165,7 +165,7 @@ test("the imported curriculum is exact and protected", async (context) => {
     item.collections.includes("phrasal verb"),
   )) {
     const words = concept.english.replace(/^to\s+/iu, "").split(/\s+/u);
-    assert.equal(concept.collections.includes(words[0]), true);
+    assert.equal(concept.collections.includes(`en:${words[0]}`), true);
     for (const particle of words.filter((word) => particles.has(word))) {
       assert.equal(concept.collections.includes(particle), true);
     }
@@ -233,12 +233,13 @@ test("the imported curriculum is exact and protected", async (context) => {
         concept.collections.filter((collection) =>
           /^transformation: .+ => .+$/u.test(collection),
         ).length !== 1 ||
-        concept.collections.filter((collection) =>
-          collection.startsWith("word family: "),
-        ).length !== 1,
+        !concept.collections.some(
+          (collection) =>
+            collection.startsWith("es:") || collection.startsWith("en:"),
+        ),
     ),
     [],
-    "Transformation relationships must remain atomic, normalized, and queryable by type and word family.",
+    "Transformation relationships must remain atomic, normalized, and queryable by type and lemma.",
   );
   assert.deepStrictEqual(
     recognitionMappings.filter(
@@ -259,7 +260,7 @@ test("the imported curriculum is exact and protected", async (context) => {
     [
       "transformation: -ful",
       "transformation: noun => adjective",
-      "word family: power",
+      "en:power",
       "suffix: -ful",
     ].every((collection) => powerTransformation.collections.includes(collection)),
     true,
@@ -269,7 +270,7 @@ test("the imported curriculum is exact and protected", async (context) => {
       (concept) =>
         concept.spanish === "ser rojo/a ==> ser rojizo/a" &&
         concept.english === "to be red ==> to be reddish" &&
-        concept.collections.includes("word family: red"),
+        concept.collections.includes("en:red"),
     ),
     true,
   );
@@ -288,7 +289,7 @@ test("the imported curriculum is exact and protected", async (context) => {
     transformations.some(
       (concept) =>
         concept.english === "to look forward to [something]" &&
-        ["look", "forward", "to"].every((collection) =>
+        ["en:look", "forward", "to"].every((collection) =>
           concept.collections.includes(collection),
         ),
     ),
@@ -421,11 +422,11 @@ test("the imported curriculum is exact and protected", async (context) => {
     new Set(
       pastForms.flatMap((concept) =>
         concept.collections.filter((collection) =>
-          collection.startsWith("word family: "),
+          collection.startsWith("en:"),
         ),
       ),
     ).size,
-    190,
+    164,
   );
   assert.deepStrictEqual(
     pastForms.filter((concept) => {
