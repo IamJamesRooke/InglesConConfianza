@@ -22,21 +22,27 @@ The database is a Spanish-to-English map. Only Spanish belongs in Spanish fields
 - Use stable bracket placeholders such as `[algo]`, `[alguien]`, `[hacer algo]`, `[something]`, `[somebody]`, and `[to do something]`.
 - Preserve one target per concept. Split bundled alternatives when they have different meanings or teaching behavior.
 - Store transformations as one normalized relationship on each side using ` ==> `, for example `el poder ==> ser poderoso/a` and `the power ==> to be powerful`.
-- Keep English `be` forms independently searchable when their surface form matters. Use collections such as `to be`, `am`, `is`, and `are` without changing the Spanish-first record direction.
+- Keep English `be` forms independently searchable when their surface form matters, via `en:` and `grammar:` collections, without changing the Spanish-first record direction.
 
 ## Collections
 
-Collections are flat, reusable query labels. They may describe:
+Collections are reusable query labels stored as a flat `string[]` on each concept, but they follow a `facet:value` naming convention. The controlled vocabulary and the allowed facets live in `web/src/lib/curriculum/collections.ts`; the database regression test rejects any collection whose facet is unknown, and any bare (un-namespaced) name not in that file's shrinking `LEGACY_COLLECTIONS` set.
 
-- part of speech: `verb`, `noun`, `adjective`, `adverb`;
-- semantic families: `days of the week`, `date`, `time`, `location`;
-- constructions: `followed by full infinitive`, `followed by bare infinitive`, `followed by gerund`, `uses past participle`;
-- transformations and morphology: `transformation: -ful`, `transformation: noun => adjective`, `prefix: be-`;
-- cognate and spelling families, including false cognates;
-- phrasal verbs, including both the lexical root and every stable particle; and
-- pronunciation families and homophones.
+Facets:
 
-Prefer controlled, predictable labels. During curation, merge spelling variants, vague one-off labels, and collections that encode the same idea. Do not introduce a second tag system until demonstrated needs exceed collections.
+- `es:` / `en:` — Spanish and English headword. Every sense and construction of one lemma under one tag, so the catalog is queryable as a bilingual dictionary: "English translations of ganar" is `es:ganar`; "Spanish translations of know" is `en:know`. The two directions are independent because the mapping is many-to-many at the word level.
+- `pos:` — part of speech.
+- `grammar:` — grammatical subcategory (`grammar:subject-pronoun`, `grammar:third-person`, `grammar:modal`, `grammar:phrasal-verb`). Nesting is expressed by co-tagging: a concept carries `pos:pronoun` and `grammar:subject-pronoun`.
+- `construction:` — sentence pattern or verb-complement shape (`construction:followed-by-gerund`, `construction:there-be`).
+- `form:` — verb form (`form:past`, `form:past-participle`, `form:third-person`).
+- `morphology:` — affix and derivation (`morphology:suffix-ful`, `morphology:noun-to-adjective`).
+- `cognate:` — cognate type and spelling-pattern family (`cognate:true`, `cognate:false-friend`, `cognate:spelling-pattern`).
+- `sound:` / `rhyme:` / `homophone:` — pronunciation families; `rhyme:` and `homophone:` are keyed by IPA.
+- `particle:` — phrasal-verb particle.
+- `topic:` — semantic domain (`topic:time`, `topic:date`).
+- `register:` / `dialect:` — formality and regional variety.
+
+During curation, apply collection changes from a reviewed manifest via `curriculum:collections:apply` (DELETE / MERGE / RENAME ops), recorded under `docs/curation/`. Merge spelling variants and collections that encode the same idea; give a new tag a facet. Do not introduce a second tag system until demonstrated needs exceed collections.
 
 ## Curriculum roles
 

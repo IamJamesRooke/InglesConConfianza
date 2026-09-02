@@ -52,6 +52,19 @@ function getRoleLabel(role: CurriculumRole) {
 }
 const collectionHues = [25, 55, 90, 145, 190, 235, 275, 315, 350];
 
+function groupCollectionsByFacet(names: string[]): Array<[string, string[]]> {
+  const groups = new Map<string, string[]>();
+  for (const name of names) {
+    const facet = name.includes(":") ? name.slice(0, name.indexOf(":")) : "other";
+    const bucket = groups.get(facet) ?? [];
+    bucket.push(name);
+    groups.set(facet, bucket);
+  }
+  return [...groups.entries()].sort(([a], [b]) =>
+    a === "other" ? 1 : b === "other" ? -1 : a.localeCompare(b),
+  );
+}
+
 function getCollectionStyle(collection: string) {
   const hash = [...collection].reduce(
     (currentHash, character) =>
@@ -600,11 +613,17 @@ export function CurriculumTable({
             className="min-w-0 flex-1 rounded-lg border border-input bg-card px-3 py-2 text-sm font-medium text-foreground outline-none focus:border-ring focus:ring-3 focus:ring-ring/20"
           >
             <option value="">All collections ({availableCollections.length})</option>
-            {availableCollections.map((collection) => (
-              <option key={collection} value={collection}>
-                {collection}
-              </option>
-            ))}
+            {groupCollectionsByFacet(availableCollections).map(
+              ([facet, names]) => (
+                <optgroup key={facet} label={facet}>
+                  {names.map((collection) => (
+                    <option key={collection} value={collection}>
+                      {collection}
+                    </option>
+                  ))}
+                </optgroup>
+              ),
+            )}
           </select>
         </label>
       </div>
