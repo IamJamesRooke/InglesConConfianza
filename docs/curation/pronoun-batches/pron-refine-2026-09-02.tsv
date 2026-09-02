@@ -1,0 +1,17 @@
+el mío	mine	El carro rojo es el mío.	The red car is mine.	supporting	pos:pronoun|grammar:possessive-pronoun|grammar:masculine|topic:pronoun|es:mío|en:mine
+la mía	mine	Esa maleta es la mía.	That suitcase is mine.	supporting	pos:pronoun|grammar:possessive-pronoun|grammar:feminine|topic:pronoun|es:mía|en:mine
+el tuyo	yours	Este asiento es el tuyo.	This seat is yours.	supporting	pos:pronoun|grammar:possessive-pronoun|grammar:masculine|topic:pronoun|es:tuyo|en:yours
+la tuya	yours	La idea es la tuya.	The idea is yours.	supporting	pos:pronoun|grammar:possessive-pronoun|grammar:feminine|topic:pronoun|es:tuya|en:yours
+el suyo	his	El paraguas azul es el suyo.	The blue umbrella is his.	supporting	pos:pronoun|grammar:possessive-pronoun|grammar:masculine|topic:pronoun|es:suyo|en:his
+la suya	hers	La culpa es la suya.	The fault is hers.	supporting	pos:pronoun|grammar:possessive-pronoun|grammar:feminine|topic:pronoun|es:suya|en:hers
+el suyo	theirs	Ese terreno es el suyo.	That land is theirs.	supporting	pos:pronoun|grammar:possessive-pronoun|grammar:masculine|grammar:plural|topic:pronoun|es:suyo|en:theirs
+el nuestro	ours	El primer turno es el nuestro.	The first turn is ours.	supporting	pos:pronoun|grammar:possessive-pronoun|grammar:masculine|grammar:plural|topic:pronoun|es:nuestro|en:ours
+la nuestra	ours	Esta victoria es la nuestra.	This victory is ours.	supporting	pos:pronoun|grammar:possessive-pronoun|grammar:feminine|grammar:plural|topic:pronoun|es:nuestra|en:ours
+tus	your	Tus llaves están en la mesa.	Your keys are on the table.	supporting	pos:function-word|grammar:possessive-determiner|grammar:plural|topic:pronoun|es:tu|en:your
+me	myself	Me miré en el espejo.	I looked at myself in the mirror.	core	pos:pronoun|grammar:reflexive-pronoun|grammar:singular|topic:pronoun|es:me|en:myself
+te	yourself	¿Te lastimaste?	Did you hurt yourself?	core	pos:pronoun|grammar:reflexive-pronoun|grammar:singular|topic:pronoun|es:te|en:yourself
+nos	ourselves	Nos preparamos para el viaje.	We got ourselves ready for the trip.	supporting	pos:pronoun|grammar:reflexive-pronoun|grammar:plural|topic:pronoun|es:nos|en:ourselves
+a nosotros	to us	Nos lo dijeron a nosotros.	They told it to us.	supporting	pos:pronoun|grammar:prepositional-pronoun|grammar:plural|particle:to|topic:pronoun|es:a|es:nosotros|en:to|en:us
+a ellos	to them	El premio les tocó a ellos.	The prize went to them.	supporting	pos:pronoun|grammar:prepositional-pronoun|grammar:plural|particle:to|topic:pronoun|es:a|es:ellos|en:to|en:them
+aquellos	those	Aquellos días fueron felices.	Those days were happy.	reference	pos:function-word|grammar:demonstrative|grammar:demonstrative-determiner|grammar:plural|grammar:distal|grammar:masculine|topic:pronoun|es:aquellos|en:those
+aquellas	those	Aquellas casas ya no existen.	Those houses no longer exist.	reference	pos:function-word|grammar:demonstrative|grammar:demonstrative-determiner|grammar:plural|grammar:distal|grammar:feminine|topic:pronoun|es:aquellas|en:those

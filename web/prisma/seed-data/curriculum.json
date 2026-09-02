@@ -20250,7 +20250,6 @@
         "pos:pronoun",
         "grammar:personal-pronoun",
         "grammar:subject-pronoun",
-        "grammar:first-person",
         "grammar:singular",
         "es:yo",
         "en:i",
@@ -20270,7 +20269,6 @@
         "pos:pronoun",
         "grammar:personal-pronoun",
         "grammar:subject-pronoun",
-        "grammar:second-person",
         "grammar:singular",
         "register:informal",
         "es:tú",
@@ -20289,7 +20287,6 @@
       },
       "collections": [
         "grammar:possessive-determiner",
-        "grammar:second-person",
         "grammar:singular",
         "register:informal",
         "accent contrast",
@@ -20311,7 +20308,6 @@
         "pos:pronoun",
         "grammar:personal-pronoun",
         "grammar:subject-pronoun",
-        "grammar:second-person",
         "grammar:singular",
         "register:formal",
         "es:usted",
@@ -20332,7 +20328,6 @@
         "pos:pronoun",
         "grammar:personal-pronoun",
         "grammar:subject-pronoun",
-        "grammar:third-person",
         "grammar:singular",
         "grammar:masculine",
         "es:él",
@@ -20353,7 +20348,6 @@
         "pos:pronoun",
         "grammar:personal-pronoun",
         "grammar:subject-pronoun",
-        "grammar:third-person",
         "grammar:singular",
         "grammar:feminine",
         "es:ella",
@@ -20374,7 +20368,6 @@
         "pos:pronoun",
         "grammar:personal-pronoun",
         "grammar:subject-pronoun",
-        "grammar:third-person",
         "grammar:singular",
         "grammar:neuter",
         "es:ello",
@@ -20395,7 +20388,6 @@
         "pos:pronoun",
         "grammar:personal-pronoun",
         "grammar:subject-pronoun",
-        "grammar:third-person",
         "grammar:plural",
         "grammar:masculine",
         "grammar:mixed-group",
@@ -20417,7 +20409,6 @@
         "pos:pronoun",
         "grammar:personal-pronoun",
         "grammar:subject-pronoun",
-        "grammar:third-person",
         "grammar:plural",
         "grammar:feminine",
         "es:ellas",
@@ -20438,7 +20429,6 @@
         "pos:pronoun",
         "grammar:personal-pronoun",
         "grammar:subject-pronoun",
-        "grammar:first-person",
         "grammar:plural",
         "es:nosotros",
         "en:we",
@@ -20458,7 +20448,6 @@
         "pos:pronoun",
         "grammar:personal-pronoun",
         "grammar:subject-pronoun",
-        "grammar:first-person",
         "grammar:plural",
         "grammar:feminine",
         "es:nosotras",
@@ -20479,7 +20468,6 @@
         "pos:pronoun",
         "grammar:personal-pronoun",
         "grammar:subject-pronoun",
-        "grammar:second-person",
         "grammar:plural",
         "register:formal",
         "es:ustedes",
@@ -20500,7 +20488,6 @@
         "pos:pronoun",
         "grammar:object-pronoun",
         "grammar:direct-object-pronoun",
-        "grammar:first-person",
         "grammar:singular",
         "es:me",
         "en:me",
@@ -20520,7 +20507,6 @@
         "pos:pronoun",
         "grammar:object-pronoun",
         "grammar:direct-object-pronoun",
-        "grammar:second-person",
         "grammar:singular",
         "register:informal",
         "es:te",
@@ -20541,7 +20527,6 @@
         "pos:pronoun",
         "grammar:object-pronoun",
         "grammar:direct-object-pronoun",
-        "grammar:first-person",
         "grammar:plural",
         "es:nos",
         "en:us",
@@ -20560,7 +20545,6 @@
       "collections": [
         "pos:pronoun",
         "grammar:indirect-object-pronoun",
-        "grammar:third-person",
         "grammar:singular",
         "es:le",
         "en:him",
@@ -20580,7 +20564,6 @@
       "collections": [
         "pos:pronoun",
         "grammar:indirect-object-pronoun",
-        "grammar:third-person",
         "grammar:plural",
         "es:les",
         "en:them",
@@ -20601,7 +20584,6 @@
         "es:lo",
         "pos:pronoun",
         "grammar:direct-object-pronoun",
-        "grammar:third-person",
         "grammar:singular",
         "grammar:masculine",
         "en:him",
@@ -20622,7 +20604,6 @@
         "es:lo",
         "pos:pronoun",
         "grammar:direct-object-pronoun",
-        "grammar:third-person",
         "grammar:singular",
         "grammar:neuter",
         "en:it",
@@ -20643,7 +20624,6 @@
         "es:lo",
         "pos:pronoun",
         "grammar:direct-object-pronoun",
-        "grammar:third-person",
         "grammar:singular",
         "register:formal",
         "en:you",
@@ -20664,7 +20644,6 @@
         "es:la",
         "pos:pronoun",
         "grammar:direct-object-pronoun",
-        "grammar:third-person",
         "grammar:singular",
         "grammar:feminine",
         "en:her",
@@ -20685,7 +20664,6 @@
         "es:la",
         "pos:pronoun",
         "grammar:direct-object-pronoun",
-        "grammar:third-person",
         "grammar:singular",
         "grammar:neuter",
         "en:it",
@@ -20706,7 +20684,6 @@
         "es:la",
         "pos:pronoun",
         "grammar:direct-object-pronoun",
-        "grammar:third-person",
         "grammar:singular",
         "register:formal",
         "en:you",
@@ -20727,7 +20704,6 @@
         "es:los",
         "pos:pronoun",
         "grammar:direct-object-pronoun",
-        "grammar:third-person",
         "grammar:plural",
         "grammar:masculine",
         "grammar:mixed-group",
@@ -20749,7 +20725,6 @@
         "es:los",
         "pos:pronoun",
         "grammar:direct-object-pronoun",
-        "grammar:third-person",
         "grammar:plural",
         "register:formal",
         "en:you",
@@ -20770,7 +20745,6 @@
         "es:las",
         "pos:pronoun",
         "grammar:direct-object-pronoun",
-        "grammar:third-person",
         "grammar:plural",
         "grammar:feminine",
         "en:them",
@@ -20791,7 +20765,6 @@
         "es:las",
         "pos:pronoun",
         "grammar:direct-object-pronoun",
-        "grammar:third-person",
         "grammar:plural",
         "register:formal",
         "en:you",
@@ -20812,7 +20785,6 @@
         "grammar:se",
         "pos:pronoun",
         "grammar:reflexive-pronoun",
-        "grammar:third-person",
         "grammar:singular",
         "en:himself",
         "topic:pronoun"
@@ -20831,7 +20803,6 @@
         "grammar:se",
         "pos:pronoun",
         "grammar:reflexive-pronoun",
-        "grammar:third-person",
         "grammar:singular",
         "en:herself",
         "topic:pronoun"
@@ -73719,7 +73690,6 @@
       "collections": [
         "pos:function-word",
         "grammar:possessive-determiner",
-        "grammar:first-person",
         "grammar:singular",
         "topic:pronoun",
         "es:mi",
@@ -73738,7 +73708,6 @@
       "collections": [
         "pos:function-word",
         "grammar:possessive-determiner",
-        "grammar:first-person",
         "grammar:plural",
         "topic:pronoun",
         "es:mi",
@@ -73757,7 +73726,6 @@
       "collections": [
         "pos:function-word",
         "grammar:possessive-determiner",
-        "grammar:third-person",
         "topic:pronoun",
         "es:su",
         "en:his"
@@ -73775,7 +73743,6 @@
       "collections": [
         "pos:function-word",
         "grammar:possessive-determiner",
-        "grammar:third-person",
         "topic:pronoun",
         "es:su",
         "en:her"
@@ -73793,7 +73760,6 @@
       "collections": [
         "pos:function-word",
         "grammar:possessive-determiner",
-        "grammar:third-person",
         "topic:pronoun",
         "es:su",
         "en:its"
@@ -73811,7 +73777,6 @@
       "collections": [
         "pos:function-word",
         "grammar:possessive-determiner",
-        "grammar:third-person",
         "grammar:plural",
         "topic:pronoun",
         "es:su",
@@ -73830,7 +73795,6 @@
       "collections": [
         "pos:function-word",
         "grammar:possessive-determiner",
-        "grammar:second-person",
         "register:formal",
         "topic:pronoun",
         "es:su",
@@ -73849,121 +73813,10 @@
       "collections": [
         "pos:function-word",
         "grammar:possessive-determiner",
-        "grammar:third-person",
         "grammar:plural",
         "topic:pronoun",
         "es:su",
         "en:their"
-      ],
-      "curriculumRole": "supporting"
-    },
-    {
-      "id": "m99dttixau",
-      "spanish": "el mío/la mía",
-      "english": "mine",
-      "example": {
-        "spanish": "Ese libro es mío.",
-        "english": "That book is mine."
-      },
-      "collections": [
-        "pos:pronoun",
-        "grammar:possessive-pronoun",
-        "grammar:first-person",
-        "topic:pronoun",
-        "es:mío",
-        "en:mine"
-      ],
-      "curriculumRole": "supporting"
-    },
-    {
-      "id": "bjkb00y5yk",
-      "spanish": "el tuyo/la tuya",
-      "english": "yours",
-      "example": {
-        "spanish": "Esta silla es tuya.",
-        "english": "This chair is yours."
-      },
-      "collections": [
-        "pos:pronoun",
-        "grammar:possessive-pronoun",
-        "grammar:second-person",
-        "topic:pronoun",
-        "es:tuyo",
-        "en:yours"
-      ],
-      "curriculumRole": "supporting"
-    },
-    {
-      "id": "b94as4x9ob",
-      "spanish": "el suyo/la suya",
-      "english": "his",
-      "example": {
-        "spanish": "El carro rojo es suyo.",
-        "english": "The red car is his."
-      },
-      "collections": [
-        "pos:pronoun",
-        "grammar:possessive-pronoun",
-        "grammar:third-person",
-        "topic:pronoun",
-        "es:suyo",
-        "en:his"
-      ],
-      "curriculumRole": "supporting"
-    },
-    {
-      "id": "qcdnifeqxl",
-      "spanish": "el suyo/la suya",
-      "english": "hers",
-      "example": {
-        "spanish": "Esa idea fue suya.",
-        "english": "That idea was hers."
-      },
-      "collections": [
-        "pos:pronoun",
-        "grammar:possessive-pronoun",
-        "grammar:third-person",
-        "topic:pronoun",
-        "es:suyo",
-        "en:hers"
-      ],
-      "curriculumRole": "supporting"
-    },
-    {
-      "id": "pc9lvps0cu",
-      "spanish": "el suyo/la suya",
-      "english": "theirs",
-      "example": {
-        "spanish": "La culpa es suya.",
-        "english": "The fault is theirs."
-      },
-      "collections": [
-        "pos:pronoun",
-        "grammar:possessive-pronoun",
-        "grammar:third-person",
-        "grammar:plural",
-        "topic:pronoun",
-        "es:suyo",
-        "en:theirs"
-      ],
-      "curriculumRole": "supporting"
-    },
-    {
-      "id": "o2lulav63w",
-      "spanish": "el nuestro/la nuestra",
-      "english": "ours",
-      "example": {
-        "spanish": "Esta victoria es nuestra.",
-        "english": "This victory is ours."
-      },
-      "collections": [
-        "pos:pronoun",
-        "grammar:possessive-pronoun",
-        "grammar:first-person",
-        "grammar:plural",
-        "topic:pronoun",
-        "es:nuestro",
-        "en:ours"
       ],
       "curriculumRole": "supporting"
     },
@@ -73996,7 +73849,6 @@
       "collections": [
         "pos:pronoun",
         "grammar:prepositional-pronoun",
-        "grammar:first-person",
         "particle:with",
         "topic:pronoun",
         "es:conmigo",
@@ -74016,7 +73868,6 @@
       "collections": [
         "pos:pronoun",
         "grammar:prepositional-pronoun",
-        "grammar:second-person",
         "particle:with",
         "topic:pronoun",
         "es:contigo",
@@ -74036,7 +73887,6 @@
       "collections": [
         "pos:pronoun",
         "grammar:prepositional-pronoun",
-        "grammar:third-person",
         "particle:with",
         "topic:pronoun",
         "es:con",
@@ -74057,7 +73907,6 @@
       "collections": [
         "pos:pronoun",
         "grammar:prepositional-pronoun",
-        "grammar:third-person",
         "particle:with",
         "topic:pronoun",
         "es:con",
@@ -74078,7 +73927,6 @@
       "collections": [
         "pos:pronoun",
         "grammar:prepositional-pronoun",
-        "grammar:first-person",
         "grammar:plural",
         "particle:with",
         "topic:pronoun",
@@ -74100,7 +73948,6 @@
       "collections": [
         "pos:pronoun",
         "grammar:prepositional-pronoun",
-        "grammar:third-person",
         "grammar:plural",
         "particle:with",
         "topic:pronoun",
@@ -74142,7 +73989,6 @@
       "collections": [
         "pos:pronoun",
         "grammar:prepositional-pronoun",
-        "grammar:first-person",
         "particle:for",
         "topic:pronoun",
         "es:para",
@@ -74163,7 +74009,6 @@
       "collections": [
         "pos:pronoun",
         "grammar:prepositional-pronoun",
-        "grammar:second-person",
         "particle:for",
         "topic:pronoun",
         "es:para",
@@ -74184,7 +74029,6 @@
       "collections": [
         "pos:pronoun",
         "grammar:prepositional-pronoun",
-        "grammar:third-person",
         "particle:for",
         "topic:pronoun",
         "es:para",
@@ -74205,7 +74049,6 @@
       "collections": [
         "pos:pronoun",
         "grammar:prepositional-pronoun",
-        "grammar:third-person",
         "particle:for",
         "topic:pronoun",
         "es:para",
@@ -74226,7 +74069,6 @@
       "collections": [
         "pos:pronoun",
         "grammar:prepositional-pronoun",
-        "grammar:first-person",
         "grammar:plural",
         "particle:for",
         "topic:pronoun",
@@ -74248,7 +74090,6 @@
       "collections": [
         "pos:pronoun",
         "grammar:prepositional-pronoun",
-        "grammar:third-person",
         "grammar:plural",
         "particle:for",
         "topic:pronoun",
@@ -74280,110 +74121,6 @@
       "curriculumRole": "supporting"
     },
     {
-      "id": "6u6up5uut7",
-      "spanish": "sin mí",
-      "english": "without me",
-      "example": {
-        "spanish": "No empiecen sin mí.",
-        "english": "Don't start without me."
-      },
-      "collections": [
-        "pos:pronoun",
-        "grammar:prepositional-pronoun",
-        "grammar:first-person",
-        "particle:without",
-        "topic:pronoun",
-        "es:sin",
-        "es:mí",
-        "en:without",
-        "en:me"
-      ],
-      "curriculumRole": "supporting"
-    },
-    {
-      "id": "bjjl51lnlt",
-      "spanish": "sin ti",
-      "english": "without you",
-      "example": {
-        "spanish": "No puedo hacerlo sin ti.",
-        "english": "I can't do it without you."
-      },
-      "collections": [
-        "pos:pronoun",
-        "grammar:prepositional-pronoun",
-        "grammar:second-person",
-        "particle:without",
-        "topic:pronoun",
-        "es:sin",
-        "es:ti",
-        "en:without",
-        "en:you"
-      ],
-      "curriculumRole": "supporting"
-    },
-    {
-      "id": "lf6at9wa62",
-      "spanish": "sin él",
-      "english": "without him",
-      "example": {
-        "spanish": "Salimos sin él.",
-        "english": "We left without him."
-      },
-      "collections": [
-        "pos:pronoun",
-        "grammar:prepositional-pronoun",
-        "grammar:third-person",
-        "particle:without",
-        "topic:pronoun",
-        "es:sin",
-        "es:él",
-        "en:without",
-        "en:him"
-      ],
-      "curriculumRole": "supporting"
-    },
-    {
-      "id": "b3kuu98voq",
-      "spanish": "sin ella",
-      "english": "without her",
-      "example": {
-        "spanish": "La fiesta fue aburrida sin ella.",
-        "english": "The party was boring without her."
-      },
-      "collections": [
-        "pos:pronoun",
-        "grammar:prepositional-pronoun",
-        "grammar:third-person",
-        "particle:without",
-        "topic:pronoun",
-        "es:sin",
-        "es:ella",
-        "en:without",
-        "en:her"
-      ],
-      "curriculumRole": "supporting"
-    },
-    {
-      "id": "w1si8olfpv",
-      "spanish": "sin [alguien]",
-      "english": "without [somebody]",
-      "example": {
-        "spanish": "No quiero ir sin alguien que conozca.",
-        "english": "I don't want to go without somebody I know."
-      },
-      "collections": [
-        "pos:pronoun",
-        "grammar:prepositional-pronoun",
-        "particle:without",
-        "topic:pronoun",
-        "es:sin",
-        "es:alguien",
-        "en:without",
-        "en:somebody"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "bfer5mn6yu",
       "spanish": "a mí",
       "english": "to me",
@@ -74394,7 +74131,6 @@
       "collections": [
         "pos:pronoun",
         "grammar:prepositional-pronoun",
-        "grammar:first-person",
         "particle:to",
         "topic:pronoun",
         "es:a",
@@ -74415,7 +74151,6 @@
       "collections": [
         "pos:pronoun",
         "grammar:prepositional-pronoun",
-        "grammar:second-person",
         "particle:to",
         "topic:pronoun",
         "es:a",
@@ -74436,7 +74171,6 @@
       "collections": [
         "pos:pronoun",
         "grammar:prepositional-pronoun",
-        "grammar:third-person",
         "particle:to",
         "topic:pronoun",
         "es:a",
@@ -74457,7 +74191,6 @@
       "collections": [
         "pos:pronoun",
         "grammar:prepositional-pronoun",
-        "grammar:third-person",
         "particle:to",
         "topic:pronoun",
         "es:a",
@@ -74486,89 +74219,6 @@
         "en:somebody"
       ],
       "curriculumRole": "supporting"
-    },
-    {
-      "id": "c8fiiz5586",
-      "spanish": "de mí",
-      "english": "about me",
-      "example": {
-        "spanish": "No hables de mí.",
-        "english": "Don't talk about me."
-      },
-      "collections": [
-        "pos:pronoun",
-        "grammar:prepositional-pronoun",
-        "grammar:first-person",
-        "particle:about",
-        "topic:pronoun",
-        "es:de",
-        "es:mí",
-        "en:about",
-        "en:me"
-      ],
-      "curriculumRole": "supporting"
-    },
-    {
-      "id": "rkprl35czj",
-      "spanish": "de él",
-      "english": "about him",
-      "example": {
-        "spanish": "Todos hablan de él.",
-        "english": "Everyone is talking about him."
-      },
-      "collections": [
-        "pos:pronoun",
-        "grammar:prepositional-pronoun",
-        "grammar:third-person",
-        "particle:about",
-        "topic:pronoun",
-        "es:de",
-        "es:él",
-        "en:about",
-        "en:him"
-      ],
-      "curriculumRole": "supporting"
-    },
-    {
-      "id": "ie5l7zl0ar",
-      "spanish": "de ella",
-      "english": "about her",
-      "example": {
-        "spanish": "¿Qué sabes de ella?",
-        "english": "What do you know about her?"
-      },
-      "collections": [
-        "pos:pronoun",
-        "grammar:prepositional-pronoun",
-        "grammar:third-person",
-        "particle:about",
-        "topic:pronoun",
-        "es:de",
-        "es:ella",
-        "en:about",
-        "en:her"
-      ],
-      "curriculumRole": "supporting"
-    },
-    {
-      "id": "knc0hcpsba",
-      "spanish": "de [alguien]",
-      "english": "about [somebody]",
-      "example": {
-        "spanish": "Escuché algo de alguien.",
-        "english": "I heard something about somebody."
-      },
-      "collections": [
-        "pos:pronoun",
-        "grammar:prepositional-pronoun",
-        "particle:about",
-        "topic:pronoun",
-        "es:de",
-        "es:alguien",
-        "en:about",
-        "en:somebody"
-      ],
-      "curriculumRole": "reference"
     },
     {
       "id": "hsqb5yui5l",
@@ -75010,7 +74660,6 @@
         "grammar:subordinate-subject-pronoun",
         "construction:object-control",
         "grammar:subjunctive",
-        "grammar:first-person",
         "topic:pronoun",
         "es:que",
         "es:yo",
@@ -75031,7 +74680,6 @@
         "grammar:subordinate-subject-pronoun",
         "construction:object-control",
         "grammar:subjunctive",
-        "grammar:second-person",
         "topic:pronoun",
         "es:que",
         "es:tú",
@@ -75052,7 +74700,6 @@
         "grammar:subordinate-subject-pronoun",
         "construction:object-control",
         "grammar:subjunctive",
-        "grammar:third-person",
         "topic:pronoun",
         "es:que",
         "es:él",
@@ -75073,7 +74720,6 @@
         "grammar:subordinate-subject-pronoun",
         "construction:object-control",
         "grammar:subjunctive",
-        "grammar:third-person",
         "topic:pronoun",
         "es:que",
         "es:ella",
@@ -75094,7 +74740,6 @@
         "grammar:subordinate-subject-pronoun",
         "construction:object-control",
         "grammar:subjunctive",
-        "grammar:first-person",
         "grammar:plural",
         "topic:pronoun",
         "es:que",
@@ -75116,7 +74761,6 @@
         "grammar:subordinate-subject-pronoun",
         "construction:object-control",
         "grammar:subjunctive",
-        "grammar:third-person",
         "grammar:plural",
         "topic:pronoun",
         "es:que",
@@ -75596,7 +75240,6 @@
       "collections": [
         "pos:function-word",
         "grammar:possessive-determiner",
-        "grammar:first-person",
         "grammar:plural",
         "grammar:masculine",
         "topic:pronoun",
@@ -75616,7 +75259,6 @@
       "collections": [
         "pos:function-word",
         "grammar:possessive-determiner",
-        "grammar:first-person",
         "grammar:plural",
         "grammar:feminine",
         "topic:pronoun",
@@ -75636,7 +75278,6 @@
       "collections": [
         "pos:function-word",
         "grammar:possessive-determiner",
-        "grammar:first-person",
         "grammar:plural",
         "grammar:masculine",
         "topic:pronoun",
@@ -75656,7 +75297,6 @@
       "collections": [
         "pos:function-word",
         "grammar:possessive-determiner",
-        "grammar:first-person",
         "grammar:plural",
         "grammar:feminine",
         "topic:pronoun",
@@ -75664,6 +75304,327 @@
         "en:our"
       ],
       "curriculumRole": "supporting"
+    },
+    {
+      "id": "4ly1ug3p0x",
+      "spanish": "el mío",
+      "english": "mine",
+      "example": {
+        "spanish": "El carro rojo es el mío.",
+        "english": "The red car is mine."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:possessive-pronoun",
+        "grammar:masculine",
+        "topic:pronoun",
+        "es:mío",
+        "en:mine"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "z6wn8qs99s",
+      "spanish": "la mía",
+      "english": "mine",
+      "example": {
+        "spanish": "Esa maleta es la mía.",
+        "english": "That suitcase is mine."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:possessive-pronoun",
+        "grammar:feminine",
+        "topic:pronoun",
+        "es:mía",
+        "en:mine"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "y0y1j3ow0v",
+      "spanish": "el tuyo",
+      "english": "yours",
+      "example": {
+        "spanish": "Este asiento es el tuyo.",
+        "english": "This seat is yours."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:possessive-pronoun",
+        "grammar:masculine",
+        "topic:pronoun",
+        "es:tuyo",
+        "en:yours"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "g22u81e32h",
+      "spanish": "la tuya",
+      "english": "yours",
+      "example": {
+        "spanish": "La idea es la tuya.",
+        "english": "The idea is yours."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:possessive-pronoun",
+        "grammar:feminine",
+        "topic:pronoun",
+        "es:tuya",
+        "en:yours"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "dzve3d1qxs",
+      "spanish": "el suyo",
+      "english": "his",
+      "example": {
+        "spanish": "El paraguas azul es el suyo.",
+        "english": "The blue umbrella is his."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:possessive-pronoun",
+        "grammar:masculine",
+        "topic:pronoun",
+        "es:suyo",
+        "en:his"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "12j8czinec",
+      "spanish": "la suya",
+      "english": "hers",
+      "example": {
+        "spanish": "La culpa es la suya.",
+        "english": "The fault is hers."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:possessive-pronoun",
+        "grammar:feminine",
+        "topic:pronoun",
+        "es:suya",
+        "en:hers"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "o6i1dpuv9z",
+      "spanish": "el suyo",
+      "english": "theirs",
+      "example": {
+        "spanish": "Ese terreno es el suyo.",
+        "english": "That land is theirs."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:possessive-pronoun",
+        "grammar:masculine",
+        "grammar:plural",
+        "topic:pronoun",
+        "es:suyo",
+        "en:theirs"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "45qotapw4p",
+      "spanish": "el nuestro",
+      "english": "ours",
+      "example": {
+        "spanish": "El primer turno es el nuestro.",
+        "english": "The first turn is ours."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:possessive-pronoun",
+        "grammar:masculine",
+        "grammar:plural",
+        "topic:pronoun",
+        "es:nuestro",
+        "en:ours"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "1rw4wohjpu",
+      "spanish": "la nuestra",
+      "english": "ours",
+      "example": {
+        "spanish": "Esta victoria es la nuestra.",
+        "english": "This victory is ours."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:possessive-pronoun",
+        "grammar:feminine",
+        "grammar:plural",
+        "topic:pronoun",
+        "es:nuestra",
+        "en:ours"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "7gl5vz7uo4",
+      "spanish": "tus",
+      "english": "your",
+      "example": {
+        "spanish": "Tus llaves están en la mesa.",
+        "english": "Your keys are on the table."
+      },
+      "collections": [
+        "pos:function-word",
+        "grammar:possessive-determiner",
+        "grammar:plural",
+        "topic:pronoun",
+        "es:tu",
+        "en:your"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "6fweu4sgdj",
+      "spanish": "me",
+      "english": "myself",
+      "example": {
+        "spanish": "Me miré en el espejo.",
+        "english": "I looked at myself in the mirror."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:reflexive-pronoun",
+        "grammar:singular",
+        "topic:pronoun",
+        "es:me",
+        "en:myself"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "f6ie78gefk",
+      "spanish": "te",
+      "english": "yourself",
+      "example": {
+        "spanish": "¿Te lastimaste?",
+        "english": "Did you hurt yourself?"
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:reflexive-pronoun",
+        "grammar:singular",
+        "topic:pronoun",
+        "es:te",
+        "en:yourself"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "d7tshgvfv3",
+      "spanish": "nos",
+      "english": "ourselves",
+      "example": {
+        "spanish": "Nos preparamos para el viaje.",
+        "english": "We got ourselves ready for the trip."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:reflexive-pronoun",
+        "grammar:plural",
+        "topic:pronoun",
+        "es:nos",
+        "en:ourselves"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "9h4yb41inv",
+      "spanish": "a nosotros",
+      "english": "to us",
+      "example": {
+        "spanish": "Nos lo dijeron a nosotros.",
+        "english": "They told it to us."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:prepositional-pronoun",
+        "grammar:plural",
+        "particle:to",
+        "topic:pronoun",
+        "es:a",
+        "es:nosotros",
+        "en:to",
+        "en:us"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "unkd514ur0",
+      "spanish": "a ellos",
+      "english": "to them",
+      "example": {
+        "spanish": "El premio les tocó a ellos.",
+        "english": "The prize went to them."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:prepositional-pronoun",
+        "grammar:plural",
+        "particle:to",
+        "topic:pronoun",
+        "es:a",
+        "es:ellos",
+        "en:to",
+        "en:them"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "bu8oynmlvn",
+      "spanish": "aquellos",
+      "english": "those",
+      "example": {
+        "spanish": "Aquellos días fueron felices.",
+        "english": "Those days were happy."
+      },
+      "collections": [
+        "pos:function-word",
+        "grammar:demonstrative",
+        "grammar:demonstrative-determiner",
+        "grammar:plural",
+        "grammar:distal",
+        "grammar:masculine",
+        "topic:pronoun",
+        "es:aquellos",
+        "en:those"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "xs6r1zkgev",
+      "spanish": "aquellas",
+      "english": "those",
+      "example": {
+        "spanish": "Aquellas casas ya no existen.",
+        "english": "Those houses no longer exist."
+      },
+      "collections": [
+        "pos:function-word",
+        "grammar:demonstrative",
+        "grammar:demonstrative-determiner",
+        "grammar:plural",
+        "grammar:distal",
+        "grammar:feminine",
+        "topic:pronoun",
+        "es:aquellas",
+        "en:those"
+      ],
+      "curriculumRole": "reference"
     }
   ]
 }

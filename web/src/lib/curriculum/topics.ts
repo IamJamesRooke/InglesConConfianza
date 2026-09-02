@@ -31,10 +31,6 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       { collection: "grammar:interrogative-pronoun", label: "Interrogative" },
       { collection: "grammar:relative-pronoun", label: "Relative" },
       { collection: "grammar:subordinate-subject-pronoun", label: "In “want X to”" },
-      { collection: "grammar:first-person", label: "1st person" },
-      { collection: "grammar:second-person", label: "2nd person" },
-      { collection: "grammar:third-person", label: "3rd person" },
-      { collection: "grammar:plural", label: "Plural" },
     ],
   },
 ];
