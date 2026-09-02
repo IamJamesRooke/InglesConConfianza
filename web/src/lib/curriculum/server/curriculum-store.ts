@@ -88,7 +88,12 @@ export async function readCurriculumPage({
   search,
   collection,
   role,
-}: CurriculumPageFilters & { page: number }): Promise<CurriculumPageResult> {
+  requireCollections = [],
+}: CurriculumPageFilters & {
+  page: number;
+  requireCollections?: string[];
+}): Promise<CurriculumPageResult> {
+  const anded = [...new Set([...requireCollections, collection].filter(Boolean))];
   const where = {
     ...(search
       ? {
@@ -98,8 +103,12 @@ export async function readCurriculumPage({
           ],
         }
       : {}),
-    ...(collection
-      ? { collections: { some: { collectionName: collection } } }
+    ...(anded.length > 0
+      ? {
+          AND: anded.map((name) => ({
+            collections: { some: { collectionName: name } },
+          })),
+        }
       : {}),
     ...(role === "all" ? {} : { curriculumRole: role }),
   } satisfies Prisma.CurriculumConceptWhereInput;
@@ -135,20 +144,6 @@ export async function readCurriculumPage({
     collection,
     role,
   };
-}
-
-export async function readCuratedTopic(baseCollection: string): Promise<{
-  concepts: CurriculumConcept[];
-}> {
-  const rows = await prisma.curriculumConcept.findMany({
-    where: {
-      curriculumRole: { not: "trash" },
-      collections: { some: { collectionName: baseCollection } },
-    },
-    orderBy: [{ curriculumRole: "asc" }, { sortOrder: "asc" }],
-    include: conceptRelations,
-  });
-  return { concepts: rows.map(toCurriculumConcept) };
 }
 
 export async function updateCurriculumConcept(

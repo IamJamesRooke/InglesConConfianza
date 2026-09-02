@@ -112,6 +112,8 @@ function updateEditableValue(
   return { ...concept, [field]: value };
 }
 
+type QuickFacet = { collection: string; label: string };
+
 export function CurriculumTable({
   initialConcepts,
   availableCollections,
@@ -119,6 +121,9 @@ export function CurriculumTable({
   page,
   pageCount,
   filters,
+  lockedCollections = [],
+  quickFacets = [],
+  activeFacets = [],
 }: {
   initialConcepts: CurriculumConcept[];
   availableCollections: string[];
@@ -130,10 +135,20 @@ export function CurriculumTable({
     collection: string;
     role: CurriculumRole | "all";
   };
+  lockedCollections?: string[];
+  quickFacets?: QuickFacet[];
+  activeFacets?: string[];
 }) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
+
+  function toggleFacet(collection: string) {
+    const next = activeFacets.includes(collection)
+      ? activeFacets.filter((item) => item !== collection)
+      : [...activeFacets, collection];
+    navigate({ facets: next.length > 0 ? next.join(",") : null });
+  }
   const [concepts, setConcepts] = useState(initialConcepts);
   const [activeEditor, setActiveEditor] = useState<ActiveEditor | null>(null);
   const [activeCollectionEditor, setActiveCollectionEditor] = useState<{
@@ -601,6 +616,46 @@ export function CurriculumTable({
           </select>
         </label>
       </form>
+
+      {quickFacets.length > 0 && (
+        <div className="mb-4 flex flex-wrap items-center gap-2">
+          {lockedCollections.map((collection) => (
+            <span
+              key={collection}
+              className="rounded-full border border-border bg-muted px-3 py-1 text-xs font-semibold text-muted-foreground"
+            >
+              {collection}
+            </span>
+          ))}
+          {quickFacets.map((facet) => {
+            const on = activeFacets.includes(facet.collection);
+            return (
+              <button
+                key={facet.collection}
+                type="button"
+                onClick={() => toggleFacet(facet.collection)}
+                aria-pressed={on}
+                className={`rounded-full border px-3 py-1 text-sm font-medium transition ${
+                  on
+                    ? "border-primary bg-primary text-primary-foreground"
+                    : "border-border bg-card text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {facet.label}
+              </button>
+            );
+          })}
+          {activeFacets.length > 0 && (
+            <button
+              type="button"
+              onClick={() => navigate({ facets: null })}
+              className="px-2 py-1 text-sm text-muted-foreground underline-offset-2 hover:underline"
+            >
+              Clear
+            </button>
+          )}
+        </div>
+      )}
 
       <div className="mb-4">
         <label className="flex w-full max-w-sm items-center gap-2 text-sm font-medium text-muted-foreground">
