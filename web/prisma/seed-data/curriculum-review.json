@@ -93677,6 +93677,1904 @@
           "ownerNote": ""
         }
       ]
+    },
+    {
+      "id": "sentence-record-normalization-2026-09-02",
+      "title": "Normalize sentence-shaped concept records into their constructions",
+      "sourcePaths": [
+        "docs/curation/sentence-record-normalization-2026-09-02.md"
+      ],
+      "createdAt": "2026-09-02",
+      "status": "open",
+      "candidates": [
+        {
+          "id": "revise-de-ahora-en-adelante-01",
+          "action": "revise",
+          "existingConceptId": "zeorvyamau",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "de ahora en adelante",
+          "english": "from now on",
+          "example": {
+            "spanish": "De ahora en adelante, llama primero.",
+            "english": "From now on, call first."
+          },
+          "collections": [
+            "adelante",
+            "spanish-to-english catchall",
+            "fixed expression",
+            "time"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Sentence demoted to the example; the concept is the fixed time expression the row was filed under (adelante).",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-ademas-de-algo-02",
+          "action": "revise",
+          "existingConceptId": "wmmatrxzh1",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "además de [algo]",
+          "english": "besides [something]",
+          "example": {
+            "spanish": "Además de inglés, habla francés.",
+            "english": "Besides English, she speaks French."
+          },
+          "collections": [
+            "ademas",
+            "spanish-to-english catchall",
+            "connector",
+            "additive"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Concept is the preposition, not the sentence. Distinct from the bare additive adverb además.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-ademas-03",
+          "action": "revise",
+          "existingConceptId": "fzg570rb5k",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "además",
+          "english": "moreover",
+          "example": {
+            "spanish": "Es caro; además, queda lejos.",
+            "english": "It is expensive; moreover, it is far away."
+          },
+          "collections": [
+            "ademas",
+            "spanish-to-english catchall",
+            "connector",
+            "additive"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Third distinct English target for además, alongside also and besides.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-ante-todo-04",
+          "action": "revise",
+          "existingConceptId": "xymr8kc90t",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "ante todo",
+          "english": "above all",
+          "example": {
+            "spanish": "Ante todo, mantén la calma.",
+            "english": "Above all, stay calm."
+          },
+          "collections": [
+            "antes",
+            "spanish-to-english catchall",
+            "fixed expression",
+            "connector"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Source file names this target: ante (… above all).",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-casi-no-hacer-algo-05",
+          "action": "revise",
+          "existingConceptId": "9gk6xesysy",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "casi no [hacer algo]",
+          "english": "to hardly [do something]",
+          "example": {
+            "spanish": "Casi no lo conozco.",
+            "english": "I hardly know him."
+          },
+          "collections": [
+            "apenas",
+            "spanish-to-english catchall",
+            "negative",
+            "degree"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Source file 06-hardly-context. Teaches casi no => hardly, not the literal almost not.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-estar-ansioso-a-por-que-ocurra-algo-06",
+          "action": "revise",
+          "existingConceptId": "45izdwmxbd",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "estar ansioso/a por que [ocurra algo]",
+          "english": "can hardly wait for [something] to happen",
+          "example": {
+            "spanish": "Estoy ansioso por que llegue.",
+            "english": "I can hardly wait."
+          },
+          "collections": [
+            "apenas",
+            "spanish-to-english catchall",
+            "fixed expression"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Source file 10-hardly-wait. The Spanish never contains apenas; the mapping is idiomatic.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-aun-asi-07",
+          "action": "revise",
+          "existingConceptId": "yv5pwer3eq",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "aun así",
+          "english": "even so",
+          "example": {
+            "spanish": "Estaba cansado; aun así, salió.",
+            "english": "He was tired; even so, he went out."
+          },
+          "collections": [
+            "asi",
+            "spanish-to-english catchall",
+            "connector",
+            "concession"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Concept is the concessive connector.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-atras-de-algo-08",
+          "action": "revise",
+          "existingConceptId": "mhy4vnhbw9",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "atrás de [algo]",
+          "english": "behind [something]",
+          "example": {
+            "spanish": "Está atrás de la casa.",
+            "english": "It is behind the house."
+          },
+          "collections": [
+            "atras",
+            "spanish-to-english catchall",
+            "location",
+            "preposition"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Latin American variant of detrás de, which already exists separately.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-periodo-atras-09",
+          "action": "revise",
+          "existingConceptId": "8a3s9ew4ih",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "[período] atrás",
+          "english": "[a period] ago",
+          "example": {
+            "spanish": "Años atrás, vivía en Cali.",
+            "english": "Years ago, I lived in Cali."
+          },
+          "collections": [
+            "atras",
+            "spanish-to-english catchall",
+            "time",
+            "past"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Variant of hace [un período de tiempo]; the postposed atrás form.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-bastar-con-algo-10",
+          "action": "revise",
+          "existingConceptId": "gw00aci88b",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "bastar con [algo]",
+          "english": "all it takes is [something]",
+          "example": {
+            "spanish": "Basta con una llamada.",
+            "english": "All it takes is one call."
+          },
+          "collections": [
+            "bastante",
+            "spanish-to-english catchall",
+            "bastar",
+            "quantity"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Concept is the bastar con construction.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-bastar-con-hacer-algo-11",
+          "action": "revise",
+          "existingConceptId": "dakptjtohz",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "bastar con [hacer algo]",
+          "english": "all you need to do is [do something]",
+          "example": {
+            "spanish": "Basta con leer el primer párrafo.",
+            "english": "All you need to do is read the first paragraph."
+          },
+          "collections": [
+            "bastante",
+            "spanish-to-english catchall",
+            "bastar",
+            "full infinitive"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "The verb-complement form of bastar con.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-si-bien-ocurre-algo-12",
+          "action": "revise",
+          "existingConceptId": "g9lxdgb2ld",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "si bien [ocurre algo]",
+          "english": "although [something happens]",
+          "example": {
+            "spanish": "Si bien es caro, funciona.",
+            "english": "Although it's expensive, it works."
+          },
+          "collections": [
+            "bien",
+            "spanish-to-english catchall",
+            "connector",
+            "concession"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Formal concessive connector; aunque already covers the everyday register.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-bien-ocurre-algo-bien-ocurre-otra-cosa-13",
+          "action": "revise",
+          "existingConceptId": "21gdf6imx4",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "bien [ocurre algo], bien [ocurre otra cosa]",
+          "english": "either [something happens] or [something else happens]",
+          "example": {
+            "spanish": "Bien estudias, bien trabajas.",
+            "english": "Either you study or you work."
+          },
+          "collections": [
+            "bien",
+            "spanish-to-english catchall",
+            "connector",
+            "alternative"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Correlative bien...bien; rare in Latin American Spanish, kept at reference.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-ser-mejor-hacer-algo-14",
+          "action": "revise",
+          "existingConceptId": "9zwpouaz61",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "ser mejor [hacer algo]",
+          "english": "had better [do something]",
+          "example": {
+            "spanish": "Será mejor llamar primero.",
+            "english": "We had better call first."
+          },
+          "collections": [
+            "bueno",
+            "spanish-to-english catchall",
+            "advice",
+            "modal"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Parallel Spanish route to had better alongside mas vale [hacer algo].",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-por-cierto-15",
+          "action": "revise",
+          "existingConceptId": "gaw97ecxke",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "por cierto",
+          "english": "by the way",
+          "example": {
+            "spanish": "Por cierto, Laura llamó.",
+            "english": "By the way, Laura called."
+          },
+          "collections": [
+            "cierto",
+            "spanish-to-english catchall",
+            "discourse connector"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Concept is the discourse marker.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-con-que-ocurre-algo-16",
+          "action": "revise",
+          "existingConceptId": "kg63snjtds",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "¿con qué [ocurre algo]?",
+          "english": "what [does something happen] with?",
+          "example": {
+            "spanish": "¿Con qué te puedo ayudar?",
+            "english": "What can I help you with?"
+          },
+          "collections": [
+            "con",
+            "spanish-to-english catchall",
+            "with",
+            "english-to-spanish reverse audit",
+            "question",
+            "preposition stranding"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Teaches Spanish fronted preposition vs English stranded preposition.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-con-quien-ocurre-algo-17",
+          "action": "revise",
+          "existingConceptId": "xn3hhqqgv2",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "¿con quién [ocurre algo]?",
+          "english": "who [does something happen] with?",
+          "example": {
+            "spanish": "¿Con quién estás hablando?",
+            "english": "Who are you talking to?"
+          },
+          "collections": [
+            "con",
+            "spanish-to-english catchall",
+            "to",
+            "english-to-spanish reverse audit",
+            "question",
+            "preposition stranding"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Informal stranded form; the formal to whom variant is a separate row.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-con-quien-ocurre-algo-18",
+          "action": "revise",
+          "existingConceptId": "rey5kzco3o",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "¿con quién [ocurre algo]?",
+          "english": "to whom [does something happen]?",
+          "example": {
+            "spanish": "¿Con quién está hablando?",
+            "english": "To whom are you speaking?"
+          },
+          "collections": [
+            "con",
+            "spanish-to-english catchall",
+            "to",
+            "english-to-spanish reverse audit",
+            "question",
+            "formal register"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Formal fronted-preposition register, deliberately split from the stranded form.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-cual-sustantivo-19",
+          "action": "revise",
+          "existingConceptId": "fwytkxeon9",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "¿cuál [sustantivo]?",
+          "english": "which [noun]?",
+          "example": {
+            "spanish": "¿Cuál libro quieres, este o ese?",
+            "english": "Which book do you want, this one or that one?"
+          },
+          "collections": [
+            "cual",
+            "spanish-to-english catchall",
+            "which",
+            "english-to-spanish reverse audit",
+            "question",
+            "limited choice"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Source file 01-which-limited-choice.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-cual-es-algo-20",
+          "action": "revise",
+          "existingConceptId": "17mqfzfrq1",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "¿cuál es [algo]?",
+          "english": "what is [something]?",
+          "example": {
+            "spanish": "¿Cuál es tu nombre?",
+            "english": "What is your name?"
+          },
+          "collections": [
+            "cual",
+            "spanish-to-english catchall",
+            "question",
+            "false friend"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "The cual-is-not-which trap: Spanish cual maps to English what here.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-cuando-ocurre-algo-21",
+          "action": "revise",
+          "existingConceptId": "lrfioq96ny",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "¿cuándo [ocurre algo]?",
+          "english": "when does [something happen]?",
+          "example": {
+            "spanish": "¿Cuándo empieza la reunión?",
+            "english": "When does the meeting start?"
+          },
+          "collections": [
+            "cuando",
+            "spanish-to-english catchall",
+            "when",
+            "english-to-spanish reverse audit",
+            "question",
+            "time"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Question frame; the bare interrogative cuándo is held separately in core.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-cuanto-tiempo-ocurre-algo-22",
+          "action": "revise",
+          "existingConceptId": "fnszz28inq",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "¿cuánto tiempo [ocurre algo]?",
+          "english": "how long [has something been happening]?",
+          "example": {
+            "spanish": "¿Cuánto tiempo has estado aquí?",
+            "english": "How long have you been here?"
+          },
+          "collections": [
+            "cuanto",
+            "spanish-to-english catchall",
+            "how",
+            "english-to-spanish reverse audit",
+            "question",
+            "duration"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Question frame for duration.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-cuan-adjetivo-23",
+          "action": "revise",
+          "existingConceptId": "l0f7fdzag6",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "¿cuán [adjetivo]?",
+          "english": "how [adjective]?",
+          "example": {
+            "spanish": "¿Cuán grande es la oficina?",
+            "english": "How big is the office?"
+          },
+          "collections": [
+            "cuanto",
+            "spanish-to-english catchall",
+            "how",
+            "english-to-spanish reverse audit",
+            "question",
+            "degree",
+            "formal register"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Literary cuán; the everyday Colombian form is qué tan.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-de-que-ocurre-algo-24",
+          "action": "revise",
+          "existingConceptId": "n19h8scdqx",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "¿de qué [ocurre algo]?",
+          "english": "what [does something happen] about?",
+          "example": {
+            "spanish": "¿De qué estás hablando?",
+            "english": "What are you talking about?"
+          },
+          "collections": [
+            "de",
+            "spanish-to-english catchall",
+            "about",
+            "english-to-spanish reverse audit",
+            "question",
+            "preposition stranding"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Parallel to the con que and con quien stranding rows.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-de-vez-en-cuando-25",
+          "action": "revise",
+          "existingConceptId": "eyue78cz5h",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "de vez en cuando",
+          "english": "from time to time",
+          "example": {
+            "spanish": "Trabajo de noche y descanso de vez en cuando.",
+            "english": "I work at night and rest from time to time."
+          },
+          "collections": [
+            "de",
+            "spanish-to-english catchall",
+            "time",
+            "frequency",
+            "fixed expression"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Original row bundled de noche and de vez en cuando; de noche is already covered by por la noche, so this keeps the uncovered half.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-hacer-algo-de-una-emocion-26",
+          "action": "revise",
+          "existingConceptId": "5rr4zebvp7",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "[hacer algo] de [una emoción]",
+          "english": "to [do something] with [an emotion]",
+          "example": {
+            "spanish": "Temblaba de frío y lloraba de alegría.",
+            "english": "She was shaking with cold and crying with joy."
+          },
+          "collections": [
+            "de",
+            "spanish-to-english catchall",
+            "de => with",
+            "cause"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Source file 03-cause-and-reaction: de marks cause, English uses with.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-depender-de-que-ocurra-algo-27",
+          "action": "revise",
+          "existingConceptId": "wine5n6gd9",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "depender de que [ocurra algo]",
+          "english": "to depend on [something] happening",
+          "example": {
+            "spanish": "El resultado depende de Ana y de que el sistema funcione.",
+            "english": "The result depends on Ana and on the system working."
+          },
+          "collections": [
+            "de",
+            "spanish-to-english catchall",
+            "depender",
+            "de que => on",
+            "clause"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "The clause-complement form; depender de [algo] already exists.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-dentro-de-un-tiempo-28",
+          "action": "revise",
+          "existingConceptId": "20iwl9s0r5",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "dentro de [un tiempo]",
+          "english": "in [an amount of time]",
+          "example": {
+            "spanish": "Vuelve dentro de una hora.",
+            "english": "Come back in an hour."
+          },
+          "collections": [
+            "dentro",
+            "spanish-to-english catchall",
+            "time",
+            "preposition"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Future-time dentro de.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-dentro-de-un-limite-29",
+          "action": "revise",
+          "existingConceptId": "pwdq4vnqib",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "dentro de [un límite]",
+          "english": "within [a limit]",
+          "example": {
+            "spanish": "Debes responder dentro del plazo.",
+            "english": "You must respond within the deadline."
+          },
+          "collections": [
+            "dentro",
+            "spanish-to-english catchall",
+            "preposition",
+            "limit"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "The boundary sense, distinct from the future-time sense.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-desde-un-momento-30",
+          "action": "revise",
+          "existingConceptId": "0rg57o7g76",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "desde [un momento]",
+          "english": "starting [a time]",
+          "example": {
+            "spanish": "Desde mañana, abriremos más temprano.",
+            "english": "Starting tomorrow, we will open earlier."
+          },
+          "collections": [
+            "desde",
+            "spanish-to-english catchall",
+            "time",
+            "preposition"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Starting-point sense of desde.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-desde-mi-punto-de-vista-31",
+          "action": "revise",
+          "existingConceptId": "yhh3l4act9",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "desde mi punto de vista",
+          "english": "from my point of view",
+          "example": {
+            "spanish": "Desde mi punto de vista, es correcto.",
+            "english": "From my point of view, it is correct."
+          },
+          "collections": [
+            "desde",
+            "spanish-to-english catchall",
+            "fixed expression",
+            "opinion"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Fixed opinion phrase.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-desde-luego-32",
+          "action": "revise",
+          "existingConceptId": "6827l0k1ob",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "desde luego",
+          "english": "of course",
+          "example": {
+            "spanish": "Desde luego que sí.",
+            "english": "Of course."
+          },
+          "collections": [
+            "despues",
+            "spanish-to-english catchall",
+            "fixed expression",
+            "agreement"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Fixed agreement expression.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-donde-esta-algo-33",
+          "action": "revise",
+          "existingConceptId": "cboe3ncvvg",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "¿dónde está [algo]?",
+          "english": "where is [something]?",
+          "example": {
+            "spanish": "¿Dónde está la oficina?",
+            "english": "Where is the office?"
+          },
+          "collections": [
+            "donde",
+            "spanish-to-english catchall",
+            "where",
+            "english-to-spanish reverse audit",
+            "question",
+            "location"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Question frame; bare donde is held in core.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-entre-mas-ocurre-algo-mas-ocurre-otra-cosa-34",
+          "action": "revise",
+          "existingConceptId": "v7psmvhjff",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "entre más [ocurre algo], más [ocurre otra cosa]",
+          "english": "the more [something happens], the more [something else happens]",
+          "example": {
+            "spanish": "Entre más practicas, más aprendes.",
+            "english": "The more you practice, the more you learn."
+          },
+          "collections": [
+            "entre",
+            "spanish-to-english catchall",
+            "comparison",
+            "correlative"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Latin American entre mas correlative; the more...the more construction.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-mas-de-una-cantidad-35",
+          "action": "revise",
+          "existingConceptId": "2yywyl5i44",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "más de [una cantidad]",
+          "english": "more than [an amount]",
+          "example": {
+            "spanish": "Hay más de cien personas.",
+            "english": "There are more than one hundred people."
+          },
+          "collections": [
+            "mas",
+            "spanish-to-english catchall",
+            "quantity",
+            "comparison"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "More-than with numbers, where Spanish uses de rather than que.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-en-medio-de-algo-36",
+          "action": "revise",
+          "existingConceptId": "7nzdyaq2x1",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "en medio de [algo]",
+          "english": "in the middle of [something]",
+          "example": {
+            "spanish": "Está en medio de la calle.",
+            "english": "It is in the middle of the street."
+          },
+          "collections": [
+            "medio",
+            "spanish-to-english catchall",
+            "location",
+            "preposition"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Concept is the locative phrase.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-todos-menos-alguien-37",
+          "action": "revise",
+          "existingConceptId": "8g59ojfuw4",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "todos menos [alguien]",
+          "english": "everyone except [somebody]",
+          "example": {
+            "spanish": "Vinieron todos menos Laura.",
+            "english": "Everyone except Laura came."
+          },
+          "collections": [
+            "menos",
+            "spanish-to-english catchall",
+            "exception",
+            "quantity"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Exception sense of menos.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-mientras-que-ocurre-algo-38",
+          "action": "revise",
+          "existingConceptId": "7xx1fimdtn",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "mientras que [ocurre algo]",
+          "english": "whereas [something happens]",
+          "example": {
+            "spanish": "Ana cocina, mientras que Luis limpia.",
+            "english": "Ana cooks, whereas Luis cleans."
+          },
+          "collections": [
+            "mientras",
+            "spanish-to-english catchall",
+            "connector",
+            "contrast"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Source file 02-whereas: contrastive, not temporal, mientras.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-por-si-mismo-a-39",
+          "action": "revise",
+          "existingConceptId": "5r4vw18q4o",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "por sí mismo/a",
+          "english": "by oneself",
+          "example": {
+            "spanish": "Lo hizo por sí mismo.",
+            "english": "He did it by himself."
+          },
+          "collections": [
+            "mismo",
+            "spanish-to-english catchall",
+            "reflexive",
+            "fixed expression"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Source file 07-by-oneself.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-hacer-algo-mucho-40",
+          "action": "revise",
+          "existingConceptId": "szn7fm8wsx",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "[hacer algo] mucho",
+          "english": "to [do something] a lot",
+          "example": {
+            "spanish": "Trabajo mucho entre semana, pero descanso los domingos.",
+            "english": "I work a lot during the week, but I rest on Sundays."
+          },
+          "collections": [
+            "mucho",
+            "spanish-to-english catchall",
+            "quantity",
+            "adverb"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Adverbial mucho modifying a verb.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-mucho-sustantivo-41",
+          "action": "revise",
+          "existingConceptId": "01slode9o8",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "mucho [sustantivo]",
+          "english": "plenty of [noun]",
+          "example": {
+            "spanish": "Tenemos mucho tiempo; no hay que apurarnos.",
+            "english": "We have plenty of time; there's no need to rush."
+          },
+          "collections": [
+            "mucho",
+            "spanish-to-english catchall",
+            "quantity",
+            "determiner"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Plenty-of sense of mucho.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-no-hacer-algo-ni-hacer-otra-cosa-42",
+          "action": "revise",
+          "existingConceptId": "dhyt13en8w",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "no [hacer algo] ni [hacer otra cosa]",
+          "english": "neither [to do something] nor [to do something else]",
+          "example": {
+            "spanish": "No llamó ni escribió.",
+            "english": "She neither called nor wrote."
+          },
+          "collections": [
+            "ni",
+            "spanish-to-english catchall",
+            "negative",
+            "correlative"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Verb-phrase neither/nor.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-ni-alguien-ni-alguien-43",
+          "action": "revise",
+          "existingConceptId": "i4tdzuamg4",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "ni [alguien] ni [alguien]",
+          "english": "neither [somebody] nor [somebody]",
+          "example": {
+            "spanish": "Ni Ana ni Luis vinieron.",
+            "english": "Neither Ana nor Luis came."
+          },
+          "collections": [
+            "ni",
+            "spanish-to-english catchall",
+            "negative",
+            "correlative"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Noun-phrase neither/nor, distinct from the verb form.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-no-hacer-algo-siquiera-una-vez-44",
+          "action": "revise",
+          "existingConceptId": "52dbadce2l",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "no [hacer algo] siquiera [una vez]",
+          "english": "not to [do something] even [once]",
+          "example": {
+            "spanish": "No llamó siquiera una vez.",
+            "english": "She didn't call even once."
+          },
+          "collections": [
+            "ni",
+            "spanish-to-english catchall",
+            "siquiera",
+            "negative",
+            "emphasis"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Siquiera as even in a negative clause.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-ni-siquiera-hacer-algo-45",
+          "action": "revise",
+          "existingConceptId": "v96gg2fw1q",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "ni siquiera [hacer algo]",
+          "english": "not even to [do something]",
+          "example": {
+            "spanish": "Ni siquiera lo intentó.",
+            "english": "He didn't even try."
+          },
+          "collections": [
+            "ni",
+            "spanish-to-english catchall",
+            "siquiera",
+            "negative",
+            "emphasis"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "The ni siquiera intensifier.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-siquiera-una-cantidad-46",
+          "action": "revise",
+          "existingConceptId": "31la252ocl",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "siquiera [una cantidad]",
+          "english": "at least [an amount]",
+          "example": {
+            "spanish": "Dame siquiera cinco minutos.",
+            "english": "Give me at least five minutes."
+          },
+          "collections": [
+            "ni",
+            "spanish-to-english catchall",
+            "siquiera",
+            "quantity"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Positive at-least sense of siquiera.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-nunca-has-hecho-algo-47",
+          "action": "revise",
+          "existingConceptId": "4sabms9mlz",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "¿nunca has [hecho algo]?",
+          "english": "haven't you ever [done something]?",
+          "example": {
+            "spanish": "¿Nunca has viajado solo?",
+            "english": "Haven't you ever traveled alone?"
+          },
+          "collections": [
+            "nunca",
+            "spanish-to-english catchall",
+            "question",
+            "never",
+            "ever"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "The Spanish nunca to English ever swap in questions.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-por-que-ocurre-algo-48",
+          "action": "revise",
+          "existingConceptId": "dzhyd6xsd6",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "¿por qué [ocurre algo]?",
+          "english": "why [does something happen]?",
+          "example": {
+            "spanish": "¿Por qué lo necesitas?",
+            "english": "Why do you need it?"
+          },
+          "collections": [
+            "por",
+            "spanish-to-english catchall",
+            "why",
+            "english-to-spanish reverse audit",
+            "question",
+            "reason"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Question frame for why.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-mas-pronto-de-lo-esperado-49",
+          "action": "revise",
+          "existingConceptId": "i7kngch29y",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "más pronto de lo esperado",
+          "english": "earlier than expected",
+          "example": {
+            "spanish": "Terminó más pronto de lo esperado.",
+            "english": "She finished earlier than expected."
+          },
+          "collections": [
+            "pronto",
+            "spanish-to-english catchall",
+            "comparison",
+            "time",
+            "fixed expression"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Fixed comparative phrase.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-de-pronto-50",
+          "action": "revise",
+          "existingConceptId": "lcz2539dyj",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "de pronto",
+          "english": "suddenly",
+          "example": {
+            "spanish": "De pronto empezó a llover.",
+            "english": "Suddenly, it started raining."
+          },
+          "collections": [
+            "pronto",
+            "spanish-to-english catchall",
+            "time",
+            "adverb"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Standard sense of de pronto.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-de-pronto-51",
+          "action": "revise",
+          "existingConceptId": "0jle9bry8q",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "de pronto",
+          "english": "maybe",
+          "example": {
+            "spanish": "De pronto está en casa.",
+            "english": "Maybe she is at home."
+          },
+          "collections": [
+            "pronto",
+            "spanish-to-english catchall",
+            "adverb",
+            "Colombian Spanish"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Colombian sense of de pronto; a genuine regional split from suddenly.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-a-que-hora-ocurre-algo-52",
+          "action": "revise",
+          "existingConceptId": "erzbzs0gzc",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "¿a qué hora [ocurre algo]?",
+          "english": "what time [does something happen]?",
+          "example": {
+            "spanish": "¿A qué hora empieza?",
+            "english": "At what time does it start?"
+          },
+          "collections": [
+            "que",
+            "spanish-to-english catchall",
+            "what",
+            "english-to-spanish reverse audit",
+            "question",
+            "time"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Question frame for clock time.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-asegurarse-de-que-algo-53",
+          "action": "revise",
+          "existingConceptId": "gwnpt7pmq9",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "asegurarse de que [algo]",
+          "english": "to make sure [something]",
+          "example": {
+            "spanish": "Asegura que la puerta esté cerrada.",
+            "english": "Make sure the door is locked."
+          },
+          "collections": [
+            "seguro",
+            "spanish-to-english catchall",
+            "asegurar",
+            "clause",
+            "de que => that"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Base construction; the original row stored an imperative.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-no-solo-algo-54",
+          "action": "revise",
+          "existingConceptId": "etyzwht0ts",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "no solo [algo]",
+          "english": "not only [something]",
+          "example": {
+            "spanish": "No solo vino, sino que ayudó.",
+            "english": "She not only came but also helped."
+          },
+          "collections": [
+            "si",
+            "spanish-to-english catchall",
+            "correlative",
+            "no",
+            "solo",
+            "only"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "First half of the split correlative; one teachable unit per row.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-sino-tambien-algo-55",
+          "action": "revise",
+          "existingConceptId": "zn6dojvjv8",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "sino también [algo]",
+          "english": "but also [something]",
+          "example": {
+            "spanish": "No solo vino Laura, sino también Mateo.",
+            "english": "Not only Laura but also Mateo came."
+          },
+          "collections": [
+            "solo",
+            "también",
+            "also",
+            "not only",
+            "but also",
+            "connector",
+            "english-to-spanish mappings",
+            "correlative",
+            "sino"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Second half of the split correlative, taking over the previously bundled row.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-no-hacer-nada-sino-hacer-algo-56",
+          "action": "revise",
+          "existingConceptId": "ksf8aynt7s",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "no [hacer nada] sino [hacer algo]",
+          "english": "to do nothing but [do something]",
+          "example": {
+            "spanish": "No hace nada sino quejarse.",
+            "english": "He does nothing but complain."
+          },
+          "collections": [
+            "si",
+            "spanish-to-english catchall",
+            "sino",
+            "exception"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Source file 03-except: sino as but/except.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-siempre-que-ocurre-algo-57",
+          "action": "revise",
+          "existingConceptId": "t114homehd",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "siempre que [ocurre algo]",
+          "english": "whenever [something happens]",
+          "example": {
+            "spanish": "Siempre que llama, estoy ocupado.",
+            "english": "Whenever she calls, I am busy."
+          },
+          "collections": [
+            "siempre",
+            "spanish-to-english catchall",
+            "connector",
+            "time",
+            "condition"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Temporal whenever sense.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-siempre-que-ocurra-algo-58",
+          "action": "revise",
+          "existingConceptId": "0lold5fh3d",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "siempre que [ocurra algo]",
+          "english": "as long as [something happens]",
+          "example": {
+            "spanish": "Puedes llamarme siempre que quieras.",
+            "english": "You can call me whenever/as long as you want."
+          },
+          "collections": [
+            "siempre",
+            "spanish-to-english catchall",
+            "connector",
+            "condition"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Conditional sense; the original English bundled whenever/as long as into one field.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-llevar-tiempo-sin-hacer-algo-59",
+          "action": "revise",
+          "existingConceptId": "tpnbbxdlyr",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "llevar [tiempo] sin [hacer algo]",
+          "english": "not to have [done something] for [a period of time]",
+          "example": {
+            "spanish": "Llevo dos días sin dormir.",
+            "english": "I haven't slept for two days."
+          },
+          "collections": [
+            "sin",
+            "spanish-to-english catchall",
+            "llevar",
+            "duration",
+            "negative"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Negative counterpart of llevar [tiempo] [haciendo algo].",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-hacer-algo-tanto-como-alguien-60",
+          "action": "revise",
+          "existingConceptId": "6k3ek5jhqf",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "[hacer algo] tanto como [alguien]",
+          "english": "to [do something] as much as [somebody]",
+          "example": {
+            "spanish": "Trabaja tanto como yo.",
+            "english": "She works as much as I do."
+          },
+          "collections": [
+            "tanto",
+            "spanish-to-english catchall",
+            "comparison",
+            "equal comparison"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Verb-phrase as-much-as; the noun form already exists.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-mientras-tanto-61",
+          "action": "revise",
+          "existingConceptId": "ub2iy1fuxk",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "mientras tanto",
+          "english": "meanwhile",
+          "example": {
+            "spanish": "Mientras tanto, espera aquí.",
+            "english": "Meanwhile, wait here."
+          },
+          "collections": [
+            "tanto",
+            "spanish-to-english catchall",
+            "connector",
+            "time"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Concept is the discourse connector.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-mas-vale-tarde-que-nunca-62",
+          "action": "revise",
+          "existingConceptId": "97h5zo76ab",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "más vale tarde que nunca",
+          "english": "better late than never",
+          "example": {
+            "spanish": "Más vale tarde que nunca.",
+            "english": "Better late than never."
+          },
+          "collections": [
+            "tarde",
+            "spanish-to-english catchall",
+            "proverb",
+            "fixed expression"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "A proverb; legitimately stored whole, but the example no longer mirrors the concept field.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-tardar-tiempo-en-hacer-algo-63",
+          "action": "revise",
+          "existingConceptId": "23jqqwk28f",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "tardar [tiempo] en [hacer algo]",
+          "english": "to take [an amount of time] to [do something]",
+          "example": {
+            "spanish": "Tardé una hora en terminar.",
+            "english": "It took me an hour to finish."
+          },
+          "collections": [
+            "tarde",
+            "spanish-to-english catchall",
+            "tardar",
+            "duration"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Duration construction with an explicit amount.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-tardar-en-hacer-algo-64",
+          "action": "revise",
+          "existingConceptId": "vmo1fuguve",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "tardar en [hacer algo]",
+          "english": "to be slow to [do something]",
+          "example": {
+            "spanish": "La respuesta tardó en llegar.",
+            "english": "The response was slow to arrive."
+          },
+          "collections": [
+            "tarde",
+            "spanish-to-english catchall",
+            "tardar",
+            "delay"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "The delay sense, without an explicit amount.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-que-hay-de-nuevo-65",
+          "action": "revise",
+          "existingConceptId": "m83xfkgld1",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "¿Qué hay de nuevo?",
+          "english": "What is new?",
+          "example": {
+            "spanish": "¿Qué hay de nuevo?",
+            "english": "What is new?"
+          },
+          "collections": [
+            "nuevo",
+            "new",
+            "question",
+            "fixed expression",
+            "english-to-spanish mappings",
+            "greeting"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Sentence-case normalization only; the concept field was lowercased.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-asi-ocurre-algo-66",
+          "action": "revise",
+          "existingConceptId": "3c8uaa6qwh",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "así [ocurre algo]",
+          "english": "that is how [something happens]",
+          "example": {
+            "spanish": "Así funciona.",
+            "english": "That is how it works."
+          },
+          "collections": [
+            "asi",
+            "spanish-to-english catchall",
+            "manner"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Concept is the manner adverb, not the sentence.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-cierto-a-sustantivo-67",
+          "action": "revise",
+          "existingConceptId": "wha5r4jqwd",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "cierto/a [sustantivo]",
+          "english": "a certain [noun]",
+          "example": {
+            "spanish": "Cierta persona llamó.",
+            "english": "A certain person called."
+          },
+          "collections": [
+            "cierto",
+            "spanish-to-english catchall",
+            "determiner"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Determiner sense of cierto.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-como-hacer-algo-68",
+          "action": "revise",
+          "existingConceptId": "ltag03rg5k",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "¿cómo [hacer algo]?",
+          "english": "how do you [do something]?",
+          "example": {
+            "spanish": "¿Cómo lo haces?",
+            "english": "How do you do it?"
+          },
+          "collections": [
+            "como",
+            "spanish-to-english catchall",
+            "how",
+            "english-to-spanish reverse audit",
+            "question",
+            "manner"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Question frame; bare como is held in core.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-luego-69",
+          "action": "revise",
+          "existingConceptId": "jdnb164lv0",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "luego",
+          "english": "therefore",
+          "example": {
+            "spanish": "Pienso, luego existo.",
+            "english": "I think, therefore I am."
+          },
+          "collections": [
+            "despues",
+            "spanish-to-english catchall",
+            "connector",
+            "consequence"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Consequence sense of luego, distinct from its time sense.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-pues-70",
+          "action": "revise",
+          "existingConceptId": "me1ci2uana",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "pues",
+          "english": "then",
+          "example": {
+            "spanish": "Pues hazlo tú.",
+            "english": "Then do it yourself."
+          },
+          "collections": [
+            "pues",
+            "spanish-to-english catchall",
+            "discourse connector",
+            "Colombian Spanish"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Very common Colombian discourse marker.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-que-adjetivo-sustantivo-71",
+          "action": "revise",
+          "existingConceptId": "b1uohuf8wn",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "¡qué [adjetivo] [sustantivo]!",
+          "english": "what a [adjective] [noun]!",
+          "example": {
+            "spanish": "¡Qué buena idea!",
+            "english": "What a good idea!"
+          },
+          "collections": [
+            "que",
+            "spanish-to-english catchall",
+            "exclamative"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Exclamative construction with a noun.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-que-adjetivo-72",
+          "action": "revise",
+          "existingConceptId": "dhxw09o9vs",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "¡qué [adjetivo]!",
+          "english": "how [adjective]!",
+          "example": {
+            "spanish": "¡Qué interesante!",
+            "english": "How interesting!"
+          },
+          "collections": [
+            "que",
+            "spanish-to-english catchall",
+            "exclamative"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Exclamative construction with a bare adjective.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-sin-algo-73",
+          "action": "revise",
+          "existingConceptId": "wmzhjqoerd",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "sin [algo]",
+          "english": "without [something]",
+          "example": {
+            "spanish": "Café sin azúcar.",
+            "english": "Coffee without sugar."
+          },
+          "collections": [
+            "sin",
+            "spanish-to-english catchall",
+            "preposition",
+            "negative"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Noun-complement sin; the gerund form already exists.",
+          "approved": false,
+          "ownerNote": ""
+        },
+        {
+          "id": "revise-abajo-algo-74",
+          "action": "revise",
+          "existingConceptId": "56dupg98qa",
+          "suggestedCurriculumRole": "reference",
+          "spanish": "¡abajo [algo]!",
+          "english": "down with [something]!",
+          "example": {
+            "spanish": "¡Abajo el impuesto!",
+            "english": "Down with the tax!"
+          },
+          "collections": [
+            "bajo",
+            "spanish-to-english catchall",
+            "exclamative",
+            "protest"
+          ],
+          "curriculumRole": "reference",
+          "sourcePaths": [
+            "docs/curation/sentence-record-normalization-2026-09-02.md"
+          ],
+          "rationale": "Fixed protest exclamation.",
+          "approved": false,
+          "ownerNote": ""
+        }
+      ]
     }
   ]
 }
