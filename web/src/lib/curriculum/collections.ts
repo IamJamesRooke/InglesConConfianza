@@ -175,7 +175,6 @@ export const LEGACY_COLLECTIONS: ReadonlySet<string> = new Set([
   "have not",
   "height",
   "hold back",
-  "how many",
   "if I were you",
   "if only",
   "if there is",

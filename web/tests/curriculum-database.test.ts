@@ -45,8 +45,8 @@ test("the imported curriculum is exact and protected", async (context) => {
     "LEGACY_COLLECTIONS may only shrink; remove names no concept still carries.",
   );
   assert.ok(
-    LEGACY_COLLECTIONS.size <= 293,
-    `Legacy bare collections must not grow past 293 (found ${LEGACY_COLLECTIONS.size}).`,
+    LEGACY_COLLECTIONS.size <= 292,
+    `Legacy bare collections must not grow past 292 (found ${LEGACY_COLLECTIONS.size}).`,
   );
 
   // The es: / en: lemma facets make the catalog queryable as a bilingual

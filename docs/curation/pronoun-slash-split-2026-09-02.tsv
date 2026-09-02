@@ -1,0 +1,29 @@
+# Replace slashed determiner/pronoun concepts with one row per Spanish form.
+este	this	Este libro es importante.	This book is important.	core	pos:function-word|grammar:demonstrative|grammar:demonstrative-determiner|grammar:singular|grammar:proximal|grammar:masculine|topic:pronoun|es:este|en:this
+esta	this	Esta casa es grande.	This house is big.	core	pos:function-word|grammar:demonstrative|grammar:demonstrative-determiner|grammar:singular|grammar:proximal|grammar:feminine|topic:pronoun|es:esta|en:this
+ese	that	Ese libro es importante.	That book is important.	core	pos:function-word|grammar:demonstrative|grammar:demonstrative-determiner|grammar:singular|grammar:distal|grammar:masculine|topic:pronoun|es:ese|en:that
+esa	that	Esa casa es grande.	That house is big.	core	pos:function-word|grammar:demonstrative|grammar:demonstrative-determiner|grammar:singular|grammar:distal|grammar:feminine|topic:pronoun|es:esa|en:that
+estos	these	Estos zapatos me quedan bien.	These shoes fit me.	core	pos:function-word|grammar:demonstrative|grammar:demonstrative-determiner|grammar:plural|grammar:proximal|grammar:masculine|topic:pronoun|es:estos|en:these
+estas	these	Estas sillas son cómodas.	These chairs are comfortable.	core	pos:function-word|grammar:demonstrative|grammar:demonstrative-determiner|grammar:plural|grammar:proximal|grammar:feminine|topic:pronoun|es:estas|en:these
+esos	those	Esos zapatos son caros.	Those shoes are expensive.	core	pos:function-word|grammar:demonstrative|grammar:demonstrative-determiner|grammar:plural|grammar:distal|grammar:masculine|topic:pronoun|es:esos|en:those
+esas	those	Esas sillas están rotas.	Those chairs are broken.	core	pos:function-word|grammar:demonstrative|grammar:demonstrative-determiner|grammar:plural|grammar:distal|grammar:feminine|topic:pronoun|es:esas|en:those
+este	this one	Quiero este, no ese.	I want this one, not that one.	supporting	pos:pronoun|grammar:demonstrative-pronoun|grammar:proximal|grammar:masculine|topic:pronoun|es:este|en:this
+esta	this one	Prefiero esta.	I prefer this one.	supporting	pos:pronoun|grammar:demonstrative-pronoun|grammar:proximal|grammar:feminine|topic:pronoun|es:esta|en:this
+ese	that one	Ese es más barato.	That one is cheaper.	supporting	pos:pronoun|grammar:demonstrative-pronoun|grammar:distal|grammar:masculine|topic:pronoun|es:ese|en:that
+esa	that one	Esa cuesta menos.	That one costs less.	supporting	pos:pronoun|grammar:demonstrative-pronoun|grammar:distal|grammar:feminine|topic:pronoun|es:esa|en:that
+aquel	that	Prefiero aquel, no este.	I prefer that one, not this one.	supporting	pos:pronoun|grammar:demonstrative-pronoun|grammar:distal|grammar:masculine|topic:pronoun|es:aquel|en:that
+aquella	that	Aquella fue una buena época.	That was a good time.	reference	pos:pronoun|grammar:demonstrative-pronoun|grammar:distal|grammar:feminine|topic:pronoun|es:aquella|en:that
+ambos	both	Ambos libros son útiles.	Both books are useful.	supporting	pos:determiner|grammar:quantifier|grammar:masculine|es:ambos|en:both
+ambas	both	Ambas casas son bonitas.	Both houses are nice.	supporting	pos:determiner|grammar:quantifier|grammar:feminine|es:ambas|en:both
+muchos	many	Vinieron muchos hombres.	Many men came.	supporting	pos:determiner|grammar:quantifier|grammar:countable|grammar:masculine|es:muchos|en:many
+muchas	many	Vinieron muchas personas.	Many people came.	supporting	pos:determiner|grammar:quantifier|grammar:countable|grammar:feminine|es:muchas|en:many
+cuántos	how many	¿Cuántos carros hay?	How many cars are there?	core	pos:determiner|grammar:interrogative-pronoun|grammar:quantifier|grammar:masculine|es:cuántos|en:how
+cuántas	how many	¿Cuántas sillas necesitamos?	How many chairs do we need?	core	pos:determiner|grammar:interrogative-pronoun|grammar:quantifier|grammar:feminine|es:cuántas|en:how
+pocos	few	Hay pocos hombres aquí.	There are few men here.	supporting	pos:determiner|grammar:quantifier|grammar:countable|grammar:masculine|es:pocos|en:few
+pocas	few	Hay pocas sillas.	There are few chairs.	supporting	pos:determiner|grammar:quantifier|grammar:countable|grammar:feminine|es:pocas|en:few
+otros	other	Quiero otros libros.	I want other books.	supporting	pos:determiner|grammar:quantifier|grammar:plural|grammar:masculine|es:otros|en:other
+otras	other	Necesito otras opciones.	I need other options.	supporting	pos:determiner|grammar:quantifier|grammar:plural|grammar:feminine|es:otras|en:other
+nuestros	our	Nuestros amigos vienen mañana.	Our friends are coming tomorrow.	supporting	pos:function-word|grammar:possessive-determiner|grammar:first-person|grammar:plural|grammar:masculine|topic:pronoun|es:nuestros|en:our
+nuestras	our	Nuestras ideas son buenas.	Our ideas are good.	supporting	pos:function-word|grammar:possessive-determiner|grammar:first-person|grammar:plural|grammar:feminine|topic:pronoun|es:nuestras|en:our
+nuestro	our	Nuestro equipo ganó.	Our team won.	supporting	pos:function-word|grammar:possessive-determiner|grammar:first-person|grammar:plural|grammar:masculine|topic:pronoun|es:nuestro|en:our
+nuestra	our	Nuestra casa es azul.	Our house is blue.	supporting	pos:function-word|grammar:possessive-determiner|grammar:first-person|grammar:plural|grammar:feminine|topic:pronoun|es:nuestra|en:our

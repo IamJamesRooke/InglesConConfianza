@@ -22926,21 +22926,6 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "v7852oe8df",
-      "spanish": "cuántos / cuántas",
-      "english": "how many",
-      "example": {
-        "spanish": "cuántos / cuántas",
-        "english": "how many"
-      },
-      "collections": [
-        "es:cuánto",
-        "es:cuántos",
-        "en:how"
-      ],
-      "curriculumRole": "core"
-    },
-    {
       "id": "iina5o4u5x",
       "spanish": "cuán grande",
       "english": "how big",
@@ -26955,22 +26940,6 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "nkh76gulrq",
-      "spanish": "ambos/as",
-      "english": "both",
-      "example": {
-        "spanish": "Ambos libros son útiles.",
-        "english": "Both books are useful."
-      },
-      "collections": [
-        "pos:determiner",
-        "grammar:quantifier",
-        "es:ambos",
-        "en:both"
-      ],
-      "curriculumRole": "supporting"
-    },
-    {
       "id": "sc7ha1u7ec",
       "spanish": "los dos",
       "english": "both",
@@ -28054,42 +28023,6 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "rtcwueuxb4",
-      "spanish": "muchos/as",
-      "english": "many",
-      "example": {
-        "spanish": "Vinieron muchas personas.",
-        "english": "Many people came."
-      },
-      "collections": [
-        "es:mucho",
-        "pos:determiner",
-        "grammar:quantifier",
-        "es:muchos",
-        "en:many"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "9aayvk6kud",
-      "spanish": "cuántos/as",
-      "english": "how many",
-      "example": {
-        "spanish": "¿Cuántas sillas necesitamos?",
-        "english": "How many chairs do we need?"
-      },
-      "collections": [
-        "es:cuánto",
-        "en:many",
-        "how many",
-        "grammar:question",
-        "grammar:quantifier",
-        "es:cuántos",
-        "en:how"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "feol8lzuht",
       "spanish": "muchos/as de [algo]",
       "english": "many of [something]",
@@ -28407,24 +28340,6 @@
         "grammar:quantifier",
         "es:otro",
         "en:another"
-      ],
-      "curriculumRole": "supporting"
-    },
-    {
-      "id": "4mjcl48qdl",
-      "spanish": "otros/as [sustantivos]",
-      "english": "other [nouns]",
-      "example": {
-        "spanish": "Quiero otros libros.",
-        "english": "I want other books."
-      },
-      "collections": [
-        "es:otro",
-        "pos:determiner",
-        "grammar:plural",
-        "grammar:quantifier",
-        "es:otros",
-        "en:other"
       ],
       "curriculumRole": "supporting"
     },
@@ -52295,22 +52210,6 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "kdaf7jpwt7",
-      "spanish": "pocos/pocas",
-      "english": "few",
-      "example": {
-        "spanish": "Hay pocas sillas.",
-        "english": "There are few chairs."
-      },
-      "collections": [
-        "pos:function-word",
-        "pos:quantifier",
-        "es:pocos",
-        "en:few"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "37lvgw6mdi",
       "spanish": "un poco",
       "english": "a little",
@@ -64521,98 +64420,6 @@
       "curriculumRole": "supporting"
     },
     {
-      "id": "umj0jwueww",
-      "spanish": "este/esta",
-      "english": "this",
-      "example": {
-        "spanish": "Este libro es importante.",
-        "english": "This book is important."
-      },
-      "collections": [
-        "pos:function-word",
-        "grammar:demonstrative",
-        "grammar:singular",
-        "grammar:proximal",
-        "grammar:noun-phrase",
-        "es:este",
-        "en:this",
-        "pos:pronoun",
-        "grammar:demonstrative-determiner",
-        "topic:pronoun"
-      ],
-      "curriculumRole": "core"
-    },
-    {
-      "id": "5xqlvi8o8k",
-      "spanish": "ese/esa",
-      "english": "that",
-      "example": {
-        "spanish": "Ese libro es importante.",
-        "english": "That book is important."
-      },
-      "collections": [
-        "pos:function-word",
-        "grammar:demonstrative",
-        "grammar:singular",
-        "grammar:distal",
-        "grammar:noun-phrase",
-        "es:ese",
-        "en:that",
-        "pos:pronoun",
-        "grammar:demonstrative-determiner",
-        "topic:pronoun"
-      ],
-      "curriculumRole": "core"
-    },
-    {
-      "id": "n7ckq60x6x",
-      "spanish": "estos/estas",
-      "english": "these",
-      "example": {
-        "spanish": "Estos zapatos me quedan bien.",
-        "english": "These shoes fit me."
-      },
-      "collections": [
-        "pos:function-word",
-        "grammar:demonstrative",
-        "grammar:plural",
-        "grammar:proximal",
-        "grammar:noun-phrase",
-        "grammar:stands-alone",
-        "grammar:no-ones-required",
-        "es:estos",
-        "en:these",
-        "pos:pronoun",
-        "grammar:demonstrative-determiner",
-        "topic:pronoun"
-      ],
-      "curriculumRole": "core"
-    },
-    {
-      "id": "cmwi64osep",
-      "spanish": "esos/esas",
-      "english": "those",
-      "example": {
-        "spanish": "Esos son demasiado grandes.",
-        "english": "Those are too big."
-      },
-      "collections": [
-        "pos:function-word",
-        "grammar:demonstrative",
-        "grammar:plural",
-        "grammar:distal",
-        "grammar:noun-phrase",
-        "grammar:stands-alone",
-        "grammar:no-ones-required",
-        "es:esos",
-        "en:those",
-        "pos:pronoun",
-        "grammar:demonstrative-determiner",
-        "topic:pronoun"
-      ],
-      "curriculumRole": "core"
-    },
-    {
       "id": "s06vm98ww1",
       "spanish": "gustarle los gatos a [alguien] (en general)",
       "english": "[somebody] likes cats",
@@ -74051,44 +73858,6 @@
       "curriculumRole": "supporting"
     },
     {
-      "id": "qz0hocm2cl",
-      "spanish": "nuestro/a",
-      "english": "our",
-      "example": {
-        "spanish": "Nuestro equipo ganó.",
-        "english": "Our team won."
-      },
-      "collections": [
-        "pos:function-word",
-        "grammar:possessive-determiner",
-        "grammar:first-person",
-        "grammar:plural",
-        "topic:pronoun",
-        "es:nuestro",
-        "en:our"
-      ],
-      "curriculumRole": "supporting"
-    },
-    {
-      "id": "xq5976wdaa",
-      "spanish": "nuestros/as",
-      "english": "our",
-      "example": {
-        "spanish": "Nuestros amigos vienen mañana.",
-        "english": "Our friends are coming tomorrow."
-      },
-      "collections": [
-        "pos:function-word",
-        "grammar:possessive-determiner",
-        "grammar:first-person",
-        "grammar:plural",
-        "topic:pronoun",
-        "es:nuestro",
-        "en:our"
-      ],
-      "curriculumRole": "supporting"
-    },
-    {
       "id": "m99dttixau",
       "spanish": "el mío/la mía",
       "english": "mine",
@@ -75229,60 +74998,6 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "v406blvw9w",
-      "spanish": "aquel/aquella",
-      "english": "that",
-      "example": {
-        "spanish": "Prefiero aquel, no este.",
-        "english": "I prefer that one, not this one."
-      },
-      "collections": [
-        "pos:pronoun",
-        "grammar:demonstrative-pronoun",
-        "grammar:distal",
-        "topic:pronoun",
-        "es:aquel",
-        "en:that"
-      ],
-      "curriculumRole": "supporting"
-    },
-    {
-      "id": "31ukfql6jj",
-      "spanish": "este/esta",
-      "english": "this one",
-      "example": {
-        "spanish": "Quiero este, no ese.",
-        "english": "I want this one, not that one."
-      },
-      "collections": [
-        "pos:pronoun",
-        "grammar:demonstrative-pronoun",
-        "grammar:proximal",
-        "topic:pronoun",
-        "es:este",
-        "en:this"
-      ],
-      "curriculumRole": "supporting"
-    },
-    {
-      "id": "894jjuwlsp",
-      "spanish": "ese/esa",
-      "english": "that one",
-      "example": {
-        "spanish": "Ese es más barato.",
-        "english": "That one is cheaper."
-      },
-      "collections": [
-        "pos:pronoun",
-        "grammar:demonstrative-pronoun",
-        "grammar:distal",
-        "topic:pronoun",
-        "es:ese",
-        "en:that"
-      ],
-      "curriculumRole": "supporting"
-    },
-    {
       "id": "ufc23a1m04",
       "spanish": "que yo [haga algo]",
       "english": "me to [do something]",
@@ -75407,6 +75122,546 @@
         "es:que",
         "es:ellos",
         "en:them"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "0tty2mfina",
+      "spanish": "este",
+      "english": "this",
+      "example": {
+        "spanish": "Este libro es importante.",
+        "english": "This book is important."
+      },
+      "collections": [
+        "pos:function-word",
+        "grammar:demonstrative",
+        "grammar:demonstrative-determiner",
+        "grammar:singular",
+        "grammar:proximal",
+        "grammar:masculine",
+        "topic:pronoun",
+        "es:este",
+        "en:this"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "7hfg12h8br",
+      "spanish": "esta",
+      "english": "this",
+      "example": {
+        "spanish": "Esta casa es grande.",
+        "english": "This house is big."
+      },
+      "collections": [
+        "pos:function-word",
+        "grammar:demonstrative",
+        "grammar:demonstrative-determiner",
+        "grammar:singular",
+        "grammar:proximal",
+        "grammar:feminine",
+        "topic:pronoun",
+        "es:esta",
+        "en:this"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "dt2cwfu58n",
+      "spanish": "ese",
+      "english": "that",
+      "example": {
+        "spanish": "Ese libro es importante.",
+        "english": "That book is important."
+      },
+      "collections": [
+        "pos:function-word",
+        "grammar:demonstrative",
+        "grammar:demonstrative-determiner",
+        "grammar:singular",
+        "grammar:distal",
+        "grammar:masculine",
+        "topic:pronoun",
+        "es:ese",
+        "en:that"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "19ebbd6l4z",
+      "spanish": "esa",
+      "english": "that",
+      "example": {
+        "spanish": "Esa casa es grande.",
+        "english": "That house is big."
+      },
+      "collections": [
+        "pos:function-word",
+        "grammar:demonstrative",
+        "grammar:demonstrative-determiner",
+        "grammar:singular",
+        "grammar:distal",
+        "grammar:feminine",
+        "topic:pronoun",
+        "es:esa",
+        "en:that"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "b1tz89cfx9",
+      "spanish": "estos",
+      "english": "these",
+      "example": {
+        "spanish": "Estos zapatos me quedan bien.",
+        "english": "These shoes fit me."
+      },
+      "collections": [
+        "pos:function-word",
+        "grammar:demonstrative",
+        "grammar:demonstrative-determiner",
+        "grammar:plural",
+        "grammar:proximal",
+        "grammar:masculine",
+        "topic:pronoun",
+        "es:estos",
+        "en:these"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "y4l2k7yytm",
+      "spanish": "estas",
+      "english": "these",
+      "example": {
+        "spanish": "Estas sillas son cómodas.",
+        "english": "These chairs are comfortable."
+      },
+      "collections": [
+        "pos:function-word",
+        "grammar:demonstrative",
+        "grammar:demonstrative-determiner",
+        "grammar:plural",
+        "grammar:proximal",
+        "grammar:feminine",
+        "topic:pronoun",
+        "es:estas",
+        "en:these"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "ovsfppuo3l",
+      "spanish": "esos",
+      "english": "those",
+      "example": {
+        "spanish": "Esos zapatos son caros.",
+        "english": "Those shoes are expensive."
+      },
+      "collections": [
+        "pos:function-word",
+        "grammar:demonstrative",
+        "grammar:demonstrative-determiner",
+        "grammar:plural",
+        "grammar:distal",
+        "grammar:masculine",
+        "topic:pronoun",
+        "es:esos",
+        "en:those"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "1t1daklv4a",
+      "spanish": "esas",
+      "english": "those",
+      "example": {
+        "spanish": "Esas sillas están rotas.",
+        "english": "Those chairs are broken."
+      },
+      "collections": [
+        "pos:function-word",
+        "grammar:demonstrative",
+        "grammar:demonstrative-determiner",
+        "grammar:plural",
+        "grammar:distal",
+        "grammar:feminine",
+        "topic:pronoun",
+        "es:esas",
+        "en:those"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "7o2aypebuj",
+      "spanish": "este",
+      "english": "this one",
+      "example": {
+        "spanish": "Quiero este, no ese.",
+        "english": "I want this one, not that one."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:demonstrative-pronoun",
+        "grammar:proximal",
+        "grammar:masculine",
+        "topic:pronoun",
+        "es:este",
+        "en:this"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "lufi47fm96",
+      "spanish": "esta",
+      "english": "this one",
+      "example": {
+        "spanish": "Prefiero esta.",
+        "english": "I prefer this one."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:demonstrative-pronoun",
+        "grammar:proximal",
+        "grammar:feminine",
+        "topic:pronoun",
+        "es:esta",
+        "en:this"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "ytar943kdr",
+      "spanish": "ese",
+      "english": "that one",
+      "example": {
+        "spanish": "Ese es más barato.",
+        "english": "That one is cheaper."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:demonstrative-pronoun",
+        "grammar:distal",
+        "grammar:masculine",
+        "topic:pronoun",
+        "es:ese",
+        "en:that"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "a145a3y0wu",
+      "spanish": "esa",
+      "english": "that one",
+      "example": {
+        "spanish": "Esa cuesta menos.",
+        "english": "That one costs less."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:demonstrative-pronoun",
+        "grammar:distal",
+        "grammar:feminine",
+        "topic:pronoun",
+        "es:esa",
+        "en:that"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "u7kefn0q1x",
+      "spanish": "aquel",
+      "english": "that",
+      "example": {
+        "spanish": "Prefiero aquel, no este.",
+        "english": "I prefer that one, not this one."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:demonstrative-pronoun",
+        "grammar:distal",
+        "grammar:masculine",
+        "topic:pronoun",
+        "es:aquel",
+        "en:that"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "apj21ii1kp",
+      "spanish": "aquella",
+      "english": "that",
+      "example": {
+        "spanish": "Aquella fue una buena época.",
+        "english": "That was a good time."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:demonstrative-pronoun",
+        "grammar:distal",
+        "grammar:feminine",
+        "topic:pronoun",
+        "es:aquella",
+        "en:that"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "i7rkruke55",
+      "spanish": "ambos",
+      "english": "both",
+      "example": {
+        "spanish": "Ambos libros son útiles.",
+        "english": "Both books are useful."
+      },
+      "collections": [
+        "pos:determiner",
+        "grammar:quantifier",
+        "grammar:masculine",
+        "es:ambos",
+        "en:both"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "uhdk1y3gg9",
+      "spanish": "ambas",
+      "english": "both",
+      "example": {
+        "spanish": "Ambas casas son bonitas.",
+        "english": "Both houses are nice."
+      },
+      "collections": [
+        "pos:determiner",
+        "grammar:quantifier",
+        "grammar:feminine",
+        "es:ambas",
+        "en:both"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "c0euhmhow4",
+      "spanish": "muchos",
+      "english": "many",
+      "example": {
+        "spanish": "Vinieron muchos hombres.",
+        "english": "Many men came."
+      },
+      "collections": [
+        "pos:determiner",
+        "grammar:quantifier",
+        "grammar:countable",
+        "grammar:masculine",
+        "es:muchos",
+        "en:many"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "nn35sz7ahx",
+      "spanish": "muchas",
+      "english": "many",
+      "example": {
+        "spanish": "Vinieron muchas personas.",
+        "english": "Many people came."
+      },
+      "collections": [
+        "pos:determiner",
+        "grammar:quantifier",
+        "grammar:countable",
+        "grammar:feminine",
+        "es:muchas",
+        "en:many"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "ynlc19lduf",
+      "spanish": "cuántos",
+      "english": "how many",
+      "example": {
+        "spanish": "¿Cuántos carros hay?",
+        "english": "How many cars are there?"
+      },
+      "collections": [
+        "pos:determiner",
+        "grammar:interrogative-pronoun",
+        "grammar:quantifier",
+        "grammar:masculine",
+        "es:cuántos",
+        "en:how"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "cd0w4nxkj8",
+      "spanish": "cuántas",
+      "english": "how many",
+      "example": {
+        "spanish": "¿Cuántas sillas necesitamos?",
+        "english": "How many chairs do we need?"
+      },
+      "collections": [
+        "pos:determiner",
+        "grammar:interrogative-pronoun",
+        "grammar:quantifier",
+        "grammar:feminine",
+        "es:cuántas",
+        "en:how"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "5mn6ve08qg",
+      "spanish": "pocos",
+      "english": "few",
+      "example": {
+        "spanish": "Hay pocos hombres aquí.",
+        "english": "There are few men here."
+      },
+      "collections": [
+        "pos:determiner",
+        "grammar:quantifier",
+        "grammar:countable",
+        "grammar:masculine",
+        "es:pocos",
+        "en:few"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "s3q2fpxgh3",
+      "spanish": "pocas",
+      "english": "few",
+      "example": {
+        "spanish": "Hay pocas sillas.",
+        "english": "There are few chairs."
+      },
+      "collections": [
+        "pos:determiner",
+        "grammar:quantifier",
+        "grammar:countable",
+        "grammar:feminine",
+        "es:pocas",
+        "en:few"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "93l4fxk5nx",
+      "spanish": "otros",
+      "english": "other",
+      "example": {
+        "spanish": "Quiero otros libros.",
+        "english": "I want other books."
+      },
+      "collections": [
+        "pos:determiner",
+        "grammar:quantifier",
+        "grammar:plural",
+        "grammar:masculine",
+        "es:otros",
+        "en:other"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "gufodrirhg",
+      "spanish": "otras",
+      "english": "other",
+      "example": {
+        "spanish": "Necesito otras opciones.",
+        "english": "I need other options."
+      },
+      "collections": [
+        "pos:determiner",
+        "grammar:quantifier",
+        "grammar:plural",
+        "grammar:feminine",
+        "es:otras",
+        "en:other"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "umr08lge2h",
+      "spanish": "nuestros",
+      "english": "our",
+      "example": {
+        "spanish": "Nuestros amigos vienen mañana.",
+        "english": "Our friends are coming tomorrow."
+      },
+      "collections": [
+        "pos:function-word",
+        "grammar:possessive-determiner",
+        "grammar:first-person",
+        "grammar:plural",
+        "grammar:masculine",
+        "topic:pronoun",
+        "es:nuestros",
+        "en:our"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "1wszj3edq2",
+      "spanish": "nuestras",
+      "english": "our",
+      "example": {
+        "spanish": "Nuestras ideas son buenas.",
+        "english": "Our ideas are good."
+      },
+      "collections": [
+        "pos:function-word",
+        "grammar:possessive-determiner",
+        "grammar:first-person",
+        "grammar:plural",
+        "grammar:feminine",
+        "topic:pronoun",
+        "es:nuestras",
+        "en:our"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "x3zp11ybbf",
+      "spanish": "nuestro",
+      "english": "our",
+      "example": {
+        "spanish": "Nuestro equipo ganó.",
+        "english": "Our team won."
+      },
+      "collections": [
+        "pos:function-word",
+        "grammar:possessive-determiner",
+        "grammar:first-person",
+        "grammar:plural",
+        "grammar:masculine",
+        "topic:pronoun",
+        "es:nuestro",
+        "en:our"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "11uupaj41k",
+      "spanish": "nuestra",
+      "english": "our",
+      "example": {
+        "spanish": "Nuestra casa es azul.",
+        "english": "Our house is blue."
+      },
+      "collections": [
+        "pos:function-word",
+        "grammar:possessive-determiner",
+        "grammar:first-person",
+        "grammar:plural",
+        "grammar:feminine",
+        "topic:pronoun",
+        "es:nuestra",
+        "en:our"
       ],
       "curriculumRole": "supporting"
     }
