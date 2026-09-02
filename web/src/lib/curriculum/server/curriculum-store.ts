@@ -137,6 +137,20 @@ export async function readCurriculumPage({
   };
 }
 
+export async function readCuratedTopic(baseCollection: string): Promise<{
+  concepts: CurriculumConcept[];
+}> {
+  const rows = await prisma.curriculumConcept.findMany({
+    where: {
+      curriculumRole: { not: "trash" },
+      collections: { some: { collectionName: baseCollection } },
+    },
+    orderBy: [{ curriculumRole: "asc" }, { sortOrder: "asc" }],
+    include: conceptRelations,
+  });
+  return { concepts: rows.map(toCurriculumConcept) };
+}
+
 export async function updateCurriculumConcept(
   concept: CurriculumConcept,
 ): Promise<CurriculumConcept> {

@@ -1,0 +1,4 @@
+MERGE	grammar:pronoun-object	grammar:object-pronoun	same concept: direct+indirect object pronoun
+MERGE	grammar:direct-object	grammar:direct-object-pronoun	normalize object-pronoun sub-facets
+MERGE	grammar:indirect-object	grammar:indirect-object-pronoun	normalize object-pronoun sub-facets
+# plus SQL: added grammar:object-pronoun umbrella to all direct/indirect object pronoun concepts (16 rows)

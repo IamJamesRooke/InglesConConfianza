@@ -20477,7 +20477,7 @@
       "collections": [
         "pos:pronoun",
         "grammar:object-pronoun",
-        "grammar:direct-object",
+        "grammar:direct-object-pronoun",
         "grammar:first-person",
         "es:singular",
         "es:me",
@@ -20496,7 +20496,7 @@
       "collections": [
         "pos:pronoun",
         "grammar:object-pronoun",
-        "grammar:direct-object",
+        "grammar:direct-object-pronoun",
         "grammar:second-person",
         "es:singular",
         "register:informal",
@@ -20516,7 +20516,7 @@
       "collections": [
         "pos:pronoun",
         "grammar:object-pronoun",
-        "grammar:direct-object",
+        "grammar:direct-object-pronoun",
         "grammar:first-person",
         "grammar:plural",
         "es:nos",
@@ -20538,7 +20538,8 @@
         "grammar:third-person",
         "es:singular",
         "es:le",
-        "en:him"
+        "en:him",
+        "grammar:object-pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -20556,7 +20557,8 @@
         "grammar:third-person",
         "grammar:plural",
         "es:les",
-        "en:them"
+        "en:them",
+        "grammar:object-pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -20575,7 +20577,8 @@
         "grammar:third-person",
         "es:singular",
         "grammar:masculine",
-        "en:him"
+        "en:him",
+        "grammar:object-pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -20594,7 +20597,8 @@
         "grammar:third-person",
         "es:singular",
         "grammar:neuter",
-        "en:it"
+        "en:it",
+        "grammar:object-pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -20613,7 +20617,8 @@
         "grammar:third-person",
         "es:singular",
         "register:formal",
-        "en:you"
+        "en:you",
+        "grammar:object-pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -20632,7 +20637,8 @@
         "grammar:third-person",
         "es:singular",
         "grammar:feminine",
-        "en:her"
+        "en:her",
+        "grammar:object-pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -20651,7 +20657,8 @@
         "grammar:third-person",
         "es:singular",
         "grammar:neuter",
-        "en:it"
+        "en:it",
+        "grammar:object-pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -20670,7 +20677,8 @@
         "grammar:third-person",
         "es:singular",
         "register:formal",
-        "en:you"
+        "en:you",
+        "grammar:object-pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -20690,7 +20698,8 @@
         "grammar:plural",
         "grammar:masculine",
         "grammar:mixed-group",
-        "en:them"
+        "en:them",
+        "grammar:object-pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -20709,7 +20718,8 @@
         "grammar:third-person",
         "grammar:plural",
         "register:formal",
-        "en:you"
+        "en:you",
+        "grammar:object-pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -20728,7 +20738,8 @@
         "grammar:third-person",
         "grammar:plural",
         "grammar:feminine",
-        "en:them"
+        "en:them",
+        "grammar:object-pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -20747,7 +20758,8 @@
         "grammar:third-person",
         "grammar:plural",
         "register:formal",
-        "en:you"
+        "en:you",
+        "grammar:object-pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -20850,8 +20862,9 @@
         "grammar:se",
         "pos:pronoun",
         "sound:replacement-for-le-les",
-        "grammar:indirect-object",
-        "en:him"
+        "grammar:indirect-object-pronoun",
+        "en:him",
+        "grammar:object-pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -20867,8 +20880,9 @@
         "grammar:se",
         "pos:pronoun",
         "sound:replacement-for-le-les",
-        "grammar:indirect-object",
-        "en:her"
+        "grammar:indirect-object-pronoun",
+        "en:her",
+        "grammar:object-pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -20884,8 +20898,9 @@
         "grammar:se",
         "pos:pronoun",
         "sound:replacement-for-le-les",
-        "grammar:indirect-object",
-        "en:you"
+        "grammar:indirect-object-pronoun",
+        "en:you",
+        "grammar:object-pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -20901,8 +20916,9 @@
         "grammar:se",
         "pos:pronoun",
         "sound:replacement-for-le-les",
-        "grammar:indirect-object",
-        "en:them"
+        "grammar:indirect-object-pronoun",
+        "en:them",
+        "grammar:object-pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -63176,7 +63192,7 @@
         "grammar:phrasal-verb",
         "particle:off",
         "construction:separable-phrasal-verb",
-        "grammar:pronoun-object",
+        "grammar:object-pronoun",
         "grammar:pronoun-between-verb-and-particle",
         "es:apagarlo",
         "en:turn"
@@ -63213,7 +63229,7 @@
         "grammar:phrasal-verb",
         "particle:up",
         "construction:separable-phrasal-verb",
-        "grammar:pronoun-object",
+        "grammar:object-pronoun",
         "grammar:pronoun-between-verb-and-particle",
         "es:recogerlo",
         "en:pick"
