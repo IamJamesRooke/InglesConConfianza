@@ -11,6 +11,7 @@ enum CurriculumRole {
   core
   supporting
   reference
+  trash
 }
 
 enum ReviewAction {

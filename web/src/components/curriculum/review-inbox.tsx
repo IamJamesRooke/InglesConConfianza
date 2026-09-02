@@ -13,6 +13,7 @@ const roleLabels: Record<CurriculumRole, string> = {
   core: "Core",
   supporting: "Supporting",
   reference: "Reference",
+  trash: "Trash",
 };
 
 type CandidateReviewUpdate = Partial<

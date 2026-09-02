@@ -1358,7 +1358,7 @@
         "with",
         "con => with"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "im9dazjhez",
@@ -8678,22 +8678,6 @@
         "reflexive"
       ],
       "curriculumRole": "core"
-    },
-    {
-      "id": "kbvb5sw2wh",
-      "spanish": "parecerse a [alguien]",
-      "english": "to resemble [somebody]",
-      "example": {
-        "spanish": "Ana se parece a su mamá.",
-        "english": "Ana resembles her mother."
-      },
-      "collections": [
-        "parecer",
-        "resemble",
-        "reflexive",
-        "formal"
-      ],
-      "curriculumRole": "reference"
     },
     {
       "id": "sx2usy0kyp",
@@ -20897,93 +20881,9 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "qzrkrysao0",
-      "spanish": "Voy a la oficina.",
-      "english": "I am going to the office.",
-      "example": {
-        "spanish": "Voy a la oficina.",
-        "english": "I am going to the office."
-      },
-      "collections": [
-        "a",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "tpu07txh81",
-      "spanish": "Lleva el documento a la tienda.",
-      "english": "Take the document to the store.",
-      "example": {
-        "spanish": "Lleva el documento a la tienda.",
-        "english": "Take the document to the store."
-      },
-      "collections": [
-        "a",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "3iujqhzp6e",
-      "spanish": "La reunión es a las tres.",
-      "english": "The meeting is at three.",
-      "example": {
-        "spanish": "La reunión es a las tres.",
-        "english": "The meeting is at three."
-      },
-      "collections": [
-        "a",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "n79h1ao01a",
-      "spanish": "Veo a Laura.",
-      "english": "I see Laura.",
-      "example": {
-        "spanish": "Veo a Laura.",
-        "english": "I see Laura."
-      },
-      "collections": [
-        "a",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "1hurtnzjt2",
-      "spanish": "Le doy el libro a Laura.",
-      "english": "I give the book to Laura.",
-      "example": {
-        "spanish": "Le doy el libro a Laura.",
-        "english": "I give the book to Laura."
-      },
-      "collections": [
-        "a",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "00wuv3erms",
-      "spanish": "Sigue adelante.",
-      "english": "Keep going.",
-      "example": {
-        "spanish": "Sigue adelante.",
-        "english": "Keep going."
-      },
-      "collections": [
-        "adelante",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "mckle879y4",
-      "spanish": "Mira hacia adelante.",
-      "english": "Look ahead.",
+      "spanish": "mirar hacia adelante",
+      "english": "to look ahead",
       "example": {
         "spanish": "Mira hacia adelante.",
         "english": "Look ahead."
@@ -21080,8 +20980,8 @@
     },
     {
       "id": "2w0dzl1mvl",
-      "spanish": "Mateo es alto.",
-      "english": "Mateo is tall.",
+      "spanish": "ser alto/a",
+      "english": "to be tall",
       "example": {
         "spanish": "Mateo es alto.",
         "english": "Mateo is tall."
@@ -21094,8 +20994,8 @@
     },
     {
       "id": "ffr5aig4sd",
-      "spanish": "El muro es alto.",
-      "english": "The wall is high.",
+      "spanish": "ser alto/a",
+      "english": "to be high",
       "example": {
         "spanish": "El muro es alto.",
         "english": "The wall is high."
@@ -21105,20 +21005,6 @@
         "spanish-to-english catchall",
         "high",
         "english-to-spanish reverse audit"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "2vv7c4irg8",
-      "spanish": "Habla más alto.",
-      "english": "Speak louder.",
-      "example": {
-        "spanish": "Habla más alto.",
-        "english": "Speak louder."
-      },
-      "collections": [
-        "alto",
-        "spanish-to-english catchall"
       ],
       "curriculumRole": "reference"
     },
@@ -21146,7 +21032,8 @@
       },
       "collections": [
         "antes",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "before"
       ],
       "curriculumRole": "reference"
     },
@@ -21179,76 +21066,6 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "t2lj6kybym",
-      "spanish": "Voy a llamarte antes de la reunión.",
-      "english": "I am going to call you before the meeting.",
-      "example": {
-        "spanish": "Voy a llamarte antes de la reunión.",
-        "english": "I am going to call you before the meeting."
-      },
-      "collections": [
-        "antes",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "3w0kso9780",
-      "spanish": "Voy a llamarte después de la reunión.",
-      "english": "I am going to call you after the meeting.",
-      "example": {
-        "spanish": "Voy a llamarte después de la reunión.",
-        "english": "I am going to call you after the meeting."
-      },
-      "collections": [
-        "antes",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "9tf607y1jw",
-      "spanish": "Compareció ante el juez.",
-      "english": "He appeared before the judge.",
-      "example": {
-        "spanish": "Compareció ante el juez.",
-        "english": "He appeared before the judge."
-      },
-      "collections": [
-        "antes",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "ph9s3wbzux",
-      "spanish": "Ante el peligro, salieron.",
-      "english": "Faced with danger, they left.",
-      "example": {
-        "spanish": "Ante el peligro, salieron.",
-        "english": "Faced with danger, they left."
-      },
-      "collections": [
-        "antes",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "tosp9cng0o",
-      "spanish": "Se arrodilló ante la estatua.",
-      "english": "She knelt in front of the statue.",
-      "example": {
-        "spanish": "Se arrodilló ante la estatua.",
-        "english": "She knelt in front of the statue."
-      },
-      "collections": [
-        "antes",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "xymr8kc90t",
       "spanish": "Ante todo, mantén la calma.",
       "english": "Above all, stay calm.",
@@ -21263,65 +21080,9 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "4f0u4bjz5u",
-      "spanish": "Apenas lo conozco.",
-      "english": "I hardly know him.",
-      "example": {
-        "spanish": "Apenas lo conozco.",
-        "english": "I hardly know him."
-      },
-      "collections": [
-        "apenas",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "wk3ajcljme",
-      "spanish": "Apenas alcanzamos el bus.",
-      "english": "We barely caught the bus.",
-      "example": {
-        "spanish": "Apenas alcanzamos el bus.",
-        "english": "We barely caught the bus."
-      },
-      "collections": [
-        "apenas",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "w7grl48gx0",
-      "spanish": "Apenas llegues, llámame.",
-      "english": "As soon as you arrive, call me.",
-      "example": {
-        "spanish": "Apenas llegues, llámame.",
-        "english": "As soon as you arrive, call me."
-      },
-      "collections": [
-        "apenas",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "n2ithro0ii",
-      "spanish": "Apenas acabo de llegar.",
-      "english": "I've only just arrived.",
-      "example": {
-        "spanish": "Apenas acabo de llegar.",
-        "english": "I've only just arrived."
-      },
-      "collections": [
-        "apenas",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "bhlxjf47nf",
-      "spanish": "Apenas había gente.",
-      "english": "There were hardly any people.",
+      "spanish": "apenas",
+      "english": "barely/hardly",
       "example": {
         "spanish": "Apenas había gente.",
         "english": "There were hardly any people."
@@ -21347,48 +21108,6 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "azo0cxhoa4",
-      "spanish": "Apenas llegamos a tiempo.",
-      "english": "We barely arrived on time.",
-      "example": {
-        "spanish": "Apenas llegamos a tiempo.",
-        "english": "We barely arrived on time."
-      },
-      "collections": [
-        "apenas",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "i7oypy7mz0",
-      "spanish": "Casi no había comida.",
-      "english": "There was scarcely any food.",
-      "example": {
-        "spanish": "Casi no había comida.",
-        "english": "There was scarcely any food."
-      },
-      "collections": [
-        "apenas",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "n8eqea5scj",
-      "spanish": "Apenas había llegado cuando ella se fue.",
-      "english": "Hardly had I arrived when she left.",
-      "example": {
-        "spanish": "Apenas había llegado cuando ella se fue.",
-        "english": "Hardly had I arrived when she left."
-      },
-      "collections": [
-        "apenas",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "45izdwmxbd",
       "spanish": "Estoy ansioso por que llegue.",
       "english": "I can hardly wait.",
@@ -21398,90 +21117,6 @@
       },
       "collections": [
         "apenas",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "qk7a81zu6r",
-      "spanish": "I hardly know him.",
-      "english": "Casi no lo conozco.",
-      "example": {
-        "spanish": "I hardly know him.",
-        "english": "Casi no lo conozco."
-      },
-      "collections": [
-        "apenas",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "dxsonzzi65",
-      "spanish": "We barely arrived on time.",
-      "english": "Apenas llegamos a tiempo.",
-      "example": {
-        "spanish": "We barely arrived on time.",
-        "english": "Apenas llegamos a tiempo."
-      },
-      "collections": [
-        "apenas",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "h6r8tep1l6",
-      "spanish": "There was scarcely any food.",
-      "english": "Casi no había comida.",
-      "example": {
-        "spanish": "There was scarcely any food.",
-        "english": "Casi no había comida."
-      },
-      "collections": [
-        "apenas",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "ryn0k76pz0",
-      "spanish": "Hardly had I arrived when she left.",
-      "english": "Apenas había llegado cuando ella se fue.",
-      "example": {
-        "spanish": "Hardly had I arrived when she left.",
-        "english": "Apenas había llegado cuando ella se fue."
-      },
-      "collections": [
-        "apenas",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "11o3meansn",
-      "spanish": "I can hardly wait.",
-      "english": "Estoy ansioso por que llegue.",
-      "example": {
-        "spanish": "I can hardly wait.",
-        "english": "Estoy ansioso por que llegue."
-      },
-      "collections": [
-        "apenas",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "6ixvqr741e",
-      "spanish": "Hazlo así.",
-      "english": "Do it like this.",
-      "example": {
-        "spanish": "Hazlo así.",
-        "english": "Do it like this."
-      },
-      "collections": [
-        "asi",
         "spanish-to-english catchall"
       ],
       "curriculumRole": "reference"
@@ -21515,20 +21150,6 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "oqe8jppb7k",
-      "spanish": "Así que nos fuimos.",
-      "english": "So we left.",
-      "example": {
-        "spanish": "Así que nos fuimos.",
-        "english": "So we left."
-      },
-      "collections": [
-        "asi",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "u109gx9ehn",
       "spanish": "así que",
       "english": "so",
@@ -21549,23 +21170,9 @@
       "curriculumRole": "core"
     },
     {
-      "id": "xx2ctug7ca",
-      "spanish": "No tengo tiempo, así que voy a hacerlo mañana.",
-      "english": "I don't have time, so I am going to do it tomorrow.",
-      "example": {
-        "spanish": "No tengo tiempo, así que voy a hacerlo mañana.",
-        "english": "I don't have time, so I am going to do it tomorrow."
-      },
-      "collections": [
-        "asi",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "qfok7pguyz",
-      "spanish": "Mira atrás.",
-      "english": "Look back.",
+      "spanish": "mirar atrás",
+      "english": "to look back",
       "example": {
         "spanish": "Mira atrás.",
         "english": "Look back."
@@ -21591,20 +21198,6 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "9sk4gl2q4u",
-      "spanish": "Se quedó atrás.",
-      "english": "She fell behind.",
-      "example": {
-        "spanish": "Se quedó atrás.",
-        "english": "She fell behind."
-      },
-      "collections": [
-        "atras",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "8a3s9ew4ih",
       "spanish": "Años atrás, vivía en Cali.",
       "english": "Years ago, I lived in Cali.",
@@ -21619,124 +21212,12 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "wepq9ntrdr",
-      "spanish": "Tras la reunión, salimos.",
-      "english": "After the meeting, we left.",
-      "example": {
-        "spanish": "Tras la reunión, salimos.",
-        "english": "After the meeting, we left."
-      },
-      "collections": [
-        "atras",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "w8zlfvy85b",
-      "spanish": "Cerró la puerta tras de sí.",
-      "english": "She closed the door behind her.",
-      "example": {
-        "spanish": "Cerró la puerta tras de sí.",
-        "english": "She closed the door behind her."
-      },
-      "collections": [
-        "atras",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "13fux8dsvq",
-      "spanish": "La policía fue tras el ladrón.",
-      "english": "The police went after the thief.",
-      "example": {
-        "spanish": "La policía fue tras el ladrón.",
-        "english": "The police went after the thief."
-      },
-      "collections": [
-        "atras",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "0y8r76aqtx",
-      "spanish": "Día tras día, continuó.",
-      "english": "Day after day, she continued.",
-      "example": {
-        "spanish": "Día tras día, continuó.",
-        "english": "Day after day, she continued."
-      },
-      "collections": [
-        "atras",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "k2dt5wwv03",
-      "spanish": "Está detrás del edificio.",
-      "english": "It's behind the building.",
-      "example": {
-        "spanish": "Está detrás del edificio.",
-        "english": "It's behind the building."
-      },
-      "collections": [
-        "atras",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "4yj9f8btrx",
-      "spanish": "Aún estoy trabajando.",
-      "english": "I'm still working.",
-      "example": {
-        "spanish": "Aún estoy trabajando.",
-        "english": "I'm still working."
-      },
-      "collections": [
-        "aun",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "p5528lcbf2",
-      "spanish": "Aún no he terminado.",
-      "english": "I haven't finished yet.",
+      "spanish": "aún no",
+      "english": "not yet",
       "example": {
         "spanish": "Aún no he terminado.",
         "english": "I haven't finished yet."
-      },
-      "collections": [
-        "aun",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "rox3s26ah8",
-      "spanish": "Aun los expertos se equivocan.",
-      "english": "Even experts make mistakes.",
-      "example": {
-        "spanish": "Aun los expertos se equivocan.",
-        "english": "Even experts make mistakes."
-      },
-      "collections": [
-        "aun",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "83iq8brbhr",
-      "spanish": "Es aún más difícil.",
-      "english": "It's even more difficult.",
-      "example": {
-        "spanish": "Es aún más difícil.",
-        "english": "It's even more difficult."
       },
       "collections": [
         "aun",
@@ -21759,149 +21240,24 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "ukdwfb6b2t",
-      "spanish": "Aunque llovió, salimos.",
-      "english": "Although it rained, we left.",
-      "example": {
-        "spanish": "Aunque llovió, salimos.",
-        "english": "Although it rained, we left."
-      },
-      "collections": [
-        "aun",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "0a8f525c70",
-      "spanish": "Aunque estaba cansada, siguió trabajando.",
-      "english": "She kept working, though she was tired.",
-      "example": {
-        "spanish": "Aunque estaba cansada, siguió trabajando.",
-        "english": "She kept working, though she was tired."
-      },
-      "collections": [
-        "aun",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "b6hsgxghw9",
-      "spanish": "Aunque sabía la verdad, no dijo nada.",
-      "english": "Even though she knew the truth, she didn't say anything.",
-      "example": {
-        "spanish": "Aunque sabía la verdad, no dijo nada.",
-        "english": "Even though she knew the truth, she didn't say anything."
-      },
-      "collections": [
-        "aun",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "8h0mglroco",
-      "spanish": "Aunque llueva, saldremos.",
-      "english": "Even if it rains, we'll go out.",
-      "example": {
-        "spanish": "Aunque llueva, saldremos.",
-        "english": "Even if it rains, we'll go out."
-      },
-      "collections": [
-        "aun",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "0drmuwks7f",
-      "spanish": "Incluso Laura vino.",
-      "english": "Even Laura came.",
+      "spanish": "incluso",
+      "english": "even",
       "example": {
         "spanish": "Incluso Laura vino.",
         "english": "Even Laura came."
       },
       "collections": [
         "aun",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "wr5uyep1rf",
-      "spanish": "Todos, incluso Mateo, estuvieron de acuerdo.",
-      "english": "Everyone, including Mateo, agreed.",
-      "example": {
-        "spanish": "Todos, incluso Mateo, estuvieron de acuerdo.",
-        "english": "Everyone, including Mateo, agreed."
-      },
-      "collections": [
-        "aun",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "cusqk2h8f2",
-      "spanish": "Incluso si llueve, iremos.",
-      "english": "Even if it rains, we will go.",
-      "example": {
-        "spanish": "Incluso si llueve, iremos.",
-        "english": "Even if it rains, we will go."
-      },
-      "collections": [
-        "aun",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "a0wznzeczk",
-      "spanish": "Todavía estoy trabajando.",
-      "english": "I'm still working.",
-      "example": {
-        "spanish": "Todavía estoy trabajando.",
-        "english": "I'm still working."
-      },
-      "collections": [
-        "aun",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "8t39wuvyja",
-      "spanish": "Todavía no he terminado.",
-      "english": "I haven't finished yet.",
-      "example": {
-        "spanish": "Todavía no he terminado.",
-        "english": "I haven't finished yet."
-      },
-      "collections": [
-        "aun",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "03xttq2ywa",
-      "spanish": "El gato está bajo la mesa.",
-      "english": "The cat is under the table.",
-      "example": {
-        "spanish": "El gato está bajo la mesa.",
-        "english": "The cat is under the table."
-      },
-      "collections": [
-        "bajo",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "even"
       ],
       "curriculumRole": "reference"
     },
     {
       "id": "2s5vxvtzad",
-      "spanish": "El precio es bajo.",
-      "english": "The price is low.",
+      "spanish": "ser bajo/a",
+      "english": "to be low",
       "example": {
         "spanish": "El precio es bajo.",
         "english": "The price is low."
@@ -21914,8 +21270,8 @@
     },
     {
       "id": "jl3egs4efk",
-      "spanish": "Habla en voz baja.",
-      "english": "Speak quietly/in a low voice.",
+      "spanish": "hablar en voz baja",
+      "english": "to speak quietly/in a low voice",
       "example": {
         "spanish": "Habla en voz baja.",
         "english": "Speak quietly/in a low voice."
@@ -21927,37 +21283,9 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "ontq12vx30",
-      "spanish": "Trabaja bajo presión.",
-      "english": "She works under pressure.",
-      "example": {
-        "spanish": "Trabaja bajo presión.",
-        "english": "She works under pressure."
-      },
-      "collections": [
-        "bajo",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "iboifi25rh",
-      "spanish": "Bajo del bus aquí.",
-      "english": "I get off the bus here.",
-      "example": {
-        "spanish": "Bajo del bus aquí.",
-        "english": "I get off the bus here."
-      },
-      "collections": [
-        "bajo",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "joavbehrli",
-      "spanish": "Mira abajo.",
-      "english": "Look down.",
+      "spanish": "mirar abajo",
+      "english": "to look down",
       "example": {
         "spanish": "Mira abajo.",
         "english": "Look down."
@@ -21970,25 +21298,11 @@
     },
     {
       "id": "zuxigcomna",
-      "spanish": "Vive abajo.",
-      "english": "She lives downstairs.",
+      "spanish": "vivir abajo",
+      "english": "to live downstairs",
       "example": {
         "spanish": "Vive abajo.",
         "english": "She lives downstairs."
-      },
-      "collections": [
-        "bajo",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "7cqi2chge2",
-      "spanish": "El nombre aparece más abajo.",
-      "english": "The name appears below.",
-      "example": {
-        "spanish": "El nombre aparece más abajo.",
-        "english": "The name appears below."
       },
       "collections": [
         "bajo",
@@ -22039,51 +21353,9 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "tshs6gx71z",
-      "spanish": "El bolso está debajo de la mesa.",
-      "english": "The bag is under the table.",
-      "example": {
-        "spanish": "El bolso está debajo de la mesa.",
-        "english": "The bag is under the table."
-      },
-      "collections": [
-        "bajo",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "7vgrtjch7w",
-      "spanish": "La tienda está debajo de la oficina.",
-      "english": "The store is below the office.",
-      "example": {
-        "spanish": "La tienda está debajo de la oficina.",
-        "english": "The store is below the office."
-      },
-      "collections": [
-        "bajo",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "1ccs80dyof",
-      "spanish": "Tenemos bastante comida.",
-      "english": "We have enough food.",
-      "example": {
-        "spanish": "Tenemos bastante comida.",
-        "english": "We have enough food."
-      },
-      "collections": [
-        "bastante",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "sk6v1ievgl",
-      "spanish": "Es bastante difícil.",
-      "english": "It is quite difficult.",
+      "spanish": "bastante [adjetivo]",
+      "english": "quite [adjective]",
       "example": {
         "spanish": "Es bastante difícil.",
         "english": "It is quite difficult."
@@ -22096,8 +21368,8 @@
     },
     {
       "id": "5oksfbyy9k",
-      "spanish": "Trabajó bastante.",
-      "english": "She worked a lot.",
+      "spanish": "trabajar bastante",
+      "english": "to work a lot",
       "example": {
         "spanish": "Trabajó bastante.",
         "english": "She worked a lot."
@@ -22109,23 +21381,9 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "jgbuu1ca76",
-      "spanish": "Hay bastantes sillas.",
-      "english": "There are plenty of chairs.",
-      "example": {
-        "spanish": "Hay bastantes sillas.",
-        "english": "There are plenty of chairs."
-      },
-      "collections": [
-        "bastante",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "75py7jmtq1",
-      "spanish": "Eso basta.",
-      "english": "That is enough.",
+      "spanish": "bastar",
+      "english": "to be enough",
       "example": {
         "spanish": "Eso basta.",
         "english": "That is enough."
@@ -22165,79 +21423,9 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "7de7h5ue1b",
-      "spanish": "¡Basta ya!",
-      "english": "That's enough!",
-      "example": {
-        "spanish": "¡Basta ya!",
-        "english": "That's enough!"
-      },
-      "collections": [
-        "bastante",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "1so3yn8cja",
-      "spanish": "Habla inglés muy bien.",
-      "english": "She speaks English very well.",
-      "example": {
-        "spanish": "Habla inglés muy bien.",
-        "english": "She speaks English very well."
-      },
-      "collections": [
-        "bien",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "pj8p16qotj",
-      "spanish": "Estoy bien, gracias.",
-      "english": "I'm fine, thank you.",
-      "example": {
-        "spanish": "Estoy bien, gracias.",
-        "english": "I'm fine, thank you."
-      },
-      "collections": [
-        "bien",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "9pk1lbv06z",
-      "spanish": "Todo salió bien.",
-      "english": "Everything went right.",
-      "example": {
-        "spanish": "Todo salió bien.",
-        "english": "Everything went right."
-      },
-      "collections": [
-        "bien",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "rbz1ovs0x5",
-      "spanish": "Hazlo bien esta vez.",
-      "english": "Do it properly this time.",
-      "example": {
-        "spanish": "Hazlo bien esta vez.",
-        "english": "Do it properly this time."
-      },
-      "collections": [
-        "bien",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "pxhlmu008o",
-      "spanish": "Es bien difícil.",
-      "english": "It's quite difficult.",
+      "spanish": "bien [adjetivo] (coloquial)",
+      "english": "pretty/quite [adjective] (colloquial)",
       "example": {
         "spanish": "Es bien difícil.",
         "english": "It's quite difficult."
@@ -22319,121 +21507,6 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "p3cg4rfiy6",
-      "spanish": "Estoy bien.",
-      "english": "I am okay.",
-      "example": {
-        "spanish": "Estoy bien.",
-        "english": "I am okay."
-      },
-      "collections": [
-        "bien",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "v2svv5dy5c",
-      "spanish": "Estoy bien.",
-      "english": "I am fine.",
-      "example": {
-        "spanish": "Estoy bien.",
-        "english": "I am fine."
-      },
-      "collections": [
-        "bien",
-        "spanish-to-english catchall",
-        "fine",
-        "english-to-spanish reverse audit",
-        "good"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "zm8oxsqz58",
-      "spanish": "Estoy bien.",
-      "english": "I am all right.",
-      "example": {
-        "spanish": "Estoy bien.",
-        "english": "I am all right."
-      },
-      "collections": [
-        "bien",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "7rd6tf3lw2",
-      "spanish": "El plan está bien.",
-      "english": "The plan is okay.",
-      "example": {
-        "spanish": "El plan está bien.",
-        "english": "The plan is okay."
-      },
-      "collections": [
-        "bien",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "5hoy08rd07",
-      "spanish": "El plan está bien.",
-      "english": "The plan is fine.",
-      "example": {
-        "spanish": "El plan está bien.",
-        "english": "The plan is fine."
-      },
-      "collections": [
-        "bien",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "uzltzwj80z",
-      "spanish": "No te preocupes; todo está bien.",
-      "english": "Don't worry; everything is okay.",
-      "example": {
-        "spanish": "No te preocupes; todo está bien.",
-        "english": "Don't worry; everything is okay."
-      },
-      "collections": [
-        "bien",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "gu7kggkxat",
-      "spanish": "Laura se sintió mal ayer, pero ahora está bien.",
-      "english": "Laura felt sick yesterday, but she is fine now.",
-      "example": {
-        "spanish": "Laura se sintió mal ayer, pero ahora está bien.",
-        "english": "Laura felt sick yesterday, but she is fine now."
-      },
-      "collections": [
-        "bien",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "8hv700twg5",
-      "spanish": "Estoy bien.",
-      "english": "I am okay, fine, or all right.",
-      "example": {
-        "spanish": "Estoy bien.",
-        "english": "I am okay, fine, or all right."
-      },
-      "collections": [
-        "bien",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "5p9qv88nn3",
       "spanish": "bueno / buena",
       "english": "good",
@@ -22463,8 +21536,8 @@
     },
     {
       "id": "r2a8013xq8",
-      "spanish": "Es una buena idea.",
-      "english": "It is a good idea.",
+      "spanish": "ser una buena idea",
+      "english": "to be a good idea",
       "example": {
         "spanish": "Es una buena idea.",
         "english": "It is a good idea."
@@ -22476,51 +21549,9 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "z2323ca7hv",
-      "spanish": "Mi vecino es muy bueno con los niños.",
-      "english": "My neighbor is very kind to children.",
-      "example": {
-        "spanish": "Mi vecino es muy bueno con los niños.",
-        "english": "My neighbor is very kind to children."
-      },
-      "collections": [
-        "bueno",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "wv7tne8n9s",
-      "spanish": "Este plan es mejor.",
-      "english": "This plan is better.",
-      "example": {
-        "spanish": "Este plan es mejor.",
-        "english": "This plan is better."
-      },
-      "collections": [
-        "bueno",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "bwu1iaprxp",
-      "spanish": "Es el mejor plan.",
-      "english": "It is the best plan.",
-      "example": {
-        "spanish": "Es el mejor plan.",
-        "english": "It is the best plan."
-      },
-      "collections": [
-        "bueno",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "gss6t797jr",
-      "spanish": "Me siento mejor.",
-      "english": "I feel better.",
+      "spanish": "sentirse mejor",
+      "english": "to feel better",
       "example": {
         "spanish": "Me siento mejor.",
         "english": "I feel better."
@@ -22547,8 +21578,8 @@
     },
     {
       "id": "rqwcklpzgf",
-      "spanish": "Es cierto.",
-      "english": "It is true.",
+      "spanish": "ser cierto",
+      "english": "to be true",
       "example": {
         "spanish": "Es cierto.",
         "english": "It is true."
@@ -22646,22 +21677,6 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "cp6wab3abs",
-      "spanish": "Trabajo con Laura.",
-      "english": "I work with Laura.",
-      "example": {
-        "spanish": "Trabajo con Laura.",
-        "english": "I work with Laura."
-      },
-      "collections": [
-        "con",
-        "spanish-to-english catchall",
-        "with",
-        "english-to-spanish reverse audit"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "kg63snjtds",
       "spanish": "¿Con qué te puedo ayudar?",
       "english": "What can I help you with?",
@@ -22694,22 +21709,6 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "b3exfv3p6v",
-      "spanish": "Esa es la persona con quien hablé.",
-      "english": "That's the person I spoke to.",
-      "example": {
-        "spanish": "Esa es la persona con quien hablé.",
-        "english": "That's the person I spoke to."
-      },
-      "collections": [
-        "con",
-        "spanish-to-english catchall",
-        "to",
-        "english-to-spanish reverse audit"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "rey5kzco3o",
       "spanish": "¿Con quién está hablando?",
       "english": "To whom are you speaking?",
@@ -22722,64 +21721,6 @@
         "spanish-to-english catchall",
         "to",
         "english-to-spanish reverse audit"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "53nvqr2fcw",
-      "spanish": "La silla está contra la pared.",
-      "english": "The chair is against the wall.",
-      "example": {
-        "spanish": "La silla está contra la pared.",
-        "english": "The chair is against the wall."
-      },
-      "collections": [
-        "contra",
-        "spanish-to-english catchall",
-        "against",
-        "english-to-spanish reverse audit"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "3wgodgaxb1",
-      "spanish": "Bogotá juega contra Cali.",
-      "english": "Bogotá is playing against Cali.",
-      "example": {
-        "spanish": "Bogotá juega contra Cali.",
-        "english": "Bogotá is playing against Cali."
-      },
-      "collections": [
-        "contra",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "262jd7tdw2",
-      "spanish": "Estoy en contra del plan.",
-      "english": "I am against the plan.",
-      "example": {
-        "spanish": "Estoy en contra del plan.",
-        "english": "I am against the plan."
-      },
-      "collections": [
-        "contra",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "nqvl50klaw",
-      "spanish": "La votación quedó diez contra cinco.",
-      "english": "The vote was ten to five.",
-      "example": {
-        "spanish": "La votación quedó diez contra cinco.",
-        "english": "The vote was ten to five."
-      },
-      "collections": [
-        "contra",
-        "spanish-to-english catchall"
       ],
       "curriculumRole": "reference"
     },
@@ -22992,128 +21933,12 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "eg72jpdazi",
-      "spanish": "¿Cuántos libros necesitas?",
-      "english": "How many books do you need?",
-      "example": {
-        "spanish": "¿Cuántos libros necesitas?",
-        "english": "How many books do you need?"
-      },
-      "collections": [
-        "cuanto",
-        "spanish-to-english catchall",
-        "how",
-        "english-to-spanish reverse audit"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "ednwoicxfz",
-      "spanish": "Es una novela de García Márquez sobre una familia de Colombia.",
-      "english": "It's a novel by García Márquez about a family from Colombia.",
-      "example": {
-        "spanish": "Es una novela de García Márquez sobre una familia de Colombia.",
-        "english": "It's a novel by García Márquez about a family from Colombia."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "ws07ufaqrb",
-      "spanish": "La taza de café de Ana está en la mesa de la cocina.",
-      "english": "Ana's coffee cup is on the kitchen table.",
-      "example": {
-        "spanish": "La taza de café de Ana está en la mesa de la cocina.",
-        "english": "Ana's coffee cup is on the kitchen table."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall",
-        "of",
-        "english-to-spanish reverse audit"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "5g8uooefv6",
-      "spanish": "Acabo de enterarme de que dejó de depender de ellos.",
-      "english": "I've just found out that she stopped depending on them.",
-      "example": {
-        "spanish": "Acabo de enterarme de que dejó de depender de ellos.",
-        "english": "I've just found out that she stopped depending on them."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "puj09q8imq",
-      "spanish": "De noche estudio de pie y, de vez en cuando, repito todo de memoria.",
-      "english": "At night I study standing up and, from time to time, repeat everything by heart.",
-      "example": {
-        "spanish": "De noche estudio de pie y, de vez en cuando, repito todo de memoria.",
-        "english": "At night I study standing up and, from time to time, repeat everything by heart."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "o4unfsl9d0",
       "spanish": "La taza de café no es una taza para café.",
       "english": "The cup of coffee isn't a coffee cup.",
       "example": {
         "spanish": "La taza de café no es una taza para café.",
         "english": "The cup of coffee isn't a coffee cup."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "h4roy0sxu9",
-      "spanish": "La novela de Ana trata de una familia de Bogotá que acaba de regresar de España.",
-      "english": "Ana's novel is about a family from Bogotá who have just returned from Spain.",
-      "example": {
-        "spanish": "La novela de Ana trata de una familia de Bogotá que acaba de regresar de España.",
-        "english": "Ana's novel is about a family from Bogotá who have just returned from Spain."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "sifoketl51",
-      "spanish": "Dejé de depender de ellos cuando me di cuenta de que podía hacerlo de otra manera.",
-      "english": "I stopped depending on them when I realized I could do it another way.",
-      "example": {
-        "spanish": "Dejé de depender de ellos cuando me di cuenta de que podía hacerlo de otra manera.",
-        "english": "I stopped depending on them when I realized I could do it another way."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "ac5ejxss8w",
-      "spanish": "De noche tomo una taza de café en la mesa de la cocina y estudio de vez en cuando con Ana.",
-      "english": "At night I have a cup of coffee at the kitchen table and study with Ana from time to time.",
-      "example": {
-        "spanish": "De noche tomo una taza de café en la mesa de la cocina y estudio de vez en cuando con Ana.",
-        "english": "At night I have a cup of coffee at the kitchen table and study with Ana from time to time."
       },
       "collections": [
         "de",
@@ -23136,34 +21961,6 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "x2sd9owsz4",
-      "spanish": "La estatua de piedra vino de Italia.",
-      "english": "The stone statue came from Italy.",
-      "example": {
-        "spanish": "La estatua de piedra vino de Italia.",
-        "english": "The stone statue came from Italy."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "l0q6zjufkd",
-      "spanish": "Me enteré del libro, pero nunca había oído hablar del autor.",
-      "english": "I heard about the book, but I'd never heard of the author.",
-      "example": {
-        "spanish": "Me enteré del libro, pero nunca había oído hablar del autor.",
-        "english": "I heard about the book, but I'd never heard of the author."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "4icl1zhexf",
       "spanish": "La taza de café está vacía, pero la taza para café está limpia.",
       "english": "The cup of coffee is empty, but the coffee cup is clean.",
@@ -23178,98 +21975,12 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "vsvn9xb5j9",
-      "spanish": "Me enteré del libro de Ana, una historia sobre una familia de Colombia escrita por una autora de Bogotá.",
-      "english": "I heard about Ana's book, a story about a family from Colombia written by an author from Bogotá.",
-      "example": {
-        "spanish": "Me enteré del libro de Ana, una historia sobre una familia de Colombia escrita por una autora de Bogotá.",
-        "english": "I heard about Ana's book, a story about a family from Colombia written by an author from Bogotá."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "v1nd7zu0yx",
-      "spanish": "El nombre de la tienda aparece al final de la primera página.",
-      "english": "The name of the store appears at the end of the first page.",
-      "example": {
-        "spanish": "El nombre de la tienda aparece al final de la primera página.",
-        "english": "The name of the store appears at the end of the first page."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall",
-        "of",
-        "english-to-spanish reverse audit"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "5fylm54n8s",
       "spanish": "de / desde un lugar",
       "english": "from a place",
       "example": {
         "spanish": "de / desde un lugar",
         "english": "from a place"
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "1iqiwh73na",
-      "spanish": "Vengo de la oficina.",
-      "english": "I am coming from the office.",
-      "example": {
-        "spanish": "Vengo de la oficina.",
-        "english": "I am coming from the office."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "x9h1owbuib",
-      "spanish": "Trae el documento de la oficina.",
-      "english": "Bring the document from the office.",
-      "example": {
-        "spanish": "Trae el documento de la oficina.",
-        "english": "Bring the document from the office."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "0rejpklcdb",
-      "spanish": "Vengo de Bogotá y acabo de salir de la oficina.",
-      "english": "I come from Bogotá, and I've just left the office.",
-      "example": {
-        "spanish": "Vengo de Bogotá y acabo de salir de la oficina.",
-        "english": "I come from Bogotá, and I've just left the office."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "pkfok4advy",
-      "spanish": "Hablamos del problema y me enteré del cambio.",
-      "english": "We talked about the problem, and I heard about the change.",
-      "example": {
-        "spanish": "Hablamos del problema y me enteré del cambio.",
-        "english": "We talked about the problem, and I heard about the change."
       },
       "collections": [
         "de",
@@ -23290,64 +22001,6 @@
         "spanish-to-english catchall",
         "about",
         "english-to-spanish reverse audit"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "o7dh49rgk7",
-      "spanish": "Leí una novela de Gabriel García Márquez y escuché una canción de Shakira.",
-      "english": "I read a novel by Gabriel García Márquez and listened to a song by Shakira.",
-      "example": {
-        "spanish": "Leí una novela de Gabriel García Márquez y escuché una canción de Shakira.",
-        "english": "I read a novel by Gabriel García Márquez and listened to a song by Shakira."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "tgzwuiok04",
-      "spanish": "El nombre de la tienda está al final de la calle.",
-      "english": "The name of the store is at the end of the street.",
-      "example": {
-        "spanish": "El nombre de la tienda está al final de la calle.",
-        "english": "The name of the store is at the end of the street."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall",
-        "of",
-        "english-to-spanish reverse audit"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "6hevipoaof",
-      "spanish": "Es una novela de Gabriel García Márquez.",
-      "english": "It's a novel by Gabriel García Márquez.",
-      "example": {
-        "spanish": "Es una novela de Gabriel García Márquez.",
-        "english": "It's a novel by Gabriel García Márquez."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "qm0yxb2gty",
-      "spanish": "Es una novela de García Márquez sobre una familia de Colombia que regresa de España.",
-      "english": "It's a novel by García Márquez about a family from Colombia returning from Spain.",
-      "example": {
-        "spanish": "Es una novela de García Márquez sobre una familia de Colombia que regresa de España.",
-        "english": "It's a novel by García Márquez about a family from Colombia returning from Spain."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
       ],
       "curriculumRole": "reference"
     },
@@ -23436,152 +22089,12 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "i5zdqs7ods",
-      "spanish": "El libro de Ana está junto al escritorio de Carlos.",
-      "english": "Ana's book is next to Carlos's desk.",
-      "example": {
-        "spanish": "El libro de Ana está junto al escritorio de Carlos.",
-        "english": "Ana's book is next to Carlos's desk."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "nyyhyjcg8p",
-      "spanish": "La taza de café está sobre la mesa de la cocina.",
-      "english": "The coffee cup is on the kitchen table.",
-      "example": {
-        "spanish": "La taza de café está sobre la mesa de la cocina.",
-        "english": "The coffee cup is on the kitchen table."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "n9leyj6r7l",
-      "spanish": "Es una mesa de madera y el jugo está hecho de naranjas frescas.",
-      "english": "It's a wooden table, and the juice is made from fresh oranges.",
-      "example": {
-        "spanish": "Es una mesa de madera y el jugo está hecho de naranjas frescas.",
-        "english": "It's a wooden table, and the juice is made from fresh oranges."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "hsegofbecd",
-      "spanish": "Tengo la oportunidad de practicar y una nueva forma de estudiar.",
-      "english": "I have the opportunity to practice and a new way of studying.",
-      "example": {
-        "spanish": "Tengo la oportunidad de practicar y una nueva forma de estudiar.",
-        "english": "I have the opportunity to practice and a new way of studying."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "mfu8cjncxt",
-      "spanish": "Es una clase de dos horas para adultos de treinta años.",
-      "english": "It's a two-hour class for thirty-year-old adults.",
-      "example": {
-        "spanish": "Es una clase de dos horas para adultos de treinta años.",
-        "english": "It's a two-hour class for thirty-year-old adults."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "y9ny4socwn",
-      "spanish": "El libro de Ana está aquí.",
-      "english": "Ana's book is here.",
-      "example": {
-        "spanish": "El libro de Ana está aquí.",
-        "english": "Ana's book is here."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "dgyjup8smf",
-      "spanish": "La mesa de la cocina está limpia.",
-      "english": "The kitchen table is clean.",
-      "example": {
-        "spanish": "La mesa de la cocina está limpia.",
-        "english": "The kitchen table is clean."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "rgc1t50f00",
-      "spanish": "Es una mesa de madera.",
-      "english": "It's a wooden table.",
-      "example": {
-        "spanish": "Es una mesa de madera.",
-        "english": "It's a wooden table."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "kfjpygfe7l",
-      "spanish": "El libro de Ana está sobre la mesa de madera de la cocina junto a su taza de café.",
-      "english": "Ana's book is on the wooden kitchen table next to her coffee cup.",
-      "example": {
-        "spanish": "El libro de Ana está sobre la mesa de madera de la cocina junto a su taza de café.",
-        "english": "Ana's book is on the wooden kitchen table next to her coffee cup."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "eyue78cz5h",
       "spanish": "Trabajo de noche y descanso de vez en cuando.",
       "english": "I work at night and rest from time to time.",
       "example": {
         "spanish": "Trabajo de noche y descanso de vez en cuando.",
         "english": "I work at night and rest from time to time."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "k9ns1g29jm",
-      "spanish": "Aprendió el poema de memoria mientras estudiaba de pie.",
-      "english": "She learned the poem by heart while studying standing up.",
-      "example": {
-        "spanish": "Aprendió el poema de memoria mientras estudiaba de pie.",
-        "english": "She learned the poem by heart while studying standing up."
       },
       "collections": [
         "de",
@@ -23604,62 +22117,6 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "5u41r3wkkx",
-      "spanish": "El primer intento falló, así que hazlo de nuevo.",
-      "english": "The first attempt failed, so do it again.",
-      "example": {
-        "spanish": "El primer intento falló, así que hazlo de nuevo.",
-        "english": "The first attempt failed, so do it again."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "w858mghbwm",
-      "spanish": "Aprendió de memoria mientras estudiaba de pie.",
-      "english": "She learned it by heart while studying standing up.",
-      "example": {
-        "spanish": "Aprendió de memoria mientras estudiaba de pie.",
-        "english": "She learned it by heart while studying standing up."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "p5z4cma18n",
-      "spanish": "Hazlo de nuevo.",
-      "english": "Do it again.",
-      "example": {
-        "spanish": "Hazlo de nuevo.",
-        "english": "Do it again."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "jaqmf5c9lr",
-      "spanish": "De noche estudiaba de pie, repetía todo de memoria y, de vez en cuando, empezaba de nuevo.",
-      "english": "At night she studied standing up, repeated everything by heart, and, from time to time, started again.",
-      "example": {
-        "spanish": "De noche estudiaba de pie, repetía todo de memoria y, de vez en cuando, empezaba de nuevo.",
-        "english": "At night she studied standing up, repeated everything by heart, and, from time to time, started again."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "wine5n6gd9",
       "spanish": "El resultado depende de Ana y de que el sistema funcione.",
       "english": "The result depends on Ana and on the system working.",
@@ -23674,79 +22131,9 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "40nr3qme03",
-      "spanish": "Me acordé de la reunión y de llamar a Ana.",
-      "english": "I remembered the meeting and remembered to call Ana.",
-      "example": {
-        "spanish": "Me acordé de la reunión y de llamar a Ana.",
-        "english": "I remembered the meeting and remembered to call Ana."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "so436prsie",
-      "spanish": "Me di cuenta del error cuando revisé el informe.",
-      "english": "I realized the mistake when I reviewed the report.",
-      "example": {
-        "spanish": "Me di cuenta del error cuando revisé el informe.",
-        "english": "I realized the mistake when I reviewed the report."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "eqa7bd5x78",
-      "spanish": "Tengo ganas de salir, pero Ana quiere quedarse.",
-      "english": "I feel like going out, but Ana wants to stay.",
-      "example": {
-        "spanish": "Tengo ganas de salir, pero Ana quiere quedarse.",
-        "english": "I feel like going out, but Ana wants to stay."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "888cnxhr5f",
-      "spanish": "Acabo de llegar.",
-      "english": "I've just arrived.",
-      "example": {
-        "spanish": "Acabo de llegar.",
-        "english": "I've just arrived."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "vke71clr5z",
-      "spanish": "Deja de hacer eso.",
-      "english": "Stop doing that.",
-      "example": {
-        "spanish": "Deja de hacer eso.",
-        "english": "Stop doing that."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "27gxfb0ajj",
-      "spanish": "Depende de Ana.",
-      "english": "It depends on Ana.",
+      "spanish": "depender de [alguien/algo]",
+      "english": "to depend on [somebody/something]",
       "example": {
         "spanish": "Depende de Ana.",
         "english": "It depends on Ana."
@@ -23758,129 +22145,15 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "e15j2syzhj",
-      "spanish": "Me acordé de la reunión.",
-      "english": "I remembered the meeting.",
-      "example": {
-        "spanish": "Me acordé de la reunión.",
-        "english": "I remembered the meeting."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "4cjqakug5h",
-      "spanish": "Me di cuenta del error.",
-      "english": "I realized the mistake.",
-      "example": {
-        "spanish": "Me di cuenta del error.",
-        "english": "I realized the mistake."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "1r6f49dqte",
-      "spanish": "Tengo ganas de salir.",
-      "english": "I feel like going out.",
-      "example": {
-        "spanish": "Tengo ganas de salir.",
-        "english": "I feel like going out."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "oc8tpo7p7z",
-      "spanish": "Acabo de darme cuenta de que dejé de depender de Ana porque recordé cómo hacerlo y tengo ganas de intentarlo.",
-      "english": "I've just realized that I stopped depending on Ana because I remembered how to do it, and I feel like trying.",
-      "example": {
-        "spanish": "Acabo de darme cuenta de que dejé de depender de Ana porque recordé cómo hacerlo y tengo ganas de intentarlo.",
-        "english": "I've just realized that I stopped depending on Ana because I remembered how to do it, and I feel like trying."
-      },
-      "collections": [
-        "de",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "jdccnlripe",
-      "spanish": "Es demasiado caro.",
-      "english": "It is too expensive.",
-      "example": {
-        "spanish": "Es demasiado caro.",
-        "english": "It is too expensive."
-      },
-      "collections": [
-        "demasiado",
-        "spanish-to-english catchall",
-        "too",
-        "english-to-spanish reverse audit"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "m0powfknmk",
-      "spanish": "Hay demasiado ruido.",
-      "english": "There is too much noise.",
-      "example": {
-        "spanish": "Hay demasiado ruido.",
-        "english": "There is too much noise."
-      },
-      "collections": [
-        "demasiado",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "4hqx93vbuv",
-      "spanish": "Hay demasiadas personas.",
-      "english": "There are too many people.",
-      "example": {
-        "spanish": "Hay demasiadas personas.",
-        "english": "There are too many people."
-      },
-      "collections": [
-        "demasiado",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "3nytgzkkim",
-      "spanish": "Trabaja demasiado.",
-      "english": "She works too much.",
+      "spanish": "trabajar demasiado",
+      "english": "to work too much",
       "example": {
         "spanish": "Trabaja demasiado.",
         "english": "She works too much."
       },
       "collections": [
         "demasiado",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "utt0pzt5s4",
-      "spanish": "Está dentro de la caja.",
-      "english": "It is inside the box.",
-      "example": {
-        "spanish": "Está dentro de la caja.",
-        "english": "It is inside the box."
-      },
-      "collections": [
-        "dentro",
         "spanish-to-english catchall"
       ],
       "curriculumRole": "reference"
@@ -23909,48 +22182,6 @@
       },
       "collections": [
         "dentro",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "pfavgz02fa",
-      "spanish": "Muy dentro de sí, sabía la verdad.",
-      "english": "Deep down, she knew the truth.",
-      "example": {
-        "spanish": "Muy dentro de sí, sabía la verdad.",
-        "english": "Deep down, she knew the truth."
-      },
-      "collections": [
-        "dentro",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "osrootio08",
-      "spanish": "Vengo desde Bogotá.",
-      "english": "I am coming from Bogotá.",
-      "example": {
-        "spanish": "Vengo desde Bogotá.",
-        "english": "I am coming from Bogotá."
-      },
-      "collections": [
-        "desde",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "95k8trmonv",
-      "spanish": "Vivo aquí desde enero.",
-      "english": "I have lived here since January.",
-      "example": {
-        "spanish": "Vivo aquí desde enero.",
-        "english": "I have lived here since January."
-      },
-      "collections": [
-        "desde",
         "spanish-to-english catchall"
       ],
       "curriculumRole": "reference"
@@ -23985,25 +22216,11 @@
     },
     {
       "id": "0v2r7ohznv",
-      "spanish": "Hablamos después.",
-      "english": "We will talk later.",
+      "spanish": "hablar después",
+      "english": "to talk later",
       "example": {
         "spanish": "Hablamos después.",
         "english": "We will talk later."
-      },
-      "collections": [
-        "despues",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "ax8wo7571k",
-      "spanish": "Salimos después de la reunión.",
-      "english": "We left after the meeting.",
-      "example": {
-        "spanish": "Salimos después de la reunión.",
-        "english": "We left after the meeting."
       },
       "collections": [
         "despues",
@@ -24026,37 +22243,9 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "8cm5ev9up7",
-      "spanish": "Poco después, empezó a llover.",
-      "english": "Shortly afterward, it started raining.",
-      "example": {
-        "spanish": "Poco después, empezó a llover.",
-        "english": "Shortly afterward, it started raining."
-      },
-      "collections": [
-        "despues",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "8pvnfywq1t",
-      "spanish": "Terminamos y luego salimos.",
-      "english": "We finished and then left.",
-      "example": {
-        "spanish": "Terminamos y luego salimos.",
-        "english": "We finished and then left."
-      },
-      "collections": [
-        "despues",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "t9gvvynhud",
-      "spanish": "Te llamo luego.",
-      "english": "I'll call you later.",
+      "spanish": "llamar luego",
+      "english": "to call later",
       "example": {
         "spanish": "Te llamo luego.",
         "english": "I'll call you later."
@@ -24127,42 +22316,12 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "08gdd9cf3d",
-      "spanish": "Primero termino el informe; luego te llamo.",
-      "english": "First I finish the report; then I call you.",
-      "example": {
-        "spanish": "Primero termino el informe; luego te llamo.",
-        "english": "First I finish the report; then I call you."
-      },
-      "collections": [
-        "despues",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "cboe3ncvvg",
       "spanish": "¿Dónde está la oficina?",
       "english": "Where is the office?",
       "example": {
         "spanish": "¿Dónde está la oficina?",
         "english": "Where is the office?"
-      },
-      "collections": [
-        "donde",
-        "spanish-to-english catchall",
-        "where",
-        "english-to-spanish reverse audit"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "ajwin87x5s",
-      "spanish": "Quiero saber dónde está la oficina.",
-      "english": "I want to know where the office is.",
-      "example": {
-        "spanish": "Quiero saber dónde está la oficina.",
-        "english": "I want to know where the office is."
       },
       "collections": [
         "donde",
@@ -24182,50 +22341,6 @@
       },
       "collections": [
         "donde",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "6ctcc4ryet",
-      "spanish": "Dormí durante la película.",
-      "english": "I slept during the movie.",
-      "example": {
-        "spanish": "Dormí durante la película.",
-        "english": "I slept during the movie."
-      },
-      "collections": [
-        "durante",
-        "spanish-to-english catchall",
-        "during",
-        "english-to-spanish reverse audit"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "h43m94nrbd",
-      "spanish": "Viví allí durante dos años.",
-      "english": "I lived there for two years.",
-      "example": {
-        "spanish": "Viví allí durante dos años.",
-        "english": "I lived there for two years."
-      },
-      "collections": [
-        "durante",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "kt5hnrbp0c",
-      "spanish": "Llovió durante toda la noche.",
-      "english": "It rained throughout the night.",
-      "example": {
-        "spanish": "Llovió durante toda la noche.",
-        "english": "It rained throughout the night."
-      },
-      "collections": [
-        "durante",
         "spanish-to-english catchall"
       ],
       "curriculumRole": "reference"
@@ -24321,48 +22436,6 @@
       "example": {
         "spanish": "en el evento",
         "english": "at the event"
-      },
-      "collections": [
-        "en",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "azwrfleibb",
-      "spanish": "Estoy en la oficina para una reunión.",
-      "english": "I am at the office for a meeting.",
-      "example": {
-        "spanish": "Estoy en la oficina para una reunión.",
-        "english": "I am at the office for a meeting."
-      },
-      "collections": [
-        "en",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "qno91oqbr6",
-      "spanish": "Nos vemos en el aeropuerto.",
-      "english": "I will see you at the airport.",
-      "example": {
-        "spanish": "Nos vemos en el aeropuerto.",
-        "english": "I will see you at the airport."
-      },
-      "collections": [
-        "en",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "g1scjgaznc",
-      "spanish": "Laura está en el evento.",
-      "english": "Laura is at the event.",
-      "example": {
-        "spanish": "Laura está en el evento.",
-        "english": "Laura is at the event."
       },
       "collections": [
         "en",
@@ -24539,48 +22612,6 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "8ce65ixpu3",
-      "spanish": "El documento está en el bolso.",
-      "english": "The document is in the bag.",
-      "example": {
-        "spanish": "El documento está en el bolso.",
-        "english": "The document is in the bag."
-      },
-      "collections": [
-        "en",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "fxlyixkuxc",
-      "spanish": "Laura está en el carro.",
-      "english": "Laura is in the car.",
-      "example": {
-        "spanish": "Laura está en el carro.",
-        "english": "Laura is in the car."
-      },
-      "collections": [
-        "en",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "1ic0vf38k1",
-      "spanish": "Hay una mesa en el cuarto.",
-      "english": "There is a table in the room.",
-      "example": {
-        "spanish": "Hay una mesa en el cuarto.",
-        "english": "There is a table in the room."
-      },
-      "collections": [
-        "en",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "n9t5c2brnx",
       "spanish": "en una superficie",
       "english": "on a surface",
@@ -24637,104 +22668,6 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "56v5jpe3ox",
-      "spanish": "El documento está sobre la mesa.",
-      "english": "The document is on the table.",
-      "example": {
-        "spanish": "El documento está sobre la mesa.",
-        "english": "The document is on the table."
-      },
-      "collections": [
-        "en",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "q0nhoouzks",
-      "spanish": "Las llaves están en el piso.",
-      "english": "The keys are on the floor.",
-      "example": {
-        "spanish": "Las llaves están en el piso.",
-        "english": "The keys are on the floor."
-      },
-      "collections": [
-        "en",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "phh460203z",
-      "spanish": "La información está en la página web.",
-      "english": "The information is on the webpage.",
-      "example": {
-        "spanish": "La información está en la página web.",
-        "english": "The information is on the webpage."
-      },
-      "collections": [
-        "en",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "4ls5cydn07",
-      "spanish": "Estoy en el parque para el evento.",
-      "english": "I am at the park for the event.",
-      "example": {
-        "spanish": "Estoy en el parque para el evento.",
-        "english": "I am at the park for the event."
-      },
-      "collections": [
-        "en",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "quryjlxxqh",
-      "spanish": "Estoy dentro del parque.",
-      "english": "I am in the park.",
-      "example": {
-        "spanish": "Estoy dentro del parque.",
-        "english": "I am in the park."
-      },
-      "collections": [
-        "en",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "n8g8ukvo74",
-      "spanish": "Estoy en la oficina.",
-      "english": "I am at the office.",
-      "example": {
-        "spanish": "Estoy en la oficina.",
-        "english": "I am at the office."
-      },
-      "collections": [
-        "en",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "hef250ow1r",
-      "spanish": "Estoy dentro de la oficina.",
-      "english": "I am in the office.",
-      "example": {
-        "spanish": "Estoy dentro de la oficina.",
-        "english": "I am in the office."
-      },
-      "collections": [
-        "en",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "rakstubyz7",
       "spanish": "entonces",
       "english": "then",
@@ -24766,96 +22699,12 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "dt2v7izogg",
-      "spanish": "Entonces, ya revisamos los costos.",
-      "english": "So, we've reviewed the costs.",
-      "example": {
-        "spanish": "Entonces, ya revisamos los costos.",
-        "english": "So, we've reviewed the costs."
-      },
-      "collections": [
-        "entonces",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "7c8rxvmsnl",
       "spanish": "entre dos cosas o personas",
       "english": "between",
       "example": {
         "spanish": "entre dos cosas o personas",
         "english": "between"
-      },
-      "collections": [
-        "entre",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "021zbt5l8o",
-      "spanish": "El parque está entre la tienda y la oficina.",
-      "english": "The park is between the store and the office.",
-      "example": {
-        "spanish": "El parque está entre la tienda y la oficina.",
-        "english": "The park is between the store and the office."
-      },
-      "collections": [
-        "entre",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "babdf3apgd",
-      "spanish": "Está entre la mesa y la puerta.",
-      "english": "It's between the table and the door.",
-      "example": {
-        "spanish": "Está entre la mesa y la puerta.",
-        "english": "It's between the table and the door."
-      },
-      "collections": [
-        "entre",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "y10yphpk0f",
-      "spanish": "Repartió el dinero entre todos.",
-      "english": "She divided the money among everyone.",
-      "example": {
-        "spanish": "Repartió el dinero entre todos.",
-        "english": "She divided the money among everyone."
-      },
-      "collections": [
-        "entre",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "9rxqv5pm1l",
-      "spanish": "Entre todos, metieron la mesa.",
-      "english": "Together, they carried the table in.",
-      "example": {
-        "spanish": "Entre todos, metieron la mesa.",
-        "english": "Together, they carried the table in."
-      },
-      "collections": [
-        "entre",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "wk2b7xk9ll",
-      "spanish": "Hablaron entre ellos.",
-      "english": "They talked among themselves.",
-      "example": {
-        "spanish": "Hablaron entre ellos.",
-        "english": "They talked among themselves."
       },
       "collections": [
         "entre",
@@ -24893,98 +22742,14 @@
     },
     {
       "id": "8g7yjhzzf4",
-      "spanish": "Estaba entre amigos.",
-      "english": "She stood among friends.",
+      "spanish": "estar entre [personas]",
+      "english": "to be among [people]",
       "example": {
         "spanish": "Estaba entre amigos.",
         "english": "She stood among friends."
       },
       "collections": [
         "entre",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "9b15cyognb",
-      "spanish": "Elige entre los tres planes.",
-      "english": "Choose between the three plans.",
-      "example": {
-        "spanish": "Elige entre los tres planes.",
-        "english": "Choose between the three plans."
-      },
-      "collections": [
-        "entre",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "5jel2ljku4",
-      "spanish": "Entre tú y yo, está mal.",
-      "english": "Between you and me, it's wrong.",
-      "example": {
-        "spanish": "Entre tú y yo, está mal.",
-        "english": "Between you and me, it's wrong."
-      },
-      "collections": [
-        "entre",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "2yp22t9edb",
-      "spanish": "Repártelo entre los estudiantes.",
-      "english": "Divide it among the students.",
-      "example": {
-        "spanish": "Repártelo entre los estudiantes.",
-        "english": "Divide it among the students."
-      },
-      "collections": [
-        "entre",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "a27x087lln",
-      "spanish": "Discutieron entre ellos.",
-      "english": "They argued among themselves.",
-      "example": {
-        "spanish": "Discutieron entre ellos.",
-        "english": "They argued among themselves."
-      },
-      "collections": [
-        "entre",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "s5ul1ez30f",
-      "spanish": "Está fuera de la casa.",
-      "english": "She is outside the house.",
-      "example": {
-        "spanish": "Está fuera de la casa.",
-        "english": "She is outside the house."
-      },
-      "collections": [
-        "fuera",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "8rf3vajcyz",
-      "spanish": "El ascensor está fuera de servicio.",
-      "english": "The elevator is out of service.",
-      "example": {
-        "spanish": "El ascensor está fuera de servicio.",
-        "english": "The elevator is out of service."
-      },
-      "collections": [
-        "fuera",
         "spanish-to-english catchall"
       ],
       "curriculumRole": "reference"
@@ -25004,23 +22769,9 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "ht6az2v6ff",
-      "spanish": "Es una persona fuerte.",
-      "english": "She is a strong person.",
-      "example": {
-        "spanish": "Es una persona fuerte.",
-        "english": "She is a strong person."
-      },
-      "collections": [
-        "fuerte",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "ws6aqyp5xd",
-      "spanish": "Habla muy fuerte.",
-      "english": "She speaks very loudly.",
+      "spanish": "hablar fuerte",
+      "english": "to speak loudly",
       "example": {
         "spanish": "Habla muy fuerte.",
         "english": "She speaks very loudly."
@@ -25033,8 +22784,8 @@
     },
     {
       "id": "fyziw2rb12",
-      "spanish": "Es un olor fuerte.",
-      "english": "It is a strong smell.",
+      "spanish": "ser fuerte",
+      "english": "to be strong",
       "example": {
         "spanish": "Es un olor fuerte.",
         "english": "It is a strong smell."
@@ -25046,205 +22797,24 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "sj0en2boa5",
-      "spanish": "Tuvimos una discusión fuerte.",
-      "english": "We had a heated argument.",
-      "example": {
-        "spanish": "Tuvimos una discusión fuerte.",
-        "english": "We had a heated argument."
-      },
-      "collections": [
-        "fuerte",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "cl1k6vqt99",
-      "spanish": "Caminó hacia la estación.",
-      "english": "She walked toward the station.",
-      "example": {
-        "spanish": "Caminó hacia la estación.",
-        "english": "She walked toward the station."
-      },
-      "collections": [
-        "hacia",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "0bf6wv17i1",
-      "spanish": "Llegó hacia las ocho.",
-      "english": "She arrived around eight.",
-      "example": {
-        "spanish": "Llegó hacia las ocho.",
-        "english": "She arrived around eight."
-      },
-      "collections": [
-        "hacia",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "959de6phbr",
-      "spanish": "Su actitud hacia mí cambió.",
-      "english": "Her attitude toward me changed.",
-      "example": {
-        "spanish": "Su actitud hacia mí cambió.",
-        "english": "Her attitude toward me changed."
-      },
-      "collections": [
-        "hacia",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "zgnaaq741j",
-      "spanish": "Caminó hacia el parque, no hasta el parque.",
-      "english": "She walked toward the park, not as far as the park.",
-      "example": {
-        "spanish": "Caminó hacia el parque, no hasta el parque.",
-        "english": "She walked toward the park, not as far as the park."
-      },
-      "collections": [
-        "hacia",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "r9zalg6wg8",
-      "spanish": "La ventana mira hacia el norte.",
-      "english": "The window faces north.",
-      "example": {
-        "spanish": "La ventana mira hacia el norte.",
-        "english": "The window faces north."
-      },
-      "collections": [
-        "hacia",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "w2tswd8ssk",
-      "spanish": "Trabajo hasta las seis.",
-      "english": "I work until six.",
-      "example": {
-        "spanish": "Trabajo hasta las seis.",
-        "english": "I work until six."
-      },
-      "collections": [
-        "hasta",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "sl8if6hw6i",
-      "spanish": "Cuesta hasta cien dólares.",
-      "english": "It costs up to one hundred dollars.",
-      "example": {
-        "spanish": "Cuesta hasta cien dólares.",
-        "english": "It costs up to one hundred dollars."
-      },
-      "collections": [
-        "hasta",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "pgd9e1vjyo",
-      "spanish": "Caminamos hasta el parque.",
-      "english": "We walked as far as the park.",
-      "example": {
-        "spanish": "Caminamos hasta el parque.",
-        "english": "We walked as far as the park."
-      },
-      "collections": [
-        "hasta",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "5lw85u2wbp",
-      "spanish": "Hasta Ana lo sabía.",
-      "english": "Even Ana knew it.",
+      "spanish": "hasta",
+      "english": "even",
       "example": {
         "spanish": "Hasta Ana lo sabía.",
         "english": "Even Ana knew it."
       },
       "collections": [
         "hasta",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "82x1f5lhhs",
-      "spanish": "Espera hasta que llegue.",
-      "english": "Wait until she arrives.",
-      "example": {
-        "spanish": "Espera hasta que llegue.",
-        "english": "Wait until she arrives."
-      },
-      "collections": [
-        "hasta",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "y8rzsncrpd",
-      "spanish": "No salí hasta las ocho.",
-      "english": "I didn't leave until eight.",
-      "example": {
-        "spanish": "No salí hasta las ocho.",
-        "english": "I didn't leave until eight."
-      },
-      "collections": [
-        "hasta",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "0dacbeaor9",
-      "spanish": "Los valores son iguales.",
-      "english": "The values are equal.",
-      "example": {
-        "spanish": "Los valores son iguales.",
-        "english": "The values are equal."
-      },
-      "collections": [
-        "igual",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "b40h6yt3mj",
-      "spanish": "Tenemos la misma edad, casi igual.",
-      "english": "We're the same age, almost identical.",
-      "example": {
-        "spanish": "Tenemos la misma edad, casi igual.",
-        "english": "We're the same age, almost identical."
-      },
-      "collections": [
-        "igual",
-        "spanish-to-english catchall"
+        "spanish-to-english catchall",
+        "even"
       ],
       "curriculumRole": "reference"
     },
     {
       "id": "5i08zx64uf",
-      "spanish": "Es igual de difícil.",
-      "english": "It's just as difficult.",
+      "spanish": "igual de [adjetivo]",
+      "english": "just as [adjective]",
       "example": {
         "spanish": "Es igual de difícil.",
         "english": "It's just as difficult."
@@ -25257,39 +22827,11 @@
     },
     {
       "id": "86ogukorla",
-      "spanish": "Igual viene mañana.",
-      "english": "Maybe she'll come tomorrow.",
+      "spanish": "igual",
+      "english": "maybe (coloquial)",
       "example": {
         "spanish": "Igual viene mañana.",
         "english": "Maybe she'll come tomorrow."
-      },
-      "collections": [
-        "igual",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "1kgyv86gu0",
-      "spanish": "Igual voy a hacerlo.",
-      "english": "I'm going to do it anyway.",
-      "example": {
-        "spanish": "Igual voy a hacerlo.",
-        "english": "I'm going to do it anyway."
-      },
-      "collections": [
-        "igual",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "dsw5xby44i",
-      "spanish": "Me da igual.",
-      "english": "It doesn't matter to me.",
-      "example": {
-        "spanish": "Me da igual.",
-        "english": "It doesn't matter to me."
       },
       "collections": [
         "igual",
@@ -25341,8 +22883,8 @@
     },
     {
       "id": "6rm2kx5c4o",
-      "spanish": "Es una mala idea.",
-      "english": "It is a bad idea.",
+      "spanish": "ser una mala idea",
+      "english": "to be a bad idea",
       "example": {
         "spanish": "Es una mala idea.",
         "english": "It is a bad idea."
@@ -25355,8 +22897,8 @@
     },
     {
       "id": "g2cfgdbyi3",
-      "spanish": "El villano es malo.",
-      "english": "The villain is evil.",
+      "spanish": "ser malo/a",
+      "english": "to be bad/evil",
       "example": {
         "spanish": "El villano es malo.",
         "english": "The villain is evil."
@@ -25368,37 +22910,9 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "8h4gusucu0",
-      "spanish": "El país tuvo una mala cosecha.",
-      "english": "The country had a poor harvest.",
-      "example": {
-        "spanish": "El país tuvo una mala cosecha.",
-        "english": "The country had a poor harvest."
-      },
-      "collections": [
-        "malo",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "cfz3zeg5yy",
-      "spanish": "Es un mal plan.",
-      "english": "It is a bad plan.",
-      "example": {
-        "spanish": "Es un mal plan.",
-        "english": "It is a bad plan."
-      },
-      "collections": [
-        "malo",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "506goyjb09",
-      "spanish": "Dormí mal.",
-      "english": "I slept badly.",
+      "spanish": "dormir bien/mal",
+      "english": "to sleep well/badly",
       "example": {
         "spanish": "Dormí mal.",
         "english": "I slept badly."
@@ -25410,65 +22924,9 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "5jrijhrccd",
-      "spanish": "Algo salió mal.",
-      "english": "Something went wrong.",
-      "example": {
-        "spanish": "Algo salió mal.",
-        "english": "Something went wrong."
-      },
-      "collections": [
-        "malo",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "000xn3mb6j",
-      "spanish": "Me siento mal.",
-      "english": "I feel sick/unwell.",
-      "example": {
-        "spanish": "Me siento mal.",
-        "english": "I feel sick/unwell."
-      },
-      "collections": [
-        "malo",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "qlu8kaw2so",
-      "spanish": "Este plan es peor.",
-      "english": "This plan is worse.",
-      "example": {
-        "spanish": "Este plan es peor.",
-        "english": "This plan is worse."
-      },
-      "collections": [
-        "malo",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "wadodvwhzi",
-      "spanish": "Fue el peor día del año.",
-      "english": "It was the worst day of the year.",
-      "example": {
-        "spanish": "Fue el peor día del año.",
-        "english": "It was the worst day of the year."
-      },
-      "collections": [
-        "malo",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "2xrg55t6l0",
-      "spanish": "Se siente peor hoy.",
-      "english": "She feels worse today.",
+      "spanish": "sentirse peor",
+      "english": "to feel worse",
       "example": {
         "spanish": "Se siente peor hoy.",
         "english": "She feels worse today."
@@ -25481,8 +22939,8 @@
     },
     {
       "id": "khu76rod2i",
-      "spanish": "Lo peor es esperar.",
-      "english": "The worst part is waiting.",
+      "spanish": "lo peor es [hacer algo]",
+      "english": "the worst part is [doing something]",
       "example": {
         "spanish": "Lo peor es esperar.",
         "english": "The worst part is waiting."
@@ -25593,50 +23051,6 @@
       "example": {
         "spanish": "anteayer",
         "english": "the day before yesterday"
-      },
-      "collections": [
-        "manana",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "tfrfrw8ztc",
-      "spanish": "Tengo que terminarlo hoy.",
-      "english": "I have to finish it today.",
-      "example": {
-        "spanish": "Tengo que terminarlo hoy.",
-        "english": "I have to finish it today."
-      },
-      "collections": [
-        "manana",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "yvcs7qqm0w",
-      "spanish": "La reunión es mañana.",
-      "english": "The meeting is tomorrow.",
-      "example": {
-        "spanish": "La reunión es mañana.",
-        "english": "The meeting is tomorrow."
-      },
-      "collections": [
-        "manana",
-        "spanish-to-english catchall",
-        "tomorrow",
-        "english-to-spanish reverse audit"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "9v8pfxrxj2",
-      "spanish": "Lo preparé ayer.",
-      "english": "I prepared it yesterday.",
-      "example": {
-        "spanish": "Lo preparé ayer.",
-        "english": "I prepared it yesterday."
       },
       "collections": [
         "manana",
@@ -25827,54 +23241,12 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "wbyfk6dezr",
-      "spanish": "Necesito más tiempo.",
-      "english": "I need more time.",
-      "example": {
-        "spanish": "Necesito más tiempo.",
-        "english": "I need more time."
-      },
-      "collections": [
-        "mas",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "0ng80hk54c",
-      "spanish": "Compramos más libros.",
-      "english": "We bought more books.",
-      "example": {
-        "spanish": "Compramos más libros.",
-        "english": "We bought more books."
-      },
-      "collections": [
-        "mas",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "sdjzwrjzji",
-      "spanish": "Es el más útil.",
-      "english": "It is the most useful.",
+      "spanish": "ser útil ==> ser el/la más útil",
+      "english": "to be useful ==> to be the most useful",
       "example": {
         "spanish": "Es el más útil.",
         "english": "It is the most useful."
-      },
-      "collections": [
-        "mas",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "w3xpftx9z0",
-      "spanish": "Ella es la más rápida del equipo.",
-      "english": "She is the fastest on the team.",
-      "example": {
-        "spanish": "Ella es la más rápida del equipo.",
-        "english": "She is the fastest on the team."
       },
       "collections": [
         "mas",
@@ -25911,37 +23283,9 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "9zek1c1603",
-      "spanish": "Lo más importante es practicar.",
-      "english": "The most important thing is to practice.",
-      "example": {
-        "spanish": "Lo más importante es practicar.",
-        "english": "The most important thing is to practice."
-      },
-      "collections": [
-        "mas",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "whqrdfhy2y",
-      "spanish": "Lo que más quiero es descansar.",
-      "english": "What I want most is to rest.",
-      "example": {
-        "spanish": "Lo que más quiero es descansar.",
-        "english": "What I want most is to rest."
-      },
-      "collections": [
-        "mas",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "1nhgx0mth4",
-      "spanish": "Comí media manzana.",
-      "english": "I ate half an apple.",
+      "spanish": "comer medio/a [algo]",
+      "english": "to eat half [something]",
       "example": {
         "spanish": "Comí media manzana.",
         "english": "I ate half an apple."
@@ -25968,8 +23312,8 @@
     },
     {
       "id": "vvjft5svqr",
-      "spanish": "Llegó medio cansado.",
-      "english": "He arrived somewhat tired.",
+      "spanish": "medio [adjetivo]",
+      "english": "somewhat [adjective]",
       "example": {
         "spanish": "Llegó medio cansado.",
         "english": "He arrived somewhat tired."
@@ -25981,68 +23325,12 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "0wdwxc8c2f",
-      "spanish": "Los medios informaron la noticia.",
-      "english": "The media reported the news.",
-      "example": {
-        "spanish": "Los medios informaron la noticia.",
-        "english": "The media reported the news."
-      },
-      "collections": [
-        "medio",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "s1s506i18f",
-      "spanish": "Es un medio de transporte.",
-      "english": "It is a means of transportation.",
-      "example": {
-        "spanish": "Es un medio de transporte.",
-        "english": "It is a means of transportation."
-      },
-      "collections": [
-        "medio",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "sd73dmywcy",
-      "spanish": "Tengo menos tiempo.",
-      "english": "I have less time.",
-      "example": {
-        "spanish": "Tengo menos tiempo.",
-        "english": "I have less time."
-      },
-      "collections": [
-        "menos",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "efzsdnarz6",
-      "spanish": "Hay menos sillas.",
-      "english": "There are fewer chairs.",
+      "spanish": "menos [sustantivo contable]",
+      "english": "fewer [countable noun]",
       "example": {
         "spanish": "Hay menos sillas.",
         "english": "There are fewer chairs."
-      },
-      "collections": [
-        "menos",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "6rr0cf803b",
-      "spanish": "Cinco menos dos son tres.",
-      "english": "Five minus two is three.",
-      "example": {
-        "spanish": "Cinco menos dos son tres.",
-        "english": "Five minus two is three."
       },
       "collections": [
         "menos",
@@ -26065,40 +23353,12 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "mt1qoofux8",
-      "spanish": "Trabajo mientras ella estudia.",
-      "english": "I work while she studies.",
-      "example": {
-        "spanish": "Trabajo mientras ella estudia.",
-        "english": "I work while she studies."
-      },
-      "collections": [
-        "mientras",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "7xx1fimdtn",
       "spanish": "Ana cocina, mientras que Luis limpia.",
       "english": "Ana cooks, whereas Luis cleans.",
       "example": {
         "spanish": "Ana cocina, mientras que Luis limpia.",
         "english": "Ana cooks, whereas Luis cleans."
-      },
-      "collections": [
-        "mientras",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "rt7rka2gzv",
-      "spanish": "Puedes venir mientras avises.",
-      "english": "You can come as long as you let me know.",
-      "example": {
-        "spanish": "Puedes venir mientras avises.",
-        "english": "You can come as long as you let me know."
       },
       "collections": [
         "mientras",
@@ -26121,110 +23381,12 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "ktjutq40s3",
-      "spanish": "No hables mientras comes.",
-      "english": "Don't talk while you're eating.",
-      "example": {
-        "spanish": "No hables mientras comes.",
-        "english": "Don't talk while you're eating."
-      },
-      "collections": [
-        "mientras",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "ojop0cbnjn",
-      "spanish": "Vivimos en la misma calle.",
-      "english": "We live on the same street.",
-      "example": {
-        "spanish": "Vivimos en la misma calle.",
-        "english": "We live on the same street."
-      },
-      "collections": [
-        "mismo",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "qcjl7aqc59",
-      "spanish": "Necesitamos el mismo libro.",
-      "english": "We need the same book.",
-      "example": {
-        "spanish": "Necesitamos el mismo libro.",
-        "english": "We need the same book."
-      },
-      "collections": [
-        "mismo",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "40fxfj940f",
-      "spanish": "Lo hizo él mismo.",
-      "english": "He did it himself.",
-      "example": {
-        "spanish": "Lo hizo él mismo.",
-        "english": "He did it himself."
-      },
-      "collections": [
-        "mismo",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "84ep3pyukv",
-      "spanish": "Llegó el mismo día.",
-      "english": "She arrived that very day.",
+      "spanish": "el mismo día",
+      "english": "the same day",
       "example": {
         "spanish": "Llegó el mismo día.",
         "english": "She arrived that very day."
-      },
-      "collections": [
-        "mismo",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "q2ep6l0p27",
-      "spanish": "Está aquí mismo.",
-      "english": "It's right here.",
-      "example": {
-        "spanish": "Está aquí mismo.",
-        "english": "It's right here."
-      },
-      "collections": [
-        "mismo",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "vwzvgeydh2",
-      "spanish": "Hazlo ahora mismo.",
-      "english": "Do it right now.",
-      "example": {
-        "spanish": "Hazlo ahora mismo.",
-        "english": "Do it right now."
-      },
-      "collections": [
-        "mismo",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "9wtd10sfrc",
-      "spanish": "Quiero lo mismo.",
-      "english": "I want the same thing.",
-      "example": {
-        "spanish": "Quiero lo mismo.",
-        "english": "I want the same thing."
       },
       "collections": [
         "mismo",
@@ -26242,62 +23404,6 @@
       },
       "collections": [
         "mismo",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "h59od822k3",
-      "spanish": "No tengo mucho tiempo para terminarlo hoy.",
-      "english": "I don't have much time to finish it today.",
-      "example": {
-        "spanish": "No tengo mucho tiempo para terminarlo hoy.",
-        "english": "I don't have much time to finish it today."
-      },
-      "collections": [
-        "mucho",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "1prsajtwp2",
-      "spanish": "Hay muchos carros en la avenida porque cerraron el túnel.",
-      "english": "There are many cars on the avenue because the tunnel is closed.",
-      "example": {
-        "spanish": "Hay muchos carros en la avenida porque cerraron el túnel.",
-        "english": "There are many cars on the avenue because the tunnel is closed."
-      },
-      "collections": [
-        "mucho",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "9aszt17eto",
-      "spanish": "Leí gran parte del libro y tomé muchas notas.",
-      "english": "I read a lot of the book and took a lot of notes.",
-      "example": {
-        "spanish": "Leí gran parte del libro y tomé muchas notas.",
-        "english": "I read a lot of the book and took a lot of notes."
-      },
-      "collections": [
-        "mucho",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "6xrgtmp8re",
-      "spanish": "Tenemos muchos libros para revisar esta semana.",
-      "english": "We've got lots of books to review this week.",
-      "example": {
-        "spanish": "Tenemos muchos libros para revisar esta semana.",
-        "english": "We've got lots of books to review this week."
-      },
-      "collections": [
-        "mucho",
         "spanish-to-english catchall"
       ],
       "curriculumRole": "reference"
@@ -26331,54 +23437,12 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "0xxbw7tm06",
-      "spanish": "No tengo mucho tiempo.",
-      "english": "I don't have much time.",
-      "example": {
-        "spanish": "No tengo mucho tiempo.",
-        "english": "I don't have much time."
-      },
-      "collections": [
-        "mucho",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "7uxnczanon",
-      "spanish": "Hay muchos carros en la avenida.",
-      "english": "There are many cars on the avenue.",
-      "example": {
-        "spanish": "Hay muchos carros en la avenida.",
-        "english": "There are many cars on the avenue."
-      },
-      "collections": [
-        "mucho",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "8xc9lgyn8v",
-      "spanish": "Tomé muchas notas.",
-      "english": "I took a lot of notes.",
+      "spanish": "tomar notas",
+      "english": "to take notes",
       "example": {
         "spanish": "Tomé muchas notas.",
         "english": "I took a lot of notes."
-      },
-      "collections": [
-        "mucho",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "aiwdxhqtda",
-      "spanish": "Tenemos muchos libros.",
-      "english": "We've got lots of books.",
-      "example": {
-        "spanish": "Tenemos muchos libros.",
-        "english": "We've got lots of books."
       },
       "collections": [
         "mucho",
@@ -26393,34 +23457,6 @@
       "example": {
         "spanish": "Trabajo mucho entre semana.",
         "english": "I work a lot during the week."
-      },
-      "collections": [
-        "mucho",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "1j9ocitjxy",
-      "spanish": "No tengo mucho tiempo, pero tengo muchas ideas.",
-      "english": "I don't have much time, but I have many ideas.",
-      "example": {
-        "spanish": "No tengo mucho tiempo, pero tengo muchas ideas.",
-        "english": "I don't have much time, but I have many ideas."
-      },
-      "collections": [
-        "mucho",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "ahnilv7vae",
-      "spanish": "Trabajo mucho y tomo muchas notas.",
-      "english": "I work a lot and take a lot of notes.",
-      "example": {
-        "spanish": "Trabajo mucho y tomo muchas notas.",
-        "english": "I work a lot and take a lot of notes."
       },
       "collections": [
         "mucho",
@@ -26458,8 +23494,8 @@
     },
     {
       "id": "lfmutd3xru",
-      "spanish": "Ni yo lo sabía.",
-      "english": "Not even I knew it.",
+      "spanish": "ni",
+      "english": "not even",
       "example": {
         "spanish": "Ni yo lo sabía.",
         "english": "Not even I knew it."
@@ -26527,48 +23563,6 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "hrmogzwxb0",
-      "spanish": "Nunca llego tarde.",
-      "english": "I never arrive late.",
-      "example": {
-        "spanish": "Nunca llego tarde.",
-        "english": "I never arrive late."
-      },
-      "collections": [
-        "nunca",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "v358vpk3wr",
-      "spanish": "No he estado nunca en Cali.",
-      "english": "I have never been to Cali.",
-      "example": {
-        "spanish": "No he estado nunca en Cali.",
-        "english": "I have never been to Cali."
-      },
-      "collections": [
-        "nunca",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "klnr67a090",
-      "spanish": "Nunca más lo haré.",
-      "english": "I will never do it again.",
-      "example": {
-        "spanish": "Nunca más lo haré.",
-        "english": "I will never do it again."
-      },
-      "collections": [
-        "nunca",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "4sabms9mlz",
       "spanish": "¿Nunca has viajado solo?",
       "english": "Haven't you ever traveled alone?",
@@ -26583,104 +23577,6 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "6qy4e6x3e0",
-      "spanish": "¿Quieres café o agua?",
-      "english": "Do you want coffee or water?",
-      "example": {
-        "spanish": "¿Quieres café o agua?",
-        "english": "Do you want coffee or water?"
-      },
-      "collections": [
-        "o",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "re9tqlpwh9",
-      "spanish": "Este café es para Laura.",
-      "english": "This coffee is for Laura.",
-      "example": {
-        "spanish": "Este café es para Laura.",
-        "english": "This coffee is for Laura."
-      },
-      "collections": [
-        "para",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "lfvre8nht1",
-      "spanish": "Necesito tiempo para terminar el informe.",
-      "english": "I need time to finish the report.",
-      "example": {
-        "spanish": "Necesito tiempo para terminar el informe.",
-        "english": "I need time to finish the report."
-      },
-      "collections": [
-        "para",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "jj7t95xheh",
-      "spanish": "Salimos para Bogotá mañana.",
-      "english": "We leave for Bogotá tomorrow.",
-      "example": {
-        "spanish": "Salimos para Bogotá mañana.",
-        "english": "We leave for Bogotá tomorrow."
-      },
-      "collections": [
-        "para",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "7o65fl5bsg",
-      "spanish": "Necesito el informe para el viernes.",
-      "english": "I need the report by Friday.",
-      "example": {
-        "spanish": "Necesito el informe para el viernes.",
-        "english": "I need the report by Friday."
-      },
-      "collections": [
-        "para",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "8ryeikjlxv",
-      "spanish": "Para un principiante, habla muy bien.",
-      "english": "For a beginner, she speaks very well.",
-      "example": {
-        "spanish": "Para un principiante, habla muy bien.",
-        "english": "For a beginner, she speaks very well."
-      },
-      "collections": [
-        "para",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "bw9ex8x6w9",
-      "spanish": "Hablo despacio para que puedas entender.",
-      "english": "I speak slowly so that you can understand.",
-      "example": {
-        "spanish": "Hablo despacio para que puedas entender.",
-        "english": "I speak slowly so that you can understand."
-      },
-      "collections": [
-        "para",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "gejgahqn6v",
       "spanish": "para que",
       "english": "so that",
@@ -26690,160 +23586,6 @@
       },
       "collections": [
         "para",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "5kt3lqleje",
-      "spanish": "Necesito tiempo para hacerlo.",
-      "english": "I need time to do it.",
-      "example": {
-        "spanish": "Necesito tiempo para hacerlo.",
-        "english": "I need time to do it."
-      },
-      "collections": [
-        "para",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "9avk8laca4",
-      "spanish": "Voy a la oficina para hablar con Laura.",
-      "english": "I am going to the office in order to speak with Laura.",
-      "example": {
-        "spanish": "Voy a la oficina para hablar con Laura.",
-        "english": "I am going to the office in order to speak with Laura."
-      },
-      "collections": [
-        "para",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "tueq3rv1ei",
-      "spanish": "Salgo para la oficina.",
-      "english": "I am leaving for the office.",
-      "example": {
-        "spanish": "Salgo para la oficina.",
-        "english": "I am leaving for the office."
-      },
-      "collections": [
-        "para",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "7rv0zv9idd",
-      "spanish": "Cancelaron el vuelo por la tormenta.",
-      "english": "They canceled the flight because of the storm.",
-      "example": {
-        "spanish": "Cancelaron el vuelo por la tormenta.",
-        "english": "They canceled the flight because of the storm."
-      },
-      "collections": [
-        "por",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "1c38s7q7uf",
-      "spanish": "Caminamos por el parque y por la avenida.",
-      "english": "We walked through the park and along the avenue.",
-      "example": {
-        "spanish": "Caminamos por el parque y por la avenida.",
-        "english": "We walked through the park and along the avenue."
-      },
-      "collections": [
-        "por",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "lvb5to405c",
-      "spanish": "Te mando el documento por correo.",
-      "english": "I'll send you the document by email.",
-      "example": {
-        "spanish": "Te mando el documento por correo.",
-        "english": "I'll send you the document by email."
-      },
-      "collections": [
-        "por",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "s5ysq0nxhb",
-      "spanish": "Compré el libro por veinte mil pesos.",
-      "english": "I bought the book for twenty thousand pesos.",
-      "example": {
-        "spanish": "Compré el libro por veinte mil pesos.",
-        "english": "I bought the book for twenty thousand pesos."
-      },
-      "collections": [
-        "por",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "wpwliypouz",
-      "spanish": "Viví allí por dos años.",
-      "english": "I lived there for two years.",
-      "example": {
-        "spanish": "Viví allí por dos años.",
-        "english": "I lived there for two years."
-      },
-      "collections": [
-        "por",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "ro4kzo4nt6",
-      "spanish": "La medicina se toma dos veces por día.",
-      "english": "The medicine is taken twice per day.",
-      "example": {
-        "spanish": "La medicina se toma dos veces por día.",
-        "english": "The medicine is taken twice per day."
-      },
-      "collections": [
-        "por",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "bo8t7ablhb",
-      "spanish": "La canción fue escrita por Ana.",
-      "english": "The song was written by Ana.",
-      "example": {
-        "spanish": "La canción fue escrita por Ana.",
-        "english": "The song was written by Ana."
-      },
-      "collections": [
-        "por",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "bhbtmapzyn",
-      "spanish": "Lo hice por ti, no para ti.",
-      "english": "I did it because of you, not for you.",
-      "example": {
-        "spanish": "Lo hice por ti, no para ti.",
-        "english": "I did it because of you, not for you."
-      },
-      "collections": [
-        "por",
         "spanish-to-english catchall"
       ],
       "curriculumRole": "reference"
@@ -26866,8 +23608,8 @@
     },
     {
       "id": "j7dljg4amk",
-      "spanish": "Vuelve pronto.",
-      "english": "Come back soon.",
+      "spanish": "volver pronto",
+      "english": "to come back soon",
       "example": {
         "spanish": "Vuelve pronto.",
         "english": "Come back soon."
@@ -26921,20 +23663,6 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "jbzn0kwj0g",
-      "spanish": "Pues, no sé.",
-      "english": "Well, I don't know.",
-      "example": {
-        "spanish": "Pues, no sé.",
-        "english": "Well, I don't know."
-      },
-      "collections": [
-        "pues",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "me1ci2uana",
       "spanish": "Pues hazlo tú.",
       "english": "Then do it yourself.",
@@ -26944,104 +23672,6 @@
       },
       "collections": [
         "pues",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "pkapofhfqr",
-      "spanish": "No fui, pues estaba enfermo.",
-      "english": "I didn't go because I was sick.",
-      "example": {
-        "spanish": "No fui, pues estaba enfermo.",
-        "english": "I didn't go because I was sick."
-      },
-      "collections": [
-        "pues",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "wrdk2z2dl6",
-      "spanish": "Estaba cerrado; no pudimos, pues, entrar.",
-      "english": "It was closed; therefore, we couldn't enter.",
-      "example": {
-        "spanish": "Estaba cerrado; no pudimos, pues, entrar.",
-        "english": "It was closed; therefore, we couldn't enter."
-      },
-      "collections": [
-        "pues",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "yxmnnkbk4l",
-      "spanish": "Es un poco difícil, pues.",
-      "english": "It's a little difficult, you know.",
-      "example": {
-        "spanish": "Es un poco difícil, pues.",
-        "english": "It's a little difficult, you know."
-      },
-      "collections": [
-        "pues",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "pfa0a355za",
-      "spanish": "que",
-      "english": "that",
-      "example": {
-        "spanish": "que",
-        "english": "that"
-      },
-      "collections": [
-        "que",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "06e1homzj2",
-      "spanish": "Creo que es importante.",
-      "english": "I think that it is important.",
-      "example": {
-        "spanish": "Creo que es importante.",
-        "english": "I think that it is important."
-      },
-      "collections": [
-        "que",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "hrozgnwghp",
-      "spanish": "Sé que Laura está aquí.",
-      "english": "I know that Laura is here.",
-      "example": {
-        "spanish": "Sé que Laura está aquí.",
-        "english": "I know that Laura is here."
-      },
-      "collections": [
-        "que",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "plmxagk5yh",
-      "spanish": "Laura dice que la reunión empieza a las nueve.",
-      "english": "Laura says that the meeting starts at nine.",
-      "example": {
-        "spanish": "Laura dice que la reunión empieza a las nueve.",
-        "english": "Laura says that the meeting starts at nine."
-      },
-      "collections": [
-        "que",
         "spanish-to-english catchall"
       ],
       "curriculumRole": "reference"
@@ -27304,236 +23934,6 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "p92sl5npjg",
-      "spanish": "Esto es lo que necesito.",
-      "english": "This is what I need.",
-      "example": {
-        "spanish": "Esto es lo que necesito.",
-        "english": "This is what I need."
-      },
-      "collections": [
-        "que",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "n0dybqigqm",
-      "spanish": "Quiero saber lo que piensas.",
-      "english": "I want to know what you think.",
-      "example": {
-        "spanish": "Quiero saber lo que piensas.",
-        "english": "I want to know what you think."
-      },
-      "collections": [
-        "que",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "8mcag7iq4g",
-      "spanish": "La reunión fue cancelada, lo cual entiendo.",
-      "english": "The meeting was canceled, which I understand.",
-      "example": {
-        "spanish": "La reunión fue cancelada, lo cual entiendo.",
-        "english": "The meeting was canceled, which I understand."
-      },
-      "collections": [
-        "que",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "j8q9rqzdo6",
-      "spanish": "Te llamo para que sepas dónde estoy.",
-      "english": "I am calling you so that you know where I am.",
-      "example": {
-        "spanish": "Te llamo para que sepas dónde estoy.",
-        "english": "I am calling you so that you know where I am."
-      },
-      "collections": [
-        "que",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "gvu0thxfhe",
-      "spanish": "Porque tengo que terminar el informe.",
-      "english": "Because I have to finish the report.",
-      "example": {
-        "spanish": "Porque tengo que terminar el informe.",
-        "english": "Because I have to finish the report."
-      },
-      "collections": [
-        "que",
-        "spanish-to-english catchall",
-        "because",
-        "english-to-spanish reverse audit"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "s8c28w092m",
-      "spanish": "Se fue porque estaba cansada.",
-      "english": "She left because she was tired.",
-      "example": {
-        "spanish": "Se fue porque estaba cansada.",
-        "english": "She left because she was tired."
-      },
-      "collections": [
-        "que",
-        "spanish-to-english catchall",
-        "because",
-        "english-to-spanish reverse audit"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "cyial2tf51",
-      "spanish": "La persona que trabaja con Laura.",
-      "english": "The person who works with Laura.",
-      "example": {
-        "spanish": "La persona que trabaja con Laura.",
-        "english": "The person who works with Laura."
-      },
-      "collections": [
-        "que",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "of3esmfezv",
-      "spanish": "La persona que necesito llamar.",
-      "english": "The person that I need to call.",
-      "example": {
-        "spanish": "La persona que necesito llamar.",
-        "english": "The person that I need to call."
-      },
-      "collections": [
-        "que",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "olnfpaahh0",
-      "spanish": "El libro que necesito.",
-      "english": "The book that I need.",
-      "example": {
-        "spanish": "El libro que necesito.",
-        "english": "The book that I need."
-      },
-      "collections": [
-        "que",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "dqxwh6lo9z",
-      "spanish": "El libro que está sobre la mesa.",
-      "english": "The book which is on the table.",
-      "example": {
-        "spanish": "El libro que está sobre la mesa.",
-        "english": "The book which is on the table."
-      },
-      "collections": [
-        "que",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "o9szadt42t",
-      "spanish": "Quiero que Laura lo haga.",
-      "english": "I want Laura to do it.",
-      "example": {
-        "spanish": "Quiero que Laura lo haga.",
-        "english": "I want Laura to do it."
-      },
-      "collections": [
-        "que",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "4rltqpbtiy",
-      "spanish": "Necesito que Laura lo haga.",
-      "english": "I need Laura to do it.",
-      "example": {
-        "spanish": "Necesito que Laura lo haga.",
-        "english": "I need Laura to do it."
-      },
-      "collections": [
-        "que",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "gcs5expwd8",
-      "spanish": "Le digo a Laura que lo haga.",
-      "english": "I tell Laura to do it.",
-      "example": {
-        "spanish": "Le digo a Laura que lo haga.",
-        "english": "I tell Laura to do it."
-      },
-      "collections": [
-        "que",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "w247huyx2z",
-      "spanish": "Tengo que hacerlo.",
-      "english": "I have to do it.",
-      "example": {
-        "spanish": "Tengo que hacerlo.",
-        "english": "I have to do it."
-      },
-      "collections": [
-        "que",
-        "spanish-to-english catchall",
-        "to",
-        "english-to-spanish reverse audit"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "wt5dlpn4wv",
-      "spanish": "Hay que hacerlo.",
-      "english": "You have to do it.",
-      "example": {
-        "spanish": "Hay que hacerlo.",
-        "english": "You have to do it."
-      },
-      "collections": [
-        "que",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "379h7mluzb",
-      "spanish": "Hay que hacerlo.",
-      "english": "We have to do it.",
-      "example": {
-        "spanish": "Hay que hacerlo.",
-        "english": "We have to do it."
-      },
-      "collections": [
-        "que",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "b0uvykqv53",
       "spanish": "¿Qué quieres?",
       "english": "What do you want?",
@@ -27580,48 +23980,6 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "jvcqmgarbr",
-      "spanish": "Esto es mejor que eso.",
-      "english": "This is better than that.",
-      "example": {
-        "spanish": "Esto es mejor que eso.",
-        "english": "This is better than that."
-      },
-      "collections": [
-        "que",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "gt09shv21m",
-      "spanish": "Laura llegó más temprano que Diana.",
-      "english": "Laura arrived earlier than Diana.",
-      "example": {
-        "spanish": "Laura llegó más temprano que Diana.",
-        "english": "Laura arrived earlier than Diana."
-      },
-      "collections": [
-        "que",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "0sub6dcnmn",
-      "spanish": "La oficina es más grande que el apartamento.",
-      "english": "The office is bigger than the apartment.",
-      "example": {
-        "spanish": "La oficina es más grande que el apartamento.",
-        "english": "The office is bigger than the apartment."
-      },
-      "collections": [
-        "que",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "ju968jjo7u",
       "spanish": "¿Quién está aquí?",
       "english": "Who is here?",
@@ -27654,76 +24012,6 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "jsxwyvm7k8",
-      "spanish": "Según el informe, faltan datos.",
-      "english": "According to the report, data is missing.",
-      "example": {
-        "spanish": "Según el informe, faltan datos.",
-        "english": "According to the report, data is missing."
-      },
-      "collections": [
-        "segun",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "9jp0aafddq",
-      "spanish": "Iremos según el clima.",
-      "english": "We'll go depending on the weather.",
-      "example": {
-        "spanish": "Iremos según el clima.",
-        "english": "We'll go depending on the weather."
-      },
-      "collections": [
-        "segun",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "5w6h9hbck1",
-      "spanish": "Hazlo según te expliqué.",
-      "english": "Do it as I explained.",
-      "example": {
-        "spanish": "Hazlo según te expliqué.",
-        "english": "Do it as I explained."
-      },
-      "collections": [
-        "segun",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "1nhp8viq6q",
-      "spanish": "Según yo, eso no funciona.",
-      "english": "As far as I'm concerned, that doesn't work.",
-      "example": {
-        "spanish": "Según yo, eso no funciona.",
-        "english": "As far as I'm concerned, that doesn't work."
-      },
-      "collections": [
-        "segun",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "a7f3kcp75q",
-      "spanish": "El precio cambia según el día.",
-      "english": "The price varies by day.",
-      "example": {
-        "spanish": "El precio cambia según el día.",
-        "english": "The price varies by day."
-      },
-      "collections": [
-        "segun",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "22lgqfjinn",
       "spanish": "seguro / a salvo",
       "english": "safe",
@@ -27752,34 +24040,6 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "cso9u0csec",
-      "spanish": "Laura está a salvo en casa.",
-      "english": "Laura is safe at home.",
-      "example": {
-        "spanish": "Laura está a salvo en casa.",
-        "english": "Laura is safe at home."
-      },
-      "collections": [
-        "seguro",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "7vrsdi0axv",
-      "spanish": "Estoy seguro de que la reunión es hoy.",
-      "english": "I am sure that the meeting is today.",
-      "example": {
-        "spanish": "Estoy seguro de que la reunión es hoy.",
-        "english": "I am sure that the meeting is today."
-      },
-      "collections": [
-        "seguro",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "gwnpt7pmq9",
       "spanish": "Asegura que la puerta esté cerrada.",
       "english": "Make sure the door is locked.",
@@ -27794,54 +24054,12 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "j6z42wz5kd",
-      "spanish": "Te aseguro que es verdad.",
-      "english": "I assure you that it is true.",
-      "example": {
-        "spanish": "Te aseguro que es verdad.",
-        "english": "I assure you that it is true."
-      },
-      "collections": [
-        "seguro",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "56hciu6j5h",
-      "spanish": "Aseguraron el carro.",
-      "english": "They insured the car.",
+      "spanish": "asegurar [algo]",
+      "english": "to insure [something]",
       "example": {
         "spanish": "Aseguraron el carro.",
         "english": "They insured the car."
-      },
-      "collections": [
-        "seguro",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "8rvpprzk9s",
-      "spanish": "Asegura bien la cuerda.",
-      "english": "Secure the rope firmly.",
-      "example": {
-        "spanish": "Asegura bien la cuerda.",
-        "english": "Secure the rope firmly."
-      },
-      "collections": [
-        "seguro",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "ar31f93fkf",
-      "spanish": "El testigo aseguró que lo vio.",
-      "english": "The witness stated that he saw him.",
-      "example": {
-        "spanish": "El testigo aseguró que lo vio.",
-        "english": "The witness stated that he saw him."
       },
       "collections": [
         "seguro",
@@ -27899,62 +24117,6 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "3r5ixt8d7j",
-      "spanish": "Si tengo tiempo, voy a hacerlo.",
-      "english": "If I have time, I am going to do it.",
-      "example": {
-        "spanish": "Si tengo tiempo, voy a hacerlo.",
-        "english": "If I have time, I am going to do it."
-      },
-      "collections": [
-        "si",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "mrmi8cm86p",
-      "spanish": "Quiero saber si tienes tiempo.",
-      "english": "I want to know if you have time.",
-      "example": {
-        "spanish": "Quiero saber si tienes tiempo.",
-        "english": "I want to know if you have time."
-      },
-      "collections": [
-        "si",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "8wnybh7699",
-      "spanish": "Quiero saber si vas o no.",
-      "english": "I want to know whether you are going or not.",
-      "example": {
-        "spanish": "Quiero saber si vas o no.",
-        "english": "I want to know whether you are going or not."
-      },
-      "collections": [
-        "si",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "7v242mbo1o",
-      "spanish": "No es azul, sino verde.",
-      "english": "It isn't blue but green.",
-      "example": {
-        "spanish": "No es azul, sino verde.",
-        "english": "It isn't blue but green."
-      },
-      "collections": [
-        "si",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "etyzwht0ts",
       "spanish": "No solo vino, sino que ayudó.",
       "english": "She not only came but also helped.",
@@ -27983,34 +24145,6 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "ecnv7bdqpe",
-      "spanish": "Si no vienes, avísame.",
-      "english": "If you don't come, let me know.",
-      "example": {
-        "spanish": "Si no vienes, avísame.",
-        "english": "If you don't come, let me know."
-      },
-      "collections": [
-        "si",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "d1gm0u24ev",
-      "spanish": "Date prisa; si no, llegaremos tarde.",
-      "english": "Hurry; otherwise, we'll be late.",
-      "example": {
-        "spanish": "Date prisa; si no, llegaremos tarde.",
-        "english": "Hurry; otherwise, we'll be late."
-      },
-      "collections": [
-        "si",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "vk5arw3nk6",
       "spanish": "sí",
       "english": "yes",
@@ -28021,22 +24155,6 @@
       "collections": [
         "si",
         "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "lm4477wbaj",
-      "spanish": "Siempre llego temprano.",
-      "english": "I always arrive early.",
-      "example": {
-        "spanish": "Siempre llego temprano.",
-        "english": "I always arrive early."
-      },
-      "collections": [
-        "siempre",
-        "spanish-to-english catchall",
-        "always",
-        "english-to-spanish reverse audit"
       ],
       "curriculumRole": "reference"
     },
@@ -28070,8 +24188,8 @@
     },
     {
       "id": "k3jg1rin0g",
-      "spanish": "Se fue para siempre.",
-      "english": "She left forever/for good.",
+      "spanish": "irse para siempre",
+      "english": "to leave forever/for good",
       "example": {
         "spanish": "Se fue para siempre.",
         "english": "She left forever/for good."
@@ -28097,36 +24215,6 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "je4w9jap6g",
-      "spanish": "Se fue sin despedirse.",
-      "english": "She left without saying goodbye.",
-      "example": {
-        "spanish": "Se fue sin despedirse.",
-        "english": "She left without saying goodbye."
-      },
-      "collections": [
-        "sin",
-        "spanish-to-english catchall",
-        "without",
-        "english-to-spanish reverse audit"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "7fia6s6ldp",
-      "spanish": "Sin tu ayuda, no puedo hacerlo.",
-      "english": "Without your help, I can't do it.",
-      "example": {
-        "spanish": "Sin tu ayuda, no puedo hacerlo.",
-        "english": "Without your help, I can't do it."
-      },
-      "collections": [
-        "sin",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "tpnbbxdlyr",
       "spanish": "Llevo dos días sin dormir.",
       "english": "I haven't slept for two days.",
@@ -28136,62 +24224,6 @@
       },
       "collections": [
         "sin",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "o3d24eo72o",
-      "spanish": "El libro está sobre la mesa.",
-      "english": "The book is on the table.",
-      "example": {
-        "spanish": "El libro está sobre la mesa.",
-        "english": "The book is on the table."
-      },
-      "collections": [
-        "sobre",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "5qmz3f6kjm",
-      "spanish": "Hablamos sobre el proyecto.",
-      "english": "We talked about the project.",
-      "example": {
-        "spanish": "Hablamos sobre el proyecto.",
-        "english": "We talked about the project."
-      },
-      "collections": [
-        "sobre",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "gdbg20vlv5",
-      "spanish": "Volamos sobre la ciudad.",
-      "english": "We flew over the city.",
-      "example": {
-        "spanish": "Volamos sobre la ciudad.",
-        "english": "We flew over the city."
-      },
-      "collections": [
-        "sobre",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "i7h6fe1rlm",
-      "spanish": "Guardé la carta en un sobre.",
-      "english": "I put the letter in an envelope.",
-      "example": {
-        "spanish": "Guardé la carta en un sobre.",
-        "english": "I put the letter in an envelope."
-      },
-      "collections": [
-        "sobre",
         "spanish-to-english catchall"
       ],
       "curriculumRole": "reference"
@@ -28211,51 +24243,9 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "p0klj19lzw",
-      "spanish": "sobre / por encima de",
-      "english": "over",
-      "example": {
-        "spanish": "sobre / por encima de",
-        "english": "over"
-      },
-      "collections": [
-        "sobre",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "laxmkjhzfy",
-      "spanish": "La oficina está arriba de la tienda.",
-      "english": "The office is above the store.",
-      "example": {
-        "spanish": "La oficina está arriba de la tienda.",
-        "english": "The office is above the store."
-      },
-      "collections": [
-        "sobre",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "r7g3ix0kei",
-      "spanish": "La lámpara está sobre la mesa.",
-      "english": "The lamp is over the table.",
-      "example": {
-        "spanish": "La lámpara está sobre la mesa.",
-        "english": "The lamp is over the table."
-      },
-      "collections": [
-        "sobre",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "a600jvsbhd",
-      "spanish": "Vivo solo.",
-      "english": "I live alone.",
+      "spanish": "vivir solo/a",
+      "english": "to live alone",
       "example": {
         "spanish": "Vivo solo.",
         "english": "I live alone."
@@ -28267,40 +24257,12 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "me6wuhz2gv",
-      "spanish": "Solo necesito cinco minutos.",
-      "english": "I only need five minutes.",
-      "example": {
-        "spanish": "Solo necesito cinco minutos.",
-        "english": "I only need five minutes."
-      },
-      "collections": [
-        "solo",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "f2rqqk1bhq",
-      "spanish": "Es un solo pago.",
-      "english": "It is a single payment.",
+      "spanish": "un solo [algo]",
+      "english": "a single [something]",
       "example": {
         "spanish": "Es un solo pago.",
         "english": "It is a single payment."
-      },
-      "collections": [
-        "solo",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "vgwbo8xpzq",
-      "spanish": "Lo hizo él solo.",
-      "english": "He did it by himself.",
-      "example": {
-        "spanish": "Lo hizo él solo.",
-        "english": "He did it by himself."
       },
       "collections": [
         "solo",
@@ -28318,137 +24280,6 @@
       },
       "collections": [
         "suficiente",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "ktw8p0vn2n",
-      "spanish": "Tenemos suficiente tiempo.",
-      "english": "We have enough time.",
-      "example": {
-        "spanish": "Tenemos suficiente tiempo.",
-        "english": "We have enough time."
-      },
-      "collections": [
-        "suficiente",
-        "spanish-to-english catchall",
-        "enough",
-        "english-to-spanish reverse audit",
-        "several"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "qmnhlrrsm1",
-      "spanish": "Laura también viene.",
-      "english": "Laura is also coming.",
-      "example": {
-        "spanish": "Laura también viene.",
-        "english": "Laura is also coming."
-      },
-      "collections": [
-        "tambien",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "46wc4stbaf",
-      "spanish": "Yo quiero ir también.",
-      "english": "I want to go too.",
-      "example": {
-        "spanish": "Yo quiero ir también.",
-        "english": "I want to go too."
-      },
-      "collections": [
-        "tambien",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "3caljvlo67",
-      "spanish": "Mateo habla inglés también.",
-      "english": "Mateo speaks English as well.",
-      "example": {
-        "spanish": "Mateo habla inglés también.",
-        "english": "Mateo speaks English as well."
-      },
-      "collections": [
-        "tambien",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "r50of41clx",
-      "spanish": "Yo tampoco quiero ir.",
-      "english": "I don't want to go either.",
-      "example": {
-        "spanish": "Yo tampoco quiero ir.",
-        "english": "I don't want to go either."
-      },
-      "collections": [
-        "tampoco",
-        "spanish-to-english catchall",
-        "also",
-        "english-to-spanish reverse audit"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "v123o439fb",
-      "spanish": "Laura no llamó y Mateo tampoco.",
-      "english": "Laura didn't call, and neither did Mateo.",
-      "example": {
-        "spanish": "Laura no llamó y Mateo tampoco.",
-        "english": "Laura didn't call, and neither did Mateo."
-      },
-      "collections": [
-        "tampoco",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "273y1rfcqv",
-      "spanish": "Tampoco es tan difícil.",
-      "english": "It isn't that difficult either.",
-      "example": {
-        "spanish": "Tampoco es tan difícil.",
-        "english": "It isn't that difficult either."
-      },
-      "collections": [
-        "tampoco",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "vb1lw4xx3h",
-      "spanish": "Yo tampoco fui ni Ana tampoco.",
-      "english": "I didn't go either, and neither did Ana.",
-      "example": {
-        "spanish": "Yo tampoco fui ni Ana tampoco.",
-        "english": "I didn't go either, and neither did Ana."
-      },
-      "collections": [
-        "tampoco",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "l21tqhahm5",
-      "spanish": "Tengo tanto trabajo y tantas reuniones.",
-      "english": "I have so much work and so many meetings.",
-      "example": {
-        "spanish": "Tengo tanto trabajo y tantas reuniones.",
-        "english": "I have so much work and so many meetings."
-      },
-      "collections": [
-        "tanto",
         "spanish-to-english catchall"
       ],
       "curriculumRole": "reference"
@@ -28482,67 +24313,9 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "3i6q54yrnb",
-      "spanish": "Es tan alto.",
-      "english": "He's so tall.",
-      "example": {
-        "spanish": "Es tan alto.",
-        "english": "He's so tall."
-      },
-      "collections": [
-        "tanto",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "2emz098psa",
-      "spanish": "Es tan alto como Ana.",
-      "english": "He's as tall as Ana.",
-      "example": {
-        "spanish": "Es tan alto como Ana.",
-        "english": "He's as tall as Ana."
-      },
-      "collections": [
-        "tanto",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "7cedi5dgoo",
-      "spanish": "Fue un día tan difícil.",
-      "english": "It was such a difficult day.",
-      "example": {
-        "spanish": "Fue un día tan difícil.",
-        "english": "It was such a difficult day."
-      },
-      "collections": [
-        "tanto",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "zhvghkhyww",
-      "spanish": "¿Qué tan grande es la oficina?",
-      "english": "How big is the office?",
-      "example": {
-        "spanish": "¿Qué tan grande es la oficina?",
-        "english": "How big is the office?"
-      },
-      "collections": [
-        "tanto",
-        "spanish-to-english catchall",
-        "how",
-        "english-to-spanish reverse audit"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "feiqarcmnl",
-      "spanish": "Llegué tarde.",
-      "english": "I arrived late.",
+      "spanish": "llegar tarde",
+      "english": "to arrive late",
       "example": {
         "spanish": "Llegué tarde.",
         "english": "I arrived late."
@@ -28556,54 +24329,12 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "undi2oecoq",
-      "spanish": "Nos vemos esta tarde.",
-      "english": "See you this afternoon.",
-      "example": {
-        "spanish": "Nos vemos esta tarde.",
-        "english": "See you this afternoon."
-      },
-      "collections": [
-        "tarde",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "mpyj2yvsgd",
-      "spanish": "Trabaja por la tarde.",
-      "english": "She works in the afternoon/evening.",
-      "example": {
-        "spanish": "Trabaja por la tarde.",
-        "english": "She works in the afternoon/evening."
-      },
-      "collections": [
-        "tarde",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "97h5zo76ab",
       "spanish": "Más vale tarde que nunca.",
       "english": "Better late than never.",
       "example": {
         "spanish": "Más vale tarde que nunca.",
         "english": "Better late than never."
-      },
-      "collections": [
-        "tarde",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "lp7k66flhe",
-      "spanish": "El viaje tarda dos horas.",
-      "english": "The trip takes two hours.",
-      "example": {
-        "spanish": "El viaje tarda dos horas.",
-        "english": "The trip takes two hours."
       },
       "collections": [
         "tarde",
@@ -28627,8 +24358,8 @@
     },
     {
       "id": "g5nlbifpst",
-      "spanish": "No tardes.",
-      "english": "Don't be late.",
+      "spanish": "tardar",
+      "english": "to take a long time",
       "example": {
         "spanish": "No tardes.",
         "english": "Don't be late."
@@ -28654,54 +24385,12 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "fqiwvsfta0",
-      "spanish": "Fue el último en llegar.",
-      "english": "He was the last to arrive.",
-      "example": {
-        "spanish": "Fue el último en llegar.",
-        "english": "He was the last to arrive."
-      },
-      "collections": [
-        "ultimo",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "z5hsuuicna",
-      "spanish": "Leí su último libro.",
-      "english": "I read her latest book.",
+      "spanish": "leer [algo]",
+      "english": "to read [something]",
       "example": {
         "spanish": "Leí su último libro.",
         "english": "I read her latest book."
-      },
-      "collections": [
-        "ultimo",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "iztui98b0v",
-      "spanish": "Esta es la última pregunta.",
-      "english": "This is the final question.",
-      "example": {
-        "spanish": "Esta es la última pregunta.",
-        "english": "This is the final question."
-      },
-      "collections": [
-        "ultimo",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "j22avntic8",
-      "spanish": "Últimamente trabajo desde casa.",
-      "english": "Lately, I have been working from home.",
-      "example": {
-        "spanish": "Últimamente trabajo desde casa.",
-        "english": "Lately, I have been working from home."
       },
       "collections": [
         "ultimo",
@@ -28780,106 +24469,6 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "fi9mfyyhcf",
-      "spanish": "Lo hice una vez.",
-      "english": "I did it once.",
-      "example": {
-        "spanish": "Lo hice una vez.",
-        "english": "I did it once."
-      },
-      "collections": [
-        "vez",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "5ziol3u62j",
-      "spanish": "He llamado dos veces.",
-      "english": "I have called twice.",
-      "example": {
-        "spanish": "He llamado dos veces.",
-        "english": "I have called twice."
-      },
-      "collections": [
-        "vez",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "1jyqyn6l7o",
-      "spanish": "He estado allí muchas veces.",
-      "english": "I have been there many times.",
-      "example": {
-        "spanish": "He estado allí muchas veces.",
-        "english": "I have been there many times."
-      },
-      "collections": [
-        "vez",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "bht4te4k2k",
-      "spanish": "Ya terminé.",
-      "english": "I've already finished.",
-      "example": {
-        "spanish": "Ya terminé.",
-        "english": "I've already finished."
-      },
-      "collections": [
-        "ya",
-        "spanish-to-english catchall",
-        "already",
-        "english-to-spanish reverse audit"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "imr0gef4rg",
-      "spanish": "Ya entiendo.",
-      "english": "Now I understand.",
-      "example": {
-        "spanish": "Ya entiendo.",
-        "english": "Now I understand."
-      },
-      "collections": [
-        "ya",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "zym82pm7a6",
-      "spanish": "Ya debería estar aquí.",
-      "english": "She should be here by now.",
-      "example": {
-        "spanish": "Ya debería estar aquí.",
-        "english": "She should be here by now."
-      },
-      "collections": [
-        "ya",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "jdxjx14nu0",
-      "spanish": "Ya no trabajo allí.",
-      "english": "I don't work there anymore.",
-      "example": {
-        "spanish": "Ya no trabajo allí.",
-        "english": "I don't work there anymore."
-      },
-      "collections": [
-        "ya",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "lo8hzzt4fm",
       "spanish": "¡Ya basta!",
       "english": "Enough already!",
@@ -28892,20 +24481,6 @@
         "spanish-to-english catchall",
         "already",
         "english-to-spanish reverse audit"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "smbwmgy6w0",
-      "spanish": "Ya que estás aquí, ayúdame.",
-      "english": "Since you're here, help me.",
-      "example": {
-        "spanish": "Ya que estás aquí, ayúdame.",
-        "english": "Since you're here, help me."
-      },
-      "collections": [
-        "ya",
-        "spanish-to-english catchall"
       ],
       "curriculumRole": "reference"
     },
@@ -28971,68 +24546,12 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "c1syhkirjp",
-      "spanish": "Acabo de terminarlo.",
-      "english": "I have just finished it.",
-      "example": {
-        "spanish": "Acabo de terminarlo.",
-        "english": "I have just finished it."
-      },
-      "collections": [
-        "ya",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "q60j06yhe9",
-      "spanish": "Ya lo he terminado.",
-      "english": "I have already finished it.",
+      "spanish": "terminar [algo]",
+      "english": "to finish [something]",
       "example": {
         "spanish": "Ya lo he terminado.",
         "english": "I have already finished it."
-      },
-      "collections": [
-        "ya",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "bm6xqj82sa",
-      "spanish": "Todavía no lo he terminado.",
-      "english": "I haven't finished it yet.",
-      "example": {
-        "spanish": "Todavía no lo he terminado.",
-        "english": "I haven't finished it yet."
-      },
-      "collections": [
-        "ya",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "u2iudk0y6o",
-      "spanish": "Todavía lo estoy haciendo.",
-      "english": "I am still doing it.",
-      "example": {
-        "spanish": "Todavía lo estoy haciendo.",
-        "english": "I am still doing it."
-      },
-      "collections": [
-        "ya",
-        "spanish-to-english catchall"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "75x4om9d9s",
-      "spanish": "Ya lo he terminado; todavía no lo he terminado.",
-      "english": "I've already finished it; I haven't finished it yet.",
-      "example": {
-        "spanish": "Ya lo he terminado; todavía no lo he terminado.",
-        "english": "I've already finished it; I haven't finished it yet."
       },
       "collections": [
         "ya",
@@ -48085,30 +43604,6 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "y43ltowybv",
-      "spanish": "la reserva",
-      "english": "reservation",
-      "example": {
-        "spanish": "Confirmé la reservación antes de llegar al hotel.",
-        "english": "I confirmed the reservation before arriving at the hotel."
-      },
-      "collections": [
-        "cognate",
-        "spelling pattern cognate",
-        "true cognate",
-        "cognate -ción => -tion",
-        "-ción",
-        "-tion",
-        "spelling pattern",
-        "noun cognates: spanish -ción and english -tion",
-        "02-spelling-patterns",
-        "vocabulary",
-        "everyday nouns",
-        "noun"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "rd4s3p0ahf",
       "spanish": "la cuestión",
       "english": "question",
@@ -48618,44 +44113,12 @@
       "curriculumRole": "reference"
     },
     {
-      "id": "mhaag8c3yf",
-      "spanish": "ser gratuito",
-      "english": "to be free",
-      "example": {
-        "spanish": "Estoy libre después de la clase.",
-        "english": "I'm free after class."
-      },
-      "collections": [
-        "vocabulary",
-        "adjectives and states",
-        "ser adjectives",
-        "adjective"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "p71stevmcf",
       "spanish": "ser gratuito",
       "english": "to be free of charge",
       "example": {
-        "spanish": "Estoy libre después de la clase.",
-        "english": "I'm free after class."
-      },
-      "collections": [
-        "vocabulary",
-        "adjectives and states",
-        "ser adjectives",
-        "adjective"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "7sryo46gu0",
-      "spanish": "ser gratuito",
-      "english": "to be complimentary",
-      "example": {
-        "spanish": "Tu respuesta es correcta.",
-        "english": "Your answer is correct."
+        "spanish": "La entrada es gratuita.",
+        "english": "The entrance is free of charge."
       },
       "collections": [
         "vocabulary",
@@ -48784,22 +44247,6 @@
       "example": {
         "spanish": "Vivimos en una casa pequeña, pero el jardín es grande.",
         "english": "We live in a small house, but the yard is big."
-      },
-      "collections": [
-        "vocabulary",
-        "adjectives and states",
-        "ser adjectives",
-        "adjective"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "aetgrjqizt",
-      "spanish": "ser juntos",
-      "english": "to be together",
-      "example": {
-        "spanish": "Trabajamos juntos.",
-        "english": "We work together."
       },
       "collections": [
         "vocabulary",
@@ -49978,8 +45425,8 @@
       "spanish": "el amigo",
       "english": "friend",
       "example": {
-        "spanish": "¿Qué es esa cosa?",
-        "english": "What is that thing?"
+        "spanish": "Mi amigo vive cerca.",
+        "english": "My friend lives nearby."
       },
       "collections": [
         "vocabulary",
@@ -49992,36 +45439,6 @@
       "id": "nq73s5l3lz",
       "spanish": "la amiga",
       "english": "friend",
-      "example": {
-        "spanish": "¿Qué es esa cosa?",
-        "english": "What is that thing?"
-      },
-      "collections": [
-        "vocabulary",
-        "everyday nouns",
-        "noun"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "06zmw16uk1",
-      "spanish": "el amigo",
-      "english": "buddy",
-      "example": {
-        "spanish": "¿Qué es esa cosa?",
-        "english": "What is that thing?"
-      },
-      "collections": [
-        "vocabulary",
-        "everyday nouns",
-        "noun"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "ixmag03l50",
-      "spanish": "el amigo",
-      "english": "pal",
       "example": {
         "spanish": "¿Qué es esa cosa?",
         "english": "What is that thing?"
@@ -50442,36 +45859,6 @@
     {
       "id": "wjxfz4hww7",
       "spanish": "la reserva",
-      "english": "reserve",
-      "example": {
-        "spanish": "La reserva de dinero es para una emergencia.",
-        "english": "The reserve of money is for an emergency."
-      },
-      "collections": [
-        "vocabulary",
-        "everyday nouns",
-        "noun"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "hqpjai13dz",
-      "spanish": "la reservación",
-      "english": "booking",
-      "example": {
-        "spanish": "Hicimos una reserva en el hotel.",
-        "english": "We made a booking at the hotel."
-      },
-      "collections": [
-        "vocabulary",
-        "everyday nouns",
-        "noun"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "ijr94cve7a",
-      "spanish": "la reservación",
       "english": "reserve",
       "example": {
         "spanish": "La reserva de dinero es para una emergencia.",
@@ -52123,38 +47510,6 @@
       "example": {
         "spanish": "Perdón, no te escuché.",
         "english": "Sorry, I didn't hear you."
-      },
-      "collections": [
-        "vocabulary",
-        "social expressions",
-        "social expression",
-        "expression"
-      ],
-      "curriculumRole": "supporting"
-    },
-    {
-      "id": "a05byd10m9",
-      "spanish": "qué pena",
-      "english": "I'm sorry",
-      "example": {
-        "spanish": "Perdón, no te escuché.",
-        "english": "Sorry, I didn't hear you."
-      },
-      "collections": [
-        "vocabulary",
-        "social expressions",
-        "social expression",
-        "expression"
-      ],
-      "curriculumRole": "supporting"
-    },
-    {
-      "id": "74c3dm8lhd",
-      "spanish": "qué pena",
-      "english": "excuse me",
-      "example": {
-        "spanish": "Discúlpame por llegar tarde.",
-        "english": "Excuse me for being late."
       },
       "collections": [
         "vocabulary",
@@ -57267,8 +52622,8 @@
       "spanish": "la gente",
       "english": "people",
       "example": {
-        "spanish": "Hay tres personas en la oficina.",
-        "english": "There are three people in the office."
+        "spanish": "Hay mucha gente en la calle.",
+        "english": "There are a lot of people on the street."
       },
       "collections": [
         "vocabulary",
@@ -57341,7 +52696,8 @@
       "collections": [
         "vocabulary",
         "function words",
-        "adverb"
+        "adverb",
+        "casi"
       ],
       "curriculumRole": "reference"
     },
@@ -57614,22 +52970,6 @@
       "example": {
         "spanish": "Estoy dispuesto a hacerlo.",
         "english": "I am willing to do it."
-      },
-      "collections": [
-        "vocabulary",
-        "adjectives and states",
-        "estar adjectives",
-        "adjective"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "54kxc323b8",
-      "spanish": "estar lleno",
-      "english": "to be full",
-      "example": {
-        "spanish": "El vaso está lleno.",
-        "english": "The glass is full."
       },
       "collections": [
         "vocabulary",
@@ -70060,7 +65400,7 @@
         "countable noun",
         "determiner"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "opdrjw467t",
@@ -72223,29 +67563,6 @@
       "curriculumRole": "supporting"
     },
     {
-      "id": "ovhrmwa5vq",
-      "spanish": "pasado de clad",
-      "english": "clad",
-      "example": {
-        "spanish": "El pasado de clad es clad.",
-        "english": "The past of clad is clad."
-      },
-      "collections": [
-        "transformation",
-        "past and past participle",
-        "verb form transformation",
-        "past",
-        "irregular",
-        "clad",
-        "word family: clad",
-        "base => past",
-        "past equals past participle",
-        "sound group needs review",
-        "sound metadata pending review"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
       "id": "19hpxwpcr5",
       "spanish": "pasado de clad",
       "english": "cladded",
@@ -72262,29 +67579,6 @@
         "clad",
         "word family: clad",
         "base => past",
-        "past equals past participle",
-        "sound group needs review",
-        "sound metadata pending review"
-      ],
-      "curriculumRole": "reference"
-    },
-    {
-      "id": "u2b00uu49v",
-      "spanish": "participio de clad",
-      "english": "clad",
-      "example": {
-        "spanish": "El participio de clad es clad.",
-        "english": "The past participle of clad is clad."
-      },
-      "collections": [
-        "transformation",
-        "past and past participle",
-        "verb form transformation",
-        "past participle",
-        "irregular",
-        "clad",
-        "word family: clad",
-        "base => past participle",
         "past equals past participle",
         "sound group needs review",
         "sound metadata pending review"
@@ -81471,6 +76765,102 @@
         "🔊 hidden-written",
         "🔊 /ən/",
         "sound metadata reviewed"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "necesitar-hacer-algo",
+      "spanish": "necesitar [hacer algo]",
+      "english": "to need to do something",
+      "example": {
+        "spanish": "Necesito terminar el informe hoy.",
+        "english": "I need to finish the report today."
+      },
+      "collections": [
+        "necesitar",
+        "need",
+        "full infinitive",
+        "followed by full infinitive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "take-up",
+      "spanish": "empezar [una actividad] / ocupar [espacio]",
+      "english": "to take up [something]",
+      "example": {
+        "spanish": "Empezó a practicar natación.",
+        "english": "She took up swimming."
+      },
+      "collections": [
+        "tomar",
+        "take",
+        "phrasal verb",
+        "up"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "take-in",
+      "spanish": "engañar [a alguien] / absorber [información]",
+      "english": "to take in [somebody/something]",
+      "example": {
+        "spanish": "La historia me engañó por completo.",
+        "english": "The story took me in completely."
+      },
+      "collections": [
+        "tomar",
+        "take",
+        "phrasal verb",
+        "in"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "take-back",
+      "spanish": "devolver [algo] / retractarse de [algo]",
+      "english": "to take back [something]",
+      "example": {
+        "spanish": "Devuélvelo a la tienda.",
+        "english": "Take it back to the store."
+      },
+      "collections": [
+        "tomar",
+        "take",
+        "phrasal verb",
+        "back"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "take-down",
+      "spanish": "bajar [algo] / desmontar [algo]",
+      "english": "to take down [something]",
+      "example": {
+        "spanish": "Baja el cartel de la pared.",
+        "english": "Take the sign down from the wall."
+      },
+      "collections": [
+        "tomar",
+        "take",
+        "phrasal verb",
+        "down"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "take-away",
+      "spanish": "llevarse [algo] / quitar [algo]",
+      "english": "to take away [something]",
+      "example": {
+        "spanish": "Llévate estos documentos.",
+        "english": "Take these documents away."
+      },
+      "collections": [
+        "tomar",
+        "take",
+        "phrasal verb",
+        "away"
       ],
       "curriculumRole": "supporting"
     }

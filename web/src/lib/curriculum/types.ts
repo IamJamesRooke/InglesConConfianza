@@ -10,7 +10,7 @@ export type CurriculumConcept = {
   curriculumRole: CurriculumRole;
 };
 
-export type CurriculumRole = "core" | "supporting" | "reference";
+export type CurriculumRole = "core" | "supporting" | "reference" | "trash";
 
 export type CurriculumFile = {
   version: 1;

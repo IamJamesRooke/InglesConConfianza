@@ -105,6 +105,12 @@
   --role-foreground: oklch(0.4 0.025 260);
 }
 
+.role-trash {
+  --role-border: oklch(0.63 0.22 27);
+  --role-background: oklch(0.92 0.06 27);
+  --role-foreground: oklch(0.4 0.19 27);
+}
+
 :root[data-theme="night"] .role-select,
 .dark .role-select {
   --role-background: color-mix(

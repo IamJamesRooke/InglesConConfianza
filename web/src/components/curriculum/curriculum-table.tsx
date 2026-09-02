@@ -41,6 +41,11 @@ const curriculumRoles: Array<{
     label: "Reference",
     description: "Retained, but not a current teaching target",
   },
+  {
+    value: "trash",
+    label: "Trash",
+    description: "Flagged for deletion — filter by this role and bulk delete",
+  },
 ];
 function getRoleLabel(role: CurriculumRole) {
   return curriculumRoles.find((option) => option.value === role)?.label;
@@ -123,6 +128,8 @@ export function CurriculumTable({
     value: string;
   } | null>(null);
   const [pendingConceptId, setPendingConceptId] = useState<string | null>(null);
+  const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
+  const [bulkDeleting, setBulkDeleting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [mappingSearch, setMappingSearch] = useState(filters.search);
   const selectedCollection = filters.collection || null;
@@ -294,6 +301,83 @@ export function CurriculumTable({
     } finally {
       setPendingConceptId(null);
     }
+  }
+
+  function toggleSelected(conceptId: string) {
+    setSelectedIds((current) => {
+      const next = new Set(current);
+      if (next.has(conceptId)) {
+        next.delete(conceptId);
+      } else {
+        next.add(conceptId);
+      }
+      return next;
+    });
+  }
+
+  function toggleSelectAllVisible() {
+    setSelectedIds((current) => {
+      const visibleIds = concepts.map((concept) => concept.id);
+      const allSelected = visibleIds.every((id) => current.has(id));
+      if (allSelected) {
+        const next = new Set(current);
+        for (const id of visibleIds) next.delete(id);
+        return next;
+      }
+      return new Set([...current, ...visibleIds]);
+    });
+  }
+
+  async function deleteSelected() {
+    if (bulkDeleting || selectedIds.size === 0) return;
+    const targets = concepts.filter((concept) => selectedIds.has(concept.id));
+    if (
+      !window.confirm(
+        `Delete ${targets.length} selected concept${targets.length === 1 ? "" : "s"}? This cannot be undone.`,
+      )
+    ) {
+      return;
+    }
+
+    setBulkDeleting(true);
+    setError(null);
+
+    const results = await Promise.allSettled(
+      targets.map((concept) =>
+        fetch(`/api/curriculum/concepts/${encodeURIComponent(concept.id)}`, {
+          method: "DELETE",
+        }).then((response) => {
+          if (!response.ok) throw new Error("delete failed");
+          return concept.id;
+        }),
+      ),
+    );
+
+    const deletedIds = new Set(
+      results
+        .filter(
+          (result): result is PromiseFulfilledResult<string> =>
+            result.status === "fulfilled",
+        )
+        .map((result) => result.value),
+    );
+    const failedCount = results.length - deletedIds.size;
+
+    setConcepts((currentConcepts) =>
+      currentConcepts.filter((concept) => !deletedIds.has(concept.id)),
+    );
+    setSelectedIds((current) => {
+      const next = new Set(current);
+      for (const id of deletedIds) next.delete(id);
+      return next;
+    });
+    if (failedCount > 0) {
+      setError(
+        `Deleted ${deletedIds.size} concept${deletedIds.size === 1 ? "" : "s"}; ${failedCount} failed.`,
+      );
+    }
+    setBulkDeleting(false);
+    router.refresh();
   }
 
   async function updateRole(
@@ -556,10 +640,49 @@ export function CurriculumTable({
         .
       </p>
 
+      {selectedIds.size > 0 && (
+        <div className="mb-3 flex items-center justify-between gap-3 rounded-lg border border-destructive/30 bg-destructive/5 px-4 py-2.5">
+          <p className="text-sm font-medium text-foreground">
+            {selectedIds.size} concept{selectedIds.size === 1 ? "" : "s"} selected
+          </p>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setSelectedIds(new Set())}
+              disabled={bulkDeleting}
+              className="rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground transition hover:bg-muted disabled:opacity-40"
+            >
+              Clear selection
+            </button>
+            <button
+              type="button"
+              onClick={() => void deleteSelected()}
+              disabled={bulkDeleting}
+              className="inline-flex items-center gap-1.5 rounded-md bg-destructive px-3 py-1.5 text-sm font-semibold text-destructive-foreground transition hover:opacity-90 disabled:opacity-40"
+            >
+              <Trash2 className="size-3.5" aria-hidden="true" />
+              {bulkDeleting ? "Deleting…" : `Delete ${selectedIds.size} selected`}
+            </button>
+          </div>
+        </div>
+      )}
+
       <div className="overflow-hidden rounded-xl border border-border bg-card shadow-sm">
         <table className="w-full border-collapse text-left">
           <thead className="bg-muted/60 text-sm text-muted-foreground">
             <tr>
+              <th className="w-10 px-3 py-3">
+                <input
+                  type="checkbox"
+                  aria-label="Select all visible concepts"
+                  checked={
+                    concepts.length > 0 &&
+                    concepts.every((concept) => selectedIds.has(concept.id))
+                  }
+                  onChange={toggleSelectAllVisible}
+                  className="size-4 cursor-pointer"
+                />
+              </th>
               <th className="px-5 py-3 font-semibold">Spanish concept</th>
               <th className="px-5 py-3 font-semibold">English concept</th>
               <th className="px-5 py-3 font-semibold">Example</th>
@@ -575,6 +698,15 @@ export function CurriculumTable({
           <tbody>
             {concepts.map((concept) => (
               <tr key={concept.id} className="border-t border-border">
+                <td className="px-3 py-2">
+                  <input
+                    type="checkbox"
+                    aria-label={`Select ${concept.spanish}`}
+                    checked={selectedIds.has(concept.id)}
+                    onChange={() => toggleSelected(concept.id)}
+                    className="size-4 cursor-pointer"
+                  />
+                </td>
                 <td className="p-2 pl-2 font-medium">
                   {renderEditableCell(concept, "spanish")}
                 </td>
@@ -630,7 +762,7 @@ export function CurriculumTable({
             {concepts.length === 0 && (
               <tr className="border-t border-border">
                 <td
-                  colSpan={6}
+                  colSpan={7}
                   className="px-5 py-12 text-center text-sm text-muted-foreground"
                 >
                   No concepts match these filters.

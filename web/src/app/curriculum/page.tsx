@@ -22,7 +22,8 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
   const role: CurriculumRole | "all" =
     requestedRole === "core" ||
     requestedRole === "supporting" ||
-    requestedRole === "reference"
+    requestedRole === "reference" ||
+    requestedRole === "trash"
       ? requestedRole
       : "all";
   const curriculum = await readCurriculumPage({

@@ -59,7 +59,7 @@ test("the imported curriculum is exact and protected", async (context) => {
     cognates.filter(
       (concept) =>
         concept.collections.includes("adjective") &&
-        concept.id !== "valer-ser-valido" &&
+        concept.id !== "16pwsfcg7n" &&
         !/^(?:ser|estar|tener) /iu.test(concept.spanish),
     ),
     [],
@@ -93,13 +93,13 @@ test("the imported curriculum is exact and protected", async (context) => {
   const vocabulary = actual.curriculum.concepts.filter((concept) =>
     concept.collections.includes("vocabulary"),
   );
-  assert.equal(vocabulary.length, 592);
+  assert.equal(vocabulary.length, 581);
   assert.deepStrictEqual(
     vocabulary.reduce<Record<string, number>>((counts, concept) => {
       counts[concept.curriculumRole] = (counts[concept.curriculumRole] ?? 0) + 1;
       return counts;
     }, {}),
-    { core: 4, supporting: 21, reference: 567 },
+    { core: 4, supporting: 19, reference: 558 },
   );
   assert.deepStrictEqual(
     vocabulary.filter(
@@ -202,13 +202,13 @@ test("the imported curriculum is exact and protected", async (context) => {
   const transformations = actual.curriculum.concepts.filter((concept) =>
     concept.collections.includes("transformation"),
   );
-  assert.equal(transformations.length, 804);
+  assert.equal(transformations.length, 802);
   assert.deepStrictEqual(
     transformations.reduce<Record<string, number>>((counts, concept) => {
       counts[concept.curriculumRole] = (counts[concept.curriculumRole] ?? 0) + 1;
       return counts;
     }, {}),
-    { core: 13, supporting: 310, reference: 481 },
+    { core: 13, supporting: 310, reference: 479 },
   );
 
   const transformationRelationships = transformations.filter((concept) =>
@@ -223,7 +223,7 @@ test("the imported curriculum is exact and protected", async (context) => {
       !concept.collections.includes("verb form transformation"),
   );
   assert.equal(transformationRelationships.length, 281);
-  assert.equal(pastFormTransformations.length, 478);
+  assert.equal(pastFormTransformations.length, 476);
   assert.equal(recognitionMappings.length, 45);
   assert.deepStrictEqual(
     transformationRelationships.filter(
@@ -334,7 +334,7 @@ test("the imported curriculum is exact and protected", async (context) => {
       counts[concept.curriculumRole] = (counts[concept.curriculumRole] ?? 0) + 1;
       return counts;
     }, {}),
-    { core: 75, supporting: 129, reference: 201 },
+    { core: 75, supporting: 128, reference: 202 },
   );
   assert.equal(
     structure.filter((concept) => concept.collections.includes("comparative")).length,
@@ -400,22 +400,22 @@ test("the imported curriculum is exact and protected", async (context) => {
   const pastForms = actual.curriculum.concepts.filter((concept) =>
     concept.collections.includes("past and past participle"),
   );
-  assert.equal(pastForms.length, 478);
+  assert.equal(pastForms.length, 476);
   assert.deepStrictEqual(
     pastForms.reduce<Record<string, number>>((counts, concept) => {
       counts[concept.curriculumRole] = (counts[concept.curriculumRole] ?? 0) + 1;
       return counts;
     }, {}),
-    { core: 12, supporting: 286, reference: 180 },
+    { core: 12, supporting: 286, reference: 178 },
   );
   assert.equal(
     pastForms.filter((concept) => concept.collections.includes("past")).length,
-    235,
+    234,
   );
   assert.equal(
     pastForms.filter((concept) => concept.collections.includes("past participle"))
       .length,
-    243,
+    242,
   );
   assert.equal(
     new Set(
@@ -452,7 +452,7 @@ test("the imported curriculum is exact and protected", async (context) => {
   const reviewedSound = pastForms.filter((concept) =>
     concept.collections.includes("sound metadata reviewed"),
   );
-  assert.equal(pendingSound.length, 337);
+  assert.equal(pendingSound.length, 335);
   assert.equal(reviewedSound.length, 141);
   assert.deepStrictEqual(
     pendingSound.filter((concept) =>

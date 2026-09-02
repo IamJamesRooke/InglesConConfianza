@@ -36,6 +36,7 @@
           ],
           "rationale": "A polite present-tense offer changes the natural English realization from want to would like, so ordinary querer coverage is not enough.",
           "approved": true,
+          "migrated": true,
           "ownerNote": "too much cognitive load to explain that quiere can also mean would like, for now, only want student to know want -- should be supporting"
         },
         {
@@ -60,6 +61,7 @@
           ],
           "rationale": "The polite question has a distinct English strategy and is a high-utility invitation or service interaction pattern.",
           "approved": true,
+          "migrated": true,
           "ownerNote": "too much cognitive load for a beginner explaining that querer is to want and would like -- students at beginner level should only be learning the most common translation of a word"
         },
         {
@@ -83,6 +85,7 @@
           ],
           "rationale": "The fixed discourse use repairs or reformulates speech; its teaching behavior differs from querer decir meaning signify.",
           "approved": true,
+          "migrated": true,
           "ownerNote": "expressions shouldn't be part of core"
         },
         {
@@ -108,6 +111,7 @@
           ],
           "rationale": "The source explicitly uses anytime as a natural realization alongside the approved whenever you want mapping.",
           "approved": true,
+          "migrated": true,
           "ownerNote": "because the english is anytime, we also need to tag \"any\" and \"time\"\nalso made reference because I really don't want to teach this right away"
         },
         {
@@ -130,6 +134,7 @@
           ],
           "rationale": "Querido/a is lexicalized in salutations and requires a different English realization from the verb family.",
           "approved": true,
+          "migrated": true,
           "ownerNote": "situationally specific, reference"
         },
         {
@@ -151,6 +156,7 @@
           ],
           "rationale": "This lexicalized adjective changes both meaning and part of speech, but its literary English realization is not a current teaching target.",
           "approved": true,
+          "migrated": true,
           "ownerNote": "situationally specific and archaic"
         },
         {
@@ -176,6 +182,7 @@
           ],
           "rationale": "The approved record currently says whether one likes it or not, which is more naturally le guste o no. Quiera o no expresses wanting or willingness.",
           "approved": true,
+          "migrated": true,
           "ownerNote": "whether is useful, but not a priority because you can replace it with if\n\nwhether you like it or not... if you like it or not...\n\nif a beginner uses if instead of whether, we understand"
         }
       ]
@@ -221,6 +228,7 @@
           ],
           "rationale": "This is the direct, high-frequency personal-need mapping and the clearest starting point for the verb family.",
           "approved": true,
+          "migrated": true,
           "ownerNote": "yep, you got it"
         },
         {
@@ -246,6 +254,7 @@
           ],
           "rationale": "The Spanish infinitive maps to English need + to + verb, a meaning-changing construction that learners must produce accurately.",
           "approved": true,
+          "migrated": true,
           "ownerNote": "can't speak english without this -- however, you shouldn't be adding to do something as a tag, that is nothing more than  the placeholder text,\n\ngood job with full infinitive because verbs have six forms: to do something (full infinitive), do something, does something, did something, done something, doing something and it's important to mark down which to use\n\nperhaps \"followed by full infinitive\" would be a better name\n\nhoweever the \"full infinitive\" tag doesnt make sense because necesitar is just the root lemma form, which we convert to present, past. etc.\n\nin fact, need to go through database and mark down verbs that are naturally followed by full infinitive, bare infinitive, etc.\n\nalso place holder text needs to be marked in square brackets  to need [to do something]"
         },
         {
@@ -271,6 +280,7 @@
           ],
           "rationale": "A different subject for the second action requires the reusable English somebody + to-infinitive construction; it is independently teachable rather than an ordinary conjugation.",
           "approved": true,
+          "migrated": true,
           "ownerNote": "so this would need \"followed by full infinitive\" tag"
         },
         {
@@ -296,6 +306,7 @@
           ],
           "rationale": "The impersonal se necesita form changes the English subject and voice. It is common and useful, but less foundational than personal necesitar patterns.",
           "approved": true,
+          "migrated": true,
           "ownerNote": "great catch! I forgot about that one"
         }
       ]
@@ -334,6 +345,7 @@
           ],
           "rationale": "Wanna is the common informal spoken reduction of want to. It belongs under the querer + action construction but should remain a separate Supporting entry because its register differs from standard want to.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -358,6 +370,7 @@
           ],
           "rationale": "Needa represents the informal spoken reduction of need to. It belongs under necesitar + action but is a separate Supporting entry because it is pronunciation/register guidance, not the standard written form.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         }
       ]
@@ -392,6 +405,7 @@
           ],
           "rationale": "Eat is the direct, high-frequency English mapping and the foundational choice for the Spanish verb.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -415,6 +429,7 @@
           ],
           "rationale": "Conversational English often uses have for eating a meal or food, but eat is the clearer foundational mapping and should be taught first.",
           "approved": true,
+          "migrated": true,
           "ownerNote": "you got the idea.. if there are two mappings, the most common one should be taught in higher priority than the least common one"
         },
         {
@@ -439,6 +454,7 @@
           ],
           "rationale": "Eat up adds the particle up to emphasize consuming everything or reaching completion. It is a distinct phrasal-verb teaching target rather than ordinary eat.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -463,6 +479,7 @@
           ],
           "rationale": "Eat out is a common everyday phrasal verb meaning eat at a restaurant or away from home. It deserves a separate Supporting entry from ordinary eat.",
           "approved": true,
+          "migrated": true,
           "ownerNote": "also, another point, eat out can have a sexual connotation of oral sex -- we do not want to include sexual vocabulary in the course, students will figure that out on their own"
         },
         {
@@ -487,6 +504,7 @@
           ],
           "rationale": "Eat in contrasts naturally with eat out and is useful for everyday meal plans, but it is not a first-priority Core mapping.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -512,6 +530,7 @@
           ],
           "rationale": "Eat away at is a figurative erosion or gradual-damage phrasal verb. It belongs in the family for retrieval, but its meaning is advanced and nonliteral.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -536,6 +555,7 @@
           ],
           "rationale": "Eat into means gradually reduce a resource such as time, money, or savings. It is useful advanced language but not a foundational food meaning.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -560,6 +580,7 @@
           ],
           "rationale": "Eat through describes consuming an entire supply or resource. It is a legitimate particle construction, but less frequent and more advanced than eat out or eat up.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         }
       ]
@@ -598,6 +619,7 @@
           ],
           "rationale": "Direct everyday taking is the foundational English mapping for tomar in the source family.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -621,6 +643,7 @@
           ],
           "rationale": "Tomar commonly maps to drink for beverages; this is the direct everyday choice.",
           "approved": true,
+          "migrated": true,
           "ownerNote": "put in supporting because it's not core functional vocabulary, I would teach this incidentally with a core word like want\n\nI want to drink something. but the key lesson is want, not to drink"
         },
         {
@@ -644,6 +667,7 @@
           ],
           "rationale": "Taking a bus, train, or other transport is a high-frequency English construction.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -668,6 +692,7 @@
           ],
           "rationale": "English uses the fixed make a decision collocation rather than literal take a decision in ordinary American English.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -691,6 +716,7 @@
           ],
           "rationale": "Duration expressions use take in a high-frequency English pattern.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -763,6 +789,7 @@
           ],
           "rationale": "Take over expresses assuming control, a distinct and common phrasal-verb realization of tomar.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -786,6 +813,7 @@
           ],
           "rationale": "Beber is the direct Spanish route to the foundational English verb drink.",
           "approved": true,
+          "migrated": true,
           "ownerNote": "I actually put it in supporting because it's not core functional vocabulary"
         },
         {
@@ -809,6 +837,7 @@
           ],
           "rationale": "Conversational English can use have for a beverage, but drink is the clearer foundational mapping.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -833,6 +862,7 @@
           ],
           "rationale": "Take off has common clothing-removal and aircraft-departure meanings; the particle changes the verb substantially.",
           "approved": true,
+          "migrated": true,
           "ownerNote": "can be taught later"
         },
         {
@@ -857,6 +887,7 @@
           ],
           "rationale": "Take off also means remove clothing or another item; it is a separate target from aircraft departure.",
           "approved": true,
+          "migrated": true,
           "ownerNote": "very useful"
         },
         {
@@ -881,6 +912,7 @@
           ],
           "rationale": "Take on means accept work, responsibility, or a role; useful but advanced and polysemous.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -905,6 +937,7 @@
           ],
           "rationale": "Take up covers beginning a hobby and occupying time or space, so it is a distinct advanced particle family.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -929,6 +962,7 @@
           ],
           "rationale": "Take in has nonliteral meanings including deceive, absorb information, and accommodate; retain for completeness, not early teaching.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -953,6 +987,7 @@
           ],
           "rationale": "Take out is a high-frequency removal and extraction phrasal verb.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -977,6 +1012,7 @@
           ],
           "rationale": "Take back commonly means return an object or withdraw a statement.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -1001,6 +1037,7 @@
           ],
           "rationale": "Take down covers lowering, removing, and recording information; keep as a broad reference entry.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -1025,6 +1062,7 @@
           ],
           "rationale": "Take apart is a transparent but useful separable phrasal verb for dismantling and figurative analysis.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -1049,6 +1087,7 @@
           ],
           "rationale": "Take after is a nontransparent family-resemblance phrasal verb and belongs in the reference inventory.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -1073,6 +1112,7 @@
           ],
           "rationale": "Take away is common for removing or carrying something away and also appears in restaurant contexts.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -1097,6 +1137,7 @@
           ],
           "rationale": "Take to means begin to like or adapt to someone or something; it is idiomatic and advanced.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -1121,6 +1162,7 @@
           ],
           "rationale": "Take care of is a high-frequency verb-plus-preposition construction, included because connector patterns are important even when they are not strict phrasal verbs.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -1145,6 +1187,7 @@
           ],
           "rationale": "Take part in is a fixed participation construction with a required connector.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -1169,6 +1212,7 @@
           ],
           "rationale": "Take advantage of is a common fixed connector construction with both neutral and exploitative senses.",
           "approved": true,
+          "migrated": true,
           "ownerNote": "I tend to teach this one a lot, manually added"
         },
         {
@@ -1193,6 +1237,7 @@
           ],
           "rationale": "Drink up is the common particle construction for finishing a beverage.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -1217,6 +1262,7 @@
           ],
           "rationale": "Drink in is figurative and means absorb or enjoy something deeply; retain as advanced reference language.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -1241,6 +1287,7 @@
           ],
           "rationale": "Drink to is a common toast construction with a required connector.",
           "approved": true,
+          "migrated": true,
           "ownerNote": "situationaly specific"
         },
         {
@@ -1265,6 +1312,7 @@
           ],
           "rationale": "Drink away describes trying to eliminate a feeling or problem through drinking; it is idiomatic and advanced.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -1290,6 +1338,7 @@
           ],
           "rationale": "Drink out of is a natural spoken container construction and demonstrates a multiword connector pattern.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         }
       ]
@@ -1331,6 +1380,7 @@
           ],
           "rationale": "Comida is the everyday noun derived from comer and is needed to talk about food as a thing, not only the action of eating.",
           "approved": true,
+          "migrated": true,
           "ownerNote": "It's NOT core vocabulary, you know it's not core vocabulary because you can replace it with THIS\n\nI want to eat the food. --> I want to eat THIS. a learner can still communicate what they want without using the word food"
         },
         {
@@ -1354,6 +1404,7 @@
           ],
           "rationale": "The same Spanish noun can mean a specific meal, a distinct English target from general food.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -1377,6 +1428,7 @@
           ],
           "rationale": "Necesidad is the noun form needed for discussing a need as an idea, condition, or requirement.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -1401,6 +1453,7 @@
           ],
           "rationale": "Necesario is an adjective and should be stored with its natural ser construction rather than as a bare Spanish adjective.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -1425,6 +1478,7 @@
           ],
           "rationale": "Bebida is the noun counterpart to beber and is needed when referring to a drink as an object or category.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         },
         {
@@ -1448,6 +1502,7 @@
           ],
           "rationale": "The existing lexicalized querido/a record is an adjective and needs an explicit grammar collection for filtering and lesson planning.",
           "approved": true,
+          "migrated": true,
           "ownerNote": ""
         }
       ]
@@ -1488,6 +1543,7 @@
           ],
           "rationale": "Necesariamente is the direct adverbial form of necesario and is common in qualification and reasoning.",
           "approved": true,
+          "migrated": true,
           "ownerNote": "need -mente tag and -ly tag"
         },
         {
@@ -1514,6 +1570,7 @@
           ],
           "rationale": "Innecesariamente is a transparent negative adverbial counterpart, retained for completeness but not early teaching.",
           "approved": true,
+          "migrated": true,
           "ownerNote": "-mente and -ly tag"
         },
         {
@@ -1540,6 +1597,7 @@
           ],
           "rationale": "Comestible is a direct adjective related to comer and needs the ser construction in Spanish.",
           "approved": true,
+          "migrated": true,
           "ownerNote": "not common language, needs -ible tag"
         },
         {
@@ -1564,6 +1622,7 @@
           ],
           "rationale": "Comedor is a common noun derived from the eating domain and has an independent everyday meaning.",
           "approved": true,
+          "migrated": true,
           "ownerNote": "vocabulary, situationally specific"
         },
         {
@@ -1665,6 +1724,7 @@
           ],
           "rationale": "Bebedor/a is the person noun derived from beber; it is useful for recognition but not an early target.",
           "approved": true,
+          "migrated": true,
           "ownerNote": "needs -er and -dor tag and also a person tag"
         },
         {
@@ -1691,6 +1751,7 @@
           ],
           "rationale": "Bebible is a transparent adjective derived from beber, retained as a low-priority family member.",
           "approved": true,
+          "migrated": true,
           "ownerNote": "needs -able tag"
         },
         {
