@@ -1,0 +1,8 @@
+# Batch D2: possessive pronouns
+el mío/la mía	mine	Ese libro es mío.	That book is mine.	supporting	pos:pronoun|grammar:possessive-pronoun|grammar:first-person|topic:pronoun|es:mío|en:mine
+el tuyo/la tuya	yours	Esta silla es tuya.	This chair is yours.	supporting	pos:pronoun|grammar:possessive-pronoun|grammar:second-person|topic:pronoun|es:tuyo|en:yours
+el suyo/la suya	his	El carro rojo es suyo.	The red car is his.	supporting	pos:pronoun|grammar:possessive-pronoun|grammar:third-person|topic:pronoun|es:suyo|en:his
+el suyo/la suya	hers	Esa idea fue suya.	That idea was hers.	supporting	pos:pronoun|grammar:possessive-pronoun|grammar:third-person|topic:pronoun|es:suyo|en:hers
+el suyo/la suya	theirs	La culpa es suya.	The fault is theirs.	supporting	pos:pronoun|grammar:possessive-pronoun|grammar:third-person|grammar:plural|topic:pronoun|es:suyo|en:theirs
+el nuestro/la nuestra	ours	Esta victoria es nuestra.	This victory is ours.	supporting	pos:pronoun|grammar:possessive-pronoun|grammar:first-person|grammar:plural|topic:pronoun|es:nuestro|en:ours
+de quién	whose	¿De quién es esto?	Whose is this?	supporting	pos:pronoun|grammar:interrogative-pronoun|grammar:possessive-pronoun|topic:pronoun|es:quién|en:whose

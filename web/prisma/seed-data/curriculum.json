@@ -37,13 +37,16 @@
       "spanish": "querer que [alguien] [haga algo]",
       "english": "to want [somebody] [to do something]",
       "example": {
-        "spanish": "Quiero que lo haga.",
+        "spanish": "Quiero que él lo haga.",
         "english": "I want him to do it."
       },
       "collections": [
         "construction:object-plus-complement",
         "es:querer",
-        "en:want"
+        "en:want",
+        "grammar:object-control",
+        "grammar:subordinate-subject-pronoun",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -111,14 +114,17 @@
       "spanish": "quisiera que [alguien] [hiciera algo]",
       "english": "would like [somebody] [to do something]",
       "example": {
-        "spanish": "Quisiera que lo hiciera.",
+        "spanish": "Quisiera que él lo hiciera.",
         "english": "I would like him to do it."
       },
       "collections": [
         "en:would",
         "construction:object-plus-complement",
         "es:querer",
-        "en:like"
+        "en:like",
+        "grammar:object-control",
+        "grammar:subordinate-subject-pronoun",
+        "topic:pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -503,7 +509,10 @@
         "construction:followed-by-full-infinitive",
         "es:que",
         "es:necesitar",
-        "en:need"
+        "en:need",
+        "grammar:object-control",
+        "grammar:subordinate-subject-pronoun",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -1814,7 +1823,9 @@
         "construction:verb-plus-infinitive",
         "en:to",
         "es:decir",
-        "en:tell"
+        "en:tell",
+        "grammar:object-control",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -2999,7 +3010,9 @@
         "construction:verb-plus-infinitive",
         "en:to",
         "es:pedir",
-        "en:ask"
+        "en:ask",
+        "grammar:object-control",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -5422,7 +5435,10 @@
       "collections": [
         "construction:object-plus-complement",
         "es:esperar",
-        "en:expect"
+        "en:expect",
+        "grammar:object-control",
+        "grammar:subordinate-subject-pronoun",
+        "topic:pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -7117,7 +7133,9 @@
         "grammar:causative",
         "construction:object-plus-complement",
         "es:hacer",
-        "en:make"
+        "en:make",
+        "grammar:object-control",
+        "topic:pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -13271,7 +13289,9 @@
         "construction:followed-by-full-infinitive",
         "form:full-infinitive",
         "es:conseguir",
-        "en:get"
+        "en:get",
+        "grammar:object-control",
+        "topic:pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -14654,7 +14674,9 @@
         "construction:followed-by-bare-infinitive",
         "form:bare-infinitive",
         "es:dejar",
-        "en:let"
+        "en:let",
+        "grammar:object-control",
+        "topic:pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -26246,7 +26268,9 @@
         "construction:verb-full-infinitive",
         "construction:object-plus-complement",
         "es:permitir",
-        "en:allow"
+        "en:allow",
+        "grammar:object-control",
+        "topic:pronoun"
       ],
       "curriculumRole": "reference"
     },
@@ -59254,9 +59278,11 @@
         "construction:followed-by-full-infinitive",
         "form:full-infinitive",
         "es:ayudar",
-        "en:help"
+        "en:help",
+        "grammar:object-control",
+        "topic:pronoun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "e3tv0u3qze",
@@ -73889,6 +73915,1515 @@
         "particle:away"
       ],
       "curriculumRole": "trash"
+    },
+    {
+      "id": "i5ji4776n8",
+      "spanish": "mi",
+      "english": "my",
+      "example": {
+        "spanish": "Mi carro es azul.",
+        "english": "My car is blue."
+      },
+      "collections": [
+        "pos:function-word",
+        "grammar:possessive-determiner",
+        "grammar:first-person",
+        "grammar:singular",
+        "topic:pronoun",
+        "es:mi",
+        "en:my"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "ozvruwn0tu",
+      "spanish": "mis",
+      "english": "my",
+      "example": {
+        "spanish": "Mis llaves están en la mesa.",
+        "english": "My keys are on the table."
+      },
+      "collections": [
+        "pos:function-word",
+        "grammar:possessive-determiner",
+        "grammar:first-person",
+        "grammar:plural",
+        "topic:pronoun",
+        "es:mi",
+        "en:my"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "7fi9enfd3m",
+      "spanish": "su",
+      "english": "his",
+      "example": {
+        "spanish": "Su nombre es Juan.",
+        "english": "His name is Juan."
+      },
+      "collections": [
+        "pos:function-word",
+        "grammar:possessive-determiner",
+        "grammar:third-person",
+        "topic:pronoun",
+        "es:su",
+        "en:his"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "s1bonkmflq",
+      "spanish": "su",
+      "english": "her",
+      "example": {
+        "spanish": "Su nombre es Ana.",
+        "english": "Her name is Ana."
+      },
+      "collections": [
+        "pos:function-word",
+        "grammar:possessive-determiner",
+        "grammar:third-person",
+        "topic:pronoun",
+        "es:su",
+        "en:her"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "ibkymsd9ln",
+      "spanish": "su",
+      "english": "its",
+      "example": {
+        "spanish": "El perro mueve su cola.",
+        "english": "The dog wags its tail."
+      },
+      "collections": [
+        "pos:function-word",
+        "grammar:possessive-determiner",
+        "grammar:third-person",
+        "topic:pronoun",
+        "es:su",
+        "en:its"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "29p1fsasc0",
+      "spanish": "su",
+      "english": "their",
+      "example": {
+        "spanish": "Su casa es grande.",
+        "english": "Their house is big."
+      },
+      "collections": [
+        "pos:function-word",
+        "grammar:possessive-determiner",
+        "grammar:third-person",
+        "grammar:plural",
+        "topic:pronoun",
+        "es:su",
+        "en:their"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "yfn0j25sta",
+      "spanish": "su",
+      "english": "your",
+      "example": {
+        "spanish": "Su pasaporte, por favor.",
+        "english": "Your passport, please."
+      },
+      "collections": [
+        "pos:function-word",
+        "grammar:possessive-determiner",
+        "grammar:second-person",
+        "register:formal",
+        "topic:pronoun",
+        "es:su",
+        "en:your"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "2x72difo4k",
+      "spanish": "sus",
+      "english": "their",
+      "example": {
+        "spanish": "Sus hijos están en la escuela.",
+        "english": "Their children are at school."
+      },
+      "collections": [
+        "pos:function-word",
+        "grammar:possessive-determiner",
+        "grammar:third-person",
+        "grammar:plural",
+        "topic:pronoun",
+        "es:su",
+        "en:their"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "qz0hocm2cl",
+      "spanish": "nuestro/a",
+      "english": "our",
+      "example": {
+        "spanish": "Nuestro equipo ganó.",
+        "english": "Our team won."
+      },
+      "collections": [
+        "pos:function-word",
+        "grammar:possessive-determiner",
+        "grammar:first-person",
+        "grammar:plural",
+        "topic:pronoun",
+        "es:nuestro",
+        "en:our"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "xq5976wdaa",
+      "spanish": "nuestros/as",
+      "english": "our",
+      "example": {
+        "spanish": "Nuestros amigos vienen mañana.",
+        "english": "Our friends are coming tomorrow."
+      },
+      "collections": [
+        "pos:function-word",
+        "grammar:possessive-determiner",
+        "grammar:first-person",
+        "grammar:plural",
+        "topic:pronoun",
+        "es:nuestro",
+        "en:our"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "m99dttixau",
+      "spanish": "el mío/la mía",
+      "english": "mine",
+      "example": {
+        "spanish": "Ese libro es mío.",
+        "english": "That book is mine."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:possessive-pronoun",
+        "grammar:first-person",
+        "topic:pronoun",
+        "es:mío",
+        "en:mine"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "bjkb00y5yk",
+      "spanish": "el tuyo/la tuya",
+      "english": "yours",
+      "example": {
+        "spanish": "Esta silla es tuya.",
+        "english": "This chair is yours."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:possessive-pronoun",
+        "grammar:second-person",
+        "topic:pronoun",
+        "es:tuyo",
+        "en:yours"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "b94as4x9ob",
+      "spanish": "el suyo/la suya",
+      "english": "his",
+      "example": {
+        "spanish": "El carro rojo es suyo.",
+        "english": "The red car is his."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:possessive-pronoun",
+        "grammar:third-person",
+        "topic:pronoun",
+        "es:suyo",
+        "en:his"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "qcdnifeqxl",
+      "spanish": "el suyo/la suya",
+      "english": "hers",
+      "example": {
+        "spanish": "Esa idea fue suya.",
+        "english": "That idea was hers."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:possessive-pronoun",
+        "grammar:third-person",
+        "topic:pronoun",
+        "es:suyo",
+        "en:hers"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "pc9lvps0cu",
+      "spanish": "el suyo/la suya",
+      "english": "theirs",
+      "example": {
+        "spanish": "La culpa es suya.",
+        "english": "The fault is theirs."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:possessive-pronoun",
+        "grammar:third-person",
+        "grammar:plural",
+        "topic:pronoun",
+        "es:suyo",
+        "en:theirs"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "o2lulav63w",
+      "spanish": "el nuestro/la nuestra",
+      "english": "ours",
+      "example": {
+        "spanish": "Esta victoria es nuestra.",
+        "english": "This victory is ours."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:possessive-pronoun",
+        "grammar:first-person",
+        "grammar:plural",
+        "topic:pronoun",
+        "es:nuestro",
+        "en:ours"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "v4qe1e1ogj",
+      "spanish": "de quién",
+      "english": "whose",
+      "example": {
+        "spanish": "¿De quién es esto?",
+        "english": "Whose is this?"
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:interrogative-pronoun",
+        "grammar:possessive-pronoun",
+        "topic:pronoun",
+        "es:quién",
+        "en:whose"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "lse8dx7tet",
+      "spanish": "conmigo",
+      "english": "with me",
+      "example": {
+        "spanish": "¿Vienes conmigo?",
+        "english": "Are you coming with me?"
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:prepositional-pronoun",
+        "grammar:first-person",
+        "particle:with",
+        "topic:pronoun",
+        "es:conmigo",
+        "en:with",
+        "en:me"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "rnldlhmpop",
+      "spanish": "contigo",
+      "english": "with you",
+      "example": {
+        "spanish": "Quiero hablar contigo.",
+        "english": "I want to talk with you."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:prepositional-pronoun",
+        "grammar:second-person",
+        "particle:with",
+        "topic:pronoun",
+        "es:contigo",
+        "en:with",
+        "en:you"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "sxxbfgvhfa",
+      "spanish": "con él",
+      "english": "with him",
+      "example": {
+        "spanish": "Fui al cine con él.",
+        "english": "I went to the movies with him."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:prepositional-pronoun",
+        "grammar:third-person",
+        "particle:with",
+        "topic:pronoun",
+        "es:con",
+        "es:él",
+        "en:with",
+        "en:him"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "0h11x77lat",
+      "spanish": "con ella",
+      "english": "with her",
+      "example": {
+        "spanish": "Trabajo con ella.",
+        "english": "I work with her."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:prepositional-pronoun",
+        "grammar:third-person",
+        "particle:with",
+        "topic:pronoun",
+        "es:con",
+        "es:ella",
+        "en:with",
+        "en:her"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "0wjnsjpf8s",
+      "spanish": "con nosotros",
+      "english": "with us",
+      "example": {
+        "spanish": "Ven con nosotros.",
+        "english": "Come with us."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:prepositional-pronoun",
+        "grammar:first-person",
+        "grammar:plural",
+        "particle:with",
+        "topic:pronoun",
+        "es:con",
+        "es:nosotros",
+        "en:with",
+        "en:us"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "k71aaprkfg",
+      "spanish": "con ellos",
+      "english": "with them",
+      "example": {
+        "spanish": "Hablé con ellos ayer.",
+        "english": "I spoke with them yesterday."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:prepositional-pronoun",
+        "grammar:third-person",
+        "grammar:plural",
+        "particle:with",
+        "topic:pronoun",
+        "es:con",
+        "es:ellos",
+        "en:with",
+        "en:them"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "nrb0thfnst",
+      "spanish": "con [alguien]",
+      "english": "with [somebody]",
+      "example": {
+        "spanish": "Salgo con alguien esta noche.",
+        "english": "I'm going out with somebody tonight."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:prepositional-pronoun",
+        "particle:with",
+        "topic:pronoun",
+        "es:con",
+        "es:alguien",
+        "en:with",
+        "en:somebody"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "dyi2yg06hb",
+      "spanish": "para mí",
+      "english": "for me",
+      "example": {
+        "spanish": "Este regalo es para mí.",
+        "english": "This gift is for me."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:prepositional-pronoun",
+        "grammar:first-person",
+        "particle:for",
+        "topic:pronoun",
+        "es:para",
+        "es:mí",
+        "en:for",
+        "en:me"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "sqd8xxfwmx",
+      "spanish": "para ti",
+      "english": "for you",
+      "example": {
+        "spanish": "Guardé un asiento para ti.",
+        "english": "I saved a seat for you."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:prepositional-pronoun",
+        "grammar:second-person",
+        "particle:for",
+        "topic:pronoun",
+        "es:para",
+        "es:ti",
+        "en:for",
+        "en:you"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "8rtzxhe293",
+      "spanish": "para él",
+      "english": "for him",
+      "example": {
+        "spanish": "Compré esto para él.",
+        "english": "I bought this for him."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:prepositional-pronoun",
+        "grammar:third-person",
+        "particle:for",
+        "topic:pronoun",
+        "es:para",
+        "es:él",
+        "en:for",
+        "en:him"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "ifxzv5eot0",
+      "spanish": "para ella",
+      "english": "for her",
+      "example": {
+        "spanish": "La carta es para ella.",
+        "english": "The letter is for her."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:prepositional-pronoun",
+        "grammar:third-person",
+        "particle:for",
+        "topic:pronoun",
+        "es:para",
+        "es:ella",
+        "en:for",
+        "en:her"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "ztq4ogut83",
+      "spanish": "para nosotros",
+      "english": "for us",
+      "example": {
+        "spanish": "Reservaron una mesa para nosotros.",
+        "english": "They reserved a table for us."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:prepositional-pronoun",
+        "grammar:first-person",
+        "grammar:plural",
+        "particle:for",
+        "topic:pronoun",
+        "es:para",
+        "es:nosotros",
+        "en:for",
+        "en:us"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "hu11wt1cvb",
+      "spanish": "para ellos",
+      "english": "for them",
+      "example": {
+        "spanish": "El proyecto es difícil para ellos.",
+        "english": "The project is hard for them."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:prepositional-pronoun",
+        "grammar:third-person",
+        "grammar:plural",
+        "particle:for",
+        "topic:pronoun",
+        "es:para",
+        "es:ellos",
+        "en:for",
+        "en:them"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "ez2lt2jbq7",
+      "spanish": "para [alguien]",
+      "english": "for [somebody]",
+      "example": {
+        "spanish": "Tengo un mensaje para alguien.",
+        "english": "I have a message for somebody."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:prepositional-pronoun",
+        "particle:for",
+        "topic:pronoun",
+        "es:para",
+        "es:alguien",
+        "en:for",
+        "en:somebody"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "6u6up5uut7",
+      "spanish": "sin mí",
+      "english": "without me",
+      "example": {
+        "spanish": "No empiecen sin mí.",
+        "english": "Don't start without me."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:prepositional-pronoun",
+        "grammar:first-person",
+        "particle:without",
+        "topic:pronoun",
+        "es:sin",
+        "es:mí",
+        "en:without",
+        "en:me"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "bjjl51lnlt",
+      "spanish": "sin ti",
+      "english": "without you",
+      "example": {
+        "spanish": "No puedo hacerlo sin ti.",
+        "english": "I can't do it without you."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:prepositional-pronoun",
+        "grammar:second-person",
+        "particle:without",
+        "topic:pronoun",
+        "es:sin",
+        "es:ti",
+        "en:without",
+        "en:you"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "lf6at9wa62",
+      "spanish": "sin él",
+      "english": "without him",
+      "example": {
+        "spanish": "Salimos sin él.",
+        "english": "We left without him."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:prepositional-pronoun",
+        "grammar:third-person",
+        "particle:without",
+        "topic:pronoun",
+        "es:sin",
+        "es:él",
+        "en:without",
+        "en:him"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "b3kuu98voq",
+      "spanish": "sin ella",
+      "english": "without her",
+      "example": {
+        "spanish": "La fiesta fue aburrida sin ella.",
+        "english": "The party was boring without her."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:prepositional-pronoun",
+        "grammar:third-person",
+        "particle:without",
+        "topic:pronoun",
+        "es:sin",
+        "es:ella",
+        "en:without",
+        "en:her"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "w1si8olfpv",
+      "spanish": "sin [alguien]",
+      "english": "without [somebody]",
+      "example": {
+        "spanish": "No quiero ir sin alguien que conozca.",
+        "english": "I don't want to go without somebody I know."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:prepositional-pronoun",
+        "particle:without",
+        "topic:pronoun",
+        "es:sin",
+        "es:alguien",
+        "en:without",
+        "en:somebody"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "bfer5mn6yu",
+      "spanish": "a mí",
+      "english": "to me",
+      "example": {
+        "spanish": "A mí me gusta.",
+        "english": "It appeals to me."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:prepositional-pronoun",
+        "grammar:first-person",
+        "particle:to",
+        "topic:pronoun",
+        "es:a",
+        "es:mí",
+        "en:to",
+        "en:me"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "2d169mb7ai",
+      "spanish": "a ti",
+      "english": "to you",
+      "example": {
+        "spanish": "A ti te toca.",
+        "english": "It's your turn."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:prepositional-pronoun",
+        "grammar:second-person",
+        "particle:to",
+        "topic:pronoun",
+        "es:a",
+        "es:ti",
+        "en:to",
+        "en:you"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "flwdh3dbk5",
+      "spanish": "a él",
+      "english": "to him",
+      "example": {
+        "spanish": "Dáselo a él.",
+        "english": "Give it to him."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:prepositional-pronoun",
+        "grammar:third-person",
+        "particle:to",
+        "topic:pronoun",
+        "es:a",
+        "es:él",
+        "en:to",
+        "en:him"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "45ejuhdox6",
+      "spanish": "a ella",
+      "english": "to her",
+      "example": {
+        "spanish": "Pregúntale a ella.",
+        "english": "Ask her."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:prepositional-pronoun",
+        "grammar:third-person",
+        "particle:to",
+        "topic:pronoun",
+        "es:a",
+        "es:ella",
+        "en:to",
+        "en:her"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "ej7gnt7lbx",
+      "spanish": "a [alguien]",
+      "english": "to [somebody]",
+      "example": {
+        "spanish": "Le di el libro a alguien.",
+        "english": "I gave the book to somebody."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:prepositional-pronoun",
+        "particle:to",
+        "topic:pronoun",
+        "es:a",
+        "es:alguien",
+        "en:to",
+        "en:somebody"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "c8fiiz5586",
+      "spanish": "de mí",
+      "english": "about me",
+      "example": {
+        "spanish": "No hables de mí.",
+        "english": "Don't talk about me."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:prepositional-pronoun",
+        "grammar:first-person",
+        "particle:about",
+        "topic:pronoun",
+        "es:de",
+        "es:mí",
+        "en:about",
+        "en:me"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "rkprl35czj",
+      "spanish": "de él",
+      "english": "about him",
+      "example": {
+        "spanish": "Todos hablan de él.",
+        "english": "Everyone is talking about him."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:prepositional-pronoun",
+        "grammar:third-person",
+        "particle:about",
+        "topic:pronoun",
+        "es:de",
+        "es:él",
+        "en:about",
+        "en:him"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "ie5l7zl0ar",
+      "spanish": "de ella",
+      "english": "about her",
+      "example": {
+        "spanish": "¿Qué sabes de ella?",
+        "english": "What do you know about her?"
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:prepositional-pronoun",
+        "grammar:third-person",
+        "particle:about",
+        "topic:pronoun",
+        "es:de",
+        "es:ella",
+        "en:about",
+        "en:her"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "knc0hcpsba",
+      "spanish": "de [alguien]",
+      "english": "about [somebody]",
+      "example": {
+        "spanish": "Escuché algo de alguien.",
+        "english": "I heard something about somebody."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:prepositional-pronoun",
+        "particle:about",
+        "topic:pronoun",
+        "es:de",
+        "es:alguien",
+        "en:about",
+        "en:somebody"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hsqb5yui5l",
+      "spanish": "alguien",
+      "english": "somebody",
+      "example": {
+        "spanish": "Alguien llamó a la puerta.",
+        "english": "Somebody knocked on the door."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:indefinite-pronoun",
+        "topic:pronoun",
+        "es:alguien",
+        "en:somebody"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "u5bpj5gqex",
+      "spanish": "alguien",
+      "english": "someone",
+      "example": {
+        "spanish": "Alguien te está buscando.",
+        "english": "Someone is looking for you."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:indefinite-pronoun",
+        "topic:pronoun",
+        "es:alguien",
+        "en:someone"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "jidk0m8x2v",
+      "spanish": "alguien",
+      "english": "anybody",
+      "example": {
+        "spanish": "¿Hay alguien en casa?",
+        "english": "Is anybody home?"
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:indefinite-pronoun",
+        "grammar:question",
+        "topic:pronoun",
+        "es:alguien",
+        "en:anybody"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "rwn65j1jsu",
+      "spanish": "alguien",
+      "english": "anyone",
+      "example": {
+        "spanish": "¿Vio alguien lo que pasó?",
+        "english": "Did anyone see what happened?"
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:indefinite-pronoun",
+        "grammar:question",
+        "topic:pronoun",
+        "es:alguien",
+        "en:anyone"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "nqv2w27jgr",
+      "spanish": "algo",
+      "english": "something",
+      "example": {
+        "spanish": "Necesito comer algo.",
+        "english": "I need to eat something."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:indefinite-pronoun",
+        "topic:pronoun",
+        "es:algo",
+        "en:something"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "5xzf7m11n9",
+      "spanish": "algo",
+      "english": "anything",
+      "example": {
+        "spanish": "¿Quieres algo de la tienda?",
+        "english": "Do you want anything from the store?"
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:indefinite-pronoun",
+        "grammar:question",
+        "topic:pronoun",
+        "es:algo",
+        "en:anything"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "rd3a1m9q85",
+      "spanish": "nadie",
+      "english": "nobody",
+      "example": {
+        "spanish": "Nadie vino a la reunión.",
+        "english": "Nobody came to the meeting."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:indefinite-pronoun",
+        "grammar:negative",
+        "topic:pronoun",
+        "es:nadie",
+        "en:nobody"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "vxof3xwcei",
+      "spanish": "nadie",
+      "english": "no one",
+      "example": {
+        "spanish": "Nadie contestó el teléfono.",
+        "english": "No one answered the phone."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:indefinite-pronoun",
+        "grammar:negative",
+        "topic:pronoun",
+        "es:nadie",
+        "en:no-one"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "s0u2t5y194",
+      "spanish": "nada",
+      "english": "nothing",
+      "example": {
+        "spanish": "No hay nada en la nevera.",
+        "english": "There is nothing in the fridge."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:indefinite-pronoun",
+        "grammar:negative",
+        "topic:pronoun",
+        "es:nada",
+        "en:nothing"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "6nqb18txzu",
+      "spanish": "todos",
+      "english": "everybody",
+      "example": {
+        "spanish": "Todos están de acuerdo.",
+        "english": "Everybody agrees."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:indefinite-pronoun",
+        "topic:pronoun",
+        "es:todo",
+        "en:everybody"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "fr200530w1",
+      "spanish": "todos",
+      "english": "everyone",
+      "example": {
+        "spanish": "Todos son bienvenidos.",
+        "english": "Everyone is welcome."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:indefinite-pronoun",
+        "topic:pronoun",
+        "es:todo",
+        "en:everyone"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "sacq7sy6j6",
+      "spanish": "todo",
+      "english": "everything",
+      "example": {
+        "spanish": "Todo salió bien.",
+        "english": "Everything went well."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:indefinite-pronoun",
+        "topic:pronoun",
+        "es:todo",
+        "en:everything"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "z2a8m7lmkv",
+      "spanish": "en algún lugar",
+      "english": "somewhere",
+      "example": {
+        "spanish": "Lo dejé en algún lugar.",
+        "english": "I left it somewhere."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:indefinite-pronoun",
+        "topic:pronoun",
+        "topic:location",
+        "es:lugar",
+        "en:somewhere"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "3wvyjj7lp9",
+      "spanish": "en ningún lugar",
+      "english": "nowhere",
+      "example": {
+        "spanish": "No lo encuentro en ningún lugar.",
+        "english": "I can't find it anywhere."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:indefinite-pronoun",
+        "grammar:negative",
+        "topic:pronoun",
+        "topic:location",
+        "es:lugar",
+        "en:nowhere"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "rz685c861j",
+      "spanish": "en todas partes",
+      "english": "everywhere",
+      "example": {
+        "spanish": "Busqué en todas partes.",
+        "english": "I looked everywhere."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:indefinite-pronoun",
+        "topic:pronoun",
+        "topic:location",
+        "es:parte",
+        "en:everywhere"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "5w0xw4xzxh",
+      "spanish": "uno (impersonal)",
+      "english": "one",
+      "example": {
+        "spanish": "Uno nunca sabe.",
+        "english": "One never knows."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:indefinite-pronoun",
+        "grammar:impersonal",
+        "topic:pronoun",
+        "es:uno",
+        "en:one"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "ml1vpgz8qf",
+      "spanish": "ninguno",
+      "english": "none",
+      "example": {
+        "spanish": "Ninguno de ellos vino.",
+        "english": "None of them came."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:indefinite-pronoun",
+        "grammar:negative",
+        "topic:pronoun",
+        "es:ninguno",
+        "en:none"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "fc10ci73j7",
+      "spanish": "alguno",
+      "english": "some",
+      "example": {
+        "spanish": "Algunos ya se fueron.",
+        "english": "Some already left."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:indefinite-pronoun",
+        "topic:pronoun",
+        "es:alguno",
+        "en:some"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "3816wraz0i",
+      "spanish": "varios",
+      "english": "several",
+      "example": {
+        "spanish": "Varios se quejaron.",
+        "english": "Several complained."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:indefinite-pronoun",
+        "topic:pronoun",
+        "es:varios",
+        "en:several"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "limmjzeuoo",
+      "spanish": "cualquiera",
+      "english": "anyone",
+      "example": {
+        "spanish": "Cualquiera puede aprender.",
+        "english": "Anyone can learn."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:indefinite-pronoun",
+        "topic:pronoun",
+        "es:cualquiera",
+        "en:anyone"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "cwol5b7e11",
+      "spanish": "todo el mundo",
+      "english": "everyone",
+      "example": {
+        "spanish": "Todo el mundo lo sabe.",
+        "english": "Everyone knows it."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:indefinite-pronoun",
+        "grammar:fixed-expression",
+        "topic:pronoun",
+        "es:mundo",
+        "en:everyone"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "6cnielk682",
+      "spanish": "esto",
+      "english": "this",
+      "example": {
+        "spanish": "Esto es difícil.",
+        "english": "This is hard."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:demonstrative-pronoun",
+        "grammar:proximal",
+        "grammar:neuter",
+        "topic:pronoun",
+        "es:esto",
+        "en:this"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "tvm9cf1n1l",
+      "spanish": "eso",
+      "english": "that",
+      "example": {
+        "spanish": "Eso no importa.",
+        "english": "That doesn't matter."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:demonstrative-pronoun",
+        "grammar:distal",
+        "grammar:neuter",
+        "topic:pronoun",
+        "es:eso",
+        "en:that"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "4w9jfbdl93",
+      "spanish": "aquello",
+      "english": "that",
+      "example": {
+        "spanish": "Aquello fue hace mucho tiempo.",
+        "english": "That was a long time ago."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:demonstrative-pronoun",
+        "grammar:distal",
+        "grammar:neuter",
+        "topic:pronoun",
+        "es:aquello",
+        "en:that"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "v406blvw9w",
+      "spanish": "aquel/aquella",
+      "english": "that",
+      "example": {
+        "spanish": "Prefiero aquel, no este.",
+        "english": "I prefer that one, not this one."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:demonstrative-pronoun",
+        "grammar:distal",
+        "topic:pronoun",
+        "es:aquel",
+        "en:that"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "31ukfql6jj",
+      "spanish": "este/esta",
+      "english": "this one",
+      "example": {
+        "spanish": "Quiero este, no ese.",
+        "english": "I want this one, not that one."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:demonstrative-pronoun",
+        "grammar:proximal",
+        "topic:pronoun",
+        "es:este",
+        "en:this"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "894jjuwlsp",
+      "spanish": "ese/esa",
+      "english": "that one",
+      "example": {
+        "spanish": "Ese es más barato.",
+        "english": "That one is cheaper."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:demonstrative-pronoun",
+        "grammar:distal",
+        "topic:pronoun",
+        "es:ese",
+        "en:that"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "ufc23a1m04",
+      "spanish": "que yo [haga algo]",
+      "english": "me to [do something]",
+      "example": {
+        "spanish": "Quiere que yo lo haga.",
+        "english": "She wants me to do it."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:subordinate-subject-pronoun",
+        "construction:object-control",
+        "grammar:subjunctive",
+        "grammar:first-person",
+        "topic:pronoun",
+        "es:que",
+        "es:yo",
+        "en:me"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "afcxrbizh3",
+      "spanish": "que tú [hagas algo]",
+      "english": "you to [do something]",
+      "example": {
+        "spanish": "Necesito que tú vengas.",
+        "english": "I need you to come."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:subordinate-subject-pronoun",
+        "construction:object-control",
+        "grammar:subjunctive",
+        "grammar:second-person",
+        "topic:pronoun",
+        "es:que",
+        "es:tú",
+        "en:you"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "t4uaqoddu8",
+      "spanish": "que él [haga algo]",
+      "english": "him to [do something]",
+      "example": {
+        "spanish": "Quiero que él lo haga.",
+        "english": "I want him to do it."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:subordinate-subject-pronoun",
+        "construction:object-control",
+        "grammar:subjunctive",
+        "grammar:third-person",
+        "topic:pronoun",
+        "es:que",
+        "es:él",
+        "en:him"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "zqb7l9x0pq",
+      "spanish": "que ella [haga algo]",
+      "english": "her to [do something]",
+      "example": {
+        "spanish": "Espero que ella llegue temprano.",
+        "english": "I expect her to arrive early."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:subordinate-subject-pronoun",
+        "construction:object-control",
+        "grammar:subjunctive",
+        "grammar:third-person",
+        "topic:pronoun",
+        "es:que",
+        "es:ella",
+        "en:her"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "6gfadlfpkn",
+      "spanish": "que nosotros [hagamos algo]",
+      "english": "us to [do something]",
+      "example": {
+        "spanish": "Quieren que nosotros paguemos.",
+        "english": "They want us to pay."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:subordinate-subject-pronoun",
+        "construction:object-control",
+        "grammar:subjunctive",
+        "grammar:first-person",
+        "grammar:plural",
+        "topic:pronoun",
+        "es:que",
+        "es:nosotros",
+        "en:us"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "s0tvpozw7u",
+      "spanish": "que ellos [hagan algo]",
+      "english": "them to [do something]",
+      "example": {
+        "spanish": "Prefiero que ellos decidan.",
+        "english": "I prefer them to decide."
+      },
+      "collections": [
+        "pos:pronoun",
+        "grammar:subordinate-subject-pronoun",
+        "construction:object-control",
+        "grammar:subjunctive",
+        "grammar:third-person",
+        "grammar:plural",
+        "topic:pronoun",
+        "es:que",
+        "es:ellos",
+        "en:them"
+      ],
+      "curriculumRole": "supporting"
     }
   ]
 }

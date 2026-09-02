@@ -1,0 +1,29 @@
+# Batch D3: prepositional pronouns, explicit rows
+conmigo	with me	¿Vienes conmigo?	Are you coming with me?	core	pos:pronoun|grammar:prepositional-pronoun|grammar:first-person|particle:with|topic:pronoun|es:conmigo|en:with|en:me
+contigo	with you	Quiero hablar contigo.	I want to talk with you.	core	pos:pronoun|grammar:prepositional-pronoun|grammar:second-person|particle:with|topic:pronoun|es:contigo|en:with|en:you
+con él	with him	Fui al cine con él.	I went to the movies with him.	supporting	pos:pronoun|grammar:prepositional-pronoun|grammar:third-person|particle:with|topic:pronoun|es:con|es:él|en:with|en:him
+con ella	with her	Trabajo con ella.	I work with her.	supporting	pos:pronoun|grammar:prepositional-pronoun|grammar:third-person|particle:with|topic:pronoun|es:con|es:ella|en:with|en:her
+con nosotros	with us	Ven con nosotros.	Come with us.	supporting	pos:pronoun|grammar:prepositional-pronoun|grammar:first-person|grammar:plural|particle:with|topic:pronoun|es:con|es:nosotros|en:with|en:us
+con ellos	with them	Hablé con ellos ayer.	I spoke with them yesterday.	supporting	pos:pronoun|grammar:prepositional-pronoun|grammar:third-person|grammar:plural|particle:with|topic:pronoun|es:con|es:ellos|en:with|en:them
+con [alguien]	with [somebody]	Salgo con alguien esta noche.	I'm going out with somebody tonight.	supporting	pos:pronoun|grammar:prepositional-pronoun|particle:with|topic:pronoun|es:con|es:alguien|en:with|en:somebody
+para mí	for me	Este regalo es para mí.	This gift is for me.	supporting	pos:pronoun|grammar:prepositional-pronoun|grammar:first-person|particle:for|topic:pronoun|es:para|es:mí|en:for|en:me
+para ti	for you	Guardé un asiento para ti.	I saved a seat for you.	supporting	pos:pronoun|grammar:prepositional-pronoun|grammar:second-person|particle:for|topic:pronoun|es:para|es:ti|en:for|en:you
+para él	for him	Compré esto para él.	I bought this for him.	supporting	pos:pronoun|grammar:prepositional-pronoun|grammar:third-person|particle:for|topic:pronoun|es:para|es:él|en:for|en:him
+para ella	for her	La carta es para ella.	The letter is for her.	supporting	pos:pronoun|grammar:prepositional-pronoun|grammar:third-person|particle:for|topic:pronoun|es:para|es:ella|en:for|en:her
+para nosotros	for us	Reservaron una mesa para nosotros.	They reserved a table for us.	supporting	pos:pronoun|grammar:prepositional-pronoun|grammar:first-person|grammar:plural|particle:for|topic:pronoun|es:para|es:nosotros|en:for|en:us
+para ellos	for them	El proyecto es difícil para ellos.	The project is hard for them.	supporting	pos:pronoun|grammar:prepositional-pronoun|grammar:third-person|grammar:plural|particle:for|topic:pronoun|es:para|es:ellos|en:for|en:them
+para [alguien]	for [somebody]	Tengo un mensaje para alguien.	I have a message for somebody.	supporting	pos:pronoun|grammar:prepositional-pronoun|particle:for|topic:pronoun|es:para|es:alguien|en:for|en:somebody
+sin mí	without me	No empiecen sin mí.	Don't start without me.	supporting	pos:pronoun|grammar:prepositional-pronoun|grammar:first-person|particle:without|topic:pronoun|es:sin|es:mí|en:without|en:me
+sin ti	without you	No puedo hacerlo sin ti.	I can't do it without you.	supporting	pos:pronoun|grammar:prepositional-pronoun|grammar:second-person|particle:without|topic:pronoun|es:sin|es:ti|en:without|en:you
+sin él	without him	Salimos sin él.	We left without him.	supporting	pos:pronoun|grammar:prepositional-pronoun|grammar:third-person|particle:without|topic:pronoun|es:sin|es:él|en:without|en:him
+sin ella	without her	La fiesta fue aburrida sin ella.	The party was boring without her.	supporting	pos:pronoun|grammar:prepositional-pronoun|grammar:third-person|particle:without|topic:pronoun|es:sin|es:ella|en:without|en:her
+sin [alguien]	without [somebody]	No quiero ir sin alguien que conozca.	I don't want to go without somebody I know.	reference	pos:pronoun|grammar:prepositional-pronoun|particle:without|topic:pronoun|es:sin|es:alguien|en:without|en:somebody
+a mí	to me	A mí me gusta.	It appeals to me.	supporting	pos:pronoun|grammar:prepositional-pronoun|grammar:first-person|particle:to|topic:pronoun|es:a|es:mí|en:to|en:me
+a ti	to you	A ti te toca.	It's your turn.	supporting	pos:pronoun|grammar:prepositional-pronoun|grammar:second-person|particle:to|topic:pronoun|es:a|es:ti|en:to|en:you
+a él	to him	Dáselo a él.	Give it to him.	supporting	pos:pronoun|grammar:prepositional-pronoun|grammar:third-person|particle:to|topic:pronoun|es:a|es:él|en:to|en:him
+a ella	to her	Pregúntale a ella.	Ask her.	supporting	pos:pronoun|grammar:prepositional-pronoun|grammar:third-person|particle:to|topic:pronoun|es:a|es:ella|en:to|en:her
+a [alguien]	to [somebody]	Le di el libro a alguien.	I gave the book to somebody.	supporting	pos:pronoun|grammar:prepositional-pronoun|particle:to|topic:pronoun|es:a|es:alguien|en:to|en:somebody
+de mí	about me	No hables de mí.	Don't talk about me.	supporting	pos:pronoun|grammar:prepositional-pronoun|grammar:first-person|particle:about|topic:pronoun|es:de|es:mí|en:about|en:me
+de él	about him	Todos hablan de él.	Everyone is talking about him.	supporting	pos:pronoun|grammar:prepositional-pronoun|grammar:third-person|particle:about|topic:pronoun|es:de|es:él|en:about|en:him
+de ella	about her	¿Qué sabes de ella?	What do you know about her?	supporting	pos:pronoun|grammar:prepositional-pronoun|grammar:third-person|particle:about|topic:pronoun|es:de|es:ella|en:about|en:her
+de [alguien]	about [somebody]	Escuché algo de alguien.	I heard something about somebody.	reference	pos:pronoun|grammar:prepositional-pronoun|particle:about|topic:pronoun|es:de|es:alguien|en:about|en:somebody

@@ -1,0 +1,22 @@
+# Batch D4+D5: indefinite pronouns
+alguien	somebody	Alguien llamó a la puerta.	Somebody knocked on the door.	core	pos:pronoun|grammar:indefinite-pronoun|topic:pronoun|es:alguien|en:somebody
+alguien	someone	Alguien te está buscando.	Someone is looking for you.	core	pos:pronoun|grammar:indefinite-pronoun|topic:pronoun|es:alguien|en:someone
+alguien	anybody	¿Hay alguien en casa?	Is anybody home?	supporting	pos:pronoun|grammar:indefinite-pronoun|grammar:question|topic:pronoun|es:alguien|en:anybody
+alguien	anyone	¿Vio alguien lo que pasó?	Did anyone see what happened?	supporting	pos:pronoun|grammar:indefinite-pronoun|grammar:question|topic:pronoun|es:alguien|en:anyone
+algo	something	Necesito comer algo.	I need to eat something.	core	pos:pronoun|grammar:indefinite-pronoun|topic:pronoun|es:algo|en:something
+algo	anything	¿Quieres algo de la tienda?	Do you want anything from the store?	supporting	pos:pronoun|grammar:indefinite-pronoun|grammar:question|topic:pronoun|es:algo|en:anything
+nadie	nobody	Nadie vino a la reunión.	Nobody came to the meeting.	core	pos:pronoun|grammar:indefinite-pronoun|grammar:negative|topic:pronoun|es:nadie|en:nobody
+nadie	no one	Nadie contestó el teléfono.	No one answered the phone.	supporting	pos:pronoun|grammar:indefinite-pronoun|grammar:negative|topic:pronoun|es:nadie|en:no-one
+nada	nothing	No hay nada en la nevera.	There is nothing in the fridge.	core	pos:pronoun|grammar:indefinite-pronoun|grammar:negative|topic:pronoun|es:nada|en:nothing
+todos	everybody	Todos están de acuerdo.	Everybody agrees.	core	pos:pronoun|grammar:indefinite-pronoun|topic:pronoun|es:todo|en:everybody
+todos	everyone	Todos son bienvenidos.	Everyone is welcome.	core	pos:pronoun|grammar:indefinite-pronoun|topic:pronoun|es:todo|en:everyone
+todo	everything	Todo salió bien.	Everything went well.	core	pos:pronoun|grammar:indefinite-pronoun|topic:pronoun|es:todo|en:everything
+en algún lugar	somewhere	Lo dejé en algún lugar.	I left it somewhere.	supporting	pos:pronoun|grammar:indefinite-pronoun|topic:pronoun|topic:location|es:lugar|en:somewhere
+en ningún lugar	nowhere	No lo encuentro en ningún lugar.	I can't find it anywhere.	reference	pos:pronoun|grammar:indefinite-pronoun|grammar:negative|topic:pronoun|topic:location|es:lugar|en:nowhere
+en todas partes	everywhere	Busqué en todas partes.	I looked everywhere.	supporting	pos:pronoun|grammar:indefinite-pronoun|topic:pronoun|topic:location|es:parte|en:everywhere
+uno (impersonal)	one	Uno nunca sabe.	One never knows.	supporting	pos:pronoun|grammar:indefinite-pronoun|grammar:impersonal|topic:pronoun|es:uno|en:one
+ninguno	none	Ninguno de ellos vino.	None of them came.	supporting	pos:pronoun|grammar:indefinite-pronoun|grammar:negative|topic:pronoun|es:ninguno|en:none
+alguno	some	Algunos ya se fueron.	Some already left.	supporting	pos:pronoun|grammar:indefinite-pronoun|topic:pronoun|es:alguno|en:some
+varios	several	Varios se quejaron.	Several complained.	reference	pos:pronoun|grammar:indefinite-pronoun|topic:pronoun|es:varios|en:several
+cualquiera	anyone	Cualquiera puede aprender.	Anyone can learn.	supporting	pos:pronoun|grammar:indefinite-pronoun|topic:pronoun|es:cualquiera|en:anyone
+todo el mundo	everyone	Todo el mundo lo sabe.	Everyone knows it.	supporting	pos:pronoun|grammar:indefinite-pronoun|grammar:fixed-expression|topic:pronoun|es:mundo|en:everyone

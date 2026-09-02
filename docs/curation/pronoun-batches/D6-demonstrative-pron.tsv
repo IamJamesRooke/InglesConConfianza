@@ -1,0 +1,7 @@
+# Batch D6: demonstrative pronouns (neuter, far, standalone)
+esto	this	Esto es difícil.	This is hard.	core	pos:pronoun|grammar:demonstrative-pronoun|grammar:proximal|grammar:neuter|topic:pronoun|es:esto|en:this
+eso	that	Eso no importa.	That doesn't matter.	core	pos:pronoun|grammar:demonstrative-pronoun|grammar:distal|grammar:neuter|topic:pronoun|es:eso|en:that
+aquello	that	Aquello fue hace mucho tiempo.	That was a long time ago.	reference	pos:pronoun|grammar:demonstrative-pronoun|grammar:distal|grammar:neuter|topic:pronoun|es:aquello|en:that
+aquel/aquella	that	Prefiero aquel, no este.	I prefer that one, not this one.	supporting	pos:pronoun|grammar:demonstrative-pronoun|grammar:distal|topic:pronoun|es:aquel|en:that
+este/esta	this one	Quiero este, no ese.	I want this one, not that one.	supporting	pos:pronoun|grammar:demonstrative-pronoun|grammar:proximal|topic:pronoun|es:este|en:this
+ese/esa	that one	Ese es más barato.	That one is cheaper.	supporting	pos:pronoun|grammar:demonstrative-pronoun|grammar:distal|topic:pronoun|es:ese|en:that

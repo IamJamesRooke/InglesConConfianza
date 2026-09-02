@@ -1,0 +1,11 @@
+# Batch D1: possessive determiners. spanish / english / exampleSpanish / exampleEnglish / role / collections
+mi	my	Mi carro es azul.	My car is blue.	core	pos:function-word|grammar:possessive-determiner|grammar:first-person|grammar:singular|topic:pronoun|es:mi|en:my
+mis	my	Mis llaves están en la mesa.	My keys are on the table.	supporting	pos:function-word|grammar:possessive-determiner|grammar:first-person|grammar:plural|topic:pronoun|es:mi|en:my
+su	his	Su nombre es Juan.	His name is Juan.	core	pos:function-word|grammar:possessive-determiner|grammar:third-person|topic:pronoun|es:su|en:his
+su	her	Su nombre es Ana.	Her name is Ana.	core	pos:function-word|grammar:possessive-determiner|grammar:third-person|topic:pronoun|es:su|en:her
+su	its	El perro mueve su cola.	The dog wags its tail.	supporting	pos:function-word|grammar:possessive-determiner|grammar:third-person|topic:pronoun|es:su|en:its
+su	their	Su casa es grande.	Their house is big.	core	pos:function-word|grammar:possessive-determiner|grammar:third-person|grammar:plural|topic:pronoun|es:su|en:their
+su	your	Su pasaporte, por favor.	Your passport, please.	supporting	pos:function-word|grammar:possessive-determiner|grammar:second-person|register:formal|topic:pronoun|es:su|en:your
+sus	their	Sus hijos están en la escuela.	Their children are at school.	supporting	pos:function-word|grammar:possessive-determiner|grammar:third-person|grammar:plural|topic:pronoun|es:su|en:their
+nuestro/a	our	Nuestro equipo ganó.	Our team won.	supporting	pos:function-word|grammar:possessive-determiner|grammar:first-person|grammar:plural|topic:pronoun|es:nuestro|en:our
+nuestros/as	our	Nuestros amigos vienen mañana.	Our friends are coming tomorrow.	supporting	pos:function-word|grammar:possessive-determiner|grammar:first-person|grammar:plural|topic:pronoun|es:nuestro|en:our
