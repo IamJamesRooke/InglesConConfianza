@@ -26,6 +26,7 @@
     "curriculum:concepts:add": "tsx scripts/add-concepts.ts",
     "curriculum:concepts:untag": "tsx scripts/untag-concepts.ts",
     "curriculum:audit": "tsx scripts/topic-audit.ts",
+    "curriculum:apply": "tsx scripts/apply-curriculum.ts",
     "curriculum:collections:apply": "tsx scripts/apply-collection-manifest.ts",
     "curriculum:snapshots:export": "tsx scripts/export-curriculum-snapshots.ts"
   },

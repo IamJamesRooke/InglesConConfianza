@@ -22876,7 +22876,7 @@
         "topic:pronoun",
         "topic:interrogative"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "core"
     },
     {
       "id": "lrfioq96ny",
@@ -75942,7 +75942,7 @@
         "en:whom",
         "topic:interrogative"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "tpr473mus1",
@@ -77328,7 +77328,7 @@
         "es:para qué",
         "en:what"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ba183xdbf1",
