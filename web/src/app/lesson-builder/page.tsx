@@ -15,7 +15,7 @@ import {
   LessonSelector,
   type PracticeLesson,
 } from "@/components/practice/lesson-selector";
-import { LanguageBlockEditor } from "@/components/lesson-builder/language-block-editor";
+import { LanguageBlockGrid } from "@/components/lesson-builder/language-block-grid";
 import { LessonCardHeader } from "@/components/lesson-builder/lesson-card-header";
 import { LessonConceptsField } from "@/components/lesson-builder/lesson-concepts-field";
 import { PendingLessonExitDialog } from "@/components/lesson-builder/pending-lesson-exit-dialog";
@@ -1858,241 +1858,113 @@ export default function LessonBuilderPage() {
                                 )
                               }
                             />
-                          <div
-                            className={`order-2 mt-4 grid items-start gap-3 ${
-                              block.layout === "vocabulary_table"
-                                ? "grid-cols-1"
-                                : "grid-cols-[repeat(auto-fit,minmax(min(100%,13rem),1fr))]"
-                            }`}
-                          >
-                            {block.languageBlocks.map(
-                              (languageBlock, languageBlockIndex) => {
-                                const languageBlockKey = `${lesson.id}-${block.id}-${languageBlock.id}`;
-                                const langScope = `${lesson.id}::${block.id}`;
-                                const isLastLanguageBlock =
-                                  languageBlockIndex ===
-                                  block.languageBlocks.length - 1;
-                                const previousLanguageBlock =
-                                  block.languageBlocks[languageBlockIndex - 1];
-                                const languageDropPosition =
-                                  languageDrag.dropTarget?.scope === langScope &&
-                                  languageDrag.dropTarget.id === languageBlock.id
-                                    ? languageDrag.dropTarget.position
-                                    : null;
-                                const isDraggingLanguageBlock =
-                                  languageDrag.dragged?.scope === langScope &&
-                                  languageDrag.dragged.id === languageBlock.id;
-
-                                return (
-                                  <LanguageBlockEditor
-                                    key={languageBlock.id}
-                                    languageBlock={languageBlock}
-                                    index={languageBlockIndex}
-                                    isCollapsed={collapsedLanguageBlocks.has(
-                                      languageBlockKey,
-                                    )}
-                                    hasPreviousBlock={Boolean(
-                                      previousLanguageBlock,
-                                    )}
-                                    dropPosition={languageDropPosition}
-                                    isDragging={isDraggingLanguageBlock}
-                                    onExpandFocusSpanish={() =>
-                                      openLanguageBlockAndFocusSpanish(
-                                        lesson.id,
-                                        block.id,
-                                        languageBlock.id,
-                                      )
-                                    }
-                                    onCollapse={() =>
-                                      setCollapsedLanguageBlocks((currentKeys) =>
-                                        new Set(currentKeys).add(
-                                          languageBlockKey,
-                                        ),
-                                      )
-                                    }
-                                    onDelete={() =>
-                                      deleteLanguageBlock(
-                                        lesson.id,
-                                        block.id,
-                                        languageBlock.id,
-                                      )
-                                    }
-                                    onDragStart={(event) =>
-                                      languageDrag.dragStart(
-                                        event,
-                                        langScope,
-                                        languageBlock.id,
-                                      )
-                                    }
-                                    onDragEnd={languageDrag.reset}
-                                    onDragOver={(event) =>
-                                      languageDrag.dragOver(
-                                        event,
-                                        langScope,
-                                        languageBlock.id,
-                                      )
-                                    }
-                                    onDrop={() => {
-                                      moveDraggedLanguageBlock();
-                                      languageDrag.reset();
-                                    }}
-                                    registerSpanishRef={(element) => {
-                                      const key = `${lesson.id}-${block.id}-${languageBlock.id}`;
-                                      if (element) {
-                                        languageBlockSpanishRefs.current.set(
-                                          key,
-                                          element,
-                                        );
-                                      } else {
-                                        languageBlockSpanishRefs.current.delete(
-                                          key,
-                                        );
-                                      }
-                                    }}
-                                    onSpanishChange={(value) =>
-                                      updateSpanishPrompt(
-                                        lesson.id,
-                                        block.id,
-                                        languageBlock.id,
-                                        value,
-                                      )
-                                    }
-                                    onSpanishTabBackward={() => {
-                                      if (previousLanguageBlock) {
-                                        openLanguageBlockAndFocusAnswer(
-                                          lesson.id,
-                                          block.id,
-                                          previousLanguageBlock.id,
-                                          Math.max(
-                                            previousLanguageBlock.acceptedAnswers
-                                              .length - 1,
-                                            0,
-                                          ),
-                                        );
-                                      }
-                                    }}
-                                    onSpanishTabForward={() => {
-                                      acceptedAnswerRefs.current
-                                        .get(
-                                          `${lesson.id}-${block.id}-${languageBlock.id}-0`,
-                                        )
-                                        ?.focus();
-                                    }}
-                                    registerAnswerRef={(answerIndex, element) => {
-                                      const key = `${lesson.id}-${block.id}-${languageBlock.id}-${answerIndex}`;
-                                      if (element) {
-                                        acceptedAnswerRefs.current.set(
-                                          key,
-                                          element,
-                                        );
-                                      } else {
-                                        acceptedAnswerRefs.current.delete(key);
-                                      }
-                                    }}
-                                    onAnswerChange={(answerIndex, value) =>
-                                      updateAcceptedAnswer(
-                                        lesson.id,
-                                        block.id,
-                                        languageBlock.id,
-                                        answerIndex,
-                                        value,
-                                      )
-                                    }
-                                    onAnswerAppend={() =>
-                                      addAcceptedAnswer(
-                                        lesson.id,
-                                        block.id,
-                                        languageBlock.id,
-                                        languageBlock.acceptedAnswers.length,
-                                      )
-                                    }
-                                    onAnswerRemove={(answerIndex) =>
-                                      removeAcceptedAnswer(
-                                        lesson.id,
-                                        block.id,
-                                        languageBlock.id,
-                                        answerIndex,
-                                      )
-                                    }
-                                    onAnswersTabForwardFromLast={() => {
-                                      if (isLastLanguageBlock) {
-                                        addLanguageBlock(
-                                          lesson.id,
-                                          block.id,
-                                          createId("lang"),
-                                        );
-                                      } else {
-                                        const nextLanguageBlock =
-                                          block.languageBlocks[
-                                            languageBlockIndex + 1
-                                          ];
-                                        if (nextLanguageBlock) {
-                                          openLanguageBlockAndFocusSpanish(
-                                            lesson.id,
-                                            block.id,
-                                            nextLanguageBlock.id,
-                                          );
-                                        }
-                                      }
-                                    }}
-                                    registerCalloutRef={(element) => {
-                                      const key = `${lesson.id}-${block.id}-${languageBlock.id}`;
-                                      if (element) {
-                                        languageBlockCalloutRefs.current.set(
-                                          key,
-                                          element,
-                                        );
-                                      } else {
-                                        languageBlockCalloutRefs.current.delete(
-                                          key,
-                                        );
-                                      }
-                                    }}
-                                    onCalloutAdd={() =>
-                                      addLanguageBlockCallout(
-                                        lesson.id,
-                                        block.id,
-                                        languageBlock.id,
-                                      )
-                                    }
-                                    onCalloutChange={(value) =>
-                                      updateLanguageBlockCallout(
-                                        lesson.id,
-                                        block.id,
-                                        languageBlock.id,
-                                        value,
-                                      )
-                                    }
-                                    onCalloutRemove={() =>
-                                      updateLanguageBlockCallout(
-                                        lesson.id,
-                                        block.id,
-                                        languageBlock.id,
-                                        null,
-                                      )
-                                    }
-                                  />
-                                );
-                              },
-                            )}
-                            <button
-                              type="button"
-                              onClick={() =>
-                                addLanguageBlock(
-                                  lesson.id,
-                                  block.id,
-                                  createId("lang"),
-                                )
-                              }
-                              aria-label="Add language block"
-                              title="Add language block"
-                              className="group flex min-h-44 items-center justify-center rounded-xl border-2 border-dashed border-stone-200 bg-stone-50 text-stone-400 transition hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-100"
-                            >
-                              <span className="flex size-11 items-center justify-center rounded-full bg-white shadow-sm transition group-hover:bg-blue-100">
-                                <Plus className="size-5" aria-hidden="true" />
-                              </span>
-                            </button>
-                          </div>
+                          <LanguageBlockGrid
+                            lessonId={lesson.id}
+                            block={block}
+                            drag={languageDrag}
+                            collapsedKeys={collapsedLanguageBlocks}
+                            spanishRefs={languageBlockSpanishRefs}
+                            answerRefs={acceptedAnswerRefs}
+                            calloutRefs={languageBlockCalloutRefs}
+                            onCollapseKey={(key) =>
+                              setCollapsedLanguageBlocks((currentKeys) =>
+                                new Set(currentKeys).add(key),
+                              )
+                            }
+                            onExpandFocusSpanish={(languageBlockId) =>
+                              openLanguageBlockAndFocusSpanish(
+                                lesson.id,
+                                block.id,
+                                languageBlockId,
+                              )
+                            }
+                            onExpandFocusAnswer={(languageBlockId, answerIndex) =>
+                              openLanguageBlockAndFocusAnswer(
+                                lesson.id,
+                                block.id,
+                                languageBlockId,
+                                answerIndex,
+                              )
+                            }
+                            onMoveDragged={moveDraggedLanguageBlock}
+                            onDeleteLanguageBlock={(languageBlockId) =>
+                              deleteLanguageBlock(
+                                lesson.id,
+                                block.id,
+                                languageBlockId,
+                              )
+                            }
+                            onAddLanguageBlock={(languageBlockId) =>
+                              addLanguageBlock(
+                                lesson.id,
+                                block.id,
+                                languageBlockId,
+                              )
+                            }
+                            onSpanishChange={(languageBlockId, value) =>
+                              updateSpanishPrompt(
+                                lesson.id,
+                                block.id,
+                                languageBlockId,
+                                value,
+                              )
+                            }
+                            onAnswerChange={(
+                              languageBlockId,
+                              answerIndex,
+                              value,
+                            ) =>
+                              updateAcceptedAnswer(
+                                lesson.id,
+                                block.id,
+                                languageBlockId,
+                                answerIndex,
+                                value,
+                              )
+                            }
+                            onAnswerAppend={(languageBlockId) => {
+                              const target = block.languageBlocks.find(
+                                (candidate) => candidate.id === languageBlockId,
+                              );
+                              addAcceptedAnswer(
+                                lesson.id,
+                                block.id,
+                                languageBlockId,
+                                target?.acceptedAnswers.length ?? 0,
+                              );
+                            }}
+                            onAnswerRemove={(languageBlockId, answerIndex) =>
+                              removeAcceptedAnswer(
+                                lesson.id,
+                                block.id,
+                                languageBlockId,
+                                answerIndex,
+                              )
+                            }
+                            onCalloutAdd={(languageBlockId) =>
+                              addLanguageBlockCallout(
+                                lesson.id,
+                                block.id,
+                                languageBlockId,
+                              )
+                            }
+                            onCalloutChange={(languageBlockId, value) =>
+                              updateLanguageBlockCallout(
+                                lesson.id,
+                                block.id,
+                                languageBlockId,
+                                value,
+                              )
+                            }
+                            onCalloutRemove={(languageBlockId) =>
+                              updateLanguageBlockCallout(
+                                lesson.id,
+                                block.id,
+                                languageBlockId,
+                                null,
+                              )
+                            }
+                          />
                         </div>
                         )}
                       </>
