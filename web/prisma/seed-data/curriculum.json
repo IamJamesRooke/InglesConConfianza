@@ -76403,6 +76403,704 @@
         "en:well"
       ],
       "curriculumRole": "core"
+    },
+    {
+      "id": "8jv3otkqa7",
+      "spanish": "un",
+      "english": "a",
+      "example": {
+        "spanish": "Un perro corre en el parque.",
+        "english": "A dog runs in the park."
+      },
+      "collections": [
+        "grammar:article",
+        "grammar:indefinite-article",
+        "grammar:masculine",
+        "grammar:singular",
+        "pos:function-word",
+        "topic:determiner",
+        "es:un",
+        "en:a"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "zravwibucz",
+      "spanish": "una",
+      "english": "a",
+      "example": {
+        "spanish": "Una mujer espera afuera.",
+        "english": "A woman waits outside."
+      },
+      "collections": [
+        "grammar:article",
+        "grammar:indefinite-article",
+        "grammar:feminine",
+        "grammar:singular",
+        "pos:function-word",
+        "topic:determiner",
+        "es:un",
+        "en:a"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "8xn53vk9eu",
+      "spanish": "unos",
+      "english": "some",
+      "example": {
+        "spanish": "Compré unos libros ayer.",
+        "english": "I bought some books yesterday."
+      },
+      "collections": [
+        "grammar:article",
+        "grammar:indefinite-article",
+        "grammar:masculine",
+        "grammar:plural",
+        "pos:function-word",
+        "topic:determiner",
+        "es:un",
+        "en:some"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "q7u2j5qnks",
+      "spanish": "unas",
+      "english": "some",
+      "example": {
+        "spanish": "Tengo unas preguntas para ti.",
+        "english": "I have some questions for you."
+      },
+      "collections": [
+        "grammar:article",
+        "grammar:indefinite-article",
+        "grammar:feminine",
+        "grammar:plural",
+        "pos:function-word",
+        "topic:determiner",
+        "es:un",
+        "en:some"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "q9x6f0ze09",
+      "spanish": "lo [adjetivo]",
+      "english": "the [adjective] thing",
+      "example": {
+        "spanish": "Lo importante es la salud.",
+        "english": "The important thing is health."
+      },
+      "collections": [
+        "grammar:article",
+        "grammar:neuter-article",
+        "grammar:neuter",
+        "pos:function-word",
+        "topic:determiner",
+        "es:lo",
+        "en:the"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "mcumr0ly9e",
+      "spanish": "al",
+      "english": "to the",
+      "example": {
+        "spanish": "Vamos al parque.",
+        "english": "We are going to the park."
+      },
+      "collections": [
+        "grammar:contraction",
+        "grammar:article",
+        "grammar:definite-article",
+        "pos:function-word",
+        "topic:determiner",
+        "es:al",
+        "en:the"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "nlbaeg9xqs",
+      "spanish": "del",
+      "english": "of the",
+      "example": {
+        "spanish": "El color del cielo cambia al atardecer.",
+        "english": "The color of the sky changes at dusk."
+      },
+      "collections": [
+        "grammar:contraction",
+        "grammar:article",
+        "grammar:definite-article",
+        "pos:function-word",
+        "topic:determiner",
+        "es:del",
+        "en:the"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "s66xi2kamk",
+      "spanish": "todo el [sustantivo]",
+      "english": "the whole [noun]",
+      "example": {
+        "spanish": "Trabajé todo el día.",
+        "english": "I worked the whole day."
+      },
+      "collections": [
+        "grammar:quantifier",
+        "grammar:universal-quantifier",
+        "grammar:masculine",
+        "grammar:singular",
+        "pos:determiner",
+        "topic:determiner",
+        "es:todo",
+        "en:whole"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "uckj1ufyln",
+      "spanish": "toda la [sustantivo]",
+      "english": "the whole [noun]",
+      "example": {
+        "spanish": "Llovió toda la noche.",
+        "english": "It rained the whole night."
+      },
+      "collections": [
+        "grammar:quantifier",
+        "grammar:universal-quantifier",
+        "grammar:feminine",
+        "grammar:singular",
+        "pos:determiner",
+        "topic:determiner",
+        "es:todo",
+        "en:whole"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "6gvvc02efk",
+      "spanish": "todos los [sustantivos]",
+      "english": "all the [nouns]",
+      "example": {
+        "spanish": "Todos los niños juegan afuera.",
+        "english": "All the children play outside."
+      },
+      "collections": [
+        "grammar:quantifier",
+        "grammar:universal-quantifier",
+        "grammar:masculine",
+        "grammar:plural",
+        "pos:determiner",
+        "topic:determiner",
+        "es:todo",
+        "en:all"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "xezd02vf8p",
+      "spanish": "todas las [sustantivos]",
+      "english": "all the [nouns]",
+      "example": {
+        "spanish": "Todas las tiendas están cerradas hoy.",
+        "english": "All the stores are closed today."
+      },
+      "collections": [
+        "grammar:quantifier",
+        "grammar:universal-quantifier",
+        "grammar:feminine",
+        "grammar:plural",
+        "pos:determiner",
+        "topic:determiner",
+        "es:todo",
+        "en:all"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "7rngt9gu3p",
+      "spanish": "algún [sustantivo]",
+      "english": "some [noun]",
+      "example": {
+        "spanish": "¿Tienes algún libro sobre historia?",
+        "english": "Do you have some book about history?"
+      },
+      "collections": [
+        "grammar:quantifier",
+        "grammar:masculine",
+        "grammar:singular",
+        "pos:determiner",
+        "topic:determiner",
+        "es:alguno",
+        "en:some"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "1gq5hjnrzn",
+      "spanish": "alguna [sustantivo]",
+      "english": "some [noun]",
+      "example": {
+        "spanish": "Necesito alguna solución pronto.",
+        "english": "I need some solution soon."
+      },
+      "collections": [
+        "grammar:quantifier",
+        "grammar:feminine",
+        "grammar:singular",
+        "pos:determiner",
+        "topic:determiner",
+        "es:alguno",
+        "en:some"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "ob5wvw1ip2",
+      "spanish": "algunos [sustantivos]",
+      "english": "some [nouns]",
+      "example": {
+        "spanish": "Algunos días son más difíciles.",
+        "english": "Some days are harder."
+      },
+      "collections": [
+        "grammar:quantifier",
+        "grammar:masculine",
+        "grammar:plural",
+        "pos:determiner",
+        "topic:determiner",
+        "es:alguno",
+        "en:some"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "6hfsgz778t",
+      "spanish": "algunas [sustantivos]",
+      "english": "some [nouns]",
+      "example": {
+        "spanish": "Algunas personas llegaron tarde.",
+        "english": "Some people arrived late."
+      },
+      "collections": [
+        "grammar:quantifier",
+        "grammar:feminine",
+        "grammar:plural",
+        "pos:determiner",
+        "topic:determiner",
+        "es:alguno",
+        "en:some"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "ghg76g1yom",
+      "spanish": "ningún [sustantivo]",
+      "english": "no [noun]",
+      "example": {
+        "spanish": "No tengo ningún problema con eso.",
+        "english": "I have no problem with that."
+      },
+      "collections": [
+        "grammar:quantifier",
+        "grammar:negative",
+        "grammar:masculine",
+        "grammar:singular",
+        "pos:determiner",
+        "topic:determiner",
+        "es:ninguno",
+        "en:no"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "7h9okypmsz",
+      "spanish": "ninguna [sustantivo]",
+      "english": "no [noun]",
+      "example": {
+        "spanish": "No hay ninguna razón para esperar.",
+        "english": "There is no reason to wait."
+      },
+      "collections": [
+        "grammar:quantifier",
+        "grammar:negative",
+        "grammar:feminine",
+        "grammar:singular",
+        "pos:determiner",
+        "topic:determiner",
+        "es:ninguno",
+        "en:no"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "ub1kh284v7",
+      "spanish": "cualquier [sustantivo]",
+      "english": "any [noun]",
+      "example": {
+        "spanish": "Llámame a cualquier hora.",
+        "english": "Call me at any time."
+      },
+      "collections": [
+        "grammar:quantifier",
+        "pos:determiner",
+        "topic:determiner",
+        "es:cualquiera",
+        "en:any"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "vxj2gr7yq4",
+      "spanish": "varios [sustantivos]",
+      "english": "several [nouns]",
+      "example": {
+        "spanish": "Vinieron varios amigos a la fiesta.",
+        "english": "Several friends came to the party."
+      },
+      "collections": [
+        "grammar:quantifier",
+        "grammar:masculine",
+        "grammar:plural",
+        "pos:determiner",
+        "topic:determiner",
+        "es:varios",
+        "en:several"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "mvlw7xj529",
+      "spanish": "varias [sustantivos]",
+      "english": "several [nouns]",
+      "example": {
+        "spanish": "Tengo varias ideas para el proyecto.",
+        "english": "I have several ideas for the project."
+      },
+      "collections": [
+        "grammar:quantifier",
+        "grammar:feminine",
+        "grammar:plural",
+        "pos:determiner",
+        "topic:determiner",
+        "es:varios",
+        "en:several"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "qiwiv70kp0",
+      "spanish": "poco [sustantivo]",
+      "english": "little [noun]",
+      "example": {
+        "spanish": "Tengo poco tiempo hoy.",
+        "english": "I have little time today."
+      },
+      "collections": [
+        "grammar:quantifier",
+        "grammar:masculine",
+        "grammar:uncountable",
+        "pos:determiner",
+        "topic:determiner",
+        "es:poco",
+        "en:little"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "r8a9hjmm5s",
+      "spanish": "poca [sustantivo]",
+      "english": "little [noun]",
+      "example": {
+        "spanish": "Hay poca luz en esta sala.",
+        "english": "There is little light in this room."
+      },
+      "collections": [
+        "grammar:quantifier",
+        "grammar:feminine",
+        "grammar:uncountable",
+        "pos:determiner",
+        "topic:determiner",
+        "es:poco",
+        "en:little"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "m7x949wtjj",
+      "spanish": "más [sustantivo]",
+      "english": "more [noun]",
+      "example": {
+        "spanish": "Necesito más tiempo para terminar.",
+        "english": "I need more time to finish."
+      },
+      "collections": [
+        "grammar:quantifier",
+        "grammar:comparison",
+        "pos:determiner",
+        "topic:determiner",
+        "es:más",
+        "en:more"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "r69jxo0xvx",
+      "spanish": "medio [sustantivo]",
+      "english": "half a [noun]",
+      "example": {
+        "spanish": "Espera medio minuto.",
+        "english": "Wait half a minute."
+      },
+      "collections": [
+        "grammar:quantifier",
+        "grammar:masculine",
+        "pos:determiner",
+        "topic:determiner",
+        "es:medio",
+        "en:half"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "hyu6yabjhb",
+      "spanish": "media [sustantivo]",
+      "english": "half a [noun]",
+      "example": {
+        "spanish": "Bebió media botella de agua.",
+        "english": "He drank half a bottle of water."
+      },
+      "collections": [
+        "grammar:quantifier",
+        "grammar:feminine",
+        "pos:determiner",
+        "topic:determiner",
+        "es:medio",
+        "en:half"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "a1t487o734",
+      "spanish": "bastante [sustantivo]",
+      "english": "quite a lot of [noun]",
+      "example": {
+        "spanish": "Hay bastante comida para todos.",
+        "english": "There is quite a lot of food for everyone."
+      },
+      "collections": [
+        "grammar:quantifier",
+        "pos:determiner",
+        "topic:determiner",
+        "es:bastante",
+        "en:quite"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "90mjlwoa2d",
+      "spanish": "bastantes [sustantivos]",
+      "english": "quite a few [nouns]",
+      "example": {
+        "spanish": "Había bastantes personas en la reunión.",
+        "english": "There were quite a few people at the meeting."
+      },
+      "collections": [
+        "grammar:quantifier",
+        "grammar:plural",
+        "pos:determiner",
+        "topic:determiner",
+        "es:bastante",
+        "en:quite"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "1qowmulcro",
+      "spanish": "tal [sustantivo]",
+      "english": "such a [noun]",
+      "example": {
+        "spanish": "Nunca dije tal cosa.",
+        "english": "I never said such a thing."
+      },
+      "collections": [
+        "grammar:quantifier",
+        "pos:determiner",
+        "topic:determiner",
+        "es:tal",
+        "en:such"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "15d55fv1cp",
+      "spanish": "tales [sustantivos]",
+      "english": "such [nouns]",
+      "example": {
+        "spanish": "En tales casos, es mejor esperar.",
+        "english": "In such cases, it is better to wait."
+      },
+      "collections": [
+        "grammar:quantifier",
+        "grammar:plural",
+        "pos:determiner",
+        "topic:determiner",
+        "es:tal",
+        "en:such"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "65xbrzcund",
+      "spanish": "qué [sustantivo]",
+      "english": "what [noun]",
+      "example": {
+        "spanish": "¿Qué libro estás leyendo?",
+        "english": "What book are you reading?"
+      },
+      "collections": [
+        "grammar:interrogative-determiner",
+        "pos:function-word",
+        "topic:determiner",
+        "es:qué",
+        "en:what"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "jwh08a61ig",
+      "spanish": "cuánto [sustantivo]",
+      "english": "how much [noun]",
+      "example": {
+        "spanish": "¿Cuánto dinero necesitas?",
+        "english": "How much money do you need?"
+      },
+      "collections": [
+        "grammar:interrogative-determiner",
+        "grammar:masculine",
+        "grammar:uncountable",
+        "pos:function-word",
+        "topic:determiner",
+        "es:cuánto",
+        "en:how"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "t6r7hdgwhb",
+      "spanish": "cuánta [sustantivo]",
+      "english": "how much [noun]",
+      "example": {
+        "spanish": "¿Cuánta agua bebes al día?",
+        "english": "How much water do you drink a day?"
+      },
+      "collections": [
+        "grammar:interrogative-determiner",
+        "grammar:feminine",
+        "grammar:uncountable",
+        "pos:function-word",
+        "topic:determiner",
+        "es:cuánto",
+        "en:how"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "cwuhjz9zei",
+      "spanish": "qué [sustantivo] (exclamativo)",
+      "english": "what a [noun]",
+      "example": {
+        "spanish": "¡Qué día tan bonito!",
+        "english": "What a beautiful day!"
+      },
+      "collections": [
+        "grammar:exclamative",
+        "pos:function-word",
+        "topic:determiner",
+        "es:qué",
+        "en:what"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "h3dls06wui",
+      "spanish": "cuyo [sustantivo]",
+      "english": "whose [noun]",
+      "example": {
+        "spanish": "El hombre cuyo perro ladra vive al lado.",
+        "english": "The man whose dog barks lives next door."
+      },
+      "collections": [
+        "grammar:relative-determiner",
+        "grammar:masculine",
+        "grammar:singular",
+        "pos:function-word",
+        "topic:determiner",
+        "es:cuyo",
+        "en:whose"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ltn8hqdpls",
+      "spanish": "cuya [sustantivo]",
+      "english": "whose [noun]",
+      "example": {
+        "spanish": "La mujer cuya casa compré es amable.",
+        "english": "The woman whose house I bought is kind."
+      },
+      "collections": [
+        "grammar:relative-determiner",
+        "grammar:feminine",
+        "grammar:singular",
+        "pos:function-word",
+        "topic:determiner",
+        "es:cuyo",
+        "en:whose"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "pokaqu3651",
+      "spanish": "cuyos [sustantivos]",
+      "english": "whose [nouns]",
+      "example": {
+        "spanish": "El autor cuyos libros leo es español.",
+        "english": "The author whose books I read is Spanish."
+      },
+      "collections": [
+        "grammar:relative-determiner",
+        "grammar:masculine",
+        "grammar:plural",
+        "pos:function-word",
+        "topic:determiner",
+        "es:cuyo",
+        "en:whose"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "cqps4njuot",
+      "spanish": "cuyas [sustantivos]",
+      "english": "whose [nouns]",
+      "example": {
+        "spanish": "La empresa cuyas oficinas cerraron quebró.",
+        "english": "The company whose offices closed went bankrupt."
+      },
+      "collections": [
+        "grammar:relative-determiner",
+        "grammar:feminine",
+        "grammar:plural",
+        "pos:function-word",
+        "topic:determiner",
+        "es:cuyo",
+        "en:whose"
+      ],
+      "curriculumRole": "reference"
     }
   ]
 }
