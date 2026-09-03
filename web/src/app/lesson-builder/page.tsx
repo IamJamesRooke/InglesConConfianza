@@ -1527,10 +1527,10 @@ export default function LessonBuilderPage() {
             </p>
           </div>
           <Link
-            href="/lesson-builder/coverage"
+            href="/lesson-builder/course"
             className="shrink-0 rounded-lg border border-border bg-card px-3 py-2 text-sm font-semibold text-foreground transition hover:bg-muted"
           >
-            Coverage →
+            Course →
           </Link>
         </div>
 
