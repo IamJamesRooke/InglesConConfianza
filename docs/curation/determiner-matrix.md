@@ -190,9 +190,9 @@ and the `db:test` "determiner topic is complete and clean" test both pass.
   (+ `contrast:confusable`). `contrast:tanto-vs-tan` skipped — no `tan` row yet.
 - `vuestro`, ordinals: out, as agreed.
 
-**Open follow-ups:** per-number example sentences; `contrast:tanto-vs-tan` once
-`tan → so` exists; `contrast:spanish-article-no-english` for the zero-article
-teaching point.
+**Follow-ups done 2026-09-04** (curation pass batches 1–4): per-number example
+sentences (all 64); `grammar:quantifier` stripped from the numbers;
+`contrast:tanto-vs-tan` and `contrast:spanish-article-no-english` applied.
 
 ## Rough counts
 
