@@ -24,12 +24,10 @@ import {
 } from "react";
 
 import { HotkeyReminder } from "@/components/lesson-builder/hotkey-reminder";
-import { MarkdownEditor } from "@/components/lesson-builder/markdown-editor";
 import {
   LessonSelector,
   type PracticeLesson,
 } from "@/components/practice/lesson-selector";
-import { OverviewMarkdown } from "@/components/lesson-builder/overview-markdown";
 import { LanguageBlockEditor } from "@/components/lesson-builder/language-block-editor";
 import { LessonCardHeader } from "@/components/lesson-builder/lesson-card-header";
 import { LessonConceptsField } from "@/components/lesson-builder/lesson-concepts-field";
@@ -37,6 +35,10 @@ import { PendingLessonExitDialog } from "@/components/lesson-builder/pending-les
 import { ExplanationBlockEditor } from "@/components/lesson-builder/explanation-block-editor";
 import { LessonBlockPreviewList } from "@/components/lesson-builder/lesson-block-preview";
 import { SentenceConceptLinks } from "@/components/lesson-builder/sentence-concept-links";
+import {
+  SentenceMarkdownFields,
+  type SentenceMarkdownFieldName,
+} from "@/components/lesson-builder/sentence-markdown-fields";
 import type {
   ConceptLink,
   Lesson,
@@ -145,98 +147,6 @@ function ContentBlockPicker({
   );
 }
 
-type SentenceMarkdownFieldName =
-  | "promptLabel"
-  | "promptText"
-  | "helperText"
-  | "answerFeedback";
-
-function SentenceMarkdownFieldEditor({
-  label,
-  markdown,
-  placeholder,
-  tone = "violet",
-  isOpen,
-  onOpen,
-  onClose,
-  onChange,
-}: {
-  label: string;
-  markdown: string;
-  placeholder: string;
-  tone?: "violet" | "emerald";
-  isOpen: boolean;
-  onOpen: () => void;
-  onClose: () => void;
-  onChange: (markdown: string) => void;
-}) {
-  const toneClasses =
-    tone === "emerald"
-      ? "border-emerald-200 bg-emerald-50/45 text-emerald-800"
-      : "border-violet-200 bg-violet-50/45 text-violet-800";
-
-  if (!isOpen && !markdown.trim()) {
-    return (
-      <button
-        type="button"
-        onClick={onOpen}
-        className={`flex min-h-11 w-full items-center justify-between gap-3 rounded-xl border border-dashed px-3 py-2 text-left transition hover:bg-white focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-current/15 ${toneClasses}`}
-      >
-        <span className="text-[11px] font-semibold uppercase tracking-[0.12em]">
-          {label}
-        </span>
-        <span className="flex shrink-0 items-center gap-1 text-xs font-semibold">
-          <Plus className="size-3.5" aria-hidden="true" />
-          Add
-        </span>
-      </button>
-    );
-  }
-
-  return (
-    <section className={`overflow-hidden rounded-xl border ${toneClasses}`}>
-      <div className="flex min-h-10 items-center justify-between gap-3 px-3 py-2">
-        <button
-          type="button"
-          onClick={isOpen ? onClose : onOpen}
-          className="min-w-0 flex-1 text-left text-[11px] font-semibold uppercase tracking-[0.12em] focus-visible:outline-none"
-        >
-          {label}
-        </button>
-        {isOpen && (
-          <button
-            type="button"
-            onClick={onClose}
-            className="rounded-md px-2 py-1 text-xs font-semibold transition hover:bg-white/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current/20"
-          >
-            Done
-          </button>
-        )}
-      </div>
-      {isOpen ? (
-        <div className="border-t border-current/10 bg-white text-stone-900">
-          <MarkdownEditor
-            markdown={markdown}
-            onChange={onChange}
-            placeholder={placeholder}
-          />
-        </div>
-      ) : (
-        <button
-          type="button"
-          onClick={onOpen}
-          className="block w-full border-t border-current/10 bg-white/75 px-3 py-3 text-left text-sm leading-5 text-stone-700 transition hover:bg-white focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-inset focus-visible:ring-current/15"
-        >
-          {markdown.trim() ? (
-            <OverviewMarkdown markdown={markdown} />
-          ) : (
-            <span className="italic text-stone-400">{placeholder}</span>
-          )}
-        </button>
-      )}
-    </section>
-  );
-}
 
 export default function LessonBuilderPage() {
   const [lessons, dispatch] = useReducer(lessonsReducer, []);
@@ -2026,75 +1936,53 @@ export default function LessonBuilderPage() {
                         </div>
                         {!isContentBlockCollapsed && (
                         <div className="flex flex-col p-6">
-                            <div className="order-1 space-y-3">
-                              <div className="flex items-center gap-3 text-stone-400">
-                                <span className="h-px flex-1 bg-stone-200" />
-                                <span className="text-[10px] font-semibold uppercase tracking-[0.18em]">
-                                  Optional fields
-                                </span>
-                                <span className="h-px flex-1 bg-stone-200" />
-                              </div>
-                              <SentenceMarkdownFieldEditor
-                                label="Label"
-                                markdown={block.promptLabel}
-                                placeholder="For example: Tu turno"
-                                isOpen={
-                                  activeSentenceMarkdownField?.lessonId ===
-                                    lesson.id &&
-                                  activeSentenceMarkdownField.blockId ===
-                                    block.id &&
-                                  activeSentenceMarkdownField.field ===
-                                    "promptLabel"
-                                }
-                                onOpen={() =>
-                                  setActiveSentenceMarkdownField({
-                                    lessonId: lesson.id,
-                                    blockId: block.id,
-                                    field: "promptLabel",
-                                  })
-                                }
-                                onClose={() =>
-                                  setActiveSentenceMarkdownField(null)
-                                }
-                                onChange={(markdown) =>
+                            <SentenceMarkdownFields
+                              block={block}
+                              activeField={
+                                activeSentenceMarkdownField?.lessonId ===
+                                  lesson.id &&
+                                activeSentenceMarkdownField.blockId === block.id
+                                  ? activeSentenceMarkdownField.field
+                                  : null
+                              }
+                              onActivate={(field) =>
+                                setActiveSentenceMarkdownField({
+                                  lessonId: lesson.id,
+                                  blockId: block.id,
+                                  field,
+                                })
+                              }
+                              onDeactivate={() =>
+                                setActiveSentenceMarkdownField(null)
+                              }
+                              onChange={(field, markdown) => {
+                                if (field === "promptLabel") {
                                   updateSentencePromptLabel(
                                     lesson.id,
                                     block.id,
                                     markdown,
-                                  )
-                                }
-                              />
-                              <SentenceMarkdownFieldEditor
-                                label="Prompt"
-                                markdown={block.promptText}
-                                placeholder="For example: ¿Cómo se dice “Estoy preparando”?"
-                                isOpen={
-                                  activeSentenceMarkdownField?.lessonId ===
-                                    lesson.id &&
-                                  activeSentenceMarkdownField.blockId ===
-                                    block.id &&
-                                  activeSentenceMarkdownField.field ===
-                                    "promptText"
-                                }
-                                onOpen={() =>
-                                  setActiveSentenceMarkdownField({
-                                    lessonId: lesson.id,
-                                    blockId: block.id,
-                                    field: "promptText",
-                                  })
-                                }
-                                onClose={() =>
-                                  setActiveSentenceMarkdownField(null)
-                                }
-                                onChange={(markdown) =>
+                                  );
+                                } else if (field === "promptText") {
                                   updateSentencePromptText(
                                     lesson.id,
                                     block.id,
                                     markdown,
-                                  )
+                                  );
+                                } else if (field === "helperText") {
+                                  updateSentenceHelperText(
+                                    lesson.id,
+                                    block.id,
+                                    markdown,
+                                  );
+                                } else {
+                                  updateSentenceAnswerFeedback(
+                                    lesson.id,
+                                    block.id,
+                                    markdown || null,
+                                  );
                                 }
-                              />
-                            </div>
+                              }}
+                            />
                             <SentenceConceptLinks
                               conceptLinks={block.conceptLinks}
                               onAdd={() =>
@@ -2350,71 +2238,6 @@ export default function LessonBuilderPage() {
                                 <Plus className="size-5" aria-hidden="true" />
                               </span>
                             </button>
-                          </div>
-                          <div className="order-3 mt-3">
-                            <SentenceMarkdownFieldEditor
-                              label="Helper text"
-                              markdown={block.helperText ?? ""}
-                              placeholder="For example: No hay penalización por equivocarse."
-                              isOpen={
-                                activeSentenceMarkdownField?.lessonId ===
-                                  lesson.id &&
-                                activeSentenceMarkdownField.blockId ===
-                                  block.id &&
-                                activeSentenceMarkdownField.field ===
-                                  "helperText"
-                              }
-                              onOpen={() =>
-                                setActiveSentenceMarkdownField({
-                                  lessonId: lesson.id,
-                                  blockId: block.id,
-                                  field: "helperText",
-                                })
-                              }
-                              onClose={() =>
-                                setActiveSentenceMarkdownField(null)
-                              }
-                              onChange={(markdown) =>
-                                updateSentenceHelperText(
-                                  lesson.id,
-                                  block.id,
-                                  markdown,
-                                )
-                              }
-                            />
-                          </div>
-                          <div className="order-4 mt-3">
-                            <SentenceMarkdownFieldEditor
-                              label="Answer feedback"
-                              markdown={block.answerFeedback ?? ""}
-                              placeholder="For example: Correcto. Ahora puedes usar la frase completa."
-                              tone="emerald"
-                              isOpen={
-                                activeSentenceMarkdownField?.lessonId ===
-                                  lesson.id &&
-                                activeSentenceMarkdownField.blockId ===
-                                  block.id &&
-                                activeSentenceMarkdownField.field ===
-                                  "answerFeedback"
-                              }
-                              onOpen={() =>
-                                setActiveSentenceMarkdownField({
-                                  lessonId: lesson.id,
-                                  blockId: block.id,
-                                  field: "answerFeedback",
-                                })
-                              }
-                              onClose={() =>
-                                setActiveSentenceMarkdownField(null)
-                              }
-                              onChange={(markdown) =>
-                                updateSentenceAnswerFeedback(
-                                  lesson.id,
-                                  block.id,
-                                  markdown || null,
-                                )
-                              }
-                            />
                           </div>
                         </div>
                         )}
