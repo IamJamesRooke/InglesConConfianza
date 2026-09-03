@@ -155,7 +155,7 @@ export default function LessonBuilderPage() {
   // order, lesson membership). Snapshots are the whole `courseModules` array
   // taken just before each user edit; rapid edits inside one burst coalesce.
   const courseUndoRef = useRef<LessonModule[][]>([]);
-  const courseUndoBurstRef = useRef(0);
+  const courseCoalesceKeyRef = useRef<string | null>(null);
   const [courseCanUndo, setCourseCanUndo] = useState(false);
   const [savedLessonsSnapshot, setSavedLessonsSnapshot] = useState<Lesson[]>(
     [],
@@ -227,7 +227,7 @@ export default function LessonBuilderPage() {
           dispatch({ type: "SET_LESSONS", lessons });
           setCourseModules(modules);
           courseUndoRef.current = [];
-          courseUndoBurstRef.current = 0;
+          courseCoalesceKeyRef.current = null;
           setCourseCanUndo(false);
           const params = new URLSearchParams(window.location.search);
           const wantedModule = params.get("module");
@@ -1474,23 +1474,34 @@ export default function LessonBuilderPage() {
     });
   }
 
+  // A brand-new lesson lives only in local state until its first save; it is in
+  // `lessons` but not yet in `savedLessonsSnapshot`.
+  const hasUnsavedNewLesson = lessons.some(
+    (lesson) =>
+      !savedLessonsSnapshot.some((saved) => saved.id === lesson.id),
+  );
+
   // All module-structure changes (module order/name/promise, lesson order,
   // lesson-to-module membership) go through PUT /course. Per-lesson content
   // still goes through PUT /lessons/[id]. Optimistic + debounced; the reducer's
   // `lessons` order is kept in sync by id (no content touched).
   const commitCourseModules = useCallback(
-    (next: LessonModule[], options?: { recordUndo?: boolean }) => {
+    (
+      next: LessonModule[],
+      options?: { recordUndo?: boolean; coalesceKey?: string },
+    ) => {
       if (options?.recordUndo !== false) {
-        const now = Date.now();
-        // One undo entry per burst: only the pre-burst state is kept.
-        if (now - courseUndoBurstRef.current > 700) {
+        // Discrete edits each get their own undo entry; only edits sharing a
+        // coalesceKey with the previous one (module-name typing) fold together.
+        const key = options?.coalesceKey ?? null;
+        if (key === null || key !== courseCoalesceKeyRef.current) {
           courseUndoRef.current = [
             ...courseUndoRef.current.slice(-49),
             courseModules,
           ];
           setCourseCanUndo(true);
         }
-        courseUndoBurstRef.current = now;
+        courseCoalesceKeyRef.current = key;
       }
       setCourseModules(next);
       dispatch({
@@ -1522,25 +1533,31 @@ export default function LessonBuilderPage() {
   );
 
   function patchActiveModule(patch: Partial<LessonModule>) {
+    const isNameEdit =
+      Object.keys(patch).length === 1 && Object.hasOwn(patch, "name");
     commitCourseModules(
       courseModules.map((module) =>
         module.id === currentModule?.id ? { ...module, ...patch } : module,
       ),
+      isNameEdit ? { coalesceKey: `name:${currentModule?.id}` } : undefined,
     );
   }
 
   const undoCourseModules = useCallback(() => {
     const stack = courseUndoRef.current;
     if (stack.length === 0) return;
+    // Rewinding the module structure past an unsaved new lesson would drop it —
+    // the lesson list has no undo. Save or discard it first.
+    if (hasUnsavedNewLesson) return;
     const previous = stack[stack.length - 1];
     courseUndoRef.current = stack.slice(0, -1);
     setCourseCanUndo(courseUndoRef.current.length > 0);
-    courseUndoBurstRef.current = 0; // next real edit starts a fresh burst
+    courseCoalesceKeyRef.current = null; // next edit always starts a new entry
     if (previous.every((module) => module.id !== activeModuleId)) {
       setActiveModuleId(previous[0]?.id ?? null);
     }
     commitCourseModules(previous, { recordUndo: false });
-  }, [activeModuleId, commitCourseModules]);
+  }, [activeModuleId, commitCourseModules, hasUnsavedNewLesson]);
 
   useEffect(() => {
     function handleUndoShortcut(event: KeyboardEvent) {
@@ -1648,12 +1665,6 @@ export default function LessonBuilderPage() {
   const previewLessonIndex = lessons.findIndex(
     (lesson) => lesson.id === previewLessonId,
   );
-  const hasUnsavedNewLesson = lessons.some(
-    (lesson) =>
-      !savedLessonsSnapshot.some(
-        (savedLesson) => savedLesson.id === lesson.id,
-      ),
-  );
   const previewLesson =
     previewLessonIndex >= 0 ? lessons[previewLessonIndex] : null;
   const previewBlocks = previewLesson
@@ -1713,7 +1724,7 @@ export default function LessonBuilderPage() {
             modules={courseModules}
             activeId={currentModule?.id ?? null}
             saveLabel={courseSaveLabel}
-            canUndo={courseCanUndo}
+            canUndo={courseCanUndo && !hasUnsavedNewLesson}
             onUndo={undoCourseModules}
             draggedLessonId={lessonDrag.dragged?.id ?? null}
             onSelect={selectModule}
