@@ -1,19 +1,6 @@
 "use client";
 
-import {
-  ChevronDown,
-  ChevronUp,
-  Copy,
-  Eye,
-  FileText,
-  GripVertical,
-  Keyboard,
-  Languages,
-  Plus,
-  Table2,
-  Trash2,
-  X,
-} from "lucide-react";
+import { FileText, Keyboard, Languages, Plus, Table2, X } from "lucide-react";
 import {
   Fragment,
   useCallback,
@@ -34,6 +21,7 @@ import { LessonConceptsField } from "@/components/lesson-builder/lesson-concepts
 import { PendingLessonExitDialog } from "@/components/lesson-builder/pending-lesson-exit-dialog";
 import { ExplanationBlockEditor } from "@/components/lesson-builder/explanation-block-editor";
 import { LessonBlockPreviewList } from "@/components/lesson-builder/lesson-block-preview";
+import { SentenceBlockHeader } from "@/components/lesson-builder/sentence-block-header";
 import { SentenceConceptLinks } from "@/components/lesson-builder/sentence-concept-links";
 import {
   SentenceMarkdownFields,
@@ -1778,162 +1766,28 @@ export default function LessonBuilderPage() {
                       />
                     ) : (
                       <>
-                        <div className="flex items-center justify-between gap-3 border-b border-border bg-[var(--surface-sunken)] px-5 py-3">
-                          <div
-                            role="button"
-                            tabIndex={0}
-                            aria-disabled={
-                              !isContentBlockCollapsed &&
-                              sentenceValidationIssueCount > 0
-                            }
-                            aria-label={`${isContentBlockCollapsed ? "Expand" : "Collapse"} sentence`}
-                            title={
-                              !isContentBlockCollapsed &&
-                              sentenceValidationIssueCount > 0
-                                ? `Resolve ${sentenceValidationIssueCount} ${sentenceValidationIssueCount === 1 ? "issue" : "issues"} before closing this sentence.`
-                                : undefined
-                            }
-                            onClick={() =>
-                              toggleContentBlock(lesson.id, block.id)
-                            }
-                            onKeyDown={(event) => {
-                              if (event.key === "Enter" || event.key === " ") {
-                                event.preventDefault();
-                                toggleContentBlock(lesson.id, block.id);
-                              }
-                            }}
-                            className="flex min-w-0 flex-1 cursor-pointer items-center gap-3 rounded-md focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-blue-200"
-                          >
-                            <span className="flex size-9 items-center justify-center rounded-lg bg-blue-50 text-blue-700">
-                              {block.layout === "vocabulary_table" ? (
-                                <Table2 className="size-4" aria-hidden="true" />
-                              ) : (
-                                <Languages className="size-4" aria-hidden="true" />
-                              )}
-                            </span>
-                            <div className="min-w-0">
-                              <span className="sr-only">
-                                {block.layout === "vocabulary_table"
-                                  ? "Vocabulary table block"
-                                  : "Sentence block"}
-                              </span>
-                              <div className="space-y-0.5 text-sm">
-                                <p className="truncate font-medium text-stone-700">
-                                  {block.languageBlocks
-                                    .map((languageBlock) =>
-                                      languageBlock.spanish.trim(),
-                                    )
-                                    .filter(Boolean)
-                                    .join(block.layout === "vocabulary_table" ? ", " : " ") ||
-                                    "No Spanish text yet"}
-                                </p>
-                                <p className="truncate text-stone-500">
-                                  {block.languageBlocks
-                                    .map((languageBlock) =>
-                                      languageBlock.acceptedAnswers[0]?.trim(),
-                                    )
-                                    .filter(Boolean)
-                                    .join(block.layout === "vocabulary_table" ? ", " : " ") ||
-                                    "No English answer yet"}
-                                </p>
-                              </div>
-                            </div>
-                            {sentenceValidationIssueCount > 0 && (
-                              <span
-                                role="status"
-                                className="hidden shrink-0 rounded-full bg-red-100 px-2.5 py-1 text-xs font-semibold text-red-700 sm:inline-flex"
-                              >
-                                {sentenceValidationIssueCount}{" "}
-                                {sentenceValidationIssueCount === 1
-                                  ? "issue"
-                                  : "issues"}
-                              </span>
-                            )}
-                          </div>
-                          <div className="flex shrink-0 items-center gap-1">
-                            <button
-                              type="button"
-                              draggable
-                              onDragStart={(event) =>
-                                contentDrag.dragStart(event, lesson.id, block.id)
-                              }
-                              onDragEnd={(event) => {
-                                event.stopPropagation();
-                                contentDrag.reset();
-                              }}
-                              aria-label="Drag sentence to reorder"
-                              title="Drag to reorder"
-                              className="flex size-8 cursor-grab items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200 active:cursor-grabbing"
-                            >
-                              <GripVertical className="size-4" aria-hidden="true" />
-                            </button>
-                            <button
-                              type="button"
-                              onClick={() => {
-                                setPreviewLessonId(lesson.id);
-                                setPreviewBlockId(block.id);
-                              }}
-                              disabled={sentenceValidationIssueCount > 0}
-                              aria-label="Preview sentence as learner"
-                              title={
-                                sentenceValidationIssueCount > 0
-                                  ? `Resolve ${sentenceValidationIssueCount} ${sentenceValidationIssueCount === 1 ? "issue" : "issues"} before previewing`
-                                  : "Preview as learner"
-                              }
-                              className="flex size-8 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200 hover:text-blue-700 disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:bg-transparent disabled:hover:text-stone-500"
-                            >
-                              <Eye className="size-4" aria-hidden="true" />
-                            </button>
-                            <button
-                              type="button"
-                              onClick={() =>
-                                duplicateContentBlock(lesson.id, block.id)
-                              }
-                              aria-label="Duplicate sentence"
-                              title="Duplicate sentence"
-                              className="flex size-8 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200"
-                            >
-                              <Copy className="size-4" aria-hidden="true" />
-                            </button>
-                            <button
-                              type="button"
-                              onClick={() =>
-                                toggleContentBlock(lesson.id, block.id)
-                              }
-                              disabled={
-                                !isContentBlockCollapsed &&
-                                sentenceValidationIssueCount > 0
-                              }
-                              aria-label={`${isContentBlockCollapsed ? "Expand" : "Collapse"} sentence`}
-                              title={
-                                !isContentBlockCollapsed &&
-                                sentenceValidationIssueCount > 0
-                                  ? `Resolve ${sentenceValidationIssueCount} ${sentenceValidationIssueCount === 1 ? "issue" : "issues"} before closing`
-                                  : isContentBlockCollapsed
-                                    ? "Expand"
-                                    : "Collapse"
-                              }
-                              className="flex size-8 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200 disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:bg-transparent"
-                            >
-                              {isContentBlockCollapsed ? (
-                                <ChevronDown className="size-4" aria-hidden="true" />
-                              ) : (
-                                <ChevronUp className="size-4" aria-hidden="true" />
-                              )}
-                            </button>
-                            <button
-                              type="button"
-                              onClick={() =>
-                                deleteContentBlock(lesson.id, block.id)
-                              }
-                              aria-label="Delete sentence"
-                              title="Delete sentence"
-                              className="flex size-8 items-center justify-center rounded-md text-stone-400 transition hover:bg-red-50 hover:text-red-600"
-                            >
-                              <Trash2 className="size-4" aria-hidden="true" />
-                            </button>
-                          </div>
-                        </div>
+                        <SentenceBlockHeader
+                          block={block}
+                          isCollapsed={isContentBlockCollapsed}
+                          issueCount={sentenceValidationIssueCount}
+                          onToggleCollapse={() =>
+                            toggleContentBlock(lesson.id, block.id)
+                          }
+                          onDragStart={(event) =>
+                            contentDrag.dragStart(event, lesson.id, block.id)
+                          }
+                          onDragEnd={contentDrag.reset}
+                          onPreview={() => {
+                            setPreviewLessonId(lesson.id);
+                            setPreviewBlockId(block.id);
+                          }}
+                          onDuplicate={() =>
+                            duplicateContentBlock(lesson.id, block.id)
+                          }
+                          onDelete={() =>
+                            deleteContentBlock(lesson.id, block.id)
+                          }
+                        />
                         {!isContentBlockCollapsed && (
                         <div className="flex flex-col p-6">
                             <SentenceMarkdownFields
