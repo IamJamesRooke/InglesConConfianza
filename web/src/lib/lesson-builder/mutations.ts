@@ -3,6 +3,7 @@ import type {
   ExplanationBlock,
   LanguageBlock,
   Lesson,
+  LessonConcept,
   SentenceBlock,
 } from "@/lib/lesson-builder/types";
 import { createId } from "@/lib/lesson-builder/utils";
@@ -91,7 +92,31 @@ function emptyLanguageBlock(id: string): LanguageBlock {
 // --- Lessons ---------------------------------------------------------------
 
 export function createLesson(lessons: Lesson[], lessonId: string): Lesson[] {
-  return [...lessons, { id: lessonId, name: null, blocks: [] }];
+  return [...lessons, { id: lessonId, name: null, concepts: [], blocks: [] }];
+}
+
+export function addLessonConcept(
+  lessons: Lesson[],
+  lessonId: string,
+  concept: LessonConcept,
+): Lesson[] {
+  return mapLesson(lessons, lessonId, (lesson) => ({
+    ...lesson,
+    concepts: [...lesson.concepts, concept],
+  }));
+}
+
+export function removeLessonConcept(
+  lessons: Lesson[],
+  lessonId: string,
+  lessonConceptId: string,
+): Lesson[] {
+  return mapLesson(lessons, lessonId, (lesson) => ({
+    ...lesson,
+    concepts: lesson.concepts.filter(
+      (concept) => concept.id !== lessonConceptId,
+    ),
+  }));
 }
 
 export function renameLesson(

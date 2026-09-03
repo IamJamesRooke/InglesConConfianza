@@ -131,11 +131,22 @@ function isLessonBlock(value: unknown): value is LessonBlock {
   return false;
 }
 
+function isLessonConcept(value: unknown): boolean {
+  return (
+    isRecord(value) &&
+    typeof value.id === "string" &&
+    (value.conceptId === null || typeof value.conceptId === "string") &&
+    typeof value.label === "string"
+  );
+}
+
 export function isLesson(value: unknown): value is Lesson {
   return (
     isRecord(value) &&
     typeof value.id === "string" &&
     isStringOrNull(value.name) &&
+    (value.concepts === undefined ||
+      (Array.isArray(value.concepts) && value.concepts.every(isLessonConcept))) &&
     Array.isArray(value.blocks) &&
     value.blocks.every(isLessonBlock)
   );

@@ -3,6 +3,7 @@ import type {
   ConceptRole,
   ConceptType,
   Lesson,
+  LessonConcept,
   MappingDirection,
   SentenceBlock,
 } from "@/lib/lesson-builder/types";
@@ -66,9 +67,20 @@ export function normalizeConceptLink(
   };
 }
 
+export function normalizeLessonConcept(
+  concept: Partial<LessonConcept>,
+): LessonConcept {
+  return {
+    id: concept.id ?? createId("lesson_concept"),
+    conceptId: concept.conceptId ?? null,
+    label: concept.label ?? "",
+  };
+}
+
 export function normalizeLessons(lessons: Lesson[]) {
   return lessons.map((lesson) => ({
     ...lesson,
+    concepts: (lesson.concepts ?? []).map(normalizeLessonConcept),
     blocks: lesson.blocks.map((block) => {
       if (block.type === "explanation") {
         return block;

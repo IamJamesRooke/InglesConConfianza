@@ -23,8 +23,8 @@ function sentenceBlock(overrides: Partial<SentenceBlock> = {}): SentenceBlock {
 
 function baseLessons(): Lesson[] {
   return [
-    { id: "lesson_a", name: "A", blocks: [sentenceBlock()] },
-    { id: "lesson_b", name: null, blocks: [] },
+    { id: "lesson_a", name: "A", concepts: [], blocks: [sentenceBlock()] },
+    { id: "lesson_b", name: null, concepts: [], blocks: [] },
   ];
 }
 
@@ -59,6 +59,7 @@ test("moveLesson reorders with before/after and adjusts for removal", () => {
   const lessons: Lesson[] = ["a", "b", "c"].map((id) => ({
     id,
     name: null,
+    concepts: [],
     blocks: [],
   }));
   assert.deepEqual(
@@ -92,6 +93,7 @@ test("duplicateContentBlock deep-copies with fresh ids", () => {
     {
       id: "lesson_a",
       name: null,
+      concepts: [],
       blocks: [
         sentenceBlock({
           conceptLinks: [
@@ -134,6 +136,7 @@ test("moveLanguageBlock reorders within its sentence block", () => {
     {
       id: "lesson_a",
       name: null,
+      concepts: [],
       blocks: [
         sentenceBlock({
           languageBlocks: ["l1", "l2", "l3"].map((id) => ({
@@ -173,4 +176,31 @@ test("reducer SET_LESSONS replaces wholesale", () => {
     lessonsReducer(baseLessons(), { type: "SET_LESSONS", lessons: [] }),
     [],
   );
+});
+
+test("lesson concepts add / remove", () => {
+  let lessons = m.addLessonConcept(baseLessons(), "lesson_a", {
+    id: "lc1",
+    conceptId: "concept_x",
+    label: "querer",
+  });
+  lessons = m.addLessonConcept(lessons, "lesson_a", {
+    id: "lc2",
+    conceptId: null,
+    label: "freehand",
+  });
+  assert.deepEqual(
+    lessons[0].concepts.map((c) => c.label),
+    ["querer", "freehand"],
+  );
+  lessons = m.removeLessonConcept(lessons, "lesson_a", "lc1");
+  assert.deepEqual(
+    lessons[0].concepts.map((c) => c.id),
+    ["lc2"],
+  );
+});
+
+test("createLesson seeds an empty concepts array", () => {
+  const lessons = m.createLesson(baseLessons(), "lesson_c");
+  assert.deepEqual(lessons[2].concepts, []);
 });

@@ -6,7 +6,18 @@ export type DropTarget = {
 export type Lesson = {
   id: string;
   name: string | null;
+  concepts: LessonConcept[];
   blocks: LessonBlock[];
+};
+
+// A curriculum concept this whole lesson teaches, added from the quick field
+// under the lesson title. `conceptId` points at a curriculum_concepts row when
+// the entry was picked from search; it is null for a free-typed entry that has
+// no catalog match yet.
+export type LessonConcept = {
+  id: string;
+  conceptId: string | null;
+  label: string;
 };
 
 export type ExplanationBlock = {

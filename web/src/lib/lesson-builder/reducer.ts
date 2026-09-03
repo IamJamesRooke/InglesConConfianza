@@ -1,4 +1,9 @@
-import type { ConceptLink, Lesson, SentenceBlock } from "@/lib/lesson-builder/types";
+import type {
+  ConceptLink,
+  Lesson,
+  LessonConcept,
+  SentenceBlock,
+} from "@/lib/lesson-builder/types";
 import * as mutations from "@/lib/lesson-builder/mutations";
 
 // The lesson builder's document state is `Lesson[]`. Every editing action is a
@@ -19,6 +24,16 @@ export type LessonsAction =
   | { type: "SET_LESSON_ORDER"; lessonIds: string[] }
   | { type: "CREATE_LESSON"; lessonId: string }
   | { type: "RENAME_LESSON"; lessonId: string; name: string }
+  | {
+      type: "ADD_LESSON_CONCEPT";
+      lessonId: string;
+      concept: LessonConcept;
+    }
+  | {
+      type: "REMOVE_LESSON_CONCEPT";
+      lessonId: string;
+      lessonConceptId: string;
+    }
   | { type: "DELETE_LESSON"; lessonId: string }
   | {
       type: "MOVE_LESSON";
@@ -142,6 +157,18 @@ export function lessonsReducer(
       return mutations.createLesson(lessons, action.lessonId);
     case "RENAME_LESSON":
       return mutations.renameLesson(lessons, action.lessonId, action.name);
+    case "ADD_LESSON_CONCEPT":
+      return mutations.addLessonConcept(
+        lessons,
+        action.lessonId,
+        action.concept,
+      );
+    case "REMOVE_LESSON_CONCEPT":
+      return mutations.removeLessonConcept(
+        lessons,
+        action.lessonId,
+        action.lessonConceptId,
+      );
     case "DELETE_LESSON":
       return mutations.deleteLesson(lessons, action.lessonId);
     case "MOVE_LESSON":

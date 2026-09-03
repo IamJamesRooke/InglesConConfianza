@@ -33,6 +33,7 @@ import {
 import { OverviewMarkdown } from "@/components/lesson-builder/overview-markdown";
 import { LanguageBlockEditor } from "@/components/lesson-builder/language-block-editor";
 import { LessonCardHeader } from "@/components/lesson-builder/lesson-card-header";
+import { LessonConceptsField } from "@/components/lesson-builder/lesson-concepts-field";
 import { PendingLessonExitDialog } from "@/components/lesson-builder/pending-lesson-exit-dialog";
 import { SentenceConceptLinks } from "@/components/lesson-builder/sentence-concept-links";
 import type {
@@ -1850,6 +1851,26 @@ export default function LessonBuilderPage() {
                 }}
                 onDragEnd={finishDragging}
               />
+
+              {!isLessonFullyCollapsed && (
+                <LessonConceptsField
+                  concepts={lesson.concepts}
+                  onAdd={(concept) =>
+                    dispatch({
+                      type: "ADD_LESSON_CONCEPT",
+                      lessonId: lesson.id,
+                      concept,
+                    })
+                  }
+                  onRemove={(lessonConceptId) =>
+                    dispatch({
+                      type: "REMOVE_LESSON_CONCEPT",
+                      lessonId: lesson.id,
+                      lessonConceptId,
+                    })
+                  }
+                />
+              )}
 
               {isLessonCollapsed && !isLessonFullyCollapsed && (
                 <div className="space-y-3 border-t border-border bg-[var(--surface)] px-6 py-3">
