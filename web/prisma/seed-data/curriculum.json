@@ -21030,7 +21030,6 @@
         "english": "The book is on the table."
       },
       "collections": [
-        "es:él",
         "grammar:article",
         "grammar:definite-article",
         "grammar:masculine",
@@ -21040,7 +21039,8 @@
         "topic:determiner",
         "pos:function-word",
         "contrast:el-articulo-vs-el-pronombre",
-        "contrast:confusable"
+        "contrast:confusable",
+        "es:el"
       ],
       "curriculumRole": "core"
     },
@@ -22265,7 +22265,6 @@
         "english": "I haven't finished yet."
       },
       "collections": [
-        "es:aun",
         "es:aún",
         "en:yet"
       ],
@@ -22716,7 +22715,6 @@
         "english": "How do you do it?"
       },
       "collections": [
-        "es:como",
         "grammar:question",
         "grammar:manner",
         "es:cómo",
@@ -22733,7 +22731,6 @@
         "english": "How did you get here?"
       },
       "collections": [
-        "es:como",
         "es:cómo",
         "en:how",
         "pos:adverb",
@@ -22887,7 +22884,6 @@
         "english": "When does the meeting start?"
       },
       "collections": [
-        "es:cuando",
         "grammar:question",
         "topic:time",
         "es:cuándo",
@@ -22904,7 +22900,6 @@
         "english": "When does the class start?"
       },
       "collections": [
-        "es:cuando",
         "es:cuándo",
         "en:when",
         "pos:adverb",
@@ -23445,7 +23440,6 @@
         "english": "Where is the office?"
       },
       "collections": [
-        "es:donde",
         "grammar:question",
         "topic:location",
         "es:dónde",
@@ -23462,7 +23456,6 @@
         "english": "Where is the bathroom?"
       },
       "collections": [
-        "es:donde",
         "es:dónde",
         "en:where",
         "pos:adverb",
@@ -24868,12 +24861,12 @@
         "english": "What do you want to eat?"
       },
       "collections": [
-        "es:que",
         "grammar:interrogative-pronoun",
         "en:what",
         "pos:pronoun",
         "topic:pronoun",
-        "topic:interrogative"
+        "topic:interrogative",
+        "es:qué"
       ],
       "curriculumRole": "core"
     },
@@ -24986,11 +24979,11 @@
       },
       "collections": [
         "es:que",
-        "es:cuál",
         "en:which",
         "pos:pronoun",
         "grammar:relative-pronoun",
-        "topic:pronoun"
+        "topic:pronoun",
+        "es:cual"
       ],
       "curriculumRole": "reference"
     },
@@ -25003,11 +24996,11 @@
         "english": "What a surprise!"
       },
       "collections": [
-        "es:que",
         "grammar:exclamative",
         "en:what",
         "pos:pronoun",
-        "topic:pronoun"
+        "topic:pronoun",
+        "es:qué"
       ],
       "curriculumRole": "reference"
     },
@@ -25020,11 +25013,11 @@
         "english": "How fast you run!"
       },
       "collections": [
-        "es:que",
         "grammar:exclamative",
         "en:how",
         "pos:pronoun",
-        "topic:pronoun"
+        "topic:pronoun",
+        "es:qué"
       ],
       "curriculumRole": "reference"
     },
@@ -25106,7 +25099,6 @@
         "english": "What a good idea!"
       },
       "collections": [
-        "es:que",
         "grammar:exclamative",
         "es:qué",
         "en:what"
@@ -25122,7 +25114,6 @@
         "english": "How interesting!"
       },
       "collections": [
-        "es:que",
         "grammar:exclamative",
         "es:qué",
         "en:how"
@@ -25178,10 +25169,10 @@
         "english": "At what time does it start?"
       },
       "collections": [
-        "es:que",
         "grammar:question",
         "topic:time",
-        "en:what"
+        "en:what",
+        "es:qué"
       ],
       "curriculumRole": "reference"
     },
@@ -25208,7 +25199,6 @@
         "english": "Who called?"
       },
       "collections": [
-        "es:quien",
         "es:quién",
         "en:who",
         "pos:pronoun",
@@ -25368,7 +25358,6 @@
         "english": "yes"
       },
       "collections": [
-        "es:si",
         "es:sí",
         "en:yes"
       ],
