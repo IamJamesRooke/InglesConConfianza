@@ -48,7 +48,26 @@ export type LanguageBlock = {
 
 export type LessonBlock = ExplanationBlock | SentenceBlock;
 
+// A module groups lessons into one learner-facing unit with a single promise
+// and the confidence sentence that proves it. Modules and lessons both live in
+// data/lessons.json (nothing about lessons is in Postgres).
+export type LessonModule = {
+  id: string;
+  name: string | null;
+  promise: string;
+  finalSentence: { spanish: string; english: string };
+  lessonIds: string[];
+};
+
 export type LessonFile = {
+  version: 2;
+  modules: LessonModule[];
+  // Invariant: ordered to match modules.flatMap((m) => m.lessonIds), same id set.
+  lessons: Lesson[];
+};
+
+// The pre-modules file shape, still read from disk until the first v2 write.
+export type LessonFileV1 = {
   version: 1;
   lessons: Lesson[];
 };

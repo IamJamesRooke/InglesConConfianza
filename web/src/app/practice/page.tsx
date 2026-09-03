@@ -1,23 +1,17 @@
-import { readFile } from "node:fs/promises";
-import path from "node:path";
-
 import {
   LessonSelector,
   type PracticeLesson,
 } from "@/components/practice/lesson-selector";
-import type { Lesson, LessonFile } from "@/lib/lesson-builder/types";
+import type { Lesson } from "@/lib/lesson-builder/types";
 import { normalizeLessonMarkdown } from "@/lib/lesson-builder/markdown";
+import { readLessonFile } from "@/lib/lesson-builder/server/lesson-store";
 
 export const dynamic = "force-dynamic";
 
 async function getLessons() {
   try {
-    const file = await readFile(
-      path.join(process.cwd(), "data", "lessons.json"),
-      "utf8",
-    );
-    const lessonFile = JSON.parse(file) as LessonFile;
-    return lessonFile.lessons;
+    // `lessons` is kept ordered to match the module structure.
+    return (await readLessonFile()).lessons;
   } catch {
     return [];
   }

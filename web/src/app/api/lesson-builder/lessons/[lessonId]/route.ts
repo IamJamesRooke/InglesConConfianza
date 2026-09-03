@@ -1,12 +1,10 @@
 import { NextResponse } from "next/server";
 
-import {
-  isLesson,
-  mutateLessonFile,
-} from "@/lib/lesson-builder/server/lesson-store";
+import { isLesson, mutateLessonFile } from "@/lib/lesson-builder/server/lesson-store";
 
 type SaveLessonBody = {
   lesson: unknown;
+  moduleId?: unknown;
   insertionIndex?: unknown;
 };
 
@@ -34,10 +32,11 @@ export async function PUT(
     );
   }
 
-  const { lesson, insertionIndex } = body as SaveLessonBody;
+  const { lesson, moduleId, insertionIndex } = body as SaveLessonBody;
   if (
     !isLesson(lesson) ||
     lesson.id !== lessonId ||
+    (moduleId !== undefined && typeof moduleId !== "string") ||
     (insertionIndex !== undefined &&
       (!Number.isInteger(insertionIndex) || Number(insertionIndex) < 0))
   ) {
@@ -49,22 +48,44 @@ export async function PUT(
 
   try {
     const lessonFile = await mutateLessonFile((currentLessonFile) => {
-      const currentIndex = currentLessonFile.lessons.findIndex(
+      const existingIndex = currentLessonFile.lessons.findIndex(
         (candidate) => candidate.id === lessonId,
       );
-      const lessons = [...currentLessonFile.lessons];
 
-      if (currentIndex >= 0) {
-        lessons[currentIndex] = lesson;
-      } else {
-        const nextIndex = Math.min(
-          typeof insertionIndex === "number" ? insertionIndex : lessons.length,
-          lessons.length,
-        );
-        lessons.splice(nextIndex, 0, lesson);
+      // Existing lesson: replace its body, module membership is untouched.
+      if (existingIndex >= 0) {
+        const lessons = [...currentLessonFile.lessons];
+        lessons[existingIndex] = lesson;
+        return { ...currentLessonFile, lessons };
       }
 
-      return { ...currentLessonFile, lessons };
+      // New lesson: add to the pool and into a module's lessonIds. reconcile
+      // then fixes the `lessons` order.
+      const targetModuleId =
+        typeof moduleId === "string" &&
+        currentLessonFile.modules.some((module) => module.id === moduleId)
+          ? moduleId
+          : currentLessonFile.modules[currentLessonFile.modules.length - 1]?.id;
+
+      const modules = currentLessonFile.modules.map((module) => {
+        if (module.id !== targetModuleId) return module;
+        const at = Math.min(
+          typeof insertionIndex === "number"
+            ? insertionIndex
+            : module.lessonIds.length,
+          module.lessonIds.length,
+        );
+        return {
+          ...module,
+          lessonIds: module.lessonIds.toSpliced(at, 0, lessonId),
+        };
+      });
+
+      return {
+        ...currentLessonFile,
+        modules,
+        lessons: [...currentLessonFile.lessons, lesson],
+      };
     });
 
     return NextResponse.json(lessonFile);
@@ -85,6 +106,10 @@ export async function DELETE(
   try {
     const lessonFile = await mutateLessonFile((currentLessonFile) => ({
       ...currentLessonFile,
+      modules: currentLessonFile.modules.map((module) => ({
+        ...module,
+        lessonIds: module.lessonIds.filter((id) => id !== lessonId),
+      })),
       lessons: currentLessonFile.lessons.filter(
         (lesson) => lesson.id !== lessonId,
       ),

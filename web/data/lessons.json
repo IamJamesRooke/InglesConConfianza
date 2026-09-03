@@ -1,5 +1,20 @@
 {
-  "version": 1,
+  "version": 2,
+  "modules": [
+    {
+      "id": "module_e4d56384-dde5-46ba-a5cf-21509fd17d3f",
+      "name": "Module 1",
+      "promise": "",
+      "finalSentence": {
+        "spanish": "",
+        "english": ""
+      },
+      "lessonIds": [
+        "lesson_d7ed75c7-6479-4a84-9c6a-45bfca8ec652",
+        "lesson_bdacade3-8ad6-4217-8c47-d5907d6122af"
+      ]
+    }
+  ],
   "lessons": [
     {
       "id": "lesson_d7ed75c7-6479-4a84-9c6a-45bfca8ec652",

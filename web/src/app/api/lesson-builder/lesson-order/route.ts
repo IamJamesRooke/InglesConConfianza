@@ -6,6 +6,9 @@ function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
+// Reorder lessons by a flat permutation of every lesson id. Module membership is
+// preserved: each module keeps its own lessons, re-sequenced to match the
+// requested order. (Cross-module moves are done via PUT /course.)
 export async function PATCH(request: Request) {
   let body: unknown;
 
@@ -39,14 +42,15 @@ export async function PATCH(request: Request) {
         throw new Error("Lesson order does not match the saved lessons.");
       }
 
-      const lessonById = new Map(
-        currentLessonFile.lessons.map((lesson) => [lesson.id, lesson]),
-      );
+      const rank = new Map(requestedIds.map((id, index) => [id, index]));
+      const modules = currentLessonFile.modules.map((module) => ({
+        ...module,
+        lessonIds: [...module.lessonIds].sort(
+          (a, b) => (rank.get(a) ?? 0) - (rank.get(b) ?? 0),
+        ),
+      }));
 
-      return {
-        ...currentLessonFile,
-        lessons: requestedIds.map((lessonId) => lessonById.get(lessonId)!),
-      };
+      return { ...currentLessonFile, modules };
     });
 
     return NextResponse.json(lessonFile);
