@@ -20,6 +20,7 @@ import {
   Fragment,
   useCallback,
   useEffect,
+  useReducer,
   useRef,
   useState,
   type DragEvent,
@@ -52,6 +53,8 @@ import {
   mappingDirectionOptions,
   normalizeLessons,
 } from "@/lib/lesson-builder/utils";
+import { moveLesson as reorderLessons } from "@/lib/lesson-builder/mutations";
+import { lessonsReducer } from "@/lib/lesson-builder/reducer";
 
 function isPracticeBlock(
   block: LessonBlock,
@@ -239,7 +242,7 @@ function SentenceMarkdownFieldEditor({
 }
 
 export default function LessonBuilderPage() {
-  const [lessons, setLessons] = useState<Lesson[]>([]);
+  const [lessons, dispatch] = useReducer(lessonsReducer, []);
   const [savedLessonsSnapshot, setSavedLessonsSnapshot] = useState<Lesson[]>(
     [],
   );
@@ -326,7 +329,7 @@ export default function LessonBuilderPage() {
 
         if (isMounted) {
           savedLessonsJsonRef.current = lessonsJson;
-          setLessons(lessons);
+          dispatch({ type: "SET_LESSONS", lessons });
           setSavedLessonsSnapshot(lessons);
           setCollapsedLessons(new Set(lessons.map((lesson) => lesson.id)));
           setFullyCollapsedLessons(new Set());
@@ -495,18 +498,18 @@ export default function LessonBuilderPage() {
       (candidate) => candidate.id === pendingLessonExitId,
     );
 
-    setLessons((currentLessons) =>
-      savedLesson
-        ? currentLessons.map((lesson) =>
+    dispatch({
+      type: "SET_LESSONS",
+      lessons: savedLesson
+        ? lessons.map((lesson) =>
             lesson.id === pendingLessonExitId ? savedLesson : lesson,
           )
-        : currentLessons.filter(
-            (lesson) => lesson.id !== pendingLessonExitId,
-          ),
-    );
+        : lessons.filter((lesson) => lesson.id !== pendingLessonExitId),
+    });
     continuePendingLessonExit();
   }, [
     continuePendingLessonExit,
+    lessons,
     pendingLessonExitId,
     savedLessonsSnapshot,
   ]);
@@ -709,10 +712,7 @@ export default function LessonBuilderPage() {
   const createLessonNow = useCallback(() => {
     const lessonId = createId("lesson");
 
-    setLessons((currentLessons) => [
-      ...currentLessons,
-      { id: lessonId, name: null, blocks: [] },
-    ]);
+    dispatch({ type: "CREATE_LESSON", lessonId });
     setCollapsedLessons(new Set(lessons.map((lesson) => lesson.id)));
     setFullyCollapsedLessons((currentLessonIds) => {
       const nextLessonIds = new Set(currentLessonIds);
@@ -746,22 +746,12 @@ export default function LessonBuilderPage() {
     (lessonId: string, insertionIndex: number) => {
       const blockId = createId("block");
 
-      setLessons((currentLessons) =>
-        currentLessons.map((lesson) => {
-          if (lesson.id !== lessonId) {
-            return lesson;
-          }
-
-          return {
-            ...lesson,
-            blocks: lesson.blocks.toSpliced(insertionIndex, 0, {
-              id: blockId,
-              type: "explanation",
-              contentMarkdown: "",
-            }),
-          };
-        }),
-      );
+      dispatch({
+        type: "ADD_EXPLANATION_BLOCK",
+        lessonId,
+        insertionIndex,
+        blockId,
+      });
       setCollapsedContentBlocks(
         new Set(
           lessons.flatMap((lesson) =>
@@ -779,35 +769,13 @@ export default function LessonBuilderPage() {
       const blockId = createId("block");
       const languageBlockId = createId("lang");
 
-      setLessons((currentLessons) =>
-        currentLessons.map((lesson) => {
-          if (lesson.id !== lessonId) {
-            return lesson;
-          }
-
-          return {
-            ...lesson,
-            blocks: lesson.blocks.toSpliced(insertionIndex, 0, {
-              id: blockId,
-              type: "sentence",
-              promptLabel: "",
-              promptText: "",
-              helperText: "",
-              answerFeedback: null,
-              conceptLinks: [],
-              languageBlocks: [
-                {
-                  id: languageBlockId,
-                  spanish: "",
-                  callout: null,
-                  acceptedAnswers: [""],
-                  conceptLinks: [],
-                },
-              ],
-            }),
-          };
-        }),
-      );
+      dispatch({
+        type: "ADD_SENTENCE_BLOCK",
+        lessonId,
+        insertionIndex,
+        blockId,
+        languageBlockId,
+      });
       setCollapsedContentBlocks(
         new Set(
           lessons.flatMap((lesson) =>
@@ -831,36 +799,14 @@ export default function LessonBuilderPage() {
       const blockId = createId("block");
       const languageBlockId = createId("lang");
 
-      setLessons((currentLessons) =>
-        currentLessons.map((lesson) => {
-          if (lesson.id !== lessonId) {
-            return lesson;
-          }
-
-          return {
-            ...lesson,
-            blocks: lesson.blocks.toSpliced(insertionIndex, 0, {
-              id: blockId,
-              type: "sentence",
-              layout: "vocabulary_table",
-              promptLabel: "",
-              promptText: "",
-              helperText: "",
-              answerFeedback: null,
-              conceptLinks: [],
-              languageBlocks: [
-                {
-                  id: languageBlockId,
-                  spanish: "",
-                  callout: null,
-                  acceptedAnswers: [""],
-                  conceptLinks: [],
-                },
-              ],
-            }),
-          };
-        }),
-      );
+      dispatch({
+        type: "ADD_SENTENCE_BLOCK",
+        lessonId,
+        insertionIndex,
+        blockId,
+        languageBlockId,
+        layout: "vocabulary_table",
+      });
       setCollapsedContentBlocks(
         new Set(
           lessons.flatMap((lesson) =>
@@ -1109,13 +1055,7 @@ export default function LessonBuilderPage() {
   ]);
 
   function renameLesson(lessonId: string, name: string) {
-    setLessons((currentLessons) =>
-      currentLessons.map((lesson) =>
-        lesson.id === lessonId
-          ? { ...lesson, name: name.trimStart() || null }
-          : lesson,
-      ),
-    );
+    dispatch({ type: "RENAME_LESSON", lessonId, name });
   }
 
   async function deleteLesson(lessonId: string) {
@@ -1155,9 +1095,7 @@ export default function LessonBuilderPage() {
       return;
     }
 
-    setLessons((currentLessons) =>
-      currentLessons.filter((lesson) => lesson.id !== lessonId),
-    );
+    dispatch({ type: "DELETE_LESSON", lessonId });
     setOpenBlockPicker((currentPicker) =>
       currentPicker?.lessonId === lessonId ? null : currentPicker,
     );
@@ -1212,65 +1150,11 @@ export default function LessonBuilderPage() {
   }
 
   function deleteContentBlock(lessonId: string, blockId: string) {
-    setLessons((currentLessons) =>
-      currentLessons.map((lesson) =>
-        lesson.id === lessonId
-          ? {
-              ...lesson,
-              blocks: lesson.blocks.filter((block) => block.id !== blockId),
-            }
-          : lesson,
-      ),
-    );
+    dispatch({ type: "DELETE_CONTENT_BLOCK", lessonId, blockId });
   }
 
   function duplicateContentBlock(lessonId: string, blockId: string) {
-    const duplicateBlockId = createId("block");
-
-    setLessons((currentLessons) =>
-      currentLessons.map((lesson) => {
-        if (lesson.id !== lessonId) {
-          return lesson;
-        }
-
-        const sourceIndex = lesson.blocks.findIndex(
-          (block) => block.id === blockId,
-        );
-
-        if (sourceIndex === -1) {
-          return lesson;
-        }
-
-        const sourceBlock = lesson.blocks[sourceIndex];
-        const duplicatedBlock =
-          sourceBlock.type === "explanation"
-            ? { ...sourceBlock, id: duplicateBlockId }
-            : {
-                ...sourceBlock,
-                id: duplicateBlockId,
-                conceptLinks: sourceBlock.conceptLinks.map((conceptLink) => ({
-                  ...conceptLink,
-                  id: createId("concept_link"),
-                })),
-                languageBlocks: sourceBlock.languageBlocks.map(
-                  (languageBlock) => ({
-                    ...languageBlock,
-                    id: createId("lang"),
-                    acceptedAnswers: [...languageBlock.acceptedAnswers],
-                    conceptLinks: languageBlock.conceptLinks.map(
-                      (conceptLink) => ({
-                        ...conceptLink,
-                        id: createId("concept_link"),
-                      }),
-                    ),
-                  }),
-                ),
-              };
-        const blocks = [...lesson.blocks];
-        blocks.splice(sourceIndex + 1, 0, duplicatedBlock);
-        return { ...lesson, blocks };
-      }),
-    );
+    dispatch({ type: "DUPLICATE_CONTENT_BLOCK", lessonId, blockId });
     setCollapsedContentBlocks(
       new Set(
         lessons.flatMap((lesson) =>
@@ -1285,20 +1169,12 @@ export default function LessonBuilderPage() {
     sentenceBlockId: string,
     promptText: string,
   ) {
-    setLessons((currentLessons) =>
-      currentLessons.map((lesson) =>
-        lesson.id === lessonId
-          ? {
-              ...lesson,
-              blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && isPracticeBlock(block)
-                  ? { ...block, promptText }
-                  : block,
-              ),
-            }
-          : lesson,
-      ),
-    );
+    dispatch({
+      type: "UPDATE_SENTENCE_BLOCK",
+      lessonId,
+      sentenceBlockId,
+      patch: { promptText },
+    });
   }
 
   function updateSentencePromptLabel(
@@ -1306,20 +1182,12 @@ export default function LessonBuilderPage() {
     sentenceBlockId: string,
     promptLabel: string,
   ) {
-    setLessons((currentLessons) =>
-      currentLessons.map((lesson) =>
-        lesson.id === lessonId
-          ? {
-              ...lesson,
-              blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && isPracticeBlock(block)
-                  ? { ...block, promptLabel }
-                  : block,
-              ),
-            }
-          : lesson,
-      ),
-    );
+    dispatch({
+      type: "UPDATE_SENTENCE_BLOCK",
+      lessonId,
+      sentenceBlockId,
+      patch: { promptLabel },
+    });
   }
 
   function updateSentenceHelperText(
@@ -1327,20 +1195,12 @@ export default function LessonBuilderPage() {
     sentenceBlockId: string,
     helperText: string,
   ) {
-    setLessons((currentLessons) =>
-      currentLessons.map((lesson) =>
-        lesson.id === lessonId
-          ? {
-              ...lesson,
-              blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && isPracticeBlock(block)
-                  ? { ...block, helperText }
-                  : block,
-              ),
-            }
-          : lesson,
-      ),
-    );
+    dispatch({
+      type: "UPDATE_SENTENCE_BLOCK",
+      lessonId,
+      sentenceBlockId,
+      patch: { helperText },
+    });
   }
 
   function updateSentenceAnswerFeedback(
@@ -1348,43 +1208,21 @@ export default function LessonBuilderPage() {
     sentenceBlockId: string,
     answerFeedback: string | null,
   ) {
-    setLessons((currentLessons) =>
-      currentLessons.map((lesson) =>
-        lesson.id === lessonId
-          ? {
-              ...lesson,
-              blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && isPracticeBlock(block)
-                  ? { ...block, answerFeedback }
-                  : block,
-              ),
-            }
-          : lesson,
-      ),
-    );
+    dispatch({
+      type: "UPDATE_SENTENCE_BLOCK",
+      lessonId,
+      sentenceBlockId,
+      patch: { answerFeedback },
+    });
   }
 
   function addSentenceConceptLink(lessonId: string, sentenceBlockId: string) {
-    setLessons((currentLessons) =>
-      currentLessons.map((lesson) =>
-        lesson.id === lessonId
-          ? {
-              ...lesson,
-              blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && isPracticeBlock(block)
-                  ? {
-                      ...block,
-                      conceptLinks: [
-                        ...block.conceptLinks,
-                        createConceptLink(),
-                      ],
-                    }
-                  : block,
-              ),
-            }
-          : lesson,
-      ),
-    );
+    dispatch({
+      type: "ADD_SENTENCE_CONCEPT_LINK",
+      lessonId,
+      sentenceBlockId,
+      conceptLink: createConceptLink(),
+    });
   }
 
   function updateSentenceConceptLink(
@@ -1393,27 +1231,13 @@ export default function LessonBuilderPage() {
     conceptLinkId: string,
     updates: Partial<Omit<ConceptLink, "id">>,
   ) {
-    setLessons((currentLessons) =>
-      currentLessons.map((lesson) =>
-        lesson.id === lessonId
-          ? {
-              ...lesson,
-              blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && isPracticeBlock(block)
-                  ? {
-                      ...block,
-                      conceptLinks: block.conceptLinks.map((conceptLink) =>
-                        conceptLink.id === conceptLinkId
-                          ? { ...conceptLink, ...updates }
-                          : conceptLink,
-                      ),
-                    }
-                  : block,
-              ),
-            }
-          : lesson,
-      ),
-    );
+    dispatch({
+      type: "UPDATE_SENTENCE_CONCEPT_LINK",
+      lessonId,
+      sentenceBlockId,
+      conceptLinkId,
+      updates,
+    });
   }
 
   function removeSentenceConceptLink(
@@ -1421,25 +1245,12 @@ export default function LessonBuilderPage() {
     sentenceBlockId: string,
     conceptLinkId: string,
   ) {
-    setLessons((currentLessons) =>
-      currentLessons.map((lesson) =>
-        lesson.id === lessonId
-          ? {
-              ...lesson,
-              blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && isPracticeBlock(block)
-                  ? {
-                      ...block,
-                      conceptLinks: block.conceptLinks.filter(
-                        (conceptLink) => conceptLink.id !== conceptLinkId,
-                      ),
-                    }
-                  : block,
-              ),
-            }
-          : lesson,
-      ),
-    );
+    dispatch({
+      type: "REMOVE_SENTENCE_CONCEPT_LINK",
+      lessonId,
+      sentenceBlockId,
+      conceptLinkId,
+    });
   }
 
   function updateLanguageBlockCallout(
@@ -1448,28 +1259,13 @@ export default function LessonBuilderPage() {
     languageBlockId: string,
     callout: string | null,
   ) {
-    setLessons((currentLessons) =>
-      currentLessons.map((lesson) =>
-        lesson.id === lessonId
-          ? {
-              ...lesson,
-              blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && isPracticeBlock(block)
-                  ? {
-                      ...block,
-                      languageBlocks: block.languageBlocks.map(
-                        (languageBlock) =>
-                          languageBlock.id === languageBlockId
-                            ? { ...languageBlock, callout }
-                            : languageBlock,
-                      ),
-                    }
-                  : block,
-              ),
-            }
-          : lesson,
-      ),
-    );
+    dispatch({
+      type: "UPDATE_LANGUAGE_BLOCK",
+      lessonId,
+      sentenceBlockId,
+      languageBlockId,
+      patch: { callout },
+    });
   }
 
   function addLanguageBlockCallout(
@@ -1495,20 +1291,12 @@ export default function LessonBuilderPage() {
     blockId: string,
     contentMarkdown: string,
   ) {
-    setLessons((currentLessons) =>
-      currentLessons.map((lesson) =>
-        lesson.id === lessonId
-          ? {
-              ...lesson,
-              blocks: lesson.blocks.map((block) =>
-                block.id === blockId && block.type === "explanation"
-                  ? { ...block, contentMarkdown }
-                  : block,
-              ),
-            }
-          : lesson,
-      ),
-    );
+    dispatch({
+      type: "UPDATE_EXPLANATION_BLOCK",
+      lessonId,
+      blockId,
+      contentMarkdown,
+    });
   }
 
   function updateSpanishPrompt(
@@ -1517,28 +1305,13 @@ export default function LessonBuilderPage() {
     languageBlockId: string,
     value: string,
   ) {
-    setLessons((currentLessons) =>
-      currentLessons.map((lesson) =>
-        lesson.id === lessonId
-          ? {
-              ...lesson,
-              blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && isPracticeBlock(block)
-                  ? {
-                      ...block,
-                      languageBlocks: block.languageBlocks.map(
-                        (languageBlock) =>
-                          languageBlock.id === languageBlockId
-                            ? { ...languageBlock, spanish: value }
-                            : languageBlock,
-                      ),
-                    }
-                  : block,
-              ),
-            }
-          : lesson,
-      ),
-    );
+    dispatch({
+      type: "UPDATE_LANGUAGE_BLOCK",
+      lessonId,
+      sentenceBlockId,
+      languageBlockId,
+      patch: { spanish: value },
+    });
   }
 
   function updateAcceptedAnswer(
@@ -1548,37 +1321,14 @@ export default function LessonBuilderPage() {
     answerIndex: number,
     value: string,
   ) {
-    setLessons((currentLessons) =>
-      currentLessons.map((lesson) =>
-        lesson.id === lessonId
-          ? {
-              ...lesson,
-              blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && isPracticeBlock(block)
-                  ? {
-                      ...block,
-                      languageBlocks: block.languageBlocks.map(
-                        (languageBlock) =>
-                          languageBlock.id === languageBlockId
-                            ? {
-                                ...languageBlock,
-                                acceptedAnswers:
-                                  languageBlock.acceptedAnswers.map(
-                                    (answer, currentAnswerIndex) =>
-                                      currentAnswerIndex === answerIndex
-                                        ? value
-                                        : answer,
-                                  ),
-                              }
-                            : languageBlock,
-                      ),
-                    }
-                  : block,
-              ),
-            }
-          : lesson,
-      ),
-    );
+    dispatch({
+      type: "UPDATE_ACCEPTED_ANSWER",
+      lessonId,
+      sentenceBlockId,
+      languageBlockId,
+      answerIndex,
+      value,
+    });
   }
 
   function addAcceptedAnswer(
@@ -1587,34 +1337,12 @@ export default function LessonBuilderPage() {
     languageBlockId: string,
     answerIndex: number,
   ) {
-    setLessons((currentLessons) =>
-      currentLessons.map((lesson) =>
-        lesson.id === lessonId
-          ? {
-              ...lesson,
-              blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && isPracticeBlock(block)
-                  ? {
-                      ...block,
-                      languageBlocks: block.languageBlocks.map(
-                        (languageBlock) =>
-                          languageBlock.id === languageBlockId
-                            ? {
-                                ...languageBlock,
-                                acceptedAnswers: [
-                                  ...languageBlock.acceptedAnswers,
-                                  "",
-                                ],
-                              }
-                            : languageBlock,
-                      ),
-                    }
-                  : block,
-              ),
-            }
-          : lesson,
-      ),
-    );
+    dispatch({
+      type: "ADD_ACCEPTED_ANSWER",
+      lessonId,
+      sentenceBlockId,
+      languageBlockId,
+    });
 
     window.setTimeout(() => {
       acceptedAnswerRefs.current
@@ -1631,35 +1359,13 @@ export default function LessonBuilderPage() {
     languageBlockId: string,
     answerIndex: number,
   ) {
-    setLessons((currentLessons) =>
-      currentLessons.map((lesson) =>
-        lesson.id === lessonId
-          ? {
-              ...lesson,
-              blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && isPracticeBlock(block)
-                  ? {
-                      ...block,
-                      languageBlocks: block.languageBlocks.map(
-                        (languageBlock) =>
-                          languageBlock.id === languageBlockId
-                            ? {
-                                ...languageBlock,
-                                acceptedAnswers:
-                                  languageBlock.acceptedAnswers.filter(
-                                    (_, currentAnswerIndex) =>
-                                      currentAnswerIndex !== answerIndex,
-                                  ),
-                              }
-                            : languageBlock,
-                      ),
-                    }
-                  : block,
-              ),
-            }
-          : lesson,
-      ),
-    );
+    dispatch({
+      type: "REMOVE_ACCEPTED_ANSWER",
+      lessonId,
+      sentenceBlockId,
+      languageBlockId,
+      answerIndex,
+    });
   }
 
   function addLanguageBlock(
@@ -1667,32 +1373,12 @@ export default function LessonBuilderPage() {
     sentenceBlockId: string,
     languageBlockId: string,
   ) {
-    setLessons((currentLessons) =>
-      currentLessons.map((lesson) =>
-        lesson.id === lessonId
-          ? {
-              ...lesson,
-              blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && isPracticeBlock(block)
-                  ? {
-                      ...block,
-                      languageBlocks: [
-                        ...block.languageBlocks,
-                        {
-                          id: languageBlockId,
-                          spanish: "",
-                          callout: null,
-                          acceptedAnswers: [""],
-                          conceptLinks: [],
-                        },
-                      ],
-                    }
-                  : block,
-              ),
-            }
-          : lesson,
-      ),
-    );
+    dispatch({
+      type: "ADD_LANGUAGE_BLOCK",
+      lessonId,
+      sentenceBlockId,
+      languageBlockId,
+    });
     setCollapsedLanguageBlocks(
       new Set(
         lessons.flatMap((lesson) =>
@@ -1783,26 +1469,12 @@ export default function LessonBuilderPage() {
     sentenceBlockId: string,
     languageBlockId: string,
   ) {
-    setLessons((currentLessons) =>
-      currentLessons.map((lesson) =>
-        lesson.id === lessonId
-          ? {
-              ...lesson,
-              blocks: lesson.blocks.map((block) =>
-                block.id === sentenceBlockId && isPracticeBlock(block)
-                  ? {
-                      ...block,
-                      languageBlocks: block.languageBlocks.filter(
-                        (languageBlock) =>
-                          languageBlock.id !== languageBlockId,
-                      ),
-                    }
-                  : block,
-              ),
-            }
-          : lesson,
-      ),
-    );
+    dispatch({
+      type: "DELETE_LANGUAGE_BLOCK",
+      lessonId,
+      sentenceBlockId,
+      languageBlockId,
+    });
   }
 
   function startDraggingLanguageBlock(
@@ -1868,50 +1540,14 @@ export default function LessonBuilderPage() {
       return;
     }
 
-    setLessons((currentLessons) =>
-      currentLessons.map((lesson) => {
-        if (lesson.id !== draggedLanguageBlock.lessonId) {
-          return lesson;
-        }
-
-        return {
-          ...lesson,
-          blocks: lesson.blocks.map((block) => {
-            if (
-              block.id !== draggedLanguageBlock.sentenceBlockId ||
-              !isPracticeBlock(block)
-            ) {
-              return block;
-            }
-
-            const draggedIndex = block.languageBlocks.findIndex(
-              (languageBlock) =>
-                languageBlock.id === draggedLanguageBlock.languageBlockId,
-            );
-            const targetIndex = block.languageBlocks.findIndex(
-              (languageBlock) =>
-                languageBlock.id ===
-                languageBlockDropTarget.languageBlockId,
-            );
-
-            if (draggedIndex === -1 || targetIndex === -1) {
-              return block;
-            }
-
-            const languageBlocks = [...block.languageBlocks];
-            const [draggedBlock] = languageBlocks.splice(draggedIndex, 1);
-            const adjustedTargetIndex =
-              targetIndex > draggedIndex ? targetIndex - 1 : targetIndex;
-            const insertionIndex =
-              languageBlockDropTarget.position === "after"
-                ? adjustedTargetIndex + 1
-                : adjustedTargetIndex;
-            languageBlocks.splice(insertionIndex, 0, draggedBlock);
-            return { ...block, languageBlocks };
-          }),
-        };
-      }),
-    );
+    dispatch({
+      type: "MOVE_LANGUAGE_BLOCK",
+      lessonId: draggedLanguageBlock.lessonId,
+      sentenceBlockId: draggedLanguageBlock.sentenceBlockId,
+      draggedId: draggedLanguageBlock.languageBlockId,
+      targetId: languageBlockDropTarget.languageBlockId,
+      position: languageBlockDropTarget.position,
+    });
   }
 
   function finishDraggingLanguageBlock() {
@@ -1967,36 +1603,13 @@ export default function LessonBuilderPage() {
       return;
     }
 
-    setLessons((currentLessons) =>
-      currentLessons.map((lesson) => {
-        if (lesson.id !== draggedContentBlock.lessonId) {
-          return lesson;
-        }
-
-        const draggedIndex = lesson.blocks.findIndex(
-          (block) => block.id === draggedContentBlock.blockId,
-        );
-        const targetIndex = lesson.blocks.findIndex(
-          (block) => block.id === contentBlockDropTarget.blockId,
-        );
-
-        if (draggedIndex === -1 || targetIndex === -1) {
-          return lesson;
-        }
-
-        const blocks = [...lesson.blocks];
-        const [draggedBlock] = blocks.splice(draggedIndex, 1);
-        const adjustedTargetIndex =
-          targetIndex > draggedIndex ? targetIndex - 1 : targetIndex;
-        const insertionIndex =
-          contentBlockDropTarget.position === "after"
-            ? adjustedTargetIndex + 1
-            : adjustedTargetIndex;
-
-        blocks.splice(insertionIndex, 0, draggedBlock);
-        return { ...lesson, blocks };
-      }),
-    );
+    dispatch({
+      type: "MOVE_CONTENT_BLOCK",
+      lessonId: draggedContentBlock.lessonId,
+      draggedId: draggedContentBlock.blockId,
+      targetId: contentBlockDropTarget.blockId,
+      position: contentBlockDropTarget.position,
+    });
   }
 
   function finishDraggingContentBlock() {
@@ -2058,36 +1671,21 @@ export default function LessonBuilderPage() {
     }
 
     const previousLessonIds = lessons.map((lesson) => lesson.id);
-    const reorderedLessons = lessons.filter(
-      (lesson) => lesson.id !== draggedLessonId,
-    );
-    const targetIndex = reorderedLessons.findIndex(
-      (lesson) => lesson.id === target.lessonId,
-    );
-    const draggedLesson = lessons.find(
-      (lesson) => lesson.id === draggedLessonId,
-    );
+    const reorderedLessons = reorderLessons(lessons, {
+      draggedId: draggedLessonId,
+      targetId: target.lessonId,
+      position: target.position,
+    });
 
-    if (!draggedLesson || targetIndex === -1) {
+    if (reorderedLessons === lessons) {
       return;
     }
 
-    const insertionIndex =
-      target.position === "after" ? targetIndex + 1 : targetIndex;
-
-    reorderedLessons.splice(insertionIndex, 0, draggedLesson);
-    setLessons(reorderedLessons);
+    dispatch({ type: "SET_LESSONS", lessons: reorderedLessons });
 
     void persistLessonOrder(reorderedLessons).then((didSave) => {
       if (!didSave) {
-        setLessons((currentLessons) => {
-          const lessonById = new Map(
-            currentLessons.map((lesson) => [lesson.id, lesson]),
-          );
-          return previousLessonIds
-            .map((lessonId) => lessonById.get(lessonId))
-            .filter((lesson): lesson is Lesson => Boolean(lesson));
-        });
+        dispatch({ type: "SET_LESSON_ORDER", lessonIds: previousLessonIds });
       }
     });
   }

@@ -17,6 +17,7 @@
     "db:seed": "prisma db seed",
     "db:verify": "tsx scripts/verify-curriculum-database.ts",
     "db:test": "tsx --test tests/*.test.ts",
+    "test:unit": "tsx --test tests/unit/*.test.ts",
     "db:studio": "prisma studio",
     "curriculum:sources:inventory": "tsx scripts/inventory-curriculum-sources.ts",
     "curriculum:sources:query": "tsx scripts/query-curriculum-sources.ts",
