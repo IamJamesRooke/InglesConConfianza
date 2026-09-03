@@ -1566,55 +1566,50 @@ export default function LessonBuilderPage() {
   return (
     <main className="flex-1 bg-background px-4 py-8 sm:px-6 sm:py-12">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-6">
-        <div className="flex items-start justify-between gap-4">
-          <div className="min-w-0">
-            <div className="flex flex-wrap items-center gap-2">
-              <h1 className="text-2xl font-semibold tracking-tight text-foreground">
-                Lesson Builder
-              </h1>
-              {courseModules.length > 0 && (
-                <select
-                  value={currentModule?.id ?? ""}
-                  onChange={(event) => {
-                    setActiveModuleId(event.target.value);
-                    window.history.replaceState(
-                      null,
-                      "",
-                      `/lesson-builder?module=${event.target.value}`,
-                    );
-                  }}
-                  aria-label="Module"
-                  className="rounded-lg border border-input bg-card px-2.5 py-1 text-sm font-semibold text-foreground outline-none focus:border-ring focus:ring-3 focus:ring-ring/20"
-                >
-                  {courseModules.map((module) => (
-                    <option key={module.id} value={module.id}>
-                      {module.name || "Untitled module"}
-                    </option>
-                  ))}
-                </select>
-              )}
-              <Link
-                href="/lesson-builder/modules"
-                className="text-xs font-medium text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
-              >
-                structure & promises →
-              </Link>
-            </div>
-            <p className="mt-1 truncate text-sm text-muted-foreground">
-              {isLoadingLessons
-                ? "Loading saved lessons..."
-                : isSavingLessonOrder
-                  ? "Saving lesson order..."
-                  : isDirty
-                    ? "Unsaved changes"
-                    : saveStatus === "saved"
-                      ? "All changes saved"
-                      : saveStatus === "error"
-                        ? "Could not load or save lessons"
-                        : currentModule?.promise || "No promise set for this module"}
-            </p>
-          </div>
-          <BuilderNav active="builder" />
+        <BuilderNav active="builder" />
+
+        <div className="-mt-2 flex flex-wrap items-center gap-x-3 gap-y-1">
+          {courseModules.length > 0 && (
+            <select
+              value={currentModule?.id ?? ""}
+              onChange={(event) => {
+                setActiveModuleId(event.target.value);
+                window.history.replaceState(
+                  null,
+                  "",
+                  `/lesson-builder?module=${event.target.value}`,
+                );
+              }}
+              aria-label="Module"
+              className="rounded-lg border border-input bg-card px-2.5 py-1.5 text-sm font-semibold text-foreground outline-none focus:border-ring focus:ring-3 focus:ring-ring/20"
+            >
+              {courseModules.map((module) => (
+                <option key={module.id} value={module.id}>
+                  {module.name || "Untitled module"}
+                </option>
+              ))}
+            </select>
+          )}
+          <span className="min-w-0 flex-1 truncate text-sm text-muted-foreground">
+            {isLoadingLessons
+              ? "Loading saved lessons..."
+              : isSavingLessonOrder
+                ? "Saving lesson order..."
+                : isDirty
+                  ? "Unsaved changes"
+                  : saveStatus === "saved"
+                    ? "All changes saved"
+                    : saveStatus === "error"
+                      ? "Could not load or save lessons"
+                      : currentModule?.promise ||
+                        "No promise set for this module"}
+          </span>
+          <Link
+            href="/lesson-builder/modules"
+            className="shrink-0 text-xs font-medium text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
+          >
+            edit structure & promise →
+          </Link>
         </div>
 
         {moduleLessons.map((lesson, lessonIndex) => {

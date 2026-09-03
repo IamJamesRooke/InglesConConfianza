@@ -10,11 +10,8 @@ export default async function CoveragePage() {
   return (
     <main className="flex-1 bg-background px-6 py-8 text-foreground">
       <div className="mx-auto max-w-[1600px]">
-        <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
-          <h1 className="text-3xl font-semibold tracking-tight">Coverage</h1>
-          <BuilderNav active="coverage" />
-        </div>
-        <p className="mb-4 text-sm text-muted-foreground">
+        <BuilderNav active="coverage" />
+        <p className="mb-4 mt-4 text-sm text-muted-foreground">
           {report.concepts.length} concept
           {report.concepts.length === 1 ? "" : "s"} taught across{" "}
           {report.lessons.length} lesson

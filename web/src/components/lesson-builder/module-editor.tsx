@@ -31,6 +31,7 @@ export function ModuleEditor({
     "idle" | "saving" | "saved" | "error"
   >("idle");
   const [draggedLessonId, setDraggedLessonId] = useState<string | null>(null);
+  const [railDropModuleId, setRailDropModuleId] = useState<string | null>(null);
   const savedJson = useRef(JSON.stringify(initialModules));
   const timer = useRef<number | undefined>(undefined);
 
@@ -147,51 +148,83 @@ export function ModuleEditor({
           </span>
         </div>
         <ul className="space-y-1">
-          {modules.map((module, index) => (
-            <li key={module.id} className="flex items-center gap-1">
-              <div className="flex flex-col">
+          {modules.map((module, index) => {
+            const canDropHere =
+              draggedLessonId !== null &&
+              !module.lessonIds.includes(draggedLessonId);
+            return (
+              <li key={module.id} className="flex items-center gap-1">
+                <div className="flex flex-col">
+                  <button
+                    type="button"
+                    onClick={() => moveModule(index, -1)}
+                    disabled={index === 0}
+                    aria-label="Move module up"
+                    className="text-muted-foreground transition hover:text-foreground disabled:opacity-30"
+                  >
+                    <ChevronUp className="size-3.5" aria-hidden="true" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => moveModule(index, 1)}
+                    disabled={index === modules.length - 1}
+                    aria-label="Move module down"
+                    className="text-muted-foreground transition hover:text-foreground disabled:opacity-30"
+                  >
+                    <ChevronDown className="size-3.5" aria-hidden="true" />
+                  </button>
+                </div>
                 <button
                   type="button"
-                  onClick={() => moveModule(index, -1)}
-                  disabled={index === 0}
-                  aria-label="Move module up"
-                  className="text-muted-foreground transition hover:text-foreground disabled:opacity-30"
-                >
-                  <ChevronUp className="size-3.5" aria-hidden="true" />
-                </button>
-                <button
-                  type="button"
-                  onClick={() => moveModule(index, 1)}
-                  disabled={index === modules.length - 1}
-                  aria-label="Move module down"
-                  className="text-muted-foreground transition hover:text-foreground disabled:opacity-30"
-                >
-                  <ChevronDown className="size-3.5" aria-hidden="true" />
-                </button>
-              </div>
-              <button
-                type="button"
-                onClick={() => setSelectedId(module.id)}
-                className={`min-w-0 flex-1 truncate rounded-md px-2.5 py-1.5 text-left text-sm transition ${
-                  module.id === selected?.id
-                    ? "bg-primary text-primary-foreground"
-                    : "hover:bg-muted"
-                }`}
-              >
-                {module.name || "Untitled module"}
-                <span
-                  className={`ml-1.5 text-xs ${
-                    module.id === selected?.id
-                      ? "text-primary-foreground/70"
-                      : "text-muted-foreground"
+                  onClick={() => setSelectedId(module.id)}
+                  onDragOver={(event) => {
+                    if (canDropHere) {
+                      event.preventDefault();
+                      setRailDropModuleId(module.id);
+                    }
+                  }}
+                  onDragLeave={() =>
+                    setRailDropModuleId((current) =>
+                      current === module.id ? null : current,
+                    )
+                  }
+                  onDrop={(event) => {
+                    event.preventDefault();
+                    if (draggedLessonId && canDropHere) {
+                      moveLessonToModule(draggedLessonId, module.id);
+                    }
+                    setDraggedLessonId(null);
+                    setRailDropModuleId(null);
+                  }}
+                  className={`min-w-0 flex-1 truncate rounded-md px-2.5 py-1.5 text-left text-sm transition ${
+                    railDropModuleId === module.id
+                      ? "bg-primary/15 ring-2 ring-primary"
+                      : module.id === selected?.id
+                        ? "bg-primary text-primary-foreground"
+                        : "hover:bg-muted"
                   }`}
                 >
-                  {module.lessonIds.length}
-                </span>
-              </button>
-            </li>
-          ))}
+                  {module.name || "Untitled module"}
+                  <span
+                    className={`ml-1.5 text-xs ${
+                      module.id === selected?.id &&
+                      railDropModuleId !== module.id
+                        ? "text-primary-foreground/70"
+                        : "text-muted-foreground"
+                    }`}
+                  >
+                    {module.lessonIds.length}
+                  </span>
+                </button>
+              </li>
+            );
+          })}
         </ul>
+        {draggedLessonId && (
+          <p className="mt-1.5 text-xs text-muted-foreground">
+            Drop on a module to move the lesson there.
+          </p>
+        )}
         <button
           type="button"
           onClick={addModule}
@@ -302,7 +335,10 @@ export function ModuleEditor({
                       key={lessonId}
                       draggable
                       onDragStart={() => setDraggedLessonId(lessonId)}
-                      onDragEnd={() => setDraggedLessonId(null)}
+                      onDragEnd={() => {
+                        setDraggedLessonId(null);
+                        setRailDropModuleId(null);
+                      }}
                       onDragOver={(event) => {
                         if (draggedLessonId && draggedLessonId !== lessonId) {
                           event.preventDefault();

@@ -10,14 +10,11 @@ export default async function ModulesPage() {
   return (
     <main className="flex-1 bg-background px-6 py-8 text-foreground">
       <div className="mx-auto max-w-[1400px]">
-        <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
-          <h1 className="text-3xl font-semibold tracking-tight">Modules</h1>
-          <BuilderNav active="modules" />
-        </div>
-        <p className="mb-5 text-sm text-muted-foreground">
+        <BuilderNav active="modules" />
+        <p className="mb-5 mt-4 text-sm text-muted-foreground">
           Pick a module on the left. Each has one learner promise and the
-          sentence that proves it. Drag lessons to reorder; use “Move to…” to
-          send a lesson to another module.
+          sentence that proves it. Drag a lesson onto another module in the list
+          to move it there; drag within the list to reorder.
         </p>
 
         <ModuleEditor
