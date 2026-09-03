@@ -206,6 +206,7 @@ export default function LessonBuilderPage() {
   const savedLessonsJsonRef = useRef(JSON.stringify([]));
   const pendingLessonExitActionRef = useRef<(() => void) | null>(null);
   const bypassLessonExitWarningRef = useRef(false);
+  const autosaveTimerRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     let isMounted = true;
@@ -362,7 +363,11 @@ export default function LessonBuilderPage() {
       const savedLessons = normalizeLessons(lessonFile.lessons);
       savedLessonsJsonRef.current = JSON.stringify(savedLessons);
       setSavedLessonsSnapshot(savedLessons);
-      setCourseModules(lessonFile.modules ?? []);
+      // Only a first save changes module structure (the new lesson's insertion);
+      // syncing modules on every save would clobber an in-flight course edit.
+      if (!savedLesson) {
+        setCourseModules(lessonFile.modules ?? []);
+      }
       setSaveStatus("saved");
       return true;
     } catch {
@@ -391,6 +396,40 @@ export default function LessonBuilderPage() {
     },
     [lessons, savedLessonsSnapshot],
   );
+
+  // Debounced autosave for lesson bodies. Module structure autosaves on its own
+  // path; this covers block/sentence/answer edits so a long authoring session
+  // never depends on remembering Alt+S. A pristine brand-new lesson (no name, no
+  // blocks) is left alone until the user gives it substance.
+  useEffect(() => {
+    if (isLoadingLessons || pendingLessonExitId || saveStatus === "saving") {
+      return;
+    }
+    const dirtyIds = lessons
+      .filter((lesson) => {
+        if (!isLessonDirty(lesson.id)) return false;
+        const isNew = !savedLessonsSnapshot.some((s) => s.id === lesson.id);
+        return !(isNew && lesson.name === null && lesson.blocks.length === 0);
+      })
+      .map((lesson) => lesson.id);
+    if (dirtyIds.length === 0) return;
+
+    window.clearTimeout(autosaveTimerRef.current);
+    autosaveTimerRef.current = window.setTimeout(async () => {
+      for (const lessonId of dirtyIds) {
+        await saveLesson(lessonId);
+      }
+    }, 1500);
+    return () => window.clearTimeout(autosaveTimerRef.current);
+  }, [
+    lessons,
+    isLoadingLessons,
+    pendingLessonExitId,
+    saveStatus,
+    isLessonDirty,
+    savedLessonsSnapshot,
+    saveLesson,
+  ]);
 
   const confirmDiscardLessonChanges = useCallback(
     (lessonId: string, continueAction: () => void) => {
@@ -1746,12 +1785,12 @@ export default function LessonBuilderPage() {
             <p className="text-xs text-muted-foreground">
               {isLoadingLessons
                 ? "Loading saved lessons…"
-                : isDirty
-                  ? "Unsaved lesson changes"
-                  : saveStatus === "saved"
-                    ? "All lesson changes saved"
-                    : saveStatus === "error"
-                      ? "Could not load or save lessons"
+                : saveStatus === "error"
+                  ? "Couldn't save — will retry"
+                  : isDirty || saveStatus === "saving"
+                    ? "Saving…"
+                    : saveStatus === "saved"
+                      ? "All lesson changes saved"
                       : "Click a lesson to edit it."}
             </p>
 
