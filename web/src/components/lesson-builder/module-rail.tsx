@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown, ChevronUp, Plus } from "lucide-react";
+import { ChevronDown, ChevronUp, Plus, Undo2 } from "lucide-react";
 import { useState } from "react";
 
 import type { LessonModule } from "@/lib/lesson-builder/types";
@@ -11,22 +11,26 @@ export function ModuleRail({
   modules,
   activeId,
   saveLabel,
+  canUndo,
   draggedLessonId,
   onSelect,
   onReorder,
   onAdd,
   onDelete,
   onMoveLesson,
+  onUndo,
 }: {
   modules: LessonModule[];
   activeId: string | null;
   saveLabel: string;
+  canUndo: boolean;
   draggedLessonId: string | null;
   onSelect: (moduleId: string) => void;
   onReorder: (index: number, direction: -1 | 1) => void;
   onAdd: () => void;
   onDelete: (moduleId: string) => void;
   onMoveLesson: (lessonId: string, toModuleId: string) => void;
+  onUndo: () => void;
 }) {
   const [dropModuleId, setDropModuleId] = useState<string | null>(null);
 
@@ -36,7 +40,19 @@ export function ModuleRail({
         <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
           Modules
         </span>
-        <span className="text-xs text-muted-foreground">{saveLabel}</span>
+        <span className="flex items-center gap-2">
+          {canUndo && (
+            <button
+              type="button"
+              onClick={onUndo}
+              title="Undo last module change (⌘Z)"
+              className="inline-flex items-center gap-1 rounded text-xs font-medium text-muted-foreground transition hover:text-foreground"
+            >
+              <Undo2 className="size-3.5" aria-hidden="true" /> Undo
+            </button>
+          )}
+          <span className="text-xs text-muted-foreground">{saveLabel}</span>
+        </span>
       </div>
       <ul className="space-y-1">
         {modules.map((module, index) => {

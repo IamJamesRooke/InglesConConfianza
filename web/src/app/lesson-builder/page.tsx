@@ -151,6 +151,12 @@ export default function LessonBuilderPage() {
   >("idle");
   const savedCourseJsonRef = useRef("[]");
   const courseTimerRef = useRef<number | undefined>(undefined);
+  // Session-local undo stack for module-structure edits (key concepts, name,
+  // order, lesson membership). Snapshots are the whole `courseModules` array
+  // taken just before each user edit; rapid edits inside one burst coalesce.
+  const courseUndoRef = useRef<LessonModule[][]>([]);
+  const courseUndoBurstRef = useRef(0);
+  const [courseCanUndo, setCourseCanUndo] = useState(false);
   const [savedLessonsSnapshot, setSavedLessonsSnapshot] = useState<Lesson[]>(
     [],
   );
@@ -220,6 +226,9 @@ export default function LessonBuilderPage() {
           savedLessonsJsonRef.current = lessonsJson;
           dispatch({ type: "SET_LESSONS", lessons });
           setCourseModules(modules);
+          courseUndoRef.current = [];
+          courseUndoBurstRef.current = 0;
+          setCourseCanUndo(false);
           const params = new URLSearchParams(window.location.search);
           const wantedModule = params.get("module");
           const wantedLessonModule = params.get("lesson")
@@ -1469,33 +1478,48 @@ export default function LessonBuilderPage() {
   // lesson-to-module membership) go through PUT /course. Per-lesson content
   // still goes through PUT /lessons/[id]. Optimistic + debounced; the reducer's
   // `lessons` order is kept in sync by id (no content touched).
-  function commitCourseModules(next: LessonModule[]) {
-    setCourseModules(next);
-    dispatch({
-      type: "SET_LESSON_ORDER",
-      lessonIds: next.flatMap((module) => module.lessonIds),
-    });
-    setCourseSaveState("saving");
-    const json = JSON.stringify(next);
-    window.clearTimeout(courseTimerRef.current);
-    courseTimerRef.current = window.setTimeout(async () => {
-      try {
-        const response = await fetch("/api/lesson-builder/course", {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ modules: next }),
-        });
-        if (response.ok) {
-          savedCourseJsonRef.current = json;
-          setCourseSaveState("saved");
-        } else {
+  const commitCourseModules = useCallback(
+    (next: LessonModule[], options?: { recordUndo?: boolean }) => {
+      if (options?.recordUndo !== false) {
+        const now = Date.now();
+        // One undo entry per burst: only the pre-burst state is kept.
+        if (now - courseUndoBurstRef.current > 700) {
+          courseUndoRef.current = [
+            ...courseUndoRef.current.slice(-49),
+            courseModules,
+          ];
+          setCourseCanUndo(true);
+        }
+        courseUndoBurstRef.current = now;
+      }
+      setCourseModules(next);
+      dispatch({
+        type: "SET_LESSON_ORDER",
+        lessonIds: next.flatMap((module) => module.lessonIds),
+      });
+      setCourseSaveState("saving");
+      const json = JSON.stringify(next);
+      window.clearTimeout(courseTimerRef.current);
+      courseTimerRef.current = window.setTimeout(async () => {
+        try {
+          const response = await fetch("/api/lesson-builder/course", {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ modules: next }),
+          });
+          if (response.ok) {
+            savedCourseJsonRef.current = json;
+            setCourseSaveState("saved");
+          } else {
+            setCourseSaveState("error");
+          }
+        } catch {
           setCourseSaveState("error");
         }
-      } catch {
-        setCourseSaveState("error");
-      }
-    }, 600);
-  }
+      }, 600);
+    },
+    [courseModules],
+  );
 
   function patchActiveModule(patch: Partial<LessonModule>) {
     commitCourseModules(
@@ -1504,6 +1528,46 @@ export default function LessonBuilderPage() {
       ),
     );
   }
+
+  const undoCourseModules = useCallback(() => {
+    const stack = courseUndoRef.current;
+    if (stack.length === 0) return;
+    const previous = stack[stack.length - 1];
+    courseUndoRef.current = stack.slice(0, -1);
+    setCourseCanUndo(courseUndoRef.current.length > 0);
+    courseUndoBurstRef.current = 0; // next real edit starts a fresh burst
+    if (previous.every((module) => module.id !== activeModuleId)) {
+      setActiveModuleId(previous[0]?.id ?? null);
+    }
+    commitCourseModules(previous, { recordUndo: false });
+  }, [activeModuleId, commitCourseModules]);
+
+  useEffect(() => {
+    function handleUndoShortcut(event: KeyboardEvent) {
+      if (
+        !(event.metaKey || event.ctrlKey) ||
+        event.altKey ||
+        event.key.toLowerCase() !== "z" ||
+        event.isComposing
+      ) {
+        return;
+      }
+      // Leave native text undo alone when a field is focused.
+      const target = event.target as HTMLElement | null;
+      if (
+        target instanceof HTMLElement &&
+        (target.tagName === "INPUT" ||
+          target.tagName === "TEXTAREA" ||
+          target.isContentEditable)
+      ) {
+        return;
+      }
+      event.preventDefault();
+      undoCourseModules();
+    }
+    document.addEventListener("keydown", handleUndoShortcut);
+    return () => document.removeEventListener("keydown", handleUndoShortcut);
+  }, [undoCourseModules]);
 
   function reorderModule(index: number, direction: -1 | 1) {
     const target = index + direction;
@@ -1649,6 +1713,8 @@ export default function LessonBuilderPage() {
             modules={courseModules}
             activeId={currentModule?.id ?? null}
             saveLabel={courseSaveLabel}
+            canUndo={courseCanUndo}
+            onUndo={undoCourseModules}
             draggedLessonId={lessonDrag.dragged?.id ?? null}
             onSelect={selectModule}
             onReorder={reorderModule}
