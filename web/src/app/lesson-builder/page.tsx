@@ -33,6 +33,8 @@ import {
   type PracticeLesson,
 } from "@/components/practice/lesson-selector";
 import { OverviewMarkdown } from "@/components/lesson-builder/overview-markdown";
+import { LanguageBlockCallout } from "@/components/lesson-builder/language-block-callout";
+import { PendingLessonExitDialog } from "@/components/lesson-builder/pending-lesson-exit-dialog";
 import { SentenceConceptLinks } from "@/components/lesson-builder/sentence-concept-links";
 import type {
   ConceptLink,
@@ -2947,87 +2949,45 @@ export default function LessonBuilderPage() {
                                         Add alternative
                                       </button>
                                     </div>
-                                    {languageBlock.callout == null ? (
-                                      <button
-                                        type="button"
-                                        onClick={() =>
-                                          addLanguageBlockCallout(
-                                            lesson.id,
-                                            block.id,
-                                            languageBlock.id,
-                                          )
+                                    <LanguageBlockCallout
+                                      callout={languageBlock.callout}
+                                      registerInputRef={(element) => {
+                                        const key = `${lesson.id}-${block.id}-${languageBlock.id}`;
+                                        if (element) {
+                                          languageBlockCalloutRefs.current.set(
+                                            key,
+                                            element,
+                                          );
+                                        } else {
+                                          languageBlockCalloutRefs.current.delete(
+                                            key,
+                                          );
                                         }
-                                        className="group flex min-h-12 w-full items-center justify-center gap-2 border-t border-amber-300 bg-gradient-to-r from-amber-100 via-yellow-200 to-orange-100 px-3 py-3 text-sm font-bold text-amber-900 transition hover:from-amber-200 hover:via-yellow-300 hover:to-orange-200 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-inset focus-visible:ring-amber-400"
-                                      >
-                                        <span className="flex size-7 items-center justify-center rounded-full bg-white/75 text-orange-600 shadow-sm transition group-hover:rotate-12 group-hover:scale-105">
-                                          <Sun
-                                            className="size-4"
-                                            aria-hidden="true"
-                                          />
-                                        </span>
-                                        Add context hint
-                                      </button>
-                                    ) : (
-                                      <div className="flex min-h-14 w-full items-center gap-2.5 border-t border-amber-300 bg-gradient-to-r from-amber-100 via-yellow-200 to-orange-100 px-3 py-3 text-amber-950">
-                                        <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-white/75 text-orange-600 shadow-sm">
-                                          <Sun
-                                            className="size-4.5"
-                                            aria-hidden="true"
-                                          />
-                                        </span>
-                                        <label className="min-w-0 flex-1">
-                                          <span className="sr-only">
-                                            Spanish context
-                                          </span>
-                                          <input
-                                            ref={(element) => {
-                                              const key = `${lesson.id}-${block.id}-${languageBlock.id}`;
-                                              if (element) {
-                                                languageBlockCalloutRefs.current.set(
-                                                  key,
-                                                  element,
-                                                );
-                                              } else {
-                                                languageBlockCalloutRefs.current.delete(
-                                                  key,
-                                                );
-                                              }
-                                            }}
-                                            type="text"
-                                            value={languageBlock.callout ?? ""}
-                                            onChange={(event) =>
-                                              updateLanguageBlockCallout(
-                                                lesson.id,
-                                                block.id,
-                                                languageBlock.id,
-                                                event.target.value,
-                                              )
-                                            }
-                                            placeholder="Add hint or context note."
-                                            className="w-full bg-transparent text-sm font-semibold italic outline-none placeholder:text-amber-700/55"
-                                          />
-                                        </label>
-                                        <button
-                                          type="button"
-                                          onClick={() =>
-                                            updateLanguageBlockCallout(
-                                              lesson.id,
-                                              block.id,
-                                              languageBlock.id,
-                                              null,
-                                            )
-                                          }
-                                          aria-label="Remove context hint"
-                                          title="Remove context hint"
-                                          className="flex size-7 shrink-0 items-center justify-center rounded-md text-amber-700 transition hover:bg-white/60 hover:text-red-600"
-                                        >
-                                          <X
-                                            className="size-4"
-                                            aria-hidden="true"
-                                          />
-                                        </button>
-                                      </div>
-                                    )}
+                                      }}
+                                      onAdd={() =>
+                                        addLanguageBlockCallout(
+                                          lesson.id,
+                                          block.id,
+                                          languageBlock.id,
+                                        )
+                                      }
+                                      onChange={(value) =>
+                                        updateLanguageBlockCallout(
+                                          lesson.id,
+                                          block.id,
+                                          languageBlock.id,
+                                          value,
+                                        )
+                                      }
+                                      onRemove={() =>
+                                        updateLanguageBlockCallout(
+                                          lesson.id,
+                                          block.id,
+                                          languageBlock.id,
+                                          null,
+                                        )
+                                      }
+                                    />
                                       </>
                                     )}
                                   </div>
@@ -3258,56 +3218,13 @@ export default function LessonBuilderPage() {
       )}
 
       {pendingLessonExit && (
-        <div
-          className="fixed inset-0 z-[70] flex items-center justify-center bg-black/35 p-4"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="unsaved-lesson-title"
-          onMouseDown={(event) => {
-            if (event.target === event.currentTarget) {
-              cancelPendingLessonExit();
-            }
-          }}
-        >
-          <div className="w-full max-w-md rounded-2xl border border-border bg-popover p-6 text-popover-foreground shadow-2xl">
-            <h2
-              id="unsaved-lesson-title"
-              className="text-xl font-semibold tracking-tight"
-            >
-              Save changes to Lesson {pendingLessonExitIndex + 1}?
-            </h2>
-            <p className="mt-2 text-sm leading-6 text-muted-foreground">
-              This lesson has unsaved changes. Save them before leaving, discard
-              them, or return to editing.
-            </p>
-            <div className="mt-6 flex flex-wrap justify-end gap-2">
-              <button
-                type="button"
-                onClick={cancelPendingLessonExit}
-                className="rounded-lg px-4 py-2 text-sm font-semibold text-muted-foreground transition hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
-              >
-                Cancel
-              </button>
-              <button
-                type="button"
-                onClick={discardPendingLessonChanges}
-                className="rounded-lg border border-red-200 bg-background px-4 py-2 text-sm font-semibold text-red-700 transition hover:bg-red-50 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-red-200"
-              >
-                Discard
-              </button>
-              <button
-                type="button"
-                onClick={() => void savePendingLessonChanges()}
-                disabled={savingLessonId === pendingLessonExit.id}
-                className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:opacity-90 disabled:cursor-wait disabled:opacity-60 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
-              >
-                {savingLessonId === pendingLessonExit.id
-                  ? "Saving..."
-                  : "Save and leave"}
-              </button>
-            </div>
-          </div>
-        </div>
+        <PendingLessonExitDialog
+          lessonNumber={pendingLessonExitIndex + 1}
+          isSaving={savingLessonId === pendingLessonExit.id}
+          onCancel={cancelPendingLessonExit}
+          onDiscard={discardPendingLessonChanges}
+          onSave={() => void savePendingLessonChanges()}
+        />
       )}
     </main>
   );
