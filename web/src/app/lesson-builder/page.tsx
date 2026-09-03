@@ -43,6 +43,7 @@ import {
   getSentenceValidationIssueCount,
   normalizeLessons,
 } from "@/lib/lesson-builder/utils";
+import { moduleCoveredConceptKeys } from "@/lib/lesson-builder/lesson-file";
 import { lessonsReducer } from "@/lib/lesson-builder/reducer";
 import { useDragReorder } from "@/lib/lesson-builder/use-drag-reorder";
 
@@ -1516,8 +1517,7 @@ export default function LessonBuilderPage() {
     const created: LessonModule = {
       id: createId("module"),
       name: `Module ${courseModules.length + 1}`,
-      promise: "",
-      finalSentence: { spanish: "", english: "" },
+      keyConcepts: [],
       lessonIds: [],
     };
     commitCourseModules([...courseModules, created]);
@@ -1626,6 +1626,9 @@ export default function LessonBuilderPage() {
   const moduleLessons = (currentModule?.lessonIds ?? [])
     .map((id) => lessonById.get(id))
     .filter((lesson): lesson is Lesson => Boolean(lesson));
+  const moduleCoveredKeys = currentModule
+    ? moduleCoveredConceptKeys(currentModule, lessonById)
+    : new Set<string>();
 
   const courseSaveLabel =
     courseSaveState === "saving"
@@ -1658,6 +1661,7 @@ export default function LessonBuilderPage() {
             {currentModule && (
               <ModuleMeta
                 module={currentModule}
+                coveredConceptKeys={moduleCoveredKeys}
                 onChange={patchActiveModule}
               />
             )}

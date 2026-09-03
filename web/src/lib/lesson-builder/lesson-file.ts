@@ -158,13 +158,48 @@ export function isLessonModule(value: unknown): value is LessonModule {
     isRecord(value) &&
     typeof value.id === "string" &&
     isStringOrNull(value.name) &&
-    typeof value.promise === "string" &&
-    isRecord(value.finalSentence) &&
-    typeof value.finalSentence.spanish === "string" &&
-    typeof value.finalSentence.english === "string" &&
+    // keyConcepts is optional on disk — pre-Key-Concepts modules (which carried
+    // `promise` / `finalSentence` instead) still parse and are normalized below.
+    (value.keyConcepts === undefined ||
+      (Array.isArray(value.keyConcepts) &&
+        value.keyConcepts.every(isLessonConcept))) &&
     Array.isArray(value.lessonIds) &&
     value.lessonIds.every((lessonId) => typeof lessonId === "string")
   );
+}
+
+// Guarantee `keyConcepts` is present so every consumer can read it directly.
+export function normalizeModule(module: LessonModule): LessonModule {
+  return {
+    id: module.id,
+    name: module.name,
+    keyConcepts: module.keyConcepts ?? [],
+    lessonIds: module.lessonIds,
+  };
+}
+
+// A stable identity for matching module key concepts against lesson concepts:
+// the curriculum id when linked, otherwise the trimmed lowercased label.
+export function conceptKey(concept: {
+  conceptId: string | null;
+  label: string;
+}): string {
+  return concept.conceptId ?? concept.label.trim().toLowerCase();
+}
+
+// Every concept key covered by the lessons in `module` (looked up in
+// `lessonById`). A module key concept is "met" when its key is in this set.
+export function moduleCoveredConceptKeys(
+  module: Pick<LessonModule, "lessonIds">,
+  lessonById: Map<string, Lesson>,
+): Set<string> {
+  const keys = new Set<string>();
+  for (const lessonId of module.lessonIds) {
+    for (const concept of lessonById.get(lessonId)?.concepts ?? []) {
+      keys.add(conceptKey(concept));
+    }
+  }
+  return keys;
 }
 
 // A well-formed v2 file: modules valid, lessons valid, and `lessons` is exactly
@@ -193,8 +228,7 @@ export function emptyModule(name: string): LessonModule {
   return {
     id: createId("module"),
     name,
-    promise: "",
-    finalSentence: { spanish: "", english: "" },
+    keyConcepts: [],
     lessonIds: [],
   };
 }
@@ -215,7 +249,9 @@ export function emptyLessonFile(): LessonFile {
 
 // Parse whatever is on disk into a valid v2 file, migrating v1 in memory.
 export function parseLessonFile(parsed: unknown): LessonFile {
-  if (isLessonFile(parsed)) return parsed;
+  if (isLessonFile(parsed)) {
+    return { ...parsed, modules: parsed.modules.map(normalizeModule) };
+  }
   if (isLessonFileV1(parsed)) return migrateV1ToV2(parsed);
   throw new Error("Saved lessons file has an invalid shape.");
 }

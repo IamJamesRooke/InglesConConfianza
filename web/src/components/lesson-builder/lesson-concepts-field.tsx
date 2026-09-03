@@ -4,6 +4,7 @@ import { X } from "lucide-react";
 import { useEffect, useId, useRef, useState } from "react";
 
 import { ConceptQuickEdit } from "@/components/lesson-builder/concept-quick-edit";
+import { conceptKey } from "@/lib/lesson-builder/lesson-file";
 import type { LessonConcept } from "@/lib/lesson-builder/types";
 import { createId } from "@/lib/lesson-builder/utils";
 
@@ -23,11 +24,19 @@ export function LessonConceptsField({
   onAdd,
   onRemove,
   onRelabel,
+  label = "Concepts covered",
+  coveredConceptKeys,
+  variant = "block",
 }: {
   concepts: LessonConcept[];
   onAdd: (concept: LessonConcept) => void;
   onRemove: (lessonConceptId: string) => void;
   onRelabel: (lessonConceptId: string, label: string) => void;
+  label?: string;
+  // When given, a chip whose concept key is in this set renders green ("met" —
+  // some lesson in the module covers it). Used by the module Key concepts field.
+  coveredConceptKeys?: Set<string>;
+  variant?: "block" | "inline";
 }) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<ConceptResult[]>([]);
@@ -97,20 +106,36 @@ export function LessonConceptsField({
   }
 
   return (
-    <div className="border-b border-border bg-[var(--surface-sunken)] px-6 py-3">
+    <div
+      className={
+        variant === "inline"
+          ? ""
+          : "border-b border-border bg-[var(--surface-sunken)] px-6 py-3"
+      }
+    >
       <div className="flex flex-wrap items-center gap-1.5">
         <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-stone-500">
-          Concepts covered
+          {label}
         </span>
-        {concepts.map((concept) => (
+        {concepts.map((concept) => {
+          const met = coveredConceptKeys?.has(conceptKey(concept)) ?? false;
+          return (
           <span
             key={concept.id}
             className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-xs font-medium ${
-              concept.conceptId
-                ? "border-violet-200 bg-violet-50 text-violet-800"
-                : "border-stone-300 bg-white text-stone-600"
+              met
+                ? "border-green-300 bg-green-50 text-green-800"
+                : concept.conceptId
+                  ? "border-violet-200 bg-violet-50 text-violet-800"
+                  : "border-stone-300 bg-white text-stone-600"
             }`}
-            title={concept.conceptId ? undefined : "Not linked to the curriculum"}
+            title={
+              met
+                ? "Covered by a lesson in this module"
+                : concept.conceptId
+                  ? undefined
+                  : "Not linked to the curriculum"
+            }
           >
             {concept.conceptId ? (
               <ConceptQuickEdit
@@ -133,7 +158,8 @@ export function LessonConceptsField({
               <X className="size-3" aria-hidden="true" />
             </button>
           </span>
-        ))}
+          );
+        })}
         <div className="relative min-w-40 flex-1">
           <input
             type="text"

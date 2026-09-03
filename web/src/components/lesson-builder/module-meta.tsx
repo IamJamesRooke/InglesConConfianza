@@ -3,26 +3,30 @@
 import { ChevronDown, ChevronRight } from "lucide-react";
 import { useState } from "react";
 
-import type { LessonModule } from "@/lib/lesson-builder/types";
+import { LessonConceptsField } from "@/components/lesson-builder/lesson-concepts-field";
+import type { LessonConcept, LessonModule } from "@/lib/lesson-builder/types";
 
 const inputClass =
   "w-full rounded-md border border-input bg-background px-2.5 py-1.5 text-sm text-foreground outline-none transition focus:border-ring focus:ring-3 focus:ring-ring/20";
 
-// The current module's name, learner promise, and final confidence sentence.
-// Collapsed by default so it stays out of the way while authoring lessons.
+// The current module's name and its Key concepts — the curriculum concepts the
+// module intends to teach. A key concept pill turns green once some lesson in
+// the module covers it (`coveredConceptKeys`). Collapsed by default once at
+// least one key concept is set, so it stays out of the way while authoring.
 export function ModuleMeta({
   module,
+  coveredConceptKeys,
   onChange,
 }: {
   module: LessonModule;
+  coveredConceptKeys: Set<string>;
   onChange: (patch: Partial<LessonModule>) => void;
 }) {
-  const hasPromise = Boolean(
-    module.promise.trim() ||
-      module.finalSentence.spanish.trim() ||
-      module.finalSentence.english.trim(),
-  );
-  const [open, setOpen] = useState(!hasPromise);
+  const [open, setOpen] = useState(module.keyConcepts.length === 0);
+
+  function setKeyConcepts(next: LessonConcept[]) {
+    onChange({ keyConcepts: next });
+  }
 
   return (
     <section className="rounded-xl border border-border bg-card p-3 shadow-sm">
@@ -49,55 +53,29 @@ export function ModuleMeta({
       </div>
 
       {open ? (
-        <div className="mt-3 space-y-3 pl-8">
-          <label className="block">
-            <span className="mb-1 block text-xs font-medium text-muted-foreground">
-              Learner promise
-            </span>
-            <textarea
-              value={module.promise}
-              onChange={(event) => onChange({ promise: event.target.value })}
-              rows={2}
-              placeholder="By the end, the learner can…"
-              className={`${inputClass} resize-none`}
-            />
-          </label>
-          <div className="grid gap-2">
-            <span className="text-xs font-medium text-muted-foreground">
-              Final confidence sentence
-            </span>
-            <input
-              value={module.finalSentence.spanish}
-              onChange={(event) =>
-                onChange({
-                  finalSentence: {
-                    ...module.finalSentence,
-                    spanish: event.target.value,
-                  },
-                })
-              }
-              placeholder="Spanish"
-              className={inputClass}
-            />
-            <input
-              value={module.finalSentence.english}
-              onChange={(event) =>
-                onChange({
-                  finalSentence: {
-                    ...module.finalSentence,
-                    english: event.target.value,
-                  },
-                })
-              }
-              placeholder="English"
-              className={inputClass}
-            />
-          </div>
+        <div className="mt-3 pl-8">
+          <LessonConceptsField
+            variant="inline"
+            label="Key concepts"
+            concepts={module.keyConcepts}
+            coveredConceptKeys={coveredConceptKeys}
+            onAdd={(concept) => setKeyConcepts([...module.keyConcepts, concept])}
+            onRemove={(id) =>
+              setKeyConcepts(module.keyConcepts.filter((c) => c.id !== id))
+            }
+            onRelabel={(id, label) =>
+              setKeyConcepts(
+                module.keyConcepts.map((c) =>
+                  c.id === id ? { ...c, label } : c,
+                ),
+              )
+            }
+          />
         </div>
       ) : (
-        module.promise.trim() && (
+        module.keyConcepts.length > 0 && (
           <p className="mt-1.5 truncate pl-8 text-xs text-muted-foreground">
-            {module.promise}
+            {module.keyConcepts.map((c) => c.label).join(" · ")}
           </p>
         )
       )}

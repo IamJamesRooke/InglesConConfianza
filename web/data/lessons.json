@@ -4,11 +4,7 @@
     {
       "id": "module_e4d56384-dde5-46ba-a5cf-21509fd17d3f",
       "name": "Module 1: Subject Pronouns",
-      "promise": "",
-      "finalSentence": {
-        "spanish": "",
-        "english": ""
-      },
+      "keyConcepts": [],
       "lessonIds": [
         "lesson_d7ed75c7-6479-4a84-9c6a-45bfca8ec652"
       ]
@@ -16,11 +12,7 @@
     {
       "id": "module_592458a6-7219-4c06-804e-1eeae7ce6d4a",
       "name": "Module 2: Full Infinitive",
-      "promise": "",
-      "finalSentence": {
-        "spanish": "",
-        "english": ""
-      },
+      "keyConcepts": [],
       "lessonIds": [
         "lesson_bdacade3-8ad6-4217-8c47-d5907d6122af"
       ]

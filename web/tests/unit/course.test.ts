@@ -2,16 +2,27 @@ import assert from "node:assert/strict";
 import test from "node:test";
 
 import {
+  conceptKey,
   isLessonFile,
+  isLessonModule,
   migrateV1ToV2,
+  moduleCoveredConceptKeys,
   parseLessonFile,
   reconcileLessonFile,
   moduleContainingLesson,
 } from "../../src/lib/lesson-builder/lesson-file";
-import type { Lesson, LessonFile } from "../../src/lib/lesson-builder/types";
+import type {
+  Lesson,
+  LessonConcept,
+  LessonFile,
+} from "../../src/lib/lesson-builder/types";
 
-function lesson(id: string): Lesson {
-  return { id, name: null, concepts: [], blocks: [] };
+function lesson(id: string, concepts: LessonConcept[] = []): Lesson {
+  return { id, name: null, concepts, blocks: [] };
+}
+
+function concept(conceptId: string | null, label: string): LessonConcept {
+  return { id: `lc_${label}`, conceptId, label };
 }
 
 function fileWith(moduleLessonIds: string[][], lessons: string[]): LessonFile {
@@ -20,11 +31,10 @@ function fileWith(moduleLessonIds: string[][], lessons: string[]): LessonFile {
     modules: moduleLessonIds.map((lessonIds, index) => ({
       id: `m${index + 1}`,
       name: `Module ${index + 1}`,
-      promise: "",
-      finalSentence: { spanish: "", english: "" },
+      keyConcepts: [],
       lessonIds,
     })),
-    lessons: lessons.map(lesson),
+    lessons: lessons.map((id) => lesson(id)),
   };
 }
 
@@ -46,9 +56,47 @@ test("migrateV1ToV2 wraps every lesson in one module, order kept", () => {
 test("parseLessonFile accepts v1 and v2, rejects junk", () => {
   assert.equal(parseLessonFile({ version: 1, lessons: [] }).version, 2);
   const v2 = fileWith([["a"]], ["a"]);
-  assert.equal(parseLessonFile(v2), v2);
+  assert.deepEqual(parseLessonFile(v2), v2);
   assert.throws(() => parseLessonFile({ version: 3 }));
   assert.throws(() => parseLessonFile("nope"));
+});
+
+test("a pre-Key-Concepts module still parses and is normalized", () => {
+  const legacy = {
+    version: 2,
+    modules: [
+      {
+        id: "m1",
+        name: "Module 1",
+        promise: "old text",
+        finalSentence: { spanish: "", english: "" },
+        lessonIds: ["a"],
+      },
+    ],
+    lessons: [lesson("a")],
+  };
+  assert.ok(isLessonModule(legacy.modules[0]));
+  const parsed = parseLessonFile(legacy);
+  assert.deepEqual(parsed.modules[0].keyConcepts, []);
+  assert.ok(!("promise" in parsed.modules[0]));
+});
+
+test("moduleCoveredConceptKeys unions the module's lesson concepts", () => {
+  const lessons = [
+    lesson("a", [concept("c-querer", "querer"), concept(null, "Freehand One")]),
+    lesson("b", [concept("c-poder", "poder")]),
+    lesson("c", [concept("c-hablar", "hablar")]), // not in the module
+  ];
+  const lessonById = new Map(lessons.map((l) => [l.id, l]));
+  const keys = moduleCoveredConceptKeys({ lessonIds: ["a", "b"] }, lessonById);
+
+  assert.ok(keys.has("c-querer"));
+  assert.ok(keys.has("c-poder"));
+  assert.ok(keys.has("freehand one")); // freehand matches on lowercased label
+  assert.ok(!keys.has("c-hablar"));
+
+  assert.ok(keys.has(conceptKey(concept("c-querer", "querer"))));
+  assert.ok(keys.has(conceptKey(concept(null, "  FREEHAND one "))));
 });
 
 test("isLessonFile enforces the ordering invariant", () => {
