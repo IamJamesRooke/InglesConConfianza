@@ -126,7 +126,7 @@ export function CurriculumTable({
   pageSize?: number;
   coverage?: Record<
     string,
-    { lessonNumber: number; lessonName: string | null }
+    { lessonId: string; lessonNumber: number; lessonName: string | null }
   >;
   coverageFilter?: "all" | "taught" | "untaught";
   filters: {
@@ -890,16 +890,17 @@ export function CurriculumTable({
                 </td>
                 <td className="px-2 py-1 align-top">
                   {coverage[concept.id] ? (
-                    <span
-                      className="mt-0.5 inline-block rounded-full bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary"
+                    <a
+                      href={`/lesson-builder?lesson=${encodeURIComponent(coverage[concept.id].lessonId)}`}
+                      className="mt-0.5 inline-block rounded-full bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary transition hover:bg-primary/20"
                       title={
                         coverage[concept.id].lessonName
-                          ? `Lesson ${coverage[concept.id].lessonNumber} · ${coverage[concept.id].lessonName}`
-                          : `Lesson ${coverage[concept.id].lessonNumber}`
+                          ? `Lesson ${coverage[concept.id].lessonNumber} · ${coverage[concept.id].lessonName} — open in Lesson Builder`
+                          : `Lesson ${coverage[concept.id].lessonNumber} — open in Lesson Builder`
                       }
                     >
                       Lesson {coverage[concept.id].lessonNumber}
-                    </span>
+                    </a>
                   ) : (
                     <span className="mt-0.5 inline-block px-1 text-xs text-muted-foreground/50">
                       —

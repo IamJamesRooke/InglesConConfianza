@@ -77,12 +77,13 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
 
   const visibleCoverage: Record<
     string,
-    { lessonNumber: number; lessonName: string | null }
+    { lessonId: string; lessonNumber: number; lessonName: string | null }
   > = {};
   for (const concept of curriculum.concepts) {
     const hit = coverage.get(concept.id);
     if (hit) {
       visibleCoverage[concept.id] = {
+        lessonId: hit.lessonId,
         lessonNumber: hit.lessonNumber,
         lessonName: hit.lessonName,
       };

@@ -562,6 +562,29 @@ export default function LessonBuilderPage() {
     [lessons],
   );
 
+  // Deep link from /curriculum's "Lesson N" pill: ?lesson=<id> opens that
+  // lesson's editor once, after the lessons have loaded.
+  const didHandleDeepLink = useRef(false);
+  useEffect(() => {
+    if (isLoadingLessons || didHandleDeepLink.current) {
+      return;
+    }
+    didHandleDeepLink.current = true;
+
+    const targetId = new URLSearchParams(window.location.search).get("lesson");
+    if (!targetId || !lessons.some((lesson) => lesson.id === targetId)) {
+      return;
+    }
+
+    window.setTimeout(() => {
+      openLessonEditorNow(targetId);
+      setActiveLessonId(targetId);
+      document
+        .getElementById(`lesson-${targetId}`)
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 0);
+  }, [isLoadingLessons, lessons, openLessonEditorNow]);
+
   const cycleLessonDisplayModeNow = useCallback(
     (lessonId: string) => {
       const isFullyCollapsed = fullyCollapsedLessons.has(lessonId);
@@ -1775,6 +1798,7 @@ export default function LessonBuilderPage() {
           return (
             <section
               key={lesson.id}
+              id={`lesson-${lesson.id}`}
               aria-label={`Lesson ${lessonNumber}`}
               onMouseEnter={() => setActiveLessonId(lesson.id)}
               onFocusCapture={() => setActiveLessonId(lesson.id)}
