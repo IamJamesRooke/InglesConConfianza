@@ -21,7 +21,6 @@ import {
   useReducer,
   useRef,
   useState,
-  type DragEvent,
 } from "react";
 
 import { HotkeyReminder } from "@/components/lesson-builder/hotkey-reminder";
@@ -38,7 +37,6 @@ import { PendingLessonExitDialog } from "@/components/lesson-builder/pending-les
 import { SentenceConceptLinks } from "@/components/lesson-builder/sentence-concept-links";
 import type {
   ConceptLink,
-  DropTarget,
   Lesson,
   LessonBlock,
   LessonFile,
@@ -51,6 +49,7 @@ import {
 } from "@/lib/lesson-builder/utils";
 import { moveLesson as reorderLessons } from "@/lib/lesson-builder/mutations";
 import { lessonsReducer } from "@/lib/lesson-builder/reducer";
+import { useDragReorder } from "@/lib/lesson-builder/use-drag-reorder";
 
 function isPracticeBlock(
   block: LessonBlock,
@@ -247,28 +246,9 @@ export default function LessonBuilderPage() {
   const [saveStatus, setSaveStatus] = useState<
     "idle" | "saving" | "saved" | "error"
   >("idle");
-  const [draggedLessonId, setDraggedLessonId] = useState<string | null>(null);
-  const [dropTarget, setDropTarget] = useState<DropTarget | null>(null);
-  const [draggedContentBlock, setDraggedContentBlock] = useState<{
-    lessonId: string;
-    blockId: string;
-  } | null>(null);
-  const [contentBlockDropTarget, setContentBlockDropTarget] = useState<{
-    lessonId: string;
-    blockId: string;
-    position: "before" | "after";
-  } | null>(null);
-  const [draggedLanguageBlock, setDraggedLanguageBlock] = useState<{
-    lessonId: string;
-    sentenceBlockId: string;
-    languageBlockId: string;
-  } | null>(null);
-  const [languageBlockDropTarget, setLanguageBlockDropTarget] = useState<{
-    lessonId: string;
-    sentenceBlockId: string;
-    languageBlockId: string;
-    position: "before" | "after";
-  } | null>(null);
+  const lessonDrag = useDragReorder({ axis: "y", mode: "root" });
+  const contentDrag = useDragReorder({ axis: "y", mode: "nested" });
+  const languageDrag = useDragReorder({ axis: "x", mode: "nested" });
   const [openBlockPicker, setOpenBlockPicker] = useState<{
     lessonId: string;
     insertionIndex: number;
@@ -1496,162 +1476,39 @@ export default function LessonBuilderPage() {
     });
   }
 
-  function startDraggingLanguageBlock(
-    event: DragEvent<HTMLElement>,
-    lessonId: string,
-    sentenceBlockId: string,
-    languageBlockId: string,
-  ) {
-    event.stopPropagation();
-    event.dataTransfer.effectAllowed = "move";
-    event.dataTransfer.setData("text/plain", languageBlockId);
-    setDraggedLanguageBlock({
-      lessonId,
-      sentenceBlockId,
-      languageBlockId,
-    });
-    setLanguageBlockDropTarget(null);
-  }
-
-  function updateLanguageBlockDropTarget(
-    event: DragEvent<HTMLDivElement>,
-    lessonId: string,
-    sentenceBlockId: string,
-    languageBlockId: string,
-  ) {
-    if (!draggedLanguageBlock) {
-      return;
-    }
-
-    event.preventDefault();
-    event.stopPropagation();
-
-    if (
-      draggedLanguageBlock.lessonId !== lessonId ||
-      draggedLanguageBlock.sentenceBlockId !== sentenceBlockId ||
-      draggedLanguageBlock.languageBlockId === languageBlockId
-    ) {
-      setLanguageBlockDropTarget(null);
-      return;
-    }
-
-    const bounds = event.currentTarget.getBoundingClientRect();
-    const position =
-      event.clientX < bounds.left + bounds.width / 2 ? "before" : "after";
-    setLanguageBlockDropTarget({
-      lessonId,
-      sentenceBlockId,
-      languageBlockId,
-      position,
-    });
-  }
-
+  // The three drag reorders share useDragReorder for start / over / reset; only
+  // the "commit the move" step differs (a reducer dispatch), and moveLesson also
+  // persists the new order.
   function moveDraggedLanguageBlock() {
-    if (!draggedLanguageBlock || !languageBlockDropTarget) {
+    const dragged = languageDrag.dragged;
+    const target = languageDrag.dropTarget;
+    if (!dragged || !target || dragged.scope !== target.scope) {
       return;
     }
-
-    if (
-      draggedLanguageBlock.lessonId !== languageBlockDropTarget.lessonId ||
-      draggedLanguageBlock.sentenceBlockId !==
-        languageBlockDropTarget.sentenceBlockId
-    ) {
-      return;
-    }
-
+    const [lessonId, sentenceBlockId] = dragged.scope.split("::");
     dispatch({
       type: "MOVE_LANGUAGE_BLOCK",
-      lessonId: draggedLanguageBlock.lessonId,
-      sentenceBlockId: draggedLanguageBlock.sentenceBlockId,
-      draggedId: draggedLanguageBlock.languageBlockId,
-      targetId: languageBlockDropTarget.languageBlockId,
-      position: languageBlockDropTarget.position,
+      lessonId,
+      sentenceBlockId,
+      draggedId: dragged.id,
+      targetId: target.id,
+      position: target.position,
     });
-  }
-
-  function finishDraggingLanguageBlock() {
-    setDraggedLanguageBlock(null);
-    setLanguageBlockDropTarget(null);
-  }
-
-  function startDraggingContentBlock(
-    event: DragEvent<HTMLElement>,
-    lessonId: string,
-    blockId: string,
-  ) {
-    event.stopPropagation();
-    event.dataTransfer.effectAllowed = "move";
-    event.dataTransfer.setData("text/plain", blockId);
-    setDraggedContentBlock({ lessonId, blockId });
-    setContentBlockDropTarget(null);
-  }
-
-  function updateContentBlockDropTarget(
-    event: DragEvent<HTMLDivElement>,
-    lessonId: string,
-    blockId: string,
-  ) {
-    if (!draggedContentBlock) {
-      return;
-    }
-
-    event.preventDefault();
-    event.stopPropagation();
-
-    if (
-      draggedContentBlock.lessonId !== lessonId ||
-      draggedContentBlock.blockId === blockId
-    ) {
-      setContentBlockDropTarget(null);
-      return;
-    }
-
-    const bounds = event.currentTarget.getBoundingClientRect();
-    const position =
-      event.clientY < bounds.top + bounds.height / 2 ? "before" : "after";
-
-    setContentBlockDropTarget({ lessonId, blockId, position });
   }
 
   function moveDraggedContentBlock() {
-    if (!draggedContentBlock || !contentBlockDropTarget) {
+    const dragged = contentDrag.dragged;
+    const target = contentDrag.dropTarget;
+    if (!dragged || !target || dragged.scope !== target.scope) {
       return;
     }
-
-    if (draggedContentBlock.lessonId !== contentBlockDropTarget.lessonId) {
-      return;
-    }
-
     dispatch({
       type: "MOVE_CONTENT_BLOCK",
-      lessonId: draggedContentBlock.lessonId,
-      draggedId: draggedContentBlock.blockId,
-      targetId: contentBlockDropTarget.blockId,
-      position: contentBlockDropTarget.position,
+      lessonId: dragged.scope,
+      draggedId: dragged.id,
+      targetId: target.id,
+      position: target.position,
     });
-  }
-
-  function finishDraggingContentBlock() {
-    setDraggedContentBlock(null);
-    setContentBlockDropTarget(null);
-  }
-
-  function updateDropTarget(
-    event: DragEvent<HTMLElement>,
-    lessonId: string,
-  ) {
-    event.preventDefault();
-
-    if (draggedLessonId === lessonId) {
-      setDropTarget(null);
-      return;
-    }
-
-    const bounds = event.currentTarget.getBoundingClientRect();
-    const position =
-      event.clientY < bounds.top + bounds.height / 2 ? "before" : "after";
-
-    setDropTarget({ lessonId, position });
   }
 
   async function persistLessonOrder(reorderedLessons: Lesson[]) {
@@ -1684,15 +1541,17 @@ export default function LessonBuilderPage() {
     }
   }
 
-  function moveLesson(target: DropTarget) {
-    if (draggedLessonId === null || draggedLessonId === target.lessonId) {
+  function moveDraggedLesson() {
+    const dragged = lessonDrag.dragged;
+    const target = lessonDrag.dropTarget;
+    if (!dragged || !target || dragged.id === target.id) {
       return;
     }
 
     const previousLessonIds = lessons.map((lesson) => lesson.id);
     const reorderedLessons = reorderLessons(lessons, {
-      draggedId: draggedLessonId,
-      targetId: target.lessonId,
+      draggedId: dragged.id,
+      targetId: target.id,
       position: target.position,
     });
 
@@ -1707,11 +1566,6 @@ export default function LessonBuilderPage() {
         dispatch({ type: "SET_LESSON_ORDER", lessonIds: previousLessonIds });
       }
     });
-  }
-
-  function finishDragging() {
-    setDraggedLessonId(null);
-    setDropTarget(null);
   }
 
   const previewLessonIndex = lessons.findIndex(
@@ -1775,7 +1629,7 @@ export default function LessonBuilderPage() {
 
         {lessons.map((lesson, lessonIndex) => {
           const lessonNumber = lessonIndex + 1;
-          const isDragging = draggedLessonId === lesson.id;
+          const isDragging = lessonDrag.dragged?.id === lesson.id;
           const isLessonCollapsed = collapsedLessons.has(lesson.id);
           const isLessonFullyCollapsed = fullyCollapsedLessons.has(lesson.id);
           const isLessonEditableOnClick =
@@ -1791,8 +1645,8 @@ export default function LessonBuilderPage() {
             0,
           );
           const dropPosition =
-            dropTarget && dropTarget.lessonId === lesson.id
-              ? dropTarget.position
+            lessonDrag.dropTarget?.id === lesson.id
+              ? lessonDrag.dropTarget.position
               : null;
 
           return (
@@ -1810,13 +1664,13 @@ export default function LessonBuilderPage() {
                   openLessonEditor(lesson.id);
                 }
               }}
-              onDragOver={(event) => updateDropTarget(event, lesson.id)}
+              onDragOver={(event) => lessonDrag.dragOver(event, "", lesson.id)}
               onDrop={(event) => {
                 event.preventDefault();
-                if (dropTarget) {
-                  moveLesson(dropTarget);
+                if (lessonDrag.dropTarget) {
+                  moveDraggedLesson();
                 }
-                finishDragging();
+                lessonDrag.reset();
               }}
               className={`relative w-full overflow-hidden rounded-2xl border bg-[var(--surface)] shadow-md transition ${
                 isLessonEditableOnClick
@@ -1868,12 +1722,8 @@ export default function LessonBuilderPage() {
                 onSave={() => void saveLesson(lesson.id)}
                 onCycleDisplayMode={() => cycleLessonDisplayMode(lesson.id)}
                 onDelete={() => deleteLesson(lesson.id)}
-                onDragStart={(event) => {
-                  event.dataTransfer.effectAllowed = "move";
-                  event.dataTransfer.setData("text/plain", String(lesson.id));
-                  setDraggedLessonId(lesson.id);
-                }}
-                onDragEnd={finishDragging}
+                onDragStart={(event) => lessonDrag.dragStart(event, "", lesson.id)}
+                onDragEnd={lessonDrag.reset}
               />
 
               {!isLessonFullyCollapsed && (
@@ -2003,29 +1853,25 @@ export default function LessonBuilderPage() {
                       ? getSentenceValidationIssueCount(block)
                       : 0;
                   const contentDropPosition =
-                    contentBlockDropTarget?.lessonId === lesson.id &&
-                    contentBlockDropTarget.blockId === block.id
-                      ? contentBlockDropTarget.position
+                    contentDrag.dropTarget?.scope === lesson.id &&
+                    contentDrag.dropTarget.id === block.id
+                      ? contentDrag.dropTarget.position
                       : null;
                   const isDraggingContentBlock =
-                    draggedContentBlock?.lessonId === lesson.id &&
-                    draggedContentBlock.blockId === block.id;
+                    contentDrag.dragged?.scope === lesson.id &&
+                    contentDrag.dragged.id === block.id;
 
                   return (
                     <Fragment key={block.id}>
                     <div
                       onDragOver={(event) =>
-                        updateContentBlockDropTarget(
-                          event,
-                          lesson.id,
-                          block.id,
-                        )
+                        contentDrag.dragOver(event, lesson.id, block.id)
                       }
                       onDrop={(event) => {
                         event.preventDefault();
                         event.stopPropagation();
                         moveDraggedContentBlock();
-                        finishDraggingContentBlock();
+                        contentDrag.reset();
                       }}
                       className={`relative overflow-hidden rounded-xl border border-border bg-[var(--surface-raised)] transition ${
                         block.type === "explanation" &&
@@ -2116,15 +1962,11 @@ export default function LessonBuilderPage() {
                               type="button"
                               draggable
                               onDragStart={(event) =>
-                                startDraggingContentBlock(
-                                  event,
-                                  lesson.id,
-                                  block.id,
-                                )
+                                contentDrag.dragStart(event, lesson.id, block.id)
                               }
                               onDragEnd={(event) => {
                                 event.stopPropagation();
-                                finishDraggingContentBlock();
+                                contentDrag.reset();
                               }}
                               aria-label="Drag explanation to reorder"
                               title="Drag to reorder"
@@ -2284,15 +2126,11 @@ export default function LessonBuilderPage() {
                               type="button"
                               draggable
                               onDragStart={(event) =>
-                                startDraggingContentBlock(
-                                  event,
-                                  lesson.id,
-                                  block.id,
-                                )
+                                contentDrag.dragStart(event, lesson.id, block.id)
                               }
                               onDragEnd={(event) => {
                                 event.stopPropagation();
-                                finishDraggingContentBlock();
+                                contentDrag.reset();
                               }}
                               aria-label="Drag sentence to reorder"
                               title="Drag to reorder"
@@ -2469,26 +2307,20 @@ export default function LessonBuilderPage() {
                             {block.languageBlocks.map(
                               (languageBlock, languageBlockIndex) => {
                                 const languageBlockKey = `${lesson.id}-${block.id}-${languageBlock.id}`;
+                                const langScope = `${lesson.id}::${block.id}`;
                                 const isLastLanguageBlock =
                                   languageBlockIndex ===
                                   block.languageBlocks.length - 1;
                                 const previousLanguageBlock =
                                   block.languageBlocks[languageBlockIndex - 1];
                                 const languageDropPosition =
-                                  languageBlockDropTarget?.lessonId ===
-                                    lesson.id &&
-                                  languageBlockDropTarget.sentenceBlockId ===
-                                    block.id &&
-                                  languageBlockDropTarget.languageBlockId ===
-                                    languageBlock.id
-                                    ? languageBlockDropTarget.position
+                                  languageDrag.dropTarget?.scope === langScope &&
+                                  languageDrag.dropTarget.id === languageBlock.id
+                                    ? languageDrag.dropTarget.position
                                     : null;
                                 const isDraggingLanguageBlock =
-                                  draggedLanguageBlock?.lessonId === lesson.id &&
-                                  draggedLanguageBlock.sentenceBlockId ===
-                                    block.id &&
-                                  draggedLanguageBlock.languageBlockId ===
-                                    languageBlock.id;
+                                  languageDrag.dragged?.scope === langScope &&
+                                  languageDrag.dragged.id === languageBlock.id;
 
                                 return (
                                   <LanguageBlockEditor
@@ -2525,25 +2357,23 @@ export default function LessonBuilderPage() {
                                       )
                                     }
                                     onDragStart={(event) =>
-                                      startDraggingLanguageBlock(
+                                      languageDrag.dragStart(
                                         event,
-                                        lesson.id,
-                                        block.id,
+                                        langScope,
                                         languageBlock.id,
                                       )
                                     }
-                                    onDragEnd={finishDraggingLanguageBlock}
+                                    onDragEnd={languageDrag.reset}
                                     onDragOver={(event) =>
-                                      updateLanguageBlockDropTarget(
+                                      languageDrag.dragOver(
                                         event,
-                                        lesson.id,
-                                        block.id,
+                                        langScope,
                                         languageBlock.id,
                                       )
                                     }
                                     onDrop={() => {
                                       moveDraggedLanguageBlock();
-                                      finishDraggingLanguageBlock();
+                                      languageDrag.reset();
                                     }}
                                     registerSpanishRef={(element) => {
                                       const key = `${lesson.id}-${block.id}-${languageBlock.id}`;
