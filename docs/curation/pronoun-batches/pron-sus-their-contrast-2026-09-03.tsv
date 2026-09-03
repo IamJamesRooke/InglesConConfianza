@@ -1,0 +1,3 @@
+# The pre-existing "sus -> their" row missed the su-ambiguity contrast its 9 siblings carry.
+# conceptId <TAB> spanish <TAB> english <TAB> role <TAB> extraCollections(|) <TAB> rationale
+2x72difo4k	sus	their	supporting	contrast:confusable|contrast:su-ambiguity	Match the other su/sus rows
