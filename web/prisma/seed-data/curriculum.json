@@ -1351,14 +1351,13 @@
     },
     {
       "id": "4c0v1mewmv",
-      "spanish": "hablar [un idioma]",
-      "english": "to speak [a language]",
+      "spanish": "hablar",
+      "english": "to speak",
       "example": {
         "spanish": "Hablo inglés.",
         "english": "I speak English."
       },
       "collections": [
-        "en:language",
         "es:hablar",
         "en:speak"
       ],
@@ -10119,19 +10118,18 @@
     {
       "id": "mxguwwzrxk",
       "spanish": "poder [hacer algo]",
-      "english": "to be able to [do something]",
+      "english": "to be able [to do something]",
       "example": {
         "spanish": "Quiero poder ayudar.",
         "english": "I want to be able to help."
       },
       "collections": [
         "grammar:ability",
-        "grammar:modal",
         "construction:full-infinitive",
         "es:poder",
         "en:able"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "a1eubfzyp5",
@@ -20299,7 +20297,8 @@
         "topic:pronoun",
         "pos:function-word",
         "contrast:tu-vs-tu-tilde",
-        "contrast:confusable"
+        "contrast:confusable",
+        "topic:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -20386,7 +20385,7 @@
         "en:it",
         "topic:pronoun"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "hh4dfyokmh",
@@ -20941,7 +20940,8 @@
         "grammar:masculine",
         "grammar:singular",
         "el vs él",
-        "en:the"
+        "en:the",
+        "topic:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -20959,7 +20959,8 @@
         "grammar:definite-article",
         "grammar:feminine",
         "grammar:singular",
-        "en:the"
+        "en:the",
+        "topic:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -20977,7 +20978,8 @@
         "grammar:definite-article",
         "grammar:masculine",
         "grammar:plural",
-        "en:the"
+        "en:the",
+        "topic:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -20995,7 +20997,8 @@
         "grammar:definite-article",
         "grammar:feminine",
         "grammar:plural",
-        "en:the"
+        "en:the",
+        "topic:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -22564,7 +22567,8 @@
       "collections": [
         "pos:determiner",
         "es:cierto",
-        "en:certain"
+        "en:certain",
+        "topic:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -24459,7 +24463,8 @@
         "grammar:quantifier",
         "pos:determiner",
         "es:mucho",
-        "en:plenty"
+        "en:plenty",
+        "topic:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -26891,7 +26896,8 @@
         "pos:determiner",
         "grammar:quantifier",
         "es:dos",
-        "en:both"
+        "en:both",
+        "topic:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -26944,7 +26950,8 @@
         "es:cada",
         "en:each",
         "topic:pronoun",
-        "grammar:indefinite-pronoun"
+        "grammar:indefinite-pronoun",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -28281,7 +28288,8 @@
         "pos:determiner",
         "grammar:quantifier",
         "es:otro",
-        "en:another"
+        "en:another",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -28298,7 +28306,8 @@
         "pos:determiner",
         "grammar:singular",
         "es:otro",
-        "en:other"
+        "en:other",
+        "topic:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -28316,7 +28325,8 @@
         "pos:determiner",
         "grammar:plural",
         "es:los",
-        "en:other"
+        "en:other",
+        "topic:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -64000,7 +64010,8 @@
         "grammar:uncountable",
         "pos:determiner",
         "es:demasiado",
-        "en:too"
+        "en:too",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -64019,7 +64030,8 @@
         "grammar:countable",
         "pos:determiner",
         "es:demasiados",
-        "en:too"
+        "en:too",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -64038,7 +64050,8 @@
         "grammar:uncountable",
         "pos:determiner",
         "es:tanto",
-        "en:so"
+        "en:so",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -64057,7 +64070,8 @@
         "grammar:countable",
         "pos:determiner",
         "es:tantos",
-        "en:so"
+        "en:so",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -64146,7 +64160,8 @@
         "grammar:uncountable",
         "pos:determiner",
         "es:mucho",
-        "en:lot"
+        "en:lot",
+        "topic:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -64163,7 +64178,8 @@
         "grammar:countable",
         "pos:determiner",
         "es:muchos",
-        "en:lot"
+        "en:lot",
+        "topic:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -64180,7 +64196,8 @@
         "grammar:countable",
         "pos:determiner",
         "es:muchos",
-        "en:many"
+        "en:many",
+        "topic:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -64198,7 +64215,8 @@
         "grammar:question",
         "pos:determiner",
         "es:mucho",
-        "en:much"
+        "en:much",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -64217,7 +64235,8 @@
         "register:informal",
         "pos:determiner",
         "es:muchos",
-        "en:lots"
+        "en:lots",
+        "topic:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -64235,7 +64254,8 @@
         "more than enough",
         "pos:determiner",
         "es:más",
-        "en:plenty"
+        "en:plenty",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -64252,7 +64272,8 @@
         "grammar:uncountable",
         "pos:determiner",
         "es:suficiente",
-        "en:enough"
+        "en:enough",
+        "topic:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -64269,7 +64290,8 @@
         "grammar:countable",
         "pos:determiner",
         "es:suficientes",
-        "en:enough"
+        "en:enough",
+        "topic:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -64305,7 +64327,8 @@
         "grammar:uncountable",
         "pos:determiner",
         "es:poco",
-        "en:little"
+        "en:little",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -64323,7 +64346,8 @@
         "grammar:countable",
         "pos:determiner",
         "es:unos",
-        "en:few"
+        "en:few",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -64340,7 +64364,8 @@
         "grammar:uncountable",
         "pos:determiner",
         "es:menos",
-        "en:less"
+        "en:less",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -64357,7 +64382,8 @@
         "grammar:countable",
         "pos:determiner",
         "es:menos",
-        "en:fewer"
+        "en:fewer",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -64413,9 +64439,10 @@
         "specific plural",
         "grammar:countable",
         "es:gustar",
-        "en:likes"
+        "en:likes",
+        "topic:determiner"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "core"
     },
     {
       "id": "t0gq5vym7f",
@@ -64431,9 +64458,10 @@
         "specific idea",
         "grammar:uncountable",
         "es:necesitar",
-        "en:need"
+        "en:need",
+        "topic:determiner"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "core"
     },
     {
       "id": "gpe0vp0dv6",
@@ -73666,7 +73694,8 @@
         "es:mi",
         "en:my",
         "contrast:mi-vs-mi-tilde",
-        "contrast:confusable"
+        "contrast:confusable",
+        "topic:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -73684,7 +73713,8 @@
         "grammar:plural",
         "topic:pronoun",
         "es:mi",
-        "en:my"
+        "en:my",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -73703,7 +73733,8 @@
         "es:su",
         "en:his",
         "contrast:su-ambiguity",
-        "contrast:confusable"
+        "contrast:confusable",
+        "topic:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -73722,7 +73753,8 @@
         "es:su",
         "en:her",
         "contrast:su-ambiguity",
-        "contrast:confusable"
+        "contrast:confusable",
+        "topic:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -73741,7 +73773,8 @@
         "es:su",
         "en:its",
         "contrast:su-ambiguity",
-        "contrast:confusable"
+        "contrast:confusable",
+        "topic:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -73761,7 +73794,8 @@
         "es:su",
         "en:their",
         "contrast:su-ambiguity",
-        "contrast:confusable"
+        "contrast:confusable",
+        "topic:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -73781,7 +73815,8 @@
         "es:su",
         "en:your",
         "contrast:su-ambiguity",
-        "contrast:confusable"
+        "contrast:confusable",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -73801,7 +73836,8 @@
         "es:su",
         "en:their",
         "contrast:confusable",
-        "contrast:su-ambiguity"
+        "contrast:su-ambiguity",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -74815,7 +74851,8 @@
         "es:este",
         "en:this",
         "contrast:este-vs-esto",
-        "contrast:confusable"
+        "contrast:confusable",
+        "topic:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -74836,7 +74873,8 @@
         "grammar:feminine",
         "topic:pronoun",
         "es:esta",
-        "en:this"
+        "en:this",
+        "topic:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -74857,7 +74895,8 @@
         "grammar:masculine",
         "topic:pronoun",
         "es:ese",
-        "en:that"
+        "en:that",
+        "topic:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -74878,7 +74917,8 @@
         "grammar:feminine",
         "topic:pronoun",
         "es:esa",
-        "en:that"
+        "en:that",
+        "topic:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -74899,7 +74939,8 @@
         "grammar:masculine",
         "topic:pronoun",
         "es:estos",
-        "en:these"
+        "en:these",
+        "topic:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -74920,7 +74961,8 @@
         "grammar:feminine",
         "topic:pronoun",
         "es:estas",
-        "en:these"
+        "en:these",
+        "topic:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -74941,7 +74983,8 @@
         "grammar:masculine",
         "topic:pronoun",
         "es:esos",
-        "en:those"
+        "en:those",
+        "topic:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -74962,7 +75005,8 @@
         "grammar:feminine",
         "topic:pronoun",
         "es:esas",
-        "en:those"
+        "en:those",
+        "topic:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -75101,7 +75145,8 @@
         "es:ambos",
         "en:both",
         "topic:pronoun",
-        "grammar:indefinite-pronoun"
+        "grammar:indefinite-pronoun",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -75118,7 +75163,8 @@
         "grammar:quantifier",
         "grammar:feminine",
         "es:ambas",
-        "en:both"
+        "en:both",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -75136,7 +75182,8 @@
         "grammar:countable",
         "grammar:masculine",
         "es:muchos",
-        "en:many"
+        "en:many",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -75154,7 +75201,8 @@
         "grammar:countable",
         "grammar:feminine",
         "es:muchas",
-        "en:many"
+        "en:many",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -75172,7 +75220,8 @@
         "grammar:quantifier",
         "grammar:masculine",
         "es:cuántos",
-        "en:how"
+        "en:how",
+        "topic:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -75190,7 +75239,8 @@
         "grammar:quantifier",
         "grammar:feminine",
         "es:cuántas",
-        "en:how"
+        "en:how",
+        "topic:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -75208,7 +75258,8 @@
         "grammar:countable",
         "grammar:masculine",
         "es:pocos",
-        "en:few"
+        "en:few",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -75226,7 +75277,8 @@
         "grammar:countable",
         "grammar:feminine",
         "es:pocas",
-        "en:few"
+        "en:few",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -75244,7 +75296,8 @@
         "grammar:plural",
         "grammar:masculine",
         "es:otros",
-        "en:other"
+        "en:other",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -75262,7 +75315,8 @@
         "grammar:plural",
         "grammar:feminine",
         "es:otras",
-        "en:other"
+        "en:other",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -75281,7 +75335,8 @@
         "grammar:masculine",
         "topic:pronoun",
         "es:nuestros",
-        "en:our"
+        "en:our",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -75300,7 +75355,8 @@
         "grammar:feminine",
         "topic:pronoun",
         "es:nuestras",
-        "en:our"
+        "en:our",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -75319,7 +75375,8 @@
         "grammar:masculine",
         "topic:pronoun",
         "es:nuestro",
-        "en:our"
+        "en:our",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -75338,7 +75395,8 @@
         "grammar:feminine",
         "topic:pronoun",
         "es:nuestra",
-        "en:our"
+        "en:our",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -75521,7 +75579,8 @@
         "grammar:plural",
         "topic:pronoun",
         "es:tu",
-        "en:your"
+        "en:your",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -75638,7 +75697,8 @@
         "grammar:masculine",
         "topic:pronoun",
         "es:aquellos",
-        "en:those"
+        "en:those",
+        "topic:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -75659,7 +75719,8 @@
         "grammar:feminine",
         "topic:pronoun",
         "es:aquellas",
-        "en:those"
+        "en:those",
+        "topic:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -76149,7 +76210,8 @@
         "es:sus",
         "topic:pronoun",
         "contrast:confusable",
-        "contrast:su-ambiguity"
+        "contrast:su-ambiguity",
+        "topic:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -76169,7 +76231,8 @@
         "es:sus",
         "topic:pronoun",
         "contrast:confusable",
-        "contrast:su-ambiguity"
+        "contrast:su-ambiguity",
+        "topic:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -76189,7 +76252,8 @@
         "es:sus",
         "topic:pronoun",
         "contrast:confusable",
-        "contrast:su-ambiguity"
+        "contrast:su-ambiguity",
+        "topic:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -76209,7 +76273,8 @@
         "es:sus",
         "topic:pronoun",
         "contrast:confusable",
-        "contrast:su-ambiguity"
+        "contrast:su-ambiguity",
+        "topic:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -76230,7 +76295,8 @@
         "pos:function-word",
         "en:that",
         "es:aquel",
-        "topic:pronoun"
+        "topic:pronoun",
+        "topic:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -76251,7 +76317,8 @@
         "pos:function-word",
         "en:that",
         "es:aquella",
-        "topic:pronoun"
+        "topic:pronoun",
+        "topic:determiner"
       ],
       "curriculumRole": "reference"
     },
