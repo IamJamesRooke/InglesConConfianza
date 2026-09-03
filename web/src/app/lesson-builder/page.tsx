@@ -2,6 +2,7 @@
 
 import { FileText, Keyboard, Languages, Plus, Table2, X } from "lucide-react";
 import Link from "next/link";
+import { BuilderNav } from "@/components/lesson-builder/builder-nav";
 import {
   Fragment,
   useCallback,
@@ -1543,12 +1544,7 @@ export default function LessonBuilderPage() {
                       : "Loaded from lessons.json"}
             </p>
           </div>
-          <Link
-            href="/lesson-builder/course"
-            className="shrink-0 rounded-lg border border-border bg-card px-3 py-2 text-sm font-semibold text-foreground transition hover:bg-muted"
-          >
-            Course →
-          </Link>
+          <BuilderNav active="builder" />
         </div>
 
         {lessons.map((lesson, lessonIndex) => {
@@ -1589,10 +1585,10 @@ export default function LessonBuilderPage() {
                   </span>
                 )}
                 <Link
-                  href="/lesson-builder/course"
+                  href="/lesson-builder/modules"
                   className="text-xs font-medium text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
                 >
-                  edit in Course
+                  edit in Modules
                 </Link>
               </div>
             )}
