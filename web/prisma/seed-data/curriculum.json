@@ -44215,9 +44215,10 @@
         "grammar:quantifier",
         "pos:number",
         "es:uno",
-        "en:one"
+        "en:one",
+        "topic:determiner"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "sg0mhmy1g3",
@@ -44232,9 +44233,10 @@
         "grammar:quantifier",
         "pos:number",
         "es:dos",
-        "en:two"
+        "en:two",
+        "topic:determiner"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "916fz6l1gh",
@@ -44249,9 +44251,10 @@
         "grammar:quantifier",
         "pos:number",
         "es:tres",
-        "en:three"
+        "en:three",
+        "topic:determiner"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "sj02ormmtw",
@@ -44266,7 +44269,8 @@
         "grammar:quantifier",
         "pos:number",
         "es:cuatro",
-        "en:four"
+        "en:four",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -44283,7 +44287,8 @@
         "grammar:quantifier",
         "pos:number",
         "es:cinco",
-        "en:five"
+        "en:five",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -44300,7 +44305,8 @@
         "grammar:quantifier",
         "pos:number",
         "es:seis",
-        "en:six"
+        "en:six",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -44317,7 +44323,8 @@
         "grammar:quantifier",
         "pos:number",
         "es:siete",
-        "en:seven"
+        "en:seven",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -44334,7 +44341,8 @@
         "grammar:quantifier",
         "pos:number",
         "es:ocho",
-        "en:eight"
+        "en:eight",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -44351,7 +44359,8 @@
         "grammar:quantifier",
         "pos:number",
         "es:nueve",
-        "en:nine"
+        "en:nine",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -44368,7 +44377,8 @@
         "grammar:quantifier",
         "pos:number",
         "es:diez",
-        "en:ten"
+        "en:ten",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -44385,7 +44395,8 @@
         "grammar:quantifier",
         "pos:number",
         "es:once",
-        "en:eleven"
+        "en:eleven",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -44402,7 +44413,8 @@
         "grammar:quantifier",
         "pos:number",
         "es:doce",
-        "en:twelve"
+        "en:twelve",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -44421,7 +44433,8 @@
         "sound:teen-vs-ty",
         "pos:number",
         "es:trece",
-        "en:thirteen"
+        "en:thirteen",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -44440,7 +44453,8 @@
         "sound:teen-vs-ty",
         "pos:number",
         "es:catorce",
-        "en:fourteen"
+        "en:fourteen",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -44459,7 +44473,8 @@
         "sound:teen-vs-ty",
         "pos:number",
         "es:quince",
-        "en:fifteen"
+        "en:fifteen",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -44478,7 +44493,8 @@
         "sound:teen-vs-ty",
         "pos:number",
         "es:dieciséis",
-        "en:sixteen"
+        "en:sixteen",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -44497,7 +44513,8 @@
         "sound:teen-vs-ty",
         "pos:number",
         "es:diecisiete",
-        "en:seventeen"
+        "en:seventeen",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -44516,7 +44533,8 @@
         "sound:teen-vs-ty",
         "pos:number",
         "es:dieciocho",
-        "en:eighteen"
+        "en:eighteen",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -44535,7 +44553,8 @@
         "sound:teen-vs-ty",
         "pos:number",
         "es:diecinueve",
-        "en:nineteen"
+        "en:nineteen",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -44554,7 +44573,8 @@
         "sound:teen-vs-ty",
         "pos:number",
         "es:veinte",
-        "en:twenty"
+        "en:twenty",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -44573,7 +44593,8 @@
         "sound:teen-vs-ty",
         "pos:number",
         "es:treinta",
-        "en:thirty"
+        "en:thirty",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -44592,7 +44613,8 @@
         "sound:teen-vs-ty",
         "pos:number",
         "es:cuarenta",
-        "en:forty"
+        "en:forty",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -44611,7 +44633,8 @@
         "sound:teen-vs-ty",
         "pos:number",
         "es:cincuenta",
-        "en:fifty"
+        "en:fifty",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -44630,7 +44653,8 @@
         "sound:teen-vs-ty",
         "pos:number",
         "es:sesenta",
-        "en:sixty"
+        "en:sixty",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -44649,7 +44673,8 @@
         "sound:teen-vs-ty",
         "pos:number",
         "es:setenta",
-        "en:seventy"
+        "en:seventy",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -44668,7 +44693,8 @@
         "sound:teen-vs-ty",
         "pos:number",
         "es:ochenta",
-        "en:eighty"
+        "en:eighty",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -44687,7 +44713,8 @@
         "sound:teen-vs-ty",
         "pos:number",
         "es:noventa",
-        "en:ninety"
+        "en:ninety",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -45731,7 +45758,8 @@
         "grammar:quantifier",
         "pos:number",
         "es:cien",
-        "en:one"
+        "en:one",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -45749,7 +45777,8 @@
         "grammar:quantifier",
         "pos:number",
         "es:mil",
-        "en:one"
+        "en:one",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -45767,7 +45796,8 @@
         "grammar:quantifier",
         "pos:number",
         "es:millón",
-        "en:one"
+        "en:one",
+        "topic:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -45787,7 +45817,8 @@
         "cognate:confusion-set",
         "pos:number",
         "es:mil",
-        "en:one"
+        "en:one",
+        "topic:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -45807,7 +45838,8 @@
         "cognate:confusion-set",
         "pos:number",
         "es:billón",
-        "en:one"
+        "en:one",
+        "topic:determiner"
       ],
       "curriculumRole": "reference"
     },
