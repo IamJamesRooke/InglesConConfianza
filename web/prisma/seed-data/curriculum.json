@@ -21080,7 +21080,9 @@
         "grammar:plural",
         "en:the",
         "topic:determiner",
-        "pos:function-word"
+        "pos:function-word",
+        "contrast:spanish-article-no-english",
+        "contrast:confusable"
       ],
       "curriculumRole": "core"
     },
@@ -21100,7 +21102,9 @@
         "grammar:plural",
         "en:the",
         "topic:determiner",
-        "pos:function-word"
+        "pos:function-word",
+        "contrast:spanish-article-no-english",
+        "contrast:confusable"
       ],
       "curriculumRole": "core"
     },
@@ -64108,7 +64112,9 @@
         "grammar:adjective-modifier",
         "en:result",
         "es:tan",
-        "en:so"
+        "en:so",
+        "contrast:tanto-vs-tan",
+        "contrast:confusable"
       ],
       "curriculumRole": "core"
     },
@@ -64203,7 +64209,9 @@
         "pos:determiner",
         "es:tanto",
         "en:so",
-        "topic:determiner"
+        "topic:determiner",
+        "contrast:tanto-vs-tan",
+        "contrast:confusable"
       ],
       "curriculumRole": "supporting"
     },
