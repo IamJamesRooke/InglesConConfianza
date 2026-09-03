@@ -1,4 +1,70 @@
 {
   "version": 1,
-  "lessons": []
+  "lessons": [
+    {
+      "id": "lesson_bdacade3-8ad6-4217-8c47-d5907d6122af",
+      "name": "I speak English very well.",
+      "blocks": [
+        {
+          "id": "block_d609412a-b2f4-4eb1-b46b-7cf7855867f5",
+          "type": "explanation",
+          "contentMarkdown": "==yo hablo== es ==I speak=="
+        },
+        {
+          "id": "block_29200d87-fe8f-469f-9afe-cfa884c90896",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_1a4d2034-1ce4-452e-b5b6-62e5ef0494a3",
+              "spanish": "yo hablo",
+              "callout": null,
+              "acceptedAnswers": [
+                "I speak"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_372ac0b0-ca3f-4405-8b47-c811154736d5",
+          "type": "explanation",
+          "contentMarkdown": "==inglés== es ==English=="
+        },
+        {
+          "id": "block_03143853-5ac5-4f2b-bcf3-437b338ce98b",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_a4e0f141-e241-441f-b347-0d48adf385bc",
+              "spanish": "yo hablo",
+              "callout": null,
+              "acceptedAnswers": [
+                "I speak"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_21fc594d-fc77-43a2-870f-ceb9ff8e2bd5",
+              "spanish": "inglés.",
+              "callout": "'E' en mayúscula; punto al final.",
+              "acceptedAnswers": [
+                "English."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

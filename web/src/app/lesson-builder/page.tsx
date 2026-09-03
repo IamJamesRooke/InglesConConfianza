@@ -11,7 +11,6 @@ import {
   Languages,
   Plus,
   Save,
-  Sun,
   Table2,
   Trash2,
   X,
@@ -33,7 +32,7 @@ import {
   type PracticeLesson,
 } from "@/components/practice/lesson-selector";
 import { OverviewMarkdown } from "@/components/lesson-builder/overview-markdown";
-import { LanguageBlockCallout } from "@/components/lesson-builder/language-block-callout";
+import { LanguageBlockEditor } from "@/components/lesson-builder/language-block-editor";
 import { PendingLessonExitDialog } from "@/components/lesson-builder/pending-lesson-exit-dialog";
 import { SentenceConceptLinks } from "@/components/lesson-builder/sentence-concept-links";
 import type {
@@ -46,7 +45,6 @@ import type {
 import {
   createConceptLink,
   createId,
-  getAnswerValidationMessage,
   getSentenceValidationIssueCount,
   normalizeLessons,
 } from "@/lib/lesson-builder/utils";
@@ -2503,16 +2501,12 @@ export default function LessonBuilderPage() {
                           >
                             {block.languageBlocks.map(
                               (languageBlock, languageBlockIndex) => {
+                                const languageBlockKey = `${lesson.id}-${block.id}-${languageBlock.id}`;
                                 const isLastLanguageBlock =
                                   languageBlockIndex ===
                                   block.languageBlocks.length - 1;
                                 const previousLanguageBlock =
                                   block.languageBlocks[languageBlockIndex - 1];
-                                const languageBlockKey = `${lesson.id}-${block.id}-${languageBlock.id}`;
-                                const isLanguageBlockCollapsed =
-                                  collapsedLanguageBlocks.has(languageBlockKey);
-                                const isSpanishMissing =
-                                  !languageBlock.spanish.trim();
                                 const languageDropPosition =
                                   languageBlockDropTarget?.lessonId ===
                                     lesson.id &&
@@ -2530,33 +2524,48 @@ export default function LessonBuilderPage() {
                                     languageBlock.id;
 
                                 return (
-                                  <div
+                                  <LanguageBlockEditor
                                     key={languageBlock.id}
-                                    onClick={(event) => {
-                                      if (
-                                        event.target instanceof Element &&
-                                          event.target.closest(
-                                            "button, input, textarea, select, a, [contenteditable='true']",
-                                          )
-                                      ) {
-                                        return;
-                                      }
-
-                                      if (isLanguageBlockCollapsed) {
-                                        openLanguageBlockAndFocusSpanish(
-                                          lesson.id,
-                                          block.id,
-                                          languageBlock.id,
-                                        );
-                                      } else {
-                                        setCollapsedLanguageBlocks(
-                                          (currentKeys) =>
-                                            new Set(currentKeys).add(
-                                              languageBlockKey,
-                                            ),
-                                        );
-                                      }
-                                    }}
+                                    languageBlock={languageBlock}
+                                    index={languageBlockIndex}
+                                    isCollapsed={collapsedLanguageBlocks.has(
+                                      languageBlockKey,
+                                    )}
+                                    hasPreviousBlock={Boolean(
+                                      previousLanguageBlock,
+                                    )}
+                                    dropPosition={languageDropPosition}
+                                    isDragging={isDraggingLanguageBlock}
+                                    onExpandFocusSpanish={() =>
+                                      openLanguageBlockAndFocusSpanish(
+                                        lesson.id,
+                                        block.id,
+                                        languageBlock.id,
+                                      )
+                                    }
+                                    onCollapse={() =>
+                                      setCollapsedLanguageBlocks((currentKeys) =>
+                                        new Set(currentKeys).add(
+                                          languageBlockKey,
+                                        ),
+                                      )
+                                    }
+                                    onDelete={() =>
+                                      deleteLanguageBlock(
+                                        lesson.id,
+                                        block.id,
+                                        languageBlock.id,
+                                      )
+                                    }
+                                    onDragStart={(event) =>
+                                      startDraggingLanguageBlock(
+                                        event,
+                                        lesson.id,
+                                        block.id,
+                                        languageBlock.id,
+                                      )
+                                    }
+                                    onDragEnd={finishDraggingLanguageBlock}
                                     onDragOver={(event) =>
                                       updateLanguageBlockDropTarget(
                                         event,
@@ -2565,432 +2574,146 @@ export default function LessonBuilderPage() {
                                         languageBlock.id,
                                       )
                                     }
-                                    onDrop={(event) => {
-                                      event.preventDefault();
-                                      event.stopPropagation();
+                                    onDrop={() => {
                                       moveDraggedLanguageBlock();
                                       finishDraggingLanguageBlock();
                                     }}
-                                    className={`relative overflow-hidden rounded-xl border bg-white transition ${
-                                      isLanguageBlockCollapsed
-                                        ? "cursor-pointer shadow-sm"
-                                        : "cursor-pointer shadow-md shadow-stone-200/60"
-                                    } ${
-                                      isSpanishMissing ||
-                                      languageBlock.acceptedAnswers.some(
-                                        (_, answerIndex) =>
-                                          getAnswerValidationMessage(
-                                            languageBlock.acceptedAnswers,
-                                            answerIndex,
-                                          ),
+                                    registerSpanishRef={(element) => {
+                                      const key = `${lesson.id}-${block.id}-${languageBlock.id}`;
+                                      if (element) {
+                                        languageBlockSpanishRefs.current.set(
+                                          key,
+                                          element,
+                                        );
+                                      } else {
+                                        languageBlockSpanishRefs.current.delete(
+                                          key,
+                                        );
+                                      }
+                                    }}
+                                    onSpanishChange={(value) =>
+                                      updateSpanishPrompt(
+                                        lesson.id,
+                                        block.id,
+                                        languageBlock.id,
+                                        value,
                                       )
-                                        ? "border-red-300"
-                                        : "border-stone-300"
-                                    } ${isDraggingLanguageBlock ? "opacity-45" : ""}`}
-                                  >
-                                    {languageDropPosition && (
-                                      <span
-                                        aria-hidden="true"
-                                        className={`absolute inset-y-2 z-20 w-1 rounded-full bg-blue-500 ${
-                                          languageDropPosition === "before"
-                                            ? "left-0"
-                                            : "right-0"
-                                        }`}
-                                      />
-                                    )}
-                                    <div className="flex items-center justify-between gap-2 border-b border-stone-200 bg-stone-100 px-2 py-1.5">
-                                      <button
-                                        type="button"
-                                        draggable
-                                        onDragStart={(event) =>
-                                          startDraggingLanguageBlock(
-                                            event,
+                                    }
+                                    onSpanishTabBackward={() => {
+                                      if (previousLanguageBlock) {
+                                        openLanguageBlockAndFocusAnswer(
+                                          lesson.id,
+                                          block.id,
+                                          previousLanguageBlock.id,
+                                          Math.max(
+                                            previousLanguageBlock.acceptedAnswers
+                                              .length - 1,
+                                            0,
+                                          ),
+                                        );
+                                      }
+                                    }}
+                                    onSpanishTabForward={() => {
+                                      acceptedAnswerRefs.current
+                                        .get(
+                                          `${lesson.id}-${block.id}-${languageBlock.id}-0`,
+                                        )
+                                        ?.focus();
+                                    }}
+                                    registerAnswerRef={(answerIndex, element) => {
+                                      const key = `${lesson.id}-${block.id}-${languageBlock.id}-${answerIndex}`;
+                                      if (element) {
+                                        acceptedAnswerRefs.current.set(
+                                          key,
+                                          element,
+                                        );
+                                      } else {
+                                        acceptedAnswerRefs.current.delete(key);
+                                      }
+                                    }}
+                                    onAnswerChange={(answerIndex, value) =>
+                                      updateAcceptedAnswer(
+                                        lesson.id,
+                                        block.id,
+                                        languageBlock.id,
+                                        answerIndex,
+                                        value,
+                                      )
+                                    }
+                                    onAnswerAppend={() =>
+                                      addAcceptedAnswer(
+                                        lesson.id,
+                                        block.id,
+                                        languageBlock.id,
+                                        languageBlock.acceptedAnswers.length,
+                                      )
+                                    }
+                                    onAnswerRemove={(answerIndex) =>
+                                      removeAcceptedAnswer(
+                                        lesson.id,
+                                        block.id,
+                                        languageBlock.id,
+                                        answerIndex,
+                                      )
+                                    }
+                                    onAnswersTabForwardFromLast={() => {
+                                      if (isLastLanguageBlock) {
+                                        addLanguageBlock(
+                                          lesson.id,
+                                          block.id,
+                                          createId("lang"),
+                                        );
+                                      } else {
+                                        const nextLanguageBlock =
+                                          block.languageBlocks[
+                                            languageBlockIndex + 1
+                                          ];
+                                        if (nextLanguageBlock) {
+                                          openLanguageBlockAndFocusSpanish(
                                             lesson.id,
                                             block.id,
-                                            languageBlock.id,
-                                          )
-                                        }
-                                        onDragEnd={(event) => {
-                                          event.stopPropagation();
-                                          finishDraggingLanguageBlock();
-                                        }}
-                                        aria-label={`Drag language block ${languageBlockIndex + 1} to reorder`}
-                                        title="Drag to reorder"
-                                        className="flex size-7 cursor-grab items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200 active:cursor-grabbing"
-                                      >
-                                        <GripVertical className="size-3.5" aria-hidden="true" />
-                                      </button>
-                                      <div className="flex items-center gap-0.5">
-                                        <button
-                                          type="button"
-                                          onClick={() =>
-                                            deleteLanguageBlock(
-                                              lesson.id,
-                                              block.id,
-                                              languageBlock.id,
-                                            )
-                                          }
-                                          aria-label={`Delete language block ${languageBlockIndex + 1}`}
-                                          title="Delete language block"
-                                          className="flex size-7 items-center justify-center rounded-md text-stone-400 transition hover:bg-red-50 hover:text-red-600"
-                                        >
-                                          <Trash2 className="size-3.5" aria-hidden="true" />
-                                        </button>
-                                      </div>
-                                    </div>
-                                    {isLanguageBlockCollapsed ? (
-                                      <>
-                                        <div
-                                          role="button"
-                                          tabIndex={0}
-                                          onKeyDown={(event) => {
-                                            if (
-                                              event.key === "Enter" ||
-                                              event.key === " "
-                                            ) {
-                                              event.preventDefault();
-                                              openLanguageBlockAndFocusSpanish(
-                                                lesson.id,
-                                                block.id,
-                                                languageBlock.id,
-                                              );
-                                            }
-                                          }}
-                                          className="cursor-pointer px-3 py-3 text-sm text-stone-600 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-inset focus-visible:ring-blue-200"
-                                        >
-                                          <p className="font-bold text-stone-900">
-                                            {languageBlock.spanish || "Spanish prompt"}
-                                          </p>
-                                          <div className="mt-1 space-y-0.5">
-                                            {languageBlock.acceptedAnswers.some(
-                                              (answer) => answer.trim(),
-                                            ) ? (
-                                              languageBlock.acceptedAnswers
-                                                .filter((answer) => answer.trim())
-                                                .map((answer, answerIndex) => (
-                                                  <p
-                                                    key={`${answer}-${answerIndex}`}
-                                                    className="italic text-stone-500"
-                                                  >
-                                                    {answer}
-                                                  </p>
-                                                ))
-                                            ) : (
-                                              <p className="italic text-stone-400">
-                                                English answer
-                                              </p>
-                                            )}
-                                          </div>
-                                        </div>
-                                        {languageBlock.callout != null && (
-                                          <div className="flex items-center gap-2 border-t border-amber-300 bg-gradient-to-r from-amber-100 via-yellow-200 to-orange-100 px-3 py-2 text-sm font-semibold text-amber-950">
-                                            <Sun
-                                              className="size-4 shrink-0 text-orange-600"
-                                              aria-hidden="true"
-                                            />
-                                            <p className="min-w-0 truncate italic">
-                                              {languageBlock.callout ||
-                                                "Empty context hint"}
-                                            </p>
-                                          </div>
-                                        )}
-                                      </>
-                                    ) : (
-                                      <>
-                                    <div className="flex min-h-28 flex-col items-center justify-center gap-2 px-4 py-5">
-                                      <label className="w-full">
-                                        <span className="sr-only">
-                                          Spanish prompt
-                                        </span>
-                                        <input
-                                          ref={(element) => {
-                                            const key = `${lesson.id}-${block.id}-${languageBlock.id}`;
-                                            if (element) {
-                                              languageBlockSpanishRefs.current.set(
-                                                key,
-                                                element,
-                                              );
-                                            } else {
-                                              languageBlockSpanishRefs.current.delete(
-                                                key,
-                                              );
-                                            }
-                                          }}
-                                          type="text"
-                                          value={languageBlock.spanish}
-                                          aria-invalid={isSpanishMissing}
-                                          onChange={(event) =>
-                                            updateSpanishPrompt(
-                                              lesson.id,
-                                              block.id,
-                                              languageBlock.id,
-                                              event.target.value,
-                                            )
-                                          }
-                                          onKeyDown={(event) => {
-                                            if (
-                                              event.key === "Tab" &&
-                                              event.shiftKey &&
-                                              previousLanguageBlock
-                                            ) {
-                                              event.preventDefault();
-                                              openLanguageBlockAndFocusAnswer(
-                                                lesson.id,
-                                                block.id,
-                                                previousLanguageBlock.id,
-                                                Math.max(
-                                                  previousLanguageBlock
-                                                    .acceptedAnswers.length - 1,
-                                                  0,
-                                                ),
-                                              );
-                                              return;
-                                            }
-
-                                            if (
-                                              event.key === "Tab" &&
-                                              !event.shiftKey
-                                            ) {
-                                              event.preventDefault();
-                                              acceptedAnswerRefs.current
-                                                .get(
-                                                  `${lesson.id}-${block.id}-${languageBlock.id}-0`,
-                                                )
-                                                ?.focus();
-                                            }
-                                          }}
-                                          placeholder="Spanish prompt"
-                                          className="w-full bg-transparent text-center text-xl font-semibold tracking-tight text-stone-900 outline-none placeholder:text-stone-300"
-                                        />
-                                      </label>
-                                      {isSpanishMissing && (
-                                        <p className="text-xs font-medium text-red-600">
-                                          Spanish text is required.
-                                        </p>
-                                      )}
-                                    </div>
-                                    <div className="border-t border-stone-800 bg-stone-900 px-3 py-3">
-                                      <div className="space-y-2">
-                                        {languageBlock.acceptedAnswers.map(
-                                          (answer, answerIndex) => {
-                                            const isPrimaryAnswer =
-                                              answerIndex === 0;
-                                            const isLastAnswer =
-                                              answerIndex ===
-                                              languageBlock.acceptedAnswers
-                                                .length -
-                                                1;
-                                            const nextLanguageBlock =
-                                              block.languageBlocks[
-                                                languageBlockIndex + 1
-                                              ];
-                                            const answerValidationMessage =
-                                              getAnswerValidationMessage(
-                                                languageBlock.acceptedAnswers,
-                                                answerIndex,
-                                              );
-
-                                            return (
-                                              <label
-                                                key={answerIndex}
-                                                className="block"
-                                              >
-                                                <span className="mb-1 block text-[10px] font-semibold uppercase tracking-[0.14em] text-stone-500">
-                                                  {isPrimaryAnswer
-                                                    ? "English answer"
-                                                    : "Also accepted"}
-                                                </span>
-                                                <span className="flex items-center gap-1.5">
-                                                  <input
-                                                    ref={(element) => {
-                                                      const key = `${lesson.id}-${block.id}-${languageBlock.id}-${answerIndex}`;
-                                                      if (element) {
-                                                        acceptedAnswerRefs.current.set(
-                                                          key,
-                                                          element,
-                                                        );
-                                                      } else {
-                                                        acceptedAnswerRefs.current.delete(
-                                                          key,
-                                                        );
-                                                      }
-                                                    }}
-                                                    type="text"
-                                                    value={answer}
-                                                    aria-invalid={
-                                                      Boolean(
-                                                        answerValidationMessage,
-                                                      )
-                                                    }
-                                                    onChange={(event) =>
-                                                      updateAcceptedAnswer(
-                                                        lesson.id,
-                                                        block.id,
-                                                        languageBlock.id,
-                                                        answerIndex,
-                                                        event.target.value,
-                                                      )
-                                                    }
-                                                    onKeyDown={(event) => {
-                                                      if (
-                                                        event.altKey &&
-                                                        event.key === "Enter"
-                                                      ) {
-                                                        event.preventDefault();
-                                                        addAcceptedAnswer(
-                                                          lesson.id,
-                                                          block.id,
-                                                          languageBlock.id,
-                                                          languageBlock
-                                                            .acceptedAnswers
-                                                            .length,
-                                                        );
-                                                        return;
-                                                      }
-
-                                                      if (
-                                                        event.key === "Enter" &&
-                                                        !isPrimaryAnswer
-                                                      ) {
-                                                        event.preventDefault();
-                                                        addAcceptedAnswer(
-                                                          lesson.id,
-                                                          block.id,
-                                                          languageBlock.id,
-                                                          languageBlock
-                                                            .acceptedAnswers
-                                                            .length,
-                                                        );
-                                                        return;
-                                                      }
-
-                                                      if (
-                                                        event.key === "Tab" &&
-                                                        !event.shiftKey &&
-                                                        isLastAnswer
-                                                      ) {
-                                                        event.preventDefault();
-
-                                                        if (
-                                                          isLastLanguageBlock
-                                                        ) {
-                                                          addLanguageBlock(
-                                                            lesson.id,
-                                                            block.id,
-                                                            createId("lang"),
-                                                          );
-                                                        } else if (
-                                                          nextLanguageBlock
-                                                        ) {
-                                                          openLanguageBlockAndFocusSpanish(
-                                                            lesson.id,
-                                                            block.id,
-                                                            nextLanguageBlock.id,
-                                                          );
-                                                        }
-                                                      }
-                                                    }}
-                                                    placeholder={
-                                                      isPrimaryAnswer
-                                                        ? "English answer"
-                                                        : "Alternative answer"
-                                                    }
-                                                    className="min-w-0 flex-1 rounded-md bg-stone-800 px-2.5 py-2 text-sm font-semibold text-white outline-none transition placeholder:text-stone-500 focus:bg-stone-700 focus:ring-2 focus:ring-blue-400/50"
-                                                  />
-                                                  {!isPrimaryAnswer && (
-                                                    <button
-                                                      type="button"
-                                                      onClick={() =>
-                                                        removeAcceptedAnswer(
-                                                          lesson.id,
-                                                          block.id,
-                                                          languageBlock.id,
-                                                          answerIndex,
-                                                        )
-                                                      }
-                                                      aria-label="Remove alternative answer"
-                                                      title="Remove alternative answer"
-                                                      className="flex size-8 shrink-0 items-center justify-center rounded-md text-stone-500 transition hover:bg-red-950/50 hover:text-red-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400/60"
-                                                    >
-                                                      <X
-                                                        className="size-4"
-                                                        aria-hidden="true"
-                                                      />
-                                                    </button>
-                                                  )}
-                                                </span>
-                                                {answerValidationMessage && (
-                                                  <span className="mt-1 block text-xs font-medium text-red-300">
-                                                    {answerValidationMessage}
-                                                  </span>
-                                                )}
-                                              </label>
-                                            );
-                                          },
-                                        )}
-                                      </div>
-                                      <button
-                                        type="button"
-                                        onClick={() =>
-                                          addAcceptedAnswer(
-                                            lesson.id,
-                                            block.id,
-                                            languageBlock.id,
-                                            languageBlock.acceptedAnswers.length,
-                                          )
-                                        }
-                                        title="Add alternative answer (Alt+Enter)"
-                                        className="mt-2 flex items-center gap-1 rounded-md px-2 py-1.5 text-xs font-medium text-stone-400 transition hover:bg-stone-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/60"
-                                      >
-                                        <Plus
-                                          className="size-3.5"
-                                          aria-hidden="true"
-                                        />
-                                        Add alternative
-                                      </button>
-                                    </div>
-                                    <LanguageBlockCallout
-                                      callout={languageBlock.callout}
-                                      registerInputRef={(element) => {
-                                        const key = `${lesson.id}-${block.id}-${languageBlock.id}`;
-                                        if (element) {
-                                          languageBlockCalloutRefs.current.set(
-                                            key,
-                                            element,
-                                          );
-                                        } else {
-                                          languageBlockCalloutRefs.current.delete(
-                                            key,
+                                            nextLanguageBlock.id,
                                           );
                                         }
-                                      }}
-                                      onAdd={() =>
-                                        addLanguageBlockCallout(
-                                          lesson.id,
-                                          block.id,
-                                          languageBlock.id,
-                                        )
                                       }
-                                      onChange={(value) =>
-                                        updateLanguageBlockCallout(
-                                          lesson.id,
-                                          block.id,
-                                          languageBlock.id,
-                                          value,
-                                        )
+                                    }}
+                                    registerCalloutRef={(element) => {
+                                      const key = `${lesson.id}-${block.id}-${languageBlock.id}`;
+                                      if (element) {
+                                        languageBlockCalloutRefs.current.set(
+                                          key,
+                                          element,
+                                        );
+                                      } else {
+                                        languageBlockCalloutRefs.current.delete(
+                                          key,
+                                        );
                                       }
-                                      onRemove={() =>
-                                        updateLanguageBlockCallout(
-                                          lesson.id,
-                                          block.id,
-                                          languageBlock.id,
-                                          null,
-                                        )
-                                      }
-                                    />
-                                      </>
-                                    )}
-                                  </div>
+                                    }}
+                                    onCalloutAdd={() =>
+                                      addLanguageBlockCallout(
+                                        lesson.id,
+                                        block.id,
+                                        languageBlock.id,
+                                      )
+                                    }
+                                    onCalloutChange={(value) =>
+                                      updateLanguageBlockCallout(
+                                        lesson.id,
+                                        block.id,
+                                        languageBlock.id,
+                                        value,
+                                      )
+                                    }
+                                    onCalloutRemove={() =>
+                                      updateLanguageBlockCallout(
+                                        lesson.id,
+                                        block.id,
+                                        languageBlock.id,
+                                        null,
+                                      )
+                                    }
+                                  />
                                 );
                               },
                             )}
