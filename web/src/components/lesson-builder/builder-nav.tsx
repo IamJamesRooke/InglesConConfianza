@@ -1,8 +1,7 @@
 import Link from "next/link";
 
 const tabs = [
-  { href: "/lesson-builder/modules", label: "Modules", key: "modules" },
-  { href: "/lesson-builder", label: "Lesson Builder", key: "builder" },
+  { href: "/lesson-builder", label: "Course", key: "builder" },
   {
     href: "/lesson-builder/coverage",
     label: "Concepts Covered",
@@ -10,11 +9,7 @@ const tabs = [
   },
 ] as const;
 
-export function BuilderNav({
-  active,
-}: {
-  active: "builder" | "modules" | "coverage";
-}) {
+export function BuilderNav({ active }: { active: "builder" | "coverage" }) {
   return (
     <div className="border-b border-border">
       <nav className="-mb-px flex gap-6 overflow-x-auto">

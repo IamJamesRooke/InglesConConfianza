@@ -1,8 +1,9 @@
 "use client";
 
 import { FileText, Keyboard, Languages, Plus, Table2, X } from "lucide-react";
-import Link from "next/link";
 import { BuilderNav } from "@/components/lesson-builder/builder-nav";
+import { ModuleMeta } from "@/components/lesson-builder/module-meta";
+import { ModuleRail } from "@/components/lesson-builder/module-rail";
 import {
   Fragment,
   useCallback,
@@ -42,7 +43,6 @@ import {
   getSentenceValidationIssueCount,
   normalizeLessons,
 } from "@/lib/lesson-builder/utils";
-import { moveLesson as reorderLessons } from "@/lib/lesson-builder/mutations";
 import { lessonsReducer } from "@/lib/lesson-builder/reducer";
 import { useDragReorder } from "@/lib/lesson-builder/use-drag-reorder";
 
@@ -145,6 +145,11 @@ export default function LessonBuilderPage() {
   // shows one module at a time; `activeModuleId` picks it (from ?module=).
   const [courseModules, setCourseModules] = useState<LessonModule[]>([]);
   const [activeModuleId, setActiveModuleId] = useState<string | null>(null);
+  const [courseSaveState, setCourseSaveState] = useState<
+    "idle" | "saving" | "saved" | "error"
+  >("idle");
+  const savedCourseJsonRef = useRef("[]");
+  const courseTimerRef = useRef<number | undefined>(undefined);
   const [savedLessonsSnapshot, setSavedLessonsSnapshot] = useState<Lesson[]>(
     [],
   );
@@ -183,7 +188,6 @@ export default function LessonBuilderPage() {
       field: SentenceMarkdownFieldName;
     } | null>(null);
   const [savingLessonId, setSavingLessonId] = useState<string | null>(null);
-  const [isSavingLessonOrder, setIsSavingLessonOrder] = useState(false);
   const [pendingLessonExitId, setPendingLessonExitId] = useState<string | null>(
     null,
   );
@@ -232,7 +236,8 @@ export default function LessonBuilderPage() {
           );
           setSavedLessonsSnapshot(lessons);
           setCollapsedLessons(new Set(lessons.map((lesson) => lesson.id)));
-          setFullyCollapsedLessons(new Set());
+          // Lessons start as compact rows; click one to open its editor.
+          setFullyCollapsedLessons(new Set(lessons.map((lesson) => lesson.id)));
           setCollapsedContentBlocks(
             new Set(
               lessons.flatMap((lesson) =>
@@ -1459,62 +1464,118 @@ export default function LessonBuilderPage() {
     });
   }
 
-  async function persistLessonOrder(reorderedLessons: Lesson[]) {
-    setIsSavingLessonOrder(true);
-
-    try {
-      const response = await fetch("/api/lesson-builder/lesson-order", {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          lessonIds: reorderedLessons.map((lesson) => lesson.id),
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Unable to save lesson order.");
+  // All module-structure changes (module order/name/promise, lesson order,
+  // lesson-to-module membership) go through PUT /course. Per-lesson content
+  // still goes through PUT /lessons/[id]. Optimistic + debounced; the reducer's
+  // `lessons` order is kept in sync by id (no content touched).
+  function commitCourseModules(next: LessonModule[]) {
+    setCourseModules(next);
+    dispatch({
+      type: "SET_LESSON_ORDER",
+      lessonIds: next.flatMap((module) => module.lessonIds),
+    });
+    setCourseSaveState("saving");
+    const json = JSON.stringify(next);
+    window.clearTimeout(courseTimerRef.current);
+    courseTimerRef.current = window.setTimeout(async () => {
+      try {
+        const response = await fetch("/api/lesson-builder/course", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ modules: next }),
+        });
+        if (response.ok) {
+          savedCourseJsonRef.current = json;
+          setCourseSaveState("saved");
+        } else {
+          setCourseSaveState("error");
+        }
+      } catch {
+        setCourseSaveState("error");
       }
+    }, 600);
+  }
 
-      const lessonFile = (await response.json()) as LessonFile;
-      const savedLessons = normalizeLessons(lessonFile.lessons);
-      savedLessonsJsonRef.current = JSON.stringify(savedLessons);
-      setSavedLessonsSnapshot(savedLessons);
-      setCourseModules(lessonFile.modules ?? []);
-      setSaveStatus("saved");
-      return true;
-    } catch {
-      setSaveStatus("error");
-      return false;
-    } finally {
-      setIsSavingLessonOrder(false);
+  function patchActiveModule(patch: Partial<LessonModule>) {
+    commitCourseModules(
+      courseModules.map((module) =>
+        module.id === currentModule?.id ? { ...module, ...patch } : module,
+      ),
+    );
+  }
+
+  function reorderModule(index: number, direction: -1 | 1) {
+    const target = index + direction;
+    if (target < 0 || target >= courseModules.length) return;
+    const next = [...courseModules];
+    [next[index], next[target]] = [next[target], next[index]];
+    commitCourseModules(next);
+  }
+
+  function addModuleNow() {
+    const created: LessonModule = {
+      id: createId("module"),
+      name: `Module ${courseModules.length + 1}`,
+      promise: "",
+      finalSentence: { spanish: "", english: "" },
+      lessonIds: [],
+    };
+    commitCourseModules([...courseModules, created]);
+    setActiveModuleId(created.id);
+    window.history.replaceState(null, "", `/lesson-builder?module=${created.id}`);
+  }
+
+  function deleteModuleNow(moduleId: string) {
+    const next = courseModules.filter((module) => module.id !== moduleId);
+    commitCourseModules(next);
+    if (moduleId === activeModuleId) {
+      setActiveModuleId(next[0]?.id ?? null);
     }
+  }
+
+  function moveLessonToModule(lessonId: string, toModuleId: string) {
+    commitCourseModules(
+      courseModules.map((module) => {
+        if (module.id === toModuleId) {
+          return { ...module, lessonIds: [...module.lessonIds, lessonId] };
+        }
+        if (module.lessonIds.includes(lessonId)) {
+          return {
+            ...module,
+            lessonIds: module.lessonIds.filter((id) => id !== lessonId),
+          };
+        }
+        return module;
+      }),
+    );
+  }
+
+  function selectModule(moduleId: string) {
+    setActiveModuleId(moduleId);
+    window.history.replaceState(null, "", `/lesson-builder?module=${moduleId}`);
   }
 
   function moveDraggedLesson() {
     const dragged = lessonDrag.dragged;
     const target = lessonDrag.dropTarget;
-    if (!dragged || !target || dragged.id === target.id) {
+    if (!dragged || !target || dragged.id === target.id || !currentModule) {
       return;
     }
-
-    const previousLessonIds = lessons.map((lesson) => lesson.id);
-    const reorderedLessons = reorderLessons(lessons, {
-      draggedId: dragged.id,
-      targetId: target.id,
-      position: target.position,
-    });
-
-    if (reorderedLessons === lessons) {
-      return;
-    }
-
-    dispatch({ type: "SET_LESSONS", lessons: reorderedLessons });
-
-    void persistLessonOrder(reorderedLessons).then((didSave) => {
-      if (!didSave) {
-        dispatch({ type: "SET_LESSON_ORDER", lessonIds: previousLessonIds });
-      }
-    });
+    const without = currentModule.lessonIds.filter((id) => id !== dragged.id);
+    const targetIndex = without.indexOf(target.id);
+    if (targetIndex === -1) return;
+    without.splice(
+      target.position === "after" ? targetIndex + 1 : targetIndex,
+      0,
+      dragged.id,
+    );
+    commitCourseModules(
+      courseModules.map((module) =>
+        module.id === currentModule.id
+          ? { ...module, lessonIds: without }
+          : module,
+      ),
+    );
   }
 
   const previewLessonIndex = lessons.findIndex(
@@ -1563,54 +1624,52 @@ export default function LessonBuilderPage() {
     .map((id) => lessonById.get(id))
     .filter((lesson): lesson is Lesson => Boolean(lesson));
 
+  const courseSaveLabel =
+    courseSaveState === "saving"
+      ? "Saving…"
+      : courseSaveState === "saved"
+        ? "Saved"
+        : courseSaveState === "error"
+          ? "Save failed"
+          : "";
+
   return (
     <main className="flex-1 bg-background px-4 py-8 sm:px-6 sm:py-12">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-6">
+      <div className="mx-auto flex w-full max-w-[1500px] flex-col gap-5">
         <BuilderNav active="builder" />
 
-        <div className="-mt-2 flex flex-wrap items-center gap-x-3 gap-y-1">
-          {courseModules.length > 0 && (
-            <select
-              value={currentModule?.id ?? ""}
-              onChange={(event) => {
-                setActiveModuleId(event.target.value);
-                window.history.replaceState(
-                  null,
-                  "",
-                  `/lesson-builder?module=${event.target.value}`,
-                );
-              }}
-              aria-label="Module"
-              className="rounded-lg border border-input bg-card px-2.5 py-1.5 text-sm font-semibold text-foreground outline-none focus:border-ring focus:ring-3 focus:ring-ring/20"
-            >
-              {courseModules.map((module) => (
-                <option key={module.id} value={module.id}>
-                  {module.name || "Untitled module"}
-                </option>
-              ))}
-            </select>
-          )}
-          <span className="min-w-0 flex-1 truncate text-sm text-muted-foreground">
-            {isLoadingLessons
-              ? "Loading saved lessons..."
-              : isSavingLessonOrder
-                ? "Saving lesson order..."
+        <div className="grid gap-5 lg:grid-cols-[15rem_1fr]">
+          <ModuleRail
+            modules={courseModules}
+            activeId={currentModule?.id ?? null}
+            saveLabel={courseSaveLabel}
+            draggedLessonId={lessonDrag.dragged?.id ?? null}
+            onSelect={selectModule}
+            onReorder={reorderModule}
+            onAdd={addModuleNow}
+            onDelete={deleteModuleNow}
+            onMoveLesson={moveLessonToModule}
+          />
+
+          <div className="flex min-w-0 flex-col gap-5">
+            {currentModule && (
+              <ModuleMeta
+                module={currentModule}
+                onChange={patchActiveModule}
+              />
+            )}
+
+            <p className="text-xs text-muted-foreground">
+              {isLoadingLessons
+                ? "Loading saved lessons…"
                 : isDirty
-                  ? "Unsaved changes"
+                  ? "Unsaved lesson changes"
                   : saveStatus === "saved"
-                    ? "All changes saved"
+                    ? "All lesson changes saved"
                     : saveStatus === "error"
                       ? "Could not load or save lessons"
-                      : currentModule?.promise ||
-                        "No promise set for this module"}
-          </span>
-          <Link
-            href="/lesson-builder/modules"
-            className="shrink-0 text-xs font-medium text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
-          >
-            edit structure & promise →
-          </Link>
-        </div>
+                      : "Click a lesson to edit it."}
+            </p>
 
         {moduleLessons.map((lesson, lessonIndex) => {
           const lessonNumber = lessonIndex + 1;
@@ -1689,7 +1748,7 @@ export default function LessonBuilderPage() {
                   !lessonIsDirty ||
                   saveStatus === "saving"
                 }
-                dragDisabled={hasUnsavedNewLesson || isSavingLessonOrder}
+                dragDisabled={hasUnsavedNewLesson}
                 dragDisabledReason="Save new lessons before reordering"
                 onHeaderClick={(event) => {
                   if (
@@ -2171,6 +2230,8 @@ export default function LessonBuilderPage() {
             Alt+N
           </kbd>
         </button>
+          </div>
+        </div>
       </div>
 
       <button

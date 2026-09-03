@@ -192,8 +192,38 @@
               "conceptLinks": []
             }
           ]
+        },
+        {
+          "id": "block_da880c65-1f81-4489-b1d7-cfef9874665b",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_29a12566-f19d-4cea-b45d-e52399fbd4e1",
+              "spanish": "Hablo",
+              "callout": null,
+              "acceptedAnswers": [
+                "I speak"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_c09af4f6-541e-4245-8dfa-5fb07a70bf0b",
+              "spanish": "inglés.",
+              "callout": null,
+              "acceptedAnswers": [
+                "English."
+              ],
+              "conceptLinks": []
+            }
+          ]
         }
-      ]
+      ],
+      "concepts": []
     }
   ]
 }
