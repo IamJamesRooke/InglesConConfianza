@@ -55,6 +55,19 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       { collection: "contrast:confusable", label: "Confusions" },
     ],
   },
+  {
+    slug: "interrogatives",
+    title: "Interrogatives",
+    description:
+      "The question words — qué, quién, cuál, cuándo, dónde, cómo, cuánto, por qué — as pronouns, determiners, and adverbs. Click a chip to trace one form.",
+    baseCollection: "topic:interrogative",
+    facetButtons: [
+      { collection: "grammar:interrogative-pronoun", label: "Pronoun" },
+      { collection: "grammar:interrogative-determiner", label: "Determiner" },
+      { collection: "grammar:interrogative-adverb", label: "Adverb" },
+      { collection: "contrast:confusable", label: "Confusions" },
+    ],
+  },
 ];
 
 export function findCurriculumTopic(slug: string): CurriculumTopic | undefined {

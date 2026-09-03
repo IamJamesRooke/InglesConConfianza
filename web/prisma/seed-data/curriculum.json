@@ -22728,14 +22728,16 @@
       "spanish": "cómo",
       "english": "how",
       "example": {
-        "spanish": "cómo",
-        "english": "how"
+        "spanish": "¿Cómo llegaste aquí?",
+        "english": "How did you get here?"
       },
       "collections": [
         "es:como",
         "es:cómo",
         "en:how",
-        "pos:adverb"
+        "pos:adverb",
+        "grammar:interrogative-adverb",
+        "topic:interrogative"
       ],
       "curriculumRole": "core"
     },
@@ -22816,7 +22818,10 @@
         "grammar:question",
         "limited choice",
         "es:cuál",
-        "en:which"
+        "en:which",
+        "grammar:interrogative-determiner",
+        "topic:interrogative",
+        "pos:function-word"
       ],
       "curriculumRole": "reference"
     },
@@ -22849,7 +22854,8 @@
         "en:which",
         "pos:pronoun",
         "grammar:interrogative-pronoun",
-        "topic:pronoun"
+        "topic:pronoun",
+        "topic:interrogative"
       ],
       "curriculumRole": "core"
     },
@@ -22866,7 +22872,8 @@
         "en:what",
         "pos:pronoun",
         "grammar:interrogative-pronoun",
-        "topic:pronoun"
+        "topic:pronoun",
+        "topic:interrogative"
       ],
       "curriculumRole": "reference"
     },
@@ -22892,14 +22899,16 @@
       "spanish": "cuándo",
       "english": "when",
       "example": {
-        "spanish": "cuándo",
-        "english": "when"
+        "spanish": "¿Cuándo empieza la clase?",
+        "english": "When does the class start?"
       },
       "collections": [
         "es:cuando",
         "es:cuándo",
         "en:when",
-        "pos:adverb"
+        "pos:adverb",
+        "grammar:interrogative-adverb",
+        "topic:interrogative"
       ],
       "curriculumRole": "core"
     },
@@ -22952,13 +22961,15 @@
       "spanish": "cuánto",
       "english": "how much",
       "example": {
-        "spanish": "cuánto",
-        "english": "how much"
+        "spanish": "¿Cuánto cuesta esto?",
+        "english": "How much does this cost?"
       },
       "collections": [
         "es:cuánto",
         "en:how",
-        "pos:adverb"
+        "pos:adverb",
+        "grammar:interrogative-adverb",
+        "topic:interrogative"
       ],
       "curriculumRole": "core"
     },
@@ -22967,12 +22978,15 @@
       "spanish": "cuánto",
       "english": "how long",
       "example": {
-        "spanish": "cuánto",
-        "english": "how long"
+        "spanish": "¿Cuánto dura la película?",
+        "english": "How long is the movie?"
       },
       "collections": [
         "es:cuánto",
-        "en:how"
+        "en:how",
+        "grammar:interrogative-adverb",
+        "topic:interrogative",
+        "pos:adverb"
       ],
       "curriculumRole": "reference"
     },
@@ -23443,14 +23457,16 @@
       "spanish": "dónde",
       "english": "where",
       "example": {
-        "spanish": "dónde",
-        "english": "where"
+        "spanish": "¿Dónde está el baño?",
+        "english": "Where is the bathroom?"
       },
       "collections": [
         "es:donde",
         "es:dónde",
         "en:where",
-        "pos:adverb"
+        "pos:adverb",
+        "grammar:interrogative-adverb",
+        "topic:interrogative"
       ],
       "curriculumRole": "core"
     },
@@ -24856,7 +24872,8 @@
         "grammar:interrogative-pronoun",
         "en:what",
         "pos:pronoun",
-        "topic:pronoun"
+        "topic:pronoun",
+        "topic:interrogative"
       ],
       "curriculumRole": "core"
     },
@@ -25196,7 +25213,8 @@
         "en:who",
         "pos:pronoun",
         "grammar:interrogative-pronoun",
-        "topic:pronoun"
+        "topic:pronoun",
+        "topic:interrogative"
       ],
       "curriculumRole": "core"
     },
@@ -73994,7 +74012,8 @@
         "grammar:possessive-pronoun",
         "topic:pronoun",
         "es:quién",
-        "en:whose"
+        "en:whose",
+        "topic:interrogative"
       ],
       "curriculumRole": "supporting"
     },
@@ -75362,7 +75381,9 @@
         "grammar:masculine",
         "es:cuántos",
         "en:how",
-        "topic:determiner"
+        "topic:determiner",
+        "grammar:interrogative-determiner",
+        "topic:interrogative"
       ],
       "curriculumRole": "core"
     },
@@ -75381,7 +75402,9 @@
         "grammar:feminine",
         "es:cuántas",
         "en:how",
-        "topic:determiner"
+        "topic:determiner",
+        "grammar:interrogative-determiner",
+        "topic:interrogative"
       ],
       "curriculumRole": "core"
     },
@@ -75915,7 +75938,8 @@
         "topic:pronoun",
         "es:a",
         "es:quién",
-        "en:whom"
+        "en:whom",
+        "topic:interrogative"
       ],
       "curriculumRole": "reference"
     },
@@ -77080,7 +77104,8 @@
         "pos:function-word",
         "topic:determiner",
         "es:qué",
-        "en:what"
+        "en:what",
+        "topic:interrogative"
       ],
       "curriculumRole": "core"
     },
@@ -77099,7 +77124,8 @@
         "pos:function-word",
         "topic:determiner",
         "es:cuánto",
-        "en:how"
+        "en:how",
+        "topic:interrogative"
       ],
       "curriculumRole": "supporting"
     },
@@ -77118,7 +77144,8 @@
         "pos:function-word",
         "topic:determiner",
         "es:cuánto",
-        "en:how"
+        "en:how",
+        "topic:interrogative"
       ],
       "curriculumRole": "supporting"
     },
@@ -77232,6 +77259,75 @@
         "en:every"
       ],
       "curriculumRole": "supporting"
+    },
+    {
+      "id": "ljpcmany1y",
+      "spanish": "por qué",
+      "english": "why",
+      "example": {
+        "spanish": "¿Por qué llegaste tarde?",
+        "english": "Why did you arrive late?"
+      },
+      "collections": [
+        "grammar:interrogative-adverb",
+        "grammar:reason",
+        "pos:adverb",
+        "topic:interrogative",
+        "es:por qué",
+        "en:why"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "clb2iok3il",
+      "spanish": "adónde",
+      "english": "where",
+      "example": {
+        "spanish": "¿Adónde vas?",
+        "english": "Where are you going?"
+      },
+      "collections": [
+        "grammar:interrogative-adverb",
+        "pos:adverb",
+        "topic:interrogative",
+        "es:adónde",
+        "en:where"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "1x0l3hgmx7",
+      "spanish": "de dónde",
+      "english": "where from",
+      "example": {
+        "spanish": "¿De dónde eres?",
+        "english": "Where are you from?"
+      },
+      "collections": [
+        "grammar:interrogative-adverb",
+        "pos:adverb",
+        "topic:interrogative",
+        "es:de dónde",
+        "en:where"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "omyzn9d5h2",
+      "spanish": "para qué",
+      "english": "what for",
+      "example": {
+        "spanish": "¿Para qué sirve esto?",
+        "english": "What is this for?"
+      },
+      "collections": [
+        "grammar:interrogative-pronoun",
+        "pos:pronoun",
+        "topic:interrogative",
+        "es:para qué",
+        "en:what"
+      ],
+      "curriculumRole": "reference"
     }
   ]
 }

@@ -27,6 +27,7 @@
     "curriculum:concepts:untag": "tsx scripts/untag-concepts.ts",
     "curriculum:pronouns:audit": "tsx scripts/audit-pronoun-topic.ts",
     "curriculum:determiners:audit": "tsx scripts/audit-determiner-topic.ts",
+    "curriculum:interrogatives:audit": "tsx scripts/audit-interrogative-topic.ts",
     "curriculum:collections:apply": "tsx scripts/apply-collection-manifest.ts",
     "curriculum:snapshots:export": "tsx scripts/export-curriculum-snapshots.ts"
   },

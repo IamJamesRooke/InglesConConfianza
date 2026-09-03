@@ -1,0 +1,5 @@
+# spanish	english	exampleSpanish	exampleEnglish	role	collections
+por qué	why	¿Por qué llegaste tarde?	Why did you arrive late?	core	grammar:interrogative-adverb|grammar:reason|pos:adverb|topic:interrogative|es:por qué|en:why
+adónde	where	¿Adónde vas?	Where are you going?	supporting	grammar:interrogative-adverb|pos:adverb|topic:interrogative|es:adónde|en:where
+de dónde	where from	¿De dónde eres?	Where are you from?	supporting	grammar:interrogative-adverb|pos:adverb|topic:interrogative|es:de dónde|en:where
+para qué	what for	¿Para qué sirve esto?	What is this for?	reference	grammar:interrogative-pronoun|pos:pronoun|topic:interrogative|es:para qué|en:what
