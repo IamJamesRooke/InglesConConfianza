@@ -18,12 +18,14 @@ type ConceptRow = {
   collections: Array<{ collectionName: string }>;
 };
 
-export const curriculumPageSize = 50;
+export const curriculumPageSize = 100;
 
 export type CurriculumSort =
   | "default"
   | "spanish"
   | "spanish-desc"
+  | "english"
+  | "english-desc"
   | "role";
 
 export type CurriculumPageFilters = {
@@ -40,6 +42,8 @@ const SORT_ORDER_BY: Record<
   default: [{ curriculumRole: "asc" }, { sortOrder: "asc" }],
   spanish: [{ spanish: "asc" }],
   "spanish-desc": [{ spanish: "desc" }],
+  english: [{ english: "asc" }],
+  "english-desc": [{ english: "desc" }],
   role: [{ curriculumRole: "asc" }, { spanish: "asc" }],
 };
 

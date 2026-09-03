@@ -1,5 +1,8 @@
 import { CurriculumTable } from "@/components/curriculum/curriculum-table";
-import { readCurriculumPage } from "@/lib/curriculum/server/curriculum-store";
+import {
+  curriculumPageSize,
+  readCurriculumPage,
+} from "@/lib/curriculum/server/curriculum-store";
 import type { CurriculumRole } from "@/lib/curriculum/types";
 import { CURRICULUM_TOPICS, findCurriculumTopic } from "@/lib/curriculum/topics";
 
@@ -36,6 +39,8 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
   const sort =
     sortParam === "spanish" ||
     sortParam === "spanish-desc" ||
+    sortParam === "english" ||
+    sortParam === "english-desc" ||
     sortParam === "role"
       ? sortParam
       : ("default" as const);
@@ -52,13 +57,13 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
   });
 
   return (
-    <main className="flex-1 bg-background px-6 py-12 text-foreground">
-      <div className="mx-auto max-w-5xl">
-        <div className="mb-8">
-          <h1 className="text-4xl font-semibold tracking-tight">
+    <main className="flex-1 bg-background px-6 py-8 text-foreground">
+      <div className="mx-auto max-w-[1600px]">
+        <div className="mb-6">
+          <h1 className="text-3xl font-semibold tracking-tight">
             {topic ? topic.title : "Curriculum"}
           </h1>
-          <p className="mt-2 text-muted-foreground">
+          <p className="mt-1 text-sm text-muted-foreground">
             {topic
               ? topic.description
               : "Language concepts that combine vocabulary and structure."}
@@ -71,6 +76,7 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
           totalConcepts={curriculum.totalConcepts}
           page={curriculum.page}
           pageCount={curriculum.pageCount}
+          pageSize={curriculumPageSize}
           filters={{
             search: curriculum.search,
             collection: curriculum.collection,

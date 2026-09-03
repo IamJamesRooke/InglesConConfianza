@@ -110,6 +110,7 @@ export function CurriculumTable({
   totalConcepts,
   page,
   pageCount,
+  pageSize = 100,
   filters,
   quickFacets = [],
   activeFacets = [],
@@ -120,11 +121,18 @@ export function CurriculumTable({
   totalConcepts: number;
   page: number;
   pageCount: number;
+  pageSize?: number;
   filters: {
     search: string;
     collection: string;
     role: CurriculumRole | "all";
-    sort: "default" | "spanish" | "spanish-desc" | "role";
+    sort:
+      | "default"
+      | "spanish"
+      | "spanish-desc"
+      | "english"
+      | "english-desc"
+      | "role";
   };
   quickFacets?: QuickFacet[];
   activeFacets?: string[];
@@ -177,7 +185,8 @@ export function CurriculumTable({
       </button>
     );
   }
-  const firstVisibleConcept = totalConcepts === 0 ? 0 : (page - 1) * 50 + 1;
+  const firstVisibleConcept =
+    totalConcepts === 0 ? 0 : (page - 1) * pageSize + 1;
   const lastVisibleConcept =
     totalConcepts === 0
       ? 0
@@ -484,20 +493,20 @@ export function CurriculumTable({
             if (event.key === "Enter") void saveCollectionEditor();
             if (event.key === "Escape") setActiveCollectionEditor(null);
           }}
-          className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-ring focus:ring-3 focus:ring-ring/20 disabled:opacity-60"
+          className="w-full rounded-md border border-input bg-background px-2 py-1 text-sm outline-none focus:border-ring focus:ring-3 focus:ring-ring/20 disabled:opacity-60"
         />
       );
     }
 
     return (
-      <div className="flex min-w-48 flex-wrap items-center gap-1.5 px-3 py-2">
+      <div className="flex max-h-12 flex-wrap items-start gap-1 overflow-hidden px-2 py-1 transition-[max-height] duration-200 hover:max-h-112 focus-within:max-h-112">
         {concept.collections.map((collection) => (
           <button
             key={collection}
             type="button"
             onClick={() => navigate({ collection })}
             style={getCollectionStyle(collection)}
-            className={`collection-pill rounded-full border px-2 py-1 text-xs font-semibold transition ${selectedCollection === collection ? "collection-pill-selected" : ""}`}
+            className={`collection-pill rounded-full border px-1.5 py-0.5 text-[11px] font-medium leading-tight transition ${selectedCollection === collection ? "collection-pill-selected" : ""}`}
           >
             {collection}
           </button>
@@ -512,9 +521,9 @@ export function CurriculumTable({
           }
           aria-label={`Edit collections for ${concept.spanish}`}
           title="Edit collections"
-          className="inline-flex size-7 items-center justify-center rounded-md text-muted-foreground transition hover:bg-muted hover:text-foreground"
+          className="inline-flex size-6 items-center justify-center rounded-md text-muted-foreground transition hover:bg-muted hover:text-foreground"
         >
-          <Pencil className="size-3.5" aria-hidden="true" />
+          <Pencil className="size-3" aria-hidden="true" />
         </button>
       </div>
     );
@@ -550,7 +559,7 @@ export function CurriculumTable({
               setError(null);
             }
           }}
-          className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-ring focus:ring-3 focus:ring-ring/20 disabled:opacity-60"
+          className="w-full rounded-md border border-input bg-background px-2 py-1 text-sm outline-none focus:border-ring focus:ring-3 focus:ring-ring/20 disabled:opacity-60"
         />
       );
     }
@@ -566,7 +575,7 @@ export function CurriculumTable({
             value: getEditableValue(concept, field),
           })
         }
-        className="w-full rounded-md px-3 py-2 text-left transition hover:bg-muted focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/20 disabled:opacity-60"
+        className="w-full rounded-md px-2 py-1 text-left leading-snug transition hover:bg-muted focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/20 disabled:opacity-60"
       >
         {renderConceptPattern(getEditableValue(concept, field))}
       </button>
@@ -767,11 +776,11 @@ export function CurriculumTable({
         </div>
       )}
 
-      <div className="overflow-hidden rounded-xl border border-border bg-card shadow-sm">
-        <table className="w-full border-collapse text-left">
-          <thead className="bg-muted/60 text-sm text-muted-foreground">
+      <div className="rounded-xl border border-border bg-card shadow-sm">
+        <table className="w-full border-collapse text-left text-[13px]">
+          <thead className="sticky top-0 z-10 bg-muted text-xs text-muted-foreground shadow-[0_1px_0_var(--color-border)]">
             <tr>
-              <th className="w-10 px-3 py-3">
+              <th className="w-8 px-2 py-2">
                 <input
                   type="checkbox"
                   aria-label="Select all visible concepts"
@@ -783,24 +792,30 @@ export function CurriculumTable({
                   className="size-4 cursor-pointer"
                 />
               </th>
-              <th className="w-32 px-5 py-3 font-semibold">
+              <th className="w-28 px-3 py-2 font-semibold">
                 {sortButton(
                   "Curriculum role",
                   ["default", "role"],
                   { role: ArrowUp },
                 )}
               </th>
-              <th className="px-5 py-3 font-semibold">
+              <th className="px-3 py-2 font-semibold">
                 {sortButton(
                   "Spanish concept",
                   ["default", "spanish", "spanish-desc"],
                   { spanish: ArrowUp, "spanish-desc": ArrowDown },
                 )}
               </th>
-              <th className="px-5 py-3 font-semibold">English concept</th>
-              <th className="px-5 py-3 font-semibold">Example</th>
-              <th className="px-5 py-3 font-semibold">Collections</th>
-              <th className="w-16 px-3 py-3">
+              <th className="px-3 py-2 font-semibold">
+                {sortButton(
+                  "English concept",
+                  ["default", "english", "english-desc"],
+                  { english: ArrowUp, "english-desc": ArrowDown },
+                )}
+              </th>
+              <th className="px-3 py-2 font-semibold">Example</th>
+              <th className="px-3 py-2 font-semibold">Collections</th>
+              <th className="w-12 px-2 py-2">
                 <span className="sr-only">Actions</span>
               </th>
             </tr>
@@ -808,16 +823,16 @@ export function CurriculumTable({
           <tbody>
             {concepts.map((concept) => (
               <tr key={concept.id} className="border-t border-border">
-                <td className="px-3 py-2">
+                <td className="px-2 py-1 align-top">
                   <input
                     type="checkbox"
                     aria-label={`Select ${concept.spanish}`}
                     checked={selectedIds.has(concept.id)}
                     onChange={() => toggleSelected(concept.id)}
-                    className="size-4 cursor-pointer"
+                    className="mt-1.5 size-4 cursor-pointer"
                   />
                 </td>
-                <td className="p-2">
+                <td className="p-1 align-top">
                   <select
                     value={concept.curriculumRole}
                     disabled={pendingConceptId !== null}
@@ -833,7 +848,7 @@ export function CurriculumTable({
                         (role) => role.value === concept.curriculumRole,
                       )?.description
                     }
-                    className={`role-select role-${concept.curriculumRole} w-full rounded-md border px-3 py-2 text-sm font-semibold outline-none transition focus:ring-3 focus:ring-ring/20 disabled:opacity-60`}
+                    className={`role-select role-${concept.curriculumRole} w-full rounded-md border px-2 py-1 text-xs font-semibold outline-none transition focus:ring-3 focus:ring-ring/20 disabled:opacity-60`}
                   >
                     {curriculumRoles.map((role) => (
                       <option key={role.value} value={role.value}>
@@ -842,27 +857,29 @@ export function CurriculumTable({
                     ))}
                   </select>
                 </td>
-                <td className="p-2 pl-2 font-medium">
+                <td className="p-1 align-top font-medium">
                   {renderEditableCell(concept, "spanish")}
                 </td>
-                <td className="p-2">{renderEditableCell(concept, "english")}</td>
-                <td className="p-2">
-                  <div className="min-w-56">
+                <td className="p-1 align-top">
+                  {renderEditableCell(concept, "english")}
+                </td>
+                <td className="p-1 align-top">
+                  <div className="min-w-48 text-muted-foreground">
                     {renderEditableCell(concept, "exampleSpanish")}
                     <div className="border-t border-border/60">
                       {renderEditableCell(concept, "exampleEnglish")}
                     </div>
                   </div>
                 </td>
-                <td className="p-2">{renderCollections(concept)}</td>
-                <td className="p-2 pr-3 text-right">
+                <td className="p-1 align-top">{renderCollections(concept)}</td>
+                <td className="p-1 pr-2 text-right align-top">
                   <button
                     type="button"
                     disabled={pendingConceptId !== null}
                     onClick={() => void deleteConcept(concept)}
                     aria-label={`Delete ${concept.spanish}`}
                     title="Delete concept"
-                    className="inline-flex size-9 items-center justify-center rounded-md text-muted-foreground transition hover:bg-destructive/10 hover:text-destructive focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/20 disabled:opacity-40"
+                    className="mt-0.5 inline-flex size-7 items-center justify-center rounded-md text-muted-foreground transition hover:bg-destructive/10 hover:text-destructive focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/20 disabled:opacity-40"
                   >
                     <Trash2 className="size-4" aria-hidden="true" />
                   </button>
