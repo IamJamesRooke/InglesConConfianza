@@ -14,7 +14,10 @@ export type CoveredConcept = {
   conceptId: string;
   spanish: string;
   english: string;
+  exampleSpanish: string;
+  exampleEnglish: string;
   role: CurriculumRole;
+  collections: string[];
   lessonNumbers: number[];
   firstLesson: number;
   lastLesson: number;
@@ -66,7 +69,13 @@ export async function readCoverageReport(): Promise<CoverageReport> {
             id: true,
             spanish: true,
             english: true,
+            exampleSpanish: true,
+            exampleEnglish: true,
             curriculumRole: true,
+            collections: {
+              orderBy: { position: "asc" },
+              select: { collectionName: true },
+            },
           },
         })
       : [];
@@ -91,7 +100,10 @@ export async function readCoverageReport(): Promise<CoverageReport> {
       conceptId,
       spanish: row.spanish,
       english: row.english,
+      exampleSpanish: row.exampleSpanish,
+      exampleEnglish: row.exampleEnglish,
       role: row.curriculumRole,
+      collections: row.collections.map((c) => c.collectionName),
       lessonNumbers,
       firstLesson: lessonNumbers[0],
       lastLesson,

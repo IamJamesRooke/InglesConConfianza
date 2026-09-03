@@ -1,16 +1,8 @@
 import Link from "next/link";
 
+import { ConceptQuickEdit } from "@/components/lesson-builder/concept-quick-edit";
 import { readCoverageReport } from "@/lib/lesson-builder/server/coverage-report";
-import type { CurriculumRole } from "@/lib/curriculum/types";
-
 export const dynamic = "force-dynamic";
-
-const roleClasses: Record<CurriculumRole, string> = {
-  core: "bg-emerald-100 text-emerald-800",
-  supporting: "bg-blue-100 text-blue-800",
-  reference: "bg-stone-200 text-stone-600",
-  trash: "bg-red-100 text-red-700",
-};
 
 function coldClasses(lessonsSinceLast: number) {
   if (lessonsSinceLast === 0) return "bg-emerald-100 text-emerald-700";
@@ -91,23 +83,8 @@ export default async function CoveragePage() {
                       key={concept.conceptId}
                       className="border-t border-border"
                     >
-                      <td className="sticky left-0 z-10 w-[24rem] bg-card px-3 py-1.5">
-                        <div className="flex items-center gap-2">
-                          <span
-                            className={`shrink-0 rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide ${roleClasses[concept.role]}`}
-                          >
-                            {concept.role}
-                          </span>
-                          <span className="truncate">
-                            <span className="font-semibold text-stone-900">
-                              {concept.spanish}
-                            </span>
-                            <span className="text-stone-400"> → </span>
-                            <span className="text-stone-600">
-                              {concept.english}
-                            </span>
-                          </span>
-                        </div>
+                      <td className="sticky left-0 z-10 w-[24rem] bg-card px-2 py-1">
+                        <ConceptQuickEdit concept={concept} />
                       </td>
                       <td className="px-2 py-1.5 text-center tabular-nums text-muted-foreground">
                         {concept.timesTaught}
