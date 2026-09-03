@@ -1,0 +1,6 @@
+MERGE	grammar:no-article	grammar:zero-article	same concept, two names
+MERGE	grammar:hypothetical-condition	grammar:hypothetical	same concept
+MERGE	grammar:additive	grammar:addition	same concept
+MERGE	grammar:be-going-to	grammar:going-to	same concept
+MERGE	grammar:future-plan	grammar:going-to	fold into going-to
+MERGE	grammar:referenced-degree	grammar:referenced-quantity	same concept (tan/tanto "that much")

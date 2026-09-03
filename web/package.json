@@ -24,6 +24,7 @@
     "curriculum:roles:apply": "tsx scripts/apply-role-manifest.ts",
     "curriculum:concepts:apply": "tsx scripts/apply-concept-manifest.ts",
     "curriculum:concepts:add": "tsx scripts/add-concepts.ts",
+    "curriculum:concepts:untag": "tsx scripts/untag-concepts.ts",
     "curriculum:pronouns:audit": "tsx scripts/audit-pronoun-topic.ts",
     "curriculum:determiners:audit": "tsx scripts/audit-determiner-topic.ts",
     "curriculum:collections:apply": "tsx scripts/apply-collection-manifest.ts",

@@ -10,6 +10,7 @@ import {
 } from "../scripts/curriculum-data";
 import {
   collectionFacet,
+  KNOWN_GRAMMAR_VALUES,
   LEGACY_COLLECTIONS,
 } from "../src/lib/curriculum/collections";
 import { prisma } from "../src/lib/database/prisma";
@@ -47,6 +48,27 @@ test("the imported curriculum is exact and protected", async (context) => {
   assert.ok(
     LEGACY_COLLECTIONS.size <= 292,
     `Legacy bare collections must not grow past 292 (found ${LEGACY_COLLECTIONS.size}).`,
+  );
+
+  // Every grammar:<value> must be in the controlled vocabulary. New values are
+  // added to KNOWN_GRAMMAR_VALUES on purpose; typos and stray tags are rejected.
+  const unknownGrammar = [...collectionNames]
+    .filter((name) => name.startsWith("grammar:"))
+    .map((name) => name.slice("grammar:".length))
+    .filter((value) => !KNOWN_GRAMMAR_VALUES.has(value))
+    .sort();
+  assert.deepStrictEqual(
+    unknownGrammar,
+    [],
+    "Unregistered grammar: values — add to KNOWN_GRAMMAR_VALUES or fix the tag.",
+  );
+  const staleGrammar = [...KNOWN_GRAMMAR_VALUES].filter(
+    (value) => !collectionNames.has(`grammar:${value}`),
+  );
+  assert.deepStrictEqual(
+    staleGrammar,
+    [],
+    "KNOWN_GRAMMAR_VALUES has entries no concept carries — remove them.",
   );
 
   // The es: / en: lemma facets make the catalog queryable as a bilingual

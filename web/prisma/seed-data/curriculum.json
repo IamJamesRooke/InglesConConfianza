@@ -11,7 +11,8 @@
       },
       "collections": [
         "es:querer",
-        "en:want"
+        "en:want",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -28,7 +29,8 @@
         "construction:followed-by-full-infinitive",
         "form:full-infinitive",
         "es:querer",
-        "en:want"
+        "en:want",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -44,7 +46,8 @@
         "construction:object-plus-complement",
         "es:querer",
         "en:want",
-        "grammar:object-control"
+        "grammar:object-control",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -473,7 +476,8 @@
       "collections": [
         "something",
         "es:necesitar",
-        "en:need"
+        "en:need",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -488,7 +492,8 @@
       "collections": [
         "construction:followed-by-full-infinitive",
         "es:necesitar",
-        "en:need"
+        "en:need",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -506,7 +511,8 @@
         "es:que",
         "es:necesitar",
         "en:need",
-        "grammar:object-control"
+        "grammar:object-control",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -570,7 +576,8 @@
       },
       "collections": [
         "es:comer",
-        "en:eat"
+        "en:eat",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -700,7 +707,8 @@
       },
       "collections": [
         "es:tomar",
-        "en:take"
+        "en:take",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -1359,7 +1367,8 @@
       },
       "collections": [
         "es:hablar",
-        "en:speak"
+        "en:speak",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -1424,7 +1433,8 @@
         "en:to",
         "construction:map-a-to",
         "es:hablar",
-        "en:speak"
+        "en:speak",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -1751,7 +1761,8 @@
       },
       "collections": [
         "es:decir",
-        "en:say"
+        "en:say",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -1767,7 +1778,8 @@
         "grammar:clause",
         "en:that",
         "es:decir",
-        "en:say"
+        "en:say",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -1782,7 +1794,8 @@
       "collections": [
         "construction:double-object",
         "es:decir",
-        "en:tell"
+        "en:tell",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -1799,7 +1812,8 @@
         "en:to",
         "construction:map-a-to",
         "es:decir",
-        "en:say"
+        "en:say",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -1817,7 +1831,8 @@
         "en:to",
         "es:decir",
         "en:tell",
-        "grammar:object-control"
+        "grammar:object-control",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -2227,7 +2242,8 @@
       "collections": [
         "construction:double-object",
         "es:dar",
-        "en:give"
+        "en:give",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -2244,7 +2260,8 @@
         "en:to",
         "construction:map-a-to",
         "es:dar",
-        "en:give"
+        "en:give",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -2968,7 +2985,8 @@
         "grammar:phrasal-verb",
         "en:for",
         "es:pedir",
-        "en:ask"
+        "en:ask",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -2985,7 +3003,8 @@
         "en:for",
         "construction:map-a-object",
         "es:pedir",
-        "en:ask"
+        "en:ask",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -3003,7 +3022,8 @@
         "en:to",
         "es:pedir",
         "en:ask",
-        "grammar:object-control"
+        "grammar:object-control",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -3500,7 +3520,8 @@
       "collections": [
         "construction:placement",
         "es:poner",
-        "en:put"
+        "en:put",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -5135,7 +5156,8 @@
       "collections": [
         "construction:somebody-something",
         "es:enseñar",
-        "en:show"
+        "en:show",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -5164,7 +5186,8 @@
       },
       "collections": [
         "es:escuchar",
-        "en:listen"
+        "en:listen",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -5181,7 +5204,8 @@
         "en:to",
         "construction:map-a-to",
         "es:escuchar",
-        "en:listen"
+        "en:listen",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -5230,7 +5254,8 @@
       "collections": [
         "es:escuchar",
         "es:oír",
-        "en:hear"
+        "en:hear",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -5302,7 +5327,8 @@
       },
       "collections": [
         "es:esperar",
-        "en:wait"
+        "en:wait",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -5319,7 +5345,8 @@
         "en:for",
         "construction:map-a-for",
         "es:esperar",
-        "en:wait"
+        "en:wait",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -5542,7 +5569,8 @@
       "collections": [
         "grammar:adjective-state",
         "es:estar",
-        "en:be"
+        "en:be",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -5558,7 +5586,8 @@
         "topic:location",
         "construction:map-en-in",
         "es:estar",
-        "en:be"
+        "en:be",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -5578,7 +5607,8 @@
         "form:present-participle",
         "form:present-progressive",
         "es:estar",
-        "en:be"
+        "en:be",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -5780,7 +5810,8 @@
       "collections": [
         "grammar:adjective-state",
         "es:estar",
-        "en:okay"
+        "en:okay",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -6588,7 +6619,8 @@
       "collections": [
         "grammar:handle-verb",
         "es:gustar",
-        "en:likes"
+        "en:likes",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -6650,7 +6682,8 @@
         "construction:followed-by-full-infinitive",
         "form:full-infinitive",
         "es:gustar",
-        "en:like"
+        "en:like",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -6665,7 +6698,8 @@
       "collections": [
         "grammar:polite-request",
         "es:gustar",
-        "en:like"
+        "en:like",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -6768,7 +6802,8 @@
         "grammar:three-jobs-of-have",
         "perfect auxiliary",
         "es:haber",
-        "en:have"
+        "en:have",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -6785,7 +6820,8 @@
         "construction:there-be",
         "grammar:singular",
         "es:haber",
-        "en:there"
+        "en:there",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -6818,7 +6854,8 @@
         "construction:there-be",
         "grammar:plural",
         "es:haber",
-        "en:there"
+        "en:there",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -6836,7 +6873,8 @@
         "grammar:singular",
         "grammar:contraction",
         "es:haber",
-        "en:there"
+        "en:there",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -6854,7 +6892,8 @@
         "grammar:plural",
         "grammar:contraction",
         "es:haber",
-        "en:there"
+        "en:there",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -6871,7 +6910,8 @@
         "grammar:question",
         "grammar:singular",
         "es:haber",
-        "en:is"
+        "en:is",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -6888,7 +6928,8 @@
         "grammar:question",
         "grammar:plural",
         "es:haber",
-        "en:are"
+        "en:are",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -7092,7 +7133,8 @@
       "collections": [
         "es:do",
         "es:hacer",
-        "en:do"
+        "en:do",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -7106,7 +7148,8 @@
       },
       "collections": [
         "es:hacer",
-        "en:make"
+        "en:make",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -7752,7 +7795,8 @@
         "en:to",
         "construction:map-a-to",
         "es:ir",
-        "en:go"
+        "en:go",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -7785,7 +7829,8 @@
         "en:future",
         "construction:map-a-to",
         "es:ir",
-        "en:going"
+        "en:going",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -7818,7 +7863,8 @@
         "es:ir",
         "grammar:pronominal-verb",
         "es:irse",
-        "en:leave"
+        "en:leave",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -7974,7 +8020,8 @@
       "collections": [
         "construction:map-a-direct-object",
         "es:llamar",
-        "en:call"
+        "en:call",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -8220,7 +8267,8 @@
         "en:to",
         "construction:map-a-to",
         "es:llegar",
-        "en:get"
+        "en:get",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -8564,7 +8612,8 @@
       },
       "collections": [
         "es:mandar",
-        "en:send"
+        "en:send",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -8596,7 +8645,8 @@
       "collections": [
         "construction:object-plus-complement",
         "es:mandar",
-        "en:tell"
+        "en:tell",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -8740,7 +8790,8 @@
       },
       "collections": [
         "es:parar",
-        "en:stop"
+        "en:stop",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -9121,7 +9172,8 @@
       },
       "collections": [
         "es:pasar",
-        "en:happen"
+        "en:happen",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -9438,7 +9490,8 @@
         "construction:map-que-that",
         "en:opinion",
         "es:pensar",
-        "en:think"
+        "en:think",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -9455,7 +9508,8 @@
         "particle:about",
         "construction:map-en-about",
         "es:pensar",
-        "en:think"
+        "en:think",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -9649,7 +9703,8 @@
       },
       "collections": [
         "es:perder",
-        "en:lose"
+        "en:lose",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -10048,7 +10103,8 @@
         "construction:followed-by-bare-infinitive",
         "form:bare-infinitive",
         "es:poder",
-        "en:can"
+        "en:can",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -10090,7 +10146,8 @@
         "grammar:negative",
         "construction:followed-by-bare-infinitive",
         "es:poder",
-        "en:can't"
+        "en:can't",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -10127,7 +10184,8 @@
         "grammar:ability",
         "construction:full-infinitive",
         "es:poder",
-        "en:able"
+        "en:able",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -10476,7 +10534,8 @@
         "grammar:question",
         "grammar:modal",
         "es:puedes",
-        "en:you"
+        "en:you",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -10513,7 +10572,8 @@
         "grammar:permission",
         "grammar:question",
         "grammar:modal",
-        "es:puedo"
+        "es:puedo",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -10571,7 +10631,8 @@
         "grammar:modal",
         "construction:followed-by-bare-infinitive",
         "es:podrías",
-        "en:you"
+        "en:you",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -11132,7 +11193,8 @@
       },
       "collections": [
         "es:preguntar",
-        "en:ask"
+        "en:ask",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -11147,7 +11209,8 @@
       "collections": [
         "construction:double-object",
         "es:preguntar",
-        "en:ask"
+        "en:ask",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -11510,7 +11573,8 @@
         "construction:map-en-in",
         "grammar:reflexive",
         "es:quedar",
-        "en:stay"
+        "en:stay",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -11878,7 +11942,8 @@
       },
       "collections": [
         "es:abrir",
-        "en:open"
+        "en:open",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -12076,7 +12141,8 @@
       },
       "collections": [
         "es:acabar",
-        "en:finish"
+        "en:finish",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -12866,7 +12932,8 @@
       "collections": [
         "grammar:human-object",
         "es:conocer",
-        "en:know"
+        "en:know",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -12882,7 +12949,8 @@
         "grammar:human-object",
         "grammar:first-encounter",
         "es:conocer",
-        "en:meet"
+        "en:meet",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -13144,7 +13212,8 @@
       },
       "collections": [
         "es:conseguir",
-        "en:get"
+        "en:get",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -13878,7 +13947,8 @@
         "construction:map-que-that",
         "en:opinion",
         "es:creer",
-        "en:think"
+        "en:think",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -14233,7 +14303,8 @@
         "construction:followed-by-bare-infinitive",
         "form:bare-infinitive",
         "es:debería",
-        "en:should"
+        "en:should",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -14608,7 +14679,8 @@
       "collections": [
         "construction:placement",
         "es:dejar",
-        "en:leave"
+        "en:leave",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -14661,7 +14733,8 @@
         "form:bare-infinitive",
         "es:dejar",
         "en:let",
-        "grammar:object-control"
+        "grammar:object-control",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -14734,7 +14807,8 @@
         "grammar:gerund",
         "construction:map-de-gerund",
         "es:dejar",
-        "en:stop"
+        "en:stop",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -15457,7 +15531,8 @@
       },
       "collections": [
         "es:recordar",
-        "en:remember"
+        "en:remember",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -15765,7 +15840,8 @@
       },
       "collections": [
         "es:saber",
-        "en:know"
+        "en:know",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -15780,7 +15856,8 @@
       "collections": [
         "construction:that-clause",
         "es:saber",
-        "en:know"
+        "en:know",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -15795,7 +15872,8 @@
       "collections": [
         "grammar:question",
         "es:saber",
-        "en:know"
+        "en:know",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -15826,7 +15904,8 @@
       "collections": [
         "construction:full-infinitive",
         "es:saber",
-        "en:know"
+        "en:know",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -16176,7 +16255,8 @@
         "construction:prepositional-verb",
         "construction:map-de-leave",
         "es:salir",
-        "en:leave"
+        "en:leave",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -16192,7 +16272,8 @@
         "grammar:phrasal-verb",
         "particle:out",
         "es:salir",
-        "en:go"
+        "en:go",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -16433,7 +16514,8 @@
         "construction:followed-by-gerund",
         "form:present-participle",
         "es:seguir",
-        "en:keep"
+        "en:keep",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -17032,7 +17114,8 @@
       "collections": [
         "en:identity",
         "es:ser",
-        "en:be"
+        "en:be",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -17047,7 +17130,8 @@
       "collections": [
         "classification",
         "es:ser",
-        "en:be"
+        "en:be",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -17078,7 +17162,8 @@
         "topic:time",
         "topic:date",
         "es:ser",
-        "en:be"
+        "en:be",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -17111,7 +17196,8 @@
         "construction:prepositional-verb",
         "construction:map-de-from",
         "es:ser",
-        "en:from"
+        "en:from",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -17468,7 +17554,8 @@
       },
       "collections": [
         "es:significar",
-        "en:mean"
+        "en:mean",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -17841,7 +17928,8 @@
         "grammar:three-jobs-of-have",
         "grammar:uses-auxiliary-do-for-questions",
         "es:tener",
-        "en:have"
+        "en:have",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -17882,7 +17970,8 @@
         "grammar:three-jobs-of-have",
         "grammar:uses-auxiliary-do-for-questions",
         "es:tener",
-        "en:to"
+        "en:to",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -18566,7 +18655,8 @@
       },
       "collections": [
         "es:trabajar",
-        "en:work"
+        "en:work",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -18846,7 +18936,8 @@
       "collections": [
         "construction:somebody-something",
         "es:traer",
-        "en:bring"
+        "en:bring",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -19283,7 +19374,8 @@
         "en:to",
         "construction:map-a-to",
         "es:venir",
-        "en:come"
+        "en:come",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -19316,7 +19408,8 @@
         "grammar:origin",
         "construction:map-de-from",
         "es:venir",
-        "en:from"
+        "en:from",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -19514,7 +19607,8 @@
       "collections": [
         "grammar:perception-verb",
         "es:ver",
-        "en:see"
+        "en:see",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -19545,7 +19639,8 @@
         "construction:map-a-direct-object",
         "grammar:perception-verb",
         "es:ver",
-        "en:see"
+        "en:see",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -21506,7 +21601,8 @@
         "construction:prepositional-verb",
         "en:at",
         "es:mirar",
-        "en:look"
+        "en:look",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -21887,7 +21983,7 @@
       },
       "collections": [
         "pos:connector",
-        "grammar:additive",
+        "grammar:addition",
         "es:además",
         "en:besides"
       ],
@@ -21903,7 +21999,7 @@
       },
       "collections": [
         "pos:connector",
-        "grammar:additive",
+        "grammar:addition",
         "es:además",
         "en:moreover"
       ],
@@ -22638,7 +22734,8 @@
       "collections": [
         "es:como",
         "es:cómo",
-        "en:how"
+        "en:how",
+        "pos:adverb"
       ],
       "curriculumRole": "core"
     },
@@ -22801,7 +22898,8 @@
       "collections": [
         "es:cuando",
         "es:cuándo",
-        "en:when"
+        "en:when",
+        "pos:adverb"
       ],
       "curriculumRole": "core"
     },
@@ -22859,7 +22957,8 @@
       },
       "collections": [
         "es:cuánto",
-        "en:how"
+        "en:how",
+        "pos:adverb"
       ],
       "curriculumRole": "core"
     },
@@ -23350,7 +23449,8 @@
       "collections": [
         "es:donde",
         "es:dónde",
-        "en:where"
+        "en:where",
+        "pos:adverb"
       ],
       "curriculumRole": "core"
     },
@@ -25518,7 +25618,8 @@
       "collections": [
         "ultimo",
         "es:leer",
-        "en:read"
+        "en:read",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -28474,7 +28575,8 @@
         "topic:money",
         "grammar:verb-direct-object",
         "es:pagar",
-        "en:pay"
+        "en:pay",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -44222,7 +44324,6 @@
       },
       "collections": [
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "pos:number",
         "es:uno",
         "en:one",
@@ -44242,7 +44343,6 @@
       },
       "collections": [
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "pos:number",
         "es:dos",
         "en:two",
@@ -44260,7 +44360,6 @@
       },
       "collections": [
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "pos:number",
         "es:tres",
         "en:three",
@@ -44278,7 +44377,6 @@
       },
       "collections": [
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "pos:number",
         "es:cuatro",
         "en:four",
@@ -44296,7 +44394,6 @@
       },
       "collections": [
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "pos:number",
         "es:cinco",
         "en:five",
@@ -44314,7 +44411,6 @@
       },
       "collections": [
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "pos:number",
         "es:seis",
         "en:six",
@@ -44332,7 +44428,6 @@
       },
       "collections": [
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "pos:number",
         "es:siete",
         "en:seven",
@@ -44350,7 +44445,6 @@
       },
       "collections": [
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "pos:number",
         "es:ocho",
         "en:eight",
@@ -44368,7 +44462,6 @@
       },
       "collections": [
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "pos:number",
         "es:nueve",
         "en:nine",
@@ -44386,7 +44479,6 @@
       },
       "collections": [
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "pos:number",
         "es:diez",
         "en:ten",
@@ -44404,7 +44496,6 @@
       },
       "collections": [
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "pos:number",
         "es:once",
         "en:eleven",
@@ -44422,7 +44513,6 @@
       },
       "collections": [
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "pos:number",
         "es:doce",
         "en:twelve",
@@ -44440,7 +44530,6 @@
       },
       "collections": [
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "morphology:suffix-teen",
         "sound:teen-vs-ty",
         "pos:number",
@@ -44460,7 +44549,6 @@
       },
       "collections": [
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "morphology:suffix-teen",
         "sound:teen-vs-ty",
         "pos:number",
@@ -44480,7 +44568,6 @@
       },
       "collections": [
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "morphology:suffix-teen",
         "sound:teen-vs-ty",
         "pos:number",
@@ -44500,7 +44587,6 @@
       },
       "collections": [
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "morphology:suffix-teen",
         "sound:teen-vs-ty",
         "pos:number",
@@ -44520,7 +44606,6 @@
       },
       "collections": [
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "morphology:suffix-teen",
         "sound:teen-vs-ty",
         "pos:number",
@@ -44540,7 +44625,6 @@
       },
       "collections": [
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "morphology:suffix-teen",
         "sound:teen-vs-ty",
         "pos:number",
@@ -44560,7 +44644,6 @@
       },
       "collections": [
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "morphology:suffix-teen",
         "sound:teen-vs-ty",
         "pos:number",
@@ -44580,7 +44663,6 @@
       },
       "collections": [
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "morphology:suffix-ty",
         "sound:teen-vs-ty",
         "pos:number",
@@ -44600,7 +44682,6 @@
       },
       "collections": [
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "morphology:suffix-ty",
         "sound:teen-vs-ty",
         "pos:number",
@@ -44620,7 +44701,6 @@
       },
       "collections": [
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "morphology:suffix-ty",
         "sound:teen-vs-ty",
         "pos:number",
@@ -44640,7 +44720,6 @@
       },
       "collections": [
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "morphology:suffix-ty",
         "sound:teen-vs-ty",
         "pos:number",
@@ -44660,7 +44739,6 @@
       },
       "collections": [
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "morphology:suffix-ty",
         "sound:teen-vs-ty",
         "pos:number",
@@ -44680,7 +44758,6 @@
       },
       "collections": [
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "morphology:suffix-ty",
         "sound:teen-vs-ty",
         "pos:number",
@@ -44700,7 +44777,6 @@
       },
       "collections": [
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "morphology:suffix-ty",
         "sound:teen-vs-ty",
         "pos:number",
@@ -44720,7 +44796,6 @@
       },
       "collections": [
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "morphology:suffix-ty",
         "sound:teen-vs-ty",
         "pos:number",
@@ -45767,7 +45842,6 @@
       "collections": [
         "topic:large-numbers",
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "pos:number",
         "es:cien",
         "en:one",
@@ -45786,7 +45860,6 @@
       "collections": [
         "topic:large-numbers",
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "pos:number",
         "es:mil",
         "en:one",
@@ -45805,7 +45878,6 @@
       "collections": [
         "topic:large-numbers",
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "pos:number",
         "es:millón",
         "en:one",
@@ -45824,7 +45896,6 @@
       "collections": [
         "topic:large-numbers",
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "cognate:false-friend",
         "cognate:confusion-set",
         "pos:number",
@@ -45845,7 +45916,6 @@
       "collections": [
         "topic:large-numbers",
         "grammar:cardinal-number",
-        "grammar:quantifier",
         "cognate:false-friend",
         "cognate:confusion-set",
         "pos:number",
@@ -58522,7 +58592,8 @@
         "es:do",
         "form:full-infinitive",
         "es:hacer",
-        "en:do"
+        "en:do",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -58539,7 +58610,8 @@
         "es:do",
         "form:bare-infinitive",
         "es:hacer",
-        "en:do"
+        "en:do",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -58556,7 +58628,8 @@
         "es:do",
         "form:present-participle",
         "es:haciendo",
-        "en:doing"
+        "en:doing",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -58573,7 +58646,8 @@
         "es:do",
         "form:past",
         "es:hizo",
-        "en:did"
+        "en:did",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -58590,7 +58664,8 @@
         "es:do",
         "form:past-participle",
         "es:hecho",
-        "en:done"
+        "en:done",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -58607,7 +58682,8 @@
         "es:do",
         "form:third-person",
         "es:hacer",
-        "en:does"
+        "en:does",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -58767,7 +58843,8 @@
         "construction:followed-by-full-infinitive",
         "form:full-infinitive",
         "es:ser",
-        "en:it"
+        "en:it",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -58786,7 +58863,8 @@
         "construction:followed-by-full-infinitive",
         "form:full-infinitive",
         "es:para",
-        "en:to"
+        "en:to",
+        "pos:preposition"
       ],
       "curriculumRole": "core"
     },
@@ -59028,7 +59106,8 @@
         "construction:followed-by-bare-infinitive",
         "form:bare-infinitive",
         "es:futuro",
-        "en:will"
+        "en:will",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -59047,7 +59126,8 @@
         "construction:followed-by-bare-infinitive",
         "form:bare-infinitive",
         "es:condicional",
-        "en:would"
+        "en:would",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -62313,7 +62393,7 @@
       "collections": [
         "grammar:conditional",
         "form:second-conditional",
-        "grammar:hypothetical-condition",
+        "grammar:hypothetical",
         "past form + would",
         "construction:if-clause",
         "es:si",
@@ -62332,7 +62412,7 @@
       "collections": [
         "grammar:conditional",
         "form:second-conditional",
-        "grammar:hypothetical-condition",
+        "grammar:hypothetical",
         "if I were you",
         "subjunctive were",
         "es:si",
@@ -62479,7 +62559,8 @@
         "en:present",
         "es:do",
         "construction:followed-by-bare-infinitive",
-        "en:you"
+        "en:you",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -62496,7 +62577,8 @@
         "grammar:question",
         "form:third-person",
         "construction:followed-by-bare-infinitive",
-        "en:does"
+        "en:does",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -62513,7 +62595,8 @@
         "grammar:question",
         "form:past",
         "construction:followed-by-bare-infinitive",
-        "en:did"
+        "en:did",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -62532,7 +62615,8 @@
         "es:do",
         "grammar:contraction",
         "don't",
-        "construction:followed-by-bare-infinitive"
+        "construction:followed-by-bare-infinitive",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -62551,7 +62635,8 @@
         "en:does",
         "grammar:contraction",
         "construction:followed-by-bare-infinitive",
-        "en:doesn't"
+        "en:doesn't",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -62570,7 +62655,8 @@
         "en:did",
         "grammar:contraction",
         "construction:followed-by-bare-infinitive",
-        "en:didn't"
+        "en:didn't",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -62660,7 +62746,8 @@
         "grammar:question",
         "form:past-participle",
         "es:has",
-        "en:you"
+        "en:you",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -62678,7 +62765,8 @@
         "grammar:question",
         "form:past-participle",
         "es:ha",
-        "en:has"
+        "en:has",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -62935,7 +63023,8 @@
         "construction:auxiliary-do",
         "construction:followed-by-full-infinitive",
         "es:tienes",
-        "en:you"
+        "en:you",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -62954,7 +63043,8 @@
         "auxiliary does",
         "construction:followed-by-full-infinitive",
         "es:tener",
-        "en:to"
+        "en:to",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -62993,7 +63083,8 @@
         "construction:auxiliary-do",
         "construction:followed-by-full-infinitive",
         "es:tener",
-        "en:to"
+        "en:to",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -63270,7 +63361,8 @@
         "grammar:question",
         "grammar:progressive",
         "form:present-participle",
-        "en:are"
+        "en:are",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -63288,7 +63380,8 @@
         "grammar:progressive",
         "form:present-participle",
         "es:estar",
-        "en:is"
+        "en:is",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -63338,11 +63431,11 @@
       "collections": [
         "es:be",
         "grammar:question",
-        "grammar:be-going-to",
-        "grammar:future-plan",
+        "grammar:going-to",
         "construction:followed-by-full-infinitive",
         "es:ir",
-        "en:are"
+        "en:are",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -63357,11 +63450,11 @@
       "collections": [
         "es:be",
         "grammar:question",
-        "grammar:be-going-to",
-        "grammar:future-plan",
+        "grammar:going-to",
         "construction:followed-by-full-infinitive",
         "es:ir",
-        "en:is"
+        "en:is",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -63474,7 +63567,8 @@
         "grammar:question",
         "construction:followed-by-bare-infinitive",
         "es:puedes",
-        "en:you"
+        "en:you",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -63589,7 +63683,8 @@
         "grammar:question",
         "en:future",
         "construction:followed-by-bare-infinitive",
-        "en:you"
+        "en:you",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -63608,7 +63703,8 @@
         "en:future",
         "grammar:contraction",
         "construction:followed-by-bare-infinitive",
-        "en:won't"
+        "en:won't",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -63626,7 +63722,8 @@
         "grammar:question",
         "grammar:conditional",
         "construction:followed-by-bare-infinitive",
-        "en:you"
+        "en:you",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -64015,7 +64112,7 @@
       "collections": [
         "pos:function-word",
         "grammar:intensifier",
-        "grammar:referenced-degree",
+        "grammar:referenced-quantity",
         "not that",
         "es:tan",
         "en:that"
@@ -64442,7 +64539,6 @@
       "collections": [
         "grammar:article",
         "grammar:zero-article",
-        "grammar:no-article",
         "general plural",
         "grammar:countable",
         "es:gustar",
@@ -64461,7 +64557,6 @@
       "collections": [
         "grammar:article",
         "grammar:zero-article",
-        "grammar:no-article",
         "general idea",
         "grammar:uncountable",
         "es:necesitar",
@@ -64483,7 +64578,8 @@
         "specific plural",
         "grammar:countable",
         "es:gustar",
-        "en:likes"
+        "en:likes",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -64501,7 +64597,8 @@
         "specific idea",
         "grammar:uncountable",
         "es:necesitar",
-        "en:need"
+        "en:need",
+        "pos:verb"
       ],
       "curriculumRole": "core"
     },
@@ -76534,7 +76631,7 @@
         "es:al",
         "en:the"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "nlbaeg9xqs",
@@ -76553,7 +76650,7 @@
         "es:del",
         "en:the"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "s66xi2kamk",
