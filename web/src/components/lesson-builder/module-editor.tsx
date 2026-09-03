@@ -5,8 +5,10 @@ import {
   ChevronUp,
   GripVertical,
   Plus,
+  SquarePen,
   Trash2,
 } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 import type { LessonModule } from "@/lib/lesson-builder/types";
@@ -212,6 +214,13 @@ export function ModuleEditor({
               aria-label="Module name"
               className={`${inputClass} flex-1 text-base font-semibold`}
             />
+            <Link
+              href={`/lesson-builder?module=${selected.id}`}
+              className="inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-primary px-3 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:opacity-90"
+            >
+              <SquarePen className="size-4" aria-hidden="true" />
+              Open in Builder
+            </Link>
             <button
               type="button"
               onClick={() => deleteModule(selected.id)}

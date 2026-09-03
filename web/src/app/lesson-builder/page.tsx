@@ -141,9 +141,10 @@ function ContentBlockPicker({
 
 export default function LessonBuilderPage() {
   const [lessons, dispatch] = useReducer(lessonsReducer, []);
-  // The module structure, for grouping headers only. Edited in the Course view;
-  // here it just tracks what the server returns.
+  // The module structure (synced from every lessons API response). The builder
+  // shows one module at a time; `activeModuleId` picks it (from ?module=).
   const [courseModules, setCourseModules] = useState<LessonModule[]>([]);
+  const [activeModuleId, setActiveModuleId] = useState<string | null>(null);
   const [savedLessonsSnapshot, setSavedLessonsSnapshot] = useState<Lesson[]>(
     [],
   );
@@ -210,9 +211,25 @@ export default function LessonBuilderPage() {
         const lessonsJson = JSON.stringify(lessons);
 
         if (isMounted) {
+          const modules = lessonFile.modules ?? [];
           savedLessonsJsonRef.current = lessonsJson;
           dispatch({ type: "SET_LESSONS", lessons });
-          setCourseModules(lessonFile.modules ?? []);
+          setCourseModules(modules);
+          const params = new URLSearchParams(window.location.search);
+          const wantedModule = params.get("module");
+          const wantedLessonModule = params.get("lesson")
+            ? modules.find((module) =>
+                module.lessonIds.includes(params.get("lesson")!),
+              )?.id
+            : undefined;
+          setActiveModuleId(
+            (wantedModule &&
+              modules.some((module) => module.id === wantedModule) &&
+              wantedModule) ||
+              wantedLessonModule ||
+              modules[0]?.id ||
+              null,
+          );
           setSavedLessonsSnapshot(lessons);
           setCollapsedLessons(new Set(lessons.map((lesson) => lesson.id)));
           setFullyCollapsedLessons(new Set());
@@ -288,6 +305,13 @@ export default function LessonBuilderPage() {
     const savedLesson = savedLessonsSnapshot.find(
       (candidate) => candidate.id === lessonId,
     );
+    // For a brand-new lesson, tell the server which module and where in it.
+    const targetModule = courseModules.find((module) =>
+      module.lessonIds.includes(lessonId),
+    );
+    const insertionIndex = targetModule
+      ? targetModule.lessonIds.indexOf(lessonId)
+      : lessonIndex;
 
     if (
       !lesson ||
@@ -307,7 +331,11 @@ export default function LessonBuilderPage() {
         {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ lesson, insertionIndex: lessonIndex }),
+          body: JSON.stringify({
+            lesson,
+            moduleId: targetModule?.id ?? activeModuleId,
+            insertionIndex,
+          }),
         },
       );
 
@@ -329,6 +357,8 @@ export default function LessonBuilderPage() {
       setSavingLessonId(null);
     }
   }, [
+    activeModuleId,
+    courseModules,
     isLoadingLessons,
     lessons,
     savedLessonsSnapshot,
@@ -620,11 +650,11 @@ export default function LessonBuilderPage() {
     const lessonId = createId("lesson");
 
     dispatch({ type: "CREATE_LESSON", lessonId });
-    // New lessons land in the last module (matches the server default); the
-    // server returns the authoritative structure on first save.
+    // New lessons go into the module currently open in the builder.
     setCourseModules((current) =>
       current.map((module, index) =>
-        index === current.length - 1
+        module.id === activeModuleId ||
+        (!activeModuleId && index === current.length - 1)
           ? { ...module, lessonIds: [...module.lessonIds, lessonId] }
           : module,
       ),
@@ -636,7 +666,7 @@ export default function LessonBuilderPage() {
       return nextLessonIds;
     });
     setActiveLessonId(lessonId);
-  }, [lessons]);
+  }, [activeModuleId, lessons]);
 
   const createLesson = useCallback(() => {
     const openLesson = lessons.find(
@@ -1522,36 +1552,73 @@ export default function LessonBuilderPage() {
   const pendingLessonExit =
     pendingLessonExitIndex >= 0 ? lessons[pendingLessonExitIndex] : null;
 
+  // The builder is scoped to one module. `moduleLessons` is that module's
+  // lessons in order; everything below renders and numbers from it.
+  const lessonById = new Map(lessons.map((lesson) => [lesson.id, lesson]));
+  const currentModule =
+    courseModules.find((module) => module.id === activeModuleId) ??
+    courseModules[0] ??
+    null;
+  const moduleLessons = (currentModule?.lessonIds ?? [])
+    .map((id) => lessonById.get(id))
+    .filter((lesson): lesson is Lesson => Boolean(lesson));
+
   return (
     <main className="flex-1 bg-background px-4 py-8 sm:px-6 sm:py-12">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-6">
         <div className="flex items-start justify-between gap-4">
-          <div>
-            <h1 className="text-2xl font-semibold tracking-tight text-foreground">
-              Lesson Builder
-            </h1>
-            <p className="mt-1 text-sm text-muted-foreground">
+          <div className="min-w-0">
+            <div className="flex flex-wrap items-center gap-2">
+              <h1 className="text-2xl font-semibold tracking-tight text-foreground">
+                Lesson Builder
+              </h1>
+              {courseModules.length > 0 && (
+                <select
+                  value={currentModule?.id ?? ""}
+                  onChange={(event) => {
+                    setActiveModuleId(event.target.value);
+                    window.history.replaceState(
+                      null,
+                      "",
+                      `/lesson-builder?module=${event.target.value}`,
+                    );
+                  }}
+                  aria-label="Module"
+                  className="rounded-lg border border-input bg-card px-2.5 py-1 text-sm font-semibold text-foreground outline-none focus:border-ring focus:ring-3 focus:ring-ring/20"
+                >
+                  {courseModules.map((module) => (
+                    <option key={module.id} value={module.id}>
+                      {module.name || "Untitled module"}
+                    </option>
+                  ))}
+                </select>
+              )}
+              <Link
+                href="/lesson-builder/modules"
+                className="text-xs font-medium text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
+              >
+                structure & promises →
+              </Link>
+            </div>
+            <p className="mt-1 truncate text-sm text-muted-foreground">
               {isLoadingLessons
                 ? "Loading saved lessons..."
                 : isSavingLessonOrder
                   ? "Saving lesson order..."
-                : isDirty
-                  ? "Unsaved changes"
-                  : saveStatus === "saved"
-                    ? "All changes saved"
-                    : saveStatus === "error"
-                      ? "Could not load or save lessons"
-                      : "Loaded from lessons.json"}
+                  : isDirty
+                    ? "Unsaved changes"
+                    : saveStatus === "saved"
+                      ? "All changes saved"
+                      : saveStatus === "error"
+                        ? "Could not load or save lessons"
+                        : currentModule?.promise || "No promise set for this module"}
             </p>
           </div>
           <BuilderNav active="builder" />
         </div>
 
-        {lessons.map((lesson, lessonIndex) => {
+        {moduleLessons.map((lesson, lessonIndex) => {
           const lessonNumber = lessonIndex + 1;
-          const moduleHeader = courseModules.find(
-            (module) => module.lessonIds[0] === lesson.id,
-          );
           const isDragging = lessonDrag.dragged?.id === lesson.id;
           const isLessonCollapsed = collapsedLessons.has(lesson.id);
           const isLessonFullyCollapsed = fullyCollapsedLessons.has(lesson.id);
@@ -1573,26 +1640,8 @@ export default function LessonBuilderPage() {
               : null;
 
           return (
-            <Fragment key={lesson.id}>
-            {moduleHeader && (
-              <div className="mt-2 flex flex-wrap items-baseline gap-x-3 gap-y-0.5 first:mt-0">
-                <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-                  {moduleHeader.name || "Untitled module"}
-                </h2>
-                {moduleHeader.promise && (
-                  <span className="text-xs text-muted-foreground">
-                    {moduleHeader.promise}
-                  </span>
-                )}
-                <Link
-                  href="/lesson-builder/modules"
-                  className="text-xs font-medium text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
-                >
-                  edit in Modules
-                </Link>
-              </div>
-            )}
             <section
+              key={lesson.id}
               id={`lesson-${lesson.id}`}
               aria-label={`Lesson ${lessonNumber}`}
               onMouseEnter={() => setActiveLessonId(lesson.id)}
@@ -2110,7 +2159,6 @@ export default function LessonBuilderPage() {
               </div>
               )}
             </section>
-            </Fragment>
           );
         })}
 
