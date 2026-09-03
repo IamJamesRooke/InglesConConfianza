@@ -33,6 +33,7 @@ import type {
   Lesson,
   LessonBlock,
   LessonFile,
+  LessonModule,
 } from "@/lib/lesson-builder/types";
 import {
   createConceptLink,
@@ -139,6 +140,9 @@ function ContentBlockPicker({
 
 export default function LessonBuilderPage() {
   const [lessons, dispatch] = useReducer(lessonsReducer, []);
+  // The module structure, for grouping headers only. Edited in the Course view;
+  // here it just tracks what the server returns.
+  const [courseModules, setCourseModules] = useState<LessonModule[]>([]);
   const [savedLessonsSnapshot, setSavedLessonsSnapshot] = useState<Lesson[]>(
     [],
   );
@@ -207,6 +211,7 @@ export default function LessonBuilderPage() {
         if (isMounted) {
           savedLessonsJsonRef.current = lessonsJson;
           dispatch({ type: "SET_LESSONS", lessons });
+          setCourseModules(lessonFile.modules ?? []);
           setSavedLessonsSnapshot(lessons);
           setCollapsedLessons(new Set(lessons.map((lesson) => lesson.id)));
           setFullyCollapsedLessons(new Set());
@@ -313,6 +318,7 @@ export default function LessonBuilderPage() {
       const savedLessons = normalizeLessons(lessonFile.lessons);
       savedLessonsJsonRef.current = JSON.stringify(savedLessons);
       setSavedLessonsSnapshot(savedLessons);
+      setCourseModules(lessonFile.modules ?? []);
       setSaveStatus("saved");
       return true;
     } catch {
@@ -613,6 +619,15 @@ export default function LessonBuilderPage() {
     const lessonId = createId("lesson");
 
     dispatch({ type: "CREATE_LESSON", lessonId });
+    // New lessons land in the last module (matches the server default); the
+    // server returns the authoritative structure on first save.
+    setCourseModules((current) =>
+      current.map((module, index) =>
+        index === current.length - 1
+          ? { ...module, lessonIds: [...module.lessonIds, lessonId] }
+          : module,
+      ),
+    );
     setCollapsedLessons(new Set(lessons.map((lesson) => lesson.id)));
     setFullyCollapsedLessons((currentLessonIds) => {
       const nextLessonIds = new Set(currentLessonIds);
@@ -989,6 +1004,7 @@ export default function LessonBuilderPage() {
       const savedLessons = normalizeLessons(lessonFile.lessons);
       savedLessonsJsonRef.current = JSON.stringify(savedLessons);
       setSavedLessonsSnapshot(savedLessons);
+      setCourseModules(lessonFile.modules ?? []);
       setSaveStatus("saved");
     } catch {
       setSaveStatus("error");
@@ -1432,6 +1448,7 @@ export default function LessonBuilderPage() {
       const savedLessons = normalizeLessons(lessonFile.lessons);
       savedLessonsJsonRef.current = JSON.stringify(savedLessons);
       setSavedLessonsSnapshot(savedLessons);
+      setCourseModules(lessonFile.modules ?? []);
       setSaveStatus("saved");
       return true;
     } catch {
@@ -1536,6 +1553,9 @@ export default function LessonBuilderPage() {
 
         {lessons.map((lesson, lessonIndex) => {
           const lessonNumber = lessonIndex + 1;
+          const moduleHeader = courseModules.find(
+            (module) => module.lessonIds[0] === lesson.id,
+          );
           const isDragging = lessonDrag.dragged?.id === lesson.id;
           const isLessonCollapsed = collapsedLessons.has(lesson.id);
           const isLessonFullyCollapsed = fullyCollapsedLessons.has(lesson.id);
@@ -1557,8 +1577,26 @@ export default function LessonBuilderPage() {
               : null;
 
           return (
+            <Fragment key={lesson.id}>
+            {moduleHeader && (
+              <div className="mt-2 flex flex-wrap items-baseline gap-x-3 gap-y-0.5 first:mt-0">
+                <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                  {moduleHeader.name || "Untitled module"}
+                </h2>
+                {moduleHeader.promise && (
+                  <span className="text-xs text-muted-foreground">
+                    {moduleHeader.promise}
+                  </span>
+                )}
+                <Link
+                  href="/lesson-builder/course"
+                  className="text-xs font-medium text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
+                >
+                  edit in Course
+                </Link>
+              </div>
+            )}
             <section
-              key={lesson.id}
               id={`lesson-${lesson.id}`}
               aria-label={`Lesson ${lessonNumber}`}
               onMouseEnter={() => setActiveLessonId(lesson.id)}
@@ -2076,6 +2114,7 @@ export default function LessonBuilderPage() {
               </div>
               )}
             </section>
+            </Fragment>
           );
         })}
 
