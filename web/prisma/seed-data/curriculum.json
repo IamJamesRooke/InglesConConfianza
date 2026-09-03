@@ -22080,15 +22080,13 @@
     },
     {
       "id": "1vi4oe10ip",
-      "spanish": "luego / después",
+      "spanish": "después",
       "english": "then",
       "example": {
-        "spanish": "luego / después",
-        "english": "then"
+        "spanish": "Primero come, y después descansa.",
+        "english": "First eat, and then rest."
       },
       "collections": [
-        "es:antes",
-        "es:luego",
         "en:then"
       ],
       "curriculumRole": "reference"
@@ -22391,14 +22389,13 @@
     },
     {
       "id": "aixmzqjpam",
-      "spanish": "debajo de / más abajo de",
+      "spanish": "debajo de",
       "english": "below",
       "example": {
-        "spanish": "debajo de / más abajo de",
-        "english": "below"
+        "spanish": "El sótano está debajo de la casa.",
+        "english": "The basement is below the house."
       },
       "collections": [
-        "es:bajo",
         "es:debajo",
         "en:below"
       ],
@@ -23064,11 +23061,11 @@
     },
     {
       "id": "5fylm54n8s",
-      "spanish": "de / desde un lugar",
+      "spanish": "de [un lugar]",
       "english": "from a place",
       "example": {
-        "spanish": "de / desde un lugar",
-        "english": "from a place"
+        "spanish": "El tren sale de Madrid.",
+        "english": "The train leaves from Madrid."
       },
       "collections": [
         "es:de",
@@ -23693,7 +23690,7 @@
         "es:en",
         "en:in"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "vlo817grkx",
@@ -24218,14 +24215,13 @@
     },
     {
       "id": "yt3bjazug3",
-      "spanish": "la tarde / primeras horas de la noche",
+      "spanish": "la tarde",
       "english": "the evening",
       "example": {
-        "spanish": "la tarde / primeras horas de la noche",
-        "english": "the evening"
+        "spanish": "Nos vemos en la tarde.",
+        "english": "See you in the evening."
       },
       "collections": [
-        "es:mañana",
         "es:tarde",
         "en:evening"
       ],
@@ -25220,11 +25216,11 @@
     },
     {
       "id": "22lgqfjinn",
-      "spanish": "seguro / a salvo",
+      "spanish": "seguro",
       "english": "safe",
       "example": {
-        "spanish": "seguro / a salvo",
-        "english": "safe"
+        "spanish": "Este barrio es seguro.",
+        "english": "This neighborhood is safe."
       },
       "collections": [
         "es:seguro",
@@ -25457,14 +25453,13 @@
     },
     {
       "id": "9qwvwwgrlt",
-      "spanish": "encima de / arriba de",
+      "spanish": "encima de",
       "english": "above",
       "example": {
-        "spanish": "encima de / arriba de",
-        "english": "above"
+        "spanish": "La lámpara está encima de la mesa.",
+        "english": "The lamp is above the table."
       },
       "collections": [
-        "es:sobre",
         "es:encima",
         "en:above"
       ],
@@ -25764,14 +25759,13 @@
     },
     {
       "id": "bluzvvve73",
-      "spanish": "todavía no / aún no",
+      "spanish": "todavía no",
       "english": "not yet",
       "example": {
-        "spanish": "todavía no / aún no",
-        "english": "not yet"
+        "spanish": "Todavía no he terminado.",
+        "english": "I have not finished yet."
       },
       "collections": [
-        "es:ya",
         "es:todavía",
         "en:yet"
       ],
@@ -25779,14 +25773,13 @@
     },
     {
       "id": "2b50xdv2ra",
-      "spanish": "todavía / aún",
+      "spanish": "todavía",
       "english": "still",
       "example": {
-        "spanish": "todavía / aún",
-        "english": "still"
+        "spanish": "Todavía está lloviendo.",
+        "english": "It is still raining."
       },
       "collections": [
-        "es:ya",
         "es:todavía",
         "en:still"
       ],
@@ -77326,6 +77319,83 @@
         "topic:interrogative",
         "es:para qué",
         "en:what"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ba183xdbf1",
+      "spanish": "aún",
+      "english": "still",
+      "example": {
+        "spanish": "Mi tío aún trabaja en la fábrica.",
+        "english": "My uncle still works at the factory."
+      },
+      "collections": [
+        "pos:adverb",
+        "es:aún",
+        "en:still"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "erxz8fgsnr",
+      "spanish": "más abajo de",
+      "english": "lower than",
+      "example": {
+        "spanish": "Su oficina está más abajo de la mía.",
+        "english": "Her office is lower than mine."
+      },
+      "collections": [
+        "pos:preposition",
+        "grammar:comparison",
+        "es:abajo",
+        "en:lower"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "2q9z2cbaaq",
+      "spanish": "arriba de",
+      "english": "above",
+      "example": {
+        "spanish": "El cuadro está arriba de la puerta.",
+        "english": "The picture is above the door."
+      },
+      "collections": [
+        "pos:preposition",
+        "es:arriba",
+        "en:above"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "n3549z5wwm",
+      "spanish": "desde [un lugar]",
+      "english": "from a place",
+      "example": {
+        "spanish": "El vuelo viene desde Bogotá.",
+        "english": "The flight comes from Bogotá."
+      },
+      "collections": [
+        "pos:preposition",
+        "es:desde",
+        "en:from"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "c3ldgsdgnc",
+      "spanish": "a salvo",
+      "english": "safe",
+      "example": {
+        "spanish": "Todos llegaron a salvo.",
+        "english": "Everyone arrived safe."
+      },
+      "collections": [
+        "pos:adjective",
+        "grammar:fixed-expression",
+        "es:salvo",
+        "en:safe"
       ],
       "curriculumRole": "reference"
     }

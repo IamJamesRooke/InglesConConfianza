@@ -1,0 +1,6 @@
+# spanish	english	exampleSpanish	exampleEnglish	role	collections
+aún	still	Mi tío aún trabaja en la fábrica.	My uncle still works at the factory.	reference	pos:adverb|es:aún|en:still
+más abajo de	lower than	Su oficina está más abajo de la mía.	Her office is lower than mine.	reference	pos:preposition|grammar:comparison|es:abajo|en:lower
+arriba de	above	El cuadro está arriba de la puerta.	The picture is above the door.	reference	pos:preposition|es:arriba|en:above
+desde [un lugar]	from a place	El vuelo viene desde Bogotá.	The flight comes from Bogotá.	supporting	pos:preposition|es:desde|en:from
+a salvo	safe	Todos llegaron a salvo.	Everyone arrived safe.	reference	pos:adjective|grammar:fixed-expression|es:salvo|en:safe
