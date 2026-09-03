@@ -20324,7 +20324,7 @@
         "contrast:you-collapse",
         "contrast:confusable"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "hdl7zq5rij",
@@ -20386,7 +20386,7 @@
         "en:it",
         "topic:pronoun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "hh4dfyokmh",
@@ -20427,7 +20427,7 @@
         "en:they",
         "topic:pronoun"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "6bfxprlzrk",
@@ -20466,7 +20466,7 @@
         "en:we",
         "topic:pronoun"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "trash"
     },
     {
       "id": "em3gcm8fcl",
@@ -20488,7 +20488,7 @@
         "contrast:you-collapse",
         "contrast:confusable"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "9rsyb41dmz",
@@ -20552,7 +20552,7 @@
     },
     {
       "id": "qtybwfahhd",
-      "spanish": "le",
+      "spanish": "le (a él)",
       "english": "to him",
       "example": {
         "spanish": "Le doy el libro a Juan.",
@@ -20868,7 +20868,7 @@
         "grammar:object-pronoun",
         "topic:pronoun"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "1e1njdasi9",
@@ -20887,7 +20887,7 @@
         "grammar:object-pronoun",
         "topic:pronoun"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "vi3wxfj3r2",
@@ -20906,7 +20906,7 @@
         "grammar:object-pronoun",
         "topic:pronoun"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "1g6dssuu7g",
@@ -73879,7 +73879,7 @@
         "en:with",
         "en:him"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "0h11x77lat",
@@ -73899,7 +73899,7 @@
         "en:with",
         "en:her"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "0wjnsjpf8s",
@@ -73920,7 +73920,7 @@
         "en:with",
         "en:us"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "k71aaprkfg",
@@ -73941,7 +73941,7 @@
         "en:with",
         "en:them"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "nrb0thfnst",
@@ -73961,7 +73961,7 @@
         "en:with",
         "en:somebody"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "dyi2yg06hb",
@@ -75811,7 +75811,7 @@
         "es:me",
         "topic:pronoun"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "a1dht71g4o",
@@ -75831,7 +75831,7 @@
         "es:te",
         "topic:pronoun"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "ljza4yueup",
@@ -75851,7 +75851,7 @@
         "es:nos",
         "topic:pronoun"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "xin4wk0lik",
@@ -75891,7 +75891,7 @@
         "es:le",
         "topic:pronoun"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "mty4hevjmw",
@@ -76089,7 +76089,7 @@
         "es:ellas",
         "topic:pronoun"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "796z7mxsvp",
@@ -76110,7 +76110,7 @@
         "es:ellas",
         "topic:pronoun"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "gp7z4dvb4r",
@@ -76131,7 +76131,7 @@
         "es:ellas",
         "topic:pronoun"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "aq3ynjbhjm",
@@ -76288,6 +76288,22 @@
         "topic:pronoun"
       ],
       "curriculumRole": "reference"
+    },
+    {
+      "id": "r3d6k4jrrn",
+      "spanish": "[hacer algo] bien",
+      "english": "[to do something] well",
+      "example": {
+        "spanish": "Ella cocina bien.",
+        "english": "She cooks well."
+      },
+      "collections": [
+        "pos:adverb",
+        "grammar:manner",
+        "es:bien",
+        "en:well"
+      ],
+      "curriculumRole": "core"
     }
   ]
 }

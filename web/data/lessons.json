@@ -2,6 +2,104 @@
   "version": 1,
   "lessons": [
     {
+      "id": "lesson_d7ed75c7-6479-4a84-9c6a-45bfca8ec652",
+      "name": "I want to be able to speak English very well.",
+      "concepts": [
+        {
+          "id": "lesson_concept_2d9085cb-6223-488a-b035-f13c24856129",
+          "conceptId": "df1fa2p3xy",
+          "label": "querer [hacer algo]"
+        },
+        {
+          "id": "lesson_concept_651c5ee5-1069-47e0-8ae3-58a9123b502d",
+          "conceptId": "mxguwwzrxk",
+          "label": "poder [hacer algo]"
+        },
+        {
+          "id": "lesson_concept_2d748128-85f5-418a-baf6-a13e631fa18f",
+          "conceptId": "4c0v1mewmv",
+          "label": "hablar [un idioma]"
+        },
+        {
+          "id": "lesson_concept_958aa15d-2761-403d-8d38-ceab1d921d25",
+          "conceptId": "9rswx58qx1",
+          "label": "inglés"
+        },
+        {
+          "id": "lesson_concept_83a2a2a1-f2f9-4ba3-b965-1745656c5e02",
+          "conceptId": "neo7bdruvy",
+          "label": "muy [adjetivo]"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "block_6a08e010-2947-45b6-a809-760b77da7bec",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_118d68bf-42a4-479b-9a31-50495d08bf18",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_ef59809d-2e87-47ea-8f24-8df4b11a93af",
+              "spanish": "poder",
+              "callout": null,
+              "acceptedAnswers": [
+                "to be able"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_08bed48f-9da7-476b-b623-ca01e28c3b63",
+              "spanish": "hablar",
+              "callout": null,
+              "acceptedAnswers": [
+                "to speak"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_d18d0a1c-5094-493b-b12e-826d866a9a01",
+              "spanish": "inglés",
+              "callout": null,
+              "acceptedAnswers": [
+                "English"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_ead72737-ef2c-424f-9bf9-1e33b2b9c4af",
+              "spanish": "muy",
+              "callout": null,
+              "acceptedAnswers": [
+                "very"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_fcfc9360-66ed-4f9f-8341-d15d08103949",
+              "spanish": "bien.",
+              "callout": null,
+              "acceptedAnswers": [
+                "well."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "lesson_bdacade3-8ad6-4217-8c47-d5907d6122af",
       "name": "I speak English very well.",
       "blocks": [

@@ -1,0 +1,4 @@
+# Missing: the manner adverb "bien" (well). The catalog had bien -> okay/fine/
+# all right but not the core "does X well" sense. Surfaced while authoring a
+# lesson. Columns: spanish <TAB> english <TAB> exampleSpanish <TAB> exampleEnglish <TAB> role <TAB> collections(|)
+[hacer algo] bien	[to do something] well	Ella cocina bien.	She cooks well.	core	pos:adverb|grammar:manner|es:bien|en:well
