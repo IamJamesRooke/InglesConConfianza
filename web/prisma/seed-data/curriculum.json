@@ -20343,7 +20343,8 @@
         "en:he",
         "topic:pronoun",
         "contrast:el-vs-lo",
-        "contrast:confusable"
+        "contrast:confusable",
+        "contrast:el-articulo-vs-el-pronombre"
       ],
       "curriculumRole": "core"
     },
@@ -20942,7 +20943,9 @@
         "el vs él",
         "en:the",
         "topic:determiner",
-        "pos:function-word"
+        "pos:function-word",
+        "contrast:el-articulo-vs-el-pronombre",
+        "contrast:confusable"
       ],
       "curriculumRole": "core"
     },
@@ -44223,7 +44226,9 @@
         "pos:number",
         "es:uno",
         "en:one",
-        "topic:determiner"
+        "topic:determiner",
+        "contrast:un-vs-uno",
+        "contrast:confusable"
       ],
       "curriculumRole": "core"
     },
@@ -74625,7 +74630,9 @@
         "grammar:indefinite-pronoun",
         "topic:pronoun",
         "es:alguno",
-        "en:some"
+        "en:some",
+        "contrast:algun-vs-alguno",
+        "contrast:confusable"
       ],
       "curriculumRole": "supporting"
     },
@@ -76425,7 +76432,9 @@
         "pos:function-word",
         "topic:determiner",
         "es:un",
-        "en:a"
+        "en:a",
+        "contrast:un-vs-uno",
+        "contrast:confusable"
       ],
       "curriculumRole": "core"
     },
@@ -76641,7 +76650,9 @@
         "pos:determiner",
         "topic:determiner",
         "es:alguno",
-        "en:some"
+        "en:some",
+        "contrast:algun-vs-alguno",
+        "contrast:confusable"
       ],
       "curriculumRole": "supporting"
     },

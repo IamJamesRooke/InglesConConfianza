@@ -162,6 +162,33 @@ facet buttons: Definite article · Indefinite article · Demonstrative ·
 Possessive · Quantifier · Number · Interrogative · Relative (cuyo) ·
 Negative (ningún) · Confusions.
 
+## Status — DONE 2026-09-04 (commits `57d80529`..`71c8b694`)
+
+**137 `topic:determiner` concepts.** `npm run curriculum:determiners:audit`
+and the `db:test` "determiner topic is complete and clean" test both pass.
+
+- **A** (`57d80529`): 69 existing rows tagged — articles, demonstrative &
+  possessive determiners (now dual-tagged `topic:pronoun` + `topic:determiner`),
+  `pos:determiner` quantifiers, `cuántos/cuántas` (+`grammar:interrogative-determiner`).
+- **B** (`7de1d7de`): 32 cardinal numbers tagged; `uno/dos/tres` → core.
+- **C** (`57236155`): 37 new rows (indefinite articles, `lo`, `al`/`del`,
+  `todo`/`algún`/`ningún`/`cualquier`/`varios`/`poco`/`más`/`medio`/`bastante`/`tal`,
+  `qué`/`cuánto` + N, exclamative `qué` + N, `cuyo` set).
+- **D** (`71c8b694`): `topics.ts` entry, audit script, test; audit-driven fixes
+  (`pos:function-word` on articles, `grammar:quantifier` on `cierto/a` and the
+  "the other" rows, `cada [sustantivo] → every [noun]` added,
+  `topic:determiner` pulled off two article-*usage* construction rows).
+
+**Deviations from the spec above:**
+- `cierto/a [sustantivo]` kept its existing `X/a` agreement notation rather than
+  splitting; the audit tolerates the `/a` `/os` suffix on quantifier rows.
+- Cardinal-number **example sentences** still share the bulk-import placeholder
+  (`Compré dos libros…`); the audit skips the example check for
+  `grammar:cardinal-number`. Authoring per-number examples is a separate task.
+- Contrast facets (`contrast:un-vs-uno`, `contrast:el-articulo-vs-el-pronombre`,
+  etc.) are **not yet applied** — follow-up batch.
+- `vuestro`, ordinals: out, as agreed.
+
 ## Rough counts
 
 ~55 existing rows get `topic:determiner` added (articles 4, demonstratives 14,
