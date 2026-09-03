@@ -34,6 +34,12 @@ export type LessonsAction =
       lessonId: string;
       lessonConceptId: string;
     }
+  | {
+      type: "RELABEL_LESSON_CONCEPT";
+      lessonId: string;
+      lessonConceptId: string;
+      label: string;
+    }
   | { type: "DELETE_LESSON"; lessonId: string }
   | {
       type: "MOVE_LESSON";
@@ -168,6 +174,13 @@ export function lessonsReducer(
         lessons,
         action.lessonId,
         action.lessonConceptId,
+      );
+    case "RELABEL_LESSON_CONCEPT":
+      return mutations.relabelLessonConcept(
+        lessons,
+        action.lessonId,
+        action.lessonConceptId,
+        action.label,
       );
     case "DELETE_LESSON":
       return mutations.deleteLesson(lessons, action.lessonId);

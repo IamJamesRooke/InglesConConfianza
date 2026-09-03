@@ -4,12 +4,27 @@ import {
   CurriculumConceptNotFoundError,
   deleteCurriculumConcept,
   isCurriculumConcept,
+  readCurriculumConcept,
   updateCurriculumConcept,
 } from "@/lib/curriculum/server/curriculum-store";
 
 type RouteContext = {
   params: Promise<{ conceptId: string }>;
 };
+
+export async function GET(_request: Request, context: RouteContext) {
+  const { conceptId } = await context.params;
+  try {
+    const concept = await readCurriculumConcept(conceptId);
+    return NextResponse.json({ concept });
+  } catch (error) {
+    const notFound = error instanceof CurriculumConceptNotFoundError;
+    return NextResponse.json(
+      { error: notFound ? "Concept not found." : "Unable to load concept." },
+      { status: notFound ? 404 : 500 },
+    );
+  }
+}
 
 export async function PATCH(request: Request, context: RouteContext) {
   const { conceptId } = await context.params;

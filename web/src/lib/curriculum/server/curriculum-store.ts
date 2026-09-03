@@ -165,6 +165,33 @@ export async function readCurriculumPage({
   };
 }
 
+export async function readCurriculumConcept(
+  conceptId: string,
+): Promise<CurriculumConcept> {
+  const row = await prisma.curriculumConcept.findUnique({
+    where: { id: conceptId },
+    include: conceptRelations,
+  });
+  if (!row) throw new CurriculumConceptNotFoundError();
+  return toCurriculumConcept(row);
+}
+
+// Every collection name in use, with how many concepts carry it — powers the
+// tag autocomplete in the quick editor.
+export async function readCollectionVocabulary(): Promise<
+  Array<{ name: string; count: number }>
+> {
+  const grouped = await prisma.conceptCollection.groupBy({
+    by: ["collectionName"],
+    _count: { collectionName: true },
+    orderBy: { collectionName: "asc" },
+  });
+  return grouped.map((entry) => ({
+    name: entry.collectionName,
+    count: entry._count.collectionName,
+  }));
+}
+
 export async function updateCurriculumConcept(
   concept: CurriculumConcept,
 ): Promise<CurriculumConcept> {

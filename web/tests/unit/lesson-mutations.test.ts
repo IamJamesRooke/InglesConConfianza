@@ -193,6 +193,8 @@ test("lesson concepts add / remove", () => {
     lessons[0].concepts.map((c) => c.label),
     ["querer", "freehand"],
   );
+  lessons = m.relabelLessonConcept(lessons, "lesson_a", "lc2", "renamed");
+  assert.equal(lessons[0].concepts[1].label, "renamed");
   lessons = m.removeLessonConcept(lessons, "lesson_a", "lc1");
   assert.deepEqual(
     lessons[0].concepts.map((c) => c.id),

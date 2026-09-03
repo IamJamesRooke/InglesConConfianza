@@ -84,7 +84,41 @@ export default async function CoveragePage() {
                       className="border-t border-border"
                     >
                       <td className="sticky left-0 z-10 w-[24rem] bg-card px-2 py-1">
-                        <ConceptQuickEdit concept={concept} />
+                        <ConceptQuickEdit
+                          conceptId={concept.conceptId}
+                          initial={{
+                            spanish: concept.spanish,
+                            english: concept.english,
+                            exampleSpanish: concept.exampleSpanish,
+                            exampleEnglish: concept.exampleEnglish,
+                            role: concept.role,
+                            collections: concept.collections,
+                          }}
+                          className="group flex w-full items-center gap-2 rounded-md px-1 py-0.5 text-left transition hover:bg-muted"
+                        >
+                          <span
+                            className={`shrink-0 rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide ${
+                              concept.role === "core"
+                                ? "bg-emerald-100 text-emerald-800"
+                                : concept.role === "supporting"
+                                  ? "bg-blue-100 text-blue-800"
+                                  : concept.role === "trash"
+                                    ? "bg-red-100 text-red-700"
+                                    : "bg-stone-200 text-stone-600"
+                            }`}
+                          >
+                            {concept.role}
+                          </span>
+                          <span className="truncate">
+                            <span className="font-semibold text-stone-900">
+                              {concept.spanish}
+                            </span>
+                            <span className="text-stone-400"> → </span>
+                            <span className="text-stone-600">
+                              {concept.english}
+                            </span>
+                          </span>
+                        </ConceptQuickEdit>
                       </td>
                       <td className="px-2 py-1.5 text-center tabular-nums text-muted-foreground">
                         {concept.timesTaught}

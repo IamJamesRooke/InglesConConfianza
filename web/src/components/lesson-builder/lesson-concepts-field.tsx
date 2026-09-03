@@ -3,6 +3,7 @@
 import { X } from "lucide-react";
 import { useEffect, useId, useRef, useState } from "react";
 
+import { ConceptQuickEdit } from "@/components/lesson-builder/concept-quick-edit";
 import type { LessonConcept } from "@/lib/lesson-builder/types";
 import { createId } from "@/lib/lesson-builder/utils";
 
@@ -21,10 +22,12 @@ export function LessonConceptsField({
   concepts,
   onAdd,
   onRemove,
+  onRelabel,
 }: {
   concepts: LessonConcept[];
   onAdd: (concept: LessonConcept) => void;
   onRemove: (lessonConceptId: string) => void;
+  onRelabel: (lessonConceptId: string, label: string) => void;
 }) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<ConceptResult[]>([]);
@@ -109,7 +112,18 @@ export function LessonConceptsField({
             }`}
             title={concept.conceptId ? undefined : "Not linked to the curriculum"}
           >
-            {concept.label}
+            {concept.conceptId ? (
+              <ConceptQuickEdit
+                conceptId={concept.conceptId}
+                className="hover:underline"
+                onSaved={(draft) => onRelabel(concept.id, draft.spanish)}
+                onDeleted={() => onRemove(concept.id)}
+              >
+                {concept.label}
+              </ConceptQuickEdit>
+            ) : (
+              concept.label
+            )}
             <button
               type="button"
               onClick={() => onRemove(concept.id)}

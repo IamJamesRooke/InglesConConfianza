@@ -119,6 +119,20 @@ export function removeLessonConcept(
   }));
 }
 
+export function relabelLessonConcept(
+  lessons: Lesson[],
+  lessonId: string,
+  lessonConceptId: string,
+  label: string,
+): Lesson[] {
+  return mapLesson(lessons, lessonId, (lesson) => ({
+    ...lesson,
+    concepts: lesson.concepts.map((concept) =>
+      concept.id === lessonConceptId ? { ...concept, label } : concept,
+    ),
+  }));
+}
+
 export function renameLesson(
   lessons: Lesson[],
   lessonId: string,

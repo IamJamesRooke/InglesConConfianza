@@ -1650,6 +1650,14 @@ export default function LessonBuilderPage() {
                       lessonConceptId,
                     })
                   }
+                  onRelabel={(lessonConceptId, label) =>
+                    dispatch({
+                      type: "RELABEL_LESSON_CONCEPT",
+                      lessonId: lesson.id,
+                      lessonConceptId,
+                      label,
+                    })
+                  }
                 />
               )}
 
