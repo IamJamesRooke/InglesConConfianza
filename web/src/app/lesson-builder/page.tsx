@@ -1,6 +1,7 @@
 "use client";
 
 import { FileText, Keyboard, Languages, Plus, Table2, X } from "lucide-react";
+import Link from "next/link";
 import {
   Fragment,
   useCallback,
@@ -1506,7 +1507,7 @@ export default function LessonBuilderPage() {
   return (
     <main className="flex-1 bg-background px-4 py-8 sm:px-6 sm:py-12">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-6">
-        <div>
+        <div className="flex items-start justify-between gap-4">
           <div>
             <h1 className="text-2xl font-semibold tracking-tight text-foreground">
               Lesson Builder
@@ -1525,6 +1526,12 @@ export default function LessonBuilderPage() {
                       : "Loaded from lessons.json"}
             </p>
           </div>
+          <Link
+            href="/lesson-builder/coverage"
+            className="shrink-0 rounded-lg border border-border bg-card px-3 py-2 text-sm font-semibold text-foreground transition hover:bg-muted"
+          >
+            Coverage →
+          </Link>
         </div>
 
         {lessons.map((lesson, lessonIndex) => {
