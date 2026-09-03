@@ -34,6 +34,7 @@ import { LanguageBlockEditor } from "@/components/lesson-builder/language-block-
 import { LessonCardHeader } from "@/components/lesson-builder/lesson-card-header";
 import { LessonConceptsField } from "@/components/lesson-builder/lesson-concepts-field";
 import { PendingLessonExitDialog } from "@/components/lesson-builder/pending-lesson-exit-dialog";
+import { ExplanationBlockEditor } from "@/components/lesson-builder/explanation-block-editor";
 import { LessonBlockPreviewList } from "@/components/lesson-builder/lesson-block-preview";
 import { SentenceConceptLinks } from "@/components/lesson-builder/sentence-concept-links";
 import type {
@@ -1841,162 +1842,30 @@ export default function LessonBuilderPage() {
                       />
                     )}
                     {block.type === "explanation" ? (
-                      <>
-                        <div
-                          className={`flex items-center justify-between gap-3 ${
-                            isContentBlockCollapsed
-                              ? "bg-[var(--surface)] px-4 py-3"
-                              : "border-b border-border bg-[var(--surface-sunken)] px-5 py-3"
-                          }`}
-                        >
-                          {isContentBlockCollapsed ? (
-                            <div
-                              role="button"
-                              tabIndex={0}
-                              aria-label="Edit explanation"
-                              onClick={() =>
-                                toggleContentBlock(lesson.id, block.id)
-                              }
-                              onKeyDown={(event) => {
-                                if (
-                                  event.key === "Enter" ||
-                                  event.key === " "
-                                ) {
-                                  event.preventDefault();
-                                  toggleContentBlock(lesson.id, block.id);
-                                }
-                              }}
-                              className="flex min-w-0 flex-1 cursor-pointer items-start gap-3 rounded-md text-sm leading-5 text-foreground focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-violet-200"
-                            >
-                              <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-violet-50 text-violet-700">
-                                <FileText className="size-4" aria-hidden="true" />
-                              </span>
-                              <div className="min-w-0 flex-1 pt-1">
-                                {block.contentMarkdown.trim() ? (
-                                  <OverviewMarkdown
-                                    markdown={block.contentMarkdown}
-                                  />
-                                ) : (
-                                  <p className="italic text-muted-foreground">
-                                    Empty explanation — click to edit
-                                  </p>
-                                )}
-                              </div>
-                            </div>
-                          ) : (
-                          <div
-                            role="button"
-                            tabIndex={0}
-                            aria-label="Collapse explanation"
-                            onClick={() =>
-                              toggleContentBlock(lesson.id, block.id)
-                            }
-                            onKeyDown={(event) => {
-                              if (event.key === "Enter" || event.key === " ") {
-                                event.preventDefault();
-                                toggleContentBlock(lesson.id, block.id);
-                              }
-                            }}
-                            className="flex min-w-0 flex-1 cursor-pointer items-center gap-3 rounded-md focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-violet-200"
-                          >
-                            <span className="flex size-9 items-center justify-center rounded-lg bg-violet-50 text-violet-700">
-                              <FileText className="size-4" aria-hidden="true" />
-                            </span>
-                            <p className="font-semibold text-stone-900">
-                              Explanation
-                            </p>
-                          </div>
-                          )}
-                          <div className="flex items-center gap-1">
-                            <button
-                              type="button"
-                              draggable
-                              onDragStart={(event) =>
-                                contentDrag.dragStart(event, lesson.id, block.id)
-                              }
-                              onDragEnd={(event) => {
-                                event.stopPropagation();
-                                contentDrag.reset();
-                              }}
-                              aria-label="Drag explanation to reorder"
-                              title="Drag to reorder"
-                              className="flex size-8 cursor-grab items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200 active:cursor-grabbing"
-                            >
-                              <GripVertical className="size-4" aria-hidden="true" />
-                            </button>
-                            <button
-                              type="button"
-                              onClick={() => {
-                                setPreviewLessonId(lesson.id);
-                                setPreviewBlockId(block.id);
-                              }}
-                              aria-label="Preview explanation as learner"
-                              title="Preview as learner"
-                              className="flex size-8 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200 hover:text-violet-700"
-                            >
-                              <Eye className="size-4" aria-hidden="true" />
-                            </button>
-                            <button
-                              type="button"
-                              onClick={() =>
-                                duplicateContentBlock(lesson.id, block.id)
-                              }
-                              aria-label="Duplicate explanation"
-                              title="Duplicate explanation"
-                              className="flex size-8 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200"
-                            >
-                              <Copy className="size-4" aria-hidden="true" />
-                            </button>
-                            <button
-                              type="button"
-                              onClick={() =>
-                                toggleContentBlock(lesson.id, block.id)
-                              }
-                              aria-label={`${isContentBlockCollapsed ? "Expand" : "Collapse"} explanation`}
-                              title={isContentBlockCollapsed ? "Expand" : "Collapse"}
-                              className={`flex h-8 items-center justify-center rounded-md text-stone-500 transition hover:bg-stone-200 ${
-                                isContentBlockCollapsed
-                                  ? "w-8"
-                                  : "gap-2 px-2.5 text-xs font-semibold"
-                              }`}
-                            >
-                              {isContentBlockCollapsed ? (
-                                <ChevronDown className="size-4" aria-hidden="true" />
-                              ) : (
-                                <>
-                                  Done
-                                  <kbd className="rounded border border-stone-300 bg-white px-1.5 py-0.5 font-mono text-[10px] leading-none text-stone-500 shadow-sm">
-                                    Esc
-                                  </kbd>
-                                </>
-                              )}
-                            </button>
-                            <button
-                              type="button"
-                              onClick={() =>
-                                deleteContentBlock(lesson.id, block.id)
-                              }
-                              aria-label="Delete explanation"
-                              title="Delete explanation"
-                              className="flex size-8 items-center justify-center rounded-md text-stone-400 transition hover:bg-red-50 hover:text-red-600"
-                            >
-                              <Trash2 className="size-4" aria-hidden="true" />
-                            </button>
-                          </div>
-                        </div>
-                        {!isContentBlockCollapsed && (
-                          <MarkdownEditor
-                            markdown={block.contentMarkdown}
-                            onChange={(markdown) =>
-                              updateExplanationBlock(
-                                lesson.id,
-                                block.id,
-                                markdown,
-                              )
-                            }
-                          />
-                        )}
-                      </>
+                      <ExplanationBlockEditor
+                        block={block}
+                        isCollapsed={isContentBlockCollapsed}
+                        onToggleCollapse={() =>
+                          toggleContentBlock(lesson.id, block.id)
+                        }
+                        onDragStart={(event) =>
+                          contentDrag.dragStart(event, lesson.id, block.id)
+                        }
+                        onDragEnd={contentDrag.reset}
+                        onPreview={() => {
+                          setPreviewLessonId(lesson.id);
+                          setPreviewBlockId(block.id);
+                        }}
+                        onDuplicate={() =>
+                          duplicateContentBlock(lesson.id, block.id)
+                        }
+                        onDelete={() =>
+                          deleteContentBlock(lesson.id, block.id)
+                        }
+                        onChange={(markdown) =>
+                          updateExplanationBlock(lesson.id, block.id, markdown)
+                        }
+                      />
                     ) : (
                       <>
                         <div className="flex items-center justify-between gap-3 border-b border-border bg-[var(--surface-sunken)] px-5 py-3">
