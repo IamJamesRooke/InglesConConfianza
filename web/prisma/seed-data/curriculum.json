@@ -20941,7 +20941,8 @@
         "grammar:singular",
         "el vs él",
         "en:the",
-        "topic:determiner"
+        "topic:determiner",
+        "pos:function-word"
       ],
       "curriculumRole": "core"
     },
@@ -20960,7 +20961,8 @@
         "grammar:feminine",
         "grammar:singular",
         "en:the",
-        "topic:determiner"
+        "topic:determiner",
+        "pos:function-word"
       ],
       "curriculumRole": "core"
     },
@@ -20979,7 +20981,8 @@
         "grammar:masculine",
         "grammar:plural",
         "en:the",
-        "topic:determiner"
+        "topic:determiner",
+        "pos:function-word"
       ],
       "curriculumRole": "core"
     },
@@ -20998,7 +21001,8 @@
         "grammar:feminine",
         "grammar:plural",
         "en:the",
-        "topic:determiner"
+        "topic:determiner",
+        "pos:function-word"
       ],
       "curriculumRole": "core"
     },
@@ -22561,14 +22565,15 @@
       "spanish": "cierto/a [sustantivo]",
       "english": "a certain [noun]",
       "example": {
-        "spanish": "Cierta persona llamó.",
-        "english": "A certain person called."
+        "spanish": "Cierto libro cambió mi forma de pensar.",
+        "english": "A certain book changed the way I think."
       },
       "collections": [
         "pos:determiner",
         "es:cierto",
         "en:certain",
-        "topic:determiner"
+        "topic:determiner",
+        "grammar:quantifier"
       ],
       "curriculumRole": "reference"
     },
@@ -28307,7 +28312,8 @@
         "grammar:singular",
         "es:otro",
         "en:other",
-        "topic:determiner"
+        "topic:determiner",
+        "grammar:quantifier"
       ],
       "curriculumRole": "reference"
     },
@@ -28326,7 +28332,8 @@
         "grammar:plural",
         "es:los",
         "en:other",
-        "topic:determiner"
+        "topic:determiner",
+        "grammar:quantifier"
       ],
       "curriculumRole": "reference"
     },
@@ -64471,8 +64478,7 @@
         "specific plural",
         "grammar:countable",
         "es:gustar",
-        "en:likes",
-        "topic:determiner"
+        "en:likes"
       ],
       "curriculumRole": "core"
     },
@@ -64490,8 +64496,7 @@
         "specific idea",
         "grammar:uncountable",
         "es:necesitar",
-        "en:need",
-        "topic:determiner"
+        "en:need"
       ],
       "curriculumRole": "core"
     },
@@ -77101,6 +77106,24 @@
         "en:whose"
       ],
       "curriculumRole": "reference"
+    },
+    {
+      "id": "852d6mdyn0",
+      "spanish": "cada [sustantivo]",
+      "english": "every [noun]",
+      "example": {
+        "spanish": "Cada mañana corro en el parque.",
+        "english": "Every morning I run in the park."
+      },
+      "collections": [
+        "grammar:quantifier",
+        "grammar:universal-quantifier",
+        "pos:determiner",
+        "topic:determiner",
+        "es:cada",
+        "en:every"
+      ],
+      "curriculumRole": "supporting"
     }
   ]
 }

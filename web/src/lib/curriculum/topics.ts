@@ -36,6 +36,25 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       { collection: "contrast:confusable", label: "Confusions" },
     ],
   },
+  {
+    slug: "determiners",
+    title: "Determiners",
+    description:
+      "Everything that can stand where “the” does in front of a noun — articles, demonstratives, possessives, quantifiers, and numbers. Click a Spanish or English chip to trace one form.",
+    baseCollection: "topic:determiner",
+    facetButtons: [
+      { collection: "grammar:definite-article", label: "Definite article" },
+      { collection: "grammar:indefinite-article", label: "Indefinite article" },
+      { collection: "grammar:demonstrative-determiner", label: "Demonstrative" },
+      { collection: "grammar:possessive-determiner", label: "Possessive" },
+      { collection: "grammar:quantifier", label: "Quantifier" },
+      { collection: "grammar:cardinal-number", label: "Number" },
+      { collection: "grammar:interrogative-determiner", label: "Interrogative" },
+      { collection: "grammar:relative-determiner", label: "Relative (cuyo)" },
+      { collection: "grammar:negative", label: "Negative (ningún)" },
+      { collection: "contrast:confusable", label: "Confusions" },
+    ],
+  },
 ];
 
 export function findCurriculumTopic(slug: string): CurriculumTopic | undefined {
