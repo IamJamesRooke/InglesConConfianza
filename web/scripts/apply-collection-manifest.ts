@@ -1,22 +1,23 @@
 import "dotenv/config";
 
-import { readFile } from "node:fs/promises";
-
 import type { Prisma } from "../src/generated/prisma/client";
 import { prisma } from "../src/lib/database/prisma";
+import {
+  manifestArgs,
+  readManifestRows,
+  runScript,
+  type ManifestRow,
+} from "./lib/manifest";
 
 type Op =
   | { kind: "delete"; name: string; reason: string }
   | { kind: "merge"; from: string; into: string; reason: string }
   | { kind: "rename"; from: string; to: string; reason: string };
 
-function parse(contents: string, path: string): Op[] {
+function parse(rows: ManifestRow[]): Op[] {
   const ops: Op[] = [];
-  contents.split("\n").forEach((line, index) => {
-    const trimmed = line.trim();
-    if (trimmed === "" || trimmed.startsWith("#")) return;
-    const parts = line.split("\t");
-    const where = `${path}:${index + 1}`;
+  for (const { fields: parts, line, source } of rows) {
+    const where = `${source}:${line}`;
     const verb = parts[0]?.toUpperCase();
     if (verb === "DELETE") {
       if (!parts[1]) throw new Error(`${where}: DELETE needs a collection name.`);
@@ -44,7 +45,7 @@ function parse(contents: string, path: string): Op[] {
     } else {
       throw new Error(`${where}: expected DELETE, MERGE, or RENAME, got "${verb}".`);
     }
-  });
+  }
   return ops;
 }
 
@@ -97,14 +98,8 @@ async function relink(
 }
 
 async function main() {
-  const apply = process.argv.includes("--apply");
-  const path = process.argv.slice(2).find((a) => a !== "--apply");
-  if (!path) {
-    throw new Error(
-      "Usage: tsx scripts/apply-collection-manifest.ts <manifest.tsv> [--apply]",
-    );
-  }
-  const ops = parse(await readFile(path, "utf8"), path);
+  const { apply, paths } = manifestArgs();
+  const ops = parse(await readManifestRows(paths));
 
   const names = await prisma.collection.findMany({ select: { name: true } });
   const existing = new Set(names.map((n) => n.name));
@@ -166,11 +161,4 @@ async function main() {
   );
 }
 
-main()
-  .catch((error: unknown) => {
-    console.error(error instanceof Error ? error.message : error);
-    process.exitCode = 1;
-  })
-  .finally(async () => {
-    await prisma.$disconnect();
-  });
+runScript(main);
