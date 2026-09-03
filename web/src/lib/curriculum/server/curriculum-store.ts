@@ -110,12 +110,17 @@ export async function readCurriculumPage({
   role,
   sort,
   requireCollections = [],
+  idFilter,
 }: CurriculumPageFilters & {
   page: number;
   requireCollections?: string[];
+  // Restrict the result set to / away from a set of concept ids (used by the
+  // "taught" coverage filter). Caller owns the meaning of the ids.
+  idFilter?: { in: string[] } | { notIn: string[] };
 }): Promise<CurriculumPageResult> {
   const anded = [...new Set([...requireCollections, collection].filter(Boolean))];
   const where = {
+    ...(idFilter ? { id: idFilter } : {}),
     ...(search
       ? {
           OR: [

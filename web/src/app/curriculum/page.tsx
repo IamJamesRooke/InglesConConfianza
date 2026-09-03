@@ -1,10 +1,13 @@
 import { CurriculumTable } from "@/components/curriculum/curriculum-table";
+import { readConceptCoverage } from "@/lib/curriculum/server/coverage";
 import {
   curriculumPageSize,
   readCurriculumPage,
 } from "@/lib/curriculum/server/curriculum-store";
 import type { CurriculumRole } from "@/lib/curriculum/types";
 import { CURRICULUM_TOPICS, findCurriculumTopic } from "@/lib/curriculum/topics";
+
+type CoverageFilter = "all" | "taught" | "untaught";
 
 export const dynamic = "force-dynamic";
 
@@ -45,6 +48,21 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
       ? sortParam
       : ("default" as const);
 
+  const taughtParam = first(parameters.taught);
+  const coverageFilter: CoverageFilter =
+    taughtParam === "taught" || taughtParam === "untaught"
+      ? taughtParam
+      : "all";
+
+  const coverage = await readConceptCoverage();
+  const coveredIds = [...coverage.keys()];
+  const idFilter =
+    coverageFilter === "taught"
+      ? ({ in: coveredIds } as const)
+      : coverageFilter === "untaught"
+        ? ({ notIn: coveredIds } as const)
+        : undefined;
+
   const curriculum = await readCurriculumPage({
     page: Number.isFinite(requestedPage) ? requestedPage : 1,
     search: (first(parameters.search) ?? "").trim(),
@@ -54,7 +72,22 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
     requireCollections: topic
       ? [topic.baseCollection, ...activeFacets]
       : [],
+    idFilter,
   });
+
+  const visibleCoverage: Record<
+    string,
+    { lessonNumber: number; lessonName: string | null }
+  > = {};
+  for (const concept of curriculum.concepts) {
+    const hit = coverage.get(concept.id);
+    if (hit) {
+      visibleCoverage[concept.id] = {
+        lessonNumber: hit.lessonNumber,
+        lessonName: hit.lessonName,
+      };
+    }
+  }
 
   return (
     <main className="flex-1 bg-background px-6 py-8 text-foreground">
@@ -71,12 +104,14 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
         </div>
 
         <CurriculumTable
-          key={`${topic?.slug ?? ""}:${activeFacets.join(",")}:${curriculum.page}:${curriculum.totalConcepts}:${curriculum.search}:${curriculum.collection}:${curriculum.role}:${curriculum.sort}`}
+          key={`${topic?.slug ?? ""}:${activeFacets.join(",")}:${curriculum.page}:${curriculum.totalConcepts}:${curriculum.search}:${curriculum.collection}:${curriculum.role}:${curriculum.sort}:${coverageFilter}`}
           initialConcepts={curriculum.concepts}
           totalConcepts={curriculum.totalConcepts}
           page={curriculum.page}
           pageCount={curriculum.pageCount}
           pageSize={curriculumPageSize}
+          coverage={visibleCoverage}
+          coverageFilter={coverageFilter}
           filters={{
             search: curriculum.search,
             collection: curriculum.collection,

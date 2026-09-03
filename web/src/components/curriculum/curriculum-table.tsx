@@ -111,6 +111,8 @@ export function CurriculumTable({
   page,
   pageCount,
   pageSize = 100,
+  coverage = {},
+  coverageFilter = "all",
   filters,
   quickFacets = [],
   activeFacets = [],
@@ -122,6 +124,11 @@ export function CurriculumTable({
   page: number;
   pageCount: number;
   pageSize?: number;
+  coverage?: Record<
+    string,
+    { lessonNumber: number; lessonName: string | null }
+  >;
+  coverageFilter?: "all" | "taught" | "untaught";
   filters: {
     search: string;
     collection: string;
@@ -639,6 +646,23 @@ export function CurriculumTable({
             ))}
           </select>
         </label>
+        <label className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
+          Taught
+          <select
+            value={coverageFilter}
+            onChange={(event) =>
+              navigate({
+                taught:
+                  event.target.value === "all" ? null : event.target.value,
+              })
+            }
+            className="rounded-lg border border-input bg-card px-3 py-2 text-sm font-medium text-foreground outline-none focus:border-ring focus:ring-3 focus:ring-ring/20"
+          >
+            <option value="all">Show all</option>
+            <option value="taught">Taught</option>
+            <option value="untaught">Not yet taught</option>
+          </select>
+        </label>
       </form>
 
       {macrotags.length > 0 && (
@@ -813,6 +837,7 @@ export function CurriculumTable({
                   { english: ArrowUp, "english-desc": ArrowDown },
                 )}
               </th>
+              <th className="w-24 px-3 py-2 font-semibold">Taught</th>
               <th className="px-3 py-2 font-semibold">Example</th>
               <th className="px-3 py-2 font-semibold">Collections</th>
               <th className="w-12 px-2 py-2">
@@ -863,6 +888,24 @@ export function CurriculumTable({
                 <td className="p-1 align-top">
                   {renderEditableCell(concept, "english")}
                 </td>
+                <td className="px-2 py-1 align-top">
+                  {coverage[concept.id] ? (
+                    <span
+                      className="mt-0.5 inline-block rounded-full bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary"
+                      title={
+                        coverage[concept.id].lessonName
+                          ? `Lesson ${coverage[concept.id].lessonNumber} · ${coverage[concept.id].lessonName}`
+                          : `Lesson ${coverage[concept.id].lessonNumber}`
+                      }
+                    >
+                      Lesson {coverage[concept.id].lessonNumber}
+                    </span>
+                  ) : (
+                    <span className="mt-0.5 inline-block px-1 text-xs text-muted-foreground/50">
+                      —
+                    </span>
+                  )}
+                </td>
                 <td className="p-1 align-top">
                   <div className="min-w-48 text-muted-foreground">
                     {renderEditableCell(concept, "exampleSpanish")}
@@ -889,7 +932,7 @@ export function CurriculumTable({
             {concepts.length === 0 && (
               <tr className="border-t border-border">
                 <td
-                  colSpan={7}
+                  colSpan={8}
                   className="px-5 py-12 text-center text-sm text-muted-foreground"
                 >
                   No concepts match these filters.
