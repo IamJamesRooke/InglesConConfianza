@@ -1,0 +1,40 @@
+# Pronoun matrix parity — new rows (2026-09-03)
+# Cells implied by docs/curation/pronoun-matrix.md that had no curriculum_concepts row.
+# Columns: spanish <TAB> english <TAB> exampleSpanish <TAB> exampleEnglish <TAB> role <TAB> collections(|-separated)
+#
+# --- Indirect-object pronouns: the "to X" senses the matrix's IO column calls for ---
+me	to me	Juan me da el libro a mí.	Juan gives the book to me.	supporting	grammar:indirect-object-pronoun|grammar:object-pronoun|grammar:singular|pos:pronoun|en:me|en:to|es:me|topic:pronoun
+te	to you	Te doy el libro a ti.	I give the book to you.	supporting	grammar:indirect-object-pronoun|grammar:object-pronoun|grammar:singular|pos:pronoun|en:you|en:to|es:te|topic:pronoun
+nos	to us	Nos dan el premio a nosotros.	They give the prize to us.	supporting	grammar:indirect-object-pronoun|grammar:object-pronoun|grammar:plural|pos:pronoun|en:us|en:to|es:nos|topic:pronoun
+le	to her	Le doy el libro a María.	I give the book to her.	core	grammar:indirect-object-pronoun|grammar:object-pronoun|grammar:singular|grammar:feminine|pos:pronoun|en:her|es:le|topic:pronoun
+le	to it	Le puse aceite al motor.	I put oil in it.	reference	grammar:indirect-object-pronoun|grammar:object-pronoun|grammar:singular|grammar:neuter|pos:pronoun|en:it|es:le|topic:pronoun
+le	to you	Le doy el libro a usted.	I give the book to you.	supporting	grammar:indirect-object-pronoun|grammar:object-pronoun|grammar:singular|pos:pronoun|en:you|es:le|topic:pronoun
+les	to you	Les doy el libro a ustedes.	I give the book to you.	supporting	grammar:indirect-object-pronoun|grammar:object-pronoun|grammar:plural|pos:pronoun|en:you|es:les|topic:pronoun
+#
+# --- Reflexive: 2sg formal ---
+se	yourself	Usted se cuida.	You take care of yourself.	supporting	grammar:reflexive-pronoun|grammar:se|grammar:singular|pos:pronoun|en:yourself|es:se|topic:pronoun
+#
+# --- Prepositional pronouns: formal (usted/ustedes) and feminine plural (ellas) ---
+a usted	to you	Le hablo a usted.	I am talking to you.	supporting	grammar:prepositional-pronoun|grammar:singular|pos:pronoun|en:you|en:to|es:a|es:usted|topic:pronoun
+con usted	with you	Quiero hablar con usted.	I want to speak with you.	supporting	grammar:prepositional-pronoun|grammar:singular|pos:pronoun|en:you|en:with|es:con|es:usted|topic:pronoun
+para usted	for you	Este mensaje es para usted.	This message is for you.	supporting	grammar:prepositional-pronoun|grammar:singular|pos:pronoun|en:you|en:for|es:para|es:usted|topic:pronoun
+a ustedes	to you	Les hablo a ustedes.	I am talking to you.	supporting	grammar:prepositional-pronoun|grammar:plural|pos:pronoun|en:you|en:to|es:a|es:ustedes|topic:pronoun
+con ustedes	with you	Voy con ustedes.	I am going with you.	supporting	grammar:prepositional-pronoun|grammar:plural|pos:pronoun|en:you|en:with|es:con|es:ustedes|topic:pronoun
+para ustedes	for you	Traje café para ustedes.	I brought coffee for you.	supporting	grammar:prepositional-pronoun|grammar:plural|pos:pronoun|en:you|en:for|es:para|es:ustedes|topic:pronoun
+a ellas	to them	El premio les tocó a ellas.	The prize went to them.	supporting	grammar:prepositional-pronoun|grammar:plural|grammar:feminine|pos:pronoun|en:them|en:to|es:a|es:ellas|topic:pronoun
+con ellas	with them	Hablé con ellas ayer.	I spoke with them yesterday.	supporting	grammar:prepositional-pronoun|grammar:plural|grammar:feminine|pos:pronoun|en:them|en:with|es:con|es:ellas|topic:pronoun
+para ellas	for them	El proyecto es difícil para ellas.	The project is hard for them.	supporting	grammar:prepositional-pronoun|grammar:plural|grammar:feminine|pos:pronoun|en:them|en:for|es:para|es:ellas|topic:pronoun
+#
+# --- Possessive determiner: sus carries the same his/her/its/your ambiguity as su ---
+sus	his	Sus libros están en la mesa.	His books are on the table.	reference	grammar:plural|grammar:possessive-determiner|pos:function-word|en:his|es:sus|topic:pronoun|contrast:confusable|contrast:su-ambiguity
+sus	her	Sus llaves están aquí.	Her keys are here.	reference	grammar:plural|grammar:possessive-determiner|pos:function-word|en:her|es:sus|topic:pronoun|contrast:confusable|contrast:su-ambiguity
+sus	its	El árbol perdió sus hojas.	The tree lost its leaves.	reference	grammar:plural|grammar:possessive-determiner|pos:function-word|en:its|es:sus|topic:pronoun|contrast:confusable|contrast:su-ambiguity
+sus	your	Sus pasaportes, por favor.	Your passports, please.	reference	grammar:plural|grammar:possessive-determiner|pos:function-word|en:your|es:sus|topic:pronoun|contrast:confusable|contrast:su-ambiguity
+#
+# --- Demonstrative determiner: aquel/aquella singular (aquellos/aquellas already exist) ---
+aquel	that	Aquel edificio es antiguo.	That building is old.	reference	grammar:demonstrative|grammar:demonstrative-determiner|grammar:distal|grammar:masculine|grammar:singular|pos:function-word|en:that|es:aquel|topic:pronoun
+aquella	that	Aquella montaña se ve desde aquí.	That mountain can be seen from here.	reference	grammar:demonstrative|grammar:demonstrative-determiner|grammar:distal|grammar:feminine|grammar:singular|pos:function-word|en:that|es:aquella|topic:pronoun
+#
+# --- Relative pronouns the matrix lists but the catalog lacked ---
+quien	who	La persona con quien hablé es mi jefa.	The person who I spoke with is my boss.	supporting	grammar:relative-pronoun|pos:pronoun|en:who|es:quien|topic:pronoun
+cuyo	whose	El autor cuyo libro leí es famoso.	The author whose book I read is famous.	reference	grammar:relative-pronoun|pos:pronoun|en:whose|es:cuyo|topic:pronoun

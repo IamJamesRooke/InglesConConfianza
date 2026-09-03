@@ -11,8 +11,9 @@ const ENGLISH_PRONOUNS = [
   "it", "its", "itself",
   "we", "us", "our", "ours", "ourselves",
   "they", "them", "their", "theirs", "themselves",
-  "this", "that", "these", "those",
+  "this", "that", "these", "those", "this one", "that one",
   "who", "whom", "whose", "what", "which",
+  "to me", "to you", "to him", "to her", "to it", "to us", "to them",
   "somebody", "something", "somewhere",
   "anybody", "anything", "anywhere",
   "nobody", "nothing", "nowhere",
@@ -47,7 +48,7 @@ export async function auditPronounTopic() {
       problems.push(`NO subcat    ${label}   {${tags.filter((t) => t.startsWith("grammar:")).join(", ")}}`);
     // Contrast anchors are meta bilingual sentences; skip the head-in-example check.
     if (tags.some((t) => t.startsWith("contrast:"))) {
-      englishSeen.add(c.english.toLowerCase().replace(/^to /, ""));
+      englishSeen.add(c.english.toLowerCase());
       continue;
     }
     if (!tags.some((t) => t.startsWith("en:")))
@@ -66,7 +67,7 @@ export async function auditPronounTopic() {
     ) {
       problems.push(`EXAMPLE      ${label}   ("${c.exampleSpanish}" lacks "${head}")`);
     }
-    englishSeen.add(c.english.toLowerCase().replace(/^to /, ""));
+    englishSeen.add(c.english.toLowerCase());
   }
 
   const missingEnglish = ENGLISH_PRONOUNS.filter(

@@ -74627,7 +74627,8 @@
         "es:esto",
         "en:this",
         "contrast:este-vs-esto",
-        "contrast:confusable"
+        "contrast:confusable",
+        "grammar:demonstrative"
       ],
       "curriculumRole": "core"
     },
@@ -74646,7 +74647,8 @@
         "grammar:neuter",
         "topic:pronoun",
         "es:eso",
-        "en:that"
+        "en:that",
+        "grammar:demonstrative"
       ],
       "curriculumRole": "core"
     },
@@ -74665,7 +74667,8 @@
         "grammar:neuter",
         "topic:pronoun",
         "es:aquello",
-        "en:that"
+        "en:that",
+        "grammar:demonstrative"
       ],
       "curriculumRole": "reference"
     },
@@ -74976,7 +74979,8 @@
         "grammar:masculine",
         "topic:pronoun",
         "es:este",
-        "en:this"
+        "en:this",
+        "grammar:demonstrative"
       ],
       "curriculumRole": "supporting"
     },
@@ -74995,7 +74999,8 @@
         "grammar:feminine",
         "topic:pronoun",
         "es:esta",
-        "en:this"
+        "en:this",
+        "grammar:demonstrative"
       ],
       "curriculumRole": "supporting"
     },
@@ -75014,7 +75019,8 @@
         "grammar:masculine",
         "topic:pronoun",
         "es:ese",
-        "en:that"
+        "en:that",
+        "grammar:demonstrative"
       ],
       "curriculumRole": "supporting"
     },
@@ -75033,14 +75039,15 @@
         "grammar:feminine",
         "topic:pronoun",
         "es:esa",
-        "en:that"
+        "en:that",
+        "grammar:demonstrative"
       ],
       "curriculumRole": "supporting"
     },
     {
       "id": "u7kefn0q1x",
       "spanish": "aquel",
-      "english": "that",
+      "english": "that one",
       "example": {
         "spanish": "Prefiero aquel, no este.",
         "english": "I prefer that one, not this one."
@@ -75052,17 +75059,18 @@
         "grammar:masculine",
         "topic:pronoun",
         "es:aquel",
-        "en:that"
+        "en:that",
+        "grammar:demonstrative"
       ],
       "curriculumRole": "supporting"
     },
     {
       "id": "apj21ii1kp",
       "spanish": "aquella",
-      "english": "that",
+      "english": "that one",
       "example": {
-        "spanish": "Aquella fue una buena época.",
-        "english": "That was a good time."
+        "spanish": "Prefiero aquella, no esta.",
+        "english": "I prefer that one, not this one."
       },
       "collections": [
         "pos:pronoun",
@@ -75071,7 +75079,8 @@
         "grammar:feminine",
         "topic:pronoun",
         "es:aquella",
-        "en:that"
+        "en:that",
+        "grammar:demonstrative"
       ],
       "curriculumRole": "reference"
     },
@@ -75779,6 +75788,502 @@
         "topic:pronoun",
         "es:se",
         "en:yourselves"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "8ueue3hv8i",
+      "spanish": "me",
+      "english": "to me",
+      "example": {
+        "spanish": "Juan me da el libro a mí.",
+        "english": "Juan gives the book to me."
+      },
+      "collections": [
+        "grammar:indirect-object-pronoun",
+        "grammar:object-pronoun",
+        "grammar:singular",
+        "pos:pronoun",
+        "en:me",
+        "en:to",
+        "es:me",
+        "topic:pronoun"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "a1dht71g4o",
+      "spanish": "te",
+      "english": "to you",
+      "example": {
+        "spanish": "Te doy el libro a ti.",
+        "english": "I give the book to you."
+      },
+      "collections": [
+        "grammar:indirect-object-pronoun",
+        "grammar:object-pronoun",
+        "grammar:singular",
+        "pos:pronoun",
+        "en:you",
+        "en:to",
+        "es:te",
+        "topic:pronoun"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "ljza4yueup",
+      "spanish": "nos",
+      "english": "to us",
+      "example": {
+        "spanish": "Nos dan el premio a nosotros.",
+        "english": "They give the prize to us."
+      },
+      "collections": [
+        "grammar:indirect-object-pronoun",
+        "grammar:object-pronoun",
+        "grammar:plural",
+        "pos:pronoun",
+        "en:us",
+        "en:to",
+        "es:nos",
+        "topic:pronoun"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "xin4wk0lik",
+      "spanish": "le",
+      "english": "to her",
+      "example": {
+        "spanish": "Le doy el libro a María.",
+        "english": "I give the book to her."
+      },
+      "collections": [
+        "grammar:indirect-object-pronoun",
+        "grammar:object-pronoun",
+        "grammar:singular",
+        "grammar:feminine",
+        "pos:pronoun",
+        "en:her",
+        "es:le",
+        "topic:pronoun"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "hwcpppy5me",
+      "spanish": "le",
+      "english": "to it",
+      "example": {
+        "spanish": "Le puse aceite al motor.",
+        "english": "I put oil in it."
+      },
+      "collections": [
+        "grammar:indirect-object-pronoun",
+        "grammar:object-pronoun",
+        "grammar:singular",
+        "grammar:neuter",
+        "pos:pronoun",
+        "en:it",
+        "es:le",
+        "topic:pronoun"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "mty4hevjmw",
+      "spanish": "le",
+      "english": "to you",
+      "example": {
+        "spanish": "Le doy el libro a usted.",
+        "english": "I give the book to you."
+      },
+      "collections": [
+        "grammar:indirect-object-pronoun",
+        "grammar:object-pronoun",
+        "grammar:singular",
+        "pos:pronoun",
+        "en:you",
+        "es:le",
+        "topic:pronoun"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "4nnw28nja8",
+      "spanish": "les",
+      "english": "to you",
+      "example": {
+        "spanish": "Les doy el libro a ustedes.",
+        "english": "I give the book to you."
+      },
+      "collections": [
+        "grammar:indirect-object-pronoun",
+        "grammar:object-pronoun",
+        "grammar:plural",
+        "pos:pronoun",
+        "en:you",
+        "es:les",
+        "topic:pronoun"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "mby2xxew2o",
+      "spanish": "se",
+      "english": "yourself",
+      "example": {
+        "spanish": "Usted se cuida.",
+        "english": "You take care of yourself."
+      },
+      "collections": [
+        "grammar:reflexive-pronoun",
+        "grammar:se",
+        "grammar:singular",
+        "pos:pronoun",
+        "en:yourself",
+        "es:se",
+        "topic:pronoun"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "fk8uepz3o3",
+      "spanish": "a usted",
+      "english": "to you",
+      "example": {
+        "spanish": "Le hablo a usted.",
+        "english": "I am talking to you."
+      },
+      "collections": [
+        "grammar:prepositional-pronoun",
+        "grammar:singular",
+        "pos:pronoun",
+        "en:you",
+        "en:to",
+        "es:a",
+        "es:usted",
+        "topic:pronoun"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "0xx4ewk26d",
+      "spanish": "con usted",
+      "english": "with you",
+      "example": {
+        "spanish": "Quiero hablar con usted.",
+        "english": "I want to speak with you."
+      },
+      "collections": [
+        "grammar:prepositional-pronoun",
+        "grammar:singular",
+        "pos:pronoun",
+        "en:you",
+        "en:with",
+        "es:con",
+        "es:usted",
+        "topic:pronoun"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "nv7alp7lve",
+      "spanish": "para usted",
+      "english": "for you",
+      "example": {
+        "spanish": "Este mensaje es para usted.",
+        "english": "This message is for you."
+      },
+      "collections": [
+        "grammar:prepositional-pronoun",
+        "grammar:singular",
+        "pos:pronoun",
+        "en:you",
+        "en:for",
+        "es:para",
+        "es:usted",
+        "topic:pronoun"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "kep0p7nw3e",
+      "spanish": "a ustedes",
+      "english": "to you",
+      "example": {
+        "spanish": "Les hablo a ustedes.",
+        "english": "I am talking to you."
+      },
+      "collections": [
+        "grammar:prepositional-pronoun",
+        "grammar:plural",
+        "pos:pronoun",
+        "en:you",
+        "en:to",
+        "es:a",
+        "es:ustedes",
+        "topic:pronoun"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "6xhu16fwu6",
+      "spanish": "con ustedes",
+      "english": "with you",
+      "example": {
+        "spanish": "Voy con ustedes.",
+        "english": "I am going with you."
+      },
+      "collections": [
+        "grammar:prepositional-pronoun",
+        "grammar:plural",
+        "pos:pronoun",
+        "en:you",
+        "en:with",
+        "es:con",
+        "es:ustedes",
+        "topic:pronoun"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "2waliyvy7h",
+      "spanish": "para ustedes",
+      "english": "for you",
+      "example": {
+        "spanish": "Traje café para ustedes.",
+        "english": "I brought coffee for you."
+      },
+      "collections": [
+        "grammar:prepositional-pronoun",
+        "grammar:plural",
+        "pos:pronoun",
+        "en:you",
+        "en:for",
+        "es:para",
+        "es:ustedes",
+        "topic:pronoun"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "o3buetgjp9",
+      "spanish": "a ellas",
+      "english": "to them",
+      "example": {
+        "spanish": "El premio les tocó a ellas.",
+        "english": "The prize went to them."
+      },
+      "collections": [
+        "grammar:prepositional-pronoun",
+        "grammar:plural",
+        "grammar:feminine",
+        "pos:pronoun",
+        "en:them",
+        "en:to",
+        "es:a",
+        "es:ellas",
+        "topic:pronoun"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "796z7mxsvp",
+      "spanish": "con ellas",
+      "english": "with them",
+      "example": {
+        "spanish": "Hablé con ellas ayer.",
+        "english": "I spoke with them yesterday."
+      },
+      "collections": [
+        "grammar:prepositional-pronoun",
+        "grammar:plural",
+        "grammar:feminine",
+        "pos:pronoun",
+        "en:them",
+        "en:with",
+        "es:con",
+        "es:ellas",
+        "topic:pronoun"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "gp7z4dvb4r",
+      "spanish": "para ellas",
+      "english": "for them",
+      "example": {
+        "spanish": "El proyecto es difícil para ellas.",
+        "english": "The project is hard for them."
+      },
+      "collections": [
+        "grammar:prepositional-pronoun",
+        "grammar:plural",
+        "grammar:feminine",
+        "pos:pronoun",
+        "en:them",
+        "en:for",
+        "es:para",
+        "es:ellas",
+        "topic:pronoun"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "aq3ynjbhjm",
+      "spanish": "sus",
+      "english": "his",
+      "example": {
+        "spanish": "Sus libros están en la mesa.",
+        "english": "His books are on the table."
+      },
+      "collections": [
+        "grammar:plural",
+        "grammar:possessive-determiner",
+        "pos:function-word",
+        "en:his",
+        "es:sus",
+        "topic:pronoun",
+        "contrast:confusable",
+        "contrast:su-ambiguity"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "538wpaef6k",
+      "spanish": "sus",
+      "english": "her",
+      "example": {
+        "spanish": "Sus llaves están aquí.",
+        "english": "Her keys are here."
+      },
+      "collections": [
+        "grammar:plural",
+        "grammar:possessive-determiner",
+        "pos:function-word",
+        "en:her",
+        "es:sus",
+        "topic:pronoun",
+        "contrast:confusable",
+        "contrast:su-ambiguity"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "m2m07p7uo1",
+      "spanish": "sus",
+      "english": "its",
+      "example": {
+        "spanish": "El árbol perdió sus hojas.",
+        "english": "The tree lost its leaves."
+      },
+      "collections": [
+        "grammar:plural",
+        "grammar:possessive-determiner",
+        "pos:function-word",
+        "en:its",
+        "es:sus",
+        "topic:pronoun",
+        "contrast:confusable",
+        "contrast:su-ambiguity"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ytve9np7hs",
+      "spanish": "sus",
+      "english": "your",
+      "example": {
+        "spanish": "Sus pasaportes, por favor.",
+        "english": "Your passports, please."
+      },
+      "collections": [
+        "grammar:plural",
+        "grammar:possessive-determiner",
+        "pos:function-word",
+        "en:your",
+        "es:sus",
+        "topic:pronoun",
+        "contrast:confusable",
+        "contrast:su-ambiguity"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "a3h0h1dazt",
+      "spanish": "aquel",
+      "english": "that",
+      "example": {
+        "spanish": "Aquel edificio es antiguo.",
+        "english": "That building is old."
+      },
+      "collections": [
+        "grammar:demonstrative",
+        "grammar:demonstrative-determiner",
+        "grammar:distal",
+        "grammar:masculine",
+        "grammar:singular",
+        "pos:function-word",
+        "en:that",
+        "es:aquel",
+        "topic:pronoun"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "19gmw1bjnf",
+      "spanish": "aquella",
+      "english": "that",
+      "example": {
+        "spanish": "Aquella montaña se ve desde aquí.",
+        "english": "That mountain can be seen from here."
+      },
+      "collections": [
+        "grammar:demonstrative",
+        "grammar:demonstrative-determiner",
+        "grammar:distal",
+        "grammar:feminine",
+        "grammar:singular",
+        "pos:function-word",
+        "en:that",
+        "es:aquella",
+        "topic:pronoun"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "fmrk25d923",
+      "spanish": "quien",
+      "english": "who",
+      "example": {
+        "spanish": "La persona con quien hablé es mi jefa.",
+        "english": "The person who I spoke with is my boss."
+      },
+      "collections": [
+        "grammar:relative-pronoun",
+        "pos:pronoun",
+        "en:who",
+        "es:quien",
+        "topic:pronoun"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "0krp6sz3gs",
+      "spanish": "cuyo",
+      "english": "whose",
+      "example": {
+        "spanish": "El autor cuyo libro leí es famoso.",
+        "english": "The author whose book I read is famous."
+      },
+      "collections": [
+        "grammar:relative-pronoun",
+        "pos:pronoun",
+        "en:whose",
+        "es:cuyo",
+        "topic:pronoun"
       ],
       "curriculumRole": "reference"
     }

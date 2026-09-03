@@ -19,7 +19,8 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
     baseCollection: "topic:pronoun",
     facetButtons: [
       { collection: "grammar:subject-pronoun", label: "Subject" },
-      { collection: "grammar:object-pronoun", label: "Object" },
+      { collection: "grammar:direct-object-pronoun", label: "Direct object" },
+      { collection: "grammar:indirect-object-pronoun", label: "Indirect object" },
       { collection: "grammar:prepositional-pronoun", label: "Prepositional" },
       { collection: "grammar:possessive-determiner", label: "Possessive (det)" },
       { collection: "grammar:possessive-pronoun", label: "Possessive (pron)" },
@@ -30,6 +31,7 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       { collection: "grammar:indefinite-pronoun", label: "Indefinite" },
       { collection: "grammar:interrogative-pronoun", label: "Interrogative" },
       { collection: "grammar:relative-pronoun", label: "Relative" },
+      { collection: "grammar:exclamative", label: "Exclamative" },
       { collection: "grammar:subordinate-subject-pronoun", label: "él → him" },
       { collection: "contrast:confusable", label: "Confusions" },
     ],

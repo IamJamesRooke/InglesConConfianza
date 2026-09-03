@@ -1,0 +1,17 @@
+# Pronoun matrix parity — edits to existing rows (2026-09-03)
+# Columns: conceptId <TAB> spanish <TAB> english <TAB> role <TAB> extraCollections(|) <TAB> rationale <TAB> exampleSpanish <TAB> exampleEnglish
+#
+# aquel/aquella pronouns: relabel "that" -> "that one" (matches esa/ese "that one"),
+# which also frees the pair (aquel, that) / (aquella, that) for the determiner rows.
+u7kefn0q1x	aquel	that one	supporting	grammar:demonstrative	Disambiguate the standalone pronoun as "that one"; aligns with esa/ese and frees "aquel -> that" for the determiner row	Prefiero aquel, no este.	I prefer that one, not this one.
+apj21ii1kp	aquella	that one	reference	grammar:demonstrative	Same as aquel; align with esa "that one"	Prefiero aquella, no esta.	I prefer that one, not this one.
+#
+# Remaining demonstrative-pronoun rows: add the grammar:demonstrative parent tag so
+# demonstratives use parent+child like personal pronouns (personal-pronoun + subject-pronoun).
+4w9jfbdl93	aquello	that	reference	grammar:demonstrative	Parent-tag consistency
+a145a3y0wu	esa	that one	supporting	grammar:demonstrative	Parent-tag consistency
+ytar943kdr	ese	that one	supporting	grammar:demonstrative	Parent-tag consistency
+tvm9cf1n1l	eso	that	core	grammar:demonstrative	Parent-tag consistency
+lufi47fm96	esta	this one	supporting	grammar:demonstrative	Parent-tag consistency
+7o2aypebuj	este	this one	supporting	grammar:demonstrative	Parent-tag consistency
+6cnielk682	esto	this	core	grammar:demonstrative	Parent-tag consistency

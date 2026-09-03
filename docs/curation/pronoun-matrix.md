@@ -7,8 +7,12 @@ script (`npm run curriculum:pronouns:audit`) checks both directions.
 Conventions: one row per Spanish form (no slashes). English synonyms
 (somebody/someone) get one canonical row; Practice accepts the variant as an
 alternate answer. `pos:pronoun` for pronouns, `pos:function-word` for the
-determiners that pattern with them. Gender split only where the Spanish forms
-differ (este/esta); not for invariant forms (me, le).
+determiners that pattern with them (`pos:determiner` stays reserved for the
+quantifier family — muchos, pocos, ambos, cada). Gender split only where the
+Spanish forms differ (este/esta); not for invariant forms (me). An invariant
+form with several distinct English senses gets one row per sense —
+`le → to him` / `to her` / `to it` / `to you`, `su`/`sus → his` / `her` / `its`
+/ `their` / `your` — so the ambiguity is visible and each sense is drillable.
 
 ## Personal pronouns
 
@@ -43,15 +47,23 @@ Interrogative possessive: `de quién` → whose.
 
 | Distance | Determiner (m/f, sg/pl) | Pronoun "this/that one" | Neuter pronoun |
 |---|---|---|---|
-| proximal | este/esta/estos/estas → this/these | este/esta/ese/esa/... "this one" | esto → this |
-| distal | ese/esa/esos/esas → that/those | ese/esa "that one" | eso → that |
-| far | aquel/aquella/aquellos/aquellas → that/those | aquel/aquella "that one" | aquello → that |
+| proximal | este/esta/estos/estas → this/these | este/esta → this one | esto → this |
+| distal | ese/esa/esos/esas → that/those | ese/esa → that one | eso → that |
+| far | aquel/aquella/aquellos/aquellas → that/those | aquel/aquella → that one | aquello → that |
+
+The standalone-pronoun rows carry the English "this one" / "that one" so they
+never collide with the determiner rows on the unique `(spanish, english)` key.
 
 ## Interrogative pronouns
 quién → who · a quién → whom · de quién → whose · qué → what · cuál → which · cuál → what (before ser)
 
 ## Relative pronouns
 que (persona) → who/that · que (cosa) → that/which · lo que → what · lo cual → which · quien → who (after prep/comma) · cuyo → whose
+
+## Exclamative
+`qué (exclamativo)` → what · how — `¡Qué sorpresa!` "What a surprise!", `¡Qué
+rápido corres!` "How fast you run!". Tagged `grammar:exclamative`; surfaced by
+the **Exclamative** filter on the topic page.
 
 ## Indefinite pronouns
 
@@ -89,7 +101,7 @@ standalone anchor, since Spanish has no word there.
 | `contrast:este-vs-esto` | `este → this`, `esto → this` | `este libro` but `esto es` — never `esto libro` |
 | `contrast:tu-vs-usted` | `tú → you`, `usted → you` | informal vs formal, both → you |
 | `contrast:se-reflexive-vs-reciprocal` | `se → himself`, `se → each other` | `se lavan` = themselves OR each other |
-| `contrast:su-ambiguity` | the five `su` rows | his / her / its / their / your |
+| `contrast:su-ambiguity` | the `su` and `sus` rows | his / her / its / their / your |
 | `contrast:you-collapse` | `tú`, `usted`, `ustedes`, `te` (all → you) | English "you" swallows the lot |
 | `contrast:el-vs-lo` | `él → he`, `lo → him` | subject vs object; and `que él` → "him to" |
 | `contrast:dropped-subject` | `hablar sin pronombre de sujeto → to speak (subject dropped)` | Spanish drops the subject; English requires it |
