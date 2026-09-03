@@ -1548,6 +1548,9 @@ export default function LessonBuilderPage() {
         return module;
       }),
     );
+    // The lesson <section> may unmount on this move, so its onDragEnd (which
+    // normally clears the drag) can be lost — clear it here too.
+    lessonDrag.reset();
   }
 
   function selectModule(moduleId: string) {
