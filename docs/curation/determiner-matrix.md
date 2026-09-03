@@ -185,9 +185,14 @@ and the `db:test` "determiner topic is complete and clean" test both pass.
 - Cardinal-number **example sentences** still share the bulk-import placeholder
   (`Compré dos libros…`); the audit skips the example check for
   `grammar:cardinal-number`. Authoring per-number examples is a separate task.
-- Contrast facets (`contrast:un-vs-uno`, `contrast:el-articulo-vs-el-pronombre`,
-  etc.) are **not yet applied** — follow-up batch.
+- Contrasts applied in **G** (`af920218`): `contrast:un-vs-uno`,
+  `contrast:el-articulo-vs-el-pronombre`, `contrast:algun-vs-alguno`
+  (+ `contrast:confusable`). `contrast:tanto-vs-tan` skipped — no `tan` row yet.
 - `vuestro`, ordinals: out, as agreed.
+
+**Open follow-ups:** per-number example sentences; `contrast:tanto-vs-tan` once
+`tan → so` exists; `contrast:spanish-article-no-english` for the zero-article
+teaching point.
 
 ## Rough counts
 
