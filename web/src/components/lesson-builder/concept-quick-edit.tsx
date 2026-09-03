@@ -3,6 +3,7 @@
 import { X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState, type ReactNode } from "react";
+import { createPortal } from "react-dom";
 
 import { COLLECTION_FACETS } from "@/lib/curriculum/collections";
 import { curriculumRoles } from "@/lib/curriculum/types";
@@ -190,16 +191,19 @@ export function ConceptQuickEdit({
         {children}
       </button>
 
-      {open && (
-        <div
-          className="fixed inset-0 z-[70] flex items-center justify-center bg-black/35 p-4"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Edit concept"
-          onMouseDown={(event) => {
-            if (event.target === event.currentTarget && !saving) setOpen(false);
-          }}
-        >
+      {open &&
+        typeof document !== "undefined" &&
+        createPortal(
+          <div
+            className="fixed inset-0 z-[70] flex items-center justify-center bg-black/35 p-4"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Edit concept"
+            onMouseDown={(event) => {
+              if (event.target === event.currentTarget && !saving)
+                setOpen(false);
+            }}
+          >
           <div className="max-h-[88vh] w-full max-w-lg overflow-y-auto rounded-2xl border border-border bg-popover p-5 text-popover-foreground shadow-2xl">
             <h2 className="text-lg font-semibold tracking-tight">
               Edit concept
@@ -412,8 +416,9 @@ export function ConceptQuickEdit({
               </>
             )}
           </div>
-        </div>
-      )}
+          </div>,
+          document.body,
+        )}
     </>
   );
 }
