@@ -10,7 +10,6 @@ import {
   Keyboard,
   Languages,
   Plus,
-  Save,
   Table2,
   Trash2,
   X,
@@ -33,6 +32,7 @@ import {
 } from "@/components/practice/lesson-selector";
 import { OverviewMarkdown } from "@/components/lesson-builder/overview-markdown";
 import { LanguageBlockEditor } from "@/components/lesson-builder/language-block-editor";
+import { LessonCardHeader } from "@/components/lesson-builder/lesson-card-header";
 import { PendingLessonExitDialog } from "@/components/lesson-builder/pending-lesson-exit-dialog";
 import { SentenceConceptLinks } from "@/components/lesson-builder/sentence-concept-links";
 import type {
@@ -1812,8 +1812,22 @@ export default function LessonBuilderPage() {
                 />
               )}
 
-              <header
-                onClick={(event) => {
+              <LessonCardHeader
+                lessonNumber={lessonNumber}
+                name={lesson.name ?? ""}
+                isDirty={lessonIsDirty}
+                isCollapsed={isLessonCollapsed}
+                isFullyCollapsed={isLessonFullyCollapsed}
+                isSaving={isThisLessonSaving}
+                validationIssueCount={lessonValidationIssueCount}
+                saveDisabled={
+                  isLoadingLessons ||
+                  !lessonIsDirty ||
+                  saveStatus === "saving"
+                }
+                dragDisabled={hasUnsavedNewLesson || isSavingLessonOrder}
+                dragDisabledReason="Save new lessons before reordering"
+                onHeaderClick={(event) => {
                   if (
                     !isLessonCollapsed &&
                     !isInteractiveLessonTarget(event.target)
@@ -1821,113 +1835,21 @@ export default function LessonBuilderPage() {
                     cycleLessonDisplayMode(lesson.id);
                   }
                 }}
-                className={`flex items-center gap-4 border-b border-border bg-[var(--surface-sunken)] px-6 py-4 ${
-                  !isLessonCollapsed ? "cursor-pointer" : ""
-                }`}
-              >
-                <h2 className="shrink-0 text-xl font-semibold tracking-tight text-stone-900">
-                  Lesson {lessonNumber}
-                </h2>
-                {lessonIsDirty && (
-                  <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-800">
-                    <span className="size-1.5 rounded-full bg-amber-500" />
-                    Unsaved
-                  </span>
-                )}
-                <input
-                  type="text"
-                  value={lesson.name ?? ""}
-                  onChange={(event) =>
-                    renameLesson(lesson.id, event.target.value)
-                  }
-                  placeholder="Add lesson name (optional)"
-                  aria-label={`Name for lesson ${lessonNumber}`}
-                  className="min-w-0 flex-1 rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-violet-400 focus:ring-3 focus:ring-violet-100"
-                />
-                <button
-                  type="button"
-                  onClick={() => {
-                    setPreviewLessonId(lesson.id);
-                    setPreviewBlockId(null);
-                  }}
-                  disabled={lessonValidationIssueCount > 0}
-                  aria-label={`Preview lesson ${lessonNumber}`}
-                  title={
-                    lessonValidationIssueCount > 0
-                      ? `Resolve ${lessonValidationIssueCount} ${lessonValidationIssueCount === 1 ? "issue" : "issues"} before previewing this lesson`
-                      : "Preview lesson"
-                  }
-                  className="inline-flex h-9 shrink-0 items-center gap-2 rounded-lg px-3 text-sm font-semibold text-stone-500 transition hover:bg-stone-200 hover:text-stone-800 disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:bg-transparent disabled:hover:text-stone-500 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-violet-200"
-                >
-                  <Eye className="size-4" aria-hidden="true" />
-                  <span className="hidden lg:inline">Preview</span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => void saveLesson(lesson.id)}
-                  disabled={
-                    isLoadingLessons ||
-                    !lessonIsDirty ||
-                    saveStatus === "saving"
-                  }
-                  aria-label={`Save lesson ${lessonNumber}`}
-                  title="Save lesson (Alt+S)"
-                  className="inline-flex h-9 shrink-0 items-center gap-2 rounded-lg bg-primary px-3 text-sm font-semibold text-primary-foreground shadow-sm transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
-                >
-                  <Save className="size-4" aria-hidden="true" />
-                  <span className="hidden lg:inline">
-                    {isThisLessonSaving ? "Saving..." : "Save"}
-                  </span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => cycleLessonDisplayMode(lesson.id)}
-                  aria-label={`Cycle lesson ${lessonNumber} display mode`}
-                  title="Cycle display mode (Alt+M)"
-                  className="flex size-9 shrink-0 items-center justify-center rounded-lg text-stone-500 transition hover:bg-stone-200 hover:text-stone-700 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-violet-200"
-                >
-                  {!isLessonCollapsed ? (
-                    <ChevronUp className="size-4" aria-hidden="true" />
-                  ) : isLessonFullyCollapsed ? (
-                    <ChevronDown className="size-4" aria-hidden="true" />
-                  ) : (
-                    <ChevronDown className="size-4 rotate-90" aria-hidden="true" />
-                  )}
-                </button>
-                <button
-                  type="button"
-                  onClick={() => deleteLesson(lesson.id)}
-                  aria-label={`Delete lesson ${lessonNumber}`}
-                  title="Delete lesson"
-                  className="flex size-9 shrink-0 items-center justify-center rounded-lg text-stone-400 transition hover:bg-red-50 hover:text-red-600 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-red-200"
-                >
-                  <Trash2 className="size-4" aria-hidden="true" />
-                </button>
-                <button
-                  type="button"
-                  draggable={!hasUnsavedNewLesson && !isSavingLessonOrder}
-                  disabled={hasUnsavedNewLesson || isSavingLessonOrder}
-                  onDragStart={(event) => {
-                    event.dataTransfer.effectAllowed = "move";
-                    event.dataTransfer.setData(
-                      "text/plain",
-                      String(lesson.id),
-                    );
-                    setDraggedLessonId(lesson.id);
-                  }}
-                  onDragEnd={finishDragging}
-                  aria-label={`Drag lesson ${lessonNumber} to reorder`}
-                  title={
-                    hasUnsavedNewLesson
-                      ? "Save new lessons before reordering"
-                      : "Drag to reorder"
-                  }
-                  className="flex shrink-0 cursor-grab items-center gap-2 rounded-lg px-2 py-2 text-sm font-medium text-stone-500 transition hover:bg-stone-200 hover:text-stone-700 active:cursor-grabbing disabled:cursor-not-allowed disabled:opacity-40"
-                >
-                  <span className="hidden sm:inline">Drag to reorder</span>
-                  <GripVertical className="size-5" aria-hidden="true" />
-                </button>
-              </header>
+                onNameChange={(value) => renameLesson(lesson.id, value)}
+                onPreview={() => {
+                  setPreviewLessonId(lesson.id);
+                  setPreviewBlockId(null);
+                }}
+                onSave={() => void saveLesson(lesson.id)}
+                onCycleDisplayMode={() => cycleLessonDisplayMode(lesson.id)}
+                onDelete={() => deleteLesson(lesson.id)}
+                onDragStart={(event) => {
+                  event.dataTransfer.effectAllowed = "move";
+                  event.dataTransfer.setData("text/plain", String(lesson.id));
+                  setDraggedLessonId(lesson.id);
+                }}
+                onDragEnd={finishDragging}
+              />
 
               {isLessonCollapsed && !isLessonFullyCollapsed && (
                 <div className="space-y-3 border-t border-border bg-[var(--surface)] px-6 py-3">
