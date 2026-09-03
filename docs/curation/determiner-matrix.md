@@ -6,7 +6,7 @@ dog, that dog, a few dogs, three dogs, my dog, each dog, no dog, which dog.*
 
 Every cell below should have at least one `curriculum_concepts` row tagged
 `topic:determiner`; every `topic:determiner` row should map to a cell. The audit
-script (`npm run curriculum:determiners:audit`) checks both directions.
+script (`npm run curriculum:audit determiners`) checks both directions.
 
 **Conventions** (same as [pronoun-matrix.md](pronoun-matrix.md)):
 - One row per Spanish form, no slashes. Gender/number split only where the
@@ -164,7 +164,7 @@ Negative (ningún) · Confusions.
 
 ## Status — DONE 2026-09-04 (commits `57d80529`..`71c8b694`)
 
-**137 `topic:determiner` concepts.** `npm run curriculum:determiners:audit`
+**137 `topic:determiner` concepts.** `npm run curriculum:audit determiners`
 and the `db:test` "determiner topic is complete and clean" test both pass.
 
 - **A** (`57d80529`): 69 existing rows tagged — articles, demonstrative &

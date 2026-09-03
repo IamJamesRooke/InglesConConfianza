@@ -2,7 +2,7 @@
 
 Every cell below should have at least one `curriculum_concepts` row tagged
 `topic:pronoun`; every `topic:pronoun` row should map to a cell. The audit
-script (`npm run curriculum:pronouns:audit`) checks both directions.
+script (`npm run curriculum:audit pronouns`) checks both directions.
 
 Conventions: one row per Spanish form (no slashes). English synonyms
 (somebody/someone) get one canonical row; Practice accepts the variant as an
