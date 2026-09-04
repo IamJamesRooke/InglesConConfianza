@@ -1,8 +1,17 @@
 "use client";
 
-import { CheckCircle2, Play, RotateCcw } from "lucide-react";
+import {
+  ArrowRight,
+  Check,
+  CheckCircle2,
+  Clock3,
+  LockKeyhole,
+  Play,
+  RotateCcw,
+  Sparkles,
+} from "lucide-react";
 import Link from "next/link";
-import { useMemo, useSyncExternalStore } from "react";
+import { useMemo, useState, useSyncExternalStore } from "react";
 
 export const lessonProgressStorageKey = "icc.lessonProgress.v1";
 
@@ -12,6 +21,7 @@ type LearnerLesson = {
   moduleLessonNumber: number;
   name: string | null;
   previewText: string;
+  stepCount: number;
 };
 
 type LearnerModule = {
@@ -73,172 +83,401 @@ function subscribeToProgress(onStoreChange: () => void) {
   };
 }
 
-export function LessonDashboard({
-  modules,
-}: {
-  modules: LearnerModule[];
-}) {
+export function LessonDashboard({ modules }: { modules: LearnerModule[] }) {
   const progress = useSyncExternalStore(
     subscribeToProgress,
     readProgress,
     () => emptyProgress,
   );
+  const [selectedModuleId, setSelectedModuleId] = useState(
+    modules[0]?.id ?? null,
+  );
 
-  const totals = useMemo(() => {
-    const lessonIds = modules.flatMap((module) =>
-      module.lessons.map((lesson) => lesson.id),
+  const courseState = useMemo(() => {
+    const availableLessons = modules.flatMap((module, moduleIndex) =>
+      module.lessons
+        .filter((lesson) => lesson.stepCount > 0)
+        .map((lesson) => ({ lesson, module, moduleIndex })),
     );
-    const completedCount = lessonIds.filter(
-      (lessonId) => progress[lessonId]?.completedAt,
+    const completedCount = availableLessons.filter(
+      ({ lesson }) => progress[lesson.id]?.completedAt,
     ).length;
-    return { lessonCount: lessonIds.length, completedCount };
+    const nextLesson =
+      availableLessons.find(({ lesson }) => !progress[lesson.id]?.completedAt) ??
+      availableLessons[0] ??
+      null;
+    const completionPercent = availableLessons.length
+      ? Math.round((completedCount / availableLessons.length) * 100)
+      : 0;
+
+    return {
+      availableCount: availableLessons.length,
+      completedCount,
+      completionPercent,
+      isCourseComplete:
+        availableLessons.length > 0 && completedCount === availableLessons.length,
+      nextLesson,
+    };
   }, [modules, progress]);
 
+  const selectedModule =
+    modules.find((module) => module.id === selectedModuleId) ?? modules[0];
+
   if (modules.length === 0) {
-    return (
-      <div className="rounded-xl border border-dashed border-border bg-[var(--surface)] p-8 text-center">
-        <p className="font-semibold">Todavía no hay lecciones.</p>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Vuelve pronto para empezar el primer módulo.
-        </p>
-      </div>
-    );
+    return <EmptyCourse />;
   }
 
   return (
-    <div className="grid gap-7">
-      <header className="border-b border-border pb-6">
-        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-primary">
-          Inglés Con Confianza
-        </p>
-        <div className="mt-3 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <h1 className="text-4xl font-semibold tracking-tight">
-              Tus lecciones
-            </h1>
-            <p className="mt-3 max-w-2xl text-muted-foreground">
-              Elige un módulo y completa cada lección a tu ritmo.
+    <div className="min-h-[calc(100vh-4rem)] bg-[#f3f8f7] text-[#173b3a]">
+      <section className="overflow-hidden bg-[#173b3a] text-white">
+        <div className="learner-enter mx-auto grid max-w-6xl gap-9 px-5 py-10 sm:px-8 sm:py-14 lg:grid-cols-[minmax(0,1fr)_18rem] lg:items-center lg:gap-16">
+          <div className="max-w-3xl">
+            <p className="flex items-center gap-2 text-sm font-bold text-[#f6c453]">
+              <Sparkles className="size-4" aria-hidden="true" />
+              {courseState.isCourseComplete
+                ? "Tu curso, listo para repasar"
+                : "Tu próximo paso"}
             </p>
+            <h1 className="mt-4 max-w-2xl text-4xl font-black leading-[1.08] sm:text-5xl">
+              Habla inglés con confianza.
+            </h1>
+            <p className="mt-4 max-w-xl text-base font-medium leading-7 text-[#c9ddda] sm:text-lg">
+              Avanza con frases útiles, práctica clara y pequeñas victorias que
+              sí se sienten.
+            </p>
+
+            {courseState.nextLesson && (
+              <div className="mt-8 flex flex-col gap-4 border-t border-white/15 pt-6 sm:flex-row sm:items-center sm:justify-between">
+                <div className="min-w-0">
+                  <p className="text-sm font-bold text-[#9bc6c0]">
+                    Módulo {courseState.nextLesson.moduleIndex + 1} · Lección{" "}
+                    {courseState.nextLesson.lesson.moduleLessonNumber}
+                  </p>
+                  <p className="mt-1 truncate text-lg font-extrabold text-white sm:text-xl">
+                    {courseState.nextLesson.lesson.name ??
+                      `Lección ${courseState.nextLesson.lesson.lessonNumber}`}
+                  </p>
+                </div>
+                <Link
+                  href={`/practice?lesson=${courseState.nextLesson.lesson.id}`}
+                  className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-[#f6c453] px-5 py-3.5 text-sm font-extrabold text-[#173b3a] shadow-[0_8px_22px_rgba(0,0,0,0.18)] transition hover:bg-[#ffcf62] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/30"
+                >
+                  {courseState.isCourseComplete
+                    ? "Repasar el curso"
+                    : progress[courseState.nextLesson.lesson.id]?.lastOpenedAt
+                      ? "Continuar"
+                      : "Empezar"}
+                  <ArrowRight className="size-4" aria-hidden="true" />
+                </Link>
+              </div>
+            )}
           </div>
-          <p className="rounded-full border border-border bg-[var(--surface)] px-4 py-2 text-sm font-semibold text-muted-foreground">
-            {totals.completedCount} de {totals.lessonCount} completas
+
+          <CourseProgress
+            completedCount={courseState.completedCount}
+            lessonCount={courseState.availableCount}
+            percent={courseState.completionPercent}
+          />
+        </div>
+      </section>
+
+      <main id="lecciones" className="mx-auto max-w-6xl px-5 py-10 sm:px-8 sm:py-14">
+        <div className="flex flex-col gap-3 border-b border-[#cfe3df] pb-6 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-sm font-extrabold text-[#e05f47]">Tu ruta</p>
+            <h2 className="mt-1 text-3xl font-black leading-tight">
+              Elige un módulo
+            </h2>
+          </div>
+          <p className="max-w-md text-sm font-medium leading-6 text-[#587873]">
+            Cada lección suma una frase nueva a lo que ya puedes decir.
           </p>
         </div>
-      </header>
 
-      {modules.map((module, moduleIndex) => {
-        const completedLessons = module.lessons.filter(
-          (lesson) => progress[lesson.id]?.completedAt,
-        ).length;
+        <div
+          className="mt-6 flex gap-2 overflow-x-auto pb-2"
+          role="tablist"
+          aria-label="Módulos del curso"
+        >
+          {modules.map((module, moduleIndex) => {
+            const isSelected = module.id === selectedModule?.id;
+            const moduleAvailableLessons = module.lessons.filter(
+              (lesson) => lesson.stepCount > 0,
+            );
+            const completedLessons = moduleAvailableLessons.filter(
+              (lesson) => progress[lesson.id]?.completedAt,
+            ).length;
 
-        return (
-          <section
-            key={module.id}
-            className="rounded-2xl border border-border bg-[var(--surface)] p-5 shadow-sm"
-          >
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                  Módulo {moduleIndex + 1}
-                </p>
-                <h2 className="mt-2 text-2xl font-semibold tracking-tight">
-                  {module.name ?? `Módulo ${moduleIndex + 1}`}
-                </h2>
-              </div>
-              <span className="rounded-full bg-background px-3 py-1.5 text-xs font-semibold text-muted-foreground">
-                {completedLessons} de {module.lessonCount} completas
-              </span>
-            </div>
+            return (
+              <button
+                key={module.id}
+                type="button"
+                role="tab"
+                aria-selected={isSelected}
+                aria-controls="selected-module-lessons"
+                onClick={() => setSelectedModuleId(module.id)}
+                className={`flex min-w-48 shrink-0 items-center gap-3 rounded-lg border px-4 py-3 text-left transition focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0f766e]/20 ${
+                  isSelected
+                    ? "border-[#0f766e] bg-[#0f766e] text-white shadow-sm"
+                    : "border-[#cfe3df] bg-white text-[#315d59] hover:border-[#74aaa4]"
+                }`}
+              >
+                <span
+                  className={`flex size-9 shrink-0 items-center justify-center rounded-md text-sm font-black ${
+                    isSelected
+                      ? "bg-white/15 text-white"
+                      : "bg-[#e3f0ee] text-[#0f766e]"
+                  }`}
+                >
+                  {String(moduleIndex + 1).padStart(2, "0")}
+                </span>
+                <span className="min-w-0">
+                  <span className="block truncate text-sm font-extrabold">
+                    {module.name ?? `Módulo ${moduleIndex + 1}`}
+                  </span>
+                  <span
+                    className={`mt-0.5 block text-xs font-semibold ${
+                      isSelected ? "text-[#bfe1dd]" : "text-[#6d8a86]"
+                    }`}
+                  >
+                    {completedLessons} de {moduleAvailableLessons.length} completas
+                  </span>
+                </span>
+              </button>
+            );
+          })}
+        </div>
 
-            <ol className="mt-5 grid gap-3">
-              {module.lessons.map((lesson) => {
-                const isComplete = Boolean(progress[lesson.id]?.completedAt);
-                const wasOpened = Boolean(progress[lesson.id]?.lastOpenedAt);
-
-                return (
-                  <li key={lesson.id}>
-                    <Link
-                      href={`/practice?lesson=${lesson.id}`}
-                      className={`grid gap-4 rounded-xl border p-4 transition hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/30 sm:grid-cols-[auto_minmax(0,1fr)_auto] ${
-                        isComplete
-                          ? "border-emerald-300 bg-emerald-50 text-emerald-950 dark:border-emerald-800 dark:bg-emerald-950/35 dark:text-emerald-100"
-                          : "border-border bg-background hover:border-primary/50"
-                      }`}
-                    >
-                      <span
-                        className={`flex size-10 items-center justify-center rounded-lg text-sm font-semibold ${
-                          isComplete
-                            ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-900 dark:text-emerald-200"
-                            : "bg-primary/10 text-primary"
-                        }`}
-                      >
-                        {isComplete ? (
-                          <CheckCircle2 className="size-5" aria-hidden="true" />
-                        ) : (
-                          lesson.moduleLessonNumber
-                        )}
-                      </span>
-                      <span className="min-w-0">
-                        <span className="block font-semibold">
-                          {lesson.name ?? `Lección ${lesson.lessonNumber}`}
-                        </span>
-                        <span
-                          className={`mt-1 line-clamp-2 block text-sm ${
-                            isComplete
-                              ? "text-emerald-800 dark:text-emerald-200"
-                              : "text-muted-foreground"
-                          }`}
-                        >
-                          {lesson.previewText || "Lista para practicar."}
-                        </span>
-                      </span>
-                      <span className="flex items-center gap-2 text-sm font-semibold sm:justify-end">
-                        {isComplete ? (
-                          <>
-                            <CheckCircle2 className="size-4" aria-hidden="true" />
-                            Completa
-                          </>
-                        ) : wasOpened ? (
-                          <>
-                            <RotateCcw className="size-4" aria-hidden="true" />
-                            Continuar
-                          </>
-                        ) : (
-                          <>
-                            <Play className="size-4" aria-hidden="true" />
-                            Empezar
-                          </>
-                        )}
-                      </span>
-                    </Link>
-                  </li>
-                );
-              })}
-            </ol>
-          </section>
-        );
-      })}
+        {selectedModule && (
+          <ModuleLessons
+            module={selectedModule}
+            moduleIndex={modules.indexOf(selectedModule)}
+            progress={progress}
+          />
+        )}
+      </main>
     </div>
+  );
+}
+
+function CourseProgress({ completedCount, lessonCount, percent }: {
+  completedCount: number;
+  lessonCount: number;
+  percent: number;
+}) {
+  return (
+    <div className="flex items-center gap-5 border-l border-white/15 pl-0 lg:pl-10">
+      <div
+        className="relative flex size-28 shrink-0 items-center justify-center rounded-full p-2"
+        style={{
+          background: `conic-gradient(#f6c453 ${percent}%, rgba(255,255,255,0.14) ${percent}% 100%)`,
+        }}
+        role="progressbar"
+        aria-label="Progreso del curso"
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuenow={percent}
+      >
+        <span className="flex size-full items-center justify-center rounded-full bg-[#173b3a] text-2xl font-black">
+          {percent}%
+        </span>
+      </div>
+      <div>
+        <p className="text-3xl font-black">
+          {completedCount}
+          <span className="text-lg text-[#9bc6c0]">/{lessonCount}</span>
+        </p>
+        <p className="mt-1 max-w-28 text-sm font-semibold leading-5 text-[#c9ddda]">
+          lecciones completas
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function ModuleLessons({ module, moduleIndex, progress }: {
+  module: LearnerModule;
+  moduleIndex: number;
+  progress: LessonProgress;
+}) {
+  const availableLessons = module.lessons.filter((lesson) => lesson.stepCount > 0);
+  const completedLessons = availableLessons.filter(
+    (lesson) => progress[lesson.id]?.completedAt,
+  ).length;
+  const percent = availableLessons.length
+    ? Math.round((completedLessons / availableLessons.length) * 100)
+    : 0;
+
+  return (
+    <section
+      id="selected-module-lessons"
+      role="tabpanel"
+      className="learner-enter mt-8"
+    >
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p className="text-sm font-bold text-[#6d8a86]">
+            Módulo {moduleIndex + 1}
+          </p>
+          <h3 className="mt-1 text-2xl font-black leading-tight">
+            {module.name ?? `Módulo ${moduleIndex + 1}`}
+          </h3>
+        </div>
+        <div className="w-full max-w-xs">
+          <div className="mb-2 flex justify-between text-xs font-bold text-[#587873]">
+            <span>Progreso del módulo</span>
+            <span>{percent}%</span>
+          </div>
+          <div className="h-2 overflow-hidden rounded-full bg-[#dbeae7]">
+            <div
+              className="h-full rounded-full bg-[#0f766e] transition-[width] duration-500"
+              style={{ width: `${percent}%` }}
+            />
+          </div>
+        </div>
+      </div>
+
+      <ol className="mt-6 grid gap-3">
+        {module.lessons.map((lesson) => (
+          <LessonRow key={lesson.id} lesson={lesson} progress={progress[lesson.id]} />
+        ))}
+      </ol>
+    </section>
+  );
+}
+
+function LessonRow({ lesson, progress }: {
+  lesson: LearnerLesson;
+  progress?: LessonProgressEntry;
+}) {
+  const isAvailable = lesson.stepCount > 0;
+  const isComplete = Boolean(progress?.completedAt);
+  const wasOpened = Boolean(progress?.lastOpenedAt);
+  const durationMinutes = Math.max(3, Math.ceil(lesson.stepCount / 2));
+  const content = (
+    <>
+      <span className={`flex size-11 shrink-0 items-center justify-center rounded-lg text-sm font-black ${
+        isComplete
+          ? "bg-[#d7f2df] text-[#18723f]"
+          : isAvailable
+            ? "bg-[#e3f0ee] text-[#0f766e]"
+            : "bg-[#edf1f0] text-[#82928f]"
+      }`}>
+        {isComplete ? (
+          <Check className="size-5" strokeWidth={3} aria-hidden="true" />
+        ) : isAvailable ? (
+          lesson.moduleLessonNumber
+        ) : (
+          <LockKeyhole className="size-4" aria-hidden="true" />
+        )}
+      </span>
+
+      <span className="min-w-0 flex-1">
+        <span className="block font-extrabold leading-5 text-[#173b3a]">
+          {lesson.name ?? `Lección ${lesson.lessonNumber}`}
+        </span>
+        <span className="mt-1 line-clamp-2 block text-sm font-medium leading-5 text-[#67817d]">
+          {isAvailable
+            ? lesson.previewText || "Lista para practicar."
+            : "Esta lección estará disponible muy pronto."}
+        </span>
+      </span>
+
+      <span className="flex shrink-0 items-center gap-2 text-sm font-extrabold">
+        {isComplete ? (
+          <>
+            <CheckCircle2 className="size-4" aria-hidden="true" />
+            <span className="hidden sm:inline">Completa</span>
+          </>
+        ) : !isAvailable ? (
+          <span className="hidden text-[#82928f] sm:inline">Próximamente</span>
+        ) : wasOpened ? (
+          <>
+            <RotateCcw className="size-4" aria-hidden="true" />
+            <span className="hidden sm:inline">Continuar</span>
+          </>
+        ) : (
+          <>
+            <Play className="size-4" aria-hidden="true" />
+            <span className="hidden sm:inline">Empezar</span>
+          </>
+        )}
+      </span>
+    </>
+  );
+
+  return (
+    <li>
+      {isAvailable ? (
+        <Link
+          href={`/practice?lesson=${lesson.id}`}
+          className={`flex min-h-24 items-center gap-4 rounded-lg border bg-white p-4 shadow-[0_2px_10px_rgba(23,59,58,0.04)] transition hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(23,59,58,0.10)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0f766e]/20 sm:px-5 ${
+            isComplete
+              ? "border-[#abdcbc] text-[#18723f]"
+              : "border-[#cfe3df] text-[#0f766e] hover:border-[#74aaa4]"
+          }`}
+        >
+          {content}
+          <span className="hidden items-center gap-1.5 text-xs font-bold text-[#78908c] md:flex">
+            <Clock3 className="size-3.5" aria-hidden="true" />
+            {durationMinutes} min
+          </span>
+        </Link>
+      ) : (
+        <div className="flex min-h-24 items-center gap-4 rounded-lg border border-[#dde7e5] bg-[#f9fbfa] p-4 opacity-80 sm:px-5">
+          {content}
+        </div>
+      )}
+    </li>
+  );
+}
+
+function EmptyCourse() {
+  return (
+    <main className="flex min-h-[calc(100vh-4rem)] items-center justify-center bg-[#f3f8f7] px-5 py-12 text-[#173b3a]">
+      <div className="max-w-md text-center">
+        <span className="mx-auto flex size-12 items-center justify-center rounded-lg bg-[#e3f0ee] text-[#0f766e]">
+          <Sparkles className="size-6" aria-hidden="true" />
+        </span>
+        <h1 className="mt-5 text-3xl font-black">Las primeras lecciones vienen pronto.</h1>
+        <p className="mt-3 font-medium leading-7 text-[#587873]">
+          Estamos preparando una experiencia clara, práctica y hecha para que
+          empieces con confianza.
+        </p>
+      </div>
+    </main>
   );
 }
 
 export function markLessonOpened(lessonId: string) {
   const progress = readProgress();
-  progress[lessonId] = {
-    ...progress[lessonId],
-    lastOpenedAt: new Date().toISOString(),
+  const nextProgress = {
+    ...progress,
+    [lessonId]: {
+      ...progress[lessonId],
+      lastOpenedAt: new Date().toISOString(),
+    },
   };
-  window.localStorage.setItem(lessonProgressStorageKey, JSON.stringify(progress));
+  window.localStorage.setItem(
+    lessonProgressStorageKey,
+    JSON.stringify(nextProgress),
+  );
   window.dispatchEvent(new Event(lessonProgressEventName));
 }
 
 export function markLessonCompleted(lessonId: string) {
   const progress = readProgress();
-  progress[lessonId] = {
-    ...progress[lessonId],
-    lastOpenedAt: new Date().toISOString(),
-    completedAt: progress[lessonId]?.completedAt ?? new Date().toISOString(),
+  const nextProgress = {
+    ...progress,
+    [lessonId]: {
+      ...progress[lessonId],
+      lastOpenedAt: new Date().toISOString(),
+      completedAt: progress[lessonId]?.completedAt ?? new Date().toISOString(),
+    },
   };
-  window.localStorage.setItem(lessonProgressStorageKey, JSON.stringify(progress));
+  window.localStorage.setItem(
+    lessonProgressStorageKey,
+    JSON.stringify(nextProgress),
+  );
   window.dispatchEvent(new Event(lessonProgressEventName));
 }

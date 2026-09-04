@@ -16,14 +16,11 @@ export default async function HomePage() {
         moduleLessonNumber: lesson.moduleLessonNumber,
         name: lesson.name,
         previewText: lesson.previewText,
+        stepCount: lesson.blocks.length,
       })),
     })) ?? [];
 
   return (
-    <main className="flex-1 bg-background px-6 py-8 text-foreground">
-      <div className="mx-auto max-w-5xl">
-        <LessonDashboard modules={modules} />
-      </div>
-    </main>
+    <LessonDashboard modules={modules} />
   );
 }
