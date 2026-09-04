@@ -3,11 +3,12 @@
 import {
   ArrowLeft,
   ArrowRight,
-  BookOpen,
-  CheckCircle2,
+  Home,
   Keyboard,
+  Sparkles,
   X,
 } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { PracticeMarkdown } from "@/components/practice/practice-markdown";
@@ -39,6 +40,7 @@ export function LessonSelector({
   initialLessonId?: string | null;
   onCloseLesson?: () => void;
 }) {
+  const router = useRouter();
   const [openLessonId, setOpenLessonId] = useState<string | null>(
     initialLessonId,
   );
@@ -52,21 +54,33 @@ export function LessonSelector({
   const isComplete = Boolean(openLesson && currentStepIndex >= totalSteps);
   const currentBlock =
     openLesson && !isComplete ? openLesson.blocks[currentStepIndex] : null;
+  const openLessonIndex = lessons.findIndex(
+    (lesson) => lesson.id === openLessonId,
+  );
+  const nextLesson = lessons
+    .slice(openLessonIndex + 1)
+    .find((lesson) => lesson.blocks.length > 0);
 
   const openLessonPractice = useCallback((lessonId: string) => {
     markLessonOpened(lessonId);
+    router.replace(`/practice?lesson=${lessonId}`, { scroll: false });
     setOpenLessonId(lessonId);
     setCurrentStepIndex(0);
     setIsCurrentSentenceComplete(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
+  }, [router]);
 
   const closeLessonPractice = useCallback(() => {
-    setOpenLessonId(null);
-    setCurrentStepIndex(0);
-    setIsCurrentSentenceComplete(false);
-    onCloseLesson?.();
-  }, [onCloseLesson]);
+    if (onCloseLesson) {
+      setOpenLessonId(null);
+      setCurrentStepIndex(0);
+      setIsCurrentSentenceComplete(false);
+      onCloseLesson();
+      return;
+    }
+
+    router.push("/");
+  }, [onCloseLesson, router]);
 
   const canManuallyAdvance =
     isComplete ||
@@ -241,7 +255,11 @@ export function LessonSelector({
 
       if (event.key === "Enter" && isComplete) {
         event.preventDefault();
-        closeLessonPractice();
+        if (nextLesson) {
+          openLessonPractice(nextLesson.id);
+        } else {
+          closeLessonPractice();
+        }
         return;
       }
 
@@ -290,21 +308,10 @@ export function LessonSelector({
     isShortcutReminderOpen,
     isComplete,
     isCurrentSentenceComplete,
+    nextLesson,
     openLesson,
+    openLessonPractice,
   ]);
-
-  if (lessons.length === 0) {
-    return (
-      <div className="rounded-2xl border border-dashed border-border bg-card p-8 text-center">
-        <p className="font-semibold text-foreground">
-          Todavía no hay lecciones.
-        </p>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Crea una lección en Lesson Builder y vuelve aquí para practicarla.
-        </p>
-      </div>
-    );
-  }
 
   if (openLesson) {
     const progressPercent =
@@ -320,19 +327,19 @@ export function LessonSelector({
     return (
       <section
         ref={lessonModeRef}
-        className="fixed inset-0 z-50 overflow-y-auto bg-background text-foreground"
+        className="learner-theme fixed inset-0 z-50 overflow-y-auto bg-[#f3f8f7] text-[#173b3a]"
         role="dialog"
         aria-modal="true"
         aria-labelledby="practice-lesson-title"
         tabIndex={-1}
       >
-        <div className="mx-auto flex min-h-screen w-full max-w-5xl flex-col px-5 pt-5 sm:px-8 sm:pt-6">
+        <div className="mx-auto flex min-h-screen w-full max-w-5xl flex-col px-5 pt-4 sm:px-8 sm:pt-5">
           <header className="shrink-0">
             <div className="flex items-center justify-between gap-4">
               <button
                 type="button"
                 onClick={closeLessonPractice}
-                className="inline-flex items-center gap-2 rounded-full px-3 py-2 text-sm font-semibold text-muted-foreground transition hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/30"
+                className="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-bold text-[#587873] transition hover:bg-[#e3f0ee] hover:text-[#173b3a] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0f766e]/20"
               >
                 <ArrowLeft className="size-4" aria-hidden="true" />
                 Salir
@@ -340,17 +347,16 @@ export function LessonSelector({
               <button
                 type="button"
                 onClick={() => setIsShortcutReminderOpen(true)}
-                className="inline-flex items-center gap-2 rounded-full px-3 py-2 text-sm font-semibold text-muted-foreground transition hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/30"
+                className="flex size-10 items-center justify-center rounded-lg text-[#587873] transition hover:bg-[#e3f0ee] hover:text-[#173b3a] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0f766e]/20"
                 aria-label="Ver atajos de teclado"
                 title="Atajos de teclado (Alt+K)"
               >
                 <Keyboard className="size-4" aria-hidden="true" />
-                Atajos
               </button>
             </div>
             <div className="mt-5 flex items-end justify-between gap-6">
               <div className="min-w-0">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                <p className="text-xs font-bold text-[#67817d]">
                   {openLesson.moduleName
                     ? `${openLesson.moduleName} · Lección ${
                         openLesson.moduleLessonNumber ?? openLesson.lessonNumber
@@ -359,19 +365,19 @@ export function LessonSelector({
                 </p>
                 <h2
                   id="practice-lesson-title"
-                  className="mt-1 truncate text-xl font-semibold tracking-tight text-foreground sm:text-2xl"
+                  className="mt-1 truncate text-xl font-black text-[#173b3a] sm:text-2xl"
                 >
                   {openLesson.name || `Lección ${openLesson.lessonNumber}`}
                 </h2>
               </div>
-              <p className="shrink-0 pb-0.5 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+              <p className="shrink-0 pb-0.5 text-xs font-bold text-[#67817d]">
                 {isComplete
                   ? "Completa"
                   : `Paso ${currentStepIndex + 1} de ${Math.max(totalSteps, 1)}`}
               </p>
             </div>
             <div
-              className="mt-4 h-2.5 overflow-hidden rounded-full bg-muted"
+              className="mt-4 h-2.5 overflow-hidden rounded-full bg-[#dbeae7]"
               role="progressbar"
               aria-label="Progreso de la lección"
               aria-valuemin={0}
@@ -379,7 +385,7 @@ export function LessonSelector({
               aria-valuenow={progressStep}
             >
               <div
-                className="h-full rounded-full bg-primary transition-all duration-300"
+                className="h-full rounded-full bg-[#e66b52] transition-all duration-300"
                 style={{ width: `${progressPercent}%` }}
               />
             </div>
@@ -389,26 +395,44 @@ export function LessonSelector({
             <div className="w-full">
               {isComplete ? (
                 <div
-                  className="mx-auto max-w-3xl rounded-3xl border border-border bg-[var(--surface)] p-8 text-center shadow-sm sm:p-10"
+                  className="learner-enter mx-auto max-w-3xl rounded-lg border border-[#cfe3df] bg-white p-7 text-center shadow-[0_12px_36px_rgba(23,59,58,0.10)] sm:p-10"
                   aria-live="polite"
                 >
-                  <span className="mx-auto flex size-14 items-center justify-center rounded-full bg-primary/10 text-primary">
-                    <CheckCircle2 className="size-7" aria-hidden="true" />
+                  <span className="mx-auto flex size-14 items-center justify-center rounded-lg bg-[#d7f2df] text-[#18723f]">
+                    <Sparkles className="size-7" aria-hidden="true" />
                   </span>
-                  <h2 className="mt-5 text-3xl font-semibold tracking-tight">
+                  <p className="mt-5 text-sm font-extrabold text-[#e05f47]">
                     Lección completa
-                  </h2>
-                  <p className="mx-auto mt-3 max-w-md text-muted-foreground">
-                    ¡Muy bien! Más adelante aquí veremos tus resultados, los
-                    conceptos practicados y el siguiente paso.
                   </p>
-                  <button
-                    type="button"
-                    onClick={closeLessonPractice}
-                    className="mt-6 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/30"
-                  >
-                    Volver a lecciones
-                  </button>
+                  <h2 className="mt-2 text-3xl font-black">
+                    Mira lo que ya puedes decir
+                  </h2>
+                  <p className="mx-auto mt-4 max-w-xl text-2xl font-extrabold leading-9 text-[#0f766e] sm:text-3xl">
+                    “{openLesson.name || `Lección ${openLesson.lessonNumber}`}”
+                  </p>
+                  <p className="mx-auto mt-4 max-w-md font-medium leading-6 text-[#587873]">
+                    Lo construiste paso a paso. Esa confianza también se practica.
+                  </p>
+                  <div className="mt-7 flex flex-col-reverse justify-center gap-3 sm:flex-row">
+                    <button
+                      type="button"
+                      onClick={closeLessonPractice}
+                      className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#cfe3df] bg-white px-5 py-3 text-sm font-extrabold text-[#315d59] transition hover:bg-[#f3f8f7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0f766e]/20"
+                    >
+                      <Home className="size-4" aria-hidden="true" />
+                      Mis lecciones
+                    </button>
+                    {nextLesson && (
+                      <button
+                        type="button"
+                        onClick={() => openLessonPractice(nextLesson.id)}
+                        className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#0f766e] px-5 py-3 text-sm font-extrabold text-white shadow-sm transition hover:bg-[#0b655e] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0f766e]/25"
+                      >
+                        Siguiente lección
+                        <ArrowRight className="size-4" aria-hidden="true" />
+                      </button>
+                    )}
+                  </div>
                 </div>
               ) : currentBlock?.type === "explanation" ? (
                 <PracticeExplanationStep
@@ -424,12 +448,12 @@ export function LessonSelector({
             </div>
           </div>
 
-          <footer className="-mx-5 flex shrink-0 items-start justify-between gap-3 border-t border-border bg-background/95 px-5 py-3.5 backdrop-blur sm:-mx-8 sm:px-8">
+          <footer className="-mx-5 flex shrink-0 items-start justify-between gap-3 border-t border-[#cfe3df] bg-[#f3f8f7]/95 px-5 py-3.5 backdrop-blur sm:-mx-8 sm:px-8">
             <button
               type="button"
               onClick={goToPreviousStep}
               disabled={currentStepIndex === 0}
-              className="inline-flex min-w-32 items-center justify-center gap-2 rounded-full border border-border bg-[var(--surface)] px-4 py-2.5 text-sm font-semibold text-muted-foreground shadow-sm transition hover:bg-muted hover:text-foreground disabled:cursor-not-allowed disabled:opacity-30 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/30"
+              className="inline-flex min-w-28 items-center justify-center gap-2 rounded-lg border border-[#cfe3df] bg-white px-4 py-2.5 text-sm font-bold text-[#587873] shadow-sm transition hover:bg-[#e3f0ee] hover:text-[#173b3a] disabled:cursor-not-allowed disabled:opacity-30 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0f766e]/20 sm:min-w-32"
             >
               <ArrowLeft className="size-4" aria-hidden="true" />
               Anterior
@@ -439,7 +463,7 @@ export function LessonSelector({
                 type="button"
                 onClick={goToNextStep}
                 disabled={!canManuallyAdvance || isComplete}
-                className="inline-flex min-w-32 items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-30 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/30"
+                className="inline-flex min-w-28 items-center justify-center gap-2 rounded-lg bg-[#0f766e] px-4 py-2.5 text-sm font-extrabold text-white shadow-sm transition hover:bg-[#0b655e] disabled:cursor-not-allowed disabled:opacity-30 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0f766e]/25 sm:min-w-32"
               >
                 {currentStepIndex >= totalSteps - 1 ? "Terminar" : "Siguiente"}
                 <ArrowRight className="size-4" aria-hidden="true" />
@@ -460,53 +484,7 @@ export function LessonSelector({
     );
   }
 
-  return (
-    <section className="grid gap-4 sm:grid-cols-2">
-      {lessons.map((lesson) => (
-        <button
-          key={lesson.id}
-          type="button"
-          onClick={() => openLessonPractice(lesson.id)}
-          className="rounded-2xl border border-border bg-[var(--surface)] p-5 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/30"
-        >
-          <div className="mb-4 flex items-start justify-between gap-3">
-            <div>
-              <p className="text-sm font-medium uppercase tracking-[0.18em] text-muted-foreground">
-                {lesson.moduleName
-                  ? `${lesson.moduleName} · Lección ${
-                      lesson.moduleLessonNumber ?? lesson.lessonNumber
-                    }`
-                  : `Lección ${lesson.lessonNumber}`}
-              </p>
-              <h2 className="mt-1 text-xl font-semibold tracking-tight text-foreground">
-                {lesson.name || `Lección ${lesson.lessonNumber}`}
-              </h2>
-            </div>
-            <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-muted text-muted-foreground">
-              <BookOpen className="size-5" aria-hidden="true" />
-            </span>
-          </div>
-
-          <p className="line-clamp-2 min-h-10 text-sm leading-5 text-muted-foreground">
-            {lesson.previewText || "Sin vista previa todavía."}
-          </p>
-
-          <div className="mt-5 flex gap-2 text-xs font-semibold text-muted-foreground">
-            <span className="rounded-full bg-muted px-2.5 py-1">
-              {lesson.practiceCount}{" "}
-              {lesson.practiceCount === 1 ? "práctica" : "prácticas"}
-            </span>
-            <span className="rounded-full bg-muted px-2.5 py-1">
-              {lesson.explanationCount}{" "}
-              {lesson.explanationCount === 1
-                ? "explicación"
-                : "explicaciones"}
-            </span>
-          </div>
-        </button>
-      ))}
-    </section>
-  );
+  return null;
 }
 
 function PracticeShortcutReminder({
@@ -526,12 +504,12 @@ function PracticeShortcutReminder({
         }
       }}
     >
-      <div className="mt-16 w-full max-w-md rounded-2xl border border-border bg-popover p-5 text-popover-foreground shadow-xl">
+      <div className="mt-16 w-full max-w-md rounded-lg border border-[#cfe3df] bg-white p-5 text-[#173b3a] shadow-xl">
         <div className="mb-5 flex items-start justify-between gap-4">
           <div>
             <h2
               id="practice-shortcut-reminder-title"
-              className="text-xl font-semibold tracking-tight"
+              className="text-xl font-black"
             >
               Atajos de teclado
             </h2>
@@ -593,7 +571,7 @@ function PracticeShortcutReminderRow({
   description: string;
 }) {
   return (
-    <div className="flex items-center justify-between gap-4 rounded-xl border border-border bg-muted/50 px-4 py-3">
+    <div className="flex items-center justify-between gap-4 rounded-lg border border-[#dbeae7] bg-[#f3f8f7] px-4 py-3">
       <span className="text-sm font-medium text-foreground">{description}</span>
       <span className="flex shrink-0 items-center gap-1">
         {keys.map((key) => (
@@ -623,11 +601,11 @@ function PracticeExplanationStep({
   markdown: string;
 }) {
   return (
-    <div className="mx-auto w-full max-w-xl rounded-3xl border border-border bg-[var(--surface)] px-6 py-8 text-center shadow-sm sm:px-10 sm:py-9">
+    <div className="mx-auto w-full max-w-xl rounded-lg border border-[#cfe3df] bg-white px-6 py-8 text-center shadow-[0_10px_30px_rgba(23,59,58,0.08)] sm:px-10 sm:py-9">
       {markdown.trim() ? (
         <PracticeMarkdown markdown={markdown} />
       ) : (
-        <p className="text-muted-foreground">Explicación vacía</p>
+        <p className="text-muted-foreground">Continúa al siguiente paso.</p>
       )}
     </div>
   );

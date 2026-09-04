@@ -321,6 +321,23 @@
   animation: learner-enter 420ms ease-out both;
 }
 
+.learner-theme {
+  --background: #f3f8f7;
+  --foreground: #173b3a;
+  --card: #ffffff;
+  --card-foreground: #173b3a;
+  --popover: #ffffff;
+  --popover-foreground: #173b3a;
+  --primary: #0f766e;
+  --primary-foreground: #ffffff;
+  --muted: #e3f0ee;
+  --muted-foreground: #587873;
+  --border: #cfe3df;
+  --input: #b7d8d4;
+  --ring: #0f766e;
+  --surface: #ffffff;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .learner-enter {
     animation: none;

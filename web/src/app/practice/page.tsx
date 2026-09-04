@@ -3,6 +3,7 @@ import {
   type PracticeLesson,
 } from "@/components/practice/lesson-selector";
 import { readCourseSummary } from "@/lib/lesson-builder/server/course-summary";
+import { redirect } from "next/navigation";
 
 export const dynamic = "force-dynamic";
 
@@ -30,26 +31,19 @@ export default async function PracticePage({ searchParams }: PageProps) {
     blocks: lesson.blocks,
   }));
 
-  return (
-    <main className="min-h-screen bg-background px-6 py-12 text-foreground">
-      <div className="mx-auto max-w-5xl">
-        <div className="mb-10">
-          <p className="mb-3 text-sm font-medium uppercase tracking-[0.25em] text-muted-foreground">
-            Inglés Con Confianza
-          </p>
-          <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-            Práctica
-          </h1>
-          <p className="mt-3 max-w-2xl text-muted-foreground">
-            Retoma una lección y convierte cada idea en inglés paso a paso.
-          </p>
-        </div>
+  if (
+    !selectedLessonId ||
+    !lessonSummaries.some(
+      (lesson) => lesson.id === selectedLessonId && lesson.blocks.length > 0,
+    )
+  ) {
+    redirect("/");
+  }
 
-        <LessonSelector
-          lessons={lessonSummaries}
-          initialLessonId={selectedLessonId}
-        />
-      </div>
-    </main>
+  return (
+    <LessonSelector
+      lessons={lessonSummaries}
+      initialLessonId={selectedLessonId}
+    />
   );
 }

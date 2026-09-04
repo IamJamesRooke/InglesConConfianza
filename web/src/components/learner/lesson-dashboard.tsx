@@ -128,7 +128,7 @@ export function LessonDashboard({ modules }: { modules: LearnerModule[] }) {
   }
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] bg-[#f3f8f7] text-[#173b3a]">
+    <div className="learner-theme min-h-[calc(100vh-4rem)] bg-[#f3f8f7] text-[#173b3a]">
       <section className="overflow-hidden bg-[#173b3a] text-white">
         <div className="learner-enter mx-auto grid max-w-6xl gap-9 px-5 py-10 sm:px-8 sm:py-14 lg:grid-cols-[minmax(0,1fr)_18rem] lg:items-center lg:gap-16">
           <div className="max-w-3xl">
@@ -266,7 +266,7 @@ function CourseProgress({ completedCount, lessonCount, percent }: {
   percent: number;
 }) {
   return (
-    <div className="flex items-center gap-5 border-l border-white/15 pl-0 lg:pl-10">
+    <div className="flex items-center gap-5 border-t border-white/15 pt-7 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0">
       <div
         className="relative flex size-28 shrink-0 items-center justify-center rounded-full p-2"
         style={{

@@ -144,7 +144,7 @@ export function SentencePracticeCard({
 
   return (
     <div
-      className={`mx-auto rounded-3xl border border-border bg-[var(--surface)] shadow-sm ${
+      className={`mx-auto rounded-lg border border-[#cfe3df] bg-white shadow-[0_10px_30px_rgba(23,59,58,0.08)] ${
         isSingleLanguageBlock || isVocabulary
           ? "max-w-2xl p-6 sm:p-7"
           : "max-w-4xl p-8 sm:p-10"
@@ -211,7 +211,7 @@ export function SentencePracticeCard({
                   }}
                   aria-label={`Traducción de ${languageBlock.spanish || `bloque ${languageBlockIndex + 1}`}`}
                   autoComplete="off"
-                  className={`w-full rounded-2xl border px-5 py-5 text-center text-2xl font-semibold outline-none transition-colors focus:ring-4 focus:ring-ring/25 ${
+                  className={`w-full rounded-lg border px-5 py-5 text-center text-2xl font-semibold outline-none transition-colors focus:ring-4 focus:ring-[#0f766e]/20 ${
                     correctAnswers[languageBlockIndex] &&
                     helpedBlockIndex !== languageBlockIndex
                       ? "border-emerald-500 bg-emerald-50 text-emerald-950 ring-4 ring-emerald-500/15 dark:border-emerald-500 dark:bg-emerald-950/35 dark:text-emerald-100"
@@ -264,7 +264,7 @@ export function SentencePracticeCard({
                 </button>
               </div>
               {languageBlock.callout?.trim() && (
-                <div className={`rounded-2xl border border-amber-300 bg-gradient-to-br from-amber-100 via-yellow-200 to-orange-100 px-4 py-3 text-center text-amber-950 shadow-sm dark:border-amber-700 dark:from-amber-950/80 dark:via-yellow-950/70 dark:to-orange-950/80 dark:text-amber-100 ${
+                <div className={`rounded-lg border border-amber-300 bg-amber-100 px-4 py-3 text-center text-amber-950 shadow-sm dark:border-amber-700 dark:bg-amber-950/80 dark:text-amber-100 ${
                   isVocabulary ? "sm:col-start-3 sm:row-start-1" : ""
                 }`}>
                   <p className="flex items-center justify-center gap-2 text-base font-bold italic leading-6">
@@ -287,7 +287,7 @@ export function SentencePracticeCard({
       )}
 
       {sentence.helperText?.trim() && (
-        <aside className="mx-auto mt-4 max-w-xl rounded-xl border border-violet-200 bg-violet-50/70 px-4 py-3 text-left text-violet-950 dark:border-violet-800 dark:bg-violet-950/35 dark:text-violet-100">
+        <aside className="mx-auto mt-4 max-w-xl rounded-lg border border-[#b7d8d4] bg-[#eef8f6] px-4 py-3 text-left text-[#173b3a] dark:border-violet-800 dark:bg-violet-950/35 dark:text-violet-100">
           <div className="flex items-start gap-2.5">
             <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-violet-100/80 text-violet-700 dark:bg-violet-900/80 dark:text-violet-300">
               <Info className="size-4" aria-hidden="true" />
