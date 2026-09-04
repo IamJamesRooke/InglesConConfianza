@@ -13,6 +13,7 @@ This timeline tells the story of how Ingles Con Confianza developed from a teach
 | August 19-20 | Lesson Builder and Practice became usable product workflows, revealing the teaching-methodology and data requirements from real lessons. |
 | August 21 | PostgreSQL became the canonical curriculum store, with review, role classification, editing, tests, and immutable snapshots. |
 | August 23 | Every remaining curriculum source pillar was captured, normalized where practical, verified, and retired from the filesystem. |
+| September 4 | The learner experience became a distinct customer-facing course with local progress, while every authoring surface moved under `/admin`. |
 | Next | Curate the database aggressively, then build and validate the first production course module. |
 
 ## July 27: Start with the teaching knowledge
@@ -227,6 +228,14 @@ This completed the transition from migration tooling to curation tooling. Lint, 
 A full promote/demote pass sorted every concept into a defensible role tier, the corrupted sentence-shaped records were normalized into the constructions they illustrated, and a `trash` role was adopted as a staging tier so deletion candidates can be parked, filtered, and bulk-removed without losing anything.
 
 With direct manifest-driven curation working well, the `ReviewCandidate` pipeline was removed entirely: the `review_batches`, `review_candidates`, and `review_candidate_collections` tables and their enums, the `/curriculum/review` inbox and its API route, the import, preflight, approve, and migrate scripts, and the `curriculum-review.json` snapshot. Curation now edits `curriculum_concepts` directly from reviewed TSV manifests recorded under `docs/curation/`, and `trash` is the safety net that the review queue used to provide.
+
+## September 4: Separate the learner product from the workshop
+
+The application gained a deliberate public product boundary. Curriculum, Lesson Builder, module authoring, and their APIs moved under `/admin`, with no public navigation into those tools. The learner-facing application now consists only of a guided course home and focused lesson practice.
+
+The course home presents one clear next action, selectable modules, lesson availability, and progress stored anonymously in the browser. Unfinished lessons appear as upcoming rather than opening an empty exercise. Practice now returns to the learner home on exit, rejects missing or unavailable lesson links, celebrates the useful English a learner has just produced, and offers the next available lesson immediately.
+
+Commits `c3839331`, `7505c693`, `70f5e293`, and `9ea9e764` record the route boundary, public identity, guided course home, and polished lesson journey. The MVP deliberately adds no accounts, authentication, or learner database.
 
 ## The next chapter
 

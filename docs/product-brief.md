@@ -62,9 +62,10 @@ Raw migrated source documents remain immutable PostgreSQL provenance. They prote
 
 ## Current product surfaces
 
-- Curriculum provides bilingual search, exact role and collection filters, pagination, inline editing, role changes, collection editing, bulk selection, and deletion. Curation is applied directly, in bounded batches, from reviewed manifests; concepts headed for removal are parked in the `trash` role and bulk-deleted after a filtered second look.
-- Lesson Builder supports handcrafted explanations and sentence practice with accepted alternatives, hints, feedback, validation, reordering, duplication, previews, and JSON persistence.
-- Practice runs the authored lesson model with immediate answer recognition, help, feedback, and lesson navigation.
+- The learner home at `/` presents the next available lesson, device-local progress, module selection, completion states, and upcoming lessons without exposing authoring concepts.
+- Practice is entered through a specific lesson and runs the authored lesson model with immediate answer recognition, help, feedback, lesson navigation, a confidence-building completion, and a direct handoff to the next lesson.
+- All internal tools live under `/admin/*`. Curriculum provides bilingual search, exact role and collection filters, pagination, inline editing, role changes, collection editing, bulk selection, and deletion. Lesson Builder supports handcrafted explanations and sentence practice with accepted alternatives, hints, feedback, validation, reordering, duplication, previews, and JSON persistence.
+- The MVP has no learner accounts or authentication. Anonymous lesson progress is stored only in the learner's browser and does not enter the curriculum or lesson stores.
 
 ## Next product milestone: Module 1
 
