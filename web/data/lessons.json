@@ -2,8 +2,30 @@
   "version": 2,
   "modules": [
     {
+      "id": "module_demo_onboarding",
+      "name": "Conoce tu primera conversación",
+      "kind": "onboarding",
+      "keyConcepts": [
+        {
+          "id": "module_concept_demo_onboarding_greeting",
+          "conceptId": "4uwg2evrwf",
+          "label": "saludar a [alguien]"
+        },
+        {
+          "id": "module_concept_demo_onboarding_name",
+          "conceptId": "ifurkwv06w",
+          "label": "me llamo [nombre]"
+        }
+      ],
+      "lessonIds": [
+        "lesson_demo_onboarding_hello_james",
+        "lesson_demo_onboarding_my_name",
+        "lesson_demo_onboarding_meet_ana"
+      ]
+    },
+    {
       "id": "module_e4d56384-dde5-46ba-a5cf-21509fd17d3f",
-      "name": "Fundamentals I",
+      "name": "Fundamentos I",
       "keyConcepts": [
         {
           "id": "lesson_concept_0411adb8-0b17-4555-b4af-cad5193dea5a",
@@ -31,18 +53,329 @@
         "lesson_ee8421b5-1d47-4d7e-8f87-3f06ab28b351",
         "lesson_b4a17caa-1e40-45b7-85ad-58cf0875179b",
         "lesson_5f12ea29-dbf2-4676-82a7-edd2730574ef"
-      ]
+      ],
+      "kind": "course"
     },
     {
       "id": "module_592458a6-7219-4c06-804e-1eeae7ce6d4a",
-      "name": "Module 2: Full Infinitive",
-      "keyConcepts": [],
+      "name": "Infinitivos que abren posibilidades",
+      "kind": "course",
+      "keyConcepts": [
+        {
+          "id": "module_concept_demo_infinitive_need",
+          "conceptId": "1eotkqfnjg",
+          "label": "necesitar [hacer algo]"
+        },
+        {
+          "id": "module_concept_demo_infinitive_work",
+          "conceptId": "s2wih9tkp4",
+          "label": "trabajar"
+        },
+        {
+          "id": "module_concept_demo_infinitive_study",
+          "conceptId": "z0t602y5w0",
+          "label": "estudiar"
+        },
+        {
+          "id": "module_concept_demo_infinitive_learn",
+          "conceptId": null,
+          "label": "aprender"
+        }
+      ],
       "lessonIds": [
-        "lesson_bdacade3-8ad6-4217-8c47-d5907d6122af"
+        "lesson_bdacade3-8ad6-4217-8c47-d5907d6122af",
+        "lesson_demo_infinitive_work_today",
+        "lesson_demo_infinitive_study_home",
+        "lesson_demo_infinitive_learn_english",
+        "lesson_demo_infinitive_learn_to_speak"
+      ]
+    },
+    {
+      "id": "module_demo_everyday_plans",
+      "name": "Planes de todos los días",
+      "kind": "course",
+      "keyConcepts": [
+        {
+          "id": "module_concept_demo_plans_going",
+          "conceptId": "rh4yfb08hn",
+          "label": "voy a [hacer algo]"
+        },
+        {
+          "id": "module_concept_demo_plans_negative",
+          "conceptId": null,
+          "label": "no voy a [hacer algo]"
+        },
+        {
+          "id": "module_concept_demo_plans_question",
+          "conceptId": "ihsw7a0ggn",
+          "label": "¿vas a [hacer algo]?"
+        },
+        {
+          "id": "module_concept_demo_plans_tomorrow",
+          "conceptId": "uklvuftocv",
+          "label": "mañana"
+        }
+      ],
+      "lessonIds": [
+        "lesson_demo_plans_speak",
+        "lesson_demo_plans_work_today",
+        "lesson_demo_plans_study_tomorrow",
+        "lesson_demo_plans_not_work",
+        "lesson_demo_plans_question"
       ]
     }
   ],
   "lessons": [
+    {
+      "id": "lesson_demo_onboarding_hello_james",
+      "name": "Hello James!",
+      "concepts": [
+        {
+          "id": "lesson_concept_demo_onboarding_hello_james_1",
+          "conceptId": "4uwg2evrwf",
+          "label": "saludar a [alguien]"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "block_demo_onboarding_hello_james_1",
+          "type": "explanation",
+          "contentMarkdown": "James acaba de entrar. Vamos a saludarlo en inglés.\n\n==hola== es ==hello=="
+        },
+        {
+          "id": "block_demo_onboarding_hello_james_2",
+          "type": "sentence",
+          "promptLabel": "Tu primer paso",
+          "promptText": "Escribe la palabra en inglés.",
+          "helperText": "",
+          "answerFeedback": "¡Eso es! Ya diste tu primer saludo en inglés.",
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_onboarding_hello_james_1",
+              "spanish": "hola",
+              "callout": "La bombilla te muestra la respuesta y luego te deja intentarlo otra vez.",
+              "acceptedAnswers": [
+                "hello"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_demo_onboarding_hello_james_3",
+          "type": "explanation",
+          "contentMarkdown": "Los nombres no cambian. ==James== también es ==James== en inglés."
+        },
+        {
+          "id": "block_demo_onboarding_hello_james_4",
+          "type": "sentence",
+          "promptLabel": "Ahora salúdalo",
+          "promptText": "Completa los dos bloques para formar la frase.",
+          "helperText": "",
+          "answerFeedback": "¡Hello James! Acabas de completar una frase real.",
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_onboarding_hello_james_2",
+              "spanish": "Hola",
+              "callout": "Al inicio de una frase usamos mayúscula.",
+              "acceptedAnswers": [
+                "Hello"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_onboarding_hello_james_3",
+              "spanish": "James!",
+              "callout": null,
+              "acceptedAnswers": [
+                "James!"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson_demo_onboarding_my_name",
+      "name": "My name is James.",
+      "concepts": [
+        {
+          "id": "lesson_concept_demo_onboarding_my_name_1",
+          "conceptId": "ifurkwv06w",
+          "label": "me llamo [nombre]"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "block_demo_onboarding_my_name_1",
+          "type": "explanation",
+          "contentMarkdown": "Ahora James se presenta. ==mi nombre es== es ==my name is=="
+        },
+        {
+          "id": "block_demo_onboarding_my_name_2",
+          "type": "sentence",
+          "promptLabel": "Pruébalo",
+          "promptText": "No hay penalización por usar la bombilla cuando la necesites.",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_onboarding_my_name_1",
+              "spanish": "mi nombre es",
+              "callout": null,
+              "acceptedAnswers": [
+                "my name is"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_demo_onboarding_my_name_3",
+          "type": "explanation",
+          "contentMarkdown": "Al comenzar la frase, escribimos ==My== con mayúscula."
+        },
+        {
+          "id": "block_demo_onboarding_my_name_4",
+          "type": "sentence",
+          "promptLabel": "James se presenta",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": "Perfecto. Ya sabes saludar y decir un nombre.",
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_onboarding_my_name_2",
+              "spanish": "Mi nombre es",
+              "callout": null,
+              "acceptedAnswers": [
+                "My name is"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_onboarding_my_name_3",
+              "spanish": "James.",
+              "callout": "El punto cierra la frase.",
+              "acceptedAnswers": [
+                "James."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson_demo_onboarding_meet_ana",
+      "name": "Hello James, my name is Ana.",
+      "concepts": [
+        {
+          "id": "lesson_concept_demo_onboarding_meet_ana_1",
+          "conceptId": "4uwg2evrwf",
+          "label": "saludar a [alguien]"
+        },
+        {
+          "id": "lesson_concept_demo_onboarding_meet_ana_2",
+          "conceptId": "ifurkwv06w",
+          "label": "me llamo [nombre]"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "block_demo_onboarding_meet_ana_1",
+          "type": "explanation",
+          "contentMarkdown": "Ana responde. Primero recuperemos las dos ideas que ya practicaste."
+        },
+        {
+          "id": "block_demo_onboarding_meet_ana_2",
+          "type": "sentence",
+          "promptLabel": "Saluda",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_onboarding_meet_ana_1",
+              "spanish": "Hola James.",
+              "callout": null,
+              "acceptedAnswers": [
+                "Hello James."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_demo_onboarding_meet_ana_3",
+          "type": "sentence",
+          "promptLabel": "Preséntate",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_onboarding_meet_ana_2",
+              "spanish": "Mi nombre es Ana.",
+              "callout": null,
+              "acceptedAnswers": [
+                "My name is Ana."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_demo_onboarding_meet_ana_4",
+          "type": "explanation",
+          "contentMarkdown": "Podemos unir las ideas con una coma: ==Hello James, my name is Ana.=="
+        },
+        {
+          "id": "block_demo_onboarding_meet_ana_5",
+          "type": "sentence",
+          "promptLabel": "La conversación completa",
+          "promptText": "Avanza bloque por bloque. Cada respuesta correcta abre paso a la siguiente.",
+          "helperText": "",
+          "answerFeedback": "¡Listo! Ya conoces el ritmo: una idea pequeña, práctica y una frase útil.",
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_onboarding_meet_ana_3",
+              "spanish": "Hola James,",
+              "callout": null,
+              "acceptedAnswers": [
+                "Hello James,"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_onboarding_meet_ana_4",
+              "spanish": "mi nombre es",
+              "callout": null,
+              "acceptedAnswers": [
+                "my name is"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_onboarding_meet_ana_5",
+              "spanish": "Ana.",
+              "callout": null,
+              "acceptedAnswers": [
+                "Ana."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "lesson_4c3414c0-3748-440c-8bfc-4080081caed2",
       "name": "I speak English very well.",
@@ -890,20 +1223,202 @@
     {
       "id": "lesson_5f12ea29-dbf2-4676-82a7-edd2730574ef",
       "name": "I'm going to be able to speak English very well.",
-      "concepts": [],
-      "blocks": []
+      "concepts": [
+        {
+          "id": "lesson_concept_demo_fundamentals_going_able_1",
+          "conceptId": "rh4yfb08hn",
+          "label": "voy a [hacer algo]"
+        },
+        {
+          "id": "lesson_concept_demo_fundamentals_going_able_2",
+          "conceptId": "mxguwwzrxk",
+          "label": "poder [hacer algo]"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "block_demo_fundamentals_going_able_1",
+          "type": "explanation",
+          "contentMarkdown": "==voy a== es ==I'm going to==. La forma completa es **I am**, pero al hablar es común decir **I'm**."
+        },
+        {
+          "id": "block_demo_fundamentals_going_able_2",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_fundamentals_going_able_1",
+              "spanish": "voy a",
+              "callout": "I'm suena como ‘aim’.",
+              "acceptedAnswers": [
+                "I'm going to"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_demo_fundamentals_going_able_3",
+          "type": "explanation",
+          "contentMarkdown": "Después de ==going to== usamos la forma completa de la acción: ==poder== es ==to be able==."
+        },
+        {
+          "id": "block_demo_fundamentals_going_able_4",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "Aquí **going to** ya aporta el **to**. Por eso decimos **be able**, no **to be able**.",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_fundamentals_going_able_2",
+              "spanish": "Voy a",
+              "callout": null,
+              "acceptedAnswers": [
+                "I'm going to"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_fundamentals_going_able_3",
+              "spanish": "poder",
+              "callout": null,
+              "acceptedAnswers": [
+                "be able"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_demo_fundamentals_going_able_5",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_fundamentals_going_able_4",
+              "spanish": "Voy a poder",
+              "callout": null,
+              "acceptedAnswers": [
+                "I'm going to be able"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_fundamentals_going_able_5",
+              "spanish": "hablar inglés.",
+              "callout": null,
+              "acceptedAnswers": [
+                "to speak English."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_demo_fundamentals_going_able_6",
+          "type": "explanation",
+          "contentMarkdown": "Recuerda: ==muy bien== es ==very well==."
+        },
+        {
+          "id": "block_demo_fundamentals_going_able_7",
+          "type": "sentence",
+          "promptLabel": "Tu frase más ambiciosa hasta ahora",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": "Muy bien. Construiste una idea larga a partir de piezas que ya conoces.",
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_fundamentals_going_able_6",
+              "spanish": "Voy a",
+              "callout": null,
+              "acceptedAnswers": [
+                "I'm going to"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_fundamentals_going_able_7",
+              "spanish": "poder",
+              "callout": null,
+              "acceptedAnswers": [
+                "be able"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_fundamentals_going_able_8",
+              "spanish": "hablar",
+              "callout": null,
+              "acceptedAnswers": [
+                "to speak"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_fundamentals_going_able_9",
+              "spanish": "inglés",
+              "callout": null,
+              "acceptedAnswers": [
+                "English"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_fundamentals_going_able_10",
+              "spanish": "muy",
+              "callout": null,
+              "acceptedAnswers": [
+                "very"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_fundamentals_going_able_11",
+              "spanish": "bien.",
+              "callout": null,
+              "acceptedAnswers": [
+                "well."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "lesson_bdacade3-8ad6-4217-8c47-d5907d6122af",
-      "name": "I speak English very well.",
+      "name": "I need to speak English.",
+      "concepts": [
+        {
+          "id": "lesson_concept_demo_infinitive_need_speak_1",
+          "conceptId": "1eotkqfnjg",
+          "label": "necesitar [hacer algo]"
+        },
+        {
+          "id": "lesson_concept_demo_infinitive_need_speak_2",
+          "conceptId": "4c0v1mewmv",
+          "label": "hablar"
+        }
+      ],
       "blocks": [
         {
-          "id": "block_d609412a-b2f4-4eb1-b46b-7cf7855867f5",
+          "id": "block_demo_infinitive_need_speak_1",
           "type": "explanation",
-          "contentMarkdown": "==yo hablo== es ==I speak=="
+          "contentMarkdown": "==necesito== es ==I need=="
         },
         {
-          "id": "block_29200d87-fe8f-469f-9afe-cfa884c90896",
+          "id": "block_demo_infinitive_need_speak_2",
           "type": "sentence",
           "promptLabel": "",
           "promptText": "",
@@ -912,23 +1427,23 @@
           "conceptLinks": [],
           "languageBlocks": [
             {
-              "id": "lang_1a4d2034-1ce4-452e-b5b6-62e5ef0494a3",
-              "spanish": "yo hablo",
+              "id": "lang_demo_infinitive_need_speak_1",
+              "spanish": "necesito",
               "callout": null,
               "acceptedAnswers": [
-                "I speak"
+                "I need"
               ],
               "conceptLinks": []
             }
           ]
         },
         {
-          "id": "block_372ac0b0-ca3f-4405-8b47-c811154736d5",
+          "id": "block_demo_infinitive_need_speak_3",
           "type": "explanation",
-          "contentMarkdown": "==inglés== es ==English=="
+          "contentMarkdown": "Cuando una acción sigue a **need**, usamos su forma completa: ==hablar== es ==to speak==."
         },
         {
-          "id": "block_03143853-5ac5-4f2b-bcf3-437b338ce98b",
+          "id": "block_demo_infinitive_need_speak_4",
           "type": "sentence",
           "promptLabel": "",
           "promptText": "",
@@ -937,45 +1452,54 @@
           "conceptLinks": [],
           "languageBlocks": [
             {
-              "id": "lang_a4e0f141-e241-441f-b347-0d48adf385bc",
-              "spanish": "yo hablo",
+              "id": "lang_demo_infinitive_need_speak_2",
+              "spanish": "Necesito",
               "callout": null,
               "acceptedAnswers": [
-                "I speak"
+                "I need"
               ],
               "conceptLinks": []
             },
             {
-              "id": "lang_21fc594d-fc77-43a2-870f-ceb9ff8e2bd5",
-              "spanish": "inglés.",
-              "callout": "'E' en mayúscula; punto al final.",
+              "id": "lang_demo_infinitive_need_speak_3",
+              "spanish": "hablar",
+              "callout": null,
               "acceptedAnswers": [
-                "English."
+                "to speak"
               ],
               "conceptLinks": []
             }
           ]
         },
         {
-          "id": "block_da880c65-1f81-4489-b1d7-cfef9874665b",
+          "id": "block_demo_infinitive_need_speak_5",
           "type": "sentence",
-          "promptLabel": "",
+          "promptLabel": "Di una necesidad real",
           "promptText": "",
           "helperText": "",
-          "answerFeedback": null,
+          "answerFeedback": "Excelente. **Need + to + acción** ya está trabajando para ti.",
           "conceptLinks": [],
           "languageBlocks": [
             {
-              "id": "lang_29a12566-f19d-4cea-b45d-e52399fbd4e1",
-              "spanish": "Hablo",
+              "id": "lang_demo_infinitive_need_speak_4",
+              "spanish": "Necesito",
               "callout": null,
               "acceptedAnswers": [
-                "I speak"
+                "I need"
               ],
               "conceptLinks": []
             },
             {
-              "id": "lang_c09af4f6-541e-4245-8dfa-5fb07a70bf0b",
+              "id": "lang_demo_infinitive_need_speak_5",
+              "spanish": "hablar",
+              "callout": null,
+              "acceptedAnswers": [
+                "to speak"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_infinitive_need_speak_6",
               "spanish": "inglés.",
               "callout": null,
               "acceptedAnswers": [
@@ -985,8 +1509,1143 @@
             }
           ]
         }
+      ]
+    },
+    {
+      "id": "lesson_demo_infinitive_work_today",
+      "name": "I want to work today.",
+      "concepts": [
+        {
+          "id": "lesson_concept_demo_infinitive_work_today_1",
+          "conceptId": "df1fa2p3xy",
+          "label": "querer [hacer algo]"
+        },
+        {
+          "id": "lesson_concept_demo_infinitive_work_today_2",
+          "conceptId": "s2wih9tkp4",
+          "label": "trabajar"
+        },
+        {
+          "id": "lesson_concept_demo_infinitive_work_today_3",
+          "conceptId": "rf7wttxz5x",
+          "label": "hoy"
+        }
       ],
-      "concepts": []
+      "blocks": [
+        {
+          "id": "block_demo_infinitive_work_today_1",
+          "type": "explanation",
+          "contentMarkdown": "Ya conoces ==quiero== como ==I want==. Ahora añade una acción nueva."
+        },
+        {
+          "id": "block_demo_infinitive_work_today_2",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_infinitive_work_today_1",
+              "spanish": "quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_demo_infinitive_work_today_3",
+          "type": "explanation",
+          "contentMarkdown": "==trabajar== es ==to work=="
+        },
+        {
+          "id": "block_demo_infinitive_work_today_4",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_infinitive_work_today_2",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_infinitive_work_today_3",
+              "spanish": "trabajar",
+              "callout": null,
+              "acceptedAnswers": [
+                "to work"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_demo_infinitive_work_today_5",
+          "type": "explanation",
+          "contentMarkdown": "==hoy== es ==today=="
+        },
+        {
+          "id": "block_demo_infinitive_work_today_6",
+          "type": "sentence",
+          "promptLabel": "Ponlo en tu día",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": "Bien hecho. Cambiaste la acción sin cambiar la estructura.",
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_infinitive_work_today_4",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_infinitive_work_today_5",
+              "spanish": "trabajar",
+              "callout": null,
+              "acceptedAnswers": [
+                "to work"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_infinitive_work_today_6",
+              "spanish": "hoy.",
+              "callout": null,
+              "acceptedAnswers": [
+                "today."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson_demo_infinitive_study_home",
+      "name": "I need to study at home.",
+      "concepts": [
+        {
+          "id": "lesson_concept_demo_infinitive_study_home_1",
+          "conceptId": "1eotkqfnjg",
+          "label": "necesitar [hacer algo]"
+        },
+        {
+          "id": "lesson_concept_demo_infinitive_study_home_2",
+          "conceptId": "z0t602y5w0",
+          "label": "estudiar"
+        },
+        {
+          "id": "lesson_concept_demo_infinitive_study_home_3",
+          "conceptId": "3z3dcdm7iy",
+          "label": "en casa"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "block_demo_infinitive_study_home_1",
+          "type": "explanation",
+          "contentMarkdown": "Cambiemos la acción otra vez: ==estudiar== es ==to study==."
+        },
+        {
+          "id": "block_demo_infinitive_study_home_2",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_infinitive_study_home_1",
+              "spanish": "estudiar",
+              "callout": null,
+              "acceptedAnswers": [
+                "to study"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_demo_infinitive_study_home_3",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_infinitive_study_home_2",
+              "spanish": "Necesito",
+              "callout": null,
+              "acceptedAnswers": [
+                "I need"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_infinitive_study_home_3",
+              "spanish": "estudiar",
+              "callout": null,
+              "acceptedAnswers": [
+                "to study"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_demo_infinitive_study_home_4",
+          "type": "explanation",
+          "contentMarkdown": "==en casa== es ==at home==. En inglés decimos **at**, no una traducción literal de *en*."
+        },
+        {
+          "id": "block_demo_infinitive_study_home_5",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_infinitive_study_home_4",
+              "spanish": "en casa",
+              "callout": null,
+              "acceptedAnswers": [
+                "at home"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_demo_infinitive_study_home_6",
+          "type": "sentence",
+          "promptLabel": "Una frase para tu rutina",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": "Perfecto. La estructura sigue estable mientras agregas información útil.",
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_infinitive_study_home_5",
+              "spanish": "Necesito",
+              "callout": null,
+              "acceptedAnswers": [
+                "I need"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_infinitive_study_home_6",
+              "spanish": "estudiar",
+              "callout": null,
+              "acceptedAnswers": [
+                "to study"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_infinitive_study_home_7",
+              "spanish": "en casa.",
+              "callout": null,
+              "acceptedAnswers": [
+                "at home."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson_demo_infinitive_learn_english",
+      "name": "I want to learn English.",
+      "concepts": [
+        {
+          "id": "lesson_concept_demo_infinitive_learn_english_1",
+          "conceptId": "df1fa2p3xy",
+          "label": "querer [hacer algo]"
+        },
+        {
+          "id": "lesson_concept_demo_infinitive_learn_english_2",
+          "conceptId": null,
+          "label": "aprender"
+        },
+        {
+          "id": "lesson_concept_demo_infinitive_learn_english_3",
+          "conceptId": "9rswx58qx1",
+          "label": "inglés"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "block_demo_infinitive_learn_english_1",
+          "type": "explanation",
+          "contentMarkdown": "==aprender== es ==to learn=="
+        },
+        {
+          "id": "block_demo_infinitive_learn_english_2",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_infinitive_learn_english_1",
+              "spanish": "aprender",
+              "callout": "learn suena parecido a ‘lern’.",
+              "acceptedAnswers": [
+                "to learn"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_demo_infinitive_learn_english_3",
+          "type": "explanation",
+          "contentMarkdown": "Pon **learn** después de una intención que ya conoces."
+        },
+        {
+          "id": "block_demo_infinitive_learn_english_4",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_infinitive_learn_english_2",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_infinitive_learn_english_3",
+              "spanish": "aprender",
+              "callout": null,
+              "acceptedAnswers": [
+                "to learn"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_demo_infinitive_learn_english_5",
+          "type": "sentence",
+          "promptLabel": "Di tu objetivo",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": "Eso es una frase que puedes usar para explicar por qué estás aquí.",
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_infinitive_learn_english_4",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_infinitive_learn_english_5",
+              "spanish": "aprender",
+              "callout": null,
+              "acceptedAnswers": [
+                "to learn"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_infinitive_learn_english_6",
+              "spanish": "inglés.",
+              "callout": null,
+              "acceptedAnswers": [
+                "English."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson_demo_infinitive_learn_to_speak",
+      "name": "I want to learn to speak English.",
+      "concepts": [
+        {
+          "id": "lesson_concept_demo_infinitive_learn_to_speak_1",
+          "conceptId": "df1fa2p3xy",
+          "label": "querer [hacer algo]"
+        },
+        {
+          "id": "lesson_concept_demo_infinitive_learn_to_speak_2",
+          "conceptId": null,
+          "label": "aprender"
+        },
+        {
+          "id": "lesson_concept_demo_infinitive_learn_to_speak_3",
+          "conceptId": "4c0v1mewmv",
+          "label": "hablar"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "block_demo_infinitive_learn_to_speak_1",
+          "type": "explanation",
+          "contentMarkdown": "Podemos encadenar acciones completas: ==aprender a hablar== es ==to learn to speak==."
+        },
+        {
+          "id": "block_demo_infinitive_learn_to_speak_2",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_infinitive_learn_to_speak_1",
+              "spanish": "aprender",
+              "callout": null,
+              "acceptedAnswers": [
+                "to learn"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_infinitive_learn_to_speak_2",
+              "spanish": "a hablar",
+              "callout": null,
+              "acceptedAnswers": [
+                "to speak"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_demo_infinitive_learn_to_speak_3",
+          "type": "explanation",
+          "contentMarkdown": "La primera idea dice lo que quieres. Las siguientes dicen qué quieres lograr."
+        },
+        {
+          "id": "block_demo_infinitive_learn_to_speak_4",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_infinitive_learn_to_speak_3",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_infinitive_learn_to_speak_4",
+              "spanish": "aprender",
+              "callout": null,
+              "acceptedAnswers": [
+                "to learn"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_infinitive_learn_to_speak_5",
+              "spanish": "a hablar",
+              "callout": null,
+              "acceptedAnswers": [
+                "to speak"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_demo_infinitive_learn_to_speak_5",
+          "type": "sentence",
+          "promptLabel": "Cierra el módulo con tu meta",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": "¡Excelente! Ya puedes combinar intención, aprendizaje y acción.",
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_infinitive_learn_to_speak_6",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_infinitive_learn_to_speak_7",
+              "spanish": "aprender",
+              "callout": null,
+              "acceptedAnswers": [
+                "to learn"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_infinitive_learn_to_speak_8",
+              "spanish": "a hablar",
+              "callout": null,
+              "acceptedAnswers": [
+                "to speak"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_infinitive_learn_to_speak_9",
+              "spanish": "inglés.",
+              "callout": null,
+              "acceptedAnswers": [
+                "English."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson_demo_plans_speak",
+      "name": "I'm going to speak English.",
+      "concepts": [
+        {
+          "id": "lesson_concept_demo_plans_speak_1",
+          "conceptId": "rh4yfb08hn",
+          "label": "voy a [hacer algo]"
+        },
+        {
+          "id": "lesson_concept_demo_plans_speak_2",
+          "conceptId": "4c0v1mewmv",
+          "label": "hablar"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "block_demo_plans_speak_1",
+          "type": "explanation",
+          "contentMarkdown": "Para un plan, ==voy a== es ==I'm going to==."
+        },
+        {
+          "id": "block_demo_plans_speak_2",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_plans_speak_1",
+              "spanish": "voy a",
+              "callout": "I'm suena como ‘aim’.",
+              "acceptedAnswers": [
+                "I'm going to"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_demo_plans_speak_3",
+          "type": "explanation",
+          "contentMarkdown": "Después de **going to**, la acción pierde su primer **to**: decimos ==going to speak==."
+        },
+        {
+          "id": "block_demo_plans_speak_4",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_plans_speak_2",
+              "spanish": "Voy a",
+              "callout": null,
+              "acceptedAnswers": [
+                "I'm going to"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_plans_speak_3",
+              "spanish": "hablar",
+              "callout": null,
+              "acceptedAnswers": [
+                "speak"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_demo_plans_speak_5",
+          "type": "sentence",
+          "promptLabel": "Haz un plan",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": "Muy bien. Ya convertiste una acción conocida en un plan.",
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_plans_speak_4",
+              "spanish": "Voy a",
+              "callout": null,
+              "acceptedAnswers": [
+                "I'm going to"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_plans_speak_5",
+              "spanish": "hablar",
+              "callout": null,
+              "acceptedAnswers": [
+                "speak"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_plans_speak_6",
+              "spanish": "inglés.",
+              "callout": null,
+              "acceptedAnswers": [
+                "English."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson_demo_plans_work_today",
+      "name": "I'm going to work today.",
+      "concepts": [
+        {
+          "id": "lesson_concept_demo_plans_work_today_1",
+          "conceptId": "rh4yfb08hn",
+          "label": "voy a [hacer algo]"
+        },
+        {
+          "id": "lesson_concept_demo_plans_work_today_2",
+          "conceptId": "s2wih9tkp4",
+          "label": "trabajar"
+        },
+        {
+          "id": "lesson_concept_demo_plans_work_today_3",
+          "conceptId": "rf7wttxz5x",
+          "label": "hoy"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "block_demo_plans_work_today_1",
+          "type": "explanation",
+          "contentMarkdown": "Recupera una acción del módulo anterior: ==trabajar== es ==to work==."
+        },
+        {
+          "id": "block_demo_plans_work_today_2",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_plans_work_today_1",
+              "spanish": "trabajar",
+              "callout": null,
+              "acceptedAnswers": [
+                "to work"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_demo_plans_work_today_3",
+          "type": "explanation",
+          "contentMarkdown": "En un plan quitamos ese primer **to**: ==voy a trabajar== es ==I'm going to work==."
+        },
+        {
+          "id": "block_demo_plans_work_today_4",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_plans_work_today_2",
+              "spanish": "Voy a",
+              "callout": null,
+              "acceptedAnswers": [
+                "I'm going to"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_plans_work_today_3",
+              "spanish": "trabajar",
+              "callout": null,
+              "acceptedAnswers": [
+                "work"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_demo_plans_work_today_5",
+          "type": "sentence",
+          "promptLabel": "Tu plan para hoy",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": "Perfecto. La estructura funciona con cualquier acción.",
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_plans_work_today_4",
+              "spanish": "Voy a",
+              "callout": null,
+              "acceptedAnswers": [
+                "I'm going to"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_plans_work_today_5",
+              "spanish": "trabajar",
+              "callout": null,
+              "acceptedAnswers": [
+                "work"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_plans_work_today_6",
+              "spanish": "hoy.",
+              "callout": null,
+              "acceptedAnswers": [
+                "today."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson_demo_plans_study_tomorrow",
+      "name": "I'm going to study at home tomorrow.",
+      "concepts": [
+        {
+          "id": "lesson_concept_demo_plans_study_tomorrow_1",
+          "conceptId": "rh4yfb08hn",
+          "label": "voy a [hacer algo]"
+        },
+        {
+          "id": "lesson_concept_demo_plans_study_tomorrow_2",
+          "conceptId": "z0t602y5w0",
+          "label": "estudiar"
+        },
+        {
+          "id": "lesson_concept_demo_plans_study_tomorrow_3",
+          "conceptId": "3z3dcdm7iy",
+          "label": "en casa"
+        },
+        {
+          "id": "lesson_concept_demo_plans_study_tomorrow_4",
+          "conceptId": "uklvuftocv",
+          "label": "mañana"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "block_demo_plans_study_tomorrow_1",
+          "type": "explanation",
+          "contentMarkdown": "==mañana== es ==tomorrow=="
+        },
+        {
+          "id": "block_demo_plans_study_tomorrow_2",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_plans_study_tomorrow_1",
+              "spanish": "mañana",
+              "callout": null,
+              "acceptedAnswers": [
+                "tomorrow"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_demo_plans_study_tomorrow_3",
+          "type": "explanation",
+          "contentMarkdown": "Reutiliza ==study at home== y coloca **tomorrow** al final."
+        },
+        {
+          "id": "block_demo_plans_study_tomorrow_4",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_plans_study_tomorrow_2",
+              "spanish": "Voy a",
+              "callout": null,
+              "acceptedAnswers": [
+                "I'm going to"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_plans_study_tomorrow_3",
+              "spanish": "estudiar",
+              "callout": null,
+              "acceptedAnswers": [
+                "study"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_plans_study_tomorrow_4",
+              "spanish": "en casa",
+              "callout": null,
+              "acceptedAnswers": [
+                "at home"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_demo_plans_study_tomorrow_5",
+          "type": "sentence",
+          "promptLabel": "Haz un plan para mañana",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": "Excelente. Ya puedes decir qué harás, dónde y cuándo.",
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_plans_study_tomorrow_5",
+              "spanish": "Voy a",
+              "callout": null,
+              "acceptedAnswers": [
+                "I'm going to"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_plans_study_tomorrow_6",
+              "spanish": "estudiar",
+              "callout": null,
+              "acceptedAnswers": [
+                "study"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_plans_study_tomorrow_7",
+              "spanish": "en casa",
+              "callout": null,
+              "acceptedAnswers": [
+                "at home"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_plans_study_tomorrow_8",
+              "spanish": "mañana.",
+              "callout": null,
+              "acceptedAnswers": [
+                "tomorrow."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson_demo_plans_not_work",
+      "name": "I'm not going to work tomorrow.",
+      "concepts": [
+        {
+          "id": "lesson_concept_demo_plans_not_work_1",
+          "conceptId": null,
+          "label": "no voy a [hacer algo]"
+        },
+        {
+          "id": "lesson_concept_demo_plans_not_work_2",
+          "conceptId": "s2wih9tkp4",
+          "label": "trabajar"
+        },
+        {
+          "id": "lesson_concept_demo_plans_not_work_3",
+          "conceptId": "uklvuftocv",
+          "label": "mañana"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "block_demo_plans_not_work_1",
+          "type": "explanation",
+          "contentMarkdown": "Para negar un plan, ponemos **not** después de **I'm**: ==no voy a== es ==I'm not going to==."
+        },
+        {
+          "id": "block_demo_plans_not_work_2",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_plans_not_work_1",
+              "spanish": "no voy a",
+              "callout": null,
+              "acceptedAnswers": [
+                "I'm not going to"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_demo_plans_not_work_3",
+          "type": "explanation",
+          "contentMarkdown": "La acción mantiene la misma forma después de **going to**."
+        },
+        {
+          "id": "block_demo_plans_not_work_4",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_plans_not_work_2",
+              "spanish": "No voy a",
+              "callout": null,
+              "acceptedAnswers": [
+                "I'm not going to"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_plans_not_work_3",
+              "spanish": "trabajar",
+              "callout": null,
+              "acceptedAnswers": [
+                "work"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_demo_plans_not_work_5",
+          "type": "sentence",
+          "promptLabel": "Cambia el plan",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": "Muy bien. Con una sola palabra convertiste el plan en una negativa.",
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_plans_not_work_4",
+              "spanish": "No voy a",
+              "callout": null,
+              "acceptedAnswers": [
+                "I'm not going to"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_plans_not_work_5",
+              "spanish": "trabajar",
+              "callout": null,
+              "acceptedAnswers": [
+                "work"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_plans_not_work_6",
+              "spanish": "mañana.",
+              "callout": null,
+              "acceptedAnswers": [
+                "tomorrow."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson_demo_plans_question",
+      "name": "Are you going to speak English with me?",
+      "concepts": [
+        {
+          "id": "lesson_concept_demo_plans_question_1",
+          "conceptId": "ihsw7a0ggn",
+          "label": "¿vas a [hacer algo]?"
+        },
+        {
+          "id": "lesson_concept_demo_plans_question_2",
+          "conceptId": "lse8dx7tet",
+          "label": "conmigo"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "block_demo_plans_question_1",
+          "type": "explanation",
+          "contentMarkdown": "Para preguntar por el plan de otra persona, ==¿vas a...?== es ==Are you going to...?=="
+        },
+        {
+          "id": "block_demo_plans_question_2",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_plans_question_1",
+              "spanish": "¿vas a...?",
+              "callout": null,
+              "acceptedAnswers": [
+                "Are you going to...?"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_demo_plans_question_3",
+          "type": "explanation",
+          "contentMarkdown": "==conmigo== es ==with me=="
+        },
+        {
+          "id": "block_demo_plans_question_4",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_plans_question_2",
+              "spanish": "conmigo",
+              "callout": null,
+              "acceptedAnswers": [
+                "with me"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_demo_plans_question_5",
+          "type": "sentence",
+          "promptLabel": "Invita a alguien a practicar",
+          "promptText": "",
+          "helperText": "La pregunta comienza con **Are**, por eso no usamos **I'm**.",
+          "answerFeedback": "¡Lo lograste! Ya puedes hablar de tus planes y preguntar por los de otra persona.",
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_demo_plans_question_3",
+              "spanish": "¿Vas a",
+              "callout": null,
+              "acceptedAnswers": [
+                "Are you going to"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_plans_question_4",
+              "spanish": "hablar inglés",
+              "callout": null,
+              "acceptedAnswers": [
+                "speak English"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_demo_plans_question_5",
+              "spanish": "conmigo?",
+              "callout": null,
+              "acceptedAnswers": [
+                "with me?"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        }
+      ]
     }
   ]
 }
