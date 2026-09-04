@@ -1,6 +1,14 @@
 "use client";
 
-import { FileText, Keyboard, Languages, Plus, Table2, X } from "lucide-react";
+import {
+  FileText,
+  Keyboard,
+  Languages,
+  Layers2,
+  Plus,
+  Table2,
+  X,
+} from "lucide-react";
 import { BuilderNav } from "@/components/lesson-builder/builder-nav";
 import { ModuleMeta } from "@/components/lesson-builder/module-meta";
 import { ModuleRail } from "@/components/lesson-builder/module-rail";
@@ -55,11 +63,13 @@ function isPracticeBlock(
 
 function ContentBlockPicker({
   onAddExplanation,
+  onAddTeachingPair,
   onAddSentence,
   onAddVocabulary,
   onClose,
 }: {
   onAddExplanation: () => void;
+  onAddTeachingPair: () => void;
   onAddSentence: () => void;
   onAddVocabulary: () => void;
   onClose: () => void;
@@ -84,7 +94,24 @@ function ContentBlockPicker({
           <X className="size-4" aria-hidden="true" />
         </button>
       </div>
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+        <button
+          type="button"
+          onClick={onAddTeachingPair}
+          className="group flex items-start gap-3 rounded-xl border border-amber-200 bg-white p-4 text-left transition hover:border-amber-400 hover:shadow-sm focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-100"
+        >
+          <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-amber-50 text-amber-700 transition group-hover:bg-amber-100">
+            <Layers2 className="size-5" aria-hidden="true" />
+          </span>
+          <span>
+            <span className="block font-semibold text-stone-900">
+              Teaching pair
+            </span>
+            <span className="mt-1 block text-sm leading-5 text-stone-500">
+              Add an explanation followed by practice.
+            </span>
+          </span>
+        </button>
         <button
           type="button"
           onClick={onAddExplanation}
@@ -742,6 +769,30 @@ export default function LessonBuilderPage() {
     lessons,
   ]);
 
+  const duplicateLesson = useCallback((lessonId: string) => {
+    const duplicateId = createId("lesson");
+    dispatch({ type: "DUPLICATE_LESSON", lessonId, duplicateId });
+    setCourseModules((current) =>
+      current.map((module) => {
+        const sourceIndex = module.lessonIds.indexOf(lessonId);
+        if (sourceIndex === -1) return module;
+        return {
+          ...module,
+          lessonIds: module.lessonIds.toSpliced(sourceIndex + 1, 0, duplicateId),
+        };
+      }),
+    );
+    setCollapsedLessons(
+      new Set(lessons.map((lesson) => lesson.id)),
+    );
+    setFullyCollapsedLessons((current) => {
+      const next = new Set(current);
+      next.delete(duplicateId);
+      return next;
+    });
+    setActiveLessonId(duplicateId);
+  }, [lessons]);
+
   const addExplanationBlock = useCallback(
     (lessonId: string, insertionIndex: number) => {
       const blockId = createId("block");
@@ -819,6 +870,43 @@ export default function LessonBuilderPage() {
       window.setTimeout(() => {
         languageBlockSpanishRefs.current
           .get(`${lessonId}-${blockId}-${languageBlockId}`)
+          ?.focus();
+      }, 0);
+    },
+    [lessons],
+  );
+
+  const addTeachingPair = useCallback(
+    (lessonId: string, insertionIndex: number) => {
+      const explanationBlockId = createId("block");
+      const sentenceBlockId = createId("block");
+      const languageBlockId = createId("lang");
+
+      dispatch({
+        type: "ADD_EXPLANATION_BLOCK",
+        lessonId,
+        insertionIndex,
+        blockId: explanationBlockId,
+      });
+      dispatch({
+        type: "ADD_SENTENCE_BLOCK",
+        lessonId,
+        insertionIndex: insertionIndex + 1,
+        blockId: sentenceBlockId,
+        languageBlockId,
+      });
+      setCollapsedContentBlocks(
+        new Set(
+          lessons.flatMap((lesson) =>
+            lesson.blocks.map((block) => `${lesson.id}-${block.id}`),
+          ),
+        ),
+      );
+      setOpenBlockPicker(null);
+
+      window.setTimeout(() => {
+        languageBlockSpanishRefs.current
+          .get(`${lessonId}-${sentenceBlockId}-${languageBlockId}`)
           ?.focus();
       }, 0);
     },
@@ -1866,6 +1954,7 @@ export default function LessonBuilderPage() {
                 isFullyCollapsed={isLessonFullyCollapsed}
                 isSaving={isThisLessonSaving}
                 validationIssueCount={lessonValidationIssueCount}
+                stepCount={lesson.blocks.length}
                 saveDisabled={
                   isLoadingLessons ||
                   !lessonIsDirty ||
@@ -1886,6 +1975,7 @@ export default function LessonBuilderPage() {
                   setPreviewLessonId(lesson.id);
                   setPreviewBlockId(null);
                 }}
+                onDuplicate={() => duplicateLesson(lesson.id)}
                 onSave={() => void saveLesson(lesson.id)}
                 onCycleDisplayMode={() => cycleLessonDisplayMode(lesson.id)}
                 onDelete={() => deleteLesson(lesson.id)}
@@ -1957,6 +2047,9 @@ export default function LessonBuilderPage() {
                       openBlockPicker.insertionIndex === 0 && (
                         <ContentBlockPicker
                           onClose={() => setOpenBlockPicker(null)}
+                          onAddTeachingPair={() =>
+                            addTeachingPair(lesson.id, 0)
+                          }
                           onAddExplanation={() =>
                             addExplanationBlock(lesson.id, 0)
                           }
@@ -2275,6 +2368,12 @@ export default function LessonBuilderPage() {
                           openBlockPicker.insertionIndex === blockIndex + 1 && (
                             <ContentBlockPicker
                               onClose={() => setOpenBlockPicker(null)}
+                              onAddTeachingPair={() =>
+                                addTeachingPair(
+                                  lesson.id,
+                                  blockIndex + 1,
+                                )
+                              }
                               onAddExplanation={() =>
                                 addExplanationBlock(
                                   lesson.id,
@@ -2322,6 +2421,9 @@ export default function LessonBuilderPage() {
                   openBlockPicker.insertionIndex === lesson.blocks.length && (
                   <ContentBlockPicker
                     onClose={() => setOpenBlockPicker(null)}
+                    onAddTeachingPair={() =>
+                      addTeachingPair(lesson.id, lesson.blocks.length)
+                    }
                     onAddExplanation={() =>
                       addExplanationBlock(lesson.id, lesson.blocks.length)
                     }

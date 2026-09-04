@@ -158,6 +158,9 @@ export function isLessonModule(value: unknown): value is LessonModule {
     isRecord(value) &&
     typeof value.id === "string" &&
     isStringOrNull(value.name) &&
+    (value.kind === undefined ||
+      value.kind === "course" ||
+      value.kind === "onboarding") &&
     // keyConcepts is optional on disk — pre-Key-Concepts modules (which carried
     // `promise` / `finalSentence` instead) still parse and are normalized below.
     (value.keyConcepts === undefined ||
@@ -173,6 +176,7 @@ export function normalizeModule(module: LessonModule): LessonModule {
   return {
     id: module.id,
     name: module.name,
+    ...(module.kind ? { kind: module.kind } : {}),
     keyConcepts: module.keyConcepts ?? [],
     lessonIds: module.lessonIds,
   };

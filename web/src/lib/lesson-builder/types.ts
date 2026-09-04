@@ -56,6 +56,7 @@ export type LessonBlock = ExplanationBlock | SentenceBlock;
 export type LessonModule = {
   id: string;
   name: string | null;
+  kind?: "course" | "onboarding";
   keyConcepts: LessonConcept[];
   lessonIds: string[];
 };

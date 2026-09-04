@@ -53,7 +53,24 @@ export function ModuleMeta({
       </div>
 
       {open ? (
-        <div className="mt-3 pl-8">
+        <div className="mt-3 space-y-4 pl-8">
+          <label className="block max-w-xs">
+            <span className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              Learner placement
+            </span>
+            <select
+              value={module.kind ?? "course"}
+              onChange={(event) =>
+                onChange({
+                  kind: event.target.value as "course" | "onboarding",
+                })
+              }
+              className={inputClass}
+            >
+              <option value="course">Numbered course module</option>
+              <option value="onboarding">Start-here onboarding</option>
+            </select>
+          </label>
           <LessonConceptsField
             variant="inline"
             label="Key concepts"

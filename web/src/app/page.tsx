@@ -9,6 +9,7 @@ export default async function HomePage() {
     course?.modules.map((module) => ({
       id: module.id,
       name: module.name,
+      kind: module.kind,
       lessonCount: module.lessonCount,
       lessons: module.lessons.map((lesson) => ({
         id: lesson.id,

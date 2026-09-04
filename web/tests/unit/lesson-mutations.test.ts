@@ -55,6 +55,31 @@ test("createLesson / deleteLesson", () => {
   );
 });
 
+test("duplicateLesson inserts a deep copy after its source", () => {
+  const lessons: Lesson[] = [
+    {
+      id: "lesson_a",
+      name: "A useful lesson",
+      concepts: [{ id: "lc1", conceptId: "concept_a", label: "concept" }],
+      blocks: [sentenceBlock()],
+    },
+    { id: "lesson_b", name: "B", concepts: [], blocks: [] },
+  ];
+
+  const next = m.duplicateLesson(lessons, "lesson_a", "lesson_copy");
+  assert.deepEqual(next.map((lesson) => lesson.id), [
+    "lesson_a",
+    "lesson_copy",
+    "lesson_b",
+  ]);
+  assert.equal(next[1].name, "A useful lesson (copy)");
+  assert.notEqual(next[1].concepts[0].id, lessons[0].concepts[0].id);
+  const originalBlock = lessons[0].blocks[0] as SentenceBlock;
+  const copiedBlock = next[1].blocks[0] as SentenceBlock;
+  assert.notEqual(copiedBlock.id, originalBlock.id);
+  assert.notEqual(copiedBlock.languageBlocks[0].id, originalBlock.languageBlocks[0].id);
+});
+
 test("moveLesson reorders with before/after and adjusts for removal", () => {
   const lessons: Lesson[] = ["a", "b", "c"].map((id) => ({
     id,

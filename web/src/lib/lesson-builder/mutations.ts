@@ -95,6 +95,49 @@ export function createLesson(lessons: Lesson[], lessonId: string): Lesson[] {
   return [...lessons, { id: lessonId, name: null, concepts: [], blocks: [] }];
 }
 
+export function duplicateLesson(
+  lessons: Lesson[],
+  lessonId: string,
+  duplicateId: string,
+): Lesson[] {
+  const sourceIndex = lessons.findIndex((lesson) => lesson.id === lessonId);
+  if (sourceIndex === -1) return lessons;
+
+  const source = lessons[sourceIndex];
+  const duplicate: Lesson = {
+    ...source,
+    id: duplicateId,
+    name: `${source.name ?? "Untitled lesson"} (copy)`,
+    concepts: source.concepts.map((concept) => ({
+      ...concept,
+      id: createId("lesson_concept"),
+    })),
+    blocks: source.blocks.map((block) =>
+      block.type === "explanation"
+        ? { ...block, id: createId("block") }
+        : {
+            ...block,
+            id: createId("block"),
+            conceptLinks: block.conceptLinks.map((conceptLink) => ({
+              ...conceptLink,
+              id: createId("concept_link"),
+            })),
+            languageBlocks: block.languageBlocks.map((languageBlock) => ({
+              ...languageBlock,
+              id: createId("lang"),
+              acceptedAnswers: [...languageBlock.acceptedAnswers],
+              conceptLinks: languageBlock.conceptLinks.map((conceptLink) => ({
+                ...conceptLink,
+                id: createId("concept_link"),
+              })),
+            })),
+          },
+    ),
+  };
+
+  return lessons.toSpliced(sourceIndex + 1, 0, duplicate);
+}
+
 export function addLessonConcept(
   lessons: Lesson[],
   lessonId: string,

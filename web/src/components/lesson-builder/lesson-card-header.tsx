@@ -3,6 +3,7 @@
 import {
   ChevronDown,
   ChevronUp,
+  Copy,
   Eye,
   GripVertical,
   Save,
@@ -20,12 +21,14 @@ export function LessonCardHeader({
   isFullyCollapsed,
   isSaving,
   validationIssueCount,
+  stepCount,
   saveDisabled,
   dragDisabled,
   dragDisabledReason,
   onHeaderClick,
   onNameChange,
   onPreview,
+  onDuplicate,
   onSave,
   onCycleDisplayMode,
   onDelete,
@@ -39,12 +42,14 @@ export function LessonCardHeader({
   isFullyCollapsed: boolean;
   isSaving: boolean;
   validationIssueCount: number;
+  stepCount: number;
   saveDisabled: boolean;
   dragDisabled: boolean;
   dragDisabledReason: string;
   onHeaderClick: (event: MouseEvent<HTMLElement>) => void;
   onNameChange: (value: string) => void;
   onPreview: () => void;
+  onDuplicate: () => void;
   onSave: () => void;
   onCycleDisplayMode: () => void;
   onDelete: () => void;
@@ -67,6 +72,9 @@ export function LessonCardHeader({
           Unsaved
         </span>
       )}
+      <span className="hidden shrink-0 text-xs font-semibold text-stone-500 xl:inline">
+        {stepCount} {stepCount === 1 ? "step" : "steps"}
+      </span>
       <input
         type="text"
         value={name}
@@ -102,6 +110,15 @@ export function LessonCardHeader({
         <span className="hidden lg:inline">
           {isSaving ? "Saving..." : "Save"}
         </span>
+      </button>
+      <button
+        type="button"
+        onClick={onDuplicate}
+        aria-label={`Duplicate lesson ${lessonNumber}`}
+        title="Duplicate lesson"
+        className="flex size-9 shrink-0 items-center justify-center rounded-lg text-stone-500 transition hover:bg-stone-200 hover:text-stone-700 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-violet-200"
+      >
+        <Copy className="size-4" aria-hidden="true" />
       </button>
       <button
         type="button"

@@ -81,6 +81,18 @@ test("a pre-Key-Concepts module still parses and is normalized", () => {
   assert.ok(!("promise" in parsed.modules[0]));
 });
 
+test("module kind accepts onboarding and rejects unknown values", () => {
+  const onboarding = {
+    id: "welcome",
+    name: "Empieza aquí",
+    kind: "onboarding",
+    keyConcepts: [],
+    lessonIds: [],
+  };
+  assert.ok(isLessonModule(onboarding));
+  assert.equal(isLessonModule({ ...onboarding, kind: "private" }), false);
+});
+
 test("moduleCoveredConceptKeys unions the module's lesson concepts", () => {
   const lessons = [
     lesson("a", [concept("c-querer", "querer"), concept(null, "Freehand One")]),

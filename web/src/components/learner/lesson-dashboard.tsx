@@ -27,6 +27,7 @@ type LearnerLesson = {
 type LearnerModule = {
   id: string;
   name: string | null;
+  kind: "course" | "onboarding";
   lessonCount: number;
   lessons: LearnerLesson[];
 };
@@ -42,6 +43,14 @@ const emptyProgress: LessonProgress = {};
 const lessonProgressEventName = "icc:lesson-progress";
 let cachedProgressRaw: string | null = null;
 let cachedProgress: LessonProgress = emptyProgress;
+
+function moduleEyebrow(modules: LearnerModule[], moduleIndex: number) {
+  if (modules[moduleIndex]?.kind === "onboarding") return "Empieza aquí";
+  const courseNumber = modules
+    .slice(0, moduleIndex + 1)
+    .filter((module) => module.kind !== "onboarding").length;
+  return `Módulo ${courseNumber}`;
+}
 
 function readProgress(): LessonProgress {
   if (typeof window === "undefined") return emptyProgress;
@@ -89,9 +98,7 @@ export function LessonDashboard({ modules }: { modules: LearnerModule[] }) {
     readProgress,
     () => emptyProgress,
   );
-  const [selectedModuleId, setSelectedModuleId] = useState(
-    modules[0]?.id ?? null,
-  );
+  const [selectedModuleId, setSelectedModuleId] = useState<string | null>(null);
 
   const courseState = useMemo(() => {
     const availableLessons = modules.flatMap((module, moduleIndex) =>
@@ -121,7 +128,9 @@ export function LessonDashboard({ modules }: { modules: LearnerModule[] }) {
   }, [modules, progress]);
 
   const selectedModule =
-    modules.find((module) => module.id === selectedModuleId) ?? modules[0];
+    modules.find((module) => module.id === selectedModuleId) ??
+    courseState.nextLesson?.module ??
+    modules[0];
 
   if (modules.length === 0) {
     return <EmptyCourse />;
@@ -150,7 +159,10 @@ export function LessonDashboard({ modules }: { modules: LearnerModule[] }) {
               <div className="mt-8 flex flex-col gap-4 border-t border-white/15 pt-6 sm:flex-row sm:items-center sm:justify-between">
                 <div className="min-w-0">
                   <p className="text-sm font-bold text-[#9bc6c0]">
-                    Módulo {courseState.nextLesson.moduleIndex + 1} · Lección{" "}
+                    {moduleEyebrow(
+                      modules,
+                      courseState.nextLesson.moduleIndex,
+                    )} · Lección{" "}
                     {courseState.nextLesson.lesson.moduleLessonNumber}
                   </p>
                   <p className="mt-1 truncate text-lg font-extrabold text-white sm:text-xl">
@@ -229,11 +241,20 @@ export function LessonDashboard({ modules }: { modules: LearnerModule[] }) {
                       : "bg-[#e3f0ee] text-[#0f766e]"
                   }`}
                 >
-                  {String(moduleIndex + 1).padStart(2, "0")}
+                  {module.kind === "onboarding" ? (
+                    <Sparkles className="size-4" aria-hidden="true" />
+                  ) : (
+                    String(
+                      modules
+                        .slice(0, moduleIndex + 1)
+                        .filter((candidate) => candidate.kind !== "onboarding")
+                        .length,
+                    ).padStart(2, "0")
+                  )}
                 </span>
                 <span className="min-w-0">
                   <span className="block truncate text-sm font-extrabold">
-                    {module.name ?? `Módulo ${moduleIndex + 1}`}
+                    {module.name ?? moduleEyebrow(modules, moduleIndex)}
                   </span>
                   <span
                     className={`mt-0.5 block text-xs font-semibold ${
@@ -251,7 +272,10 @@ export function LessonDashboard({ modules }: { modules: LearnerModule[] }) {
         {selectedModule && (
           <ModuleLessons
             module={selectedModule}
-            moduleIndex={modules.indexOf(selectedModule)}
+            eyebrow={moduleEyebrow(
+              modules,
+              modules.indexOf(selectedModule),
+            )}
             progress={progress}
           />
         )}
@@ -295,9 +319,9 @@ function CourseProgress({ completedCount, lessonCount, percent }: {
   );
 }
 
-function ModuleLessons({ module, moduleIndex, progress }: {
+function ModuleLessons({ module, eyebrow, progress }: {
   module: LearnerModule;
-  moduleIndex: number;
+  eyebrow: string;
   progress: LessonProgress;
 }) {
   const availableLessons = module.lessons.filter((lesson) => lesson.stepCount > 0);
@@ -317,10 +341,10 @@ function ModuleLessons({ module, moduleIndex, progress }: {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-sm font-bold text-[#6d8a86]">
-            Módulo {moduleIndex + 1}
+            {eyebrow}
           </p>
           <h3 className="mt-1 text-2xl font-black leading-tight">
-            {module.name ?? `Módulo ${moduleIndex + 1}`}
+            {module.name ?? eyebrow}
           </h3>
         </div>
         <div className="w-full max-w-xs">
