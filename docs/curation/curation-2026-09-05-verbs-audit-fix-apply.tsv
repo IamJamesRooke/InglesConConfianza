@@ -1,0 +1,41 @@
+8aej7jfu2y	¿tienes que [hacer algo]?	do you have to [do something]?	core	es:tener	audit found this row had no es: lemma matching its own sense
+bvjzllj20d	¿[estabas haciendo algo]?	were you [doing something]?	supporting	es:estar	audit found this row's only es: tag was the English word "be"
+b5c13zo3bg	soy [algo]	I am [something]	core	sense:ser-identidad|sense:ser-clasificacion	audit found the 2026-09-04 conjugated-form rows were never given sense: tags
+0rv1zmpu5c	eres [algo]	you are [something]	supporting	sense:ser-identidad|sense:ser-clasificacion	same
+rf1kaz8lmr	es [algo]	is [something]	core	sense:ser-identidad|sense:ser-clasificacion	same
+d3s5uo0ahx	somos [algo]	we are [something]	supporting	sense:ser-identidad|sense:ser-clasificacion	same
+0kqlhwpi3i	son [algo]	they are [something]	supporting	sense:ser-identidad|sense:ser-clasificacion	same
+93wmoiwink	estoy [en un estado o lugar]	I am [somewhere or feeling something]	core	sense:estar-estado|sense:estar-lugar	same
+0k44vohfn6	estás [en un estado o lugar]	you are [somewhere or feeling something]	supporting	sense:estar-estado|sense:estar-lugar	same
+zs2vl4oxdq	está [en un estado o lugar]	is [somewhere or feeling something]	core	sense:estar-estado|sense:estar-lugar	same
+kaq1f0slza	estamos [en un estado o lugar]	we are [somewhere or feeling something]	supporting	sense:estar-estado|sense:estar-lugar	same
+widbvn1zzj	están [en un estado o lugar]	they are [somewhere or feeling something]	supporting	sense:estar-estado|sense:estar-lugar	same
+rh4yfb08hn	voy a [hacer algo]	I am going [to do something]	core	sense:ir-futuro	same
+0lbant78ng	vas a [hacer algo]	you are going [to do something]	core	sense:ir-futuro	same
+0m0vzyyfd9	va a [hacer algo]	is going [to do something]	core	sense:ir-futuro	same
+ohgxx8621i	vamos a [hacer algo]	we are going [to do something]	core	sense:ir-futuro	same
+ym5bgyxy1x	van a [hacer algo]	they are going [to do something]	core	sense:ir-futuro	same
+p1ga7e8bhn	tengo [algo]	I have [something]	core	sense:tener-posesion	same
+mwpgnk4gb9	tienes [algo]	you have [something]	supporting	sense:tener-posesion	same
+vea3m3h1kq	tiene [algo]	has [something]	core	sense:tener-posesion	same
+xisncbwr6s	tenemos [algo]	we have [something]	supporting	sense:tener-posesion	same
+rkkkgau83q	tienen [algo]	they have [something]	supporting	sense:tener-posesion	same
+b6v2qryb2d	he [hecho algo]	I have [done something]	supporting	sense:haber-perfecto	same
+xffe82pdpg	has [hecho algo]	you have [done something]	supporting	sense:haber-perfecto	same
+01rpjz02jy	ha [hecho algo]	has [done something]	supporting	sense:haber-perfecto	same
+tei7cfo1k2	hemos [hecho algo]	we have [done something]	supporting	sense:haber-perfecto	same
+uwzxgiv5od	han [hecho algo]	they have [done something]	supporting	sense:haber-perfecto	same
+obznlhzdxe	ser en [un lugar]	to be at [a place]	supporting	conjugation:infinitive	deferred rows are still their sense's infinitive anchor — carry both tags
+cme1al3v5p	ser de [un material]	to be made of [a material]	supporting	conjugation:infinitive	same
+qbdgh95q4i	ser de [alguien]	to belong to [somebody]	supporting	conjugation:infinitive	same
+cbhs0k69zd	ser [adjetivo] [hacer algo]	it is [adjective] [to do something]	core	conjugation:infinitive	same
+emji2mg22t	ser [hecho] por [alguien]	to be [done] by [somebody]	supporting	conjugation:infinitive	same
+f5h0hvcv1d	estar de acuerdo	to agree	supporting	conjugation:infinitive	same
+e6gbegp44a	estar a punto de [hacer algo]	to be about to [do something]	supporting	conjugation:infinitive	same
+k9y5vq9p06	ir a casa	to go home	supporting	conjugation:infinitive	same
+nsdu5c6q9d	ir en [un medio de transporte]	to go by [a means of transport]	supporting	conjugation:infinitive	same
+dv55nncur9	ir de compras	to go shopping	supporting	conjugation:infinitive	anchor for the shared ir-actividad sense (qldej05yfp, cvw44cpv4h are the other members)
+8wpdwqvpbe	ir a [hacer algo]	to go [do something]	supporting	conjugation:infinitive	same
+2a5bbtm7cl	irse	to leave	core	conjugation:infinitive	anchor for irse-partir (nis5rixomq is the other member)
+4pgifzt26u	hay que [hacer algo]	you have to [do something]	supporting	conjugation:infinitive	anchor for haber-necesidad (laom4z3bwd is the other member)
+6vgdzpegua	ser [una hora o fecha]	to be [a time or date]	core	conjugation:infinitive	its own natural anchor; removes the need for a ser-hora audit exemption

@@ -5591,7 +5591,7 @@
         "en:be",
         "pos:verb",
         "sense:estar-lugar",
-        "sense:estar-estado"
+        "conjugation:infinitive"
       ],
       "curriculumRole": "core"
     },
@@ -5648,7 +5648,8 @@
         "es:estar",
         "en:agree",
         "sense:estar-acuerdo",
-        "conjugation:deferred"
+        "conjugation:deferred",
+        "conjugation:infinitive"
       ],
       "curriculumRole": "supporting"
     },
@@ -5667,7 +5668,8 @@
         "es:estar",
         "en:about",
         "sense:estar-punto",
-        "conjugation:deferred"
+        "conjugation:deferred",
+        "conjugation:infinitive"
       ],
       "curriculumRole": "supporting"
     },
@@ -6808,7 +6810,6 @@
         "construction:verb-forms",
         "have + past participle",
         "form:present-perfect",
-        "es:have",
         "grammar:three-jobs-of-have",
         "perfect auxiliary",
         "es:haber",
@@ -7061,7 +7062,8 @@
         "es:haber",
         "en:you",
         "sense:haber-necesidad",
-        "conjugation:deferred"
+        "conjugation:deferred",
+        "conjugation:infinitive"
       ],
       "curriculumRole": "supporting"
     },
@@ -7902,13 +7904,13 @@
         "english": "I am leaving now."
       },
       "collections": [
-        "es:ir",
         "grammar:pronominal-verb",
         "es:irse",
         "en:leave",
         "pos:verb",
         "sense:irse-partir",
-        "conjugation:deferred"
+        "conjugation:deferred",
+        "conjugation:infinitive"
       ],
       "curriculumRole": "core"
     },
@@ -7921,7 +7923,6 @@
         "english": "Go away from here."
       },
       "collections": [
-        "es:ir",
         "grammar:pronominal-verb",
         "grammar:phrasal-verb",
         "particle:away",
@@ -8019,7 +8020,8 @@
         "es:ir",
         "en:go",
         "sense:ir-actividad",
-        "conjugation:deferred"
+        "conjugation:deferred",
+        "conjugation:infinitive"
       ],
       "curriculumRole": "supporting"
     },
@@ -8038,7 +8040,8 @@
         "es:ir",
         "en:go",
         "sense:ir-transporte",
-        "conjugation:deferred"
+        "conjugation:deferred",
+        "conjugation:infinitive"
       ],
       "curriculumRole": "supporting"
     },
@@ -17212,7 +17215,8 @@
         "en:be",
         "pos:verb",
         "sense:ser-hora",
-        "conjugation:deferred"
+        "conjugation:deferred",
+        "conjugation:infinitive"
       ],
       "curriculumRole": "core"
     },
@@ -17231,7 +17235,8 @@
         "es:ser",
         "en:at",
         "sense:ser-lugar-evento",
-        "conjugation:deferred"
+        "conjugation:deferred",
+        "conjugation:infinitive"
       ],
       "curriculumRole": "supporting"
     },
@@ -17269,7 +17274,8 @@
         "es:ser",
         "en:made",
         "sense:ser-material",
-        "conjugation:deferred"
+        "conjugation:deferred",
+        "conjugation:infinitive"
       ],
       "curriculumRole": "supporting"
     },
@@ -17288,7 +17294,8 @@
         "es:ser",
         "en:belong",
         "sense:ser-posesion",
-        "conjugation:deferred"
+        "conjugation:deferred",
+        "conjugation:infinitive"
       ],
       "curriculumRole": "supporting"
     },
@@ -17980,7 +17987,6 @@
       },
       "collections": [
         "en:possession",
-        "es:have",
         "grammar:three-jobs-of-have",
         "grammar:uses-auxiliary-do-for-questions",
         "es:tener",
@@ -18028,7 +18034,6 @@
         "grammar:modal",
         "construction:followed-by-full-infinitive",
         "form:full-infinitive",
-        "es:have",
         "grammar:three-jobs-of-have",
         "grammar:uses-auxiliary-do-for-questions",
         "es:tener",
@@ -58916,7 +58921,8 @@
         "en:it",
         "pos:verb",
         "sense:ser-impersonal",
-        "conjugation:deferred"
+        "conjugation:deferred",
+        "conjugation:infinitive"
       ],
       "curriculumRole": "core"
     },
@@ -59295,7 +59301,8 @@
         "es:ir",
         "en:go",
         "sense:ir-imperativo",
-        "conjugation:deferred"
+        "conjugation:deferred",
+        "conjugation:infinitive"
       ],
       "curriculumRole": "supporting"
     },
@@ -60078,7 +60085,8 @@
         "es:ser",
         "en:by",
         "sense:ser-pasiva",
-        "conjugation:deferred"
+        "conjugation:deferred",
+        "conjugation:infinitive"
       ],
       "curriculumRole": "supporting"
     },
@@ -62828,7 +62836,6 @@
       "collections": [
         "grammar:perfect",
         "form:present-perfect",
-        "es:have",
         "grammar:question",
         "form:past-participle",
         "es:haber",
@@ -63116,13 +63123,13 @@
         "grammar:question",
         "construction:auxiliary-do",
         "construction:followed-by-full-infinitive",
-        "es:tienes",
         "en:you",
         "pos:verb",
         "sense:tener-obligacion",
         "conjugation:present",
         "conjugation:2sg",
-        "conjugation:irregular"
+        "conjugation:irregular",
+        "es:tener"
       ],
       "curriculumRole": "core"
     },
@@ -63499,7 +63506,6 @@
         "english": "Were you doing it?"
       },
       "collections": [
-        "es:be",
         "grammar:question",
         "form:past-progressive",
         "form:present-participle",
@@ -63507,7 +63513,8 @@
         "sense:estar-progresivo",
         "conjugation:imperfect",
         "conjugation:2sg",
-        "conjugation:irregular"
+        "conjugation:irregular",
+        "es:estar"
       ],
       "curriculumRole": "supporting"
     },
@@ -63520,7 +63527,6 @@
         "english": "Was he doing it?"
       },
       "collections": [
-        "es:be",
         "grammar:question",
         "form:past-progressive",
         "form:present-participle",
@@ -63542,7 +63548,6 @@
         "english": "Are you going to do it?"
       },
       "collections": [
-        "es:be",
         "grammar:question",
         "grammar:going-to",
         "construction:followed-by-full-infinitive",
@@ -77528,7 +77533,8 @@
         "conjugation:1sg",
         "conjugation:irregular",
         "contrast:voy-a-lugar-vs-voy-a-infinitivo",
-        "contrast:confusable"
+        "contrast:confusable",
+        "sense:ir-futuro"
       ],
       "curriculumRole": "core"
     },
@@ -77547,7 +77553,8 @@
         "conjugation:2sg",
         "conjugation:irregular",
         "es:ir",
-        "en:going"
+        "en:going",
+        "sense:ir-futuro"
       ],
       "curriculumRole": "core"
     },
@@ -77568,7 +77575,8 @@
         "es:ir",
         "en:going",
         "contrast:voy-a-lugar-vs-voy-a-infinitivo",
-        "contrast:confusable"
+        "contrast:confusable",
+        "sense:ir-futuro"
       ],
       "curriculumRole": "core"
     },
@@ -77587,7 +77595,8 @@
         "conjugation:1pl",
         "conjugation:irregular",
         "es:ir",
-        "en:going"
+        "en:going",
+        "sense:ir-futuro"
       ],
       "curriculumRole": "core"
     },
@@ -77606,7 +77615,8 @@
         "conjugation:3pl",
         "conjugation:irregular",
         "es:ir",
-        "en:going"
+        "en:going",
+        "sense:ir-futuro"
       ],
       "curriculumRole": "core"
     },
@@ -77627,7 +77637,9 @@
         "en:am",
         "contrast:soy-vs-estoy",
         "contrast:confusable",
-        "contrast:tener-anos-vs-to-be"
+        "contrast:tener-anos-vs-to-be",
+        "sense:ser-identidad",
+        "sense:ser-clasificacion"
       ],
       "curriculumRole": "core"
     },
@@ -77645,7 +77657,9 @@
         "conjugation:2sg",
         "conjugation:irregular",
         "es:ser",
-        "en:are"
+        "en:are",
+        "sense:ser-identidad",
+        "sense:ser-clasificacion"
       ],
       "curriculumRole": "supporting"
     },
@@ -77663,7 +77677,9 @@
         "conjugation:3sg",
         "conjugation:irregular",
         "es:ser",
-        "en:is"
+        "en:is",
+        "sense:ser-identidad",
+        "sense:ser-clasificacion"
       ],
       "curriculumRole": "core"
     },
@@ -77681,7 +77697,9 @@
         "conjugation:1pl",
         "conjugation:irregular",
         "es:ser",
-        "en:are"
+        "en:are",
+        "sense:ser-identidad",
+        "sense:ser-clasificacion"
       ],
       "curriculumRole": "supporting"
     },
@@ -77699,7 +77717,9 @@
         "conjugation:3pl",
         "conjugation:irregular",
         "es:ser",
-        "en:are"
+        "en:are",
+        "sense:ser-identidad",
+        "sense:ser-clasificacion"
       ],
       "curriculumRole": "supporting"
     },
@@ -77720,7 +77740,9 @@
         "en:am",
         "contrast:soy-vs-estoy",
         "contrast:confusable",
-        "contrast:ser-adjetivo-vs-estar-adjetivo"
+        "contrast:ser-adjetivo-vs-estar-adjetivo",
+        "sense:estar-estado",
+        "sense:estar-lugar"
       ],
       "curriculumRole": "core"
     },
@@ -77738,7 +77760,9 @@
         "conjugation:2sg",
         "conjugation:irregular",
         "es:estar",
-        "en:are"
+        "en:are",
+        "sense:estar-estado",
+        "sense:estar-lugar"
       ],
       "curriculumRole": "supporting"
     },
@@ -77758,7 +77782,9 @@
         "es:estar",
         "en:is",
         "contrast:ser-adjetivo-vs-estar-adjetivo",
-        "contrast:confusable"
+        "contrast:confusable",
+        "sense:estar-estado",
+        "sense:estar-lugar"
       ],
       "curriculumRole": "core"
     },
@@ -77776,7 +77802,9 @@
         "conjugation:1pl",
         "conjugation:irregular",
         "es:estar",
-        "en:are"
+        "en:are",
+        "sense:estar-estado",
+        "sense:estar-lugar"
       ],
       "curriculumRole": "supporting"
     },
@@ -77794,7 +77822,9 @@
         "conjugation:3pl",
         "conjugation:irregular",
         "es:estar",
-        "en:are"
+        "en:are",
+        "sense:estar-estado",
+        "sense:estar-lugar"
       ],
       "curriculumRole": "supporting"
     },
@@ -77812,7 +77842,8 @@
         "conjugation:1sg",
         "conjugation:irregular",
         "es:tener",
-        "en:have"
+        "en:have",
+        "sense:tener-posesion"
       ],
       "curriculumRole": "core"
     },
@@ -77830,7 +77861,8 @@
         "conjugation:2sg",
         "conjugation:irregular",
         "es:tener",
-        "en:have"
+        "en:have",
+        "sense:tener-posesion"
       ],
       "curriculumRole": "supporting"
     },
@@ -77848,7 +77880,8 @@
         "conjugation:3sg",
         "conjugation:irregular",
         "es:tener",
-        "en:has"
+        "en:has",
+        "sense:tener-posesion"
       ],
       "curriculumRole": "core"
     },
@@ -77866,7 +77899,8 @@
         "conjugation:1pl",
         "conjugation:irregular",
         "es:tener",
-        "en:have"
+        "en:have",
+        "sense:tener-posesion"
       ],
       "curriculumRole": "supporting"
     },
@@ -77884,7 +77918,8 @@
         "conjugation:3pl",
         "conjugation:irregular",
         "es:tener",
-        "en:have"
+        "en:have",
+        "sense:tener-posesion"
       ],
       "curriculumRole": "supporting"
     },
@@ -77903,7 +77938,8 @@
         "conjugation:1sg",
         "conjugation:irregular",
         "es:haber",
-        "en:have"
+        "en:have",
+        "sense:haber-perfecto"
       ],
       "curriculumRole": "supporting"
     },
@@ -77922,7 +77958,8 @@
         "conjugation:2sg",
         "conjugation:irregular",
         "es:haber",
-        "en:have"
+        "en:have",
+        "sense:haber-perfecto"
       ],
       "curriculumRole": "supporting"
     },
@@ -77941,7 +77978,8 @@
         "conjugation:3sg",
         "conjugation:irregular",
         "es:haber",
-        "en:has"
+        "en:has",
+        "sense:haber-perfecto"
       ],
       "curriculumRole": "supporting"
     },
@@ -77960,7 +77998,8 @@
         "conjugation:1pl",
         "conjugation:irregular",
         "es:haber",
-        "en:have"
+        "en:have",
+        "sense:haber-perfecto"
       ],
       "curriculumRole": "supporting"
     },
@@ -77979,7 +78018,8 @@
         "conjugation:3pl",
         "conjugation:irregular",
         "es:haber",
-        "en:have"
+        "en:have",
+        "sense:haber-perfecto"
       ],
       "curriculumRole": "supporting"
     },
