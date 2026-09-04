@@ -3,14 +3,18 @@ import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Inglés Con Confianza",
-  description: "English lessons built for Spanish-speaking adults.",
+  title: {
+    default: "Inglés Con Confianza",
+    template: "%s | Inglés Con Confianza",
+  },
+  description:
+    "Lecciones de inglés claras y prácticas para hispanohablantes.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
+      lang="es"
       className="h-full antialiased"
     >
       <body className="flex min-h-full flex-col">

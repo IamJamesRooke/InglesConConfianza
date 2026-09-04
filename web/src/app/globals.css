@@ -306,6 +306,27 @@
   }
 }
 
+@keyframes learner-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.learner-enter {
+  animation: learner-enter 420ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .learner-enter {
+    animation: none;
+  }
+}
+
 .lesson-markdown-editor {
   --accentBase: var(--color-violet-100);
   --accentBgSubtle: var(--color-violet-50);
