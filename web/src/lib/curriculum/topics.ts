@@ -68,6 +68,23 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       { collection: "contrast:confusable", label: "Confusions" },
     ],
   },
+  {
+    slug: "verbs",
+    title: "Verbs",
+    description:
+      "Regular verbs stay infinitive-only — conjugation is a rule, not vocabulary. This is the short list of suppletive/irregular verbs whose conjugated forms don't resemble the infinitive: ser and estar (both “to be”), ir (“to go” / going-to), tener (“to have”), haber (“to have done”).",
+    baseCollection: "pos:verb",
+    facetButtons: [
+      { collection: "es:ser", label: "ser (to be)" },
+      { collection: "es:estar", label: "estar (to be)" },
+      { collection: "es:ir", label: "ir (to go / going to)" },
+      { collection: "es:tener", label: "tener (to have)" },
+      { collection: "es:haber", label: "haber (have done)" },
+      { collection: "conjugation:1sg", label: "I (yo)" },
+      { collection: "conjugation:3sg", label: "he / she / it" },
+      { collection: "contrast:confusable", label: "Confusions" },
+    ],
+  },
 ];
 
 export function findCurriculumTopic(slug: string): CurriculumTopic | undefined {

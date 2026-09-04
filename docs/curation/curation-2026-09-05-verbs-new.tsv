@@ -1,0 +1,25 @@
+# spanish	english	exampleSpanish	exampleEnglish	role	collections
+vas a [hacer algo]	you are going to [do something]	Vas a llegar tarde.	You are going to be late.	core	pos:verb|grammar:going-to|conjugation:present|conjugation:2sg|conjugation:irregular|es:ir|en:going
+va a [hacer algo]	is going to [do something]	Ella va a estudiar esta noche.	She is going to study tonight.	core	pos:verb|grammar:going-to|conjugation:present|conjugation:3sg|conjugation:irregular|es:ir|en:going
+vamos a [hacer algo]	we are going to [do something]	Vamos a comer pizza.	We are going to eat pizza.	core	pos:verb|grammar:going-to|conjugation:present|conjugation:1pl|conjugation:irregular|es:ir|en:going
+van a [hacer algo]	they are going to [do something]	Ellos van a viajar mañana.	They are going to travel tomorrow.	core	pos:verb|grammar:going-to|conjugation:present|conjugation:3pl|conjugation:irregular|es:ir|en:going
+soy [algo]	I am [something]	Soy profesor.	I am a teacher.	core	pos:verb|conjugation:present|conjugation:1sg|conjugation:irregular|es:ser|en:am
+eres [algo]	you are [something]	Eres muy inteligente.	You are very smart.	supporting	pos:verb|conjugation:present|conjugation:2sg|conjugation:irregular|es:ser|en:are
+es [algo]	is [something]	Ella es doctora.	She is a doctor.	core	pos:verb|conjugation:present|conjugation:3sg|conjugation:irregular|es:ser|en:is
+somos [algo]	we are [something]	Somos amigos.	We are friends.	supporting	pos:verb|conjugation:present|conjugation:1pl|conjugation:irregular|es:ser|en:are
+son [algo]	they are [something]	Ellos son hermanos.	They are siblings.	supporting	pos:verb|conjugation:present|conjugation:3pl|conjugation:irregular|es:ser|en:are
+estoy [en un estado o lugar]	I am [somewhere or feeling something]	Estoy cansado.	I am tired.	core	pos:verb|conjugation:present|conjugation:1sg|conjugation:irregular|es:estar|en:am
+estás [en un estado o lugar]	you are [somewhere or feeling something]	¿Estás bien?	Are you okay?	supporting	pos:verb|conjugation:present|conjugation:2sg|conjugation:irregular|es:estar|en:are
+está [en un estado o lugar]	is [somewhere or feeling something]	Él está en casa.	He is at home.	core	pos:verb|conjugation:present|conjugation:3sg|conjugation:irregular|es:estar|en:is
+estamos [en un estado o lugar]	we are [somewhere or feeling something]	Estamos listos.	We are ready.	supporting	pos:verb|conjugation:present|conjugation:1pl|conjugation:irregular|es:estar|en:are
+están [en un estado o lugar]	they are [somewhere or feeling something]	Están ocupados.	They are busy.	supporting	pos:verb|conjugation:present|conjugation:3pl|conjugation:irregular|es:estar|en:are
+tengo [algo]	I have [something]	Tengo un perro.	I have a dog.	core	pos:verb|conjugation:present|conjugation:1sg|conjugation:irregular|es:tener|en:have
+tienes [algo]	you have [something]	Tienes un mensaje nuevo.	You have a new message.	supporting	pos:verb|conjugation:present|conjugation:2sg|conjugation:irregular|es:tener|en:have
+tiene [algo]	has [something]	Ella tiene dos hijos.	She has two children.	core	pos:verb|conjugation:present|conjugation:3sg|conjugation:irregular|es:tener|en:has
+tenemos [algo]	we have [something]	Tenemos suficiente tiempo.	We have enough time.	supporting	pos:verb|conjugation:present|conjugation:1pl|conjugation:irregular|es:tener|en:have
+tienen [algo]	they have [something]	Ellos tienen una casa grande.	They have a big house.	supporting	pos:verb|conjugation:present|conjugation:3pl|conjugation:irregular|es:tener|en:have
+he [hecho algo]	I have [done something]	He terminado el proyecto.	I have finished the project.	supporting	pos:verb|grammar:perfect|conjugation:present|conjugation:1sg|conjugation:irregular|es:haber|en:have
+has [hecho algo]	you have [done something]	¿Has visto esta película?	Have you seen this movie?	supporting	pos:verb|grammar:perfect|conjugation:present|conjugation:2sg|conjugation:irregular|es:haber|en:have
+ha [hecho algo]	has [done something]	Ella ha llegado.	She has arrived.	supporting	pos:verb|grammar:perfect|conjugation:present|conjugation:3sg|conjugation:irregular|es:haber|en:has
+hemos [hecho algo]	we have [done something]	Hemos trabajado mucho.	We have worked a lot.	supporting	pos:verb|grammar:perfect|conjugation:present|conjugation:1pl|conjugation:irregular|es:haber|en:have
+han [hecho algo]	they have [done something]	Ellos han salido.	They have left.	supporting	pos:verb|grammar:perfect|conjugation:present|conjugation:3pl|conjugation:irregular|es:haber|en:have

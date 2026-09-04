@@ -21,7 +21,8 @@ export type CollectionFacet =
   | "topic"
   | "register"
   | "dialect"
-  | "contrast";
+  | "contrast"
+  | "conjugation";
 
 export const COLLECTION_FACETS: Record<CollectionFacet, string> = {
   es: "Spanish headword — every sense and construction of one lemma",
@@ -29,7 +30,8 @@ export const COLLECTION_FACETS: Record<CollectionFacet, string> = {
   pos: "part of speech",
   grammar: "grammatical subcategory (pronoun type, tense, mood, agreement)",
   construction: "sentence pattern or verb-complement shape",
-  form: "verb form (past, past participle, gerund, third person)",
+  form: "verb form (past, past participle, gerund, third person) — English morphology drills, not Spanish conjugation",
+  conjugation: "Spanish verb conjugation (person, tense, irregularity) for a specific suppletive/irregular verb's finite form — regular verbs stay infinitive-only and are not tagged here",
   morphology: "affix and derivation relationship",
   cognate: "cognate type and spelling-pattern family",
   sound: "pronunciation family and named sound cluster",
@@ -388,4 +390,11 @@ export const KNOWN_GRAMMAR_VALUES: ReadonlySet<string> = new Set([
   "uncountable", "universal-quantifier", "uses-auxiliary-do-for-questions", "verb-direct-object",
   "verb-indirect-object", "warning", "wish", "would-like",
   "zero-article",
+]);
+
+// Controlled vocabulary for the `conjugation:` facet — small and deliberate,
+// grows only when a new suppletive verb or tense is added to the catalog.
+export const KNOWN_CONJUGATION_VALUES: ReadonlySet<string> = new Set([
+  "present", "irregular",
+  "1sg", "2sg", "3sg", "1pl", "3pl",
 ]);

@@ -77408,9 +77408,457 @@
         "pos:verb",
         "grammar:going-to",
         "es:ir",
+        "en:going",
+        "conjugation:present",
+        "conjugation:1sg",
+        "conjugation:irregular"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "0lbant78ng",
+      "spanish": "vas a [hacer algo]",
+      "english": "you are going to [do something]",
+      "example": {
+        "spanish": "Vas a llegar tarde.",
+        "english": "You are going to be late."
+      },
+      "collections": [
+        "pos:verb",
+        "grammar:going-to",
+        "conjugation:present",
+        "conjugation:2sg",
+        "conjugation:irregular",
+        "es:ir",
         "en:going"
       ],
       "curriculumRole": "core"
+    },
+    {
+      "id": "0m0vzyyfd9",
+      "spanish": "va a [hacer algo]",
+      "english": "is going to [do something]",
+      "example": {
+        "spanish": "Ella va a estudiar esta noche.",
+        "english": "She is going to study tonight."
+      },
+      "collections": [
+        "pos:verb",
+        "grammar:going-to",
+        "conjugation:present",
+        "conjugation:3sg",
+        "conjugation:irregular",
+        "es:ir",
+        "en:going"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "ohgxx8621i",
+      "spanish": "vamos a [hacer algo]",
+      "english": "we are going to [do something]",
+      "example": {
+        "spanish": "Vamos a comer pizza.",
+        "english": "We are going to eat pizza."
+      },
+      "collections": [
+        "pos:verb",
+        "grammar:going-to",
+        "conjugation:present",
+        "conjugation:1pl",
+        "conjugation:irregular",
+        "es:ir",
+        "en:going"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "ym5bgyxy1x",
+      "spanish": "van a [hacer algo]",
+      "english": "they are going to [do something]",
+      "example": {
+        "spanish": "Ellos van a viajar mañana.",
+        "english": "They are going to travel tomorrow."
+      },
+      "collections": [
+        "pos:verb",
+        "grammar:going-to",
+        "conjugation:present",
+        "conjugation:3pl",
+        "conjugation:irregular",
+        "es:ir",
+        "en:going"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "b5c13zo3bg",
+      "spanish": "soy [algo]",
+      "english": "I am [something]",
+      "example": {
+        "spanish": "Soy profesor.",
+        "english": "I am a teacher."
+      },
+      "collections": [
+        "pos:verb",
+        "conjugation:present",
+        "conjugation:1sg",
+        "conjugation:irregular",
+        "es:ser",
+        "en:am",
+        "contrast:soy-vs-estoy",
+        "contrast:confusable"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "0rv1zmpu5c",
+      "spanish": "eres [algo]",
+      "english": "you are [something]",
+      "example": {
+        "spanish": "Eres muy inteligente.",
+        "english": "You are very smart."
+      },
+      "collections": [
+        "pos:verb",
+        "conjugation:present",
+        "conjugation:2sg",
+        "conjugation:irregular",
+        "es:ser",
+        "en:are"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "rf1kaz8lmr",
+      "spanish": "es [algo]",
+      "english": "is [something]",
+      "example": {
+        "spanish": "Ella es doctora.",
+        "english": "She is a doctor."
+      },
+      "collections": [
+        "pos:verb",
+        "conjugation:present",
+        "conjugation:3sg",
+        "conjugation:irregular",
+        "es:ser",
+        "en:is"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "d3s5uo0ahx",
+      "spanish": "somos [algo]",
+      "english": "we are [something]",
+      "example": {
+        "spanish": "Somos amigos.",
+        "english": "We are friends."
+      },
+      "collections": [
+        "pos:verb",
+        "conjugation:present",
+        "conjugation:1pl",
+        "conjugation:irregular",
+        "es:ser",
+        "en:are"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "0kqlhwpi3i",
+      "spanish": "son [algo]",
+      "english": "they are [something]",
+      "example": {
+        "spanish": "Ellos son hermanos.",
+        "english": "They are siblings."
+      },
+      "collections": [
+        "pos:verb",
+        "conjugation:present",
+        "conjugation:3pl",
+        "conjugation:irregular",
+        "es:ser",
+        "en:are"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "93wmoiwink",
+      "spanish": "estoy [en un estado o lugar]",
+      "english": "I am [somewhere or feeling something]",
+      "example": {
+        "spanish": "Estoy cansado.",
+        "english": "I am tired."
+      },
+      "collections": [
+        "pos:verb",
+        "conjugation:present",
+        "conjugation:1sg",
+        "conjugation:irregular",
+        "es:estar",
+        "en:am",
+        "contrast:soy-vs-estoy",
+        "contrast:confusable"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "0k44vohfn6",
+      "spanish": "estás [en un estado o lugar]",
+      "english": "you are [somewhere or feeling something]",
+      "example": {
+        "spanish": "¿Estás bien?",
+        "english": "Are you okay?"
+      },
+      "collections": [
+        "pos:verb",
+        "conjugation:present",
+        "conjugation:2sg",
+        "conjugation:irregular",
+        "es:estar",
+        "en:are"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "zs2vl4oxdq",
+      "spanish": "está [en un estado o lugar]",
+      "english": "is [somewhere or feeling something]",
+      "example": {
+        "spanish": "Él está en casa.",
+        "english": "He is at home."
+      },
+      "collections": [
+        "pos:verb",
+        "conjugation:present",
+        "conjugation:3sg",
+        "conjugation:irregular",
+        "es:estar",
+        "en:is"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "kaq1f0slza",
+      "spanish": "estamos [en un estado o lugar]",
+      "english": "we are [somewhere or feeling something]",
+      "example": {
+        "spanish": "Estamos listos.",
+        "english": "We are ready."
+      },
+      "collections": [
+        "pos:verb",
+        "conjugation:present",
+        "conjugation:1pl",
+        "conjugation:irregular",
+        "es:estar",
+        "en:are"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "widbvn1zzj",
+      "spanish": "están [en un estado o lugar]",
+      "english": "they are [somewhere or feeling something]",
+      "example": {
+        "spanish": "Están ocupados.",
+        "english": "They are busy."
+      },
+      "collections": [
+        "pos:verb",
+        "conjugation:present",
+        "conjugation:3pl",
+        "conjugation:irregular",
+        "es:estar",
+        "en:are"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "p1ga7e8bhn",
+      "spanish": "tengo [algo]",
+      "english": "I have [something]",
+      "example": {
+        "spanish": "Tengo un perro.",
+        "english": "I have a dog."
+      },
+      "collections": [
+        "pos:verb",
+        "conjugation:present",
+        "conjugation:1sg",
+        "conjugation:irregular",
+        "es:tener",
+        "en:have"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "mwpgnk4gb9",
+      "spanish": "tienes [algo]",
+      "english": "you have [something]",
+      "example": {
+        "spanish": "Tienes un mensaje nuevo.",
+        "english": "You have a new message."
+      },
+      "collections": [
+        "pos:verb",
+        "conjugation:present",
+        "conjugation:2sg",
+        "conjugation:irregular",
+        "es:tener",
+        "en:have"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "vea3m3h1kq",
+      "spanish": "tiene [algo]",
+      "english": "has [something]",
+      "example": {
+        "spanish": "Ella tiene dos hijos.",
+        "english": "She has two children."
+      },
+      "collections": [
+        "pos:verb",
+        "conjugation:present",
+        "conjugation:3sg",
+        "conjugation:irregular",
+        "es:tener",
+        "en:has"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "xisncbwr6s",
+      "spanish": "tenemos [algo]",
+      "english": "we have [something]",
+      "example": {
+        "spanish": "Tenemos suficiente tiempo.",
+        "english": "We have enough time."
+      },
+      "collections": [
+        "pos:verb",
+        "conjugation:present",
+        "conjugation:1pl",
+        "conjugation:irregular",
+        "es:tener",
+        "en:have"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "rkkkgau83q",
+      "spanish": "tienen [algo]",
+      "english": "they have [something]",
+      "example": {
+        "spanish": "Ellos tienen una casa grande.",
+        "english": "They have a big house."
+      },
+      "collections": [
+        "pos:verb",
+        "conjugation:present",
+        "conjugation:3pl",
+        "conjugation:irregular",
+        "es:tener",
+        "en:have"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "b6v2qryb2d",
+      "spanish": "he [hecho algo]",
+      "english": "I have [done something]",
+      "example": {
+        "spanish": "He terminado el proyecto.",
+        "english": "I have finished the project."
+      },
+      "collections": [
+        "pos:verb",
+        "grammar:perfect",
+        "conjugation:present",
+        "conjugation:1sg",
+        "conjugation:irregular",
+        "es:haber",
+        "en:have"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "xffe82pdpg",
+      "spanish": "has [hecho algo]",
+      "english": "you have [done something]",
+      "example": {
+        "spanish": "¿Has visto esta película?",
+        "english": "Have you seen this movie?"
+      },
+      "collections": [
+        "pos:verb",
+        "grammar:perfect",
+        "conjugation:present",
+        "conjugation:2sg",
+        "conjugation:irregular",
+        "es:haber",
+        "en:have"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "01rpjz02jy",
+      "spanish": "ha [hecho algo]",
+      "english": "has [done something]",
+      "example": {
+        "spanish": "Ella ha llegado.",
+        "english": "She has arrived."
+      },
+      "collections": [
+        "pos:verb",
+        "grammar:perfect",
+        "conjugation:present",
+        "conjugation:3sg",
+        "conjugation:irregular",
+        "es:haber",
+        "en:has"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "tei7cfo1k2",
+      "spanish": "hemos [hecho algo]",
+      "english": "we have [done something]",
+      "example": {
+        "spanish": "Hemos trabajado mucho.",
+        "english": "We have worked a lot."
+      },
+      "collections": [
+        "pos:verb",
+        "grammar:perfect",
+        "conjugation:present",
+        "conjugation:1pl",
+        "conjugation:irregular",
+        "es:haber",
+        "en:have"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "uwzxgiv5od",
+      "spanish": "han [hecho algo]",
+      "english": "they have [done something]",
+      "example": {
+        "spanish": "Ellos han salido.",
+        "english": "They have left."
+      },
+      "collections": [
+        "pos:verb",
+        "grammar:perfect",
+        "conjugation:present",
+        "conjugation:3pl",
+        "conjugation:irregular",
+        "es:haber",
+        "en:have"
+      ],
+      "curriculumRole": "supporting"
     }
   ]
 }

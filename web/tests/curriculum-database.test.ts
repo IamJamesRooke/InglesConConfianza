@@ -10,10 +10,38 @@ import {
 } from "../scripts/curriculum-data";
 import {
   collectionFacet,
+  KNOWN_CONJUGATION_VALUES,
   KNOWN_GRAMMAR_VALUES,
   LEGACY_COLLECTIONS,
 } from "../src/lib/curriculum/collections";
 import { prisma } from "../src/lib/database/prisma";
+
+// A facet with a controlled value list: every `facet:<value>` in the database
+// must be registered, and every registered value must still be carried by some
+// concept (so the set only grows or shrinks on purpose).
+function assertKnownValues(
+  collectionNames: Set<string>,
+  facet: string,
+  known: ReadonlySet<string>,
+) {
+  const prefix = `${facet}:`;
+  const unknown = [...collectionNames]
+    .filter((name) => name.startsWith(prefix))
+    .map((name) => name.slice(prefix.length))
+    .filter((value) => !known.has(value))
+    .sort();
+  assert.deepStrictEqual(
+    unknown,
+    [],
+    `Unregistered ${facet}: values — add to the controlled set or fix the tag.`,
+  );
+  const stale = [...known].filter((value) => !collectionNames.has(`${prefix}${value}`));
+  assert.deepStrictEqual(
+    stale,
+    [],
+    `The ${facet}: controlled set has entries no concept carries — remove them.`,
+  );
+}
 
 test("the imported curriculum is exact and protected", async (context) => {
   context.after(async () => {
@@ -50,26 +78,8 @@ test("the imported curriculum is exact and protected", async (context) => {
     `Legacy bare collections must not grow past 292 (found ${LEGACY_COLLECTIONS.size}).`,
   );
 
-  // Every grammar:<value> must be in the controlled vocabulary. New values are
-  // added to KNOWN_GRAMMAR_VALUES on purpose; typos and stray tags are rejected.
-  const unknownGrammar = [...collectionNames]
-    .filter((name) => name.startsWith("grammar:"))
-    .map((name) => name.slice("grammar:".length))
-    .filter((value) => !KNOWN_GRAMMAR_VALUES.has(value))
-    .sort();
-  assert.deepStrictEqual(
-    unknownGrammar,
-    [],
-    "Unregistered grammar: values — add to KNOWN_GRAMMAR_VALUES or fix the tag.",
-  );
-  const staleGrammar = [...KNOWN_GRAMMAR_VALUES].filter(
-    (value) => !collectionNames.has(`grammar:${value}`),
-  );
-  assert.deepStrictEqual(
-    staleGrammar,
-    [],
-    "KNOWN_GRAMMAR_VALUES has entries no concept carries — remove them.",
-  );
+  assertKnownValues(collectionNames, "grammar", KNOWN_GRAMMAR_VALUES);
+  assertKnownValues(collectionNames, "conjugation", KNOWN_CONJUGATION_VALUES);
 
   // The es: / en: lemma facets make the catalog queryable as a bilingual
   // dictionary: every sense of a headword under one tag.
