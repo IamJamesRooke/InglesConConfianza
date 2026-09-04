@@ -1,35 +1,8 @@
 import type {
-  ConceptLink,
-  ConceptRole,
-  ConceptType,
   Lesson,
   LessonConcept,
-  MappingDirection,
   SentenceBlock,
 } from "@/lib/lesson-builder/types";
-
-export const conceptRoleOptions = [
-  { value: "primary", label: "Primary" },
-  { value: "introduced", label: "Introduced" },
-  { value: "reinforced", label: "Reinforced" },
-  { value: "required", label: "Required" },
-  { value: "incidental", label: "Incidental" },
-] satisfies Array<{ value: ConceptRole; label: string }>;
-
-export const conceptTypeOptions = [
-  { value: "mapping", label: "Mapping" },
-  { value: "vocabulary", label: "Vocabulary" },
-  { value: "grammar_pattern", label: "Grammar pattern" },
-  { value: "morpheme", label: "Morpheme" },
-  { value: "concept_group", label: "Concept group" },
-] satisfies Array<{ value: ConceptType; label: string }>;
-
-export const mappingDirectionOptions = [
-  { value: "es_to_en", label: "Spanish → English" },
-  { value: "en_to_es", label: "English → Spanish" },
-  { value: "bidirectional", label: "Both directions" },
-  { value: "not_directional", label: "Not directional" },
-] satisfies Array<{ value: MappingDirection; label: string }>;
 
 export function normalizeAnswer(answer: string) {
   return answer.trim().replace(/\s+/g, " ");
@@ -37,34 +10,6 @@ export function normalizeAnswer(answer: string) {
 
 export function createId(prefix: string) {
   return `${prefix}_${crypto.randomUUID()}`;
-}
-
-export function createConceptLink(): ConceptLink {
-  return {
-    id: createId("concept_link"),
-    label: "",
-    type: "mapping",
-    direction: "es_to_en",
-    sourceText: "",
-    targetText: "",
-    contextLabel: "",
-    role: "introduced",
-  };
-}
-
-export function normalizeConceptLink(
-  conceptLink: Partial<ConceptLink>,
-): ConceptLink {
-  return {
-    id: conceptLink.id ?? createId("concept_link"),
-    label: conceptLink.label ?? "",
-    type: conceptLink.type ?? "mapping",
-    direction: conceptLink.direction ?? "es_to_en",
-    sourceText: conceptLink.sourceText ?? "",
-    targetText: conceptLink.targetText ?? "",
-    contextLabel: conceptLink.contextLabel ?? "",
-    role: conceptLink.role ?? "introduced",
-  };
 }
 
 export function normalizeLessonConcept(
@@ -79,21 +24,31 @@ export function normalizeLessonConcept(
 
 export function normalizeLessons(lessons: Lesson[]) {
   return lessons.map((lesson) => ({
-    ...lesson,
+    id: lesson.id,
+    name: lesson.name,
     concepts: (lesson.concepts ?? []).map(normalizeLessonConcept),
     blocks: lesson.blocks.map((block) => {
       if (block.type === "explanation") {
-        return block;
+        return {
+          id: block.id,
+          type: block.type,
+          contentMarkdown: block.contentMarkdown,
+        };
       }
 
       return {
-        ...block,
-        conceptLinks: (block.conceptLinks ?? []).map(normalizeConceptLink),
+        id: block.id,
+        type: block.type,
+        ...(block.layout === "vocabulary_table" ? { layout: block.layout } : {}),
+        promptLabel: block.promptLabel,
+        promptText: block.promptText,
+        helperText: block.helperText,
+        answerFeedback: block.answerFeedback,
         languageBlocks: block.languageBlocks.map((languageBlock) => ({
-          ...languageBlock,
-          conceptLinks: (languageBlock.conceptLinks ?? []).map(
-            normalizeConceptLink,
-          ),
+          id: languageBlock.id,
+          spanish: languageBlock.spanish,
+          callout: languageBlock.callout,
+          acceptedAnswers: [...languageBlock.acceptedAnswers],
         })),
       };
     }),

@@ -1,5 +1,4 @@
 import type {
-  ConceptLink,
   Lesson,
   LessonConcept,
   SentenceBlock,
@@ -82,25 +81,6 @@ export type LessonsAction =
       lessonId: string;
       sentenceBlockId: string;
       patch: SentenceFieldPatch;
-    }
-  | {
-      type: "ADD_SENTENCE_CONCEPT_LINK";
-      lessonId: string;
-      sentenceBlockId: string;
-      conceptLink: ConceptLink;
-    }
-  | {
-      type: "UPDATE_SENTENCE_CONCEPT_LINK";
-      lessonId: string;
-      sentenceBlockId: string;
-      conceptLinkId: string;
-      updates: Partial<Omit<ConceptLink, "id">>;
-    }
-  | {
-      type: "REMOVE_SENTENCE_CONCEPT_LINK";
-      lessonId: string;
-      sentenceBlockId: string;
-      conceptLinkId: string;
     }
   | {
       type: "ADD_LANGUAGE_BLOCK";
@@ -244,28 +224,6 @@ export function lessonsReducer(
         action.lessonId,
         action.sentenceBlockId,
         action.patch,
-      );
-    case "ADD_SENTENCE_CONCEPT_LINK":
-      return mutations.addSentenceConceptLink(
-        lessons,
-        action.lessonId,
-        action.sentenceBlockId,
-        action.conceptLink,
-      );
-    case "UPDATE_SENTENCE_CONCEPT_LINK":
-      return mutations.updateSentenceConceptLink(
-        lessons,
-        action.lessonId,
-        action.sentenceBlockId,
-        action.conceptLinkId,
-        action.updates,
-      );
-    case "REMOVE_SENTENCE_CONCEPT_LINK":
-      return mutations.removeSentenceConceptLink(
-        lessons,
-        action.lessonId,
-        action.sentenceBlockId,
-        action.conceptLinkId,
       );
     case "ADD_LANGUAGE_BLOCK":
       return mutations.addLanguageBlock(

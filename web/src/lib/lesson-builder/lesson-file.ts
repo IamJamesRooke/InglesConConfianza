@@ -1,43 +1,15 @@
 import type {
-  ConceptLink,
-  ConceptRole,
-  ConceptType,
-  LanguageBlock,
   Lesson,
   LessonBlock,
   LessonFile,
   LessonFileV1,
   LessonModule,
-  MappingDirection,
 } from "@/lib/lesson-builder/types";
 import { createId } from "@/lib/lesson-builder/utils";
 
 // Pure validation, migration, and the ordering invariant for data/lessons.json.
 // No fs — lesson-store.ts wraps this with reads/writes. Unit-tested in
 // tests/unit/course.test.ts.
-
-const conceptRoles: ConceptRole[] = [
-  "primary",
-  "introduced",
-  "reinforced",
-  "required",
-  "incidental",
-];
-
-const conceptTypes: ConceptType[] = [
-  "mapping",
-  "vocabulary",
-  "grammar_pattern",
-  "morpheme",
-  "concept_group",
-];
-
-const mappingDirections: MappingDirection[] = [
-  "es_to_en",
-  "en_to_es",
-  "bidirectional",
-  "not_directional",
-];
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -47,49 +19,12 @@ function isStringOrNull(value: unknown): value is string | null {
   return typeof value === "string" || value === null;
 }
 
-function isConceptRole(value: unknown): value is ConceptRole {
-  return typeof value === "string" && conceptRoles.includes(value as ConceptRole);
-}
-
-function isConceptType(value: unknown): value is ConceptType {
-  return typeof value === "string" && conceptTypes.includes(value as ConceptType);
-}
-
-function isMappingDirection(value: unknown): value is MappingDirection {
-  return (
-    typeof value === "string" &&
-    mappingDirections.includes(value as MappingDirection)
-  );
-}
-
-function isConceptLink(value: unknown): value is ConceptLink {
-  return (
-    isRecord(value) &&
-    typeof value.id === "string" &&
-    typeof value.label === "string" &&
-    (value.type === undefined || isConceptType(value.type)) &&
-    (value.direction === undefined || isMappingDirection(value.direction)) &&
-    (value.sourceText === undefined || typeof value.sourceText === "string") &&
-    (value.targetText === undefined || typeof value.targetText === "string") &&
-    (value.contextLabel === undefined ||
-      typeof value.contextLabel === "string") &&
-    isConceptRole(value.role)
-  );
-}
-
-function isOptionalConceptLinks(value: unknown) {
-  return (
-    value === undefined || (Array.isArray(value) && value.every(isConceptLink))
-  );
-}
-
-function isLanguageBlock(value: unknown): value is LanguageBlock {
+function isLanguageBlock(value: unknown) {
   return (
     isRecord(value) &&
     typeof value.id === "string" &&
     typeof value.spanish === "string" &&
     isStringOrNull(value.callout) &&
-    isOptionalConceptLinks(value.conceptLinks) &&
     Array.isArray(value.acceptedAnswers) &&
     value.acceptedAnswers.every((answer) => typeof answer === "string")
   );
@@ -113,7 +48,6 @@ function isLessonBlock(value: unknown): value is LessonBlock {
       typeof value.promptText === "string" &&
       typeof value.helperText === "string" &&
       isStringOrNull(value.answerFeedback) &&
-      isOptionalConceptLinks(value.conceptLinks) &&
       Array.isArray(value.languageBlocks) &&
       value.languageBlocks.every(isLanguageBlock)
     );
@@ -182,6 +116,39 @@ export function normalizeModule(module: LessonModule): LessonModule {
   };
 }
 
+function normalizeLessonForFile(lesson: Lesson): Lesson {
+  return {
+    id: lesson.id,
+    name: lesson.name,
+    concepts: lesson.concepts ?? [],
+    blocks: lesson.blocks.map((block): LessonBlock => {
+      if (block.type === "explanation") {
+        return {
+          id: block.id,
+          type: "explanation",
+          contentMarkdown: block.contentMarkdown,
+        };
+      }
+
+      return {
+        id: block.id,
+        type: "sentence",
+        ...(block.layout === "vocabulary_table" ? { layout: block.layout } : {}),
+        promptLabel: block.promptLabel,
+        promptText: block.promptText,
+        helperText: block.helperText,
+        answerFeedback: block.answerFeedback,
+        languageBlocks: block.languageBlocks.map((languageBlock) => ({
+          id: languageBlock.id,
+          spanish: languageBlock.spanish,
+          callout: languageBlock.callout,
+          acceptedAnswers: [...languageBlock.acceptedAnswers],
+        })),
+      };
+    }),
+  };
+}
+
 // A stable identity for matching module key concepts against lesson concepts:
 // the curriculum id when linked, otherwise the trimmed lowercased label.
 export function conceptKey(concept: {
@@ -243,7 +210,7 @@ export function migrateV1ToV2(file: LessonFileV1): LessonFile {
     modules: [
       { ...emptyModule("Module 1"), lessonIds: file.lessons.map((l) => l.id) },
     ],
-    lessons: file.lessons,
+    lessons: file.lessons.map(normalizeLessonForFile),
   };
 }
 
@@ -254,7 +221,11 @@ export function emptyLessonFile(): LessonFile {
 // Parse whatever is on disk into a valid v2 file, migrating v1 in memory.
 export function parseLessonFile(parsed: unknown): LessonFile {
   if (isLessonFile(parsed)) {
-    return { ...parsed, modules: parsed.modules.map(normalizeModule) };
+    return {
+      ...parsed,
+      modules: parsed.modules.map(normalizeModule),
+      lessons: parsed.lessons.map(normalizeLessonForFile),
+    };
   }
   if (isLessonFileV1(parsed)) return migrateV1ToV2(parsed);
   throw new Error("Saved lessons file has an invalid shape.");

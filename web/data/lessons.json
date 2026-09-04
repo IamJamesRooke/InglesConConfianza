@@ -149,7 +149,6 @@
           "promptText": "Escribe la palabra en inglés.",
           "helperText": "",
           "answerFeedback": "¡Eso es! Ya diste tu primer saludo en inglés.",
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_onboarding_hello_james_1",
@@ -157,8 +156,7 @@
               "callout": "La bombilla te muestra la respuesta y luego te deja intentarlo otra vez.",
               "acceptedAnswers": [
                 "hello"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -174,7 +172,6 @@
           "promptText": "Completa los dos bloques para formar la frase.",
           "helperText": "",
           "answerFeedback": "¡Hello James! Acabas de completar una frase real.",
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_onboarding_hello_james_2",
@@ -182,8 +179,7 @@
               "callout": "Al inicio de una frase usamos mayúscula.",
               "acceptedAnswers": [
                 "Hello"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_onboarding_hello_james_3",
@@ -191,8 +187,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "James!"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         }
@@ -221,7 +216,6 @@
           "promptText": "No hay penalización por usar la bombilla cuando la necesites.",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_onboarding_my_name_1",
@@ -229,8 +223,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "my name is"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -246,7 +239,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": "Perfecto. Ya sabes saludar y decir un nombre.",
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_onboarding_my_name_2",
@@ -254,8 +246,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "My name is"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_onboarding_my_name_3",
@@ -263,8 +254,7 @@
               "callout": "El punto cierra la frase.",
               "acceptedAnswers": [
                 "James."
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         }
@@ -298,7 +288,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_onboarding_meet_ana_1",
@@ -306,8 +295,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "Hello James."
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -318,7 +306,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_onboarding_meet_ana_2",
@@ -326,8 +313,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "My name is Ana."
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -343,7 +329,6 @@
           "promptText": "Avanza bloque por bloque. Cada respuesta correcta abre paso a la siguiente.",
           "helperText": "",
           "answerFeedback": "¡Listo! Ya conoces el ritmo: una idea pequeña, práctica y una frase útil.",
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_onboarding_meet_ana_3",
@@ -351,8 +336,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "Hello James,"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_onboarding_meet_ana_4",
@@ -360,8 +344,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "my name is"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_onboarding_meet_ana_5",
@@ -369,8 +352,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "Ana."
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         }
@@ -419,7 +401,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_4c6857e5-3c3c-4b41-90ec-eeb49e152e7c",
@@ -427,8 +408,7 @@
               "callout": "Debe ser mayúscula.",
               "acceptedAnswers": [
                 "I"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -445,7 +425,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_8b764e02-18c3-4a24-aacb-ac717ad7ca0c",
@@ -453,8 +432,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I speak"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_2136fe65-8cb2-4729-a947-a9448028ffcb",
@@ -462,8 +440,7 @@
               "callout": "En inglés, casi siempre decimos quien hace la acción.",
               "acceptedAnswers": [
                 "I speak"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -479,7 +456,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_af204edb-9e50-4860-8689-6484275cfdb9",
@@ -487,8 +463,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "English"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -499,7 +474,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_60ccc874-bde0-4b99-8ebb-e99733144ab3",
@@ -507,8 +481,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I speak"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_679d625e-93f7-4265-a792-ba3ac3eea921",
@@ -516,8 +489,7 @@
               "callout": "Debes ponerle un punto al final.",
               "acceptedAnswers": [
                 "English."
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -533,7 +505,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_d41c0da7-c912-4d71-baa2-8df9f26625f4",
@@ -541,8 +512,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "well"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -553,7 +523,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_c9a988f3-d485-473c-bc34-b3d585a9cca6",
@@ -561,8 +530,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I speak"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_da4e8f64-cac2-462c-a18e-d0e5881a7071",
@@ -570,8 +538,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "English"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_f3084bdb-2db8-47ac-8586-0583152185c1",
@@ -579,8 +546,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "well."
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -596,7 +562,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_483a345d-20eb-4855-afc1-3915464ad00c",
@@ -604,8 +569,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "very"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -616,7 +580,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_4daabd3d-4013-4563-895e-a95b5483edda",
@@ -624,8 +587,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I speak"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_0f42cdfb-8522-4989-a034-7d070bdb3d9f",
@@ -633,8 +595,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "English"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_ed536952-d333-4bc2-b7d4-1fe539bcef69",
@@ -642,8 +603,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "very"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_7af44867-0ef5-4438-b6f3-048786e92c52",
@@ -651,8 +611,7 @@
               "callout": "Punto al final.",
               "acceptedAnswers": [
                 "well."
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         }
@@ -692,7 +651,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_676b5914-85ad-4a2f-b778-aa35db2536d5",
@@ -700,8 +658,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I want"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_bfc9ec5e-6358-4e5e-971c-9a0527eddf5a",
@@ -709,8 +666,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I want"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -727,7 +683,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_696d2790-ecd9-4f6a-93c4-ad581d9d6578",
@@ -735,8 +690,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I speak"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_1275bfce-6735-4a51-baa0-ee6f818b3e04",
@@ -744,8 +698,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to speak"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -756,7 +709,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_037c23fe-a7fb-4914-a5b6-b3eceb187945",
@@ -764,8 +716,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I speak"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_1b1d0a78-1ffa-4e6c-86b1-e7c3b41a4574",
@@ -773,8 +724,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "English."
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -785,7 +735,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_68eb4554-6f79-4e34-9a48-53db6db0c009",
@@ -793,8 +742,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I want"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_47270308-70e6-40c5-ba25-8220542b1a5e",
@@ -802,8 +750,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to speak"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_64e53c41-7f87-4447-b0a4-b35ed71ccec0",
@@ -811,8 +758,7 @@
               "callout": "Punto al final.",
               "acceptedAnswers": [
                 "English."
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -828,7 +774,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_e48f8e8c-4e34-4396-ae41-ece5dc1f6fc6",
@@ -836,8 +781,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "with"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -853,7 +797,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_b83c5c8e-85cf-475e-879a-6881f6adf83d",
@@ -861,8 +804,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "with you"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -873,7 +815,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_c8181370-1672-441c-8ded-272806846af4",
@@ -881,8 +822,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I want"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_b2964ebf-b9cb-4487-ab95-d21a10c8ebef",
@@ -890,8 +830,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to speak"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_1ed98bf8-1d3d-4142-bdff-62795fe88c53",
@@ -899,8 +838,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "English"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_196a6ee8-47a6-49c6-a53c-561f3e01be0c",
@@ -908,8 +846,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "with you."
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         }
@@ -943,7 +880,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_6395703d-a04e-4ea8-b1cb-18aba6282b1a",
@@ -951,8 +887,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to be"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -968,7 +903,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_fb9cb970-34d5-4b45-8533-6d93e57eefa5",
@@ -976,8 +910,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "able"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -988,7 +921,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_c8fc3478-4ed9-420e-80aa-fe2ff5a2f9d2",
@@ -996,8 +928,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to be"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_e45ca2c3-13bf-41c0-9514-9ed4cf7fa35d",
@@ -1005,8 +936,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "able"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -1017,7 +947,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_2000405c-147f-48fd-b0cb-021e20856040",
@@ -1025,8 +954,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I want"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_8a93dd4c-bd0e-4101-ad49-74edecaa25e6",
@@ -1034,8 +962,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to be"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_32a59847-cbb1-4f7c-b6d0-b36a15881bfc",
@@ -1043,8 +970,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "able"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_364d24e6-c56b-4a8d-b721-c96421c20912",
@@ -1052,8 +978,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to speak"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_7fadf6f3-1f4d-4730-99b5-3db68a528422",
@@ -1061,8 +986,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "English."
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -1079,7 +1003,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_03ceaa68-c76e-4201-a1d1-f76d675e0e7d",
@@ -1087,8 +1010,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to be able"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_22c79565-ced1-4ee9-b7d5-fc1a2f4cbd8a",
@@ -1096,8 +1018,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to be able"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -1108,7 +1029,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_206a820d-016c-4b8c-a6f1-43604e8e1aaa",
@@ -1116,8 +1036,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I want"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_7f15d874-e619-4c9d-b17a-cfab91346fcf",
@@ -1125,8 +1044,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to be able"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_3326c0dc-af16-45ff-9fef-f6894c2bd3e9",
@@ -1134,8 +1052,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to speak"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_d8e8bae9-8f95-4420-9096-0b4fcc62707e",
@@ -1143,8 +1060,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "English."
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -1160,7 +1076,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_e516433c-4779-477e-8c23-03fdcac73b6a",
@@ -1168,8 +1083,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I want"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_2bcaf420-ecc0-47ae-b8b6-dcbf6186c563",
@@ -1177,8 +1091,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to be able"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_c516772a-b76b-4b3f-ae11-767c61c98513",
@@ -1186,8 +1099,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to speak"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_65ee3fd1-9590-486c-b440-b9061bb399ec",
@@ -1195,8 +1107,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "English"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_77028772-834a-4d5d-bd21-b7b995ea5711",
@@ -1204,8 +1115,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "very"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_fe9873a1-4f6a-4adc-9510-614a5d05226d",
@@ -1213,8 +1123,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "well."
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         }
@@ -1248,7 +1157,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_fundamentals_going_able_1",
@@ -1256,8 +1164,7 @@
               "callout": "I'm suena como ‘aim’.",
               "acceptedAnswers": [
                 "I'm going to"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -1273,7 +1180,6 @@
           "promptText": "",
           "helperText": "Aquí **going to** ya aporta el **to**. Por eso decimos **be able**, no **to be able**.",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_fundamentals_going_able_2",
@@ -1281,8 +1187,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I'm going to"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_fundamentals_going_able_3",
@@ -1290,8 +1195,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "be able"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -1302,7 +1206,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_fundamentals_going_able_4",
@@ -1310,8 +1213,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I'm going to be able"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_fundamentals_going_able_5",
@@ -1319,8 +1221,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to speak English."
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -1336,7 +1237,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": "Muy bien. Construiste una idea larga a partir de piezas que ya conoces.",
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_fundamentals_going_able_6",
@@ -1344,8 +1244,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I'm going to"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_fundamentals_going_able_7",
@@ -1353,8 +1252,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "be able"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_fundamentals_going_able_8",
@@ -1362,8 +1260,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to speak"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_fundamentals_going_able_9",
@@ -1371,8 +1268,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "English"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_fundamentals_going_able_10",
@@ -1380,8 +1276,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "very"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_fundamentals_going_able_11",
@@ -1389,8 +1284,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "well."
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         }
@@ -1424,7 +1318,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_infinitive_need_speak_1",
@@ -1432,8 +1325,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I need"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -1449,7 +1341,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_infinitive_need_speak_2",
@@ -1457,8 +1348,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I need"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_infinitive_need_speak_3",
@@ -1466,8 +1356,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to speak"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -1478,7 +1367,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": "Excelente. **Need + to + acción** ya está trabajando para ti.",
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_infinitive_need_speak_4",
@@ -1486,8 +1374,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I need"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_infinitive_need_speak_5",
@@ -1495,8 +1382,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to speak"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_infinitive_need_speak_6",
@@ -1504,8 +1390,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "English."
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         }
@@ -1544,7 +1429,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_infinitive_work_today_1",
@@ -1552,8 +1436,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I want"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -1569,7 +1452,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_infinitive_work_today_2",
@@ -1577,8 +1459,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I want"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_infinitive_work_today_3",
@@ -1586,8 +1467,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to work"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -1603,7 +1483,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": "Bien hecho. Cambiaste la acción sin cambiar la estructura.",
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_infinitive_work_today_4",
@@ -1611,8 +1490,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I want"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_infinitive_work_today_5",
@@ -1620,8 +1498,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to work"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_infinitive_work_today_6",
@@ -1629,8 +1506,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "today."
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         }
@@ -1669,7 +1545,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_infinitive_study_home_1",
@@ -1677,8 +1552,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to study"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -1689,7 +1563,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_infinitive_study_home_2",
@@ -1697,8 +1570,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I need"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_infinitive_study_home_3",
@@ -1706,8 +1578,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to study"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -1723,7 +1594,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_infinitive_study_home_4",
@@ -1731,8 +1601,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "at home"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -1743,7 +1612,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": "Perfecto. La estructura sigue estable mientras agregas información útil.",
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_infinitive_study_home_5",
@@ -1751,8 +1619,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I need"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_infinitive_study_home_6",
@@ -1760,8 +1627,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to study"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_infinitive_study_home_7",
@@ -1769,8 +1635,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "at home."
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         }
@@ -1809,7 +1674,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_infinitive_learn_english_1",
@@ -1817,8 +1681,7 @@
               "callout": "learn suena parecido a ‘lern’.",
               "acceptedAnswers": [
                 "to learn"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -1834,7 +1697,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_infinitive_learn_english_2",
@@ -1842,8 +1704,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I want"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_infinitive_learn_english_3",
@@ -1851,8 +1712,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to learn"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -1863,7 +1723,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": "Eso es una frase que puedes usar para explicar por qué estás aquí.",
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_infinitive_learn_english_4",
@@ -1871,8 +1730,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I want"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_infinitive_learn_english_5",
@@ -1880,8 +1738,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to learn"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_infinitive_learn_english_6",
@@ -1889,8 +1746,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "English."
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         }
@@ -1929,7 +1785,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_infinitive_learn_to_speak_1",
@@ -1937,8 +1792,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to learn"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_infinitive_learn_to_speak_2",
@@ -1946,8 +1800,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to speak"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -1963,7 +1816,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_infinitive_learn_to_speak_3",
@@ -1971,8 +1823,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I want"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_infinitive_learn_to_speak_4",
@@ -1980,8 +1831,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to learn"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_infinitive_learn_to_speak_5",
@@ -1989,8 +1839,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to speak"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -2001,7 +1850,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": "¡Excelente! Ya puedes combinar intención, aprendizaje y acción.",
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_infinitive_learn_to_speak_6",
@@ -2009,8 +1857,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I want"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_infinitive_learn_to_speak_7",
@@ -2018,8 +1865,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to learn"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_infinitive_learn_to_speak_8",
@@ -2027,8 +1873,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to speak"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_infinitive_learn_to_speak_9",
@@ -2036,8 +1881,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "English."
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         }
@@ -2071,7 +1915,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_plans_speak_1",
@@ -2079,8 +1922,7 @@
               "callout": "I'm suena como ‘aim’.",
               "acceptedAnswers": [
                 "I'm going to"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -2096,7 +1938,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_plans_speak_2",
@@ -2104,8 +1945,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I'm going to"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_plans_speak_3",
@@ -2113,8 +1953,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "speak"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -2125,7 +1964,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": "Muy bien. Ya convertiste una acción conocida en un plan.",
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_plans_speak_4",
@@ -2133,8 +1971,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I'm going to"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_plans_speak_5",
@@ -2142,8 +1979,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "speak"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_plans_speak_6",
@@ -2151,8 +1987,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "English."
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         }
@@ -2191,7 +2026,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_plans_work_today_1",
@@ -2199,8 +2033,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "to work"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -2216,7 +2049,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_plans_work_today_2",
@@ -2224,8 +2056,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I'm going to"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_plans_work_today_3",
@@ -2233,8 +2064,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "work"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -2245,7 +2075,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": "Perfecto. La estructura funciona con cualquier acción.",
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_plans_work_today_4",
@@ -2253,8 +2082,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I'm going to"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_plans_work_today_5",
@@ -2262,8 +2090,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "work"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_plans_work_today_6",
@@ -2271,8 +2098,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "today."
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         }
@@ -2316,7 +2142,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_plans_study_tomorrow_1",
@@ -2324,8 +2149,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "tomorrow"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -2341,7 +2165,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_plans_study_tomorrow_2",
@@ -2349,8 +2172,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I'm going to"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_plans_study_tomorrow_3",
@@ -2358,8 +2180,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "study"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_plans_study_tomorrow_4",
@@ -2367,8 +2188,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "at home"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -2379,7 +2199,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": "Excelente. Ya puedes decir qué harás, dónde y cuándo.",
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_plans_study_tomorrow_5",
@@ -2387,8 +2206,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I'm going to"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_plans_study_tomorrow_6",
@@ -2396,8 +2214,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "study"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_plans_study_tomorrow_7",
@@ -2405,8 +2222,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "at home"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_plans_study_tomorrow_8",
@@ -2414,8 +2230,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "tomorrow."
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         }
@@ -2454,7 +2269,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_plans_not_work_1",
@@ -2462,8 +2276,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I'm not going to"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -2479,7 +2292,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_plans_not_work_2",
@@ -2487,8 +2299,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I'm not going to"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_plans_not_work_3",
@@ -2496,8 +2307,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "work"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -2508,7 +2318,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": "Muy bien. Con una sola palabra convertiste el plan en una negativa.",
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_plans_not_work_4",
@@ -2516,8 +2325,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "I'm not going to"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_plans_not_work_5",
@@ -2525,8 +2333,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "work"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_plans_not_work_6",
@@ -2534,8 +2341,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "tomorrow."
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         }
@@ -2569,7 +2375,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_plans_question_1",
@@ -2577,8 +2382,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "Are you going to...?"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -2594,7 +2398,6 @@
           "promptText": "",
           "helperText": "",
           "answerFeedback": null,
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_plans_question_2",
@@ -2602,8 +2405,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "with me"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         },
@@ -2614,7 +2416,6 @@
           "promptText": "",
           "helperText": "La pregunta comienza con **Are**, por eso no usamos **I'm**.",
           "answerFeedback": "¡Lo lograste! Ya puedes hablar de tus planes y preguntar por los de otra persona.",
-          "conceptLinks": [],
           "languageBlocks": [
             {
               "id": "lang_demo_plans_question_3",
@@ -2622,8 +2423,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "Are you going to"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_plans_question_4",
@@ -2631,8 +2431,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "speak English"
-              ],
-              "conceptLinks": []
+              ]
             },
             {
               "id": "lang_demo_plans_question_5",
@@ -2640,8 +2439,7 @@
               "callout": null,
               "acceptedAnswers": [
                 "with me?"
-              ],
-              "conceptLinks": []
+              ]
             }
           ]
         }

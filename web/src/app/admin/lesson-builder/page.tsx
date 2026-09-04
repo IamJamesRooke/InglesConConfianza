@@ -33,20 +33,17 @@ import { PendingLessonExitDialog } from "@/components/lesson-builder/pending-les
 import { ExplanationBlockEditor } from "@/components/lesson-builder/explanation-block-editor";
 import { LessonBlockPreviewList } from "@/components/lesson-builder/lesson-block-preview";
 import { SentenceBlockHeader } from "@/components/lesson-builder/sentence-block-header";
-import { SentenceConceptLinks } from "@/components/lesson-builder/sentence-concept-links";
 import {
   SentenceMarkdownFields,
   type SentenceMarkdownFieldName,
 } from "@/components/lesson-builder/sentence-markdown-fields";
 import type {
-  ConceptLink,
   Lesson,
   LessonBlock,
   LessonFile,
   LessonModule,
 } from "@/lib/lesson-builder/types";
 import {
-  createConceptLink,
   createId,
   getSentenceValidationIssueCount,
   normalizeLessons,
@@ -1305,43 +1302,6 @@ export default function LessonBuilderPage() {
     });
   }
 
-  function addSentenceConceptLink(lessonId: string, sentenceBlockId: string) {
-    dispatch({
-      type: "ADD_SENTENCE_CONCEPT_LINK",
-      lessonId,
-      sentenceBlockId,
-      conceptLink: createConceptLink(),
-    });
-  }
-
-  function updateSentenceConceptLink(
-    lessonId: string,
-    sentenceBlockId: string,
-    conceptLinkId: string,
-    updates: Partial<Omit<ConceptLink, "id">>,
-  ) {
-    dispatch({
-      type: "UPDATE_SENTENCE_CONCEPT_LINK",
-      lessonId,
-      sentenceBlockId,
-      conceptLinkId,
-      updates,
-    });
-  }
-
-  function removeSentenceConceptLink(
-    lessonId: string,
-    sentenceBlockId: string,
-    conceptLinkId: string,
-  ) {
-    dispatch({
-      type: "REMOVE_SENTENCE_CONCEPT_LINK",
-      lessonId,
-      sentenceBlockId,
-      conceptLinkId,
-    });
-  }
-
   function updateLanguageBlockCallout(
     lessonId: string,
     sentenceBlockId: string,
@@ -2204,27 +2164,6 @@ export default function LessonBuilderPage() {
                                   );
                                 }
                               }}
-                            />
-                            <SentenceConceptLinks
-                              conceptLinks={block.conceptLinks}
-                              onAdd={() =>
-                                addSentenceConceptLink(lesson.id, block.id)
-                              }
-                              onUpdate={(conceptLinkId, updates) =>
-                                updateSentenceConceptLink(
-                                  lesson.id,
-                                  block.id,
-                                  conceptLinkId,
-                                  updates,
-                                )
-                              }
-                              onRemove={(conceptLinkId) =>
-                                removeSentenceConceptLink(
-                                  lesson.id,
-                                  block.id,
-                                  conceptLinkId,
-                                )
-                              }
                             />
                           <LanguageBlockGrid
                             lessonId={lesson.id}

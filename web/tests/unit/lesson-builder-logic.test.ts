@@ -31,7 +31,6 @@ function lang(id: string, over: Partial<SentenceBlock["languageBlocks"][number]>
     spanish: "hola",
     callout: null,
     acceptedAnswers: ["hi"],
-    conceptLinks: [],
     ...over,
   };
 }
@@ -44,7 +43,6 @@ function sentence(id: string, langIds: string[] = ["l1"]): SentenceBlock {
     promptText: "",
     helperText: "",
     answerFeedback: null,
-    conceptLinks: [],
     languageBlocks: langIds.map((lid) => lang(lid)),
   };
 }
@@ -159,28 +157,6 @@ test("duplicateContentBlock is a no-op for an unknown block id", () => {
   assert.deepEqual(m.duplicateContentBlock(lessons, "L", "nope"), lessons);
 });
 
-// --- sentence concept links --------------------------------------------
-
-test("sentence concept link add / update / remove", () => {
-  let lessons = [lesson("L", [sentence("s1")])];
-  const link = {
-    id: "cl1",
-    label: "querer",
-    type: "mapping" as const,
-    direction: "es_to_en" as const,
-    sourceText: "",
-    targetText: "",
-    contextLabel: "",
-    role: "introduced" as const,
-  };
-  lessons = m.addSentenceConceptLink(lessons, "L", "s1", link);
-  assert.equal((lessons[0].blocks[0] as SentenceBlock).conceptLinks.length, 1);
-  lessons = m.updateSentenceConceptLink(lessons, "L", "s1", "cl1", { label: "poder" });
-  assert.equal((lessons[0].blocks[0] as SentenceBlock).conceptLinks[0].label, "poder");
-  lessons = m.removeSentenceConceptLink(lessons, "L", "s1", "cl1");
-  assert.equal((lessons[0].blocks[0] as SentenceBlock).conceptLinks.length, 0);
-});
-
 test("updateLanguageBlock patches spanish and callout", () => {
   const lessons = [lesson("L", [sentence("s1", ["l1"])])];
   const next = m.updateLanguageBlock(lessons, "L", "s1", "l1", {
@@ -272,7 +248,38 @@ test("normalizeLessons backfills missing arrays and leaves explanation blocks", 
           promptText: "",
           helperText: "",
           answerFeedback: null,
-          languageBlocks: [{ id: "l1", spanish: "", callout: null, acceptedAnswers: [""] }],
+          conceptLinks: [
+            {
+              id: "legacy-cl",
+              label: "legacy",
+              type: "mapping",
+              direction: "es_to_en",
+              sourceText: "",
+              targetText: "",
+              contextLabel: "",
+              role: "introduced",
+            },
+          ],
+          languageBlocks: [
+            {
+              id: "l1",
+              spanish: "",
+              callout: null,
+              acceptedAnswers: [""],
+              conceptLinks: [
+                {
+                  id: "legacy-lang-cl",
+                  label: "legacy",
+                  type: "mapping",
+                  direction: "es_to_en",
+                  sourceText: "",
+                  targetText: "",
+                  contextLabel: "",
+                  role: "introduced",
+                },
+              ],
+            },
+          ],
         },
       ],
     },
@@ -281,8 +288,8 @@ test("normalizeLessons backfills missing arrays and leaves explanation blocks", 
   assert.deepEqual(out.concepts, []);
   assert.equal(out.blocks[0].type, "explanation");
   const s = out.blocks[1] as SentenceBlock;
-  assert.deepEqual(s.conceptLinks, []);
-  assert.deepEqual(s.languageBlocks[0].conceptLinks, []);
+  assert.ok(!("conceptLinks" in s));
+  assert.ok(!("conceptLinks" in s.languageBlocks[0]));
 });
 
 // --- module / lesson-file helpers --------------------------------------

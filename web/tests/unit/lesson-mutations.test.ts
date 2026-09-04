@@ -13,9 +13,8 @@ function sentenceBlock(overrides: Partial<SentenceBlock> = {}): SentenceBlock {
     promptText: "",
     helperText: "",
     answerFeedback: null,
-    conceptLinks: [],
     languageBlocks: [
-      { id: "l1", spanish: "", callout: null, acceptedAnswers: [""], conceptLinks: [] },
+      { id: "l1", spanish: "", callout: null, acceptedAnswers: [""] },
     ],
     ...overrides,
   };
@@ -119,29 +118,13 @@ test("duplicateContentBlock deep-copies with fresh ids", () => {
       id: "lesson_a",
       name: null,
       concepts: [],
-      blocks: [
-        sentenceBlock({
-          conceptLinks: [
-            {
-              id: "cl1",
-              label: "x",
-              type: "mapping",
-              direction: "es_to_en",
-              sourceText: "",
-              targetText: "",
-              contextLabel: "",
-              role: "introduced",
-            },
-          ],
-        }),
-      ],
+      blocks: [sentenceBlock()],
     },
   ];
   const next = m.duplicateContentBlock(lessons, "lesson_a", "b1");
   assert.equal(next[0].blocks.length, 2);
   const [original, copy] = next[0].blocks as SentenceBlock[];
   assert.notEqual(original.id, copy.id);
-  assert.notEqual(original.conceptLinks[0].id, copy.conceptLinks[0].id);
   assert.notEqual(original.languageBlocks[0].id, copy.languageBlocks[0].id);
 });
 
@@ -169,7 +152,6 @@ test("moveLanguageBlock reorders within its sentence block", () => {
             spanish: "",
             callout: null,
             acceptedAnswers: [""],
-            conceptLinks: [],
           })),
         }),
       ],

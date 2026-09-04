@@ -1,5 +1,4 @@
 import type {
-  ConceptLink,
   ExplanationBlock,
   LanguageBlock,
   Lesson,
@@ -85,7 +84,6 @@ function emptyLanguageBlock(id: string): LanguageBlock {
     spanish: "",
     callout: null,
     acceptedAnswers: [""],
-    conceptLinks: [],
   };
 }
 
@@ -118,18 +116,10 @@ export function duplicateLesson(
         : {
             ...block,
             id: createId("block"),
-            conceptLinks: block.conceptLinks.map((conceptLink) => ({
-              ...conceptLink,
-              id: createId("concept_link"),
-            })),
             languageBlocks: block.languageBlocks.map((languageBlock) => ({
               ...languageBlock,
               id: createId("lang"),
               acceptedAnswers: [...languageBlock.acceptedAnswers],
-              conceptLinks: languageBlock.conceptLinks.map((conceptLink) => ({
-                ...conceptLink,
-                id: createId("concept_link"),
-              })),
             })),
           },
     ),
@@ -245,7 +235,6 @@ export function addSentenceBlock(
     promptText: "",
     helperText: "",
     answerFeedback: null,
-    conceptLinks: [],
     languageBlocks: [emptyLanguageBlock(languageBlockId)],
   };
   return mapLesson(lessons, lessonId, (lesson) => ({
@@ -285,18 +274,10 @@ export function duplicateContentBlock(
         : {
             ...sourceBlock,
             id: createId("block"),
-            conceptLinks: sourceBlock.conceptLinks.map((conceptLink) => ({
-              ...conceptLink,
-              id: createId("concept_link"),
-            })),
             languageBlocks: sourceBlock.languageBlocks.map((languageBlock) => ({
               ...languageBlock,
               id: createId("lang"),
               acceptedAnswers: [...languageBlock.acceptedAnswers],
-              conceptLinks: languageBlock.conceptLinks.map((conceptLink) => ({
-                ...conceptLink,
-                id: createId("concept_link"),
-              })),
             })),
           };
 
@@ -351,51 +332,6 @@ export function updateSentenceBlock(
   return mapSentenceBlock(lessons, lessonId, sentenceBlockId, (block) => ({
     ...block,
     ...patch,
-  }));
-}
-
-// --- Sentence-level concept links --------------------------------------
-
-export function addSentenceConceptLink(
-  lessons: Lesson[],
-  lessonId: string,
-  sentenceBlockId: string,
-  conceptLink: ConceptLink,
-): Lesson[] {
-  return mapSentenceBlock(lessons, lessonId, sentenceBlockId, (block) => ({
-    ...block,
-    conceptLinks: [...block.conceptLinks, conceptLink],
-  }));
-}
-
-export function updateSentenceConceptLink(
-  lessons: Lesson[],
-  lessonId: string,
-  sentenceBlockId: string,
-  conceptLinkId: string,
-  updates: Partial<Omit<ConceptLink, "id">>,
-): Lesson[] {
-  return mapSentenceBlock(lessons, lessonId, sentenceBlockId, (block) => ({
-    ...block,
-    conceptLinks: block.conceptLinks.map((conceptLink) =>
-      conceptLink.id === conceptLinkId
-        ? { ...conceptLink, ...updates }
-        : conceptLink,
-    ),
-  }));
-}
-
-export function removeSentenceConceptLink(
-  lessons: Lesson[],
-  lessonId: string,
-  sentenceBlockId: string,
-  conceptLinkId: string,
-): Lesson[] {
-  return mapSentenceBlock(lessons, lessonId, sentenceBlockId, (block) => ({
-    ...block,
-    conceptLinks: block.conceptLinks.filter(
-      (conceptLink) => conceptLink.id !== conceptLinkId,
-    ),
   }));
 }
 
