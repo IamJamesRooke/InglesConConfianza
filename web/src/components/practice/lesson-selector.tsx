@@ -3,25 +3,35 @@
 import {
   ArrowLeft,
   ArrowRight,
+  Check,
+  CheckCheck,
+  Clock3,
   Home,
-  Keyboard,
-  Sparkles,
+  RotateCcw,
   X,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useCallback, useEffect, useRef, useState } from "react";
-
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from "react";
 import { PracticeMarkdown } from "@/components/practice/practice-markdown";
 import { SentencePracticeCard } from "@/components/practice/sentence-practice-card";
 import {
-  markLessonCompleted,
-  markLessonOpened,
-} from "@/components/learner/lesson-dashboard";
+  readProgress,
+  resumeStepIndex,
+  saveLessonProgress,
+} from "@/lib/learner/progress";
+import { lessonMinutes, lessonOutcome } from "@/lib/learner/presentation";
 import type { LessonBlock } from "@/lib/lesson-builder/types";
 
 export type PracticeLesson = {
   id: string;
   lessonNumber: number;
+  moduleId?: string;
   moduleName?: string | null;
   moduleLessonNumber?: number;
   name: string | null;
@@ -30,6 +40,8 @@ export type PracticeLesson = {
   previewText: string;
   blocks: LessonBlock[];
 };
+
+const subscribeHydration = () => () => {};
 
 export function LessonSelector({
   lessons,
@@ -40,573 +52,394 @@ export function LessonSelector({
   initialLessonId?: string | null;
   onCloseLesson?: () => void;
 }) {
+  const hydrated = useSyncExternalStore(
+    subscribeHydration,
+    () => true,
+    () => false,
+  );
+  const lesson = lessons.find((item) => item.id === initialLessonId);
+  if (!lesson) return null;
+  if (!hydrated)
+    return (
+      <div className="learner-theme lesson-loading" role="status">
+        Preparando tu lección…
+      </div>
+    );
+  return (
+    <LessonSession
+      key={lesson.id}
+      lesson={lesson}
+      lessons={lessons}
+      onCloseLesson={onCloseLesson}
+    />
+  );
+}
+
+function LessonSession({
+  lesson,
+  lessons,
+  onCloseLesson,
+}: {
+  lesson: PracticeLesson;
+  lessons: PracticeLesson[];
+  onCloseLesson?: () => void;
+}) {
   const router = useRouter();
-  const [openLessonId, setOpenLessonId] = useState<string | null>(
-    initialLessonId,
+  const [stepIndex, setStepIndex] = useState(() =>
+    onCloseLesson
+      ? 0
+      : resumeStepIndex(lesson.blocks, readProgress()[lesson.id]),
   );
-  const [currentStepIndex, setCurrentStepIndex] = useState(0);
-  const [isCurrentSentenceComplete, setIsCurrentSentenceComplete] =
-    useState(false);
-  const [isShortcutReminderOpen, setIsShortcutReminderOpen] = useState(false);
-  const lessonModeRef = useRef<HTMLElement | null>(null);
-  const openLesson = lessons.find((lesson) => lesson.id === openLessonId);
-  const totalSteps = openLesson?.blocks.length ?? 0;
-  const isComplete = Boolean(openLesson && currentStepIndex >= totalSteps);
-  const currentBlock =
-    openLesson && !isComplete ? openLesson.blocks[currentStepIndex] : null;
-  const openLessonIndex = lessons.findIndex(
-    (lesson) => lesson.id === openLessonId,
-  );
+  const [sentenceComplete, setSentenceComplete] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const totalSteps = lesson.blocks.length;
+  const complete = stepIndex >= totalSteps;
+  const block = lesson.blocks[stepIndex];
   const nextLesson = lessons
-    .slice(openLessonIndex + 1)
-    .find((lesson) => lesson.blocks.length > 0);
+    .slice(lessons.findIndex((item) => item.id === lesson.id) + 1)
+    .find((item) => item.blocks.length > 0);
+  const outcome = lessonOutcome(lesson.blocks);
+  const moduleLessons = lessons.filter((item) =>
+    lesson.moduleId
+      ? item.moduleId === lesson.moduleId
+      : item.moduleName === lesson.moduleName,
+  );
+  const moduleDone =
+    !nextLesson ||
+    (lesson.moduleId
+      ? nextLesson.moduleId !== lesson.moduleId
+      : nextLesson.moduleName !== lesson.moduleName);
+  const moduleComplete =
+    complete &&
+    !onCloseLesson &&
+    moduleLessons.every(
+      (item) =>
+        item.blocks.length === 0 ||
+        item.id === lesson.id ||
+        Boolean(readProgress()[item.id]?.completedAt),
+    );
+  const canAdvance =
+    !complete && (block?.type === "explanation" || sentenceComplete);
 
-  const openLessonPractice = useCallback((lessonId: string) => {
-    markLessonOpened(lessonId);
-    router.replace(`/practice?lesson=${lessonId}`, { scroll: false });
-    setOpenLessonId(lessonId);
-    setCurrentStepIndex(0);
-    setIsCurrentSentenceComplete(false);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [router]);
+  const close = useCallback(() => {
+    if (onCloseLesson) onCloseLesson();
+    else
+      router.push(
+        lesson.moduleId
+          ? `/?module=${encodeURIComponent(lesson.moduleId)}`
+          : "/",
+      );
+  }, [lesson.moduleId, onCloseLesson, router]);
 
-  const closeLessonPractice = useCallback(() => {
-    if (onCloseLesson) {
-      setOpenLessonId(null);
-      setCurrentStepIndex(0);
-      setIsCurrentSentenceComplete(false);
-      onCloseLesson();
-      return;
-    }
-
-    router.push("/");
-  }, [onCloseLesson, router]);
-
-  const canManuallyAdvance =
-    isComplete ||
-    currentBlock?.type === "explanation" ||
-    (currentBlock?.type === "sentence" && isCurrentSentenceComplete) ||
-    totalSteps === 0;
-
-  const goToPreviousStep = useCallback(() => {
-    setIsCurrentSentenceComplete(false);
-    setCurrentStepIndex((currentIndex) => Math.max(currentIndex - 1, 0));
+  const previous = useCallback(() => {
+    setSentenceComplete(false);
+    setStepIndex((index) => Math.max(0, index - 1));
   }, []);
 
-  const goToNextStep = useCallback(() => {
-    if (!canManuallyAdvance || !openLesson) {
-      return;
+  const advance = useCallback(() => {
+    if (!canAdvance) return;
+    const next = Math.min(stepIndex + 1, totalSteps);
+    if (next === totalSteps && !onCloseLesson) {
+      saveLessonProgress(lesson.id, {
+        completedAt:
+          readProgress()[lesson.id]?.completedAt ?? new Date().toISOString(),
+        stepId: undefined,
+      });
     }
-
-    setIsCurrentSentenceComplete(false);
-    setCurrentStepIndex((currentIndex) => {
-      const nextIndex = Math.min(currentIndex + 1, openLesson.blocks.length);
-      if (nextIndex >= openLesson.blocks.length) {
-        markLessonCompleted(openLesson.id);
-      }
-      return nextIndex;
-    });
-  }, [canManuallyAdvance, openLesson]);
+    setSentenceComplete(false);
+    setStepIndex(next);
+  }, [canAdvance, lesson.id, onCloseLesson, stepIndex, totalSteps]);
 
   useEffect(() => {
-    if (initialLessonId) {
-      markLessonOpened(initialLessonId);
+    if (!onCloseLesson && !complete) {
+      saveLessonProgress(lesson.id, {
+        lastOpenedAt: new Date().toISOString(),
+        stepId: block?.id,
+      });
     }
-  }, [initialLessonId]);
+  }, [block?.id, complete, lesson.id, onCloseLesson]);
 
   useEffect(() => {
-    if (!openLesson) {
-      return;
-    }
-
-    const previousOverflow = document.body.style.overflow;
+    const priorOverflow = document.body.style.overflow;
+    const previousFocus = document.activeElement;
     document.body.style.overflow = "hidden";
-    const focusTimer = window.setTimeout(() => {
-      const lessonMode = lessonModeRef.current;
-      const firstAnswerInput =
-        lessonMode?.querySelector<HTMLInputElement>("[data-practice-answer]");
-
-      if (firstAnswerInput) {
-        firstAnswerInput.focus();
-      } else {
-        lessonMode?.focus();
-      }
-    }, 0);
-
     return () => {
-      window.clearTimeout(focusTimer);
-      document.body.style.overflow = previousOverflow;
+      document.body.style.overflow = priorOverflow;
+      if (previousFocus instanceof HTMLElement && previousFocus.isConnected) {
+        previousFocus.focus();
+      }
     };
-  }, [openLesson]);
+  }, []);
 
   useEffect(() => {
-    if (!openLesson) {
-      return;
-    }
+    contentRef.current?.scrollTo({ top: 0 });
+    const input = contentRef.current?.querySelector<HTMLInputElement>(
+      "[data-practice-answer]",
+    );
+    (input ?? sectionRef.current)?.focus({ preventScroll: true });
+  }, [stepIndex]);
 
-    function isInteractiveTarget(target: EventTarget | null) {
-      return (
-        target instanceof HTMLElement &&
-        Boolean(
-          target.closest(
-            "button, input, textarea, select, a, [contenteditable='true']",
-          ),
-        )
+  useEffect(() => {
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.defaultPrevented) return;
+      const target = event.target instanceof HTMLElement ? event.target : null;
+      const textEntry = target?.closest(
+        "input, textarea, [contenteditable='true']",
       );
-    }
-
-    function isTextEntryTarget(target: EventTarget | null) {
-      return (
-        target instanceof HTMLElement &&
-        Boolean(target.closest("input, textarea, [contenteditable='true']"))
-      );
-    }
-
-    function isEmptyTextEntryTarget(target: EventTarget | null) {
-      return (
-        (target instanceof HTMLInputElement ||
-          target instanceof HTMLTextAreaElement) &&
-        target.value.length === 0
-      );
-    }
-
-    function handlePracticeNavigation(event: KeyboardEvent) {
-      if (event.altKey && event.key.toLowerCase() === "k") {
-        event.preventDefault();
-        setIsShortcutReminderOpen((isOpen) => !isOpen);
-        return;
-      }
-
       if (event.key === "Escape") {
         event.preventDefault();
-        if (isShortcutReminderOpen) {
-          setIsShortcutReminderOpen(false);
-        } else {
-          closeLessonPractice();
-        }
+        close();
         return;
       }
-
       if (event.key === "Tab") {
-        const focusableElements = Array.from(
-          lessonModeRef.current?.querySelectorAll<HTMLElement>(
-            "a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex='-1'])",
+        const focusable = Array.from(
+          sectionRef.current?.querySelectorAll<HTMLElement>(
+            "a[href],button:not([disabled]),input:not([disabled]),[tabindex='0']",
           ) ?? [],
         );
-        const firstFocusableElement = focusableElements[0];
-        const lastFocusableElement =
-          focusableElements[focusableElements.length - 1];
-
-        if (!firstFocusableElement || !lastFocusableElement) {
-          event.preventDefault();
-          return;
-        }
-
+        const first = focusable[0];
+        const last = focusable.at(-1);
         if (
           event.shiftKey &&
-          document.activeElement === firstFocusableElement
+          (document.activeElement === first ||
+            document.activeElement === sectionRef.current)
         ) {
           event.preventDefault();
-          lastFocusableElement.focus();
-          return;
-        }
-
-        if (
-          !event.shiftKey &&
-          document.activeElement === lastFocusableElement
-        ) {
+          last?.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
           event.preventDefault();
-          firstFocusableElement.focus();
-          return;
-        }
-      }
-
-      if (isShortcutReminderOpen) {
-        return;
-      }
-
-      if (event.key === "PageDown") {
-        event.preventDefault();
-        goToNextStep();
-        return;
-      }
-
-      if (event.key === "PageUp") {
-        event.preventDefault();
-        goToPreviousStep();
-        return;
-      }
-
-      if (!isTextEntryTarget(event.target) && event.key === "ArrowRight") {
-        event.preventDefault();
-        goToNextStep();
-        return;
-      }
-
-      if (
-        event.key === "ArrowLeft" &&
-        (!isTextEntryTarget(event.target) ||
-          isEmptyTextEntryTarget(event.target))
-      ) {
-        event.preventDefault();
-        goToPreviousStep();
-        return;
-      }
-
-      if (event.key === "Enter" && isComplete) {
-        event.preventDefault();
-        if (nextLesson) {
-          openLessonPractice(nextLesson.id);
-        } else {
-          closeLessonPractice();
+          first?.focus();
         }
         return;
       }
-
       if (
-        event.key === "Enter" &&
-        currentBlock?.type === "sentence" &&
-        isCurrentSentenceComplete
+        event.key === "PageUp" ||
+        (event.key === "ArrowLeft" &&
+          (!textEntry || (target instanceof HTMLInputElement && !target.value)))
       ) {
         event.preventDefault();
-        goToNextStep();
+        previous();
         return;
       }
-
-      if (isInteractiveTarget(event.target)) {
-        return;
-      }
-
-      if (event.key === "ArrowDown") {
+      if (
+        event.key === "PageDown" ||
+        (event.key === "ArrowRight" && !textEntry)
+      ) {
         event.preventDefault();
-        goToNextStep();
+        advance();
         return;
       }
-
-      if (event.key === "ArrowUp") {
+      // Native button and link activation takes precedence over lesson shortcuts.
+      if (event.key === "Enter" && !target?.closest("button,a,textarea")) {
         event.preventDefault();
-        goToPreviousStep();
-        return;
-      }
-
-      if (event.key === "Enter" && currentBlock?.type === "explanation") {
-        event.preventDefault();
-        goToNextStep();
+        if (complete) {
+          if (nextLesson && !onCloseLesson)
+            router.push(
+              `/practice?lesson=${encodeURIComponent(nextLesson.id)}`,
+            );
+          else close();
+        } else advance();
       }
     }
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [advance, close, complete, nextLesson, onCloseLesson, previous, router]);
 
-    document.addEventListener("keydown", handlePracticeNavigation);
-
-    return () => {
-      document.removeEventListener("keydown", handlePracticeNavigation);
-    };
-  }, [
-    closeLessonPractice,
-    currentBlock?.type,
-    goToNextStep,
-    goToPreviousStep,
-    isShortcutReminderOpen,
-    isComplete,
-    isCurrentSentenceComplete,
-    nextLesson,
-    openLesson,
-    openLessonPractice,
-  ]);
-
-  if (openLesson) {
-    const progressPercent =
-      totalSteps === 0
-        ? 100
-        : isComplete
-          ? 100
-          : Math.min(((currentStepIndex + 1) / totalSteps) * 100, 100);
-    const progressStep = isComplete
-      ? totalSteps
-      : Math.min(currentStepIndex + 1, totalSteps);
-
-    return (
-      <section
-        ref={lessonModeRef}
-        className="learner-theme fixed inset-0 z-50 overflow-y-auto bg-[#f3f8f7] text-[#173b3a]"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="practice-lesson-title"
-        tabIndex={-1}
-      >
-        <div className="mx-auto flex min-h-screen w-full max-w-5xl flex-col px-5 pt-4 sm:px-8 sm:pt-5">
-          <header className="shrink-0">
-            <div className="flex items-center justify-between gap-4">
-              <button
-                type="button"
-                onClick={closeLessonPractice}
-                className="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-bold text-[#587873] transition hover:bg-[#e3f0ee] hover:text-[#173b3a] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0f766e]/20"
-              >
-                <ArrowLeft className="size-4" aria-hidden="true" />
-                Salir
-              </button>
-              <button
-                type="button"
-                onClick={() => setIsShortcutReminderOpen(true)}
-                className="flex size-10 items-center justify-center rounded-lg text-[#587873] transition hover:bg-[#e3f0ee] hover:text-[#173b3a] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0f766e]/20"
-                aria-label="Ver atajos de teclado"
-                title="Atajos de teclado (Alt+K)"
-              >
-                <Keyboard className="size-4" aria-hidden="true" />
-              </button>
-            </div>
-            <div className="mt-5 flex items-end justify-between gap-6">
-              <div className="min-w-0">
-                <p className="text-xs font-bold text-[#67817d]">
-                  {openLesson.moduleName
-                    ? `${openLesson.moduleName} · Lección ${
-                        openLesson.moduleLessonNumber ?? openLesson.lessonNumber
-                      }`
-                    : `Lección ${openLesson.lessonNumber}`}
-                </p>
-                <h2
-                  id="practice-lesson-title"
-                  className="mt-1 truncate text-xl font-black text-[#173b3a] sm:text-2xl"
-                >
-                  {openLesson.name || `Lección ${openLesson.lessonNumber}`}
-                </h2>
-              </div>
-              <p className="shrink-0 pb-0.5 text-xs font-bold text-[#67817d]">
-                {isComplete
-                  ? "Completa"
-                  : `Paso ${currentStepIndex + 1} de ${Math.max(totalSteps, 1)}`}
-              </p>
-            </div>
-            <div
-              className="mt-4 h-2.5 overflow-hidden rounded-full bg-[#dbeae7]"
-              role="progressbar"
-              aria-label="Progreso de la lección"
-              aria-valuemin={0}
-              aria-valuemax={Math.max(totalSteps, 1)}
-              aria-valuenow={progressStep}
-            >
-              <div
-                className="h-full rounded-full bg-[#e66b52] transition-all duration-300"
-                style={{ width: `${progressPercent}%` }}
-              />
-            </div>
-          </header>
-
-          <div className="flex flex-1 items-center py-8 sm:pb-16 sm:pt-10">
-            <div className="w-full">
-              {isComplete ? (
-                <div
-                  className="learner-enter mx-auto max-w-3xl rounded-lg border border-[#cfe3df] bg-white p-7 text-center shadow-[0_12px_36px_rgba(23,59,58,0.10)] sm:p-10"
-                  aria-live="polite"
-                >
-                  <span className="mx-auto flex size-14 items-center justify-center rounded-lg bg-[#d7f2df] text-[#18723f]">
-                    <Sparkles className="size-7" aria-hidden="true" />
-                  </span>
-                  <p className="mt-5 text-sm font-extrabold text-[#e05f47]">
-                    Lección completa
-                  </p>
-                  <h2 className="mt-2 text-3xl font-black">
-                    Mira lo que ya puedes decir
-                  </h2>
-                  <p className="mx-auto mt-4 max-w-xl text-2xl font-extrabold leading-9 text-[#0f766e] sm:text-3xl">
-                    “{openLesson.name || `Lección ${openLesson.lessonNumber}`}”
-                  </p>
-                  <p className="mx-auto mt-4 max-w-md font-medium leading-6 text-[#587873]">
-                    Lo construiste paso a paso. Esa confianza también se practica.
-                  </p>
-                  <div className="mt-7 flex flex-col-reverse justify-center gap-3 sm:flex-row">
-                    <button
-                      type="button"
-                      onClick={closeLessonPractice}
-                      className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#cfe3df] bg-white px-5 py-3 text-sm font-extrabold text-[#315d59] transition hover:bg-[#f3f8f7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0f766e]/20"
-                    >
-                      <Home className="size-4" aria-hidden="true" />
-                      Mis lecciones
-                    </button>
-                    {nextLesson && (
-                      <button
-                        type="button"
-                        onClick={() => openLessonPractice(nextLesson.id)}
-                        className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#0f766e] px-5 py-3 text-sm font-extrabold text-white shadow-sm transition hover:bg-[#0b655e] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0f766e]/25"
-                      >
-                        Siguiente lección
-                        <ArrowRight className="size-4" aria-hidden="true" />
-                      </button>
-                    )}
-                  </div>
-                </div>
-              ) : currentBlock?.type === "explanation" ? (
-                <PracticeExplanationStep
-                  markdown={currentBlock.contentMarkdown}
-                />
-              ) : currentBlock?.type === "sentence" ? (
-                <SentencePracticeCard
-                  key={currentBlock.id}
-                  sentence={currentBlock}
-                  onCompletionChange={setIsCurrentSentenceComplete}
-                />
-              ) : null}
-            </div>
-          </div>
-
-          <footer className="-mx-5 flex shrink-0 items-start justify-between gap-3 border-t border-[#cfe3df] bg-[#f3f8f7]/95 px-5 py-3.5 backdrop-blur sm:-mx-8 sm:px-8">
-            <button
-              type="button"
-              onClick={goToPreviousStep}
-              disabled={currentStepIndex === 0}
-              className="inline-flex min-w-28 items-center justify-center gap-2 rounded-lg border border-[#cfe3df] bg-white px-4 py-2.5 text-sm font-bold text-[#587873] shadow-sm transition hover:bg-[#e3f0ee] hover:text-[#173b3a] disabled:cursor-not-allowed disabled:opacity-30 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0f766e]/20 sm:min-w-32"
-            >
-              <ArrowLeft className="size-4" aria-hidden="true" />
-              Anterior
-            </button>
-            <div className="flex min-w-32 flex-col items-center gap-1.5">
-              <button
-                type="button"
-                onClick={goToNextStep}
-                disabled={!canManuallyAdvance || isComplete}
-                className="inline-flex min-w-28 items-center justify-center gap-2 rounded-lg bg-[#0f766e] px-4 py-2.5 text-sm font-extrabold text-white shadow-sm transition hover:bg-[#0b655e] disabled:cursor-not-allowed disabled:opacity-30 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0f766e]/25 sm:min-w-32"
-              >
-                {currentStepIndex >= totalSteps - 1 ? "Terminar" : "Siguiente"}
-                <ArrowRight className="size-4" aria-hidden="true" />
-              </button>
-              {canManuallyAdvance && !isComplete && (
-                <PracticeKey>Enter</PracticeKey>
-              )}
-            </div>
-          </footer>
-        </div>
-
-        {isShortcutReminderOpen && (
-          <PracticeShortcutReminder
-            onClose={() => setIsShortcutReminderOpen(false)}
-          />
-        )}
-      </section>
-    );
-  }
-
-  return null;
-}
-
-function PracticeShortcutReminder({
-  onClose,
-}: {
-  onClose: () => void;
-}) {
   return (
-    <div
-      className="fixed inset-0 z-20 flex items-start justify-center bg-black/30 p-4 sm:p-8"
+    <section
+      ref={sectionRef}
+      className="learner-theme lesson-session"
       role="dialog"
       aria-modal="true"
-      aria-labelledby="practice-shortcut-reminder-title"
-      onMouseDown={(event) => {
-        if (event.target === event.currentTarget) {
-          onClose();
-        }
-      }}
+      aria-labelledby="practice-lesson-title"
+      tabIndex={-1}
     >
-      <div className="mt-16 w-full max-w-md rounded-lg border border-[#cfe3df] bg-white p-5 text-[#173b3a] shadow-xl">
-        <div className="mb-5 flex items-start justify-between gap-4">
-          <div>
-            <h2
-              id="practice-shortcut-reminder-title"
-              className="text-xl font-black"
-            >
-              Atajos de teclado
-            </h2>
-            <p className="mt-1 text-sm text-muted-foreground">
-              Mantén el ritmo sin tocar el mouse.
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={onClose}
-            aria-label="Cerrar atajos de teclado"
-            title="Cerrar"
-            className="flex size-8 shrink-0 items-center justify-center rounded-md text-muted-foreground transition hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
-          >
-            <X className="size-4" aria-hidden="true" />
-          </button>
+      <header className="lesson-topbar">
+        <button
+          type="button"
+          className="learner-icon-button"
+          onClick={close}
+          aria-label="Volver a mis lecciones"
+          title="Volver a mis lecciones"
+        >
+          <X size={21} aria-hidden="true" />
+        </button>
+        <div className="lesson-topbar-title">
+          <p>
+            {lesson.moduleName || "Tu curso de inglés"}
+            <span>
+              {" "}
+              · Lección {lesson.moduleLessonNumber ?? lesson.lessonNumber}
+            </span>
+          </p>
+          <h1 id="practice-lesson-title">
+            {lesson.name || `Lección ${lesson.lessonNumber}`}
+          </h1>
         </div>
+        <span className="lesson-step-count">
+          {complete ? (
+            <CheckCheck size={22} aria-label="Lección completa" />
+          ) : (
+            <>
+              <strong>{stepIndex + 1}</strong>
+              <span> / {totalSteps}</span>
+            </>
+          )}
+        </span>
+        <progress
+          className="lesson-top-progress"
+          aria-label="Progreso de la lección"
+          value={complete ? totalSteps : stepIndex}
+          max={totalSteps || 1}
+        />
+      </header>
 
-        <div className="space-y-2">
-          <PracticeShortcutReminderRow
-            keys={["Alt", "K"]}
-            description="Mostrar u ocultar atajos"
-          />
-          <PracticeShortcutReminderRow
-            keys={["→"]}
-            description="Avanzar cuando sea posible"
-          />
-          <PracticeShortcutReminderRow
-            keys={["PageUp"]}
-            description="Volver siempre al paso anterior"
-          />
-          <PracticeShortcutReminderRow
-            keys={["←"]}
-            description="Volver desde una respuesta vacía"
-          />
-          <PracticeShortcutReminderRow
-            keys={["Enter"]}
-            description="Continuar cuando el paso esté listo"
-          />
-          <PracticeShortcutReminderRow
-            keys={["Alt", "H"]}
-            description="Mostrar pista en una respuesta"
-          />
-          <PracticeShortcutReminderRow
-            keys={["Esc"]}
-            description="Salir de la lección"
-          />
+      <div ref={contentRef} className="lesson-scroll-area">
+        <div className="lesson-stage" key={complete ? "complete" : block?.id}>
+          {complete ? (
+            <div
+              className="lesson-celebration learner-enter"
+              aria-live="polite"
+            >
+              <div className="completion-seal">
+                <Check size={34} strokeWidth={2.5} aria-hidden="true" />
+              </div>
+              <p className="learner-eyebrow">
+                {moduleComplete ? "Módulo completo" : "Lección completa"}
+              </p>
+              <h2>
+                {outcome?.english
+                  ? "Esto ya lo puedes decir."
+                  : "Un paso más. Bien hecho."}
+              </h2>
+              {outcome?.english && (
+                <div className="earned-phrase">
+                  <p lang="en">{outcome.english}</p>
+                  <span>{outcome.spanish}</span>
+                </div>
+              )}
+              <p className="completion-note">
+                {moduleComplete
+                  ? "Terminaste este módulo. Mira todo lo que has construido."
+                  : "Lo construiste paso a paso. Y ya es tuyo."}
+              </p>
+              <div className="completion-actions">
+                {nextLesson && !onCloseLesson && (
+                  <button
+                    type="button"
+                    className="learner-button primary"
+                    onClick={() =>
+                      router.push(
+                        `/practice?lesson=${encodeURIComponent(nextLesson.id)}`,
+                      )
+                    }
+                  >
+                    Una lección más
+                    <ArrowRight size={18} aria-hidden="true" />
+                  </button>
+                )}
+                <button
+                  type="button"
+                  className={`learner-button ${nextLesson && !onCloseLesson ? "text-button" : "primary"}`}
+                  onClick={close}
+                >
+                  <Home size={17} aria-hidden="true" />
+                  Mis lecciones
+                </button>
+              </div>
+              {nextLesson && !onCloseLesson && (
+                <div className="completion-next">
+                  <p>{moduleDone ? nextLesson.moduleName : "A continuación"}</p>
+                  <strong>
+                    {nextLesson.name || `Lección ${nextLesson.lessonNumber}`}
+                  </strong>
+                  <span>
+                    <Clock3 size={13} aria-hidden="true" /> Aprox.{" "}
+                    {lessonMinutes(nextLesson.blocks.length)} min
+                  </span>
+                </div>
+              )}
+              <button
+                className="learner-button text-button replay-lesson"
+                type="button"
+                onClick={() => {
+                  setSentenceComplete(false);
+                  setStepIndex(0);
+                }}
+              >
+                <RotateCcw size={15} aria-hidden="true" />
+                Practicar de nuevo
+              </button>
+            </div>
+          ) : block?.type === "explanation" ? (
+            <div className="lesson-explanation learner-enter">
+              <span className="step-overline">
+                <span aria-hidden="true" />
+                Una idea nueva
+              </span>
+              <PracticeMarkdown
+                markdown={
+                  block.contentMarkdown || "Continúa al siguiente paso."
+                }
+              />
+            </div>
+          ) : block?.type === "sentence" ? (
+            <SentencePracticeCard
+              sentence={block}
+              onCompletionChange={setSentenceComplete}
+            />
+          ) : null}
         </div>
       </div>
-    </div>
-  );
-}
 
-function PracticeShortcutReminderRow({
-  keys,
-  description,
-}: {
-  keys: string[];
-  description: string;
-}) {
-  return (
-    <div className="flex items-center justify-between gap-4 rounded-lg border border-[#dbeae7] bg-[#f3f8f7] px-4 py-3">
-      <span className="text-sm font-medium text-foreground">{description}</span>
-      <span className="flex shrink-0 items-center gap-1">
-        {keys.map((key) => (
-          <kbd
-            key={key}
-            className="rounded-md border border-border bg-background px-2 py-1 text-xs font-semibold text-muted-foreground shadow-sm"
-          >
-            {key}
-          </kbd>
-        ))}
-      </span>
-    </div>
-  );
-}
-
-function PracticeKey({ children }: { children: string }) {
-  return (
-    <kbd className="inline-flex min-w-6 items-center justify-center rounded-md border border-border bg-[var(--surface)] px-1.5 py-1 font-mono text-[10px] font-semibold leading-none text-foreground shadow-sm">
-      {children}
-    </kbd>
-  );
-}
-
-function PracticeExplanationStep({
-  markdown,
-}: {
-  markdown: string;
-}) {
-  return (
-    <div className="mx-auto w-full max-w-xl rounded-lg border border-[#cfe3df] bg-white px-6 py-8 text-center shadow-[0_10px_30px_rgba(23,59,58,0.08)] sm:px-10 sm:py-9">
-      {markdown.trim() ? (
-        <PracticeMarkdown markdown={markdown} />
-      ) : (
-        <p className="text-muted-foreground">Continúa al siguiente paso.</p>
+      {!complete && (
+        <footer
+          className={`lesson-controls ${sentenceComplete ? "ready" : ""}`}
+        >
+          <div className="lesson-controls-inner">
+            <button
+              type="button"
+              className="learner-icon-button previous-step"
+              disabled={stepIndex === 0}
+              onClick={previous}
+              aria-label="Paso anterior"
+              title="Paso anterior"
+            >
+              <ArrowLeft size={20} aria-hidden="true" />
+            </button>
+            <div className="lesson-feedback" role="status">
+              {sentenceComplete ? (
+                <>
+                  <Check size={20} aria-hidden="true" />
+                  <span>¡Muy bien!</span>
+                </>
+              ) : (
+                <span className="lesson-position">
+                  Lección {lesson.moduleLessonNumber ?? lesson.lessonNumber}
+                  {lesson.moduleLessonNumber && moduleLessons.length > 0
+                    ? ` de ${moduleLessons.length}`
+                    : ""}
+                </span>
+              )}
+            </div>
+            <button
+              type="button"
+              className={`learner-button ${sentenceComplete ? "success" : "primary"}`}
+              disabled={!canAdvance}
+              onClick={advance}
+            >
+              {stepIndex === totalSteps - 1
+                ? "Terminar lección"
+                : block?.type === "explanation" &&
+                    lesson.blocks[stepIndex + 1]?.type === "sentence"
+                  ? "Vamos a practicar"
+                  : "Continuar"}
+              <ArrowRight size={18} aria-hidden="true" />
+            </button>
+          </div>
+        </footer>
       )}
-    </div>
+    </section>
   );
 }

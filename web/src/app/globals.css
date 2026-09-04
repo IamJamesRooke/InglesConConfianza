@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@import "./learner.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -322,19 +323,19 @@
 }
 
 .learner-theme {
-  --background: #f3f8f7;
-  --foreground: #173b3a;
+  --background: #fcfcfa;
+  --foreground: #252b28;
   --card: #ffffff;
-  --card-foreground: #173b3a;
+  --card-foreground: #252b28;
   --popover: #ffffff;
-  --popover-foreground: #173b3a;
-  --primary: #0f766e;
+  --popover-foreground: #252b28;
+  --primary: #292f2b;
   --primary-foreground: #ffffff;
-  --muted: #e3f0ee;
-  --muted-foreground: #587873;
-  --border: #cfe3df;
-  --input: #b7d8d4;
-  --ring: #0f766e;
+  --muted: #f0f2ee;
+  --muted-foreground: #616960;
+  --border: #e1e5df;
+  --input: #b8c1b7;
+  --ring: #397460;
   --surface: #ffffff;
 }
 

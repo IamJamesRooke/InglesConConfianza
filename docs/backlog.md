@@ -37,6 +37,15 @@ Begin Module 1 when obvious structural problems are gone, role definitions are b
 
 This scaffold is demo content, not a claim that Module 1 has passed learner validation. The production completion gate below remains active.
 
+### Student experience presentation pass
+
+- [x] Redesign the course home, module selection, answer fields, and lesson completion around the student journey.
+- [x] Add local step resume, sentence-based lesson previews, and completion summaries using the final practiced English.
+- [x] Keep admin previews separate from local student progress; cover progress and public route boundaries with regression tests.
+- [ ] Complete desktop/mobile browser screenshots and the interactive learner walkthrough. The in-app browser was unavailable during implementation; see [the design and verification log](design/student-experience.md).
+
+### Learner validation
+
 - [ ] Define one concrete learner promise for the module and the final confidence-building sentence or interaction that proves it.
 - [ ] Select only the Core and Supporting concepts required to fulfill that promise; use Reference concepts sparingly for context.
 - [ ] Sequence short lessons using first-attempt answerability, one teaching focus at a time, immediate retrieval, cumulative reuse, and frequent confidence milestones.

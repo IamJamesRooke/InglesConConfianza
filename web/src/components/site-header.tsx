@@ -1,6 +1,6 @@
 "use client";
 
-import { Languages, Menu, Settings, X } from "lucide-react";
+import { BookOpen, MessageCircle, Menu, Settings, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
@@ -29,7 +29,11 @@ export function SiteHeader() {
       return "default";
     }
 
-    return window.localStorage.getItem("icc-theme") ?? "default";
+    try {
+      return window.localStorage.getItem("icc-theme") ?? "default";
+    } catch {
+      return "default";
+    }
   });
 
   useEffect(() => {
@@ -48,6 +52,8 @@ export function SiteHeader() {
     return pathname === href || pathname.startsWith(`${href}/`);
   };
   const isAdmin = pathname.startsWith("/admin");
+
+  if (pathname === "/practice") return null;
 
   if (!isAdmin) {
     return <LearnerHeader />;
@@ -154,29 +160,20 @@ export function SiteHeader() {
 
 function LearnerHeader() {
   return (
-    <header className="sticky top-0 z-40 border-b border-[#cfe3df] bg-[#f8fcfb]/95 text-[#173b3a] backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
-        <Link
-          href="/"
-          className="flex min-w-0 items-center gap-3 rounded-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0f766e]/20"
-        >
-          <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-[#0f766e] text-white shadow-sm">
-            <Languages className="size-5" aria-hidden="true" />
+    <header className="learner-theme learner-header">
+      <a href="#main-content" className="learner-skip">Ir a mis lecciones</a>
+      <div className="course-container learner-header-inner">
+        <Link href="/" className="learner-brand">
+          <span className="brand-mark">
+            <MessageCircle size={24} strokeWidth={2} aria-hidden="true" />
           </span>
-          <span className="min-w-0">
-            <span className="block truncate text-[15px] font-extrabold leading-4">
-              Inglés Con Confianza
-            </span>
-            <span className="mt-0.5 block text-[11px] font-semibold leading-3 text-[#4d716d]">
-              Tu curso de inglés
-            </span>
-          </span>
+          <span>Inglés<span>Con Confianza</span></span>
         </Link>
-
-        <span className="hidden items-center gap-2 text-sm font-bold text-[#315d59] sm:flex">
-          <span className="size-2 rounded-full bg-[#e66b52]" aria-hidden="true" />
-          Mis lecciones
-        </span>
+        <nav aria-label="Navegación principal">
+          <Link href="/" aria-current="page" aria-label="Mis lecciones" className="learner-nav-link">
+            <BookOpen size={18} aria-hidden="true" /><span>Mis lecciones</span>
+          </Link>
+        </nav>
       </div>
     </header>
   );

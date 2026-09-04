@@ -241,6 +241,24 @@ The first presentation course then filled that learner shell with a complete pat
 
 Authoring the 17 lessons exposed practical Builder friction. The Builder gained whole-lesson duplication, one-action explanation-and-practice pairs, visible lesson step counts, and an explicit onboarding module placement. Structural tests now protect the presentation course from empty lessons, blank answers, duplicate IDs, and accidental loss of its intended module shape. The course is suitable for product demonstrations, while full learner and visual validation remains the gate before treating it as production curriculum.
 
+## September 4: Refine the student presentation
+
+The student experience received a broader design pass: a conversation illustration
+inspired by Bogota, a compact course overview, responsive module navigation, and
+lesson previews drawn from the Spanish sentence each lesson builds toward.
+Completed lessons use a light-green treatment and checkmarks.
+
+Practice gained a focused teaching area, quieter answer fields and hints, a stable
+navigation footer, and completion screens showing actual practiced English.
+Local progress now resumes unfinished lessons by block ID and prioritizes the
+most recently opened unfinished lesson. Existing completion records remain valid,
+and author previews no longer write student progress.
+
+Implementation, automated verification, and the remaining browser-validation gate
+are recorded in [the student experience log](../design/student-experience.md).
+The in-app browser was unavailable during this pass, so responsive visual and
+interactive validation remain explicitly open rather than being reported as done.
+
 ## The next chapter
 
 The project now moves through two connected phases.
