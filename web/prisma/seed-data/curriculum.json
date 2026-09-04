@@ -18007,7 +18007,9 @@
         "es:tener",
         "en:years",
         "sense:tener-edad",
-        "conjugation:infinitive"
+        "conjugation:infinitive",
+        "contrast:tener-anos-vs-to-be",
+        "contrast:confusable"
       ],
       "curriculumRole": "core"
     },
@@ -77524,7 +77526,9 @@
         "en:going",
         "conjugation:present",
         "conjugation:1sg",
-        "conjugation:irregular"
+        "conjugation:irregular",
+        "contrast:voy-a-lugar-vs-voy-a-infinitivo",
+        "contrast:confusable"
       ],
       "curriculumRole": "core"
     },
@@ -77562,7 +77566,9 @@
         "conjugation:3sg",
         "conjugation:irregular",
         "es:ir",
-        "en:going"
+        "en:going",
+        "contrast:voy-a-lugar-vs-voy-a-infinitivo",
+        "contrast:confusable"
       ],
       "curriculumRole": "core"
     },
@@ -77620,7 +77626,8 @@
         "es:ser",
         "en:am",
         "contrast:soy-vs-estoy",
-        "contrast:confusable"
+        "contrast:confusable",
+        "contrast:tener-anos-vs-to-be"
       ],
       "curriculumRole": "core"
     },
@@ -77712,7 +77719,8 @@
         "es:estar",
         "en:am",
         "contrast:soy-vs-estoy",
-        "contrast:confusable"
+        "contrast:confusable",
+        "contrast:ser-adjetivo-vs-estar-adjetivo"
       ],
       "curriculumRole": "core"
     },
@@ -77748,7 +77756,9 @@
         "conjugation:3sg",
         "conjugation:irregular",
         "es:estar",
-        "en:is"
+        "en:is",
+        "contrast:ser-adjetivo-vs-estar-adjetivo",
+        "contrast:confusable"
       ],
       "curriculumRole": "core"
     },
@@ -77970,6 +77980,640 @@
         "conjugation:irregular",
         "es:haber",
         "en:have"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "4uptsafx20",
+      "spanish": "estoy [haciendo algo]",
+      "english": "I am [doing something]",
+      "example": {
+        "spanish": "Estoy hablando con ella.",
+        "english": "I am speaking with her."
+      },
+      "collections": [
+        "pos:verb",
+        "sense:estar-progresivo",
+        "conjugation:present",
+        "conjugation:1sg",
+        "conjugation:irregular",
+        "es:estar",
+        "en:am",
+        "grammar:progressive",
+        "form:present-participle",
+        "construction:be-present-participle"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "g2rq6v6czz",
+      "spanish": "estás [haciendo algo]",
+      "english": "you are [doing something]",
+      "example": {
+        "spanish": "Estás trabajando mucho.",
+        "english": "You are working a lot."
+      },
+      "collections": [
+        "pos:verb",
+        "sense:estar-progresivo",
+        "conjugation:present",
+        "conjugation:2sg",
+        "conjugation:irregular",
+        "es:estar",
+        "en:are",
+        "grammar:progressive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "9yf8jsp2b1",
+      "spanish": "está [haciendo algo]",
+      "english": "is [doing something]",
+      "example": {
+        "spanish": "Ella está estudiando.",
+        "english": "She is studying."
+      },
+      "collections": [
+        "pos:verb",
+        "sense:estar-progresivo",
+        "conjugation:present",
+        "conjugation:3sg",
+        "conjugation:irregular",
+        "es:estar",
+        "en:is",
+        "grammar:progressive"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "4e3tp75nnw",
+      "spanish": "estamos [haciendo algo]",
+      "english": "we are [doing something]",
+      "example": {
+        "spanish": "Estamos comiendo.",
+        "english": "We are eating."
+      },
+      "collections": [
+        "pos:verb",
+        "sense:estar-progresivo",
+        "conjugation:present",
+        "conjugation:1pl",
+        "conjugation:irregular",
+        "es:estar",
+        "en:are",
+        "grammar:progressive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "bb48xm25wt",
+      "spanish": "están [haciendo algo]",
+      "english": "they are [doing something]",
+      "example": {
+        "spanish": "Ellos están esperando.",
+        "english": "They are waiting."
+      },
+      "collections": [
+        "pos:verb",
+        "sense:estar-progresivo",
+        "conjugation:present",
+        "conjugation:3pl",
+        "conjugation:irregular",
+        "es:estar",
+        "en:are",
+        "grammar:progressive"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "opdzad1zrx",
+      "spanish": "voy a [un lugar]",
+      "english": "I am going to [a place]",
+      "example": {
+        "spanish": "Voy a la oficina.",
+        "english": "I am going to the office."
+      },
+      "collections": [
+        "pos:verb",
+        "sense:ir-destino",
+        "conjugation:present",
+        "conjugation:1sg",
+        "conjugation:irregular",
+        "es:ir",
+        "en:go",
+        "topic:location",
+        "contrast:voy-a-lugar-vs-voy-a-infinitivo",
+        "contrast:confusable"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "vlfntsr6mm",
+      "spanish": "vas a [un lugar]",
+      "english": "you are going to [a place]",
+      "example": {
+        "spanish": "Vas a la escuela.",
+        "english": "You are going to the school."
+      },
+      "collections": [
+        "pos:verb",
+        "sense:ir-destino",
+        "conjugation:present",
+        "conjugation:2sg",
+        "conjugation:irregular",
+        "es:ir",
+        "en:go",
+        "topic:location"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "v9mrlosy7o",
+      "spanish": "va a [un lugar]",
+      "english": "is going to [a place]",
+      "example": {
+        "spanish": "Ella va al parque.",
+        "english": "She is going to the park."
+      },
+      "collections": [
+        "pos:verb",
+        "sense:ir-destino",
+        "conjugation:present",
+        "conjugation:3sg",
+        "conjugation:irregular",
+        "es:ir",
+        "en:go",
+        "topic:location",
+        "contrast:voy-a-lugar-vs-voy-a-infinitivo",
+        "contrast:confusable"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "i0ipg114mg",
+      "spanish": "vamos a [un lugar]",
+      "english": "we are going to [a place]",
+      "example": {
+        "spanish": "Vamos a la casa de Ana.",
+        "english": "We are going to Ana's house."
+      },
+      "collections": [
+        "pos:verb",
+        "sense:ir-destino",
+        "conjugation:present",
+        "conjugation:1pl",
+        "conjugation:irregular",
+        "es:ir",
+        "en:go",
+        "topic:location"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "m2cu1ggb78",
+      "spanish": "van a [un lugar]",
+      "english": "they are going to [a place]",
+      "example": {
+        "spanish": "Ellos van al mercado.",
+        "english": "They are going to the market."
+      },
+      "collections": [
+        "pos:verb",
+        "sense:ir-destino",
+        "conjugation:present",
+        "conjugation:3pl",
+        "conjugation:irregular",
+        "es:ir",
+        "en:go",
+        "topic:location"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "iy31grrg95",
+      "spanish": "soy de [un lugar]",
+      "english": "I am from [a place]",
+      "example": {
+        "spanish": "Soy de Colombia.",
+        "english": "I am from Colombia."
+      },
+      "collections": [
+        "pos:verb",
+        "sense:ser-origen",
+        "conjugation:present",
+        "conjugation:1sg",
+        "conjugation:irregular",
+        "es:ser",
+        "en:from",
+        "grammar:origin"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "6zy7d60lhd",
+      "spanish": "eres de [un lugar]",
+      "english": "you are from [a place]",
+      "example": {
+        "spanish": "¿Eres de México?",
+        "english": "Are you from Mexico?"
+      },
+      "collections": [
+        "pos:verb",
+        "sense:ser-origen",
+        "conjugation:present",
+        "conjugation:2sg",
+        "conjugation:irregular",
+        "es:ser",
+        "en:from",
+        "grammar:origin"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "25qdaau47d",
+      "spanish": "es de [un lugar]",
+      "english": "is from [a place]",
+      "example": {
+        "spanish": "Ella es de Perú.",
+        "english": "She is from Peru."
+      },
+      "collections": [
+        "pos:verb",
+        "sense:ser-origen",
+        "conjugation:present",
+        "conjugation:3sg",
+        "conjugation:irregular",
+        "es:ser",
+        "en:from",
+        "grammar:origin"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "ht2nxiu107",
+      "spanish": "somos de [un lugar]",
+      "english": "we are from [a place]",
+      "example": {
+        "spanish": "Somos de Bogotá.",
+        "english": "We are from Bogotá."
+      },
+      "collections": [
+        "pos:verb",
+        "sense:ser-origen",
+        "conjugation:present",
+        "conjugation:1pl",
+        "conjugation:irregular",
+        "es:ser",
+        "en:from",
+        "grammar:origin"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "w8b4nwsykp",
+      "spanish": "son de [un lugar]",
+      "english": "they are from [a place]",
+      "example": {
+        "spanish": "Ellos son de España.",
+        "english": "They are from Spain."
+      },
+      "collections": [
+        "pos:verb",
+        "sense:ser-origen",
+        "conjugation:present",
+        "conjugation:3pl",
+        "conjugation:irregular",
+        "es:ser",
+        "en:from",
+        "grammar:origin"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "8mpe0b3ksv",
+      "spanish": "tengo [número] años",
+      "english": "I am [number] years old",
+      "example": {
+        "spanish": "Tengo veinte años.",
+        "english": "I am twenty years old."
+      },
+      "collections": [
+        "pos:verb",
+        "sense:tener-edad",
+        "conjugation:present",
+        "conjugation:1sg",
+        "conjugation:irregular",
+        "es:tener",
+        "en:old",
+        "en:years",
+        "grammar:age",
+        "grammar:be"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "ksjxfltxqk",
+      "spanish": "tienes [número] años",
+      "english": "you are [number] years old",
+      "example": {
+        "spanish": "¿Cuántos años tienes?",
+        "english": "How old are you?"
+      },
+      "collections": [
+        "pos:verb",
+        "sense:tener-edad",
+        "conjugation:present",
+        "conjugation:2sg",
+        "conjugation:irregular",
+        "es:tener",
+        "en:old",
+        "grammar:age"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "a5e2xjebla",
+      "spanish": "tiene [número] años",
+      "english": "is [number] years old",
+      "example": {
+        "spanish": "Ella tiene diez años.",
+        "english": "She is ten years old."
+      },
+      "collections": [
+        "pos:verb",
+        "sense:tener-edad",
+        "conjugation:present",
+        "conjugation:3sg",
+        "conjugation:irregular",
+        "es:tener",
+        "en:old",
+        "grammar:age"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "qh9awmasdd",
+      "spanish": "tenemos [número] años",
+      "english": "we are [number] years old",
+      "example": {
+        "spanish": "Tenemos treinta años.",
+        "english": "We are thirty years old."
+      },
+      "collections": [
+        "pos:verb",
+        "sense:tener-edad",
+        "conjugation:present",
+        "conjugation:1pl",
+        "conjugation:irregular",
+        "es:tener",
+        "en:old",
+        "grammar:age"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "680u7m5wn5",
+      "spanish": "tienen [número] años",
+      "english": "they are [number] years old",
+      "example": {
+        "spanish": "Ellos tienen cinco años.",
+        "english": "They are five years old."
+      },
+      "collections": [
+        "pos:verb",
+        "sense:tener-edad",
+        "conjugation:present",
+        "conjugation:3pl",
+        "conjugation:irregular",
+        "es:tener",
+        "en:old",
+        "grammar:age"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "yye01uov38",
+      "spanish": "tengo que [hacer algo]",
+      "english": "I have to [do something]",
+      "example": {
+        "spanish": "Tengo que salir.",
+        "english": "I have to leave."
+      },
+      "collections": [
+        "pos:verb",
+        "sense:tener-obligacion",
+        "conjugation:present",
+        "conjugation:1sg",
+        "conjugation:irregular",
+        "es:tener",
+        "en:have",
+        "en:to",
+        "grammar:modal"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "kjllit1qgt",
+      "spanish": "tienes que [hacer algo]",
+      "english": "you have to [do something]",
+      "example": {
+        "spanish": "Tienes que llamarla.",
+        "english": "You have to call her."
+      },
+      "collections": [
+        "pos:verb",
+        "sense:tener-obligacion",
+        "conjugation:present",
+        "conjugation:2sg",
+        "conjugation:irregular",
+        "es:tener",
+        "en:have",
+        "grammar:modal"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "ogdv00s3cw",
+      "spanish": "tiene que [hacer algo]",
+      "english": "has to [do something]",
+      "example": {
+        "spanish": "Ella tiene que trabajar.",
+        "english": "She has to work."
+      },
+      "collections": [
+        "pos:verb",
+        "sense:tener-obligacion",
+        "conjugation:present",
+        "conjugation:3sg",
+        "conjugation:irregular",
+        "es:tener",
+        "en:has",
+        "grammar:modal"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "ny8jxz2s41",
+      "spanish": "tenemos que [hacer algo]",
+      "english": "we have to [do something]",
+      "example": {
+        "spanish": "Tenemos que esperar.",
+        "english": "We have to wait."
+      },
+      "collections": [
+        "pos:verb",
+        "sense:tener-obligacion",
+        "conjugation:present",
+        "conjugation:1pl",
+        "conjugation:irregular",
+        "es:tener",
+        "en:have",
+        "grammar:modal"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "x9hss06n9a",
+      "spanish": "tienen que [hacer algo]",
+      "english": "they have to [do something]",
+      "example": {
+        "spanish": "Ellos tienen que pagar.",
+        "english": "They have to pay."
+      },
+      "collections": [
+        "pos:verb",
+        "sense:tener-obligacion",
+        "conjugation:present",
+        "conjugation:3pl",
+        "conjugation:irregular",
+        "es:tener",
+        "en:have",
+        "grammar:modal"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "n8ahr1jble",
+      "spanish": "soy [adjetivo]",
+      "english": "I am [adjective]",
+      "example": {
+        "spanish": "Soy alto.",
+        "english": "I am tall."
+      },
+      "collections": [
+        "pos:verb",
+        "sense:ser-caracteristica",
+        "conjugation:present",
+        "conjugation:1sg",
+        "conjugation:irregular",
+        "es:ser",
+        "en:be",
+        "grammar:ser-adjective",
+        "grammar:linking-verb-adjective",
+        "contrast:ser-adjetivo-vs-estar-adjetivo",
+        "contrast:confusable"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "hfip8vre8c",
+      "spanish": "eres [adjetivo]",
+      "english": "you are [adjective]",
+      "example": {
+        "spanish": "Eres muy amable.",
+        "english": "You are very kind."
+      },
+      "collections": [
+        "pos:verb",
+        "sense:ser-caracteristica",
+        "conjugation:present",
+        "conjugation:2sg",
+        "conjugation:irregular",
+        "es:ser",
+        "en:be",
+        "grammar:ser-adjective"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "9c2am535n8",
+      "spanish": "es [adjetivo]",
+      "english": "is [adjective]",
+      "example": {
+        "spanish": "La reunión es importante.",
+        "english": "The meeting is important."
+      },
+      "collections": [
+        "pos:verb",
+        "sense:ser-caracteristica",
+        "conjugation:present",
+        "conjugation:3sg",
+        "conjugation:irregular",
+        "es:ser",
+        "en:be",
+        "grammar:ser-adjective",
+        "contrast:ser-adjetivo-vs-estar-adjetivo",
+        "contrast:confusable"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "kqssflfv3m",
+      "spanish": "somos [adjetivo]",
+      "english": "we are [adjective]",
+      "example": {
+        "spanish": "Somos puntuales.",
+        "english": "We are punctual."
+      },
+      "collections": [
+        "pos:verb",
+        "sense:ser-caracteristica",
+        "conjugation:present",
+        "conjugation:1pl",
+        "conjugation:irregular",
+        "es:ser",
+        "en:be",
+        "grammar:ser-adjective"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "elhfo7u8o3",
+      "spanish": "son [adjetivo]",
+      "english": "they are [adjective]",
+      "example": {
+        "spanish": "Ellos son jóvenes.",
+        "english": "They are young."
+      },
+      "collections": [
+        "pos:verb",
+        "sense:ser-caracteristica",
+        "conjugation:present",
+        "conjugation:3pl",
+        "conjugation:irregular",
+        "es:ser",
+        "en:be",
+        "grammar:ser-adjective"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "7irrsf9sy8",
+      "spanish": "es la una",
+      "english": "it's one o'clock",
+      "example": {
+        "spanish": "Es la una de la tarde.",
+        "english": "It's one o'clock in the afternoon."
+      },
+      "collections": [
+        "pos:verb",
+        "sense:ser-hora",
+        "conjugation:present",
+        "conjugation:3sg",
+        "conjugation:irregular",
+        "es:ser",
+        "en:time",
+        "topic:clock-time"
       ],
       "curriculumRole": "supporting"
     }
