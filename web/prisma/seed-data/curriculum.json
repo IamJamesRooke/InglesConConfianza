@@ -6816,7 +6816,6 @@
         "english": "There is a book."
       },
       "collections": [
-        "es:deber",
         "construction:there-be",
         "grammar:singular",
         "es:haber",
@@ -7062,7 +7061,6 @@
         "en:must",
         "construction:map-de-probability",
         "es:deber",
-        "es:debe",
         "en:there"
       ],
       "curriculumRole": "reference"
@@ -10418,7 +10416,7 @@
         "grammar:ability",
         "grammar:modal",
         "form:present-perfect",
-        "es:he",
+        "es:haber",
         "en:been"
       ],
       "curriculumRole": "reference"
@@ -10438,7 +10436,7 @@
         "form:present-perfect",
         "en:not",
         "grammar:contraction",
-        "es:he",
+        "es:haber",
         "en:haven't"
       ],
       "curriculumRole": "reference"
@@ -10572,7 +10570,6 @@
         "grammar:permission",
         "grammar:question",
         "grammar:modal",
-        "es:puedo",
         "pos:verb"
       ],
       "curriculumRole": "core"
@@ -10591,8 +10588,7 @@
         "grammar:permission",
         "grammar:question",
         "register:formal",
-        "grammar:modal",
-        "es:puedo"
+        "grammar:modal"
       ],
       "curriculumRole": "reference"
     },
@@ -14302,7 +14298,6 @@
         "construction:verb-forms",
         "construction:followed-by-bare-infinitive",
         "form:bare-infinitive",
-        "es:debería",
         "en:should",
         "pos:verb"
       ],
@@ -14322,7 +14317,6 @@
         "en:to",
         "grammar:advice",
         "grammar:conditional",
-        "es:debería",
         "en:ought"
       ],
       "curriculumRole": "reference"
@@ -14448,7 +14442,6 @@
         "grammar:negative",
         "grammar:advice",
         "grammar:conditional",
-        "es:debería",
         "en:not"
       ],
       "curriculumRole": "supporting"
@@ -14468,7 +14461,6 @@
         "grammar:negative",
         "grammar:advice",
         "grammar:conditional",
-        "es:debería",
         "en:shouldn't"
       ],
       "curriculumRole": "supporting"
@@ -14523,7 +14515,6 @@
         "grammar:supposed-to",
         "form:imperfect",
         "past expectation",
-        "es:debía",
         "en:been"
       ],
       "curriculumRole": "reference"
@@ -17148,7 +17139,7 @@
         "es:ser",
         "en:be"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "trash"
     },
     {
       "id": "6vgdzpegua",
@@ -17507,7 +17498,6 @@
         "es:ser",
         "grammar:fixed-expression",
         "pos:adverb",
-        "es:sea",
         "en:anyway"
       ],
       "curriculumRole": "reference"
@@ -18005,7 +17995,7 @@
         "es:tener",
         "en:gotta"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "trash"
     },
     {
       "id": "3l1rvkd3vh",
@@ -58649,7 +58639,7 @@
         "construction:verb-forms",
         "es:do",
         "form:past",
-        "es:hizo",
+        "es:hacer",
         "en:did",
         "pos:verb"
       ],
@@ -61915,7 +61905,7 @@
         "topic:clock-time",
         "construction:telling-time",
         "construction:it-is",
-        "es:son",
+        "es:ser",
         "en:it"
       ],
       "curriculumRole": "supporting"
@@ -61933,7 +61923,7 @@
         "topic:clock-time",
         "construction:telling-time",
         "construction:it-is",
-        "es:son",
+        "es:ser",
         "en:it"
       ],
       "curriculumRole": "reference"
@@ -62106,7 +62096,7 @@
     },
     {
       "id": "ft6li4zkws",
-      "spanish": "ser [adverbio de frecuencia] [estado]",
+      "spanish": "estar [adverbio de frecuencia] [estado]",
       "english": "to be [frequency adverb] [state]",
       "example": {
         "spanish": "Ella casi siempre está aquí.",
@@ -62116,8 +62106,8 @@
         "topic:time",
         "grammar:frequency-adverb",
         "after be",
-        "es:ser",
-        "en:be"
+        "en:be",
+        "es:estar"
       ],
       "curriculumRole": "supporting"
     },
@@ -62749,7 +62739,7 @@
         "es:have",
         "grammar:question",
         "form:past-participle",
-        "es:has",
+        "es:haber",
         "en:you",
         "pos:verb"
       ],
@@ -62768,7 +62758,7 @@
         "form:present-perfect",
         "grammar:question",
         "form:past-participle",
-        "es:ha",
+        "es:haber",
         "en:has",
         "pos:verb"
       ],
@@ -63476,7 +63466,7 @@
         "sound:was-were-going-to",
         "grammar:past-plan",
         "construction:followed-by-full-infinitive",
-        "es:ibas",
+        "es:ir",
         "en:were"
       ],
       "curriculumRole": "supporting"
@@ -63495,7 +63485,7 @@
         "sound:was-were-going-to",
         "grammar:past-plan",
         "construction:followed-by-full-infinitive",
-        "es:iba",
+        "es:ir",
         "en:was"
       ],
       "curriculumRole": "supporting"
@@ -63514,7 +63504,7 @@
         "grammar:past-plan",
         "en:was",
         "construction:followed-by-full-infinitive",
-        "es:iba",
+        "es:ir",
         "en:i/he/she"
       ],
       "curriculumRole": "supporting"
@@ -63609,7 +63599,7 @@
         "grammar:question",
         "register:formal",
         "construction:followed-by-bare-infinitive",
-        "es:debes",
+        "es:deber",
         "en:you"
       ],
       "curriculumRole": "reference"
@@ -63668,7 +63658,7 @@
         "grammar:question",
         "grammar:advice",
         "construction:followed-by-bare-infinitive",
-        "es:deberías",
+        "es:deber",
         "en:you"
       ],
       "curriculumRole": "supporting"
@@ -75369,7 +75359,7 @@
         "grammar:interrogative-pronoun",
         "grammar:quantifier",
         "grammar:masculine",
-        "es:cuántos",
+        "es:cuánto",
         "en:how",
         "topic:determiner",
         "grammar:interrogative-determiner",
@@ -75390,7 +75380,7 @@
         "grammar:interrogative-pronoun",
         "grammar:quantifier",
         "grammar:feminine",
-        "es:cuántas",
+        "es:cuánto",
         "en:how",
         "topic:determiner",
         "grammar:interrogative-determiner",

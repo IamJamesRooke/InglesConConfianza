@@ -1,0 +1,16 @@
+MERGE	es:he	es:haber	finite form used as a lemma tag
+MERGE	es:ha	es:haber	finite form used as a lemma tag
+MERGE	es:has	es:haber	finite form used as a lemma tag
+MERGE	es:son	es:ser	finite form used as a lemma tag
+MERGE	es:hizo	es:hacer	finite form used as a lemma tag
+MERGE	es:puedo	es:poder	finite form used as a lemma tag
+MERGE	es:sea	es:ser	finite form used as a lemma tag
+MERGE	es:iba	es:ir	finite form used as a lemma tag
+MERGE	es:ibas	es:ir	finite form used as a lemma tag
+MERGE	es:debe	es:deber	finite form used as a lemma tag
+MERGE	es:debes	es:deber	finite form used as a lemma tag
+MERGE	es:debía	es:deber	finite form used as a lemma tag
+MERGE	es:debería	es:deber	finite form used as a lemma tag
+MERGE	es:deberías	es:deber	finite form used as a lemma tag
+MERGE	es:cuántos	es:cuánto	surface form used as a lemma tag (same bug class, found in the interrogatives sanity check)
+MERGE	es:cuántas	es:cuánto	surface form used as a lemma tag
