@@ -3,10 +3,34 @@
   "modules": [
     {
       "id": "module_e4d56384-dde5-46ba-a5cf-21509fd17d3f",
-      "name": "Module 1: Subject Pronouns",
-      "keyConcepts": [],
+      "name": "Fundamentals I",
+      "keyConcepts": [
+        {
+          "id": "lesson_concept_0411adb8-0b17-4555-b4af-cad5193dea5a",
+          "conceptId": "o25n43wg3o",
+          "label": "yo"
+        },
+        {
+          "id": "lesson_concept_3607cf6c-9552-448a-bd9d-10c388331c52",
+          "conceptId": "df1fa2p3xy",
+          "label": "querer [hacer algo]"
+        },
+        {
+          "id": "lesson_concept_9a5cf0f5-eb63-420b-8ce4-206b2505c3f3",
+          "conceptId": "mxguwwzrxk",
+          "label": "poder [hacer algo]"
+        },
+        {
+          "id": "lesson_concept_84a39960-4aa4-429c-b258-3b9c78e39b1e",
+          "conceptId": "rh4yfb08hn",
+          "label": "voy a [hacer algo]"
+        }
+      ],
       "lessonIds": [
-        "lesson_d7ed75c7-6479-4a84-9c6a-45bfca8ec652"
+        "lesson_4c3414c0-3748-440c-8bfc-4080081caed2",
+        "lesson_ee8421b5-1d47-4d7e-8f87-3f06ab28b351",
+        "lesson_b4a17caa-1e40-45b7-85ad-58cf0875179b",
+        "lesson_5f12ea29-dbf2-4676-82a7-edd2730574ef"
       ]
     },
     {
@@ -20,43 +44,43 @@
   ],
   "lessons": [
     {
-      "id": "lesson_d7ed75c7-6479-4a84-9c6a-45bfca8ec652",
-      "name": "I want to be able to speak English very well.",
+      "id": "lesson_4c3414c0-3748-440c-8bfc-4080081caed2",
+      "name": "I speak English very well.",
       "concepts": [
         {
-          "id": "lesson_concept_2d9085cb-6223-488a-b035-f13c24856129",
-          "conceptId": "df1fa2p3xy",
-          "label": "querer [hacer algo]"
+          "id": "lesson_concept_e08962cb-a4b6-4286-873e-cf1386260f26",
+          "conceptId": "o25n43wg3o",
+          "label": "yo"
         },
         {
-          "id": "lesson_concept_651c5ee5-1069-47e0-8ae3-58a9123b502d",
-          "conceptId": "mxguwwzrxk",
-          "label": "poder [hacer algo]"
-        },
-        {
-          "id": "lesson_concept_2d748128-85f5-418a-baf6-a13e631fa18f",
+          "id": "lesson_concept_2ebbebcd-6976-484c-94d4-177441d14e74",
           "conceptId": "4c0v1mewmv",
-          "label": "hablar [un idioma]"
+          "label": "hablar"
         },
         {
-          "id": "lesson_concept_958aa15d-2761-403d-8d38-ceab1d921d25",
+          "id": "lesson_concept_2077533b-b122-4932-9fc3-75212af8878e",
           "conceptId": "9rswx58qx1",
           "label": "inglés"
         },
         {
-          "id": "lesson_concept_83a2a2a1-f2f9-4ba3-b965-1745656c5e02",
+          "id": "lesson_concept_5fdbd7fe-e9cd-479d-972c-e280a4b9b5f1",
           "conceptId": "neo7bdruvy",
           "label": "muy [adjetivo]"
         },
         {
-          "id": "lesson_concept_72bf8ea0-13e7-444a-bbd3-9ede507c74b6",
+          "id": "lesson_concept_b7b2d711-a578-4514-8d5d-0d8f20e5a686",
           "conceptId": "r3d6k4jrrn",
           "label": "[hacer algo] bien"
         }
       ],
       "blocks": [
         {
-          "id": "block_6a08e010-2947-45b6-a809-760b77da7bec",
+          "id": "block_02b397dc-1868-4b70-8372-3784ae473747",
+          "type": "explanation",
+          "contentMarkdown": "==yo== es ==I=="
+        },
+        {
+          "id": "block_32a29740-ec6b-4476-a02e-d6f5136a56d4",
           "type": "sentence",
           "promptLabel": "",
           "promptText": "",
@@ -65,34 +89,150 @@
           "conceptLinks": [],
           "languageBlocks": [
             {
-              "id": "lang_118d68bf-42a4-479b-9a31-50495d08bf18",
-              "spanish": "Quiero",
+              "id": "lang_4c6857e5-3c3c-4b41-90ec-eeb49e152e7c",
+              "spanish": "yo",
+              "callout": "Debe ser mayúscula.",
+              "acceptedAnswers": [
+                "I"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_8dc77a98-2c81-4ce1-b22d-f7533be8629b",
+          "type": "explanation",
+          "contentMarkdown": "==hablo== o ==yo hablo== es ==I speak=="
+        },
+        {
+          "id": "block_b355a635-a2be-40ae-a490-1e92504e1bd2",
+          "type": "sentence",
+          "layout": "vocabulary_table",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_8b764e02-18c3-4a24-aacb-ac717ad7ca0c",
+              "spanish": "yo hablo",
               "callout": null,
               "acceptedAnswers": [
-                "I want"
+                "I speak"
               ],
               "conceptLinks": []
             },
             {
-              "id": "lang_ef59809d-2e87-47ea-8f24-8df4b11a93af",
-              "spanish": "poder",
+              "id": "lang_2136fe65-8cb2-4729-a947-a9448028ffcb",
+              "spanish": "hablo",
+              "callout": "En inglés, casi siempre decimos quien hace la acción.",
+              "acceptedAnswers": [
+                "I speak"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_515212f7-0d82-4646-8516-66f42a4a1797",
+          "type": "explanation",
+          "contentMarkdown": "==inglés== es ==English==\n\nEs incorrecto escribir **english** porque en inglés. Debe ser en mayúscula.&#x20;"
+        },
+        {
+          "id": "block_11f4160d-1f2f-4308-aec5-167080dd132f",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_af204edb-9e50-4860-8689-6484275cfdb9",
+              "spanish": "inglés",
               "callout": null,
               "acceptedAnswers": [
-                "to be able"
+                "English"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_f9a63d8a-e379-4edd-8262-f5ad59ea28df",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_60ccc874-bde0-4b99-8ebb-e99733144ab3",
+              "spanish": "Hablo",
+              "callout": null,
+              "acceptedAnswers": [
+                "I speak"
               ],
               "conceptLinks": []
             },
             {
-              "id": "lang_08bed48f-9da7-476b-b623-ca01e28c3b63",
-              "spanish": "hablar",
+              "id": "lang_679d625e-93f7-4265-a792-ba3ac3eea921",
+              "spanish": "inglés.",
+              "callout": "Debes ponerle un punto al final.",
+              "acceptedAnswers": [
+                "English."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_601f4d3d-b9c4-4d3e-a050-46f05c60a6c2",
+          "type": "explanation",
+          "contentMarkdown": "==bien==, hacer algo bien, es ==well=="
+        },
+        {
+          "id": "block_4cc4f0b0-7576-4b6e-a6f8-a69c56dc566d",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_d41c0da7-c912-4d71-baa2-8df9f26625f4",
+              "spanish": "bien",
               "callout": null,
               "acceptedAnswers": [
-                "to speak"
+                "well"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_ed8422a6-b9ec-4182-ba29-fd74347c3048",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_c9a988f3-d485-473c-bc34-b3d585a9cca6",
+              "spanish": "Hablo",
+              "callout": null,
+              "acceptedAnswers": [
+                "I speak"
               ],
               "conceptLinks": []
             },
             {
-              "id": "lang_d18d0a1c-5094-493b-b12e-826d866a9a01",
+              "id": "lang_da4e8f64-cac2-462c-a18e-d0e5881a7071",
               "spanish": "inglés",
               "callout": null,
               "acceptedAnswers": [
@@ -101,7 +241,70 @@
               "conceptLinks": []
             },
             {
-              "id": "lang_ead72737-ef2c-424f-9bf9-1e33b2b9c4af",
+              "id": "lang_f3084bdb-2db8-47ac-8586-0583152185c1",
+              "spanish": "bien.",
+              "callout": null,
+              "acceptedAnswers": [
+                "well."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_101f3037-af2f-4cb8-bbfb-819bc8bd0322",
+          "type": "explanation",
+          "contentMarkdown": "==muy== es ==very=="
+        },
+        {
+          "id": "block_94238224-0dab-4743-a7cd-51108688eefb",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_483a345d-20eb-4855-afc1-3915464ad00c",
+              "spanish": "muy",
+              "callout": null,
+              "acceptedAnswers": [
+                "very"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_1eb54641-9749-4438-8fe3-2b319d3eebd9",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_4daabd3d-4013-4563-895e-a95b5483edda",
+              "spanish": "Hablo",
+              "callout": null,
+              "acceptedAnswers": [
+                "I speak"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_0f42cdfb-8522-4989-a034-7d070bdb3d9f",
+              "spanish": "inglés",
+              "callout": null,
+              "acceptedAnswers": [
+                "English"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_ed536952-d333-4bc2-b7d4-1fe539bcef69",
               "spanish": "muy",
               "callout": null,
               "acceptedAnswers": [
@@ -110,7 +313,569 @@
               "conceptLinks": []
             },
             {
-              "id": "lang_fcfc9360-66ed-4f9f-8341-d15d08103949",
+              "id": "lang_7af44867-0ef5-4438-b6f3-048786e92c52",
+              "spanish": "bien.",
+              "callout": "Punto al final.",
+              "acceptedAnswers": [
+                "well."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson_ee8421b5-1d47-4d7e-8f87-3f06ab28b351",
+      "name": "I want to speak English with you.",
+      "concepts": [
+        {
+          "id": "lesson_concept_5c62645d-45ed-4eac-a6e1-9cc10f203512",
+          "conceptId": "df1fa2p3xy",
+          "label": "querer [hacer algo]"
+        },
+        {
+          "id": "lesson_concept_a2855dd6-5f45-44ab-af42-4fd75b843fc0",
+          "conceptId": "xo18pm756n",
+          "label": "hablar con [alguien]"
+        },
+        {
+          "id": "lesson_concept_faed8254-617d-4444-a5fc-d56bf10f61be",
+          "conceptId": "rnldlhmpop",
+          "label": "contigo"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "block_8d8d65b4-08c8-4e4e-a377-347c28d01044",
+          "type": "explanation",
+          "contentMarkdown": "==quiero== o ==yo quiero== es ==I want=="
+        },
+        {
+          "id": "block_48b7cac8-553c-49b6-bc2b-f655243efc79",
+          "type": "sentence",
+          "layout": "vocabulary_table",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_676b5914-85ad-4a2f-b778-aa35db2536d5",
+              "spanish": "quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_bfc9ec5e-6358-4e5e-971c-9a0527eddf5a",
+              "spanish": "yo quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_35d4bbd2-b62d-453f-bb82-5ccdf1d3328f",
+          "type": "explanation",
+          "contentMarkdown": "==yo hablo== es ==I speak== pero ==hablar== es ==to speak==, dos palabras."
+        },
+        {
+          "id": "block_fe5bccd0-e75b-4fa2-af6f-212be422421f",
+          "type": "sentence",
+          "layout": "vocabulary_table",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_696d2790-ecd9-4f6a-93c4-ad581d9d6578",
+              "spanish": "yo hablo",
+              "callout": null,
+              "acceptedAnswers": [
+                "I speak"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_1275bfce-6735-4a51-baa0-ee6f818b3e04",
+              "spanish": "hablar",
+              "callout": null,
+              "acceptedAnswers": [
+                "to speak"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_51a8b139-8e90-4561-9a9a-b0106225cab2",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_037c23fe-a7fb-4914-a5b6-b3eceb187945",
+              "spanish": "Hablo",
+              "callout": null,
+              "acceptedAnswers": [
+                "I speak"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_1b1d0a78-1ffa-4e6c-86b1-e7c3b41a4574",
+              "spanish": "inglés.",
+              "callout": null,
+              "acceptedAnswers": [
+                "English."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_a878cdda-7176-41da-b0f3-90f689dcc3d5",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_68eb4554-6f79-4e34-9a48-53db6db0c009",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_47270308-70e6-40c5-ba25-8220542b1a5e",
+              "spanish": "hablar",
+              "callout": null,
+              "acceptedAnswers": [
+                "to speak"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_64e53c41-7f87-4447-b0a4-b35ed71ccec0",
+              "spanish": "inglés.",
+              "callout": "Punto al final.",
+              "acceptedAnswers": [
+                "English."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_8b48df5e-9b4c-4b8d-bd7d-6f8625dc4f56",
+          "type": "explanation",
+          "contentMarkdown": "==con== es ==with=="
+        },
+        {
+          "id": "block_bbad16ef-7ec8-4167-8448-6dd08bff3bce",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_e48f8e8c-4e34-4396-ae41-ece5dc1f6fc6",
+              "spanish": "con",
+              "callout": null,
+              "acceptedAnswers": [
+                "with"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_c8fcc35c-ab99-418f-90a5-068005671d78",
+          "type": "explanation",
+          "contentMarkdown": "==contigo== es ==with you=="
+        },
+        {
+          "id": "block_5a90c5c6-b94d-410b-8737-f847e780666b",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_b83c5c8e-85cf-475e-879a-6881f6adf83d",
+              "spanish": "contigo",
+              "callout": null,
+              "acceptedAnswers": [
+                "with you"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_d8125683-9d54-4897-9c1e-abdcf6d3c033",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_c8181370-1672-441c-8ded-272806846af4",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_b2964ebf-b9cb-4487-ab95-d21a10c8ebef",
+              "spanish": "hablar",
+              "callout": null,
+              "acceptedAnswers": [
+                "to speak"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_1ed98bf8-1d3d-4142-bdff-62795fe88c53",
+              "spanish": "inglés",
+              "callout": null,
+              "acceptedAnswers": [
+                "English"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_196a6ee8-47a6-49c6-a53c-561f3e01be0c",
+              "spanish": "contigo.",
+              "callout": null,
+              "acceptedAnswers": [
+                "with you."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson_b4a17caa-1e40-45b7-85ad-58cf0875179b",
+      "name": "I want to be able to speak English very well.",
+      "concepts": [
+        {
+          "id": "lesson_concept_531b6249-84a6-42d8-95f0-6de6f09e64e8",
+          "conceptId": "df1fa2p3xy",
+          "label": "querer [hacer algo]"
+        },
+        {
+          "id": "lesson_concept_2c546fb8-9063-4bf2-871c-f1787e37a093",
+          "conceptId": "mxguwwzrxk",
+          "label": "poder [hacer algo]"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "block_5e581349-f21d-4ab4-b83c-cc1e3e2f4f1f",
+          "type": "explanation",
+          "contentMarkdown": "==ser== es ==to be==, dos palabras"
+        },
+        {
+          "id": "block_43bc3238-a545-4a92-aa8f-0876aa995a31",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_6395703d-a04e-4ea8-b1cb-18aba6282b1a",
+              "spanish": "ser",
+              "callout": null,
+              "acceptedAnswers": [
+                "to be"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_c1952770-3d6b-4794-a70e-fef36eb51c3c",
+          "type": "explanation",
+          "contentMarkdown": "==capaz de== es ==able==, literalmente *hábil*"
+        },
+        {
+          "id": "block_5edcb2ca-1232-4fa0-8eea-432902c853e2",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_fb9cb970-34d5-4b45-8533-6d93e57eefa5",
+              "spanish": "capaz de",
+              "callout": null,
+              "acceptedAnswers": [
+                "able"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_8dc229f8-3641-4889-b8e5-47c58d311673",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_c8fc3478-4ed9-420e-80aa-fe2ff5a2f9d2",
+              "spanish": "ser",
+              "callout": null,
+              "acceptedAnswers": [
+                "to be"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_e45ca2c3-13bf-41c0-9514-9ed4cf7fa35d",
+              "spanish": "capaz de",
+              "callout": null,
+              "acceptedAnswers": [
+                "able"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_df597693-4d41-48e0-b258-9045dfd0eb17",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_2000405c-147f-48fd-b0cb-021e20856040",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_8a93dd4c-bd0e-4101-ad49-74edecaa25e6",
+              "spanish": "ser",
+              "callout": null,
+              "acceptedAnswers": [
+                "to be"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_32a59847-cbb1-4f7c-b6d0-b36a15881bfc",
+              "spanish": "capaz de",
+              "callout": null,
+              "acceptedAnswers": [
+                "able"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_364d24e6-c56b-4a8d-b721-c96421c20912",
+              "spanish": "hablar",
+              "callout": null,
+              "acceptedAnswers": [
+                "to speak"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_7fadf6f3-1f4d-4730-99b5-3db68a528422",
+              "spanish": "inglés.",
+              "callout": null,
+              "acceptedAnswers": [
+                "English."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_66746f56-6659-4d86-8c3e-1ff0cb520f3f",
+          "type": "explanation",
+          "contentMarkdown": "==poder== es ==to be able==\n\n**Ser capaz de** y **poder** son iguales: *to be able*."
+        },
+        {
+          "id": "block_406ff0db-cb96-43fa-adcf-65f3b104e1e6",
+          "type": "sentence",
+          "layout": "vocabulary_table",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_03ceaa68-c76e-4201-a1d1-f76d675e0e7d",
+              "spanish": "ser capaz de",
+              "callout": null,
+              "acceptedAnswers": [
+                "to be able"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_22c79565-ced1-4ee9-b7d5-fc1a2f4cbd8a",
+              "spanish": "poder",
+              "callout": null,
+              "acceptedAnswers": [
+                "to be able"
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_5d787630-22bb-477c-9e8b-c64cf2011331",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_206a820d-016c-4b8c-a6f1-43604e8e1aaa",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_7f15d874-e619-4c9d-b17a-cfab91346fcf",
+              "spanish": "poder",
+              "callout": null,
+              "acceptedAnswers": [
+                "to be able"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_3326c0dc-af16-45ff-9fef-f6894c2bd3e9",
+              "spanish": "hablar",
+              "callout": null,
+              "acceptedAnswers": [
+                "to speak"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_d8e8bae9-8f95-4420-9096-0b4fcc62707e",
+              "spanish": "inglés.",
+              "callout": null,
+              "acceptedAnswers": [
+                "English."
+              ],
+              "conceptLinks": []
+            }
+          ]
+        },
+        {
+          "id": "block_fdca06b2-2eb6-4943-8c10-7c0c28e5441f",
+          "type": "explanation",
+          "contentMarkdown": "Como un recordatorio, ==muy bien== es ==very well==."
+        },
+        {
+          "id": "block_76eb7477-3a04-40e5-b731-6ce8e134ee38",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "conceptLinks": [],
+          "languageBlocks": [
+            {
+              "id": "lang_e516433c-4779-477e-8c23-03fdcac73b6a",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_2bcaf420-ecc0-47ae-b8b6-dcbf6186c563",
+              "spanish": "poder",
+              "callout": null,
+              "acceptedAnswers": [
+                "to be able"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_c516772a-b76b-4b3f-ae11-767c61c98513",
+              "spanish": "hablar",
+              "callout": null,
+              "acceptedAnswers": [
+                "to speak"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_65ee3fd1-9590-486c-b440-b9061bb399ec",
+              "spanish": "inglés",
+              "callout": null,
+              "acceptedAnswers": [
+                "English"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_77028772-834a-4d5d-bd21-b7b995ea5711",
+              "spanish": "muy",
+              "callout": null,
+              "acceptedAnswers": [
+                "very"
+              ],
+              "conceptLinks": []
+            },
+            {
+              "id": "lang_fe9873a1-4f6a-4adc-9510-614a5d05226d",
               "spanish": "bien.",
               "callout": null,
               "acceptedAnswers": [
@@ -121,6 +886,12 @@
           ]
         }
       ]
+    },
+    {
+      "id": "lesson_5f12ea29-dbf2-4676-82a7-edd2730574ef",
+      "name": "I'm going to be able to speak English very well.",
+      "concepts": [],
+      "blocks": []
     },
     {
       "id": "lesson_bdacade3-8ad6-4217-8c47-d5907d6122af",
