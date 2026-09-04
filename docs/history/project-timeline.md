@@ -237,13 +237,17 @@ The course home presents one clear next action, selectable modules, lesson avail
 
 Commits `c3839331`, `7505c693`, `70f5e293`, and `9ea9e764` record the route boundary, public identity, guided course home, and polished lesson journey. The MVP deliberately adds no accounts, authentication, or learner database.
 
+The first presentation course then filled that learner shell with a complete path: a three-lesson start-here conversation, four Fundamentals lessons, five full-infinitive lessons, and five everyday-plans lessons. Onboarding became real instruction rather than a feature tour: the learner greets James, sees James introduce himself, and combines the same pieces to introduce Ana.
+
+Authoring the 17 lessons exposed practical Builder friction. The Builder gained whole-lesson duplication, one-action explanation-and-practice pairs, visible lesson step counts, and an explicit onboarding module placement. Structural tests now protect the presentation course from empty lessons, blank answers, duplicate IDs, and accidental loss of its intended module shape. The course is suitable for product demonstrations, while full learner and visual validation remains the gate before treating it as production curriculum.
+
 ## The next chapter
 
 The project now moves through two connected phases.
 
 First, curate the database: remove garbage and low-value concepts, merge true duplicates, normalize records, consolidate collections, and make `core` and `supporting` genuinely selective.
 
-Second, build Module 1: choose a concrete learner promise, select the smallest trustworthy concept set, sequence short first-attempt-answerable lessons, author them in Lesson Builder, and test the entire module through Practice.
+Second, validate and refine Module 1: choose a concrete learner promise, select the smallest trustworthy concept set, sequence short first-attempt-answerable lessons, and test the entire module through Practice. The presentation scaffold accelerates that work without replacing it.
 
 The database does not need to be perfect before Module 1 begins. It needs to be structurally trustworthy enough that real lesson building can reveal the next valuable curation decisions.
 

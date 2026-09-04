@@ -1,6 +1,6 @@
 # Backlog
 
-> Last updated: 2026-08-24. Curriculum migration is complete. PostgreSQL is the canonical curriculum store; Lesson Builder remains JSON-backed. The completed build narrative lives in the [project timeline](history/project-timeline.md).
+> Last updated: 2026-09-04. Curriculum migration is complete. PostgreSQL is the canonical curriculum store; Lesson Builder remains JSON-backed. The completed build narrative lives in the [project timeline](history/project-timeline.md).
 
 ## Current objective
 
@@ -27,6 +27,15 @@ Curate the curriculum into a selective, trustworthy teaching catalog, then build
 Begin Module 1 when obvious structural problems are gone, role definitions are being applied consistently, and the concepts needed for the module are trustworthy. Full catalog perfection is not a prerequisite; later lessons should drive further curation.
 
 ## Phase 2: Module 1
+
+### Presentation scaffold
+
+- [x] Create a real three-lesson onboarding sequence that teaches the Practice interaction through a first conversation.
+- [x] Complete a 17-lesson presentation course spanning onboarding, Fundamentals I, full infinitives, and everyday plans.
+- [x] Improve Lesson Builder ergonomics discovered during authoring: teaching-pair insertion, whole-lesson duplication, module placement, and visible step counts.
+- [x] Add structural tests that prevent empty lessons, blank answers, duplicate IDs, or accidental loss of the onboarding sequence.
+
+This scaffold is demo content, not a claim that Module 1 has passed learner validation. The production completion gate below remains active.
 
 - [ ] Define one concrete learner promise for the module and the final confidence-building sentence or interaction that proves it.
 - [ ] Select only the Core and Supporting concepts required to fulfill that promise; use Reference concepts sparingly for context.

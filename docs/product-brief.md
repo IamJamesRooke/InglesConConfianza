@@ -66,10 +66,11 @@ Raw migrated source documents remain immutable PostgreSQL provenance. They prote
 - Practice is entered through a specific lesson and runs the authored lesson model with immediate answer recognition, help, feedback, lesson navigation, a confidence-building completion, and a direct handoff to the next lesson.
 - All internal tools live under `/admin/*`. Curriculum provides bilingual search, exact role and collection filters, pagination, inline editing, role changes, collection editing, bulk selection, and deletion. Lesson Builder supports handcrafted explanations and sentence practice with accepted alternatives, hints, feedback, validation, reordering, duplication, previews, and JSON persistence.
 - The MVP has no learner accounts or authentication. Anonymous lesson progress is stored only in the learner's browser and does not enter the curriculum or lesson stores.
+- The presentation course contains a real three-lesson onboarding conversation followed by three numbered modules. It provides a complete 17-lesson path for demonstrations while learner validation and curriculum refinement continue.
 
-## Next product milestone: Module 1
+## Next product milestone: Validate Module 1
 
-The first production module should make one concrete promise to the learner and fulfill it through a sequence of short lessons. Its curriculum concepts must be curated before use, but the entire database does not need to be perfect.
+The presentation scaffold now supplies a complete learner path, but it is not yet a production-learning claim. The next milestone is to run Module 1 end to end as a learner, sharpen its concrete promise, and revise every step that fails the teaching methodology. Its curriculum concepts must be curated before use, but the entire database does not need to be perfect.
 
 Module 1 succeeds when:
 
