@@ -1,5 +1,11 @@
 # Verb conjugation — the `conjugation:` facet
 
+> **Superseded** by `verb-organization-plan-2026-09-05.md`, which is the
+> current spec (adds the `sense:` facet, the full ser/estar/ir/tener/haber
+> sense enumeration, and `scripts/audit-verb-conjugation.ts`). Kept for
+> history — this page's 5-verb/1-sense-per-verb model is what the follow-up
+> plan replaced.
+
 Regular verbs stay **infinitive-only** in the catalog (`hablar → to speak`) —
 conjugation is a rule a lesson author applies when writing content, not a
 vocabulary item. That breaks down for **suppletive/irregular verbs**, where the
