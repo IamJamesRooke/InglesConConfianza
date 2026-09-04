@@ -77395,6 +77395,22 @@
         "en:safe"
       ],
       "curriculumRole": "reference"
+    },
+    {
+      "id": "rh4yfb08hn",
+      "spanish": "voy a [hacer algo]",
+      "english": "I am going to [do something]",
+      "example": {
+        "spanish": "Voy a hablar con ella.",
+        "english": "I am going to talk to her."
+      },
+      "collections": [
+        "pos:verb",
+        "grammar:going-to",
+        "es:ir",
+        "en:going"
+      ],
+      "curriculumRole": "core"
     }
   ]
 }
