@@ -244,7 +244,7 @@ export function CurriculumTable({
 
     try {
       const response = await fetch(
-        `/api/curriculum/concepts/${encodeURIComponent(concept.id)}`,
+        `/api/admin/curriculum/concepts/${encodeURIComponent(concept.id)}`,
         {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
@@ -298,7 +298,7 @@ export function CurriculumTable({
 
     try {
       const response = await fetch(
-        `/api/curriculum/concepts/${encodeURIComponent(concept.id)}`,
+        `/api/admin/curriculum/concepts/${encodeURIComponent(concept.id)}`,
         {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
@@ -337,7 +337,7 @@ export function CurriculumTable({
 
     try {
       const response = await fetch(
-        `/api/curriculum/concepts/${encodeURIComponent(concept.id)}`,
+        `/api/admin/curriculum/concepts/${encodeURIComponent(concept.id)}`,
         { method: "DELETE" },
       );
 
@@ -403,7 +403,7 @@ export function CurriculumTable({
 
     const results = await Promise.allSettled(
       targets.map((concept) =>
-        fetch(`/api/curriculum/concepts/${encodeURIComponent(concept.id)}`, {
+        fetch(`/api/admin/curriculum/concepts/${encodeURIComponent(concept.id)}`, {
           method: "DELETE",
         }).then((response) => {
           if (!response.ok) throw new Error("delete failed");
@@ -456,7 +456,7 @@ export function CurriculumTable({
 
     try {
       const response = await fetch(
-        `/api/curriculum/concepts/${encodeURIComponent(concept.id)}`,
+        `/api/admin/curriculum/concepts/${encodeURIComponent(concept.id)}`,
         {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
@@ -891,7 +891,7 @@ export function CurriculumTable({
                 <td className="px-2 py-1 align-top">
                   {coverage[concept.id] ? (
                     <a
-                      href={`/lesson-builder?lesson=${encodeURIComponent(coverage[concept.id].lessonId)}`}
+                      href={`/admin/lesson-builder?lesson=${encodeURIComponent(coverage[concept.id].lessonId)}`}
                       className="mt-0.5 inline-block rounded-full bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary transition hover:bg-primary/20"
                       title={
                         coverage[concept.id].lessonName

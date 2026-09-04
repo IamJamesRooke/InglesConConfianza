@@ -12,6 +12,10 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 import { PracticeMarkdown } from "@/components/practice/practice-markdown";
 import { SentencePracticeCard } from "@/components/practice/sentence-practice-card";
+import {
+  markLessonCompleted,
+  markLessonOpened,
+} from "@/components/learner/lesson-dashboard";
 import type { LessonBlock } from "@/lib/lesson-builder/types";
 
 export type PracticeLesson = {
@@ -50,6 +54,7 @@ export function LessonSelector({
     openLesson && !isComplete ? openLesson.blocks[currentStepIndex] : null;
 
   const openLessonPractice = useCallback((lessonId: string) => {
+    markLessonOpened(lessonId);
     setOpenLessonId(lessonId);
     setCurrentStepIndex(0);
     setIsCurrentSentenceComplete(false);
@@ -80,10 +85,20 @@ export function LessonSelector({
     }
 
     setIsCurrentSentenceComplete(false);
-    setCurrentStepIndex((currentIndex) =>
-      Math.min(currentIndex + 1, openLesson.blocks.length),
-    );
+    setCurrentStepIndex((currentIndex) => {
+      const nextIndex = Math.min(currentIndex + 1, openLesson.blocks.length);
+      if (nextIndex >= openLesson.blocks.length) {
+        markLessonCompleted(openLesson.id);
+      }
+      return nextIndex;
+    });
   }, [canManuallyAdvance, openLesson]);
+
+  useEffect(() => {
+    if (initialLessonId) {
+      markLessonOpened(initialLessonId);
+    }
+  }, [initialLessonId]);
 
   useEffect(() => {
     if (!openLesson) {

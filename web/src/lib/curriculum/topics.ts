@@ -1,4 +1,4 @@
-// Curriculum macrotags. Each is a curated view of /curriculum scoped to one
+// Curriculum macrotags. Each is a curated view of /admin/curriculum scoped to one
 // base collection, with quick-filter buttons for its sub-facets, shown inline
 // on the curriculum table.
 

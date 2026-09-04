@@ -213,7 +213,7 @@ export default function LessonBuilderPage() {
 
     async function loadLessons() {
       try {
-        const response = await fetch("/api/lesson-builder/lessons");
+        const response = await fetch("/api/admin/lesson-builder/lessons");
         if (!response.ok) {
           throw new Error("Unable to load lessons.");
         }
@@ -343,7 +343,7 @@ export default function LessonBuilderPage() {
 
     try {
       const response = await fetch(
-        `/api/lesson-builder/lessons/${encodeURIComponent(lessonId)}`,
+        `/api/admin/lesson-builder/lessons/${encodeURIComponent(lessonId)}`,
         {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -534,7 +534,7 @@ export default function LessonBuilderPage() {
     [lessons],
   );
 
-  // Deep link from /curriculum's "Lesson N" pill: ?lesson=<id> opens that
+  // Deep link from /admin/curriculum's "Lesson N" pill: ?lesson=<id> opens that
   // lesson's editor once, after the lessons have loaded.
   const didHandleDeepLink = useRef(false);
   useEffect(() => {
@@ -1077,7 +1077,7 @@ export default function LessonBuilderPage() {
 
     try {
       const response = await fetch(
-        `/api/lesson-builder/lessons/${encodeURIComponent(lessonId)}`,
+        `/api/admin/lesson-builder/lessons/${encodeURIComponent(lessonId)}`,
         { method: "DELETE" },
       );
 
@@ -1552,7 +1552,7 @@ export default function LessonBuilderPage() {
       window.clearTimeout(courseTimerRef.current);
       courseTimerRef.current = window.setTimeout(async () => {
         try {
-          const response = await fetch("/api/lesson-builder/course", {
+          const response = await fetch("/api/admin/lesson-builder/course", {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ modules: next }),
@@ -1642,7 +1642,7 @@ export default function LessonBuilderPage() {
     };
     commitCourseModules([...courseModules, created]);
     setActiveModuleId(created.id);
-    window.history.replaceState(null, "", `/lesson-builder?module=${created.id}`);
+    window.history.replaceState(null, "", `/admin/lesson-builder?module=${created.id}`);
   }
 
   function deleteModuleNow(moduleId: string) {
@@ -1675,7 +1675,7 @@ export default function LessonBuilderPage() {
 
   function selectModule(moduleId: string) {
     setActiveModuleId(moduleId);
-    window.history.replaceState(null, "", `/lesson-builder?module=${moduleId}`);
+    window.history.replaceState(null, "", `/admin/lesson-builder?module=${moduleId}`);
   }
 
   function moveDraggedLesson() {

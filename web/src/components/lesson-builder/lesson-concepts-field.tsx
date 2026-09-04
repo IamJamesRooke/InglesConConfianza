@@ -55,7 +55,7 @@ export function LessonConceptsField({
       }
       try {
         const response = await fetch(
-          `/api/curriculum/concepts/search?q=${encodeURIComponent(trimmed)}`,
+          `/api/admin/curriculum/concepts/search?q=${encodeURIComponent(trimmed)}`,
           { signal: controller.signal },
         );
         if (!response.ok) return;

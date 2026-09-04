@@ -44,7 +44,7 @@ function toDraft(concept: ApiConcept): ConceptDraft {
 
 // Click-to-edit a curriculum concept. Text / role / tags / delete — the caller
 // renders the trigger as `children`. Writes straight to the DB (PATCH/DELETE),
-// same as the /curriculum table; the seed snapshot then needs re-exporting.
+// same as the /admin/curriculum table; the seed snapshot then needs re-exporting.
 // Tag editing is unguarded on purpose — use at your own risk.
 export function ConceptQuickEdit({
   conceptId,
@@ -74,7 +74,7 @@ export function ConceptQuickEdit({
     if (!open) return;
     let live = true;
     if (!form) {
-      void fetch(`/api/curriculum/concepts/${encodeURIComponent(conceptId)}`)
+      void fetch(`/api/admin/curriculum/concepts/${encodeURIComponent(conceptId)}`)
         .then((response) => (response.ok ? response.json() : Promise.reject()))
         .then((data: { concept: ApiConcept }) => {
           if (live) setForm(toDraft(data.concept));
@@ -82,7 +82,7 @@ export function ConceptQuickEdit({
         .catch(() => live && setError("Could not load this concept."));
     }
     if (vocab.length === 0) {
-      void fetch("/api/curriculum/collections")
+      void fetch("/api/admin/curriculum/collections")
         .then((response) => (response.ok ? response.json() : Promise.reject()))
         .then((data: { collections: typeof vocab }) => {
           if (live) setVocab(data.collections);
@@ -121,7 +121,7 @@ export function ConceptQuickEdit({
     setError(null);
     try {
       const response = await fetch(
-        `/api/curriculum/concepts/${encodeURIComponent(conceptId)}`,
+        `/api/admin/curriculum/concepts/${encodeURIComponent(conceptId)}`,
         {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
@@ -159,7 +159,7 @@ export function ConceptQuickEdit({
     setError(null);
     try {
       const response = await fetch(
-        `/api/curriculum/concepts/${encodeURIComponent(conceptId)}`,
+        `/api/admin/curriculum/concepts/${encodeURIComponent(conceptId)}`,
         { method: "DELETE" },
       );
       if (!response.ok) throw new Error("Unable to delete.");

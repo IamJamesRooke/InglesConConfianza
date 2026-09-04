@@ -14,7 +14,7 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 
 export async function PUT(
   request: Request,
-  context: RouteContext<"/api/lesson-builder/lessons/[lessonId]">,
+  context: RouteContext<"/api/admin/lesson-builder/lessons/[lessonId]">,
 ) {
   const { lessonId } = await context.params;
   let body: unknown;
@@ -99,7 +99,7 @@ export async function PUT(
 
 export async function DELETE(
   _request: Request,
-  context: RouteContext<"/api/lesson-builder/lessons/[lessonId]">,
+  context: RouteContext<"/api/admin/lesson-builder/lessons/[lessonId]">,
 ) {
   const { lessonId } = await context.params;
 

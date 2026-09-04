@@ -7,15 +7,13 @@ import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
 
 const learnerLinks = [
-  { href: "/", label: "Inicio" },
-  { href: "/course", label: "Curso" },
-  { href: "/practice", label: "Práctica" },
+  { href: "/", label: "Lecciones" },
 ];
 
 const internalLinks = [
-  { href: "/lesson-builder", label: "Lesson Builder" },
-  { href: "/lesson-builder/coverage", label: "Coverage" },
-  { href: "/curriculum", label: "Curriculum" },
+  { href: "/admin/lesson-builder", label: "Lesson Builder" },
+  { href: "/admin/lesson-builder/coverage", label: "Coverage" },
+  { href: "/admin/curriculum", label: "Curriculum" },
 ];
 
 const themeOptions = [
@@ -50,9 +48,10 @@ export function SiteHeader() {
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
-    if (href === "/lesson-builder") return pathname === href;
+    if (href === "/admin/lesson-builder") return pathname === href;
     return pathname === href || pathname.startsWith(`${href}/`);
   };
+  const isAdmin = pathname.startsWith("/admin");
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-[var(--header)]/95 backdrop-blur">
@@ -81,21 +80,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-2 lg:flex">
-          <nav className="flex items-center gap-1 text-xs font-semibold" aria-label="Internal tools">
-            {internalLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`rounded-lg px-2.5 py-2 transition ${
-                  isActive(link.href)
-                    ? "bg-card text-foreground shadow-sm"
-                    : "text-muted-foreground hover:bg-card hover:text-foreground"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
+          {isAdmin && <InternalNav isActive={isActive} />}
           <SettingsButton onClick={() => setIsSettingsOpen(true)} />
         </div>
 
@@ -132,18 +117,20 @@ export function SiteHeader() {
                 </MobileLink>
               ))}
             </MobileNavGroup>
-            <MobileNavGroup label="Interno">
-              {internalLinks.map((link) => (
-                <MobileLink
-                  key={link.href}
-                  href={link.href}
-                  isActive={isActive(link.href)}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.label}
-                </MobileLink>
-              ))}
-            </MobileNavGroup>
+            {isAdmin && (
+              <MobileNavGroup label="Admin">
+                {internalLinks.map((link) => (
+                  <MobileLink
+                    key={link.href}
+                    href={link.href}
+                    isActive={isActive(link.href)}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.label}
+                  </MobileLink>
+                ))}
+              </MobileNavGroup>
+            )}
           </div>
         </div>
       )}
@@ -191,6 +178,33 @@ export function SiteHeader() {
         </div>
       )}
     </header>
+  );
+}
+
+function InternalNav({
+  isActive,
+}: {
+  isActive: (href: string) => boolean;
+}) {
+  return (
+    <nav
+      className="flex items-center gap-1 text-xs font-semibold"
+      aria-label="Admin tools"
+    >
+      {internalLinks.map((link) => (
+        <Link
+          key={link.href}
+          href={link.href}
+          className={`rounded-lg px-2.5 py-2 transition ${
+            isActive(link.href)
+              ? "bg-card text-foreground shadow-sm"
+              : "text-muted-foreground hover:bg-card hover:text-foreground"
+          }`}
+        >
+          {link.label}
+        </Link>
+      ))}
+    </nav>
   );
 }
 

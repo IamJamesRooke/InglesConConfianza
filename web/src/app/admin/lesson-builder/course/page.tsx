@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
 export default function CourseRedirect() {
-  redirect("/lesson-builder");
+  redirect("/admin/lesson-builder");
 }
