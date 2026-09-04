@@ -1,0 +1,12 @@
+# ORDER: run AFTER curation-2026-09-05-cognates-untag-derivation-rows.tsv and
+# curation-2026-09-05-cognates-hygiene.tsv, which reference the pre-rename collection names.
+# DELETE|MERGE|RENAME	from	into-or-to	reason
+RENAME	cognate:spelling-pattern	topic:cognate	777 members; it marks topic membership, not a pattern - becomes the Cognates topic page baseCollection
+DELETE	cognate:true	755 members and a strict subset of spelling-pattern (0 rows carry it alone); partitions nothing
+DELETE	cognate:high-frequency	181 members; frequency is curriculumRole's job, not a cognate property
+DELETE	cognate:word-family	60 members; says a root family exists without saying which - superseded by the named cognate:<stem>-to-<root> families
+RENAME	cognate:direct	cognate:transparent	90 members; keep as the positive pole of the type axis, named for what it asserts
+RENAME	cognate:memory-bridge	cognate:opaque-gloss	68 members; the English cognate exists but is not the gloss (terminar/terminate, rechazar/reject)
+RENAME	cognate:al	cognate:al-to-al	13 members; the only value violating the <es>-to-<en> shape
+MERGE	cognate:confusion-set	contrast:confusable	16 members; several competing English glosses for one Spanish word is contrast:'s stated purpose
+MERGE	cognate:contextual	contrast:confusable	9 members, 8 of them already in confusion-set

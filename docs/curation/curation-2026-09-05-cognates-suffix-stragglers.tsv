@@ -1,0 +1,22 @@
+# ORDER: run AFTER curation-2026-09-05-cognates-collections.tsv (cognate:al-to-al is the post-rename name).
+# cognate:dad-to-ty and cognate:ma-to-m are NEW values; add both to KNOWN_COGNATE_VALUES first.
+# NOTE: cognate:ma-to-m would have exactly 1 member (tb4pl8tpv6 la firma), which fails the
+# planned min-3 family invariant - either drop that line or add it to the exemption set.
+# concept-id	spanish	english	role	|-collections-to-add	reason
+32lecsnkbn	pesadamente	heavily	reference	cognate:mente-to-ly|topic:cognate	completes the mente-to-ly suffix family; surfaced by the full 30-pair suffix sweep and confirmed on both the Spanish and the English side
+rvx9hh6oh0	poderosamente	powerfully	reference	cognate:mente-to-ly|topic:cognate	completes the mente-to-ly suffix family; surfaced by the full 30-pair suffix sweep and confirmed on both the Spanish and the English side
+mfr1ecvufm	prácticamente	practically	reference	cognate:mente-to-ly|topic:cognate	completes the mente-to-ly suffix family; surfaced by the full 30-pair suffix sweep and confirmed on both the Spanish and the English side
+2afxzimfwm	ser memorable	to be memorable	reference	cognate:able-to-able|topic:cognate	completes the able-to-able suffix family; surfaced by the full 30-pair suffix sweep and confirmed on both the Spanish and the English side
+vqbg70cy5y	ser invaluable	to be invaluable	reference	cognate:able-to-able|topic:cognate	completes the able-to-able suffix family; surfaced by the full 30-pair suffix sweep and confirmed on both the Spanish and the English side
+xi0bobj4sj	ser inalcanzable	to be unattainable	reference	cognate:able-to-able|topic:cognate	completes the able-to-able suffix family; surfaced by the full 30-pair suffix sweep and confirmed on both the Spanish and the English side
+map0ad7rwe	suficiente / suficientes	sufficient	reference	cognate:ente-to-ent|topic:cognate	completes the ente-to-ent suffix family; surfaced by the full 30-pair suffix sweep and confirmed on both the Spanish and the English side
+7iwln9ycmm	la corriente	current	reference	cognate:ente-to-ent|topic:cognate	completes the ente-to-ent suffix family; surfaced by the full 30-pair suffix sweep and confirmed on both the Spanish and the English side
+7mjxt0orjk	el presente	the present	reference	cognate:ente-to-ent|topic:cognate	completes the ente-to-ent suffix family; surfaced by the full 30-pair suffix sweep and confirmed on both the Spanish and the English side
+64zpt713l1	ser sentimental	to be sentimental	reference	cognate:al-to-al|topic:cognate	completes the al-to-al suffix family; surfaced by the full 30-pair suffix sweep and confirmed on both the Spanish and the English side
+0utix246nk	ser visual	to be visual	reference	cognate:al-to-al|topic:cognate	completes the al-to-al suffix family; surfaced by the full 30-pair suffix sweep and confirmed on both the Spanish and the English side
+9sfglbvskv	ser incorrecto	to be incorrect	reference	cognate:ecto-to-ect|topic:cognate	completes the ecto-to-ect suffix family; surfaced by the full 30-pair suffix sweep and confirmed on both the Spanish and the English side
+0n9qw60q58	el futuro	the future	reference	cognate:uro-ura-to-ure|topic:cognate	completes the uro-ura-to-ure suffix family; surfaced by the full 30-pair suffix sweep and confirmed on both the Spanish and the English side
+m0woso3bh0	la ciudad	city	supporting	cognate:dad-to-ty|topic:cognate	completes the dad-to-ty suffix family; surfaced by the full 30-pair suffix sweep and confirmed on both the Spanish and the English side
+xxxqpliz9z	la responsabilidad	responsibility	reference	cognate:dad-to-ty|topic:cognate	completes the dad-to-ty suffix family; surfaced by the full 30-pair suffix sweep and confirmed on both the Spanish and the English side
+92y2a0e1y5	la hermandad	fraternity	reference	cognate:dad-to-ty|topic:cognate	completes the dad-to-ty suffix family; surfaced by the full 30-pair suffix sweep and confirmed on both the Spanish and the English side
+tb4pl8tpv6	la firma	firm	reference	cognate:ma-to-m|topic:cognate	completes the ma-to-m suffix family; surfaced by the full 30-pair suffix sweep and confirmed on both the Spanish and the English side

@@ -1,0 +1,6 @@
+# spanish	english	exampleSpanish	exampleEnglish	role	collections
+# Contrast partners for the false-friend pairs in curation-2026-09-05-cognates-false-friends.tsv.
+# "la salida -> exit" was NOT authored here: it already exists as ab3fpexagc (supporting) and is
+# retagged into contrast:exito-vs-exit by the false-friends manifest instead.
+ser sensato	to be sensible	Ella es muy sensata.	She is very sensible.	reference	pos:adjective|es:sensato|es:ser|en:sensible|grammar:ser-adjective|contrast:sensible-vs-sensible|contrast:confusable
+la conferencia	the lecture	Fui a una conferencia sobre historia.	I went to a lecture about history.	reference	pos:noun|es:conferencia|en:lecture|contrast:lectura-vs-lecture|contrast:confusable

@@ -1,0 +1,5 @@
+# ORDER: run FIRST, before curation-2026-09-05-cognates-collections.tsv.
+# concept-id	collection-name	reason
+zdz3qzzhev	cognate:ar-to-ar	ser parecido is not the -ar to -ar pattern (that family is popular/regular/similar); parecido and similar share no suffix
+17mqfzfrq1	false friend	a cual/which question row, not a false friend; shrinks LEGACY_COLLECTIONS by one
+3lzsofawpo	morphology:suffix-ain	explicar is Latin plicare, not tenere - misfiled into the -tain family; it belongs to cognate:plicar-to-ply

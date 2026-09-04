@@ -27,6 +27,8 @@ Individual scripts (each dry-run by default, `--apply` to write):
 | `curriculum:roles:apply` | `concept-id · role · reason` — move tiers |
 | `curriculum:collections:apply` | `DELETE\|MERGE\|RENAME · from · [into/to] · reason` |
 | `curriculum:audit [slug]` | audits `topic:*` macrotags against `TOPIC_AUDIT_SPECS` |
+| `curriculum:audit:verbs` | audits `sense:`/`conjugation:` paradigm completeness (bespoke, not `TopicAuditSpec`) |
+| `curriculum:audit:cognates` | audits `cognate:` type/pattern-family structure (bespoke, not `TopicAuditSpec`) |
 
 `trash` is the only deletion path — move a row there, never hard-delete as a
 judgement call.
@@ -59,3 +61,5 @@ Going forward: `curation-YYYY-MM-DD-<slug>.tsv`. A canonical topic spec is
 | 2026-09-03 | **Determiners topic** (137 rows) | `57d80529`..`71c8b694`, `af920218` | `determiner-matrix.md`, `determiner-2026-09-04-{A,B,C,E,F,G}-*.tsv` |
 | 2026-09-03 | **Curation pass** — tag hygiene, number examples, Interrogatives topic, bundled-row splits, determiner contrasts | `eb30a60b`..`e38ce2b2` | `curation-2026-09-04-{1b,1c,1d,2,3,4,5a,5b,5c}-*.tsv` |
 | 2026-09-03 | Tooling cleanup — unified topic auditor, `scripts/lib/manifest.ts`, `curriculum:apply` | `7aeb207e`, `8828832e`, `6f81a081` | — |
+| 2026-09-05 | **Verb organization** — `sense:` facet, 5-person present-tense paradigms for ser/estar/ir/tener/haber, `audit-verb-conjugation.ts` | `0ee27928`..`4261360e` | `verb-organization-plan-2026-09-05.md`, `curation-2026-09-05-verbs-*.tsv`, `curation-2026-09-05-voy-a-*.tsv` |
+| 2026-09-05 | **Cognates topic** — promoted misfiled `morphology:suffix-*` root/etymology data to named `cognate:<stem>-to-<root>` families, retired 6 legacy junk values, modeled false friends as `contrast:` pairs, `audit-cognates.ts` | *(pending commit)* | `cognates-plan-2026-09-05.md`, `curation-2026-09-05-cognates-*.tsv` |

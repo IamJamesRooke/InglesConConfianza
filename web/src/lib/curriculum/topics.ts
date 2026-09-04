@@ -85,6 +85,24 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       { collection: "contrast:confusable", label: "Confusions" },
     ],
   },
+  {
+    slug: "cognates",
+    title: "Cognates",
+    description:
+      "Words that share a Spanish/English root, grouped by the transformation trick that gets you from one to the other — spelling suffixes (-ción → -tion), Latin roots that don't share a spelling (tener → contain), and false friends that look related but aren't.",
+    baseCollection: "topic:cognate",
+    facetButtons: [
+      { collection: "cognate:transparent", label: "Identical / transparent" },
+      { collection: "cognate:opaque-gloss", label: "Looks different" },
+      { collection: "cognate:false-friend", label: "False friends" },
+      { collection: "cognate:cion-to-tion", label: "-ción → -tion" },
+      { collection: "cognate:mente-to-ly", label: "-mente → -ly" },
+      { collection: "cognate:ico-to-ic", label: "-ico → -ic" },
+      { collection: "cognate:dad-to-ty", label: "-dad → -ty" },
+      { collection: "cognate:latin-root", label: "Latin roots" },
+      { collection: "contrast:confusable", label: "Confusions" },
+    ],
+  },
 ];
 
 export function findCurriculumTopic(slug: string): CurriculumTopic | undefined {

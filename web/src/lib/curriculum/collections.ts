@@ -35,7 +35,7 @@ export const COLLECTION_FACETS: Record<CollectionFacet, string> = {
   conjugation: "Spanish verb conjugation (person, tense, irregularity) for a specific suppletive/irregular verb's finite form — regular verbs stay infinitive-only and are not tagged here",
   sense: "one sense of one verb lemma — the join between a conjugated-form paradigm and the infinitive row whose meaning it realizes. Value shape <lemma>-<slug>, e.g. sense:ser-identidad. See docs/curation/verb-organization-plan-2026-09-05.md",
   morphology: "affix and derivation relationship",
-  cognate: "cognate type and spelling-pattern family",
+  cognate: "two disjoint value classes: TYPE (0 or 1 per row — transparent / opaque-gloss / false-friend, is the English cognate the actual gloss or not) and PATTERN (0..n per row — a specific <es>-to-<en> spelling-suffix family, or a <esStem>-to-<enRoot> Latin-root family). See docs/curation/cognates-plan-2026-09-05.md",
   sound: "pronunciation family and named sound cluster",
   rhyme: "shared stressed rime, keyed by IPA",
   homophone: "exact same pronunciation, keyed by IPA",
@@ -144,7 +144,6 @@ export const LEGACY_COLLECTIONS: ReadonlySet<string> = new Set([
   "every week",
   "expected to",
   "fallecer",
-  "false friend",
   "fan",
   "farewell",
   "feel + adjective",
@@ -418,4 +417,35 @@ export const KNOWN_SENSE_VALUES: ReadonlySet<string> = new Set([
   "irse-partir",
   "tener-posesion", "tener-edad", "tener-obligacion",
   "haber-perfecto", "haber-existencia", "haber-necesidad",
+]);
+
+// Controlled vocabulary for the `cognate:` facet (see docs/curation/
+// cognates-plan-2026-09-05.md). Two disjoint value classes sharing one
+// namespace — a row carries 0-1 TYPE value and 0-n PATTERN values.
+export const KNOWN_COGNATE_VALUES: ReadonlySet<string> = new Set([
+  // TYPE — mutually exclusive claims about one row's gloss.
+  "transparent", "opaque-gloss", "false-friend",
+
+  // PATTERN — spelling-suffix families (Spanish-side <-> English-side swap).
+  "able-to-able", "acto-to-act", "al-to-al", "ando-to-ing", "ante-to-ant",
+  "anza-to-ance", "ar-to-ar", "ario-to-ary", "arte-to-art", "cion-to-tion",
+  "dad-to-ty", "dido-to-ded", "ecto-to-ect", "el-to-el", "ente-to-ent",
+  "es-to-s", "ible-to-ible", "ico-to-ic", "icto-to-ict", "ido-to-id",
+  "iendo-to-ing", "il-to-ile", "ivo-to-ive", "ma-to-m", "mente-to-ly",
+  "orio-to-ory", "oso-to-ous", "sion-to-sion", "sis-to-sis", "tud-to-tude",
+  "uro-ura-to-ure",
+
+  // PATTERN — Latin-root families (Spanish stem <-> English root; the
+  // spelling does not obviously match, unlike the suffix families above).
+  "tener-to-tain", "poner-to-pose", "mitir-to-mit", "ferir-to-fer",
+  "ducir-to-duce", "tribuir-to-tribute", "struir-to-struct", "traer-to-tract",
+  "escribir-to-scribe", "cluir-to-clude", "decir-to-dict", "ceder-to-cede",
+  "primir-to-press", "vertir-to-vert", "servar-to-serve", "solver-to-solve",
+  "gerir-to-gest", "hibir-to-hibit", "cibir-to-ceive", "plicar-to-ply",
+  "currir-to-cur", "hender-to-hend",
+
+  // Umbrella marker: "this row belongs to some Latin-root family" — lets the
+  // Cognates topic page have one "Latin roots" button without enumerating
+  // all 22 root families in facetButtons.
+  "latin-root",
 ]);

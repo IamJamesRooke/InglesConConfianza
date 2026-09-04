@@ -1,0 +1,40 @@
+# ORDER: run this BEFORE curation-2026-09-05-cognates-collections.tsv.
+# It references the pre-rename names cognate:spelling-pattern / cognate:memory-bridge /
+# cognate:confusion-set; after the rename+merge those collections no longer exist.
+# concept-id	collection-name	reason
+0qlz0zv1z5	cognate:memory-bridge	a ==> derivation/inflection row, not a cognate ("tener ==> tiene"); cognate: was used as a generic "spelling changes here" marker
+32c7r6jugo	cognate:memory-bridge	a ==> derivation/inflection row, not a cognate ("decir ==> dice"); cognate: was used as a generic "spelling changes here" marker
+3a98t443ht	cognate:spelling-pattern	a ==> derivation/inflection row, not a cognate ("ser fácil ==> fácilmente"); cognate: was used as a generic "spelling changes here" marker
+3jt1svnphb	cognate:spelling-pattern	a ==> derivation/inflection row, not a cognate ("hacer ==> haciendo"); cognate: was used as a generic "spelling changes here" marker
+3t1fpmkces	cognate:confusion-set	a ==> derivation/inflection row, not a cognate ("el norte ==> el/la norteño/a"); cognate: was used as a generic "spelling changes here" marker
+4ybycrtvck	cognate:spelling-pattern	a ==> derivation/inflection row, not a cognate ("ser grande ==> ser más grande"); cognate: was used as a generic "spelling changes here" marker
+715ron2lud	cognate:memory-bridge	a ==> derivation/inflection row, not a cognate ("estar ==> está"); cognate: was used as a generic "spelling changes here" marker
+7d2jip4ahu	cognate:spelling-pattern	a ==> derivation/inflection row, not a cognate ("ser blanco/a ==> la blancura"); cognate: was used as a generic "spelling changes here" marker
+7q3idfw27t	cognate:spelling-pattern	a ==> derivation/inflection row, not a cognate ("ser seguro/a ==> ser más seguro/a"); cognate: was used as a generic "spelling changes here" marker
+8f830wa18p	cognate:spelling-pattern	a ==> derivation/inflection row, not a cognate ("ser fácil ==> ser el/la más fácil"); cognate: was used as a generic "spelling changes here" marker
+8m3b7j0hv5	cognate:confusion-set	a ==> derivation/inflection row, not a cognate ("el sur ==> el/la sureño/a"); cognate: was used as a generic "spelling changes here" marker
+8tlubdz2jb	cognate:spelling-pattern	a ==> derivation/inflection row, not a cognate ("ser gracioso/a ==> ser más gracioso/a"); cognate: was used as a generic "spelling changes here" marker
+8yyro9imuk	cognate:spelling-pattern	a ==> derivation/inflection row, not a cognate ("ser feliz ==> la felicidad"); cognate: was used as a generic "spelling changes here" marker
+9qgyhzacqv	cognate:confusion-set	a ==> derivation/inflection row, not a cognate ("el oeste ==> el/la occidental"); cognate: was used as a generic "spelling changes here" marker
+ajya630rfu	cognate:spelling-pattern	a ==> derivation/inflection row, not a cognate ("ver ==> viendo"); cognate: was used as a generic "spelling changes here" marker
+an6awlzdv1	cognate:memory-bridge	a ==> derivation/inflection row, not a cognate ("terminar ==> termina"); cognate: was used as a generic "spelling changes here" marker
+d4nhp6of4q	cognate:spelling-pattern	a ==> derivation/inflection row, not a cognate ("ser seguro/a ==> ser el/la más seguro/a"); cognate: was used as a generic "spelling changes here" marker
+f1hip5yar5	cognate:spelling-pattern	a ==> derivation/inflection row, not a cognate ("ser feliz ==> ser el/la más feliz"); cognate: was used as a generic "spelling changes here" marker
+i4dsmvl6mo	cognate:spelling-pattern	a ==> derivation/inflection row, not a cognate ("ser probable ==> probablemente"); cognate: was used as a generic "spelling changes here" marker
+leowvp7a8n	cognate:memory-bridge	a ==> derivation/inflection row, not a cognate ("estudiar ==> estudia"); cognate: was used as a generic "spelling changes here" marker
+loc2s7jjrm	cognate:spelling-pattern	a ==> derivation/inflection row, not a cognate ("ser grande ==> ser el/la más grande"); cognate: was used as a generic "spelling changes here" marker
+mrx054a60o	cognate:spelling-pattern	a ==> derivation/inflection row, not a cognate ("correr ==> corriendo"); cognate: was used as a generic "spelling changes here" marker
+n9rfhc3fi7	cognate:spelling-pattern	a ==> derivation/inflection row, not a cognate ("hacer ==> haciendo"); cognate: was used as a generic "spelling changes here" marker
+ntdw54v6qp	cognate:spelling-pattern	a ==> derivation/inflection row, not a cognate ("ser grande ==> ser más grande"); cognate: was used as a generic "spelling changes here" marker
+qg82ypat4e	cognate:memory-bridge	a ==> derivation/inflection row, not a cognate ("tratar ==> trata"); cognate: was used as a generic "spelling changes here" marker
+r6af4026y9	cognate:spelling-pattern	a ==> derivation/inflection row, not a cognate ("ser gracioso/a ==> ser el/la más gracioso/a"); cognate: was used as a generic "spelling changes here" marker
+s5en2tu6vz	cognate:confusion-set	a ==> derivation/inflection row, not a cognate ("el este ==> el/la oriental"); cognate: was used as a generic "spelling changes here" marker
+sfknobofbx	cognate:memory-bridge	a ==> derivation/inflection row, not a cognate ("hacer ==> hace"); cognate: was used as a generic "spelling changes here" marker
+tnl1yimmyb	cognate:spelling-pattern	a ==> derivation/inflection row, not a cognate ("ser grande ==> ser el/la más grande"); cognate: was used as a generic "spelling changes here" marker
+tnwlnfg2vy	cognate:spelling-pattern	a ==> derivation/inflection row, not a cognate ("ser blanco/a ==> ser blanquecino/a"); cognate: was used as a generic "spelling changes here" marker
+v7ltrzxban	cognate:memory-bridge	a ==> derivation/inflection row, not a cognate ("intentar ==> intenta"); cognate: was used as a generic "spelling changes here" marker
+w7w8ly9haz	cognate:memory-bridge	a ==> derivation/inflection row, not a cognate ("ser ==> es"); cognate: was used as a generic "spelling changes here" marker
+wlbaxqy8wx	cognate:memory-bridge	a ==> derivation/inflection row, not a cognate ("ir ==> va"); cognate: was used as a generic "spelling changes here" marker
+wqfpw1yjuw	cognate:spelling-pattern	a ==> derivation/inflection row, not a cognate ("la belleza ==> ser bello/a"); cognate: was used as a generic "spelling changes here" marker
+wtxe2yjp1j	cognate:spelling-pattern	a ==> derivation/inflection row, not a cognate ("ser fácil ==> ser más fácil"); cognate: was used as a generic "spelling changes here" marker
+y6m6lbi7x1	cognate:spelling-pattern	a ==> derivation/inflection row, not a cognate ("ser feliz ==> ser más feliz"); cognate: was used as a generic "spelling changes here" marker

@@ -1,0 +1,21 @@
+# ORDER: run AFTER curation-2026-09-05-cognates-collections.tsv (the confusion-set merge lands first).
+# t8xl5ujrhi (introducir) and 0l9aed93ze (aplicar) are NOT here: they are also root-family members,
+# and apply-concept-manifest rejects one concept id twice in a run, so their cognate:false-friend tag
+# is folded into curation-2026-09-05-cognates-root-families.tsv.
+# concept-id	spanish	english	role	|-collections-to-add	reason
+or5vrih2lk	ser sensible	to be sensitive	reference	cognate:false-friend|contrast:sensible-vs-sensible|contrast:confusable	Spanish sensible = sensitive; English sensible = sensato. Simultaneously an -ible to -ible pattern member and a false friend
+iswcllbips	la dirección	address	supporting	cognate:false-friend|contrast:direccion-address-vs-direction|contrast:confusable|topic:cognate	Spanish direccion normally means address; the transparent-looking 'direction' is the trap
+btcf40lgg6	la dirección	direction	reference	contrast:direccion-address-vs-direction|contrast:confusable	the correct-cognate half of the pair; carries the contrast, not the false-friend type
+t7i1q6sopk	el éxito	success	reference	cognate:false-friend|contrast:exito-vs-exit|contrast:confusable|topic:cognate	Spanish exito = success; English exit = la salida
+ab3fpexagc	la salida	exit	supporting	contrast:exito-vs-exit|contrast:confusable	the correct English 'exit' half of the exito pair; already in the catalog, so no new row is needed for it
+k55vujgmii	un billón	one trillion	reference	contrast:billon-vs-billion|contrast:confusable|topic:cognate	already cognate:false-friend; add the named pair and topic membership
+dciouj17pb	mil millones	one billion	reference	contrast:billon-vs-billion|contrast:confusable|topic:cognate	already cognate:false-friend; the correct-value half of the same pair
+# t8xl5ujrhi introducir -> to introduce : cognate:false-friend is applied in curation-2026-09-05-cognates-root-families.tsv instead
+#   (it is also a root-family member there; apply-concept-manifest rejects the same concept id twice in one run)
+l99hc4crr3	ignorar	to ignore	supporting	cognate:false-friend	Spanish ignorar also means to be unaware of; 'to ignore' is only one sense. Sense split deferred per JC #7
+# 0l9aed93ze aplicar -> to apply : cognate:false-friend is applied in curation-2026-09-05-cognates-root-families.tsv instead
+#   (it is also a root-family member there; apply-concept-manifest rejects the same concept id twice in one run)
+v1a7c89j32	ser largo	to be long	supporting	cognate:false-friend|contrast:largo-vs-large|contrast:confusable|topic:cognate	Spanish largo = long; English large = grande
+nuuwniplla	último/a	last	supporting	cognate:false-friend|contrast:ultimo-vs-ultimate|contrast:confusable|topic:cognate	Spanish ultimo = last; English ultimate = definitivo
+sp9vpwtyfk	antiguo/a	old	reference	cognate:false-friend|contrast:antiguo-vs-antique|contrast:confusable|topic:cognate	Spanish antiguo = old or former; English antique = antiguedad
+6gh8d3gw7b	leer ==> la lectura	to read ==> the reading	reference	contrast:lectura-vs-lecture|contrast:confusable	Spanish lectura = reading; English lecture = la conferencia. A ==> row, so it takes the contrast only and no cognate:/topic:cognate tag

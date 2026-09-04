@@ -1,0 +1,6 @@
+# concept-id	spanish	english	role	|-collections-to-add	reason
+iuyce294go	predecir [algo]	to predict [something]	reference	cognate:decir-to-dict|cognate:latin-root|cognate:transparent|topic:cognate	the reported gap: morphology:prefix-pre was tagged, the -decir ~ -dict root never was. predecir/predict is a usable cognate
+8ck7889dtr	contradecir a [alguien]	to contradict [somebody]	reference	cognate:decir-to-dict|cognate:latin-root|cognate:transparent|topic:cognate	same, with morphology:prefix-contra; contradecir/contradict is a usable cognate
+d587f3ftw9	decir [algo]	to say [something]	core	cognate:decir-to-dict|cognate:latin-root|cognate:opaque-gloss|topic:cognate	family anchor: 'say' is not the cognate - 'dict' is, which is exactly why the family needs a tag
+aw96cncl64	bendecir a [alguien]	to bless [somebody]	reference	cognate:decir-to-dict|cognate:latin-root|cognate:opaque-gloss|topic:cognate	root is present (benediction) but the gloss is not; recognition value only
+btsojlg7v0	maldecir a [alguien]	to curse [somebody]	reference	cognate:decir-to-dict|cognate:latin-root|cognate:opaque-gloss|topic:cognate	root is present (malediction) but the gloss is not; recognition value only

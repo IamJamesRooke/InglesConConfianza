@@ -1,7 +1,7 @@
 import "dotenv/config";
 
 import { execFileSync } from "node:child_process";
-import { readFileSync } from "node:fs";
+import { readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 
 // One-shot curation batch: detect each manifest's type, run its write, then
@@ -81,9 +81,10 @@ function main(): void {
   console.log("\n### db:verify");
   run("verify-curriculum-database.ts", []);
   console.log("\n### db:test");
-  execFileSync("npx", ["tsx", "--test", "tests/curriculum-database.test.ts", "tests/topic-audits.test.ts"], {
-    stdio: "inherit",
-  });
+  const testFiles = readdirSync("tests")
+    .filter((name) => name.endsWith(".test.ts"))
+    .map((name) => path.join("tests", name));
+  execFileSync("npx", ["tsx", "--test", ...testFiles], { stdio: "inherit" });
 
   console.log(
     [
