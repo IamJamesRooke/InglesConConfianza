@@ -1,0 +1,5 @@
+rh4yfb08hn	voy a [hacer algo]	I am going [to do something]	core		fix "to"-placement: it was outside the bracket ("I am going to [do something]"), which duplicates "to" when a lesson splits "voy a" and the infinitive into separate blocks ("voy a"+"comprar" -> "I am going to"+"to buy"). Move inside the bracket to match querer/poder's established convention ("to want [to do something]").	Voy a hablar con ella.	I am going to talk to her.
+0lbant78ng	vas a [hacer algo]	you are going [to do something]	core		same fix	Vas a llegar tarde.	You are going to be late.
+0m0vzyyfd9	va a [hacer algo]	is going [to do something]	core		same fix	Ella va a estudiar esta noche.	She is going to study tonight.
+ohgxx8621i	vamos a [hacer algo]	we are going [to do something]	core		same fix	Vamos a comer pizza.	We are going to eat pizza.
+ym5bgyxy1x	van a [hacer algo]	they are going [to do something]	core		same fix	Ellos van a viajar mañana.	They are going to travel tomorrow.

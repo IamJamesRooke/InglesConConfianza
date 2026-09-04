@@ -1,0 +1,50 @@
+othawv9u0f	ser [identidad]	to be [an identity]	core	sense:ser-identidad|conjugation:infinitive	anchor of the soy/eres/es/somos/son [algo] paradigm
+m5wxiwxpo1	ser [una clasificación]	to be [a classification]	core	sense:ser-clasificacion|conjugation:infinitive	shares the ser-identidad paradigm (be + noun) but is its own named sense/anchor
+46elg5u15i	ser [adjetivo]	to be [adjective]	core	sense:ser-caracteristica|conjugation:infinitive	anchor for the ser + adjective sense (surviving row after trashing the z2n8811v62 duplicate)
+6vgdzpegua	ser [una hora o fecha]	to be [a time or date]	core	sense:ser-hora|conjugation:deferred	only 3sg/3pl ever occur (es la una / son las tres); no 5-slot paradigm to build
+2z3yhpg9ve	ser de [un lugar]	to be from [a place]	core	sense:ser-origen|conjugation:infinitive	anchor for the new soy/eres/es/somos/son de [un lugar] paradigm (Set C)
+obznlhzdxe	ser en [un lugar]	to be at [a place]	supporting	sense:ser-lugar-evento|conjugation:deferred	rare event-location ser; conjugating now would fight the estar=location rule being installed
+cme1al3v5p	ser de [un material]	to be made of [a material]	supporting	sense:ser-material|conjugation:deferred	no Module 1-3 need yet
+qbdgh95q4i	ser de [alguien]	to belong to [somebody]	supporting	sense:ser-posesion|conjugation:deferred	no Module 1-3 need yet
+cbhs0k69zd	ser [adjetivo] [hacer algo]	it is [adjective] [to do something]	core	sense:ser-impersonal|conjugation:deferred	occurs only as "es" + adjective + infinitive; the row's own example already shows the surface form
+emji2mg22t	ser [hecho] por [alguien]	to be [done] by [somebody]	supporting	sense:ser-pasiva|conjugation:deferred	passive voice is past Module 3
+nqyror4j5f	estar [en un estado]	to be [in a state]	core	sense:estar-estado|conjugation:infinitive	anchor of the estoy/estás/está/estamos/están [en un estado o lugar] paradigm
+obf74hel79	estar [en un lugar]	to be [in a place]	core	sense:estar-lugar|sense:estar-estado	shares the estar-estado paradigm — same Spanish, same English, the real distinction the learner needs is ser vs estar, not state vs location
+f2zryn85p8	estar [haciendo algo]	to be [doing something]	core	sense:estar-progresivo|conjugation:infinitive	anchor for the new present-progressive paradigm (Set A) — this is the reported drop
+f5h0hvcv1d	estar de acuerdo	to agree	supporting	sense:estar-acuerdo|conjugation:deferred	fixed expression; its own example already shows "Estoy de acuerdo"
+e6gbegp44a	estar a punto de [hacer algo]	to be about to [do something]	supporting	sense:estar-punto|conjugation:deferred	Module 3+ material
+38d1kfif1b	ir a [hacer algo]	to be going [to do something]	core	sense:ir-futuro|conjugation:infinitive	anchor of the voy/vas/va/vamos/van a [hacer algo] paradigm; "to" moved inside the bracket to match the querer/poder convention — see the voy-a wording fix below
+64xccqphml	ir a [hacer algo]	gonna [do something]	supporting	sense:ir-futuro	register variant of the same paradigm — not a second anchor
+2iiyjrogmc	ir a [un lugar]	to go to [a place]	core	sense:ir-destino|conjugation:infinitive	anchor for the new voy/vas/va/vamos/van a [un lugar] paradigm (Set B) — this was also silently dropped
+k9y5vq9p06	ir a casa	to go home	supporting	sense:ir-destino|conjugation:deferred	no-preposition special case of ir-destino, not conjugated separately
+nsdu5c6q9d	ir en [un medio de transporte]	to go by [a means of transport]	supporting	sense:ir-transporte|conjugation:deferred	supporting tier, no Module 1-3 need
+dv55nncur9	ir de compras	to go shopping	supporting	sense:ir-actividad|conjugation:deferred	go + -ing family; the family is the teaching unit, not the person
+qldej05yfp	ir a correr	to go running	reference	sense:ir-actividad|conjugation:deferred	same family
+cvw44cpv4h	ir a bailar	to go dancing	reference	sense:ir-actividad|conjugation:deferred	same family
+8wpdwqvpbe	ir a [hacer algo]	to go [do something]	supporting	sense:ir-imperativo|conjugation:deferred	this is an imperative, a different conjugation axis; deferred until conjugation:imperative exists
+2a5bbtm7cl	irse	to leave	core	sense:irse-partir|conjugation:deferred	pronominal paradigm (me voy/te vas/se va) needs a clitic slot the current row shape doesn't have
+nis5rixomq	irse	to go away	reference	sense:irse-partir|conjugation:deferred	same
+wwwc8jugby	tener [algo]	to have [something]	core	sense:tener-posesion|conjugation:infinitive	anchor of the tengo/tienes/tiene/tenemos/tienen [algo] paradigm
+ccrgp9wvgz	tener [número] años	to be [number] years old	core	sense:tener-edad|conjugation:infinitive	anchor for the new age paradigm (Set D) — the canonical Spanish-speaker error, dropped previously
+7s7vnrgxud	tener que [hacer algo]	to have to [do something]	core	sense:tener-obligacion|conjugation:infinitive	anchor for the new obligation paradigm (Set E) — "tengo que" returned zero search results before this
+8zgoedsnqi	tener que [hacer algo]	to have got to [do something]	supporting	sense:tener-obligacion	English register variant, not a second anchor
+dtnmnb60nj	tener que [hacer algo] (hablado)	gotta [do something]	reference	sense:tener-obligacion	English register variant (surviving row after trashing the ooz5w92kjm duplicate)
+acxwq7xjm9	tener que [hacer algo]	must [do something]	reference	sense:tener-obligacion	modal register variant
+rvo8g5gv94	haber [hecho algo]	to have [done something]	core	sense:haber-perfecto|conjugation:infinitive	anchor of the he/has/ha/hemos/han [hecho algo] present-perfect paradigm
+89ut7cha5j	haber [algo] (pasado singular)	there was [something]	supporting	sense:haber-existencia|conjugation:imperfect|conjugation:3sg	existing past-tense existential — direct evidence the facet needed an imperfect value
+4w8zmnbknt	haber [cosas] (pasado plural)	there were [things]	supporting	sense:haber-existencia|conjugation:imperfect|conjugation:3pl	same
+nuo847x66j	hay [algo singular]	there is [something singular]	core	sense:haber-existencia|conjugation:present|conjugation:3sg	the real, better-worded existential row (its own bogus es:deber tag removed in phase 1)
+54mbh87vk1	hay [cosas plurales]	there are [plural things]	core	sense:haber-existencia|conjugation:present|conjugation:3pl
+cp5hmttaq2	hay [algo singular]	there's [something singular]	supporting	sense:haber-existencia|conjugation:present|conjugation:3sg	contraction register variant
+qhznzi6ug8	no hay [algo singular]	there isn't [something singular]	core	sense:haber-existencia|conjugation:present|conjugation:3sg	negative frame
+ker7jy3lyb	no hay [cosas plurales]	there aren't [plural things]	core	sense:haber-existencia|conjugation:present|conjugation:3pl	negative frame
+esf7i85ozv	¿hay [algo singular]?	is there [something singular]?	core	sense:haber-existencia|conjugation:present|conjugation:3sg	question frame
+g7zuuumnig	¿hay [cosas plurales]?	are there [plural things]?	core	sense:haber-existencia|conjugation:present|conjugation:3pl	question frame
+4pgifzt26u	hay que [hacer algo]	you have to [do something]	supporting	sense:haber-necesidad|conjugation:deferred	impersonal; exists only as "hay que", no paradigm by rule
+laom4z3bwd	hay que [hacer algo]	we need to [do something]	supporting	sense:haber-necesidad|conjugation:deferred	same
+ihsw7a0ggn	¿vas a [hacer algo]?	are you going [to do something]?	core	sense:ir-futuro|conjugation:present|conjugation:2sg|conjugation:irregular	question-frame variant of "vas a [hacer algo]"; same to-placement fix as the rest of ir-futuro
+v7y40xtgb3	¿has [hecho algo]?	have you [done something]?	core	sense:haber-perfecto|conjugation:present|conjugation:2sg|conjugation:irregular	question-frame variant of "has [hecho algo]"
+8aej7jfu2y	¿tienes que [hacer algo]?	do you have to [do something]?	core	sense:tener-obligacion|conjugation:present|conjugation:2sg|conjugation:irregular	question-frame variant of "tienes que [hacer algo]"
+5pzoflm3f4	[alguien] estaba [haciendo algo]	[somebody] was [doing something]	supporting	sense:estar-progresivo|conjugation:imperfect|conjugation:3sg|conjugation:irregular	existing past-progressive row; the present tense was the only hole
+bvjzllj20d	¿[estabas haciendo algo]?	were you [doing something]?	supporting	sense:estar-progresivo|conjugation:imperfect|conjugation:2sg|conjugation:irregular	question-frame variant
+jsajob6okd	¿[alguien] estaba [haciendo algo]?	was [somebody] [doing something]?	supporting	sense:estar-progresivo|conjugation:imperfect|conjugation:3sg|conjugation:irregular	question-frame variant

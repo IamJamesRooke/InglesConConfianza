@@ -22,7 +22,8 @@ export type CollectionFacet =
   | "register"
   | "dialect"
   | "contrast"
-  | "conjugation";
+  | "conjugation"
+  | "sense";
 
 export const COLLECTION_FACETS: Record<CollectionFacet, string> = {
   es: "Spanish headword — every sense and construction of one lemma",
@@ -32,6 +33,7 @@ export const COLLECTION_FACETS: Record<CollectionFacet, string> = {
   construction: "sentence pattern or verb-complement shape",
   form: "verb form (past, past participle, gerund, third person) — English morphology drills, not Spanish conjugation",
   conjugation: "Spanish verb conjugation (person, tense, irregularity) for a specific suppletive/irregular verb's finite form — regular verbs stay infinitive-only and are not tagged here",
+  sense: "one sense of one verb lemma — the join between a conjugated-form paradigm and the infinitive row whose meaning it realizes. Value shape <lemma>-<slug>, e.g. sense:ser-identidad. See docs/curation/verb-organization-plan-2026-09-05.md",
   morphology: "affix and derivation relationship",
   cognate: "cognate type and spelling-pattern family",
   sound: "pronunciation family and named sound cluster",
@@ -395,6 +397,25 @@ export const KNOWN_GRAMMAR_VALUES: ReadonlySet<string> = new Set([
 // Controlled vocabulary for the `conjugation:` facet — small and deliberate,
 // grows only when a new suppletive verb or tense is added to the catalog.
 export const KNOWN_CONJUGATION_VALUES: ReadonlySet<string> = new Set([
-  "present", "irregular",
+  "present", "imperfect", "irregular",
   "1sg", "2sg", "3sg", "1pl", "3pl",
+  // the anchor infinitive row of a sense's paradigm
+  "infinitive",
+  // this sense is in verb scope but deliberately has no built paradigm yet
+  "deferred",
+]);
+
+// Controlled vocabulary for the `sense:` facet — one entry per infinitive
+// sense that has been brought into the verb-conjugation system (see
+// docs/curation/verb-organization-plan-2026-09-05.md §3, §5). Grows only when
+// a verb's sense enumeration is done deliberately, not per new row.
+export const KNOWN_SENSE_VALUES: ReadonlySet<string> = new Set([
+  "ser-identidad", "ser-clasificacion", "ser-caracteristica", "ser-hora",
+  "ser-origen", "ser-lugar-evento", "ser-material", "ser-posesion",
+  "ser-impersonal", "ser-pasiva",
+  "estar-estado", "estar-lugar", "estar-progresivo", "estar-acuerdo", "estar-punto",
+  "ir-destino", "ir-futuro", "ir-transporte", "ir-actividad", "ir-imperativo",
+  "irse-partir",
+  "tener-posesion", "tener-edad", "tener-obligacion",
+  "haber-perfecto", "haber-existencia", "haber-necesidad",
 ]);

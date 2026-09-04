@@ -5570,7 +5570,9 @@
         "grammar:adjective-state",
         "es:estar",
         "en:be",
-        "pos:verb"
+        "pos:verb",
+        "sense:estar-estado",
+        "conjugation:infinitive"
       ],
       "curriculumRole": "core"
     },
@@ -5587,7 +5589,9 @@
         "construction:map-en-in",
         "es:estar",
         "en:be",
-        "pos:verb"
+        "pos:verb",
+        "sense:estar-lugar",
+        "sense:estar-estado"
       ],
       "curriculumRole": "core"
     },
@@ -5608,7 +5612,9 @@
         "form:present-progressive",
         "es:estar",
         "en:be",
-        "pos:verb"
+        "pos:verb",
+        "sense:estar-progresivo",
+        "conjugation:infinitive"
       ],
       "curriculumRole": "core"
     },
@@ -5640,7 +5646,9 @@
       "collections": [
         "grammar:fixed-expression",
         "es:estar",
-        "en:agree"
+        "en:agree",
+        "sense:estar-acuerdo",
+        "conjugation:deferred"
       ],
       "curriculumRole": "supporting"
     },
@@ -5657,7 +5665,9 @@
         "particle:about",
         "construction:map-de-to",
         "es:estar",
-        "en:about"
+        "en:about",
+        "sense:estar-punto",
+        "conjugation:deferred"
       ],
       "curriculumRole": "supporting"
     },
@@ -6803,7 +6813,9 @@
         "perfect auxiliary",
         "es:haber",
         "en:have",
-        "pos:verb"
+        "pos:verb",
+        "sense:haber-perfecto",
+        "conjugation:infinitive"
       ],
       "curriculumRole": "core"
     },
@@ -6820,7 +6832,10 @@
         "grammar:singular",
         "es:haber",
         "en:there",
-        "pos:verb"
+        "pos:verb",
+        "sense:haber-existencia",
+        "conjugation:present",
+        "conjugation:3sg"
       ],
       "curriculumRole": "core"
     },
@@ -6837,7 +6852,10 @@
         "grammar:singular",
         "grammar:contraction",
         "es:haber",
-        "en:there"
+        "en:there",
+        "sense:haber-existencia",
+        "conjugation:present",
+        "conjugation:3sg"
       ],
       "curriculumRole": "supporting"
     },
@@ -6854,7 +6872,10 @@
         "grammar:plural",
         "es:haber",
         "en:there",
-        "pos:verb"
+        "pos:verb",
+        "sense:haber-existencia",
+        "conjugation:present",
+        "conjugation:3pl"
       ],
       "curriculumRole": "core"
     },
@@ -6873,7 +6894,10 @@
         "grammar:contraction",
         "es:haber",
         "en:there",
-        "pos:verb"
+        "pos:verb",
+        "sense:haber-existencia",
+        "conjugation:present",
+        "conjugation:3sg"
       ],
       "curriculumRole": "core"
     },
@@ -6892,7 +6916,10 @@
         "grammar:contraction",
         "es:haber",
         "en:there",
-        "pos:verb"
+        "pos:verb",
+        "sense:haber-existencia",
+        "conjugation:present",
+        "conjugation:3pl"
       ],
       "curriculumRole": "core"
     },
@@ -6910,7 +6937,10 @@
         "grammar:singular",
         "es:haber",
         "en:is",
-        "pos:verb"
+        "pos:verb",
+        "sense:haber-existencia",
+        "conjugation:present",
+        "conjugation:3sg"
       ],
       "curriculumRole": "core"
     },
@@ -6928,7 +6958,10 @@
         "grammar:plural",
         "es:haber",
         "en:are",
-        "pos:verb"
+        "pos:verb",
+        "sense:haber-existencia",
+        "conjugation:present",
+        "conjugation:3pl"
       ],
       "curriculumRole": "core"
     },
@@ -7026,7 +7059,9 @@
         "grammar:impersonal-necessity",
         "grammar:modal",
         "es:haber",
-        "en:you"
+        "en:you",
+        "sense:haber-necesidad",
+        "conjugation:deferred"
       ],
       "curriculumRole": "supporting"
     },
@@ -7042,7 +7077,9 @@
         "grammar:impersonal-necessity",
         "need to",
         "es:haber",
-        "en:we"
+        "en:we",
+        "sense:haber-necesidad",
+        "conjugation:deferred"
       ],
       "curriculumRole": "supporting"
     },
@@ -7794,7 +7831,9 @@
         "construction:map-a-to",
         "es:ir",
         "en:go",
-        "pos:verb"
+        "pos:verb",
+        "sense:ir-destino",
+        "conjugation:infinitive"
       ],
       "curriculumRole": "core"
     },
@@ -7810,14 +7849,16 @@
         "en:home",
         "no preposition",
         "es:ir",
-        "en:go"
+        "en:go",
+        "sense:ir-destino",
+        "conjugation:deferred"
       ],
       "curriculumRole": "supporting"
     },
     {
       "id": "38d1kfif1b",
       "spanish": "ir a [hacer algo]",
-      "english": "to be going to [do something]",
+      "english": "to be going [to do something]",
       "example": {
         "spanish": "Voy a llamar a Ana.",
         "english": "I am going to call Ana."
@@ -7828,7 +7869,9 @@
         "construction:map-a-to",
         "es:ir",
         "en:going",
-        "pos:verb"
+        "pos:verb",
+        "sense:ir-futuro",
+        "conjugation:infinitive"
       ],
       "curriculumRole": "core"
     },
@@ -7845,7 +7888,8 @@
         "en:future",
         "register:spoken",
         "es:ir",
-        "en:gonna"
+        "en:gonna",
+        "sense:ir-futuro"
       ],
       "curriculumRole": "supporting"
     },
@@ -7862,7 +7906,9 @@
         "grammar:pronominal-verb",
         "es:irse",
         "en:leave",
-        "pos:verb"
+        "pos:verb",
+        "sense:irse-partir",
+        "conjugation:deferred"
       ],
       "curriculumRole": "core"
     },
@@ -7880,7 +7926,9 @@
         "grammar:phrasal-verb",
         "particle:away",
         "es:irse",
-        "en:go"
+        "en:go",
+        "sense:irse-partir",
+        "conjugation:deferred"
       ],
       "curriculumRole": "reference"
     },
@@ -7969,7 +8017,9 @@
         "construction:followed-by-gerund",
         "form:gerund",
         "es:ir",
-        "en:go"
+        "en:go",
+        "sense:ir-actividad",
+        "conjugation:deferred"
       ],
       "curriculumRole": "supporting"
     },
@@ -7986,7 +8036,9 @@
         "particle:by",
         "construction:map-en-by",
         "es:ir",
-        "en:go"
+        "en:go",
+        "sense:ir-transporte",
+        "conjugation:deferred"
       ],
       "curriculumRole": "supporting"
     },
@@ -17106,7 +17158,9 @@
         "en:identity",
         "es:ser",
         "en:be",
-        "pos:verb"
+        "pos:verb",
+        "sense:ser-identidad",
+        "conjugation:infinitive"
       ],
       "curriculumRole": "core"
     },
@@ -17122,7 +17176,9 @@
         "classification",
         "es:ser",
         "en:be",
-        "pos:verb"
+        "pos:verb",
+        "sense:ser-clasificacion",
+        "conjugation:infinitive"
       ],
       "curriculumRole": "core"
     },
@@ -17154,7 +17210,9 @@
         "topic:date",
         "es:ser",
         "en:be",
-        "pos:verb"
+        "pos:verb",
+        "sense:ser-hora",
+        "conjugation:deferred"
       ],
       "curriculumRole": "core"
     },
@@ -17171,7 +17229,9 @@
         "construction:map-en-at",
         "event location",
         "es:ser",
-        "en:at"
+        "en:at",
+        "sense:ser-lugar-evento",
+        "conjugation:deferred"
       ],
       "curriculumRole": "supporting"
     },
@@ -17188,7 +17248,9 @@
         "construction:map-de-from",
         "es:ser",
         "en:from",
-        "pos:verb"
+        "pos:verb",
+        "sense:ser-origen",
+        "conjugation:infinitive"
       ],
       "curriculumRole": "core"
     },
@@ -17205,7 +17267,9 @@
         "en:of",
         "construction:map-de-of",
         "es:ser",
-        "en:made"
+        "en:made",
+        "sense:ser-material",
+        "conjugation:deferred"
       ],
       "curriculumRole": "supporting"
     },
@@ -17222,7 +17286,9 @@
         "en:to",
         "construction:map-de-to",
         "es:ser",
-        "en:belong"
+        "en:belong",
+        "sense:ser-posesion",
+        "conjugation:deferred"
       ],
       "curriculumRole": "supporting"
     },
@@ -17919,7 +17985,9 @@
         "grammar:uses-auxiliary-do-for-questions",
         "es:tener",
         "en:have",
-        "pos:verb"
+        "pos:verb",
+        "sense:tener-posesion",
+        "conjugation:infinitive"
       ],
       "curriculumRole": "core"
     },
@@ -17937,7 +18005,9 @@
         "grammar:be",
         "pos:number",
         "es:tener",
-        "en:years"
+        "en:years",
+        "sense:tener-edad",
+        "conjugation:infinitive"
       ],
       "curriculumRole": "core"
     },
@@ -17961,7 +18031,9 @@
         "grammar:uses-auxiliary-do-for-questions",
         "es:tener",
         "en:to",
-        "pos:verb"
+        "pos:verb",
+        "sense:tener-obligacion",
+        "conjugation:infinitive"
       ],
       "curriculumRole": "core"
     },
@@ -17977,7 +18049,8 @@
         "en:obligation",
         "grammar:modal",
         "es:tener",
-        "en:got"
+        "en:got",
+        "sense:tener-obligacion"
       ],
       "curriculumRole": "supporting"
     },
@@ -28122,7 +28195,8 @@
         "en:obligation",
         "verb + bare infinitive",
         "es:tener",
-        "en:must"
+        "en:must",
+        "sense:tener-obligacion"
       ],
       "curriculumRole": "reference"
     },
@@ -58838,7 +58912,9 @@
         "form:full-infinitive",
         "es:ser",
         "en:it",
-        "pos:verb"
+        "pos:verb",
+        "sense:ser-impersonal",
+        "conjugation:deferred"
       ],
       "curriculumRole": "core"
     },
@@ -59215,7 +59291,9 @@
         "construction:followed-by-bare-infinitive",
         "form:bare-infinitive",
         "es:ir",
-        "en:go"
+        "en:go",
+        "sense:ir-imperativo",
+        "conjugation:deferred"
       ],
       "curriculumRole": "supporting"
     },
@@ -59883,7 +59961,9 @@
         "construction:followed-by-gerund",
         "form:gerund",
         "es:ir",
-        "en:go"
+        "en:go",
+        "sense:ir-actividad",
+        "conjugation:deferred"
       ],
       "curriculumRole": "reference"
     },
@@ -59902,7 +59982,9 @@
         "construction:followed-by-gerund",
         "form:gerund",
         "es:ir",
-        "en:go"
+        "en:go",
+        "sense:ir-actividad",
+        "conjugation:deferred"
       ],
       "curriculumRole": "reference"
     },
@@ -59992,7 +60074,9 @@
         "be + past participle",
         "form:past-participle",
         "es:ser",
-        "en:by"
+        "en:by",
+        "sense:ser-pasiva",
+        "conjugation:deferred"
       ],
       "curriculumRole": "supporting"
     },
@@ -61906,7 +61990,10 @@
         "construction:telling-time",
         "construction:it-is",
         "es:ser",
-        "en:it"
+        "en:it",
+        "sense:ser-hora",
+        "conjugation:present",
+        "conjugation:3pl"
       ],
       "curriculumRole": "supporting"
     },
@@ -61924,7 +62011,10 @@
         "construction:telling-time",
         "construction:it-is",
         "es:ser",
-        "en:it"
+        "en:it",
+        "sense:ser-hora",
+        "conjugation:present",
+        "conjugation:3pl"
       ],
       "curriculumRole": "reference"
     },
@@ -62741,7 +62831,11 @@
         "form:past-participle",
         "es:haber",
         "en:you",
-        "pos:verb"
+        "pos:verb",
+        "sense:haber-perfecto",
+        "conjugation:present",
+        "conjugation:2sg",
+        "conjugation:irregular"
       ],
       "curriculumRole": "core"
     },
@@ -62832,7 +62926,11 @@
         "construction:be-present-participle",
         "form:present-participle",
         "es:estar",
-        "en:was"
+        "en:was",
+        "sense:estar-progresivo",
+        "conjugation:imperfect",
+        "conjugation:3sg",
+        "conjugation:irregular"
       ],
       "curriculumRole": "supporting"
     },
@@ -63018,7 +63116,11 @@
         "construction:followed-by-full-infinitive",
         "es:tienes",
         "en:you",
-        "pos:verb"
+        "pos:verb",
+        "sense:tener-obligacion",
+        "conjugation:present",
+        "conjugation:2sg",
+        "conjugation:irregular"
       ],
       "curriculumRole": "core"
     },
@@ -63097,7 +63199,8 @@
         "register:informal",
         "construction:followed-by-bare-infinitive",
         "es:tener",
-        "en:gotta"
+        "en:gotta",
+        "sense:tener-obligacion"
       ],
       "curriculumRole": "reference"
     },
@@ -63118,7 +63221,7 @@
         "es:haber",
         "en:there"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "trash"
     },
     {
       "id": "7yqanblhbj",
@@ -63137,7 +63240,7 @@
         "es:haber",
         "en:there"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "trash"
     },
     {
       "id": "89ut7cha5j",
@@ -63154,7 +63257,10 @@
         "grammar:singular",
         "there was",
         "es:haber",
-        "en:there"
+        "en:there",
+        "sense:haber-existencia",
+        "conjugation:imperfect",
+        "conjugation:3sg"
       ],
       "curriculumRole": "supporting"
     },
@@ -63173,7 +63279,10 @@
         "grammar:plural",
         "there were",
         "es:haber",
-        "en:there"
+        "en:there",
+        "sense:haber-existencia",
+        "conjugation:imperfect",
+        "conjugation:3pl"
       ],
       "curriculumRole": "supporting"
     },
@@ -63392,7 +63501,11 @@
         "grammar:question",
         "form:past-progressive",
         "form:present-participle",
-        "en:were"
+        "en:were",
+        "sense:estar-progresivo",
+        "conjugation:imperfect",
+        "conjugation:2sg",
+        "conjugation:irregular"
       ],
       "curriculumRole": "supporting"
     },
@@ -63410,14 +63523,18 @@
         "form:past-progressive",
         "form:present-participle",
         "es:estar",
-        "en:was"
+        "en:was",
+        "sense:estar-progresivo",
+        "conjugation:imperfect",
+        "conjugation:3sg",
+        "conjugation:irregular"
       ],
       "curriculumRole": "supporting"
     },
     {
       "id": "ihsw7a0ggn",
       "spanish": "¿vas a [hacer algo]?",
-      "english": "are you going to [do something]?",
+      "english": "are you going [to do something]?",
       "example": {
         "spanish": "¿Lo vas a hacer?",
         "english": "Are you going to do it?"
@@ -63429,7 +63546,11 @@
         "construction:followed-by-full-infinitive",
         "es:ir",
         "en:are",
-        "pos:verb"
+        "pos:verb",
+        "sense:ir-futuro",
+        "conjugation:present",
+        "conjugation:2sg",
+        "conjugation:irregular"
       ],
       "curriculumRole": "core"
     },
@@ -64034,7 +64155,9 @@
         "grammar:linking-verb-adjective",
         "be + adjective",
         "es:ser",
-        "en:be"
+        "en:be",
+        "sense:ser-caracteristica",
+        "conjugation:infinitive"
       ],
       "curriculumRole": "core"
     },
@@ -77389,7 +77512,7 @@
     {
       "id": "rh4yfb08hn",
       "spanish": "voy a [hacer algo]",
-      "english": "I am going to [do something]",
+      "english": "I am going [to do something]",
       "example": {
         "spanish": "Voy a hablar con ella.",
         "english": "I am going to talk to her."
@@ -77408,7 +77531,7 @@
     {
       "id": "0lbant78ng",
       "spanish": "vas a [hacer algo]",
-      "english": "you are going to [do something]",
+      "english": "you are going [to do something]",
       "example": {
         "spanish": "Vas a llegar tarde.",
         "english": "You are going to be late."
@@ -77427,7 +77550,7 @@
     {
       "id": "0m0vzyyfd9",
       "spanish": "va a [hacer algo]",
-      "english": "is going to [do something]",
+      "english": "is going [to do something]",
       "example": {
         "spanish": "Ella va a estudiar esta noche.",
         "english": "She is going to study tonight."
@@ -77446,7 +77569,7 @@
     {
       "id": "ohgxx8621i",
       "spanish": "vamos a [hacer algo]",
-      "english": "we are going to [do something]",
+      "english": "we are going [to do something]",
       "example": {
         "spanish": "Vamos a comer pizza.",
         "english": "We are going to eat pizza."
@@ -77465,7 +77588,7 @@
     {
       "id": "ym5bgyxy1x",
       "spanish": "van a [hacer algo]",
-      "english": "they are going to [do something]",
+      "english": "they are going [to do something]",
       "example": {
         "spanish": "Ellos van a viajar mañana.",
         "english": "They are going to travel tomorrow."
