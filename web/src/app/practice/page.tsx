@@ -2,63 +2,33 @@ import {
   LessonSelector,
   type PracticeLesson,
 } from "@/components/practice/lesson-selector";
-import type { Lesson } from "@/lib/lesson-builder/types";
-import { normalizeLessonMarkdown } from "@/lib/lesson-builder/markdown";
-import { readLessonFile } from "@/lib/lesson-builder/server/lesson-store";
+import { readCourseSummary } from "@/lib/lesson-builder/server/course-summary";
 
 export const dynamic = "force-dynamic";
 
-async function getLessons() {
-  try {
-    // `lessons` is kept ordered to match the module structure.
-    return (await readLessonFile()).lessons;
-  } catch {
-    return [];
-  }
+type PageProps = {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+};
+
+function first(value: string | string[] | undefined) {
+  return Array.isArray(value) ? value[0] : value;
 }
 
-function getLessonPreviewText(lesson: Lesson) {
-  const firstPracticeBlock = lesson.blocks.find(
-    (block) => block.type === "sentence",
-  );
-
-  if (firstPracticeBlock) {
-    return firstPracticeBlock.languageBlocks
-      .map((languageBlock) => languageBlock.spanish.trim())
-      .filter(Boolean)
-      .join(
-        firstPracticeBlock.layout === "vocabulary_table" ? ", " : " ",
-      );
-  }
-
-  const firstExplanationBlock = lesson.blocks.find(
-    (block) => block.type === "explanation",
-  );
-
-  return normalizeLessonMarkdown(firstExplanationBlock?.contentMarkdown ?? "")
-    .replace(/^#{1,6}\s*/gmu, "")
-    .replace(/==([^=]+)==/gu, "$1")
-    .trim();
-}
-
-function getPracticeLessonSummaries(lessons: Lesson[]) {
-  return lessons.map<PracticeLesson>((lesson, lessonIndex) => ({
+export default async function PracticePage({ searchParams }: PageProps) {
+  const parameters = await searchParams;
+  const selectedLessonId = first(parameters.lesson) ?? null;
+  const course = await readCourseSummary().catch(() => null);
+  const lessonSummaries = (course?.lessons ?? []).map<PracticeLesson>((lesson) => ({
     id: lesson.id,
-    lessonNumber: lessonIndex + 1,
+    lessonNumber: lesson.lessonNumber,
+    moduleName: lesson.moduleName,
+    moduleLessonNumber: lesson.moduleLessonNumber,
     name: lesson.name,
-    explanationCount: lesson.blocks.filter(
-      (block) => block.type === "explanation",
-    ).length,
-    practiceCount: lesson.blocks.filter((block) => block.type === "sentence")
-      .length,
-    previewText: getLessonPreviewText(lesson),
+    explanationCount: lesson.explanationCount,
+    practiceCount: lesson.practiceCount,
+    previewText: lesson.previewText,
     blocks: lesson.blocks,
   }));
-}
-
-export default async function PracticePage() {
-  const lessons = await getLessons();
-  const lessonSummaries = getPracticeLessonSummaries(lessons);
 
   return (
     <main className="min-h-screen bg-background px-6 py-12 text-foreground">
@@ -71,11 +41,14 @@ export default async function PracticePage() {
             Práctica
           </h1>
           <p className="mt-3 max-w-2xl text-muted-foreground">
-            Elige una lección guardada para practicar.
+            Retoma una lección y convierte cada idea en inglés paso a paso.
           </p>
         </div>
 
-        <LessonSelector lessons={lessonSummaries} />
+        <LessonSelector
+          lessons={lessonSummaries}
+          initialLessonId={selectedLessonId}
+        />
       </div>
     </main>
   );

@@ -17,6 +17,8 @@ import type { LessonBlock } from "@/lib/lesson-builder/types";
 export type PracticeLesson = {
   id: string;
   lessonNumber: number;
+  moduleName?: string | null;
+  moduleLessonNumber?: number;
   name: string | null;
   explanationCount: number;
   practiceCount: number;
@@ -334,7 +336,11 @@ export function LessonSelector({
             <div className="mt-5 flex items-end justify-between gap-6">
               <div className="min-w-0">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                  Lección {openLesson.lessonNumber}
+                  {openLesson.moduleName
+                    ? `${openLesson.moduleName} · Lección ${
+                        openLesson.moduleLessonNumber ?? openLesson.lessonNumber
+                      }`
+                    : `Lección ${openLesson.lessonNumber}`}
                 </p>
                 <h2
                   id="practice-lesson-title"
@@ -451,7 +457,11 @@ export function LessonSelector({
           <div className="mb-4 flex items-start justify-between gap-3">
             <div>
               <p className="text-sm font-medium uppercase tracking-[0.18em] text-muted-foreground">
-                Lección {lesson.lessonNumber}
+                {lesson.moduleName
+                  ? `${lesson.moduleName} · Lección ${
+                      lesson.moduleLessonNumber ?? lesson.lessonNumber
+                    }`
+                  : `Lección ${lesson.lessonNumber}`}
               </p>
               <h2 className="mt-1 text-xl font-semibold tracking-tight text-foreground">
                 {lesson.name || `Lección ${lesson.lessonNumber}`}
