@@ -3670,7 +3670,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "particle:for",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -3692,7 +3693,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "particle:for",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -3732,7 +3734,8 @@
         "es:pedir",
         "en:order",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -3749,7 +3752,8 @@
         "es:pedir",
         "en:order",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -3771,7 +3775,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:from",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -3870,7 +3875,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:for",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -3888,7 +3894,8 @@
         "en:request",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -3910,7 +3917,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "particle:for",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -3933,7 +3941,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:for",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -3972,7 +3981,8 @@
         "es:pedir",
         "en:beg",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -4040,7 +4050,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:from",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -4062,7 +4073,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -4084,7 +4096,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -4130,7 +4143,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:after",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -4197,7 +4211,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:from",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -4219,7 +4234,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:from",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -11788,7 +11804,8 @@
         "en:think",
         "pos:verb",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -11809,7 +11826,8 @@
         "pos:verb",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -11831,7 +11849,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:of",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -11887,7 +11906,8 @@
         "es:pensar",
         "en:consider",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -11910,7 +11930,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "particle:of",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -11930,7 +11951,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -11950,7 +11972,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -11968,7 +11991,8 @@
         "en:think",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -12047,7 +12071,8 @@
         "es:perder",
         "en:lose",
         "pos:verb",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -12063,7 +12088,8 @@
         "topic:transportation",
         "es:perder",
         "en:miss",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -12079,7 +12105,8 @@
         "grammar:opportunity",
         "es:perder",
         "en:miss",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -12151,7 +12178,8 @@
         "grammar:reflexive",
         "es:perder",
         "en:miss",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -12172,7 +12200,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -12193,7 +12222,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:with",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -12214,7 +12244,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:of",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -12231,7 +12262,8 @@
         "leak",
         "es:pierde",
         "en:leaks",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -12290,7 +12322,8 @@
         "measurement",
         "es:pesa",
         "en:weighs",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -12305,7 +12338,8 @@
       "collections": [
         "es:pesar",
         "en:weigh",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -12321,7 +12355,8 @@
         "grammar:gerund",
         "es:pesar",
         "en:regret",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -12423,7 +12458,8 @@
         "es:pesar",
         "en:weigh",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -13787,7 +13823,8 @@
         "es:preguntar",
         "en:ask",
         "pos:verb",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -13824,7 +13861,8 @@
         "construction:map-si-if",
         "es:preguntar",
         "en:ask",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -13843,7 +13881,8 @@
         "register:formal",
         "es:preguntar",
         "en:ask",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -13860,7 +13899,8 @@
         "grammar:question",
         "es:preguntar",
         "en:wonder",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -13921,7 +13961,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -13984,7 +14025,8 @@
         "en:volunteer",
         "pos:verb",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -14006,7 +14048,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -14025,7 +14068,8 @@
         "en:lend",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58086,7 +58130,8 @@
         "en:stick",
         "construction:prepositional-verb",
         "particle:onto",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58106,7 +58151,8 @@
         "en:get",
         "topic:en-multi-sense",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58121,7 +58167,8 @@
       "collections": [
         "pos:verb",
         "es:pegar",
-        "en:hit"
+        "en:hit",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58137,7 +58184,8 @@
         "pos:verb",
         "es:pegar",
         "en:give",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58152,7 +58200,8 @@
       "collections": [
         "pos:verb",
         "es:pegar",
-        "en:match"
+        "en:match",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58169,7 +58218,8 @@
         "pos:verb",
         "es:pegársele",
         "en:for",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58189,7 +58239,8 @@
         "en:stay",
         "topic:en-multi-sense",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58204,7 +58255,8 @@
       "collections": [
         "pos:verb",
         "es:pegar",
-        "en:hit"
+        "en:hit",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -66508,7 +66560,8 @@
         "morphology:prefix-al",
         "pos:verb",
         "es:permitir",
-        "en:allow"
+        "en:allow",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
