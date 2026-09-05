@@ -17874,7 +17874,6 @@
         "english": "She backed out at the last moment."
       },
       "collections": [
-        "particle:back",
         "grammar:phrasal-verb",
         "particle:out",
         "grammar:reflexive",
@@ -21307,7 +21306,9 @@
         "en:keep",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "grammar:phrasal-verb",
+        "topic:phrasal-verb"
       ],
       "curriculumRole": "reference"
     },
@@ -25406,7 +25407,10 @@
         "es:mirar",
         "en:look",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "grammar:phrasal-verb",
+        "particle:ahead",
+        "topic:phrasal-verb"
       ],
       "curriculumRole": "reference"
     },
@@ -31036,7 +31040,10 @@
         "es:ser",
         "en:big",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "construction:prepositional-verb",
+        "particle:of",
+        "topic:phrasal-verb"
       ],
       "curriculumRole": "reference"
     },
@@ -55000,7 +55007,10 @@
       "collections": [
         "pos:verb",
         "es:apuntar",
-        "en:point"
+        "en:point",
+        "construction:prepositional-verb",
+        "particle:toward",
+        "topic:phrasal-verb"
       ],
       "curriculumRole": "reference"
     },
@@ -55412,7 +55422,10 @@
       "collections": [
         "pos:verb",
         "es:dirigir",
-        "en:head"
+        "en:head",
+        "grammar:phrasal-verb",
+        "particle:toward",
+        "topic:phrasal-verb"
       ],
       "curriculumRole": "reference"
     },
@@ -56005,7 +56018,10 @@
       "collections": [
         "pos:verb",
         "es:tirar",
-        "en:pull"
+        "en:pull",
+        "grammar:phrasal-verb",
+        "particle:toward",
+        "topic:phrasal-verb"
       ],
       "curriculumRole": "reference"
     },
@@ -56787,7 +56803,10 @@
         "es:ser",
         "en:target",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "construction:prepositional-verb",
+        "particle:of",
+        "topic:phrasal-verb"
       ],
       "curriculumRole": "reference"
     },
@@ -56844,7 +56863,10 @@
         "en:next",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "construction:prepositional-verb",
+        "particle:to",
+        "topic:phrasal-verb"
       ],
       "curriculumRole": "reference"
     },
@@ -56877,7 +56899,10 @@
         "es:ser",
         "en:new",
         "topic:age",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "construction:prepositional-verb",
+        "particle:to",
+        "topic:phrasal-verb"
       ],
       "curriculumRole": "reference"
     },
@@ -57013,7 +57038,10 @@
         "es:estar",
         "en:full",
         "topic:condition-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "construction:prepositional-verb",
+        "particle:of",
+        "topic:phrasal-verb"
       ],
       "curriculumRole": "reference"
     },
