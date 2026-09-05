@@ -56,3 +56,17 @@ coincidence.
   you!") — a genuinely common everyday exclamative pattern distinct from
   qué — don't exist at all. Small addition for later (1-2 rows).
 
+## 2026-09-05 — `grammar:definite-article`
+- **[flagged]** Two rows (`gustarle los gatos específicos a alguien` →
+  "[somebody] likes the specific cats"; `necesitar la información específica`
+  → "to need the specific information") appear to be reaching for a real
+  and important point — Spanish uses the definite article for *generic*
+  reference where English uses none ("Me gustan los gatos" = "I like cats,"
+  not "I like the cats") — but the headwords say "específicos"/"específica"
+  (specific) while the examples demonstrate *possessive* specificity
+  ("Laura's cats," "the document's information") instead. Headword and
+  example are teaching different things. Needs an actual content decision
+  (rewrite to demonstrate generic vs. specific reference contrastively, or
+  reframe entirely) rather than a mechanical fix — left both tagged
+  `audit:flagged`, not `audit:reviewed`.
+

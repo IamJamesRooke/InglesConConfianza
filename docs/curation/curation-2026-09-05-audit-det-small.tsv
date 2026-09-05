@@ -1,0 +1,12 @@
+qdyg6idr5p	la	the	core	audit:reviewed	Audit: fine as-is.	La mesa está junto a la ventana.	The table is by the window.
+mcumr0ly9e	al	to the	core	audit:reviewed	Audit: fine as-is.	Vamos al parque.	We are going to the park.
+nlbaeg9xqs	del	of the	core	audit:reviewed	Audit: fine as-is.	El color del cielo cambia al atardecer.	The color of the sky changes at dusk.
+zravwibucz	una	a	core	audit:reviewed	Audit: fine as-is.	Una mujer espera afuera.	A woman waits outside.
+8xn53vk9eu	unos	some	supporting	audit:reviewed	Audit: fine as-is.	Compré unos libros ayer.	I bought some books yesterday.
+q7u2j5qnks	unas	some	supporting	audit:reviewed	Audit: fine as-is.	Tengo unas preguntas para ti.	I have some questions for you.
+h3dls06wui	cuyo [sustantivo]	whose [noun]	reference	audit:reviewed	Audit: fine as-is.	El hombre cuyo perro ladra vive al lado.	The man whose dog barks lives next door.
+ltn8hqdpls	cuya [sustantivo]	whose [noun]	reference	audit:reviewed	Audit: fine as-is.	La mujer cuya casa compré es amable.	The woman whose house I bought is kind.
+pokaqu3651	cuyos [sustantivos]	whose [nouns]	reference	audit:reviewed	Audit: fine as-is.	El autor cuyos libros leo es español.	The author whose books I read is Spanish.
+cqps4njuot	cuyas [sustantivos]	whose [nouns]	reference	audit:reviewed	Audit: fine as-is.	La empresa cuyas oficinas cerraron quebró.	The company whose offices closed went bankrupt.
+j69jaw6dew	gustarle los gatos específicos a [alguien]	[somebody] likes the specific cats	core	audit:flagged	Audit: content concern flagged in full-audit-findings.md — headword claims "specific" cats but the example ("Me gustan los gatos de Laura."/"I like Laura's cats.") demonstrates possessive specificity, not the intended generic-vs-specific definite-article contrast.	Me gustan los gatos de Laura.	I like Laura's cats.
+t0gq5vym7f	necesitar la información específica	to need the specific information	core	audit:flagged	Audit: same content concern as its sibling row above.	Necesito la información del documento.	I need the information from the document.

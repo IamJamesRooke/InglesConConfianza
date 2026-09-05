@@ -24712,7 +24712,8 @@
         "en:the",
         "topic:determiner",
         "topic:en-multi-sense",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -70749,7 +70750,8 @@
         "grammar:countable",
         "es:gustar",
         "en:likes",
-        "pos:verb"
+        "pos:verb",
+        "audit:flagged"
       ],
       "curriculumRole": "core"
     },
@@ -70768,7 +70770,8 @@
         "grammar:uncountable",
         "es:necesitar",
         "en:need",
-        "pos:verb"
+        "pos:verb",
+        "audit:flagged"
       ],
       "curriculumRole": "core"
     },
@@ -84139,7 +84142,8 @@
         "topic:determiner",
         "es:un",
         "en:a",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -84160,7 +84164,8 @@
         "es:un",
         "en:some",
         "topic:en-multi-sense",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -84181,7 +84186,8 @@
         "es:un",
         "en:some",
         "topic:en-multi-sense",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -84221,7 +84227,8 @@
         "es:al",
         "en:the",
         "topic:en-multi-sense",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -84241,7 +84248,8 @@
         "es:del",
         "en:the",
         "topic:en-multi-sense",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -84762,7 +84770,8 @@
         "topic:determiner",
         "es:cuyo",
         "en:whose",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -84781,7 +84790,8 @@
         "topic:determiner",
         "es:cuyo",
         "en:whose",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -84800,7 +84810,8 @@
         "topic:determiner",
         "es:cuyo",
         "en:whose",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -84819,7 +84830,8 @@
         "topic:determiner",
         "es:cuyo",
         "en:whose",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
