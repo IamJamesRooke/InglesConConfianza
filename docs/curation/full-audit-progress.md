@@ -154,5 +154,17 @@ skimming history, not a machine-readable state store.
   batches were clean: this page has a LOT of legitimate near-synonym
   clusters (coger/recoger alone spans ~16 rows) since it's the
   semantic-range vocabulary the whole "multi-sense" framing is built
-  on. Commits `eb332d2d` through `42229be0`. Next: es:dependence
-  onward alphabetically — roughly 155 more lemma facets after that.
+  on. Commits `eb332d2d` through `42229be0`.
+- **2026-09-05, Verbs page, d-i done** — es:desarmar through es:irse
+  (~35 lemmas, ~265 rows). Found and fixed several more "identical
+  example as a sibling row" bugs (devolver la llamada/devolverle la
+  llamada, encontrar's generic vs [adjetivo] sense, entender's
+  understand/get pair). This "check for an exact-duplicate example
+  shared with another row in the same facet" check has been the
+  single highest-signal step of the checklist on this page — worth
+  running explicitly (compare exampleSpanish AND exampleEnglish, not
+  just Spanish) on every remaining lemma facet. Commits `d55c5db1`
+  through `662e5b4d`. Next: es:jugar onward alphabetically — roughly
+  150 more lemma facets after that, then the two Mappings pages'
+  remaining es:/en: facets (word-function words like de/en/con/por/
+  que, not verbs) and Phrasal Verbs.
