@@ -2850,7 +2850,8 @@
         "grammar:fixed-expression",
         "grammar:negative",
         "es:me",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -8190,7 +8191,8 @@
         "conjugation:present",
         "conjugation:3sg",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -8214,7 +8216,8 @@
         "conjugation:present",
         "conjugation:3pl",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -12022,7 +12025,8 @@
         "topic:multi-sense",
         "topic:verb-pattern",
         "topic:question-negation",
-        "qn:modal-be-have-negation"
+        "qn:modal-be-have-negation",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -12045,7 +12049,8 @@
         "es:poder",
         "en:cannot",
         "topic:multi-sense",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -15008,7 +15013,8 @@
         "es:caer",
         "en:like",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -15610,7 +15616,8 @@
         "es:conseguir",
         "en:seem",
         "topic:en-multi-sense",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -15630,7 +15637,8 @@
         "en:fail",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -16504,7 +16512,8 @@
         "es:creer",
         "en:think",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -16525,7 +16534,8 @@
         "es:poder",
         "en:able",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -16921,7 +16931,8 @@
         "es:deber",
         "en:not",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -16943,7 +16954,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "topic:question-negation",
-        "qn:modal-be-have-negation"
+        "qn:modal-be-have-negation",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -16963,7 +16975,8 @@
         "grammar:advice",
         "grammar:conditional",
         "en:not",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -16985,7 +16998,8 @@
         "en:shouldn't",
         "topic:multi-sense",
         "topic:question-negation",
-        "qn:modal-be-have-negation"
+        "qn:modal-be-have-negation",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -18360,7 +18374,8 @@
         "en:can't",
         "pos:verb",
         "topic:question-negation",
-        "qn:modal-be-have-negation"
+        "qn:modal-be-have-negation",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -18849,7 +18864,8 @@
         "grammar:fixed-expression",
         "grammar:negative",
         "es:saber",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -20588,7 +20604,8 @@
         "grammar:negative",
         "es:ser",
         "en:big",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -20829,7 +20846,8 @@
         "es:tener",
         "en:meaningless",
         "topic:abstract-quality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -20928,7 +20946,8 @@
         "pos:adverb",
         "es:soler",
         "en:usually",
-        "adv:habitual"
+        "adv:habitual",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -21655,7 +21674,8 @@
         "pos:verb",
         "particle:with",
         "en:have",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -22684,7 +22704,8 @@
         "es:valer",
         "en:count",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -22702,7 +22723,8 @@
         "es:valer",
         "en:fair",
         "topic:abstract-quality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -23606,7 +23628,8 @@
         "grammar:negative",
         "es:volver",
         "en:again",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -24858,7 +24881,7 @@
     {
       "id": "90l7vci1mc",
       "spanish": "no acordarse de [algo]",
-      "english": "to can't remember [something]",
+      "english": "not to remember [something]",
       "example": {
         "spanish": "No me acuerdo de su nombre.",
         "english": "I can't remember her name."
@@ -24868,7 +24891,8 @@
         "grammar:negative",
         "es:acordar",
         "en:can't",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -25230,7 +25254,8 @@
         "en:can't",
         "pos:verb",
         "topic:question-negation",
-        "qn:modal-be-have-negation"
+        "qn:modal-be-have-negation",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -25922,7 +25947,8 @@
         "grammar:degree",
         "es:casi",
         "en:hardly",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28664,7 +28690,8 @@
         "grammar:correlative",
         "es:ni",
         "en:neither",
-        "pos:connector"
+        "pos:connector",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28681,7 +28708,8 @@
         "grammar:correlative",
         "es:ni",
         "en:neither",
-        "pos:connector"
+        "pos:connector",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28727,7 +28755,8 @@
         "grammar:emphasis",
         "es:siquiera",
         "en:even",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28745,7 +28774,8 @@
         "grammar:emphasis",
         "es:ni",
         "en:even",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -29540,7 +29570,8 @@
         "pos:preposition",
         "grammar:negative",
         "es:sin",
-        "en:without"
+        "en:without",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -29558,7 +29589,8 @@
         "grammar:negative",
         "es:llevar",
         "en:for",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30672,7 +30704,8 @@
         "grammar:addition",
         "es:tampoco",
         "en:either",
-        "pos:adverb"
+        "pos:adverb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -30785,7 +30818,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31144,7 +31178,8 @@
         "topic:time",
         "es:ya",
         "en:anymore",
-        "pos:adverb"
+        "pos:adverb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -33175,7 +33210,8 @@
         "es:seguir",
         "en:remain",
         "topic:abstract-quality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -68576,7 +68612,8 @@
         "don't",
         "construction:followed-by-bare-infinitive",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -68597,7 +68634,8 @@
         "construction:followed-by-bare-infinitive",
         "en:doesn't",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -68618,7 +68656,8 @@
         "construction:followed-by-bare-infinitive",
         "en:didn't",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -68789,7 +68828,8 @@
         "es:haber",
         "en:have",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -68810,7 +68850,8 @@
         "en:haven't",
         "topic:multi-sense",
         "topic:question-negation",
-        "qn:modal-be-have-negation"
+        "qn:modal-be-have-negation",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -69112,7 +69153,8 @@
         "pos:verb",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -69703,7 +69745,8 @@
         "topic:en-multi-sense",
         "topic:verb-pattern",
         "topic:question-negation",
-        "qn:modal-be-have-negation"
+        "qn:modal-be-have-negation",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -69750,7 +69793,8 @@
         "en:not",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -69775,7 +69819,8 @@
         "topic:en-multi-sense",
         "topic:verb-pattern",
         "topic:question-negation",
-        "qn:modal-be-have-negation"
+        "qn:modal-be-have-negation",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -69843,7 +69888,8 @@
         "pos:verb",
         "topic:verb-pattern",
         "topic:question-negation",
-        "qn:modal-be-have-negation"
+        "qn:modal-be-have-negation",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -69889,7 +69935,8 @@
         "topic:en-multi-sense",
         "topic:verb-pattern",
         "topic:question-negation",
-        "qn:modal-be-have-negation"
+        "qn:modal-be-have-negation",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -86726,7 +86773,8 @@
         "grammar:negative",
         "grammar:contraction",
         "es:comer",
-        "en:eat"
+        "en:eat",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -86746,7 +86794,8 @@
         "grammar:negative",
         "grammar:contraction",
         "es:comer",
-        "en:eat"
+        "en:eat",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -86767,7 +86816,8 @@
         "grammar:contraction",
         "form:preterite",
         "es:ir",
-        "en:go"
+        "en:go",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -86786,7 +86836,8 @@
         "grammar:negative",
         "grammar:contraction",
         "es:ser",
-        "en:isn't"
+        "en:isn't",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -86805,7 +86856,8 @@
         "grammar:negative",
         "grammar:contraction",
         "es:ser",
-        "en:aren't"
+        "en:aren't",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -86824,7 +86876,8 @@
         "grammar:negative",
         "grammar:contraction",
         "es:estar",
-        "en:wasn't"
+        "en:wasn't",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -86843,7 +86896,8 @@
         "grammar:negative",
         "grammar:contraction",
         "es:estar",
-        "en:weren't"
+        "en:weren't",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -86863,7 +86917,8 @@
         "grammar:contraction",
         "grammar:perfect",
         "es:haber",
-        "en:hasn't"
+        "en:hasn't",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -86883,7 +86938,8 @@
         "grammar:contraction",
         "grammar:perfect",
         "es:haber",
-        "en:hadn't"
+        "en:hadn't",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -86997,7 +87053,8 @@
         "grammar:question",
         "grammar:negative",
         "es:comer",
-        "en:eat"
+        "en:eat",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -87017,7 +87074,8 @@
         "grammar:question",
         "grammar:negative",
         "es:saber",
-        "en:know"
+        "en:know",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -87038,7 +87096,8 @@
         "grammar:negative",
         "form:preterite",
         "es:ir",
-        "en:go"
+        "en:go",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -87056,7 +87115,8 @@
         "grammar:question",
         "grammar:negative",
         "es:ser",
-        "en:isn't"
+        "en:isn't",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -87075,7 +87135,8 @@
         "grammar:question",
         "grammar:negative",
         "es:estar",
-        "en:aren't"
+        "en:aren't",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -87177,7 +87238,8 @@
         "grammar:negative",
         "register:informal",
         "es:cerrar",
-        "en:close"
+        "en:close",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -87198,7 +87260,8 @@
         "grammar:negative",
         "register:formal",
         "es:cerrar",
-        "en:close"
+        "en:close",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
