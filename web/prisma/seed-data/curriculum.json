@@ -483,7 +483,8 @@
         "topic:time",
         "es:cuando",
         "en:anytime",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -875,7 +876,8 @@
         "en:take",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -2776,7 +2778,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -4405,7 +4408,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "topic:collocation",
-        "coll:set"
+        "coll:set",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -8622,7 +8626,8 @@
         "topic:time",
         "es:hacer",
         "en:ago",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -8641,7 +8646,8 @@
         "es:hacer",
         "en:been",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -8661,7 +8667,8 @@
         "es:cuánto",
         "en:how",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -9090,7 +9097,8 @@
         "en:get",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -10098,7 +10106,8 @@
         "es:llevar",
         "en:been",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -10117,7 +10126,8 @@
         "es:llevar",
         "en:been",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -10136,7 +10146,8 @@
         "form:present-perfect-progressive",
         "es:cuánto",
         "en:how",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -10152,7 +10163,8 @@
         "es:llevar",
         "topic:time",
         "es:lleva",
-        "en:takes"
+        "en:takes",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -11278,7 +11290,8 @@
         "topic:time",
         "es:pasado",
         "en:last",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -11620,7 +11633,8 @@
         "topic:time",
         "es:perder",
         "en:waste",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -14814,7 +14828,8 @@
         "en:time",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -20272,7 +20287,8 @@
         "conjugation:deferred",
         "conjugation:infinitive",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -25868,7 +25884,8 @@
         "es:de",
         "en:from",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -25978,7 +25995,8 @@
         "es:antes",
         "en:before",
         "pos:preposition",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26181,7 +26199,8 @@
         "topic:time",
         "form:past",
         "es:atrás",
-        "en:ago"
+        "en:ago",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26197,7 +26216,8 @@
         "es:aún",
         "en:yet",
         "pos:adverb",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26958,7 +26978,8 @@
         "topic:time",
         "es:cuánto",
         "en:how",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -27223,7 +27244,8 @@
         "es:de",
         "en:from",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -27318,7 +27340,8 @@
         "pos:preposition",
         "es:dentro",
         "en:in",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -27351,7 +27374,8 @@
         "topic:time",
         "pos:preposition",
         "es:desde",
-        "en:starting"
+        "en:starting",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28296,7 +28320,8 @@
         "topic:time",
         "es:pasado",
         "en:day",
-        "pos:adverb"
+        "pos:adverb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28330,7 +28355,8 @@
         "es:anteayer",
         "en:day",
         "pos:adverb",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28407,7 +28433,8 @@
         "es:ayer",
         "en:yesterday",
         "pos:adverb",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28439,7 +28466,8 @@
         "es:mañana",
         "en:tomorrow",
         "pos:adverb",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28455,7 +28483,8 @@
         "es:ayer",
         "en:yesterday",
         "pos:adverb",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28486,7 +28515,8 @@
         "es:mañana",
         "en:tomorrow",
         "pos:adverb",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28502,7 +28532,8 @@
         "es:anoche",
         "en:last",
         "pos:adverb",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28518,7 +28549,8 @@
         "es:esta",
         "en:tonight",
         "pos:adverb",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -28534,7 +28566,8 @@
         "es:mañana",
         "en:tomorrow",
         "pos:adverb",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -29009,7 +29042,8 @@
         "topic:time",
         "grammar:fixed-expression",
         "es:más",
-        "en:earlier"
+        "en:earlier",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -29027,7 +29061,8 @@
         "pos:adverb",
         "es:de",
         "en:suddenly",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -29422,7 +29457,8 @@
         "topic:time",
         "en:what",
         "es:qué",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -29644,7 +29680,8 @@
         "topic:time",
         "es:siempre",
         "en:whenever",
-        "topic:time-connector"
+        "topic:time-connector",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -29811,7 +29848,8 @@
         "topic:time",
         "es:mientras",
         "en:meanwhile",
-        "topic:time-connector"
+        "topic:time-connector",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -29865,7 +29903,8 @@
         "es:tardar",
         "en:take",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30052,7 +30091,8 @@
         "pos:adverb",
         "es:ya",
         "en:already",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -30068,7 +30108,8 @@
         "es:todavía",
         "en:yet",
         "pos:adverb",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30084,7 +30125,8 @@
         "es:todavía",
         "en:still",
         "pos:adverb",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30382,7 +30424,8 @@
         "pos:preposition",
         "topic:time",
         "es:durante",
-        "en:during"
+        "en:during",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30401,7 +30444,8 @@
         "es:por",
         "en:at",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30418,7 +30462,8 @@
         "en:during",
         "pos:preposition",
         "topic:time",
-        "en:throughout"
+        "en:throughout",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30435,7 +30480,8 @@
         "topic:time",
         "pos:adverb",
         "es:más",
-        "en:later"
+        "en:later",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30451,7 +30497,8 @@
         "pos:adverb",
         "topic:time",
         "es:después",
-        "en:later"
+        "en:later",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30488,7 +30535,8 @@
         "pos:adjective",
         "topic:time",
         "es:posterior",
-        "en:later"
+        "en:later",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30509,7 +30557,8 @@
         "es:en",
         "en:back",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30526,7 +30575,8 @@
         "topic:time",
         "grammar:fixed-expression",
         "en:then",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30689,7 +30739,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:for",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30922,7 +30973,8 @@
         "morphology:prefix-al",
         "grammar:frequency-adverb",
         "es:siempre",
-        "en:always"
+        "en:always",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -30986,7 +31038,8 @@
         "grammar:fixed-expression",
         "es:todo",
         "en:all",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31118,7 +31171,8 @@
         "topic:time",
         "es:después",
         "en:after",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31136,7 +31190,8 @@
         "es:después",
         "en:after",
         "topic:en-multi-sense",
-        "topic:time-connector"
+        "topic:time-connector",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31153,7 +31208,8 @@
         "topic:time",
         "es:tras",
         "en:after",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31355,7 +31411,8 @@
         "morphology:recognition",
         "morphology:prefix-be",
         "es:antes",
-        "en:before"
+        "en:before",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31372,7 +31429,8 @@
         "topic:time",
         "es:antes",
         "en:before",
-        "topic:time-connector"
+        "topic:time-connector",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31388,7 +31446,8 @@
         "past experience",
         "topic:time",
         "es:ya",
-        "en:before"
+        "en:before",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31744,7 +31803,8 @@
         "en:buy",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32094,7 +32154,8 @@
         "pos:adjective",
         "topic:time",
         "es:actual",
-        "en:current"
+        "en:current",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32325,7 +32386,8 @@
         "topic:multi-sense",
         "pos:verb",
         "topic:collocation",
-        "coll:have"
+        "coll:have",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32547,7 +32609,8 @@
         "topic:time",
         "pos:adverb",
         "es:tarde",
-        "en:late"
+        "en:late",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32582,7 +32645,8 @@
         "pos:adjective",
         "topic:time",
         "es:último",
-        "en:latest"
+        "en:latest",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32769,7 +32833,8 @@
         "topic:time",
         "pos:adverb",
         "es:ahora",
-        "en:now"
+        "en:now",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -32786,7 +32851,8 @@
         "pos:adverb",
         "topic:time",
         "es:ya",
-        "en:now"
+        "en:now",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32804,7 +32870,8 @@
         "topic:time",
         "es:ahora",
         "en:now",
-        "topic:time-connector"
+        "topic:time-connector",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32825,7 +32892,8 @@
         "es:por",
         "en:for",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -51620,7 +51688,8 @@
         "pos:number",
         "es:vigésimo",
         "en:twentieth",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -51637,7 +51706,8 @@
         "pos:number",
         "es:vigésimo",
         "en:twenty-first",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -51654,7 +51724,8 @@
         "pos:number",
         "es:vigésimo",
         "en:twenty-second",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -51671,7 +51742,8 @@
         "pos:number",
         "es:vigésimo",
         "en:twenty-third",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -51688,7 +51760,8 @@
         "pos:number",
         "es:vigésimo",
         "en:twenty-fourth",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -51705,7 +51778,8 @@
         "pos:number",
         "es:vigésimo",
         "en:twenty-fifth",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -51722,7 +51796,8 @@
         "pos:number",
         "es:vigésimo",
         "en:twenty-eighth",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -51739,7 +51814,8 @@
         "pos:number",
         "es:vigésimo",
         "en:twenty-ninth",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -51756,7 +51832,8 @@
         "pos:number",
         "es:trigésimo",
         "en:thirtieth",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -51773,7 +51850,8 @@
         "pos:number",
         "es:trigésimo",
         "en:thirty-first",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -51790,7 +51868,8 @@
         "pos:number",
         "es:centésimo",
         "en:hundredth",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -51807,7 +51886,8 @@
         "pos:number",
         "es:milésimo",
         "en:thousandth",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -51824,7 +51904,8 @@
         "pos:number",
         "es:millonésimo",
         "en:millionth",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -51843,7 +51924,8 @@
         "grammar:sequence",
         "topic:order-word",
         "es:primero",
-        "en:first"
+        "en:first",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -51863,7 +51945,8 @@
         "topic:order-word",
         "second ambiguity",
         "es:segundo",
-        "en:second"
+        "en:second",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -51882,7 +51965,8 @@
         "grammar:sequence",
         "topic:order-word",
         "es:tercero",
-        "en:third"
+        "en:third",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -51899,7 +51983,8 @@
         "pos:number",
         "es:cuarto",
         "en:fourth",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -51916,7 +52001,8 @@
         "pos:number",
         "es:quinto",
         "en:fifth",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -51933,7 +52019,8 @@
         "pos:number",
         "es:sexto",
         "en:sixth",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -51950,7 +52037,8 @@
         "pos:number",
         "es:séptimo",
         "en:seventh",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -51967,7 +52055,8 @@
         "pos:number",
         "es:octavo",
         "en:eighth",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -51984,7 +52073,8 @@
         "pos:number",
         "es:noveno",
         "en:ninth",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -52001,7 +52091,8 @@
         "pos:number",
         "es:décimo",
         "en:tenth",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -52018,7 +52109,8 @@
         "pos:number",
         "es:undécimo",
         "en:eleventh",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -52035,7 +52127,8 @@
         "pos:number",
         "es:duodécimo",
         "en:twelfth",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -52052,7 +52145,8 @@
         "pos:number",
         "es:decimotercero",
         "en:thirteenth",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -52069,7 +52163,8 @@
         "pos:number",
         "es:decimocuarto",
         "en:fourteenth",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -52086,7 +52181,8 @@
         "pos:number",
         "es:decimoquinto",
         "en:fifteenth",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -52103,7 +52199,8 @@
         "pos:number",
         "es:decimosexto",
         "en:sixteenth",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -52120,7 +52217,8 @@
         "pos:number",
         "es:decimoséptimo",
         "en:seventeenth",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -52137,7 +52235,8 @@
         "pos:number",
         "es:decimoctavo",
         "en:eighteenth",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -52154,7 +52253,8 @@
         "pos:number",
         "es:decimonoveno",
         "en:nineteenth",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -53173,7 +53273,8 @@
         "topic:time",
         "pos:adverb",
         "es:pronto",
-        "en:soon"
+        "en:soon",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -53189,7 +53290,8 @@
         "topic:time",
         "pos:adverb",
         "es:temprano",
-        "en:early"
+        "en:early",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -53205,7 +53307,8 @@
         "topic:time",
         "pos:adverb",
         "es:más",
-        "en:earlier"
+        "en:earlier",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -64741,7 +64844,8 @@
         "es:de",
         "en:beforehand",
         "topic:multi-sense",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -68384,7 +68488,8 @@
         "what time",
         "es:qué",
         "en:what",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -68406,7 +68511,8 @@
         "conjugation:present",
         "conjugation:3pl",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -68428,7 +68534,8 @@
         "conjugation:present",
         "conjugation:3pl",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -68445,7 +68552,8 @@
         "es:ser",
         "en:noon",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -68462,7 +68570,8 @@
         "es:ser",
         "en:midnight",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -68479,7 +68588,8 @@
         "at + clock time",
         "construction:map-a-at",
         "en:at",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -68496,7 +68606,8 @@
         "grammar:frequency-adverb",
         "pos:adverb",
         "es:nunca",
-        "en:never"
+        "en:never",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -68514,7 +68625,8 @@
         "pos:adverb",
         "almost never",
         "es:casi",
-        "en:almost"
+        "en:almost",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -68530,7 +68642,8 @@
         "topic:time",
         "grammar:frequency-adverb",
         "pos:adverb",
-        "en:sometimes"
+        "en:sometimes",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -68546,7 +68659,8 @@
         "topic:time",
         "grammar:frequency-adverb",
         "pos:adverb",
-        "en:often"
+        "en:often",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -68564,7 +68678,8 @@
         "pos:adverb",
         "es:con",
         "en:often",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -68582,7 +68697,8 @@
         "pos:adverb",
         "almost always",
         "es:casi",
-        "en:almost"
+        "en:almost",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -68597,7 +68713,8 @@
       "collections": [
         "topic:time",
         "grammar:frequency-adverb",
-        "before main verb"
+        "before main verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -68617,7 +68734,8 @@
         "es:estar",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -68635,7 +68753,8 @@
         "every day",
         "es:todos",
         "en:every",
-        "pos:adverb"
+        "pos:adverb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -68652,7 +68771,8 @@
         "all day",
         "es:todo",
         "en:all",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -68670,7 +68790,8 @@
         "every week",
         "es:todas",
         "en:every",
-        "pos:adverb"
+        "pos:adverb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -68687,7 +68808,8 @@
         "all week",
         "es:toda",
         "en:all",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -68706,7 +68828,8 @@
         "pos:adjective",
         "es:próximo",
         "en:next",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -68725,7 +68848,8 @@
         "pos:adjective",
         "es:siguiente",
         "en:next",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -68804,7 +68928,8 @@
         "topic:time",
         "past time",
         "es:tiempo",
-        "en:past"
+        "en:past",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -68820,7 +68945,8 @@
         "topic:time",
         "present time",
         "es:tiempo",
-        "en:present"
+        "en:present",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -68836,7 +68962,8 @@
         "topic:time",
         "future time",
         "es:tiempo",
-        "en:future"
+        "en:future",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -68853,7 +68980,8 @@
         "grammar term",
         "tense",
         "es:tiempo",
-        "en:verb"
+        "en:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -85639,7 +85767,8 @@
         "pos:adverb",
         "es:aún",
         "en:still",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -86962,7 +87091,8 @@
         "es:ser",
         "en:time",
         "topic:multi-sense",
-        "topic:time"
+        "topic:time",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
