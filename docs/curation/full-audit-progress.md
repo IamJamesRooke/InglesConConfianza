@@ -211,3 +211,31 @@ skimming history, not a machine-readable state store.
   flagged rows with the user (or by continuing to spot-check via the 6
   global mechanical sweeps in `full-audit-plan.md` Phase 1, not yet
   run), rather than assuming there's more facet-by-facet work queued.
+- **2026-09-05, NEW PROJECT: subtopic-size rule, retroactive pass** —
+  user set a new standing rule (memory: curriculum_subtopic_size_rule):
+  any facet-button subtopic over ~10-20 items needs a judgment call on
+  splitting. Applied it to the Verbs redesign first (96 buckets), then
+  found 140 more oversized buckets database-wide (properly intersected
+  with each page's baseCollection — an earlier unintersected scan had
+  inflated this to 173). User wants it applied retroactively,
+  page by page. UI mechanism: extend the existing `facetGroup()`
+  helper in topic-presentation.ts (already used by 6 topics to cluster
+  facet buttons under coarse headers) rather than changing the
+  topics.ts data model. Split axis differs by page purpose: thematic
+  for Nouns/Adjectives/Adverbs (like Verbs), sense-cluster-within-word
+  for Mappings/Phrasal-Verb pages (their whole purpose is one word's
+  full range), suffix/root-family for Cognates/Transformations,
+  finer-subtype for Verb-Patterns/Verb-Forms.
+  Progress: Pronouns (2 buckets), Determiners (2) + Numbers (2,
+  shared cardinal-number tags), Prepositions (1) done — commits
+  `0d62a017`, `c2935fa6`, `29351373`. Nouns (all 9 oversized buckets:
+  gender:masculine/feminine split by noun-ending pattern since gender
+  has no meaning-based split, gender:common by profession-suffix,
+  topic:abstract-quality by cognate suffix family, topic:people/
+  everyday-objects/time/family/places by semantic sub-group) — commit
+  `9e663ec7`. contrast:confusable (shared across ~8 pages) deferred to
+  its own pass. Next: Adjectives (8 buckets), then Adverbs (3), then
+  the sense-based Mappings/en-mappings/Phrasal-Verb pages, then
+  Transformations/Verb-Forms/Verb-Patterns/Cognates, then a revisit of
+  the ~38 Verbs buckets still over 20 (mostly the 21-32 range
+  originally called "close enough").
