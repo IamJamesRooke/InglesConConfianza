@@ -26642,14 +26642,15 @@
       "spanish": "bueno / buena",
       "english": "kind",
       "example": {
-        "spanish": "bueno / buena",
-        "english": "kind"
+        "spanish": "Fue muy bueno de tu parte ayudarme.",
+        "english": "It was very kind of you to help me."
       },
       "collections": [
         "es:bueno",
         "en:kind",
         "pos:adjective",
-        "grammar:ser-adjective"
+        "grammar:ser-adjective",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26772,7 +26773,8 @@
         "es:cierto",
         "en:right",
         "pos:adjective",
-        "grammar:ser-adjective"
+        "grammar:ser-adjective",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28205,14 +28207,15 @@
       "spanish": "malo / mala",
       "english": "evil",
       "example": {
-        "spanish": "malo / mala",
-        "english": "evil"
+        "spanish": "Ese hombre es malo.",
+        "english": "That man is evil."
       },
       "collections": [
         "es:malo",
         "en:evil",
         "pos:adjective",
-        "grammar:ser-adjective"
+        "grammar:ser-adjective",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28221,14 +28224,15 @@
       "spanish": "malo / mala",
       "english": "poor",
       "example": {
-        "spanish": "malo / mala",
-        "english": "poor"
+        "spanish": "El servicio fue malo.",
+        "english": "The service was poor."
       },
       "collections": [
         "es:malo",
         "en:poor",
         "pos:adjective",
-        "grammar:ser-adjective"
+        "grammar:ser-adjective",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -29572,7 +29576,8 @@
         "es:seguro",
         "en:safe",
         "pos:adjective",
-        "grammar:ser-adjective"
+        "grammar:ser-adjective",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31689,7 +31694,8 @@
         "es:ser",
         "en:big",
         "topic:size",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -32580,7 +32586,8 @@
         "en:hard",
         "topic:difficulty",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -36379,7 +36386,8 @@
         "es:ser",
         "en:compact",
         "topic:size",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -36511,7 +36519,8 @@
         "es:ser",
         "en:strict",
         "topic:personality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -36555,7 +36564,8 @@
         "es:ser",
         "en:ambitious",
         "topic:personality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -36577,7 +36587,8 @@
         "es:ser",
         "en:curious",
         "topic:personality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -36645,7 +36656,8 @@
         "es:ser",
         "en:mysterious",
         "topic:personality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -36689,7 +36701,8 @@
         "es:ser",
         "en:generous",
         "topic:personality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -38913,7 +38926,8 @@
         "es:ser",
         "en:mature",
         "topic:age",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -38936,7 +38950,8 @@
         "es:ser",
         "en:immature",
         "topic:age",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39137,7 +39152,8 @@
         "es:ser",
         "en:cruel",
         "topic:personality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39272,7 +39288,8 @@
         "topic:nationality",
         "topic:multi-sense",
         "cognate:ano-iano-to-an-ian",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39323,7 +39340,8 @@
         "topic:nationality",
         "topic:multi-sense",
         "cognate:ano-iano-to-an-ian",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39348,7 +39366,8 @@
         "topic:nationality",
         "topic:multi-sense",
         "cognate:ano-iano-to-an-ian",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39373,7 +39392,8 @@
         "topic:nationality",
         "topic:multi-sense",
         "cognate:ano-iano-to-an-ian",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39398,7 +39418,8 @@
         "topic:nationality",
         "topic:multi-sense",
         "cognate:ano-iano-to-an-ian",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39423,7 +39444,8 @@
         "topic:nationality",
         "topic:multi-sense",
         "cognate:ano-iano-to-an-ian",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39766,7 +39788,8 @@
         "es:ser",
         "en:arrogant",
         "topic:personality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39857,7 +39880,8 @@
         "es:ser",
         "en:tolerant",
         "topic:personality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39902,7 +39926,8 @@
         "es:ser",
         "en:dominant",
         "topic:personality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -40589,7 +40614,8 @@
         "es:ser",
         "en:docile",
         "topic:personality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -41038,7 +41064,8 @@
         "es:ser",
         "en:local",
         "topic:nationality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -41081,7 +41108,8 @@
         "es:ser",
         "en:international",
         "topic:nationality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -42805,7 +42833,8 @@
         "es:ser",
         "en:timid",
         "topic:personality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -42827,7 +42856,8 @@
         "es:ser",
         "en:rapid",
         "topic:speed",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -42872,7 +42902,8 @@
         "es:ser",
         "en:morbid",
         "topic:personality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48036,7 +48067,8 @@
         "es:ser",
         "en:difficult",
         "topic:difficulty",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49389,7 +49421,8 @@
         "es:ser",
         "en:cheap",
         "topic:value-price",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49407,7 +49440,8 @@
         "es:ser",
         "en:inexpensive",
         "topic:value-price",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -49425,7 +49459,8 @@
         "es:ser",
         "en:cheap",
         "topic:value-price",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -49443,7 +49478,8 @@
         "es:ser",
         "en:inexpensive",
         "topic:value-price",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -49461,7 +49497,8 @@
         "es:ser",
         "en:expensive",
         "topic:value-price",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49498,7 +49535,8 @@
         "es:ser",
         "en:short",
         "topic:size",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49578,7 +49616,8 @@
         "en:slow",
         "topic:speed",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49615,7 +49654,8 @@
         "es:ser",
         "en:easy",
         "topic:difficulty",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49633,7 +49673,8 @@
         "es:ser",
         "en:simple",
         "topic:difficulty",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -49656,7 +49697,8 @@
         "grammar:phrasal-verb",
         "particle:of",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -49733,7 +49775,8 @@
         "es:ser",
         "en:young",
         "topic:age",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49751,7 +49794,8 @@
         "es:ser",
         "en:youthful",
         "topic:age",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -49807,7 +49851,8 @@
         "es:ser",
         "en:large",
         "topic:size",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -49848,7 +49893,8 @@
         "es:ser",
         "en:small",
         "topic:size",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49866,7 +49912,8 @@
         "es:ser",
         "en:little",
         "topic:size",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -49884,7 +49931,8 @@
         "es:ser",
         "en:fast",
         "topic:speed",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49902,7 +49950,8 @@
         "es:ser",
         "en:quick",
         "topic:speed",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -49959,7 +50008,8 @@
         "en:hard",
         "topic:difficulty",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -50107,7 +50157,8 @@
         "en:old",
         "topic:age",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -50125,7 +50176,8 @@
         "es:ser",
         "en:elderly",
         "topic:age",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -50143,7 +50195,8 @@
         "es:ser",
         "en:old-fashioned",
         "topic:age",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58791,7 +58844,8 @@
         "topic:multi-sense",
         "construction:prepositional-verb",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -87228,7 +87282,8 @@
         "en:be",
         "grammar:ser-adjective",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -87275,7 +87330,8 @@
         "en:be",
         "grammar:ser-adjective",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -87297,7 +87353,8 @@
         "en:be",
         "grammar:ser-adjective",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
