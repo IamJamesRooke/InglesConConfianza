@@ -109,7 +109,7 @@ separately at the end (not itemized here — see the plan doc).
 - [ ] `topic:size` — Size (8 rows)
 - [ ] `topic:nationality` — Nationality (16 rows)
 - [ ] `topic:difficulty` — Difficulty (7 rows)
-- [x] `topic:color` — Color (6→11 rows) — fixed a copy-pasted mismatched example (`rojo` had `blanco`'s sentence), fixed a mistagged lemma (`es:color`→`es:blanco`), added 5 missing basic colors (orange/purple/gray/brown/pink). `<commit-pending>`
+- [x] `topic:color` — Color (6→11 rows) — fixed a copy-pasted mismatched example (`rojo` had `blanco`'s sentence), fixed a mistagged lemma (`es:color`→`es:blanco`), added 5 missing basic colors (orange/purple/gray/brown/pink). `08003d4d`
 - [ ] `topic:weather` — Weather (5 rows)
 - [ ] `topic:speed` — Speed (4 rows)
 - [ ] `topic:time` — Time (175 rows)
