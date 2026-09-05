@@ -1,0 +1,42 @@
+yd9u4l5hk8	fuera del alcance de [alguien]	out of [somebody's] reach	reference	audit:reviewed	Audit: fine as-is.
+hpdisj6u7v	ser conocido por [algo]	to be known for [something]	reference	audit:reviewed	Audit: fine as-is.
+uhisl4h91k	ser conocido como [algo]	to be known as [something]	reference	audit:reviewed	Audit: fine as-is.
+othawv9u0f	ser [identidad]	to be [an identity]	core	audit:reviewed	Audit: fine as-is.
+m5wxiwxpo1	ser [una clasificación]	to be [a classification]	core	audit:reviewed	Audit: fine as-is.
+obznlhzdxe	ser en [un lugar]	to be at [a place]	supporting	audit:reviewed	Audit: fine as-is.
+2z3yhpg9ve	ser de [un lugar]	to be from [a place]	core	audit:reviewed	Audit: fine as-is.
+cme1al3v5p	ser de [un material]	to be made of [a material]	supporting	audit:reviewed	Audit: fine as-is.
+qbdgh95q4i	ser de [alguien]	to belong to [somebody]	supporting	audit:reviewed	Audit: fine as-is.
+ekxerzzusv	ser para [alguien]	to be for [somebody]	supporting	audit:reviewed	Audit: fine as-is.
+nyb1ocmvpw	ser para [un uso]	to be meant for [a use]	reference	audit:reviewed	Audit: fine as-is.
+ralwup7tfh	ser bueno para [hacer algo]	to be good at [doing something]	supporting	audit:reviewed	Audit: fine as-is.
+i49be62rpv	ser bueno para [alguien/algo]	to be good for [somebody or something]	supporting	audit:reviewed	Audit: fine as-is.
+pdcy6981ld	ser malo para [alguien/algo]	to be bad for [somebody or something]	supporting	audit:reviewed	Audit: fine as-is.
+98gwx9pls1	ser culpa de [alguien]	to be [somebody's] fault	reference	audit:reviewed	Audit: fine as-is.
+2d97zs6np0	es que [explicación]	it's just that [explanation]	reference	audit:reviewed	Audit: fine as-is.
+2w0dzl1mvl	ser alto	to be tall	reference	audit:reviewed	Audit: fine as-is.
+ffr5aig4sd	ser alto	to be high	reference	audit:reviewed	Audit: fine as-is.
+2s5vxvtzad	ser bajo	to be low	reference	audit:reviewed	Audit: fine as-is.
+r2a8013xq8	ser una buena idea	to be a good idea	reference	audit:reviewed	Audit: fine as-is.
+9zwpouaz61	ser mejor [hacer algo]	had better [do something]	reference	audit:reviewed	Audit: fine as-is.
+rqwcklpzgf	ser cierto	to be true	reference	audit:reviewed	Audit: fine as-is.
+3tecsp0owz	¡Fuera!	Get out!	reference	audit:reviewed	Audit: fine as-is.
+fyziw2rb12	ser fuerte	to be strong	reference	audit:reviewed	Audit: fine as-is.
+6rm2kx5c4o	ser una mala idea	to be a bad idea	reference	audit:reviewed	Audit: fine as-is.
+g2cfgdbyi3	ser malo	to be bad/evil	reference	audit:reviewed	Audit: fine as-is.
+sdjzwrjzji	ser útil ==> ser el más útil	to be useful ==> to be the most useful	reference	audit:reviewed	Audit: fine as-is.
+4fpgdvwxzu	ser muy aficionado a [un equipo]	to be a big fan of [a team]	reference	audit:reviewed	Audit: fine as-is.
+9mvkkm6znw	ser dueño de [algo]	to own [something]	reference	audit:reviewed	Audit: fine as-is.
+thf9jt8qp9	ser propietario de [algo]	to own [something]	reference	audit:reviewed	Audit: fine as-is.
+zjoxpuz3cv	ser el blanco de [algo]	to be the target of [something]	reference	audit:reviewed	Audit: fine as-is.
+7kvliuznhm	[hacer algo] es [adjetivo]	[doing something] is [adjective]	supporting	audit:reviewed	Audit: fine as-is.
+w7w8ly9haz	ser ==> es	to be ==> is	supporting	audit:reviewed	Audit: fine as-is.
+0rv1zmpu5c	eres [algo]	you are [something]	core	audit:reviewed	Audit: promoted supporting->core — the "ser" person-conjugation paradigm (soy/eres/es/somos/son) had 2 forms already core and 3 undertiered for no apparent reason; matching the precedent set for do/does/did, all persons of such a fundamental verb should sit at the same tier.
+rf1kaz8lmr	es [algo]	is [something]	core	audit:reviewed	Audit: fine as-is.
+d3s5uo0ahx	somos [algo]	we are [something]	core	audit:reviewed	Audit: promoted supporting->core — the "ser" person-conjugation paradigm (soy/eres/es/somos/son) had 2 forms already core and 3 undertiered for no apparent reason; matching the precedent set for do/does/did, all persons of such a fundamental verb should sit at the same tier.
+0kqlhwpi3i	son [algo]	they are [something]	core	audit:reviewed	Audit: promoted supporting->core — the "ser" person-conjugation paradigm (soy/eres/es/somos/son) had 2 forms already core and 3 undertiered for no apparent reason; matching the precedent set for do/does/did, all persons of such a fundamental verb should sit at the same tier.
+iy31grrg95	soy de [un lugar]	I am from [a place]	core	audit:reviewed	Audit: fine as-is.
+6zy7d60lhd	eres de [un lugar]	you are from [a place]	core	audit:reviewed	Audit: promoted supporting->core — the "ser" person-conjugation paradigm (soy/eres/es/somos/son) had 2 forms already core and 3 undertiered for no apparent reason; matching the precedent set for do/does/did, all persons of such a fundamental verb should sit at the same tier.
+25qdaau47d	es de [un lugar]	is from [a place]	core	audit:reviewed	Audit: fine as-is.
+ht2nxiu107	somos de [un lugar]	we are from [a place]	core	audit:reviewed	Audit: promoted supporting->core — the "ser" person-conjugation paradigm (soy/eres/es/somos/son) had 2 forms already core and 3 undertiered for no apparent reason; matching the precedent set for do/does/did, all persons of such a fundamental verb should sit at the same tier.
+w8b4nwsykp	son de [un lugar]	they are from [a place]	core	audit:reviewed	Audit: promoted supporting->core — the "ser" person-conjugation paradigm (soy/eres/es/somos/son) had 2 forms already core and 3 undertiered for no apparent reason; matching the precedent set for do/does/did, all persons of such a fundamental verb should sit at the same tier.
