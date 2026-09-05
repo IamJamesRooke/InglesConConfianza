@@ -1,0 +1,47 @@
+w03s2v6sq1	conseguir que [algo] quede [hecho]	to get [something] done	reference	audit:reviewed	Audit: fine as-is.
+lzbsoi01yv	mandar [hacer algo]	to get [something] [done]	reference	audit:reviewed	Audit: fine as-is.
+f2zryn85p8	estar [haciendo algo]	to be [doing something]	core	audit:reviewed	Audit: fine as-is.
+5pzoflm3f4	[alguien] estaba [haciendo algo]	[somebody] was [doing something]	supporting	audit:reviewed	Audit: fine as-is.
+4uptsafx20	estoy [haciendo algo]	I am [doing something]	core	audit:reviewed	Audit: fine as-is.
+lr3gy47etf	querer saber si [alguien] [hace algo]	to want to know if [somebody] [does something]	supporting	audit:reviewed	Audit: fine as-is.
+dy3hauy404	querer saber por qué [alguien] no [hace algo]	to want to know why [somebody] doesn't [do something]	supporting	audit:reviewed	Audit: fine as-is.
+y2jk0txcur	decirle [algo] a [alguien]	to tell [somebody] [something]	core	audit:reviewed	Audit: fine as-is.
+2qfu76z9es	darle [algo] a [alguien]	to give [somebody] [something]	core	audit:reviewed	Audit: fine as-is.
+oi3ndfk0qf	contarle [una historia] a [alguien]	to tell [somebody] [a story]	supporting	audit:reviewed	Audit: fine as-is.
+cld2cnhb2w	pasarle [algo] a [alguien]	to pass [somebody] [something]	supporting	audit:reviewed	Audit: fine as-is.
+rwakqe331j	preguntarle [algo] a [alguien]	to ask [somebody] [something]	core	audit:reviewed	Audit: fine as-is.
+erwsyenslz	prestarle [algo] a [alguien]	to lend [somebody] [something]	supporting	audit:reviewed	Audit: fine as-is.
+xqrvzbv9iu	conseguirle [algo] a [alguien]	to get [somebody] [something]	supporting	audit:reviewed	Audit: fine as-is.
+u9mhk0r7wd	contarle [algo] a [alguien]	to tell [somebody] [something]	supporting	audit:reviewed	Audit: fine as-is.
+wii1500zn6	costarle [algo] a [alguien]	to cost [somebody] [something]	reference	audit:reviewed	Audit: fine as-is.
+d1bjmwehz9	deberle [algo] a [alguien]	to owe [somebody] [something]	supporting	audit:reviewed	Audit: fine as-is.
+cz1u7ybmyj	dejarle [algo] a [alguien]	to lend [somebody] [something]	reference	audit:reviewed	Audit: fine as-is.
+z3i6f8s1or	querer que [alguien] [haga algo]	to want [somebody] [to do something]	core	audit:reviewed	Audit: fine as-is.
+9h3jno3320	quisiera que [alguien] [hiciera algo]	would like [somebody] [to do something]	supporting	audit:reviewed	Audit: fine as-is.
+s85ujijsq3	enseñarle a [alguien] a [hacer algo]	to teach [somebody] to [do something]	supporting	audit:reviewed	Audit: fine as-is.
+de07i743wz	esperar a que [alguien] [haga algo]	to wait for [somebody] to [do something]	supporting	audit:reviewed	Audit: fine as-is.
+4x7v5qc7de	esperar que [alguien] [haga algo]	to expect [somebody] to [do something]	supporting	audit:reviewed	Audit: fine as-is.
+48tg24dwk2	hacer que [alguien] [haga algo]	to make [somebody] [do something]	supporting	audit:reviewed	Audit: fine as-is.
+cycrgcf78l	hacer [adjetivo] a [alguien]	to make [somebody] [adjective]	supporting	audit:reviewed	Audit: fine as-is.
+kai7mys6il	mandar a [alguien] [hacer algo]	to tell [somebody] to [do something]	core	audit:reviewed	Audit: fine as-is.
+ggm7pz4s38	mandar a [alguien] [hacer algo]	to order [somebody] to [do something]	reference	audit:reviewed	Audit: fine as-is.
+ai9e7ob627	mandar a [alguien] a [hacer algo]	to send [somebody] to [do something]	supporting	audit:reviewed	Audit: fine as-is.
+o8w71qqdrb	recordarle a [alguien] [hacer algo]	to remind [somebody] [to do something]	supporting	audit:reviewed	Audit: fine as-is.
+ptmw5b6egl	se supone que [alguien] [haga algo]	[somebody] is supposed to [do something]	supporting	audit:reviewed	Audit: fine as-is.
+fqbky20fmo	tocarle a [alguien] [hacer algo]	it's [somebody's] turn to [do something]	reference	audit:reviewed	Audit: fixed mistranslation — "tocarle a alguien" means "it's somebody's turn," not "is supposed to" (which duplicated the gloss of the unrelated sibling row ptmw5b6egl, "se supone que").	Te toca cerrar la puerta.	It's your turn to close the door.
+9vw489mt1w	ordenar que [alguien] [haga algo]	to order [somebody] [to do something]	reference	audit:reviewed	Audit: fine as-is.
+5dd27yg0l5	se necesita [algo]	[something] is needed	reference	audit:reviewed	Audit: fine as-is.
+q9ob63pkzh	se espera que [ocurra algo]	[something] is expected to [happen]	reference	audit:reviewed	Audit: fine as-is.
+lxhfegmolo	hacer falta	to be needed	reference	audit:reviewed	Audit: fine as-is.
+wbogepd2hz	llamarse [nombre]	to be called [name]	supporting	audit:reviewed	Audit: fine as-is.
+9ytu1uafba	dejar mucho que desear	to leave much to be desired	reference	audit:reviewed	Audit: fine as-is.
+s2s9tmt9pc	se supone que [algo]	[something] is believed to [be true]	reference	audit:reviewed	Audit: fine as-is.
+emji2mg22t	ser [hecho] por [alguien]	to be [done] by [somebody]	supporting	audit:reviewed	Audit: fine as-is.
+tw7e8xdtme	quedar [hecho]	to get [done]	supporting	audit:reviewed	Audit: fine as-is.
+hx7cadgvj9	va a haber [algo singular]	there is going to be [something singular]	supporting	audit:reviewed	Audit: fine as-is.
+2ml5xgxl0t	va a haber [cosas plurales]	there are going to be [plural things]	reference	audit:reviewed	Audit: fine as-is.
+38d1kfif1b	ir a [hacer algo]	to be going [to do something]	core	audit:reviewed	Audit: fine as-is.
+64xccqphml	ir a [hacer algo]	gonna [do something]	supporting	audit:reviewed	Audit: fine as-is.
+0lbant78ng	vas a [hacer algo]	you are going [to do something]	core	audit:reviewed	Audit: fine as-is.
+ohgxx8621i	vamos a [hacer algo]	we are going [to do something]	core	audit:reviewed	Audit: fine as-is.
+ym5bgyxy1x	van a [hacer algo]	they are going [to do something]	core	audit:reviewed	Audit: fine as-is.
