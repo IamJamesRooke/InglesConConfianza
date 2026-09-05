@@ -69757,11 +69757,11 @@
     },
     {
       "id": "g1rutwdphd",
-      "spanish": "pasado de arise",
+      "spanish": "[pasado] arise",
       "english": "arose",
       "example": {
-        "spanish": "El pasado de arise es arose.",
-        "english": "The past of arise is arose."
+        "spanish": "Surgió un problema durante la reunión.",
+        "english": "A problem arose during the meeting."
       },
       "collections": [
         "morphology:inflection",
@@ -69779,11 +69779,11 @@
     },
     {
       "id": "onvicr4rrh",
-      "spanish": "participio de arise",
+      "spanish": "[participio] arise",
       "english": "arisen",
       "example": {
-        "spanish": "El participio de arise es arisen.",
-        "english": "The past participle of arise is arisen."
+        "spanish": "Ha surgido un problema con el plan.",
+        "english": "A problem has arisen with the plan."
       },
       "collections": [
         "morphology:inflection",
@@ -69801,11 +69801,11 @@
     },
     {
       "id": "ni742ndzv7",
-      "spanish": "pasado de awake",
+      "spanish": "[pasado] awake",
       "english": "awoke",
       "example": {
-        "spanish": "El pasado de awake es awoke.",
-        "english": "The past of awake is awoke."
+        "spanish": "Me desperté temprano esta mañana.",
+        "english": "I awoke early this morning."
       },
       "collections": [
         "morphology:inflection",
@@ -69823,11 +69823,11 @@
     },
     {
       "id": "4hlh5r63mf",
-      "spanish": "pasado de awake",
+      "spanish": "[pasado] awake",
       "english": "awakened",
       "example": {
-        "spanish": "El pasado de awake es awakened.",
-        "english": "The past of awake is awakened."
+        "spanish": "Me desperté temprano esta mañana.",
+        "english": "I awakened early this morning."
       },
       "collections": [
         "morphology:inflection",
@@ -69844,11 +69844,11 @@
     },
     {
       "id": "bhw9cef29l",
-      "spanish": "participio de awake",
+      "spanish": "[participio] awake",
       "english": "awoken",
       "example": {
-        "spanish": "El participio de awake es awoken.",
-        "english": "The past participle of awake is awoken."
+        "spanish": "Se ha despertado varias veces esta noche.",
+        "english": "She has awoken several times tonight."
       },
       "collections": [
         "morphology:inflection",
@@ -69867,11 +69867,11 @@
     },
     {
       "id": "tod3dgfolj",
-      "spanish": "participio de awake",
+      "spanish": "[participio] awake",
       "english": "awakened",
       "example": {
-        "spanish": "El participio de awake es awakened.",
-        "english": "The past participle of awake is awakened."
+        "spanish": "Se ha despertado varias veces esta noche.",
+        "english": "She has awakened several times tonight."
       },
       "collections": [
         "morphology:inflection",
@@ -69888,11 +69888,11 @@
     },
     {
       "id": "srl7scbt4x",
-      "spanish": "pasado de be",
+      "spanish": "[pasado] be",
       "english": "was",
       "example": {
-        "spanish": "El pasado de be es was.",
-        "english": "The past of be is was."
+        "spanish": "Estaba cansado ayer.",
+        "english": "I was tired yesterday."
       },
       "collections": [
         "morphology:inflection",
@@ -69909,11 +69909,11 @@
     },
     {
       "id": "gtp0cakjyi",
-      "spanish": "pasado de be",
+      "spanish": "[pasado] be",
       "english": "were",
       "example": {
-        "spanish": "El pasado de be es were.",
-        "english": "The past of be is were."
+        "spanish": "Estaban ocupados anoche.",
+        "english": "They were busy last night."
       },
       "collections": [
         "morphology:inflection",
@@ -69930,11 +69930,11 @@
     },
     {
       "id": "sia3vl9zuh",
-      "spanish": "participio de be",
+      "spanish": "[participio] be",
       "english": "been",
       "example": {
-        "spanish": "El participio de be es been.",
-        "english": "The past participle of be is been."
+        "spanish": "He estado aquí antes.",
+        "english": "I have been here before."
       },
       "collections": [
         "morphology:inflection",
@@ -69951,11 +69951,11 @@
     },
     {
       "id": "284324xwnq",
-      "spanish": "pasado de bear",
+      "spanish": "[pasado] bear",
       "english": "bore",
       "example": {
-        "spanish": "El pasado de bear es bore.",
-        "english": "The past of bear is bore."
+        "spanish": "Ella soportó el dolor sin quejarse.",
+        "english": "She bore the pain without complaining."
       },
       "collections": [
         "morphology:inflection",
@@ -69972,11 +69972,11 @@
     },
     {
       "id": "39d040aumy",
-      "spanish": "participio de bear",
+      "spanish": "[participio] bear",
       "english": "borne",
       "example": {
-        "spanish": "El participio de bear es borne.",
-        "english": "The past participle of bear is borne."
+        "spanish": "Ha soportado mucho estrés este año.",
+        "english": "He has borne a lot of stress this year."
       },
       "collections": [
         "morphology:inflection",
@@ -69993,11 +69993,11 @@
     },
     {
       "id": "wu1iiygwy2",
-      "spanish": "participio de bear",
+      "spanish": "[participio] bear",
       "english": "born",
       "example": {
-        "spanish": "El participio de bear es born.",
-        "english": "The past participle of bear is born."
+        "spanish": "El bebé ha nacido esta mañana.",
+        "english": "The baby has been born this morning."
       },
       "collections": [
         "morphology:inflection",
@@ -70015,11 +70015,11 @@
     },
     {
       "id": "dj9dpa1ajh",
-      "spanish": "pasado de beat",
+      "spanish": "[pasado] beat",
       "english": "beat",
       "example": {
-        "spanish": "El pasado de beat es beat.",
-        "english": "The past of beat is beat."
+        "spanish": "Nuestro equipo venció al otro equipo anoche.",
+        "english": "Our team beat the other team last night."
       },
       "collections": [
         "morphology:inflection",
@@ -70036,11 +70036,11 @@
     },
     {
       "id": "3bzk962le1",
-      "spanish": "participio de beat",
+      "spanish": "[participio] beat",
       "english": "beaten",
       "example": {
-        "spanish": "El participio de beat es beaten.",
-        "english": "The past participle of beat is beaten."
+        "spanish": "Nuestro equipo ha vencido a tres equipos seguidos.",
+        "english": "Our team has beaten three teams in a row."
       },
       "collections": [
         "morphology:inflection",
@@ -70058,11 +70058,11 @@
     },
     {
       "id": "r78nprh6tx",
-      "spanish": "pasado de become",
+      "spanish": "[pasado] become",
       "english": "became",
       "example": {
-        "spanish": "El pasado de become es became.",
-        "english": "The past of become is became."
+        "spanish": "Se hizo médico después de muchos años de estudio.",
+        "english": "He became a doctor after many years of study."
       },
       "collections": [
         "morphology:inflection",
@@ -70080,11 +70080,11 @@
     },
     {
       "id": "3090ckncp7",
-      "spanish": "participio de become",
+      "spanish": "[participio] become",
       "english": "become",
       "example": {
-        "spanish": "El participio de become es become.",
-        "english": "The past participle of become is become."
+        "spanish": "Se ha convertido en un excelente médico.",
+        "english": "He has become an excellent doctor."
       },
       "collections": [
         "morphology:inflection",
@@ -70153,11 +70153,11 @@
     },
     {
       "id": "j6uswnegvw",
-      "spanish": "pasado de begin",
+      "spanish": "[pasado] begin",
       "english": "began",
       "example": {
-        "spanish": "El pasado de begin es began.",
-        "english": "The past of begin is began."
+        "spanish": "La película empezó a las ocho.",
+        "english": "The movie began at eight."
       },
       "collections": [
         "morphology:inflection",
@@ -70176,11 +70176,11 @@
     },
     {
       "id": "vlkscuc232",
-      "spanish": "participio de begin",
+      "spanish": "[participio] begin",
       "english": "begun",
       "example": {
-        "spanish": "El participio de begin es begun.",
-        "english": "The past participle of begin is begun."
+        "spanish": "La reunión ya ha comenzado.",
+        "english": "The meeting has already begun."
       },
       "collections": [
         "morphology:inflection",
@@ -70239,11 +70239,11 @@
     },
     {
       "id": "zwehatba0w",
-      "spanish": "pasado de bend",
+      "spanish": "[pasado] bend",
       "english": "bent",
       "example": {
-        "spanish": "El pasado de bend es bent.",
-        "english": "The past of bend is bent."
+        "spanish": "Dobló la varilla de metal con las manos.",
+        "english": "He bent the metal rod with his hands."
       },
       "collections": [
         "morphology:inflection",
@@ -70263,11 +70263,11 @@
     },
     {
       "id": "eangpz65s8",
-      "spanish": "participio de bend",
+      "spanish": "[participio] bend",
       "english": "bent",
       "example": {
-        "spanish": "El participio de bend es bent.",
-        "english": "The past participle of bend is bent."
+        "spanish": "Ha doblado la regla sin romperla.",
+        "english": "He has bent the ruler without breaking it."
       },
       "collections": [
         "morphology:inflection",
@@ -70431,11 +70431,11 @@
     },
     {
       "id": "mllnyzs7zr",
-      "spanish": "pasado de bet",
+      "spanish": "[pasado] bet",
       "english": "bet",
       "example": {
-        "spanish": "El pasado de bet es bet.",
-        "english": "The past of bet is bet."
+        "spanish": "Apostó veinte dólares en el partido.",
+        "english": "He bet twenty dollars on the game."
       },
       "collections": [
         "morphology:inflection",
@@ -70454,11 +70454,11 @@
     },
     {
       "id": "svtoxcx6b0",
-      "spanish": "participio de bet",
+      "spanish": "[participio] bet",
       "english": "bet",
       "example": {
-        "spanish": "El participio de bet es bet.",
-        "english": "The past participle of bet is bet."
+        "spanish": "Ha apostado dinero en cada partido esta temporada.",
+        "english": "He has bet money on every game this season."
       },
       "collections": [
         "morphology:inflection",
@@ -70477,11 +70477,11 @@
     },
     {
       "id": "4sk3bwdr8h",
-      "spanish": "pasado de bid",
+      "spanish": "[pasado] bid",
       "english": "bid",
       "example": {
-        "spanish": "El pasado de bid es bid.",
-        "english": "The past of bid is bid."
+        "spanish": "Ofreció cien dólares por la pintura en la subasta.",
+        "english": "She bid a hundred dollars for the painting at the auction."
       },
       "collections": [
         "morphology:inflection",
@@ -70498,11 +70498,11 @@
     },
     {
       "id": "0oh5tfeycq",
-      "spanish": "participio de bid",
+      "spanish": "[participio] bid",
       "english": "bid",
       "example": {
-        "spanish": "El participio de bid es bid.",
-        "english": "The past participle of bid is bid."
+        "spanish": "Ha ofrecido el precio más alto en la subasta.",
+        "english": "She has bid the highest price at the auction."
       },
       "collections": [
         "morphology:inflection",
@@ -70519,11 +70519,11 @@
     },
     {
       "id": "oby9aziqxu",
-      "spanish": "participio de bid",
+      "spanish": "[participio] bid",
       "english": "bidden",
       "example": {
-        "spanish": "El participio de bid es bidden.",
-        "english": "The past participle of bid is bidden."
+        "spanish": "Ha hecho todo lo que le han ordenado.",
+        "english": "He has done everything he was bidden to do."
       },
       "collections": [
         "morphology:inflection",
@@ -70541,11 +70541,11 @@
     },
     {
       "id": "uf2e7r7bol",
-      "spanish": "pasado de bind",
+      "spanish": "[pasado] bind",
       "english": "bound",
       "example": {
-        "spanish": "El pasado de bind es bound.",
-        "english": "The past of bind is bound."
+        "spanish": "El contrato lo obligó a pagar la deuda.",
+        "english": "The contract bound him to pay the debt."
       },
       "collections": [
         "morphology:inflection",
@@ -70565,11 +70565,11 @@
     },
     {
       "id": "6c0uxx7uu9",
-      "spanish": "participio de bind",
+      "spanish": "[participio] bind",
       "english": "bound",
       "example": {
-        "spanish": "El participio de bind es bound.",
-        "english": "The past participle of bind is bound."
+        "spanish": "El acuerdo lo ha obligado a quedarse.",
+        "english": "The agreement has bound him to stay."
       },
       "collections": [
         "morphology:inflection",
@@ -70589,11 +70589,11 @@
     },
     {
       "id": "pvjomq5jkz",
-      "spanish": "pasado de bite",
+      "spanish": "[pasado] bite",
       "english": "bit",
       "example": {
-        "spanish": "El pasado de bite es bit.",
-        "english": "The past of bite is bit."
+        "spanish": "El perro me mordió la mano.",
+        "english": "The dog bit my hand."
       },
       "collections": [
         "morphology:inflection",
@@ -70611,11 +70611,11 @@
     },
     {
       "id": "hqskibtcl1",
-      "spanish": "participio de bite",
+      "spanish": "[participio] bite",
       "english": "bitten",
       "example": {
-        "spanish": "El participio de bite es bitten.",
-        "english": "The past participle of bite is bitten."
+        "spanish": "El perro ha mordido a alguien antes.",
+        "english": "The dog has bitten someone before."
       },
       "collections": [
         "morphology:inflection",
@@ -70634,11 +70634,11 @@
     },
     {
       "id": "kosp2rzf7h",
-      "spanish": "pasado de bleed",
+      "spanish": "[pasado] bleed",
       "english": "bled",
       "example": {
-        "spanish": "El pasado de bleed es bled.",
-        "english": "The past of bleed is bled."
+        "spanish": "La herida sangró durante varios minutos.",
+        "english": "The wound bled for several minutes."
       },
       "collections": [
         "morphology:inflection",
@@ -70658,11 +70658,11 @@
     },
     {
       "id": "qn1ohmgeli",
-      "spanish": "participio de bleed",
+      "spanish": "[participio] bleed",
       "english": "bled",
       "example": {
-        "spanish": "El participio de bleed es bled.",
-        "english": "The past participle of bleed is bled."
+        "spanish": "La herida ha sangrado toda la mañana.",
+        "english": "The wound has bled all morning."
       },
       "collections": [
         "morphology:inflection",
@@ -70682,11 +70682,11 @@
     },
     {
       "id": "yw0r4qe03n",
-      "spanish": "pasado de blow",
+      "spanish": "[pasado] blow",
       "english": "blew",
       "example": {
-        "spanish": "El pasado de blow es blew.",
-        "english": "The past of blow is blew."
+        "spanish": "El viento sopló fuerte toda la noche.",
+        "english": "The wind blew hard all night."
       },
       "collections": [
         "morphology:inflection",
@@ -70704,11 +70704,11 @@
     },
     {
       "id": "d1hnk98p24",
-      "spanish": "participio de blow",
+      "spanish": "[participio] blow",
       "english": "blown",
       "example": {
-        "spanish": "El participio de blow es blown.",
-        "english": "The past participle of blow is blown."
+        "spanish": "El viento ha soplado fuerte todo el día.",
+        "english": "The wind has blown hard all day."
       },
       "collections": [
         "morphology:inflection",
@@ -70727,11 +70727,11 @@
     },
     {
       "id": "8xe7hazr9w",
-      "spanish": "pasado de break",
+      "spanish": "[pasado] break",
       "english": "broke",
       "example": {
-        "spanish": "El pasado de break es broke.",
-        "english": "The past of break is broke."
+        "spanish": "Se me rompió el teléfono cuando se cayó.",
+        "english": "My phone broke when it fell."
       },
       "collections": [
         "morphology:inflection",
@@ -70749,11 +70749,11 @@
     },
     {
       "id": "6ftt9jzrxo",
-      "spanish": "participio de break",
+      "spanish": "[participio] break",
       "english": "broken",
       "example": {
-        "spanish": "El participio de break es broken.",
-        "english": "The past participle of break is broken."
+        "spanish": "Se le ha roto el teléfono dos veces.",
+        "english": "Her phone has broken twice."
       },
       "collections": [
         "morphology:inflection",
@@ -70772,11 +70772,11 @@
     },
     {
       "id": "1w4k9d2e4d",
-      "spanish": "pasado de breed",
+      "spanish": "[pasado] breed",
       "english": "bred",
       "example": {
-        "spanish": "El pasado de breed es bred.",
-        "english": "The past of breed is bred."
+        "spanish": "Esa granja crió caballos durante generaciones.",
+        "english": "That farm bred horses for generations."
       },
       "collections": [
         "morphology:inflection",
@@ -70796,11 +70796,11 @@
     },
     {
       "id": "om096ydns5",
-      "spanish": "participio de breed",
+      "spanish": "[participio] breed",
       "english": "bred",
       "example": {
-        "spanish": "El participio de breed es bred.",
-        "english": "The past participle of breed is bred."
+        "spanish": "Esa granja ha criado caballos por generaciones.",
+        "english": "That farm has bred horses for generations."
       },
       "collections": [
         "morphology:inflection",
@@ -70820,11 +70820,11 @@
     },
     {
       "id": "45hq45uq4y",
-      "spanish": "pasado de bring",
+      "spanish": "[pasado] bring",
       "english": "brought",
       "example": {
-        "spanish": "El pasado de bring es brought.",
-        "english": "The past of bring is brought."
+        "spanish": "Ella trajo el postre a la fiesta.",
+        "english": "She brought dessert to the party."
       },
       "collections": [
         "morphology:inflection",
@@ -70844,11 +70844,11 @@
     },
     {
       "id": "yktvtrhk80",
-      "spanish": "participio de bring",
+      "spanish": "[participio] bring",
       "english": "brought",
       "example": {
-        "spanish": "El participio de bring es brought.",
-        "english": "The past participle of bring is brought."
+        "spanish": "Ella ha traído comida a cada reunión.",
+        "english": "She has brought food to every meeting."
       },
       "collections": [
         "morphology:inflection",
@@ -70868,11 +70868,11 @@
     },
     {
       "id": "p85salreqo",
-      "spanish": "pasado de broadcast",
+      "spanish": "[pasado] broadcast",
       "english": "broadcast",
       "example": {
-        "spanish": "El pasado de broadcast es broadcast.",
-        "english": "The past of broadcast is broadcast."
+        "spanish": "El canal transmitió el partido en vivo.",
+        "english": "The channel broadcast the game live."
       },
       "collections": [
         "morphology:inflection",
@@ -70891,11 +70891,11 @@
     },
     {
       "id": "z3kamqz76n",
-      "spanish": "participio de broadcast",
+      "spanish": "[participio] broadcast",
       "english": "broadcast",
       "example": {
-        "spanish": "El participio de broadcast es broadcast.",
-        "english": "The past participle of broadcast is broadcast."
+        "spanish": "El canal ha transmitido el evento en vivo.",
+        "english": "The channel has broadcast the event live."
       },
       "collections": [
         "morphology:inflection",
@@ -70914,11 +70914,11 @@
     },
     {
       "id": "4i10zqiqjp",
-      "spanish": "pasado de build",
+      "spanish": "[pasado] build",
       "english": "built",
       "example": {
-        "spanish": "El pasado de build es built.",
-        "english": "The past of build is built."
+        "spanish": "Construyeron la casa en seis meses.",
+        "english": "They built the house in six months."
       },
       "collections": [
         "morphology:inflection",
@@ -70938,11 +70938,11 @@
     },
     {
       "id": "xkyb2vua4e",
-      "spanish": "participio de build",
+      "spanish": "[participio] build",
       "english": "built",
       "example": {
-        "spanish": "El participio de build es built.",
-        "english": "The past participle of build is built."
+        "spanish": "Han construido tres casas este año.",
+        "english": "They have built three houses this year."
       },
       "collections": [
         "morphology:inflection",
@@ -70962,11 +70962,11 @@
     },
     {
       "id": "4ou8sxbjxk",
-      "spanish": "pasado de burn",
+      "spanish": "[pasado] burn",
       "english": "burned",
       "example": {
-        "spanish": "El pasado de burn es burned.",
-        "english": "The past of burn is burned."
+        "spanish": "Se le quemó la tostada esta mañana.",
+        "english": "Her toast burned this morning."
       },
       "collections": [
         "morphology:inflection",
@@ -70984,11 +70984,11 @@
     },
     {
       "id": "q5sk9vcx1o",
-      "spanish": "pasado de burn",
+      "spanish": "[pasado] burn",
       "english": "burnt",
       "example": {
-        "spanish": "El pasado de burn es burnt.",
-        "english": "The past of burn is burnt."
+        "spanish": "Se le quemó la tostada esta mañana.",
+        "english": "Her toast burnt this morning."
       },
       "collections": [
         "morphology:inflection",
@@ -71006,11 +71006,11 @@
     },
     {
       "id": "w5jumzobua",
-      "spanish": "participio de burn",
+      "spanish": "[participio] burn",
       "english": "burned",
       "example": {
-        "spanish": "El participio de burn es burned.",
-        "english": "The past participle of burn is burned."
+        "spanish": "Se ha quemado la cena otra vez.",
+        "english": "Dinner has burned again."
       },
       "collections": [
         "morphology:inflection",
@@ -71028,11 +71028,11 @@
     },
     {
       "id": "f6oadawhhp",
-      "spanish": "participio de burn",
+      "spanish": "[participio] burn",
       "english": "burnt",
       "example": {
-        "spanish": "El participio de burn es burnt.",
-        "english": "The past participle of burn is burnt."
+        "spanish": "Se ha quemado la cena otra vez.",
+        "english": "Dinner has burnt again."
       },
       "collections": [
         "morphology:inflection",
@@ -71050,11 +71050,11 @@
     },
     {
       "id": "dfzbacmzy5",
-      "spanish": "pasado de burst",
+      "spanish": "[pasado] burst",
       "english": "burst",
       "example": {
-        "spanish": "El pasado de burst es burst.",
-        "english": "The past of burst is burst."
+        "spanish": "El globo explotó de repente.",
+        "english": "The balloon burst suddenly."
       },
       "collections": [
         "morphology:inflection",
@@ -71073,11 +71073,11 @@
     },
     {
       "id": "pnwix23mmu",
-      "spanish": "participio de burst",
+      "spanish": "[participio] burst",
       "english": "burst",
       "example": {
-        "spanish": "El participio de burst es burst.",
-        "english": "The past participle of burst is burst."
+        "spanish": "La tubería se ha reventado dos veces este mes.",
+        "english": "The pipe has burst twice this month."
       },
       "collections": [
         "morphology:inflection",
@@ -71096,11 +71096,11 @@
     },
     {
       "id": "rugw6w9oay",
-      "spanish": "pasado de buy",
+      "spanish": "[pasado] buy",
       "english": "bought",
       "example": {
-        "spanish": "El pasado de buy es bought.",
-        "english": "The past of buy is bought."
+        "spanish": "Compré una casa el año pasado.",
+        "english": "I bought a house last year."
       },
       "collections": [
         "morphology:inflection",
@@ -71120,11 +71120,11 @@
     },
     {
       "id": "0j5tjt1o7j",
-      "spanish": "participio de buy",
+      "spanish": "[participio] buy",
       "english": "bought",
       "example": {
-        "spanish": "El participio de buy es bought.",
-        "english": "The past participle of buy is bought."
+        "spanish": "He comprado una casa este año.",
+        "english": "I have bought a house this year."
       },
       "collections": [
         "morphology:inflection",
@@ -71144,11 +71144,11 @@
     },
     {
       "id": "iiysx4yx7o",
-      "spanish": "pasado de can",
+      "spanish": "[pasado] can",
       "english": "could",
       "example": {
-        "spanish": "El pasado de can es could.",
-        "english": "The past of can is could."
+        "spanish": "Podía nadar muy bien de niño.",
+        "english": "He could swim very well as a child."
       },
       "collections": [
         "morphology:inflection",
@@ -71167,11 +71167,11 @@
     },
     {
       "id": "hub84vedvz",
-      "spanish": "pasado de cast",
+      "spanish": "[pasado] cast",
       "english": "cast",
       "example": {
-        "spanish": "El pasado de cast es cast.",
-        "english": "The past of cast is cast."
+        "spanish": "El pescador lanzó el anzuelo al río.",
+        "english": "The fisherman cast his line into the river."
       },
       "collections": [
         "morphology:inflection",
@@ -71190,11 +71190,11 @@
     },
     {
       "id": "iwllkmo2pg",
-      "spanish": "participio de cast",
+      "spanish": "[participio] cast",
       "english": "cast",
       "example": {
-        "spanish": "El participio de cast es cast.",
-        "english": "The past participle of cast is cast."
+        "spanish": "Ha lanzado el anzuelo varias veces sin suerte.",
+        "english": "He has cast his line several times with no luck."
       },
       "collections": [
         "morphology:inflection",
@@ -71213,11 +71213,11 @@
     },
     {
       "id": "gl1iyxy3yl",
-      "spanish": "pasado de catch",
+      "spanish": "[pasado] catch",
       "english": "caught",
       "example": {
-        "spanish": "El pasado de catch es caught.",
-        "english": "The past of catch is caught."
+        "spanish": "Atrapó la pelota con una mano.",
+        "english": "He caught the ball with one hand."
       },
       "collections": [
         "morphology:inflection",
@@ -71237,11 +71237,11 @@
     },
     {
       "id": "tewh0c95pd",
-      "spanish": "participio de catch",
+      "spanish": "[participio] catch",
       "english": "caught",
       "example": {
-        "spanish": "El participio de catch es caught.",
-        "english": "The past participle of catch is caught."
+        "spanish": "Ha atrapado cada pelota que le lanzaron.",
+        "english": "He has caught every ball thrown to him."
       },
       "collections": [
         "morphology:inflection",
@@ -71261,11 +71261,11 @@
     },
     {
       "id": "w5f9hb62bj",
-      "spanish": "pasado de choose",
+      "spanish": "[pasado] choose",
       "english": "chose",
       "example": {
-        "spanish": "El pasado de choose es chose.",
-        "english": "The past of choose is chose."
+        "spanish": "Ella eligió el vestido azul.",
+        "english": "She chose the blue dress."
       },
       "collections": [
         "morphology:inflection",
@@ -71283,11 +71283,11 @@
     },
     {
       "id": "1yx8y3hhk6",
-      "spanish": "participio de choose",
+      "spanish": "[participio] choose",
       "english": "chosen",
       "example": {
-        "spanish": "El participio de choose es chosen.",
-        "english": "The past participle of choose is chosen."
+        "spanish": "Ya ha elegido el vestido para la boda.",
+        "english": "She has already chosen her dress for the wedding."
       },
       "collections": [
         "morphology:inflection",
@@ -71438,11 +71438,11 @@
     },
     {
       "id": "2gmqjxemef",
-      "spanish": "pasado de cling",
+      "spanish": "[pasado] cling",
       "english": "clung",
       "example": {
-        "spanish": "El pasado de cling es clung.",
-        "english": "The past of cling is clung."
+        "spanish": "El niño se aferró a su madre con miedo.",
+        "english": "The child clung to his mother in fear."
       },
       "collections": [
         "morphology:inflection",
@@ -71461,11 +71461,11 @@
     },
     {
       "id": "xmwndx122c",
-      "spanish": "participio de cling",
+      "spanish": "[participio] cling",
       "english": "clung",
       "example": {
-        "spanish": "El participio de cling es clung.",
-        "english": "The past participle of cling is clung."
+        "spanish": "El niño se ha aferrado a esa manta desde bebé.",
+        "english": "The child has clung to that blanket since he was a baby."
       },
       "collections": [
         "morphology:inflection",
@@ -71484,11 +71484,11 @@
     },
     {
       "id": "spsm9r8vyb",
-      "spanish": "pasado de clothe",
+      "spanish": "[pasado] clothe",
       "english": "clothed",
       "example": {
-        "spanish": "El pasado de clothe es clothed.",
-        "english": "The past of clothe is clothed."
+        "spanish": "Los vistió con ropa abrigada para el invierno.",
+        "english": "She clothed them in warm clothes for winter."
       },
       "collections": [
         "morphology:inflection",
@@ -71506,11 +71506,11 @@
     },
     {
       "id": "2ovfvhr2o2",
-      "spanish": "pasado de clothe",
+      "spanish": "[pasado] clothe",
       "english": "clad",
       "example": {
-        "spanish": "El pasado de clothe es clad.",
-        "english": "The past of clothe is clad."
+        "spanish": "Los vistió con ropa abrigada para el invierno.",
+        "english": "She clad them in warm clothes for winter."
       },
       "collections": [
         "morphology:inflection",
@@ -71528,11 +71528,11 @@
     },
     {
       "id": "xpnywfr939",
-      "spanish": "participio de clothe",
+      "spanish": "[participio] clothe",
       "english": "clothed",
       "example": {
-        "spanish": "El participio de clothe es clothed.",
-        "english": "The past participle of clothe is clothed."
+        "spanish": "Los ha vestido con ropa nueva para el invierno.",
+        "english": "She has clothed them in new clothes for winter."
       },
       "collections": [
         "morphology:inflection",
@@ -71550,11 +71550,11 @@
     },
     {
       "id": "b1c9f96cqx",
-      "spanish": "participio de clothe",
+      "spanish": "[participio] clothe",
       "english": "clad",
       "example": {
-        "spanish": "El participio de clothe es clad.",
-        "english": "The past participle of clothe is clad."
+        "spanish": "Los ha vestido con ropa nueva para el invierno.",
+        "english": "She has clad them in new clothes for winter."
       },
       "collections": [
         "morphology:inflection",
@@ -71572,11 +71572,11 @@
     },
     {
       "id": "lbukbw3o1p",
-      "spanish": "pasado de come",
+      "spanish": "[pasado] come",
       "english": "came",
       "example": {
-        "spanish": "El pasado de come es came.",
-        "english": "The past of come is came."
+        "spanish": "Ella vino a la fiesta tarde.",
+        "english": "She came to the party late."
       },
       "collections": [
         "morphology:inflection",
@@ -71594,11 +71594,11 @@
     },
     {
       "id": "xdkhmkos1t",
-      "spanish": "participio de come",
+      "spanish": "[participio] come",
       "english": "come",
       "example": {
-        "spanish": "El participio de come es come.",
-        "english": "The past participle of come is come."
+        "spanish": "Ella ha venido a esta cafetería muchas veces.",
+        "english": "She has come to this café many times."
       },
       "collections": [
         "morphology:inflection",
@@ -71616,11 +71616,11 @@
     },
     {
       "id": "zfuqam5zu5",
-      "spanish": "pasado de cost",
+      "spanish": "[pasado] cost",
       "english": "cost",
       "example": {
-        "spanish": "El pasado de cost es cost.",
-        "english": "The past of cost is cost."
+        "spanish": "El viaje costó más de lo esperado.",
+        "english": "The trip cost more than expected."
       },
       "collections": [
         "morphology:inflection",
@@ -71639,11 +71639,11 @@
     },
     {
       "id": "i8kazlyawi",
-      "spanish": "participio de cost",
+      "spanish": "[participio] cost",
       "english": "cost",
       "example": {
-        "spanish": "El participio de cost es cost.",
-        "english": "The past participle of cost is cost."
+        "spanish": "El proyecto ha costado más de lo esperado.",
+        "english": "The project has cost more than expected."
       },
       "collections": [
         "morphology:inflection",
@@ -71662,11 +71662,11 @@
     },
     {
       "id": "okfppdbnlq",
-      "spanish": "pasado de creep",
+      "spanish": "[pasado] creep",
       "english": "crept",
       "example": {
-        "spanish": "El pasado de creep es crept.",
-        "english": "The past of creep is crept."
+        "spanish": "El gato se arrastró silenciosamente hacia el pájaro.",
+        "english": "The cat crept quietly toward the bird."
       },
       "collections": [
         "morphology:inflection",
@@ -71686,11 +71686,11 @@
     },
     {
       "id": "ptwl0aih6e",
-      "spanish": "participio de creep",
+      "spanish": "[participio] creep",
       "english": "crept",
       "example": {
-        "spanish": "El participio de creep es crept.",
-        "english": "The past participle of creep is crept."
+        "spanish": "El gato se ha arrastrado hacia el sofá.",
+        "english": "The cat has crept toward the couch."
       },
       "collections": [
         "morphology:inflection",
@@ -71759,11 +71759,11 @@
     },
     {
       "id": "no7v9kkvhq",
-      "spanish": "pasado de cut",
+      "spanish": "[pasado] cut",
       "english": "cut",
       "example": {
-        "spanish": "El pasado de cut es cut.",
-        "english": "The past of cut is cut."
+        "spanish": "Se cortó el dedo mientras cocinaba.",
+        "english": "She cut her finger while cooking."
       },
       "collections": [
         "morphology:inflection",
@@ -71782,11 +71782,11 @@
     },
     {
       "id": "5rcenaxbna",
-      "spanish": "participio de cut",
+      "spanish": "[participio] cut",
       "english": "cut",
       "example": {
-        "spanish": "El participio de cut es cut.",
-        "english": "The past participle of cut is cut."
+        "spanish": "Se ha cortado el dedo dos veces esta semana.",
+        "english": "She has cut her finger twice this week."
       },
       "collections": [
         "morphology:inflection",
@@ -71805,11 +71805,11 @@
     },
     {
       "id": "79go7y7jek",
-      "spanish": "pasado de deal",
+      "spanish": "[pasado] deal",
       "english": "dealt",
       "example": {
-        "spanish": "El pasado de deal es dealt.",
-        "english": "The past of deal is dealt."
+        "spanish": "Repartió las cartas a cada jugador.",
+        "english": "He dealt the cards to each player."
       },
       "collections": [
         "morphology:inflection",
@@ -71829,11 +71829,11 @@
     },
     {
       "id": "t0j14amubg",
-      "spanish": "participio de deal",
+      "spanish": "[participio] deal",
       "english": "dealt",
       "example": {
-        "spanish": "El participio de deal es dealt.",
-        "english": "The past participle of deal is dealt."
+        "spanish": "Ha repartido las cartas en cada ronda.",
+        "english": "He has dealt the cards in every round."
       },
       "collections": [
         "morphology:inflection",
@@ -71853,11 +71853,11 @@
     },
     {
       "id": "0nan92o13z",
-      "spanish": "pasado de dig",
+      "spanish": "[pasado] dig",
       "english": "dug",
       "example": {
-        "spanish": "El pasado de dig es dug.",
-        "english": "The past of dig is dug."
+        "spanish": "Cavó un hoyo profundo en el jardín.",
+        "english": "He dug a deep hole in the garden."
       },
       "collections": [
         "morphology:inflection",
@@ -71875,11 +71875,11 @@
     },
     {
       "id": "1yfqckbbl1",
-      "spanish": "participio de dig",
+      "spanish": "[participio] dig",
       "english": "dug",
       "example": {
-        "spanish": "El participio de dig es dug.",
-        "english": "The past participle of dig is dug."
+        "spanish": "Ha cavado varios hoyos en el jardín.",
+        "english": "He has dug several holes in the garden."
       },
       "collections": [
         "morphology:inflection",
@@ -71897,11 +71897,11 @@
     },
     {
       "id": "msi48xyv0q",
-      "spanish": "pasado de dive",
+      "spanish": "[pasado] dive",
       "english": "dived",
       "example": {
-        "spanish": "El pasado de dive es dived.",
-        "english": "The past of dive is dived."
+        "spanish": "Se zambulló en la piscina sin dudarlo.",
+        "english": "She dived into the pool without hesitating."
       },
       "collections": [
         "morphology:inflection",
@@ -71918,11 +71918,11 @@
     },
     {
       "id": "eydd859tgk",
-      "spanish": "pasado de dive",
+      "spanish": "[pasado] dive",
       "english": "dove",
       "example": {
-        "spanish": "El pasado de dive es dove.",
-        "english": "The past of dive is dove."
+        "spanish": "Se zambulló en la piscina sin dudarlo.",
+        "english": "She dove into the pool without hesitating."
       },
       "collections": [
         "morphology:inflection",
@@ -71939,11 +71939,11 @@
     },
     {
       "id": "gkinlwurxm",
-      "spanish": "participio de dive",
+      "spanish": "[participio] dive",
       "english": "dived",
       "example": {
-        "spanish": "El participio de dive es dived.",
-        "english": "The past participle of dive is dived."
+        "spanish": "Se ha zambullido en esa piscina muchas veces.",
+        "english": "She has dived into that pool many times."
       },
       "collections": [
         "morphology:inflection",
@@ -71960,11 +71960,11 @@
     },
     {
       "id": "9nyqu8uehx",
-      "spanish": "pasado de do",
+      "spanish": "[pasado] do",
       "english": "did",
       "example": {
-        "spanish": "El pasado de do es did.",
-        "english": "The past of do is did."
+        "spanish": "Hizo la tarea antes de cenar.",
+        "english": "He did his homework before dinner."
       },
       "collections": [
         "morphology:inflection",
@@ -71983,11 +71983,11 @@
     },
     {
       "id": "m2led45ghj",
-      "spanish": "participio de do",
+      "spanish": "[participio] do",
       "english": "done",
       "example": {
-        "spanish": "El participio de do es done.",
-        "english": "The past participle of do is done."
+        "spanish": "Ya ha hecho toda su tarea.",
+        "english": "He has already done all his homework."
       },
       "collections": [
         "morphology:inflection",
@@ -72006,11 +72006,11 @@
     },
     {
       "id": "mll3xsnqqe",
-      "spanish": "pasado de draw",
+      "spanish": "[pasado] draw",
       "english": "drew",
       "example": {
-        "spanish": "El pasado de draw es drew.",
-        "english": "The past of draw is drew."
+        "spanish": "Ella dibujó un mapa del pueblo.",
+        "english": "She drew a map of the town."
       },
       "collections": [
         "morphology:inflection",
@@ -72028,11 +72028,11 @@
     },
     {
       "id": "4dqnbf4tkp",
-      "spanish": "participio de draw",
+      "spanish": "[participio] draw",
       "english": "drawn",
       "example": {
-        "spanish": "El participio de draw es drawn.",
-        "english": "The past participle of draw is drawn."
+        "spanish": "Ella ha dibujado ese mapa varias veces.",
+        "english": "She has drawn that map several times."
       },
       "collections": [
         "morphology:inflection",
@@ -72050,11 +72050,11 @@
     },
     {
       "id": "y1b6i0a0r9",
-      "spanish": "pasado de dream",
+      "spanish": "[pasado] dream",
       "english": "dreamed",
       "example": {
-        "spanish": "El pasado de dream es dreamed.",
-        "english": "The past of dream is dreamed."
+        "spanish": "Anoche soñé con volar.",
+        "english": "I dreamed about flying last night."
       },
       "collections": [
         "morphology:inflection",
@@ -72072,11 +72072,11 @@
     },
     {
       "id": "t6n1a8sts2",
-      "spanish": "pasado de dream",
+      "spanish": "[pasado] dream",
       "english": "dreamt",
       "example": {
-        "spanish": "El pasado de dream es dreamt.",
-        "english": "The past of dream is dreamt."
+        "spanish": "Anoche soñé con volar.",
+        "english": "I dreamt about flying last night."
       },
       "collections": [
         "morphology:inflection",
@@ -72094,11 +72094,11 @@
     },
     {
       "id": "in3djophq4",
-      "spanish": "participio de dream",
+      "spanish": "[participio] dream",
       "english": "dreamed",
       "example": {
-        "spanish": "El participio de dream es dreamed.",
-        "english": "The past participle of dream is dreamed."
+        "spanish": "He soñado con ese lugar antes.",
+        "english": "I have dreamed about that place before."
       },
       "collections": [
         "morphology:inflection",
@@ -72116,11 +72116,11 @@
     },
     {
       "id": "1z3vqrnpos",
-      "spanish": "participio de dream",
+      "spanish": "[participio] dream",
       "english": "dreamt",
       "example": {
-        "spanish": "El participio de dream es dreamt.",
-        "english": "The past participle of dream is dreamt."
+        "spanish": "He soñado con ese lugar antes.",
+        "english": "I have dreamt about that place before."
       },
       "collections": [
         "morphology:inflection",
@@ -72138,11 +72138,11 @@
     },
     {
       "id": "r2gyv054my",
-      "spanish": "pasado de drink",
+      "spanish": "[pasado] drink",
       "english": "drank",
       "example": {
-        "spanish": "El pasado de drink es drank.",
-        "english": "The past of drink is drank."
+        "spanish": "Se bebió todo el café de un trago.",
+        "english": "He drank the whole coffee in one gulp."
       },
       "collections": [
         "morphology:inflection",
@@ -72161,11 +72161,11 @@
     },
     {
       "id": "hx302e3tcv",
-      "spanish": "participio de drink",
+      "spanish": "[participio] drink",
       "english": "drunk",
       "example": {
-        "spanish": "El participio de drink es drunk.",
-        "english": "The past participle of drink is drunk."
+        "spanish": "Se ha bebido tres tazas de café hoy.",
+        "english": "He has drunk three cups of coffee today."
       },
       "collections": [
         "morphology:inflection",
@@ -72184,11 +72184,11 @@
     },
     {
       "id": "vbydhdzdnz",
-      "spanish": "pasado de drive",
+      "spanish": "[pasado] drive",
       "english": "drove",
       "example": {
-        "spanish": "El pasado de drive es drove.",
-        "english": "The past of drive is drove."
+        "spanish": "Manejó tres horas para llegar a casa.",
+        "english": "He drove for three hours to get home."
       },
       "collections": [
         "morphology:inflection",
@@ -72206,11 +72206,11 @@
     },
     {
       "id": "63bn9ar4z7",
-      "spanish": "participio de drive",
+      "spanish": "[participio] drive",
       "english": "driven",
       "example": {
-        "spanish": "El participio de drive es driven.",
-        "english": "The past participle of drive is driven."
+        "spanish": "Ha manejado por todo el país.",
+        "english": "He has driven all over the country."
       },
       "collections": [
         "morphology:inflection",
@@ -72298,11 +72298,11 @@
     },
     {
       "id": "nds3rzq7f8",
-      "spanish": "pasado de eat",
+      "spanish": "[pasado] eat",
       "english": "ate",
       "example": {
-        "spanish": "El pasado de eat es ate.",
-        "english": "The past of eat is ate."
+        "spanish": "Comí pasta para el almuerzo.",
+        "english": "I ate pasta for lunch."
       },
       "collections": [
         "morphology:inflection",
@@ -72319,11 +72319,11 @@
     },
     {
       "id": "l6tfbrakge",
-      "spanish": "participio de eat",
+      "spanish": "[participio] eat",
       "english": "eaten",
       "example": {
-        "spanish": "El participio de eat es eaten.",
-        "english": "The past participle of eat is eaten."
+        "spanish": "He comido en ese restaurante antes.",
+        "english": "I have eaten at that restaurant before."
       },
       "collections": [
         "morphology:inflection",
@@ -72341,11 +72341,11 @@
     },
     {
       "id": "tmxr4tm85t",
-      "spanish": "pasado de fall",
+      "spanish": "[pasado] fall",
       "english": "fell",
       "example": {
-        "spanish": "El pasado de fall es fell.",
-        "english": "The past of fall is fell."
+        "spanish": "Se cayó por las escaleras.",
+        "english": "She fell down the stairs."
       },
       "collections": [
         "morphology:inflection",
@@ -72362,11 +72362,11 @@
     },
     {
       "id": "6v3xi2a089",
-      "spanish": "participio de fall",
+      "spanish": "[participio] fall",
       "english": "fallen",
       "example": {
-        "spanish": "El participio de fall es fallen.",
-        "english": "The past participle of fall is fallen."
+        "spanish": "Se ha caído de esa bicicleta varias veces.",
+        "english": "She has fallen off that bike several times."
       },
       "collections": [
         "morphology:inflection",
@@ -72383,11 +72383,11 @@
     },
     {
       "id": "lqkjvqvga0",
-      "spanish": "pasado de feed",
+      "spanish": "[pasado] feed",
       "english": "fed",
       "example": {
-        "spanish": "El pasado de feed es fed.",
-        "english": "The past of feed is fed."
+        "spanish": "Alimentó a los perros antes de salir.",
+        "english": "He fed the dogs before leaving."
       },
       "collections": [
         "morphology:inflection",
@@ -72407,11 +72407,11 @@
     },
     {
       "id": "9khmf2u9eb",
-      "spanish": "participio de feed",
+      "spanish": "[participio] feed",
       "english": "fed",
       "example": {
-        "spanish": "El participio de feed es fed.",
-        "english": "The past participle of feed is fed."
+        "spanish": "Ha alimentado a esos perros desde que eran cachorros.",
+        "english": "He has fed those dogs since they were puppies."
       },
       "collections": [
         "morphology:inflection",
@@ -72431,11 +72431,11 @@
     },
     {
       "id": "x1nx1z1a1p",
-      "spanish": "pasado de feel",
+      "spanish": "[pasado] feel",
       "english": "felt",
       "example": {
-        "spanish": "El pasado de feel es felt.",
-        "english": "The past of feel is felt."
+        "spanish": "Se sintió mejor después de descansar.",
+        "english": "He felt better after resting."
       },
       "collections": [
         "morphology:inflection",
@@ -72455,11 +72455,11 @@
     },
     {
       "id": "20ehjgbq4l",
-      "spanish": "participio de feel",
+      "spanish": "[participio] feel",
       "english": "felt",
       "example": {
-        "spanish": "El participio de feel es felt.",
-        "english": "The past participle of feel is felt."
+        "spanish": "Se ha sentido mejor desde que empezó a descansar.",
+        "english": "He has felt better since he started resting."
       },
       "collections": [
         "morphology:inflection",
@@ -72479,11 +72479,11 @@
     },
     {
       "id": "d0ezvwcw54",
-      "spanish": "pasado de fight",
+      "spanish": "[pasado] fight",
       "english": "fought",
       "example": {
-        "spanish": "El pasado de fight es fought.",
-        "english": "The past of fight is fought."
+        "spanish": "Los hermanos pelearon por el control remoto.",
+        "english": "The brothers fought over the remote control."
       },
       "collections": [
         "morphology:inflection",
@@ -72503,11 +72503,11 @@
     },
     {
       "id": "ec8kcymom7",
-      "spanish": "participio de fight",
+      "spanish": "[participio] fight",
       "english": "fought",
       "example": {
-        "spanish": "El participio de fight es fought.",
-        "english": "The past participle of fight is fought."
+        "spanish": "Los hermanos han peleado por esto antes.",
+        "english": "The brothers have fought about this before."
       },
       "collections": [
         "morphology:inflection",
@@ -72527,11 +72527,11 @@
     },
     {
       "id": "zmnamkbq3b",
-      "spanish": "pasado de find",
+      "spanish": "[pasado] find",
       "english": "found",
       "example": {
-        "spanish": "El pasado de find es found.",
-        "english": "The past of find is found."
+        "spanish": "Encontré las llaves debajo del sofá.",
+        "english": "I found the keys under the couch."
       },
       "collections": [
         "morphology:inflection",
@@ -72551,11 +72551,11 @@
     },
     {
       "id": "nl08qe1e3q",
-      "spanish": "participio de find",
+      "spanish": "[participio] find",
       "english": "found",
       "example": {
-        "spanish": "El participio de find es found.",
-        "english": "The past participle of find is found."
+        "spanish": "He encontrado las llaves por fin.",
+        "english": "I have finally found the keys."
       },
       "collections": [
         "morphology:inflection",
@@ -72575,11 +72575,11 @@
     },
     {
       "id": "biczrdqgdd",
-      "spanish": "pasado de fit",
+      "spanish": "[pasado] fit",
       "english": "fit",
       "example": {
-        "spanish": "El pasado de fit es fit.",
-        "english": "The past of fit is fit."
+        "spanish": "El vestido le quedó perfecto.",
+        "english": "The dress fit her perfectly."
       },
       "collections": [
         "morphology:inflection",
@@ -72598,11 +72598,11 @@
     },
     {
       "id": "agoglocbab",
-      "spanish": "pasado de fit",
+      "spanish": "[pasado] fit",
       "english": "fitted",
       "example": {
-        "spanish": "El pasado de fit es fitted.",
-        "english": "The past of fit is fitted."
+        "spanish": "El vestido le quedó perfecto.",
+        "english": "The dress fitted her perfectly."
       },
       "collections": [
         "morphology:inflection",
@@ -72620,11 +72620,11 @@
     },
     {
       "id": "e6lte4vuoz",
-      "spanish": "participio de fit",
+      "spanish": "[participio] fit",
       "english": "fit",
       "example": {
-        "spanish": "El participio de fit es fit.",
-        "english": "The past participle of fit is fit."
+        "spanish": "El vestido siempre le ha quedado bien.",
+        "english": "The dress has always fit her well."
       },
       "collections": [
         "morphology:inflection",
@@ -72643,11 +72643,11 @@
     },
     {
       "id": "tgsgs5lsmk",
-      "spanish": "participio de fit",
+      "spanish": "[participio] fit",
       "english": "fitted",
       "example": {
-        "spanish": "El participio de fit es fitted.",
-        "english": "The past participle of fit is fitted."
+        "spanish": "El vestido siempre le ha quedado bien.",
+        "english": "The dress has always fitted her well."
       },
       "collections": [
         "morphology:inflection",
@@ -72665,11 +72665,11 @@
     },
     {
       "id": "dz3lxqyat3",
-      "spanish": "pasado de flee",
+      "spanish": "[pasado] flee",
       "english": "fled",
       "example": {
-        "spanish": "El pasado de flee es fled.",
-        "english": "The past of flee is fled."
+        "spanish": "La gente huyó de la ciudad durante la tormenta.",
+        "english": "People fled the city during the storm."
       },
       "collections": [
         "morphology:inflection",
@@ -72689,11 +72689,11 @@
     },
     {
       "id": "l2z9k8jtx4",
-      "spanish": "participio de flee",
+      "spanish": "[participio] flee",
       "english": "fled",
       "example": {
-        "spanish": "El participio de flee es fled.",
-        "english": "The past participle of flee is fled."
+        "spanish": "Miles de personas han huido de la ciudad.",
+        "english": "Thousands of people have fled the city."
       },
       "collections": [
         "morphology:inflection",
@@ -72713,11 +72713,11 @@
     },
     {
       "id": "7gvjhcp0jx",
-      "spanish": "pasado de fling",
+      "spanish": "[pasado] fling",
       "english": "flung",
       "example": {
-        "spanish": "El pasado de fling es flung.",
-        "english": "The past of fling is flung."
+        "spanish": "Lanzó la mochila al suelo con furia.",
+        "english": "He flung his backpack on the floor in anger."
       },
       "collections": [
         "morphology:inflection",
@@ -72736,11 +72736,11 @@
     },
     {
       "id": "2t02z49kkg",
-      "spanish": "participio de fling",
+      "spanish": "[participio] fling",
       "english": "flung",
       "example": {
-        "spanish": "El participio de fling es flung.",
-        "english": "The past participle of fling is flung."
+        "spanish": "Ha lanzado su mochila al suelo otra vez.",
+        "english": "He has flung his backpack on the floor again."
       },
       "collections": [
         "morphology:inflection",
@@ -72759,11 +72759,11 @@
     },
     {
       "id": "vnrv7qdebw",
-      "spanish": "pasado de fly",
+      "spanish": "[pasado] fly",
       "english": "flew",
       "example": {
-        "spanish": "El pasado de fly es flew.",
-        "english": "The past of fly is flew."
+        "spanish": "El avión voló sobre las montañas.",
+        "english": "The plane flew over the mountains."
       },
       "collections": [
         "morphology:inflection",
@@ -72781,11 +72781,11 @@
     },
     {
       "id": "q58n1n7mzx",
-      "spanish": "participio de fly",
+      "spanish": "[participio] fly",
       "english": "flown",
       "example": {
-        "spanish": "El participio de fly es flown.",
-        "english": "The past participle of fly is flown."
+        "spanish": "Ella ha volado a Europa muchas veces.",
+        "english": "She has flown to Europe many times."
       },
       "collections": [
         "morphology:inflection",
@@ -72804,11 +72804,11 @@
     },
     {
       "id": "1kn03k7sbs",
-      "spanish": "pasado de forbid",
+      "spanish": "[pasado] forbid",
       "english": "forbade",
       "example": {
-        "spanish": "El pasado de forbid es forbade.",
-        "english": "The past of forbid is forbade."
+        "spanish": "Sus padres le prohibieron salir de noche.",
+        "english": "Her parents forbade her from going out at night."
       },
       "collections": [
         "morphology:inflection",
@@ -72825,11 +72825,11 @@
     },
     {
       "id": "eid3y3vjty",
-      "spanish": "participio de forbid",
+      "spanish": "[participio] forbid",
       "english": "forbidden",
       "example": {
-        "spanish": "El participio de forbid es forbidden.",
-        "english": "The past participle of forbid is forbidden."
+        "spanish": "Sus padres siempre le han prohibido salir tarde.",
+        "english": "Her parents have always forbidden her from staying out late."
       },
       "collections": [
         "morphology:inflection",
@@ -72847,11 +72847,11 @@
     },
     {
       "id": "ahyyzzzoq4",
-      "spanish": "pasado de forget",
+      "spanish": "[pasado] forget",
       "english": "forgot",
       "example": {
-        "spanish": "El pasado de forget es forgot.",
-        "english": "The past of forget is forgot."
+        "spanish": "Olvidé su cumpleaños por completo.",
+        "english": "I completely forgot her birthday."
       },
       "collections": [
         "morphology:inflection",
@@ -72869,11 +72869,11 @@
     },
     {
       "id": "5jivy1ob66",
-      "spanish": "participio de forget",
+      "spanish": "[participio] forget",
       "english": "forgotten",
       "example": {
-        "spanish": "El participio de forget es forgotten.",
-        "english": "The past participle of forget is forgotten."
+        "spanish": "He olvidado su nombre por completo.",
+        "english": "I have completely forgotten his name."
       },
       "collections": [
         "morphology:inflection",
@@ -72927,11 +72927,11 @@
     },
     {
       "id": "hnih2u3kpa",
-      "spanish": "pasado de forgive",
+      "spanish": "[pasado] forgive",
       "english": "forgave",
       "example": {
-        "spanish": "El pasado de forgive es forgave.",
-        "english": "The past of forgive is forgave."
+        "spanish": "Ella lo perdonó después de la disculpa.",
+        "english": "She forgave him after the apology."
       },
       "collections": [
         "morphology:inflection",
@@ -72949,11 +72949,11 @@
     },
     {
       "id": "1xuraraznf",
-      "spanish": "participio de forgive",
+      "spanish": "[participio] forgive",
       "english": "forgiven",
       "example": {
-        "spanish": "El participio de forgive es forgiven.",
-        "english": "The past participle of forgive is forgiven."
+        "spanish": "Ella lo ha perdonado por lo que pasó.",
+        "english": "She has forgiven him for what happened."
       },
       "collections": [
         "morphology:inflection",
@@ -72972,11 +72972,11 @@
     },
     {
       "id": "ghx4osdo9o",
-      "spanish": "pasado de freeze",
+      "spanish": "[pasado] freeze",
       "english": "froze",
       "example": {
-        "spanish": "El pasado de freeze es froze.",
-        "english": "The past of freeze is froze."
+        "spanish": "El lago se congeló durante el invierno.",
+        "english": "The lake froze during the winter."
       },
       "collections": [
         "morphology:inflection",
@@ -72994,11 +72994,11 @@
     },
     {
       "id": "6f3b5muinr",
-      "spanish": "participio de freeze",
+      "spanish": "[participio] freeze",
       "english": "frozen",
       "example": {
-        "spanish": "El participio de freeze es frozen.",
-        "english": "The past participle of freeze is frozen."
+        "spanish": "El lago se ha congelado por primera vez este año.",
+        "english": "The lake has frozen for the first time this year."
       },
       "collections": [
         "morphology:inflection",
@@ -73017,11 +73017,11 @@
     },
     {
       "id": "e61dms0hq3",
-      "spanish": "pasado de get",
+      "spanish": "[pasado] get",
       "english": "got",
       "example": {
-        "spanish": "El pasado de get es got.",
-        "english": "The past of get is got."
+        "spanish": "Consiguió un trabajo nuevo la semana pasada.",
+        "english": "She got a new job last week."
       },
       "collections": [
         "morphology:inflection",
@@ -73039,11 +73039,11 @@
     },
     {
       "id": "8k1ayyt6pc",
-      "spanish": "participio de get",
+      "spanish": "[participio] get",
       "english": "got",
       "example": {
-        "spanish": "El participio de get es got.",
-        "english": "The past participle of get is got."
+        "spanish": "Ha conseguido un ascenso en el trabajo.",
+        "english": "She has got a promotion at work."
       },
       "collections": [
         "morphology:inflection",
@@ -73060,11 +73060,11 @@
     },
     {
       "id": "3r70xx9t9s",
-      "spanish": "participio de get",
+      "spanish": "[participio] get",
       "english": "gotten",
       "example": {
-        "spanish": "El participio de get es gotten.",
-        "english": "The past participle of get is gotten."
+        "spanish": "Ha conseguido un ascenso en el trabajo.",
+        "english": "She has gotten a promotion at work."
       },
       "collections": [
         "morphology:inflection",
@@ -73158,11 +73158,11 @@
     },
     {
       "id": "62spkcg55w",
-      "spanish": "pasado de give",
+      "spanish": "[pasado] give",
       "english": "gave",
       "example": {
-        "spanish": "El pasado de give es gave.",
-        "english": "The past of give is gave."
+        "spanish": "Le dio un regalo por su cumpleaños.",
+        "english": "He gave her a gift for her birthday."
       },
       "collections": [
         "morphology:inflection",
@@ -73180,11 +73180,11 @@
     },
     {
       "id": "iblqv731gx",
-      "spanish": "participio de give",
+      "spanish": "[participio] give",
       "english": "given",
       "example": {
-        "spanish": "El participio de give es given.",
-        "english": "The past participle of give is given."
+        "spanish": "Le ha dado varios regalos este año.",
+        "english": "He has given her several gifts this year."
       },
       "collections": [
         "morphology:inflection",
@@ -73203,11 +73203,11 @@
     },
     {
       "id": "l3jqtqp7we",
-      "spanish": "pasado de go",
+      "spanish": "[pasado] go",
       "english": "went",
       "example": {
-        "spanish": "El pasado de go es went.",
-        "english": "The past of go is went."
+        "spanish": "Fuimos al cine el sábado.",
+        "english": "We went to the movies on Saturday."
       },
       "collections": [
         "morphology:inflection",
@@ -73224,11 +73224,11 @@
     },
     {
       "id": "j75hzql7s8",
-      "spanish": "participio de go",
+      "spanish": "[participio] go",
       "english": "gone",
       "example": {
-        "spanish": "El participio de go es gone.",
-        "english": "The past participle of go is gone."
+        "spanish": "Hemos ido a ese restaurante muchas veces.",
+        "english": "We have gone to that restaurant many times."
       },
       "collections": [
         "morphology:inflection",
@@ -73247,11 +73247,11 @@
     },
     {
       "id": "h8v7gva74y",
-      "spanish": "pasado de grind",
+      "spanish": "[pasado] grind",
       "english": "ground",
       "example": {
-        "spanish": "El pasado de grind es ground.",
-        "english": "The past of grind is ground."
+        "spanish": "Molió el café justo antes de prepararlo.",
+        "english": "He ground the coffee right before brewing it."
       },
       "collections": [
         "morphology:inflection",
@@ -73271,11 +73271,11 @@
     },
     {
       "id": "iv59zmzpfc",
-      "spanish": "participio de grind",
+      "spanish": "[participio] grind",
       "english": "ground",
       "example": {
-        "spanish": "El participio de grind es ground.",
-        "english": "The past participle of grind is ground."
+        "spanish": "Ha molido el café todas las mañanas.",
+        "english": "He has ground the coffee every morning."
       },
       "collections": [
         "morphology:inflection",
@@ -73295,11 +73295,11 @@
     },
     {
       "id": "62klhyoaxj",
-      "spanish": "pasado de grow",
+      "spanish": "[pasado] grow",
       "english": "grew",
       "example": {
-        "spanish": "El pasado de grow es grew.",
-        "english": "The past of grow is grew."
+        "spanish": "El árbol creció mucho este año.",
+        "english": "The tree grew a lot this year."
       },
       "collections": [
         "morphology:inflection",
@@ -73317,11 +73317,11 @@
     },
     {
       "id": "8wyni4z4jb",
-      "spanish": "participio de grow",
+      "spanish": "[participio] grow",
       "english": "grown",
       "example": {
-        "spanish": "El participio de grow es grown.",
-        "english": "The past participle of grow is grown."
+        "spanish": "El árbol ha crecido mucho desde el año pasado.",
+        "english": "The tree has grown a lot since last year."
       },
       "collections": [
         "morphology:inflection",
@@ -73340,11 +73340,11 @@
     },
     {
       "id": "jwdtzs5t6a",
-      "spanish": "pasado de hang",
+      "spanish": "[pasado] hang",
       "english": "hung",
       "example": {
-        "spanish": "El pasado de hang es hung.",
-        "english": "The past of hang is hung."
+        "spanish": "Colgó el cuadro en la pared.",
+        "english": "He hung the picture on the wall."
       },
       "collections": [
         "morphology:inflection",
@@ -73362,11 +73362,11 @@
     },
     {
       "id": "s72csld91t",
-      "spanish": "pasado de hang",
+      "spanish": "[pasado] hang",
       "english": "hanged",
       "example": {
-        "spanish": "El pasado de hang es hanged.",
-        "english": "The past of hang is hanged."
+        "spanish": "Lo condenaron y lo ahorcaron al amanecer.",
+        "english": "He was sentenced and hanged at dawn."
       },
       "collections": [
         "morphology:inflection",
@@ -73384,11 +73384,11 @@
     },
     {
       "id": "miby128ryy",
-      "spanish": "participio de hang",
+      "spanish": "[participio] hang",
       "english": "hung",
       "example": {
-        "spanish": "El participio de hang es hung.",
-        "english": "The past participle of hang is hung."
+        "spanish": "Ha colgado ese cuadro en tres casas diferentes.",
+        "english": "He has hung that picture in three different houses."
       },
       "collections": [
         "morphology:inflection",
@@ -73406,11 +73406,11 @@
     },
     {
       "id": "5ig0y87gzs",
-      "spanish": "participio de hang",
+      "spanish": "[participio] hang",
       "english": "hanged",
       "example": {
-        "spanish": "El participio de hang es hanged.",
-        "english": "The past participle of hang is hanged."
+        "spanish": "El prisionero ha sido ahorcado esta mañana.",
+        "english": "The prisoner has been hanged this morning."
       },
       "collections": [
         "morphology:inflection",
@@ -73428,11 +73428,11 @@
     },
     {
       "id": "dyfhan9nwo",
-      "spanish": "pasado de have",
+      "spanish": "[pasado] have",
       "english": "had",
       "example": {
-        "spanish": "El pasado de have es had.",
-        "english": "The past of have is had."
+        "spanish": "Tuvo un buen día en el trabajo.",
+        "english": "She had a good day at work."
       },
       "collections": [
         "morphology:inflection",
@@ -73450,11 +73450,11 @@
     },
     {
       "id": "rv6qhto601",
-      "spanish": "participio de have",
+      "spanish": "[participio] have",
       "english": "had",
       "example": {
-        "spanish": "El participio de have es had.",
-        "english": "The past participle of have is had."
+        "spanish": "Ha tenido un buen año en el trabajo.",
+        "english": "She has had a good year at work."
       },
       "collections": [
         "morphology:inflection",
@@ -73472,11 +73472,11 @@
     },
     {
       "id": "9dwskqsjd0",
-      "spanish": "pasado de hear",
+      "spanish": "[pasado] hear",
       "english": "heard",
       "example": {
-        "spanish": "El pasado de hear es heard.",
-        "english": "The past of hear is heard."
+        "spanish": "Escuché un ruido extraño en la noche.",
+        "english": "I heard a strange noise at night."
       },
       "collections": [
         "morphology:inflection",
@@ -73494,11 +73494,11 @@
     },
     {
       "id": "51u4l72zq4",
-      "spanish": "participio de hear",
+      "spanish": "[participio] hear",
       "english": "heard",
       "example": {
-        "spanish": "El participio de hear es heard.",
-        "english": "The past participle of hear is heard."
+        "spanish": "He escuchado esa canción muchas veces.",
+        "english": "I have heard that song many times."
       },
       "collections": [
         "morphology:inflection",
@@ -73565,11 +73565,11 @@
     },
     {
       "id": "16srcng7up",
-      "spanish": "pasado de hide",
+      "spanish": "[pasado] hide",
       "english": "hid",
       "example": {
-        "spanish": "El pasado de hide es hid.",
-        "english": "The past of hide is hid."
+        "spanish": "El niño se escondió detrás del sofá.",
+        "english": "The boy hid behind the couch."
       },
       "collections": [
         "morphology:inflection",
@@ -73588,11 +73588,11 @@
     },
     {
       "id": "fu3jtwrv5c",
-      "spanish": "participio de hide",
+      "spanish": "[participio] hide",
       "english": "hidden",
       "example": {
-        "spanish": "El participio de hide es hidden.",
-        "english": "The past participle of hide is hidden."
+        "spanish": "El niño se ha escondido ahí antes.",
+        "english": "The boy has hidden there before."
       },
       "collections": [
         "morphology:inflection",
@@ -73611,11 +73611,11 @@
     },
     {
       "id": "h89xcjotmg",
-      "spanish": "pasado de hit",
+      "spanish": "[pasado] hit",
       "english": "hit",
       "example": {
-        "spanish": "El pasado de hit es hit.",
-        "english": "The past of hit is hit."
+        "spanish": "La pelota golpeó la ventana.",
+        "english": "The ball hit the window."
       },
       "collections": [
         "morphology:inflection",
@@ -73634,11 +73634,11 @@
     },
     {
       "id": "tyke6c3ns2",
-      "spanish": "participio de hit",
+      "spanish": "[participio] hit",
       "english": "hit",
       "example": {
-        "spanish": "El participio de hit es hit.",
-        "english": "The past participle of hit is hit."
+        "spanish": "La pelota ha golpeado esa ventana dos veces.",
+        "english": "The ball has hit that window twice."
       },
       "collections": [
         "morphology:inflection",
@@ -73657,11 +73657,11 @@
     },
     {
       "id": "frxrx8cy18",
-      "spanish": "pasado de hold",
+      "spanish": "[pasado] hold",
       "english": "held",
       "example": {
-        "spanish": "El pasado de hold es held.",
-        "english": "The past of hold is held."
+        "spanish": "Sostuvo la puerta abierta para ella.",
+        "english": "He held the door open for her."
       },
       "collections": [
         "morphology:inflection",
@@ -73681,11 +73681,11 @@
     },
     {
       "id": "6uheo5toci",
-      "spanish": "participio de hold",
+      "spanish": "[participio] hold",
       "english": "held",
       "example": {
-        "spanish": "El participio de hold es held.",
-        "english": "The past participle of hold is held."
+        "spanish": "Ha sostenido esa posición durante años.",
+        "english": "He has held that position for years."
       },
       "collections": [
         "morphology:inflection",
@@ -73705,11 +73705,11 @@
     },
     {
       "id": "ingp6lcqb4",
-      "spanish": "pasado de hurt",
+      "spanish": "[pasado] hurt",
       "english": "hurt",
       "example": {
-        "spanish": "El pasado de hurt es hurt.",
-        "english": "The past of hurt is hurt."
+        "spanish": "Se lastimó el tobillo jugando fútbol.",
+        "english": "He hurt his ankle playing soccer."
       },
       "collections": [
         "morphology:inflection",
@@ -73728,11 +73728,11 @@
     },
     {
       "id": "m4t3vxqpl6",
-      "spanish": "participio de hurt",
+      "spanish": "[participio] hurt",
       "english": "hurt",
       "example": {
-        "spanish": "El participio de hurt es hurt.",
-        "english": "The past participle of hurt is hurt."
+        "spanish": "Se ha lastimado el tobillo otra vez.",
+        "english": "He has hurt his ankle again."
       },
       "collections": [
         "morphology:inflection",
@@ -73751,11 +73751,11 @@
     },
     {
       "id": "96jj8crcsn",
-      "spanish": "pasado de keep",
+      "spanish": "[pasado] keep",
       "english": "kept",
       "example": {
-        "spanish": "El pasado de keep es kept.",
-        "english": "The past of keep is kept."
+        "spanish": "Guardó la carta como recuerdo.",
+        "english": "She kept the letter as a keepsake."
       },
       "collections": [
         "morphology:inflection",
@@ -73775,11 +73775,11 @@
     },
     {
       "id": "rn03b9v8rd",
-      "spanish": "participio de keep",
+      "spanish": "[participio] keep",
       "english": "kept",
       "example": {
-        "spanish": "El participio de keep es kept.",
-        "english": "The past participle of keep is kept."
+        "spanish": "Ha guardado esa carta durante años.",
+        "english": "She has kept that letter for years."
       },
       "collections": [
         "morphology:inflection",
@@ -73799,11 +73799,11 @@
     },
     {
       "id": "32syierhkp",
-      "spanish": "pasado de kneel",
+      "spanish": "[pasado] kneel",
       "english": "kneeled",
       "example": {
-        "spanish": "El pasado de kneel es kneeled.",
-        "english": "The past of kneel is kneeled."
+        "spanish": "Se arrodilló para atarse los zapatos.",
+        "english": "He kneeled down to tie his shoes."
       },
       "collections": [
         "morphology:inflection",
@@ -73821,11 +73821,11 @@
     },
     {
       "id": "8c3jkl2q3o",
-      "spanish": "pasado de kneel",
+      "spanish": "[pasado] kneel",
       "english": "knelt",
       "example": {
-        "spanish": "El pasado de kneel es knelt.",
-        "english": "The past of kneel is knelt."
+        "spanish": "Se arrodilló para atarse los zapatos.",
+        "english": "He knelt down to tie his shoes."
       },
       "collections": [
         "morphology:inflection",
@@ -73845,11 +73845,11 @@
     },
     {
       "id": "4lh6kbhnv2",
-      "spanish": "participio de kneel",
+      "spanish": "[participio] kneel",
       "english": "kneeled",
       "example": {
-        "spanish": "El participio de kneel es kneeled.",
-        "english": "The past participle of kneel is kneeled."
+        "spanish": "Se ha arrodillado ahí para rezar muchas veces.",
+        "english": "He has kneeled there to pray many times."
       },
       "collections": [
         "morphology:inflection",
@@ -73867,11 +73867,11 @@
     },
     {
       "id": "7itawft3f4",
-      "spanish": "participio de kneel",
+      "spanish": "[participio] kneel",
       "english": "knelt",
       "example": {
-        "spanish": "El participio de kneel es knelt.",
-        "english": "The past participle of kneel is knelt."
+        "spanish": "Se ha arrodillado ahí para rezar muchas veces.",
+        "english": "He has knelt there to pray many times."
       },
       "collections": [
         "morphology:inflection",
@@ -73891,11 +73891,11 @@
     },
     {
       "id": "4ntxn5h6iz",
-      "spanish": "pasado de knit",
+      "spanish": "[pasado] knit",
       "english": "knit",
       "example": {
-        "spanish": "El pasado de knit es knit.",
-        "english": "The past of knit is knit."
+        "spanish": "Tejió una bufanda para el invierno.",
+        "english": "She knit a scarf for the winter."
       },
       "collections": [
         "morphology:inflection",
@@ -73914,11 +73914,11 @@
     },
     {
       "id": "lrlhtti1dj",
-      "spanish": "pasado de knit",
+      "spanish": "[pasado] knit",
       "english": "knitted",
       "example": {
-        "spanish": "El pasado de knit es knitted.",
-        "english": "The past of knit is knitted."
+        "spanish": "Tejió una bufanda para el invierno.",
+        "english": "She knitted a scarf for the winter."
       },
       "collections": [
         "morphology:inflection",
@@ -73936,11 +73936,11 @@
     },
     {
       "id": "udnhjgdfki",
-      "spanish": "participio de knit",
+      "spanish": "[participio] knit",
       "english": "knit",
       "example": {
-        "spanish": "El participio de knit es knit.",
-        "english": "The past participle of knit is knit."
+        "spanish": "Ha tejido tres bufandas este invierno.",
+        "english": "She has knit three scarves this winter."
       },
       "collections": [
         "morphology:inflection",
@@ -73959,11 +73959,11 @@
     },
     {
       "id": "t4uldaqtrn",
-      "spanish": "participio de knit",
+      "spanish": "[participio] knit",
       "english": "knitted",
       "example": {
-        "spanish": "El participio de knit es knitted.",
-        "english": "The past participle of knit is knitted."
+        "spanish": "Ha tejido tres bufandas este invierno.",
+        "english": "She has knitted three scarves this winter."
       },
       "collections": [
         "morphology:inflection",
@@ -73981,11 +73981,11 @@
     },
     {
       "id": "8w2jqzvm13",
-      "spanish": "pasado de know",
+      "spanish": "[pasado] know",
       "english": "knew",
       "example": {
-        "spanish": "El pasado de know es knew.",
-        "english": "The past of know is knew."
+        "spanish": "Ella sabía la respuesta correcta.",
+        "english": "She knew the right answer."
       },
       "collections": [
         "morphology:inflection",
@@ -74003,11 +74003,11 @@
     },
     {
       "id": "m31kpazbri",
-      "spanish": "participio de know",
+      "spanish": "[participio] know",
       "english": "known",
       "example": {
-        "spanish": "El participio de know es known.",
-        "english": "The past participle of know is known."
+        "spanish": "Ella ha sabido la respuesta desde el principio.",
+        "english": "She has known the answer from the start."
       },
       "collections": [
         "morphology:inflection",
@@ -74026,11 +74026,11 @@
     },
     {
       "id": "5vg8sjndmp",
-      "spanish": "pasado de lay",
+      "spanish": "[pasado] lay",
       "english": "laid",
       "example": {
-        "spanish": "El pasado de lay es laid.",
-        "english": "The past of lay is laid."
+        "spanish": "Puso el bebé en la cuna con cuidado.",
+        "english": "She laid the baby in the crib carefully."
       },
       "collections": [
         "morphology:inflection",
@@ -74050,11 +74050,11 @@
     },
     {
       "id": "w3xwt1is0s",
-      "spanish": "participio de lay",
+      "spanish": "[participio] lay",
       "english": "laid",
       "example": {
-        "spanish": "El participio de lay es laid.",
-        "english": "The past participle of lay is laid."
+        "spanish": "Ha puesto al bebé en la cuna con cuidado.",
+        "english": "She has laid the baby in the crib carefully."
       },
       "collections": [
         "morphology:inflection",
@@ -74074,11 +74074,11 @@
     },
     {
       "id": "moa509gjfs",
-      "spanish": "pasado de lead",
+      "spanish": "[pasado] lead",
       "english": "led",
       "example": {
-        "spanish": "El pasado de lead es led.",
-        "english": "The past of lead is led."
+        "spanish": "Ella lideró el proyecto desde el principio.",
+        "english": "She led the project from the start."
       },
       "collections": [
         "morphology:inflection",
@@ -74098,11 +74098,11 @@
     },
     {
       "id": "yiyb24ixan",
-      "spanish": "participio de lead",
+      "spanish": "[participio] lead",
       "english": "led",
       "example": {
-        "spanish": "El participio de lead es led.",
-        "english": "The past participle of lead is led."
+        "spanish": "Ella ha liderado el equipo durante dos años.",
+        "english": "She has led the team for two years."
       },
       "collections": [
         "morphology:inflection",
@@ -74122,11 +74122,11 @@
     },
     {
       "id": "w0p74y9naa",
-      "spanish": "pasado de lean",
+      "spanish": "[pasado] lean",
       "english": "leaned",
       "example": {
-        "spanish": "El pasado de lean es leaned.",
-        "english": "The past of lean is leaned."
+        "spanish": "Se apoyó contra la pared cansado.",
+        "english": "He leaned against the wall, tired."
       },
       "collections": [
         "morphology:inflection",
@@ -74163,11 +74163,11 @@
     },
     {
       "id": "fhpmbsbpaw",
-      "spanish": "participio de lean",
+      "spanish": "[participio] lean",
       "english": "leaned",
       "example": {
-        "spanish": "El participio de lean es leaned.",
-        "english": "The past participle of lean is leaned."
+        "spanish": "Se ha apoyado en esa pared muchas veces.",
+        "english": "He has leaned against that wall many times."
       },
       "collections": [
         "morphology:inflection",
@@ -74204,11 +74204,11 @@
     },
     {
       "id": "6ybadbgc6g",
-      "spanish": "pasado de leap",
+      "spanish": "[pasado] leap",
       "english": "leaped",
       "example": {
-        "spanish": "El pasado de leap es leaped.",
-        "english": "The past of leap is leaped."
+        "spanish": "El gato saltó sobre la mesa.",
+        "english": "The cat leaped onto the table."
       },
       "collections": [
         "morphology:inflection",
@@ -74248,11 +74248,11 @@
     },
     {
       "id": "u5bhiwm7ld",
-      "spanish": "participio de leap",
+      "spanish": "[participio] leap",
       "english": "leaped",
       "example": {
-        "spanish": "El participio de leap es leaped.",
-        "english": "The past participle of leap is leaped."
+        "spanish": "El gato ha saltado sobre esa mesa antes.",
+        "english": "The cat has leaped onto that table before."
       },
       "collections": [
         "morphology:inflection",
@@ -74292,11 +74292,11 @@
     },
     {
       "id": "3ykv4stp4a",
-      "spanish": "pasado de learn",
+      "spanish": "[pasado] learn",
       "english": "learned",
       "example": {
-        "spanish": "El pasado de learn es learned.",
-        "english": "The past of learn is learned."
+        "spanish": "Aprendió a tocar la guitarra solo.",
+        "english": "He learned to play guitar by himself."
       },
       "collections": [
         "morphology:inflection",
@@ -74333,11 +74333,11 @@
     },
     {
       "id": "04poz5wtji",
-      "spanish": "participio de learn",
+      "spanish": "[participio] learn",
       "english": "learned",
       "example": {
-        "spanish": "El participio de learn es learned.",
-        "english": "The past participle of learn is learned."
+        "spanish": "Ha aprendido mucho este semestre.",
+        "english": "He has learned a lot this semester."
       },
       "collections": [
         "morphology:inflection",
@@ -74374,11 +74374,11 @@
     },
     {
       "id": "hrbq6s2j6w",
-      "spanish": "pasado de leave",
+      "spanish": "[pasado] leave",
       "english": "left",
       "example": {
-        "spanish": "El pasado de leave es left.",
-        "english": "The past of leave is left."
+        "spanish": "Se fue de la oficina temprano.",
+        "english": "She left the office early."
       },
       "collections": [
         "morphology:inflection",
@@ -74396,11 +74396,11 @@
     },
     {
       "id": "ypd727s6hq",
-      "spanish": "participio de leave",
+      "spanish": "[participio] leave",
       "english": "left",
       "example": {
-        "spanish": "El participio de leave es left.",
-        "english": "The past participle of leave is left."
+        "spanish": "Ella ya se ha ido de la oficina.",
+        "english": "She has already left the office."
       },
       "collections": [
         "morphology:inflection",
@@ -74418,11 +74418,11 @@
     },
     {
       "id": "3n6i16wyag",
-      "spanish": "pasado de lend",
+      "spanish": "[pasado] lend",
       "english": "lent",
       "example": {
-        "spanish": "El pasado de lend es lent.",
-        "english": "The past of lend is lent."
+        "spanish": "Le prestó dinero a su amigo.",
+        "english": "He lent his friend some money."
       },
       "collections": [
         "morphology:inflection",
@@ -74442,11 +74442,11 @@
     },
     {
       "id": "5yfrmfazp0",
-      "spanish": "participio de lend",
+      "spanish": "[participio] lend",
       "english": "lent",
       "example": {
-        "spanish": "El participio de lend es lent.",
-        "english": "The past participle of lend is lent."
+        "spanish": "Le ha prestado dinero varias veces.",
+        "english": "He has lent his friend money several times."
       },
       "collections": [
         "morphology:inflection",
@@ -74466,11 +74466,11 @@
     },
     {
       "id": "92ealprsbd",
-      "spanish": "pasado de let",
+      "spanish": "[pasado] let",
       "english": "let",
       "example": {
-        "spanish": "El pasado de let es let.",
-        "english": "The past of let is let."
+        "spanish": "Sus padres lo dejaron ir a la fiesta.",
+        "english": "Her parents let her go to the party."
       },
       "collections": [
         "morphology:inflection",
@@ -74489,11 +74489,11 @@
     },
     {
       "id": "dxb9jzinrq",
-      "spanish": "participio de let",
+      "spanish": "[participio] let",
       "english": "let",
       "example": {
-        "spanish": "El participio de let es let.",
-        "english": "The past participle of let is let."
+        "spanish": "Sus padres la han dejado salir antes.",
+        "english": "Her parents have let her go out before."
       },
       "collections": [
         "morphology:inflection",
@@ -74512,11 +74512,11 @@
     },
     {
       "id": "lno5ht42qg",
-      "spanish": "pasado de lie",
+      "spanish": "[pasado] lie",
       "english": "lay",
       "example": {
-        "spanish": "El pasado de lie es lay.",
-        "english": "The past of lie is lay."
+        "spanish": "Se recostó en el sofá después del trabajo.",
+        "english": "He lay down on the couch after work."
       },
       "collections": [
         "morphology:inflection",
@@ -74533,11 +74533,11 @@
     },
     {
       "id": "ejdik4gc6k",
-      "spanish": "participio de lie",
+      "spanish": "[participio] lie",
       "english": "lain",
       "example": {
-        "spanish": "El participio de lie es lain.",
-        "english": "The past participle of lie is lain."
+        "spanish": "Se ha recostado en ese sofá muchas veces.",
+        "english": "He has lain on that couch many times."
       },
       "collections": [
         "morphology:inflection",
@@ -74554,11 +74554,11 @@
     },
     {
       "id": "lyxzmxkdz8",
-      "spanish": "pasado de light",
+      "spanish": "[pasado] light",
       "english": "lit",
       "example": {
-        "spanish": "El pasado de light es lit.",
-        "english": "The past of light is lit."
+        "spanish": "Encendió las velas para la cena.",
+        "english": "She lit the candles for dinner."
       },
       "collections": [
         "morphology:inflection",
@@ -74577,11 +74577,11 @@
     },
     {
       "id": "xfqmtcs67o",
-      "spanish": "pasado de light",
+      "spanish": "[pasado] light",
       "english": "lighted",
       "example": {
-        "spanish": "El pasado de light es lighted.",
-        "english": "The past of light is lighted."
+        "spanish": "Encendió las velas para la cena.",
+        "english": "She lighted the candles for dinner."
       },
       "collections": [
         "morphology:inflection",
@@ -74599,11 +74599,11 @@
     },
     {
       "id": "jw2dkuzufk",
-      "spanish": "participio de light",
+      "spanish": "[participio] light",
       "english": "lit",
       "example": {
-        "spanish": "El participio de light es lit.",
-        "english": "The past participle of light is lit."
+        "spanish": "Ha encendido velas para cada cena.",
+        "english": "She has lit candles for every dinner."
       },
       "collections": [
         "morphology:inflection",
@@ -74622,11 +74622,11 @@
     },
     {
       "id": "x0fy3ae2fn",
-      "spanish": "participio de light",
+      "spanish": "[participio] light",
       "english": "lighted",
       "example": {
-        "spanish": "El participio de light es lighted.",
-        "english": "The past participle of light is lighted."
+        "spanish": "Ha encendido velas para cada cena.",
+        "english": "She has lighted candles for every dinner."
       },
       "collections": [
         "morphology:inflection",
@@ -74644,11 +74644,11 @@
     },
     {
       "id": "e2vj5fksnk",
-      "spanish": "pasado de lose",
+      "spanish": "[pasado] lose",
       "english": "lost",
       "example": {
-        "spanish": "El pasado de lose es lost.",
-        "english": "The past of lose is lost."
+        "spanish": "Perdió las llaves en el parque.",
+        "english": "He lost his keys at the park."
       },
       "collections": [
         "morphology:inflection",
@@ -74666,11 +74666,11 @@
     },
     {
       "id": "jx4ejh8c5y",
-      "spanish": "participio de lose",
+      "spanish": "[participio] lose",
       "english": "lost",
       "example": {
-        "spanish": "El participio de lose es lost.",
-        "english": "The past participle of lose is lost."
+        "spanish": "Ha perdido las llaves dos veces este mes.",
+        "english": "He has lost his keys twice this month."
       },
       "collections": [
         "morphology:inflection",
@@ -74688,11 +74688,11 @@
     },
     {
       "id": "lmc3z7ehft",
-      "spanish": "pasado de make",
+      "spanish": "[pasado] make",
       "english": "made",
       "example": {
-        "spanish": "El pasado de make es made.",
-        "english": "The past of make is made."
+        "spanish": "Hizo el desayuno para toda la familia.",
+        "english": "She made breakfast for the whole family."
       },
       "collections": [
         "morphology:inflection",
@@ -74712,11 +74712,11 @@
     },
     {
       "id": "pekpg8dy8k",
-      "spanish": "participio de make",
+      "spanish": "[participio] make",
       "english": "made",
       "example": {
-        "spanish": "El participio de make es made.",
-        "english": "The past participle of make is made."
+        "spanish": "Ella ha hecho el desayuno toda la semana.",
+        "english": "She has made breakfast all week."
       },
       "collections": [
         "morphology:inflection",
@@ -74736,11 +74736,11 @@
     },
     {
       "id": "op7475igzu",
-      "spanish": "pasado de mean",
+      "spanish": "[pasado] mean",
       "english": "meant",
       "example": {
-        "spanish": "El pasado de mean es meant.",
-        "english": "The past of mean is meant."
+        "spanish": "No quise decir eso, fue un error.",
+        "english": "I didn't meant that, it was a mistake."
       },
       "collections": [
         "morphology:inflection",
@@ -74758,11 +74758,11 @@
     },
     {
       "id": "gwo4msr8kw",
-      "spanish": "participio de mean",
+      "spanish": "[participio] mean",
       "english": "meant",
       "example": {
-        "spanish": "El participio de mean es meant.",
-        "english": "The past participle of mean is meant."
+        "spanish": "Siempre ha querido decir lo mejor.",
+        "english": "He has always meant well."
       },
       "collections": [
         "morphology:inflection",
@@ -74780,11 +74780,11 @@
     },
     {
       "id": "ddtalrf2sa",
-      "spanish": "pasado de meet",
+      "spanish": "[pasado] meet",
       "english": "met",
       "example": {
-        "spanish": "El pasado de meet es met.",
-        "english": "The past of meet is met."
+        "spanish": "Nos conocimos en la universidad.",
+        "english": "We met in college."
       },
       "collections": [
         "morphology:inflection",
@@ -74802,11 +74802,11 @@
     },
     {
       "id": "7j4xptyx41",
-      "spanish": "participio de meet",
+      "spanish": "[participio] meet",
       "english": "met",
       "example": {
-        "spanish": "El participio de meet es met.",
-        "english": "The past participle of meet is met."
+        "spanish": "Nos hemos conocido antes, ¿verdad?",
+        "english": "We have met before, haven't we?"
       },
       "collections": [
         "morphology:inflection",
@@ -74824,11 +74824,11 @@
     },
     {
       "id": "b1ncaq30tj",
-      "spanish": "pasado de mow",
+      "spanish": "[pasado] mow",
       "english": "mowed",
       "example": {
-        "spanish": "El pasado de mow es mowed.",
-        "english": "The past of mow is mowed."
+        "spanish": "Cortó el césped el domingo por la mañana.",
+        "english": "He mowed the lawn on Sunday morning."
       },
       "collections": [
         "morphology:inflection",
@@ -74845,11 +74845,11 @@
     },
     {
       "id": "g3ofkktl63",
-      "spanish": "participio de mow",
+      "spanish": "[participio] mow",
       "english": "mown",
       "example": {
-        "spanish": "El participio de mow es mown.",
-        "english": "The past participle of mow is mown."
+        "spanish": "Ha cortado el césped todos los domingos.",
+        "english": "He has mown the lawn every Sunday."
       },
       "collections": [
         "morphology:inflection",
@@ -74868,11 +74868,11 @@
     },
     {
       "id": "z0fa35yjx9",
-      "spanish": "participio de mow",
+      "spanish": "[participio] mow",
       "english": "mowed",
       "example": {
-        "spanish": "El participio de mow es mowed.",
-        "english": "The past participle of mow is mowed."
+        "spanish": "Ha cortado el césped todos los domingos.",
+        "english": "He has mowed the lawn every Sunday."
       },
       "collections": [
         "morphology:inflection",
@@ -74889,11 +74889,11 @@
     },
     {
       "id": "rpgb8mpa5f",
-      "spanish": "pasado de pay",
+      "spanish": "[pasado] pay",
       "english": "paid",
       "example": {
-        "spanish": "El pasado de pay es paid.",
-        "english": "The past of pay is paid."
+        "spanish": "Pagó la cuenta con tarjeta.",
+        "english": "She paid the bill with a card."
       },
       "collections": [
         "morphology:inflection",
@@ -74913,11 +74913,11 @@
     },
     {
       "id": "mrzig8vrnw",
-      "spanish": "participio de pay",
+      "spanish": "[participio] pay",
       "english": "paid",
       "example": {
-        "spanish": "El participio de pay es paid.",
-        "english": "The past participle of pay is paid."
+        "spanish": "Ha pagado esa cuenta a tiempo siempre.",
+        "english": "She has always paid that bill on time."
       },
       "collections": [
         "morphology:inflection",
@@ -74937,11 +74937,11 @@
     },
     {
       "id": "vc6r566gjh",
-      "spanish": "pasado de plead",
+      "spanish": "[pasado] plead",
       "english": "pleaded",
       "example": {
-        "spanish": "El pasado de plead es pleaded.",
-        "english": "The past of plead is pleaded."
+        "spanish": "Se declaró inocente ante el juez.",
+        "english": "He pleaded not guilty before the judge."
       },
       "collections": [
         "morphology:inflection",
@@ -74959,11 +74959,11 @@
     },
     {
       "id": "5tgfasmkqp",
-      "spanish": "pasado de plead",
+      "spanish": "[pasado] plead",
       "english": "pled",
       "example": {
-        "spanish": "El pasado de plead es pled.",
-        "english": "The past of plead is pled."
+        "spanish": "Se declaró inocente ante el juez.",
+        "english": "He pled not guilty before the judge."
       },
       "collections": [
         "morphology:inflection",
@@ -74982,11 +74982,11 @@
     },
     {
       "id": "k3pvgd3wse",
-      "spanish": "participio de plead",
+      "spanish": "[participio] plead",
       "english": "pleaded",
       "example": {
-        "spanish": "El participio de plead es pleaded.",
-        "english": "The past participle of plead is pleaded."
+        "spanish": "Se ha declarado inocente en el juicio.",
+        "english": "He has pleaded not guilty at the trial."
       },
       "collections": [
         "morphology:inflection",
@@ -75004,11 +75004,11 @@
     },
     {
       "id": "yv0rgqk0rr",
-      "spanish": "participio de plead",
+      "spanish": "[participio] plead",
       "english": "pled",
       "example": {
-        "spanish": "El participio de plead es pled.",
-        "english": "The past participle of plead is pled."
+        "spanish": "Se ha declarado inocente en el juicio.",
+        "english": "He has pled not guilty at the trial."
       },
       "collections": [
         "morphology:inflection",
@@ -75027,11 +75027,11 @@
     },
     {
       "id": "a52hbmvqbe",
-      "spanish": "pasado de prove",
+      "spanish": "[pasado] prove",
       "english": "proved",
       "example": {
-        "spanish": "El pasado de prove es proved.",
-        "english": "The past of prove is proved."
+        "spanish": "Ella demostró que tenía razón.",
+        "english": "She proved that she was right."
       },
       "collections": [
         "morphology:inflection",
@@ -75048,11 +75048,11 @@
     },
     {
       "id": "rvqzozxvlv",
-      "spanish": "participio de prove",
+      "spanish": "[participio] prove",
       "english": "proven",
       "example": {
-        "spanish": "El participio de prove es proven.",
-        "english": "The past participle of prove is proven."
+        "spanish": "Ella ha demostrado que tenía razón.",
+        "english": "She has proven that she was right."
       },
       "collections": [
         "morphology:inflection",
@@ -75070,11 +75070,11 @@
     },
     {
       "id": "3vmu206qps",
-      "spanish": "participio de prove",
+      "spanish": "[participio] prove",
       "english": "proved",
       "example": {
-        "spanish": "El participio de prove es proved.",
-        "english": "The past participle of prove is proved."
+        "spanish": "Ella ha demostrado que tenía razón.",
+        "english": "She has proved that she was right."
       },
       "collections": [
         "morphology:inflection",
@@ -75091,11 +75091,11 @@
     },
     {
       "id": "vd3nut7nkt",
-      "spanish": "pasado de put",
+      "spanish": "[pasado] put",
       "english": "put",
       "example": {
-        "spanish": "El pasado de put es put.",
-        "english": "The past of put is put."
+        "spanish": "Puso el libro sobre la mesa.",
+        "english": "He put the book on the table."
       },
       "collections": [
         "morphology:inflection",
@@ -75114,11 +75114,11 @@
     },
     {
       "id": "smpiiw148l",
-      "spanish": "participio de put",
+      "spanish": "[participio] put",
       "english": "put",
       "example": {
-        "spanish": "El participio de put es put.",
-        "english": "The past participle of put is put."
+        "spanish": "Ha puesto sus libros ahí muchas veces.",
+        "english": "He has put his books there many times."
       },
       "collections": [
         "morphology:inflection",
@@ -75137,11 +75137,11 @@
     },
     {
       "id": "9pqsf0ud6d",
-      "spanish": "pasado de quit",
+      "spanish": "[pasado] quit",
       "english": "quit",
       "example": {
-        "spanish": "El pasado de quit es quit.",
-        "english": "The past of quit is quit."
+        "spanish": "Renunció a su trabajo el mes pasado.",
+        "english": "He quit his job last month."
       },
       "collections": [
         "morphology:inflection",
@@ -75160,11 +75160,11 @@
     },
     {
       "id": "u6notwo6my",
-      "spanish": "participio de quit",
+      "spanish": "[participio] quit",
       "english": "quit",
       "example": {
-        "spanish": "El participio de quit es quit.",
-        "english": "The past participle of quit is quit."
+        "spanish": "Ha renunciado a dos trabajos este año.",
+        "english": "He has quit two jobs this year."
       },
       "collections": [
         "morphology:inflection",
@@ -75183,11 +75183,11 @@
     },
     {
       "id": "59yagpqbix",
-      "spanish": "pasado de read",
+      "spanish": "[pasado] read",
       "english": "read",
       "example": {
-        "spanish": "El pasado de read es read.",
-        "english": "The past of read is read."
+        "spanish": "Leyó el periódico esta mañana.",
+        "english": "She read the newspaper this morning."
       },
       "collections": [
         "morphology:inflection",
@@ -75206,11 +75206,11 @@
     },
     {
       "id": "ror87had0q",
-      "spanish": "participio de read",
+      "spanish": "[participio] read",
       "english": "read",
       "example": {
-        "spanish": "El participio de read es read.",
-        "english": "The past participle of read is read."
+        "spanish": "Ha leído ese libro tres veces.",
+        "english": "She has read that book three times."
       },
       "collections": [
         "morphology:inflection",
@@ -75269,11 +75269,11 @@
     },
     {
       "id": "rexmxhv2ih",
-      "spanish": "pasado de rid",
+      "spanish": "[pasado] rid",
       "english": "rid",
       "example": {
-        "spanish": "El pasado de rid es rid.",
-        "english": "The past of rid is rid."
+        "spanish": "Se deshizo de la ropa vieja.",
+        "english": "She rid herself of the old clothes."
       },
       "collections": [
         "morphology:inflection",
@@ -75292,11 +75292,11 @@
     },
     {
       "id": "awhxvvklkw",
-      "spanish": "participio de rid",
+      "spanish": "[participio] rid",
       "english": "rid",
       "example": {
-        "spanish": "El participio de rid es rid.",
-        "english": "The past participle of rid is rid."
+        "spanish": "Se ha deshecho de casi toda su ropa vieja.",
+        "english": "She has rid herself of almost all her old clothes."
       },
       "collections": [
         "morphology:inflection",
@@ -75315,11 +75315,11 @@
     },
     {
       "id": "0v2x2ecjqe",
-      "spanish": "pasado de ride",
+      "spanish": "[pasado] ride",
       "english": "rode",
       "example": {
-        "spanish": "El pasado de ride es rode.",
-        "english": "The past of ride is rode."
+        "spanish": "Montó a caballo por primera vez.",
+        "english": "She rode a horse for the first time."
       },
       "collections": [
         "morphology:inflection",
@@ -75337,11 +75337,11 @@
     },
     {
       "id": "tgo1val9xh",
-      "spanish": "participio de ride",
+      "spanish": "[participio] ride",
       "english": "ridden",
       "example": {
-        "spanish": "El participio de ride es ridden.",
-        "english": "The past participle of ride is ridden."
+        "spanish": "Ha montado a caballo desde niña.",
+        "english": "She has ridden horses since she was a child."
       },
       "collections": [
         "morphology:inflection",
@@ -75360,11 +75360,11 @@
     },
     {
       "id": "rxho2fn8fn",
-      "spanish": "pasado de ring",
+      "spanish": "[pasado] ring",
       "english": "rang",
       "example": {
-        "spanish": "El pasado de ring es rang.",
-        "english": "The past of ring is rang."
+        "spanish": "El teléfono sonó tres veces.",
+        "english": "The phone rang three times."
       },
       "collections": [
         "morphology:inflection",
@@ -75383,11 +75383,11 @@
     },
     {
       "id": "3pco7273dr",
-      "spanish": "participio de ring",
+      "spanish": "[participio] ring",
       "english": "rung",
       "example": {
-        "spanish": "El participio de ring es rung.",
-        "english": "The past participle of ring is rung."
+        "spanish": "El teléfono ha sonado tres veces hoy.",
+        "english": "The phone has rung three times today."
       },
       "collections": [
         "morphology:inflection",
@@ -75406,11 +75406,11 @@
     },
     {
       "id": "km1b8rim8n",
-      "spanish": "pasado de rise",
+      "spanish": "[pasado] rise",
       "english": "rose",
       "example": {
-        "spanish": "El pasado de rise es rose.",
-        "english": "The past of rise is rose."
+        "spanish": "El sol salió a las seis en punto.",
+        "english": "The sun rose at six o'clock."
       },
       "collections": [
         "morphology:inflection",
@@ -75428,11 +75428,11 @@
     },
     {
       "id": "d9oxjrwfue",
-      "spanish": "participio de rise",
+      "spanish": "[participio] rise",
       "english": "risen",
       "example": {
-        "spanish": "El participio de rise es risen.",
-        "english": "The past participle of rise is risen."
+        "spanish": "El sol ya ha salido.",
+        "english": "The sun has already risen."
       },
       "collections": [
         "morphology:inflection",
@@ -75450,11 +75450,11 @@
     },
     {
       "id": "oiferzi4zi",
-      "spanish": "pasado de run",
+      "spanish": "[pasado] run",
       "english": "ran",
       "example": {
-        "spanish": "El pasado de run es ran.",
-        "english": "The past of run is ran."
+        "spanish": "Corrió cinco kilómetros esta mañana.",
+        "english": "He ran five kilometers this morning."
       },
       "collections": [
         "morphology:inflection",
@@ -75472,11 +75472,11 @@
     },
     {
       "id": "ur7p71snqp",
-      "spanish": "participio de run",
+      "spanish": "[participio] run",
       "english": "run",
       "example": {
-        "spanish": "El participio de run es run.",
-        "english": "The past participle of run is run."
+        "spanish": "Ha corrido cinco kilómetros cada mañana.",
+        "english": "He has run five kilometers every morning."
       },
       "collections": [
         "morphology:inflection",
@@ -75543,11 +75543,11 @@
     },
     {
       "id": "cij7k51kqk",
-      "spanish": "pasado de say",
+      "spanish": "[pasado] say",
       "english": "said",
       "example": {
-        "spanish": "El pasado de say es said.",
-        "english": "The past of say is said."
+        "spanish": "Ella dijo que llegaría tarde.",
+        "english": "She said she would be late."
       },
       "collections": [
         "morphology:inflection",
@@ -75566,11 +75566,11 @@
     },
     {
       "id": "12lrm1b61l",
-      "spanish": "participio de say",
+      "spanish": "[participio] say",
       "english": "said",
       "example": {
-        "spanish": "El participio de say es said.",
-        "english": "The past participle of say is said."
+        "spanish": "Ella ha dicho lo mismo varias veces.",
+        "english": "She has said the same thing several times."
       },
       "collections": [
         "morphology:inflection",
@@ -75589,11 +75589,11 @@
     },
     {
       "id": "6xhxr8sb7k",
-      "spanish": "pasado de see",
+      "spanish": "[pasado] see",
       "english": "saw",
       "example": {
-        "spanish": "El pasado de see es saw.",
-        "english": "The past of see is saw."
+        "spanish": "Vi una película nueva anoche.",
+        "english": "I saw a new movie last night."
       },
       "collections": [
         "morphology:inflection",
@@ -75610,11 +75610,11 @@
     },
     {
       "id": "fu4c8t7dei",
-      "spanish": "participio de see",
+      "spanish": "[participio] see",
       "english": "seen",
       "example": {
-        "spanish": "El participio de see es seen.",
-        "english": "The past participle of see is seen."
+        "spanish": "He visto esa película tres veces.",
+        "english": "I have seen that movie three times."
       },
       "collections": [
         "morphology:inflection",
@@ -75631,11 +75631,11 @@
     },
     {
       "id": "k1zeafjyeu",
-      "spanish": "pasado de seek",
+      "spanish": "[pasado] seek",
       "english": "sought",
       "example": {
-        "spanish": "El pasado de seek es sought.",
-        "english": "The past of seek is sought."
+        "spanish": "Buscó ayuda profesional para el problema.",
+        "english": "He sought professional help for the problem."
       },
       "collections": [
         "morphology:inflection",
@@ -75655,11 +75655,11 @@
     },
     {
       "id": "z6bg9qle6t",
-      "spanish": "participio de seek",
+      "spanish": "[participio] seek",
       "english": "sought",
       "example": {
-        "spanish": "El participio de seek es sought.",
-        "english": "The past participle of seek is sought."
+        "spanish": "Ha buscado ayuda profesional desde hace meses.",
+        "english": "He has sought professional help for months."
       },
       "collections": [
         "morphology:inflection",
@@ -75679,11 +75679,11 @@
     },
     {
       "id": "mpfyf2ovqk",
-      "spanish": "pasado de sell",
+      "spanish": "[pasado] sell",
       "english": "sold",
       "example": {
-        "spanish": "El pasado de sell es sold.",
-        "english": "The past of sell is sold."
+        "spanish": "Vendió su carro viejo la semana pasada.",
+        "english": "He sold his old car last week."
       },
       "collections": [
         "morphology:inflection",
@@ -75703,11 +75703,11 @@
     },
     {
       "id": "as3d3fjuw7",
-      "spanish": "participio de sell",
+      "spanish": "[participio] sell",
       "english": "sold",
       "example": {
-        "spanish": "El participio de sell es sold.",
-        "english": "The past participle of sell is sold."
+        "spanish": "Ha vendido dos casas este año.",
+        "english": "He has sold two houses this year."
       },
       "collections": [
         "morphology:inflection",
@@ -75727,11 +75727,11 @@
     },
     {
       "id": "zui5vgopk6",
-      "spanish": "pasado de send",
+      "spanish": "[pasado] send",
       "english": "sent",
       "example": {
-        "spanish": "El pasado de send es sent.",
-        "english": "The past of send is sent."
+        "spanish": "Envió el paquete por correo.",
+        "english": "She sent the package by mail."
       },
       "collections": [
         "morphology:inflection",
@@ -75751,11 +75751,11 @@
     },
     {
       "id": "mon6vzw35r",
-      "spanish": "participio de send",
+      "spanish": "[participio] send",
       "english": "sent",
       "example": {
-        "spanish": "El participio de send es sent.",
-        "english": "The past participle of send is sent."
+        "spanish": "Ha enviado el paquete por correo.",
+        "english": "She has sent the package by mail."
       },
       "collections": [
         "morphology:inflection",
@@ -75775,11 +75775,11 @@
     },
     {
       "id": "8iwzc12hm2",
-      "spanish": "pasado de set",
+      "spanish": "[pasado] set",
       "english": "set",
       "example": {
-        "spanish": "El pasado de set es set.",
-        "english": "The past of set is set."
+        "spanish": "Puso la mesa antes de que llegaran los invitados.",
+        "english": "She set the table before the guests arrived."
       },
       "collections": [
         "morphology:inflection",
@@ -75798,11 +75798,11 @@
     },
     {
       "id": "9lle2cpep8",
-      "spanish": "participio de set",
+      "spanish": "[participio] set",
       "english": "set",
       "example": {
-        "spanish": "El participio de set es set.",
-        "english": "The past participle of set is set."
+        "spanish": "Ha puesto la mesa para la cena.",
+        "english": "She has set the table for dinner."
       },
       "collections": [
         "morphology:inflection",
@@ -75821,11 +75821,11 @@
     },
     {
       "id": "yz9g9ykdb9",
-      "spanish": "pasado de sew",
+      "spanish": "[pasado] sew",
       "english": "sewed",
       "example": {
-        "spanish": "El pasado de sew es sewed.",
-        "english": "The past of sew is sewed."
+        "spanish": "Cosió el botón que se había caído.",
+        "english": "She sewed the button that had fallen off."
       },
       "collections": [
         "morphology:inflection",
@@ -75842,11 +75842,11 @@
     },
     {
       "id": "6k127x124p",
-      "spanish": "participio de sew",
+      "spanish": "[participio] sew",
       "english": "sewn",
       "example": {
-        "spanish": "El participio de sew es sewn.",
-        "english": "The past participle of sew is sewn."
+        "spanish": "Ha cosido ese botón varias veces.",
+        "english": "She has sewn that button several times."
       },
       "collections": [
         "morphology:inflection",
@@ -75864,11 +75864,11 @@
     },
     {
       "id": "lxvwbr6d7x",
-      "spanish": "participio de sew",
+      "spanish": "[participio] sew",
       "english": "sewed",
       "example": {
-        "spanish": "El participio de sew es sewed.",
-        "english": "The past participle of sew is sewed."
+        "spanish": "Ha cosido ese botón varias veces.",
+        "english": "She has sewed that button several times."
       },
       "collections": [
         "morphology:inflection",
@@ -75885,11 +75885,11 @@
     },
     {
       "id": "42qzrcv99x",
-      "spanish": "pasado de shake",
+      "spanish": "[pasado] shake",
       "english": "shook",
       "example": {
-        "spanish": "El pasado de shake es shook.",
-        "english": "The past of shake is shook."
+        "spanish": "Le tembló la mano por los nervios.",
+        "english": "His hand shook from nerves."
       },
       "collections": [
         "morphology:inflection",
@@ -75907,11 +75907,11 @@
     },
     {
       "id": "l2oheg8sdo",
-      "spanish": "participio de shake",
+      "spanish": "[participio] shake",
       "english": "shaken",
       "example": {
-        "spanish": "El participio de shake es shaken.",
-        "english": "The past participle of shake is shaken."
+        "spanish": "Le ha temblado la mano por los nervios.",
+        "english": "His hand has shaken from nerves."
       },
       "collections": [
         "morphology:inflection",
@@ -75930,11 +75930,11 @@
     },
     {
       "id": "9mq6n0oaz0",
-      "spanish": "pasado de shave",
+      "spanish": "[pasado] shave",
       "english": "shaved",
       "example": {
-        "spanish": "El pasado de shave es shaved.",
-        "english": "The past of shave is shaved."
+        "spanish": "Se afeitó antes de salir.",
+        "english": "He shaved before going out."
       },
       "collections": [
         "morphology:inflection",
@@ -75951,11 +75951,11 @@
     },
     {
       "id": "b1ssq646sy",
-      "spanish": "participio de shave",
+      "spanish": "[participio] shave",
       "english": "shaven",
       "example": {
-        "spanish": "El participio de shave es shaven.",
-        "english": "The past participle of shave is shaven."
+        "spanish": "Se ha afeitado esta mañana.",
+        "english": "He has shaven this morning."
       },
       "collections": [
         "morphology:inflection",
@@ -75973,11 +75973,11 @@
     },
     {
       "id": "4juijftxrq",
-      "spanish": "participio de shave",
+      "spanish": "[participio] shave",
       "english": "shaved",
       "example": {
-        "spanish": "El participio de shave es shaved.",
-        "english": "The past participle of shave is shaved."
+        "spanish": "Se ha afeitado esta mañana.",
+        "english": "He has shaved this morning."
       },
       "collections": [
         "morphology:inflection",
@@ -76043,11 +76043,11 @@
     },
     {
       "id": "m1ax3ny7qf",
-      "spanish": "pasado de shed",
+      "spanish": "[pasado] shed",
       "english": "shed",
       "example": {
-        "spanish": "El pasado de shed es shed.",
-        "english": "The past of shed is shed."
+        "spanish": "El árbol perdió sus hojas en otoño.",
+        "english": "The tree shed its leaves in autumn."
       },
       "collections": [
         "morphology:inflection",
@@ -76066,11 +76066,11 @@
     },
     {
       "id": "4vr9rm80nf",
-      "spanish": "participio de shed",
+      "spanish": "[participio] shed",
       "english": "shed",
       "example": {
-        "spanish": "El participio de shed es shed.",
-        "english": "The past participle of shed is shed."
+        "spanish": "El árbol ha perdido casi todas sus hojas.",
+        "english": "The tree has shed almost all its leaves."
       },
       "collections": [
         "morphology:inflection",
@@ -76089,11 +76089,11 @@
     },
     {
       "id": "e4rrbwczr7",
-      "spanish": "pasado de shine",
+      "spanish": "[pasado] shine",
       "english": "shone",
       "example": {
-        "spanish": "El pasado de shine es shone.",
-        "english": "The past of shine is shone."
+        "spanish": "El sol brilló todo el día.",
+        "english": "The sun shone all day."
       },
       "collections": [
         "morphology:inflection",
@@ -76112,11 +76112,11 @@
     },
     {
       "id": "e363thvvnn",
-      "spanish": "participio de shine",
+      "spanish": "[participio] shine",
       "english": "shone",
       "example": {
-        "spanish": "El participio de shine es shone.",
-        "english": "The past participle of shine is shone."
+        "spanish": "El sol ha brillado toda la semana.",
+        "english": "The sun has shone all week."
       },
       "collections": [
         "morphology:inflection",
@@ -76307,11 +76307,11 @@
     },
     {
       "id": "i5v8ev923n",
-      "spanish": "pasado de shoot",
+      "spanish": "[pasado] shoot",
       "english": "shot",
       "example": {
-        "spanish": "El pasado de shoot es shot.",
-        "english": "The past of shoot is shot."
+        "spanish": "El fotógrafo tomó cien fotos en la boda.",
+        "english": "The photographer shot a hundred photos at the wedding."
       },
       "collections": [
         "morphology:inflection",
@@ -76330,11 +76330,11 @@
     },
     {
       "id": "vondbiomh2",
-      "spanish": "participio de shoot",
+      "spanish": "[participio] shoot",
       "english": "shot",
       "example": {
-        "spanish": "El participio de shoot es shot.",
-        "english": "The past participle of shoot is shot."
+        "spanish": "El fotógrafo ha tomado cientos de fotos.",
+        "english": "The photographer has shot hundreds of photos."
       },
       "collections": [
         "morphology:inflection",
@@ -76353,11 +76353,11 @@
     },
     {
       "id": "qczwgbuzwe",
-      "spanish": "pasado de show",
+      "spanish": "[pasado] show",
       "english": "showed",
       "example": {
-        "spanish": "El pasado de show es showed.",
-        "english": "The past of show is showed."
+        "spanish": "Ella mostró su nuevo proyecto al equipo.",
+        "english": "She showed her new project to the team."
       },
       "collections": [
         "morphology:inflection",
@@ -76374,11 +76374,11 @@
     },
     {
       "id": "denchpjziw",
-      "spanish": "participio de show",
+      "spanish": "[participio] show",
       "english": "shown",
       "example": {
-        "spanish": "El participio de show es shown.",
-        "english": "The past participle of show is shown."
+        "spanish": "Ella ha mostrado su proyecto al equipo dos veces.",
+        "english": "She has shown her project to the team twice."
       },
       "collections": [
         "morphology:inflection",
@@ -76397,11 +76397,11 @@
     },
     {
       "id": "sgfwcsau8u",
-      "spanish": "participio de show",
+      "spanish": "[participio] show",
       "english": "showed",
       "example": {
-        "spanish": "El participio de show es showed.",
-        "english": "The past participle of show is showed."
+        "spanish": "Ella ha mostrado su proyecto al equipo dos veces.",
+        "english": "She has showed her project to the team twice."
       },
       "collections": [
         "morphology:inflection",
@@ -76418,11 +76418,11 @@
     },
     {
       "id": "c96ukshr12",
-      "spanish": "pasado de shrink",
+      "spanish": "[pasado] shrink",
       "english": "shrank",
       "example": {
-        "spanish": "El pasado de shrink es shrank.",
-        "english": "The past of shrink is shrank."
+        "spanish": "La camisa se encogió al lavarla.",
+        "english": "The shirt shrank when it was washed."
       },
       "collections": [
         "morphology:inflection",
@@ -76441,11 +76441,11 @@
     },
     {
       "id": "rol2mcvlrq",
-      "spanish": "pasado de shrink",
+      "spanish": "[pasado] shrink",
       "english": "shrunk",
       "example": {
-        "spanish": "El pasado de shrink es shrunk.",
-        "english": "The past of shrink is shrunk."
+        "spanish": "La camisa se encogió al lavarla.",
+        "english": "The shirt shrunk when it was washed."
       },
       "collections": [
         "morphology:inflection",
@@ -76464,11 +76464,11 @@
     },
     {
       "id": "c9of0pgjjt",
-      "spanish": "participio de shrink",
+      "spanish": "[participio] shrink",
       "english": "shrunk",
       "example": {
-        "spanish": "El participio de shrink es shrunk.",
-        "english": "The past participle of shrink is shrunk."
+        "spanish": "La camisa se ha encogido después de lavarla.",
+        "english": "The shirt has shrunk after being washed."
       },
       "collections": [
         "morphology:inflection",
@@ -76487,11 +76487,11 @@
     },
     {
       "id": "fc2clq9pib",
-      "spanish": "pasado de shut",
+      "spanish": "[pasado] shut",
       "english": "shut",
       "example": {
-        "spanish": "El pasado de shut es shut.",
-        "english": "The past of shut is shut."
+        "spanish": "Cerró la puerta con cuidado.",
+        "english": "She shut the door carefully."
       },
       "collections": [
         "morphology:inflection",
@@ -76510,11 +76510,11 @@
     },
     {
       "id": "6x86xzkbvv",
-      "spanish": "participio de shut",
+      "spanish": "[participio] shut",
       "english": "shut",
       "example": {
-        "spanish": "El participio de shut es shut.",
-        "english": "The past participle of shut is shut."
+        "spanish": "Ha cerrado esa puerta con cuidado siempre.",
+        "english": "She has always shut that door carefully."
       },
       "collections": [
         "morphology:inflection",
@@ -76533,11 +76533,11 @@
     },
     {
       "id": "n093iw4nyk",
-      "spanish": "pasado de sing",
+      "spanish": "[pasado] sing",
       "english": "sang",
       "example": {
-        "spanish": "El pasado de sing es sang.",
-        "english": "The past of sing is sang."
+        "spanish": "Cantó en el concierto de la escuela.",
+        "english": "She sang at the school concert."
       },
       "collections": [
         "morphology:inflection",
@@ -76556,11 +76556,11 @@
     },
     {
       "id": "jt1vowte8p",
-      "spanish": "participio de sing",
+      "spanish": "[participio] sing",
       "english": "sung",
       "example": {
-        "spanish": "El participio de sing es sung.",
-        "english": "The past participle of sing is sung."
+        "spanish": "Ha cantado en ese escenario antes.",
+        "english": "She has sung on that stage before."
       },
       "collections": [
         "morphology:inflection",
@@ -76579,11 +76579,11 @@
     },
     {
       "id": "q0in967hnc",
-      "spanish": "pasado de sink",
+      "spanish": "[pasado] sink",
       "english": "sank",
       "example": {
-        "spanish": "El pasado de sink es sank.",
-        "english": "The past of sink is sank."
+        "spanish": "El barco se hundió lentamente.",
+        "english": "The boat sank slowly."
       },
       "collections": [
         "morphology:inflection",
@@ -76602,11 +76602,11 @@
     },
     {
       "id": "yp8kmo62ix",
-      "spanish": "pasado de sink",
+      "spanish": "[pasado] sink",
       "english": "sunk",
       "example": {
-        "spanish": "El pasado de sink es sunk.",
-        "english": "The past of sink is sunk."
+        "spanish": "El barco se hundió lentamente.",
+        "english": "The boat sunk slowly."
       },
       "collections": [
         "morphology:inflection",
@@ -76625,11 +76625,11 @@
     },
     {
       "id": "poq5iuw2pj",
-      "spanish": "participio de sink",
+      "spanish": "[participio] sink",
       "english": "sunk",
       "example": {
-        "spanish": "El participio de sink es sunk.",
-        "english": "The past participle of sink is sunk."
+        "spanish": "El barco se ha hundido lentamente.",
+        "english": "The boat has sunk slowly."
       },
       "collections": [
         "morphology:inflection",
@@ -76648,11 +76648,11 @@
     },
     {
       "id": "nesbuszvq7",
-      "spanish": "pasado de sit",
+      "spanish": "[pasado] sit",
       "english": "sat",
       "example": {
-        "spanish": "El pasado de sit es sat.",
-        "english": "The past of sit is sat."
+        "spanish": "Se sentó en la primera fila.",
+        "english": "She sat in the front row."
       },
       "collections": [
         "morphology:inflection",
@@ -76671,11 +76671,11 @@
     },
     {
       "id": "ijdt2nva2a",
-      "spanish": "participio de sit",
+      "spanish": "[participio] sit",
       "english": "sat",
       "example": {
-        "spanish": "El participio de sit es sat.",
-        "english": "The past participle of sit is sat."
+        "spanish": "Se ha sentado en esa silla toda la tarde.",
+        "english": "She has sat in that chair all afternoon."
       },
       "collections": [
         "morphology:inflection",
@@ -76726,11 +76726,11 @@
     },
     {
       "id": "nntgjqr7v0",
-      "spanish": "pasado de sleep",
+      "spanish": "[pasado] sleep",
       "english": "slept",
       "example": {
-        "spanish": "El pasado de sleep es slept.",
-        "english": "The past of sleep is slept."
+        "spanish": "Durmió ocho horas anoche.",
+        "english": "He slept eight hours last night."
       },
       "collections": [
         "morphology:inflection",
@@ -76750,11 +76750,11 @@
     },
     {
       "id": "gv0nkhlrgg",
-      "spanish": "participio de sleep",
+      "spanish": "[participio] sleep",
       "english": "slept",
       "example": {
-        "spanish": "El participio de sleep es slept.",
-        "english": "The past participle of sleep is slept."
+        "spanish": "Ha dormido bien esta semana.",
+        "english": "He has slept well this week."
       },
       "collections": [
         "morphology:inflection",
@@ -76774,11 +76774,11 @@
     },
     {
       "id": "48mt7mqm4p",
-      "spanish": "pasado de slide",
+      "spanish": "[pasado] slide",
       "english": "slid",
       "example": {
-        "spanish": "El pasado de slide es slid.",
-        "english": "The past of slide is slid."
+        "spanish": "El niño se deslizó por el tobogán.",
+        "english": "The boy slid down the slide."
       },
       "collections": [
         "morphology:inflection",
@@ -76798,11 +76798,11 @@
     },
     {
       "id": "0sb6k8lwlg",
-      "spanish": "participio de slide",
+      "spanish": "[participio] slide",
       "english": "slid",
       "example": {
-        "spanish": "El participio de slide es slid.",
-        "english": "The past participle of slide is slid."
+        "spanish": "El niño se ha deslizado por ese tobogán muchas veces.",
+        "english": "The boy has slid down that slide many times."
       },
       "collections": [
         "morphology:inflection",
@@ -76924,11 +76924,11 @@
     },
     {
       "id": "l64sml5vb4",
-      "spanish": "pasado de smell",
+      "spanish": "[pasado] smell",
       "english": "smelled",
       "example": {
-        "spanish": "El pasado de smell es smelled.",
-        "english": "The past of smell is smelled."
+        "spanish": "La sopa olió deliciosa desde la cocina.",
+        "english": "The soup smelled delicious from the kitchen."
       },
       "collections": [
         "morphology:inflection",
@@ -76946,11 +76946,11 @@
     },
     {
       "id": "qj21s7e75n",
-      "spanish": "pasado de smell",
+      "spanish": "[pasado] smell",
       "english": "smelt",
       "example": {
-        "spanish": "El pasado de smell es smelt.",
-        "english": "The past of smell is smelt."
+        "spanish": "La sopa olió deliciosa desde la cocina.",
+        "english": "The soup smelt delicious from the kitchen."
       },
       "collections": [
         "morphology:inflection",
@@ -76969,11 +76969,11 @@
     },
     {
       "id": "9flbcl8ewb",
-      "spanish": "participio de smell",
+      "spanish": "[participio] smell",
       "english": "smelled",
       "example": {
-        "spanish": "El participio de smell es smelled.",
-        "english": "The past participle of smell is smelled."
+        "spanish": "La sopa ha olido deliciosa toda la tarde.",
+        "english": "The soup has smelled delicious all afternoon."
       },
       "collections": [
         "morphology:inflection",
@@ -76991,11 +76991,11 @@
     },
     {
       "id": "i7s2dwmv0x",
-      "spanish": "participio de smell",
+      "spanish": "[participio] smell",
       "english": "smelt",
       "example": {
-        "spanish": "El participio de smell es smelt.",
-        "english": "The past participle of smell is smelt."
+        "spanish": "La sopa ha olido deliciosa toda la tarde.",
+        "english": "The soup has smelt delicious all afternoon."
       },
       "collections": [
         "morphology:inflection",
@@ -77049,11 +77049,11 @@
     },
     {
       "id": "x7dbibyw8v",
-      "spanish": "pasado de sneak",
+      "spanish": "[pasado] sneak",
       "english": "sneaked",
       "example": {
-        "spanish": "El pasado de sneak es sneaked.",
-        "english": "The past of sneak is sneaked."
+        "spanish": "Se escabulló de la clase sin que nadie notara.",
+        "english": "He sneaked out of class without anyone noticing."
       },
       "collections": [
         "morphology:inflection",
@@ -77071,11 +77071,11 @@
     },
     {
       "id": "bro8xnas57",
-      "spanish": "pasado de sneak",
+      "spanish": "[pasado] sneak",
       "english": "snuck",
       "example": {
-        "spanish": "El pasado de sneak es snuck.",
-        "english": "The past of sneak is snuck."
+        "spanish": "Se escabulló de la clase sin que nadie notara.",
+        "english": "He snuck out of class without anyone noticing."
       },
       "collections": [
         "morphology:inflection",
@@ -77094,11 +77094,11 @@
     },
     {
       "id": "wkyh1rzgay",
-      "spanish": "participio de sneak",
+      "spanish": "[participio] sneak",
       "english": "sneaked",
       "example": {
-        "spanish": "El participio de sneak es sneaked.",
-        "english": "The past participle of sneak is sneaked."
+        "spanish": "Se ha escabullido de clase antes.",
+        "english": "He has sneaked out of class before."
       },
       "collections": [
         "morphology:inflection",
@@ -77116,11 +77116,11 @@
     },
     {
       "id": "1mv50oka9h",
-      "spanish": "participio de sneak",
+      "spanish": "[participio] sneak",
       "english": "snuck",
       "example": {
-        "spanish": "El participio de sneak es snuck.",
-        "english": "The past participle of sneak is snuck."
+        "spanish": "Se ha escabullido de clase antes.",
+        "english": "He has snuck out of class before."
       },
       "collections": [
         "morphology:inflection",
@@ -77139,11 +77139,11 @@
     },
     {
       "id": "5oxardz26e",
-      "spanish": "pasado de sow",
+      "spanish": "[pasado] sow",
       "english": "sowed",
       "example": {
-        "spanish": "El pasado de sow es sowed.",
-        "english": "The past of sow is sowed."
+        "spanish": "Sembró las semillas en primavera.",
+        "english": "She sowed the seeds in spring."
       },
       "collections": [
         "morphology:inflection",
@@ -77160,11 +77160,11 @@
     },
     {
       "id": "5wsjjs5o6u",
-      "spanish": "participio de sow",
+      "spanish": "[participio] sow",
       "english": "sown",
       "example": {
-        "spanish": "El participio de sow es sown.",
-        "english": "The past participle of sow is sown."
+        "spanish": "Ha sembrado esas semillas cada primavera.",
+        "english": "She has sown those seeds every spring."
       },
       "collections": [
         "morphology:inflection",
@@ -77183,11 +77183,11 @@
     },
     {
       "id": "wh9yw9j5ya",
-      "spanish": "participio de sow",
+      "spanish": "[participio] sow",
       "english": "sowed",
       "example": {
-        "spanish": "El participio de sow es sowed.",
-        "english": "The past participle of sow is sowed."
+        "spanish": "Ha sembrado esas semillas cada primavera.",
+        "english": "She has sowed those seeds every spring."
       },
       "collections": [
         "morphology:inflection",
@@ -77204,11 +77204,11 @@
     },
     {
       "id": "m1vp7bjw6g",
-      "spanish": "pasado de speak",
+      "spanish": "[pasado] speak",
       "english": "spoke",
       "example": {
-        "spanish": "El pasado de speak es spoke.",
-        "english": "The past of speak is spoke."
+        "spanish": "Habló con el gerente sobre el problema.",
+        "english": "She spoke to the manager about the problem."
       },
       "collections": [
         "morphology:inflection",
@@ -77226,11 +77226,11 @@
     },
     {
       "id": "p4y3ag42a9",
-      "spanish": "participio de speak",
+      "spanish": "[participio] speak",
       "english": "spoken",
       "example": {
-        "spanish": "El participio de speak es spoken.",
-        "english": "The past participle of speak is spoken."
+        "spanish": "Ha hablado con el gerente sobre el problema.",
+        "english": "She has spoken to the manager about the problem."
       },
       "collections": [
         "morphology:inflection",
@@ -77249,11 +77249,11 @@
     },
     {
       "id": "u0upjdj9xz",
-      "spanish": "pasado de speed",
+      "spanish": "[pasado] speed",
       "english": "sped",
       "example": {
-        "spanish": "El pasado de speed es sped.",
-        "english": "The past of speed is sped."
+        "spanish": "El conductor aceleró en la autopista.",
+        "english": "The driver sped on the highway."
       },
       "collections": [
         "morphology:inflection",
@@ -77273,11 +77273,11 @@
     },
     {
       "id": "er9pgbwvmu",
-      "spanish": "pasado de speed",
+      "spanish": "[pasado] speed",
       "english": "speeded",
       "example": {
-        "spanish": "El pasado de speed es speeded.",
-        "english": "The past of speed is speeded."
+        "spanish": "El conductor aceleró en la autopista.",
+        "english": "The driver speeded on the highway."
       },
       "collections": [
         "morphology:inflection",
@@ -77295,11 +77295,11 @@
     },
     {
       "id": "tv4q566jil",
-      "spanish": "participio de speed",
+      "spanish": "[participio] speed",
       "english": "sped",
       "example": {
-        "spanish": "El participio de speed es sped.",
-        "english": "The past participle of speed is sped."
+        "spanish": "Ha acelerado en esa carretera antes.",
+        "english": "He has sped on that highway before."
       },
       "collections": [
         "morphology:inflection",
@@ -77319,11 +77319,11 @@
     },
     {
       "id": "09nr4ep7eh",
-      "spanish": "participio de speed",
+      "spanish": "[participio] speed",
       "english": "speeded",
       "example": {
-        "spanish": "El participio de speed es speeded.",
-        "english": "The past participle of speed is speeded."
+        "spanish": "Ha acelerado en esa carretera antes.",
+        "english": "He has speeded on that highway before."
       },
       "collections": [
         "morphology:inflection",
@@ -77341,11 +77341,11 @@
     },
     {
       "id": "azp87kfl3o",
-      "spanish": "pasado de spell",
+      "spanish": "[pasado] spell",
       "english": "spelled",
       "example": {
-        "spanish": "El pasado de spell es spelled.",
-        "english": "The past of spell is spelled."
+        "spanish": "Deletreó su nombre para el formulario.",
+        "english": "He spelled his name for the form."
       },
       "collections": [
         "morphology:inflection",
@@ -77363,11 +77363,11 @@
     },
     {
       "id": "c7xhfvg2lc",
-      "spanish": "pasado de spell",
+      "spanish": "[pasado] spell",
       "english": "spelt",
       "example": {
-        "spanish": "El pasado de spell es spelt.",
-        "english": "The past of spell is spelt."
+        "spanish": "Deletreó su nombre para el formulario.",
+        "english": "He spelt his name for the form."
       },
       "collections": [
         "morphology:inflection",
@@ -77386,11 +77386,11 @@
     },
     {
       "id": "qmy73bs4c3",
-      "spanish": "participio de spell",
+      "spanish": "[participio] spell",
       "english": "spelled",
       "example": {
-        "spanish": "El participio de spell es spelled.",
-        "english": "The past participle of spell is spelled."
+        "spanish": "Ha deletreado su nombre mal varias veces.",
+        "english": "He has spelled his name wrong several times."
       },
       "collections": [
         "morphology:inflection",
@@ -77408,11 +77408,11 @@
     },
     {
       "id": "308tmfvnvk",
-      "spanish": "participio de spell",
+      "spanish": "[participio] spell",
       "english": "spelt",
       "example": {
-        "spanish": "El participio de spell es spelt.",
-        "english": "The past participle of spell is spelt."
+        "spanish": "Ha deletreado su nombre mal varias veces.",
+        "english": "He has spelt his name wrong several times."
       },
       "collections": [
         "morphology:inflection",
@@ -77431,11 +77431,11 @@
     },
     {
       "id": "c0tgz8x0rs",
-      "spanish": "pasado de spend",
+      "spanish": "[pasado] spend",
       "english": "spent",
       "example": {
-        "spanish": "El pasado de spend es spent.",
-        "english": "The past of spend is spent."
+        "spanish": "Gastó todo su dinero en el viaje.",
+        "english": "She spent all her money on the trip."
       },
       "collections": [
         "morphology:inflection",
@@ -77455,11 +77455,11 @@
     },
     {
       "id": "zj8o7ga6sq",
-      "spanish": "participio de spend",
+      "spanish": "[participio] spend",
       "english": "spent",
       "example": {
-        "spanish": "El participio de spend es spent.",
-        "english": "The past participle of spend is spent."
+        "spanish": "Ha gastado demasiado dinero este mes.",
+        "english": "She has spent too much money this month."
       },
       "collections": [
         "morphology:inflection",
@@ -77479,11 +77479,11 @@
     },
     {
       "id": "v3pmktibjc",
-      "spanish": "pasado de spill",
+      "spanish": "[pasado] spill",
       "english": "spilled",
       "example": {
-        "spanish": "El pasado de spill es spilled.",
-        "english": "The past of spill is spilled."
+        "spanish": "Derramó el café sobre la mesa.",
+        "english": "He spilled coffee on the table."
       },
       "collections": [
         "morphology:inflection",
@@ -77523,11 +77523,11 @@
     },
     {
       "id": "15tjmych75",
-      "spanish": "participio de spill",
+      "spanish": "[participio] spill",
       "english": "spilled",
       "example": {
-        "spanish": "El participio de spill es spilled.",
-        "english": "The past participle of spill is spilled."
+        "spanish": "Ha derramado café sobre esa mesa antes.",
+        "english": "He has spilled coffee on that table before."
       },
       "collections": [
         "morphology:inflection",
@@ -77567,11 +77567,11 @@
     },
     {
       "id": "3ie6p4mi4t",
-      "spanish": "pasado de spin",
+      "spanish": "[pasado] spin",
       "english": "spun",
       "example": {
-        "spanish": "El pasado de spin es spun.",
-        "english": "The past of spin is spun."
+        "spanish": "La rueda giró rápidamente.",
+        "english": "The wheel spun quickly."
       },
       "collections": [
         "morphology:inflection",
@@ -77590,11 +77590,11 @@
     },
     {
       "id": "r0tmuj75ts",
-      "spanish": "participio de spin",
+      "spanish": "[participio] spin",
       "english": "spun",
       "example": {
-        "spanish": "El participio de spin es spun.",
-        "english": "The past participle of spin is spun."
+        "spanish": "La rueda ha girado sin parar.",
+        "english": "The wheel has spun nonstop."
       },
       "collections": [
         "morphology:inflection",
@@ -77613,11 +77613,11 @@
     },
     {
       "id": "qcqywantdf",
-      "spanish": "pasado de spit",
+      "spanish": "[pasado] spit",
       "english": "spat",
       "example": {
-        "spanish": "El pasado de spit es spat.",
-        "english": "The past of spit is spat."
+        "spanish": "Escupió el chicle en la basura.",
+        "english": "He spat the gum into the trash."
       },
       "collections": [
         "morphology:inflection",
@@ -77636,11 +77636,11 @@
     },
     {
       "id": "eqf931mh1l",
-      "spanish": "pasado de spit",
+      "spanish": "[pasado] spit",
       "english": "spit",
       "example": {
-        "spanish": "El pasado de spit es spit.",
-        "english": "The past of spit is spit."
+        "spanish": "Escupió el chicle en la basura.",
+        "english": "He spit the gum into the trash."
       },
       "collections": [
         "morphology:inflection",
@@ -77658,11 +77658,11 @@
     },
     {
       "id": "28134b5k9i",
-      "spanish": "participio de spit",
+      "spanish": "[participio] spit",
       "english": "spat",
       "example": {
-        "spanish": "El participio de spit es spat.",
-        "english": "The past participle of spit is spat."
+        "spanish": "Ha escupido el chicle en la basura.",
+        "english": "He has spat the gum into the trash."
       },
       "collections": [
         "morphology:inflection",
@@ -77681,11 +77681,11 @@
     },
     {
       "id": "nvu7lwz1kd",
-      "spanish": "participio de spit",
+      "spanish": "[participio] spit",
       "english": "spit",
       "example": {
-        "spanish": "El participio de spit es spit.",
-        "english": "The past participle of spit is spit."
+        "spanish": "Ha escupido el chicle en la basura.",
+        "english": "He has spit the gum into the trash."
       },
       "collections": [
         "morphology:inflection",
@@ -77703,11 +77703,11 @@
     },
     {
       "id": "ft4yjt47fc",
-      "spanish": "pasado de split",
+      "spanish": "[pasado] split",
       "english": "split",
       "example": {
-        "spanish": "El pasado de split es split.",
-        "english": "The past of split is split."
+        "spanish": "Dividieron la cuenta entre los tres.",
+        "english": "They split the bill three ways."
       },
       "collections": [
         "morphology:inflection",
@@ -77726,11 +77726,11 @@
     },
     {
       "id": "37mg3fllxt",
-      "spanish": "participio de split",
+      "spanish": "[participio] split",
       "english": "split",
       "example": {
-        "spanish": "El participio de split es split.",
-        "english": "The past participle of split is split."
+        "spanish": "Han dividido la cuenta entre los tres.",
+        "english": "They have split the bill three ways."
       },
       "collections": [
         "morphology:inflection",
@@ -77749,11 +77749,11 @@
     },
     {
       "id": "nk4kcnfxfj",
-      "spanish": "pasado de spoil",
+      "spanish": "[pasado] spoil",
       "english": "spoiled",
       "example": {
-        "spanish": "El pasado de spoil es spoiled.",
-        "english": "The past of spoil is spoiled."
+        "spanish": "La leche se echó a perder en la nevera.",
+        "english": "The milk spoiled in the fridge."
       },
       "collections": [
         "morphology:inflection",
@@ -77789,11 +77789,11 @@
     },
     {
       "id": "t89x2qfisn",
-      "spanish": "participio de spoil",
+      "spanish": "[participio] spoil",
       "english": "spoiled",
       "example": {
-        "spanish": "El participio de spoil es spoiled.",
-        "english": "The past participle of spoil is spoiled."
+        "spanish": "La leche se ha echado a perder otra vez.",
+        "english": "The milk has spoiled again."
       },
       "collections": [
         "morphology:inflection",
@@ -77829,11 +77829,11 @@
     },
     {
       "id": "sm75s0jenr",
-      "spanish": "pasado de spread",
+      "spanish": "[pasado] spread",
       "english": "spread",
       "example": {
-        "spanish": "El pasado de spread es spread.",
-        "english": "The past of spread is spread."
+        "spanish": "Untó mantequilla en el pan.",
+        "english": "She spread butter on the bread."
       },
       "collections": [
         "morphology:inflection",
@@ -77852,11 +77852,11 @@
     },
     {
       "id": "nwmckpzbms",
-      "spanish": "participio de spread",
+      "spanish": "[participio] spread",
       "english": "spread",
       "example": {
-        "spanish": "El participio de spread es spread.",
-        "english": "The past participle of spread is spread."
+        "spanish": "Ha untado mantequilla en el pan cada mañana.",
+        "english": "She has spread butter on the bread every morning."
       },
       "collections": [
         "morphology:inflection",
@@ -77875,11 +77875,11 @@
     },
     {
       "id": "snq1ha8d7o",
-      "spanish": "pasado de spring",
+      "spanish": "[pasado] spring",
       "english": "sprang",
       "example": {
-        "spanish": "El pasado de spring es sprang.",
-        "english": "The past of spring is sprang."
+        "spanish": "El gato saltó de repente sobre la mesa.",
+        "english": "The cat sprang suddenly onto the table."
       },
       "collections": [
         "morphology:inflection",
@@ -77898,11 +77898,11 @@
     },
     {
       "id": "29y2qd6vwx",
-      "spanish": "pasado de spring",
+      "spanish": "[pasado] spring",
       "english": "sprung",
       "example": {
-        "spanish": "El pasado de spring es sprung.",
-        "english": "The past of spring is sprung."
+        "spanish": "El gato saltó de repente sobre la mesa.",
+        "english": "The cat sprung suddenly onto the table."
       },
       "collections": [
         "morphology:inflection",
@@ -77921,11 +77921,11 @@
     },
     {
       "id": "mn12dzvwpe",
-      "spanish": "participio de spring",
+      "spanish": "[participio] spring",
       "english": "sprung",
       "example": {
-        "spanish": "El participio de spring es sprung.",
-        "english": "The past participle of spring is sprung."
+        "spanish": "El gato ha saltado sobre esa mesa antes.",
+        "english": "The cat has sprung onto that table before."
       },
       "collections": [
         "morphology:inflection",
@@ -77944,11 +77944,11 @@
     },
     {
       "id": "ff26wwceho",
-      "spanish": "pasado de stand",
+      "spanish": "[pasado] stand",
       "english": "stood",
       "example": {
-        "spanish": "El pasado de stand es stood.",
-        "english": "The past of stand is stood."
+        "spanish": "Se puso de pie para saludar.",
+        "english": "He stood up to greet her."
       },
       "collections": [
         "morphology:inflection",
@@ -77968,11 +77968,11 @@
     },
     {
       "id": "nor2ipti14",
-      "spanish": "participio de stand",
+      "spanish": "[participio] stand",
       "english": "stood",
       "example": {
-        "spanish": "El participio de stand es stood.",
-        "english": "The past participle of stand is stood."
+        "spanish": "Se ha puesto de pie para saludar a todos.",
+        "english": "He has stood up to greet everyone."
       },
       "collections": [
         "morphology:inflection",
@@ -78061,11 +78061,11 @@
     },
     {
       "id": "9epbm61h1n",
-      "spanish": "pasado de steal",
+      "spanish": "[pasado] steal",
       "english": "stole",
       "example": {
-        "spanish": "El pasado de steal es stole.",
-        "english": "The past of steal is stole."
+        "spanish": "Alguien le robó la bicicleta.",
+        "english": "Somebody stole his bicycle."
       },
       "collections": [
         "morphology:inflection",
@@ -78082,11 +78082,11 @@
     },
     {
       "id": "35c23mmb2d",
-      "spanish": "participio de steal",
+      "spanish": "[participio] steal",
       "english": "stolen",
       "example": {
-        "spanish": "El participio de steal es stolen.",
-        "english": "The past participle of steal is stolen."
+        "spanish": "Alguien le ha robado la bicicleta antes.",
+        "english": "Somebody has stolen his bicycle before."
       },
       "collections": [
         "morphology:inflection",
@@ -78104,11 +78104,11 @@
     },
     {
       "id": "m863lmpf46",
-      "spanish": "pasado de stick",
+      "spanish": "[pasado] stick",
       "english": "stuck",
       "example": {
-        "spanish": "El pasado de stick es stuck.",
-        "english": "The past of stick is stuck."
+        "spanish": "La goma de mascar se pegó a su zapato.",
+        "english": "The gum stuck to his shoe."
       },
       "collections": [
         "morphology:inflection",
@@ -78127,11 +78127,11 @@
     },
     {
       "id": "fw8iz6u8gk",
-      "spanish": "participio de stick",
+      "spanish": "[participio] stick",
       "english": "stuck",
       "example": {
-        "spanish": "El participio de stick es stuck.",
-        "english": "The past participle of stick is stuck."
+        "spanish": "La goma se ha pegado a su zapato otra vez.",
+        "english": "The gum has stuck to his shoe again."
       },
       "collections": [
         "morphology:inflection",
@@ -78150,11 +78150,11 @@
     },
     {
       "id": "4zgjpzcib1",
-      "spanish": "pasado de sting",
+      "spanish": "[pasado] sting",
       "english": "stung",
       "example": {
-        "spanish": "El pasado de sting es stung.",
-        "english": "The past of sting is stung."
+        "spanish": "Una abeja lo picó en el brazo.",
+        "english": "A bee stung him on the arm."
       },
       "collections": [
         "morphology:inflection",
@@ -78173,11 +78173,11 @@
     },
     {
       "id": "crrzitua6k",
-      "spanish": "participio de sting",
+      "spanish": "[participio] sting",
       "english": "stung",
       "example": {
-        "spanish": "El participio de sting es stung.",
-        "english": "The past participle of sting is stung."
+        "spanish": "Una abeja lo ha picado antes.",
+        "english": "A bee has stung him before."
       },
       "collections": [
         "morphology:inflection",
@@ -78196,11 +78196,11 @@
     },
     {
       "id": "sih56dd7uj",
-      "spanish": "pasado de stink",
+      "spanish": "[pasado] stink",
       "english": "stank",
       "example": {
-        "spanish": "El pasado de stink es stank.",
-        "english": "The past of stink is stank."
+        "spanish": "La basura apestó todo el día.",
+        "english": "The trash stank all day."
       },
       "collections": [
         "morphology:inflection",
@@ -78219,11 +78219,11 @@
     },
     {
       "id": "jf80q4laj8",
-      "spanish": "pasado de stink",
+      "spanish": "[pasado] stink",
       "english": "stunk",
       "example": {
-        "spanish": "El pasado de stink es stunk.",
-        "english": "The past of stink is stunk."
+        "spanish": "La basura apestó todo el día.",
+        "english": "The trash stunk all day."
       },
       "collections": [
         "morphology:inflection",
@@ -78242,11 +78242,11 @@
     },
     {
       "id": "emnewbc2e3",
-      "spanish": "participio de stink",
+      "spanish": "[participio] stink",
       "english": "stunk",
       "example": {
-        "spanish": "El participio de stink es stunk.",
-        "english": "The past participle of stink is stunk."
+        "spanish": "La basura ha apestado todo el día.",
+        "english": "The trash has stunk all day."
       },
       "collections": [
         "morphology:inflection",
@@ -78314,11 +78314,11 @@
     },
     {
       "id": "dn2x9hvejb",
-      "spanish": "pasado de stride",
+      "spanish": "[pasado] stride",
       "english": "strode",
       "example": {
-        "spanish": "El pasado de stride es strode.",
-        "english": "The past of stride is strode."
+        "spanish": "Caminó a grandes pasos hacia la puerta.",
+        "english": "He strode toward the door."
       },
       "collections": [
         "morphology:inflection",
@@ -78336,11 +78336,11 @@
     },
     {
       "id": "kjvrvxfkqn",
-      "spanish": "participio de stride",
+      "spanish": "[participio] stride",
       "english": "stridden",
       "example": {
-        "spanish": "El participio de stride es stridden.",
-        "english": "The past participle of stride is stridden."
+        "spanish": "Ha caminado a grandes pasos hacia la puerta.",
+        "english": "He has stridden toward the door."
       },
       "collections": [
         "morphology:inflection",
@@ -78359,11 +78359,11 @@
     },
     {
       "id": "tsz0335ozx",
-      "spanish": "pasado de strike",
+      "spanish": "[pasado] strike",
       "english": "struck",
       "example": {
-        "spanish": "El pasado de strike es struck.",
-        "english": "The past of strike is struck."
+        "spanish": "El rayo cayó cerca de la casa.",
+        "english": "The lightning struck near the house."
       },
       "collections": [
         "morphology:inflection",
@@ -78382,11 +78382,11 @@
     },
     {
       "id": "sdc2jo9nqh",
-      "spanish": "participio de strike",
+      "spanish": "[participio] strike",
       "english": "struck",
       "example": {
-        "spanish": "El participio de strike es struck.",
-        "english": "The past participle of strike is struck."
+        "spanish": "El rayo ha caído cerca de la casa antes.",
+        "english": "Lightning has struck near the house before."
       },
       "collections": [
         "morphology:inflection",
@@ -78405,11 +78405,11 @@
     },
     {
       "id": "qkeb68iney",
-      "spanish": "pasado de string",
+      "spanish": "[pasado] string",
       "english": "strung",
       "example": {
-        "spanish": "El pasado de string es strung.",
-        "english": "The past of string is strung."
+        "spanish": "Encordó la guitarra antes del concierto.",
+        "english": "He strung the guitar before the concert."
       },
       "collections": [
         "morphology:inflection",
@@ -78428,11 +78428,11 @@
     },
     {
       "id": "5prswqlzrl",
-      "spanish": "participio de string",
+      "spanish": "[participio] string",
       "english": "strung",
       "example": {
-        "spanish": "El participio de string es strung.",
-        "english": "The past participle of string is strung."
+        "spanish": "Ha encordado esa guitarra muchas veces.",
+        "english": "He has strung that guitar many times."
       },
       "collections": [
         "morphology:inflection",
@@ -78451,11 +78451,11 @@
     },
     {
       "id": "03i2ow38a5",
-      "spanish": "pasado de strive",
+      "spanish": "[pasado] strive",
       "english": "strove",
       "example": {
-        "spanish": "El pasado de strive es strove.",
-        "english": "The past of strive is strove."
+        "spanish": "Siempre se esforzó por hacerlo mejor.",
+        "english": "He always strove to do better."
       },
       "collections": [
         "morphology:inflection",
@@ -78472,11 +78472,11 @@
     },
     {
       "id": "8t0o3efrk4",
-      "spanish": "pasado de strive",
+      "spanish": "[pasado] strive",
       "english": "strived",
       "example": {
-        "spanish": "El pasado de strive es strived.",
-        "english": "The past of strive is strived."
+        "spanish": "Siempre se esforzó por hacerlo mejor.",
+        "english": "He always strived to do better."
       },
       "collections": [
         "morphology:inflection",
@@ -78493,11 +78493,11 @@
     },
     {
       "id": "3vijkgw2x4",
-      "spanish": "participio de strive",
+      "spanish": "[participio] strive",
       "english": "striven",
       "example": {
-        "spanish": "El participio de strive es striven.",
-        "english": "The past participle of strive is striven."
+        "spanish": "Siempre ha luchado por mejorar.",
+        "english": "He has always striven to improve."
       },
       "collections": [
         "morphology:inflection",
@@ -78515,11 +78515,11 @@
     },
     {
       "id": "gv3tsqoq45",
-      "spanish": "participio de strive",
+      "spanish": "[participio] strive",
       "english": "strived",
       "example": {
-        "spanish": "El participio de strive es strived.",
-        "english": "The past participle of strive is strived."
+        "spanish": "Siempre ha luchado por mejorar.",
+        "english": "He has always strived to improve."
       },
       "collections": [
         "morphology:inflection",
@@ -78536,11 +78536,11 @@
     },
     {
       "id": "74yqz3gffe",
-      "spanish": "pasado de swear",
+      "spanish": "[pasado] swear",
       "english": "swore",
       "example": {
-        "spanish": "El pasado de swear es swore.",
-        "english": "The past of swear is swore."
+        "spanish": "Juró decir la verdad.",
+        "english": "He swore to tell the truth."
       },
       "collections": [
         "morphology:inflection",
@@ -78558,11 +78558,11 @@
     },
     {
       "id": "5ypcg469un",
-      "spanish": "participio de swear",
+      "spanish": "[participio] swear",
       "english": "sworn",
       "example": {
-        "spanish": "El participio de swear es sworn.",
-        "english": "The past participle of swear is sworn."
+        "spanish": "Ha jurado decir la verdad.",
+        "english": "He has sworn to tell the truth."
       },
       "collections": [
         "morphology:inflection",
@@ -78580,11 +78580,11 @@
     },
     {
       "id": "0vtxy7v8ys",
-      "spanish": "pasado de sweat",
+      "spanish": "[pasado] sweat",
       "english": "sweated",
       "example": {
-        "spanish": "El pasado de sweat es sweated.",
-        "english": "The past of sweat is sweated."
+        "spanish": "Sudó mucho durante el entrenamiento.",
+        "english": "He sweated a lot during the workout."
       },
       "collections": [
         "morphology:inflection",
@@ -78602,11 +78602,11 @@
     },
     {
       "id": "1swwzn0q0a",
-      "spanish": "pasado de sweat",
+      "spanish": "[pasado] sweat",
       "english": "sweat",
       "example": {
-        "spanish": "El pasado de sweat es sweat.",
-        "english": "The past of sweat is sweat."
+        "spanish": "Sudó mucho durante el entrenamiento.",
+        "english": "He sweat a lot during the workout."
       },
       "collections": [
         "morphology:inflection",
@@ -78625,11 +78625,11 @@
     },
     {
       "id": "r5f0ivakc5",
-      "spanish": "participio de sweat",
+      "spanish": "[participio] sweat",
       "english": "sweated",
       "example": {
-        "spanish": "El participio de sweat es sweated.",
-        "english": "The past participle of sweat is sweated."
+        "spanish": "Ha sudado mucho durante cada entrenamiento.",
+        "english": "He has sweated a lot during every workout."
       },
       "collections": [
         "morphology:inflection",
@@ -78647,11 +78647,11 @@
     },
     {
       "id": "76zr8d5t1t",
-      "spanish": "participio de sweat",
+      "spanish": "[participio] sweat",
       "english": "sweat",
       "example": {
-        "spanish": "El participio de sweat es sweat.",
-        "english": "The past participle of sweat is sweat."
+        "spanish": "Ha sudado mucho durante cada entrenamiento.",
+        "english": "He has sweat a lot during every workout."
       },
       "collections": [
         "morphology:inflection",
@@ -78670,11 +78670,11 @@
     },
     {
       "id": "j3kykzhfru",
-      "spanish": "pasado de sweep",
+      "spanish": "[pasado] sweep",
       "english": "swept",
       "example": {
-        "spanish": "El pasado de sweep es swept.",
-        "english": "The past of sweep is swept."
+        "spanish": "Barrió el piso de la cocina.",
+        "english": "She swept the kitchen floor."
       },
       "collections": [
         "morphology:inflection",
@@ -78694,11 +78694,11 @@
     },
     {
       "id": "tm3az2k3ko",
-      "spanish": "participio de sweep",
+      "spanish": "[participio] sweep",
       "english": "swept",
       "example": {
-        "spanish": "El participio de sweep es swept.",
-        "english": "The past participle of sweep is swept."
+        "spanish": "Ha barrido ese piso todos los días.",
+        "english": "She has swept that floor every day."
       },
       "collections": [
         "morphology:inflection",
@@ -78718,11 +78718,11 @@
     },
     {
       "id": "y6x3jrcw5g",
-      "spanish": "pasado de swell",
+      "spanish": "[pasado] swell",
       "english": "swelled",
       "example": {
-        "spanish": "El pasado de swell es swelled.",
-        "english": "The past of swell is swelled."
+        "spanish": "Se le hinchó el tobillo después de la caída.",
+        "english": "His ankle swelled after the fall."
       },
       "collections": [
         "morphology:inflection",
@@ -78739,11 +78739,11 @@
     },
     {
       "id": "bok9wjvhqm",
-      "spanish": "participio de swell",
+      "spanish": "[participio] swell",
       "english": "swollen",
       "example": {
-        "spanish": "El participio de swell es swollen.",
-        "english": "The past participle of swell is swollen."
+        "spanish": "Se le ha hinchado el tobillo desde la caída.",
+        "english": "His ankle has swollen since the fall."
       },
       "collections": [
         "morphology:inflection",
@@ -78761,11 +78761,11 @@
     },
     {
       "id": "y64klyxplv",
-      "spanish": "participio de swell",
+      "spanish": "[participio] swell",
       "english": "swelled",
       "example": {
-        "spanish": "El participio de swell es swelled.",
-        "english": "The past participle of swell is swelled."
+        "spanish": "Se le ha hinchado el tobillo desde la caída.",
+        "english": "His ankle has swelled since the fall."
       },
       "collections": [
         "morphology:inflection",
@@ -78782,11 +78782,11 @@
     },
     {
       "id": "os9brbkhnw",
-      "spanish": "pasado de swim",
+      "spanish": "[pasado] swim",
       "english": "swam",
       "example": {
-        "spanish": "El pasado de swim es swam.",
-        "english": "The past of swim is swam."
+        "spanish": "Nadó veinte vueltas en la piscina.",
+        "english": "She swam twenty laps in the pool."
       },
       "collections": [
         "morphology:inflection",
@@ -78804,11 +78804,11 @@
     },
     {
       "id": "1f7hocq26j",
-      "spanish": "participio de swim",
+      "spanish": "[participio] swim",
       "english": "swum",
       "example": {
-        "spanish": "El participio de swim es swum.",
-        "english": "The past participle of swim is swum."
+        "spanish": "Ha nadado en esa piscina desde niña.",
+        "english": "She has swum in that pool since she was a child."
       },
       "collections": [
         "morphology:inflection",
@@ -78825,11 +78825,11 @@
     },
     {
       "id": "rgbzp5u6k1",
-      "spanish": "pasado de swing",
+      "spanish": "[pasado] swing",
       "english": "swung",
       "example": {
-        "spanish": "El pasado de swing es swung.",
-        "english": "The past of swing is swung."
+        "spanish": "El niño se columpió por horas.",
+        "english": "The child swung for hours."
       },
       "collections": [
         "morphology:inflection",
@@ -78848,11 +78848,11 @@
     },
     {
       "id": "pn5iblu8kg",
-      "spanish": "participio de swing",
+      "spanish": "[participio] swing",
       "english": "swung",
       "example": {
-        "spanish": "El participio de swing es swung.",
-        "english": "The past participle of swing is swung."
+        "spanish": "El niño se ha columpiado ahí toda la tarde.",
+        "english": "The child has swung there all afternoon."
       },
       "collections": [
         "morphology:inflection",
@@ -78871,11 +78871,11 @@
     },
     {
       "id": "s0htompife",
-      "spanish": "pasado de take",
+      "spanish": "[pasado] take",
       "english": "took",
       "example": {
-        "spanish": "El pasado de take es took.",
-        "english": "The past of take is took."
+        "spanish": "Tomó el autobús para ir al trabajo.",
+        "english": "She took the bus to work."
       },
       "collections": [
         "morphology:inflection",
@@ -78893,11 +78893,11 @@
     },
     {
       "id": "bn0ps9sz3h",
-      "spanish": "participio de take",
+      "spanish": "[participio] take",
       "english": "taken",
       "example": {
-        "spanish": "El participio de take es taken.",
-        "english": "The past participle of take is taken."
+        "spanish": "Ha tomado ese autobús cada día esta semana.",
+        "english": "She has taken that bus every day this week."
       },
       "collections": [
         "morphology:inflection",
@@ -78916,11 +78916,11 @@
     },
     {
       "id": "l33gheat0q",
-      "spanish": "pasado de teach",
+      "spanish": "[pasado] teach",
       "english": "taught",
       "example": {
-        "spanish": "El pasado de teach es taught.",
-        "english": "The past of teach is taught."
+        "spanish": "Enseñó matemáticas durante veinte años.",
+        "english": "He taught math for twenty years."
       },
       "collections": [
         "morphology:inflection",
@@ -78940,11 +78940,11 @@
     },
     {
       "id": "uxgsk3ka13",
-      "spanish": "participio de teach",
+      "spanish": "[participio] teach",
       "english": "taught",
       "example": {
-        "spanish": "El participio de teach es taught.",
-        "english": "The past participle of teach is taught."
+        "spanish": "Ha enseñado matemáticas por veinte años.",
+        "english": "He has taught math for twenty years."
       },
       "collections": [
         "morphology:inflection",
@@ -78964,11 +78964,11 @@
     },
     {
       "id": "j17yzfti0u",
-      "spanish": "pasado de tear",
+      "spanish": "[pasado] tear",
       "english": "tore",
       "example": {
-        "spanish": "El pasado de tear es tore.",
-        "english": "The past of tear is tore."
+        "spanish": "Rasgó el papel sin querer.",
+        "english": "He tore the paper by accident."
       },
       "collections": [
         "morphology:inflection",
@@ -78986,11 +78986,11 @@
     },
     {
       "id": "1itmjjorc8",
-      "spanish": "participio de tear",
+      "spanish": "[participio] tear",
       "english": "torn",
       "example": {
-        "spanish": "El participio de tear es torn.",
-        "english": "The past participle of tear is torn."
+        "spanish": "Ha rasgado ese papel sin querer.",
+        "english": "He has torn that paper by accident."
       },
       "collections": [
         "morphology:inflection",
@@ -79008,11 +79008,11 @@
     },
     {
       "id": "hwmvhbt7if",
-      "spanish": "pasado de tell",
+      "spanish": "[pasado] tell",
       "english": "told",
       "example": {
-        "spanish": "El pasado de tell es told.",
-        "english": "The past of tell is told."
+        "spanish": "Le contó la verdad a su amigo.",
+        "english": "He told his friend the truth."
       },
       "collections": [
         "morphology:inflection",
@@ -79032,11 +79032,11 @@
     },
     {
       "id": "radt5ut6yj",
-      "spanish": "participio de tell",
+      "spanish": "[participio] tell",
       "english": "told",
       "example": {
-        "spanish": "El participio de tell es told.",
-        "english": "The past participle of tell is told."
+        "spanish": "Le ha contado la verdad a su amigo.",
+        "english": "He has told his friend the truth."
       },
       "collections": [
         "morphology:inflection",
@@ -79056,11 +79056,11 @@
     },
     {
       "id": "vxo4j1a99j",
-      "spanish": "pasado de think",
+      "spanish": "[pasado] think",
       "english": "thought",
       "example": {
-        "spanish": "El pasado de think es thought.",
-        "english": "The past of think is thought."
+        "spanish": "Pensó en la respuesta por un momento.",
+        "english": "She thought about the answer for a moment."
       },
       "collections": [
         "morphology:inflection",
@@ -79080,11 +79080,11 @@
     },
     {
       "id": "gryg1an0ql",
-      "spanish": "participio de think",
+      "spanish": "[participio] think",
       "english": "thought",
       "example": {
-        "spanish": "El participio de think es thought.",
-        "english": "The past participle of think is thought."
+        "spanish": "Ha pensado en la respuesta por un rato.",
+        "english": "She has thought about the answer for a while."
       },
       "collections": [
         "morphology:inflection",
@@ -79104,11 +79104,11 @@
     },
     {
       "id": "fpythnuffg",
-      "spanish": "pasado de thrive",
+      "spanish": "[pasado] thrive",
       "english": "thrived",
       "example": {
-        "spanish": "El pasado de thrive es thrived.",
-        "english": "The past of thrive is thrived."
+        "spanish": "El negocio prosperó durante la pandemia.",
+        "english": "The business thrived during the pandemic."
       },
       "collections": [
         "morphology:inflection",
@@ -79125,11 +79125,11 @@
     },
     {
       "id": "01u8liicj7",
-      "spanish": "pasado de thrive",
+      "spanish": "[pasado] thrive",
       "english": "throve",
       "example": {
-        "spanish": "El pasado de thrive es throve.",
-        "english": "The past of thrive is throve."
+        "spanish": "El negocio prosperó durante la pandemia.",
+        "english": "The business throve during the pandemic."
       },
       "collections": [
         "morphology:inflection",
@@ -79147,11 +79147,11 @@
     },
     {
       "id": "v4mlk3ol2y",
-      "spanish": "participio de thrive",
+      "spanish": "[participio] thrive",
       "english": "thrived",
       "example": {
-        "spanish": "El participio de thrive es thrived.",
-        "english": "The past participle of thrive is thrived."
+        "spanish": "El negocio ha prosperado desde que abrió.",
+        "english": "The business has thrived since it opened."
       },
       "collections": [
         "morphology:inflection",
@@ -79168,11 +79168,11 @@
     },
     {
       "id": "lpm4rjsre9",
-      "spanish": "participio de thrive",
+      "spanish": "[participio] thrive",
       "english": "thriven",
       "example": {
-        "spanish": "El participio de thrive es thriven.",
-        "english": "The past participle of thrive is thriven."
+        "spanish": "El negocio ha prosperado desde que abrió.",
+        "english": "The business has thriven since it opened."
       },
       "collections": [
         "morphology:inflection",
@@ -79190,11 +79190,11 @@
     },
     {
       "id": "r471s16bk1",
-      "spanish": "pasado de throw",
+      "spanish": "[pasado] throw",
       "english": "threw",
       "example": {
-        "spanish": "El pasado de throw es threw.",
-        "english": "The past of throw is threw."
+        "spanish": "Lanzó la pelota al otro lado del campo.",
+        "english": "He threw the ball across the field."
       },
       "collections": [
         "morphology:inflection",
@@ -79212,11 +79212,11 @@
     },
     {
       "id": "2uoub5ekex",
-      "spanish": "participio de throw",
+      "spanish": "[participio] throw",
       "english": "thrown",
       "example": {
-        "spanish": "El participio de throw es thrown.",
-        "english": "The past participle of throw is thrown."
+        "spanish": "Ha lanzado la pelota más lejos que nadie.",
+        "english": "He has thrown the ball farther than anyone."
       },
       "collections": [
         "morphology:inflection",
@@ -79235,11 +79235,11 @@
     },
     {
       "id": "5j51i47696",
-      "spanish": "pasado de thrust",
+      "spanish": "[pasado] thrust",
       "english": "thrust",
       "example": {
-        "spanish": "El pasado de thrust es thrust.",
-        "english": "The past of thrust is thrust."
+        "spanish": "Empujó la puerta con fuerza.",
+        "english": "He thrust the door open with force."
       },
       "collections": [
         "morphology:inflection",
@@ -79258,11 +79258,11 @@
     },
     {
       "id": "0vu1ut2tbr",
-      "spanish": "participio de thrust",
+      "spanish": "[participio] thrust",
       "english": "thrust",
       "example": {
-        "spanish": "El participio de thrust es thrust.",
-        "english": "The past participle of thrust is thrust."
+        "spanish": "Ha empujado esa puerta con fuerza antes.",
+        "english": "He has thrust that door open with force before."
       },
       "collections": [
         "morphology:inflection",
@@ -79281,11 +79281,11 @@
     },
     {
       "id": "d90l26ie3b",
-      "spanish": "pasado de tread",
+      "spanish": "[pasado] tread",
       "english": "trod",
       "example": {
-        "spanish": "El pasado de tread es trod.",
-        "english": "The past of tread is trod."
+        "spanish": "Caminó con cuidado sobre el hielo.",
+        "english": "She trod carefully on the ice."
       },
       "collections": [
         "morphology:inflection",
@@ -79302,11 +79302,11 @@
     },
     {
       "id": "z2va6glyle",
-      "spanish": "participio de tread",
+      "spanish": "[participio] tread",
       "english": "trodden",
       "example": {
-        "spanish": "El participio de tread es trodden.",
-        "english": "The past participle of tread is trodden."
+        "spanish": "Ha caminado con cuidado sobre el hielo.",
+        "english": "She has trodden carefully on the ice."
       },
       "collections": [
         "morphology:inflection",
@@ -79324,11 +79324,11 @@
     },
     {
       "id": "e03lq2lawp",
-      "spanish": "participio de tread",
+      "spanish": "[participio] tread",
       "english": "trod",
       "example": {
-        "spanish": "El participio de tread es trod.",
-        "english": "The past participle of tread is trod."
+        "spanish": "Ha caminado con cuidado sobre el hielo.",
+        "english": "She has trod carefully on the ice."
       },
       "collections": [
         "morphology:inflection",
@@ -79345,11 +79345,11 @@
     },
     {
       "id": "vjcpdhjlly",
-      "spanish": "pasado de understand",
+      "spanish": "[pasado] understand",
       "english": "understood",
       "example": {
-        "spanish": "El pasado de understand es understood.",
-        "english": "The past of understand is understood."
+        "spanish": "Entendió la explicación de inmediato.",
+        "english": "He understood the explanation right away."
       },
       "collections": [
         "morphology:inflection",
@@ -79369,11 +79369,11 @@
     },
     {
       "id": "2xxvvzpd57",
-      "spanish": "participio de understand",
+      "spanish": "[participio] understand",
       "english": "understood",
       "example": {
-        "spanish": "El participio de understand es understood.",
-        "english": "The past participle of understand is understood."
+        "spanish": "Ha entendido la explicación desde el principio.",
+        "english": "He has understood the explanation from the start."
       },
       "collections": [
         "morphology:inflection",
@@ -79393,11 +79393,11 @@
     },
     {
       "id": "eianbt0bry",
-      "spanish": "pasado de wake",
+      "spanish": "[pasado] wake",
       "english": "woke",
       "example": {
-        "spanish": "El pasado de wake es woke.",
-        "english": "The past of wake is woke."
+        "spanish": "Se despertó antes del amanecer.",
+        "english": "She woke before dawn."
       },
       "collections": [
         "morphology:inflection",
@@ -79415,11 +79415,11 @@
     },
     {
       "id": "4sihxpdhzg",
-      "spanish": "participio de wake",
+      "spanish": "[participio] wake",
       "english": "woken",
       "example": {
-        "spanish": "El participio de wake es woken.",
-        "english": "The past participle of wake is woken."
+        "spanish": "Se ha despertado temprano toda la semana.",
+        "english": "She has woken up early all week."
       },
       "collections": [
         "morphology:inflection",
@@ -79438,11 +79438,11 @@
     },
     {
       "id": "qwug2xfbtt",
-      "spanish": "pasado de wear",
+      "spanish": "[pasado] wear",
       "english": "wore",
       "example": {
-        "spanish": "El pasado de wear es wore.",
-        "english": "The past of wear is wore."
+        "spanish": "Llevó puesto un abrigo azul.",
+        "english": "She wore a blue coat."
       },
       "collections": [
         "morphology:inflection",
@@ -79460,11 +79460,11 @@
     },
     {
       "id": "0wg3chrr3d",
-      "spanish": "participio de wear",
+      "spanish": "[participio] wear",
       "english": "worn",
       "example": {
-        "spanish": "El participio de wear es worn.",
-        "english": "The past participle of wear is worn."
+        "spanish": "Ha llevado puesto ese abrigo todo el invierno.",
+        "english": "She has worn that coat all winter."
       },
       "collections": [
         "morphology:inflection",
@@ -79482,11 +79482,11 @@
     },
     {
       "id": "2xpg1fnglt",
-      "spanish": "pasado de weave",
+      "spanish": "[pasado] weave",
       "english": "wove",
       "example": {
-        "spanish": "El pasado de weave es wove.",
-        "english": "The past of weave is wove."
+        "spanish": "Tejió una canasta con hojas de palma.",
+        "english": "She wove a basket out of palm leaves."
       },
       "collections": [
         "morphology:inflection",
@@ -79504,11 +79504,11 @@
     },
     {
       "id": "7jofu6y1i8",
-      "spanish": "participio de weave",
+      "spanish": "[participio] weave",
       "english": "woven",
       "example": {
-        "spanish": "El participio de weave es woven.",
-        "english": "The past participle of weave is woven."
+        "spanish": "Ha tejido varias canastas con hojas de palma.",
+        "english": "She has woven several baskets out of palm leaves."
       },
       "collections": [
         "morphology:inflection",
@@ -79525,11 +79525,11 @@
     },
     {
       "id": "uaxkjxmpdf",
-      "spanish": "pasado de wed",
+      "spanish": "[pasado] wed",
       "english": "wed",
       "example": {
-        "spanish": "El pasado de wed es wed.",
-        "english": "The past of wed is wed."
+        "spanish": "Se casaron en una playa pequeña.",
+        "english": "They wed on a small beach."
       },
       "collections": [
         "morphology:inflection",
@@ -79548,11 +79548,11 @@
     },
     {
       "id": "k4ij0txe78",
-      "spanish": "pasado de wed",
+      "spanish": "[pasado] wed",
       "english": "wedded",
       "example": {
-        "spanish": "El pasado de wed es wedded.",
-        "english": "The past of wed is wedded."
+        "spanish": "Se casaron en una playa pequeña.",
+        "english": "They wedded on a small beach."
       },
       "collections": [
         "morphology:inflection",
@@ -79570,11 +79570,11 @@
     },
     {
       "id": "ctie5bq9jz",
-      "spanish": "participio de wed",
+      "spanish": "[participio] wed",
       "english": "wed",
       "example": {
-        "spanish": "El participio de wed es wed.",
-        "english": "The past participle of wed is wed."
+        "spanish": "Se han casado en esa misma playa.",
+        "english": "They have wed on that same beach."
       },
       "collections": [
         "morphology:inflection",
@@ -79593,11 +79593,11 @@
     },
     {
       "id": "3k38v52r8j",
-      "spanish": "participio de wed",
+      "spanish": "[participio] wed",
       "english": "wedded",
       "example": {
-        "spanish": "El participio de wed es wedded.",
-        "english": "The past participle of wed is wedded."
+        "spanish": "Se han casado en esa misma playa.",
+        "english": "They have wedded on that same beach."
       },
       "collections": [
         "morphology:inflection",
@@ -79615,11 +79615,11 @@
     },
     {
       "id": "i8igjuqcsw",
-      "spanish": "pasado de weep",
+      "spanish": "[pasado] weep",
       "english": "wept",
       "example": {
-        "spanish": "El pasado de weep es wept.",
-        "english": "The past of weep is wept."
+        "spanish": "Lloró de alegría en la boda.",
+        "english": "She wept tears of joy at the wedding."
       },
       "collections": [
         "morphology:inflection",
@@ -79638,11 +79638,11 @@
     },
     {
       "id": "yruzhn6l6s",
-      "spanish": "participio de weep",
+      "spanish": "[participio] weep",
       "english": "wept",
       "example": {
-        "spanish": "El participio de weep es wept.",
-        "english": "The past participle of weep is wept."
+        "spanish": "Ha llorado de alegría en cada boda.",
+        "english": "She has wept tears of joy at every wedding."
       },
       "collections": [
         "morphology:inflection",
@@ -79661,11 +79661,11 @@
     },
     {
       "id": "nblh1qgt26",
-      "spanish": "pasado de wet",
+      "spanish": "[pasado] wet",
       "english": "wet",
       "example": {
-        "spanish": "El pasado de wet es wet.",
-        "english": "The past of wet is wet."
+        "spanish": "Mojó la toalla antes de limpiar.",
+        "english": "He wet the towel before cleaning."
       },
       "collections": [
         "morphology:inflection",
@@ -79704,11 +79704,11 @@
     },
     {
       "id": "fbxh30hccl",
-      "spanish": "participio de wet",
+      "spanish": "[participio] wet",
       "english": "wet",
       "example": {
-        "spanish": "El participio de wet es wet.",
-        "english": "The past participle of wet is wet."
+        "spanish": "Ha mojado la toalla antes de limpiar siempre.",
+        "english": "He has always wet the towel before cleaning."
       },
       "collections": [
         "morphology:inflection",
@@ -79746,11 +79746,11 @@
     },
     {
       "id": "9p16t4wp8z",
-      "spanish": "pasado de win",
+      "spanish": "[pasado] win",
       "english": "won",
       "example": {
-        "spanish": "El pasado de win es won.",
-        "english": "The past of win is won."
+        "spanish": "Ganó el primer premio en la competencia.",
+        "english": "She won first prize in the competition."
       },
       "collections": [
         "morphology:inflection",
@@ -79769,11 +79769,11 @@
     },
     {
       "id": "a0584flbmr",
-      "spanish": "participio de win",
+      "spanish": "[participio] win",
       "english": "won",
       "example": {
-        "spanish": "El participio de win es won.",
-        "english": "The past participle of win is won."
+        "spanish": "Ha ganado el primer premio dos veces.",
+        "english": "She has won first prize twice."
       },
       "collections": [
         "morphology:inflection",
@@ -79792,11 +79792,11 @@
     },
     {
       "id": "ywshdrwtq9",
-      "spanish": "pasado de wind",
+      "spanish": "[pasado] wind",
       "english": "wound",
       "example": {
-        "spanish": "El pasado de wind es wound.",
-        "english": "The past of wind is wound."
+        "spanish": "Le dio cuerda al reloj antes de dormir.",
+        "english": "He wound the clock before going to sleep."
       },
       "collections": [
         "morphology:inflection",
@@ -79816,11 +79816,11 @@
     },
     {
       "id": "4zcbk693q2",
-      "spanish": "participio de wind",
+      "spanish": "[participio] wind",
       "english": "wound",
       "example": {
-        "spanish": "El participio de wind es wound.",
-        "english": "The past participle of wind is wound."
+        "spanish": "Le ha dado cuerda a ese reloj cada noche.",
+        "english": "He has wound that clock every night."
       },
       "collections": [
         "morphology:inflection",
@@ -79874,11 +79874,11 @@
     },
     {
       "id": "k7qkmwozei",
-      "spanish": "pasado de write",
+      "spanish": "[pasado] write",
       "english": "wrote",
       "example": {
-        "spanish": "El pasado de write es wrote.",
-        "english": "The past of write is wrote."
+        "spanish": "Escribió una carta a su abuela.",
+        "english": "She wrote a letter to her grandmother."
       },
       "collections": [
         "morphology:inflection",
@@ -79895,11 +79895,11 @@
     },
     {
       "id": "nf5qq29oke",
-      "spanish": "participio de write",
+      "spanish": "[participio] write",
       "english": "written",
       "example": {
-        "spanish": "El participio de write es written.",
-        "english": "The past participle of write is written."
+        "spanish": "Le ha escrito varias cartas a su abuela.",
+        "english": "She has written her grandmother several letters."
       },
       "collections": [
         "morphology:inflection",
