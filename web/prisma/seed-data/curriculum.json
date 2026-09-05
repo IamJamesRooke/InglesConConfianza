@@ -62131,7 +62131,8 @@
         "degree:comparative-er",
         "pos:adjective",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -62157,7 +62158,8 @@
         "degree:superlative-est",
         "pos:adjective",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -62181,7 +62183,8 @@
         "en:fast",
         "degree:comparative-er",
         "pos:adjective",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -62206,7 +62209,8 @@
         "en:fast",
         "degree:superlative-est",
         "pos:adjective",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -62231,7 +62235,8 @@
         "degree:comparative-er",
         "pos:adjective",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -62257,7 +62262,8 @@
         "degree:superlative-est",
         "pos:adjective",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -62281,7 +62287,8 @@
         "en:cheap",
         "degree:comparative-er",
         "pos:adjective",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -62306,7 +62313,8 @@
         "en:cheap",
         "degree:superlative-est",
         "pos:adjective",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -62330,7 +62338,8 @@
         "en:safe",
         "degree:comparative-er",
         "pos:adjective",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -62355,7 +62364,8 @@
         "en:safe",
         "degree:superlative-est",
         "pos:adjective",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -62378,7 +62388,8 @@
         "en:funny",
         "degree:comparative-er",
         "pos:adjective",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -62402,7 +62413,8 @@
         "en:funny",
         "degree:superlative-est",
         "pos:adjective",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -62425,7 +62437,8 @@
         "en:happy",
         "degree:comparative-er",
         "pos:adjective",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -62449,7 +62462,8 @@
         "en:happy",
         "degree:superlative-est",
         "pos:adjective",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -62472,7 +62486,8 @@
         "en:easy",
         "degree:comparative-er",
         "pos:adjective",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -62496,7 +62511,8 @@
         "en:easy",
         "degree:superlative-est",
         "pos:adjective",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -62520,7 +62536,8 @@
         "en:big",
         "degree:comparative-er",
         "pos:adjective",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -62545,7 +62562,8 @@
         "en:big",
         "degree:superlative-est",
         "pos:adjective",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -70942,9 +70960,10 @@
         "morphology:adjective-to-comparative",
         "es:ser",
         "en:large",
-        "degree:comparative-more",
         "pos:adjective",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "degree:comparative-er",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -70964,9 +70983,10 @@
         "morphology:adjective-to-superlative",
         "es:ser",
         "en:large",
-        "degree:superlative-most",
         "pos:adjective",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "degree:superlative-est",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -70986,9 +71006,10 @@
         "morphology:adjective-to-comparative",
         "es:ser",
         "en:quick",
-        "degree:comparative-more",
         "pos:adjective",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "degree:comparative-er",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -71008,9 +71029,10 @@
         "morphology:adjective-to-superlative",
         "es:ser",
         "en:quick",
-        "degree:superlative-most",
         "pos:adjective",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "degree:superlative-est",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -71032,7 +71054,8 @@
         "en:rapid",
         "degree:comparative-more",
         "pos:adjective",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -71054,7 +71077,8 @@
         "en:rapid",
         "degree:superlative-most",
         "pos:adjective",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -71076,7 +71100,8 @@
         "en:difficult",
         "degree:comparative-more",
         "pos:adjective",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -71098,7 +71123,8 @@
         "en:difficult",
         "degree:superlative-most",
         "pos:adjective",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -71120,7 +71146,8 @@
         "en:important",
         "degree:comparative-more",
         "pos:adjective",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -71142,7 +71169,8 @@
         "en:important",
         "degree:superlative-most",
         "pos:adjective",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -71164,7 +71192,8 @@
         "degree:irregular-comparative",
         "pos:adjective",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -71186,7 +71215,8 @@
         "degree:irregular-superlative",
         "pos:adjective",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -71208,7 +71238,8 @@
         "degree:irregular-comparative",
         "pos:adjective",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -71230,7 +71261,8 @@
         "degree:irregular-superlative",
         "pos:adjective",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
