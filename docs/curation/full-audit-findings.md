@@ -45,5 +45,14 @@ structural sibling with no apparent reason (`sus`, `a ellas`/`para ellas`,
 `se`→yourselves, `aquella`→that one). This looks like leftover noise from
 whatever originally assigned per-row roles rather than a deliberate
 distinction — worth watching for in every remaining pronoun/determiner-style
-facet with gendered or formal/informal pairs.
+facet with gendered or formal/informal pairs. Confirmed again in
+`grammar:subordinate-subject-pronoun` (nosotros/ellos demoted vs. yo/tú/él/
+ella, all fixed) — now 5 facets, treat as a known systemic issue, not a
+coincidence.
+
+## 2026-09-05 — `grammar:exclamative`
+- **[flagged]** The "¡Qué...!" exclamative family is well covered, but
+  "¡Cuánto/a...!" exclamatives ("¡Cuánto te quiero!" = "How much I love
+  you!") — a genuinely common everyday exclamative pattern distinct from
+  qué — don't exist at all. Small addition for later (1-2 rows).
 

@@ -26170,7 +26170,8 @@
         "es:abajo",
         "en:down",
         "topic:social-expression",
-        "expr:idiom"
+        "expr:idiom",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26701,7 +26702,8 @@
         "pos:pronoun",
         "grammar:interrogative-pronoun",
         "topic:pronoun",
-        "topic:interrogative"
+        "topic:interrogative",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -26720,7 +26722,8 @@
         "grammar:interrogative-pronoun",
         "topic:pronoun",
         "topic:interrogative",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -28911,7 +28914,8 @@
         "topic:pronoun",
         "topic:interrogative",
         "es:qué",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -28946,9 +28950,10 @@
         "pos:pronoun",
         "topic:pronoun",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "5gd7ah01d5",
@@ -28965,9 +28970,10 @@
         "pos:pronoun",
         "topic:pronoun",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "waj2eefdj7",
@@ -28984,9 +28990,10 @@
         "pos:pronoun",
         "topic:pronoun",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "4z2b5kkbjr",
@@ -29002,9 +29009,10 @@
         "en:which",
         "pos:pronoun",
         "topic:pronoun",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "jyx1d6zq9f",
@@ -29021,7 +29029,8 @@
         "grammar:relative-pronoun",
         "topic:pronoun",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -29040,7 +29049,8 @@
         "grammar:relative-pronoun",
         "topic:pronoun",
         "es:cual",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -29058,9 +29068,10 @@
         "pos:pronoun",
         "topic:pronoun",
         "es:qué",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "y1roq1cyk2",
@@ -29076,9 +29087,10 @@
         "pos:pronoun",
         "topic:pronoun",
         "es:qué",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "2c2lwpddfw",
@@ -29162,9 +29174,10 @@
         "grammar:exclamative",
         "es:qué",
         "en:what",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "dhxw09o9vs",
@@ -29178,9 +29191,10 @@
         "grammar:exclamative",
         "es:qué",
         "en:how",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "skmppmerju",
@@ -29273,7 +29287,8 @@
         "grammar:interrogative-pronoun",
         "topic:pronoun",
         "topic:interrogative",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -82278,7 +82293,8 @@
         "es:que",
         "es:yo",
         "en:me",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -82300,7 +82316,8 @@
         "es:tú",
         "en:you",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -82322,7 +82339,8 @@
         "es:él",
         "en:him",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -82344,7 +82362,8 @@
         "es:ella",
         "en:her",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -82366,9 +82385,10 @@
         "es:que",
         "es:nosotros",
         "en:us",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "s0tvpozw7u",
@@ -82389,9 +82409,10 @@
         "es:ellos",
         "en:them",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "0tty2mfina",
@@ -82812,7 +82833,8 @@
         "topic:determiner",
         "grammar:interrogative-determiner",
         "topic:interrogative",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -82834,7 +82856,8 @@
         "topic:determiner",
         "grammar:interrogative-determiner",
         "topic:interrogative",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -83397,7 +83420,8 @@
         "es:quién",
         "en:whom",
         "topic:interrogative",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -84009,7 +84033,8 @@
         "en:who",
         "es:quien",
         "topic:pronoun",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -84026,7 +84051,8 @@
         "pos:pronoun",
         "en:whose",
         "es:cuyo",
-        "topic:pronoun"
+        "topic:pronoun",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -84686,7 +84712,8 @@
         "es:qué",
         "en:what",
         "topic:en-multi-sense",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -84850,7 +84877,8 @@
         "topic:interrogative",
         "es:para qué",
         "en:what",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
