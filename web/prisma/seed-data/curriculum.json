@@ -859,7 +859,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "topic:collocation",
-        "coll:make"
+        "coll:make",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -2212,7 +2213,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "topic:collocation",
-        "coll:other"
+        "coll:other",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -2233,7 +2235,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "topic:collocation",
-        "coll:other"
+        "coll:other",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -2728,7 +2731,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "topic:collocation",
-        "coll:other"
+        "coll:other",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -3843,7 +3847,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "topic:collocation",
-        "coll:make"
+        "coll:make",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -4378,7 +4383,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "topic:collocation",
-        "coll:set"
+        "coll:set",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -4455,7 +4461,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "topic:collocation",
-        "coll:set"
+        "coll:set",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -4758,7 +4765,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "topic:collocation",
-        "coll:other"
+        "coll:other",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -6051,7 +6059,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "topic:collocation",
-        "coll:set"
+        "coll:set",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -6159,7 +6168,8 @@
         "particle:of",
         "topic:phrasal-verb",
         "topic:collocation",
-        "coll:take"
+        "coll:take",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -7931,7 +7941,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "topic:collocation",
-        "coll:make"
+        "coll:make",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -8994,7 +9005,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "topic:collocation",
-        "coll:make"
+        "coll:make",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -9017,7 +9029,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "topic:collocation",
-        "coll:other"
+        "coll:other",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -9037,7 +9050,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "topic:collocation",
-        "coll:make"
+        "coll:make",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -9057,7 +9071,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "topic:collocation",
-        "coll:make"
+        "coll:make",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -9077,7 +9092,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "topic:collocation",
-        "coll:make"
+        "coll:make",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -9097,7 +9113,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "topic:collocation",
-        "coll:take"
+        "coll:take",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -11219,7 +11236,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "topic:collocation",
-        "coll:have"
+        "coll:have",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -11240,7 +11258,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "topic:collocation",
-        "coll:have"
+        "coll:have",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -13517,7 +13536,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "topic:collocation",
-        "coll:other"
+        "coll:other",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -14691,7 +14711,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "topic:collocation",
-        "coll:other"
+        "coll:other",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -16431,7 +16452,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "topic:collocation",
-        "coll:have"
+        "coll:have",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -18321,7 +18343,8 @@
         "particle:at",
         "topic:phrasal-verb",
         "topic:collocation",
-        "coll:take"
+        "coll:take",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -19182,7 +19205,8 @@
         "particle:of",
         "topic:phrasal-verb",
         "topic:collocation",
-        "coll:take"
+        "coll:take",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -30140,7 +30164,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "topic:collocation",
-        "coll:take"
+        "coll:take",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32202,7 +32227,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "topic:collocation",
-        "coll:other"
+        "coll:other",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32752,7 +32778,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "topic:collocation",
-        "coll:other"
+        "coll:other",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55625,7 +55652,8 @@
         "en:take",
         "topic:en-multi-sense",
         "topic:collocation",
-        "coll:take"
+        "coll:take",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55721,7 +55749,8 @@
         "en:have",
         "topic:phrasal-verb",
         "topic:collocation",
-        "coll:have"
+        "coll:have",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56287,7 +56316,8 @@
         "en:keep",
         "topic:en-multi-sense",
         "topic:collocation",
-        "coll:other"
+        "coll:other",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57017,7 +57047,8 @@
         "en:break",
         "topic:en-multi-sense",
         "topic:collocation",
-        "coll:other"
+        "coll:other",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58111,7 +58142,8 @@
         "en:make",
         "topic:en-multi-sense",
         "topic:collocation",
-        "coll:make"
+        "coll:make",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58372,7 +58404,8 @@
         "en:set",
         "topic:en-multi-sense",
         "topic:collocation",
-        "coll:set"
+        "coll:set",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
