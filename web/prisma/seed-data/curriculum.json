@@ -1168,7 +1168,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:after",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -1257,7 +1258,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -4279,7 +4281,8 @@
         "en:order",
         "topic:multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -10912,7 +10915,8 @@
         "es:parar",
         "en:stop",
         "pos:verb",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -10929,7 +10933,8 @@
         "es:parar",
         "en:stop",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -10967,7 +10972,8 @@
         "es:parar",
         "en:keep",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -11008,7 +11014,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:at",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -11029,7 +11036,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:at",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -11047,7 +11055,8 @@
         "es:parar",
         "en:pull",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -11067,7 +11076,8 @@
         "en:stop",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -11145,7 +11155,8 @@
         "es:parece",
         "en:it",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -11206,7 +11217,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "particle:of",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -11226,7 +11238,8 @@
         "es:qué",
         "en:how",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -11246,7 +11259,8 @@
         "es:qué",
         "en:what",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -11269,7 +11283,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:like",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -11357,7 +11372,8 @@
         "en:look",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -11373,7 +11389,8 @@
         "es:pasar",
         "en:happen",
         "pos:verb",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -11394,7 +11411,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -11414,7 +11432,8 @@
         "en:pass",
         "topic:multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -11435,7 +11454,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:past",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -11452,7 +11472,8 @@
         "es:pasar",
         "en:cross",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -11474,7 +11495,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:with",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -11495,7 +11517,8 @@
         "en:come",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -11517,7 +11540,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "particle:ahead",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -11558,7 +11582,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -11643,7 +11668,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -11665,7 +11691,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -11682,7 +11709,8 @@
         "es:pasar",
         "en:overlook",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -11701,7 +11729,8 @@
         "en:go",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26427,7 +26456,8 @@
       "collections": [
         "es:ordenar",
         "en:sort",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26442,7 +26472,8 @@
       "collections": [
         "es:ordenar",
         "en:tidy",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -33300,7 +33331,8 @@
         "pos:verb",
         "particle:with",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57899,7 +57931,8 @@
       "collections": [
         "pos:verb",
         "es:olvidar",
-        "en:forget"
+        "en:forget",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -57918,7 +57951,8 @@
         "es:olvidar",
         "en:leave",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57935,7 +57969,8 @@
         "pos:verb",
         "es:olvidársele",
         "en:for",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57953,7 +57988,8 @@
         "pos:verb",
         "es:olvidar",
         "en:forget",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57962,14 +57998,15 @@
       "spanish": "pagar",
       "english": "to pay",
       "example": {
-        "spanish": "Pago veinte mil pesos por el libro.",
-        "english": "I pay twenty thousand pesos for the book."
+        "spanish": "Pago la cuenta todos los meses.",
+        "english": "I pay the bill every month."
       },
       "collections": [
         "pos:verb",
         "es:pagar",
         "en:pay",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57989,7 +58026,8 @@
         "en:pay",
         "topic:en-multi-sense",
         "particle:for",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58029,7 +58067,8 @@
         "es:pagar",
         "en:pay",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -59378,7 +59417,8 @@
         "pos:verb",
         "es:partir",
         "en:leave",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -59393,7 +59433,8 @@
       "collections": [
         "pos:verb",
         "es:partir",
-        "en:split"
+        "en:split",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -59413,7 +59454,8 @@
         "en:start",
         "topic:en-multi-sense",
         "particle:from",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -59429,7 +59471,8 @@
         "pos:verb",
         "es:partir",
         "en:break",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
