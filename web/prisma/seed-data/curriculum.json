@@ -56080,7 +56080,8 @@
         "sound:comparison-pattern-one-syllable",
         "es:ser",
         "en:hard",
-        "degree:comparative-er"
+        "degree:comparative-er",
+        "pos:adjective"
       ],
       "curriculumRole": "supporting"
     },
@@ -56103,7 +56104,8 @@
         "sound:comparison-pattern-one-syllable",
         "es:ser",
         "en:hard",
-        "degree:superlative-est"
+        "degree:superlative-est",
+        "pos:adjective"
       ],
       "curriculumRole": "supporting"
     },
@@ -56126,7 +56128,8 @@
         "sound:comparison-pattern-one-syllable",
         "es:ser",
         "en:fast",
-        "degree:comparative-er"
+        "degree:comparative-er",
+        "pos:adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -56149,7 +56152,8 @@
         "sound:comparison-pattern-one-syllable",
         "es:ser",
         "en:fast",
-        "degree:superlative-est"
+        "degree:superlative-est",
+        "pos:adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -56172,7 +56176,8 @@
         "sound:comparison-pattern-one-syllable",
         "es:ser",
         "en:slow",
-        "degree:comparative-er"
+        "degree:comparative-er",
+        "pos:adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -56195,7 +56200,8 @@
         "sound:comparison-pattern-one-syllable",
         "es:ser",
         "en:slow",
-        "degree:superlative-est"
+        "degree:superlative-est",
+        "pos:adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -56218,7 +56224,8 @@
         "sound:comparison-pattern-one-syllable",
         "es:ser",
         "en:cheap",
-        "degree:comparative-er"
+        "degree:comparative-er",
+        "pos:adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -56241,7 +56248,8 @@
         "sound:comparison-pattern-one-syllable",
         "es:ser",
         "en:cheap",
-        "degree:superlative-est"
+        "degree:superlative-est",
+        "pos:adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -56264,7 +56272,8 @@
         "sound:comparison-pattern-one-syllable",
         "es:ser",
         "en:safe",
-        "degree:comparative-er"
+        "degree:comparative-er",
+        "pos:adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -56287,7 +56296,8 @@
         "sound:comparison-pattern-one-syllable",
         "es:ser",
         "en:safe",
-        "degree:superlative-est"
+        "degree:superlative-est",
+        "pos:adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -56309,7 +56319,8 @@
         "grammar:comparison",
         "es:ser",
         "en:funny",
-        "degree:comparative-er"
+        "degree:comparative-er",
+        "pos:adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -56331,7 +56342,8 @@
         "grammar:comparison",
         "es:ser",
         "en:funny",
-        "degree:superlative-est"
+        "degree:superlative-est",
+        "pos:adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -56353,7 +56365,8 @@
         "grammar:comparison",
         "es:ser",
         "en:happy",
-        "degree:comparative-er"
+        "degree:comparative-er",
+        "pos:adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -56375,7 +56388,8 @@
         "grammar:comparison",
         "es:ser",
         "en:happy",
-        "degree:superlative-est"
+        "degree:superlative-est",
+        "pos:adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -56397,7 +56411,8 @@
         "grammar:comparison",
         "es:ser",
         "en:easy",
-        "degree:comparative-er"
+        "degree:comparative-er",
+        "pos:adjective"
       ],
       "curriculumRole": "supporting"
     },
@@ -56419,7 +56434,8 @@
         "grammar:comparison",
         "es:ser",
         "en:easy",
-        "degree:superlative-est"
+        "degree:superlative-est",
+        "pos:adjective"
       ],
       "curriculumRole": "supporting"
     },
@@ -56442,7 +56458,8 @@
         "sound:comparison-pattern-one-syllable",
         "es:ser",
         "en:big",
-        "degree:comparative-er"
+        "degree:comparative-er",
+        "pos:adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -56465,7 +56482,8 @@
         "sound:comparison-pattern-one-syllable",
         "es:ser",
         "en:big",
-        "degree:superlative-est"
+        "degree:superlative-est",
+        "pos:adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -64332,7 +64350,8 @@
         "morphology:adjective-to-comparative",
         "es:ser",
         "en:large",
-        "degree:comparative-more"
+        "degree:comparative-more",
+        "pos:adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -64352,7 +64371,8 @@
         "morphology:adjective-to-superlative",
         "es:ser",
         "en:large",
-        "degree:superlative-most"
+        "degree:superlative-most",
+        "pos:adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -64372,7 +64392,8 @@
         "morphology:adjective-to-comparative",
         "es:ser",
         "en:quick",
-        "degree:comparative-more"
+        "degree:comparative-more",
+        "pos:adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -64392,7 +64413,8 @@
         "morphology:adjective-to-superlative",
         "es:ser",
         "en:quick",
-        "degree:superlative-most"
+        "degree:superlative-most",
+        "pos:adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -64412,7 +64434,8 @@
         "morphology:adjective-to-comparative",
         "es:ser",
         "en:rapid",
-        "degree:comparative-more"
+        "degree:comparative-more",
+        "pos:adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -64432,7 +64455,8 @@
         "morphology:adjective-to-superlative",
         "es:ser",
         "en:rapid",
-        "degree:superlative-most"
+        "degree:superlative-most",
+        "pos:adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -64452,7 +64476,8 @@
         "morphology:adjective-to-comparative",
         "es:ser",
         "en:difficult",
-        "degree:comparative-more"
+        "degree:comparative-more",
+        "pos:adjective"
       ],
       "curriculumRole": "supporting"
     },
@@ -64472,7 +64497,8 @@
         "morphology:adjective-to-superlative",
         "es:ser",
         "en:difficult",
-        "degree:superlative-most"
+        "degree:superlative-most",
+        "pos:adjective"
       ],
       "curriculumRole": "supporting"
     },
@@ -64492,7 +64518,8 @@
         "morphology:adjective-to-comparative",
         "es:ser",
         "en:important",
-        "degree:comparative-more"
+        "degree:comparative-more",
+        "pos:adjective"
       ],
       "curriculumRole": "supporting"
     },
@@ -64512,7 +64539,8 @@
         "morphology:adjective-to-superlative",
         "es:ser",
         "en:important",
-        "degree:superlative-most"
+        "degree:superlative-most",
+        "pos:adjective"
       ],
       "curriculumRole": "supporting"
     },
@@ -64531,7 +64559,8 @@
         "morphology:adjective-to-comparative",
         "es:ser",
         "en:good",
-        "degree:irregular-comparative"
+        "degree:irregular-comparative",
+        "pos:adjective"
       ],
       "curriculumRole": "supporting"
     },
@@ -64550,7 +64579,8 @@
         "morphology:adjective-to-superlative",
         "es:ser",
         "en:good",
-        "degree:irregular-superlative"
+        "degree:irregular-superlative",
+        "pos:adjective"
       ],
       "curriculumRole": "supporting"
     },
@@ -64569,7 +64599,8 @@
         "morphology:adjective-to-comparative",
         "es:ser",
         "en:bad",
-        "degree:irregular-comparative"
+        "degree:irregular-comparative",
+        "pos:adjective"
       ],
       "curriculumRole": "supporting"
     },
@@ -64588,7 +64619,8 @@
         "morphology:adjective-to-superlative",
         "es:ser",
         "en:bad",
-        "degree:irregular-superlative"
+        "degree:irregular-superlative",
+        "pos:adjective"
       ],
       "curriculumRole": "supporting"
     },

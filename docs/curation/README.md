@@ -65,4 +65,5 @@ Going forward: `curation-YYYY-MM-DD-<slug>.tsv`. A canonical topic spec is
 | 2026-09-05 | **Cognates topic** — promoted misfiled `morphology:suffix-*` root/etymology data to named `cognate:<stem>-to-<root>` families, retired 6 legacy junk values, modeled false friends as `contrast:` pairs, `audit-cognates.ts` | `cba02c4`, `3e8acf1` | `cognates-plan-2026-09-05.md`, `curation-2026-09-05-cognates-*.tsv` |
 | 2026-09-04 | Nouns/adjectives: bracket the article/copula, `gender:` facet | `8ec42013` | `curation-2026-09-04-nouns-gender-bracket.tsv`, `curation-2026-09-04-adjectives-copula-bracket.tsv` |
 | 2026-09-04 | Adjectives: `degree:` facet on existing comparative/superlative rows | `498d83db` | `curation-2026-09-04-adjectives-degree.tsv` |
-| 2026-09-04 | Nouns/adjectives theme categorization (`topic:` facet) | *(pending commit)* | `curation-2026-09-04-nouns-adjectives-theme.tsv` |
+| 2026-09-04 | Nouns/adjectives theme categorization (`topic:` facet) | `465f2e4` | `curation-2026-09-04-nouns-adjectives-theme.tsv` |
+| 2026-09-04 | **Nouns/Adjectives topics** — tag degree: derivation rows `pos:adjective` so they surface on the new pages | *(pending commit)* | `curation-2026-09-04-adjectives-degree-pos-tag.tsv` |
