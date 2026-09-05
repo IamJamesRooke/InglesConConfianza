@@ -20442,7 +20442,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:like",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -21627,7 +21628,8 @@
         "en:got",
         "sense:tener-obligacion",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -21792,7 +21794,8 @@
         "pos:verb",
         "grammar:phrasal-verb",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -21815,7 +21818,8 @@
         "pos:verb",
         "grammar:phrasal-verb",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -21894,7 +21898,8 @@
         "pos:verb",
         "es:tener",
         "en:succeed",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -21980,7 +21985,8 @@
         "grammar:phrasal-verb",
         "particle:at",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -21998,7 +22004,8 @@
         "en:make",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -22019,7 +22026,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "grammar:phrasal-verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -22039,7 +22047,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -22057,7 +22066,8 @@
         "es:tener",
         "en:trouble",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -22126,7 +22136,8 @@
         "pos:verb",
         "particle:with",
         "en:have",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -22174,7 +22185,8 @@
         "pos:verb",
         "grammar:phrasal-verb",
         "en:have",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -23842,7 +23854,8 @@
         "pos:verb",
         "particle:to",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -33274,7 +33287,8 @@
         "en:must",
         "sense:tener-obligacion",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -69133,7 +69147,8 @@
         "form:third-person",
         "es:tener",
         "en:has",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -88116,7 +88131,8 @@
         "en:have",
         "sense:tener-posesion",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -88137,9 +88153,10 @@
         "en:have",
         "sense:tener-posesion",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "vea3m3h1kq",
@@ -88157,7 +88174,8 @@
         "es:tener",
         "en:has",
         "sense:tener-posesion",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -88178,9 +88196,10 @@
         "en:have",
         "sense:tener-posesion",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "rkkkgau83q",
@@ -88199,9 +88218,10 @@
         "en:have",
         "sense:tener-posesion",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "b6v2qryb2d",
@@ -88683,7 +88703,8 @@
         "grammar:age",
         "grammar:be",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -88705,9 +88726,10 @@
         "en:old",
         "grammar:age",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "a5e2xjebla",
@@ -88727,7 +88749,8 @@
         "en:old",
         "grammar:age",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -88749,9 +88772,10 @@
         "en:old",
         "grammar:age",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "680u7m5wn5",
@@ -88771,9 +88795,10 @@
         "en:old",
         "grammar:age",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "yye01uov38",
@@ -88794,7 +88819,8 @@
         "en:to",
         "grammar:modal",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -88816,7 +88842,8 @@
         "en:have",
         "grammar:modal",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -88837,7 +88864,8 @@
         "es:tener",
         "en:has",
         "grammar:modal",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -88859,9 +88887,10 @@
         "en:have",
         "grammar:modal",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "x9hss06n9a",
@@ -88881,9 +88910,10 @@
         "en:have",
         "grammar:modal",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "n8ahr1jble",
