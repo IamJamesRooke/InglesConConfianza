@@ -658,7 +658,8 @@
         "es:comer",
         "en:eat",
         "pos:verb",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -696,7 +697,8 @@
         "en:eat",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -715,7 +717,8 @@
         "en:eat",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -734,7 +737,8 @@
         "en:eat",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -755,7 +759,8 @@
         "en:eat",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -775,7 +780,8 @@
         "en:eat",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -795,7 +801,8 @@
         "en:eat",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -15731,7 +15738,8 @@
         "en:know",
         "pos:verb",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -15749,7 +15757,8 @@
         "es:conocer",
         "en:meet",
         "pos:verb",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -15810,7 +15819,8 @@
         "en:know",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -15828,7 +15838,8 @@
         "es:conocer",
         "en:visit",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -15850,7 +15861,8 @@
         "pos:verb",
         "particle:with",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -15873,7 +15885,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "grammar:phrasal-verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -16074,7 +16087,8 @@
         "es:conseguir",
         "en:get",
         "pos:verb",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -16090,7 +16104,8 @@
         "register:formal",
         "es:conseguir",
         "en:obtain",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -16105,7 +16120,8 @@
       "collections": [
         "es:conseguir",
         "en:secure",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -16207,7 +16223,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:for",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -16272,7 +16289,8 @@
         "es:conseguir",
         "en:get",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -16289,7 +16307,8 @@
         "grammar:fixed-expression",
         "es:conseguir",
         "en:win",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -16310,7 +16329,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:of",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -16329,7 +16349,8 @@
         "es:conseguir",
         "en:get",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -29325,7 +29346,8 @@
         "es:comer",
         "en:eat",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31054,7 +31076,8 @@
         "es:comenzar",
         "en:start",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31444,7 +31467,8 @@
         "es:coincidir",
         "en:agree",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32458,7 +32482,8 @@
         "grammar:verb-direct-object",
         "es:construir",
         "en:build",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -32527,7 +32552,8 @@
         "grammar:verb-direct-object",
         "pos:verb",
         "es:comprar",
-        "en:buy"
+        "en:buy",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -34191,7 +34217,8 @@
         "es:comunicar",
         "en:reach",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56136,7 +56163,8 @@
         "pos:verb",
         "es:coger",
         "en:take",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56152,7 +56180,8 @@
         "pos:verb",
         "es:coger",
         "en:catch",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56170,7 +56199,8 @@
         "pos:verb",
         "es:coger",
         "en:pick",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56185,7 +56215,8 @@
       "collections": [
         "pos:verb",
         "es:coger",
-        "en:grab"
+        "en:grab",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56201,7 +56232,8 @@
         "pos:verb",
         "es:coger",
         "en:take",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56217,7 +56249,8 @@
         "pos:verb",
         "es:coger",
         "en:catch",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56233,7 +56266,8 @@
         "pos:verb",
         "es:coger",
         "en:catch",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56252,7 +56286,8 @@
         "pos:verb",
         "es:recoger",
         "en:pick",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56271,7 +56306,8 @@
         "pos:verb",
         "es:recoger",
         "en:pick",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56287,7 +56323,8 @@
         "es:coger",
         "pos:verb",
         "es:recoger",
-        "en:collect"
+        "en:collect",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56303,7 +56340,8 @@
         "es:coger",
         "pos:verb",
         "es:recoger",
-        "en:gather"
+        "en:gather",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56322,7 +56360,8 @@
         "pos:verb",
         "es:recoger",
         "en:tidy",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56338,7 +56377,8 @@
         "es:coger",
         "pos:verb",
         "es:recoger",
-        "en:retrieve"
+        "en:retrieve",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56354,7 +56394,8 @@
         "es:coger",
         "pos:verb",
         "es:recoger",
-        "en:harvest"
+        "en:harvest",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56374,7 +56415,8 @@
         "es:recoger",
         "en:take",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56390,7 +56432,8 @@
         "es:coger",
         "pos:verb",
         "es:recoger",
-        "en:fold"
+        "en:fold",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56408,7 +56451,8 @@
         "pos:verb",
         "es:comprar",
         "en:buy",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
