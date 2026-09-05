@@ -46,7 +46,19 @@ skimming history, not a machine-readable state store.
   demonstrated an unrelated idiom instead of the language sense), and 7
   small `topic:*` noun-theme facets (51 rows, fixed a "se fue la luz"
   example that was about something else entirely). Commits `312b25d8`,
-  `9b423a49`, `09347972`, `eaf3c796`. Next up: the two large noun-theme
-  facets `topic:time` (142 left) and `topic:abstract-quality` (213 left),
-  then the rest of the Nouns page's smaller topic: facets, then
-  Adjectives.
+  `9b423a49`, `09347972`, `eaf3c796`.
+- **2026-09-05, Nouns page complete + Adjectives page complete** —
+  finished `topic:time` (130), `topic:abstract-quality` (213, found 3
+  headword/example mismatches including one mislabeled ser/estar-listo
+  duplicate), and the last 5 small Nouns topic facets (14). Then the
+  whole Adjectives page: `grammar:ser-adjective` (57, fixed 3 placeholder
+  "examples" that were just the headword repeated), `grammar:estar-
+  adjective`/`grammar:tener-adjective` (25, fixed 2 more placeholders +
+  1 duplicate), the `degree:*` comparative/superlative facets (32, found
+  a real tag-membership bug — 4 rows contradicted their own
+  sound:comparison-pattern-one-syllable tag by being filed under
+  comparative-more/superlative-most instead of -er/-est), and the
+  Adjectives topic: facets (52). Commits `f2b97899` through `b6cf2e69`.
+  Next up: Adverbs page (`grammar:frequency-adverb`, `grammar:manner`,
+  `grammar:intensifier`, `topic:location` 74 rows, `topic:cognate` 789
+  rows — the biggest single facet in the whole DB).
