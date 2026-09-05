@@ -24612,7 +24612,8 @@
         "pos:verb",
         "construction:prepositional-verb",
         "particle:for",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -26634,7 +26635,8 @@
         "es:casi",
         "en:hardly",
         "pos:verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -26984,7 +26986,8 @@
         "es:bastante",
         "es:bastar",
         "en:enough",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -29614,7 +29617,8 @@
         "topic:verb-pattern",
         "topic:question-negation",
         "qn:negative-question",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -30303,7 +30307,8 @@
         "en:nothing",
         "topic:multi-sense",
         "pos:verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -30621,7 +30626,8 @@
         "ultimo",
         "es:leer",
         "en:read",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-other"
       ],
       "curriculumRole": "core"
     },
@@ -30837,7 +30843,8 @@
         "en:open",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -31031,7 +31038,8 @@
         "topic:en-multi-sense",
         "topic:technology",
         "pos:verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -31273,7 +31281,8 @@
         "grammar:verb-direct-object",
         "es:cruzar",
         "en:cross",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -31424,7 +31433,8 @@
         "pos:verb",
         "particle:for",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -31854,7 +31864,8 @@
         "en:appear",
         "pos:verb",
         "particle:before",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -32425,7 +32436,8 @@
         "grammar:change-of-state",
         "es:aumentar",
         "en:build",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -32443,7 +32455,8 @@
         "es:desarrollar",
         "en:build",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -32557,7 +32570,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "construction:prepositional-verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -32618,7 +32632,8 @@
         "es:atrapar",
         "en:catch",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -32658,7 +32673,8 @@
         "pos:verb",
         "topic:collocation",
         "coll:other",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -32696,7 +32712,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "topic:verb-pattern",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -32838,7 +32855,8 @@
         "grammar:verb-direct-object",
         "es:despejar",
         "en:clear",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -32856,7 +32874,8 @@
         "grammar:verb-direct-object",
         "es:procesar",
         "en:clear",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -33211,7 +33230,8 @@
         "pos:verb",
         "topic:collocation",
         "coll:other",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -34031,7 +34051,8 @@
         "en:pay",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -34223,7 +34244,8 @@
         "topic:crime-law",
         "pos:verb",
         "topic:verb-pattern",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -34242,7 +34264,8 @@
         "topic:en-multi-sense",
         "topic:money-business",
         "pos:verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -34557,7 +34580,8 @@
         "cognate:transparent",
         "es:adoptar",
         "en:adopt",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -34576,7 +34600,8 @@
         "cognate:transparent",
         "es:adaptar",
         "en:adapt",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -34595,7 +34620,8 @@
         "cognate:transparent",
         "es:encriptar",
         "en:encrypt",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -34614,7 +34640,8 @@
         "cognate:transparent",
         "es:interceptar",
         "en:intercept",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -34633,7 +34660,8 @@
         "cognate:transparent",
         "es:cancelar",
         "en:cancel",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -34672,7 +34700,8 @@
         "cognate:transparent",
         "es:controlar",
         "en:control",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -34691,7 +34720,8 @@
         "cognate:transparent",
         "es:considerar",
         "en:consider",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -34710,7 +34740,8 @@
         "cognate:transparent",
         "es:confirmar",
         "en:confirm",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -34748,7 +34779,8 @@
         "cognate:transparent",
         "es:informar",
         "en:inform",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -34767,7 +34799,8 @@
         "cognate:transparent",
         "es:transformar",
         "en:transform",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -34786,7 +34819,8 @@
         "cognate:transparent",
         "es:reformar",
         "en:reform",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -34805,7 +34839,8 @@
         "cognate:transparent",
         "es:afirmar",
         "en:affirm",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -34824,7 +34859,8 @@
         "cognate:transparent",
         "es:alarmar",
         "en:alarm",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -34881,7 +34917,8 @@
         "cognate:transparent",
         "es:existir",
         "en:exist",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -34900,7 +34937,8 @@
         "cognate:transparent",
         "es:persistir",
         "en:persist",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -34919,7 +34957,8 @@
         "cognate:transparent",
         "es:resistir",
         "en:resist",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -34938,7 +34977,8 @@
         "cognate:transparent",
         "es:insistir",
         "en:insist",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -34960,7 +35000,8 @@
         "construction:prepositional-verb",
         "particle:of",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -34982,7 +35023,8 @@
         "construction:prepositional-verb",
         "particle:from",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -35001,7 +35043,8 @@
         "cognate:transparent",
         "es:coexistir",
         "en:coexist",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -35020,7 +35063,8 @@
         "cognate:transparent",
         "es:funcionar",
         "en:function",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -35039,7 +35083,8 @@
         "cognate:transparent",
         "es:mencionar",
         "en:mention",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -35058,7 +35103,8 @@
         "cognate:transparent",
         "es:cuestionar",
         "en:question",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -35077,7 +35123,8 @@
         "cognate:transparent",
         "es:posicionar",
         "en:position",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -35096,7 +35143,8 @@
         "cognate:transparent",
         "es:condicionar",
         "en:condition",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -35159,7 +35207,8 @@
         "en:omit",
         "cognate:mitir-to-mit",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -35180,7 +35229,8 @@
         "en:transmit",
         "cognate:mitir-to-mit",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -35201,7 +35251,8 @@
         "en:commit",
         "cognate:mitir-to-mit",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -35243,7 +35294,8 @@
         "en:remit",
         "cognate:mitir-to-mit",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -35264,7 +35316,8 @@
         "en:submit",
         "cognate:mitir-to-mit",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -35309,7 +35362,8 @@
         "construction:prepositional-verb",
         "particle:to",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -35330,7 +35384,8 @@
         "en:transfer",
         "cognate:ferir-to-fer",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -35351,7 +35406,8 @@
         "en:differ",
         "cognate:ferir-to-fer",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -35372,7 +35428,8 @@
         "en:suffer",
         "cognate:ferir-to-fer",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -35414,7 +35471,8 @@
         "en:confer",
         "cognate:ferir-to-fer",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -35435,7 +35493,8 @@
         "en:infer",
         "cognate:ferir-to-fer",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -35473,7 +35532,8 @@
         "cognate:transparent",
         "es:representar",
         "en:represent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -35492,7 +35552,8 @@
         "cognate:transparent",
         "es:inventar",
         "en:invent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -35511,7 +35572,8 @@
         "cognate:transparent",
         "es:comentar",
         "en:comment",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -35530,7 +35592,8 @@
         "cognate:transparent",
         "es:experimentar",
         "en:experiment",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -35549,7 +35612,8 @@
         "cognate:transparent",
         "es:complementar",
         "en:complement",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -35568,7 +35632,8 @@
         "cognate:transparent",
         "es:implementar",
         "en:implement",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -35587,7 +35652,8 @@
         "cognate:transparent",
         "es:orientar",
         "en:orient",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -35644,7 +35710,8 @@
         "cognate:transparent",
         "es:extender",
         "en:extend",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -35663,7 +35730,8 @@
         "cognate:transparent",
         "es:suspender",
         "en:suspend",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -35682,7 +35750,8 @@
         "cognate:transparent",
         "es:ofender",
         "en:offend",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -35701,7 +35770,8 @@
         "cognate:transparent",
         "es:defender",
         "en:defend",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -35720,7 +35790,8 @@
         "cognate:transparent",
         "es:ascender",
         "en:ascend",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -35739,7 +35810,8 @@
         "cognate:transparent",
         "es:descender",
         "en:descend",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -35758,7 +35830,8 @@
         "cognate:transparent",
         "es:trascender",
         "en:transcend",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -35777,7 +35850,8 @@
         "cognate:transparent",
         "es:reportar",
         "en:report",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -35796,7 +35870,8 @@
         "cognate:transparent",
         "es:transportar",
         "en:transport",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -35834,7 +35909,8 @@
         "cognate:transparent",
         "es:exportar",
         "en:export",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -35853,7 +35929,8 @@
         "cognate:transparent",
         "es:deportar",
         "en:deport",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -35872,7 +35949,8 @@
         "cognate:transparent",
         "es:responder",
         "en:respond",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -35891,7 +35969,8 @@
         "cognate:transparent",
         "es:corresponder",
         "en:correspond",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -35910,7 +35989,8 @@
         "cognate:transparent",
         "es:visitar",
         "en:visit",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -35929,7 +36009,8 @@
         "cognate:transparent",
         "es:limitar",
         "en:limit",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -35948,7 +36029,8 @@
         "cognate:transparent",
         "es:acreditar",
         "en:credit",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -35967,7 +36049,8 @@
         "cognate:transparent",
         "es:depositar",
         "en:deposit",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -35986,7 +36069,8 @@
         "cognate:transparent",
         "es:editar",
         "en:edit",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -36005,7 +36089,8 @@
         "cognate:transparent",
         "es:auditar",
         "en:audit",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -36024,7 +36109,8 @@
         "cognate:transparent",
         "es:vomitar",
         "en:vomit",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -45428,7 +45514,8 @@
         "en:apply",
         "cognate:plicar-to-ply",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -45448,7 +45535,8 @@
         "en:multiply",
         "cognate:plicar-to-ply",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -45468,7 +45556,8 @@
         "en:imply",
         "cognate:plicar-to-ply",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -45488,7 +45577,8 @@
         "en:cause",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -45508,7 +45598,8 @@
         "en:pause",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -45528,7 +45619,8 @@
         "en:contribute",
         "cognate:tribuir-to-tribute",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -45548,7 +45640,8 @@
         "en:distribute",
         "cognate:tribuir-to-tribute",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -45568,7 +45661,8 @@
         "en:substitute",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -45588,7 +45682,8 @@
         "en:institute",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -45608,7 +45703,8 @@
         "en:execute",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -45628,7 +45724,8 @@
         "en:constitute",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -45668,7 +45765,8 @@
         "en:create",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -45708,7 +45806,8 @@
         "en:estimate",
         "cognate:ar-to-ate",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -45728,7 +45827,8 @@
         "en:negotiate",
         "cognate:ar-to-ate",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -45748,7 +45848,8 @@
         "en:immigrate",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -45768,7 +45869,8 @@
         "en:accelerate",
         "cognate:ar-to-ate",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -45788,7 +45890,8 @@
         "en:translate",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -45828,7 +45931,8 @@
         "en:celebrate",
         "cognate:ar-to-ate",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -45848,7 +45952,8 @@
         "en:decorate",
         "cognate:ar-to-ate",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -45868,7 +45973,8 @@
         "en:eliminate",
         "cognate:ar-to-ate",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -45888,7 +45994,8 @@
         "en:operate",
         "cognate:ar-to-ate",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -45948,7 +46055,8 @@
         "en:divide",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -45968,7 +46076,8 @@
         "en:reside",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -45988,7 +46097,8 @@
         "en:guide",
         "cognate:transparent",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46008,7 +46118,8 @@
         "en:preside",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46048,7 +46159,8 @@
         "en:define",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -46068,7 +46180,8 @@
         "en:refine",
         "cognate:inar-to-ine",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46088,7 +46201,8 @@
         "en:combine",
         "cognate:inar-to-ine",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -46108,7 +46222,8 @@
         "en:decline",
         "cognate:inar-to-ine",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46128,7 +46243,8 @@
         "en:imagine",
         "cognate:inar-to-ine",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -46148,7 +46264,8 @@
         "en:examine",
         "cognate:inar-to-ine",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -46168,7 +46285,8 @@
         "en:determine",
         "cognate:inar-to-ine",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -46188,7 +46306,8 @@
         "en:discipline",
         "cognate:inar-to-ine",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46208,7 +46327,8 @@
         "en:confine",
         "cognate:inar-to-ine",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46228,7 +46348,8 @@
         "en:incline",
         "cognate:inar-to-ine",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46248,7 +46369,8 @@
         "en:describe",
         "cognate:escribir-to-scribe",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -46268,7 +46390,8 @@
         "en:inscribe",
         "cognate:escribir-to-scribe",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46288,7 +46411,8 @@
         "en:prescribe",
         "cognate:escribir-to-scribe",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46308,7 +46432,8 @@
         "en:subscribe",
         "cognate:escribir-to-scribe",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46328,7 +46453,8 @@
         "en:transcribe",
         "cognate:escribir-to-scribe",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46368,7 +46494,8 @@
         "en:center",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46408,7 +46535,8 @@
         "en:identify",
         "cognate:ificar-to-ify",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -46428,7 +46556,8 @@
         "en:verify",
         "cognate:ificar-to-ify",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -46448,7 +46577,8 @@
         "en:justify",
         "cognate:ificar-to-ify",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46468,7 +46598,8 @@
         "en:unify",
         "cognate:ificar-to-ify",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46488,7 +46619,8 @@
         "en:quantify",
         "cognate:ificar-to-ify",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46508,7 +46640,8 @@
         "en:classify",
         "cognate:ificar-to-ify",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46528,7 +46661,8 @@
         "en:simplify",
         "cognate:ificar-to-ify",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46548,7 +46682,8 @@
         "en:modify",
         "cognate:ificar-to-ify",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46568,7 +46703,8 @@
         "en:clarify",
         "cognate:ificar-to-ify",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46588,7 +46724,8 @@
         "en:purify",
         "cognate:ificar-to-ify",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46608,7 +46745,8 @@
         "en:ignore",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -46628,7 +46766,8 @@
         "en:explore",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -46648,7 +46787,8 @@
         "en:restore",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46668,7 +46808,8 @@
         "en:adore",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46688,7 +46829,8 @@
         "en:implore",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46708,7 +46850,8 @@
         "en:include",
         "cognate:cluir-to-clude",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -46728,7 +46871,8 @@
         "en:exclude",
         "cognate:cluir-to-clude",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46748,7 +46892,8 @@
         "en:conclude",
         "cognate:cluir-to-clude",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46771,7 +46916,8 @@
         "topic:phrasal-verb",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46791,7 +46937,8 @@
         "en:elude",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46811,7 +46958,8 @@
         "en:inhale",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46831,7 +46979,8 @@
         "en:exhale",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46851,7 +47000,8 @@
         "en:introduce",
         "cognate:ducir-to-duce",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -46871,7 +47021,8 @@
         "en:produce",
         "cognate:ducir-to-duce",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -46911,7 +47062,8 @@
         "en:deduce",
         "cognate:ducir-to-duce",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46931,7 +47083,8 @@
         "en:induce",
         "cognate:ducir-to-duce",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46951,7 +47104,8 @@
         "en:seduce",
         "cognate:ducir-to-duce",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -46971,7 +47125,8 @@
         "en:reproduce",
         "cognate:ducir-to-duce",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47011,7 +47166,8 @@
         "en:unite",
         "cognate:ir-to-silent-e",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47031,7 +47187,8 @@
         "en:reunite",
         "cognate:ir-to-silent-e",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47051,7 +47208,8 @@
         "en:cite",
         "cognate:transparent",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47071,7 +47229,8 @@
         "en:incite",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47091,7 +47250,8 @@
         "en:recite",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47131,7 +47291,8 @@
         "en:conserve",
         "cognate:servar-to-serve",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47151,7 +47312,8 @@
         "en:preserve",
         "cognate:servar-to-serve",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47211,7 +47373,8 @@
         "en:memorize",
         "cognate:izar-to-ize",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -47231,7 +47394,8 @@
         "en:specialize",
         "cognate:izar-to-ize",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47251,7 +47415,8 @@
         "en:finalize",
         "cognate:izar-to-ize",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47271,7 +47436,8 @@
         "en:minimize",
         "cognate:izar-to-ize",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47291,7 +47457,8 @@
         "en:maximize",
         "cognate:izar-to-ize",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47311,7 +47478,8 @@
         "en:prioritize",
         "cognate:izar-to-ize",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47331,7 +47499,8 @@
         "en:categorize",
         "cognate:izar-to-ize",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47351,7 +47520,8 @@
         "en:digitize",
         "cognate:izar-to-ize",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47371,7 +47541,8 @@
         "en:visualize",
         "cognate:izar-to-ize",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47391,7 +47562,8 @@
         "en:prepare",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -47411,7 +47583,8 @@
         "en:compare",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -47431,7 +47604,8 @@
         "en:declare",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47451,7 +47625,8 @@
         "en:repair",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -47471,7 +47646,8 @@
         "en:prohibit",
         "cognate:hibir-to-hibit",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47491,7 +47667,8 @@
         "en:exhibit",
         "cognate:hibir-to-hibit",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47511,7 +47688,8 @@
         "en:inhibit",
         "cognate:hibir-to-hibit",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47531,7 +47709,8 @@
         "en:receive",
         "cognate:cibir-to-ceive",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -47551,7 +47730,8 @@
         "en:perceive",
         "cognate:cibir-to-ceive",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47571,7 +47751,8 @@
         "en:conceive",
         "cognate:cibir-to-ceive",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47591,7 +47772,8 @@
         "en:resolve",
         "cognate:solver-to-solve",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -47611,7 +47793,8 @@
         "en:dissolve",
         "cognate:solver-to-solve",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47631,7 +47814,8 @@
         "en:absolve",
         "cognate:solver-to-solve",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47651,7 +47835,8 @@
         "en:survive",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -47671,7 +47856,8 @@
         "en:revive",
         "cognate:ir-to-silent-e",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47691,7 +47877,8 @@
         "en:derive",
         "cognate:transparent",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47714,7 +47901,8 @@
         "topic:phrasal-verb",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47754,7 +47942,8 @@
         "en:digest",
         "cognate:gerir-to-gest",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47774,7 +47963,8 @@
         "en:ingest",
         "cognate:gerir-to-gest",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47794,7 +47984,8 @@
         "en:attract",
         "cognate:traer-to-tract",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -47814,7 +48005,8 @@
         "en:distract",
         "cognate:traer-to-tract",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47834,7 +48026,8 @@
         "en:extract",
         "cognate:traer-to-tract",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47854,7 +48047,8 @@
         "en:contract",
         "cognate:traer-to-tract",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47874,7 +48068,8 @@
         "en:subtract",
         "cognate:traer-to-tract",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47894,7 +48089,8 @@
         "en:contact",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -47914,7 +48110,8 @@
         "en:impact",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47934,7 +48131,8 @@
         "en:act",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -47954,7 +48152,8 @@
         "en:react",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -47974,7 +48173,8 @@
         "en:interact",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -47994,7 +48194,8 @@
         "en:comprehend",
         "cognate:hender-to-hend",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -48014,7 +48215,8 @@
         "en:apprehend",
         "cognate:hender-to-hend",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -48034,7 +48236,8 @@
         "en:compress",
         "cognate:primir-to-press",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -48054,7 +48257,8 @@
         "en:repress",
         "cognate:primir-to-press",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -48074,7 +48278,8 @@
         "en:suppress",
         "cognate:primir-to-press",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -48115,7 +48320,8 @@
         "en:concede",
         "cognate:ceder-to-cede",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -48136,7 +48342,8 @@
         "en:precede",
         "cognate:ceder-to-cede",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -48157,7 +48364,8 @@
         "en:exceed",
         "cognate:ceder-to-cede",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -48178,7 +48386,8 @@
         "en:proceed",
         "cognate:ceder-to-cede",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -48218,7 +48427,8 @@
         "en:revert",
         "cognate:vertir-to-vert",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -48238,7 +48448,8 @@
         "en:invert",
         "cognate:vertir-to-vert",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -48258,7 +48469,8 @@
         "en:correct",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -48318,7 +48530,8 @@
         "en:protect",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -48338,7 +48551,8 @@
         "en:erect",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -48358,7 +48572,8 @@
         "en:connect",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -48378,7 +48593,8 @@
         "en:detect",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -48398,7 +48614,8 @@
         "en:project",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -48418,7 +48635,8 @@
         "en:perfect",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -48438,7 +48656,8 @@
         "en:collect",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -48458,7 +48677,8 @@
         "en:inspect",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -48478,7 +48698,8 @@
         "en:instruct",
         "cognate:struir-to-struct",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -48538,7 +48759,8 @@
         "en:obstruct",
         "cognate:struir-to-struct",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -48598,7 +48820,8 @@
         "en:sustain",
         "cognate:tener-to-tain",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -48618,7 +48841,8 @@
         "en:contain",
         "cognate:tener-to-tain",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -48638,7 +48862,8 @@
         "en:retain",
         "cognate:tener-to-tain",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -48697,7 +48922,8 @@
         "en:entertain",
         "cognate:tener-to-tain",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -48717,7 +48943,8 @@
         "en:abstain",
         "cognate:tener-to-tain",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -48737,7 +48964,8 @@
         "en:occur",
         "cognate:currir-to-cur",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -48757,7 +48985,8 @@
         "en:incur",
         "cognate:currir-to-cur",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -48797,7 +49026,8 @@
         "en:oppose",
         "cognate:poner-to-pose",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -48857,7 +49087,8 @@
         "en:compose",
         "cognate:poner-to-pose",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -48877,7 +49108,8 @@
         "en:impose",
         "cognate:poner-to-pose",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -48897,7 +49129,8 @@
         "en:depose",
         "cognate:poner-to-pose",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -48917,7 +49150,8 @@
         "en:interpose",
         "cognate:poner-to-pose",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -48937,7 +49171,8 @@
         "en:predispose",
         "cognate:poner-to-pose",
         "cognate:latin-root",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -49187,7 +49422,8 @@
         "cognate:opaque-gloss",
         "es:admirar",
         "en:admire",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -49206,7 +49442,8 @@
         "cognate:opaque-gloss",
         "es:inspirar",
         "en:inspire",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -49225,7 +49462,8 @@
         "cognate:opaque-gloss",
         "es:adquirir",
         "en:acquire",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -49263,7 +49501,8 @@
         "cognate:opaque-gloss",
         "es:retirar",
         "en:retire",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -49282,7 +49521,8 @@
         "cognate:opaque-gloss",
         "es:expirar",
         "en:expire",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -49304,7 +49544,8 @@
         "construction:prepositional-verb",
         "particle:to",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -49323,7 +49564,8 @@
         "cognate:opaque-gloss",
         "es:conspirar",
         "en:conspire",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -49361,7 +49603,8 @@
         "cognate:opaque-gloss",
         "es:valorar",
         "en:value",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -49380,7 +49623,8 @@
         "cognate:opaque-gloss",
         "es:subvalorar",
         "en:undervalue",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -49399,7 +49643,8 @@
         "cognate:opaque-gloss",
         "es:sobrevalorar",
         "en:overvalue",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -49418,7 +49663,8 @@
         "cognate:opaque-gloss",
         "es:devaluar",
         "en:devalue",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -49437,7 +49683,8 @@
         "cognate:opaque-gloss",
         "es:revaluar",
         "en:revalue",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -49456,7 +49703,8 @@
         "cognate:opaque-gloss",
         "es:abolir",
         "en:abolish",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -49475,7 +49723,8 @@
         "cognate:opaque-gloss",
         "es:pulir",
         "en:polish",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -49513,7 +49762,8 @@
         "cognate:opaque-gloss",
         "es:extinguir",
         "en:extinguish",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -49551,7 +49801,8 @@
         "cognate:opaque-gloss",
         "es:demoler",
         "en:demolish",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -49570,7 +49821,8 @@
         "cognate:opaque-gloss",
         "es:florecer",
         "en:flourish",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -49625,7 +49877,8 @@
         "cognate:opaque-gloss",
         "es:entrenar",
         "en:train",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -49643,7 +49896,8 @@
         "cognate:opaque-gloss",
         "es:espiar",
         "en:spy",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -49661,7 +49915,8 @@
         "cognate:opaque-gloss",
         "es:escanear",
         "en:scan",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -49680,7 +49935,8 @@
         "cognate:opaque-gloss",
         "es:incrementar",
         "en:increase",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -49699,7 +49955,8 @@
         "cognate:opaque-gloss",
         "es:decrementar",
         "en:decrease",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -49737,7 +49994,8 @@
         "cognate:opaque-gloss",
         "es:cesar",
         "en:cease",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -49756,7 +50014,8 @@
         "cognate:opaque-gloss",
         "es:practicar",
         "en:practice",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -49794,7 +50053,8 @@
         "cognate:opaque-gloss",
         "es:prometer",
         "en:promise",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -49813,7 +50073,8 @@
         "cognate:opaque-gloss",
         "es:sacrificar",
         "en:sacrifice",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -49852,7 +50113,8 @@
         "cognate:opaque-gloss",
         "es:castigar",
         "en:punish",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -49871,7 +50133,8 @@
         "cognate:opaque-gloss",
         "es:disminuir",
         "en:diminish",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -49890,7 +50153,8 @@
         "cognate:opaque-gloss",
         "es:barnizar",
         "en:varnish",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -49910,7 +50174,8 @@
         "es:usar",
         "en:use",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -49929,7 +50194,8 @@
         "cognate:opaque-gloss",
         "es:excusar",
         "en:excuse",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -49948,7 +50214,8 @@
         "cognate:opaque-gloss",
         "es:acusar",
         "en:accuse",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -49967,7 +50234,8 @@
         "cognate:opaque-gloss",
         "es:confundir",
         "en:confuse",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -49986,7 +50254,8 @@
         "cognate:opaque-gloss",
         "es:rehusar",
         "en:refuse",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -50005,7 +50274,8 @@
         "cognate:opaque-gloss",
         "es:abusar",
         "en:abuse",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -50209,7 +50479,8 @@
         "cognate:transparent",
         "es:consignar",
         "en:transfer",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -50288,7 +50559,8 @@
         "cognate:opaque-gloss",
         "es:rechazar",
         "en:refuse",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -66621,7 +66893,8 @@
         "form:present-participle",
         "es:haciendo",
         "en:doing",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-other"
       ],
       "curriculumRole": "core"
     },
@@ -66659,7 +66932,8 @@
         "form:past-participle",
         "es:hecho",
         "en:done",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-other"
       ],
       "curriculumRole": "core"
     },
@@ -67174,7 +67448,8 @@
         "en:will",
         "pos:verb",
         "topic:verb-pattern",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "core"
     },
@@ -67197,7 +67472,8 @@
         "pos:verb",
         "topic:en-multi-sense",
         "topic:verb-pattern",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "core"
     },
@@ -67220,7 +67496,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "topic:verb-pattern",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -67448,7 +67725,8 @@
         "pos:verb",
         "topic:imperative",
         "imp:negative",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -67986,7 +68264,8 @@
         "en:avoid",
         "pos:verb",
         "topic:verb-pattern",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -68006,7 +68285,8 @@
         "en:enjoy",
         "pos:verb",
         "topic:verb-pattern",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -68522,7 +68802,8 @@
         "form:third-person",
         "es:tratar",
         "en:try",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -70848,7 +71129,8 @@
         "grammar:past-form-for-distance",
         "grammar:hypothetical",
         "es:ojalá",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -70886,7 +71168,8 @@
         "form:past-perfect",
         "form:past-participle",
         "es:ojalá",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -70903,7 +71186,8 @@
         "desired change",
         "wish + would",
         "es:ojalá",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -70927,7 +71211,8 @@
         "topic:verb-pattern",
         "topic:question-negation",
         "qn:do-support-question",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "core"
     },
@@ -70947,7 +71232,8 @@
         "en:does",
         "pos:verb",
         "topic:verb-pattern",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "core"
     },
@@ -70967,7 +71253,8 @@
         "en:did",
         "pos:verb",
         "topic:verb-pattern",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "core"
     },
@@ -70989,7 +71276,8 @@
         "construction:followed-by-bare-infinitive",
         "pos:verb",
         "topic:verb-pattern",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "core"
     },
@@ -71011,7 +71299,8 @@
         "en:doesn't",
         "pos:verb",
         "topic:verb-pattern",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "core"
     },
@@ -71033,7 +71322,8 @@
         "en:didn't",
         "pos:verb",
         "topic:verb-pattern",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "core"
     },
@@ -71749,7 +72039,8 @@
         "en:turn",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -71791,7 +72082,8 @@
         "es:recogerlo",
         "en:pick",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -71813,7 +72105,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:after",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -71834,7 +72127,8 @@
         "en:run",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -71876,7 +72170,8 @@
         "topic:en-multi-sense",
         "topic:question-negation",
         "qn:inversion-question",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "core"
     },
@@ -72131,7 +72426,8 @@
         "topic:verb-pattern",
         "topic:question-negation",
         "qn:inversion-question",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "core"
     },
@@ -72279,7 +72575,8 @@
         "topic:verb-pattern",
         "topic:question-negation",
         "qn:inversion-question",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "core"
     },
@@ -72302,7 +72599,8 @@
         "topic:verb-pattern",
         "topic:question-negation",
         "qn:modal-be-have-negation",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "core"
     },
@@ -72326,7 +72624,8 @@
         "topic:verb-pattern",
         "topic:question-negation",
         "qn:inversion-question",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "core"
     },
@@ -90052,7 +90351,8 @@
         "es:sí",
         "en:does",
         "topic:verb-pattern",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -90333,7 +90633,8 @@
         "audit:reviewed",
         "topic:phrasal-verb",
         "particle:out",
-        "grammar:phrasal-verb"
+        "grammar:phrasal-verb",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -90373,7 +90674,8 @@
         "cognate:false-friend",
         "contrast:confusable",
         "contrast:actualizar-vs-actualize",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -90393,7 +90695,8 @@
         "topic:cognate",
         "cognate:izar-to-ize",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
@@ -90412,7 +90715,8 @@
         "topic:cognate",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-other"
       ],
       "curriculumRole": "reference"
     },
