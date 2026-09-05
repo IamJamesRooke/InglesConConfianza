@@ -27131,7 +27131,8 @@
       },
       "collections": [
         "en:then",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -27360,7 +27361,8 @@
         "es:aun",
         "es:incluso",
         "en:even",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -27695,13 +27697,14 @@
       "spanish": "bueno",
       "english": "good",
       "example": {
-        "spanish": "bueno / buena",
-        "english": "good"
+        "spanish": "Este restaurante es bueno.",
+        "english": "This restaurant is good."
       },
       "collections": [
         "es:bueno",
         "en:good",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -27920,7 +27923,8 @@
         "es:con",
         "en:what",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -27939,7 +27943,8 @@
         "es:con",
         "en:who",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -27958,7 +27963,8 @@
         "es:con",
         "en:whom",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -27994,7 +28000,8 @@
         "grammar:question",
         "es:cuál",
         "en:what",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28193,7 +28200,8 @@
         "register:formal",
         "es:cuán",
         "en:how",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28546,7 +28554,8 @@
         "en:opinion",
         "es:desde",
         "en:from",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28632,7 +28641,8 @@
         "grammar:agreement",
         "es:desde",
         "en:of",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -29276,7 +29286,8 @@
       "collections": [
         "es:hasta",
         "en:even",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -29974,7 +29985,8 @@
         "grammar:fixed-expression",
         "es:por",
         "en:by",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30092,7 +30104,8 @@
       "collections": [
         "es:ni",
         "en:even",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34516,7 +34529,8 @@
         "es:solo",
         "en:on",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -71243,7 +71257,8 @@
         "es:por",
         "en:in",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -72021,7 +72036,8 @@
         "grammar:hypothetical",
         "es:ojalá",
         "en:if",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -72441,7 +72457,8 @@
         "form:present-participle",
         "es:estará",
         "en:be",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -72460,7 +72477,8 @@
         "form:present-participle",
         "es:estaría",
         "en:be",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -91617,7 +91635,8 @@
         "en:no",
         "pos:interjection",
         "topic:social-expression",
-        "expr:response"
+        "expr:response",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     }
