@@ -43,6 +43,10 @@ export function HotkeyReminder({
 
         <div className="space-y-2">
           <HotkeyReminderRow
+            keys={["Mod", "K"]}
+            description="Open command palette"
+          />
+          <HotkeyReminderRow
             keys={["Alt", "K"]}
             description="Show keyboard shortcuts"
           />
@@ -69,6 +73,38 @@ export function HotkeyReminder({
           <HotkeyReminderRow
             keys={["Ctrl", "Alt", "M"]}
             description="Toggle all lesson collapsed forms"
+          />
+          <HotkeyReminderRow
+            keys={["Mod", "Enter"]}
+            description="Preview the active lesson"
+          />
+          <HotkeyReminderRow
+            keys={["Mod", "S"]}
+            description="Save the active lesson"
+          />
+          <HotkeyReminderRow
+            keys={["Mod", "Shift", "D"]}
+            description="Duplicate the focused block"
+          />
+          <HotkeyReminderRow
+            keys={["Mod", "Shift", "↑ / ↓"]}
+            description="Move the focused block"
+          />
+          <HotkeyReminderRow
+            keys={["Mod", "Z"]}
+            description="Undo a structural edit"
+          />
+          <HotkeyReminderRow
+            keys={["Mod", "Shift", "Z"]}
+            description="Redo a structural edit"
+          />
+          <HotkeyReminderRow
+            keys={["Delete"]}
+            description="Delete the focused block"
+          />
+          <HotkeyReminderRow
+            keys={["F2"]}
+            description="Rename the active lesson"
           />
           <HotkeyReminderRow
             keys={["Alt", "S"]}

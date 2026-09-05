@@ -9,7 +9,7 @@ import {
   Save,
   Trash2,
 } from "lucide-react";
-import type { DragEvent, MouseEvent } from "react";
+import type { DragEvent, MouseEvent, Ref } from "react";
 
 // The title bar of a lesson card: number, unsaved badge, name field, and the
 // preview / save / collapse-cycle / delete / drag-reorder controls.
@@ -26,6 +26,7 @@ export function LessonCardHeader({
   dragDisabled,
   dragDisabledReason,
   onHeaderClick,
+  nameInputRef,
   onNameChange,
   onPreview,
   onDuplicate,
@@ -47,6 +48,7 @@ export function LessonCardHeader({
   dragDisabled: boolean;
   dragDisabledReason: string;
   onHeaderClick: (event: MouseEvent<HTMLElement>) => void;
+  nameInputRef?: Ref<HTMLInputElement>;
   onNameChange: (value: string) => void;
   onPreview: () => void;
   onDuplicate: () => void;
@@ -76,6 +78,7 @@ export function LessonCardHeader({
         {stepCount} {stepCount === 1 ? "step" : "steps"}
       </span>
       <input
+        ref={nameInputRef}
         type="text"
         value={name}
         onChange={(event) => onNameChange(event.target.value)}

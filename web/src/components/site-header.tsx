@@ -7,17 +7,40 @@ import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
 
 const internalLinks = [
+  { href: "/admin", label: "Studio" },
   { href: "/admin/lesson-builder", label: "Lesson Builder" },
   { href: "/admin/lesson-builder/coverage", label: "Coverage" },
   { href: "/admin/curriculum", label: "Curriculum" },
 ];
 
 const themeOptions = [
-  { value: "default", label: "Default" },
-  { value: "blue", label: "Blue" },
-  { value: "green", label: "Green" },
-  { value: "rose", label: "Rose" },
-  { value: "night", label: "Night" },
+  {
+    value: "default",
+    label: "Warm Studio",
+    swatches: [
+      "oklch(0.48 0.18 265)",
+      "oklch(0.68 0.12 185)",
+      "oklch(0.74 0.14 80)",
+    ],
+  },
+  {
+    value: "purple",
+    label: "Purple",
+    swatches: [
+      "oklch(0.5 0.2 295)",
+      "oklch(0.68 0.15 335)",
+      "oklch(0.72 0.13 210)",
+    ],
+  },
+  {
+    value: "night",
+    label: "Tokyo Night",
+    swatches: [
+      "oklch(0.72 0.14 250)",
+      "oklch(0.76 0.13 205)",
+      "oklch(0.18 0.055 275)",
+    ],
+  },
 ];
 
 export function SiteHeader() {
@@ -43,11 +66,11 @@ export function SiteHeader() {
   function updateTheme(nextTheme: string) {
     setTheme(nextTheme);
     window.localStorage.setItem("icc-theme", nextTheme);
-    document.documentElement.dataset.theme = nextTheme;
   }
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
+    if (href === "/admin") return pathname === href;
     if (href === "/admin/lesson-builder") return pathname === href;
     return pathname === href || pathname.startsWith(`${href}/`);
   };
@@ -63,7 +86,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-border bg-[var(--header)]/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3">
         <Link
-          href="/admin/lesson-builder"
+          href="/admin"
           className="min-w-0 font-semibold text-foreground"
           onClick={() => setIsMenuOpen(false)}
         >
@@ -135,22 +158,38 @@ export function SiteHeader() {
               </button>
             </div>
 
-            <label className="block">
-              <span className="mb-2 block text-sm font-medium text-muted-foreground">
+            <div>
+              <p className="mb-2 text-sm font-medium text-muted-foreground">
                 Theme
-              </span>
-              <select
-                value={theme}
-                onChange={(event) => updateTheme(event.target.value)}
-                className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm text-foreground outline-none transition focus:border-ring focus:ring-3 focus:ring-ring/20"
-              >
+              </p>
+              <div className="grid gap-2">
                 {themeOptions.map((themeOption) => (
-                  <option key={themeOption.value} value={themeOption.value}>
-                    {themeOption.label}
-                  </option>
+                  <button
+                    key={themeOption.value}
+                    type="button"
+                    onClick={() => updateTheme(themeOption.value)}
+                    aria-pressed={theme === themeOption.value}
+                    className={`flex items-center justify-between gap-3 rounded-lg border px-3 py-2 text-left text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30 ${
+                      theme === themeOption.value
+                        ? "border-primary bg-primary/10 text-foreground"
+                        : "border-border hover:bg-muted"
+                    }`}
+                  >
+                    <span>{themeOption.label}</span>
+                    <span className="flex shrink-0 items-center gap-1">
+                      {themeOption.swatches.map((swatch) => (
+                        <span
+                          key={swatch}
+                          aria-hidden="true"
+                          className="size-4 rounded-full border border-black/10"
+                          style={{ background: swatch }}
+                        />
+                      ))}
+                    </span>
+                  </button>
                 ))}
-              </select>
-            </label>
+              </div>
+            </div>
           </div>
         </div>
       )}

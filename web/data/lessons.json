@@ -2,30 +2,9 @@
   "version": 2,
   "modules": [
     {
-      "id": "module_demo_onboarding",
-      "name": "Conoce tu primera conversación",
-      "kind": "onboarding",
-      "keyConcepts": [
-        {
-          "id": "module_concept_demo_onboarding_greeting",
-          "conceptId": "4uwg2evrwf",
-          "label": "saludar a [alguien]"
-        },
-        {
-          "id": "module_concept_demo_onboarding_name",
-          "conceptId": "ifurkwv06w",
-          "label": "me llamo [nombre]"
-        }
-      ],
-      "lessonIds": [
-        "lesson_demo_onboarding_hello_james",
-        "lesson_demo_onboarding_my_name",
-        "lesson_demo_onboarding_meet_ana"
-      ]
-    },
-    {
       "id": "module_e4d56384-dde5-46ba-a5cf-21509fd17d3f",
       "name": "Fundamentos I",
+      "kind": "course",
       "keyConcepts": [
         {
           "id": "lesson_concept_0411adb8-0b17-4555-b4af-cad5193dea5a",
@@ -49,150 +28,35 @@
         }
       ],
       "lessonIds": [
+        "lesson_demo_onboarding_my_name",
+        "lesson_demo_onboarding_meet_ana",
+        "lesson_ae320e6b-196a-4414-81d8-f7d207445b28",
         "lesson_4c3414c0-3748-440c-8bfc-4080081caed2",
         "lesson_ee8421b5-1d47-4d7e-8f87-3f06ab28b351",
         "lesson_b4a17caa-1e40-45b7-85ad-58cf0875179b",
-        "lesson_5f12ea29-dbf2-4676-82a7-edd2730574ef"
-      ],
-      "kind": "course"
-    },
-    {
-      "id": "module_592458a6-7219-4c06-804e-1eeae7ce6d4a",
-      "name": "Infinitivos que abren posibilidades",
-      "kind": "course",
-      "keyConcepts": [
-        {
-          "id": "module_concept_demo_infinitive_need",
-          "conceptId": "1eotkqfnjg",
-          "label": "necesitar [hacer algo]"
-        },
-        {
-          "id": "module_concept_demo_infinitive_work",
-          "conceptId": "s2wih9tkp4",
-          "label": "trabajar"
-        },
-        {
-          "id": "module_concept_demo_infinitive_study",
-          "conceptId": "z0t602y5w0",
-          "label": "estudiar"
-        },
-        {
-          "id": "module_concept_demo_infinitive_learn",
-          "conceptId": null,
-          "label": "aprender"
-        }
-      ],
-      "lessonIds": [
+        "lesson_5f12ea29-dbf2-4676-82a7-edd2730574ef",
         "lesson_bdacade3-8ad6-4217-8c47-d5907d6122af",
         "lesson_demo_infinitive_work_today",
         "lesson_demo_infinitive_study_home",
         "lesson_demo_infinitive_learn_english",
-        "lesson_demo_infinitive_learn_to_speak"
-      ]
-    },
-    {
-      "id": "module_demo_everyday_plans",
-      "name": "Planes de todos los días",
-      "kind": "course",
-      "keyConcepts": [
-        {
-          "id": "module_concept_demo_plans_going",
-          "conceptId": "rh4yfb08hn",
-          "label": "voy a [hacer algo]"
-        },
-        {
-          "id": "module_concept_demo_plans_negative",
-          "conceptId": null,
-          "label": "no voy a [hacer algo]"
-        },
-        {
-          "id": "module_concept_demo_plans_question",
-          "conceptId": "ihsw7a0ggn",
-          "label": "¿vas a [hacer algo]?"
-        },
-        {
-          "id": "module_concept_demo_plans_tomorrow",
-          "conceptId": "uklvuftocv",
-          "label": "mañana"
-        }
-      ],
-      "lessonIds": [
+        "lesson_demo_infinitive_learn_to_speak",
         "lesson_demo_plans_speak",
         "lesson_demo_plans_work_today",
         "lesson_demo_plans_study_tomorrow",
         "lesson_demo_plans_not_work",
         "lesson_demo_plans_question"
       ]
+    },
+    {
+      "id": "module_d1155b54-b9c7-45a1-81ca-ef6b5c93e2fa",
+      "name": "Module 2",
+      "keyConcepts": [],
+      "lessonIds": [
+        "lesson_demo_onboarding_hello_james"
+      ]
     }
   ],
   "lessons": [
-    {
-      "id": "lesson_demo_onboarding_hello_james",
-      "name": "Hello James!",
-      "concepts": [
-        {
-          "id": "lesson_concept_demo_onboarding_hello_james_1",
-          "conceptId": "4uwg2evrwf",
-          "label": "saludar a [alguien]"
-        }
-      ],
-      "blocks": [
-        {
-          "id": "block_demo_onboarding_hello_james_1",
-          "type": "explanation",
-          "contentMarkdown": "James acaba de entrar. Vamos a saludarlo en inglés.\n\n==hola== es ==hello=="
-        },
-        {
-          "id": "block_demo_onboarding_hello_james_2",
-          "type": "sentence",
-          "promptLabel": "Tu primer paso",
-          "promptText": "Escribe la palabra en inglés.",
-          "helperText": "",
-          "answerFeedback": "¡Eso es! Ya diste tu primer saludo en inglés.",
-          "languageBlocks": [
-            {
-              "id": "lang_demo_onboarding_hello_james_1",
-              "spanish": "hola",
-              "callout": "La bombilla te muestra la respuesta y luego te deja intentarlo otra vez.",
-              "acceptedAnswers": [
-                "hello"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "block_demo_onboarding_hello_james_3",
-          "type": "explanation",
-          "contentMarkdown": "Los nombres no cambian. ==James== también es ==James== en inglés."
-        },
-        {
-          "id": "block_demo_onboarding_hello_james_4",
-          "type": "sentence",
-          "promptLabel": "Ahora salúdalo",
-          "promptText": "Completa los dos bloques para formar la frase.",
-          "helperText": "",
-          "answerFeedback": "¡Hello James! Acabas de completar una frase real.",
-          "languageBlocks": [
-            {
-              "id": "lang_demo_onboarding_hello_james_2",
-              "spanish": "Hola",
-              "callout": "Al inicio de una frase usamos mayúscula.",
-              "acceptedAnswers": [
-                "Hello"
-              ]
-            },
-            {
-              "id": "lang_demo_onboarding_hello_james_3",
-              "spanish": "James!",
-              "callout": null,
-              "acceptedAnswers": [
-                "James!"
-              ]
-            }
-          ]
-        }
-      ]
-    },
     {
       "id": "lesson_demo_onboarding_my_name",
       "name": "My name is James.",
@@ -352,6 +216,64 @@
               "callout": null,
               "acceptedAnswers": [
                 "Ana."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson_ae320e6b-196a-4414-81d8-f7d207445b28",
+      "name": "asfsaf",
+      "concepts": [
+        {
+          "id": "lesson_concept_49acd6f4-1c47-4328-b7c6-686bd31fc360",
+          "conceptId": "rh4yfb08hn",
+          "label": "voy a [hacer algo]"
+        },
+        {
+          "id": "lesson_concept_7fbf5a31-6c1c-4e30-a560-002129cf0584",
+          "conceptId": "1qz4qeh9oi",
+          "label": "hacer [una tarea o actividad]"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "block_0687cf6b-ad27-4784-9e5b-49222525ca9c",
+          "type": "explanation",
+          "contentMarkdown": "==voy a== es ==I am going=="
+        },
+        {
+          "id": "block_07d561d5-e37c-4f8f-9be4-36357fe3151f",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_cda8c21a-dc99-4e9c-9b9b-8f430e9b009e",
+              "spanish": "voy a",
+              "callout": null,
+              "acceptedAnswers": [
+                "I am going",
+                "I'm going"
+              ]
+            },
+            {
+              "id": "lang_04c4c12a-4abb-4693-a0ff-99635d6c0796",
+              "spanish": "hacer",
+              "callout": null,
+              "acceptedAnswers": [
+                "to do"
+              ]
+            },
+            {
+              "id": "lang_745d38c3-b097-4171-ade4-d942ebd2890a",
+              "spanish": "algo",
+              "callout": null,
+              "acceptedAnswers": [
+                "something"
               ]
             }
           ]
@@ -2439,6 +2361,73 @@
               "callout": null,
               "acceptedAnswers": [
                 "with me?"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson_demo_onboarding_hello_james",
+      "name": "Hello James!",
+      "concepts": [
+        {
+          "id": "lesson_concept_demo_onboarding_hello_james_1",
+          "conceptId": "4uwg2evrwf",
+          "label": "saludar a [alguien]"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "block_demo_onboarding_hello_james_1",
+          "type": "explanation",
+          "contentMarkdown": "James acaba de entrar. Vamos a saludarlo en inglés.\n\n==hola== es ==hello=="
+        },
+        {
+          "id": "block_demo_onboarding_hello_james_2",
+          "type": "sentence",
+          "promptLabel": "Tu primer paso",
+          "promptText": "Escribe la palabra en inglés.",
+          "helperText": "",
+          "answerFeedback": "¡Eso es! Ya diste tu primer saludo en inglés.",
+          "languageBlocks": [
+            {
+              "id": "lang_demo_onboarding_hello_james_1",
+              "spanish": "hola",
+              "callout": "La bombilla te muestra la respuesta y luego te deja intentarlo otra vez.",
+              "acceptedAnswers": [
+                "hello"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_demo_onboarding_hello_james_3",
+          "type": "explanation",
+          "contentMarkdown": "Los nombres no cambian. ==James== también es ==James== en inglés."
+        },
+        {
+          "id": "block_demo_onboarding_hello_james_4",
+          "type": "sentence",
+          "promptLabel": "Ahora salúdalo",
+          "promptText": "Completa los dos bloques para formar la frase.",
+          "helperText": "",
+          "answerFeedback": "¡Hello James! Acabas de completar una frase real.",
+          "languageBlocks": [
+            {
+              "id": "lang_demo_onboarding_hello_james_2",
+              "spanish": "Hola",
+              "callout": "Al inicio de una frase usamos mayúscula.",
+              "acceptedAnswers": [
+                "Hello"
+              ]
+            },
+            {
+              "id": "lang_demo_onboarding_hello_james_3",
+              "spanish": "James!",
+              "callout": null,
+              "acceptedAnswers": [
+                "James!"
               ]
             }
           ]

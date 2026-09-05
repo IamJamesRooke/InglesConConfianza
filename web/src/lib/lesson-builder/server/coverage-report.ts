@@ -28,9 +28,11 @@ export type CoveredConcept = {
 export type CoverageReport = {
   lessons: Array<{ id: string; number: number; name: string | null }>;
   concepts: CoveredConcept[];
+  // Linked concepts that still exist but are intentionally hidden from teaching-facing reads.
+  trashed: CoveredConcept[];
   // Free-typed chips with no curriculum row yet — the "please author these" queue.
   requested: Array<{ label: string; lessonNumbers: number[] }>;
-  // Chips that point at a concept id no longer in the catalog (trashed/deleted).
+  // Chips that point at a concept id no longer in the catalog.
   missing: Array<{ conceptId: string; label: string; lessonNumbers: number[] }>;
 };
 
@@ -82,6 +84,7 @@ export async function readCoverageReport(): Promise<CoverageReport> {
   const rowById = new Map(rows.map((row) => [row.id, row]));
 
   const concepts: CoveredConcept[] = [];
+  const trashed: CoveredConcept[] = [];
   const missing: CoverageReport["missing"] = [];
 
   for (const [conceptId, lessonSet] of byConceptId) {
@@ -96,7 +99,7 @@ export async function readCoverageReport(): Promise<CoverageReport> {
       continue;
     }
     const lastLesson = lessonNumbers[lessonNumbers.length - 1];
-    concepts.push({
+    const coveredConcept = {
       conceptId,
       spanish: row.spanish,
       english: row.english,
@@ -109,15 +112,24 @@ export async function readCoverageReport(): Promise<CoverageReport> {
       lastLesson,
       timesTaught: lessonNumbers.length,
       lessonsSinceLast: lessonCount - lastLesson,
-    });
+    };
+    if (row.curriculumRole === "trash") {
+      trashed.push(coveredConcept);
+    } else {
+      concepts.push(coveredConcept);
+    }
   }
 
   // Coldest first, then most-recently introduced, then alphabetical.
-  concepts.sort(
+  const sortCoverage = (a: CoveredConcept, b: CoveredConcept) =>
+    b.lessonsSinceLast - a.lessonsSinceLast ||
+    b.firstLesson - a.firstLesson ||
+    a.spanish.localeCompare(b.spanish);
+  concepts.sort(sortCoverage);
+  trashed.sort(
     (a, b) =>
-      b.lessonsSinceLast - a.lessonsSinceLast ||
-      b.firstLesson - a.firstLesson ||
-      a.spanish.localeCompare(b.spanish),
+      a.spanish.localeCompare(b.spanish) ||
+      a.conceptId.localeCompare(b.conceptId),
   );
 
   const requested = [...byRequestedLabel.entries()]
@@ -136,6 +148,7 @@ export async function readCoverageReport(): Promise<CoverageReport> {
       name: lesson.name,
     })),
     concepts,
+    trashed,
     requested,
     missing,
   };

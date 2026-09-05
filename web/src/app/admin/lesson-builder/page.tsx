@@ -1,6 +1,9 @@
 "use client";
 
 import {
+  CheckCircle2,
+  CircleAlert,
+  Command,
   FileText,
   Keyboard,
   Languages,
@@ -21,6 +24,10 @@ import {
   useState,
 } from "react";
 
+import {
+  CommandPalette,
+  type BuilderCommand,
+} from "@/components/lesson-builder/command-palette";
 import { HotkeyReminder } from "@/components/lesson-builder/hotkey-reminder";
 import {
   LessonSelector,
@@ -184,6 +191,10 @@ export default function LessonBuilderPage() {
   const [savedLessonsSnapshot, setSavedLessonsSnapshot] = useState<Lesson[]>(
     [],
   );
+  const lessonUndoRef = useRef<Lesson[][]>([]);
+  const lessonRedoRef = useRef<Lesson[][]>([]);
+  const [lessonCanUndo, setLessonCanUndo] = useState(false);
+  const [lessonCanRedo, setLessonCanRedo] = useState(false);
   const [isLoadingLessons, setIsLoadingLessons] = useState(true);
   const [isDirty, setIsDirty] = useState(false);
   const [saveStatus, setSaveStatus] = useState<
@@ -227,10 +238,18 @@ export default function LessonBuilderPage() {
   );
   const acceptedAnswerRefs = useRef(new Map<string, HTMLInputElement>());
   const languageBlockCalloutRefs = useRef(new Map<string, HTMLInputElement>());
+  const lessonNameRefs = useRef(new Map<string, HTMLInputElement>());
+  const lessonConceptRefs = useRef(new Map<string, HTMLInputElement>());
+  const contentBlockRefs = useRef(new Map<string, HTMLDivElement>());
   const savedLessonsJsonRef = useRef(JSON.stringify([]));
   const pendingLessonExitActionRef = useRef<(() => void) | null>(null);
   const bypassLessonExitWarningRef = useRef(false);
   const autosaveTimerRef = useRef<number | undefined>(undefined);
+  const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
+  const [activeContentBlock, setActiveContentBlock] = useState<{
+    lessonId: string;
+    blockId: string;
+  } | null>(null);
 
   useEffect(() => {
     let isMounted = true;
@@ -270,6 +289,10 @@ export default function LessonBuilderPage() {
               null,
           );
           setSavedLessonsSnapshot(lessons);
+          lessonUndoRef.current = [];
+          lessonRedoRef.current = [];
+          setLessonCanUndo(false);
+          setLessonCanRedo(false);
           setCollapsedLessons(new Set(lessons.map((lesson) => lesson.id)));
           // Lessons start as compact rows; click one to open its editor.
           setFullyCollapsedLessons(new Set(lessons.map((lesson) => lesson.id)));
@@ -532,6 +555,109 @@ export default function LessonBuilderPage() {
     );
   }
 
+  function registerLessonNameRef(
+    lessonId: string,
+    element: HTMLInputElement | null,
+  ) {
+    if (element) {
+      lessonNameRefs.current.set(lessonId, element);
+    } else {
+      lessonNameRefs.current.delete(lessonId);
+    }
+  }
+
+  function registerLessonConceptRef(
+    lessonId: string,
+    element: HTMLInputElement | null,
+  ) {
+    if (element) {
+      lessonConceptRefs.current.set(lessonId, element);
+    } else {
+      lessonConceptRefs.current.delete(lessonId);
+    }
+  }
+
+  function registerContentBlockRef(
+    lessonId: string,
+    blockId: string,
+    element: HTMLDivElement | null,
+  ) {
+    const key = `${lessonId}-${blockId}`;
+    if (element) {
+      contentBlockRefs.current.set(key, element);
+    } else {
+      contentBlockRefs.current.delete(key);
+    }
+  }
+
+  const activeLesson =
+    lessons.find((lesson) => !collapsedLessons.has(lesson.id)) ??
+    lessons.find((lesson) => lesson.id === activeLessonId) ??
+    null;
+
+  const activeBlock =
+    activeContentBlock && activeContentBlock.lessonId === activeLesson?.id
+      ? activeLesson.blocks.find(
+          (block) => block.id === activeContentBlock.blockId,
+        ) ?? null
+      : null;
+
+  const focusLessonName = useCallback((lessonId: string) => {
+    window.setTimeout(() => {
+      lessonNameRefs.current.get(lessonId)?.focus();
+    }, 0);
+  }, []);
+
+  const focusLessonConcepts = useCallback((lessonId: string) => {
+    window.setTimeout(() => {
+      lessonConceptRefs.current.get(lessonId)?.focus();
+    }, 0);
+  }, []);
+
+  const focusContentBlock = useCallback((lessonId: string, blockId: string) => {
+    window.setTimeout(() => {
+      contentBlockRefs.current.get(`${lessonId}-${blockId}`)?.focus();
+    }, 0);
+  }, []);
+
+  const insertionIndexForActiveBlock = useCallback((lesson: Lesson) => {
+    const blockIndex = activeContentBlock
+      ? lesson.blocks.findIndex((block) => block.id === activeContentBlock.blockId)
+      : -1;
+    return blockIndex >= 0 ? blockIndex + 1 : lesson.blocks.length;
+  }, [activeContentBlock]);
+
+  const recordLessonStructuralUndo = useCallback(() => {
+    lessonUndoRef.current = [...lessonUndoRef.current.slice(-49), lessons];
+    lessonRedoRef.current = [];
+    setLessonCanUndo(true);
+    setLessonCanRedo(false);
+  }, [lessons]);
+
+  const undoLessonStructure = useCallback(() => {
+    const previous = lessonUndoRef.current.at(-1);
+    if (!previous) return false;
+    lessonRedoRef.current = [...lessonRedoRef.current.slice(-49), lessons];
+    lessonUndoRef.current = lessonUndoRef.current.slice(0, -1);
+    setLessonCanUndo(lessonUndoRef.current.length > 0);
+    setLessonCanRedo(true);
+    dispatch({ type: "SET_LESSONS", lessons: previous });
+    setActiveContentBlock(null);
+    return true;
+  }, [lessons]);
+
+  const redoLessonStructure = useCallback(() => {
+    const next = lessonRedoRef.current.at(-1);
+    if (!next) return false;
+    lessonUndoRef.current = [...lessonUndoRef.current.slice(-49), lessons];
+    lessonRedoRef.current = lessonRedoRef.current.slice(0, -1);
+    setLessonCanUndo(true);
+    setLessonCanRedo(lessonRedoRef.current.length > 0);
+    dispatch({ type: "SET_LESSONS", lessons: next });
+    setActiveContentBlock(null);
+    return true;
+  }, [lessons]);
+
   const openLessonEditorNow = useCallback(
     (lessonId: string) => {
       setActiveSentenceMarkdownField(null);
@@ -744,7 +870,8 @@ export default function LessonBuilderPage() {
       return nextLessonIds;
     });
     setActiveLessonId(lessonId);
-  }, [activeModuleId, lessons]);
+    focusLessonName(lessonId);
+  }, [activeModuleId, focusLessonName, lessons]);
 
   const createLesson = useCallback(() => {
     const openLesson = lessons.find(
@@ -794,6 +921,7 @@ export default function LessonBuilderPage() {
     (lessonId: string, insertionIndex: number) => {
       const blockId = createId("block");
 
+      recordLessonStructuralUndo();
       dispatch({
         type: "ADD_EXPLANATION_BLOCK",
         lessonId,
@@ -808,8 +936,10 @@ export default function LessonBuilderPage() {
         ),
       );
       setOpenBlockPicker(null);
+      setActiveContentBlock({ lessonId, blockId });
+      focusContentBlock(lessonId, blockId);
     },
-    [lessons],
+    [focusContentBlock, lessons, recordLessonStructuralUndo],
   );
 
   const addSentenceBlock = useCallback(
@@ -817,6 +947,7 @@ export default function LessonBuilderPage() {
       const blockId = createId("block");
       const languageBlockId = createId("lang");
 
+      recordLessonStructuralUndo();
       dispatch({
         type: "ADD_SENTENCE_BLOCK",
         lessonId,
@@ -832,6 +963,7 @@ export default function LessonBuilderPage() {
         ),
       );
       setOpenBlockPicker(null);
+      setActiveContentBlock({ lessonId, blockId });
 
       window.setTimeout(() => {
         languageBlockSpanishRefs.current
@@ -839,7 +971,7 @@ export default function LessonBuilderPage() {
           ?.focus();
       }, 0);
     },
-    [lessons],
+    [lessons, recordLessonStructuralUndo],
   );
 
   const addVocabularyBlock = useCallback(
@@ -847,6 +979,7 @@ export default function LessonBuilderPage() {
       const blockId = createId("block");
       const languageBlockId = createId("lang");
 
+      recordLessonStructuralUndo();
       dispatch({
         type: "ADD_SENTENCE_BLOCK",
         lessonId,
@@ -863,6 +996,7 @@ export default function LessonBuilderPage() {
         ),
       );
       setOpenBlockPicker(null);
+      setActiveContentBlock({ lessonId, blockId });
 
       window.setTimeout(() => {
         languageBlockSpanishRefs.current
@@ -870,7 +1004,7 @@ export default function LessonBuilderPage() {
           ?.focus();
       }, 0);
     },
-    [lessons],
+    [lessons, recordLessonStructuralUndo],
   );
 
   const addTeachingPair = useCallback(
@@ -879,6 +1013,7 @@ export default function LessonBuilderPage() {
       const sentenceBlockId = createId("block");
       const languageBlockId = createId("lang");
 
+      recordLessonStructuralUndo();
       dispatch({
         type: "ADD_EXPLANATION_BLOCK",
         lessonId,
@@ -900,6 +1035,7 @@ export default function LessonBuilderPage() {
         ),
       );
       setOpenBlockPicker(null);
+      setActiveContentBlock({ lessonId, blockId: sentenceBlockId });
 
       window.setTimeout(() => {
         languageBlockSpanishRefs.current
@@ -907,7 +1043,7 @@ export default function LessonBuilderPage() {
           ?.focus();
       }, 0);
     },
-    [lessons],
+    [lessons, recordLessonStructuralUndo],
   );
 
   useEffect(() => {
@@ -927,6 +1063,33 @@ export default function LessonBuilderPage() {
         return;
       }
 
+      if (previewLessonId) {
+        return;
+      }
+
+      const target =
+        event.target instanceof HTMLElement ? event.target : null;
+      const isTextEntryTarget = Boolean(
+        target?.closest("input, textarea, [contenteditable='true']"),
+      );
+      const usesMod = event.metaKey || event.ctrlKey;
+
+      if (
+        usesMod &&
+        !event.altKey &&
+        event.key.toLowerCase() === "k" &&
+        !event.repeat &&
+        !event.isComposing
+      ) {
+        event.preventDefault();
+        setIsCommandPaletteOpen(true);
+        return;
+      }
+
+      if (isCommandPaletteOpen) {
+        return;
+      }
+
       if (
         event.key === "Escape" &&
         !event.repeat &&
@@ -935,6 +1098,92 @@ export default function LessonBuilderPage() {
       ) {
         event.preventDefault();
         setOpenBlockPicker(null);
+        return;
+      }
+
+      if (
+        usesMod &&
+        !event.altKey &&
+        event.key.toLowerCase() === "s" &&
+        !event.repeat &&
+        !event.isComposing
+      ) {
+        event.preventDefault();
+        const targetLesson = commandTargetLesson();
+        if (targetLesson && isLessonDirty(targetLesson.id)) {
+          void saveLesson(targetLesson.id);
+        }
+        return;
+      }
+
+      if (
+        usesMod &&
+        !event.altKey &&
+        event.key === "Enter" &&
+        !event.repeat &&
+        !event.isComposing
+      ) {
+        event.preventDefault();
+        previewCommandTarget();
+        return;
+      }
+
+      if (
+        usesMod &&
+        event.shiftKey &&
+        !event.altKey &&
+        event.key.toLowerCase() === "d" &&
+        !event.repeat &&
+        !event.isComposing &&
+        !isTextEntryTarget
+      ) {
+        event.preventDefault();
+        duplicateActiveContentBlock();
+        return;
+      }
+
+      if (
+        usesMod &&
+        event.shiftKey &&
+        !event.altKey &&
+        (event.key === "ArrowUp" || event.key === "ArrowDown") &&
+        !event.repeat &&
+        !event.isComposing &&
+        !isTextEntryTarget
+      ) {
+        event.preventDefault();
+        moveActiveContentBlock(event.key === "ArrowUp" ? -1 : 1);
+        return;
+      }
+
+      if (
+        event.key === "Delete" &&
+        !event.altKey &&
+        !event.ctrlKey &&
+        !event.metaKey &&
+        !event.repeat &&
+        !event.isComposing &&
+        !isTextEntryTarget &&
+        target?.dataset.contentBlockContainer === "true"
+      ) {
+        event.preventDefault();
+        deleteActiveContentBlock();
+        return;
+      }
+
+      if (
+        event.key === "F2" &&
+        !event.altKey &&
+        !event.ctrlKey &&
+        !event.metaKey &&
+        !event.repeat &&
+        !event.isComposing
+      ) {
+        const targetLesson = commandTargetLesson();
+        if (targetLesson) {
+          event.preventDefault();
+          focusLessonName(targetLesson.id);
+        }
         return;
       }
 
@@ -1121,23 +1370,7 @@ export default function LessonBuilderPage() {
     return () => {
       document.removeEventListener("keydown", handleLessonBuilderShortcut);
     };
-  }, [
-    activeLessonId,
-    addExplanationBlock,
-    addSentenceBlock,
-    cancelPendingLessonExit,
-    collapsedContentBlocks,
-    collapsedLessons,
-    createLesson,
-    cycleActiveLessonCollapseMode,
-    cycleAllLessonDisplayModes,
-    isLessonDirty,
-    lessons,
-    openLessonEditor,
-    openBlockPicker,
-    pendingLessonExitId,
-    saveLesson,
-  ]);
+  });
 
   function renameLesson(lessonId: string, name: string) {
     dispatch({ type: "RENAME_LESSON", lessonId, name });
@@ -1235,11 +1468,26 @@ export default function LessonBuilderPage() {
     });
   }
 
-  function deleteContentBlock(lessonId: string, blockId: string) {
+  const deleteContentBlock = useCallback((lessonId: string, blockId: string) => {
+    const lesson = lessons.find((candidate) => candidate.id === lessonId);
+    const blockIndex =
+      lesson?.blocks.findIndex((block) => block.id === blockId) ?? -1;
+    const nextFocusBlock =
+      blockIndex >= 0
+        ? lesson?.blocks[blockIndex + 1] ?? lesson?.blocks[blockIndex - 1]
+        : null;
+    recordLessonStructuralUndo();
     dispatch({ type: "DELETE_CONTENT_BLOCK", lessonId, blockId });
-  }
+    setActiveContentBlock(
+      nextFocusBlock ? { lessonId, blockId: nextFocusBlock.id } : null,
+    );
+    if (nextFocusBlock) {
+      focusContentBlock(lessonId, nextFocusBlock.id);
+    }
+  }, [focusContentBlock, lessons, recordLessonStructuralUndo]);
 
-  function duplicateContentBlock(lessonId: string, blockId: string) {
+  const duplicateContentBlock = useCallback((lessonId: string, blockId: string) => {
+    recordLessonStructuralUndo();
     dispatch({ type: "DUPLICATE_CONTENT_BLOCK", lessonId, blockId });
     setCollapsedContentBlocks(
       new Set(
@@ -1248,7 +1496,7 @@ export default function LessonBuilderPage() {
         ),
       ),
     );
-  }
+  }, [lessons, recordLessonStructuralUndo]);
 
   function updateSentencePromptText(
     lessonId: string,
@@ -1422,6 +1670,7 @@ export default function LessonBuilderPage() {
     sentenceBlockId: string,
     languageBlockId: string,
   ) {
+    recordLessonStructuralUndo();
     dispatch({
       type: "ADD_LANGUAGE_BLOCK",
       lessonId,
@@ -1518,6 +1767,7 @@ export default function LessonBuilderPage() {
     sentenceBlockId: string,
     languageBlockId: string,
   ) {
+    recordLessonStructuralUndo();
     dispatch({
       type: "DELETE_LANGUAGE_BLOCK",
       lessonId,
@@ -1536,6 +1786,7 @@ export default function LessonBuilderPage() {
       return;
     }
     const [lessonId, sentenceBlockId] = dragged.scope.split("::");
+    recordLessonStructuralUndo();
     dispatch({
       type: "MOVE_LANGUAGE_BLOCK",
       lessonId,
@@ -1552,6 +1803,7 @@ export default function LessonBuilderPage() {
     if (!dragged || !target || dragged.scope !== target.scope) {
       return;
     }
+    recordLessonStructuralUndo();
     dispatch({
       type: "MOVE_CONTENT_BLOCK",
       lessonId: dragged.scope,
@@ -1651,7 +1903,8 @@ export default function LessonBuilderPage() {
       if (
         !(event.metaKey || event.ctrlKey) ||
         event.altKey ||
-        event.key.toLowerCase() !== "z" ||
+        (event.key.toLowerCase() !== "z" &&
+          event.key.toLowerCase() !== "y") ||
         event.isComposing
       ) {
         return;
@@ -1667,11 +1920,17 @@ export default function LessonBuilderPage() {
         return;
       }
       event.preventDefault();
-      undoCourseModules();
+      if (event.shiftKey || event.key.toLowerCase() === "y") {
+        redoLessonStructure();
+        return;
+      }
+      if (!undoLessonStructure()) {
+        undoCourseModules();
+      }
     }
     document.addEventListener("keydown", handleUndoShortcut);
     return () => document.removeEventListener("keydown", handleUndoShortcut);
-  }, [undoCourseModules]);
+  });
 
   function reorderModule(index: number, direction: -1 | 1) {
     const target = index + direction;
@@ -1694,10 +1953,52 @@ export default function LessonBuilderPage() {
   }
 
   function deleteModuleNow(moduleId: string) {
-    const next = courseModules.filter((module) => module.id !== moduleId);
+    if (courseModules.length <= 1) {
+      window.alert("At least one module is required.");
+      return;
+    }
+
+    const deleteIndex = courseModules.findIndex(
+      (module) => module.id === moduleId,
+    );
+    const deletedModule = courseModules[deleteIndex];
+    if (!deletedModule) return;
+
+    const destinationIndex = deleteIndex > 0 ? deleteIndex - 1 : 1;
+    const destination = courseModules[destinationIndex];
+    const moduleLabel = deletedModule.name || "Untitled module";
+    const destinationLabel = destination.name || "Untitled module";
+    const lessonMessage =
+      deletedModule.lessonIds.length > 0
+        ? ` Its ${deletedModule.lessonIds.length} lesson${
+            deletedModule.lessonIds.length === 1 ? "" : "s"
+          } will move to ${destinationLabel}.`
+        : "";
+
+    if (!window.confirm(`Delete ${moduleLabel}?${lessonMessage}`)) {
+      return;
+    }
+
+    const next = courseModules
+      .map((candidate) => {
+        if (candidate.id === moduleId) return null;
+        if (candidate.id !== destination.id) return candidate;
+        const lessonIds =
+          destinationIndex < deleteIndex
+            ? [...candidate.lessonIds, ...deletedModule.lessonIds]
+            : [...deletedModule.lessonIds, ...candidate.lessonIds];
+        return { ...candidate, lessonIds };
+      })
+      .filter((candidate): candidate is LessonModule => Boolean(candidate));
+
     commitCourseModules(next);
     if (moduleId === activeModuleId) {
-      setActiveModuleId(next[0]?.id ?? null);
+      setActiveModuleId(destination.id);
+      window.history.replaceState(
+        null,
+        "",
+        `/admin/lesson-builder?module=${destination.id}`,
+      );
     }
   }
 
@@ -1792,6 +2093,323 @@ export default function LessonBuilderPage() {
     ? moduleCoveredConceptKeys(currentModule, lessonById)
     : new Set<string>();
 
+  function commandTargetLesson() {
+    return activeLesson ?? moduleLessons[0] ?? null;
+  }
+
+  function openLessonFromCommand(lessonId: string) {
+    openLessonEditor(lessonId);
+    setActiveLessonId(lessonId);
+    document
+      .getElementById(`lesson-${lessonId}`)
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    focusLessonName(lessonId);
+  }
+
+  function addCommandBlock(
+    type: "explanation" | "sentence" | "pair" | "vocabulary",
+  ) {
+    const lesson = commandTargetLesson();
+    if (!lesson) return;
+    openLessonEditor(lesson.id);
+    const insertionIndex = insertionIndexForActiveBlock(lesson);
+    if (type === "explanation") {
+      addExplanationBlock(lesson.id, insertionIndex);
+    } else if (type === "sentence") {
+      addSentenceBlock(lesson.id, insertionIndex);
+    } else if (type === "vocabulary") {
+      addVocabularyBlock(lesson.id, insertionIndex);
+    } else {
+      addTeachingPair(lesson.id, insertionIndex);
+    }
+  }
+
+  function previewCommandTarget() {
+    const lesson = commandTargetLesson();
+    if (!lesson) return;
+    const issueCount = lesson.blocks.reduce(
+      (count, block) =>
+        count +
+        (isPracticeBlock(block) ? getSentenceValidationIssueCount(block) : 0),
+      0,
+    );
+    if (issueCount > 0) return;
+    setPreviewLessonId(lesson.id);
+    setPreviewBlockId(null);
+  }
+
+  function saveCommandTarget() {
+    const lesson = commandTargetLesson();
+    if (lesson && isLessonDirty(lesson.id)) {
+      void saveLesson(lesson.id);
+    }
+  }
+
+  function duplicateActiveContentBlock() {
+    if (!activeLesson || !activeBlock) return;
+    duplicateContentBlock(activeLesson.id, activeBlock.id);
+    focusContentBlock(activeLesson.id, activeBlock.id);
+  }
+
+  function moveActiveContentBlock(direction: -1 | 1) {
+    if (!activeLesson || !activeBlock) return;
+    const currentIndex = activeLesson.blocks.findIndex(
+      (block) => block.id === activeBlock.id,
+    );
+    const targetBlock = activeLesson.blocks[currentIndex + direction];
+    if (!targetBlock) return;
+    recordLessonStructuralUndo();
+    dispatch({
+      type: "MOVE_CONTENT_BLOCK",
+      lessonId: activeLesson.id,
+      draggedId: activeBlock.id,
+      targetId: targetBlock.id,
+      position: direction < 0 ? "before" : "after",
+    });
+    focusContentBlock(activeLesson.id, activeBlock.id);
+  }
+
+  function deleteActiveContentBlock() {
+    if (!activeLesson || !activeBlock) return;
+    if (!window.confirm("Delete this content block?")) return;
+    deleteContentBlock(activeLesson.id, activeBlock.id);
+  }
+
+  function revealContentBlock(lessonId: string, blockId: string) {
+    openLessonEditor(lessonId);
+    setCollapsedContentBlocks(
+      new Set(
+        lessons.flatMap((lesson) =>
+          lesson.blocks
+            .map((block) => `${lesson.id}-${block.id}`)
+            .filter((key) => key !== `${lessonId}-${blockId}`),
+        ),
+      ),
+    );
+    setActiveContentBlock({ lessonId, blockId });
+    focusContentBlock(lessonId, blockId);
+  }
+
+  const commandTarget = commandTargetLesson();
+  const activeLessonIndex = activeLesson
+    ? moduleLessons.findIndex((lesson) => lesson.id === activeLesson.id)
+    : -1;
+  const activeLessonNumber = activeLessonIndex >= 0 ? activeLessonIndex + 1 : null;
+  const activeLessonExplanationCount =
+    activeLesson?.blocks.filter((block) => block.type === "explanation").length ??
+    0;
+  const activeLessonPracticeCount =
+    activeLesson?.blocks.filter(isPracticeBlock).length ?? 0;
+  const activeLessonIsDirty = activeLesson
+    ? isLessonDirty(activeLesson.id)
+    : false;
+  const activeLessonIssues =
+    activeLesson?.blocks
+      .map((block, index) => ({
+        block,
+        index,
+        issueCount: isPracticeBlock(block)
+          ? getSentenceValidationIssueCount(block)
+          : 0,
+      }))
+      .filter((entry) => entry.issueCount > 0) ?? [];
+  const commandTargetIssues =
+    commandTarget?.blocks.reduce(
+      (count, block) =>
+        count +
+        (isPracticeBlock(block) ? getSentenceValidationIssueCount(block) : 0),
+      0,
+    ) ?? 0;
+  const commandTargetDirty = commandTarget
+    ? isLessonDirty(commandTarget.id)
+    : false;
+
+  const builderCommands: BuilderCommand[] = (() => {
+    const targetLabel = commandTarget
+      ? commandTarget.name || "Untitled lesson"
+      : "No lesson selected";
+    const blockLabel = activeBlock
+      ? activeBlock.type === "explanation"
+        ? "active explanation"
+        : activeBlock.layout === "vocabulary_table"
+          ? "active vocabulary table"
+          : "active sentence"
+      : "no focused block";
+
+    return [
+      {
+        id: "lesson-new",
+        label: "Create new lesson",
+        detail: currentModule
+          ? `In ${currentModule.name || "Untitled module"}`
+          : undefined,
+        shortcut: "Alt+N",
+        icon: "lesson",
+        keywords: ["new", "create", "author"],
+        run: createLesson,
+      },
+      {
+        id: "lesson-rename",
+        label: "Rename active lesson",
+        detail: targetLabel,
+        shortcut: "F2",
+        icon: "lesson",
+        disabledReason: commandTarget ? undefined : "Select a lesson first",
+        run: () => commandTarget && focusLessonName(commandTarget.id),
+      },
+      {
+        id: "add-pair",
+        label: "Add teaching pair",
+        detail: commandTarget
+          ? `After the focused block in ${targetLabel}`
+          : undefined,
+        icon: "pair",
+        disabledReason: commandTarget ? undefined : "Select a lesson first",
+        run: () => addCommandBlock("pair"),
+      },
+      {
+        id: "add-explanation",
+        label: "Add explanation block",
+        detail: commandTarget ? `After the focused block in ${targetLabel}` : undefined,
+        shortcut: "Alt+E",
+        icon: "explanation",
+        disabledReason: commandTarget ? undefined : "Select a lesson first",
+        run: () => addCommandBlock("explanation"),
+      },
+      {
+        id: "add-sentence",
+        label: "Add practice block",
+        detail: commandTarget ? `After the focused block in ${targetLabel}` : undefined,
+        shortcut: "Alt+P",
+        icon: "sentence",
+        disabledReason: commandTarget ? undefined : "Select a lesson first",
+        run: () => addCommandBlock("sentence"),
+      },
+      {
+        id: "add-vocabulary",
+        label: "Add vocabulary table",
+        detail: commandTarget ? `After the focused block in ${targetLabel}` : undefined,
+        icon: "vocabulary",
+        disabledReason: commandTarget ? undefined : "Select a lesson first",
+        run: () => addCommandBlock("vocabulary"),
+      },
+      {
+        id: "lesson-concepts",
+        label: "Focus concepts",
+        detail: targetLabel,
+        icon: "search",
+        disabledReason: commandTarget ? undefined : "Select a lesson first",
+        run: () => commandTarget && focusLessonConcepts(commandTarget.id),
+      },
+      {
+        id: "lesson-preview",
+        label: "Preview active lesson",
+        detail: targetLabel,
+        shortcut: "Mod+Enter",
+        icon: "open",
+        disabledReason: !commandTarget
+          ? "Select a lesson first"
+          : commandTargetIssues > 0
+            ? `Resolve ${commandTargetIssues} validation issue${commandTargetIssues === 1 ? "" : "s"} first`
+            : undefined,
+        run: previewCommandTarget,
+      },
+      {
+        id: "lesson-save",
+        label: "Save active lesson",
+        detail: targetLabel,
+        shortcut: "Mod+S",
+        icon: "save",
+        disabledReason: !commandTarget
+          ? "Select a lesson first"
+          : commandTargetDirty
+            ? undefined
+            : "No unsaved changes",
+        run: saveCommandTarget,
+      },
+      {
+        id: "block-duplicate",
+        label: "Duplicate focused block",
+        detail: blockLabel,
+        shortcut: "Mod+Shift+D",
+        icon: "open",
+        disabledReason: activeBlock ? undefined : "Focus a block first",
+        run: duplicateActiveContentBlock,
+      },
+      {
+        id: "block-move-up",
+        label: "Move focused block up",
+        detail: blockLabel,
+        shortcut: "Mod+Shift+↑",
+        icon: "open",
+        disabledReason: activeBlock ? undefined : "Focus a block first",
+        run: () => moveActiveContentBlock(-1),
+      },
+      {
+        id: "block-move-down",
+        label: "Move focused block down",
+        detail: blockLabel,
+        shortcut: "Mod+Shift+↓",
+        icon: "open",
+        disabledReason: activeBlock ? undefined : "Focus a block first",
+        run: () => moveActiveContentBlock(1),
+      },
+      {
+        id: "block-delete",
+        label: "Delete focused block",
+        detail: blockLabel,
+        shortcut: "Delete",
+        icon: "delete",
+        disabledReason: activeBlock ? undefined : "Focus a block first",
+        run: deleteActiveContentBlock,
+      },
+      {
+        id: "undo-structure",
+        label: "Undo structural edit",
+        detail: "Blocks, language blocks, or module structure",
+        shortcut: "Mod+Z",
+        icon: "open",
+        disabledReason:
+          lessonCanUndo || (courseCanUndo && !hasUnsavedNewLesson)
+            ? undefined
+            : "No structural edit to undo",
+        run: () => {
+          if (!undoLessonStructure()) {
+            undoCourseModules();
+          }
+        },
+      },
+      {
+        id: "redo-structure",
+        label: "Redo structural edit",
+        detail: "Session history for block edits",
+        shortcut: "Mod+Shift+Z",
+        icon: "open",
+        disabledReason: lessonCanRedo
+          ? undefined
+          : "No structural edit to redo",
+        run: () => {
+          redoLessonStructure();
+        },
+      },
+      {
+        id: "keyboard-help",
+        label: "Show keyboard shortcuts",
+        shortcut: "Alt+K",
+        icon: "keyboard",
+        run: () => setIsHotkeyReminderOpen(true),
+      },
+      ...moduleLessons.map((lesson, index) => ({
+        id: `open-${lesson.id}`,
+        label: `Open Lesson ${index + 1}`,
+        detail: lesson.name || "Untitled lesson",
+        icon: "open" as const,
+        keywords: [lesson.name ?? "", "lesson", String(index + 1)],
+        run: () => openLessonFromCommand(lesson.id),
+      })),
+    ];
+  })();
+
   const courseSaveLabel =
     courseSaveState === "saving"
       ? "Saving…"
@@ -1806,20 +2424,99 @@ export default function LessonBuilderPage() {
       <div className="mx-auto flex w-full max-w-[1500px] flex-col gap-5">
         <BuilderNav active="builder" />
 
-        <div className="grid gap-5 lg:grid-cols-[15rem_1fr]">
-          <ModuleRail
-            modules={courseModules}
-            activeId={currentModule?.id ?? null}
-            saveLabel={courseSaveLabel}
-            canUndo={courseCanUndo && !hasUnsavedNewLesson}
-            onUndo={undoCourseModules}
-            draggedLessonId={lessonDrag.dragged?.id ?? null}
-            onSelect={selectModule}
-            onReorder={reorderModule}
-            onAdd={addModuleNow}
-            onDelete={deleteModuleNow}
-            onMoveLesson={moveLessonToModule}
-          />
+        <div className="grid gap-5 lg:grid-cols-[15rem_minmax(0,1fr)] xl:grid-cols-[15rem_minmax(0,1fr)_19rem]">
+          <aside className="min-w-0 lg:sticky lg:top-24 lg:self-start">
+            <ModuleRail
+              modules={courseModules}
+              activeId={currentModule?.id ?? null}
+              saveLabel={courseSaveLabel}
+              canUndo={courseCanUndo && !hasUnsavedNewLesson}
+              onUndo={undoCourseModules}
+              draggedLessonId={lessonDrag.dragged?.id ?? null}
+              onSelect={selectModule}
+              onReorder={reorderModule}
+              onAdd={addModuleNow}
+              onDelete={deleteModuleNow}
+              onMoveLesson={moveLessonToModule}
+            />
+            <section className="mt-4 rounded-xl border border-border bg-card p-3 shadow-sm">
+              <div className="mb-3 flex items-center justify-between gap-2">
+                <h2 className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                  Lessons
+                </h2>
+                <span className="text-xs text-muted-foreground">
+                  {moduleLessons.length}
+                </span>
+              </div>
+              {moduleLessons.length === 0 ? (
+                <p className="text-sm text-muted-foreground">
+                  No lessons in this module.
+                </p>
+              ) : (
+                <nav aria-label="Lessons in active module" className="space-y-1">
+                  {moduleLessons.map((lesson, index) => {
+                    const lessonIssueCount = lesson.blocks.reduce(
+                      (count, block) =>
+                        count +
+                        (isPracticeBlock(block)
+                          ? getSentenceValidationIssueCount(block)
+                          : 0),
+                      0,
+                    );
+                    const selected = lesson.id === activeLesson?.id;
+                    return (
+                      <button
+                        key={lesson.id}
+                        type="button"
+                        onClick={() => openLessonFromCommand(lesson.id)}
+                        aria-current={selected ? "true" : undefined}
+                        className={`flex w-full items-center gap-2 rounded-lg px-2.5 py-2 text-left text-sm transition focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30 ${
+                          selected
+                            ? "bg-stone-900 text-white shadow-sm"
+                            : "hover:bg-muted"
+                        }`}
+                      >
+                        <span
+                          className={`flex size-6 shrink-0 items-center justify-center rounded-md text-xs font-semibold ${
+                            selected
+                              ? "bg-white/15 text-white"
+                              : "bg-muted text-muted-foreground"
+                          }`}
+                        >
+                          {index + 1}
+                        </span>
+                        <span className="min-w-0 flex-1">
+                          <span className="block truncate font-medium">
+                            {lesson.name || "Untitled lesson"}
+                          </span>
+                          <span
+                            className={`text-xs ${
+                              selected
+                                ? "text-white/65"
+                                : "text-muted-foreground"
+                            }`}
+                          >
+                            {lesson.blocks.length} blocks
+                          </span>
+                        </span>
+                        {lessonIssueCount > 0 && (
+                          <span
+                            className={`shrink-0 rounded-full px-1.5 py-0.5 text-[11px] font-semibold ${
+                              selected
+                                ? "bg-red-400 text-white"
+                                : "bg-red-100 text-red-700"
+                            }`}
+                          >
+                            {lessonIssueCount}
+                          </span>
+                        )}
+                      </button>
+                    );
+                  })}
+                </nav>
+              )}
+            </section>
+          </aside>
 
           <div className="flex min-w-0 flex-col gap-5">
             {currentModule && (
@@ -1835,10 +2532,12 @@ export default function LessonBuilderPage() {
                 ? "Loading saved lessons…"
                 : saveStatus === "error"
                   ? "Couldn't save — will retry"
-                  : isDirty || saveStatus === "saving"
+                  : saveStatus === "saving"
                     ? "Saving…"
                     : saveStatus === "saved"
                       ? "All lesson changes saved"
+                      : isDirty
+                        ? "Unsaved changes"
                       : "Click a lesson to edit it."}
             </p>
 
@@ -1930,6 +2629,9 @@ export default function LessonBuilderPage() {
                     cycleLessonDisplayMode(lesson.id);
                   }
                 }}
+                nameInputRef={(element) =>
+                  registerLessonNameRef(lesson.id, element)
+                }
                 onNameChange={(value) => renameLesson(lesson.id, value)}
                 onPreview={() => {
                   setPreviewLessonId(lesson.id);
@@ -1967,6 +2669,9 @@ export default function LessonBuilderPage() {
                       lessonConceptId,
                       label,
                     })
+                  }
+                  inputRef={(element) =>
+                    registerLessonConceptRef(lesson.id, element)
                   }
                 />
               )}
@@ -2041,6 +2746,18 @@ export default function LessonBuilderPage() {
                   return (
                     <Fragment key={block.id}>
                     <div
+                      ref={(element) =>
+                        registerContentBlockRef(lesson.id, block.id, element)
+                      }
+                      tabIndex={0}
+                      data-content-block-container="true"
+                      aria-label={`${block.type === "explanation" ? "Explanation" : block.layout === "vocabulary_table" ? "Vocabulary table" : "Sentence"} block ${blockIndex + 1}`}
+                      onFocus={() =>
+                        setActiveContentBlock({
+                          lessonId: lesson.id,
+                          blockId: block.id,
+                        })
+                      }
                       onDragOver={(event) =>
                         contentDrag.dragOver(event, lesson.id, block.id)
                       }
@@ -2055,6 +2772,11 @@ export default function LessonBuilderPage() {
                         isContentBlockCollapsed
                           ? "shadow-none"
                           : "shadow-sm"
+                      } ${
+                        activeContentBlock?.lessonId === lesson.id &&
+                        activeContentBlock.blockId === block.id
+                          ? "ring-3 ring-violet-200"
+                          : "focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-violet-200"
                       } ${isDraggingContentBlock ? "opacity-45" : ""}`}
                     >
                     {contentDropPosition && (
@@ -2395,18 +3117,232 @@ export default function LessonBuilderPage() {
           </kbd>
         </button>
           </div>
+
+          <aside className="min-w-0 space-y-4 xl:sticky xl:top-24 xl:self-start">
+            <section className="rounded-xl border border-border bg-card p-4 shadow-sm">
+              <div className="flex items-center justify-between gap-3">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                    Lesson focus
+                  </p>
+                  <h2 className="mt-1 text-lg font-semibold text-foreground">
+                    {activeLesson
+                      ? `${activeLessonNumber ? `Lesson ${activeLessonNumber}` : "Lesson"}`
+                      : "No lesson"}
+                  </h2>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setIsCommandPaletteOpen(true)}
+                  aria-label="Open command palette"
+                  title="Command palette"
+                  className="flex size-9 shrink-0 items-center justify-center rounded-lg border border-border text-muted-foreground transition hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
+                >
+                  <Command className="size-4" aria-hidden="true" />
+                </button>
+              </div>
+
+              {activeLesson ? (
+                <>
+                  <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">
+                    {activeLesson.name || "Untitled lesson"}
+                  </p>
+                  <div className="mt-4 grid grid-cols-3 gap-2 text-center">
+                    <div className="rounded-lg bg-muted px-2 py-2">
+                      <p className="text-lg font-semibold tabular-nums">
+                        {activeLesson.blocks.length}
+                      </p>
+                      <p className="text-[11px] font-medium text-muted-foreground">
+                        blocks
+                      </p>
+                    </div>
+                    <div className="rounded-lg bg-violet-50 px-2 py-2 text-violet-900">
+                      <p className="text-lg font-semibold tabular-nums">
+                        {activeLessonExplanationCount}
+                      </p>
+                      <p className="text-[11px] font-medium text-violet-600">
+                        explain
+                      </p>
+                    </div>
+                    <div className="rounded-lg bg-blue-50 px-2 py-2 text-blue-900">
+                      <p className="text-lg font-semibold tabular-nums">
+                        {activeLessonPracticeCount}
+                      </p>
+                      <p className="text-[11px] font-medium text-blue-600">
+                        practice
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="mt-3 flex items-center justify-between gap-3 rounded-lg border border-border bg-muted/40 px-3 py-2 text-xs">
+                    <span className="font-medium text-muted-foreground">
+                      Lesson state
+                    </span>
+                    <span
+                      className={`font-semibold ${
+                        saveStatus === "error"
+                          ? "text-red-700"
+                          : saveStatus === "saving"
+                            ? "text-amber-700"
+                            : activeLessonIsDirty
+                              ? "text-amber-700"
+                              : "text-emerald-700"
+                      }`}
+                    >
+                      {saveStatus === "error"
+                        ? "Save failed"
+                        : saveStatus === "saving"
+                          ? "Saving"
+                          : activeLessonIsDirty
+                            ? "Unsaved changes"
+                            : "Saved"}
+                    </span>
+                  </div>
+
+                  <div className="mt-4 grid gap-2">
+                    <button
+                      type="button"
+                      onClick={() => addCommandBlock("pair")}
+                      className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-3 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
+                    >
+                      <Layers2 className="size-4" aria-hidden="true" />
+                      Teaching pair
+                    </button>
+                    <div className="grid grid-cols-2 gap-2">
+                      <button
+                        type="button"
+                        onClick={() => addCommandBlock("explanation")}
+                        className="inline-flex items-center justify-center gap-2 rounded-lg border border-border px-3 py-2 text-sm font-semibold transition hover:bg-muted focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
+                      >
+                        <FileText className="size-4" aria-hidden="true" />
+                        Explain
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => addCommandBlock("sentence")}
+                        className="inline-flex items-center justify-center gap-2 rounded-lg border border-border px-3 py-2 text-sm font-semibold transition hover:bg-muted focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
+                      >
+                        <Languages className="size-4" aria-hidden="true" />
+                        Practice
+                      </button>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <p className="mt-3 text-sm text-muted-foreground">
+                  Select a lesson or create one in the active module.
+                </p>
+              )}
+            </section>
+
+            <section className="rounded-xl border border-border bg-card p-4 shadow-sm">
+              <div className="flex items-center gap-2">
+                {activeLessonIssues.length === 0 ? (
+                  <CheckCircle2
+                    className="size-4 text-emerald-600"
+                    aria-hidden="true"
+                  />
+                ) : (
+                  <CircleAlert
+                    className="size-4 text-red-600"
+                    aria-hidden="true"
+                  />
+                )}
+                <h2 className="text-sm font-semibold text-foreground">
+                  Validation
+                </h2>
+              </div>
+              {activeLessonIssues.length === 0 ? (
+                <p className="mt-3 text-sm text-muted-foreground">
+                  No structural issues detected.
+                </p>
+              ) : (
+                <div className="mt-3 space-y-2">
+                  {activeLessonIssues.map(({ block, index, issueCount }) => (
+                    <button
+                      key={block.id}
+                      type="button"
+                      onClick={() =>
+                        activeLesson &&
+                        revealContentBlock(activeLesson.id, block.id)
+                      }
+                      className="flex w-full items-center justify-between gap-3 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-left text-sm text-red-800 transition hover:bg-red-100 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-red-200"
+                    >
+                      <span className="min-w-0 truncate">
+                        Block {index + 1}
+                      </span>
+                      <span className="shrink-0 text-xs font-semibold">
+                        {issueCount}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </section>
+
+            <section className="rounded-xl border border-border bg-card p-4 shadow-sm">
+              <h2 className="text-sm font-semibold text-foreground">
+                Focused block
+              </h2>
+              {activeBlock ? (
+                <div className="mt-3 space-y-2 text-sm">
+                  <p className="font-medium text-foreground">
+                    {activeBlock.type === "explanation"
+                      ? "Explanation"
+                      : activeBlock.layout === "vocabulary_table"
+                        ? "Vocabulary table"
+                        : "Sentence practice"}
+                  </p>
+                  <div className="grid grid-cols-3 gap-2">
+                    <button
+                      type="button"
+                      onClick={duplicateActiveContentBlock}
+                      className="rounded-lg border border-border px-2 py-1.5 text-xs font-semibold transition hover:bg-muted focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
+                    >
+                      Copy
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => moveActiveContentBlock(-1)}
+                      className="rounded-lg border border-border px-2 py-1.5 text-xs font-semibold transition hover:bg-muted focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
+                    >
+                      Up
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => moveActiveContentBlock(1)}
+                      className="rounded-lg border border-border px-2 py-1.5 text-xs font-semibold transition hover:bg-muted focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
+                    >
+                      Down
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <p className="mt-3 text-sm text-muted-foreground">
+                  Focus a block to reveal block actions.
+                </p>
+              )}
+            </section>
+          </aside>
         </div>
       </div>
 
       <button
         type="button"
-        onClick={() => setIsHotkeyReminderOpen(true)}
-        aria-label="Show keyboard shortcuts"
-        title="Keyboard shortcuts (Alt+K)"
+        onClick={() => setIsCommandPaletteOpen(true)}
+        aria-label="Open command palette"
+        title="Command palette (Mod+K)"
         className="fixed bottom-5 right-5 z-40 flex size-12 items-center justify-center rounded-full border border-border bg-popover text-popover-foreground shadow-lg transition hover:-translate-y-0.5 hover:bg-muted focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/30"
       >
         <Keyboard className="size-5" aria-hidden="true" />
       </button>
+
+      {isCommandPaletteOpen && (
+        <CommandPalette
+          commands={builderCommands}
+          onClose={() => setIsCommandPaletteOpen(false)}
+        />
+      )}
 
       {isHotkeyReminderOpen && (
         <HotkeyReminder onClose={() => setIsHotkeyReminderOpen(false)} />

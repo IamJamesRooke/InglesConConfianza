@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { ConceptQuickEdit } from "@/components/lesson-builder/concept-quick-edit";
 import type { CoverageReport } from "@/lib/lesson-builder/server/coverage-report";
 
@@ -18,6 +20,16 @@ function roleClasses(role: string) {
 // Missing tag rails. Rows are click-to-edit.
 export function CoverageMatrix({ report }: { report: CoverageReport }) {
   const introducedPerLesson = new Map<number, number>();
+  const lessonByNumber = new Map(
+    report.lessons.map((lesson) => [lesson.number, lesson]),
+  );
+  const lessonHref = (lessonNumber: number) => {
+    const lesson = lessonByNumber.get(lessonNumber);
+    return lesson
+      ? `/admin/lesson-builder?lesson=${encodeURIComponent(lesson.id)}`
+      : "/admin/lesson-builder";
+  };
+
   for (const concept of report.concepts) {
     introducedPerLesson.set(
       concept.firstLesson,
@@ -27,6 +39,23 @@ export function CoverageMatrix({ report }: { report: CoverageReport }) {
 
   return (
     <>
+      <section className="rounded-xl border border-border bg-card p-4 shadow-sm">
+        <h2 className="text-sm font-semibold text-foreground">
+          Teaching Review
+        </h2>
+        <div className="mt-3 grid gap-2 text-sm text-muted-foreground md:grid-cols-3">
+          <p className="rounded-lg bg-muted/60 px-3 py-2">
+            Was every assessed phrase introduced before practice?
+          </p>
+          <p className="rounded-lg bg-muted/60 px-3 py-2">
+            Does the final answer sound useful outside the lesson?
+          </p>
+          <p className="rounded-lg bg-muted/60 px-3 py-2">
+            Do reused concepts appear with enough spacing to feel natural?
+          </p>
+        </div>
+      </section>
+
       {report.concepts.length === 0 ? (
         <p className="rounded-xl border border-border bg-card px-4 py-8 text-center text-sm text-muted-foreground">
           No concepts linked yet. Add them under a lesson title in the Lesson
@@ -144,13 +173,58 @@ export function CoverageMatrix({ report }: { report: CoverageReport }) {
             {report.requested.map((entry) => (
               <span
                 key={entry.label}
-                title={`Lesson ${entry.lessonNumbers.join(", ")}`}
-                className="rounded-full border border-dashed border-amber-300 bg-amber-50 px-2.5 py-1 text-xs font-medium text-amber-800"
+                className="inline-flex items-center gap-1 rounded-full border border-dashed border-amber-300 bg-amber-50 px-2.5 py-1 text-xs font-medium text-amber-800"
               >
                 {entry.label}
-                <span className="ml-1 text-amber-500">
-                  L{entry.lessonNumbers.join(",")}
-                </span>
+                {entry.lessonNumbers.map((lessonNumber) => (
+                  <Link
+                    key={lessonNumber}
+                    href={lessonHref(lessonNumber)}
+                    className="rounded px-1 text-amber-600 underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
+                  >
+                    L{lessonNumber}
+                  </Link>
+                ))}
+              </span>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {report.trashed.length > 0 && (
+        <section className="mt-8">
+          <h2 className="text-sm font-semibold uppercase tracking-wide text-red-700">
+            References now marked trash ({report.trashed.length})
+          </h2>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {report.trashed.map((entry) => (
+              <span
+                key={entry.conceptId}
+                className="inline-flex items-center gap-1 rounded-full border border-red-300 bg-red-50 px-2.5 py-1 text-xs font-medium text-red-700"
+              >
+                <ConceptQuickEdit
+                  conceptId={entry.conceptId}
+                  initial={{
+                    spanish: entry.spanish,
+                    english: entry.english,
+                    exampleSpanish: entry.exampleSpanish,
+                    exampleEnglish: entry.exampleEnglish,
+                    role: entry.role,
+                    collections: entry.collections,
+                  }}
+                  className="font-semibold hover:underline"
+                >
+                  {entry.spanish}
+                </ConceptQuickEdit>
+                {entry.lessonNumbers.map((lessonNumber) => (
+                  <Link
+                    key={lessonNumber}
+                    href={lessonHref(lessonNumber)}
+                    className="rounded px-1 text-red-500 underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-300"
+                  >
+                    L{lessonNumber}
+                  </Link>
+                ))}
               </span>
             ))}
           </div>
@@ -167,13 +241,19 @@ export function CoverageMatrix({ report }: { report: CoverageReport }) {
             {report.missing.map((entry) => (
               <span
                 key={entry.conceptId}
-                title={`${entry.conceptId} · Lesson ${entry.lessonNumbers.join(", ")}`}
-                className="rounded-full border border-red-300 bg-red-50 px-2.5 py-1 text-xs font-medium text-red-700"
+                title={entry.conceptId}
+                className="inline-flex items-center gap-1 rounded-full border border-red-300 bg-red-50 px-2.5 py-1 text-xs font-medium text-red-700"
               >
                 {entry.label}
-                <span className="ml-1 text-red-400">
-                  L{entry.lessonNumbers.join(",")}
-                </span>
+                {entry.lessonNumbers.map((lessonNumber) => (
+                  <Link
+                    key={lessonNumber}
+                    href={lessonHref(lessonNumber)}
+                    className="rounded px-1 text-red-500 underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-300"
+                  >
+                    L{lessonNumber}
+                  </Link>
+                ))}
               </span>
             ))}
           </div>

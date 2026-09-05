@@ -1,7 +1,7 @@
 "use client";
 
 import { X } from "lucide-react";
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState, type Ref } from "react";
 
 import { ConceptQuickEdit } from "@/components/lesson-builder/concept-quick-edit";
 import { conceptKey } from "@/lib/lesson-builder/lesson-file";
@@ -27,6 +27,7 @@ export function LessonConceptsField({
   label = "Concepts covered",
   coveredConceptKeys,
   variant = "block",
+  inputRef,
 }: {
   concepts: LessonConcept[];
   onAdd: (concept: LessonConcept) => void;
@@ -37,11 +38,15 @@ export function LessonConceptsField({
   // some lesson in the module covers it). Used by the module Key concepts field.
   coveredConceptKeys?: Set<string>;
   variant?: "block" | "inline";
+  inputRef?: Ref<HTMLInputElement>;
 }) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<ConceptResult[]>([]);
   const [highlight, setHighlight] = useState(0);
   const [open, setOpen] = useState(false);
+  const [searchState, setSearchState] = useState<"idle" | "loading" | "error">(
+    "idle",
+  );
   const listboxId = useId();
   const blurTimer = useRef<number | undefined>(undefined);
 
@@ -51,19 +56,28 @@ export function LessonConceptsField({
     const timer = window.setTimeout(async () => {
       if (trimmed.length < 2) {
         setResults([]);
+        setSearchState("idle");
         return;
       }
+      setSearchState("loading");
       try {
         const response = await fetch(
           `/api/admin/curriculum/concepts/search?q=${encodeURIComponent(trimmed)}`,
           { signal: controller.signal },
         );
-        if (!response.ok) return;
+        if (!response.ok) {
+          setSearchState("error");
+          return;
+        }
         const data = (await response.json()) as { concepts: ConceptResult[] };
         setResults(data.concepts);
         setHighlight(0);
+        setSearchState("idle");
       } catch {
         // aborted or offline — leave the previous results in place
+        if (!controller.signal.aborted) {
+          setSearchState("error");
+        }
       }
     }, 180);
 
@@ -162,6 +176,7 @@ export function LessonConceptsField({
         })}
         <div className="relative min-w-40 flex-1">
           <input
+            ref={inputRef}
             type="text"
             value={query}
             role="combobox"
@@ -250,6 +265,17 @@ export function LessonConceptsField({
                 </li>
               ))}
             </ul>
+          )}
+          {open && query.trim().length >= 2 && visibleResults.length === 0 && (
+            <div className="absolute left-0 top-full z-30 mt-1 w-[min(28rem,80vw)] rounded-lg border border-border bg-popover px-3 py-2 text-sm shadow-xl">
+              <p className="text-muted-foreground">
+                {searchState === "loading"
+                  ? "Searching..."
+                  : searchState === "error"
+                    ? "Concept search unavailable."
+                    : "No linked concept found. Press Enter to add an unlinked label."}
+              </p>
+            </div>
           )}
         </div>
       </div>
