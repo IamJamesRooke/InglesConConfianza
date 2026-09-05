@@ -926,7 +926,8 @@
         "es:beber",
         "en:drink",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -944,7 +945,8 @@
         "es:beber",
         "en:have",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -1112,7 +1114,8 @@
         "en:take",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -1282,7 +1285,8 @@
         "en:drink",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -1302,7 +1306,8 @@
         "en:drink",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -1323,7 +1328,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -1342,7 +1348,8 @@
         "en:drink",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -1362,7 +1369,8 @@
         "en:drink",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30231,7 +30239,8 @@
         "es:asegurar",
         "en:make",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30247,7 +30256,8 @@
         "es:seguro",
         "es:asegurar",
         "en:insure",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -33784,7 +33794,8 @@
         "service",
         "es:brindar",
         "en:offer",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55121,7 +55132,8 @@
       "collections": [
         "pos:verb",
         "es:arreglar",
-        "en:fix"
+        "en:fix",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55136,7 +55148,8 @@
       "collections": [
         "pos:verb",
         "es:arreglar",
-        "en:arrange"
+        "en:arrange",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55151,7 +55164,8 @@
       "collections": [
         "pos:verb",
         "es:arreglar",
-        "en:tidy"
+        "en:tidy",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55167,7 +55181,8 @@
         "pos:verb",
         "es:arreglar",
         "en:get",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55185,7 +55200,8 @@
         "pos:verb",
         "es:arreglar",
         "en:sort",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55203,7 +55219,8 @@
         "pos:verb",
         "es:averiguar",
         "en:find",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55218,7 +55235,8 @@
       "collections": [
         "pos:verb",
         "es:averiguar",
-        "en:check"
+        "en:check",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55233,7 +55251,8 @@
       "collections": [
         "pos:verb",
         "es:averiguar",
-        "en:investigate"
+        "en:investigate",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55249,7 +55268,8 @@
         "pos:verb",
         "es:avisar",
         "en:let",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55267,7 +55287,8 @@
         "pos:verb",
         "es:avisar",
         "en:warn",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55283,7 +55304,8 @@
         "pos:verb",
         "es:avisar",
         "en:tell",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55298,7 +55320,8 @@
       "collections": [
         "pos:verb",
         "es:avisar",
-        "en:alert"
+        "en:alert",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55317,7 +55340,8 @@
         "es:bajar",
         "en:go",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -55336,7 +55360,8 @@
         "es:bajar",
         "en:come",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55351,7 +55376,8 @@
       "collections": [
         "pos:verb",
         "es:bajar",
-        "en:lower"
+        "en:lower",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55370,7 +55396,8 @@
         "es:bajar",
         "en:get",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55385,7 +55412,8 @@
       "collections": [
         "pos:verb",
         "es:bajar",
-        "en:download"
+        "en:download",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55404,7 +55432,8 @@
         "es:bajar",
         "en:turn",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55420,7 +55449,8 @@
         "pos:verb",
         "es:bajar",
         "en:fall",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55436,7 +55466,8 @@
         "pos:verb",
         "es:bajar",
         "en:lose",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58250,7 +58281,8 @@
         "en:point",
         "construction:prepositional-verb",
         "particle:toward",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58268,7 +58300,8 @@
         "en:aim",
         "construction:prepositional-verb",
         "particle:at",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58286,7 +58319,8 @@
         "pos:verb",
         "es:apuntar",
         "en:write",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58306,7 +58340,8 @@
         "en:point",
         "topic:en-multi-sense",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58326,7 +58361,8 @@
         "es:apuntar",
         "en:sign",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58344,7 +58380,8 @@
         "pos:verb",
         "es:apuntar",
         "en:join",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58361,7 +58398,8 @@
         "pos:verb",
         "es:apuntar",
         "en:aim",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58376,7 +58414,8 @@
       "collections": [
         "pos:verb",
         "es:apuntar",
-        "en:record"
+        "en:record",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58396,7 +58435,8 @@
         "en:help",
         "topic:en-multi-sense",
         "particle:with",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -58411,7 +58451,8 @@
       "collections": [
         "pos:verb",
         "es:ayudar",
-        "en:help"
+        "en:help",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58428,7 +58469,8 @@
         "pos:verb",
         "es:ayudar",
         "en:use",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
