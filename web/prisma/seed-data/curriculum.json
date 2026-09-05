@@ -26611,7 +26611,8 @@
         "pos:adverb",
         "grammar:interrogative-adverb",
         "topic:interrogative",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -26778,7 +26779,8 @@
         "en:when",
         "topic:interrogative",
         "pos:adverb",
-        "grammar:interrogative-adverb"
+        "grammar:interrogative-adverb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26795,7 +26797,8 @@
         "en:when",
         "pos:adverb",
         "grammar:interrogative-adverb",
-        "topic:interrogative"
+        "topic:interrogative",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -26860,7 +26863,8 @@
         "pos:adverb",
         "grammar:interrogative-adverb",
         "topic:interrogative",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -26878,7 +26882,8 @@
         "grammar:interrogative-adverb",
         "topic:interrogative",
         "pos:adverb",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -27385,7 +27390,8 @@
         "en:where",
         "topic:interrogative",
         "pos:adverb",
-        "grammar:interrogative-adverb"
+        "grammar:interrogative-adverb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -27402,7 +27408,8 @@
         "en:where",
         "pos:adverb",
         "grammar:interrogative-adverb",
-        "topic:interrogative"
+        "topic:interrogative",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -85011,7 +85018,8 @@
         "pos:adverb",
         "topic:interrogative",
         "es:por qué",
-        "en:why"
+        "en:why",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -85028,7 +85036,8 @@
         "pos:adverb",
         "topic:interrogative",
         "es:adónde",
-        "en:where"
+        "en:where",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -85045,7 +85054,8 @@
         "pos:adverb",
         "topic:interrogative",
         "es:de dónde",
-        "en:where"
+        "en:where",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
