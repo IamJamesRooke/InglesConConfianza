@@ -1,0 +1,25 @@
+kdnvsz6v6j	cada	each	supporting	audit:reviewed	Audit: fine as-is.	Cada estudiante recibió comentarios diferentes.	Each student received different feedback.
+hsqb5yui5l	alguien	somebody	core	audit:reviewed	Audit: fine as-is.	Alguien llamó a la puerta.	Somebody knocked on the door.
+u5bpj5gqex	alguien	someone	core	audit:reviewed	Audit: fine as-is.	Alguien te está buscando.	Someone is looking for you.
+jidk0m8x2v	alguien	anybody	supporting	audit:reviewed	Audit: fine as-is.	¿Hay alguien en casa?	Is anybody home?
+rwn65j1jsu	alguien	anyone	supporting	audit:reviewed	Audit: fine as-is.	¿Vio alguien lo que pasó?	Did anyone see what happened?
+nqv2w27jgr	algo	something	core	audit:reviewed	Audit: fine as-is.	Necesito comer algo.	I need to eat something.
+5xzf7m11n9	algo	anything	supporting	audit:reviewed	Audit: fine as-is.	¿Quieres algo de la tienda?	Do you want anything from the store?
+rd3a1m9q85	nadie	nobody	core	audit:reviewed	Audit: fine as-is.	Nadie vino a la reunión.	Nobody came to the meeting.
+vxof3xwcei	nadie	no one	supporting	audit:reviewed	Audit: fine as-is.	Nadie contestó el teléfono.	No one answered the phone.
+s0u2t5y194	nada	nothing	core	audit:reviewed	Audit: fine as-is.	No hay nada en la nevera.	There is nothing in the fridge.
+6nqb18txzu	todos	everybody	core	audit:reviewed	Audit: fine as-is.	Todos están de acuerdo.	Everybody agrees.
+fr200530w1	todos	everyone	core	audit:reviewed	Audit: fine as-is.	Todos son bienvenidos.	Everyone is welcome.
+sacq7sy6j6	todo	everything	core	audit:reviewed	Audit: fine as-is.	Todo salió bien.	Everything went well.
+z2a8m7lmkv	en algún lugar	somewhere	supporting	audit:reviewed	Audit: fine as-is.	Lo dejé en algún lugar.	I left it somewhere.
+3wvyjj7lp9	en ningún lugar	nowhere	reference	audit:reviewed	Audit: fine as-is — consistent with the locative-indefinite family's base tier (supporting) stepping down one for the less-common variant, same pattern as somebody/anybody.	Ese pueblo no aparece en ningún lugar del mapa.	That town is nowhere on the map.
+rz685c861j	en todas partes	everywhere	supporting	audit:reviewed	Audit: fine as-is.	Busqué en todas partes.	I looked everywhere.
+5w0xw4xzxh	uno (impersonal)	one	supporting	audit:reviewed	Audit: fine as-is.	Uno nunca sabe.	One never knows.
+ml1vpgz8qf	ninguno	none	supporting	audit:reviewed	Audit: fine as-is.	Ninguno de ellos vino.	None of them came.
+fc10ci73j7	algunos	some	supporting	audit:reviewed	Audit normalization fix: headword was singular "alguno" but its own example ("Algunos ya se fueron.") and English gloss "some" are both plural — mismatch. Corrected the headword to "algunos" to match.	Algunos ya se fueron.	Some already left.
+3816wraz0i	varios	several	reference	audit:reviewed	Audit: fine as-is.	Varios se quejaron.	Several complained.
+limmjzeuoo	cualquiera	anyone	supporting	audit:reviewed	Audit: fine as-is.	Cualquiera puede aprender.	Anyone can learn.
+cwol5b7e11	todo el mundo	everyone	supporting	audit:reviewed	Audit: fine as-is — legitimate synonym of "todos" at a lower tier, not a duplicate.	Todo el mundo lo sabe.	Everyone knows it.
+i7rkruke55	ambos	both	supporting	audit:reviewed	Audit: fine as-is.	Ambos libros son útiles.	Both books are useful.
+tpr473mus1	en algún lugar	anywhere	reference	audit:reviewed	Audit: fine as-is.	¿Lo viste en algún lugar?	Did you see it anywhere?
+kvxg5q1l06	cada uno	each one	supporting	audit:reviewed	Audit: fine as-is.	Cada uno trajo algo.	Each one brought something.

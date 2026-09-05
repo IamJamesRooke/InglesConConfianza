@@ -31287,7 +31287,8 @@
         "en:each",
         "topic:pronoun",
         "grammar:indefinite-pronoun",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -81777,7 +81778,8 @@
         "en:somebody",
         "morphology:prefix-some",
         "morphology:suffix-body",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -81796,7 +81798,8 @@
         "es:alguien",
         "en:someone",
         "morphology:prefix-some",
-        "morphology:suffix-one"
+        "morphology:suffix-one",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -81816,7 +81819,8 @@
         "es:alguien",
         "en:anybody",
         "morphology:prefix-any",
-        "morphology:suffix-body"
+        "morphology:suffix-body",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -81836,7 +81840,8 @@
         "es:alguien",
         "en:anyone",
         "morphology:prefix-any",
-        "morphology:suffix-one"
+        "morphology:suffix-one",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -81855,7 +81860,8 @@
         "es:algo",
         "en:something",
         "morphology:prefix-some",
-        "morphology:suffix-thing"
+        "morphology:suffix-thing",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -81875,7 +81881,8 @@
         "es:algo",
         "en:anything",
         "morphology:prefix-any",
-        "morphology:suffix-thing"
+        "morphology:suffix-thing",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -81895,7 +81902,8 @@
         "es:nadie",
         "en:nobody",
         "morphology:prefix-no",
-        "morphology:suffix-body"
+        "morphology:suffix-body",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -81915,7 +81923,8 @@
         "es:nadie",
         "en:no-one",
         "morphology:prefix-no",
-        "morphology:suffix-one"
+        "morphology:suffix-one",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -81935,7 +81944,8 @@
         "es:nada",
         "en:nothing",
         "morphology:prefix-no",
-        "morphology:suffix-thing"
+        "morphology:suffix-thing",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -81954,7 +81964,8 @@
         "es:todo",
         "en:everybody",
         "morphology:prefix-every",
-        "morphology:suffix-body"
+        "morphology:suffix-body",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -81973,7 +81984,8 @@
         "es:todo",
         "en:everyone",
         "morphology:prefix-every",
-        "morphology:suffix-one"
+        "morphology:suffix-one",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -81992,7 +82004,8 @@
         "es:todo",
         "en:everything",
         "morphology:prefix-every",
-        "morphology:suffix-thing"
+        "morphology:suffix-thing",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -82012,7 +82025,8 @@
         "es:lugar",
         "en:somewhere",
         "morphology:prefix-some",
-        "morphology:suffix-where"
+        "morphology:suffix-where",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -82033,7 +82047,8 @@
         "es:lugar",
         "en:nowhere",
         "morphology:prefix-no",
-        "morphology:suffix-where"
+        "morphology:suffix-where",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -82053,7 +82068,8 @@
         "es:parte",
         "en:everywhere",
         "morphology:prefix-every",
-        "morphology:suffix-where"
+        "morphology:suffix-where",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -82073,7 +82089,8 @@
         "es:uno",
         "en:one",
         "morphology:suffix-one",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -82091,13 +82108,14 @@
         "grammar:negative",
         "topic:pronoun",
         "es:ninguno",
-        "en:none"
+        "en:none",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
     {
       "id": "fc10ci73j7",
-      "spanish": "alguno",
+      "spanish": "algunos",
       "english": "some",
       "example": {
         "spanish": "Algunos ya se fueron.",
@@ -82111,7 +82129,8 @@
         "en:some",
         "contrast:algun-vs-alguno",
         "contrast:confusable",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -82128,7 +82147,8 @@
         "grammar:indefinite-pronoun",
         "topic:pronoun",
         "es:varios",
-        "en:several"
+        "en:several",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -82147,7 +82167,8 @@
         "es:cualquiera",
         "en:anyone",
         "morphology:prefix-any",
-        "morphology:suffix-one"
+        "morphology:suffix-one",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -82167,7 +82188,8 @@
         "es:mundo",
         "en:everyone",
         "morphology:prefix-every",
-        "morphology:suffix-one"
+        "morphology:suffix-one",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -82709,7 +82731,8 @@
         "en:both",
         "topic:pronoun",
         "grammar:indefinite-pronoun",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -83395,7 +83418,8 @@
         "es:lugar",
         "en:anywhere",
         "morphology:prefix-any",
-        "morphology:suffix-where"
+        "morphology:suffix-where",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -83413,7 +83437,8 @@
         "topic:pronoun",
         "es:cada",
         "en:each",
-        "morphology:suffix-one"
+        "morphology:suffix-one",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
