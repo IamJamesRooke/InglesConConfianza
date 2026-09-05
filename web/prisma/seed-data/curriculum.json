@@ -801,11 +801,11 @@
         "english": "I took the bus downtown."
       },
       "collections": [
-        "topic:transport",
         "es:tomar",
         "en:take",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transportation"
       ],
       "curriculumRole": "supporting"
     },
@@ -2125,12 +2125,12 @@
       "collections": [
         "es:decir",
         "en:say",
-        "topic:classroom-language",
         "grammar:question",
         "es:cómo",
         "en:how",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:social-expression"
       ],
       "curriculumRole": "supporting"
     },
@@ -2725,10 +2725,10 @@
         "english": "Play the video."
       },
       "collections": [
-        "topic:media",
         "es:dar",
         "en:play",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:media-communication"
       ],
       "curriculumRole": "reference"
     },
@@ -2776,12 +2776,12 @@
         "english": "The plan worked."
       },
       "collections": [
-        "topic:work",
         "grammar:fixed-expression",
         "es:dar",
         "en:work",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:business-work"
       ],
       "curriculumRole": "reference"
     },
@@ -3429,14 +3429,14 @@
         "english": "I made an appointment with the doctor."
       },
       "collections": [
-        "topic:appointment",
         "construction:prepositional-verb",
         "en:with",
         "construction:map-con-with",
         "es:pedir",
         "en:make",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:business-work"
       ],
       "curriculumRole": "reference"
     },
@@ -3449,14 +3449,14 @@
         "english": "I booked an appointment with the dentist."
       },
       "collections": [
-        "topic:appointment",
         "construction:prepositional-verb",
         "en:with",
         "construction:map-con-with",
         "es:pedir",
         "en:book",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:business-work"
       ],
       "curriculumRole": "reference"
     },
@@ -3581,11 +3581,11 @@
       "collections": [
         "construction:prepositional-verb",
         "en:for",
-        "topic:delivery",
         "es:pedir",
         "en:order",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:food"
       ],
       "curriculumRole": "reference"
     },
@@ -3796,10 +3796,10 @@
       "collections": [
         "grammar:phrasal-verb",
         "particle:in",
-        "topic:delivery",
         "es:pedir",
         "en:order",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:food"
       ],
       "curriculumRole": "reference"
     },
@@ -4047,11 +4047,11 @@
         "construction:prepositional-verb",
         "en:for",
         "construction:map-para-for",
-        "topic:device",
         "es:poner",
         "en:set",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:technology"
       ],
       "curriculumRole": "reference"
     },
@@ -4067,11 +4067,11 @@
         "construction:prepositional-verb",
         "en:for",
         "construction:map-para-for",
-        "topic:date",
         "es:poner",
         "en:set",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -4106,11 +4106,11 @@
       "collections": [
         "grammar:phrasal-verb",
         "particle:on",
-        "topic:device",
         "es:poner",
         "en:turn",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:technology"
       ],
       "curriculumRole": "supporting"
     },
@@ -4125,11 +4125,11 @@
       "collections": [
         "grammar:phrasal-verb",
         "particle:on",
-        "topic:media",
         "es:poner",
         "en:put",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:media-communication"
       ],
       "curriculumRole": "reference"
     },
@@ -4142,10 +4142,10 @@
         "english": "Play the video again."
       },
       "collections": [
-        "topic:media",
         "es:poner",
         "en:play",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:media-communication"
       ],
       "curriculumRole": "supporting"
     },
@@ -5148,11 +5148,11 @@
         "es:poner",
         "grammar:phrasal-verb",
         "particle:off",
-        "topic:travel",
         "es:salir",
         "en:set",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:sports-recreation"
       ],
       "curriculumRole": "reference"
     },
@@ -5188,11 +5188,11 @@
         "es:poner",
         "grammar:phrasal-verb",
         "particle:out",
-        "topic:travel",
         "es:emprender",
         "en:set",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:sports-recreation"
       ],
       "curriculumRole": "reference"
     },
@@ -5400,7 +5400,6 @@
       "collections": [
         "es:decir",
         "construction:double-object",
-        "topic:story",
         "es:contar",
         "en:tell",
         "topic:multi-sense",
@@ -5481,7 +5480,6 @@
         "es:poner",
         "grammar:phrasal-verb",
         "particle:in",
-        "topic:story",
         "es:estar",
         "en:set",
         "topic:multi-sense",
@@ -9470,10 +9468,10 @@
       },
       "collections": [
         "construction:somebody-something",
-        "topic:transport",
         "es:llevar",
         "en:give",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transportation"
       ],
       "curriculumRole": "reference"
     },
@@ -12477,9 +12475,9 @@
         "english": "The company provides legal services."
       },
       "collections": [
-        "topic:work",
         "es:prestar",
-        "en:provide"
+        "en:provide",
+        "topic:business-work"
       ],
       "curriculumRole": "reference"
     },
@@ -13697,9 +13695,9 @@
         "construction:prepositional-verb",
         "es:para",
         "construction:map-para-object",
-        "topic:money",
         "es:alcanzar",
-        "en:unable"
+        "en:unable",
+        "topic:money-business"
       ],
       "curriculumRole": "supporting"
     },
@@ -14878,7 +14876,6 @@
         "es:have",
         "construction:prepositional-verb",
         "construction:map-con-object",
-        "topic:resources",
         "es:contar",
         "en:have",
         "topic:multi-sense",
@@ -14896,7 +14893,6 @@
       },
       "collections": [
         "es:have",
-        "topic:resources",
         "es:contar",
         "en:available",
         "topic:multi-sense"
@@ -15074,11 +15070,11 @@
       },
       "collections": [
         "es:cost",
-        "topic:money",
         "pos:verb",
         "es:costar",
         "en:cost",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:money-business"
       ],
       "curriculumRole": "core"
     },
@@ -17018,14 +17014,14 @@
         "english": "We worked it out before buying it."
       },
       "collections": [
-        "topic:work",
         "grammar:phrasal-verb",
         "particle:out",
         "calculation",
         "es:echar",
         "en:work",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:business-work"
       ],
       "curriculumRole": "reference"
     },
@@ -18831,7 +18827,6 @@
       },
       "collections": [
         "topic:time",
-        "topic:date",
         "es:ser",
         "en:be",
         "pos:verb",
@@ -26318,7 +26313,6 @@
         "english": "today"
       },
       "collections": [
-        "topic:date",
         "topic:time",
         "topic:calendar",
         "es:hoy",
@@ -26336,7 +26330,6 @@
       },
       "collections": [
         "topic:time",
-        "topic:date",
         "topic:calendar",
         "es:mañana",
         "en:tomorrow"
@@ -26369,7 +26362,6 @@
         "english": "yesterday"
       },
       "collections": [
-        "topic:date",
         "topic:time",
         "topic:calendar",
         "es:ayer",
@@ -28088,11 +28080,11 @@
       "collections": [
         "en:open",
         "pos:noun",
-        "topic:work",
         "es:vacante",
         "en:job",
         "gender:feminine",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:business-work"
       ],
       "curriculumRole": "reference"
     },
@@ -28231,11 +28223,11 @@
         "english": "Start the computer."
       },
       "collections": [
-        "topic:machine",
         "grammar:verb-direct-object",
         "es:encender",
         "en:start",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:technology"
       ],
       "curriculumRole": "reference"
     },
@@ -28249,10 +28241,10 @@
       },
       "collections": [
         "vehicle",
-        "topic:machine",
         "es:arrancar",
         "en:start",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:technology"
       ],
       "curriculumRole": "reference"
     },
@@ -29724,11 +29716,11 @@
         "english": "I caught the seven o'clock bus."
       },
       "collections": [
-        "topic:transport",
         "grammar:verb-direct-object",
         "es:alcanzar",
         "en:catch",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transportation"
       ],
       "curriculumRole": "reference"
     },
@@ -29826,10 +29818,10 @@
         "english": "Can you change a twenty-dollar bill?"
       },
       "collections": [
-        "topic:money",
         "grammar:verb-direct-object",
         "es:cambiar",
-        "en:change"
+        "en:change",
+        "topic:money-business"
       ],
       "curriculumRole": "reference"
     },
@@ -29842,11 +29834,11 @@
         "english": "Keep the change."
       },
       "collections": [
-        "topic:money",
         "pos:noun",
         "es:cambio",
         "en:change",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:money-business"
       ],
       "curriculumRole": "reference"
     },
@@ -29860,11 +29852,11 @@
       },
       "collections": [
         "transbordo",
-        "topic:transport",
         "grammar:fixed-expression",
         "es:hacer",
         "en:change",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transportation"
       ],
       "curriculumRole": "reference"
     },
@@ -30056,10 +30048,10 @@
       },
       "collections": [
         "pos:noun",
-        "topic:law",
         "es:multa",
         "en:fine",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:crime-law"
       ],
       "curriculumRole": "reference"
     },
@@ -30579,10 +30571,10 @@
         "en:new",
         "grammar:question",
         "grammar:fixed-expression",
-        "topic:greeting",
         "es:qué",
         "en:what",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:social-expression"
       ],
       "curriculumRole": "reference"
     },
@@ -30777,11 +30769,11 @@
       "collections": [
         "en:pay",
         "en:for",
-        "topic:money",
         "construction:prepositional-verb",
         "es:proponer",
         "en:offer",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:money-business"
       ],
       "curriculumRole": "reference"
     },
@@ -30982,12 +30974,12 @@
         "english": "I paid the bill."
       },
       "collections": [
-        "topic:money",
         "grammar:verb-direct-object",
         "es:pagar",
         "en:pay",
         "pos:verb",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:money-business"
       ],
       "curriculumRole": "core"
     },
@@ -31001,11 +30993,11 @@
       },
       "collections": [
         "en:somebody",
-        "topic:money",
         "grammar:verb-indirect-object",
         "es:pagar",
         "en:pay",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:money-business"
       ],
       "curriculumRole": "reference"
     },
@@ -31073,11 +31065,11 @@
       "collections": [
         "en:that",
         "register:formal",
-        "topic:law",
         "pos:connector",
         "es:establecer",
         "en:provide",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:crime-law"
       ],
       "curriculumRole": "reference"
     },
@@ -31196,12 +31188,12 @@
         "english": "The law requires us to register."
       },
       "collections": [
-        "topic:law",
         "register:formal",
         "construction:object-plus-complement",
         "construction:verb-full-infinitive",
         "es:exigir",
-        "en:require"
+        "en:require",
+        "topic:crime-law"
       ],
       "curriculumRole": "reference"
     },
@@ -31214,11 +31206,11 @@
         "english": "The store returned my money."
       },
       "collections": [
-        "topic:money",
         "grammar:verb-indirect-object",
         "es:reembolsar",
         "en:return",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:money-business"
       ],
       "curriculumRole": "reference"
     },
@@ -36158,7 +36150,7 @@
         "es:elefante",
         "en:elephant",
         "gender:masculine",
-        "topic:nature-animals"
+        "topic:everyday-objects"
       ],
       "curriculumRole": "reference"
     },
@@ -38736,7 +38728,7 @@
         "es:insecto",
         "en:insect",
         "gender:masculine",
-        "topic:nature-animals"
+        "topic:everyday-objects"
       ],
       "curriculumRole": "reference"
     },
@@ -47331,7 +47323,6 @@
         "english": "January."
       },
       "collections": [
-        "topic:date",
         "topic:time",
         "topic:calendar",
         "pos:noun",
@@ -47350,7 +47341,6 @@
         "english": "February."
       },
       "collections": [
-        "topic:date",
         "topic:time",
         "topic:calendar",
         "pos:noun",
@@ -47369,7 +47359,6 @@
         "english": "March."
       },
       "collections": [
-        "topic:date",
         "topic:time",
         "topic:calendar",
         "pos:noun",
@@ -47388,7 +47377,6 @@
         "english": "April."
       },
       "collections": [
-        "topic:date",
         "topic:time",
         "topic:calendar",
         "pos:noun",
@@ -47407,7 +47395,6 @@
         "english": "May."
       },
       "collections": [
-        "topic:date",
         "topic:time",
         "topic:calendar",
         "pos:noun",
@@ -47427,7 +47414,6 @@
         "english": "June."
       },
       "collections": [
-        "topic:date",
         "topic:time",
         "topic:calendar",
         "pos:noun",
@@ -47446,7 +47432,6 @@
         "english": "July."
       },
       "collections": [
-        "topic:date",
         "topic:time",
         "topic:calendar",
         "pos:noun",
@@ -47465,7 +47450,6 @@
         "english": "August."
       },
       "collections": [
-        "topic:date",
         "topic:time",
         "topic:calendar",
         "pos:noun",
@@ -47484,7 +47468,6 @@
         "english": "September."
       },
       "collections": [
-        "topic:date",
         "topic:time",
         "topic:calendar",
         "pos:noun",
@@ -47503,7 +47486,6 @@
         "english": "October."
       },
       "collections": [
-        "topic:date",
         "topic:time",
         "topic:calendar",
         "pos:noun",
@@ -47522,7 +47504,6 @@
         "english": "November."
       },
       "collections": [
-        "topic:date",
         "topic:time",
         "topic:calendar",
         "pos:noun",
@@ -47541,7 +47522,6 @@
         "english": "December."
       },
       "collections": [
-        "topic:date",
         "topic:time",
         "topic:calendar",
         "pos:noun",
@@ -47560,8 +47540,6 @@
         "english": "The meeting is on Monday."
       },
       "collections": [
-        "topic:days-of-the-week",
-        "topic:date",
         "topic:time",
         "topic:calendar",
         "pos:noun",
@@ -47580,8 +47558,6 @@
         "english": "The meeting is on Monday."
       },
       "collections": [
-        "topic:days-of-the-week",
-        "topic:date",
         "topic:time",
         "topic:calendar",
         "pos:noun",
@@ -47600,8 +47576,6 @@
         "english": "The meeting is on Monday."
       },
       "collections": [
-        "topic:days-of-the-week",
-        "topic:date",
         "topic:time",
         "topic:calendar",
         "pos:noun",
@@ -47620,8 +47594,6 @@
         "english": "The meeting is on Monday."
       },
       "collections": [
-        "topic:days-of-the-week",
-        "topic:date",
         "topic:time",
         "topic:calendar",
         "pos:noun",
@@ -47640,8 +47612,6 @@
         "english": "The meeting is on Monday."
       },
       "collections": [
-        "topic:days-of-the-week",
-        "topic:date",
         "topic:time",
         "topic:calendar",
         "pos:noun",
@@ -47660,8 +47630,6 @@
         "english": "The meeting is on Monday."
       },
       "collections": [
-        "topic:days-of-the-week",
-        "topic:date",
         "topic:time",
         "topic:calendar",
         "pos:noun",
@@ -47680,8 +47648,6 @@
         "english": "The meeting is on Monday."
       },
       "collections": [
-        "topic:days-of-the-week",
-        "topic:date",
         "topic:time",
         "topic:calendar",
         "pos:noun",
@@ -48164,7 +48130,6 @@
       },
       "collections": [
         "topic:everyday-objects",
-        "topic:electricity",
         "pos:noun",
         "es:luz",
         "en:power",
@@ -48517,10 +48482,10 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "es:vigésimo",
-        "en:twentieth"
+        "en:twentieth",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -48534,10 +48499,10 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "es:vigésimo",
-        "en:twenty-first"
+        "en:twenty-first",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -48551,10 +48516,10 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "es:vigésimo",
-        "en:twenty-second"
+        "en:twenty-second",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -48568,10 +48533,10 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "es:vigésimo",
-        "en:twenty-third"
+        "en:twenty-third",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -48585,10 +48550,10 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "es:vigésimo",
-        "en:twenty-fourth"
+        "en:twenty-fourth",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -48602,10 +48567,10 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "es:vigésimo",
-        "en:twenty-fifth"
+        "en:twenty-fifth",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -48619,10 +48584,10 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "es:vigésimo",
-        "en:twenty-eighth"
+        "en:twenty-eighth",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -48636,10 +48601,10 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "es:vigésimo",
-        "en:twenty-ninth"
+        "en:twenty-ninth",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -48653,10 +48618,10 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "es:trigésimo",
-        "en:thirtieth"
+        "en:thirtieth",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -48670,10 +48635,10 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "es:trigésimo",
-        "en:thirty-first"
+        "en:thirty-first",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -48687,10 +48652,10 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "es:centésimo",
-        "en:hundredth"
+        "en:hundredth",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -48704,10 +48669,10 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "es:milésimo",
-        "en:thousandth"
+        "en:thousandth",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -48721,10 +48686,10 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "es:millonésimo",
-        "en:millionth"
+        "en:millionth",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -48738,7 +48703,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "topic:time",
         "grammar:sequence",
@@ -48758,7 +48722,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "topic:time",
         "grammar:sequence",
@@ -48779,7 +48742,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "topic:time",
         "grammar:sequence",
@@ -48799,10 +48761,10 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "es:cuarto",
-        "en:fourth"
+        "en:fourth",
+        "topic:time"
       ],
       "curriculumRole": "supporting"
     },
@@ -48816,10 +48778,10 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "es:quinto",
-        "en:fifth"
+        "en:fifth",
+        "topic:time"
       ],
       "curriculumRole": "supporting"
     },
@@ -48833,10 +48795,10 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "es:sexto",
-        "en:sixth"
+        "en:sixth",
+        "topic:time"
       ],
       "curriculumRole": "supporting"
     },
@@ -48850,10 +48812,10 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "es:séptimo",
-        "en:seventh"
+        "en:seventh",
+        "topic:time"
       ],
       "curriculumRole": "supporting"
     },
@@ -48867,10 +48829,10 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "es:octavo",
-        "en:eighth"
+        "en:eighth",
+        "topic:time"
       ],
       "curriculumRole": "supporting"
     },
@@ -48884,10 +48846,10 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "es:noveno",
-        "en:ninth"
+        "en:ninth",
+        "topic:time"
       ],
       "curriculumRole": "supporting"
     },
@@ -48901,10 +48863,10 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "es:décimo",
-        "en:tenth"
+        "en:tenth",
+        "topic:time"
       ],
       "curriculumRole": "supporting"
     },
@@ -48918,10 +48880,10 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "es:undécimo",
-        "en:eleventh"
+        "en:eleventh",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -48935,10 +48897,10 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "es:duodécimo",
-        "en:twelfth"
+        "en:twelfth",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -48952,10 +48914,10 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "es:decimotercero",
-        "en:thirteenth"
+        "en:thirteenth",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -48969,10 +48931,10 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "es:decimocuarto",
-        "en:fourteenth"
+        "en:fourteenth",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -48986,10 +48948,10 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "es:decimoquinto",
-        "en:fifteenth"
+        "en:fifteenth",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -49003,10 +48965,10 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "es:decimosexto",
-        "en:sixteenth"
+        "en:sixteenth",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -49020,10 +48982,10 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "es:decimoséptimo",
-        "en:seventeenth"
+        "en:seventeenth",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -49037,10 +48999,10 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "es:decimoctavo",
-        "en:eighteenth"
+        "en:eighteenth",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -49054,10 +49016,10 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "topic:date",
         "pos:number",
         "es:decimonoveno",
-        "en:nineteenth"
+        "en:nineteenth",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -49776,7 +49738,6 @@
         "topic:places",
         "topic:location",
         "topic:direction",
-        "topic:location-expression",
         "es:en",
         "en:at",
         "topic:multi-sense",
@@ -49796,7 +49757,6 @@
         "topic:places",
         "topic:location",
         "topic:direction",
-        "topic:location-expression",
         "en:home"
       ],
       "curriculumRole": "reference"
@@ -49813,7 +49773,6 @@
         "topic:places",
         "topic:location",
         "topic:direction",
-        "topic:location-expression",
         "es:de",
         "en:from",
         "topic:multi-sense",
@@ -49834,7 +49793,6 @@
         "topic:location",
         "en:place",
         "topic:direction",
-        "topic:location-expression",
         "es:cerca",
         "grammar:proximal"
       ],
@@ -49853,7 +49811,6 @@
         "topic:location",
         "en:place",
         "topic:direction",
-        "topic:location-expression",
         "es:cerca",
         "en:close"
       ],
@@ -49872,7 +49829,6 @@
         "topic:location",
         "en:place",
         "topic:direction",
-        "topic:location-expression",
         "es:lejos",
         "grammar:distal"
       ],
@@ -54283,7 +54239,6 @@
         "english": "I have to finish it this week."
       },
       "collections": [
-        "topic:date",
         "topic:time",
         "topic:calendar",
         "es:esta",
@@ -54301,7 +54256,6 @@
         "english": "I have to finish it this week."
       },
       "collections": [
-        "topic:date",
         "topic:time",
         "topic:calendar",
         "es:próxima",
@@ -54319,7 +54273,6 @@
         "english": "I have to finish it this week."
       },
       "collections": [
-        "topic:date",
         "topic:time",
         "topic:calendar",
         "es:semana",
@@ -54336,7 +54289,6 @@
         "english": "I am going to travel next month."
       },
       "collections": [
-        "topic:date",
         "topic:time",
         "topic:calendar",
         "es:este",
@@ -54354,7 +54306,6 @@
         "english": "I am going to travel next month."
       },
       "collections": [
-        "topic:date",
         "topic:time",
         "topic:calendar",
         "es:próximo",
@@ -54372,7 +54323,6 @@
         "english": "I am going to travel next month."
       },
       "collections": [
-        "topic:date",
         "topic:time",
         "topic:calendar",
         "es:mes",
@@ -54389,7 +54339,6 @@
         "english": "I started studying English last year."
       },
       "collections": [
-        "topic:date",
         "topic:time",
         "topic:calendar",
         "es:este",
@@ -54407,7 +54356,6 @@
         "english": "I am going to travel next month."
       },
       "collections": [
-        "topic:date",
         "topic:time",
         "topic:calendar",
         "es:próximo",
@@ -54425,7 +54373,6 @@
         "english": "I started studying English last year."
       },
       "collections": [
-        "topic:date",
         "topic:time",
         "topic:calendar",
         "es:año",
@@ -54443,7 +54390,6 @@
       },
       "collections": [
         "topic:time",
-        "topic:clock-time",
         "pos:noun",
         "es:hora",
         "en:time",
@@ -54462,7 +54408,6 @@
       "collections": [
         "topic:time",
         "pos:noun",
-        "topic:time-unit",
         "sound:an-before-vowel-sound",
         "es:hora",
         "en:hour",
@@ -54480,8 +54425,6 @@
       },
       "collections": [
         "topic:everyday-objects",
-        "topic:electricity",
-        "topic:power-outage",
         "es:ir",
         "en:power",
         "topic:multi-sense",
@@ -54499,8 +54442,6 @@
       },
       "collections": [
         "topic:everyday-objects",
-        "topic:electricity",
-        "topic:power-outage",
         "es:ir",
         "en:power",
         "topic:multi-sense",
@@ -54714,7 +54655,6 @@
         "topic:places",
         "topic:location",
         "topic:direction",
-        "topic:location-expression",
         "es:por",
         "en:somewhere",
         "topic:multi-sense"
@@ -59737,7 +59677,6 @@
         "morphology:suffix-ern",
         "morphology:limited",
         "topic:direction",
-        "topic:compound-direction",
         "es:noreste",
         "en:northeast"
       ],
@@ -59758,7 +59697,6 @@
         "morphology:suffix-ern",
         "morphology:limited",
         "topic:direction",
-        "topic:compound-direction",
         "es:noroeste",
         "en:northwest"
       ],
@@ -59779,7 +59717,6 @@
         "morphology:suffix-ern",
         "morphology:limited",
         "topic:direction",
-        "topic:compound-direction",
         "es:sureste",
         "en:southeast"
       ],
@@ -59800,7 +59737,6 @@
         "morphology:suffix-ern",
         "morphology:limited",
         "topic:direction",
-        "topic:compound-direction",
         "es:suroeste",
         "en:southwest"
       ],
@@ -59904,10 +59840,10 @@
         "morphology:adjective-to-superlative",
         "morphology:suffix-most",
         "morphology:limited",
-        "topic:extreme-relative-position",
         "es:ser",
         "en:upper",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:direction"
       ],
       "curriculumRole": "reference"
     },
@@ -59925,10 +59861,10 @@
         "morphology:adjective-to-superlative",
         "morphology:suffix-most",
         "morphology:limited",
-        "topic:extreme-relative-position",
         "es:ser",
         "en:lower",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:direction"
       ],
       "curriculumRole": "reference"
     },
@@ -59946,10 +59882,10 @@
         "morphology:adjective-to-superlative",
         "morphology:suffix-most",
         "morphology:limited",
-        "topic:extreme-relative-position",
         "es:ser",
         "en:inner",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:direction"
       ],
       "curriculumRole": "reference"
     },
@@ -59967,10 +59903,10 @@
         "morphology:adjective-to-superlative",
         "morphology:suffix-most",
         "morphology:limited",
-        "topic:extreme-relative-position",
         "es:ser",
         "en:outer",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:direction"
       ],
       "curriculumRole": "reference"
     },
@@ -64814,7 +64750,6 @@
       },
       "collections": [
         "topic:time",
-        "topic:time-unit",
         "pos:noun",
         "es:segundo",
         "en:second",
@@ -64832,7 +64767,6 @@
       },
       "collections": [
         "topic:time",
-        "topic:time-unit",
         "pos:noun",
         "es:minuto",
         "en:minute",
@@ -64850,7 +64784,6 @@
       },
       "collections": [
         "topic:time",
-        "topic:clock-time",
         "the time",
         "pos:noun",
         "es:hora",
@@ -64887,7 +64820,6 @@
       },
       "collections": [
         "topic:time",
-        "topic:clock-time",
         "grammar:question",
         "what time",
         "es:qué",
@@ -64906,7 +64838,6 @@
       },
       "collections": [
         "topic:time",
-        "topic:clock-time",
         "construction:telling-time",
         "construction:it-is",
         "es:ser",
@@ -64929,7 +64860,6 @@
       },
       "collections": [
         "topic:time",
-        "topic:clock-time",
         "construction:telling-time",
         "construction:it-is",
         "es:ser",
@@ -64952,7 +64882,6 @@
       },
       "collections": [
         "topic:time",
-        "topic:clock-time",
         "es:ser",
         "en:noon",
         "topic:multi-sense"
@@ -64969,7 +64898,6 @@
       },
       "collections": [
         "topic:time",
-        "topic:clock-time",
         "es:ser",
         "en:midnight",
         "topic:multi-sense"
@@ -64986,7 +64914,6 @@
       },
       "collections": [
         "topic:time",
-        "topic:clock-time",
         "at + clock time",
         "construction:map-a-at",
         "en:at",
@@ -65142,7 +65069,6 @@
       "collections": [
         "topic:time",
         "grammar:frequency-adverb",
-        "topic:repeated-period",
         "every day",
         "es:todos",
         "en:every"
@@ -65159,7 +65085,6 @@
       },
       "collections": [
         "topic:time",
-        "topic:continuous-period",
         "all day",
         "es:todo",
         "en:all",
@@ -65178,7 +65103,6 @@
       "collections": [
         "topic:time",
         "grammar:frequency-adverb",
-        "topic:repeated-period",
         "every week",
         "es:todas",
         "en:every"
@@ -65195,7 +65119,6 @@
       },
       "collections": [
         "topic:time",
-        "topic:continuous-period",
         "all week",
         "es:toda",
         "en:all",
@@ -65273,7 +65196,6 @@
       },
       "collections": [
         "topic:time",
-        "topic:time-and-tense",
         "pos:noun",
         "es:presente",
         "en:present",
@@ -65293,7 +65215,6 @@
       },
       "collections": [
         "topic:time",
-        "topic:time-and-tense",
         "pos:noun",
         "es:futuro",
         "en:future",
@@ -65313,7 +65234,6 @@
       },
       "collections": [
         "topic:time",
-        "topic:time-and-tense",
         "past time",
         "es:tiempo",
         "en:past"
@@ -65330,7 +65250,6 @@
       },
       "collections": [
         "topic:time",
-        "topic:time-and-tense",
         "present time",
         "es:tiempo",
         "en:present"
@@ -65347,7 +65266,6 @@
       },
       "collections": [
         "topic:time",
-        "topic:time-and-tense",
         "future time",
         "es:tiempo",
         "en:future"
@@ -65364,7 +65282,6 @@
       },
       "collections": [
         "topic:time",
-        "topic:time-and-tense",
         "grammar term",
         "tense",
         "es:tiempo",
@@ -82036,8 +81953,8 @@
         "conjugation:irregular",
         "es:ser",
         "en:time",
-        "topic:clock-time",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:time"
       ],
       "curriculumRole": "supporting"
     },
