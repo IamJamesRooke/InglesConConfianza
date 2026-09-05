@@ -675,6 +675,29 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       { collection: "sound:reviewed", label: "one-off (no rhyme partner)" },
     ],
   },
+  {
+    slug: "verb-patterns",
+    title: "Verb Patterns",
+    description:
+      "What comes after a verb: a bare infinitive (let him go), a full infinitive (want to go), a gerund (enjoy going), or either. English doesn't pick one by rule — each verb just takes what it takes, so this is memorized per verb, not derived from meaning.",
+    baseCollection: "topic:verb-pattern",
+    facetButtons: [
+      { collection: "construction:followed-by-full-infinitive", label: "verb + to + infinitive (want to go)" },
+      { collection: "construction:followed-by-bare-infinitive", label: "verb + bare infinitive (let him go)" },
+      { collection: "construction:followed-by-gerund", label: "verb + gerund (enjoy going)" },
+      { collection: "construction:allows-full-infinitive-or-gerund", label: "either, same meaning (start to go / start going)" },
+      { collection: "construction:allows-bare-infinitive-or-present-participle", label: "perception verbs (saw him go / saw him going)" },
+      { collection: "construction:allows-full-infinitive-or-bare-infinitive", label: "help + either (help him go / help him to go)" },
+      { collection: "construction:somebody-bare-infinitive", label: "verb + somebody + bare infinitive (make her go)" },
+      { collection: "construction:somebody-doing-something", label: "verb + somebody + gerund (caught him going)" },
+      { collection: "construction:have-something-done", label: "have something done (causative)" },
+      { collection: "construction:get-something-done", label: "get something done (causative)" },
+      { collection: "construction:preposition-plus-gerund", label: "preposition + gerund (before going)" },
+      { collection: "construction:go-ing", label: "go + gerund (go shopping)" },
+      { collection: "construction:be-present-participle", label: "progressive (to be going)" },
+      { collection: "construction:auxiliary-do", label: "auxiliary do (did they go?)" },
+    ],
+  },
 ];
 
 export function findCurriculumTopic(slug: string): CurriculumTopic | undefined {

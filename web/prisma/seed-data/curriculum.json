@@ -34,7 +34,8 @@
         "en:want",
         "pos:verb",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -546,7 +547,8 @@
         "construction:followed-by-full-infinitive",
         "es:necesitar",
         "en:need",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -566,7 +568,8 @@
         "en:need",
         "grammar:object-control",
         "pos:verb",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -602,7 +605,8 @@
         "construction:followed-by-full-infinitive",
         "es:querer",
         "en:wanna",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -619,7 +623,8 @@
         "construction:followed-by-full-infinitive",
         "es:necesitar",
         "en:needa",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -2129,14 +2134,15 @@
       },
       "collections": [
         "construction:object-plus-complement",
-        "construction:verb-plus-infinitive",
+        "construction:followed-by-full-infinitive",
         "en:to",
         "es:decir",
         "en:tell",
         "grammar:object-control",
         "pos:verb",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -2682,14 +2688,15 @@
       },
       "collections": [
         "construction:object-plus-complement",
-        "construction:verb-plus-infinitive",
+        "construction:followed-by-full-infinitive",
         "en:to",
         "construction:map-para-to",
         "es:dar",
         "en:allow",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -2726,7 +2733,7 @@
         "english": "Give Ana time to answer."
       },
       "collections": [
-        "construction:verb-plus-infinitive",
+        "construction:followed-by-full-infinitive",
         "en:to",
         "construction:map-para-to",
         "topic:time",
@@ -2734,7 +2741,8 @@
         "en:give",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -3117,12 +3125,13 @@
         "es:dar",
         "embarrassed",
         "dialect:colombian-spanish",
-        "construction:verb-plus-infinitive",
+        "construction:followed-by-full-infinitive",
         "en:to",
         "es:me",
         "en:i'm",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -3422,13 +3431,14 @@
       },
       "collections": [
         "construction:object-plus-complement",
-        "construction:verb-plus-infinitive",
+        "construction:followed-by-full-infinitive",
         "en:to",
         "pos:verb",
         "es:dar",
         "en:authorize",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -3527,14 +3537,15 @@
       },
       "collections": [
         "construction:object-plus-complement",
-        "construction:verb-plus-infinitive",
+        "construction:followed-by-full-infinitive",
         "en:to",
         "es:pedir",
         "en:ask",
         "grammar:object-control",
         "pos:verb",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -3605,7 +3616,7 @@
       "collections": [
         "construction:prepositional-verb",
         "en:for",
-        "construction:verb-plus-infinitive",
+        "construction:followed-by-full-infinitive",
         "en:to",
         "construction:map-para-to",
         "grammar:permission",
@@ -3615,7 +3626,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -3817,7 +3829,7 @@
         "english": "I ordered lunch to go."
       },
       "collections": [
-        "construction:verb-plus-infinitive",
+        "construction:followed-by-full-infinitive",
         "en:to",
         "construction:to-go",
         "takeout",
@@ -3825,7 +3837,8 @@
         "en:order",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -4495,14 +4508,15 @@
         "english": "She began to read."
       },
       "collections": [
-        "construction:verb-plus-infinitive",
+        "construction:followed-by-full-infinitive",
         "en:to",
         "construction:map-a-to",
         "es:poner",
         "en:begin",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -6305,7 +6319,8 @@
         "es:oír",
         "en:hear",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -6410,11 +6425,12 @@
         "english": "I hope to see her soon."
       },
       "collections": [
-        "construction:full-infinitive",
+        "construction:followed-by-full-infinitive",
         "es:esperar",
         "en:hope",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -6650,7 +6666,8 @@
         "sense:estar-progresivo",
         "conjugation:infinitive",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -7852,7 +7869,8 @@
         "form:present-participle",
         "es:gustar",
         "en:likes",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -7866,7 +7884,6 @@
       },
       "collections": [
         "grammar:handle-verb",
-        "construction:full-infinitive",
         "construction:verb-forms",
         "en:like",
         "construction:allows-full-infinitive-or-gerund",
@@ -7874,7 +7891,8 @@
         "form:full-infinitive",
         "es:gustar",
         "en:likes",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -7888,7 +7906,6 @@
       },
       "collections": [
         "grammar:polite-request",
-        "construction:full-infinitive",
         "construction:verb-forms",
         "grammar:would-like",
         "construction:followed-by-full-infinitive",
@@ -7896,7 +7913,8 @@
         "es:gustar",
         "en:like",
         "pos:verb",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -7944,9 +7962,10 @@
       },
       "collections": [
         "es:gustar",
-        "construction:full-infinitive",
+        "construction:followed-by-full-infinitive",
         "es:encantar",
-        "en:love"
+        "en:love",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -8489,7 +8508,8 @@
         "es:hacer",
         "en:repaired",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -9398,7 +9418,8 @@
         "conjugation:infinitive",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -9773,11 +9794,12 @@
         "english": "She managed to finish on time."
       },
       "collections": [
-        "construction:full-infinitive",
+        "construction:followed-by-full-infinitive",
         "construction:map-a-to",
         "es:llegar",
         "en:manage",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -9809,12 +9831,13 @@
       "collections": [
         "grammar:phrasal-verb",
         "particle:on",
-        "construction:full-infinitive",
+        "construction:followed-by-full-infinitive",
         "es:llegar",
         "en:go",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -10224,7 +10247,8 @@
         "es:mandar",
         "en:have",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -10537,11 +10561,12 @@
         "english": "She seems to understand."
       },
       "collections": [
-        "construction:full-infinitive",
+        "construction:followed-by-full-infinitive",
         "es:parecer",
         "en:seem",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -10592,12 +10617,13 @@
         "english": "The problem appears to be serious."
       },
       "collections": [
-        "construction:full-infinitive",
+        "construction:followed-by-full-infinitive",
         "register:formal",
         "es:parecer",
         "en:appear",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -11213,11 +11239,12 @@
         "english": "I plan to travel in December."
       },
       "collections": [
-        "construction:full-infinitive",
+        "construction:followed-by-full-infinitive",
         "es:pensar",
         "en:plan",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -11230,11 +11257,12 @@
         "english": "I intend to finish today."
       },
       "collections": [
-        "construction:full-infinitive",
+        "construction:followed-by-full-infinitive",
         "es:pensar",
         "en:intend",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -11843,7 +11871,6 @@
       "collections": [
         "es:can",
         "grammar:ability",
-        "construction:bare-infinitive",
         "grammar:modal",
         "construction:verb-forms",
         "construction:followed-by-bare-infinitive",
@@ -11851,7 +11878,8 @@
         "es:poder",
         "en:can",
         "pos:verb",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -11866,14 +11894,14 @@
       "collections": [
         "es:can",
         "grammar:permission",
-        "construction:bare-infinitive",
         "grammar:modal",
         "construction:verb-forms",
         "construction:followed-by-bare-infinitive",
         "form:bare-infinitive",
         "es:poder",
         "en:can",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -11896,7 +11924,8 @@
         "es:poder",
         "en:can't",
         "pos:verb",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -11918,7 +11947,8 @@
         "construction:followed-by-bare-infinitive",
         "es:poder",
         "en:cannot",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -11932,12 +11962,13 @@
       },
       "collections": [
         "grammar:ability",
-        "construction:full-infinitive",
+        "construction:followed-by-full-infinitive",
         "es:poder",
         "en:able",
         "pos:verb",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -11952,12 +11983,13 @@
       "collections": [
         "grammar:permission",
         "grammar:be-allowed-to",
-        "construction:full-infinitive",
+        "construction:followed-by-full-infinitive",
         "form:past-participle",
         "es:poder",
         "en:allowed",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -12100,10 +12132,11 @@
         "en:manage",
         "grammar:ability",
         "form:preterite",
-        "construction:full-infinitive",
+        "construction:followed-by-full-infinitive",
         "es:poder",
         "en:managed",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -12430,7 +12463,8 @@
         "en:you",
         "pos:verb",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -13449,14 +13483,15 @@
         "construction:prepositional-verb",
         "en:to",
         "construction:map-en-to",
-        "construction:full-infinitive",
+        "construction:followed-by-full-infinitive",
         "es:quedar",
         "en:agree",
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -14562,14 +14597,15 @@
         "english": "I managed to finish on time."
       },
       "collections": [
-        "construction:verb-plus-infinitive",
+        "construction:followed-by-full-infinitive",
         "en:to",
         "construction:map-a-to",
         "dialect:colombian-spanish",
         "es:alcanzar",
         "en:manage",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -14583,14 +14619,15 @@
       },
       "collections": [
         "topic:time",
-        "construction:verb-plus-infinitive",
+        "construction:followed-by-full-infinitive",
         "en:to",
         "construction:map-a-to",
         "dialect:colombian-spanish",
         "es:alcanzar",
         "en:time",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -15103,14 +15140,15 @@
         "english": "I want to get to know her."
       },
       "collections": [
-        "construction:verb-plus-infinitive",
+        "construction:followed-by-full-infinitive",
         "en:to",
         "grammar:human-object",
         "es:conocer",
         "en:get",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -15428,12 +15466,13 @@
         "english": "We managed to finish on time."
       },
       "collections": [
-        "construction:verb-plus-infinitive",
+        "construction:followed-by-full-infinitive",
         "en:to",
         "es:conseguir",
         "en:manage",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -15447,11 +15486,12 @@
       },
       "collections": [
         "grammar:negative",
-        "construction:verb-plus-infinitive",
+        "construction:followed-by-full-infinitive",
         "en:to",
         "es:conseguir",
         "en:seem",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -15465,12 +15505,13 @@
       },
       "collections": [
         "grammar:negative",
-        "construction:verb-plus-infinitive",
+        "construction:followed-by-full-infinitive",
         "en:to",
         "es:conseguir",
         "en:fail",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -15532,7 +15573,8 @@
         "en:get",
         "grammar:object-control",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -15552,7 +15594,8 @@
         "es:conseguir",
         "en:get",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -16001,13 +16044,14 @@
         "english": "I struggle to understand it."
       },
       "collections": [
-        "construction:verb-plus-infinitive",
+        "construction:followed-by-full-infinitive",
         "en:to",
         "grammar:perspective-change",
         "es:costar",
         "en:struggle",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -16577,14 +16621,14 @@
       },
       "collections": [
         "grammar:modal",
-        "construction:bare-infinitive",
         "construction:verb-forms",
         "construction:followed-by-bare-infinitive",
         "form:bare-infinitive",
         "es:deber",
         "en:must",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -16598,12 +16642,13 @@
       },
       "collections": [
         "grammar:modal",
-        "construction:full-infinitive",
+        "construction:followed-by-full-infinitive",
         "es:deber",
         "en:to",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -16618,7 +16663,6 @@
       "collections": [
         "es:deber",
         "grammar:modal",
-        "construction:bare-infinitive",
         "grammar:advice",
         "grammar:conditional",
         "construction:verb-forms",
@@ -16626,7 +16670,8 @@
         "form:bare-infinitive",
         "en:should",
         "pos:verb",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -16640,13 +16685,14 @@
       },
       "collections": [
         "es:deber",
-        "construction:verb-plus-infinitive",
+        "construction:followed-by-full-infinitive",
         "en:to",
         "grammar:advice",
         "grammar:conditional",
         "en:ought",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -16661,11 +16707,12 @@
       "collections": [
         "grammar:supposed-to",
         "en:expectation",
-        "construction:full-infinitive",
+        "construction:followed-by-full-infinitive",
         "es:deber",
         "en:supposed",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -16680,12 +16727,13 @@
       "collections": [
         "expected to",
         "en:expectation",
-        "construction:full-infinitive",
+        "construction:followed-by-full-infinitive",
         "register:formal",
         "es:deber",
         "en:expected",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -17089,7 +17137,6 @@
         "english": "Let Ana come in."
       },
       "collections": [
-        "construction:bare-infinitive",
         "grammar:permission",
         "construction:object-plus-complement",
         "construction:verb-forms",
@@ -17102,7 +17149,8 @@
         "grammar:object-control",
         "pos:verb",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -17115,7 +17163,7 @@
         "english": "She allowed Ana to enter."
       },
       "collections": [
-        "construction:full-infinitive",
+        "construction:followed-by-full-infinitive",
         "grammar:permission",
         "construction:object-plus-complement",
         "en:to",
@@ -17123,7 +17171,8 @@
         "en:allow",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -17137,13 +17186,14 @@
       },
       "collections": [
         "es:dejar",
-        "construction:bare-infinitive",
+        "construction:followed-by-bare-infinitive",
         "grammar:permission",
         "grammar:first-person",
         "es:déjame",
         "en:let",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -17160,11 +17210,12 @@
         "en:let",
         "register:spoken",
         "register:informal",
-        "construction:bare-infinitive",
+        "construction:followed-by-bare-infinitive",
         "es:déjame",
         "en:lemme",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -17235,14 +17286,15 @@
         "english": "She let me use her car."
       },
       "collections": [
-        "construction:bare-infinitive",
+        "construction:followed-by-bare-infinitive",
         "en:use",
         "grammar:human-object",
         "es:dejar",
         "en:let",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -17493,13 +17545,14 @@
       "collections": [
         "grammar:phrasal-verb",
         "particle:out",
-        "construction:bare-infinitive",
+        "construction:followed-by-bare-infinitive",
         "es:dejar",
         "en:let",
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -18057,10 +18110,11 @@
         "english": "I remembered to call Ana."
       },
       "collections": [
-        "construction:full-infinitive",
+        "construction:followed-by-full-infinitive",
         "es:recordar",
         "en:remember",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -18457,12 +18511,13 @@
         "english": "I know how to drive."
       },
       "collections": [
-        "construction:full-infinitive",
+        "construction:followed-by-full-infinitive",
         "es:saber",
         "en:know",
         "pos:verb",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -19182,7 +19237,8 @@
         "en:keep",
         "pos:verb",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -20125,7 +20181,7 @@
         "construction:prepositional-verb",
         "en:of",
         "construction:map-de-to",
-        "construction:full-infinitive",
+        "construction:followed-by-full-infinitive",
         "es:ser",
         "en:able",
         "topic:multi-sense",
@@ -20133,7 +20189,8 @@
         "pos:verb",
         "particle:to",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -20652,10 +20709,11 @@
         "english": "This problem tends to occur."
       },
       "collections": [
-        "construction:full-infinitive",
+        "construction:followed-by-full-infinitive",
         "es:soler",
         "en:tend",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -20901,7 +20959,6 @@
         "english": "I have to leave."
       },
       "collections": [
-        "construction:full-infinitive",
         "construction:verb-forms",
         "grammar:modal",
         "construction:followed-by-full-infinitive",
@@ -20914,7 +20971,8 @@
         "sense:tener-obligacion",
         "conjugation:infinitive",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -21359,13 +21417,14 @@
         "english": "I got a chance to travel."
       },
       "collections": [
-        "construction:full-infinitive",
+        "construction:followed-by-full-infinitive",
         "construction:map-de-to",
         "es:tener",
         "en:get",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -21388,7 +21447,8 @@
         "es:tener",
         "en:allowed",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -21477,7 +21537,8 @@
         "en:keep",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -21559,10 +21620,11 @@
         "english": "I have to work on Saturday."
       },
       "collections": [
-        "construction:full-infinitive",
+        "construction:followed-by-full-infinitive",
         "es:tocar",
         "en:to",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -22404,10 +22466,11 @@
       "collections": [
         "es:valer",
         "grammar:modal",
-        "construction:full-infinitive",
+        "construction:followed-by-full-infinitive",
         "es:más",
         "en:better",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -22658,13 +22721,14 @@
         "english": "I came to help."
       },
       "collections": [
-        "construction:full-infinitive",
+        "construction:followed-by-full-infinitive",
         "construction:map-a-to",
         "es:venir",
         "en:come",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -22926,7 +22990,8 @@
         "en:see",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -22951,7 +23016,8 @@
         "en:see",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -23356,11 +23422,11 @@
         "english": "She called again."
       },
       "collections": [
-        "construction:verb-full-infinitive",
         "construction:followed-by-full-infinitive",
         "es:volver",
         "en:again",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -23572,11 +23638,12 @@
         "english": "We agreed to meet on Friday."
       },
       "collections": [
-        "construction:infinitive-construction",
+        "construction:followed-by-full-infinitive",
         "es:acordar",
         "en:agree",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -24509,10 +24576,11 @@
         "english": "The committee decided to change the rules."
       },
       "collections": [
-        "construction:infinitive-construction",
+        "construction:followed-by-full-infinitive",
         "es:acordar",
         "en:decide",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -24736,11 +24804,12 @@
       },
       "collections": [
         "stop to",
-        "construction:infinitive-construction",
+        "construction:followed-by-full-infinitive",
         "es:detener",
         "en:stop",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -26012,10 +26081,11 @@
       },
       "collections": [
         "es:bastante",
-        "construction:full-infinitive",
+        "construction:followed-by-full-infinitive",
         "es:bastar",
         "en:all",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -30135,12 +30205,13 @@
       },
       "collections": [
         "grammar:permission",
-        "construction:verb-full-infinitive",
+        "construction:followed-by-full-infinitive",
         "construction:object-plus-complement",
         "es:permitir",
         "en:allow",
         "grammar:object-control",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -30407,12 +30478,13 @@
       "collections": [
         "en:always",
         "grammar:negative",
-        "construction:verb-gerund",
+        "construction:followed-by-gerund",
         "es:dejar",
         "en:keep",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -30501,11 +30573,11 @@
       },
       "collections": [
         "en:and",
-        "construction:verb-full-infinitive",
         "construction:followed-by-full-infinitive",
         "es:intentar",
         "en:try",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -31370,11 +31442,12 @@
       },
       "collections": [
         "en:somebody",
-        "construction:verb-gerund",
+        "construction:followed-by-gerund",
         "es:sorprender",
         "en:catch",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -32368,11 +32441,11 @@
       },
       "collections": [
         "grammar:reflexive",
-        "construction:verb-full-infinitive",
         "construction:followed-by-full-infinitive",
         "es:ofrecer",
         "en:offer",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -32823,11 +32896,12 @@
       "collections": [
         "register:formal",
         "construction:object-plus-complement",
-        "construction:verb-full-infinitive",
+        "construction:followed-by-full-infinitive",
         "es:exigir",
         "en:require",
         "topic:crime-law",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -63383,7 +63457,8 @@
         "form:full-infinitive",
         "es:decidir",
         "en:decide",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -63401,7 +63476,8 @@
         "form:full-infinitive",
         "es:elegir",
         "en:choose",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -63419,7 +63495,8 @@
         "form:full-infinitive",
         "es:intentar",
         "en:try",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -63437,7 +63514,8 @@
         "form:full-infinitive",
         "es:preferir",
         "en:prefer",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -63457,7 +63535,8 @@
         "es:empezar",
         "en:start",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -63476,7 +63555,8 @@
         "form:full-infinitive",
         "es:comenzar",
         "en:begin",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -63495,7 +63575,8 @@
         "form:full-infinitive",
         "es:continuar",
         "en:continue",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -63515,7 +63596,8 @@
         "form:full-infinitive",
         "es:gustar",
         "en:like",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -63540,7 +63622,8 @@
         "conjugation:deferred",
         "conjugation:infinitive",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -63561,7 +63644,8 @@
         "es:para",
         "en:to",
         "pos:preposition",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -63580,7 +63664,8 @@
         "construction:followed-by-full-infinitive",
         "form:full-infinitive",
         "es:encantar",
-        "en:loves"
+        "en:loves",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -63599,7 +63684,8 @@
         "construction:followed-by-gerund",
         "form:present-participle",
         "es:encantar",
-        "en:loves"
+        "en:loves",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -63618,7 +63704,8 @@
         "form:full-infinitive",
         "es:odiar",
         "en:hate",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -63637,7 +63724,8 @@
         "form:present-participle",
         "es:odiar",
         "en:hate",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -63657,7 +63745,8 @@
         "es:empezar",
         "en:start",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -63676,7 +63765,8 @@
         "form:present-participle",
         "es:comenzar",
         "en:begin",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -63695,7 +63785,8 @@
         "form:present-participle",
         "es:continuar",
         "en:continue",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -63716,7 +63807,8 @@
         "es:poder",
         "en:could",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -63737,7 +63829,8 @@
         "es:poder",
         "en:could",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -63757,7 +63850,8 @@
         "es:ser",
         "en:may",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -63776,7 +63870,8 @@
         "form:bare-infinitive",
         "es:poder",
         "en:might",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -63795,7 +63890,8 @@
         "grammar:suggestion",
         "construction:followed-by-bare-infinitive",
         "form:bare-infinitive",
-        "en:we"
+        "en:we",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -63814,7 +63910,8 @@
         "form:bare-infinitive",
         "es:futuro",
         "en:will",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -63835,7 +63932,8 @@
         "es:condicional",
         "en:would",
         "pos:verb",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -63856,7 +63954,8 @@
         "es:obligar",
         "en:make",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -63879,7 +63978,8 @@
         "en:have",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -63899,7 +63999,8 @@
         "form:bare-infinitive",
         "es:ayudar",
         "en:help",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -63920,7 +64021,8 @@
         "en:come",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -63944,7 +64046,8 @@
         "conjugation:infinitive",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -63964,7 +64067,8 @@
         "es:ayudar",
         "en:help",
         "grammar:object-control",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -64135,7 +64239,8 @@
         "form:bare-infinitive",
         "es:haces",
         "en:you",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -64153,7 +64258,8 @@
         "construction:followed-by-bare-infinitive",
         "form:bare-infinitive",
         "es:ella",
-        "en:she"
+        "en:she",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -64171,7 +64277,8 @@
         "construction:followed-by-bare-infinitive",
         "form:bare-infinitive",
         "es:ellos",
-        "en:they"
+        "en:they",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -64188,7 +64295,8 @@
         "construction:auxiliary-do",
         "construction:followed-by-bare-infinitive",
         "form:bare-infinitive",
-        "es:hago"
+        "es:hago",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -64206,7 +64314,8 @@
         "construction:followed-by-bare-infinitive",
         "form:bare-infinitive",
         "es:hicieron",
-        "en:they"
+        "en:they",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -64223,7 +64332,8 @@
         "construction:auxiliary-do",
         "construction:followed-by-bare-infinitive",
         "form:bare-infinitive",
-        "es:sí"
+        "es:sí",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -64245,7 +64355,8 @@
         "es:oír",
         "en:hear",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -64266,7 +64377,8 @@
         "form:bare-infinitive",
         "es:observar",
         "en:watch",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -64287,7 +64399,8 @@
         "construction:followed-by-gerund",
         "es:observar",
         "en:watch",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -64310,7 +64423,8 @@
         "en:feel",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -64333,7 +64447,8 @@
         "en:feel",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -64354,7 +64469,8 @@
         "form:bare-infinitive",
         "es:notar",
         "en:notice",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -64375,7 +64491,8 @@
         "construction:followed-by-gerund",
         "es:notar",
         "en:notice",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -64398,7 +64515,8 @@
         "en:seen",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -64412,12 +64530,12 @@
       },
       "collections": [
         "construction:verb-forms",
-        "construction:preposition-gerund",
         "construction:preposition-plus-gerund",
         "construction:followed-by-gerund",
         "form:present-participle",
         "es:antes",
-        "en:before"
+        "en:before",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -64431,13 +64549,13 @@
       },
       "collections": [
         "construction:verb-forms",
-        "construction:preposition-gerund",
         "construction:preposition-plus-gerund",
         "construction:followed-by-gerund",
         "form:present-participle",
         "es:después",
         "en:after",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -64451,14 +64569,14 @@
       },
       "collections": [
         "construction:verb-forms",
-        "construction:preposition-gerund",
         "construction:preposition-plus-gerund",
         "construction:followed-by-gerund",
         "form:present-participle",
         "es:por",
         "en:for",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -64472,12 +64590,12 @@
       },
       "collections": [
         "construction:verb-forms",
-        "construction:preposition-gerund",
         "construction:preposition-plus-gerund",
         "construction:followed-by-gerund",
         "form:present-participle",
         "es:sin",
-        "en:without"
+        "en:without",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -64491,14 +64609,14 @@
       },
       "collections": [
         "construction:verb-forms",
-        "construction:preposition-gerund",
         "construction:preposition-plus-gerund",
         "instead of",
         "construction:followed-by-gerund",
         "form:present-participle",
         "es:en",
         "en:instead",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -64512,7 +64630,6 @@
       },
       "collections": [
         "construction:verb-forms",
-        "construction:preposition-gerund",
         "construction:preposition-plus-gerund",
         "particle:forward",
         "en:to",
@@ -64524,7 +64641,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "grammar:phrasal-verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -64542,7 +64660,8 @@
         "form:present-participle",
         "es:evitar",
         "en:avoid",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -64560,7 +64679,8 @@
         "form:present-participle",
         "es:disfrutar",
         "en:enjoy",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -64578,7 +64698,8 @@
         "form:present-participle",
         "es:recomendar",
         "en:recommend",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -64596,7 +64717,8 @@
         "form:present-participle",
         "es:sugerir",
         "en:suggest",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -64615,7 +64737,8 @@
         "es:terminar",
         "en:finish",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -64659,7 +64782,8 @@
         "conjugation:deferred",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -64683,7 +64807,8 @@
         "conjugation:deferred",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -64822,7 +64947,8 @@
         "es:mandar",
         "en:get",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -64843,7 +64969,8 @@
         "en:have",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -66363,7 +66490,8 @@
         "es:tener",
         "en:permitted",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -67389,7 +67517,8 @@
         "construction:followed-by-bare-infinitive",
         "en:you",
         "pos:verb",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -67407,7 +67536,8 @@
         "form:third-person",
         "construction:followed-by-bare-infinitive",
         "en:does",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -67425,7 +67555,8 @@
         "form:past",
         "construction:followed-by-bare-infinitive",
         "en:did",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -67445,7 +67576,8 @@
         "grammar:contraction",
         "don't",
         "construction:followed-by-bare-infinitive",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -67465,7 +67597,8 @@
         "grammar:contraction",
         "construction:followed-by-bare-infinitive",
         "en:doesn't",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -67485,7 +67618,8 @@
         "grammar:contraction",
         "construction:followed-by-bare-infinitive",
         "en:didn't",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -67502,7 +67636,8 @@
         "grammar:emphatic-affirmative",
         "en:present",
         "sound:stressed-do",
-        "es:sí"
+        "es:sí",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -67520,7 +67655,8 @@
         "form:past",
         "sound:stressed-did",
         "es:sí",
-        "en:did"
+        "en:did",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -67541,7 +67677,8 @@
         "en:want",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -67562,7 +67699,8 @@
         "en:want",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -67688,7 +67826,8 @@
         "conjugation:imperfect",
         "conjugation:3sg",
         "conjugation:irregular",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -67895,7 +68034,8 @@
         "conjugation:irregular",
         "es:tener",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -67916,7 +68056,8 @@
         "en:to",
         "pos:verb",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -67937,7 +68078,8 @@
         "es:tener",
         "en:to",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -67960,7 +68102,8 @@
         "en:to",
         "pos:verb",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -67980,7 +68123,8 @@
         "es:tener",
         "en:gotta",
         "sense:tener-obligacion",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -68369,7 +68513,8 @@
         "conjugation:2sg",
         "conjugation:irregular",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -68390,7 +68535,8 @@
         "en:is",
         "pos:verb",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -68410,7 +68556,8 @@
         "construction:followed-by-full-infinitive",
         "es:ir",
         "en:were",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -68430,7 +68577,8 @@
         "construction:followed-by-full-infinitive",
         "es:ir",
         "en:was",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -68450,7 +68598,8 @@
         "construction:followed-by-full-infinitive",
         "es:ir",
         "en:i/he/she",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -68469,7 +68618,8 @@
         "en:were",
         "construction:followed-by-full-infinitive",
         "es:íbamos",
-        "en:we"
+        "en:we",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -68488,7 +68638,8 @@
         "en:were",
         "construction:followed-by-full-infinitive",
         "es:iban",
-        "en:they"
+        "en:they",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -68508,7 +68659,8 @@
         "es:puedes",
         "en:you",
         "pos:verb",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -68529,7 +68681,8 @@
         "es:poder",
         "en:couldn't",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -68550,7 +68703,8 @@
         "es:deber",
         "en:you",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -68572,7 +68726,8 @@
         "es:estar",
         "en:not",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -68594,7 +68749,8 @@
         "es:estar",
         "en:mustn't",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -68615,7 +68771,8 @@
         "es:deber",
         "en:you",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -68634,7 +68791,8 @@
         "construction:followed-by-bare-infinitive",
         "en:you",
         "pos:verb",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -68653,7 +68811,8 @@
         "grammar:contraction",
         "construction:followed-by-bare-infinitive",
         "en:won't",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -68673,7 +68832,8 @@
         "construction:followed-by-bare-infinitive",
         "en:you",
         "pos:verb",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -68693,7 +68853,8 @@
         "grammar:contraction",
         "construction:followed-by-bare-infinitive",
         "en:wouldn't",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -71980,7 +72141,7 @@
         "pos:verb",
         "topic:verb-form"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "m2led45ghj",
@@ -75425,7 +75586,7 @@
         "sound:past-irregular-rose-arose",
         "topic:verb-form"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "d9oxjrwfue",
@@ -75447,7 +75608,7 @@
         "sound:past-participle-irregular-risen-arisen",
         "topic:verb-form"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "oiferzi4zi",
@@ -79915,7 +80076,7 @@
         "pos:verb",
         "topic:verb-form"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "necesitar-hacer-algo",
@@ -79928,7 +80089,6 @@
       "collections": [
         "es:necesitar",
         "en:need",
-        "construction:full-infinitive",
         "construction:followed-by-full-infinitive"
       ],
       "curriculumRole": "trash"
@@ -84276,7 +84436,8 @@
         "grammar:progressive",
         "form:present-participle",
         "construction:be-present-participle",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },

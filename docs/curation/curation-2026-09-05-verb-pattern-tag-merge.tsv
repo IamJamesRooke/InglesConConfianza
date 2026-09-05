@@ -1,0 +1,7 @@
+MERGE	construction:full-infinitive	construction:followed-by-full-infinitive	Fragmented duplicate tag for the same "verb + to + infinitive" pattern
+MERGE	construction:verb-plus-infinitive	construction:followed-by-full-infinitive	Fragmented duplicate tag for the same "verb + to + infinitive" pattern
+MERGE	construction:verb-full-infinitive	construction:followed-by-full-infinitive	Fragmented duplicate tag for the same "verb + to + infinitive" pattern
+MERGE	construction:infinitive-construction	construction:followed-by-full-infinitive	Fragmented duplicate tag for the same "verb + to + infinitive" pattern
+MERGE	construction:bare-infinitive	construction:followed-by-bare-infinitive	Fragmented duplicate tag for the same "verb + bare infinitive" pattern
+MERGE	construction:verb-gerund	construction:followed-by-gerund	Fragmented duplicate tag for the same "verb + gerund" pattern
+MERGE	construction:preposition-gerund	construction:preposition-plus-gerund	Exact duplicate tag (100% row overlap) for "preposition + gerund"
