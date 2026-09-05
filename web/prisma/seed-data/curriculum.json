@@ -20733,7 +20733,8 @@
       "collections": [
         "grammar:meaning-changing-preterite",
         "es:soler",
-        "en:used"
+        "en:used",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -27593,7 +27594,8 @@
         "grammar:comparison",
         "grammar:correlative",
         "es:entre",
-        "en:more"
+        "en:more",
+        "pos:connector"
       ],
       "curriculumRole": "reference"
     },
@@ -27710,7 +27712,8 @@
       },
       "collections": [
         "es:igual",
-        "en:just"
+        "en:just",
+        "pos:adverb"
       ],
       "curriculumRole": "reference"
     },
@@ -28183,7 +28186,8 @@
         "grammar:quantifier",
         "grammar:comparison",
         "es:más",
-        "en:more"
+        "en:more",
+        "pos:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -28246,7 +28250,8 @@
       },
       "collections": [
         "es:medio",
-        "en:somewhat"
+        "en:somewhat",
+        "pos:adverb"
       ],
       "curriculumRole": "reference"
     },
@@ -28260,7 +28265,8 @@
       },
       "collections": [
         "es:menos",
-        "en:fewer"
+        "en:fewer",
+        "pos:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -28277,7 +28283,8 @@
         "grammar:exception",
         "grammar:quantifier",
         "es:todos",
-        "en:everyone"
+        "en:everyone",
+        "pos:preposition"
       ],
       "curriculumRole": "reference"
     },
@@ -28419,7 +28426,8 @@
         "grammar:negative",
         "grammar:correlative",
         "es:ni",
-        "en:neither"
+        "en:neither",
+        "pos:connector"
       ],
       "curriculumRole": "reference"
     },
@@ -28435,7 +28443,8 @@
         "grammar:negative",
         "grammar:correlative",
         "es:ni",
-        "en:neither"
+        "en:neither",
+        "pos:connector"
       ],
       "curriculumRole": "reference"
     },
@@ -28533,7 +28542,9 @@
         "en:never",
         "en:ever",
         "es:nunca",
-        "en:haven't"
+        "en:haven't",
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -67463,7 +67474,8 @@
         "grammar:present-wish",
         "grammar:past-form-for-distance",
         "grammar:hypothetical",
-        "es:ojalá"
+        "es:ojalá",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -67500,7 +67512,8 @@
         "past regret",
         "form:past-perfect",
         "form:past-participle",
-        "es:ojalá"
+        "es:ojalá",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -67516,7 +67529,8 @@
         "grammar:wish",
         "desired change",
         "wish + would",
-        "es:ojalá"
+        "es:ojalá",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -69645,7 +69659,8 @@
         "literal pile",
         "grammar:noun-phrase",
         "es:montón",
-        "en:pile"
+        "en:pile",
+        "pos:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -69737,7 +69752,8 @@
         "general plural",
         "grammar:countable",
         "es:gustar",
-        "en:likes"
+        "en:likes",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
