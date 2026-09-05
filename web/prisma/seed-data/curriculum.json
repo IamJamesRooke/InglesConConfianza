@@ -8055,7 +8055,8 @@
         "grammar:fixed-expression",
         "es:con",
         "en:gladly",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "grammar:manner"
       ],
       "curriculumRole": "reference"
     },
@@ -10829,7 +10830,8 @@
         "pos:adverb",
         "es:parecer",
         "en:apparently",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "adv:possibility"
       ],
       "curriculumRole": "reference"
     },
@@ -16691,7 +16693,8 @@
         "cognate:mente-to-ly",
         "es:increíblemente",
         "en:incredibly",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "grammar:manner"
       ],
       "curriculumRole": "reference"
     },
@@ -20599,7 +20602,8 @@
         "grammar:fixed-expression",
         "pos:adverb",
         "en:anyway",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "adv:possibility"
       ],
       "curriculumRole": "reference"
     },
@@ -20837,7 +20841,8 @@
       "collections": [
         "pos:adverb",
         "es:soler",
-        "en:usually"
+        "en:usually",
+        "adv:habitual"
       ],
       "curriculumRole": "supporting"
     },
@@ -20902,7 +20907,8 @@
       "collections": [
         "pos:adverb",
         "es:soler",
-        "en:often"
+        "en:often",
+        "adv:habitual"
       ],
       "curriculumRole": "reference"
     },
@@ -20918,7 +20924,8 @@
         "grammar:negative",
         "pos:adverb",
         "es:soler",
-        "en:usually"
+        "en:usually",
+        "adv:habitual"
       ],
       "curriculumRole": "reference"
     },
@@ -23494,7 +23501,8 @@
         "cognate:mente-to-ly",
         "es:visualmente",
         "en:visually",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "grammar:manner"
       ],
       "curriculumRole": "reference"
     },
@@ -23716,7 +23724,8 @@
         "particle:back",
         "es:de",
         "en:back",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:location"
       ],
       "curriculumRole": "supporting"
     },
@@ -25855,7 +25864,8 @@
       "collections": [
         "es:apenas",
         "en:barely/hardly",
-        "pos:adverb"
+        "pos:adverb",
+        "adv:degree"
       ],
       "curriculumRole": "reference"
     },
@@ -26008,7 +26018,8 @@
       "collections": [
         "es:aún",
         "en:yet",
-        "pos:adverb"
+        "pos:adverb",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -27871,7 +27882,8 @@
       "collections": [
         "es:igual",
         "en:just",
-        "pos:adverb"
+        "pos:adverb",
+        "adv:degree"
       ],
       "curriculumRole": "reference"
     },
@@ -28117,7 +28129,8 @@
       "collections": [
         "es:anteayer",
         "en:day",
-        "pos:adverb"
+        "pos:adverb",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -28193,7 +28206,8 @@
         "es:mañana",
         "es:ayer",
         "en:yesterday",
-        "pos:adverb"
+        "pos:adverb",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -28224,7 +28238,8 @@
       "collections": [
         "es:mañana",
         "en:tomorrow",
-        "pos:adverb"
+        "pos:adverb",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -28239,7 +28254,8 @@
       "collections": [
         "es:ayer",
         "en:yesterday",
-        "pos:adverb"
+        "pos:adverb",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -28269,7 +28285,8 @@
       "collections": [
         "es:mañana",
         "en:tomorrow",
-        "pos:adverb"
+        "pos:adverb",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -28284,7 +28301,8 @@
       "collections": [
         "es:anoche",
         "en:last",
-        "pos:adverb"
+        "pos:adverb",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -28299,7 +28317,8 @@
       "collections": [
         "es:esta",
         "en:tonight",
-        "pos:adverb"
+        "pos:adverb",
+        "topic:time"
       ],
       "curriculumRole": "supporting"
     },
@@ -28314,7 +28333,8 @@
       "collections": [
         "es:mañana",
         "en:tomorrow",
-        "pos:adverb"
+        "pos:adverb",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -28411,7 +28431,8 @@
       "collections": [
         "es:medio",
         "en:somewhat",
-        "pos:adverb"
+        "pos:adverb",
+        "adv:degree"
       ],
       "curriculumRole": "reference"
     },
@@ -28814,7 +28835,8 @@
         "dialect:colombian-spanish",
         "es:de",
         "en:maybe",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "adv:possibility"
       ],
       "curriculumRole": "reference"
     },
@@ -29685,7 +29707,8 @@
       "collections": [
         "es:vez",
         "en:once",
-        "pos:adverb"
+        "pos:adverb",
+        "grammar:frequency-adverb"
       ],
       "curriculumRole": "reference"
     },
@@ -29701,7 +29724,8 @@
         "es:vez",
         "es:dos",
         "en:twice",
-        "pos:adverb"
+        "pos:adverb",
+        "grammar:frequency-adverb"
       ],
       "curriculumRole": "reference"
     },
@@ -29717,7 +29741,8 @@
         "es:vez",
         "es:tres",
         "en:three",
-        "pos:adverb"
+        "pos:adverb",
+        "grammar:frequency-adverb"
       ],
       "curriculumRole": "reference"
     },
@@ -29733,7 +29758,8 @@
         "es:vez",
         "es:cuantas",
         "en:few",
-        "pos:adverb"
+        "pos:adverb",
+        "grammar:frequency-adverb"
       ],
       "curriculumRole": "reference"
     },
@@ -29799,7 +29825,8 @@
         "morphology:prefix-al",
         "pos:adverb",
         "es:ya",
-        "en:already"
+        "en:already",
+        "topic:time"
       ],
       "curriculumRole": "supporting"
     },
@@ -29814,7 +29841,8 @@
       "collections": [
         "es:todavía",
         "en:yet",
-        "pos:adverb"
+        "pos:adverb",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -29829,7 +29857,8 @@
       "collections": [
         "es:todavía",
         "en:still",
-        "pos:adverb"
+        "pos:adverb",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -30449,7 +30478,8 @@
         "morphology:recognition",
         "morphology:prefix-al",
         "es:casi",
-        "en:almost"
+        "en:almost",
+        "adv:degree"
       ],
       "curriculumRole": "supporting"
     },
@@ -30467,7 +30497,8 @@
         "pos:adverb",
         "es:por",
         "en:almost",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "adv:degree"
       ],
       "curriculumRole": "reference"
     },
@@ -30909,7 +30940,8 @@
         "pos:adverb",
         "grammar:fixed-expression",
         "es:otra",
-        "en:again"
+        "en:again",
+        "grammar:frequency-adverb"
       ],
       "curriculumRole": "supporting"
     },
@@ -30927,7 +30959,8 @@
         "pos:adverb",
         "es:de",
         "en:again",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "grammar:frequency-adverb"
       ],
       "curriculumRole": "reference"
     },
@@ -32186,7 +32219,8 @@
         "es:con",
         "en:hard",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "grammar:manner"
       ],
       "curriculumRole": "reference"
     },
@@ -50292,7 +50326,8 @@
       "collections": [
         "pos:adverb",
         "es:quizá",
-        "en:maybe"
+        "en:maybe",
+        "adv:possibility"
       ],
       "curriculumRole": "supporting"
     },
@@ -50308,7 +50343,8 @@
         "register:formal",
         "pos:adverb",
         "es:quizá",
-        "en:perhaps"
+        "en:perhaps",
+        "adv:possibility"
       ],
       "curriculumRole": "reference"
     },
@@ -50323,7 +50359,8 @@
       "collections": [
         "pos:adverb",
         "es:quizá",
-        "en:possibly"
+        "en:possibly",
+        "adv:possibility"
       ],
       "curriculumRole": "reference"
     },
@@ -57025,7 +57062,8 @@
       "collections": [
         "pos:adverb",
         "es:casi",
-        "en:nearly"
+        "en:nearly",
+        "adv:degree"
       ],
       "curriculumRole": "reference"
     },
@@ -57087,7 +57125,8 @@
         "pos:adverb",
         "es:ser",
         "en:very",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "adv:degree"
       ],
       "curriculumRole": "reference"
     },
@@ -63406,7 +63445,8 @@
         "dialect:american",
         "topic:direction",
         "es:hacia",
-        "en:forward"
+        "en:forward",
+        "topic:location"
       ],
       "curriculumRole": "reference"
     },
@@ -63425,7 +63465,8 @@
         "dialect:british",
         "topic:direction",
         "es:hacia",
-        "en:forwards"
+        "en:forwards",
+        "topic:location"
       ],
       "curriculumRole": "reference"
     },
@@ -63479,7 +63520,8 @@
         "pos:adverb",
         "es:de",
         "en:beforehand",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -84132,7 +84174,8 @@
       "collections": [
         "pos:adverb",
         "es:aún",
-        "en:still"
+        "en:still",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },

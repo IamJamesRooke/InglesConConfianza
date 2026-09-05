@@ -231,7 +231,12 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       { collection: "grammar:intensifier", label: "Intensifiers" },
       { collection: "grammar:interrogative-adverb", label: "Interrogative" },
       { collection: "topic:time", label: "Time" },
+      { collection: "topic:location", label: "Place" },
       { collection: "topic:cognate", label: "Cognates" },
+      { collection: "adv:possibility", label: "Possibility (maybe, apparently)" },
+      { collection: "adv:degree", label: "Degree / approximation (almost, barely, somewhat)" },
+      { collection: "adv:habitual", label: "Habitual (soler)" },
+      { collection: "grammar:addition", label: "Addition (also, either)" },
     ],
   },
   {

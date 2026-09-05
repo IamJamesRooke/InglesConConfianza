@@ -29,7 +29,8 @@ export type CollectionFacet =
   | "expr"
   | "qn"
   | "imp"
-  | "coll";
+  | "coll"
+  | "adv";
 
 export const COLLECTION_FACETS: Record<CollectionFacet, string> = {
   es: "Spanish headword — every sense and construction of one lemma",
@@ -56,6 +57,7 @@ export const COLLECTION_FACETS: Record<CollectionFacet, string> = {
   qn: "how a sentence forms negation or a question — do-support vs. modal/be/have direct contraction, question inversion, negative questions, emphatic affirmative — scoped to topic:question-negation",
   imp: "imperative/command type (affirmative informal, affirmative formal, negative, nosotros \"let's\") — scoped to topic:imperative",
   coll: "which light verb (make/take/have/set/other) a fixed noun collocation uses in English — scoped to topic:collocation",
+  adv: "adverb subcategory not already covered by an existing grammar: value (possibility, degree/approximation, habitual aspect) — scoped to pos:adverb",
 };
 
 export function collectionFacet(name: string): CollectionFacet | null {
