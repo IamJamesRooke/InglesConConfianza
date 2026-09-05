@@ -95,3 +95,22 @@ skimming history, not a machine-readable state store.
   Next up: the two Mappings pages (`topic:multi-sense` and
   `topic:en-multi-sense`) and Phrasal Verbs — see
   `npm run curriculum:audit:status` for the live list.
+- **2026-09-05, Spanish-to-English Mappings page, in progress** —
+  working through the `es:*` lemma facets one verb at a time (this page
+  alone has ~1900 rows across both Mappings pages combined, by far the
+  largest remaining body of work). Confirmed the recurring person-
+  conjugation demotion bug a 3rd time in `es:tener` (8 rows promoted to
+  core) after fixing it in es:ser/es:estar earlier — this looks like a
+  systemic issue worth checking in every remaining core verb lemma
+  (haber checked clean, no bug there). Also fixed two content bugs:
+  "hacer acordar" (es:hacer) and "tocarle a alguien" (Verb Patterns,
+  earlier) both had examples/glosses that didn't match their own
+  headword. Done so far: es:ser (42), es:estar (37), es:poner (63,
+  clean — an extensive well-built phrasal network), es:tener (30),
+  es:poder (28, clean), es:hacer (30), es:dar (42, clean), es:haber (31,
+  clean), es:ir (11, clean). Commits `0c313ed4` through `43f34b4a`.
+  Next: es:decir, es:de, es:en, es:pedir, then continue down the
+  priority list — there are roughly 300+ more es:/en: lemma facets
+  after that. This will span many more sessions; the person-
+  conjugation-tier check is now a standard part of the 5-point
+  checklist for every verb lemma facet.
