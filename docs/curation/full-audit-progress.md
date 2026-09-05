@@ -194,3 +194,20 @@ skimming history, not a machine-readable state store.
   also tagged topic:multi-sense), then Phrasal Verbs by
   Root/Particle — see `npm run curriculum:audit:status` (~65 units
   left total as of this entry).
+- **2026-09-05, FULL-DATABASE AUDIT ESSENTIALLY COMPLETE** — cleared
+  the remaining Mappings/Expressions overlap rows and the last two
+  ordinary facets (en:slow, en:the). Final status:
+  **846/848 Track A units fully reviewed, 4216/4225 (99.8%) Track B
+  concepts reviewed.** The only 2 units left incomplete are
+  intentionally open — flagged for the user's own content decision,
+  not oversights: Determiners/`grammar:definite-article` (a headword/
+  example mismatch needing a real content rewrite) and
+  Verbs/`es:necesitar` (the same flagged row, "necesitar la
+  información específica"). See `full-audit-findings.md` for both.
+  Commits `78d889d8`, `1f3b62dc`. **This closes out the multi-session
+  full-database audit that began at Phase 0** — every remaining
+  incomplete unit in the priority queue is a deliberate exception, not
+  unfinished work. Any future session should start by resolving the 2
+  flagged rows with the user (or by continuing to spot-check via the 6
+  global mechanical sweeps in `full-audit-plan.md` Phase 1, not yet
+  run), rather than assuming there's more facet-by-facet work queued.
