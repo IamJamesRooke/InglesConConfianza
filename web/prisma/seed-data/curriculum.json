@@ -28558,7 +28558,8 @@
         "en:yet",
         "pos:adverb",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-now-and-timing"
       ],
       "curriculumRole": "reference"
     },
@@ -29301,7 +29302,8 @@
         "topic:interrogative",
         "pos:adverb",
         "grammar:interrogative-adverb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-relative-day"
       ],
       "curriculumRole": "reference"
     },
@@ -30752,7 +30754,8 @@
         "es:hoy",
         "en:today",
         "pos:adverb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-relative-day"
       ],
       "curriculumRole": "supporting"
     },
@@ -30770,7 +30773,8 @@
         "es:mañana",
         "en:tomorrow",
         "pos:adverb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-relative-day"
       ],
       "curriculumRole": "supporting"
     },
@@ -30789,7 +30793,8 @@
         "es:pasado",
         "en:day",
         "pos:adverb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-relative-day"
       ],
       "curriculumRole": "reference"
     },
@@ -30807,7 +30812,8 @@
         "es:ayer",
         "en:yesterday",
         "pos:adverb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-relative-day"
       ],
       "curriculumRole": "supporting"
     },
@@ -30824,7 +30830,8 @@
         "en:day",
         "pos:adverb",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-relative-day"
       ],
       "curriculumRole": "reference"
     },
@@ -30905,7 +30912,8 @@
         "en:yesterday",
         "pos:adverb",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-relative-day"
       ],
       "curriculumRole": "reference"
     },
@@ -30939,7 +30947,8 @@
         "en:tomorrow",
         "pos:adverb",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-relative-day"
       ],
       "curriculumRole": "reference"
     },
@@ -30956,7 +30965,8 @@
         "en:yesterday",
         "pos:adverb",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-relative-day"
       ],
       "curriculumRole": "reference"
     },
@@ -30989,7 +30999,8 @@
         "en:tomorrow",
         "pos:adverb",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-relative-day"
       ],
       "curriculumRole": "reference"
     },
@@ -31006,7 +31017,8 @@
         "en:last",
         "pos:adverb",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-relative-day"
       ],
       "curriculumRole": "reference"
     },
@@ -31023,7 +31035,8 @@
         "en:tonight",
         "pos:adverb",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-relative-day"
       ],
       "curriculumRole": "supporting"
     },
@@ -31040,7 +31053,8 @@
         "en:tomorrow",
         "pos:adverb",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-relative-day"
       ],
       "curriculumRole": "reference"
     },
@@ -31553,7 +31567,8 @@
         "es:de",
         "en:suddenly",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-now-and-timing"
       ],
       "curriculumRole": "reference"
     },
@@ -32629,7 +32644,8 @@
         "es:ya",
         "en:already",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-now-and-timing"
       ],
       "curriculumRole": "supporting"
     },
@@ -32646,7 +32662,8 @@
         "en:yet",
         "pos:adverb",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-now-and-timing"
       ],
       "curriculumRole": "reference"
     },
@@ -32663,7 +32680,8 @@
         "en:still",
         "pos:adverb",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-now-and-timing"
       ],
       "curriculumRole": "reference"
     },
@@ -33041,7 +33059,8 @@
         "pos:adverb",
         "es:más",
         "en:later",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-now-and-timing"
       ],
       "curriculumRole": "reference"
     },
@@ -33058,7 +33077,8 @@
         "topic:time",
         "es:después",
         "en:later",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-now-and-timing"
       ],
       "curriculumRole": "reference"
     },
@@ -33563,7 +33583,8 @@
         "grammar:frequency-adverb",
         "es:siempre",
         "en:always",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-frequency"
       ],
       "curriculumRole": "core"
     },
@@ -33970,7 +33991,8 @@
         "es:ya",
         "en:anymore",
         "pos:adverb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-now-and-timing"
       ],
       "curriculumRole": "supporting"
     },
@@ -35322,7 +35344,8 @@
         "pos:adverb",
         "es:tarde",
         "en:late",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-now-and-timing"
       ],
       "curriculumRole": "reference"
     },
@@ -35556,7 +35579,8 @@
         "pos:adverb",
         "es:ahora",
         "en:now",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-now-and-timing"
       ],
       "curriculumRole": "supporting"
     },
@@ -35574,7 +35598,8 @@
         "topic:time",
         "es:ya",
         "en:now",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-now-and-timing"
       ],
       "curriculumRole": "reference"
     },
@@ -57868,7 +57893,8 @@
         "pos:adverb",
         "es:pronto",
         "en:soon",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-now-and-timing"
       ],
       "curriculumRole": "supporting"
     },
@@ -57885,7 +57911,8 @@
         "pos:adverb",
         "es:temprano",
         "en:early",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-now-and-timing"
       ],
       "curriculumRole": "supporting"
     },
@@ -57902,7 +57929,8 @@
         "pos:adverb",
         "es:más",
         "en:earlier",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-now-and-timing"
       ],
       "curriculumRole": "reference"
     },
@@ -70380,7 +70408,8 @@
         "en:beforehand",
         "topic:multi-sense",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-now-and-timing"
       ],
       "curriculumRole": "reference"
     },
@@ -74308,7 +74337,8 @@
         "pos:adverb",
         "es:nunca",
         "en:never",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-frequency"
       ],
       "curriculumRole": "core"
     },
@@ -74327,7 +74357,8 @@
         "almost never",
         "es:casi",
         "en:almost",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-frequency"
       ],
       "curriculumRole": "reference"
     },
@@ -74344,7 +74375,8 @@
         "grammar:frequency-adverb",
         "pos:adverb",
         "en:sometimes",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-frequency"
       ],
       "curriculumRole": "supporting"
     },
@@ -74361,7 +74393,8 @@
         "grammar:frequency-adverb",
         "pos:adverb",
         "en:often",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-frequency"
       ],
       "curriculumRole": "supporting"
     },
@@ -74380,7 +74413,8 @@
         "es:con",
         "en:often",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-frequency"
       ],
       "curriculumRole": "reference"
     },
@@ -74399,7 +74433,8 @@
         "almost always",
         "es:casi",
         "en:almost",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-frequency"
       ],
       "curriculumRole": "reference"
     },
@@ -74456,7 +74491,8 @@
         "es:todos",
         "en:every",
         "pos:adverb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-frequency"
       ],
       "curriculumRole": "supporting"
     },
@@ -74493,7 +74529,8 @@
         "es:todas",
         "en:every",
         "pos:adverb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-frequency"
       ],
       "curriculumRole": "reference"
     },
@@ -92111,7 +92148,8 @@
         "es:aún",
         "en:still",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adv-time-now-and-timing"
       ],
       "curriculumRole": "reference"
     },
