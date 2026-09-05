@@ -462,13 +462,13 @@ export const KNOWN_GENDER_VALUES: ReadonlySet<string> = new Set([
   "masculine", "feminine", "common", "neuter", "invariant",
 ]);
 
-// Controlled vocabulary for the `degree:` facet — comparative/superlative
-// forms of a gradable adjective. "positive" marks the base/uninflected form
-// so a degree family can be queried as one group.
+// Controlled vocabulary for the `degree:` facet — which kind of comparative/
+// superlative transformation a "positive ==> derived" adjective row shows.
+// -er/-est covers -ier/-iest spellings too (funny -> funnier is the same
+// family as hard -> harder here, matching the existing morphology:suffix-er
+// tagging, which doesn't split them either).
 export const KNOWN_DEGREE_VALUES: ReadonlySet<string> = new Set([
-  "positive",
   "comparative-er", "superlative-est",
-  "comparative-ier", "superlative-iest",
   "comparative-more", "superlative-most",
   "irregular-comparative", "irregular-superlative",
 ]);

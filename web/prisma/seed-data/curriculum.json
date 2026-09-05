@@ -27314,7 +27314,8 @@
         "pos:adjective",
         "grammar:comparison",
         "es:peor",
-        "en:worse"
+        "en:worse",
+        "degree:irregular-comparative"
       ],
       "curriculumRole": "reference"
     },
@@ -27332,7 +27333,8 @@
         "pos:adjective",
         "grammar:comparison",
         "es:peor",
-        "en:worst"
+        "en:worst",
+        "degree:irregular-superlative"
       ],
       "curriculumRole": "reference"
     },
@@ -55388,7 +55390,8 @@
         "grammar:comparison",
         "sound:comparison-pattern-one-syllable",
         "es:ser",
-        "en:hard"
+        "en:hard",
+        "degree:comparative-er"
       ],
       "curriculumRole": "supporting"
     },
@@ -55410,7 +55413,8 @@
         "grammar:comparison",
         "sound:comparison-pattern-one-syllable",
         "es:ser",
-        "en:hard"
+        "en:hard",
+        "degree:superlative-est"
       ],
       "curriculumRole": "supporting"
     },
@@ -55432,7 +55436,8 @@
         "grammar:comparison",
         "sound:comparison-pattern-one-syllable",
         "es:ser",
-        "en:fast"
+        "en:fast",
+        "degree:comparative-er"
       ],
       "curriculumRole": "reference"
     },
@@ -55454,7 +55459,8 @@
         "grammar:comparison",
         "sound:comparison-pattern-one-syllable",
         "es:ser",
-        "en:fast"
+        "en:fast",
+        "degree:superlative-est"
       ],
       "curriculumRole": "reference"
     },
@@ -55476,7 +55482,8 @@
         "grammar:comparison",
         "sound:comparison-pattern-one-syllable",
         "es:ser",
-        "en:slow"
+        "en:slow",
+        "degree:comparative-er"
       ],
       "curriculumRole": "reference"
     },
@@ -55498,7 +55505,8 @@
         "grammar:comparison",
         "sound:comparison-pattern-one-syllable",
         "es:ser",
-        "en:slow"
+        "en:slow",
+        "degree:superlative-est"
       ],
       "curriculumRole": "reference"
     },
@@ -55520,7 +55528,8 @@
         "grammar:comparison",
         "sound:comparison-pattern-one-syllable",
         "es:ser",
-        "en:cheap"
+        "en:cheap",
+        "degree:comparative-er"
       ],
       "curriculumRole": "reference"
     },
@@ -55542,7 +55551,8 @@
         "grammar:comparison",
         "sound:comparison-pattern-one-syllable",
         "es:ser",
-        "en:cheap"
+        "en:cheap",
+        "degree:superlative-est"
       ],
       "curriculumRole": "reference"
     },
@@ -55564,7 +55574,8 @@
         "grammar:comparison",
         "sound:comparison-pattern-one-syllable",
         "es:ser",
-        "en:safe"
+        "en:safe",
+        "degree:comparative-er"
       ],
       "curriculumRole": "reference"
     },
@@ -55586,7 +55597,8 @@
         "grammar:comparison",
         "sound:comparison-pattern-one-syllable",
         "es:ser",
-        "en:safe"
+        "en:safe",
+        "degree:superlative-est"
       ],
       "curriculumRole": "reference"
     },
@@ -55607,7 +55619,8 @@
         "grammar:comparative",
         "grammar:comparison",
         "es:ser",
-        "en:funny"
+        "en:funny",
+        "degree:comparative-er"
       ],
       "curriculumRole": "reference"
     },
@@ -55628,7 +55641,8 @@
         "grammar:superlative",
         "grammar:comparison",
         "es:ser",
-        "en:funny"
+        "en:funny",
+        "degree:superlative-est"
       ],
       "curriculumRole": "reference"
     },
@@ -55649,7 +55663,8 @@
         "grammar:comparative",
         "grammar:comparison",
         "es:ser",
-        "en:happy"
+        "en:happy",
+        "degree:comparative-er"
       ],
       "curriculumRole": "reference"
     },
@@ -55670,7 +55685,8 @@
         "grammar:superlative",
         "grammar:comparison",
         "es:ser",
-        "en:happy"
+        "en:happy",
+        "degree:superlative-est"
       ],
       "curriculumRole": "reference"
     },
@@ -55691,7 +55707,8 @@
         "grammar:comparative",
         "grammar:comparison",
         "es:ser",
-        "en:easy"
+        "en:easy",
+        "degree:comparative-er"
       ],
       "curriculumRole": "supporting"
     },
@@ -55712,7 +55729,8 @@
         "grammar:superlative",
         "grammar:comparison",
         "es:ser",
-        "en:easy"
+        "en:easy",
+        "degree:superlative-est"
       ],
       "curriculumRole": "supporting"
     },
@@ -55734,7 +55752,8 @@
         "grammar:comparison",
         "sound:comparison-pattern-one-syllable",
         "es:ser",
-        "en:big"
+        "en:big",
+        "degree:comparative-er"
       ],
       "curriculumRole": "reference"
     },
@@ -55756,7 +55775,8 @@
         "grammar:comparison",
         "sound:comparison-pattern-one-syllable",
         "es:ser",
-        "en:big"
+        "en:big",
+        "degree:superlative-est"
       ],
       "curriculumRole": "reference"
     },
@@ -63608,7 +63628,8 @@
         "grammar:comparative",
         "morphology:adjective-to-comparative",
         "es:ser",
-        "en:large"
+        "en:large",
+        "degree:comparative-more"
       ],
       "curriculumRole": "reference"
     },
@@ -63627,7 +63648,8 @@
         "grammar:superlative",
         "morphology:adjective-to-superlative",
         "es:ser",
-        "en:large"
+        "en:large",
+        "degree:superlative-most"
       ],
       "curriculumRole": "reference"
     },
@@ -63646,7 +63668,8 @@
         "grammar:comparative",
         "morphology:adjective-to-comparative",
         "es:ser",
-        "en:quick"
+        "en:quick",
+        "degree:comparative-more"
       ],
       "curriculumRole": "reference"
     },
@@ -63665,7 +63688,8 @@
         "grammar:superlative",
         "morphology:adjective-to-superlative",
         "es:ser",
-        "en:quick"
+        "en:quick",
+        "degree:superlative-most"
       ],
       "curriculumRole": "reference"
     },
@@ -63684,7 +63708,8 @@
         "grammar:comparative",
         "morphology:adjective-to-comparative",
         "es:ser",
-        "en:rapid"
+        "en:rapid",
+        "degree:comparative-more"
       ],
       "curriculumRole": "reference"
     },
@@ -63703,7 +63728,8 @@
         "grammar:superlative",
         "morphology:adjective-to-superlative",
         "es:ser",
-        "en:rapid"
+        "en:rapid",
+        "degree:superlative-most"
       ],
       "curriculumRole": "reference"
     },
@@ -63722,7 +63748,8 @@
         "grammar:comparative",
         "morphology:adjective-to-comparative",
         "es:ser",
-        "en:difficult"
+        "en:difficult",
+        "degree:comparative-more"
       ],
       "curriculumRole": "supporting"
     },
@@ -63741,7 +63768,8 @@
         "grammar:superlative",
         "morphology:adjective-to-superlative",
         "es:ser",
-        "en:difficult"
+        "en:difficult",
+        "degree:superlative-most"
       ],
       "curriculumRole": "supporting"
     },
@@ -63760,7 +63788,8 @@
         "grammar:comparative",
         "morphology:adjective-to-comparative",
         "es:ser",
-        "en:important"
+        "en:important",
+        "degree:comparative-more"
       ],
       "curriculumRole": "supporting"
     },
@@ -63779,7 +63808,8 @@
         "grammar:superlative",
         "morphology:adjective-to-superlative",
         "es:ser",
-        "en:important"
+        "en:important",
+        "degree:superlative-most"
       ],
       "curriculumRole": "supporting"
     },
@@ -63797,7 +63827,8 @@
         "grammar:comparative",
         "morphology:adjective-to-comparative",
         "es:ser",
-        "en:good"
+        "en:good",
+        "degree:irregular-comparative"
       ],
       "curriculumRole": "supporting"
     },
@@ -63815,7 +63846,8 @@
         "grammar:superlative",
         "morphology:adjective-to-superlative",
         "es:ser",
-        "en:good"
+        "en:good",
+        "degree:irregular-superlative"
       ],
       "curriculumRole": "supporting"
     },
@@ -63833,7 +63865,8 @@
         "grammar:comparative",
         "morphology:adjective-to-comparative",
         "es:ser",
-        "en:bad"
+        "en:bad",
+        "degree:irregular-comparative"
       ],
       "curriculumRole": "supporting"
     },
@@ -63851,7 +63884,8 @@
         "grammar:superlative",
         "morphology:adjective-to-superlative",
         "es:ser",
-        "en:bad"
+        "en:bad",
+        "degree:irregular-superlative"
       ],
       "curriculumRole": "supporting"
     },
