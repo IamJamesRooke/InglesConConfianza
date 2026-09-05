@@ -6016,7 +6016,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -6766,7 +6767,8 @@
         "sense:estar-estado",
         "conjugation:infinitive",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -6834,7 +6836,8 @@
         "es:cómo",
         "en:how",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -6855,7 +6858,8 @@
         "conjugation:infinitive",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -6879,7 +6883,8 @@
         "topic:multi-sense",
         "pos:verb",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -6900,7 +6905,8 @@
         "topic:multi-sense",
         "pos:verb",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -6971,7 +6977,8 @@
         "pos:verb",
         "particle:of",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -6994,7 +7001,8 @@
         "pos:verb",
         "particle:of",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -7080,7 +7088,8 @@
         "es:estar",
         "en:okay",
         "pos:verb",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -7097,7 +7106,8 @@
         "es:estar",
         "en:unwell",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -7181,7 +7191,8 @@
         "pos:verb",
         "grammar:phrasal-verb",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -7201,7 +7212,8 @@
         "pos:verb",
         "grammar:phrasal-verb",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -7221,7 +7233,8 @@
         "pos:verb",
         "grammar:phrasal-verb",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -7242,7 +7255,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -7264,7 +7278,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -7287,7 +7302,8 @@
         "pos:verb",
         "particle:of",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -7308,7 +7324,8 @@
         "pos:verb",
         "particle:against",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -7350,7 +7367,8 @@
         "pos:verb",
         "particle:of",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -7374,7 +7392,8 @@
         "pos:verb",
         "particle:from",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -7506,7 +7525,8 @@
         "es:estar",
         "en:standing",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -7523,7 +7543,8 @@
         "es:estar",
         "en:sitting",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -7540,7 +7561,8 @@
         "es:estar",
         "en:right",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -7557,7 +7579,8 @@
         "es:estar",
         "en:wrong",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26411,7 +26434,8 @@
         "grammar:fixed-expression",
         "es:estar",
         "en:hardly",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28362,7 +28386,8 @@
         "construction:prepositional-verb",
         "particle:among",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31049,7 +31074,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:with",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55262,7 +55288,8 @@
         "topic:en-multi-sense",
         "construction:prepositional-verb",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -69507,7 +69534,8 @@
         "es:estar",
         "en:is",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -71574,7 +71602,8 @@
         "en:is",
         "pos:verb",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -71621,7 +71650,8 @@
         "conjugation:imperfect",
         "conjugation:3sg",
         "conjugation:irregular",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -87930,7 +87960,8 @@
         "sense:estar-estado",
         "sense:estar-lugar",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -87977,7 +88008,8 @@
         "sense:estar-estado",
         "sense:estar-lugar",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -87999,7 +88031,8 @@
         "sense:estar-estado",
         "sense:estar-lugar",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -88259,9 +88292,10 @@
         "en:are",
         "grammar:progressive",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "9yf8jsp2b1",
@@ -88281,7 +88315,8 @@
         "en:is",
         "grammar:progressive",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -88303,9 +88338,10 @@
         "en:are",
         "grammar:progressive",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "bb48xm25wt",
@@ -88325,9 +88361,10 @@
         "en:are",
         "grammar:progressive",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "core"
     },
     {
       "id": "opdzad1zrx",

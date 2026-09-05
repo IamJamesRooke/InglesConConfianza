@@ -1,0 +1,37 @@
+bz9j3yr4at	estar ambientado en [un lugar o época]	to be set in [a place or time]	reference	audit:reviewed	Audit: fine as-is.
+nqyror4j5f	estar [en un estado]	to be [in a state]	core	audit:reviewed	Audit: fine as-is.
+dnm638drfa	¿cómo estar [alguien]?	how is [somebody] feeling?	supporting	audit:reviewed	Audit: fine as-is.
+f5h0hvcv1d	estar de acuerdo	to agree	supporting	audit:reviewed	Audit: fine as-is.
+e6gbegp44a	estar a punto de [hacer algo]	to be about to [do something]	supporting	audit:reviewed	Audit: fine as-is.
+b2kvvgg1ke	estar por [hacer algo]	to be about to [do something]	reference	audit:reviewed	Audit: fine as-is.
+d495hfe6co	estar al tanto de [algo]	to be aware of [something]	reference	audit:reviewed	Audit: fine as-is.
+p76va4jmyy	estar a cargo de [algo]	to be in charge of [something]	reference	audit:reviewed	Audit: fine as-is.
+8pa5w8lhu0	estar bien	to be okay	core	audit:reviewed	Audit: fine as-is.
+bvwjgfiqzf	estar mal	to be unwell	reference	audit:reviewed	Audit: fine as-is.
+vx5dkts0j1	estar encendido	to be on	supporting	audit:reviewed	Audit: fine as-is.
+fbhhwzgo6j	estar apagado	to be off	supporting	audit:reviewed	Audit: fine as-is.
+gha0bijm3j	estar fuera	to be out	reference	audit:reviewed	Audit: fine as-is.
+x9rvf35d7y	estar a tiempo	to be on time	supporting	audit:reviewed	Audit: fine as-is.
+ahj6apo9ri	estar de vacaciones	to be on vacation	reference	audit:reviewed	Audit: fine as-is.
+6ywiv1c0l5	estar a favor de [algo]	to be in favor of [something]	reference	audit:reviewed	Audit: fine as-is.
+nfursmvnpb	estar en contra de [algo]	to be against [something]	reference	audit:reviewed	Audit: fine as-is.
+8ayvn6jpi6	estar hecho de [un material]	to be made of [a material]	reference	audit:reviewed	Audit: fine as-is.
+dppdignekp	estar hecho a partir de [un material]	to be made from [a material]	reference	audit:reviewed	Audit: fine as-is.
+myuguvt6ul	estar de pie	to be standing	reference	audit:reviewed	Audit: fine as-is.
+vf8v3tcztr	estar sentado	to be sitting	reference	audit:reviewed	Audit: fine as-is.
+i2sih4q1lh	estar en lo cierto	to be right	reference	audit:reviewed	Audit: fine as-is.
+9qzgymygsa	estar mal	to be wrong	reference	audit:reviewed	Audit: fine as-is.
+45izdwmxbd	estar ansioso por que [ocurra algo]	can hardly wait for [something] to happen	reference	audit:reviewed	Audit: fine as-is.
+8g7yjhzzf4	estar entre [personas]	to be among [people]	reference	audit:reviewed	Audit: fine as-is.
+oyxzv5jbvk	estar de acuerdo con [alguien]	to agree with [somebody]	reference	audit:reviewed	Audit: fine as-is.
+nse7vj3fbs	estar encargado de [algo]	to be in charge of [something]	reference	audit:reviewed	Audit: fine as-is.
+715ron2lud	estar ==> está	to be ==> is	supporting	audit:reviewed	Audit: fine as-is.
+spnqzmy3g5	¿[alguien] está [haciendo algo]?	is [somebody] [doing something]?	core	audit:reviewed	Audit: fine as-is.
+jsajob6okd	¿[alguien] estaba [haciendo algo]?	was [somebody] [doing something]?	supporting	audit:reviewed	Audit: fine as-is.
+0k44vohfn6	estás [en un estado o lugar]	you are [somewhere or feeling something]	supporting	audit:reviewed	Audit: fine as-is.
+kaq1f0slza	estamos [en un estado o lugar]	we are [somewhere or feeling something]	supporting	audit:reviewed	Audit: fine as-is.
+widbvn1zzj	están [en un estado o lugar]	they are [somewhere or feeling something]	supporting	audit:reviewed	Audit: fine as-is.
+g2rq6v6czz	estás [haciendo algo]	you are [doing something]	core	audit:reviewed	Audit: promoted supporting->core to match its "está [haciendo algo]" sibling — same recurring person-conjugation demotion pattern as es:ser.
+9yf8jsp2b1	está [haciendo algo]	is [doing something]	core	audit:reviewed	Audit: fine as-is.
+4e3tp75nnw	estamos [haciendo algo]	we are [doing something]	core	audit:reviewed	Audit: promoted supporting->core to match its "está [haciendo algo]" sibling — same recurring person-conjugation demotion pattern as es:ser.
+bb48xm25wt	están [haciendo algo]	they are [doing something]	core	audit:reviewed	Audit: promoted supporting->core to match its "está [haciendo algo]" sibling — same recurring person-conjugation demotion pattern as es:ser.
