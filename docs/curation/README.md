@@ -75,3 +75,4 @@ Going forward: `curation-YYYY-MM-DD-<slug>.tsv`. A canonical topic spec is
 | 2026-09-05 | Consolidate 25 orphaned `topic:` tags into existing wired siblings (time cluster -> `topic:time`, several near-duplicate domain pairs); retired 2 incoherent tags outright | `0d170fd` | `curation-2026-09-05-topic-consolidation-{add,untag}.tsv` |
 | 2026-09-05 | Wire 11 consolidated `topic:` tags as new Nouns/Adjectives facet buttons (Food, Technology, Health, Government & politics, Crime & law, Art & culture, Communication & requests, Sports & travel, Events, Weather, Speed) | `d436cce` | — |
 | 2026-09-05 | **Adverbs topic** — new page on `pos:adverb` (86 rows); tagged 5 manner adverbs missing `grammar:manner` | `a138e5a` | `curation-2026-09-05-adverbs-manner-tag.tsv` |
+| 2026-09-05 | **Numbers topic** — new page on `pos:number` (71 rows, fully classified already) | `62ec6d0` | — |
