@@ -483,7 +483,7 @@
     },
     {
       "id": "oysek8zs4j",
-      "spanish": "querido/a [nombre]",
+      "spanish": "querido [nombre]",
       "english": "Dear [name]",
       "example": {
         "spanish": "Querida Laura:",
@@ -501,7 +501,7 @@
     },
     {
       "id": "tamzftp6b6",
-      "spanish": "querido/a",
+      "spanish": "querido",
       "english": "beloved",
       "example": {
         "spanish": "Era una amiga querida.",
@@ -1957,7 +1957,7 @@
     },
     {
       "id": "7x4v7kp0dx",
-      "spanish": "hablar consigo mismo/a",
+      "spanish": "hablar consigo mismo",
       "english": "to talk to oneself",
       "example": {
         "spanish": "Habla consigo misma cuando trabaja.",
@@ -2020,7 +2020,7 @@
     },
     {
       "id": "e1plhjrtby",
-      "spanish": "[ser] hablador/a",
+      "spanish": "[ser] hablador",
       "english": "[to be] talkative",
       "example": {
         "spanish": "Mi hermano es muy hablador.",
@@ -3162,7 +3162,7 @@
     },
     {
       "id": "24de35h6nw",
-      "spanish": "darse por vencido/a",
+      "spanish": "darse por vencido",
       "english": "to give up",
       "example": {
         "spanish": "No te des por vencido.",
@@ -4448,7 +4448,7 @@
     },
     {
       "id": "wpfrk73j3o",
-      "spanish": "llevar puesto/a [una prenda]",
+      "spanish": "llevar puesto [una prenda]",
       "english": "to wear [an item of clothing]",
       "example": {
         "spanish": "Lleva puesta una chaqueta.",
@@ -5715,7 +5715,7 @@
     },
     {
       "id": "5zamvuatdn",
-      "spanish": "hablar por sí solo/a",
+      "spanish": "hablar por sí solo",
       "english": "to speak for itself",
       "example": {
         "spanish": "La evidencia habla por sí sola.",
@@ -5864,7 +5864,7 @@
     },
     {
       "id": "bz9j3yr4at",
-      "spanish": "estar ambientado/a en [un lugar o época]",
+      "spanish": "estar ambientado en [un lugar o época]",
       "english": "to be set in [a place or time]",
       "example": {
         "spanish": "La historia está ambientada en Bogotá.",
@@ -6551,7 +6551,7 @@
     },
     {
       "id": "5lspctsw4y",
-      "spanish": "[ser] esperado/a",
+      "spanish": "[ser] esperado",
       "english": "[to be] expected",
       "example": {
         "spanish": "El cambio era esperado.",
@@ -6570,7 +6570,7 @@
     },
     {
       "id": "pl1kwzxv0a",
-      "spanish": "[ser] inesperado/a",
+      "spanish": "[ser] inesperado",
       "english": "[to be] unexpected",
       "example": {
         "spanish": "El cambio fue inesperado.",
@@ -6741,7 +6741,7 @@
     },
     {
       "id": "grd35t3yb8",
-      "spanish": "[estar] acostumbrado/a a [algo]",
+      "spanish": "[estar] acostumbrado a [algo]",
       "english": "[to be] used to [something]",
       "example": {
         "spanish": "Estoy acostumbrado al ruido.",
@@ -6765,7 +6765,7 @@
     },
     {
       "id": "mdayqm9som",
-      "spanish": "[estar] interesado/a en [algo]",
+      "spanish": "[estar] interesado en [algo]",
       "english": "[to be] interested in [something]",
       "example": {
         "spanish": "Estoy interesada en el curso.",
@@ -6833,7 +6833,7 @@
     },
     {
       "id": "0v47ifpsxd",
-      "spanish": "[estar] casado/a con [alguien]",
+      "spanish": "[estar] casado con [alguien]",
       "english": "[to be] married to [somebody]",
       "example": {
         "spanish": "Ana está casada con Luis.",
@@ -6857,7 +6857,7 @@
     },
     {
       "id": "afevkeg23w",
-      "spanish": "[estar] enamorado/a de [alguien]",
+      "spanish": "[estar] enamorado de [alguien]",
       "english": "[to be] in love with [somebody]",
       "example": {
         "spanish": "Está enamorado de Ana.",
@@ -6881,7 +6881,7 @@
     },
     {
       "id": "zgccmkmabz",
-      "spanish": "[estar] listo/a",
+      "spanish": "[estar] listo",
       "english": "[to be] ready",
       "example": {
         "spanish": "Estoy listo.",
@@ -6892,7 +6892,8 @@
         "es:estar",
         "en:ready",
         "topic:condition-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "grammar:estar-adjective"
       ],
       "curriculumRole": "core"
     },
@@ -6932,7 +6933,7 @@
     },
     {
       "id": "i906c8x5c2",
-      "spanish": "[estar] seguro/a de [algo]",
+      "spanish": "[estar] seguro de [algo]",
       "english": "[to be] sure about [something]",
       "example": {
         "spanish": "Estoy segura de la respuesta.",
@@ -6954,7 +6955,7 @@
     },
     {
       "id": "97xjph1sfx",
-      "spanish": "[estar] equivocado/a",
+      "spanish": "[estar] equivocado",
       "english": "[to be] wrong",
       "example": {
         "spanish": "Creo que estoy equivocado.",
@@ -6992,7 +6993,7 @@
     },
     {
       "id": "vx5dkts0j1",
-      "spanish": "estar encendido/a",
+      "spanish": "estar encendido",
       "english": "to be on",
       "example": {
         "spanish": "La luz está encendida.",
@@ -7013,7 +7014,7 @@
     },
     {
       "id": "fbhhwzgo6j",
-      "spanish": "estar apagado/a",
+      "spanish": "estar apagado",
       "english": "to be off",
       "example": {
         "spanish": "La luz está apagada.",
@@ -7140,7 +7141,7 @@
     },
     {
       "id": "km539emf2l",
-      "spanish": "[estar] terminado/a",
+      "spanish": "[estar] terminado",
       "english": "[to be] done",
       "example": {
         "spanish": "El trabajo está terminado.",
@@ -7157,7 +7158,7 @@
     },
     {
       "id": "8ayvn6jpi6",
-      "spanish": "estar hecho/a de [un material]",
+      "spanish": "estar hecho de [un material]",
       "english": "to be made of [a material]",
       "example": {
         "spanish": "La mesa está hecha de madera.",
@@ -7181,7 +7182,7 @@
     },
     {
       "id": "dppdignekp",
-      "spanish": "estar hecho/a a partir de [un material]",
+      "spanish": "estar hecho a partir de [un material]",
       "english": "to be made from [a material]",
       "example": {
         "spanish": "El papel está hecho a partir de madera.",
@@ -7262,7 +7263,7 @@
     },
     {
       "id": "xc8k68t746",
-      "spanish": "[estar] retrasado/a",
+      "spanish": "[estar] retrasado",
       "english": "[to be] late",
       "example": {
         "spanish": "El vuelo está retrasado.",
@@ -7279,7 +7280,7 @@
     },
     {
       "id": "vfjhy0rgs4",
-      "spanish": "[estar] aburrido/a",
+      "spanish": "[estar] aburrido",
       "english": "[to be] bored",
       "example": {
         "spanish": "Estoy aburrido.",
@@ -7296,7 +7297,7 @@
     },
     {
       "id": "sk7qkjn915",
-      "spanish": "[estar] previsto/a",
+      "spanish": "[estar] previsto",
       "english": "[to be] due",
       "example": {
         "spanish": "El informe está previsto para mañana.",
@@ -7331,7 +7332,7 @@
     },
     {
       "id": "vf8v3tcztr",
-      "spanish": "estar sentado/a",
+      "spanish": "estar sentado",
       "english": "to be sitting",
       "example": {
         "spanish": "Ana está sentada.",
@@ -7443,7 +7444,7 @@
     },
     {
       "id": "871apuo78w",
-      "spanish": "[ser] extraño/a",
+      "spanish": "[ser] extraño",
       "english": "[to be] strange",
       "example": {
         "spanish": "Ese ruido es extraño.",
@@ -7461,7 +7462,7 @@
     },
     {
       "id": "160kt5bnxh",
-      "spanish": "[sentirse] extraño/a",
+      "spanish": "[sentirse] extraño",
       "english": "[to feel] weird",
       "example": {
         "spanish": "Hoy me siento extraño.",
@@ -8966,7 +8967,7 @@
     },
     {
       "id": "gmw4l9fuma",
-      "spanish": "hecho/a",
+      "spanish": "hecho",
       "english": "made",
       "example": {
         "spanish": "La mesa fue hecha ayer.",
@@ -8986,7 +8987,7 @@
     },
     {
       "id": "sqk4k5as8g",
-      "spanish": "hecho/a",
+      "spanish": "[estar] hecho",
       "english": "done",
       "example": {
         "spanish": "La tarea está hecha.",
@@ -9005,7 +9006,7 @@
     },
     {
       "id": "n46cr84foo",
-      "spanish": "hecho/a de [un material visible]",
+      "spanish": "hecho de [un material visible]",
       "english": "made of [a visible material]",
       "example": {
         "spanish": "La mesa está hecha de madera.",
@@ -9028,7 +9029,7 @@
     },
     {
       "id": "itj86iyuab",
-      "spanish": "hecho/a a partir de [un material transformado]",
+      "spanish": "hecho a partir de [un material transformado]",
       "english": "made from [a transformed material]",
       "example": {
         "spanish": "El papel está hecho a partir de madera.",
@@ -9051,7 +9052,7 @@
     },
     {
       "id": "1fr5z9ndcf",
-      "spanish": "hecho/a por [alguien]",
+      "spanish": "hecho por [alguien]",
       "english": "made by [somebody]",
       "example": {
         "spanish": "Fue hecho por Ana.",
@@ -10306,7 +10307,7 @@
     },
     {
       "id": "4vmjcs20a5",
-      "spanish": "[ser] mandón/mandona",
+      "spanish": "[ser] mandón",
       "english": "[to be] bossy",
       "example": {
         "spanish": "Mi hermano es muy mandón.",
@@ -10726,7 +10727,7 @@
     },
     {
       "id": "nhqct1dhzu",
-      "spanish": "[ser] parecido/a a [algo]",
+      "spanish": "[ser] parecido a [algo]",
       "english": "[to be] similar to [something]",
       "example": {
         "spanish": "Este diseño es parecido al otro.",
@@ -11106,7 +11107,7 @@
     },
     {
       "id": "sjlvvxcwpy",
-      "spanish": "[período] pasado/a",
+      "spanish": "[período] pasado",
       "english": "last [period]",
       "example": {
         "spanish": "Viajé el año pasado.",
@@ -11357,7 +11358,7 @@
     },
     {
       "id": "nb4w5o0cgc",
-      "spanish": "[estar] pensativo/a",
+      "spanish": "[estar] pensativo",
       "english": "[to be] pensive",
       "example": {
         "spanish": "Ana está pensativa.",
@@ -11375,7 +11376,7 @@
     },
     {
       "id": "grd7p3e7kw",
-      "spanish": "[estar] bien pensado/a",
+      "spanish": "[estar] bien pensado",
       "english": "[to be] well thought out",
       "example": {
         "spanish": "El plan está bien pensado.",
@@ -11480,7 +11481,7 @@
     },
     {
       "id": "ml2usxu7by",
-      "spanish": "[estar] perdido/a",
+      "spanish": "[estar] perdido",
       "english": "[to be] lost",
       "example": {
         "spanish": "Estoy perdido.",
@@ -11794,7 +11795,7 @@
     },
     {
       "id": "yome0dqotg",
-      "spanish": "[ser] pesado/a",
+      "spanish": "[ser] pesado",
       "english": "[to be] heavy",
       "example": {
         "spanish": "La caja es pesada.",
@@ -12605,7 +12606,7 @@
     },
     {
       "id": "zxr6a7pbp5",
-      "spanish": "[ser] poderoso/a",
+      "spanish": "[ser] poderoso",
       "english": "[to be] powerful",
       "example": {
         "spanish": "Es una herramienta poderosa.",
@@ -12624,7 +12625,7 @@
     },
     {
       "id": "j89bqvhlm0",
-      "spanish": "[ser] poderoso/a (tener influencia)",
+      "spanish": "[ser] poderoso (tener influencia)",
       "english": "[to be] influential",
       "example": {
         "spanish": "Es una empresaria poderosa.",
@@ -12704,7 +12705,7 @@
     },
     {
       "id": "b7js6hk28a",
-      "spanish": "[ser] todopoderoso/a",
+      "spanish": "[ser] todopoderoso",
       "english": "[to be] all-powerful",
       "example": {
         "spanish": "Nadie es todopoderoso.",
@@ -12978,7 +12979,7 @@
     },
     {
       "id": "k4qa6qb9oa",
-      "spanish": "[ser] poderoso/a (gran fuerza)",
+      "spanish": "[ser] poderoso (gran fuerza)",
       "english": "[to be] mighty",
       "example": {
         "spanish": "Era un rey poderoso.",
@@ -12997,7 +12998,7 @@
     },
     {
       "id": "8mhghrw0y0",
-      "spanish": "[ser] todopoderoso/a (religioso)",
+      "spanish": "[ser] todopoderoso (religioso)",
       "english": "[to be] almighty",
       "example": {
         "spanish": "Creían que era todopoderoso.",
@@ -13018,7 +13019,7 @@
     },
     {
       "id": "1vp9cxf3e2",
-      "spanish": "[ser] todopoderoso/a (formal)",
+      "spanish": "[ser] todopoderoso (formal)",
       "english": "[to be] omnipotent",
       "example": {
         "spanish": "Lo presentaban como todopoderoso.",
@@ -13572,7 +13573,7 @@
     },
     {
       "id": "nwxm8j7bvp",
-      "spanish": "[quedarse] dormido/a",
+      "spanish": "[quedarse] dormido",
       "english": "[to fall] asleep",
       "example": {
         "spanish": "Me quedé dormido.",
@@ -13591,7 +13592,7 @@
     },
     {
       "id": "j6rsrji1gk",
-      "spanish": "[quedarse] callado/a",
+      "spanish": "[quedarse] callado",
       "english": "[to keep] quiet",
       "example": {
         "spanish": "Se quedó callado.",
@@ -14069,7 +14070,7 @@
     },
     {
       "id": "lv3d9lcju3",
-      "spanish": "[estar] abierto/a",
+      "spanish": "[estar] abierto",
       "english": "[to be] open",
       "example": {
         "spanish": "La tienda está abierta.",
@@ -14407,7 +14408,7 @@
     },
     {
       "id": "897t46ipdb",
-      "spanish": "[estar] acabado/a",
+      "spanish": "[estar] acabado",
       "english": "[to be] finished",
       "example": {
         "spanish": "El trabajo está acabado.",
@@ -14429,7 +14430,7 @@
     },
     {
       "id": "wvqg9y8xx3",
-      "spanish": "inacabado/a",
+      "spanish": "inacabado",
       "english": "unfinished",
       "example": {
         "spanish": "El informe está inacabado.",
@@ -14898,7 +14899,7 @@
     },
     {
       "id": "v3arwl0pds",
-      "spanish": "caer enfermo/a",
+      "spanish": "caer enfermo",
       "english": "to fall ill",
       "example": {
         "spanish": "Cayó enfermo después del viaje.",
@@ -14917,7 +14918,7 @@
     },
     {
       "id": "t7h2p8595v",
-      "spanish": "caer dormido/a",
+      "spanish": "caer dormido",
       "english": "to fall asleep",
       "example": {
         "spanish": "Cayó dormida en el sofá.",
@@ -15196,7 +15197,7 @@
     },
     {
       "id": "7grhjsaoa0",
-      "spanish": "[ser] conocido/a",
+      "spanish": "[ser] conocido",
       "english": "[to be] well-known",
       "example": {
         "spanish": "Es una autora conocida.",
@@ -15237,7 +15238,7 @@
     },
     {
       "id": "hpdisj6u7v",
-      "spanish": "ser conocido/a por [algo]",
+      "spanish": "ser conocido por [algo]",
       "english": "to be known for [something]",
       "example": {
         "spanish": "La ciudad es conocida por sus parques.",
@@ -15262,7 +15263,7 @@
     },
     {
       "id": "uhisl4h91k",
-      "spanish": "ser conocido/a como [algo]",
+      "spanish": "ser conocido como [algo]",
       "english": "to be known as [something]",
       "example": {
         "spanish": "Es conocido como el mejor del equipo.",
@@ -15350,7 +15351,7 @@
     },
     {
       "id": "c5hr8odlxd",
-      "spanish": "desconocido/a",
+      "spanish": "desconocido",
       "english": "unknown",
       "example": {
         "spanish": "La causa sigue siendo desconocida.",
@@ -16109,7 +16110,7 @@
     },
     {
       "id": "jws4jrf0cx",
-      "spanish": "costoso/a",
+      "spanish": "costoso",
       "english": "expensive",
       "example": {
         "spanish": "La reparación fue costosa.",
@@ -16128,7 +16129,7 @@
     },
     {
       "id": "txighmsxc2",
-      "spanish": "costoso/a",
+      "spanish": "costoso",
       "english": "costly",
       "example": {
         "spanish": "Fue un error costoso.",
@@ -17343,7 +17344,7 @@
     },
     {
       "id": "xf3bu4p3qr",
-      "spanish": "dejar plantado/a a [alguien]",
+      "spanish": "dejar plantado a [alguien]",
       "english": "to stand [somebody] up",
       "example": {
         "spanish": "Me dejó plantado.",
@@ -18657,7 +18658,7 @@
     },
     {
       "id": "9dj6rqtp3w",
-      "spanish": "[ser] sabio/a",
+      "spanish": "[ser] sabio",
       "english": "[to be] wise",
       "example": {
         "spanish": "Es una persona sabia.",
@@ -20138,7 +20139,7 @@
     },
     {
       "id": "ralwup7tfh",
-      "spanish": "ser bueno/a para [hacer algo]",
+      "spanish": "ser bueno para [hacer algo]",
       "english": "to be good at [doing something]",
       "example": {
         "spanish": "Es buena para explicar.",
@@ -20286,7 +20287,7 @@
     },
     {
       "id": "cpp3wx8ltt",
-      "spanish": "[ser] chistoso/a",
+      "spanish": "[ser] chistoso",
       "english": "[to be] funny",
       "example": {
         "spanish": "Es muy chistoso.",
@@ -20303,7 +20304,7 @@
     },
     {
       "id": "y4kn1xzqxy",
-      "spanish": "[ser] aburrido/a",
+      "spanish": "[ser] aburrido",
       "english": "[to be] boring",
       "example": {
         "spanish": "La película es aburrida.",
@@ -20337,7 +20338,7 @@
     },
     {
       "id": "mxhymxu0dx",
-      "spanish": "[ser] listo/a",
+      "spanish": "[ser] listo",
       "english": "[to be] smart",
       "example": {
         "spanish": "Es muy lista.",
@@ -20551,7 +20552,7 @@
     },
     {
       "id": "ka80affc74",
-      "spanish": "[ser] significativo/a",
+      "spanish": "[ser] significativo",
       "english": "[to be] significant",
       "example": {
         "spanish": "Fue un cambio significativo.",
@@ -21999,7 +22000,7 @@
     },
     {
       "id": "ue1j1fbu66",
-      "spanish": "[ser] trabajador/a",
+      "spanish": "[ser] trabajador",
       "english": "[to be] hardworking",
       "example": {
         "spanish": "Ana es muy trabajadora.",
@@ -22184,7 +22185,7 @@
     },
     {
       "id": "idex89b72k",
-      "spanish": "traer puesto/a [una prenda]",
+      "spanish": "traer puesto [una prenda]",
       "english": "to wear [an item of clothing]",
       "example": {
         "spanish": "Laura trae puesta una chaqueta.",
@@ -22520,7 +22521,7 @@
     },
     {
       "id": "xefbpao3le",
-      "spanish": "[ser] valioso/a",
+      "spanish": "[ser] valioso",
       "english": "[to be] valuable",
       "example": {
         "spanish": "Es una experiencia valiosa.",
@@ -22835,7 +22836,7 @@
     },
     {
       "id": "kfx1lzc2a8",
-      "spanish": "bienvenido/a",
+      "spanish": "bienvenido",
       "english": "welcome",
       "example": {
         "spanish": "Bienvenida a Bogotá.",
@@ -25509,7 +25510,7 @@
     },
     {
       "id": "2w0dzl1mvl",
-      "spanish": "ser alto/a",
+      "spanish": "ser alto",
       "english": "to be tall",
       "example": {
         "spanish": "Mateo es alto.",
@@ -25526,7 +25527,7 @@
     },
     {
       "id": "ffr5aig4sd",
-      "spanish": "ser alto/a",
+      "spanish": "ser alto",
       "english": "to be high",
       "example": {
         "spanish": "El muro es alto.",
@@ -25653,7 +25654,7 @@
     },
     {
       "id": "45izdwmxbd",
-      "spanish": "estar ansioso/a por que [ocurra algo]",
+      "spanish": "estar ansioso por que [ocurra algo]",
       "english": "can hardly wait for [something] to happen",
       "example": {
         "spanish": "Estoy ansioso por que llegue.",
@@ -25817,7 +25818,7 @@
     },
     {
       "id": "2s5vxvtzad",
-      "spanish": "ser bajo/a",
+      "spanish": "ser bajo",
       "english": "to be low",
       "example": {
         "spanish": "El precio es bajo.",
@@ -26218,7 +26219,7 @@
     },
     {
       "id": "wha5r4jqwd",
-      "spanish": "cierto/a [sustantivo]",
+      "spanish": "cierto [sustantivo]",
       "english": "a certain [noun]",
       "example": {
         "spanish": "Cierto libro cambió mi forma de pensar.",
@@ -27715,7 +27716,7 @@
     },
     {
       "id": "g2cfgdbyi3",
-      "spanish": "ser malo/a",
+      "spanish": "ser malo",
       "english": "to be bad/evil",
       "example": {
         "spanish": "El villano es malo.",
@@ -28077,7 +28078,7 @@
     },
     {
       "id": "sdjzwrjzji",
-      "spanish": "ser útil ==> ser el/la más útil",
+      "spanish": "ser útil ==> ser el más útil",
       "english": "to be useful ==> to be the most useful",
       "example": {
         "spanish": "Es el más útil.",
@@ -28122,7 +28123,7 @@
     },
     {
       "id": "1nhgx0mth4",
-      "spanish": "comer medio/a [algo]",
+      "spanish": "comer medio [algo]",
       "english": "to eat half [something]",
       "example": {
         "spanish": "Comí media manzana.",
@@ -28246,7 +28247,7 @@
     },
     {
       "id": "5r4vw18q4o",
-      "spanish": "por sí mismo/a",
+      "spanish": "por sí mismo",
       "english": "by oneself",
       "example": {
         "spanish": "Lo hizo por sí mismo.",
@@ -29226,7 +29227,7 @@
     },
     {
       "id": "a600jvsbhd",
-      "spanish": "vivir solo/a",
+      "spanish": "vivir solo",
       "english": "to live alone",
       "example": {
         "spanish": "Vivo solo.",
@@ -30220,7 +30221,7 @@
     },
     {
       "id": "4f77g5k631",
-      "spanish": "solo/a",
+      "spanish": "solo",
       "english": "alone",
       "example": {
         "spanish": "Diana fue sola a la conferencia.",
@@ -30236,7 +30237,7 @@
     },
     {
       "id": "489z76bx0v",
-      "spanish": "el/la único/a",
+      "spanish": "el único",
       "english": "the only one",
       "example": {
         "spanish": "Era la única de su equipo con una entrada.",
@@ -30945,7 +30946,7 @@
     },
     {
       "id": "lkmlvytfdx",
-      "spanish": "malo/a",
+      "spanish": "malo",
       "english": "bad",
       "example": {
         "spanish": "Esta opción es mala.",
@@ -30984,7 +30985,7 @@
     },
     {
       "id": "qoipe9f8y1",
-      "spanish": "el/la peor",
+      "spanish": "el peor",
       "english": "the worst",
       "example": {
         "spanish": "Esta es la peor opción.",
@@ -31025,7 +31026,7 @@
     },
     {
       "id": "4fpgdvwxzu",
-      "spanish": "ser muy aficionado/a a [un equipo]",
+      "spanish": "ser muy aficionado a [un equipo]",
       "english": "to be a big fan of [a team]",
       "example": {
         "spanish": "Es muy aficionada al equipo.",
@@ -31466,7 +31467,7 @@
     },
     {
       "id": "girpyfruhi",
-      "spanish": "claro/a",
+      "spanish": "claro",
       "english": "clear",
       "example": {
         "spanish": "Las instrucciones son claras.",
@@ -31570,7 +31571,7 @@
     },
     {
       "id": "c8ostk5t2j",
-      "spanish": "actualizado/a",
+      "spanish": "actualizado",
       "english": "current",
       "example": {
         "spanish": "Mantén actualizada tu información.",
@@ -31667,7 +31668,7 @@
     },
     {
       "id": "pnq1l83rfn",
-      "spanish": "fino/a",
+      "spanish": "fino",
       "english": "fine",
       "example": {
         "spanish": "El polvo es muy fino.",
@@ -31684,7 +31685,7 @@
     },
     {
       "id": "x9b39jxzcj",
-      "spanish": "[estar] lleno/a",
+      "spanish": "[estar] lleno",
       "english": "[to be] full",
       "example": {
         "spanish": "El vaso está lleno.",
@@ -31725,7 +31726,7 @@
     },
     {
       "id": "30ci3kgq5t",
-      "spanish": "completo/a",
+      "spanish": "completo",
       "english": "full",
       "example": {
         "spanish": "Dame tu nombre completo.",
@@ -31810,7 +31811,7 @@
     },
     {
       "id": "xjc1yslrdv",
-      "spanish": "alto/a",
+      "spanish": "alto",
       "english": "high",
       "example": {
         "spanish": "El muro es alto.",
@@ -31828,7 +31829,7 @@
     },
     {
       "id": "bck2ng1flr",
-      "spanish": "elevado/a",
+      "spanish": "elevado",
       "english": "high",
       "example": {
         "spanish": "Los precios son elevados.",
@@ -31907,7 +31908,7 @@
     },
     {
       "id": "peqpgwfh34",
-      "spanish": "duro/a",
+      "spanish": "duro",
       "english": "hard",
       "example": {
         "spanish": "La silla es dura.",
@@ -31925,7 +31926,7 @@
     },
     {
       "id": "ho25hdai9c",
-      "spanish": "antiguo/a [cargo]",
+      "spanish": "antiguo [cargo]",
       "english": "former [role]",
       "example": {
         "spanish": "Me llamó mi antiguo jefe.",
@@ -31992,7 +31993,7 @@
     },
     {
       "id": "62eyqkanyd",
-      "spanish": "fallecido/a",
+      "spanish": "fallecido",
       "english": "late [person]",
       "example": {
         "spanish": "El profesor fallecido escribió este libro.",
@@ -32010,7 +32011,7 @@
     },
     {
       "id": "xwqv5fjghb",
-      "spanish": "último/a",
+      "spanish": "último",
       "english": "latest",
       "example": {
         "spanish": "Su último libro es excelente.",
@@ -32027,7 +32028,7 @@
     },
     {
       "id": "crw3ztzb94",
-      "spanish": "[sentirse] solo/a",
+      "spanish": "[sentirse] solo",
       "english": "[to feel] lonely",
       "example": {
         "spanish": "No se siente solo porque visita a sus amigos todos los días.",
@@ -32066,7 +32067,7 @@
     },
     {
       "id": "feol8lzuht",
-      "spanish": "muchos/as de [algo]",
+      "spanish": "muchos de [algo]",
       "english": "many of [something]",
       "example": {
         "spanish": "Muchos de ellos estuvieron de acuerdo.",
@@ -32084,7 +32085,7 @@
     },
     {
       "id": "spdcvm0pcy",
-      "spanish": "muchísimos/as",
+      "spanish": "muchísimos",
       "english": "a great many",
       "example": {
         "spanish": "Muchísimos estudiantes trabajan de noche.",
@@ -32122,7 +32123,7 @@
     },
     {
       "id": "b0w5xppllc",
-      "spanish": "nuevo/a",
+      "spanish": "nuevo",
       "english": "new",
       "example": {
         "spanish": "Compré un teléfono nuevo.",
@@ -32138,7 +32139,7 @@
     },
     {
       "id": "kh64q1xdfp",
-      "spanish": "ser nuevo/a aquí",
+      "spanish": "ser nuevo aquí",
       "english": "to be new here",
       "example": {
         "spanish": "¿Eres nuevo aquí?",
@@ -32157,7 +32158,7 @@
     },
     {
       "id": "ja8ns0grc2",
-      "spanish": "otro/a",
+      "spanish": "otro",
       "english": "new [replacement]",
       "example": {
         "spanish": "Necesitamos otro plan.",
@@ -32265,7 +32266,7 @@
     },
     {
       "id": "u6e7l73thm",
-      "spanish": "viejo/a",
+      "spanish": "viejo",
       "english": "old",
       "example": {
         "spanish": "El edificio es viejo.",
@@ -32283,7 +32284,7 @@
     },
     {
       "id": "sp9vpwtyfk",
-      "spanish": "antiguo/a",
+      "spanish": "antiguo",
       "english": "old",
       "example": {
         "spanish": "Es una tradición antigua.",
@@ -32399,7 +32400,7 @@
     },
     {
       "id": "p3iz88j7nj",
-      "spanish": "otro/a [sustantivo]",
+      "spanish": "otro [sustantivo]",
       "english": "another [noun]",
       "example": {
         "spanish": "Quiero otro libro.",
@@ -32417,7 +32418,7 @@
     },
     {
       "id": "q4y77eka9u",
-      "spanish": "el/la otro/a [sustantivo]",
+      "spanish": "el otro [sustantivo]",
       "english": "the other [noun]",
       "example": {
         "spanish": "Quiero el otro libro.",
@@ -32436,7 +32437,7 @@
     },
     {
       "id": "h3sv3yr9oz",
-      "spanish": "los/las otros/as [sustantivos]",
+      "spanish": "los otros [sustantivos]",
       "english": "the other [nouns]",
       "example": {
         "spanish": "Quiero los otros libros.",
@@ -32456,7 +32457,7 @@
     },
     {
       "id": "e40ebwunzv",
-      "spanish": "propio/a",
+      "spanish": "propio",
       "english": "own",
       "example": {
         "spanish": "Tengo mi propia oficina.",
@@ -32473,7 +32474,7 @@
     },
     {
       "id": "9mvkkm6znw",
-      "spanish": "ser dueño/a de [algo]",
+      "spanish": "ser dueño de [algo]",
       "english": "to own [something]",
       "example": {
         "spanish": "Es dueña del apartamento.",
@@ -32492,7 +32493,7 @@
     },
     {
       "id": "y4dvxsy81n",
-      "spanish": "solo/a",
+      "spanish": "solo",
       "english": "on one's own",
       "example": {
         "spanish": "Lo hizo solo.",
@@ -32552,7 +32553,7 @@
     },
     {
       "id": "thf9jt8qp9",
-      "spanish": "ser propietario/a de [algo]",
+      "spanish": "ser propietario de [algo]",
       "english": "to own [something]",
       "example": {
         "spanish": "Ana es propietaria de la tienda.",
@@ -32724,7 +32725,7 @@
     },
     {
       "id": "5ci6qn0ar4",
-      "spanish": "[permanecer] sentado/a",
+      "spanish": "[permanecer] sentado",
       "english": "[to remain] seated",
       "example": {
         "spanish": "Por favor, permanezca sentado.",
@@ -48366,8 +48367,8 @@
     },
     {
       "id": "3kvxnmbfe5",
-      "spanish": "[estar] listo",
-      "english": "[to be] ready",
+      "spanish": "[estar] listo (duplicado, ver zgccmkmabz)",
+      "english": "[to be] ready (duplicate, see zgccmkmabz)",
       "example": {
         "spanish": "Estoy listo para empezar.",
         "english": "I am ready to start."
@@ -48380,7 +48381,7 @@
         "topic:condition-state",
         "topic:multi-sense"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "aka9qxppt2",
@@ -56907,7 +56908,7 @@
     },
     {
       "id": "3zfrre4tig",
-      "spanish": "el/la siguiente [algo]",
+      "spanish": "el siguiente [algo]",
       "english": "the next [something]",
       "example": {
         "spanish": "La siguiente persona puede entrar.",
@@ -56924,7 +56925,7 @@
     },
     {
       "id": "e7mbwuo2sd",
-      "spanish": "el/la siguiente [algo]",
+      "spanish": "el siguiente [algo]",
       "english": "the following [something]",
       "example": {
         "spanish": "Nos vemos la semana siguiente.",
@@ -57447,7 +57448,7 @@
     },
     {
       "id": "r2sms8158b",
-      "spanish": "estar aburrido/a ==> el aburrimiento",
+      "spanish": "estar aburrido ==> el aburrimiento",
       "english": "to be bored ==> the boredom",
       "example": {
         "spanish": "El aburrimiento es importante.",
@@ -57467,7 +57468,7 @@
     },
     {
       "id": "4ybur9lrx9",
-      "spanish": "ser sabio/a ==> la sabiduría",
+      "spanish": "ser sabio ==> la sabiduría",
       "english": "to be wise ==> the wisdom",
       "example": {
         "spanish": "La sabiduría es importante.",
@@ -57507,7 +57508,7 @@
     },
     {
       "id": "bvc9f4ew19",
-      "spanish": "estar activo/a ==> la actividad",
+      "spanish": "estar activo ==> la actividad",
       "english": "to be active ==> the activity",
       "example": {
         "spanish": "La actividad es importante.",
@@ -57527,7 +57528,7 @@
     },
     {
       "id": "t96lih4h1i",
-      "spanish": "ser seguro/a ==> la seguridad",
+      "spanish": "ser seguro ==> la seguridad",
       "english": "to be secure ==> the security",
       "example": {
         "spanish": "La seguridad es importante.",
@@ -57567,7 +57568,7 @@
     },
     {
       "id": "f7rmsxmy11",
-      "spanish": "ser curioso/a ==> la curiosidad",
+      "spanish": "ser curioso ==> la curiosidad",
       "english": "to be curious ==> the curiosity",
       "example": {
         "spanish": "La curiosidad es importante.",
@@ -57953,7 +57954,7 @@
     },
     {
       "id": "mtk1xfh506",
-      "spanish": "la nube ==> estar nublado/a",
+      "spanish": "la nube ==> estar nublado",
       "english": "the cloud ==> to be cloudy",
       "example": {
         "spanish": "Eso está nublado.",
@@ -57991,7 +57992,7 @@
     },
     {
       "id": "c0cvr0xu9j",
-      "spanish": "la suerte ==> ser afortunado/a",
+      "spanish": "la suerte ==> ser afortunado",
       "english": "the luck ==> to be lucky",
       "example": {
         "spanish": "Eso es afortunado.",
@@ -58010,7 +58011,7 @@
     },
     {
       "id": "vpsluhtzqb",
-      "spanish": "el ruido ==> ser ruidoso/a",
+      "spanish": "el ruido ==> ser ruidoso",
       "english": "the noise ==> to be noisy",
       "example": {
         "spanish": "Eso es ruidoso.",
@@ -58029,7 +58030,7 @@
     },
     {
       "id": "nb9mh1xanx",
-      "spanish": "la lluvia ==> ser lluvioso/a",
+      "spanish": "la lluvia ==> ser lluvioso",
       "english": "the rain ==> to be rainy",
       "example": {
         "spanish": "Eso es lluvioso.",
@@ -58048,7 +58049,7 @@
     },
     {
       "id": "m0gjcozrw5",
-      "spanish": "el sol ==> estar soleado/a",
+      "spanish": "el sol ==> estar soleado",
       "english": "the sun ==> to be sunny",
       "example": {
         "spanish": "Eso está soleado.",
@@ -58067,7 +58068,7 @@
     },
     {
       "id": "rzyli0ajef",
-      "spanish": "el viento ==> ser ventoso/a",
+      "spanish": "el viento ==> ser ventoso",
       "english": "the wind ==> to be windy",
       "example": {
         "spanish": "Eso es ventoso.",
@@ -58143,7 +58144,7 @@
     },
     {
       "id": "n1t3611hn1",
-      "spanish": "el/la mártir ==> el martirio",
+      "spanish": "el mártir ==> el martirio",
       "english": "the martyr ==> the martyrdom",
       "example": {
         "spanish": "El martirio es importante.",
@@ -58314,7 +58315,7 @@
     },
     {
       "id": "w7hhild3mv",
-      "spanish": "el/la líder ==> el liderazgo",
+      "spanish": "el líder ==> el liderazgo",
       "english": "the leader ==> the leadership",
       "example": {
         "spanish": "El liderazgo es importante.",
@@ -58352,7 +58353,7 @@
     },
     {
       "id": "mae6kdzru1",
-      "spanish": "el/la campeón/a ==> el campeonato",
+      "spanish": "el campeón ==> el campeonato",
       "english": "the champion ==> the championship",
       "example": {
         "spanish": "El campeonato es importante.",
@@ -58371,7 +58372,7 @@
     },
     {
       "id": "znzucmyqh6",
-      "spanish": "el/la propietario/a ==> la propiedad",
+      "spanish": "el propietario ==> la propiedad",
       "english": "the owner ==> the ownership",
       "example": {
         "spanish": "La propiedad es importante.",
@@ -58390,7 +58391,7 @@
     },
     {
       "id": "m6mmp2iubo",
-      "spanish": "el/la socio/a ==> la sociedad",
+      "spanish": "el socio ==> la sociedad",
       "english": "the partner ==> the partnership",
       "example": {
         "spanish": "La sociedad es importante.",
@@ -58428,7 +58429,7 @@
     },
     {
       "id": "pa1u7cp2x9",
-      "spanish": "el/la ciudadano/a ==> la ciudadanía",
+      "spanish": "el ciudadano ==> la ciudadanía",
       "english": "the citizen ==> the citizenship",
       "example": {
         "spanish": "La ciudadanía es importante.",
@@ -58487,7 +58488,7 @@
     },
     {
       "id": "y61pnn77bq",
-      "spanish": "ser corto/a ==> acortar(se)",
+      "spanish": "ser corto ==> acortar(se)",
       "english": "to be short ==> to shorten",
       "example": {
         "spanish": "Necesitamos acortar.",
@@ -58507,7 +58508,7 @@
     },
     {
       "id": "6hviwt29i3",
-      "spanish": "ser oscuro/a ==> oscurecer(se)",
+      "spanish": "ser oscuro ==> oscurecer(se)",
       "english": "to be dark ==> to darken",
       "example": {
         "spanish": "Necesitamos oscurecer.",
@@ -58527,7 +58528,7 @@
     },
     {
       "id": "2hn0qjgou0",
-      "spanish": "ser ancho/a ==> ensanchar(se)",
+      "spanish": "ser ancho ==> ensanchar(se)",
       "english": "to be wide ==> to widen",
       "example": {
         "spanish": "Necesitamos ensanchar.",
@@ -58547,7 +58548,7 @@
     },
     {
       "id": "4y9gvi2fpq",
-      "spanish": "ser profundo/a ==> profundizar(se)",
+      "spanish": "ser profundo ==> profundizar(se)",
       "english": "to be deep ==> to deepen",
       "example": {
         "spanish": "Necesitamos profundizar.",
@@ -58567,7 +58568,7 @@
     },
     {
       "id": "ce3auojfy9",
-      "spanish": "ser blanco/a ==> blanquear(se)",
+      "spanish": "ser blanco ==> blanquear(se)",
       "english": "to be white ==> to whiten",
       "example": {
         "spanish": "Necesitamos blanquear.",
@@ -58588,7 +58589,7 @@
     },
     {
       "id": "0jje3nlbiy",
-      "spanish": "ser negro/a ==> ennegrecer(se)",
+      "spanish": "ser negro ==> ennegrecer(se)",
       "english": "to be black ==> to blacken",
       "example": {
         "spanish": "Necesitamos ennegrecer.",
@@ -58689,7 +58690,7 @@
     },
     {
       "id": "v6al3zu4ec",
-      "spanish": "debilitar [algo] ==> estar debilitado/a",
+      "spanish": "debilitar [algo] ==> estar debilitado",
       "english": "to weaken [something] ==> to be weakened",
       "example": {
         "spanish": "Eso está debilitado.",
@@ -58709,7 +58710,7 @@
     },
     {
       "id": "a1sa4nhcb4",
-      "spanish": "ser corto/a ==> la brevedad",
+      "spanish": "ser corto ==> la brevedad",
       "english": "to be short ==> the shortness",
       "example": {
         "spanish": "La brevedad es importante.",
@@ -58750,7 +58751,7 @@
     },
     {
       "id": "wei9rf2sd1",
-      "spanish": "acortar [algo] ==> estar acortado/a",
+      "spanish": "acortar [algo] ==> estar acortado",
       "english": "to shorten [something] ==> to be shortened",
       "example": {
         "spanish": "Eso está acortado.",
@@ -58770,7 +58771,7 @@
     },
     {
       "id": "tnwlnfg2vy",
-      "spanish": "ser blanco/a ==> ser blanquecino/a",
+      "spanish": "ser blanco ==> ser blanquecino",
       "english": "to be white ==> to be whitish",
       "example": {
         "spanish": "Eso es blanquecino.",
@@ -58792,7 +58793,7 @@
     },
     {
       "id": "7d2jip4ahu",
-      "spanish": "ser blanco/a ==> la blancura",
+      "spanish": "ser blanco ==> la blancura",
       "english": "to be white ==> the whiteness",
       "example": {
         "spanish": "La blancura es importante.",
@@ -58835,7 +58836,7 @@
     },
     {
       "id": "zurj7rpccm",
-      "spanish": "blanquear [algo] ==> estar blanqueado/a",
+      "spanish": "blanquear [algo] ==> estar blanqueado",
       "english": "to whiten [something] ==> to be whitened",
       "example": {
         "spanish": "Eso está blanqueado.",
@@ -58879,7 +58880,7 @@
     },
     {
       "id": "iylt35s2f7",
-      "spanish": "ser largo/a ==> la longitud",
+      "spanish": "ser largo ==> la longitud",
       "english": "to be long ==> the length",
       "example": {
         "spanish": "La longitud es importante.",
@@ -58919,7 +58920,7 @@
     },
     {
       "id": "wlwi0xgcz1",
-      "spanish": "alargar [algo] ==> estar alargado/a",
+      "spanish": "alargar [algo] ==> estar alargado",
       "english": "to lengthen [something] ==> to be lengthened",
       "example": {
         "spanish": "Eso está alargado.",
@@ -58979,7 +58980,7 @@
     },
     {
       "id": "hm3okqimw2",
-      "spanish": "fortalecer [algo] ==> estar fortalecido/a",
+      "spanish": "fortalecer [algo] ==> estar fortalecido",
       "english": "to strengthen [something] ==> to be strengthened",
       "example": {
         "spanish": "Eso está fortalecido.",
@@ -58999,7 +59000,7 @@
     },
     {
       "id": "p4jf3voka2",
-      "spanish": "el poder ==> ser poderoso/a",
+      "spanish": "el poder ==> ser poderoso",
       "english": "the power ==> to be powerful",
       "example": {
         "spanish": "Eso es poderoso.",
@@ -59020,7 +59021,7 @@
     },
     {
       "id": "4vywr55ohv",
-      "spanish": "el color ==> ser colorido/a",
+      "spanish": "el color ==> ser colorido",
       "english": "the color ==> to be colorful",
       "example": {
         "spanish": "Eso es colorido.",
@@ -59059,7 +59060,7 @@
     },
     {
       "id": "vhzsq8ln7r",
-      "spanish": "el dolor ==> ser doloroso/a",
+      "spanish": "el dolor ==> ser doloroso",
       "english": "the pain ==> to be painful",
       "example": {
         "spanish": "Eso es doloroso.",
@@ -59097,7 +59098,7 @@
     },
     {
       "id": "4ocwi6cx04",
-      "spanish": "el significado ==> ser significativo/a",
+      "spanish": "el significado ==> ser significativo",
       "english": "the meaning ==> to be meaningful",
       "example": {
         "spanish": "Eso es significativo.",
@@ -59116,7 +59117,7 @@
     },
     {
       "id": "glzsdb6815",
-      "spanish": "el éxito ==> ser exitoso/a",
+      "spanish": "el éxito ==> ser exitoso",
       "english": "the success ==> to be successful",
       "example": {
         "spanish": "Eso es exitoso.",
@@ -59135,7 +59136,7 @@
     },
     {
       "id": "reedh638gz",
-      "spanish": "el cuidado ==> ser cuidadoso/a",
+      "spanish": "el cuidado ==> ser cuidadoso",
       "english": "the care ==> to be careful",
       "example": {
         "spanish": "Eso es cuidadoso.",
@@ -59155,7 +59156,7 @@
     },
     {
       "id": "wqfpw1yjuw",
-      "spanish": "la belleza ==> ser bello/a",
+      "spanish": "la belleza ==> ser bello",
       "english": "the beauty ==> to be beautiful",
       "example": {
         "spanish": "Eso es bello.",
@@ -59174,7 +59175,7 @@
     },
     {
       "id": "f8e262y3zk",
-      "spanish": "la maravilla ==> ser maravilloso/a",
+      "spanish": "la maravilla ==> ser maravilloso",
       "english": "the wonder ==> to be wonderful",
       "example": {
         "spanish": "Eso es maravilloso.",
@@ -59193,7 +59194,7 @@
     },
     {
       "id": "mwfxyhsjeh",
-      "spanish": "la esperanza ==> estar esperanzado/a",
+      "spanish": "la esperanza ==> estar esperanzado",
       "english": "the hope ==> to be hopeful",
       "example": {
         "spanish": "Eso está esperanzado.",
@@ -59231,7 +59232,7 @@
     },
     {
       "id": "8wcsxzxwv9",
-      "spanish": "el daño ==> ser dañino/a",
+      "spanish": "el daño ==> ser dañino",
       "english": "the harm ==> to be harmful",
       "example": {
         "spanish": "Eso es dañino.",
@@ -59250,7 +59251,7 @@
     },
     {
       "id": "il6wa46evd",
-      "spanish": "la consideración ==> ser considerado/a",
+      "spanish": "la consideración ==> ser considerado",
       "english": "the thought ==> to be thoughtful",
       "example": {
         "spanish": "Eso es considerado.",
@@ -59290,7 +59291,7 @@
     },
     {
       "id": "h28wsvlqw7",
-      "spanish": "el color ==> ser incoloro/a",
+      "spanish": "el color ==> ser incoloro",
       "english": "the color ==> to be colorless",
       "example": {
         "spanish": "Eso es incoloro.",
@@ -59329,7 +59330,7 @@
     },
     {
       "id": "n0mnwwtyqk",
-      "spanish": "el dolor ==> ser indoloro/a",
+      "spanish": "el dolor ==> ser indoloro",
       "english": "the pain ==> to be painless",
       "example": {
         "spanish": "Eso es indoloro.",
@@ -59367,7 +59368,7 @@
     },
     {
       "id": "bdmgytlqrp",
-      "spanish": "el cuidado ==> ser descuidado/a",
+      "spanish": "el cuidado ==> ser descuidado",
       "english": "the care ==> to be careless",
       "example": {
         "spanish": "Eso es descuidado.",
@@ -59406,7 +59407,7 @@
     },
     {
       "id": "zv9401upxn",
-      "spanish": "la ayuda ==> estar indefenso/a",
+      "spanish": "la ayuda ==> estar indefenso",
       "english": "the help ==> to be helpless",
       "example": {
         "spanish": "Eso está indefenso.",
@@ -59425,7 +59426,7 @@
     },
     {
       "id": "dr9c7lyxkl",
-      "spanish": "el daño ==> ser inofensivo/a",
+      "spanish": "el daño ==> ser inofensivo",
       "english": "the harm ==> to be harmless",
       "example": {
         "spanish": "Eso es inofensivo.",
@@ -59444,7 +59445,7 @@
     },
     {
       "id": "odt3toa8kl",
-      "spanish": "la consideración ==> ser desconsiderado/a",
+      "spanish": "la consideración ==> ser desconsiderado",
       "english": "the thought ==> to be thoughtless",
       "example": {
         "spanish": "Eso es desconsiderado.",
@@ -59503,7 +59504,7 @@
     },
     {
       "id": "h9wrpukinh",
-      "spanish": "ser oscuro/a ==> la oscuridad",
+      "spanish": "ser oscuro ==> la oscuridad",
       "english": "to be dark ==> the darkness",
       "example": {
         "spanish": "La oscuridad es importante.",
@@ -59543,7 +59544,7 @@
     },
     {
       "id": "yx2twx4lyf",
-      "spanish": "estar enfermo/a ==> la enfermedad",
+      "spanish": "estar enfermo ==> la enfermedad",
       "english": "to be ill ==> the illness",
       "example": {
         "spanish": "La enfermedad es importante.",
@@ -59563,7 +59564,7 @@
     },
     {
       "id": "uaw2eapfmi",
-      "spanish": "sentirse solo/a ==> la soledad",
+      "spanish": "sentirse solo ==> la soledad",
       "english": "to be lonely ==> the loneliness",
       "example": {
         "spanish": "La soledad es importante.",
@@ -59583,7 +59584,7 @@
     },
     {
       "id": "c0ycs4sr3d",
-      "spanish": "estar listo/a ==> la preparación",
+      "spanish": "estar listo ==> la preparación",
       "english": "to be ready ==> the readiness",
       "example": {
         "spanish": "La preparación es importante.",
@@ -59603,7 +59604,7 @@
     },
     {
       "id": "4ay6y8jvwp",
-      "spanish": "ser bueno/a ==> la bondad",
+      "spanish": "ser bueno ==> la bondad",
       "english": "to be good ==> the goodness",
       "example": {
         "spanish": "La bondad es importante.",
@@ -59668,7 +59669,7 @@
     },
     {
       "id": "5r9qo4q9nv",
-      "spanish": "ser significativo/a ==> lo significativo",
+      "spanish": "ser significativo ==> lo significativo",
       "english": "to be meaningful ==> the meaningfulness",
       "example": {
         "spanish": "Lo significativo es importante.",
@@ -59732,7 +59733,7 @@
     },
     {
       "id": "ucs7ft1nsf",
-      "spanish": "ser descuidado/a ==> el descuido",
+      "spanish": "ser descuidado ==> el descuido",
       "english": "to be careless ==> the carelessness",
       "example": {
         "spanish": "El descuido es importante.",
@@ -59775,7 +59776,7 @@
     },
     {
       "id": "hcgacqlfv9",
-      "spanish": "ser rápido/a ==> rápidamente",
+      "spanish": "ser rápido ==> rápidamente",
       "english": "to be quick ==> quickly",
       "example": {
         "spanish": "Lo hizo rápidamente.",
@@ -59815,7 +59816,7 @@
     },
     {
       "id": "dbaw5g5xep",
-      "spanish": "ser cuidadoso/a ==> cuidadosamente",
+      "spanish": "ser cuidadoso ==> cuidadosamente",
       "english": "to be careful ==> carefully",
       "example": {
         "spanish": "Lo hizo cuidadosamente.",
@@ -59877,7 +59878,7 @@
     },
     {
       "id": "q0ld7z98sr",
-      "spanish": "ser lento/a ==> lentamente",
+      "spanish": "ser lento ==> lentamente",
       "english": "to be slow ==> slowly",
       "example": {
         "spanish": "Lo hizo lentamente.",
@@ -59898,7 +59899,7 @@
     },
     {
       "id": "ds2ffdqwke",
-      "spanish": "ser lógico/a ==> lógicamente",
+      "spanish": "ser lógico ==> lógicamente",
       "english": "to be logical ==> logically",
       "example": {
         "spanish": "Lo hizo lógicamente.",
@@ -59918,7 +59919,7 @@
     },
     {
       "id": "2j63ja0xbj",
-      "spanish": "ser práctico/a ==> prácticamente",
+      "spanish": "ser práctico ==> prácticamente",
       "english": "to be practical ==> practically",
       "example": {
         "spanish": "Lo hizo prácticamente.",
@@ -59938,7 +59939,7 @@
     },
     {
       "id": "4239p11fwb",
-      "spanish": "organizar [algo] ==> el/la organizador/a",
+      "spanish": "organizar [algo] ==> el organizador",
       "english": "to organize [something] ==> the organizer",
       "example": {
         "spanish": "El/la organizador es importante.",
@@ -59978,7 +59979,7 @@
     },
     {
       "id": "cx5kwc5kcu",
-      "spanish": "entrenar a [alguien] ==> el/la entrenador/a",
+      "spanish": "entrenar a [alguien] ==> el entrenador",
       "english": "to train [somebody] ==> the trainer",
       "example": {
         "spanish": "El/la entrenador es importante.",
@@ -59998,7 +59999,7 @@
     },
     {
       "id": "m9t6ejq5mi",
-      "spanish": "presentar [algo] ==> el/la presentador/a",
+      "spanish": "presentar [algo] ==> el presentador",
       "english": "to present [something] ==> the presenter",
       "example": {
         "spanish": "El/la presentador es importante.",
@@ -60038,7 +60039,7 @@
     },
     {
       "id": "3duqkda01w",
-      "spanish": "instruir a [alguien] ==> el/la instructor/a",
+      "spanish": "instruir a [alguien] ==> el instructor",
       "english": "to instruct [somebody] ==> the instructor",
       "example": {
         "spanish": "El/la instructor es importante.",
@@ -60058,7 +60059,7 @@
     },
     {
       "id": "1sh2iq8gyl",
-      "spanish": "crear [algo] ==> el/la creador/a",
+      "spanish": "crear [algo] ==> el creador",
       "english": "to create [something] ==> the creator",
       "example": {
         "spanish": "El/la creador es importante.",
@@ -60078,7 +60079,7 @@
     },
     {
       "id": "1is0rd5yg7",
-      "spanish": "sobrevivir ==> el/la sobreviviente",
+      "spanish": "sobrevivir ==> el sobreviviente",
       "english": "to survive ==> the survivor",
       "example": {
         "spanish": "El/la sobreviviente es importante.",
@@ -60098,7 +60099,7 @@
     },
     {
       "id": "lqb9barten",
-      "spanish": "traducir [algo] ==> el/la traductor/a",
+      "spanish": "traducir [algo] ==> el traductor",
       "english": "to translate [something] ==> the translator",
       "example": {
         "spanish": "El/la traductor es importante.",
@@ -60118,7 +60119,7 @@
     },
     {
       "id": "r10k8grkk4",
-      "spanish": "visitar [un lugar] ==> el/la visitante",
+      "spanish": "visitar [un lugar] ==> el visitante",
       "english": "to visit [a place] ==> the visitor",
       "example": {
         "spanish": "El/la visitante es importante.",
@@ -60163,10 +60164,10 @@
     },
     {
       "id": "g0z0ex17eh",
-      "spanish": "ser difícil ==> ser el/la más difícil",
+      "spanish": "ser difícil ==> ser el más difícil",
       "english": "to be hard ==> to be the hardest",
       "example": {
-        "spanish": "Eso es el/la más difícil.",
+        "spanish": "Eso es el más difícil.",
         "english": "That is the hardest."
       },
       "collections": [
@@ -60189,7 +60190,7 @@
     },
     {
       "id": "890ikntj2i",
-      "spanish": "ser rápido/a ==> ser más rápido/a",
+      "spanish": "ser rápido ==> ser más rápido",
       "english": "to be fast ==> to be faster",
       "example": {
         "spanish": "Eso es más rápido.",
@@ -60213,10 +60214,10 @@
     },
     {
       "id": "wyd4kcdm6s",
-      "spanish": "ser rápido/a ==> ser el/la más rápido/a",
+      "spanish": "ser rápido ==> ser el más rápido",
       "english": "to be fast ==> to be the fastest",
       "example": {
-        "spanish": "Eso es el/la más rápido.",
+        "spanish": "Eso es el más rápido.",
         "english": "That is the fastest."
       },
       "collections": [
@@ -60238,7 +60239,7 @@
     },
     {
       "id": "ogonaxqk95",
-      "spanish": "ser lento/a ==> ser más lento/a",
+      "spanish": "ser lento ==> ser más lento",
       "english": "to be slow ==> to be slower",
       "example": {
         "spanish": "Eso es más lento.",
@@ -60263,10 +60264,10 @@
     },
     {
       "id": "2u07owqzur",
-      "spanish": "ser lento/a ==> ser el/la más lento/a",
+      "spanish": "ser lento ==> ser el más lento",
       "english": "to be slow ==> to be the slowest",
       "example": {
-        "spanish": "Eso es el/la más lento.",
+        "spanish": "Eso es el más lento.",
         "english": "That is the slowest."
       },
       "collections": [
@@ -60289,7 +60290,7 @@
     },
     {
       "id": "kyceimh1lj",
-      "spanish": "ser barato/a ==> ser más barato/a",
+      "spanish": "ser barato ==> ser más barato",
       "english": "to be cheap ==> to be cheaper",
       "example": {
         "spanish": "Eso es más barato.",
@@ -60313,10 +60314,10 @@
     },
     {
       "id": "w06xy3n98x",
-      "spanish": "ser barato/a ==> ser el/la más barato/a",
+      "spanish": "ser barato ==> ser el más barato",
       "english": "to be cheap ==> to be the cheapest",
       "example": {
-        "spanish": "Eso es el/la más barato.",
+        "spanish": "Eso es el más barato.",
         "english": "That is the cheapest."
       },
       "collections": [
@@ -60338,7 +60339,7 @@
     },
     {
       "id": "7q3idfw27t",
-      "spanish": "ser seguro/a ==> ser más seguro/a",
+      "spanish": "ser seguro ==> ser más seguro",
       "english": "to be safe ==> to be safer",
       "example": {
         "spanish": "Eso es más seguro.",
@@ -60362,10 +60363,10 @@
     },
     {
       "id": "d4nhp6of4q",
-      "spanish": "ser seguro/a ==> ser el/la más seguro/a",
+      "spanish": "ser seguro ==> ser el más seguro",
       "english": "to be safe ==> to be the safest",
       "example": {
-        "spanish": "Eso es el/la más seguro.",
+        "spanish": "Eso es el más seguro.",
         "english": "That is the safest."
       },
       "collections": [
@@ -60387,7 +60388,7 @@
     },
     {
       "id": "8tlubdz2jb",
-      "spanish": "ser gracioso/a ==> ser más gracioso/a",
+      "spanish": "ser gracioso ==> ser más gracioso",
       "english": "to be funny ==> to be funnier",
       "example": {
         "spanish": "Eso es más gracioso.",
@@ -60410,10 +60411,10 @@
     },
     {
       "id": "r6af4026y9",
-      "spanish": "ser gracioso/a ==> ser el/la más gracioso/a",
+      "spanish": "ser gracioso ==> ser el más gracioso",
       "english": "to be funny ==> to be the funniest",
       "example": {
-        "spanish": "Eso es el/la más gracioso.",
+        "spanish": "Eso es el más gracioso.",
         "english": "That is the funniest."
       },
       "collections": [
@@ -60457,10 +60458,10 @@
     },
     {
       "id": "f1hip5yar5",
-      "spanish": "ser feliz ==> ser el/la más feliz",
+      "spanish": "ser feliz ==> ser el más feliz",
       "english": "to be happy ==> to be the happiest",
       "example": {
-        "spanish": "Eso es el/la más feliz.",
+        "spanish": "Eso es el más feliz.",
         "english": "That is the happiest."
       },
       "collections": [
@@ -60504,10 +60505,10 @@
     },
     {
       "id": "8f830wa18p",
-      "spanish": "ser fácil ==> ser el/la más fácil",
+      "spanish": "ser fácil ==> ser el más fácil",
       "english": "to be easy ==> to be the easiest",
       "example": {
-        "spanish": "Eso es el/la más fácil.",
+        "spanish": "Eso es el más fácil.",
         "english": "That is the easiest."
       },
       "collections": [
@@ -60552,10 +60553,10 @@
     },
     {
       "id": "tnl1yimmyb",
-      "spanish": "ser grande ==> ser el/la más grande",
+      "spanish": "ser grande ==> ser el más grande",
       "english": "to be big ==> to be the biggest",
       "example": {
-        "spanish": "Eso es el/la más grande.",
+        "spanish": "Eso es el más grande.",
         "english": "That is the biggest."
       },
       "collections": [
@@ -60778,7 +60779,7 @@
     },
     {
       "id": "7xyds447rs",
-      "spanish": "ser rojo/a ==> ser rojizo/a",
+      "spanish": "ser rojo ==> ser rojizo",
       "english": "to be red ==> to be reddish",
       "example": {
         "spanish": "Eso es rojizo.",
@@ -60859,7 +60860,7 @@
     },
     {
       "id": "vbyvw1ar60",
-      "spanish": "estar frío/a ==> estar algo frío/a",
+      "spanish": "estar frío ==> estar algo frío",
       "english": "to be cold ==> to be coldish",
       "example": {
         "spanish": "Eso está algo frío.",
@@ -60880,7 +60881,7 @@
     },
     {
       "id": "lxqyj1kx0z",
-      "spanish": "ser alto/a ==> ser algo alto/a",
+      "spanish": "ser alto ==> ser algo alto",
       "english": "to be tall ==> to be tallish",
       "example": {
         "spanish": "Eso es algo alto.",
@@ -60901,7 +60902,7 @@
     },
     {
       "id": "4t8czsc1e6",
-      "spanish": "ser pequeño/a ==> ser algo pequeño/a",
+      "spanish": "ser pequeño ==> ser algo pequeño",
       "english": "to be small ==> to be smallish",
       "example": {
         "spanish": "Eso es algo pequeño.",
@@ -60943,7 +60944,7 @@
     },
     {
       "id": "z5nq5xkxnd",
-      "spanish": "estar listo/a ==> estar más o menos listo/a",
+      "spanish": "estar listo ==> estar más o menos listo",
       "english": "to be ready ==> to be ready-ish",
       "example": {
         "spanish": "Eso está más o menos listo.",
@@ -60984,7 +60985,7 @@
     },
     {
       "id": "o68j722g0k",
-      "spanish": "el tonto ==> ser insensato/a",
+      "spanish": "el tonto ==> ser insensato",
       "english": "the fool ==> to be foolish",
       "example": {
         "spanish": "Eso es insensato.",
@@ -61044,7 +61045,7 @@
     },
     {
       "id": "rbeq0615ht",
-      "spanish": "la fiebre ==> estar afiebrado/a",
+      "spanish": "la fiebre ==> estar afiebrado",
       "english": "the fever ==> to be feverish",
       "example": {
         "spanish": "Eso está afiebrado.",
@@ -61064,7 +61065,7 @@
     },
     {
       "id": "1e1x6m1zkt",
-      "spanish": "Gran Bretaña ==> ser británico/a",
+      "spanish": "Gran Bretaña ==> ser británico",
       "english": "Britain ==> to be British",
       "example": {
         "spanish": "Eso es británico.",
@@ -61085,7 +61086,7 @@
     },
     {
       "id": "agp1j51uu1",
-      "spanish": "Irlanda ==> ser irlandés/irlandesa",
+      "spanish": "Irlanda ==> ser irlandés",
       "english": "Ireland ==> to be Irish",
       "example": {
         "spanish": "Eso es irlandés/irlandesa.",
@@ -61106,7 +61107,7 @@
     },
     {
       "id": "4t8fub205w",
-      "spanish": "España ==> ser español/a",
+      "spanish": "España ==> ser español",
       "english": "Spain ==> to be Spanish",
       "example": {
         "spanish": "Eso es español.",
@@ -61127,7 +61128,7 @@
     },
     {
       "id": "2qjlz4vm5k",
-      "spanish": "Polonia ==> ser polaco/a",
+      "spanish": "Polonia ==> ser polaco",
       "english": "Poland ==> to be Polish",
       "example": {
         "spanish": "Eso es polaco.",
@@ -61148,7 +61149,7 @@
     },
     {
       "id": "ghrg87tgqn",
-      "spanish": "Turquía ==> ser turco/a",
+      "spanish": "Turquía ==> ser turco",
       "english": "Turkey ==> to be Turkish",
       "example": {
         "spanish": "Eso es turco.",
@@ -61169,7 +61170,7 @@
     },
     {
       "id": "5iohmvrutt",
-      "spanish": "Suecia ==> ser sueco/a",
+      "spanish": "Suecia ==> ser sueco",
       "english": "Sweden ==> to be Swedish",
       "example": {
         "spanish": "Eso es sueco.",
@@ -61190,7 +61191,7 @@
     },
     {
       "id": "i53xfer580",
-      "spanish": "Dinamarca ==> ser danés/danesa",
+      "spanish": "Dinamarca ==> ser danés",
       "english": "Denmark ==> to be Danish",
       "example": {
         "spanish": "Eso es danés/danesa.",
@@ -61211,7 +61212,7 @@
     },
     {
       "id": "v842njhb7n",
-      "spanish": "Finlandia ==> ser finlandés/finlandesa",
+      "spanish": "Finlandia ==> ser finlandés",
       "english": "Finland ==> to be Finnish",
       "example": {
         "spanish": "Eso es finlandés/finlandesa.",
@@ -61232,7 +61233,7 @@
     },
     {
       "id": "rkqe2lip8p",
-      "spanish": "ser verdadero/a ==> la verdad",
+      "spanish": "ser verdadero ==> la verdad",
       "english": "to be true ==> the truth",
       "example": {
         "spanish": "La verdad es importante.",
@@ -61252,7 +61253,7 @@
     },
     {
       "id": "0h2pwx0gcd",
-      "spanish": "ser ancho/a ==> la anchura",
+      "spanish": "ser ancho ==> la anchura",
       "english": "to be wide ==> the width",
       "example": {
         "spanish": "La anchura es importante.",
@@ -61272,7 +61273,7 @@
     },
     {
       "id": "ln2qxef61a",
-      "spanish": "ser profundo/a ==> la profundidad",
+      "spanish": "ser profundo ==> la profundidad",
       "english": "to be deep ==> the depth",
       "example": {
         "spanish": "La profundidad es importante.",
@@ -61292,7 +61293,7 @@
     },
     {
       "id": "vbtrrcbmlc",
-      "spanish": "estar cálido/a ==> la calidez",
+      "spanish": "estar cálido ==> la calidez",
       "english": "to be warm ==> the warmth",
       "example": {
         "spanish": "La calidez es importante.",
@@ -61370,7 +61371,7 @@
     },
     {
       "id": "6du2hkieee",
-      "spanish": "estar muerto/a ==> la muerte",
+      "spanish": "estar muerto ==> la muerte",
       "english": "to be dead ==> the death",
       "example": {
         "spanish": "La muerte es importante.",
@@ -61390,7 +61391,7 @@
     },
     {
       "id": "nvj0p68vjx",
-      "spanish": "el norte ==> ser norteño/a",
+      "spanish": "el norte ==> ser norteño",
       "english": "the north ==> to be northern",
       "example": {
         "spanish": "Eso es norteño.",
@@ -61410,7 +61411,7 @@
     },
     {
       "id": "38nqxdz5b8",
-      "spanish": "el sur ==> ser sureño/a",
+      "spanish": "el sur ==> ser sureño",
       "english": "the south ==> to be southern",
       "example": {
         "spanish": "Eso es sureño.",
@@ -61550,7 +61551,7 @@
     },
     {
       "id": "3t1fpmkces",
-      "spanish": "el norte ==> el/la norteño/a",
+      "spanish": "el norte ==> el norteño",
       "english": "the north ==> the northerner",
       "example": {
         "spanish": "El/la norteño es importante.",
@@ -61571,7 +61572,7 @@
     },
     {
       "id": "8m3b7j0hv5",
-      "spanish": "el sur ==> el/la sureño/a",
+      "spanish": "el sur ==> el sureño",
       "english": "the south ==> the southerner",
       "example": {
         "spanish": "El/la sureño es importante.",
@@ -61592,7 +61593,7 @@
     },
     {
       "id": "s5en2tu6vz",
-      "spanish": "el este ==> el/la oriental",
+      "spanish": "el este ==> el oriental",
       "english": "the east ==> the easterner",
       "example": {
         "spanish": "El/la oriental es importante.",
@@ -61613,7 +61614,7 @@
     },
     {
       "id": "9qgyhzacqv",
-      "spanish": "el oeste ==> el/la occidental",
+      "spanish": "el oeste ==> el occidental",
       "english": "the west ==> the westerner",
       "example": {
         "spanish": "El/la occidental es importante.",
@@ -61634,10 +61635,10 @@
     },
     {
       "id": "h06ev5xh76",
-      "spanish": "ser superior ==> ser el/la de más arriba",
+      "spanish": "ser superior ==> ser el de más arriba",
       "english": "to be upper ==> to be uppermost",
       "example": {
-        "spanish": "Eso es el/la de más arriba.",
+        "spanish": "Eso es el de más arriba.",
         "english": "That is uppermost."
       },
       "collections": [
@@ -61655,10 +61656,10 @@
     },
     {
       "id": "wl72zn36ht",
-      "spanish": "ser inferior ==> ser el/la de más abajo",
+      "spanish": "ser inferior ==> ser el de más abajo",
       "english": "to be lower ==> to be lowermost",
       "example": {
-        "spanish": "Eso es el/la de más abajo.",
+        "spanish": "Eso es el de más abajo.",
         "english": "That is lowermost."
       },
       "collections": [
@@ -61676,10 +61677,10 @@
     },
     {
       "id": "9tllzw4mwd",
-      "spanish": "ser interior ==> ser el/la más interior",
+      "spanish": "ser interior ==> ser el más interior",
       "english": "to be inner ==> to be innermost",
       "example": {
-        "spanish": "Eso es el/la más interior.",
+        "spanish": "Eso es el más interior.",
         "english": "That is innermost."
       },
       "collections": [
@@ -61697,10 +61698,10 @@
     },
     {
       "id": "6axjf3o9tu",
-      "spanish": "ser exterior ==> ser el/la más exterior",
+      "spanish": "ser exterior ==> ser el más exterior",
       "english": "to be outer ==> to be outermost",
       "example": {
-        "spanish": "Eso es el/la más exterior.",
+        "spanish": "Eso es el más exterior.",
         "english": "That is outermost."
       },
       "collections": [
@@ -62402,7 +62403,7 @@
     },
     {
       "id": "zghjiilqvy",
-      "spanish": "[estar] solo/a",
+      "spanish": "[estar] solo",
       "english": "[to be] alone",
       "example": {
         "spanish": "Vive solo, pero no se siente solo.",
@@ -62807,7 +62808,7 @@
     },
     {
       "id": "22w9hcretm",
-      "spanish": "[ser] el/la principal",
+      "spanish": "[ser] el principal",
       "english": "[to be] foremost",
       "example": {
         "spanish": "Es nuestra principal prioridad.",
@@ -62918,7 +62919,7 @@
     },
     {
       "id": "9uy90z13u9",
-      "spanish": "[ser] interno/a",
+      "spanish": "[ser] interno",
       "english": "[to be] internal",
       "example": {
         "spanish": "Resolvieron el problema interno.",
@@ -62937,7 +62938,7 @@
     },
     {
       "id": "6ozlz4wrp3",
-      "spanish": "[ser] externo/a",
+      "spanish": "[ser] externo",
       "english": "[to be] external",
       "example": {
         "spanish": "Revisaron los cables externos.",
@@ -63178,7 +63179,7 @@
     },
     {
       "id": "6afpob0j51",
-      "spanish": "[ser] sencillo/a",
+      "spanish": "[ser] sencillo",
       "english": "[to be] straightforward",
       "example": {
         "spanish": "La explicación es sencilla.",
@@ -63237,7 +63238,7 @@
     },
     {
       "id": "6ittn2yy6r",
-      "spanish": "[estar] prevenido/a",
+      "spanish": "[estar] prevenido",
       "english": "[to be] forearmed",
       "example": {
         "spanish": "Quien está advertido está preparado.",
@@ -64380,7 +64381,7 @@
     },
     {
       "id": "rirmatii98",
-      "spanish": "ser visto/a [hacer algo]",
+      "spanish": "ser visto [hacer algo]",
       "english": "to be seen to [do something]",
       "example": {
         "spanish": "La vieron salir.",
@@ -66995,7 +66996,7 @@
     },
     {
       "id": "eqlnv74cw8",
-      "spanish": "próximo/a",
+      "spanish": "próximo",
       "english": "next",
       "example": {
         "spanish": "La próxima reunión es a las tres.",
@@ -67033,7 +67034,7 @@
     },
     {
       "id": "nuuwniplla",
-      "spanish": "último/a",
+      "spanish": "último",
       "english": "last",
       "example": {
         "spanish": "Esta es la última reunión.",
@@ -68139,7 +68140,7 @@
     },
     {
       "id": "mfqqgurgok",
-      "spanish": "apagarlo/la",
+      "spanish": "apagarlo",
       "english": "to turn it off",
       "example": {
         "spanish": "Apágala.",
@@ -68182,7 +68183,7 @@
     },
     {
       "id": "hux5cpb40q",
-      "spanish": "recogerlo/la",
+      "spanish": "recogerlo",
       "english": "to pick it up",
       "example": {
         "spanish": "Recógelo.",
@@ -68203,7 +68204,7 @@
     },
     {
       "id": "e4t2bqlckp",
-      "spanish": "cuidarlo/la",
+      "spanish": "cuidarlo",
       "english": "to look after it",
       "example": {
         "spanish": "Cuídalo.",
@@ -68720,10 +68721,10 @@
     },
     {
       "id": "loc2s7jjrm",
-      "spanish": "ser grande ==> ser el/la más grande",
+      "spanish": "ser grande ==> ser el más grande",
       "english": "to be large ==> to be the largest",
       "example": {
-        "spanish": "El superlativo de «grande» es «el/la más grande».",
+        "spanish": "El superlativo de «grande» es «el más grande».",
         "english": "The superlative of “large” is “the largest.”"
       },
       "collections": [
@@ -68742,10 +68743,10 @@
     },
     {
       "id": "kbio2z3f6e",
-      "spanish": "ser rápido/a ==> ser más rápido/a",
+      "spanish": "ser rápido ==> ser más rápido",
       "english": "to be quick ==> to be quicker",
       "example": {
-        "spanish": "El comparativo de «rápido/a» es «más rápido/a».",
+        "spanish": "El comparativo de «rápido» es «más rápido».",
         "english": "The comparative of “quick” is “quicker.”"
       },
       "collections": [
@@ -68764,10 +68765,10 @@
     },
     {
       "id": "37d57ewo59",
-      "spanish": "ser rápido/a ==> ser el/la más rápido/a",
+      "spanish": "ser rápido ==> ser el más rápido",
       "english": "to be quick ==> to be the quickest",
       "example": {
-        "spanish": "El superlativo de «rápido/a» es «el/la más rápido/a».",
+        "spanish": "El superlativo de «rápido» es «el más rápido».",
         "english": "The superlative of “quick” is “the quickest.”"
       },
       "collections": [
@@ -68786,10 +68787,10 @@
     },
     {
       "id": "zn504bpbeh",
-      "spanish": "ser rápido/a ==> ser más rápido/a",
+      "spanish": "ser rápido ==> ser más rápido",
       "english": "to be rapid ==> to be more rapid",
       "example": {
-        "spanish": "El comparativo de «rápido/a» es «más rápido/a».",
+        "spanish": "El comparativo de «rápido» es «más rápido».",
         "english": "The comparative of “rapid” is “more rapid.”"
       },
       "collections": [
@@ -68808,10 +68809,10 @@
     },
     {
       "id": "8o5wb8b6vo",
-      "spanish": "ser rápido/a ==> ser el/la más rápido/a",
+      "spanish": "ser rápido ==> ser el más rápido",
       "english": "to be rapid ==> to be the most rapid",
       "example": {
-        "spanish": "El superlativo de «rápido/a» es «el/la más rápido/a».",
+        "spanish": "El superlativo de «rápido» es «el más rápido».",
         "english": "The superlative of “rapid” is “the most rapid.”"
       },
       "collections": [
@@ -68852,10 +68853,10 @@
     },
     {
       "id": "ye7rmbmbov",
-      "spanish": "ser difícil ==> ser el/la más difícil",
+      "spanish": "ser difícil ==> ser el más difícil",
       "english": "to be difficult ==> to be the most difficult",
       "example": {
-        "spanish": "El superlativo de «difícil» es «el/la más difícil».",
+        "spanish": "El superlativo de «difícil» es «el más difícil».",
         "english": "The superlative of “difficult” is “the most difficult.”"
       },
       "collections": [
@@ -68896,10 +68897,10 @@
     },
     {
       "id": "2fyfjvb91s",
-      "spanish": "ser importante ==> ser el/la más importante",
+      "spanish": "ser importante ==> ser el más importante",
       "english": "to be important ==> to be the most important",
       "example": {
-        "spanish": "El superlativo de «importante» es «el/la más importante».",
+        "spanish": "El superlativo de «importante» es «el más importante».",
         "english": "The superlative of “important” is “the most important.”"
       },
       "collections": [
@@ -68918,10 +68919,10 @@
     },
     {
       "id": "f62p62zg7o",
-      "spanish": "ser bueno/a ==> ser mejor",
+      "spanish": "ser bueno ==> ser mejor",
       "english": "to be good ==> to be better",
       "example": {
-        "spanish": "El comparativo de «bueno/a» es «mejor».",
+        "spanish": "El comparativo de «bueno» es «mejor».",
         "english": "The comparative of “good” is “better.”"
       },
       "collections": [
@@ -68940,10 +68941,10 @@
     },
     {
       "id": "89nkgjqxfi",
-      "spanish": "ser bueno/a ==> ser el/la mejor",
+      "spanish": "ser bueno ==> ser el mejor",
       "english": "to be good ==> to be the best",
       "example": {
-        "spanish": "El superlativo de «bueno/a» es «el/la mejor».",
+        "spanish": "El superlativo de «bueno» es «el mejor».",
         "english": "The superlative of “good” is “the best.”"
       },
       "collections": [
@@ -68962,10 +68963,10 @@
     },
     {
       "id": "r4n8t7puv8",
-      "spanish": "ser malo/a ==> ser peor",
+      "spanish": "ser malo ==> ser peor",
       "english": "to be bad ==> to be worse",
       "example": {
-        "spanish": "El comparativo de «malo/a» es «peor».",
+        "spanish": "El comparativo de «malo» es «peor».",
         "english": "The comparative of “bad” is “worse.”"
       },
       "collections": [
@@ -68984,10 +68985,10 @@
     },
     {
       "id": "8wgwtlo4yb",
-      "spanish": "ser malo/a ==> ser el/la peor",
+      "spanish": "ser malo ==> ser el peor",
       "english": "to be bad ==> to be the worst",
       "example": {
-        "spanish": "El superlativo de «malo/a» es «el/la peor».",
+        "spanish": "El superlativo de «malo» es «el peor».",
         "english": "The superlative of “bad” is “the worst.”"
       },
       "collections": [
@@ -69064,7 +69065,7 @@
     },
     {
       "id": "ix24rna8om",
-      "spanish": "demasiado/a [adjetivo]",
+      "spanish": "demasiado [adjetivo]",
       "english": "too [adjective]",
       "example": {
         "spanish": "Estoy demasiado ocupado.",
@@ -69143,7 +69144,7 @@
     },
     {
       "id": "mmo03wwxvu",
-      "spanish": "demasiado/a [sustantivo no contable]",
+      "spanish": "demasiado [sustantivo no contable]",
       "english": "too much [uncountable noun]",
       "example": {
         "spanish": "Hay demasiado tráfico.",
@@ -69163,7 +69164,7 @@
     },
     {
       "id": "z2ew7nxy61",
-      "spanish": "demasiados/as [sustantivos contables]",
+      "spanish": "demasiados [sustantivos contables]",
       "english": "too many [countable nouns]",
       "example": {
         "spanish": "Hay demasiados carros.",
@@ -69183,7 +69184,7 @@
     },
     {
       "id": "iy5z32hskd",
-      "spanish": "tanto/a [sustantivo no contable]",
+      "spanish": "tanto [sustantivo no contable]",
       "english": "so much [uncountable noun]",
       "example": {
         "spanish": "Hay tanto tráfico que llegaremos tarde.",
@@ -69206,7 +69207,7 @@
     },
     {
       "id": "nw6m2yjdpc",
-      "spanish": "tantos/as [sustantivos contables]",
+      "spanish": "tantos [sustantivos contables]",
       "english": "so many [countable nouns]",
       "example": {
         "spanish": "Hay tantos carros que no podemos pasar.",
@@ -69227,7 +69228,7 @@
     },
     {
       "id": "21t654c1rv",
-      "spanish": "no tanto/a [sustantivo no contable]",
+      "spanish": "no tanto [sustantivo no contable]",
       "english": "not that much [uncountable noun]",
       "example": {
         "spanish": "No hay tanto tráfico.",
@@ -69246,7 +69247,7 @@
     },
     {
       "id": "z7nw8m8war",
-      "spanish": "no tantos/as [sustantivos contables]",
+      "spanish": "no tantos [sustantivos contables]",
       "english": "not that many [countable nouns]",
       "example": {
         "spanish": "No hay tantos carros.",
@@ -69265,7 +69266,7 @@
     },
     {
       "id": "p0bgt5s2ty",
-      "spanish": "tanto/a [sustantivo no contable] como",
+      "spanish": "tanto [sustantivo no contable] como",
       "english": "as much [uncountable noun] as",
       "example": {
         "spanish": "Tengo tanto trabajo como Laura.",
@@ -69284,7 +69285,7 @@
     },
     {
       "id": "frpegdhmhi",
-      "spanish": "tantos/as [sustantivos contables] como",
+      "spanish": "tantos [sustantivos contables] como",
       "english": "as many [countable nouns] as",
       "example": {
         "spanish": "Tengo tantas reuniones como Laura.",
@@ -69303,7 +69304,7 @@
     },
     {
       "id": "v3kumwf8dl",
-      "spanish": "mucho/a [sustantivo no contable]",
+      "spanish": "mucho [sustantivo no contable]",
       "english": "a lot of [uncountable noun]",
       "example": {
         "spanish": "Hay mucho tráfico.",
@@ -69321,7 +69322,7 @@
     },
     {
       "id": "w317yrkvug",
-      "spanish": "muchos/as [sustantivos contables]",
+      "spanish": "muchos [sustantivos contables]",
       "english": "a lot of [countable nouns]",
       "example": {
         "spanish": "Hay muchos carros.",
@@ -69339,7 +69340,7 @@
     },
     {
       "id": "oedeaeps1f",
-      "spanish": "muchos/as [sustantivos contables]",
+      "spanish": "muchos [sustantivos contables]",
       "english": "many [countable nouns]",
       "example": {
         "spanish": "Hay muchos carros.",
@@ -69358,7 +69359,7 @@
     },
     {
       "id": "opdrjw467t",
-      "spanish": "mucho/a [sustantivo no contable] (pregunta o negación)",
+      "spanish": "mucho [sustantivo no contable] (pregunta o negación)",
       "english": "much [uncountable noun]",
       "example": {
         "spanish": "No hay mucho tráfico.",
@@ -69377,7 +69378,7 @@
     },
     {
       "id": "cxyj6z0ff3",
-      "spanish": "muchos/as [sustantivos contables]",
+      "spanish": "muchos [sustantivos contables]",
       "english": "lots of [countable nouns]",
       "example": {
         "spanish": "Tenemos muchos libros.",
@@ -69489,7 +69490,7 @@
     },
     {
       "id": "0jyt2yhlip",
-      "spanish": "unos/as pocos/as [sustantivos contables]",
+      "spanish": "unos pocos [sustantivos contables]",
       "english": "a few [countable nouns]",
       "example": {
         "spanish": "Tengo unos pocos libros.",
