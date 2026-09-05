@@ -45528,7 +45528,8 @@
         "es:organizar",
         "en:organize",
         "cognate:izar-to-ize",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -45547,7 +45548,8 @@
         "es:memorizar",
         "en:memorize",
         "cognate:izar-to-ize",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -45566,7 +45568,8 @@
         "es:especializar",
         "en:specialize",
         "cognate:izar-to-ize",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45585,7 +45588,8 @@
         "es:finalizar",
         "en:finalize",
         "cognate:izar-to-ize",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45604,7 +45608,8 @@
         "es:minimizar",
         "en:minimize",
         "cognate:izar-to-ize",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45623,7 +45628,8 @@
         "es:maximizar",
         "en:maximize",
         "cognate:izar-to-ize",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45642,7 +45648,8 @@
         "es:priorizar",
         "en:prioritize",
         "cognate:izar-to-ize",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45661,7 +45668,8 @@
         "es:categorizar",
         "en:categorize",
         "cognate:izar-to-ize",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45680,7 +45688,8 @@
         "es:digitalizar",
         "en:digitize",
         "cognate:izar-to-ize",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45699,7 +45708,8 @@
         "es:visualizar",
         "en:visualize",
         "cognate:izar-to-ize",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48441,8 +48451,8 @@
       "spanish": "utilizar",
       "english": "to use",
       "example": {
-        "spanish": "Puedes usar esta aplicación para practicar inglés.",
-        "english": "You can use this application to practice English."
+        "spanish": "Es fácil utilizar esta aplicación.",
+        "english": "It is easy to use this application."
       },
       "collections": [
         "pos:verb",
@@ -48451,7 +48461,8 @@
         "cognate:opaque-gloss",
         "es:utilizar",
         "en:use",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -87017,6 +87028,108 @@
         "audit:reviewed"
       ],
       "curriculumRole": "supporting"
+    },
+    {
+      "id": "mmm0498x6l",
+      "spanish": "realizar",
+      "english": "to carry out",
+      "example": {
+        "spanish": "El equipo realizó el proyecto a tiempo.",
+        "english": "The team carried out the project on time."
+      },
+      "collections": [
+        "pos:verb",
+        "es:realizar",
+        "en:carry",
+        "topic:cognate",
+        "cognate:false-friend",
+        "contrast:confusable",
+        "contrast:realizar-vs-realize",
+        "audit:reviewed",
+        "topic:phrasal-verb",
+        "particle:out",
+        "grammar:phrasal-verb"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "wp6tfi9vqx",
+      "spanish": "utilizar",
+      "english": "to utilize",
+      "example": {
+        "spanish": "Podemos utilizar este método.",
+        "english": "We can utilize this method."
+      },
+      "collections": [
+        "pos:verb",
+        "morphology:suffix-ize",
+        "es:utilizar",
+        "en:utilize",
+        "topic:cognate",
+        "cognate:izar-to-ize",
+        "cognate:transparent",
+        "audit:reviewed"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "wii5c2qe27",
+      "spanish": "actualizar",
+      "english": "to update",
+      "example": {
+        "spanish": "Necesito actualizar mi teléfono.",
+        "english": "I need to update my phone."
+      },
+      "collections": [
+        "pos:verb",
+        "es:actualizar",
+        "en:update",
+        "topic:cognate",
+        "cognate:false-friend",
+        "contrast:confusable",
+        "contrast:actualizar-vs-actualize",
+        "audit:reviewed"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "k5bar7pzxw",
+      "spanish": "autorizar",
+      "english": "to authorize",
+      "example": {
+        "spanish": "El jefe autorizó el pago.",
+        "english": "The boss authorized the payment."
+      },
+      "collections": [
+        "pos:verb",
+        "morphology:suffix-ize",
+        "es:autorizar",
+        "en:authorize",
+        "topic:cognate",
+        "cognate:izar-to-ize",
+        "cognate:transparent",
+        "audit:reviewed"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "ryhs9zkp1i",
+      "spanish": "analizar",
+      "english": "to analyze",
+      "example": {
+        "spanish": "Los científicos van a analizar los datos.",
+        "english": "The scientists are going to analyze the data."
+      },
+      "collections": [
+        "pos:verb",
+        "es:analizar",
+        "en:analyze",
+        "topic:cognate",
+        "cognate:latin-root",
+        "cognate:transparent",
+        "audit:reviewed"
+      ],
+      "curriculumRole": "reference"
     }
   ]
 }

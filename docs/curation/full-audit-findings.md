@@ -9,4 +9,12 @@ on approval. Newest entries at the bottom. Format:
 - **[trash|flagged]** `spanish` → `english` (id) — one-line reason.
 ```
 
-Nothing logged yet — this file is created empty as part of Phase 0 scaffolding.
+## 2026-09-05 — `cognate:izar-to-ize`
+- **[note]** Two false friends found and added while checking completeness:
+  `realizar` → "to carry out" (NOT "to realize" — that's `darse cuenta`,
+  already in the DB) and `actualizar` → "to update" (NOT "to actualize").
+  Both tagged `cognate:false-friend` + `contrast:confusable` +
+  `contrast:<word>-vs-<word>`. Worth a dedicated sweep later: how many other
+  `-izar`/`-ar` verbs in the DB have a tempting-but-wrong `-ize`/`-ate`
+  cognate translation that isn't flagged?
+

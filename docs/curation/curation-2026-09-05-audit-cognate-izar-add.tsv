@@ -1,0 +1,5 @@
+realizar	to carry out	El equipo realizó el proyecto a tiempo.	The team carried out the project on time.	reference	pos:verb|es:realizar|en:carry|topic:cognate|cognate:false-friend|contrast:confusable|contrast:realizar-vs-realize|audit:reviewed
+utilizar	to utilize	Podemos utilizar este método.	We can utilize this method.	reference	pos:verb|morphology:suffix-ize|es:utilizar|en:utilize|topic:cognate|cognate:izar-to-ize|cognate:transparent|audit:reviewed
+actualizar	to update	Necesito actualizar mi teléfono.	I need to update my phone.	supporting	pos:verb|es:actualizar|en:update|topic:cognate|cognate:false-friend|contrast:confusable|contrast:actualizar-vs-actualize|audit:reviewed
+autorizar	to authorize	El jefe autorizó el pago.	The boss authorized the payment.	reference	pos:verb|morphology:suffix-ize|es:autorizar|en:authorize|topic:cognate|cognate:izar-to-ize|cognate:transparent|audit:reviewed
+analizar	to analyze	Los científicos van a analizar los datos.	The scientists are going to analyze the data.	reference	pos:verb|es:analizar|en:analyze|topic:cognate|cognate:latin-root|cognate:transparent|audit:reviewed
