@@ -144,3 +144,15 @@ skimming history, not a machine-readable state store.
   Spanish-to-English Mappings page overlaps with it (same es:<lemma>
   tags), so progress there carries over automatically. Next: es:abrir,
   then alphabetically through the ~185 verb lemma facets.
+- **2026-09-05, Verbs page, a-d done** — worked alphabetically through
+  es:abrir through es:dejar (~30 lemmas, ~275 rows). Found several
+  true duplicates with identical examples (apagar "turn off X"/"turn X
+  off", cerrar bare/[algo] templates, caber bare/[algo] templates —
+  all trashed) and one real ambiguity bug (dejar [algo] [en algún
+  lugar] "to forget" used the exact same example as its "to leave"
+  sibling — gave it a distinct forgetting-specific sentence). Most
+  batches were clean: this page has a LOT of legitimate near-synonym
+  clusters (coger/recoger alone spans ~16 rows) since it's the
+  semantic-range vocabulary the whole "multi-sense" framing is built
+  on. Commits `eb332d2d` through `42229be0`. Next: es:dependence
+  onward alphabetically — roughly 155 more lemma facets after that.
