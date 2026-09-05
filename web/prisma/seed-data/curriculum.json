@@ -1925,7 +1925,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -6448,7 +6449,8 @@
       "collections": [
         "es:escuchar",
         "en:listen",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -6469,7 +6471,8 @@
         "pos:verb",
         "topic:en-multi-sense",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -6510,7 +6513,8 @@
         "es:escuchar",
         "en:listen",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -6527,7 +6531,8 @@
         "es:oír",
         "en:hear",
         "pos:verb",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -6549,7 +6554,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:from",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -6570,7 +6576,8 @@
         "en:hear",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -6612,7 +6619,8 @@
         "es:esperar",
         "en:wait",
         "pos:verb",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -6634,7 +6642,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "particle:for",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -6674,7 +6683,8 @@
         "es:esperar",
         "en:wait",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -6690,7 +6700,8 @@
         "es:esperar",
         "en:hope",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -6730,7 +6741,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:for",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -6746,7 +6758,8 @@
         "es:esperar",
         "en:expect",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -7736,7 +7749,8 @@
       "collections": [
         "es:extrañar",
         "en:miss",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -7751,7 +7765,8 @@
       "collections": [
         "es:extrañar",
         "en:miss",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -7785,7 +7800,8 @@
         "es:extrañar",
         "es:extraña",
         "en:puzzles",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -7860,7 +7876,8 @@
       "collections": [
         "es:faltar",
         "en:is",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -7875,7 +7892,8 @@
       "collections": [
         "es:faltar",
         "en:lacks",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -7890,7 +7908,8 @@
       "collections": [
         "es:faltar",
         "en:needs",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -7907,7 +7926,8 @@
         "construction:there-be",
         "es:faltar",
         "en:there",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -7923,7 +7943,8 @@
         "construction:to-go",
         "es:faltar",
         "en:go",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -7939,7 +7960,8 @@
         "construction:map-a-direct-object",
         "es:faltar",
         "en:miss",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -7961,7 +7983,8 @@
         "pos:verb",
         "particle:from",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -7978,7 +8001,8 @@
         "es:faltar",
         "en:break",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -24710,7 +24734,8 @@
       "collections": [
         "es:entregar",
         "en:deliver",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -24726,7 +24751,8 @@
         "es:enviar",
         "en:send",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -25928,7 +25954,8 @@
         "pos:verb",
         "grammar:phrasal-verb",
         "particle:in",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -25947,7 +25974,8 @@
         "pos:verb",
         "grammar:phrasal-verb",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -25967,7 +25995,8 @@
         "pos:verb",
         "grammar:phrasal-verb",
         "particle:in",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -25982,7 +26011,8 @@
       "collections": [
         "es:enviar",
         "en:ship",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -25998,7 +26028,8 @@
         "particle:forward",
         "es:enviar",
         "en:forward",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26013,7 +26044,8 @@
       "collections": [
         "es:enviar",
         "en:refer",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32592,7 +32624,8 @@
         "grammar:verb-direct-object",
         "es:formar",
         "en:build",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -69116,7 +69149,8 @@
         "form:third-person",
         "es:estudiar",
         "en:study",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
