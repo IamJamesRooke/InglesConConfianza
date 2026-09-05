@@ -10936,7 +10936,8 @@
         "es:parecer",
         "en:apparently",
         "topic:multi-sense",
-        "adv:possibility"
+        "adv:possibility",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -20827,7 +20828,8 @@
         "pos:adverb",
         "en:anyway",
         "topic:multi-sense",
-        "adv:possibility"
+        "adv:possibility",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -21072,7 +21074,8 @@
         "pos:adverb",
         "es:soler",
         "en:usually",
-        "adv:habitual"
+        "adv:habitual",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -21138,7 +21141,8 @@
         "pos:adverb",
         "es:soler",
         "en:often",
-        "adv:habitual"
+        "adv:habitual",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26041,7 +26045,8 @@
         "pos:connector",
         "grammar:addition",
         "es:además",
-        "en:besides"
+        "en:besides",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26057,7 +26062,8 @@
         "pos:connector",
         "grammar:addition",
         "es:además",
-        "en:moreover"
+        "en:moreover",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26187,7 +26193,8 @@
         "es:apenas",
         "en:barely/hardly",
         "pos:adverb",
-        "adv:degree"
+        "adv:degree",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28242,7 +28249,8 @@
         "es:igual",
         "en:just",
         "pos:adverb",
-        "adv:degree"
+        "adv:degree",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28809,7 +28817,8 @@
         "es:medio",
         "en:somewhat",
         "pos:adverb",
-        "adv:degree"
+        "adv:degree",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -29224,7 +29233,8 @@
         "es:de",
         "en:maybe",
         "topic:multi-sense",
-        "adv:possibility"
+        "adv:possibility",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30916,7 +30926,8 @@
         "morphology:prefix-al",
         "es:casi",
         "en:almost",
-        "adv:degree"
+        "adv:degree",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -30935,7 +30946,8 @@
         "es:por",
         "en:almost",
         "topic:multi-sense",
-        "adv:degree"
+        "adv:degree",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31007,7 +31019,8 @@
         "morphology:recognition",
         "morphology:prefix-al",
         "es:también",
-        "en:also"
+        "en:also",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -31023,7 +31036,8 @@
         "grammar:addition",
         "pos:connector",
         "es:además",
-        "en:also"
+        "en:also",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -52241,7 +52255,8 @@
         "pos:adverb",
         "es:quizá",
         "en:maybe",
-        "adv:possibility"
+        "adv:possibility",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -52258,7 +52273,8 @@
         "pos:adverb",
         "es:quizá",
         "en:perhaps",
-        "adv:possibility"
+        "adv:possibility",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -52274,7 +52290,8 @@
         "pos:adverb",
         "es:quizá",
         "en:possibly",
-        "adv:possibility"
+        "adv:possibility",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -59093,7 +59110,8 @@
         "pos:adverb",
         "es:casi",
         "en:nearly",
-        "adv:degree"
+        "adv:degree",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -59157,7 +59175,8 @@
         "es:ser",
         "en:very",
         "topic:multi-sense",
-        "adv:degree"
+        "adv:degree",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -64997,7 +65016,8 @@
         "pos:connector",
         "es:además",
         "en:besides",
-        "grammar:addition"
+        "grammar:addition",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
