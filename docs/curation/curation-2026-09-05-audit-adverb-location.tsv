@@ -1,0 +1,37 @@
+obf74hel79	estar [en un lugar]	to be [in a place]	core	audit:reviewed	Audit: fine as-is.
+jo1ruoxv9h	estar aquí	to be here	supporting	audit:reviewed	Audit: fine as-is.
+cvb5pdwpwg	llegar a [un lugar]	to reach [a place]	reference	audit:reviewed	Audit: fine as-is.
+h1lszqhdfc	quedar en [un lugar]	to be located in [a place]	supporting	audit:reviewed	Audit: fine as-is.
+f4kds6r2gr	deber estar [en un estado o lugar]	must be [in a state or place]	supporting	audit:reviewed	Audit: fine as-is.
+0c32ojw5vj	de vuelta	back	supporting	audit:reviewed	Audit: fine as-is.
+mhy4vnhbw9	atrás de [algo]	behind [something]	reference	audit:reviewed	Audit: fine as-is.
+z9x61srsag	debajo de	under	reference	audit:reviewed	Audit: fixed placeholder example (it was just the headword repeated).	El perro duerme debajo de la mesa.	The dog sleeps under the table.
+aixmzqjpam	debajo de	below	reference	audit:reviewed	Audit: fine as-is.
+pwdq4vnqib	dentro de [un límite]	within [a limit]	reference	audit:reviewed	Audit: fine as-is.
+7c8rxvmsnl	entre dos cosas o personas	between	reference	audit:reviewed	Audit: fixed placeholder example (it was just the headword repeated).	El banco está entre la tienda y el café.	The bank is between the store and the café.
+7nzdyaq2x1	en medio de [algo]	in the middle of [something]	reference	audit:reviewed	Audit: fine as-is.
+9qwvwwgrlt	encima de	above	reference	audit:reviewed	Audit: fine as-is.
+gdwcgcevlo	aquí	here	supporting	audit:reviewed	Audit: fine as-is.
+avrqqne85a	acá	here	reference	audit:reviewed	Audit: fine as-is.
+ytz0ph603p	detrás de [algo]	behind [something]	reference	audit:reviewed	Audit: fine as-is.
+j1gh57080u	estar frente a [algo]	to be across from [something]	reference	audit:reviewed	Audit: fine as-is.
+6tux1k5wdo	por todo [un lugar]	across [a place]	reference	audit:reviewed	Audit: fine as-is.
+o6detbsibz	a lo largo de [una ruta]	along [a route]	trash	audit:reviewed	Audit: duplicate of oz59uwz6bx ("a lo largo de [algo]" -> "along [something]") — identical example sentence, and "a route" is just a narrower case of "something." Kept the more general row.
+v5my8rdbnu	por [una calle]	along [a street]	reference	audit:reviewed	Audit: fine as-is.
+kh64q1xdfp	ser nuevo aquí	to be new here	reference	audit:reviewed	Audit: fine as-is.
+oz59uwz6bx	a lo largo de [algo]	along [something]	reference	audit:reviewed	Audit: fine as-is.
+em6f63veig	al lado de [algo]	beside [something]	supporting	audit:reviewed	Audit: fine as-is.
+w3ipgpiocx	debajo de [algo]	below [something]	reference	audit:reviewed	Audit: fine as-is.
+ik8hj882al	entre [dos cosas]	between [two things]	reference	audit:reviewed	Audit: fine as-is.
+gcuz359xog	entre [varias cosas]	among [several things]	reference	audit:reviewed	Audit: fine as-is.
+asfplpbeje	más allá de [algo]	beyond [something]	reference	audit:reviewed	Audit: fine as-is.
+95yrl4jxn3	hacia [algo]	toward [something]	supporting	audit:reviewed	Audit: fine as-is.
+l5hk1zrmge	hacia [algo]	towards [something]	reference	audit:reviewed	Audit: fine as-is.
+t18qtn5yuv	hacia adelante	forward	reference	audit:reviewed	Audit: fine as-is.
+na9c6zc7g3	hacia adelante	forwards	reference	audit:reviewed	Audit: fine as-is.
+erxz8fgsnr	más abajo de	lower than	reference	audit:reviewed	Audit: fine as-is.
+2q9z2cbaaq	arriba de	above	reference	audit:reviewed	Audit: fine as-is.
+n3549z5wwm	desde [un lugar]	from a place	supporting	audit:reviewed	Audit: fine as-is.
+vlfntsr6mm	vas a [un lugar]	you are going to [a place]	supporting	audit:reviewed	Audit: fine as-is.
+i0ipg114mg	vamos a [un lugar]	we are going to [a place]	supporting	audit:reviewed	Audit: fine as-is.
+m2cu1ggb78	van a [un lugar]	they are going to [a place]	supporting	audit:reviewed	Audit: fine as-is.

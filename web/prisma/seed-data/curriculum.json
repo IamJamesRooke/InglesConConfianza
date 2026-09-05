@@ -6737,7 +6737,8 @@
         "sense:estar-lugar",
         "conjugation:infinitive",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -7359,7 +7360,8 @@
         "es:estar",
         "en:here",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -9944,7 +9946,8 @@
         "en:reach",
         "pos:verb",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -13696,7 +13699,8 @@
         "topic:multi-sense",
         "pos:verb",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -17054,7 +17058,8 @@
         "es:deber",
         "en:be",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -23986,7 +23991,8 @@
         "es:de",
         "en:back",
         "topic:multi-sense",
-        "topic:location"
+        "topic:location",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -26295,7 +26301,8 @@
         "topic:location",
         "pos:preposition",
         "es:atrás",
-        "en:behind"
+        "en:behind",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26458,15 +26465,16 @@
       "spanish": "debajo de",
       "english": "under",
       "example": {
-        "spanish": "debajo de",
-        "english": "under"
+        "spanish": "El perro duerme debajo de la mesa.",
+        "english": "The dog sleeps under the table."
       },
       "collections": [
         "es:bajo",
         "es:debajo",
         "en:under",
         "pos:preposition",
-        "topic:location"
+        "topic:location",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26482,7 +26490,8 @@
         "es:debajo",
         "en:below",
         "pos:preposition",
-        "topic:location"
+        "topic:location",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -27477,7 +27486,8 @@
         "en:limit",
         "es:dentro",
         "en:within",
-        "topic:location"
+        "topic:location",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28077,14 +28087,15 @@
       "spanish": "entre dos cosas o personas",
       "english": "between",
       "example": {
-        "spanish": "entre dos cosas o personas",
-        "english": "between"
+        "spanish": "El banco está entre la tienda y el café.",
+        "english": "The bank is between the store and the café."
       },
       "collections": [
         "es:entre",
         "en:between",
         "pos:preposition",
-        "topic:location"
+        "topic:location",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28771,7 +28782,8 @@
         "es:en",
         "en:in",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -29890,7 +29902,8 @@
         "es:encima",
         "en:above",
         "pos:preposition",
-        "topic:location"
+        "topic:location",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30329,7 +30342,8 @@
         "pos:adverb",
         "topic:location",
         "es:aquí",
-        "en:here"
+        "en:here",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -30345,7 +30359,8 @@
         "pos:adverb",
         "topic:location",
         "es:acá",
-        "en:here"
+        "en:here",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30363,7 +30378,8 @@
         "morphology:recognition",
         "morphology:prefix-be",
         "es:detrás",
-        "en:behind"
+        "en:behind",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30746,7 +30762,8 @@
         "pos:verb",
         "construction:prepositional-verb",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30765,7 +30782,8 @@
         "topic:location",
         "es:por",
         "en:across",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31418,9 +31436,10 @@
         "particle:along",
         "pos:preposition",
         "topic:location",
-        "en:along"
+        "en:along",
+        "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "v5my8rdbnu",
@@ -31436,7 +31455,8 @@
         "topic:location",
         "es:por",
         "en:along",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32936,7 +32956,8 @@
         "es:ser",
         "en:new",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -64572,7 +64593,8 @@
         "morphology:prefix-al",
         "en:along",
         "pos:preposition",
-        "topic:location"
+        "topic:location",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -64608,7 +64630,8 @@
         "es:lado",
         "en:beside",
         "pos:preposition",
-        "topic:location"
+        "topic:location",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -64644,7 +64667,8 @@
         "es:debajo",
         "en:below",
         "pos:preposition",
-        "topic:location"
+        "topic:location",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -64662,7 +64686,8 @@
         "es:entre",
         "en:between",
         "pos:preposition",
-        "topic:location"
+        "topic:location",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -64680,7 +64705,8 @@
         "es:entre",
         "en:among",
         "pos:preposition",
-        "topic:location"
+        "topic:location",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -64698,7 +64724,8 @@
         "es:más",
         "en:beyond",
         "pos:preposition",
-        "topic:location"
+        "topic:location",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -65121,7 +65148,8 @@
         "es:hacia",
         "en:toward",
         "pos:preposition",
-        "topic:location"
+        "topic:location",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -65140,7 +65168,8 @@
         "es:hacia",
         "en:towards",
         "pos:preposition",
-        "topic:location"
+        "topic:location",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -65160,7 +65189,8 @@
         "topic:direction",
         "es:hacia",
         "en:forward",
-        "topic:location"
+        "topic:location",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -65180,7 +65210,8 @@
         "topic:direction",
         "es:hacia",
         "en:forwards",
-        "topic:location"
+        "topic:location",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -86199,7 +86230,8 @@
         "grammar:comparison",
         "es:abajo",
         "en:lower",
-        "topic:location"
+        "topic:location",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -86215,7 +86247,8 @@
         "pos:preposition",
         "es:arriba",
         "en:above",
-        "topic:location"
+        "topic:location",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -86232,7 +86265,8 @@
         "es:desde",
         "en:from",
         "topic:en-multi-sense",
-        "topic:location"
+        "topic:location",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -86967,7 +87001,8 @@
         "en:go",
         "topic:location",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -87014,7 +87049,8 @@
         "en:go",
         "topic:location",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -87036,7 +87072,8 @@
         "en:go",
         "topic:location",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
