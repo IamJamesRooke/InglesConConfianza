@@ -6264,9 +6264,10 @@
         "pos:verb",
         "topic:phrasal-verb",
         "topic:imperative",
-        "imp:affirmative-informal"
+        "imp:affirmative-informal",
+        "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "35tfe8nazs",
@@ -21397,7 +21398,8 @@
         "topic:emotion-state",
         "topic:multi-sense",
         "topic:imperative",
-        "imp:affirmative-informal"
+        "imp:affirmative-informal",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -21474,9 +21476,10 @@
         "topic:health",
         "topic:multi-sense",
         "topic:imperative",
-        "imp:affirmative-informal"
+        "imp:affirmative-informal",
+        "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "o0zirvikcg",
@@ -57425,9 +57428,10 @@
         "pos:verb",
         "expr:warning-command",
         "topic:imperative",
-        "imp:affirmative-informal"
+        "imp:affirmative-informal",
+        "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "r4wshfw0zl",
@@ -57447,9 +57451,10 @@
         "pos:verb",
         "expr:warning-command",
         "topic:imperative",
-        "imp:affirmative-informal"
+        "imp:affirmative-informal",
+        "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "2n962u3uuf",
@@ -65101,7 +65106,8 @@
         "en:it",
         "topic:en-multi-sense",
         "topic:imperative",
-        "imp:affirmative-informal"
+        "imp:affirmative-informal",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -65122,7 +65128,8 @@
         "en:it",
         "topic:en-multi-sense",
         "topic:imperative",
-        "imp:affirmative-formal"
+        "imp:affirmative-formal",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -65143,7 +65150,8 @@
         "en:it",
         "topic:en-multi-sense",
         "topic:imperative",
-        "imp:affirmative-formal"
+        "imp:affirmative-formal",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -65164,7 +65172,8 @@
         "en:it",
         "topic:en-multi-sense",
         "topic:imperative",
-        "imp:affirmative-formal"
+        "imp:affirmative-formal",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -65185,7 +65194,8 @@
         "en:don't",
         "pos:verb",
         "topic:imperative",
-        "imp:negative"
+        "imp:negative",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -87224,7 +87234,8 @@
         "grammar:command",
         "register:informal",
         "es:cerrar",
-        "en:close"
+        "en:close",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -87244,7 +87255,8 @@
         "grammar:command",
         "register:formal",
         "es:cerrar",
-        "en:close"
+        "en:close",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -87264,9 +87276,10 @@
         "grammar:command",
         "register:formal",
         "es:cerrar",
-        "en:close"
+        "en:close",
+        "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "q98pxxzqf3",
