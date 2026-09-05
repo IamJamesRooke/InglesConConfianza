@@ -173,7 +173,14 @@ skimming history, not a machine-readable state store.
   because they surface again in a later facet). Otherwise a long clean
   stretch — llegar/llevar/mantener/pasar/pedir/pegar/pensar/perder all
   checked out with distinct correct examples on every row. Commits
-  `546107db` through `8a0dd250`. Next: es:producir onward
-  alphabetically — roughly 165 more lemma facets after that, then the
-  two Mappings pages' remaining es:/en: facets (word-function words
-  like de/en/con/por/que, not verbs) and Phrasal Verbs.
+  `546107db` through `8a0dd250`.
+- **2026-09-05, Verbs page, q-t done** — es:quedar through es:terminar
+  (~35 lemmas, ~260 rows). One more real bug: "subir" -> "to go up"
+  had the identical example as its "to come up" sibling AND its own
+  English translation literally said "come up" — fixed. Otherwise
+  clean: quitar/sacar/salir/seguir/sentir all large idiom networks
+  with correctly distinct examples. Commits `a97750c2` through
+  `04aca676`. Next: es:tirar onward alphabetically — roughly 90 more
+  lemma facets after that, then the two Mappings pages' remaining
+  es:/en: facets (word-function words like de/en/con/por/que, not
+  verbs) and Phrasal Verbs.
