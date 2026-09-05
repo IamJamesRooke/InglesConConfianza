@@ -50934,8 +50934,8 @@
       "spanish": "[el] hombre",
       "english": "man",
       "example": {
-        "spanish": "La mujer tiene dos hijos.",
-        "english": "The woman has two children."
+        "spanish": "El hombre trabaja en el banco.",
+        "english": "The man works at the bank."
       },
       "collections": [
         "grammar:plural",
@@ -51098,8 +51098,8 @@
       "spanish": "[el] niño",
       "english": "child",
       "example": {
-        "spanish": "La mujer tiene dos hijos.",
-        "english": "The woman has two children."
+        "spanish": "El niño juega en el parque.",
+        "english": "The child is playing in the park."
       },
       "collections": [
         "grammar:plural",
@@ -51247,8 +51247,8 @@
       "spanish": "[el] hogar",
       "english": "home",
       "example": {
-        "spanish": "Estoy en casa.",
-        "english": "I am at home."
+        "spanish": "Mi hogar está lejos de aquí.",
+        "english": "My home is far from here."
       },
       "collections": [
         "topic:places",
@@ -51420,8 +51420,8 @@
       "spanish": "a casa",
       "english": "home",
       "example": {
-        "spanish": "Estoy en casa.",
-        "english": "I am at home."
+        "spanish": "Voy a casa después del trabajo.",
+        "english": "I'm going home after work."
       },
       "collections": [
         "topic:places",
@@ -51455,8 +51455,8 @@
       "spanish": "cerca de un lugar",
       "english": "near a place",
       "example": {
-        "spanish": "Es un buen lugar para la reunión.",
-        "english": "It is a good place for the meeting."
+        "spanish": "Vivimos cerca de un lugar tranquilo.",
+        "english": "We live near a quiet place."
       },
       "collections": [
         "topic:places",
@@ -51473,8 +51473,8 @@
       "spanish": "cerca de un lugar",
       "english": "close to a place",
       "example": {
-        "spanish": "Es un buen lugar para la reunión.",
-        "english": "It is a good place for the meeting."
+        "spanish": "El hotel está cerca de un lugar histórico.",
+        "english": "The hotel is close to a historic place."
       },
       "collections": [
         "topic:places",
@@ -51600,8 +51600,8 @@
       "spanish": "con gusto",
       "english": "you're welcome",
       "example": {
-        "spanish": "De nada.",
-        "english": "You're welcome."
+        "spanish": "Con gusto te ayudo mañana.",
+        "english": "You're welcome — I'll help you tomorrow."
       },
       "collections": [
         "topic:social-expression",
@@ -54794,8 +54794,8 @@
       "spanish": "levantar [algo]",
       "english": "to raise [something]",
       "example": {
-        "spanish": "Sube la caja y baja la mesa con cuidado.",
-        "english": "Raise the box and lower the table carefully."
+        "spanish": "Levantó la caja sin ayuda.",
+        "english": "He raised the box without help."
       },
       "collections": [
         "es:subir",
@@ -56047,8 +56047,8 @@
       "spanish": "la próxima semana",
       "english": "next week",
       "example": {
-        "spanish": "Tengo que terminarlo esta semana.",
-        "english": "I have to finish it this week."
+        "spanish": "Lo terminaré la próxima semana.",
+        "english": "I'll finish it next week."
       },
       "collections": [
         "topic:time",
@@ -56064,8 +56064,8 @@
       "spanish": "la semana pasada",
       "english": "last week",
       "example": {
-        "spanish": "Tengo que terminarlo esta semana.",
-        "english": "I have to finish it this week."
+        "spanish": "Lo terminé la semana pasada.",
+        "english": "I finished it last week."
       },
       "collections": [
         "topic:time",
@@ -56080,8 +56080,8 @@
       "spanish": "este mes",
       "english": "this month",
       "example": {
-        "spanish": "Voy a viajar el próximo mes.",
-        "english": "I am going to travel next month."
+        "spanish": "Este mes he trabajado mucho.",
+        "english": "This month I have worked a lot."
       },
       "collections": [
         "topic:time",
@@ -56114,8 +56114,8 @@
       "spanish": "el mes pasado",
       "english": "last month",
       "example": {
-        "spanish": "Voy a viajar el próximo mes.",
-        "english": "I am going to travel next month."
+        "spanish": "Terminé el proyecto el mes pasado.",
+        "english": "I finished the project last month."
       },
       "collections": [
         "topic:time",
@@ -56147,8 +56147,8 @@
       "spanish": "el próximo año",
       "english": "next year",
       "example": {
-        "spanish": "Voy a viajar el próximo mes.",
-        "english": "I am going to travel next month."
+        "spanish": "Voy a viajar el próximo año.",
+        "english": "I am going to travel next year."
       },
       "collections": [
         "topic:time",
@@ -56215,8 +56215,8 @@
       "spanish": "se fue la luz",
       "english": "the power went out",
       "example": {
-        "spanish": "El precio del libro es veinte dólares.",
-        "english": "The price of the book is twenty dollars."
+        "spanish": "Se fue la luz durante la tormenta.",
+        "english": "The power went out during the storm."
       },
       "collections": [
         "topic:everyday-objects",
@@ -56285,8 +56285,8 @@
       "spanish": "que aproveche",
       "english": "enjoy your meal",
       "example": {
-        "spanish": "De nada.",
-        "english": "You're welcome."
+        "spanish": "¡Que aproveche!",
+        "english": "Enjoy your meal!"
       },
       "collections": [
         "topic:social-expression",
@@ -56662,8 +56662,8 @@
       "spanish": "[los] hombres",
       "english": "men",
       "example": {
-        "spanish": "Hay una persona en la oficina.",
-        "english": "There is one person in the office."
+        "spanish": "Los hombres esperan afuera.",
+        "english": "The men are waiting outside."
       },
       "collections": [
         "grammar:plural",
@@ -56681,8 +56681,8 @@
       "spanish": "[las] mujeres",
       "english": "women",
       "example": {
-        "spanish": "Hay una persona en la oficina.",
-        "english": "There is one person in the office."
+        "spanish": "Las mujeres organizaron el evento.",
+        "english": "The women organized the event."
       },
       "collections": [
         "grammar:plural",
@@ -56890,8 +56890,8 @@
       "spanish": "[ser] nuevo en [un lugar]",
       "english": "[to be] new to [a place]",
       "example": {
-        "spanish": "Compré un teléfono nuevo.",
-        "english": "I bought a new phone."
+        "spanish": "Soy nuevo en esta ciudad.",
+        "english": "I am new to this city."
       },
       "collections": [
         "grammar:ser-adjective",
