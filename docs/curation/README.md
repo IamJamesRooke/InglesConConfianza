@@ -67,3 +67,4 @@ Going forward: `curation-YYYY-MM-DD-<slug>.tsv`. A canonical topic spec is
 | 2026-09-04 | Adjectives: `degree:` facet on existing comparative/superlative rows | `498d83db` | `curation-2026-09-04-adjectives-degree.tsv` |
 | 2026-09-04 | Nouns/adjectives theme categorization (`topic:` facet) | `465f2e4` | `curation-2026-09-04-nouns-adjectives-theme.tsv` |
 | 2026-09-04 | **Nouns/Adjectives topics** — tag degree: derivation rows `pos:adjective` so they surface on the new pages | *(pending commit)* | `curation-2026-09-04-adjectives-degree-pos-tag.tsv` |
+| 2026-09-05 | **Spanish-to-English Mappings topic** — `topic:multi-sense` facet on the 44 `es:` lemmas with 14+ distinct English senses, excluding `es:be` and `es:mañana` as mistagging bugs | `88502be7` | `curation-2026-09-05-multi-sense-topic.tsv` |
