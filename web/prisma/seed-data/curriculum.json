@@ -65013,10 +65013,11 @@
         "grammar:command",
         "form:bare-infinitive",
         "es:hagámoslo",
-        "en:let",
         "topic:en-multi-sense",
         "topic:imperative",
-        "imp:lets"
+        "imp:lets",
+        "en:let's",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -65034,10 +65035,11 @@
         "grammar:command",
         "form:bare-infinitive",
         "es:vamos",
-        "en:let",
         "topic:en-multi-sense",
         "topic:imperative",
-        "imp:lets"
+        "imp:lets",
+        "en:let's",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -65055,10 +65057,11 @@
         "grammar:command",
         "form:bare-infinitive",
         "es:hagamos",
-        "en:let",
         "topic:en-multi-sense",
         "topic:imperative",
-        "imp:lets"
+        "imp:lets",
+        "en:let's",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -86873,7 +86876,8 @@
         "grammar:imperative",
         "grammar:command",
         "es:ir",
-        "en:let's"
+        "en:let's",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -86893,9 +86897,30 @@
         "grammar:command",
         "grammar:negative",
         "es:ir",
-        "en:let's"
+        "en:let's",
+        "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "9gmo1aoike",
+      "spanish": "Veamos.",
+      "english": "Let's see.",
+      "example": {
+        "spanish": "Veamos qué dice el informe.",
+        "english": "Let's see what the report says."
+      },
+      "collections": [
+        "pos:verb",
+        "topic:imperative",
+        "imp:lets",
+        "grammar:imperative",
+        "grammar:command",
+        "es:ver",
+        "en:let's",
+        "audit:reviewed"
+      ],
+      "curriculumRole": "supporting"
     }
   ]
 }

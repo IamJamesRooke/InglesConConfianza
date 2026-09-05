@@ -1,0 +1,5 @@
+mvfvzwbg8g	Vamos a cenar.	Let's have dinner.	supporting	audit:reviewed	Audit: role/membership/tags/example all fine, no changes needed.
+9v6o0rhpio	vamos	let's go	supporting	en:let's|audit:reviewed	Audit: standardize lemma tag to en:let's to match its siblings in this family (was en:let, inconsistent within the same imp:lets group).
+j6ba7pl20y	no lo hagamos	let's not do it	supporting	en:let's|audit:reviewed	Audit: standardize lemma tag to en:let's to match its siblings in this family (was en:let).
+8errr3uadz	hagámoslo	let's do it	supporting	en:let's|audit:reviewed	Audit: standardize lemma tag to en:let's to match its siblings in this family (was en:let).
+7peott7vnd	No vayamos todavía.	Let's not go yet.	supporting	audit:reviewed	Audit: role was reference but this is the same "let's not + verb" construction as no lo hagamos (supporting) — re-tiered for consistency within the family.

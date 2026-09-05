@@ -59,7 +59,7 @@ separately at the end (not itemized here — see the plan doc).
 - [ ] `imp:affirmative-informal` — Affirmative — tú (informal) (7 rows)
 - [ ] `imp:affirmative-formal` — Affirmative — usted/ustedes (formal) (5 rows)
 - [ ] `imp:negative` — Negative (don't...) (3 rows)
-- [ ] `imp:lets` — Let's — nosotros (5 rows)
+- [x] `imp:lets` — Let's — nosotros (5→6 rows) — bumped 1 role for family consistency, standardized `en:let's` lemma tag (was split let/let's), added missing "Let's see" (`veamos`). `<commit-pending>`
 
 ## Nouns (`nouns`)
 
