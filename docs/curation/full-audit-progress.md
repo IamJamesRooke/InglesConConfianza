@@ -180,7 +180,17 @@ skimming history, not a machine-readable state store.
   English translation literally said "come up" — fixed. Otherwise
   clean: quitar/sacar/salir/seguir/sentir all large idiom networks
   with correctly distinct examples. Commits `a97750c2` through
-  `04aca676`. Next: es:tirar onward alphabetically — roughly 90 more
-  lemma facets after that, then the two Mappings pages' remaining
-  es:/en: facets (word-function words like de/en/con/por/que, not
-  verbs) and Phrasal Verbs.
+  `04aca676`.
+- **2026-09-05, VERBS PAGE COMPLETE** — finished es:tirar through
+  es:volver plus the topic:verb-other catch-all (~150 rows). All 185
+  named lemma facets + the one-off bucket on the restructured Verbs
+  page are now audited — roughly 1,700+ rows, going from "~1,800 of
+  2,000 verbs invisible on the page" (the user's original complaint)
+  to fully browsable and reviewed. Found one more real bug along the
+  way (fixed in the q-t batch: subir "to go up"). Commits `919bfa36`
+  through `9f4cc9da`. Next: the two Mappings pages' remaining es:/en:
+  facets (function words: de/en/con/por/que/a/etc. — not verbs, these
+  overlap heavily with what's already done since most verb lemmas are
+  also tagged topic:multi-sense), then Phrasal Verbs by
+  Root/Particle — see `npm run curriculum:audit:status` (~65 units
+  left total as of this entry).
