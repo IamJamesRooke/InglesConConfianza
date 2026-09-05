@@ -60018,11 +60018,11 @@
     },
     {
       "id": "dluylhklpw",
-      "spanish": "actuar ==> el/la actor/actriz",
+      "spanish": "actuar ==> el actor",
       "english": "to act ==> the actor",
       "example": {
-        "spanish": "El/la actor/actriz es importante.",
-        "english": "The actor is important."
+        "spanish": "El actor ganó un premio por su actuación.",
+        "english": "The actor won an award for his acting."
       },
       "collections": [
         "morphology:derivation",
@@ -84986,6 +84986,26 @@
         "contrast:confusable",
         "gender:feminine",
         "topic:event"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "jgorbdcn4l",
+      "spanish": "actuar ==> la actriz",
+      "english": "to act ==> the actress",
+      "example": {
+        "spanish": "La actriz ganó un premio por su actuación.",
+        "english": "The actress won an award for her acting."
+      },
+      "collections": [
+        "morphology:derivation",
+        "morphology:verb-to-noun",
+        "morphology:suffix-er-or",
+        "morphology:limited",
+        "morphology:agent-noun",
+        "es:actuar",
+        "en:act",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     }
