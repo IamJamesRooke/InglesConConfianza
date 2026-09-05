@@ -23,7 +23,9 @@ export type CollectionFacet =
   | "dialect"
   | "contrast"
   | "conjugation"
-  | "sense";
+  | "sense"
+  | "gender"
+  | "degree";
 
 export const COLLECTION_FACETS: Record<CollectionFacet, string> = {
   es: "Spanish headword — every sense and construction of one lemma",
@@ -44,6 +46,8 @@ export const COLLECTION_FACETS: Record<CollectionFacet, string> = {
   register: "formality / spoken vs written",
   dialect: "regional variety",
   contrast: "a confusable pair a Spanish speaker must actively distinguish",
+  gender: "grammatical gender of a noun, keyed by the bracketed article: masculine (el), feminine (la), common (el/la), invariant (no gender-marked article)",
+  degree: "comparative/superlative form of a gradable adjective",
 };
 
 export function collectionFacet(name: string): CollectionFacet | null {
@@ -387,7 +391,7 @@ export const KNOWN_GRAMMAR_VALUES: ReadonlySet<string> = new Set([
   "resulting-state", "role", "se", "sentence-structure",
   "sequence", "ser-adjective", "singular", "statement-order",
   "subject-pronoun", "subjunctive", "subordinate-subject-pronoun", "suggestion",
-  "superlative", "supposed-to", "the-other", "three-jobs-of-have",
+  "superlative", "supposed-to", "tener-adjective", "the-other", "three-jobs-of-have",
   "uncountable", "universal-quantifier", "uses-auxiliary-do-for-questions", "verb-direct-object",
   "verb-indirect-object", "warning", "wish", "would-like",
   "zero-article",
@@ -448,4 +452,23 @@ export const KNOWN_COGNATE_VALUES: ReadonlySet<string> = new Set([
   // Cognates topic page have one "Latin roots" button without enumerating
   // all 22 root families in facetButtons.
   "latin-root",
+]);
+
+// Controlled vocabulary for the `gender:` facet — one entry per pos:noun row,
+// keyed by the bracketed article: "el" -> masculine, "la" -> feminine,
+// "el/la" -> common (same form serves either gender), no gender-marked
+// article (los/las-only, or a noun with no singular article) -> invariant.
+export const KNOWN_GENDER_VALUES: ReadonlySet<string> = new Set([
+  "masculine", "feminine", "common", "neuter", "invariant",
+]);
+
+// Controlled vocabulary for the `degree:` facet — comparative/superlative
+// forms of a gradable adjective. "positive" marks the base/uninflected form
+// so a degree family can be queried as one group.
+export const KNOWN_DEGREE_VALUES: ReadonlySet<string> = new Set([
+  "positive",
+  "comparative-er", "superlative-est",
+  "comparative-ier", "superlative-iest",
+  "comparative-more", "superlative-most",
+  "irregular-comparative", "irregular-superlative",
 ]);
