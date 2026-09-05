@@ -74765,8 +74765,8 @@
         "es:plead",
         "en:plead",
         "pos:verb",
-        "sound:fed-bled-led-pled-read-said",
-        "sound:past-irregular-fed-bled-led-pled-read-said"
+        "sound:fed-bled-led",
+        "sound:past-irregular-fed-bled-led"
       ],
       "curriculumRole": "reference"
     },
@@ -74807,8 +74807,8 @@
         "es:plead",
         "en:plead",
         "pos:verb",
-        "sound:fed-bled-led-pled-read-said",
-        "sound:past-participle-irregular-fed-bled-led-pled-read-said"
+        "sound:fed-bled-led",
+        "sound:past-participle-irregular-fed-bled-led"
       ],
       "curriculumRole": "reference"
     },
@@ -74977,8 +74977,8 @@
         "es:read",
         "en:read",
         "pos:verb",
-        "sound:fed-bled-led-pled-read-said",
-        "sound:past-irregular-fed-bled-led-pled-read-said"
+        "sound:fed-bled-led",
+        "sound:past-irregular-fed-bled-led"
       ],
       "curriculumRole": "supporting"
     },
@@ -74999,8 +74999,8 @@
         "es:read",
         "en:read",
         "pos:verb",
-        "sound:fed-bled-led-pled-read-said",
-        "sound:past-participle-irregular-fed-bled-led-pled-read-said"
+        "sound:fed-bled-led",
+        "sound:past-participle-irregular-fed-bled-led"
       ],
       "curriculumRole": "supporting"
     },
@@ -75233,8 +75233,8 @@
         "es:run",
         "en:run",
         "topic:en-multi-sense",
-        "sound:began-rang-sang-ran-swam",
-        "sound:past-irregular-began-rang-sang-ran-swam"
+        "sound:began-rang-sang",
+        "sound:past-irregular-began-rang-sang"
       ],
       "curriculumRole": "supporting"
     },
@@ -75325,8 +75325,8 @@
         "es:say",
         "en:say",
         "topic:en-multi-sense",
-        "sound:fed-bled-led-pled-read-said",
-        "sound:past-irregular-fed-bled-led-pled-read-said"
+        "sound:fed-bled-led",
+        "sound:past-irregular-fed-bled-led"
       ],
       "curriculumRole": "supporting"
     },
@@ -75347,8 +75347,8 @@
         "es:say",
         "en:say",
         "topic:en-multi-sense",
-        "sound:fed-bled-led-pled-read-said",
-        "sound:past-participle-irregular-fed-bled-led-pled-read-said"
+        "sound:fed-bled-led",
+        "sound:past-participle-irregular-fed-bled-led"
       ],
       "curriculumRole": "supporting"
     },
@@ -75847,8 +75847,8 @@
         "es:shine",
         "en:shine",
         "pos:verb",
-        "sound:known-grown-thrown-shone",
-        "sound:past-irregular-known-grown-thrown-shone"
+        "sound:known-grown-thrown",
+        "sound:past-irregular-known-grown-thrown"
       ],
       "curriculumRole": "reference"
     },
@@ -75869,8 +75869,8 @@
         "es:shine",
         "en:shine",
         "pos:verb",
-        "sound:known-grown-thrown-shone",
-        "sound:past-participle-irregular-known-grown-thrown-shone"
+        "sound:known-grown-thrown",
+        "sound:past-participle-irregular-known-grown-thrown"
       ],
       "curriculumRole": "reference"
     },
@@ -76679,8 +76679,8 @@
         "es:smell",
         "en:smell",
         "pos:verb",
-        "sound:felt-dealt-knelt-smelt-spelt",
-        "sound:past-irregular-felt-dealt-knelt-smelt-spelt"
+        "sound:felt-dealt-knelt",
+        "sound:past-irregular-felt-dealt-knelt"
       ],
       "curriculumRole": "reference"
     },
@@ -76721,8 +76721,8 @@
         "es:smell",
         "en:smell",
         "pos:verb",
-        "sound:felt-dealt-knelt-smelt-spelt",
-        "sound:past-participle-irregular-felt-dealt-knelt-smelt-spelt"
+        "sound:felt-dealt-knelt",
+        "sound:past-participle-irregular-felt-dealt-knelt"
       ],
       "curriculumRole": "reference"
     },
@@ -77075,8 +77075,8 @@
         "es:spell",
         "en:spell",
         "pos:verb",
-        "sound:felt-dealt-knelt-smelt-spelt",
-        "sound:past-irregular-felt-dealt-knelt-smelt-spelt"
+        "sound:felt-dealt-knelt",
+        "sound:past-irregular-felt-dealt-knelt"
       ],
       "curriculumRole": "reference"
     },
@@ -77117,8 +77117,8 @@
         "es:spell",
         "en:spell",
         "pos:verb",
-        "sound:felt-dealt-knelt-smelt-spelt",
-        "sound:past-participle-irregular-felt-dealt-knelt-smelt-spelt"
+        "sound:felt-dealt-knelt",
+        "sound:past-participle-irregular-felt-dealt-knelt"
       ],
       "curriculumRole": "reference"
     },
@@ -78433,8 +78433,8 @@
         "es:swim",
         "en:swim",
         "pos:verb",
-        "sound:began-rang-sang-ran-swam",
-        "sound:past-irregular-began-rang-sang-ran-swam"
+        "sound:began-rang-sang",
+        "sound:past-irregular-began-rang-sang"
       ],
       "curriculumRole": "supporting"
     },
@@ -79228,8 +79228,8 @@
         "es:weep",
         "en:weep",
         "pos:verb",
-        "sound:kept-slept-swept-wept",
-        "sound:past-irregular-kept-slept-swept-wept"
+        "sound:kept-slept-swept",
+        "sound:past-irregular-kept-slept-swept"
       ],
       "curriculumRole": "reference"
     },
@@ -79250,8 +79250,8 @@
         "es:weep",
         "en:weep",
         "pos:verb",
-        "sound:kept-slept-swept-wept",
-        "sound:past-participle-irregular-kept-slept-swept-wept"
+        "sound:kept-slept-swept",
+        "sound:past-participle-irregular-kept-slept-swept"
       ],
       "curriculumRole": "reference"
     },
