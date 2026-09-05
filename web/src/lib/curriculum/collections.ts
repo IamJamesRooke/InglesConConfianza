@@ -434,7 +434,10 @@ export const KNOWN_COGNATE_VALUES: ReadonlySet<string> = new Set([
   "es-to-s", "ible-to-ible", "ico-to-ic", "icto-to-ict", "ido-to-id",
   "iendo-to-ing", "il-to-ile", "ivo-to-ive", "ma-to-m", "mente-to-ly",
   "orio-to-ory", "oso-to-ous", "sion-to-sion", "sis-to-sis", "tud-to-tude",
-  "uro-ura-to-ure",
+  "uro-ura-to-ure", "izar-to-ize", "ar-to-ate", "ificar-to-ify", "inar-to-ine",
+  "encia-ancia-to-ence-ance", "ia-to-y", "mento-miento-to-ment", "ista-to-ist",
+  "ismo-to-ism", "ano-iano-to-an-ian", "ico-to-ical", "ado-ido-to-ed",
+  "ema-to-em", "ir-to-silent-e",
 
   // PATTERN — Latin-root families (Spanish stem <-> English root; the
   // spelling does not obviously match, unlike the suffix families above).

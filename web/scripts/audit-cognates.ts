@@ -25,6 +25,11 @@ const SMALL_FAMILY_EXEMPTIONS: Record<string, string> = {
 const SUFFIX_OVERRIDES: Record<string, { es: RegExp; en: RegExp }> = {
   "uro-ura-to-ure": { es: /(uro|ura)$/, en: /ure$/ },
   "es-to-s": { es: /^es/, en: /^s/ },
+  "mento-miento-to-ment": { es: /(mento|miento)$/, en: /ment$/ },
+  "ano-iano-to-an-ian": { es: /(ano|iano)$/, en: /(an|ian)$/ },
+  "encia-ancia-to-ence-ance": { es: /(encia|ancia)$/, en: /(ence|ance)$/ },
+  "ado-ido-to-ed": { es: /(ado|ido)$/, en: /ed$/ },
+  "ir-to-silent-e": { es: /ir$/, en: /e$/ },
 };
 
 // Root families: Spanish stem (derivative ends in this) vs English root

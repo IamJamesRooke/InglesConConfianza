@@ -13283,7 +13283,6 @@
         "pos:noun",
         "morphology:suffix-cion",
         "morphology:suffix-tion",
-        "topic:cognate",
         "es:pregunta",
         "en:question",
         "gender:feminine",
@@ -36639,7 +36638,9 @@
         "es:diferencia",
         "en:difference",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:encia-ancia-to-ence-ance",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -36659,7 +36660,9 @@
         "es:excelencia",
         "en:excellence",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:encia-ancia-to-ence-ance",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -36679,7 +36682,9 @@
         "es:inteligencia",
         "en:intelligence",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:encia-ancia-to-ence-ance",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -36699,7 +36704,9 @@
         "es:paciencia",
         "en:patience",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:encia-ancia-to-ence-ance",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -36719,7 +36726,9 @@
         "es:ciencia",
         "en:science",
         "gender:feminine",
-        "topic:education"
+        "topic:education",
+        "cognate:encia-ancia-to-ence-ance",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -36739,7 +36748,9 @@
         "es:evidencia",
         "en:evidence",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:encia-ancia-to-ence-ance",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -36759,7 +36770,9 @@
         "es:ausencia",
         "en:absence",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:encia-ancia-to-ence-ance",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -36779,7 +36792,9 @@
         "es:presencia",
         "en:presence",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:encia-ancia-to-ence-ance",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -36799,7 +36814,9 @@
         "es:influencia",
         "en:influence",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:encia-ancia-to-ence-ance",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -36819,7 +36836,9 @@
         "es:consecuencia",
         "en:consequence",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:encia-ancia-to-ence-ance",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -36839,7 +36858,9 @@
         "es:experiencia",
         "en:experience",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:encia-ancia-to-ence-ance",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -36859,7 +36880,9 @@
         "es:preferencia",
         "en:preference",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:encia-ancia-to-ence-ance",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37263,7 +37286,9 @@
         "es:energía",
         "en:energy",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:ia-to-y",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37283,7 +37308,9 @@
         "es:biología",
         "en:biology",
         "gender:feminine",
-        "topic:education"
+        "topic:education",
+        "cognate:ia-to-y",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37303,7 +37330,9 @@
         "es:psicología",
         "en:psychology",
         "gender:feminine",
-        "topic:education"
+        "topic:education",
+        "cognate:ia-to-y",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37323,7 +37352,9 @@
         "es:tecnología",
         "en:technology",
         "gender:feminine",
-        "topic:technology"
+        "topic:technology",
+        "cognate:ia-to-y",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37343,7 +37374,9 @@
         "es:estrategia",
         "en:strategy",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:ia-to-y",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37363,7 +37396,9 @@
         "es:victoria",
         "en:victory",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:ia-to-y",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37384,7 +37419,9 @@
         "pos:noun",
         "es:familia",
         "en:family",
-        "gender:feminine"
+        "gender:feminine",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -37404,7 +37441,9 @@
         "pos:noun",
         "es:compañía",
         "en:company",
-        "gender:feminine"
+        "gender:feminine",
+        "cognate:ia-to-y",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37424,7 +37463,9 @@
         "es:geometría",
         "en:geometry",
         "gender:feminine",
-        "topic:education"
+        "topic:education",
+        "cognate:ia-to-y",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37444,7 +37485,9 @@
         "es:anatomía",
         "en:anatomy",
         "gender:feminine",
-        "topic:education"
+        "topic:education",
+        "cognate:ia-to-y",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37464,7 +37507,9 @@
         "es:economía",
         "en:economy",
         "gender:feminine",
-        "topic:money-business"
+        "topic:money-business",
+        "cognate:ia-to-y",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37484,7 +37529,9 @@
         "es:democracia",
         "en:democracy",
         "gender:feminine",
-        "topic:government-politics"
+        "topic:government-politics",
+        "cognate:ia-to-y",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37504,7 +37551,9 @@
         "es:historia",
         "en:history",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:ia-to-y",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37524,7 +37573,9 @@
         "es:memoria",
         "en:memory",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:ia-to-y",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37659,7 +37710,9 @@
         "es:evento",
         "en:event",
         "gender:masculine",
-        "topic:event"
+        "topic:event",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37678,7 +37731,9 @@
         "es:argumento",
         "en:argument",
         "gender:masculine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:mento-miento-to-ment",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37699,7 +37754,9 @@
         "pos:noun",
         "es:apartamento",
         "en:apartment",
-        "gender:masculine"
+        "gender:masculine",
+        "cognate:mento-miento-to-ment",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37718,7 +37775,9 @@
         "es:departamento",
         "en:department",
         "gender:masculine",
-        "topic:business-work"
+        "topic:business-work",
+        "cognate:mento-miento-to-ment",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37737,7 +37796,9 @@
         "es:documento",
         "en:document",
         "gender:masculine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:mento-miento-to-ment",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37756,7 +37817,9 @@
         "es:experimento",
         "en:experiment",
         "gender:masculine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:mento-miento-to-ment",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37775,7 +37838,9 @@
         "es:momento",
         "en:moment",
         "gender:masculine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:mento-miento-to-ment",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37794,7 +37859,9 @@
         "es:talento",
         "en:talent",
         "gender:masculine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37813,7 +37880,9 @@
         "es:instrumento",
         "en:instrument",
         "gender:masculine",
-        "topic:technology"
+        "topic:technology",
+        "cognate:mento-miento-to-ment",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37832,7 +37901,9 @@
         "es:segmento",
         "en:segment",
         "gender:masculine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:mento-miento-to-ment",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37851,7 +37922,9 @@
         "es:elemento",
         "en:element",
         "gender:masculine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:mento-miento-to-ment",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37870,7 +37943,9 @@
         "es:movimiento",
         "en:movement",
         "gender:masculine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:mento-miento-to-ment",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37889,7 +37964,9 @@
         "es:tratamiento",
         "en:treatment",
         "gender:masculine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:mento-miento-to-ment",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37908,7 +37985,9 @@
         "es:foto",
         "en:photo",
         "gender:feminine",
-        "topic:media-communication"
+        "topic:media-communication",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37927,7 +38006,9 @@
         "es:fotografía",
         "en:photography",
         "gender:feminine",
-        "topic:media-communication"
+        "topic:media-communication",
+        "cognate:ia-to-y",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37946,7 +38027,9 @@
         "es:farmacia",
         "en:pharmacy",
         "gender:feminine",
-        "topic:food"
+        "topic:food",
+        "cognate:ia-to-y",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37965,7 +38048,9 @@
         "es:filosofía",
         "en:philosophy",
         "gender:feminine",
-        "topic:education"
+        "topic:education",
+        "cognate:ia-to-y",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -37984,7 +38069,9 @@
         "es:teléfono",
         "en:phone",
         "gender:masculine",
-        "topic:technology"
+        "topic:technology",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -38003,7 +38090,9 @@
         "es:número",
         "en:phone",
         "gender:masculine",
-        "topic:technology"
+        "topic:technology",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -38022,7 +38111,9 @@
         "es:fenómeno",
         "en:phenomenon",
         "gender:masculine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -38041,7 +38132,9 @@
         "es:fase",
         "en:phase",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -38060,7 +38153,9 @@
         "es:frase",
         "en:phrase",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -38079,7 +38174,9 @@
         "es:física",
         "en:physics",
         "gender:feminine",
-        "topic:education"
+        "topic:education",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -38098,7 +38195,9 @@
         "es:alfabeto",
         "en:alphabet",
         "gender:masculine",
-        "topic:education"
+        "topic:education",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -38117,7 +38216,9 @@
         "es:elefante",
         "en:elephant",
         "gender:masculine",
-        "topic:everyday-objects"
+        "topic:everyday-objects",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -38136,7 +38237,9 @@
         "es:trofeo",
         "en:trophy",
         "gender:masculine",
-        "topic:sports-recreation"
+        "topic:sports-recreation",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -38155,7 +38258,9 @@
         "es:biografía",
         "en:biography",
         "gender:feminine",
-        "topic:art-culture"
+        "topic:art-culture",
+        "cognate:ia-to-y",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -38565,7 +38670,9 @@
         "es:ser",
         "en:human",
         "topic:abstract-quality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "cognate:ano-iano-to-an-ian",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -38588,7 +38695,9 @@
         "es:ser",
         "en:urban",
         "topic:nationality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "cognate:ano-iano-to-an-ian",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -38611,7 +38720,9 @@
         "es:ser",
         "en:republican",
         "topic:government-politics",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "cognate:ano-iano-to-an-ian",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -38634,7 +38745,9 @@
         "es:ser",
         "en:african",
         "topic:nationality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "cognate:ano-iano-to-an-ian",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -38657,7 +38770,9 @@
         "es:ser",
         "en:american",
         "topic:nationality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "cognate:ano-iano-to-an-ian",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -38680,7 +38795,9 @@
         "es:ser",
         "en:colombian",
         "topic:nationality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "cognate:ano-iano-to-an-ian",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -38703,7 +38820,9 @@
         "es:ser",
         "en:italian",
         "topic:nationality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "cognate:ano-iano-to-an-ian",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -38726,7 +38845,9 @@
         "es:ser",
         "en:christian",
         "topic:nationality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "cognate:ano-iano-to-an-ian",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -38746,7 +38867,9 @@
         "es:importancia",
         "en:importance",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:encia-ancia-to-ence-ance",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -38766,7 +38889,9 @@
         "es:distancia",
         "en:distance",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:encia-ancia-to-ence-ance",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -38786,7 +38911,9 @@
         "es:instancia",
         "en:instance",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:encia-ancia-to-ence-ance",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -38806,7 +38933,9 @@
         "es:abundancia",
         "en:abundance",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:encia-ancia-to-ence-ance",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -38826,7 +38955,9 @@
         "es:tolerancia",
         "en:tolerance",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:encia-ancia-to-ence-ance",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -38846,7 +38977,9 @@
         "es:elegancia",
         "en:elegance",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:encia-ancia-to-ence-ance",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -38866,7 +38999,9 @@
         "es:ignorancia",
         "en:ignorance",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:encia-ancia-to-ence-ance",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -38886,7 +39021,9 @@
         "es:vigilancia",
         "en:vigilance",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:encia-ancia-to-ence-ance",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -38906,7 +39043,9 @@
         "es:circunstancia",
         "en:circumstance",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:encia-ancia-to-ence-ance",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -38926,7 +39065,9 @@
         "es:relevancia",
         "en:relevance",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:encia-ancia-to-ence-ance",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -39186,7 +39327,9 @@
         "es:lista",
         "en:list",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -39205,7 +39348,9 @@
         "es:turista",
         "en:tourist",
         "gender:common",
-        "topic:sports-recreation"
+        "topic:sports-recreation",
+        "cognate:ista-to-ist",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -39224,7 +39369,9 @@
         "es:artista",
         "en:artist",
         "gender:common",
-        "topic:art-culture"
+        "topic:art-culture",
+        "cognate:ista-to-ist",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -39243,7 +39390,9 @@
         "es:dentista",
         "en:dentist",
         "gender:common",
-        "topic:people"
+        "topic:people",
+        "cognate:ista-to-ist",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -39262,7 +39411,9 @@
         "es:optimista",
         "en:optimist",
         "gender:common",
-        "topic:personality"
+        "topic:personality",
+        "cognate:ista-to-ist",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -39281,7 +39432,9 @@
         "es:pesimista",
         "en:pessimist",
         "gender:common",
-        "topic:personality"
+        "topic:personality",
+        "cognate:ista-to-ist",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -39300,7 +39453,9 @@
         "es:realista",
         "en:realist",
         "gender:common",
-        "topic:personality"
+        "topic:personality",
+        "cognate:ista-to-ist",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -39319,7 +39474,9 @@
         "es:especialista",
         "en:specialist",
         "gender:common",
-        "topic:people"
+        "topic:people",
+        "cognate:ista-to-ist",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -39338,7 +39495,9 @@
         "es:capitalista",
         "en:capitalist",
         "gender:common",
-        "topic:government-politics"
+        "topic:government-politics",
+        "cognate:ista-to-ist",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -39357,7 +39516,9 @@
         "es:comunista",
         "en:communist",
         "gender:common",
-        "topic:government-politics"
+        "topic:government-politics",
+        "cognate:ista-to-ist",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -39376,7 +39537,9 @@
         "es:ciclista",
         "en:cyclist",
         "gender:common",
-        "topic:sports-recreation"
+        "topic:sports-recreation",
+        "cognate:ista-to-ist",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -39395,7 +39558,9 @@
         "es:violinista",
         "en:violinist",
         "gender:common",
-        "topic:art-culture"
+        "topic:art-culture",
+        "cognate:ista-to-ist",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -39416,7 +39581,9 @@
         "es:ser",
         "en:physical",
         "topic:abstract-quality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "cognate:ico-to-ical",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -39437,7 +39604,9 @@
         "es:ser",
         "en:philosophical",
         "topic:education",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "cognate:ico-to-ical",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -39458,7 +39627,9 @@
         "es:ser",
         "en:astronomical",
         "topic:abstract-quality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "cognate:ico-to-ical",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -39478,7 +39649,9 @@
         "es:trópico",
         "en:tropic",
         "gender:masculine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -39499,7 +39672,9 @@
         "es:ser",
         "en:tropical",
         "topic:abstract-quality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -39520,7 +39695,9 @@
         "es:ser",
         "en:logical",
         "topic:abstract-quality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "cognate:ico-to-ical",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -39541,7 +39718,9 @@
         "es:ser",
         "en:practical",
         "topic:abstract-quality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "cognate:ico-to-ical",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -39562,7 +39741,9 @@
         "es:mensaje",
         "en:message",
         "gender:masculine",
-        "topic:communication-request"
+        "topic:communication-request",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -39583,7 +39764,9 @@
         "es:garaje",
         "en:garage",
         "gender:masculine",
-        "topic:places"
+        "topic:places",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -39604,7 +39787,9 @@
         "es:porcentaje",
         "en:percentage",
         "gender:masculine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -39625,7 +39810,9 @@
         "es:lenguaje",
         "en:language",
         "gender:masculine",
-        "topic:education"
+        "topic:education",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -39646,7 +39833,9 @@
         "es:imagen",
         "en:image",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -40398,7 +40587,9 @@
         "pos:noun",
         "es:parque",
         "en:park",
-        "gender:masculine"
+        "gender:masculine",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -40419,7 +40610,9 @@
         "es:tanque",
         "en:tank",
         "gender:masculine",
-        "topic:government-politics"
+        "topic:government-politics",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -40440,7 +40633,9 @@
         "es:bloque",
         "en:block",
         "gender:masculine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -40461,7 +40656,9 @@
         "es:cheque",
         "en:check",
         "gender:masculine",
-        "topic:money-business"
+        "topic:money-business",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -40482,7 +40679,9 @@
         "es:ataque",
         "en:attack",
         "gender:masculine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -40759,7 +40958,9 @@
         "es:posibilidad",
         "en:possibility",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -40781,7 +40982,9 @@
         "es:probabilidad",
         "en:probability",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -40803,7 +41006,9 @@
         "es:universidad",
         "en:university",
         "gender:feminine",
-        "topic:education"
+        "topic:education",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -40825,7 +41030,9 @@
         "es:comunidad",
         "en:community",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -40847,7 +41054,9 @@
         "pos:noun",
         "es:nacionalidad",
         "en:nationality",
-        "gender:feminine"
+        "gender:feminine",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -40869,7 +41078,9 @@
         "es:sociedad",
         "en:society",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -40891,7 +41102,9 @@
         "es:humanidad",
         "en:humanity",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -40936,7 +41149,9 @@
         "es:sensibilidad",
         "en:sensitivity",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -40958,7 +41173,9 @@
         "es:actividad",
         "en:activity",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -40980,7 +41197,9 @@
         "es:identidad",
         "en:identity",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -41002,7 +41221,9 @@
         "es:diversidad",
         "en:diversity",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -41024,7 +41245,9 @@
         "es:seguridad",
         "en:security",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -41046,7 +41269,9 @@
         "es:prioridad",
         "en:priority",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -41068,7 +41293,9 @@
         "es:calidad",
         "en:quality",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -41447,7 +41674,9 @@
         "es:problema",
         "en:problem",
         "gender:masculine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:ema-to-em",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -41467,7 +41696,9 @@
         "es:sistema",
         "en:system",
         "gender:masculine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -41487,7 +41718,9 @@
         "es:poema",
         "en:poem",
         "gender:masculine",
-        "topic:art-culture"
+        "topic:art-culture",
+        "cognate:ema-to-em",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -41507,7 +41740,9 @@
         "es:teorema",
         "en:theorem",
         "gender:masculine",
-        "topic:education"
+        "topic:education",
+        "cognate:ema-to-em",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -41526,7 +41761,9 @@
         "es:ser",
         "en:innocent",
         "topic:abstract-quality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -41545,7 +41782,9 @@
         "es:ser",
         "en:illegal",
         "topic:crime-law",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -41563,7 +41802,9 @@
         "es:inmigrante",
         "en:immigrant",
         "gender:common",
-        "topic:people"
+        "topic:people",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -41583,7 +41824,9 @@
         "es:programa",
         "en:program",
         "gender:masculine",
-        "topic:business-work"
+        "topic:business-work",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -41603,7 +41846,9 @@
         "es:diagrama",
         "en:diagram",
         "gender:masculine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -41623,7 +41868,9 @@
         "es:anagrama",
         "en:anagram",
         "gender:masculine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -41643,7 +41890,9 @@
         "es:telegrama",
         "en:telegram",
         "gender:masculine",
-        "topic:media-communication"
+        "topic:media-communication",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -41663,7 +41912,9 @@
         "es:holograma",
         "en:hologram",
         "gender:masculine",
-        "topic:technology"
+        "topic:technology",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -42102,7 +42353,9 @@
         "es:teoría",
         "en:theory",
         "gender:feminine",
-        "topic:education"
+        "topic:education",
+        "cognate:ia-to-y",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -42121,7 +42374,9 @@
         "es:teatro",
         "en:theater",
         "gender:masculine",
-        "topic:places"
+        "topic:places",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -42140,7 +42395,9 @@
         "es:terapia",
         "en:therapy",
         "gender:feminine",
-        "topic:health"
+        "topic:health",
+        "cognate:ia-to-y",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -42159,7 +42416,9 @@
         "es:método",
         "en:method",
         "gender:masculine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -42178,7 +42437,9 @@
         "es:autor",
         "en:author",
         "gender:masculine",
-        "topic:people"
+        "topic:people",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -42197,7 +42458,9 @@
         "es:atleta",
         "en:athlete",
         "gender:common",
-        "topic:sports-recreation"
+        "topic:sports-recreation",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -42216,7 +42479,9 @@
         "es:ética",
         "en:ethics",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -42235,7 +42500,9 @@
         "es:teología",
         "en:theology",
         "gender:feminine",
-        "topic:education"
+        "topic:education",
+        "cognate:ia-to-y",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -42690,7 +42957,9 @@
         "es:turismo",
         "en:tourism",
         "gender:masculine",
-        "topic:sports-recreation"
+        "topic:sports-recreation",
+        "cognate:ismo-to-ism",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -42710,7 +42979,9 @@
         "es:optimismo",
         "en:optimism",
         "gender:masculine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:ismo-to-ism",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -42730,7 +43001,9 @@
         "es:pesimismo",
         "en:pessimism",
         "gender:masculine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:ismo-to-ism",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -42750,7 +43023,9 @@
         "es:realismo",
         "en:realism",
         "gender:masculine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:ismo-to-ism",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -42770,7 +43045,9 @@
         "es:idealismo",
         "en:idealism",
         "gender:masculine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:ismo-to-ism",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -42790,7 +43067,9 @@
         "es:capitalismo",
         "en:capitalism",
         "gender:masculine",
-        "topic:government-politics"
+        "topic:government-politics",
+        "cognate:ismo-to-ism",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -42810,7 +43089,9 @@
         "es:socialismo",
         "en:socialism",
         "gender:masculine",
-        "topic:government-politics"
+        "topic:government-politics",
+        "cognate:ismo-to-ism",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -42830,7 +43111,9 @@
         "es:comunismo",
         "en:communism",
         "gender:masculine",
-        "topic:government-politics"
+        "topic:government-politics",
+        "cognate:ismo-to-ism",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -42850,7 +43133,9 @@
         "es:nacionalismo",
         "en:nationalism",
         "gender:masculine",
-        "topic:government-politics"
+        "topic:government-politics",
+        "cognate:ismo-to-ism",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -42870,7 +43155,9 @@
         "es:racismo",
         "en:racism",
         "gender:masculine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "cognate:ismo-to-ism",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -42890,7 +43177,9 @@
         "es:mecanismo",
         "en:mechanism",
         "gender:masculine",
-        "topic:technology"
+        "topic:technology",
+        "cognate:ismo-to-ism",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -43003,7 +43292,9 @@
         "morphology:suffix-ed",
         "topic:cognate",
         "es:preparado",
-        "en:prepared"
+        "en:prepared",
+        "cognate:ado-ido-to-ed",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -43021,7 +43312,9 @@
         "morphology:suffix-ed",
         "topic:cognate",
         "es:confirmado",
-        "en:confirmed"
+        "en:confirmed",
+        "cognate:ado-ido-to-ed",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -43039,7 +43332,9 @@
         "morphology:suffix-ed",
         "topic:cognate",
         "es:recibido",
-        "en:received"
+        "en:received",
+        "cognate:ado-ido-to-ed",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -43057,7 +43352,9 @@
         "morphology:suffix-ed",
         "topic:cognate",
         "es:organizado",
-        "en:organized"
+        "en:organized",
+        "cognate:ado-ido-to-ed",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -43075,7 +43372,9 @@
         "morphology:suffix-ed",
         "topic:cognate",
         "es:usado",
-        "en:used"
+        "en:used",
+        "cognate:ado-ido-to-ed",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -43093,7 +43392,9 @@
         "morphology:suffix-ed",
         "topic:cognate",
         "es:continuado",
-        "en:continued"
+        "en:continued",
+        "cognate:ado-ido-to-ed",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -43337,7 +43638,6 @@
         "form:participle",
         "sound:regular-ed-pronounced-t-finished",
         "morphology:suffix-ed",
-        "topic:cognate",
         "es:terminado",
         "en:finished"
       ],
@@ -43357,7 +43657,9 @@
         "morphology:suffix-ed",
         "topic:cognate",
         "es:practicado",
-        "en:practiced"
+        "en:practiced",
+        "cognate:ado-ido-to-ed",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -43375,7 +43677,9 @@
         "morphology:suffix-ed",
         "topic:cognate",
         "es:introducido",
-        "en:introduced"
+        "en:introduced",
+        "cognate:ado-ido-to-ed",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -43393,7 +43697,9 @@
         "morphology:suffix-ed",
         "topic:cognate",
         "es:producido",
-        "en:produced"
+        "en:produced",
+        "cognate:ado-ido-to-ed",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -43411,7 +43717,9 @@
         "morphology:suffix-ed",
         "topic:cognate",
         "es:notado",
-        "en:noticed"
+        "en:noticed",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -43430,7 +43738,9 @@
         "morphology:suffix-ted",
         "topic:cognate",
         "es:visitado",
-        "en:visited"
+        "en:visited",
+        "cognate:ado-ido-to-ed",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -43449,7 +43759,9 @@
         "morphology:suffix-ted",
         "topic:cognate",
         "es:aceptado",
-        "en:accepted"
+        "en:accepted",
+        "cognate:ado-ido-to-ed",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -43468,7 +43780,9 @@
         "morphology:suffix-ted",
         "topic:cognate",
         "es:conectado",
-        "en:connected"
+        "en:connected",
+        "cognate:ado-ido-to-ed",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -43487,7 +43801,9 @@
         "morphology:suffix-ted",
         "topic:cognate",
         "es:contactado",
-        "en:contacted"
+        "en:contacted",
+        "cognate:ado-ido-to-ed",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -43506,7 +43822,9 @@
         "morphology:suffix-ted",
         "topic:cognate",
         "es:permitido",
-        "en:permitted"
+        "en:permitted",
+        "cognate:ado-ido-to-ed",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -43580,7 +43898,9 @@
         "morphology:suffix-ause",
         "topic:cognate",
         "es:causar",
-        "en:cause"
+        "en:cause",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -43597,7 +43917,9 @@
         "morphology:suffix-ause",
         "topic:cognate",
         "es:pausar",
-        "en:pause"
+        "en:pause",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -43652,7 +43974,9 @@
         "morphology:suffix-ute",
         "topic:cognate",
         "es:sustituir",
-        "en:substitute"
+        "en:substitute",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -43669,7 +43993,9 @@
         "morphology:suffix-ute",
         "topic:cognate",
         "es:instituir",
-        "en:institute"
+        "en:institute",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -43686,7 +44012,9 @@
         "morphology:suffix-ute",
         "topic:cognate",
         "es:ejecutar",
-        "en:execute"
+        "en:execute",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -43703,7 +44031,9 @@
         "morphology:suffix-ute",
         "topic:cognate",
         "es:constituir",
-        "en:constitute"
+        "en:constitute",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -43739,7 +44069,9 @@
         "morphology:suffix-ate",
         "topic:cognate",
         "es:crear",
-        "en:create"
+        "en:create",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -43756,7 +44088,9 @@
         "morphology:suffix-ate",
         "topic:cognate",
         "es:comunicar",
-        "en:communicate"
+        "en:communicate",
+        "cognate:ar-to-ate",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -43773,7 +44107,9 @@
         "morphology:suffix-ate",
         "topic:cognate",
         "es:estimar",
-        "en:estimate"
+        "en:estimate",
+        "cognate:ar-to-ate",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -43790,7 +44126,9 @@
         "morphology:suffix-ate",
         "topic:cognate",
         "es:negociar",
-        "en:negotiate"
+        "en:negotiate",
+        "cognate:ar-to-ate",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -43807,7 +44145,9 @@
         "morphology:suffix-ate",
         "topic:cognate",
         "es:inmigrar",
-        "en:immigrate"
+        "en:immigrate",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -43824,7 +44164,9 @@
         "morphology:suffix-ate",
         "topic:cognate",
         "es:acelerar",
-        "en:accelerate"
+        "en:accelerate",
+        "cognate:ar-to-ate",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -43841,7 +44183,9 @@
         "morphology:suffix-ate",
         "topic:cognate",
         "es:traducir",
-        "en:translate"
+        "en:translate",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -43858,7 +44202,9 @@
         "morphology:suffix-ate",
         "topic:cognate",
         "es:participar",
-        "en:participate"
+        "en:participate",
+        "cognate:ar-to-ate",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -43875,7 +44221,9 @@
         "morphology:suffix-ate",
         "topic:cognate",
         "es:celebrar",
-        "en:celebrate"
+        "en:celebrate",
+        "cognate:ar-to-ate",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -43892,7 +44240,9 @@
         "morphology:suffix-ate",
         "topic:cognate",
         "es:decorar",
-        "en:decorate"
+        "en:decorate",
+        "cognate:ar-to-ate",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -43909,7 +44259,9 @@
         "morphology:suffix-ate",
         "topic:cognate",
         "es:eliminar",
-        "en:eliminate"
+        "en:eliminate",
+        "cognate:ar-to-ate",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -43926,7 +44278,9 @@
         "morphology:suffix-ate",
         "topic:cognate",
         "es:operar",
-        "en:operate"
+        "en:operate",
+        "cognate:ar-to-ate",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -43943,7 +44297,9 @@
         "morphology:suffix-ate",
         "topic:cognate",
         "es:liberar",
-        "en:liberate"
+        "en:liberate",
+        "cognate:ar-to-ate",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -43960,7 +44316,9 @@
         "morphology:suffix-ide",
         "topic:cognate",
         "es:decidir",
-        "en:decide"
+        "en:decide",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -43977,7 +44335,9 @@
         "morphology:suffix-ide",
         "topic:cognate",
         "es:dividir",
-        "en:divide"
+        "en:divide",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -43994,7 +44354,9 @@
         "morphology:suffix-ide",
         "topic:cognate",
         "es:residir",
-        "en:reside"
+        "en:reside",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -44011,7 +44373,9 @@
         "morphology:suffix-ide",
         "topic:cognate",
         "es:guiar",
-        "en:guide"
+        "en:guide",
+        "cognate:transparent",
+        "cognate:latin-root"
       ],
       "curriculumRole": "reference"
     },
@@ -44028,7 +44392,9 @@
         "morphology:suffix-ide",
         "topic:cognate",
         "es:presidir",
-        "en:preside"
+        "en:preside",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -44045,7 +44411,9 @@
         "morphology:suffix-ide",
         "topic:cognate",
         "es:coincidir",
-        "en:coincide"
+        "en:coincide",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -44062,7 +44430,9 @@
         "morphology:suffix-ine",
         "topic:cognate",
         "es:definir",
-        "en:define"
+        "en:define",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -44079,7 +44449,9 @@
         "morphology:suffix-ine",
         "topic:cognate",
         "es:refinar",
-        "en:refine"
+        "en:refine",
+        "cognate:inar-to-ine",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -44096,7 +44468,9 @@
         "morphology:suffix-ine",
         "topic:cognate",
         "es:combinar",
-        "en:combine"
+        "en:combine",
+        "cognate:inar-to-ine",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -44113,7 +44487,9 @@
         "morphology:suffix-ine",
         "topic:cognate",
         "es:declinar",
-        "en:decline"
+        "en:decline",
+        "cognate:inar-to-ine",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -44130,7 +44506,9 @@
         "morphology:suffix-ine",
         "topic:cognate",
         "es:imaginar",
-        "en:imagine"
+        "en:imagine",
+        "cognate:inar-to-ine",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -44147,7 +44525,9 @@
         "morphology:suffix-ine",
         "topic:cognate",
         "es:examinar",
-        "en:examine"
+        "en:examine",
+        "cognate:inar-to-ine",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -44164,7 +44544,9 @@
         "morphology:suffix-ine",
         "topic:cognate",
         "es:determinar",
-        "en:determine"
+        "en:determine",
+        "cognate:inar-to-ine",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -44181,7 +44563,9 @@
         "morphology:suffix-ine",
         "topic:cognate",
         "es:disciplinar",
-        "en:discipline"
+        "en:discipline",
+        "cognate:inar-to-ine",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -44198,7 +44582,9 @@
         "morphology:suffix-ine",
         "topic:cognate",
         "es:confinar",
-        "en:confine"
+        "en:confine",
+        "cognate:inar-to-ine",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -44215,7 +44601,9 @@
         "morphology:suffix-ine",
         "topic:cognate",
         "es:inclinar",
-        "en:incline"
+        "en:incline",
+        "cognate:inar-to-ine",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -44327,7 +44715,9 @@
         "morphology:suffix-er",
         "topic:cognate",
         "es:entrar",
-        "en:enter"
+        "en:enter",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -44344,7 +44734,9 @@
         "morphology:suffix-er",
         "topic:cognate",
         "es:centrar",
-        "en:center"
+        "en:center",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -44361,7 +44753,9 @@
         "morphology:suffix-er",
         "topic:cognate",
         "es:encontrar",
-        "en:encounter"
+        "en:encounter",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -44378,7 +44772,9 @@
         "morphology:suffix-ify",
         "topic:cognate",
         "es:identificar",
-        "en:identify"
+        "en:identify",
+        "cognate:ificar-to-ify",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -44395,7 +44791,9 @@
         "morphology:suffix-ify",
         "topic:cognate",
         "es:verificar",
-        "en:verify"
+        "en:verify",
+        "cognate:ificar-to-ify",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -44412,7 +44810,9 @@
         "morphology:suffix-ify",
         "topic:cognate",
         "es:justificar",
-        "en:justify"
+        "en:justify",
+        "cognate:ificar-to-ify",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -44429,7 +44829,9 @@
         "morphology:suffix-ify",
         "topic:cognate",
         "es:unificar",
-        "en:unify"
+        "en:unify",
+        "cognate:ificar-to-ify",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -44446,7 +44848,9 @@
         "morphology:suffix-ify",
         "topic:cognate",
         "es:cuantificar",
-        "en:quantify"
+        "en:quantify",
+        "cognate:ificar-to-ify",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -44463,7 +44867,9 @@
         "morphology:suffix-ify",
         "topic:cognate",
         "es:clasificar",
-        "en:classify"
+        "en:classify",
+        "cognate:ificar-to-ify",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -44480,7 +44886,9 @@
         "morphology:suffix-ify",
         "topic:cognate",
         "es:simplificar",
-        "en:simplify"
+        "en:simplify",
+        "cognate:ificar-to-ify",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -44497,7 +44905,9 @@
         "morphology:suffix-ify",
         "topic:cognate",
         "es:modificar",
-        "en:modify"
+        "en:modify",
+        "cognate:ificar-to-ify",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -44514,7 +44924,9 @@
         "morphology:suffix-ify",
         "topic:cognate",
         "es:clarificar",
-        "en:clarify"
+        "en:clarify",
+        "cognate:ificar-to-ify",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -44531,7 +44943,9 @@
         "morphology:suffix-ify",
         "topic:cognate",
         "es:purificar",
-        "en:purify"
+        "en:purify",
+        "cognate:ificar-to-ify",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -44548,7 +44962,9 @@
         "morphology:suffix-ore",
         "topic:cognate",
         "es:ignorar",
-        "en:ignore"
+        "en:ignore",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -44565,7 +44981,9 @@
         "morphology:suffix-ore",
         "topic:cognate",
         "es:explorar",
-        "en:explore"
+        "en:explore",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -44582,7 +45000,9 @@
         "morphology:suffix-ore",
         "topic:cognate",
         "es:restaurar",
-        "en:restore"
+        "en:restore",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -44599,7 +45019,9 @@
         "morphology:suffix-ore",
         "topic:cognate",
         "es:adorar",
-        "en:adore"
+        "en:adore",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -44616,7 +45038,9 @@
         "morphology:suffix-ore",
         "topic:cognate",
         "es:implorar",
-        "en:implore"
+        "en:implore",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -44693,7 +45117,9 @@
         "en:allude",
         "construction:prepositional-verb",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -44710,7 +45136,9 @@
         "morphology:suffix-ude",
         "topic:cognate",
         "es:eludir",
-        "en:elude"
+        "en:elude",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -44727,7 +45155,9 @@
         "morphology:suffix-ale",
         "topic:cognate",
         "es:inhalar",
-        "en:inhale"
+        "en:inhale",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -44744,7 +45174,9 @@
         "morphology:suffix-ale",
         "topic:cognate",
         "es:exhalar",
-        "en:exhale"
+        "en:exhale",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -44894,7 +45326,9 @@
         "morphology:suffix-ite",
         "topic:cognate",
         "es:invitar",
-        "en:invite"
+        "en:invite",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -44911,7 +45345,9 @@
         "morphology:suffix-ite",
         "topic:cognate",
         "es:unir",
-        "en:unite"
+        "en:unite",
+        "cognate:ir-to-silent-e",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -44928,7 +45364,9 @@
         "morphology:suffix-ite",
         "topic:cognate",
         "es:reunir",
-        "en:reunite"
+        "en:reunite",
+        "cognate:ir-to-silent-e",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -44945,7 +45383,9 @@
         "morphology:suffix-ite",
         "topic:cognate",
         "es:citar",
-        "en:cite"
+        "en:cite",
+        "cognate:transparent",
+        "cognate:latin-root"
       ],
       "curriculumRole": "reference"
     },
@@ -44962,7 +45402,9 @@
         "morphology:suffix-ite",
         "topic:cognate",
         "es:incitar",
-        "en:incite"
+        "en:incite",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -44979,7 +45421,9 @@
         "morphology:suffix-ite",
         "topic:cognate",
         "es:recitar",
-        "en:recite"
+        "en:recite",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -45072,7 +45516,9 @@
         "morphology:suffix-ize",
         "topic:cognate",
         "es:organizar",
-        "en:organize"
+        "en:organize",
+        "cognate:izar-to-ize",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -45089,7 +45535,9 @@
         "morphology:suffix-ize",
         "topic:cognate",
         "es:memorizar",
-        "en:memorize"
+        "en:memorize",
+        "cognate:izar-to-ize",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -45106,7 +45554,9 @@
         "morphology:suffix-ize",
         "topic:cognate",
         "es:especializar",
-        "en:specialize"
+        "en:specialize",
+        "cognate:izar-to-ize",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -45123,7 +45573,9 @@
         "morphology:suffix-ize",
         "topic:cognate",
         "es:finalizar",
-        "en:finalize"
+        "en:finalize",
+        "cognate:izar-to-ize",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -45140,7 +45592,9 @@
         "morphology:suffix-ize",
         "topic:cognate",
         "es:minimizar",
-        "en:minimize"
+        "en:minimize",
+        "cognate:izar-to-ize",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -45157,7 +45611,9 @@
         "morphology:suffix-ize",
         "topic:cognate",
         "es:maximizar",
-        "en:maximize"
+        "en:maximize",
+        "cognate:izar-to-ize",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -45174,7 +45630,9 @@
         "morphology:suffix-ize",
         "topic:cognate",
         "es:priorizar",
-        "en:prioritize"
+        "en:prioritize",
+        "cognate:izar-to-ize",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -45191,7 +45649,9 @@
         "morphology:suffix-ize",
         "topic:cognate",
         "es:categorizar",
-        "en:categorize"
+        "en:categorize",
+        "cognate:izar-to-ize",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -45208,7 +45668,9 @@
         "morphology:suffix-ize",
         "topic:cognate",
         "es:digitalizar",
-        "en:digitize"
+        "en:digitize",
+        "cognate:izar-to-ize",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -45225,7 +45687,9 @@
         "morphology:suffix-ize",
         "topic:cognate",
         "es:visualizar",
-        "en:visualize"
+        "en:visualize",
+        "cognate:izar-to-ize",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -45242,7 +45706,9 @@
         "morphology:suffix-are",
         "topic:cognate",
         "es:preparar",
-        "en:prepare"
+        "en:prepare",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -45259,7 +45725,9 @@
         "morphology:suffix-are",
         "topic:cognate",
         "es:comparar",
-        "en:compare"
+        "en:compare",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -45276,7 +45744,9 @@
         "morphology:suffix-are",
         "topic:cognate",
         "es:declarar",
-        "en:declare"
+        "en:declare",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -45293,7 +45763,9 @@
         "morphology:suffix-are",
         "topic:cognate",
         "es:reparar",
-        "en:repair"
+        "en:repair",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -45481,7 +45953,9 @@
         "morphology:suffix-ive",
         "topic:cognate",
         "es:sobrevivir",
-        "en:survive"
+        "en:survive",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -45498,7 +45972,9 @@
         "morphology:suffix-ive",
         "topic:cognate",
         "es:revivir",
-        "en:revive"
+        "en:revive",
+        "cognate:ir-to-silent-e",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -45515,7 +45991,9 @@
         "morphology:suffix-ive",
         "topic:cognate",
         "es:derivar",
-        "en:derive"
+        "en:derive",
+        "cognate:transparent",
+        "cognate:latin-root"
       ],
       "curriculumRole": "reference"
     },
@@ -45535,7 +46013,9 @@
         "en:deprive",
         "construction:prepositional-verb",
         "particle:of",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -45704,7 +46184,9 @@
         "topic:cognate",
         "morphology:suffix-act",
         "es:contactar",
-        "en:contact"
+        "en:contact",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -45721,7 +46203,9 @@
         "topic:cognate",
         "morphology:suffix-act",
         "es:impactar",
-        "en:impact"
+        "en:impact",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -45738,7 +46222,9 @@
         "topic:cognate",
         "morphology:suffix-act",
         "es:actuar",
-        "en:act"
+        "en:act",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -45755,7 +46241,9 @@
         "topic:cognate",
         "morphology:suffix-act",
         "es:reaccionar",
-        "en:react"
+        "en:react",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -45772,7 +46260,9 @@
         "topic:cognate",
         "morphology:suffix-act",
         "es:interactuar",
-        "en:interact"
+        "en:interact",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -46040,7 +46530,9 @@
         "topic:cognate",
         "morphology:suffix-ect",
         "es:corregir",
-        "en:correct"
+        "en:correct",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -46057,7 +46549,9 @@
         "topic:cognate",
         "morphology:suffix-ect",
         "es:dirigir",
-        "en:direct"
+        "en:direct",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -46074,7 +46568,9 @@
         "topic:cognate",
         "morphology:suffix-ect",
         "es:elegir",
-        "en:elect"
+        "en:elect",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -46091,7 +46587,9 @@
         "topic:cognate",
         "morphology:suffix-ect",
         "es:proteger",
-        "en:protect"
+        "en:protect",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -46108,7 +46606,9 @@
         "topic:cognate",
         "morphology:suffix-ect",
         "es:erigir",
-        "en:erect"
+        "en:erect",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -46125,7 +46625,9 @@
         "topic:cognate",
         "morphology:suffix-ect",
         "es:conectar",
-        "en:connect"
+        "en:connect",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "supporting"
     },
@@ -46142,7 +46644,9 @@
         "topic:cognate",
         "morphology:suffix-ect",
         "es:detectar",
-        "en:detect"
+        "en:detect",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -46159,7 +46663,9 @@
         "topic:cognate",
         "morphology:suffix-ect",
         "es:proyectar",
-        "en:project"
+        "en:project",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -46176,7 +46682,9 @@
         "topic:cognate",
         "morphology:suffix-ect",
         "es:perfeccionar",
-        "en:perfect"
+        "en:perfect",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -46193,7 +46701,9 @@
         "topic:cognate",
         "morphology:suffix-ect",
         "es:coleccionar",
-        "en:collect"
+        "en:collect",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -46210,7 +46720,9 @@
         "topic:cognate",
         "morphology:suffix-ect",
         "es:inspeccionar",
-        "en:inspect"
+        "en:inspect",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -47812,7 +48324,9 @@
         "pos:noun",
         "es:empresa",
         "en:company",
-        "gender:feminine"
+        "gender:feminine",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -47831,7 +48345,9 @@
         "es:teléfono",
         "en:telephone",
         "gender:masculine",
-        "topic:technology"
+        "topic:technology",
+        "cognate:latin-root",
+        "cognate:transparent"
       ],
       "curriculumRole": "reference"
     },
@@ -47847,7 +48363,6 @@
         "pos:adjective",
         "grammar:ser-adjective",
         "morphology:suffix-ar",
-        "topic:cognate",
         "es:ser",
         "en:similar",
         "topic:abstract-quality",
