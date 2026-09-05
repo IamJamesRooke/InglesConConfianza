@@ -1,0 +1,65 @@
+rf7wttxz5x	hoy	today	supporting	pos:adverb	missing pos: classification, found during full-coverage orphan audit
+uklvuftocv	mañana	tomorrow	supporting	pos:adverb	missing pos: classification, found during full-coverage orphan audit
+ozs312yyzn	ayer	yesterday	supporting	pos:adverb	missing pos: classification, found during full-coverage orphan audit
+70f495461k	anteayer	the day before yesterday	reference	pos:adverb	missing pos: classification, found during full-coverage orphan audit
+yk8mablp0c	anoche	last night	reference	pos:adverb	missing pos: classification, found during full-coverage orphan audit
+v2bifwqn7l	esta noche	tonight	supporting	pos:adverb	missing pos: classification, found during full-coverage orphan audit
+qeasfm79hz	ayer por la mañana	yesterday morning	reference	pos:adverb	missing pos: classification, found during full-coverage orphan audit
+gid93lnngw	mañana por la mañana	tomorrow morning	reference	pos:adverb	missing pos: classification, found during full-coverage orphan audit
+sk2u1fvotp	ayer por la tarde	yesterday afternoon	reference	pos:adverb	missing pos: classification, found during full-coverage orphan audit
+53m0zvo429	mañana por la tarde	tomorrow afternoon	reference	pos:adverb	missing pos: classification, found during full-coverage orphan audit
+ze0uol6k43	mañana por la noche	tomorrow night	reference	pos:adverb	missing pos: classification, found during full-coverage orphan audit
+is83ex1r7e	pasado mañana	the day after tomorrow	reference	pos:adverb	missing pos: classification, found during full-coverage orphan audit
+p5528lcbf2	aún no	not yet	reference	pos:adverb	missing pos: classification, found during full-coverage orphan audit
+2b50xdv2ra	todavía	still	reference	pos:adverb	missing pos: classification, found during full-coverage orphan audit
+bluzvvve73	todavía no	not yet	reference	pos:adverb	missing pos: classification, found during full-coverage orphan audit
+cecjai7o3s	ya no	not anymore	supporting	pos:adverb	missing pos: classification, found during full-coverage orphan audit
+avsnfusolj	tampoco	either	supporting	pos:adverb	missing pos: classification, found during full-coverage orphan audit
+bhlxjf47nf	apenas	barely/hardly	reference	pos:adverb	missing pos: classification, found during full-coverage orphan audit
+v2n44iz4vk	una vez	once	reference	pos:adverb	missing pos: classification, found during full-coverage orphan audit
+ecnxsk18jb	dos veces	twice	reference	pos:adverb	missing pos: classification, found during full-coverage orphan audit
+k2awm82sbn	tres veces	three times	reference	pos:adverb	missing pos: classification, found during full-coverage orphan audit
+sdju2vvodp	unas cuantas veces	a few times	reference	pos:adverb	missing pos: classification, found during full-coverage orphan audit
+sk6v1ievgl	bastante [adjetivo]	quite [adjective]	reference	pos:adverb|grammar:intensifier	missing pos: classification, found during full-coverage orphan audit
+pxhlmu008o	bien [adjetivo] (coloquial)	pretty/quite [adjective] (colloquial)	reference	pos:adverb|grammar:intensifier|register:informal	missing pos: classification, found during full-coverage orphan audit
+k2k4xsq191	la mañana	the morning	supporting	pos:noun	missing pos: classification, found during full-coverage orphan audit
+4abmpsiu46	la tarde	the afternoon	supporting	pos:noun	missing pos: classification, found during full-coverage orphan audit
+yt3bjazug3	la tarde	the evening	reference	pos:noun	missing pos: classification, found during full-coverage orphan audit
+rwj2zcgfcm	la noche	the night	supporting	pos:noun	missing pos: classification, found during full-coverage orphan audit
+5c41gd4gqg	día	day	reference	pos:noun	missing pos: classification, found during full-coverage orphan audit
+em6f63veig	al lado de [algo]	beside [something]	supporting	pos:preposition	missing pos: classification, found during full-coverage orphan audit
+95yrl4jxn3	hacia [algo]	toward [something]	supporting	pos:preposition	missing pos: classification, found during full-coverage orphan audit
+l5hk1zrmge	hacia [algo]	towards [something]	reference	pos:preposition	missing pos: classification, found during full-coverage orphan audit
+8b641cek21	antes de	before	reference	pos:preposition	missing pos: classification, found during full-coverage orphan audit
+aixmzqjpam	debajo de	below	reference	pos:preposition	missing pos: classification, found during full-coverage orphan audit
+z9x61srsag	debajo de	under	reference	pos:preposition	missing pos: classification, found during full-coverage orphan audit
+w3ipgpiocx	debajo de [algo]	below [something]	reference	pos:preposition	missing pos: classification, found during full-coverage orphan audit
+9qwvwwgrlt	encima de	above	reference	pos:preposition	missing pos: classification, found during full-coverage orphan audit
+7c8rxvmsnl	entre dos cosas o personas	between	reference	pos:preposition	missing pos: classification, found during full-coverage orphan audit
+drk12jhvde	junto con [algo]	along with [something]	reference	pos:preposition	missing pos: classification, found during full-coverage orphan audit
+oz59uwz6bx	a lo largo de [algo]	along [something]	reference	pos:preposition	missing pos: classification, found during full-coverage orphan audit
+ik8hj882al	entre [dos cosas]	between [two things]	reference	pos:preposition	missing pos: classification, found during full-coverage orphan audit
+gcuz359xog	entre [varias cosas]	among [several things]	reference	pos:preposition	missing pos: classification, found during full-coverage orphan audit
+asfplpbeje	más allá de [algo]	beyond [something]	reference	pos:preposition	missing pos: classification, found during full-coverage orphan audit
+5ai1ief8xm	bien	okay	supporting	pos:adjective	missing pos: classification, found during full-coverage orphan audit
+3iomqnzseh	bien	fine	reference	pos:adjective	missing pos: classification, found during full-coverage orphan audit
+nuca0ssha7	bueno / buena	kind	reference	pos:adjective	missing pos: classification, found during full-coverage orphan audit
+jtm9v93uc2	malo / mala	evil	reference	pos:adjective	missing pos: classification, found during full-coverage orphan audit
+k2cbtbb9an	malo / mala	poor	reference	pos:adjective	missing pos: classification, found during full-coverage orphan audit
+22lgqfjinn	seguro	safe	reference	pos:adjective	missing pos: classification, found during full-coverage orphan audit
+tidi1ymaul	seguro de algo	sure about something	reference	pos:adjective	missing pos: classification, found during full-coverage orphan audit
+306v0y0d1m	¿Cierto?	Right?	reference	pos:adjective	missing pos: classification, found during full-coverage orphan audit
+f2rqqk1bhq	un solo [algo]	a single [something]	reference	pos:adjective	missing pos: classification, found during full-coverage orphan audit
+5ym0n1ham4	faltarle [algo] a [algo]	[something] lacks [something]	reference	pos:verb	missing pos: classification, found during full-coverage orphan audit
+swyolg0a4s	faltarle [algo] a [alguien]	[somebody] needs [something]	reference	pos:verb	missing pos: classification, found during full-coverage orphan audit
+miud8kxiic	encantarle [algo] a [alguien]	[somebody] loves [something]	supporting	pos:verb	missing pos: classification, found during full-coverage orphan audit
+inhrs98gy2	[algo] pierde agua	[something] leaks	reference	pos:verb	missing pos: classification, found during full-coverage orphan audit
+wx0aqskuor	no recordar [algo]	can't remember [something]	supporting	pos:verb	missing pos: classification, found during full-coverage orphan audit
+bzurrkgjau	[algo] toca a [alguien]	[something] affects [somebody]	reference	pos:verb	missing pos: classification, found during full-coverage orphan audit
+5hed68eq4q	no lograr [hacer algo]	can't seem to [do something]	reference	pos:verb	missing pos: classification, found during full-coverage orphan audit
+rrxe7cd85d	cállate	be quiet	reference	pos:verb	missing pos: classification, found during full-coverage orphan audit
+r4wshfw0zl	cállate	shut up	reference	pos:verb	missing pos: classification, found during full-coverage orphan audit
+5f0wqk4dj5	¡escucha!	listen up!	reference	pos:verb	missing pos: classification, found during full-coverage orphan audit
+nmfskm5zko	necesitar [hacer algo]	needa [do something]	reference	pos:verb	missing pos: classification, found during full-coverage orphan audit
+aojc7un24g	no lo hagas	don't do it	supporting	pos:verb	missing pos: classification, found during full-coverage orphan audit
+k6iafnbzra	[algo] extraña a [alguien]	[something] puzzles [somebody]	reference	pos:verb	missing pos: classification, found during full-coverage orphan audit

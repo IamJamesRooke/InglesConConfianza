@@ -618,7 +618,8 @@
         "register:spoken",
         "construction:followed-by-full-infinitive",
         "es:necesitar",
-        "en:needa"
+        "en:needa",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -5999,7 +6000,8 @@
         "particle:up",
         "grammar:imperative",
         "es:escucha",
-        "en:listen"
+        "en:listen",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -7178,7 +7180,8 @@
       "collections": [
         "es:extrañar",
         "es:extraña",
-        "en:puzzles"
+        "en:puzzles",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -7264,7 +7267,8 @@
       },
       "collections": [
         "es:faltar",
-        "en:lacks"
+        "en:lacks",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -7278,7 +7282,8 @@
       },
       "collections": [
         "es:faltar",
-        "en:needs"
+        "en:needs",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -7667,7 +7672,8 @@
         "es:gustar",
         "grammar:handle-verb",
         "es:encantar",
-        "en:loves"
+        "en:loves",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -11233,7 +11239,8 @@
         "es:perder",
         "leak",
         "es:pierde",
-        "en:leaks"
+        "en:leaks",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -17681,7 +17688,8 @@
       "collections": [
         "grammar:negative",
         "es:recordar",
-        "en:can't"
+        "en:can't",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -21051,7 +21059,8 @@
         "es:tocar",
         "construction:map-a-direct-object",
         "es:toca",
-        "en:affects"
+        "en:affects",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -24281,7 +24290,8 @@
         "can't seem to",
         "grammar:negative",
         "es:lograr",
-        "en:can't"
+        "en:can't",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -24876,7 +24886,8 @@
       },
       "collections": [
         "es:antes",
-        "en:before"
+        "en:before",
+        "pos:preposition"
       ],
       "curriculumRole": "reference"
     },
@@ -24937,7 +24948,8 @@
       },
       "collections": [
         "es:apenas",
-        "en:barely/hardly"
+        "en:barely/hardly",
+        "pos:adverb"
       ],
       "curriculumRole": "reference"
     },
@@ -25086,7 +25098,8 @@
       },
       "collections": [
         "es:aún",
-        "en:yet"
+        "en:yet",
+        "pos:adverb"
       ],
       "curriculumRole": "reference"
     },
@@ -25215,7 +25228,8 @@
       "collections": [
         "es:bajo",
         "es:debajo",
-        "en:under"
+        "en:under",
+        "pos:preposition"
       ],
       "curriculumRole": "reference"
     },
@@ -25229,7 +25243,8 @@
       },
       "collections": [
         "es:debajo",
-        "en:below"
+        "en:below",
+        "pos:preposition"
       ],
       "curriculumRole": "reference"
     },
@@ -25243,7 +25258,9 @@
       },
       "collections": [
         "es:bastante",
-        "en:quite"
+        "en:quite",
+        "pos:adverb",
+        "grammar:intensifier"
       ],
       "curriculumRole": "reference"
     },
@@ -25325,7 +25342,10 @@
       },
       "collections": [
         "es:bien",
-        "en:pretty/quite"
+        "en:pretty/quite",
+        "pos:adverb",
+        "grammar:intensifier",
+        "register:informal"
       ],
       "curriculumRole": "reference"
     },
@@ -25374,7 +25394,8 @@
       },
       "collections": [
         "es:bien",
-        "en:okay"
+        "en:okay",
+        "pos:adjective"
       ],
       "curriculumRole": "supporting"
     },
@@ -25388,7 +25409,8 @@
       },
       "collections": [
         "es:bien",
-        "en:fine"
+        "en:fine",
+        "pos:adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -25432,7 +25454,8 @@
       },
       "collections": [
         "es:bueno",
-        "en:kind"
+        "en:kind",
+        "pos:adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -25551,7 +25574,8 @@
       },
       "collections": [
         "es:cierto",
-        "en:right"
+        "en:right",
+        "pos:adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -26777,7 +26801,8 @@
       },
       "collections": [
         "es:entre",
-        "en:between"
+        "en:between",
+        "pos:preposition"
       ],
       "curriculumRole": "reference"
     },
@@ -26948,7 +26973,8 @@
       },
       "collections": [
         "es:malo",
-        "en:evil"
+        "en:evil",
+        "pos:adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -26962,7 +26988,8 @@
       },
       "collections": [
         "es:malo",
-        "en:poor"
+        "en:poor",
+        "pos:adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -27060,7 +27087,8 @@
       },
       "collections": [
         "es:día",
-        "en:day"
+        "en:day",
+        "pos:noun"
       ],
       "curriculumRole": "reference"
     },
@@ -27076,7 +27104,8 @@
         "topic:time",
         "topic:calendar",
         "es:hoy",
-        "en:today"
+        "en:today",
+        "pos:adverb"
       ],
       "curriculumRole": "supporting"
     },
@@ -27092,7 +27121,8 @@
         "topic:time",
         "topic:calendar",
         "es:mañana",
-        "en:tomorrow"
+        "en:tomorrow",
+        "pos:adverb"
       ],
       "curriculumRole": "supporting"
     },
@@ -27109,7 +27139,8 @@
         "en:tomorrow",
         "topic:time",
         "es:pasado",
-        "en:day"
+        "en:day",
+        "pos:adverb"
       ],
       "curriculumRole": "reference"
     },
@@ -27125,7 +27156,8 @@
         "topic:time",
         "topic:calendar",
         "es:ayer",
-        "en:yesterday"
+        "en:yesterday",
+        "pos:adverb"
       ],
       "curriculumRole": "supporting"
     },
@@ -27139,7 +27171,8 @@
       },
       "collections": [
         "es:anteayer",
-        "en:day"
+        "en:day",
+        "pos:adverb"
       ],
       "curriculumRole": "reference"
     },
@@ -27153,7 +27186,8 @@
       },
       "collections": [
         "es:mañana",
-        "en:morning"
+        "en:morning",
+        "pos:noun"
       ],
       "curriculumRole": "supporting"
     },
@@ -27167,7 +27201,8 @@
       },
       "collections": [
         "es:tarde",
-        "en:afternoon"
+        "en:afternoon",
+        "pos:noun"
       ],
       "curriculumRole": "supporting"
     },
@@ -27181,7 +27216,8 @@
       },
       "collections": [
         "es:tarde",
-        "en:evening"
+        "en:evening",
+        "pos:noun"
       ],
       "curriculumRole": "reference"
     },
@@ -27195,7 +27231,8 @@
       },
       "collections": [
         "es:noche",
-        "en:night"
+        "en:night",
+        "pos:noun"
       ],
       "curriculumRole": "supporting"
     },
@@ -27210,7 +27247,8 @@
       "collections": [
         "es:mañana",
         "es:ayer",
-        "en:yesterday"
+        "en:yesterday",
+        "pos:adverb"
       ],
       "curriculumRole": "reference"
     },
@@ -27240,7 +27278,8 @@
       },
       "collections": [
         "es:mañana",
-        "en:tomorrow"
+        "en:tomorrow",
+        "pos:adverb"
       ],
       "curriculumRole": "reference"
     },
@@ -27254,7 +27293,8 @@
       },
       "collections": [
         "es:ayer",
-        "en:yesterday"
+        "en:yesterday",
+        "pos:adverb"
       ],
       "curriculumRole": "reference"
     },
@@ -27283,7 +27323,8 @@
       },
       "collections": [
         "es:mañana",
-        "en:tomorrow"
+        "en:tomorrow",
+        "pos:adverb"
       ],
       "curriculumRole": "reference"
     },
@@ -27297,7 +27338,8 @@
       },
       "collections": [
         "es:anoche",
-        "en:last"
+        "en:last",
+        "pos:adverb"
       ],
       "curriculumRole": "reference"
     },
@@ -27311,7 +27353,8 @@
       },
       "collections": [
         "es:esta",
-        "en:tonight"
+        "en:tonight",
+        "pos:adverb"
       ],
       "curriculumRole": "supporting"
     },
@@ -27325,7 +27368,8 @@
       },
       "collections": [
         "es:mañana",
-        "en:tomorrow"
+        "en:tomorrow",
+        "pos:adverb"
       ],
       "curriculumRole": "reference"
     },
@@ -28222,7 +28266,8 @@
       },
       "collections": [
         "es:seguro",
-        "en:safe"
+        "en:safe",
+        "pos:adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -28236,7 +28281,8 @@
       },
       "collections": [
         "es:seguro",
-        "en:sure"
+        "en:sure",
+        "pos:adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -28468,7 +28514,8 @@
       },
       "collections": [
         "es:encima",
-        "en:above"
+        "en:above",
+        "pos:preposition"
       ],
       "curriculumRole": "reference"
     },
@@ -28498,7 +28545,8 @@
       },
       "collections": [
         "es:solo",
-        "en:single"
+        "en:single",
+        "pos:adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -28664,7 +28712,8 @@
       },
       "collections": [
         "es:vez",
-        "en:once"
+        "en:once",
+        "pos:adverb"
       ],
       "curriculumRole": "reference"
     },
@@ -28679,7 +28728,8 @@
       "collections": [
         "es:vez",
         "es:dos",
-        "en:twice"
+        "en:twice",
+        "pos:adverb"
       ],
       "curriculumRole": "reference"
     },
@@ -28694,7 +28744,8 @@
       "collections": [
         "es:vez",
         "es:tres",
-        "en:three"
+        "en:three",
+        "pos:adverb"
       ],
       "curriculumRole": "reference"
     },
@@ -28709,7 +28760,8 @@
       "collections": [
         "es:vez",
         "es:cuantas",
-        "en:few"
+        "en:few",
+        "pos:adverb"
       ],
       "curriculumRole": "reference"
     },
@@ -28787,7 +28839,8 @@
       },
       "collections": [
         "es:todavía",
-        "en:yet"
+        "en:yet",
+        "pos:adverb"
       ],
       "curriculumRole": "reference"
     },
@@ -28801,7 +28854,8 @@
       },
       "collections": [
         "es:todavía",
-        "en:still"
+        "en:still",
+        "pos:adverb"
       ],
       "curriculumRole": "reference"
     },
@@ -29524,7 +29578,8 @@
         "grammar:negative",
         "grammar:addition",
         "es:tampoco",
-        "en:either"
+        "en:either",
+        "pos:adverb"
       ],
       "curriculumRole": "supporting"
     },
@@ -29986,7 +30041,8 @@
         "grammar:negative",
         "topic:time",
         "es:ya",
-        "en:anymore"
+        "en:anymore",
+        "pos:adverb"
       ],
       "curriculumRole": "supporting"
     },
@@ -55404,7 +55460,8 @@
         "es:callar",
         "grammar:imperative",
         "es:cállate",
-        "en:quiet"
+        "en:quiet",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -55422,7 +55479,8 @@
         "grammar:imperative",
         "register:informal",
         "es:cállate",
-        "en:shut"
+        "en:shut",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -55910,7 +55968,8 @@
       },
       "collections": [
         "es:junto",
-        "en:along"
+        "en:along",
+        "pos:preposition"
       ],
       "curriculumRole": "reference"
     },
@@ -61538,7 +61597,8 @@
       "collections": [
         "morphology:recognition",
         "morphology:prefix-al",
-        "en:along"
+        "en:along",
+        "pos:preposition"
       ],
       "curriculumRole": "reference"
     },
@@ -61572,7 +61632,8 @@
         "morphology:recognition",
         "morphology:prefix-be",
         "es:lado",
-        "en:beside"
+        "en:beside",
+        "pos:preposition"
       ],
       "curriculumRole": "supporting"
     },
@@ -61606,7 +61667,8 @@
         "morphology:recognition",
         "morphology:prefix-be",
         "es:debajo",
-        "en:below"
+        "en:below",
+        "pos:preposition"
       ],
       "curriculumRole": "reference"
     },
@@ -61622,7 +61684,8 @@
         "morphology:recognition",
         "morphology:prefix-be",
         "es:entre",
-        "en:between"
+        "en:between",
+        "pos:preposition"
       ],
       "curriculumRole": "reference"
     },
@@ -61638,7 +61701,8 @@
         "morphology:recognition",
         "morphology:prefix-be",
         "es:entre",
-        "en:among"
+        "en:among",
+        "pos:preposition"
       ],
       "curriculumRole": "reference"
     },
@@ -61654,7 +61718,8 @@
         "morphology:recognition",
         "morphology:prefix-be",
         "es:más",
-        "en:beyond"
+        "en:beyond",
+        "pos:preposition"
       ],
       "curriculumRole": "reference"
     },
@@ -62066,7 +62131,8 @@
         "morphology:suffix-ward",
         "dialect:american",
         "es:hacia",
-        "en:toward"
+        "en:toward",
+        "pos:preposition"
       ],
       "curriculumRole": "supporting"
     },
@@ -62083,7 +62149,8 @@
         "morphology:suffix-ward",
         "dialect:british",
         "es:hacia",
-        "en:towards"
+        "en:towards",
+        "pos:preposition"
       ],
       "curriculumRole": "reference"
     },
@@ -63082,7 +63149,8 @@
         "grammar:command",
         "form:bare-infinitive",
         "es:hagas",
-        "en:don't"
+        "en:don't",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
