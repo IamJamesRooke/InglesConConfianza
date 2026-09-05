@@ -24210,7 +24210,8 @@
         "grammar:singular",
         "es:me",
         "en:me",
-        "topic:pronoun"
+        "topic:pronoun",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -24233,7 +24234,8 @@
         "topic:pronoun",
         "contrast:you-collapse",
         "contrast:confusable",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -24252,7 +24254,8 @@
         "grammar:plural",
         "es:nos",
         "en:us",
-        "topic:pronoun"
+        "topic:pronoun",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -24274,7 +24277,8 @@
         "topic:pronoun",
         "contrast:lo-vs-le",
         "contrast:confusable",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -24294,7 +24298,8 @@
         "en:them",
         "grammar:object-pronoun",
         "topic:pronoun",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -24318,7 +24323,8 @@
         "contrast:lo-vs-le",
         "contrast:el-vs-lo",
         "contrast:confusable",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -24339,7 +24345,8 @@
         "en:it",
         "grammar:object-pronoun",
         "topic:pronoun",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -24360,7 +24367,8 @@
         "en:you",
         "grammar:object-pronoun",
         "topic:pronoun",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -24381,7 +24389,8 @@
         "en:her",
         "grammar:object-pronoun",
         "topic:pronoun",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -24402,7 +24411,8 @@
         "en:it",
         "grammar:object-pronoun",
         "topic:pronoun",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -24423,7 +24433,8 @@
         "en:you",
         "grammar:object-pronoun",
         "topic:pronoun",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -24445,7 +24456,8 @@
         "en:them",
         "grammar:object-pronoun",
         "topic:pronoun",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -24466,7 +24478,8 @@
         "en:you",
         "grammar:object-pronoun",
         "topic:pronoun",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -24487,7 +24500,8 @@
         "en:them",
         "grammar:object-pronoun",
         "topic:pronoun",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -24508,7 +24522,8 @@
         "en:you",
         "grammar:object-pronoun",
         "topic:pronoun",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -24585,7 +24600,8 @@
         "en:him",
         "grammar:object-pronoun",
         "topic:pronoun",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -24605,7 +24621,8 @@
         "en:her",
         "grammar:object-pronoun",
         "topic:pronoun",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -24625,7 +24642,8 @@
         "en:them",
         "grammar:object-pronoun",
         "topic:pronoun",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -83381,10 +83399,10 @@
         "grammar:singular",
         "pos:pronoun",
         "en:me",
-        "en:to",
         "es:me",
         "topic:pronoun",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -83402,10 +83420,10 @@
         "grammar:singular",
         "pos:pronoun",
         "en:you",
-        "en:to",
         "es:te",
         "topic:pronoun",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -83423,16 +83441,16 @@
         "grammar:plural",
         "pos:pronoun",
         "en:us",
-        "en:to",
         "es:nos",
         "topic:pronoun",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
     {
       "id": "xin4wk0lik",
-      "spanish": "le",
+      "spanish": "le (a ella)",
       "english": "to her",
       "example": {
         "spanish": "Le doy el libro a María.",
@@ -83447,13 +83465,14 @@
         "en:her",
         "es:le",
         "topic:pronoun",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
     {
       "id": "hwcpppy5me",
-      "spanish": "le",
+      "spanish": "le (neutro)",
       "english": "to it",
       "example": {
         "spanish": "Le puse aceite al motor.",
@@ -83468,13 +83487,14 @@
         "en:it",
         "es:le",
         "topic:pronoun",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
     {
       "id": "mty4hevjmw",
-      "spanish": "le",
+      "spanish": "le (a usted)",
       "english": "to you",
       "example": {
         "spanish": "Le doy el libro a usted.",
@@ -83488,7 +83508,8 @@
         "en:you",
         "es:le",
         "topic:pronoun",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -83508,7 +83529,8 @@
         "en:you",
         "es:les",
         "topic:pronoun",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },

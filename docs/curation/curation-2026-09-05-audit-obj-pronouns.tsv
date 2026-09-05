@@ -1,0 +1,25 @@
+9rsyb41dmz	me	me	core	audit:reviewed	Audit: fine as-is.	Juan me ve.	Juan sees me.
+5ajqekseb3	te	you	core	audit:reviewed	Audit: fine as-is.	Te veo.	I see you.
+96zmjpedzq	nos	us	core	audit:reviewed	Audit: fine as-is.	Juan nos ve.	Juan sees us.
+mbu3bynmc3	lo	him	core	audit:reviewed	Audit: fine as-is.	Veo al hombre. Lo veo.	I see the man. I see him.
+xd9c671eit	lo	it	core	audit:reviewed	Audit: fine as-is.	Veo la mesa. Lo veo.	I see the table. I see it.
+a29elmu22c	lo	you	supporting	audit:reviewed	Audit: fine as-is.	Lo veo a usted.	I see you.
+7poocn5na8	la	her	core	audit:reviewed	Audit: fine as-is.	Veo a la mujer. La veo.	I see the woman. I see her.
+m3zbdhcenj	la	it	core	audit:reviewed	Audit: fine as-is.	Veo la mesa. La veo.	I see the table. I see it.
+8kfu71csir	la	you	supporting	audit:reviewed	Audit: fine as-is.	La veo a usted.	I see you.
+5cest1aute	los	them	core	audit:reviewed	Audit: fine as-is.	Veo a los hombres. Los veo.	I see the men. I see them.
+kz7ntpcrhd	los	you	supporting	audit:reviewed	Audit: fine as-is.	Los veo a ustedes.	I see you.
+zf3sq9mld5	las	them	core	audit:reviewed	Audit: fine as-is.	Veo a las mujeres. Las veo.	I see the women. I see them.
+d2156w0qop	las	you	supporting	audit:reviewed	Audit: fine as-is.	Las veo a ustedes.	I see you.
+qtybwfahhd	le (a él)	to him	core	audit:reviewed	Audit: fine as-is.	Le doy el libro a Juan.	I give the book to him.
+tne070no4d	les	to them	core	audit:reviewed	Audit: fine as-is.	Les doy los libros a Juan y María.	I give the books to them.
+fz385c053c	se	to him	core	audit:reviewed	Audit: fine as-is.	Le doy el libro a Juan: se lo doy.	I give Juan the book: I give it to him.
+1e1njdasi9	se	to her	core	audit:reviewed	Audit: fine as-is.	Le doy el libro a María: se lo doy.	I give María the book: I give it to her.
+vi3wxfj3r2	se	to them	core	audit:reviewed	Audit: fine as-is.	Le doy el libro a ellos: se lo doy.	I give them the book: I give it to them.
+8ueue3hv8i	me	to me	core	audit:reviewed	Audit tag fix: removed stray en:to tag (inconsistent — sibling rows le/les/se don't carry it despite meaning "to X" too).	Juan me da el libro a mí.	Juan gives the book to me.
+a1dht71g4o	te	to you	core	audit:reviewed	Audit tag fix: removed stray en:to tag, same inconsistency.	Te doy el libro a ti.	I give the book to you.
+ljza4yueup	nos	to us	core	audit:reviewed	Audit tag fix: removed stray en:to tag, same inconsistency.	Nos dan el premio a nosotros.	They give the prize to us.
+xin4wk0lik	le (a ella)	to her	core	audit:reviewed	Audit normalization: added the "(a ella)" disambiguator to match its sibling "le (a él)" — was just "le", inconsistent.	Le doy el libro a María.	I give the book to her.
+hwcpppy5me	le (neutro)	to it	supporting	audit:reviewed	Audit normalization: added a disambiguator to match its siblings.	Le puse aceite al motor.	I put oil in it.
+mty4hevjmw	le (a usted)	to you	supporting	audit:reviewed	Audit normalization: added the "(a usted)" disambiguator to match its sibling "le (a él)".	Le doy el libro a usted.	I give the book to you.
+4nnw28nja8	les	to you	supporting	audit:reviewed	Audit: fine as-is (plural "les" isn't ambiguous the way singular "le" is).	Les doy el libro a ustedes.	I give the book to you.
