@@ -48530,7 +48530,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "es:vigésimo",
@@ -48548,7 +48547,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "es:vigésimo",
@@ -48566,7 +48564,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "es:vigésimo",
@@ -48584,7 +48581,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "es:vigésimo",
@@ -48602,7 +48598,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "es:vigésimo",
@@ -48620,7 +48615,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "es:vigésimo",
@@ -48638,7 +48632,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "es:vigésimo",
@@ -48656,7 +48649,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "es:vigésimo",
@@ -48674,7 +48666,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "es:trigésimo",
@@ -48692,7 +48683,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "es:trigésimo",
@@ -48710,7 +48700,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "es:centésimo",
@@ -48728,7 +48717,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "es:milésimo",
@@ -48746,7 +48734,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "es:millonésimo",
@@ -48764,7 +48751,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "topic:time",
@@ -48785,7 +48771,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "topic:time",
@@ -48807,7 +48792,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "topic:time",
@@ -48828,7 +48812,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "es:cuarto",
@@ -48846,7 +48829,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "es:quinto",
@@ -48864,7 +48846,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "es:sexto",
@@ -48882,7 +48863,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "es:séptimo",
@@ -48900,7 +48880,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "es:octavo",
@@ -48918,7 +48897,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "es:noveno",
@@ -48936,7 +48914,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "es:décimo",
@@ -48954,7 +48931,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "es:undécimo",
@@ -48972,7 +48948,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "es:duodécimo",
@@ -48990,7 +48965,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "es:decimotercero",
@@ -49008,7 +48982,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "es:decimocuarto",
@@ -49026,7 +48999,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "es:decimoquinto",
@@ -49044,7 +49016,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "es:decimosexto",
@@ -49062,7 +49033,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "es:decimoséptimo",
@@ -49080,7 +49050,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "es:decimoctavo",
@@ -49098,7 +49067,6 @@
       },
       "collections": [
         "grammar:ordinal-number",
-        "en:order",
         "topic:date",
         "pos:number",
         "es:decimonoveno",
