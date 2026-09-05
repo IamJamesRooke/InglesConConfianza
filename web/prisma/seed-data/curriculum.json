@@ -2087,7 +2087,8 @@
         "cognate:opaque-gloss",
         "topic:cognate",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -2562,7 +2563,8 @@
         "cognate:latin-root",
         "cognate:transparent",
         "topic:cognate",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -2585,7 +2587,8 @@
         "cognate:latin-root",
         "cognate:transparent",
         "topic:cognate",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -2608,7 +2611,8 @@
         "cognate:opaque-gloss",
         "topic:cognate",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -2631,7 +2635,8 @@
         "cognate:opaque-gloss",
         "topic:cognate",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -4218,7 +4223,8 @@
         "cognate:opaque-gloss",
         "topic:cognate",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -12062,7 +12068,8 @@
         "es:pesadamente",
         "en:heavily",
         "cognate:mente-to-ly",
-        "topic:cognate"
+        "topic:cognate",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -13016,7 +13023,8 @@
         "en:powerfully",
         "cognate:mente-to-ly",
         "topic:cognate",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -21298,7 +21306,8 @@
         "cognate:opaque-gloss",
         "topic:cognate",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -22534,7 +22543,8 @@
         "cognate:latin-root",
         "cognate:opaque-gloss",
         "topic:cognate",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -29943,14 +29953,15 @@
       "spanish": "suficiente / suficientes",
       "english": "sufficient",
       "example": {
-        "spanish": "suficiente / suficientes",
-        "english": "sufficient"
+        "spanish": "No tenemos tiempo suficiente.",
+        "english": "We don't have sufficient time."
       },
       "collections": [
         "es:suficiente",
         "en:sufficient",
         "cognate:ente-to-ent",
-        "topic:cognate"
+        "topic:cognate",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30942,7 +30953,8 @@
         "es:prácticamente",
         "en:practically",
         "cognate:mente-to-ly",
-        "topic:cognate"
+        "topic:cognate",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -33971,7 +33983,8 @@
         "morphology:suffix-pt",
         "cognate:transparent",
         "es:aceptar",
-        "en:accept"
+        "en:accept",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -33989,7 +34002,8 @@
         "morphology:suffix-pt",
         "cognate:transparent",
         "es:adoptar",
-        "en:adopt"
+        "en:adopt",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -34007,7 +34021,8 @@
         "morphology:suffix-pt",
         "cognate:transparent",
         "es:adaptar",
-        "en:adapt"
+        "en:adapt",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -34025,7 +34040,8 @@
         "morphology:suffix-pt",
         "cognate:transparent",
         "es:encriptar",
-        "en:encrypt"
+        "en:encrypt",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34043,7 +34059,8 @@
         "morphology:suffix-pt",
         "cognate:transparent",
         "es:interceptar",
-        "en:intercept"
+        "en:intercept",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34061,7 +34078,8 @@
         "morphology:suffix-ar",
         "cognate:transparent",
         "es:cancelar",
-        "en:cancel"
+        "en:cancel",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -34080,7 +34098,8 @@
         "cognate:transparent",
         "es:costar",
         "en:cost",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -34098,7 +34117,8 @@
         "morphology:suffix-ar",
         "cognate:transparent",
         "es:controlar",
-        "en:control"
+        "en:control",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -34116,7 +34136,8 @@
         "morphology:suffix-ar",
         "cognate:transparent",
         "es:considerar",
-        "en:consider"
+        "en:consider",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -34134,7 +34155,8 @@
         "morphology:suffix-rm",
         "cognate:transparent",
         "es:confirmar",
-        "en:confirm"
+        "en:confirm",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -34152,7 +34174,8 @@
         "morphology:suffix-rm",
         "cognate:transparent",
         "es:formar",
-        "en:form"
+        "en:form",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -34170,7 +34193,8 @@
         "morphology:suffix-rm",
         "cognate:transparent",
         "es:informar",
-        "en:inform"
+        "en:inform",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -34188,7 +34212,8 @@
         "morphology:suffix-rm",
         "cognate:transparent",
         "es:transformar",
-        "en:transform"
+        "en:transform",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -34206,7 +34231,8 @@
         "morphology:suffix-rm",
         "cognate:transparent",
         "es:reformar",
-        "en:reform"
+        "en:reform",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34224,7 +34250,8 @@
         "morphology:suffix-rm",
         "cognate:transparent",
         "es:afirmar",
-        "en:affirm"
+        "en:affirm",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34242,7 +34269,8 @@
         "morphology:suffix-rm",
         "cognate:transparent",
         "es:alarmar",
-        "en:alarm"
+        "en:alarm",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34260,7 +34288,8 @@
         "morphology:suffix-rm",
         "cognate:transparent",
         "es:armar",
-        "en:arm"
+        "en:arm",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34278,7 +34307,8 @@
         "morphology:suffix-rm",
         "cognate:transparent",
         "es:desarmar",
-        "en:disarm"
+        "en:disarm",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34296,7 +34326,8 @@
         "morphology:suffix-ist",
         "cognate:transparent",
         "es:existir",
-        "en:exist"
+        "en:exist",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -34314,7 +34345,8 @@
         "morphology:suffix-ist",
         "cognate:transparent",
         "es:persistir",
-        "en:persist"
+        "en:persist",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34332,7 +34364,8 @@
         "morphology:suffix-ist",
         "cognate:transparent",
         "es:resistir",
-        "en:resist"
+        "en:resist",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -34350,7 +34383,8 @@
         "morphology:suffix-ist",
         "cognate:transparent",
         "es:insistir",
-        "en:insist"
+        "en:insist",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -34371,7 +34405,8 @@
         "en:consist",
         "construction:prepositional-verb",
         "particle:of",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -34392,7 +34427,8 @@
         "en:desist",
         "construction:prepositional-verb",
         "particle:from",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34410,7 +34446,8 @@
         "morphology:suffix-ist",
         "cognate:transparent",
         "es:coexistir",
-        "en:coexist"
+        "en:coexist",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34428,7 +34465,8 @@
         "morphology:suffix-ion",
         "cognate:transparent",
         "es:funcionar",
-        "en:function"
+        "en:function",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -34446,7 +34484,8 @@
         "morphology:suffix-ion",
         "cognate:transparent",
         "es:mencionar",
-        "en:mention"
+        "en:mention",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -34464,7 +34503,8 @@
         "morphology:suffix-ion",
         "cognate:transparent",
         "es:cuestionar",
-        "en:question"
+        "en:question",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34482,7 +34522,8 @@
         "morphology:suffix-ion",
         "cognate:transparent",
         "es:posicionar",
-        "en:position"
+        "en:position",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34500,7 +34541,8 @@
         "morphology:suffix-ion",
         "cognate:transparent",
         "es:condicionar",
-        "en:condition"
+        "en:condition",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34520,7 +34562,8 @@
         "es:permitir",
         "en:permit",
         "cognate:mitir-to-mit",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -34540,7 +34583,8 @@
         "es:admitir",
         "en:admit",
         "cognate:mitir-to-mit",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -34560,7 +34604,8 @@
         "es:omitir",
         "en:omit",
         "cognate:mitir-to-mit",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34580,7 +34625,8 @@
         "es:transmitir",
         "en:transmit",
         "cognate:mitir-to-mit",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34600,7 +34646,8 @@
         "es:cometer",
         "en:commit",
         "cognate:mitir-to-mit",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34620,7 +34667,8 @@
         "es:emitir",
         "en:emit",
         "cognate:mitir-to-mit",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34640,7 +34688,8 @@
         "es:remitir",
         "en:remit",
         "cognate:mitir-to-mit",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34660,7 +34709,8 @@
         "es:someter",
         "en:submit",
         "cognate:mitir-to-mit",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34680,7 +34730,8 @@
         "es:preferir",
         "en:prefer",
         "cognate:ferir-to-fer",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -34703,7 +34754,8 @@
         "cognate:latin-root",
         "construction:prepositional-verb",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -34723,7 +34775,8 @@
         "es:transferir",
         "en:transfer",
         "cognate:ferir-to-fer",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34743,7 +34796,8 @@
         "es:diferir",
         "en:differ",
         "cognate:ferir-to-fer",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34763,7 +34817,8 @@
         "es:sufrir",
         "en:suffer",
         "cognate:ferir-to-fer",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -34783,7 +34838,8 @@
         "es:ofrecer",
         "en:offer",
         "cognate:ferir-to-fer",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -34803,7 +34859,8 @@
         "es:conferir",
         "en:confer",
         "cognate:ferir-to-fer",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34823,7 +34880,8 @@
         "es:inferir",
         "en:infer",
         "cognate:ferir-to-fer",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34841,7 +34899,8 @@
         "morphology:suffix-ent",
         "cognate:transparent",
         "es:presentar",
-        "en:present"
+        "en:present",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -34859,7 +34918,8 @@
         "morphology:suffix-ent",
         "cognate:transparent",
         "es:representar",
-        "en:represent"
+        "en:represent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -34877,7 +34937,8 @@
         "morphology:suffix-ent",
         "cognate:transparent",
         "es:inventar",
-        "en:invent"
+        "en:invent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -34895,7 +34956,8 @@
         "morphology:suffix-ent",
         "cognate:transparent",
         "es:comentar",
-        "en:comment"
+        "en:comment",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -34913,7 +34975,8 @@
         "morphology:suffix-ent",
         "cognate:transparent",
         "es:experimentar",
-        "en:experiment"
+        "en:experiment",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34931,7 +34994,8 @@
         "morphology:suffix-ent",
         "cognate:transparent",
         "es:complementar",
-        "en:complement"
+        "en:complement",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34949,7 +35013,8 @@
         "morphology:suffix-ent",
         "cognate:transparent",
         "es:implementar",
-        "en:implement"
+        "en:implement",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34967,7 +35032,8 @@
         "morphology:suffix-ent",
         "cognate:transparent",
         "es:orientar",
-        "en:orient"
+        "en:orient",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34985,7 +35051,8 @@
         "morphology:suffix-end",
         "cognate:transparent",
         "es:recomendar",
-        "en:recommend"
+        "en:recommend",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -35003,7 +35070,8 @@
         "morphology:suffix-end",
         "cognate:transparent",
         "es:depender",
-        "en:depend"
+        "en:depend",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -35021,7 +35089,8 @@
         "morphology:suffix-end",
         "cognate:transparent",
         "es:extender",
-        "en:extend"
+        "en:extend",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35039,7 +35108,8 @@
         "morphology:suffix-end",
         "cognate:transparent",
         "es:suspender",
-        "en:suspend"
+        "en:suspend",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35057,7 +35127,8 @@
         "morphology:suffix-end",
         "cognate:transparent",
         "es:ofender",
-        "en:offend"
+        "en:offend",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35075,7 +35146,8 @@
         "morphology:suffix-end",
         "cognate:transparent",
         "es:defender",
-        "en:defend"
+        "en:defend",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -35093,7 +35165,8 @@
         "morphology:suffix-end",
         "cognate:transparent",
         "es:ascender",
-        "en:ascend"
+        "en:ascend",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35111,7 +35184,8 @@
         "morphology:suffix-end",
         "cognate:transparent",
         "es:descender",
-        "en:descend"
+        "en:descend",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35129,7 +35203,8 @@
         "morphology:suffix-end",
         "cognate:transparent",
         "es:trascender",
-        "en:transcend"
+        "en:transcend",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35147,7 +35222,8 @@
         "morphology:suffix-rt",
         "cognate:transparent",
         "es:reportar",
-        "en:report"
+        "en:report",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -35165,7 +35241,8 @@
         "morphology:suffix-rt",
         "cognate:transparent",
         "es:transportar",
-        "en:transport"
+        "en:transport",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35183,7 +35260,8 @@
         "morphology:suffix-rt",
         "cognate:transparent",
         "es:importar",
-        "en:import"
+        "en:import",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35201,7 +35279,8 @@
         "morphology:suffix-rt",
         "cognate:transparent",
         "es:exportar",
-        "en:export"
+        "en:export",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35219,7 +35298,8 @@
         "morphology:suffix-rt",
         "cognate:transparent",
         "es:deportar",
-        "en:deport"
+        "en:deport",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35237,7 +35317,8 @@
         "morphology:suffix-ond",
         "cognate:transparent",
         "es:responder",
-        "en:respond"
+        "en:respond",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -35255,7 +35336,8 @@
         "morphology:suffix-ond",
         "cognate:transparent",
         "es:corresponder",
-        "en:correspond"
+        "en:correspond",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35273,7 +35355,8 @@
         "morphology:suffix-it",
         "cognate:transparent",
         "es:visitar",
-        "en:visit"
+        "en:visit",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -35291,7 +35374,8 @@
         "morphology:suffix-it",
         "cognate:transparent",
         "es:limitar",
-        "en:limit"
+        "en:limit",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -35309,7 +35393,8 @@
         "morphology:suffix-it",
         "cognate:transparent",
         "es:acreditar",
-        "en:credit"
+        "en:credit",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35327,7 +35412,8 @@
         "morphology:suffix-it",
         "cognate:transparent",
         "es:depositar",
-        "en:deposit"
+        "en:deposit",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35345,7 +35431,8 @@
         "morphology:suffix-it",
         "cognate:transparent",
         "es:editar",
-        "en:edit"
+        "en:edit",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -35363,7 +35450,8 @@
         "morphology:suffix-it",
         "cognate:transparent",
         "es:auditar",
-        "en:audit"
+        "en:audit",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35381,7 +35469,8 @@
         "morphology:suffix-it",
         "cognate:transparent",
         "es:vomitar",
-        "en:vomit"
+        "en:vomit",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35400,7 +35489,8 @@
         "morphology:suffix-ly",
         "topic:cognate",
         "es:posiblemente",
-        "en:possibly"
+        "en:possibly",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35419,7 +35509,8 @@
         "morphology:suffix-ly",
         "topic:cognate",
         "es:probablemente",
-        "en:probably"
+        "en:probably",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35438,7 +35529,8 @@
         "morphology:suffix-ly",
         "topic:cognate",
         "es:exactamente",
-        "en:exactly"
+        "en:exactly",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35457,7 +35549,8 @@
         "morphology:suffix-ly",
         "topic:cognate",
         "es:totalmente",
-        "en:totally"
+        "en:totally",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35476,7 +35569,8 @@
         "morphology:suffix-ly",
         "topic:cognate",
         "es:finalmente",
-        "en:finally"
+        "en:finally",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35495,7 +35589,8 @@
         "morphology:suffix-ly",
         "topic:cognate",
         "es:personalmente",
-        "en:personally"
+        "en:personally",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35514,7 +35609,8 @@
         "morphology:suffix-ly",
         "topic:cognate",
         "es:profesionalmente",
-        "en:professionally"
+        "en:professionally",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35533,7 +35629,8 @@
         "morphology:suffix-ly",
         "topic:cognate",
         "es:desafortunadamente",
-        "en:unfortunately"
+        "en:unfortunately",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35552,7 +35649,8 @@
         "morphology:suffix-ly",
         "topic:cognate",
         "es:normalmente",
-        "en:normally"
+        "en:normally",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35571,7 +35669,8 @@
         "morphology:suffix-ly",
         "topic:cognate",
         "es:generalmente",
-        "en:generally"
+        "en:generally",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35590,7 +35689,8 @@
         "morphology:suffix-ly",
         "topic:cognate",
         "es:especialmente",
-        "en:especially"
+        "en:especially",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35609,7 +35709,8 @@
         "morphology:suffix-ly",
         "topic:cognate",
         "es:rápidamente",
-        "en:rapidly"
+        "en:rapidly",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -37057,7 +37158,8 @@
         "morphology:suffix-art",
         "topic:cognate",
         "es:apar",
-        "en:apart"
+        "en:apart",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44093,7 +44195,8 @@
         "morphology:suffix-ded",
         "topic:cognate",
         "es:decidido",
-        "en:decided"
+        "en:decided",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -44112,7 +44215,8 @@
         "morphology:suffix-ded",
         "topic:cognate",
         "es:dividido",
-        "en:divided"
+        "en:divided",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44131,7 +44235,8 @@
         "topic:cognate",
         "es:incluido",
         "en:included",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44150,7 +44255,8 @@
         "topic:cognate",
         "es:recomendado",
         "en:recommended",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44169,7 +44275,8 @@
         "morphology:suffix-ded",
         "topic:cognate",
         "es:extendido",
-        "en:extended"
+        "en:extended",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44189,7 +44296,8 @@
         "es:preparado",
         "en:prepared",
         "cognate:ado-ido-to-ed",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -44209,7 +44317,8 @@
         "es:confirmado",
         "en:confirmed",
         "cognate:ado-ido-to-ed",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44229,7 +44338,8 @@
         "es:recibido",
         "en:received",
         "cognate:ado-ido-to-ed",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44249,7 +44359,8 @@
         "es:organizado",
         "en:organized",
         "cognate:ado-ido-to-ed",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44269,7 +44380,8 @@
         "es:usado",
         "en:used",
         "cognate:ado-ido-to-ed",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44289,7 +44401,8 @@
         "es:continuado",
         "en:continued",
         "cognate:ado-ido-to-ed",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44308,7 +44421,8 @@
         "morphology:suffix-ing",
         "topic:cognate",
         "es:preparando",
-        "en:preparing"
+        "en:preparing",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -44327,7 +44441,8 @@
         "morphology:suffix-ing",
         "topic:cognate",
         "es:visitando",
-        "en:visiting"
+        "en:visiting",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44346,7 +44461,8 @@
         "morphology:suffix-ing",
         "topic:cognate",
         "es:practicando",
-        "en:practicing"
+        "en:practicing",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44365,7 +44481,8 @@
         "morphology:suffix-ing",
         "topic:cognate",
         "es:confirmando",
-        "en:confirming"
+        "en:confirming",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44384,7 +44501,8 @@
         "morphology:suffix-ing",
         "topic:cognate",
         "es:continuando",
-        "en:continuing"
+        "en:continuing",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44403,7 +44521,8 @@
         "morphology:suffix-ing",
         "topic:cognate",
         "es:comunicando",
-        "en:communicating"
+        "en:communicating",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44422,7 +44541,8 @@
         "morphology:suffix-ing",
         "topic:cognate",
         "es:recibiendo",
-        "en:receiving"
+        "en:receiving",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -44441,7 +44561,8 @@
         "morphology:suffix-ing",
         "topic:cognate",
         "es:decidiendo",
-        "en:deciding"
+        "en:deciding",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44460,7 +44581,8 @@
         "morphology:suffix-ing",
         "topic:cognate",
         "es:permitiendo",
-        "en:permitting"
+        "en:permitting",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44479,7 +44601,8 @@
         "morphology:suffix-ing",
         "topic:cognate",
         "es:produciendo",
-        "en:producing"
+        "en:producing",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44498,7 +44621,8 @@
         "morphology:suffix-ing",
         "topic:cognate",
         "es:proponiendo",
-        "en:proposing"
+        "en:proposing",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44517,7 +44641,8 @@
         "morphology:suffix-ing",
         "topic:cognate",
         "es:manteniendo",
-        "en:maintaining"
+        "en:maintaining",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44554,7 +44679,8 @@
         "es:practicado",
         "en:practiced",
         "cognate:ado-ido-to-ed",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44574,7 +44700,8 @@
         "es:introducido",
         "en:introduced",
         "cognate:ado-ido-to-ed",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44594,7 +44721,8 @@
         "es:producido",
         "en:produced",
         "cognate:ado-ido-to-ed",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44614,7 +44742,8 @@
         "es:notado",
         "en:noticed",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44635,7 +44764,8 @@
         "es:visitado",
         "en:visited",
         "cognate:ado-ido-to-ed",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -44656,7 +44786,8 @@
         "es:aceptado",
         "en:accepted",
         "cognate:ado-ido-to-ed",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44677,7 +44808,8 @@
         "es:conectado",
         "en:connected",
         "cognate:ado-ido-to-ed",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44698,7 +44830,8 @@
         "es:contactado",
         "en:contacted",
         "cognate:ado-ido-to-ed",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44719,7 +44852,8 @@
         "es:permitido",
         "en:permitted",
         "cognate:ado-ido-to-ed",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44738,7 +44872,8 @@
         "es:aplicar",
         "en:apply",
         "cognate:plicar-to-ply",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -44757,7 +44892,8 @@
         "es:multiplicar",
         "en:multiply",
         "cognate:plicar-to-ply",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44776,7 +44912,8 @@
         "es:implicar",
         "en:imply",
         "cognate:plicar-to-ply",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44795,7 +44932,8 @@
         "es:causar",
         "en:cause",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -44814,7 +44952,8 @@
         "es:pausar",
         "en:pause",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44833,7 +44972,8 @@
         "es:contribuir",
         "en:contribute",
         "cognate:tribuir-to-tribute",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44852,7 +44992,8 @@
         "es:distribuir",
         "en:distribute",
         "cognate:tribuir-to-tribute",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44871,7 +45012,8 @@
         "es:sustituir",
         "en:substitute",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44890,7 +45032,8 @@
         "es:instituir",
         "en:institute",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44909,7 +45052,8 @@
         "es:ejecutar",
         "en:execute",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44928,7 +45072,8 @@
         "es:constituir",
         "en:constitute",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44947,7 +45092,8 @@
         "es:atribuir",
         "en:attribute",
         "cognate:tribuir-to-tribute",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -44966,7 +45112,8 @@
         "es:crear",
         "en:create",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -44985,7 +45132,8 @@
         "es:comunicar",
         "en:communicate",
         "cognate:ar-to-ate",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -45004,7 +45152,8 @@
         "es:estimar",
         "en:estimate",
         "cognate:ar-to-ate",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45023,7 +45172,8 @@
         "es:negociar",
         "en:negotiate",
         "cognate:ar-to-ate",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45042,7 +45192,8 @@
         "es:inmigrar",
         "en:immigrate",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45061,7 +45212,8 @@
         "es:acelerar",
         "en:accelerate",
         "cognate:ar-to-ate",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45080,7 +45232,8 @@
         "es:traducir",
         "en:translate",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -45099,7 +45252,8 @@
         "es:participar",
         "en:participate",
         "cognate:ar-to-ate",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -45118,7 +45272,8 @@
         "es:celebrar",
         "en:celebrate",
         "cognate:ar-to-ate",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -45137,7 +45292,8 @@
         "es:decorar",
         "en:decorate",
         "cognate:ar-to-ate",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45156,7 +45312,8 @@
         "es:eliminar",
         "en:eliminate",
         "cognate:ar-to-ate",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45175,7 +45332,8 @@
         "es:operar",
         "en:operate",
         "cognate:ar-to-ate",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45194,7 +45352,8 @@
         "es:liberar",
         "en:liberate",
         "cognate:ar-to-ate",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45213,7 +45372,8 @@
         "es:decidir",
         "en:decide",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -45232,7 +45392,8 @@
         "es:dividir",
         "en:divide",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -45251,7 +45412,8 @@
         "es:residir",
         "en:reside",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45270,7 +45432,8 @@
         "es:guiar",
         "en:guide",
         "cognate:transparent",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45289,7 +45452,8 @@
         "es:presidir",
         "en:preside",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45308,7 +45472,8 @@
         "es:coincidir",
         "en:coincide",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45327,7 +45492,8 @@
         "es:definir",
         "en:define",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -45346,7 +45512,8 @@
         "es:refinar",
         "en:refine",
         "cognate:inar-to-ine",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45365,7 +45532,8 @@
         "es:combinar",
         "en:combine",
         "cognate:inar-to-ine",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -45384,7 +45552,8 @@
         "es:declinar",
         "en:decline",
         "cognate:inar-to-ine",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45403,7 +45572,8 @@
         "es:imaginar",
         "en:imagine",
         "cognate:inar-to-ine",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -45422,7 +45592,8 @@
         "es:examinar",
         "en:examine",
         "cognate:inar-to-ine",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -45441,7 +45612,8 @@
         "es:determinar",
         "en:determine",
         "cognate:inar-to-ine",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -45460,7 +45632,8 @@
         "es:disciplinar",
         "en:discipline",
         "cognate:inar-to-ine",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45479,7 +45652,8 @@
         "es:confinar",
         "en:confine",
         "cognate:inar-to-ine",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45498,7 +45672,8 @@
         "es:inclinar",
         "en:incline",
         "cognate:inar-to-ine",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45517,7 +45692,8 @@
         "es:describir",
         "en:describe",
         "cognate:escribir-to-scribe",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -45536,7 +45712,8 @@
         "es:inscribir",
         "en:inscribe",
         "cognate:escribir-to-scribe",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45555,7 +45732,8 @@
         "es:prescribir",
         "en:prescribe",
         "cognate:escribir-to-scribe",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45574,7 +45752,8 @@
         "es:suscribir",
         "en:subscribe",
         "cognate:escribir-to-scribe",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45593,7 +45772,8 @@
         "es:transcribir",
         "en:transcribe",
         "cognate:escribir-to-scribe",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45612,7 +45792,8 @@
         "es:entrar",
         "en:enter",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -45631,7 +45812,8 @@
         "es:centrar",
         "en:center",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45650,7 +45832,8 @@
         "es:encontrar",
         "en:encounter",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45669,7 +45852,8 @@
         "es:identificar",
         "en:identify",
         "cognate:ificar-to-ify",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -45688,7 +45872,8 @@
         "es:verificar",
         "en:verify",
         "cognate:ificar-to-ify",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -45707,7 +45892,8 @@
         "es:justificar",
         "en:justify",
         "cognate:ificar-to-ify",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45726,7 +45912,8 @@
         "es:unificar",
         "en:unify",
         "cognate:ificar-to-ify",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45745,7 +45932,8 @@
         "es:cuantificar",
         "en:quantify",
         "cognate:ificar-to-ify",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45764,7 +45952,8 @@
         "es:clasificar",
         "en:classify",
         "cognate:ificar-to-ify",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45783,7 +45972,8 @@
         "es:simplificar",
         "en:simplify",
         "cognate:ificar-to-ify",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45802,7 +45992,8 @@
         "es:modificar",
         "en:modify",
         "cognate:ificar-to-ify",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45821,7 +46012,8 @@
         "es:clarificar",
         "en:clarify",
         "cognate:ificar-to-ify",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45840,7 +46032,8 @@
         "es:purificar",
         "en:purify",
         "cognate:ificar-to-ify",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45859,7 +46052,8 @@
         "es:ignorar",
         "en:ignore",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -45878,7 +46072,8 @@
         "es:explorar",
         "en:explore",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -45897,7 +46092,8 @@
         "es:restaurar",
         "en:restore",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45916,7 +46112,8 @@
         "es:adorar",
         "en:adore",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45935,7 +46132,8 @@
         "es:implorar",
         "en:implore",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45954,7 +46152,8 @@
         "es:incluir",
         "en:include",
         "cognate:cluir-to-clude",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -45973,7 +46172,8 @@
         "es:excluir",
         "en:exclude",
         "cognate:cluir-to-clude",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -45992,7 +46192,8 @@
         "es:concluir",
         "en:conclude",
         "cognate:cluir-to-clude",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -46014,7 +46215,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -46033,7 +46235,8 @@
         "es:eludir",
         "en:elude",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -46052,7 +46255,8 @@
         "es:inhalar",
         "en:inhale",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -46071,7 +46275,8 @@
         "es:exhalar",
         "en:exhale",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -46090,7 +46295,8 @@
         "es:introducir",
         "en:introduce",
         "cognate:ducir-to-duce",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -46109,7 +46315,8 @@
         "es:producir",
         "en:produce",
         "cognate:ducir-to-duce",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -46128,7 +46335,8 @@
         "es:reducir",
         "en:reduce",
         "cognate:ducir-to-duce",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -46147,7 +46355,8 @@
         "es:deducir",
         "en:deduce",
         "cognate:ducir-to-duce",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -46166,7 +46375,8 @@
         "es:inducir",
         "en:induce",
         "cognate:ducir-to-duce",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -46185,7 +46395,8 @@
         "es:seducir",
         "en:seduce",
         "cognate:ducir-to-duce",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -46204,7 +46415,8 @@
         "es:reproducir",
         "en:reproduce",
         "cognate:ducir-to-duce",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -46223,7 +46435,8 @@
         "es:invitar",
         "en:invite",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -46242,7 +46455,8 @@
         "es:unir",
         "en:unite",
         "cognate:ir-to-silent-e",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -46261,7 +46475,8 @@
         "es:reunir",
         "en:reunite",
         "cognate:ir-to-silent-e",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -46280,7 +46495,8 @@
         "es:citar",
         "en:cite",
         "cognate:transparent",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -46299,7 +46515,8 @@
         "es:incitar",
         "en:incite",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -46318,7 +46535,8 @@
         "es:recitar",
         "en:recite",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -46337,7 +46555,8 @@
         "es:observar",
         "en:observe",
         "cognate:servar-to-serve",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -46356,7 +46575,8 @@
         "es:conservar",
         "en:conserve",
         "cognate:servar-to-serve",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -46375,7 +46595,8 @@
         "es:preservar",
         "en:preserve",
         "cognate:servar-to-serve",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -46394,7 +46615,8 @@
         "es:reservar",
         "en:reserve",
         "cognate:servar-to-serve",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -46613,7 +46835,8 @@
         "es:preparar",
         "en:prepare",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -46632,7 +46855,8 @@
         "es:comparar",
         "en:compare",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -46651,7 +46875,8 @@
         "es:declarar",
         "en:declare",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -46670,7 +46895,8 @@
         "es:reparar",
         "en:repair",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -46689,7 +46915,8 @@
         "es:prohibir",
         "en:prohibit",
         "cognate:hibir-to-hibit",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -46708,7 +46935,8 @@
         "es:exhibir",
         "en:exhibit",
         "cognate:hibir-to-hibit",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -46727,7 +46955,8 @@
         "es:inhibir",
         "en:inhibit",
         "cognate:hibir-to-hibit",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -46746,7 +46975,8 @@
         "es:recibir",
         "en:receive",
         "cognate:cibir-to-ceive",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -46765,7 +46995,8 @@
         "es:percibir",
         "en:perceive",
         "cognate:cibir-to-ceive",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -46784,7 +47015,8 @@
         "es:concebir",
         "en:conceive",
         "cognate:cibir-to-ceive",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -46803,7 +47035,8 @@
         "es:resolver",
         "en:resolve",
         "cognate:solver-to-solve",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -46822,7 +47055,8 @@
         "es:disolver",
         "en:dissolve",
         "cognate:solver-to-solve",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -46841,7 +47075,8 @@
         "es:absolver",
         "en:absolve",
         "cognate:solver-to-solve",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -46860,7 +47095,8 @@
         "es:sobrevivir",
         "en:survive",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -46879,7 +47115,8 @@
         "es:revivir",
         "en:revive",
         "cognate:ir-to-silent-e",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -46898,7 +47135,8 @@
         "es:derivar",
         "en:derive",
         "cognate:transparent",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -46920,7 +47158,8 @@
         "particle:of",
         "topic:phrasal-verb",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -46939,7 +47178,8 @@
         "es:sugerir",
         "en:suggest",
         "cognate:gerir-to-gest",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -46958,7 +47198,8 @@
         "es:digerir",
         "en:digest",
         "cognate:gerir-to-gest",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -46977,7 +47218,8 @@
         "es:ingerir",
         "en:ingest",
         "cognate:gerir-to-gest",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -46996,7 +47238,8 @@
         "es:atraer",
         "en:attract",
         "cognate:traer-to-tract",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -47015,7 +47258,8 @@
         "es:distraer",
         "en:distract",
         "cognate:traer-to-tract",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47034,7 +47278,8 @@
         "es:extraer",
         "en:extract",
         "cognate:traer-to-tract",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47053,7 +47298,8 @@
         "es:contraer",
         "en:contract",
         "cognate:traer-to-tract",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47072,7 +47318,8 @@
         "es:sustraer",
         "en:subtract",
         "cognate:traer-to-tract",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47091,7 +47338,8 @@
         "es:contactar",
         "en:contact",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -47110,7 +47358,8 @@
         "es:impactar",
         "en:impact",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47129,7 +47378,8 @@
         "es:actuar",
         "en:act",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -47148,7 +47398,8 @@
         "es:reaccionar",
         "en:react",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -47167,7 +47418,8 @@
         "es:interactuar",
         "en:interact",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47186,7 +47438,8 @@
         "es:comprender",
         "en:comprehend",
         "cognate:hender-to-hend",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47205,7 +47458,8 @@
         "es:aprehender",
         "en:apprehend",
         "cognate:hender-to-hend",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47224,7 +47478,8 @@
         "es:comprimir",
         "en:compress",
         "cognate:primir-to-press",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47243,7 +47498,8 @@
         "es:reprimir",
         "en:repress",
         "cognate:primir-to-press",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47262,7 +47518,8 @@
         "es:suprimir",
         "en:suppress",
         "cognate:primir-to-press",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47281,7 +47538,8 @@
         "es:expresar",
         "en:express",
         "cognate:primir-to-press",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -47301,7 +47559,8 @@
         "es:conceder",
         "en:concede",
         "cognate:ceder-to-cede",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47321,7 +47580,8 @@
         "es:preceder",
         "en:precede",
         "cognate:ceder-to-cede",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47341,7 +47601,8 @@
         "es:exceder",
         "en:exceed",
         "cognate:ceder-to-cede",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47361,7 +47622,8 @@
         "es:proceder",
         "en:proceed",
         "cognate:ceder-to-cede",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47380,7 +47642,8 @@
         "es:convertir",
         "en:convert",
         "cognate:vertir-to-vert",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -47399,7 +47662,8 @@
         "es:revertir",
         "en:revert",
         "cognate:vertir-to-vert",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47418,7 +47682,8 @@
         "es:invertir",
         "en:invert",
         "cognate:vertir-to-vert",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47437,7 +47702,8 @@
         "es:corregir",
         "en:correct",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -47456,7 +47722,8 @@
         "es:dirigir",
         "en:direct",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -47475,7 +47742,8 @@
         "es:elegir",
         "en:elect",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47494,7 +47762,8 @@
         "es:proteger",
         "en:protect",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -47513,7 +47782,8 @@
         "es:erigir",
         "en:erect",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47532,7 +47802,8 @@
         "es:conectar",
         "en:connect",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -47551,7 +47822,8 @@
         "es:detectar",
         "en:detect",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47570,7 +47842,8 @@
         "es:proyectar",
         "en:project",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47589,7 +47862,8 @@
         "es:perfeccionar",
         "en:perfect",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47608,7 +47882,8 @@
         "es:coleccionar",
         "en:collect",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47627,7 +47902,8 @@
         "es:inspeccionar",
         "en:inspect",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47646,7 +47922,8 @@
         "es:instruir",
         "en:instruct",
         "cognate:struir-to-struct",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47665,7 +47942,8 @@
         "es:construir",
         "en:construct",
         "cognate:struir-to-struct",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47684,7 +47962,8 @@
         "es:reconstruir",
         "en:reconstruct",
         "cognate:struir-to-struct",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47703,7 +47982,8 @@
         "es:obstruir",
         "en:obstruct",
         "cognate:struir-to-struct",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47722,7 +48002,8 @@
         "es:obtener",
         "en:obtain",
         "cognate:tener-to-tain",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -47741,7 +48022,8 @@
         "es:mantener",
         "en:maintain",
         "cognate:tener-to-tain",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -47760,7 +48042,8 @@
         "es:sostener",
         "en:sustain",
         "cognate:tener-to-tain",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47779,7 +48062,8 @@
         "es:contener",
         "en:contain",
         "cognate:tener-to-tain",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -47798,7 +48082,8 @@
         "es:retener",
         "en:retain",
         "cognate:tener-to-tain",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47816,7 +48101,8 @@
         "es:explicar",
         "en:explain",
         "cognate:plicar-to-ply",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -47835,7 +48121,8 @@
         "es:detener",
         "en:detain",
         "cognate:tener-to-tain",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47854,7 +48141,8 @@
         "es:entretener",
         "en:entertain",
         "cognate:tener-to-tain",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47873,7 +48161,8 @@
         "es:abstener",
         "en:abstain",
         "cognate:tener-to-tain",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47892,7 +48181,8 @@
         "es:ocurrir",
         "en:occur",
         "cognate:currir-to-cur",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -47911,7 +48201,8 @@
         "es:incurrir",
         "en:incur",
         "cognate:currir-to-cur",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47930,7 +48221,8 @@
         "es:proponer",
         "en:propose",
         "cognate:poner-to-pose",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47949,7 +48241,8 @@
         "es:oponer",
         "en:oppose",
         "cognate:poner-to-pose",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47968,7 +48261,8 @@
         "es:exponer",
         "en:expose",
         "cognate:poner-to-pose",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47987,7 +48281,8 @@
         "es:suponer",
         "en:suppose",
         "cognate:poner-to-pose",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -48006,7 +48301,8 @@
         "es:componer",
         "en:compose",
         "cognate:poner-to-pose",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48025,7 +48321,8 @@
         "es:imponer",
         "en:impose",
         "cognate:poner-to-pose",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48044,7 +48341,8 @@
         "es:deponer",
         "en:depose",
         "cognate:poner-to-pose",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48063,7 +48361,8 @@
         "es:interponer",
         "en:interpose",
         "cognate:poner-to-pose",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48082,7 +48381,8 @@
         "es:predisponer",
         "en:predispose",
         "cognate:poner-to-pose",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48331,7 +48631,8 @@
         "morphology:suffix-ire",
         "cognate:opaque-gloss",
         "es:admirar",
-        "en:admire"
+        "en:admire",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -48349,7 +48650,8 @@
         "morphology:suffix-ire",
         "cognate:opaque-gloss",
         "es:inspirar",
-        "en:inspire"
+        "en:inspire",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -48367,7 +48669,8 @@
         "morphology:suffix-ire",
         "cognate:opaque-gloss",
         "es:adquirir",
-        "en:acquire"
+        "en:acquire",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48385,7 +48688,8 @@
         "morphology:suffix-ire",
         "cognate:opaque-gloss",
         "es:requerir",
-        "en:require"
+        "en:require",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -48403,7 +48707,8 @@
         "morphology:suffix-ire",
         "cognate:opaque-gloss",
         "es:retirar",
-        "en:retire"
+        "en:retire",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48421,7 +48726,8 @@
         "morphology:suffix-ire",
         "cognate:opaque-gloss",
         "es:expirar",
-        "en:expire"
+        "en:expire",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48442,7 +48748,8 @@
         "en:aspire",
         "construction:prepositional-verb",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48460,7 +48767,8 @@
         "morphology:suffix-ire",
         "cognate:opaque-gloss",
         "es:conspirar",
-        "en:conspire"
+        "en:conspire",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48478,7 +48786,8 @@
         "morphology:suffix-ue",
         "cognate:opaque-gloss",
         "es:continuar",
-        "en:continue"
+        "en:continue",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -48496,7 +48805,8 @@
         "morphology:suffix-ue",
         "cognate:opaque-gloss",
         "es:valorar",
-        "en:value"
+        "en:value",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -48514,7 +48824,8 @@
         "morphology:suffix-ue",
         "cognate:opaque-gloss",
         "es:subvalorar",
-        "en:undervalue"
+        "en:undervalue",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48532,7 +48843,8 @@
         "morphology:suffix-ue",
         "cognate:opaque-gloss",
         "es:sobrevalorar",
-        "en:overvalue"
+        "en:overvalue",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48550,7 +48862,8 @@
         "morphology:suffix-ue",
         "cognate:opaque-gloss",
         "es:devaluar",
-        "en:devalue"
+        "en:devalue",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48568,7 +48881,8 @@
         "morphology:suffix-ue",
         "cognate:opaque-gloss",
         "es:revaluar",
-        "en:revalue"
+        "en:revalue",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48586,7 +48900,8 @@
         "morphology:suffix-lish",
         "cognate:opaque-gloss",
         "es:abolir",
-        "en:abolish"
+        "en:abolish",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48604,7 +48919,8 @@
         "morphology:suffix-lish",
         "cognate:opaque-gloss",
         "es:pulir",
-        "en:polish"
+        "en:polish",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48622,7 +48938,8 @@
         "morphology:suffix-lish",
         "cognate:opaque-gloss",
         "es:distinguir",
-        "en:distinguish"
+        "en:distinguish",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48640,7 +48957,8 @@
         "morphology:suffix-lish",
         "cognate:opaque-gloss",
         "es:extinguir",
-        "en:extinguish"
+        "en:extinguish",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48658,7 +48976,8 @@
         "morphology:suffix-lish",
         "cognate:opaque-gloss",
         "es:establecer",
-        "en:establish"
+        "en:establish",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -48676,7 +48995,8 @@
         "morphology:suffix-lish",
         "cognate:opaque-gloss",
         "es:demoler",
-        "en:demolish"
+        "en:demolish",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48694,7 +49014,8 @@
         "morphology:suffix-lish",
         "cognate:opaque-gloss",
         "es:florecer",
-        "en:flourish"
+        "en:flourish",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48712,7 +49033,8 @@
         "morphology:suffix-lish",
         "cognate:opaque-gloss",
         "es:publicar",
-        "en:publish"
+        "en:publish",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -48729,7 +49051,8 @@
         "topic:cognate",
         "cognate:opaque-gloss",
         "es:estudiar",
-        "en:study"
+        "en:study",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -48746,7 +49069,8 @@
         "topic:cognate",
         "cognate:opaque-gloss",
         "es:entrenar",
-        "en:train"
+        "en:train",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -48763,7 +49087,8 @@
         "topic:cognate",
         "cognate:opaque-gloss",
         "es:espiar",
-        "en:spy"
+        "en:spy",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48780,7 +49105,8 @@
         "topic:cognate",
         "cognate:opaque-gloss",
         "es:escanear",
-        "en:scan"
+        "en:scan",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -48798,7 +49124,8 @@
         "morphology:suffix-ease",
         "cognate:opaque-gloss",
         "es:incrementar",
-        "en:increase"
+        "en:increase",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -48816,7 +49143,8 @@
         "morphology:suffix-ease",
         "cognate:opaque-gloss",
         "es:decrementar",
-        "en:decrease"
+        "en:decrease",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48834,7 +49162,8 @@
         "morphology:suffix-ease",
         "cognate:opaque-gloss",
         "es:liberar",
-        "en:release"
+        "en:release",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -48852,7 +49181,8 @@
         "morphology:suffix-ease",
         "cognate:opaque-gloss",
         "es:cesar",
-        "en:cease"
+        "en:cease",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48870,7 +49200,8 @@
         "morphology:suffix-ice",
         "cognate:opaque-gloss",
         "es:practicar",
-        "en:practice"
+        "en:practice",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -48888,7 +49219,8 @@
         "morphology:suffix-ice",
         "cognate:opaque-gloss",
         "es:notar",
-        "en:notice"
+        "en:notice",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -48906,7 +49238,8 @@
         "morphology:suffix-ice",
         "cognate:opaque-gloss",
         "es:prometer",
-        "en:promise"
+        "en:promise",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -48924,7 +49257,8 @@
         "morphology:suffix-ice",
         "cognate:opaque-gloss",
         "es:sacrificar",
-        "en:sacrifice"
+        "en:sacrifice",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48943,7 +49277,8 @@
         "cognate:opaque-gloss",
         "es:terminar",
         "en:finish",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -48961,7 +49296,8 @@
         "morphology:suffix-nish",
         "cognate:opaque-gloss",
         "es:castigar",
-        "en:punish"
+        "en:punish",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48979,7 +49315,8 @@
         "morphology:suffix-nish",
         "cognate:opaque-gloss",
         "es:disminuir",
-        "en:diminish"
+        "en:diminish",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48997,7 +49334,8 @@
         "morphology:suffix-nish",
         "cognate:opaque-gloss",
         "es:barnizar",
-        "en:varnish"
+        "en:varnish",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -49016,7 +49354,8 @@
         "cognate:opaque-gloss",
         "es:usar",
         "en:use",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49034,7 +49373,8 @@
         "morphology:suffix-use",
         "cognate:opaque-gloss",
         "es:excusar",
-        "en:excuse"
+        "en:excuse",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49052,7 +49392,8 @@
         "morphology:suffix-use",
         "cognate:opaque-gloss",
         "es:acusar",
-        "en:accuse"
+        "en:accuse",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -49070,7 +49411,8 @@
         "morphology:suffix-use",
         "cognate:opaque-gloss",
         "es:confundir",
-        "en:confuse"
+        "en:confuse",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49088,7 +49430,8 @@
         "morphology:suffix-use",
         "cognate:opaque-gloss",
         "es:rehusar",
-        "en:refuse"
+        "en:refuse",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -49106,7 +49449,8 @@
         "morphology:suffix-use",
         "cognate:opaque-gloss",
         "es:abusar",
-        "en:abuse"
+        "en:abuse",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -49309,7 +49653,8 @@
         "morphology:suffix-fer",
         "cognate:transparent",
         "es:consignar",
-        "en:transfer"
+        "en:transfer",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -49328,7 +49673,8 @@
         "es:construir",
         "en:build",
         "cognate:struir-to-struct",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -49347,7 +49693,8 @@
         "es:reconstruir",
         "en:rebuild",
         "cognate:struir-to-struct",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -49385,7 +49732,8 @@
         "morphology:suffix-use",
         "cognate:opaque-gloss",
         "es:rechazar",
-        "en:refuse"
+        "en:refuse",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
