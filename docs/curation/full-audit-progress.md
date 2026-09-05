@@ -59,6 +59,17 @@ skimming history, not a machine-readable state store.
   sound:comparison-pattern-one-syllable tag by being filed under
   comparative-more/superlative-most instead of -er/-est), and the
   Adjectives topic: facets (52). Commits `f2b97899` through `b6cf2e69`.
-  Next up: Adverbs page (`grammar:frequency-adverb`, `grammar:manner`,
-  `grammar:intensifier`, `topic:location` 74 rows, `topic:cognate` 789
-  rows — the biggest single facet in the whole DB).
+- **2026-09-05, Adverbs page complete + Numbers page complete +
+  Connectors page complete** — `grammar:frequency-adverb`/`manner`/
+  `intensifier` (25, fixed 4 placeholder examples), `topic:location`
+  (37, fixed a true duplicate + 2 placeholders), `topic:cognate` (348,
+  the single biggest facet-button unit in the DB — clean aside from 1
+  placeholder; confirmed the 4 "opaque-gloss" core rows, e.g.
+  decir/tener, are correctly categorized, not a membership error),
+  `adv:possibility`/`degree`/`habitual`+`grammar:addition` (20). Then
+  Numbers' one remaining facet (6) and the whole Connectors page (79,
+  fixed 4 more placeholders). Commits `f0437dfa` through `0c50486d`.
+  Next up: Prepositions (3 tiny facets), Expressions (several small
+  expr: facets), then Collocations, Verb Patterns, Verb-Forms,
+  Transformations, the two Mappings pages, Phrasal Verbs — see
+  `npm run curriculum:audit:status` for the live list.
