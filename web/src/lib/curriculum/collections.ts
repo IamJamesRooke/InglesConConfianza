@@ -141,7 +141,6 @@ export const LEGACY_COLLECTIONS: ReadonlySet<string> = new Set([
   "discourse repair",
   "don't",
   "e",
-  "el vs él",
   "embarrassed",
   "emission",
   "employment",

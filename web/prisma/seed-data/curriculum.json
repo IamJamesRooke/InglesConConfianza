@@ -7052,7 +7052,8 @@
         "es:estar",
         "en:available",
         "topic:condition-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -19304,7 +19305,8 @@
         "contrast:confusable",
         "gender:feminine",
         "topic:abstract-quality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -21097,7 +21099,8 @@
         "contrast:tener-anos-vs-to-be",
         "contrast:confusable",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -24681,14 +24684,14 @@
         "grammar:definite-article",
         "grammar:masculine",
         "grammar:singular",
-        "el vs él",
         "en:the",
         "topic:determiner",
         "contrast:el-articulo-vs-el-pronombre",
         "contrast:confusable",
         "es:el",
         "topic:en-multi-sense",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -24732,7 +24735,8 @@
         "contrast:spanish-article-no-english",
         "contrast:confusable",
         "topic:en-multi-sense",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -24755,7 +24759,8 @@
         "contrast:spanish-article-no-english",
         "contrast:confusable",
         "topic:en-multi-sense",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -30043,7 +30048,8 @@
         "contrast:confusable",
         "topic:cognate",
         "gender:masculine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32677,7 +32683,8 @@
         "contrast:confusable",
         "topic:cognate",
         "topic:age",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -36962,7 +36969,8 @@
         "es:ser",
         "en:different",
         "topic:abstract-quality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -41184,7 +41192,8 @@
         "es:disponibilidad",
         "en:availability",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -41627,7 +41636,8 @@
         "contrast:sensible-vs-sensible",
         "contrast:confusable",
         "topic:personality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48267,7 +48277,7 @@
       "english": "[to be] unlike",
       "example": {
         "spanish": "Este libro es diferente de ese.",
-        "english": "This book is different from that one."
+        "english": "This book is unlike that one."
       },
       "collections": [
         "pos:adjective",
@@ -48276,7 +48286,8 @@
         "es:ser",
         "en:unlike",
         "topic:abstract-quality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48296,7 +48307,8 @@
         "en:free",
         "topic:value-price",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48312,7 +48324,8 @@
         "pos:verb",
         "contrast:confusable",
         "es:vivir",
-        "en:live"
+        "en:live",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -48331,7 +48344,8 @@
         "pos:verb",
         "construction:prepositional-verb",
         "particle:in",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -48350,7 +48364,8 @@
         "pos:verb",
         "construction:prepositional-verb",
         "particle:with",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -48809,7 +48824,8 @@
         "contrast:confusable",
         "topic:cognate",
         "topic:size",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49419,7 +49435,8 @@
         "topic:determiner",
         "contrast:un-vs-uno",
         "contrast:confusable",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -51029,7 +51046,8 @@
         "topic:determiner",
         "contrast:billon-vs-billion",
         "topic:cognate",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -51052,7 +51070,8 @@
         "topic:determiner",
         "contrast:billon-vs-billion",
         "topic:cognate",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57460,7 +57479,8 @@
         "contrast:direccion-address-vs-direction",
         "contrast:confusable",
         "topic:cognate",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -57481,7 +57501,8 @@
         "en:direction",
         "contrast:direccion-address-vs-direction",
         "contrast:confusable",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57501,7 +57522,8 @@
         "pos:noun",
         "es:plaza",
         "en:plaza",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -61544,7 +61566,8 @@
         "en:read",
         "contrast:lectura-vs-lecture",
         "contrast:confusable",
-        "topic:transformation"
+        "topic:transformation",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -64172,7 +64195,8 @@
         "es:ser",
         "en:reckless",
         "topic:personality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -64192,7 +64216,8 @@
         "es:ser",
         "en:insignificant",
         "topic:abstract-quality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -68100,7 +68125,8 @@
         "cognate:false-friend",
         "contrast:ultimo-vs-ultimate",
         "contrast:confusable",
-        "topic:cognate"
+        "topic:cognate",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -70224,7 +70250,8 @@
         "contrast:tanto-vs-tan",
         "contrast:confusable",
         "topic:en-multi-sense",
-        "pos:adverb"
+        "pos:adverb",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -70325,7 +70352,8 @@
         "topic:determiner",
         "contrast:tanto-vs-tan",
         "contrast:confusable",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -84090,7 +84118,8 @@
         "en:a",
         "contrast:un-vs-uno",
         "contrast:confusable",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -84316,7 +84345,8 @@
         "en:some",
         "contrast:algun-vs-alguno",
         "contrast:confusable",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -84985,7 +85015,8 @@
         "contrast:confusable",
         "sense:ir-futuro",
         "topic:multi-sense",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -85031,7 +85062,8 @@
         "contrast:confusable",
         "sense:ir-futuro",
         "topic:multi-sense",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -85099,7 +85131,8 @@
         "contrast:tener-anos-vs-to-be",
         "sense:ser-identidad",
         "sense:ser-clasificacion",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -85211,7 +85244,8 @@
         "contrast:ser-adjetivo-vs-estar-adjetivo",
         "sense:estar-estado",
         "sense:estar-lugar",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -85257,7 +85291,8 @@
         "sense:estar-estado",
         "sense:estar-lugar",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -85650,7 +85685,8 @@
         "contrast:voy-a-lugar-vs-voy-a-infinitivo",
         "contrast:confusable",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -85696,7 +85732,8 @@
         "contrast:voy-a-lugar-vs-voy-a-infinitivo",
         "contrast:confusable",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -86097,7 +86134,8 @@
         "contrast:ser-adjetivo-vs-estar-adjetivo",
         "contrast:confusable",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -86143,7 +86181,8 @@
         "contrast:ser-adjetivo-vs-estar-adjetivo",
         "contrast:confusable",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -86229,7 +86268,8 @@
         "contrast:sensible-vs-sensible",
         "contrast:confusable",
         "topic:abstract-quality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -86248,7 +86288,8 @@
         "contrast:lectura-vs-lecture",
         "contrast:confusable",
         "gender:feminine",
-        "topic:event"
+        "topic:event",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
