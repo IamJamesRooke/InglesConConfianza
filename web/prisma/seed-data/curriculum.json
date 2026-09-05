@@ -20803,7 +20803,8 @@
         "en:feel",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -20843,7 +20844,8 @@
         "es:sentir",
         "en:sense",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -20887,7 +20889,8 @@
         "pos:verb",
         "particle:for",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -20905,7 +20908,8 @@
         "en:feel",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -20923,7 +20927,8 @@
         "es:sentir",
         "en:feel",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -20941,7 +20946,8 @@
         "es:sentir",
         "en:feel",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -20964,7 +20970,8 @@
         "pos:verb",
         "particle:for",
         "en:have",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -21012,7 +21019,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -21035,7 +21043,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:for",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -21673,7 +21682,8 @@
         "es:significar",
         "en:mean",
         "pos:verb",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -21688,7 +21698,8 @@
       "collections": [
         "es:significar",
         "en:symbolize",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -21708,7 +21719,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:for",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -21729,7 +21741,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -21746,7 +21759,8 @@
         "es:significar",
         "en:mean",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -21899,7 +21913,8 @@
         "grammar:meaning-changing-preterite",
         "es:soler",
         "en:used",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -21916,7 +21931,8 @@
         "grammar:modal",
         "es:soler",
         "en:would",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -21967,7 +21983,8 @@
         "construction:that-clause",
         "pos:verb",
         "es:suponer",
-        "en:suppose"
+        "en:suppose",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -21983,7 +22000,8 @@
         "construction:that-clause",
         "es:suponer",
         "en:assume",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -21998,7 +22016,8 @@
       "collections": [
         "es:suponer",
         "en:involve",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26715,7 +26734,8 @@
         "es:solicitar",
         "en:request",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26733,7 +26753,8 @@
         "pos:verb",
         "construction:prepositional-verb",
         "particle:for",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -27660,7 +27681,8 @@
         "en:feel",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -29334,7 +29356,8 @@
         "en:feel",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31081,7 +31104,8 @@
         "es:tardar",
         "en:slow",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31291,7 +31315,8 @@
         "es:terminar",
         "en:finish",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58466,8 +58491,8 @@
       "spanish": "subir",
       "english": "to go up",
       "example": {
-        "spanish": "Sube a mi oficina y luego baja a recepción.",
-        "english": "Come up to my office, and then go down to reception."
+        "spanish": "Subí las escaleras rápido.",
+        "english": "I went up the stairs quickly."
       },
       "collections": [
         "grammar:phrasal-verb",
@@ -58477,7 +58502,8 @@
         "en:go",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -58497,7 +58523,8 @@
         "en:come",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58513,7 +58540,8 @@
         "pos:verb",
         "es:subir",
         "en:raise",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58533,7 +58561,8 @@
         "en:get",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58549,7 +58578,8 @@
         "pos:verb",
         "es:subir",
         "en:upload",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58569,7 +58599,8 @@
         "en:turn",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58585,7 +58616,8 @@
         "pos:verb",
         "es:subir",
         "en:rise",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58605,7 +58637,8 @@
         "en:bring",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58621,7 +58654,8 @@
         "pos:verb",
         "es:subir",
         "en:gain",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -70016,7 +70050,8 @@
         "form:third-person",
         "es:terminar",
         "en:finish",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
