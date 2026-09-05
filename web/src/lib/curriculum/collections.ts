@@ -30,7 +30,8 @@ export type CollectionFacet =
   | "qn"
   | "imp"
   | "coll"
-  | "adv";
+  | "adv"
+  | "audit";
 
 export const COLLECTION_FACETS: Record<CollectionFacet, string> = {
   es: "Spanish headword — every sense and construction of one lemma",
@@ -58,6 +59,7 @@ export const COLLECTION_FACETS: Record<CollectionFacet, string> = {
   imp: "imperative/command type (affirmative informal, affirmative formal, negative, nosotros \"let's\") — scoped to topic:imperative",
   coll: "which light verb (make/take/have/set/other) a fixed noun collocation uses in English — scoped to topic:collocation",
   adv: "adverb subcategory not already covered by an existing grammar: value (possibility, degree/approximation, habitual aspect) — scoped to pos:adverb",
+  audit: "full-database-audit state (docs/curation/full-audit-plan.md) — reviewed marks a concept as judged at least once for role/membership/tags/examples; flagged marks a concept with an open question for the user, noted in full-audit-findings.md",
 };
 
 export function collectionFacet(name: string): CollectionFacet | null {
