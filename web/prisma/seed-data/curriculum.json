@@ -10836,7 +10836,6 @@
       },
       "collections": [
         "grammar:phrasal-verb",
-        "form:past",
         "construction:map-frente-a-past",
         "es:pasar",
         "en:go",
@@ -69648,7 +69647,8 @@
         "form:past",
         "form:regular-variant",
         "form:past-equals-participle",
-        "sound:needs-review"
+        "sound:needs-review",
+        "sound:regular-past-pronounced-id"
       ],
       "curriculumRole": "trash"
     },
@@ -69716,7 +69716,8 @@
         "form:past",
         "form:regular-variant",
         "form:past-equals-participle",
-        "sound:needs-review"
+        "sound:needs-review",
+        "sound:regular-past-pronounced-id"
       ],
       "curriculumRole": "trash"
     },
@@ -70255,7 +70256,8 @@
         "form:past",
         "form:regular-variant",
         "form:past-equals-participle",
-        "sound:needs-review"
+        "sound:needs-review",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "trash"
     },
@@ -70343,7 +70345,8 @@
         "form:past",
         "form:regular-variant",
         "form:past-equals-participle",
-        "sound:needs-review"
+        "sound:needs-review",
+        "sound:regular-past-pronounced-t"
       ],
       "curriculumRole": "trash"
     },
@@ -70890,7 +70893,8 @@
         "sound:needs-review",
         "es:burn",
         "en:burn",
-        "pos:verb"
+        "pos:verb",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "reference"
     },
@@ -71201,7 +71205,8 @@
         "form:past",
         "form:regular-variant",
         "form:past-equals-participle",
-        "sound:needs-review"
+        "sound:needs-review",
+        "sound:regular-past-pronounced-id"
       ],
       "curriculumRole": "trash"
     },
@@ -71234,7 +71239,8 @@
         "morphology:inflection",
         "form:past",
         "form:regular-variant",
-        "sound:needs-review"
+        "sound:needs-review",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "trash"
     },
@@ -71374,7 +71380,8 @@
         "sound:needs-review",
         "es:clothe",
         "en:clothe",
-        "pos:verb"
+        "pos:verb",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "reference"
     },
@@ -71574,7 +71581,8 @@
         "morphology:inflection",
         "form:past",
         "form:regular-variant",
-        "sound:needs-review"
+        "sound:needs-review",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "trash"
     },
@@ -71751,7 +71759,8 @@
         "sound:needs-review",
         "es:dive",
         "en:dive",
-        "pos:verb"
+        "pos:verb",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "reference"
     },
@@ -71891,7 +71900,8 @@
         "sound:needs-review",
         "es:dream",
         "en:dream",
-        "pos:verb"
+        "pos:verb",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "reference"
     },
@@ -72053,7 +72063,8 @@
         "form:past",
         "form:regular-variant",
         "form:past-equals-participle",
-        "sound:needs-review"
+        "sound:needs-review",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "trash"
     },
@@ -72404,7 +72415,8 @@
         "sound:needs-review",
         "es:fit",
         "en:fit",
-        "pos:verb"
+        "pos:verb",
+        "sound:regular-past-pronounced-id"
       ],
       "curriculumRole": "reference"
     },
@@ -72844,7 +72856,8 @@
         "form:past",
         "form:regular-variant",
         "form:past-equals-participle",
-        "sound:needs-review"
+        "sound:needs-review",
+        "sound:regular-past-pronounced-id"
       ],
       "curriculumRole": "trash"
     },
@@ -73110,7 +73123,8 @@
         "sound:needs-review",
         "es:hang",
         "en:hang",
-        "pos:verb"
+        "pos:verb",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "reference"
     },
@@ -73246,7 +73260,8 @@
         "morphology:inflection",
         "form:past",
         "form:regular-variant",
-        "sound:needs-review"
+        "sound:needs-review",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "trash"
     },
@@ -73514,7 +73529,8 @@
         "sound:needs-review",
         "es:kneel",
         "en:kneel",
-        "pos:verb"
+        "pos:verb",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "reference"
     },
@@ -73620,7 +73636,8 @@
         "sound:needs-review",
         "es:knit",
         "en:knit",
-        "pos:verb"
+        "pos:verb",
+        "sound:regular-past-pronounced-id"
       ],
       "curriculumRole": "reference"
     },
@@ -73813,7 +73830,8 @@
         "sound:needs-review",
         "es:lean",
         "en:lean",
-        "pos:verb"
+        "pos:verb",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "reference"
     },
@@ -73891,7 +73909,8 @@
         "sound:needs-review",
         "es:leap",
         "en:leap",
-        "pos:verb"
+        "pos:verb",
+        "sound:regular-past-pronounced-t"
       ],
       "curriculumRole": "reference"
     },
@@ -73975,7 +73994,8 @@
         "sound:needs-review",
         "es:learn",
         "en:learn",
-        "pos:verb"
+        "pos:verb",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "reference"
     },
@@ -74237,7 +74257,8 @@
         "sound:needs-review",
         "es:light",
         "en:light",
-        "pos:verb"
+        "pos:verb",
+        "sound:regular-past-pronounced-id"
       ],
       "curriculumRole": "reference"
     },
@@ -74462,7 +74483,8 @@
         "sound:needs-review",
         "es:mow",
         "en:mow",
-        "pos:verb"
+        "pos:verb",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "reference"
     },
@@ -74569,7 +74591,8 @@
         "sound:needs-review",
         "es:plead",
         "en:plead",
-        "pos:verb"
+        "pos:verb",
+        "sound:regular-past-pronounced-id"
       ],
       "curriculumRole": "reference"
     },
@@ -74648,7 +74671,8 @@
         "sound:needs-review",
         "es:prove",
         "en:prove",
-        "pos:verb"
+        "pos:verb",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "reference"
     },
@@ -75063,7 +75087,8 @@
         "morphology:inflection",
         "form:past",
         "form:regular-variant",
-        "sound:needs-review"
+        "sound:needs-review",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "trash"
     },
@@ -75370,7 +75395,8 @@
         "sound:needs-review",
         "es:sew",
         "en:sew",
-        "pos:verb"
+        "pos:verb",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "reference"
     },
@@ -75468,7 +75494,8 @@
         "sound:needs-review",
         "es:shave",
         "en:shave",
-        "pos:verb"
+        "pos:verb",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "reference"
     },
@@ -75522,7 +75549,8 @@
         "morphology:inflection",
         "form:past",
         "form:regular-variant",
-        "sound:needs-review"
+        "sound:needs-review",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "trash"
     },
@@ -75685,7 +75713,8 @@
         "form:past",
         "form:regular-variant",
         "form:past-equals-participle",
-        "sound:needs-review"
+        "sound:needs-review",
+        "sound:regular-past-pronounced-id"
       ],
       "curriculumRole": "trash"
     },
@@ -75770,7 +75799,8 @@
         "form:past",
         "form:regular-variant",
         "form:past-equals-participle",
-        "sound:needs-review"
+        "sound:needs-review",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "trash"
     },
@@ -75863,7 +75893,8 @@
         "sound:needs-review",
         "es:show",
         "en:show",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "supporting"
     },
@@ -76406,7 +76437,8 @@
         "sound:needs-review",
         "es:smell",
         "en:smell",
-        "pos:verb"
+        "pos:verb",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "reference"
     },
@@ -76521,7 +76553,8 @@
         "sound:needs-review",
         "es:sneak",
         "en:sneak",
-        "pos:verb"
+        "pos:verb",
+        "sound:regular-past-pronounced-t"
       ],
       "curriculumRole": "reference"
     },
@@ -76600,7 +76633,8 @@
         "sound:needs-review",
         "es:sow",
         "en:sow",
-        "pos:verb"
+        "pos:verb",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "reference"
     },
@@ -76725,7 +76759,8 @@
         "sound:needs-review",
         "es:speed",
         "en:speed",
-        "pos:verb"
+        "pos:verb",
+        "sound:regular-past-pronounced-id"
       ],
       "curriculumRole": "reference"
     },
@@ -76788,7 +76823,8 @@
         "sound:needs-review",
         "es:spell",
         "en:spell",
-        "pos:verb"
+        "pos:verb",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "reference"
     },
@@ -76914,7 +76950,8 @@
         "sound:needs-review",
         "es:spill",
         "en:spill",
-        "pos:verb"
+        "pos:verb",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "reference"
     },
@@ -77158,7 +77195,8 @@
         "sound:needs-review",
         "es:spoil",
         "en:spoil",
-        "pos:verb"
+        "pos:verb",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "reference"
     },
@@ -77383,7 +77421,8 @@
         "form:past",
         "form:regular-variant",
         "form:past-equals-participle",
-        "sound:needs-review"
+        "sound:needs-review",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "trash"
     },
@@ -77634,7 +77673,8 @@
         "morphology:inflection",
         "form:past",
         "form:regular-variant",
-        "sound:needs-review"
+        "sound:needs-review",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "trash"
     },
@@ -77825,7 +77865,8 @@
         "sound:needs-review",
         "es:strive",
         "en:strive",
-        "pos:verb"
+        "pos:verb",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "reference"
     },
@@ -77921,7 +77962,8 @@
         "sound:needs-review",
         "es:sweat",
         "en:sweat",
-        "pos:verb"
+        "pos:verb",
+        "sound:regular-past-pronounced-id"
       ],
       "curriculumRole": "reference"
     },
@@ -78046,7 +78088,8 @@
         "sound:needs-review",
         "es:swell",
         "en:swell",
-        "pos:verb"
+        "pos:verb",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "reference"
     },
@@ -78398,7 +78441,8 @@
         "sound:needs-review",
         "es:thrive",
         "en:thrive",
-        "pos:verb"
+        "pos:verb",
+        "sound:regular-past-pronounced-d"
       ],
       "curriculumRole": "reference"
     },
@@ -78796,7 +78840,8 @@
         "sound:needs-review",
         "es:wed",
         "en:wed",
-        "pos:verb"
+        "pos:verb",
+        "sound:regular-past-pronounced-id"
       ],
       "curriculumRole": "reference"
     },
@@ -78915,7 +78960,8 @@
         "es:wet",
         "en:wet",
         "form:past-equals-participle",
-        "sound:needs-review"
+        "sound:needs-review",
+        "sound:regular-past-pronounced-id"
       ],
       "curriculumRole": "trash"
     },
