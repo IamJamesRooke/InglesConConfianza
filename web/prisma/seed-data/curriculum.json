@@ -52156,7 +52156,8 @@
         "topic:fractions-decimals-and-phone-numbers",
         "pos:number",
         "es:mitad",
-        "en:half"
+        "en:half",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -52173,7 +52174,8 @@
         "pos:number",
         "es:mitad",
         "en:one",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -52189,7 +52191,8 @@
         "topic:fractions-decimals-and-phone-numbers",
         "pos:number",
         "es:tercio",
-        "en:third"
+        "en:third",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -52206,7 +52209,8 @@
         "pos:number",
         "es:tercio",
         "en:one",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -52222,7 +52226,8 @@
         "topic:fractions-decimals-and-phone-numbers",
         "pos:number",
         "es:cuarto",
-        "en:quarter"
+        "en:quarter",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -52239,7 +52244,8 @@
         "pos:number",
         "es:cuarto",
         "en:one",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
