@@ -26,7 +26,8 @@ export type CollectionFacet =
   | "sense"
   | "gender"
   | "degree"
-  | "expr";
+  | "expr"
+  | "qn";
 
 export const COLLECTION_FACETS: Record<CollectionFacet, string> = {
   es: "Spanish headword — every sense and construction of one lemma",
@@ -50,6 +51,7 @@ export const COLLECTION_FACETS: Record<CollectionFacet, string> = {
   gender: "grammatical gender of a noun, keyed by the bracketed article: masculine (el), feminine (la), common (el/la), invariant (no gender-marked article)",
   degree: "comparative/superlative form of a gradable adjective",
   expr: "communicative function of a fixed social expression (greeting, apology, farewell, etc.) — scoped to topic:social-expression",
+  qn: "how a sentence forms negation or a question — do-support vs. modal/be/have direct contraction, question inversion, negative questions, emphatic affirmative — scoped to topic:question-negation",
 };
 
 export function collectionFacet(name: string): CollectionFacet | null {

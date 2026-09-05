@@ -190,7 +190,9 @@
         "es:querer",
         "en:wouldn't",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:question-negation",
+        "qn:modal-be-have-negation"
       ],
       "curriculumRole": "reference"
     },
@@ -10447,7 +10449,9 @@
         "grammar:gerund",
         "es:parar",
         "en:won't",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:question-negation",
+        "qn:modal-be-have-negation"
       ],
       "curriculumRole": "reference"
     },
@@ -11946,7 +11950,9 @@
         "en:can't",
         "pos:verb",
         "topic:multi-sense",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "topic:question-negation",
+        "qn:modal-be-have-negation"
       ],
       "curriculumRole": "core"
     },
@@ -12197,7 +12203,9 @@
         "es:poder",
         "en:couldn't",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:question-negation",
+        "qn:modal-be-have-negation"
       ],
       "curriculumRole": "supporting"
     },
@@ -12275,7 +12283,9 @@
         "grammar:contraction",
         "es:haber",
         "en:haven't",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:question-negation",
+        "qn:modal-be-have-negation"
       ],
       "curriculumRole": "reference"
     },
@@ -12380,7 +12390,9 @@
         "en:you",
         "pos:verb",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:question-negation",
+        "qn:inversion-question"
       ],
       "curriculumRole": "core"
     },
@@ -12401,7 +12413,9 @@
         "es:puedes",
         "en:you",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:question-negation",
+        "qn:inversion-question"
       ],
       "curriculumRole": "supporting"
     },
@@ -12420,7 +12434,9 @@
         "grammar:question",
         "grammar:modal",
         "pos:verb",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:question-negation",
+        "qn:inversion-question"
       ],
       "curriculumRole": "core"
     },
@@ -12460,7 +12476,9 @@
         "grammar:modal",
         "es:poder",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:question-negation",
+        "qn:inversion-question"
       ],
       "curriculumRole": "supporting"
     },
@@ -12485,7 +12503,9 @@
         "pos:verb",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "topic:question-negation",
+        "qn:inversion-question"
       ],
       "curriculumRole": "core"
     },
@@ -12819,7 +12839,9 @@
         "grammar:modal",
         "es:puedes",
         "en:can't",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:question-negation",
+        "qn:negative-question"
       ],
       "curriculumRole": "reference"
     },
@@ -16836,7 +16858,9 @@
         "es:deber",
         "en:mustn't",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:question-negation",
+        "qn:modal-be-have-negation"
       ],
       "curriculumRole": "supporting"
     },
@@ -16876,7 +16900,9 @@
         "grammar:advice",
         "grammar:conditional",
         "en:shouldn't",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:question-negation",
+        "qn:modal-be-have-negation"
       ],
       "curriculumRole": "supporting"
     },
@@ -18244,7 +18270,9 @@
         "grammar:negative",
         "es:recordar",
         "en:can't",
-        "pos:verb"
+        "pos:verb",
+        "topic:question-negation",
+        "qn:modal-be-have-negation"
       ],
       "curriculumRole": "supporting"
     },
@@ -25059,7 +25087,9 @@
         "grammar:negative",
         "es:lograr",
         "en:can't",
-        "pos:verb"
+        "pos:verb",
+        "topic:question-negation",
+        "qn:modal-be-have-negation"
       ],
       "curriculumRole": "reference"
     },
@@ -28581,7 +28611,9 @@
         "es:nunca",
         "en:haven't",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "topic:question-negation",
+        "qn:negative-question"
       ],
       "curriculumRole": "reference"
     },
@@ -31430,7 +31462,9 @@
         "grammar:fixed-expression",
         "es:te",
         "en:you",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:question-negation",
+        "qn:inversion-question"
       ],
       "curriculumRole": "reference"
     },
@@ -64343,7 +64377,9 @@
         "es:haces",
         "en:you",
         "topic:en-multi-sense",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "topic:question-negation",
+        "qn:do-support-question"
       ],
       "curriculumRole": "supporting"
     },
@@ -64362,7 +64398,9 @@
         "form:bare-infinitive",
         "es:ella",
         "en:she",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "topic:question-negation",
+        "qn:do-support-question"
       ],
       "curriculumRole": "supporting"
     },
@@ -64381,7 +64419,9 @@
         "form:bare-infinitive",
         "es:ellos",
         "en:they",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "topic:question-negation",
+        "qn:do-support-question"
       ],
       "curriculumRole": "supporting"
     },
@@ -64399,7 +64439,9 @@
         "construction:followed-by-bare-infinitive",
         "form:bare-infinitive",
         "es:hago",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "topic:question-negation",
+        "qn:do-support-negation"
       ],
       "curriculumRole": "supporting"
     },
@@ -64418,7 +64460,9 @@
         "form:bare-infinitive",
         "es:hicieron",
         "en:they",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "topic:question-negation",
+        "qn:do-support-negation"
       ],
       "curriculumRole": "supporting"
     },
@@ -67629,7 +67673,9 @@
         "en:you",
         "pos:verb",
         "topic:en-multi-sense",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "topic:question-negation",
+        "qn:do-support-question"
       ],
       "curriculumRole": "core"
     },
@@ -67748,7 +67794,9 @@
         "en:present",
         "sound:stressed-do",
         "es:sí",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "topic:question-negation",
+        "qn:emphatic"
       ],
       "curriculumRole": "reference"
     },
@@ -67767,7 +67815,9 @@
         "sound:stressed-did",
         "es:sí",
         "en:did",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "topic:question-negation",
+        "qn:emphatic"
       ],
       "curriculumRole": "reference"
     },
@@ -67836,7 +67886,9 @@
         "conjugation:2sg",
         "conjugation:irregular",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:question-negation",
+        "qn:inversion-question"
       ],
       "curriculumRole": "core"
     },
@@ -67914,7 +67966,9 @@
         "form:past-participle",
         "es:haber",
         "en:haven't",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:question-negation",
+        "qn:modal-be-have-negation"
       ],
       "curriculumRole": "supporting"
     },
@@ -68146,7 +68200,9 @@
         "es:tener",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "topic:question-negation",
+        "qn:do-support-question"
       ],
       "curriculumRole": "core"
     },
@@ -68535,7 +68591,9 @@
         "form:present-participle",
         "en:are",
         "pos:verb",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:question-negation",
+        "qn:inversion-question"
       ],
       "curriculumRole": "core"
     },
@@ -68578,7 +68636,9 @@
         "conjugation:2sg",
         "conjugation:irregular",
         "es:estar",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:question-negation",
+        "qn:inversion-question"
       ],
       "curriculumRole": "supporting"
     },
@@ -68625,7 +68685,9 @@
         "conjugation:irregular",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "topic:question-negation",
+        "qn:inversion-question"
       ],
       "curriculumRole": "core"
     },
@@ -68668,7 +68730,9 @@
         "es:ir",
         "en:were",
         "topic:multi-sense",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "topic:question-negation",
+        "qn:inversion-question"
       ],
       "curriculumRole": "supporting"
     },
@@ -68771,7 +68835,9 @@
         "en:you",
         "pos:verb",
         "topic:en-multi-sense",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "topic:question-negation",
+        "qn:inversion-question"
       ],
       "curriculumRole": "core"
     },
@@ -68793,7 +68859,9 @@
         "en:couldn't",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "topic:question-negation",
+        "qn:modal-be-have-negation"
       ],
       "curriculumRole": "supporting"
     },
@@ -68815,7 +68883,9 @@
         "en:you",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "topic:question-negation",
+        "qn:inversion-question"
       ],
       "curriculumRole": "reference"
     },
@@ -68861,7 +68931,9 @@
         "en:mustn't",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "topic:question-negation",
+        "qn:modal-be-have-negation"
       ],
       "curriculumRole": "supporting"
     },
@@ -68883,7 +68955,9 @@
         "en:you",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "topic:question-negation",
+        "qn:inversion-question"
       ],
       "curriculumRole": "supporting"
     },
@@ -68903,7 +68977,9 @@
         "en:you",
         "pos:verb",
         "topic:en-multi-sense",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "topic:question-negation",
+        "qn:inversion-question"
       ],
       "curriculumRole": "core"
     },
@@ -68923,7 +68999,9 @@
         "construction:followed-by-bare-infinitive",
         "en:won't",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "topic:question-negation",
+        "qn:modal-be-have-negation"
       ],
       "curriculumRole": "core"
     },
@@ -68944,7 +69022,9 @@
         "en:you",
         "pos:verb",
         "topic:en-multi-sense",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "topic:question-negation",
+        "qn:inversion-question"
       ],
       "curriculumRole": "core"
     },
@@ -68965,7 +69045,9 @@
         "construction:followed-by-bare-infinitive",
         "en:wouldn't",
         "topic:en-multi-sense",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "topic:question-negation",
+        "qn:modal-be-have-negation"
       ],
       "curriculumRole": "supporting"
     },
@@ -85572,6 +85654,397 @@
         "en:girlfriend",
         "topic:people",
         "topic:family"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "p3fuo2folk",
+      "spanish": "No como carne.",
+      "english": "I don't eat meat.",
+      "example": {
+        "spanish": "No como carne los viernes.",
+        "english": "I don't eat meat on Fridays."
+      },
+      "collections": [
+        "pos:verb",
+        "topic:question-negation",
+        "qn:do-support-negation",
+        "construction:auxiliary-do",
+        "grammar:negative",
+        "grammar:contraction",
+        "es:comer",
+        "en:eat"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "4e8vpd4tbg",
+      "spanish": "Ella no come carne.",
+      "english": "She doesn't eat meat.",
+      "example": {
+        "spanish": "Ella no come carne ni pescado.",
+        "english": "She doesn't eat meat or fish."
+      },
+      "collections": [
+        "pos:verb",
+        "topic:question-negation",
+        "qn:do-support-negation",
+        "construction:auxiliary-do",
+        "grammar:negative",
+        "grammar:contraction",
+        "es:comer",
+        "en:eat"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "zkkcxirv4g",
+      "spanish": "No fui a la fiesta.",
+      "english": "I didn't go to the party.",
+      "example": {
+        "spanish": "No fui a la fiesta anoche.",
+        "english": "I didn't go to the party last night."
+      },
+      "collections": [
+        "pos:verb",
+        "topic:question-negation",
+        "qn:do-support-negation",
+        "construction:auxiliary-do",
+        "grammar:negative",
+        "grammar:contraction",
+        "form:preterite",
+        "es:ir",
+        "en:go"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "9hsbrn2qzb",
+      "spanish": "Ella no es doctora.",
+      "english": "She isn't a doctor.",
+      "example": {
+        "spanish": "Ella no es doctora, es enfermera.",
+        "english": "She isn't a doctor, she's a nurse."
+      },
+      "collections": [
+        "pos:verb",
+        "topic:question-negation",
+        "qn:modal-be-have-negation",
+        "grammar:negative",
+        "grammar:contraction",
+        "es:ser",
+        "en:isn't"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "6a2v9efdpz",
+      "spanish": "Ellos no son de aquí.",
+      "english": "They aren't from here.",
+      "example": {
+        "spanish": "Ellos no son de aquí, son de Chile.",
+        "english": "They aren't from here, they're from Chile."
+      },
+      "collections": [
+        "pos:verb",
+        "topic:question-negation",
+        "qn:modal-be-have-negation",
+        "grammar:negative",
+        "grammar:contraction",
+        "es:ser",
+        "en:aren't"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "waj96uzzcf",
+      "spanish": "No estaba listo.",
+      "english": "I wasn't ready.",
+      "example": {
+        "spanish": "No estaba listo cuando llegaste.",
+        "english": "I wasn't ready when you arrived."
+      },
+      "collections": [
+        "pos:verb",
+        "topic:question-negation",
+        "qn:modal-be-have-negation",
+        "grammar:negative",
+        "grammar:contraction",
+        "es:estar",
+        "en:wasn't"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "5tbq59flnh",
+      "spanish": "No estaban en casa.",
+      "english": "They weren't home.",
+      "example": {
+        "spanish": "No estaban en casa anoche.",
+        "english": "They weren't home last night."
+      },
+      "collections": [
+        "pos:verb",
+        "topic:question-negation",
+        "qn:modal-be-have-negation",
+        "grammar:negative",
+        "grammar:contraction",
+        "es:estar",
+        "en:weren't"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "3ymcnkevwg",
+      "spanish": "Ella no ha llegado.",
+      "english": "She hasn't arrived.",
+      "example": {
+        "spanish": "Ella no ha llegado todavía.",
+        "english": "She hasn't arrived yet."
+      },
+      "collections": [
+        "pos:verb",
+        "topic:question-negation",
+        "qn:modal-be-have-negation",
+        "grammar:negative",
+        "grammar:contraction",
+        "grammar:perfect",
+        "es:haber",
+        "en:hasn't"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "9hj8rdegpe",
+      "spanish": "No había terminado cuando llegaron.",
+      "english": "I hadn't finished when they arrived.",
+      "example": {
+        "spanish": "No había terminado la tarea cuando llegaron.",
+        "english": "I hadn't finished the homework when they arrived."
+      },
+      "collections": [
+        "pos:verb",
+        "topic:question-negation",
+        "qn:modal-be-have-negation",
+        "grammar:negative",
+        "grammar:contraction",
+        "grammar:perfect",
+        "es:haber",
+        "en:hadn't"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "l0ff67q199",
+      "spanish": "¿Comes carne?",
+      "english": "Do you eat meat?",
+      "example": {
+        "spanish": "¿Comes carne o eres vegetariano?",
+        "english": "Do you eat meat, or are you vegetarian?"
+      },
+      "collections": [
+        "pos:verb",
+        "topic:question-negation",
+        "qn:do-support-question",
+        "construction:auxiliary-do",
+        "grammar:question",
+        "es:comer",
+        "en:eat"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "7zuboxokm5",
+      "spanish": "¿Ella come carne?",
+      "english": "Does she eat meat?",
+      "example": {
+        "spanish": "¿Ella come carne o pescado?",
+        "english": "Does she eat meat or fish?"
+      },
+      "collections": [
+        "pos:verb",
+        "topic:question-negation",
+        "qn:do-support-question",
+        "construction:auxiliary-do",
+        "grammar:question",
+        "es:comer",
+        "en:eat"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "1m68s37p22",
+      "spanish": "¿Fueron a la fiesta?",
+      "english": "Did they go to the party?",
+      "example": {
+        "spanish": "¿Fueron a la fiesta anoche?",
+        "english": "Did they go to the party last night?"
+      },
+      "collections": [
+        "pos:verb",
+        "topic:question-negation",
+        "qn:do-support-question",
+        "construction:auxiliary-do",
+        "grammar:question",
+        "form:preterite",
+        "es:ir",
+        "en:go"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "9814unz0vu",
+      "spanish": "¿Es ella doctora?",
+      "english": "Is she a doctor?",
+      "example": {
+        "spanish": "¿Es ella doctora o enfermera?",
+        "english": "Is she a doctor or a nurse?"
+      },
+      "collections": [
+        "pos:verb",
+        "topic:question-negation",
+        "qn:inversion-question",
+        "grammar:question",
+        "es:ser",
+        "en:is"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "yet9gjs718",
+      "spanish": "¿Están listos?",
+      "english": "Are they ready?",
+      "example": {
+        "spanish": "¿Están listos para salir?",
+        "english": "Are they ready to leave?"
+      },
+      "collections": [
+        "pos:verb",
+        "topic:question-negation",
+        "qn:inversion-question",
+        "grammar:question",
+        "es:estar",
+        "en:are"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "t1monumdj4",
+      "spanish": "¿No comes carne?",
+      "english": "Don't you eat meat?",
+      "example": {
+        "spanish": "¿No comes carne los viernes?",
+        "english": "Don't you eat meat on Fridays?"
+      },
+      "collections": [
+        "pos:verb",
+        "topic:question-negation",
+        "qn:negative-question",
+        "construction:auxiliary-do",
+        "grammar:question",
+        "grammar:negative",
+        "es:comer",
+        "en:eat"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "aq0gtmpie2",
+      "spanish": "¿No lo sabe él?",
+      "english": "Doesn't he know?",
+      "example": {
+        "spanish": "¿No lo sabe él todavía?",
+        "english": "Doesn't he know yet?"
+      },
+      "collections": [
+        "pos:verb",
+        "topic:question-negation",
+        "qn:negative-question",
+        "construction:auxiliary-do",
+        "grammar:question",
+        "grammar:negative",
+        "es:saber",
+        "en:know"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "362prshjtp",
+      "spanish": "¿No fueron a la fiesta?",
+      "english": "Didn't they go to the party?",
+      "example": {
+        "spanish": "¿No fueron a la fiesta anoche?",
+        "english": "Didn't they go to the party last night?"
+      },
+      "collections": [
+        "pos:verb",
+        "topic:question-negation",
+        "qn:negative-question",
+        "construction:auxiliary-do",
+        "grammar:question",
+        "grammar:negative",
+        "form:preterite",
+        "es:ir",
+        "en:go"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "i53efix8bb",
+      "spanish": "¿No es verdad?",
+      "english": "Isn't it true?",
+      "example": {
+        "spanish": "¿No es verdad lo que dijo?",
+        "english": "Isn't it true what he said?"
+      },
+      "collections": [
+        "pos:adjective",
+        "topic:question-negation",
+        "qn:negative-question",
+        "grammar:question",
+        "grammar:negative",
+        "es:ser",
+        "en:isn't"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "erzwuc6ywd",
+      "spanish": "¿No estás listo?",
+      "english": "Aren't you ready?",
+      "example": {
+        "spanish": "¿No estás listo todavía?",
+        "english": "Aren't you ready yet?"
+      },
+      "collections": [
+        "pos:adjective",
+        "topic:question-negation",
+        "qn:negative-question",
+        "grammar:question",
+        "grammar:negative",
+        "es:estar",
+        "en:aren't"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "vuym0ms6tf",
+      "spanish": "sí [alguien] [hace algo] (énfasis)",
+      "english": "[somebody] does [do something]",
+      "example": {
+        "spanish": "Sí, ella sí lo sabe.",
+        "english": "She does know it."
+      },
+      "collections": [
+        "pos:verb",
+        "topic:question-negation",
+        "qn:emphatic",
+        "construction:auxiliary-do",
+        "grammar:emphatic-affirmative",
+        "sound:stressed-does",
+        "es:sí",
+        "en:does",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     }
