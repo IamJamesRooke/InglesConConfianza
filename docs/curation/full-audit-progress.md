@@ -686,7 +686,7 @@ separately at the end (not itemized here — see the plan doc).
 - [ ] `cognate:sis-to-sis` — -sis → -sis (6 rows)
 - [ ] `cognate:tud-to-tude` — -tud → -tude (7 rows)
 - [ ] `cognate:uro-ura-to-ure` — -uro/-ura → -ure (12 rows)
-- [x] `cognate:izar-to-ize` — -izar → -ize (10→13 rows in family, +2 elsewhere) — added missing `realizar` (false friend: "to carry out," not "to realize" — also cross-tagged onto Phrasal Verbs by Root/"carry"), `utilizar`→"to utilize" (cognate sense, alongside the existing "to use" row), `actualizar` (false friend: "to update," not "actualize"), `autorizar`, `analizar`. `<commit-pending>`
+- [x] `cognate:izar-to-ize` — -izar → -ize (10→13 rows in family, +2 elsewhere) — added missing `realizar` (false friend: "to carry out," not "to realize" — also cross-tagged onto Phrasal Verbs by Root/"carry"), `utilizar`→"to utilize" (cognate sense, alongside the existing "to use" row), `actualizar` (false friend: "to update," not "actualize"), `autorizar`, `analizar`. `0757a5bd`
 - [ ] `cognate:ar-to-ate` — -ar → -ate (10 rows)
 - [ ] `cognate:ificar-to-ify` — -ificar → -ify (10 rows)
 - [ ] `cognate:inar-to-ine` — -inar → -ine (9 rows)
