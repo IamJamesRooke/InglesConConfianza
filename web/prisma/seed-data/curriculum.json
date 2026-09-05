@@ -25652,7 +25652,8 @@
       "collections": [
         "es:antes",
         "en:before",
-        "pos:preposition"
+        "pos:preposition",
+        "topic:time"
       ],
       "curriculumRole": "reference"
     },
@@ -26002,7 +26003,8 @@
         "es:bajo",
         "es:debajo",
         "en:under",
-        "pos:preposition"
+        "pos:preposition",
+        "topic:location"
       ],
       "curriculumRole": "reference"
     },
@@ -26017,7 +26019,8 @@
       "collections": [
         "es:debajo",
         "en:below",
-        "pos:preposition"
+        "pos:preposition",
+        "topic:location"
       ],
       "curriculumRole": "reference"
     },
@@ -26986,7 +26989,8 @@
         "pos:preposition",
         "en:limit",
         "es:dentro",
-        "en:within"
+        "en:within",
+        "topic:location"
       ],
       "curriculumRole": "reference"
     },
@@ -27588,7 +27592,8 @@
       "collections": [
         "es:entre",
         "en:between",
-        "pos:preposition"
+        "pos:preposition",
+        "topic:location"
       ],
       "curriculumRole": "reference"
     },
@@ -29329,7 +29334,8 @@
       "collections": [
         "es:encima",
         "en:above",
-        "pos:preposition"
+        "pos:preposition",
+        "topic:location"
       ],
       "curriculumRole": "reference"
     },
@@ -29952,7 +29958,8 @@
         "en:depending",
         "construction:prepositional-verb",
         "particle:on",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "construction:map-segun-according-to"
       ],
       "curriculumRole": "reference"
     },
@@ -62640,7 +62647,8 @@
         "morphology:recognition",
         "morphology:prefix-al",
         "en:along",
-        "pos:preposition"
+        "pos:preposition",
+        "topic:location"
       ],
       "curriculumRole": "reference"
     },
@@ -62675,7 +62683,8 @@
         "morphology:prefix-be",
         "es:lado",
         "en:beside",
-        "pos:preposition"
+        "pos:preposition",
+        "topic:location"
       ],
       "curriculumRole": "supporting"
     },
@@ -62710,7 +62719,8 @@
         "morphology:prefix-be",
         "es:debajo",
         "en:below",
-        "pos:preposition"
+        "pos:preposition",
+        "topic:location"
       ],
       "curriculumRole": "reference"
     },
@@ -62727,7 +62737,8 @@
         "morphology:prefix-be",
         "es:entre",
         "en:between",
-        "pos:preposition"
+        "pos:preposition",
+        "topic:location"
       ],
       "curriculumRole": "reference"
     },
@@ -62744,7 +62755,8 @@
         "morphology:prefix-be",
         "es:entre",
         "en:among",
-        "pos:preposition"
+        "pos:preposition",
+        "topic:location"
       ],
       "curriculumRole": "reference"
     },
@@ -62761,7 +62773,8 @@
         "morphology:prefix-be",
         "es:más",
         "en:beyond",
-        "pos:preposition"
+        "pos:preposition",
+        "topic:location"
       ],
       "curriculumRole": "reference"
     },
@@ -63175,7 +63188,8 @@
         "dialect:american",
         "es:hacia",
         "en:toward",
-        "pos:preposition"
+        "pos:preposition",
+        "topic:location"
       ],
       "curriculumRole": "supporting"
     },
@@ -63193,7 +63207,8 @@
         "dialect:british",
         "es:hacia",
         "en:towards",
-        "pos:preposition"
+        "pos:preposition",
+        "topic:location"
       ],
       "curriculumRole": "reference"
     },
@@ -83886,7 +83901,8 @@
         "pos:preposition",
         "grammar:comparison",
         "es:abajo",
-        "en:lower"
+        "en:lower",
+        "topic:location"
       ],
       "curriculumRole": "reference"
     },
@@ -83901,7 +83917,8 @@
       "collections": [
         "pos:preposition",
         "es:arriba",
-        "en:above"
+        "en:above",
+        "topic:location"
       ],
       "curriculumRole": "reference"
     },
@@ -83917,7 +83934,8 @@
         "pos:preposition",
         "es:desde",
         "en:from",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:location"
       ],
       "curriculumRole": "supporting"
     },

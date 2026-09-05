@@ -287,6 +287,10 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
     facetButtons: [
       { collection: "topic:time", label: "Time" },
       { collection: "topic:location", label: "Location" },
+      { collection: "construction:map-segun-according-to", label: "According to" },
+      { collection: "grammar:purpose", label: "Purpose" },
+      { collection: "grammar:negative", label: "Without" },
+      { collection: "grammar:exception", label: "Except" },
     ],
   },
   {
