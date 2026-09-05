@@ -1188,7 +1188,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -4256,7 +4257,8 @@
         "en:order",
         "topic:multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -9976,7 +9978,8 @@
         "construction:map-a-direct-object",
         "es:llamar",
         "en:call",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -9992,7 +9995,8 @@
         "construction:map-a-direct-object",
         "es:llamar",
         "en:phone",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -10048,7 +10052,8 @@
         "grammar:introduction",
         "es:cómo",
         "en:what",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -10064,7 +10069,8 @@
         "grammar:object-complement",
         "es:llamar",
         "en:name",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -10080,7 +10086,8 @@
         "grammar:object-complement",
         "es:llamar",
         "en:call",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -10096,7 +10103,8 @@
         "grammar:fixed-expression",
         "es:llamar",
         "en:attract",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -10117,7 +10125,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -10138,7 +10147,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -10158,7 +10168,8 @@
         "en:call",
         "topic:multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -10224,7 +10235,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:at",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -10243,7 +10255,8 @@
         "es:llegar",
         "en:arrive",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -10264,7 +10277,8 @@
         "pos:verb",
         "topic:en-multi-sense",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -10321,7 +10335,8 @@
         "es:llegar",
         "en:become",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -10359,7 +10374,8 @@
         "construction:map-a-direct-object",
         "es:llegar",
         "en:reach",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -10376,7 +10392,8 @@
         "grammar:fixed-expression",
         "es:llegar",
         "en:reach",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -10395,7 +10412,8 @@
         "es:llegar",
         "en:arrive",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -10436,7 +10454,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -10451,7 +10470,8 @@
       "collections": [
         "es:llevar",
         "en:carry",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -10467,7 +10487,8 @@
         "es:llevar",
         "en:wear",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -10566,7 +10587,8 @@
         "en:get",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -10584,7 +10606,8 @@
         "es:llevar",
         "en:carry",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -10605,7 +10628,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -10623,7 +10647,8 @@
         "en:give",
         "topic:en-multi-sense",
         "topic:transportation",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -10664,7 +10689,8 @@
         "es:mandar",
         "en:send",
         "pos:verb",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -10685,7 +10711,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -10744,7 +10771,8 @@
         "grammar:phrasal-verb",
         "particle:in",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -10786,7 +10814,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:for",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -10824,7 +10853,8 @@
         "en:send",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -10844,7 +10874,8 @@
         "en:send",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -20309,7 +20340,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -20394,7 +20426,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -20417,7 +20450,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -20481,7 +20515,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -24801,7 +24836,8 @@
         "success expression",
         "es:lograr",
         "en:manage",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26130,7 +26166,8 @@
       "collections": [
         "es:lograr",
         "en:achieve",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26165,7 +26202,8 @@
       "collections": [
         "es:lograr",
         "en:secure",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26181,7 +26219,8 @@
         "es:mantener",
         "en:keep",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -26196,7 +26235,8 @@
       "collections": [
         "es:mantener",
         "en:maintain",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26212,7 +26252,8 @@
         "grammar:human-object",
         "es:mantener",
         "en:support",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26228,7 +26269,8 @@
         "es:mantener",
         "en:hold",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28263,7 +28305,8 @@
         "es:después",
         "es:llamar",
         "en:call",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30768,7 +30811,8 @@
         "en:late",
         "es:llegar",
         "en:arrive",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57436,7 +57480,8 @@
       "collections": [
         "pos:verb",
         "es:jugar",
-        "en:play"
+        "en:play",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -57451,7 +57496,8 @@
       "collections": [
         "pos:verb",
         "es:jugar",
-        "en:gamble"
+        "en:gamble",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57466,7 +57512,8 @@
       "collections": [
         "pos:verb",
         "es:jugar",
-        "en:play"
+        "en:play",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57486,7 +57533,8 @@
         "en:play",
         "topic:en-multi-sense",
         "particle:with",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58354,7 +58402,8 @@
         "pos:verb",
         "es:levantar",
         "en:lift",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58371,7 +58420,8 @@
         "pos:verb",
         "es:levantar",
         "en:raise",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58391,7 +58441,8 @@
         "es:levantar",
         "en:pick",
         "topic:multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58412,7 +58463,8 @@
         "en:get",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -58429,7 +58481,8 @@
         "pos:verb",
         "es:levantar",
         "en:remove",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -59039,7 +59092,8 @@
       "collections": [
         "pos:verb",
         "es:lucir",
-        "en:shine"
+        "en:shine",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -59055,7 +59109,8 @@
         "pos:verb",
         "es:lucir",
         "en:look",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -59071,7 +59126,8 @@
         "pos:verb",
         "es:lucir",
         "en:wear",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -59086,7 +59142,8 @@
       "collections": [
         "pos:verb",
         "es:lucir",
-        "en:display"
+        "en:display",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -59105,7 +59162,8 @@
         "es:lucir",
         "en:show",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -59120,7 +59178,8 @@
       "collections": [
         "pos:verb",
         "es:lucir",
-        "en:brilliantly"
+        "en:brilliantly",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -59136,7 +59195,8 @@
         "pos:verb",
         "es:lucir",
         "en:for",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
