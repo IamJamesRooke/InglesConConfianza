@@ -1,0 +1,37 @@
+m5xw7iodne	no lo hago	I don't do it	supporting	audit:reviewed	Audit: fine as-is.
+bt7rdzvto5	no lo hicieron	they didn't do it	supporting	audit:reviewed	Audit: fine as-is.
+bxt46dkdag	no quiso [hacer algo]	wouldn't [do something]	reference	audit:reviewed	Audit: fine as-is.
+2kvsxjhtz9	no parar de [hacer algo]	won't stop [doing something]	reference	audit:reviewed	Audit: fine as-is.
+v2jinicnwh	no pudo [hacer algo] (intento fallido)	couldn't [do something]	supporting	audit:reviewed	Audit: fine as-is.
+yhchadk82l	no he podido [hacer algo]	haven't been able to [do something]	reference	audit:reviewed	Audit: fine as-is.
+s1qoakwebg	¿lo haces?	do you do it?	supporting	audit:reviewed	Audit: fine as-is.
+mk6oc0jtgw	¿ella lo hace?	does she do it?	supporting	audit:reviewed	Audit: fine as-is.
+0krc7ykvx4	¿ellos lo hicieron?	did they do it?	supporting	audit:reviewed	Audit: fine as-is.
+8hhxabswez	¿[haces algo]?	do you [do something]?	core	audit:reviewed	Audit: fine as-is.
+8aej7jfu2y	¿tienes que [hacer algo]?	do you have to [do something]?	core	audit:reviewed	Audit: fine as-is.
+l0ff67q199	¿Comes carne?	Do you eat meat?	supporting	audit:reviewed	Audit: fine as-is.
+7zuboxokm5	¿Ella come carne?	Does she eat meat?	supporting	audit:reviewed	Audit: fine as-is.
+1m68s37p22	¿Fueron a la fiesta?	Did they go to the party?	supporting	audit:reviewed	Audit: fine as-is.
+43z1s233ya	¿Puedes [hacer algo]? (capacidad)	Can you [do something]?	core	audit:reviewed	Audit: fine as-is.
+7hwvhzgxxt	¿Puedes [hacer algo]? (petición)	Can you [do something]?	supporting	audit:reviewed	Audit: fine as-is.
+jdd2lebx6x	¿Puedo [hacer algo]?	Can I [do something]?	core	audit:reviewed	Audit: fine as-is.
+oy4fp397cg	¿Podría [hacer algo]?	Could I [do something]?	supporting	audit:reviewed	Audit: fine as-is.
+zgny1ugayh	¿Podrías [hacer algo]?	Could you [do something]?	core	audit:reviewed	Audit: fine as-is.
+4lvhwvih13	¿te gustaría [algo]?	would you care for [something]?	reference	audit:reviewed	Audit: fine as-is.
+v7y40xtgb3	¿has [hecho algo]?	have you [done something]?	core	audit:reviewed	Audit: fine as-is.
+rnbqgo3fk9	¿[estás haciendo algo]?	are you [doing something]?	core	audit:reviewed	Audit: fine as-is.
+bvjzllj20d	¿[estabas haciendo algo]?	were you [doing something]?	supporting	audit:reviewed	Audit: fine as-is.
+ihsw7a0ggn	¿vas a [hacer algo]?	are you going [to do something]?	core	audit:reviewed	Audit: fine as-is.
+ob3a6c4swk	¿ibas a [hacer algo]?	were you going to [do something]?	supporting	audit:reviewed	Audit: fine as-is.
+r30tfgius4	¿puedes [hacer algo]?	can you [do something]?	core	audit:reviewed	Audit: fine as-is.
+78zjjk2mwo	¿debes [hacer algo]?	must you [do something]?	reference	audit:reviewed	Audit: fine as-is.
+dtlxfmo16j	¿deberías [hacer algo]?	should you [do something]?	supporting	audit:reviewed	Audit: fine as-is.
+m2op0ycc10	¿[harás algo]?	will you [do something]?	core	audit:reviewed	Audit: fine as-is.
+qoxz39dr3t	¿[harías algo]?	would you [do something]?	core	audit:reviewed	Audit: fine as-is.
+9814unz0vu	¿Es ella doctora?	Is she a doctor?	supporting	audit:reviewed	Audit: fine as-is.
+yet9gjs718	¿Están listos?	Are they ready?	supporting	audit:reviewed	Audit: fine as-is.
+wbadwkrywg	¿No puedes [hacer algo]? (capacidad)	Can't you [do something]?	reference	audit:reviewed	Audit: fine as-is.
+4sabms9mlz	¿nunca has [hecho algo]?	haven't you ever [done something]?	reference	audit:reviewed	Audit: fine as-is.
+c4ekkqs73f	sí [hago algo] (énfasis)	I do [do something]	reference	audit:reviewed	Audit: fine as-is.
+xvgmxfgcrd	sí [alguien] [hizo algo] (énfasis)	[somebody] did [do something]	reference	audit:reviewed	Audit: fine as-is.
+vuym0ms6tf	sí [alguien] [hace algo] (énfasis)	[somebody] does [do something]	reference	audit:reviewed	Audit: demoted from supporting to reference to match its two structurally-identical siblings (I do / they did) — emphatic-do is one grammar point and had no reason to be tiered differently for the 3rd-person form.

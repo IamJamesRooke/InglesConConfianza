@@ -194,7 +194,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "topic:question-negation",
-        "qn:modal-be-have-negation"
+        "qn:modal-be-have-negation",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -10518,7 +10519,8 @@
         "en:won't",
         "topic:en-multi-sense",
         "topic:question-negation",
-        "qn:modal-be-have-negation"
+        "qn:modal-be-have-negation",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -12280,7 +12282,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "topic:question-negation",
-        "qn:modal-be-have-negation"
+        "qn:modal-be-have-negation",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -12360,7 +12363,8 @@
         "en:haven't",
         "topic:multi-sense",
         "topic:question-negation",
-        "qn:modal-be-have-negation"
+        "qn:modal-be-have-negation",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -12467,7 +12471,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "topic:question-negation",
-        "qn:inversion-question"
+        "qn:inversion-question",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -12490,7 +12495,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "topic:question-negation",
-        "qn:inversion-question"
+        "qn:inversion-question",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -12511,7 +12517,8 @@
         "pos:verb",
         "topic:multi-sense",
         "topic:question-negation",
-        "qn:inversion-question"
+        "qn:inversion-question",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -12553,7 +12560,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "topic:question-negation",
-        "qn:inversion-question"
+        "qn:inversion-question",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -12580,7 +12588,8 @@
         "topic:en-multi-sense",
         "topic:verb-pattern",
         "topic:question-negation",
-        "qn:inversion-question"
+        "qn:inversion-question",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -12916,7 +12925,8 @@
         "en:can't",
         "topic:multi-sense",
         "topic:question-negation",
-        "qn:negative-question"
+        "qn:negative-question",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28821,7 +28831,8 @@
         "pos:verb",
         "topic:verb-pattern",
         "topic:question-negation",
-        "qn:negative-question"
+        "qn:negative-question",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31708,7 +31719,8 @@
         "en:you",
         "topic:en-multi-sense",
         "topic:question-negation",
-        "qn:inversion-question"
+        "qn:inversion-question",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -65261,7 +65273,8 @@
         "topic:en-multi-sense",
         "topic:verb-pattern",
         "topic:question-negation",
-        "qn:do-support-question"
+        "qn:do-support-question",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -65282,7 +65295,8 @@
         "en:she",
         "topic:verb-pattern",
         "topic:question-negation",
-        "qn:do-support-question"
+        "qn:do-support-question",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -65303,7 +65317,8 @@
         "en:they",
         "topic:verb-pattern",
         "topic:question-negation",
-        "qn:do-support-question"
+        "qn:do-support-question",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -65323,7 +65338,8 @@
         "es:hago",
         "topic:verb-pattern",
         "topic:question-negation",
-        "qn:do-support-negation"
+        "qn:do-support-negation",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -65344,7 +65360,8 @@
         "en:they",
         "topic:verb-pattern",
         "topic:question-negation",
-        "qn:do-support-negation"
+        "qn:do-support-negation",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -68560,7 +68577,8 @@
         "topic:en-multi-sense",
         "topic:verb-pattern",
         "topic:question-negation",
-        "qn:do-support-question"
+        "qn:do-support-question",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -68684,7 +68702,8 @@
         "es:sí",
         "topic:verb-pattern",
         "topic:question-negation",
-        "qn:emphatic"
+        "qn:emphatic",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -68705,7 +68724,8 @@
         "en:did",
         "topic:verb-pattern",
         "topic:question-negation",
-        "qn:emphatic"
+        "qn:emphatic",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -68776,7 +68796,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "topic:question-negation",
-        "qn:inversion-question"
+        "qn:inversion-question",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -69092,7 +69113,8 @@
         "topic:en-multi-sense",
         "topic:verb-pattern",
         "topic:question-negation",
-        "qn:do-support-question"
+        "qn:do-support-question",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -69484,7 +69506,8 @@
         "pos:verb",
         "topic:en-multi-sense",
         "topic:question-negation",
-        "qn:inversion-question"
+        "qn:inversion-question",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -69529,7 +69552,8 @@
         "es:estar",
         "topic:multi-sense",
         "topic:question-negation",
-        "qn:inversion-question"
+        "qn:inversion-question",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -69578,7 +69602,8 @@
         "topic:en-multi-sense",
         "topic:verb-pattern",
         "topic:question-negation",
-        "qn:inversion-question"
+        "qn:inversion-question",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -69623,7 +69648,8 @@
         "topic:multi-sense",
         "topic:verb-pattern",
         "topic:question-negation",
-        "qn:inversion-question"
+        "qn:inversion-question",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -69728,7 +69754,8 @@
         "topic:en-multi-sense",
         "topic:verb-pattern",
         "topic:question-negation",
-        "qn:inversion-question"
+        "qn:inversion-question",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -69777,7 +69804,8 @@
         "topic:en-multi-sense",
         "topic:verb-pattern",
         "topic:question-negation",
-        "qn:inversion-question"
+        "qn:inversion-question",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -69851,7 +69879,8 @@
         "topic:en-multi-sense",
         "topic:verb-pattern",
         "topic:question-negation",
-        "qn:inversion-question"
+        "qn:inversion-question",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -69873,7 +69902,8 @@
         "topic:en-multi-sense",
         "topic:verb-pattern",
         "topic:question-negation",
-        "qn:inversion-question"
+        "qn:inversion-question",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -69919,7 +69949,8 @@
         "topic:en-multi-sense",
         "topic:verb-pattern",
         "topic:question-negation",
-        "qn:inversion-question"
+        "qn:inversion-question",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -86968,7 +86999,8 @@
         "construction:auxiliary-do",
         "grammar:question",
         "es:comer",
-        "en:eat"
+        "en:eat",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -86987,7 +87019,8 @@
         "construction:auxiliary-do",
         "grammar:question",
         "es:comer",
-        "en:eat"
+        "en:eat",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -87007,7 +87040,8 @@
         "grammar:question",
         "form:preterite",
         "es:ir",
-        "en:go"
+        "en:go",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -87025,7 +87059,8 @@
         "qn:inversion-question",
         "grammar:question",
         "es:ser",
-        "en:is"
+        "en:is",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -87043,7 +87078,8 @@
         "qn:inversion-question",
         "grammar:question",
         "es:estar",
-        "en:are"
+        "en:are",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -87167,9 +87203,10 @@
         "sound:stressed-does",
         "es:sí",
         "en:does",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "reference"
     },
     {
       "id": "do26qqvb93",
