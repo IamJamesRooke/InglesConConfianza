@@ -164,7 +164,16 @@ skimming history, not a machine-readable state store.
   single highest-signal step of the checklist on this page — worth
   running explicitly (compare exampleSpanish AND exampleEnglish, not
   just Spanish) on every remaining lemma facet. Commits `d55c5db1`
-  through `662e5b4d`. Next: es:jugar onward alphabetically — roughly
-  150 more lemma facets after that, then the two Mappings pages'
-  remaining es:/en: facets (word-function words like de/en/con/por/
-  que, not verbs) and Phrasal Verbs.
+  through `662e5b4d`.
+- **2026-09-05, Verbs page, j-p done** — es:jugar through es:prestar
+  (~40 lemmas, ~350 rows). Two more "identical example as a sibling"
+  fixes: pagar (bare) vs pagar por [algo], and left necesitar la
+  información específica untouched (still flagged for the user from
+  the Determiners audit — don't re-tag flagged rows as reviewed just
+  because they surface again in a later facet). Otherwise a long clean
+  stretch — llegar/llevar/mantener/pasar/pedir/pegar/pensar/perder all
+  checked out with distinct correct examples on every row. Commits
+  `546107db` through `8a0dd250`. Next: es:producir onward
+  alphabetically — roughly 165 more lemma facets after that, then the
+  two Mappings pages' remaining es:/en: facets (word-function words
+  like de/en/con/por/que, not verbs) and Phrasal Verbs.
