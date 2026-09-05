@@ -1,0 +1,16 @@
+[el] padre	father	Mi padre trabaja en un banco.	My father works at a bank.	core	pos:noun|gender:masculine|es:padre|en:father|topic:people|topic:family
+[la] madre	mother	Mi madre cocina muy bien.	My mother cooks very well.	core	pos:noun|gender:feminine|es:madre|en:mother|topic:people|topic:family
+papá	dad	Papá llega a casa a las seis.	Dad gets home at six.	supporting	pos:noun|gender:masculine|es:papá|en:dad|topic:people|topic:family
+mamá	mom	Mamá está en la cocina.	Mom is in the kitchen.	supporting	pos:noun|gender:feminine|es:mamá|en:mom|topic:people|topic:family
+[el] hijo	son	Tengo un hijo de diez años.	I have a ten-year-old son.	core	pos:noun|gender:masculine|es:hijo|en:son|topic:people|topic:family
+[la] hija	daughter	Su hija estudia medicina.	Her daughter is studying medicine.	core	pos:noun|gender:feminine|es:hija|en:daughter|topic:people|topic:family
+[el] abuelo	grandfather	Mi abuelo cuenta historias increíbles.	My grandfather tells amazing stories.	supporting	pos:noun|gender:masculine|es:abuelo|en:grandfather|topic:people|topic:family
+[la] abuela	grandmother	Mi abuela vive con nosotros.	My grandmother lives with us.	supporting	pos:noun|gender:feminine|es:abuela|en:grandmother|topic:people|topic:family
+[el] tío	uncle	Mi tío vive en Madrid.	My uncle lives in Madrid.	supporting	pos:noun|gender:masculine|es:tío|en:uncle|topic:people|topic:family
+[la] tía	aunt	Mi tía nos visita cada verano.	My aunt visits us every summer.	supporting	pos:noun|gender:feminine|es:tía|en:aunt|topic:people|topic:family
+[el] primo	cousin	Mi primo juega al fútbol los sábados.	My cousin plays soccer on Saturdays.	supporting	pos:noun|gender:masculine|es:primo|en:cousin|topic:people|topic:family
+[la] prima	cousin	Mi prima vive en otra ciudad.	My cousin lives in another city.	supporting	pos:noun|gender:feminine|es:prima|en:cousin|topic:people|topic:family
+[el] sobrino	nephew	Mi sobrino cumple ocho años mañana.	My nephew turns eight tomorrow.	reference	pos:noun|gender:masculine|es:sobrino|en:nephew|topic:people|topic:family
+[la] sobrina	niece	Mi sobrina me escribió una carta.	My niece wrote me a letter.	reference	pos:noun|gender:feminine|es:sobrina|en:niece|topic:people|topic:family
+[el] novio	boyfriend	Mi novio me llamó anoche.	My boyfriend called me last night.	supporting	pos:noun|gender:masculine|es:novio|en:boyfriend|topic:people|topic:family
+[la] novia	girlfriend	Su novia vive en otra ciudad.	His girlfriend lives in another city.	supporting	pos:noun|gender:feminine|es:novia|en:girlfriend|topic:people|topic:family

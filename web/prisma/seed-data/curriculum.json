@@ -85205,6 +85205,294 @@
         "topic:transformation"
       ],
       "curriculumRole": "reference"
+    },
+    {
+      "id": "dx6vhe7r75",
+      "spanish": "[el] padre",
+      "english": "father",
+      "example": {
+        "spanish": "Mi padre trabaja en un banco.",
+        "english": "My father works at a bank."
+      },
+      "collections": [
+        "pos:noun",
+        "gender:masculine",
+        "es:padre",
+        "en:father",
+        "topic:people",
+        "topic:family"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "eeut7vl51s",
+      "spanish": "[la] madre",
+      "english": "mother",
+      "example": {
+        "spanish": "Mi madre cocina muy bien.",
+        "english": "My mother cooks very well."
+      },
+      "collections": [
+        "pos:noun",
+        "gender:feminine",
+        "es:madre",
+        "en:mother",
+        "topic:people",
+        "topic:family"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "n6mjo511oi",
+      "spanish": "papá",
+      "english": "dad",
+      "example": {
+        "spanish": "Papá llega a casa a las seis.",
+        "english": "Dad gets home at six."
+      },
+      "collections": [
+        "pos:noun",
+        "gender:masculine",
+        "es:papá",
+        "en:dad",
+        "topic:people",
+        "topic:family"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "2quw8jbkjb",
+      "spanish": "mamá",
+      "english": "mom",
+      "example": {
+        "spanish": "Mamá está en la cocina.",
+        "english": "Mom is in the kitchen."
+      },
+      "collections": [
+        "pos:noun",
+        "gender:feminine",
+        "es:mamá",
+        "en:mom",
+        "topic:people",
+        "topic:family"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "c0vy1nf506",
+      "spanish": "[el] hijo",
+      "english": "son",
+      "example": {
+        "spanish": "Tengo un hijo de diez años.",
+        "english": "I have a ten-year-old son."
+      },
+      "collections": [
+        "pos:noun",
+        "gender:masculine",
+        "es:hijo",
+        "en:son",
+        "topic:people",
+        "topic:family"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "m2t3colc1y",
+      "spanish": "[la] hija",
+      "english": "daughter",
+      "example": {
+        "spanish": "Su hija estudia medicina.",
+        "english": "Her daughter is studying medicine."
+      },
+      "collections": [
+        "pos:noun",
+        "gender:feminine",
+        "es:hija",
+        "en:daughter",
+        "topic:people",
+        "topic:family"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "hmxy7nv3cf",
+      "spanish": "[el] abuelo",
+      "english": "grandfather",
+      "example": {
+        "spanish": "Mi abuelo cuenta historias increíbles.",
+        "english": "My grandfather tells amazing stories."
+      },
+      "collections": [
+        "pos:noun",
+        "gender:masculine",
+        "es:abuelo",
+        "en:grandfather",
+        "topic:people",
+        "topic:family"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "pjffiupfcx",
+      "spanish": "[la] abuela",
+      "english": "grandmother",
+      "example": {
+        "spanish": "Mi abuela vive con nosotros.",
+        "english": "My grandmother lives with us."
+      },
+      "collections": [
+        "pos:noun",
+        "gender:feminine",
+        "es:abuela",
+        "en:grandmother",
+        "topic:people",
+        "topic:family"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "3ug1p1ji94",
+      "spanish": "[el] tío",
+      "english": "uncle",
+      "example": {
+        "spanish": "Mi tío vive en Madrid.",
+        "english": "My uncle lives in Madrid."
+      },
+      "collections": [
+        "pos:noun",
+        "gender:masculine",
+        "es:tío",
+        "en:uncle",
+        "topic:people",
+        "topic:family"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "b6kbo6zieu",
+      "spanish": "[la] tía",
+      "english": "aunt",
+      "example": {
+        "spanish": "Mi tía nos visita cada verano.",
+        "english": "My aunt visits us every summer."
+      },
+      "collections": [
+        "pos:noun",
+        "gender:feminine",
+        "es:tía",
+        "en:aunt",
+        "topic:people",
+        "topic:family"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "3ctodg5tkn",
+      "spanish": "[el] primo",
+      "english": "cousin",
+      "example": {
+        "spanish": "Mi primo juega al fútbol los sábados.",
+        "english": "My cousin plays soccer on Saturdays."
+      },
+      "collections": [
+        "pos:noun",
+        "gender:masculine",
+        "es:primo",
+        "en:cousin",
+        "topic:people",
+        "topic:family"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "7supxyfj1b",
+      "spanish": "[la] prima",
+      "english": "cousin",
+      "example": {
+        "spanish": "Mi prima vive en otra ciudad.",
+        "english": "My cousin lives in another city."
+      },
+      "collections": [
+        "pos:noun",
+        "gender:feminine",
+        "es:prima",
+        "en:cousin",
+        "topic:people",
+        "topic:family"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "7irr9k23b2",
+      "spanish": "[el] sobrino",
+      "english": "nephew",
+      "example": {
+        "spanish": "Mi sobrino cumple ocho años mañana.",
+        "english": "My nephew turns eight tomorrow."
+      },
+      "collections": [
+        "pos:noun",
+        "gender:masculine",
+        "es:sobrino",
+        "en:nephew",
+        "topic:people",
+        "topic:family"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "oqgvl7r1yh",
+      "spanish": "[la] sobrina",
+      "english": "niece",
+      "example": {
+        "spanish": "Mi sobrina me escribió una carta.",
+        "english": "My niece wrote me a letter."
+      },
+      "collections": [
+        "pos:noun",
+        "gender:feminine",
+        "es:sobrina",
+        "en:niece",
+        "topic:people",
+        "topic:family"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "omi0kcbcjp",
+      "spanish": "[el] novio",
+      "english": "boyfriend",
+      "example": {
+        "spanish": "Mi novio me llamó anoche.",
+        "english": "My boyfriend called me last night."
+      },
+      "collections": [
+        "pos:noun",
+        "gender:masculine",
+        "es:novio",
+        "en:boyfriend",
+        "topic:people",
+        "topic:family"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "amig0ldofo",
+      "spanish": "[la] novia",
+      "english": "girlfriend",
+      "example": {
+        "spanish": "Su novia vive en otra ciudad.",
+        "english": "His girlfriend lives in another city."
+      },
+      "collections": [
+        "pos:noun",
+        "gender:feminine",
+        "es:novia",
+        "en:girlfriend",
+        "topic:people",
+        "topic:family"
+      ],
+      "curriculumRole": "supporting"
     }
   ]
 }
