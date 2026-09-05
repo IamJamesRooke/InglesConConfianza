@@ -2331,7 +2331,8 @@
         "en:that",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "grammar:discourse"
+        "grammar:discourse",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -2352,7 +2353,8 @@
         "en:in",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "grammar:discourse"
+        "grammar:discourse",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -2373,7 +2375,8 @@
         "en:that",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "grammar:discourse"
+        "grammar:discourse",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -2393,7 +2396,8 @@
         "en:put",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "grammar:discourse"
+        "grammar:discourse",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -2412,7 +2416,8 @@
         "es:decir",
         "en:let",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -2433,7 +2438,8 @@
         "en:so",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "grammar:discourse"
+        "grammar:discourse",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -3509,7 +3515,8 @@
         "en:given",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "grammar:reason"
+        "grammar:reason",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -4943,7 +4950,8 @@
         "es:puesto",
         "en:since",
         "topic:multi-sense",
-        "grammar:reason"
+        "grammar:reason",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -8430,7 +8438,8 @@
         "es:haber",
         "en:there",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -9348,7 +9357,8 @@
         "en:in",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "grammar:discourse"
+        "grammar:discourse",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -11930,7 +11940,8 @@
         "es:de",
         "en:despite",
         "topic:multi-sense",
-        "grammar:concession"
+        "grammar:concession",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -11952,7 +11963,8 @@
         "en:in",
         "topic:en-multi-sense",
         "topic:phrasal-verb",
-        "grammar:concession"
+        "grammar:concession",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -11972,7 +11984,8 @@
         "en:even",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "grammar:concession"
+        "grammar:concession",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -11991,7 +12004,8 @@
         "construction:map-que-that",
         "en:despite",
         "topic:en-multi-sense",
-        "grammar:concession"
+        "grammar:concession",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -12434,7 +12448,8 @@
         "es:poder",
         "en:could",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -12561,7 +12576,8 @@
         "es:si",
         "en:if",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -12798,7 +12814,8 @@
         "es:poder",
         "en:be",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -13126,7 +13143,8 @@
         "es:poder",
         "en:able",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -13144,7 +13162,8 @@
         "grammar:modal",
         "es:poder",
         "en:happen",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -16788,7 +16807,8 @@
         "en:believe",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "grammar:concession"
+        "grammar:concession",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -16985,7 +17005,8 @@
         "en:should",
         "pos:verb",
         "topic:multi-sense",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -17006,7 +17027,8 @@
         "en:ought",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -17319,7 +17341,8 @@
         "es:debido",
         "en:because",
         "topic:multi-sense",
-        "grammar:reason"
+        "grammar:reason",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -17339,7 +17362,8 @@
         "es:debido",
         "en:since",
         "topic:multi-sense",
-        "grammar:reason"
+        "grammar:reason",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26177,7 +26201,8 @@
         "pos:connector",
         "es:ante",
         "en:above",
-        "grammar:discourse"
+        "grammar:discourse",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26265,7 +26290,8 @@
         "grammar:concession",
         "es:aun",
         "en:even",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26274,15 +26300,16 @@
       "spanish": "así que",
       "english": "so",
       "example": {
-        "spanish": "así que",
-        "english": "so"
+        "spanish": "Llovía, así que nos quedamos en casa.",
+        "english": "It was raining, so we stayed home."
       },
       "collections": [
         "pos:connector",
         "grammar:sentence-structure",
         "es:así",
         "en:so",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -26631,7 +26658,8 @@
         "grammar:concession",
         "es:si",
         "en:although",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26648,7 +26676,8 @@
         "alternative",
         "es:bien",
         "en:either",
-        "grammar:correlative"
+        "grammar:correlative",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26836,7 +26865,8 @@
         "es:por",
         "en:by",
         "topic:multi-sense",
-        "grammar:discourse"
+        "grammar:discourse",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -27603,7 +27633,8 @@
         "en:consequence",
         "es:luego",
         "en:therefore",
-        "grammar:reason"
+        "grammar:reason",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -27654,7 +27685,8 @@
         "pos:connector",
         "es:luego",
         "en:then",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28080,7 +28112,8 @@
         "es:entonces",
         "en:then",
         "topic:en-multi-sense",
-        "grammar:sequence"
+        "grammar:sequence",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28129,7 +28162,8 @@
         "grammar:correlative",
         "es:entre",
         "en:more",
-        "pos:connector"
+        "pos:connector",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28868,7 +28902,8 @@
         "pos:connector",
         "grammar:contrast",
         "es:mientras",
-        "en:whereas"
+        "en:whereas",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -29155,7 +29190,8 @@
         "grammar:reason",
         "es:por",
         "en:why",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -29252,7 +29288,8 @@
         "es:pues",
         "en:then",
         "topic:en-multi-sense",
-        "grammar:sequence"
+        "grammar:sequence",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -29478,7 +29515,8 @@
         "morphology:prefix-be",
         "grammar:sentence-structure",
         "es:porque",
-        "en:because"
+        "en:because",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -29487,8 +29525,8 @@
       "spanish": "porque",
       "english": "since",
       "example": {
-        "spanish": "porque",
-        "english": "since"
+        "spanish": "No fuimos, porque llovía.",
+        "english": "We didn't go, since it was raining."
       },
       "collections": [
         "es:que",
@@ -29496,7 +29534,8 @@
         "pos:connector",
         "es:porque",
         "en:since",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -29505,8 +29544,8 @@
       "spanish": "porque",
       "english": "as",
       "example": {
-        "spanish": "porque",
-        "english": "as"
+        "spanish": "Nos quedamos en casa, porque llovía.",
+        "english": "We stayed home, as it was raining."
       },
       "collections": [
         "es:que",
@@ -29515,7 +29554,8 @@
         "es:porque",
         "en:as",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -29724,8 +29764,8 @@
       "spanish": "si",
       "english": "if",
       "example": {
-        "spanish": "si",
-        "english": "if"
+        "spanish": "Si llueve, no saldremos.",
+        "english": "If it rains, we won't go out."
       },
       "collections": [
         "pos:connector",
@@ -29734,7 +29774,8 @@
         "es:si",
         "en:if",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -29783,7 +29824,8 @@
         "no",
         "es:solo",
         "en:only",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -29853,7 +29895,8 @@
         "es:siempre",
         "en:as",
         "topic:en-multi-sense",
-        "grammar:conditional"
+        "grammar:conditional",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -29987,7 +30030,8 @@
         "grammar:comparison",
         "es:tanto",
         "en:as",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31077,7 +31121,8 @@
         "pos:connector",
         "grammar:correlative",
         "es:sino",
-        "en:but"
+        "en:but",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31093,7 +31138,8 @@
         "grammar:concession",
         "pos:connector",
         "es:aunque",
-        "en:although"
+        "en:although",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31111,7 +31157,8 @@
         "en:although",
         "pos:connector",
         "en:despite",
-        "grammar:concession"
+        "grammar:concession",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31129,7 +31176,8 @@
         "pos:connector",
         "grammar:sentence-structure",
         "es:pero",
-        "en:but"
+        "en:but",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -31193,7 +31241,8 @@
         "en:in",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "grammar:discourse"
+        "grammar:discourse",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31230,7 +31279,8 @@
         "es:y",
         "pos:connector",
         "grammar:sentence-structure",
-        "en:and"
+        "en:and",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -31248,7 +31298,8 @@
         "pos:connector",
         "before i sound",
         "grammar:sentence-structure",
-        "en:and"
+        "en:and",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31445,7 +31496,8 @@
         "es:pensándolo",
         "en:then",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31556,7 +31608,8 @@
         "grammar:reason",
         "pos:connector",
         "es:ya",
-        "en:because"
+        "en:because",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31573,7 +31626,8 @@
         "pos:connector",
         "register:formal",
         "es:debido",
-        "en:because"
+        "en:because",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58793,7 +58847,8 @@
         "pos:connector",
         "es:para",
         "en:begin",
-        "grammar:sequence"
+        "grammar:sequence",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -64908,7 +64963,8 @@
         "pos:connector",
         "es:aunque",
         "en:although",
-        "grammar:concession"
+        "grammar:concession",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -65314,7 +65370,8 @@
         "es:por",
         "en:therefore",
         "topic:multi-sense",
-        "grammar:discourse"
+        "grammar:discourse",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -66251,7 +66308,8 @@
         "en:could",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -66354,7 +66412,8 @@
         "en:would",
         "pos:verb",
         "topic:en-multi-sense",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -68971,7 +69030,8 @@
       "collections": [
         "pos:connector",
         "grammar:sentence-structure",
-        "en:or"
+        "en:or",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -68987,7 +69047,8 @@
         "pos:connector",
         "grammar:sentence-structure",
         "before o sound",
-        "en:or"
+        "en:or",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -69004,7 +69065,8 @@
         "grammar:comparison",
         "es:que",
         "en:than",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -69022,7 +69084,8 @@
         "es:que",
         "en:that",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -69039,7 +69102,8 @@
         "topic:time-connector",
         "cuando vs cuándo",
         "es:cuando",
-        "en:when"
+        "en:when",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -69055,7 +69119,8 @@
         "pos:connector",
         "topic:time-connector",
         "es:mientras",
-        "en:while"
+        "en:while",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -69071,7 +69136,8 @@
         "pos:connector",
         "topic:time-connector",
         "es:antes",
-        "en:before"
+        "en:before",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -69088,7 +69154,8 @@
         "topic:time-connector",
         "es:después",
         "en:after",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -69105,7 +69172,8 @@
         "grammar:contrast",
         "grammar:concession",
         "es:aunque",
-        "en:although"
+        "en:although",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -69120,7 +69188,8 @@
       "collections": [
         "pos:connector",
         "en:unless",
-        "grammar:conditional"
+        "grammar:conditional",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -69138,7 +69207,8 @@
         "es:siempre",
         "en:as",
         "topic:en-multi-sense",
-        "grammar:conditional"
+        "grammar:conditional",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -69157,7 +69227,8 @@
         "es:con",
         "en:provided",
         "topic:multi-sense",
-        "grammar:conditional"
+        "grammar:conditional",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -69175,7 +69246,8 @@
         "even if",
         "es:incluso",
         "en:even",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -69800,7 +69872,8 @@
         "es:si",
         "en:if",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -69821,7 +69894,8 @@
         "es:si",
         "en:if",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -69842,7 +69916,8 @@
         "es:si",
         "en:if",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -69863,7 +69938,8 @@
         "es:si",
         "en:if",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -69885,7 +69961,8 @@
         "es:si",
         "en:if",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -69905,7 +69982,8 @@
         "es:si",
         "en:if",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -69925,7 +70003,8 @@
         "es:si",
         "en:if",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
