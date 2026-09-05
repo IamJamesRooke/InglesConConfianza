@@ -2298,7 +2298,8 @@
         "es:ser",
         "en:that",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "grammar:discourse"
       ],
       "curriculumRole": "reference"
     },
@@ -2318,7 +2319,8 @@
         "es:ser",
         "en:in",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "grammar:discourse"
       ],
       "curriculumRole": "reference"
     },
@@ -2338,7 +2340,8 @@
         "es:dicho",
         "en:that",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "grammar:discourse"
       ],
       "curriculumRole": "reference"
     },
@@ -2357,7 +2360,8 @@
         "es:dicho",
         "en:put",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "grammar:discourse"
       ],
       "curriculumRole": "reference"
     },
@@ -2396,7 +2400,8 @@
         "es:por",
         "en:so",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "grammar:discourse"
       ],
       "curriculumRole": "reference"
     },
@@ -3459,7 +3464,8 @@
         "es:dado",
         "en:given",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "grammar:reason"
       ],
       "curriculumRole": "reference"
     },
@@ -4863,7 +4869,8 @@
         "form:participle",
         "es:puesto",
         "en:since",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "grammar:reason"
       ],
       "curriculumRole": "reference"
     },
@@ -9190,7 +9197,8 @@
         "es:de",
         "en:in",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "grammar:discourse"
       ],
       "curriculumRole": "reference"
     },
@@ -11731,7 +11739,8 @@
         "pos:connector",
         "es:de",
         "en:despite",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "grammar:concession"
       ],
       "curriculumRole": "reference"
     },
@@ -11752,7 +11761,8 @@
         "en:of",
         "en:in",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "grammar:concession"
       ],
       "curriculumRole": "reference"
     },
@@ -11771,7 +11781,8 @@
         "es:que",
         "en:even",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "grammar:concession"
       ],
       "curriculumRole": "supporting"
     },
@@ -11789,7 +11800,8 @@
         "en:that",
         "construction:map-que-that",
         "en:despite",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "grammar:concession"
       ],
       "curriculumRole": "reference"
     },
@@ -16491,7 +16503,8 @@
         "es:aunque",
         "en:believe",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "grammar:concession"
       ],
       "curriculumRole": "reference"
     },
@@ -17006,7 +17019,8 @@
         "form:participle",
         "es:debido",
         "en:because",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "grammar:reason"
       ],
       "curriculumRole": "reference"
     },
@@ -17025,7 +17039,8 @@
         "form:participle",
         "es:debido",
         "en:since",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "grammar:reason"
       ],
       "curriculumRole": "reference"
     },
@@ -25700,7 +25715,8 @@
         "grammar:fixed-expression",
         "pos:connector",
         "es:ante",
-        "en:above"
+        "en:above",
+        "grammar:discourse"
       ],
       "curriculumRole": "reference"
     },
@@ -26337,7 +26353,8 @@
         "pos:connector",
         "es:por",
         "en:by",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "grammar:discourse"
       ],
       "curriculumRole": "reference"
     },
@@ -27562,7 +27579,8 @@
         "pos:connector",
         "es:entonces",
         "en:then",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "grammar:sequence"
       ],
       "curriculumRole": "reference"
     },
@@ -28687,7 +28705,8 @@
         "dialect:colombian-spanish",
         "es:pues",
         "en:then",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "grammar:sequence"
       ],
       "curriculumRole": "reference"
     },
@@ -29252,7 +29271,8 @@
         "pos:connector",
         "topic:time",
         "es:siempre",
-        "en:whenever"
+        "en:whenever",
+        "topic:time-connector"
       ],
       "curriculumRole": "reference"
     },
@@ -29268,7 +29288,8 @@
         "pos:connector",
         "es:siempre",
         "en:as",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "grammar:conditional"
       ],
       "curriculumRole": "reference"
     },
@@ -29415,7 +29436,8 @@
         "pos:connector",
         "topic:time",
         "es:mientras",
-        "en:meanwhile"
+        "en:meanwhile",
+        "topic:time-connector"
       ],
       "curriculumRole": "reference"
     },
@@ -30554,7 +30576,8 @@
         "es:en",
         "en:in",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "grammar:discourse"
       ],
       "curriculumRole": "reference"
     },
@@ -30723,7 +30746,8 @@
         "topic:time",
         "es:después",
         "en:after",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:time-connector"
       ],
       "curriculumRole": "reference"
     },
@@ -30955,7 +30979,8 @@
         "pos:connector",
         "topic:time",
         "es:antes",
-        "en:before"
+        "en:before",
+        "topic:time-connector"
       ],
       "curriculumRole": "reference"
     },
@@ -32364,7 +32389,8 @@
         "pos:connector",
         "topic:time",
         "es:ahora",
-        "en:now"
+        "en:now",
+        "topic:time-connector"
       ],
       "curriculumRole": "reference"
     },
@@ -62986,7 +63012,8 @@
         "pos:connector",
         "es:por",
         "en:therefore",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "grammar:discourse"
       ],
       "curriculumRole": "reference"
     },
@@ -66751,7 +66778,8 @@
         "as long as",
         "es:siempre",
         "en:as",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "grammar:conditional"
       ],
       "curriculumRole": "reference"
     },
@@ -66769,7 +66797,8 @@
         "register:formal",
         "es:con",
         "en:provided",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "grammar:conditional"
       ],
       "curriculumRole": "reference"
     },

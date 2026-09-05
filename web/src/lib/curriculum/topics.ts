@@ -276,6 +276,11 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       { collection: "grammar:contrast", label: "Contrast" },
       { collection: "grammar:addition", label: "Addition" },
       { collection: "topic:time-connector", label: "Time" },
+      { collection: "grammar:discourse", label: "Discourse markers (that is, by the way)" },
+      { collection: "grammar:sequence", label: "Sequence (then)" },
+      { collection: "grammar:conditional", label: "Conditional (as long as, unless)" },
+      { collection: "grammar:correlative", label: "Correlative (either...or, neither...nor)" },
+      { collection: "grammar:comparison", label: "Comparison (than)" },
     ],
   },
   {
