@@ -25124,7 +25124,8 @@
         "construction:prepositional-verb",
         "particle:for",
         "topic:phrasal-verb",
-        "topic:verb-other"
+        "topic:verb-other",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -27542,7 +27543,8 @@
         "es:bastar",
         "en:enough",
         "pos:verb",
-        "topic:verb-other"
+        "topic:verb-other",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31198,7 +31200,8 @@
         "es:leer",
         "en:read",
         "pos:verb",
-        "topic:verb-other"
+        "topic:verb-other",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -31416,7 +31419,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "topic:phrasal-verb",
-        "topic:verb-other"
+        "topic:verb-other",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31857,7 +31861,8 @@
         "es:cruzar",
         "en:cross",
         "pos:verb",
-        "topic:verb-other"
+        "topic:verb-other",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32443,7 +32448,8 @@
         "pos:verb",
         "particle:before",
         "topic:phrasal-verb",
-        "topic:verb-other"
+        "topic:verb-other",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -33018,7 +33024,8 @@
         "es:aumentar",
         "en:build",
         "pos:verb",
-        "topic:verb-other"
+        "topic:verb-other",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -33037,7 +33044,8 @@
         "en:build",
         "pos:verb",
         "topic:phrasal-verb",
-        "topic:verb-other"
+        "topic:verb-other",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -33156,7 +33164,8 @@
         "pos:verb",
         "construction:prepositional-verb",
         "topic:phrasal-verb",
-        "topic:verb-other"
+        "topic:verb-other",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -33219,7 +33228,8 @@
         "en:catch",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:verb-other"
+        "topic:verb-other",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -33446,7 +33456,8 @@
         "es:despejar",
         "en:clear",
         "pos:verb",
-        "topic:verb-other"
+        "topic:verb-other",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -33465,7 +33476,8 @@
         "es:procesar",
         "en:clear",
         "pos:verb",
-        "topic:verb-other"
+        "topic:verb-other",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34646,7 +34658,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "topic:phrasal-verb",
-        "topic:verb-other"
+        "topic:verb-other",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -67743,7 +67756,8 @@
         "es:haciendo",
         "en:doing",
         "pos:verb",
-        "topic:verb-other"
+        "topic:verb-other",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -67782,7 +67796,8 @@
         "es:hecho",
         "en:done",
         "pos:verb",
-        "topic:verb-other"
+        "topic:verb-other",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -69655,7 +69670,8 @@
         "es:tratar",
         "en:try",
         "pos:verb",
-        "topic:verb-other"
+        "topic:verb-other",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -71984,7 +72000,8 @@
         "grammar:hypothetical",
         "es:ojalá",
         "pos:verb",
-        "topic:verb-other"
+        "topic:verb-other",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -72023,7 +72040,8 @@
         "form:past-participle",
         "es:ojalá",
         "pos:verb",
-        "topic:verb-other"
+        "topic:verb-other",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -72041,7 +72059,8 @@
         "wish + would",
         "es:ojalá",
         "pos:verb",
-        "topic:verb-other"
+        "topic:verb-other",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -72896,7 +72915,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "topic:phrasal-verb",
-        "topic:verb-other"
+        "topic:verb-other",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -72940,7 +72960,8 @@
         "en:pick",
         "pos:verb",
         "topic:phrasal-verb",
-        "topic:verb-other"
+        "topic:verb-other",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -72963,7 +72984,8 @@
         "pos:verb",
         "particle:after",
         "topic:phrasal-verb",
-        "topic:verb-other"
+        "topic:verb-other",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -72985,7 +73007,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "topic:phrasal-verb",
-        "topic:verb-other"
+        "topic:verb-other",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
