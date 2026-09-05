@@ -69770,7 +69770,9 @@
         "sound:needs-review",
         "es:arise",
         "en:arise",
-        "pos:verb"
+        "pos:verb",
+        "sound:rose-arose",
+        "sound:past-irregular-rose-arose"
       ],
       "curriculumRole": "reference"
     },
@@ -69789,7 +69791,9 @@
         "sound:needs-review",
         "es:arise",
         "en:arise",
-        "pos:verb"
+        "pos:verb",
+        "sound:risen-arisen",
+        "sound:past-participle-irregular-risen-arisen"
       ],
       "curriculumRole": "reference"
     },
@@ -69808,7 +69812,9 @@
         "sound:needs-review",
         "es:awake",
         "en:awake",
-        "pos:verb"
+        "pos:verb",
+        "sound:spoke-broke-woke-awoke",
+        "sound:past-irregular-spoke-broke-woke-awoke"
       ],
       "curriculumRole": "reference"
     },
@@ -69827,7 +69833,8 @@
         "sound:needs-review",
         "es:awake",
         "en:awake",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -69868,7 +69875,8 @@
         "sound:needs-review",
         "es:awake",
         "en:awake",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -69887,7 +69895,8 @@
         "sound:needs-review",
         "es:be",
         "en:be",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -69906,7 +69915,8 @@
         "sound:needs-review",
         "es:be",
         "en:be",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -69925,7 +69935,8 @@
         "sound:needs-review",
         "es:be",
         "en:be",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -69944,7 +69955,8 @@
         "sound:needs-review",
         "es:bear",
         "en:bear",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -69963,7 +69975,8 @@
         "sound:needs-review",
         "es:bear",
         "en:bear",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -69982,7 +69995,9 @@
         "sound:needs-review",
         "es:bear",
         "en:bear",
-        "pos:verb"
+        "pos:verb",
+        "sound:sworn-torn-worn-drawn-born",
+        "sound:past-participle-irregular-sworn-torn-worn-drawn-born"
       ],
       "curriculumRole": "reference"
     },
@@ -70001,7 +70016,8 @@
         "sound:needs-review",
         "es:beat",
         "en:beat",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -70020,7 +70036,9 @@
         "sound:needs-review",
         "es:beat",
         "en:beat",
-        "pos:verb"
+        "pos:verb",
+        "sound:eaten-beaten",
+        "sound:past-participle-irregular-eaten-beaten"
       ],
       "curriculumRole": "reference"
     },
@@ -70039,7 +70057,9 @@
         "sound:needs-review",
         "es:become",
         "en:become",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:came-became",
+        "sound:past-irregular-came-became"
       ],
       "curriculumRole": "supporting"
     },
@@ -70058,7 +70078,9 @@
         "sound:needs-review",
         "es:become",
         "en:become",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:run-come-become",
+        "sound:past-participle-irregular-run-come-become"
       ],
       "curriculumRole": "supporting"
     },
@@ -70403,7 +70425,9 @@
         "sound:needs-review",
         "es:bet",
         "en:bet",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "reference"
     },
@@ -70423,7 +70447,9 @@
         "sound:needs-review",
         "es:bet",
         "en:bet",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-participle-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "reference"
     },
@@ -70442,7 +70468,8 @@
         "sound:needs-review",
         "es:bid",
         "en:bid",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -70461,7 +70488,8 @@
         "sound:needs-review",
         "es:bid",
         "en:bid",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -70480,7 +70508,9 @@
         "sound:needs-review",
         "es:bid",
         "en:bid",
-        "pos:verb"
+        "pos:verb",
+        "sound:forbidden-bidden-trodden",
+        "sound:past-participle-irregular-forbidden-bidden-trodden"
       ],
       "curriculumRole": "reference"
     },
@@ -70545,7 +70575,9 @@
         "sound:needs-review",
         "es:bite",
         "en:bite",
-        "pos:verb"
+        "pos:verb",
+        "sound:lit-bit",
+        "sound:past-irregular-lit-bit"
       ],
       "curriculumRole": "reference"
     },
@@ -70632,7 +70664,9 @@
         "sound:needs-review",
         "es:blow",
         "en:blow",
-        "pos:verb"
+        "pos:verb",
+        "sound:blew-grew-knew-threw-drew-flew",
+        "sound:past-irregular-blew-grew-knew-threw-drew-flew"
       ],
       "curriculumRole": "reference"
     },
@@ -70673,7 +70707,9 @@
         "sound:needs-review",
         "es:break",
         "en:break",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:spoke-broke-woke-awoke",
+        "sound:past-irregular-spoke-broke-woke-awoke"
       ],
       "curriculumRole": "supporting"
     },
@@ -70807,7 +70843,9 @@
         "sound:needs-review",
         "es:broadcast",
         "en:broadcast",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "reference"
     },
@@ -70827,7 +70865,9 @@
         "sound:needs-review",
         "es:broadcast",
         "en:broadcast",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-participle-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "reference"
     },
@@ -70914,7 +70954,8 @@
         "sound:needs-review",
         "es:burn",
         "en:burn",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -70954,7 +70995,8 @@
         "sound:needs-review",
         "es:burn",
         "en:burn",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -70974,7 +71016,9 @@
         "sound:needs-review",
         "es:burst",
         "en:burst",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "reference"
     },
@@ -70994,7 +71038,9 @@
         "sound:needs-review",
         "es:burst",
         "en:burst",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-participle-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "reference"
     },
@@ -71061,7 +71107,8 @@
         "no past participle",
         "es:can",
         "en:can",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -71081,7 +71128,9 @@
         "sound:needs-review",
         "es:cast",
         "en:cast",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "reference"
     },
@@ -71101,7 +71150,9 @@
         "sound:needs-review",
         "es:cast",
         "en:cast",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-participle-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "reference"
     },
@@ -71166,7 +71217,9 @@
         "sound:needs-review",
         "es:choose",
         "en:choose",
-        "pos:verb"
+        "pos:verb",
+        "sound:chose-froze",
+        "sound:past-irregular-chose-froze"
       ],
       "curriculumRole": "supporting"
     },
@@ -71340,7 +71393,9 @@
         "sound:needs-review",
         "es:cling",
         "en:cling",
-        "pos:verb"
+        "pos:verb",
+        "sound:clung-flung-strung-stung-swung",
+        "sound:past-irregular-clung-flung-strung-stung-swung"
       ],
       "curriculumRole": "reference"
     },
@@ -71360,7 +71415,9 @@
         "sound:needs-review",
         "es:cling",
         "en:cling",
-        "pos:verb"
+        "pos:verb",
+        "sound:clung-flung-strung-stung-swung",
+        "sound:past-participle-irregular-clung-flung-strung-stung-swung"
       ],
       "curriculumRole": "reference"
     },
@@ -71401,7 +71458,8 @@
         "sound:needs-review",
         "es:clothe",
         "en:clothe",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -71441,7 +71499,8 @@
         "sound:needs-review",
         "es:clothe",
         "en:clothe",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -71460,7 +71519,9 @@
         "sound:needs-review",
         "es:come",
         "en:come",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:came-became",
+        "sound:past-irregular-came-became"
       ],
       "curriculumRole": "supporting"
     },
@@ -71479,7 +71540,9 @@
         "sound:needs-review",
         "es:come",
         "en:come",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:run-come-become",
+        "sound:past-participle-irregular-run-come-become"
       ],
       "curriculumRole": "supporting"
     },
@@ -71499,7 +71562,9 @@
         "sound:needs-review",
         "es:cost",
         "en:cost",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "supporting"
     },
@@ -71519,7 +71584,9 @@
         "sound:needs-review",
         "es:cost",
         "en:cost",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-participle-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "supporting"
     },
@@ -71634,7 +71701,9 @@
         "sound:needs-review",
         "es:cut",
         "en:cut",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "supporting"
     },
@@ -71654,7 +71723,9 @@
         "sound:needs-review",
         "es:cut",
         "en:cut",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-participle-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "supporting"
     },
@@ -71720,7 +71791,8 @@
         "sound:needs-review",
         "es:dig",
         "en:dig",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -71740,7 +71812,8 @@
         "sound:needs-review",
         "es:dig",
         "en:dig",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -71779,7 +71852,8 @@
         "sound:needs-review",
         "es:dive",
         "en:dive",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -71861,7 +71935,9 @@
         "sound:needs-review",
         "es:draw",
         "en:draw",
-        "pos:verb"
+        "pos:verb",
+        "sound:blew-grew-knew-threw-drew-flew",
+        "sound:past-irregular-blew-grew-knew-threw-drew-flew"
       ],
       "curriculumRole": "supporting"
     },
@@ -71880,7 +71956,9 @@
         "sound:needs-review",
         "es:draw",
         "en:draw",
-        "pos:verb"
+        "pos:verb",
+        "sound:sworn-torn-worn-drawn-born",
+        "sound:past-participle-irregular-sworn-torn-worn-drawn-born"
       ],
       "curriculumRole": "supporting"
     },
@@ -71921,7 +71999,8 @@
         "sound:needs-review",
         "es:dream",
         "en:dream",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -71961,7 +72040,8 @@
         "sound:needs-review",
         "es:dream",
         "en:dream",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -72024,7 +72104,9 @@
         "sound:needs-review",
         "es:drive",
         "en:drive",
-        "pos:verb"
+        "pos:verb",
+        "sound:drove-rode-strode-wove-throve",
+        "sound:past-irregular-drove-rode-strode-wove-throve"
       ],
       "curriculumRole": "supporting"
     },
@@ -72134,7 +72216,8 @@
         "sound:needs-review",
         "es:eat",
         "en:eat",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -72153,7 +72236,9 @@
         "sound:needs-review",
         "es:eat",
         "en:eat",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:eaten-beaten",
+        "sound:past-participle-irregular-eaten-beaten"
       ],
       "curriculumRole": "supporting"
     },
@@ -72172,7 +72257,8 @@
         "sound:needs-review",
         "es:fall",
         "en:fall",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -72191,7 +72277,8 @@
         "sound:needs-review",
         "es:fall",
         "en:fall",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -72395,7 +72482,9 @@
         "sound:needs-review",
         "es:fit",
         "en:fit",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "reference"
     },
@@ -72436,7 +72525,9 @@
         "sound:needs-review",
         "es:fit",
         "en:fit",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-participle-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "reference"
     },
@@ -72522,7 +72613,9 @@
         "sound:needs-review",
         "es:fling",
         "en:fling",
-        "pos:verb"
+        "pos:verb",
+        "sound:clung-flung-strung-stung-swung",
+        "sound:past-irregular-clung-flung-strung-stung-swung"
       ],
       "curriculumRole": "reference"
     },
@@ -72542,7 +72635,9 @@
         "sound:needs-review",
         "es:fling",
         "en:fling",
-        "pos:verb"
+        "pos:verb",
+        "sound:clung-flung-strung-stung-swung",
+        "sound:past-participle-irregular-clung-flung-strung-stung-swung"
       ],
       "curriculumRole": "reference"
     },
@@ -72561,7 +72656,9 @@
         "sound:needs-review",
         "es:fly",
         "en:fly",
-        "pos:verb"
+        "pos:verb",
+        "sound:blew-grew-knew-threw-drew-flew",
+        "sound:past-irregular-blew-grew-knew-threw-drew-flew"
       ],
       "curriculumRole": "supporting"
     },
@@ -72602,7 +72699,8 @@
         "sound:needs-review",
         "es:forbid",
         "en:forbid",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -72621,7 +72719,9 @@
         "sound:needs-review",
         "es:forbid",
         "en:forbid",
-        "pos:verb"
+        "pos:verb",
+        "sound:forbidden-bidden-trodden",
+        "sound:past-participle-irregular-forbidden-bidden-trodden"
       ],
       "curriculumRole": "reference"
     },
@@ -72640,7 +72740,9 @@
         "sound:needs-review",
         "es:forget",
         "en:forget",
-        "pos:verb"
+        "pos:verb",
+        "sound:got-forgot-shot",
+        "sound:past-irregular-got-forgot-shot"
       ],
       "curriculumRole": "supporting"
     },
@@ -72716,7 +72818,9 @@
         "sound:needs-review",
         "es:forgive",
         "en:forgive",
-        "pos:verb"
+        "pos:verb",
+        "sound:gave-forgave",
+        "sound:past-irregular-gave-forgave"
       ],
       "curriculumRole": "reference"
     },
@@ -72757,7 +72861,9 @@
         "sound:needs-review",
         "es:freeze",
         "en:freeze",
-        "pos:verb"
+        "pos:verb",
+        "sound:chose-froze",
+        "sound:past-irregular-chose-froze"
       ],
       "curriculumRole": "reference"
     },
@@ -72798,7 +72904,9 @@
         "sound:needs-review",
         "es:get",
         "en:get",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:got-forgot-shot",
+        "sound:past-irregular-got-forgot-shot"
       ],
       "curriculumRole": "supporting"
     },
@@ -72817,7 +72925,8 @@
         "sound:needs-review",
         "es:get",
         "en:get",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -72933,7 +73042,9 @@
         "sound:needs-review",
         "es:give",
         "en:give",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:gave-forgave",
+        "sound:past-irregular-gave-forgave"
       ],
       "curriculumRole": "supporting"
     },
@@ -72974,7 +73085,8 @@
         "sound:needs-review",
         "es:go",
         "en:go",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -73061,7 +73173,9 @@
         "sound:needs-review",
         "es:grow",
         "en:grow",
-        "pos:verb"
+        "pos:verb",
+        "sound:blew-grew-knew-threw-drew-flew",
+        "sound:past-irregular-blew-grew-knew-threw-drew-flew"
       ],
       "curriculumRole": "supporting"
     },
@@ -73103,7 +73217,8 @@
         "sound:needs-review",
         "es:hang",
         "en:hang",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -73144,7 +73259,8 @@
         "sound:needs-review",
         "es:hang",
         "en:hang",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -73184,7 +73300,8 @@
         "sound:needs-review",
         "es:have",
         "en:have",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -73204,7 +73321,8 @@
         "sound:needs-review",
         "es:have",
         "en:have",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -73224,7 +73342,8 @@
         "sound:needs-review",
         "es:hear",
         "en:hear",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -73244,7 +73363,8 @@
         "sound:needs-review",
         "es:hear",
         "en:hear",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -73357,7 +73477,9 @@
         "sound:needs-review",
         "es:hit",
         "en:hit",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "supporting"
     },
@@ -73377,7 +73499,9 @@
         "sound:needs-review",
         "es:hit",
         "en:hit",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-participle-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "supporting"
     },
@@ -73443,7 +73567,9 @@
         "sound:needs-review",
         "es:hurt",
         "en:hurt",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "supporting"
     },
@@ -73463,7 +73589,9 @@
         "sound:needs-review",
         "es:hurt",
         "en:hurt",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-participle-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "supporting"
     },
@@ -73616,7 +73744,9 @@
         "sound:needs-review",
         "es:knit",
         "en:knit",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "reference"
     },
@@ -73657,7 +73787,9 @@
         "sound:needs-review",
         "es:knit",
         "en:knit",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-participle-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "reference"
     },
@@ -73696,7 +73828,9 @@
         "sound:needs-review",
         "es:know",
         "en:know",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:blew-grew-knew-threw-drew-flew",
+        "sound:past-irregular-blew-grew-knew-threw-drew-flew"
       ],
       "curriculumRole": "supporting"
     },
@@ -74073,7 +74207,8 @@
         "sound:needs-review",
         "es:leave",
         "en:leave",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -74093,7 +74228,8 @@
         "sound:needs-review",
         "es:leave",
         "en:leave",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -74159,7 +74295,9 @@
         "sound:needs-review",
         "es:let",
         "en:let",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "supporting"
     },
@@ -74179,7 +74317,9 @@
         "sound:needs-review",
         "es:let",
         "en:let",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-participle-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "supporting"
     },
@@ -74198,7 +74338,8 @@
         "sound:needs-review",
         "es:lie",
         "en:lie",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -74217,7 +74358,8 @@
         "sound:needs-review",
         "es:lie",
         "en:lie",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -74237,7 +74379,9 @@
         "sound:needs-review",
         "es:light",
         "en:light",
-        "pos:verb"
+        "pos:verb",
+        "sound:lit-bit",
+        "sound:past-irregular-lit-bit"
       ],
       "curriculumRole": "reference"
     },
@@ -74278,7 +74422,9 @@
         "sound:needs-review",
         "es:light",
         "en:light",
-        "pos:verb"
+        "pos:verb",
+        "sound:lit-bit",
+        "sound:past-participle-irregular-lit-bit"
       ],
       "curriculumRole": "reference"
     },
@@ -74318,7 +74464,8 @@
         "sound:needs-review",
         "es:lose",
         "en:lose",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -74338,7 +74485,8 @@
         "sound:needs-review",
         "es:lose",
         "en:lose",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -74404,7 +74552,8 @@
         "sound:needs-review",
         "es:mean",
         "en:mean",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -74424,7 +74573,8 @@
         "sound:needs-review",
         "es:mean",
         "en:mean",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -74444,7 +74594,8 @@
         "sound:needs-review",
         "es:meet",
         "en:meet",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -74464,7 +74615,8 @@
         "sound:needs-review",
         "es:meet",
         "en:meet",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -74612,7 +74764,9 @@
         "sound:needs-review",
         "es:plead",
         "en:plead",
-        "pos:verb"
+        "pos:verb",
+        "sound:fed-bled-led-pled-read-said",
+        "sound:past-irregular-fed-bled-led-pled-read-said"
       ],
       "curriculumRole": "reference"
     },
@@ -74652,7 +74806,9 @@
         "sound:needs-review",
         "es:plead",
         "en:plead",
-        "pos:verb"
+        "pos:verb",
+        "sound:fed-bled-led-pled-read-said",
+        "sound:past-participle-irregular-fed-bled-led-pled-read-said"
       ],
       "curriculumRole": "reference"
     },
@@ -74691,7 +74847,9 @@
         "sound:needs-review",
         "es:prove",
         "en:prove",
-        "pos:verb"
+        "pos:verb",
+        "sound:proven-sewn-shaven",
+        "sound:past-participle-irregular-proven-sewn-shaven"
       ],
       "curriculumRole": "reference"
     },
@@ -74730,7 +74888,9 @@
         "sound:needs-review",
         "es:put",
         "en:put",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "supporting"
     },
@@ -74750,7 +74910,9 @@
         "sound:needs-review",
         "es:put",
         "en:put",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-participle-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "supporting"
     },
@@ -74770,7 +74932,9 @@
         "sound:needs-review",
         "es:quit",
         "en:quit",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "reference"
     },
@@ -74790,7 +74954,9 @@
         "sound:needs-review",
         "es:quit",
         "en:quit",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-participle-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "reference"
     },
@@ -74810,7 +74976,9 @@
         "sound:needs-review",
         "es:read",
         "en:read",
-        "pos:verb"
+        "pos:verb",
+        "sound:fed-bled-led-pled-read-said",
+        "sound:past-irregular-fed-bled-led-pled-read-said"
       ],
       "curriculumRole": "supporting"
     },
@@ -74830,7 +74998,9 @@
         "sound:needs-review",
         "es:read",
         "en:read",
-        "pos:verb"
+        "pos:verb",
+        "sound:fed-bled-led-pled-read-said",
+        "sound:past-participle-irregular-fed-bled-led-pled-read-said"
       ],
       "curriculumRole": "supporting"
     },
@@ -74890,7 +75060,9 @@
         "sound:needs-review",
         "es:rid",
         "en:rid",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "reference"
     },
@@ -74910,7 +75082,9 @@
         "sound:needs-review",
         "es:rid",
         "en:rid",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-participle-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "reference"
     },
@@ -74929,7 +75103,9 @@
         "sound:needs-review",
         "es:ride",
         "en:ride",
-        "pos:verb"
+        "pos:verb",
+        "sound:drove-rode-strode-wove-throve",
+        "sound:past-irregular-drove-rode-strode-wove-throve"
       ],
       "curriculumRole": "supporting"
     },
@@ -75014,7 +75190,9 @@
         "sound:needs-review",
         "es:rise",
         "en:rise",
-        "pos:verb"
+        "pos:verb",
+        "sound:rose-arose",
+        "sound:past-irregular-rose-arose"
       ],
       "curriculumRole": "reference"
     },
@@ -75033,7 +75211,9 @@
         "sound:needs-review",
         "es:rise",
         "en:rise",
-        "pos:verb"
+        "pos:verb",
+        "sound:risen-arisen",
+        "sound:past-participle-irregular-risen-arisen"
       ],
       "curriculumRole": "reference"
     },
@@ -75052,7 +75232,9 @@
         "sound:needs-review",
         "es:run",
         "en:run",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:began-rang-sang-ran-swam",
+        "sound:past-irregular-began-rang-sang-ran-swam"
       ],
       "curriculumRole": "supporting"
     },
@@ -75071,7 +75253,9 @@
         "sound:needs-review",
         "es:run",
         "en:run",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:run-come-become",
+        "sound:past-participle-irregular-run-come-become"
       ],
       "curriculumRole": "supporting"
     },
@@ -75140,7 +75324,9 @@
         "sound:needs-review",
         "es:say",
         "en:say",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:fed-bled-led-pled-read-said",
+        "sound:past-irregular-fed-bled-led-pled-read-said"
       ],
       "curriculumRole": "supporting"
     },
@@ -75160,7 +75346,9 @@
         "sound:needs-review",
         "es:say",
         "en:say",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:fed-bled-led-pled-read-said",
+        "sound:past-participle-irregular-fed-bled-led-pled-read-said"
       ],
       "curriculumRole": "supporting"
     },
@@ -75179,7 +75367,8 @@
         "sound:needs-review",
         "es:see",
         "en:see",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -75198,7 +75387,8 @@
         "sound:needs-review",
         "es:see",
         "en:see",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -75356,7 +75546,9 @@
         "sound:needs-review",
         "es:set",
         "en:set",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "supporting"
     },
@@ -75376,7 +75568,9 @@
         "sound:needs-review",
         "es:set",
         "en:set",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-participle-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "supporting"
     },
@@ -75415,7 +75609,9 @@
         "sound:needs-review",
         "es:sew",
         "en:sew",
-        "pos:verb"
+        "pos:verb",
+        "sound:proven-sewn-shaven",
+        "sound:past-participle-irregular-proven-sewn-shaven"
       ],
       "curriculumRole": "reference"
     },
@@ -75453,7 +75649,9 @@
         "sound:needs-review",
         "es:shake",
         "en:shake",
-        "pos:verb"
+        "pos:verb",
+        "sound:took-shook",
+        "sound:past-irregular-took-shook"
       ],
       "curriculumRole": "supporting"
     },
@@ -75514,7 +75712,9 @@
         "sound:needs-review",
         "es:shave",
         "en:shave",
-        "pos:verb"
+        "pos:verb",
+        "sound:proven-sewn-shaven",
+        "sound:past-participle-irregular-proven-sewn-shaven"
       ],
       "curriculumRole": "reference"
     },
@@ -75602,7 +75802,9 @@
         "sound:needs-review",
         "es:shed",
         "en:shed",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "reference"
     },
@@ -75622,7 +75824,9 @@
         "sound:needs-review",
         "es:shed",
         "en:shed",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-participle-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "reference"
     },
@@ -75642,7 +75846,9 @@
         "sound:needs-review",
         "es:shine",
         "en:shine",
-        "pos:verb"
+        "pos:verb",
+        "sound:known-grown-thrown-shone",
+        "sound:past-irregular-known-grown-thrown-shone"
       ],
       "curriculumRole": "reference"
     },
@@ -75662,7 +75868,9 @@
         "sound:needs-review",
         "es:shine",
         "en:shine",
-        "pos:verb"
+        "pos:verb",
+        "sound:known-grown-thrown-shone",
+        "sound:past-participle-irregular-known-grown-thrown-shone"
       ],
       "curriculumRole": "reference"
     },
@@ -75854,7 +76062,9 @@
         "sound:needs-review",
         "es:shoot",
         "en:shoot",
-        "pos:verb"
+        "pos:verb",
+        "sound:got-forgot-shot",
+        "sound:past-irregular-got-forgot-shot"
       ],
       "curriculumRole": "reference"
     },
@@ -75874,7 +76084,9 @@
         "sound:needs-review",
         "es:shoot",
         "en:shoot",
-        "pos:verb"
+        "pos:verb",
+        "sound:got-forgot-shot",
+        "sound:past-participle-irregular-got-forgot-shot"
       ],
       "curriculumRole": "reference"
     },
@@ -76021,7 +76233,9 @@
         "sound:needs-review",
         "es:shut",
         "en:shut",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "supporting"
     },
@@ -76041,7 +76255,9 @@
         "sound:needs-review",
         "es:shut",
         "en:shut",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-participle-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "supporting"
     },
@@ -76171,7 +76387,9 @@
         "sound:needs-review",
         "es:sit",
         "en:sit",
-        "pos:verb"
+        "pos:verb",
+        "sound:sat-spat",
+        "sound:past-irregular-sat-spat"
       ],
       "curriculumRole": "supporting"
     },
@@ -76191,7 +76409,9 @@
         "sound:needs-review",
         "es:sit",
         "en:sit",
-        "pos:verb"
+        "pos:verb",
+        "sound:sat-spat",
+        "sound:past-participle-irregular-sat-spat"
       ],
       "curriculumRole": "supporting"
     },
@@ -76458,7 +76678,9 @@
         "sound:needs-review",
         "es:smell",
         "en:smell",
-        "pos:verb"
+        "pos:verb",
+        "sound:felt-dealt-knelt-smelt-spelt",
+        "sound:past-irregular-felt-dealt-knelt-smelt-spelt"
       ],
       "curriculumRole": "reference"
     },
@@ -76498,7 +76720,9 @@
         "sound:needs-review",
         "es:smell",
         "en:smell",
-        "pos:verb"
+        "pos:verb",
+        "sound:felt-dealt-knelt-smelt-spelt",
+        "sound:past-participle-irregular-felt-dealt-knelt-smelt-spelt"
       ],
       "curriculumRole": "reference"
     },
@@ -76574,7 +76798,9 @@
         "sound:needs-review",
         "es:sneak",
         "en:sneak",
-        "pos:verb"
+        "pos:verb",
+        "sound:struck-stuck-snuck",
+        "sound:past-irregular-struck-stuck-snuck"
       ],
       "curriculumRole": "reference"
     },
@@ -76614,7 +76840,9 @@
         "sound:needs-review",
         "es:sneak",
         "en:sneak",
-        "pos:verb"
+        "pos:verb",
+        "sound:struck-stuck-snuck",
+        "sound:past-participle-irregular-struck-stuck-snuck"
       ],
       "curriculumRole": "reference"
     },
@@ -76694,7 +76922,9 @@
         "sound:needs-review",
         "es:speak",
         "en:speak",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:spoke-broke-woke-awoke",
+        "sound:past-irregular-spoke-broke-woke-awoke"
       ],
       "curriculumRole": "supporting"
     },
@@ -76844,7 +77074,9 @@
         "sound:needs-review",
         "es:spell",
         "en:spell",
-        "pos:verb"
+        "pos:verb",
+        "sound:felt-dealt-knelt-smelt-spelt",
+        "sound:past-irregular-felt-dealt-knelt-smelt-spelt"
       ],
       "curriculumRole": "reference"
     },
@@ -76884,7 +77116,9 @@
         "sound:needs-review",
         "es:spell",
         "en:spell",
-        "pos:verb"
+        "pos:verb",
+        "sound:felt-dealt-knelt-smelt-spelt",
+        "sound:past-participle-irregular-felt-dealt-knelt-smelt-spelt"
       ],
       "curriculumRole": "reference"
     },
@@ -77035,7 +77269,9 @@
         "sound:needs-review",
         "es:spin",
         "en:spin",
-        "pos:verb"
+        "pos:verb",
+        "sound:spun-won",
+        "sound:past-irregular-spun-won"
       ],
       "curriculumRole": "reference"
     },
@@ -77055,7 +77291,9 @@
         "sound:needs-review",
         "es:spin",
         "en:spin",
-        "pos:verb"
+        "pos:verb",
+        "sound:spun-won",
+        "sound:past-participle-irregular-spun-won"
       ],
       "curriculumRole": "reference"
     },
@@ -77075,7 +77313,9 @@
         "sound:needs-review",
         "es:spit",
         "en:spit",
-        "pos:verb"
+        "pos:verb",
+        "sound:sat-spat",
+        "sound:past-irregular-sat-spat"
       ],
       "curriculumRole": "reference"
     },
@@ -77095,7 +77335,8 @@
         "sound:needs-review",
         "es:spit",
         "en:spit",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -77115,7 +77356,9 @@
         "sound:needs-review",
         "es:spit",
         "en:spit",
-        "pos:verb"
+        "pos:verb",
+        "sound:sat-spat",
+        "sound:past-participle-irregular-sat-spat"
       ],
       "curriculumRole": "reference"
     },
@@ -77135,7 +77378,8 @@
         "sound:needs-review",
         "es:spit",
         "en:spit",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -77155,7 +77399,9 @@
         "sound:needs-review",
         "es:split",
         "en:split",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "reference"
     },
@@ -77175,7 +77421,9 @@
         "sound:needs-review",
         "es:split",
         "en:split",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-participle-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "reference"
     },
@@ -77272,7 +77520,9 @@
         "sound:needs-review",
         "es:spread",
         "en:spread",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "reference"
     },
@@ -77292,7 +77542,9 @@
         "sound:needs-review",
         "es:spread",
         "en:spread",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-participle-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "reference"
     },
@@ -77492,7 +77744,8 @@
         "sound:needs-review",
         "es:steal",
         "en:steal",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -77511,7 +77764,9 @@
         "sound:needs-review",
         "es:steal",
         "en:steal",
-        "pos:verb"
+        "pos:verb",
+        "sound:stolen-swollen",
+        "sound:past-participle-irregular-stolen-swollen"
       ],
       "curriculumRole": "supporting"
     },
@@ -77531,7 +77786,9 @@
         "sound:needs-review",
         "es:stick",
         "en:stick",
-        "pos:verb"
+        "pos:verb",
+        "sound:struck-stuck-snuck",
+        "sound:past-irregular-struck-stuck-snuck"
       ],
       "curriculumRole": "supporting"
     },
@@ -77551,7 +77808,9 @@
         "sound:needs-review",
         "es:stick",
         "en:stick",
-        "pos:verb"
+        "pos:verb",
+        "sound:struck-stuck-snuck",
+        "sound:past-participle-irregular-struck-stuck-snuck"
       ],
       "curriculumRole": "supporting"
     },
@@ -77571,7 +77830,9 @@
         "sound:needs-review",
         "es:sting",
         "en:sting",
-        "pos:verb"
+        "pos:verb",
+        "sound:clung-flung-strung-stung-swung",
+        "sound:past-irregular-clung-flung-strung-stung-swung"
       ],
       "curriculumRole": "reference"
     },
@@ -77591,7 +77852,9 @@
         "sound:needs-review",
         "es:sting",
         "en:sting",
-        "pos:verb"
+        "pos:verb",
+        "sound:clung-flung-strung-stung-swung",
+        "sound:past-participle-irregular-clung-flung-strung-stung-swung"
       ],
       "curriculumRole": "reference"
     },
@@ -77725,7 +77988,9 @@
         "sound:needs-review",
         "es:stride",
         "en:stride",
-        "pos:verb"
+        "pos:verb",
+        "sound:drove-rode-strode-wove-throve",
+        "sound:past-irregular-drove-rode-strode-wove-throve"
       ],
       "curriculumRole": "reference"
     },
@@ -77767,7 +78032,9 @@
         "sound:needs-review",
         "es:strike",
         "en:strike",
-        "pos:verb"
+        "pos:verb",
+        "sound:struck-stuck-snuck",
+        "sound:past-irregular-struck-stuck-snuck"
       ],
       "curriculumRole": "reference"
     },
@@ -77787,7 +78054,9 @@
         "sound:needs-review",
         "es:strike",
         "en:strike",
-        "pos:verb"
+        "pos:verb",
+        "sound:struck-stuck-snuck",
+        "sound:past-participle-irregular-struck-stuck-snuck"
       ],
       "curriculumRole": "reference"
     },
@@ -77807,7 +78076,9 @@
         "sound:needs-review",
         "es:string",
         "en:string",
-        "pos:verb"
+        "pos:verb",
+        "sound:clung-flung-strung-stung-swung",
+        "sound:past-irregular-clung-flung-strung-stung-swung"
       ],
       "curriculumRole": "reference"
     },
@@ -77827,7 +78098,9 @@
         "sound:needs-review",
         "es:string",
         "en:string",
-        "pos:verb"
+        "pos:verb",
+        "sound:clung-flung-strung-stung-swung",
+        "sound:past-participle-irregular-clung-flung-strung-stung-swung"
       ],
       "curriculumRole": "reference"
     },
@@ -77846,7 +78119,8 @@
         "sound:needs-review",
         "es:strive",
         "en:strive",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -77885,7 +78159,9 @@
         "sound:needs-review",
         "es:strive",
         "en:strive",
-        "pos:verb"
+        "pos:verb",
+        "sound:striven-thriven",
+        "sound:past-participle-irregular-striven-thriven"
       ],
       "curriculumRole": "reference"
     },
@@ -77923,7 +78199,9 @@
         "sound:needs-review",
         "es:swear",
         "en:swear",
-        "pos:verb"
+        "pos:verb",
+        "sound:tore-wore-swore",
+        "sound:past-irregular-tore-wore-swore"
       ],
       "curriculumRole": "reference"
     },
@@ -77942,7 +78220,9 @@
         "sound:needs-review",
         "es:swear",
         "en:swear",
-        "pos:verb"
+        "pos:verb",
+        "sound:sworn-torn-worn-drawn-born",
+        "sound:past-participle-irregular-sworn-torn-worn-drawn-born"
       ],
       "curriculumRole": "reference"
     },
@@ -77983,7 +78263,9 @@
         "sound:needs-review",
         "es:sweat",
         "en:sweat",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "reference"
     },
@@ -78023,7 +78305,9 @@
         "sound:needs-review",
         "es:sweat",
         "en:sweat",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-participle-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "reference"
     },
@@ -78108,7 +78392,9 @@
         "sound:needs-review",
         "es:swell",
         "en:swell",
-        "pos:verb"
+        "pos:verb",
+        "sound:stolen-swollen",
+        "sound:past-participle-irregular-stolen-swollen"
       ],
       "curriculumRole": "reference"
     },
@@ -78146,7 +78432,9 @@
         "sound:needs-review",
         "es:swim",
         "en:swim",
-        "pos:verb"
+        "pos:verb",
+        "sound:began-rang-sang-ran-swam",
+        "sound:past-irregular-began-rang-sang-ran-swam"
       ],
       "curriculumRole": "supporting"
     },
@@ -78165,7 +78453,8 @@
         "sound:needs-review",
         "es:swim",
         "en:swim",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -78185,7 +78474,9 @@
         "sound:needs-review",
         "es:swing",
         "en:swing",
-        "pos:verb"
+        "pos:verb",
+        "sound:clung-flung-strung-stung-swung",
+        "sound:past-irregular-clung-flung-strung-stung-swung"
       ],
       "curriculumRole": "reference"
     },
@@ -78205,7 +78496,9 @@
         "sound:needs-review",
         "es:swing",
         "en:swing",
-        "pos:verb"
+        "pos:verb",
+        "sound:clung-flung-strung-stung-swung",
+        "sound:past-participle-irregular-clung-flung-strung-stung-swung"
       ],
       "curriculumRole": "reference"
     },
@@ -78224,7 +78517,9 @@
         "sound:needs-review",
         "es:take",
         "en:take",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:took-shook",
+        "sound:past-irregular-took-shook"
       ],
       "curriculumRole": "supporting"
     },
@@ -78311,7 +78606,9 @@
         "sound:needs-review",
         "es:tear",
         "en:tear",
-        "pos:verb"
+        "pos:verb",
+        "sound:tore-wore-swore",
+        "sound:past-irregular-tore-wore-swore"
       ],
       "curriculumRole": "reference"
     },
@@ -78330,7 +78627,9 @@
         "sound:needs-review",
         "es:tear",
         "en:tear",
-        "pos:verb"
+        "pos:verb",
+        "sound:sworn-torn-worn-drawn-born",
+        "sound:past-participle-irregular-sworn-torn-worn-drawn-born"
       ],
       "curriculumRole": "reference"
     },
@@ -78461,7 +78760,9 @@
         "sound:needs-review",
         "es:thrive",
         "en:thrive",
-        "pos:verb"
+        "pos:verb",
+        "sound:drove-rode-strode-wove-throve",
+        "sound:past-irregular-drove-rode-strode-wove-throve"
       ],
       "curriculumRole": "reference"
     },
@@ -78499,7 +78800,9 @@
         "sound:needs-review",
         "es:thrive",
         "en:thrive",
-        "pos:verb"
+        "pos:verb",
+        "sound:striven-thriven",
+        "sound:past-participle-irregular-striven-thriven"
       ],
       "curriculumRole": "reference"
     },
@@ -78518,7 +78821,9 @@
         "sound:needs-review",
         "es:throw",
         "en:throw",
-        "pos:verb"
+        "pos:verb",
+        "sound:blew-grew-knew-threw-drew-flew",
+        "sound:past-irregular-blew-grew-knew-threw-drew-flew"
       ],
       "curriculumRole": "supporting"
     },
@@ -78560,7 +78865,9 @@
         "sound:needs-review",
         "es:thrust",
         "en:thrust",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "reference"
     },
@@ -78580,7 +78887,9 @@
         "sound:needs-review",
         "es:thrust",
         "en:thrust",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-participle-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "reference"
     },
@@ -78599,7 +78908,8 @@
         "sound:needs-review",
         "es:tread",
         "en:tread",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -78618,7 +78928,9 @@
         "sound:needs-review",
         "es:tread",
         "en:tread",
-        "pos:verb"
+        "pos:verb",
+        "sound:forbidden-bidden-trodden",
+        "sound:past-participle-irregular-forbidden-bidden-trodden"
       ],
       "curriculumRole": "reference"
     },
@@ -78637,7 +78949,8 @@
         "sound:needs-review",
         "es:tread",
         "en:tread",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -78702,7 +79015,9 @@
         "sound:needs-review",
         "es:wake",
         "en:wake",
-        "pos:verb"
+        "pos:verb",
+        "sound:spoke-broke-woke-awoke",
+        "sound:past-irregular-spoke-broke-woke-awoke"
       ],
       "curriculumRole": "supporting"
     },
@@ -78743,7 +79058,9 @@
         "sound:needs-review",
         "es:wear",
         "en:wear",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:tore-wore-swore",
+        "sound:past-irregular-tore-wore-swore"
       ],
       "curriculumRole": "supporting"
     },
@@ -78762,7 +79079,9 @@
         "sound:needs-review",
         "es:wear",
         "en:wear",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "sound:sworn-torn-worn-drawn-born",
+        "sound:past-participle-irregular-sworn-torn-worn-drawn-born"
       ],
       "curriculumRole": "supporting"
     },
@@ -78781,7 +79100,9 @@
         "sound:needs-review",
         "es:weave",
         "en:weave",
-        "pos:verb"
+        "pos:verb",
+        "sound:drove-rode-strode-wove-throve",
+        "sound:past-irregular-drove-rode-strode-wove-throve"
       ],
       "curriculumRole": "reference"
     },
@@ -78800,7 +79121,8 @@
         "sound:needs-review",
         "es:weave",
         "en:weave",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -78820,7 +79142,9 @@
         "sound:needs-review",
         "es:wed",
         "en:wed",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "reference"
     },
@@ -78861,7 +79185,9 @@
         "sound:needs-review",
         "es:wed",
         "en:wed",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-participle-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "reference"
     },
@@ -78901,7 +79227,9 @@
         "sound:needs-review",
         "es:weep",
         "en:weep",
-        "pos:verb"
+        "pos:verb",
+        "sound:kept-slept-swept-wept",
+        "sound:past-irregular-kept-slept-swept-wept"
       ],
       "curriculumRole": "reference"
     },
@@ -78921,7 +79249,9 @@
         "sound:needs-review",
         "es:weep",
         "en:weep",
-        "pos:verb"
+        "pos:verb",
+        "sound:kept-slept-swept-wept",
+        "sound:past-participle-irregular-kept-slept-swept-wept"
       ],
       "curriculumRole": "reference"
     },
@@ -78941,7 +79271,9 @@
         "sound:needs-review",
         "es:wet",
         "en:wet",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "reference"
     },
@@ -78981,7 +79313,9 @@
         "sound:needs-review",
         "es:wet",
         "en:wet",
-        "pos:verb"
+        "pos:verb",
+        "sound:cut-hit-hurt-put-set-shut",
+        "sound:past-participle-irregular-cut-hit-hurt-put-set-shut"
       ],
       "curriculumRole": "reference"
     },
@@ -79020,7 +79354,9 @@
         "sound:needs-review",
         "es:win",
         "en:win",
-        "pos:verb"
+        "pos:verb",
+        "sound:spun-won",
+        "sound:past-irregular-spun-won"
       ],
       "curriculumRole": "supporting"
     },
@@ -79040,7 +79376,9 @@
         "sound:needs-review",
         "es:win",
         "en:win",
-        "pos:verb"
+        "pos:verb",
+        "sound:spun-won",
+        "sound:past-participle-irregular-spun-won"
       ],
       "curriculumRole": "supporting"
     },
@@ -79139,7 +79477,8 @@
         "sound:needs-review",
         "es:write",
         "en:write",
-        "pos:verb"
+        "pos:verb",
+        "sound:reviewed"
       ],
       "curriculumRole": "supporting"
     },
