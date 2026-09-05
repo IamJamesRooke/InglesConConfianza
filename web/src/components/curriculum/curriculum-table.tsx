@@ -151,9 +151,11 @@ export function CurriculumTable({
   const searchParams = useSearchParams();
 
   function toggleFacet(collection: string) {
-    const next = activeFacets.includes(collection)
-      ? activeFacets.filter((item) => item !== collection)
-      : [...activeFacets, collection];
+    // Single-select: facet buttons within a topic are almost always mutually
+    // exclusive values of the same dimension (one root verb, one particle,
+    // one gender) — AND-ing two together reliably produces zero rows, so
+    // picking a new one replaces the active one instead of adding to it.
+    const next = activeFacets.includes(collection) ? [] : [collection];
     navigate({ facets: next.length > 0 ? next.join(",") : null });
   }
   const [concepts, setConcepts] = useState(initialConcepts);
