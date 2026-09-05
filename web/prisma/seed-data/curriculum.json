@@ -2777,7 +2777,6 @@
       },
       "collections": [
         "topic:work",
-        "en:result",
         "grammar:fixed-expression",
         "es:dar",
         "en:work",
@@ -2797,7 +2796,6 @@
       "collections": [
         "particle:off",
         "grammar:phrasal-verb",
-        "en:result",
         "grammar:fixed-expression",
         "es:dar",
         "en:pay",
@@ -2873,7 +2871,6 @@
         "english": "Walking alone scares me."
       },
       "collections": [
-        "en:feeling",
         "es:dar",
         "en:scare",
         "topic:multi-sense"
@@ -2889,7 +2886,6 @@
         "english": "The medicine makes me sleepy."
       },
       "collections": [
-        "en:feeling",
         "en:sleepy",
         "es:dar",
         "en:make",
@@ -2907,7 +2903,6 @@
         "english": "Exercise makes me hungry."
       },
       "collections": [
-        "en:feeling",
         "en:hungry",
         "es:dar",
         "en:make",
@@ -2925,7 +2920,6 @@
         "english": "The heat makes me thirsty."
       },
       "collections": [
-        "en:feeling",
         "en:thirsty",
         "es:dar",
         "en:make",
@@ -2943,7 +2937,6 @@
         "english": "The situation embarrasses me."
       },
       "collections": [
-        "en:feeling",
         "es:dar",
         "en:embarrass",
         "topic:multi-sense"
@@ -2961,7 +2954,6 @@
       "collections": [
         "es:dar",
         "embarrassed",
-        "en:feeling",
         "dialect:colombian-spanish",
         "construction:verb-plus-infinitive",
         "en:to",
@@ -2981,7 +2973,6 @@
         "english": "That video makes me laugh."
       },
       "collections": [
-        "en:feeling",
         "laugh",
         "es:dar",
         "en:make",
@@ -2999,7 +2990,6 @@
         "english": "That smell disgusts me."
       },
       "collections": [
-        "en:feeling",
         "es:dar",
         "en:disgust",
         "topic:multi-sense"
@@ -5471,7 +5461,6 @@
       },
       "collections": [
         "es:poner",
-        "en:expression",
         "grammar:manner",
         "es:expresar",
         "en:put",
@@ -6527,7 +6516,6 @@
         "pos:adjective",
         "grammar:estar-adjective",
         "contrast:confusable",
-        "en:expression",
         "morphology:suffix-able",
         "topic:cognate",
         "es:estar",
@@ -7747,7 +7735,6 @@
       },
       "collections": [
         "construction:there-be",
-        "en:future",
         "es:haber",
         "en:there",
         "topic:multi-sense",
@@ -8680,7 +8667,6 @@
       },
       "collections": [
         "grammar:going-to",
-        "en:future",
         "construction:map-a-to",
         "es:ir",
         "en:going",
@@ -8701,7 +8687,6 @@
       },
       "collections": [
         "grammar:going-to",
-        "en:future",
         "register:spoken",
         "es:ir",
         "en:gonna",
@@ -11445,7 +11430,6 @@
       "collections": [
         "grammar:ability",
         "grammar:modal",
-        "en:future",
         "es:poder",
         "en:able",
         "topic:multi-sense",
@@ -11732,7 +11716,6 @@
       },
       "collections": [
         "en:may",
-        "en:possibility",
         "grammar:subjunctive",
         "grammar:modal",
         "es:poder",
@@ -11752,7 +11735,6 @@
       },
       "collections": [
         "en:might",
-        "en:possibility",
         "grammar:subjunctive",
         "grammar:modal",
         "es:poder",
@@ -11771,7 +11753,6 @@
       },
       "collections": [
         "es:can",
-        "en:possibility",
         "es:be",
         "grammar:modal",
         "es:poder",
@@ -11791,7 +11772,6 @@
       },
       "collections": [
         "en:may",
-        "en:possibility",
         "es:be",
         "grammar:modal",
         "es:poder",
@@ -11811,7 +11791,6 @@
       },
       "collections": [
         "en:could",
-        "en:possibility",
         "es:be",
         "grammar:conditional",
         "grammar:modal",
@@ -11832,7 +11811,6 @@
       },
       "collections": [
         "en:might",
-        "en:possibility",
         "form:modal-perfect",
         "es:poder",
         "en:have",
@@ -12148,7 +12126,6 @@
       },
       "collections": [
         "en:might",
-        "en:possibility",
         "grammar:conditional",
         "grammar:modal",
         "es:poder",
@@ -12167,7 +12144,6 @@
       },
       "collections": [
         "en:could",
-        "en:possibility",
         "grammar:subjunctive",
         "grammar:modal",
         "es:poder",
@@ -12187,7 +12163,6 @@
       },
       "collections": [
         "en:may",
-        "en:possibility",
         "grammar:subjunctive",
         "form:modal-perfect",
         "es:poder",
@@ -12207,7 +12182,6 @@
       },
       "collections": [
         "en:might",
-        "en:possibility",
         "grammar:subjunctive",
         "form:modal-perfect",
         "es:poder",
@@ -12227,7 +12201,6 @@
       },
       "collections": [
         "en:could",
-        "en:possibility",
         "grammar:subjunctive",
         "form:modal-perfect",
         "es:poder",
@@ -12247,7 +12220,6 @@
       },
       "collections": [
         "en:could",
-        "en:possibility",
         "form:modal-perfect",
         "es:poder",
         "en:have",
@@ -12768,7 +12740,6 @@
         "en:turn",
         "grammar:phrasal-verb",
         "particle:out",
-        "en:result",
         "es:quedar",
         "en:turns",
         "topic:multi-sense",
@@ -14691,7 +14662,6 @@
       "collections": [
         "grammar:causative",
         "form:past-participle",
-        "en:result",
         "construction:verb-forms",
         "construction:get-something-done",
         "es:conseguir",
@@ -15678,7 +15648,6 @@
       "collections": [
         "grammar:modal",
         "construction:bare-infinitive",
-        "en:obligation",
         "construction:verb-forms",
         "construction:followed-by-bare-infinitive",
         "form:bare-infinitive",
@@ -15700,7 +15669,6 @@
       "collections": [
         "grammar:modal",
         "construction:full-infinitive",
-        "en:obligation",
         "es:deber",
         "en:to",
         "topic:multi-sense",
@@ -15978,8 +15946,6 @@
       "collections": [
         "es:deber",
         "grammar:modal",
-        "en:future",
-        "en:obligation",
         "es:deberá",
         "en:to",
         "topic:multi-sense",
@@ -18600,7 +18566,6 @@
         "grammar:fixed-expression",
         "grammar:contraction",
         "topic:social-expression",
-        "en:expression",
         "es:siento",
         "en:i'm",
         "topic:multi-sense"
@@ -19709,7 +19674,6 @@
         "english": "I have a reservation."
       },
       "collections": [
-        "en:possession",
         "grammar:three-jobs-of-have",
         "grammar:uses-auxiliary-do-for-questions",
         "es:tener",
@@ -19759,7 +19723,6 @@
         "english": "I have to leave."
       },
       "collections": [
-        "en:obligation",
         "construction:full-infinitive",
         "construction:verb-forms",
         "grammar:modal",
@@ -19786,7 +19749,6 @@
         "english": "I have got to do it today."
       },
       "collections": [
-        "en:obligation",
         "grammar:modal",
         "es:tener",
         "en:got",
@@ -19804,7 +19766,6 @@
         "english": "I gotta go."
       },
       "collections": [
-        "en:obligation",
         "register:spoken",
         "es:tener",
         "en:gotta",
@@ -20379,7 +20340,6 @@
         "english": "I have to work on Saturday."
       },
       "collections": [
-        "en:obligation",
         "construction:full-infinitive",
         "es:tocar",
         "en:to",
@@ -20396,7 +20356,6 @@
         "english": "You are supposed to close the door."
       },
       "collections": [
-        "en:obligation",
         "construction:object-plus-complement",
         "es:tocar",
         "en:is",
@@ -20984,7 +20943,6 @@
         "english": "I do not have money with me."
       },
       "collections": [
-        "en:possession",
         "construction:map-consigo-with",
         "es:traer",
         "en:with",
@@ -21770,7 +21728,6 @@
       "collections": [
         "es:ver",
         "grammar:fixed-expression",
-        "en:future",
         "es:vamos",
         "en:we",
         "topic:multi-sense"
@@ -21788,7 +21745,6 @@
       "collections": [
         "es:ver",
         "grammar:fixed-expression",
-        "en:future",
         "es:ya",
         "en:you",
         "topic:multi-sense",
@@ -24335,7 +24291,6 @@
         "pos:function-word",
         "pos:connector",
         "grammar:sentence-structure",
-        "en:result",
         "es:así",
         "en:so",
         "topic:en-multi-sense"
@@ -26350,7 +26305,6 @@
         "english": "day"
       },
       "collections": [
-        "es:mañana",
         "es:día",
         "en:day"
       ],
@@ -26365,7 +26319,6 @@
         "english": "today"
       },
       "collections": [
-        "es:mañana",
         "topic:date",
         "topic:time",
         "topic:calendar",
@@ -26417,7 +26370,6 @@
         "english": "yesterday"
       },
       "collections": [
-        "es:mañana",
         "topic:date",
         "topic:time",
         "topic:calendar",
@@ -26435,7 +26387,6 @@
         "english": "the day before yesterday"
       },
       "collections": [
-        "es:mañana",
         "es:anteayer",
         "en:day"
       ],
@@ -26464,7 +26415,6 @@
         "english": "the afternoon"
       },
       "collections": [
-        "es:mañana",
         "es:tarde",
         "en:afternoon"
       ],
@@ -26493,7 +26443,6 @@
         "english": "the night"
       },
       "collections": [
-        "es:mañana",
         "es:noche",
         "en:night"
       ],
@@ -26553,7 +26502,6 @@
         "english": "yesterday afternoon"
       },
       "collections": [
-        "es:mañana",
         "es:ayer",
         "en:yesterday"
       ],
@@ -26568,7 +26516,6 @@
         "english": "this afternoon"
       },
       "collections": [
-        "es:mañana",
         "es:esta",
         "en:this",
         "topic:en-multi-sense"
@@ -26598,7 +26545,6 @@
         "english": "last night"
       },
       "collections": [
-        "es:mañana",
         "es:anoche",
         "en:last"
       ],
@@ -26613,7 +26559,6 @@
         "english": "tonight"
       },
       "collections": [
-        "es:mañana",
         "es:esta",
         "en:tonight"
       ],
@@ -27589,7 +27534,6 @@
         "pos:function-word",
         "pos:connector",
         "grammar:sentence-structure",
-        "en:condition",
         "si vs sí",
         "es:si",
         "en:if",
@@ -27689,7 +27633,6 @@
       "collections": [
         "pos:connector",
         "topic:time",
-        "en:condition",
         "es:siempre",
         "en:whenever"
       ],
@@ -27705,7 +27648,6 @@
       },
       "collections": [
         "pos:connector",
-        "en:condition",
         "es:siempre",
         "en:as",
         "topic:en-multi-sense"
@@ -28204,7 +28146,6 @@
         "topic:location",
         "morphology:recognition",
         "morphology:prefix-be",
-        "en:expression",
         "es:detrás",
         "en:behind"
       ],
@@ -29320,7 +29261,6 @@
         "topic:time",
         "morphology:recognition",
         "morphology:prefix-be",
-        "en:expression",
         "es:antes",
         "en:before"
       ],
@@ -30576,7 +30516,6 @@
         "english": "You must show your ID."
       },
       "collections": [
-        "en:obligation",
         "verb + bare infinitive",
         "es:tener",
         "en:must",
@@ -30923,7 +30862,6 @@
       },
       "collections": [
         "pos:adjective",
-        "en:possession",
         "es:propio",
         "en:own",
         "topic:abstract-quality",
@@ -30941,7 +30879,6 @@
       },
       "collections": [
         "es:dueño",
-        "en:possession",
         "construction:prepositional-verb",
         "construction:map-de-of",
         "es:ser",
@@ -31000,7 +30937,6 @@
       "collections": [
         "en:own",
         "pos:noun",
-        "en:possession",
         "es:dueño",
         "en:owner",
         "gender:common",
@@ -31019,7 +30955,6 @@
       },
       "collections": [
         "es:propietario",
-        "en:possession",
         "register:formal",
         "construction:prepositional-verb",
         "es:ser",
@@ -31040,7 +30975,6 @@
       "collections": [
         "en:own",
         "pos:noun",
-        "en:possession",
         "es:propiedad",
         "en:ownership",
         "gender:feminine",
@@ -34996,7 +34930,6 @@
         "morphology:suffix-ent",
         "topic:cognate",
         "contrast:confusable",
-        "en:expression",
         "es:ser",
         "en:different",
         "topic:abstract-quality",
@@ -35498,7 +35431,6 @@
         "morphology:suffix-y",
         "topic:cognate",
         "topic:people",
-        "en:people",
         "topic:family",
         "pos:noun",
         "es:familia",
@@ -35814,7 +35746,6 @@
         "topic:cognate",
         "topic:places",
         "topic:location",
-        "en:place",
         "topic:direction",
         "pos:noun",
         "es:apartamento",
@@ -38514,7 +38445,6 @@
         "topic:cognate",
         "topic:places",
         "topic:location",
-        "en:place",
         "topic:direction",
         "pos:noun",
         "es:parque",
@@ -39032,7 +38962,6 @@
         "morphology:suffix-ity",
         "topic:cognate",
         "contrast:confusable",
-        "en:expression",
         "es:disponibilidad",
         "en:availability",
         "gender:feminine",
@@ -44836,7 +44765,6 @@
         "cognate:opaque-gloss",
         "topic:places",
         "topic:location",
-        "en:place",
         "topic:direction",
         "pos:noun",
         "es:aeropuerto",
@@ -44979,7 +44907,6 @@
         "cognate:opaque-gloss",
         "topic:places",
         "topic:location",
-        "en:place",
         "topic:direction",
         "pos:noun",
         "es:oficina",
@@ -45809,7 +45736,6 @@
         "pos:adjective",
         "grammar:ser-adjective",
         "contrast:confusable",
-        "en:expression",
         "es:ser",
         "en:unlike",
         "topic:abstract-quality",
@@ -45829,7 +45755,6 @@
         "pos:adjective",
         "grammar:estar-adjective",
         "contrast:confusable",
-        "en:expression",
         "es:estar",
         "en:free",
         "topic:value-price",
@@ -45863,7 +45788,6 @@
         "english": "I live in Bogotá with my family."
       },
       "collections": [
-        "en:expression",
         "contrast:confusable",
         "es:vivir",
         "en:live"
@@ -45879,7 +45803,6 @@
         "english": "I live in Bogotá with my family."
       },
       "collections": [
-        "en:expression",
         "contrast:confusable",
         "es:vivir",
         "en:live"
@@ -48455,7 +48378,6 @@
       },
       "collections": [
         "pos:function-word",
-        "en:possibility",
         "pos:adverb",
         "es:quizá",
         "en:maybe"
@@ -48472,7 +48394,6 @@
       },
       "collections": [
         "pos:function-word",
-        "en:possibility",
         "register:formal",
         "pos:adverb",
         "es:quizá",
@@ -48490,7 +48411,6 @@
       },
       "collections": [
         "pos:function-word",
-        "en:possibility",
         "pos:adverb",
         "es:quizá",
         "en:possibly"
@@ -49196,7 +49116,6 @@
       },
       "collections": [
         "topic:people",
-        "en:people",
         "topic:family",
         "pos:noun",
         "es:esposa",
@@ -49215,7 +49134,6 @@
       },
       "collections": [
         "topic:people",
-        "en:people",
         "topic:family",
         "pos:noun",
         "es:esposa",
@@ -49234,7 +49152,6 @@
       },
       "collections": [
         "topic:people",
-        "en:people",
         "topic:family",
         "pos:noun",
         "es:esposo",
@@ -49253,7 +49170,6 @@
       },
       "collections": [
         "topic:people",
-        "en:people",
         "topic:family",
         "pos:noun",
         "es:esposo",
@@ -49272,7 +49188,6 @@
       },
       "collections": [
         "topic:people",
-        "en:people",
         "topic:family",
         "pos:noun",
         "es:familia",
@@ -49291,7 +49206,6 @@
       },
       "collections": [
         "topic:people",
-        "en:people",
         "topic:family",
         "pos:noun",
         "es:familia",
@@ -49310,7 +49224,6 @@
       },
       "collections": [
         "topic:people",
-        "en:people",
         "topic:family",
         "pos:noun",
         "es:hermana",
@@ -49329,7 +49242,6 @@
       },
       "collections": [
         "topic:people",
-        "en:people",
         "topic:family",
         "pos:noun",
         "es:hermana",
@@ -49348,7 +49260,6 @@
       },
       "collections": [
         "topic:people",
-        "en:people",
         "topic:family",
         "pos:noun",
         "es:hermandad",
@@ -49367,7 +49278,6 @@
       },
       "collections": [
         "topic:people",
-        "en:people",
         "topic:family",
         "pos:noun",
         "es:hermandad",
@@ -49386,7 +49296,6 @@
       },
       "collections": [
         "topic:people",
-        "en:people",
         "topic:family",
         "pos:noun",
         "es:hermandad",
@@ -49407,7 +49316,6 @@
       },
       "collections": [
         "topic:people",
-        "en:people",
         "topic:family",
         "pos:noun",
         "es:hermano",
@@ -49426,7 +49334,6 @@
       },
       "collections": [
         "topic:people",
-        "en:people",
         "topic:family",
         "pos:noun",
         "es:hermano",
@@ -49464,7 +49371,6 @@
       },
       "collections": [
         "topic:people",
-        "en:people",
         "topic:family",
         "pos:noun",
         "es:hombre",
@@ -49483,7 +49389,6 @@
       },
       "collections": [
         "topic:people",
-        "en:people",
         "topic:family",
         "pos:noun",
         "es:hombre",
@@ -49521,7 +49426,6 @@
       },
       "collections": [
         "topic:people",
-        "en:people",
         "topic:family",
         "pos:noun",
         "es:mujer",
@@ -49540,7 +49444,6 @@
       },
       "collections": [
         "topic:people",
-        "en:people",
         "topic:family",
         "pos:noun",
         "es:mujer",
@@ -49559,7 +49462,6 @@
       },
       "collections": [
         "topic:people",
-        "en:people",
         "topic:family",
         "pos:noun",
         "es:niña",
@@ -49578,7 +49480,6 @@
       },
       "collections": [
         "topic:people",
-        "en:people",
         "topic:family",
         "pos:noun",
         "es:niña",
@@ -49597,7 +49498,6 @@
       },
       "collections": [
         "topic:people",
-        "en:people",
         "topic:family",
         "pos:noun",
         "es:niña",
@@ -49635,7 +49535,6 @@
       },
       "collections": [
         "topic:people",
-        "en:people",
         "topic:family",
         "pos:noun",
         "es:niño",
@@ -49654,7 +49553,6 @@
       },
       "collections": [
         "topic:people",
-        "en:people",
         "topic:family",
         "pos:noun",
         "es:niño",
@@ -49710,7 +49608,6 @@
       },
       "collections": [
         "topic:people",
-        "en:people",
         "topic:family",
         "pos:noun",
         "es:persona",
@@ -49750,7 +49647,6 @@
       "collections": [
         "topic:places",
         "topic:location",
-        "en:place",
         "topic:direction",
         "pos:noun",
         "es:casa",
@@ -49770,7 +49666,6 @@
       "collections": [
         "topic:places",
         "topic:location",
-        "en:place",
         "topic:direction",
         "pos:noun",
         "es:hogar",
@@ -49790,7 +49685,6 @@
       "collections": [
         "topic:places",
         "topic:location",
-        "en:place",
         "topic:direction",
         "pos:noun",
         "es:tienda",
@@ -49810,7 +49704,6 @@
       "collections": [
         "topic:places",
         "topic:location",
-        "en:place",
         "topic:direction",
         "pos:noun",
         "es:cuarto",
@@ -49830,7 +49723,6 @@
       "collections": [
         "topic:places",
         "topic:location",
-        "en:place",
         "topic:direction",
         "pos:noun",
         "es:habitación",
@@ -49850,7 +49742,6 @@
       "collections": [
         "topic:places",
         "topic:location",
-        "en:place",
         "topic:direction",
         "pos:noun",
         "es:baño",
@@ -49870,7 +49761,6 @@
       "collections": [
         "topic:places",
         "topic:location",
-        "en:place",
         "topic:direction",
         "pos:noun",
         "es:barrio",
@@ -49890,7 +49780,6 @@
       "collections": [
         "topic:places",
         "topic:location",
-        "en:place",
         "topic:direction",
         "pos:noun",
         "es:ciudad",
@@ -49912,7 +49801,6 @@
       "collections": [
         "topic:places",
         "topic:location",
-        "en:place",
         "topic:direction",
         "pos:noun",
         "es:país",
@@ -49932,7 +49820,6 @@
       "collections": [
         "topic:places",
         "topic:location",
-        "en:place",
         "topic:direction",
         "topic:location-expression",
         "es:en",
@@ -49953,7 +49840,6 @@
       "collections": [
         "topic:places",
         "topic:location",
-        "en:place",
         "topic:direction",
         "topic:location-expression",
         "en:home"
@@ -49971,7 +49857,6 @@
       "collections": [
         "topic:places",
         "topic:location",
-        "en:place",
         "topic:direction",
         "topic:location-expression",
         "es:de",
@@ -50048,7 +49933,6 @@
       },
       "collections": [
         "topic:social-expression",
-        "en:expression",
         "es:por",
         "en:please",
         "topic:multi-sense"
@@ -50065,7 +49949,6 @@
       },
       "collections": [
         "topic:social-expression",
-        "en:expression",
         "es:perdón",
         "en:excuse"
       ],
@@ -50081,7 +49964,6 @@
       },
       "collections": [
         "topic:social-expression",
-        "en:expression",
         "es:disculpe",
         "en:excuse"
       ],
@@ -50097,7 +49979,6 @@
       },
       "collections": [
         "topic:social-expression",
-        "en:expression",
         "es:perdón",
         "en:i'm"
       ],
@@ -50113,7 +49994,6 @@
       },
       "collections": [
         "topic:social-expression",
-        "en:expression",
         "es:gracias",
         "en:thank"
       ],
@@ -50129,7 +50009,6 @@
       },
       "collections": [
         "topic:social-expression",
-        "en:expression",
         "es:gracias",
         "en:thanks"
       ],
@@ -50145,7 +50024,6 @@
       },
       "collections": [
         "topic:social-expression",
-        "en:expression",
         "es:con",
         "en:you're",
         "topic:multi-sense"
@@ -50162,7 +50040,6 @@
       },
       "collections": [
         "topic:social-expression",
-        "en:expression",
         "es:de",
         "en:you're",
         "topic:multi-sense"
@@ -50179,7 +50056,6 @@
       },
       "collections": [
         "topic:social-expression",
-        "en:expression",
         "es:haber",
         "en:problem",
         "topic:multi-sense"
@@ -54651,7 +54527,6 @@
         "topic:everyday-objects",
         "topic:electricity",
         "topic:power-outage",
-        "en:expression",
         "es:ir",
         "en:power",
         "topic:multi-sense",
@@ -54671,7 +54546,6 @@
         "topic:everyday-objects",
         "topic:electricity",
         "topic:power-outage",
-        "en:expression",
         "es:ir",
         "en:power",
         "topic:multi-sense",
@@ -54727,7 +54601,6 @@
         "topic:social-expression",
         "meal expression",
         "es:aprovechar",
-        "en:expression",
         "es:que",
         "en:enjoy",
         "topic:multi-sense"
@@ -54746,7 +54619,6 @@
         "topic:social-expression",
         "en:gratitude",
         "verb + -ing",
-        "en:expression",
         "es:gracias",
         "en:thank"
       ],
@@ -54763,7 +54635,6 @@
       "collections": [
         "topic:social-expression",
         "es:cuidar",
-        "en:expression",
         "es:cuídate",
         "en:take",
         "topic:en-multi-sense"
@@ -54782,7 +54653,6 @@
         "topic:social-expression",
         "grammar:warning",
         "es:cuidar",
-        "en:expression",
         "es:cuidado",
         "en:careful"
       ],
@@ -54800,7 +54670,6 @@
         "topic:social-expression",
         "es:callar",
         "grammar:imperative",
-        "en:expression",
         "es:cállate",
         "en:quiet"
       ],
@@ -54819,7 +54688,6 @@
         "es:callar",
         "grammar:imperative",
         "register:informal",
-        "en:expression",
         "es:cállate",
         "en:shut"
       ],
@@ -54853,7 +54721,6 @@
       "collections": [
         "topic:places",
         "topic:location",
-        "en:place",
         "topic:direction",
         "pos:adverb",
         "es:allí",
@@ -54873,7 +54740,6 @@
       "collections": [
         "topic:places",
         "topic:location",
-        "en:place",
         "topic:direction",
         "pos:adverb",
         "es:ahí",
@@ -54893,7 +54759,6 @@
       "collections": [
         "topic:places",
         "topic:location",
-        "en:place",
         "topic:direction",
         "topic:location-expression",
         "es:por",
@@ -54913,9 +54778,7 @@
       "collections": [
         "topic:places",
         "topic:location",
-        "en:place",
         "topic:direction",
-        "en:expression",
         "es:ahí",
         "en:that",
         "topic:en-multi-sense"
@@ -54933,9 +54796,7 @@
       "collections": [
         "topic:places",
         "topic:location",
-        "en:place",
         "topic:direction",
-        "en:expression",
         "es:de",
         "en:that",
         "topic:multi-sense",
@@ -54954,7 +54815,6 @@
       "collections": [
         "topic:places",
         "topic:location",
-        "en:place",
         "topic:direction",
         "pos:noun",
         "es:dirección",
@@ -54978,7 +54838,6 @@
       "collections": [
         "topic:places",
         "topic:location",
-        "en:place",
         "topic:direction",
         "pos:noun",
         "es:dirección",
@@ -55000,7 +54859,6 @@
       "collections": [
         "topic:places",
         "topic:location",
-        "en:place",
         "topic:direction",
         "contrast:confusable",
         "pos:noun",
@@ -55021,7 +54879,6 @@
       "collections": [
         "topic:places",
         "topic:location",
-        "en:place",
         "topic:direction",
         "building level",
         "pos:noun",
@@ -55042,7 +54899,6 @@
       "collections": [
         "topic:places",
         "topic:location",
-        "en:place",
         "topic:direction",
         "en:home",
         "pos:noun",
@@ -55257,7 +55113,6 @@
       },
       "collections": [
         "noun expression",
-        "en:expression",
         "es:ser",
         "en:target",
         "topic:multi-sense"
@@ -55273,7 +55128,6 @@
         "english": "Her mind went blank."
       },
       "collections": [
-        "en:expression",
         "es:quedar",
         "en:for",
         "topic:multi-sense",
@@ -55327,7 +55181,6 @@
         "english": "I sent the form along with the copy."
       },
       "collections": [
-        "en:expression",
         "es:junto",
         "en:along"
       ],
@@ -55408,7 +55261,6 @@
         "english": "Slow down!"
       },
       "collections": [
-        "en:expression",
         "es:despacio",
         "en:slow",
         "topic:en-multi-sense"
@@ -59529,10 +59381,10 @@
         "morphology:noun-to-adjective",
         "morphology:suffix-ish",
         "morphology:recognition",
-        "en:nationality",
         "grammar:capitalization",
         "es:gran",
-        "en:britain"
+        "en:britain",
+        "topic:nationality"
       ],
       "curriculumRole": "reference"
     },
@@ -59550,10 +59402,10 @@
         "morphology:noun-to-adjective",
         "morphology:suffix-ish",
         "morphology:recognition",
-        "en:nationality",
         "grammar:capitalization",
         "es:irlanda",
-        "en:ireland"
+        "en:ireland",
+        "topic:nationality"
       ],
       "curriculumRole": "reference"
     },
@@ -59571,10 +59423,10 @@
         "morphology:noun-to-adjective",
         "morphology:suffix-ish",
         "morphology:recognition",
-        "en:nationality",
         "grammar:capitalization",
         "es:españa",
-        "en:spain"
+        "en:spain",
+        "topic:nationality"
       ],
       "curriculumRole": "reference"
     },
@@ -59592,10 +59444,10 @@
         "morphology:noun-to-adjective",
         "morphology:suffix-ish",
         "morphology:recognition",
-        "en:nationality",
         "grammar:capitalization",
         "es:polonia",
-        "en:poland"
+        "en:poland",
+        "topic:nationality"
       ],
       "curriculumRole": "reference"
     },
@@ -59613,10 +59465,10 @@
         "morphology:noun-to-adjective",
         "morphology:suffix-ish",
         "morphology:recognition",
-        "en:nationality",
         "grammar:capitalization",
         "es:turquía",
-        "en:turkey"
+        "en:turkey",
+        "topic:nationality"
       ],
       "curriculumRole": "reference"
     },
@@ -59634,10 +59486,10 @@
         "morphology:noun-to-adjective",
         "morphology:suffix-ish",
         "morphology:recognition",
-        "en:nationality",
         "grammar:capitalization",
         "es:suecia",
-        "en:sweden"
+        "en:sweden",
+        "topic:nationality"
       ],
       "curriculumRole": "reference"
     },
@@ -59655,10 +59507,10 @@
         "morphology:noun-to-adjective",
         "morphology:suffix-ish",
         "morphology:recognition",
-        "en:nationality",
         "grammar:capitalization",
         "es:dinamarca",
-        "en:denmark"
+        "en:denmark",
+        "topic:nationality"
       ],
       "curriculumRole": "reference"
     },
@@ -59676,10 +59528,10 @@
         "morphology:noun-to-adjective",
         "morphology:suffix-ish",
         "morphology:recognition",
-        "en:nationality",
         "grammar:capitalization",
         "es:finlandia",
-        "en:finland"
+        "en:finland",
+        "topic:nationality"
       ],
       "curriculumRole": "reference"
     },
@@ -60960,7 +60812,6 @@
       "collections": [
         "morphology:recognition",
         "morphology:prefix-al",
-        "en:expression",
         "en:along"
       ],
       "curriculumRole": "reference"
@@ -60994,7 +60845,6 @@
       "collections": [
         "morphology:recognition",
         "morphology:prefix-be",
-        "en:expression",
         "es:lado",
         "en:beside"
       ],
@@ -61028,7 +60878,6 @@
       "collections": [
         "morphology:recognition",
         "morphology:prefix-be",
-        "en:expression",
         "es:debajo",
         "en:below"
       ],
@@ -61045,7 +60894,6 @@
       "collections": [
         "morphology:recognition",
         "morphology:prefix-be",
-        "en:expression",
         "es:entre",
         "en:between"
       ],
@@ -61062,7 +60910,6 @@
       "collections": [
         "morphology:recognition",
         "morphology:prefix-be",
-        "en:expression",
         "es:entre",
         "en:among"
       ],
@@ -61079,7 +60926,6 @@
       "collections": [
         "morphology:recognition",
         "morphology:prefix-be",
-        "en:expression",
         "es:más",
         "en:beyond"
       ],
@@ -61308,7 +61154,6 @@
       "collections": [
         "morphology:recognition",
         "morphology:suffix-er",
-        "en:expression",
         "es:estar",
         "en:inside",
         "topic:multi-sense"
@@ -61326,7 +61171,6 @@
       "collections": [
         "morphology:recognition",
         "morphology:suffix-er",
-        "en:expression",
         "es:estar",
         "en:outside",
         "topic:multi-sense"
@@ -61439,7 +61283,6 @@
       "collections": [
         "morphology:recognition",
         "morphology:suffix-er",
-        "en:expression",
         "es:espacio",
         "en:outer"
       ],
@@ -61456,7 +61299,6 @@
       "collections": [
         "morphology:recognition",
         "morphology:suffix-er",
-        "en:expression",
         "es:en",
         "en:in",
         "topic:multi-sense",
@@ -61475,7 +61317,6 @@
       "collections": [
         "morphology:recognition",
         "morphology:suffix-er",
-        "en:expression",
         "es:en",
         "en:in",
         "topic:multi-sense",
@@ -61494,7 +61335,6 @@
       "collections": [
         "morphology:recognition",
         "morphology:suffix-ward",
-        "en:expression",
         "dialect:american",
         "es:hacia",
         "en:toward"
@@ -61512,7 +61352,6 @@
       "collections": [
         "morphology:recognition",
         "morphology:suffix-ward",
-        "en:expression",
         "dialect:british",
         "es:hacia",
         "en:towards"
@@ -61568,7 +61407,6 @@
       "collections": [
         "morphology:recognition",
         "morphology:suffix-ward",
-        "en:expression",
         "topic:direction",
         "preferred direction expression",
         "es:directamente",
@@ -61587,7 +61425,6 @@
       "collections": [
         "morphology:recognition",
         "morphology:suffix-ward",
-        "en:expression",
         "topic:direction",
         "literal word combination",
         "es:directamente",
@@ -62198,7 +62035,6 @@
       "collections": [
         "construction:verb-forms",
         "grammar:modal",
-        "en:possibility",
         "construction:followed-by-bare-infinitive",
         "form:bare-infinitive",
         "es:ser",
@@ -62219,7 +62055,6 @@
       "collections": [
         "construction:verb-forms",
         "grammar:modal",
-        "en:possibility",
         "construction:followed-by-bare-infinitive",
         "form:bare-infinitive",
         "es:poder",
@@ -62258,7 +62093,6 @@
       "collections": [
         "construction:verb-forms",
         "grammar:modal",
-        "en:future",
         "construction:followed-by-bare-infinitive",
         "form:bare-infinitive",
         "es:futuro",
@@ -64951,7 +64785,6 @@
       },
       "collections": [
         "pos:connector",
-        "en:condition",
         "en:unless"
       ],
       "curriculumRole": "reference"
@@ -64966,7 +64799,6 @@
       },
       "collections": [
         "pos:connector",
-        "en:condition",
         "as long as",
         "es:siempre",
         "en:as",
@@ -64984,7 +64816,6 @@
       },
       "collections": [
         "pos:connector",
-        "en:condition",
         "provided that",
         "register:formal",
         "es:con",
@@ -65003,7 +64834,6 @@
       },
       "collections": [
         "pos:connector",
-        "en:condition",
         "grammar:concession",
         "even if",
         "es:incluso",
@@ -65022,7 +64852,6 @@
       },
       "collections": [
         "pos:connector",
-        "en:condition",
         "grammar:precaution",
         "in case",
         "es:por",
@@ -66324,7 +66153,6 @@
       },
       "collections": [
         "grammar:modal",
-        "en:obligation",
         "grammar:question",
         "construction:auxiliary-do",
         "construction:followed-by-full-infinitive",
@@ -66350,7 +66178,6 @@
       },
       "collections": [
         "grammar:modal",
-        "en:obligation",
         "grammar:question",
         "auxiliary does",
         "construction:followed-by-full-infinitive",
@@ -66416,7 +66243,6 @@
       },
       "collections": [
         "grammar:modal",
-        "en:obligation",
         "register:spoken",
         "register:informal",
         "construction:followed-by-bare-infinitive",
@@ -67058,7 +66884,6 @@
         "grammar:modal",
         "en:will",
         "grammar:question",
-        "en:future",
         "construction:followed-by-bare-infinitive",
         "en:you",
         "pos:verb",
@@ -67078,7 +66903,6 @@
         "grammar:modal",
         "en:will",
         "grammar:negative",
-        "en:future",
         "grammar:contraction",
         "construction:followed-by-bare-infinitive",
         "en:won't",
@@ -67525,7 +67349,6 @@
         "grammar:intensifier",
         "grammar:degree",
         "grammar:adjective-modifier",
-        "en:result",
         "es:tan",
         "en:so",
         "contrast:tanto-vs-tan",
