@@ -7439,7 +7439,8 @@
       "collections": [
         "es:extrañar",
         "find + object + adjective",
-        "es:me"
+        "es:me",
+        "topic:expression"
       ],
       "curriculumRole": "reference"
     },
@@ -7662,7 +7663,8 @@
         "grammar:fixed-expression",
         "construction:map-sin-without",
         "es:sin",
-        "en:without"
+        "en:without",
+        "topic:expression"
       ],
       "curriculumRole": "reference"
     },
@@ -9529,7 +9531,8 @@
         "es:llamar",
         "grammar:introduction",
         "es:me",
-        "en:my"
+        "en:my",
+        "topic:expression"
       ],
       "curriculumRole": "supporting"
     },
@@ -11674,7 +11677,8 @@
         "en:weigh",
         "measurement",
         "es:pesa",
-        "en:weighs"
+        "en:weighs",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -16221,7 +16225,8 @@
         "grammar:fixed-expression",
         "free-choice construction",
         "es:cueste",
-        "en:whatever"
+        "en:whatever",
+        "topic:expression"
       ],
       "curriculumRole": "reference"
     },
@@ -25969,7 +25974,8 @@
         "grammar:exclamative",
         "protest",
         "es:abajo",
-        "en:down"
+        "en:down",
+        "topic:expression"
       ],
       "curriculumRole": "reference"
     },
@@ -27601,7 +27607,8 @@
       },
       "collections": [
         "es:entre",
-        "en:together"
+        "en:together",
+        "topic:expression"
       ],
       "curriculumRole": "reference"
     },
@@ -27717,7 +27724,8 @@
       },
       "collections": [
         "es:igual",
-        "en:maybe"
+        "en:maybe",
+        "topic:expression"
       ],
       "curriculumRole": "reference"
     },
@@ -27846,7 +27854,8 @@
       "collections": [
         "es:malo",
         "es:peor",
-        "en:worst"
+        "en:worst",
+        "topic:expression"
       ],
       "curriculumRole": "reference"
     },
@@ -28311,7 +28320,8 @@
       },
       "collections": [
         "es:mismo",
-        "en:same"
+        "en:same",
+        "topic:expression"
       ],
       "curriculumRole": "reference"
     },
@@ -29193,7 +29203,9 @@
       },
       "collections": [
         "es:sí",
-        "en:yes"
+        "en:yes",
+        "pos:interjection",
+        "topic:expression"
       ],
       "curriculumRole": "reference"
     },
@@ -29405,7 +29417,8 @@
         "proverb",
         "grammar:fixed-expression",
         "es:más",
-        "en:better"
+        "en:better",
+        "topic:expression"
       ],
       "curriculumRole": "reference"
     },
@@ -29568,7 +29581,8 @@
       "collections": [
         "en:already",
         "es:ya",
-        "en:enough"
+        "en:enough",
+        "topic:expression"
       ],
       "curriculumRole": "reference"
     },
@@ -32026,7 +32040,8 @@
         "morphology:prefix",
         "grammar:role",
         "es:ex",
-        "en:former"
+        "en:former",
+        "pos:adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -63060,7 +63075,8 @@
         "morphology:recognition",
         "morphology:suffix-er",
         "es:espacio",
-        "en:outer"
+        "en:outer",
+        "pos:noun"
       ],
       "curriculumRole": "reference"
     },
@@ -65163,7 +65179,8 @@
         "morphology:inflection",
         "form:third-person",
         "es:estudiar",
-        "en:study"
+        "en:study",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -65180,7 +65197,8 @@
         "morphology:inflection",
         "form:third-person",
         "es:tratar",
-        "en:try"
+        "en:try",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -65727,7 +65745,8 @@
         "morphology:inflection",
         "form:third-person",
         "es:intentar",
-        "en:try"
+        "en:try",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
