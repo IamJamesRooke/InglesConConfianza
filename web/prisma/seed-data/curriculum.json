@@ -7483,7 +7483,7 @@
         "topic:phrasal-verb",
         "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "dppdignekp",
@@ -11504,7 +11504,8 @@
         "es:qué",
         "en:what",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -13953,7 +13954,8 @@
         "es:cuánto",
         "en:how",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -26334,13 +26336,14 @@
       "spanish": "a un lugar",
       "english": "to a place",
       "example": {
-        "spanish": "a un lugar",
-        "english": "to a place"
+        "spanish": "Vamos a un lugar tranquilo.",
+        "english": "We're going to a quiet place."
       },
       "collections": [
         "es:a",
         "en:place",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26349,14 +26352,15 @@
       "spanish": "hacia un lugar",
       "english": "toward a place",
       "example": {
-        "spanish": "hacia un lugar",
-        "english": "toward a place"
+        "spanish": "Caminamos hacia un lugar seguro.",
+        "english": "We walked toward a safe place."
       },
       "collections": [
         "es:a",
         "es:hacia",
         "en:toward",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26391,7 +26395,8 @@
       "collections": [
         "es:adelante",
         "en:come",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26406,7 +26411,8 @@
       "collections": [
         "es:adelante",
         "en:go",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26524,7 +26530,8 @@
       "collections": [
         "es:alto",
         "en:stop",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26550,14 +26557,15 @@
       "spanish": "después de",
       "english": "after",
       "example": {
-        "spanish": "después de",
-        "english": "after"
+        "spanish": "Salimos después de la reunión.",
+        "english": "We left after the meeting."
       },
       "collections": [
         "es:antes",
         "es:después",
         "en:after",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -27111,13 +27119,14 @@
       "spanish": "bien",
       "english": "all right",
       "example": {
-        "spanish": "bien",
-        "english": "all right"
+        "spanish": "Todo va a estar bien.",
+        "english": "Everything is going to be all right."
       },
       "collections": [
         "es:bien",
         "en:all",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -27323,14 +27332,15 @@
       "spanish": "con",
       "english": "with",
       "example": {
-        "spanish": "con",
-        "english": "with"
+        "spanish": "Voy con Ana.",
+        "english": "I am going with Ana."
       },
       "collections": [
         "es:con",
         "en:with",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -27595,14 +27605,15 @@
       "spanish": "cuán grande",
       "english": "how big",
       "example": {
-        "spanish": "cuán grande",
-        "english": "how big"
+        "spanish": "No sabía cuán grande era el problema.",
+        "english": "I didn't know how big the problem was."
       },
       "collections": [
         "es:cuánto",
         "es:cuán",
         "en:how",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28073,7 +28084,8 @@
         "es:después",
         "es:hasta",
         "en:see",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28549,13 +28561,14 @@
       "spanish": "entonces",
       "english": "so",
       "example": {
-        "spanish": "entonces",
-        "english": "so"
+        "spanish": "Entonces, ¿vienes o no?",
+        "english": "So, are you coming or not?"
       },
       "collections": [
         "es:entonces",
         "en:so",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28879,13 +28892,14 @@
       "spanish": "día",
       "english": "day",
       "example": {
-        "spanish": "día",
-        "english": "day"
+        "spanish": "Hoy es un buen día.",
+        "english": "Today is a good day."
       },
       "collections": [
         "es:día",
         "en:day",
-        "pos:noun"
+        "pos:noun",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28984,13 +28998,14 @@
       "spanish": "la mañana",
       "english": "the morning",
       "example": {
-        "spanish": "la mañana",
-        "english": "the morning"
+        "spanish": "Trabajo toda la mañana.",
+        "english": "I work all morning."
       },
       "collections": [
         "es:mañana",
         "en:morning",
-        "pos:noun"
+        "pos:noun",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -28999,13 +29014,14 @@
       "spanish": "la tarde",
       "english": "the afternoon",
       "example": {
-        "spanish": "la tarde",
-        "english": "the afternoon"
+        "spanish": "Trabajo toda la tarde.",
+        "english": "I work all afternoon."
       },
       "collections": [
         "es:tarde",
         "en:afternoon",
-        "pos:noun"
+        "pos:noun",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -29029,13 +29045,14 @@
       "spanish": "la noche",
       "english": "the night",
       "example": {
-        "spanish": "la noche",
-        "english": "the night"
+        "spanish": "Trabajo toda la noche.",
+        "english": "I work all night."
       },
       "collections": [
         "es:noche",
         "en:night",
-        "pos:noun"
+        "pos:noun",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -29062,14 +29079,15 @@
       "spanish": "esta mañana",
       "english": "this morning",
       "example": {
-        "spanish": "esta mañana",
-        "english": "this morning"
+        "spanish": "Llegué esta mañana.",
+        "english": "I arrived this morning."
       },
       "collections": [
         "es:mañana",
         "es:esta",
         "en:this",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -29112,13 +29130,14 @@
       "spanish": "esta tarde",
       "english": "this afternoon",
       "example": {
-        "spanish": "esta tarde",
-        "english": "this afternoon"
+        "spanish": "Nos vemos esta tarde.",
+        "english": "See you this afternoon."
       },
       "collections": [
         "es:esta",
         "en:this",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -29604,13 +29623,14 @@
       "spanish": "para que",
       "english": "so that",
       "example": {
-        "spanish": "para que",
-        "english": "so that"
+        "spanish": "Te lo explico para que entiendas.",
+        "english": "I'm explaining it to you so that you understand."
       },
       "collections": [
         "es:para",
         "en:so",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30221,13 +30241,14 @@
       "spanish": "si",
       "english": "whether",
       "example": {
-        "spanish": "si",
-        "english": "whether"
+        "spanish": "No sé si es cierto.",
+        "english": "I don't know whether it's true."
       },
       "collections": [
         "es:si",
         "en:whether",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30236,14 +30257,15 @@
       "spanish": "si...o no",
       "english": "whether...or not",
       "example": {
-        "spanish": "si...o no",
-        "english": "whether...or not"
+        "spanish": "No sé si viene o no.",
+        "english": "I don't know whether she's coming or not."
       },
       "collections": [
         "es:si",
         "es:si...o",
         "en:whether...or",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30679,14 +30701,15 @@
       "spanish": "muchas veces",
       "english": "many times",
       "example": {
-        "spanish": "muchas veces",
-        "english": "many times"
+        "spanish": "Se lo he dicho muchas veces.",
+        "english": "I've told him many times."
       },
       "collections": [
         "es:vez",
         "es:muchas",
         "en:many",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30713,14 +30736,15 @@
       "spanish": "acabar de hacer algo",
       "english": "to have just done something",
       "example": {
-        "spanish": "acabar de hacer algo",
-        "english": "to have just done something"
+        "spanish": "Acabo de terminar el informe.",
+        "english": "I have just finished the report."
       },
       "collections": [
         "es:ya",
         "es:acabar",
         "en:just",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
