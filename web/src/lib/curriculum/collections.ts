@@ -75,7 +75,6 @@ export const LEGACY_COLLECTIONS: ReadonlySet<string> = new Set([
   "a pesar de",
   "a pile of",
   "absence of obligation",
-  "accent contrast",
   "across from",
   "actualidad",
   "adjective before noun",

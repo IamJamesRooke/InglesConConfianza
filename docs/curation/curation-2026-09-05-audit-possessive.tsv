@@ -1,0 +1,28 @@
+63ojew9r4f	tu	your	core	audit:reviewed	Audit: fine as-is (redundant bare tag removed separately).	Tu libro está aquí.	Your book is here.
+i5ji4776n8	mi	my	core	audit:reviewed	Audit: fine as-is.	Mi carro es azul.	My car is blue.
+ozvruwn0tu	mis	my	supporting	audit:reviewed	Audit: fine as-is.	Mis llaves están en la mesa.	My keys are on the table.
+7fi9enfd3m	su	his	core	audit:reviewed	Audit: fine as-is.	Su nombre es Juan.	His name is Juan.
+s1bonkmflq	su	her	core	audit:reviewed	Audit: fine as-is.	Su nombre es Ana.	Her name is Ana.
+ibkymsd9ln	su	its	reference	audit:reviewed	Audit: fine as-is.	El perro mueve su cola.	The dog wags its tail.
+29p1fsasc0	su	their	core	audit:reviewed	Audit: fine as-is.	Su casa es grande.	Their house is big.
+yfn0j25sta	su	your	supporting	audit:reviewed	Audit: fine as-is.	Su pasaporte, por favor.	Your passport, please.
+2x72difo4k	sus	their	supporting	audit:reviewed	Audit: fine as-is.	Sus hijos están en la escuela.	Their children are at school.
+umr08lge2h	nuestros	our	supporting	audit:reviewed	Audit: fine as-is.	Nuestros amigos vienen mañana.	Our friends are coming tomorrow.
+1wszj3edq2	nuestras	our	supporting	audit:reviewed	Audit: fine as-is.	Nuestras ideas son buenas.	Our ideas are good.
+x3zp11ybbf	nuestro	our	supporting	audit:reviewed	Audit: fine as-is.	Nuestro equipo ganó.	Our team won.
+11uupaj41k	nuestra	our	supporting	audit:reviewed	Audit: fine as-is.	Nuestra casa es azul.	Our house is blue.
+7gl5vz7uo4	tus	your	supporting	audit:reviewed	Audit: fine as-is.	Tus llaves están en la mesa.	Your keys are on the table.
+aq3ynjbhjm	sus	his	supporting	audit:reviewed	Audit role fix: was reference; every other "sus" sense (their) is supporting, and "su" (singular) equivalents are core/supporting — reference was a two-step drop with no reason. Re-tiered to match its sibling senses.	Sus libros están en la mesa.	His books are on the table.
+538wpaef6k	sus	her	supporting	audit:reviewed	Audit role fix: same inconsistency as "sus"→his.	Sus llaves están aquí.	Her keys are here.
+m2m07p7uo1	sus	its	supporting	audit:reviewed	Audit role fix: same inconsistency as "sus"→his.	El árbol perdió sus hojas.	The tree lost its leaves.
+ytve9np7hs	sus	your	supporting	audit:reviewed	Audit role fix: same inconsistency as "sus"→his.	Sus pasaportes, por favor.	Your passports, please.
+v4qe1e1ogj	de quién	whose	supporting	audit:reviewed	Audit: fine as-is — dual-homed on Interrogatives, which is correct.	¿De quién es esto?	Whose is this?
+4ly1ug3p0x	el mío	mine	supporting	audit:reviewed	Audit: fine as-is; plural-object forms (los míos) missing — flagged separately, not a fix to this row.	El carro rojo es el mío.	The red car is mine.
+z6wn8qs99s	la mía	mine	supporting	audit:reviewed	Audit: fine as-is.	Esa maleta es la mía.	That suitcase is mine.
+y0y1j3ow0v	el tuyo	yours	supporting	audit:reviewed	Audit: fine as-is.	Este asiento es el tuyo.	This seat is yours.
+g22u81e32h	la tuya	yours	supporting	audit:reviewed	Audit: fine as-is.	La idea es la tuya.	The idea is yours.
+dzve3d1qxs	el suyo	his	supporting	audit:reviewed	Audit: fine as-is.	El paraguas azul es el suyo.	The blue umbrella is his.
+12j8czinec	la suya	hers	supporting	audit:reviewed	Audit: fine as-is.	La culpa es la suya.	The fault is hers.
+o6i1dpuv9z	el suyo	theirs	supporting	audit:reviewed	Audit: fine as-is.	Ese terreno es el suyo.	That land is theirs.
+45qotapw4p	el nuestro	ours	supporting	audit:reviewed	Audit: fine as-is.	El primer turno es el nuestro.	The first turn is ours.
+1rw4wohjpu	la nuestra	ours	supporting	audit:reviewed	Audit: fine as-is.	Esta victoria es la nuestra.	This victory is ours.

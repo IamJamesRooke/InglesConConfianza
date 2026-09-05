@@ -23985,14 +23985,14 @@
         "grammar:possessive-determiner",
         "grammar:singular",
         "register:informal",
-        "accent contrast",
         "es:tu",
         "en:your",
         "topic:pronoun",
         "contrast:tu-vs-tu-tilde",
         "contrast:confusable",
         "topic:determiner",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -81151,7 +81151,8 @@
         "contrast:mi-vs-mi-tilde",
         "contrast:confusable",
         "topic:determiner",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -81170,7 +81171,8 @@
         "es:mi",
         "en:my",
         "topic:determiner",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -81190,7 +81192,8 @@
         "contrast:su-ambiguity",
         "contrast:confusable",
         "topic:determiner",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -81211,7 +81214,8 @@
         "contrast:confusable",
         "topic:determiner",
         "topic:en-multi-sense",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -81231,7 +81235,8 @@
         "contrast:su-ambiguity",
         "contrast:confusable",
         "topic:determiner",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -81252,7 +81257,8 @@
         "contrast:su-ambiguity",
         "contrast:confusable",
         "topic:determiner",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -81273,7 +81279,8 @@
         "contrast:su-ambiguity",
         "contrast:confusable",
         "topic:determiner",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -81294,7 +81301,8 @@
         "contrast:confusable",
         "contrast:su-ambiguity",
         "topic:determiner",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -81313,7 +81321,8 @@
         "topic:pronoun",
         "es:quién",
         "en:whose",
-        "topic:interrogative"
+        "topic:interrogative",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -82878,7 +82887,8 @@
         "es:nuestros",
         "en:our",
         "topic:determiner",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -82898,7 +82908,8 @@
         "es:nuestras",
         "en:our",
         "topic:determiner",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -82918,7 +82929,8 @@
         "es:nuestro",
         "en:our",
         "topic:determiner",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -82938,7 +82950,8 @@
         "es:nuestra",
         "en:our",
         "topic:determiner",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -82956,7 +82969,8 @@
         "grammar:masculine",
         "topic:pronoun",
         "es:mío",
-        "en:mine"
+        "en:mine",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -82974,7 +82988,8 @@
         "grammar:feminine",
         "topic:pronoun",
         "es:mía",
-        "en:mine"
+        "en:mine",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -82992,7 +83007,8 @@
         "grammar:masculine",
         "topic:pronoun",
         "es:tuyo",
-        "en:yours"
+        "en:yours",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -83010,7 +83026,8 @@
         "grammar:feminine",
         "topic:pronoun",
         "es:tuya",
-        "en:yours"
+        "en:yours",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -83028,7 +83045,8 @@
         "grammar:masculine",
         "topic:pronoun",
         "es:suyo",
-        "en:his"
+        "en:his",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -83046,7 +83064,8 @@
         "grammar:feminine",
         "topic:pronoun",
         "es:suya",
-        "en:hers"
+        "en:hers",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -83065,7 +83084,8 @@
         "grammar:plural",
         "topic:pronoun",
         "es:suyo",
-        "en:theirs"
+        "en:theirs",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -83084,7 +83104,8 @@
         "grammar:plural",
         "topic:pronoun",
         "es:nuestro",
-        "en:ours"
+        "en:ours",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -83103,7 +83124,8 @@
         "grammar:plural",
         "topic:pronoun",
         "es:nuestra",
-        "en:ours"
+        "en:ours",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -83122,7 +83144,8 @@
         "es:tu",
         "en:your",
         "topic:determiner",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -83798,9 +83821,10 @@
         "contrast:confusable",
         "contrast:su-ambiguity",
         "topic:determiner",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "538wpaef6k",
@@ -83820,9 +83844,10 @@
         "contrast:su-ambiguity",
         "topic:determiner",
         "topic:en-multi-sense",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "m2m07p7uo1",
@@ -83841,9 +83866,10 @@
         "contrast:confusable",
         "contrast:su-ambiguity",
         "topic:determiner",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ytve9np7hs",
@@ -83862,9 +83888,10 @@
         "contrast:confusable",
         "contrast:su-ambiguity",
         "topic:determiner",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "a3h0h1dazt",

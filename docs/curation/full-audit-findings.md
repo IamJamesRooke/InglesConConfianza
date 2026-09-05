@@ -18,3 +18,14 @@ on approval. Newest entries at the bottom. Format:
   `-izar`/`-ar` verbs in the DB have a tempting-but-wrong `-ize`/`-ate`
   cognate translation that isn't flagged?
 
+## 2026-09-05 — `grammar:possessive-pronoun`
+- **[flagged]** Only singular-object forms exist (`el mío`/`la mía`, `el
+  tuyo`/`la tuya`, `el suyo`/`la suya`, `el nuestro`/`la nuestra`). Plural-
+  object forms (`los míos`/`las mías`, `los tuyos`/`las tuyas`, `los suyos`/
+  `las suyas` [it already has one "theirs" masc-plural sense but no
+  fem-plural or "yours-formal" sense], `los nuestros`/`las nuestras`) are
+  missing entirely — roughly 8 rows. Scoped out of the audit pass itself
+  (real content-authoring, not a quick fix) — worth a small dedicated add
+  later, following the `mi`→core/`mis`→supporting pattern already
+  established for determiners.
+
