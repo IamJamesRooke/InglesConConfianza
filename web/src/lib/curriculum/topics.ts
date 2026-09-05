@@ -230,6 +230,7 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       { collection: "topic:color", label: "Color" },
       { collection: "topic:weather", label: "Weather" },
       { collection: "topic:speed", label: "Speed" },
+      { collection: "topic:time", label: "Time" },
       { collection: "contrast:confusable", label: "Confusions" },
     ],
   },

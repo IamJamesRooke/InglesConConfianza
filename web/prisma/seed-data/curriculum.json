@@ -1528,7 +1528,7 @@
     },
     {
       "id": "qm6or4amql",
-      "spanish": "[el] bebedor / la bebedora",
+      "spanish": "[el] bebedor",
       "english": "the drinker",
       "example": {
         "spanish": "No es un bebedor habitual.",
@@ -16096,7 +16096,7 @@
     },
     {
       "id": "lfvxv89s5p",
-      "spanish": "[el] contador / la contadora",
+      "spanish": "[el] contador",
       "english": "the accountant",
       "example": {
         "spanish": "La contadora revisó los números.",
@@ -18553,7 +18553,7 @@
     },
     {
       "id": "tjrnsl8268",
-      "spanish": "[el] ladrón / la ladrona",
+      "spanish": "[el] ladrón",
       "english": "thief",
       "example": {
         "spanish": "El ladrón tomó el teléfono.",
@@ -19783,7 +19783,7 @@
     },
     {
       "id": "74tgefagq1",
-      "spanish": "[el] seguidor / la seguidora",
+      "spanish": "[el] seguidor",
       "english": "follower",
       "example": {
         "spanish": "Tiene muchos seguidores.",
@@ -26322,7 +26322,8 @@
       "collections": [
         "es:bien",
         "en:okay",
-        "pos:adjective"
+        "pos:adjective",
+        "grammar:estar-adjective"
       ],
       "curriculumRole": "supporting"
     },
@@ -26337,7 +26338,8 @@
       "collections": [
         "es:bien",
         "en:fine",
-        "pos:adjective"
+        "pos:adjective",
+        "grammar:estar-adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -26358,7 +26360,7 @@
     },
     {
       "id": "5p9qv88nn3",
-      "spanish": "bueno / buena",
+      "spanish": "bueno",
       "english": "good",
       "example": {
         "spanish": "bueno / buena",
@@ -26382,7 +26384,8 @@
       "collections": [
         "es:bueno",
         "en:kind",
-        "pos:adjective"
+        "pos:adjective",
+        "grammar:ser-adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -26503,7 +26506,8 @@
       "collections": [
         "es:cierto",
         "en:right",
-        "pos:adjective"
+        "pos:adjective",
+        "grammar:ser-adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -27915,7 +27919,7 @@
         "en:bad",
         "topic:en-multi-sense"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "jtm9v93uc2",
@@ -27928,7 +27932,8 @@
       "collections": [
         "es:malo",
         "en:evil",
-        "pos:adjective"
+        "pos:adjective",
+        "grammar:ser-adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -27943,7 +27948,8 @@
       "collections": [
         "es:malo",
         "en:poor",
-        "pos:adjective"
+        "pos:adjective",
+        "grammar:ser-adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -29249,7 +29255,8 @@
       "collections": [
         "es:seguro",
         "en:safe",
-        "pos:adjective"
+        "pos:adjective",
+        "grammar:ser-adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -29264,7 +29271,8 @@
       "collections": [
         "es:seguro",
         "en:sure",
-        "pos:adjective"
+        "pos:adjective",
+        "grammar:estar-adjective"
       ],
       "curriculumRole": "reference"
     },
@@ -86697,7 +86705,6 @@
         "english": "Isn't it true what he said?"
       },
       "collections": [
-        "pos:adjective",
         "topic:question-negation",
         "qn:negative-question",
         "grammar:question",
