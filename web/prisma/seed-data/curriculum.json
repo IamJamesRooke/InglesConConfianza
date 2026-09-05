@@ -26677,7 +26677,8 @@
         "en:which",
         "grammar:interrogative-determiner",
         "topic:interrogative",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -84753,7 +84754,8 @@
         "en:what",
         "topic:interrogative",
         "topic:en-multi-sense",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -84774,7 +84776,8 @@
         "en:how",
         "topic:interrogative",
         "topic:en-multi-sense",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -84795,7 +84798,8 @@
         "en:how",
         "topic:interrogative",
         "topic:en-multi-sense",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
