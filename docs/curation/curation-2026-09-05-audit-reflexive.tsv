@@ -1,0 +1,11 @@
+w8wzsxl8uq	se	himself	supporting	audit:reviewed	Audit: fine as-is.	Juan se ve en el espejo.	Juan sees himself in the mirror.
+selhft7tbn	se	herself	supporting	audit:reviewed	Audit: fine as-is.	María se ve en el espejo.	María sees herself in the mirror.
+1g6dssuu7g	se	itself	reference	audit:reviewed	Audit tag fix: removed a stray "en:thing" tag (generic noise unrelated to this row's actual lemma, en:itself).	El problema se resuelve solo.	The problem solves itself.
+6fweu4sgdj	me	myself	core	audit:reviewed	Audit: fine as-is.	Me miré en el espejo.	I looked at myself in the mirror.
+f6ie78gefk	te	yourself	core	audit:reviewed	Audit: fine as-is.	¿Te lastimaste?	Did you hurt yourself?
+d7tshgvfv3	nos	ourselves	supporting	audit:reviewed	Audit: fine as-is.	Nos preparamos para el viaje.	We got ourselves ready for the trip.
+how83ta0cg	se	themselves	supporting	audit:reviewed	Audit: fine as-is.	Ellos se cuidan.	They take care of themselves.
+erpggh3iyy	se	yourselves	supporting	audit:reviewed	Audit role fix: was reference, inconsistent with "se"→themselves (same plural pattern, supporting) and "se"→yourself-formal-singular (also supporting) — same spurious formal-plural demotion pattern found elsewhere this session (su/sus, a ellas/para ellas).	Ustedes se cuidan.	You take care of yourselves.
+mby2xxew2o	se	yourself	supporting	audit:reviewed	Audit: fine as-is.	Usted se cuida.	You take care of yourself.
+lojl4a497b	se	each other	supporting	audit:reviewed	Audit: fine as-is.	Juan y María se ayudan.	Juan and María help each other.
+riyxs3nm2u	nos	each other	supporting	audit:reviewed	Audit: fine as-is.	Nos ayudamos mucho.	We help each other a lot.

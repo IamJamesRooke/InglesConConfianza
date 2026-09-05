@@ -24543,7 +24543,8 @@
         "en:himself",
         "topic:pronoun",
         "contrast:se-reflexive-vs-reciprocal",
-        "contrast:confusable"
+        "contrast:confusable",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -24561,7 +24562,8 @@
         "grammar:reflexive-pronoun",
         "grammar:singular",
         "en:herself",
-        "topic:pronoun"
+        "topic:pronoun",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -24580,7 +24582,8 @@
         "en:each",
         "topic:pronoun",
         "contrast:se-reflexive-vs-reciprocal",
-        "contrast:confusable"
+        "contrast:confusable",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -24659,9 +24662,9 @@
         "grammar:se",
         "pos:pronoun",
         "grammar:reflexive-pronoun",
-        "en:thing",
         "en:itself",
-        "topic:pronoun"
+        "topic:pronoun",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -83163,7 +83166,8 @@
         "grammar:singular",
         "topic:pronoun",
         "es:me",
-        "en:myself"
+        "en:myself",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -83181,7 +83185,8 @@
         "grammar:singular",
         "topic:pronoun",
         "es:te",
-        "en:yourself"
+        "en:yourself",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -83199,7 +83204,8 @@
         "grammar:plural",
         "topic:pronoun",
         "es:nos",
-        "en:ourselves"
+        "en:ourselves",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -83309,7 +83315,8 @@
         "grammar:plural",
         "topic:pronoun",
         "es:se",
-        "en:themselves"
+        "en:themselves",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -83327,7 +83334,8 @@
         "grammar:plural",
         "topic:pronoun",
         "es:nos",
-        "en:each"
+        "en:each",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -83425,9 +83433,10 @@
         "grammar:plural",
         "topic:pronoun",
         "es:se",
-        "en:yourselves"
+        "en:yourselves",
+        "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "8ueue3hv8i",
@@ -83593,7 +83602,8 @@
         "pos:pronoun",
         "en:yourself",
         "es:se",
-        "topic:pronoun"
+        "topic:pronoun",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
