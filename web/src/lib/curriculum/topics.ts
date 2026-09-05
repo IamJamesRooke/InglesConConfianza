@@ -416,7 +416,8 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
     baseCollection: "pos:preposition",
     facetButtons: [
       { collection: "topic:time", label: "Time" },
-      { collection: "topic:location", label: "Location" },
+      { collection: "topic:location-vertical-relative", label: "Location — Vertical & Relative" },
+      { collection: "topic:location-path-between", label: "Location — Path & Between" },
       { collection: "construction:map-segun-according-to", label: "According to" },
       { collection: "grammar:purpose", label: "Purpose" },
       { collection: "grammar:negative", label: "Without" },

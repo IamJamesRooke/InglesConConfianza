@@ -28284,7 +28284,8 @@
         "pos:preposition",
         "es:atrás",
         "en:behind",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:location-vertical-relative"
       ],
       "curriculumRole": "reference"
     },
@@ -28465,7 +28466,8 @@
         "en:under",
         "pos:preposition",
         "topic:location",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:location-vertical-relative"
       ],
       "curriculumRole": "reference"
     },
@@ -28482,7 +28484,8 @@
         "en:below",
         "pos:preposition",
         "topic:location",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:location-vertical-relative"
       ],
       "curriculumRole": "reference"
     },
@@ -29518,7 +29521,8 @@
         "es:dentro",
         "en:within",
         "topic:location",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:location-path-between"
       ],
       "curriculumRole": "reference"
     },
@@ -30159,7 +30163,8 @@
         "en:between",
         "pos:preposition",
         "topic:location",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:location-path-between"
       ],
       "curriculumRole": "reference"
     },
@@ -30878,7 +30883,8 @@
         "en:in",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:location-path-between"
       ],
       "curriculumRole": "reference"
     },
@@ -32029,7 +32035,8 @@
         "en:above",
         "pos:preposition",
         "topic:location",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:location-vertical-relative"
       ],
       "curriculumRole": "reference"
     },
@@ -32527,7 +32534,8 @@
         "morphology:prefix-be",
         "es:detrás",
         "en:behind",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:location-vertical-relative"
       ],
       "curriculumRole": "reference"
     },
@@ -32945,7 +32953,8 @@
         "es:por",
         "en:across",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:location-path-between"
       ],
       "curriculumRole": "reference"
     },
@@ -33646,7 +33655,8 @@
         "es:por",
         "en:along",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:location-path-between"
       ],
       "curriculumRole": "reference"
     },
@@ -68398,7 +68408,8 @@
         "en:along",
         "pos:preposition",
         "topic:location",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:location-path-between"
       ],
       "curriculumRole": "reference"
     },
@@ -68437,7 +68448,8 @@
         "en:beside",
         "pos:preposition",
         "topic:location",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:location-vertical-relative"
       ],
       "curriculumRole": "supporting"
     },
@@ -68475,7 +68487,8 @@
         "en:below",
         "pos:preposition",
         "topic:location",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:location-vertical-relative"
       ],
       "curriculumRole": "reference"
     },
@@ -68494,7 +68507,8 @@
         "en:between",
         "pos:preposition",
         "topic:location",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:location-path-between"
       ],
       "curriculumRole": "reference"
     },
@@ -68513,7 +68527,8 @@
         "en:among",
         "pos:preposition",
         "topic:location",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:location-path-between"
       ],
       "curriculumRole": "reference"
     },
@@ -68532,7 +68547,8 @@
         "en:beyond",
         "pos:preposition",
         "topic:location",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:location-vertical-relative"
       ],
       "curriculumRole": "reference"
     },
@@ -68972,7 +68988,8 @@
         "en:toward",
         "pos:preposition",
         "topic:location",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:location-path-between"
       ],
       "curriculumRole": "supporting"
     },
@@ -68992,7 +69009,8 @@
         "en:towards",
         "pos:preposition",
         "topic:location",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:location-path-between"
       ],
       "curriculumRole": "reference"
     },
@@ -90826,7 +90844,8 @@
         "es:abajo",
         "en:lower",
         "topic:location",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:location-vertical-relative"
       ],
       "curriculumRole": "reference"
     },
@@ -90843,7 +90862,8 @@
         "es:arriba",
         "en:above",
         "topic:location",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:location-vertical-relative"
       ],
       "curriculumRole": "reference"
     },
@@ -90861,7 +90881,8 @@
         "en:from",
         "topic:en-multi-sense",
         "topic:location",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:location-path-between"
       ],
       "curriculumRole": "supporting"
     },
