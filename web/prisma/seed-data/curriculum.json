@@ -49470,7 +49470,8 @@
         "pos:number",
         "es:dos",
         "en:two",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -49487,7 +49488,8 @@
         "pos:number",
         "es:tres",
         "en:three",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -49504,7 +49506,8 @@
         "pos:number",
         "es:cuatro",
         "en:four",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49521,7 +49524,8 @@
         "pos:number",
         "es:cinco",
         "en:five",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49538,7 +49542,8 @@
         "pos:number",
         "es:seis",
         "en:six",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49555,7 +49560,8 @@
         "pos:number",
         "es:siete",
         "en:seven",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49572,7 +49578,8 @@
         "pos:number",
         "es:ocho",
         "en:eight",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49589,7 +49596,8 @@
         "pos:number",
         "es:nueve",
         "en:nine",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49606,7 +49614,8 @@
         "pos:number",
         "es:diez",
         "en:ten",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49623,7 +49632,8 @@
         "pos:number",
         "es:once",
         "en:eleven",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49640,7 +49650,8 @@
         "pos:number",
         "es:doce",
         "en:twelve",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49659,7 +49670,8 @@
         "pos:number",
         "es:trece",
         "en:thirteen",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49678,7 +49690,8 @@
         "pos:number",
         "es:catorce",
         "en:fourteen",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49697,7 +49710,8 @@
         "pos:number",
         "es:quince",
         "en:fifteen",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49716,7 +49730,8 @@
         "pos:number",
         "es:dieciséis",
         "en:sixteen",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49735,7 +49750,8 @@
         "pos:number",
         "es:diecisiete",
         "en:seventeen",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49754,7 +49770,8 @@
         "pos:number",
         "es:dieciocho",
         "en:eighteen",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49773,7 +49790,8 @@
         "pos:number",
         "es:diecinueve",
         "en:nineteen",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49792,7 +49810,8 @@
         "pos:number",
         "es:veinte",
         "en:twenty",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49811,7 +49830,8 @@
         "pos:number",
         "es:treinta",
         "en:thirty",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49830,7 +49850,8 @@
         "pos:number",
         "es:cuarenta",
         "en:forty",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49849,7 +49870,8 @@
         "pos:number",
         "es:cincuenta",
         "en:fifty",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49868,7 +49890,8 @@
         "pos:number",
         "es:sesenta",
         "en:sixty",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49887,7 +49910,8 @@
         "pos:number",
         "es:setenta",
         "en:seventy",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49906,7 +49930,8 @@
         "pos:number",
         "es:ochenta",
         "en:eighty",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -49925,7 +49950,8 @@
         "pos:number",
         "es:noventa",
         "en:ninety",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -51002,7 +51028,8 @@
         "es:cien",
         "en:one",
         "topic:determiner",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -51021,7 +51048,8 @@
         "es:mil",
         "en:one",
         "topic:determiner",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -51040,7 +51068,8 @@
         "es:millón",
         "en:one",
         "topic:determiner",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
