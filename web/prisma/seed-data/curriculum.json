@@ -1262,7 +1262,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:of",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -15098,7 +15099,8 @@
       "collections": [
         "es:alcanzar",
         "en:reach",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -15115,7 +15117,8 @@
         "es:alcanzar",
         "en:catch",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -15131,7 +15134,8 @@
         "grammar:goal",
         "es:alcanzar",
         "en:achieve",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -15189,7 +15193,8 @@
         "en:catch",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -24527,7 +24532,8 @@
       "collections": [
         "pos:verb",
         "es:aparecer",
-        "en:appear"
+        "en:appear",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -25505,7 +25511,8 @@
         "en:agree",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -25522,7 +25529,8 @@
         "construction:map-de-of",
         "es:acordar",
         "en:remember",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -25540,7 +25548,8 @@
         "grammar:gerund",
         "es:acordar",
         "en:remember",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -25595,7 +25604,8 @@
         "pos:verb",
         "grammar:phrasal-verb",
         "particle:up",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -25610,7 +25620,8 @@
       "collections": [
         "es:aparecer",
         "en:listed",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -25630,7 +25641,8 @@
         "pos:verb",
         "grammar:phrasal-verb",
         "particle:out",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31391,7 +31403,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32670,7 +32683,8 @@
         "en:catch",
         "topic:en-multi-sense",
         "topic:transportation",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -33951,7 +33965,8 @@
         "en:own",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -54899,7 +54914,8 @@
         "pos:verb",
         "es:aguantar",
         "en:stand",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -54914,7 +54930,8 @@
       "collections": [
         "pos:verb",
         "es:aguantar",
-        "en:endure"
+        "en:endure",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -54933,7 +54950,8 @@
         "es:aguantar",
         "en:hold",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -54948,7 +54966,8 @@
       "collections": [
         "pos:verb",
         "es:aguantar",
-        "en:support"
+        "en:support",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -54969,7 +54988,8 @@
         "es:apagar",
         "en:turn",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -54987,7 +55007,8 @@
         "pos:verb",
         "es:apagar",
         "en:shut",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55005,7 +55026,8 @@
         "pos:verb",
         "es:apagar",
         "en:fade",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55025,7 +55047,8 @@
         "en:take",
         "topic:en-multi-sense",
         "particle:of",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55045,7 +55068,8 @@
         "en:make",
         "topic:en-multi-sense",
         "particle:of",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55060,7 +55084,8 @@
       "collections": [
         "pos:verb",
         "es:aprovechar",
-        "en:enjoy"
+        "en:enjoy",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55080,7 +55105,8 @@
         "en:benefit",
         "topic:en-multi-sense",
         "particle:from",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58135,7 +58161,8 @@
       "collections": [
         "pos:verb",
         "es:andar",
-        "en:walk"
+        "en:walk",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -58154,7 +58181,8 @@
         "topic:en-multi-sense",
         "construction:prepositional-verb",
         "particle:around",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58170,7 +58198,8 @@
         "pos:verb",
         "es:andar",
         "en:be",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58186,7 +58215,8 @@
         "pos:verb",
         "es:andar",
         "en:for",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58201,7 +58231,8 @@
       "collections": [
         "pos:verb",
         "es:andar",
-        "en:seeing"
+        "en:seeing",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -72036,9 +72067,10 @@
         "en:turn",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "trash"
     },
     {
       "id": "mfqqgurgok",
@@ -72080,7 +72112,8 @@
         "en:turn",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
