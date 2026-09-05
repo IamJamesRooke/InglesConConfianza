@@ -24620,7 +24620,8 @@
         "pos:connector",
         "alternative",
         "es:bien",
-        "en:either"
+        "en:either",
+        "grammar:correlative"
       ],
       "curriculumRole": "reference"
     },
@@ -25528,7 +25529,8 @@
         "pos:connector",
         "en:consequence",
         "es:luego",
-        "en:therefore"
+        "en:therefore",
+        "grammar:reason"
       ],
       "curriculumRole": "reference"
     },
@@ -28796,7 +28798,8 @@
         "a pesar de",
         "en:although",
         "pos:connector",
-        "en:despite"
+        "en:despite",
+        "grammar:concession"
       ],
       "curriculumRole": "reference"
     },
@@ -54605,7 +54608,8 @@
         "es:empezar",
         "pos:connector",
         "es:para",
-        "en:begin"
+        "en:begin",
+        "grammar:sequence"
       ],
       "curriculumRole": "reference"
     },
@@ -60648,7 +60652,8 @@
         "morphology:prefix-al",
         "pos:connector",
         "es:aunque",
-        "en:although"
+        "en:although",
+        "grammar:concession"
       ],
       "curriculumRole": "reference"
     },
@@ -60753,7 +60758,8 @@
         "morphology:prefix-be",
         "pos:connector",
         "es:además",
-        "en:besides"
+        "en:besides",
+        "grammar:addition"
       ],
       "curriculumRole": "reference"
     },
@@ -64669,7 +64675,8 @@
       },
       "collections": [
         "pos:connector",
-        "en:unless"
+        "en:unless",
+        "grammar:conditional"
       ],
       "curriculumRole": "reference"
     },

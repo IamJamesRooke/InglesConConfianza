@@ -248,6 +248,21 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
     ],
   },
   {
+    slug: "connectors",
+    title: "Connectors",
+    description:
+      "The words that join two clauses or ideas together — the everyday set (y, pero, o, porque, si) plus reason, concession, contrast, and addition connectors for building longer sentences.",
+    baseCollection: "pos:connector",
+    facetButtons: [
+      { collection: "grammar:sentence-structure", label: "Everyday (and, but, or...)" },
+      { collection: "grammar:reason", label: "Reason" },
+      { collection: "grammar:concession", label: "Concession (although)" },
+      { collection: "grammar:contrast", label: "Contrast" },
+      { collection: "grammar:addition", label: "Addition" },
+      { collection: "topic:time-connector", label: "Time" },
+    ],
+  },
+  {
     slug: "mappings",
     title: "Spanish-to-English Mappings",
     description:
