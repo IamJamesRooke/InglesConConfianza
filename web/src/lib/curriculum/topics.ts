@@ -235,6 +235,19 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
     ],
   },
   {
+    slug: "numbers",
+    title: "Numbers",
+    description:
+      "Cardinals (uno, dos, tres), ordinals (primero, segundo, tercero), and the larger and more fractional numbers that come up once you're past counting on your fingers.",
+    baseCollection: "pos:number",
+    facetButtons: [
+      { collection: "grammar:cardinal-number", label: "Cardinal (one, two...)" },
+      { collection: "grammar:ordinal-number", label: "Ordinal (first, second...)" },
+      { collection: "topic:fractions-decimals-and-phone-numbers", label: "Fractions & decimals" },
+      { collection: "topic:large-numbers", label: "Large numbers" },
+    ],
+  },
+  {
     slug: "mappings",
     title: "Spanish-to-English Mappings",
     description:
