@@ -25771,7 +25771,10 @@
         "grammar:question",
         "topic:time",
         "es:cuándo",
-        "en:when"
+        "en:when",
+        "topic:interrogative",
+        "pos:adverb",
+        "grammar:interrogative-adverb"
       ],
       "curriculumRole": "reference"
     },
@@ -26368,7 +26371,10 @@
         "grammar:question",
         "topic:location",
         "es:dónde",
-        "en:where"
+        "en:where",
+        "topic:interrogative",
+        "pos:adverb",
+        "grammar:interrogative-adverb"
       ],
       "curriculumRole": "reference"
     },
@@ -30176,7 +30182,8 @@
         "pos:determiner",
         "grammar:quantifier",
         "es:cualquiera",
-        "en:either"
+        "en:either",
+        "topic:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -30194,7 +30201,8 @@
         "pos:determiner",
         "grammar:quantifier",
         "es:ninguno",
-        "en:neither"
+        "en:neither",
+        "topic:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -31064,7 +31072,8 @@
         "pos:interjection",
         "reaction",
         "es:genial",
-        "en:great"
+        "en:great",
+        "topic:social-expression"
       ],
       "curriculumRole": "reference"
     },
@@ -66026,7 +66035,8 @@
         "grammar:frequency-adverb",
         "every day",
         "es:todos",
-        "en:every"
+        "en:every",
+        "pos:adverb"
       ],
       "curriculumRole": "supporting"
     },
@@ -66060,7 +66070,8 @@
         "grammar:frequency-adverb",
         "every week",
         "es:todas",
-        "en:every"
+        "en:every",
+        "pos:adverb"
       ],
       "curriculumRole": "reference"
     },
