@@ -57131,12 +57131,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:able",
         "morphology:verb-to-adjective",
         "morphology:suffix-able",
         "morphology:limited",
         "es:aceptar",
-        "en:accept"
+        "en:accept",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57150,12 +57150,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:able",
         "morphology:verb-to-adjective",
         "morphology:suffix-able",
         "morphology:limited",
         "es:entender",
-        "en:understand"
+        "en:understand",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57169,12 +57169,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:able",
         "morphology:verb-to-adjective",
         "morphology:suffix-able",
         "morphology:limited",
         "es:predecir",
-        "en:predict"
+        "en:predict",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57188,12 +57188,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ible",
         "morphology:verb-to-adjective",
         "morphology:suffix-ible",
         "morphology:limited",
         "es:acceder",
-        "en:access"
+        "en:access",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57207,12 +57207,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ible",
         "morphology:verb-to-adjective",
         "morphology:suffix-ible",
         "morphology:limited",
         "es:convertir",
-        "en:convert"
+        "en:convert",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57226,12 +57226,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:able",
         "morphology:verb-to-adjective",
         "morphology:suffix-able",
         "morphology:limited",
         "es:evitar",
-        "en:avoid"
+        "en:avoid",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57245,12 +57245,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:able",
         "morphology:verb-to-adjective",
         "morphology:suffix-able",
         "morphology:limited",
         "es:comparar",
-        "en:compare"
+        "en:compare",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57264,12 +57264,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ible",
         "morphology:verb-to-adjective",
         "morphology:suffix-ible",
         "morphology:limited",
         "es:permitir",
-        "en:permit"
+        "en:permit",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57283,12 +57283,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:al",
         "morphology:verb-to-noun",
         "morphology:suffix-al",
         "morphology:limited",
         "es:llegar",
-        "en:arrive"
+        "en:arrive",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57302,12 +57302,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:al",
         "morphology:verb-to-noun",
         "morphology:suffix-al",
         "morphology:limited",
         "es:aprobar",
-        "en:approve"
+        "en:approve",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57321,12 +57321,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:al",
         "morphology:verb-to-noun",
         "morphology:suffix-al",
         "morphology:limited",
         "es:negar",
-        "en:refuse"
+        "en:refuse",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57340,12 +57340,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:al",
         "morphology:verb-to-noun",
         "morphology:suffix-al",
         "morphology:limited",
         "es:proponer",
-        "en:propose"
+        "en:propose",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57359,12 +57359,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:al",
         "morphology:verb-to-noun",
         "morphology:suffix-al",
         "morphology:limited",
         "es:sobrevivir",
-        "en:survive"
+        "en:survive",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57378,12 +57378,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:al",
         "morphology:verb-to-noun",
         "morphology:suffix-al",
         "morphology:limited",
         "es:retirar",
-        "en:remove"
+        "en:remove",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57397,12 +57397,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:al",
         "morphology:verb-to-noun",
         "morphology:suffix-al",
         "morphology:limited",
         "es:renovar",
-        "en:renew"
+        "en:renew",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57416,12 +57416,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:al",
         "morphology:verb-to-noun",
         "morphology:suffix-al",
         "morphology:limited",
         "es:despedir",
-        "en:dismiss"
+        "en:dismiss",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57435,14 +57435,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:dom",
         "morphology:adjective-to-noun",
         "morphology:suffix-dom",
         "morphology:limited",
         "es:ser",
         "en:free",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57456,13 +57456,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:dom",
         "morphology:adjective-to-noun",
         "morphology:suffix-dom",
         "morphology:limited",
         "es:estar",
         "en:bored",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57476,13 +57476,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:dom",
         "morphology:adjective-to-noun",
         "morphology:suffix-dom",
         "morphology:limited",
         "es:ser",
         "en:wise",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57496,13 +57496,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ity",
         "morphology:adjective-to-noun",
         "morphology:suffix-ity",
         "morphology:limited",
         "es:ser",
         "en:possible",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57516,13 +57516,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ity",
         "morphology:adjective-to-noun",
         "morphology:suffix-ity",
         "morphology:limited",
         "es:estar",
         "en:active",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57536,13 +57536,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ity",
         "morphology:adjective-to-noun",
         "morphology:suffix-ity",
         "morphology:limited",
         "es:ser",
         "en:secure",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57556,13 +57556,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ity",
         "morphology:adjective-to-noun",
         "morphology:suffix-ity",
         "morphology:limited",
         "es:ser",
         "en:responsible",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57576,13 +57576,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ity",
         "morphology:adjective-to-noun",
         "morphology:suffix-ity",
         "morphology:limited",
         "es:ser",
         "en:curious",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57596,13 +57596,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ity",
         "morphology:adjective-to-noun",
         "morphology:suffix-ity",
         "morphology:limited",
         "es:ser",
         "en:equal",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57616,13 +57616,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ity",
         "morphology:adjective-to-noun",
         "morphology:suffix-ity",
         "morphology:limited",
         "es:ser",
         "en:flexible",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57636,13 +57636,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ity",
         "morphology:adjective-to-noun",
         "morphology:suffix-ity",
         "morphology:limited",
         "es:estar",
         "en:available",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57656,12 +57656,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ment",
         "morphology:verb-to-noun",
         "morphology:suffix-ment",
         "morphology:limited",
         "es:desarrollar",
-        "en:develop"
+        "en:develop",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57675,12 +57675,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ment",
         "morphology:verb-to-noun",
         "morphology:suffix-ment",
         "morphology:limited",
         "es:mejorar",
-        "en:improve"
+        "en:improve",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57694,12 +57694,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ment",
         "morphology:verb-to-noun",
         "morphology:suffix-ment",
         "morphology:limited",
         "es:lograr",
-        "en:achieve"
+        "en:achieve",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57713,14 +57713,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ment",
         "morphology:verb-to-noun",
         "morphology:suffix-ment",
         "morphology:limited",
         "es:estar",
         "en:agree",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57734,12 +57734,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ment",
         "morphology:verb-to-noun",
         "morphology:suffix-ment",
         "morphology:limited",
         "es:gobernar",
-        "en:govern"
+        "en:govern",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57753,12 +57753,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ment",
         "morphology:verb-to-noun",
         "morphology:suffix-ment",
         "morphology:limited",
         "es:mover",
-        "en:move"
+        "en:move",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57772,12 +57772,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ment",
         "morphology:verb-to-noun",
         "morphology:suffix-ment",
         "morphology:limited",
         "es:requerir",
-        "en:require"
+        "en:require",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57791,12 +57791,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ment",
         "morphology:verb-to-noun",
         "morphology:suffix-ment",
         "morphology:limited",
         "es:invertir",
-        "en:invest"
+        "en:invest",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57810,12 +57810,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:tion",
         "morphology:verb-to-noun",
         "morphology:suffix-tion",
         "morphology:limited",
         "es:educar",
-        "en:educate"
+        "en:educate",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57829,12 +57829,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:tion",
         "morphology:verb-to-noun",
         "morphology:suffix-tion",
         "morphology:limited",
         "es:organizar",
-        "en:organize"
+        "en:organize",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57848,12 +57848,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:tion",
         "morphology:verb-to-noun",
         "morphology:suffix-tion",
         "morphology:limited",
         "es:comunicar",
-        "en:communicate"
+        "en:communicate",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57867,12 +57867,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:sion",
         "morphology:verb-to-noun",
         "morphology:suffix-sion",
         "morphology:limited",
         "es:decidir",
-        "en:decide"
+        "en:decide",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57886,12 +57886,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:sion",
         "morphology:verb-to-noun",
         "morphology:suffix-sion",
         "morphology:limited",
         "es:concluir",
-        "en:conclude"
+        "en:conclude",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57905,12 +57905,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:sion",
         "morphology:verb-to-noun",
         "morphology:suffix-sion",
         "morphology:limited",
         "es:permitir",
-        "en:permit"
+        "en:permit",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57924,12 +57924,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:sion",
         "morphology:verb-to-noun",
         "morphology:suffix-sion",
         "morphology:limited",
         "es:discutir",
-        "en:discuss"
+        "en:discuss",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57943,12 +57943,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:tion",
         "morphology:verb-to-noun",
         "morphology:suffix-tion",
         "morphology:limited",
         "es:traducir",
-        "en:translate"
+        "en:translate",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57962,12 +57962,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:y",
         "morphology:noun-to-adjective",
         "morphology:suffix-y",
         "morphology:limited",
         "es:nube",
-        "en:cloud"
+        "en:cloud",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -57981,12 +57981,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:y",
         "morphology:noun-to-adjective",
         "morphology:suffix-y",
         "morphology:limited",
         "es:salud",
-        "en:health"
+        "en:health",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58000,12 +58000,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:y",
         "morphology:noun-to-adjective",
         "morphology:suffix-y",
         "morphology:limited",
         "es:suer",
-        "en:luck"
+        "en:luck",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58019,12 +58019,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:y",
         "morphology:noun-to-adjective",
         "morphology:suffix-y",
         "morphology:limited",
         "es:ruido",
-        "en:noise"
+        "en:noise",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58038,12 +58038,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:y",
         "morphology:noun-to-adjective",
         "morphology:suffix-y",
         "morphology:limited",
         "es:lluvia",
-        "en:rain"
+        "en:rain",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58057,12 +58057,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:y",
         "morphology:noun-to-adjective",
         "morphology:suffix-y",
         "morphology:limited",
         "es:sol",
-        "en:sun"
+        "en:sun",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58076,12 +58076,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:y",
         "morphology:noun-to-adjective",
         "morphology:suffix-y",
         "morphology:limited",
         "es:viento",
-        "en:wind"
+        "en:wind",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58095,12 +58095,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:y",
         "morphology:noun-to-adjective",
         "morphology:suffix-y",
         "morphology:limited",
         "es:sueño",
-        "en:sleep"
+        "en:sleep",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58114,12 +58114,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:dom",
         "morphology:noun-to-noun",
         "morphology:suffix-dom",
         "morphology:limited",
         "es:rey",
-        "en:king"
+        "en:king",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58133,12 +58133,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:dom",
         "morphology:noun-to-noun",
         "morphology:suffix-dom",
         "morphology:limited",
         "es:estrella",
-        "en:star"
+        "en:star",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58152,12 +58152,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:dom",
         "morphology:noun-to-noun",
         "morphology:suffix-dom",
         "morphology:limited",
         "es:mártir",
-        "en:martyr"
+        "en:martyr",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58171,12 +58171,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:hood",
         "morphology:noun-to-noun",
         "morphology:suffix-hood",
         "morphology:limited",
         "es:adulto",
-        "en:adult"
+        "en:adult",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58190,12 +58190,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:hood",
         "morphology:noun-to-noun",
         "morphology:suffix-hood",
         "morphology:limited",
         "es:niño",
-        "en:child"
+        "en:child",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58209,12 +58209,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:hood",
         "morphology:noun-to-noun",
         "morphology:suffix-hood",
         "morphology:limited",
         "es:madre",
-        "en:mother"
+        "en:mother",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58228,12 +58228,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:hood",
         "morphology:noun-to-noun",
         "morphology:suffix-hood",
         "morphology:limited",
         "es:padre",
-        "en:father"
+        "en:father",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58247,12 +58247,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:hood",
         "morphology:noun-to-noun",
         "morphology:suffix-hood",
         "morphology:limited",
         "es:vecino",
-        "en:neighbor"
+        "en:neighbor",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58266,12 +58266,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:hood",
         "morphology:noun-to-noun",
         "morphology:suffix-hood",
         "morphology:limited",
         "es:hermano",
-        "en:brother"
+        "en:brother",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58285,12 +58285,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:hood",
         "morphology:noun-to-noun",
         "morphology:suffix-hood",
         "morphology:limited",
         "es:hermana",
-        "en:sister"
+        "en:sister",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58304,12 +58304,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ship",
         "morphology:noun-to-noun",
         "morphology:suffix-ship",
         "morphology:limited",
         "es:amigo",
-        "en:friend"
+        "en:friend",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58323,12 +58323,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ship",
         "morphology:noun-to-noun",
         "morphology:suffix-ship",
         "morphology:limited",
         "es:líder",
-        "en:leader"
+        "en:leader",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58342,12 +58342,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ship",
         "morphology:noun-to-noun",
         "morphology:suffix-ship",
         "morphology:limited",
         "es:miembro",
-        "en:member"
+        "en:member",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58361,12 +58361,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ship",
         "morphology:noun-to-noun",
         "morphology:suffix-ship",
         "morphology:limited",
         "es:campeón",
-        "en:champion"
+        "en:champion",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58380,12 +58380,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ship",
         "morphology:noun-to-noun",
         "morphology:suffix-ship",
         "morphology:limited",
         "es:propietario",
-        "en:owner"
+        "en:owner",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58399,12 +58399,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ship",
         "morphology:noun-to-noun",
         "morphology:suffix-ship",
         "morphology:limited",
         "es:socio",
-        "en:partner"
+        "en:partner",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58418,12 +58418,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ship",
         "morphology:noun-to-noun",
         "morphology:suffix-ship",
         "morphology:limited",
         "es:relación",
-        "en:relation"
+        "en:relation",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58437,12 +58437,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ship",
         "morphology:noun-to-noun",
         "morphology:suffix-ship",
         "morphology:limited",
         "es:ciudadano",
-        "en:citizen"
+        "en:citizen",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58456,13 +58456,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:hood",
         "morphology:adjective-to-noun",
         "morphology:suffix-hood",
         "morphology:irregular",
         "es:ser",
         "en:likely",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58476,13 +58476,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:en",
         "morphology:adjective-to-verb",
         "morphology:suffix-en",
         "morphology:limited",
         "es:ser",
         "en:weak",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58496,13 +58496,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:en",
         "morphology:adjective-to-verb",
         "morphology:suffix-en",
         "morphology:limited",
         "es:ser",
         "en:short",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58516,13 +58516,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:en",
         "morphology:adjective-to-verb",
         "morphology:suffix-en",
         "morphology:limited",
         "es:ser",
         "en:dark",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58536,13 +58536,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:en",
         "morphology:adjective-to-verb",
         "morphology:suffix-en",
         "morphology:limited",
         "es:ser",
         "en:wide",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58556,13 +58556,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:en",
         "morphology:adjective-to-verb",
         "morphology:suffix-en",
         "morphology:limited",
         "es:ser",
         "en:deep",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58576,14 +58576,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:en",
         "morphology:adjective-to-verb",
         "morphology:suffix-en",
         "morphology:limited",
         "es:ser",
         "en:white",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58597,13 +58597,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:en",
         "morphology:adjective-to-verb",
         "morphology:suffix-en",
         "morphology:limited",
         "es:ser",
         "en:black",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58617,13 +58617,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:en",
         "morphology:noun-to-verb",
         "en:long",
         "morphology:suffix-en",
         "morphology:limited",
         "es:longitud",
-        "en:length"
+        "en:length",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58637,13 +58637,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:en",
         "morphology:noun-to-verb",
         "en:strong",
         "morphology:suffix-en",
         "morphology:limited",
         "es:fuerza",
-        "en:strength"
+        "en:strength",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58657,14 +58657,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ness",
         "morphology:adjective-to-noun",
         "morphology:suffix-ness",
         "morphology:limited",
         "morphology:productive",
         "es:ser",
         "en:weak",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58678,13 +58678,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ing",
         "morphology:verb-to-noun",
         "en:weak",
         "morphology:suffix-ing",
         "morphology:limited",
         "es:debilitar",
-        "en:weaken"
+        "en:weaken",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58698,13 +58698,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ed",
         "morphology:verb-to-adjective",
         "en:weak",
         "morphology:suffix-ed",
         "morphology:limited",
         "es:debilitar",
-        "en:weaken"
+        "en:weaken",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58718,14 +58718,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ness",
         "morphology:adjective-to-noun",
         "morphology:suffix-ness",
         "morphology:limited",
         "morphology:productive",
         "es:ser",
         "en:short",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58739,13 +58739,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ing",
         "morphology:verb-to-noun",
         "en:short",
         "morphology:suffix-ing",
         "morphology:limited",
         "es:acortar",
-        "en:shorten"
+        "en:shorten",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58759,13 +58759,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ed",
         "morphology:verb-to-adjective",
         "en:short",
         "morphology:suffix-ed",
         "morphology:limited",
         "es:acortar",
-        "en:shorten"
+        "en:shorten",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58779,7 +58779,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ish",
         "morphology:adjective-to-adjective",
         "morphology:suffix-ish",
         "morphology:limited",
@@ -58787,7 +58786,8 @@
         "es:ser",
         "en:white",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58801,7 +58801,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ness",
         "morphology:adjective-to-noun",
         "morphology:suffix-ness",
         "morphology:limited",
@@ -58809,7 +58808,8 @@
         "es:ser",
         "en:white",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58823,14 +58823,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ing",
         "morphology:verb-to-noun",
         "en:white",
         "morphology:suffix-ing",
         "morphology:limited",
         "es:blanquear",
         "en:whiten",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58844,14 +58844,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ed",
         "morphology:verb-to-adjective",
         "en:white",
         "morphology:suffix-ed",
         "morphology:limited",
         "es:blanquear",
         "en:whiten",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58865,17 +58865,16 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:er",
         "morphology:verb-to-noun",
         "en:white",
         "morphology:suffix-er",
         "morphology:limited",
-        "morphology:er-or",
         "morphology:suffix-er-or",
         "morphology:agent-noun",
         "es:blanquear",
         "en:whiten",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58889,13 +58888,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:th",
         "morphology:adjective-to-noun",
         "morphology:suffix-th",
         "morphology:irregular",
         "es:ser",
         "en:long",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58909,13 +58908,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ing",
         "morphology:verb-to-noun",
         "en:long",
         "morphology:suffix-ing",
         "morphology:limited",
         "es:alargar",
-        "en:lengthen"
+        "en:lengthen",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58929,13 +58928,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ed",
         "morphology:verb-to-adjective",
         "en:long",
         "morphology:suffix-ed",
         "morphology:limited",
         "es:alargar",
-        "en:lengthen"
+        "en:lengthen",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58949,13 +58948,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:th",
         "morphology:adjective-to-noun",
         "morphology:suffix-th",
         "morphology:irregular",
         "es:ser",
         "en:strong",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58969,13 +58968,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ing",
         "morphology:verb-to-noun",
         "en:strong",
         "morphology:suffix-ing",
         "morphology:limited",
         "es:fortalecer",
-        "en:strengthen"
+        "en:strengthen",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -58989,13 +58988,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ed",
         "morphology:verb-to-adjective",
         "en:strong",
         "morphology:suffix-ed",
         "morphology:limited",
         "es:fortalecer",
-        "en:strengthen"
+        "en:strengthen",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59009,14 +59008,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ful",
         "morphology:noun-to-adjective",
         "morphology:suffix-ful",
         "morphology:limited",
         "es:poder",
         "en:power",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "supporting"
     },
@@ -59030,12 +59029,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ful",
         "morphology:noun-to-adjective",
         "morphology:suffix-ful",
         "morphology:limited",
         "es:color",
-        "en:color"
+        "en:color",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59049,13 +59048,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ful",
         "morphology:noun-to-adjective",
         "morphology:suffix-ful",
         "morphology:limited",
         "es:uso",
         "en:use",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "supporting"
     },
@@ -59069,12 +59068,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ful",
         "morphology:noun-to-adjective",
         "morphology:suffix-ful",
         "morphology:limited",
         "es:dolor",
-        "en:pain"
+        "en:pain",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59088,12 +59087,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ful",
         "morphology:noun-to-adjective",
         "morphology:suffix-ful",
         "morphology:limited",
         "es:estrés",
-        "en:stress"
+        "en:stress",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59107,12 +59106,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ful",
         "morphology:noun-to-adjective",
         "morphology:suffix-ful",
         "morphology:limited",
         "es:significado",
-        "en:meaning"
+        "en:meaning",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59126,12 +59125,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ful",
         "morphology:noun-to-adjective",
         "morphology:suffix-ful",
         "morphology:limited",
         "es:éxito",
-        "en:success"
+        "en:success",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59145,13 +59144,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ful",
         "morphology:noun-to-adjective",
         "morphology:suffix-ful",
         "morphology:limited",
         "es:cuidado",
         "en:care",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "supporting"
     },
@@ -59165,12 +59164,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ful",
         "morphology:noun-to-adjective",
         "morphology:suffix-ful",
         "morphology:limited",
         "es:belleza",
-        "en:beauty"
+        "en:beauty",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59184,12 +59183,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ful",
         "morphology:noun-to-adjective",
         "morphology:suffix-ful",
         "morphology:limited",
         "es:maravilla",
-        "en:wonder"
+        "en:wonder",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59203,12 +59202,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ful",
         "morphology:noun-to-adjective",
         "morphology:suffix-ful",
         "morphology:limited",
         "es:esperanza",
-        "en:hope"
+        "en:hope",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59222,12 +59221,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ful",
         "morphology:noun-to-adjective",
         "morphology:suffix-ful",
         "morphology:limited",
         "es:ayuda",
-        "en:help"
+        "en:help",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59241,12 +59240,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ful",
         "morphology:noun-to-adjective",
         "morphology:suffix-ful",
         "morphology:limited",
         "es:daño",
-        "en:harm"
+        "en:harm",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59260,12 +59259,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ful",
         "morphology:noun-to-adjective",
         "morphology:suffix-ful",
         "morphology:limited",
         "es:consideración",
-        "en:thought"
+        "en:thought",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59279,14 +59278,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:less",
         "morphology:noun-to-adjective",
         "morphology:suffix-less",
         "morphology:limited",
         "es:poder",
         "en:power",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59300,12 +59299,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:less",
         "morphology:noun-to-adjective",
         "morphology:suffix-less",
         "morphology:limited",
         "es:color",
-        "en:color"
+        "en:color",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59319,13 +59318,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:less",
         "morphology:noun-to-adjective",
         "morphology:suffix-less",
         "morphology:limited",
         "es:uso",
         "en:use",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "supporting"
     },
@@ -59339,12 +59338,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:less",
         "morphology:noun-to-adjective",
         "morphology:suffix-less",
         "morphology:limited",
         "es:dolor",
-        "en:pain"
+        "en:pain",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59358,12 +59357,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:less",
         "morphology:noun-to-adjective",
         "morphology:suffix-less",
         "morphology:limited",
         "es:significado",
-        "en:meaning"
+        "en:meaning",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59377,13 +59376,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:less",
         "morphology:noun-to-adjective",
         "morphology:suffix-less",
         "morphology:limited",
         "es:cuidado",
         "en:care",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59397,12 +59396,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:less",
         "morphology:noun-to-adjective",
         "morphology:suffix-less",
         "morphology:limited",
         "es:esperanza",
-        "en:hope"
+        "en:hope",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59416,12 +59415,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:less",
         "morphology:noun-to-adjective",
         "morphology:suffix-less",
         "morphology:limited",
         "es:ayuda",
-        "en:help"
+        "en:help",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59435,12 +59434,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:less",
         "morphology:noun-to-adjective",
         "morphology:suffix-less",
         "morphology:limited",
         "es:daño",
-        "en:harm"
+        "en:harm",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59454,12 +59453,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:less",
         "morphology:noun-to-adjective",
         "morphology:suffix-less",
         "morphology:limited",
         "es:consideración",
-        "en:thought"
+        "en:thought",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59473,13 +59472,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ness",
         "morphology:adjective-to-noun",
         "morphology:suffix-ness",
         "morphology:productive",
         "es:ser",
         "en:happy",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59493,13 +59492,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ness",
         "morphology:adjective-to-noun",
         "morphology:suffix-ness",
         "morphology:productive",
         "es:ser",
         "en:kind",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59513,13 +59512,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ness",
         "morphology:adjective-to-noun",
         "morphology:suffix-ness",
         "morphology:productive",
         "es:ser",
         "en:dark",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59533,13 +59532,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ness",
         "morphology:adjective-to-noun",
         "morphology:suffix-ness",
         "morphology:productive",
         "es:estar",
         "en:aware",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59553,13 +59552,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ness",
         "morphology:adjective-to-noun",
         "morphology:suffix-ness",
         "morphology:productive",
         "es:estar",
         "en:ill",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59573,13 +59572,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ness",
         "morphology:adjective-to-noun",
         "morphology:suffix-ness",
         "morphology:productive",
         "es:sentir",
         "en:lonely",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59593,13 +59592,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ness",
         "morphology:adjective-to-noun",
         "morphology:suffix-ness",
         "morphology:productive",
         "es:estar",
         "en:ready",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59613,14 +59612,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ness",
         "morphology:adjective-to-noun",
         "morphology:suffix-ness",
         "morphology:productive",
         "es:ser",
         "en:good",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59634,7 +59633,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ness",
         "morphology:adjective-to-noun",
         "en:use",
         "morphology:suffix-ness",
@@ -59642,7 +59640,8 @@
         "es:ser",
         "en:useful",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59656,7 +59655,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ness",
         "morphology:adjective-to-noun",
         "en:use",
         "morphology:suffix-ness",
@@ -59664,7 +59662,8 @@
         "es:ser",
         "en:useless",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59678,14 +59677,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ness",
         "morphology:adjective-to-noun",
         "en:meaning",
         "morphology:suffix-ness",
         "morphology:productive",
         "es:ser",
         "en:meaningful",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59699,14 +59698,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ness",
         "morphology:adjective-to-noun",
         "en:meaning",
         "morphology:suffix-ness",
         "morphology:productive",
         "es:tener",
         "en:meaningless",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59720,7 +59719,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ness",
         "morphology:adjective-to-noun",
         "en:power",
         "morphology:suffix-ness",
@@ -59728,7 +59726,8 @@
         "es:ser",
         "en:powerless",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59742,7 +59741,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ness",
         "morphology:adjective-to-noun",
         "en:care",
         "morphology:suffix-ness",
@@ -59750,7 +59748,8 @@
         "es:ser",
         "en:careless",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59764,14 +59763,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ness",
         "morphology:adjective-to-noun",
         "en:hope",
         "morphology:suffix-ness",
         "morphology:productive",
         "es:estar",
         "en:hopeless",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59785,13 +59784,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ly",
         "morphology:adjective-to-adverb",
         "morphology:suffix-ly",
         "morphology:productive",
         "es:ser",
         "en:quick",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "supporting"
     },
@@ -59805,13 +59804,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ly",
         "morphology:adjective-to-adverb",
         "morphology:suffix-ly",
         "morphology:productive",
         "es:ser",
         "en:normal",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59825,7 +59824,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ly",
         "morphology:adjective-to-adverb",
         "en:care",
         "morphology:suffix-ly",
@@ -59833,7 +59831,8 @@
         "es:ser",
         "en:careful",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59847,13 +59846,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ly",
         "morphology:adjective-to-adverb",
         "morphology:suffix-ly",
         "morphology:productive",
         "es:ser",
         "en:probable",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59867,13 +59866,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ly",
         "morphology:adjective-to-adverb",
         "morphology:suffix-ly",
         "morphology:productive",
         "es:ser",
         "en:easy",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59887,14 +59886,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ly",
         "morphology:adjective-to-adverb",
         "morphology:suffix-ly",
         "morphology:productive",
         "es:ser",
         "en:slow",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "supporting"
     },
@@ -59908,13 +59907,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ly",
         "morphology:adjective-to-adverb",
         "morphology:suffix-ly",
         "morphology:productive",
         "es:ser",
         "en:logical",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59928,13 +59927,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ly",
         "morphology:adjective-to-adverb",
         "morphology:suffix-ly",
         "morphology:productive",
         "es:ser",
         "en:practical",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59948,13 +59947,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:er-or",
         "morphology:verb-to-noun",
         "morphology:suffix-er-or",
         "morphology:limited",
         "morphology:agent-noun",
         "es:organizar",
-        "en:organize"
+        "en:organize",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59968,13 +59967,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:er-or",
         "morphology:verb-to-noun",
         "morphology:suffix-er-or",
         "morphology:limited",
         "morphology:agent-noun",
         "es:recibir",
-        "en:receive"
+        "en:receive",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -59988,13 +59987,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:er-or",
         "morphology:verb-to-noun",
         "morphology:suffix-er-or",
         "morphology:limited",
         "morphology:agent-noun",
         "es:entrenar",
-        "en:train"
+        "en:train",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -60008,13 +60007,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:er-or",
         "morphology:verb-to-noun",
         "morphology:suffix-er-or",
         "morphology:limited",
         "morphology:agent-noun",
         "es:presentar",
-        "en:present"
+        "en:present",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -60028,13 +60027,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:er-or",
         "morphology:verb-to-noun",
         "morphology:suffix-er-or",
         "morphology:limited",
         "morphology:agent-noun",
         "es:actuar",
-        "en:act"
+        "en:act",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -60048,13 +60047,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:er-or",
         "morphology:verb-to-noun",
         "morphology:suffix-er-or",
         "morphology:limited",
         "morphology:agent-noun",
         "es:instruir",
-        "en:instruct"
+        "en:instruct",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -60068,13 +60067,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:er-or",
         "morphology:verb-to-noun",
         "morphology:suffix-er-or",
         "morphology:limited",
         "morphology:agent-noun",
         "es:crear",
-        "en:create"
+        "en:create",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -60088,13 +60087,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:er-or",
         "morphology:verb-to-noun",
         "morphology:suffix-er-or",
         "morphology:limited",
         "morphology:agent-noun",
         "es:sobrevivir",
-        "en:survive"
+        "en:survive",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -60108,13 +60107,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:er-or",
         "morphology:verb-to-noun",
         "morphology:suffix-er-or",
         "morphology:limited",
         "morphology:agent-noun",
         "es:traducir",
-        "en:translate"
+        "en:translate",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -60128,13 +60127,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:er-or",
         "morphology:verb-to-noun",
         "morphology:suffix-er-or",
         "morphology:limited",
         "morphology:agent-noun",
         "es:visitar",
-        "en:visit"
+        "en:visit",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -60148,7 +60147,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:er",
         "morphology:adjective-to-comparative",
         "morphology:suffix-er",
         "morphology:productive",
@@ -60200,7 +60198,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:er",
         "morphology:adjective-to-comparative",
         "morphology:suffix-er",
         "morphology:productive",
@@ -60250,7 +60247,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:er",
         "morphology:adjective-to-comparative",
         "morphology:suffix-er",
         "morphology:productive",
@@ -60302,7 +60298,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:er",
         "morphology:adjective-to-comparative",
         "morphology:suffix-er",
         "morphology:productive",
@@ -60352,7 +60347,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:er",
         "morphology:adjective-to-comparative",
         "morphology:suffix-er",
         "morphology:productive",
@@ -60402,7 +60396,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:er",
         "morphology:adjective-to-comparative",
         "morphology:suffix-er",
         "morphology:productive",
@@ -60450,7 +60443,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:er",
         "morphology:adjective-to-comparative",
         "morphology:suffix-er",
         "morphology:productive",
@@ -60498,7 +60490,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:er",
         "morphology:adjective-to-comparative",
         "morphology:suffix-er",
         "morphology:productive",
@@ -60546,7 +60537,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:er",
         "morphology:adjective-to-comparative",
         "morphology:suffix-er",
         "morphology:productive",
@@ -60596,7 +60586,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ing",
         "morphology:verb-to-noun",
         "morphology:suffix-ing",
         "morphology:productive",
@@ -60607,7 +60596,8 @@
         "es:leer",
         "en:read",
         "contrast:lectura-vs-lecture",
-        "contrast:confusable"
+        "contrast:confusable",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -60621,7 +60611,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ing",
         "morphology:verb-to-noun",
         "morphology:suffix-ing",
         "morphology:productive",
@@ -60630,7 +60619,8 @@
         "grammar:ing-noun",
         "construction:map-verb-noun",
         "es:escribir",
-        "en:write"
+        "en:write",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -60644,7 +60634,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ing",
         "morphology:verb-to-noun",
         "morphology:suffix-ing",
         "morphology:productive",
@@ -60654,7 +60643,8 @@
         "construction:map-verb-noun",
         "es:abrir",
         "en:open",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -60668,7 +60658,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ing",
         "morphology:verb-to-noun",
         "morphology:suffix-ing",
         "morphology:productive",
@@ -60677,7 +60666,8 @@
         "grammar:ing-noun",
         "construction:map-verb-noun",
         "es:cerrar",
-        "en:close"
+        "en:close",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -60691,13 +60681,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ing",
         "morphology:verb-to-noun",
         "morphology:suffix-ing",
         "morphology:productive",
         "morphology:activity-noun",
         "es:comprender",
-        "en:understand"
+        "en:understand",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -60711,7 +60701,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ing",
         "morphology:verb-to-noun",
         "morphology:suffix-ing",
         "morphology:productive",
@@ -60720,7 +60709,8 @@
         "grammar:ing-noun",
         "construction:map-verb-noun",
         "es:reunir",
-        "en:meet"
+        "en:meet",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -60734,13 +60724,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ing",
         "morphology:verb-to-noun",
         "morphology:suffix-ing",
         "morphology:productive",
         "morphology:activity-noun",
         "es:entrenar",
-        "en:train"
+        "en:train",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -60754,7 +60744,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ing",
         "morphology:verb-to-noun",
         "morphology:suffix-ing",
         "morphology:productive",
@@ -60763,7 +60752,8 @@
         "grammar:ing-noun",
         "construction:map-verb-noun",
         "es:aprender",
-        "en:learn"
+        "en:learn",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -60777,13 +60767,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ing",
         "morphology:verb-to-noun",
         "morphology:suffix-ing",
         "morphology:productive",
         "morphology:activity-noun",
         "es:planear",
-        "en:plan"
+        "en:plan",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -60797,14 +60787,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ish",
         "morphology:adjective-to-adjective",
         "morphology:suffix-ish",
         "morphology:limited",
         "register:informal",
         "es:ser",
         "en:red",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -60818,13 +60808,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ish",
         "morphology:number-to-expression",
         "morphology:suffix-ish",
         "morphology:productive",
         "register:informal",
         "es:seis",
-        "en:six"
+        "en:six",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -60838,13 +60828,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ish",
         "morphology:number-to-expression",
         "morphology:suffix-ish",
         "morphology:productive",
         "register:informal",
         "es:veinte",
-        "en:twenty"
+        "en:twenty",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -60858,13 +60848,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ish",
         "morphology:number-to-expression",
         "morphology:suffix-ish",
         "morphology:productive",
         "register:informal",
         "es:cuarenta",
-        "en:forty"
+        "en:forty",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -60878,14 +60868,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ish",
         "morphology:adjective-to-adjective",
         "morphology:suffix-ish",
         "morphology:limited",
         "register:informal",
         "es:estar",
         "en:cold",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -60899,14 +60889,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ish",
         "morphology:adjective-to-adjective",
         "morphology:suffix-ish",
         "morphology:limited",
         "register:informal",
         "es:ser",
         "en:tall",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -60920,14 +60910,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ish",
         "morphology:adjective-to-adjective",
         "morphology:suffix-ish",
         "morphology:limited",
         "register:informal",
         "es:ser",
         "en:small",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -60941,14 +60931,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ish",
         "morphology:adjective-to-adjective",
         "morphology:suffix-ish",
         "morphology:limited",
         "register:informal",
         "es:estar",
         "en:okay",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -60962,14 +60952,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ish",
         "morphology:adjective-to-adjective",
         "morphology:suffix-ish",
         "morphology:limited",
         "register:informal",
         "es:estar",
         "en:ready",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -60983,13 +60973,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ish",
         "morphology:noun-to-adjective",
         "morphology:suffix-ish",
         "morphology:limited",
         "register:informal",
         "es:niño",
-        "en:child"
+        "en:child",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61003,13 +60993,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ish",
         "morphology:noun-to-adjective",
         "morphology:suffix-ish",
         "morphology:limited",
         "register:informal",
         "es:tonto",
-        "en:fool"
+        "en:fool",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61023,13 +61013,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ish",
         "morphology:expression-to-adjective",
         "morphology:suffix-ish",
         "morphology:limited",
         "register:informal",
         "es:uno",
-        "en:self"
+        "en:self",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61043,13 +61033,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ish",
         "morphology:noun-to-adjective",
         "morphology:suffix-ish",
         "morphology:limited",
         "register:informal",
         "es:estilo",
-        "en:style"
+        "en:style",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61063,13 +61053,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ish",
         "morphology:noun-to-adjective",
         "morphology:suffix-ish",
         "morphology:limited",
         "register:informal",
         "es:fiebre",
-        "en:fever"
+        "en:fever",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61083,14 +61073,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ish",
         "morphology:noun-to-adjective",
         "morphology:suffix-ish",
         "morphology:recognition",
         "grammar:capitalization",
         "es:gran",
         "en:britain",
-        "topic:nationality"
+        "topic:nationality",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61104,14 +61094,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ish",
         "morphology:noun-to-adjective",
         "morphology:suffix-ish",
         "morphology:recognition",
         "grammar:capitalization",
         "es:irlanda",
         "en:ireland",
-        "topic:nationality"
+        "topic:nationality",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61125,14 +61115,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ish",
         "morphology:noun-to-adjective",
         "morphology:suffix-ish",
         "morphology:recognition",
         "grammar:capitalization",
         "es:españa",
         "en:spain",
-        "topic:nationality"
+        "topic:nationality",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61146,14 +61136,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ish",
         "morphology:noun-to-adjective",
         "morphology:suffix-ish",
         "morphology:recognition",
         "grammar:capitalization",
         "es:polonia",
         "en:poland",
-        "topic:nationality"
+        "topic:nationality",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61167,14 +61157,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ish",
         "morphology:noun-to-adjective",
         "morphology:suffix-ish",
         "morphology:recognition",
         "grammar:capitalization",
         "es:turquía",
         "en:turkey",
-        "topic:nationality"
+        "topic:nationality",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61188,14 +61178,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ish",
         "morphology:noun-to-adjective",
         "morphology:suffix-ish",
         "morphology:recognition",
         "grammar:capitalization",
         "es:suecia",
         "en:sweden",
-        "topic:nationality"
+        "topic:nationality",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61209,14 +61199,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ish",
         "morphology:noun-to-adjective",
         "morphology:suffix-ish",
         "morphology:recognition",
         "grammar:capitalization",
         "es:dinamarca",
         "en:denmark",
-        "topic:nationality"
+        "topic:nationality",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61230,14 +61220,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ish",
         "morphology:noun-to-adjective",
         "morphology:suffix-ish",
         "morphology:recognition",
         "grammar:capitalization",
         "es:finlandia",
         "en:finland",
-        "topic:nationality"
+        "topic:nationality",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61251,13 +61241,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:th",
         "morphology:adjective-to-noun",
         "morphology:suffix-th",
         "morphology:irregular",
         "es:ser",
         "en:true",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61271,13 +61261,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:th",
         "morphology:adjective-to-noun",
         "morphology:suffix-th",
         "morphology:irregular",
         "es:ser",
         "en:wide",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61291,13 +61281,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:th",
         "morphology:adjective-to-noun",
         "morphology:suffix-th",
         "morphology:irregular",
         "es:ser",
         "en:deep",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61311,13 +61301,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:th",
         "morphology:adjective-to-noun",
         "morphology:suffix-th",
         "morphology:irregular",
         "es:estar",
         "en:warm",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61331,12 +61321,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:th",
         "morphology:verb-to-noun",
         "morphology:suffix-th",
         "morphology:irregular",
         "es:crecer",
-        "en:grow"
+        "en:grow",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61350,13 +61340,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:th",
         "morphology:adjective-to-noun",
         "morphology:suffix-th",
         "morphology:irregular",
         "es:ser",
         "en:young",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61370,12 +61360,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:th",
         "morphology:verb-to-noun",
         "morphology:suffix-th",
         "morphology:irregular",
         "es:nacer",
-        "en:born"
+        "en:born",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61389,13 +61379,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:th",
         "morphology:adjective-to-noun",
         "morphology:suffix-th",
         "morphology:irregular",
         "es:estar",
         "en:dead",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61409,13 +61399,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ern",
         "morphology:noun-to-adjective",
         "morphology:suffix-ern",
         "morphology:limited",
         "topic:direction",
         "es:norte",
-        "en:north"
+        "en:north",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61429,13 +61419,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ern",
         "morphology:noun-to-adjective",
         "morphology:suffix-ern",
         "morphology:limited",
         "topic:direction",
         "es:sur",
-        "en:south"
+        "en:south",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61449,13 +61439,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ern",
         "morphology:noun-to-adjective",
         "morphology:suffix-ern",
         "morphology:limited",
         "topic:direction",
         "es:este",
-        "en:east"
+        "en:east",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61469,13 +61459,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ern",
         "morphology:noun-to-adjective",
         "morphology:suffix-ern",
         "morphology:limited",
         "topic:direction",
         "es:oeste",
-        "en:west"
+        "en:west",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61489,13 +61479,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ern",
         "morphology:noun-to-adjective",
         "morphology:suffix-ern",
         "morphology:limited",
         "topic:direction",
         "es:noreste",
-        "en:northeast"
+        "en:northeast",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61509,13 +61499,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ern",
         "morphology:noun-to-adjective",
         "morphology:suffix-ern",
         "morphology:limited",
         "topic:direction",
         "es:noroeste",
-        "en:northwest"
+        "en:northwest",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61529,13 +61519,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ern",
         "morphology:noun-to-adjective",
         "morphology:suffix-ern",
         "morphology:limited",
         "topic:direction",
         "es:sureste",
-        "en:southeast"
+        "en:southeast",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61549,13 +61539,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ern",
         "morphology:noun-to-adjective",
         "morphology:suffix-ern",
         "morphology:limited",
         "topic:direction",
         "es:suroeste",
-        "en:southwest"
+        "en:southwest",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61569,14 +61559,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:er",
         "morphology:noun-to-noun",
         "morphology:suffix-er",
         "morphology:limited",
         "topic:direction",
         "grammar:person-noun",
         "es:norte",
-        "en:north"
+        "en:north",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61590,14 +61580,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:er",
         "morphology:noun-to-noun",
         "morphology:suffix-er",
         "morphology:limited",
         "topic:direction",
         "grammar:person-noun",
         "es:sur",
-        "en:south"
+        "en:south",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61611,14 +61601,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:er",
         "morphology:noun-to-noun",
         "morphology:suffix-er",
         "morphology:limited",
         "topic:direction",
         "grammar:person-noun",
         "es:este",
-        "en:east"
+        "en:east",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61632,14 +61622,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:er",
         "morphology:noun-to-noun",
         "morphology:suffix-er",
         "morphology:limited",
         "topic:direction",
         "grammar:person-noun",
         "es:oeste",
-        "en:west"
+        "en:west",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61653,14 +61643,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:most",
         "morphology:adjective-to-superlative",
         "morphology:suffix-most",
         "morphology:limited",
         "es:ser",
         "en:upper",
         "topic:multi-sense",
-        "topic:direction"
+        "topic:direction",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61674,14 +61664,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:most",
         "morphology:adjective-to-superlative",
         "morphology:suffix-most",
         "morphology:limited",
         "es:ser",
         "en:lower",
         "topic:multi-sense",
-        "topic:direction"
+        "topic:direction",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61695,14 +61685,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:most",
         "morphology:adjective-to-superlative",
         "morphology:suffix-most",
         "morphology:limited",
         "es:ser",
         "en:inner",
         "topic:multi-sense",
-        "topic:direction"
+        "topic:direction",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61716,14 +61706,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:most",
         "morphology:adjective-to-superlative",
         "morphology:suffix-most",
         "morphology:limited",
         "es:ser",
         "en:outer",
         "topic:multi-sense",
-        "topic:direction"
+        "topic:direction",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61737,14 +61727,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ward",
         "morphology:expression-to-adverb",
         "morphology:suffix-ward",
         "morphology:limited",
         "topic:direction",
         "dialect:american",
         "es:norte",
-        "en:north"
+        "en:north",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61758,14 +61748,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ward",
         "morphology:expression-to-adverb",
         "morphology:suffix-ward",
         "morphology:limited",
         "topic:direction",
         "dialect:british",
         "es:norte",
-        "en:north"
+        "en:north",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61779,14 +61769,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ward",
         "morphology:expression-to-adverb",
         "morphology:suffix-ward",
         "morphology:limited",
         "topic:direction",
         "dialect:american",
         "es:sur",
-        "en:south"
+        "en:south",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61800,14 +61790,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ward",
         "morphology:expression-to-adverb",
         "morphology:suffix-ward",
         "morphology:limited",
         "topic:direction",
         "dialect:british",
         "es:sur",
-        "en:south"
+        "en:south",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61821,14 +61811,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ward",
         "morphology:expression-to-adverb",
         "morphology:suffix-ward",
         "morphology:limited",
         "topic:direction",
         "dialect:american",
         "es:este",
-        "en:east"
+        "en:east",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61842,14 +61832,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ward",
         "morphology:expression-to-adverb",
         "morphology:suffix-ward",
         "morphology:limited",
         "topic:direction",
         "dialect:british",
         "es:este",
-        "en:east"
+        "en:east",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61863,14 +61853,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ward",
         "morphology:expression-to-adverb",
         "morphology:suffix-ward",
         "morphology:limited",
         "topic:direction",
         "dialect:american",
         "es:oeste",
-        "en:west"
+        "en:west",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61884,14 +61874,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ward",
         "morphology:expression-to-adverb",
         "morphology:suffix-ward",
         "morphology:limited",
         "topic:direction",
         "dialect:british",
         "es:oeste",
-        "en:west"
+        "en:west",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61905,7 +61895,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ward",
         "morphology:expression-to-adverb",
         "morphology:suffix-ward",
         "morphology:limited",
@@ -61913,7 +61902,8 @@
         "dialect:american",
         "es:adentro",
         "en:in",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61927,7 +61917,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ward",
         "morphology:expression-to-adverb",
         "morphology:suffix-ward",
         "morphology:limited",
@@ -61935,7 +61924,8 @@
         "dialect:british",
         "es:adentro",
         "en:in",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61949,14 +61939,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ward",
         "morphology:expression-to-adverb",
         "morphology:suffix-ward",
         "morphology:limited",
         "topic:direction",
         "dialect:american",
         "es:afuera",
-        "en:out"
+        "en:out",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61970,14 +61960,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ward",
         "morphology:expression-to-adverb",
         "morphology:suffix-ward",
         "morphology:limited",
         "topic:direction",
         "dialect:british",
         "es:afuera",
-        "en:out"
+        "en:out",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -61991,14 +61981,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ward",
         "morphology:expression-to-adverb",
         "morphology:suffix-ward",
         "morphology:limited",
         "topic:direction",
         "dialect:american",
         "es:arriba",
-        "en:up"
+        "en:up",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -62012,14 +62002,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ward",
         "morphology:expression-to-adverb",
         "morphology:suffix-ward",
         "morphology:limited",
         "topic:direction",
         "dialect:british",
         "es:arriba",
-        "en:up"
+        "en:up",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -62033,14 +62023,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ward",
         "morphology:expression-to-adverb",
         "morphology:suffix-ward",
         "morphology:limited",
         "topic:direction",
         "dialect:american",
         "es:abajo",
-        "en:down"
+        "en:down",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -62054,14 +62044,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ward",
         "morphology:expression-to-adverb",
         "morphology:suffix-ward",
         "morphology:limited",
         "topic:direction",
         "dialect:british",
         "es:abajo",
-        "en:down"
+        "en:down",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -62075,14 +62065,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ward",
         "morphology:expression-to-adverb",
         "morphology:suffix-ward",
         "morphology:limited",
         "topic:direction",
         "dialect:american",
         "es:atrás",
-        "en:back"
+        "en:back",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -62096,14 +62086,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ward",
         "morphology:expression-to-adverb",
         "morphology:suffix-ward",
         "morphology:limited",
         "topic:direction",
         "dialect:british",
         "es:atrás",
-        "en:back"
+        "en:back",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -62117,14 +62107,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ward",
         "morphology:expression-to-adverb",
         "morphology:suffix-ward",
         "morphology:limited",
         "topic:direction",
         "dialect:american",
         "es:casa",
-        "en:home"
+        "en:home",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -62138,14 +62128,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ward",
         "morphology:expression-to-adverb",
         "morphology:suffix-ward",
         "morphology:limited",
         "topic:direction",
         "dialect:british",
         "es:casa",
-        "en:home"
+        "en:home",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -62159,7 +62149,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ward",
         "morphology:expression-to-adverb",
         "morphology:suffix-ward",
         "morphology:limited",
@@ -62167,7 +62156,8 @@
         "dialect:american",
         "es:después",
         "en:after",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -62181,7 +62171,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ward",
         "morphology:expression-to-adverb",
         "morphology:suffix-ward",
         "morphology:limited",
@@ -62189,7 +62178,8 @@
         "dialect:british",
         "es:después",
         "en:after",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -62203,7 +62193,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ward",
         "morphology:expression-to-adverb",
         "morphology:suffix-ward",
         "morphology:limited",
@@ -62211,7 +62200,8 @@
         "dialect:american",
         "es:adelante",
         "en:on",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -62225,7 +62215,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:ward",
         "morphology:expression-to-adverb",
         "morphology:suffix-ward",
         "morphology:limited",
@@ -62233,7 +62222,8 @@
         "dialect:british",
         "es:adelante",
         "en:on",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -62247,14 +62237,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:dis",
         "morphology:verb-to-verb",
         "morphology:prefix-dis",
         "morphology:productive",
         "es:estar",
         "en:agree",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "supporting"
     },
@@ -62268,12 +62258,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:dis",
         "morphology:verb-to-verb",
         "morphology:prefix-dis",
         "morphology:productive",
         "es:conectar",
-        "en:connect"
+        "en:connect",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -62287,12 +62277,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:mis",
         "morphology:verb-to-verb",
         "morphology:prefix-mis",
         "morphology:productive",
         "es:entender",
-        "en:understand"
+        "en:understand",
+        "topic:transformation"
       ],
       "curriculumRole": "supporting"
     },
@@ -62306,12 +62296,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:mis",
         "morphology:verb-to-verb",
         "morphology:prefix-mis",
         "morphology:productive",
         "es:informar",
-        "en:inform"
+        "en:inform",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -62325,12 +62315,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:over",
         "morphology:verb-to-verb",
         "morphology:prefix-over",
         "morphology:productive",
         "es:cocinar",
-        "en:cook"
+        "en:cook",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -62344,12 +62334,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:over",
         "morphology:verb-to-verb",
         "morphology:prefix-over",
         "morphology:productive",
         "es:cobrar",
-        "en:charge"
+        "en:charge",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -62363,12 +62353,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:re",
         "morphology:verb-to-verb",
         "morphology:prefix-re",
         "morphology:productive",
         "es:escribir",
-        "en:write"
+        "en:write",
+        "topic:transformation"
       ],
       "curriculumRole": "supporting"
     },
@@ -62382,13 +62372,13 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:un",
         "morphology:adjective-to-adjective",
         "morphology:prefix-un",
         "morphology:productive",
         "es:ser",
         "en:happy",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "supporting"
     },
@@ -62402,12 +62392,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:under",
         "morphology:verb-to-verb",
         "morphology:prefix-under",
         "morphology:productive",
         "es:estimar",
-        "en:estimate"
+        "en:estimate",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -62651,12 +62641,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:fore",
         "morphology:noun-to-noun",
         "morphology:prefix-fore",
         "morphology:recognition",
         "es:brazo",
-        "en:arm"
+        "en:arm",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -62670,12 +62660,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:fore",
         "morphology:noun-to-noun",
         "morphology:prefix-fore",
         "morphology:recognition",
         "es:cabeza",
-        "en:head"
+        "en:head",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -62689,14 +62679,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:fore",
         "morphology:verb-to-verb",
         "morphology:prefix-fore",
         "morphology:recognition",
         "es:ver",
         "en:see",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -62710,14 +62700,14 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:fore",
         "morphology:verb-to-verb",
         "morphology:prefix-fore",
         "morphology:recognition",
         "es:decir",
         "en:tell",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -62731,12 +62721,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:fore",
         "morphology:verb-to-verb",
         "morphology:prefix-fore",
         "morphology:recognition",
         "es:advertir",
-        "en:warn"
+        "en:warn",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -62750,12 +62740,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:fore",
         "morphology:noun-to-noun",
         "morphology:prefix-fore",
         "morphology:recognition",
         "es:palabra",
-        "en:word"
+        "en:word",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -62769,12 +62759,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:fore",
         "morphology:noun-to-noun",
         "morphology:prefix-fore",
         "morphology:recognition",
         "es:padre",
-        "en:father"
+        "en:father",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -62788,12 +62778,12 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:fore",
         "morphology:noun-to-noun",
         "morphology:prefix-fore",
         "morphology:recognition",
         "es:fondo",
-        "en:ground"
+        "en:ground",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
