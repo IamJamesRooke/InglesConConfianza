@@ -48478,8 +48478,8 @@
       "spanish": "[ser] rojo",
       "english": "[to be] red",
       "example": {
-        "spanish": "La pared es blanca.",
-        "english": "The wall is white."
+        "spanish": "La manzana es roja.",
+        "english": "The apple is red."
       },
       "collections": [
         "grammar:ser-adjective",
@@ -48487,7 +48487,8 @@
         "es:ser",
         "en:red",
         "topic:color",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -48505,7 +48506,8 @@
         "es:ser",
         "en:blue",
         "topic:color",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -48523,7 +48525,8 @@
         "es:ser",
         "en:green",
         "topic:color",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -48541,7 +48544,8 @@
         "es:ser",
         "en:yellow",
         "topic:color",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -48554,14 +48558,15 @@
         "english": "The wall is white."
       },
       "collections": [
-        "es:color",
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
         "en:white",
         "topic:color",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "es:blanco",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -48579,7 +48584,8 @@
         "es:ser",
         "en:black",
         "topic:color",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -86918,6 +86924,96 @@
         "grammar:command",
         "es:ver",
         "en:let's",
+        "audit:reviewed"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "z99o7eirt0",
+      "spanish": "[ser] naranja",
+      "english": "[to be] orange",
+      "example": {
+        "spanish": "El atardecer es naranja.",
+        "english": "The sunset is orange."
+      },
+      "collections": [
+        "pos:adjective",
+        "grammar:ser-adjective",
+        "es:ser",
+        "en:orange",
+        "topic:color",
+        "audit:reviewed"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "dw8fkd9ui7",
+      "spanish": "[ser] morado",
+      "english": "[to be] purple",
+      "example": {
+        "spanish": "La flor es morada.",
+        "english": "The flower is purple."
+      },
+      "collections": [
+        "pos:adjective",
+        "grammar:ser-adjective",
+        "es:ser",
+        "en:purple",
+        "topic:color",
+        "audit:reviewed"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "v0i70fm519",
+      "spanish": "[ser] gris",
+      "english": "[to be] gray",
+      "example": {
+        "spanish": "El elefante es gris.",
+        "english": "The elephant is gray."
+      },
+      "collections": [
+        "pos:adjective",
+        "grammar:ser-adjective",
+        "es:ser",
+        "en:gray",
+        "topic:color",
+        "audit:reviewed"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "j738464gvg",
+      "spanish": "[ser] marrón",
+      "english": "[to be] brown",
+      "example": {
+        "spanish": "La mesa es marrón.",
+        "english": "The table is brown."
+      },
+      "collections": [
+        "pos:adjective",
+        "grammar:ser-adjective",
+        "es:ser",
+        "en:brown",
+        "topic:color",
+        "audit:reviewed"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "aacmq4xqac",
+      "spanish": "[ser] rosado",
+      "english": "[to be] pink",
+      "example": {
+        "spanish": "La flor es rosada.",
+        "english": "The flower is pink."
+      },
+      "collections": [
+        "pos:adjective",
+        "grammar:ser-adjective",
+        "es:ser",
+        "en:pink",
+        "topic:color",
         "audit:reviewed"
       ],
       "curriculumRole": "supporting"

@@ -1,0 +1,6 @@
+hkvahmcgwi	[ser] negro	[to be] black	supporting	audit:reviewed	Audit: role/membership/tags/example fine, no changes needed.	El carro es negro.	The car is black.
+41sk71d7jq	[ser] rojo	[to be] red	supporting	audit:reviewed	Audit bug fix: example sentence was copy-pasted from the "blanco" row ("La pared es blanca."/"The wall is white.") — wrong color entirely. Replaced with a real red-specific sentence.	La manzana es roja.	The apple is red.
+wof9vipshg	[ser] azul	[to be] blue	supporting	audit:reviewed	Audit: role/membership/tags/example fine, no changes needed.	La pared es azul claro.	The wall is light blue.
+dypln0ds39	[ser] amarillo	[to be] yellow	supporting	audit:reviewed	Audit: role/membership/tags/example fine, no changes needed.	El sol es amarillo.	The sun is yellow.
+ij9kh31g9s	[ser] verde	[to be] green	supporting	audit:reviewed	Audit: role/membership/tags/example fine, no changes needed.	La hierba es verde.	The grass is green.
+zitwttv8hl	[ser] blanco	[to be] white	supporting	es:blanco|audit:reviewed	Audit tag fix: had es:color (wrong lemma — "color" itself, not "blanco") instead of es:blanco. The stray es:color tag is removed separately.	La pared es blanca.	The wall is white.
