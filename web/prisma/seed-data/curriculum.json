@@ -2205,14 +2205,14 @@
         "english": "Say it out loud."
       },
       "collections": [
-        "construction:verb-particle",
         "particle:out",
         "loud",
         "es:decir",
         "en:say",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "grammar:phrasal-verb"
       ],
       "curriculumRole": "reference"
     },
@@ -2820,7 +2820,6 @@
         "english": "The meeting took place yesterday."
       },
       "collections": [
-        "construction:verb-particle",
         "en:place",
         "en:event",
         "es:dar",
@@ -3178,11 +3177,11 @@
         "english": "I will give your keys back this afternoon."
       },
       "collections": [
-        "give back",
         "es:devolver",
         "en:give",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "grammar:phrasal-verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -6766,13 +6765,13 @@
         "english": "The light is on."
       },
       "collections": [
-        "grammar:particle",
         "particle:on",
         "es:estar",
         "en:on",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "grammar:phrasal-verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -6785,12 +6784,12 @@
         "english": "The light is off."
       },
       "collections": [
-        "grammar:particle",
         "particle:off",
         "es:estar",
         "en:off",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "grammar:phrasal-verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -6803,12 +6802,12 @@
         "english": "Ana is out."
       },
       "collections": [
-        "grammar:particle",
         "particle:out",
         "es:estar",
         "en:out",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "grammar:phrasal-verb"
       ],
       "curriculumRole": "reference"
     },
@@ -6899,7 +6898,6 @@
       },
       "collections": [
         "pos:adjective",
-        "grammar:particle",
         "es:estar",
         "en:done",
         "topic:condition-state",
@@ -6995,12 +6993,12 @@
       },
       "collections": [
         "pos:adjective",
-        "grammar:particle",
         "particle:away",
         "es:estar",
         "en:away",
         "topic:abstract-quality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "grammar:phrasal-verb"
       ],
       "curriculumRole": "reference"
     },
@@ -7296,7 +7294,6 @@
         "english": "There are five minutes left."
       },
       "collections": [
-        "grammar:particle",
         "en:left",
         "construction:there-be",
         "es:faltar",
@@ -7314,7 +7311,6 @@
         "english": "Two kilometers to go."
       },
       "collections": [
-        "grammar:particle",
         "construction:to-go",
         "es:faltar",
         "en:go",
@@ -13895,12 +13891,12 @@
         "english": "The meeting is over."
       },
       "collections": [
-        "be over",
         "en:event",
         "grammar:reflexive",
         "es:acabar",
         "en:over",
-        "pos:verb"
+        "pos:verb",
+        "grammar:phrasal-verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -16997,14 +16993,14 @@
         "english": "You left the light on."
       },
       "collections": [
-        "grammar:particle",
         "particle:on",
         "grammar:resulting-state",
         "es:dejar",
         "en:leave",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "grammar:phrasal-verb"
       ],
       "curriculumRole": "reference"
     },
@@ -20864,14 +20860,14 @@
         "english": "She has a jacket on."
       },
       "collections": [
-        "grammar:particle",
         "particle:on",
         "topic:clothing",
         "es:tener",
         "en:on",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "grammar:phrasal-verb"
       ],
       "curriculumRole": "reference"
     },
@@ -22844,7 +22840,6 @@
       "collections": [
         "es:volver",
         "pos:adverb",
-        "grammar:particle",
         "particle:back",
         "es:de",
         "en:back",
@@ -23868,7 +23863,6 @@
         "english": "We agreed on a date."
       },
       "collections": [
-        "agree on",
         "particle:on",
         "construction:prepositional-verb",
         "sound:noun-decision",
@@ -23957,11 +23951,11 @@
         "english": "Laura showed up at nine."
       },
       "collections": [
-        "show up",
         "es:aparecer",
         "en:show",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "grammar:phrasal-verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -23989,12 +23983,12 @@
         "english": "The article came out yesterday."
       },
       "collections": [
-        "come out",
         "en:publish",
         "es:aparecer",
         "en:come",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "grammar:phrasal-verb"
       ],
       "curriculumRole": "reference"
     },
@@ -24055,11 +24049,11 @@
         "english": "Nothing can hold us back."
       },
       "collections": [
-        "hold back",
         "es:detener",
         "en:hold",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "grammar:phrasal-verb"
       ],
       "curriculumRole": "reference"
     },
@@ -24139,10 +24133,10 @@
         "english": "Hand in the assignment tomorrow."
       },
       "collections": [
-        "hand in",
         "es:entregar",
         "en:hand",
-        "pos:verb"
+        "pos:verb",
+        "grammar:phrasal-verb"
       ],
       "curriculumRole": "reference"
     },
@@ -24155,11 +24149,11 @@
         "english": "She handed the keys over to the owner."
       },
       "collections": [
-        "hand over",
         "construction:map-a-to",
         "es:entregar",
         "en:hand",
-        "pos:verb"
+        "pos:verb",
+        "grammar:phrasal-verb"
       ],
       "curriculumRole": "reference"
     },
@@ -24172,12 +24166,12 @@
         "english": "The suspect turned himself in."
       },
       "collections": [
-        "turn oneself in",
         "grammar:pronominal",
         "es:entregar",
         "en:turn",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "grammar:phrasal-verb"
       ],
       "curriculumRole": "reference"
     },
@@ -24560,12 +24554,12 @@
         "english": "Come back here after the meeting."
       },
       "collections": [
-        "come back",
         "en:return",
         "es:regresar",
         "en:come",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "grammar:phrasal-verb"
       ],
       "curriculumRole": "reference"
     },
@@ -24578,12 +24572,12 @@
         "english": "Go back to your office after the meeting."
       },
       "collections": [
-        "go back",
         "en:return",
         "es:regresar",
         "en:go",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "grammar:phrasal-verb"
       ],
       "curriculumRole": "reference"
     },
@@ -29131,10 +29125,10 @@
       },
       "collections": [
         "en:according",
-        "depending on",
         "pos:preposition",
         "es:según",
-        "en:depending"
+        "en:depending",
+        "construction:prepositional-verb"
       ],
       "curriculumRole": "reference"
     },
@@ -29823,7 +29817,6 @@
         "english": "The article appeared in the newspaper."
       },
       "collections": [
-        "appear in",
         "publication",
         "particle:in",
         "construction:prepositional-verb",
