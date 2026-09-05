@@ -1,9 +1,26 @@
 # Full database audit — plan & rubric
 
-**Status:** Phase 0 (scaffolding) in progress. See `full-audit-progress.md` for
-the live checklist and `full-audit-findings.md` for open questions for the
-user. Read both of those before starting any session's work — this file is
-the fixed rubric, those two are the moving state.
+## Start here, every session (before reading anything else below)
+
+1. `cd web && npm run curriculum:audit:status` — this is the *only* way to
+   find out what's left. It's a live DB query, not a document, so it can't
+   be stale and costs far less context than reading a checklist. Do not
+   read `full-audit-progress.md` to find the next unit — that file is a
+   short human-readable session log now, not machine state.
+2. Re-read the **Role rubric** section below once (worked examples +
+   calibration set) — this is the part that prevents tier drift across
+   sessions and is the one thing worth spending context on every time.
+3. Work forward through the units `audit-status` printed. Tag
+   `audit:reviewed` as you go (see State tracking). Commit after each unit
+   or small batch — never end a session with uncommitted work.
+4. Before ending: re-run `npm run curriculum:audit:status` to confirm the
+   numbers moved and nothing regressed, append one line to
+   `full-audit-progress.md`'s log, and append to `full-audit-findings.md`
+   anything you flagged.
+
+Skip straight to "Role rubric" below if you already know the mechanics —
+the rest of this file (tracks, state tags, checklist, sweeps, order) only
+needs a full read the first time.
 
 ## Why this file exists
 
@@ -36,8 +53,10 @@ not two separate passes.
   membership, tags, example) by a Track B pass.
 - `audit:flagged` — this concept has an open question logged in
   `full-audit-findings.md` that needs the user's judgment call, not mine.
-- Progress checklist (which facet-button units are done): `full-audit-progress.md`.
+- Which units are done: `npm run curriculum:audit:status` (never the
+  markdown file — see "Start here" at the top).
 - Open questions for the user: `full-audit-findings.md`.
+- Human-readable session history (not machine state): `full-audit-progress.md`.
 
 Never invent a third piece of state. If you need to remember something across
 sessions, it goes in one of these three places, not in your own head.
@@ -188,19 +207,10 @@ commit, before starting the facet-by-facet walk:
 
 ## Session protocol
 
-1. Read this file (if not already cached from a recent turn in the same
-   session) and skim `full-audit-progress.md` for the next unchecked unit.
-2. Re-run the calibration set mentally before touching data.
-3. Work forward through units. For each: pull the small list, apply the
-   5-point checklist, build a manifest, dry-run → apply → verify → test
-   (standard discipline — see `README.md`), tag `audit:reviewed`.
-4. Commit after each unit or small natural batch (never end a session with
-   uncommitted work).
-5. Update `full-audit-progress.md` (checkbox + one-line note + commit hash)
-   and `full-audit-findings.md` (anything flagged) before ending the
-   session — these two files are the only continuity mechanism.
-6. Stop with enough context headroom to do step 4-5 cleanly rather than
-   rushing them.
+See "Start here, every session" at the top of this file — that's the
+complete protocol. The manifest discipline for actually applying changes
+(dry-run → apply → verify → test) is the same one used everywhere else in
+this project — see `README.md`.
 
 ## Trash policy
 

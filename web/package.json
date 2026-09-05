@@ -29,6 +29,7 @@
     "curriculum:audit:verbs": "tsx scripts/audit-verb-conjugation.ts",
     "curriculum:audit:cognates": "tsx scripts/audit-cognates.ts",
     "curriculum:audit:phrasal-verbs": "tsx scripts/audit-phrasal-verbs.ts",
+    "curriculum:audit:status": "tsx scripts/audit-status.ts",
     "curriculum:apply": "tsx scripts/apply-curriculum.ts",
     "curriculum:collections:apply": "tsx scripts/apply-collection-manifest.ts",
     "curriculum:snapshots:export": "tsx scripts/export-curriculum-snapshots.ts"
