@@ -61098,7 +61098,8 @@
       "collections": [
         "es:despacio",
         "en:slow",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -88344,7 +88345,8 @@
         "es:lo",
         "en:the",
         "topic:en-multi-sense",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
