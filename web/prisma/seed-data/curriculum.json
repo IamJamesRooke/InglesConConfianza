@@ -554,7 +554,8 @@
         "en:beloved",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-8"
       ],
       "curriculumRole": "reference"
     },
@@ -1545,7 +1546,9 @@
         "en:necessary",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-5",
+        "topic:adj-abs-general-7"
       ],
       "curriculumRole": "supporting"
     },
@@ -2866,7 +2869,8 @@
         "en:unspeakable",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-ible"
       ],
       "curriculumRole": "reference"
     },
@@ -4988,7 +4992,8 @@
         "topic:abstract-quality",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -5009,7 +5014,8 @@
         "topic:abstract-quality",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -7244,7 +7250,8 @@
         "en:expected",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-4"
       ],
       "curriculumRole": "reference"
     },
@@ -7265,7 +7272,8 @@
         "en:unexpected",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-6"
       ],
       "curriculumRole": "reference"
     },
@@ -7457,7 +7465,8 @@
         "particle:to",
         "en:be",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:condition-state-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -7480,7 +7489,8 @@
         "topic:multi-sense",
         "en:be",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-6"
       ],
       "curriculumRole": "supporting"
     },
@@ -7555,7 +7565,8 @@
         "particle:to",
         "en:be",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:condition-state-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -7580,7 +7591,8 @@
         "particle:with",
         "en:be",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:emotion-feeling"
       ],
       "curriculumRole": "reference"
     },
@@ -7599,7 +7611,9 @@
         "topic:condition-state",
         "topic:multi-sense",
         "grammar:estar-adjective",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:estar-adj-2",
+        "topic:condition-state-1"
       ],
       "curriculumRole": "core"
     },
@@ -7660,7 +7674,8 @@
         "topic:multi-sense",
         "en:be",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-8"
       ],
       "curriculumRole": "supporting"
     },
@@ -7678,7 +7693,8 @@
         "en:wrong",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-4"
       ],
       "curriculumRole": "supporting"
     },
@@ -7700,7 +7716,9 @@
         "en:available",
         "topic:condition-state",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:estar-adj-1",
+        "topic:condition-state-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -7880,7 +7898,8 @@
         "en:done",
         "topic:condition-state",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:condition-state-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -7950,7 +7969,8 @@
         "topic:value-price",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:estar-adj-2"
       ],
       "curriculumRole": "reference"
     },
@@ -7991,7 +8011,8 @@
         "grammar:phrasal-verb",
         "en:be",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-ente"
       ],
       "curriculumRole": "reference"
     },
@@ -8009,7 +8030,8 @@
         "en:late",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-8"
       ],
       "curriculumRole": "supporting"
     },
@@ -8027,7 +8049,8 @@
         "en:bored",
         "topic:emotion-state",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:emotion-feeling"
       ],
       "curriculumRole": "supporting"
     },
@@ -8045,7 +8068,8 @@
         "en:due",
         "topic:condition-state",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:condition-state-2"
       ],
       "curriculumRole": "reference"
     },
@@ -8211,7 +8235,8 @@
         "en:strange",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-5"
       ],
       "curriculumRole": "supporting"
     },
@@ -8232,7 +8257,8 @@
         "topic:emotion-state",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:emotion-feeling"
       ],
       "curriculumRole": "reference"
     },
@@ -9920,7 +9946,8 @@
         "topic:abstract-quality",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-5"
       ],
       "curriculumRole": "reference"
     },
@@ -9940,7 +9967,8 @@
         "en:done",
         "topic:condition-state",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:condition-state-1"
       ],
       "curriculumRole": "reference"
     },
@@ -11624,7 +11652,8 @@
         "en:seem",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -11684,7 +11713,8 @@
         "topic:abstract-quality",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-1"
       ],
       "curriculumRole": "core"
     },
@@ -11865,7 +11895,8 @@
         "particle:to",
         "en:be",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-7"
       ],
       "curriculumRole": "reference"
     },
@@ -12555,7 +12586,8 @@
         "en:pensive",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-ivo-iva"
       ],
       "curriculumRole": "reference"
     },
@@ -12579,7 +12611,8 @@
         "topic:multi-sense",
         "en:be",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-2"
       ],
       "curriculumRole": "reference"
     },
@@ -12670,7 +12703,8 @@
         "en:get",
         "topic:condition-state",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:condition-state-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -12690,7 +12724,8 @@
         "en:lost",
         "topic:condition-state",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:condition-state-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -13983,7 +14018,8 @@
         "en:powerful",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-oso-osa"
       ],
       "curriculumRole": "reference"
     },
@@ -14003,7 +14039,8 @@
         "en:influential",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-oso-osa"
       ],
       "curriculumRole": "reference"
     },
@@ -14024,7 +14061,8 @@
         "topic:emotion-state",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:emotion-feeling"
       ],
       "curriculumRole": "reference"
     },
@@ -14045,7 +14083,8 @@
         "topic:emotion-state",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:emotion-feeling"
       ],
       "curriculumRole": "reference"
     },
@@ -14091,7 +14130,8 @@
         "en:all-powerful",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-oso-osa"
       ],
       "curriculumRole": "reference"
     },
@@ -14403,7 +14443,8 @@
         "en:mighty",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-oso-osa"
       ],
       "curriculumRole": "reference"
     },
@@ -14425,7 +14466,8 @@
         "en:almighty",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-oso-osa"
       ],
       "curriculumRole": "reference"
     },
@@ -14445,7 +14487,8 @@
         "en:omnipotent",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-oso-osa"
       ],
       "curriculumRole": "reference"
     },
@@ -15050,7 +15093,8 @@
         "topic:emotion-state",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:emotion-feeling"
       ],
       "curriculumRole": "supporting"
     },
@@ -15070,7 +15114,8 @@
         "topic:emotion-state",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:emotion-feeling"
       ],
       "curriculumRole": "reference"
     },
@@ -15596,7 +15641,8 @@
         "topic:condition-state",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:condition-state-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -15970,7 +16016,8 @@
         "topic:condition-state",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:condition-state-1"
       ],
       "curriculumRole": "reference"
     },
@@ -15992,7 +16039,8 @@
         "es:inacabado",
         "en:unfinished",
         "topic:abstract-quality",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-6"
       ],
       "curriculumRole": "reference"
     },
@@ -16242,7 +16290,9 @@
         "en:reachable",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-able",
+        "topic:adj-abs-able"
       ],
       "curriculumRole": "reference"
     },
@@ -16268,7 +16318,9 @@
         "topic:cognate",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-able",
+        "topic:adj-abs-able"
       ],
       "curriculumRole": "reference"
     },
@@ -16836,7 +16888,8 @@
         "en:well-known",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-3"
       ],
       "curriculumRole": "reference"
     },
@@ -17008,7 +17061,8 @@
         "en:unknown",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-3"
       ],
       "curriculumRole": "reference"
     },
@@ -17678,7 +17732,9 @@
         "en:countable",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-able",
+        "topic:adj-abs-able"
       ],
       "curriculumRole": "reference"
     },
@@ -17870,7 +17926,8 @@
         "es:costoso",
         "en:costly",
         "topic:abstract-quality",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-oso-osa"
       ],
       "curriculumRole": "reference"
     },
@@ -18240,7 +18297,8 @@
         "topic:abstract-quality",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-3"
       ],
       "curriculumRole": "reference"
     },
@@ -18265,7 +18323,9 @@
         "en:incredible",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-4",
+        "topic:adj-abs-general-6"
       ],
       "curriculumRole": "reference"
     },
@@ -19186,7 +19246,8 @@
         "topic:abstract-quality",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-1"
       ],
       "curriculumRole": "reference"
     },
@@ -19206,7 +19267,8 @@
         "topic:abstract-quality",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-1"
       ],
       "curriculumRole": "reference"
     },
@@ -19292,7 +19354,8 @@
         "topic:abstract-quality",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-1"
       ],
       "curriculumRole": "reference"
     },
@@ -20203,7 +20266,8 @@
         "topic:cognate",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-able"
       ],
       "curriculumRole": "reference"
     },
@@ -21756,7 +21820,8 @@
         "topic:abstract-quality",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-1"
       ],
       "curriculumRole": "core"
     },
@@ -22023,7 +22088,8 @@
         "topic:cognate",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-al"
       ],
       "curriculumRole": "reference"
     },
@@ -22414,7 +22480,8 @@
         "particle:of",
         "en:be",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-3"
       ],
       "curriculumRole": "reference"
     },
@@ -22451,7 +22518,8 @@
         "en:fun",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-4"
       ],
       "curriculumRole": "supporting"
     },
@@ -22469,7 +22537,8 @@
         "en:funny",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-oso-osa"
       ],
       "curriculumRole": "reference"
     },
@@ -22487,7 +22556,8 @@
         "en:boring",
         "topic:emotion-state",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:emotion-feeling"
       ],
       "curriculumRole": "supporting"
     },
@@ -22505,7 +22575,8 @@
         "en:interesting",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-6"
       ],
       "curriculumRole": "supporting"
     },
@@ -22523,7 +22594,8 @@
         "en:smart",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-7"
       ],
       "curriculumRole": "supporting"
     },
@@ -22542,7 +22614,8 @@
         "en:likely",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-8"
       ],
       "curriculumRole": "reference"
     },
@@ -22760,7 +22833,8 @@
         "en:significant",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-ivo-iva"
       ],
       "curriculumRole": "reference"
     },
@@ -22802,7 +22876,8 @@
         "grammar:tener-adjective",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-1"
       ],
       "curriculumRole": "reference"
     },
@@ -22823,7 +22898,8 @@
         "en:meaningless",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-7"
       ],
       "curriculumRole": "reference"
     },
@@ -23203,7 +23279,8 @@
         "grammar:tener-adjective",
         "topic:emotion-state",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:emotion-physical-sensation"
       ],
       "curriculumRole": "core"
     },
@@ -23223,7 +23300,8 @@
         "grammar:tener-adjective",
         "topic:emotion-state",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:emotion-physical-sensation"
       ],
       "curriculumRole": "core"
     },
@@ -23243,7 +23321,8 @@
         "grammar:tener-adjective",
         "topic:emotion-state",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:emotion-physical-sensation"
       ],
       "curriculumRole": "core"
     },
@@ -23263,7 +23342,8 @@
         "grammar:tener-adjective",
         "topic:emotion-state",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:emotion-physical-sensation"
       ],
       "curriculumRole": "core"
     },
@@ -23283,7 +23363,8 @@
         "grammar:tener-adjective",
         "topic:emotion-state",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:emotion-physical-sensation"
       ],
       "curriculumRole": "supporting"
     },
@@ -23310,7 +23391,8 @@
         "particle:of",
         "en:be",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:emotion-physical-sensation"
       ],
       "curriculumRole": "supporting"
     },
@@ -23379,7 +23461,8 @@
         "grammar:tener-adjective",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-1"
       ],
       "curriculumRole": "core"
     },
@@ -23402,7 +23485,8 @@
         "topic:multi-sense",
         "topic:imperative",
         "imp:affirmative-informal",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:emotion-physical-sensation"
       ],
       "curriculumRole": "core"
     },
@@ -23422,7 +23506,8 @@
         "grammar:tener-adjective",
         "topic:emotion-state",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:emotion-physical-sensation"
       ],
       "curriculumRole": "supporting"
     },
@@ -23461,7 +23546,8 @@
         "grammar:tener-adjective",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-1"
       ],
       "curriculumRole": "reference"
     },
@@ -23504,7 +23590,8 @@
         "grammar:tener-adjective",
         "topic:emotion-state",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:emotion-physical-sensation"
       ],
       "curriculumRole": "reference"
     },
@@ -24694,7 +24781,8 @@
         "en:valid",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-2"
       ],
       "curriculumRole": "reference"
     },
@@ -24720,7 +24808,8 @@
         "particle:for",
         "en:be",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-2"
       ],
       "curriculumRole": "reference"
     },
@@ -24860,7 +24949,8 @@
         "en:fair",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-7"
       ],
       "curriculumRole": "reference"
     },
@@ -25426,7 +25516,8 @@
         "topic:abstract-quality",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -25669,7 +25760,9 @@
         "en:visible",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ible",
+        "topic:adj-abs-ible"
       ],
       "curriculumRole": "reference"
     },
@@ -25693,7 +25786,9 @@
         "en:invisible",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ible",
+        "topic:adj-abs-ible"
       ],
       "curriculumRole": "reference"
     },
@@ -25714,7 +25809,8 @@
         "topic:cognate",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-al"
       ],
       "curriculumRole": "reference"
     },
@@ -25864,7 +25960,8 @@
         "topic:abstract-quality",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -25885,7 +25982,8 @@
         "topic:abstract-quality",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-2"
       ],
       "curriculumRole": "reference"
     },
@@ -28790,7 +28888,8 @@
         "en:okay",
         "pos:adjective",
         "grammar:estar-adjective",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:estar-adj-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -28807,7 +28906,8 @@
         "en:fine",
         "pos:adjective",
         "grammar:estar-adjective",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:estar-adj-1"
       ],
       "curriculumRole": "reference"
     },
@@ -28856,7 +28956,8 @@
         "en:kind",
         "pos:adjective",
         "grammar:ser-adjective",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-1"
       ],
       "curriculumRole": "reference"
     },
@@ -28989,7 +29090,8 @@
         "en:right",
         "pos:adjective",
         "grammar:ser-adjective",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-1"
       ],
       "curriculumRole": "reference"
     },
@@ -30502,7 +30604,8 @@
         "en:evil",
         "pos:adjective",
         "grammar:ser-adjective",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-5"
       ],
       "curriculumRole": "reference"
     },
@@ -30519,7 +30622,8 @@
         "en:poor",
         "pos:adjective",
         "grammar:ser-adjective",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-5"
       ],
       "curriculumRole": "reference"
     },
@@ -31902,7 +32006,8 @@
         "en:safe",
         "pos:adjective",
         "grammar:ser-adjective",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-7"
       ],
       "curriculumRole": "reference"
     },
@@ -33286,7 +33391,8 @@
         "es:solo",
         "en:alone",
         "topic:emotion-state",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:emotion-feeling"
       ],
       "curriculumRole": "supporting"
     },
@@ -33304,7 +33410,8 @@
         "es:único",
         "en:only",
         "topic:abstract-quality",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-ico-ica"
       ],
       "curriculumRole": "reference"
     },
@@ -33599,7 +33706,8 @@
         "es:cada",
         "en:more",
         "topic:abstract-quality",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-3"
       ],
       "curriculumRole": "reference"
     },
@@ -34066,7 +34174,8 @@
         "en:bad",
         "topic:abstract-quality",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-7"
       ],
       "curriculumRole": "supporting"
     },
@@ -34088,7 +34197,8 @@
         "degree:irregular-comparative",
         "topic:abstract-quality",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-7"
       ],
       "curriculumRole": "reference"
     },
@@ -34110,7 +34220,8 @@
         "degree:irregular-superlative",
         "topic:abstract-quality",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-4"
       ],
       "curriculumRole": "reference"
     },
@@ -34131,7 +34242,8 @@
         "en:big",
         "topic:size",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -34642,7 +34754,8 @@
         "es:claro",
         "en:clear",
         "topic:abstract-quality",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-3"
       ],
       "curriculumRole": "reference"
     },
@@ -34757,7 +34870,8 @@
         "es:actualizado",
         "en:current",
         "topic:abstract-quality",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-2"
       ],
       "curriculumRole": "reference"
     },
@@ -34800,7 +34914,8 @@
         "en:fine",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-2"
       ],
       "curriculumRole": "reference"
     },
@@ -34862,7 +34977,8 @@
         "es:fino",
         "en:fine",
         "topic:abstract-quality",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-5"
       ],
       "curriculumRole": "reference"
     },
@@ -34883,7 +34999,8 @@
         "en:full",
         "topic:condition-state",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:condition-state-2"
       ],
       "curriculumRole": "reference"
     },
@@ -34905,7 +35022,8 @@
         "en:full",
         "topic:condition-state",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:condition-state-2"
       ],
       "curriculumRole": "reference"
     },
@@ -34922,7 +35040,8 @@
         "es:completo",
         "en:full",
         "topic:condition-state",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:condition-state-1"
       ],
       "curriculumRole": "reference"
     },
@@ -34940,7 +35059,8 @@
         "es:excelente",
         "en:great",
         "topic:abstract-quality",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-ente"
       ],
       "curriculumRole": "reference"
     },
@@ -34980,7 +35100,8 @@
         "es:gran",
         "en:great",
         "topic:abstract-quality",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-5"
       ],
       "curriculumRole": "reference"
     },
@@ -35018,7 +35139,8 @@
         "es:alto",
         "en:high",
         "topic:abstract-quality",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-2"
       ],
       "curriculumRole": "reference"
     },
@@ -35037,7 +35159,8 @@
         "es:elevado",
         "en:high",
         "topic:abstract-quality",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-4"
       ],
       "curriculumRole": "reference"
     },
@@ -35084,7 +35207,8 @@
         "topic:difficulty",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-2"
       ],
       "curriculumRole": "reference"
     },
@@ -35142,7 +35266,8 @@
         "es:antiguo",
         "en:former",
         "topic:abstract-quality",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-2"
       ],
       "curriculumRole": "reference"
     },
@@ -35216,7 +35341,8 @@
         "es:fallecido",
         "en:late",
         "topic:abstract-quality",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-5"
       ],
       "curriculumRole": "reference"
     },
@@ -35256,7 +35382,8 @@
         "topic:emotion-state",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:emotion-feeling"
       ],
       "curriculumRole": "reference"
     },
@@ -35714,7 +35841,8 @@
         "en:own",
         "topic:abstract-quality",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-8"
       ],
       "curriculumRole": "reference"
     },
@@ -36010,7 +36138,8 @@
         "es:permanecer",
         "en:remain",
         "topic:abstract-quality",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-1"
       ],
       "curriculumRole": "reference"
     },
@@ -36029,7 +36158,8 @@
         "en:remain",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-1"
       ],
       "curriculumRole": "reference"
     },
@@ -36049,7 +36179,8 @@
         "en:remain",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-1"
       ],
       "curriculumRole": "reference"
     },
@@ -38748,7 +38879,9 @@
         "en:active",
         "topic:emotion-state",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:estar-adj-1",
+        "topic:emotion-feeling"
       ],
       "curriculumRole": "reference"
     },
@@ -38771,7 +38904,9 @@
         "en:passive",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ivo-iva",
+        "topic:adj-abs-ivo-iva"
       ],
       "curriculumRole": "reference"
     },
@@ -38794,7 +38929,9 @@
         "en:positive",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ivo-iva",
+        "topic:adj-abs-ivo-iva"
       ],
       "curriculumRole": "reference"
     },
@@ -38817,7 +38954,9 @@
         "en:negative",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ivo-iva",
+        "topic:adj-abs-ivo-iva"
       ],
       "curriculumRole": "reference"
     },
@@ -38840,7 +38979,9 @@
         "en:decisive",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ivo-iva",
+        "topic:adj-abs-ivo-iva"
       ],
       "curriculumRole": "reference"
     },
@@ -38863,7 +39004,9 @@
         "en:effective",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ivo-iva",
+        "topic:adj-abs-ivo-iva"
       ],
       "curriculumRole": "reference"
     },
@@ -38886,7 +39029,9 @@
         "en:creative",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ivo-iva",
+        "topic:adj-abs-ivo-iva"
       ],
       "curriculumRole": "reference"
     },
@@ -38909,7 +39054,9 @@
         "en:relative",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ivo-iva",
+        "topic:adj-abs-ivo-iva"
       ],
       "curriculumRole": "reference"
     },
@@ -38932,7 +39079,9 @@
         "en:competitive",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ivo-iva",
+        "topic:adj-abs-ivo-iva"
       ],
       "curriculumRole": "reference"
     },
@@ -38955,7 +39104,9 @@
         "en:attractive",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ivo-iva",
+        "topic:adj-abs-ivo-iva"
       ],
       "curriculumRole": "reference"
     },
@@ -38978,7 +39129,9 @@
         "en:aggressive",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ivo-iva",
+        "topic:adj-abs-ivo-iva"
       ],
       "curriculumRole": "reference"
     },
@@ -39001,7 +39154,9 @@
         "en:exclusive",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ivo-iva",
+        "topic:adj-abs-ivo-iva"
       ],
       "curriculumRole": "reference"
     },
@@ -39048,7 +39203,9 @@
         "en:exact",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-3",
+        "topic:adj-abs-general-5"
       ],
       "curriculumRole": "reference"
     },
@@ -39142,7 +39299,9 @@
         "en:abstract",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-1",
+        "topic:adj-abs-general-2"
       ],
       "curriculumRole": "reference"
     },
@@ -39165,7 +39324,8 @@
         "en:compact",
         "topic:size",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-2"
       ],
       "curriculumRole": "reference"
     },
@@ -39188,7 +39348,9 @@
         "en:intact",
         "topic:condition-state",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:estar-adj-1",
+        "topic:condition-state-1"
       ],
       "curriculumRole": "reference"
     },
@@ -39305,7 +39467,8 @@
         "en:strict",
         "topic:personality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-3"
       ],
       "curriculumRole": "reference"
     },
@@ -39351,7 +39514,8 @@
         "en:ambitious",
         "topic:personality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-oso-osa"
       ],
       "curriculumRole": "reference"
     },
@@ -39374,7 +39538,8 @@
         "en:curious",
         "topic:personality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-oso-osa"
       ],
       "curriculumRole": "reference"
     },
@@ -39397,7 +39562,8 @@
         "en:delicious",
         "topic:food",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-oso-osa"
       ],
       "curriculumRole": "reference"
     },
@@ -39420,7 +39586,9 @@
         "en:famous",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-oso-osa",
+        "topic:adj-abs-oso-osa"
       ],
       "curriculumRole": "reference"
     },
@@ -39443,7 +39611,8 @@
         "en:mysterious",
         "topic:personality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-oso-osa"
       ],
       "curriculumRole": "reference"
     },
@@ -39466,7 +39635,9 @@
         "en:nervous",
         "topic:emotion-state",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:estar-adj-2",
+        "topic:emotion-feeling"
       ],
       "curriculumRole": "reference"
     },
@@ -39489,7 +39660,8 @@
         "en:generous",
         "topic:personality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-oso-osa"
       ],
       "curriculumRole": "reference"
     },
@@ -39512,7 +39684,9 @@
         "en:religious",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-oso-osa",
+        "topic:adj-abs-oso-osa"
       ],
       "curriculumRole": "reference"
     },
@@ -39535,7 +39709,9 @@
         "en:numerous",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-oso-osa",
+        "topic:adj-abs-oso-osa"
       ],
       "curriculumRole": "reference"
     },
@@ -39558,7 +39734,9 @@
         "en:precious",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-oso-osa",
+        "topic:adj-abs-oso-osa"
       ],
       "curriculumRole": "reference"
     },
@@ -40249,7 +40427,9 @@
         "en:different",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ente",
+        "topic:adj-abs-ente"
       ],
       "curriculumRole": "reference"
     },
@@ -40272,7 +40452,9 @@
         "en:intelligent",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ente",
+        "topic:adj-abs-ente"
       ],
       "curriculumRole": "reference"
     },
@@ -40295,7 +40477,9 @@
         "en:present",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:estar-adj-2",
+        "topic:adj-abs-ente"
       ],
       "curriculumRole": "reference"
     },
@@ -40388,7 +40572,9 @@
         "en:excellent",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ente",
+        "topic:adj-abs-ente"
       ],
       "curriculumRole": "reference"
     },
@@ -40411,7 +40597,9 @@
         "en:evident",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ente",
+        "topic:adj-abs-ente"
       ],
       "curriculumRole": "reference"
     },
@@ -40434,7 +40622,9 @@
         "en:permanent",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ente",
+        "topic:adj-abs-ente"
       ],
       "curriculumRole": "reference"
     },
@@ -40457,7 +40647,9 @@
         "en:urgent",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ente",
+        "topic:adj-abs-ente"
       ],
       "curriculumRole": "reference"
     },
@@ -40501,7 +40693,9 @@
         "en:regular",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-6",
+        "topic:adj-abs-general-8"
       ],
       "curriculumRole": "reference"
     },
@@ -40523,7 +40717,9 @@
         "en:popular",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-6",
+        "topic:adj-abs-general-8"
       ],
       "curriculumRole": "reference"
     },
@@ -40545,7 +40741,9 @@
         "en:similar",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-7",
+        "topic:adj-abs-general-8"
       ],
       "curriculumRole": "reference"
     },
@@ -40567,7 +40765,9 @@
         "en:spectacular",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-3",
+        "topic:adj-abs-general-4"
       ],
       "curriculumRole": "reference"
     },
@@ -40589,7 +40789,9 @@
         "en:circular",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-1",
+        "topic:adj-abs-general-3"
       ],
       "curriculumRole": "reference"
     },
@@ -40611,7 +40813,9 @@
         "en:particular",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-6",
+        "topic:adj-abs-general-7"
       ],
       "curriculumRole": "reference"
     },
@@ -40999,7 +41203,9 @@
         "en:special",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-al",
+        "topic:adj-abs-al"
       ],
       "curriculumRole": "reference"
     },
@@ -41086,7 +41292,9 @@
         "en:stable",
         "topic:emotion-state",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:estar-adj-1",
+        "topic:emotion-feeling"
       ],
       "curriculumRole": "reference"
     },
@@ -41794,7 +42002,9 @@
         "en:pure",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-6",
+        "topic:adj-abs-general-8"
       ],
       "curriculumRole": "reference"
     },
@@ -41818,7 +42028,9 @@
         "en:impure",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-4",
+        "topic:adj-abs-general-6"
       ],
       "curriculumRole": "reference"
     },
@@ -41842,7 +42054,8 @@
         "en:mature",
         "topic:age",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-5"
       ],
       "curriculumRole": "reference"
     },
@@ -41866,7 +42079,8 @@
         "en:immature",
         "topic:age",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-4"
       ],
       "curriculumRole": "reference"
     },
@@ -42081,7 +42295,8 @@
         "en:cruel",
         "topic:personality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-2"
       ],
       "curriculumRole": "reference"
     },
@@ -42198,7 +42413,9 @@
         "topic:multi-sense",
         "cognate:ano-iano-to-an-ian",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ano-ana",
+        "topic:adj-abs-general-5"
       ],
       "curriculumRole": "reference"
     },
@@ -42224,7 +42441,8 @@
         "topic:multi-sense",
         "cognate:ano-iano-to-an-ian",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ano-ana"
       ],
       "curriculumRole": "reference"
     },
@@ -42250,7 +42468,8 @@
         "topic:multi-sense",
         "cognate:ano-iano-to-an-ian",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ano-ana"
       ],
       "curriculumRole": "reference"
     },
@@ -42276,7 +42495,8 @@
         "topic:multi-sense",
         "cognate:ano-iano-to-an-ian",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ano-ana"
       ],
       "curriculumRole": "reference"
     },
@@ -42302,7 +42522,8 @@
         "topic:multi-sense",
         "cognate:ano-iano-to-an-ian",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ano-ana"
       ],
       "curriculumRole": "reference"
     },
@@ -42328,7 +42549,8 @@
         "topic:multi-sense",
         "cognate:ano-iano-to-an-ian",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ano-ana"
       ],
       "curriculumRole": "reference"
     },
@@ -42354,7 +42576,8 @@
         "topic:multi-sense",
         "cognate:ano-iano-to-an-ian",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ano-ana"
       ],
       "curriculumRole": "reference"
     },
@@ -42380,7 +42603,8 @@
         "topic:multi-sense",
         "cognate:ano-iano-to-an-ian",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ano-ana"
       ],
       "curriculumRole": "reference"
     },
@@ -42653,7 +42877,9 @@
         "en:important",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-4",
+        "topic:adj-abs-general-5"
       ],
       "curriculumRole": "reference"
     },
@@ -42699,7 +42925,9 @@
         "en:distant",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-2",
+        "topic:adj-abs-general-4"
       ],
       "curriculumRole": "reference"
     },
@@ -42722,7 +42950,9 @@
         "en:relevant",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-6",
+        "topic:adj-abs-general-8"
       ],
       "curriculumRole": "reference"
     },
@@ -42745,7 +42975,8 @@
         "en:arrogant",
         "topic:personality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-1"
       ],
       "curriculumRole": "reference"
     },
@@ -42768,7 +42999,9 @@
         "en:ignorant",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-4",
+        "topic:adj-abs-general-5"
       ],
       "curriculumRole": "reference"
     },
@@ -42791,7 +43024,9 @@
         "en:abundant",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-1",
+        "topic:adj-abs-general-2"
       ],
       "curriculumRole": "reference"
     },
@@ -42814,7 +43049,9 @@
         "en:elegant",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-3",
+        "topic:adj-abs-general-4"
       ],
       "curriculumRole": "reference"
     },
@@ -42837,7 +43074,8 @@
         "en:tolerant",
         "topic:personality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-7"
       ],
       "curriculumRole": "reference"
     },
@@ -42860,7 +43098,9 @@
         "en:constant",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-2",
+        "topic:adj-abs-general-3"
       ],
       "curriculumRole": "reference"
     },
@@ -42883,7 +43123,8 @@
         "en:dominant",
         "topic:personality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-2"
       ],
       "curriculumRole": "reference"
     },
@@ -43186,7 +43427,9 @@
         "topic:multi-sense",
         "cognate:ico-to-ical",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ico-ica",
+        "topic:adj-abs-ico-ica"
       ],
       "curriculumRole": "reference"
     },
@@ -43210,7 +43453,8 @@
         "topic:multi-sense",
         "cognate:ico-to-ical",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ico-ica"
       ],
       "curriculumRole": "reference"
     },
@@ -43234,7 +43478,9 @@
         "topic:multi-sense",
         "cognate:ico-to-ical",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ico-ica",
+        "topic:adj-abs-ico-ica"
       ],
       "curriculumRole": "reference"
     },
@@ -43283,7 +43529,9 @@
         "topic:multi-sense",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-al",
+        "topic:adj-abs-al"
       ],
       "curriculumRole": "reference"
     },
@@ -43307,7 +43555,9 @@
         "topic:multi-sense",
         "cognate:ico-to-ical",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ico-ica",
+        "topic:adj-abs-ico-ica"
       ],
       "curriculumRole": "reference"
     },
@@ -43331,7 +43581,9 @@
         "topic:multi-sense",
         "cognate:ico-to-ical",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ico-ica",
+        "topic:adj-abs-ico-ica"
       ],
       "curriculumRole": "reference"
     },
@@ -43482,7 +43734,9 @@
         "en:mobile",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-5",
+        "topic:adj-abs-general-7"
       ],
       "curriculumRole": "reference"
     },
@@ -43528,7 +43782,9 @@
         "en:agile",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-1",
+        "topic:adj-abs-general-2"
       ],
       "curriculumRole": "reference"
     },
@@ -43551,7 +43807,9 @@
         "en:fragile",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-3",
+        "topic:adj-abs-general-5"
       ],
       "curriculumRole": "reference"
     },
@@ -43574,7 +43832,9 @@
         "en:hostile",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-4",
+        "topic:adj-abs-general-5"
       ],
       "curriculumRole": "reference"
     },
@@ -43597,7 +43857,8 @@
         "en:docile",
         "topic:personality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-2"
       ],
       "curriculumRole": "reference"
     },
@@ -43620,7 +43881,9 @@
         "en:fertile",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-3",
+        "topic:adj-abs-general-5"
       ],
       "curriculumRole": "reference"
     },
@@ -43643,7 +43906,9 @@
         "en:sterile",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-3",
+        "topic:adj-abs-general-4"
       ],
       "curriculumRole": "reference"
     },
@@ -43666,7 +43931,9 @@
         "en:versatile",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-7",
+        "topic:adj-abs-general-9"
       ],
       "curriculumRole": "reference"
     },
@@ -43689,7 +43956,9 @@
         "en:volatile",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-8",
+        "topic:adj-abs-general-9"
       ],
       "curriculumRole": "reference"
     },
@@ -43712,7 +43981,9 @@
         "en:ordinary",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-5",
+        "topic:adj-abs-general-7"
       ],
       "curriculumRole": "reference"
     },
@@ -43735,7 +44006,9 @@
         "en:primary",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-6",
+        "topic:adj-abs-general-8"
       ],
       "curriculumRole": "reference"
     },
@@ -43828,7 +44101,8 @@
         "cognate:transparent",
         "topic:government-politics",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-5"
       ],
       "curriculumRole": "reference"
     },
@@ -43875,7 +44149,9 @@
         "en:secondary",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-7",
+        "topic:adj-abs-general-8"
       ],
       "curriculumRole": "reference"
     },
@@ -43898,7 +44174,9 @@
         "en:voluntary",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-8",
+        "topic:adj-abs-general-9"
       ],
       "curriculumRole": "reference"
     },
@@ -43921,7 +44199,9 @@
         "en:imaginary",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-4",
+        "topic:adj-abs-general-5"
       ],
       "curriculumRole": "reference"
     },
@@ -43966,7 +44246,9 @@
         "en:normal",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-al",
+        "topic:adj-abs-al"
       ],
       "curriculumRole": "reference"
     },
@@ -44010,7 +44292,9 @@
         "en:total",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-al",
+        "topic:adj-abs-al"
       ],
       "curriculumRole": "reference"
     },
@@ -44032,7 +44316,9 @@
         "en:usual",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-al",
+        "topic:adj-abs-al"
       ],
       "curriculumRole": "reference"
     },
@@ -44054,7 +44340,8 @@
         "en:local",
         "topic:nationality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-al"
       ],
       "curriculumRole": "reference"
     },
@@ -44076,7 +44363,8 @@
         "en:national",
         "topic:government-politics",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-al"
       ],
       "curriculumRole": "reference"
     },
@@ -44098,7 +44386,8 @@
         "en:international",
         "topic:nationality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-al"
       ],
       "curriculumRole": "reference"
     },
@@ -44120,7 +44409,9 @@
         "en:cultural",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-al",
+        "topic:adj-abs-al"
       ],
       "curriculumRole": "reference"
     },
@@ -44142,7 +44433,9 @@
         "en:central",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-al",
+        "topic:adj-abs-al"
       ],
       "curriculumRole": "reference"
     },
@@ -44164,7 +44457,9 @@
         "en:global",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-al",
+        "topic:adj-abs-al"
       ],
       "curriculumRole": "reference"
     },
@@ -44186,7 +44481,9 @@
         "en:original",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-al",
+        "topic:adj-abs-al"
       ],
       "curriculumRole": "reference"
     },
@@ -44208,7 +44505,9 @@
         "en:personal",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-al",
+        "topic:adj-abs-al"
       ],
       "curriculumRole": "reference"
     },
@@ -44230,7 +44529,9 @@
         "en:professional",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-al",
+        "topic:adj-abs-al"
       ],
       "curriculumRole": "reference"
     },
@@ -44383,7 +44684,9 @@
         "en:perfect",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-6",
+        "topic:adj-abs-general-7"
       ],
       "curriculumRole": "reference"
     },
@@ -44406,7 +44709,9 @@
         "en:correct",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-2",
+        "topic:adj-abs-general-3"
       ],
       "curriculumRole": "reference"
     },
@@ -44429,7 +44734,9 @@
         "en:direct",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-2",
+        "topic:adj-abs-general-3"
       ],
       "curriculumRole": "reference"
     },
@@ -45069,7 +45376,9 @@
         "en:possible",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ible",
+        "topic:adj-abs-ible"
       ],
       "curriculumRole": "reference"
     },
@@ -45091,7 +45400,9 @@
         "en:impossible",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ible",
+        "topic:adj-abs-ible"
       ],
       "curriculumRole": "reference"
     },
@@ -45113,7 +45424,9 @@
         "en:flexible",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ible",
+        "topic:adj-abs-ible"
       ],
       "curriculumRole": "reference"
     },
@@ -45135,7 +45448,9 @@
         "en:inflexible",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ible",
+        "topic:adj-abs-ible"
       ],
       "curriculumRole": "reference"
     },
@@ -45157,7 +45472,9 @@
         "en:terrible",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ible",
+        "topic:adj-abs-ible"
       ],
       "curriculumRole": "reference"
     },
@@ -45179,7 +45496,9 @@
         "en:horrible",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ible",
+        "topic:adj-abs-ible"
       ],
       "curriculumRole": "reference"
     },
@@ -45201,7 +45520,9 @@
         "en:compatible",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ible",
+        "topic:adj-abs-ible"
       ],
       "curriculumRole": "reference"
     },
@@ -45223,7 +45544,9 @@
         "cognate:transparent",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-able",
+        "topic:adj-abs-able"
       ],
       "curriculumRole": "reference"
     },
@@ -45245,7 +45568,9 @@
         "en:probable",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-able",
+        "topic:adj-abs-able"
       ],
       "curriculumRole": "reference"
     },
@@ -45267,7 +45592,9 @@
         "en:improbable",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-able",
+        "topic:adj-abs-able"
       ],
       "curriculumRole": "reference"
     },
@@ -45289,7 +45616,9 @@
         "en:reasonable",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-able",
+        "topic:adj-abs-able"
       ],
       "curriculumRole": "reference"
     },
@@ -45311,7 +45640,9 @@
         "en:acceptable",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-able",
+        "topic:adj-abs-able"
       ],
       "curriculumRole": "reference"
     },
@@ -45335,7 +45666,8 @@
         "contrast:confusable",
         "topic:personality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ible"
       ],
       "curriculumRole": "reference"
     },
@@ -45357,7 +45689,9 @@
         "en:admirable",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-able",
+        "topic:adj-abs-able"
       ],
       "curriculumRole": "reference"
     },
@@ -45379,7 +45713,9 @@
         "en:favorable",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-able",
+        "topic:adj-abs-able"
       ],
       "curriculumRole": "reference"
     },
@@ -45401,7 +45737,9 @@
         "en:considerable",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-able",
+        "topic:adj-abs-able"
       ],
       "curriculumRole": "reference"
     },
@@ -45423,7 +45761,9 @@
         "en:inevitable",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-able",
+        "topic:adj-abs-able"
       ],
       "curriculumRole": "reference"
     },
@@ -45543,7 +45883,9 @@
         "topic:multi-sense",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ente",
+        "topic:adj-abs-ente"
       ],
       "curriculumRole": "reference"
     },
@@ -45565,7 +45907,8 @@
         "topic:multi-sense",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-al"
       ],
       "curriculumRole": "reference"
     },
@@ -45733,7 +46076,9 @@
         "en:solid",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-7",
+        "topic:adj-abs-general-9"
       ],
       "curriculumRole": "reference"
     },
@@ -45804,7 +46149,9 @@
         "en:valid",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-7",
+        "topic:adj-abs-general-9"
       ],
       "curriculumRole": "reference"
     },
@@ -45827,7 +46174,9 @@
         "en:vivid",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-7",
+        "topic:adj-abs-general-9"
       ],
       "curriculumRole": "reference"
     },
@@ -45850,7 +46199,9 @@
         "en:stupid",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-3",
+        "topic:adj-abs-general-5"
       ],
       "curriculumRole": "reference"
     },
@@ -45873,7 +46224,9 @@
         "en:rigid",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:estar-adj-2",
+        "topic:adj-abs-general-8"
       ],
       "curriculumRole": "reference"
     },
@@ -45896,7 +46249,8 @@
         "en:timid",
         "topic:personality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-7"
       ],
       "curriculumRole": "reference"
     },
@@ -45919,7 +46273,8 @@
         "en:rapid",
         "topic:speed",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-6"
       ],
       "curriculumRole": "reference"
     },
@@ -45942,7 +46297,9 @@
         "en:splendid",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-3",
+        "topic:adj-abs-general-4"
       ],
       "curriculumRole": "reference"
     },
@@ -45965,7 +46322,8 @@
         "en:morbid",
         "topic:personality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-5"
       ],
       "curriculumRole": "reference"
     },
@@ -46452,7 +46810,9 @@
         "en:obligatory",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-5",
+        "topic:adj-abs-general-7"
       ],
       "curriculumRole": "reference"
     },
@@ -46475,7 +46835,9 @@
         "en:satisfactory",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-7",
+        "topic:adj-abs-general-8"
       ],
       "curriculumRole": "reference"
     },
@@ -46498,7 +46860,9 @@
         "en:contradictory",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-2",
+        "topic:adj-abs-general-3"
       ],
       "curriculumRole": "reference"
     },
@@ -46521,7 +46885,9 @@
         "en:preparatory",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-6",
+        "topic:adj-abs-general-8"
       ],
       "curriculumRole": "reference"
     },
@@ -46567,7 +46933,9 @@
         "en:basic",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ico-ica",
+        "topic:adj-abs-ico-ica"
       ],
       "curriculumRole": "reference"
     },
@@ -46614,7 +46982,9 @@
         "en:specific",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ico-ica",
+        "topic:adj-abs-ico-ica"
       ],
       "curriculumRole": "reference"
     },
@@ -46637,7 +47007,9 @@
         "en:exotic",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ico-ica",
+        "topic:adj-abs-ico-ica"
       ],
       "curriculumRole": "reference"
     },
@@ -46660,7 +47032,9 @@
         "en:organic",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ico-ica",
+        "topic:adj-abs-ico-ica"
       ],
       "curriculumRole": "reference"
     },
@@ -46683,7 +47057,8 @@
         "en:scientific",
         "topic:education",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ico-ica"
       ],
       "curriculumRole": "reference"
     },
@@ -46706,7 +47081,8 @@
         "en:academic",
         "topic:education",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ico-ica"
       ],
       "curriculumRole": "reference"
     },
@@ -46729,7 +47105,9 @@
         "en:automatic",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ico-ica",
+        "topic:adj-abs-ico-ica"
       ],
       "curriculumRole": "reference"
     },
@@ -46752,7 +47130,8 @@
         "en:economic",
         "topic:money-business",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ico-ica"
       ],
       "curriculumRole": "reference"
     },
@@ -46775,7 +47154,8 @@
         "en:electronic",
         "topic:technology",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ico-ica"
       ],
       "curriculumRole": "reference"
     },
@@ -46798,7 +47178,8 @@
         "en:historic",
         "topic:education",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ico-ica"
       ],
       "curriculumRole": "reference"
     },
@@ -46821,7 +47202,9 @@
         "en:political",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ico-ica",
+        "topic:adj-abs-ico-ica"
       ],
       "curriculumRole": "reference"
     },
@@ -51561,7 +51944,8 @@
         "en:difficult",
         "topic:difficulty",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -52622,7 +53006,9 @@
         "en:unlike",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ente",
+        "topic:adj-abs-ente"
       ],
       "curriculumRole": "reference"
     },
@@ -52643,7 +53029,8 @@
         "topic:value-price",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:estar-adj-1"
       ],
       "curriculumRole": "reference"
     },
@@ -52794,7 +53181,9 @@
         "en:similar",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-6",
+        "topic:adj-abs-general-7"
       ],
       "curriculumRole": "reference"
     },
@@ -52916,7 +53305,8 @@
         "en:red",
         "topic:color",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-6"
       ],
       "curriculumRole": "supporting"
     },
@@ -52935,7 +53325,8 @@
         "en:blue",
         "topic:color",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -52954,7 +53345,8 @@
         "en:green",
         "topic:color",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-7"
       ],
       "curriculumRole": "supporting"
     },
@@ -52973,7 +53365,8 @@
         "en:yellow",
         "topic:color",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -52994,7 +53387,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "es:blanco",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -53013,7 +53407,8 @@
         "en:black",
         "topic:color",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-5"
       ],
       "curriculumRole": "supporting"
     },
@@ -53032,7 +53427,8 @@
         "en:cheap",
         "topic:value-price",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -53051,7 +53447,8 @@
         "en:inexpensive",
         "topic:value-price",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-1"
       ],
       "curriculumRole": "reference"
     },
@@ -53070,7 +53467,8 @@
         "en:cheap",
         "topic:value-price",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ico-ica"
       ],
       "curriculumRole": "reference"
     },
@@ -53089,7 +53487,8 @@
         "en:inexpensive",
         "topic:value-price",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ico-ica"
       ],
       "curriculumRole": "reference"
     },
@@ -53108,7 +53507,8 @@
         "en:expensive",
         "topic:value-price",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -53127,7 +53527,9 @@
         "en:dear",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-1",
+        "topic:adj-abs-general-3"
       ],
       "curriculumRole": "reference"
     },
@@ -53146,7 +53548,8 @@
         "en:short",
         "topic:size",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -53165,7 +53568,9 @@
         "en:brief",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-2",
+        "topic:adj-abs-general-3"
       ],
       "curriculumRole": "reference"
     },
@@ -53188,7 +53593,8 @@
         "topic:cognate",
         "topic:size",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-4"
       ],
       "curriculumRole": "supporting"
     },
@@ -53207,7 +53613,9 @@
         "en:lengthy",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-4",
+        "topic:adj-abs-general-6"
       ],
       "curriculumRole": "reference"
     },
@@ -53227,7 +53635,8 @@
         "topic:speed",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-4"
       ],
       "curriculumRole": "supporting"
     },
@@ -53246,7 +53655,9 @@
         "en:dark",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-6",
+        "topic:adj-abs-general-7"
       ],
       "curriculumRole": "supporting"
     },
@@ -53265,7 +53676,8 @@
         "en:easy",
         "topic:difficulty",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -53284,7 +53696,8 @@
         "en:simple",
         "topic:difficulty",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-3"
       ],
       "curriculumRole": "reference"
     },
@@ -53308,7 +53721,8 @@
         "particle:of",
         "en:be",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-3"
       ],
       "curriculumRole": "reference"
     },
@@ -53327,7 +53741,9 @@
         "en:major",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-4",
+        "topic:adj-abs-general-6"
       ],
       "curriculumRole": "reference"
     },
@@ -53348,7 +53764,9 @@
         "topic:cognate",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-4",
+        "topic:adj-abs-general-6"
       ],
       "curriculumRole": "reference"
     },
@@ -53367,7 +53785,9 @@
         "en:wrong",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-4",
+        "topic:adj-abs-general-6"
       ],
       "curriculumRole": "reference"
     },
@@ -53386,7 +53806,8 @@
         "en:young",
         "topic:age",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-4"
       ],
       "curriculumRole": "supporting"
     },
@@ -53405,7 +53826,8 @@
         "en:youthful",
         "topic:age",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-4"
       ],
       "curriculumRole": "reference"
     },
@@ -53424,7 +53846,9 @@
         "en:minor",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-5",
+        "topic:adj-abs-general-7"
       ],
       "curriculumRole": "reference"
     },
@@ -53443,7 +53867,9 @@
         "en:right",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-2",
+        "topic:adj-abs-general-3"
       ],
       "curriculumRole": "reference"
     },
@@ -53462,7 +53888,8 @@
         "en:large",
         "topic:size",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-3"
       ],
       "curriculumRole": "reference"
     },
@@ -53485,7 +53912,9 @@
         "particle:together",
         "en:be",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-4",
+        "topic:adj-abs-general-6"
       ],
       "curriculumRole": "reference"
     },
@@ -53504,7 +53933,8 @@
         "en:small",
         "topic:size",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-6"
       ],
       "curriculumRole": "supporting"
     },
@@ -53523,7 +53953,8 @@
         "en:little",
         "topic:size",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-6"
       ],
       "curriculumRole": "reference"
     },
@@ -53542,7 +53973,8 @@
         "en:fast",
         "topic:speed",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-6"
       ],
       "curriculumRole": "supporting"
     },
@@ -53561,7 +53993,8 @@
         "en:quick",
         "topic:speed",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-6"
       ],
       "curriculumRole": "reference"
     },
@@ -53580,7 +54013,9 @@
         "en:light",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-1",
+        "topic:adj-abs-general-3"
       ],
       "curriculumRole": "reference"
     },
@@ -53599,7 +54034,9 @@
         "en:clear",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-1",
+        "topic:adj-abs-general-3"
       ],
       "curriculumRole": "reference"
     },
@@ -53619,7 +54056,8 @@
         "topic:difficulty",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-2"
       ],
       "curriculumRole": "reference"
     },
@@ -53638,7 +54076,9 @@
         "en:tough",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-2",
+        "topic:adj-abs-general-4"
       ],
       "curriculumRole": "reference"
     },
@@ -53657,7 +54097,9 @@
         "en:harsh",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-3",
+        "topic:adj-abs-general-4"
       ],
       "curriculumRole": "reference"
     },
@@ -53676,7 +54118,9 @@
         "en:available",
         "topic:condition-state",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:estar-adj-2",
+        "topic:condition-state-1"
       ],
       "curriculumRole": "reference"
     },
@@ -53732,7 +54176,9 @@
         "en:busy",
         "topic:condition-state",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:estar-adj-2",
+        "topic:condition-state-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -53751,7 +54197,9 @@
         "en:occupied",
         "topic:condition-state",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:estar-adj-2",
+        "topic:condition-state-2"
       ],
       "curriculumRole": "reference"
     },
@@ -53771,7 +54219,8 @@
         "topic:age",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-7"
       ],
       "curriculumRole": "reference"
     },
@@ -53790,7 +54239,8 @@
         "en:elderly",
         "topic:age",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-7"
       ],
       "curriculumRole": "reference"
     },
@@ -53809,7 +54259,8 @@
         "en:old-fashioned",
         "topic:age",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-7"
       ],
       "curriculumRole": "reference"
     },
@@ -63153,7 +63604,9 @@
         "en:blank",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:estar-adj-1",
+        "topic:adj-abs-general-4"
       ],
       "curriculumRole": "reference"
     },
@@ -63215,7 +63668,9 @@
         "particle:together",
         "en:be",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:estar-adj-1",
+        "topic:adj-abs-general-6"
       ],
       "curriculumRole": "reference"
     },
@@ -63238,7 +63693,9 @@
         "construction:prepositional-verb",
         "particle:to",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:estar-adj-1",
+        "topic:adj-abs-general-6"
       ],
       "curriculumRole": "reference"
     },
@@ -63275,7 +63732,8 @@
         "construction:prepositional-verb",
         "particle:to",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-5"
       ],
       "curriculumRole": "reference"
     },
@@ -63293,7 +63751,8 @@
         "en:next",
         "topic:abstract-quality",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-4"
       ],
       "curriculumRole": "reference"
     },
@@ -63310,7 +63769,8 @@
         "es:siguiente",
         "en:following",
         "topic:abstract-quality",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-4"
       ],
       "curriculumRole": "reference"
     },
@@ -63362,7 +63822,9 @@
         "en:willing",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:estar-adj-1",
+        "topic:adj-abs-general-4"
       ],
       "curriculumRole": "reference"
     },
@@ -63381,7 +63843,9 @@
         "en:ready",
         "topic:condition-state",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:estar-adj-1",
+        "topic:condition-state-1"
       ],
       "curriculumRole": "reference"
     },
@@ -63400,7 +63864,9 @@
         "en:crowded",
         "topic:condition-state",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:estar-adj-2",
+        "topic:condition-state-2"
       ],
       "curriculumRole": "reference"
     },
@@ -63422,7 +63888,9 @@
         "construction:prepositional-verb",
         "particle:of",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:estar-adj-2",
+        "topic:condition-state-2"
       ],
       "curriculumRole": "reference"
     },
@@ -63442,7 +63910,9 @@
         "en:dead",
         "topic:condition-state",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:estar-adj-2",
+        "topic:condition-state-2"
       ],
       "curriculumRole": "reference"
     },
@@ -63462,7 +63932,9 @@
         "en:exhausted",
         "topic:emotion-state",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:estar-adj-2",
+        "topic:emotion-feeling"
       ],
       "curriculumRole": "reference"
     },
@@ -63504,7 +63976,9 @@
         "en:pronounced",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-5",
+        "topic:adj-abs-general-7"
       ],
       "curriculumRole": "reference"
     },
@@ -69095,7 +69569,8 @@
         "en:alone",
         "topic:emotion-state",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:emotion-feeling"
       ],
       "curriculumRole": "reference"
     },
@@ -69154,7 +69629,8 @@
         "topic:abstract-quality",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-2"
       ],
       "curriculumRole": "reference"
     },
@@ -69174,7 +69650,8 @@
         "en:alright",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-2"
       ],
       "curriculumRole": "reference"
     },
@@ -69538,7 +70015,8 @@
         "en:foremost",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-al"
       ],
       "curriculumRole": "reference"
     },
@@ -69618,7 +70096,8 @@
         "en:inner",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-6"
       ],
       "curriculumRole": "reference"
     },
@@ -69638,7 +70117,8 @@
         "en:outer",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-5"
       ],
       "curriculumRole": "reference"
     },
@@ -69658,7 +70138,8 @@
         "en:internal",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-6"
       ],
       "curriculumRole": "reference"
     },
@@ -69678,7 +70159,8 @@
         "en:external",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-5"
       ],
       "curriculumRole": "reference"
     },
@@ -69985,7 +70467,8 @@
         "en:insignificant",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-6"
       ],
       "curriculumRole": "reference"
     },
@@ -70007,7 +70490,8 @@
         "en:forearmed",
         "topic:condition-state",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:condition-state-2"
       ],
       "curriculumRole": "reference"
     },
@@ -76302,7 +76786,8 @@
         "adjective before noun",
         "grammar:noun-phrase",
         "topic:abstract-quality",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-1"
       ],
       "curriculumRole": "core"
     },
@@ -76326,7 +76811,8 @@
         "topic:abstract-quality",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-1"
       ],
       "curriculumRole": "core"
     },
@@ -76428,7 +76914,8 @@
         "en:as",
         "topic:abstract-quality",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-9"
       ],
       "curriculumRole": "supporting"
     },
@@ -91698,7 +92185,8 @@
         "es:salvo",
         "en:safe",
         "topic:abstract-quality",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-abs-general-2"
       ],
       "curriculumRole": "reference"
     },
@@ -93079,7 +93567,9 @@
         "contrast:confusable",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-7",
+        "topic:adj-abs-general-8"
       ],
       "curriculumRole": "reference"
     },
@@ -94095,7 +94585,8 @@
         "es:ser",
         "en:orange",
         "topic:color",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-5"
       ],
       "curriculumRole": "supporting"
     },
@@ -94113,7 +94604,8 @@
         "es:ser",
         "en:purple",
         "topic:color",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-5"
       ],
       "curriculumRole": "supporting"
     },
@@ -94131,7 +94623,8 @@
         "es:ser",
         "en:gray",
         "topic:color",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -94149,7 +94642,8 @@
         "es:ser",
         "en:brown",
         "topic:color",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-5"
       ],
       "curriculumRole": "supporting"
     },
@@ -94167,7 +94661,8 @@
         "es:ser",
         "en:pink",
         "topic:color",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:adj-ser-general-7"
       ],
       "curriculumRole": "supporting"
     },
