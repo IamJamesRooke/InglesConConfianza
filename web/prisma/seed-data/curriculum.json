@@ -8714,7 +8714,8 @@
         "es:hacer",
         "en:do",
         "pos:verb",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -8731,7 +8732,8 @@
         "en:make",
         "pos:verb",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -8967,7 +8969,8 @@
         "es:faltar",
         "es:hacer",
         "en:misses",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -8987,7 +8990,8 @@
         "en:good",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -9008,7 +9012,8 @@
         "en:hurt",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -9028,7 +9033,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -9050,7 +9056,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -9068,7 +9075,8 @@
         "en:make",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -9090,7 +9098,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -9108,7 +9117,8 @@
         "es:hacer",
         "en:favor",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -9254,7 +9264,8 @@
         "es:hacer",
         "en:kill",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -9272,7 +9283,8 @@
         "es:hacer",
         "en:pretend",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -9358,7 +9370,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "particle:of",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -9381,7 +9394,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "particle:from",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -9403,7 +9417,8 @@
         "en:made",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -9424,7 +9439,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "construction:prepositional-verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -9441,7 +9457,8 @@
         "es:hacer",
         "en:pack",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -9460,7 +9477,8 @@
         "en:become",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -17000,7 +17018,8 @@
         "en:make",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -25423,15 +25442,16 @@
       "spanish": "hacer acordar",
       "english": "to remind",
       "example": {
-        "spanish": "Recuérdame la reunión de mañana.",
-        "english": "Remind me about tomorrow's meeting."
+        "spanish": "Eso me hizo acordar de la cita.",
+        "english": "That reminded me of the appointment."
       },
       "collections": [
         "es:acordar",
         "es:hacer",
         "en:remind",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32621,7 +32641,8 @@
         "en:change",
         "topic:multi-sense",
         "topic:transportation",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57988,7 +58009,8 @@
         "pos:verb",
         "es:hacer",
         "en:silence",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58307,7 +58329,8 @@
         "es:hacer",
         "en:make",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -66414,7 +66437,8 @@
         "es:hacer",
         "en:do",
         "pos:verb",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -66433,7 +66457,8 @@
         "es:hacer",
         "en:do",
         "pos:verb",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -66470,7 +66495,8 @@
         "es:hacer",
         "en:did",
         "pos:verb",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -66507,7 +66533,8 @@
         "es:hacer",
         "en:does",
         "pos:verb",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -67986,7 +68013,8 @@
         "form:present-participle",
         "es:hacer",
         "en:doing",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -68005,7 +68033,8 @@
         "es:hacer",
         "en:make",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -69599,7 +69628,8 @@
         "form:third-person",
         "es:hacer",
         "en:does",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
