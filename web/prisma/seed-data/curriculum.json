@@ -4451,7 +4451,9 @@
         "en:get",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "grammar:phrasal-verb",
+        "particle:with"
       ],
       "curriculumRole": "reference"
     },
@@ -8817,7 +8819,8 @@
         "en:stand",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "construction:prepositional-verb"
       ],
       "curriculumRole": "reference"
     },
@@ -9895,7 +9898,9 @@
         "es:mandar",
         "en:in",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "grammar:phrasal-verb",
+        "particle:in"
       ],
       "curriculumRole": "reference"
     },
@@ -14765,7 +14770,8 @@
         "en:know",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "grammar:phrasal-verb"
       ],
       "curriculumRole": "reference"
     },
@@ -17083,7 +17089,8 @@
         "en:leave",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "construction:prepositional-verb"
       ],
       "curriculumRole": "reference"
     },
@@ -18074,7 +18081,9 @@
         "en:know",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "grammar:phrasal-verb",
+        "particle:by"
       ],
       "curriculumRole": "reference"
     },
@@ -20518,7 +20527,8 @@
         "en:in",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "grammar:phrasal-verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -20538,7 +20548,8 @@
         "en:in",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "grammar:phrasal-verb"
       ],
       "curriculumRole": "reference"
     },
@@ -20689,7 +20700,9 @@
         "en:at",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "grammar:phrasal-verb",
+        "particle:at"
       ],
       "curriculumRole": "reference"
     },
@@ -21993,7 +22006,9 @@
         "en:from",
         "pos:verb",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "construction:prepositional-verb",
+        "particle:from"
       ],
       "curriculumRole": "core"
     },
@@ -22091,7 +22106,8 @@
         "en:on",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "grammar:phrasal-verb"
       ],
       "curriculumRole": "reference"
     },
@@ -23033,7 +23049,9 @@
         "grammar:reflexive",
         "es:postular",
         "en:apply",
-        "pos:verb"
+        "pos:verb",
+        "construction:prepositional-verb",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -24624,7 +24642,9 @@
       "collections": [
         "es:solicitar",
         "en:apply",
-        "pos:verb"
+        "pos:verb",
+        "construction:prepositional-verb",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -25046,7 +25066,9 @@
         "es:mirar",
         "en:look",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "grammar:phrasal-verb",
+        "particle:back"
       ],
       "curriculumRole": "reference"
     },
@@ -25174,7 +25196,9 @@
         "es:mirar",
         "en:look",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "grammar:phrasal-verb",
+        "particle:down"
       ],
       "curriculumRole": "reference"
     },
@@ -26132,7 +26156,9 @@
         "es:depender",
         "en:depend",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "construction:prepositional-verb",
+        "particle:on"
       ],
       "curriculumRole": "reference"
     },
@@ -26149,7 +26175,9 @@
         "es:depender",
         "en:depend",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "construction:prepositional-verb",
+        "particle:on"
       ],
       "curriculumRole": "reference"
     },
@@ -26849,7 +26877,9 @@
         "es:estar",
         "en:among",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "construction:prepositional-verb",
+        "particle:among"
       ],
       "curriculumRole": "reference"
     },
@@ -27800,7 +27830,9 @@
         "en:come",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "grammar:phrasal-verb",
+        "particle:back"
       ],
       "curriculumRole": "reference"
     },
@@ -29326,7 +29358,8 @@
         "es:estar",
         "en:across",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "construction:prepositional-verb"
       ],
       "curriculumRole": "reference"
     },
@@ -30509,7 +30542,8 @@
         "es:preocupar",
         "en:care",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "construction:prepositional-verb"
       ],
       "curriculumRole": "reference"
     },
@@ -32782,7 +32816,9 @@
         "morphology:suffix-ist",
         "cognate:transparent",
         "es:consistir",
-        "en:consist"
+        "en:consist",
+        "construction:prepositional-verb",
+        "particle:of"
       ],
       "curriculumRole": "supporting"
     },
@@ -32800,7 +32836,9 @@
         "morphology:suffix-ist",
         "cognate:transparent",
         "es:desistir",
-        "en:desist"
+        "en:desist",
+        "construction:prepositional-verb",
+        "particle:from"
       ],
       "curriculumRole": "reference"
     },
@@ -33108,7 +33146,9 @@
         "es:referir",
         "en:refer",
         "cognate:ferir-to-fer",
-        "cognate:latin-root"
+        "cognate:latin-root",
+        "construction:prepositional-verb",
+        "particle:to"
       ],
       "curriculumRole": "supporting"
     },
@@ -43616,7 +43656,9 @@
         "morphology:suffix-ude",
         "topic:cognate",
         "es:aludir",
-        "en:allude"
+        "en:allude",
+        "construction:prepositional-verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -44455,7 +44497,9 @@
         "morphology:suffix-ive",
         "topic:cognate",
         "es:privar",
-        "en:deprive"
+        "en:deprive",
+        "construction:prepositional-verb",
+        "particle:of"
       ],
       "curriculumRole": "reference"
     },
@@ -45931,7 +45975,9 @@
         "morphology:suffix-ire",
         "cognate:opaque-gloss",
         "es:aspirar",
-        "en:aspire"
+        "en:aspire",
+        "construction:prepositional-verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -46666,7 +46712,9 @@
         "contrast:confusable",
         "es:vivir",
         "en:live",
-        "pos:verb"
+        "pos:verb",
+        "construction:prepositional-verb",
+        "particle:in"
       ],
       "curriculumRole": "supporting"
     },
@@ -46682,7 +46730,9 @@
         "contrast:confusable",
         "es:vivir",
         "en:live",
-        "pos:verb"
+        "pos:verb",
+        "construction:prepositional-verb",
+        "particle:with"
       ],
       "curriculumRole": "supporting"
     },
@@ -47241,7 +47291,9 @@
         "en:free",
         "topic:value-price",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "grammar:phrasal-verb",
+        "particle:of"
       ],
       "curriculumRole": "reference"
     },
@@ -47405,7 +47457,9 @@
         "es:ser",
         "en:together",
         "topic:abstract-quality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "grammar:phrasal-verb",
+        "particle:together"
       ],
       "curriculumRole": "reference"
     },
@@ -51849,7 +51903,8 @@
         "pos:verb",
         "es:estar",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "construction:prepositional-verb"
       ],
       "curriculumRole": "reference"
     },
@@ -52702,7 +52757,9 @@
         "pos:verb",
         "es:empezar",
         "en:start",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "construction:prepositional-verb",
+        "particle:by"
       ],
       "curriculumRole": "reference"
     },
@@ -53552,7 +53609,9 @@
       "collections": [
         "pos:verb",
         "es:pegar",
-        "en:stick"
+        "en:stick",
+        "construction:prepositional-verb",
+        "particle:onto"
       ],
       "curriculumRole": "reference"
     },
@@ -54078,7 +54137,9 @@
         "pos:verb",
         "es:andar",
         "en:go",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "construction:prepositional-verb",
+        "particle:around"
       ],
       "curriculumRole": "reference"
     },
@@ -54155,7 +54216,9 @@
       "collections": [
         "pos:verb",
         "es:apuntar",
-        "en:aim"
+        "en:aim",
+        "construction:prepositional-verb",
+        "particle:at"
       ],
       "curriculumRole": "reference"
     },
@@ -55937,7 +56000,9 @@
         "es:estar",
         "en:together",
         "topic:abstract-quality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "grammar:phrasal-verb",
+        "particle:together"
       ],
       "curriculumRole": "reference"
     },
@@ -63615,7 +63680,8 @@
         "en:look",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "grammar:phrasal-verb"
       ],
       "curriculumRole": "reference"
     },
