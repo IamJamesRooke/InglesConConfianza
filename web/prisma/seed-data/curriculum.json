@@ -1037,7 +1037,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -1209,7 +1210,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -6358,7 +6360,8 @@
       "collections": [
         "es:enseñar",
         "en:teach",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -6374,7 +6377,8 @@
         "construction:somebody-something",
         "es:enseñar",
         "en:teach",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -6410,7 +6414,8 @@
         "es:enseñar",
         "en:show",
         "pos:verb",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -6427,7 +6432,8 @@
         "es:enseñar",
         "en:show",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -18435,7 +18441,8 @@
         "es:echar",
         "en:throw",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -18451,7 +18458,8 @@
         "es:echar",
         "en:toss",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -18474,7 +18482,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -18495,7 +18504,8 @@
         "en:pour",
         "topic:multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -18518,7 +18528,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -18541,7 +18552,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -18559,7 +18571,8 @@
         "es:echar",
         "en:fire",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -18602,7 +18615,8 @@
         "en:burst",
         "topic:multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -18622,7 +18636,8 @@
         "en:start",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -18639,7 +18654,8 @@
         "es:echar",
         "en:ruin",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -18656,7 +18672,8 @@
         "es:echar",
         "en:spoil",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -18677,7 +18694,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -18696,7 +18714,8 @@
         "en:take",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -18716,7 +18735,8 @@
         "en:throw",
         "topic:multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -18736,7 +18756,8 @@
         "en:back",
         "topic:multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -18781,7 +18802,8 @@
         "en:give",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -18804,7 +18826,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:for",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -18824,7 +18847,8 @@
         "en:get",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -18846,7 +18870,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -18865,7 +18890,8 @@
         "en:knock",
         "topic:multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -20356,7 +20382,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -24173,7 +24200,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31122,7 +31150,8 @@
         "es:empezar",
         "en:start",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -32840,7 +32869,8 @@
         "es:entender",
         "en:catch",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56897,7 +56927,8 @@
       "collections": [
         "pos:verb",
         "es:elegir",
-        "en:choose"
+        "en:choose",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -56914,7 +56945,8 @@
         "pos:verb",
         "es:elegir",
         "en:choose",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56930,7 +56962,8 @@
         "pos:verb",
         "es:empezar",
         "en:start",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56945,7 +56978,8 @@
       "collections": [
         "pos:verb",
         "es:empezar",
-        "en:begin"
+        "en:begin",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56964,7 +56998,8 @@
         "topic:en-multi-sense",
         "construction:prepositional-verb",
         "particle:by",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56983,7 +57018,8 @@
         "es:encender",
         "en:turn",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56998,7 +57034,8 @@
       "collections": [
         "pos:verb",
         "es:encender",
-        "en:light"
+        "en:light",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57014,7 +57051,8 @@
         "pos:verb",
         "es:encender",
         "en:start",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57029,7 +57067,8 @@
       "collections": [
         "pos:verb",
         "es:encender",
-        "en:spark"
+        "en:spark",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57038,13 +57077,14 @@
       "spanish": "encontrar [algo]",
       "english": "to find [something]",
       "example": {
-        "spanish": "Encuentro difícil esta pregunta.",
-        "english": "I find this question difficult."
+        "spanish": "Encontré las llaves debajo del sofá.",
+        "english": "I found the keys under the couch."
       },
       "collections": [
         "pos:verb",
         "es:encontrar",
-        "en:find"
+        "en:find",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -57063,7 +57103,8 @@
         "es:encontrar",
         "en:run",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57078,7 +57119,8 @@
       "collections": [
         "pos:verb",
         "es:encontrar",
-        "en:find"
+        "en:find",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57098,7 +57140,8 @@
         "es:encontrar",
         "en:located",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57114,7 +57157,8 @@
         "pos:verb",
         "es:encontrar",
         "en:feel",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57129,7 +57173,8 @@
       "collections": [
         "pos:verb",
         "es:entender",
-        "en:understand"
+        "en:understand",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -57138,14 +57183,15 @@
       "spanish": "entender [algo]",
       "english": "to get [something]",
       "example": {
-        "spanish": "Entiendo la idea.",
-        "english": "I understand / get the idea."
+        "spanish": "¿Entiendes lo que digo?",
+        "english": "Do you get what I'm saying?"
       },
       "collections": [
         "pos:verb",
         "es:entender",
         "en:get",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
