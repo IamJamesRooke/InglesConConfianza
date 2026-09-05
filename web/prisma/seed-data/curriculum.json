@@ -2063,7 +2063,8 @@
         "es:ser",
         "en:talkative",
         "topic:personality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -6868,7 +6869,8 @@
         "topic:en-multi-sense",
         "particle:to",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -6961,7 +6963,8 @@
         "topic:en-multi-sense",
         "particle:to",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -6985,7 +6988,8 @@
         "topic:en-multi-sense",
         "particle:with",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -7266,7 +7270,8 @@
         "es:estar",
         "en:done",
         "topic:condition-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -7408,7 +7413,8 @@
         "es:estar",
         "en:bored",
         "topic:emotion-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -7425,7 +7431,8 @@
         "es:estar",
         "en:due",
         "topic:condition-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -7596,7 +7603,8 @@
         "en:feel",
         "topic:emotion-state",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -8705,7 +8713,8 @@
         "es:hacer",
         "en:it",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -8723,7 +8732,8 @@
         "es:hacer",
         "en:it",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -8742,7 +8752,8 @@
         "es:hacer",
         "en:it",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -8761,7 +8772,8 @@
         "es:hacer",
         "en:it",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -9157,7 +9169,8 @@
         "es:hecho",
         "en:done",
         "topic:condition-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -10498,7 +10511,8 @@
         "es:ser",
         "en:bossy",
         "topic:personality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -11677,7 +11691,8 @@
         "es:perder",
         "en:get",
         "topic:condition-state",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -11696,7 +11711,8 @@
         "es:estar",
         "en:lost",
         "topic:condition-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -12017,7 +12033,8 @@
         "es:ser",
         "en:heavy",
         "topic:size",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -12904,7 +12921,8 @@
         "en:feel",
         "topic:emotion-state",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -12924,7 +12942,8 @@
         "en:feel",
         "topic:emotion-state",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -13847,7 +13866,8 @@
         "en:fall",
         "topic:emotion-state",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -13866,7 +13886,8 @@
         "en:keep",
         "topic:emotion-state",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -14346,7 +14367,8 @@
         "en:open",
         "topic:condition-state",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -14689,7 +14711,8 @@
         "en:finished",
         "topic:condition-state",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -16428,7 +16451,8 @@
         "morphology:suffix-oso",
         "es:costoso",
         "en:expensive",
-        "topic:value-price"
+        "topic:value-price",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -19028,7 +19052,8 @@
         "es:ser",
         "en:wise",
         "topic:personality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -20638,7 +20663,8 @@
         "en:free",
         "topic:value-price",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -20691,7 +20717,8 @@
         "es:ser",
         "en:boring",
         "topic:emotion-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -22437,7 +22464,8 @@
         "es:ser",
         "en:hardworking",
         "topic:personality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -22967,7 +22995,8 @@
         "es:ser",
         "en:valuable",
         "topic:value-price",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -22989,7 +23018,8 @@
         "cognate:able-to-able",
         "topic:cognate",
         "topic:value-price",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30894,7 +30924,8 @@
         "pos:adjective",
         "es:solo",
         "en:alone",
-        "topic:emotion-state"
+        "topic:emotion-state",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -32194,7 +32225,8 @@
         "pos:adjective",
         "topic:weather",
         "es:despejado",
-        "en:clear"
+        "en:clear",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32405,7 +32437,8 @@
         "es:estar",
         "en:full",
         "topic:condition-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32426,7 +32459,8 @@
         "es:ya",
         "en:full",
         "topic:condition-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32442,7 +32476,8 @@
         "pos:adjective",
         "es:completo",
         "en:full",
-        "topic:condition-state"
+        "topic:condition-state",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32638,7 +32673,8 @@
         "es:duro",
         "en:hard",
         "topic:difficulty",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32767,7 +32803,8 @@
         "en:feel",
         "topic:emotion-state",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32860,7 +32897,8 @@
         "pos:adjective",
         "es:nuevo",
         "en:new",
-        "topic:age"
+        "topic:age",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -32896,7 +32934,8 @@
         "replacement",
         "es:otro",
         "en:new",
-        "topic:age"
+        "topic:age",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -33011,7 +33050,8 @@
         "es:viejo",
         "en:old",
         "topic:age",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -33053,7 +33093,8 @@
         "es:anterior",
         "en:old",
         "topic:age",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -63072,7 +63113,8 @@
         "es:gran",
         "en:britain",
         "topic:nationality",
-        "topic:transformation"
+        "topic:transformation",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -63093,7 +63135,8 @@
         "es:irlanda",
         "en:ireland",
         "topic:nationality",
-        "topic:transformation"
+        "topic:transformation",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -63114,7 +63157,8 @@
         "es:españa",
         "en:spain",
         "topic:nationality",
-        "topic:transformation"
+        "topic:transformation",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -63135,7 +63179,8 @@
         "es:polonia",
         "en:poland",
         "topic:nationality",
-        "topic:transformation"
+        "topic:transformation",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -63156,7 +63201,8 @@
         "es:turquía",
         "en:turkey",
         "topic:nationality",
-        "topic:transformation"
+        "topic:transformation",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -63177,7 +63223,8 @@
         "es:suecia",
         "en:sweden",
         "topic:nationality",
-        "topic:transformation"
+        "topic:transformation",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -63198,7 +63245,8 @@
         "es:dinamarca",
         "en:denmark",
         "topic:nationality",
-        "topic:transformation"
+        "topic:transformation",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -63219,7 +63267,8 @@
         "es:finlandia",
         "en:finland",
         "topic:nationality",
-        "topic:transformation"
+        "topic:transformation",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -64408,7 +64457,8 @@
         "es:estar",
         "en:alone",
         "topic:emotion-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -65207,7 +65257,8 @@
         "es:ser",
         "en:straightforward",
         "topic:difficulty",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -65270,7 +65321,8 @@
         "es:estar",
         "en:forearmed",
         "topic:condition-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
