@@ -1471,7 +1471,8 @@
         "cognate:mente-to-ly",
         "es:necesariamente",
         "en:necessarily",
-        "grammar:manner"
+        "grammar:manner",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -1492,7 +1493,8 @@
         "cognate:mente-to-ly",
         "es:innecesariamente",
         "en:unnecessarily",
-        "grammar:manner"
+        "grammar:manner",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -5949,7 +5951,8 @@
         "en:put",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -8122,7 +8125,8 @@
         "es:con",
         "en:gladly",
         "topic:multi-sense",
-        "grammar:manner"
+        "grammar:manner",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -16862,7 +16866,8 @@
         "es:increíblemente",
         "en:incredibly",
         "topic:multi-sense",
-        "grammar:manner"
+        "grammar:manner",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -20995,7 +21000,8 @@
         "cognate:mente-to-ly",
         "es:significativamente",
         "en:significantly",
-        "grammar:manner"
+        "grammar:manner",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -21261,7 +21267,8 @@
         "cognate:mente-to-ly",
         "es:supuestamente",
         "en:supposedly",
-        "grammar:manner"
+        "grammar:manner",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -23752,7 +23759,8 @@
         "es:visualmente",
         "en:visually",
         "topic:multi-sense",
-        "grammar:manner"
+        "grammar:manner",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26215,7 +26223,8 @@
         "grammar:manner",
         "es:así",
         "en:that",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26489,7 +26498,8 @@
         "es:bastante",
         "en:quite",
         "pos:adverb",
-        "grammar:intensifier"
+        "grammar:intensifier",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26576,7 +26586,8 @@
         "en:pretty/quite",
         "pos:adverb",
         "grammar:intensifier",
-        "register:informal"
+        "register:informal",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26833,7 +26844,8 @@
         "grammar:manner",
         "es:cómo",
         "en:how",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30077,14 +30089,15 @@
       "spanish": "una vez",
       "english": "once",
       "example": {
-        "spanish": "una vez",
-        "english": "once"
+        "spanish": "Solo lo hice una vez.",
+        "english": "I only did it once."
       },
       "collections": [
         "es:vez",
         "en:once",
         "pos:adverb",
-        "grammar:frequency-adverb"
+        "grammar:frequency-adverb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30093,15 +30106,16 @@
       "spanish": "dos veces",
       "english": "twice",
       "example": {
-        "spanish": "dos veces",
-        "english": "twice"
+        "spanish": "Lo llamé dos veces.",
+        "english": "I called him twice."
       },
       "collections": [
         "es:vez",
         "es:dos",
         "en:twice",
         "pos:adverb",
-        "grammar:frequency-adverb"
+        "grammar:frequency-adverb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30110,15 +30124,16 @@
       "spanish": "tres veces",
       "english": "three times",
       "example": {
-        "spanish": "tres veces",
-        "english": "three times"
+        "spanish": "Leyó el libro tres veces.",
+        "english": "She read the book three times."
       },
       "collections": [
         "es:vez",
         "es:tres",
         "en:three",
         "pos:adverb",
-        "grammar:frequency-adverb"
+        "grammar:frequency-adverb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30127,15 +30142,16 @@
       "spanish": "unas cuantas veces",
       "english": "a few times",
       "example": {
-        "spanish": "unas cuantas veces",
-        "english": "a few times"
+        "spanish": "Hemos hablado unas cuantas veces.",
+        "english": "We've talked a few times."
       },
       "collections": [
         "es:vez",
         "es:cuantas",
         "en:few",
         "pos:adverb",
-        "grammar:frequency-adverb"
+        "grammar:frequency-adverb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31343,7 +31359,8 @@
         "grammar:fixed-expression",
         "es:otra",
         "en:again",
-        "grammar:frequency-adverb"
+        "grammar:frequency-adverb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -31362,7 +31379,8 @@
         "es:de",
         "en:again",
         "topic:multi-sense",
-        "grammar:frequency-adverb"
+        "grammar:frequency-adverb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32655,7 +32673,8 @@
         "en:hard",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "grammar:manner"
+        "grammar:manner",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58721,7 +58740,8 @@
         "grammar:frequency-adverb",
         "pos:adverb",
         "es:casi",
-        "en:hardly"
+        "en:hardly",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58957,7 +58977,8 @@
         "pos:adverb",
         "es:despacio",
         "en:slowly",
-        "grammar:manner"
+        "grammar:manner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -71374,7 +71395,8 @@
         "grammar:adjective-modifier",
         "es:muy",
         "en:very",
-        "pos:adverb"
+        "pos:adverb",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -71394,7 +71416,8 @@
         "sound:to-too-two",
         "es:demasiado",
         "en:too",
-        "pos:adverb"
+        "pos:adverb",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -71435,7 +71458,8 @@
         "es:tan",
         "en:that",
         "topic:en-multi-sense",
-        "pos:adverb"
+        "pos:adverb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -85291,7 +85315,8 @@
         "pos:adverb",
         "grammar:manner",
         "es:bien",
-        "en:well"
+        "en:well",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
