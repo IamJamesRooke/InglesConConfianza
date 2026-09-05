@@ -4386,7 +4386,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "topic:collocation",
-        "coll:set"
+        "coll:set",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -4458,7 +4459,8 @@
         "topic:en-multi-sense",
         "topic:technology",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -5603,7 +5605,8 @@
         "topic:en-multi-sense",
         "topic:sports-recreation",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -5647,7 +5650,8 @@
         "topic:en-multi-sense",
         "topic:sports-recreation",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -15183,7 +15187,8 @@
         "en:fall",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30394,7 +30399,8 @@
         "en:start",
         "topic:en-multi-sense",
         "topic:technology",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30412,7 +30418,8 @@
         "en:start",
         "topic:en-multi-sense",
         "topic:technology",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -33416,7 +33423,8 @@
         "es:establecer",
         "en:provide",
         "topic:en-multi-sense",
-        "topic:crime-law"
+        "topic:crime-law",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -33547,7 +33555,8 @@
         "en:require",
         "topic:crime-law",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39288,7 +39297,8 @@
         "topic:government-politics",
         "topic:multi-sense",
         "cognate:ano-iano-to-an-ian",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -40805,7 +40815,8 @@
         "en:military",
         "cognate:transparent",
         "topic:government-politics",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -41048,7 +41059,8 @@
         "es:ser",
         "en:national",
         "topic:government-politics",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -42475,7 +42487,8 @@
         "topic:crime-law",
         "topic:multi-sense",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -43632,7 +43645,8 @@
         "es:ser",
         "en:electronic",
         "topic:technology",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
