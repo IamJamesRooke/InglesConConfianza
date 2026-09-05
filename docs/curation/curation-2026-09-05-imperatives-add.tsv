@@ -1,0 +1,7 @@
+Cierra la puerta.	Close the door.	Cierra la puerta, por favor.	Close the door, please.	supporting	pos:verb|topic:imperative|imp:affirmative-informal|grammar:imperative|grammar:command|register:informal|es:cerrar|en:close
+Cierre la puerta.	Close the door.	Cierre la puerta, por favor.	Close the door, please.	supporting	pos:verb|topic:imperative|imp:affirmative-formal|grammar:imperative|grammar:command|register:formal|es:cerrar|en:close
+Cierren la puerta.	Close the door.	Cierren la puerta al salir.	Close the door on your way out.	reference	pos:verb|topic:imperative|imp:affirmative-formal|grammar:imperative|grammar:command|register:formal|es:cerrar|en:close
+No cierres la puerta.	Don't close the door.	No cierres la puerta todavía.	Don't close the door yet.	supporting	pos:verb|topic:imperative|imp:negative|grammar:imperative|grammar:command|grammar:negative|register:informal|es:cerrar|en:close
+No cierre la puerta.	Don't close the door.	No cierre la puerta, hace calor.	Don't close the door, it's hot.	reference	pos:verb|topic:imperative|imp:negative|grammar:imperative|grammar:command|grammar:negative|register:formal|es:cerrar|en:close
+Vamos a cenar.	Let's have dinner.	Vamos a cenar, tengo hambre.	Let's have dinner, I'm hungry.	supporting	pos:verb|topic:imperative|imp:lets|grammar:imperative|grammar:command|es:ir|en:let's
+No vayamos todavía.	Let's not go yet.	No vayamos todavía, es temprano.	Let's not go yet, it's early.	reference	pos:verb|topic:imperative|imp:lets|grammar:imperative|grammar:command|grammar:negative|es:ir|en:let's

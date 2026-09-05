@@ -6234,7 +6234,9 @@
         "es:escucha",
         "en:listen",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "topic:imperative",
+        "imp:affirmative-informal"
       ],
       "curriculumRole": "reference"
     },
@@ -21300,7 +21302,9 @@
         "en:careful",
         "grammar:tener-adjective",
         "topic:emotion-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:imperative",
+        "imp:affirmative-informal"
       ],
       "curriculumRole": "core"
     },
@@ -21375,7 +21379,9 @@
         "en:patient",
         "grammar:tener-adjective",
         "topic:health",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:imperative",
+        "imp:affirmative-informal"
       ],
       "curriculumRole": "reference"
     },
@@ -56598,7 +56604,9 @@
         "es:cállate",
         "en:quiet",
         "pos:verb",
-        "expr:warning-command"
+        "expr:warning-command",
+        "topic:imperative",
+        "imp:affirmative-informal"
       ],
       "curriculumRole": "reference"
     },
@@ -56618,7 +56626,9 @@
         "es:cállate",
         "en:shut",
         "pos:verb",
-        "expr:warning-command"
+        "expr:warning-command",
+        "topic:imperative",
+        "imp:affirmative-informal"
       ],
       "curriculumRole": "reference"
     },
@@ -64259,7 +64269,9 @@
         "form:bare-infinitive",
         "es:hazlo",
         "en:it",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:imperative",
+        "imp:affirmative-informal"
       ],
       "curriculumRole": "supporting"
     },
@@ -64278,7 +64290,9 @@
         "form:bare-infinitive",
         "es:hágalo",
         "en:it",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:imperative",
+        "imp:affirmative-formal"
       ],
       "curriculumRole": "reference"
     },
@@ -64297,7 +64311,9 @@
         "form:bare-infinitive",
         "es:háganlo",
         "en:it",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:imperative",
+        "imp:affirmative-formal"
       ],
       "curriculumRole": "reference"
     },
@@ -64316,7 +64332,9 @@
         "form:bare-infinitive",
         "es:háganoslo",
         "en:it",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:imperative",
+        "imp:affirmative-formal"
       ],
       "curriculumRole": "reference"
     },
@@ -64335,7 +64353,9 @@
         "form:bare-infinitive",
         "es:hagas",
         "en:don't",
-        "pos:verb"
+        "pos:verb",
+        "topic:imperative",
+        "imp:negative"
       ],
       "curriculumRole": "supporting"
     },
@@ -64354,7 +64374,9 @@
         "form:bare-infinitive",
         "es:hagámoslo",
         "en:let",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:imperative",
+        "imp:lets"
       ],
       "curriculumRole": "supporting"
     },
@@ -64373,7 +64395,9 @@
         "form:bare-infinitive",
         "es:vamos",
         "en:let",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:imperative",
+        "imp:lets"
       ],
       "curriculumRole": "supporting"
     },
@@ -64392,7 +64416,9 @@
         "form:bare-infinitive",
         "es:hagamos",
         "en:let",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:imperative",
+        "imp:lets"
       ],
       "curriculumRole": "supporting"
     },
@@ -86089,6 +86115,147 @@
         "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
+    },
+    {
+      "id": "do26qqvb93",
+      "spanish": "Cierra la puerta.",
+      "english": "Close the door.",
+      "example": {
+        "spanish": "Cierra la puerta, por favor.",
+        "english": "Close the door, please."
+      },
+      "collections": [
+        "pos:verb",
+        "topic:imperative",
+        "imp:affirmative-informal",
+        "grammar:imperative",
+        "grammar:command",
+        "register:informal",
+        "es:cerrar",
+        "en:close"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "zw81jy10ge",
+      "spanish": "Cierre la puerta.",
+      "english": "Close the door.",
+      "example": {
+        "spanish": "Cierre la puerta, por favor.",
+        "english": "Close the door, please."
+      },
+      "collections": [
+        "pos:verb",
+        "topic:imperative",
+        "imp:affirmative-formal",
+        "grammar:imperative",
+        "grammar:command",
+        "register:formal",
+        "es:cerrar",
+        "en:close"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "g1jufpr1jo",
+      "spanish": "Cierren la puerta.",
+      "english": "Close the door.",
+      "example": {
+        "spanish": "Cierren la puerta al salir.",
+        "english": "Close the door on your way out."
+      },
+      "collections": [
+        "pos:verb",
+        "topic:imperative",
+        "imp:affirmative-formal",
+        "grammar:imperative",
+        "grammar:command",
+        "register:formal",
+        "es:cerrar",
+        "en:close"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "q98pxxzqf3",
+      "spanish": "No cierres la puerta.",
+      "english": "Don't close the door.",
+      "example": {
+        "spanish": "No cierres la puerta todavía.",
+        "english": "Don't close the door yet."
+      },
+      "collections": [
+        "pos:verb",
+        "topic:imperative",
+        "imp:negative",
+        "grammar:imperative",
+        "grammar:command",
+        "grammar:negative",
+        "register:informal",
+        "es:cerrar",
+        "en:close"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "pdc3u4lu4a",
+      "spanish": "No cierre la puerta.",
+      "english": "Don't close the door.",
+      "example": {
+        "spanish": "No cierre la puerta, hace calor.",
+        "english": "Don't close the door, it's hot."
+      },
+      "collections": [
+        "pos:verb",
+        "topic:imperative",
+        "imp:negative",
+        "grammar:imperative",
+        "grammar:command",
+        "grammar:negative",
+        "register:formal",
+        "es:cerrar",
+        "en:close"
+      ],
+      "curriculumRole": "reference"
+    },
+    {
+      "id": "mvfvzwbg8g",
+      "spanish": "Vamos a cenar.",
+      "english": "Let's have dinner.",
+      "example": {
+        "spanish": "Vamos a cenar, tengo hambre.",
+        "english": "Let's have dinner, I'm hungry."
+      },
+      "collections": [
+        "pos:verb",
+        "topic:imperative",
+        "imp:lets",
+        "grammar:imperative",
+        "grammar:command",
+        "es:ir",
+        "en:let's"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "7peott7vnd",
+      "spanish": "No vayamos todavía.",
+      "english": "Let's not go yet.",
+      "example": {
+        "spanish": "No vayamos todavía, es temprano.",
+        "english": "Let's not go yet, it's early."
+      },
+      "collections": [
+        "pos:verb",
+        "topic:imperative",
+        "imp:lets",
+        "grammar:imperative",
+        "grammar:command",
+        "grammar:negative",
+        "es:ir",
+        "en:let's"
+      ],
+      "curriculumRole": "reference"
     }
   ]
 }

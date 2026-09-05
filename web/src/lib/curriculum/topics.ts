@@ -734,6 +734,19 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       { collection: "qn:emphatic", label: "Emphatic (I DO like it)" },
     ],
   },
+  {
+    slug: "imperatives",
+    title: "Imperatives & Commands",
+    description:
+      "Spanish commands change form for formality and number (tú vs. usted vs. ustedes) and even switch conjugation entirely between affirmative and negative — English collapses all of that into one invariant \"Close the door\" / \"Don't close the door.\" Watch the Spanish side change while the English stays put.",
+    baseCollection: "topic:imperative",
+    facetButtons: [
+      { collection: "imp:affirmative-informal", label: "Affirmative — tú (informal)" },
+      { collection: "imp:affirmative-formal", label: "Affirmative — usted/ustedes (formal)" },
+      { collection: "imp:negative", label: "Negative (don't...)" },
+      { collection: "imp:lets", label: "Let's — nosotros" },
+    ],
+  },
 ];
 
 export function findCurriculumTopic(slug: string): CurriculumTopic | undefined {

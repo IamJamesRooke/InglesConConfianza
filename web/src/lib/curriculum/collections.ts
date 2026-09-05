@@ -27,7 +27,8 @@ export type CollectionFacet =
   | "gender"
   | "degree"
   | "expr"
-  | "qn";
+  | "qn"
+  | "imp";
 
 export const COLLECTION_FACETS: Record<CollectionFacet, string> = {
   es: "Spanish headword — every sense and construction of one lemma",
@@ -52,6 +53,7 @@ export const COLLECTION_FACETS: Record<CollectionFacet, string> = {
   degree: "comparative/superlative form of a gradable adjective",
   expr: "communicative function of a fixed social expression (greeting, apology, farewell, etc.) — scoped to topic:social-expression",
   qn: "how a sentence forms negation or a question — do-support vs. modal/be/have direct contraction, question inversion, negative questions, emphatic affirmative — scoped to topic:question-negation",
+  imp: "imperative/command type (affirmative informal, affirmative formal, negative, nosotros \"let's\") — scoped to topic:imperative",
 };
 
 export function collectionFacet(name: string): CollectionFacet | null {
