@@ -126,4 +126,21 @@ skimming history, not a machine-readable state store.
   just in audited facets — worth re-running a quick placeholder check
   like this periodically as more of the DB gets reviewed, in case any
   slip through in still-untouched rows. Commits `ac9eb813` through
-  `d399da7f`. Next: es:pedir, then continue down the priority list.
+  `d399da7f`.
+- **2026-09-05, Verbs page restructured** — user flagged that the
+  "Verbs" page (pos:verb, ~2,000 concepts) only had 8 facet buttons
+  (5 core irregular verbs + two arbitrary conjugation:1sg/3sg person
+  buckets covering 26 rows) leaving ~1,800 verbs with no browsable
+  subtopic and invisible to Track A. Fixed by exposing the es:<lemma>
+  tags every verb already carries as ~185 alphabetical buttons (>=2
+  concepts each, filtered to exclude ~30 tags that named a
+  non-infinitive word), pinned ser/estar/ir/tener/haber first, added a
+  topic:verb-other "More verbs" catch-all (304 one-off-lemma rows,
+  mirroring sound:reviewed on Verb-Forms), dropped conjugation:1sg/3sg,
+  and added "verbs" to audit-status.ts's ORDER (it was missing
+  entirely). Commit `8c1782d3`. This is now the biggest page in the
+  audit (~1,700+ rows across 185 lemma facets) and comes right after
+  Adverbs in priority — the es:pedir/dejar/hablar/etc. work from the
+  Spanish-to-English Mappings page overlaps with it (same es:<lemma>
+  tags), so progress there carries over automatically. Next: es:abrir,
+  then alphabetically through the ~185 verb lemma facets.
