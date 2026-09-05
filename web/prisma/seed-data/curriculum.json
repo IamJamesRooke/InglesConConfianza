@@ -28808,7 +28808,8 @@
         "en:certain",
         "topic:determiner",
         "grammar:quantifier",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-other-certain-such"
       ],
       "curriculumRole": "reference"
     },
@@ -30824,7 +30825,8 @@
         "es:más",
         "en:more",
         "pos:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-more-less"
       ],
       "curriculumRole": "reference"
     },
@@ -33830,7 +33832,8 @@
         "es:dos",
         "en:both",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-both-all-whole"
       ],
       "curriculumRole": "reference"
     },
@@ -33848,7 +33851,8 @@
         "es:cualquiera",
         "en:either",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-both-all-whole"
       ],
       "curriculumRole": "reference"
     },
@@ -33867,7 +33871,8 @@
         "es:ninguno",
         "en:neither",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-both-all-whole"
       ],
       "curriculumRole": "reference"
     },
@@ -33887,7 +33892,8 @@
         "topic:pronoun",
         "grammar:indefinite-pronoun",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-some-any-no"
       ],
       "curriculumRole": "supporting"
     },
@@ -35483,7 +35489,8 @@
         "es:otro",
         "en:another",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-other-certain-such"
       ],
       "curriculumRole": "supporting"
     },
@@ -35503,7 +35510,8 @@
         "en:other",
         "topic:determiner",
         "grammar:quantifier",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-other-certain-such"
       ],
       "curriculumRole": "reference"
     },
@@ -35524,7 +35532,8 @@
         "en:other",
         "topic:determiner",
         "grammar:quantifier",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-other-certain-such"
       ],
       "curriculumRole": "reference"
     },
@@ -53239,7 +53248,8 @@
         "contrast:un-vs-uno",
         "contrast:confusable",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-1-10"
       ],
       "curriculumRole": "core"
     },
@@ -53257,7 +53267,8 @@
         "es:dos",
         "en:two",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-1-10"
       ],
       "curriculumRole": "core"
     },
@@ -53275,7 +53286,8 @@
         "es:tres",
         "en:three",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-1-10"
       ],
       "curriculumRole": "core"
     },
@@ -53293,7 +53305,8 @@
         "es:cuatro",
         "en:four",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-1-10"
       ],
       "curriculumRole": "supporting"
     },
@@ -53311,7 +53324,8 @@
         "es:cinco",
         "en:five",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-1-10"
       ],
       "curriculumRole": "supporting"
     },
@@ -53329,7 +53343,8 @@
         "es:seis",
         "en:six",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-1-10"
       ],
       "curriculumRole": "supporting"
     },
@@ -53347,7 +53362,8 @@
         "es:siete",
         "en:seven",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-1-10"
       ],
       "curriculumRole": "supporting"
     },
@@ -53365,7 +53381,8 @@
         "es:ocho",
         "en:eight",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-1-10"
       ],
       "curriculumRole": "supporting"
     },
@@ -53383,7 +53400,8 @@
         "es:nueve",
         "en:nine",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-1-10"
       ],
       "curriculumRole": "supporting"
     },
@@ -53401,7 +53419,8 @@
         "es:diez",
         "en:ten",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-1-10"
       ],
       "curriculumRole": "supporting"
     },
@@ -53419,7 +53438,8 @@
         "es:once",
         "en:eleven",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-11-19"
       ],
       "curriculumRole": "supporting"
     },
@@ -53437,7 +53457,8 @@
         "es:doce",
         "en:twelve",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-11-19"
       ],
       "curriculumRole": "supporting"
     },
@@ -53457,7 +53478,8 @@
         "es:trece",
         "en:thirteen",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-11-19"
       ],
       "curriculumRole": "supporting"
     },
@@ -53477,7 +53499,8 @@
         "es:catorce",
         "en:fourteen",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-11-19"
       ],
       "curriculumRole": "supporting"
     },
@@ -53497,7 +53520,8 @@
         "es:quince",
         "en:fifteen",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-11-19"
       ],
       "curriculumRole": "supporting"
     },
@@ -53517,7 +53541,8 @@
         "es:dieciséis",
         "en:sixteen",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-11-19"
       ],
       "curriculumRole": "supporting"
     },
@@ -53537,7 +53562,8 @@
         "es:diecisiete",
         "en:seventeen",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-11-19"
       ],
       "curriculumRole": "supporting"
     },
@@ -53557,7 +53583,8 @@
         "es:dieciocho",
         "en:eighteen",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-11-19"
       ],
       "curriculumRole": "supporting"
     },
@@ -53577,7 +53604,8 @@
         "es:diecinueve",
         "en:nineteen",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-11-19"
       ],
       "curriculumRole": "supporting"
     },
@@ -53597,7 +53625,8 @@
         "es:veinte",
         "en:twenty",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-tens-and-up"
       ],
       "curriculumRole": "supporting"
     },
@@ -53617,7 +53646,8 @@
         "es:treinta",
         "en:thirty",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-tens-and-up"
       ],
       "curriculumRole": "supporting"
     },
@@ -53637,7 +53667,8 @@
         "es:cuarenta",
         "en:forty",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-tens-and-up"
       ],
       "curriculumRole": "supporting"
     },
@@ -53657,7 +53688,8 @@
         "es:cincuenta",
         "en:fifty",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-tens-and-up"
       ],
       "curriculumRole": "supporting"
     },
@@ -53677,7 +53709,8 @@
         "es:sesenta",
         "en:sixty",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-tens-and-up"
       ],
       "curriculumRole": "supporting"
     },
@@ -53697,7 +53730,8 @@
         "es:setenta",
         "en:seventy",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-tens-and-up"
       ],
       "curriculumRole": "supporting"
     },
@@ -53717,7 +53751,8 @@
         "es:ochenta",
         "en:eighty",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-tens-and-up"
       ],
       "curriculumRole": "supporting"
     },
@@ -53737,7 +53772,8 @@
         "es:noventa",
         "en:ninety",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-tens-and-up"
       ],
       "curriculumRole": "supporting"
     },
@@ -54876,7 +54912,8 @@
         "en:one",
         "topic:determiner",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-tens-and-up"
       ],
       "curriculumRole": "supporting"
     },
@@ -54896,7 +54933,8 @@
         "en:one",
         "topic:determiner",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-tens-and-up"
       ],
       "curriculumRole": "supporting"
     },
@@ -54916,7 +54954,8 @@
         "en:one",
         "topic:determiner",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-tens-and-up"
       ],
       "curriculumRole": "reference"
     },
@@ -54940,7 +54979,8 @@
         "contrast:billon-vs-billion",
         "topic:cognate",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-tens-and-up"
       ],
       "curriculumRole": "reference"
     },
@@ -54964,7 +55004,8 @@
         "contrast:billon-vs-billion",
         "topic:cognate",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cardinal-tens-and-up"
       ],
       "curriculumRole": "reference"
     },
@@ -54982,7 +55023,8 @@
         "es:vigésimo",
         "en:twentieth",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-20-and-up"
       ],
       "curriculumRole": "reference"
     },
@@ -55000,7 +55042,8 @@
         "es:vigésimo",
         "en:twenty-first",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-20-and-up"
       ],
       "curriculumRole": "reference"
     },
@@ -55018,7 +55061,8 @@
         "es:vigésimo",
         "en:twenty-second",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-20-and-up"
       ],
       "curriculumRole": "reference"
     },
@@ -55036,7 +55080,8 @@
         "es:vigésimo",
         "en:twenty-third",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-20-and-up"
       ],
       "curriculumRole": "reference"
     },
@@ -55054,7 +55099,8 @@
         "es:vigésimo",
         "en:twenty-fourth",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-20-and-up"
       ],
       "curriculumRole": "reference"
     },
@@ -55072,7 +55118,8 @@
         "es:vigésimo",
         "en:twenty-fifth",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-20-and-up"
       ],
       "curriculumRole": "reference"
     },
@@ -55090,7 +55137,8 @@
         "es:vigésimo",
         "en:twenty-eighth",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-20-and-up"
       ],
       "curriculumRole": "reference"
     },
@@ -55108,7 +55156,8 @@
         "es:vigésimo",
         "en:twenty-ninth",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-20-and-up"
       ],
       "curriculumRole": "reference"
     },
@@ -55126,7 +55175,8 @@
         "es:trigésimo",
         "en:thirtieth",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-20-and-up"
       ],
       "curriculumRole": "reference"
     },
@@ -55144,7 +55194,8 @@
         "es:trigésimo",
         "en:thirty-first",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-20-and-up"
       ],
       "curriculumRole": "reference"
     },
@@ -55162,7 +55213,8 @@
         "es:centésimo",
         "en:hundredth",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-20-and-up"
       ],
       "curriculumRole": "reference"
     },
@@ -55180,7 +55232,8 @@
         "es:milésimo",
         "en:thousandth",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-20-and-up"
       ],
       "curriculumRole": "reference"
     },
@@ -55198,7 +55251,8 @@
         "es:millonésimo",
         "en:millionth",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-20-and-up"
       ],
       "curriculumRole": "reference"
     },
@@ -55218,7 +55272,8 @@
         "topic:order-word",
         "es:primero",
         "en:first",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-1-10"
       ],
       "curriculumRole": "supporting"
     },
@@ -55239,7 +55294,8 @@
         "second ambiguity",
         "es:segundo",
         "en:second",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-1-10"
       ],
       "curriculumRole": "supporting"
     },
@@ -55259,7 +55315,8 @@
         "topic:order-word",
         "es:tercero",
         "en:third",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-1-10"
       ],
       "curriculumRole": "supporting"
     },
@@ -55277,7 +55334,8 @@
         "es:cuarto",
         "en:fourth",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-1-10"
       ],
       "curriculumRole": "supporting"
     },
@@ -55295,7 +55353,8 @@
         "es:quinto",
         "en:fifth",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-1-10"
       ],
       "curriculumRole": "supporting"
     },
@@ -55313,7 +55372,8 @@
         "es:sexto",
         "en:sixth",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-1-10"
       ],
       "curriculumRole": "supporting"
     },
@@ -55331,7 +55391,8 @@
         "es:séptimo",
         "en:seventh",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-1-10"
       ],
       "curriculumRole": "supporting"
     },
@@ -55349,7 +55410,8 @@
         "es:octavo",
         "en:eighth",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-1-10"
       ],
       "curriculumRole": "supporting"
     },
@@ -55367,7 +55429,8 @@
         "es:noveno",
         "en:ninth",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-1-10"
       ],
       "curriculumRole": "supporting"
     },
@@ -55385,7 +55448,8 @@
         "es:décimo",
         "en:tenth",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-1-10"
       ],
       "curriculumRole": "supporting"
     },
@@ -55403,7 +55467,8 @@
         "es:undécimo",
         "en:eleventh",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-11-19"
       ],
       "curriculumRole": "reference"
     },
@@ -55421,7 +55486,8 @@
         "es:duodécimo",
         "en:twelfth",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-11-19"
       ],
       "curriculumRole": "reference"
     },
@@ -55439,7 +55505,8 @@
         "es:decimotercero",
         "en:thirteenth",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-11-19"
       ],
       "curriculumRole": "reference"
     },
@@ -55457,7 +55524,8 @@
         "es:decimocuarto",
         "en:fourteenth",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-11-19"
       ],
       "curriculumRole": "reference"
     },
@@ -55475,7 +55543,8 @@
         "es:decimoquinto",
         "en:fifteenth",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-11-19"
       ],
       "curriculumRole": "reference"
     },
@@ -55493,7 +55562,8 @@
         "es:decimosexto",
         "en:sixteenth",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-11-19"
       ],
       "curriculumRole": "reference"
     },
@@ -55511,7 +55581,8 @@
         "es:decimoséptimo",
         "en:seventeenth",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-11-19"
       ],
       "curriculumRole": "reference"
     },
@@ -55529,7 +55600,8 @@
         "es:decimoctavo",
         "en:eighteenth",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-11-19"
       ],
       "curriculumRole": "reference"
     },
@@ -55547,7 +55619,8 @@
         "es:decimonoveno",
         "en:nineteenth",
         "topic:time",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:ordinal-11-19"
       ],
       "curriculumRole": "reference"
     },
@@ -75560,7 +75633,8 @@
         "es:demasiado",
         "en:too",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-little-few"
       ],
       "curriculumRole": "supporting"
     },
@@ -75581,7 +75655,8 @@
         "es:demasiados",
         "en:too",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-little-few"
       ],
       "curriculumRole": "supporting"
     },
@@ -75605,7 +75680,8 @@
         "contrast:tanto-vs-tan",
         "contrast:confusable",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-much-many"
       ],
       "curriculumRole": "supporting"
     },
@@ -75627,7 +75703,8 @@
         "en:so",
         "topic:determiner",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-much-many"
       ],
       "curriculumRole": "supporting"
     },
@@ -75726,7 +75803,8 @@
         "es:mucho",
         "en:lot",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-much-many"
       ],
       "curriculumRole": "core"
     },
@@ -75745,7 +75823,8 @@
         "es:muchos",
         "en:lot",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-much-many"
       ],
       "curriculumRole": "core"
     },
@@ -75765,7 +75844,8 @@
         "en:many",
         "topic:determiner",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-much-many"
       ],
       "curriculumRole": "reference"
     },
@@ -75785,7 +75865,8 @@
         "es:mucho",
         "en:much",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-much-many"
       ],
       "curriculumRole": "supporting"
     },
@@ -75806,7 +75887,8 @@
         "es:muchos",
         "en:lots",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-much-many"
       ],
       "curriculumRole": "reference"
     },
@@ -75826,7 +75908,8 @@
         "es:más",
         "en:plenty",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-much-many"
       ],
       "curriculumRole": "supporting"
     },
@@ -75845,7 +75928,8 @@
         "es:suficiente",
         "en:enough",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-little-few"
       ],
       "curriculumRole": "core"
     },
@@ -75864,7 +75948,8 @@
         "es:suficientes",
         "en:enough",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-little-few"
       ],
       "curriculumRole": "core"
     },
@@ -75884,7 +75969,8 @@
         "es:montón",
         "en:pile",
         "pos:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-much-many"
       ],
       "curriculumRole": "reference"
     },
@@ -75904,7 +75990,8 @@
         "es:poco",
         "en:little",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-little-few"
       ],
       "curriculumRole": "supporting"
     },
@@ -75924,7 +76011,8 @@
         "es:unos",
         "en:few",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-little-few"
       ],
       "curriculumRole": "supporting"
     },
@@ -75943,7 +76031,8 @@
         "es:menos",
         "en:less",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-more-less"
       ],
       "curriculumRole": "supporting"
     },
@@ -75962,7 +76051,8 @@
         "es:menos",
         "en:fewer",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-more-less"
       ],
       "curriculumRole": "supporting"
     },
@@ -88482,7 +88572,8 @@
         "topic:pronoun",
         "grammar:indefinite-pronoun",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-both-all-whole"
       ],
       "curriculumRole": "supporting"
     },
@@ -88501,7 +88592,8 @@
         "es:ambas",
         "en:both",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-both-all-whole"
       ],
       "curriculumRole": "supporting"
     },
@@ -88522,7 +88614,8 @@
         "en:many",
         "topic:determiner",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-much-many"
       ],
       "curriculumRole": "supporting"
     },
@@ -88543,7 +88636,8 @@
         "en:many",
         "topic:determiner",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-much-many"
       ],
       "curriculumRole": "supporting"
     },
@@ -88566,7 +88660,8 @@
         "grammar:interrogative-determiner",
         "topic:interrogative",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-more-less"
       ],
       "curriculumRole": "core"
     },
@@ -88589,7 +88684,8 @@
         "grammar:interrogative-determiner",
         "topic:interrogative",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-more-less"
       ],
       "curriculumRole": "core"
     },
@@ -88609,7 +88705,8 @@
         "es:pocos",
         "en:few",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-little-few"
       ],
       "curriculumRole": "supporting"
     },
@@ -88629,7 +88726,8 @@
         "es:pocas",
         "en:few",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-little-few"
       ],
       "curriculumRole": "supporting"
     },
@@ -88649,7 +88747,8 @@
         "es:otros",
         "en:other",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-other-certain-such"
       ],
       "curriculumRole": "supporting"
     },
@@ -88669,7 +88768,8 @@
         "es:otras",
         "en:other",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-other-certain-such"
       ],
       "curriculumRole": "supporting"
     },
@@ -89990,7 +90090,8 @@
         "topic:determiner",
         "es:todo",
         "en:whole",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-both-all-whole"
       ],
       "curriculumRole": "supporting"
     },
@@ -90011,7 +90112,8 @@
         "topic:determiner",
         "es:todo",
         "en:whole",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-both-all-whole"
       ],
       "curriculumRole": "supporting"
     },
@@ -90033,7 +90135,8 @@
         "es:todo",
         "en:all",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-both-all-whole"
       ],
       "curriculumRole": "core"
     },
@@ -90055,7 +90158,8 @@
         "es:todo",
         "en:all",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-both-all-whole"
       ],
       "curriculumRole": "core"
     },
@@ -90078,7 +90182,8 @@
         "contrast:algun-vs-alguno",
         "contrast:confusable",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-some-any-no"
       ],
       "curriculumRole": "supporting"
     },
@@ -90099,7 +90204,8 @@
         "es:alguno",
         "en:some",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-some-any-no"
       ],
       "curriculumRole": "supporting"
     },
@@ -90120,7 +90226,8 @@
         "es:alguno",
         "en:some",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-some-any-no"
       ],
       "curriculumRole": "supporting"
     },
@@ -90141,7 +90248,8 @@
         "es:alguno",
         "en:some",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-some-any-no"
       ],
       "curriculumRole": "supporting"
     },
@@ -90162,7 +90270,8 @@
         "topic:determiner",
         "es:ninguno",
         "en:no",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-some-any-no"
       ],
       "curriculumRole": "supporting"
     },
@@ -90183,7 +90292,8 @@
         "topic:determiner",
         "es:ninguno",
         "en:no",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-some-any-no"
       ],
       "curriculumRole": "supporting"
     },
@@ -90201,7 +90311,8 @@
         "topic:determiner",
         "es:cualquiera",
         "en:any",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-some-any-no"
       ],
       "curriculumRole": "supporting"
     },
@@ -90221,7 +90332,8 @@
         "topic:determiner",
         "es:varios",
         "en:several",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-some-any-no"
       ],
       "curriculumRole": "supporting"
     },
@@ -90241,7 +90353,8 @@
         "topic:determiner",
         "es:varios",
         "en:several",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-some-any-no"
       ],
       "curriculumRole": "supporting"
     },
@@ -90261,7 +90374,8 @@
         "topic:determiner",
         "es:poco",
         "en:little",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-little-few"
       ],
       "curriculumRole": "supporting"
     },
@@ -90281,7 +90395,8 @@
         "topic:determiner",
         "es:poco",
         "en:little",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-little-few"
       ],
       "curriculumRole": "supporting"
     },
@@ -90300,7 +90415,8 @@
         "topic:determiner",
         "es:más",
         "en:more",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-more-less"
       ],
       "curriculumRole": "supporting"
     },
@@ -90319,7 +90435,8 @@
         "topic:determiner",
         "es:medio",
         "en:half",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-more-less"
       ],
       "curriculumRole": "reference"
     },
@@ -90338,7 +90455,8 @@
         "topic:determiner",
         "es:medio",
         "en:half",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-more-less"
       ],
       "curriculumRole": "reference"
     },
@@ -90356,7 +90474,8 @@
         "topic:determiner",
         "es:bastante",
         "en:quite",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-more-less"
       ],
       "curriculumRole": "reference"
     },
@@ -90375,7 +90494,8 @@
         "topic:determiner",
         "es:bastante",
         "en:quite",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-more-less"
       ],
       "curriculumRole": "reference"
     },
@@ -90393,7 +90513,8 @@
         "topic:determiner",
         "es:tal",
         "en:such",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-other-certain-such"
       ],
       "curriculumRole": "reference"
     },
@@ -90412,7 +90533,8 @@
         "topic:determiner",
         "es:tal",
         "en:such",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-other-certain-such"
       ],
       "curriculumRole": "reference"
     },
@@ -90594,7 +90716,8 @@
         "topic:determiner",
         "es:cada",
         "en:every",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-some-any-no"
       ],
       "curriculumRole": "supporting"
     },
