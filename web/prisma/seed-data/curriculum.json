@@ -68779,7 +68779,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:arise",
-        "en:arise"
+        "en:arise",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -68797,7 +68798,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:arise",
-        "en:arise"
+        "en:arise",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -68815,7 +68817,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:awake",
-        "en:awake"
+        "en:awake",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -68833,7 +68836,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:awake",
-        "en:awake"
+        "en:awake",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -68854,7 +68858,8 @@
         "rhyme:oʊkən",
         "sound:reviewed",
         "es:awake",
-        "en:awake"
+        "en:awake",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -68872,7 +68877,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:awake",
-        "en:awake"
+        "en:awake",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -68947,7 +68953,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:bear",
-        "en:bear"
+        "en:bear",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -68965,7 +68972,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:bear",
-        "en:bear"
+        "en:bear",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -68983,7 +68991,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:bear",
-        "en:bear"
+        "en:bear",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -69001,7 +69010,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:beat",
-        "en:beat"
+        "en:beat",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -69019,7 +69029,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:beat",
-        "en:beat"
+        "en:beat",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -69129,7 +69140,8 @@
         "rhyme:æŋ",
         "sound:reviewed",
         "es:begin",
-        "en:begin"
+        "en:begin",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -69150,7 +69162,8 @@
         "rhyme:ʌŋ",
         "sound:reviewed",
         "es:begin",
-        "en:begin"
+        "en:begin",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -69212,7 +69225,8 @@
         "rhyme:ɛnt",
         "sound:reviewed",
         "es:bend",
-        "en:bend"
+        "en:bend",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -69234,7 +69248,8 @@
         "rhyme:ɛnt",
         "sound:reviewed",
         "es:bend",
-        "en:bend"
+        "en:bend",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -69395,7 +69410,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:bet",
-        "en:bet"
+        "en:bet",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -69414,7 +69430,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:bet",
-        "en:bet"
+        "en:bet",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -69432,7 +69449,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:bid",
-        "en:bid"
+        "en:bid",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -69450,7 +69468,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:bid",
-        "en:bid"
+        "en:bid",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -69468,7 +69487,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:bid",
-        "en:bid"
+        "en:bid",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -69490,7 +69510,8 @@
         "rhyme:aʊnd",
         "sound:reviewed",
         "es:bind",
-        "en:bind"
+        "en:bind",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -69512,7 +69533,8 @@
         "rhyme:aʊnd",
         "sound:reviewed",
         "es:bind",
-        "en:bind"
+        "en:bind",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -69530,7 +69552,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:bite",
-        "en:bite"
+        "en:bite",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -69551,7 +69574,8 @@
         "rhyme:ən",
         "sound:reviewed",
         "es:bite",
-        "en:bite"
+        "en:bite",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -69573,7 +69597,8 @@
         "rhyme:ɛd",
         "sound:reviewed",
         "es:bleed",
-        "en:bleed"
+        "en:bleed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -69595,7 +69620,8 @@
         "rhyme:ɛd",
         "sound:reviewed",
         "es:bleed",
-        "en:bleed"
+        "en:bleed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -69613,7 +69639,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:blow",
-        "en:blow"
+        "en:blow",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -69634,7 +69661,8 @@
         "rhyme:oʊn",
         "sound:reviewed",
         "es:blow",
-        "en:blow"
+        "en:blow",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -69697,7 +69725,8 @@
         "rhyme:ɛd",
         "sound:reviewed",
         "es:breed",
-        "en:breed"
+        "en:breed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -69719,7 +69748,8 @@
         "rhyme:ɛd",
         "sound:reviewed",
         "es:breed",
-        "en:breed"
+        "en:breed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -69784,7 +69814,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:broadcast",
-        "en:broadcast"
+        "en:broadcast",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -69803,7 +69834,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:broadcast",
-        "en:broadcast"
+        "en:broadcast",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -69825,7 +69857,8 @@
         "rhyme:ɪlt",
         "sound:reviewed",
         "es:build",
-        "en:build"
+        "en:build",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -69847,7 +69880,8 @@
         "rhyme:ɪlt",
         "sound:reviewed",
         "es:build",
-        "en:build"
+        "en:build",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -69866,7 +69900,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:burn",
-        "en:burn"
+        "en:burn",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -69885,7 +69920,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:burn",
-        "en:burn"
+        "en:burn",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -69904,7 +69940,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:burn",
-        "en:burn"
+        "en:burn",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -69923,7 +69960,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:burn",
-        "en:burn"
+        "en:burn",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -69942,7 +69980,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:burst",
-        "en:burst"
+        "en:burst",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -69961,7 +70000,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:burst",
-        "en:burst"
+        "en:burst",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -69983,7 +70023,8 @@
         "rhyme:ɔt",
         "sound:reviewed",
         "es:buy",
-        "en:buy"
+        "en:buy",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -70005,7 +70046,8 @@
         "rhyme:ɔt",
         "sound:reviewed",
         "es:buy",
-        "en:buy"
+        "en:buy",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -70025,7 +70067,8 @@
         "defective verb",
         "no past participle",
         "es:can",
-        "en:can"
+        "en:can",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -70044,7 +70087,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:cast",
-        "en:cast"
+        "en:cast",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -70063,7 +70107,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:cast",
-        "en:cast"
+        "en:cast",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -70127,7 +70172,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:choose",
-        "en:choose"
+        "en:choose",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -70148,7 +70194,8 @@
         "rhyme:oʊzən",
         "sound:reviewed",
         "es:choose",
-        "en:choose"
+        "en:choose",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -70297,7 +70344,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:cling",
-        "en:cling"
+        "en:cling",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -70316,7 +70364,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:cling",
-        "en:cling"
+        "en:cling",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -70335,7 +70384,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:clothe",
-        "en:clothe"
+        "en:clothe",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -70354,7 +70404,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:clothe",
-        "en:clothe"
+        "en:clothe",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -70373,7 +70424,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:clothe",
-        "en:clothe"
+        "en:clothe",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -70392,7 +70444,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:clothe",
-        "en:clothe"
+        "en:clothe",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -70492,7 +70545,8 @@
         "rhyme:ɛpt",
         "sound:reviewed",
         "es:creep",
-        "en:creep"
+        "en:creep",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -70514,7 +70568,8 @@
         "rhyme:ɛpt",
         "sound:reviewed",
         "es:creep",
-        "en:creep"
+        "en:creep",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -70581,7 +70636,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:cut",
-        "en:cut"
+        "en:cut",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -70600,7 +70656,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:cut",
-        "en:cut"
+        "en:cut",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -70622,7 +70679,8 @@
         "rhyme:ɛlt",
         "sound:reviewed",
         "es:deal",
-        "en:deal"
+        "en:deal",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -70644,7 +70702,8 @@
         "rhyme:ɛlt",
         "sound:reviewed",
         "es:deal",
-        "en:deal"
+        "en:deal",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -70663,7 +70722,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:dig",
-        "en:dig"
+        "en:dig",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -70682,7 +70742,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:dig",
-        "en:dig"
+        "en:dig",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -70700,7 +70761,8 @@
         "form:regular-variant",
         "sound:needs-review",
         "es:dive",
-        "en:dive"
+        "en:dive",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -70718,7 +70780,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:dive",
-        "en:dive"
+        "en:dive",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -70736,7 +70799,8 @@
         "form:regular-variant",
         "sound:needs-review",
         "es:dive",
-        "en:dive"
+        "en:dive",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -70757,7 +70821,8 @@
         "rhyme:ɪd",
         "sound:reviewed",
         "es:do",
-        "en:do"
+        "en:do",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -70778,7 +70843,8 @@
         "rhyme:ʌn",
         "sound:reviewed",
         "es:do",
-        "en:do"
+        "en:do",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -70796,7 +70862,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:draw",
-        "en:draw"
+        "en:draw",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -70814,7 +70881,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:draw",
-        "en:draw"
+        "en:draw",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -70833,7 +70901,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:dream",
-        "en:dream"
+        "en:dream",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -70852,7 +70921,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:dream",
-        "en:dream"
+        "en:dream",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -70871,7 +70941,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:dream",
-        "en:dream"
+        "en:dream",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -70890,7 +70961,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:dream",
-        "en:dream"
+        "en:dream",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -70952,7 +71024,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:drive",
-        "en:drive"
+        "en:drive",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -70973,7 +71046,8 @@
         "rhyme:ɪdən",
         "sound:reviewed",
         "es:drive",
-        "en:drive"
+        "en:drive",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -71139,7 +71213,8 @@
         "rhyme:ɛd",
         "sound:reviewed",
         "es:feed",
-        "en:feed"
+        "en:feed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -71161,7 +71236,8 @@
         "rhyme:ɛd",
         "sound:reviewed",
         "es:feed",
-        "en:feed"
+        "en:feed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -71229,7 +71305,8 @@
         "rhyme:ɔt",
         "sound:reviewed",
         "es:fight",
-        "en:fight"
+        "en:fight",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -71251,7 +71328,8 @@
         "rhyme:ɔt",
         "sound:reviewed",
         "es:fight",
-        "en:fight"
+        "en:fight",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -71273,7 +71351,8 @@
         "rhyme:aʊnd",
         "sound:reviewed",
         "es:find",
-        "en:find"
+        "en:find",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -71295,7 +71374,8 @@
         "rhyme:aʊnd",
         "sound:reviewed",
         "es:find",
-        "en:find"
+        "en:find",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -71314,7 +71394,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:fit",
-        "en:fit"
+        "en:fit",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -71333,7 +71414,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:fit",
-        "en:fit"
+        "en:fit",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -71352,7 +71434,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:fit",
-        "en:fit"
+        "en:fit",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -71371,7 +71454,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:fit",
-        "en:fit"
+        "en:fit",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -71393,7 +71477,8 @@
         "rhyme:ɛd",
         "sound:reviewed",
         "es:flee",
-        "en:flee"
+        "en:flee",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -71415,7 +71500,8 @@
         "rhyme:ɛd",
         "sound:reviewed",
         "es:flee",
-        "en:flee"
+        "en:flee",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -71434,7 +71520,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:fling",
-        "en:fling"
+        "en:fling",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -71453,7 +71540,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:fling",
-        "en:fling"
+        "en:fling",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -71471,7 +71559,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:fly",
-        "en:fly"
+        "en:fly",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -71492,7 +71581,8 @@
         "rhyme:oʊn",
         "sound:reviewed",
         "es:fly",
-        "en:fly"
+        "en:fly",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -71510,7 +71600,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:forbid",
-        "en:forbid"
+        "en:forbid",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -71528,7 +71619,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:forbid",
-        "en:forbid"
+        "en:forbid",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -71546,7 +71638,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:forget",
-        "en:forget"
+        "en:forget",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -71567,7 +71660,8 @@
         "rhyme:ən",
         "sound:reviewed",
         "es:forget",
-        "en:forget"
+        "en:forget",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -71620,7 +71714,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:forgive",
-        "en:forgive"
+        "en:forgive",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -71641,7 +71736,8 @@
         "rhyme:ɪvən",
         "sound:reviewed",
         "es:forgive",
-        "en:forgive"
+        "en:forgive",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -71659,7 +71755,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:freeze",
-        "en:freeze"
+        "en:freeze",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -71680,7 +71777,8 @@
         "rhyme:oʊzən",
         "sound:reviewed",
         "es:freeze",
-        "en:freeze"
+        "en:freeze",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -71918,7 +72016,8 @@
         "rhyme:aʊnd",
         "sound:reviewed",
         "es:grind",
-        "en:grind"
+        "en:grind",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -71940,7 +72039,8 @@
         "rhyme:aʊnd",
         "sound:reviewed",
         "es:grind",
-        "en:grind"
+        "en:grind",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -71958,7 +72058,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:grow",
-        "en:grow"
+        "en:grow",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -71979,7 +72080,8 @@
         "rhyme:oʊn",
         "sound:reviewed",
         "es:grow",
-        "en:grow"
+        "en:grow",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -71998,7 +72100,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:hang",
-        "en:hang"
+        "en:hang",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -72017,7 +72120,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:hang",
-        "en:hang"
+        "en:hang",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -72036,7 +72140,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:hang",
-        "en:hang"
+        "en:hang",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -72055,7 +72160,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:hang",
-        "en:hang"
+        "en:hang",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -72204,7 +72310,8 @@
         "rhyme:ɪd",
         "sound:reviewed",
         "es:hide",
-        "en:hide"
+        "en:hide",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -72225,7 +72332,8 @@
         "rhyme:ən",
         "sound:reviewed",
         "es:hide",
-        "en:hide"
+        "en:hide",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -72244,7 +72352,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:hit",
-        "en:hit"
+        "en:hit",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -72263,7 +72372,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:hit",
-        "en:hit"
+        "en:hit",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -72328,7 +72438,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:hurt",
-        "en:hurt"
+        "en:hurt",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -72347,7 +72458,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:hurt",
-        "en:hurt"
+        "en:hurt",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -72412,7 +72524,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:kneel",
-        "en:kneel"
+        "en:kneel",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -72434,7 +72547,8 @@
         "rhyme:ɛlt",
         "sound:reviewed",
         "es:kneel",
-        "en:kneel"
+        "en:kneel",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -72453,7 +72567,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:kneel",
-        "en:kneel"
+        "en:kneel",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -72475,7 +72590,8 @@
         "rhyme:ɛlt",
         "sound:reviewed",
         "es:kneel",
-        "en:kneel"
+        "en:kneel",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -72494,7 +72610,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:knit",
-        "en:knit"
+        "en:knit",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -72513,7 +72630,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:knit",
-        "en:knit"
+        "en:knit",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -72532,7 +72650,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:knit",
-        "en:knit"
+        "en:knit",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -72551,7 +72670,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:knit",
-        "en:knit"
+        "en:knit",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -72614,7 +72734,8 @@
         "rhyme:eɪd",
         "sound:reviewed",
         "es:lay",
-        "en:lay"
+        "en:lay",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -72636,7 +72757,8 @@
         "rhyme:eɪd",
         "sound:reviewed",
         "es:lay",
-        "en:lay"
+        "en:lay",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -72658,7 +72780,8 @@
         "rhyme:ɛd",
         "sound:reviewed",
         "es:lead",
-        "en:lead"
+        "en:lead",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -72680,7 +72803,8 @@
         "rhyme:ɛd",
         "sound:reviewed",
         "es:lead",
-        "en:lead"
+        "en:lead",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -72699,7 +72823,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:lean",
-        "en:lean"
+        "en:lean",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -72737,7 +72862,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:lean",
-        "en:lean"
+        "en:lean",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -72775,7 +72901,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:leap",
-        "en:leap"
+        "en:leap",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -72816,7 +72943,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:leap",
-        "en:leap"
+        "en:leap",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -72857,7 +72985,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:learn",
-        "en:learn"
+        "en:learn",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -72895,7 +73024,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:learn",
-        "en:learn"
+        "en:learn",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -73058,7 +73188,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:lie",
-        "en:lie"
+        "en:lie",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -73076,7 +73207,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:lie",
-        "en:lie"
+        "en:lie",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -73095,7 +73227,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:light",
-        "en:light"
+        "en:light",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -73114,7 +73247,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:light",
-        "en:light"
+        "en:light",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -73133,7 +73267,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:light",
-        "en:light"
+        "en:light",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -73152,7 +73287,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:light",
-        "en:light"
+        "en:light",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -73297,7 +73433,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:meet",
-        "en:meet"
+        "en:meet",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -73316,7 +73453,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:meet",
-        "en:meet"
+        "en:meet",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -73334,7 +73472,8 @@
         "form:regular-variant",
         "sound:needs-review",
         "es:mow",
-        "en:mow"
+        "en:mow",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -73355,7 +73494,8 @@
         "rhyme:oʊn",
         "sound:reviewed",
         "es:mow",
-        "en:mow"
+        "en:mow",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -73373,7 +73513,8 @@
         "form:regular-variant",
         "sound:needs-review",
         "es:mow",
-        "en:mow"
+        "en:mow",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -73438,7 +73579,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:plead",
-        "en:plead"
+        "en:plead",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -73457,7 +73599,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:plead",
-        "en:plead"
+        "en:plead",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -73476,7 +73619,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:plead",
-        "en:plead"
+        "en:plead",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -73495,7 +73639,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:plead",
-        "en:plead"
+        "en:plead",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -73513,7 +73658,8 @@
         "form:regular-variant",
         "sound:needs-review",
         "es:prove",
-        "en:prove"
+        "en:prove",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -73531,7 +73677,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:prove",
-        "en:prove"
+        "en:prove",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -73549,7 +73696,8 @@
         "form:regular-variant",
         "sound:needs-review",
         "es:prove",
-        "en:prove"
+        "en:prove",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -73608,7 +73756,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:quit",
-        "en:quit"
+        "en:quit",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -73627,7 +73776,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:quit",
-        "en:quit"
+        "en:quit",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -73646,7 +73796,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:read",
-        "en:read"
+        "en:read",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -73665,7 +73816,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:read",
-        "en:read"
+        "en:read",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -73724,7 +73876,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:rid",
-        "en:rid"
+        "en:rid",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -73743,7 +73896,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:rid",
-        "en:rid"
+        "en:rid",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -73761,7 +73915,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:ride",
-        "en:ride"
+        "en:ride",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -73782,7 +73937,8 @@
         "rhyme:ɪdən",
         "sound:reviewed",
         "es:ride",
-        "en:ride"
+        "en:ride",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -73803,7 +73959,8 @@
         "rhyme:æŋ",
         "sound:reviewed",
         "es:ring",
-        "en:ring"
+        "en:ring",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -73824,7 +73981,8 @@
         "rhyme:ʌŋ",
         "sound:reviewed",
         "es:ring",
-        "en:ring"
+        "en:ring",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -73842,7 +74000,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:rise",
-        "en:rise"
+        "en:rise",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -73860,7 +74019,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:rise",
-        "en:rise"
+        "en:rise",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -74046,7 +74206,8 @@
         "rhyme:ɔt",
         "sound:reviewed",
         "es:seek",
-        "en:seek"
+        "en:seek",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -74068,7 +74229,8 @@
         "rhyme:ɔt",
         "sound:reviewed",
         "es:seek",
-        "en:seek"
+        "en:seek",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -74090,7 +74252,8 @@
         "rhyme:oʊld",
         "sound:reviewed",
         "es:sell",
-        "en:sell"
+        "en:sell",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -74112,7 +74275,8 @@
         "rhyme:oʊld",
         "sound:reviewed",
         "es:sell",
-        "en:sell"
+        "en:sell",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -74216,7 +74380,8 @@
         "form:regular-variant",
         "sound:needs-review",
         "es:sew",
-        "en:sew"
+        "en:sew",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -74234,7 +74399,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:sew",
-        "en:sew"
+        "en:sew",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -74252,7 +74418,8 @@
         "form:regular-variant",
         "sound:needs-review",
         "es:sew",
-        "en:sew"
+        "en:sew",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -74270,7 +74437,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:shake",
-        "en:shake"
+        "en:shake",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -74291,7 +74459,8 @@
         "rhyme:eɪkən",
         "sound:reviewed",
         "es:shake",
-        "en:shake"
+        "en:shake",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -74309,7 +74478,8 @@
         "form:regular-variant",
         "sound:needs-review",
         "es:shave",
-        "en:shave"
+        "en:shave",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -74327,7 +74497,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:shave",
-        "en:shave"
+        "en:shave",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -74345,7 +74516,8 @@
         "form:regular-variant",
         "sound:needs-review",
         "es:shave",
-        "en:shave"
+        "en:shave",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -74412,7 +74584,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:shed",
-        "en:shed"
+        "en:shed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -74431,7 +74604,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:shed",
-        "en:shed"
+        "en:shed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -74450,7 +74624,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:shine",
-        "en:shine"
+        "en:shine",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -74469,7 +74644,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:shine",
-        "en:shine"
+        "en:shine",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -74658,7 +74834,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:shoot",
-        "en:shoot"
+        "en:shoot",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -74677,7 +74854,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:shoot",
-        "en:shoot"
+        "en:shoot",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -74758,7 +74936,8 @@
         "rhyme:æŋk",
         "sound:reviewed",
         "es:shrink",
-        "en:shrink"
+        "en:shrink",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -74779,7 +74958,8 @@
         "rhyme:ʌŋk",
         "sound:reviewed",
         "es:shrink",
-        "en:shrink"
+        "en:shrink",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -74800,7 +74980,8 @@
         "rhyme:ʌŋk",
         "sound:reviewed",
         "es:shrink",
-        "en:shrink"
+        "en:shrink",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -74819,7 +75000,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:shut",
-        "en:shut"
+        "en:shut",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -74838,7 +75020,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:shut",
-        "en:shut"
+        "en:shut",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -74859,7 +75042,8 @@
         "rhyme:æŋ",
         "sound:reviewed",
         "es:sing",
-        "en:sing"
+        "en:sing",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -74880,7 +75064,8 @@
         "rhyme:ʌŋ",
         "sound:reviewed",
         "es:sing",
-        "en:sing"
+        "en:sing",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -74901,7 +75086,8 @@
         "rhyme:æŋk",
         "sound:reviewed",
         "es:sink",
-        "en:sink"
+        "en:sink",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -74922,7 +75108,8 @@
         "rhyme:ʌŋk",
         "sound:reviewed",
         "es:sink",
-        "en:sink"
+        "en:sink",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -74943,7 +75130,8 @@
         "rhyme:ʌŋk",
         "sound:reviewed",
         "es:sink",
-        "en:sink"
+        "en:sink",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -74962,7 +75150,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:sit",
-        "en:sit"
+        "en:sit",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -74981,7 +75170,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:sit",
-        "en:sit"
+        "en:sit",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -75035,7 +75225,8 @@
         "rhyme:ɛpt",
         "sound:reviewed",
         "es:sleep",
-        "en:sleep"
+        "en:sleep",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -75057,7 +75248,8 @@
         "rhyme:ɛpt",
         "sound:reviewed",
         "es:sleep",
-        "en:sleep"
+        "en:sleep",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -75079,7 +75271,8 @@
         "rhyme:ɪd",
         "sound:reviewed",
         "es:slide",
-        "en:slide"
+        "en:slide",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75101,7 +75294,8 @@
         "rhyme:ɪd",
         "sound:reviewed",
         "es:slide",
-        "en:slide"
+        "en:slide",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75222,7 +75416,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:smell",
-        "en:smell"
+        "en:smell",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75241,7 +75436,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:smell",
-        "en:smell"
+        "en:smell",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75260,7 +75456,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:smell",
-        "en:smell"
+        "en:smell",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75279,7 +75476,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:smell",
-        "en:smell"
+        "en:smell",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75333,7 +75531,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:sneak",
-        "en:sneak"
+        "en:sneak",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75352,7 +75551,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:sneak",
-        "en:sneak"
+        "en:sneak",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75371,7 +75571,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:sneak",
-        "en:sneak"
+        "en:sneak",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75390,7 +75591,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:sneak",
-        "en:sneak"
+        "en:sneak",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75408,7 +75610,8 @@
         "form:regular-variant",
         "sound:needs-review",
         "es:sow",
-        "en:sow"
+        "en:sow",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75429,7 +75632,8 @@
         "rhyme:oʊn",
         "sound:reviewed",
         "es:sow",
-        "en:sow"
+        "en:sow",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75447,7 +75651,8 @@
         "form:regular-variant",
         "sound:needs-review",
         "es:sow",
-        "en:sow"
+        "en:sow",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75510,7 +75715,8 @@
         "rhyme:ɛd",
         "sound:reviewed",
         "es:speed",
-        "en:speed"
+        "en:speed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75529,7 +75735,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:speed",
-        "en:speed"
+        "en:speed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75551,7 +75758,8 @@
         "rhyme:ɛd",
         "sound:reviewed",
         "es:speed",
-        "en:speed"
+        "en:speed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75570,7 +75778,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:speed",
-        "en:speed"
+        "en:speed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75589,7 +75798,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:spell",
-        "en:spell"
+        "en:spell",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75608,7 +75818,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:spell",
-        "en:spell"
+        "en:spell",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75627,7 +75838,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:spell",
-        "en:spell"
+        "en:spell",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75646,7 +75858,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:spell",
-        "en:spell"
+        "en:spell",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75668,7 +75881,8 @@
         "rhyme:ɛnt",
         "sound:reviewed",
         "es:spend",
-        "en:spend"
+        "en:spend",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -75690,7 +75904,8 @@
         "rhyme:ɛnt",
         "sound:reviewed",
         "es:spend",
-        "en:spend"
+        "en:spend",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -75709,7 +75924,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:spill",
-        "en:spill"
+        "en:spill",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75750,7 +75966,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:spill",
-        "en:spill"
+        "en:spill",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75791,7 +76008,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:spin",
-        "en:spin"
+        "en:spin",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75810,7 +76028,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:spin",
-        "en:spin"
+        "en:spin",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75829,7 +76048,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:spit",
-        "en:spit"
+        "en:spit",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75848,7 +76068,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:spit",
-        "en:spit"
+        "en:spit",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75867,7 +76088,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:spit",
-        "en:spit"
+        "en:spit",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75886,7 +76108,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:spit",
-        "en:spit"
+        "en:spit",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75905,7 +76128,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:split",
-        "en:split"
+        "en:split",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75924,7 +76148,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:split",
-        "en:split"
+        "en:split",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75943,7 +76168,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:spoil",
-        "en:spoil"
+        "en:spoil",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -75980,7 +76206,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:spoil",
-        "en:spoil"
+        "en:spoil",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76017,7 +76244,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:spread",
-        "en:spread"
+        "en:spread",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76036,7 +76264,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:spread",
-        "en:spread"
+        "en:spread",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76057,7 +76286,8 @@
         "rhyme:æŋ",
         "sound:reviewed",
         "es:spring",
-        "en:spring"
+        "en:spring",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76078,7 +76308,8 @@
         "rhyme:ʌŋ",
         "sound:reviewed",
         "es:spring",
-        "en:spring"
+        "en:spring",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76099,7 +76330,8 @@
         "rhyme:ʌŋ",
         "sound:reviewed",
         "es:spring",
-        "en:spring"
+        "en:spring",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76231,7 +76463,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:steal",
-        "en:steal"
+        "en:steal",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -76249,7 +76482,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:steal",
-        "en:steal"
+        "en:steal",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -76268,7 +76502,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:stick",
-        "en:stick"
+        "en:stick",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -76287,7 +76522,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:stick",
-        "en:stick"
+        "en:stick",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -76306,7 +76542,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:sting",
-        "en:sting"
+        "en:sting",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76325,7 +76562,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:sting",
-        "en:sting"
+        "en:sting",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76346,7 +76584,8 @@
         "rhyme:æŋk",
         "sound:reviewed",
         "es:stink",
-        "en:stink"
+        "en:stink",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76367,7 +76606,8 @@
         "rhyme:ʌŋk",
         "sound:reviewed",
         "es:stink",
-        "en:stink"
+        "en:stink",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76388,7 +76628,8 @@
         "rhyme:ʌŋk",
         "sound:reviewed",
         "es:stink",
-        "en:stink"
+        "en:stink",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76454,7 +76695,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:stride",
-        "en:stride"
+        "en:stride",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76475,7 +76717,8 @@
         "rhyme:ɪdən",
         "sound:reviewed",
         "es:stride",
-        "en:stride"
+        "en:stride",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76494,7 +76737,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:strike",
-        "en:strike"
+        "en:strike",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76513,7 +76757,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:strike",
-        "en:strike"
+        "en:strike",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76532,7 +76777,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:string",
-        "en:string"
+        "en:string",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76551,7 +76797,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:string",
-        "en:string"
+        "en:string",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76569,7 +76816,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:strive",
-        "en:strive"
+        "en:strive",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76587,7 +76835,8 @@
         "form:regular-variant",
         "sound:needs-review",
         "es:strive",
-        "en:strive"
+        "en:strive",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76605,7 +76854,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:strive",
-        "en:strive"
+        "en:strive",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76623,7 +76873,8 @@
         "form:regular-variant",
         "sound:needs-review",
         "es:strive",
-        "en:strive"
+        "en:strive",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76641,7 +76892,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:swear",
-        "en:swear"
+        "en:swear",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76659,7 +76911,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:swear",
-        "en:swear"
+        "en:swear",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76678,7 +76931,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:sweat",
-        "en:sweat"
+        "en:sweat",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76697,7 +76951,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:sweat",
-        "en:sweat"
+        "en:sweat",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76716,7 +76971,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:sweat",
-        "en:sweat"
+        "en:sweat",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76735,7 +76991,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:sweat",
-        "en:sweat"
+        "en:sweat",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76757,7 +77014,8 @@
         "rhyme:ɛpt",
         "sound:reviewed",
         "es:sweep",
-        "en:sweep"
+        "en:sweep",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76779,7 +77037,8 @@
         "rhyme:ɛpt",
         "sound:reviewed",
         "es:sweep",
-        "en:sweep"
+        "en:sweep",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76797,7 +77056,8 @@
         "form:regular-variant",
         "sound:needs-review",
         "es:swell",
-        "en:swell"
+        "en:swell",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76815,7 +77075,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:swell",
-        "en:swell"
+        "en:swell",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76833,7 +77094,8 @@
         "form:regular-variant",
         "sound:needs-review",
         "es:swell",
-        "en:swell"
+        "en:swell",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76851,7 +77113,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:swim",
-        "en:swim"
+        "en:swim",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -76869,7 +77132,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:swim",
-        "en:swim"
+        "en:swim",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -76888,7 +77152,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:swing",
-        "en:swing"
+        "en:swing",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76907,7 +77172,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:swing",
-        "en:swing"
+        "en:swing",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -76970,7 +77236,8 @@
         "rhyme:ɔt",
         "sound:reviewed",
         "es:teach",
-        "en:teach"
+        "en:teach",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -76992,7 +77259,8 @@
         "rhyme:ɔt",
         "sound:reviewed",
         "es:teach",
-        "en:teach"
+        "en:teach",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -77010,7 +77278,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:tear",
-        "en:tear"
+        "en:tear",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -77028,7 +77297,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:tear",
-        "en:tear"
+        "en:tear",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -77138,7 +77408,8 @@
         "form:regular-variant",
         "sound:needs-review",
         "es:thrive",
-        "en:thrive"
+        "en:thrive",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -77156,7 +77427,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:thrive",
-        "en:thrive"
+        "en:thrive",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -77174,7 +77446,8 @@
         "form:regular-variant",
         "sound:needs-review",
         "es:thrive",
-        "en:thrive"
+        "en:thrive",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -77192,7 +77465,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:thrive",
-        "en:thrive"
+        "en:thrive",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -77210,7 +77484,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:throw",
-        "en:throw"
+        "en:throw",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -77231,7 +77506,8 @@
         "rhyme:oʊn",
         "sound:reviewed",
         "es:throw",
-        "en:throw"
+        "en:throw",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -77250,7 +77526,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:thrust",
-        "en:thrust"
+        "en:thrust",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -77269,7 +77546,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:thrust",
-        "en:thrust"
+        "en:thrust",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -77287,7 +77565,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:tread",
-        "en:tread"
+        "en:tread",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -77305,7 +77584,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:tread",
-        "en:tread"
+        "en:tread",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -77323,7 +77603,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:tread",
-        "en:tread"
+        "en:tread",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -77345,7 +77626,8 @@
         "rhyme:ʊd",
         "sound:reviewed",
         "es:understand",
-        "en:understand"
+        "en:understand",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -77367,7 +77649,8 @@
         "rhyme:ʊd",
         "sound:reviewed",
         "es:understand",
-        "en:understand"
+        "en:understand",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -77385,7 +77668,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:wake",
-        "en:wake"
+        "en:wake",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -77406,7 +77690,8 @@
         "rhyme:oʊkən",
         "sound:reviewed",
         "es:wake",
-        "en:wake"
+        "en:wake",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -77462,7 +77747,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:weave",
-        "en:weave"
+        "en:weave",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -77480,7 +77766,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:weave",
-        "en:weave"
+        "en:weave",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -77499,7 +77786,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:wed",
-        "en:wed"
+        "en:wed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -77518,7 +77806,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:wed",
-        "en:wed"
+        "en:wed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -77537,7 +77826,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:wed",
-        "en:wed"
+        "en:wed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -77556,7 +77846,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:wed",
-        "en:wed"
+        "en:wed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -77575,7 +77866,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:weep",
-        "en:weep"
+        "en:weep",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -77594,7 +77886,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:weep",
-        "en:weep"
+        "en:weep",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -77613,7 +77906,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:wet",
-        "en:wet"
+        "en:wet",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -77651,7 +77945,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:wet",
-        "en:wet"
+        "en:wet",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -77689,7 +77984,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:win",
-        "en:win"
+        "en:win",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -77708,7 +78004,8 @@
         "form:past-equals-participle",
         "sound:needs-review",
         "es:win",
-        "en:win"
+        "en:win",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -77730,7 +78027,8 @@
         "rhyme:aʊnd",
         "sound:reviewed",
         "es:wind",
-        "en:wind"
+        "en:wind",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -77752,7 +78050,8 @@
         "rhyme:aʊnd",
         "sound:reviewed",
         "es:wind",
-        "en:wind"
+        "en:wind",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -77804,7 +78103,8 @@
         "form:irregular",
         "sound:needs-review",
         "es:write",
-        "en:write"
+        "en:write",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -77825,7 +78125,8 @@
         "rhyme:ən",
         "sound:reviewed",
         "es:write",
-        "en:write"
+        "en:write",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
