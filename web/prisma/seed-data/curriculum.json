@@ -14662,7 +14662,8 @@
         "grammar:quantifier",
         "es:alcanzar",
         "en:enough",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26277,7 +26278,8 @@
         "grammar:quantifier",
         "es:bastar",
         "en:all",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26513,7 +26515,8 @@
         "es:cierto",
         "en:certain",
         "topic:determiner",
-        "grammar:quantifier"
+        "grammar:quantifier",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28414,7 +28417,8 @@
         "grammar:comparison",
         "es:más",
         "en:more",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28512,7 +28516,8 @@
         "grammar:quantifier",
         "es:todos",
         "en:everyone",
-        "pos:preposition"
+        "pos:preposition",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28591,7 +28596,8 @@
         "grammar:quantifier",
         "pos:adverb",
         "es:mucho",
-        "en:lot"
+        "en:lot",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28608,7 +28614,8 @@
         "pos:determiner",
         "es:mucho",
         "en:plenty",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28754,7 +28761,8 @@
         "grammar:quantifier",
         "es:siquiera",
         "en:at",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31253,7 +31261,8 @@
         "grammar:quantifier",
         "es:dos",
         "en:both",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31266,12 +31275,12 @@
         "english": "Either book is fine."
       },
       "collections": [
-        "en:both",
         "pos:determiner",
         "grammar:quantifier",
         "es:cualquiera",
         "en:either",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31284,13 +31293,13 @@
         "english": "Neither book is available."
       },
       "collections": [
-        "en:both",
         "grammar:negative",
         "pos:determiner",
         "grammar:quantifier",
         "es:ninguno",
         "en:neither",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32443,7 +32452,8 @@
         "grammar:quantifier",
         "es:mucha",
         "en:many",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32461,7 +32471,8 @@
         "grammar:quantifier",
         "es:muchos",
         "en:many",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32481,7 +32492,8 @@
         "grammar:intensifier",
         "es:muchísimos",
         "en:great",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32797,7 +32809,8 @@
         "grammar:quantifier",
         "es:otro",
         "en:another",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -32816,7 +32829,8 @@
         "es:otro",
         "en:other",
         "topic:determiner",
-        "grammar:quantifier"
+        "grammar:quantifier",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32836,7 +32850,8 @@
         "es:los",
         "en:other",
         "topic:determiner",
-        "grammar:quantifier"
+        "grammar:quantifier",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -70310,7 +70325,8 @@
         "pos:determiner",
         "es:demasiado",
         "en:too",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -70330,7 +70346,8 @@
         "pos:determiner",
         "es:demasiados",
         "en:too",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -70375,7 +70392,8 @@
         "es:tantos",
         "en:so",
         "topic:determiner",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -70394,7 +70412,8 @@
         "grammar:uncountable",
         "es:tanto",
         "en:that",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -70413,7 +70432,8 @@
         "grammar:countable",
         "es:tantos",
         "en:that",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -70432,7 +70452,8 @@
         "grammar:uncountable",
         "es:tanto",
         "en:as",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -70451,7 +70472,8 @@
         "grammar:countable",
         "es:tantos",
         "en:as",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -70469,7 +70491,8 @@
         "pos:determiner",
         "es:mucho",
         "en:lot",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -70487,7 +70510,8 @@
         "pos:determiner",
         "es:muchos",
         "en:lot",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -70506,7 +70530,8 @@
         "es:muchos",
         "en:many",
         "topic:determiner",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -70525,7 +70550,8 @@
         "pos:determiner",
         "es:mucho",
         "en:much",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -70545,7 +70571,8 @@
         "pos:determiner",
         "es:muchos",
         "en:lots",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -70564,7 +70591,8 @@
         "pos:determiner",
         "es:más",
         "en:plenty",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -70582,7 +70610,8 @@
         "pos:determiner",
         "es:suficiente",
         "en:enough",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -70600,7 +70629,8 @@
         "pos:determiner",
         "es:suficientes",
         "en:enough",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -70619,7 +70649,8 @@
         "grammar:noun-phrase",
         "es:montón",
         "en:pile",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -70638,7 +70669,8 @@
         "pos:determiner",
         "es:poco",
         "en:little",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -70657,7 +70689,8 @@
         "pos:determiner",
         "es:unos",
         "en:few",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -70675,7 +70708,8 @@
         "pos:determiner",
         "es:menos",
         "en:less",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -70693,7 +70727,8 @@
         "pos:determiner",
         "es:menos",
         "en:fewer",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -82802,7 +82837,8 @@
         "grammar:feminine",
         "es:ambas",
         "en:both",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -82822,7 +82858,8 @@
         "es:muchos",
         "en:many",
         "topic:determiner",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -82842,7 +82879,8 @@
         "es:muchas",
         "en:many",
         "topic:determiner",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -82907,7 +82945,8 @@
         "grammar:masculine",
         "es:pocos",
         "en:few",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -82926,7 +82965,8 @@
         "grammar:feminine",
         "es:pocas",
         "en:few",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -82945,7 +82985,8 @@
         "grammar:masculine",
         "es:otros",
         "en:other",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -82964,7 +83005,8 @@
         "grammar:feminine",
         "es:otras",
         "en:other",
-        "topic:determiner"
+        "topic:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -84269,7 +84311,8 @@
         "pos:determiner",
         "topic:determiner",
         "es:todo",
-        "en:whole"
+        "en:whole",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -84289,7 +84332,8 @@
         "pos:determiner",
         "topic:determiner",
         "es:todo",
-        "en:whole"
+        "en:whole",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -84310,7 +84354,8 @@
         "topic:determiner",
         "es:todo",
         "en:all",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -84331,7 +84376,8 @@
         "topic:determiner",
         "es:todo",
         "en:all",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -84374,7 +84420,8 @@
         "topic:determiner",
         "es:alguno",
         "en:some",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -84394,7 +84441,8 @@
         "topic:determiner",
         "es:alguno",
         "en:some",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -84414,7 +84462,8 @@
         "topic:determiner",
         "es:alguno",
         "en:some",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -84434,7 +84483,8 @@
         "pos:determiner",
         "topic:determiner",
         "es:ninguno",
-        "en:no"
+        "en:no",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -84454,7 +84504,8 @@
         "pos:determiner",
         "topic:determiner",
         "es:ninguno",
-        "en:no"
+        "en:no",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -84471,7 +84522,8 @@
         "pos:determiner",
         "topic:determiner",
         "es:cualquiera",
-        "en:any"
+        "en:any",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -84490,7 +84542,8 @@
         "pos:determiner",
         "topic:determiner",
         "es:varios",
-        "en:several"
+        "en:several",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -84509,7 +84562,8 @@
         "pos:determiner",
         "topic:determiner",
         "es:varios",
-        "en:several"
+        "en:several",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -84528,7 +84582,8 @@
         "pos:determiner",
         "topic:determiner",
         "es:poco",
-        "en:little"
+        "en:little",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -84547,7 +84602,8 @@
         "pos:determiner",
         "topic:determiner",
         "es:poco",
-        "en:little"
+        "en:little",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -84565,7 +84621,8 @@
         "pos:determiner",
         "topic:determiner",
         "es:más",
-        "en:more"
+        "en:more",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -84583,7 +84640,8 @@
         "pos:determiner",
         "topic:determiner",
         "es:medio",
-        "en:half"
+        "en:half",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -84601,7 +84659,8 @@
         "pos:determiner",
         "topic:determiner",
         "es:medio",
-        "en:half"
+        "en:half",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -84618,7 +84677,8 @@
         "pos:determiner",
         "topic:determiner",
         "es:bastante",
-        "en:quite"
+        "en:quite",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -84636,7 +84696,8 @@
         "pos:determiner",
         "topic:determiner",
         "es:bastante",
-        "en:quite"
+        "en:quite",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -84653,7 +84714,8 @@
         "pos:determiner",
         "topic:determiner",
         "es:tal",
-        "en:such"
+        "en:such",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -84671,7 +84733,8 @@
         "pos:determiner",
         "topic:determiner",
         "es:tal",
-        "en:such"
+        "en:such",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -84849,7 +84912,8 @@
         "pos:determiner",
         "topic:determiner",
         "es:cada",
-        "en:every"
+        "en:every",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
