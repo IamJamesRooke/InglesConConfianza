@@ -29,3 +29,21 @@ on approval. Newest entries at the bottom. Format:
   later, following the `mi`→core/`mis`→supporting pattern already
   established for determiners.
 
+## 2026-09-05 — `grammar:demonstrative-pronoun`
+- **[flagged]** Plural demonstrative *pronouns* (standalone "these/those
+  ones," e.g. "Quiero estos, no esos.") are missing entirely — only the
+  singular pronoun forms (este/esta/ese/esa/aquel/aquella → "this
+  one"/"that one") and the neuter forms (esto/eso/aquello) exist. The
+  plural *determiner* forms (estos/estas/esos/esas/aquellos/aquellas) do
+  exist but only as `grammar:demonstrative-determiner`, not as standalone
+  pronouns. ~6 rows to add later.
+
+**Recurring pattern across 4 facets so far** (subject-pronoun, prepositional-
+pronoun, possessive-determiner, reflexive-pronoun, demonstrative-pronoun):
+a gender/number/formality variant gets tiered 1-2 steps below its exact
+structural sibling with no apparent reason (`sus`, `a ellas`/`para ellas`,
+`se`→yourselves, `aquella`→that one). This looks like leftover noise from
+whatever originally assigned per-row roles rather than a deliberate
+distinction — worth watching for in every remaining pronoun/determiner-style
+facet with gendered or formal/informal pairs.
+

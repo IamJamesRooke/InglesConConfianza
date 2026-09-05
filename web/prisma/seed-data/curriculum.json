@@ -82190,7 +82190,8 @@
         "contrast:este-vs-esto",
         "contrast:confusable",
         "grammar:demonstrative",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -82211,7 +82212,8 @@
         "es:eso",
         "en:that",
         "grammar:demonstrative",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -82232,7 +82234,8 @@
         "es:aquello",
         "en:that",
         "grammar:demonstrative",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -82389,7 +82392,8 @@
         "contrast:confusable",
         "topic:determiner",
         "topic:en-multi-sense",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -82412,7 +82416,8 @@
         "en:this",
         "topic:determiner",
         "topic:en-multi-sense",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -82435,7 +82440,8 @@
         "en:that",
         "topic:determiner",
         "topic:en-multi-sense",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -82458,7 +82464,8 @@
         "en:that",
         "topic:determiner",
         "topic:en-multi-sense",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -82480,7 +82487,8 @@
         "es:estos",
         "en:these",
         "topic:determiner",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -82502,7 +82510,8 @@
         "es:estas",
         "en:these",
         "topic:determiner",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -82524,7 +82533,8 @@
         "es:esos",
         "en:those",
         "topic:determiner",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -82546,7 +82556,8 @@
         "es:esas",
         "en:those",
         "topic:determiner",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -82567,7 +82578,8 @@
         "es:este",
         "en:this",
         "grammar:demonstrative",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -82588,7 +82600,8 @@
         "es:esta",
         "en:this",
         "grammar:demonstrative",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -82609,7 +82622,8 @@
         "es:ese",
         "en:that",
         "grammar:demonstrative",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -82630,7 +82644,8 @@
         "es:esa",
         "en:that",
         "grammar:demonstrative",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -82651,7 +82666,8 @@
         "es:aquel",
         "en:that",
         "grammar:demonstrative",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -82672,9 +82688,10 @@
         "es:aquella",
         "en:that",
         "grammar:demonstrative",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "i7rkruke55",
@@ -83275,7 +83292,8 @@
         "es:aquellos",
         "en:those",
         "topic:determiner",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -83297,7 +83315,8 @@
         "es:aquellas",
         "en:those",
         "topic:determiner",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -83922,7 +83941,8 @@
         "topic:pronoun",
         "topic:determiner",
         "topic:en-multi-sense",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -83945,7 +83965,8 @@
         "topic:pronoun",
         "topic:determiner",
         "topic:en-multi-sense",
-        "pos:determiner"
+        "pos:determiner",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },

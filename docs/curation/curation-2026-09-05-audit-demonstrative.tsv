@@ -1,0 +1,21 @@
+0tty2mfina	este	this	core	audit:reviewed	Audit: fine as-is.	Este libro es importante.	This book is important.
+7hfg12h8br	esta	this	core	audit:reviewed	Audit: fine as-is.	Esta casa es grande.	This house is big.
+dt2cwfu58n	ese	that	core	audit:reviewed	Audit: fine as-is.	Ese libro es importante.	That book is important.
+19ebbd6l4z	esa	that	core	audit:reviewed	Audit: fine as-is.	Esa casa es grande.	That house is big.
+b1tz89cfx9	estos	these	core	audit:reviewed	Audit: fine as-is.	Estos zapatos me quedan bien.	These shoes fit me.
+y4l2k7yytm	estas	these	core	audit:reviewed	Audit: fine as-is.	Estas sillas son cómodas.	These chairs are comfortable.
+ovsfppuo3l	esos	those	core	audit:reviewed	Audit: fine as-is.	Esos zapatos son caros.	Those shoes are expensive.
+1t1daklv4a	esas	those	core	audit:reviewed	Audit: fine as-is.	Esas sillas están rotas.	Those chairs are broken.
+bu8oynmlvn	aquellos	those	reference	audit:reviewed	Audit: fine as-is — consistently lower-tiered with the rest of the "far distal" series.	Aquellos días fueron felices.	Those days were happy.
+xs6r1zkgev	aquellas	those	reference	audit:reviewed	Audit: fine as-is.	Aquellas casas ya no existen.	Those houses no longer exist.
+a3h0h1dazt	aquel	that	reference	audit:reviewed	Audit: fine as-is.	Aquel edificio es antiguo.	That building is old.
+19gmw1bjnf	aquella	that	reference	audit:reviewed	Audit: fine as-is.	Aquella montaña se ve desde aquí.	That mountain can be seen from here.
+6cnielk682	esto	this	core	audit:reviewed	Audit: fine as-is.	Esto es difícil.	This is hard.
+tvm9cf1n1l	eso	that	core	audit:reviewed	Audit: fine as-is.	Eso no importa.	That doesn't matter.
+4w9jfbdl93	aquello	that	reference	audit:reviewed	Audit: fine as-is.	Aquello fue hace mucho tiempo.	That was a long time ago.
+7o2aypebuj	este	this one	supporting	audit:reviewed	Audit: fine as-is.	Quiero este, no ese.	I want this one, not that one.
+lufi47fm96	esta	this one	supporting	audit:reviewed	Audit: fine as-is.	Prefiero esta.	I prefer this one.
+ytar943kdr	ese	that one	supporting	audit:reviewed	Audit: fine as-is.	Ese es más barato.	That one is cheaper.
+a145a3y0wu	esa	that one	supporting	audit:reviewed	Audit: fine as-is.	Esa cuesta menos.	That one costs less.
+u7kefn0q1x	aquel	that one	supporting	audit:reviewed	Audit: fine as-is.	Prefiero aquel, no este.	I prefer that one, not this one.
+apj21ii1kp	aquella	that one	supporting	audit:reviewed	Audit role fix: was reference, inconsistent with its exact masculine parallel "aquel"→that one (supporting) — same spurious gender-variant demotion pattern found repeatedly this session.	Prefiero aquella, no esta.	I prefer that one, not this one.
