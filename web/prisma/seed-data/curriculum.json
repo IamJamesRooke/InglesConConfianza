@@ -2258,7 +2258,9 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-communication-saying"
+        "topic:verb-communication-saying",
+        "topic:cognate-latin-root-3",
+        "topic:cognate-opaque-2"
       ],
       "curriculumRole": "core"
     },
@@ -2772,7 +2774,9 @@
         "topic:cognate",
         "topic:multi-sense",
         "audit:reviewed",
-        "topic:verb-communication-saying"
+        "topic:verb-communication-saying",
+        "topic:cognate-transparent-5",
+        "topic:cognate-latin-root-3"
       ],
       "curriculumRole": "reference"
     },
@@ -2797,7 +2801,9 @@
         "topic:cognate",
         "topic:multi-sense",
         "audit:reviewed",
-        "topic:verb-communication-saying"
+        "topic:verb-communication-saying",
+        "topic:cognate-transparent-14",
+        "topic:cognate-latin-root-8"
       ],
       "curriculumRole": "reference"
     },
@@ -2822,7 +2828,9 @@
         "topic:multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-communication-saying"
+        "topic:verb-communication-saying",
+        "topic:cognate-latin-root-1",
+        "topic:cognate-opaque-1"
       ],
       "curriculumRole": "reference"
     },
@@ -2847,7 +2855,9 @@
         "topic:multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-communication-saying"
+        "topic:verb-communication-saying",
+        "topic:cognate-latin-root-7",
+        "topic:cognate-opaque-3"
       ],
       "curriculumRole": "reference"
     },
@@ -4551,7 +4561,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:fem-abstract-suffix-2"
+        "topic:fem-abstract-suffix-2",
+        "topic:cognate-opaque-3"
       ],
       "curriculumRole": "reference"
     },
@@ -4575,7 +4586,9 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-poner-placement"
+        "topic:verb-poner-placement",
+        "topic:cognate-latin-root-8",
+        "topic:cognate-opaque-3"
       ],
       "curriculumRole": "core"
     },
@@ -17867,7 +17880,8 @@
         "topic:money-business",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:masc-o-2"
+        "topic:masc-o-2",
+        "topic:cognate-opaque-1"
       ],
       "curriculumRole": "reference"
     },
@@ -23171,7 +23185,9 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-possession-having"
+        "topic:verb-possession-having",
+        "topic:cognate-latin-root-11",
+        "topic:cognate-opaque-4"
       ],
       "curriculumRole": "core"
     },
@@ -24501,7 +24517,9 @@
         "topic:cognate",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-bringing"
+        "topic:verb-bringing",
+        "topic:cognate-latin-root-11",
+        "topic:cognate-opaque-4"
       ],
       "curriculumRole": "core"
     },
@@ -36332,7 +36350,8 @@
         "topic:people",
         "audit:reviewed",
         "topic:masc-consonant-1",
-        "topic:people-professions"
+        "topic:people-professions",
+        "topic:cognate-transparent-1"
       ],
       "curriculumRole": "reference"
     },
@@ -36355,7 +36374,8 @@
         "gender:masculine",
         "topic:business-work",
         "audit:reviewed",
-        "topic:masc-consonant-2"
+        "topic:masc-consonant-2",
+        "topic:cognate-transparent-11"
       ],
       "curriculumRole": "reference"
     },
@@ -36378,7 +36398,8 @@
         "gender:masculine",
         "topic:business-work",
         "audit:reviewed",
-        "topic:masc-consonant-1"
+        "topic:masc-consonant-1",
+        "topic:cognate-transparent-6"
       ],
       "curriculumRole": "reference"
     },
@@ -36401,7 +36422,8 @@
         "gender:masculine",
         "topic:health",
         "audit:reviewed",
-        "topic:masc-consonant-1"
+        "topic:masc-consonant-1",
+        "topic:cognate-transparent-7"
       ],
       "curriculumRole": "reference"
     },
@@ -36424,7 +36446,8 @@
         "gender:masculine",
         "topic:business-work",
         "audit:reviewed",
-        "topic:masc-consonant-3"
+        "topic:masc-consonant-3",
+        "topic:cognate-transparent-15"
       ],
       "curriculumRole": "reference"
     },
@@ -36448,7 +36471,8 @@
         "topic:people",
         "audit:reviewed",
         "topic:masc-consonant-1",
-        "topic:people-professions"
+        "topic:people-professions",
+        "topic:cognate-transparent-4"
       ],
       "curriculumRole": "reference"
     },
@@ -36472,7 +36496,8 @@
         "topic:abstract-quality",
         "audit:reviewed",
         "topic:masc-consonant-2",
-        "topic:abstract-general-4"
+        "topic:abstract-general-4",
+        "topic:cognate-transparent-9"
       ],
       "curriculumRole": "reference"
     },
@@ -36495,7 +36520,8 @@
         "topic:abstract-quality",
         "audit:reviewed",
         "topic:masc-consonant-1",
-        "topic:abstract-general-2"
+        "topic:abstract-general-2",
+        "topic:cognate-transparent-3"
       ],
       "curriculumRole": "reference"
     },
@@ -36518,7 +36544,8 @@
         "topic:abstract-quality",
         "audit:reviewed",
         "topic:masc-consonant-2",
-        "topic:abstract-general-4"
+        "topic:abstract-general-4",
+        "topic:cognate-transparent-9"
       ],
       "curriculumRole": "reference"
     },
@@ -36541,7 +36568,8 @@
         "topic:abstract-quality",
         "audit:reviewed",
         "topic:masc-consonant-2",
-        "topic:abstract-general-4"
+        "topic:abstract-general-4",
+        "topic:cognate-transparent-10"
       ],
       "curriculumRole": "reference"
     },
@@ -36564,7 +36592,8 @@
         "topic:abstract-quality",
         "audit:reviewed",
         "topic:masc-consonant-1",
-        "topic:abstract-general-3"
+        "topic:abstract-general-3",
+        "topic:cognate-transparent-8"
       ],
       "curriculumRole": "reference"
     },
@@ -36586,7 +36615,8 @@
         "gender:masculine",
         "topic:technology",
         "audit:reviewed",
-        "topic:masc-consonant-3"
+        "topic:masc-consonant-3",
+        "topic:cognate-transparent-12"
       ],
       "curriculumRole": "reference"
     },
@@ -36606,7 +36636,8 @@
         "es:aceptar",
         "en:accept",
         "audit:reviewed",
-        "topic:verb-formal-remainder-1"
+        "topic:verb-formal-remainder-1",
+        "topic:cognate-transparent-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -36626,7 +36657,8 @@
         "es:adoptar",
         "en:adopt",
         "audit:reviewed",
-        "topic:verb-formal-remainder-1"
+        "topic:verb-formal-remainder-1",
+        "topic:cognate-transparent-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -36646,7 +36678,8 @@
         "es:adaptar",
         "en:adapt",
         "audit:reviewed",
-        "topic:verb-formal-remainder-1"
+        "topic:verb-formal-remainder-1",
+        "topic:cognate-transparent-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -36666,7 +36699,8 @@
         "es:encriptar",
         "en:encrypt",
         "audit:reviewed",
-        "topic:verb-technology-digital"
+        "topic:verb-technology-digital",
+        "topic:cognate-transparent-7"
       ],
       "curriculumRole": "reference"
     },
@@ -36686,7 +36720,8 @@
         "es:interceptar",
         "en:intercept",
         "audit:reviewed",
-        "topic:verb-formal-remainder-8"
+        "topic:verb-formal-remainder-8",
+        "topic:cognate-transparent-11"
       ],
       "curriculumRole": "reference"
     },
@@ -36706,7 +36741,8 @@
         "es:cancelar",
         "en:cancel",
         "audit:reviewed",
-        "topic:verb-formal-remainder-3"
+        "topic:verb-formal-remainder-3",
+        "topic:cognate-transparent-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -36727,7 +36763,8 @@
         "en:cost",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-money-earning-spending"
+        "topic:verb-money-earning-spending",
+        "topic:cognate-transparent-5"
       ],
       "curriculumRole": "supporting"
     },
@@ -36747,7 +36784,8 @@
         "es:controlar",
         "en:control",
         "audit:reviewed",
-        "topic:verb-formal-remainder-4"
+        "topic:verb-formal-remainder-4",
+        "topic:cognate-transparent-5"
       ],
       "curriculumRole": "supporting"
     },
@@ -36767,7 +36805,8 @@
         "es:considerar",
         "en:consider",
         "audit:reviewed",
-        "topic:verb-deciding-considering"
+        "topic:verb-deciding-considering",
+        "topic:cognate-transparent-4"
       ],
       "curriculumRole": "supporting"
     },
@@ -36787,7 +36826,8 @@
         "es:confirmar",
         "en:confirm",
         "audit:reviewed",
-        "topic:verb-formal-remainder-4"
+        "topic:verb-formal-remainder-4",
+        "topic:cognate-transparent-4"
       ],
       "curriculumRole": "supporting"
     },
@@ -36807,7 +36847,8 @@
         "es:formar",
         "en:form",
         "audit:reviewed",
-        "topic:verb-creation-repair-other"
+        "topic:verb-creation-repair-other",
+        "topic:cognate-transparent-9"
       ],
       "curriculumRole": "supporting"
     },
@@ -36827,7 +36868,8 @@
         "es:informar",
         "en:inform",
         "audit:reviewed",
-        "topic:verb-communication-formal"
+        "topic:verb-communication-formal",
+        "topic:cognate-transparent-11"
       ],
       "curriculumRole": "supporting"
     },
@@ -36847,7 +36889,8 @@
         "es:transformar",
         "en:transform",
         "audit:reviewed",
-        "topic:verb-creation-repair-other"
+        "topic:verb-creation-repair-other",
+        "topic:cognate-transparent-18"
       ],
       "curriculumRole": "supporting"
     },
@@ -36867,7 +36910,8 @@
         "es:reformar",
         "en:reform",
         "audit:reviewed",
-        "topic:verb-formal-remainder-12"
+        "topic:verb-formal-remainder-12",
+        "topic:cognate-transparent-16"
       ],
       "curriculumRole": "reference"
     },
@@ -36887,7 +36931,8 @@
         "es:afirmar",
         "en:affirm",
         "audit:reviewed",
-        "topic:verb-formal-remainder-2"
+        "topic:verb-formal-remainder-2",
+        "topic:cognate-transparent-1"
       ],
       "curriculumRole": "reference"
     },
@@ -36907,7 +36952,8 @@
         "es:alarmar",
         "en:alarm",
         "audit:reviewed",
-        "topic:verb-household-1"
+        "topic:verb-household-1",
+        "topic:cognate-transparent-1"
       ],
       "curriculumRole": "reference"
     },
@@ -36927,7 +36973,8 @@
         "es:armar",
         "en:arm",
         "audit:reviewed",
-        "topic:verb-formal-remainder-2"
+        "topic:verb-formal-remainder-2",
+        "topic:cognate-transparent-2"
       ],
       "curriculumRole": "reference"
     },
@@ -36947,7 +36994,8 @@
         "es:desarmar",
         "en:disarm",
         "audit:reviewed",
-        "topic:verb-creation-repair-other"
+        "topic:verb-creation-repair-other",
+        "topic:cognate-transparent-6"
       ],
       "curriculumRole": "reference"
     },
@@ -36967,7 +37015,8 @@
         "es:existir",
         "en:exist",
         "audit:reviewed",
-        "topic:verb-wishes-2"
+        "topic:verb-wishes-2",
+        "topic:cognate-transparent-8"
       ],
       "curriculumRole": "supporting"
     },
@@ -36987,7 +37036,8 @@
         "es:persistir",
         "en:persist",
         "audit:reviewed",
-        "topic:verb-wishes-2"
+        "topic:verb-wishes-2",
+        "topic:cognate-transparent-14"
       ],
       "curriculumRole": "reference"
     },
@@ -37007,7 +37057,8 @@
         "es:resistir",
         "en:resist",
         "audit:reviewed",
-        "topic:verb-conflict-crime"
+        "topic:verb-conflict-crime",
+        "topic:cognate-transparent-16"
       ],
       "curriculumRole": "supporting"
     },
@@ -37027,7 +37078,8 @@
         "es:insistir",
         "en:insist",
         "audit:reviewed",
-        "topic:verb-formal-remainder-8"
+        "topic:verb-formal-remainder-8",
+        "topic:cognate-transparent-11"
       ],
       "curriculumRole": "supporting"
     },
@@ -37050,7 +37102,8 @@
         "particle:of",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder-4"
+        "topic:verb-formal-remainder-4",
+        "topic:cognate-transparent-4"
       ],
       "curriculumRole": "supporting"
     },
@@ -37073,7 +37126,8 @@
         "particle:from",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder-5"
+        "topic:verb-formal-remainder-5",
+        "topic:cognate-transparent-6"
       ],
       "curriculumRole": "reference"
     },
@@ -37093,7 +37147,8 @@
         "es:coexistir",
         "en:coexist",
         "audit:reviewed",
-        "topic:verb-wishes-1"
+        "topic:verb-wishes-1",
+        "topic:cognate-transparent-3"
       ],
       "curriculumRole": "reference"
     },
@@ -37113,7 +37168,8 @@
         "es:funcionar",
         "en:function",
         "audit:reviewed",
-        "topic:verb-formal-remainder-7"
+        "topic:verb-formal-remainder-7",
+        "topic:cognate-transparent-9"
       ],
       "curriculumRole": "supporting"
     },
@@ -37133,7 +37189,8 @@
         "es:mencionar",
         "en:mention",
         "audit:reviewed",
-        "topic:verb-communication-formal"
+        "topic:verb-communication-formal",
+        "topic:cognate-transparent-12"
       ],
       "curriculumRole": "supporting"
     },
@@ -37153,7 +37210,8 @@
         "es:cuestionar",
         "en:question",
         "audit:reviewed",
-        "topic:verb-deciding-considering"
+        "topic:verb-deciding-considering",
+        "topic:cognate-transparent-5"
       ],
       "curriculumRole": "reference"
     },
@@ -37173,7 +37231,8 @@
         "es:posicionar",
         "en:position",
         "audit:reviewed",
-        "topic:verb-work-employment"
+        "topic:verb-work-employment",
+        "topic:cognate-transparent-14"
       ],
       "curriculumRole": "reference"
     },
@@ -37193,7 +37252,8 @@
         "es:condicionar",
         "en:condition",
         "audit:reviewed",
-        "topic:verb-formal-remainder-3"
+        "topic:verb-formal-remainder-3",
+        "topic:cognate-transparent-4"
       ],
       "curriculumRole": "reference"
     },
@@ -37215,7 +37275,9 @@
         "cognate:mitir-to-mit",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-admin-legal-formal"
+        "topic:verb-admin-legal-formal",
+        "topic:cognate-transparent-14",
+        "topic:cognate-latin-root-8"
       ],
       "curriculumRole": "supporting"
     },
@@ -37237,7 +37299,9 @@
         "cognate:mitir-to-mit",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-communication-formal"
+        "topic:verb-communication-formal",
+        "topic:cognate-transparent-1",
+        "topic:cognate-latin-root-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -37259,7 +37323,9 @@
         "cognate:mitir-to-mit",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-10"
+        "topic:verb-formal-remainder-10",
+        "topic:cognate-transparent-13",
+        "topic:cognate-latin-root-8"
       ],
       "curriculumRole": "reference"
     },
@@ -37281,7 +37347,9 @@
         "cognate:mitir-to-mit",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-communication-formal"
+        "topic:verb-communication-formal",
+        "topic:cognate-transparent-18",
+        "topic:cognate-latin-root-11"
       ],
       "curriculumRole": "reference"
     },
@@ -37303,7 +37371,9 @@
         "cognate:mitir-to-mit",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-2"
+        "topic:verb-formal-abstract-2",
+        "topic:cognate-transparent-3",
+        "topic:cognate-latin-root-2"
       ],
       "curriculumRole": "reference"
     },
@@ -37325,7 +37395,9 @@
         "cognate:mitir-to-mit",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-6"
+        "topic:verb-formal-remainder-6",
+        "topic:cognate-transparent-7",
+        "topic:cognate-latin-root-4"
       ],
       "curriculumRole": "reference"
     },
@@ -37347,7 +37419,9 @@
         "cognate:mitir-to-mit",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-12"
+        "topic:verb-formal-remainder-12",
+        "topic:cognate-transparent-16",
+        "topic:cognate-latin-root-9"
       ],
       "curriculumRole": "reference"
     },
@@ -37369,7 +37443,9 @@
         "cognate:mitir-to-mit",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-admin-legal-formal"
+        "topic:verb-admin-legal-formal",
+        "topic:cognate-transparent-17",
+        "topic:cognate-latin-root-10"
       ],
       "curriculumRole": "reference"
     },
@@ -37391,7 +37467,9 @@
         "cognate:ferir-to-fer",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-11"
+        "topic:verb-formal-remainder-11",
+        "topic:cognate-transparent-14",
+        "topic:cognate-latin-root-8"
       ],
       "curriculumRole": "supporting"
     },
@@ -37416,7 +37494,9 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder-12"
+        "topic:verb-formal-remainder-12",
+        "topic:cognate-transparent-16",
+        "topic:cognate-latin-root-9"
       ],
       "curriculumRole": "supporting"
     },
@@ -37438,7 +37518,9 @@
         "cognate:ferir-to-fer",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-communication-formal"
+        "topic:verb-communication-formal",
+        "topic:cognate-transparent-18",
+        "topic:cognate-latin-root-11"
       ],
       "curriculumRole": "reference"
     },
@@ -37460,7 +37542,9 @@
         "cognate:ferir-to-fer",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1"
+        "topic:verb-formal-abstract-1",
+        "topic:cognate-transparent-6",
+        "topic:cognate-latin-root-4"
       ],
       "curriculumRole": "reference"
     },
@@ -37482,7 +37566,9 @@
         "cognate:ferir-to-fer",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-health-body"
+        "topic:verb-health-body",
+        "topic:cognate-transparent-17",
+        "topic:cognate-latin-root-10"
       ],
       "curriculumRole": "supporting"
     },
@@ -37504,7 +37590,9 @@
         "cognate:ferir-to-fer",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-offering"
+        "topic:verb-offering",
+        "topic:cognate-transparent-13",
+        "topic:cognate-latin-root-8"
       ],
       "curriculumRole": "supporting"
     },
@@ -37526,7 +37614,9 @@
         "cognate:ferir-to-fer",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-4"
+        "topic:verb-formal-remainder-4",
+        "topic:cognate-transparent-4",
+        "topic:cognate-latin-root-2"
       ],
       "curriculumRole": "reference"
     },
@@ -37548,7 +37638,9 @@
         "cognate:ferir-to-fer",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-deciding-considering"
+        "topic:verb-deciding-considering",
+        "topic:cognate-transparent-11",
+        "topic:cognate-latin-root-6"
       ],
       "curriculumRole": "reference"
     },
@@ -37568,7 +37660,8 @@
         "es:presentar",
         "en:present",
         "audit:reviewed",
-        "topic:verb-formal-remainder-11"
+        "topic:verb-formal-remainder-11",
+        "topic:cognate-transparent-14"
       ],
       "curriculumRole": "supporting"
     },
@@ -37588,7 +37681,8 @@
         "es:representar",
         "en:represent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-12"
+        "topic:verb-formal-remainder-12",
+        "topic:cognate-transparent-16"
       ],
       "curriculumRole": "supporting"
     },
@@ -37608,7 +37702,8 @@
         "es:inventar",
         "en:invent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-8"
+        "topic:verb-formal-remainder-8",
+        "topic:cognate-transparent-11"
       ],
       "curriculumRole": "supporting"
     },
@@ -37628,7 +37723,8 @@
         "es:comentar",
         "en:comment",
         "audit:reviewed",
-        "topic:verb-communication-formal"
+        "topic:verb-communication-formal",
+        "topic:cognate-transparent-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -37648,7 +37744,8 @@
         "es:experimentar",
         "en:experiment",
         "audit:reviewed",
-        "topic:verb-formal-remainder-7"
+        "topic:verb-formal-remainder-7",
+        "topic:cognate-transparent-8"
       ],
       "curriculumRole": "reference"
     },
@@ -37668,7 +37765,8 @@
         "es:complementar",
         "en:complement",
         "audit:reviewed",
-        "topic:verb-formal-abstract-2"
+        "topic:verb-formal-abstract-2",
+        "topic:cognate-transparent-4"
       ],
       "curriculumRole": "reference"
     },
@@ -37688,7 +37786,8 @@
         "es:implementar",
         "en:implement",
         "audit:reviewed",
-        "topic:verb-formal-business"
+        "topic:verb-formal-business",
+        "topic:cognate-transparent-10"
       ],
       "curriculumRole": "reference"
     },
@@ -37708,7 +37807,8 @@
         "es:orientar",
         "en:orient",
         "audit:reviewed",
-        "topic:verb-formal-remainder-10"
+        "topic:verb-formal-remainder-10",
+        "topic:cognate-transparent-13"
       ],
       "curriculumRole": "reference"
     },
@@ -37728,7 +37828,8 @@
         "es:recomendar",
         "en:recommend",
         "audit:reviewed",
-        "topic:verb-formal-remainder-12"
+        "topic:verb-formal-remainder-12",
+        "topic:cognate-transparent-15"
       ],
       "curriculumRole": "supporting"
     },
@@ -37748,7 +37849,8 @@
         "es:depender",
         "en:depend",
         "audit:reviewed",
-        "topic:verb-formal-remainder-5"
+        "topic:verb-formal-remainder-5",
+        "topic:cognate-transparent-6"
       ],
       "curriculumRole": "supporting"
     },
@@ -37768,7 +37870,8 @@
         "es:extender",
         "en:extend",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1"
+        "topic:verb-formal-abstract-1",
+        "topic:cognate-transparent-9"
       ],
       "curriculumRole": "reference"
     },
@@ -37788,7 +37891,8 @@
         "es:suspender",
         "en:suspend",
         "audit:reviewed",
-        "topic:verb-formal-remainder-14"
+        "topic:verb-formal-remainder-14",
+        "topic:cognate-transparent-17"
       ],
       "curriculumRole": "reference"
     },
@@ -37808,7 +37912,8 @@
         "es:ofender",
         "en:offend",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1"
+        "topic:verb-formal-abstract-1",
+        "topic:cognate-transparent-13"
       ],
       "curriculumRole": "reference"
     },
@@ -37828,7 +37933,8 @@
         "es:defender",
         "en:defend",
         "audit:reviewed",
-        "topic:verb-conflict-crime"
+        "topic:verb-conflict-crime",
+        "topic:cognate-transparent-5"
       ],
       "curriculumRole": "supporting"
     },
@@ -37848,7 +37954,8 @@
         "es:ascender",
         "en:ascend",
         "audit:reviewed",
-        "topic:verb-formal-remainder-2"
+        "topic:verb-formal-remainder-2",
+        "topic:cognate-transparent-2"
       ],
       "curriculumRole": "reference"
     },
@@ -37868,7 +37975,8 @@
         "es:descender",
         "en:descend",
         "audit:reviewed",
-        "topic:verb-formal-remainder-5"
+        "topic:verb-formal-remainder-5",
+        "topic:cognate-transparent-6"
       ],
       "curriculumRole": "reference"
     },
@@ -37888,7 +37996,8 @@
         "es:trascender",
         "en:transcend",
         "audit:reviewed",
-        "topic:verb-formal-remainder-14"
+        "topic:verb-formal-remainder-14",
+        "topic:cognate-transparent-18"
       ],
       "curriculumRole": "reference"
     },
@@ -37908,7 +38017,8 @@
         "es:reportar",
         "en:report",
         "audit:reviewed",
-        "topic:verb-communication-formal"
+        "topic:verb-communication-formal",
+        "topic:cognate-transparent-16"
       ],
       "curriculumRole": "supporting"
     },
@@ -37928,7 +38038,8 @@
         "es:transportar",
         "en:transport",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs"
+        "topic:verb-movement-directional-verbs",
+        "topic:cognate-transparent-18"
       ],
       "curriculumRole": "reference"
     },
@@ -37948,7 +38059,8 @@
         "es:importar",
         "en:import",
         "audit:reviewed",
-        "topic:verb-feelings-dislike-worry"
+        "topic:verb-feelings-dislike-worry",
+        "topic:cognate-transparent-10"
       ],
       "curriculumRole": "reference"
     },
@@ -37968,7 +38080,8 @@
         "es:exportar",
         "en:export",
         "audit:reviewed",
-        "topic:verb-formal-business"
+        "topic:verb-formal-business",
+        "topic:cognate-transparent-8"
       ],
       "curriculumRole": "reference"
     },
@@ -37988,7 +38101,8 @@
         "es:deportar",
         "en:deport",
         "audit:reviewed",
-        "topic:verb-formal-remainder-5"
+        "topic:verb-formal-remainder-5",
+        "topic:cognate-transparent-6"
       ],
       "curriculumRole": "reference"
     },
@@ -38008,7 +38122,8 @@
         "es:responder",
         "en:respond",
         "audit:reviewed",
-        "topic:verb-formal-remainder-13"
+        "topic:verb-formal-remainder-13",
+        "topic:cognate-transparent-16"
       ],
       "curriculumRole": "supporting"
     },
@@ -38028,7 +38143,8 @@
         "es:corresponder",
         "en:correspond",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1"
+        "topic:verb-formal-abstract-1",
+        "topic:cognate-transparent-5"
       ],
       "curriculumRole": "reference"
     },
@@ -38048,7 +38164,8 @@
         "es:visitar",
         "en:visit",
         "audit:reviewed",
-        "topic:verb-social-relationships"
+        "topic:verb-social-relationships",
+        "topic:cognate-transparent-19"
       ],
       "curriculumRole": "supporting"
     },
@@ -38068,7 +38185,8 @@
         "es:limitar",
         "en:limit",
         "audit:reviewed",
-        "topic:verb-formal-remainder-9"
+        "topic:verb-formal-remainder-9",
+        "topic:cognate-transparent-12"
       ],
       "curriculumRole": "supporting"
     },
@@ -38088,7 +38206,8 @@
         "es:acreditar",
         "en:credit",
         "audit:reviewed",
-        "topic:verb-formal-remainder-1"
+        "topic:verb-formal-remainder-1",
+        "topic:cognate-transparent-1"
       ],
       "curriculumRole": "reference"
     },
@@ -38108,7 +38227,8 @@
         "es:depositar",
         "en:deposit",
         "audit:reviewed",
-        "topic:verb-formal-business"
+        "topic:verb-formal-business",
+        "topic:cognate-transparent-6"
       ],
       "curriculumRole": "reference"
     },
@@ -38128,7 +38248,8 @@
         "es:editar",
         "en:edit",
         "audit:reviewed",
-        "topic:verb-formal-remainder-6"
+        "topic:verb-formal-remainder-6",
+        "topic:cognate-transparent-7"
       ],
       "curriculumRole": "supporting"
     },
@@ -38148,7 +38269,8 @@
         "es:auditar",
         "en:audit",
         "audit:reviewed",
-        "topic:verb-formal-remainder-2"
+        "topic:verb-formal-remainder-2",
+        "topic:cognate-transparent-2"
       ],
       "curriculumRole": "reference"
     },
@@ -38168,7 +38290,8 @@
         "es:vomitar",
         "en:vomit",
         "audit:reviewed",
-        "topic:verb-health-body"
+        "topic:verb-health-body",
+        "topic:cognate-transparent-19"
       ],
       "curriculumRole": "reference"
     },
@@ -38502,7 +38625,8 @@
         "topic:abstract-quality",
         "audit:reviewed",
         "topic:fem-consonant-2",
-        "topic:abstract-general-5"
+        "topic:abstract-general-5",
+        "topic:cognate-transparent-13"
       ],
       "curriculumRole": "reference"
     },
@@ -39311,7 +39435,8 @@
         "gender:masculine",
         "topic:business-work",
         "audit:reviewed",
-        "topic:masc-o-2"
+        "topic:masc-o-2",
+        "topic:cognate-transparent-5"
       ],
       "curriculumRole": "reference"
     },
@@ -39456,7 +39581,8 @@
         "topic:places",
         "audit:reviewed",
         "topic:masc-o-3",
-        "topic:places-public-city"
+        "topic:places-public-city",
+        "topic:cognate-transparent-7"
       ],
       "curriculumRole": "reference"
     },
@@ -39997,7 +40123,8 @@
         "topic:abstract-quality",
         "audit:reviewed",
         "topic:fem-a-2",
-        "topic:abstract-general-2"
+        "topic:abstract-general-2",
+        "topic:cognate-transparent-4"
       ],
       "curriculumRole": "reference"
     },
@@ -40164,7 +40291,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-a-3",
-        "topic:abstract-encia-ancia-1"
+        "topic:abstract-encia-ancia-1",
+        "topic:cognate-transparent-6",
+        "topic:cognate-encia-ancia-1"
       ],
       "curriculumRole": "reference"
     },
@@ -40189,7 +40318,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-a-4",
-        "topic:abstract-encia-ancia-1"
+        "topic:abstract-encia-ancia-1",
+        "topic:cognate-transparent-8",
+        "topic:cognate-encia-ancia-1"
       ],
       "curriculumRole": "reference"
     },
@@ -40214,7 +40345,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-a-5",
-        "topic:abstract-encia-ancia-2"
+        "topic:abstract-encia-ancia-2",
+        "topic:cognate-transparent-11",
+        "topic:cognate-encia-ancia-2"
       ],
       "curriculumRole": "reference"
     },
@@ -40239,7 +40372,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-a-6",
-        "topic:abstract-encia-ancia-2"
+        "topic:abstract-encia-ancia-2",
+        "topic:cognate-transparent-13",
+        "topic:cognate-encia-ancia-2"
       ],
       "curriculumRole": "reference"
     },
@@ -40263,7 +40398,9 @@
         "cognate:encia-ancia-to-ence-ance",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:fem-a-2"
+        "topic:fem-a-2",
+        "topic:cognate-transparent-3",
+        "topic:cognate-encia-ancia-1"
       ],
       "curriculumRole": "reference"
     },
@@ -40288,7 +40425,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-a-4",
-        "topic:abstract-encia-ancia-1"
+        "topic:abstract-encia-ancia-1",
+        "topic:cognate-transparent-8",
+        "topic:cognate-encia-ancia-1"
       ],
       "curriculumRole": "reference"
     },
@@ -40313,7 +40452,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-a-1",
-        "topic:abstract-encia-ancia-1"
+        "topic:abstract-encia-ancia-1",
+        "topic:cognate-transparent-2",
+        "topic:cognate-encia-ancia-1"
       ],
       "curriculumRole": "reference"
     },
@@ -40338,7 +40479,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-a-6",
-        "topic:abstract-encia-ancia-2"
+        "topic:abstract-encia-ancia-2",
+        "topic:cognate-transparent-14",
+        "topic:cognate-encia-ancia-2"
       ],
       "curriculumRole": "reference"
     },
@@ -40363,7 +40506,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-a-5",
-        "topic:abstract-encia-ancia-1"
+        "topic:abstract-encia-ancia-1",
+        "topic:cognate-transparent-11",
+        "topic:cognate-encia-ancia-2"
       ],
       "curriculumRole": "reference"
     },
@@ -40388,7 +40533,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-a-2",
-        "topic:abstract-encia-ancia-1"
+        "topic:abstract-encia-ancia-1",
+        "topic:cognate-transparent-4",
+        "topic:cognate-encia-ancia-1"
       ],
       "curriculumRole": "reference"
     },
@@ -40413,7 +40560,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-a-4",
-        "topic:abstract-encia-ancia-1"
+        "topic:abstract-encia-ancia-1",
+        "topic:cognate-transparent-8",
+        "topic:cognate-encia-ancia-1"
       ],
       "curriculumRole": "reference"
     },
@@ -40438,7 +40587,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-a-6",
-        "topic:abstract-encia-ancia-2"
+        "topic:abstract-encia-ancia-2",
+        "topic:cognate-transparent-14",
+        "topic:cognate-encia-ancia-2"
       ],
       "curriculumRole": "reference"
     },
@@ -40584,7 +40735,8 @@
         "gender:common",
         "topic:education",
         "audit:reviewed",
-        "topic:common-gender-professions"
+        "topic:common-gender-professions",
+        "topic:cognate-transparent-8"
       ],
       "curriculumRole": "supporting"
     },
@@ -40897,7 +41049,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-a-3",
-        "topic:abstract-general-3"
+        "topic:abstract-general-3",
+        "topic:cognate-transparent-7"
       ],
       "curriculumRole": "reference"
     },
@@ -40921,7 +41074,8 @@
         "cognate:ia-to-y",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:fem-a-1"
+        "topic:fem-a-1",
+        "topic:cognate-transparent-2"
       ],
       "curriculumRole": "reference"
     },
@@ -40945,7 +41099,8 @@
         "cognate:ia-to-y",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:fem-a-6"
+        "topic:fem-a-6",
+        "topic:cognate-transparent-15"
       ],
       "curriculumRole": "reference"
     },
@@ -40969,7 +41124,8 @@
         "cognate:ia-to-y",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:fem-a-7"
+        "topic:fem-a-7",
+        "topic:cognate-transparent-17"
       ],
       "curriculumRole": "reference"
     },
@@ -40994,7 +41150,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-a-3",
-        "topic:abstract-general-3"
+        "topic:abstract-general-3",
+        "topic:cognate-transparent-8"
       ],
       "curriculumRole": "reference"
     },
@@ -41019,7 +41176,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-a-8",
-        "topic:abstract-general-8"
+        "topic:abstract-general-8",
+        "topic:cognate-transparent-19"
       ],
       "curriculumRole": "reference"
     },
@@ -41047,7 +41205,9 @@
         "topic:fem-a-4",
         "topic:people-family-rel",
         "topic:family-groups-terms",
-        "topic:people-family-rel-1"
+        "topic:people-family-rel-1",
+        "topic:cognate-transparent-9",
+        "topic:cognate-latin-root-5"
       ],
       "curriculumRole": "supporting"
     },
@@ -41072,7 +41232,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-a-2",
-        "topic:objects-money-business"
+        "topic:objects-money-business",
+        "topic:cognate-transparent-4"
       ],
       "curriculumRole": "reference"
     },
@@ -41096,7 +41257,8 @@
         "cognate:ia-to-y",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:fem-a-4"
+        "topic:fem-a-4",
+        "topic:cognate-transparent-9"
       ],
       "curriculumRole": "reference"
     },
@@ -41120,7 +41282,8 @@
         "cognate:ia-to-y",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:fem-a-1"
+        "topic:fem-a-1",
+        "topic:cognate-transparent-2"
       ],
       "curriculumRole": "reference"
     },
@@ -41144,7 +41307,8 @@
         "cognate:ia-to-y",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:fem-a-3"
+        "topic:fem-a-3",
+        "topic:cognate-transparent-7"
       ],
       "curriculumRole": "reference"
     },
@@ -41168,7 +41332,8 @@
         "cognate:ia-to-y",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:fem-a-3"
+        "topic:fem-a-3",
+        "topic:cognate-transparent-6"
       ],
       "curriculumRole": "reference"
     },
@@ -41193,7 +41358,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-a-5",
-        "topic:abstract-general-4"
+        "topic:abstract-general-4",
+        "topic:cognate-transparent-10"
       ],
       "curriculumRole": "reference"
     },
@@ -41218,7 +41384,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-a-5",
-        "topic:abstract-general-5"
+        "topic:abstract-general-5",
+        "topic:cognate-transparent-12"
       ],
       "curriculumRole": "reference"
     },
@@ -41375,7 +41542,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:masc-o-3"
+        "topic:masc-o-3",
+        "topic:cognate-transparent-8",
+        "topic:cognate-latin-root-4"
       ],
       "curriculumRole": "reference"
     },
@@ -41399,7 +41568,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:masc-o-1",
-        "topic:abstract-mento-miento"
+        "topic:abstract-mento-miento",
+        "topic:cognate-transparent-2"
       ],
       "curriculumRole": "reference"
     },
@@ -41425,7 +41595,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:masc-o-1",
-        "topic:places-home-buildings"
+        "topic:places-home-buildings",
+        "topic:cognate-transparent-2"
       ],
       "curriculumRole": "reference"
     },
@@ -41448,7 +41619,8 @@
         "cognate:mento-miento-to-ment",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:masc-o-2"
+        "topic:masc-o-2",
+        "topic:cognate-transparent-6"
       ],
       "curriculumRole": "reference"
     },
@@ -41472,7 +41644,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:masc-o-3",
-        "topic:abstract-mento-miento"
+        "topic:abstract-mento-miento",
+        "topic:cognate-transparent-7"
       ],
       "curriculumRole": "reference"
     },
@@ -41496,7 +41669,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:masc-o-3",
-        "topic:abstract-mento-miento"
+        "topic:abstract-mento-miento",
+        "topic:cognate-transparent-8"
       ],
       "curriculumRole": "reference"
     },
@@ -41520,7 +41694,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:masc-o-5",
-        "topic:abstract-mento-miento"
+        "topic:abstract-mento-miento",
+        "topic:cognate-transparent-12"
       ],
       "curriculumRole": "reference"
     },
@@ -41544,7 +41719,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:masc-o-7",
-        "topic:abstract-general-7"
+        "topic:abstract-general-7",
+        "topic:cognate-transparent-17",
+        "topic:cognate-latin-root-11"
       ],
       "curriculumRole": "reference"
     },
@@ -41567,7 +41744,8 @@
         "cognate:mento-miento-to-ment",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:masc-o-4"
+        "topic:masc-o-4",
+        "topic:cognate-transparent-11"
       ],
       "curriculumRole": "reference"
     },
@@ -41591,7 +41769,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:masc-o-7",
-        "topic:abstract-mento-miento"
+        "topic:abstract-mento-miento",
+        "topic:cognate-transparent-16"
       ],
       "curriculumRole": "reference"
     },
@@ -41615,7 +41794,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:masc-o-3",
-        "topic:abstract-mento-miento"
+        "topic:abstract-mento-miento",
+        "topic:cognate-transparent-7"
       ],
       "curriculumRole": "reference"
     },
@@ -41639,7 +41819,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:masc-o-5",
-        "topic:abstract-mento-miento"
+        "topic:abstract-mento-miento",
+        "topic:cognate-transparent-12"
       ],
       "curriculumRole": "reference"
     },
@@ -41663,7 +41844,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:masc-o-8",
-        "topic:abstract-mento-miento"
+        "topic:abstract-mento-miento",
+        "topic:cognate-transparent-18"
       ],
       "curriculumRole": "reference"
     },
@@ -41686,7 +41868,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:fem-exceptions"
+        "topic:fem-exceptions",
+        "topic:cognate-transparent-9",
+        "topic:cognate-latin-root-5"
       ],
       "curriculumRole": "reference"
     },
@@ -41709,7 +41893,8 @@
         "cognate:ia-to-y",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:fem-a-4"
+        "topic:fem-a-4",
+        "topic:cognate-transparent-9"
       ],
       "curriculumRole": "reference"
     },
@@ -41732,7 +41917,8 @@
         "cognate:ia-to-y",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:fem-a-4"
+        "topic:fem-a-4",
+        "topic:cognate-transparent-9"
       ],
       "curriculumRole": "reference"
     },
@@ -41755,7 +41941,8 @@
         "cognate:ia-to-y",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:fem-a-4"
+        "topic:fem-a-4",
+        "topic:cognate-transparent-9"
       ],
       "curriculumRole": "reference"
     },
@@ -41778,7 +41965,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:masc-o-8"
+        "topic:masc-o-8",
+        "topic:cognate-transparent-17",
+        "topic:cognate-latin-root-11"
       ],
       "curriculumRole": "supporting"
     },
@@ -41801,7 +41990,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:masc-o-5"
+        "topic:masc-o-5",
+        "topic:cognate-transparent-13",
+        "topic:cognate-latin-root-7"
       ],
       "curriculumRole": "reference"
     },
@@ -41825,7 +42016,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:masc-o-3",
-        "topic:abstract-general-4"
+        "topic:abstract-general-4",
+        "topic:cognate-transparent-9",
+        "topic:cognate-latin-root-5"
       ],
       "curriculumRole": "reference"
     },
@@ -41849,7 +42042,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-exceptions",
-        "topic:abstract-general-4"
+        "topic:abstract-general-4",
+        "topic:cognate-transparent-9",
+        "topic:cognate-latin-root-5"
       ],
       "curriculumRole": "reference"
     },
@@ -41873,7 +42068,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-exceptions",
-        "topic:abstract-general-4"
+        "topic:abstract-general-4",
+        "topic:cognate-transparent-9",
+        "topic:cognate-latin-root-5"
       ],
       "curriculumRole": "reference"
     },
@@ -41896,7 +42093,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:fem-a-4"
+        "topic:fem-a-4",
+        "topic:cognate-transparent-9",
+        "topic:cognate-latin-root-5"
       ],
       "curriculumRole": "reference"
     },
@@ -41919,7 +42118,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:masc-o-1"
+        "topic:masc-o-1",
+        "topic:cognate-transparent-1",
+        "topic:cognate-latin-root-1"
       ],
       "curriculumRole": "reference"
     },
@@ -41943,7 +42144,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:masc-e",
-        "topic:objects-physical"
+        "topic:objects-physical",
+        "topic:cognate-transparent-7",
+        "topic:cognate-latin-root-4"
       ],
       "curriculumRole": "reference"
     },
@@ -41966,7 +42169,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:masc-o-8"
+        "topic:masc-o-8",
+        "topic:cognate-transparent-18",
+        "topic:cognate-latin-root-11"
       ],
       "curriculumRole": "reference"
     },
@@ -41989,7 +42194,8 @@
         "cognate:ia-to-y",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:fem-a-1"
+        "topic:fem-a-1",
+        "topic:cognate-transparent-2"
       ],
       "curriculumRole": "reference"
     },
@@ -42451,7 +42657,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:adj-ano-ana",
-        "topic:adj-abs-general-5"
+        "topic:adj-abs-general-5",
+        "topic:cognate-transparent-10"
       ],
       "curriculumRole": "reference"
     },
@@ -42478,7 +42685,8 @@
         "cognate:ano-iano-to-an-ian",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:adj-ano-ana"
+        "topic:adj-ano-ana",
+        "topic:cognate-transparent-18"
       ],
       "curriculumRole": "reference"
     },
@@ -42505,7 +42713,8 @@
         "cognate:ano-iano-to-an-ian",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:adj-ano-ana"
+        "topic:adj-ano-ana",
+        "topic:cognate-transparent-16"
       ],
       "curriculumRole": "reference"
     },
@@ -42532,7 +42741,8 @@
         "cognate:ano-iano-to-an-ian",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:adj-ano-ana"
+        "topic:adj-ano-ana",
+        "topic:cognate-transparent-1"
       ],
       "curriculumRole": "reference"
     },
@@ -42559,7 +42769,8 @@
         "cognate:ano-iano-to-an-ian",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:adj-ano-ana"
+        "topic:adj-ano-ana",
+        "topic:cognate-transparent-1"
       ],
       "curriculumRole": "reference"
     },
@@ -42586,7 +42797,8 @@
         "cognate:ano-iano-to-an-ian",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:adj-ano-ana"
+        "topic:adj-ano-ana",
+        "topic:cognate-transparent-3"
       ],
       "curriculumRole": "reference"
     },
@@ -42613,7 +42825,8 @@
         "cognate:ano-iano-to-an-ian",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:adj-ano-ana"
+        "topic:adj-ano-ana",
+        "topic:cognate-transparent-12"
       ],
       "curriculumRole": "reference"
     },
@@ -42640,7 +42853,8 @@
         "cognate:ano-iano-to-an-ian",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:adj-ano-ana"
+        "topic:adj-ano-ana",
+        "topic:cognate-transparent-5"
       ],
       "curriculumRole": "reference"
     },
@@ -42665,7 +42879,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-a-5",
-        "topic:abstract-encia-ancia-1"
+        "topic:abstract-encia-ancia-1",
+        "topic:cognate-transparent-10",
+        "topic:cognate-encia-ancia-2"
       ],
       "curriculumRole": "reference"
     },
@@ -42690,7 +42906,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-a-3",
-        "topic:abstract-encia-ancia-1"
+        "topic:abstract-encia-ancia-1",
+        "topic:cognate-transparent-7",
+        "topic:cognate-encia-ancia-1"
       ],
       "curriculumRole": "reference"
     },
@@ -42715,7 +42933,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-a-5",
-        "topic:abstract-encia-ancia-2"
+        "topic:abstract-encia-ancia-2",
+        "topic:cognate-transparent-11",
+        "topic:cognate-encia-ancia-2"
       ],
       "curriculumRole": "reference"
     },
@@ -42740,7 +42960,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-a-1",
-        "topic:abstract-encia-ancia-1"
+        "topic:abstract-encia-ancia-1",
+        "topic:cognate-transparent-1",
+        "topic:cognate-encia-ancia-1"
       ],
       "curriculumRole": "reference"
     },
@@ -42765,7 +42987,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-a-8",
-        "topic:abstract-encia-ancia-2"
+        "topic:abstract-encia-ancia-2",
+        "topic:cognate-transparent-18",
+        "topic:cognate-encia-ancia-2"
       ],
       "curriculumRole": "reference"
     },
@@ -42790,7 +43014,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-a-3",
-        "topic:abstract-encia-ancia-1"
+        "topic:abstract-encia-ancia-1",
+        "topic:cognate-transparent-7",
+        "topic:cognate-encia-ancia-1"
       ],
       "curriculumRole": "reference"
     },
@@ -42815,7 +43041,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-a-5",
-        "topic:abstract-encia-ancia-1"
+        "topic:abstract-encia-ancia-1",
+        "topic:cognate-transparent-10",
+        "topic:cognate-encia-ancia-1"
       ],
       "curriculumRole": "reference"
     },
@@ -42840,7 +43068,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-a-8",
-        "topic:abstract-encia-ancia-2"
+        "topic:abstract-encia-ancia-2",
+        "topic:cognate-transparent-19",
+        "topic:cognate-encia-ancia-2"
       ],
       "curriculumRole": "reference"
     },
@@ -42865,7 +43095,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-a-2",
-        "topic:abstract-encia-ancia-1"
+        "topic:abstract-encia-ancia-1",
+        "topic:cognate-transparent-3",
+        "topic:cognate-encia-ancia-1"
       ],
       "curriculumRole": "reference"
     },
@@ -42890,7 +43122,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-a-7",
-        "topic:abstract-encia-ancia-2"
+        "topic:abstract-encia-ancia-2",
+        "topic:cognate-transparent-16",
+        "topic:cognate-encia-ancia-2"
       ],
       "curriculumRole": "reference"
     },
@@ -43184,7 +43418,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-a-5",
-        "topic:abstract-general-5"
+        "topic:abstract-general-5",
+        "topic:cognate-transparent-12",
+        "topic:cognate-latin-root-7"
       ],
       "curriculumRole": "reference"
     },
@@ -43207,7 +43443,8 @@
         "cognate:ista-to-ist",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:common-gender-professions"
+        "topic:common-gender-professions",
+        "topic:cognate-transparent-18"
       ],
       "curriculumRole": "reference"
     },
@@ -43230,7 +43467,8 @@
         "cognate:ista-to-ist",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:common-gender-professions"
+        "topic:common-gender-professions",
+        "topic:cognate-transparent-2"
       ],
       "curriculumRole": "reference"
     },
@@ -43254,7 +43492,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:people-professions",
-        "topic:common-gender-professions"
+        "topic:common-gender-professions",
+        "topic:cognate-transparent-6"
       ],
       "curriculumRole": "reference"
     },
@@ -43277,7 +43516,8 @@
         "cognate:ista-to-ist",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:common-gender-professions"
+        "topic:common-gender-professions",
+        "topic:cognate-transparent-13"
       ],
       "curriculumRole": "reference"
     },
@@ -43300,7 +43540,8 @@
         "cognate:ista-to-ist",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:common-gender-professions"
+        "topic:common-gender-professions",
+        "topic:cognate-transparent-14"
       ],
       "curriculumRole": "reference"
     },
@@ -43323,7 +43564,8 @@
         "cognate:ista-to-ist",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:common-gender-professions"
+        "topic:common-gender-professions",
+        "topic:cognate-transparent-15"
       ],
       "curriculumRole": "reference"
     },
@@ -43347,7 +43589,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:people-professions",
-        "topic:common-gender-professions"
+        "topic:common-gender-professions",
+        "topic:cognate-transparent-8"
       ],
       "curriculumRole": "reference"
     },
@@ -43370,7 +43613,8 @@
         "cognate:ista-to-ist",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:common-gender-professions"
+        "topic:common-gender-professions",
+        "topic:cognate-transparent-3"
       ],
       "curriculumRole": "reference"
     },
@@ -43393,7 +43637,8 @@
         "cognate:ista-to-ist",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:common-gender-professions"
+        "topic:common-gender-professions",
+        "topic:cognate-transparent-4"
       ],
       "curriculumRole": "reference"
     },
@@ -43416,7 +43661,8 @@
         "cognate:ista-to-ist",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:common-gender-professions"
+        "topic:common-gender-professions",
+        "topic:cognate-transparent-3"
       ],
       "curriculumRole": "reference"
     },
@@ -43439,7 +43685,8 @@
         "cognate:ista-to-ist",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:common-gender-professions"
+        "topic:common-gender-professions",
+        "topic:cognate-transparent-19"
       ],
       "curriculumRole": "reference"
     },
@@ -43465,7 +43712,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:adj-ico-ica",
-        "topic:adj-abs-ico-ica"
+        "topic:adj-abs-ico-ica",
+        "topic:cognate-transparent-9"
       ],
       "curriculumRole": "reference"
     },
@@ -43490,7 +43738,8 @@
         "cognate:ico-to-ical",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:adj-ico-ica"
+        "topic:adj-ico-ica",
+        "topic:cognate-transparent-9"
       ],
       "curriculumRole": "reference"
     },
@@ -43516,7 +43765,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:adj-ico-ica",
-        "topic:adj-abs-ico-ica"
+        "topic:adj-abs-ico-ica",
+        "topic:cognate-transparent-2"
       ],
       "curriculumRole": "reference"
     },
@@ -43541,7 +43791,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:masc-o-8",
-        "topic:abstract-general-7"
+        "topic:abstract-general-7",
+        "topic:cognate-transparent-18",
+        "topic:cognate-latin-root-11"
       ],
       "curriculumRole": "reference"
     },
@@ -43567,7 +43819,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:adj-al",
-        "topic:adj-abs-al"
+        "topic:adj-abs-al",
+        "topic:cognate-transparent-18",
+        "topic:cognate-latin-root-11"
       ],
       "curriculumRole": "reference"
     },
@@ -43593,7 +43847,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:adj-ico-ica",
-        "topic:adj-abs-ico-ica"
+        "topic:adj-abs-ico-ica",
+        "topic:cognate-transparent-12"
       ],
       "curriculumRole": "reference"
     },
@@ -43619,7 +43874,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:adj-ico-ica",
-        "topic:adj-abs-ico-ica"
+        "topic:adj-abs-ico-ica",
+        "topic:cognate-transparent-14"
       ],
       "curriculumRole": "reference"
     },
@@ -43644,7 +43900,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:masc-e"
+        "topic:masc-e",
+        "topic:cognate-transparent-12",
+        "topic:cognate-latin-root-7"
       ],
       "curriculumRole": "reference"
     },
@@ -43670,7 +43928,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:masc-e",
-        "topic:places-home-buildings"
+        "topic:places-home-buildings",
+        "topic:cognate-transparent-9",
+        "topic:cognate-latin-root-5"
       ],
       "curriculumRole": "reference"
     },
@@ -43696,7 +43956,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:masc-e",
-        "topic:abstract-general-6"
+        "topic:abstract-general-6",
+        "topic:cognate-transparent-14",
+        "topic:cognate-latin-root-8"
       ],
       "curriculumRole": "reference"
     },
@@ -43721,7 +43983,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:masc-e"
+        "topic:masc-e",
+        "topic:cognate-transparent-12",
+        "topic:cognate-latin-root-7"
       ],
       "curriculumRole": "reference"
     },
@@ -43747,7 +44011,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-consonant-1",
-        "topic:abstract-general-4"
+        "topic:abstract-general-4",
+        "topic:cognate-transparent-10",
+        "topic:cognate-latin-root-6"
       ],
       "curriculumRole": "reference"
     },
@@ -44138,7 +44404,8 @@
         "topic:government-politics",
         "topic:multi-sense",
         "audit:reviewed",
-        "topic:adj-ser-general-5"
+        "topic:adj-ser-general-5",
+        "topic:cognate-transparent-12"
       ],
       "curriculumRole": "reference"
     },
@@ -44162,7 +44429,8 @@
         "gender:masculine",
         "topic:calendar",
         "audit:reviewed",
-        "topic:masc-o-1"
+        "topic:masc-o-1",
+        "topic:cognate-transparent-2"
       ],
       "curriculumRole": "reference"
     },
@@ -44595,7 +44863,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:masc-e",
-        "topic:places-public-city"
+        "topic:places-public-city",
+        "topic:cognate-transparent-13",
+        "topic:cognate-latin-root-8"
       ],
       "curriculumRole": "reference"
     },
@@ -44620,7 +44890,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:masc-e"
+        "topic:masc-e",
+        "topic:cognate-transparent-17",
+        "topic:cognate-latin-root-11"
       ],
       "curriculumRole": "reference"
     },
@@ -44646,7 +44918,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:masc-e",
-        "topic:abstract-general-1"
+        "topic:abstract-general-1",
+        "topic:cognate-transparent-2",
+        "topic:cognate-latin-root-1"
       ],
       "curriculumRole": "reference"
     },
@@ -44671,7 +44945,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:masc-e"
+        "topic:masc-e",
+        "topic:cognate-transparent-3",
+        "topic:cognate-latin-root-2"
       ],
       "curriculumRole": "reference"
     },
@@ -44697,7 +44973,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:masc-e",
-        "topic:abstract-general-1"
+        "topic:abstract-general-1",
+        "topic:cognate-transparent-2",
+        "topic:cognate-latin-root-1"
       ],
       "curriculumRole": "reference"
     },
@@ -44796,7 +45074,8 @@
         "topic:abstract-quality",
         "audit:reviewed",
         "topic:masc-o-5",
-        "topic:abstract-general-5"
+        "topic:abstract-general-5",
+        "topic:cognate-transparent-13"
       ],
       "curriculumRole": "reference"
     },
@@ -44820,7 +45099,8 @@
         "topic:abstract-quality",
         "audit:reviewed",
         "topic:masc-o-7",
-        "topic:abstract-general-7"
+        "topic:abstract-general-7",
+        "topic:cognate-transparent-17"
       ],
       "curriculumRole": "reference"
     },
@@ -45015,7 +45295,9 @@
         "audit:reviewed",
         "topic:fem-abstract-suffix-2",
         "topic:abstract-dad-tud",
-        "topic:abstract-dad-tud-2"
+        "topic:abstract-dad-tud-2",
+        "topic:cognate-transparent-14",
+        "topic:cognate-latin-root-8"
       ],
       "curriculumRole": "reference"
     },
@@ -45043,7 +45325,9 @@
         "audit:reviewed",
         "topic:fem-abstract-suffix-3",
         "topic:abstract-dad-tud",
-        "topic:abstract-dad-tud-2"
+        "topic:abstract-dad-tud-2",
+        "topic:cognate-transparent-15",
+        "topic:cognate-latin-root-9"
       ],
       "curriculumRole": "reference"
     },
@@ -45069,7 +45353,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:fem-abstract-suffix-3"
+        "topic:fem-abstract-suffix-3",
+        "topic:cognate-transparent-18",
+        "topic:cognate-latin-root-11"
       ],
       "curriculumRole": "reference"
     },
@@ -45097,7 +45383,9 @@
         "audit:reviewed",
         "topic:fem-abstract-suffix-1",
         "topic:abstract-dad-tud",
-        "topic:abstract-dad-tud-1"
+        "topic:abstract-dad-tud-1",
+        "topic:cognate-transparent-4",
+        "topic:cognate-latin-root-2"
       ],
       "curriculumRole": "reference"
     },
@@ -45124,7 +45412,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-abstract-suffix-2",
-        "topic:objects-misc-language"
+        "topic:objects-misc-language",
+        "topic:cognate-transparent-13",
+        "topic:cognate-latin-root-7"
       ],
       "curriculumRole": "reference"
     },
@@ -45152,7 +45442,9 @@
         "audit:reviewed",
         "topic:fem-abstract-suffix-3",
         "topic:abstract-dad-tud",
-        "topic:abstract-dad-tud-2"
+        "topic:abstract-dad-tud-2",
+        "topic:cognate-transparent-17",
+        "topic:cognate-latin-root-10"
       ],
       "curriculumRole": "reference"
     },
@@ -45180,7 +45472,9 @@
         "audit:reviewed",
         "topic:fem-abstract-suffix-2",
         "topic:abstract-dad-tud",
-        "topic:abstract-dad-tud-1"
+        "topic:abstract-dad-tud-1",
+        "topic:cognate-transparent-10",
+        "topic:cognate-latin-root-5"
       ],
       "curriculumRole": "reference"
     },
@@ -45235,7 +45529,9 @@
         "audit:reviewed",
         "topic:fem-abstract-suffix-3",
         "topic:abstract-dad-tud",
-        "topic:abstract-dad-tud-2"
+        "topic:abstract-dad-tud-2",
+        "topic:cognate-transparent-16",
+        "topic:cognate-latin-root-10"
       ],
       "curriculumRole": "reference"
     },
@@ -45263,7 +45559,9 @@
         "audit:reviewed",
         "topic:fem-abstract-suffix-1",
         "topic:abstract-dad-tud",
-        "topic:abstract-dad-tud-1"
+        "topic:abstract-dad-tud-1",
+        "topic:cognate-transparent-1",
+        "topic:cognate-latin-root-1"
       ],
       "curriculumRole": "reference"
     },
@@ -45291,7 +45589,9 @@
         "audit:reviewed",
         "topic:fem-abstract-suffix-2",
         "topic:abstract-dad-tud",
-        "topic:abstract-dad-tud-1"
+        "topic:abstract-dad-tud-1",
+        "topic:cognate-transparent-10",
+        "topic:cognate-latin-root-5"
       ],
       "curriculumRole": "reference"
     },
@@ -45319,7 +45619,9 @@
         "audit:reviewed",
         "topic:fem-abstract-suffix-1",
         "topic:abstract-dad-tud",
-        "topic:abstract-dad-tud-1"
+        "topic:abstract-dad-tud-1",
+        "topic:cognate-transparent-7",
+        "topic:cognate-latin-root-4"
       ],
       "curriculumRole": "reference"
     },
@@ -45347,7 +45649,9 @@
         "audit:reviewed",
         "topic:fem-abstract-suffix-3",
         "topic:abstract-dad-tud",
-        "topic:abstract-dad-tud-2"
+        "topic:abstract-dad-tud-2",
+        "topic:cognate-transparent-16",
+        "topic:cognate-latin-root-10"
       ],
       "curriculumRole": "reference"
     },
@@ -45375,7 +45679,9 @@
         "audit:reviewed",
         "topic:fem-abstract-suffix-3",
         "topic:abstract-dad-tud",
-        "topic:abstract-dad-tud-2"
+        "topic:abstract-dad-tud-2",
+        "topic:cognate-transparent-15",
+        "topic:cognate-latin-root-9"
       ],
       "curriculumRole": "reference"
     },
@@ -45403,7 +45709,9 @@
         "audit:reviewed",
         "topic:fem-abstract-suffix-1",
         "topic:abstract-dad-tud",
-        "topic:abstract-dad-tud-1"
+        "topic:abstract-dad-tud-1",
+        "topic:cognate-transparent-2",
+        "topic:cognate-latin-root-1"
       ],
       "curriculumRole": "reference"
     },
@@ -45595,7 +45903,8 @@
         "topic:multi-sense",
         "audit:reviewed",
         "topic:adj-able",
-        "topic:adj-abs-able"
+        "topic:adj-abs-able",
+        "topic:cognate-transparent-16"
       ],
       "curriculumRole": "reference"
     },
@@ -45837,7 +46146,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:masc-exceptions",
-        "topic:abstract-general-6"
+        "topic:abstract-general-6",
+        "topic:cognate-transparent-15"
       ],
       "curriculumRole": "supporting"
     },
@@ -45862,7 +46172,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:masc-exceptions",
-        "topic:abstract-general-7"
+        "topic:abstract-general-7",
+        "topic:cognate-transparent-17",
+        "topic:cognate-latin-root-10"
       ],
       "curriculumRole": "reference"
     },
@@ -45886,7 +46198,8 @@
         "cognate:ema-to-em",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:masc-exceptions"
+        "topic:masc-exceptions",
+        "topic:cognate-transparent-14"
       ],
       "curriculumRole": "reference"
     },
@@ -45910,7 +46223,8 @@
         "cognate:ema-to-em",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:masc-exceptions"
+        "topic:masc-exceptions",
+        "topic:cognate-transparent-17"
       ],
       "curriculumRole": "reference"
     },
@@ -45934,7 +46248,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:adj-ente",
-        "topic:adj-abs-ente"
+        "topic:adj-abs-ente",
+        "topic:cognate-transparent-11",
+        "topic:cognate-latin-root-6"
       ],
       "curriculumRole": "reference"
     },
@@ -45957,7 +46273,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:adj-al"
+        "topic:adj-al",
+        "topic:cognate-transparent-10",
+        "topic:cognate-latin-root-6"
       ],
       "curriculumRole": "reference"
     },
@@ -45980,7 +46298,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:people-professions",
-        "topic:common-gender-other-roles"
+        "topic:common-gender-other-roles",
+        "topic:cognate-transparent-11",
+        "topic:cognate-latin-root-6"
       ],
       "curriculumRole": "reference"
     },
@@ -46004,7 +46324,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:masc-exceptions"
+        "topic:masc-exceptions",
+        "topic:cognate-transparent-15",
+        "topic:cognate-latin-root-9"
       ],
       "curriculumRole": "reference"
     },
@@ -46029,7 +46351,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:masc-exceptions",
-        "topic:abstract-general-3"
+        "topic:abstract-general-3",
+        "topic:cognate-transparent-6",
+        "topic:cognate-latin-root-3"
       ],
       "curriculumRole": "reference"
     },
@@ -46054,7 +46378,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:masc-exceptions",
-        "topic:abstract-general-1"
+        "topic:abstract-general-1",
+        "topic:cognate-transparent-1",
+        "topic:cognate-latin-root-1"
       ],
       "curriculumRole": "reference"
     },
@@ -46078,7 +46404,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:masc-exceptions"
+        "topic:masc-exceptions",
+        "topic:cognate-transparent-17",
+        "topic:cognate-latin-root-11"
       ],
       "curriculumRole": "reference"
     },
@@ -46102,7 +46430,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:masc-exceptions"
+        "topic:masc-exceptions",
+        "topic:cognate-transparent-10",
+        "topic:cognate-latin-root-5"
       ],
       "curriculumRole": "reference"
     },
@@ -46600,7 +46930,8 @@
         "cognate:ia-to-y",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:fem-a-7"
+        "topic:fem-a-7",
+        "topic:cognate-transparent-17"
       ],
       "curriculumRole": "reference"
     },
@@ -46624,7 +46955,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:masc-o-7",
-        "topic:places-public-city"
+        "topic:places-public-city",
+        "topic:cognate-transparent-17",
+        "topic:cognate-latin-root-11"
       ],
       "curriculumRole": "reference"
     },
@@ -46647,7 +46980,8 @@
         "cognate:ia-to-y",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:fem-a-7"
+        "topic:fem-a-7",
+        "topic:cognate-transparent-17"
       ],
       "curriculumRole": "reference"
     },
@@ -46671,7 +47005,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:masc-o-5",
-        "topic:abstract-general-5"
+        "topic:abstract-general-5",
+        "topic:cognate-transparent-12",
+        "topic:cognate-latin-root-7"
       ],
       "curriculumRole": "reference"
     },
@@ -46695,7 +47031,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:masc-consonant-1",
-        "topic:people-professions"
+        "topic:people-professions",
+        "topic:cognate-transparent-2",
+        "topic:cognate-latin-root-1"
       ],
       "curriculumRole": "reference"
     },
@@ -46718,7 +47056,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:common-gender-professions"
+        "topic:common-gender-professions",
+        "topic:cognate-transparent-2",
+        "topic:cognate-latin-root-1"
       ],
       "curriculumRole": "reference"
     },
@@ -46742,7 +47082,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-a-3",
-        "topic:abstract-general-3"
+        "topic:abstract-general-3",
+        "topic:cognate-transparent-8",
+        "topic:cognate-latin-root-4"
       ],
       "curriculumRole": "reference"
     },
@@ -46765,7 +47107,8 @@
         "cognate:ia-to-y",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:fem-a-7"
+        "topic:fem-a-7",
+        "topic:cognate-transparent-17"
       ],
       "curriculumRole": "reference"
     },
@@ -47277,7 +47620,8 @@
         "cognate:ismo-to-ism",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:masc-o-8"
+        "topic:masc-o-8",
+        "topic:cognate-transparent-18"
       ],
       "curriculumRole": "reference"
     },
@@ -47302,7 +47646,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:masc-o-5",
-        "topic:abstract-ismo-and-misc"
+        "topic:abstract-ismo-and-misc",
+        "topic:cognate-transparent-13"
       ],
       "curriculumRole": "reference"
     },
@@ -47327,7 +47672,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:masc-o-5",
-        "topic:abstract-ismo-and-misc"
+        "topic:abstract-ismo-and-misc",
+        "topic:cognate-transparent-14"
       ],
       "curriculumRole": "reference"
     },
@@ -47352,7 +47698,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:masc-o-6",
-        "topic:abstract-ismo-and-misc"
+        "topic:abstract-ismo-and-misc",
+        "topic:cognate-transparent-15"
       ],
       "curriculumRole": "reference"
     },
@@ -47377,7 +47724,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:masc-o-4",
-        "topic:abstract-ismo-and-misc"
+        "topic:abstract-ismo-and-misc",
+        "topic:cognate-transparent-10"
       ],
       "curriculumRole": "reference"
     },
@@ -47401,7 +47749,8 @@
         "cognate:ismo-to-ism",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:masc-o-1"
+        "topic:masc-o-1",
+        "topic:cognate-transparent-2"
       ],
       "curriculumRole": "reference"
     },
@@ -47425,7 +47774,8 @@
         "cognate:ismo-to-ism",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:masc-o-7"
+        "topic:masc-o-7",
+        "topic:cognate-transparent-17"
       ],
       "curriculumRole": "reference"
     },
@@ -47449,7 +47799,8 @@
         "cognate:ismo-to-ism",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:masc-o-2"
+        "topic:masc-o-2",
+        "topic:cognate-transparent-4"
       ],
       "curriculumRole": "reference"
     },
@@ -47473,7 +47824,8 @@
         "cognate:ismo-to-ism",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:masc-o-5"
+        "topic:masc-o-5",
+        "topic:cognate-transparent-13"
       ],
       "curriculumRole": "reference"
     },
@@ -47498,7 +47850,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:masc-o-6",
-        "topic:abstract-ismo-and-misc"
+        "topic:abstract-ismo-and-misc",
+        "topic:cognate-transparent-15"
       ],
       "curriculumRole": "reference"
     },
@@ -47522,7 +47875,8 @@
         "cognate:ismo-to-ism",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:masc-o-4"
+        "topic:masc-o-4",
+        "topic:cognate-transparent-12"
       ],
       "curriculumRole": "reference"
     },
@@ -47582,7 +47936,8 @@
         "es:incluido",
         "en:included",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cognate-transparent-11"
       ],
       "curriculumRole": "reference"
     },
@@ -47602,7 +47957,8 @@
         "es:recomendado",
         "en:recommended",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cognate-transparent-15"
       ],
       "curriculumRole": "reference"
     },
@@ -47643,7 +47999,8 @@
         "en:prepared",
         "cognate:ado-ido-to-ed",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cognate-transparent-14"
       ],
       "curriculumRole": "supporting"
     },
@@ -47664,7 +48021,8 @@
         "en:confirmed",
         "cognate:ado-ido-to-ed",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cognate-transparent-4"
       ],
       "curriculumRole": "reference"
     },
@@ -47685,7 +48043,8 @@
         "en:received",
         "cognate:ado-ido-to-ed",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cognate-transparent-15"
       ],
       "curriculumRole": "reference"
     },
@@ -47706,7 +48065,8 @@
         "en:organized",
         "cognate:ado-ido-to-ed",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cognate-transparent-13"
       ],
       "curriculumRole": "reference"
     },
@@ -47727,7 +48087,8 @@
         "en:used",
         "cognate:ado-ido-to-ed",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cognate-transparent-18"
       ],
       "curriculumRole": "reference"
     },
@@ -47748,7 +48109,8 @@
         "en:continued",
         "cognate:ado-ido-to-ed",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cognate-transparent-5"
       ],
       "curriculumRole": "reference"
     },
@@ -48027,7 +48389,8 @@
         "en:practiced",
         "cognate:ado-ido-to-ed",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cognate-transparent-14"
       ],
       "curriculumRole": "reference"
     },
@@ -48048,7 +48411,8 @@
         "en:introduced",
         "cognate:ado-ido-to-ed",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cognate-transparent-11"
       ],
       "curriculumRole": "reference"
     },
@@ -48069,7 +48433,8 @@
         "en:produced",
         "cognate:ado-ido-to-ed",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cognate-transparent-15"
       ],
       "curriculumRole": "reference"
     },
@@ -48090,7 +48455,9 @@
         "en:noticed",
         "cognate:latin-root",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cognate-transparent-13",
+        "topic:cognate-latin-root-7"
       ],
       "curriculumRole": "reference"
     },
@@ -48112,7 +48479,8 @@
         "en:visited",
         "cognate:ado-ido-to-ed",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cognate-transparent-19"
       ],
       "curriculumRole": "supporting"
     },
@@ -48134,7 +48502,8 @@
         "en:accepted",
         "cognate:ado-ido-to-ed",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cognate-transparent-1"
       ],
       "curriculumRole": "reference"
     },
@@ -48156,7 +48525,8 @@
         "en:connected",
         "cognate:ado-ido-to-ed",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cognate-transparent-4"
       ],
       "curriculumRole": "reference"
     },
@@ -48178,7 +48548,8 @@
         "en:contacted",
         "cognate:ado-ido-to-ed",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cognate-transparent-5"
       ],
       "curriculumRole": "reference"
     },
@@ -48200,7 +48571,8 @@
         "en:permitted",
         "cognate:ado-ido-to-ed",
         "cognate:transparent",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:cognate-transparent-14"
       ],
       "curriculumRole": "reference"
     },
@@ -48221,7 +48593,8 @@
         "cognate:plicar-to-ply",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-2"
+        "topic:verb-formal-remainder-2",
+        "topic:cognate-latin-root-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -48242,7 +48615,8 @@
         "cognate:plicar-to-ply",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-2"
+        "topic:verb-formal-abstract-2",
+        "topic:cognate-latin-root-7"
       ],
       "curriculumRole": "reference"
     },
@@ -48263,7 +48637,8 @@
         "cognate:plicar-to-ply",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1"
+        "topic:verb-formal-abstract-1",
+        "topic:cognate-latin-root-6"
       ],
       "curriculumRole": "reference"
     },
@@ -48284,7 +48659,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-3"
+        "topic:verb-formal-remainder-3",
+        "topic:cognate-transparent-3",
+        "topic:cognate-latin-root-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -48305,7 +48682,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-business"
+        "topic:verb-formal-business",
+        "topic:cognate-transparent-13",
+        "topic:cognate-latin-root-8"
       ],
       "curriculumRole": "reference"
     },
@@ -48326,7 +48705,8 @@
         "cognate:tribuir-to-tribute",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-business"
+        "topic:verb-formal-business",
+        "topic:cognate-latin-root-3"
       ],
       "curriculumRole": "reference"
     },
@@ -48347,7 +48727,8 @@
         "cognate:tribuir-to-tribute",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-2"
+        "topic:verb-formal-abstract-2",
+        "topic:cognate-latin-root-4"
       ],
       "curriculumRole": "reference"
     },
@@ -48368,7 +48749,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-abstract-2"
+        "topic:verb-formal-abstract-2",
+        "topic:cognate-transparent-17",
+        "topic:cognate-latin-root-11"
       ],
       "curriculumRole": "reference"
     },
@@ -48389,7 +48772,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-8"
+        "topic:verb-formal-remainder-8",
+        "topic:cognate-transparent-11",
+        "topic:cognate-latin-root-7"
       ],
       "curriculumRole": "reference"
     },
@@ -48410,7 +48795,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-6"
+        "topic:verb-formal-remainder-6",
+        "topic:cognate-transparent-7",
+        "topic:cognate-latin-root-4"
       ],
       "curriculumRole": "reference"
     },
@@ -48431,7 +48818,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-4"
+        "topic:verb-formal-remainder-4",
+        "topic:cognate-transparent-5",
+        "topic:cognate-latin-root-2"
       ],
       "curriculumRole": "reference"
     },
@@ -48452,7 +48841,8 @@
         "cognate:tribuir-to-tribute",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-2"
+        "topic:verb-formal-remainder-2",
+        "topic:cognate-latin-root-1"
       ],
       "curriculumRole": "reference"
     },
@@ -48473,7 +48863,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-4"
+        "topic:verb-formal-remainder-4",
+        "topic:cognate-transparent-5",
+        "topic:cognate-latin-root-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -48494,7 +48886,8 @@
         "cognate:ar-to-ate",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-communication-formal"
+        "topic:verb-communication-formal",
+        "topic:cognate-transparent-4"
       ],
       "curriculumRole": "supporting"
     },
@@ -48515,7 +48908,8 @@
         "cognate:ar-to-ate",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-analysis-investigation"
+        "topic:verb-analysis-investigation",
+        "topic:cognate-transparent-8"
       ],
       "curriculumRole": "reference"
     },
@@ -48536,7 +48930,8 @@
         "cognate:ar-to-ate",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-business"
+        "topic:verb-formal-business",
+        "topic:cognate-transparent-13"
       ],
       "curriculumRole": "reference"
     },
@@ -48557,7 +48952,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-8"
+        "topic:verb-formal-remainder-8",
+        "topic:cognate-transparent-11",
+        "topic:cognate-latin-root-6"
       ],
       "curriculumRole": "reference"
     },
@@ -48578,7 +48975,8 @@
         "cognate:ar-to-ate",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-1"
+        "topic:verb-formal-remainder-1",
+        "topic:cognate-transparent-1"
       ],
       "curriculumRole": "reference"
     },
@@ -48599,7 +48997,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-communication-formal"
+        "topic:verb-communication-formal",
+        "topic:cognate-transparent-18",
+        "topic:cognate-latin-root-11"
       ],
       "curriculumRole": "supporting"
     },
@@ -48620,7 +49020,8 @@
         "cognate:ar-to-ate",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-10"
+        "topic:verb-formal-remainder-10",
+        "topic:cognate-transparent-13"
       ],
       "curriculumRole": "supporting"
     },
@@ -48641,7 +49042,8 @@
         "cognate:ar-to-ate",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-3"
+        "topic:verb-formal-remainder-3",
+        "topic:cognate-transparent-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -48662,7 +49064,8 @@
         "cognate:ar-to-ate",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-5"
+        "topic:verb-formal-remainder-5",
+        "topic:cognate-transparent-5"
       ],
       "curriculumRole": "reference"
     },
@@ -48683,7 +49086,8 @@
         "cognate:ar-to-ate",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-6"
+        "topic:verb-formal-remainder-6",
+        "topic:cognate-transparent-7"
       ],
       "curriculumRole": "reference"
     },
@@ -48704,7 +49108,8 @@
         "cognate:ar-to-ate",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1"
+        "topic:verb-formal-abstract-1",
+        "topic:cognate-transparent-13"
       ],
       "curriculumRole": "reference"
     },
@@ -48725,7 +49130,8 @@
         "cognate:ar-to-ate",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-9"
+        "topic:verb-formal-remainder-9",
+        "topic:cognate-transparent-12"
       ],
       "curriculumRole": "reference"
     },
@@ -48746,7 +49152,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-deciding-considering"
+        "topic:verb-deciding-considering",
+        "topic:cognate-transparent-5",
+        "topic:cognate-latin-root-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -48767,7 +49175,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-abstract-2"
+        "topic:verb-formal-abstract-2",
+        "topic:cognate-transparent-7",
+        "topic:cognate-latin-root-4"
       ],
       "curriculumRole": "supporting"
     },
@@ -48788,7 +49198,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-13"
+        "topic:verb-formal-remainder-13",
+        "topic:cognate-transparent-16",
+        "topic:cognate-latin-root-10"
       ],
       "curriculumRole": "reference"
     },
@@ -48809,7 +49221,9 @@
         "cognate:transparent",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1"
+        "topic:verb-formal-abstract-1",
+        "topic:cognate-transparent-9",
+        "topic:cognate-latin-root-5"
       ],
       "curriculumRole": "reference"
     },
@@ -48830,7 +49244,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-11"
+        "topic:verb-formal-remainder-11",
+        "topic:cognate-transparent-14",
+        "topic:cognate-latin-root-8"
       ],
       "curriculumRole": "reference"
     },
@@ -48851,7 +49267,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-deciding-considering"
+        "topic:verb-deciding-considering",
+        "topic:cognate-transparent-3",
+        "topic:cognate-latin-root-2"
       ],
       "curriculumRole": "reference"
     },
@@ -48872,7 +49290,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-analysis-investigation"
+        "topic:verb-analysis-investigation",
+        "topic:cognate-transparent-6",
+        "topic:cognate-latin-root-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -48893,7 +49313,8 @@
         "cognate:inar-to-ine",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-12"
+        "topic:verb-formal-remainder-12",
+        "topic:cognate-transparent-16"
       ],
       "curriculumRole": "reference"
     },
@@ -48914,7 +49335,8 @@
         "cognate:inar-to-ine",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-abstract-2"
+        "topic:verb-formal-abstract-2",
+        "topic:cognate-transparent-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -48935,7 +49357,8 @@
         "cognate:inar-to-ine",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-5"
+        "topic:verb-formal-remainder-5",
+        "topic:cognate-transparent-5"
       ],
       "curriculumRole": "reference"
     },
@@ -48956,7 +49379,8 @@
         "cognate:inar-to-ine",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-deciding-considering"
+        "topic:verb-deciding-considering",
+        "topic:cognate-transparent-10"
       ],
       "curriculumRole": "supporting"
     },
@@ -48977,7 +49401,8 @@
         "cognate:inar-to-ine",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-analysis-investigation"
+        "topic:verb-analysis-investigation",
+        "topic:cognate-transparent-8"
       ],
       "curriculumRole": "supporting"
     },
@@ -48998,7 +49423,8 @@
         "cognate:inar-to-ine",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-analysis-investigation"
+        "topic:verb-analysis-investigation",
+        "topic:cognate-transparent-6"
       ],
       "curriculumRole": "supporting"
     },
@@ -49019,7 +49445,8 @@
         "cognate:inar-to-ine",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-business"
+        "topic:verb-formal-business",
+        "topic:cognate-transparent-6"
       ],
       "curriculumRole": "reference"
     },
@@ -49040,7 +49467,8 @@
         "cognate:inar-to-ine",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-4"
+        "topic:verb-formal-remainder-4",
+        "topic:cognate-transparent-4"
       ],
       "curriculumRole": "reference"
     },
@@ -49061,7 +49489,8 @@
         "cognate:inar-to-ine",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-8"
+        "topic:verb-formal-remainder-8",
+        "topic:cognate-transparent-10"
       ],
       "curriculumRole": "reference"
     },
@@ -49082,7 +49511,8 @@
         "cognate:escribir-to-scribe",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-communication-formal"
+        "topic:verb-communication-formal",
+        "topic:cognate-latin-root-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -49103,7 +49533,8 @@
         "cognate:escribir-to-scribe",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-8"
+        "topic:verb-formal-remainder-8",
+        "topic:cognate-latin-root-6"
       ],
       "curriculumRole": "reference"
     },
@@ -49124,7 +49555,8 @@
         "cognate:escribir-to-scribe",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-business"
+        "topic:verb-formal-business",
+        "topic:cognate-latin-root-8"
       ],
       "curriculumRole": "reference"
     },
@@ -49145,7 +49577,8 @@
         "cognate:escribir-to-scribe",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-business"
+        "topic:verb-formal-business",
+        "topic:cognate-latin-root-10"
       ],
       "curriculumRole": "reference"
     },
@@ -49166,7 +49599,8 @@
         "cognate:escribir-to-scribe",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-communication-formal"
+        "topic:verb-communication-formal",
+        "topic:cognate-latin-root-11"
       ],
       "curriculumRole": "reference"
     },
@@ -49187,7 +49621,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-movement-leaving"
+        "topic:verb-movement-leaving",
+        "topic:cognate-transparent-8",
+        "topic:cognate-latin-root-4"
       ],
       "curriculumRole": "supporting"
     },
@@ -49208,7 +49644,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1"
+        "topic:verb-formal-abstract-1",
+        "topic:cognate-transparent-3",
+        "topic:cognate-latin-root-2"
       ],
       "curriculumRole": "reference"
     },
@@ -49229,7 +49667,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-6"
+        "topic:verb-formal-remainder-6",
+        "topic:cognate-transparent-7",
+        "topic:cognate-latin-root-4"
       ],
       "curriculumRole": "reference"
     },
@@ -49250,7 +49690,8 @@
         "cognate:ificar-to-ify",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-7"
+        "topic:verb-formal-remainder-7",
+        "topic:cognate-transparent-10"
       ],
       "curriculumRole": "supporting"
     },
@@ -49271,7 +49712,8 @@
         "cognate:ificar-to-ify",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-analysis-investigation"
+        "topic:verb-analysis-investigation",
+        "topic:cognate-transparent-18"
       ],
       "curriculumRole": "supporting"
     },
@@ -49292,7 +49734,8 @@
         "cognate:ificar-to-ify",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1"
+        "topic:verb-formal-abstract-1",
+        "topic:cognate-transparent-12"
       ],
       "curriculumRole": "reference"
     },
@@ -49313,7 +49756,8 @@
         "cognate:ificar-to-ify",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-14"
+        "topic:verb-formal-remainder-14",
+        "topic:cognate-transparent-18"
       ],
       "curriculumRole": "reference"
     },
@@ -49334,7 +49778,8 @@
         "cognate:ificar-to-ify",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-analysis-investigation"
+        "topic:verb-analysis-investigation",
+        "topic:cognate-transparent-5"
       ],
       "curriculumRole": "reference"
     },
@@ -49355,7 +49800,8 @@
         "cognate:ificar-to-ify",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-analysis-investigation"
+        "topic:verb-analysis-investigation",
+        "topic:cognate-transparent-3"
       ],
       "curriculumRole": "reference"
     },
@@ -49376,7 +49822,8 @@
         "cognate:ificar-to-ify",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-13"
+        "topic:verb-formal-remainder-13",
+        "topic:cognate-transparent-16"
       ],
       "curriculumRole": "reference"
     },
@@ -49397,7 +49844,8 @@
         "cognate:ificar-to-ify",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-creation-repair-other"
+        "topic:verb-creation-repair-other",
+        "topic:cognate-transparent-12"
       ],
       "curriculumRole": "reference"
     },
@@ -49418,7 +49866,8 @@
         "cognate:ificar-to-ify",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-3"
+        "topic:verb-formal-remainder-3",
+        "topic:cognate-transparent-3"
       ],
       "curriculumRole": "reference"
     },
@@ -49439,7 +49888,8 @@
         "cognate:ificar-to-ify",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-12"
+        "topic:verb-formal-remainder-12",
+        "topic:cognate-transparent-15"
       ],
       "curriculumRole": "reference"
     },
@@ -49460,7 +49910,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-7"
+        "topic:verb-formal-remainder-7",
+        "topic:cognate-transparent-10",
+        "topic:cognate-latin-root-6"
       ],
       "curriculumRole": "supporting"
     },
@@ -49481,7 +49933,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-7"
+        "topic:verb-formal-remainder-7",
+        "topic:cognate-transparent-8",
+        "topic:cognate-latin-root-5"
       ],
       "curriculumRole": "supporting"
     },
@@ -49502,7 +49956,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-creation-repair-other"
+        "topic:verb-creation-repair-other",
+        "topic:cognate-transparent-16",
+        "topic:cognate-latin-root-10"
       ],
       "curriculumRole": "reference"
     },
@@ -49523,7 +49979,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-2"
+        "topic:verb-formal-remainder-2",
+        "topic:cognate-transparent-1",
+        "topic:cognate-latin-root-1"
       ],
       "curriculumRole": "reference"
     },
@@ -49544,7 +50002,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-7"
+        "topic:verb-formal-remainder-7",
+        "topic:cognate-transparent-10",
+        "topic:cognate-latin-root-6"
       ],
       "curriculumRole": "reference"
     },
@@ -49565,7 +50025,8 @@
         "cognate:cluir-to-clude",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-8"
+        "topic:verb-formal-remainder-8",
+        "topic:cognate-latin-root-6"
       ],
       "curriculumRole": "supporting"
     },
@@ -49586,7 +50047,8 @@
         "cognate:cluir-to-clude",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-7"
+        "topic:verb-formal-remainder-7",
+        "topic:cognate-latin-root-5"
       ],
       "curriculumRole": "reference"
     },
@@ -49607,7 +50069,8 @@
         "cognate:cluir-to-clude",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1"
+        "topic:verb-formal-abstract-1",
+        "topic:cognate-latin-root-2"
       ],
       "curriculumRole": "reference"
     },
@@ -49631,7 +50094,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-2"
+        "topic:verb-formal-remainder-2",
+        "topic:cognate-transparent-1",
+        "topic:cognate-latin-root-1"
       ],
       "curriculumRole": "reference"
     },
@@ -49652,7 +50117,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-6"
+        "topic:verb-formal-remainder-6",
+        "topic:cognate-transparent-7",
+        "topic:cognate-latin-root-4"
       ],
       "curriculumRole": "reference"
     },
@@ -49673,7 +50140,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-health-body"
+        "topic:verb-health-body",
+        "topic:cognate-transparent-11",
+        "topic:cognate-latin-root-6"
       ],
       "curriculumRole": "reference"
     },
@@ -49694,7 +50163,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-health-body"
+        "topic:verb-health-body",
+        "topic:cognate-transparent-8",
+        "topic:cognate-latin-root-5"
       ],
       "curriculumRole": "reference"
     },
@@ -49715,7 +50186,8 @@
         "cognate:ducir-to-duce",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-8"
+        "topic:verb-formal-remainder-8",
+        "topic:cognate-latin-root-7"
       ],
       "curriculumRole": "supporting"
     },
@@ -49736,7 +50208,8 @@
         "cognate:ducir-to-duce",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-11"
+        "topic:verb-formal-remainder-11",
+        "topic:cognate-latin-root-9"
       ],
       "curriculumRole": "supporting"
     },
@@ -49757,7 +50230,8 @@
         "cognate:ducir-to-duce",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-creation-repair-other"
+        "topic:verb-creation-repair-other",
+        "topic:cognate-latin-root-9"
       ],
       "curriculumRole": "supporting"
     },
@@ -49778,7 +50252,8 @@
         "cognate:ducir-to-duce",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-deciding-considering"
+        "topic:verb-deciding-considering",
+        "topic:cognate-latin-root-3"
       ],
       "curriculumRole": "reference"
     },
@@ -49799,7 +50274,8 @@
         "cognate:ducir-to-duce",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-8"
+        "topic:verb-formal-remainder-8",
+        "topic:cognate-latin-root-6"
       ],
       "curriculumRole": "reference"
     },
@@ -49820,7 +50296,8 @@
         "cognate:ducir-to-duce",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-13"
+        "topic:verb-formal-remainder-13",
+        "topic:cognate-latin-root-10"
       ],
       "curriculumRole": "reference"
     },
@@ -49841,7 +50318,8 @@
         "cognate:ducir-to-duce",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-13"
+        "topic:verb-formal-remainder-13",
+        "topic:cognate-latin-root-10"
       ],
       "curriculumRole": "reference"
     },
@@ -49862,7 +50340,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-social-relationships"
+        "topic:verb-social-relationships",
+        "topic:cognate-transparent-11",
+        "topic:cognate-latin-root-7"
       ],
       "curriculumRole": "supporting"
     },
@@ -49883,7 +50363,8 @@
         "cognate:ir-to-silent-e",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-abstract-2"
+        "topic:verb-formal-abstract-2",
+        "topic:cognate-transparent-18"
       ],
       "curriculumRole": "reference"
     },
@@ -49904,7 +50385,8 @@
         "cognate:ir-to-silent-e",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-social-relationships"
+        "topic:verb-social-relationships",
+        "topic:cognate-transparent-16"
       ],
       "curriculumRole": "reference"
     },
@@ -49925,7 +50407,9 @@
         "cognate:transparent",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-communication-formal"
+        "topic:verb-communication-formal",
+        "topic:cognate-transparent-3",
+        "topic:cognate-latin-root-2"
       ],
       "curriculumRole": "reference"
     },
@@ -49946,7 +50430,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-7"
+        "topic:verb-formal-remainder-7",
+        "topic:cognate-transparent-10",
+        "topic:cognate-latin-root-6"
       ],
       "curriculumRole": "reference"
     },
@@ -49967,7 +50453,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-communication-formal"
+        "topic:verb-communication-formal",
+        "topic:cognate-transparent-15",
+        "topic:cognate-latin-root-9"
       ],
       "curriculumRole": "reference"
     },
@@ -49988,7 +50476,8 @@
         "cognate:servar-to-serve",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-watching-other"
+        "topic:verb-watching-other",
+        "topic:cognate-latin-root-7"
       ],
       "curriculumRole": "reference"
     },
@@ -50009,7 +50498,8 @@
         "cognate:servar-to-serve",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-business"
+        "topic:verb-formal-business",
+        "topic:cognate-latin-root-2"
       ],
       "curriculumRole": "reference"
     },
@@ -50030,7 +50520,8 @@
         "cognate:servar-to-serve",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-business"
+        "topic:verb-formal-business",
+        "topic:cognate-latin-root-8"
       ],
       "curriculumRole": "reference"
     },
@@ -50051,7 +50542,8 @@
         "cognate:servar-to-serve",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-13"
+        "topic:verb-formal-remainder-13",
+        "topic:cognate-latin-root-10"
       ],
       "curriculumRole": "supporting"
     },
@@ -50072,7 +50564,8 @@
         "cognate:izar-to-ize",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-10"
+        "topic:verb-formal-remainder-10",
+        "topic:cognate-transparent-13"
       ],
       "curriculumRole": "supporting"
     },
@@ -50093,7 +50586,8 @@
         "cognate:izar-to-ize",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-9"
+        "topic:verb-formal-remainder-9",
+        "topic:cognate-transparent-12"
       ],
       "curriculumRole": "supporting"
     },
@@ -50114,7 +50608,8 @@
         "cognate:izar-to-ize",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-abstract-2"
+        "topic:verb-formal-abstract-2",
+        "topic:cognate-transparent-8"
       ],
       "curriculumRole": "reference"
     },
@@ -50135,7 +50630,8 @@
         "cognate:izar-to-ize",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-business"
+        "topic:verb-formal-business",
+        "topic:cognate-transparent-9"
       ],
       "curriculumRole": "reference"
     },
@@ -50156,7 +50652,8 @@
         "cognate:izar-to-ize",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-business"
+        "topic:verb-formal-business",
+        "topic:cognate-transparent-12"
       ],
       "curriculumRole": "reference"
     },
@@ -50177,7 +50674,8 @@
         "cognate:izar-to-ize",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-business"
+        "topic:verb-formal-business",
+        "topic:cognate-transparent-12"
       ],
       "curriculumRole": "reference"
     },
@@ -50198,7 +50696,8 @@
         "cognate:izar-to-ize",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-11"
+        "topic:verb-formal-remainder-11",
+        "topic:cognate-transparent-15"
       ],
       "curriculumRole": "reference"
     },
@@ -50219,7 +50718,8 @@
         "cognate:izar-to-ize",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-analysis-investigation"
+        "topic:verb-analysis-investigation",
+        "topic:cognate-transparent-3"
       ],
       "curriculumRole": "reference"
     },
@@ -50240,7 +50740,8 @@
         "cognate:izar-to-ize",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-technology-digital"
+        "topic:verb-technology-digital",
+        "topic:cognate-transparent-6"
       ],
       "curriculumRole": "reference"
     },
@@ -50261,7 +50762,8 @@
         "cognate:izar-to-ize",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-14"
+        "topic:verb-formal-remainder-14",
+        "topic:cognate-transparent-19"
       ],
       "curriculumRole": "reference"
     },
@@ -50282,7 +50784,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-11"
+        "topic:verb-formal-remainder-11",
+        "topic:cognate-transparent-14",
+        "topic:cognate-latin-root-8"
       ],
       "curriculumRole": "supporting"
     },
@@ -50303,7 +50807,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-analysis-investigation"
+        "topic:verb-analysis-investigation",
+        "topic:cognate-transparent-4",
+        "topic:cognate-latin-root-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -50324,7 +50830,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-admin-legal-formal"
+        "topic:verb-admin-legal-formal",
+        "topic:cognate-transparent-5",
+        "topic:cognate-latin-root-3"
       ],
       "curriculumRole": "reference"
     },
@@ -50345,7 +50853,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-creation-repair-other"
+        "topic:verb-creation-repair-other",
+        "topic:cognate-transparent-16",
+        "topic:cognate-latin-root-9"
       ],
       "curriculumRole": "supporting"
     },
@@ -50366,7 +50876,8 @@
         "cognate:hibir-to-hibit",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-admin-legal-formal"
+        "topic:verb-admin-legal-formal",
+        "topic:cognate-latin-root-9"
       ],
       "curriculumRole": "reference"
     },
@@ -50387,7 +50898,8 @@
         "cognate:hibir-to-hibit",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1"
+        "topic:verb-formal-abstract-1",
+        "topic:cognate-latin-root-5"
       ],
       "curriculumRole": "reference"
     },
@@ -50408,7 +50920,8 @@
         "cognate:hibir-to-hibit",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-8"
+        "topic:verb-formal-remainder-8",
+        "topic:cognate-latin-root-6"
       ],
       "curriculumRole": "reference"
     },
@@ -50429,7 +50942,8 @@
         "cognate:cibir-to-ceive",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-12"
+        "topic:verb-formal-remainder-12",
+        "topic:cognate-latin-root-9"
       ],
       "curriculumRole": "supporting"
     },
@@ -50450,7 +50964,8 @@
         "cognate:cibir-to-ceive",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-deciding-considering"
+        "topic:verb-deciding-considering",
+        "topic:cognate-latin-root-8"
       ],
       "curriculumRole": "reference"
     },
@@ -50471,7 +50986,8 @@
         "cognate:cibir-to-ceive",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-deciding-considering"
+        "topic:verb-deciding-considering",
+        "topic:cognate-latin-root-2"
       ],
       "curriculumRole": "reference"
     },
@@ -50492,7 +51008,8 @@
         "cognate:solver-to-solve",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-13"
+        "topic:verb-formal-remainder-13",
+        "topic:cognate-latin-root-10"
       ],
       "curriculumRole": "supporting"
     },
@@ -50513,7 +51030,8 @@
         "cognate:solver-to-solve",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-2"
+        "topic:verb-formal-abstract-2",
+        "topic:cognate-latin-root-4"
       ],
       "curriculumRole": "reference"
     },
@@ -50534,7 +51052,8 @@
         "cognate:solver-to-solve",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-0"
+        "topic:verb-formal-remainder-0",
+        "topic:cognate-latin-root-1"
       ],
       "curriculumRole": "reference"
     },
@@ -50555,7 +51074,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-wishes-2"
+        "topic:verb-wishes-2",
+        "topic:cognate-transparent-17",
+        "topic:cognate-latin-root-10"
       ],
       "curriculumRole": "supporting"
     },
@@ -50576,7 +51097,8 @@
         "cognate:ir-to-silent-e",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-abstract-2"
+        "topic:verb-formal-abstract-2",
+        "topic:cognate-transparent-16"
       ],
       "curriculumRole": "reference"
     },
@@ -50597,7 +51119,9 @@
         "cognate:transparent",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1"
+        "topic:verb-formal-abstract-1",
+        "topic:cognate-transparent-6",
+        "topic:cognate-latin-root-3"
       ],
       "curriculumRole": "reference"
     },
@@ -50621,7 +51145,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-11"
+        "topic:verb-formal-remainder-11",
+        "topic:cognate-transparent-15",
+        "topic:cognate-latin-root-9"
       ],
       "curriculumRole": "reference"
     },
@@ -50642,7 +51168,8 @@
         "cognate:gerir-to-gest",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-14"
+        "topic:verb-formal-remainder-14",
+        "topic:cognate-latin-root-10"
       ],
       "curriculumRole": "supporting"
     },
@@ -50663,7 +51190,8 @@
         "cognate:gerir-to-gest",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-health-body"
+        "topic:verb-health-body",
+        "topic:cognate-latin-root-4"
       ],
       "curriculumRole": "reference"
     },
@@ -50684,7 +51212,8 @@
         "cognate:gerir-to-gest",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-health-body"
+        "topic:verb-health-body",
+        "topic:cognate-latin-root-6"
       ],
       "curriculumRole": "reference"
     },
@@ -50705,7 +51234,8 @@
         "cognate:traer-to-tract",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-2"
+        "topic:verb-formal-remainder-2",
+        "topic:cognate-latin-root-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -50726,7 +51256,8 @@
         "cognate:traer-to-tract",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1"
+        "topic:verb-formal-abstract-1",
+        "topic:cognate-latin-root-4"
       ],
       "curriculumRole": "reference"
     },
@@ -50747,7 +51278,8 @@
         "cognate:traer-to-tract",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-2"
+        "topic:verb-formal-abstract-2",
+        "topic:cognate-latin-root-5"
       ],
       "curriculumRole": "reference"
     },
@@ -50768,7 +51300,8 @@
         "cognate:traer-to-tract",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-4"
+        "topic:verb-formal-remainder-4",
+        "topic:cognate-latin-root-3"
       ],
       "curriculumRole": "reference"
     },
@@ -50789,7 +51322,8 @@
         "cognate:traer-to-tract",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-14"
+        "topic:verb-formal-remainder-14",
+        "topic:cognate-latin-root-11"
       ],
       "curriculumRole": "reference"
     },
@@ -50810,7 +51344,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-4"
+        "topic:verb-formal-remainder-4",
+        "topic:cognate-transparent-5",
+        "topic:cognate-latin-root-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -50831,7 +51367,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-7"
+        "topic:verb-formal-remainder-7",
+        "topic:cognate-transparent-10",
+        "topic:cognate-latin-root-6"
       ],
       "curriculumRole": "reference"
     },
@@ -50852,7 +51390,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-1"
+        "topic:verb-formal-remainder-1",
+        "topic:cognate-transparent-1",
+        "topic:cognate-latin-root-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -50873,7 +51413,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-12"
+        "topic:verb-formal-remainder-12",
+        "topic:cognate-transparent-15",
+        "topic:cognate-latin-root-9"
       ],
       "curriculumRole": "supporting"
     },
@@ -50894,7 +51436,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1"
+        "topic:verb-formal-abstract-1",
+        "topic:cognate-transparent-11",
+        "topic:cognate-latin-root-7"
       ],
       "curriculumRole": "reference"
     },
@@ -50915,7 +51459,8 @@
         "cognate:hender-to-hend",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1"
+        "topic:verb-formal-abstract-1",
+        "topic:cognate-latin-root-2"
       ],
       "curriculumRole": "reference"
     },
@@ -50936,7 +51481,8 @@
         "cognate:hender-to-hend",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-2"
+        "topic:verb-formal-remainder-2",
+        "topic:cognate-latin-root-1"
       ],
       "curriculumRole": "reference"
     },
@@ -50957,7 +51503,8 @@
         "cognate:primir-to-press",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-2"
+        "topic:verb-formal-abstract-2",
+        "topic:cognate-latin-root-2"
       ],
       "curriculumRole": "reference"
     },
@@ -50978,7 +51525,8 @@
         "cognate:primir-to-press",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-12"
+        "topic:verb-formal-remainder-12",
+        "topic:cognate-latin-root-9"
       ],
       "curriculumRole": "reference"
     },
@@ -50999,7 +51547,8 @@
         "cognate:primir-to-press",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-14"
+        "topic:verb-formal-remainder-14",
+        "topic:cognate-latin-root-10"
       ],
       "curriculumRole": "reference"
     },
@@ -51020,7 +51569,8 @@
         "cognate:primir-to-press",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-communication-formal"
+        "topic:verb-communication-formal",
+        "topic:cognate-latin-root-5"
       ],
       "curriculumRole": "supporting"
     },
@@ -51042,7 +51592,8 @@
         "cognate:ceder-to-cede",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1"
+        "topic:verb-formal-abstract-1",
+        "topic:cognate-latin-root-2"
       ],
       "curriculumRole": "reference"
     },
@@ -51064,7 +51615,8 @@
         "cognate:ceder-to-cede",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-10"
+        "topic:verb-formal-remainder-10",
+        "topic:cognate-latin-root-8"
       ],
       "curriculumRole": "reference"
     },
@@ -51086,7 +51638,8 @@
         "cognate:ceder-to-cede",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1"
+        "topic:verb-formal-abstract-1",
+        "topic:cognate-latin-root-5"
       ],
       "curriculumRole": "reference"
     },
@@ -51108,7 +51661,8 @@
         "cognate:ceder-to-cede",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1"
+        "topic:verb-formal-abstract-1",
+        "topic:cognate-latin-root-9"
       ],
       "curriculumRole": "reference"
     },
@@ -51129,7 +51683,8 @@
         "cognate:vertir-to-vert",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-creation-repair-other"
+        "topic:verb-creation-repair-other",
+        "topic:cognate-latin-root-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -51150,7 +51705,8 @@
         "cognate:vertir-to-vert",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1"
+        "topic:verb-formal-abstract-1",
+        "topic:cognate-latin-root-10"
       ],
       "curriculumRole": "reference"
     },
@@ -51171,7 +51727,8 @@
         "cognate:vertir-to-vert",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-9"
+        "topic:verb-formal-remainder-9",
+        "topic:cognate-latin-root-7"
       ],
       "curriculumRole": "reference"
     },
@@ -51192,7 +51749,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-4"
+        "topic:verb-formal-remainder-4",
+        "topic:cognate-transparent-5",
+        "topic:cognate-latin-root-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -51213,7 +51772,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-5"
+        "topic:verb-formal-remainder-5",
+        "topic:cognate-transparent-6",
+        "topic:cognate-latin-root-4"
       ],
       "curriculumRole": "supporting"
     },
@@ -51234,7 +51795,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-deciding-considering"
+        "topic:verb-deciding-considering",
+        "topic:cognate-transparent-7",
+        "topic:cognate-latin-root-4"
       ],
       "curriculumRole": "reference"
     },
@@ -51255,7 +51818,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-11"
+        "topic:verb-formal-remainder-11",
+        "topic:cognate-transparent-15",
+        "topic:cognate-latin-root-9"
       ],
       "curriculumRole": "supporting"
     },
@@ -51276,7 +51841,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-7"
+        "topic:verb-formal-remainder-7",
+        "topic:cognate-transparent-8",
+        "topic:cognate-latin-root-4"
       ],
       "curriculumRole": "reference"
     },
@@ -51297,7 +51864,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-4"
+        "topic:verb-formal-remainder-4",
+        "topic:cognate-transparent-4",
+        "topic:cognate-latin-root-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -51318,7 +51887,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1"
+        "topic:verb-formal-abstract-1",
+        "topic:cognate-transparent-6",
+        "topic:cognate-latin-root-3"
       ],
       "curriculumRole": "reference"
     },
@@ -51339,7 +51910,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-11"
+        "topic:verb-formal-remainder-11",
+        "topic:cognate-transparent-15",
+        "topic:cognate-latin-root-9"
       ],
       "curriculumRole": "reference"
     },
@@ -51360,7 +51933,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder-10"
+        "topic:verb-formal-remainder-10",
+        "topic:cognate-transparent-14",
+        "topic:cognate-latin-root-8"
       ],
       "curriculumRole": "reference"
     },
@@ -51381,7 +51956,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1"
+        "topic:verb-formal-abstract-1",
+        "topic:cognate-transparent-3",
+        "topic:cognate-latin-root-2"
       ],
       "curriculumRole": "reference"
     },
@@ -51402,7 +51979,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-analysis-investigation"
+        "topic:verb-analysis-investigation",
+        "topic:cognate-transparent-11",
+        "topic:cognate-latin-root-6"
       ],
       "curriculumRole": "reference"
     },
@@ -51423,7 +52002,8 @@
         "cognate:struir-to-struct",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1"
+        "topic:verb-formal-abstract-1",
+        "topic:cognate-latin-root-7"
       ],
       "curriculumRole": "reference"
     },
@@ -51444,7 +52024,8 @@
         "cognate:struir-to-struct",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-creation-repair-other"
+        "topic:verb-creation-repair-other",
+        "topic:cognate-latin-root-2"
       ],
       "curriculumRole": "reference"
     },
@@ -51465,7 +52046,8 @@
         "cognate:struir-to-struct",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-12"
+        "topic:verb-formal-remainder-12",
+        "topic:cognate-latin-root-9"
       ],
       "curriculumRole": "reference"
     },
@@ -51486,7 +52068,8 @@
         "cognate:struir-to-struct",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-10"
+        "topic:verb-formal-remainder-10",
+        "topic:cognate-latin-root-7"
       ],
       "curriculumRole": "reference"
     },
@@ -51507,7 +52090,8 @@
         "cognate:tener-to-tain",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-possession-obtaining"
+        "topic:verb-possession-obtaining",
+        "topic:cognate-latin-root-7"
       ],
       "curriculumRole": "supporting"
     },
@@ -51528,7 +52112,8 @@
         "cognate:tener-to-tain",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-keeping-storing"
+        "topic:verb-keeping-storing",
+        "topic:cognate-latin-root-7"
       ],
       "curriculumRole": "supporting"
     },
@@ -51549,7 +52134,8 @@
         "cognate:tener-to-tain",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-14"
+        "topic:verb-formal-remainder-14",
+        "topic:cognate-latin-root-10"
       ],
       "curriculumRole": "reference"
     },
@@ -51570,7 +52156,8 @@
         "cognate:tener-to-tain",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-4"
+        "topic:verb-formal-remainder-4",
+        "topic:cognate-latin-root-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -51591,7 +52178,8 @@
         "cognate:tener-to-tain",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-13"
+        "topic:verb-formal-remainder-13",
+        "topic:cognate-latin-root-10"
       ],
       "curriculumRole": "reference"
     },
@@ -51611,7 +52199,8 @@
         "cognate:plicar-to-ply",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-communication-formal"
+        "topic:verb-communication-formal",
+        "topic:cognate-latin-root-5"
       ],
       "curriculumRole": "supporting"
     },
@@ -51632,7 +52221,8 @@
         "cognate:tener-to-tain",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-conflict-crime"
+        "topic:verb-conflict-crime",
+        "topic:cognate-latin-root-3"
       ],
       "curriculumRole": "reference"
     },
@@ -51653,7 +52243,8 @@
         "cognate:tener-to-tain",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-social-relationships"
+        "topic:verb-social-relationships",
+        "topic:cognate-latin-root-4"
       ],
       "curriculumRole": "reference"
     },
@@ -51674,7 +52265,8 @@
         "cognate:tener-to-tain",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-0"
+        "topic:verb-formal-remainder-0",
+        "topic:cognate-latin-root-1"
       ],
       "curriculumRole": "reference"
     },
@@ -51695,7 +52287,8 @@
         "cognate:currir-to-cur",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-10"
+        "topic:verb-formal-remainder-10",
+        "topic:cognate-latin-root-8"
       ],
       "curriculumRole": "supporting"
     },
@@ -51716,7 +52309,8 @@
         "cognate:currir-to-cur",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-8"
+        "topic:verb-formal-remainder-8",
+        "topic:cognate-latin-root-6"
       ],
       "curriculumRole": "reference"
     },
@@ -51737,7 +52331,8 @@
         "cognate:poner-to-pose",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1"
+        "topic:verb-formal-abstract-1",
+        "topic:cognate-latin-root-9"
       ],
       "curriculumRole": "reference"
     },
@@ -51758,7 +52353,8 @@
         "cognate:poner-to-pose",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-conflict-crime"
+        "topic:verb-conflict-crime",
+        "topic:cognate-latin-root-8"
       ],
       "curriculumRole": "reference"
     },
@@ -51779,7 +52375,8 @@
         "cognate:poner-to-pose",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1"
+        "topic:verb-formal-abstract-1",
+        "topic:cognate-latin-root-5"
       ],
       "curriculumRole": "reference"
     },
@@ -51800,7 +52397,8 @@
         "cognate:poner-to-pose",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-deciding-considering"
+        "topic:verb-deciding-considering",
+        "topic:cognate-latin-root-10"
       ],
       "curriculumRole": "supporting"
     },
@@ -51821,7 +52419,8 @@
         "cognate:poner-to-pose",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-3"
+        "topic:verb-formal-remainder-3",
+        "topic:cognate-latin-root-2"
       ],
       "curriculumRole": "reference"
     },
@@ -51842,7 +52441,8 @@
         "cognate:poner-to-pose",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-admin-legal-formal"
+        "topic:verb-admin-legal-formal",
+        "topic:cognate-latin-root-6"
       ],
       "curriculumRole": "reference"
     },
@@ -51863,7 +52463,8 @@
         "cognate:poner-to-pose",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-5"
+        "topic:verb-formal-remainder-5",
+        "topic:cognate-latin-root-3"
       ],
       "curriculumRole": "reference"
     },
@@ -51884,7 +52485,8 @@
         "cognate:poner-to-pose",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-8"
+        "topic:verb-formal-remainder-8",
+        "topic:cognate-latin-root-7"
       ],
       "curriculumRole": "reference"
     },
@@ -51905,7 +52507,8 @@
         "cognate:poner-to-pose",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-11"
+        "topic:verb-formal-remainder-11",
+        "topic:cognate-latin-root-8"
       ],
       "curriculumRole": "reference"
     },
@@ -51926,7 +52529,8 @@
         "gender:masculine",
         "topic:transportation",
         "audit:reviewed",
-        "topic:masc-o-2"
+        "topic:masc-o-2",
+        "topic:cognate-opaque-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -51947,7 +52551,8 @@
         "gender:masculine",
         "topic:money-business",
         "audit:reviewed",
-        "topic:masc-o-1"
+        "topic:masc-o-1",
+        "topic:cognate-opaque-1"
       ],
       "curriculumRole": "reference"
     },
@@ -51971,7 +52576,8 @@
         "gender:masculine",
         "audit:reviewed",
         "topic:masc-o-1",
-        "topic:places-public-city"
+        "topic:places-public-city",
+        "topic:cognate-opaque-1"
       ],
       "curriculumRole": "reference"
     },
@@ -51994,7 +52600,8 @@
         "topic:difficulty",
         "topic:multi-sense",
         "audit:reviewed",
-        "topic:adj-ser-general-2"
+        "topic:adj-ser-general-2",
+        "topic:cognate-opaque-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -52017,7 +52624,8 @@
         "topic:abstract-quality",
         "audit:reviewed",
         "topic:masc-o-2",
-        "topic:abstract-general-2"
+        "topic:abstract-general-2",
+        "topic:cognate-opaque-2"
       ],
       "curriculumRole": "reference"
     },
@@ -52040,7 +52648,8 @@
         "topic:people",
         "audit:reviewed",
         "topic:masc-o-1",
-        "topic:people-general"
+        "topic:people-general",
+        "topic:cognate-opaque-1"
       ],
       "curriculumRole": "reference"
     },
@@ -52063,7 +52672,8 @@
         "topic:abstract-quality",
         "audit:reviewed",
         "topic:masc-o-4",
-        "topic:abstract-general-5"
+        "topic:abstract-general-5",
+        "topic:cognate-opaque-3"
       ],
       "curriculumRole": "reference"
     },
@@ -52086,7 +52696,8 @@
         "topic:abstract-quality",
         "audit:reviewed",
         "topic:masc-o-7",
-        "topic:abstract-general-6"
+        "topic:abstract-general-6",
+        "topic:cognate-opaque-3"
       ],
       "curriculumRole": "reference"
     },
@@ -52109,7 +52720,8 @@
         "topic:abstract-quality",
         "audit:reviewed",
         "topic:masc-o-8",
-        "topic:abstract-general-7"
+        "topic:abstract-general-7",
+        "topic:cognate-opaque-4"
       ],
       "curriculumRole": "reference"
     },
@@ -52133,7 +52745,8 @@
         "gender:feminine",
         "audit:reviewed",
         "topic:fem-a-6",
-        "topic:places-home-buildings"
+        "topic:places-home-buildings",
+        "topic:cognate-opaque-3"
       ],
       "curriculumRole": "reference"
     },
@@ -52154,7 +52767,8 @@
         "gender:feminine",
         "topic:education",
         "audit:reviewed",
-        "topic:fem-a-3"
+        "topic:fem-a-3",
+        "topic:cognate-opaque-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -52174,7 +52788,8 @@
         "es:admirar",
         "en:admire",
         "audit:reviewed",
-        "topic:verb-formal-remainder-1"
+        "topic:verb-formal-remainder-1",
+        "topic:cognate-opaque-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -52194,7 +52809,8 @@
         "es:inspirar",
         "en:inspire",
         "audit:reviewed",
-        "topic:verb-formal-remainder-8"
+        "topic:verb-formal-remainder-8",
+        "topic:cognate-opaque-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -52214,7 +52830,8 @@
         "es:adquirir",
         "en:acquire",
         "audit:reviewed",
-        "topic:verb-possession-obtaining"
+        "topic:verb-possession-obtaining",
+        "topic:cognate-opaque-1"
       ],
       "curriculumRole": "reference"
     },
@@ -52234,7 +52851,8 @@
         "es:requerir",
         "en:require",
         "audit:reviewed",
-        "topic:verb-admin-legal-formal"
+        "topic:verb-admin-legal-formal",
+        "topic:cognate-opaque-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -52254,7 +52872,8 @@
         "es:retirar",
         "en:retire",
         "audit:reviewed",
-        "topic:verb-formal-abstract-2"
+        "topic:verb-formal-abstract-2",
+        "topic:cognate-opaque-3"
       ],
       "curriculumRole": "reference"
     },
@@ -52274,7 +52893,8 @@
         "es:expirar",
         "en:expire",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1"
+        "topic:verb-formal-abstract-1",
+        "topic:cognate-opaque-2"
       ],
       "curriculumRole": "reference"
     },
@@ -52297,7 +52917,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder-2"
+        "topic:verb-formal-remainder-2",
+        "topic:cognate-opaque-1"
       ],
       "curriculumRole": "reference"
     },
@@ -52317,7 +52938,8 @@
         "es:conspirar",
         "en:conspire",
         "audit:reviewed",
-        "topic:verb-formal-remainder-4"
+        "topic:verb-formal-remainder-4",
+        "topic:cognate-opaque-1"
       ],
       "curriculumRole": "reference"
     },
@@ -52337,7 +52959,8 @@
         "es:continuar",
         "en:continue",
         "audit:reviewed",
-        "topic:verb-wishes-1"
+        "topic:verb-wishes-1",
+        "topic:cognate-opaque-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -52357,7 +52980,8 @@
         "es:valorar",
         "en:value",
         "audit:reviewed",
-        "topic:verb-money-commerce-2"
+        "topic:verb-money-commerce-2",
+        "topic:cognate-opaque-4"
       ],
       "curriculumRole": "supporting"
     },
@@ -52377,7 +53001,8 @@
         "es:subvalorar",
         "en:undervalue",
         "audit:reviewed",
-        "topic:verb-money-commerce-2"
+        "topic:verb-money-commerce-2",
+        "topic:cognate-opaque-4"
       ],
       "curriculumRole": "reference"
     },
@@ -52397,7 +53022,8 @@
         "es:sobrevalorar",
         "en:overvalue",
         "audit:reviewed",
-        "topic:verb-money-commerce-2"
+        "topic:verb-money-commerce-2",
+        "topic:cognate-opaque-4"
       ],
       "curriculumRole": "reference"
     },
@@ -52417,7 +53043,8 @@
         "es:devaluar",
         "en:devalue",
         "audit:reviewed",
-        "topic:verb-money-commerce-1"
+        "topic:verb-money-commerce-1",
+        "topic:cognate-opaque-2"
       ],
       "curriculumRole": "reference"
     },
@@ -52437,7 +53064,8 @@
         "es:revaluar",
         "en:revalue",
         "audit:reviewed",
-        "topic:verb-money-commerce-2"
+        "topic:verb-money-commerce-2",
+        "topic:cognate-opaque-4"
       ],
       "curriculumRole": "reference"
     },
@@ -52457,7 +53085,8 @@
         "es:abolir",
         "en:abolish",
         "audit:reviewed",
-        "topic:verb-formal-remainder-0"
+        "topic:verb-formal-remainder-0",
+        "topic:cognate-opaque-1"
       ],
       "curriculumRole": "reference"
     },
@@ -52477,7 +53106,8 @@
         "es:pulir",
         "en:polish",
         "audit:reviewed",
-        "topic:verb-creation-repair-other"
+        "topic:verb-creation-repair-other",
+        "topic:cognate-opaque-3"
       ],
       "curriculumRole": "reference"
     },
@@ -52497,7 +53127,8 @@
         "es:distinguir",
         "en:distinguish",
         "audit:reviewed",
-        "topic:verb-deciding-considering"
+        "topic:verb-deciding-considering",
+        "topic:cognate-opaque-2"
       ],
       "curriculumRole": "reference"
     },
@@ -52517,7 +53148,8 @@
         "es:extinguir",
         "en:extinguish",
         "audit:reviewed",
-        "topic:verb-formal-remainder-7"
+        "topic:verb-formal-remainder-7",
+        "topic:cognate-opaque-2"
       ],
       "curriculumRole": "reference"
     },
@@ -52537,7 +53169,8 @@
         "es:establecer",
         "en:establish",
         "audit:reviewed",
-        "topic:verb-admin-legal-formal"
+        "topic:verb-admin-legal-formal",
+        "topic:cognate-opaque-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -52557,7 +53190,8 @@
         "es:demoler",
         "en:demolish",
         "audit:reviewed",
-        "topic:verb-creation-repair-other"
+        "topic:verb-creation-repair-other",
+        "topic:cognate-opaque-2"
       ],
       "curriculumRole": "reference"
     },
@@ -52577,7 +53211,8 @@
         "es:florecer",
         "en:flourish",
         "audit:reviewed",
-        "topic:verb-formal-remainder-7"
+        "topic:verb-formal-remainder-7",
+        "topic:cognate-opaque-2"
       ],
       "curriculumRole": "reference"
     },
@@ -52597,7 +53232,8 @@
         "es:publicar",
         "en:publish",
         "audit:reviewed",
-        "topic:verb-formal-remainder-11"
+        "topic:verb-formal-remainder-11",
+        "topic:cognate-opaque-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -52616,7 +53252,8 @@
         "es:estudiar",
         "en:study",
         "audit:reviewed",
-        "topic:verb-learning-teaching"
+        "topic:verb-learning-teaching",
+        "topic:cognate-opaque-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -52635,7 +53272,8 @@
         "es:entrenar",
         "en:train",
         "audit:reviewed",
-        "topic:verb-movement-leaving"
+        "topic:verb-movement-leaving",
+        "topic:cognate-opaque-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -52654,7 +53292,8 @@
         "es:espiar",
         "en:spy",
         "audit:reviewed",
-        "topic:verb-formal-remainder-7"
+        "topic:verb-formal-remainder-7",
+        "topic:cognate-opaque-2"
       ],
       "curriculumRole": "reference"
     },
@@ -52673,7 +53312,8 @@
         "es:escanear",
         "en:scan",
         "audit:reviewed",
-        "topic:verb-technology-digital"
+        "topic:verb-technology-digital",
+        "topic:cognate-opaque-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -52693,7 +53333,8 @@
         "es:incrementar",
         "en:increase",
         "audit:reviewed",
-        "topic:verb-creation-repair-other"
+        "topic:verb-creation-repair-other",
+        "topic:cognate-opaque-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -52713,7 +53354,8 @@
         "es:decrementar",
         "en:decrease",
         "audit:reviewed",
-        "topic:verb-creation-repair-other"
+        "topic:verb-creation-repair-other",
+        "topic:cognate-opaque-2"
       ],
       "curriculumRole": "reference"
     },
@@ -52733,7 +53375,8 @@
         "es:liberar",
         "en:release",
         "audit:reviewed",
-        "topic:verb-formal-remainder-9"
+        "topic:verb-formal-remainder-9",
+        "topic:cognate-opaque-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -52753,7 +53396,8 @@
         "es:cesar",
         "en:cease",
         "audit:reviewed",
-        "topic:verb-formal-remainder-3"
+        "topic:verb-formal-remainder-3",
+        "topic:cognate-opaque-1"
       ],
       "curriculumRole": "reference"
     },
@@ -52773,7 +53417,8 @@
         "es:practicar",
         "en:practice",
         "audit:reviewed",
-        "topic:verb-formal-remainder-10"
+        "topic:verb-formal-remainder-10",
+        "topic:cognate-opaque-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -52793,7 +53438,8 @@
         "es:notar",
         "en:notice",
         "audit:reviewed",
-        "topic:verb-watching-other"
+        "topic:verb-watching-other",
+        "topic:cognate-opaque-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -52813,7 +53459,8 @@
         "es:prometer",
         "en:promise",
         "audit:reviewed",
-        "topic:verb-formal-remainder-11"
+        "topic:verb-formal-remainder-11",
+        "topic:cognate-opaque-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -52833,7 +53480,8 @@
         "es:sacrificar",
         "en:sacrifice",
         "audit:reviewed",
-        "topic:verb-formal-remainder-13"
+        "topic:verb-formal-remainder-13",
+        "topic:cognate-opaque-4"
       ],
       "curriculumRole": "reference"
     },
@@ -52854,7 +53502,8 @@
         "en:finish",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-wishes-2"
+        "topic:verb-wishes-2",
+        "topic:cognate-opaque-4"
       ],
       "curriculumRole": "supporting"
     },
@@ -52874,7 +53523,8 @@
         "es:castigar",
         "en:punish",
         "audit:reviewed",
-        "topic:verb-conflict-crime"
+        "topic:verb-conflict-crime",
+        "topic:cognate-opaque-1"
       ],
       "curriculumRole": "reference"
     },
@@ -52894,7 +53544,8 @@
         "es:disminuir",
         "en:diminish",
         "audit:reviewed",
-        "topic:verb-formal-remainder-6"
+        "topic:verb-formal-remainder-6",
+        "topic:cognate-opaque-2"
       ],
       "curriculumRole": "reference"
     },
@@ -52914,7 +53565,8 @@
         "es:barnizar",
         "en:varnish",
         "audit:reviewed",
-        "topic:verb-formal-remainder-2"
+        "topic:verb-formal-remainder-2",
+        "topic:cognate-opaque-1"
       ],
       "curriculumRole": "reference"
     },
@@ -52935,7 +53587,8 @@
         "en:use",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-formal-abstract-2"
+        "topic:verb-formal-abstract-2",
+        "topic:cognate-opaque-4"
       ],
       "curriculumRole": "supporting"
     },
@@ -52955,7 +53608,8 @@
         "es:excusar",
         "en:excuse",
         "audit:reviewed",
-        "topic:verb-formal-remainder-7"
+        "topic:verb-formal-remainder-7",
+        "topic:cognate-opaque-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -52975,7 +53629,8 @@
         "es:acusar",
         "en:accuse",
         "audit:reviewed",
-        "topic:verb-conflict-crime"
+        "topic:verb-conflict-crime",
+        "topic:cognate-opaque-1"
       ],
       "curriculumRole": "reference"
     },
@@ -52995,7 +53650,8 @@
         "es:confundir",
         "en:confuse",
         "audit:reviewed",
-        "topic:verb-formal-remainder-4"
+        "topic:verb-formal-remainder-4",
+        "topic:cognate-opaque-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -53015,7 +53671,8 @@
         "es:rehusar",
         "en:refuse",
         "audit:reviewed",
-        "topic:verb-formal-remainder-12"
+        "topic:verb-formal-remainder-12",
+        "topic:cognate-opaque-3"
       ],
       "curriculumRole": "reference"
     },
@@ -53035,7 +53692,8 @@
         "es:abusar",
         "en:abuse",
         "audit:reviewed",
-        "topic:verb-formal-remainder-0"
+        "topic:verb-formal-remainder-0",
+        "topic:cognate-opaque-1"
       ],
       "curriculumRole": "reference"
     },
@@ -53162,7 +53820,8 @@
         "gender:feminine",
         "topic:communication-request",
         "audit:reviewed",
-        "topic:fem-consonant-1"
+        "topic:fem-consonant-1",
+        "topic:cognate-transparent-5"
       ],
       "curriculumRole": "reference"
     },
@@ -53187,7 +53846,9 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-a-3",
-        "topic:objects-money-business"
+        "topic:objects-money-business",
+        "topic:cognate-transparent-7",
+        "topic:cognate-latin-root-4"
       ],
       "curriculumRole": "reference"
     },
@@ -53210,7 +53871,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:masc-o-7"
+        "topic:masc-o-7",
+        "topic:cognate-transparent-17",
+        "topic:cognate-latin-root-11"
       ],
       "curriculumRole": "reference"
     },
@@ -53252,7 +53915,8 @@
         "es:consignar",
         "en:transfer",
         "audit:reviewed",
-        "topic:verb-communication-formal"
+        "topic:verb-communication-formal",
+        "topic:cognate-transparent-4"
       ],
       "curriculumRole": "reference"
     },
@@ -53273,7 +53937,8 @@
         "cognate:struir-to-struct",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-creation-repair-other"
+        "topic:verb-creation-repair-other",
+        "topic:cognate-latin-root-3"
       ],
       "curriculumRole": "reference"
     },
@@ -53294,7 +53959,8 @@
         "cognate:struir-to-struct",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder-12"
+        "topic:verb-formal-remainder-12",
+        "topic:cognate-latin-root-9"
       ],
       "curriculumRole": "reference"
     },
@@ -53315,7 +53981,8 @@
         "en:use",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-formal-abstract-2"
+        "topic:verb-formal-abstract-2",
+        "topic:cognate-opaque-4"
       ],
       "curriculumRole": "reference"
     },
@@ -53335,7 +54002,8 @@
         "es:rechazar",
         "en:refuse",
         "audit:reviewed",
-        "topic:verb-formal-remainder-12"
+        "topic:verb-formal-remainder-12",
+        "topic:cognate-opaque-3"
       ],
       "curriculumRole": "reference"
     },
@@ -94798,7 +95466,8 @@
         "cognate:izar-to-ize",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-abstract-2"
+        "topic:verb-formal-abstract-2",
+        "topic:cognate-transparent-18"
       ],
       "curriculumRole": "reference"
     },
@@ -94840,7 +95509,8 @@
         "cognate:izar-to-ize",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-admin-legal-formal"
+        "topic:verb-admin-legal-formal",
+        "topic:cognate-transparent-2"
       ],
       "curriculumRole": "reference"
     },
@@ -94860,7 +95530,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-analysis-investigation"
+        "topic:verb-analysis-investigation",
+        "topic:cognate-transparent-1",
+        "topic:cognate-latin-root-1"
       ],
       "curriculumRole": "reference"
     },
