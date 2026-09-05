@@ -77,3 +77,4 @@ Going forward: `curation-YYYY-MM-DD-<slug>.tsv`. A canonical topic spec is
 | 2026-09-05 | **Adverbs topic** — new page on `pos:adverb` (86 rows); tagged 5 manner adverbs missing `grammar:manner` | `a138e5a` | `curation-2026-09-05-adverbs-manner-tag.tsv` |
 | 2026-09-05 | **Numbers topic** — new page on `pos:number` (71 rows, fully classified already) | `62ec6d0` | — |
 | 2026-09-05 | **Connectors topic** — new page on `pos:connector` (70 rows); tagged 7 connectors missing any grammar: classification | `4bdd316` | `curation-2026-09-05-connectors-grammar-tag.tsv` |
+| 2026-09-05 | **Prepositions topic** — new page on `pos:preposition` (23 rows, fully classified already). Completes the pos:-based topic-page set | `f1b3743` | — |
