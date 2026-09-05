@@ -543,7 +543,8 @@
         "something",
         "es:necesitar",
         "en:need",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -26291,7 +26292,8 @@
         "pos:verb",
         "topic:en-multi-sense",
         "particle:at",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -26306,7 +26308,8 @@
       "collections": [
         "es:mirar",
         "en:watch",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -26322,7 +26325,8 @@
         "es:obtener",
         "en:get",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26337,7 +26341,8 @@
       "collections": [
         "es:obtener",
         "en:achieve",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26354,7 +26359,8 @@
         "es:obtener",
         "en:make",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26369,7 +26375,8 @@
       "collections": [
         "es:obtener",
         "en:receive",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26650,7 +26657,8 @@
         "pos:verb",
         "grammar:phrasal-verb",
         "particle:ahead",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26997,7 +27005,8 @@
         "pos:verb",
         "grammar:phrasal-verb",
         "particle:back",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -27134,7 +27143,8 @@
         "pos:verb",
         "grammar:phrasal-verb",
         "particle:down",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34028,7 +34038,8 @@
         "es:ofrecer",
         "en:offer",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34365,7 +34376,8 @@
         "grammar:verb-direct-object",
         "es:ofrecer",
         "en:provide",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34520,7 +34532,8 @@
         "grammar:verb-direct-object",
         "es:necesitar",
         "en:require",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57549,7 +57562,8 @@
       "collections": [
         "pos:verb",
         "es:matar",
-        "en:kill"
+        "en:kill",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57564,7 +57578,8 @@
       "collections": [
         "pos:verb",
         "es:matar",
-        "en:kill"
+        "en:kill",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57579,7 +57594,8 @@
       "collections": [
         "pos:verb",
         "es:matar",
-        "en:killing"
+        "en:killing",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57598,7 +57614,8 @@
         "es:meter",
         "en:put",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57616,7 +57633,8 @@
         "pos:verb",
         "es:meter",
         "en:insert",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57635,7 +57653,8 @@
         "es:meter",
         "en:get",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57653,7 +57672,8 @@
         "pos:verb",
         "es:meter",
         "en:involve",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57671,7 +57691,8 @@
         "pos:verb",
         "es:meter",
         "en:interfere",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57689,7 +57710,8 @@
         "pos:verb",
         "es:meter",
         "en:fit",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57708,7 +57730,8 @@
         "es:meter",
         "en:get",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57727,7 +57750,8 @@
         "es:meter",
         "en:get",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57742,7 +57766,8 @@
       "collections": [
         "pos:verb",
         "es:morir",
-        "en:die"
+        "en:die",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -57758,7 +57783,8 @@
         "pos:verb",
         "es:morir",
         "en:for",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57773,7 +57799,8 @@
       "collections": [
         "pos:verb",
         "es:morir",
-        "en:starving"
+        "en:starving",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57791,7 +57818,8 @@
         "pos:verb",
         "es:morir",
         "en:dying",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57807,7 +57835,8 @@
         "pos:verb",
         "es:mostrar",
         "en:show",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -57822,7 +57851,8 @@
       "collections": [
         "pos:verb",
         "es:mostrar",
-        "en:display"
+        "en:display",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57837,7 +57867,8 @@
       "collections": [
         "pos:verb",
         "es:mostrar",
-        "en:demonstrate"
+        "en:demonstrate",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57852,7 +57883,8 @@
       "collections": [
         "pos:verb",
         "es:mostrar",
-        "en:reveal"
+        "en:reveal",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -59230,7 +59262,8 @@
       "collections": [
         "pos:verb",
         "es:marcar",
-        "en:mark"
+        "en:mark",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -59245,7 +59278,8 @@
       "collections": [
         "pos:verb",
         "es:marcar",
-        "en:dial"
+        "en:dial",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -59260,7 +59294,8 @@
       "collections": [
         "pos:verb",
         "es:marcar",
-        "en:score"
+        "en:score",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -59275,7 +59310,8 @@
       "collections": [
         "pos:verb",
         "es:marcar",
-        "en:indicate"
+        "en:indicate",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -59290,7 +59326,8 @@
       "collections": [
         "pos:verb",
         "es:marcar",
-        "en:schedule"
+        "en:schedule",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -59305,7 +59342,8 @@
       "collections": [
         "pos:verb",
         "es:marcar",
-        "en:shape"
+        "en:shape",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -74052,7 +74090,8 @@
         "grammar:uncountable",
         "es:necesitar",
         "en:need",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
