@@ -248,6 +248,14 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
     ],
   },
   {
+    slug: "expressions",
+    title: "Expressions",
+    description:
+      "Fixed social phrases that don't break down grammatically — please, thank you, excuse me, nice to meet you — learned whole rather than built word by word.",
+    baseCollection: "topic:social-expression",
+    facetButtons: [],
+  },
+  {
     slug: "connectors",
     title: "Connectors",
     description:
