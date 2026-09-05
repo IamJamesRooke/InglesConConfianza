@@ -87051,7 +87051,8 @@
         "en:with",
         "en:me",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:prep-pronoun-con"
       ],
       "curriculumRole": "core"
     },
@@ -87072,7 +87073,8 @@
         "en:with",
         "en:you",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:prep-pronoun-con"
       ],
       "curriculumRole": "core"
     },
@@ -87095,7 +87097,8 @@
         "en:him",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:prep-pronoun-con"
       ],
       "curriculumRole": "core"
     },
@@ -87118,7 +87121,8 @@
         "en:her",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:prep-pronoun-con"
       ],
       "curriculumRole": "core"
     },
@@ -87142,7 +87146,8 @@
         "en:us",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:prep-pronoun-con"
       ],
       "curriculumRole": "core"
     },
@@ -87166,7 +87171,8 @@
         "en:them",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:prep-pronoun-con"
       ],
       "curriculumRole": "core"
     },
@@ -87189,7 +87195,8 @@
         "en:somebody",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:prep-pronoun-con"
       ],
       "curriculumRole": "core"
     },
@@ -87213,7 +87220,8 @@
         "contrast:mi-vs-mi-tilde",
         "contrast:confusable",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:prep-pronoun-para"
       ],
       "curriculumRole": "supporting"
     },
@@ -87235,7 +87243,8 @@
         "en:for",
         "en:you",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:prep-pronoun-para"
       ],
       "curriculumRole": "supporting"
     },
@@ -87257,7 +87266,8 @@
         "en:for",
         "en:him",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:prep-pronoun-para"
       ],
       "curriculumRole": "supporting"
     },
@@ -87279,7 +87289,8 @@
         "en:for",
         "en:her",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:prep-pronoun-para"
       ],
       "curriculumRole": "supporting"
     },
@@ -87302,7 +87313,8 @@
         "en:for",
         "en:us",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:prep-pronoun-para"
       ],
       "curriculumRole": "supporting"
     },
@@ -87325,7 +87337,8 @@
         "en:for",
         "en:them",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:prep-pronoun-para"
       ],
       "curriculumRole": "supporting"
     },
@@ -87347,7 +87360,8 @@
         "en:for",
         "en:somebody",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:prep-pronoun-para"
       ],
       "curriculumRole": "supporting"
     },
@@ -87370,7 +87384,8 @@
         "en:me",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:prep-pronoun-a"
       ],
       "curriculumRole": "supporting"
     },
@@ -87393,7 +87408,8 @@
         "en:you",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:prep-pronoun-a"
       ],
       "curriculumRole": "supporting"
     },
@@ -87416,7 +87432,8 @@
         "en:him",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:prep-pronoun-a"
       ],
       "curriculumRole": "supporting"
     },
@@ -87439,7 +87456,8 @@
         "en:her",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:prep-pronoun-a"
       ],
       "curriculumRole": "supporting"
     },
@@ -87462,7 +87480,8 @@
         "en:somebody",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:prep-pronoun-a"
       ],
       "curriculumRole": "supporting"
     },
@@ -87483,7 +87502,8 @@
         "morphology:prefix-some",
         "morphology:suffix-body",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:indef-pronoun-person"
       ],
       "curriculumRole": "core"
     },
@@ -87503,7 +87523,8 @@
         "en:someone",
         "morphology:prefix-some",
         "morphology:suffix-one",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:indef-pronoun-person"
       ],
       "curriculumRole": "core"
     },
@@ -87524,7 +87545,8 @@
         "en:anybody",
         "morphology:prefix-any",
         "morphology:suffix-body",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:indef-pronoun-person"
       ],
       "curriculumRole": "supporting"
     },
@@ -87545,7 +87567,8 @@
         "en:anyone",
         "morphology:prefix-any",
         "morphology:suffix-one",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:indef-pronoun-person"
       ],
       "curriculumRole": "supporting"
     },
@@ -87565,7 +87588,8 @@
         "en:something",
         "morphology:prefix-some",
         "morphology:suffix-thing",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:indef-pronoun-thing"
       ],
       "curriculumRole": "core"
     },
@@ -87586,7 +87610,8 @@
         "en:anything",
         "morphology:prefix-any",
         "morphology:suffix-thing",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:indef-pronoun-thing"
       ],
       "curriculumRole": "supporting"
     },
@@ -87607,7 +87632,8 @@
         "en:nobody",
         "morphology:prefix-no",
         "morphology:suffix-body",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:indef-pronoun-person"
       ],
       "curriculumRole": "core"
     },
@@ -87628,7 +87654,8 @@
         "en:no-one",
         "morphology:prefix-no",
         "morphology:suffix-one",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:indef-pronoun-person"
       ],
       "curriculumRole": "supporting"
     },
@@ -87649,7 +87676,8 @@
         "en:nothing",
         "morphology:prefix-no",
         "morphology:suffix-thing",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:indef-pronoun-thing"
       ],
       "curriculumRole": "core"
     },
@@ -87669,7 +87697,8 @@
         "en:everybody",
         "morphology:prefix-every",
         "morphology:suffix-body",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:indef-pronoun-quantity"
       ],
       "curriculumRole": "core"
     },
@@ -87689,7 +87718,8 @@
         "en:everyone",
         "morphology:prefix-every",
         "morphology:suffix-one",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:indef-pronoun-quantity"
       ],
       "curriculumRole": "core"
     },
@@ -87709,7 +87739,8 @@
         "en:everything",
         "morphology:prefix-every",
         "morphology:suffix-thing",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:indef-pronoun-quantity"
       ],
       "curriculumRole": "core"
     },
@@ -87730,7 +87761,8 @@
         "en:somewhere",
         "morphology:prefix-some",
         "morphology:suffix-where",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:indef-pronoun-place"
       ],
       "curriculumRole": "supporting"
     },
@@ -87752,7 +87784,8 @@
         "en:nowhere",
         "morphology:prefix-no",
         "morphology:suffix-where",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:indef-pronoun-place"
       ],
       "curriculumRole": "reference"
     },
@@ -87773,7 +87806,8 @@
         "en:everywhere",
         "morphology:prefix-every",
         "morphology:suffix-where",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:indef-pronoun-place"
       ],
       "curriculumRole": "supporting"
     },
@@ -87794,7 +87828,8 @@
         "en:one",
         "morphology:suffix-one",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:indef-pronoun-quantity"
       ],
       "curriculumRole": "supporting"
     },
@@ -87813,7 +87848,8 @@
         "topic:pronoun",
         "es:ninguno",
         "en:none",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:indef-pronoun-quantity"
       ],
       "curriculumRole": "supporting"
     },
@@ -87834,7 +87870,8 @@
         "contrast:algun-vs-alguno",
         "contrast:confusable",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:indef-pronoun-quantity"
       ],
       "curriculumRole": "supporting"
     },
@@ -87852,7 +87889,8 @@
         "topic:pronoun",
         "es:varios",
         "en:several",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:indef-pronoun-quantity"
       ],
       "curriculumRole": "reference"
     },
@@ -87872,7 +87910,8 @@
         "en:anyone",
         "morphology:prefix-any",
         "morphology:suffix-one",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:indef-pronoun-quantity"
       ],
       "curriculumRole": "supporting"
     },
@@ -87893,7 +87932,8 @@
         "en:everyone",
         "morphology:prefix-every",
         "morphology:suffix-one",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:indef-pronoun-quantity"
       ],
       "curriculumRole": "supporting"
     },
@@ -88988,7 +89028,8 @@
         "en:us",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:prep-pronoun-a"
       ],
       "curriculumRole": "supporting"
     },
@@ -89012,7 +89053,8 @@
         "en:them",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:prep-pronoun-a"
       ],
       "curriculumRole": "supporting"
     },
@@ -89139,7 +89181,8 @@
         "en:anywhere",
         "morphology:prefix-any",
         "morphology:suffix-where",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:indef-pronoun-place"
       ],
       "curriculumRole": "reference"
     },
@@ -89158,7 +89201,8 @@
         "es:cada",
         "en:each",
         "morphology:suffix-one",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:indef-pronoun-quantity"
       ],
       "curriculumRole": "supporting"
     },
@@ -89390,7 +89434,8 @@
         "topic:pronoun",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:prep-pronoun-a"
       ],
       "curriculumRole": "supporting"
     },
@@ -89413,7 +89458,8 @@
         "topic:pronoun",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:prep-pronoun-con"
       ],
       "curriculumRole": "supporting"
     },
@@ -89435,7 +89481,8 @@
         "es:usted",
         "topic:pronoun",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:prep-pronoun-para"
       ],
       "curriculumRole": "supporting"
     },
@@ -89458,7 +89505,8 @@
         "topic:pronoun",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:prep-pronoun-a"
       ],
       "curriculumRole": "supporting"
     },
@@ -89481,7 +89529,8 @@
         "topic:pronoun",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:prep-pronoun-con"
       ],
       "curriculumRole": "supporting"
     },
@@ -89503,7 +89552,8 @@
         "es:ustedes",
         "topic:pronoun",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:prep-pronoun-para"
       ],
       "curriculumRole": "supporting"
     },
@@ -89527,7 +89577,8 @@
         "topic:pronoun",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:prep-pronoun-a"
       ],
       "curriculumRole": "supporting"
     },
@@ -89551,7 +89602,8 @@
         "topic:pronoun",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:prep-pronoun-con"
       ],
       "curriculumRole": "core"
     },
@@ -89574,7 +89626,8 @@
         "es:ellas",
         "topic:pronoun",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:prep-pronoun-para"
       ],
       "curriculumRole": "supporting"
     },

@@ -1,0 +1,53 @@
+lse8dx7tet	conmigo	with me	core	grammar:prep-pronoun-con	Subtopic split (size rule): prepositional-pronoun bucket (30) split by preposition into con/para/a, ~10 each.
+rnldlhmpop	contigo	with you	core	grammar:prep-pronoun-con	Subtopic split (size rule).
+sxxbfgvhfa	con él	with him	core	grammar:prep-pronoun-con	Subtopic split (size rule).
+0h11x77lat	con ella	with her	core	grammar:prep-pronoun-con	Subtopic split (size rule).
+0wjnsjpf8s	con nosotros	with us	core	grammar:prep-pronoun-con	Subtopic split (size rule).
+k71aaprkfg	con ellos	with them	core	grammar:prep-pronoun-con	Subtopic split (size rule).
+nrb0thfnst	con [alguien]	with [somebody]	core	grammar:prep-pronoun-con	Subtopic split (size rule).
+0xx4ewk26d	con usted	with you	supporting	grammar:prep-pronoun-con	Subtopic split (size rule).
+6xhu16fwu6	con ustedes	with you	supporting	grammar:prep-pronoun-con	Subtopic split (size rule).
+796z7mxsvp	con ellas	with them	core	grammar:prep-pronoun-con	Subtopic split (size rule).
+dyi2yg06hb	para mí	for me	supporting	grammar:prep-pronoun-para	Subtopic split (size rule).
+sqd8xxfwmx	para ti	for you	supporting	grammar:prep-pronoun-para	Subtopic split (size rule).
+8rtzxhe293	para él	for him	supporting	grammar:prep-pronoun-para	Subtopic split (size rule).
+ifxzv5eot0	para ella	for her	supporting	grammar:prep-pronoun-para	Subtopic split (size rule).
+ztq4ogut83	para nosotros	for us	supporting	grammar:prep-pronoun-para	Subtopic split (size rule).
+hu11wt1cvb	para ellos	for them	supporting	grammar:prep-pronoun-para	Subtopic split (size rule).
+ez2lt2jbq7	para [alguien]	for [somebody]	supporting	grammar:prep-pronoun-para	Subtopic split (size rule).
+nv7alp7lve	para usted	for you	supporting	grammar:prep-pronoun-para	Subtopic split (size rule).
+2waliyvy7h	para ustedes	for you	supporting	grammar:prep-pronoun-para	Subtopic split (size rule).
+gp7z4dvb4r	para ellas	for them	supporting	grammar:prep-pronoun-para	Subtopic split (size rule).
+bfer5mn6yu	a mí	to me	supporting	grammar:prep-pronoun-a	Subtopic split (size rule).
+2d169mb7ai	a ti	to you	supporting	grammar:prep-pronoun-a	Subtopic split (size rule).
+flwdh3dbk5	a él	to him	supporting	grammar:prep-pronoun-a	Subtopic split (size rule).
+45ejuhdox6	a ella	to her	supporting	grammar:prep-pronoun-a	Subtopic split (size rule).
+ej7gnt7lbx	a [alguien]	to [somebody]	supporting	grammar:prep-pronoun-a	Subtopic split (size rule).
+9h4yb41inv	a nosotros	to us	supporting	grammar:prep-pronoun-a	Subtopic split (size rule).
+unkd514ur0	a ellos	to them	supporting	grammar:prep-pronoun-a	Subtopic split (size rule).
+fk8uepz3o3	a usted	to you	supporting	grammar:prep-pronoun-a	Subtopic split (size rule).
+kep0p7nw3e	a ustedes	to you	supporting	grammar:prep-pronoun-a	Subtopic split (size rule).
+o3buetgjp9	a ellas	to them	supporting	grammar:prep-pronoun-a	Subtopic split (size rule).
+hsqb5yui5l	alguien	somebody	core	grammar:indef-pronoun-person	Subtopic split (size rule): indefinite-pronoun bucket (23) split into person/thing/place/quantity.
+u5bpj5gqex	alguien	someone	core	grammar:indef-pronoun-person	Subtopic split (size rule).
+jidk0m8x2v	alguien	anybody	supporting	grammar:indef-pronoun-person	Subtopic split (size rule).
+rwn65j1jsu	alguien	anyone	supporting	grammar:indef-pronoun-person	Subtopic split (size rule).
+rd3a1m9q85	nadie	nobody	core	grammar:indef-pronoun-person	Subtopic split (size rule).
+vxof3xwcei	nadie	no one	supporting	grammar:indef-pronoun-person	Subtopic split (size rule).
+nqv2w27jgr	algo	something	core	grammar:indef-pronoun-thing	Subtopic split (size rule).
+5xzf7m11n9	algo	anything	supporting	grammar:indef-pronoun-thing	Subtopic split (size rule).
+s0u2t5y194	nada	nothing	core	grammar:indef-pronoun-thing	Subtopic split (size rule).
+z2a8m7lmkv	en algún lugar	somewhere	supporting	grammar:indef-pronoun-place	Subtopic split (size rule).
+3wvyjj7lp9	en ningún lugar	nowhere	reference	grammar:indef-pronoun-place	Subtopic split (size rule).
+rz685c861j	en todas partes	everywhere	supporting	grammar:indef-pronoun-place	Subtopic split (size rule).
+tpr473mus1	en algún lugar	anywhere	reference	grammar:indef-pronoun-place	Subtopic split (size rule).
+6nqb18txzu	todos	everybody	core	grammar:indef-pronoun-quantity	Subtopic split (size rule).
+fr200530w1	todos	everyone	core	grammar:indef-pronoun-quantity	Subtopic split (size rule).
+sacq7sy6j6	todo	everything	core	grammar:indef-pronoun-quantity	Subtopic split (size rule).
+5w0xw4xzxh	uno (impersonal)	one	supporting	grammar:indef-pronoun-quantity	Subtopic split (size rule).
+ml1vpgz8qf	ninguno	none	supporting	grammar:indef-pronoun-quantity	Subtopic split (size rule).
+fc10ci73j7	algunos	some	supporting	grammar:indef-pronoun-quantity	Subtopic split (size rule).
+3816wraz0i	varios	several	reference	grammar:indef-pronoun-quantity	Subtopic split (size rule).
+limmjzeuoo	cualquiera	anyone	supporting	grammar:indef-pronoun-quantity	Subtopic split (size rule).
+cwol5b7e11	todo el mundo	everyone	supporting	grammar:indef-pronoun-quantity	Subtopic split (size rule).
+kvxg5q1l06	cada uno	each one	supporting	grammar:indef-pronoun-quantity	Subtopic split (size rule).
