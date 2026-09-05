@@ -1100,7 +1100,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -1143,7 +1144,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -3399,7 +3401,8 @@
         "pos:verb",
         "grammar:phrasal-verb",
         "particle:back",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -24124,7 +24127,8 @@
         "en:see",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -24662,7 +24666,8 @@
         "es:detener",
         "en:stop",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -25768,7 +25773,8 @@
       "collections": [
         "es:detener",
         "en:arrest",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -25783,7 +25789,8 @@
       "collections": [
         "es:detener",
         "en:detain",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -25802,7 +25809,8 @@
         "pos:verb",
         "grammar:phrasal-verb",
         "particle:back",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -25839,7 +25847,8 @@
         "es:devolver",
         "en:return",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -25854,7 +25863,8 @@
       "collections": [
         "es:devolver",
         "en:refund",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -25863,15 +25873,16 @@
       "spanish": "devolver la llamada",
       "english": "to return a call",
       "example": {
-        "spanish": "Laura me devolvió la llamada.",
-        "english": "Laura returned my call."
+        "spanish": "Tengo que devolver la llamada.",
+        "english": "I have to return the call."
       },
       "collections": [
         "return a call",
         "es:devolver",
         "en:return",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28974,7 +28985,8 @@
         "es:malo",
         "es:dormir",
         "en:sleep",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -34424,7 +34436,8 @@
         "es:devolver",
         "en:return",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56666,7 +56679,8 @@
         "pos:verb",
         "es:doler",
         "en:for",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56707,7 +56721,8 @@
         "pos:verb",
         "es:doler",
         "en:for",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56725,7 +56740,8 @@
         "pos:verb",
         "es:doler",
         "en:sorry",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56740,7 +56756,8 @@
       "collections": [
         "pos:verb",
         "es:dormir",
-        "en:sleep"
+        "en:sleep",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -56756,7 +56773,8 @@
         "pos:verb",
         "es:dormir",
         "en:fall",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56771,7 +56789,8 @@
       "collections": [
         "pos:verb",
         "es:dormir",
-        "en:stay"
+        "en:stay",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56791,7 +56810,8 @@
         "en:put",
         "topic:en-multi-sense",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56807,7 +56827,8 @@
         "es:dormir",
         "pos:verb",
         "es:despertar",
-        "en:wake"
+        "en:wake",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56826,7 +56847,8 @@
         "pos:verb",
         "es:despertar",
         "en:wake",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56842,7 +56864,8 @@
         "es:dormir",
         "pos:verb",
         "es:despertar",
-        "en:arouse"
+        "en:arouse",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56858,7 +56881,8 @@
         "es:dormir",
         "pos:verb",
         "es:despertar",
-        "en:spark"
+        "en:spark",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57781,7 +57805,8 @@
         "es:devolver",
         "en:pay",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58760,7 +58785,8 @@
       "collections": [
         "pos:verb",
         "es:despedir",
-        "en:fire"
+        "en:fire",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58780,7 +58806,8 @@
         "en:say",
         "topic:en-multi-sense",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58799,7 +58826,8 @@
         "es:despedir",
         "en:give",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58815,7 +58843,8 @@
         "pos:verb",
         "es:dirigir",
         "en:run",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58830,7 +58859,8 @@
       "collections": [
         "pos:verb",
         "es:dirigir",
-        "en:lead"
+        "en:lead",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58850,7 +58880,8 @@
         "en:address",
         "topic:en-multi-sense",
         "particle:to",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58868,7 +58899,8 @@
         "en:head",
         "grammar:phrasal-verb",
         "particle:toward",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
