@@ -114,3 +114,16 @@ skimming history, not a machine-readable state store.
   after that. This will span many more sessions; the person-
   conjugation-tier check is now a standard part of the 5-point
   checklist for every verb lemma facet.
+- **2026-09-05, continued** — es:decir (15, clean), es:de + es:en (41
+  rows — found the entire es:en facet had placeholder examples, every
+  "en X"/"at/in/on X" location phrase just repeated its own headword
+  with no real sentence; wrote one for each). That discovery prompted
+  a **global placeholder sweep** across all 938 remaining unreviewed
+  concepts (not scoped to one facet) — found only 24 more elsewhere in
+  the whole DB (mostly bare adverbial/prepositional phrases like "la
+  tarde," "después de," "con"), fixed all of them. This means the
+  placeholder-example defect is now fully cleared database-wide, not
+  just in audited facets — worth re-running a quick placeholder check
+  like this periodically as more of the DB gets reviewed, in case any
+  slip through in still-untouched rows. Commits `ac9eb813` through
+  `d399da7f`. Next: es:pedir, then continue down the priority list.
