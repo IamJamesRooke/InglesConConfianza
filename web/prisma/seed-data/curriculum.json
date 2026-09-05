@@ -1108,7 +1108,8 @@
         "en:take",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:after"
       ],
       "curriculumRole": "reference"
     },
@@ -1148,7 +1149,8 @@
         "en:take",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -1168,7 +1170,8 @@
         "en:take",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:of"
       ],
       "curriculumRole": "supporting"
     },
@@ -1208,7 +1211,8 @@
         "en:take",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:of"
       ],
       "curriculumRole": "reference"
     },
@@ -1264,7 +1268,8 @@
         "es:brindar",
         "en:drink",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -1573,7 +1578,8 @@
         "en:talk",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "supporting"
     },
@@ -1593,7 +1599,8 @@
         "en:talk",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:with"
       ],
       "curriculumRole": "reference"
     },
@@ -1613,7 +1620,8 @@
         "en:speak",
         "pos:verb",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:to"
       ],
       "curriculumRole": "core"
     },
@@ -1633,7 +1641,8 @@
         "en:speak",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:with"
       ],
       "curriculumRole": "supporting"
     },
@@ -1715,7 +1724,8 @@
         "en:speak",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -1917,7 +1927,8 @@
         "en:talk",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -2057,7 +2068,8 @@
         "en:say",
         "pos:verb",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:to"
       ],
       "curriculumRole": "core"
     },
@@ -2410,7 +2422,8 @@
         "en:tell",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:from"
       ],
       "curriculumRole": "reference"
     },
@@ -2582,7 +2595,8 @@
         "en:give",
         "pos:verb",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:to"
       ],
       "curriculumRole": "core"
     },
@@ -2644,7 +2658,8 @@
         "en:give",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -2678,7 +2693,6 @@
         "english": "The window faces north."
       },
       "collections": [
-        "construction:prepositional-verb",
         "es:a",
         "es:dar",
         "en:face",
@@ -2696,7 +2710,6 @@
         "english": "The balcony overlooks the park."
       },
       "collections": [
-        "construction:prepositional-verb",
         "es:a",
         "es:dar",
         "en:overlook",
@@ -2716,7 +2729,6 @@
       "collections": [
         "es:contar",
         "grammar:reflexive",
-        "construction:prepositional-verb",
         "construction:map-de-that",
         "es:dar",
         "en:realize",
@@ -2768,7 +2780,6 @@
         "english": "Press the green button."
       },
       "collections": [
-        "construction:prepositional-verb",
         "es:a",
         "es:dar",
         "en:press",
@@ -2902,7 +2913,8 @@
         "en:lead",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -2922,7 +2934,8 @@
         "en:give",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -2943,7 +2956,8 @@
         "en:feel",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:like"
       ],
       "curriculumRole": "reference"
     },
@@ -3181,7 +3195,8 @@
         "en:give",
         "topic:en-multi-sense",
         "pos:verb",
-        "grammar:phrasal-verb"
+        "grammar:phrasal-verb",
+        "particle:back"
       ],
       "curriculumRole": "supporting"
     },
@@ -3257,7 +3272,6 @@
         "es:dar",
         "grammar:fixed-expression",
         "en:hand",
-        "construction:prepositional-verb",
         "en:with",
         "es:ayudar",
         "en:give",
@@ -3283,7 +3297,8 @@
         "en:give",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -3324,7 +3339,8 @@
         "en:give",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -3405,7 +3421,8 @@
         "en:ask",
         "pos:verb",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:for"
       ],
       "curriculumRole": "core"
     },
@@ -3425,7 +3442,8 @@
         "en:ask",
         "pos:verb",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:for"
       ],
       "curriculumRole": "core"
     },
@@ -3500,7 +3518,8 @@
         "en:borrow",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:from"
       ],
       "curriculumRole": "supporting"
     },
@@ -3523,7 +3542,8 @@
         "en:ask",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "supporting"
     },
@@ -3544,7 +3564,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "topic:business-work",
-        "pos:verb"
+        "pos:verb",
+        "particle:with"
       ],
       "curriculumRole": "reference"
     },
@@ -3565,7 +3586,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "topic:business-work",
-        "pos:verb"
+        "pos:verb",
+        "particle:with"
       ],
       "curriculumRole": "reference"
     },
@@ -3585,7 +3607,8 @@
         "en:apply",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -3623,7 +3646,8 @@
         "es:pedir",
         "en:apologize",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -3644,7 +3668,8 @@
         "en:ask",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -3700,7 +3725,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "topic:food",
-        "pos:verb"
+        "pos:verb",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -3741,7 +3767,8 @@
         "en:demand",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:from"
       ],
       "curriculumRole": "reference"
     },
@@ -3825,7 +3852,8 @@
         "en:ask",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:after"
       ],
       "curriculumRole": "reference"
     },
@@ -3886,7 +3914,8 @@
         "en:request",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:from"
       ],
       "curriculumRole": "reference"
     },
@@ -3906,7 +3935,8 @@
         "en:order",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:from"
       ],
       "curriculumRole": "reference"
     },
@@ -4129,7 +4159,8 @@
         "en:put",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "supporting"
     },
@@ -4187,7 +4218,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "topic:technology",
-        "pos:verb"
+        "pos:verb",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -4208,7 +4240,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "topic:time",
-        "pos:verb"
+        "pos:verb",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -4229,7 +4262,8 @@
         "en:set",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -4341,7 +4375,6 @@
         "english": "She started working."
       },
       "collections": [
-        "construction:prepositional-verb",
         "es:a",
         "grammar:gerund",
         "es:poner",
@@ -4474,7 +4507,8 @@
         "en:agree",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:with"
       ],
       "curriculumRole": "supporting"
     },
@@ -4495,7 +4529,8 @@
         "en:put",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:at"
       ],
       "curriculumRole": "reference"
     },
@@ -4516,7 +4551,8 @@
         "en:put",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -4622,7 +4658,8 @@
         "en:pay",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -5193,7 +5230,8 @@
         "en:put",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:against"
       ],
       "curriculumRole": "reference"
     },
@@ -5542,7 +5580,8 @@
         "en:speak",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -5564,7 +5603,8 @@
         "en:say",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "supporting"
     },
@@ -5642,7 +5682,6 @@
         "es:dar",
         "grammar:fixed-expression",
         "en:way",
-        "construction:prepositional-verb",
         "en:to",
         "es:ceder",
         "en:give",
@@ -5809,7 +5848,8 @@
         "en:give",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:as"
       ],
       "curriculumRole": "reference"
     },
@@ -5848,7 +5888,8 @@
         "en:take",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:of"
       ],
       "curriculumRole": "reference"
     },
@@ -5983,7 +6024,8 @@
         "es:escuchar",
         "en:listen",
         "pos:verb",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:to"
       ],
       "curriculumRole": "core"
     },
@@ -6056,7 +6098,8 @@
         "es:oír",
         "en:hear",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:from"
       ],
       "curriculumRole": "supporting"
     },
@@ -6136,7 +6179,8 @@
         "en:wait",
         "pos:verb",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:for"
       ],
       "curriculumRole": "core"
     },
@@ -6226,7 +6270,8 @@
         "en:hope",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -6543,7 +6588,8 @@
         "en:used",
         "topic:condition-state",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:to"
       ],
       "curriculumRole": "supporting"
     },
@@ -6583,7 +6629,8 @@
         "en:aware",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:of"
       ],
       "curriculumRole": "reference"
     },
@@ -6603,7 +6650,8 @@
         "en:in",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:of"
       ],
       "curriculumRole": "reference"
     },
@@ -6624,7 +6672,8 @@
         "en:married",
         "topic:condition-state",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:to"
       ],
       "curriculumRole": "supporting"
     },
@@ -6645,7 +6694,8 @@
         "en:in",
         "topic:emotion-state",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:with"
       ],
       "curriculumRole": "reference"
     },
@@ -6868,7 +6918,8 @@
         "en:in",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:of"
       ],
       "curriculumRole": "reference"
     },
@@ -6886,7 +6937,8 @@
         "es:estar",
         "en:against",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:against"
       ],
       "curriculumRole": "reference"
     },
@@ -6924,7 +6976,8 @@
         "en:made",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:of"
       ],
       "curriculumRole": "reference"
     },
@@ -6945,7 +6998,8 @@
         "en:made",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:from"
       ],
       "curriculumRole": "reference"
     },
@@ -7329,7 +7383,6 @@
         "english": "Ana missed class."
       },
       "collections": [
-        "construction:prepositional-verb",
         "construction:map-a-direct-object",
         "es:faltar",
         "en:miss",
@@ -7352,7 +7405,8 @@
         "es:faltar",
         "en:absent",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:from"
       ],
       "curriculumRole": "reference"
     },
@@ -8513,7 +8567,8 @@
         "en:pay",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -8758,7 +8813,8 @@
         "es:hecho",
         "en:made",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:of"
       ],
       "curriculumRole": "supporting"
     },
@@ -8779,7 +8835,8 @@
         "es:hecho",
         "en:made",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:from"
       ],
       "curriculumRole": "reference"
     },
@@ -8917,7 +8974,8 @@
         "sense:ir-destino",
         "conjugation:infinitive",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:to"
       ],
       "curriculumRole": "core"
     },
@@ -9038,7 +9096,8 @@
         "en:go",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -9096,7 +9155,8 @@
         "en:go",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:with"
       ],
       "curriculumRole": "reference"
     },
@@ -9315,7 +9375,8 @@
         "es:llamar",
         "en:draw",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -9395,7 +9456,8 @@
         "gender:invariant",
         "topic:communication-request",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -9414,7 +9476,8 @@
         "es:llegar",
         "en:arrive",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:at"
       ],
       "curriculumRole": "supporting"
     },
@@ -9451,7 +9514,8 @@
         "es:llegar",
         "en:get",
         "pos:verb",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:to"
       ],
       "curriculumRole": "core"
     },
@@ -9469,7 +9533,8 @@
         "construction:map-a-to",
         "es:llegar",
         "en:reach",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -9611,7 +9676,8 @@
         "es:llevar",
         "en:take",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "supporting"
     },
@@ -9772,7 +9838,8 @@
         "es:llevar",
         "en:lead",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -9812,7 +9879,8 @@
         "en:keep",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:of"
       ],
       "curriculumRole": "reference"
     },
@@ -9847,7 +9915,8 @@
         "es:mandar",
         "en:send",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "supporting"
     },
@@ -9938,7 +10007,8 @@
         "es:mandar",
         "en:send",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -10057,7 +10127,6 @@
         "english": "It stopped raining."
       },
       "collections": [
-        "construction:prepositional-verb",
         "es:de",
         "construction:map-de-ing",
         "grammar:gerund",
@@ -10118,7 +10187,8 @@
         "es:parar",
         "en:stop",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:at"
       ],
       "curriculumRole": "supporting"
     },
@@ -10137,7 +10207,8 @@
         "es:parar",
         "en:stay",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:at"
       ],
       "curriculumRole": "reference"
     },
@@ -10303,7 +10374,8 @@
         "es:qué",
         "en:what",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:of"
       ],
       "curriculumRole": "supporting"
     },
@@ -10364,7 +10436,8 @@
         "en:look",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:like"
       ],
       "curriculumRole": "supporting"
     },
@@ -10385,7 +10458,8 @@
         "gender:invariant",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:like"
       ],
       "curriculumRole": "supporting"
     },
@@ -10424,7 +10498,8 @@
         "en:similar",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -10518,7 +10593,8 @@
         "en:go",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:past"
       ],
       "curriculumRole": "reference"
     },
@@ -10531,7 +10607,6 @@
         "english": "The bus crossed the bridge."
       },
       "collections": [
-        "construction:prepositional-verb",
         "es:por",
         "es:pasar",
         "en:cross",
@@ -10556,7 +10631,8 @@
         "en:spend",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:with"
       ],
       "curriculumRole": "supporting"
     },
@@ -10596,7 +10672,8 @@
         "es:pasa",
         "en:go",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:ahead"
       ],
       "curriculumRole": "reference"
     },
@@ -10633,7 +10710,8 @@
         "en:hand",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -10863,7 +10941,8 @@
         "en:think",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:of"
       ],
       "curriculumRole": "reference"
     },
@@ -10936,7 +11015,8 @@
         "es:qué",
         "en:what",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:of"
       ],
       "curriculumRole": "supporting"
     },
@@ -11186,7 +11266,8 @@
         "es:perder",
         "en:lose",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -11205,7 +11286,8 @@
         "es:perder",
         "en:lose",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:with"
       ],
       "curriculumRole": "reference"
     },
@@ -11224,7 +11306,8 @@
         "es:perder",
         "en:lose",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:of"
       ],
       "curriculumRole": "reference"
     },
@@ -11665,7 +11748,8 @@
         "es:poder",
         "en:gets",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -11686,7 +11770,8 @@
         "es:poder",
         "en:got",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -11708,7 +11793,8 @@
         "es:poder",
         "en:didn't",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -12819,7 +12905,8 @@
         "es:prestar",
         "en:lend",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "supporting"
     },
@@ -12839,7 +12926,8 @@
         "es:prestar",
         "en:pay",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "supporting"
     },
@@ -12874,7 +12962,8 @@
         "grammar:reflexive",
         "es:prestar",
         "en:volunteer",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -12894,7 +12983,8 @@
         "es:prestar",
         "en:lend",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -13058,7 +13148,6 @@
       },
       "collections": [
         "en:meet",
-        "construction:prepositional-verb",
         "en:with",
         "construction:map-con-with",
         "es:quedar",
@@ -13086,7 +13175,8 @@
         "en:agree",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -13145,7 +13235,8 @@
         "en:keep",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:with"
       ],
       "curriculumRole": "supporting"
     },
@@ -13248,7 +13339,8 @@
         "en:fall",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:behind"
       ],
       "curriculumRole": "reference"
     },
@@ -13306,7 +13398,8 @@
         "es:quitar",
         "en:remove",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:from"
       ],
       "curriculumRole": "supporting"
     },
@@ -13363,7 +13456,8 @@
         "es:quitar",
         "en:keep",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:from"
       ],
       "curriculumRole": "reference"
     },
@@ -13383,7 +13477,8 @@
         "es:quitar",
         "en:get",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:of"
       ],
       "curriculumRole": "supporting"
     },
@@ -13455,7 +13550,6 @@
         "english": "Don't downplay the problem."
       },
       "collections": [
-        "construction:prepositional-verb",
         "es:a",
         "es:quitar",
         "en:downplay",
@@ -13778,7 +13872,6 @@
         "english": "I've just arrived."
       },
       "collections": [
-        "construction:prepositional-verb",
         "es:de",
         "form:present-perfect",
         "construction:map-de-just",
@@ -13799,7 +13892,6 @@
       },
       "collections": [
         "es:acabar",
-        "construction:prepositional-verb",
         "es:de",
         "form:past-perfect",
         "form:imperfect",
@@ -13901,7 +13993,8 @@
         "es:acabar",
         "en:over",
         "pos:verb",
-        "grammar:phrasal-verb"
+        "grammar:phrasal-verb",
+        "particle:over"
       ],
       "curriculumRole": "supporting"
     },
@@ -13959,7 +14052,8 @@
         "es:acabar",
         "en:put",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -14117,7 +14211,6 @@
       },
       "collections": [
         "afford",
-        "construction:prepositional-verb",
         "es:para",
         "construction:map-para-object",
         "es:alcanzar",
@@ -14347,7 +14440,8 @@
         "en:fall",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:from"
       ],
       "curriculumRole": "reference"
     },
@@ -14481,7 +14575,8 @@
         "es:caer",
         "en:agree",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:with"
       ],
       "curriculumRole": "reference"
     },
@@ -14579,7 +14674,8 @@
         "en:fall",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:below"
       ],
       "curriculumRole": "reference"
     },
@@ -14749,7 +14845,8 @@
         "en:familiar",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:with"
       ],
       "curriculumRole": "reference"
     },
@@ -14834,7 +14931,8 @@
         "en:known",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -14856,7 +14954,8 @@
         "en:known",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:as"
       ],
       "curriculumRole": "reference"
     },
@@ -15081,7 +15180,8 @@
         "es:conseguir",
         "en:get",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -15178,7 +15278,8 @@
         "es:conseguir",
         "en:get",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:of"
       ],
       "curriculumRole": "reference"
     },
@@ -15292,7 +15393,8 @@
         "en:count",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:as"
       ],
       "curriculumRole": "reference"
     },
@@ -15345,7 +15447,6 @@
       },
       "collections": [
         "es:have",
-        "construction:prepositional-verb",
         "construction:map-con-object",
         "es:contar",
         "en:have",
@@ -15426,7 +15527,8 @@
         "en:count",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:among"
       ],
       "curriculumRole": "reference"
     },
@@ -15935,7 +16037,8 @@
         "en:fall",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -16119,7 +16222,8 @@
         "en:owe",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -16460,7 +16564,8 @@
         "en:due",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -16730,7 +16835,6 @@
         "english": "He stopped smoking."
       },
       "collections": [
-        "construction:prepositional-verb",
         "es:de",
         "grammar:gerund",
         "construction:map-de-gerund",
@@ -16752,7 +16856,6 @@
       },
       "collections": [
         "no longer",
-        "construction:prepositional-verb",
         "es:de",
         "grammar:perspective-change",
         "es:dejar",
@@ -16852,7 +16955,8 @@
         "en:leave",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:behind"
       ],
       "curriculumRole": "reference"
     },
@@ -17163,7 +17267,8 @@
         "en:add",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "supporting"
     },
@@ -17299,7 +17404,6 @@
         "english": "He started running."
       },
       "collections": [
-        "construction:prepositional-verb",
         "es:a",
         "grammar:gerund",
         "grammar:reflexive",
@@ -17440,7 +17544,8 @@
         "en:take",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:at"
       ],
       "curriculumRole": "supporting"
     },
@@ -17480,7 +17585,8 @@
         "en:blame",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:for"
       ],
       "curriculumRole": "supporting"
     },
@@ -17676,7 +17782,8 @@
         "es:recordar",
         "en:remind",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:of"
       ],
       "curriculumRole": "reference"
     },
@@ -17812,7 +17919,8 @@
         "es:robar",
         "en:steal",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:from"
       ],
       "curriculumRole": "supporting"
     },
@@ -18062,7 +18170,8 @@
         "en:hear",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:from"
       ],
       "curriculumRole": "reference"
     },
@@ -18103,7 +18212,8 @@
         "en:taste",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:like"
       ],
       "curriculumRole": "reference"
     },
@@ -18227,7 +18337,8 @@
         "es:sacar",
         "en:remove",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:from"
       ],
       "curriculumRole": "supporting"
     },
@@ -18262,7 +18373,8 @@
         "es:sacar",
         "en:take",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:of"
       ],
       "curriculumRole": "supporting"
     },
@@ -18377,7 +18489,6 @@
         "english": "I left the office."
       },
       "collections": [
-        "construction:prepositional-verb",
         "construction:map-de-leave",
         "es:salir",
         "en:leave",
@@ -18545,7 +18656,6 @@
         "english": "Ana is dating Luis."
       },
       "collections": [
-        "construction:prepositional-verb",
         "en:with",
         "construction:map-con-with",
         "es:salir",
@@ -19026,7 +19136,8 @@
         "en:keep",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -19046,7 +19157,8 @@
         "en:keep",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:at"
       ],
       "curriculumRole": "reference"
     },
@@ -19184,7 +19296,8 @@
         "en:sorry",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -19258,7 +19371,8 @@
         "en:feelings",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -19280,7 +19394,8 @@
         "en:feel",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:like"
       ],
       "curriculumRole": "supporting"
     },
@@ -19323,7 +19438,8 @@
         "en:feel",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -19463,7 +19579,8 @@
         "conjugation:infinitive",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:at"
       ],
       "curriculumRole": "supporting"
     },
@@ -19484,7 +19601,8 @@
         "sense:ser-origen",
         "conjugation:infinitive",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:from"
       ],
       "curriculumRole": "core"
     },
@@ -19507,7 +19625,8 @@
         "conjugation:infinitive",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:of"
       ],
       "curriculumRole": "supporting"
     },
@@ -19530,7 +19649,8 @@
         "conjugation:infinitive",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "supporting"
     },
@@ -19549,7 +19669,8 @@
         "en:for",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:for"
       ],
       "curriculumRole": "supporting"
     },
@@ -19569,7 +19690,8 @@
         "en:meant",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -19590,7 +19712,8 @@
         "en:able",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -19611,7 +19734,8 @@
         "en:good",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:at"
       ],
       "curriculumRole": "supporting"
     },
@@ -19631,7 +19755,8 @@
         "en:good",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:for"
       ],
       "curriculumRole": "supporting"
     },
@@ -19651,7 +19776,8 @@
         "en:bad",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:for"
       ],
       "curriculumRole": "supporting"
     },
@@ -19664,7 +19790,6 @@
         "english": "It was my fault."
       },
       "collections": [
-        "construction:prepositional-verb",
         "en:of",
         "construction:map-de-possessive",
         "es:ser",
@@ -19692,7 +19817,8 @@
         "en:aware",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:of"
       ],
       "curriculumRole": "reference"
     },
@@ -19933,7 +20059,8 @@
         "es:significar",
         "en:stand",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -19952,7 +20079,8 @@
         "es:significar",
         "en:mean",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -20508,7 +20636,8 @@
         "grammar:tener-adjective",
         "topic:emotion-state",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:of"
       ],
       "curriculumRole": "supporting"
     },
@@ -20838,7 +20967,8 @@
         "en:with",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:with"
       ],
       "curriculumRole": "reference"
     },
@@ -20860,7 +20990,8 @@
         "en:nothing",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:with"
       ],
       "curriculumRole": "reference"
     },
@@ -21160,7 +21291,8 @@
         "en:work",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:at"
       ],
       "curriculumRole": "supporting"
     },
@@ -21220,7 +21352,8 @@
         "en:work",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:for"
       ],
       "curriculumRole": "supporting"
     },
@@ -21240,7 +21373,8 @@
         "en:work",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:with"
       ],
       "curriculumRole": "supporting"
     },
@@ -21260,7 +21394,8 @@
         "en:work",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:as"
       ],
       "curriculumRole": "supporting"
     },
@@ -21280,7 +21415,8 @@
         "en:work",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:from"
       ],
       "curriculumRole": "reference"
     },
@@ -21300,7 +21436,8 @@
         "en:work",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:toward"
       ],
       "curriculumRole": "reference"
     },
@@ -21491,7 +21628,8 @@
         "es:traer",
         "en:bring",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:from"
       ],
       "curriculumRole": "supporting"
     },
@@ -21545,7 +21683,8 @@
         "es:traer",
         "en:bring",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:with"
       ],
       "curriculumRole": "reference"
     },
@@ -21742,7 +21881,8 @@
         "en:useful",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -21762,7 +21902,8 @@
         "en:work",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -21967,7 +22108,8 @@
         "en:come",
         "pos:verb",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:to"
       ],
       "curriculumRole": "core"
     },
@@ -21987,7 +22129,8 @@
         "en:come",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:from"
       ],
       "curriculumRole": "supporting"
     },
@@ -22028,7 +22171,8 @@
         "en:come",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:with"
       ],
       "curriculumRole": "reference"
     },
@@ -22087,7 +22231,8 @@
         "en:work",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -22166,7 +22311,8 @@
         "en:come",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -22459,7 +22605,8 @@
         "en:related",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -22521,7 +22668,8 @@
         "en:see",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -22664,7 +22812,8 @@
         "en:return",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "supporting"
     },
@@ -22969,7 +23118,8 @@
         "pos:verb",
         "es:buscar",
         "en:look",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:for"
       ],
       "curriculumRole": "core"
     },
@@ -23973,7 +24123,8 @@
         "en:show",
         "topic:en-multi-sense",
         "pos:verb",
-        "grammar:phrasal-verb"
+        "grammar:phrasal-verb",
+        "particle:up"
       ],
       "curriculumRole": "supporting"
     },
@@ -24006,7 +24157,8 @@
         "en:come",
         "topic:en-multi-sense",
         "pos:verb",
-        "grammar:phrasal-verb"
+        "grammar:phrasal-verb",
+        "particle:out"
       ],
       "curriculumRole": "reference"
     },
@@ -24071,7 +24223,8 @@
         "en:hold",
         "topic:en-multi-sense",
         "pos:verb",
-        "grammar:phrasal-verb"
+        "grammar:phrasal-verb",
+        "particle:back"
       ],
       "curriculumRole": "reference"
     },
@@ -24154,7 +24307,8 @@
         "es:entregar",
         "en:hand",
         "pos:verb",
-        "grammar:phrasal-verb"
+        "grammar:phrasal-verb",
+        "particle:in"
       ],
       "curriculumRole": "reference"
     },
@@ -24171,7 +24325,8 @@
         "es:entregar",
         "en:hand",
         "pos:verb",
-        "grammar:phrasal-verb"
+        "grammar:phrasal-verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -24189,7 +24344,8 @@
         "en:turn",
         "topic:en-multi-sense",
         "pos:verb",
-        "grammar:phrasal-verb"
+        "grammar:phrasal-verb",
+        "particle:in"
       ],
       "curriculumRole": "reference"
     },
@@ -24400,7 +24556,8 @@
         "es:mirar",
         "en:look",
         "pos:verb",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:at"
       ],
       "curriculumRole": "core"
     },
@@ -24577,7 +24734,8 @@
         "en:come",
         "topic:en-multi-sense",
         "pos:verb",
-        "grammar:phrasal-verb"
+        "grammar:phrasal-verb",
+        "particle:back"
       ],
       "curriculumRole": "reference"
     },
@@ -24595,7 +24753,8 @@
         "en:go",
         "topic:en-multi-sense",
         "pos:verb",
-        "grammar:phrasal-verb"
+        "grammar:phrasal-verb",
+        "particle:back"
       ],
       "curriculumRole": "reference"
     },
@@ -29039,7 +29198,8 @@
         "es:irle",
         "en:well",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:at"
       ],
       "curriculumRole": "reference"
     },
@@ -29160,7 +29320,8 @@
         "pos:preposition",
         "es:según",
         "en:depending",
-        "construction:prepositional-verb"
+        "construction:prepositional-verb",
+        "particle:on"
       ],
       "curriculumRole": "reference"
     },
@@ -29399,7 +29560,8 @@
         "en:agree",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:with"
       ],
       "curriculumRole": "reference"
     },
@@ -29418,7 +29580,8 @@
         "es:aceptar",
         "en:agree",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -29474,7 +29637,8 @@
         "es:calcular",
         "en:allow",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -29877,7 +30041,8 @@
         "construction:map-ante-before",
         "es:comparecer",
         "en:appear",
-        "pos:verb"
+        "pos:verb",
+        "particle:before"
       ],
       "curriculumRole": "reference"
     },
@@ -30561,7 +30726,8 @@
         "es:cuidar",
         "en:care",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -30940,7 +31106,8 @@
         "en:fine",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:with"
       ],
       "curriculumRole": "reference"
     },
@@ -31687,7 +31854,8 @@
         "en:offer",
         "topic:en-multi-sense",
         "topic:money-business",
-        "pos:verb"
+        "pos:verb",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -31775,7 +31943,6 @@
       },
       "collections": [
         "es:dueño",
-        "construction:prepositional-verb",
         "construction:map-de-of",
         "es:ser",
         "en:own",
@@ -31854,7 +32021,6 @@
       "collections": [
         "es:propietario",
         "register:formal",
-        "construction:prepositional-verb",
         "es:ser",
         "en:own",
         "topic:multi-sense",
@@ -31971,7 +32137,8 @@
         "en:provide",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:with"
       ],
       "curriculumRole": "reference"
     },
@@ -32005,7 +32172,6 @@
       "collections": [
         "en:contact",
         "en:with",
-        "construction:prepositional-verb",
         "grammar:reflexive",
         "es:comunicar",
         "en:reach",
@@ -51102,7 +51268,8 @@
         "pos:verb",
         "es:aprovechar",
         "en:take",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:of"
       ],
       "curriculumRole": "reference"
     },
@@ -51120,7 +51287,8 @@
         "pos:verb",
         "es:aprovechar",
         "en:make",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:of"
       ],
       "curriculumRole": "reference"
     },
@@ -51153,7 +51321,8 @@
         "pos:verb",
         "es:aprovechar",
         "en:benefit",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:from"
       ],
       "curriculumRole": "reference"
     },
@@ -51494,7 +51663,8 @@
         "pos:verb",
         "es:buscar",
         "en:search",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -51607,7 +51777,8 @@
         "pos:verb",
         "es:cambiar",
         "en:exchange",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -51737,7 +51908,8 @@
         "es:cargar",
         "en:blame",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -51857,7 +52029,6 @@
       },
       "collections": [
         "es:cargar",
-        "construction:prepositional-verb",
         "en:to",
         "pos:verb",
         "es:encargar",
@@ -51883,7 +52054,8 @@
         "es:encargar",
         "en:take",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:of"
       ],
       "curriculumRole": "reference"
     },
@@ -52442,7 +52614,8 @@
         "pos:verb",
         "es:cuidar",
         "en:take",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:of"
       ],
       "curriculumRole": "reference"
     },
@@ -52461,7 +52634,8 @@
         "construction:inseparable-phrasal-verb",
         "es:cuidar",
         "en:look",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:after"
       ],
       "curriculumRole": "supporting"
     },
@@ -52541,7 +52715,6 @@
         "english": "I am sorry that I disappointed her."
       },
       "collections": [
-        "construction:prepositional-verb",
         "es:be",
         "en:to",
         "pos:verb",
@@ -52611,7 +52784,8 @@
         "pos:verb",
         "es:dormir",
         "en:put",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -52705,7 +52879,6 @@
         "english": "We chose to wait outside."
       },
       "collections": [
-        "construction:prepositional-verb",
         "en:to",
         "pos:verb",
         "es:elegir",
@@ -53145,7 +53318,8 @@
         "pos:verb",
         "es:jugar",
         "en:play",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:with"
       ],
       "curriculumRole": "reference"
     },
@@ -53389,7 +53563,6 @@
         "english": "I am dying to meet her."
       },
       "collections": [
-        "construction:prepositional-verb",
         "es:be",
         "en:to",
         "pos:verb",
@@ -53557,7 +53730,8 @@
         "pos:verb",
         "es:pagar",
         "en:pay",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -53629,7 +53803,8 @@
         "pos:verb",
         "es:pegar",
         "en:get",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -53710,7 +53885,8 @@
         "pos:verb",
         "es:pegar",
         "en:stay",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -54253,7 +54429,8 @@
         "pos:verb",
         "es:apuntar",
         "en:point",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -54302,7 +54479,6 @@
         "english": "The project aims to reduce costs."
       },
       "collections": [
-        "construction:prepositional-verb",
         "en:to",
         "pos:verb",
         "es:apuntar",
@@ -54340,7 +54516,8 @@
         "pos:verb",
         "es:ayudar",
         "en:help",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:with"
       ],
       "curriculumRole": "supporting"
     },
@@ -54368,7 +54545,6 @@
         "english": "Use this tool to help yourself."
       },
       "collections": [
-        "construction:prepositional-verb",
         "en:to",
         "pos:verb",
         "es:ayudar",
@@ -54485,7 +54661,8 @@
         "pos:verb",
         "es:casar",
         "en:reconcile",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:with"
       ],
       "curriculumRole": "reference"
     },
@@ -54518,7 +54695,8 @@
         "pos:verb",
         "es:despedir",
         "en:say",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -54585,7 +54763,8 @@
         "pos:verb",
         "es:dirigir",
         "en:address",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:to"
       ],
       "curriculumRole": "reference"
     },
@@ -54884,7 +55063,8 @@
         "pos:verb",
         "es:partir",
         "en:start",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:from"
       ],
       "curriculumRole": "reference"
     },
@@ -55107,7 +55287,8 @@
         "pos:verb",
         "es:sentar",
         "en:lay",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "particle:for"
       ],
       "curriculumRole": "reference"
     },
@@ -67371,7 +67552,8 @@
         "es:cuidarlo",
         "en:look",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "particle:after"
       ],
       "curriculumRole": "supporting"
     },
