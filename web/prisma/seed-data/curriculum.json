@@ -7508,7 +7508,7 @@
         "topic:phrasal-verb",
         "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "lc0faais7l",
@@ -9460,7 +9460,7 @@
         "topic:phrasal-verb",
         "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "1fr5z9ndcf",
@@ -10832,7 +10832,8 @@
         "en:stop",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -14770,7 +14771,8 @@
         "en:finish",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -14789,7 +14791,8 @@
         "es:acabar",
         "en:just",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -14809,7 +14812,8 @@
         "es:acababa",
         "en:just",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -15442,7 +15446,8 @@
         "es:caer",
         "en:realize",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -17901,7 +17906,8 @@
         "en:stop",
         "pos:verb",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -17920,7 +17926,8 @@
         "es:dejar",
         "en:longer",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -18453,7 +18460,8 @@
         "es:echar",
         "en:miss",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -27671,7 +27679,8 @@
         "es:de",
         "en:from",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -27690,7 +27699,8 @@
         "es:de",
         "en:what",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -27699,14 +27709,15 @@
       "spanish": "una taza de café",
       "english": "a cup of coffee",
       "example": {
-        "spanish": "una taza de café",
-        "english": "a cup of coffee"
+        "spanish": "Quiero una taza de café, por favor.",
+        "english": "I want a cup of coffee, please."
       },
       "collections": [
         "es:de",
         "es:taza",
         "en:cup",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -27715,14 +27726,15 @@
       "spanish": "el nombre de la tienda",
       "english": "the name of the store",
       "example": {
-        "spanish": "el nombre de la tienda",
-        "english": "the name of the store"
+        "spanish": "No recuerdo el nombre de la tienda.",
+        "english": "I don't remember the name of the store."
       },
       "collections": [
         "es:de",
         "es:nombre",
         "en:name",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -27731,14 +27743,15 @@
       "spanish": "leche de chocolate",
       "english": "chocolate milk",
       "example": {
-        "spanish": "leche de chocolate",
-        "english": "chocolate milk"
+        "spanish": "A los niños les encanta la leche de chocolate.",
+        "english": "Kids love chocolate milk."
       },
       "collections": [
         "es:de",
         "es:leche",
         "en:chocolate",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -27747,14 +27760,15 @@
       "spanish": "chocolate de leche",
       "english": "milk chocolate",
       "example": {
-        "spanish": "chocolate de leche",
-        "english": "milk chocolate"
+        "spanish": "Prefiero el chocolate de leche al chocolate negro.",
+        "english": "I prefer milk chocolate to dark chocolate."
       },
       "collections": [
         "es:de",
         "es:chocolate",
         "en:milk",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -27763,14 +27777,15 @@
       "spanish": "taza de café",
       "english": "coffee cup",
       "example": {
-        "spanish": "taza de café",
-        "english": "coffee cup"
+        "spanish": "Rompí la taza de café esta mañana.",
+        "english": "I broke the coffee cup this morning."
       },
       "collections": [
         "es:de",
         "es:taza",
         "en:coffee",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -27779,14 +27794,15 @@
       "spanish": "taza de café",
       "english": "cup of coffee",
       "example": {
-        "spanish": "taza de café",
-        "english": "cup of coffee"
+        "spanish": "Tomé una taza de café antes de salir.",
+        "english": "I had a cup of coffee before leaving."
       },
       "collections": [
         "es:de",
         "es:taza",
         "en:cup",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -27824,7 +27840,8 @@
         "es:de",
         "en:with",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -27846,7 +27863,8 @@
         "pos:verb",
         "construction:prepositional-verb",
         "particle:on",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -27866,7 +27884,8 @@
         "pos:verb",
         "construction:prepositional-verb",
         "particle:on",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28119,14 +28138,15 @@
       "spanish": "en un lugar",
       "english": "at a place",
       "example": {
-        "spanish": "en un lugar",
-        "english": "at a place"
+        "spanish": "Nos vemos en un lugar cerca de aquí.",
+        "english": "We'll meet at a place near here."
       },
       "collections": [
         "es:en",
         "en:at",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28135,14 +28155,15 @@
       "spanish": "en la tienda",
       "english": "at the store",
       "example": {
-        "spanish": "en la tienda",
-        "english": "at the store"
+        "spanish": "Ana trabaja en la tienda.",
+        "english": "Ana works at the store."
       },
       "collections": [
         "es:en",
         "en:at",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28151,14 +28172,15 @@
       "spanish": "en la oficina",
       "english": "at the office",
       "example": {
-        "spanish": "en la oficina",
-        "english": "at the office"
+        "spanish": "Estoy en la oficina.",
+        "english": "I am at the office."
       },
       "collections": [
         "es:en",
         "en:at",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28167,14 +28189,15 @@
       "spanish": "en el apartamento",
       "english": "at the apartment",
       "example": {
-        "spanish": "en el apartamento",
-        "english": "at the apartment"
+        "spanish": "Nos vemos en el apartamento.",
+        "english": "We'll meet at the apartment."
       },
       "collections": [
         "es:en",
         "en:at",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28183,14 +28206,15 @@
       "spanish": "en el parque",
       "english": "at the park",
       "example": {
-        "spanish": "en el parque",
-        "english": "at the park"
+        "spanish": "Los niños juegan en el parque.",
+        "english": "The kids are playing at the park."
       },
       "collections": [
         "es:en",
         "en:at",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28199,14 +28223,15 @@
       "spanish": "en el aeropuerto",
       "english": "at the airport",
       "example": {
-        "spanish": "en el aeropuerto",
-        "english": "at the airport"
+        "spanish": "Te espero en el aeropuerto.",
+        "english": "I'll wait for you at the airport."
       },
       "collections": [
         "es:en",
         "en:at",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28215,14 +28240,15 @@
       "spanish": "en el evento",
       "english": "at the event",
       "example": {
-        "spanish": "en el evento",
-        "english": "at the event"
+        "spanish": "Nos vimos en el evento.",
+        "english": "We saw each other at the event."
       },
       "collections": [
         "es:en",
         "en:at",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28231,14 +28257,15 @@
       "spanish": "en Colombia",
       "english": "in Colombia",
       "example": {
-        "spanish": "en Colombia",
-        "english": "in Colombia"
+        "spanish": "Vivo en Colombia.",
+        "english": "I live in Colombia."
       },
       "collections": [
         "es:en",
         "en:in",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28247,14 +28274,15 @@
       "spanish": "en Bogotá",
       "english": "in Bogotá",
       "example": {
-        "spanish": "en Bogotá",
-        "english": "in Bogotá"
+        "spanish": "Nací en Bogotá.",
+        "english": "I was born in Bogotá."
       },
       "collections": [
         "es:en",
         "en:in",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28263,14 +28291,15 @@
       "spanish": "en Rosales",
       "english": "in Rosales",
       "example": {
-        "spanish": "en Rosales",
-        "english": "in Rosales"
+        "spanish": "Vivimos en Rosales.",
+        "english": "We live in Rosales."
       },
       "collections": [
         "es:en",
         "en:in",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28279,14 +28308,15 @@
       "spanish": "en el país",
       "english": "in the country",
       "example": {
-        "spanish": "en el país",
-        "english": "in the country"
+        "spanish": "Hay muchas ciudades en el país.",
+        "english": "There are many cities in the country."
       },
       "collections": [
         "es:en",
         "en:in",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28295,14 +28325,15 @@
       "spanish": "en la ciudad",
       "english": "in the city",
       "example": {
-        "spanish": "en la ciudad",
-        "english": "in the city"
+        "spanish": "Vivo en la ciudad.",
+        "english": "I live in the city."
       },
       "collections": [
         "es:en",
         "en:in",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28311,14 +28342,15 @@
       "spanish": "en el barrio",
       "english": "in the neighborhood",
       "example": {
-        "spanish": "en el barrio",
-        "english": "in the neighborhood"
+        "spanish": "Hay un parque en el barrio.",
+        "english": "There is a park in the neighborhood."
       },
       "collections": [
         "es:en",
         "en:in",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28327,15 +28359,16 @@
       "spanish": "dentro de un lugar",
       "english": "in a place",
       "example": {
-        "spanish": "dentro de un lugar",
-        "english": "in a place"
+        "spanish": "Guardé el dinero dentro de un lugar seguro.",
+        "english": "I kept the money in a safe place."
       },
       "collections": [
         "es:en",
         "es:dentro",
         "en:in",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28344,14 +28377,15 @@
       "spanish": "en el apartamento",
       "english": "in the apartment",
       "example": {
-        "spanish": "en el apartamento",
-        "english": "in the apartment"
+        "spanish": "Hay muchas cajas en el apartamento.",
+        "english": "There are many boxes in the apartment."
       },
       "collections": [
         "es:en",
         "en:in",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28376,14 +28410,15 @@
       "spanish": "en el baño",
       "english": "in the bathroom",
       "example": {
-        "spanish": "en el baño",
-        "english": "in the bathroom"
+        "spanish": "Las toallas están en el baño.",
+        "english": "The towels are in the bathroom."
       },
       "collections": [
         "es:en",
         "en:in",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28392,14 +28427,15 @@
       "spanish": "en el carro",
       "english": "in the car",
       "example": {
-        "spanish": "en el carro",
-        "english": "in the car"
+        "spanish": "Dejé las llaves en el carro.",
+        "english": "I left the keys in the car."
       },
       "collections": [
         "es:en",
         "en:in",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28408,14 +28444,15 @@
       "spanish": "en el bolso",
       "english": "in the bag",
       "example": {
-        "spanish": "en el bolso",
-        "english": "in the bag"
+        "spanish": "Tengo las llaves en el bolso.",
+        "english": "I have the keys in the bag."
       },
       "collections": [
         "es:en",
         "en:in",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28424,14 +28461,15 @@
       "spanish": "en una superficie",
       "english": "on a surface",
       "example": {
-        "spanish": "en una superficie",
-        "english": "on a surface"
+        "spanish": "Coloca el jarrón en una superficie plana.",
+        "english": "Place the vase on a flat surface."
       },
       "collections": [
         "es:en",
         "en:on",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28440,15 +28478,16 @@
       "spanish": "sobre la mesa",
       "english": "on the table",
       "example": {
-        "spanish": "sobre la mesa",
-        "english": "on the table"
+        "spanish": "Las llaves están sobre la mesa.",
+        "english": "The keys are on the table."
       },
       "collections": [
         "es:en",
         "es:sobre",
         "en:on",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28457,14 +28496,15 @@
       "spanish": "en el piso",
       "english": "on the floor",
       "example": {
-        "spanish": "en el piso",
-        "english": "on the floor"
+        "spanish": "Los zapatos están en el piso.",
+        "english": "The shoes are on the floor."
       },
       "collections": [
         "es:en",
         "en:on",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28473,14 +28513,15 @@
       "spanish": "en una página web",
       "english": "on a webpage",
       "example": {
-        "spanish": "en una página web",
-        "english": "on a webpage"
+        "spanish": "La información está en una página web.",
+        "english": "The information is on a webpage."
       },
       "collections": [
         "es:en",
         "en:on",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
