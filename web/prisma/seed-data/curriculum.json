@@ -1364,7 +1364,8 @@
         "pos:noun",
         "es:comida",
         "en:food",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -1382,7 +1383,8 @@
         "es:comida",
         "en:meal",
         "gender:feminine",
-        "topic:food"
+        "topic:food",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -1400,7 +1402,8 @@
         "es:necesidad",
         "en:need",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -1441,7 +1444,8 @@
         "en:beverage",
         "gender:feminine",
         "topic:food",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -4172,7 +4176,8 @@
         "gender:feminine",
         "topic:communication-request",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -4929,7 +4934,8 @@
         "en:sunset",
         "gender:feminine",
         "topic:event",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -6581,7 +6587,8 @@
         "en:wait",
         "gender:feminine",
         "topic:abstract-quality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -6600,7 +6607,8 @@
         "en:hope",
         "gender:feminine",
         "topic:abstract-quality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -6619,7 +6627,8 @@
         "en:expectation",
         "gender:feminine",
         "topic:abstract-quality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -7746,7 +7755,8 @@
         "en:lack",
         "gender:feminine",
         "topic:abstract-quality",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -7897,7 +7907,8 @@
         "es:ganancia",
         "en:profit",
         "gender:feminine",
-        "topic:money-business"
+        "topic:money-business",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -9769,7 +9780,8 @@
         "es:llamada",
         "en:call",
         "gender:feminine",
-        "topic:communication-request"
+        "topic:communication-request",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -10002,7 +10014,8 @@
         "es:llegada",
         "en:arrival",
         "gender:feminine",
-        "topic:event"
+        "topic:event",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -10630,7 +10643,8 @@
         "en:stop",
         "gender:feminine",
         "topic:abstract-quality",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -11744,7 +11758,8 @@
         "es:pérdida",
         "en:loss",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -12875,7 +12890,8 @@
         "en:powerlessness",
         "gender:feminine",
         "topic:abstract-quality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -13319,7 +13335,8 @@
         "es:pregunta",
         "en:question",
         "gender:feminine",
-        "topic:communication-request"
+        "topic:communication-request",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -14289,7 +14306,8 @@
         "en:opening",
         "gender:feminine",
         "topic:event",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -14310,7 +14328,8 @@
         "en:opening",
         "gender:feminine",
         "topic:event",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -15207,7 +15226,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -15226,7 +15246,8 @@
         "en:decline",
         "gender:feminine",
         "topic:abstract-quality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -16110,7 +16131,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -16131,7 +16153,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -16672,7 +16695,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -18943,7 +18967,8 @@
         "en:wisdom",
         "gender:feminine",
         "topic:abstract-quality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -19386,7 +19411,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -21096,7 +21122,8 @@
         "es:suposición",
         "en:assumption",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -21787,7 +21814,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -23132,7 +23160,8 @@
         "en:coming",
         "gender:feminine",
         "topic:abstract-quality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -23478,7 +23507,8 @@
         "en:sight",
         "gender:feminine",
         "topic:abstract-quality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -23497,7 +23527,8 @@
         "en:view",
         "gender:feminine",
         "topic:abstract-quality",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -23849,7 +23880,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -25256,7 +25288,8 @@
         "es:consulta",
         "en:inquiry",
         "gender:feminine",
-        "topic:communication-request"
+        "topic:communication-request",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -25274,7 +25307,8 @@
         "es:consulta",
         "en:query",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -25568,7 +25602,8 @@
         "es:postulación",
         "en:application",
         "gender:feminine",
-        "topic:communication-request"
+        "topic:communication-request",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -25677,7 +25712,8 @@
         "en:request",
         "gender:feminine",
         "topic:communication-request",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -25695,7 +25731,8 @@
         "es:solicitud",
         "en:application",
         "gender:feminine",
-        "topic:communication-request"
+        "topic:communication-request",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30081,7 +30118,8 @@
         "en:job",
         "gender:feminine",
         "topic:en-multi-sense",
-        "topic:business-work"
+        "topic:business-work",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32049,7 +32087,8 @@
         "cognate:ente-to-ent",
         "topic:cognate",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32147,7 +32186,8 @@
         "es:multa",
         "en:fine",
         "gender:feminine",
-        "topic:crime-law"
+        "topic:crime-law",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -33087,7 +33127,8 @@
         "en:ownership",
         "gender:feminine",
         "topic:abstract-quality",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35303,7 +35344,8 @@
         "es:acción",
         "en:action",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35324,7 +35366,8 @@
         "es:nación",
         "en:nation",
         "gender:feminine",
-        "topic:government-politics"
+        "topic:government-politics",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35345,7 +35388,8 @@
         "es:posición",
         "en:position",
         "gender:feminine",
-        "topic:business-work"
+        "topic:business-work",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35366,7 +35410,8 @@
         "en:opinion",
         "cognate:transparent",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35387,7 +35432,8 @@
         "es:situación",
         "en:situation",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35408,7 +35454,8 @@
         "pos:noun",
         "es:reservación",
         "en:reservation",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35429,7 +35476,8 @@
         "es:explicación",
         "en:explanation",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35450,7 +35498,8 @@
         "es:traducción",
         "en:translation",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35471,7 +35520,8 @@
         "es:educación",
         "en:education",
         "gender:feminine",
-        "topic:education"
+        "topic:education",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35492,7 +35542,8 @@
         "es:comunicación",
         "en:communication",
         "gender:feminine",
-        "topic:media-communication"
+        "topic:media-communication",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35513,7 +35564,8 @@
         "es:información",
         "en:information",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35534,7 +35586,8 @@
         "es:organización",
         "en:organization",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35555,7 +35608,8 @@
         "es:producción",
         "en:production",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35576,7 +35630,8 @@
         "es:actitud",
         "en:attitude",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35597,7 +35652,8 @@
         "es:aptitud",
         "en:aptitude",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35618,7 +35674,8 @@
         "es:gratitud",
         "en:gratitude",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35639,7 +35696,8 @@
         "es:multitud",
         "en:multitude",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35660,7 +35718,8 @@
         "es:longitud",
         "en:longitude",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35681,7 +35740,8 @@
         "es:latitud",
         "en:latitude",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -35702,7 +35762,8 @@
         "es:altitud",
         "en:altitude",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -36535,7 +36596,8 @@
         "es:crisis",
         "en:crisis",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -36555,7 +36617,8 @@
         "es:tesis",
         "en:thesis",
         "gender:feminine",
-        "topic:education"
+        "topic:education",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -36575,7 +36638,8 @@
         "es:psicosis",
         "en:psychosis",
         "gender:feminine",
-        "topic:health"
+        "topic:health",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -36595,7 +36659,8 @@
         "es:síntesis",
         "en:synthesis",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -36615,7 +36680,8 @@
         "es:parálisis",
         "en:paralysis",
         "gender:feminine",
-        "topic:health"
+        "topic:health",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -36658,7 +36724,8 @@
         "es:par",
         "en:part",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -36698,7 +36765,8 @@
         "en:confidence",
         "cognate:transparent",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -36719,7 +36787,8 @@
         "es:alianza",
         "en:alliance",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -36740,7 +36809,8 @@
         "es:finanzas",
         "en:finance",
         "gender:feminine",
-        "topic:money-business"
+        "topic:money-business",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -36761,7 +36831,8 @@
         "es:venganza",
         "en:vengeance",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -36782,7 +36853,8 @@
         "es:balanza",
         "en:balance",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -36803,7 +36875,8 @@
         "es:danza",
         "en:dance",
         "gender:feminine",
-        "topic:art-culture"
+        "topic:art-culture",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -36824,7 +36897,8 @@
         "es:semejanza",
         "en:resemblance",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -36846,7 +36920,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:encia-ancia-to-ence-ance",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -36868,7 +36943,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:encia-ancia-to-ence-ance",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -36890,7 +36966,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:encia-ancia-to-ence-ance",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -36912,7 +36989,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:encia-ancia-to-ence-ance",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -36934,7 +37012,8 @@
         "gender:feminine",
         "topic:education",
         "cognate:encia-ancia-to-ence-ance",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -36956,7 +37035,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:encia-ancia-to-ence-ance",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -36978,7 +37058,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:encia-ancia-to-ence-ance",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -37000,7 +37081,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:encia-ancia-to-ence-ance",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -37022,7 +37104,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:encia-ancia-to-ence-ance",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -37044,7 +37127,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:encia-ancia-to-ence-ance",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -37066,7 +37150,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:encia-ancia-to-ence-ance",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -37088,7 +37173,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:encia-ancia-to-ence-ance",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -37497,7 +37583,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:ia-to-y",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -37519,7 +37606,8 @@
         "gender:feminine",
         "topic:education",
         "cognate:ia-to-y",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -37541,7 +37629,8 @@
         "gender:feminine",
         "topic:education",
         "cognate:ia-to-y",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -37563,7 +37652,8 @@
         "gender:feminine",
         "topic:technology",
         "cognate:ia-to-y",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -37585,7 +37675,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:ia-to-y",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -37607,7 +37698,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:ia-to-y",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -37630,7 +37722,8 @@
         "en:family",
         "gender:feminine",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -37652,7 +37745,8 @@
         "en:company",
         "gender:feminine",
         "cognate:ia-to-y",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -37674,7 +37768,8 @@
         "gender:feminine",
         "topic:education",
         "cognate:ia-to-y",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -37696,7 +37791,8 @@
         "gender:feminine",
         "topic:education",
         "cognate:ia-to-y",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -37718,7 +37814,8 @@
         "gender:feminine",
         "topic:money-business",
         "cognate:ia-to-y",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -37740,7 +37837,8 @@
         "gender:feminine",
         "topic:government-politics",
         "cognate:ia-to-y",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -37762,7 +37860,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:ia-to-y",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -37784,7 +37883,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:ia-to-y",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -37823,7 +37923,8 @@
         "es:estructura",
         "en:structure",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -38212,7 +38313,8 @@
         "gender:feminine",
         "topic:media-communication",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -38233,7 +38335,8 @@
         "gender:feminine",
         "topic:media-communication",
         "cognate:ia-to-y",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -38254,7 +38357,8 @@
         "gender:feminine",
         "topic:food",
         "cognate:ia-to-y",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -38275,7 +38379,8 @@
         "gender:feminine",
         "topic:education",
         "cognate:ia-to-y",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -38362,7 +38467,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -38383,7 +38489,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -38404,7 +38511,8 @@
         "gender:feminine",
         "topic:education",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -38491,7 +38599,8 @@
         "gender:feminine",
         "topic:art-culture",
         "cognate:ia-to-y",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -38628,7 +38737,8 @@
         "es:literatura",
         "en:literature",
         "gender:feminine",
-        "topic:education"
+        "topic:education",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -38650,7 +38760,8 @@
         "es:cultura",
         "en:culture",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -38672,7 +38783,8 @@
         "es:agricultura",
         "en:agriculture",
         "gender:feminine",
-        "topic:business-work"
+        "topic:business-work",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -38694,7 +38806,8 @@
         "es:arquitectura",
         "en:architecture",
         "gender:feminine",
-        "topic:art-culture"
+        "topic:art-culture",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -38716,7 +38829,8 @@
         "es:aventura",
         "en:adventure",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -38738,7 +38852,8 @@
         "es:captura",
         "en:capture",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39107,7 +39222,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:encia-ancia-to-ence-ance",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39129,7 +39245,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:encia-ancia-to-ence-ance",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39151,7 +39268,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:encia-ancia-to-ence-ance",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39173,7 +39291,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:encia-ancia-to-ence-ance",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39195,7 +39314,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:encia-ancia-to-ence-ance",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39217,7 +39337,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:encia-ancia-to-ence-ance",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39239,7 +39360,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:encia-ancia-to-ence-ance",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39261,7 +39383,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:encia-ancia-to-ence-ance",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39283,7 +39406,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:encia-ancia-to-ence-ance",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39305,7 +39429,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:encia-ancia-to-ence-ance",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39568,7 +39693,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -40079,7 +40205,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -41224,7 +41351,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -41248,7 +41376,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -41272,7 +41401,8 @@
         "gender:feminine",
         "topic:education",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -41296,7 +41426,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -41320,7 +41451,8 @@
         "en:nationality",
         "gender:feminine",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -41344,7 +41476,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -41368,7 +41501,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -41416,7 +41550,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -41440,7 +41575,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -41464,7 +41600,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -41488,7 +41625,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -41512,7 +41650,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -41536,7 +41675,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -41560,7 +41700,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -42451,7 +42592,8 @@
         "es:televisión",
         "en:television",
         "gender:feminine",
-        "topic:media-communication"
+        "topic:media-communication",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -42471,7 +42613,8 @@
         "es:versión",
         "en:version",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -42491,7 +42634,8 @@
         "es:profesión",
         "en:profession",
         "gender:feminine",
-        "topic:business-work"
+        "topic:business-work",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -42511,7 +42655,8 @@
         "es:expresión",
         "en:expression",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -42531,7 +42676,8 @@
         "es:discusión",
         "en:discussion",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -42551,7 +42697,8 @@
         "es:confusión",
         "en:confusion",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -42571,7 +42718,8 @@
         "es:decisión",
         "en:decision",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -42591,7 +42739,8 @@
         "es:conclusión",
         "en:conclusion",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -42611,7 +42760,8 @@
         "es:división",
         "en:division",
         "gender:feminine",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -42632,7 +42782,8 @@
         "gender:feminine",
         "topic:education",
         "cognate:ia-to-y",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -42675,7 +42826,8 @@
         "gender:feminine",
         "topic:health",
         "cognate:ia-to-y",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -42761,7 +42913,8 @@
         "gender:feminine",
         "topic:abstract-quality",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -42782,7 +42935,8 @@
         "gender:feminine",
         "topic:education",
         "cognate:ia-to-y",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47692,7 +47846,8 @@
         "pos:noun",
         "es:oficina",
         "en:office",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -47711,7 +47866,8 @@
         "es:escuela",
         "en:school",
         "gender:feminine",
-        "topic:education"
+        "topic:education",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -48623,7 +48779,8 @@
         "en:question",
         "cognate:transparent",
         "gender:feminine",
-        "topic:communication-request"
+        "topic:communication-request",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -48645,7 +48802,8 @@
         "en:company",
         "gender:feminine",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -50609,7 +50767,8 @@
         "pos:noun",
         "es:amiga",
         "en:friend",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -50626,7 +50785,8 @@
         "pos:noun",
         "es:película",
         "en:movie",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -50643,7 +50803,8 @@
         "pos:noun",
         "es:película",
         "en:film",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -50680,7 +50841,8 @@
         "en:firm",
         "cognate:ma-to-m",
         "topic:cognate",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -50751,7 +50913,8 @@
         "pos:noun",
         "es:tarea",
         "en:homework",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -50768,7 +50931,8 @@
         "pos:noun",
         "es:obligación",
         "en:obligation",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -50787,7 +50951,8 @@
         "en:responsibility",
         "cognate:dad-to-ty",
         "topic:cognate",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -50804,7 +50969,8 @@
         "pos:noun",
         "es:cosa",
         "en:thing",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -50821,7 +50987,8 @@
         "pos:noun",
         "es:cosa",
         "en:stuff",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -50838,7 +51005,8 @@
         "pos:noun",
         "es:cosa",
         "en:matter",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -50855,7 +51023,8 @@
         "pos:noun",
         "es:llave",
         "en:key",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -50872,7 +51041,8 @@
         "pos:noun",
         "es:llave",
         "en:faucet",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -50889,7 +51059,8 @@
         "pos:noun",
         "es:llave",
         "en:wrench",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -50906,7 +51077,8 @@
         "pos:noun",
         "es:mesa",
         "en:table",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -50923,7 +51095,8 @@
         "pos:noun",
         "es:mesa",
         "en:board",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -50940,7 +51113,8 @@
         "pos:noun",
         "es:respuesta",
         "en:answer",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -50957,7 +51131,8 @@
         "pos:noun",
         "es:respuesta",
         "en:response",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -50974,7 +51149,8 @@
         "pos:noun",
         "es:respuesta",
         "en:reply",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -50991,7 +51167,8 @@
         "pos:noun",
         "es:luz",
         "en:light",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -51009,7 +51186,8 @@
         "es:luz",
         "en:power",
         "gender:feminine",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -51081,7 +51259,8 @@
         "pos:noun",
         "es:reserva",
         "en:booking",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -51098,7 +51277,8 @@
         "pos:noun",
         "es:reserva",
         "en:reserve",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -51923,7 +52103,8 @@
         "pos:noun",
         "es:esposa",
         "en:wife",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -51941,7 +52122,8 @@
         "pos:noun",
         "es:esposa",
         "en:spouse",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -51997,7 +52179,8 @@
         "pos:noun",
         "es:familia",
         "en:household",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -52015,7 +52198,8 @@
         "pos:noun",
         "es:familia",
         "en:relatives",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -52033,7 +52217,8 @@
         "pos:noun",
         "es:hermana",
         "en:sister",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -52051,7 +52236,8 @@
         "pos:noun",
         "es:hermana",
         "en:sibling",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -52069,7 +52255,8 @@
         "pos:noun",
         "es:hermandad",
         "en:brotherhood",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -52087,7 +52274,8 @@
         "pos:noun",
         "es:hermandad",
         "en:sisterhood",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -52107,7 +52295,8 @@
         "en:fraternity",
         "cognate:dad-to-ty",
         "topic:cognate",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -52222,7 +52411,8 @@
         "es:mujer",
         "en:woman",
         "gender:feminine",
-        "topic:people"
+        "topic:people",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -52240,7 +52430,8 @@
         "pos:noun",
         "es:mujer",
         "en:lady",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -52258,7 +52449,8 @@
         "pos:noun",
         "es:mujer",
         "en:female",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -52276,7 +52468,8 @@
         "pos:noun",
         "es:niña",
         "en:child",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -52294,7 +52487,8 @@
         "pos:noun",
         "es:niña",
         "en:girl",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -52312,7 +52506,8 @@
         "pos:noun",
         "es:niña",
         "en:kid",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -52389,7 +52584,8 @@
         "es:persona",
         "grammar:human-object",
         "gender:feminine",
-        "topic:people"
+        "topic:people",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -52407,9 +52603,10 @@
         "pos:noun",
         "es:persona",
         "en:people",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "yxytcw4sfd",
@@ -52426,9 +52623,10 @@
         "es:persona",
         "en:somebody",
         "gender:feminine",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "oy7x5xmtxf",
@@ -52465,7 +52663,8 @@
         "pos:noun",
         "es:casa",
         "en:home",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -52504,7 +52703,8 @@
         "pos:noun",
         "es:tienda",
         "en:store",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -52543,7 +52743,8 @@
         "pos:noun",
         "es:habitación",
         "en:room",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -52604,7 +52805,8 @@
         "en:city",
         "cognate:dad-to-ty",
         "topic:cognate",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -57441,9 +57643,10 @@
         "pos:noun",
         "es:hora",
         "en:time",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "supporting"
     },
     {
       "id": "dqtov5ojkf",
@@ -57459,7 +57662,8 @@
         "sound:an-before-vowel-sound",
         "es:hora",
         "en:hour",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -57887,7 +58091,8 @@
         "es:personas",
         "en:people",
         "gender:feminine",
-        "topic:people"
+        "topic:people",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57906,7 +58111,8 @@
         "es:gente",
         "en:people",
         "gender:feminine",
-        "topic:people"
+        "topic:people",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -57965,7 +58171,8 @@
         "es:mujeres",
         "en:women",
         "gender:feminine",
-        "topic:people"
+        "topic:people",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58374,7 +58581,8 @@
         "es:hora",
         "en:slow",
         "gender:feminine",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -68047,9 +68255,10 @@
         "pos:noun",
         "es:hora",
         "en:time",
-        "gender:feminine"
+        "gender:feminine",
+        "audit:reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "trash"
     },
     {
       "id": "h8dt61iqmg",
@@ -86761,7 +86970,8 @@
         "es:madre",
         "en:mother",
         "topic:people",
-        "topic:family"
+        "topic:family",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -86798,7 +87008,8 @@
         "es:mamá",
         "en:mom",
         "topic:people",
-        "topic:family"
+        "topic:family",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -86835,7 +87046,8 @@
         "es:hija",
         "en:daughter",
         "topic:people",
-        "topic:family"
+        "topic:family",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -86872,7 +87084,8 @@
         "es:abuela",
         "en:grandmother",
         "topic:people",
-        "topic:family"
+        "topic:family",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -86909,7 +87122,8 @@
         "es:tía",
         "en:aunt",
         "topic:people",
-        "topic:family"
+        "topic:family",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -86946,7 +87160,8 @@
         "es:prima",
         "en:cousin",
         "topic:people",
-        "topic:family"
+        "topic:family",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -86983,7 +87198,8 @@
         "es:sobrina",
         "en:niece",
         "topic:people",
-        "topic:family"
+        "topic:family",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -87020,7 +87236,8 @@
         "es:novia",
         "en:girlfriend",
         "topic:people",
-        "topic:family"
+        "topic:family",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
