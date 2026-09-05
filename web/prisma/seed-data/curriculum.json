@@ -2257,7 +2257,8 @@
         "en:how",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "topic:social-expression"
+        "topic:social-expression",
+        "expr:greeting"
       ],
       "curriculumRole": "supporting"
     },
@@ -7440,7 +7441,8 @@
         "es:extrañar",
         "find + object + adjective",
         "es:me",
-        "topic:expression"
+        "topic:social-expression",
+        "expr:idiom"
       ],
       "curriculumRole": "reference"
     },
@@ -7664,7 +7666,8 @@
         "construction:map-sin-without",
         "es:sin",
         "en:without",
-        "topic:expression"
+        "topic:social-expression",
+        "expr:idiom"
       ],
       "curriculumRole": "reference"
     },
@@ -8019,7 +8022,8 @@
         "es:gustar",
         "topic:social-expression",
         "es:mucho",
-        "en:nice"
+        "en:nice",
+        "expr:greeting"
       ],
       "curriculumRole": "supporting"
     },
@@ -9532,7 +9536,8 @@
         "grammar:introduction",
         "es:me",
         "en:my",
-        "topic:expression"
+        "topic:social-expression",
+        "expr:greeting"
       ],
       "curriculumRole": "supporting"
     },
@@ -16226,7 +16231,8 @@
         "free-choice construction",
         "es:cueste",
         "en:whatever",
-        "topic:expression"
+        "topic:social-expression",
+        "expr:idiom"
       ],
       "curriculumRole": "reference"
     },
@@ -19737,7 +19743,8 @@
         "topic:social-expression",
         "es:siento",
         "en:i'm",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "expr:apology"
       ],
       "curriculumRole": "supporting"
     },
@@ -22457,7 +22464,8 @@
         "en:spain",
         "es:vale",
         "en:okay",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "expr:response"
       ],
       "curriculumRole": "reference"
     },
@@ -22918,7 +22926,8 @@
         "topic:social-expression",
         "es:bienvenido",
         "en:welcome",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "expr:greeting"
       ],
       "curriculumRole": "supporting"
     },
@@ -25976,7 +25985,8 @@
         "protest",
         "es:abajo",
         "en:down",
-        "topic:expression"
+        "topic:social-expression",
+        "expr:idiom"
       ],
       "curriculumRole": "reference"
     },
@@ -27610,7 +27620,8 @@
       "collections": [
         "es:entre",
         "en:together",
-        "topic:expression"
+        "topic:social-expression",
+        "expr:idiom"
       ],
       "curriculumRole": "reference"
     },
@@ -27728,7 +27739,8 @@
       "collections": [
         "es:igual",
         "en:maybe",
-        "topic:expression"
+        "topic:social-expression",
+        "expr:response"
       ],
       "curriculumRole": "reference"
     },
@@ -27858,7 +27870,8 @@
         "es:malo",
         "es:peor",
         "en:worst",
-        "topic:expression"
+        "topic:social-expression",
+        "expr:idiom"
       ],
       "curriculumRole": "reference"
     },
@@ -28328,7 +28341,8 @@
       "collections": [
         "es:mismo",
         "en:same",
-        "topic:expression"
+        "topic:social-expression",
+        "expr:idiom"
       ],
       "curriculumRole": "reference"
     },
@@ -29216,7 +29230,8 @@
         "es:sí",
         "en:yes",
         "pos:interjection",
-        "topic:expression"
+        "topic:social-expression",
+        "expr:response"
       ],
       "curriculumRole": "reference"
     },
@@ -29429,7 +29444,8 @@
         "grammar:fixed-expression",
         "es:más",
         "en:better",
-        "topic:expression"
+        "topic:social-expression",
+        "expr:idiom"
       ],
       "curriculumRole": "reference"
     },
@@ -29593,7 +29609,8 @@
         "en:already",
         "es:ya",
         "en:enough",
-        "topic:expression"
+        "topic:social-expression",
+        "expr:idiom"
       ],
       "curriculumRole": "reference"
     },
@@ -31903,7 +31920,8 @@
         "reaction",
         "es:genial",
         "en:great",
-        "topic:social-expression"
+        "topic:social-expression",
+        "expr:response"
       ],
       "curriculumRole": "reference"
     },
@@ -32288,7 +32306,8 @@
         "es:qué",
         "en:what",
         "topic:en-multi-sense",
-        "topic:social-expression"
+        "topic:social-expression",
+        "expr:greeting"
       ],
       "curriculumRole": "reference"
     },
@@ -51616,7 +51635,8 @@
         "topic:social-expression",
         "es:por",
         "en:please",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "expr:politeness"
       ],
       "curriculumRole": "supporting"
     },
@@ -51631,7 +51651,8 @@
       "collections": [
         "topic:social-expression",
         "es:perdón",
-        "en:excuse"
+        "en:excuse",
+        "expr:apology"
       ],
       "curriculumRole": "supporting"
     },
@@ -51646,7 +51667,8 @@
       "collections": [
         "topic:social-expression",
         "es:disculpe",
-        "en:excuse"
+        "en:excuse",
+        "expr:apology"
       ],
       "curriculumRole": "supporting"
     },
@@ -51661,7 +51683,8 @@
       "collections": [
         "topic:social-expression",
         "es:perdón",
-        "en:i'm"
+        "en:i'm",
+        "expr:apology"
       ],
       "curriculumRole": "supporting"
     },
@@ -51676,7 +51699,8 @@
       "collections": [
         "topic:social-expression",
         "es:gracias",
-        "en:thank"
+        "en:thank",
+        "expr:politeness"
       ],
       "curriculumRole": "supporting"
     },
@@ -51691,7 +51715,8 @@
       "collections": [
         "topic:social-expression",
         "es:gracias",
-        "en:thanks"
+        "en:thanks",
+        "expr:politeness"
       ],
       "curriculumRole": "supporting"
     },
@@ -51707,7 +51732,8 @@
         "topic:social-expression",
         "es:con",
         "en:you're",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "expr:politeness"
       ],
       "curriculumRole": "supporting"
     },
@@ -51723,7 +51749,8 @@
         "topic:social-expression",
         "es:de",
         "en:you're",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "expr:politeness"
       ],
       "curriculumRole": "supporting"
     },
@@ -51739,7 +51766,8 @@
         "topic:social-expression",
         "es:haber",
         "en:problem",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "expr:politeness"
       ],
       "curriculumRole": "supporting"
     },
@@ -56394,7 +56422,8 @@
         "es:aprovechar",
         "es:que",
         "en:enjoy",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "expr:farewell"
       ],
       "curriculumRole": "reference"
     },
@@ -56411,7 +56440,8 @@
         "en:gratitude",
         "verb + -ing",
         "es:gracias",
-        "en:thank"
+        "en:thank",
+        "expr:politeness"
       ],
       "curriculumRole": "supporting"
     },
@@ -56428,7 +56458,8 @@
         "es:cuidar",
         "es:cuídate",
         "en:take",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "expr:farewell"
       ],
       "curriculumRole": "supporting"
     },
@@ -56445,7 +56476,8 @@
         "grammar:warning",
         "es:cuidar",
         "es:cuidado",
-        "en:careful"
+        "en:careful",
+        "expr:warning-command"
       ],
       "curriculumRole": "supporting"
     },
@@ -56463,7 +56495,8 @@
         "grammar:imperative",
         "es:cállate",
         "en:quiet",
-        "pos:verb"
+        "pos:verb",
+        "expr:warning-command"
       ],
       "curriculumRole": "reference"
     },
@@ -56482,7 +56515,8 @@
         "register:informal",
         "es:cállate",
         "en:shut",
-        "pos:verb"
+        "pos:verb",
+        "expr:warning-command"
       ],
       "curriculumRole": "reference"
     },

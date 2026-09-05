@@ -253,7 +253,15 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
     description:
       "Fixed social phrases that don't break down grammatically — please, thank you, excuse me, nice to meet you — learned whole rather than built word by word.",
     baseCollection: "topic:social-expression",
-    facetButtons: [],
+    facetButtons: [
+      { collection: "expr:politeness", label: "Politeness" },
+      { collection: "expr:greeting", label: "Greetings" },
+      { collection: "expr:apology", label: "Apologies" },
+      { collection: "expr:response", label: "Response words" },
+      { collection: "expr:farewell", label: "Farewells" },
+      { collection: "expr:warning-command", label: "Warnings & commands" },
+      { collection: "expr:idiom", label: "Idioms & fixed phrases" },
+    ],
   },
   {
     slug: "connectors",
