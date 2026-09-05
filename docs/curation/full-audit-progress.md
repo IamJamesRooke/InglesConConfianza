@@ -83,7 +83,15 @@ skimming history, not a machine-readable state store.
   "intentar" row), and the remaining 7 facets incl. going-to and
   passive (47, fixed a mistranslated "tocarle a alguien" that had
   copied an unrelated sibling's gloss). Commits `70385ba6` through
-  `2230a3c3`. Next up: Past-Tense & Past-Participle Formation page —
-  many `sound:*` irregular-verb-family facets, likely large in total
-  rows (regular -d/-t/-ɪd alone is ~60 rows) — then Transformations,
-  the two Mappings pages, Phrasal Verbs.
+  `2230a3c3`.
+- **2026-09-05, Past-Tense & Past-Participle Formation page complete +
+  Transformations page complete** — bulk mechanical pass over both
+  (already-normalized) large pages: all 52 `sound:*` irregular/regular
+  verb-form facets (382 rows — confirmed the many duplicate-headword
+  groups are legitimate spelling variants: burned/burnt, dreamed/
+  dreamt, proved/proven, etc.) and all 44 `morphology:*` derivational
+  facets (251 rows — duplicates here are -ward/-wards variants). No
+  fixes needed on either page. Commits `845f0183`, `27c81a1e`.
+  Next up: the two Mappings pages (`topic:multi-sense` and
+  `topic:en-multi-sense`) and Phrasal Verbs — see
+  `npm run curriculum:audit:status` for the live list.
