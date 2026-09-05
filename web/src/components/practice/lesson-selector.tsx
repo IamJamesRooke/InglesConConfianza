@@ -5,9 +5,8 @@ import {
   ArrowRight,
   Check,
   CheckCheck,
-  Clock3,
   Home,
-  RotateCcw,
+  SkipForward,
   X,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -24,8 +23,8 @@ import {
   readProgress,
   resumeStepIndex,
   saveLessonProgress,
+  skipLesson,
 } from "@/lib/learner/progress";
-import { lessonMinutes, lessonOutcome } from "@/lib/learner/presentation";
 import type { LessonBlock } from "@/lib/lesson-builder/types";
 
 export type PracticeLesson = {
@@ -38,6 +37,11 @@ export type PracticeLesson = {
   explanationCount: number;
   practiceCount: number;
   previewText: string;
+  concepts: Array<{
+    id: string;
+    spanish: string;
+    english: string;
+  }>;
   blocks: LessonBlock[];
 };
 
@@ -91,33 +95,19 @@ function LessonSession({
       : resumeStepIndex(lesson.blocks, readProgress()[lesson.id]),
   );
   const [sentenceComplete, setSentenceComplete] = useState(false);
+  const [completionCursor, setCompletionCursor] = useState(() =>
+    lessons.findIndex((item) => item.id === lesson.id),
+  );
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const totalSteps = lesson.blocks.length;
   const complete = stepIndex >= totalSteps;
   const block = lesson.blocks[stepIndex];
   const nextLesson = lessons
-    .slice(lessons.findIndex((item) => item.id === lesson.id) + 1)
-    .find((item) => item.blocks.length > 0);
-  const outcome = lessonOutcome(lesson.blocks);
-  const moduleLessons = lessons.filter((item) =>
-    lesson.moduleId
-      ? item.moduleId === lesson.moduleId
-      : item.moduleName === lesson.moduleName,
-  );
-  const moduleDone =
-    !nextLesson ||
-    (lesson.moduleId
-      ? nextLesson.moduleId !== lesson.moduleId
-      : nextLesson.moduleName !== lesson.moduleName);
-  const moduleComplete =
-    complete &&
-    !onCloseLesson &&
-    moduleLessons.every(
+    .slice(completionCursor + 1)
+    .find(
       (item) =>
-        item.blocks.length === 0 ||
-        item.id === lesson.id ||
-        Boolean(readProgress()[item.id]?.completedAt),
+        item.blocks.length > 0 && !readProgress()[item.id]?.completedAt,
     );
   const canAdvance =
     !complete && (block?.type === "explanation" || sentenceComplete);
@@ -305,72 +295,58 @@ function LessonSession({
               <div className="completion-seal">
                 <Check size={34} strokeWidth={2.5} aria-hidden="true" />
               </div>
-              <p className="learner-eyebrow">
-                {moduleComplete ? "Módulo completo" : "Lección completa"}
-              </p>
-              <h2>
-                {outcome?.english
-                  ? "Esto ya lo puedes decir."
-                  : "Un paso más. Bien hecho."}
-              </h2>
-              {outcome?.english && (
-                <div className="earned-phrase">
-                  <p lang="en">{outcome.english}</p>
-                  <span>{outcome.spanish}</span>
+              <p className="completion-status">Lección completada</p>
+              {nextLesson && !onCloseLesson ? (
+                <div className="completion-next">
+                  <h2>Siguiente lección</h2>
+                  <CompletionConcepts concepts={nextLesson.concepts} />
                 </div>
-              )}
-              <p className="completion-note">
-                {moduleComplete
-                  ? "Terminaste este módulo. Mira todo lo que has construido."
-                  : "Lo construiste paso a paso. Y ya es tuyo."}
-              </p>
-              <div className="completion-actions">
+              ) : null}
+              <div className="completion-actions" aria-label="Opciones">
                 {nextLesson && !onCloseLesson && (
                   <button
                     type="button"
-                    className="learner-button primary"
+                    className="completion-action primary"
                     onClick={() =>
                       router.push(
                         `/practice?lesson=${encodeURIComponent(nextLesson.id)}`,
                       )
                     }
+                    aria-label="Continuar a la siguiente lección"
+                    title="Siguiente lección"
                   >
-                    Una lección más
-                    <ArrowRight size={18} aria-hidden="true" />
+                    <ArrowRight size={22} aria-hidden="true" />
+                    <span>Continuar</span>
+                  </button>
+                )}
+                {nextLesson && !onCloseLesson && (
+                  <button
+                    type="button"
+                    className="completion-action"
+                    onClick={() => {
+                      skipLesson(nextLesson.id);
+                      setCompletionCursor(
+                        lessons.findIndex((item) => item.id === nextLesson.id),
+                      );
+                    }}
+                    aria-label="Omitir la siguiente lección"
+                    title="Omitir lección"
+                  >
+                    <SkipForward size={21} aria-hidden="true" />
+                    <span>Omitir</span>
                   </button>
                 )}
                 <button
                   type="button"
-                  className={`learner-button ${nextLesson && !onCloseLesson ? "text-button" : "primary"}`}
+                  className="completion-action quiet"
                   onClick={close}
+                  aria-label="Volver a mis lecciones"
+                  title="Inicio"
                 >
-                  <Home size={17} aria-hidden="true" />
-                  Mis lecciones
+                  <Home size={20} aria-hidden="true" />
+                  <span>Inicio</span>
                 </button>
               </div>
-              {nextLesson && !onCloseLesson && (
-                <div className="completion-next">
-                  <p>{moduleDone ? nextLesson.moduleName : "A continuación"}</p>
-                  <strong>
-                    {nextLesson.name || `Lección ${nextLesson.lessonNumber}`}
-                  </strong>
-                  <span>
-                    <Clock3 size={13} aria-hidden="true" /> Aprox.{" "}
-                    {lessonMinutes(nextLesson.blocks.length)} min
-                  </span>
-                </div>
-              )}
-              <button
-                className="learner-button text-button replay-lesson"
-                type="button"
-                onClick={() => {
-                  setSentenceComplete(false);
-                  setStepIndex(0);
-                }}
-              >
-                <RotateCcw size={15} aria-hidden="true" />
-                Practicar de nuevo
-              </button>
             </div>
           ) : block?.type === "explanation" ? (
             <div className="lesson-explanation learner-enter">
@@ -409,23 +385,16 @@ function LessonSession({
               <ArrowLeft size={20} aria-hidden="true" />
             </button>
             <div className="lesson-feedback" role="status">
-              {sentenceComplete ? (
+              {sentenceComplete && (
                 <>
                   <Check size={20} aria-hidden="true" />
                   <span>¡Muy bien!</span>
                 </>
-              ) : (
-                <span className="lesson-position">
-                  Lección {lesson.moduleLessonNumber ?? lesson.lessonNumber}
-                  {lesson.moduleLessonNumber && moduleLessons.length > 0
-                    ? ` de ${moduleLessons.length}`
-                    : ""}
-                </span>
               )}
             </div>
             <button
               type="button"
-              className={`learner-button ${sentenceComplete ? "success" : "primary"}`}
+              className={`learner-button ${sentenceComplete ? "success" : "primary"} ${block?.type === "sentence" && !sentenceComplete ? "awaiting-answer" : ""}`}
               disabled={!canAdvance}
               onClick={advance}
             >
@@ -441,5 +410,25 @@ function LessonSession({
         </footer>
       )}
     </section>
+  );
+}
+
+function CompletionConcepts({
+  concepts,
+}: {
+  concepts: PracticeLesson["concepts"];
+}) {
+  if (concepts.length === 0)
+    return <span className="completion-review">Repaso</span>;
+
+  return (
+    <div className="completion-concepts" aria-label="Lo que aprenderás">
+      {concepts.map((concept) => (
+        <div className="completion-concept" key={concept.id}>
+          <strong lang="en">{concept.english}</strong>
+          <span lang="es">{concept.spanish}</span>
+        </div>
+      ))}
+    </div>
   );
 }

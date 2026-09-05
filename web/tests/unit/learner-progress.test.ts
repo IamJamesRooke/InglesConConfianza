@@ -5,8 +5,11 @@ import {
   nextLessonToStudy,
   parseProgress,
   readProgress,
+  resetLessonProgress,
   resumeStepIndex,
   saveLessonProgress,
+  skipLesson,
+  skipLessons,
   subscribeToProgress,
 } from "../../src/lib/learner/progress";
 import { lessonOutcome } from "../../src/lib/learner/presentation";
@@ -17,13 +20,14 @@ test("progress accepts previous completion records and rejects malformed browser
   assert.deepEqual(
     parseProgress(
       JSON.stringify({
-        a: { completedAt: date },
+        a: { completedAt: date, skippedAt: date },
         b: null,
         c: 3,
         d: { completedAt: false, lastOpenedAt: "bad", stepId: 5 },
+        e: { skippedAt: date },
       }),
     ),
-    { a: { completedAt: date }, d: {} },
+    { a: { completedAt: date }, d: {}, e: { completedAt: date } },
   );
   for (const raw of [null, "broken", "[]", "null", "5"])
     assert.deepEqual(parseProgress(raw), {});
@@ -61,6 +65,11 @@ test("continue prioritizes the latest unfinished lesson and excludes unavailable
     nextLessonToStudy(lessons, { b: { completedAt: "2026-09-04T12:00:00Z" } })
       ?.id,
     "a",
+  );
+  assert.equal(
+    nextLessonToStudy(lessons, { a: { completedAt: "2026-09-04T12:00:00Z" } })
+      ?.id,
+    "b",
   );
   assert.equal(
     nextLessonToStudy([{ id: "empty", stepCount: 0 }], {}),
@@ -152,10 +161,17 @@ test("progress persists, notifies subscribers, preserves completion, and tolerat
     saveLessonProgress("a", { lastOpenedAt: "2026-09-04T13:00:00Z" });
     assert.ok(readProgress().a.completedAt);
     assert.equal(readProgress().a.stepId, undefined);
+    skipLesson("b");
+    assert.ok(readProgress().b.completedAt);
+    skipLessons(["b", "c"]);
+    assert.ok(readProgress().b.completedAt);
+    assert.ok(readProgress().c.completedAt);
+    resetLessonProgress(["b", "c"]);
+    assert.equal(readProgress().b, undefined);
     blocked = true;
     assert.doesNotThrow(() => saveLessonProgress("b", { stepId: "first" }));
     assert.equal(readProgress().b.stepId, "first");
-    assert.equal(calls, 4);
+    assert.equal(calls, 7);
   } finally {
     unsubscribe();
     if (originalWindow)

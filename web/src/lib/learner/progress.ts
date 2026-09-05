@@ -29,6 +29,15 @@ export function parseProgress(raw: string | null): LessonProgress {
             valid[key] = entry[key];
           }
         }
+        // Briefly supported while skip had its own state. Treat old skipped
+        // lessons as complete so existing browser progress keeps moving forward.
+        if (
+          !valid.completedAt &&
+          typeof entry.skippedAt === "string" &&
+          Number.isFinite(Date.parse(entry.skippedAt))
+        ) {
+          valid.completedAt = entry.skippedAt;
+        }
         if (typeof entry.stepId === "string") valid.stepId = entry.stepId;
         return [[id, valid]];
       }),
@@ -85,6 +94,50 @@ export function saveLessonProgress(
     memoryOnly = false;
   } catch {
     // Practice remains usable when the browser denies persistent storage.
+    memoryOnly = true;
+  }
+  window.dispatchEvent(new Event(progressEvent));
+}
+
+export function skipLesson(lessonId: string) {
+  saveLessonProgress(lessonId, {
+    completedAt: new Date().toISOString(),
+    stepId: undefined,
+  });
+}
+
+export function skipLessons(lessonIds: string[]) {
+  const completedAt = new Date().toISOString();
+  const progress = readProgress();
+  cachedProgress = { ...progress };
+  for (const lessonId of lessonIds) {
+    cachedProgress[lessonId] = {
+      ...progress[lessonId],
+      completedAt: progress[lessonId]?.completedAt ?? completedAt,
+      stepId: undefined,
+    };
+  }
+  cachedRaw = JSON.stringify(cachedProgress);
+  try {
+    window.localStorage.setItem(lessonProgressStorageKey, cachedRaw);
+    memoryOnly = false;
+  } catch {
+    memoryOnly = true;
+  }
+  window.dispatchEvent(new Event(progressEvent));
+}
+
+export function resetLessonProgress(lessonIds: string[]) {
+  const ids = new Set(lessonIds);
+  const progress = readProgress();
+  cachedProgress = Object.fromEntries(
+    Object.entries(progress).filter(([lessonId]) => !ids.has(lessonId)),
+  );
+  cachedRaw = JSON.stringify(cachedProgress);
+  try {
+    window.localStorage.setItem(lessonProgressStorageKey, cachedRaw);
+    memoryOnly = false;
+  } catch {
     memoryOnly = true;
   }
   window.dispatchEvent(new Event(progressEvent));

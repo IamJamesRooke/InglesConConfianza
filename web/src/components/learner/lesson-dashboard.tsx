@@ -10,14 +10,17 @@ import {
   MessageCircle,
   Play,
   RotateCcw,
+  SkipForward,
 } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState, useSyncExternalStore } from "react";
 import {
   nextLessonToStudy,
   readProgress,
+  resetLessonProgress,
   serverProgress,
+  skipLesson,
+  skipLessons,
   subscribeToProgress,
   type LessonProgressEntry,
 } from "@/lib/learner/progress";
@@ -30,12 +33,19 @@ type LearnerLesson = {
   name: string | null;
   previewText: string;
   stepCount: number;
+  concepts: LearnerConcept[];
+};
+type LearnerConcept = {
+  id: string;
+  spanish: string;
+  english: string;
 };
 type LearnerModule = {
   id: string;
   name: string | null;
   kind: "course" | "onboarding";
   lessonCount: number;
+  concepts: LearnerConcept[];
   lessons: LearnerLesson[];
 };
 
@@ -58,6 +68,11 @@ export function LessonDashboard({
     serverProgress,
   );
   const [selectedId, setSelectedId] = useState(initialModuleId);
+  const [resetTarget, setResetTarget] = useState<{
+    label: string;
+    lessonIds: string[];
+    scope: "lesson" | "module";
+  } | null>(null);
   const moduleButtons = useRef<Array<HTMLButtonElement | null>>([]);
   const lessons = modules.flatMap((module) => module.lessons);
   const available = lessons.filter((lesson) => lesson.stepCount > 0);
@@ -79,6 +94,27 @@ export function LessonDashboard({
     (lesson) => progress[lesson.id]?.completedAt,
   ).length;
   const selectedIndex = modules.indexOf(selected);
+  const hasActivity = available.some(
+    (lesson) =>
+      progress[lesson.id]?.lastOpenedAt ||
+      progress[lesson.id]?.completedAt,
+  );
+
+  function resetLesson(lesson: LearnerLesson) {
+    setResetTarget({
+      label: lesson.name || `Lección ${lesson.lessonNumber}`,
+      lessonIds: [lesson.id],
+      scope: "lesson",
+    });
+  }
+
+  function resetModule(module: LearnerModule) {
+    setResetTarget({
+      label: module.name || "este módulo",
+      lessonIds: module.lessons.map((lesson) => lesson.id),
+      scope: "module",
+    });
+  }
 
   function selectModule(index: number) {
     setSelectedId(modules[index].id);
@@ -90,70 +126,74 @@ export function LessonDashboard({
   return (
     <main id="main-content" tabIndex={-1} className="learner-theme course-home">
       <div className="course-container">
-        <div className="course-heading learner-enter">
-          <div>
-            <p className="learner-eyebrow">INGLÉS PARA TU VIDA</p>
-            <h1>
-              Mis lecciones<span className="coral-dot">.</span>
-            </h1>
-          </div>
-          <div className="course-total">
-            <CheckCheck size={20} aria-hidden="true" />
-            <span>
-              <strong>{completed}</strong> de {available.length} lecciones
-              completas
-            </span>
-            <progress
-              aria-label="Progreso del curso"
-              value={completed}
-              max={available.length || 1}
-            />
-          </div>
-        </div>
-
         {nextLesson ? (
           <section
             className="course-feature learner-enter"
             aria-labelledby="next-lesson-title"
           >
-            <Image
-              src="/images/conversation-bogota.webp"
-              alt=""
-              fill
-              priority
-              sizes="(max-width: 1200px) 100vw, 1200px"
-              className="course-art"
-            />
             <div className="course-feature-content">
-              <p className="learner-eyebrow">
-                {courseComplete
-                  ? "Todo lo que ya puedes decir"
-                  : progress[nextLesson.id]?.lastOpenedAt
-                    ? "Retoma tu conversación"
-                    : completed
-                      ? "Tu siguiente paso"
-                      : "Tu primera conversación"}
+              <p className="learner-eyebrow">Inglés para la vida real</p>
+              <h1>
+                {hasActivity ? (
+                  <>
+                    Sigamos conversando<span aria-hidden="true">.</span>
+                  </>
+                ) : (
+                  <>
+                    Habla inglés.
+                    <br />
+                    Con confianza<span aria-hidden="true">.</span>
+                  </>
+                )}
+              </h1>
+              <p className="course-promise">
+                Aprende paso a paso y construye frases que puedes usar desde hoy.
               </p>
-              <h2 id="next-lesson-title">
-                {nextLesson.name || `Lección ${nextLesson.lessonNumber}`}
-              </h2>
-              <p className="feature-meta">
-                <Clock3 size={15} aria-hidden="true" /> Aprox.{" "}
-                {lessonMinutes(nextLesson.stepCount)} min{" "}
-                <span aria-hidden="true">·</span>{" "}
-                {moduleLabel(modules, modules.indexOf(nextModule!))}
-              </p>
-              <Link
-                href={`/practice?lesson=${encodeURIComponent(nextLesson.id)}`}
-                className="learner-button primary"
-              >
-                {courseComplete
-                  ? "Volver a practicar"
-                  : progress[nextLesson.id]?.lastOpenedAt
-                    ? "Continuar lección"
-                    : "Empezar lección"}
-                <ArrowRight size={18} aria-hidden="true" />
-              </Link>
+              <div className="featured-lesson">
+                <p className="featured-lesson-label">
+                  {courseComplete
+                    ? "Vuelve a practicar"
+                    : progress[nextLesson.id]?.lastOpenedAt
+                      ? "Continúa donde estabas"
+                      : completed
+                        ? "Tu siguiente lección"
+                        : "Tu primera lección"}
+                </p>
+                <h2 id="next-lesson-title">
+                  {nextLesson.name || `Lección ${nextLesson.lessonNumber}`}
+                </h2>
+                <p className="feature-meta">
+                  <Clock3 size={15} aria-hidden="true" />
+                  {lessonMinutes(nextLesson.stepCount)} min
+                  <span aria-hidden="true">·</span>
+                  {moduleLabel(modules, modules.indexOf(nextModule!))}
+                </p>
+                <ConceptPills concepts={nextLesson.concepts} compact />
+                <Link
+                  href={`/practice?lesson=${encodeURIComponent(nextLesson.id)}`}
+                  className="learner-button primary"
+                >
+                  {courseComplete
+                    ? "Volver a practicar"
+                    : progress[nextLesson.id]?.lastOpenedAt
+                      ? "Continuar lección"
+                      : completed
+                        ? "Empezar siguiente lección"
+                        : "Empezar mi primera lección"}
+                  <ArrowRight size={18} aria-hidden="true" />
+                </Link>
+              </div>
+            </div>
+            <div className="course-feature-demo" aria-hidden="true">
+              <p>Una idea útil</p>
+              <div className="demo-phrase">
+                <strong>I can speak English.</strong>
+                <span>Puedo hablar inglés.</span>
+              </div>
+              <div className="demo-confidence">
+                <Check size={18} strokeWidth={2.5} />
+                <span>Ya lo puedes decir</span>
+              </div>
             </div>
           </section>
         ) : (
@@ -165,12 +205,28 @@ export function LessonDashboard({
         )}
 
         {selected && (
-          <div className="course-curriculum">
-            <aside className="module-navigation">
-              <div className="section-label">
-                <h2>Tu recorrido</h2>
-                <span>{modules.length} módulos</span>
+          <section
+            className="course-journey"
+            aria-labelledby="course-journey-title"
+          >
+            <div className="course-journey-heading">
+              <div>
+                <p className="learner-eyebrow">Tu curso</p>
+                <h2 id="course-journey-title">Tu recorrido</h2>
               </div>
+              {hasActivity && (
+                <p className="course-progress-summary">
+                  <strong>{completed}</strong> de {available.length} lecciones
+                  completas
+                </p>
+              )}
+            </div>
+            <div className="course-curriculum">
+              <aside className="module-navigation">
+                <div className="section-label">
+                  <h3>Módulos</h3>
+                  <span>{modules.length}</span>
+                </div>
               <div
                 role="tablist"
                 aria-label="Módulos del curso"
@@ -255,8 +311,8 @@ export function LessonDashboard({
                     </button>
                   );
                 })}
-              </div>
-            </aside>
+                </div>
+              </aside>
 
             <section
               id="module-lessons"
@@ -275,10 +331,40 @@ export function LessonDashboard({
                     {selected.name || moduleLabel(modules, selectedIndex)}
                   </h2>
                 </div>
-                <span className="module-fraction">
-                  <strong>{moduleCompleted}</strong>/{moduleAvailable.length}
-                </span>
+                <div className="module-heading-actions">
+                  <span className="module-fraction">
+                    <strong>{moduleCompleted}</strong>/{moduleAvailable.length}
+                  </span>
+                  {moduleAvailable.length > 0 &&
+                    moduleCompleted < moduleAvailable.length && (
+                      <button
+                        type="button"
+                        className="progress-option"
+                        onClick={() =>
+                          skipLessons(moduleAvailable.map((lesson) => lesson.id))
+                        }
+                      >
+                        <SkipForward size={14} aria-hidden="true" />
+                        Omitir módulo
+                      </button>
+                    )}
+                  {moduleAvailable.some(
+                    (lesson) =>
+                      progress[lesson.id]?.completedAt ||
+                      progress[lesson.id]?.lastOpenedAt,
+                  ) && (
+                    <button
+                      type="button"
+                      className="progress-option"
+                      onClick={() => resetModule(selected)}
+                    >
+                      <RotateCcw size={14} aria-hidden="true" />
+                      Reiniciar módulo
+                    </button>
+                  )}
+                </div>
               </div>
+              <ConceptPills concepts={selected.concepts} />
               <progress
                 className="module-progress"
                 aria-label="Progreso del módulo"
@@ -292,6 +378,8 @@ export function LessonDashboard({
                     lesson={lesson}
                     progress={progress[lesson.id]}
                     isNext={lesson.id === nextLesson?.id && !courseComplete}
+                    onSkip={() => skipLesson(lesson.id)}
+                    onReset={() => resetLesson(lesson)}
                   />
                 ))}
               </ol>
@@ -320,15 +408,87 @@ export function LessonDashboard({
                   <ArrowDown size={16} aria-hidden="true" />
                 </button>
               )}
-            </section>
-          </div>
+              </section>
+            </div>
+          </section>
         )}
         <footer className="course-footer">
-          <span>Inglés Con Confianza</span>
+          <span>Inglés con Confianza.</span>
           <span>Una conversación a la vez.</span>
         </footer>
       </div>
+      {resetTarget && (
+        <div
+          className="progress-dialog-backdrop"
+          role="presentation"
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) setResetTarget(null);
+          }}
+          onKeyDown={(event) => {
+            if (event.key === "Escape") setResetTarget(null);
+          }}
+        >
+          <section
+            className="progress-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="progress-dialog-title"
+          >
+            <p className="learner-eyebrow">Volver a empezar</p>
+            <h2 id="progress-dialog-title">¿Reiniciar {resetTarget.label}?</h2>
+            <p>
+              {resetTarget.scope === "module"
+                ? "Se borrará el progreso de todas las lecciones de este módulo."
+                : "Volverás al primer paso de esta lección."}
+            </p>
+            <div className="progress-dialog-actions">
+              <button
+                type="button"
+                className="learner-button text-button"
+                onClick={() => setResetTarget(null)}
+              >
+                Cancelar
+              </button>
+              <button
+                type="button"
+                className="learner-button primary"
+                autoFocus
+                onClick={() => {
+                  resetLessonProgress(resetTarget.lessonIds);
+                  setResetTarget(null);
+                }}
+              >
+                Sí, reiniciar
+              </button>
+            </div>
+          </section>
+        </div>
+      )}
     </main>
+  );
+}
+
+function ConceptPills({
+  concepts,
+  compact = false,
+}: {
+  concepts: LearnerConcept[];
+  compact?: boolean;
+}) {
+  if (concepts.length === 0) return null;
+
+  return (
+    <div
+      className={`learner-concepts ${compact ? "compact" : ""}`}
+      aria-label="Lo que vas a aprender"
+    >
+      {concepts.map((concept) => (
+        <span className="learner-concept" key={concept.id}>
+          <strong lang="en">{concept.english}</strong>
+          <span lang="es">{concept.spanish}</span>
+        </span>
+      ))}
+    </div>
   );
 }
 
@@ -336,12 +496,17 @@ function LessonRow({
   lesson,
   progress,
   isNext,
+  onSkip,
+  onReset,
 }: {
   lesson: LearnerLesson;
   progress?: LessonProgressEntry;
   isNext: boolean;
+  onSkip: () => void;
+  onReset: () => void;
 }) {
   const complete = Boolean(progress?.completedAt);
+  const hasProgress = Boolean(progress?.completedAt || progress?.lastOpenedAt);
   const available = lesson.stepCount > 0;
   const state = complete
     ? "Completada"
@@ -366,6 +531,7 @@ function LessonRow({
             ? lesson.previewText
             : "Una nueva conversación, muy pronto."}
         </span>
+        {available && <ConceptPills concepts={lesson.concepts} compact />}
         <span className="lesson-meta">
           {available && (
             <>
@@ -394,13 +560,31 @@ function LessonRow({
     <li
       className={`lesson-row ${complete ? "complete" : ""} ${isNext ? "next" : ""} ${!available ? "unavailable" : ""}`}
     >
-      {available ? (
-        <Link href={`/practice?lesson=${encodeURIComponent(lesson.id)}`}>
-          {content}
-        </Link>
-      ) : (
-        <div>{content}</div>
-      )}
+      <div className="lesson-row-layout">
+        {available ? (
+          <Link href={`/practice?lesson=${encodeURIComponent(lesson.id)}`}>
+            {content}
+          </Link>
+        ) : (
+          <div className="lesson-row-content">{content}</div>
+        )}
+        {available && (
+          <div className="lesson-progress-options">
+            {!complete && (
+              <button type="button" onClick={onSkip} className="progress-option">
+                <SkipForward size={14} aria-hidden="true" />
+                Omitir
+              </button>
+            )}
+            {hasProgress && (
+              <button type="button" onClick={onReset} className="progress-option">
+                <RotateCcw size={14} aria-hidden="true" />
+                Reiniciar
+              </button>
+            )}
+          </div>
+        )}
+      </div>
     </li>
   );
 }

@@ -3,7 +3,10 @@
 import { ChevronDown, ChevronRight } from "lucide-react";
 import { useState } from "react";
 
-import { LessonConceptsField } from "@/components/lesson-builder/lesson-concepts-field";
+import {
+  LessonConceptsField,
+  type ConceptDisplayLookup,
+} from "@/components/lesson-builder/lesson-concepts-field";
 import type { LessonConcept, LessonModule } from "@/lib/lesson-builder/types";
 
 const inputClass =
@@ -16,10 +19,12 @@ const inputClass =
 export function ModuleMeta({
   module,
   coveredConceptKeys,
+  conceptDisplays,
   onChange,
 }: {
   module: LessonModule;
   coveredConceptKeys: Set<string>;
+  conceptDisplays: ConceptDisplayLookup;
   onChange: (patch: Partial<LessonModule>) => void;
 }) {
   const [open, setOpen] = useState(module.keyConcepts.length === 0);
@@ -75,6 +80,7 @@ export function ModuleMeta({
             variant="inline"
             label="Key concepts"
             concepts={module.keyConcepts}
+            conceptDisplays={conceptDisplays}
             coveredConceptKeys={coveredConceptKeys}
             onAdd={(concept) => setKeyConcepts([...module.keyConcepts, concept])}
             onRemove={(id) =>

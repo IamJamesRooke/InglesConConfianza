@@ -14,6 +14,7 @@ export type CourseLessonSummary = {
   explanationCount: number;
   practiceCount: number;
   previewText: string;
+  concepts: LessonConcept[];
   blocks: LessonBlock[];
 };
 
@@ -85,6 +86,7 @@ export async function readCourseSummary(): Promise<CourseSummary> {
           practiceCount: lesson.blocks.filter((block) => block.type === "sentence")
             .length,
           previewText: getLessonPreviewText(lesson),
+          concepts: lesson.concepts,
           blocks: lesson.blocks,
         } satisfies CourseLessonSummary;
       })

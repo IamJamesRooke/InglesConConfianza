@@ -21,6 +21,7 @@ const course: CourseSummary = {
       explanationCount: 0,
       practiceCount: 0,
       previewText: "",
+      concepts: [],
       blocks: [],
     },
     {
@@ -33,6 +34,7 @@ const course: CourseSummary = {
       explanationCount: 1,
       practiceCount: 1,
       previewText: "",
+      concepts: [],
       blocks: [
         { id: "blank", type: "explanation", contentMarkdown: "  " },
         {

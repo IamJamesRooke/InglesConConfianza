@@ -173,11 +173,6 @@ export function SentencePracticeCard({
                   className={`answer-piece ${correctAnswers[languageBlockIndex] && helpedBlockIndex !== languageBlockIndex ? "correct" : ""}`}
                 >
                   <span className="answer-source">
-                    {!isSingleLanguageBlock && (
-                      <span className="answer-piece-number" aria-hidden="true">
-                        {String(languageBlockIndex + 1).padStart(2, "0")}
-                      </span>
-                    )}
                     {languageBlock.spanish}
                   </span>
                   <div className="answer-field">
@@ -220,45 +215,28 @@ export function SentencePracticeCard({
                       }
                       className={`answer-input ${helpedBlockIndex === languageBlockIndex ? "showing-hint" : ""}`}
                     />
-                    <button
-                      type="button"
-                      onClick={() => showHelp(languageBlockIndex)}
-                      disabled={
-                        correctAnswers[languageBlockIndex] &&
-                        helpedBlockIndex !== languageBlockIndex
-                      }
-                      aria-label={
-                        correctAnswers[languageBlockIndex] &&
-                        helpedBlockIndex !== languageBlockIndex
-                          ? `Respuesta correcta para ${languageBlock.spanish || `bloque ${languageBlockIndex + 1}`}`
-                          : `Mostrar pista para ${languageBlock.spanish || `bloque ${languageBlockIndex + 1}`}`
-                      }
-                      title={
-                        correctAnswers[languageBlockIndex] &&
-                        helpedBlockIndex !== languageBlockIndex
-                          ? "Respuesta correcta"
-                          : "Mostrar pista (Alt+H)"
-                      }
-                      className="answer-hint"
-                    >
-                      {correctAnswers[languageBlockIndex] &&
-                      helpedBlockIndex !== languageBlockIndex ? (
-                        <>
-                          <Check size={15} aria-hidden="true" />
-                          <span>Correcto</span>
-                        </>
-                      ) : (
-                        <>
-                          <Lightbulb size={15} aria-hidden="true" />
-                          <span>Pista</span>
-                        </>
-                      )}
-                    </button>
+                    {correctAnswers[languageBlockIndex] &&
+                    helpedBlockIndex !== languageBlockIndex ? (
+                      <span className="answer-correct-mark" aria-hidden="true">
+                        <Check size={18} strokeWidth={2.5} />
+                      </span>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={() => showHelp(languageBlockIndex)}
+                        aria-label={`Mostrar pista para ${languageBlock.spanish || `bloque ${languageBlockIndex + 1}`}`}
+                        title="Mostrar pista (Alt+H)"
+                        className="answer-hint"
+                      >
+                        <Lightbulb size={17} aria-hidden="true" />
+                        <span>Ver una pista</span>
+                      </button>
+                    )}
                     <span className="sr-only" role="status">
                       {helpedBlockIndex === languageBlockIndex
                         ? `Pista: ${languageBlock.acceptedAnswers[0]}`
                         : correctAnswers[languageBlockIndex]
-                          ? `Correcto: ${answers[languageBlockIndex]}`
+                          ? `Respuesta aceptada: ${answers[languageBlockIndex]}`
                           : ""}
                     </span>
                   </div>

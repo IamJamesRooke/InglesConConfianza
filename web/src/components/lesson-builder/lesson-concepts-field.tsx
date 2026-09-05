@@ -1,10 +1,11 @@
 "use client";
 
-import { X } from "lucide-react";
+import { Plus, Snowflake, X } from "lucide-react";
 import { useEffect, useId, useRef, useState, type Ref } from "react";
 
 import { ConceptQuickEdit } from "@/components/lesson-builder/concept-quick-edit";
 import { conceptKey } from "@/lib/lesson-builder/lesson-file";
+import type { LessonConceptSuggestion } from "@/lib/lesson-builder/concept-suggestions";
 import type { LessonConcept } from "@/lib/lesson-builder/types";
 import { createId } from "@/lib/lesson-builder/utils";
 
@@ -14,6 +15,11 @@ type ConceptResult = {
   english: string;
   curriculumRole: string;
 };
+
+export type ConceptDisplayLookup = Record<
+  string,
+  { spanish: string; english: string; role?: string }
+>;
 
 // The quick "concepts covered" field under a lesson title. Type to search the
 // curriculum; pick a match (keeps its id for coverage tracking) or press Enter
@@ -28,6 +34,9 @@ export function LessonConceptsField({
   coveredConceptKeys,
   variant = "block",
   inputRef,
+  conceptDisplays = {},
+  suggestions = [],
+  onDisplayChange,
 }: {
   concepts: LessonConcept[];
   onAdd: (concept: LessonConcept) => void;
@@ -39,11 +48,18 @@ export function LessonConceptsField({
   coveredConceptKeys?: Set<string>;
   variant?: "block" | "inline";
   inputRef?: Ref<HTMLInputElement>;
+  conceptDisplays?: ConceptDisplayLookup;
+  suggestions?: LessonConceptSuggestion[];
+  onDisplayChange?: (
+    conceptId: string,
+    display: ConceptDisplayLookup[string],
+  ) => void;
 }) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<ConceptResult[]>([]);
   const [highlight, setHighlight] = useState(0);
   const [open, setOpen] = useState(false);
+  const [localDisplays, setLocalDisplays] = useState<ConceptDisplayLookup>({});
   const [searchState, setSearchState] = useState<"idle" | "loading" | "error">(
     "idle",
   );
@@ -100,6 +116,16 @@ export function LessonConceptsField({
   );
 
   function addFromResult(result: ConceptResult) {
+    const display = {
+      spanish: result.spanish,
+      english: result.english,
+      role: result.curriculumRole,
+    };
+    setLocalDisplays((current) => ({
+      ...current,
+      [result.id]: display,
+    }));
+    onDisplayChange?.(result.id, display);
     onAdd({
       id: createId("lesson_concept"),
       conceptId: result.id,
@@ -119,6 +145,14 @@ export function LessonConceptsField({
     setOpen(false);
   }
 
+  function addSuggestion(suggestion: LessonConceptSuggestion) {
+    onAdd({
+      id: createId("lesson_concept"),
+      conceptId: suggestion.conceptId,
+      label: suggestion.spanish,
+    });
+  }
+
   return (
     <div
       className={
@@ -127,16 +161,50 @@ export function LessonConceptsField({
           : "border-b border-border bg-[var(--surface-sunken)] px-6 py-3"
       }
     >
+      {suggestions.length > 0 && (
+        <div className="mb-3">
+          <div className="mb-1.5 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+            <Snowflake className="size-3.5" aria-hidden="true" />
+            Suggested review
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {suggestions.map((suggestion) => (
+              <button
+                key={suggestion.conceptId}
+                type="button"
+                className="concept-suggestion"
+                data-priority={suggestion.priorityBand}
+                onClick={() => addSuggestion(suggestion)}
+                title={`Last covered ${suggestion.lessonGap} ${suggestion.lessonGap === 1 ? "lesson" : "lessons"} ago`}
+              >
+                <span className="grid min-w-0 text-left leading-tight">
+                  <strong>{suggestion.english}</strong>
+                  <span>{suggestion.spanish}</span>
+                </span>
+                <span className="concept-suggestion-meta">
+                  <span>{suggestion.role ?? "unranked"}</span>
+                  <span aria-hidden="true">·</span>
+                  <span>{suggestion.lessonGap} back</span>
+                </span>
+                <Plus className="size-3.5" aria-hidden="true" />
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
       <div className="flex flex-wrap items-center gap-1.5">
         <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-stone-500">
           {label}
         </span>
         {concepts.map((concept) => {
           const met = coveredConceptKeys?.has(conceptKey(concept)) ?? false;
+          const display = concept.conceptId
+            ? localDisplays[concept.conceptId] ?? conceptDisplays[concept.conceptId]
+            : undefined;
           return (
           <span
             key={concept.id}
-            className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-xs font-medium ${
+            className={`inline-flex items-center gap-2 rounded-xl border px-3 py-1.5 text-xs ${
               met
                 ? "border-green-300 bg-green-50 text-green-800"
                 : concept.conceptId
@@ -155,13 +223,37 @@ export function LessonConceptsField({
               <ConceptQuickEdit
                 conceptId={concept.conceptId}
                 className="hover:underline"
-                onSaved={(draft) => onRelabel(concept.id, draft.spanish)}
+                onSaved={(draft) => {
+                  const nextDisplay = {
+                    spanish: draft.spanish,
+                    english: draft.english,
+                    role: draft.role,
+                  };
+                  setLocalDisplays((current) => ({
+                    ...current,
+                    [concept.conceptId!]: nextDisplay,
+                  }));
+                  onDisplayChange?.(concept.conceptId!, nextDisplay);
+                  onRelabel(concept.id, draft.spanish);
+                }}
                 onDeleted={() => onRemove(concept.id)}
               >
-                {concept.label}
+                <span className="grid text-left leading-tight">
+                  <strong className="text-[13px] font-semibold">
+                    {display?.english ?? concept.label}
+                  </strong>
+                  <span className="mt-0.5 text-[11px] font-medium opacity-65">
+                    {display?.spanish ?? concept.label}
+                  </span>
+                </span>
               </ConceptQuickEdit>
             ) : (
-              concept.label
+              <span className="grid text-left leading-tight">
+                <strong className="text-[13px] font-semibold">{concept.label}</strong>
+                <span className="mt-0.5 text-[10px] font-medium opacity-65">
+                  Unlinked concept
+                </span>
+              </span>
             )}
             <button
               type="button"
@@ -251,12 +343,13 @@ export function LessonConceptsField({
                       index === highlight ? "bg-violet-50" : "hover:bg-muted"
                     }`}
                   >
-                    <span className="min-w-0 truncate">
-                      <span className="font-semibold text-stone-900">
+                    <span className="grid min-w-0 text-left leading-tight">
+                      <span className="truncate font-semibold text-stone-900">
+                        {result.english}
+                      </span>
+                      <span className="mt-0.5 truncate text-xs text-stone-500">
                         {result.spanish}
                       </span>
-                      <span className="text-stone-400"> → </span>
-                      <span className="text-stone-600">{result.english}</span>
                     </span>
                     <span className="shrink-0 text-[10px] font-semibold uppercase tracking-wide text-stone-400">
                       {result.curriculumRole}

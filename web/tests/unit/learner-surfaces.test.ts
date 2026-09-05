@@ -11,6 +11,7 @@ const lesson = {
   name: "Hello James!",
   previewText: "Hola James!",
   stepCount: 4,
+  concepts: [],
 };
 const modules = [
   {
@@ -18,6 +19,7 @@ const modules = [
     name: "Tu primera conversación",
     kind: "onboarding" as const,
     lessonCount: 1,
+    concepts: [],
     lessons: [lesson],
   },
   {
@@ -25,6 +27,7 @@ const modules = [
     name: "Planes de todos los días",
     kind: "course" as const,
     lessonCount: 1,
+    concepts: [],
     lessons: [{ ...lesson, id: "tomorrow", name: "Tomorrow", stepCount: 0 }],
   },
 ];

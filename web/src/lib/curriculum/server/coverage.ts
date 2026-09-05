@@ -33,3 +33,14 @@ export async function readConceptCoverage(): Promise<
 
   return coverage;
 }
+
+export async function readNewConceptIds(
+  lessonId: string,
+): Promise<Set<string>> {
+  const coverage = await readConceptCoverage();
+  const ids = new Set<string>();
+  for (const [conceptId, info] of coverage) {
+    if (info.lessonId === lessonId) ids.add(conceptId);
+  }
+  return ids;
+}

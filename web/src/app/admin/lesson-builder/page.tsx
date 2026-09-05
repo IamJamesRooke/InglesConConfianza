@@ -35,7 +35,10 @@ import {
 } from "@/components/practice/lesson-selector";
 import { LanguageBlockGrid } from "@/components/lesson-builder/language-block-grid";
 import { LessonCardHeader } from "@/components/lesson-builder/lesson-card-header";
-import { LessonConceptsField } from "@/components/lesson-builder/lesson-concepts-field";
+import {
+  LessonConceptsField,
+  type ConceptDisplayLookup,
+} from "@/components/lesson-builder/lesson-concepts-field";
 import { PendingLessonExitDialog } from "@/components/lesson-builder/pending-lesson-exit-dialog";
 import { ExplanationBlockEditor } from "@/components/lesson-builder/explanation-block-editor";
 import { LessonBlockPreviewList } from "@/components/lesson-builder/lesson-block-preview";
@@ -56,6 +59,7 @@ import {
   normalizeLessons,
 } from "@/lib/lesson-builder/utils";
 import { moduleCoveredConceptKeys } from "@/lib/lesson-builder/lesson-file";
+import { suggestConceptsForLesson } from "@/lib/lesson-builder/concept-suggestions";
 import { lessonsReducer } from "@/lib/lesson-builder/reducer";
 import { useDragReorder } from "@/lib/lesson-builder/use-drag-reorder";
 
@@ -176,6 +180,8 @@ export default function LessonBuilderPage() {
   // The module structure (synced from every lessons API response). The builder
   // shows one module at a time; `activeModuleId` picks it (from ?module=).
   const [courseModules, setCourseModules] = useState<LessonModule[]>([]);
+  const [conceptDisplays, setConceptDisplays] =
+    useState<ConceptDisplayLookup>({});
   const [activeModuleId, setActiveModuleId] = useState<string | null>(null);
   const [courseSaveState, setCourseSaveState] = useState<
     "idle" | "saving" | "saved" | "error"
@@ -261,7 +267,9 @@ export default function LessonBuilderPage() {
           throw new Error("Unable to load lessons.");
         }
 
-        const lessonFile = (await response.json()) as LessonFile;
+        const lessonFile = (await response.json()) as LessonFile & {
+          conceptDisplays?: ConceptDisplayLookup;
+        };
         const lessons = normalizeLessons(lessonFile.lessons);
         const lessonsJson = JSON.stringify(lessons);
 
@@ -270,6 +278,7 @@ export default function LessonBuilderPage() {
           savedLessonsJsonRef.current = lessonsJson;
           dispatch({ type: "SET_LESSONS", lessons });
           setCourseModules(modules);
+          setConceptDisplays(lessonFile.conceptDisplays ?? {});
           courseUndoRef.current = [];
           courseCoalesceKeyRef.current = null;
           setCourseCanUndo(false);
@@ -2070,6 +2079,7 @@ export default function LessonBuilderPage() {
         ).length,
         practiceCount: previewBlocks.filter(isPracticeBlock).length,
         previewText: "",
+        concepts: [],
         blocks: previewBlocks,
       }
     : null;
@@ -2523,6 +2533,7 @@ export default function LessonBuilderPage() {
               <ModuleMeta
                 module={currentModule}
                 coveredConceptKeys={moduleCoveredKeys}
+                conceptDisplays={conceptDisplays}
                 onChange={patchActiveModule}
               />
             )}
@@ -2558,6 +2569,11 @@ export default function LessonBuilderPage() {
                 : 0),
             0,
           );
+          const conceptSuggestions = suggestConceptsForLesson({
+            lessons,
+            lessonId: lesson.id,
+            conceptDisplays,
+          });
           const dropPosition =
             lessonDrag.dropTarget?.id === lesson.id
               ? lessonDrag.dropTarget.position
@@ -2648,6 +2664,14 @@ export default function LessonBuilderPage() {
               {!isLessonFullyCollapsed && (
                 <LessonConceptsField
                   concepts={lesson.concepts}
+                  conceptDisplays={conceptDisplays}
+                  suggestions={conceptSuggestions}
+                  onDisplayChange={(conceptId, display) =>
+                    setConceptDisplays((current) => ({
+                      ...current,
+                      [conceptId]: display,
+                    }))
+                  }
                   onAdd={(concept) =>
                     dispatch({
                       type: "ADD_LESSON_CONCEPT",

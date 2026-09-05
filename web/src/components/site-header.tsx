@@ -1,6 +1,6 @@
 "use client";
 
-import { BookOpen, MessageCircle, Menu, Settings, X } from "lucide-react";
+import { Menu, Palette, Settings, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
@@ -16,7 +16,7 @@ const internalLinks = [
 const themeOptions = [
   {
     value: "default",
-    label: "Warm Studio",
+    label: "Confianza",
     swatches: [
       "oklch(0.48 0.18 265)",
       "oklch(0.68 0.12 185)",
@@ -25,7 +25,7 @@ const themeOptions = [
   },
   {
     value: "purple",
-    label: "Purple",
+    label: "Violeta",
     swatches: [
       "oklch(0.5 0.2 295)",
       "oklch(0.68 0.15 335)",
@@ -34,7 +34,7 @@ const themeOptions = [
   },
   {
     value: "night",
-    label: "Tokyo Night",
+    label: "Noche",
     swatches: [
       "oklch(0.72 0.14 250)",
       "oklch(0.76 0.13 205)",
@@ -65,7 +65,11 @@ export function SiteHeader() {
 
   function updateTheme(nextTheme: string) {
     setTheme(nextTheme);
-    window.localStorage.setItem("icc-theme", nextTheme);
+    try {
+      window.localStorage.setItem("icc-theme", nextTheme);
+    } catch {
+      // Theme selection still works when persistent storage is unavailable.
+    }
   }
 
   const isActive = (href: string) => {
@@ -79,7 +83,19 @@ export function SiteHeader() {
   if (pathname === "/practice") return null;
 
   if (!isAdmin) {
-    return <LearnerHeader />;
+    return (
+      <>
+        <LearnerHeader onOpenTheme={() => setIsSettingsOpen(true)} />
+        {isSettingsOpen && (
+          <ThemeDialog
+            theme={theme}
+            onChange={updateTheme}
+            onClose={() => setIsSettingsOpen(false)}
+            learner
+          />
+        )}
+      </>
+    );
   }
 
   return (
@@ -136,85 +152,125 @@ export function SiteHeader() {
       )}
 
       {isSettingsOpen && (
-        <div
-          className="fixed inset-0 z-50 flex items-start justify-end bg-black/25 p-4 sm:p-6"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="settings-title"
-        >
-          <div className="w-full max-w-sm rounded-xl border border-border bg-popover p-5 text-popover-foreground shadow-xl">
-            <div className="mb-5 flex items-center justify-between gap-3">
-              <h2 id="settings-title" className="text-lg font-semibold">
-                Settings
-              </h2>
-              <button
-                type="button"
-                onClick={() => setIsSettingsOpen(false)}
-                aria-label="Close settings"
-                title="Close"
-                className="flex size-8 items-center justify-center rounded-md text-muted-foreground transition hover:bg-muted hover:text-foreground"
-              >
-                <X className="size-4" aria-hidden="true" />
-              </button>
-            </div>
-
-            <div>
-              <p className="mb-2 text-sm font-medium text-muted-foreground">
-                Theme
-              </p>
-              <div className="grid gap-2">
-                {themeOptions.map((themeOption) => (
-                  <button
-                    key={themeOption.value}
-                    type="button"
-                    onClick={() => updateTheme(themeOption.value)}
-                    aria-pressed={theme === themeOption.value}
-                    className={`flex items-center justify-between gap-3 rounded-lg border px-3 py-2 text-left text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30 ${
-                      theme === themeOption.value
-                        ? "border-primary bg-primary/10 text-foreground"
-                        : "border-border hover:bg-muted"
-                    }`}
-                  >
-                    <span>{themeOption.label}</span>
-                    <span className="flex shrink-0 items-center gap-1">
-                      {themeOption.swatches.map((swatch) => (
-                        <span
-                          key={swatch}
-                          aria-hidden="true"
-                          className="size-4 rounded-full border border-black/10"
-                          style={{ background: swatch }}
-                        />
-                      ))}
-                    </span>
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+        <ThemeDialog
+          theme={theme}
+          onChange={updateTheme}
+          onClose={() => setIsSettingsOpen(false)}
+        />
       )}
     </header>
   );
 }
 
-function LearnerHeader() {
+function LearnerHeader({ onOpenTheme }: { onOpenTheme: () => void }) {
   return (
     <header className="learner-theme learner-header">
-      <a href="#main-content" className="learner-skip">Ir a mis lecciones</a>
+      <a href="#main-content" className="learner-skip">
+        Ir al curso
+      </a>
       <div className="course-container learner-header-inner">
-        <Link href="/" className="learner-brand">
-          <span className="brand-mark">
-            <MessageCircle size={24} strokeWidth={2} aria-hidden="true" />
-          </span>
-          <span>Inglés<span>Con Confianza</span></span>
+        <Link
+          href="/"
+          className="learner-brand"
+          aria-label="Inglés con Confianza"
+        >
+          <span>Inglés con</span>
+          <strong>
+            Confianza<span aria-hidden="true">.</span>
+          </strong>
         </Link>
-        <nav aria-label="Navegación principal">
-          <Link href="/" aria-current="page" aria-label="Mis lecciones" className="learner-nav-link">
-            <BookOpen size={18} aria-hidden="true" /><span>Mis lecciones</span>
-          </Link>
-        </nav>
+        <button
+          type="button"
+          className="learner-theme-switcher"
+          onClick={onOpenTheme}
+          aria-label="Cambiar tema"
+        >
+          <Palette size={18} aria-hidden="true" />
+          <span>Tema</span>
+        </button>
       </div>
     </header>
+  );
+}
+
+function ThemeDialog({
+  theme,
+  onChange,
+  onClose,
+  learner = false,
+}: {
+  theme: string;
+  onChange: (theme: string) => void;
+  onClose: () => void;
+  learner?: boolean;
+}) {
+  useEffect(() => {
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", closeOnEscape);
+    return () => document.removeEventListener("keydown", closeOnEscape);
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-start justify-end bg-black/25 p-4 sm:p-6"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="settings-title"
+      onMouseDown={(event) => {
+        if (event.target === event.currentTarget) onClose();
+      }}
+    >
+      <div className="w-full max-w-sm rounded-xl border border-border bg-popover p-5 text-popover-foreground shadow-xl">
+        <div className="mb-5 flex items-center justify-between gap-3">
+          <h2 id="settings-title" className="text-lg font-semibold">
+            {learner ? "Elige tu estilo" : "Settings"}
+          </h2>
+          <button
+            type="button"
+            onClick={onClose}
+            autoFocus
+            aria-label={learner ? "Cerrar" : "Close settings"}
+            title={learner ? "Cerrar" : "Close"}
+            className="flex size-8 items-center justify-center rounded-md text-muted-foreground transition hover:bg-muted hover:text-foreground"
+          >
+            <X className="size-4" aria-hidden="true" />
+          </button>
+        </div>
+
+        <p className="mb-2 text-sm font-medium text-muted-foreground">
+          {learner ? "Tema" : "Theme"}
+        </p>
+        <div className="grid gap-2">
+          {themeOptions.map((themeOption) => (
+            <button
+              key={themeOption.value}
+              type="button"
+              onClick={() => onChange(themeOption.value)}
+              aria-pressed={theme === themeOption.value}
+              className={`flex items-center justify-between gap-3 rounded-lg border px-3 py-2 text-left text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30 ${
+                theme === themeOption.value
+                  ? "border-primary bg-primary/10 text-foreground"
+                  : "border-border hover:bg-muted"
+              }`}
+            >
+              <span>{themeOption.label}</span>
+              <span className="flex shrink-0 items-center gap-1">
+                {themeOption.swatches.map((swatch) => (
+                  <span
+                    key={swatch}
+                    aria-hidden="true"
+                    className="size-4 rounded-full border border-black/10"
+                    style={{ background: swatch }}
+                  />
+                ))}
+              </span>
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
 
