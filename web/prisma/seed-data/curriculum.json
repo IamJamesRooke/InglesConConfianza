@@ -15374,7 +15374,8 @@
         "en:fall",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -15396,7 +15397,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -15418,7 +15420,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:from",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -15437,7 +15440,8 @@
         "es:caérsele",
         "en:drop",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -15498,7 +15502,8 @@
         "es:caer",
         "en:like",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -15536,7 +15541,8 @@
         "en:make",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -15558,7 +15564,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "particle:with",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -15597,7 +15604,8 @@
         "en:fall",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -15618,7 +15626,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -15639,7 +15648,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -15661,7 +15671,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "particle:below",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -24562,7 +24573,8 @@
         "en:look",
         "topic:en-multi-sense",
         "particle:for",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -25668,7 +25680,8 @@
         "es:buscar",
         "en:want",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32772,7 +32785,8 @@
         "grammar:verb-direct-object",
         "pos:verb",
         "es:cambiar",
-        "en:change"
+        "en:change",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -32790,7 +32804,8 @@
         "grammar:fixed-expression",
         "es:cambiar",
         "en:change",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55487,7 +55502,8 @@
         "en:search",
         "topic:en-multi-sense",
         "particle:for",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55502,7 +55518,8 @@
       "collections": [
         "pos:verb",
         "es:buscar",
-        "en:seek"
+        "en:seek",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55517,7 +55534,8 @@
       "collections": [
         "pos:verb",
         "es:caber",
-        "en:fit"
+        "en:fit",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55533,7 +55551,8 @@
         "pos:verb",
         "es:caber",
         "en:for",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55549,7 +55568,8 @@
         "pos:verb",
         "es:caber",
         "en:for",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55565,7 +55585,8 @@
         "pos:verb",
         "es:caber",
         "en:for",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55583,9 +55604,10 @@
         "pos:verb",
         "es:caber",
         "en:fit",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "1rve8jq2rm",
@@ -55603,7 +55625,8 @@
         "en:exchange",
         "topic:en-multi-sense",
         "particle:for",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55618,7 +55641,8 @@
       "collections": [
         "pos:verb",
         "es:cambiar",
-        "en:switch"
+        "en:switch",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55634,7 +55658,8 @@
         "pos:verb",
         "es:cambiar",
         "en:get",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55650,7 +55675,8 @@
         "pos:verb",
         "es:cargar",
         "en:carry",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55666,7 +55692,8 @@
         "pos:verb",
         "es:cargar",
         "en:load",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55682,7 +55709,8 @@
         "pos:verb",
         "es:cargar",
         "en:charge",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55698,7 +55726,8 @@
         "pos:verb",
         "es:cargar",
         "en:charge",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55714,7 +55743,8 @@
         "pos:verb",
         "es:cargar",
         "en:bear",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55735,7 +55765,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "particle:for",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55755,7 +55786,8 @@
         "en:take",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55771,7 +55803,8 @@
         "pos:verb",
         "es:cargar",
         "en:wreck",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55787,7 +55820,8 @@
         "pos:verb",
         "es:cargar",
         "en:kill",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55804,7 +55838,8 @@
         "pos:verb",
         "es:encargar",
         "en:order",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55821,7 +55856,8 @@
         "pos:verb",
         "es:encargar",
         "en:commission",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55843,7 +55879,8 @@
         "en:put",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55862,7 +55899,8 @@
         "es:encargar",
         "en:ask",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55884,7 +55922,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "particle:of",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55929,7 +55968,8 @@
         "en:leave",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55944,7 +55984,8 @@
       "collections": [
         "pos:verb",
         "es:cerrar",
-        "en:close"
+        "en:close",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55959,9 +56000,10 @@
       "collections": [
         "pos:verb",
         "es:cerrar",
-        "en:close"
+        "en:close",
+        "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "8aqh4o1vop",
@@ -55977,7 +56019,8 @@
         "pos:verb",
         "es:cerrar",
         "en:block",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -55992,7 +56035,8 @@
       "collections": [
         "pos:verb",
         "es:cerrar",
-        "en:close"
+        "en:close",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56010,7 +56054,8 @@
         "pos:verb",
         "es:cerrar",
         "en:log",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56025,7 +56070,8 @@
       "collections": [
         "pos:verb",
         "es:cobrar",
-        "en:charge"
+        "en:charge",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56040,7 +56086,8 @@
       "collections": [
         "pos:verb",
         "es:cobrar",
-        "en:cash"
+        "en:cash",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56056,7 +56103,8 @@
         "pos:verb",
         "es:cobrar",
         "en:get",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -56071,7 +56119,8 @@
       "collections": [
         "pos:verb",
         "es:cobrar",
-        "en:claim"
+        "en:claim",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58485,7 +58534,8 @@
       "collections": [
         "pos:verb",
         "es:callar",
-        "en:remain"
+        "en:remain",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58501,7 +58551,8 @@
         "pos:verb",
         "es:callar",
         "en:keep",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58534,7 +58585,8 @@
       "collections": [
         "pos:verb",
         "es:casar",
-        "en:marry"
+        "en:marry",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58550,7 +58602,8 @@
         "pos:verb",
         "es:casar",
         "en:get",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -58565,7 +58618,8 @@
       "collections": [
         "pos:verb",
         "es:casar",
-        "en:match"
+        "en:match",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58585,7 +58639,8 @@
         "en:reconcile",
         "topic:en-multi-sense",
         "particle:with",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -72242,7 +72297,8 @@
         "en:look",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
