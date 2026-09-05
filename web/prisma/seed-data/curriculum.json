@@ -461,7 +461,8 @@
         "pos:adjective",
         "morphology:suffix-ido",
         "es:querido",
-        "en:beloved"
+        "en:beloved",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -1189,7 +1190,8 @@
         "pos:noun",
         "es:comida",
         "en:meal",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:food"
       ],
       "curriculumRole": "reference"
     },
@@ -1206,7 +1208,8 @@
         "pos:noun",
         "es:necesidad",
         "en:need",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -1225,7 +1228,8 @@
         "cognate:ario-to-ary",
         "topic:cognate",
         "es:ser",
-        "en:necessary"
+        "en:necessary",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "supporting"
     },
@@ -1243,7 +1247,8 @@
         "pos:noun",
         "es:bebida",
         "en:beverage",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:food"
       ],
       "curriculumRole": "reference"
     },
@@ -1301,7 +1306,8 @@
         "morphology:suffix-ible",
         "cognate:ible-to-ible",
         "es:ser",
-        "en:edible"
+        "en:edible",
+        "topic:food"
       ],
       "curriculumRole": "reference"
     },
@@ -1320,7 +1326,8 @@
         "morphology:suffix-dor",
         "es:comedor",
         "en:dining",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -1340,7 +1347,8 @@
         "grammar:human-object",
         "es:bebedor",
         "en:drinker",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:people"
       ],
       "curriculumRole": "reference"
     },
@@ -1358,7 +1366,8 @@
         "morphology:suffix-ible",
         "morphology:suffix-able",
         "es:ser",
-        "en:drinkable"
+        "en:drinkable",
+        "topic:food"
       ],
       "curriculumRole": "reference"
     },
@@ -1715,7 +1724,8 @@
         "pos:noun",
         "es:habla",
         "en:speech",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -1735,7 +1745,8 @@
         "grammar:human-object",
         "es:hablante",
         "en:speaker",
-        "gender:common"
+        "gender:common",
+        "topic:people"
       ],
       "curriculumRole": "reference"
     },
@@ -1754,7 +1765,8 @@
         "morphology:suffix-ative",
         "grammar:human-object",
         "es:ser",
-        "en:talkative"
+        "en:talkative",
+        "topic:personality"
       ],
       "curriculumRole": "reference"
     },
@@ -2149,7 +2161,8 @@
         "form:participle",
         "es:dicho",
         "en:saying",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -2255,7 +2268,8 @@
         "morphology:prefix-un",
         "morphology:suffix-able",
         "es:ser",
-        "en:unspeakable"
+        "en:unspeakable",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -2998,7 +3012,8 @@
         "grammar:human-object",
         "es:dador",
         "en:giver",
-        "gender:common"
+        "gender:common",
+        "topic:people"
       ],
       "curriculumRole": "reference"
     },
@@ -3516,7 +3531,8 @@
         "form:participle",
         "es:pedido",
         "en:order",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -3536,7 +3552,8 @@
         "es:petición",
         "en:request",
         "cognate:opaque-gloss",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:communication-request"
       ],
       "curriculumRole": "reference"
     },
@@ -3864,7 +3881,8 @@
         "pos:adjective",
         "grammar:reflexive",
         "es:poner",
-        "en:get"
+        "en:get",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "supporting"
     },
@@ -3881,7 +3899,8 @@
         "pos:adjective",
         "grammar:reflexive",
         "es:poner",
-        "en:become"
+        "en:become",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "supporting"
     },
@@ -4097,7 +4116,8 @@
         "form:participle",
         "es:puesto",
         "en:job",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:business-work"
       ],
       "curriculumRole": "reference"
     },
@@ -4116,7 +4136,8 @@
         "market",
         "es:puesto",
         "en:stand",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -4152,7 +4173,8 @@
         "es:de",
         "es:puesta",
         "en:sunset",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:event"
       ],
       "curriculumRole": "reference"
     },
@@ -5526,7 +5548,8 @@
         "pos:noun",
         "es:espera",
         "en:wait",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -5543,7 +5566,8 @@
         "pos:noun",
         "es:esperanza",
         "en:hope",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -5560,7 +5584,8 @@
         "pos:noun",
         "es:expectativa",
         "en:expectation",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -5577,7 +5602,8 @@
         "pos:adjective",
         "form:past-participle",
         "es:ser",
-        "en:expected"
+        "en:expected",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -5595,7 +5621,8 @@
         "morphology:prefix-in",
         "morphology:prefix-un",
         "es:ser",
-        "en:unexpected"
+        "en:unexpected",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -5745,7 +5772,8 @@
         "en:to",
         "construction:map-a-to",
         "es:estar",
-        "en:used"
+        "en:used",
+        "topic:condition-state"
       ],
       "curriculumRole": "supporting"
     },
@@ -5763,7 +5791,8 @@
         "particle:in",
         "construction:map-en-in",
         "es:estar",
-        "en:interested"
+        "en:interested",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "supporting"
     },
@@ -5815,7 +5844,8 @@
         "en:to",
         "construction:map-con-to",
         "es:estar",
-        "en:married"
+        "en:married",
+        "topic:condition-state"
       ],
       "curriculumRole": "supporting"
     },
@@ -5833,7 +5863,8 @@
         "en:with",
         "construction:map-de-with",
         "es:estar",
-        "en:in"
+        "en:in",
+        "topic:emotion-state"
       ],
       "curriculumRole": "reference"
     },
@@ -5848,7 +5879,8 @@
       "collections": [
         "pos:adjective",
         "es:estar",
-        "en:ready"
+        "en:ready",
+        "topic:condition-state"
       ],
       "curriculumRole": "core"
     },
@@ -5897,7 +5929,8 @@
         "particle:about",
         "construction:map-de-about",
         "es:estar",
-        "en:sure"
+        "en:sure",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "supporting"
     },
@@ -5912,7 +5945,8 @@
       "collections": [
         "pos:adjective",
         "es:estar",
-        "en:wrong"
+        "en:wrong",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "supporting"
     },
@@ -5932,7 +5966,8 @@
         "morphology:suffix-able",
         "topic:cognate",
         "es:estar",
-        "en:available"
+        "en:available",
+        "topic:condition-state"
       ],
       "curriculumRole": "supporting"
     },
@@ -6062,7 +6097,8 @@
         "pos:adjective",
         "grammar:particle",
         "es:estar",
-        "en:done"
+        "en:done",
+        "topic:condition-state"
       ],
       "curriculumRole": "supporting"
     },
@@ -6114,7 +6150,8 @@
         "grammar:estar-adjective",
         "pos:adjective",
         "es:estar",
-        "en:free"
+        "en:free",
+        "topic:value-price"
       ],
       "curriculumRole": "reference"
     },
@@ -6146,7 +6183,8 @@
         "grammar:particle",
         "particle:away",
         "es:estar",
-        "en:away"
+        "en:away",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -6161,7 +6199,8 @@
       "collections": [
         "pos:adjective",
         "es:estar",
-        "en:late"
+        "en:late",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "supporting"
     },
@@ -6176,7 +6215,8 @@
       "collections": [
         "pos:adjective",
         "es:estar",
-        "en:bored"
+        "en:bored",
+        "topic:emotion-state"
       ],
       "curriculumRole": "supporting"
     },
@@ -6191,7 +6231,8 @@
       "collections": [
         "pos:adjective",
         "es:estar",
-        "en:due"
+        "en:due",
+        "topic:condition-state"
       ],
       "curriculumRole": "reference"
     },
@@ -6326,7 +6367,8 @@
         "es:extrañar",
         "pos:adjective",
         "es:ser",
-        "en:strange"
+        "en:strange",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "supporting"
     },
@@ -6343,7 +6385,8 @@
         "pos:adjective",
         "grammar:adjective-state",
         "es:sentir",
-        "en:feel"
+        "en:feel",
+        "topic:emotion-state"
       ],
       "curriculumRole": "reference"
     },
@@ -6361,7 +6404,8 @@
         "grammar:human-object",
         "es:extraño",
         "en:stranger",
-        "gender:common"
+        "gender:common",
+        "topic:people"
       ],
       "curriculumRole": "reference"
     },
@@ -6520,7 +6564,8 @@
         "construction:map-de-of",
         "es:falta",
         "en:lack",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -6641,7 +6686,8 @@
         "morphology:suffix-er",
         "es:ganador",
         "en:winner",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:people"
       ],
       "curriculumRole": "reference"
     },
@@ -6658,7 +6704,8 @@
         "pos:noun",
         "es:ganancia",
         "en:profit",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:money-business"
       ],
       "curriculumRole": "reference"
     },
@@ -6802,7 +6849,8 @@
         "pos:noun",
         "es:gusto",
         "en:taste",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -7703,7 +7751,8 @@
         "pos:adjective",
         "form:past-participle",
         "es:hecho",
-        "en:made"
+        "en:made",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -7720,7 +7769,8 @@
         "pos:adjective",
         "form:past-participle",
         "es:hecho",
-        "en:done"
+        "en:done",
+        "topic:condition-state"
       ],
       "curriculumRole": "reference"
     },
@@ -7841,7 +7891,8 @@
         "pos:noun",
         "es:hecho",
         "en:fact",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -8295,7 +8346,8 @@
         "pos:noun",
         "es:llamada",
         "en:call",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:communication-request"
       ],
       "curriculumRole": "reference"
     },
@@ -8315,7 +8367,8 @@
         "construction:map-a-for",
         "es:hacer",
         "en:call",
-        "gender:invariant"
+        "gender:invariant",
+        "topic:communication-request"
       ],
       "curriculumRole": "reference"
     },
@@ -8498,7 +8551,8 @@
         "morphology:suffix-al",
         "es:llegada",
         "en:arrival",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:event"
       ],
       "curriculumRole": "reference"
     },
@@ -8876,7 +8930,8 @@
         "pos:adjective",
         "grammar:human-object",
         "es:ser",
-        "en:bossy"
+        "en:bossy",
+        "topic:personality"
       ],
       "curriculumRole": "reference"
     },
@@ -9039,7 +9094,8 @@
         "pos:noun",
         "es:parada",
         "en:stop",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -9055,7 +9111,8 @@
         "en:appear",
         "pos:adjective",
         "es:parecer",
-        "en:seem"
+        "en:seem",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "supporting"
     },
@@ -9103,7 +9160,8 @@
       "collections": [
         "pos:adjective",
         "es:parecer",
-        "en:look"
+        "en:look",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "core"
     },
@@ -9209,7 +9267,8 @@
         "pos:noun",
         "es:parecer",
         "en:seem",
-        "gender:invariant"
+        "gender:invariant",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "supporting"
     },
@@ -9244,7 +9303,8 @@
         "construction:map-a-to",
         "similarity",
         "es:ser",
-        "en:similar"
+        "en:similar",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -9758,7 +9818,8 @@
         "pos:noun",
         "es:pensamiento",
         "en:thought",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -9774,7 +9835,8 @@
         "es:pensar",
         "pos:adjective",
         "es:estar",
-        "en:pensive"
+        "en:pensive",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -9793,7 +9855,8 @@
         "particle:out",
         "form:past-participle",
         "es:estar",
-        "en:well"
+        "en:well",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -9869,7 +9932,8 @@
         "pos:adjective",
         "grammar:reflexive",
         "es:perder",
-        "en:get"
+        "en:get",
+        "topic:condition-state"
       ],
       "curriculumRole": "supporting"
     },
@@ -9886,7 +9950,8 @@
         "pos:adjective",
         "grammar:adjective-state",
         "es:estar",
-        "en:lost"
+        "en:lost",
+        "topic:condition-state"
       ],
       "curriculumRole": "supporting"
     },
@@ -9985,7 +10050,8 @@
         "pos:noun",
         "es:pérdida",
         "en:loss",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -10005,7 +10071,8 @@
         "morphology:suffix-er",
         "es:perdedor",
         "en:loser",
-        "gender:common"
+        "gender:common",
+        "topic:people"
       ],
       "curriculumRole": "reference"
     },
@@ -10154,7 +10221,8 @@
         "pos:noun",
         "es:peso",
         "en:weight",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -10170,7 +10238,8 @@
         "es:pesar",
         "pos:adjective",
         "es:ser",
-        "en:heavy"
+        "en:heavy",
+        "topic:size"
       ],
       "curriculumRole": "supporting"
     },
@@ -10863,7 +10932,8 @@
         "pos:noun",
         "es:poder",
         "en:power",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -10879,7 +10949,8 @@
         "pos:noun",
         "es:poder",
         "en:authority",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -10896,7 +10967,8 @@
         "legal",
         "es:poder",
         "en:power",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -10913,7 +10985,8 @@
         "pos:adjective",
         "morphology:suffix-ful",
         "es:ser",
-        "en:powerful"
+        "en:powerful",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -10930,7 +11003,8 @@
         "pos:adjective",
         "en:influence",
         "es:ser",
-        "en:influential"
+        "en:influential",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -10947,7 +11021,8 @@
         "pos:adjective",
         "morphology:suffix-less",
         "es:sentir",
-        "en:feel"
+        "en:feel",
+        "topic:emotion-state"
       ],
       "curriculumRole": "reference"
     },
@@ -10964,7 +11039,8 @@
         "pos:adjective",
         "morphology:suffix-less",
         "es:sentir",
-        "en:feel"
+        "en:feel",
+        "topic:emotion-state"
       ],
       "curriculumRole": "reference"
     },
@@ -10983,7 +11059,8 @@
         "morphology:suffix-ness",
         "es:impotencia",
         "en:powerlessness",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -11002,7 +11079,8 @@
         "morphology:prefix-all",
         "morphology:suffix-ful",
         "es:ser",
-        "en:all-powerful"
+        "en:all-powerful",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -11256,7 +11334,8 @@
         "pos:adjective",
         "morphology:suffix-ful",
         "es:ser",
-        "en:mighty"
+        "en:mighty",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -11275,7 +11354,8 @@
         "morphology:prefix-todo",
         "morphology:prefix-all",
         "es:ser",
-        "en:almighty"
+        "en:almighty",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -11292,7 +11372,8 @@
         "pos:adjective",
         "register:formal",
         "es:ser",
-        "en:omnipotent"
+        "en:omnipotent",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -11394,7 +11475,8 @@
         "topic:cognate",
         "es:pregunta",
         "en:question",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:communication-request"
       ],
       "curriculumRole": "supporting"
     },
@@ -11528,7 +11610,8 @@
         "pos:noun",
         "es:préstamo",
         "en:loan",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:money-business"
       ],
       "curriculumRole": "reference"
     },
@@ -11777,7 +11860,8 @@
         "pos:adjective",
         "grammar:reflexive",
         "es:quedar",
-        "en:fall"
+        "en:fall",
+        "topic:emotion-state"
       ],
       "curriculumRole": "supporting"
     },
@@ -11793,7 +11877,8 @@
         "pos:adjective",
         "grammar:reflexive",
         "es:quedar",
-        "en:keep"
+        "en:keep",
+        "topic:emotion-state"
       ],
       "curriculumRole": "reference"
     },
@@ -12205,7 +12290,8 @@
         "form:participle",
         "grammar:adjective-state",
         "es:estar",
-        "en:open"
+        "en:open",
+        "topic:condition-state"
       ],
       "curriculumRole": "supporting"
     },
@@ -12223,7 +12309,8 @@
         "pos:noun",
         "es:apertura",
         "en:opening",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:event"
       ],
       "curriculumRole": "reference"
     },
@@ -12242,7 +12329,8 @@
         "en:event",
         "es:inauguración",
         "en:opening",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:event"
       ],
       "curriculumRole": "reference"
     },
@@ -12504,7 +12592,8 @@
         "form:participle",
         "grammar:adjective-state",
         "es:estar",
-        "en:finished"
+        "en:finished",
+        "topic:condition-state"
       ],
       "curriculumRole": "reference"
     },
@@ -12524,7 +12613,8 @@
         "morphology:prefix-un",
         "form:participle",
         "es:inacabado",
-        "en:unfinished"
+        "en:unfinished",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -12674,7 +12764,8 @@
         "pos:noun",
         "es:alcance",
         "en:reach",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -12691,7 +12782,8 @@
         "pos:noun",
         "es:alcance",
         "en:scope",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -12730,7 +12822,8 @@
         "cognate:able-to-able",
         "grammar:ser-adjective",
         "es:ser",
-        "en:reachable"
+        "en:reachable",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -12753,7 +12846,8 @@
         "es:ser",
         "en:unattainable",
         "cognate:able-to-able",
-        "topic:cognate"
+        "topic:cognate",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -13021,7 +13115,8 @@
         "pos:noun",
         "es:caída",
         "en:fall",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -13038,7 +13133,8 @@
         "pos:noun",
         "es:caída",
         "en:decline",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -13189,7 +13285,8 @@
         "pos:adjective",
         "form:participle",
         "es:ser",
-        "en:well-known"
+        "en:well-known",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -13208,7 +13305,8 @@
         "form:participle",
         "es:conocido",
         "en:acquaintance",
-        "gender:common"
+        "gender:common",
+        "topic:people"
       ],
       "curriculumRole": "reference"
     },
@@ -13300,7 +13398,8 @@
         "pos:noun",
         "es:conocimiento",
         "en:knowledge",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -13321,7 +13420,8 @@
         "morphology:prefix-des",
         "morphology:prefix-un",
         "es:desconocido",
-        "en:unknown"
+        "en:unknown",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -13790,7 +13890,8 @@
         "en:restaurant",
         "es:cuenta",
         "en:bill",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "supporting"
     },
@@ -13808,7 +13909,8 @@
         "pos:noun",
         "es:cuenta",
         "en:account",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -13827,7 +13929,8 @@
         "morphology:suffix-dor",
         "es:contador",
         "en:accountant",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:business-work"
       ],
       "curriculumRole": "reference"
     },
@@ -13846,7 +13949,8 @@
         "cognate:able-to-able",
         "grammar:ser-adjective",
         "es:ser",
-        "en:countable"
+        "en:countable",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -13951,7 +14055,8 @@
         "cognate:opaque-gloss",
         "es:costo",
         "en:cost",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:money-business"
       ],
       "curriculumRole": "reference"
     },
@@ -13968,7 +14073,8 @@
         "pos:noun",
         "es:costo",
         "en:expense",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:money-business"
       ],
       "curriculumRole": "reference"
     },
@@ -13986,7 +14092,8 @@
         "pos:adjective",
         "morphology:suffix-oso",
         "es:costoso",
-        "en:expensive"
+        "en:expensive",
+        "topic:value-price"
       ],
       "curriculumRole": "reference"
     },
@@ -14004,7 +14111,8 @@
         "pos:adjective",
         "morphology:suffix-ly",
         "es:costoso",
-        "en:costly"
+        "en:costly",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -14278,7 +14386,8 @@
         "pos:noun",
         "es:creencia",
         "en:belief",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -14297,7 +14406,8 @@
         "morphology:suffix-ible",
         "morphology:suffix-able",
         "es:ser",
-        "en:believable"
+        "en:believable",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -14319,7 +14429,8 @@
         "cognate:ible-to-ible",
         "topic:cognate",
         "es:ser",
-        "en:incredible"
+        "en:incredible",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -14753,7 +14864,8 @@
         "pos:noun",
         "es:deber",
         "en:duty",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:business-work"
       ],
       "curriculumRole": "reference"
     },
@@ -14772,7 +14884,8 @@
         "grammar:plural",
         "es:deberes",
         "en:duties",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:business-work"
       ],
       "curriculumRole": "reference"
     },
@@ -15046,7 +15159,8 @@
         "grammar:resulting-state",
         "pos:adjective",
         "es:dejar",
-        "en:leave"
+        "en:leave",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -15062,7 +15176,8 @@
         "grammar:causative",
         "pos:adjective",
         "es:dejar",
-        "en:make"
+        "en:make",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -15128,7 +15243,8 @@
         "grammar:fixed-expression",
         "pos:adjective",
         "es:dejar",
-        "en:make"
+        "en:make",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -15796,7 +15912,8 @@
         "pos:noun",
         "es:recuerdo",
         "en:memory",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "supporting"
     },
@@ -15813,7 +15930,8 @@
         "pos:noun",
         "es:recuerdo",
         "en:souvenir",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -15831,7 +15949,8 @@
         "es:ser",
         "en:memorable",
         "cognate:able-to-able",
-        "topic:cognate"
+        "topic:cognate",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -15922,7 +16041,8 @@
         "pos:noun",
         "es:robo",
         "en:theft",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:crime-law"
       ],
       "curriculumRole": "reference"
     },
@@ -15939,7 +16059,8 @@
         "pos:noun",
         "es:robo",
         "en:robbery",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:crime-law"
       ],
       "curriculumRole": "reference"
     },
@@ -15957,7 +16078,8 @@
         "grammar:human-object",
         "es:ladrón",
         "en:thief",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:crime-law"
       ],
       "curriculumRole": "reference"
     },
@@ -16213,7 +16335,8 @@
         "es:saber",
         "pos:adjective",
         "es:ser",
-        "en:wise"
+        "en:wise",
+        "topic:personality"
       ],
       "curriculumRole": "reference"
     },
@@ -16230,7 +16353,8 @@
         "pos:noun",
         "es:sabiduría",
         "en:wisdom",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -16585,7 +16709,8 @@
         "en:exit",
         "contrast:exito-vs-exit",
         "contrast:confusable",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "supporting"
     },
@@ -16604,7 +16729,8 @@
         "particle:out",
         "es:salida",
         "en:way",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -16981,7 +17107,8 @@
         "particle:up",
         "es:seguimiento",
         "en:follow-up",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -17001,7 +17128,8 @@
         "morphology:suffix-er",
         "es:seguidor",
         "en:follower",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -17034,7 +17162,8 @@
         "grammar:linking-verb-adjective",
         "feel + adjective",
         "es:sentir",
-        "en:feel"
+        "en:feel",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "core"
     },
@@ -17222,7 +17351,8 @@
         "pos:noun",
         "es:sentimiento",
         "en:feeling",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -17240,7 +17370,8 @@
         "es:ser",
         "en:sentimental",
         "cognate:al-to-al",
-        "topic:cognate"
+        "topic:cognate",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -17528,7 +17659,8 @@
         "construction:map-de-of",
         "pos:adjective",
         "es:ser",
-        "en:aware"
+        "en:aware",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -17543,7 +17675,8 @@
       "collections": [
         "pos:adjective",
         "es:ser",
-        "en:free"
+        "en:free",
+        "topic:value-price"
       ],
       "curriculumRole": "supporting"
     },
@@ -17558,7 +17691,8 @@
       "collections": [
         "pos:adjective",
         "es:ser",
-        "en:fun"
+        "en:fun",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "supporting"
     },
@@ -17573,7 +17707,8 @@
       "collections": [
         "pos:adjective",
         "es:ser",
-        "en:funny"
+        "en:funny",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -17588,7 +17723,8 @@
       "collections": [
         "pos:adjective",
         "es:ser",
-        "en:boring"
+        "en:boring",
+        "topic:emotion-state"
       ],
       "curriculumRole": "supporting"
     },
@@ -17603,7 +17739,8 @@
       "collections": [
         "pos:adjective",
         "es:ser",
-        "en:interesting"
+        "en:interesting",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "supporting"
     },
@@ -17618,7 +17755,8 @@
       "collections": [
         "pos:adjective",
         "es:ser",
-        "en:smart"
+        "en:smart",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "supporting"
     },
@@ -17634,7 +17772,8 @@
         "construction:that-clause",
         "pos:adjective",
         "es:ser",
-        "en:likely"
+        "en:likely",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -17699,7 +17838,8 @@
         "pos:noun",
         "es:ser",
         "en:being",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -17794,7 +17934,8 @@
         "morphology:suffix-ing",
         "es:significado",
         "en:meaning",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -17810,7 +17951,8 @@
         "es:significar",
         "pos:adjective",
         "es:ser",
-        "en:significant"
+        "en:significant",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -17847,7 +17989,8 @@
         "morphology:suffix-ful",
         "es:tener",
         "en:meaningful",
-        "grammar:tener-adjective"
+        "grammar:tener-adjective",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -17865,7 +18008,8 @@
         "morphology:suffix-less",
         "grammar:negative",
         "es:tener",
-        "en:meaningless"
+        "en:meaningless",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -18053,7 +18197,8 @@
         "pos:noun",
         "es:suposición",
         "en:assumption",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -18193,7 +18338,8 @@
         "pos:adjective",
         "es:tener",
         "en:hungry",
-        "grammar:tener-adjective"
+        "grammar:tener-adjective",
+        "topic:emotion-state"
       ],
       "curriculumRole": "core"
     },
@@ -18210,7 +18356,8 @@
         "pos:adjective",
         "es:tener",
         "en:thirsty",
-        "grammar:tener-adjective"
+        "grammar:tener-adjective",
+        "topic:emotion-state"
       ],
       "curriculumRole": "core"
     },
@@ -18227,7 +18374,8 @@
         "pos:adjective",
         "es:tener",
         "en:hot",
-        "grammar:tener-adjective"
+        "grammar:tener-adjective",
+        "topic:emotion-state"
       ],
       "curriculumRole": "core"
     },
@@ -18244,7 +18392,8 @@
         "pos:adjective",
         "es:tener",
         "en:cold",
-        "grammar:tener-adjective"
+        "grammar:tener-adjective",
+        "topic:emotion-state"
       ],
       "curriculumRole": "core"
     },
@@ -18261,7 +18410,8 @@
         "pos:adjective",
         "es:tener",
         "en:sleepy",
-        "grammar:tener-adjective"
+        "grammar:tener-adjective",
+        "topic:emotion-state"
       ],
       "curriculumRole": "supporting"
     },
@@ -18281,7 +18431,8 @@
         "construction:map-de-of",
         "es:tener",
         "en:afraid",
-        "grammar:tener-adjective"
+        "grammar:tener-adjective",
+        "topic:emotion-state"
       ],
       "curriculumRole": "supporting"
     },
@@ -18331,7 +18482,8 @@
         "pos:adjective",
         "es:tener",
         "en:right",
-        "grammar:tener-adjective"
+        "grammar:tener-adjective",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "core"
     },
@@ -18349,7 +18501,8 @@
         "grammar:imperative",
         "es:tener",
         "en:careful",
-        "grammar:tener-adjective"
+        "grammar:tener-adjective",
+        "topic:emotion-state"
       ],
       "curriculumRole": "core"
     },
@@ -18366,7 +18519,8 @@
         "pos:adjective",
         "es:tener",
         "en:lucky",
-        "grammar:tener-adjective"
+        "grammar:tener-adjective",
+        "topic:emotion-state"
       ],
       "curriculumRole": "supporting"
     },
@@ -18399,7 +18553,8 @@
         "tener adjectives",
         "es:tener",
         "en:successful",
-        "grammar:tener-adjective"
+        "grammar:tener-adjective",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -18417,7 +18572,8 @@
         "grammar:imperative",
         "es:tener",
         "en:patient",
-        "grammar:tener-adjective"
+        "grammar:tener-adjective",
+        "topic:health"
       ],
       "curriculumRole": "reference"
     },
@@ -18434,7 +18590,8 @@
         "pos:adjective",
         "es:tener",
         "en:confident",
-        "grammar:tener-adjective"
+        "grammar:tener-adjective",
+        "topic:emotion-state"
       ],
       "curriculumRole": "reference"
     },
@@ -18637,7 +18794,8 @@
         "construction:map-de-of",
         "es:tenencia",
         "en:possession",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -18828,7 +18986,8 @@
         "pos:noun",
         "es:toque",
         "en:touch",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -19026,7 +19185,8 @@
         "pos:noun",
         "es:trabajo",
         "en:work",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:business-work"
       ],
       "curriculumRole": "supporting"
     },
@@ -19043,7 +19203,8 @@
         "pos:noun",
         "es:trabajo",
         "en:job",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:business-work"
       ],
       "curriculumRole": "supporting"
     },
@@ -19063,7 +19224,8 @@
         "morphology:suffix-er",
         "es:trabajador",
         "en:worker",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:business-work"
       ],
       "curriculumRole": "reference"
     },
@@ -19080,7 +19242,8 @@
         "pos:adjective",
         "morphology:suffix-dor",
         "es:ser",
-        "en:hardworking"
+        "en:hardworking",
+        "topic:personality"
       ],
       "curriculumRole": "reference"
     },
@@ -19096,7 +19259,8 @@
         "es:trabajar",
         "pos:adjective",
         "es:ser",
-        "en:work-related"
+        "en:work-related",
+        "topic:business-work"
       ],
       "curriculumRole": "reference"
     },
@@ -19352,7 +19516,8 @@
         "pos:adjective",
         "construction:verb-plus-connector",
         "es:valer",
-        "en:valid"
+        "en:valid",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -19371,7 +19536,8 @@
         "construction:map-para-for",
         "grammar:gerund",
         "es:valer",
-        "en:useful"
+        "en:useful",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -19484,7 +19650,8 @@
         "grammar:negative",
         "pos:adjective",
         "es:valer",
-        "en:fair"
+        "en:fair",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -19501,7 +19668,8 @@
         "pos:noun",
         "es:valor",
         "en:value",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -19518,7 +19686,8 @@
         "pos:noun",
         "es:valor",
         "en:courage",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -19535,7 +19704,8 @@
         "pos:adjective",
         "morphology:suffix-able",
         "es:ser",
-        "en:valuable"
+        "en:valuable",
+        "topic:value-price"
       ],
       "curriculumRole": "reference"
     },
@@ -19555,7 +19725,8 @@
         "es:ser",
         "en:invaluable",
         "cognate:able-to-able",
-        "topic:cognate"
+        "topic:cognate",
+        "topic:value-price"
       ],
       "curriculumRole": "reference"
     },
@@ -19774,7 +19945,8 @@
         "morphology:suffix-ing",
         "es:venida",
         "en:coming",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -19916,7 +20088,8 @@
         "linking verb",
         "pos:adjective",
         "es:ver",
-        "en:look"
+        "en:look",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "supporting"
     },
@@ -20072,7 +20245,8 @@
         "pos:noun",
         "es:vista",
         "en:sight",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -20089,7 +20263,8 @@
         "pos:noun",
         "es:vista",
         "en:view",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -20109,7 +20284,8 @@
         "cognate:ible-to-ible",
         "topic:cognate",
         "es:ser",
-        "en:visible"
+        "en:visible",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -20130,7 +20306,8 @@
         "cognate:ible-to-ible",
         "topic:cognate",
         "es:ser",
-        "en:invisible"
+        "en:invisible",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -20148,7 +20325,8 @@
         "es:ser",
         "en:visual",
         "cognate:al-to-al",
-        "topic:cognate"
+        "topic:cognate",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -20268,7 +20446,8 @@
         "grammar:change-of-state",
         "pos:adjective",
         "es:volver",
-        "en:become"
+        "en:become",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "supporting"
     },
@@ -20285,7 +20464,8 @@
         "grammar:change-of-state",
         "pos:adjective",
         "es:volver",
-        "en:get"
+        "en:get",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -20391,7 +20571,8 @@
         "pos:noun",
         "es:vuelta",
         "en:return",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -21674,7 +21855,8 @@
         "pos:noun",
         "es:consulta",
         "en:inquiry",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:communication-request"
       ],
       "curriculumRole": "reference"
     },
@@ -21691,7 +21873,8 @@
         "pos:noun",
         "es:consulta",
         "en:query",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -21957,7 +22140,8 @@
         "pos:noun",
         "es:postulación",
         "en:application",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:communication-request"
       ],
       "curriculumRole": "reference"
     },
@@ -22048,7 +22232,8 @@
         "pos:noun",
         "es:solicitud",
         "en:request",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:communication-request"
       ],
       "curriculumRole": "reference"
     },
@@ -22065,7 +22250,8 @@
         "pos:noun",
         "es:solicitud",
         "en:application",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:communication-request"
       ],
       "curriculumRole": "reference"
     },
@@ -26106,7 +26292,8 @@
         "contrast:exito-vs-exit",
         "contrast:confusable",
         "topic:cognate",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -26600,7 +26787,8 @@
       "collections": [
         "pos:adjective",
         "es:solo",
-        "en:alone"
+        "en:alone",
+        "topic:emotion-state"
       ],
       "curriculumRole": "supporting"
     },
@@ -26616,7 +26804,8 @@
         "en:alone",
         "pos:adjective",
         "es:único",
-        "en:only"
+        "en:only",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -26886,7 +27075,8 @@
         "pos:adjective",
         "grammar:comparison",
         "es:cada",
-        "en:more"
+        "en:more",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -27296,7 +27486,8 @@
         "pos:adjective",
         "grammar:comparison",
         "es:malo",
-        "en:bad"
+        "en:bad",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "supporting"
     },
@@ -27315,7 +27506,8 @@
         "grammar:comparison",
         "es:peor",
         "en:worse",
-        "degree:irregular-comparative"
+        "degree:irregular-comparative",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -27334,7 +27526,8 @@
         "grammar:comparison",
         "es:peor",
         "en:worst",
-        "degree:irregular-superlative"
+        "degree:irregular-superlative",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -27352,7 +27545,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:big"
+        "en:big",
+        "topic:size"
       ],
       "curriculumRole": "supporting"
     },
@@ -27389,7 +27583,8 @@
         "grammar:fixed-expression",
         "es:algo",
         "en:big",
-        "gender:invariant"
+        "gender:invariant",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -27765,7 +27960,8 @@
         "pos:adjective",
         "grammar:comprehension",
         "es:claro",
-        "en:clear"
+        "en:clear",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -27849,7 +28045,8 @@
         "en:current",
         "cognate:ente-to-ent",
         "topic:cognate",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -27866,7 +28063,8 @@
         "pos:adjective",
         "en:information",
         "es:actualizado",
-        "en:current"
+        "en:current",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -27885,7 +28083,8 @@
         "news",
         "es:asuntos",
         "en:current",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -27902,7 +28101,8 @@
         "grammar:be",
         "pos:adjective",
         "es:estar",
-        "en:fine"
+        "en:fine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -27952,7 +28152,8 @@
         "pos:adjective",
         "texture",
         "es:fino",
-        "en:fine"
+        "en:fine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -27970,7 +28171,8 @@
         "pos:adjective",
         "capacity",
         "es:estar",
-        "en:full"
+        "en:full",
+        "topic:condition-state"
       ],
       "curriculumRole": "reference"
     },
@@ -27989,7 +28191,8 @@
         "pos:adjective",
         "grammar:fixed-expression",
         "es:ya",
-        "en:full"
+        "en:full",
+        "topic:condition-state"
       ],
       "curriculumRole": "reference"
     },
@@ -28004,7 +28207,8 @@
       "collections": [
         "pos:adjective",
         "es:completo",
-        "en:full"
+        "en:full",
+        "topic:condition-state"
       ],
       "curriculumRole": "reference"
     },
@@ -28020,7 +28224,8 @@
         "pos:adjective",
         "en:quality",
         "es:excelente",
-        "en:great"
+        "en:great",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -28052,7 +28257,8 @@
         "pos:adjective",
         "en:importance",
         "es:gran",
-        "en:great"
+        "en:great",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -28085,7 +28291,8 @@
         "height",
         "en:level",
         "es:alto",
-        "en:high"
+        "en:high",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -28102,7 +28309,8 @@
         "en:price",
         "en:level",
         "es:elevado",
-        "en:high"
+        "en:high",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -28139,7 +28347,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:hard"
+        "en:hard",
+        "topic:difficulty"
       ],
       "curriculumRole": "reference"
     },
@@ -28172,7 +28381,8 @@
         "pos:adjective",
         "physical property",
         "es:duro",
-        "en:hard"
+        "en:hard",
+        "topic:difficulty"
       ],
       "curriculumRole": "reference"
     },
@@ -28188,7 +28398,8 @@
         "pos:adjective",
         "grammar:role",
         "es:antiguo",
-        "en:former"
+        "en:former",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -28221,7 +28432,8 @@
         "grammar:comparison",
         "es:primero",
         "en:former",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -28254,7 +28466,8 @@
         "pos:adjective",
         "death",
         "es:fallecido",
-        "en:late"
+        "en:late",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -28289,7 +28502,8 @@
         "pos:adjective",
         "grammar:reflexive",
         "es:sentir",
-        "en:feel"
+        "en:feel",
+        "topic:emotion-state"
       ],
       "curriculumRole": "reference"
     },
@@ -28374,7 +28588,8 @@
       "collections": [
         "pos:adjective",
         "es:nuevo",
-        "en:new"
+        "en:new",
+        "topic:age"
       ],
       "curriculumRole": "supporting"
     },
@@ -28407,7 +28622,8 @@
         "pos:adjective",
         "replacement",
         "es:otro",
-        "en:new"
+        "en:new",
+        "topic:age"
       ],
       "curriculumRole": "reference"
     },
@@ -28511,7 +28727,8 @@
         "pos:adjective",
         "grammar:age",
         "es:viejo",
-        "en:old"
+        "en:old",
+        "topic:age"
       ],
       "curriculumRole": "supporting"
     },
@@ -28531,7 +28748,8 @@
         "cognate:false-friend",
         "contrast:antiguo-vs-antique",
         "contrast:confusable",
-        "topic:cognate"
+        "topic:cognate",
+        "topic:age"
       ],
       "curriculumRole": "reference"
     },
@@ -28548,7 +28766,8 @@
         "pos:adjective",
         "grammar:role",
         "es:anterior",
-        "en:old"
+        "en:old",
+        "topic:age"
       ],
       "curriculumRole": "reference"
     },
@@ -28688,7 +28907,8 @@
         "pos:adjective",
         "en:possession",
         "es:propio",
-        "en:own"
+        "en:own",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -28760,7 +28980,8 @@
         "en:possession",
         "es:dueño",
         "en:owner",
-        "gender:common"
+        "gender:common",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -28796,7 +29017,8 @@
         "en:possession",
         "es:propiedad",
         "en:ownership",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -28933,7 +29155,8 @@
         "register:formal",
         "pos:adjective",
         "es:permanecer",
-        "en:remain"
+        "en:remain",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -28949,7 +29172,8 @@
         "pos:adjective",
         "grammar:continuation",
         "es:seguir",
-        "en:remain"
+        "en:remain",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -28966,7 +29190,8 @@
         "pos:adjective",
         "grammar:continuation",
         "es:seguir",
-        "en:remain"
+        "en:remain",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -29068,7 +29293,8 @@
         "cognate:transparent",
         "es:actor",
         "en:actor",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:people"
       ],
       "curriculumRole": "reference"
     },
@@ -29088,7 +29314,8 @@
         "cognate:transparent",
         "es:instructor",
         "en:instructor",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:business-work"
       ],
       "curriculumRole": "reference"
     },
@@ -29108,7 +29335,8 @@
         "cognate:transparent",
         "es:director",
         "en:director",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:business-work"
       ],
       "curriculumRole": "reference"
     },
@@ -29128,7 +29356,8 @@
         "cognate:transparent",
         "es:doctor",
         "en:doctor",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:health"
       ],
       "curriculumRole": "reference"
     },
@@ -29148,7 +29377,8 @@
         "topic:cognate",
         "es:profesor",
         "en:professor",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:business-work"
       ],
       "curriculumRole": "reference"
     },
@@ -29168,7 +29398,8 @@
         "cognate:transparent",
         "es:conductor",
         "en:conductor",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:people"
       ],
       "curriculumRole": "reference"
     },
@@ -29188,7 +29419,8 @@
         "cognate:transparent",
         "es:factor",
         "en:factor",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -29207,7 +29439,8 @@
         "cognate:transparent",
         "es:color",
         "en:color",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -29226,7 +29459,8 @@
         "cognate:transparent",
         "es:favor",
         "en:favor",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -29245,7 +29479,8 @@
         "cognate:transparent",
         "es:honor",
         "en:honor",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -29264,7 +29499,8 @@
         "cognate:transparent",
         "es:error",
         "en:error",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -29283,7 +29519,8 @@
         "cognate:transparent",
         "es:motor",
         "en:motor",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:technology"
       ],
       "curriculumRole": "reference"
     },
@@ -30949,7 +31186,8 @@
         "topic:cognate",
         "es:acción",
         "en:action",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -30969,7 +31207,8 @@
         "topic:cognate",
         "es:nación",
         "en:nation",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:government-politics"
       ],
       "curriculumRole": "reference"
     },
@@ -30989,7 +31228,8 @@
         "topic:cognate",
         "es:posición",
         "en:position",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:business-work"
       ],
       "curriculumRole": "reference"
     },
@@ -31009,7 +31249,8 @@
         "es:opinión",
         "en:opinion",
         "cognate:transparent",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31029,7 +31270,8 @@
         "topic:cognate",
         "es:situación",
         "en:situation",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31070,7 +31312,8 @@
         "topic:cognate",
         "es:explicación",
         "en:explanation",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31090,7 +31333,8 @@
         "topic:cognate",
         "es:traducción",
         "en:translation",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31110,7 +31354,8 @@
         "topic:cognate",
         "es:educación",
         "en:education",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:education"
       ],
       "curriculumRole": "reference"
     },
@@ -31130,7 +31375,8 @@
         "topic:cognate",
         "es:comunicación",
         "en:communication",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:media-communication"
       ],
       "curriculumRole": "reference"
     },
@@ -31150,7 +31396,8 @@
         "topic:cognate",
         "es:información",
         "en:information",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31170,7 +31417,8 @@
         "topic:cognate",
         "es:organización",
         "en:organization",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31190,7 +31438,8 @@
         "topic:cognate",
         "es:producción",
         "en:production",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31210,7 +31459,8 @@
         "topic:cognate",
         "es:actitud",
         "en:attitude",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31230,7 +31480,8 @@
         "topic:cognate",
         "es:aptitud",
         "en:aptitude",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31250,7 +31501,8 @@
         "topic:cognate",
         "es:gratitud",
         "en:gratitude",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31270,7 +31522,8 @@
         "topic:cognate",
         "es:multitud",
         "en:multitude",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31290,7 +31543,8 @@
         "topic:cognate",
         "es:longitud",
         "en:longitude",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31310,7 +31564,8 @@
         "topic:cognate",
         "es:latitud",
         "en:latitude",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31330,7 +31585,8 @@
         "topic:cognate",
         "es:altitud",
         "en:altitude",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31350,7 +31606,8 @@
         "morphology:suffix-ive",
         "topic:cognate",
         "es:estar",
-        "en:active"
+        "en:active",
+        "topic:emotion-state"
       ],
       "curriculumRole": "reference"
     },
@@ -31370,7 +31627,8 @@
         "morphology:suffix-ive",
         "topic:cognate",
         "es:ser",
-        "en:passive"
+        "en:passive",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31390,7 +31648,8 @@
         "morphology:suffix-ive",
         "topic:cognate",
         "es:ser",
-        "en:positive"
+        "en:positive",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31410,7 +31669,8 @@
         "morphology:suffix-ive",
         "topic:cognate",
         "es:ser",
-        "en:negative"
+        "en:negative",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31430,7 +31690,8 @@
         "morphology:suffix-ive",
         "topic:cognate",
         "es:ser",
-        "en:decisive"
+        "en:decisive",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31450,7 +31711,8 @@
         "morphology:suffix-ive",
         "topic:cognate",
         "es:ser",
-        "en:effective"
+        "en:effective",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31470,7 +31732,8 @@
         "morphology:suffix-ive",
         "topic:cognate",
         "es:ser",
-        "en:creative"
+        "en:creative",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31490,7 +31753,8 @@
         "morphology:suffix-ive",
         "topic:cognate",
         "es:ser",
-        "en:relative"
+        "en:relative",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31510,7 +31774,8 @@
         "morphology:suffix-ive",
         "topic:cognate",
         "es:ser",
-        "en:competitive"
+        "en:competitive",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31530,7 +31795,8 @@
         "morphology:suffix-ive",
         "topic:cognate",
         "es:ser",
-        "en:attractive"
+        "en:attractive",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31550,7 +31816,8 @@
         "morphology:suffix-ive",
         "topic:cognate",
         "es:ser",
-        "en:aggressive"
+        "en:aggressive",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31570,7 +31837,8 @@
         "morphology:suffix-ive",
         "topic:cognate",
         "es:ser",
-        "en:exclusive"
+        "en:exclusive",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31590,7 +31858,8 @@
         "topic:cognate",
         "es:acto",
         "en:act",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31610,7 +31879,8 @@
         "morphology:suffix-act",
         "topic:cognate",
         "es:ser",
-        "en:exact"
+        "en:exact",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31630,7 +31900,8 @@
         "topic:cognate",
         "es:impacto",
         "en:impact",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31650,7 +31921,8 @@
         "topic:cognate",
         "es:contacto",
         "en:contact",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31670,7 +31942,8 @@
         "es:contrato",
         "en:contract",
         "cognate:transparent",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:business-work"
       ],
       "curriculumRole": "reference"
     },
@@ -31690,7 +31963,8 @@
         "morphology:suffix-act",
         "topic:cognate",
         "es:ser",
-        "en:abstract"
+        "en:abstract",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31710,7 +31984,8 @@
         "morphology:suffix-act",
         "topic:cognate",
         "es:ser",
-        "en:compact"
+        "en:compact",
+        "topic:size"
       ],
       "curriculumRole": "reference"
     },
@@ -31730,7 +32005,8 @@
         "morphology:suffix-act",
         "topic:cognate",
         "es:estar",
-        "en:intact"
+        "en:intact",
+        "topic:condition-state"
       ],
       "curriculumRole": "reference"
     },
@@ -31750,7 +32026,8 @@
         "topic:cognate",
         "es:adicto",
         "en:addict",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:health"
       ],
       "curriculumRole": "reference"
     },
@@ -31770,7 +32047,8 @@
         "topic:cognate",
         "es:conflicto",
         "en:conflict",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31790,7 +32068,8 @@
         "es:distrito",
         "en:district",
         "cognate:transparent",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:places"
       ],
       "curriculumRole": "reference"
     },
@@ -31810,7 +32089,8 @@
         "topic:cognate",
         "es:veredicto",
         "en:verdict",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:crime-law"
       ],
       "curriculumRole": "reference"
     },
@@ -31830,7 +32110,8 @@
         "morphology:suffix-ict",
         "topic:cognate",
         "es:ser",
-        "en:strict"
+        "en:strict",
+        "topic:personality"
       ],
       "curriculumRole": "reference"
     },
@@ -31850,7 +32131,8 @@
         "topic:cognate",
         "es:convicto",
         "en:convict",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:crime-law"
       ],
       "curriculumRole": "reference"
     },
@@ -31870,7 +32152,8 @@
         "morphology:suffix-ous",
         "topic:cognate",
         "es:ser",
-        "en:ambitious"
+        "en:ambitious",
+        "topic:personality"
       ],
       "curriculumRole": "reference"
     },
@@ -31890,7 +32173,8 @@
         "morphology:suffix-ous",
         "topic:cognate",
         "es:ser",
-        "en:curious"
+        "en:curious",
+        "topic:personality"
       ],
       "curriculumRole": "reference"
     },
@@ -31910,7 +32194,8 @@
         "morphology:suffix-ous",
         "topic:cognate",
         "es:ser",
-        "en:delicious"
+        "en:delicious",
+        "topic:food"
       ],
       "curriculumRole": "reference"
     },
@@ -31930,7 +32215,8 @@
         "morphology:suffix-ous",
         "topic:cognate",
         "es:ser",
-        "en:famous"
+        "en:famous",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -31950,7 +32236,8 @@
         "morphology:suffix-ous",
         "topic:cognate",
         "es:ser",
-        "en:mysterious"
+        "en:mysterious",
+        "topic:personality"
       ],
       "curriculumRole": "reference"
     },
@@ -31970,7 +32257,8 @@
         "morphology:suffix-ous",
         "topic:cognate",
         "es:estar",
-        "en:nervous"
+        "en:nervous",
+        "topic:emotion-state"
       ],
       "curriculumRole": "reference"
     },
@@ -31990,7 +32278,8 @@
         "morphology:suffix-ous",
         "topic:cognate",
         "es:ser",
-        "en:generous"
+        "en:generous",
+        "topic:personality"
       ],
       "curriculumRole": "reference"
     },
@@ -32010,7 +32299,8 @@
         "morphology:suffix-ous",
         "topic:cognate",
         "es:ser",
-        "en:religious"
+        "en:religious",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32030,7 +32320,8 @@
         "morphology:suffix-ous",
         "topic:cognate",
         "es:ser",
-        "en:numerous"
+        "en:numerous",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32050,7 +32341,8 @@
         "morphology:suffix-ous",
         "topic:cognate",
         "es:ser",
-        "en:precious"
+        "en:precious",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32069,7 +32361,8 @@
         "topic:cognate",
         "es:análisis",
         "en:analysis",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32088,7 +32381,8 @@
         "topic:cognate",
         "es:crisis",
         "en:crisis",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32107,7 +32401,8 @@
         "topic:cognate",
         "es:tesis",
         "en:thesis",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:education"
       ],
       "curriculumRole": "reference"
     },
@@ -32126,7 +32421,8 @@
         "topic:cognate",
         "es:psicosis",
         "en:psychosis",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:health"
       ],
       "curriculumRole": "reference"
     },
@@ -32145,7 +32441,8 @@
         "topic:cognate",
         "es:síntesis",
         "en:synthesis",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32164,7 +32461,8 @@
         "topic:cognate",
         "es:parálisis",
         "en:paralysis",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:health"
       ],
       "curriculumRole": "reference"
     },
@@ -32184,7 +32482,8 @@
         "topic:cognate",
         "es:arte",
         "en:art",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:art-culture"
       ],
       "curriculumRole": "reference"
     },
@@ -32204,7 +32503,8 @@
         "topic:cognate",
         "es:par",
         "en:part",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32243,7 +32543,8 @@
         "es:confianza",
         "en:confidence",
         "cognate:transparent",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32263,7 +32564,8 @@
         "topic:cognate",
         "es:alianza",
         "en:alliance",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32283,7 +32585,8 @@
         "topic:cognate",
         "es:finanzas",
         "en:finance",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:money-business"
       ],
       "curriculumRole": "reference"
     },
@@ -32303,7 +32606,8 @@
         "topic:cognate",
         "es:venganza",
         "en:vengeance",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32323,7 +32627,8 @@
         "topic:cognate",
         "es:balanza",
         "en:balance",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32343,7 +32648,8 @@
         "topic:cognate",
         "es:danza",
         "en:dance",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:art-culture"
       ],
       "curriculumRole": "reference"
     },
@@ -32363,7 +32669,8 @@
         "topic:cognate",
         "es:semejanza",
         "en:resemblance",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32382,7 +32689,8 @@
         "topic:cognate",
         "es:diferencia",
         "en:difference",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32401,7 +32709,8 @@
         "topic:cognate",
         "es:excelencia",
         "en:excellence",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32420,7 +32729,8 @@
         "topic:cognate",
         "es:inteligencia",
         "en:intelligence",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32439,7 +32749,8 @@
         "topic:cognate",
         "es:paciencia",
         "en:patience",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32458,7 +32769,8 @@
         "topic:cognate",
         "es:ciencia",
         "en:science",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:education"
       ],
       "curriculumRole": "reference"
     },
@@ -32477,7 +32789,8 @@
         "topic:cognate",
         "es:evidencia",
         "en:evidence",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32496,7 +32809,8 @@
         "topic:cognate",
         "es:ausencia",
         "en:absence",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32515,7 +32829,8 @@
         "topic:cognate",
         "es:presencia",
         "en:presence",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32534,7 +32849,8 @@
         "topic:cognate",
         "es:influencia",
         "en:influence",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32553,7 +32869,8 @@
         "topic:cognate",
         "es:consecuencia",
         "en:consequence",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32572,7 +32889,8 @@
         "topic:cognate",
         "es:experiencia",
         "en:experience",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32591,7 +32909,8 @@
         "topic:cognate",
         "es:preferencia",
         "en:preference",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32613,7 +32932,8 @@
         "contrast:confusable",
         "en:expression",
         "es:ser",
-        "en:different"
+        "en:different",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32633,7 +32953,8 @@
         "morphology:suffix-ent",
         "topic:cognate",
         "es:ser",
-        "en:intelligent"
+        "en:intelligent",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32653,7 +32974,8 @@
         "morphology:suffix-ent",
         "topic:cognate",
         "es:estar",
-        "en:present"
+        "en:present",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32673,7 +32995,8 @@
         "topic:cognate",
         "es:paciente",
         "en:patient",
-        "gender:common"
+        "gender:common",
+        "topic:health"
       ],
       "curriculumRole": "reference"
     },
@@ -32693,7 +33016,8 @@
         "topic:cognate",
         "es:cliente",
         "en:client",
-        "gender:common"
+        "gender:common",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32713,7 +33037,8 @@
         "es:estudiante",
         "en:student",
         "cognate:transparent",
-        "gender:common"
+        "gender:common",
+        "topic:education"
       ],
       "curriculumRole": "supporting"
     },
@@ -32733,7 +33058,8 @@
         "morphology:suffix-ent",
         "topic:cognate",
         "es:ser",
-        "en:excellent"
+        "en:excellent",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32753,7 +33079,8 @@
         "morphology:suffix-ent",
         "topic:cognate",
         "es:ser",
-        "en:evident"
+        "en:evident",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32773,7 +33100,8 @@
         "morphology:suffix-ent",
         "topic:cognate",
         "es:ser",
-        "en:permanent"
+        "en:permanent",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32793,7 +33121,8 @@
         "morphology:suffix-ent",
         "topic:cognate",
         "es:ser",
-        "en:urgent"
+        "en:urgent",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32812,7 +33141,8 @@
         "topic:cognate",
         "es:dólar",
         "en:dollar",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:money-business"
       ],
       "curriculumRole": "reference"
     },
@@ -32831,7 +33161,8 @@
         "morphology:suffix-ar",
         "topic:cognate",
         "es:ser",
-        "en:regular"
+        "en:regular",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32850,7 +33181,8 @@
         "morphology:suffix-ar",
         "topic:cognate",
         "es:ser",
-        "en:popular"
+        "en:popular",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32869,7 +33201,8 @@
         "morphology:suffix-ar",
         "topic:cognate",
         "es:ser",
-        "en:similar"
+        "en:similar",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32888,7 +33221,8 @@
         "morphology:suffix-ar",
         "topic:cognate",
         "es:ser",
-        "en:spectacular"
+        "en:spectacular",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32907,7 +33241,8 @@
         "morphology:suffix-ar",
         "topic:cognate",
         "es:ser",
-        "en:circular"
+        "en:circular",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32926,7 +33261,8 @@
         "morphology:suffix-ar",
         "topic:cognate",
         "es:ser",
-        "en:particular"
+        "en:particular",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32945,7 +33281,8 @@
         "topic:cognate",
         "grammar:singular",
         "en:singular",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:education"
       ],
       "curriculumRole": "reference"
     },
@@ -32964,7 +33301,8 @@
         "topic:cognate",
         "es:energía",
         "en:energy",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -32983,7 +33321,8 @@
         "topic:cognate",
         "es:biología",
         "en:biology",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:education"
       ],
       "curriculumRole": "reference"
     },
@@ -33002,7 +33341,8 @@
         "topic:cognate",
         "es:psicología",
         "en:psychology",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:education"
       ],
       "curriculumRole": "reference"
     },
@@ -33021,7 +33361,8 @@
         "topic:cognate",
         "es:tecnología",
         "en:technology",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:technology"
       ],
       "curriculumRole": "reference"
     },
@@ -33040,7 +33381,8 @@
         "topic:cognate",
         "es:estrategia",
         "en:strategy",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -33059,7 +33401,8 @@
         "topic:cognate",
         "es:victoria",
         "en:victory",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -33120,7 +33463,8 @@
         "topic:cognate",
         "es:geometría",
         "en:geometry",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:education"
       ],
       "curriculumRole": "reference"
     },
@@ -33139,7 +33483,8 @@
         "topic:cognate",
         "es:anatomía",
         "en:anatomy",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:education"
       ],
       "curriculumRole": "reference"
     },
@@ -33158,7 +33503,8 @@
         "topic:cognate",
         "es:economía",
         "en:economy",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:money-business"
       ],
       "curriculumRole": "reference"
     },
@@ -33177,7 +33523,8 @@
         "topic:cognate",
         "es:democracia",
         "en:democracy",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:government-politics"
       ],
       "curriculumRole": "reference"
     },
@@ -33196,7 +33543,8 @@
         "topic:cognate",
         "es:historia",
         "en:history",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -33215,7 +33563,8 @@
         "topic:cognate",
         "es:memoria",
         "en:memory",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -33233,7 +33582,8 @@
         "cognate:es-to-s",
         "topic:cognate",
         "es:ser",
-        "en:special"
+        "en:special",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -33251,7 +33601,8 @@
         "topic:cognate",
         "es:estructura",
         "en:structure",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -33269,7 +33620,8 @@
         "topic:cognate",
         "es:estrés",
         "en:stress",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -33287,7 +33639,8 @@
         "topic:cognate",
         "es:estándar",
         "en:standard",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -33305,7 +33658,8 @@
         "cognate:es-to-s",
         "topic:cognate",
         "es:estar",
-        "en:stable"
+        "en:stable",
+        "topic:emotion-state"
       ],
       "curriculumRole": "reference"
     },
@@ -33323,7 +33677,8 @@
         "topic:cognate",
         "es:espacio",
         "en:space",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -33341,7 +33696,8 @@
         "topic:cognate",
         "es:evento",
         "en:event",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:event"
       ],
       "curriculumRole": "reference"
     },
@@ -33359,7 +33715,8 @@
         "topic:cognate",
         "es:argumento",
         "en:argument",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -33399,7 +33756,8 @@
         "topic:cognate",
         "es:departamento",
         "en:department",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:business-work"
       ],
       "curriculumRole": "reference"
     },
@@ -33417,7 +33775,8 @@
         "topic:cognate",
         "es:documento",
         "en:document",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -33435,7 +33794,8 @@
         "topic:cognate",
         "es:experimento",
         "en:experiment",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -33453,7 +33813,8 @@
         "topic:cognate",
         "es:momento",
         "en:moment",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -33471,7 +33832,8 @@
         "topic:cognate",
         "es:talento",
         "en:talent",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -33489,7 +33851,8 @@
         "topic:cognate",
         "es:instrumento",
         "en:instrument",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:technology"
       ],
       "curriculumRole": "reference"
     },
@@ -33507,7 +33870,8 @@
         "topic:cognate",
         "es:segmento",
         "en:segment",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -33525,7 +33889,8 @@
         "topic:cognate",
         "es:elemento",
         "en:element",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -33543,7 +33908,8 @@
         "topic:cognate",
         "es:movimiento",
         "en:movement",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -33561,7 +33927,8 @@
         "topic:cognate",
         "es:tratamiento",
         "en:treatment",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -33579,7 +33946,8 @@
         "topic:cognate",
         "es:foto",
         "en:photo",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:media-communication"
       ],
       "curriculumRole": "reference"
     },
@@ -33597,7 +33965,8 @@
         "topic:cognate",
         "es:fotografía",
         "en:photography",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:media-communication"
       ],
       "curriculumRole": "reference"
     },
@@ -33615,7 +33984,8 @@
         "topic:cognate",
         "es:farmacia",
         "en:pharmacy",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:food"
       ],
       "curriculumRole": "reference"
     },
@@ -33633,7 +34003,8 @@
         "topic:cognate",
         "es:filosofía",
         "en:philosophy",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:education"
       ],
       "curriculumRole": "reference"
     },
@@ -33651,7 +34022,8 @@
         "topic:cognate",
         "es:teléfono",
         "en:phone",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:technology"
       ],
       "curriculumRole": "supporting"
     },
@@ -33669,7 +34041,8 @@
         "topic:cognate",
         "es:número",
         "en:phone",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:technology"
       ],
       "curriculumRole": "reference"
     },
@@ -33687,7 +34060,8 @@
         "topic:cognate",
         "es:fenómeno",
         "en:phenomenon",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -33705,7 +34079,8 @@
         "topic:cognate",
         "es:fase",
         "en:phase",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -33723,7 +34098,8 @@
         "topic:cognate",
         "es:frase",
         "en:phrase",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -33741,7 +34117,8 @@
         "topic:cognate",
         "es:física",
         "en:physics",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:education"
       ],
       "curriculumRole": "reference"
     },
@@ -33759,7 +34136,8 @@
         "topic:cognate",
         "es:alfabeto",
         "en:alphabet",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:education"
       ],
       "curriculumRole": "reference"
     },
@@ -33777,7 +34155,8 @@
         "topic:cognate",
         "es:elefante",
         "en:elephant",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:nature-animals"
       ],
       "curriculumRole": "reference"
     },
@@ -33795,7 +34174,8 @@
         "topic:cognate",
         "es:trofeo",
         "en:trophy",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:sports-recreation"
       ],
       "curriculumRole": "reference"
     },
@@ -33813,7 +34193,8 @@
         "topic:cognate",
         "es:biografía",
         "en:biography",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:art-culture"
       ],
       "curriculumRole": "reference"
     },
@@ -33834,7 +34215,8 @@
         "topic:cognate",
         "es:futuro",
         "en:future",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "supporting"
     },
@@ -33855,7 +34237,8 @@
         "morphology:suffix-ure",
         "topic:cognate",
         "es:ser",
-        "en:pure"
+        "en:pure",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -33876,7 +34259,8 @@
         "morphology:suffix-ure",
         "topic:cognate",
         "es:ser",
-        "en:impure"
+        "en:impure",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -33897,7 +34281,8 @@
         "morphology:suffix-ure",
         "topic:cognate",
         "es:ser",
-        "en:mature"
+        "en:mature",
+        "topic:age"
       ],
       "curriculumRole": "reference"
     },
@@ -33918,7 +34303,8 @@
         "morphology:suffix-ure",
         "topic:cognate",
         "es:ser",
-        "en:immature"
+        "en:immature",
+        "topic:age"
       ],
       "curriculumRole": "reference"
     },
@@ -33939,7 +34325,8 @@
         "topic:cognate",
         "es:literatura",
         "en:literature",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:education"
       ],
       "curriculumRole": "reference"
     },
@@ -33960,7 +34347,8 @@
         "topic:cognate",
         "es:cultura",
         "en:culture",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -33981,7 +34369,8 @@
         "topic:cognate",
         "es:agricultura",
         "en:agriculture",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:business-work"
       ],
       "curriculumRole": "reference"
     },
@@ -34002,7 +34391,8 @@
         "topic:cognate",
         "es:arquitectura",
         "en:architecture",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:art-culture"
       ],
       "curriculumRole": "reference"
     },
@@ -34023,7 +34413,8 @@
         "topic:cognate",
         "es:aventura",
         "en:adventure",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -34044,7 +34435,8 @@
         "topic:cognate",
         "es:captura",
         "en:capture",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -34063,7 +34455,8 @@
         "topic:cognate",
         "es:hotel",
         "en:hotel",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:places"
       ],
       "curriculumRole": "reference"
     },
@@ -34082,7 +34475,8 @@
         "topic:cognate",
         "es:ángel",
         "en:angel",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -34101,7 +34495,8 @@
         "morphology:suffix-el",
         "topic:cognate",
         "es:ser",
-        "en:cruel"
+        "en:cruel",
+        "topic:personality"
       ],
       "curriculumRole": "reference"
     },
@@ -34120,7 +34515,8 @@
         "topic:cognate",
         "es:túnel",
         "en:tunnel",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -34139,7 +34535,8 @@
         "topic:cognate",
         "es:coronel",
         "en:colonel",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:government-politics"
       ],
       "curriculumRole": "reference"
     },
@@ -34158,7 +34555,8 @@
         "topic:cognate",
         "es:nivel",
         "en:level",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -34177,7 +34575,8 @@
         "topic:cognate",
         "es:panel",
         "en:panel",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -34198,7 +34597,8 @@
         "morphology:suffix-ian",
         "topic:cognate",
         "es:ser",
-        "en:human"
+        "en:human",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -34219,7 +34619,8 @@
         "morphology:suffix-ian",
         "topic:cognate",
         "es:ser",
-        "en:urban"
+        "en:urban",
+        "topic:nationality"
       ],
       "curriculumRole": "reference"
     },
@@ -34240,7 +34641,8 @@
         "morphology:suffix-ian",
         "topic:cognate",
         "es:ser",
-        "en:republican"
+        "en:republican",
+        "topic:government-politics"
       ],
       "curriculumRole": "reference"
     },
@@ -34261,7 +34663,8 @@
         "morphology:suffix-ian",
         "topic:cognate",
         "es:ser",
-        "en:african"
+        "en:african",
+        "topic:nationality"
       ],
       "curriculumRole": "reference"
     },
@@ -34282,7 +34685,8 @@
         "morphology:suffix-ian",
         "topic:cognate",
         "es:ser",
-        "en:american"
+        "en:american",
+        "topic:nationality"
       ],
       "curriculumRole": "reference"
     },
@@ -34303,7 +34707,8 @@
         "morphology:suffix-ian",
         "topic:cognate",
         "es:ser",
-        "en:colombian"
+        "en:colombian",
+        "topic:nationality"
       ],
       "curriculumRole": "reference"
     },
@@ -34324,7 +34729,8 @@
         "morphology:suffix-ian",
         "topic:cognate",
         "es:ser",
-        "en:italian"
+        "en:italian",
+        "topic:nationality"
       ],
       "curriculumRole": "reference"
     },
@@ -34345,7 +34751,8 @@
         "morphology:suffix-ian",
         "topic:cognate",
         "es:ser",
-        "en:christian"
+        "en:christian",
+        "topic:nationality"
       ],
       "curriculumRole": "reference"
     },
@@ -34364,7 +34771,8 @@
         "topic:cognate",
         "es:importancia",
         "en:importance",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -34383,7 +34791,8 @@
         "topic:cognate",
         "es:distancia",
         "en:distance",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -34402,7 +34811,8 @@
         "topic:cognate",
         "es:instancia",
         "en:instance",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -34421,7 +34831,8 @@
         "topic:cognate",
         "es:abundancia",
         "en:abundance",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -34440,7 +34851,8 @@
         "topic:cognate",
         "es:tolerancia",
         "en:tolerance",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -34459,7 +34871,8 @@
         "topic:cognate",
         "es:elegancia",
         "en:elegance",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -34478,7 +34891,8 @@
         "topic:cognate",
         "es:ignorancia",
         "en:ignorance",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -34497,7 +34911,8 @@
         "topic:cognate",
         "es:vigilancia",
         "en:vigilance",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -34516,7 +34931,8 @@
         "topic:cognate",
         "es:circunstancia",
         "en:circumstance",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -34535,7 +34951,8 @@
         "topic:cognate",
         "es:relevancia",
         "en:relevance",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -34555,7 +34972,8 @@
         "topic:cognate",
         "pos:adjective",
         "es:ser",
-        "en:important"
+        "en:important",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -34575,7 +34993,8 @@
         "topic:cognate",
         "es:restaurante",
         "en:restaurant",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:food"
       ],
       "curriculumRole": "reference"
     },
@@ -34595,7 +35014,8 @@
         "morphology:suffix-ant",
         "topic:cognate",
         "es:ser",
-        "en:distant"
+        "en:distant",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -34615,7 +35035,8 @@
         "morphology:suffix-ant",
         "topic:cognate",
         "es:ser",
-        "en:relevant"
+        "en:relevant",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -34635,7 +35056,8 @@
         "morphology:suffix-ant",
         "topic:cognate",
         "es:ser",
-        "en:arrogant"
+        "en:arrogant",
+        "topic:personality"
       ],
       "curriculumRole": "reference"
     },
@@ -34655,7 +35077,8 @@
         "morphology:suffix-ant",
         "topic:cognate",
         "es:ser",
-        "en:ignorant"
+        "en:ignorant",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -34675,7 +35098,8 @@
         "morphology:suffix-ant",
         "topic:cognate",
         "es:ser",
-        "en:abundant"
+        "en:abundant",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -34695,7 +35119,8 @@
         "morphology:suffix-ant",
         "topic:cognate",
         "es:ser",
-        "en:elegant"
+        "en:elegant",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -34715,7 +35140,8 @@
         "morphology:suffix-ant",
         "topic:cognate",
         "es:ser",
-        "en:tolerant"
+        "en:tolerant",
+        "topic:personality"
       ],
       "curriculumRole": "reference"
     },
@@ -34735,7 +35161,8 @@
         "morphology:suffix-ant",
         "topic:cognate",
         "es:ser",
-        "en:constant"
+        "en:constant",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -34755,7 +35182,8 @@
         "morphology:suffix-ant",
         "topic:cognate",
         "es:ser",
-        "en:dominant"
+        "en:dominant",
+        "topic:personality"
       ],
       "curriculumRole": "reference"
     },
@@ -34773,7 +35201,8 @@
         "topic:cognate",
         "es:lista",
         "en:list",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -34791,7 +35220,8 @@
         "topic:cognate",
         "es:turista",
         "en:tourist",
-        "gender:common"
+        "gender:common",
+        "topic:sports-recreation"
       ],
       "curriculumRole": "reference"
     },
@@ -34809,7 +35239,8 @@
         "topic:cognate",
         "es:artista",
         "en:artist",
-        "gender:common"
+        "gender:common",
+        "topic:art-culture"
       ],
       "curriculumRole": "reference"
     },
@@ -34827,7 +35258,8 @@
         "topic:cognate",
         "es:dentista",
         "en:dentist",
-        "gender:common"
+        "gender:common",
+        "topic:people"
       ],
       "curriculumRole": "reference"
     },
@@ -34845,7 +35277,8 @@
         "topic:cognate",
         "es:optimista",
         "en:optimist",
-        "gender:common"
+        "gender:common",
+        "topic:personality"
       ],
       "curriculumRole": "reference"
     },
@@ -34863,7 +35296,8 @@
         "topic:cognate",
         "es:pesimista",
         "en:pessimist",
-        "gender:common"
+        "gender:common",
+        "topic:personality"
       ],
       "curriculumRole": "reference"
     },
@@ -34881,7 +35315,8 @@
         "topic:cognate",
         "es:realista",
         "en:realist",
-        "gender:common"
+        "gender:common",
+        "topic:personality"
       ],
       "curriculumRole": "reference"
     },
@@ -34899,7 +35334,8 @@
         "topic:cognate",
         "es:especialista",
         "en:specialist",
-        "gender:common"
+        "gender:common",
+        "topic:people"
       ],
       "curriculumRole": "reference"
     },
@@ -34917,7 +35353,8 @@
         "topic:cognate",
         "es:capitalista",
         "en:capitalist",
-        "gender:common"
+        "gender:common",
+        "topic:government-politics"
       ],
       "curriculumRole": "reference"
     },
@@ -34935,7 +35372,8 @@
         "topic:cognate",
         "es:comunista",
         "en:communist",
-        "gender:common"
+        "gender:common",
+        "topic:government-politics"
       ],
       "curriculumRole": "reference"
     },
@@ -34953,7 +35391,8 @@
         "topic:cognate",
         "es:ciclista",
         "en:cyclist",
-        "gender:common"
+        "gender:common",
+        "topic:sports-recreation"
       ],
       "curriculumRole": "reference"
     },
@@ -34971,7 +35410,8 @@
         "topic:cognate",
         "es:violinista",
         "en:violinist",
-        "gender:common"
+        "gender:common",
+        "topic:art-culture"
       ],
       "curriculumRole": "reference"
     },
@@ -34990,7 +35430,8 @@
         "morphology:suffix-ical",
         "topic:cognate",
         "es:ser",
-        "en:physical"
+        "en:physical",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35009,7 +35450,8 @@
         "morphology:suffix-ical",
         "topic:cognate",
         "es:ser",
-        "en:philosophical"
+        "en:philosophical",
+        "topic:education"
       ],
       "curriculumRole": "reference"
     },
@@ -35028,7 +35470,8 @@
         "morphology:suffix-ical",
         "topic:cognate",
         "es:ser",
-        "en:astronomical"
+        "en:astronomical",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35047,7 +35490,8 @@
         "topic:cognate",
         "es:trópico",
         "en:tropic",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35066,7 +35510,8 @@
         "morphology:suffix-ical",
         "topic:cognate",
         "es:ser",
-        "en:tropical"
+        "en:tropical",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35085,7 +35530,8 @@
         "morphology:suffix-ical",
         "topic:cognate",
         "es:ser",
-        "en:logical"
+        "en:logical",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35104,7 +35550,8 @@
         "morphology:suffix-ical",
         "topic:cognate",
         "es:ser",
-        "en:practical"
+        "en:practical",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35124,7 +35571,8 @@
         "topic:cognate",
         "es:mensaje",
         "en:message",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:communication-request"
       ],
       "curriculumRole": "reference"
     },
@@ -35144,7 +35592,8 @@
         "topic:cognate",
         "es:garaje",
         "en:garage",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:places"
       ],
       "curriculumRole": "reference"
     },
@@ -35164,7 +35613,8 @@
         "topic:cognate",
         "es:porcentaje",
         "en:percentage",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35184,7 +35634,8 @@
         "topic:cognate",
         "es:lenguaje",
         "en:language",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:education"
       ],
       "curriculumRole": "reference"
     },
@@ -35204,7 +35655,8 @@
         "topic:cognate",
         "es:imagen",
         "en:image",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35224,7 +35676,8 @@
         "morphology:suffix-ile",
         "topic:cognate",
         "es:ser",
-        "en:mobile"
+        "en:mobile",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35244,7 +35697,8 @@
         "topic:cognate",
         "es:automóvil",
         "en:automobile",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:transportation"
       ],
       "curriculumRole": "reference"
     },
@@ -35264,7 +35718,8 @@
         "morphology:suffix-ile",
         "topic:cognate",
         "es:ser",
-        "en:agile"
+        "en:agile",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35284,7 +35739,8 @@
         "morphology:suffix-ile",
         "topic:cognate",
         "es:ser",
-        "en:fragile"
+        "en:fragile",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35304,7 +35760,8 @@
         "morphology:suffix-ile",
         "topic:cognate",
         "es:ser",
-        "en:hostile"
+        "en:hostile",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35324,7 +35781,8 @@
         "morphology:suffix-ile",
         "topic:cognate",
         "es:ser",
-        "en:docile"
+        "en:docile",
+        "topic:personality"
       ],
       "curriculumRole": "reference"
     },
@@ -35344,7 +35802,8 @@
         "morphology:suffix-ile",
         "topic:cognate",
         "es:ser",
-        "en:fertile"
+        "en:fertile",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35364,7 +35823,8 @@
         "morphology:suffix-ile",
         "topic:cognate",
         "es:ser",
-        "en:sterile"
+        "en:sterile",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35384,7 +35844,8 @@
         "morphology:suffix-ile",
         "topic:cognate",
         "es:ser",
-        "en:versatile"
+        "en:versatile",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35404,7 +35865,8 @@
         "morphology:suffix-ile",
         "topic:cognate",
         "es:ser",
-        "en:volatile"
+        "en:volatile",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35424,7 +35886,8 @@
         "morphology:suffix-ary",
         "topic:cognate",
         "es:ser",
-        "en:ordinary"
+        "en:ordinary",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35444,7 +35907,8 @@
         "morphology:suffix-ary",
         "topic:cognate",
         "es:ser",
-        "en:primary"
+        "en:primary",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35464,7 +35928,8 @@
         "topic:cognate",
         "es:salario",
         "en:salary",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:money-business"
       ],
       "curriculumRole": "reference"
     },
@@ -35484,7 +35949,8 @@
         "topic:cognate",
         "es:vocabulario",
         "en:vocabulary",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35504,7 +35970,8 @@
         "topic:cognate",
         "es:diccionario",
         "en:dictionary",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:education"
       ],
       "curriculumRole": "reference"
     },
@@ -35524,7 +35991,8 @@
         "topic:cognate",
         "es:ser",
         "en:military",
-        "cognate:transparent"
+        "cognate:transparent",
+        "topic:government-politics"
       ],
       "curriculumRole": "reference"
     },
@@ -35545,7 +36013,8 @@
         "es:calendario",
         "en:calendar",
         "cognate:transparent",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:calendar"
       ],
       "curriculumRole": "reference"
     },
@@ -35565,7 +36034,8 @@
         "morphology:suffix-ary",
         "topic:cognate",
         "es:ser",
-        "en:secondary"
+        "en:secondary",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35585,7 +36055,8 @@
         "morphology:suffix-ary",
         "topic:cognate",
         "es:ser",
-        "en:voluntary"
+        "en:voluntary",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35605,7 +36076,8 @@
         "morphology:suffix-ary",
         "topic:cognate",
         "es:ser",
-        "en:imaginary"
+        "en:imaginary",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35625,7 +36097,8 @@
         "topic:cognate",
         "es:contrario",
         "en:contrary",
-        "gender:neuter"
+        "gender:neuter",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35644,7 +36117,8 @@
         "morphology:suffix-al",
         "topic:cognate",
         "es:ser",
-        "en:normal"
+        "en:normal",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35663,7 +36137,8 @@
         "topic:cognate",
         "es:hospital",
         "en:hospital",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:health"
       ],
       "curriculumRole": "reference"
     },
@@ -35682,7 +36157,8 @@
         "morphology:suffix-al",
         "topic:cognate",
         "es:ser",
-        "en:total"
+        "en:total",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35701,7 +36177,8 @@
         "morphology:suffix-al",
         "topic:cognate",
         "es:ser",
-        "en:usual"
+        "en:usual",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35720,7 +36197,8 @@
         "morphology:suffix-al",
         "topic:cognate",
         "es:ser",
-        "en:local"
+        "en:local",
+        "topic:nationality"
       ],
       "curriculumRole": "reference"
     },
@@ -35739,7 +36217,8 @@
         "morphology:suffix-al",
         "topic:cognate",
         "es:ser",
-        "en:national"
+        "en:national",
+        "topic:government-politics"
       ],
       "curriculumRole": "reference"
     },
@@ -35758,7 +36237,8 @@
         "morphology:suffix-al",
         "topic:cognate",
         "es:ser",
-        "en:international"
+        "en:international",
+        "topic:nationality"
       ],
       "curriculumRole": "reference"
     },
@@ -35777,7 +36257,8 @@
         "morphology:suffix-al",
         "topic:cognate",
         "es:ser",
-        "en:cultural"
+        "en:cultural",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35796,7 +36277,8 @@
         "morphology:suffix-al",
         "topic:cognate",
         "es:ser",
-        "en:central"
+        "en:central",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35815,7 +36297,8 @@
         "morphology:suffix-al",
         "topic:cognate",
         "es:ser",
-        "en:global"
+        "en:global",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35834,7 +36317,8 @@
         "morphology:suffix-al",
         "topic:cognate",
         "es:ser",
-        "en:original"
+        "en:original",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35853,7 +36337,8 @@
         "morphology:suffix-al",
         "topic:cognate",
         "es:ser",
-        "en:personal"
+        "en:personal",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35872,7 +36357,8 @@
         "morphology:suffix-al",
         "topic:cognate",
         "es:ser",
-        "en:professional"
+        "en:professional",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35916,7 +36402,8 @@
         "topic:cognate",
         "es:tanque",
         "en:tank",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:government-politics"
       ],
       "curriculumRole": "reference"
     },
@@ -35936,7 +36423,8 @@
         "topic:cognate",
         "es:bloque",
         "en:block",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35956,7 +36444,8 @@
         "topic:cognate",
         "es:cheque",
         "en:check",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:money-business"
       ],
       "curriculumRole": "reference"
     },
@@ -35976,7 +36465,8 @@
         "topic:cognate",
         "es:ataque",
         "en:attack",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -35996,7 +36486,8 @@
         "morphology:suffix-ect",
         "topic:cognate",
         "es:ser",
-        "en:perfect"
+        "en:perfect",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36016,7 +36507,8 @@
         "topic:cognate",
         "pos:adjective",
         "es:ser",
-        "en:correct"
+        "en:correct",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36036,7 +36528,8 @@
         "morphology:suffix-ect",
         "topic:cognate",
         "es:ser",
-        "en:direct"
+        "en:direct",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36056,7 +36549,8 @@
         "es:objeto",
         "en:object",
         "cognate:transparent",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36076,7 +36570,8 @@
         "es:sujeto",
         "en:subject",
         "cognate:transparent",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36096,7 +36591,8 @@
         "topic:cognate",
         "es:proyecto",
         "en:project",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:business-work"
       ],
       "curriculumRole": "reference"
     },
@@ -36116,7 +36612,8 @@
         "topic:cognate",
         "es:efecto",
         "en:effect",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36136,7 +36633,8 @@
         "topic:cognate",
         "es:defecto",
         "en:defect",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36156,7 +36654,8 @@
         "topic:cognate",
         "es:aspecto",
         "en:aspect",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36176,7 +36675,8 @@
         "topic:cognate",
         "es:insecto",
         "en:insect",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:nature-animals"
       ],
       "curriculumRole": "reference"
     },
@@ -36196,7 +36696,8 @@
         "topic:cognate",
         "es:dialecto",
         "en:dialect",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36216,7 +36717,8 @@
         "topic:cognate",
         "es:arquitecto",
         "en:architect",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:people"
       ],
       "curriculumRole": "reference"
     },
@@ -36237,7 +36739,8 @@
         "topic:cognate",
         "es:posibilidad",
         "en:possibility",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36258,7 +36761,8 @@
         "topic:cognate",
         "es:probabilidad",
         "en:probability",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36279,7 +36783,8 @@
         "topic:cognate",
         "es:universidad",
         "en:university",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:education"
       ],
       "curriculumRole": "reference"
     },
@@ -36300,7 +36805,8 @@
         "topic:cognate",
         "es:comunidad",
         "en:community",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36343,7 +36849,8 @@
         "topic:cognate",
         "es:sociedad",
         "en:society",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36364,7 +36871,8 @@
         "topic:cognate",
         "es:humanidad",
         "en:humanity",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36387,7 +36895,8 @@
         "en:expression",
         "es:disponibilidad",
         "en:availability",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36408,7 +36917,8 @@
         "topic:cognate",
         "es:sensibilidad",
         "en:sensitivity",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36429,7 +36939,8 @@
         "topic:cognate",
         "es:actividad",
         "en:activity",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36450,7 +36961,8 @@
         "topic:cognate",
         "es:identidad",
         "en:identity",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36471,7 +36983,8 @@
         "topic:cognate",
         "es:diversidad",
         "en:diversity",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36492,7 +37005,8 @@
         "topic:cognate",
         "es:seguridad",
         "en:security",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36513,7 +37027,8 @@
         "topic:cognate",
         "es:prioridad",
         "en:priority",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36534,7 +37049,8 @@
         "topic:cognate",
         "es:calidad",
         "en:quality",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36553,7 +37069,8 @@
         "morphology:suffix-ible",
         "topic:cognate",
         "es:ser",
-        "en:possible"
+        "en:possible",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36572,7 +37089,8 @@
         "morphology:suffix-ible",
         "topic:cognate",
         "es:ser",
-        "en:impossible"
+        "en:impossible",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36591,7 +37109,8 @@
         "morphology:suffix-ible",
         "topic:cognate",
         "es:ser",
-        "en:flexible"
+        "en:flexible",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36610,7 +37129,8 @@
         "morphology:suffix-ible",
         "topic:cognate",
         "es:ser",
-        "en:inflexible"
+        "en:inflexible",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36629,7 +37149,8 @@
         "morphology:suffix-ible",
         "topic:cognate",
         "es:ser",
-        "en:terrible"
+        "en:terrible",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36648,7 +37169,8 @@
         "morphology:suffix-ible",
         "topic:cognate",
         "es:ser",
-        "en:horrible"
+        "en:horrible",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36667,7 +37189,8 @@
         "morphology:suffix-ible",
         "topic:cognate",
         "es:ser",
-        "en:compatible"
+        "en:compatible",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36686,7 +37209,8 @@
         "topic:cognate",
         "es:ser",
         "en:responsible",
-        "cognate:transparent"
+        "cognate:transparent",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36705,7 +37229,8 @@
         "morphology:suffix-able",
         "topic:cognate",
         "es:ser",
-        "en:probable"
+        "en:probable",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36724,7 +37249,8 @@
         "morphology:suffix-able",
         "topic:cognate",
         "es:ser",
-        "en:improbable"
+        "en:improbable",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36743,7 +37269,8 @@
         "morphology:suffix-able",
         "topic:cognate",
         "es:ser",
-        "en:reasonable"
+        "en:reasonable",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36762,7 +37289,8 @@
         "morphology:suffix-able",
         "topic:cognate",
         "es:ser",
-        "en:acceptable"
+        "en:acceptable",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36783,7 +37311,8 @@
         "en:sensitive",
         "cognate:false-friend",
         "contrast:sensible-vs-sensible",
-        "contrast:confusable"
+        "contrast:confusable",
+        "topic:personality"
       ],
       "curriculumRole": "reference"
     },
@@ -36802,7 +37331,8 @@
         "morphology:suffix-able",
         "topic:cognate",
         "es:ser",
-        "en:admirable"
+        "en:admirable",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36821,7 +37351,8 @@
         "morphology:suffix-able",
         "topic:cognate",
         "es:ser",
-        "en:favorable"
+        "en:favorable",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36840,7 +37371,8 @@
         "morphology:suffix-able",
         "topic:cognate",
         "es:ser",
-        "en:considerable"
+        "en:considerable",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36859,7 +37391,8 @@
         "morphology:suffix-able",
         "topic:cognate",
         "es:ser",
-        "en:inevitable"
+        "en:inevitable",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36878,7 +37411,8 @@
         "topic:cognate",
         "es:problema",
         "en:problem",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "supporting"
     },
@@ -36897,7 +37431,8 @@
         "topic:cognate",
         "es:sistema",
         "en:system",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36916,7 +37451,8 @@
         "topic:cognate",
         "es:poema",
         "en:poem",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:art-culture"
       ],
       "curriculumRole": "reference"
     },
@@ -36935,7 +37471,8 @@
         "topic:cognate",
         "es:teorema",
         "en:theorem",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:education"
       ],
       "curriculumRole": "reference"
     },
@@ -36952,7 +37489,8 @@
         "grammar:ser-adjective",
         "topic:cognate",
         "es:ser",
-        "en:innocent"
+        "en:innocent",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -36969,7 +37507,8 @@
         "grammar:ser-adjective",
         "topic:cognate",
         "es:ser",
-        "en:illegal"
+        "en:illegal",
+        "topic:crime-law"
       ],
       "curriculumRole": "reference"
     },
@@ -36986,7 +37525,8 @@
         "topic:cognate",
         "es:inmigrante",
         "en:immigrant",
-        "gender:common"
+        "gender:common",
+        "topic:people"
       ],
       "curriculumRole": "reference"
     },
@@ -37005,7 +37545,8 @@
         "topic:cognate",
         "es:programa",
         "en:program",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:business-work"
       ],
       "curriculumRole": "reference"
     },
@@ -37024,7 +37565,8 @@
         "topic:cognate",
         "es:diagrama",
         "en:diagram",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37043,7 +37585,8 @@
         "topic:cognate",
         "es:anagrama",
         "en:anagram",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37062,7 +37605,8 @@
         "topic:cognate",
         "es:telegrama",
         "en:telegram",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:media-communication"
       ],
       "curriculumRole": "reference"
     },
@@ -37081,7 +37625,8 @@
         "topic:cognate",
         "es:holograma",
         "en:hologram",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:technology"
       ],
       "curriculumRole": "reference"
     },
@@ -37101,7 +37646,8 @@
         "morphology:suffix-id",
         "topic:cognate",
         "es:ser",
-        "en:solid"
+        "en:solid",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37121,7 +37667,8 @@
         "topic:cognate",
         "es:líquido",
         "en:liquid",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37141,7 +37688,8 @@
         "topic:cognate",
         "es:fluido",
         "en:fluid",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37161,7 +37709,8 @@
         "morphology:suffix-id",
         "topic:cognate",
         "es:ser",
-        "en:valid"
+        "en:valid",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37181,7 +37730,8 @@
         "morphology:suffix-id",
         "topic:cognate",
         "es:ser",
-        "en:vivid"
+        "en:vivid",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37201,7 +37751,8 @@
         "morphology:suffix-id",
         "topic:cognate",
         "es:ser",
-        "en:stupid"
+        "en:stupid",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37221,7 +37772,8 @@
         "morphology:suffix-id",
         "topic:cognate",
         "es:estar",
-        "en:rigid"
+        "en:rigid",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37241,7 +37793,8 @@
         "morphology:suffix-id",
         "topic:cognate",
         "es:ser",
-        "en:timid"
+        "en:timid",
+        "topic:personality"
       ],
       "curriculumRole": "reference"
     },
@@ -37261,7 +37814,8 @@
         "morphology:suffix-id",
         "topic:cognate",
         "es:ser",
-        "en:rapid"
+        "en:rapid",
+        "topic:speed"
       ],
       "curriculumRole": "reference"
     },
@@ -37281,7 +37835,8 @@
         "morphology:suffix-id",
         "topic:cognate",
         "es:ser",
-        "en:splendid"
+        "en:splendid",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37301,7 +37856,8 @@
         "morphology:suffix-id",
         "topic:cognate",
         "es:ser",
-        "en:morbid"
+        "en:morbid",
+        "topic:personality"
       ],
       "curriculumRole": "reference"
     },
@@ -37320,7 +37876,8 @@
         "topic:cognate",
         "es:televisión",
         "en:television",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:media-communication"
       ],
       "curriculumRole": "reference"
     },
@@ -37339,7 +37896,8 @@
         "topic:cognate",
         "es:versión",
         "en:version",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37358,7 +37916,8 @@
         "topic:cognate",
         "es:profesión",
         "en:profession",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:business-work"
       ],
       "curriculumRole": "reference"
     },
@@ -37377,7 +37936,8 @@
         "topic:cognate",
         "es:expresión",
         "en:expression",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37396,7 +37956,8 @@
         "topic:cognate",
         "es:discusión",
         "en:discussion",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37415,7 +37976,8 @@
         "topic:cognate",
         "es:confusión",
         "en:confusion",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37434,7 +37996,8 @@
         "topic:cognate",
         "es:decisión",
         "en:decision",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37453,7 +38016,8 @@
         "topic:cognate",
         "es:conclusión",
         "en:conclusion",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37472,7 +38036,8 @@
         "topic:cognate",
         "es:división",
         "en:division",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37490,7 +38055,8 @@
         "topic:cognate",
         "es:teoría",
         "en:theory",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:education"
       ],
       "curriculumRole": "reference"
     },
@@ -37508,7 +38074,8 @@
         "topic:cognate",
         "es:teatro",
         "en:theater",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:places"
       ],
       "curriculumRole": "reference"
     },
@@ -37526,7 +38093,8 @@
         "topic:cognate",
         "es:terapia",
         "en:therapy",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:health"
       ],
       "curriculumRole": "reference"
     },
@@ -37544,7 +38112,8 @@
         "topic:cognate",
         "es:método",
         "en:method",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37562,7 +38131,8 @@
         "topic:cognate",
         "es:autor",
         "en:author",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:people"
       ],
       "curriculumRole": "reference"
     },
@@ -37580,7 +38150,8 @@
         "topic:cognate",
         "es:atleta",
         "en:athlete",
-        "gender:common"
+        "gender:common",
+        "topic:sports-recreation"
       ],
       "curriculumRole": "reference"
     },
@@ -37598,7 +38169,8 @@
         "topic:cognate",
         "es:ética",
         "en:ethics",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37616,7 +38188,8 @@
         "topic:cognate",
         "es:teología",
         "en:theology",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:education"
       ],
       "curriculumRole": "reference"
     },
@@ -37636,7 +38209,8 @@
         "topic:cognate",
         "es:territorio",
         "en:territory",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37656,7 +38230,8 @@
         "topic:cognate",
         "es:laboratorio",
         "en:laboratory",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:technology"
       ],
       "curriculumRole": "reference"
     },
@@ -37676,7 +38251,8 @@
         "topic:cognate",
         "es:directorio",
         "en:directory",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37696,7 +38272,8 @@
         "morphology:suffix-ory",
         "topic:cognate",
         "es:ser",
-        "en:obligatory"
+        "en:obligatory",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37716,7 +38293,8 @@
         "morphology:suffix-ory",
         "topic:cognate",
         "es:ser",
-        "en:satisfactory"
+        "en:satisfactory",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37736,7 +38314,8 @@
         "morphology:suffix-ory",
         "topic:cognate",
         "es:ser",
-        "en:contradictory"
+        "en:contradictory",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37756,7 +38335,8 @@
         "morphology:suffix-ory",
         "topic:cognate",
         "es:ser",
-        "en:preparatory"
+        "en:preparatory",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37776,7 +38356,8 @@
         "topic:cognate",
         "es:tráfico",
         "en:traffic",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:transportation"
       ],
       "curriculumRole": "reference"
     },
@@ -37796,7 +38377,8 @@
         "morphology:suffix-ic",
         "topic:cognate",
         "es:ser",
-        "en:basic"
+        "en:basic",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37816,7 +38398,8 @@
         "topic:cognate",
         "es:público",
         "en:public",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37836,7 +38419,8 @@
         "morphology:suffix-ic",
         "topic:cognate",
         "es:ser",
-        "en:specific"
+        "en:specific",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37856,7 +38440,8 @@
         "morphology:suffix-ic",
         "topic:cognate",
         "es:ser",
-        "en:exotic"
+        "en:exotic",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37876,7 +38461,8 @@
         "morphology:suffix-ic",
         "topic:cognate",
         "es:ser",
-        "en:organic"
+        "en:organic",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37896,7 +38482,8 @@
         "morphology:suffix-ic",
         "topic:cognate",
         "es:ser",
-        "en:scientific"
+        "en:scientific",
+        "topic:education"
       ],
       "curriculumRole": "reference"
     },
@@ -37916,7 +38503,8 @@
         "morphology:suffix-ic",
         "topic:cognate",
         "es:ser",
-        "en:academic"
+        "en:academic",
+        "topic:education"
       ],
       "curriculumRole": "reference"
     },
@@ -37936,7 +38524,8 @@
         "morphology:suffix-ic",
         "topic:cognate",
         "es:ser",
-        "en:automatic"
+        "en:automatic",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -37956,7 +38545,8 @@
         "morphology:suffix-ic",
         "topic:cognate",
         "es:ser",
-        "en:economic"
+        "en:economic",
+        "topic:money-business"
       ],
       "curriculumRole": "reference"
     },
@@ -37976,7 +38566,8 @@
         "morphology:suffix-ic",
         "topic:cognate",
         "es:ser",
-        "en:electronic"
+        "en:electronic",
+        "topic:technology"
       ],
       "curriculumRole": "reference"
     },
@@ -37996,7 +38587,8 @@
         "morphology:suffix-ic",
         "topic:cognate",
         "es:ser",
-        "en:historic"
+        "en:historic",
+        "topic:education"
       ],
       "curriculumRole": "reference"
     },
@@ -38016,7 +38608,8 @@
         "morphology:suffix-ic",
         "topic:cognate",
         "es:ser",
-        "en:political"
+        "en:political",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -38035,7 +38628,8 @@
         "topic:cognate",
         "es:turismo",
         "en:tourism",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:sports-recreation"
       ],
       "curriculumRole": "reference"
     },
@@ -38054,7 +38648,8 @@
         "topic:cognate",
         "es:optimismo",
         "en:optimism",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -38073,7 +38668,8 @@
         "topic:cognate",
         "es:pesimismo",
         "en:pessimism",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -38092,7 +38688,8 @@
         "topic:cognate",
         "es:realismo",
         "en:realism",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -38111,7 +38708,8 @@
         "topic:cognate",
         "es:idealismo",
         "en:idealism",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -38130,7 +38728,8 @@
         "topic:cognate",
         "es:capitalismo",
         "en:capitalism",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:government-politics"
       ],
       "curriculumRole": "reference"
     },
@@ -38149,7 +38748,8 @@
         "topic:cognate",
         "es:socialismo",
         "en:socialism",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:government-politics"
       ],
       "curriculumRole": "reference"
     },
@@ -38168,7 +38768,8 @@
         "topic:cognate",
         "es:comunismo",
         "en:communism",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:government-politics"
       ],
       "curriculumRole": "reference"
     },
@@ -38187,7 +38788,8 @@
         "topic:cognate",
         "es:nacionalismo",
         "en:nationalism",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:government-politics"
       ],
       "curriculumRole": "reference"
     },
@@ -38206,7 +38808,8 @@
         "topic:cognate",
         "es:racismo",
         "en:racism",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -38225,7 +38828,8 @@
         "topic:cognate",
         "es:mecanismo",
         "en:mechanism",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:technology"
       ],
       "curriculumRole": "reference"
     },
@@ -42012,7 +42616,8 @@
         "cognate:opaque-gloss",
         "es:carro",
         "en:car",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:transportation"
       ],
       "curriculumRole": "supporting"
     },
@@ -42030,7 +42635,8 @@
         "cognate:opaque-gloss",
         "es:banco",
         "en:bank",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:money-business"
       ],
       "curriculumRole": "reference"
     },
@@ -42071,7 +42677,8 @@
         "topic:cognate",
         "pos:adjective",
         "es:ser",
-        "en:difficult"
+        "en:difficult",
+        "topic:difficulty"
       ],
       "curriculumRole": "supporting"
     },
@@ -42090,7 +42697,8 @@
         "topic:cognate",
         "es:culto",
         "en:cult",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -42109,7 +42717,8 @@
         "topic:cognate",
         "es:adulto",
         "en:adult",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:people"
       ],
       "curriculumRole": "reference"
     },
@@ -42128,7 +42737,8 @@
         "topic:cognate",
         "es:insulto",
         "en:insult",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -42147,7 +42757,8 @@
         "topic:cognate",
         "es:resultado",
         "en:result",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -42166,7 +42777,8 @@
         "cognate:opaque-gloss",
         "es:tumulto",
         "en:tumult",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -42206,7 +42818,8 @@
         "cognate:opaque-gloss",
         "es:escuela",
         "en:school",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:education"
       ],
       "curriculumRole": "supporting"
     },
@@ -43012,7 +43625,8 @@
         "contrast:confusable",
         "en:expression",
         "es:ser",
-        "en:unlike"
+        "en:unlike",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -43030,7 +43644,8 @@
         "contrast:confusable",
         "en:expression",
         "es:estar",
-        "en:free"
+        "en:free",
+        "topic:value-price"
       ],
       "curriculumRole": "reference"
     },
@@ -43098,7 +43713,8 @@
         "es:cuestión",
         "en:question",
         "cognate:transparent",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:communication-request"
       ],
       "curriculumRole": "reference"
     },
@@ -43136,7 +43752,8 @@
         "topic:cognate",
         "es:teléfono",
         "en:telephone",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:technology"
       ],
       "curriculumRole": "reference"
     },
@@ -43154,7 +43771,8 @@
         "morphology:suffix-ar",
         "topic:cognate",
         "es:ser",
-        "en:similar"
+        "en:similar",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -43262,7 +43880,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:red"
+        "en:red",
+        "topic:color"
       ],
       "curriculumRole": "supporting"
     },
@@ -43278,7 +43897,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:blue"
+        "en:blue",
+        "topic:color"
       ],
       "curriculumRole": "supporting"
     },
@@ -43294,7 +43914,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:green"
+        "en:green",
+        "topic:color"
       ],
       "curriculumRole": "supporting"
     },
@@ -43310,7 +43931,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:yellow"
+        "en:yellow",
+        "topic:color"
       ],
       "curriculumRole": "supporting"
     },
@@ -43327,7 +43949,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:white"
+        "en:white",
+        "topic:color"
       ],
       "curriculumRole": "supporting"
     },
@@ -43343,7 +43966,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:black"
+        "en:black",
+        "topic:color"
       ],
       "curriculumRole": "supporting"
     },
@@ -43359,7 +43983,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:cheap"
+        "en:cheap",
+        "topic:value-price"
       ],
       "curriculumRole": "supporting"
     },
@@ -43375,7 +44000,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:inexpensive"
+        "en:inexpensive",
+        "topic:value-price"
       ],
       "curriculumRole": "reference"
     },
@@ -43391,7 +44017,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:cheap"
+        "en:cheap",
+        "topic:value-price"
       ],
       "curriculumRole": "reference"
     },
@@ -43407,7 +44034,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:inexpensive"
+        "en:inexpensive",
+        "topic:value-price"
       ],
       "curriculumRole": "reference"
     },
@@ -43423,7 +44051,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:expensive"
+        "en:expensive",
+        "topic:value-price"
       ],
       "curriculumRole": "supporting"
     },
@@ -43439,7 +44068,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:dear"
+        "en:dear",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -43455,7 +44085,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:short"
+        "en:short",
+        "topic:size"
       ],
       "curriculumRole": "supporting"
     },
@@ -43471,7 +44102,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:brief"
+        "en:brief",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -43491,7 +44123,8 @@
         "cognate:false-friend",
         "contrast:largo-vs-large",
         "contrast:confusable",
-        "topic:cognate"
+        "topic:cognate",
+        "topic:size"
       ],
       "curriculumRole": "supporting"
     },
@@ -43507,7 +44140,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:lengthy"
+        "en:lengthy",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -43523,7 +44157,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:slow"
+        "en:slow",
+        "topic:speed"
       ],
       "curriculumRole": "supporting"
     },
@@ -43539,7 +44174,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:dark"
+        "en:dark",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "supporting"
     },
@@ -43555,7 +44191,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:easy"
+        "en:easy",
+        "topic:difficulty"
       ],
       "curriculumRole": "supporting"
     },
@@ -43571,7 +44208,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:simple"
+        "en:simple",
+        "topic:difficulty"
       ],
       "curriculumRole": "reference"
     },
@@ -43587,7 +44225,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:free"
+        "en:free",
+        "topic:value-price"
       ],
       "curriculumRole": "reference"
     },
@@ -43603,7 +44242,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:major"
+        "en:major",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -43621,7 +44261,8 @@
         "es:ser",
         "en:incorrect",
         "cognate:ecto-to-ect",
-        "topic:cognate"
+        "topic:cognate",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -43637,7 +44278,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:wrong"
+        "en:wrong",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -43653,7 +44295,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:young"
+        "en:young",
+        "topic:age"
       ],
       "curriculumRole": "supporting"
     },
@@ -43669,7 +44312,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:youthful"
+        "en:youthful",
+        "topic:age"
       ],
       "curriculumRole": "reference"
     },
@@ -43685,7 +44329,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:minor"
+        "en:minor",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -43701,7 +44346,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:right"
+        "en:right",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -43717,7 +44363,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:large"
+        "en:large",
+        "topic:size"
       ],
       "curriculumRole": "reference"
     },
@@ -43733,7 +44380,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:together"
+        "en:together",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -43749,7 +44397,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:small"
+        "en:small",
+        "topic:size"
       ],
       "curriculumRole": "supporting"
     },
@@ -43765,7 +44414,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:little"
+        "en:little",
+        "topic:size"
       ],
       "curriculumRole": "reference"
     },
@@ -43781,7 +44431,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:fast"
+        "en:fast",
+        "topic:speed"
       ],
       "curriculumRole": "supporting"
     },
@@ -43797,7 +44448,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:quick"
+        "en:quick",
+        "topic:speed"
       ],
       "curriculumRole": "reference"
     },
@@ -43813,7 +44465,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:light"
+        "en:light",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -43829,7 +44482,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:clear"
+        "en:clear",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -43845,7 +44499,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:hard"
+        "en:hard",
+        "topic:difficulty"
       ],
       "curriculumRole": "reference"
     },
@@ -43861,7 +44516,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:tough"
+        "en:tough",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -43877,7 +44533,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:harsh"
+        "en:harsh",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -43893,7 +44550,8 @@
         "grammar:estar-adjective",
         "pos:adjective",
         "es:estar",
-        "en:available"
+        "en:available",
+        "topic:condition-state"
       ],
       "curriculumRole": "reference"
     },
@@ -43909,7 +44567,8 @@
         "grammar:estar-adjective",
         "pos:adjective",
         "es:estar",
-        "en:ready"
+        "en:ready",
+        "topic:condition-state"
       ],
       "curriculumRole": "reference"
     },
@@ -43925,7 +44584,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:clever"
+        "en:clever",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -43941,7 +44601,8 @@
         "grammar:estar-adjective",
         "pos:adjective",
         "es:estar",
-        "en:busy"
+        "en:busy",
+        "topic:condition-state"
       ],
       "curriculumRole": "supporting"
     },
@@ -43957,7 +44618,8 @@
         "grammar:estar-adjective",
         "pos:adjective",
         "es:estar",
-        "en:occupied"
+        "en:occupied",
+        "topic:condition-state"
       ],
       "curriculumRole": "reference"
     },
@@ -43973,7 +44635,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:old"
+        "en:old",
+        "topic:age"
       ],
       "curriculumRole": "reference"
     },
@@ -43989,7 +44652,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:elderly"
+        "en:elderly",
+        "topic:age"
       ],
       "curriculumRole": "reference"
     },
@@ -44005,7 +44669,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:old-fashioned"
+        "en:old-fashioned",
+        "topic:age"
       ],
       "curriculumRole": "reference"
     },
@@ -46529,7 +47194,8 @@
         "pos:noun",
         "es:hombre",
         "en:man",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:people"
       ],
       "curriculumRole": "supporting"
     },
@@ -46585,7 +47251,8 @@
         "pos:noun",
         "es:mujer",
         "en:woman",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:people"
       ],
       "curriculumRole": "supporting"
     },
@@ -46698,7 +47365,8 @@
         "pos:noun",
         "es:niño",
         "en:child",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:people"
       ],
       "curriculumRole": "supporting"
     },
@@ -46754,7 +47422,8 @@
         "pos:noun",
         "es:persona",
         "grammar:human-object",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:people"
       ],
       "curriculumRole": "supporting"
     },
@@ -51603,7 +52272,8 @@
         "pos:noun",
         "es:encargo",
         "en:errand",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:business-work"
       ],
       "curriculumRole": "reference"
     },
@@ -51620,7 +52290,8 @@
         "pos:noun",
         "es:encargo",
         "en:assignment",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:business-work"
       ],
       "curriculumRole": "reference"
     },
@@ -51967,7 +52638,8 @@
         "pos:noun",
         "es:personas",
         "en:people",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:people"
       ],
       "curriculumRole": "reference"
     },
@@ -51985,7 +52657,8 @@
         "pos:noun",
         "es:gente",
         "en:people",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:people"
       ],
       "curriculumRole": "supporting"
     },
@@ -52003,7 +52676,8 @@
         "pos:noun",
         "es:niños",
         "en:children",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:people"
       ],
       "curriculumRole": "supporting"
     },
@@ -52021,7 +52695,8 @@
         "pos:noun",
         "es:hombres",
         "en:men",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:people"
       ],
       "curriculumRole": "reference"
     },
@@ -52039,7 +52714,8 @@
         "pos:noun",
         "es:mujeres",
         "en:women",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:people"
       ],
       "curriculumRole": "reference"
     },
@@ -52136,7 +52812,8 @@
         "grammar:estar-adjective",
         "pos:adjective",
         "es:estar",
-        "en:blank"
+        "en:blank",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -52183,7 +52860,8 @@
         "grammar:estar-adjective",
         "pos:adjective",
         "es:estar",
-        "en:together"
+        "en:together",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -52199,7 +52877,8 @@
         "grammar:estar-adjective",
         "pos:adjective",
         "es:estar",
-        "en:next"
+        "en:next",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -52230,7 +52909,8 @@
         "grammar:ser-adjective",
         "pos:adjective",
         "es:ser",
-        "en:new"
+        "en:new",
+        "topic:age"
       ],
       "curriculumRole": "reference"
     },
@@ -52245,7 +52925,8 @@
       "collections": [
         "pos:adjective",
         "es:siguiente",
-        "en:next"
+        "en:next",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -52260,7 +52941,8 @@
       "collections": [
         "pos:adjective",
         "es:siguiente",
-        "en:following"
+        "en:following",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -52306,7 +52988,8 @@
         "grammar:estar-adjective",
         "pos:adjective",
         "es:estar",
-        "en:willing"
+        "en:willing",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -52322,7 +53005,8 @@
         "grammar:estar-adjective",
         "pos:adjective",
         "es:estar",
-        "en:ready"
+        "en:ready",
+        "topic:condition-state"
       ],
       "curriculumRole": "reference"
     },
@@ -52338,7 +53022,8 @@
         "grammar:estar-adjective",
         "pos:adjective",
         "es:estar",
-        "en:crowded"
+        "en:crowded",
+        "topic:condition-state"
       ],
       "curriculumRole": "reference"
     },
@@ -52354,7 +53039,8 @@
         "grammar:estar-adjective",
         "pos:adjective",
         "es:estar",
-        "en:full"
+        "en:full",
+        "topic:condition-state"
       ],
       "curriculumRole": "reference"
     },
@@ -52371,7 +53057,8 @@
         "es:morir",
         "pos:adjective",
         "es:estar",
-        "en:dead"
+        "en:dead",
+        "topic:condition-state"
       ],
       "curriculumRole": "reference"
     },
@@ -52388,7 +53075,8 @@
         "es:morir",
         "pos:adjective",
         "es:estar",
-        "en:exhausted"
+        "en:exhausted",
+        "topic:emotion-state"
       ],
       "curriculumRole": "reference"
     },
@@ -52423,7 +53111,8 @@
         "es:marcar",
         "pos:adjective",
         "es:ser",
-        "en:pronounced"
+        "en:pronounced",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -57596,7 +58285,8 @@
         "morphology:prefix-al",
         "pos:adjective",
         "es:estar",
-        "en:alone"
+        "en:alone",
+        "topic:emotion-state"
       ],
       "curriculumRole": "reference"
     },
@@ -57647,7 +58337,8 @@
         "morphology:prefix-al",
         "pos:adjective",
         "es:estar",
-        "en:all"
+        "en:all",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -57664,7 +58355,8 @@
         "morphology:prefix-al",
         "pos:adjective",
         "es:estar",
-        "en:alright"
+        "en:alright",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -57969,7 +58661,8 @@
         "pos:noun",
         "es:pronóstico",
         "en:forecast",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -57986,7 +58679,8 @@
         "morphology:prefix-fore",
         "pos:adjective",
         "es:ser",
-        "en:foremost"
+        "en:foremost",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -58054,7 +58748,8 @@
         "morphology:suffix-er",
         "pos:adjective",
         "es:ser",
-        "en:inner"
+        "en:inner",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -58071,7 +58766,8 @@
         "morphology:suffix-er",
         "pos:adjective",
         "es:ser",
-        "en:outer"
+        "en:outer",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -58088,7 +58784,8 @@
         "morphology:suffix-er",
         "pos:adjective",
         "es:ser",
-        "en:internal"
+        "en:internal",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -58105,7 +58802,8 @@
         "morphology:suffix-er",
         "pos:adjective",
         "es:ser",
-        "en:external"
+        "en:external",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -58123,7 +58821,8 @@
         "pos:noun",
         "es:círculo",
         "en:inner",
-        "gender:masculine"
+        "gender:masculine",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -58340,7 +59039,8 @@
         "morphology:suffix-ward",
         "pos:adjective",
         "es:ser",
-        "en:straightforward"
+        "en:straightforward",
+        "topic:difficulty"
       ],
       "curriculumRole": "reference"
     },
@@ -58358,7 +59058,8 @@
         "pos:adjective",
         "contrast:confusable",
         "es:ser",
-        "en:reckless"
+        "en:reckless",
+        "topic:personality"
       ],
       "curriculumRole": "reference"
     },
@@ -58376,7 +59077,8 @@
         "pos:adjective",
         "contrast:confusable",
         "es:ser",
-        "en:insignificant"
+        "en:insignificant",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -58395,7 +59097,8 @@
         "grammar:fixed-expression",
         "forewarned is forearmed",
         "es:estar",
-        "en:forearmed"
+        "en:forearmed",
+        "topic:condition-state"
       ],
       "curriculumRole": "reference"
     },
@@ -63901,7 +64604,8 @@
         "pos:adjective",
         "grammar:adjective-position",
         "adjective before noun",
-        "grammar:noun-phrase"
+        "grammar:noun-phrase",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "core"
     },
@@ -63921,7 +64625,8 @@
         "es:ser",
         "en:be",
         "sense:ser-caracteristica",
-        "conjugation:infinitive"
+        "conjugation:infinitive",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "core"
     },
@@ -64015,7 +64720,8 @@
         "as ... as",
         "pos:adjective",
         "es:tan",
-        "en:as"
+        "en:as",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "supporting"
     },
@@ -77269,7 +77975,8 @@
         "pos:adjective",
         "grammar:fixed-expression",
         "es:salvo",
-        "en:safe"
+        "en:safe",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -78429,7 +79136,8 @@
         "en:sensible",
         "grammar:ser-adjective",
         "contrast:sensible-vs-sensible",
-        "contrast:confusable"
+        "contrast:confusable",
+        "topic:abstract-quality"
       ],
       "curriculumRole": "reference"
     },
@@ -78447,7 +79155,8 @@
         "en:lecture",
         "contrast:lectura-vs-lecture",
         "contrast:confusable",
-        "gender:feminine"
+        "gender:feminine",
+        "topic:event"
       ],
       "curriculumRole": "reference"
     }
