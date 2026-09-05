@@ -73,3 +73,17 @@ skimming history, not a machine-readable state store.
   expr: facets), then Collocations, Verb Patterns, Verb-Forms,
   Transformations, the two Mappings pages, Phrasal Verbs — see
   `npm run curriculum:audit:status` for the live list.
+- **2026-09-05, Prepositions + Expressions + Collocations + Verb
+  Patterns pages all complete** — Prepositions (5) + Expressions (39,
+  found a real completeness gap: the standalone answer word "no" didn't
+  exist in the DB at all, added it as core alongside promoting "sí" ->
+  "yes" from reference to core). Collocations (33, clean). Verb
+  Patterns in full: 6 small construction: facets (31), the 3 large
+  followed-by-infinitive/gerund facets (102, found a true duplicate
+  "intentar" row), and the remaining 7 facets incl. going-to and
+  passive (47, fixed a mistranslated "tocarle a alguien" that had
+  copied an unrelated sibling's gloss). Commits `70385ba6` through
+  `2230a3c3`. Next up: Past-Tense & Past-Participle Formation page —
+  many `sound:*` irregular-verb-family facets, likely large in total
+  rows (regular -d/-t/-ɪd alone is ~60 rows) — then Transformations,
+  the two Mappings pages, Phrasal Verbs.
