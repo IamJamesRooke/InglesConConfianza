@@ -54,7 +54,8 @@
         "grammar:object-control",
         "pos:verb",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -141,7 +142,8 @@
         "en:like",
         "grammar:object-control",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -590,7 +592,8 @@
         "something is needed",
         "es:necesita",
         "en:is",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -2100,7 +2103,8 @@
         "en:tell",
         "pos:verb",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -2641,7 +2645,8 @@
         "en:give",
         "pos:verb",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -5819,7 +5824,8 @@
         "en:tell",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -6137,7 +6143,8 @@
         "construction:map-a-to",
         "es:enseñar",
         "en:teach",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -6388,7 +6395,8 @@
         "en:wait",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -6495,7 +6503,8 @@
         "en:expect",
         "grammar:object-control",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -6514,7 +6523,8 @@
         "es:espera",
         "en:is",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -8410,7 +8420,8 @@
         "es:ir",
         "en:there",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -8431,7 +8442,8 @@
         "es:ir",
         "en:there",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -8485,7 +8497,8 @@
         "grammar:object-control",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -8504,7 +8517,8 @@
         "en:make",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -8671,7 +8685,8 @@
         "es:hacer",
         "en:needed",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -9265,7 +9280,8 @@
         "pos:verb",
         "sense:ir-futuro",
         "conjugation:infinitive",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -9283,7 +9299,8 @@
         "es:ir",
         "en:gonna",
         "sense:ir-futuro",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -9529,7 +9546,8 @@
         "grammar:passive",
         "es:llamar",
         "en:called",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -10208,7 +10226,8 @@
         "es:mandar",
         "en:tell",
         "pos:verb",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -10224,7 +10243,8 @@
         "construction:object-plus-complement",
         "es:mandar",
         "en:order",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -10304,7 +10324,8 @@
         "es:mandar",
         "en:send",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -10989,7 +11010,8 @@
         "es:pasar",
         "en:pass",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -13142,7 +13164,8 @@
         "es:preguntar",
         "en:ask",
         "pos:verb",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -13234,7 +13257,8 @@
         "es:prestar",
         "en:lend",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -15572,7 +15596,8 @@
         "es:conseguir",
         "en:get",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -15749,7 +15774,8 @@
         "en:tell",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -16132,7 +16158,8 @@
         "es:costar",
         "en:cost",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -16631,7 +16658,8 @@
         "es:deber",
         "en:owe",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -17325,7 +17353,8 @@
         "en:lend",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -17670,7 +17699,8 @@
         "en:leave",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -18198,7 +18228,8 @@
         "construction:object-plus-complement",
         "es:recordar",
         "en:remind",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -20897,7 +20928,8 @@
         "construction:object-plus-complement",
         "es:supone",
         "en:is",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -20915,7 +20947,8 @@
         "grammar:passive",
         "es:supone",
         "en:is",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -21696,7 +21729,8 @@
         "construction:object-plus-complement",
         "es:tocar",
         "en:is",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -25299,7 +25333,8 @@
         "que + subjunctive",
         "es:ordenar",
         "en:order",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "reference"
     },
@@ -65052,7 +65087,8 @@
         "conjugation:deferred",
         "conjugation:infinitive",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -65074,7 +65110,8 @@
         "en:get",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "supporting"
     },
@@ -84086,7 +84123,8 @@
         "contrast:voy-a-lugar-vs-voy-a-infinitivo",
         "contrast:confusable",
         "sense:ir-futuro",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -84107,7 +84145,8 @@
         "es:ir",
         "en:going",
         "sense:ir-futuro",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -84130,7 +84169,8 @@
         "contrast:voy-a-lugar-vs-voy-a-infinitivo",
         "contrast:confusable",
         "sense:ir-futuro",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -84151,7 +84191,8 @@
         "es:ir",
         "en:going",
         "sense:ir-futuro",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },
@@ -84172,7 +84213,8 @@
         "es:ir",
         "en:going",
         "sense:ir-futuro",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "topic:verb-pattern"
       ],
       "curriculumRole": "core"
     },

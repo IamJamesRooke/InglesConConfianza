@@ -713,6 +713,10 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       { collection: "construction:go-ing", label: "go + gerund (go shopping)" },
       { collection: "construction:be-present-participle", label: "progressive (to be going)" },
       { collection: "construction:auxiliary-do", label: "auxiliary do (did they go?)" },
+      { collection: "construction:double-object", label: "double object (give somebody something)" },
+      { collection: "construction:object-plus-complement", label: "object + complement (make/expect somebody to go)" },
+      { collection: "grammar:passive", label: "passive (something is needed)" },
+      { collection: "grammar:going-to", label: "going to (future)" },
     ],
   },
   {
