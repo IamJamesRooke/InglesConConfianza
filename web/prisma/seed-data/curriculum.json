@@ -1524,7 +1524,8 @@
         "topic:abstract-quality",
         "audit:reviewed",
         "topic:fem-abstract-suffix-2",
-        "topic:abstract-dad-tud"
+        "topic:abstract-dad-tud",
+        "topic:abstract-dad-tud-2"
       ],
       "curriculumRole": "reference"
     },
@@ -34916,7 +34917,8 @@
         "topic:abstract-quality",
         "audit:reviewed",
         "topic:masc-exceptions",
-        "topic:abstract-dad-tud"
+        "topic:abstract-dad-tud",
+        "topic:abstract-dad-tud-1"
       ],
       "curriculumRole": "reference"
     },
@@ -35997,7 +35999,8 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:fem-abstract-suffix-3",
-        "topic:abstract-dad-tud"
+        "topic:abstract-dad-tud",
+        "topic:abstract-dad-tud-2"
       ],
       "curriculumRole": "reference"
     },
@@ -38737,7 +38740,8 @@
         "topic:abstract-quality",
         "audit:reviewed",
         "topic:fem-consonant-1",
-        "topic:abstract-dad-tud"
+        "topic:abstract-dad-tud",
+        "topic:abstract-dad-tud-1"
       ],
       "curriculumRole": "reference"
     },
@@ -38761,7 +38765,8 @@
         "topic:abstract-quality",
         "audit:reviewed",
         "topic:fem-consonant-1",
-        "topic:abstract-dad-tud"
+        "topic:abstract-dad-tud",
+        "topic:abstract-dad-tud-1"
       ],
       "curriculumRole": "reference"
     },
@@ -38785,7 +38790,8 @@
         "topic:abstract-quality",
         "audit:reviewed",
         "topic:fem-consonant-1",
-        "topic:abstract-dad-tud"
+        "topic:abstract-dad-tud",
+        "topic:abstract-dad-tud-1"
       ],
       "curriculumRole": "reference"
     },
@@ -38809,7 +38815,8 @@
         "topic:abstract-quality",
         "audit:reviewed",
         "topic:fem-consonant-1",
-        "topic:abstract-dad-tud"
+        "topic:abstract-dad-tud",
+        "topic:abstract-dad-tud-2"
       ],
       "curriculumRole": "reference"
     },
@@ -38833,7 +38840,8 @@
         "topic:abstract-quality",
         "audit:reviewed",
         "topic:fem-consonant-1",
-        "topic:abstract-dad-tud"
+        "topic:abstract-dad-tud",
+        "topic:abstract-dad-tud-2"
       ],
       "curriculumRole": "reference"
     },
@@ -38857,7 +38865,8 @@
         "topic:abstract-quality",
         "audit:reviewed",
         "topic:fem-consonant-1",
-        "topic:abstract-dad-tud"
+        "topic:abstract-dad-tud",
+        "topic:abstract-dad-tud-2"
       ],
       "curriculumRole": "reference"
     },
@@ -38881,7 +38890,8 @@
         "topic:abstract-quality",
         "audit:reviewed",
         "topic:fem-consonant-1",
-        "topic:abstract-dad-tud"
+        "topic:abstract-dad-tud",
+        "topic:abstract-dad-tud-1"
       ],
       "curriculumRole": "reference"
     },
@@ -41036,7 +41046,8 @@
         "audit:reviewed",
         "topic:fem-a-4",
         "topic:people-family-rel",
-        "topic:family-groups-terms"
+        "topic:family-groups-terms",
+        "topic:people-family-rel-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -45003,7 +45014,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-abstract-suffix-2",
-        "topic:abstract-dad-tud"
+        "topic:abstract-dad-tud",
+        "topic:abstract-dad-tud-2"
       ],
       "curriculumRole": "reference"
     },
@@ -45030,7 +45042,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-abstract-suffix-3",
-        "topic:abstract-dad-tud"
+        "topic:abstract-dad-tud",
+        "topic:abstract-dad-tud-2"
       ],
       "curriculumRole": "reference"
     },
@@ -45083,7 +45096,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-abstract-suffix-1",
-        "topic:abstract-dad-tud"
+        "topic:abstract-dad-tud",
+        "topic:abstract-dad-tud-1"
       ],
       "curriculumRole": "reference"
     },
@@ -45137,7 +45151,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-abstract-suffix-3",
-        "topic:abstract-dad-tud"
+        "topic:abstract-dad-tud",
+        "topic:abstract-dad-tud-2"
       ],
       "curriculumRole": "reference"
     },
@@ -45164,7 +45179,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-abstract-suffix-2",
-        "topic:abstract-dad-tud"
+        "topic:abstract-dad-tud",
+        "topic:abstract-dad-tud-1"
       ],
       "curriculumRole": "reference"
     },
@@ -45190,7 +45206,8 @@
         "topic:abstract-quality",
         "audit:reviewed",
         "topic:fem-abstract-suffix-1",
-        "topic:abstract-dad-tud"
+        "topic:abstract-dad-tud",
+        "topic:abstract-dad-tud-1"
       ],
       "curriculumRole": "reference"
     },
@@ -45217,7 +45234,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-abstract-suffix-3",
-        "topic:abstract-dad-tud"
+        "topic:abstract-dad-tud",
+        "topic:abstract-dad-tud-2"
       ],
       "curriculumRole": "reference"
     },
@@ -45244,7 +45262,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-abstract-suffix-1",
-        "topic:abstract-dad-tud"
+        "topic:abstract-dad-tud",
+        "topic:abstract-dad-tud-1"
       ],
       "curriculumRole": "reference"
     },
@@ -45271,7 +45290,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-abstract-suffix-2",
-        "topic:abstract-dad-tud"
+        "topic:abstract-dad-tud",
+        "topic:abstract-dad-tud-1"
       ],
       "curriculumRole": "reference"
     },
@@ -45298,7 +45318,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-abstract-suffix-1",
-        "topic:abstract-dad-tud"
+        "topic:abstract-dad-tud",
+        "topic:abstract-dad-tud-1"
       ],
       "curriculumRole": "reference"
     },
@@ -45325,7 +45346,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-abstract-suffix-3",
-        "topic:abstract-dad-tud"
+        "topic:abstract-dad-tud",
+        "topic:abstract-dad-tud-2"
       ],
       "curriculumRole": "reference"
     },
@@ -45352,7 +45374,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-abstract-suffix-3",
-        "topic:abstract-dad-tud"
+        "topic:abstract-dad-tud",
+        "topic:abstract-dad-tud-2"
       ],
       "curriculumRole": "reference"
     },
@@ -45379,7 +45402,8 @@
         "cognate:transparent",
         "audit:reviewed",
         "topic:fem-abstract-suffix-1",
-        "topic:abstract-dad-tud"
+        "topic:abstract-dad-tud",
+        "topic:abstract-dad-tud-1"
       ],
       "curriculumRole": "reference"
     },
@@ -56790,7 +56814,8 @@
         "audit:reviewed",
         "topic:fem-a-3",
         "topic:people-family-rel",
-        "topic:family-immediate"
+        "topic:family-immediate",
+        "topic:people-family-rel-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -56812,7 +56837,8 @@
         "audit:reviewed",
         "topic:fem-a-3",
         "topic:people-family-rel",
-        "topic:family-immediate"
+        "topic:family-immediate",
+        "topic:people-family-rel-1"
       ],
       "curriculumRole": "reference"
     },
@@ -56834,7 +56860,8 @@
         "audit:reviewed",
         "topic:masc-o-3",
         "topic:people-family-rel",
-        "topic:family-immediate"
+        "topic:family-immediate",
+        "topic:people-family-rel-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -56856,7 +56883,8 @@
         "audit:reviewed",
         "topic:masc-o-3",
         "topic:people-family-rel",
-        "topic:family-immediate"
+        "topic:family-immediate",
+        "topic:people-family-rel-1"
       ],
       "curriculumRole": "reference"
     },
@@ -56878,7 +56906,8 @@
         "audit:reviewed",
         "topic:fem-a-4",
         "topic:people-family-rel",
-        "topic:family-groups-terms"
+        "topic:family-groups-terms",
+        "topic:people-family-rel-1"
       ],
       "curriculumRole": "reference"
     },
@@ -56900,7 +56929,8 @@
         "audit:reviewed",
         "topic:fem-a-4",
         "topic:people-family-rel",
-        "topic:family-groups-terms"
+        "topic:family-groups-terms",
+        "topic:people-family-rel-1"
       ],
       "curriculumRole": "reference"
     },
@@ -56922,7 +56952,8 @@
         "audit:reviewed",
         "topic:fem-a-4",
         "topic:people-family-rel",
-        "topic:family-immediate"
+        "topic:family-immediate",
+        "topic:people-family-rel-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -56944,7 +56975,8 @@
         "audit:reviewed",
         "topic:fem-a-4",
         "topic:people-family-rel",
-        "topic:family-immediate"
+        "topic:family-immediate",
+        "topic:people-family-rel-1"
       ],
       "curriculumRole": "reference"
     },
@@ -56966,7 +56998,8 @@
         "audit:reviewed",
         "topic:fem-abstract-suffix-2",
         "topic:people-family-rel",
-        "topic:family-groups-terms"
+        "topic:family-groups-terms",
+        "topic:people-family-rel-1"
       ],
       "curriculumRole": "reference"
     },
@@ -56988,7 +57021,8 @@
         "audit:reviewed",
         "topic:fem-abstract-suffix-2",
         "topic:people-family-rel",
-        "topic:family-groups-terms"
+        "topic:family-groups-terms",
+        "topic:people-family-rel-1"
       ],
       "curriculumRole": "reference"
     },
@@ -57012,7 +57046,8 @@
         "audit:reviewed",
         "topic:fem-abstract-suffix-2",
         "topic:people-family-rel",
-        "topic:family-groups-terms"
+        "topic:family-groups-terms",
+        "topic:people-family-rel-1"
       ],
       "curriculumRole": "reference"
     },
@@ -57034,7 +57069,8 @@
         "audit:reviewed",
         "topic:masc-o-4",
         "topic:people-family-rel",
-        "topic:family-immediate"
+        "topic:family-immediate",
+        "topic:people-family-rel-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -57056,7 +57092,8 @@
         "audit:reviewed",
         "topic:masc-o-4",
         "topic:people-family-rel",
-        "topic:family-immediate"
+        "topic:family-immediate",
+        "topic:people-family-rel-2"
       ],
       "curriculumRole": "reference"
     },
@@ -93671,7 +93708,8 @@
         "audit:reviewed",
         "topic:masc-e",
         "topic:people-family-rel",
-        "topic:family-immediate"
+        "topic:family-immediate",
+        "topic:people-family-rel-2"
       ],
       "curriculumRole": "core"
     },
@@ -93693,7 +93731,8 @@
         "audit:reviewed",
         "topic:fem-exceptions",
         "topic:people-family-rel",
-        "topic:family-immediate"
+        "topic:family-immediate",
+        "topic:people-family-rel-2"
       ],
       "curriculumRole": "core"
     },
@@ -93715,7 +93754,8 @@
         "audit:reviewed",
         "topic:masc-exceptions",
         "topic:people-family-rel",
-        "topic:family-immediate"
+        "topic:family-immediate",
+        "topic:people-family-rel-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -93737,7 +93777,8 @@
         "audit:reviewed",
         "topic:fem-exceptions",
         "topic:people-family-rel",
-        "topic:family-immediate"
+        "topic:family-immediate",
+        "topic:people-family-rel-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -93759,7 +93800,8 @@
         "audit:reviewed",
         "topic:masc-o-4",
         "topic:people-family-rel",
-        "topic:family-immediate"
+        "topic:family-immediate",
+        "topic:people-family-rel-2"
       ],
       "curriculumRole": "core"
     },
@@ -93781,7 +93823,8 @@
         "audit:reviewed",
         "topic:fem-a-4",
         "topic:people-family-rel",
-        "topic:family-immediate"
+        "topic:family-immediate",
+        "topic:people-family-rel-2"
       ],
       "curriculumRole": "core"
     },
@@ -93803,7 +93846,8 @@
         "audit:reviewed",
         "topic:masc-o-1",
         "topic:people-family-rel",
-        "topic:family-extended"
+        "topic:family-extended",
+        "topic:people-family-rel-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -93825,7 +93869,8 @@
         "audit:reviewed",
         "topic:fem-a-1",
         "topic:people-family-rel",
-        "topic:family-extended"
+        "topic:family-extended",
+        "topic:people-family-rel-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -93847,7 +93892,8 @@
         "audit:reviewed",
         "topic:masc-o-8",
         "topic:people-family-rel",
-        "topic:family-extended"
+        "topic:family-extended",
+        "topic:people-family-rel-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -93869,7 +93915,8 @@
         "audit:reviewed",
         "topic:fem-a-7",
         "topic:people-family-rel",
-        "topic:family-extended"
+        "topic:family-extended",
+        "topic:people-family-rel-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -93891,7 +93938,8 @@
         "audit:reviewed",
         "topic:masc-o-6",
         "topic:people-family-rel",
-        "topic:family-extended"
+        "topic:family-extended",
+        "topic:people-family-rel-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -93913,7 +93961,8 @@
         "audit:reviewed",
         "topic:fem-a-6",
         "topic:people-family-rel",
-        "topic:family-extended"
+        "topic:family-extended",
+        "topic:people-family-rel-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -93935,7 +93984,8 @@
         "audit:reviewed",
         "topic:masc-o-7",
         "topic:people-family-rel",
-        "topic:family-extended"
+        "topic:family-extended",
+        "topic:people-family-rel-2"
       ],
       "curriculumRole": "reference"
     },
@@ -93957,7 +94007,8 @@
         "audit:reviewed",
         "topic:fem-a-7",
         "topic:people-family-rel",
-        "topic:family-extended"
+        "topic:family-extended",
+        "topic:people-family-rel-2"
       ],
       "curriculumRole": "reference"
     },
@@ -93979,7 +94030,8 @@
         "audit:reviewed",
         "topic:masc-o-5",
         "topic:people-family-rel",
-        "topic:family-extended"
+        "topic:family-extended",
+        "topic:people-family-rel-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -94001,7 +94053,8 @@
         "audit:reviewed",
         "topic:fem-a-6",
         "topic:people-family-rel",
-        "topic:family-extended"
+        "topic:family-extended",
+        "topic:people-family-rel-2"
       ],
       "curriculumRole": "supporting"
     },
