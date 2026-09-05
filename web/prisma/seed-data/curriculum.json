@@ -664,7 +664,8 @@
         "es:comer",
         "en:have",
         "topic:en-multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -1507,7 +1508,8 @@
         "es:ser",
         "en:edible",
         "topic:food",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -1570,7 +1572,8 @@
         "es:ser",
         "en:drinkable",
         "topic:food",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -2967,7 +2970,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "topic:business-work",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -3686,7 +3690,8 @@
         "particle:with",
         "topic:phrasal-verb",
         "topic:collocation",
-        "coll:make"
+        "coll:make",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -3709,7 +3714,8 @@
         "topic:business-work",
         "pos:verb",
         "particle:with",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -3854,7 +3860,8 @@
         "topic:food",
         "pos:verb",
         "particle:for",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -4094,7 +4101,8 @@
         "topic:multi-sense",
         "topic:food",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -13421,7 +13429,8 @@
         "es:prestar",
         "en:provide",
         "topic:business-work",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -14740,7 +14749,8 @@
         "es:alcanzar",
         "en:unable",
         "topic:money-business",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -15013,7 +15023,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -16222,7 +16233,8 @@
         "es:costar",
         "en:cost",
         "topic:en-multi-sense",
-        "topic:money-business"
+        "topic:money-business",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -18302,7 +18314,8 @@
         "topic:en-multi-sense",
         "topic:business-work",
         "pos:verb",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -22361,7 +22374,8 @@
         "es:ser",
         "en:work-related",
         "topic:business-work",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -25543,7 +25557,8 @@
         "topic:food",
         "es:ordenar",
         "en:order",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28244,7 +28259,8 @@
         "topic:calendar",
         "es:hoy",
         "en:today",
-        "pos:adverb"
+        "pos:adverb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -28261,7 +28277,8 @@
         "topic:calendar",
         "es:mañana",
         "en:tomorrow",
-        "pos:adverb"
+        "pos:adverb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -28296,7 +28313,8 @@
         "topic:calendar",
         "es:ayer",
         "en:yesterday",
-        "pos:adverb"
+        "pos:adverb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -31954,7 +31972,8 @@
         "es:cambiar",
         "en:change",
         "topic:money-business",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32941,7 +32960,8 @@
         "topic:money-business",
         "pos:verb",
         "particle:for",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -33155,7 +33175,8 @@
         "en:pay",
         "pos:verb",
         "topic:en-multi-sense",
-        "topic:money-business"
+        "topic:money-business",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -33174,7 +33195,8 @@
         "en:pay",
         "topic:en-multi-sense",
         "topic:money-business",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -33399,7 +33421,8 @@
         "en:return",
         "topic:en-multi-sense",
         "topic:money-business",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -36410,7 +36433,8 @@
         "es:ser",
         "en:delicious",
         "topic:food",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39994,7 +40018,8 @@
         "topic:education",
         "topic:multi-sense",
         "cognate:ico-to-ical",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -43270,7 +43295,8 @@
         "es:ser",
         "en:scientific",
         "topic:education",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -43292,7 +43318,8 @@
         "es:ser",
         "en:academic",
         "topic:education",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -43336,7 +43363,8 @@
         "es:ser",
         "en:economic",
         "topic:money-business",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -43380,7 +43408,8 @@
         "es:ser",
         "en:historic",
         "topic:education",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -52885,7 +52914,8 @@
         "es:en",
         "en:at",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -52901,7 +52931,8 @@
         "topic:places",
         "topic:location",
         "topic:direction",
-        "en:home"
+        "en:home",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -52920,7 +52951,8 @@
         "es:de",
         "en:from",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -52938,7 +52970,8 @@
         "en:place",
         "topic:direction",
         "es:cerca",
-        "grammar:proximal"
+        "grammar:proximal",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -52956,7 +52989,8 @@
         "en:place",
         "topic:direction",
         "es:cerca",
-        "en:close"
+        "en:close",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -52974,7 +53008,8 @@
         "en:place",
         "topic:direction",
         "es:lejos",
-        "grammar:distal"
+        "grammar:distal",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -57533,7 +57568,8 @@
         "topic:calendar",
         "es:esta",
         "en:this",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -57550,7 +57586,8 @@
         "topic:calendar",
         "es:próxima",
         "en:next",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -57566,7 +57603,8 @@
         "topic:time",
         "topic:calendar",
         "es:semana",
-        "en:last"
+        "en:last",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -57583,7 +57621,8 @@
         "topic:calendar",
         "es:este",
         "en:this",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -57600,7 +57639,8 @@
         "topic:calendar",
         "es:próximo",
         "en:next",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -57616,7 +57656,8 @@
         "topic:time",
         "topic:calendar",
         "es:mes",
-        "en:last"
+        "en:last",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -57633,7 +57674,8 @@
         "topic:calendar",
         "es:este",
         "en:this",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -57650,7 +57692,8 @@
         "topic:calendar",
         "es:próximo",
         "en:next",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -57666,7 +57709,8 @@
         "topic:time",
         "topic:calendar",
         "es:año",
-        "en:last"
+        "en:last",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -57720,7 +57764,8 @@
         "es:ir",
         "en:power",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57729,15 +57774,16 @@
       "spanish": "se fue la luz",
       "english": "the power was out",
       "example": {
-        "spanish": "La respuesta del gobierno fue lenta.",
-        "english": "The government's response was slow."
+        "spanish": "La luz se fue toda la noche.",
+        "english": "The power was out all night."
       },
       "collections": [
         "topic:everyday-objects",
         "es:ir",
         "en:power",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57929,7 +57975,8 @@
         "pos:adverb",
         "es:allí",
         "en:there",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -57948,7 +57995,8 @@
         "pos:adverb",
         "es:ahí",
         "en:there",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57966,7 +58014,8 @@
         "topic:direction",
         "es:por",
         "en:somewhere",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -57984,7 +58033,8 @@
         "topic:direction",
         "es:ahí",
         "en:that",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58003,7 +58053,8 @@
         "es:de",
         "en:that",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
