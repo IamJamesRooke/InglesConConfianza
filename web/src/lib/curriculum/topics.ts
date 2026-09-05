@@ -263,6 +263,17 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
     ],
   },
   {
+    slug: "prepositions",
+    title: "Prepositions",
+    description:
+      "The compound and multi-word prepositions beyond the basic set already covered on the Mappings pages (de, en, con, a, por) — mostly time and location relationships: antes de, detrás de, a lo largo de.",
+    baseCollection: "pos:preposition",
+    facetButtons: [
+      { collection: "topic:time", label: "Time" },
+      { collection: "topic:location", label: "Location" },
+    ],
+  },
+  {
     slug: "mappings",
     title: "Spanish-to-English Mappings",
     description:
