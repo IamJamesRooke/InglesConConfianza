@@ -23942,7 +23942,8 @@
         "grammar:singular",
         "es:yo",
         "en:i",
-        "topic:pronoun"
+        "topic:pronoun",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -23967,7 +23968,8 @@
         "contrast:tu-vs-usted",
         "contrast:you-collapse",
         "contrast:confusable",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -24014,7 +24016,8 @@
         "contrast:tu-vs-usted",
         "contrast:you-collapse",
         "contrast:confusable",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -24037,7 +24040,8 @@
         "topic:pronoun",
         "contrast:el-vs-lo",
         "contrast:confusable",
-        "contrast:el-articulo-vs-el-pronombre"
+        "contrast:el-articulo-vs-el-pronombre",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -24057,7 +24061,8 @@
         "grammar:feminine",
         "es:ella",
         "en:she",
-        "topic:pronoun"
+        "topic:pronoun",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -24078,9 +24083,10 @@
         "es:ello",
         "en:it",
         "topic:pronoun",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "reference"
     },
     {
       "id": "hh4dfyokmh",
@@ -24099,7 +24105,8 @@
         "grammar:mixed-group",
         "es:ellos",
         "en:they",
-        "topic:pronoun"
+        "topic:pronoun",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -24119,7 +24126,8 @@
         "grammar:feminine",
         "es:ellas",
         "en:they",
-        "topic:pronoun"
+        "topic:pronoun",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -24138,7 +24146,8 @@
         "grammar:plural",
         "es:nosotros",
         "en:we",
-        "topic:pronoun"
+        "topic:pronoun",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -24181,7 +24190,8 @@
         "topic:pronoun",
         "contrast:you-collapse",
         "contrast:confusable",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -83334,7 +83344,8 @@
         "es:hablar",
         "en:i",
         "contrast:confusable",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },

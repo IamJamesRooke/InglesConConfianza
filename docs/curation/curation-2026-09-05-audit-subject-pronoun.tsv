@@ -1,0 +1,11 @@
+o25n43wg3o	yo	I	core	audit:reviewed	Audit: fine as-is.	Yo trabajo aquí.	I work here.
+608c3yq7i6	tú	you	core	audit:reviewed	Audit: fine as-is.	Tú sabes la respuesta.	You know the answer.
+d6oilpcif8	usted	you	supporting	audit:reviewed	Audit: fine as-is.	Usted sabe la respuesta.	You know the answer.
+hdl7zq5rij	él	he	core	audit:reviewed	Audit: fine as-is.	Él trabaja aquí.	He works here.
+2x4a9n68ud	ella	she	core	audit:reviewed	Audit: fine as-is.	Ella trabaja aquí.	She works here.
+laabqgv17t	ello	it	reference	audit:reviewed	Audit: role was core, but "ello" as a standalone subject pronoun is rare/formal in spoken Spanish — most speakers use "eso"/"esto" or drop the subject. Re-tiered down; the concept "it" itself is already core via other pronoun forms.	Ello es importante.	It is important.
+hh4dfyokmh	ellos	they	core	audit:reviewed	Audit: fine as-is.	Ellos trabajan aquí.	They work here.
+vl5s55aiq3	ellas	they	core	audit:reviewed	Audit: fine as-is.	Ellas trabajan aquí.	They work here.
+6bfxprlzrk	nosotros	we	core	audit:reviewed	Audit: fine as-is.	Nosotros trabajamos aquí.	We work here.
+em3gcm8fcl	ustedes	you	supporting	audit:reviewed	Audit: fine as-is.	Ustedes trabajan aquí.	You work here.
+hh9lhwdnn0	hablar sin pronombre de sujeto	to speak (subject dropped)	core	audit:reviewed	Audit: fine as-is — correctly teaches Spanish pro-drop.	Hablo inglés todos los días.	I speak English every day.
