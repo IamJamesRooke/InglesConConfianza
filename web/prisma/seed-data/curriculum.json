@@ -19777,7 +19777,8 @@
         "gender:masculine",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "en:follow"
       ],
       "curriculumRole": "reference"
     },
@@ -21814,7 +21815,8 @@
         "es:tocar",
         "en:it",
         "topic:en-multi-sense",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "en:be"
       ],
       "curriculumRole": "reference"
     },
@@ -30141,11 +30143,11 @@
         "en:according",
         "pos:preposition",
         "es:según",
-        "en:depending",
         "construction:prepositional-verb",
         "particle:on",
         "topic:phrasal-verb",
-        "construction:map-segun-according-to"
+        "construction:map-segun-according-to",
+        "en:depend"
       ],
       "curriculumRole": "reference"
     },
