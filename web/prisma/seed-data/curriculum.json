@@ -2290,7 +2290,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "topic:social-expression",
-        "expr:greeting"
+        "expr:greeting",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -7567,7 +7568,8 @@
         "find + object + adjective",
         "es:me",
         "topic:social-expression",
-        "expr:idiom"
+        "expr:idiom",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -7795,7 +7797,8 @@
         "es:sin",
         "en:without",
         "topic:social-expression",
-        "expr:idiom"
+        "expr:idiom",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -8159,7 +8162,8 @@
         "topic:social-expression",
         "es:mucho",
         "en:nice",
-        "expr:greeting"
+        "expr:greeting",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -9708,7 +9712,8 @@
         "es:me",
         "en:my",
         "topic:social-expression",
-        "expr:greeting"
+        "expr:greeting",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -16545,7 +16550,8 @@
         "es:cueste",
         "en:whatever",
         "topic:social-expression",
-        "expr:idiom"
+        "expr:idiom",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -20113,7 +20119,8 @@
         "es:siento",
         "en:i'm",
         "topic:multi-sense",
-        "expr:apology"
+        "expr:apology",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -22895,7 +22902,8 @@
         "es:vale",
         "en:okay",
         "topic:multi-sense",
-        "expr:response"
+        "expr:response",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -23364,7 +23372,8 @@
         "es:bienvenido",
         "en:welcome",
         "topic:multi-sense",
-        "expr:greeting"
+        "expr:greeting",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -28172,14 +28181,15 @@
       "spanish": "entre todos",
       "english": "together, all together",
       "example": {
-        "spanish": "entre todos",
-        "english": "together, all together"
+        "spanish": "Entre todos limpiamos la casa.",
+        "english": "Together, we all cleaned the house."
       },
       "collections": [
         "es:entre",
         "en:together",
         "topic:social-expression",
-        "expr:idiom"
+        "expr:idiom",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28300,7 +28310,8 @@
         "es:igual",
         "en:maybe",
         "topic:social-expression",
-        "expr:response"
+        "expr:response",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28435,7 +28446,8 @@
         "es:peor",
         "en:worst",
         "topic:social-expression",
-        "expr:idiom"
+        "expr:idiom",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -28932,7 +28944,8 @@
         "es:mismo",
         "en:same",
         "topic:social-expression",
-        "expr:idiom"
+        "expr:idiom",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -29843,7 +29856,8 @@
         "es:sino",
         "en:nothing",
         "topic:multi-sense",
-        "pos:verb"
+        "pos:verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -29852,17 +29866,18 @@
       "spanish": "sí",
       "english": "yes",
       "example": {
-        "spanish": "sí",
-        "english": "yes"
+        "spanish": "¿Vienes a la fiesta? Sí.",
+        "english": "Are you coming to the party? Yes."
       },
       "collections": [
         "es:sí",
         "en:yes",
         "pos:interjection",
         "topic:social-expression",
-        "expr:response"
+        "expr:response",
+        "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "core"
     },
     {
       "id": "t114homehd",
@@ -30086,7 +30101,8 @@
         "es:más",
         "en:better",
         "topic:social-expression",
-        "expr:idiom"
+        "expr:idiom",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30262,7 +30278,8 @@
         "es:ya",
         "en:enough",
         "topic:social-expression",
-        "expr:idiom"
+        "expr:idiom",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30580,7 +30597,8 @@
         "construction:map-segun-according-to",
         "pos:preposition",
         "es:según",
-        "en:according"
+        "en:according",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30598,7 +30616,8 @@
         "pos:preposition",
         "es:de",
         "en:according",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -30618,7 +30637,8 @@
         "particle:on",
         "topic:phrasal-verb",
         "construction:map-segun-according-to",
-        "en:depend"
+        "en:depend",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -32670,7 +32690,8 @@
         "es:genial",
         "en:great",
         "topic:social-expression",
-        "expr:response"
+        "expr:response",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -33076,7 +33097,8 @@
         "en:what",
         "topic:en-multi-sense",
         "topic:social-expression",
-        "expr:greeting"
+        "expr:greeting",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -53914,7 +53936,8 @@
         "es:por",
         "en:please",
         "topic:multi-sense",
-        "expr:politeness"
+        "expr:politeness",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -53923,14 +53946,15 @@
       "spanish": "perdón",
       "english": "excuse me",
       "example": {
-        "spanish": "Perdona la interrupción.",
-        "english": "Excuse the interruption."
+        "spanish": "Perdón por la interrupción.",
+        "english": "Excuse me for the interruption."
       },
       "collections": [
         "topic:social-expression",
         "es:perdón",
         "en:excuse",
-        "expr:apology"
+        "expr:apology",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -53946,7 +53970,8 @@
         "topic:social-expression",
         "es:disculpe",
         "en:excuse",
-        "expr:apology"
+        "expr:apology",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -53962,7 +53987,8 @@
         "topic:social-expression",
         "es:perdón",
         "en:i'm",
-        "expr:apology"
+        "expr:apology",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -53978,7 +54004,8 @@
         "topic:social-expression",
         "es:gracias",
         "en:thank",
-        "expr:politeness"
+        "expr:politeness",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -53994,7 +54021,8 @@
         "topic:social-expression",
         "es:gracias",
         "en:thanks",
-        "expr:politeness"
+        "expr:politeness",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -54011,7 +54039,8 @@
         "es:con",
         "en:you're",
         "topic:multi-sense",
-        "expr:politeness"
+        "expr:politeness",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -54028,7 +54057,8 @@
         "es:de",
         "en:you're",
         "topic:multi-sense",
-        "expr:politeness"
+        "expr:politeness",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -54045,7 +54075,8 @@
         "es:haber",
         "en:problem",
         "topic:multi-sense",
-        "expr:politeness"
+        "expr:politeness",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -58731,7 +58762,8 @@
         "es:que",
         "en:enjoy",
         "topic:multi-sense",
-        "expr:farewell"
+        "expr:farewell",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58749,7 +58781,8 @@
         "verb + -ing",
         "es:gracias",
         "en:thank",
-        "expr:politeness"
+        "expr:politeness",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -58767,7 +58800,8 @@
         "es:cuídate",
         "en:take",
         "topic:en-multi-sense",
-        "expr:farewell"
+        "expr:farewell",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -58785,7 +58819,8 @@
         "es:cuidar",
         "es:cuidado",
         "en:careful",
-        "expr:warning-command"
+        "expr:warning-command",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -66123,7 +66158,8 @@
         "en:to",
         "pos:preposition",
         "topic:en-multi-sense",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -89139,6 +89175,23 @@
         "audit:reviewed"
       ],
       "curriculumRole": "reference"
+    },
+    {
+      "id": "xypn65k1sg",
+      "spanish": "no",
+      "english": "no",
+      "example": {
+        "spanish": "¿Vienes a la fiesta? No.",
+        "english": "Are you coming to the party? No."
+      },
+      "collections": [
+        "es:no",
+        "en:no",
+        "pos:interjection",
+        "topic:social-expression",
+        "expr:response"
+      ],
+      "curriculumRole": "core"
     }
   ]
 }
