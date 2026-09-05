@@ -2034,7 +2034,8 @@
         "en:speaker",
         "gender:common",
         "topic:people",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -3512,7 +3513,8 @@
         "en:giver",
         "gender:common",
         "topic:people",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -7582,7 +7584,8 @@
         "es:extraño",
         "en:stranger",
         "gender:common",
-        "topic:people"
+        "topic:people",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -9806,7 +9809,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "particle:for",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -10845,7 +10849,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "particle:like",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -11780,7 +11785,8 @@
         "es:perdedor",
         "en:loser",
         "gender:common",
-        "topic:people"
+        "topic:people",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -15446,7 +15452,8 @@
         "en:acquaintance",
         "gender:common",
         "topic:people",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -31578,7 +31585,8 @@
         "es:algo",
         "en:big",
         "gender:invariant",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -33089,7 +33097,8 @@
         "en:owner",
         "gender:common",
         "topic:abstract-quality",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -37263,7 +37272,8 @@
         "es:paciente",
         "en:patient",
         "gender:common",
-        "topic:health"
+        "topic:health",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -37284,7 +37294,8 @@
         "es:cliente",
         "en:client",
         "gender:common",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -37305,7 +37316,8 @@
         "en:student",
         "cognate:transparent",
         "gender:common",
-        "topic:education"
+        "topic:education",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -39715,7 +39727,8 @@
         "gender:common",
         "topic:sports-recreation",
         "cognate:ista-to-ist",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39736,7 +39749,8 @@
         "gender:common",
         "topic:art-culture",
         "cognate:ista-to-ist",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39757,7 +39771,8 @@
         "gender:common",
         "topic:people",
         "cognate:ista-to-ist",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39778,7 +39793,8 @@
         "gender:common",
         "topic:personality",
         "cognate:ista-to-ist",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39799,7 +39815,8 @@
         "gender:common",
         "topic:personality",
         "cognate:ista-to-ist",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39820,7 +39837,8 @@
         "gender:common",
         "topic:personality",
         "cognate:ista-to-ist",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39841,7 +39859,8 @@
         "gender:common",
         "topic:people",
         "cognate:ista-to-ist",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39862,7 +39881,8 @@
         "gender:common",
         "topic:government-politics",
         "cognate:ista-to-ist",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39883,7 +39903,8 @@
         "gender:common",
         "topic:government-politics",
         "cognate:ista-to-ist",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39904,7 +39925,8 @@
         "gender:common",
         "topic:sports-recreation",
         "cognate:ista-to-ist",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -39925,7 +39947,8 @@
         "gender:common",
         "topic:art-culture",
         "cognate:ista-to-ist",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -40668,7 +40691,8 @@
         "es:contrario",
         "en:contrary",
         "gender:neuter",
-        "topic:abstract-quality"
+        "topic:abstract-quality",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -42215,7 +42239,8 @@
         "gender:common",
         "topic:people",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -42892,7 +42917,8 @@
         "gender:common",
         "topic:sports-recreation",
         "cognate:latin-root",
-        "cognate:transparent"
+        "cognate:transparent",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -50348,7 +50374,8 @@
         "pos:noun",
         "es:enero",
         "en:january",
-        "gender:invariant"
+        "gender:invariant",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -50366,7 +50393,8 @@
         "pos:noun",
         "es:febrero",
         "en:february",
-        "gender:invariant"
+        "gender:invariant",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -50384,7 +50412,8 @@
         "pos:noun",
         "es:marzo",
         "en:march",
-        "gender:invariant"
+        "gender:invariant",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -50402,7 +50431,8 @@
         "pos:noun",
         "es:abril",
         "en:april",
-        "gender:invariant"
+        "gender:invariant",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -50421,7 +50451,8 @@
         "es:mayo",
         "en:may",
         "gender:invariant",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -50439,7 +50470,8 @@
         "pos:noun",
         "es:junio",
         "en:june",
-        "gender:invariant"
+        "gender:invariant",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -50457,7 +50489,8 @@
         "pos:noun",
         "es:julio",
         "en:july",
-        "gender:invariant"
+        "gender:invariant",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -50475,7 +50508,8 @@
         "pos:noun",
         "es:agosto",
         "en:august",
-        "gender:invariant"
+        "gender:invariant",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -50493,7 +50527,8 @@
         "pos:noun",
         "es:septiembre",
         "en:september",
-        "gender:invariant"
+        "gender:invariant",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -50511,7 +50546,8 @@
         "pos:noun",
         "es:octubre",
         "en:october",
-        "gender:invariant"
+        "gender:invariant",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -50529,7 +50565,8 @@
         "pos:noun",
         "es:noviembre",
         "en:november",
-        "gender:invariant"
+        "gender:invariant",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -50547,7 +50584,8 @@
         "pos:noun",
         "es:diciembre",
         "en:december",
-        "gender:invariant"
+        "gender:invariant",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -50707,15 +50745,16 @@
       "spanish": "inglés",
       "english": "English",
       "example": {
-        "spanish": "Necesito una llave inglesa.",
-        "english": "I need a wrench."
+        "spanish": "Estoy estudiando inglés.",
+        "english": "I am studying English."
       },
       "collections": [
         "topic:everyday-objects",
         "pos:noun",
         "es:inglés",
         "en:english",
-        "gender:invariant"
+        "gender:invariant",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -50732,7 +50771,8 @@
         "pos:noun",
         "es:español",
         "en:spanish",
-        "gender:invariant"
+        "gender:invariant",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
