@@ -7065,7 +7065,8 @@
         "en:how",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -8548,7 +8549,8 @@
         "conjugation:3sg",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -8689,7 +8691,8 @@
         "en:there",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -8709,7 +8712,8 @@
         "en:there",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -8728,7 +8732,8 @@
         "en:there",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -8746,7 +8751,8 @@
         "en:there",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -8765,7 +8771,8 @@
         "en:there",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -8787,7 +8794,8 @@
         "conjugation:infinitive",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -8807,7 +8815,8 @@
         "sense:haber-necesidad",
         "conjugation:deferred",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -8829,7 +8838,8 @@
         "en:there",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -8850,7 +8860,8 @@
         "en:there",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -8872,7 +8883,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "topic:verb-pattern",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -8895,7 +8907,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "topic:verb-pattern",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -12597,7 +12610,8 @@
         "en:can",
         "topic:multi-sense",
         "topic:verb-pattern",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -12648,7 +12662,8 @@
         "en:cannot",
         "topic:multi-sense",
         "topic:verb-pattern",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -12711,7 +12726,8 @@
         "en:may",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -12732,7 +12748,8 @@
         "en:not",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -12755,7 +12772,8 @@
         "topic:en-multi-sense",
         "particle:to",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -12779,7 +12797,8 @@
         "topic:en-multi-sense",
         "particle:to",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -12804,7 +12823,8 @@
         "topic:en-multi-sense",
         "particle:to",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -12824,7 +12844,8 @@
         "en:could",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -12845,7 +12866,8 @@
         "en:managed",
         "topic:multi-sense",
         "topic:verb-pattern",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -12864,7 +12886,8 @@
         "es:poder",
         "en:was",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -12889,7 +12912,8 @@
         "topic:en-multi-sense",
         "topic:question-negation",
         "qn:modal-be-have-negation",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -12908,7 +12932,8 @@
         "en:able",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -12928,7 +12953,8 @@
         "en:could",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -12949,7 +12975,8 @@
         "en:been",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -12973,7 +13000,8 @@
         "topic:multi-sense",
         "topic:question-negation",
         "qn:modal-be-have-negation",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -12994,7 +13022,8 @@
         "en:have",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -13017,7 +13046,8 @@
         "en:could've",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -13038,7 +13068,8 @@
         "es:pueda",
         "en:can",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -13060,7 +13091,8 @@
         "en:if",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -13109,7 +13141,8 @@
         "topic:en-multi-sense",
         "topic:question-negation",
         "qn:inversion-question",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -13152,7 +13185,8 @@
         "grammar:modal",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -13175,7 +13209,8 @@
         "topic:en-multi-sense",
         "topic:question-negation",
         "qn:inversion-question",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -13223,7 +13258,8 @@
         "en:happen",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -13242,7 +13278,8 @@
         "es:poder",
         "en:happen",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -13262,7 +13299,8 @@
         "en:be",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -13282,7 +13320,8 @@
         "en:be",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -13303,7 +13342,8 @@
         "en:be",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -13322,7 +13362,8 @@
         "en:have",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -13556,7 +13597,8 @@
         "topic:multi-sense",
         "topic:question-negation",
         "qn:negative-question",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -13576,7 +13618,8 @@
         "en:could",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -13595,7 +13638,8 @@
         "es:poder",
         "en:was",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -13616,7 +13660,8 @@
         "en:been",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -13636,7 +13681,8 @@
         "en:able",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -13655,7 +13701,8 @@
         "es:poder",
         "en:happen",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -13675,7 +13722,8 @@
         "en:happen",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -13695,7 +13743,8 @@
         "en:have",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -13715,7 +13764,8 @@
         "en:have",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -13735,7 +13785,8 @@
         "en:have",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -13754,7 +13805,8 @@
         "en:have",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -13776,7 +13828,8 @@
         "en:able",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -17351,7 +17404,8 @@
         "en:able",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -17594,7 +17648,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "topic:verb-pattern",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -17661,7 +17716,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "topic:verb-pattern",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -17725,7 +17781,8 @@
         "en:be",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -17745,7 +17802,8 @@
         "en:be",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -17766,7 +17824,8 @@
         "en:not",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -17789,7 +17848,8 @@
         "topic:en-multi-sense",
         "topic:question-negation",
         "qn:modal-be-have-negation",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -17810,7 +17870,8 @@
         "grammar:conditional",
         "en:not",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -17833,7 +17894,8 @@
         "topic:multi-sense",
         "topic:question-negation",
         "qn:modal-be-have-negation",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -17855,7 +17917,8 @@
         "en:have",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -17876,7 +17939,8 @@
         "en:have",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -17916,7 +17980,8 @@
         "en:to",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -17963,7 +18028,8 @@
         "en:due",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -21940,7 +22006,8 @@
         "es:soler",
         "en:would",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -27206,7 +27273,8 @@
         "es:estar",
         "en:hardly",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -55439,7 +55507,8 @@
         "en:problem",
         "topic:multi-sense",
         "expr:politeness",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -61621,7 +61690,8 @@
         "en:bored",
         "topic:multi-sense",
         "topic:transformation",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -61684,7 +61754,8 @@
         "en:active",
         "topic:multi-sense",
         "topic:transformation",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -61810,7 +61881,8 @@
         "en:available",
         "topic:multi-sense",
         "topic:transformation",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -61892,7 +61964,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "topic:transformation",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -63253,7 +63326,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "topic:transformation",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -63537,7 +63611,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "topic:transformation",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -63803,7 +63878,8 @@
         "en:aware",
         "topic:multi-sense",
         "topic:transformation",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -63824,7 +63900,8 @@
         "en:ill",
         "topic:multi-sense",
         "topic:transformation",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -63866,7 +63943,8 @@
         "en:ready",
         "topic:multi-sense",
         "topic:transformation",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -64046,7 +64124,8 @@
         "en:hopeless",
         "topic:multi-sense",
         "topic:transformation",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -65201,7 +65280,8 @@
         "en:cold",
         "topic:multi-sense",
         "topic:transformation",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -65267,7 +65347,8 @@
         "en:okay",
         "topic:multi-sense",
         "topic:transformation",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -65289,7 +65370,8 @@
         "en:ready",
         "topic:multi-sense",
         "topic:transformation",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -65654,7 +65736,8 @@
         "en:warm",
         "topic:multi-sense",
         "topic:transformation",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -65736,7 +65819,8 @@
         "en:dead",
         "topic:multi-sense",
         "topic:transformation",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -66636,7 +66720,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "topic:transformation",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -68219,7 +68304,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "topic:verb-pattern",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -68242,7 +68328,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "topic:verb-pattern",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -68285,7 +68372,8 @@
         "en:might",
         "topic:multi-sense",
         "topic:verb-pattern",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -70984,7 +71072,8 @@
         "en:is",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -72371,7 +72460,8 @@
         "es:haber",
         "en:had",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -72392,7 +72482,8 @@
         "en:have",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -72414,7 +72505,8 @@
         "topic:multi-sense",
         "topic:question-negation",
         "qn:modal-be-have-negation",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -72439,7 +72531,8 @@
         "conjugation:irregular",
         "topic:multi-sense",
         "topic:verb-pattern",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -72499,7 +72592,8 @@
         "es:haber",
         "en:had",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -72520,7 +72614,8 @@
         "en:have",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -72541,7 +72636,8 @@
         "en:have",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -72586,7 +72682,8 @@
         "en:been",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -72608,7 +72705,8 @@
         "en:been",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -72630,7 +72728,8 @@
         "en:been",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -72819,7 +72918,8 @@
         "conjugation:3sg",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -72844,7 +72944,8 @@
         "conjugation:3pl",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -72867,7 +72968,8 @@
         "en:is",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -73118,7 +73220,8 @@
         "topic:multi-sense",
         "topic:question-negation",
         "qn:inversion-question",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -73141,7 +73244,8 @@
         "conjugation:3sg",
         "conjugation:irregular",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -73352,7 +73456,8 @@
         "topic:verb-pattern",
         "topic:question-negation",
         "qn:modal-be-have-negation",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -73377,7 +73482,8 @@
         "topic:verb-pattern",
         "topic:question-negation",
         "qn:inversion-question",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "reference"
     },
@@ -73401,7 +73507,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "topic:verb-pattern",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -73427,7 +73534,8 @@
         "topic:verb-pattern",
         "topic:question-negation",
         "qn:modal-be-have-negation",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
@@ -73452,7 +73560,8 @@
         "topic:verb-pattern",
         "topic:question-negation",
         "qn:inversion-question",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb"
       ],
       "curriculumRole": "supporting"
     },
