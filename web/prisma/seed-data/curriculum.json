@@ -6433,7 +6433,8 @@
         "en:hear",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -8022,7 +8023,8 @@
         "es:gustar",
         "en:likes",
         "topic:en-multi-sense",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -8044,7 +8046,8 @@
         "es:gustar",
         "en:likes",
         "topic:en-multi-sense",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -8673,7 +8676,8 @@
         "en:repaired",
         "topic:multi-sense",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -10459,7 +10463,8 @@
         "en:have",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -17529,7 +17534,8 @@
         "pos:verb",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -22000,7 +22006,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -23476,7 +23483,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -23502,7 +23510,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -66082,7 +66091,8 @@
         "en:start",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -66102,7 +66112,8 @@
         "es:comenzar",
         "en:begin",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -66122,7 +66133,8 @@
         "es:continuar",
         "en:continue",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -66212,7 +66224,8 @@
         "form:full-infinitive",
         "es:encantar",
         "en:loves",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -66232,7 +66245,8 @@
         "form:present-participle",
         "es:encantar",
         "en:loves",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -66252,7 +66266,8 @@
         "es:odiar",
         "en:hate",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -66272,7 +66287,8 @@
         "es:odiar",
         "en:hate",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -66293,7 +66309,8 @@
         "en:start",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -66313,7 +66330,8 @@
         "es:comenzar",
         "en:begin",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -66333,7 +66351,8 @@
         "es:continuar",
         "en:continue",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -66504,7 +66523,8 @@
         "en:make",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -66528,7 +66548,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -66549,7 +66570,8 @@
         "es:ayudar",
         "en:help",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -66617,7 +66639,8 @@
         "en:help",
         "grammar:object-control",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -66944,7 +66967,8 @@
         "en:hear",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -66966,7 +66990,8 @@
         "es:observar",
         "en:watch",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -66988,7 +67013,8 @@
         "es:observar",
         "en:watch",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -67012,7 +67038,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -67036,7 +67063,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -67058,7 +67086,8 @@
         "es:notar",
         "en:notice",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -67080,7 +67109,8 @@
         "es:notar",
         "en:notice",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -67560,7 +67590,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "pos:verb",
-        "topic:verb-pattern"
+        "topic:verb-pattern",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
