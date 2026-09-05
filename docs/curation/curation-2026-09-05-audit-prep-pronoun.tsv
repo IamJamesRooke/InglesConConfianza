@@ -1,0 +1,30 @@
+lse8dx7tet	conmigo	with me	core	audit:reviewed	Audit: fine as-is.	¿Vienes conmigo?	Are you coming with me?
+rnldlhmpop	contigo	with you	core	audit:reviewed	Audit: fine as-is.	Quiero hablar contigo.	I want to talk with you.
+sxxbfgvhfa	con él	with him	core	audit:reviewed	Audit: fine as-is.	Fui al cine con él.	I went to the movies with him.
+0h11x77lat	con ella	with her	core	audit:reviewed	Audit: fine as-is.	Trabajo con ella.	I work with her.
+0wjnsjpf8s	con nosotros	with us	core	audit:reviewed	Audit: fine as-is.	Ven con nosotros.	Come with us.
+k71aaprkfg	con ellos	with them	core	audit:reviewed	Audit: fine as-is.	Hablé con ellos ayer.	I spoke with them yesterday.
+nrb0thfnst	con [alguien]	with [somebody]	core	audit:reviewed	Audit: fine as-is.	Salgo con alguien esta noche.	I'm going out with somebody tonight.
+dyi2yg06hb	para mí	for me	supporting	audit:reviewed	Audit: fine as-is.	Este regalo es para mí.	This gift is for me.
+sqd8xxfwmx	para ti	for you	supporting	audit:reviewed	Audit: fine as-is.	Guardé un asiento para ti.	I saved a seat for you.
+8rtzxhe293	para él	for him	supporting	audit:reviewed	Audit: fine as-is.	Compré esto para él.	I bought this for him.
+ifxzv5eot0	para ella	for her	supporting	audit:reviewed	Audit: fine as-is.	La carta es para ella.	The letter is for her.
+ztq4ogut83	para nosotros	for us	supporting	audit:reviewed	Audit: fine as-is.	Reservaron una mesa para nosotros.	They reserved a table for us.
+hu11wt1cvb	para ellos	for them	supporting	audit:reviewed	Audit: fine as-is.	El proyecto es difícil para ellos.	The project is hard for them.
+ez2lt2jbq7	para [alguien]	for [somebody]	supporting	audit:reviewed	Audit: fine as-is.	Tengo un mensaje para alguien.	I have a message for somebody.
+bfer5mn6yu	a mí	to me	supporting	audit:reviewed	Audit: fine as-is.	Dame el libro a mí, no a él.	Give the book to me, not to him.
+2d169mb7ai	a ti	to you	supporting	audit:reviewed	Audit example fix: old example "A ti te toca."/"It's your turn." didn't contain "to you" in the English at all. Replaced with one that demonstrates the actual gloss.	Te lo di a ti, no a él.	I gave it to you, not to him.
+flwdh3dbk5	a él	to him	supporting	audit:reviewed	Audit: fine as-is.	Dáselo a él.	Give it to him.
+45ejuhdox6	a ella	to her	supporting	audit:reviewed	Audit example fix: old example "Pregúntale a ella."/"Ask her." didn't contain "to her" in the English at all. Replaced with one that demonstrates the actual gloss.	Se lo dije a ella, no a él.	I told it to her, not to him.
+ej7gnt7lbx	a [alguien]	to [somebody]	supporting	audit:reviewed	Audit: fine as-is.	Le di el libro a alguien.	I gave the book to somebody.
+9h4yb41inv	a nosotros	to us	supporting	audit:reviewed	Audit: fine as-is.	Nos lo dijeron a nosotros.	They told it to us.
+unkd514ur0	a ellos	to them	supporting	audit:reviewed	Audit: fine as-is.	El premio les tocó a ellos.	The prize went to them.
+fk8uepz3o3	a usted	to you	supporting	audit:reviewed	Audit: fine as-is.	Le hablo a usted.	I am talking to you.
+0xx4ewk26d	con usted	with you	supporting	audit:reviewed	Audit: fine as-is.	Quiero hablar con usted.	I want to speak with you.
+nv7alp7lve	para usted	for you	supporting	audit:reviewed	Audit: fine as-is.	Este mensaje es para usted.	This message is for you.
+kep0p7nw3e	a ustedes	to you	supporting	audit:reviewed	Audit: fine as-is.	Les hablo a ustedes.	I am talking to you.
+6xhu16fwu6	con ustedes	with you	supporting	audit:reviewed	Audit: fine as-is.	Voy con ustedes.	I am going with you.
+2waliyvy7h	para ustedes	for you	supporting	audit:reviewed	Audit: fine as-is.	Traje café para ustedes.	I brought coffee for you.
+o3buetgjp9	a ellas	to them	supporting	audit:reviewed	Audit role fix: was core, inconsistent with its exact parallel "a ellos" (supporting) and every other a-/para- pronoun row. Re-tiered to match; "con ellas" correctly stays core matching "con ellos".	El premio les tocó a ellas.	The prize went to them.
+796z7mxsvp	con ellas	with them	core	audit:reviewed	Audit: fine as-is — correctly matches "con ellos" (core).	Hablé con ellas ayer.	I spoke with them yesterday.
+gp7z4dvb4r	para ellas	for them	supporting	audit:reviewed	Audit role fix: was core, inconsistent with its exact parallel "para ellos" (supporting) and every other para- pronoun row.	El proyecto es difícil para ellas.	The project is hard for them.

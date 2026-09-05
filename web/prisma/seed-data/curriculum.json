@@ -81333,7 +81333,8 @@
         "es:conmigo",
         "en:with",
         "en:me",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -81353,7 +81354,8 @@
         "es:contigo",
         "en:with",
         "en:you",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -81375,7 +81377,8 @@
         "en:with",
         "en:him",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -81397,7 +81400,8 @@
         "en:with",
         "en:her",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -81420,7 +81424,8 @@
         "en:with",
         "en:us",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -81443,7 +81448,8 @@
         "en:with",
         "en:them",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -81465,7 +81471,8 @@
         "en:with",
         "en:somebody",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -81488,7 +81495,8 @@
         "en:me",
         "contrast:mi-vs-mi-tilde",
         "contrast:confusable",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -81509,7 +81517,8 @@
         "es:ti",
         "en:for",
         "en:you",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -81530,7 +81539,8 @@
         "es:él",
         "en:for",
         "en:him",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -81551,7 +81561,8 @@
         "es:ella",
         "en:for",
         "en:her",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -81573,7 +81584,8 @@
         "es:nosotros",
         "en:for",
         "en:us",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -81595,7 +81607,8 @@
         "es:ellos",
         "en:for",
         "en:them",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -81616,7 +81629,8 @@
         "es:alguien",
         "en:for",
         "en:somebody",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -81638,7 +81652,8 @@
         "en:to",
         "en:me",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -81647,8 +81662,8 @@
       "spanish": "a ti",
       "english": "to you",
       "example": {
-        "spanish": "A ti te toca.",
-        "english": "It's your turn."
+        "spanish": "Te lo di a ti, no a él.",
+        "english": "I gave it to you, not to him."
       },
       "collections": [
         "pos:pronoun",
@@ -81660,7 +81675,8 @@
         "en:to",
         "en:you",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -81682,7 +81698,8 @@
         "en:to",
         "en:him",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -81691,8 +81708,8 @@
       "spanish": "a ella",
       "english": "to her",
       "example": {
-        "spanish": "Pregúntale a ella.",
-        "english": "Ask her."
+        "spanish": "Se lo dije a ella, no a él.",
+        "english": "I told it to her, not to him."
       },
       "collections": [
         "pos:pronoun",
@@ -81704,7 +81721,8 @@
         "en:to",
         "en:her",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -81726,7 +81744,8 @@
         "en:to",
         "en:somebody",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -83180,7 +83199,8 @@
         "en:to",
         "en:us",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -83203,7 +83223,8 @@
         "en:to",
         "en:them",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -83571,7 +83592,8 @@
         "es:usted",
         "topic:pronoun",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -83593,7 +83615,8 @@
         "es:usted",
         "topic:pronoun",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -83614,7 +83637,8 @@
         "es:para",
         "es:usted",
         "topic:pronoun",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -83636,7 +83660,8 @@
         "es:ustedes",
         "topic:pronoun",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -83658,7 +83683,8 @@
         "es:ustedes",
         "topic:pronoun",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -83679,7 +83705,8 @@
         "es:para",
         "es:ustedes",
         "topic:pronoun",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -83702,9 +83729,10 @@
         "es:ellas",
         "topic:pronoun",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "796z7mxsvp",
@@ -83725,7 +83753,8 @@
         "es:ellas",
         "topic:pronoun",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -83747,9 +83776,10 @@
         "es:para",
         "es:ellas",
         "topic:pronoun",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "aq3ynjbhjm",
