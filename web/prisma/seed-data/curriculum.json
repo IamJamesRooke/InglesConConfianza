@@ -47667,8 +47667,8 @@
       "spanish": "[ser] verde",
       "english": "[to be] green",
       "example": {
-        "spanish": "Tu respuesta es correcta.",
-        "english": "Your answer is correct."
+        "spanish": "La hierba es verde.",
+        "english": "The grass is green."
       },
       "collections": [
         "grammar:ser-adjective",
@@ -47685,8 +47685,8 @@
       "spanish": "[ser] amarillo",
       "english": "[to be] yellow",
       "example": {
-        "spanish": "Tu respuesta es correcta.",
-        "english": "Your answer is correct."
+        "spanish": "El sol es amarillo.",
+        "english": "The sun is yellow."
       },
       "collections": [
         "grammar:ser-adjective",
@@ -47741,8 +47741,8 @@
       "spanish": "[ser] barato",
       "english": "[to be] cheap",
       "example": {
-        "spanish": "Tu respuesta es correcta.",
-        "english": "Your answer is correct."
+        "spanish": "Este restaurante es barato.",
+        "english": "This restaurant is cheap."
       },
       "collections": [
         "grammar:ser-adjective",
@@ -47759,8 +47759,8 @@
       "spanish": "[ser] barato",
       "english": "[to be] inexpensive",
       "example": {
-        "spanish": "Tu respuesta es correcta.",
-        "english": "Your answer is correct."
+        "spanish": "El hotel es barato.",
+        "english": "The hotel is inexpensive."
       },
       "collections": [
         "grammar:ser-adjective",
@@ -47777,8 +47777,8 @@
       "spanish": "[ser] económico",
       "english": "[to be] cheap",
       "example": {
-        "spanish": "Tu respuesta es correcta.",
-        "english": "Your answer is correct."
+        "spanish": "El vuelo es económico.",
+        "english": "The flight is cheap."
       },
       "collections": [
         "grammar:ser-adjective",
@@ -47795,8 +47795,8 @@
       "spanish": "[ser] económico",
       "english": "[to be] inexpensive",
       "example": {
-        "spanish": "Tu respuesta es correcta.",
-        "english": "Your answer is correct."
+        "spanish": "Este plan es económico.",
+        "english": "This plan is inexpensive."
       },
       "collections": [
         "grammar:ser-adjective",
@@ -47813,8 +47813,8 @@
       "spanish": "[ser] caro",
       "english": "[to be] expensive",
       "example": {
-        "spanish": "Tu respuesta es correcta.",
-        "english": "Your answer is correct."
+        "spanish": "Ese carro es muy caro.",
+        "english": "That car is very expensive."
       },
       "collections": [
         "grammar:ser-adjective",
@@ -47831,8 +47831,8 @@
       "spanish": "[ser] caro",
       "english": "[to be] dear",
       "example": {
-        "spanish": "Tu respuesta es correcta.",
-        "english": "Your answer is correct."
+        "spanish": "Los boletos son caros.",
+        "english": "The tickets are dear."
       },
       "collections": [
         "grammar:ser-adjective",
@@ -47849,8 +47849,8 @@
       "spanish": "[ser] corto",
       "english": "[to be] short",
       "example": {
-        "spanish": "Tu respuesta es correcta.",
-        "english": "Your answer is correct."
+        "spanish": "El video es corto.",
+        "english": "The video is short."
       },
       "collections": [
         "grammar:ser-adjective",
@@ -47867,8 +47867,8 @@
       "spanish": "[ser] corto",
       "english": "[to be] brief",
       "example": {
-        "spanish": "Tu respuesta es correcta.",
-        "english": "Your answer is correct."
+        "spanish": "Su discurso fue corto.",
+        "english": "Her speech was brief."
       },
       "collections": [
         "grammar:ser-adjective",
@@ -47907,8 +47907,8 @@
       "spanish": "[ser] largo",
       "english": "[to be] lengthy",
       "example": {
-        "spanish": "Tu respuesta es correcta.",
-        "english": "Your answer is correct."
+        "spanish": "La reunión fue larga.",
+        "english": "The meeting was lengthy."
       },
       "collections": [
         "grammar:ser-adjective",
@@ -47962,8 +47962,8 @@
       "spanish": "[ser] fácil",
       "english": "[to be] easy",
       "example": {
-        "spanish": "Tu respuesta es correcta.",
-        "english": "Your answer is correct."
+        "spanish": "El examen fue fácil.",
+        "english": "The exam was easy."
       },
       "collections": [
         "grammar:ser-adjective",
@@ -47980,8 +47980,8 @@
       "spanish": "[ser] fácil",
       "english": "[to be] simple",
       "example": {
-        "spanish": "Tu respuesta es correcta.",
-        "english": "Your answer is correct."
+        "spanish": "El proceso es fácil.",
+        "english": "The process is simple."
       },
       "collections": [
         "grammar:ser-adjective",
@@ -48021,8 +48021,8 @@
       "spanish": "[ser] importante",
       "english": "[to be] major",
       "example": {
-        "spanish": "Tu respuesta es correcta.",
-        "english": "Your answer is correct."
+        "spanish": "Este es un cambio importante.",
+        "english": "This is a major change."
       },
       "collections": [
         "grammar:ser-adjective",
@@ -48039,8 +48039,8 @@
       "spanish": "[ser] incorrecto",
       "english": "[to be] incorrect",
       "example": {
-        "spanish": "Tu respuesta es correcta.",
-        "english": "Your answer is correct."
+        "spanish": "Esa fecha es incorrecta.",
+        "english": "That date is incorrect."
       },
       "collections": [
         "grammar:ser-adjective",
@@ -48059,8 +48059,8 @@
       "spanish": "[ser] incorrecto",
       "english": "[to be] wrong",
       "example": {
-        "spanish": "Tu respuesta es correcta.",
-        "english": "Your answer is correct."
+        "spanish": "Tu respuesta es incorrecta.",
+        "english": "Your answer is wrong."
       },
       "collections": [
         "grammar:ser-adjective",
@@ -48077,8 +48077,8 @@
       "spanish": "[ser] joven",
       "english": "[to be] young",
       "example": {
-        "spanish": "Tu respuesta es correcta.",
-        "english": "Your answer is correct."
+        "spanish": "Mi hermana es joven.",
+        "english": "My sister is young."
       },
       "collections": [
         "grammar:ser-adjective",
@@ -48095,8 +48095,8 @@
       "spanish": "[ser] juvenil",
       "english": "[to be] youthful",
       "example": {
-        "spanish": "Tu respuesta es correcta.",
-        "english": "Your answer is correct."
+        "spanish": "Su energía es juvenil.",
+        "english": "Her energy is youthful."
       },
       "collections": [
         "grammar:ser-adjective",
@@ -48113,8 +48113,8 @@
       "spanish": "[ser] menor de edad",
       "english": "[to be] a minor",
       "example": {
-        "spanish": "Tu respuesta es correcta.",
-        "english": "Your answer is correct."
+        "spanish": "Mi sobrino es menor de edad.",
+        "english": "My nephew is a minor."
       },
       "collections": [
         "grammar:ser-adjective",
@@ -48207,8 +48207,8 @@
       "spanish": "[ser] pequeño",
       "english": "[to be] little",
       "example": {
-        "spanish": "Tu respuesta es correcta.",
-        "english": "Your answer is correct."
+        "spanish": "El perro es pequeño.",
+        "english": "The dog is little."
       },
       "collections": [
         "grammar:ser-adjective",
@@ -49224,8 +49224,8 @@
       "spanish": "[el] martes",
       "english": "Tuesday",
       "example": {
-        "spanish": "La reunión es el lunes.",
-        "english": "The meeting is on Monday."
+        "spanish": "El martes empieza el curso.",
+        "english": "The course starts on Tuesday."
       },
       "collections": [
         "topic:time",
@@ -49242,8 +49242,8 @@
       "spanish": "[el] miércoles",
       "english": "Wednesday",
       "example": {
-        "spanish": "La reunión es el lunes.",
-        "english": "The meeting is on Monday."
+        "spanish": "El miércoles tengo clase de yoga.",
+        "english": "On Wednesday I have yoga class."
       },
       "collections": [
         "topic:time",
@@ -49260,8 +49260,8 @@
       "spanish": "[el] jueves",
       "english": "Thursday",
       "example": {
-        "spanish": "La reunión es el lunes.",
-        "english": "The meeting is on Monday."
+        "spanish": "El jueves es el cumpleaños de mi mamá.",
+        "english": "Thursday is my mom's birthday."
       },
       "collections": [
         "topic:time",
@@ -49278,8 +49278,8 @@
       "spanish": "[el] viernes",
       "english": "Friday",
       "example": {
-        "spanish": "La reunión es el lunes.",
-        "english": "The meeting is on Monday."
+        "spanish": "El viernes salimos temprano.",
+        "english": "On Friday we leave early."
       },
       "collections": [
         "topic:time",
@@ -49296,8 +49296,8 @@
       "spanish": "[el] sábado",
       "english": "Saturday",
       "example": {
-        "spanish": "La reunión es el lunes.",
-        "english": "The meeting is on Monday."
+        "spanish": "Vamos a la playa el sábado.",
+        "english": "We're going to the beach on Saturday."
       },
       "collections": [
         "topic:time",
@@ -49314,8 +49314,8 @@
       "spanish": "[el] domingo",
       "english": "Sunday",
       "example": {
-        "spanish": "La reunión es el lunes.",
-        "english": "The meeting is on Monday."
+        "spanish": "Los domingos descanso.",
+        "english": "I rest on Sundays."
       },
       "collections": [
         "topic:time",
@@ -49366,8 +49366,8 @@
       "spanish": "español",
       "english": "Spanish",
       "example": {
-        "spanish": "¿Qué es esa cosa?",
-        "english": "What is that thing?"
+        "spanish": "Estoy aprendiendo español.",
+        "english": "I am learning Spanish."
       },
       "collections": [
         "topic:everyday-objects",
@@ -49400,8 +49400,8 @@
       "spanish": "[la] amiga",
       "english": "friend",
       "example": {
-        "spanish": "¿Qué es esa cosa?",
-        "english": "What is that thing?"
+        "spanish": "Mi amiga vive en Lima.",
+        "english": "My friend lives in Lima."
       },
       "collections": [
         "topic:everyday-objects",
@@ -49417,8 +49417,8 @@
       "spanish": "[la] película",
       "english": "movie",
       "example": {
-        "spanish": "¿Qué es esa cosa?",
-        "english": "What is that thing?"
+        "spanish": "Vimos una película anoche.",
+        "english": "We watched a movie last night."
       },
       "collections": [
         "topic:everyday-objects",
@@ -49434,8 +49434,8 @@
       "spanish": "[la] película",
       "english": "film",
       "example": {
-        "spanish": "¿Qué es esa cosa?",
-        "english": "What is that thing?"
+        "spanish": "Ese director hizo una película excelente.",
+        "english": "That director made an excellent film."
       },
       "collections": [
         "topic:everyday-objects",
@@ -49451,8 +49451,8 @@
       "spanish": "[el] negocio",
       "english": "business",
       "example": {
-        "spanish": "¿Qué es esa cosa?",
-        "english": "What is that thing?"
+        "spanish": "Abrieron un negocio nuevo.",
+        "english": "They opened a new business."
       },
       "collections": [
         "topic:everyday-objects",
@@ -49468,8 +49468,8 @@
       "spanish": "[la] firma",
       "english": "firm",
       "example": {
-        "spanish": "¿Qué es esa cosa?",
-        "english": "What is that thing?"
+        "spanish": "Trabajo en una firma de abogados.",
+        "english": "I work at a law firm."
       },
       "collections": [
         "topic:everyday-objects",
@@ -49504,8 +49504,8 @@
       "spanish": "[el] efectivo",
       "english": "cash",
       "example": {
-        "spanish": "¿Qué es esa cosa?",
-        "english": "What is that thing?"
+        "spanish": "Prefiero pagar en efectivo.",
+        "english": "I prefer to pay in cash."
       },
       "collections": [
         "topic:everyday-objects",
@@ -49521,8 +49521,8 @@
       "spanish": "[los] fondos",
       "english": "funds",
       "example": {
-        "spanish": "¿Qué es esa cosa?",
-        "english": "What is that thing?"
+        "spanish": "La empresa necesita más fondos.",
+        "english": "The company needs more funds."
       },
       "collections": [
         "topic:everyday-objects",
@@ -49538,8 +49538,8 @@
       "spanish": "[la] tarea",
       "english": "homework",
       "example": {
-        "spanish": "¿Qué es esa cosa?",
-        "english": "What is that thing?"
+        "spanish": "Terminé mi tarea anoche.",
+        "english": "I finished my homework last night."
       },
       "collections": [
         "topic:everyday-objects",
@@ -49555,8 +49555,8 @@
       "spanish": "[la] obligación",
       "english": "obligation",
       "example": {
-        "spanish": "¿Qué es esa cosa?",
-        "english": "What is that thing?"
+        "spanish": "No tienes ninguna obligación.",
+        "english": "You have no obligation."
       },
       "collections": [
         "topic:everyday-objects",
@@ -49572,8 +49572,8 @@
       "spanish": "[la] responsabilidad",
       "english": "responsibility",
       "example": {
-        "spanish": "¿Qué es esa cosa?",
-        "english": "What is that thing?"
+        "spanish": "Es tu responsabilidad terminarlo.",
+        "english": "It's your responsibility to finish it."
       },
       "collections": [
         "topic:everyday-objects",
@@ -49778,8 +49778,8 @@
       "spanish": "[la] luz",
       "english": "light",
       "example": {
-        "spanish": "¿Qué es esa cosa?",
-        "english": "What is that thing?"
+        "spanish": "Enciende la luz, por favor.",
+        "english": "Turn on the light, please."
       },
       "collections": [
         "topic:everyday-objects",
@@ -49795,8 +49795,8 @@
       "spanish": "[la] luz",
       "english": "power",
       "example": {
-        "spanish": "¿Qué es esa cosa?",
-        "english": "What is that thing?"
+        "spanish": "Se fue la luz durante la tormenta.",
+        "english": "The power went out during the storm."
       },
       "collections": [
         "topic:everyday-objects",
@@ -49998,8 +49998,8 @@
       "spanish": "quizá",
       "english": "maybe",
       "example": {
-        "spanish": "Casi terminé.",
-        "english": "I almost finished."
+        "spanish": "Quizá llueva mañana.",
+        "english": "Maybe it will rain tomorrow."
       },
       "collections": [
         "pos:adverb",
@@ -50013,8 +50013,8 @@
       "spanish": "quizá",
       "english": "perhaps",
       "example": {
-        "spanish": "Casi terminé.",
-        "english": "I almost finished."
+        "spanish": "Quizá tengas razón.",
+        "english": "Perhaps you're right."
       },
       "collections": [
         "register:formal",
@@ -50029,8 +50029,8 @@
       "spanish": "quizá",
       "english": "possibly",
       "example": {
-        "spanish": "Casi terminé.",
-        "english": "I almost finished."
+        "spanish": "Quizá podamos ir juntos.",
+        "english": "We could possibly go together."
       },
       "collections": [
         "pos:adverb",
@@ -51285,8 +51285,8 @@
       "spanish": "[el] cuarto",
       "english": "room",
       "example": {
-        "spanish": "La tienda está allí.",
-        "english": "The store is there."
+        "spanish": "Mi cuarto está en el segundo piso.",
+        "english": "My room is on the second floor."
       },
       "collections": [
         "topic:places",
@@ -51304,8 +51304,8 @@
       "spanish": "[la] habitación",
       "english": "room",
       "example": {
-        "spanish": "La tienda está allí.",
-        "english": "The store is there."
+        "spanish": "La habitación tiene dos camas.",
+        "english": "The room has two beds."
       },
       "collections": [
         "topic:places",
@@ -51323,8 +51323,8 @@
       "spanish": "[el] baño",
       "english": "bathroom",
       "example": {
-        "spanish": "La tienda está allí.",
-        "english": "The store is there."
+        "spanish": "El baño está al final del pasillo.",
+        "english": "The bathroom is at the end of the hall."
       },
       "collections": [
         "topic:places",
@@ -51342,8 +51342,8 @@
       "spanish": "[el] barrio",
       "english": "neighborhood",
       "example": {
-        "spanish": "La tienda está allí.",
-        "english": "The store is there."
+        "spanish": "Crecí en este barrio.",
+        "english": "I grew up in this neighborhood."
       },
       "collections": [
         "topic:places",
@@ -51361,8 +51361,8 @@
       "spanish": "[la] ciudad",
       "english": "city",
       "example": {
-        "spanish": "La tienda está allí.",
-        "english": "The store is there."
+        "spanish": "Esa ciudad es muy grande.",
+        "english": "That city is very big."
       },
       "collections": [
         "topic:places",
@@ -51382,8 +51382,8 @@
       "spanish": "[el] país",
       "english": "country",
       "example": {
-        "spanish": "La tienda está allí.",
-        "english": "The store is there."
+        "spanish": "Ese país tiene playas hermosas.",
+        "english": "That country has beautiful beaches."
       },
       "collections": [
         "topic:places",
@@ -51540,8 +51540,8 @@
       "spanish": "disculpe",
       "english": "excuse me",
       "example": {
-        "spanish": "Discúlpame por llegar tarde.",
-        "english": "Excuse me for being late."
+        "spanish": "Disculpe, ¿dónde está el baño?",
+        "english": "Excuse me, where is the bathroom?"
       },
       "collections": [
         "topic:social-expression",
@@ -51632,8 +51632,8 @@
       "spanish": "no hay problema",
       "english": "no problem",
       "example": {
-        "spanish": "Discúlpame por llegar tarde.",
-        "english": "Excuse me for being late."
+        "spanish": "No hay problema, puedo esperar.",
+        "english": "No problem, I can wait."
       },
       "collections": [
         "topic:social-expression",
@@ -56320,8 +56320,8 @@
       "spanish": "cuídate",
       "english": "take care",
       "example": {
-        "spanish": "Discúlpame por llegar tarde.",
-        "english": "Excuse me for being late."
+        "spanish": "Nos vemos pronto, ¡cuídate!",
+        "english": "See you soon, take care!"
       },
       "collections": [
         "topic:social-expression",
@@ -56337,8 +56337,8 @@
       "spanish": "cuidado con [algo]",
       "english": "be careful with [something]",
       "example": {
-        "spanish": "Discúlpame por llegar tarde.",
-        "english": "Excuse me for being late."
+        "spanish": "Cuidado con el perro.",
+        "english": "Be careful with the dog."
       },
       "collections": [
         "topic:social-expression",
@@ -56354,8 +56354,8 @@
       "spanish": "cállate",
       "english": "be quiet",
       "example": {
-        "spanish": "Discúlpame por llegar tarde.",
-        "english": "Excuse me for being late."
+        "spanish": "¡Cállate, por favor!",
+        "english": "Be quiet, please!"
       },
       "collections": [
         "topic:social-expression",
@@ -56372,8 +56372,8 @@
       "spanish": "cállate",
       "english": "shut up",
       "example": {
-        "spanish": "Discúlpame por llegar tarde.",
-        "english": "Excuse me for being late."
+        "spanish": "¡Cállate ya!",
+        "english": "Shut up already!"
       },
       "collections": [
         "topic:social-expression",
@@ -56391,8 +56391,8 @@
       "spanish": "para empezar",
       "english": "to begin with",
       "example": {
-        "spanish": "Casi terminé.",
-        "english": "I almost finished."
+        "spanish": "Para empezar, revisemos el presupuesto.",
+        "english": "To begin with, let's review the budget."
       },
       "collections": [
         "es:empezar",
@@ -57050,8 +57050,8 @@
       "spanish": "[estar] muerto",
       "english": "[to be] dead",
       "example": {
-        "spanish": "Tu respuesta es correcta.",
-        "english": "Your answer is correct."
+        "spanish": "La planta está muerta.",
+        "english": "The plant is dead."
       },
       "collections": [
         "grammar:estar-adjective",
@@ -57069,8 +57069,8 @@
       "spanish": "[estar] muerto de cansancio",
       "english": "[to be] exhausted",
       "example": {
-        "spanish": "Tu respuesta es correcta.",
-        "english": "Your answer is correct."
+        "spanish": "Estoy muerto de cansancio después del viaje.",
+        "english": "I am exhausted after the trip."
       },
       "collections": [
         "grammar:estar-adjective",
@@ -57107,8 +57107,8 @@
       "spanish": "[ser] marcado",
       "english": "[to be] pronounced",
       "example": {
-        "spanish": "Tu respuesta es correcta.",
-        "english": "Your answer is correct."
+        "spanish": "Su acento es marcado.",
+        "english": "Her accent is pronounced."
       },
       "collections": [
         "grammar:ser-adjective",
