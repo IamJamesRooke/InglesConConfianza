@@ -16,6 +16,7 @@ import {
   KNOWN_SENSE_VALUES,
   KNOWN_GENDER_VALUES,
   KNOWN_DEGREE_VALUES,
+  KNOWN_PARTICLE_VALUES,
   LEGACY_COLLECTIONS,
 } from "../src/lib/curriculum/collections";
 import { prisma } from "../src/lib/database/prisma";
@@ -88,6 +89,7 @@ test("the imported curriculum is exact and protected", async (context) => {
   assertKnownValues(collectionNames, "cognate", KNOWN_COGNATE_VALUES);
   assertKnownValues(collectionNames, "gender", KNOWN_GENDER_VALUES);
   assertKnownValues(collectionNames, "degree", KNOWN_DEGREE_VALUES);
+  assertKnownValues(collectionNames, "particle", KNOWN_PARTICLE_VALUES);
 
   // The es: / en: lemma facets make the catalog queryable as a bilingual
   // dictionary: every sense of a headword under one tag.

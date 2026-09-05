@@ -459,3 +459,15 @@ export const KNOWN_DEGREE_VALUES: ReadonlySet<string> = new Set([
   "comparative-more", "superlative-most",
   "irregular-comparative", "irregular-superlative",
 ]);
+
+// Controlled vocabulary for the `particle:` facet — the English particle(s)
+// or preposition(s) of a grammar:phrasal-verb / construction:prepositional-verb
+// row. A row can carry more than one (e.g. "take it out on somebody" is
+// out + on). See docs/curation/phrasal-verbs-plan-2026-09-05.md.
+export const KNOWN_PARTICLE_VALUES: ReadonlySet<string> = new Set([
+  "about", "across", "after", "against", "ahead", "along", "among", "apart",
+  "around", "as", "aside", "at", "away", "back", "before", "behind", "below",
+  "by", "down", "for", "forward", "from", "in", "into", "like", "of", "off",
+  "on", "onto", "out", "over", "past", "through", "to", "together", "toward",
+  "under", "up", "with",
+]);
