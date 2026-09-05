@@ -1379,7 +1379,8 @@
         "morphology:suffix-ly",
         "cognate:mente-to-ly",
         "es:necesariamente",
-        "en:necessarily"
+        "en:necessarily",
+        "grammar:manner"
       ],
       "curriculumRole": "reference"
     },
@@ -1399,7 +1400,8 @@
         "morphology:suffix-ly",
         "cognate:mente-to-ly",
         "es:innecesariamente",
-        "en:unnecessarily"
+        "en:unnecessarily",
+        "grammar:manner"
       ],
       "curriculumRole": "reference"
     },
@@ -19405,7 +19407,8 @@
         "morphology:suffix-ly",
         "cognate:mente-to-ly",
         "es:significativamente",
-        "en:significantly"
+        "en:significantly",
+        "grammar:manner"
       ],
       "curriculumRole": "reference"
     },
@@ -19656,7 +19659,8 @@
         "morphology:suffix-ly",
         "cognate:mente-to-ly",
         "es:supuestamente",
-        "en:supposedly"
+        "en:supposedly",
+        "grammar:manner"
       ],
       "curriculumRole": "reference"
     },
@@ -55137,7 +55141,8 @@
       "collections": [
         "pos:adverb",
         "es:despacio",
-        "en:slowly"
+        "en:slowly",
+        "grammar:manner"
       ],
       "curriculumRole": "supporting"
     },

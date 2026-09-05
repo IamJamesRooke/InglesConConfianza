@@ -220,6 +220,21 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
     ],
   },
   {
+    slug: "adverbs",
+    title: "Adverbs",
+    description:
+      "Words that modify a verb, adjective, or whole sentence instead of naming a thing — frequency (siempre, nunca), manner (-mente words, like rápidamente), intensifiers (muy, tan), and the question-word adverbs already covered on the Interrogatives page.",
+    baseCollection: "pos:adverb",
+    facetButtons: [
+      { collection: "grammar:frequency-adverb", label: "Frequency" },
+      { collection: "grammar:manner", label: "Manner (-mente)" },
+      { collection: "grammar:intensifier", label: "Intensifiers" },
+      { collection: "grammar:interrogative-adverb", label: "Interrogative" },
+      { collection: "topic:time", label: "Time" },
+      { collection: "topic:cognate", label: "Cognates" },
+    ],
+  },
+  {
     slug: "mappings",
     title: "Spanish-to-English Mappings",
     description:
