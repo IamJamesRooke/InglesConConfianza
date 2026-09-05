@@ -22409,10 +22409,10 @@
         "es:tu",
         "en:your",
         "topic:pronoun",
-        "pos:function-word",
         "contrast:tu-vs-tu-tilde",
         "contrast:confusable",
-        "topic:determiner"
+        "topic:determiner",
+        "pos:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -23075,11 +23075,11 @@
         "el vs él",
         "en:the",
         "topic:determiner",
-        "pos:function-word",
         "contrast:el-articulo-vs-el-pronombre",
         "contrast:confusable",
         "es:el",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "pos:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -23099,8 +23099,8 @@
         "grammar:singular",
         "en:the",
         "topic:determiner",
-        "pos:function-word",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "pos:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -23120,10 +23120,10 @@
         "grammar:plural",
         "en:the",
         "topic:determiner",
-        "pos:function-word",
         "contrast:spanish-article-no-english",
         "contrast:confusable",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "pos:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -23143,10 +23143,10 @@
         "grammar:plural",
         "en:the",
         "topic:determiner",
-        "pos:function-word",
         "contrast:spanish-article-no-english",
         "contrast:confusable",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "pos:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -24288,7 +24288,6 @@
         "english": "so"
       },
       "collections": [
-        "pos:function-word",
         "pos:connector",
         "grammar:sentence-structure",
         "es:así",
@@ -24937,7 +24936,7 @@
         "en:which",
         "grammar:interrogative-determiner",
         "topic:interrogative",
-        "pos:function-word"
+        "pos:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -27285,7 +27284,6 @@
       },
       "collections": [
         "grammar:reason",
-        "pos:function-word",
         "pos:connector",
         "morphology:recognition",
         "morphology:prefix-be",
@@ -27305,7 +27303,6 @@
       },
       "collections": [
         "es:que",
-        "pos:function-word",
         "grammar:reason",
         "pos:connector",
         "es:porque",
@@ -27324,7 +27321,6 @@
       },
       "collections": [
         "es:que",
-        "pos:function-word",
         "grammar:reason",
         "pos:connector",
         "es:porque",
@@ -27531,7 +27527,6 @@
         "english": "if"
       },
       "collections": [
-        "pos:function-word",
         "pos:connector",
         "grammar:sentence-structure",
         "si vs sí",
@@ -28627,7 +28622,6 @@
         "english": "I almost finished."
       },
       "collections": [
-        "pos:function-word",
         "pos:adverb",
         "morphology:recognition",
         "morphology:prefix-al",
@@ -28647,7 +28641,6 @@
       "collections": [
         "por poco",
         "grammar:fixed-expression",
-        "pos:function-word",
         "pos:adverb",
         "es:por",
         "en:almost",
@@ -28822,7 +28815,6 @@
       "collections": [
         "en:although",
         "grammar:contrast",
-        "pos:function-word",
         "pos:connector",
         "grammar:sentence-structure",
         "es:pero",
@@ -28920,7 +28912,6 @@
       "collections": [
         "es:y",
         "pos:connector",
-        "pos:function-word",
         "grammar:sentence-structure",
         "en:and"
       ],
@@ -28939,7 +28930,6 @@
         "e",
         "pos:connector",
         "before i sound",
-        "pos:function-word",
         "grammar:sentence-structure",
         "en:and"
       ],
@@ -48377,7 +48367,6 @@
         "english": "I almost finished."
       },
       "collections": [
-        "pos:function-word",
         "pos:adverb",
         "es:quizá",
         "en:maybe"
@@ -48393,7 +48382,6 @@
         "english": "I almost finished."
       },
       "collections": [
-        "pos:function-word",
         "register:formal",
         "pos:adverb",
         "es:quizá",
@@ -48410,7 +48398,6 @@
         "english": "I almost finished."
       },
       "collections": [
-        "pos:function-word",
         "pos:adverb",
         "es:quizá",
         "en:possibly"
@@ -54670,7 +54657,6 @@
         "english": "I almost finished."
       },
       "collections": [
-        "pos:function-word",
         "es:empezar",
         "pos:connector",
         "es:para",
@@ -54980,7 +54966,6 @@
         "english": "There are nearly one hundred people."
       },
       "collections": [
-        "pos:function-word",
         "pos:adverb",
         "es:casi",
         "en:nearly"
@@ -54996,7 +54981,6 @@
         "english": "I hardly ever go out at night."
       },
       "collections": [
-        "pos:function-word",
         "grammar:frequency-adverb",
         "pos:adverb",
         "es:casi",
@@ -55013,7 +54997,6 @@
         "english": "I have little time."
       },
       "collections": [
-        "pos:function-word",
         "pos:quantifier",
         "es:poco",
         "en:little"
@@ -55029,7 +55012,6 @@
         "english": "I have little time."
       },
       "collections": [
-        "pos:function-word",
         "pos:quantifier",
         "es:poco",
         "en:little"
@@ -55045,7 +55027,6 @@
         "english": "It is not very practical."
       },
       "collections": [
-        "pos:function-word",
         "pos:adverb",
         "es:ser",
         "en:very",
@@ -64597,7 +64578,6 @@
         "english": "Coffee or tea?"
       },
       "collections": [
-        "pos:function-word",
         "pos:connector",
         "grammar:sentence-structure",
         "en:or"
@@ -64613,7 +64593,6 @@
         "english": "Seven or eight?"
       },
       "collections": [
-        "pos:function-word",
         "pos:connector",
         "grammar:sentence-structure",
         "before o sound",
@@ -64630,7 +64609,6 @@
         "english": "Laura is faster than Diana."
       },
       "collections": [
-        "pos:function-word",
         "pos:connector",
         "grammar:comparison",
         "es:que",
@@ -64648,7 +64626,6 @@
         "english": "I think that it is important."
       },
       "collections": [
-        "pos:function-word",
         "pos:connector",
         "grammar:sentence-structure",
         "es:que",
@@ -64667,7 +64644,6 @@
         "english": "Call me when you arrive."
       },
       "collections": [
-        "pos:function-word",
         "pos:connector",
         "topic:time-connector",
         "cuando vs cuándo",
@@ -64685,7 +64661,6 @@
         "english": "Work while you wait."
       },
       "collections": [
-        "pos:function-word",
         "pos:connector",
         "topic:time-connector",
         "es:mientras",
@@ -67275,12 +67250,12 @@
         "english": "I am very busy."
       },
       "collections": [
-        "pos:function-word",
         "grammar:intensifier",
         "grammar:degree",
         "grammar:adjective-modifier",
         "es:muy",
-        "en:very"
+        "en:very",
+        "pos:adverb"
       ],
       "curriculumRole": "core"
     },
@@ -67293,14 +67268,14 @@
         "english": "I am too busy."
       },
       "collections": [
-        "pos:function-word",
         "grammar:intensifier",
         "grammar:degree",
         "grammar:excess",
         "grammar:adjective-modifier",
         "sound:to-too-two",
         "es:demasiado",
-        "en:too"
+        "en:too",
+        "pos:adverb"
       ],
       "curriculumRole": "core"
     },
@@ -67313,7 +67288,6 @@
         "english": "I am so busy that I can't go."
       },
       "collections": [
-        "pos:function-word",
         "grammar:intensifier",
         "grammar:degree",
         "grammar:adjective-modifier",
@@ -67321,7 +67295,8 @@
         "en:so",
         "contrast:tanto-vs-tan",
         "contrast:confusable",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "pos:adverb"
       ],
       "curriculumRole": "core"
     },
@@ -67334,13 +67309,13 @@
         "english": "I am not that busy."
       },
       "collections": [
-        "pos:function-word",
         "grammar:intensifier",
         "grammar:referenced-quantity",
         "not that",
         "es:tan",
         "en:that",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "pos:adverb"
       ],
       "curriculumRole": "supporting"
     },
@@ -77153,7 +77128,6 @@
         "english": "My car is blue."
       },
       "collections": [
-        "pos:function-word",
         "grammar:possessive-determiner",
         "grammar:singular",
         "topic:pronoun",
@@ -77161,7 +77135,8 @@
         "en:my",
         "contrast:mi-vs-mi-tilde",
         "contrast:confusable",
-        "topic:determiner"
+        "topic:determiner",
+        "pos:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -77174,13 +77149,13 @@
         "english": "My keys are on the table."
       },
       "collections": [
-        "pos:function-word",
         "grammar:possessive-determiner",
         "grammar:plural",
         "topic:pronoun",
         "es:mi",
         "en:my",
-        "topic:determiner"
+        "topic:determiner",
+        "pos:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -77193,14 +77168,14 @@
         "english": "His name is Juan."
       },
       "collections": [
-        "pos:function-word",
         "grammar:possessive-determiner",
         "topic:pronoun",
         "es:su",
         "en:his",
         "contrast:su-ambiguity",
         "contrast:confusable",
-        "topic:determiner"
+        "topic:determiner",
+        "pos:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -77213,7 +77188,6 @@
         "english": "Her name is Ana."
       },
       "collections": [
-        "pos:function-word",
         "grammar:possessive-determiner",
         "topic:pronoun",
         "es:su",
@@ -77221,7 +77195,8 @@
         "contrast:su-ambiguity",
         "contrast:confusable",
         "topic:determiner",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "pos:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -77234,14 +77209,14 @@
         "english": "The dog wags its tail."
       },
       "collections": [
-        "pos:function-word",
         "grammar:possessive-determiner",
         "topic:pronoun",
         "es:su",
         "en:its",
         "contrast:su-ambiguity",
         "contrast:confusable",
-        "topic:determiner"
+        "topic:determiner",
+        "pos:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -77254,7 +77229,6 @@
         "english": "Their house is big."
       },
       "collections": [
-        "pos:function-word",
         "grammar:possessive-determiner",
         "grammar:plural",
         "topic:pronoun",
@@ -77262,7 +77236,8 @@
         "en:their",
         "contrast:su-ambiguity",
         "contrast:confusable",
-        "topic:determiner"
+        "topic:determiner",
+        "pos:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -77275,7 +77250,6 @@
         "english": "Your passport, please."
       },
       "collections": [
-        "pos:function-word",
         "grammar:possessive-determiner",
         "register:formal",
         "topic:pronoun",
@@ -77283,7 +77257,8 @@
         "en:your",
         "contrast:su-ambiguity",
         "contrast:confusable",
-        "topic:determiner"
+        "topic:determiner",
+        "pos:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -77296,7 +77271,6 @@
         "english": "Their children are at school."
       },
       "collections": [
-        "pos:function-word",
         "grammar:possessive-determiner",
         "grammar:plural",
         "topic:pronoun",
@@ -77304,7 +77278,8 @@
         "en:their",
         "contrast:confusable",
         "contrast:su-ambiguity",
-        "topic:determiner"
+        "topic:determiner",
+        "pos:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -78356,7 +78331,6 @@
         "english": "This book is important."
       },
       "collections": [
-        "pos:function-word",
         "grammar:demonstrative",
         "grammar:demonstrative-determiner",
         "grammar:singular",
@@ -78368,7 +78342,8 @@
         "contrast:este-vs-esto",
         "contrast:confusable",
         "topic:determiner",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "pos:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -78381,7 +78356,6 @@
         "english": "This house is big."
       },
       "collections": [
-        "pos:function-word",
         "grammar:demonstrative",
         "grammar:demonstrative-determiner",
         "grammar:singular",
@@ -78391,7 +78365,8 @@
         "es:esta",
         "en:this",
         "topic:determiner",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "pos:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -78404,7 +78379,6 @@
         "english": "That book is important."
       },
       "collections": [
-        "pos:function-word",
         "grammar:demonstrative",
         "grammar:demonstrative-determiner",
         "grammar:singular",
@@ -78414,7 +78388,8 @@
         "es:ese",
         "en:that",
         "topic:determiner",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "pos:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -78427,7 +78402,6 @@
         "english": "That house is big."
       },
       "collections": [
-        "pos:function-word",
         "grammar:demonstrative",
         "grammar:demonstrative-determiner",
         "grammar:singular",
@@ -78437,7 +78411,8 @@
         "es:esa",
         "en:that",
         "topic:determiner",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "pos:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -78450,7 +78425,6 @@
         "english": "These shoes fit me."
       },
       "collections": [
-        "pos:function-word",
         "grammar:demonstrative",
         "grammar:demonstrative-determiner",
         "grammar:plural",
@@ -78459,7 +78433,8 @@
         "topic:pronoun",
         "es:estos",
         "en:these",
-        "topic:determiner"
+        "topic:determiner",
+        "pos:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -78472,7 +78447,6 @@
         "english": "These chairs are comfortable."
       },
       "collections": [
-        "pos:function-word",
         "grammar:demonstrative",
         "grammar:demonstrative-determiner",
         "grammar:plural",
@@ -78481,7 +78455,8 @@
         "topic:pronoun",
         "es:estas",
         "en:these",
-        "topic:determiner"
+        "topic:determiner",
+        "pos:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -78494,7 +78469,6 @@
         "english": "Those shoes are expensive."
       },
       "collections": [
-        "pos:function-word",
         "grammar:demonstrative",
         "grammar:demonstrative-determiner",
         "grammar:plural",
@@ -78503,7 +78477,8 @@
         "topic:pronoun",
         "es:esos",
         "en:those",
-        "topic:determiner"
+        "topic:determiner",
+        "pos:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -78516,7 +78491,6 @@
         "english": "Those chairs are broken."
       },
       "collections": [
-        "pos:function-word",
         "grammar:demonstrative",
         "grammar:demonstrative-determiner",
         "grammar:plural",
@@ -78525,7 +78499,8 @@
         "topic:pronoun",
         "es:esas",
         "en:those",
-        "topic:determiner"
+        "topic:determiner",
+        "pos:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -78862,14 +78837,14 @@
         "english": "Our friends are coming tomorrow."
       },
       "collections": [
-        "pos:function-word",
         "grammar:possessive-determiner",
         "grammar:plural",
         "grammar:masculine",
         "topic:pronoun",
         "es:nuestros",
         "en:our",
-        "topic:determiner"
+        "topic:determiner",
+        "pos:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -78882,14 +78857,14 @@
         "english": "Our ideas are good."
       },
       "collections": [
-        "pos:function-word",
         "grammar:possessive-determiner",
         "grammar:plural",
         "grammar:feminine",
         "topic:pronoun",
         "es:nuestras",
         "en:our",
-        "topic:determiner"
+        "topic:determiner",
+        "pos:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -78902,14 +78877,14 @@
         "english": "Our team won."
       },
       "collections": [
-        "pos:function-word",
         "grammar:possessive-determiner",
         "grammar:plural",
         "grammar:masculine",
         "topic:pronoun",
         "es:nuestro",
         "en:our",
-        "topic:determiner"
+        "topic:determiner",
+        "pos:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -78922,14 +78897,14 @@
         "english": "Our house is blue."
       },
       "collections": [
-        "pos:function-word",
         "grammar:possessive-determiner",
         "grammar:plural",
         "grammar:feminine",
         "topic:pronoun",
         "es:nuestra",
         "en:our",
-        "topic:determiner"
+        "topic:determiner",
+        "pos:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -79107,13 +79082,13 @@
         "english": "Your keys are on the table."
       },
       "collections": [
-        "pos:function-word",
         "grammar:possessive-determiner",
         "grammar:plural",
         "topic:pronoun",
         "es:tu",
         "en:your",
-        "topic:determiner"
+        "topic:determiner",
+        "pos:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -79226,7 +79201,6 @@
         "english": "Those days were happy."
       },
       "collections": [
-        "pos:function-word",
         "grammar:demonstrative",
         "grammar:demonstrative-determiner",
         "grammar:plural",
@@ -79235,7 +79209,8 @@
         "topic:pronoun",
         "es:aquellos",
         "en:those",
-        "topic:determiner"
+        "topic:determiner",
+        "pos:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -79248,7 +79223,6 @@
         "english": "Those houses no longer exist."
       },
       "collections": [
-        "pos:function-word",
         "grammar:demonstrative",
         "grammar:demonstrative-determiner",
         "grammar:plural",
@@ -79257,7 +79231,8 @@
         "topic:pronoun",
         "es:aquellas",
         "en:those",
-        "topic:determiner"
+        "topic:determiner",
+        "pos:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -79767,13 +79742,13 @@
       "collections": [
         "grammar:plural",
         "grammar:possessive-determiner",
-        "pos:function-word",
         "en:his",
         "es:sus",
         "topic:pronoun",
         "contrast:confusable",
         "contrast:su-ambiguity",
-        "topic:determiner"
+        "topic:determiner",
+        "pos:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -79788,14 +79763,14 @@
       "collections": [
         "grammar:plural",
         "grammar:possessive-determiner",
-        "pos:function-word",
         "en:her",
         "es:sus",
         "topic:pronoun",
         "contrast:confusable",
         "contrast:su-ambiguity",
         "topic:determiner",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "pos:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -79810,13 +79785,13 @@
       "collections": [
         "grammar:plural",
         "grammar:possessive-determiner",
-        "pos:function-word",
         "en:its",
         "es:sus",
         "topic:pronoun",
         "contrast:confusable",
         "contrast:su-ambiguity",
-        "topic:determiner"
+        "topic:determiner",
+        "pos:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -79831,13 +79806,13 @@
       "collections": [
         "grammar:plural",
         "grammar:possessive-determiner",
-        "pos:function-word",
         "en:your",
         "es:sus",
         "topic:pronoun",
         "contrast:confusable",
         "contrast:su-ambiguity",
-        "topic:determiner"
+        "topic:determiner",
+        "pos:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -79855,12 +79830,12 @@
         "grammar:distal",
         "grammar:masculine",
         "grammar:singular",
-        "pos:function-word",
         "en:that",
         "es:aquel",
         "topic:pronoun",
         "topic:determiner",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "pos:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -79878,12 +79853,12 @@
         "grammar:distal",
         "grammar:feminine",
         "grammar:singular",
-        "pos:function-word",
         "en:that",
         "es:aquella",
         "topic:pronoun",
         "topic:determiner",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "pos:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -79951,12 +79926,12 @@
         "grammar:indefinite-article",
         "grammar:masculine",
         "grammar:singular",
-        "pos:function-word",
         "topic:determiner",
         "es:un",
         "en:a",
         "contrast:un-vs-uno",
-        "contrast:confusable"
+        "contrast:confusable",
+        "pos:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -79973,10 +79948,10 @@
         "grammar:indefinite-article",
         "grammar:feminine",
         "grammar:singular",
-        "pos:function-word",
         "topic:determiner",
         "es:un",
-        "en:a"
+        "en:a",
+        "pos:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -79993,11 +79968,11 @@
         "grammar:indefinite-article",
         "grammar:masculine",
         "grammar:plural",
-        "pos:function-word",
         "topic:determiner",
         "es:un",
         "en:some",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "pos:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -80014,11 +79989,11 @@
         "grammar:indefinite-article",
         "grammar:feminine",
         "grammar:plural",
-        "pos:function-word",
         "topic:determiner",
         "es:un",
         "en:some",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "pos:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -80034,11 +80009,11 @@
         "grammar:article",
         "grammar:neuter-article",
         "grammar:neuter",
-        "pos:function-word",
         "topic:determiner",
         "es:lo",
         "en:the",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "pos:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -80054,11 +80029,11 @@
         "grammar:contraction",
         "grammar:article",
         "grammar:definite-article",
-        "pos:function-word",
         "topic:determiner",
         "es:al",
         "en:the",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "pos:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -80074,11 +80049,11 @@
         "grammar:contraction",
         "grammar:article",
         "grammar:definite-article",
-        "pos:function-word",
         "topic:determiner",
         "es:del",
         "en:the",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "pos:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -80513,12 +80488,12 @@
       },
       "collections": [
         "grammar:interrogative-determiner",
-        "pos:function-word",
         "topic:determiner",
         "es:qué",
         "en:what",
         "topic:interrogative",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "pos:determiner"
       ],
       "curriculumRole": "core"
     },
@@ -80534,12 +80509,12 @@
         "grammar:interrogative-determiner",
         "grammar:masculine",
         "grammar:uncountable",
-        "pos:function-word",
         "topic:determiner",
         "es:cuánto",
         "en:how",
         "topic:interrogative",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "pos:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -80555,12 +80530,12 @@
         "grammar:interrogative-determiner",
         "grammar:feminine",
         "grammar:uncountable",
-        "pos:function-word",
         "topic:determiner",
         "es:cuánto",
         "en:how",
         "topic:interrogative",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "pos:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -80574,11 +80549,11 @@
       },
       "collections": [
         "grammar:exclamative",
-        "pos:function-word",
         "topic:determiner",
         "es:qué",
         "en:what",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "pos:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -80594,10 +80569,10 @@
         "grammar:relative-determiner",
         "grammar:masculine",
         "grammar:singular",
-        "pos:function-word",
         "topic:determiner",
         "es:cuyo",
-        "en:whose"
+        "en:whose",
+        "pos:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -80613,10 +80588,10 @@
         "grammar:relative-determiner",
         "grammar:feminine",
         "grammar:singular",
-        "pos:function-word",
         "topic:determiner",
         "es:cuyo",
-        "en:whose"
+        "en:whose",
+        "pos:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -80632,10 +80607,10 @@
         "grammar:relative-determiner",
         "grammar:masculine",
         "grammar:plural",
-        "pos:function-word",
         "topic:determiner",
         "es:cuyo",
-        "en:whose"
+        "en:whose",
+        "pos:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -80651,10 +80626,10 @@
         "grammar:relative-determiner",
         "grammar:feminine",
         "grammar:plural",
-        "pos:function-word",
         "topic:determiner",
         "es:cuyo",
-        "en:whose"
+        "en:whose",
+        "pos:determiner"
       ],
       "curriculumRole": "reference"
     },
