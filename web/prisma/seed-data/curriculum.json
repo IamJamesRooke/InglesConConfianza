@@ -7003,7 +7003,8 @@
         "en:ready",
         "topic:condition-state",
         "topic:multi-sense",
-        "grammar:estar-adjective"
+        "grammar:estar-adjective",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -7332,7 +7333,8 @@
         "en:free",
         "topic:value-price",
         "topic:multi-sense",
-        "topic:en-multi-sense"
+        "topic:en-multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -21361,7 +21363,8 @@
         "en:hungry",
         "grammar:tener-adjective",
         "topic:emotion-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -21380,7 +21383,8 @@
         "en:thirsty",
         "grammar:tener-adjective",
         "topic:emotion-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -21399,7 +21403,8 @@
         "en:hot",
         "grammar:tener-adjective",
         "topic:emotion-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -21418,7 +21423,8 @@
         "en:cold",
         "grammar:tener-adjective",
         "topic:emotion-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -21437,7 +21443,8 @@
         "en:sleepy",
         "grammar:tener-adjective",
         "topic:emotion-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -21463,7 +21470,8 @@
         "topic:en-multi-sense",
         "particle:of",
         "en:be",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -21570,7 +21578,8 @@
         "en:lucky",
         "grammar:tener-adjective",
         "topic:emotion-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -21649,7 +21658,8 @@
         "en:confident",
         "grammar:tener-adjective",
         "topic:emotion-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -26580,14 +26590,15 @@
       "spanish": "bien",
       "english": "okay",
       "example": {
-        "spanish": "bien",
-        "english": "okay"
+        "spanish": "¿Estás bien?",
+        "english": "Are you okay?"
       },
       "collections": [
         "es:bien",
         "en:okay",
         "pos:adjective",
-        "grammar:estar-adjective"
+        "grammar:estar-adjective",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -26596,14 +26607,15 @@
       "spanish": "bien",
       "english": "fine",
       "example": {
-        "spanish": "bien",
-        "english": "fine"
+        "spanish": "Estoy bien, gracias.",
+        "english": "I'm fine, thank you."
       },
       "collections": [
         "es:bien",
         "en:fine",
         "pos:adjective",
-        "grammar:estar-adjective"
+        "grammar:estar-adjective",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -29593,9 +29605,10 @@
         "es:seguro",
         "en:sure",
         "pos:adjective",
-        "grammar:estar-adjective"
+        "grammar:estar-adjective",
+        "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "gwnpt7pmq9",
@@ -35977,7 +35990,8 @@
         "es:estar",
         "en:active",
         "topic:emotion-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -36409,7 +36423,8 @@
         "es:estar",
         "en:intact",
         "topic:condition-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -36679,7 +36694,8 @@
         "es:estar",
         "en:nervous",
         "topic:emotion-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -38216,7 +38232,8 @@
         "es:estar",
         "en:stable",
         "topic:emotion-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -50065,7 +50082,8 @@
         "es:estar",
         "en:available",
         "topic:condition-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -50120,7 +50138,8 @@
         "es:estar",
         "en:busy",
         "topic:condition-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -50138,7 +50157,8 @@
         "es:estar",
         "en:occupied",
         "topic:condition-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58948,7 +58968,8 @@
         "es:estar",
         "en:ready",
         "topic:condition-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58966,7 +58987,8 @@
         "es:estar",
         "en:crowded",
         "topic:condition-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -58987,7 +59009,8 @@
         "topic:multi-sense",
         "construction:prepositional-verb",
         "particle:of",
-        "topic:phrasal-verb"
+        "topic:phrasal-verb",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -59006,7 +59029,8 @@
         "es:estar",
         "en:dead",
         "topic:condition-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -59025,7 +59049,8 @@
         "es:estar",
         "en:exhausted",
         "topic:emotion-state",
-        "topic:multi-sense"
+        "topic:multi-sense",
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
