@@ -28264,7 +28264,8 @@
         "contrast:confusable",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:enmap-you-2"
+        "topic:enmap-you-2",
+        "topic:confusable-pronoun-other"
       ],
       "curriculumRole": "core"
     },
@@ -28287,7 +28288,8 @@
         "contrast:confusable",
         "topic:determiner",
         "pos:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:confusable-possessive"
       ],
       "curriculumRole": "core"
     },
@@ -28313,7 +28315,8 @@
         "contrast:confusable",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:enmap-you-2"
+        "topic:enmap-you-2",
+        "topic:confusable-pronoun-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -28337,7 +28340,8 @@
         "contrast:el-vs-lo",
         "contrast:confusable",
         "contrast:el-articulo-vs-el-pronombre",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:confusable-pronoun-other"
       ],
       "curriculumRole": "core"
     },
@@ -28488,7 +28492,8 @@
         "contrast:confusable",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:enmap-you-2"
+        "topic:enmap-you-2",
+        "topic:confusable-pronoun-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -28533,7 +28538,8 @@
         "contrast:confusable",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:enmap-you-2"
+        "topic:enmap-you-2",
+        "topic:confusable-pronoun-other"
       ],
       "curriculumRole": "core"
     },
@@ -28576,7 +28582,8 @@
         "contrast:lo-vs-le",
         "contrast:confusable",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:confusable-pronoun-other"
       ],
       "curriculumRole": "core"
     },
@@ -28622,7 +28629,8 @@
         "contrast:el-vs-lo",
         "contrast:confusable",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:confusable-pronoun-other"
       ],
       "curriculumRole": "core"
     },
@@ -28846,7 +28854,8 @@
         "topic:pronoun",
         "contrast:se-reflexive-vs-reciprocal",
         "contrast:confusable",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:confusable-pronoun-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -28885,7 +28894,8 @@
         "topic:pronoun",
         "contrast:se-reflexive-vs-reciprocal",
         "contrast:confusable",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:confusable-pronoun-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -28990,7 +29000,8 @@
         "es:el",
         "topic:en-multi-sense",
         "pos:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:confusable-determiner-other"
       ],
       "curriculumRole": "core"
     },
@@ -29036,7 +29047,8 @@
         "contrast:confusable",
         "topic:en-multi-sense",
         "pos:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:confusable-determiner-other"
       ],
       "curriculumRole": "core"
     },
@@ -29060,7 +29072,8 @@
         "contrast:confusable",
         "topic:en-multi-sense",
         "pos:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:confusable-determiner-other"
       ],
       "curriculumRole": "core"
     },
@@ -57346,7 +57359,8 @@
         "contrast:confusable",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:cardinal-1-10"
+        "topic:cardinal-1-10",
+        "topic:confusable-determiner-other"
       ],
       "curriculumRole": "core"
     },
@@ -59167,7 +59181,8 @@
         "topic:cognate",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:cardinal-tens-and-up"
+        "topic:cardinal-tens-and-up",
+        "topic:confusable-determiner-other"
       ],
       "curriculumRole": "reference"
     },
@@ -59192,7 +59207,8 @@
         "topic:cognate",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:cardinal-tens-and-up"
+        "topic:cardinal-tens-and-up",
+        "topic:confusable-determiner-other"
       ],
       "curriculumRole": "reference"
     },
@@ -80867,7 +80883,8 @@
         "contrast:confusable",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:quant-much-many"
+        "topic:quant-much-many",
+        "topic:confusable-determiner-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -92439,7 +92456,8 @@
         "contrast:confusable",
         "topic:determiner",
         "pos:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:confusable-possessive"
       ],
       "curriculumRole": "core"
     },
@@ -92480,7 +92498,8 @@
         "contrast:confusable",
         "topic:determiner",
         "pos:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:confusable-possessive"
       ],
       "curriculumRole": "core"
     },
@@ -92502,7 +92521,8 @@
         "topic:determiner",
         "topic:en-multi-sense",
         "pos:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:confusable-possessive"
       ],
       "curriculumRole": "core"
     },
@@ -92523,7 +92543,8 @@
         "contrast:confusable",
         "topic:determiner",
         "pos:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:confusable-possessive"
       ],
       "curriculumRole": "reference"
     },
@@ -92545,7 +92566,8 @@
         "contrast:confusable",
         "topic:determiner",
         "pos:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:confusable-possessive"
       ],
       "curriculumRole": "core"
     },
@@ -92567,7 +92589,8 @@
         "contrast:confusable",
         "topic:determiner",
         "pos:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:confusable-possessive"
       ],
       "curriculumRole": "supporting"
     },
@@ -92589,7 +92612,8 @@
         "contrast:su-ambiguity",
         "topic:determiner",
         "pos:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:confusable-possessive"
       ],
       "curriculumRole": "supporting"
     },
@@ -92817,7 +92841,8 @@
         "audit:reviewed",
         "grammar:prep-pronoun-para",
         "topic:part-for-2",
-        "topic:enmap-for-3"
+        "topic:enmap-for-3",
+        "topic:confusable-pronoun-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -93491,7 +93516,8 @@
         "contrast:confusable",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "grammar:indef-pronoun-quantity"
+        "grammar:indef-pronoun-quantity",
+        "topic:confusable-pronoun-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -93577,7 +93603,8 @@
         "contrast:confusable",
         "grammar:demonstrative",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:confusable-pronoun-other"
       ],
       "curriculumRole": "core"
     },
@@ -93794,7 +93821,8 @@
         "topic:determiner",
         "topic:en-multi-sense",
         "pos:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:confusable-pronoun-other"
       ],
       "curriculumRole": "core"
     },
@@ -94875,7 +94903,8 @@
         "contrast:confusable",
         "topic:multi-sense",
         "audit:reviewed",
-        "topic:map-hablar-1"
+        "topic:map-hablar-1",
+        "topic:confusable-pronoun-other"
       ],
       "curriculumRole": "core"
     },
@@ -95319,7 +95348,8 @@
         "contrast:su-ambiguity",
         "topic:determiner",
         "pos:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:confusable-possessive"
       ],
       "curriculumRole": "supporting"
     },
@@ -95342,7 +95372,8 @@
         "topic:determiner",
         "topic:en-multi-sense",
         "pos:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:confusable-possessive"
       ],
       "curriculumRole": "supporting"
     },
@@ -95364,7 +95395,8 @@
         "contrast:su-ambiguity",
         "topic:determiner",
         "pos:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:confusable-possessive"
       ],
       "curriculumRole": "supporting"
     },
@@ -95386,7 +95418,8 @@
         "contrast:su-ambiguity",
         "topic:determiner",
         "pos:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:confusable-possessive"
       ],
       "curriculumRole": "supporting"
     },
@@ -95513,7 +95546,8 @@
         "contrast:un-vs-uno",
         "contrast:confusable",
         "pos:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:confusable-determiner-other"
       ],
       "curriculumRole": "core"
     },
@@ -95755,7 +95789,8 @@
         "contrast:confusable",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:quant-some-any-no"
+        "topic:quant-some-any-no",
+        "topic:confusable-determiner-other"
       ],
       "curriculumRole": "supporting"
     },

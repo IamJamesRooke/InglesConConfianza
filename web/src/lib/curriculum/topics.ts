@@ -38,7 +38,8 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       { collection: "grammar:relative-pronoun", label: "Relative" },
       { collection: "grammar:exclamative", label: "Exclamative" },
       { collection: "grammar:subordinate-subject-pronoun", label: "él → him" },
-      { collection: "contrast:confusable", label: "Confusions" },
+      { collection: "topic:confusable-possessive", label: "Confusions — su/sus" },
+      { collection: "topic:confusable-pronoun-other", label: "Confusions — Other" },
     ],
   },
   {
@@ -64,7 +65,8 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       { collection: "grammar:interrogative-determiner", label: "Interrogative" },
       { collection: "grammar:relative-determiner", label: "Relative (cuyo)" },
       { collection: "grammar:negative", label: "Negative (ningún)" },
-      { collection: "contrast:confusable", label: "Confusions" },
+      { collection: "topic:confusable-possessive", label: "Confusions — su/sus" },
+      { collection: "topic:confusable-determiner-other", label: "Confusions — Other" },
     ],
   },
   {
