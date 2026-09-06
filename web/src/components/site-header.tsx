@@ -2,6 +2,7 @@
 
 import { Menu, Palette, Settings, X } from "lucide-react";
 import Link from "next/link";
+import { BrandMark } from "@/components/brand-mark";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
@@ -103,10 +104,11 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3">
         <Link
           href="/admin"
-          className="min-w-0 font-semibold text-foreground"
+          className="flex min-w-0 items-center gap-2.5 font-semibold text-foreground"
           onClick={() => setIsMenuOpen(false)}
         >
-          Inglés Con Confianza <span className="text-muted-foreground">Admin</span>
+          <BrandMark size={32} />
+          <span className="min-w-0 leading-tight">Inglés con Confianza <span className="text-xs font-medium text-muted-foreground">Admin</span></span>
         </Link>
 
         <div className="hidden items-center gap-2 lg:flex">
@@ -174,10 +176,10 @@ function LearnerHeader({ onOpenTheme }: { onOpenTheme: () => void }) {
           className="learner-brand"
           aria-label="Inglés con Confianza"
         >
-          <span>Inglés con</span>
-          <strong>
-            Confianza<span aria-hidden="true">.</span>
-          </strong>
+          <BrandMark size={40} />
+          <span className="learner-brand-name">
+            Inglés con <strong>Confianza<span aria-hidden="true">.</span></strong>
+          </span>
         </Link>
         <button
           type="button"

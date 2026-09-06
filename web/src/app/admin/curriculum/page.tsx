@@ -1,4 +1,5 @@
 import { CurriculumTable } from "@/components/curriculum/curriculum-table";
+import { topicDescriptions, topicTitles } from "@/components/curriculum/topic-presentation";
 import { readConceptCoverage } from "@/lib/curriculum/server/coverage";
 import {
   curriculumPageSize,
@@ -95,11 +96,11 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
       <div className="mx-auto max-w-[1600px]">
         <div className="mb-6">
           <h1 className="text-3xl font-semibold tracking-tight">
-            {topic ? topic.title : "Curriculum"}
+            {topic ? topicTitles[topic.slug] ?? topic.title : "Curriculum"}
           </h1>
           <p className="mt-1 text-sm text-muted-foreground">
             {topic
-              ? topic.description
+              ? topicDescriptions[topic.slug] ?? topic.description
               : "Language concepts that combine vocabulary and structure."}
           </p>
         </div>
@@ -123,7 +124,15 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
             slug: entry.slug,
             title: entry.title,
           }))}
-          activeTopic={topic ? { slug: topic.slug, title: topic.title } : null}
+          activeTopic={
+            topic
+              ? {
+                  slug: topic.slug,
+                  title: topic.title,
+                  baseCollection: topic.baseCollection,
+                }
+              : null
+          }
           quickFacets={quickFacets}
           activeFacets={activeFacets}
         />

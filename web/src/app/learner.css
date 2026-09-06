@@ -536,12 +536,25 @@
 }
 .learner-brand {
   display: inline-flex;
-  align-items: baseline;
-  gap: 0.35em;
+  align-items: center;
+  gap: 10px;
   color: var(--foreground);
   font-size: 19px;
   font-weight: 500;
   letter-spacing: -0.025em;
+}
+.learner-brand-name {
+  min-width: 0;
+  line-height: 1.2;
+}
+@media (max-width: 480px) {
+  .learner-brand-name {
+    font-size: 13px;
+  }
+  .learner-brand-name > strong {
+    display: block;
+    font-size: 19px;
+  }
 }
 .learner-brand strong {
   font-weight: 750;

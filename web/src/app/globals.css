@@ -49,39 +49,6 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-.collection-pill {
-  border-color: oklch(0.78 0.09 var(--collection-hue));
-  background: oklch(0.94 0.055 var(--collection-hue));
-  color: oklch(0.37 0.14 var(--collection-hue));
-}
-
-.collection-pill:hover,
-.collection-pill-selected {
-  border-color: oklch(0.5 0.17 var(--collection-hue));
-  background: oklch(0.84 0.13 var(--collection-hue));
-  color: oklch(0.27 0.12 var(--collection-hue));
-}
-
-.collection-pill-selected {
-  box-shadow: 0 0 0 2px oklch(0.68 0.14 var(--collection-hue) / 35%);
-}
-
-:root[data-theme="night"] .collection-pill,
-.dark .collection-pill {
-  border-color: oklch(0.56 0.1 var(--collection-hue));
-  background: oklch(0.32 0.075 var(--collection-hue));
-  color: oklch(0.88 0.08 var(--collection-hue));
-}
-
-:root[data-theme="night"] .collection-pill:hover,
-:root[data-theme="night"] .collection-pill-selected,
-.dark .collection-pill:hover,
-.dark .collection-pill-selected {
-  border-color: oklch(0.76 0.13 var(--collection-hue));
-  background: oklch(0.45 0.12 var(--collection-hue));
-  color: oklch(0.96 0.035 var(--collection-hue));
-}
-
 .role-select {
   border-color: var(--role-border);
   background: var(--role-background);
