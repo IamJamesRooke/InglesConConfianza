@@ -30806,8 +30806,8 @@
       "spanish": "antes de",
       "english": "before",
       "example": {
-        "spanish": "antes de",
-        "english": "before"
+        "spanish": "Llegué antes de las nueve.",
+        "english": "I arrived before nine."
       },
       "collections": [
         "es:antes",
@@ -33343,8 +33343,8 @@
       "spanish": "hoy",
       "english": "today",
       "example": {
-        "spanish": "hoy",
-        "english": "today"
+        "spanish": "Hoy es un buen día.",
+        "english": "Today is a good day."
       },
       "collections": [
         "topic:time",
@@ -33401,8 +33401,8 @@
       "spanish": "ayer",
       "english": "yesterday",
       "example": {
-        "spanish": "ayer",
-        "english": "yesterday"
+        "spanish": "Llegué ayer por la noche.",
+        "english": "I arrived yesterday night."
       },
       "collections": [
         "topic:time",
@@ -33420,8 +33420,8 @@
       "spanish": "anteayer",
       "english": "the day before yesterday",
       "example": {
-        "spanish": "anteayer",
-        "english": "the day before yesterday"
+        "spanish": "La vi anteayer en el parque.",
+        "english": "I saw her the day before yesterday at the park."
       },
       "collections": [
         "es:anteayer",
@@ -33501,8 +33501,8 @@
       "spanish": "ayer por la mañana",
       "english": "yesterday morning",
       "example": {
-        "spanish": "ayer por la mañana",
-        "english": "yesterday morning"
+        "spanish": "Salí a correr ayer por la mañana.",
+        "english": "I went for a run yesterday morning."
       },
       "collections": [
         "es:mañana",
@@ -33537,8 +33537,8 @@
       "spanish": "mañana por la mañana",
       "english": "tomorrow morning",
       "example": {
-        "spanish": "mañana por la mañana",
-        "english": "tomorrow morning"
+        "spanish": "Nos vemos mañana por la mañana.",
+        "english": "See you tomorrow morning."
       },
       "collections": [
         "es:mañana",
@@ -33555,8 +33555,8 @@
       "spanish": "ayer por la tarde",
       "english": "yesterday afternoon",
       "example": {
-        "spanish": "ayer por la tarde",
-        "english": "yesterday afternoon"
+        "spanish": "Llovió ayer por la tarde.",
+        "english": "It rained yesterday afternoon."
       },
       "collections": [
         "es:ayer",
@@ -33589,8 +33589,8 @@
       "spanish": "mañana por la tarde",
       "english": "tomorrow afternoon",
       "example": {
-        "spanish": "mañana por la tarde",
-        "english": "tomorrow afternoon"
+        "spanish": "Tengo una cita mañana por la tarde.",
+        "english": "I have an appointment tomorrow afternoon."
       },
       "collections": [
         "es:mañana",
@@ -33607,8 +33607,8 @@
       "spanish": "anoche",
       "english": "last night",
       "example": {
-        "spanish": "anoche",
-        "english": "last night"
+        "spanish": "Dormí muy bien anoche.",
+        "english": "I slept very well last night."
       },
       "collections": [
         "es:anoche",
@@ -33625,8 +33625,8 @@
       "spanish": "esta noche",
       "english": "tonight",
       "example": {
-        "spanish": "esta noche",
-        "english": "tonight"
+        "spanish": "Salimos a cenar esta noche.",
+        "english": "We're going out to dinner tonight."
       },
       "collections": [
         "es:esta",
@@ -33643,8 +33643,8 @@
       "spanish": "mañana por la noche",
       "english": "tomorrow night",
       "example": {
-        "spanish": "mañana por la noche",
-        "english": "tomorrow night"
+        "spanish": "La fiesta es mañana por la noche.",
+        "english": "The party is tomorrow night."
       },
       "collections": [
         "es:mañana",
@@ -35271,8 +35271,8 @@
       "spanish": "ya",
       "english": "already",
       "example": {
-        "spanish": "ya",
-        "english": "already"
+        "spanish": "Ya terminé la tarea.",
+        "english": "I already finished the homework."
       },
       "collections": [
         "morphology:recognition",
