@@ -284,7 +284,8 @@
         "en:on",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:part-on-2"
       ],
       "curriculumRole": "reference"
     },
@@ -742,7 +743,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-eating-drinking"
+        "topic:verb-eating-drinking",
+        "topic:part-up-1"
       ],
       "curriculumRole": "reference"
     },
@@ -763,7 +765,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-eating-drinking"
+        "topic:verb-eating-drinking",
+        "topic:part-out-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -784,7 +787,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-eating-drinking"
+        "topic:verb-eating-drinking",
+        "topic:part-in-1"
       ],
       "curriculumRole": "reference"
     },
@@ -870,7 +874,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-tomar-general-2"
+        "topic:verb-tomar-general-2",
+        "topic:phr-take-3"
       ],
       "curriculumRole": "core"
     },
@@ -910,7 +915,8 @@
         "topic:transportation",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs"
+        "topic:verb-movement-directional-verbs",
+        "topic:phr-take-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -953,7 +959,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-tomar-general-2"
+        "topic:verb-tomar-general-2",
+        "topic:phr-take-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -975,7 +982,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-tomar-general-2"
+        "topic:verb-tomar-general-2",
+        "topic:phr-take-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -1037,7 +1045,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-tomar-general-1"
+        "topic:verb-tomar-general-1",
+        "topic:phr-take-1",
+        "topic:part-off-1"
       ],
       "curriculumRole": "reference"
     },
@@ -1060,7 +1070,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-tomar-general-2"
+        "topic:verb-tomar-general-2",
+        "topic:phr-take-2",
+        "topic:part-off-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -1083,7 +1095,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-tomar-general-1"
+        "topic:verb-tomar-general-1",
+        "topic:phr-take-1",
+        "topic:part-on-1"
       ],
       "curriculumRole": "reference"
     },
@@ -1106,7 +1120,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-tomar-general-1"
+        "topic:verb-tomar-general-1",
+        "topic:phr-take-2",
+        "topic:part-up-2"
       ],
       "curriculumRole": "reference"
     },
@@ -1129,7 +1145,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-tomar-general-1"
+        "topic:verb-tomar-general-1",
+        "topic:phr-take-2",
+        "topic:part-in-1"
       ],
       "curriculumRole": "reference"
     },
@@ -1152,7 +1170,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-tomar-general-2"
+        "topic:verb-tomar-general-2",
+        "topic:phr-take-2",
+        "topic:part-out-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -1175,7 +1195,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-tomar-general-1"
+        "topic:verb-tomar-general-1",
+        "topic:phr-take-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -1198,7 +1219,8 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-tomar-general-1"
+        "topic:verb-tomar-general-1",
+        "topic:phr-take-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -1221,7 +1243,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-tomar-general-1"
+        "topic:verb-tomar-general-1",
+        "topic:phr-take-1"
       ],
       "curriculumRole": "reference"
     },
@@ -1244,7 +1267,8 @@
         "particle:after",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-watching-other"
+        "topic:verb-watching-other",
+        "topic:phr-take-2"
       ],
       "curriculumRole": "reference"
     },
@@ -1267,7 +1291,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-tomar-general-2"
+        "topic:verb-tomar-general-2",
+        "topic:phr-take-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -1291,7 +1316,9 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-tomar-general-1"
+        "topic:verb-tomar-general-1",
+        "topic:phr-take-2",
+        "topic:part-to-2"
       ],
       "curriculumRole": "reference"
     },
@@ -1315,7 +1342,9 @@
         "particle:of",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-tomar-general-1"
+        "topic:verb-tomar-general-1",
+        "topic:phr-take-1",
+        "topic:part-of-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -1338,7 +1367,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-tomar-general-2"
+        "topic:verb-tomar-general-2",
+        "topic:phr-take-2",
+        "topic:part-in-2"
       ],
       "curriculumRole": "reference"
     },
@@ -1362,7 +1393,9 @@
         "particle:of",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-tomar-general-1"
+        "topic:verb-tomar-general-1",
+        "topic:phr-take-1",
+        "topic:part-of-1"
       ],
       "curriculumRole": "reference"
     },
@@ -1383,7 +1416,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-eating-drinking"
+        "topic:verb-eating-drinking",
+        "topic:part-up-1"
       ],
       "curriculumRole": "reference"
     },
@@ -1405,7 +1439,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-eating-drinking"
+        "topic:verb-eating-drinking",
+        "topic:part-in-1"
       ],
       "curriculumRole": "reference"
     },
@@ -1428,7 +1463,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-eating-drinking"
+        "topic:verb-eating-drinking",
+        "topic:part-to-1"
       ],
       "curriculumRole": "reference"
     },
@@ -1471,7 +1507,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-eating-drinking"
+        "topic:verb-eating-drinking",
+        "topic:part-out-1"
       ],
       "curriculumRole": "reference"
     },
@@ -1774,7 +1811,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-talking"
+        "topic:verb-communication-talking",
+        "topic:part-to-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -1798,7 +1836,8 @@
         "particle:with",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-talking"
+        "topic:verb-communication-talking",
+        "topic:part-with-1"
       ],
       "curriculumRole": "reference"
     },
@@ -1822,7 +1861,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-talking"
+        "topic:verb-communication-talking",
+        "topic:part-to-2"
       ],
       "curriculumRole": "core"
     },
@@ -1846,7 +1886,8 @@
         "particle:with",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-talking"
+        "topic:verb-communication-talking",
+        "topic:part-with-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -1917,7 +1958,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-naming"
+        "topic:verb-communication-naming",
+        "topic:part-on-2"
       ],
       "curriculumRole": "reference"
     },
@@ -1941,7 +1983,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-talking"
+        "topic:verb-communication-talking",
+        "topic:part-for-1"
       ],
       "curriculumRole": "reference"
     },
@@ -1965,7 +2008,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-talking"
+        "topic:verb-communication-talking",
+        "topic:part-on-2"
       ],
       "curriculumRole": "reference"
     },
@@ -1987,7 +2031,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-talking"
+        "topic:verb-communication-talking",
+        "topic:part-up-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -2011,7 +2056,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-talking"
+        "topic:verb-communication-talking",
+        "topic:part-out-2"
       ],
       "curriculumRole": "reference"
     },
@@ -2103,7 +2149,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-talking"
+        "topic:verb-communication-talking",
+        "topic:part-out-1"
       ],
       "curriculumRole": "reference"
     },
@@ -2174,7 +2221,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-talking"
+        "topic:verb-communication-talking",
+        "topic:part-to-2"
       ],
       "curriculumRole": "reference"
     },
@@ -2334,7 +2382,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-saying"
+        "topic:verb-communication-saying",
+        "topic:part-to-2"
       ],
       "curriculumRole": "core"
     },
@@ -2514,7 +2563,8 @@
         "grammar:phrasal-verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-saying"
+        "topic:verb-communication-saying",
+        "topic:part-out-1"
       ],
       "curriculumRole": "reference"
     },
@@ -2557,7 +2607,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "grammar:discourse",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:part-in-1"
       ],
       "curriculumRole": "reference"
     },
@@ -2600,7 +2651,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "grammar:discourse",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:phr-put-1"
       ],
       "curriculumRole": "reference"
     },
@@ -2688,7 +2740,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-saying"
+        "topic:verb-communication-saying",
+        "topic:part-off-2"
       ],
       "curriculumRole": "reference"
     },
@@ -2711,7 +2764,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-saying"
+        "topic:verb-communication-saying",
+        "topic:part-on-1"
       ],
       "curriculumRole": "reference"
     },
@@ -2736,7 +2790,8 @@
         "particle:from",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-saying"
+        "topic:verb-communication-saying",
+        "topic:part-from-1"
       ],
       "curriculumRole": "reference"
     },
@@ -2936,7 +2991,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-dar-giving"
+        "topic:verb-dar-giving",
+        "topic:part-to-1"
       ],
       "curriculumRole": "core"
     },
@@ -3011,7 +3067,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-dar-giving"
+        "topic:verb-dar-giving",
+        "topic:part-to-1"
       ],
       "curriculumRole": "reference"
     },
@@ -3209,7 +3266,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-dar-idioms"
+        "topic:verb-dar-idioms",
+        "topic:phr-take-1"
       ],
       "curriculumRole": "reference"
     },
@@ -3272,7 +3330,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-money-commerce-1"
+        "topic:verb-money-commerce-1",
+        "topic:part-off-1"
       ],
       "curriculumRole": "reference"
     },
@@ -3296,7 +3355,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-dar-giving"
+        "topic:verb-dar-giving",
+        "topic:part-to-2"
       ],
       "curriculumRole": "reference"
     },
@@ -3320,7 +3380,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-dar-giving"
+        "topic:verb-dar-giving",
+        "topic:part-to-2"
       ],
       "curriculumRole": "reference"
     },
@@ -3526,7 +3587,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-dar-idioms"
+        "topic:verb-dar-idioms",
+        "topic:part-up-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -3549,7 +3611,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-dar-giving"
+        "topic:verb-dar-giving",
+        "topic:part-in-1"
       ],
       "curriculumRole": "reference"
     },
@@ -3639,7 +3702,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-dar-idioms"
+        "topic:verb-dar-idioms",
+        "topic:part-out-3"
       ],
       "curriculumRole": "reference"
     },
@@ -3662,7 +3726,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-dar-idioms"
+        "topic:verb-dar-idioms",
+        "topic:part-out-1"
       ],
       "curriculumRole": "reference"
     },
@@ -3685,7 +3750,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-dar-idioms"
+        "topic:verb-dar-idioms",
+        "topic:part-off-1"
       ],
       "curriculumRole": "reference"
     },
@@ -3732,7 +3798,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-dar-giving"
+        "topic:verb-dar-giving",
+        "topic:part-to-1"
       ],
       "curriculumRole": "reference"
     },
@@ -3779,7 +3846,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-dar-giving"
+        "topic:verb-dar-giving",
+        "topic:part-to-2"
       ],
       "curriculumRole": "reference"
     },
@@ -3874,7 +3942,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-asking-requesting"
+        "topic:verb-asking-requesting",
+        "topic:part-for-2"
       ],
       "curriculumRole": "core"
     },
@@ -3898,7 +3967,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-asking-requesting"
+        "topic:verb-asking-requesting",
+        "topic:part-for-2"
       ],
       "curriculumRole": "core"
     },
@@ -3986,7 +4056,8 @@
         "particle:from",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-asking-requesting"
+        "topic:verb-asking-requesting",
+        "topic:part-from-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -4015,7 +4086,8 @@
         "topic:verb-pattern",
         "audit:reviewed",
         "topic:verb-asking-requesting",
-        "topic:vp-full-inf-4"
+        "topic:vp-full-inf-4",
+        "topic:part-to-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -4042,7 +4114,8 @@
         "topic:collocation",
         "coll:make",
         "audit:reviewed",
-        "topic:verb-asking-requesting"
+        "topic:verb-asking-requesting",
+        "topic:part-with-2"
       ],
       "curriculumRole": "reference"
     },
@@ -4067,7 +4140,8 @@
         "particle:with",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-asking-requesting"
+        "topic:verb-asking-requesting",
+        "topic:part-with-2"
       ],
       "curriculumRole": "reference"
     },
@@ -4091,7 +4165,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-asking-requesting"
+        "topic:verb-asking-requesting",
+        "topic:part-for-2"
       ],
       "curriculumRole": "reference"
     },
@@ -4135,7 +4210,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-asking-requesting"
+        "topic:verb-asking-requesting",
+        "topic:part-for-2"
       ],
       "curriculumRole": "reference"
     },
@@ -4160,7 +4236,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-asking-requesting"
+        "topic:verb-asking-requesting",
+        "topic:part-for-2"
       ],
       "curriculumRole": "reference"
     },
@@ -4226,7 +4303,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-eating-drinking"
+        "topic:verb-eating-drinking",
+        "topic:part-for-2"
       ],
       "curriculumRole": "reference"
     },
@@ -4275,7 +4353,8 @@
         "particle:from",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-asking-requesting"
+        "topic:verb-asking-requesting",
+        "topic:part-from-1"
       ],
       "curriculumRole": "reference"
     },
@@ -4347,7 +4426,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-asking-requesting"
+        "topic:verb-asking-requesting",
+        "topic:part-out-2"
       ],
       "curriculumRole": "reference"
     },
@@ -4418,7 +4498,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-asking-requesting"
+        "topic:verb-asking-requesting",
+        "topic:part-in-2"
       ],
       "curriculumRole": "reference"
     },
@@ -4443,7 +4524,8 @@
         "particle:from",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-asking-requesting"
+        "topic:verb-asking-requesting",
+        "topic:part-from-1"
       ],
       "curriculumRole": "reference"
     },
@@ -4467,7 +4549,8 @@
         "particle:from",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-asking-requesting"
+        "topic:verb-asking-requesting",
+        "topic:part-from-1"
       ],
       "curriculumRole": "reference"
     },
@@ -4489,7 +4572,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-asking-requesting"
+        "topic:verb-asking-requesting",
+        "topic:part-in-2"
       ],
       "curriculumRole": "reference"
     },
@@ -4533,7 +4617,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-asking-requesting"
+        "topic:verb-asking-requesting",
+        "topic:part-out-2"
       ],
       "curriculumRole": "reference"
     },
@@ -4608,7 +4693,8 @@
         "audit:reviewed",
         "topic:verb-poner-placement",
         "topic:cognate-latin-root-8",
-        "topic:cognate-opaque-3"
+        "topic:cognate-opaque-3",
+        "topic:phr-put-2"
       ],
       "curriculumRole": "core"
     },
@@ -4631,7 +4717,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-placement"
+        "topic:verb-poner-placement",
+        "topic:phr-put-2",
+        "topic:part-in-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -4654,7 +4742,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-placement"
+        "topic:verb-poner-placement",
+        "topic:phr-put-2",
+        "topic:part-on-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -4677,7 +4767,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-placement"
+        "topic:verb-poner-placement",
+        "topic:phr-put-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -4700,7 +4791,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2"
+        "topic:verb-poner-idioms-2",
+        "topic:phr-put-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -4725,7 +4817,9 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2"
+        "topic:verb-poner-idioms-2",
+        "topic:phr-put-2",
+        "topic:part-to-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -4795,7 +4889,8 @@
         "topic:collocation",
         "coll:set",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2"
+        "topic:verb-poner-idioms-2",
+        "topic:part-for-2"
       ],
       "curriculumRole": "reference"
     },
@@ -4822,7 +4917,8 @@
         "topic:collocation",
         "coll:set",
         "audit:reviewed",
-        "topic:verb-social-relationships"
+        "topic:verb-social-relationships",
+        "topic:part-for-2"
       ],
       "curriculumRole": "reference"
     },
@@ -4849,7 +4945,8 @@
         "topic:collocation",
         "coll:set",
         "audit:reviewed",
-        "topic:verb-money-commerce-2"
+        "topic:verb-money-commerce-2",
+        "topic:part-for-2"
       ],
       "curriculumRole": "reference"
     },
@@ -4872,7 +4969,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-turning-on"
+        "topic:verb-poner-turning-on",
+        "topic:part-on-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -4895,7 +4993,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-turning-on"
+        "topic:verb-poner-turning-on",
+        "topic:phr-put-2",
+        "topic:part-on-2"
       ],
       "curriculumRole": "reference"
     },
@@ -4938,7 +5038,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-bringing"
+        "topic:verb-bringing",
+        "topic:phr-put-3",
+        "topic:part-on-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -5028,7 +5130,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:adj-abs-general-1"
+        "topic:adj-abs-general-1",
+        "topic:phr-get-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -5073,7 +5176,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2"
+        "topic:verb-poner-idioms-2",
+        "topic:part-up-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -5101,7 +5205,10 @@
         "particle:with",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-2"
+        "topic:verb-taking-removing-2",
+        "topic:phr-get-2",
+        "topic:part-in-3",
+        "topic:part-with-2"
       ],
       "curriculumRole": "reference"
     },
@@ -5126,7 +5233,8 @@
         "particle:with",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2"
+        "topic:verb-poner-idioms-2",
+        "topic:part-with-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -5151,7 +5259,8 @@
         "particle:at",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2"
+        "topic:verb-poner-idioms-2",
+        "topic:phr-put-2"
       ],
       "curriculumRole": "reference"
     },
@@ -5178,7 +5287,9 @@
         "topic:collocation",
         "coll:other",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2"
+        "topic:verb-poner-idioms-2",
+        "topic:phr-put-3",
+        "topic:part-to-4"
       ],
       "curriculumRole": "reference"
     },
@@ -5201,7 +5312,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2"
+        "topic:verb-poner-idioms-2",
+        "topic:phr-put-2",
+        "topic:part-in-2"
       ],
       "curriculumRole": "reference"
     },
@@ -5225,7 +5338,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-money-commerce-1"
+        "topic:verb-money-commerce-1",
+        "topic:phr-put-3",
+        "topic:part-in-2"
       ],
       "curriculumRole": "reference"
     },
@@ -5249,7 +5364,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-placement"
+        "topic:verb-poner-placement",
+        "topic:phr-put-2"
       ],
       "curriculumRole": "reference"
     },
@@ -5274,7 +5390,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2"
+        "topic:verb-poner-idioms-2",
+        "topic:part-up-3"
       ],
       "curriculumRole": "reference"
     },
@@ -5300,7 +5417,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-money-commerce-2"
+        "topic:verb-money-commerce-2",
+        "topic:part-to-3"
       ],
       "curriculumRole": "reference"
     },
@@ -5435,7 +5553,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2"
+        "topic:verb-poner-idioms-2",
+        "topic:phr-put-3",
+        "topic:part-off-2"
       ],
       "curriculumRole": "reference"
     },
@@ -5458,7 +5578,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1"
+        "topic:verb-poner-idioms-1",
+        "topic:phr-put-1",
+        "topic:part-off-1"
       ],
       "curriculumRole": "reference"
     },
@@ -5481,7 +5603,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1"
+        "topic:verb-poner-idioms-1",
+        "topic:phr-put-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -5504,7 +5627,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1"
+        "topic:verb-poner-idioms-1",
+        "topic:phr-put-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -5527,7 +5651,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2"
+        "topic:verb-poner-idioms-2",
+        "topic:phr-put-2"
       ],
       "curriculumRole": "reference"
     },
@@ -5550,7 +5675,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2"
+        "topic:verb-poner-idioms-2",
+        "topic:phr-put-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -5573,7 +5699,9 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1"
+        "topic:verb-poner-idioms-1",
+        "topic:phr-put-1",
+        "topic:part-out-1"
       ],
       "curriculumRole": "reference"
     },
@@ -5596,7 +5724,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2"
+        "topic:verb-poner-idioms-2",
+        "topic:phr-put-3",
+        "topic:part-out-2"
       ],
       "curriculumRole": "reference"
     },
@@ -5619,7 +5749,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2"
+        "topic:verb-poner-idioms-2",
+        "topic:phr-put-2",
+        "topic:part-out-2"
       ],
       "curriculumRole": "reference"
     },
@@ -5642,7 +5774,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1"
+        "topic:verb-poner-idioms-1",
+        "topic:phr-put-1",
+        "topic:part-up-1"
       ],
       "curriculumRole": "reference"
     },
@@ -5666,7 +5800,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1"
+        "topic:verb-poner-idioms-1",
+        "topic:phr-put-1",
+        "topic:part-up-1"
       ],
       "curriculumRole": "reference"
     },
@@ -5690,7 +5826,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1"
+        "topic:verb-poner-idioms-1",
+        "topic:phr-put-1",
+        "topic:part-up-1"
       ],
       "curriculumRole": "reference"
     },
@@ -5714,7 +5852,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1"
+        "topic:verb-poner-idioms-1",
+        "topic:phr-put-1"
       ],
       "curriculumRole": "reference"
     },
@@ -5738,7 +5877,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1"
+        "topic:verb-poner-idioms-1",
+        "topic:phr-put-2"
       ],
       "curriculumRole": "reference"
     },
@@ -5761,7 +5901,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1"
+        "topic:verb-poner-idioms-1",
+        "topic:phr-put-1"
       ],
       "curriculumRole": "reference"
     },
@@ -5784,7 +5925,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1"
+        "topic:verb-poner-idioms-1",
+        "topic:phr-put-1"
       ],
       "curriculumRole": "reference"
     },
@@ -5809,7 +5951,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2"
+        "topic:verb-poner-idioms-2",
+        "topic:phr-put-3"
       ],
       "curriculumRole": "reference"
     },
@@ -5832,7 +5975,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1"
+        "topic:verb-poner-idioms-1",
+        "topic:phr-put-1"
       ],
       "curriculumRole": "reference"
     },
@@ -5856,7 +6000,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2"
+        "topic:verb-poner-idioms-2",
+        "topic:phr-put-3",
+        "topic:part-in-3"
       ],
       "curriculumRole": "reference"
     },
@@ -5880,7 +6026,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-placement"
+        "topic:verb-poner-placement",
+        "topic:phr-put-1"
       ],
       "curriculumRole": "reference"
     },
@@ -5904,7 +6051,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1"
+        "topic:verb-poner-idioms-1",
+        "topic:phr-put-1"
       ],
       "curriculumRole": "reference"
     },
@@ -5927,7 +6075,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1"
+        "topic:verb-poner-idioms-1",
+        "topic:phr-put-1"
       ],
       "curriculumRole": "reference"
     },
@@ -5952,7 +6101,8 @@
         "particle:against",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1"
+        "topic:verb-poner-idioms-1",
+        "topic:phr-put-1"
       ],
       "curriculumRole": "reference"
     },
@@ -5976,7 +6126,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-turning-on"
+        "topic:verb-poner-turning-on",
+        "topic:phr-put-2",
+        "topic:part-on-2"
       ],
       "curriculumRole": "reference"
     },
@@ -6000,7 +6152,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-health-body"
+        "topic:verb-health-body",
+        "topic:phr-put-3",
+        "topic:part-on-3"
       ],
       "curriculumRole": "reference"
     },
@@ -6024,7 +6178,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1"
+        "topic:verb-poner-idioms-1",
+        "topic:part-up-2"
       ],
       "curriculumRole": "reference"
     },
@@ -6048,7 +6203,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2"
+        "topic:verb-poner-idioms-2",
+        "topic:part-up-2"
       ],
       "curriculumRole": "reference"
     },
@@ -6072,7 +6228,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1"
+        "topic:verb-poner-idioms-1",
+        "topic:part-up-2"
       ],
       "curriculumRole": "reference"
     },
@@ -6095,7 +6252,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2"
+        "topic:verb-poner-idioms-2",
+        "topic:part-up-4"
       ],
       "curriculumRole": "reference"
     },
@@ -6119,7 +6277,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2"
+        "topic:verb-poner-idioms-2",
+        "topic:part-off-2"
       ],
       "curriculumRole": "reference"
     },
@@ -6143,7 +6302,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1"
+        "topic:verb-poner-idioms-1",
+        "topic:part-off-1"
       ],
       "curriculumRole": "reference"
     },
@@ -6167,7 +6327,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1"
+        "topic:verb-poner-idioms-1",
+        "topic:part-out-2"
       ],
       "curriculumRole": "reference"
     },
@@ -6190,7 +6351,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1"
+        "topic:verb-poner-idioms-1",
+        "topic:part-out-2"
       ],
       "curriculumRole": "reference"
     },
@@ -6259,7 +6421,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1"
+        "topic:verb-poner-idioms-1",
+        "topic:part-in-2"
       ],
       "curriculumRole": "reference"
     },
@@ -6353,7 +6516,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-talking"
+        "topic:verb-communication-talking",
+        "topic:part-for-1"
       ],
       "curriculumRole": "reference"
     },
@@ -6379,7 +6543,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-saying"
+        "topic:verb-communication-saying",
+        "topic:part-to-4"
       ],
       "curriculumRole": "supporting"
     },
@@ -6492,7 +6657,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1"
+        "topic:verb-poner-idioms-1",
+        "topic:phr-put-2"
       ],
       "curriculumRole": "reference"
     },
@@ -6516,7 +6682,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-placement"
+        "topic:verb-poner-placement",
+        "topic:phr-be-2",
+        "topic:part-in-2"
       ],
       "curriculumRole": "reference"
     },
@@ -6630,7 +6798,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2"
+        "topic:verb-poner-idioms-2",
+        "topic:part-in-2"
       ],
       "curriculumRole": "reference"
     },
@@ -6702,7 +6871,9 @@
         "topic:collocation",
         "coll:take",
         "audit:reviewed",
-        "topic:verb-communication-formal"
+        "topic:verb-communication-formal",
+        "topic:phr-take-3",
+        "topic:part-of-2"
       ],
       "curriculumRole": "reference"
     },
@@ -6723,7 +6894,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-learning-teaching"
+        "topic:verb-learning-teaching",
+        "topic:phr-take-3"
       ],
       "curriculumRole": "reference"
     },
@@ -6857,7 +7029,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-perception-hearing"
+        "topic:verb-perception-hearing",
+        "topic:part-to-2"
       ],
       "curriculumRole": "core"
     },
@@ -6881,7 +7054,8 @@
         "topic:imperative",
         "imp:affirmative-informal",
         "audit:reviewed",
-        "topic:verb-perception-hearing"
+        "topic:verb-perception-hearing",
+        "topic:part-up-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -6901,7 +7075,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-perception-hearing"
+        "topic:verb-perception-hearing",
+        "topic:part-in-1"
       ],
       "curriculumRole": "reference"
     },
@@ -6944,7 +7119,8 @@
         "particle:from",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-perception-hearing"
+        "topic:verb-perception-hearing",
+        "topic:part-from-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -7038,7 +7214,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-hoping-waiting"
+        "topic:verb-hoping-waiting",
+        "topic:part-for-1"
       ],
       "curriculumRole": "core"
     },
@@ -7144,7 +7321,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-hoping-waiting"
+        "topic:verb-hoping-waiting",
+        "topic:part-for-1"
       ],
       "curriculumRole": "reference"
     },
@@ -7336,7 +7514,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-estar-idioms-1"
+        "topic:verb-estar-idioms-1",
+        "topic:phr-be-2"
       ],
       "curriculumRole": "core"
     },
@@ -7359,7 +7538,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-estar-idioms-1"
+        "topic:verb-estar-idioms-1",
+        "topic:phr-be-2"
       ],
       "curriculumRole": "core"
     },
@@ -7387,7 +7567,8 @@
         "topic:en-multi-sense",
         "topic:verb-pattern",
         "audit:reviewed",
-        "topic:verb-estar-idioms-1"
+        "topic:verb-estar-idioms-1",
+        "topic:phr-be-2"
       ],
       "curriculumRole": "core"
     },
@@ -7458,7 +7639,8 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-1"
+        "topic:verb-estar-idioms-1",
+        "topic:phr-be-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -7481,7 +7663,8 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-2"
+        "topic:verb-estar-idioms-2",
+        "topic:phr-be-3"
       ],
       "curriculumRole": "reference"
     },
@@ -7507,7 +7690,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:condition-state-1"
+        "topic:condition-state-1",
+        "topic:phr-be-1",
+        "topic:part-to-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -7531,7 +7716,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:adj-abs-general-6"
+        "topic:adj-abs-general-6",
+        "topic:phr-be-3",
+        "topic:part-in-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -7556,7 +7743,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-1"
+        "topic:verb-estar-idioms-1",
+        "topic:phr-be-2",
+        "topic:part-of-1"
       ],
       "curriculumRole": "reference"
     },
@@ -7581,7 +7770,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-1"
+        "topic:verb-estar-idioms-1",
+        "topic:phr-be-2",
+        "topic:part-of-1"
       ],
       "curriculumRole": "reference"
     },
@@ -7607,7 +7798,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:condition-state-1"
+        "topic:condition-state-1",
+        "topic:phr-be-1",
+        "topic:part-to-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -7633,7 +7826,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:emotion-feeling"
+        "topic:emotion-feeling",
+        "topic:phr-be-1",
+        "topic:part-with-1"
       ],
       "curriculumRole": "reference"
     },
@@ -7716,7 +7911,8 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:adj-abs-general-8"
+        "topic:adj-abs-general-8",
+        "topic:phr-be-4"
       ],
       "curriculumRole": "supporting"
     },
@@ -7782,7 +7978,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-2"
+        "topic:verb-estar-idioms-2",
+        "topic:phr-be-2",
+        "topic:part-on-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -7804,7 +8002,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-1"
+        "topic:verb-estar-idioms-1",
+        "topic:phr-be-2",
+        "topic:part-off-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -7826,7 +8026,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-2"
+        "topic:verb-estar-idioms-2",
+        "topic:phr-be-3",
+        "topic:part-out-2"
       ],
       "curriculumRole": "reference"
     },
@@ -7849,7 +8051,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-1"
+        "topic:verb-estar-idioms-1",
+        "topic:phr-be-2",
+        "topic:part-on-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -7873,7 +8077,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-2"
+        "topic:verb-estar-idioms-2",
+        "topic:phr-be-2",
+        "topic:part-on-2"
       ],
       "curriculumRole": "reference"
     },
@@ -7898,7 +8104,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-1"
+        "topic:verb-estar-idioms-1",
+        "topic:phr-be-2",
+        "topic:part-of-1"
       ],
       "curriculumRole": "reference"
     },
@@ -7921,7 +8129,8 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-2"
+        "topic:verb-estar-idioms-2",
+        "topic:phr-be-2"
       ],
       "curriculumRole": "reference"
     },
@@ -8053,7 +8262,8 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:adj-abs-ente"
+        "topic:adj-abs-ente",
+        "topic:phr-be-1"
       ],
       "curriculumRole": "reference"
     },
@@ -8448,7 +8658,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-feelings-dislike-worry"
+        "topic:verb-feelings-dislike-worry",
+        "topic:phr-be-3",
+        "topic:part-from-1"
       ],
       "curriculumRole": "reference"
     },
@@ -9687,7 +9899,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-work-employment"
+        "topic:verb-work-employment",
+        "topic:part-out-2"
       ],
       "curriculumRole": "reference"
     },
@@ -9711,7 +9924,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-creation-hacer"
+        "topic:verb-creation-hacer",
+        "topic:part-up-2"
       ],
       "curriculumRole": "reference"
     },
@@ -9755,7 +9969,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-money-commerce-1"
+        "topic:verb-money-commerce-1",
+        "topic:part-to-2"
       ],
       "curriculumRole": "reference"
     },
@@ -9910,7 +10125,8 @@
         "topic:collocation",
         "coll:take",
         "audit:reviewed",
-        "topic:verb-creation-hacer"
+        "topic:verb-creation-hacer",
+        "topic:phr-take-2"
       ],
       "curriculumRole": "reference"
     },
@@ -9972,7 +10188,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-creation-hacer"
+        "topic:verb-creation-hacer",
+        "topic:phr-get-2"
       ],
       "curriculumRole": "reference"
     },
@@ -10039,7 +10256,8 @@
         "topic:en-multi-sense",
         "particle:of",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:part-of-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -10109,7 +10327,8 @@
         "construction:prepositional-verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-creation-hacer"
+        "topic:verb-creation-hacer",
+        "topic:part-in-2"
       ],
       "curriculumRole": "reference"
     },
@@ -10219,7 +10438,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-going"
+        "topic:verb-movement-going",
+        "topic:part-to-3"
       ],
       "curriculumRole": "core"
     },
@@ -10356,7 +10576,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-going"
+        "topic:verb-movement-going",
+        "topic:part-for-1"
       ],
       "curriculumRole": "reference"
     },
@@ -10420,7 +10641,8 @@
         "particle:with",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-going"
+        "topic:verb-movement-going",
+        "topic:part-with-1"
       ],
       "curriculumRole": "reference"
     },
@@ -10499,7 +10721,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-going"
+        "topic:verb-movement-going",
+        "topic:part-on-2"
       ],
       "curriculumRole": "reference"
     },
@@ -10670,7 +10893,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-naming"
+        "topic:verb-communication-naming",
+        "topic:part-to-3"
       ],
       "curriculumRole": "reference"
     },
@@ -10693,7 +10917,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-leaving"
+        "topic:verb-movement-leaving",
+        "topic:part-off-1"
       ],
       "curriculumRole": "reference"
     },
@@ -10761,7 +10986,8 @@
         "topic:en-multi-sense",
         "particle:for",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:part-for-1"
       ],
       "curriculumRole": "reference"
     },
@@ -10805,7 +11031,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-arriving-passing"
+        "topic:verb-movement-arriving-passing",
+        "topic:part-in-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -10828,7 +11055,9 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-arriving-passing"
+        "topic:verb-movement-arriving-passing",
+        "topic:phr-get-2",
+        "topic:part-to-3"
       ],
       "curriculumRole": "core"
     },
@@ -10850,7 +11079,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-arriving-passing"
+        "topic:verb-movement-arriving-passing",
+        "topic:part-to-3"
       ],
       "curriculumRole": "reference"
     },
@@ -10914,7 +11144,8 @@
         "topic:verb-pattern",
         "audit:reviewed",
         "topic:verb-movement-arriving-passing",
-        "topic:vp-full-inf-3"
+        "topic:vp-full-inf-3",
+        "topic:part-on-2"
       ],
       "curriculumRole": "reference"
     },
@@ -10972,7 +11203,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-arriving-passing"
+        "topic:verb-movement-arriving-passing",
+        "topic:part-on-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -11016,7 +11248,9 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-carrying"
+        "topic:verb-carrying",
+        "topic:phr-take-2",
+        "topic:part-to-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -11154,7 +11388,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-carrying"
+        "topic:verb-carrying",
+        "topic:phr-get-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -11174,7 +11409,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-carrying"
+        "topic:verb-carrying",
+        "topic:part-out-2"
       ],
       "curriculumRole": "reference"
     },
@@ -11197,7 +11433,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-carrying"
+        "topic:verb-carrying",
+        "topic:part-to-3"
       ],
       "curriculumRole": "reference"
     },
@@ -11243,7 +11480,8 @@
         "particle:of",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-other-2"
+        "topic:verb-communication-other-2",
+        "topic:part-of-1"
       ],
       "curriculumRole": "reference"
     },
@@ -11284,7 +11522,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-other-2"
+        "topic:verb-communication-other-2",
+        "topic:part-to-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -11349,7 +11588,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-money-commerce-1"
+        "topic:verb-money-commerce-1",
+        "topic:phr-be-3",
+        "topic:part-in-2"
       ],
       "curriculumRole": "reference"
     },
@@ -11394,7 +11635,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-other-2"
+        "topic:verb-communication-other-2",
+        "topic:part-for-1"
       ],
       "curriculumRole": "reference"
     },
@@ -11813,7 +12055,8 @@
         "topic:en-multi-sense",
         "particle:of",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:part-of-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -11951,7 +12194,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:adj-abs-general-7"
+        "topic:adj-abs-general-7",
+        "topic:phr-be-3",
+        "topic:part-to-3"
       ],
       "curriculumRole": "reference"
     },
@@ -12101,7 +12346,8 @@
         "particle:with",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-arriving-passing"
+        "topic:verb-movement-arriving-passing",
+        "topic:part-with-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -12123,7 +12369,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:part-in-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -12190,7 +12437,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-arriving-passing"
+        "topic:verb-movement-arriving-passing",
+        "topic:part-to-3"
       ],
       "curriculumRole": "reference"
     },
@@ -12303,7 +12551,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-arriving-passing"
+        "topic:verb-movement-arriving-passing",
+        "topic:part-on-2"
       ],
       "curriculumRole": "reference"
     },
@@ -12452,7 +12701,8 @@
         "particle:of",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-thinking-opinions"
+        "topic:verb-thinking-opinions",
+        "topic:part-of-2"
       ],
       "curriculumRole": "reference"
     },
@@ -12538,7 +12788,8 @@
         "topic:en-multi-sense",
         "particle:of",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:part-of-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -12669,7 +12920,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:adj-abs-general-2"
+        "topic:adj-abs-general-2",
+        "topic:phr-be-1",
+        "topic:part-out-1"
       ],
       "curriculumRole": "reference"
     },
@@ -12761,7 +13014,8 @@
         "topic:condition-state",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:condition-state-1"
+        "topic:condition-state-1",
+        "topic:phr-get-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -12823,7 +13077,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-loss-death"
+        "topic:verb-loss-death",
+        "topic:part-to-3"
       ],
       "curriculumRole": "reference"
     },
@@ -12846,7 +13101,8 @@
         "particle:with",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-loss-death"
+        "topic:verb-loss-death",
+        "topic:part-with-2"
       ],
       "curriculumRole": "reference"
     },
@@ -12869,7 +13125,8 @@
         "particle:of",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-loss-death"
+        "topic:verb-loss-death",
+        "topic:part-of-2"
       ],
       "curriculumRole": "reference"
     },
@@ -13030,7 +13287,8 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "grammar:concession",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:part-in-1"
       ],
       "curriculumRole": "reference"
     },
@@ -13092,7 +13350,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-feelings-general"
+        "topic:verb-feelings-general",
+        "topic:part-on-2"
       ],
       "curriculumRole": "reference"
     },
@@ -13379,7 +13638,9 @@
         "topic:phrasal-verb",
         "audit:reviewed",
         "pos:verb",
-        "topic:verb-modal-ability-2"
+        "topic:verb-modal-ability-2",
+        "topic:phr-get-3",
+        "topic:part-to-4"
       ],
       "curriculumRole": "reference"
     },
@@ -13405,7 +13666,9 @@
         "topic:phrasal-verb",
         "audit:reviewed",
         "pos:verb",
-        "topic:verb-modal-ability-2"
+        "topic:verb-modal-ability-2",
+        "topic:phr-get-3",
+        "topic:part-to-4"
       ],
       "curriculumRole": "reference"
     },
@@ -13432,7 +13695,9 @@
         "topic:phrasal-verb",
         "audit:reviewed",
         "pos:verb",
-        "topic:verb-modal-ability-1"
+        "topic:verb-modal-ability-1",
+        "topic:phr-get-2",
+        "topic:part-to-3"
       ],
       "curriculumRole": "reference"
     },
@@ -13931,7 +14196,8 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "pos:verb",
-        "topic:verb-modal-ability-2"
+        "topic:verb-modal-ability-2",
+        "topic:phr-be-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -13953,7 +14219,8 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "pos:verb",
-        "topic:verb-modal-possibility"
+        "topic:verb-modal-possibility",
+        "topic:phr-be-3"
       ],
       "curriculumRole": "reference"
     },
@@ -13976,7 +14243,8 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "pos:verb",
-        "topic:verb-modal-ability-2"
+        "topic:verb-modal-ability-2",
+        "topic:phr-be-3"
       ],
       "curriculumRole": "reference"
     },
@@ -14714,7 +14982,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-giving-lending-other"
+        "topic:verb-giving-lending-other",
+        "topic:part-to-4"
       ],
       "curriculumRole": "supporting"
     },
@@ -14740,7 +15009,8 @@
         "topic:collocation",
         "coll:other",
         "audit:reviewed",
-        "topic:verb-money-commerce-2"
+        "topic:verb-money-commerce-2",
+        "topic:part-to-4"
       ],
       "curriculumRole": "supporting"
     },
@@ -14781,7 +15051,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-giving-lending-other"
+        "topic:verb-giving-lending-other",
+        "topic:part-to-4"
       ],
       "curriculumRole": "reference"
     },
@@ -14805,7 +15076,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-giving-lending-other"
+        "topic:verb-giving-lending-other",
+        "topic:part-to-4"
       ],
       "curriculumRole": "reference"
     },
@@ -14826,7 +15098,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-giving-lending-other"
+        "topic:verb-giving-lending-other",
+        "topic:part-out-2"
       ],
       "curriculumRole": "reference"
     },
@@ -14946,7 +15219,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:part-on-2"
       ],
       "curriculumRole": "reference"
     },
@@ -14970,7 +15244,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-quedar-remaining"
+        "topic:verb-quedar-remaining",
+        "topic:phr-be-3",
+        "topic:part-in-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -15019,7 +15295,8 @@
         "topic:verb-pattern",
         "audit:reviewed",
         "topic:verb-quedar-remaining",
-        "topic:vp-full-inf-4"
+        "topic:vp-full-inf-4",
+        "topic:part-to-4"
       ],
       "curriculumRole": "reference"
     },
@@ -15042,7 +15319,8 @@
         "topic:multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-quedar-remaining"
+        "topic:verb-quedar-remaining",
+        "topic:part-in-3"
       ],
       "curriculumRole": "core"
     },
@@ -15063,7 +15341,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:part-out-2"
       ],
       "curriculumRole": "reference"
     },
@@ -15087,7 +15366,8 @@
         "particle:with",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-quedar-remaining"
+        "topic:verb-quedar-remaining",
+        "topic:part-with-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -15112,7 +15392,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-quedar-remaining"
+        "topic:verb-quedar-remaining",
+        "topic:part-out-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -15139,7 +15420,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-quedar-remaining"
+        "topic:verb-quedar-remaining",
+        "topic:phr-be-4",
+        "topic:part-out-3"
       ],
       "curriculumRole": "reference"
     },
@@ -15229,7 +15512,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-quedar-remaining"
+        "topic:verb-quedar-remaining",
+        "topic:phr-be-4",
+        "topic:part-out-3"
       ],
       "curriculumRole": "reference"
     },
@@ -15273,7 +15558,8 @@
         "particle:from",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-removing-stealing"
+        "topic:verb-removing-stealing",
+        "topic:part-from-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -15296,7 +15582,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-removing-stealing"
+        "topic:verb-removing-stealing",
+        "topic:phr-take-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -15317,7 +15604,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-2"
+        "topic:verb-household-2",
+        "topic:part-off-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -15340,7 +15628,8 @@
         "particle:from",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-removing-stealing"
+        "topic:verb-removing-stealing",
+        "topic:part-from-1"
       ],
       "curriculumRole": "reference"
     },
@@ -15364,7 +15653,9 @@
         "particle:of",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-removing-stealing"
+        "topic:verb-removing-stealing",
+        "topic:phr-get-3",
+        "topic:part-of-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -15409,7 +15700,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-removing-stealing"
+        "topic:verb-removing-stealing",
+        "topic:phr-get-3",
+        "topic:part-out-3"
       ],
       "curriculumRole": "reference"
     },
@@ -15431,7 +15724,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-removing-stealing"
+        "topic:verb-removing-stealing",
+        "topic:phr-get-3",
+        "topic:part-out-3"
       ],
       "curriculumRole": "reference"
     },
@@ -15473,7 +15768,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-health-body"
+        "topic:verb-health-body",
+        "topic:phr-get-3",
+        "topic:part-off-2"
       ],
       "curriculumRole": "reference"
     },
@@ -15500,7 +15797,10 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-removing-stealing"
+        "topic:verb-removing-stealing",
+        "topic:phr-take-1",
+        "topic:part-out-1",
+        "topic:part-on-1"
       ],
       "curriculumRole": "reference"
     },
@@ -15580,7 +15880,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-1"
+        "topic:verb-household-1",
+        "topic:part-up-1"
       ],
       "curriculumRole": "reference"
     },
@@ -15604,7 +15905,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-1"
+        "topic:verb-household-1",
+        "topic:part-up-1"
       ],
       "curriculumRole": "reference"
     },
@@ -15625,7 +15927,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-1"
+        "topic:verb-household-1",
+        "topic:part-up-1"
       ],
       "curriculumRole": "reference"
     },
@@ -15857,7 +16160,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder-0"
+        "topic:verb-formal-remainder-0",
+        "topic:part-up-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -15881,7 +16185,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder-1"
+        "topic:verb-formal-remainder-1",
+        "topic:part-up-1"
       ],
       "curriculumRole": "reference"
     },
@@ -15924,7 +16229,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder-1"
+        "topic:verb-formal-remainder-1",
+        "topic:part-out-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -15947,7 +16253,8 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder-1"
+        "topic:verb-formal-remainder-1",
+        "topic:phr-be-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -15990,7 +16297,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-abstract-2"
+        "topic:verb-formal-abstract-2",
+        "topic:part-up-1"
       ],
       "curriculumRole": "reference"
     },
@@ -16016,7 +16324,9 @@
         "topic:collocation",
         "coll:other",
         "audit:reviewed",
-        "topic:verb-formal-remainder-1"
+        "topic:verb-formal-remainder-1",
+        "topic:phr-put-1",
+        "topic:part-to-1"
       ],
       "curriculumRole": "reference"
     },
@@ -16222,7 +16532,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-leaving"
+        "topic:verb-movement-leaving",
+        "topic:part-up-1"
       ],
       "curriculumRole": "reference"
     },
@@ -16336,7 +16647,8 @@
         "en:out",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:part-out-2"
       ],
       "curriculumRole": "reference"
     },
@@ -16432,7 +16744,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional"
+        "topic:verb-movement-directional",
+        "topic:part-off-1"
       ],
       "curriculumRole": "reference"
     },
@@ -16456,7 +16769,8 @@
         "particle:from",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional"
+        "topic:verb-movement-directional",
+        "topic:part-from-1"
       ],
       "curriculumRole": "reference"
     },
@@ -16501,7 +16815,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-social-relationships"
+        "topic:verb-social-relationships",
+        "topic:part-on-1"
       ],
       "curriculumRole": "reference"
     },
@@ -16604,7 +16919,8 @@
         "topic:en-multi-sense",
         "particle:with",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:part-with-1"
       ],
       "curriculumRole": "reference"
     },
@@ -16847,7 +17163,8 @@
         "topic:verb-pattern",
         "audit:reviewed",
         "topic:verb-knowing",
-        "topic:vp-full-inf-1"
+        "topic:vp-full-inf-1",
+        "topic:phr-get-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -16911,7 +17228,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-knowing"
+        "topic:verb-knowing",
+        "topic:phr-be-1",
+        "topic:part-with-1"
       ],
       "curriculumRole": "reference"
     },
@@ -17009,7 +17328,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-knowing"
+        "topic:verb-knowing",
+        "topic:phr-be-4",
+        "topic:part-for-3"
       ],
       "curriculumRole": "reference"
     },
@@ -17036,7 +17357,8 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-knowing"
+        "topic:verb-knowing",
+        "topic:phr-be-4"
       ],
       "curriculumRole": "reference"
     },
@@ -17149,7 +17471,8 @@
         "pos:verb",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-possession-obtaining"
+        "topic:verb-possession-obtaining",
+        "topic:phr-get-1"
       ],
       "curriculumRole": "core"
     },
@@ -17271,7 +17594,8 @@
         "pos:verb",
         "topic:verb-pattern",
         "audit:reviewed",
-        "topic:verb-possession-obtaining"
+        "topic:verb-possession-obtaining",
+        "topic:phr-get-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -17294,7 +17618,9 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-possession-obtaining"
+        "topic:verb-possession-obtaining",
+        "topic:phr-get-1",
+        "topic:part-for-1"
       ],
       "curriculumRole": "reference"
     },
@@ -17322,7 +17648,8 @@
         "audit:reviewed",
         "topic:verb-possession-obtaining",
         "topic:vp-full-inf-1",
-        "topic:vp-obj-complement-1"
+        "topic:vp-obj-complement-1",
+        "topic:phr-get-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -17345,7 +17672,8 @@
         "pos:verb",
         "topic:verb-pattern",
         "audit:reviewed",
-        "topic:verb-possession-obtaining"
+        "topic:verb-possession-obtaining",
+        "topic:phr-get-1"
       ],
       "curriculumRole": "reference"
     },
@@ -17365,7 +17693,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-work-employment"
+        "topic:verb-work-employment",
+        "topic:phr-get-1"
       ],
       "curriculumRole": "reference"
     },
@@ -17407,7 +17736,9 @@
         "particle:of",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-possession-obtaining"
+        "topic:verb-possession-obtaining",
+        "topic:phr-get-1",
+        "topic:part-of-1"
       ],
       "curriculumRole": "reference"
     },
@@ -17428,7 +17759,9 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-possession-obtaining"
+        "topic:verb-possession-obtaining",
+        "topic:phr-get-1",
+        "topic:part-on-1"
       ],
       "curriculumRole": "reference"
     },
@@ -17513,7 +17846,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-other-1"
+        "topic:verb-communication-other-1",
+        "topic:part-in-1"
       ],
       "curriculumRole": "reference"
     },
@@ -17560,7 +17894,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-other-1"
+        "topic:verb-communication-other-1",
+        "topic:part-on-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -17582,7 +17917,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-other-1"
+        "topic:verb-communication-other-1",
+        "topic:part-on-1"
       ],
       "curriculumRole": "reference"
     },
@@ -17666,7 +18002,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-other-1"
+        "topic:verb-communication-other-1",
+        "topic:part-up-2"
       ],
       "curriculumRole": "reference"
     },
@@ -18148,7 +18485,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-thinking-opinions"
+        "topic:verb-thinking-opinions",
+        "topic:part-in-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -18172,7 +18510,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-thinking-opinions"
+        "topic:verb-thinking-opinions",
+        "topic:part-in-1"
       ],
       "curriculumRole": "reference"
     },
@@ -18261,7 +18600,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-thinking-opinions"
+        "topic:verb-thinking-opinions",
+        "topic:part-for-1"
       ],
       "curriculumRole": "reference"
     },
@@ -18468,7 +18808,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-modal-obligation"
+        "topic:verb-modal-obligation",
+        "topic:part-to-2"
       ],
       "curriculumRole": "reference"
     },
@@ -18637,7 +18978,8 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "pos:verb",
-        "topic:verb-modal-obligation"
+        "topic:verb-modal-obligation",
+        "topic:phr-be-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -18659,7 +19001,8 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "pos:verb",
-        "topic:verb-modal-obligation"
+        "topic:verb-modal-obligation",
+        "topic:phr-be-1"
       ],
       "curriculumRole": "reference"
     },
@@ -18871,7 +19214,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-modal-obligation"
+        "topic:verb-modal-obligation",
+        "topic:phr-be-1",
+        "topic:part-to-2"
       ],
       "curriculumRole": "reference"
     },
@@ -19291,7 +19636,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-keeping-storing"
+        "topic:verb-keeping-storing",
+        "topic:part-up-2"
       ],
       "curriculumRole": "reference"
     },
@@ -19380,7 +19726,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-keeping-storing"
+        "topic:verb-keeping-storing",
+        "topic:part-up-2"
       ],
       "curriculumRole": "reference"
     },
@@ -19423,7 +19770,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-keeping-storing"
+        "topic:verb-keeping-storing",
+        "topic:part-up-2"
       ],
       "curriculumRole": "reference"
     },
@@ -19488,7 +19836,8 @@
         "grammar:phrasal-verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-keeping-storing"
+        "topic:verb-keeping-storing",
+        "topic:part-on-1"
       ],
       "curriculumRole": "reference"
     },
@@ -19511,7 +19860,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-keeping-storing"
+        "topic:verb-keeping-storing",
+        "topic:part-out-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -19536,7 +19886,8 @@
         "topic:verb-pattern",
         "audit:reviewed",
         "topic:verb-keeping-storing",
-        "topic:vp-bare-inf-2"
+        "topic:vp-bare-inf-2",
+        "topic:part-out-1"
       ],
       "curriculumRole": "reference"
     },
@@ -19561,7 +19912,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-keeping-storing"
+        "topic:verb-keeping-storing",
+        "topic:phr-get-2"
       ],
       "curriculumRole": "reference"
     },
@@ -19586,7 +19938,8 @@
         "construction:prepositional-verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-keeping-storing"
+        "topic:verb-keeping-storing",
+        "topic:part-in-1"
       ],
       "curriculumRole": "reference"
     },
@@ -19670,7 +20023,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-1"
+        "topic:verb-taking-removing-1",
+        "topic:part-to-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -19718,7 +20072,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-1"
+        "topic:verb-taking-removing-1",
+        "topic:part-out-1"
       ],
       "curriculumRole": "reference"
     },
@@ -19743,7 +20098,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-1"
+        "topic:verb-taking-removing-1",
+        "topic:part-out-1"
       ],
       "curriculumRole": "reference"
     },
@@ -19809,7 +20165,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-2"
+        "topic:verb-taking-removing-2",
+        "topic:part-out-2"
       ],
       "curriculumRole": "reference"
     },
@@ -19892,7 +20249,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-1"
+        "topic:verb-taking-removing-1",
+        "topic:part-off-1"
       ],
       "curriculumRole": "reference"
     },
@@ -19913,7 +20271,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-1"
+        "topic:verb-taking-removing-1",
+        "topic:phr-take-1"
       ],
       "curriculumRole": "reference"
     },
@@ -19957,7 +20316,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-2"
+        "topic:verb-taking-removing-2",
+        "topic:part-out-2"
       ],
       "curriculumRole": "reference"
     },
@@ -19984,7 +20344,8 @@
         "topic:collocation",
         "coll:take",
         "audit:reviewed",
-        "topic:verb-taking-removing-1"
+        "topic:verb-taking-removing-1",
+        "topic:phr-take-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -20030,7 +20391,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-1"
+        "topic:verb-taking-removing-1",
+        "topic:part-for-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -20052,7 +20414,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-1"
+        "topic:verb-taking-removing-1",
+        "topic:phr-get-2"
       ],
       "curriculumRole": "reference"
     },
@@ -20076,7 +20439,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-1"
+        "topic:verb-taking-removing-1",
+        "topic:part-off-1"
       ],
       "curriculumRole": "reference"
     },
@@ -20121,7 +20485,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-work-employment"
+        "topic:verb-work-employment",
+        "topic:part-out-2"
       ],
       "curriculumRole": "reference"
     },
@@ -20258,7 +20623,8 @@
         "particle:of",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-remembering-forgetting"
+        "topic:verb-remembering-forgetting",
+        "topic:part-of-2"
       ],
       "curriculumRole": "reference"
     },
@@ -20416,7 +20782,8 @@
         "particle:from",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-conflict-crime"
+        "topic:verb-conflict-crime",
+        "topic:part-from-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -20651,7 +21018,8 @@
         "en:found",
         "topic:multi-sense",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:part-out-4"
       ],
       "curriculumRole": "supporting"
     },
@@ -20698,7 +21066,8 @@
         "particle:from",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-knowing"
+        "topic:verb-knowing",
+        "topic:part-from-1"
       ],
       "curriculumRole": "reference"
     },
@@ -20882,7 +21251,8 @@
         "particle:from",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-2"
+        "topic:verb-taking-removing-2",
+        "topic:part-from-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -20900,7 +21270,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-2"
+        "topic:verb-taking-removing-2",
+        "topic:phr-get-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -20925,7 +21296,9 @@
         "topic:collocation",
         "coll:take",
         "audit:reviewed",
-        "topic:verb-communication-formal"
+        "topic:verb-communication-formal",
+        "topic:phr-take-2",
+        "topic:part-of-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -20943,7 +21316,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-2"
+        "topic:verb-taking-removing-2",
+        "topic:phr-get-3"
       ],
       "curriculumRole": "reference"
     },
@@ -20963,7 +21337,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-2"
+        "topic:verb-taking-removing-2",
+        "topic:part-out-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -21019,7 +21394,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-2"
+        "topic:verb-taking-removing-2",
+        "topic:part-out-3"
       ],
       "curriculumRole": "reference"
     },
@@ -21042,7 +21418,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-2"
+        "topic:verb-taking-removing-2",
+        "topic:phr-get-3",
+        "topic:part-out-3"
       ],
       "curriculumRole": "reference"
     },
@@ -21084,7 +21462,8 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs"
+        "topic:verb-movement-directional-verbs",
+        "topic:part-out-3"
       ],
       "curriculumRole": "core"
     },
@@ -21104,7 +21483,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs"
+        "topic:verb-movement-directional-verbs",
+        "topic:part-out-3"
       ],
       "curriculumRole": "reference"
     },
@@ -21128,7 +21508,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs"
+        "topic:verb-movement-directional-verbs",
+        "topic:phr-get-3",
+        "topic:part-out-4"
       ],
       "curriculumRole": "supporting"
     },
@@ -21150,7 +21532,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs"
+        "topic:verb-movement-directional-verbs",
+        "topic:part-out-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -21172,7 +21555,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs"
+        "topic:verb-movement-directional-verbs",
+        "topic:part-out-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -21232,7 +21616,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs"
+        "topic:verb-movement-directional-verbs",
+        "topic:part-out-3"
       ],
       "curriculumRole": "reference"
     },
@@ -21277,7 +21662,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs"
+        "topic:verb-movement-directional-verbs",
+        "topic:part-out-3"
       ],
       "curriculumRole": "reference"
     },
@@ -21300,7 +21686,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-leaving"
+        "topic:verb-movement-leaving",
+        "topic:part-out-1"
       ],
       "curriculumRole": "reference"
     },
@@ -21349,7 +21736,8 @@
         "topic:phrasal-verb",
         "audit:reviewed",
         "topic:fem-a-7",
-        "topic:abstract-general-6"
+        "topic:abstract-general-6",
+        "topic:part-out-3"
       ],
       "curriculumRole": "reference"
     },
@@ -21489,7 +21877,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-following-continuing"
+        "topic:verb-following-continuing",
+        "topic:part-on-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -21511,7 +21900,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-following-continuing"
+        "topic:verb-following-continuing",
+        "topic:part-on-2"
       ],
       "curriculumRole": "reference"
     },
@@ -21536,7 +21926,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-following-continuing"
+        "topic:verb-following-continuing",
+        "topic:part-up-2",
+        "topic:part-on-1"
       ],
       "curriculumRole": "reference"
     },
@@ -21560,7 +21952,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-following-continuing"
+        "topic:verb-following-continuing",
+        "topic:part-on-1"
       ],
       "curriculumRole": "reference"
     },
@@ -21585,7 +21978,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-following-continuing"
+        "topic:verb-following-continuing",
+        "topic:part-up-2"
       ],
       "curriculumRole": "reference"
     },
@@ -21608,7 +22002,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-following-continuing"
+        "topic:verb-following-continuing",
+        "topic:part-on-2"
       ],
       "curriculumRole": "reference"
     },
@@ -21629,7 +22024,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-following-continuing"
+        "topic:verb-following-continuing",
+        "topic:part-on-3"
       ],
       "curriculumRole": "reference"
     },
@@ -21652,7 +22048,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-following-continuing"
+        "topic:verb-following-continuing",
+        "topic:part-up-3"
       ],
       "curriculumRole": "reference"
     },
@@ -21678,7 +22075,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-following-continuing"
+        "topic:verb-following-continuing",
+        "topic:part-in-2"
       ],
       "curriculumRole": "reference"
     },
@@ -21726,7 +22124,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-following-continuing"
+        "topic:verb-following-continuing",
+        "topic:part-out-2"
       ],
       "curriculumRole": "reference"
     },
@@ -21749,7 +22148,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-following-continuing"
+        "topic:verb-following-continuing",
+        "topic:part-off-2"
       ],
       "curriculumRole": "reference"
     },
@@ -21797,7 +22197,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-following-continuing"
+        "topic:verb-following-continuing",
+        "topic:part-to-4"
       ],
       "curriculumRole": "reference"
     },
@@ -21847,7 +22248,8 @@
         "en:follow",
         "audit:reviewed",
         "topic:masc-o-7",
-        "topic:abstract-mento-miento"
+        "topic:abstract-mento-miento",
+        "topic:part-up-3"
       ],
       "curriculumRole": "reference"
     },
@@ -21980,7 +22382,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-feelings-general"
+        "topic:verb-feelings-general",
+        "topic:phr-be-4",
+        "topic:part-for-3"
       ],
       "curriculumRole": "reference"
     },
@@ -22063,7 +22467,8 @@
         "en:have",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-feelings-general"
+        "topic:verb-feelings-general",
+        "topic:part-for-3"
       ],
       "curriculumRole": "reference"
     },
@@ -22114,7 +22519,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-feelings-general"
+        "topic:verb-feelings-general",
+        "topic:part-up-3"
       ],
       "curriculumRole": "reference"
     },
@@ -22139,7 +22545,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-feelings-general"
+        "topic:verb-feelings-general",
+        "topic:part-for-1"
       ],
       "curriculumRole": "reference"
     },
@@ -22205,7 +22612,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-ser-idioms-1"
+        "topic:verb-ser-idioms-1",
+        "topic:phr-be-4"
       ],
       "curriculumRole": "core"
     },
@@ -22227,7 +22635,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-ser-idioms-1"
+        "topic:verb-ser-idioms-1",
+        "topic:phr-be-4"
       ],
       "curriculumRole": "core"
     },
@@ -22267,7 +22676,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-ser-idioms-1"
+        "topic:verb-ser-idioms-1",
+        "topic:phr-be-4"
       ],
       "curriculumRole": "core"
     },
@@ -22295,7 +22705,8 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-ser-idioms-2"
+        "topic:verb-ser-idioms-2",
+        "topic:phr-be-4"
       ],
       "curriculumRole": "supporting"
     },
@@ -22321,7 +22732,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-ser-idioms-1"
+        "topic:verb-ser-idioms-1",
+        "topic:phr-be-4",
+        "topic:part-from-1"
       ],
       "curriculumRole": "core"
     },
@@ -22349,7 +22762,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-ser-idioms-1"
+        "topic:verb-ser-idioms-1",
+        "topic:phr-be-4",
+        "topic:part-of-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -22376,7 +22791,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-ser-idioms-1"
+        "topic:verb-ser-idioms-1",
+        "topic:part-to-4"
       ],
       "curriculumRole": "supporting"
     },
@@ -22400,7 +22816,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-ser-idioms-2"
+        "topic:verb-ser-idioms-2",
+        "topic:phr-be-4",
+        "topic:part-for-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -22425,7 +22843,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-ser-idioms-2"
+        "topic:verb-ser-idioms-2",
+        "topic:phr-be-4",
+        "topic:part-for-3"
       ],
       "curriculumRole": "reference"
     },
@@ -22453,7 +22873,9 @@
         "topic:verb-pattern",
         "audit:reviewed",
         "topic:verb-ser-idioms-1",
-        "topic:vp-full-inf-5"
+        "topic:vp-full-inf-5",
+        "topic:phr-be-4",
+        "topic:part-to-4"
       ],
       "curriculumRole": "reference"
     },
@@ -22479,7 +22901,8 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-ser-idioms-1"
+        "topic:verb-ser-idioms-1",
+        "topic:phr-be-4"
       ],
       "curriculumRole": "supporting"
     },
@@ -22504,7 +22927,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-ser-idioms-1"
+        "topic:verb-ser-idioms-1",
+        "topic:phr-be-4",
+        "topic:part-for-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -22529,7 +22954,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-ser-idioms-2"
+        "topic:verb-ser-idioms-2",
+        "topic:phr-be-4",
+        "topic:part-for-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -22576,7 +23003,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:adj-abs-general-3"
+        "topic:adj-abs-general-3",
+        "topic:phr-be-1",
+        "topic:part-of-1"
       ],
       "curriculumRole": "reference"
     },
@@ -22845,7 +23274,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-other-2"
+        "topic:verb-communication-other-2",
+        "topic:part-for-3"
       ],
       "curriculumRole": "reference"
     },
@@ -22868,7 +23298,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-other-2"
+        "topic:verb-communication-other-2",
+        "topic:part-to-4"
       ],
       "curriculumRole": "reference"
     },
@@ -23492,7 +23923,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:emotion-physical-sensation"
+        "topic:emotion-physical-sensation",
+        "topic:phr-be-3",
+        "topic:part-of-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -23516,7 +23949,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-possession-having"
+        "topic:verb-possession-having",
+        "topic:phr-be-5",
+        "topic:part-in-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -23541,7 +23976,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-possession-having"
+        "topic:verb-possession-having",
+        "topic:phr-be-5",
+        "topic:part-in-3"
       ],
       "curriculumRole": "reference"
     },
@@ -23715,7 +24152,8 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-possession-having"
+        "topic:verb-possession-having",
+        "topic:phr-be-5"
       ],
       "curriculumRole": "reference"
     },
@@ -23758,7 +24196,8 @@
         "grammar:phrasal-verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-possession-having"
+        "topic:verb-possession-having",
+        "topic:part-in-3"
       ],
       "curriculumRole": "reference"
     },
@@ -23780,7 +24219,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-possession-having"
+        "topic:verb-possession-having",
+        "topic:phr-take-3"
       ],
       "curriculumRole": "reference"
     },
@@ -23823,7 +24263,8 @@
         "topic:verb-pattern",
         "audit:reviewed",
         "topic:verb-possession-having",
-        "topic:vp-full-inf-5"
+        "topic:vp-full-inf-5",
+        "topic:phr-get-3"
       ],
       "curriculumRole": "reference"
     },
@@ -23875,7 +24316,8 @@
         "en:have",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-modal-obligation"
+        "topic:verb-modal-obligation",
+        "topic:part-with-2"
       ],
       "curriculumRole": "reference"
     },
@@ -23902,7 +24344,8 @@
         "en:have",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-possession-having"
+        "topic:verb-possession-having",
+        "topic:part-with-2"
       ],
       "curriculumRole": "reference"
     },
@@ -23926,7 +24369,8 @@
         "en:have",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-possession-having"
+        "topic:verb-possession-having",
+        "topic:part-on-3"
       ],
       "curriculumRole": "reference"
     },
@@ -24085,7 +24529,9 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "en:be",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:phr-be-5",
+        "topic:part-up-4"
       ],
       "curriculumRole": "reference"
     },
@@ -24106,7 +24552,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-2"
+        "topic:verb-household-2",
+        "topic:part-on-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -24163,7 +24610,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-2"
+        "topic:verb-taking-removing-2",
+        "topic:part-on-3"
       ],
       "curriculumRole": "reference"
     },
@@ -24185,7 +24633,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-2"
+        "topic:verb-taking-removing-2",
+        "topic:part-up-3"
       ],
       "curriculumRole": "reference"
     },
@@ -24272,7 +24721,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-work-employment"
+        "topic:verb-work-employment",
+        "topic:part-in-3"
       ],
       "curriculumRole": "reference"
     },
@@ -24295,7 +24745,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-work-employment"
+        "topic:verb-work-employment",
+        "topic:part-on-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -24319,7 +24770,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-work-employment"
+        "topic:verb-work-employment",
+        "topic:part-for-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -24343,7 +24795,8 @@
         "particle:with",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-work-employment"
+        "topic:verb-work-employment",
+        "topic:part-with-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -24391,7 +24844,8 @@
         "particle:from",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-work-employment"
+        "topic:verb-work-employment",
+        "topic:part-from-1"
       ],
       "curriculumRole": "reference"
     },
@@ -24629,7 +25083,8 @@
         "particle:from",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-bringing"
+        "topic:verb-bringing",
+        "topic:part-from-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -24692,7 +25147,8 @@
         "particle:with",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-bringing"
+        "topic:verb-bringing",
+        "topic:part-with-2"
       ],
       "curriculumRole": "reference"
     },
@@ -24810,7 +25266,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-bringing"
+        "topic:verb-bringing",
+        "topic:part-up-4"
       ],
       "curriculumRole": "reference"
     },
@@ -24915,7 +25372,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:adj-abs-general-2"
+        "topic:adj-abs-general-2",
+        "topic:phr-be-3",
+        "topic:part-for-2"
       ],
       "curriculumRole": "reference"
     },
@@ -24939,7 +25398,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-work-employment"
+        "topic:verb-work-employment",
+        "topic:part-for-3"
       ],
       "curriculumRole": "reference"
     },
@@ -25168,7 +25628,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-coming"
+        "topic:verb-movement-coming",
+        "topic:part-to-4"
       ],
       "curriculumRole": "core"
     },
@@ -25192,7 +25653,8 @@
         "particle:from",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-coming"
+        "topic:verb-movement-coming",
+        "topic:part-from-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -25217,7 +25679,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-coming"
+        "topic:verb-movement-coming",
+        "topic:phr-be-5",
+        "topic:part-from-2"
       ],
       "curriculumRole": "core"
     },
@@ -25241,7 +25705,8 @@
         "particle:with",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-coming"
+        "topic:verb-movement-coming",
+        "topic:part-with-2"
       ],
       "curriculumRole": "reference"
     },
@@ -25287,7 +25752,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-coming"
+        "topic:verb-movement-coming",
+        "topic:part-in-3"
       ],
       "curriculumRole": "reference"
     },
@@ -25311,7 +25777,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-work-employment"
+        "topic:verb-work-employment",
+        "topic:part-for-3"
       ],
       "curriculumRole": "reference"
     },
@@ -25335,7 +25802,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-coming"
+        "topic:verb-movement-coming",
+        "topic:phr-be-5",
+        "topic:part-on-3"
       ],
       "curriculumRole": "reference"
     },
@@ -25404,7 +25873,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-coming"
+        "topic:verb-movement-coming",
+        "topic:part-to-4"
       ],
       "curriculumRole": "reference"
     },
@@ -25732,7 +26202,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-modal-obligation"
+        "topic:verb-modal-obligation",
+        "topic:phr-be-5",
+        "topic:part-to-4"
       ],
       "curriculumRole": "reference"
     },
@@ -25756,7 +26228,8 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-seeing-ver"
+        "topic:verb-seeing-ver",
+        "topic:part-off-1"
       ],
       "curriculumRole": "reference"
     },
@@ -25804,7 +26277,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-seeing-ver"
+        "topic:verb-seeing-ver",
+        "topic:part-to-2"
       ],
       "curriculumRole": "reference"
     },
@@ -25967,7 +26441,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs"
+        "topic:verb-movement-directional-verbs",
+        "topic:part-to-4"
       ],
       "curriculumRole": "supporting"
     },
@@ -26095,7 +26570,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:adj-abs-general-2"
+        "topic:adj-abs-general-2",
+        "topic:phr-get-1"
       ],
       "curriculumRole": "reference"
     },
@@ -26313,7 +26789,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-possession-obtaining"
+        "topic:verb-possession-obtaining",
+        "topic:part-for-1"
       ],
       "curriculumRole": "core"
     },
@@ -26406,7 +26883,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-admin-legal-formal"
+        "topic:verb-admin-legal-formal",
+        "topic:part-for-2"
       ],
       "curriculumRole": "reference"
     },
@@ -27283,7 +27761,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-remembering-forgetting"
+        "topic:verb-remembering-forgetting",
+        "topic:part-on-1"
       ],
       "curriculumRole": "reference"
     },
@@ -27381,7 +27860,8 @@
         "particle:up",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-watching-other"
+        "topic:verb-watching-other",
+        "topic:part-up-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -27420,7 +27900,8 @@
         "particle:out",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-watching-other"
+        "topic:verb-watching-other",
+        "topic:part-out-1"
       ],
       "curriculumRole": "reference"
     },
@@ -27592,7 +28073,8 @@
         "particle:in",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-giving-lending-other"
+        "topic:verb-giving-lending-other",
+        "topic:part-in-1"
       ],
       "curriculumRole": "reference"
     },
@@ -27613,7 +28095,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-giving-lending-other"
+        "topic:verb-giving-lending-other",
+        "topic:part-to-2"
       ],
       "curriculumRole": "reference"
     },
@@ -27635,7 +28118,8 @@
         "particle:in",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-giving-lending-other"
+        "topic:verb-giving-lending-other",
+        "topic:part-in-1"
       ],
       "curriculumRole": "reference"
     },
@@ -27912,7 +28396,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-possession-obtaining"
+        "topic:verb-possession-obtaining",
+        "topic:phr-get-2"
       ],
       "curriculumRole": "reference"
     },
@@ -28158,7 +28643,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-admin-legal-formal"
+        "topic:verb-admin-legal-formal",
+        "topic:part-for-3"
       ],
       "curriculumRole": "reference"
     },
@@ -29805,7 +30291,8 @@
         "particle:on",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder-5"
+        "topic:verb-formal-remainder-5",
+        "topic:part-on-1"
       ],
       "curriculumRole": "reference"
     },
@@ -29827,7 +30314,8 @@
         "particle:on",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder-5"
+        "topic:verb-formal-remainder-5",
+        "topic:part-on-1"
       ],
       "curriculumRole": "reference"
     },
@@ -30584,7 +31072,8 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-2"
+        "topic:verb-estar-idioms-2",
+        "topic:phr-be-2"
       ],
       "curriculumRole": "reference"
     },
@@ -30602,7 +31091,8 @@
         "en:get",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:phr-get-1"
       ],
       "curriculumRole": "reference"
     },
@@ -31432,7 +31922,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-tomar-general-2"
+        "topic:verb-tomar-general-2",
+        "topic:phr-take-3"
       ],
       "curriculumRole": "reference"
     },
@@ -32559,7 +33050,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-weather-time-duration"
+        "topic:verb-weather-time-duration",
+        "topic:phr-take-2"
       ],
       "curriculumRole": "reference"
     },
@@ -32580,7 +33072,8 @@
         "topic:collocation",
         "coll:take",
         "audit:reviewed",
-        "topic:verb-weather-time-duration"
+        "topic:verb-weather-time-duration",
+        "topic:phr-take-2"
       ],
       "curriculumRole": "reference"
     },
@@ -32842,7 +33335,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder-13"
+        "topic:verb-formal-remainder-13",
+        "topic:part-up-3"
       ],
       "curriculumRole": "reference"
     },
@@ -33103,7 +33597,8 @@
         "topic:phrasal-verb",
         "construction:map-segun-according-to",
         "en:depend",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:part-on-3"
       ],
       "curriculumRole": "reference"
     },
@@ -33319,7 +33814,8 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-2"
+        "topic:verb-estar-idioms-2",
+        "topic:phr-be-2"
       ],
       "curriculumRole": "reference"
     },
@@ -33365,7 +33861,8 @@
         "particle:with",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-1"
+        "topic:verb-estar-idioms-1",
+        "topic:part-with-1"
       ],
       "curriculumRole": "reference"
     },
@@ -33388,7 +33885,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder-1"
+        "topic:verb-formal-remainder-1",
+        "topic:part-to-1"
       ],
       "curriculumRole": "reference"
     },
@@ -33455,7 +33953,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder-3"
+        "topic:verb-formal-remainder-3",
+        "topic:part-for-1"
       ],
       "curriculumRole": "reference"
     },
@@ -33871,7 +34370,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs"
+        "topic:verb-movement-directional-verbs",
+        "topic:part-in-3"
       ],
       "curriculumRole": "reference"
     },
@@ -34410,7 +34910,8 @@
         "particle:of",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-ser-idioms-2"
+        "topic:verb-ser-idioms-2",
+        "topic:part-of-2"
       ],
       "curriculumRole": "reference"
     },
@@ -34507,7 +35008,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-creation-repair-other"
+        "topic:verb-creation-repair-other",
+        "topic:part-on-1"
       ],
       "curriculumRole": "reference"
     },
@@ -34654,7 +35156,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-social-relationships"
+        "topic:verb-social-relationships",
+        "topic:part-for-1"
       ],
       "curriculumRole": "reference"
     },
@@ -35084,7 +35587,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-watching-other"
+        "topic:verb-watching-other",
+        "topic:phr-be-3",
+        "topic:part-with-2"
       ],
       "curriculumRole": "reference"
     },
@@ -35908,7 +36413,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder-11"
+        "topic:verb-formal-remainder-11",
+        "topic:part-for-3"
       ],
       "curriculumRole": "reference"
     },
@@ -36032,7 +36538,8 @@
         "en:on",
         "topic:en-multi-sense",
         "topic:phrasal-verb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:part-on-3"
       ],
       "curriculumRole": "reference"
     },
@@ -36055,7 +36562,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-formal"
+        "topic:verb-communication-formal",
+        "topic:part-up-1"
       ],
       "curriculumRole": "reference"
     },
@@ -36184,7 +36692,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-money-commerce-2"
+        "topic:verb-money-commerce-2",
+        "topic:part-off-2"
       ],
       "curriculumRole": "reference"
     },
@@ -36227,7 +36736,8 @@
         "particle:with",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-dar-giving"
+        "topic:verb-dar-giving",
+        "topic:part-with-1"
       ],
       "curriculumRole": "reference"
     },
@@ -37208,7 +37718,8 @@
         "topic:phrasal-verb",
         "audit:reviewed",
         "topic:verb-formal-remainder-4",
-        "topic:cognate-transparent-4"
+        "topic:cognate-transparent-4",
+        "topic:part-of-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -37232,7 +37743,8 @@
         "topic:phrasal-verb",
         "audit:reviewed",
         "topic:verb-formal-remainder-5",
-        "topic:cognate-transparent-6"
+        "topic:cognate-transparent-6",
+        "topic:part-from-1"
       ],
       "curriculumRole": "reference"
     },
@@ -37601,7 +38113,8 @@
         "audit:reviewed",
         "topic:verb-formal-remainder-12",
         "topic:cognate-transparent-16",
-        "topic:cognate-latin-root-9"
+        "topic:cognate-latin-root-9",
+        "topic:part-to-4"
       ],
       "curriculumRole": "supporting"
     },
@@ -50201,7 +50714,8 @@
         "audit:reviewed",
         "topic:verb-formal-remainder-2",
         "topic:cognate-transparent-1",
-        "topic:cognate-latin-root-1"
+        "topic:cognate-latin-root-1",
+        "topic:part-to-1"
       ],
       "curriculumRole": "reference"
     },
@@ -51252,7 +51766,8 @@
         "audit:reviewed",
         "topic:verb-formal-remainder-11",
         "topic:cognate-transparent-15",
-        "topic:cognate-latin-root-9"
+        "topic:cognate-latin-root-9",
+        "topic:part-of-2"
       ],
       "curriculumRole": "reference"
     },
@@ -53023,7 +53538,8 @@
         "topic:phrasal-verb",
         "audit:reviewed",
         "topic:verb-formal-remainder-2",
-        "topic:cognate-opaque-1"
+        "topic:cognate-opaque-1",
+        "topic:part-to-1"
       ],
       "curriculumRole": "reference"
     },
@@ -53881,7 +54397,8 @@
         "particle:in",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-daily-routine"
+        "topic:verb-daily-routine",
+        "topic:part-in-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -53902,7 +54419,8 @@
         "particle:with",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-daily-routine"
+        "topic:verb-daily-routine",
+        "topic:part-with-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -54544,7 +55062,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:adj-ser-general-3"
+        "topic:adj-ser-general-3",
+        "topic:phr-be-3",
+        "topic:part-of-1"
       ],
       "curriculumRole": "reference"
     },
@@ -54736,7 +55256,8 @@
         "topic:phrasal-verb",
         "audit:reviewed",
         "topic:adj-ser-general-4",
-        "topic:adj-abs-general-6"
+        "topic:adj-abs-general-6",
+        "topic:phr-be-3"
       ],
       "curriculumRole": "reference"
     },
@@ -58796,7 +59317,8 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-feelings-dislike-worry"
+        "topic:verb-feelings-dislike-worry",
+        "topic:part-on-1"
       ],
       "curriculumRole": "reference"
     },
@@ -58836,7 +59358,8 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-1"
+        "topic:verb-household-1",
+        "topic:part-off-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -58898,7 +59421,9 @@
         "particle:of",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-deciding-considering"
+        "topic:verb-deciding-considering",
+        "topic:phr-take-1",
+        "topic:part-of-1"
       ],
       "curriculumRole": "reference"
     },
@@ -58920,7 +59445,8 @@
         "particle:of",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-deciding-considering"
+        "topic:verb-deciding-considering",
+        "topic:part-of-1"
       ],
       "curriculumRole": "reference"
     },
@@ -58959,7 +59485,8 @@
         "particle:from",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-deciding-considering"
+        "topic:verb-deciding-considering",
+        "topic:part-from-1"
       ],
       "curriculumRole": "reference"
     },
@@ -59028,7 +59555,8 @@
         "en:get",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-daily-routine"
+        "topic:verb-daily-routine",
+        "topic:phr-get-1"
       ],
       "curriculumRole": "reference"
     },
@@ -59048,7 +59576,8 @@
         "en:sort",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-creation-repair-other"
+        "topic:verb-creation-repair-other",
+        "topic:part-out-1"
       ],
       "curriculumRole": "reference"
     },
@@ -59068,7 +59597,8 @@
         "en:find",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-analysis-investigation"
+        "topic:verb-analysis-investigation",
+        "topic:part-out-1"
       ],
       "curriculumRole": "reference"
     },
@@ -59255,7 +59785,9 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional"
+        "topic:verb-movement-directional",
+        "topic:phr-get-1",
+        "topic:part-off-1"
       ],
       "curriculumRole": "reference"
     },
@@ -59351,7 +59883,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-possession-obtaining"
+        "topic:verb-possession-obtaining",
+        "topic:part-for-1"
       ],
       "curriculumRole": "reference"
     },
@@ -59480,7 +60013,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-creation-repair-other"
+        "topic:verb-creation-repair-other",
+        "topic:part-for-1"
       ],
       "curriculumRole": "reference"
     },
@@ -59515,7 +60049,8 @@
         "en:get",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-creation-repair-other"
+        "topic:verb-creation-repair-other",
+        "topic:phr-get-1"
       ],
       "curriculumRole": "reference"
     },
@@ -59628,7 +60163,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-carrying"
+        "topic:verb-carrying",
+        "topic:part-for-1"
       ],
       "curriculumRole": "reference"
     },
@@ -59650,7 +60186,9 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-carrying"
+        "topic:verb-carrying",
+        "topic:phr-take-1",
+        "topic:part-on-1"
       ],
       "curriculumRole": "reference"
     },
@@ -59748,7 +60286,9 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-money-commerce-1"
+        "topic:verb-money-commerce-1",
+        "topic:phr-put-1",
+        "topic:part-in-1"
       ],
       "curriculumRole": "reference"
     },
@@ -59793,7 +60333,9 @@
         "particle:of",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-carrying"
+        "topic:verb-carrying",
+        "topic:phr-take-2",
+        "topic:part-of-1"
       ],
       "curriculumRole": "reference"
     },
@@ -59818,7 +60360,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-money-commerce-1"
+        "topic:verb-money-commerce-1",
+        "topic:phr-be-2",
+        "topic:part-in-2"
       ],
       "curriculumRole": "reference"
     },
@@ -59841,7 +60385,8 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-carrying"
+        "topic:verb-carrying",
+        "topic:part-in-1"
       ],
       "curriculumRole": "reference"
     },
@@ -59894,7 +60439,8 @@
         "en:block",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-1"
+        "topic:verb-household-1",
+        "topic:part-off-1"
       ],
       "curriculumRole": "reference"
     },
@@ -59931,7 +60477,8 @@
         "en:log",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-1"
+        "topic:verb-household-1",
+        "topic:part-out-1"
       ],
       "curriculumRole": "reference"
     },
@@ -59983,7 +60530,8 @@
         "en:get",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-money-commerce-1"
+        "topic:verb-money-commerce-1",
+        "topic:phr-get-1"
       ],
       "curriculumRole": "reference"
     },
@@ -60018,7 +60566,8 @@
         "en:take",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-tomar-general-1"
+        "topic:verb-tomar-general-1",
+        "topic:phr-take-1"
       ],
       "curriculumRole": "reference"
     },
@@ -60056,7 +60605,8 @@
         "en:pick",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-tomar-general-1"
+        "topic:verb-tomar-general-1",
+        "topic:part-up-1"
       ],
       "curriculumRole": "reference"
     },
@@ -60091,7 +60641,8 @@
         "en:take",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-tomar-general-1"
+        "topic:verb-tomar-general-1",
+        "topic:phr-take-1"
       ],
       "curriculumRole": "reference"
     },
@@ -60148,7 +60699,8 @@
         "en:pick",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-tomar-general-2"
+        "topic:verb-tomar-general-2",
+        "topic:part-up-3"
       ],
       "curriculumRole": "reference"
     },
@@ -60169,7 +60721,8 @@
         "en:pick",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-tomar-general-2"
+        "topic:verb-tomar-general-2",
+        "topic:part-up-3"
       ],
       "curriculumRole": "reference"
     },
@@ -60226,7 +60779,8 @@
         "en:tidy",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-tomar-general-2"
+        "topic:verb-tomar-general-2",
+        "topic:part-up-3"
       ],
       "curriculumRole": "reference"
     },
@@ -60284,7 +60838,9 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-tomar-general-2"
+        "topic:verb-tomar-general-2",
+        "topic:phr-take-2",
+        "topic:part-in-3"
       ],
       "curriculumRole": "reference"
     },
@@ -60412,7 +60968,8 @@
         "topic:collocation",
         "coll:take",
         "audit:reviewed",
-        "topic:verb-locomotion-general"
+        "topic:verb-locomotion-general",
+        "topic:phr-take-1"
       ],
       "curriculumRole": "reference"
     },
@@ -60434,7 +60991,9 @@
         "particle:of",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-social-relationships"
+        "topic:verb-social-relationships",
+        "topic:phr-take-1",
+        "topic:part-of-1"
       ],
       "curriculumRole": "reference"
     },
@@ -60518,7 +61077,8 @@
         "topic:collocation",
         "coll:have",
         "audit:reviewed",
-        "topic:verb-feelings-dislike-worry"
+        "topic:verb-feelings-dislike-worry",
+        "topic:part-in-3"
       ],
       "curriculumRole": "reference"
     },
@@ -60630,7 +61190,9 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-daily-routine"
+        "topic:verb-daily-routine",
+        "topic:phr-put-1",
+        "topic:part-to-2"
       ],
       "curriculumRole": "reference"
     },
@@ -60669,7 +61231,8 @@
         "en:wake",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-daily-routine"
+        "topic:verb-daily-routine",
+        "topic:part-up-2"
       ],
       "curriculumRole": "reference"
     },
@@ -60818,7 +61381,8 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-2"
+        "topic:verb-household-2",
+        "topic:part-on-1"
       ],
       "curriculumRole": "reference"
     },
@@ -60947,7 +61511,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder-6"
+        "topic:verb-formal-remainder-6",
+        "topic:phr-be-1",
+        "topic:part-in-1"
       ],
       "curriculumRole": "reference"
     },
@@ -61000,7 +61566,8 @@
         "en:get",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-learning-teaching"
+        "topic:verb-learning-teaching",
+        "topic:phr-get-2"
       ],
       "curriculumRole": "reference"
     },
@@ -61055,7 +61622,8 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-money-earning-spending"
+        "topic:verb-money-earning-spending",
+        "topic:part-up-2"
       ],
       "curriculumRole": "reference"
     },
@@ -61076,7 +61644,8 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-bringing"
+        "topic:verb-bringing",
+        "topic:part-out-2"
       ],
       "curriculumRole": "reference"
     },
@@ -61132,7 +61701,8 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-keeping-storing"
+        "topic:verb-keeping-storing",
+        "topic:phr-put-2"
       ],
       "curriculumRole": "reference"
     },
@@ -61242,7 +61812,8 @@
         "particle:with",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-social-relationships"
+        "topic:verb-social-relationships",
+        "topic:part-with-1"
       ],
       "curriculumRole": "reference"
     },
@@ -61314,7 +61885,8 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-2"
+        "topic:verb-household-2",
+        "topic:phr-put-2"
       ],
       "curriculumRole": "reference"
     },
@@ -61355,7 +61927,8 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-2"
+        "topic:verb-household-2",
+        "topic:phr-get-2"
       ],
       "curriculumRole": "reference"
     },
@@ -61375,7 +61948,8 @@
         "en:involve",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-2"
+        "topic:verb-household-2",
+        "topic:part-in-2"
       ],
       "curriculumRole": "reference"
     },
@@ -61395,7 +61969,8 @@
         "en:interfere",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-2"
+        "topic:verb-household-2",
+        "topic:part-in-2"
       ],
       "curriculumRole": "reference"
     },
@@ -61436,7 +62011,8 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-2"
+        "topic:verb-household-2",
+        "topic:phr-get-2"
       ],
       "curriculumRole": "reference"
     },
@@ -61457,7 +62033,8 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-2"
+        "topic:verb-household-2",
+        "topic:phr-get-2"
       ],
       "curriculumRole": "reference"
     },
@@ -61636,7 +62213,8 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-remembering-forgetting"
+        "topic:verb-remembering-forgetting",
+        "topic:part-in-2"
       ],
       "curriculumRole": "reference"
     },
@@ -61715,7 +62293,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-money-earning-spending"
+        "topic:verb-money-earning-spending",
+        "topic:part-for-1"
       ],
       "curriculumRole": "reference"
     },
@@ -61758,7 +62337,8 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-money-earning-spending"
+        "topic:verb-money-earning-spending",
+        "topic:part-up-2"
       ],
       "curriculumRole": "reference"
     },
@@ -61800,7 +62380,9 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-conflict-crime"
+        "topic:verb-conflict-crime",
+        "topic:phr-get-2",
+        "topic:part-to-3"
       ],
       "curriculumRole": "reference"
     },
@@ -61893,7 +62475,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-conflict-crime"
+        "topic:verb-conflict-crime",
+        "topic:part-to-3"
       ],
       "curriculumRole": "reference"
     },
@@ -61948,7 +62531,8 @@
         "en:tear",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-creation-repair-other"
+        "topic:verb-creation-repair-other",
+        "topic:part-up-3"
       ],
       "curriculumRole": "reference"
     },
@@ -61990,7 +62574,8 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-creation-repair-other"
+        "topic:verb-creation-repair-other",
+        "topic:part-up-3"
       ],
       "curriculumRole": "reference"
     },
@@ -62029,7 +62614,8 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional"
+        "topic:verb-movement-directional",
+        "topic:part-up-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -62051,7 +62637,8 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional"
+        "topic:verb-movement-directional",
+        "topic:part-up-3"
       ],
       "curriculumRole": "reference"
     },
@@ -62091,7 +62678,9 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional"
+        "topic:verb-movement-directional",
+        "topic:phr-get-3",
+        "topic:part-on-3"
       ],
       "curriculumRole": "reference"
     },
@@ -62131,7 +62720,8 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional"
+        "topic:verb-movement-directional",
+        "topic:part-up-3"
       ],
       "curriculumRole": "reference"
     },
@@ -62171,7 +62761,8 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional"
+        "topic:verb-movement-directional",
+        "topic:part-up-3"
       ],
       "curriculumRole": "reference"
     },
@@ -62249,7 +62840,8 @@
         "topic:multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional"
+        "topic:verb-movement-directional",
+        "topic:part-up-2"
       ],
       "curriculumRole": "reference"
     },
@@ -62272,7 +62864,9 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-daily-routine"
+        "topic:verb-daily-routine",
+        "topic:phr-get-2",
+        "topic:part-up-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -62328,7 +62922,8 @@
         "en:sell",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-money-commerce-2"
+        "topic:verb-money-commerce-2",
+        "topic:part-out-4"
       ],
       "curriculumRole": "reference"
     },
@@ -62348,7 +62943,8 @@
         "en:sell",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-money-commerce-2"
+        "topic:verb-money-commerce-2",
+        "topic:part-off-2"
       ],
       "curriculumRole": "reference"
     },
@@ -62404,7 +63000,8 @@
         "en:be",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-locomotion-general"
+        "topic:verb-locomotion-general",
+        "topic:phr-be-1"
       ],
       "curriculumRole": "reference"
     },
@@ -62521,7 +63118,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-naming"
+        "topic:verb-communication-naming",
+        "topic:part-to-1"
       ],
       "curriculumRole": "reference"
     },
@@ -62543,7 +63141,8 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-naming"
+        "topic:verb-communication-naming",
+        "topic:part-up-1"
       ],
       "curriculumRole": "reference"
     },
@@ -62563,7 +63162,8 @@
         "en:join",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-naming"
+        "topic:verb-communication-naming",
+        "topic:part-in-1"
       ],
       "curriculumRole": "reference"
     },
@@ -62621,7 +63221,8 @@
         "particle:with",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-social-relationships"
+        "topic:verb-social-relationships",
+        "topic:part-with-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -62746,7 +63347,8 @@
         "en:get",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-social-relationships"
+        "topic:verb-social-relationships",
+        "topic:phr-get-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -62785,7 +63387,8 @@
         "particle:with",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-social-relationships"
+        "topic:verb-social-relationships",
+        "topic:part-with-1"
       ],
       "curriculumRole": "reference"
     },
@@ -62824,7 +63427,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-social-relationships"
+        "topic:verb-social-relationships",
+        "topic:part-to-2"
       ],
       "curriculumRole": "reference"
     },
@@ -62845,7 +63449,8 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-social-relationships"
+        "topic:verb-social-relationships",
+        "topic:part-off-1"
       ],
       "curriculumRole": "reference"
     },
@@ -62902,7 +63507,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder-5"
+        "topic:verb-formal-remainder-5",
+        "topic:part-to-2"
       ],
       "curriculumRole": "reference"
     },
@@ -63013,7 +63619,8 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-watching-other"
+        "topic:verb-watching-other",
+        "topic:part-off-1"
       ],
       "curriculumRole": "reference"
     },
@@ -63247,7 +63854,8 @@
         "particle:from",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-leaving"
+        "topic:verb-movement-leaving",
+        "topic:part-from-1"
       ],
       "curriculumRole": "reference"
     },
@@ -63320,7 +63928,8 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-money-commerce-2"
+        "topic:verb-money-commerce-2",
+        "topic:part-off-2"
       ],
       "curriculumRole": "reference"
     },
@@ -63358,7 +63967,8 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-money-commerce-2"
+        "topic:verb-money-commerce-2",
+        "topic:part-up-3"
       ],
       "curriculumRole": "reference"
     },
@@ -63505,7 +64115,8 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-daily-routine"
+        "topic:verb-daily-routine",
+        "topic:part-for-3"
       ],
       "curriculumRole": "reference"
     },
@@ -63930,7 +64541,8 @@
         "en:take",
         "topic:en-multi-sense",
         "expr:farewell",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:phr-take-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -64466,7 +65078,8 @@
         "particle:of",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-ser-idioms-2"
+        "topic:verb-ser-idioms-2",
+        "topic:part-of-2"
       ],
       "curriculumRole": "reference"
     },
@@ -64508,7 +65121,8 @@
         "topic:phrasal-verb",
         "audit:reviewed",
         "topic:estar-adj-1",
-        "topic:adj-abs-general-6"
+        "topic:adj-abs-general-6",
+        "topic:phr-be-3"
       ],
       "curriculumRole": "reference"
     },
@@ -64533,7 +65147,8 @@
         "topic:phrasal-verb",
         "audit:reviewed",
         "topic:estar-adj-1",
-        "topic:adj-abs-general-6"
+        "topic:adj-abs-general-6",
+        "topic:part-to-3"
       ],
       "curriculumRole": "reference"
     },
@@ -64571,7 +65186,8 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:adj-ser-general-5"
+        "topic:adj-ser-general-5",
+        "topic:part-to-3"
       ],
       "curriculumRole": "reference"
     },
@@ -64728,7 +65344,8 @@
         "topic:phrasal-verb",
         "audit:reviewed",
         "topic:estar-adj-2",
-        "topic:condition-state-2"
+        "topic:condition-state-2",
+        "topic:part-of-1"
       ],
       "curriculumRole": "reference"
     },
@@ -73393,7 +74010,8 @@
         "pos:verb",
         "topic:verb-pattern",
         "audit:reviewed",
-        "topic:verb-quedar-remaining"
+        "topic:verb-quedar-remaining",
+        "topic:phr-get-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -73416,7 +74034,8 @@
         "pos:verb",
         "topic:verb-pattern",
         "audit:reviewed",
-        "topic:verb-communication-other-2"
+        "topic:verb-communication-other-2",
+        "topic:phr-get-2"
       ],
       "curriculumRole": "reference"
     },
@@ -75588,7 +76207,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-1"
+        "topic:verb-estar-idioms-1",
+        "topic:phr-be-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -76473,7 +77093,8 @@
         "es:estará",
         "en:be",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:phr-be-3"
       ],
       "curriculumRole": "reference"
     },
@@ -76493,7 +77114,8 @@
         "es:estaría",
         "en:be",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:phr-be-3"
       ],
       "curriculumRole": "reference"
     },
@@ -76977,7 +77599,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder-2"
+        "topic:verb-formal-remainder-2",
+        "topic:part-off-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -77000,7 +77623,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-1"
+        "topic:verb-household-1",
+        "topic:part-off-1"
       ],
       "curriculumRole": "reference"
     },
@@ -77023,7 +77647,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder-12"
+        "topic:verb-formal-remainder-12",
+        "topic:part-up-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -77092,7 +77717,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-possession-obtaining"
+        "topic:verb-possession-obtaining",
+        "topic:part-up-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -77993,7 +78619,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:adj-abs-general-1"
+        "topic:adj-abs-general-1",
+        "topic:phr-be-1"
       ],
       "curriculumRole": "core"
     },
@@ -78922,7 +79549,8 @@
         "sound:reviewed",
         "topic:verb-form",
         "audit:reviewed",
-        "topic:vf-oneoff-1"
+        "topic:vf-oneoff-1",
+        "topic:phr-be-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -78945,7 +79573,8 @@
         "sound:reviewed",
         "topic:verb-form",
         "audit:reviewed",
-        "topic:vf-oneoff-1"
+        "topic:vf-oneoff-1",
+        "topic:phr-be-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -78968,7 +79597,8 @@
         "sound:reviewed",
         "topic:verb-form",
         "audit:reviewed",
-        "topic:vf-oneoff-1"
+        "topic:vf-oneoff-1",
+        "topic:phr-be-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -82255,7 +82885,8 @@
         "sound:got-forgot-shot",
         "sound:past-irregular-got-forgot-shot",
         "topic:verb-form",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:phr-get-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -82278,7 +82909,8 @@
         "sound:reviewed",
         "topic:verb-form",
         "audit:reviewed",
-        "topic:vf-oneoff-4"
+        "topic:vf-oneoff-4",
+        "topic:phr-get-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -82303,7 +82935,8 @@
         "topic:en-multi-sense",
         "topic:verb-form",
         "audit:reviewed",
-        "topic:vf-oneoff-4"
+        "topic:vf-oneoff-4",
+        "topic:phr-get-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -84476,7 +85109,8 @@
         "sound:past-irregular-cut-hit-hurt-put-set-shut",
         "topic:verb-form",
         "audit:reviewed",
-        "topic:vf-cut-hit-hurt-2"
+        "topic:vf-cut-hit-hurt-2",
+        "topic:phr-put-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -84501,7 +85135,8 @@
         "sound:past-participle-irregular-cut-hit-hurt-put-set-shut",
         "topic:verb-form",
         "audit:reviewed",
-        "topic:vf-cut-hit-hurt-2"
+        "topic:vf-cut-hit-hurt-2",
+        "topic:phr-put-3"
       ],
       "curriculumRole": "supporting"
     },
@@ -88476,7 +89111,8 @@
         "sound:took-shook",
         "sound:past-irregular-took-shook",
         "topic:verb-form",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:phr-take-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -88501,7 +89137,8 @@
         "topic:en-multi-sense",
         "topic:verb-form",
         "audit:reviewed",
-        "topic:vf-oneoff-9"
+        "topic:vf-oneoff-9",
+        "topic:phr-take-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -89893,7 +90530,8 @@
         "en:me",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "grammar:prep-pronoun-con"
+        "grammar:prep-pronoun-con",
+        "topic:part-with-1"
       ],
       "curriculumRole": "core"
     },
@@ -89915,7 +90553,8 @@
         "en:you",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "grammar:prep-pronoun-con"
+        "grammar:prep-pronoun-con",
+        "topic:part-with-1"
       ],
       "curriculumRole": "core"
     },
@@ -89939,7 +90578,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "grammar:prep-pronoun-con"
+        "grammar:prep-pronoun-con",
+        "topic:part-with-1"
       ],
       "curriculumRole": "core"
     },
@@ -89963,7 +90603,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "grammar:prep-pronoun-con"
+        "grammar:prep-pronoun-con",
+        "topic:part-with-1"
       ],
       "curriculumRole": "core"
     },
@@ -89988,7 +90629,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "grammar:prep-pronoun-con"
+        "grammar:prep-pronoun-con",
+        "topic:part-with-1"
       ],
       "curriculumRole": "core"
     },
@@ -90013,7 +90655,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "grammar:prep-pronoun-con"
+        "grammar:prep-pronoun-con",
+        "topic:part-with-1"
       ],
       "curriculumRole": "core"
     },
@@ -90037,7 +90680,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "grammar:prep-pronoun-con"
+        "grammar:prep-pronoun-con",
+        "topic:part-with-1"
       ],
       "curriculumRole": "core"
     },
@@ -90062,7 +90706,8 @@
         "contrast:confusable",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "grammar:prep-pronoun-para"
+        "grammar:prep-pronoun-para",
+        "topic:part-for-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -90085,7 +90730,8 @@
         "en:you",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "grammar:prep-pronoun-para"
+        "grammar:prep-pronoun-para",
+        "topic:part-for-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -90108,7 +90754,8 @@
         "en:him",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "grammar:prep-pronoun-para"
+        "grammar:prep-pronoun-para",
+        "topic:part-for-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -90131,7 +90778,8 @@
         "en:her",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "grammar:prep-pronoun-para"
+        "grammar:prep-pronoun-para",
+        "topic:part-for-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -90155,7 +90803,8 @@
         "en:us",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "grammar:prep-pronoun-para"
+        "grammar:prep-pronoun-para",
+        "topic:part-for-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -90179,7 +90828,8 @@
         "en:them",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "grammar:prep-pronoun-para"
+        "grammar:prep-pronoun-para",
+        "topic:part-for-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -90202,7 +90852,8 @@
         "en:somebody",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "grammar:prep-pronoun-para"
+        "grammar:prep-pronoun-para",
+        "topic:part-for-2"
       ],
       "curriculumRole": "supporting"
     },
@@ -90226,7 +90877,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "grammar:prep-pronoun-a"
+        "grammar:prep-pronoun-a",
+        "topic:part-to-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -90250,7 +90902,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "grammar:prep-pronoun-a"
+        "grammar:prep-pronoun-a",
+        "topic:part-to-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -90274,7 +90927,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "grammar:prep-pronoun-a"
+        "grammar:prep-pronoun-a",
+        "topic:part-to-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -90298,7 +90952,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "grammar:prep-pronoun-a"
+        "grammar:prep-pronoun-a",
+        "topic:part-to-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -90322,7 +90977,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "grammar:prep-pronoun-a"
+        "grammar:prep-pronoun-a",
+        "topic:part-to-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -91880,7 +92536,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "grammar:prep-pronoun-a"
+        "grammar:prep-pronoun-a",
+        "topic:part-to-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -91905,7 +92562,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "grammar:prep-pronoun-a"
+        "grammar:prep-pronoun-a",
+        "topic:part-to-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -94873,7 +95531,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-tobe-present"
+        "topic:verb-tobe-present",
+        "topic:phr-be-5"
       ],
       "curriculumRole": "core"
     },
@@ -94897,7 +95556,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-tobe-present"
+        "topic:verb-tobe-present",
+        "topic:phr-be-1"
       ],
       "curriculumRole": "supporting"
     },
@@ -94923,7 +95583,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-tobe-present"
+        "topic:verb-tobe-present",
+        "topic:phr-be-2"
       ],
       "curriculumRole": "core"
     },
@@ -94947,7 +95608,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-tobe-present"
+        "topic:verb-tobe-present",
+        "topic:phr-be-5"
       ],
       "curriculumRole": "supporting"
     },
@@ -94971,7 +95633,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-tobe-present"
+        "topic:verb-tobe-present",
+        "topic:phr-be-5"
       ],
       "curriculumRole": "supporting"
     },
@@ -96152,7 +96815,8 @@
         "topic:phrasal-verb",
         "particle:out",
         "grammar:phrasal-verb",
-        "topic:verb-formal-abstract-2"
+        "topic:verb-formal-abstract-2",
+        "topic:part-out-3"
       ],
       "curriculumRole": "reference"
     },
