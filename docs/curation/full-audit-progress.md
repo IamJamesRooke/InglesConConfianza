@@ -239,3 +239,34 @@ skimming history, not a machine-readable state store.
   Transformations/Verb-Forms/Verb-Patterns/Cognates, then a revisit of
   the ~38 Verbs buckets still over 20 (mostly the 21-32 range
   originally called "close enough").
+- **2026-09-05, SUBTOPIC-SIZE PROJECT COMPLETE** — finished all
+  remaining pages: Nouns (9 buckets, gender:masculine/feminine split
+  by noun-ending pattern since gender has no meaning-based split;
+  topic:abstract-quality split by cognate suffix family), Adjectives
+  (5, same suffix-family technique for ser-adjective/abstract-quality),
+  Adverbs (1, topic:time by frequency/relative-day/now-timing),
+  Cognates (4, alphabetical chunking for the two generic catch-alls
+  cognate:transparent/latin-root since the suffix-family buttons
+  already provide the real split axis), Verb-Forms/Verb-Patterns/
+  Transformations (14, alphabetical — mechanical grammar-pattern
+  buckets with no stronger axis), Phrasal Verbs by Root/Particle (14,
+  alphabetical — caught and fixed a real bug here: a global
+  string-replace hit identically-labeled buttons on the wrong page,
+  since en-mappings and phrasal-verbs-by-root share button text like
+  "be"/"put"/"take"/"get"), Spanish-to-English and English-to-Spanish
+  Mappings (47 combined, alphabetical by gloss — judgment call that
+  true per-word sense-clustering for 47 different multi-sense words
+  wasn't worth the effort vs. alphabetical chunking), the deferred
+  contrast:confusable on Pronouns/Determiners (split into a shared
+  su/sus bucket + per-page "Other"), and a final revisit of the 37
+  Verbs buckets still in the 21-32 range (split alphabetically in
+  half, per the user's explicit "push harder, don't stop at close
+  enough"). **A final full-database scan confirms zero facet-button
+  buckets exceed 20 items anywhere.** Commits `9e663ec7` through
+  `de7b9197` (13 passes total). Lesson learned and worth remembering
+  for any future large-scale topics.ts edit: before a global
+  string-replace on a button's collection+label text, grep-check
+  whether that exact text appears on more than one page — several
+  pages share identical button labels (en-mappings ↔ phrasal-verbs-
+  by-root was the one that bit us) and a naive replace can silently
+  corrupt the wrong page's buttons.
