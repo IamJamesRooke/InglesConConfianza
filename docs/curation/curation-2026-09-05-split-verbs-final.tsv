@@ -1,0 +1,939 @@
+spnqzmy3g5	¿[alguien] está [haciendo algo]?	is [somebody] [doing something]?	core	topic:verb-tobe-present-1	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+dnm638drfa	¿cómo estar [alguien]?	how is [somebody] feeling?	supporting	topic:verb-tobe-present-1	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+9814unz0vu	¿Es ella doctora?	Is she a doctor?	supporting	topic:verb-tobe-present-1	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+yet9gjs718	¿Están listos?	Are they ready?	supporting	topic:verb-tobe-present-1	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+hfip8vre8c	eres [adjetivo]	you are [adjective]	supporting	topic:verb-tobe-present-1	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+0rv1zmpu5c	eres [algo]	you are [something]	core	topic:verb-tobe-present-1	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+6zy7d60lhd	eres de [un lugar]	you are from [a place]	core	topic:verb-tobe-present-1	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+9c2am535n8	es [adjetivo]	is [adjective]	core	topic:verb-tobe-present-1	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+rf1kaz8lmr	es [algo]	is [something]	core	topic:verb-tobe-present-1	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+25qdaau47d	es de [un lugar]	is from [a place]	core	topic:verb-tobe-present-1	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+7irrsf9sy8	es la una	it's one o'clock	supporting	topic:verb-tobe-present-1	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+zs2vl4oxdq	está [en un estado o lugar]	is [somewhere or feeling something]	core	topic:verb-tobe-present-1	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+9yf8jsp2b1	está [haciendo algo]	is [doing something]	core	topic:verb-tobe-present-1	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+kaq1f0slza	estamos [en un estado o lugar]	we are [somewhere or feeling something]	supporting	topic:verb-tobe-present-1	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+4e3tp75nnw	estamos [haciendo algo]	we are [doing something]	core	topic:verb-tobe-present-1	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+widbvn1zzj	están [en un estado o lugar]	they are [somewhere or feeling something]	supporting	topic:verb-tobe-present-1	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+bb48xm25wt	están [haciendo algo]	they are [doing something]	core	topic:verb-tobe-present-2	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+715ron2lud	estar ==> está	to be ==> is	supporting	topic:verb-tobe-present-2	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+0k44vohfn6	estás [en un estado o lugar]	you are [somewhere or feeling something]	supporting	topic:verb-tobe-present-2	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+g2rq6v6czz	estás [haciendo algo]	you are [doing something]	core	topic:verb-tobe-present-2	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+93wmoiwink	estoy [en un estado o lugar]	I am [somewhere or feeling something]	core	topic:verb-tobe-present-2	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+4uptsafx20	estoy [haciendo algo]	I am [doing something]	core	topic:verb-tobe-present-2	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+cbhs0k69zd	ser [adjetivo] [hacer algo]	it is [adjective] [to do something]	core	topic:verb-tobe-present-2	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+kqssflfv3m	somos [adjetivo]	we are [adjective]	supporting	topic:verb-tobe-present-2	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+d3s5uo0ahx	somos [algo]	we are [something]	core	topic:verb-tobe-present-2	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+ht2nxiu107	somos de [un lugar]	we are from [a place]	core	topic:verb-tobe-present-2	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+elhfo7u8o3	son [adjetivo]	they are [adjective]	supporting	topic:verb-tobe-present-2	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+0kqlhwpi3i	son [algo]	they are [something]	core	topic:verb-tobe-present-2	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+w8b4nwsykp	son de [un lugar]	they are from [a place]	core	topic:verb-tobe-present-2	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+n8ahr1jble	soy [adjetivo]	I am [adjective]	core	topic:verb-tobe-present-2	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+b5c13zo3bg	soy [algo]	I am [something]	core	topic:verb-tobe-present-2	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+iy31grrg95	soy de [un lugar]	I am from [a place]	core	topic:verb-tobe-present-2	Subtopic split (size rule): topic:verb-tobe-present (32) split alphabetically in half.
+ft6li4zkws	estar [adverbio de frecuencia] [estado]	to be [frequency adverb] [state]	supporting	topic:verb-estar-idioms-1-1	Subtopic split (size rule): topic:verb-estar-idioms-1 (24) split alphabetically in half.
+nqyror4j5f	estar [en un estado]	to be [in a state]	core	topic:verb-estar-idioms-1-1	Subtopic split (size rule): topic:verb-estar-idioms-1 (24) split alphabetically in half.
+obf74hel79	estar [en un lugar]	to be [in a place]	core	topic:verb-estar-idioms-1-1	Subtopic split (size rule): topic:verb-estar-idioms-1 (24) split alphabetically in half.
+f2zryn85p8	estar [haciendo algo]	to be [doing something]	core	topic:verb-estar-idioms-1-1	Subtopic split (size rule): topic:verb-estar-idioms-1 (24) split alphabetically in half.
+p76va4jmyy	estar a cargo de [algo]	to be in charge of [something]	reference	topic:verb-estar-idioms-1-1	Subtopic split (size rule): topic:verb-estar-idioms-1 (24) split alphabetically in half.
+6ywiv1c0l5	estar a favor de [algo]	to be in favor of [something]	reference	topic:verb-estar-idioms-1-1	Subtopic split (size rule): topic:verb-estar-idioms-1 (24) split alphabetically in half.
+e6gbegp44a	estar a punto de [hacer algo]	to be about to [do something]	supporting	topic:verb-estar-idioms-1-1	Subtopic split (size rule): topic:verb-estar-idioms-1 (24) split alphabetically in half.
+x9rvf35d7y	estar a tiempo	to be on time	supporting	topic:verb-estar-idioms-1-1	Subtopic split (size rule): topic:verb-estar-idioms-1 (24) split alphabetically in half.
+r2sms8158b	estar aburrido ==> el aburrimiento	to be bored ==> the boredom	reference	topic:verb-estar-idioms-1-1	Subtopic split (size rule): topic:verb-estar-idioms-1 (24) split alphabetically in half.
+bvc9f4ew19	estar activo ==> la actividad	to be active ==> the activity	reference	topic:verb-estar-idioms-1-1	Subtopic split (size rule): topic:verb-estar-idioms-1 (24) split alphabetically in half.
+e1kkk7zc7e	estar adentro	to be inside	supporting	topic:verb-estar-idioms-1-1	Subtopic split (size rule): topic:verb-estar-idioms-1 (24) split alphabetically in half.
+27pb5p676r	estar afuera	to be outside	supporting	topic:verb-estar-idioms-1-1	Subtopic split (size rule): topic:verb-estar-idioms-1 (24) split alphabetically in half.
+d495hfe6co	estar al tanto de [algo]	to be aware of [something]	reference	topic:verb-estar-idioms-1-2	Subtopic split (size rule): topic:verb-estar-idioms-1 (24) split alphabetically in half.
+45izdwmxbd	estar ansioso por que [ocurra algo]	can hardly wait for [something] to happen	reference	topic:verb-estar-idioms-1-2	Subtopic split (size rule): topic:verb-estar-idioms-1 (24) split alphabetically in half.
+fbhhwzgo6j	estar apagado	to be off	supporting	topic:verb-estar-idioms-1-2	Subtopic split (size rule): topic:verb-estar-idioms-1 (24) split alphabetically in half.
+jo1ruoxv9h	estar aquí	to be here	supporting	topic:verb-estar-idioms-1-2	Subtopic split (size rule): topic:verb-estar-idioms-1 (24) split alphabetically in half.
+8pa5w8lhu0	estar bien	to be okay	core	topic:verb-estar-idioms-1-2	Subtopic split (size rule): topic:verb-estar-idioms-1 (24) split alphabetically in half.
+q603v2185b	estar bien ==> estar más o menos bien	to be okay ==> to be okay-ish	reference	topic:verb-estar-idioms-1-2	Subtopic split (size rule): topic:verb-estar-idioms-1 (24) split alphabetically in half.
+vbtrrcbmlc	estar cálido ==> la calidez	to be warm ==> the warmth	reference	topic:verb-estar-idioms-1-2	Subtopic split (size rule): topic:verb-estar-idioms-1 (24) split alphabetically in half.
+qyef4ces9y	estar consciente de [algo] ==> la conciencia	to be aware of [something] ==> the awareness	reference	topic:verb-estar-idioms-1-2	Subtopic split (size rule): topic:verb-estar-idioms-1 (24) split alphabetically in half.
+f5h0hvcv1d	estar de acuerdo	to agree	supporting	topic:verb-estar-idioms-1-2	Subtopic split (size rule): topic:verb-estar-idioms-1 (24) split alphabetically in half.
+zjixrrmhoh	estar de acuerdo ==> el acuerdo	to agree ==> the agreement	reference	topic:verb-estar-idioms-1-2	Subtopic split (size rule): topic:verb-estar-idioms-1 (24) split alphabetically in half.
+ytr81haq2m	estar de acuerdo ==> estar en desacuerdo	to agree ==> to disagree	supporting	topic:verb-estar-idioms-1-2	Subtopic split (size rule): topic:verb-estar-idioms-1 (24) split alphabetically in half.
+oyxzv5jbvk	estar de acuerdo con [alguien]	to agree with [somebody]	reference	topic:verb-estar-idioms-1-2	Subtopic split (size rule): topic:verb-estar-idioms-1 (24) split alphabetically in half.
+myuguvt6ul	estar de pie	to be standing	reference	topic:verb-estar-idioms-2-1	Subtopic split (size rule): topic:verb-estar-idioms-2 (23) split alphabetically in half.
+ahj6apo9ri	estar de vacaciones	to be on vacation	reference	topic:verb-estar-idioms-2-1	Subtopic split (size rule): topic:verb-estar-idioms-2 (23) split alphabetically in half.
+43l3giqx0c	estar disponible ==> la disponibilidad	to be available ==> the availability	reference	topic:verb-estar-idioms-2-1	Subtopic split (size rule): topic:verb-estar-idioms-2 (23) split alphabetically in half.
+nfursmvnpb	estar en contra de [algo]	to be against [something]	reference	topic:verb-estar-idioms-2-1	Subtopic split (size rule): topic:verb-estar-idioms-2 (23) split alphabetically in half.
+i2sih4q1lh	estar en lo cierto	to be right	reference	topic:verb-estar-idioms-2-1	Subtopic split (size rule): topic:verb-estar-idioms-2 (23) split alphabetically in half.
+vx5dkts0j1	estar encendido	to be on	supporting	topic:verb-estar-idioms-2-1	Subtopic split (size rule): topic:verb-estar-idioms-2 (23) split alphabetically in half.
+yx2twx4lyf	estar enfermo ==> la enfermedad	to be ill ==> the illness	reference	topic:verb-estar-idioms-2-1	Subtopic split (size rule): topic:verb-estar-idioms-2 (23) split alphabetically in half.
+8g7yjhzzf4	estar entre [personas]	to be among [people]	reference	topic:verb-estar-idioms-2-1	Subtopic split (size rule): topic:verb-estar-idioms-2 (23) split alphabetically in half.
+j1gh57080u	estar frente a [algo]	to be across from [something]	reference	topic:verb-estar-idioms-2-1	Subtopic split (size rule): topic:verb-estar-idioms-2 (23) split alphabetically in half.
+vbyvw1ar60	estar frío ==> estar algo frío	to be cold ==> to be coldish	reference	topic:verb-estar-idioms-2-1	Subtopic split (size rule): topic:verb-estar-idioms-2 (23) split alphabetically in half.
+gha0bijm3j	estar fuera	to be out	reference	topic:verb-estar-idioms-2-1	Subtopic split (size rule): topic:verb-estar-idioms-2 (23) split alphabetically in half.
+z5nq5xkxnd	estar listo ==> estar más o menos listo	to be ready ==> to be ready-ish	reference	topic:verb-estar-idioms-2-1	Subtopic split (size rule): topic:verb-estar-idioms-2 (23) split alphabetically in half.
+c0ycs4sr3d	estar listo ==> la preparación	to be ready ==> the readiness	reference	topic:verb-estar-idioms-2-2	Subtopic split (size rule): topic:verb-estar-idioms-2 (23) split alphabetically in half.
+bvwjgfiqzf	estar mal	to be unwell	reference	topic:verb-estar-idioms-2-2	Subtopic split (size rule): topic:verb-estar-idioms-2 (23) split alphabetically in half.
+9qzgymygsa	estar mal	to be wrong	reference	topic:verb-estar-idioms-2-2	Subtopic split (size rule): topic:verb-estar-idioms-2 (23) split alphabetically in half.
+6du2hkieee	estar muerto ==> la muerte	to be dead ==> the death	reference	topic:verb-estar-idioms-2-2	Subtopic split (size rule): topic:verb-estar-idioms-2 (23) split alphabetically in half.
+b2kvvgg1ke	estar por [hacer algo]	to be about to [do something]	reference	topic:verb-estar-idioms-2-2	Subtopic split (size rule): topic:verb-estar-idioms-2 (23) split alphabetically in half.
+5unz3dwyz7	estar prohibido [hacer algo]	must not [do something]	supporting	topic:verb-estar-idioms-2-2	Subtopic split (size rule): topic:verb-estar-idioms-2 (23) split alphabetically in half.
+ytzftmquqs	estar prohibido [hacer algo]	mustn't [do something]	supporting	topic:verb-estar-idioms-2-2	Subtopic split (size rule): topic:verb-estar-idioms-2 (23) split alphabetically in half.
+vf8v3tcztr	estar sentado	to be sitting	reference	topic:verb-estar-idioms-2-2	Subtopic split (size rule): topic:verb-estar-idioms-2 (23) split alphabetically in half.
+tozoznqlli	estar sin esperanza ==> la desesperanza	to be hopeless ==> the hopelessness	reference	topic:verb-estar-idioms-2-2	Subtopic split (size rule): topic:verb-estar-idioms-2 (23) split alphabetically in half.
+waj96uzzcf	No estaba listo.	I wasn't ready.	supporting	topic:verb-estar-idioms-2-2	Subtopic split (size rule): topic:verb-estar-idioms-2 (23) split alphabetically in half.
+5tbq59flnh	No estaban en casa.	They weren't home.	supporting	topic:verb-estar-idioms-2-2	Subtopic split (size rule): topic:verb-estar-idioms-2 (23) split alphabetically in half.
+lh84ieti4z	¿[alguien] ha [hecho algo]?	has [somebody] [done something]?	core	topic:verb-perfect-auxiliary-1	Subtopic split (size rule): topic:verb-perfect-auxiliary (23) split alphabetically in half.
+hufvgyko3z	¿[alguien] había [hecho algo]?	had [somebody] [done something]?	supporting	topic:verb-perfect-auxiliary-1	Subtopic split (size rule): topic:verb-perfect-auxiliary (23) split alphabetically in half.
+v7y40xtgb3	¿has [hecho algo]?	have you [done something]?	core	topic:verb-perfect-auxiliary-1	Subtopic split (size rule): topic:verb-perfect-auxiliary (23) split alphabetically in half.
+3ymcnkevwg	Ella no ha llegado.	She hasn't arrived.	supporting	topic:verb-perfect-auxiliary-1	Subtopic split (size rule): topic:verb-perfect-auxiliary (23) split alphabetically in half.
+01rpjz02jy	ha [hecho algo]	has [done something]	supporting	topic:verb-perfect-auxiliary-1	Subtopic split (size rule): topic:verb-perfect-auxiliary (23) split alphabetically in half.
+rvo8g5gv94	haber [hecho algo]	to have [done something]	core	topic:verb-perfect-auxiliary-1	Subtopic split (size rule): topic:verb-perfect-auxiliary (23) split alphabetically in half.
+yqiin6tdtl	haber estado [haciendo algo]	to have been [doing something]	supporting	topic:verb-perfect-auxiliary-1	Subtopic split (size rule): topic:verb-perfect-auxiliary (23) split alphabetically in half.
+05v29ctfcb	[alguien] había [hecho algo]	[somebody] had [done something]	supporting	topic:verb-perfect-auxiliary-1	Subtopic split (size rule): topic:verb-perfect-auxiliary (23) split alphabetically in half.
+fu708e83rg	[alguien] había estado [haciendo algo]	[somebody] had been [doing something]	reference	topic:verb-perfect-auxiliary-1	Subtopic split (size rule): topic:verb-perfect-auxiliary (23) split alphabetically in half.
+qeak5scchp	[alguien] habrá [hecho algo]	[somebody] will have [done something]	reference	topic:verb-perfect-auxiliary-1	Subtopic split (size rule): topic:verb-perfect-auxiliary (23) split alphabetically in half.
+4dtd8lj623	[alguien] habrá estado [haciendo algo]	[somebody] will have been [doing something]	reference	topic:verb-perfect-auxiliary-1	Subtopic split (size rule): topic:verb-perfect-auxiliary (23) split alphabetically in half.
+wunmuiqosj	[alguien] habría [hecho algo]	[somebody] would have [done something]	reference	topic:verb-perfect-auxiliary-1	Subtopic split (size rule): topic:verb-perfect-auxiliary (23) split alphabetically in half.
+vn67aoztgf	[alguien] habría estado [haciendo algo]	[somebody] would have been [doing something]	reference	topic:verb-perfect-auxiliary-2	Subtopic split (size rule): topic:verb-perfect-auxiliary (23) split alphabetically in half.
+uwzxgiv5od	han [hecho algo]	they have [done something]	supporting	topic:verb-perfect-auxiliary-2	Subtopic split (size rule): topic:verb-perfect-auxiliary (23) split alphabetically in half.
+xffe82pdpg	has [hecho algo]	you have [done something]	supporting	topic:verb-perfect-auxiliary-2	Subtopic split (size rule): topic:verb-perfect-auxiliary (23) split alphabetically in half.
+4pgifzt26u	hay que [hacer algo]	you have to [do something]	supporting	topic:verb-perfect-auxiliary-2	Subtopic split (size rule): topic:verb-perfect-auxiliary (23) split alphabetically in half.
+laom4z3bwd	hay que [hacer algo]	we need to [do something]	supporting	topic:verb-perfect-auxiliary-2	Subtopic split (size rule): topic:verb-perfect-auxiliary (23) split alphabetically in half.
+b6v2qryb2d	he [hecho algo]	I have [done something]	supporting	topic:verb-perfect-auxiliary-2	Subtopic split (size rule): topic:verb-perfect-auxiliary (23) split alphabetically in half.
+tei7cfo1k2	hemos [hecho algo]	we have [done something]	supporting	topic:verb-perfect-auxiliary-2	Subtopic split (size rule): topic:verb-perfect-auxiliary (23) split alphabetically in half.
+id38r2eakh	no haber [hecho algo]	not to have [done something]	supporting	topic:verb-perfect-auxiliary-2	Subtopic split (size rule): topic:verb-perfect-auxiliary (23) split alphabetically in half.
+2pvko71bzc	no haber [hecho algo] (hablado)	haven't [done something]	supporting	topic:verb-perfect-auxiliary-2	Subtopic split (size rule): topic:verb-perfect-auxiliary (23) split alphabetically in half.
+9hj8rdegpe	No había terminado cuando llegaron.	I hadn't finished when they arrived.	supporting	topic:verb-perfect-auxiliary-2	Subtopic split (size rule): topic:verb-perfect-auxiliary (23) split alphabetically in half.
+b1nubjxiqh	no hay problema	no problem	supporting	topic:verb-perfect-auxiliary-2	Subtopic split (size rule): topic:verb-perfect-auxiliary (23) split alphabetically in half.
+dtlxfmo16j	¿deberías [hacer algo]?	should you [do something]?	supporting	topic:verb-modal-obligation-1	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+78zjjk2mwo	¿debes [hacer algo]?	must you [do something]?	reference	topic:verb-modal-obligation-1	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+61gghvt40a	deber [algo] a [alguien]	to owe [something] to [somebody]	reference	topic:verb-modal-obligation-1	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+g8bhd7ipvu	deber [hacer algo]	to have to [do something]	supporting	topic:verb-modal-obligation-1	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+uekbgu9nsq	deber [hacer algo]	must [do something]	supporting	topic:verb-modal-obligation-1	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+1vu2pjhl3v	deber [hacer algo]	to be expected to [do something]	reference	topic:verb-modal-obligation-1	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+qe4q40qzw2	deber [hacer algo]	to be supposed to [do something]	supporting	topic:verb-modal-obligation-1	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+f4kds6r2gr	deber estar [en un estado o lugar]	must be [in a state or place]	supporting	topic:verb-modal-obligation-1	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+ayed7fqlj3	deber haber [hecho algo]	must have [done something]	reference	topic:verb-modal-obligation-1	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+87vmd83t1p	deber ser [algo]	must be [something]	reference	topic:verb-modal-obligation-1	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+5qa1ueater	deberá [hacer algo]	will have to [do something]	reference	topic:verb-modal-obligation-1	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+q95c3kam4n	debería [hacer algo]	ought to [do something]	reference	topic:verb-modal-obligation-1	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+yrb2jzggm4	debería [hacer algo]	should [do something]	core	topic:verb-modal-obligation-1	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+d1bjmwehz9	deberle [algo] a [alguien]	to owe [somebody] [something]	supporting	topic:verb-modal-obligation-1	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+bhh5lkxsvd	deberle una a [alguien]	to owe [somebody] one	reference	topic:verb-modal-obligation-1	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+w4ubw2gv4e	deberse a [algo]	to be due to [something]	reference	topic:verb-modal-obligation-1	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+eemg8n6ho5	debí haber [hecho algo]	should have [done something]	reference	topic:verb-modal-obligation-2	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+qj3wvut2bw	debía [hacer algo]	to have been supposed to [do something]	reference	topic:verb-modal-obligation-2	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+6uhgsiqvvf	debido a [algo]	due to [something]	reference	topic:verb-modal-obligation-2	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+i4siv85tf9	no deber [hacer algo]	must not [do something]	supporting	topic:verb-modal-obligation-2	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+nyjodxeo12	no deber [hacer algo]	mustn't [do something]	supporting	topic:verb-modal-obligation-2	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+shtk95phvk	no debería [hacer algo]	should not [do something]	supporting	topic:verb-modal-obligation-2	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+7uxwcm2q2o	no debería [hacer algo]	shouldn't [do something]	supporting	topic:verb-modal-obligation-2	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+22pjks5vmh	no tener que [hacer algo]	not to have to [do something]	core	topic:verb-modal-obligation-2	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+30rrpal2u2	soler [hacer algo]	to tend to [do something]	reference	topic:verb-modal-obligation-2	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+li9fwc94cq	solía [hacer algo]	would [do something]	reference	topic:verb-modal-obligation-2	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+2oiqu0kcxf	solía [hacer algo]	used to [do something]	supporting	topic:verb-modal-obligation-2	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+7s7vnrgxud	tener que [hacer algo]	to have to [do something]	core	topic:verb-modal-obligation-2	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+8zgoedsnqi	tener que [hacer algo]	to have got to [do something]	supporting	topic:verb-modal-obligation-2	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+6vpv4m0g02	tener que ver con [algo]	to be related to [something]	reference	topic:verb-modal-obligation-2	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+15khny2b9v	tener que ver con [algo]	to have to do with [something]	reference	topic:verb-modal-obligation-2	Subtopic split (size rule): topic:verb-modal-obligation (31) split alphabetically in half.
+utfyp7wiro	contestarle mal a [alguien]	to talk back to [somebody]	reference	topic:verb-communication-talking-1	Subtopic split (size rule): topic:verb-communication-talking (23) split alphabetically in half.
+sk978mgwus	convencer a [alguien] de [hacer algo]	to talk [somebody] into [doing something]	reference	topic:verb-communication-talking-1	Subtopic split (size rule): topic:verb-communication-talking (23) split alphabetically in half.
+n7f05snzv6	convencer a [alguien] de no [hacer algo]	to talk [somebody] out of [doing something]	reference	topic:verb-communication-talking-1	Subtopic split (size rule): topic:verb-communication-talking (23) split alphabetically in half.
+22hirk8mdw	explicarle [algo] paso a paso a [alguien]	to talk [somebody] through [something]	reference	topic:verb-communication-talking-1	Subtopic split (size rule): topic:verb-communication-talking (23) split alphabetically in half.
+4c0v1mewmv	hablar	to speak	core	topic:verb-communication-talking-1	Subtopic split (size rule): topic:verb-communication-talking (23) split alphabetically in half.
+b7q2nz5b40	hablar	to talk	supporting	topic:verb-communication-talking-1	Subtopic split (size rule): topic:verb-communication-talking (23) split alphabetically in half.
+xnti52ho63	hablar con [alguien]	to talk to [somebody]	supporting	topic:verb-communication-talking-1	Subtopic split (size rule): topic:verb-communication-talking (23) split alphabetically in half.
+qgnveu0pox	hablar con [alguien]	to talk with [somebody]	reference	topic:verb-communication-talking-1	Subtopic split (size rule): topic:verb-communication-talking (23) split alphabetically in half.
+xo18pm756n	hablar con [alguien]	to speak with [somebody]	supporting	topic:verb-communication-talking-1	Subtopic split (size rule): topic:verb-communication-talking (23) split alphabetically in half.
+7x4v7kp0dx	hablar consigo mismo	to talk to oneself	reference	topic:verb-communication-talking-1	Subtopic split (size rule): topic:verb-communication-talking (23) split alphabetically in half.
+pfr7szkobd	hablar de [algo]	to talk about [something]	supporting	topic:verb-communication-talking-1	Subtopic split (size rule): topic:verb-communication-talking (23) split alphabetically in half.
+sgxn0d27nm	hablar de [algo] antes de decidir	to talk [something] over	reference	topic:verb-communication-talking-1	Subtopic split (size rule): topic:verb-communication-talking (23) split alphabetically in half.
+0v2r7ohznv	hablar después	to talk later	reference	topic:verb-communication-talking-2	Subtopic split (size rule): topic:verb-communication-talking (23) split alphabetically in half.
+kb26bvucsb	hablar en nombre de [alguien]	to speak on behalf of [somebody]	reference	topic:verb-communication-talking-2	Subtopic split (size rule): topic:verb-communication-talking (23) split alphabetically in half.
+jl3egs4efk	hablar en voz baja	to speak quietly/in a low voice	reference	topic:verb-communication-talking-2	Subtopic split (size rule): topic:verb-communication-talking (23) split alphabetically in half.
+ws6aqyp5xd	hablar fuerte	to speak loudly	reference	topic:verb-communication-talking-2	Subtopic split (size rule): topic:verb-communication-talking (23) split alphabetically in half.
+wxukuqznts	hablar más fuerte	to speak up	supporting	topic:verb-communication-talking-2	Subtopic split (size rule): topic:verb-communication-talking (23) split alphabetically in half.
+kf0u7n45dt	hablar por [alguien]	to speak for [somebody]	reference	topic:verb-communication-talking-2	Subtopic split (size rule): topic:verb-communication-talking (23) split alphabetically in half.
+5zamvuatdn	hablar por sí solo	to speak for itself	reference	topic:verb-communication-talking-2	Subtopic split (size rule): topic:verb-communication-talking (23) split alphabetically in half.
+hyz7cpy9fj	hablar sobre [algo]	to speak about [something]	supporting	topic:verb-communication-talking-2	Subtopic split (size rule): topic:verb-communication-talking (23) split alphabetically in half.
+im9dazjhez	hablarle a [alguien]	to speak to [somebody]	core	topic:verb-communication-talking-2	Subtopic split (size rule): topic:verb-communication-talking (23) split alphabetically in half.
+obw0unmb5c	hablarle con condescendencia a [alguien]	to talk down to [somebody]	reference	topic:verb-communication-talking-2	Subtopic split (size rule): topic:verb-communication-talking (23) split alphabetically in half.
+t817imxlpf	pronunciarse sobre [algo]	to speak out about [something]	reference	topic:verb-communication-talking-2	Subtopic split (size rule): topic:verb-communication-talking (23) split alphabetically in half.
+aw96cncl64	bendecir a [alguien]	to bless [somebody]	reference	topic:verb-communication-saying-1	Subtopic split (size rule): topic:verb-communication-saying (24) split alphabetically in half.
+oi3ndfk0qf	contarle [una historia] a [alguien]	to tell [somebody] [a story]	supporting	topic:verb-communication-saying-1	Subtopic split (size rule): topic:verb-communication-saying (24) split alphabetically in half.
+8ck7889dtr	contradecir a [alguien]	to contradict [somebody]	reference	topic:verb-communication-saying-1	Subtopic split (size rule): topic:verb-communication-saying (24) split alphabetically in half.
+wv4hem1a62	darse cuenta de que [algo sucede]	to be able to tell that [something happens]	reference	topic:verb-communication-saying-1	Subtopic split (size rule): topic:verb-communication-saying (24) split alphabetically in half.
+d587f3ftw9	decir [algo]	to say [something]	core	topic:verb-communication-saying-1	Subtopic split (size rule): topic:verb-communication-saying (24) split alphabetically in half.
+4pmy3sue86	decir [algo] en voz alta	to say [something] out loud	reference	topic:verb-communication-saying-1	Subtopic split (size rule): topic:verb-communication-saying (24) split alphabetically in half.
+a7tobu5j5o	decir la verdad	to tell the truth	supporting	topic:verb-communication-saying-1	Subtopic split (size rule): topic:verb-communication-saying (24) split alphabetically in half.
+gbsx4jxjdu	decir que [algo sucede]	to say that [something happens]	core	topic:verb-communication-saying-1	Subtopic split (size rule): topic:verb-communication-saying (24) split alphabetically in half.
+0uwakesgf2	decir que no	to say no	supporting	topic:verb-communication-saying-1	Subtopic split (size rule): topic:verb-communication-saying (24) split alphabetically in half.
+kwqo05li9i	decir que sí	to say yes	supporting	topic:verb-communication-saying-1	Subtopic split (size rule): topic:verb-communication-saying (24) split alphabetically in half.
+du61aoc74y	decir una mentira	to tell a lie	supporting	topic:verb-communication-saying-1	Subtopic split (size rule): topic:verb-communication-saying (24) split alphabetically in half.
+ut05s5dusz	decirle [algo] a [alguien]	to say [something] to [somebody]	core	topic:verb-communication-saying-1	Subtopic split (size rule): topic:verb-communication-saying (24) split alphabetically in half.
+y2jk0txcur	decirle [algo] a [alguien]	to tell [somebody] [something]	core	topic:verb-communication-saying-2	Subtopic split (size rule): topic:verb-communication-saying (24) split alphabetically in half.
+zo168jw53x	decirle a [alguien] algo sobre [algo]	to tell [somebody] about [something]	supporting	topic:verb-communication-saying-2	Subtopic split (size rule): topic:verb-communication-saying (24) split alphabetically in half.
+l9xp6c0qlt	decirle a [alguien] que [haga algo]	to tell [somebody] to [do something]	core	topic:verb-communication-saying-2	Subtopic split (size rule): topic:verb-communication-saying (24) split alphabetically in half.
+0t7sh9pmmo	delatar a [alguien]	to tell on [somebody]	reference	topic:verb-communication-saying-2	Subtopic split (size rule): topic:verb-communication-saying (24) split alphabetically in half.
+rv2tbtvssk	distinguir [algo] de [algo]	to tell [something] from [something]	reference	topic:verb-communication-saying-2	Subtopic split (size rule): topic:verb-communication-saying (24) split alphabetically in half.
+mx0rz2zmur	distinguir a [alguien] de [alguien]	to tell [somebody] apart	reference	topic:verb-communication-saying-2	Subtopic split (size rule): topic:verb-communication-saying (24) split alphabetically in half.
+btsojlg7v0	maldecir a [alguien]	to curse [somebody]	reference	topic:verb-communication-saying-2	Subtopic split (size rule): topic:verb-communication-saying (24) split alphabetically in half.
+iuyce294go	predecir [algo]	to predict [something]	reference	topic:verb-communication-saying-2	Subtopic split (size rule): topic:verb-communication-saying (24) split alphabetically in half.
+592w2y5gz1	querer decir	to mean	supporting	topic:verb-communication-saying-2	Subtopic split (size rule): topic:verb-communication-saying (24) split alphabetically in half.
+7n09vmo7kn	reprender a [alguien]	to tell [somebody] off	reference	topic:verb-communication-saying-2	Subtopic split (size rule): topic:verb-communication-saying (24) split alphabetically in half.
+ehmy6i5qti	rezar [una oración]	to say [a prayer]	reference	topic:verb-communication-saying-2	Subtopic split (size rule): topic:verb-communication-saying (24) split alphabetically in half.
+4uwg2evrwf	saludar a [alguien]	to say hello to [somebody]	supporting	topic:verb-communication-saying-2	Subtopic split (size rule): topic:verb-communication-saying (24) split alphabetically in half.
+huqj9mq0gj	admitir	to admit	supporting	topic:verb-communication-formal-1	Subtopic split (size rule): topic:verb-communication-formal (22) split alphabetically in half.
+mfw6hilqre	admitir [algo]	to own up to [something]	reference	topic:verb-communication-formal-1	Subtopic split (size rule): topic:verb-communication-formal (22) split alphabetically in half.
+tbicbtr0u6	apuntar [algo]	to record [something]	reference	topic:verb-communication-formal-1	Subtopic split (size rule): topic:verb-communication-formal (22) split alphabetically in half.
+5wn1kdo8om	apuntar [algo]	to write down [something]	reference	topic:verb-communication-formal-1	Subtopic split (size rule): topic:verb-communication-formal (22) split alphabetically in half.
+qdcruk7002	citar	to cite	reference	topic:verb-communication-formal-1	Subtopic split (size rule): topic:verb-communication-formal (22) split alphabetically in half.
+v4jvn24z90	comentar	to comment	supporting	topic:verb-communication-formal-1	Subtopic split (size rule): topic:verb-communication-formal (22) split alphabetically in half.
+0hrde16ahz	comunicar	to communicate	supporting	topic:verb-communication-formal-1	Subtopic split (size rule): topic:verb-communication-formal (22) split alphabetically in half.
+j6008tp8dx	consignar	to transfer	reference	topic:verb-communication-formal-1	Subtopic split (size rule): topic:verb-communication-formal (22) split alphabetically in half.
+4ur7u7wdv4	describir	to describe	supporting	topic:verb-communication-formal-1	Subtopic split (size rule): topic:verb-communication-formal (22) split alphabetically in half.
+3lzsofawpo	explicar	to explain	supporting	topic:verb-communication-formal-1	Subtopic split (size rule): topic:verb-communication-formal (22) split alphabetically in half.
+dfw51tn4hy	expresar	to express	supporting	topic:verb-communication-formal-1	Subtopic split (size rule): topic:verb-communication-formal (22) split alphabetically in half.
+qjzcabgyb5	informar	to inform	supporting	topic:verb-communication-formal-2	Subtopic split (size rule): topic:verb-communication-formal (22) split alphabetically in half.
+j9tc00ai4d	mencionar	to mention	supporting	topic:verb-communication-formal-2	Subtopic split (size rule): topic:verb-communication-formal (22) split alphabetically in half.
+3q52q39i7l	recitar	to recite	reference	topic:verb-communication-formal-2	Subtopic split (size rule): topic:verb-communication-formal (22) split alphabetically in half.
+5ktdhyqktc	reportar	to report	supporting	topic:verb-communication-formal-2	Subtopic split (size rule): topic:verb-communication-formal (22) split alphabetically in half.
+z7amf9jjbu	romper un récord	to break a record	reference	topic:verb-communication-formal-2	Subtopic split (size rule): topic:verb-communication-formal (22) split alphabetically in half.
+c38n8crr5a	sacar una foto de [algo]	to take a photo of [something]	supporting	topic:verb-communication-formal-2	Subtopic split (size rule): topic:verb-communication-formal (22) split alphabetically in half.
+tc6g9iudcp	tomar una foto de [algo]	to take a photo of [something]	reference	topic:verb-communication-formal-2	Subtopic split (size rule): topic:verb-communication-formal (22) split alphabetically in half.
+fz6zup8oeg	traducir	to translate	supporting	topic:verb-communication-formal-2	Subtopic split (size rule): topic:verb-communication-formal (22) split alphabetically in half.
+xjwylsxod0	transcribir	to transcribe	reference	topic:verb-communication-formal-2	Subtopic split (size rule): topic:verb-communication-formal (22) split alphabetically in half.
+lp8l4wpj4p	transferir	to transfer	reference	topic:verb-communication-formal-2	Subtopic split (size rule): topic:verb-communication-formal (22) split alphabetically in half.
+cl6jhf2u3u	transmitir	to transmit	reference	topic:verb-communication-formal-2	Subtopic split (size rule): topic:verb-communication-formal (22) split alphabetically in half.
+hg0fms84jb	apuntar a [algo]	to point to [something]	reference	topic:verb-communication-naming-1	Subtopic split (size rule): topic:verb-communication-naming (22) split alphabetically in half.
+cpirdm8nas	apuntar a [algo]	to aim at [something]	reference	topic:verb-communication-naming-1	Subtopic split (size rule): topic:verb-communication-naming (22) split alphabetically in half.
+7g9t44368j	apuntar a [hacer algo]	to aim to [do something]	reference	topic:verb-communication-naming-1	Subtopic split (size rule): topic:verb-communication-naming (22) split alphabetically in half.
+v8tjp3s2k0	apuntar hacia [algo]	to point toward [something]	reference	topic:verb-communication-naming-1	Subtopic split (size rule): topic:verb-communication-naming (22) split alphabetically in half.
+olvheflsx5	apuntarse	to join in	reference	topic:verb-communication-naming-1	Subtopic split (size rule): topic:verb-communication-naming (22) split alphabetically in half.
+p7tqiahqw5	apuntarse a [algo]	to sign up for [something]	reference	topic:verb-communication-naming-1	Subtopic split (size rule): topic:verb-communication-naming (22) split alphabetically in half.
+tiss70p00o	hablar por teléfono con [alguien]	to talk to [somebody] on the phone	reference	topic:verb-communication-naming-1	Subtopic split (size rule): topic:verb-communication-naming (22) split alphabetically in half.
+zanvhwodyn	llamar [descripción] a [algo]	to call [something] [a description]	reference	topic:verb-communication-naming-1	Subtopic split (size rule): topic:verb-communication-naming (22) split alphabetically in half.
+9701k29zz9	llamar [nombre] a [algo o alguien]	to name [something or somebody] [name]	reference	topic:verb-communication-naming-1	Subtopic split (size rule): topic:verb-communication-naming (22) split alphabetically in half.
+vnowmg0rlw	llamar a [alguien]	to call [somebody]	core	topic:verb-communication-naming-1	Subtopic split (size rule): topic:verb-communication-naming (22) split alphabetically in half.
+oh2mhln5f2	llamar la atención	to attract attention	reference	topic:verb-communication-naming-1	Subtopic split (size rule): topic:verb-communication-naming (22) split alphabetically in half.
+ryd2rbiwn8	llamar la atención sobre [algo]	to draw attention to [something]	reference	topic:verb-communication-naming-2	Subtopic split (size rule): topic:verb-communication-naming (22) split alphabetically in half.
+t9gvvynhud	llamar luego	to call later	reference	topic:verb-communication-naming-2	Subtopic split (size rule): topic:verb-communication-naming (22) split alphabetically in half.
+tea1mmftnt	llamar por teléfono a [alguien]	to phone [somebody]	reference	topic:verb-communication-naming-2	Subtopic split (size rule): topic:verb-communication-naming (22) split alphabetically in half.
+wbogepd2hz	llamarse [nombre]	to be called [name]	supporting	topic:verb-communication-naming-2	Subtopic split (size rule): topic:verb-communication-naming (22) split alphabetically in half.
+w93c07l74k	marcar [algo]	to mark [something]	reference	topic:verb-communication-naming-2	Subtopic split (size rule): topic:verb-communication-naming (22) split alphabetically in half.
+x3aciqvw7q	marcar [algo]	to shape [something]	reference	topic:verb-communication-naming-2	Subtopic split (size rule): topic:verb-communication-naming (22) split alphabetically in half.
+9j908ncq6v	marcar [un número]	to dial [a number]	reference	topic:verb-communication-naming-2	Subtopic split (size rule): topic:verb-communication-naming (22) split alphabetically in half.
+od7ue4t4a8	marcar [un punto]	to score [a point]	reference	topic:verb-communication-naming-2	Subtopic split (size rule): topic:verb-communication-naming (22) split alphabetically in half.
+hkmhxwijiw	marcar [una medida]	to indicate [a measurement]	reference	topic:verb-communication-naming-2	Subtopic split (size rule): topic:verb-communication-naming (22) split alphabetically in half.
+977cxas6wl	marcar la diferencia	to make a difference	reference	topic:verb-communication-naming-2	Subtopic split (size rule): topic:verb-communication-naming (22) split alphabetically in half.
+u7wvzyhnyh	volver a llamar a [alguien]	to call [somebody] back	supporting	topic:verb-communication-naming-2	Subtopic split (size rule): topic:verb-communication-naming (22) split alphabetically in half.
+x2fc6shlo3	invitar a [alguien] a casa	to ask [somebody] over	reference	topic:verb-asking-requesting-1	Subtopic split (size rule): topic:verb-asking-requesting (26) split alphabetically in half.
+ixbwufuza6	invitar a entrar a [alguien]	to ask [somebody] in	reference	topic:verb-asking-requesting-1	Subtopic split (size rule): topic:verb-asking-requesting (26) split alphabetically in half.
+el36dqux2e	invitar a salir a [alguien]	to ask [somebody] out	reference	topic:verb-asking-requesting-1	Subtopic split (size rule): topic:verb-asking-requesting (26) split alphabetically in half.
+f03pn31r0v	mandar a [alguien] de un lado a otro	to order [somebody] around	reference	topic:verb-asking-requesting-1	Subtopic split (size rule): topic:verb-asking-requesting (26) split alphabetically in half.
+15fzbnc0u4	ordenarle salir a [alguien]	to order [somebody] out	reference	topic:verb-asking-requesting-1	Subtopic split (size rule): topic:verb-asking-requesting (26) split alphabetically in half.
+lnjk7w9ssw	pedir [algo]	to ask for [something]	core	topic:verb-asking-requesting-1	Subtopic split (size rule): topic:verb-asking-requesting (26) split alphabetically in half.
+cje0h2p81t	pedir [algo] a [alguien] formalmente	to request [something] from [somebody]	reference	topic:verb-asking-requesting-1	Subtopic split (size rule): topic:verb-asking-requesting (26) split alphabetically in half.
+0h2i95gmp3	pedir [algo] a [un negocio]	to order [something] from [a business]	reference	topic:verb-asking-requesting-1	Subtopic split (size rule): topic:verb-asking-requesting (26) split alphabetically in half.
+i0ry42yzcl	pedir [comida] a domicilio	to order in	reference	topic:verb-asking-requesting-1	Subtopic split (size rule): topic:verb-asking-requesting (26) split alphabetically in half.
+akiq3fgnfg	pedir [un producto]	to order [a product]	supporting	topic:verb-asking-requesting-1	Subtopic split (size rule): topic:verb-asking-requesting (26) split alphabetically in half.
+x71u2ua4d3	pedir [una visa]	to apply for [a visa]	reference	topic:verb-asking-requesting-1	Subtopic split (size rule): topic:verb-asking-requesting (26) split alphabetically in half.
+chlit99d2v	pedir disculpas por [algo]	to apologize for [something]	reference	topic:verb-asking-requesting-1	Subtopic split (size rule): topic:verb-asking-requesting (26) split alphabetically in half.
+2j339tyd27	pedir formalmente [algo]	to request [something]	reference	topic:verb-asking-requesting-1	Subtopic split (size rule): topic:verb-asking-requesting (26) split alphabetically in half.
+070rfgth5n	pedir limosna	to beg	reference	topic:verb-asking-requesting-2	Subtopic split (size rule): topic:verb-asking-requesting (26) split alphabetically in half.
+27fbkeb2et	pedir perdón por [algo]	to ask for forgiveness for [something]	reference	topic:verb-asking-requesting-2	Subtopic split (size rule): topic:verb-asking-requesting (26) split alphabetically in half.
+1g3jfa9eo7	pedir permiso para [hacer algo]	to ask for permission to [do something]	supporting	topic:verb-asking-requesting-2	Subtopic split (size rule): topic:verb-asking-requesting (26) split alphabetically in half.
+439x0r7xja	pedir un deseo	to make a wish	reference	topic:verb-asking-requesting-2	Subtopic split (size rule): topic:verb-asking-requesting (26) split alphabetically in half.
+kdt4ocawe0	pedir una cita con [alguien]	to make an appointment with [somebody]	reference	topic:verb-asking-requesting-2	Subtopic split (size rule): topic:verb-asking-requesting (26) split alphabetically in half.
+f8j54x3ds4	pedir una cita con [alguien]	to book an appointment with [somebody]	reference	topic:verb-asking-requesting-2	Subtopic split (size rule): topic:verb-asking-requesting (26) split alphabetically in half.
+0d7663jbyo	pedirle [algo] a [alguien]	to ask [somebody] for [something]	core	topic:verb-asking-requesting-2	Subtopic split (size rule): topic:verb-asking-requesting (26) split alphabetically in half.
+r3pecbwlhk	pedirle a [alguien] que [haga algo]	to ask [somebody] to [do something]	core	topic:verb-asking-requesting-2	Subtopic split (size rule): topic:verb-asking-requesting (26) split alphabetically in half.
+af25juocs7	pedirle cuentas a [alguien]	to demand an explanation from [somebody]	reference	topic:verb-asking-requesting-2	Subtopic split (size rule): topic:verb-asking-requesting (26) split alphabetically in half.
+srjl4vz5st	pedirle prestado [algo] a [alguien]	to borrow [something] from [somebody]	supporting	topic:verb-asking-requesting-2	Subtopic split (size rule): topic:verb-asking-requesting (26) split alphabetically in half.
+o7o4ftsalw	preguntar por [alguien]	to ask after [somebody]	reference	topic:verb-asking-requesting-2	Subtopic split (size rule): topic:verb-asking-requesting (26) split alphabetically in half.
+x850nhvcaj	preguntar sobre [algo]	to ask about [something]	supporting	topic:verb-asking-requesting-2	Subtopic split (size rule): topic:verb-asking-requesting (26) split alphabetically in half.
+sfix1omn3j	preguntarles a varias personas	to ask around	reference	topic:verb-asking-requesting-2	Subtopic split (size rule): topic:verb-asking-requesting (26) split alphabetically in half.
+3vfsaych3z	acordar [hacer algo]	to decide to [do something]	reference	topic:verb-deciding-considering-1	Subtopic split (size rule): topic:verb-deciding-considering (27) split alphabetically in half.
+2303bj64di	aprovechar [algo]	to enjoy [something]	reference	topic:verb-deciding-considering-1	Subtopic split (size rule): topic:verb-deciding-considering (27) split alphabetically in half.
+kqlemql5q9	aprovechar [algo]	to take advantage of [something]	reference	topic:verb-deciding-considering-1	Subtopic split (size rule): topic:verb-deciding-considering (27) split alphabetically in half.
+fccjkbxo8e	aprovechar [algo]	to make good use of [something]	reference	topic:verb-deciding-considering-1	Subtopic split (size rule): topic:verb-deciding-considering (27) split alphabetically in half.
+dzpf9yqfk0	aprovechar [algo]	to benefit from [something]	reference	topic:verb-deciding-considering-1	Subtopic split (size rule): topic:verb-deciding-considering (27) split alphabetically in half.
+xvopup6s8x	coincidir	to agree	reference	topic:verb-deciding-considering-1	Subtopic split (size rule): topic:verb-deciding-considering (27) split alphabetically in half.
+xnwi7nn794	coincidir	to coincide	reference	topic:verb-deciding-considering-1	Subtopic split (size rule): topic:verb-deciding-considering (27) split alphabetically in half.
+286sjydeon	concebir	to conceive	reference	topic:verb-deciding-considering-1	Subtopic split (size rule): topic:verb-deciding-considering (27) split alphabetically in half.
+6e9qxav69p	considerar	to consider	supporting	topic:verb-deciding-considering-1	Subtopic split (size rule): topic:verb-deciding-considering (27) split alphabetically in half.
+qw412q5w2q	cuestionar	to question	reference	topic:verb-deciding-considering-1	Subtopic split (size rule): topic:verb-deciding-considering (27) split alphabetically in half.
+j0hovpxufz	decidir	to decide	supporting	topic:verb-deciding-considering-1	Subtopic split (size rule): topic:verb-deciding-considering (27) split alphabetically in half.
+fe4son9mxi	decidir [hacer algo]	to decide [to do something]	supporting	topic:verb-deciding-considering-1	Subtopic split (size rule): topic:verb-deciding-considering (27) split alphabetically in half.
+4w4rj5i3g0	deducir	to deduce	reference	topic:verb-deciding-considering-1	Subtopic split (size rule): topic:verb-deciding-considering (27) split alphabetically in half.
+3tel071upm	distinguir	to distinguish	reference	topic:verb-deciding-considering-1	Subtopic split (size rule): topic:verb-deciding-considering (27) split alphabetically in half.
+mjvhe37ien	elegir	to elect	reference	topic:verb-deciding-considering-2	Subtopic split (size rule): topic:verb-deciding-considering (27) split alphabetically in half.
+abycyirnp6	elegir [algo]	to choose [something]	supporting	topic:verb-deciding-considering-2	Subtopic split (size rule): topic:verb-deciding-considering (27) split alphabetically in half.
+mnsgd6cvbc	elegir [hacer algo]	to choose to [do something]	reference	topic:verb-deciding-considering-2	Subtopic split (size rule): topic:verb-deciding-considering (27) split alphabetically in half.
+4mkm6qyxir	elegir [hacer algo]	to choose [to do something]	reference	topic:verb-deciding-considering-2	Subtopic split (size rule): topic:verb-deciding-considering (27) split alphabetically in half.
+gklngg6dry	imaginar	to imagine	supporting	topic:verb-deciding-considering-2	Subtopic split (size rule): topic:verb-deciding-considering (27) split alphabetically in half.
+ktufkog3lp	inferir	to infer	reference	topic:verb-deciding-considering-2	Subtopic split (size rule): topic:verb-deciding-considering (27) split alphabetically in half.
+a2ujxq83pk	percibir	to perceive	reference	topic:verb-deciding-considering-2	Subtopic split (size rule): topic:verb-deciding-considering (27) split alphabetically in half.
+9ockg94eza	sacar una conclusión	to draw a conclusion	reference	topic:verb-deciding-considering-2	Subtopic split (size rule): topic:verb-deciding-considering (27) split alphabetically in half.
+x2avxaorkd	suponer	to suppose	supporting	topic:verb-deciding-considering-2	Subtopic split (size rule): topic:verb-deciding-considering (27) split alphabetically in half.
+be41h3a6k4	suponer [algo]	to involve [something]	reference	topic:verb-deciding-considering-2	Subtopic split (size rule): topic:verb-deciding-considering (27) split alphabetically in half.
+kp75v3jgay	suponer que [algo]	to suppose that [something]	supporting	topic:verb-deciding-considering-2	Subtopic split (size rule): topic:verb-deciding-considering (27) split alphabetically in half.
+9kyo88v7jf	suponer que [algo]	to assume that [something]	reference	topic:verb-deciding-considering-2	Subtopic split (size rule): topic:verb-deciding-considering (27) split alphabetically in half.
+gb1zklln37	tomar una decisión	to make a decision	supporting	topic:verb-deciding-considering-2	Subtopic split (size rule): topic:verb-deciding-considering (27) split alphabetically in half.
+aq0gtmpie2	¿No lo sabe él?	Doesn't he know?	supporting	topic:verb-knowing-1	Subtopic split (size rule): topic:verb-knowing (22) split alphabetically in half.
+uh84kdr8vi	conocer [un lugar]	to know [a place]	supporting	topic:verb-knowing-1	Subtopic split (size rule): topic:verb-knowing (22) split alphabetically in half.
+2y3nvlpqwe	conocer [un lugar] por primera vez	to visit [a place] for the first time	reference	topic:verb-knowing-1	Subtopic split (size rule): topic:verb-knowing (22) split alphabetically in half.
+bb7fukdi26	conocer [un tema o sistema]	to be familiar with [a topic or system]	reference	topic:verb-knowing-1	Subtopic split (size rule): topic:verb-knowing (22) split alphabetically in half.
+lu5wncr0kf	conocer a [alguien]	to know [somebody]	core	topic:verb-knowing-1	Subtopic split (size rule): topic:verb-knowing (22) split alphabetically in half.
+lmbu8msbkt	conocer a [alguien] por primera vez	to meet [somebody]	core	topic:verb-knowing-1	Subtopic split (size rule): topic:verb-knowing (22) split alphabetically in half.
+ty4a0kmfe9	conocer de vista a [alguien]	to know [somebody] by sight	reference	topic:verb-knowing-1	Subtopic split (size rule): topic:verb-knowing (22) split alphabetically in half.
+vjb5yapkmy	conocer mejor a [alguien]	to get to know [somebody]	supporting	topic:verb-knowing-1	Subtopic split (size rule): topic:verb-knowing (22) split alphabetically in half.
+g0guw4apm0	darse a conocer	to make oneself known	reference	topic:verb-knowing-1	Subtopic split (size rule): topic:verb-knowing (22) split alphabetically in half.
+vgflpedkcj	darse a conocer	to become known	reference	topic:verb-knowing-1	Subtopic split (size rule): topic:verb-knowing (22) split alphabetically in half.
+awrlr9z7v4	haber conocido a [alguien]	to have met [somebody]	reference	topic:verb-knowing-1	Subtopic split (size rule): topic:verb-knowing (22) split alphabetically in half.
+3wtzllym25	saber [algo]	to know [something]	core	topic:verb-knowing-2	Subtopic split (size rule): topic:verb-knowing (22) split alphabetically in half.
+kwh31erumh	saber [hacer algo]	to know how to [do something]	core	topic:verb-knowing-2	Subtopic split (size rule): topic:verb-knowing (22) split alphabetically in half.
+z5glfbp5sq	saber [qué/dónde/cuándo/por qué]	to know [what, where, when, or why]	core	topic:verb-knowing-2	Subtopic split (size rule): topic:verb-knowing (22) split alphabetically in half.
+y86m7wjo50	saber a [algo]	to taste like [something]	reference	topic:verb-knowing-2	Subtopic split (size rule): topic:verb-knowing (22) split alphabetically in half.
+32xfxi2fjv	saber de [alguien]	to hear from [somebody]	reference	topic:verb-knowing-2	Subtopic split (size rule): topic:verb-knowing (22) split alphabetically in half.
+tb9cpc7ypj	saber de [un tema]	to know about [a subject]	supporting	topic:verb-knowing-2	Subtopic split (size rule): topic:verb-knowing (22) split alphabetically in half.
+manx93glfl	saber que [algo]	to know that [something]	core	topic:verb-knowing-2	Subtopic split (size rule): topic:verb-knowing (22) split alphabetically in half.
+ahq54carab	saber si [algo]	to know whether [something]	supporting	topic:verb-knowing-2	Subtopic split (size rule): topic:verb-knowing (22) split alphabetically in half.
+bjifboq9ja	saberse [algo] de memoria	to know [something] by heart	reference	topic:verb-knowing-2	Subtopic split (size rule): topic:verb-knowing (22) split alphabetically in half.
+uhisl4h91k	ser conocido como [algo]	to be known as [something]	reference	topic:verb-knowing-2	Subtopic split (size rule): topic:verb-knowing (22) split alphabetically in half.
+hpdisj6u7v	ser conocido por [algo]	to be known for [something]	reference	topic:verb-knowing-2	Subtopic split (size rule): topic:verb-knowing (22) split alphabetically in half.
+1j7btjr7um	aparecer	to appear	reference	topic:verb-watching-other-1	Subtopic split (size rule): topic:verb-watching-other (28) split alphabetically in half.
+y2sbyu4a5b	aparecer	to show up	supporting	topic:verb-watching-other-1	Subtopic split (size rule): topic:verb-watching-other (28) split alphabetically in half.
+nuszqtk7fc	aparecer [en una lista]	to be listed	reference	topic:verb-watching-other-1	Subtopic split (size rule): topic:verb-watching-other (28) split alphabetically in half.
+9ievaodr1f	aparecer [una publicación]	to come out	reference	topic:verb-watching-other-1	Subtopic split (size rule): topic:verb-watching-other (28) split alphabetically in half.
+yg6xltanht	hacer lucir [adjetivo] a [algo]	to make [something] look [adjective]	reference	topic:verb-watching-other-1	Subtopic split (size rule): topic:verb-watching-other (28) split alphabetically in half.
+zhppsm0ril	lucir	to shine	reference	topic:verb-watching-other-1	Subtopic split (size rule): topic:verb-watching-other (28) split alphabetically in half.
+ilvyid32a1	lucir [adjetivo]	to look [adjective]	reference	topic:verb-watching-other-1	Subtopic split (size rule): topic:verb-watching-other (28) split alphabetically in half.
+gld2us3kz8	lucir [algo]	to display [something]	reference	topic:verb-watching-other-1	Subtopic split (size rule): topic:verb-watching-other (28) split alphabetically in half.
+vg4oykxghk	lucirle bien [algo] a [alguien]	for [something] to look good on [somebody]	reference	topic:verb-watching-other-1	Subtopic split (size rule): topic:verb-watching-other (28) split alphabetically in half.
+7ga4rwg1hq	lucirse	to do brilliantly	reference	topic:verb-watching-other-1	Subtopic split (size rule): topic:verb-watching-other (28) split alphabetically in half.
+nam9b22zd9	lucirse	to show off	reference	topic:verb-watching-other-1	Subtopic split (size rule): topic:verb-watching-other (28) split alphabetically in half.
+p70k7bfvql	mirar [algo]	to watch [something]	supporting	topic:verb-watching-other-1	Subtopic split (size rule): topic:verb-watching-other (28) split alphabetically in half.
+69nlpxinr8	mirar [algo]	to look at [something]	core	topic:verb-watching-other-1	Subtopic split (size rule): topic:verb-watching-other (28) split alphabetically in half.
+joavbehrli	mirar abajo	to look down	reference	topic:verb-watching-other-1	Subtopic split (size rule): topic:verb-watching-other (28) split alphabetically in half.
+qfok7pguyz	mirar atrás	to look back	reference	topic:verb-watching-other-2	Subtopic split (size rule): topic:verb-watching-other (28) split alphabetically in half.
+mckle879y4	mirar hacia adelante	to look ahead	reference	topic:verb-watching-other-2	Subtopic split (size rule): topic:verb-watching-other (28) split alphabetically in half.
+2hq1d8gi4c	notar	to notice	supporting	topic:verb-watching-other-2	Subtopic split (size rule): topic:verb-watching-other (28) split alphabetically in half.
+irjthpqcky	notar a [alguien] [hacer algo]	to notice [somebody] [do something]	reference	topic:verb-watching-other-2	Subtopic split (size rule): topic:verb-watching-other (28) split alphabetically in half.
+yqvaxktaxf	notar a [alguien] [haciendo algo]	to notice [somebody] [doing something]	reference	topic:verb-watching-other-2	Subtopic split (size rule): topic:verb-watching-other (28) split alphabetically in half.
+5g4fbayz0u	observar	to observe	reference	topic:verb-watching-other-2	Subtopic split (size rule): topic:verb-watching-other (28) split alphabetically in half.
+5ghn7qdcb9	observar a [alguien] [hacer algo]	to watch [somebody] [do something]	reference	topic:verb-watching-other-2	Subtopic split (size rule): topic:verb-watching-other (28) split alphabetically in half.
+k0xotyudww	observar a [alguien] [haciendo algo]	to watch [somebody] [doing something]	reference	topic:verb-watching-other-2	Subtopic split (size rule): topic:verb-watching-other (28) split alphabetically in half.
+id2e6gz2kt	parecer [hacer algo]	to seem to [do something]	reference	topic:verb-watching-other-2	Subtopic split (size rule): topic:verb-watching-other (28) split alphabetically in half.
+80jaaa2rlj	parecer [hacer algo] (formal)	to appear to [do something]	reference	topic:verb-watching-other-2	Subtopic split (size rule): topic:verb-watching-other (28) split alphabetically in half.
+ldj6l0mdep	parecerle bien a [alguien]	to be fine with [somebody]	reference	topic:verb-watching-other-2	Subtopic split (size rule): topic:verb-watching-other (28) split alphabetically in half.
+k3o01kfput	parecerse a [alguien]	to take after [somebody]	reference	topic:verb-watching-other-2	Subtopic split (size rule): topic:verb-watching-other (28) split alphabetically in half.
+sopqak93z8	parecerse a [alguien]	to look like [somebody]	supporting	topic:verb-watching-other-2	Subtopic split (size rule): topic:verb-watching-other (28) split alphabetically in half.
+t5kcjkgoio	parecerse entre sí	to look alike	reference	topic:verb-watching-other-2	Subtopic split (size rule): topic:verb-watching-other (28) split alphabetically in half.
+2g4mul96oa	¿[alguien] va a [hacer algo]?	is [somebody] going to [do something]?	core	topic:verb-movement-going-1	Subtopic split (size rule): topic:verb-movement-going (29) split alphabetically in half.
+1m68s37p22	¿Fueron a la fiesta?	Did they go to the party?	supporting	topic:verb-movement-going-1	Subtopic split (size rule): topic:verb-movement-going (29) split alphabetically in half.
+362prshjtp	¿No fueron a la fiesta?	Didn't they go to the party?	supporting	topic:verb-movement-going-1	Subtopic split (size rule): topic:verb-movement-going (29) split alphabetically in half.
+ihsw7a0ggn	¿vas a [hacer algo]?	are you going [to do something]?	core	topic:verb-movement-going-1	Subtopic split (size rule): topic:verb-movement-going (29) split alphabetically in half.
+8wpdwqvpbe	ir a [hacer algo]	to go [do something]	supporting	topic:verb-movement-going-1	Subtopic split (size rule): topic:verb-movement-going (29) split alphabetically in half.
+38d1kfif1b	ir a [hacer algo]	to be going [to do something]	core	topic:verb-movement-going-1	Subtopic split (size rule): topic:verb-movement-going (29) split alphabetically in half.
+2iiyjrogmc	ir a [un lugar]	to go to [a place]	core	topic:verb-movement-going-1	Subtopic split (size rule): topic:verb-movement-going (29) split alphabetically in half.
+cvw44cpv4h	ir a bailar	to go dancing	reference	topic:verb-movement-going-1	Subtopic split (size rule): topic:verb-movement-going (29) split alphabetically in half.
+k9y5vq9p06	ir a casa	to go home	supporting	topic:verb-movement-going-1	Subtopic split (size rule): topic:verb-movement-going (29) split alphabetically in half.
+qldej05yfp	ir a correr	to go running	reference	topic:verb-movement-going-1	Subtopic split (size rule): topic:verb-movement-going (29) split alphabetically in half.
+cpwm5oqh8t	ir a pie	to go on foot	reference	topic:verb-movement-going-1	Subtopic split (size rule): topic:verb-movement-going (29) split alphabetically in half.
+dtu9mjoclb	ir bien	to come along well	reference	topic:verb-movement-going-1	Subtopic split (size rule): topic:verb-movement-going (29) split alphabetically in half.
+v48t8redzw	ir con [algo]	to go with [something]	reference	topic:verb-movement-going-1	Subtopic split (size rule): topic:verb-movement-going (29) split alphabetically in half.
+dv55nncur9	ir de compras	to go shopping	supporting	topic:verb-movement-going-1	Subtopic split (size rule): topic:verb-movement-going (29) split alphabetically in half.
+nsdu5c6q9d	ir en [un medio de transporte]	to go by [a means of transport]	supporting	topic:verb-movement-going-1	Subtopic split (size rule): topic:verb-movement-going (29) split alphabetically in half.
+bnj5p17mrm	irle bien a [alguien]	to go well for [somebody]	reference	topic:verb-movement-going-2	Subtopic split (size rule): topic:verb-movement-going (29) split alphabetically in half.
+zkkcxirv4g	No fui a la fiesta.	I didn't go to the party.	supporting	topic:verb-movement-going-2	Subtopic split (size rule): topic:verb-movement-going (29) split alphabetically in half.
+7peott7vnd	No vayamos todavía.	Let's not go yet.	supporting	topic:verb-movement-going-2	Subtopic split (size rule): topic:verb-movement-going (29) split alphabetically in half.
+0m0vzyyfd9	va a [hacer algo]	is going [to do something]	core	topic:verb-movement-going-2	Subtopic split (size rule): topic:verb-movement-going (29) split alphabetically in half.
+v9mrlosy7o	va a [un lugar]	is going to [a place]	core	topic:verb-movement-going-2	Subtopic split (size rule): topic:verb-movement-going (29) split alphabetically in half.
+ohgxx8621i	vamos a [hacer algo]	we are going [to do something]	core	topic:verb-movement-going-2	Subtopic split (size rule): topic:verb-movement-going (29) split alphabetically in half.
+i0ipg114mg	vamos a [un lugar]	we are going to [a place]	supporting	topic:verb-movement-going-2	Subtopic split (size rule): topic:verb-movement-going (29) split alphabetically in half.
+mvfvzwbg8g	Vamos a cenar.	Let's have dinner.	supporting	topic:verb-movement-going-2	Subtopic split (size rule): topic:verb-movement-going (29) split alphabetically in half.
+ym5bgyxy1x	van a [hacer algo]	they are going [to do something]	core	topic:verb-movement-going-2	Subtopic split (size rule): topic:verb-movement-going (29) split alphabetically in half.
+m2cu1ggb78	van a [un lugar]	they are going to [a place]	supporting	topic:verb-movement-going-2	Subtopic split (size rule): topic:verb-movement-going (29) split alphabetically in half.
+0lbant78ng	vas a [hacer algo]	you are going [to do something]	core	topic:verb-movement-going-2	Subtopic split (size rule): topic:verb-movement-going (29) split alphabetically in half.
+vlfntsr6mm	vas a [un lugar]	you are going to [a place]	supporting	topic:verb-movement-going-2	Subtopic split (size rule): topic:verb-movement-going (29) split alphabetically in half.
+rh4yfb08hn	voy a [hacer algo]	I am going [to do something]	core	topic:verb-movement-going-2	Subtopic split (size rule): topic:verb-movement-going (29) split alphabetically in half.
+opdzad1zrx	voy a [un lugar]	I am going to [a place]	core	topic:verb-movement-going-2	Subtopic split (size rule): topic:verb-movement-going (29) split alphabetically in half.
+rjnvvjdloq	llegar a [hacer algo]	to manage to [do something]	reference	topic:verb-movement-arriving-passing-1	Subtopic split (size rule): topic:verb-movement-arriving-passing (26) split alphabetically in half.
+kzc0zugsvr	llegar a [un lugar específico]	to arrive at [a specific place]	supporting	topic:verb-movement-arriving-passing-1	Subtopic split (size rule): topic:verb-movement-arriving-passing (26) split alphabetically in half.
+bioalll4vj	llegar a [un lugar]	to get to [a place]	core	topic:verb-movement-arriving-passing-1	Subtopic split (size rule): topic:verb-movement-arriving-passing (26) split alphabetically in half.
+cvb5pdwpwg	llegar a [un lugar]	to reach [a place]	reference	topic:verb-movement-arriving-passing-1	Subtopic split (size rule): topic:verb-movement-arriving-passing (26) split alphabetically in half.
+jdjgsh7ufu	llegar a [un nivel o cantidad]	to reach [a level or amount]	reference	topic:verb-movement-arriving-passing-1	Subtopic split (size rule): topic:verb-movement-arriving-passing (26) split alphabetically in half.
+g8o1myn1jr	llegar a [una ciudad o país]	to arrive in [a city or country]	supporting	topic:verb-movement-arriving-passing-1	Subtopic split (size rule): topic:verb-movement-arriving-passing (26) split alphabetically in half.
+7n967goat0	llegar a ser [algo]	to go on to become [something]	reference	topic:verb-movement-arriving-passing-1	Subtopic split (size rule): topic:verb-movement-arriving-passing (26) split alphabetically in half.
+whfyozgbyl	llegar a ser [algo]	to become [something]	reference	topic:verb-movement-arriving-passing-1	Subtopic split (size rule): topic:verb-movement-arriving-passing (26) split alphabetically in half.
+ovzll1ynso	llegar a tiempo	to arrive on time	supporting	topic:verb-movement-arriving-passing-1	Subtopic split (size rule): topic:verb-movement-arriving-passing (26) split alphabetically in half.
+bptzo9fcux	llegar a un acuerdo	to reach an agreement	reference	topic:verb-movement-arriving-passing-1	Subtopic split (size rule): topic:verb-movement-arriving-passing (26) split alphabetically in half.
+feiqarcmnl	llegar tarde	to arrive late	reference	topic:verb-movement-arriving-passing-1	Subtopic split (size rule): topic:verb-movement-arriving-passing (26) split alphabetically in half.
+zm2w4r32ri	pasar (ocurrir)	to happen	core	topic:verb-movement-arriving-passing-1	Subtopic split (size rule): topic:verb-movement-arriving-passing (26) split alphabetically in half.
+6w6meulfin	pasar [tiempo] con [alguien]	to spend [time] with [somebody]	supporting	topic:verb-movement-arriving-passing-1	Subtopic split (size rule): topic:verb-movement-arriving-passing (26) split alphabetically in half.
+euubcqf5w0	pasar a [otra cosa]	to move on to [something else]	reference	topic:verb-movement-arriving-passing-2	Subtopic split (size rule): topic:verb-movement-arriving-passing (26) split alphabetically in half.
+q0dipekeiv	pasar frente a [un lugar]	to go past [a place]	reference	topic:verb-movement-arriving-passing-2	Subtopic split (size rule): topic:verb-movement-arriving-passing (26) split alphabetically in half.
+uuq5sdflxk	pasar por [algo difícil]	to go through [something difficult]	reference	topic:verb-movement-arriving-passing-2	Subtopic split (size rule): topic:verb-movement-arriving-passing (26) split alphabetically in half.
+5lt6vf4na4	pasar por [un lugar]	to go through [a place]	supporting	topic:verb-movement-arriving-passing-2	Subtopic split (size rule): topic:verb-movement-arriving-passing (26) split alphabetically in half.
+pwxlw3xx2t	pasar por [un lugar]	to pass by [a place]	reference	topic:verb-movement-arriving-passing-2	Subtopic split (size rule): topic:verb-movement-arriving-passing (26) split alphabetically in half.
+2wa96n35mw	pasar por [un puente]	to cross [a bridge]	reference	topic:verb-movement-arriving-passing-2	Subtopic split (size rule): topic:verb-movement-arriving-passing (26) split alphabetically in half.
+h92pv2aho7	pasar por alto [algo]	to overlook [something]	reference	topic:verb-movement-arriving-passing-2	Subtopic split (size rule): topic:verb-movement-arriving-passing (26) split alphabetically in half.
+szfqmpo1uv	pasarla bien	to have a good time	supporting	topic:verb-movement-arriving-passing-2	Subtopic split (size rule): topic:verb-movement-arriving-passing (26) split alphabetically in half.
+subaw4lf2e	pasarla mal	to have a bad time	reference	topic:verb-movement-arriving-passing-2	Subtopic split (size rule): topic:verb-movement-arriving-passing (26) split alphabetically in half.
+8w5qasxh42	pasarla muy bien	to have a great time	reference	topic:verb-movement-arriving-passing-2	Subtopic split (size rule): topic:verb-movement-arriving-passing (26) split alphabetically in half.
+komqoyh86l	pasarle [algo] a [alguien]	to hand [something] to [somebody]	reference	topic:verb-movement-arriving-passing-2	Subtopic split (size rule): topic:verb-movement-arriving-passing (26) split alphabetically in half.
+cld2cnhb2w	pasarle [algo] a [alguien]	to pass [somebody] [something]	supporting	topic:verb-movement-arriving-passing-2	Subtopic split (size rule): topic:verb-movement-arriving-passing (26) split alphabetically in half.
+lptgwusb5o	pasarse	to go too far	reference	topic:verb-movement-arriving-passing-2	Subtopic split (size rule): topic:verb-movement-arriving-passing (26) split alphabetically in half.
+dcbjy0grcq	alcanzar	to be enough	reference	topic:verb-movement-leaving-1	Subtopic split (size rule): topic:verb-movement-leaving (23) split alphabetically in half.
+kgmn4o9bd5	alcanzar [algo]	to reach [something]	supporting	topic:verb-movement-leaving-1	Subtopic split (size rule): topic:verb-movement-leaving (23) split alphabetically in half.
+mmnv7qavpx	alcanzar [un medio de transporte]	to catch [transportation]	supporting	topic:verb-movement-leaving-1	Subtopic split (size rule): topic:verb-movement-leaving (23) split alphabetically in half.
+bijorvfnjq	alcanzar [un transporte]	to catch [transport]	reference	topic:verb-movement-leaving-1	Subtopic split (size rule): topic:verb-movement-leaving (23) split alphabetically in half.
+0mp393y24p	alcanzar [una meta]	to achieve [a goal]	reference	topic:verb-movement-leaving-1	Subtopic split (size rule): topic:verb-movement-leaving (23) split alphabetically in half.
+204wng99bx	alcanzar a [alguien]	to catch up with [somebody]	reference	topic:verb-movement-leaving-1	Subtopic split (size rule): topic:verb-movement-leaving (23) split alphabetically in half.
+v7qsq6oet3	alcanzar a [hacer algo]	to have time to [do something]	reference	topic:verb-movement-leaving-1	Subtopic split (size rule): topic:verb-movement-leaving (23) split alphabetically in half.
+z0627jhc6t	alcanzar a [hacer algo]	to manage to [do something]	supporting	topic:verb-movement-leaving-1	Subtopic split (size rule): topic:verb-movement-leaving (23) split alphabetically in half.
+xmp7uc93ba	dar la vuelta	to turn around	reference	topic:verb-movement-leaving-1	Subtopic split (size rule): topic:verb-movement-leaving (23) split alphabetically in half.
+scirzjermw	dejar [algo] atrás	to leave [something] behind	reference	topic:verb-movement-leaving-1	Subtopic split (size rule): topic:verb-movement-leaving (23) split alphabetically in half.
+ro9nxfyi16	dejar [algo] fuera	to leave [something] out	reference	topic:verb-movement-leaving-1	Subtopic split (size rule): topic:verb-movement-leaving (23) split alphabetically in half.
+gofzjv65s0	entrar	to enter	supporting	topic:verb-movement-leaving-1	Subtopic split (size rule): topic:verb-movement-leaving (23) split alphabetically in half.
+rr7hwdqvpq	entrenar	to train	supporting	topic:verb-movement-leaving-2	Subtopic split (size rule): topic:verb-movement-leaving (23) split alphabetically in half.
+t9r1fus19d	hacer transbordo	to change [transport]	reference	topic:verb-movement-leaving-2	Subtopic split (size rule): topic:verb-movement-leaving (23) split alphabetically in half.
+nis5rixomq	irse	to go away	reference	topic:verb-movement-leaving-2	Subtopic split (size rule): topic:verb-movement-leaving (23) split alphabetically in half.
+2a5bbtm7cl	irse	to leave	core	topic:verb-movement-leaving-2	Subtopic split (size rule): topic:verb-movement-leaving (23) split alphabetically in half.
+k3jg1rin0g	irse para siempre	to leave forever/for good	reference	topic:verb-movement-leaving-2	Subtopic split (size rule): topic:verb-movement-leaving (23) split alphabetically in half.
+tpmllm0cqq	llamarle la atención a [alguien]	to tell [somebody] off	reference	topic:verb-movement-leaving-2	Subtopic split (size rule): topic:verb-movement-leaving (23) split alphabetically in half.
+9ydqb8w1ak	llevar a [alguien] en carro	to give [somebody] a ride	reference	topic:verb-movement-leaving-2	Subtopic split (size rule): topic:verb-movement-leaving (23) split alphabetically in half.
+dvjojvxntx	no alcanzarle a [alguien] para [algo]	to be unable to afford [something]	supporting	topic:verb-movement-leaving-2	Subtopic split (size rule): topic:verb-movement-leaving (23) split alphabetically in half.
+krcmhoedfz	partir	to leave	reference	topic:verb-movement-leaving-2	Subtopic split (size rule): topic:verb-movement-leaving (23) split alphabetically in half.
+5fj4e797ml	partir [algo]	to split [something]	reference	topic:verb-movement-leaving-2	Subtopic split (size rule): topic:verb-movement-leaving (23) split alphabetically in half.
+bqha0lt3ra	partir de [algo]	to start from [something]	reference	topic:verb-movement-leaving-2	Subtopic split (size rule): topic:verb-movement-leaving (23) split alphabetically in half.
+r307dnrn4m	partirle el corazón a [alguien]	to break [somebody's] heart	reference	topic:verb-movement-directional-verbs-1	Subtopic split (size rule): topic:verb-movement-directional-verbs (23) split alphabetically in half.
+m0mgste8it	regresar	to return	reference	topic:verb-movement-directional-verbs-1	Subtopic split (size rule): topic:verb-movement-directional-verbs (23) split alphabetically in half.
+zxuys2r8q2	regresar	to go back	reference	topic:verb-movement-directional-verbs-1	Subtopic split (size rule): topic:verb-movement-directional-verbs (23) split alphabetically in half.
+dczcf3gaak	regresar	to come back	reference	topic:verb-movement-directional-verbs-1	Subtopic split (size rule): topic:verb-movement-directional-verbs (23) split alphabetically in half.
+zl1azbv6vk	salir	to go out	core	topic:verb-movement-directional-verbs-1	Subtopic split (size rule): topic:verb-movement-directional-verbs (23) split alphabetically in half.
+y13ekw81d8	salir	to come out	supporting	topic:verb-movement-directional-verbs-1	Subtopic split (size rule): topic:verb-movement-directional-verbs (23) split alphabetically in half.
+hbm575ua4b	salir [publicado]	to come out	reference	topic:verb-movement-directional-verbs-1	Subtopic split (size rule): topic:verb-movement-directional-verbs (23) split alphabetically in half.
+4n3bcm9qjj	salir afuera	to go outside	reference	topic:verb-movement-directional-verbs-1	Subtopic split (size rule): topic:verb-movement-directional-verbs (23) split alphabetically in half.
+nd8kf3g80o	salir bien	to turn out well	supporting	topic:verb-movement-directional-verbs-1	Subtopic split (size rule): topic:verb-movement-directional-verbs (23) split alphabetically in half.
+ezq7209l2y	salir con [alguien]	to go out with [somebody]	reference	topic:verb-movement-directional-verbs-1	Subtopic split (size rule): topic:verb-movement-directional-verbs (23) split alphabetically in half.
+3q9231a8nt	salir de [un lugar]	to leave [a place]	core	topic:verb-movement-directional-verbs-1	Subtopic split (size rule): topic:verb-movement-directional-verbs (23) split alphabetically in half.
+r68cdfj171	salir de [un lugar]	to get out of [a place]	supporting	topic:verb-movement-directional-verbs-1	Subtopic split (size rule): topic:verb-movement-directional-verbs (23) split alphabetically in half.
+36avddqr7m	salir en [una publicación]	to appear in [a publication]	reference	topic:verb-movement-directional-verbs-2	Subtopic split (size rule): topic:verb-movement-directional-verbs (23) split alphabetically in half.
+tc4o4z8jnt	salir mal	to go badly	reference	topic:verb-movement-directional-verbs-2	Subtopic split (size rule): topic:verb-movement-directional-verbs (23) split alphabetically in half.
+ggqsaeyv8u	tomar [transporte]	to take [transport]	supporting	topic:verb-movement-directional-verbs-2	Subtopic split (size rule): topic:verb-movement-directional-verbs (23) split alphabetically in half.
+ydrx4jlj20	transportar	to transport	reference	topic:verb-movement-directional-verbs-2	Subtopic split (size rule): topic:verb-movement-directional-verbs (23) split alphabetically in half.
+tly9ldi8kr	volver a [otro lugar]	to go back to [another place]	supporting	topic:verb-movement-directional-verbs-2	Subtopic split (size rule): topic:verb-movement-directional-verbs (23) split alphabetically in half.
+q9clnuhnis	volver a [un lugar]	to return to [a place]	supporting	topic:verb-movement-directional-verbs-2	Subtopic split (size rule): topic:verb-movement-directional-verbs (23) split alphabetically in half.
+ksg6li9jy7	volver aquí	to come back	supporting	topic:verb-movement-directional-verbs-2	Subtopic split (size rule): topic:verb-movement-directional-verbs (23) split alphabetically in half.
+j7dljg4amk	volver pronto	to come back soon	reference	topic:verb-movement-directional-verbs-2	Subtopic split (size rule): topic:verb-movement-directional-verbs (23) split alphabetically in half.
+ic3jjkgfi7	volverse [algo]	to turn into [something]	reference	topic:verb-movement-directional-verbs-2	Subtopic split (size rule): topic:verb-movement-directional-verbs (23) split alphabetically in half.
+sxospymxsu	volverse atrás	to turn back	reference	topic:verb-movement-directional-verbs-2	Subtopic split (size rule): topic:verb-movement-directional-verbs (23) split alphabetically in half.
+g1m78v9491	volverse para [hacer algo]	to turn around to [do something]	reference	topic:verb-movement-directional-verbs-2	Subtopic split (size rule): topic:verb-movement-directional-verbs (23) split alphabetically in half.
+nzirmwwqz0	bajar	to fall	reference	topic:verb-movement-directional-1	Subtopic split (size rule): topic:verb-movement-directional (27) split alphabetically in half.
+1fuuisjsfo	bajar	to go down	supporting	topic:verb-movement-directional-1	Subtopic split (size rule): topic:verb-movement-directional (27) split alphabetically in half.
+ciqmuidd85	bajar	to come down	reference	topic:verb-movement-directional-1	Subtopic split (size rule): topic:verb-movement-directional (27) split alphabetically in half.
+nhvpol4yeg	bajar [algo]	to lower [something]	reference	topic:verb-movement-directional-1	Subtopic split (size rule): topic:verb-movement-directional (27) split alphabetically in half.
+vrgb6w3s8v	bajar [un ajuste]	to turn down [a setting]	reference	topic:verb-movement-directional-1	Subtopic split (size rule): topic:verb-movement-directional (27) split alphabetically in half.
+60j5r1u055	bajarse de [un transporte]	to get off [transportation]	reference	topic:verb-movement-directional-1	Subtopic split (size rule): topic:verb-movement-directional (27) split alphabetically in half.
+e8nzmbgdqf	caer bien	to make a good impression	reference	topic:verb-movement-directional-1	Subtopic split (size rule): topic:verb-movement-directional (27) split alphabetically in half.
+6s0jnfqhv2	caer desde [un lugar]	to fall from [a place]	reference	topic:verb-movement-directional-1	Subtopic split (size rule): topic:verb-movement-directional (27) split alphabetically in half.
+t7h2p8595v	caer dormido	to fall asleep	reference	topic:verb-movement-directional-1	Subtopic split (size rule): topic:verb-movement-directional (27) split alphabetically in half.
+jv7jdxmfpj	caer en [una trampa]	to fall into [a trap]	reference	topic:verb-movement-directional-1	Subtopic split (size rule): topic:verb-movement-directional (27) split alphabetically in half.
+rgpsxhe7h3	caer en cuenta de que [algo sucede]	to realize that [something happens]	reference	topic:verb-movement-directional-1	Subtopic split (size rule): topic:verb-movement-directional (27) split alphabetically in half.
+2bpm3xi7ft	caer por debajo de [un nivel]	to fall below [a level]	reference	topic:verb-movement-directional-1	Subtopic split (size rule): topic:verb-movement-directional (27) split alphabetically in half.
+gff4ny55ob	caerse	to fall	supporting	topic:verb-movement-directional-1	Subtopic split (size rule): topic:verb-movement-directional (27) split alphabetically in half.
+9y9odv6gw9	caerse a pedazos	to fall apart	reference	topic:verb-movement-directional-1	Subtopic split (size rule): topic:verb-movement-directional (27) split alphabetically in half.
+kz0e1id4s4	caerse de [algo]	to fall off [something]	reference	topic:verb-movement-directional-2	Subtopic split (size rule): topic:verb-movement-directional (27) split alphabetically in half.
+z4vwfqlj0b	caérsele [algo] a [alguien]	to drop [something]	supporting	topic:verb-movement-directional-2	Subtopic split (size rule): topic:verb-movement-directional (27) split alphabetically in half.
+6ts6qcxven	levantar [algo]	to remove [something]	reference	topic:verb-movement-directional-2	Subtopic split (size rule): topic:verb-movement-directional (27) split alphabetically in half.
+evssaeefeq	levantar [algo]	to raise [something]	reference	topic:verb-movement-directional-2	Subtopic split (size rule): topic:verb-movement-directional (27) split alphabetically in half.
+h1hgpmfjqn	levantar [algo]	to lift [something]	reference	topic:verb-movement-directional-2	Subtopic split (size rule): topic:verb-movement-directional (27) split alphabetically in half.
+i0nrqvquwp	levantar [algo]	to pick up [something]	reference	topic:verb-movement-directional-2	Subtopic split (size rule): topic:verb-movement-directional (27) split alphabetically in half.
+l4v9bkfwpa	subir	to rise	reference	topic:verb-movement-directional-2	Subtopic split (size rule): topic:verb-movement-directional (27) split alphabetically in half.
+9cyb4wa5a3	subir	to go up	supporting	topic:verb-movement-directional-2	Subtopic split (size rule): topic:verb-movement-directional (27) split alphabetically in half.
+rbub08uirg	subir	to come up	reference	topic:verb-movement-directional-2	Subtopic split (size rule): topic:verb-movement-directional (27) split alphabetically in half.
+pzy17gtc2h	subir [algo]	to raise [something]	reference	topic:verb-movement-directional-2	Subtopic split (size rule): topic:verb-movement-directional (27) split alphabetically in half.
+i4yza7s44d	subir [algo]	to bring up [something]	reference	topic:verb-movement-directional-2	Subtopic split (size rule): topic:verb-movement-directional (27) split alphabetically in half.
+5b4zdy92e4	subir [un ajuste]	to turn up [a setting]	reference	topic:verb-movement-directional-2	Subtopic split (size rule): topic:verb-movement-directional (27) split alphabetically in half.
+sao8m0fmzs	subirse a [un transporte]	to get on [transportation]	reference	topic:verb-movement-directional-2	Subtopic split (size rule): topic:verb-movement-directional (27) split alphabetically in half.
+snuyccf6qe	cumplir con [algo]	to follow through on [something]	reference	topic:verb-following-continuing-1	Subtopic split (size rule): topic:verb-following-continuing (21) split alphabetically in half.
+uxzgvill2p	dar seguimiento a [algo]	to follow up on [something]	reference	topic:verb-following-continuing-1	Subtopic split (size rule): topic:verb-following-continuing (21) split alphabetically in half.
+j7s4nn02ph	mantener [algo] bajo	to keep [something] down	reference	topic:verb-following-continuing-1	Subtopic split (size rule): topic:verb-following-continuing (21) split alphabetically in half.
+5irs9gdyqv	mantenerse al día con [algo]	to keep up with [something]	reference	topic:verb-following-continuing-1	Subtopic split (size rule): topic:verb-following-continuing (21) split alphabetically in half.
+h2zqc61fwq	mantenerse alejado de [algo]	to keep away from [something]	reference	topic:verb-following-continuing-1	Subtopic split (size rule): topic:verb-following-continuing (21) split alphabetically in half.
+2liqgudpe2	mantenerse en contacto con [alguien]	to keep in touch with [somebody]	reference	topic:verb-following-continuing-1	Subtopic split (size rule): topic:verb-following-continuing (21) split alphabetically in half.
+7505bgiyyc	no entrar	to keep out	reference	topic:verb-following-continuing-1	Subtopic split (size rule): topic:verb-following-continuing (21) split alphabetically in half.
+kvedge4aey	no pisar [algo]	to keep off [something]	reference	topic:verb-following-continuing-1	Subtopic split (size rule): topic:verb-following-continuing (21) split alphabetically in half.
+2m5zc7v18r	reservarse [algo]	to keep [something] to yourself	reference	topic:verb-following-continuing-1	Subtopic split (size rule): topic:verb-following-continuing (21) split alphabetically in half.
+na5kdv5rje	seguir [en un estado]	to still be [in a state]	supporting	topic:verb-following-continuing-1	Subtopic split (size rule): topic:verb-following-continuing (21) split alphabetically in half.
+6fi09q216i	seguir [haciendo algo]	to keep [doing something]	core	topic:verb-following-continuing-1	Subtopic split (size rule): topic:verb-following-continuing (21) split alphabetically in half.
+5qdmpxi8us	seguir [haciendo algo]	to keep on [doing something]	reference	topic:verb-following-continuing-2	Subtopic split (size rule): topic:verb-following-continuing (21) split alphabetically in half.
+odnmr4o3xv	seguir [haciendo algo]	to continue [doing something]	supporting	topic:verb-following-continuing-2	Subtopic split (size rule): topic:verb-following-continuing (21) split alphabetically in half.
+ukd87mv2pz	seguir [haciendo algo]	to still be [doing something]	supporting	topic:verb-following-continuing-2	Subtopic split (size rule): topic:verb-following-continuing (21) split alphabetically in half.
+f0z126w2cy	seguir [instrucciones]	to follow [instructions]	supporting	topic:verb-following-continuing-2	Subtopic split (size rule): topic:verb-following-continuing (21) split alphabetically in half.
+m1asnh0c8n	seguir a [alguien]	to follow [somebody]	supporting	topic:verb-following-continuing-2	Subtopic split (size rule): topic:verb-following-continuing (21) split alphabetically in half.
+fhohvsakmg	seguir a [alguien] en redes	to follow [somebody] online	reference	topic:verb-following-continuing-2	Subtopic split (size rule): topic:verb-following-continuing (21) split alphabetically in half.
+ef4ltamqsa	seguir adelante	to carry on	reference	topic:verb-following-continuing-2	Subtopic split (size rule): topic:verb-following-continuing (21) split alphabetically in half.
+vupb12qdkr	seguir así	to keep it up	reference	topic:verb-following-continuing-2	Subtopic split (size rule): topic:verb-following-continuing (21) split alphabetically in half.
+d5m00zj2i4	seguir intentándolo	to keep at it	reference	topic:verb-following-continuing-2	Subtopic split (size rule): topic:verb-following-continuing (21) split alphabetically in half.
+89g0nxntpb	seguir recto	to keep going straight	supporting	topic:verb-following-continuing-2	Subtopic split (size rule): topic:verb-following-continuing (21) split alphabetically in half.
+zugopbh0jt	¿[alguien] tiene que [hacer algo]?	does [somebody] have to [do something]?	core	topic:verb-possession-having-1	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+8aej7jfu2y	¿tienes que [hacer algo]?	do you have to [do something]?	core	topic:verb-possession-having-1	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+5awfswdavw	no tener nada que ver con [algo]	to have nothing to do with [something]	reference	topic:verb-possession-having-1	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+xisncbwr6s	tenemos [algo]	we have [something]	core	topic:verb-possession-having-1	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+qh9awmasdd	tenemos [número] años	we are [number] years old	core	topic:verb-possession-having-1	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+ny8jxz2s41	tenemos que [hacer algo]	we have to [do something]	core	topic:verb-possession-having-1	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+wwwc8jugby	tener [algo]	to have [something]	core	topic:verb-possession-having-1	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+5qr32psjlf	tener [algo] puesto	to have [something] on	reference	topic:verb-possession-having-1	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+fs8u8cu63l	tener a [alguien] [haciendo algo]	to keep [somebody] [doing something]	reference	topic:verb-possession-having-1	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+n6hfkj5rh5	tener afán	to be in a rush	reference	topic:verb-possession-having-1	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+nkqygp49l4	tener dificultad para [hacer algo]	to have trouble [doing something]	supporting	topic:verb-possession-having-1	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+7xfrxi3jd5	tener en cuenta [algo]	to take [something] into account	reference	topic:verb-possession-having-1	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+86v2tii41j	tener en cuenta [algo]	to keep [something] in mind	reference	topic:verb-possession-having-1	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+960sk4aws1	tener éxito	to succeed	supporting	topic:verb-possession-having-1	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+j65dvjawel	tener la culpa	to be at fault	reference	topic:verb-possession-having-1	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+172vkaz4pw	tener la oportunidad de [hacer algo]	to get a chance to [do something]	reference	topic:verb-possession-having-1	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+z9prfddx9z	tener permiso para [hacer algo]	to be allowed to [do something]	reference	topic:verb-possession-having-2	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+cb15a9bkk6	tener permiso para [hacer algo]	to be permitted to [do something]	reference	topic:verb-possession-having-2	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+hi6i8bgabk	tener prisa	to be in a hurry	supporting	topic:verb-possession-having-2	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+p80swouyaq	tener sentido	to make sense	supporting	topic:verb-possession-having-2	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+p1ga7e8bhn	tengo [algo]	I have [something]	core	topic:verb-possession-having-2	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+8mpe0b3ksv	tengo [número] años	I am [number] years old	core	topic:verb-possession-having-2	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+yye01uov38	tengo que [hacer algo]	I have to [do something]	core	topic:verb-possession-having-2	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+vea3m3h1kq	tiene [algo]	has [something]	core	topic:verb-possession-having-2	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+a5e2xjebla	tiene [número] años	is [number] years old	core	topic:verb-possession-having-2	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+ogdv00s3cw	tiene que [hacer algo]	has to [do something]	core	topic:verb-possession-having-2	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+rkkkgau83q	tienen [algo]	they have [something]	core	topic:verb-possession-having-2	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+680u7m5wn5	tienen [número] años	they are [number] years old	core	topic:verb-possession-having-2	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+x9hss06n9a	tienen que [hacer algo]	they have to [do something]	core	topic:verb-possession-having-2	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+mwpgnk4gb9	tienes [algo]	you have [something]	core	topic:verb-possession-having-2	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+ksjxfltxqk	tienes [número] años	you are [number] years old	core	topic:verb-possession-having-2	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+kjllit1qgt	tienes que [hacer algo]	you have to [do something]	core	topic:verb-possession-having-2	Subtopic split (size rule): topic:verb-possession-having (32) split alphabetically in half.
+f8vxtpc7m8	adquirir	to acquire	reference	topic:verb-possession-obtaining-1	Subtopic split (size rule): topic:verb-possession-obtaining (22) split alphabetically in half.
+3iu0b08m81	buscar [algo]	to seek [something]	reference	topic:verb-possession-obtaining-1	Subtopic split (size rule): topic:verb-possession-obtaining (22) split alphabetically in half.
+vzbnervzfr	buscar [algo]	to look for [something]	core	topic:verb-possession-obtaining-1	Subtopic split (size rule): topic:verb-possession-obtaining (22) split alphabetically in half.
+ndldiki9y2	buscar [algo]	to search for [something]	reference	topic:verb-possession-obtaining-1	Subtopic split (size rule): topic:verb-possession-obtaining (22) split alphabetically in half.
+9kb0lubk35	buscar [algo] en una referencia	to look [something] up	supporting	topic:verb-possession-obtaining-1	Subtopic split (size rule): topic:verb-possession-obtaining (22) split alphabetically in half.
+umirnepxs1	buscar a [alguien]	to want [somebody] for questioning	reference	topic:verb-possession-obtaining-1	Subtopic split (size rule): topic:verb-possession-obtaining (22) split alphabetically in half.
+yztwsyb4p5	conseguir [algo difícil de encontrar]	to get one's hands on [something]	reference	topic:verb-possession-obtaining-1	Subtopic split (size rule): topic:verb-possession-obtaining (22) split alphabetically in half.
+5hh1gjpr7c	conseguir [algo]	to obtain [something]	reference	topic:verb-possession-obtaining-1	Subtopic split (size rule): topic:verb-possession-obtaining (22) split alphabetically in half.
+85utp3uzux	conseguir [algo]	to secure [something]	reference	topic:verb-possession-obtaining-1	Subtopic split (size rule): topic:verb-possession-obtaining (22) split alphabetically in half.
+ylgvepe6wi	conseguir [algo]	to get hold of [something]	reference	topic:verb-possession-obtaining-1	Subtopic split (size rule): topic:verb-possession-obtaining (22) split alphabetically in half.
+rnbbuspsv7	conseguir [algo]	to get [something]	core	topic:verb-possession-obtaining-1	Subtopic split (size rule): topic:verb-possession-obtaining (22) split alphabetically in half.
+sv4xcj3c16	conseguir [algo] para [alguien]	to get [something] for [somebody]	reference	topic:verb-possession-obtaining-2	Subtopic split (size rule): topic:verb-possession-obtaining (22) split alphabetically in half.
+hr7gsp7wkj	conseguir [hacer algo]	to manage to [do something]	supporting	topic:verb-possession-obtaining-2	Subtopic split (size rule): topic:verb-possession-obtaining (22) split alphabetically in half.
+rtc3heix8c	conseguir apoyo	to win support	reference	topic:verb-possession-obtaining-2	Subtopic split (size rule): topic:verb-possession-obtaining (22) split alphabetically in half.
+w03s2v6sq1	conseguir que [algo] quede [hecho]	to get [something] done	reference	topic:verb-possession-obtaining-2	Subtopic split (size rule): topic:verb-possession-obtaining (22) split alphabetically in half.
+eeb29dpzj0	conseguir que [alguien] [haga algo]	to get [somebody] to [do something]	supporting	topic:verb-possession-obtaining-2	Subtopic split (size rule): topic:verb-possession-obtaining (22) split alphabetically in half.
+xqrvzbv9iu	conseguirle [algo] a [alguien]	to get [somebody] [something]	supporting	topic:verb-possession-obtaining-2	Subtopic split (size rule): topic:verb-possession-obtaining (22) split alphabetically in half.
+imzixo6ntc	no conseguir [hacer algo]	to fail to [do something]	reference	topic:verb-possession-obtaining-2	Subtopic split (size rule): topic:verb-possession-obtaining (22) split alphabetically in half.
+q6nk7om8xl	obtener	to obtain	supporting	topic:verb-possession-obtaining-2	Subtopic split (size rule): topic:verb-possession-obtaining (22) split alphabetically in half.
+nl064twuml	obtener [algo]	to get [something]	reference	topic:verb-possession-obtaining-2	Subtopic split (size rule): topic:verb-possession-obtaining (22) split alphabetically in half.
+j84bvckgfu	obtener [ayuda]	to receive [help]	reference	topic:verb-possession-obtaining-2	Subtopic split (size rule): topic:verb-possession-obtaining (22) split alphabetically in half.
+1pgc6cfhvt	obtener [resultados]	to achieve [results]	reference	topic:verb-possession-obtaining-2	Subtopic split (size rule): topic:verb-possession-obtaining (22) split alphabetically in half.
+iuscz9in74	echar [algo]	to throw [something]	supporting	topic:verb-taking-removing-1-1	Subtopic split (size rule): topic:verb-taking-removing-1 (21) split alphabetically in half.
+5q4eehz3vn	echar [algo]	to toss [something]	reference	topic:verb-taking-removing-1-1	Subtopic split (size rule): topic:verb-taking-removing-1 (21) split alphabetically in half.
+84y1p0do9w	echar [algo] a la basura	to throw [something] away	reference	topic:verb-taking-removing-1-1	Subtopic split (size rule): topic:verb-taking-removing-1 (21) split alphabetically in half.
+9bhhgek1hg	echar [humo u olor]	to give off [smoke or a smell]	reference	topic:verb-taking-removing-1-1	Subtopic split (size rule): topic:verb-taking-removing-1 (21) split alphabetically in half.
+1yt28hn07y	echar [un líquido] en [un recipiente]	to pour [a liquid] into [a container]	reference	topic:verb-taking-removing-1-1	Subtopic split (size rule): topic:verb-taking-removing-1 (21) split alphabetically in half.
+36riiosdmx	echar a [alguien] de [un lugar]	to throw [somebody] out of [a place]	reference	topic:verb-taking-removing-1-1	Subtopic split (size rule): topic:verb-taking-removing-1 (21) split alphabetically in half.
+5vfdd7g6pp	echar a [alguien] de [un lugar]	to kick [somebody] out of [a place]	reference	topic:verb-taking-removing-1-1	Subtopic split (size rule): topic:verb-taking-removing-1 (21) split alphabetically in half.
+wyiru8eg9q	echar a [alguien] del trabajo	to fire [somebody]	reference	topic:verb-taking-removing-1-1	Subtopic split (size rule): topic:verb-taking-removing-1 (21) split alphabetically in half.
+84ubxhmjpj	echar a andar [algo]	to get [something] going	reference	topic:verb-taking-removing-1-1	Subtopic split (size rule): topic:verb-taking-removing-1 (21) split alphabetically in half.
+kpe00fplij	echar a perder [algo]	to ruin [something]	reference	topic:verb-taking-removing-1-1	Subtopic split (size rule): topic:verb-taking-removing-1 (21) split alphabetically in half.
+ve8mmxlgrz	echar a perder [algo]	to spoil [something]	reference	topic:verb-taking-removing-1-1	Subtopic split (size rule): topic:verb-taking-removing-1 (21) split alphabetically in half.
+0f8859fdfq	echar abajo [algo]	to knock [something] down	reference	topic:verb-taking-removing-1-2	Subtopic split (size rule): topic:verb-taking-removing-1 (21) split alphabetically in half.
+0yil0wwbgv	echar de menos a [alguien]	to miss [somebody]	reference	topic:verb-taking-removing-1-2	Subtopic split (size rule): topic:verb-taking-removing-1 (21) split alphabetically in half.
+vb2rixy6jn	echar raíces	to take root	reference	topic:verb-taking-removing-1-2	Subtopic split (size rule): topic:verb-taking-removing-1 (21) split alphabetically in half.
+mhpsjzbw88	echar un vistazo a [algo]	to take a look at [something]	supporting	topic:verb-taking-removing-1-2	Subtopic split (size rule): topic:verb-taking-removing-1 (21) split alphabetically in half.
+ycynxw1m3v	echarle [un ingrediente] a [algo]	to add [an ingredient] to [something]	supporting	topic:verb-taking-removing-1-2	Subtopic split (size rule): topic:verb-taking-removing-1 (21) split alphabetically in half.
+c5032rvam7	echarle la culpa de [algo] a [alguien]	to blame [somebody] for [something]	supporting	topic:verb-taking-removing-1-2	Subtopic split (size rule): topic:verb-taking-removing-1 (21) split alphabetically in half.
+6o8pv6rvtp	echarle una mano a [alguien]	to give [somebody] a hand	reference	topic:verb-taking-removing-1-2	Subtopic split (size rule): topic:verb-taking-removing-1 (21) split alphabetically in half.
+cf5552jy9p	echarse a [hacer algo]	to start [doing something]	reference	topic:verb-taking-removing-1-2	Subtopic split (size rule): topic:verb-taking-removing-1 (21) split alphabetically in half.
+roc4s41s10	echarse a andar	to set off	reference	topic:verb-taking-removing-1-2	Subtopic split (size rule): topic:verb-taking-removing-1 (21) split alphabetically in half.
+bzurrkgjau	[algo] toca a [alguien]	[something] affects [somebody]	reference	topic:verb-taking-removing-1-2	Subtopic split (size rule): topic:verb-taking-removing-1 (21) split alphabetically in half.
+15xrsrpy46	echarse a reír	to burst out laughing	reference	topic:verb-taking-removing-2-1	Subtopic split (size rule): topic:verb-taking-removing-2 (21) split alphabetically in half.
+xfgzv2w5ro	echarse atrás	to back out	reference	topic:verb-taking-removing-2-1	Subtopic split (size rule): topic:verb-taking-removing-2 (21) split alphabetically in half.
+79080668rq	ponerse en contacto con [alguien]	to get in touch with [somebody]	reference	topic:verb-taking-removing-2-1	Subtopic split (size rule): topic:verb-taking-removing-2 (21) split alphabetically in half.
+bct589etct	retocar [algo]	to touch [something] up	reference	topic:verb-taking-removing-2-1	Subtopic split (size rule): topic:verb-taking-removing-2 (21) split alphabetically in half.
+wefybdb64a	sacar [algo]	to get [something]	supporting	topic:verb-taking-removing-2-1	Subtopic split (size rule): topic:verb-taking-removing-2 (21) split alphabetically in half.
+qcpsrdimh2	sacar [algo] de [un lugar]	to remove [something] from [a place]	supporting	topic:verb-taking-removing-2-1	Subtopic split (size rule): topic:verb-taking-removing-2 (21) split alphabetically in half.
+2a7hnhmtu6	sacar [un producto]	to release [a product]	reference	topic:verb-taking-removing-2-1	Subtopic split (size rule): topic:verb-taking-removing-2 (21) split alphabetically in half.
+6xu8gu7squ	sacar [un producto]	to bring out [a product]	reference	topic:verb-taking-removing-2-1	Subtopic split (size rule): topic:verb-taking-removing-2 (21) split alphabetically in half.
+w1s5ow6rtn	sacar [una nota]	to get [a grade]	reference	topic:verb-taking-removing-2-1	Subtopic split (size rule): topic:verb-taking-removing-2 (21) split alphabetically in half.
+8t1oov9cqo	sacar [una respuesta]	to figure out [an answer]	supporting	topic:verb-taking-removing-2-1	Subtopic split (size rule): topic:verb-taking-removing-2 (21) split alphabetically in half.
+7ihfylaf0m	sacar a [alguien] de [un lugar]	to get [somebody] out of [a place]	reference	topic:verb-taking-removing-2-1	Subtopic split (size rule): topic:verb-taking-removing-2 (21) split alphabetically in half.
+qbmtcey423	tirar [algo]	to throw away [something]	reference	topic:verb-taking-removing-2-2	Subtopic split (size rule): topic:verb-taking-removing-2 (21) split alphabetically in half.
+i45j20q1be	tirar [algo]	to waste [something]	reference	topic:verb-taking-removing-2-2	Subtopic split (size rule): topic:verb-taking-removing-2 (21) split alphabetically in half.
+jjamoxjs7y	tirar [algo]	to throw [something]	supporting	topic:verb-taking-removing-2-2	Subtopic split (size rule): topic:verb-taking-removing-2 (21) split alphabetically in half.
+khn4nszu77	tirar de [algo]	to pull [something]	reference	topic:verb-taking-removing-2-2	Subtopic split (size rule): topic:verb-taking-removing-2 (21) split alphabetically in half.
+qdhjj8exwl	tirar hacia [un lugar]	to pull toward [a place]	reference	topic:verb-taking-removing-2-2	Subtopic split (size rule): topic:verb-taking-removing-2 (21) split alphabetically in half.
+5uycd7m1nu	tocar [algo]	to touch [something]	supporting	topic:verb-taking-removing-2-2	Subtopic split (size rule): topic:verb-taking-removing-2 (21) split alphabetically in half.
+kb4ibauh35	tocar [un instrumento]	to play [an instrument]	supporting	topic:verb-taking-removing-2-2	Subtopic split (size rule): topic:verb-taking-removing-2 (21) split alphabetically in half.
+jocx4z0vrr	tocar [un tema]	to touch on [a topic]	reference	topic:verb-taking-removing-2-2	Subtopic split (size rule): topic:verb-taking-removing-2 (21) split alphabetically in half.
+8ic82zfjqz	tocar el timbre	to ring the doorbell	reference	topic:verb-taking-removing-2-2	Subtopic split (size rule): topic:verb-taking-removing-2 (21) split alphabetically in half.
+er9xiz8dqv	tocarle a [alguien]	to be [somebody's] turn	supporting	topic:verb-taking-removing-2-2	Subtopic split (size rule): topic:verb-taking-removing-2 (21) split alphabetically in half.
+j5psxk7lpd	dejar [algo o alguien] encargado con [alguien]	to leave [something or somebody] in [somebody's] care	reference	topic:verb-keeping-storing-1	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+zu4n3xn4x8	dejar [algo o alguien] por fuera	to leave [something or somebody] out	supporting	topic:verb-keeping-storing-1	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+zxbk3kr77z	dejar [algo] [en algún lugar]	to forget [something] [somewhere]	reference	topic:verb-keeping-storing-1	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+yxm2eedy90	dejar [algo] [en algún lugar]	to leave [something] [somewhere]	core	topic:verb-keeping-storing-1	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+hyx4uupf61	dejar [algo] encendido	to leave [something] on	reference	topic:verb-keeping-storing-1	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+egh1emsv3k	dejar [un lugar]	to leave [a place]	reference	topic:verb-keeping-storing-1	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+9bd5m6jcab	dejar [un proyecto o actividad]	to give up [a project or activity]	reference	topic:verb-keeping-storing-1	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+czlzxhiz8y	dejar [un proyecto o responsabilidad]	to abandon [a project or responsibility]	reference	topic:verb-keeping-storing-1	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+skfxdss0cs	dejar de [hacer algo]	to no longer [do something]	reference	topic:verb-keeping-storing-1	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+yfjyb31b9b	dejar de [hacer algo]	to stop [doing something]	core	topic:verb-keeping-storing-1	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+qj0lhiuc75	dejar en paz a [alguien]	to leave [somebody] alone	supporting	topic:verb-keeping-storing-1	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+9ytu1uafba	dejar mucho que desear	to leave much to be desired	reference	topic:verb-keeping-storing-1	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+fzsfzh2mfr	dejar pasar [una oportunidad]	to let [an opportunity] pass	reference	topic:verb-keeping-storing-1	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+qk02mephc9	dejar pasar [una oportunidad]	to pass up [an opportunity]	reference	topic:verb-keeping-storing-1	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+xf3bu4p3qr	dejar plantado a [alguien]	to stand [somebody] up	reference	topic:verb-keeping-storing-1	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+nbidca94v7	dejar que [alguien] [haga algo]	to allow [somebody] to [do something]	reference	topic:verb-keeping-storing-1	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+e7nedtjuof	dejar que [alguien] [haga algo]	to let [somebody] [do something]	core	topic:verb-keeping-storing-2	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+od0g56sefd	dejar salir a [alguien o algo]	to let [somebody or something] out	reference	topic:verb-keeping-storing-2	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+cz1u7ybmyj	dejarle [algo] a [alguien]	to lend [somebody] [something]	reference	topic:verb-keeping-storing-2	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+jwc22mmcyd	dejarle [algo] a [alguien]	to let [somebody] use [something]	reference	topic:verb-keeping-storing-2	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+goxootramx	dejarse llevar	to get carried away	reference	topic:verb-keeping-storing-2	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+v1xen0we5r	guardar [algo]	to put away [something]	reference	topic:verb-keeping-storing-2	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+3t68o5qzoy	guardar [algo]	to keep [something]	reference	topic:verb-keeping-storing-2	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+1a5rmyh1gn	guardar silencio	to remain silent	reference	topic:verb-keeping-storing-2	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+yqer3iro9h	guardar un secreto	to keep a secret	reference	topic:verb-keeping-storing-2	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+jbffg23epm	mantener	to maintain	supporting	topic:verb-keeping-storing-2	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+afxy3gj8g5	mantener [algo]	to maintain [something]	reference	topic:verb-keeping-storing-2	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+v72o9g7yjw	mantener [algo]	to keep [something]	supporting	topic:verb-keeping-storing-2	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+e8u3dl9hno	mantener [una ventaja]	to hold [the lead]	reference	topic:verb-keeping-storing-2	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+1vh5rntj16	mantener a [alguien]	to support [somebody]	reference	topic:verb-keeping-storing-2	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+dzzngcl5ri	no dejar de [hacer algo]	to keep [doing something]	reference	topic:verb-keeping-storing-2	Subtopic split (size rule): topic:verb-keeping-storing (31) split alphabetically in half.
+l0ff67q199	¿Comes carne?	Do you eat meat?	supporting	topic:verb-eating-drinking-1	Subtopic split (size rule): topic:verb-eating-drinking (25) split alphabetically in half.
+7zuboxokm5	¿Ella come carne?	Does she eat meat?	supporting	topic:verb-eating-drinking-1	Subtopic split (size rule): topic:verb-eating-drinking (25) split alphabetically in half.
+t1monumdj4	¿No comes carne?	Don't you eat meat?	supporting	topic:verb-eating-drinking-1	Subtopic split (size rule): topic:verb-eating-drinking (25) split alphabetically in half.
+y8vz5i8ugg	absorber [algo]	to drink in [something]	reference	topic:verb-eating-drinking-1	Subtopic split (size rule): topic:verb-eating-drinking (25) split alphabetically in half.
+7hhmppjsyi	beber [algo]	to have [a beverage]	reference	topic:verb-eating-drinking-1	Subtopic split (size rule): topic:verb-eating-drinking (25) split alphabetically in half.
+ghaurw9ils	beber [algo]	to drink [something]	supporting	topic:verb-eating-drinking-1	Subtopic split (size rule): topic:verb-eating-drinking (25) split alphabetically in half.
+vmxu8tislh	beber [algo] para olvidar	to drink away [something]	reference	topic:verb-eating-drinking-1	Subtopic split (size rule): topic:verb-eating-drinking (25) split alphabetically in half.
+n9z42gcs3h	beber [algo] todo	to drink [something] up	reference	topic:verb-eating-drinking-1	Subtopic split (size rule): topic:verb-eating-drinking (25) split alphabetically in half.
+pj5xvxa76j	beber de [un recipiente]	to drink out of [a container]	reference	topic:verb-eating-drinking-1	Subtopic split (size rule): topic:verb-eating-drinking (25) split alphabetically in half.
+ixtmrjrh95	brindar por [alguien/algo]	to drink to [somebody/something]	reference	topic:verb-eating-drinking-1	Subtopic split (size rule): topic:verb-eating-drinking (25) split alphabetically in half.
+blyn87wx6n	comer [algo]	to eat [something]	core	topic:verb-eating-drinking-1	Subtopic split (size rule): topic:verb-eating-drinking (25) split alphabetically in half.
+39jd5tl1td	comer [algo] todo	to eat [something] up	reference	topic:verb-eating-drinking-1	Subtopic split (size rule): topic:verb-eating-drinking (25) split alphabetically in half.
+dtnqrb3lqk	comer en casa	to eat in	reference	topic:verb-eating-drinking-1	Subtopic split (size rule): topic:verb-eating-drinking (25) split alphabetically in half.
+exl1pngeii	comer fuera	to eat out	supporting	topic:verb-eating-drinking-2	Subtopic split (size rule): topic:verb-eating-drinking (25) split alphabetically in half.
+1nhgx0mth4	comer medio [algo]	to eat half [something]	reference	topic:verb-eating-drinking-2	Subtopic split (size rule): topic:verb-eating-drinking (25) split alphabetically in half.
+muiwdna9jq	consumir [algo] por completo	to eat through [something]	reference	topic:verb-eating-drinking-2	Subtopic split (size rule): topic:verb-eating-drinking (25) split alphabetically in half.
+scx4soq3es	desgastar [algo] poco a poco	to eat away at [something]	reference	topic:verb-eating-drinking-2	Subtopic split (size rule): topic:verb-eating-drinking (25) split alphabetically in half.
+4e8vpd4tbg	Ella no come carne.	She doesn't eat meat.	supporting	topic:verb-eating-drinking-2	Subtopic split (size rule): topic:verb-eating-drinking (25) split alphabetically in half.
+p3fuo2folk	No como carne.	I don't eat meat.	supporting	topic:verb-eating-drinking-2	Subtopic split (size rule): topic:verb-eating-drinking (25) split alphabetically in half.
+g54z8h8ci6	ordenar [comida o bebida]	to order [food or a drink]	reference	topic:verb-eating-drinking-2	Subtopic split (size rule): topic:verb-eating-drinking (25) split alphabetically in half.
+fjv6xhktcy	pedir [comida o bebida]	to order [food or a drink]	supporting	topic:verb-eating-drinking-2	Subtopic split (size rule): topic:verb-eating-drinking (25) split alphabetically in half.
+ka5uny00ga	pedir [comida] a domicilio	to order [food] for delivery	reference	topic:verb-eating-drinking-2	Subtopic split (size rule): topic:verb-eating-drinking (25) split alphabetically in half.
+hhmv0g9xlh	pedir [comida] para llevar	to order [food] to go	reference	topic:verb-eating-drinking-2	Subtopic split (size rule): topic:verb-eating-drinking (25) split alphabetically in half.
+ci5pguw7c2	reducir [algo] gradualmente	to eat into [something]	reference	topic:verb-eating-drinking-2	Subtopic split (size rule): topic:verb-eating-drinking (25) split alphabetically in half.
+uidyeso1gn	tomar [una bebida]	to drink [a beverage]	supporting	topic:verb-eating-drinking-2	Subtopic split (size rule): topic:verb-eating-drinking (25) split alphabetically in half.
+f2jyvf37n7	conseguir trabajo	to get a job	reference	topic:verb-work-employment-1	Subtopic split (size rule): topic:verb-work-employment (22) split alphabetically in half.
+jpaidkfhw8	dar resultado	to work	reference	topic:verb-work-employment-1	Subtopic split (size rule): topic:verb-work-employment (22) split alphabetically in half.
+wn89ieh7zn	echar cuentas	to work [something] out	reference	topic:verb-work-employment-1	Subtopic split (size rule): topic:verb-work-employment (22) split alphabetically in half.
+xo44xzb3jh	formar [un equipo]	to build [a team]	reference	topic:verb-work-employment-1	Subtopic split (size rule): topic:verb-work-employment (22) split alphabetically in half.
+qwp1msjfsn	hacer ejercicio	to work out	reference	topic:verb-work-employment-1	Subtopic split (size rule): topic:verb-work-employment (22) split alphabetically in half.
+svjll3kjxt	ocupar un cargo importante	to hold a high position	reference	topic:verb-work-employment-1	Subtopic split (size rule): topic:verb-work-employment (22) split alphabetically in half.
+lidfbq7lxa	posicionar	to position	reference	topic:verb-work-employment-1	Subtopic split (size rule): topic:verb-work-employment (22) split alphabetically in half.
+s2wih9tkp4	trabajar	to work	core	topic:verb-work-employment-1	Subtopic split (size rule): topic:verb-work-employment (22) split alphabetically in half.
+abw14te962	trabajar [un material]	to work [a material]	reference	topic:verb-work-employment-1	Subtopic split (size rule): topic:verb-work-employment (22) split alphabetically in half.
+5oksfbyy9k	trabajar bastante	to work a lot	reference	topic:verb-work-employment-1	Subtopic split (size rule): topic:verb-work-employment (22) split alphabetically in half.
+zgwnnnusii	trabajar como [profesión]	to work as [a profession]	supporting	topic:verb-work-employment-1	Subtopic split (size rule): topic:verb-work-employment (22) split alphabetically in half.
+ezz9e68yjj	trabajar con [alguien]	to work with [somebody]	supporting	topic:verb-work-employment-2	Subtopic split (size rule): topic:verb-work-employment (22) split alphabetically in half.
+3nytgzkkim	trabajar demasiado	to work too much	reference	topic:verb-work-employment-2	Subtopic split (size rule): topic:verb-work-employment (22) split alphabetically in half.
+57q3yd0rpd	trabajar desde casa	to work from home	reference	topic:verb-work-employment-2	Subtopic split (size rule): topic:verb-work-employment (22) split alphabetically in half.
+o8yyqw9k2g	trabajar en [un lugar u organización]	to work at [a place or organization]	supporting	topic:verb-work-employment-2	Subtopic split (size rule): topic:verb-work-employment (22) split alphabetically in half.
+edf5jy4zrf	trabajar en [un sector]	to work in [a field]	reference	topic:verb-work-employment-2	Subtopic split (size rule): topic:verb-work-employment (22) split alphabetically in half.
+xrqc4586p2	trabajar en [una tarea o proyecto]	to work on [a task or project]	supporting	topic:verb-work-employment-2	Subtopic split (size rule): topic:verb-work-employment (22) split alphabetically in half.
+55moihfqeu	trabajar para [alguien u organización]	to work for [somebody or an organization]	supporting	topic:verb-work-employment-2	Subtopic split (size rule): topic:verb-work-employment (22) split alphabetically in half.
+3f40un1zgj	trabajar para [lograr algo]	to work toward [a goal]	reference	topic:verb-work-employment-2	Subtopic split (size rule): topic:verb-work-employment (22) split alphabetically in half.
+pg7ymescs5	trabajar paso a paso en [un problema]	to work through [a problem]	reference	topic:verb-work-employment-2	Subtopic split (size rule): topic:verb-work-employment (22) split alphabetically in half.
+gebby1bfyk	valer para [un propósito]	to work for [a purpose]	reference	topic:verb-work-employment-2	Subtopic split (size rule): topic:verb-work-employment (22) split alphabetically in half.
+kk3nkycmqg	venirle bien a [alguien]	to work for [somebody]	reference	topic:verb-work-employment-2	Subtopic split (size rule): topic:verb-work-employment (22) split alphabetically in half.
+xd020ctw06	costar	to cost	supporting	topic:verb-money-earning-spending-1	Subtopic split (size rule): topic:verb-money-earning-spending (26) split alphabetically in half.
+pvep99mzux	costar [una cantidad]	to cost [an amount]	core	topic:verb-money-earning-spending-1	Subtopic split (size rule): topic:verb-money-earning-spending (26) split alphabetically in half.
+wii1500zn6	costarle [algo] a [alguien]	to cost [somebody] [something]	reference	topic:verb-money-earning-spending-1	Subtopic split (size rule): topic:verb-money-earning-spending (26) split alphabetically in half.
+9y6wrrzjfz	costarle a [alguien] [hacer algo]	to struggle to [do something]	reference	topic:verb-money-earning-spending-1	Subtopic split (size rule): topic:verb-money-earning-spending (26) split alphabetically in half.
+zkpnfrk8ch	costarle a [alguien] [hacer algo]	to be difficult for [somebody] to [do something]	supporting	topic:verb-money-earning-spending-1	Subtopic split (size rule): topic:verb-money-earning-spending (26) split alphabetically in half.
+ankhn3gvu6	costarle trabajo a [alguien] [hacer algo]	to have a hard time [doing something]	reference	topic:verb-money-earning-spending-1	Subtopic split (size rule): topic:verb-money-earning-spending (26) split alphabetically in half.
+ytwtdcyakg	devolverle dinero a [alguien]	to pay [somebody] back	reference	topic:verb-money-earning-spending-1	Subtopic split (size rule): topic:verb-money-earning-spending (26) split alphabetically in half.
+iz4606mcoe	ganar [apoyo o una ventaja]	to gain [support or an advantage]	reference	topic:verb-money-earning-spending-1	Subtopic split (size rule): topic:verb-money-earning-spending (26) split alphabetically in half.
+bz7tv4xn1k	ganar [dinero]	to earn [money]	supporting	topic:verb-money-earning-spending-1	Subtopic split (size rule): topic:verb-money-earning-spending (26) split alphabetically in half.
+xzu44okx8u	ganar [un premio]	to win [a prize]	reference	topic:verb-money-earning-spending-1	Subtopic split (size rule): topic:verb-money-earning-spending (26) split alphabetically in half.
+p225bjj0un	ganar [una competencia]	to win [a competition]	supporting	topic:verb-money-earning-spending-1	Subtopic split (size rule): topic:verb-money-earning-spending (26) split alphabetically in half.
+evibiw8ufb	ganarle a [alguien]	to beat [somebody]	reference	topic:verb-money-earning-spending-1	Subtopic split (size rule): topic:verb-money-earning-spending (26) split alphabetically in half.
+82ydmvggbd	ganarse [algo]	to earn [something]	reference	topic:verb-money-earning-spending-1	Subtopic split (size rule): topic:verb-money-earning-spending (26) split alphabetically in half.
+53ak6stp8u	ganarse la vida	to make a living	reference	topic:verb-money-earning-spending-2	Subtopic split (size rule): topic:verb-money-earning-spending (26) split alphabetically in half.
+ng08o0l6bt	gastar [algo]	to waste [something]	reference	topic:verb-money-earning-spending-2	Subtopic split (size rule): topic:verb-money-earning-spending (26) split alphabetically in half.
+rvq2d8l5eq	gastar [algo]	to spend [something]	supporting	topic:verb-money-earning-spending-2	Subtopic split (size rule): topic:verb-money-earning-spending (26) split alphabetically in half.
+4dots3x0dv	gastar [algo]	to use up [something]	reference	topic:verb-money-earning-spending-2	Subtopic split (size rule): topic:verb-money-earning-spending (26) split alphabetically in half.
+8i7uc2z97a	pagar	to pay	reference	topic:verb-money-earning-spending-2	Subtopic split (size rule): topic:verb-money-earning-spending (26) split alphabetically in half.
+l71bpvl4t0	pagar [algo]	to pay [something]	core	topic:verb-money-earning-spending-2	Subtopic split (size rule): topic:verb-money-earning-spending (26) split alphabetically in half.
+xe9qmpnpef	pagar por [algo]	to pay for [something]	reference	topic:verb-money-earning-spending-2	Subtopic split (size rule): topic:verb-money-earning-spending (26) split alphabetically in half.
+2su9hktaqm	pagar todo	to pay up	reference	topic:verb-money-earning-spending-2	Subtopic split (size rule): topic:verb-money-earning-spending (26) split alphabetically in half.
+gs1i2tjs8s	pagarle a [alguien]	to pay [somebody]	reference	topic:verb-money-earning-spending-2	Subtopic split (size rule): topic:verb-money-earning-spending (26) split alphabetically in half.
+h2ubrz9hyw	valer [un precio]	to cost [an amount]	supporting	topic:verb-money-earning-spending-2	Subtopic split (size rule): topic:verb-money-earning-spending (26) split alphabetically in half.
+im138izvv7	valer [una cantidad]	to be worth [an amount]	supporting	topic:verb-money-earning-spending-2	Subtopic split (size rule): topic:verb-money-earning-spending (26) split alphabetically in half.
+lfya25oahw	valer la pena	to be worth it	supporting	topic:verb-money-earning-spending-2	Subtopic split (size rule): topic:verb-money-earning-spending (26) split alphabetically in half.
+ivhec4s22m	valer la pena [hacer algo]	to be worth [doing something]	supporting	topic:verb-money-earning-spending-2	Subtopic split (size rule): topic:verb-money-earning-spending (26) split alphabetically in half.
+jgfakbesvj	¿[alguien] [hace algo]?	does [somebody] [do something]?	core	topic:verb-creation-hacer-1	Subtopic split (size rule): topic:verb-creation-hacer (30) split alphabetically in half.
+zctehn9sxz	¿[alguien] [hizo algo]?	did [somebody] [do something]?	core	topic:verb-creation-hacer-1	Subtopic split (size rule): topic:verb-creation-hacer (30) split alphabetically in half.
+m2op0ycc10	¿[harás algo]?	will you [do something]?	core	topic:verb-creation-hacer-1	Subtopic split (size rule): topic:verb-creation-hacer (30) split alphabetically in half.
+qoxz39dr3t	¿[harías algo]?	would you [do something]?	core	topic:verb-creation-hacer-1	Subtopic split (size rule): topic:verb-creation-hacer (30) split alphabetically in half.
+c16i76gpbx	hace	does	core	topic:verb-creation-hacer-1	Subtopic split (size rule): topic:verb-creation-hacer (30) split alphabetically in half.
+v6srxq2n55	hacer	do	core	topic:verb-creation-hacer-1	Subtopic split (size rule): topic:verb-creation-hacer (30) split alphabetically in half.
+qt9aqatj4f	hacer	to do	core	topic:verb-creation-hacer-1	Subtopic split (size rule): topic:verb-creation-hacer (30) split alphabetically in half.
+cycrgcf78l	hacer [adjetivo] a [alguien]	to make [somebody] [adjective]	supporting	topic:verb-creation-hacer-1	Subtopic split (size rule): topic:verb-creation-hacer (30) split alphabetically in half.
+m9dfm9pbq2	hacer [algo creado o preparado]	to make [something]	core	topic:verb-creation-hacer-1	Subtopic split (size rule): topic:verb-creation-hacer (30) split alphabetically in half.
+b9jbbszwof	hacer [hacer algo]	to have [something] [done]	supporting	topic:verb-creation-hacer-1	Subtopic split (size rule): topic:verb-creation-hacer (30) split alphabetically in half.
+y19rhj9ey3	hacer [reparar algo]	to have [something] repaired	reference	topic:verb-creation-hacer-1	Subtopic split (size rule): topic:verb-creation-hacer (30) split alphabetically in half.
+1qz4qeh9oi	hacer [una tarea o actividad]	to do [a task or activity]	core	topic:verb-creation-hacer-1	Subtopic split (size rule): topic:verb-creation-hacer (30) split alphabetically in half.
+vuhn72n7gd	hacer amigos	to make friends	supporting	topic:verb-creation-hacer-1	Subtopic split (size rule): topic:verb-creation-hacer (30) split alphabetically in half.
+6rym81cqq5	hacer cola	to stand in line	reference	topic:verb-creation-hacer-1	Subtopic split (size rule): topic:verb-creation-hacer (30) split alphabetically in half.
+1gru886lce	hacer las maletas	to pack	reference	topic:verb-creation-hacer-1	Subtopic split (size rule): topic:verb-creation-hacer (30) split alphabetically in half.
+uriamnzen2	hacer las paces con [alguien]	to make up with [somebody]	reference	topic:verb-creation-hacer-2	Subtopic split (size rule): topic:verb-creation-hacer (30) split alphabetically in half.
+48tg24dwk2	hacer que [alguien] [haga algo]	to make [somebody] [do something]	supporting	topic:verb-creation-hacer-2	Subtopic split (size rule): topic:verb-creation-hacer (30) split alphabetically in half.
+16bgwsuy7m	hacer que [alguien] [haga algo]	to have [somebody] [do something]	reference	topic:verb-creation-hacer-2	Subtopic split (size rule): topic:verb-creation-hacer (30) split alphabetically in half.
+mu7bumpulx	hacer un esfuerzo	to make an effort	reference	topic:verb-creation-hacer-2	Subtopic split (size rule): topic:verb-creation-hacer (30) split alphabetically in half.
+edcjj9goei	hacer un viaje	to take a trip	reference	topic:verb-creation-hacer-2	Subtopic split (size rule): topic:verb-creation-hacer (30) split alphabetically in half.
+1vzkonyjt2	hacer una llamada	to make a call	reference	topic:verb-creation-hacer-2	Subtopic split (size rule): topic:verb-creation-hacer (30) split alphabetically in half.
+wlsh5f0c4u	hacer una reserva	to make a reservation	supporting	topic:verb-creation-hacer-2	Subtopic split (size rule): topic:verb-creation-hacer (30) split alphabetically in half.
+hm7k1xxksu	hacer una sugerencia	to make a suggestion	reference	topic:verb-creation-hacer-2	Subtopic split (size rule): topic:verb-creation-hacer (30) split alphabetically in half.
+u2xyysd9xq	hacerle bien a [alguien]	to be good for [somebody]	reference	topic:verb-creation-hacer-2	Subtopic split (size rule): topic:verb-creation-hacer (30) split alphabetically in half.
+pu6juowymn	hacerle un favor a [alguien]	to do [somebody] a favor	supporting	topic:verb-creation-hacer-2	Subtopic split (size rule): topic:verb-creation-hacer (30) split alphabetically in half.
+b8k9avr7st	hacerse [algo]	to become [something]	reference	topic:verb-creation-hacer-2	Subtopic split (size rule): topic:verb-creation-hacer (30) split alphabetically in half.
+vuq3vxf107	hacerse el tonto	to pretend not to understand	reference	topic:verb-creation-hacer-2	Subtopic split (size rule): topic:verb-creation-hacer (30) split alphabetically in half.
+hk3p7tmczh	hacerse tarde	to get late	reference	topic:verb-creation-hacer-2	Subtopic split (size rule): topic:verb-creation-hacer (30) split alphabetically in half.
+sgum9oyi5l	hizo	did	core	topic:verb-creation-hacer-2	Subtopic split (size rule): topic:verb-creation-hacer (30) split alphabetically in half.
+di2yhfha43	no [haré algo]	won't [do something]	core	topic:verb-creation-hacer-2	Subtopic split (size rule): topic:verb-creation-hacer (30) split alphabetically in half.
+iw04703udx	arreglar [algo]	to fix [something]	reference	topic:verb-creation-repair-other-1	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+q9zbgkk8yk	arreglar [algo]	to arrange [something]	reference	topic:verb-creation-repair-other-1	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+hx40f5mh59	arreglar [algo]	to tidy [something]	reference	topic:verb-creation-repair-other-1	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+7p36ly7jyy	arreglar [algo]	to sort out [something]	reference	topic:verb-creation-repair-other-1	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+lp0ljdtgp7	aumentar	to build	reference	topic:verb-creation-repair-other-1	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+kp2hkv6bhh	cambiar [algo]	to change [something]	supporting	topic:verb-creation-repair-other-1	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+1rve8jq2rm	cambiar [algo] por [algo]	to exchange [something] for [something]	reference	topic:verb-creation-repair-other-1	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+lhq2q49kwb	cambiar de [algo]	to switch [something]	reference	topic:verb-creation-repair-other-1	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+1c10sdwf8m	cambiarse	to get changed	reference	topic:verb-creation-repair-other-1	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+cqxhnvo543	cambiarse de ropa	to change clothes	reference	topic:verb-creation-repair-other-1	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+n0v5y8wx0o	construir	to construct	reference	topic:verb-creation-repair-other-1	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+qrdegrts3w	construir	to build	reference	topic:verb-creation-repair-other-1	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+4z5hy6veqe	construir [algo]	to build [something]	supporting	topic:verb-creation-repair-other-1	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+hyjsumzen7	convertir	to convert	supporting	topic:verb-creation-repair-other-1	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+23teiayo6g	convertirse en [algo]	to become [something]	reference	topic:verb-creation-repair-other-1	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+fyldm4hx88	decrementar	to decrease	reference	topic:verb-creation-repair-other-1	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+90thzh7p12	demoler	to demolish	reference	topic:verb-creation-repair-other-2	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+qszqbcro8d	desarmar	to disarm	reference	topic:verb-creation-repair-other-2	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+1rwj0kt7f8	desarrollar [algo]	to build on [something]	reference	topic:verb-creation-repair-other-2	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+wi8vr5itjx	formar	to form	supporting	topic:verb-creation-repair-other-2	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+dm6zd12erf	incrementar	to increase	supporting	topic:verb-creation-repair-other-2	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+gkn28jhn0w	modificar	to modify	reference	topic:verb-creation-repair-other-2	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+tjn9t0zmm4	pulir	to polish	reference	topic:verb-creation-repair-other-2	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+4e8xlbp20p	reducir	to reduce	supporting	topic:verb-creation-repair-other-2	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+9oke1wki5z	reparar	to repair	supporting	topic:verb-creation-repair-other-2	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+noyh1gv4we	restaurar	to restore	reference	topic:verb-creation-repair-other-2	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+hpvtk2xnfe	romper [algo]	to interrupt [something]	reference	topic:verb-creation-repair-other-2	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+espkmj03d4	romper [algo]	to break [something]	supporting	topic:verb-creation-repair-other-2	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+i20yai9d87	romper [algo]	to tear up [something]	reference	topic:verb-creation-repair-other-2	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+bebv5oi2xq	romper con [alguien]	to break up with [somebody]	reference	topic:verb-creation-repair-other-2	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+oze11uouhg	transformar	to transform	supporting	topic:verb-creation-repair-other-2	Subtopic split (size rule): topic:verb-creation-repair-other (31) split alphabetically in half.
+gb7y8wpma4	activar [una alarma]	to set off [an alarm]	reference	topic:verb-poner-idioms-1-1	Subtopic split (size rule): topic:verb-poner-idioms-1 (28) split alphabetically in half.
+wcvwv6uubd	aguantar [algo]	to put up with [something]	reference	topic:verb-poner-idioms-1-1	Subtopic split (size rule): topic:verb-poner-idioms-1 (28) split alphabetically in half.
+cur1zfeps2	alojar a [alguien]	to put [somebody] up	reference	topic:verb-poner-idioms-1-1	Subtopic split (size rule): topic:verb-poner-idioms-1 (28) split alphabetically in half.
+4tbjc26h9n	anotar [algo]	to set [something] down	reference	topic:verb-poner-idioms-1-1	Subtopic split (size rule): topic:verb-poner-idioms-1 (28) split alphabetically in half.
+zn5lcx080u	apagar [un incendio]	to put out [a fire]	reference	topic:verb-poner-idioms-1-1	Subtopic split (size rule): topic:verb-poner-idioms-1 (28) split alphabetically in half.
+sgssxq75yi	apartar [algo]	to put [something] aside	reference	topic:verb-poner-idioms-1-1	Subtopic split (size rule): topic:verb-poner-idioms-1 (28) split alphabetically in half.
+v0h48i7zia	armar [algo]	to put [something] together	reference	topic:verb-poner-idioms-1-1	Subtopic split (size rule): topic:verb-poner-idioms-1 (28) split alphabetically in half.
+elx2dgp3mq	atribuir [algo] a [algo]	to put [something] down to [something]	reference	topic:verb-poner-idioms-1-1	Subtopic split (size rule): topic:verb-poner-idioms-1 (28) split alphabetically in half.
+bb8a9kyess	avisar a [alguien] sobre [algo]	to put [somebody] onto [something]	reference	topic:verb-poner-idioms-1-1	Subtopic split (size rule): topic:verb-poner-idioms-1 (28) split alphabetically in half.
+5niiiqvgsg	colgar [algo]	to put [something] up	reference	topic:verb-poner-idioms-1-1	Subtopic split (size rule): topic:verb-poner-idioms-1 (28) split alphabetically in half.
+c6s5ipa7sg	comunicar [una idea]	to put [an idea] across	reference	topic:verb-poner-idioms-1-1	Subtopic split (size rule): topic:verb-poner-idioms-1 (28) split alphabetically in half.
+9rl1sd6idk	comunicar a [alguien] por teléfono	to put [somebody] through	reference	topic:verb-poner-idioms-1-1	Subtopic split (size rule): topic:verb-poner-idioms-1 (28) split alphabetically in half.
+jjnf1ruwjg	cuajar	to set	reference	topic:verb-poner-idioms-1-1	Subtopic split (size rule): topic:verb-poner-idioms-1 (28) split alphabetically in half.
+meqlrplce4	dejar [algo] sobre [una superficie]	to put [something] down	supporting	topic:verb-poner-idioms-1-1	Subtopic split (size rule): topic:verb-poner-idioms-1 (28) split alphabetically in half.
+s6q036agkz	desanimar a [alguien]	to put [somebody] off	reference	topic:verb-poner-idioms-1-2	Subtopic split (size rule): topic:verb-poner-idioms-1 (28) split alphabetically in half.
+txq22yyto3	distinguir a [alguien o algo]	to set [somebody or something] apart	reference	topic:verb-poner-idioms-1-2	Subtopic split (size rule): topic:verb-poner-idioms-1 (28) split alphabetically in half.
+xhqmbm1djm	emprender un viaje	to set out	reference	topic:verb-poner-idioms-1-2	Subtopic split (size rule): topic:verb-poner-idioms-1 (28) split alphabetically in half.
+4ifnatwu0r	enfrentar a [alguien] con [alguien]	to put [somebody] against [somebody]	reference	topic:verb-poner-idioms-1-2	Subtopic split (size rule): topic:verb-poner-idioms-1 (28) split alphabetically in half.
+usqslj38q0	establecer [una regla o límite]	to set [a rule or limit]	reference	topic:verb-poner-idioms-1-2	Subtopic split (size rule): topic:verb-poner-idioms-1 (28) split alphabetically in half.
+0cqp4imsbo	exponer [una idea]	to set out [an idea]	reference	topic:verb-poner-idioms-1-2	Subtopic split (size rule): topic:verb-poner-idioms-1 (28) split alphabetically in half.
+klmbnws5k3	expresar [algo] de cierta manera	to put [something] a certain way	reference	topic:verb-poner-idioms-1-2	Subtopic split (size rule): topic:verb-poner-idioms-1 (28) split alphabetically in half.
+vuz1ghifyr	fijarse una meta	to set a goal	reference	topic:verb-poner-idioms-1-2	Subtopic split (size rule): topic:verb-poner-idioms-1 (28) split alphabetically in half.
+xt2fc8yvaz	fundar [una organización]	to set up [an organization]	reference	topic:verb-poner-idioms-1-2	Subtopic split (size rule): topic:verb-poner-idioms-1 (28) split alphabetically in half.
+79su3o2kda	guardar [algo]	to put [something] away	supporting	topic:verb-poner-idioms-1-2	Subtopic split (size rule): topic:verb-poner-idioms-1 (28) split alphabetically in half.
+3ub96rf8ci	hacer pasar a [alguien] por [algo]	to put [somebody] through [something]	reference	topic:verb-poner-idioms-1-2	Subtopic split (size rule): topic:verb-poner-idioms-1 (28) split alphabetically in half.
+cuvs1emqwk	instalar [algo]	to set [something] up	reference	topic:verb-poner-idioms-1-2	Subtopic split (size rule): topic:verb-poner-idioms-1 (28) split alphabetically in half.
+yn8vqkd99o	instalarse [una condición]	to set in	reference	topic:verb-poner-idioms-1-2	Subtopic split (size rule): topic:verb-poner-idioms-1 (28) split alphabetically in half.
+3g6io2gum3	liberar a [alguien]	to set [somebody] free	reference	topic:verb-poner-idioms-1-2	Subtopic split (size rule): topic:verb-poner-idioms-1 (28) split alphabetically in half.
+jf2aw2elxh	menospreciar a [alguien]	to put [somebody] down	reference	topic:verb-poner-idioms-2-1	Subtopic split (size rule): topic:verb-poner-idioms-2 (27) split alphabetically in half.
+1u1hrquecd	molestar a [alguien]	to put [somebody] out	reference	topic:verb-poner-idioms-2-1	Subtopic split (size rule): topic:verb-poner-idioms-2 (27) split alphabetically in half.
+8omp49yd4o	organizar [una reunión]	to set up [a meeting]	reference	topic:verb-poner-idioms-2-1	Subtopic split (size rule): topic:verb-poner-idioms-2 (27) split alphabetically in half.
+u8ocx1l1ad	poner [algo] debajo de [algo]	to put [something] under [something]	supporting	topic:verb-poner-idioms-2-1	Subtopic split (size rule): topic:verb-poner-idioms-2 (27) split alphabetically in half.
+a2i51axsd5	poner [algo] en marcha	to set [something] in motion	reference	topic:verb-poner-idioms-2-1	Subtopic split (size rule): topic:verb-poner-idioms-2 (27) split alphabetically in half.
+lc4ekh76su	poner [algo] en riesgo	to put [something] at risk	reference	topic:verb-poner-idioms-2-1	Subtopic split (size rule): topic:verb-poner-idioms-2 (27) split alphabetically in half.
+7462tgsu12	poner [algo] junto a [algo]	to put [something] next to [something]	supporting	topic:verb-poner-idioms-2-1	Subtopic split (size rule): topic:verb-poner-idioms-2 (27) split alphabetically in half.
+8tlst3bo6o	poner [algo] por escrito	to put [something] in writing	reference	topic:verb-poner-idioms-2-1	Subtopic split (size rule): topic:verb-poner-idioms-2 (27) split alphabetically in half.
+aq5xocbm7o	poner [música o un video]	to play [music or a video]	supporting	topic:verb-poner-idioms-2-1	Subtopic split (size rule): topic:verb-poner-idioms-2 (27) split alphabetically in half.
+xzd9s8bgpf	poner fin a [algo]	to put an end to [something]	reference	topic:verb-poner-idioms-2-1	Subtopic split (size rule): topic:verb-poner-idioms-2 (27) split alphabetically in half.
+dh16jcovbo	poner una alarma para [una hora]	to set an alarm for [a time]	reference	topic:verb-poner-idioms-2-1	Subtopic split (size rule): topic:verb-poner-idioms-2 (27) split alphabetically in half.
+jwap9vw9gm	ponerle nombre a [algo]	to name [something]	reference	topic:verb-poner-idioms-2-1	Subtopic split (size rule): topic:verb-poner-idioms-2 (27) split alphabetically in half.
+sga7fa9bp9	ponerse a [hacer algo]	to begin to [do something]	supporting	topic:verb-poner-idioms-2-1	Subtopic split (size rule): topic:verb-poner-idioms-2 (27) split alphabetically in half.
+a1p4uhtcxu	ponerse a [hacer algo]	to start [doing something]	supporting	topic:verb-poner-idioms-2-1	Subtopic split (size rule): topic:verb-poner-idioms-2 (27) split alphabetically in half.
+amm42otpmw	ponerse a [hacer algo]	to set about [doing something]	reference	topic:verb-poner-idioms-2-2	Subtopic split (size rule): topic:verb-poner-idioms-2 (27) split alphabetically in half.
+dq9hw47p1r	ponerse al día con [algo o alguien]	to catch up with [something or somebody]	reference	topic:verb-poner-idioms-2-2	Subtopic split (size rule): topic:verb-poner-idioms-2 (27) split alphabetically in half.
+lz3nxrm63o	ponerse de acuerdo con [alguien]	to agree with [somebody]	supporting	topic:verb-poner-idioms-2-2	Subtopic split (size rule): topic:verb-poner-idioms-2 (27) split alphabetically in half.
+fvn3ipywv9	ponerse de pie	to stand up	supporting	topic:verb-poner-idioms-2-2	Subtopic split (size rule): topic:verb-poner-idioms-2 (27) split alphabetically in half.
+yq888yksqh	posponer [algo]	to put [something] off	reference	topic:verb-poner-idioms-2-2	Subtopic split (size rule): topic:verb-poner-idioms-2 (27) split alphabetically in half.
+ligtxfh1ka	presentar [una solicitud]	to put in [an application]	reference	topic:verb-poner-idioms-2-2	Subtopic split (size rule): topic:verb-poner-idioms-2 (27) split alphabetically in half.
+srdsgbfh59	proponer [una idea]	to put [an idea] forward	reference	topic:verb-poner-idioms-2-2	Subtopic split (size rule): topic:verb-poner-idioms-2 (27) split alphabetically in half.
+fefhc4duwl	publicar [algo]	to put [something] out	reference	topic:verb-poner-idioms-2-2	Subtopic split (size rule): topic:verb-poner-idioms-2 (27) split alphabetically in half.
+jgjoy3pa91	reservar [algo]	to set [something] aside	reference	topic:verb-poner-idioms-2-2	Subtopic split (size rule): topic:verb-poner-idioms-2 (27) split alphabetically in half.
+r6x05dewcz	retrasar [algo]	to set [something] back	reference	topic:verb-poner-idioms-2-2	Subtopic split (size rule): topic:verb-poner-idioms-2 (27) split alphabetically in half.
+468rurvzg1	salir de viaje	to set off	reference	topic:verb-poner-idioms-2-2	Subtopic split (size rule): topic:verb-poner-idioms-2 (27) split alphabetically in half.
+gsjekkk0qa	tenderle una trampa a [alguien]	to set [somebody] up	reference	topic:verb-poner-idioms-2-2	Subtopic split (size rule): topic:verb-poner-idioms-2 (27) split alphabetically in half.
+o1dt8eusto	volver a poner [algo] en su lugar	to put [something] back	supporting	topic:verb-poner-idioms-2-2	Subtopic split (size rule): topic:verb-poner-idioms-2 (27) split alphabetically in half.
+9dbk50wj9u	abrir [algo]	to open [something]	core	topic:verb-household-1-1	Subtopic split (size rule): topic:verb-household-1 (22) split alphabetically in half.
+mrytj7kn57	abrir [algo] por completo	to open [something] up	reference	topic:verb-household-1-1	Subtopic split (size rule): topic:verb-household-1 (22) split alphabetically in half.
+4w8lwiav5p	abrir [un negocio]	to start [a business]	reference	topic:verb-household-1-1	Subtopic split (size rule): topic:verb-household-1 (22) split alphabetically in half.
+vyb77nksau	abrir [una cuenta]	to open [an account]	reference	topic:verb-household-1-1	Subtopic split (size rule): topic:verb-household-1 (22) split alphabetically in half.
+nokrvtmufq	abrir [una reunión o un evento]	to open [a meeting or event]	reference	topic:verb-household-1-1	Subtopic split (size rule): topic:verb-household-1 (22) split alphabetically in half.
+v92yqsjvi1	abrir a [un lugar]	to open onto [a place]	reference	topic:verb-household-1-1	Subtopic split (size rule): topic:verb-household-1 (22) split alphabetically in half.
+4wrjursav6	abrir fuego	to open fire	reference	topic:verb-household-1-1	Subtopic split (size rule): topic:verb-household-1 (22) split alphabetically in half.
+6a0qr8eums	abrirse a [algo]	to open up to [something]	reference	topic:verb-household-1-1	Subtopic split (size rule): topic:verb-household-1 (22) split alphabetically in half.
+0ngr08140i	abrirse con [alguien]	to open up to [somebody]	reference	topic:verb-household-1-1	Subtopic split (size rule): topic:verb-household-1 (22) split alphabetically in half.
+nam8t6o2da	alarmar	to alarm	reference	topic:verb-household-1-1	Subtopic split (size rule): topic:verb-household-1 (22) split alphabetically in half.
+kxzo7hrvsf	andar [un dispositivo]	for [a device] to work	reference	topic:verb-household-1-1	Subtopic split (size rule): topic:verb-household-1 (22) split alphabetically in half.
+23wqurqvf5	apagar [algo]	to turn off [something]	supporting	topic:verb-household-1-2	Subtopic split (size rule): topic:verb-household-1 (22) split alphabetically in half.
+mnhttsu43g	apagar [un dispositivo]	to shut down [a device]	reference	topic:verb-household-1-2	Subtopic split (size rule): topic:verb-household-1 (22) split alphabetically in half.
+xuzwzg1iov	apagar [un objeto largo]	to turn off [a long object]	reference	topic:verb-household-1-2	Subtopic split (size rule): topic:verb-household-1 (22) split alphabetically in half.
+mtyml2elsq	apagarse	to fade away	reference	topic:verb-household-1-2	Subtopic split (size rule): topic:verb-household-1 (22) split alphabetically in half.
+ajw2q69mhg	bajar [un archivo]	to download [a file]	reference	topic:verb-household-1-2	Subtopic split (size rule): topic:verb-household-1 (22) split alphabetically in half.
+qtbz9cya2h	cerrar [algo]	to close [something]	reference	topic:verb-household-1-2	Subtopic split (size rule): topic:verb-household-1 (22) split alphabetically in half.
+8aqh4o1vop	cerrar [algo]	to block off [something]	reference	topic:verb-household-1-2	Subtopic split (size rule): topic:verb-household-1 (22) split alphabetically in half.
+vaxrphuc47	cerrar sesión	to log out	reference	topic:verb-household-1-2	Subtopic split (size rule): topic:verb-household-1 (22) split alphabetically in half.
+7956o3ws9x	cerrar un trato	to close a deal	reference	topic:verb-household-1-2	Subtopic split (size rule): topic:verb-household-1 (22) split alphabetically in half.
+do26qqvb93	Cierra la puerta.	Close the door.	supporting	topic:verb-household-1-2	Subtopic split (size rule): topic:verb-household-1 (22) split alphabetically in half.
+zw81jy10ge	Cierre la puerta.	Close the door.	supporting	topic:verb-household-1-2	Subtopic split (size rule): topic:verb-household-1 (22) split alphabetically in half.
+g1jufpr1jo	Cierren la puerta.	Close the door.	supporting	topic:verb-household-2-1	Subtopic split (size rule): topic:verb-household-2 (21) split alphabetically in half.
+ngpbpfvmft	encender [algo]	to light [something]	reference	topic:verb-household-2-1	Subtopic split (size rule): topic:verb-household-2 (21) split alphabetically in half.
+jgf787l3a9	encender [algo]	to spark [something]	reference	topic:verb-household-2-1	Subtopic split (size rule): topic:verb-household-2 (21) split alphabetically in half.
+6ufoal1lhk	encender [algo]	to turn on [something]	reference	topic:verb-household-2-1	Subtopic split (size rule): topic:verb-household-2 (21) split alphabetically in half.
+of2xl1evmv	encender [un aparato]	to start [a machine]	reference	topic:verb-household-2-1	Subtopic split (size rule): topic:verb-household-2 (21) split alphabetically in half.
+tk7obpumjc	encender [un vehículo]	to start [a vehicle]	reference	topic:verb-household-2-1	Subtopic split (size rule): topic:verb-household-2 (21) split alphabetically in half.
+3u7kob7n30	guardar [un archivo]	to save [a file]	reference	topic:verb-household-2-1	Subtopic split (size rule): topic:verb-household-2 (21) split alphabetically in half.
+q8k4rkte05	meter [algo] en [algo]	to insert [something] into [something]	reference	topic:verb-household-2-1	Subtopic split (size rule): topic:verb-household-2 (21) split alphabetically in half.
+8on4ssnvkm	meter [algo] en [algo]	to put [something] into [something]	reference	topic:verb-household-2-1	Subtopic split (size rule): topic:verb-household-2 (21) split alphabetically in half.
+0xc6cj4q1g	meter a [alguien] en [algo]	to involve [somebody] in [something]	reference	topic:verb-household-2-1	Subtopic split (size rule): topic:verb-household-2 (21) split alphabetically in half.
+wq1ejblx66	meter a [alguien] en [un horario]	to fit [somebody] into [a schedule]	reference	topic:verb-household-2-1	Subtopic split (size rule): topic:verb-household-2 (21) split alphabetically in half.
+8pin6oau9g	meterse a [hacer algo]	to get into [doing something]	reference	topic:verb-household-2-2	Subtopic split (size rule): topic:verb-household-2 (21) split alphabetically in half.
+grcvzooa7a	meterse en [algo]	to interfere in [something]	reference	topic:verb-household-2-2	Subtopic split (size rule): topic:verb-household-2 (21) split alphabetically in half.
+8eeezi57j4	meterse en [un lugar]	to get into [a place]	reference	topic:verb-household-2-2	Subtopic split (size rule): topic:verb-household-2 (21) split alphabetically in half.
+4c8iabv3yz	meterse en problemas	to get into trouble	reference	topic:verb-household-2-2	Subtopic split (size rule): topic:verb-household-2 (21) split alphabetically in half.
+jyvm1fkdq7	morirse [un dispositivo]	for [a device] to die	reference	topic:verb-household-2-2	Subtopic split (size rule): topic:verb-household-2 (21) split alphabetically in half.
+pdc3u4lu4a	No cierre la puerta.	Don't close the door.	reference	topic:verb-household-2-2	Subtopic split (size rule): topic:verb-household-2 (21) split alphabetically in half.
+q98pxxzqf3	No cierres la puerta.	Don't close the door.	supporting	topic:verb-household-2-2	Subtopic split (size rule): topic:verb-household-2 (21) split alphabetically in half.
+6u7a74ndy9	quitar [música o sonido]	to turn off [music or sound]	supporting	topic:verb-household-2-2	Subtopic split (size rule): topic:verb-household-2 (21) split alphabetically in half.
+y7vpfl2o2f	subir [un archivo]	to upload [a file]	reference	topic:verb-household-2-2	Subtopic split (size rule): topic:verb-household-2 (21) split alphabetically in half.
+7em182ixyo	tocar la puerta	to knock on the door	supporting	topic:verb-household-2-2	Subtopic split (size rule): topic:verb-household-2 (21) split alphabetically in half.
+zg737wtrp2	ayudar a [alguien] con [algo]	to help [somebody] with [something]	supporting	topic:verb-social-relationships-1	Subtopic split (size rule): topic:verb-social-relationships (27) split alphabetically in half.
+l9nbah9qj7	ayudar a [hacer algo]	to help [do something]	reference	topic:verb-social-relationships-1	Subtopic split (size rule): topic:verb-social-relationships (27) split alphabetically in half.
+58sc7ad4dy	ayudarle a [alguien] a [hacer algo]	to help [somebody] [to do something]	supporting	topic:verb-social-relationships-1	Subtopic split (size rule): topic:verb-social-relationships (27) split alphabetically in half.
+0jznmegke5	ayudarle a [alguien] a [hacer algo]	to help [somebody] [do something]	supporting	topic:verb-social-relationships-1	Subtopic split (size rule): topic:verb-social-relationships (27) split alphabetically in half.
+6zok4qn7s1	ayudarse de [algo]	to use [something] to help oneself	reference	topic:verb-social-relationships-1	Subtopic split (size rule): topic:verb-social-relationships (27) split alphabetically in half.
+jkb4nwb6qj	caer en [un día o una fecha]	to fall on [a day or date]	reference	topic:verb-social-relationships-1	Subtopic split (size rule): topic:verb-social-relationships (27) split alphabetically in half.
+gx8qvdgggd	casar [algo] con [algo]	to reconcile [something] with [something]	reference	topic:verb-social-relationships-1	Subtopic split (size rule): topic:verb-social-relationships (27) split alphabetically in half.
+fkr7q6ehdp	casar a [alguien]	to marry [somebody]	reference	topic:verb-social-relationships-1	Subtopic split (size rule): topic:verb-social-relationships (27) split alphabetically in half.
+27wshog3ea	casar con [algo]	to match [something]	reference	topic:verb-social-relationships-1	Subtopic split (size rule): topic:verb-social-relationships (27) split alphabetically in half.
+h4e5zg4qih	casarse	to get married	supporting	topic:verb-social-relationships-1	Subtopic split (size rule): topic:verb-social-relationships (27) split alphabetically in half.
+4m126edqdj	cuidar [algo]	to watch [something]	reference	topic:verb-social-relationships-1	Subtopic split (size rule): topic:verb-social-relationships (27) split alphabetically in half.
+xwr40xdiyc	cuidar [alguien]	to care for [somebody]	reference	topic:verb-social-relationships-1	Subtopic split (size rule): topic:verb-social-relationships (27) split alphabetically in half.
+o5cjflzcow	cuidar a [alguien]	to take care of [somebody]	reference	topic:verb-social-relationships-1	Subtopic split (size rule): topic:verb-social-relationships (27) split alphabetically in half.
+d20bdrzjfo	cuidar a [alguien]	to look after [somebody]	supporting	topic:verb-social-relationships-1	Subtopic split (size rule): topic:verb-social-relationships (27) split alphabetically in half.
+keipu2amzu	despedir [algo]	to give off [something]	reference	topic:verb-social-relationships-2	Subtopic split (size rule): topic:verb-social-relationships (27) split alphabetically in half.
+s6qz7seduj	despedir a [alguien]	to fire [somebody]	reference	topic:verb-social-relationships-2	Subtopic split (size rule): topic:verb-social-relationships (27) split alphabetically in half.
+1w53owbdde	despedirse de [alguien]	to say goodbye to [somebody]	reference	topic:verb-social-relationships-2	Subtopic split (size rule): topic:verb-social-relationships (27) split alphabetically in half.
+dpp6pujrc4	entretener	to entertain	reference	topic:verb-social-relationships-2	Subtopic split (size rule): topic:verb-social-relationships (27) split alphabetically in half.
+t8ze0gyt3p	invitar	to invite	supporting	topic:verb-social-relationships-2	Subtopic split (size rule): topic:verb-social-relationships (27) split alphabetically in half.
+5x31mxhcwq	jugar [un juego o deporte]	to play [a game or sport]	supporting	topic:verb-social-relationships-2	Subtopic split (size rule): topic:verb-social-relationships (27) split alphabetically in half.
+krz97g2k8a	jugar con [algo]	to play with [something]	reference	topic:verb-social-relationships-2	Subtopic split (size rule): topic:verb-social-relationships (27) split alphabetically in half.
+fsiaz32aji	jugar un papel	to play a role	reference	topic:verb-social-relationships-2	Subtopic split (size rule): topic:verb-social-relationships (27) split alphabetically in half.
+vb4hrz9umj	marcar [una fecha u hora]	to schedule [a date or time]	reference	topic:verb-social-relationships-2	Subtopic split (size rule): topic:verb-social-relationships (27) split alphabetically in half.
+r97jh0nzir	poner una fecha para [algo]	to set a date for [something]	reference	topic:verb-social-relationships-2	Subtopic split (size rule): topic:verb-social-relationships (27) split alphabetically in half.
+ull88y8rzv	reunir	to reunite	reference	topic:verb-social-relationships-2	Subtopic split (size rule): topic:verb-social-relationships (27) split alphabetically in half.
+rnznavwcfr	salir con [alguien]	to date [somebody]	supporting	topic:verb-social-relationships-2	Subtopic split (size rule): topic:verb-social-relationships (27) split alphabetically in half.
+s2ykj8ztvj	visitar	to visit	supporting	topic:verb-social-relationships-2	Subtopic split (size rule): topic:verb-social-relationships (27) split alphabetically in half.
+12y0cip3q1	acabar con [algo]	to kill [something]	reference	topic:verb-conflict-crime-1	Subtopic split (size rule): topic:verb-conflict-crime (30) split alphabetically in half.
+t7xdhmoj13	acusar	to accuse	reference	topic:verb-conflict-crime-1	Subtopic split (size rule): topic:verb-conflict-crime (30) split alphabetically in half.
+ekfnmwolxk	cargarse a [alguien]	to kill [somebody]	reference	topic:verb-conflict-crime-1	Subtopic split (size rule): topic:verb-conflict-crime (30) split alphabetically in half.
+f5l6clhdf8	castigar	to punish	reference	topic:verb-conflict-crime-1	Subtopic split (size rule): topic:verb-conflict-crime (30) split alphabetically in half.
+w9bz3hfyb4	defender	to defend	supporting	topic:verb-conflict-crime-1	Subtopic split (size rule): topic:verb-conflict-crime (30) split alphabetically in half.
+u1njnze2ss	detener	to detain	reference	topic:verb-conflict-crime-1	Subtopic split (size rule): topic:verb-conflict-crime (30) split alphabetically in half.
+htgjdwiqzm	detener [algo]	to stop [something]	reference	topic:verb-conflict-crime-1	Subtopic split (size rule): topic:verb-conflict-crime (30) split alphabetically in half.
+npbo00x4un	detener [algo/alguien]	to hold back [something/somebody]	reference	topic:verb-conflict-crime-1	Subtopic split (size rule): topic:verb-conflict-crime (30) split alphabetically in half.
+ykeh4ro7pq	detener a [alguien]	to arrest [somebody]	reference	topic:verb-conflict-crime-1	Subtopic split (size rule): topic:verb-conflict-crime (30) split alphabetically in half.
+rdxs81dzm7	detener a [alguien]	to detain [somebody]	reference	topic:verb-conflict-crime-1	Subtopic split (size rule): topic:verb-conflict-crime (30) split alphabetically in half.
+zvkx50j9c5	detenerse para [hacer algo]	to stop to [do something]	supporting	topic:verb-conflict-crime-1	Subtopic split (size rule): topic:verb-conflict-crime (30) split alphabetically in half.
+w43ib0sqsf	hacer tiempo	to kill time	reference	topic:verb-conflict-crime-1	Subtopic split (size rule): topic:verb-conflict-crime (30) split alphabetically in half.
+lgialq6b94	matar a [algo/alguien]	to kill [something/somebody]	reference	topic:verb-conflict-crime-1	Subtopic split (size rule): topic:verb-conflict-crime (30) split alphabetically in half.
+n59cs066v8	matar a [alguien]	to be killing [somebody]	reference	topic:verb-conflict-crime-1	Subtopic split (size rule): topic:verb-conflict-crime (30) split alphabetically in half.
+9a1cfj0hhj	matar el tiempo	to kill time	reference	topic:verb-conflict-crime-1	Subtopic split (size rule): topic:verb-conflict-crime (30) split alphabetically in half.
+g05qdfu47y	oponerse	to oppose	reference	topic:verb-conflict-crime-2	Subtopic split (size rule): topic:verb-conflict-crime (30) split alphabetically in half.
+m0s1jmkq6a	pegar [algo] a [algo]	to stick [something] onto [something]	reference	topic:verb-conflict-crime-2	Subtopic split (size rule): topic:verb-conflict-crime (30) split alphabetically in half.
+caf1qnikua	pegar con [algo]	to match [something]	reference	topic:verb-conflict-crime-2	Subtopic split (size rule): topic:verb-conflict-crime (30) split alphabetically in half.
+bby0sovznk	pegarle [una enfermedad] a [alguien]	to give [somebody] an illness	reference	topic:verb-conflict-crime-2	Subtopic split (size rule): topic:verb-conflict-crime (30) split alphabetically in half.
+9s6oz3nwye	pegarle a [algo/alguien]	to hit [something/somebody]	reference	topic:verb-conflict-crime-2	Subtopic split (size rule): topic:verb-conflict-crime (30) split alphabetically in half.
+7b0w8087fh	pegarle al premio mayor	to hit the jackpot	reference	topic:verb-conflict-crime-2	Subtopic split (size rule): topic:verb-conflict-crime (30) split alphabetically in half.
+nzqc17mu73	pegarse a [algo]	to get stuck to [something]	reference	topic:verb-conflict-crime-2	Subtopic split (size rule): topic:verb-conflict-crime (30) split alphabetically in half.
+m1opppp4s5	pegarse a [algo/alguien]	to stay close to [something/somebody]	reference	topic:verb-conflict-crime-2	Subtopic split (size rule): topic:verb-conflict-crime (30) split alphabetically in half.
+op2g7f5we1	pegársele [algo] a [alguien]	for [something] to rub off on [somebody]	reference	topic:verb-conflict-crime-2	Subtopic split (size rule): topic:verb-conflict-crime (30) split alphabetically in half.
+szl8div93d	resistir	to resist	supporting	topic:verb-conflict-crime-2	Subtopic split (size rule): topic:verb-conflict-crime (30) split alphabetically in half.
+15kcw4vn4r	robar [algo]	to steal [something]	supporting	topic:verb-conflict-crime-2	Subtopic split (size rule): topic:verb-conflict-crime (30) split alphabetically in half.
+nvywv2tlgk	robar [un lugar]	to rob [a place]	reference	topic:verb-conflict-crime-2	Subtopic split (size rule): topic:verb-conflict-crime (30) split alphabetically in half.
+gyhcf0i5kb	robar a [alguien]	to rob [somebody]	reference	topic:verb-conflict-crime-2	Subtopic split (size rule): topic:verb-conflict-crime (30) split alphabetically in half.
+61rt52kj37	robarle [algo] a [alguien]	to steal [something] from [somebody]	supporting	topic:verb-conflict-crime-2	Subtopic split (size rule): topic:verb-conflict-crime (30) split alphabetically in half.
+muc3ps9ei8	robarse el show	to steal the show	reference	topic:verb-conflict-crime-2	Subtopic split (size rule): topic:verb-conflict-crime (30) split alphabetically in half.
+56hciu6j5h	asegurar [algo]	to insure [something]	reference	topic:verb-admin-legal-formal-1	Subtopic split (size rule): topic:verb-admin-legal-formal (22) split alphabetically in half.
+gwnpt7pmq9	asegurarse de que [algo]	to make sure [something]	reference	topic:verb-admin-legal-formal-1	Subtopic split (size rule): topic:verb-admin-legal-formal (22) split alphabetically in half.
+k5bar7pzxw	autorizar	to authorize	reference	topic:verb-admin-legal-formal-1	Subtopic split (size rule): topic:verb-admin-legal-formal (22) split alphabetically in half.
+bkizaixxrv	comparecer ante [una autoridad]	to appear before [an authority]	reference	topic:verb-admin-legal-formal-1	Subtopic split (size rule): topic:verb-admin-legal-formal (22) split alphabetically in half.
+q6rkgiwa5d	declarar	to declare	reference	topic:verb-admin-legal-formal-1	Subtopic split (size rule): topic:verb-admin-legal-formal (22) split alphabetically in half.
+ggyjh7g2dw	establecer	to establish	supporting	topic:verb-admin-legal-formal-1	Subtopic split (size rule): topic:verb-admin-legal-formal (22) split alphabetically in half.
+ionvi8pijp	exigir que [alguien] [haga algo]	to require [somebody] to [do something]	reference	topic:verb-admin-legal-formal-1	Subtopic split (size rule): topic:verb-admin-legal-formal (22) split alphabetically in half.
+inf9g9dmd7	imponer	to impose	reference	topic:verb-admin-legal-formal-1	Subtopic split (size rule): topic:verb-admin-legal-formal (22) split alphabetically in half.
+ip4nnqfbwi	necesitar [algo]	to require [something]	reference	topic:verb-admin-legal-formal-1	Subtopic split (size rule): topic:verb-admin-legal-formal (22) split alphabetically in half.
+taszogayx6	ordenar [algo]	to sort [something]	reference	topic:verb-admin-legal-formal-1	Subtopic split (size rule): topic:verb-admin-legal-formal (22) split alphabetically in half.
+zdbqkvbfi8	ordenar [un lugar]	to tidy [a place]	reference	topic:verb-admin-legal-formal-1	Subtopic split (size rule): topic:verb-admin-legal-formal (22) split alphabetically in half.
+9vw489mt1w	ordenar que [alguien] [haga algo]	to order [somebody] [to do something]	reference	topic:verb-admin-legal-formal-2	Subtopic split (size rule): topic:verb-admin-legal-formal (22) split alphabetically in half.
+4b6y1dtam9	permitir	to permit	supporting	topic:verb-admin-legal-formal-2	Subtopic split (size rule): topic:verb-admin-legal-formal (22) split alphabetically in half.
+ut8jfj84nw	permitir [hacer algo]	to allow [doing something]	reference	topic:verb-admin-legal-formal-2	Subtopic split (size rule): topic:verb-admin-legal-formal (22) split alphabetically in half.
+pw4jhrqiyg	permitir que [alguien] [haga algo]	to allow [somebody] to [do something]	reference	topic:verb-admin-legal-formal-2	Subtopic split (size rule): topic:verb-admin-legal-formal (22) split alphabetically in half.
+kfalstjcfy	postularse a [algo]	to apply for [something]	reference	topic:verb-admin-legal-formal-2	Subtopic split (size rule): topic:verb-admin-legal-formal (22) split alphabetically in half.
+3qo4l6ua2u	prohibir	to prohibit	reference	topic:verb-admin-legal-formal-2	Subtopic split (size rule): topic:verb-admin-legal-formal (22) split alphabetically in half.
+j7ecz0bqjs	requerir	to require	supporting	topic:verb-admin-legal-formal-2	Subtopic split (size rule): topic:verb-admin-legal-formal (22) split alphabetically in half.
+kloejv5hcu	requerir [algo]	to require [something]	reference	topic:verb-admin-legal-formal-2	Subtopic split (size rule): topic:verb-admin-legal-formal (22) split alphabetically in half.
+at6h8seokt	solicitar [algo]	to request [something]	reference	topic:verb-admin-legal-formal-2	Subtopic split (size rule): topic:verb-admin-legal-formal (22) split alphabetically in half.
+cdmbvhyfgd	solicitar [algo]	to apply for [something]	reference	topic:verb-admin-legal-formal-2	Subtopic split (size rule): topic:verb-admin-legal-formal (22) split alphabetically in half.
+15acw0vdrq	someterse	to submit	reference	topic:verb-admin-legal-formal-2	Subtopic split (size rule): topic:verb-admin-legal-formal (22) split alphabetically in half.
+qqt1bizdh7	centrar	to center	reference	topic:verb-formal-abstract-1-1	Subtopic split (size rule): topic:verb-formal-abstract-1 (25) split alphabetically in half.
+u9hxahpvn8	coleccionar	to collect	reference	topic:verb-formal-abstract-1-1	Subtopic split (size rule): topic:verb-formal-abstract-1 (25) split alphabetically in half.
+98sen5xp7y	comprender	to comprehend	reference	topic:verb-formal-abstract-1-1	Subtopic split (size rule): topic:verb-formal-abstract-1 (25) split alphabetically in half.
+o3l6oubtj6	conceder	to concede	reference	topic:verb-formal-abstract-1-1	Subtopic split (size rule): topic:verb-formal-abstract-1 (25) split alphabetically in half.
+pe06lzc5y3	concluir	to conclude	reference	topic:verb-formal-abstract-1-1	Subtopic split (size rule): topic:verb-formal-abstract-1 (25) split alphabetically in half.
+34qked2yf9	corresponder	to correspond	reference	topic:verb-formal-abstract-1-1	Subtopic split (size rule): topic:verb-formal-abstract-1 (25) split alphabetically in half.
+ph4y9pkwf1	derivar	to derive	reference	topic:verb-formal-abstract-1-1	Subtopic split (size rule): topic:verb-formal-abstract-1 (25) split alphabetically in half.
+sieanaw5b9	detectar	to detect	reference	topic:verb-formal-abstract-1-1	Subtopic split (size rule): topic:verb-formal-abstract-1 (25) split alphabetically in half.
+ll708ai2nl	diferir	to differ	reference	topic:verb-formal-abstract-1-1	Subtopic split (size rule): topic:verb-formal-abstract-1 (25) split alphabetically in half.
+4rbp4wgwso	distraer	to distract	reference	topic:verb-formal-abstract-1-1	Subtopic split (size rule): topic:verb-formal-abstract-1 (25) split alphabetically in half.
+zb1r0lavqo	exceder	to exceed	reference	topic:verb-formal-abstract-1-1	Subtopic split (size rule): topic:verb-formal-abstract-1 (25) split alphabetically in half.
+hzw88e00ad	exhibir	to exhibit	reference	topic:verb-formal-abstract-1-1	Subtopic split (size rule): topic:verb-formal-abstract-1 (25) split alphabetically in half.
+2y6u1mwiqm	expirar	to expire	reference	topic:verb-formal-abstract-1-1	Subtopic split (size rule): topic:verb-formal-abstract-1 (25) split alphabetically in half.
+mt3fyxp4nv	exponer	to expose	reference	topic:verb-formal-abstract-1-2	Subtopic split (size rule): topic:verb-formal-abstract-1 (25) split alphabetically in half.
+nd8kd8q9fc	extender	to extend	reference	topic:verb-formal-abstract-1-2	Subtopic split (size rule): topic:verb-formal-abstract-1 (25) split alphabetically in half.
+pnp6pglvyd	guiar	to guide	reference	topic:verb-formal-abstract-1-2	Subtopic split (size rule): topic:verb-formal-abstract-1 (25) split alphabetically in half.
+bp593daco9	implicar	to imply	reference	topic:verb-formal-abstract-1-2	Subtopic split (size rule): topic:verb-formal-abstract-1 (25) split alphabetically in half.
+3scspzwt5d	instruir	to instruct	reference	topic:verb-formal-abstract-1-2	Subtopic split (size rule): topic:verb-formal-abstract-1 (25) split alphabetically in half.
+qhthbncgk7	interactuar	to interact	reference	topic:verb-formal-abstract-1-2	Subtopic split (size rule): topic:verb-formal-abstract-1 (25) split alphabetically in half.
+d74s6zcq9j	justificar	to justify	reference	topic:verb-formal-abstract-1-2	Subtopic split (size rule): topic:verb-formal-abstract-1 (25) split alphabetically in half.
+p0abu0rm9f	ofender	to offend	reference	topic:verb-formal-abstract-1-2	Subtopic split (size rule): topic:verb-formal-abstract-1 (25) split alphabetically in half.
+6em7hpnut9	operar	to operate	reference	topic:verb-formal-abstract-1-2	Subtopic split (size rule): topic:verb-formal-abstract-1 (25) split alphabetically in half.
+ihevpwrjl9	proceder	to proceed	reference	topic:verb-formal-abstract-1-2	Subtopic split (size rule): topic:verb-formal-abstract-1 (25) split alphabetically in half.
+4fc2kcqip3	proponer	to propose	reference	topic:verb-formal-abstract-1-2	Subtopic split (size rule): topic:verb-formal-abstract-1 (25) split alphabetically in half.
+bwkdp2bsi4	revertir	to revert	reference	topic:verb-formal-abstract-1-2	Subtopic split (size rule): topic:verb-formal-abstract-1 (25) split alphabetically in half.
