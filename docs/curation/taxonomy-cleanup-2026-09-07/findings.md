@@ -95,6 +95,24 @@ resuming session does not re-run them. IDs are stable.
 | grammar-term metadata rows | `qlkvt2tkf2` tiempo pasado→past time, `ucz5g070t5` tiempo presente, `8n1lf1difn` tiempo futuro, `v9yz4wf0xk` tiempo verbal→verb tense, `k70eg8dyji` [adverbio…] frame | **flag** — these are metalinguistic labels, not teachable Spanish→English concepts. Candidate `trash` pending user confirmation. |
 | misc | `cqyv9nbo0n` terminado→finished, `uoz9og2i44` un montón de [sustantivo], `k70eg8dyji` | `terminado` → Verb-Forms or Adjectives; `un montón de` → Determiners quantifier |
 
+### Batch 2 applied (2026-09-07)
+
+Homed (19): `la semana/mes/año pasada` → `pos:adverb` + `topic:adv-time-relative-day`;
+`cerca/lejos de un lugar`, `a casa` → `pos:adverb` (already had `topic:location`);
+`un poco`, `poco`, `más de [cantidad]`, `menos [N contable]`, `un montón de` →
+`topic:determiner` (+ quantifier group); `más pronto de lo esperado`, `ya→before`,
+`[período] atrás` → `pos:adverb` + a `topic:adv-time-*` group;
+`[algo] lleva [tiempo]` → `pos:verb` + `topic:verb-weather-time-duration`;
+`directamente hacia adelante` ×2 → `pos:adverb`+`topic:location`+`topic:transformation`;
+`terminado→finished` → `topic:transformation` (has `morphology:suffix-ed`).
+
+**Trashed (5, reversible — user review):** `k70eg8dyji`
+"[adverbio de frecuencia] [verbo principal]" (template placeholder);
+`qlkvt2tkf2`/`ucz5g070t5`/`8n1lf1difn` "tiempo pasado/presente/futuro → past/present/future time";
+`v9yz4wf0xk` "tiempo verbal → verb tense" (all metalinguistic grammar terms,
+tagged `grammar term`, teach nothing as a Spanish→English mapping). Recover
+from `/curriculum?role=trash` if any should stay.
+
 <a id="gaps"></a>
 ## Small within-topic gaps
 

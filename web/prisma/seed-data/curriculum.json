@@ -12283,7 +12283,9 @@
         "topic:time",
         "es:lleva",
         "en:takes",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:verb",
+        "topic:verb-weather-time-duration"
       ],
       "curriculumRole": "supporting"
     },
@@ -31047,7 +31049,9 @@
         "form:past",
         "es:atrás",
         "en:ago",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:adverb",
+        "topic:adv-time-relative-day"
       ],
       "curriculumRole": "reference"
     },
@@ -33699,7 +33703,8 @@
         "en:more",
         "pos:determiner",
         "audit:reviewed",
-        "topic:quant-more-less"
+        "topic:quant-more-less",
+        "topic:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -33787,7 +33792,10 @@
       "collections": [
         "es:menos",
         "en:fewer",
-        "pos:determiner"
+        "pos:determiner",
+        "topic:determiner",
+        "topic:quant-more-less",
+        "grammar:quantifier"
       ],
       "curriculumRole": "reference"
     },
@@ -34166,7 +34174,9 @@
         "grammar:fixed-expression",
         "es:más",
         "en:earlier",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:adverb",
+        "topic:adv-time-now-and-timing"
       ],
       "curriculumRole": "reference"
     },
@@ -36769,7 +36779,9 @@
         "topic:time",
         "es:ya",
         "en:before",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:adverb",
+        "topic:adv-time-now-and-timing"
       ],
       "curriculumRole": "reference"
     },
@@ -51276,7 +51288,8 @@
         "morphology:suffix-ed",
         "es:terminado",
         "en:finished",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:transformation"
       ],
       "curriculumRole": "supporting"
     },
@@ -61393,7 +61406,8 @@
         "topic:location",
         "topic:direction",
         "en:home",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:adverb"
       ],
       "curriculumRole": "reference"
     },
@@ -61434,7 +61448,8 @@
         "topic:direction",
         "es:cerca",
         "grammar:proximal",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:adverb"
       ],
       "curriculumRole": "supporting"
     },
@@ -61453,7 +61468,8 @@
         "topic:direction",
         "es:cerca",
         "en:close",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:adverb"
       ],
       "curriculumRole": "reference"
     },
@@ -61472,7 +61488,8 @@
         "topic:direction",
         "es:lejos",
         "grammar:distal",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:adverb"
       ],
       "curriculumRole": "supporting"
     },
@@ -66906,7 +66923,9 @@
         "topic:calendar",
         "es:semana",
         "en:last",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:adverb",
+        "topic:adv-time-relative-day"
       ],
       "curriculumRole": "supporting"
     },
@@ -66959,7 +66978,9 @@
         "topic:calendar",
         "es:mes",
         "en:last",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:adverb",
+        "topic:adv-time-relative-day"
       ],
       "curriculumRole": "supporting"
     },
@@ -67012,7 +67033,9 @@
         "topic:calendar",
         "es:año",
         "en:last",
-        "audit:reviewed"
+        "audit:reviewed",
+        "pos:adverb",
+        "topic:adv-time-relative-day"
       ],
       "curriculumRole": "supporting"
     },
@@ -67661,7 +67684,11 @@
       "collections": [
         "pos:quantifier",
         "es:poco",
-        "en:little"
+        "en:little",
+        "pos:determiner",
+        "topic:quant-little-few",
+        "grammar:quantifier",
+        "topic:determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -67670,13 +67697,17 @@
       "spanish": "un poco",
       "english": "a little",
       "example": {
-        "spanish": "Tengo poco tiempo.",
-        "english": "I have little time."
+        "spanish": "Ella habla un poco de inglés.",
+        "english": "She speaks a little English."
       },
       "collections": [
         "pos:quantifier",
         "es:poco",
-        "en:little"
+        "en:little",
+        "pos:determiner",
+        "topic:quant-little-few",
+        "grammar:quantifier",
+        "topic:determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -74837,7 +74868,10 @@
         "es:directamente",
         "en:straight",
         "audit:reviewed",
-        "topic:morph-ward-1"
+        "topic:morph-ward-1",
+        "pos:adverb",
+        "topic:location",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -74857,7 +74891,10 @@
         "es:directamente",
         "en:straight",
         "audit:reviewed",
-        "topic:morph-ward-1"
+        "topic:morph-ward-1",
+        "pos:adverb",
+        "topic:location",
+        "topic:transformation"
       ],
       "curriculumRole": "reference"
     },
@@ -79063,7 +79100,7 @@
         "before main verb",
         "audit:reviewed"
       ],
-      "curriculumRole": "supporting"
+      "curriculumRole": "trash"
     },
     {
       "id": "ft6li4zkws",
@@ -79291,7 +79328,7 @@
         "en:past",
         "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "ucz5g070t5",
@@ -79308,7 +79345,7 @@
         "en:present",
         "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "8n1lf1difn",
@@ -79325,7 +79362,7 @@
         "en:future",
         "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "v9yz4wf0xk",
@@ -79343,7 +79380,7 @@
         "en:verb",
         "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "cta1wv3rkf",
@@ -82065,7 +82102,8 @@
         "en:pile",
         "pos:determiner",
         "audit:reviewed",
-        "topic:quant-much-many"
+        "topic:quant-much-many",
+        "topic:determiner"
       ],
       "curriculumRole": "reference"
     },

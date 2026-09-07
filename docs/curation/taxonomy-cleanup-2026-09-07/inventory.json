@@ -1,17 +1,17 @@
 {
   "summary": {
-    "generatedAt": "2026-09-07T15:58:17.802Z",
+    "generatedAt": "2026-09-07T16:18:23.187Z",
     "totals": {
       "allConcepts": 4447,
-      "nonTrash": 4225,
+      "nonTrash": 4220,
       "byRole": {
         "core": 310,
-        "supporting": 1112,
-        "reference": 2803,
-        "trash": 222
+        "supporting": 1111,
+        "reference": 2799,
+        "trash": 227
       }
     },
-    "globalOrphanCount": 24,
+    "globalOrphanCount": 0,
     "confusionOutsideMappingsCount": 0,
     "topics": [
       {
@@ -24,8 +24,8 @@
       },
       {
         "slug": "determiners",
-        "baseCount": 139,
-        "reachableCount": 136,
+        "baseCount": 144,
+        "reachableCount": 141,
         "withinTopicGapCount": 3,
         "emptyGroupCount": 0,
         "confusionGroupCount": 0
@@ -40,8 +40,8 @@
       },
       {
         "slug": "verbs",
-        "baseCount": 2106,
-        "reachableCount": 1805,
+        "baseCount": 2107,
+        "reachableCount": 1806,
         "withinTopicGapCount": 301,
         "emptyGroupCount": 0,
         "confusionGroupCount": 0
@@ -72,8 +72,8 @@
       },
       {
         "slug": "adverbs",
-        "baseCount": 116,
-        "reachableCount": 111,
+        "baseCount": 128,
+        "reachableCount": 123,
         "withinTopicGapCount": 5,
         "emptyGroupCount": 0,
         "confusionGroupCount": 0
@@ -144,8 +144,8 @@
       },
       {
         "slug": "transformations",
-        "baseCount": 250,
-        "reachableCount": 250,
+        "baseCount": 253,
+        "reachableCount": 253,
         "withinTopicGapCount": 0,
         "emptyGroupCount": 0,
         "confusionGroupCount": 0
@@ -360,8 +360,8 @@
       "slug": "determiners",
       "title": "Determiners",
       "baseCollection": "topic:determiner",
-      "baseCount": 139,
-      "reachableCount": 136,
+      "baseCount": 144,
+      "reachableCount": 141,
       "withinTopicGapCount": 3,
       "withinTopicGapIds": [
         "q9x6f0ze09",
@@ -405,21 +405,21 @@
             {
               "collection": "topic:quant-much-many",
               "label": "Quantifier — Much & Many",
-              "count": 10,
+              "count": 11,
               "confusion": false,
               "coreCount": 2
             },
             {
               "collection": "topic:quant-little-few",
               "label": "Quantifier — Little & Few",
-              "count": 10,
+              "count": 12,
               "confusion": false,
               "coreCount": 2
             },
             {
               "collection": "topic:quant-more-less",
               "label": "Quantifier — More & Less",
-              "count": 9,
+              "count": 11,
               "confusion": false,
               "coreCount": 2
             },
@@ -537,8 +537,8 @@
       "slug": "verbs",
       "title": "Verbs",
       "baseCollection": "pos:verb",
-      "baseCount": 2106,
-      "reachableCount": 1805,
+      "baseCount": 2107,
+      "reachableCount": 1806,
       "withinTopicGapCount": 301,
       "withinTopicGapIds": [
         "gkinlwurxm",
@@ -1706,7 +1706,7 @@
             {
               "collection": "topic:verb-weather-time-duration",
               "label": "Weather, Time & Duration",
-              "count": 3,
+              "count": 4,
               "confusion": false,
               "coreCount": 0
             },
@@ -3597,8 +3597,8 @@
       "slug": "adverbs",
       "title": "Adverbs",
       "baseCollection": "pos:adverb",
-      "baseCount": 116,
-      "reachableCount": 111,
+      "baseCount": 128,
+      "reachableCount": 123,
       "withinTopicGapCount": 5,
       "withinTopicGapIds": [
         "zcsk0uorhv",
@@ -3686,21 +3686,21 @@
             {
               "collection": "topic:adv-time-relative-day",
               "label": "Time — Relative Day",
-              "count": 13,
+              "count": 17,
               "confusion": false,
               "coreCount": 0
             },
             {
               "collection": "topic:adv-time-now-and-timing",
               "label": "Time — Now & Timing",
-              "count": 16,
+              "count": 18,
               "confusion": false,
               "coreCount": 0
             },
             {
               "collection": "topic:location",
               "label": "Place",
-              "count": 8,
+              "count": 14,
               "confusion": false,
               "coreCount": 0
             },
@@ -7632,8 +7632,8 @@
       "slug": "transformations",
       "title": "Transformations",
       "baseCollection": "topic:transformation",
-      "baseCount": 250,
-      "reachableCount": 250,
+      "baseCount": 253,
+      "reachableCount": 253,
       "withinTopicGapCount": 0,
       "withinTopicGapIds": [],
       "families": [
@@ -7792,7 +7792,7 @@
             {
               "collection": "morphology:suffix-ed",
               "label": "-ed (weaken → weakened)",
-              "count": 5,
+              "count": 6,
               "confusion": false,
               "coreCount": 0
             },
@@ -7827,7 +7827,7 @@
             {
               "collection": "topic:morph-ward-1",
               "label": "-ward (in → inward) (1)",
-              "count": 16,
+              "count": 18,
               "confusion": false,
               "coreCount": 0
             },
@@ -8913,334 +8913,6 @@
       "confusionGroups": []
     }
   ],
-  "globalOrphans": [
-    {
-      "id": "0nw2v2tg59",
-      "spanish": "el año pasado",
-      "english": "last year",
-      "role": "supporting",
-      "collections": [
-        "topic:time",
-        "topic:calendar",
-        "es:año",
-        "en:last",
-        "audit:reviewed"
-      ]
-    },
-    {
-      "id": "uqb2qipaq0",
-      "spanish": "el mes pasado",
-      "english": "last month",
-      "role": "supporting",
-      "collections": [
-        "topic:time",
-        "topic:calendar",
-        "es:mes",
-        "en:last",
-        "audit:reviewed"
-      ]
-    },
-    {
-      "id": "ntzn66pmxo",
-      "spanish": "la semana pasada",
-      "english": "last week",
-      "role": "supporting",
-      "collections": [
-        "topic:time",
-        "topic:calendar",
-        "es:semana",
-        "en:last",
-        "audit:reviewed"
-      ]
-    },
-    {
-      "id": "jlm6vadinl",
-      "spanish": "lejos de un lugar",
-      "english": "far from a place",
-      "role": "supporting",
-      "collections": [
-        "topic:places",
-        "topic:location",
-        "en:place",
-        "topic:direction",
-        "es:lejos",
-        "grammar:distal",
-        "audit:reviewed"
-      ]
-    },
-    {
-      "id": "37lvgw6mdi",
-      "spanish": "un poco",
-      "english": "a little",
-      "role": "supporting",
-      "collections": [
-        "pos:quantifier",
-        "es:poco",
-        "en:little"
-      ]
-    },
-    {
-      "id": "4240qxyqxs",
-      "spanish": "cerca de un lugar",
-      "english": "near a place",
-      "role": "supporting",
-      "collections": [
-        "topic:places",
-        "topic:location",
-        "en:place",
-        "topic:direction",
-        "es:cerca",
-        "grammar:proximal",
-        "audit:reviewed"
-      ]
-    },
-    {
-      "id": "98imhq1xe7",
-      "spanish": "[algo] lleva [tiempo]",
-      "english": "[something] takes [time]",
-      "role": "supporting",
-      "collections": [
-        "es:llevar",
-        "topic:time",
-        "es:lleva",
-        "en:takes",
-        "audit:reviewed"
-      ]
-    },
-    {
-      "id": "8a3s9ew4ih",
-      "spanish": "[período] atrás",
-      "english": "[a period] ago",
-      "role": "reference",
-      "collections": [
-        "topic:time",
-        "form:past",
-        "es:atrás",
-        "en:ago",
-        "audit:reviewed"
-      ]
-    },
-    {
-      "id": "efzsdnarz6",
-      "spanish": "menos [sustantivo contable]",
-      "english": "fewer [countable noun]",
-      "role": "reference",
-      "collections": [
-        "es:menos",
-        "en:fewer",
-        "pos:determiner"
-      ]
-    },
-    {
-      "id": "2yywyl5i44",
-      "spanish": "más de [una cantidad]",
-      "english": "more than [an amount]",
-      "role": "reference",
-      "collections": [
-        "grammar:quantifier",
-        "grammar:comparison",
-        "es:más",
-        "en:more",
-        "pos:determiner",
-        "audit:reviewed",
-        "topic:quant-more-less"
-      ]
-    },
-    {
-      "id": "i7kngch29y",
-      "spanish": "más pronto de lo esperado",
-      "english": "earlier than expected",
-      "role": "reference",
-      "collections": [
-        "es:pronto",
-        "grammar:comparison",
-        "topic:time",
-        "grammar:fixed-expression",
-        "es:más",
-        "en:earlier",
-        "audit:reviewed"
-      ]
-    },
-    {
-      "id": "w9ufp3bqk0",
-      "spanish": "ya",
-      "english": "before",
-      "role": "reference",
-      "collections": [
-        "past experience",
-        "topic:time",
-        "es:ya",
-        "en:before",
-        "audit:reviewed"
-      ]
-    },
-    {
-      "id": "3j18tf1yhr",
-      "spanish": "a casa",
-      "english": "home",
-      "role": "reference",
-      "collections": [
-        "topic:places",
-        "topic:location",
-        "topic:direction",
-        "en:home",
-        "audit:reviewed"
-      ]
-    },
-    {
-      "id": "0bxkcfqexz",
-      "spanish": "cerca de un lugar",
-      "english": "close to a place",
-      "role": "reference",
-      "collections": [
-        "topic:places",
-        "topic:location",
-        "en:place",
-        "topic:direction",
-        "es:cerca",
-        "en:close",
-        "audit:reviewed"
-      ]
-    },
-    {
-      "id": "4owlerryxw",
-      "spanish": "poco",
-      "english": "little",
-      "role": "reference",
-      "collections": [
-        "pos:quantifier",
-        "es:poco",
-        "en:little"
-      ]
-    },
-    {
-      "id": "nglcabemco",
-      "spanish": "directamente hacia adelante",
-      "english": "straight forward",
-      "role": "reference",
-      "collections": [
-        "morphology:recognition",
-        "morphology:suffix-ward",
-        "topic:direction",
-        "literal word combination",
-        "es:directamente",
-        "en:straight",
-        "audit:reviewed",
-        "topic:morph-ward-1"
-      ]
-    },
-    {
-      "id": "i1wqgc6i2p",
-      "spanish": "directamente hacia adelante",
-      "english": "straight ahead",
-      "role": "reference",
-      "collections": [
-        "morphology:recognition",
-        "morphology:suffix-ward",
-        "topic:direction",
-        "preferred direction expression",
-        "es:directamente",
-        "en:straight",
-        "audit:reviewed",
-        "topic:morph-ward-1"
-      ]
-    },
-    {
-      "id": "cqyv9nbo0n",
-      "spanish": "terminado",
-      "english": "finished",
-      "role": "supporting",
-      "collections": [
-        "form:participle",
-        "sound:regular-ed-pronounced-t-finished",
-        "morphology:suffix-ed",
-        "es:terminado",
-        "en:finished",
-        "audit:reviewed"
-      ]
-    },
-    {
-      "id": "qlkvt2tkf2",
-      "spanish": "tiempo pasado",
-      "english": "past time",
-      "role": "reference",
-      "collections": [
-        "topic:time",
-        "past time",
-        "es:tiempo",
-        "en:past",
-        "audit:reviewed"
-      ]
-    },
-    {
-      "id": "k70eg8dyji",
-      "spanish": "[adverbio de frecuencia] [verbo principal]",
-      "english": "[frequency adverb] [main verb]",
-      "role": "supporting",
-      "collections": [
-        "topic:time",
-        "grammar:frequency-adverb",
-        "before main verb",
-        "audit:reviewed"
-      ]
-    },
-    {
-      "id": "ucz5g070t5",
-      "spanish": "tiempo presente",
-      "english": "present time",
-      "role": "reference",
-      "collections": [
-        "topic:time",
-        "present time",
-        "es:tiempo",
-        "en:present",
-        "audit:reviewed"
-      ]
-    },
-    {
-      "id": "8n1lf1difn",
-      "spanish": "tiempo futuro",
-      "english": "future time",
-      "role": "reference",
-      "collections": [
-        "topic:time",
-        "future time",
-        "es:tiempo",
-        "en:future",
-        "audit:reviewed"
-      ]
-    },
-    {
-      "id": "v9yz4wf0xk",
-      "spanish": "tiempo verbal",
-      "english": "verb tense",
-      "role": "reference",
-      "collections": [
-        "topic:time",
-        "grammar term",
-        "tense",
-        "es:tiempo",
-        "en:verb",
-        "audit:reviewed"
-      ]
-    },
-    {
-      "id": "uoz9og2i44",
-      "spanish": "un montón de [sustantivo]",
-      "english": "a pile of [noun]",
-      "role": "reference",
-      "collections": [
-        "grammar:quantifier",
-        "a pile of",
-        "literal pile",
-        "grammar:noun-phrase",
-        "es:montón",
-        "en:pile",
-        "pos:determiner",
-        "audit:reviewed",
-        "topic:quant-much-many"
-      ]
-    }
-  ],
+  "globalOrphans": [],
   "confusionOutsideMappings": []
 }
