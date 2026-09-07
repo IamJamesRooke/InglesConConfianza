@@ -25374,7 +25374,9 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:map-tener-2",
-        "topic:confusable-verb"
+        "topic:confusable-verb",
+        "pos:verb",
+        "topic:verb-possession-having-2"
       ],
       "curriculumRole": "core"
     },
@@ -63974,7 +63976,7 @@
         "es:encontrar",
         "en:find",
         "audit:reviewed",
-        "topic:verb-formal-remainder-6"
+        "topic:verb-possession-obtaining-1"
       ],
       "curriculumRole": "core"
     },

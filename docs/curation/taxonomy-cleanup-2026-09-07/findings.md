@@ -171,6 +171,41 @@ row that already had a correct home elsewhere:
 `al volver` retagged `pos:connector` → `topic:verb-pattern` +
 `construction:preposition-plus-gerund`.
 
+<a id="core"></a>
+## Core complete pass (Batch 7, 2026-09-07)
+
+310 core concepts (unchanged from the 2026-09-07 baseline — **no core
+demotions in any batch of this cleanup**; original set == final set).
+Mechanical checks: reachability, `pos:` tag, `es:`/`en:` headword, gender
+contradictions, generic-bucket-only.
+
+**Fixed:**
+- `ccrgp9wvgz` `tener [número] años` — lost its only `pos:` when Batch 4
+  removed the wrong `pos:number`; added `pos:verb` + `topic:verb-possession-having-2`.
+- `ytf51bteap` `encontrar [algo]` → "to find" — a core everyday verb sitting
+  in the `topic:verb-formal-remainder-6` ("Formal & Rare Verbs") dumping
+  bucket; moved to `topic:verb-possession-obtaining-1` (Getting & Obtaining).
+
+**Flagged (Batch 5/6 or user decision — not fixed here):**
+- `wyhk5xpxou` `necesitar [algo]` → "to need", `z5hsuuicna` `leer [algo]` →
+  "to read": core everyday verbs, but the thematic Verbs taxonomy has **no
+  "needing" or "reading/writing" family** — both are stuck in "Formal & Rare
+  Verbs". Add themes in Batch 5/6.
+- `dq19hl9yw6` `[artículo] [sustantivo] [adjetivo]` → "[article] [adjective]
+  [noun]": a real grammar point (`grammar:adjective-position`, Spanish
+  post-nominal vs English pre-nominal) with no natural home — reachable only
+  via "Abstract quality — General (1)", which is wrong. Adjectives needs a
+  "Word order / position" group (Batch 5/6). No headword (it is a pattern).
+- `t0gq5vym7f` `necesitar la información específica` → "to need the specific
+  information": already `audit:flagged` in the original audit
+  (headword/example mismatch, garbled generic-vs-specific-article point).
+  **Questionable as core** — recommend the user trash or rewrite it; it is
+  not a discrete core concept and it inflates the "Formal & Rare Verbs"
+  bucket. Not demoted here per "do not demote Core to pass a check".
+- `9nyqu8uehx` `[pasado] do → did`, `nf5qq29oke` `[participio] write →
+  written`: no `pos:` tag — this is now correct (they are form drills, like
+  the 301 fixed in Batch 3); left core (high-frequency irregular forms).
+
 <a id="verbs"></a>
 ## Verbs within-topic gap (301)
 
