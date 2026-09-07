@@ -12,7 +12,10 @@ import {
   readCurriculumPage,
 } from "@/lib/curriculum/server/curriculum-store";
 import type { CurriculumRole } from "@/lib/curriculum/types";
-import { CURRICULUM_TOPICS, findCurriculumTopic } from "@/lib/curriculum/topics";
+import {
+  CURRICULUM_TOPICS,
+  findCurriculumTopic,
+} from "@/lib/curriculum/topics";
 
 type CoverageFilter = "all" | "taught" | "untaught";
 
@@ -110,11 +113,13 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
       requireCollections: requiredCollections,
       anyCollections: familyCollections,
       excludeAnyCollections: outsideFamilies ? allBrowseCollections : [],
+      baseExclusions: topic?.baseExclusions ?? [],
       idFilter,
     }),
     topic && browse
       ? readCurriculumNavigationCounts({
           baseCollection: topic.baseCollection,
+          baseExclusions: topic.baseExclusions ?? [],
           families: browse.families,
           search,
           collection,
@@ -171,11 +176,11 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
   }
 
   const displayTopic = topic
-    ? topicTitles[topic.slug] ?? topic.title
+    ? (topicTitles[topic.slug] ?? topic.title)
     : "All curriculum";
   const scopeLabel = outsideFamilies
     ? "Outside these families"
-    : browse?.leaf?.label ?? browse?.family?.label ?? displayTopic;
+    : (browse?.leaf?.label ?? browse?.family?.label ?? displayTopic);
 
   return (
     <main className="flex-1 bg-background px-3 py-4 text-foreground sm:px-5 lg:px-6">
@@ -209,7 +214,7 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
           }
           families={families}
           activeFamilyId={
-            outsideFamilies ? "outside-families" : browse?.family?.id ?? ""
+            outsideFamilies ? "outside-families" : (browse?.family?.id ?? "")
           }
           activeLeafCollection={browse?.leaf?.collection ?? ""}
           legacyFacets={unresolvedLegacyFacets}
@@ -217,9 +222,7 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
           topicCount={navigationCounts.get("__topic__")?.size ?? 0}
           resultKey={[
             topic?.slug ?? "",
-            outsideFamilies
-              ? "outside-families"
-              : browse?.family?.id ?? "",
+            outsideFamilies ? "outside-families" : (browse?.family?.id ?? ""),
             browse?.leaf?.collection ?? "",
             unresolvedLegacyFacets.join(","),
             collection,

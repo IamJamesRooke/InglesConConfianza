@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generatedAt": "2026-09-07T17:21:39.295Z",
+    "generatedAt": "2026-09-07T18:37:56.066Z",
     "totals": {
       "allConcepts": 4448,
       "nonTrash": 4218,
@@ -40,10 +40,10 @@
       },
       {
         "slug": "verbs",
-        "baseCount": 1804,
-        "reachableCount": 1804,
+        "baseCount": 1599,
+        "reachableCount": 1599,
         "withinTopicGapCount": 0,
-        "emptyGroupCount": 0,
+        "emptyGroupCount": 1,
         "confusionGroupCount": 0
       },
       {
@@ -530,8 +530,8 @@
       "slug": "verbs",
       "title": "Verbs",
       "baseCollection": "pos:verb",
-      "baseCount": 1804,
-      "reachableCount": 1804,
+      "baseCount": 1599,
+      "reachableCount": 1599,
       "withinTopicGapCount": 0,
       "withinTopicGapIds": [],
       "families": [
@@ -620,7 +620,7 @@
             {
               "collection": "topic:verb-wishes",
               "label": "Wishes & Hypotheticals",
-              "count": 35,
+              "count": 33,
               "confusion": false,
               "coreCount": 8
             },
@@ -648,7 +648,7 @@
             {
               "collection": "topic:verb-communication-saying",
               "label": "Communication — Saying & Telling",
-              "count": 24,
+              "count": 20,
               "confusion": false,
               "coreCount": 5
             },
@@ -662,7 +662,7 @@
             {
               "collection": "topic:verb-communication-formal",
               "label": "Communication — Formal & Reporting",
-              "count": 22,
+              "count": 16,
               "confusion": false,
               "coreCount": 0
             },
@@ -704,7 +704,7 @@
             {
               "collection": "topic:verb-deciding-considering",
               "label": "Deciding & Considering",
-              "count": 29,
+              "count": 21,
               "confusion": false,
               "coreCount": 0
             },
@@ -746,7 +746,7 @@
             {
               "collection": "topic:verb-watching-other",
               "label": "Watching & Observing",
-              "count": 28,
+              "count": 27,
               "confusion": false,
               "coreCount": 1
             },
@@ -774,7 +774,7 @@
             {
               "collection": "topic:verb-feelings-dislike-worry",
               "label": "Feelings — Dislike, Worry & Missing",
-              "count": 16,
+              "count": 15,
               "confusion": false,
               "coreCount": 0
             }
@@ -816,7 +816,7 @@
             {
               "collection": "topic:verb-movement-directional-verbs",
               "label": "Movement — Return & Direction",
-              "count": 23,
+              "count": 22,
               "confusion": false,
               "coreCount": 2
             },
@@ -858,7 +858,7 @@
             {
               "collection": "topic:verb-possession-obtaining",
               "label": "Getting & Obtaining",
-              "count": 23,
+              "count": 22,
               "confusion": false,
               "coreCount": 3
             },
@@ -956,7 +956,7 @@
             {
               "collection": "topic:verb-work-employment",
               "label": "Work & Employment",
-              "count": 22,
+              "count": 21,
               "confusion": false,
               "coreCount": 1
             },
@@ -970,7 +970,7 @@
             {
               "collection": "topic:verb-money-commerce",
               "label": "Money — Buying & Selling",
-              "count": 37,
+              "count": 33,
               "confusion": false,
               "coreCount": 2
             }
@@ -991,7 +991,7 @@
             {
               "collection": "topic:verb-creation-repair-other",
               "label": "Creating, Fixing & Changing",
-              "count": 31,
+              "count": 23,
               "confusion": false,
               "coreCount": 0
             },
@@ -1019,7 +1019,7 @@
             {
               "collection": "topic:verb-household",
               "label": "Household & Objects",
-              "count": 43,
+              "count": 42,
               "confusion": false,
               "coreCount": 1
             }
@@ -1033,14 +1033,14 @@
             {
               "collection": "topic:verb-social-relationships",
               "label": "Social Interaction & Relationships",
-              "count": 27,
+              "count": 25,
               "confusion": false,
               "coreCount": 0
             },
             {
               "collection": "topic:verb-conflict-crime",
               "label": "Conflict & Crime",
-              "count": 30,
+              "count": 26,
               "confusion": false,
               "coreCount": 0
             },
@@ -1061,21 +1061,21 @@
             {
               "collection": "topic:verb-admin-legal-formal",
               "label": "Administrative, Legal & Formal Actions",
-              "count": 22,
+              "count": 17,
               "confusion": false,
               "coreCount": 0
             },
             {
               "collection": "topic:verb-analysis-investigation",
               "label": "Analysis & Investigation",
-              "count": 14,
+              "count": 8,
               "confusion": false,
               "coreCount": 0
             },
             {
               "collection": "topic:verb-technology-digital",
               "label": "Technology & Digital Actions",
-              "count": 4,
+              "count": 2,
               "confusion": false,
               "coreCount": 0
             },
@@ -1089,35 +1089,37 @@
             {
               "collection": "topic:verb-health-body",
               "label": "Body & Health",
-              "count": 15,
+              "count": 10,
               "confusion": false,
               "coreCount": 0
             },
             {
               "collection": "topic:verb-formal-abstract",
               "label": "Formal Actions — Abstract",
-              "count": 44,
+              "count": 4,
               "confusion": false,
               "coreCount": 0
             },
             {
               "collection": "topic:verb-formal-business",
               "label": "Formal Actions — Business & Process",
-              "count": 14,
+              "count": 0,
               "confusion": false,
               "coreCount": 0
             },
             {
               "collection": "topic:verb-formal-remainder",
               "label": "Formal & Rare Verbs",
-              "count": 217,
+              "count": 128,
               "confusion": false,
               "coreCount": 3
             }
           ]
         }
       ],
-      "emptyGroups": [],
+      "emptyGroups": [
+        "topic:verb-formal-business"
+      ],
       "confusionGroups": []
     },
     {

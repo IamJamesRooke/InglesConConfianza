@@ -1,13 +1,28 @@
 import "server-only";
 
 import type { Prisma } from "@/generated/prisma/client";
-import type {
-  CurriculumConcept,
-  CurriculumRole,
-} from "@/lib/curriculum/types";
+import type { CurriculumConcept, CurriculumRole } from "@/lib/curriculum/types";
 import type { CurriculumNavigationFamily } from "@/lib/curriculum/navigation";
+import type { TopicBaseExclusion } from "@/lib/curriculum/scope";
 import { isCurriculumConcept } from "@/lib/curriculum/validation";
 import { prisma } from "@/lib/database/prisma";
+
+// The SQL half of src/lib/curriculum/scope.ts: a topic's declared exclusions as
+// a Prisma filter. "Carries the excluded collection AND is not one of the kept
+// roles" is what gets removed, so a row keeps every tag it has and only its
+// visibility on this page changes. Keep in step with `conceptInTopicScope`.
+function baseExclusionWhere(
+  exclusions: readonly TopicBaseExclusion[],
+): Prisma.CurriculumConceptWhereInput[] {
+  return exclusions.map((exclusion) => ({
+    NOT: {
+      AND: [
+        { collections: { some: { collectionName: exclusion.collection } } },
+        { curriculumRole: { notIn: [...exclusion.unlessRole] } },
+      ],
+    },
+  }));
+}
 
 type ConceptRow = {
   id: string;
@@ -22,12 +37,7 @@ type ConceptRow = {
 export const curriculumPageSize = 100;
 
 export type CurriculumSort =
-  | "default"
-  | "spanish"
-  | "spanish-desc"
-  | "english"
-  | "english-desc"
-  | "role";
+  "default" | "spanish" | "spanish-desc" | "english" | "english-desc" | "role";
 
 export type CurriculumPageFilters = {
   search: string;
@@ -113,17 +123,27 @@ export async function readCurriculumPage({
   requireCollections = [],
   anyCollections = [],
   excludeAnyCollections = [],
+  baseExclusions = [],
   idFilter,
 }: CurriculumPageFilters & {
   page: number;
   requireCollections?: string[];
   anyCollections?: string[];
   excludeAnyCollections?: string[];
+  baseExclusions?: readonly TopicBaseExclusion[];
   // Restrict the result set to / away from a set of concept ids (used by the
   // "taught" coverage filter). Caller owns the meaning of the ids.
   idFilter?: { in: string[] } | { notIn: string[] };
 }): Promise<CurriculumPageResult> {
-  const anded = [...new Set([...requireCollections, collection].filter(Boolean))];
+  const anded = [
+    ...new Set([...requireCollections, collection].filter(Boolean)),
+  ];
+  const andClauses: Prisma.CurriculumConceptWhereInput[] = [
+    ...anded.map((name) => ({
+      collections: { some: { collectionName: name } },
+    })),
+    ...baseExclusionWhere(baseExclusions),
+  ];
   const where = {
     ...(idFilter ? { id: idFilter } : {}),
     ...(search
@@ -134,13 +154,7 @@ export async function readCurriculumPage({
           ],
         }
       : {}),
-    ...(anded.length > 0
-      ? {
-          AND: anded.map((name) => ({
-            collections: { some: { collectionName: name } },
-          })),
-        }
-      : {}),
+    ...(andClauses.length > 0 ? { AND: andClauses } : {}),
     ...(anyCollections.length > 0
       ? {
           collections: {
@@ -165,10 +179,7 @@ export async function readCurriculumPage({
   } satisfies Prisma.CurriculumConceptWhereInput;
 
   const totalConcepts = await prisma.curriculumConcept.count({ where });
-  const pageCount = Math.max(
-    1,
-    Math.ceil(totalConcepts / curriculumPageSize),
-  );
+  const pageCount = Math.max(1, Math.ceil(totalConcepts / curriculumPageSize));
   const page = Math.min(Math.max(1, requestedPage), pageCount);
   const concepts = await prisma.curriculumConcept.findMany({
     where,
@@ -192,6 +203,7 @@ export async function readCurriculumPage({
 
 export async function readCurriculumNavigationCounts({
   baseCollection,
+  baseExclusions = [],
   families,
   search,
   collection,
@@ -199,6 +211,7 @@ export async function readCurriculumNavigationCounts({
   idFilter,
 }: {
   baseCollection: string;
+  baseExclusions?: readonly TopicBaseExclusion[];
   families: CurriculumNavigationFamily[];
   search: string;
   collection: string;
@@ -213,6 +226,12 @@ export async function readCurriculumNavigationCounts({
     ),
   ];
   const required = [...new Set([baseCollection, collection].filter(Boolean))];
+  const conceptAndClauses: Prisma.CurriculumConceptWhereInput[] = [
+    ...required.map((name) => ({
+      collections: { some: { collectionName: name } },
+    })),
+    ...baseExclusionWhere(baseExclusions),
+  ];
   const conceptWhere = {
     ...(idFilter ? { id: idFilter } : {}),
     ...(search
@@ -223,13 +242,7 @@ export async function readCurriculumNavigationCounts({
           ],
         }
       : {}),
-    ...(required.length > 0
-      ? {
-          AND: required.map((name) => ({
-            collections: { some: { collectionName: name } },
-          })),
-        }
-      : {}),
+    ...(conceptAndClauses.length > 0 ? { AND: conceptAndClauses } : {}),
     ...(role === "all" ? {} : { curriculumRole: role }),
   } satisfies Prisma.CurriculumConceptWhereInput;
   const [memberships, topicConcepts] = await Promise.all([
@@ -254,7 +267,8 @@ export async function readCurriculumNavigationCounts({
     new Set(topicConcepts.map((concept) => concept.id)),
   );
   for (const membership of memberships) {
-    const ids = conceptIdsByCollection.get(membership.collectionName) ?? new Set();
+    const ids =
+      conceptIdsByCollection.get(membership.collectionName) ?? new Set();
     ids.add(membership.conceptId);
     conceptIdsByCollection.set(membership.collectionName, ids);
   }

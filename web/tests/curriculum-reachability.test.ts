@@ -7,6 +7,7 @@ import {
   buildCurriculumFamilies,
   resolveCurriculumPath,
 } from "../src/lib/curriculum/navigation";
+import { conceptInTopicScope } from "../src/lib/curriculum/scope";
 import { CURRICULUM_TOPICS } from "../src/lib/curriculum/topics";
 import { prisma } from "../src/lib/database/prisma";
 
@@ -16,7 +17,13 @@ import { prisma } from "../src/lib/database/prisma";
 // only if it carries BOTH the topic base tag and that group's collection.
 // See docs/curation/taxonomy-cleanup-2026-09-07/.
 
-type Row = { id: string; spanish: string; english: string; role: string; cols: Set<string> };
+type Row = {
+  id: string;
+  spanish: string;
+  english: string;
+  role: string;
+  cols: Set<string>;
+};
 
 let rows: Row[];
 let nonTrash: Row[];
@@ -39,11 +46,19 @@ test.after(async () => {
   await prisma.$disconnect();
 });
 
-const label = (r: Row) => `${r.id} "${r.spanish}" -> "${r.english}" [${r.role}]`;
+const label = (r: Row) =>
+  `${r.id} "${r.spanish}" -> "${r.english}" [${r.role}]`;
+
+// Topic scope = base collection minus the topic's declared exclusions. The page
+// query and the inventory script use the same predicate
+// (src/lib/curriculum/scope.ts), so this test measures what the page shows.
+const inScope = (topic: (typeof CURRICULUM_TOPICS)[number], r: Row) =>
+  conceptInTopicScope(topic, { curriculumRole: r.role, collections: r.cols });
 
 test("no non-trash concept is a global orphan (every one carries a topic base tag)", () => {
-  const bases = CURRICULUM_TOPICS.map((t) => t.baseCollection);
-  const orphans = nonTrash.filter((r) => !bases.some((b) => r.cols.has(b)));
+  const orphans = nonTrash.filter(
+    (r) => !CURRICULUM_TOPICS.some((t) => inScope(t, r)),
+  );
   assert.deepEqual(orphans.map(label), [], `${orphans.length} global orphans`);
 });
 
@@ -54,7 +69,7 @@ test("every non-trash concept in a topic reaches a Topic -> Family -> Group path
       f.leaves.map((l) => l.collection),
     );
     for (const r of nonTrash) {
-      if (!r.cols.has(topic.baseCollection)) continue;
+      if (!inScope(topic, r)) continue;
       if (!leaves.some((c) => r.cols.has(c))) {
         offenders.push(`${topic.slug}: ${label(r)}`);
       }
@@ -65,15 +80,18 @@ test("every non-trash concept in a topic reaches a Topic -> Family -> Group path
 
 test("every core concept is reachable through a real group", () => {
   const core = nonTrash.filter((r) => r.role === "core");
-  const bases = new Map(
-    CURRICULUM_TOPICS.map((t) => [
-      t.baseCollection,
-      buildCurriculumFamilies(t).flatMap((f) => f.leaves.map((l) => l.collection)),
-    ]),
+  const leavesByTopic = CURRICULUM_TOPICS.map(
+    (t) =>
+      [
+        t,
+        buildCurriculumFamilies(t).flatMap((f) =>
+          f.leaves.map((l) => l.collection),
+        ),
+      ] as const,
   );
   const unreachable = core.filter((r) => {
-    for (const [base, leaves] of bases) {
-      if (r.cols.has(base) && leaves.some((c) => r.cols.has(c))) return false;
+    for (const [topic, leaves] of leavesByTopic) {
+      if (inScope(topic, r) && leaves.some((c) => r.cols.has(c))) return false;
     }
     return true;
   });
@@ -105,7 +123,7 @@ test("every configured facet button has at least one member concept", () => {
   for (const topic of CURRICULUM_TOPICS) {
     for (const f of topic.facetButtons) {
       const n = nonTrash.filter(
-        (r) => r.cols.has(topic.baseCollection) && r.cols.has(f.collection),
+        (r) => inScope(topic, r) && r.cols.has(f.collection),
       ).length;
       if (n === 0) empty.push(`${topic.slug}: ${f.label} (${f.collection})`);
     }
@@ -133,7 +151,7 @@ const EXPECTED_FAMILY_STRUCTURE: Record<string, Array<[string, number]>> = {
     ["Daily life & work", 5],
     ["Making, changing & home", 6],
     ["Social life & conflict", 3],
-    ["Formal & specialized", 8],
+    ["Formal & specialized", 7],
   ],
   cognates: [
     ["Spelling patterns", 48],
@@ -247,9 +265,7 @@ test("no two facet buttons on a topic are the same axis entered twice", () => {
     const buttons = topic.facetButtons.map((f) => ({
       collection: f.collection,
       members: nonTrash
-        .filter(
-          (r) => r.cols.has(topic.baseCollection) && r.cols.has(f.collection),
-        )
+        .filter((r) => inScope(topic, r) && r.cols.has(f.collection))
         .map((r) => r.id),
     }));
     for (let i = 0; i < buttons.length; i++) {
@@ -259,8 +275,7 @@ test("no two facet buttons on a topic are the same axis entered twice", () => {
         if (a.members.length < 5 || b.members.length < 5) continue;
         const aSet = new Set(a.members);
         const shared = b.members.filter((id) => aSet.has(id)).length;
-        const jaccard =
-          shared / (a.members.length + b.members.length - shared);
+        const jaccard = shared / (a.members.length + b.members.length - shared);
         if (jaccard <= 0.8) continue;
         const key = [a.collection, b.collection].sort().join(" ~ ");
         if (DUPLICATE_AXIS_ALLOWLIST.has(key)) continue;
@@ -310,9 +325,7 @@ test("family counts are distinct-concept unions, not leaf-count sums", () => {
       let sum = 0;
       for (const leaf of family.leaves) {
         const ids = nonTrash
-          .filter(
-            (r) => r.cols.has(topic.baseCollection) && r.cols.has(leaf.collection),
-          )
+          .filter((r) => inScope(topic, r) && r.cols.has(leaf.collection))
           .map((r) => r.id);
         sum += ids.length;
         for (const id of ids) union.add(id);

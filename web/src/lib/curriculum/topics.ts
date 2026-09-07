@@ -2,11 +2,16 @@
 // base collection, with quick-filter buttons for its sub-facets, shown inline
 // on the curriculum table.
 
+import type { TopicBaseExclusion } from "@/lib/curriculum/scope";
+
 export type CurriculumTopic = {
   slug: string;
   title: string;
   description: string;
   baseCollection: string;
+  // Material that carries `baseCollection` but does not belong in this page's
+  // browser. See src/lib/curriculum/scope.ts for the rule and the rationale.
+  baseExclusions?: readonly TopicBaseExclusion[];
   facetButtons: Array<{ collection: string; label: string; family: string }>;
 };
 
@@ -83,6 +88,13 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
     description:
       "Every verb, grouped by theme instead of alphabetically — communication, thinking, movement, possession, money, and more — so you can browse verbs the way you'd actually reach for them in conversation. \u201cTo be,\u201d \u201chave,\u201d and the modal verbs (poder, deber) get their own dedicated groups since their English translations swing wildly by context.",
     baseCollection: "pos:verb",
+    // Latinate cognate verbs at `reference` role (to abstain, to depose) are
+    // reference material, not teaching vocabulary. They live on the Cognates
+    // page, sorted by spelling pattern. The core/supporting ones (to prepare,
+    // to decide, to receive) are ordinary teaching verbs and stay here.
+    baseExclusions: [
+      { collection: "topic:cognate", unlessRole: ["core", "supporting"] },
+    ],
     facetButtons: [
       { collection: "topic:verb-tobe-present", label: "To Be — Present (am/is/are)", family: "Being & existence" },
       { collection: "topic:verb-tobe-past-future", label: "To Be — Past & Future (was/were/will be)", family: "Being & existence" },
@@ -154,7 +166,6 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       { collection: "topic:verb-weather-time-duration", label: "Weather, Time & Duration", family: "Formal & specialized" },
       { collection: "topic:verb-health-body", label: "Body & Health", family: "Formal & specialized" },
       { collection: "topic:verb-formal-abstract", label: "Formal Actions — Abstract", family: "Formal & specialized" },
-      { collection: "topic:verb-formal-business", label: "Formal Actions — Business & Process", family: "Formal & specialized" },
       { collection: "topic:verb-formal-remainder", label: "Formal & Rare Verbs", family: "Formal & specialized" },
     ],
   },

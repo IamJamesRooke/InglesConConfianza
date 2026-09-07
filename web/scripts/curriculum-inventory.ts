@@ -4,6 +4,7 @@ import { resolve } from "node:path";
 
 import { CURRICULUM_TOPICS } from "../src/lib/curriculum/topics";
 import { buildCurriculumFamilies } from "../src/lib/curriculum/navigation";
+import { conceptInTopicScope } from "../src/lib/curriculum/scope";
 import { prisma } from "../src/lib/database/prisma";
 
 // Reusable curriculum taxonomy inventory for the 2026-09-07 three-level
@@ -69,15 +70,19 @@ async function main() {
   const nonTrash = rows.filter((r) => r.curriculumRole !== "trash");
   const has = (r: Row, c: string) => r.collections.includes(c);
 
-  // All collections referenced by any topic baseCollection.
-  const allBases = new Set(CURRICULUM_TOPICS.map((t) => t.baseCollection));
+  // A concept is homed when some topic's scope accepts it — base tag present
+  // and not removed by that topic's exclusions.
+  const inSomeTopicScope = (r: Row) =>
+    CURRICULUM_TOPICS.some((t) => conceptInTopicScope(t, r));
 
   const topics = CURRICULUM_TOPICS.map((topic) => {
     const families = buildCurriculumFamilies(topic);
     const leafCollections = families.flatMap((f) =>
       f.leaves.map((l) => l.collection),
     );
-    const base = nonTrash.filter((r) => has(r, topic.baseCollection));
+    // Topic scope = base collection minus the topic's declared exclusions.
+    // Same predicate the page query uses (src/lib/curriculum/scope.ts).
+    const base = nonTrash.filter((r) => conceptInTopicScope(topic, r));
     const baseIds = new Set(base.map((r) => r.id));
     const reachableIds = new Set(
       base
@@ -126,10 +131,8 @@ async function main() {
     };
   });
 
-  // Global orphans: non-trash concepts carrying none of the topic base tags.
-  const globalOrphans = nonTrash.filter(
-    (r) => ![...allBases].some((b) => has(r, b)),
-  );
+  // Global orphans: non-trash concepts no topic's scope accepts.
+  const globalOrphans = nonTrash.filter((r) => !inSomeTopicScope(r));
 
   const MAPPING_TOPICS = new Set(["mappings", "en-mappings"]);
   const confusionOutsideMappings = topics
@@ -194,8 +197,13 @@ async function main() {
       console.log(`# ${f.label}`);
       for (const g of f.groups) {
         console.log(`  -- ${g.label}  (${g.collection}, ${g.count} rows)`);
+        const topicConfig = CURRICULUM_TOPICS.find(
+          (t) => t.slug === topic.slug,
+        )!;
         const members = nonTrash
-          .filter((r) => has(r, topic.baseCollection) && has(r, g.collection))
+          .filter(
+            (r) => conceptInTopicScope(topicConfig, r) && has(r, g.collection),
+          )
           .sort((a, b) => a.spanish.localeCompare(b.spanish));
         for (const m of members) {
           console.log(
