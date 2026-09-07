@@ -61,7 +61,7 @@ material is temporarily sitting in `rare`).
 | # | Batch | Model | State |
 |---|---|---|---|
 | P3-0 | This plan | Sonnet | done |
-| P3-1 | Prisma enum migration + code + mechanical remap | Sonnet | — |
+| P3-1 | Prisma enum migration + code + mechanical remap | Sonnet | **done** (`43c0336d`). supporting→common, reference→rare. |
 | P3-2 | Trim `core` to the MVP set | Sonnet | **done** — 27 rows core→essential (20 lookupable content verbs incl. comer/comprar/leer/vender/trabajar/vivir, + the 4 kinship nouns). Core 309→282. |
 | P3-3 | Build `essential` — promote the high-utility content set out of `common` | **Opus** | — |
 | P3-4 | Split `extended` out of `rare` | Sonnet, signal-assisted | — |
