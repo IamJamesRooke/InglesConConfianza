@@ -1,0 +1,8 @@
+MERGE	topic:adj-abs-oso-osa	topic:adj-oso-osa	P2-3: duplicate suffix axis; "Abstract quality - X" is the same rows as "ser, -X" (75-95pct overlap), one axis entered twice by two generators
+MERGE	topic:adj-abs-ico-ica	topic:adj-ico-ica	P2-3: duplicate suffix axis, merge into the -ico/-ica group
+MERGE	topic:adj-abs-ivo-iva	topic:adj-ivo-iva	P2-3: duplicate suffix axis, merge into the -ivo/-iva group
+MERGE	topic:adj-abs-able	topic:adj-able	P2-3: duplicate suffix axis, merge into the -able group
+MERGE	topic:adj-abs-ible	topic:adj-ible	P2-3: duplicate suffix axis, merge into the -ible group
+MERGE	topic:adj-abs-ente	topic:adj-ente	P2-3: duplicate suffix axis, merge into the -ente group
+MERGE	topic:adj-abs-al	topic:adj-al	P2-3: duplicate suffix axis, merge into the -al group
+MERGE	topic:adj-abs-general	topic:adj-ser-general	P2-3: "Abstract quality - General" and "ser, general" share identical rows ([ser] necesario, [ser] fertil); merge the residue buckets

@@ -231,7 +231,7 @@ straightforward sort, not a taxonomy problem.
 - **Done when:** the bucket button is gone; `inventory` shows verbs
   `reachable == base == 1599`, no new gap; structure snapshot updated.
 
-### Batch 3 — Adjectives: collapse the duplicate suffix axis
+### Batch 3 — Adjectives: collapse the duplicate suffix axis — **DONE**
 
 - **Scope:** `topic:adj-abs-<suffix>` (8 collections) vs `topic:adj-<suffix>`
   (9 collections). Measured overlap is 75–95% per pair. This is one axis

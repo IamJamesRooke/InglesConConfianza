@@ -109,8 +109,11 @@ phase-1 rows above. Model routing per batch is in `next-plan.md`.
 
 | P2-5 | Cognates: reorganize by part of speech | **done** | `f7790c3c` | 3 families -> 9, by POS with verb patterns split by conjugation class: `-ar/-er/-ir verb cognates`, `Noun cognates`, `Adjective cognates`, `Adverb cognates`, `Verb form endings`, `How close is it?` (transparent + opaque + false friends), `Latin roots — not yet sorted by stem`. Retired the 48-leaf `Spelling patterns` and the 1-group `Cognate types`. Family assigned by each group's dominant part of speech (measured), verb groups by infinitive class. **Code-only**, no DB change. |
 
+| P2-3 | Adjectives: collapse the duplicate suffix axis | **done** | _(this commit)_ | 8 MERGE ops: every `topic:adj-abs-<suffix>` folded into `topic:adj-<suffix>` (75-95pct member overlap — one axis entered twice). Suffix groups relabelled without the `ser,` prefix and moved to a new `Adjective endings` family. Themes split into `Semantic themes`; `estar (state)` / tener-idiom / word-order into `How it's used`; `Comparisons`→`Comparison`. `topic:adj-ser-general` (190 rows after merge) had its 59 theme-tagged rows untagged and is renamed `Other descriptive adjectives` (131). Families 3→5, groups 39→31. |
+
 ### Phase 2 ledger
 
+- 2026-09-07 · P2-3 · _(this commit)_ · P2-3-adj-merge (8 MERGE), P2-3-adj-ser-general-untag (59) · adjectives families 3→5, groups 39→31; base/reachable 413 unchanged; `db:test` 14/14.
 - 2026-09-07 · P2-1 · `bea7ac3e` · none (tooling + tests) · no DB change; inventory counts unchanged; `db:test` 11→14 tests.
 - 2026-09-07 · P2-2a · `35b5d1be` · none (config + code) · no DB change; verbs base 1804→1599 (205 reference cognate verbs now Cognates-only); orphans 0; gaps 0; verb facet buttons −1; `db:test` 14/14.
 - 2026-09-07 · P2-5 · `f7790c3c` · none (config only) · cognates families 3→9, groups 71 (unchanged); base/reachable 787 unchanged; `db:test` 14/14.

@@ -169,9 +169,11 @@ const EXPECTED_FAMILY_STRUCTURE: Record<string, Array<[string, number]>> = {
     ["Meaning & context", 33],
   ],
   adjectives: [
-    ["Meaning & context", 31],
-    ["How it's used", 2],
-    ["Comparisons", 6],
+    ["Adjective endings", 8],
+    ["Semantic themes", 13],
+    ["How it's used", 3],
+    ["Comparison", 6],
+    ["Other descriptive adjectives", 1],
   ],
   adverbs: [
     ["Word types", 8],
@@ -249,14 +251,6 @@ test("family structure matches the reviewed snapshot", () => {
 // are allow-listed here.
 const DUPLICATE_AXIS_ALLOWLIST = new Set(
   [
-    ["topic:adj-abs-oso-osa", "topic:adj-oso-osa"],
-    ["topic:adj-abs-ico-ica", "topic:adj-ico-ica"],
-    ["topic:adj-abs-ivo-iva", "topic:adj-ivo-iva"],
-    ["topic:adj-abs-able", "topic:adj-able"],
-    ["topic:adj-abs-ible", "topic:adj-ible"],
-    ["topic:adj-abs-ente", "topic:adj-ente"],
-    ["topic:adj-abs-al", "topic:adj-al"],
-    ["topic:adj-abs-general", "topic:adj-ser-general"],
     // Transformations: surfaced by this guard on 2026-09-07. Same defect class
     // (a suffix axis and a POS-change axis dual-tagging the same rows).
     // Batch 7 (Transformations sweep) merges these.
