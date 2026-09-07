@@ -3099,7 +3099,7 @@
         "pos:adjective",
         "morphology:prefix-in",
         "morphology:suffix-ible",
-        "morphology:prefix-un",
+        "morphology:prefix-common",
         "morphology:suffix-able",
         "es:ser",
         "en:unspeakable",
@@ -8029,7 +8029,7 @@
         "es:esperar",
         "pos:adjective",
         "morphology:prefix-in",
-        "morphology:prefix-un",
+        "morphology:prefix-common",
         "es:ser",
         "en:unexpected",
         "topic:abstract-quality",
@@ -17371,7 +17371,7 @@
         "pos:adjective",
         "morphology:prefix",
         "morphology:prefix-in",
-        "morphology:prefix-un",
+        "morphology:prefix-common",
         "form:participle",
         "es:inacabado",
         "en:unfinished",
@@ -17656,7 +17656,7 @@
         "morphology:suffix-able",
         "morphology:prefix",
         "morphology:prefix-in",
-        "morphology:prefix-un",
+        "morphology:prefix-common",
         "grammar:ser-adjective",
         "es:ser",
         "en:unattainable",
@@ -18431,7 +18431,7 @@
         "form:participle",
         "morphology:prefix",
         "morphology:prefix-des",
-        "morphology:prefix-un",
+        "morphology:prefix-common",
         "es:desconocido",
         "en:unknown",
         "topic:abstract-quality",
@@ -25991,7 +25991,7 @@
         "es:tocar",
         "grammar:phrasal-verb",
         "particle:up",
-        "morphology:prefix-re",
+        "morphology:prefix-common",
         "es:retocar",
         "en:touch",
         "pos:verb",
@@ -33386,7 +33386,8 @@
         "es:todos",
         "en:everyone",
         "pos:preposition",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:purpose"
       ],
       "curriculumRole": "reference"
     },
@@ -34480,7 +34481,8 @@
         "grammar:negative",
         "es:sin",
         "en:without",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:purpose"
       ],
       "curriculumRole": "reference"
     },
@@ -35834,8 +35836,7 @@
         "grammar:frequency-adverb",
         "es:siempre",
         "en:always",
-        "audit:reviewed",
-        "topic:adv-time-frequency"
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -70192,7 +70193,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:adjective-to-adverb",
         "morphology:suffix-ly",
         "morphology:productive",
         "es:ser",
@@ -70214,7 +70214,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:adjective-to-adverb",
         "morphology:suffix-ly",
         "morphology:productive",
         "es:ser",
@@ -70236,7 +70235,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:adjective-to-adverb",
         "en:care",
         "morphology:suffix-ly",
         "morphology:productive",
@@ -70260,7 +70258,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:adjective-to-adverb",
         "morphology:suffix-ly",
         "morphology:productive",
         "es:ser",
@@ -70282,7 +70279,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:adjective-to-adverb",
         "morphology:suffix-ly",
         "morphology:productive",
         "es:ser",
@@ -70304,7 +70300,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:adjective-to-adverb",
         "morphology:suffix-ly",
         "morphology:productive",
         "es:ser",
@@ -70327,7 +70322,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:adjective-to-adverb",
         "morphology:suffix-ly",
         "morphology:productive",
         "es:ser",
@@ -70349,7 +70343,6 @@
       },
       "collections": [
         "morphology:derivation",
-        "morphology:adjective-to-adverb",
         "morphology:suffix-ly",
         "morphology:productive",
         "es:ser",
@@ -72365,8 +72358,7 @@
         "en:north",
         "topic:transformation",
         "audit:reviewed",
-        "topic:morph-ward",
-        "topic:morph-expr-to-adv"
+        "topic:morph-ward"
       ],
       "curriculumRole": "reference"
     },
@@ -72389,8 +72381,7 @@
         "en:north",
         "topic:transformation",
         "audit:reviewed",
-        "topic:morph-ward",
-        "topic:morph-expr-to-adv"
+        "topic:morph-ward"
       ],
       "curriculumRole": "reference"
     },
@@ -72413,8 +72404,7 @@
         "en:south",
         "topic:transformation",
         "audit:reviewed",
-        "topic:morph-ward",
-        "topic:morph-expr-to-adv"
+        "topic:morph-ward"
       ],
       "curriculumRole": "reference"
     },
@@ -72437,8 +72427,7 @@
         "en:south",
         "topic:transformation",
         "audit:reviewed",
-        "topic:morph-ward",
-        "topic:morph-expr-to-adv"
+        "topic:morph-ward"
       ],
       "curriculumRole": "reference"
     },
@@ -72461,8 +72450,7 @@
         "en:east",
         "topic:transformation",
         "audit:reviewed",
-        "topic:morph-ward",
-        "topic:morph-expr-to-adv"
+        "topic:morph-ward"
       ],
       "curriculumRole": "reference"
     },
@@ -72485,8 +72473,7 @@
         "en:east",
         "topic:transformation",
         "audit:reviewed",
-        "topic:morph-ward",
-        "topic:morph-expr-to-adv"
+        "topic:morph-ward"
       ],
       "curriculumRole": "reference"
     },
@@ -72509,8 +72496,7 @@
         "en:west",
         "topic:transformation",
         "audit:reviewed",
-        "topic:morph-ward",
-        "topic:morph-expr-to-adv"
+        "topic:morph-ward"
       ],
       "curriculumRole": "reference"
     },
@@ -72533,8 +72519,7 @@
         "en:west",
         "topic:transformation",
         "audit:reviewed",
-        "topic:morph-ward",
-        "topic:morph-expr-to-adv"
+        "topic:morph-ward"
       ],
       "curriculumRole": "reference"
     },
@@ -72559,7 +72544,6 @@
         "topic:transformation",
         "audit:reviewed",
         "topic:morph-ward",
-        "topic:morph-expr-to-adv",
         "topic:enmap-in"
       ],
       "curriculumRole": "reference"
@@ -72585,7 +72569,6 @@
         "topic:transformation",
         "audit:reviewed",
         "topic:morph-ward",
-        "topic:morph-expr-to-adv",
         "topic:enmap-in"
       ],
       "curriculumRole": "reference"
@@ -72609,8 +72592,7 @@
         "en:out",
         "topic:transformation",
         "audit:reviewed",
-        "topic:morph-ward",
-        "topic:morph-expr-to-adv"
+        "topic:morph-ward"
       ],
       "curriculumRole": "reference"
     },
@@ -72633,8 +72615,7 @@
         "en:out",
         "topic:transformation",
         "audit:reviewed",
-        "topic:morph-ward",
-        "topic:morph-expr-to-adv"
+        "topic:morph-ward"
       ],
       "curriculumRole": "reference"
     },
@@ -72657,8 +72638,7 @@
         "en:up",
         "topic:transformation",
         "audit:reviewed",
-        "topic:morph-ward",
-        "topic:morph-expr-to-adv"
+        "topic:morph-ward"
       ],
       "curriculumRole": "reference"
     },
@@ -72681,8 +72661,7 @@
         "en:up",
         "topic:transformation",
         "audit:reviewed",
-        "topic:morph-ward",
-        "topic:morph-expr-to-adv"
+        "topic:morph-ward"
       ],
       "curriculumRole": "reference"
     },
@@ -72705,8 +72684,7 @@
         "en:down",
         "topic:transformation",
         "audit:reviewed",
-        "topic:morph-ward",
-        "topic:morph-expr-to-adv"
+        "topic:morph-ward"
       ],
       "curriculumRole": "reference"
     },
@@ -72729,8 +72707,7 @@
         "en:down",
         "topic:transformation",
         "audit:reviewed",
-        "topic:morph-ward",
-        "topic:morph-expr-to-adv"
+        "topic:morph-ward"
       ],
       "curriculumRole": "reference"
     },
@@ -72753,8 +72730,7 @@
         "en:back",
         "topic:transformation",
         "audit:reviewed",
-        "topic:morph-ward",
-        "topic:morph-expr-to-adv"
+        "topic:morph-ward"
       ],
       "curriculumRole": "reference"
     },
@@ -72777,8 +72753,7 @@
         "en:back",
         "topic:transformation",
         "audit:reviewed",
-        "topic:morph-ward",
-        "topic:morph-expr-to-adv"
+        "topic:morph-ward"
       ],
       "curriculumRole": "reference"
     },
@@ -72801,8 +72776,7 @@
         "en:home",
         "topic:transformation",
         "audit:reviewed",
-        "topic:morph-ward",
-        "topic:morph-expr-to-adv"
+        "topic:morph-ward"
       ],
       "curriculumRole": "reference"
     },
@@ -72825,8 +72799,7 @@
         "en:home",
         "topic:transformation",
         "audit:reviewed",
-        "topic:morph-ward",
-        "topic:morph-expr-to-adv"
+        "topic:morph-ward"
       ],
       "curriculumRole": "reference"
     },
@@ -72850,8 +72823,7 @@
         "topic:en-multi-sense",
         "topic:transformation",
         "audit:reviewed",
-        "topic:morph-ward",
-        "topic:morph-expr-to-adv"
+        "topic:morph-ward"
       ],
       "curriculumRole": "reference"
     },
@@ -72875,8 +72847,7 @@
         "topic:en-multi-sense",
         "topic:transformation",
         "audit:reviewed",
-        "topic:morph-ward",
-        "topic:morph-expr-to-adv"
+        "topic:morph-ward"
       ],
       "curriculumRole": "reference"
     },
@@ -72900,8 +72871,7 @@
         "topic:en-multi-sense",
         "topic:transformation",
         "audit:reviewed",
-        "topic:morph-ward",
-        "topic:morph-expr-to-adv"
+        "topic:morph-ward"
       ],
       "curriculumRole": "reference"
     },
@@ -72925,8 +72895,7 @@
         "topic:en-multi-sense",
         "topic:transformation",
         "audit:reviewed",
-        "topic:morph-ward",
-        "topic:morph-expr-to-adv"
+        "topic:morph-ward"
       ],
       "curriculumRole": "reference"
     },
@@ -72941,7 +72910,7 @@
       "collections": [
         "morphology:derivation",
         "morphology:verb-to-verb",
-        "morphology:prefix-dis",
+        "morphology:prefix-common",
         "morphology:productive",
         "es:estar",
         "en:agree",
@@ -72967,7 +72936,7 @@
       "collections": [
         "morphology:derivation",
         "morphology:verb-to-verb",
-        "morphology:prefix-dis",
+        "morphology:prefix-common",
         "morphology:productive",
         "es:conectar",
         "en:connect",
@@ -72987,7 +72956,7 @@
       "collections": [
         "morphology:derivation",
         "morphology:verb-to-verb",
-        "morphology:prefix-mis",
+        "morphology:prefix-common",
         "morphology:productive",
         "es:entender",
         "en:understand",
@@ -73007,7 +72976,7 @@
       "collections": [
         "morphology:derivation",
         "morphology:verb-to-verb",
-        "morphology:prefix-mis",
+        "morphology:prefix-common",
         "morphology:productive",
         "es:informar",
         "en:inform",
@@ -73027,7 +72996,7 @@
       "collections": [
         "morphology:derivation",
         "morphology:verb-to-verb",
-        "morphology:prefix-over",
+        "morphology:prefix-common",
         "morphology:productive",
         "es:cocinar",
         "en:cook",
@@ -73047,7 +73016,7 @@
       "collections": [
         "morphology:derivation",
         "morphology:verb-to-verb",
-        "morphology:prefix-over",
+        "morphology:prefix-common",
         "morphology:productive",
         "es:cobrar",
         "en:charge",
@@ -73067,7 +73036,7 @@
       "collections": [
         "morphology:derivation",
         "morphology:verb-to-verb",
-        "morphology:prefix-re",
+        "morphology:prefix-common",
         "morphology:productive",
         "es:escribir",
         "en:write",
@@ -73087,7 +73056,7 @@
       "collections": [
         "morphology:derivation",
         "morphology:adjective-to-adjective",
-        "morphology:prefix-un",
+        "morphology:prefix-common",
         "morphology:productive",
         "es:ser",
         "en:happy",
@@ -73109,7 +73078,7 @@
       "collections": [
         "morphology:derivation",
         "morphology:verb-to-verb",
-        "morphology:prefix-under",
+        "morphology:prefix-common",
         "morphology:productive",
         "es:estimar",
         "en:estimate",
@@ -73392,7 +73361,7 @@
       "collections": [
         "morphology:derivation",
         "morphology:noun-to-noun",
-        "morphology:prefix-fore",
+        "morphology:prefix-common",
         "morphology:recognition",
         "es:brazo",
         "en:arm",
@@ -73413,7 +73382,7 @@
       "collections": [
         "morphology:derivation",
         "morphology:noun-to-noun",
-        "morphology:prefix-fore",
+        "morphology:prefix-common",
         "morphology:recognition",
         "es:cabeza",
         "en:head",
@@ -73434,7 +73403,7 @@
       "collections": [
         "morphology:derivation",
         "morphology:verb-to-verb",
-        "morphology:prefix-fore",
+        "morphology:prefix-common",
         "morphology:recognition",
         "es:ver",
         "en:see",
@@ -73457,7 +73426,7 @@
       "collections": [
         "morphology:derivation",
         "morphology:verb-to-verb",
-        "morphology:prefix-fore",
+        "morphology:prefix-common",
         "morphology:recognition",
         "es:decir",
         "en:tell",
@@ -73480,7 +73449,7 @@
       "collections": [
         "morphology:derivation",
         "morphology:verb-to-verb",
-        "morphology:prefix-fore",
+        "morphology:prefix-common",
         "morphology:recognition",
         "es:advertir",
         "en:warn",
@@ -73500,7 +73469,7 @@
       "collections": [
         "morphology:derivation",
         "morphology:noun-to-noun",
-        "morphology:prefix-fore",
+        "morphology:prefix-common",
         "morphology:recognition",
         "es:palabra",
         "en:word",
@@ -73521,7 +73490,7 @@
       "collections": [
         "morphology:derivation",
         "morphology:noun-to-noun",
-        "morphology:prefix-fore",
+        "morphology:prefix-common",
         "morphology:recognition",
         "es:padre",
         "en:father",
@@ -73542,7 +73511,7 @@
       "collections": [
         "morphology:derivation",
         "morphology:noun-to-noun",
-        "morphology:prefix-fore",
+        "morphology:prefix-common",
         "morphology:recognition",
         "es:fondo",
         "en:ground",
@@ -73562,7 +73531,7 @@
       },
       "collections": [
         "morphology:recognition",
-        "morphology:prefix-fore",
+        "morphology:prefix-common",
         "pos:noun",
         "es:pronóstico",
         "en:forecast",
@@ -73584,7 +73553,7 @@
       },
       "collections": [
         "morphology:recognition",
-        "morphology:prefix-fore",
+        "morphology:prefix-common",
         "pos:adjective",
         "es:ser",
         "en:foremost",
@@ -73606,7 +73575,7 @@
       },
       "collections": [
         "morphology:recognition",
-        "morphology:prefix-fore",
+        "morphology:prefix-common",
         "pos:connector",
         "es:por",
         "en:therefore",
@@ -73975,7 +73944,7 @@
       },
       "collections": [
         "morphology:recognition",
-        "morphology:prefix-fore",
+        "morphology:prefix-common",
         "pos:adverb",
         "es:de",
         "en:beforehand",
@@ -74089,7 +74058,7 @@
       },
       "collections": [
         "morphology:recognition",
-        "morphology:prefix-fore",
+        "morphology:prefix-common",
         "pos:adjective",
         "grammar:fixed-expression",
         "forewarned is forearmed",
@@ -78025,8 +77994,7 @@
         "pos:adverb",
         "es:nunca",
         "en:never",
-        "audit:reviewed",
-        "topic:adv-time-frequency"
+        "audit:reviewed"
       ],
       "curriculumRole": "core"
     },
@@ -78045,8 +78013,7 @@
         "almost never",
         "es:casi",
         "en:almost",
-        "audit:reviewed",
-        "topic:adv-time-frequency"
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -78063,8 +78030,7 @@
         "grammar:frequency-adverb",
         "pos:adverb",
         "en:sometimes",
-        "audit:reviewed",
-        "topic:adv-time-frequency"
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -78081,8 +78047,7 @@
         "grammar:frequency-adverb",
         "pos:adverb",
         "en:often",
-        "audit:reviewed",
-        "topic:adv-time-frequency"
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -78101,8 +78066,7 @@
         "es:con",
         "en:often",
         "topic:multi-sense",
-        "audit:reviewed",
-        "topic:adv-time-frequency"
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -78121,8 +78085,7 @@
         "almost always",
         "es:casi",
         "en:almost",
-        "audit:reviewed",
-        "topic:adv-time-frequency"
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },
@@ -78183,8 +78146,7 @@
         "es:todos",
         "en:every",
         "pos:adverb",
-        "audit:reviewed",
-        "topic:adv-time-frequency"
+        "audit:reviewed"
       ],
       "curriculumRole": "supporting"
     },
@@ -78221,8 +78183,7 @@
         "es:todas",
         "en:every",
         "pos:adverb",
-        "audit:reviewed",
-        "topic:adv-time-frequency"
+        "audit:reviewed"
       ],
       "curriculumRole": "reference"
     },

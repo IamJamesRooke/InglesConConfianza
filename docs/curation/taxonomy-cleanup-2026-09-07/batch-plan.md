@@ -115,8 +115,11 @@ phase-1 rows above. Model routing per batch is in `next-plan.md`.
 
 | P2-6 | Verbs: family names & stragglers | **done** | _(this commit)_ | `Modals, time & possibility`→`Modals, wishes & possibility` (no time group ever existed; wishes/hoping/depending dominate). `Communication — Other`→`Communication — Notifying & Telling` (contents are avisar/contar/callar senses). `Analysis & Investigation` moved Formal→`Thinking & learning`. MERGE `verb-formal-abstract`→`verb-admin-legal-formal` (4 rows). `Formal & specialized`→`Specialized actions` (4 groups: admin-legal, technology, weather-time, health-body). Verb families 11→11, groups −1. |
 
+| P2-7 | Small-topics sweep | **done** | _(this commit)_ | Verb-Forms: `topic:vf-past-d` ("regular /d/") moved from `Irregular patterns` to `Regular endings` (was a bug). Transformations: 7 `Prefixes` buttons merged to one `Common prefixes` group in `Word types` family (family retired); dual-tag pairs `morph-expr-to-adv`→`morph-ward` and `adjective-to-adverb`→`suffix-ly` merged (the P2-1 guard finds). Adverbs: `topic:adv-time-frequency` (strict subset) merged into `grammar:frequency-adverb`, "Time — Frequency" button removed. Prepositions: `Purpose`/`Without`/`Except` (1 row each) merged to one `Purpose, without & except` group. Duplicate-axis allow-list now empty. Not done (speculative): Connectors 2-family split, Verb-Patterns tense family. |
+
 ### Phase 2 ledger
 
+- 2026-09-07 · P2-7 · _(this commit)_ · P2-7-merge (10 MERGE), P2-7-prep-purpose (2) · transformations 3→2 families, adverbs -1 group, prepositions 7→5, verb-forms bug fixed; `db:test` 14/14.
 - 2026-09-07 · P2-6 · _(this commit)_ · P2-6-verb-merge (1 MERGE) · verb families relabelled; groups 76→75; base/reachable 1595 unchanged; `db:test` 14/14.
 - 2026-09-07 · P2-4 · _(this commit)_ · P2-4-noun-merge (1 MERGE) · nouns families 2→8, groups 45→43; base/reachable 483 unchanged; `db:test` 14/14.
 - 2026-09-07 · P2-3 · _(this commit)_ · P2-3-adj-merge (8 MERGE), P2-3-adj-ser-general-untag (59) · adjectives families 3→5, groups 39→31; base/reachable 413 unchanged; `db:test` 14/14.

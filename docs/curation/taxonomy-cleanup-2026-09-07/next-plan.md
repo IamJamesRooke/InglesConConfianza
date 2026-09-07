@@ -370,7 +370,7 @@ Target structure:
 - **Size:** code-only. 1 commit.
 - **Done when:** structure snapshot updated; verbs `reachable == base`.
 
-### Batch 7 — small topics sweep
+### Batch 7 — small topics sweep — **DONE** (Connectors/Verb-Patterns family splits skipped as speculative)
 
 - **Scope:** Adverbs, Determiners, Pronouns, Interrogatives, Connectors,
   Prepositions, Numbers, Expressions, Imperatives, Collocations, Questions &

@@ -1,0 +1,10 @@
+MERGE	morphology:prefix-un	morphology:prefix-common	P2-7 small-topics sweep: consolidate
+MERGE	morphology:prefix-dis	morphology:prefix-common	P2-7 small-topics sweep: consolidate
+MERGE	morphology:prefix-mis	morphology:prefix-common	P2-7 small-topics sweep: consolidate
+MERGE	morphology:prefix-re	morphology:prefix-common	P2-7 small-topics sweep: consolidate
+MERGE	morphology:prefix-over	morphology:prefix-common	P2-7 small-topics sweep: consolidate
+MERGE	morphology:prefix-under	morphology:prefix-common	P2-7 small-topics sweep: consolidate
+MERGE	morphology:prefix-fore	morphology:prefix-common	P2-7 small-topics sweep: consolidate
+MERGE	topic:morph-expr-to-adv	topic:morph-ward	P2-7 small-topics sweep: consolidate
+MERGE	morphology:adjective-to-adverb	morphology:suffix-ly	P2-7 small-topics sweep: consolidate
+MERGE	topic:adv-time-frequency	grammar:frequency-adverb	P2-7 small-topics sweep: consolidate

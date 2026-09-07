@@ -16,12 +16,6 @@ test("word-building examples emphasize the actual prefix or suffix", () => {
   assert.equal(hood.label, "neighborhood");
   assert.equal(hood.before, "neighbor");
   assert.equal(hood.emphasis, "hood");
-  const un = presentFacet(
-    facets.find((facet) => facet.collection === "morphology:prefix-un")!,
-  );
-  assert.equal(un.label, "unhappy");
-  assert.equal(un.before, "");
-  assert.equal(un.emphasis, "un");
   const survivor = presentFacet(
     facets.find((facet) => facet.collection === "morphology:suffix-er-or")!,
   );
@@ -53,8 +47,8 @@ test("subtopics are grouped by purpose without changing filter values", () => {
     "Endings",
   );
   assert.equal(
-    facetGroup("transformations", "morphology:prefix-un"),
-    "Prefixes",
+    facetGroup("transformations", "morphology:prefix-common"),
+    "Word types",
   );
   assert.equal(
     facetGroup("cognates", "cognate:plicar-to-ply"),

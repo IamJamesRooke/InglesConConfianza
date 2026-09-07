@@ -1350,11 +1350,6 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
         family: "Word types",
       },
       {
-        collection: "topic:adv-time-frequency",
-        label: "Time — Frequency",
-        family: "Meaning & context",
-      },
-      {
         collection: "topic:adv-time-relative-day",
         label: "Time — Relative Day",
         family: "Meaning & context",
@@ -1578,17 +1573,7 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       },
       {
         collection: "grammar:purpose",
-        label: "Purpose",
-        family: "Preposition groups",
-      },
-      {
-        collection: "grammar:negative",
-        label: "Without",
-        family: "Preposition groups",
-      },
-      {
-        collection: "grammar:exception",
-        label: "Except",
+        label: "Purpose, without & except",
         family: "Preposition groups",
       },
     ],
@@ -2137,39 +2122,9 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
         family: "Endings",
       },
       {
-        collection: "morphology:prefix-un",
-        label: "un- (happy → unhappy)",
-        family: "Prefixes",
-      },
-      {
-        collection: "morphology:prefix-dis",
-        label: "dis- (connect → disconnect)",
-        family: "Prefixes",
-      },
-      {
-        collection: "morphology:prefix-mis",
-        label: "mis- (understand → misunderstand)",
-        family: "Prefixes",
-      },
-      {
-        collection: "morphology:prefix-re",
-        label: "re- (write → rewrite)",
-        family: "Prefixes",
-      },
-      {
-        collection: "morphology:prefix-over",
-        label: "over- (cook → overcook)",
-        family: "Prefixes",
-      },
-      {
-        collection: "morphology:prefix-under",
-        label: "under- (estimate → underestimate)",
-        family: "Prefixes",
-      },
-      {
-        collection: "morphology:prefix-fore",
-        label: "fore- (see → foresee)",
-        family: "Prefixes",
+        collection: "morphology:prefix-common",
+        label: "Common prefixes (un-, dis-, mis-, re-, over-, under-, fore-)",
+        family: "Word types",
       },
       {
         collection: "topic:morph-noun-to-adj",
@@ -2202,11 +2157,6 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
         family: "Word types",
       },
       {
-        collection: "morphology:adjective-to-adverb",
-        label: "adjective → adverb",
-        family: "Word types",
-      },
-      {
         collection: "morphology:adjective-to-adjective",
         label: "adjective → adjective",
         family: "Word types",
@@ -2219,11 +2169,6 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       {
         collection: "topic:morph-noun-to-noun",
         label: "noun → noun",
-        family: "Word types",
-      },
-      {
-        collection: "topic:morph-expr-to-adv",
-        label: "expression → adverb",
         family: "Word types",
       },
       {
@@ -2248,7 +2193,7 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       {
         collection: "topic:vf-past-d",
         label: "regular /d/ (played)",
-        family: "Irregular patterns",
+        family: "Regular endings",
       },
       {
         collection: "sound:regular-past-pronounced-t",

@@ -183,12 +183,12 @@ const EXPECTED_FAMILY_STRUCTURE: Record<string, Array<[string, number]>> = {
   ],
   adverbs: [
     ["Word types", 8],
-    ["Meaning & context", 5],
+    ["Meaning & context", 4],
   ],
   numbers: [["Number groups", 8]],
   expressions: [["Expression groups", 7]],
   connectors: [["Connector types", 11]],
-  prepositions: [["Preposition groups", 7]],
+  prepositions: [["Preposition groups", 5]],
   mappings: [
     ["A–E", 16],
     ["F–J", 4],
@@ -220,12 +220,11 @@ const EXPECTED_FAMILY_STRUCTURE: Record<string, Array<[string, number]>> = {
   ],
   transformations: [
     ["Endings", 23],
-    ["Word types", 15],
-    ["Prefixes", 7],
+    ["Word types", 14],
   ],
   "verb-forms": [
-    ["Irregular patterns", 51],
-    ["Regular endings", 2],
+    ["Regular endings", 3],
+    ["Irregular patterns", 50],
   ],
   "verb-patterns": [
     ["Sentence patterns", 10],
@@ -250,20 +249,12 @@ test("family structure matches the reviewed snapshot", () => {
 
 // --- Duplicate-axis guard (Batch 1) ---
 // Two facet buttons on the same topic whose member sets are near-identical in
-// BOTH directions (Jaccard > 0.8) are one axis entered twice — the adjectives
-// `topic:adj-abs-*` vs `topic:adj-*` case. A small group fully contained in a
-// big one (Jaccard low) is a normal subset, not a duplicate, so containment is
-// deliberately not flagged. Batch 3 merges the known pairs; until then they
-// are allow-listed here.
-const DUPLICATE_AXIS_ALLOWLIST = new Set(
-  [
-    // Transformations: surfaced by this guard on 2026-09-07. Same defect class
-    // (a suffix axis and a POS-change axis dual-tagging the same rows).
-    // Batch 7 (Transformations sweep) merges these.
-    ["topic:morph-ward", "topic:morph-expr-to-adv"],
-    ["morphology:suffix-ly", "morphology:adjective-to-adverb"],
-  ].map((pair) => pair.slice().sort().join(" ~ ")),
-);
+// BOTH directions (Jaccard > 0.8) are one axis entered twice. The adjectives
+// `topic:adj-abs-*` pairs (P2-3) and the Transformations suffix/POS-change
+// pairs (P2-7) have been merged; the allow-list is now empty. A small group
+// fully contained in a big one (Jaccard low) is a normal subset, not a
+// duplicate, and is deliberately not flagged.
+const DUPLICATE_AXIS_ALLOWLIST = new Set<string>();
 
 test("no two facet buttons on a topic are the same axis entered twice", () => {
   const offenders: string[] = [];
