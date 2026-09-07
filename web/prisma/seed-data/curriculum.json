@@ -1613,7 +1613,7 @@
         "audit:reviewed",
         "topic:fem-a"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "p7ouvs75tf",
@@ -10410,7 +10410,7 @@
         "audit:reviewed",
         "topic:map-hacer"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "1xa5alb94l",
@@ -10430,7 +10430,7 @@
         "audit:reviewed",
         "topic:map-hacer"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "02s3tysyuj",
@@ -14215,7 +14215,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "32lecsnkbn",
@@ -32938,7 +32938,7 @@
         "audit:reviewed",
         "topic:adv-time-relative-day"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "uklvuftocv",
@@ -32957,7 +32957,7 @@
         "audit:reviewed",
         "topic:adv-time-relative-day"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "is83ex1r7e",
@@ -32996,7 +32996,7 @@
         "audit:reviewed",
         "topic:adv-time-relative-day"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "70f495461k",
@@ -33031,7 +33031,7 @@
         "audit:reviewed",
         "topic:noun-time-days-periods"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "4abmpsiu46",
@@ -33048,7 +33048,7 @@
         "audit:reviewed",
         "topic:noun-time-days-periods"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "yt3bjazug3",
@@ -33081,7 +33081,7 @@
         "audit:reviewed",
         "topic:noun-time-days-periods"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "qeasfm79hz",
@@ -36532,7 +36532,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "4fpgdvwxzu",
@@ -37786,7 +37786,7 @@
         "topic:age",
         "audit:reviewed"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "kh64q1xdfp",
@@ -37947,7 +37947,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "sp9vpwtyfk",
@@ -43012,7 +43012,7 @@
         "topic:common-gender-professions",
         "topic:cognate-transparent"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "5hvo5dc978",
@@ -55019,7 +55019,7 @@
         "topic:fem-a",
         "topic:cognate-opaque"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "q4hcooj6w7",
@@ -56271,7 +56271,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "wof9vipshg",
@@ -56291,7 +56291,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ij9kh31g9s",
@@ -56311,7 +56311,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "dypln0ds39",
@@ -56331,7 +56331,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "zitwttv8hl",
@@ -56353,7 +56353,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "hkvahmcgwi",
@@ -56373,7 +56373,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "6msmcahhki",
@@ -56516,7 +56516,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "sxsp9okeyb",
@@ -56562,7 +56562,7 @@
         "topic:map-ser",
         "topic:confusable-false-friend"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "7ew1qah5mw",
@@ -56778,7 +56778,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "eumyulu0a5",
@@ -56907,7 +56907,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "5r6yy0jg6s",
@@ -57313,7 +57313,7 @@
         "audit:reviewed",
         "topic:cardinal-1-10"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "wt98samedo",
@@ -57332,7 +57332,7 @@
         "audit:reviewed",
         "topic:cardinal-1-10"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "oy8v5zvn8b",
@@ -57351,7 +57351,7 @@
         "audit:reviewed",
         "topic:cardinal-1-10"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "51gbegi9xv",
@@ -57370,7 +57370,7 @@
         "audit:reviewed",
         "topic:cardinal-1-10"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "qakubdvxn4",
@@ -57389,7 +57389,7 @@
         "audit:reviewed",
         "topic:cardinal-1-10"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "8kk62n54ek",
@@ -57408,7 +57408,7 @@
         "audit:reviewed",
         "topic:cardinal-1-10"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "2rx2xhdh4h",
@@ -57427,7 +57427,7 @@
         "audit:reviewed",
         "topic:cardinal-1-10"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "jv6ldncrer",
@@ -57446,7 +57446,7 @@
         "audit:reviewed",
         "topic:cardinal-11-19"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "g04obyf6c6",
@@ -57465,7 +57465,7 @@
         "audit:reviewed",
         "topic:cardinal-11-19"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "2595sz61k6",
@@ -57486,7 +57486,7 @@
         "audit:reviewed",
         "topic:cardinal-11-19"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "zxxuc9rbeo",
@@ -57507,7 +57507,7 @@
         "audit:reviewed",
         "topic:cardinal-11-19"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "81mkho1vkn",
@@ -57528,7 +57528,7 @@
         "audit:reviewed",
         "topic:cardinal-11-19"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "feji8uhi1z",
@@ -57549,7 +57549,7 @@
         "audit:reviewed",
         "topic:cardinal-11-19"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "262y5pq2yi",
@@ -57570,7 +57570,7 @@
         "audit:reviewed",
         "topic:cardinal-11-19"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "051wgcuarr",
@@ -57591,7 +57591,7 @@
         "audit:reviewed",
         "topic:cardinal-11-19"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "renlsnx9th",
@@ -57612,7 +57612,7 @@
         "audit:reviewed",
         "topic:cardinal-11-19"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "vv3m29x1n3",
@@ -57633,7 +57633,7 @@
         "audit:reviewed",
         "topic:cardinal-tens-and-up"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "d3js97oguz",
@@ -57654,7 +57654,7 @@
         "audit:reviewed",
         "topic:cardinal-tens-and-up"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "6i07a6cfgd",
@@ -57675,7 +57675,7 @@
         "audit:reviewed",
         "topic:cardinal-tens-and-up"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "887il2wd8y",
@@ -57696,7 +57696,7 @@
         "audit:reviewed",
         "topic:cardinal-tens-and-up"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ezhc4jm343",
@@ -57717,7 +57717,7 @@
         "audit:reviewed",
         "topic:cardinal-tens-and-up"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "bhyg7mtanw",
@@ -57738,7 +57738,7 @@
         "audit:reviewed",
         "topic:cardinal-tens-and-up"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "bdzltbyuwl",
@@ -57759,7 +57759,7 @@
         "audit:reviewed",
         "topic:cardinal-tens-and-up"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "pdr584zg3c",
@@ -57780,7 +57780,7 @@
         "audit:reviewed",
         "topic:cardinal-tens-and-up"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "q9tuqos4be",
@@ -57800,7 +57800,7 @@
         "audit:reviewed",
         "topic:noun-time-months"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "jwz58gd92h",
@@ -57820,7 +57820,7 @@
         "audit:reviewed",
         "topic:noun-time-months"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "z4zh0vz9g7",
@@ -57840,7 +57840,7 @@
         "audit:reviewed",
         "topic:noun-time-months"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "9dultormoy",
@@ -57860,7 +57860,7 @@
         "audit:reviewed",
         "topic:noun-time-months"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "8t5gcxfjja",
@@ -57881,7 +57881,7 @@
         "audit:reviewed",
         "topic:noun-time-months"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "4vqpc9njvy",
@@ -57901,7 +57901,7 @@
         "audit:reviewed",
         "topic:noun-time-months"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "1y17lp2kym",
@@ -57921,7 +57921,7 @@
         "audit:reviewed",
         "topic:noun-time-months"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "0j3b8dq5ol",
@@ -57941,7 +57941,7 @@
         "audit:reviewed",
         "topic:noun-time-months"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "up01db9skk",
@@ -57961,7 +57961,7 @@
         "audit:reviewed",
         "topic:noun-time-months"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "9q7ietsmy0",
@@ -57981,7 +57981,7 @@
         "audit:reviewed",
         "topic:noun-time-months"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "iv25rev3nx",
@@ -58001,7 +58001,7 @@
         "audit:reviewed",
         "topic:noun-time-months"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "i9xzj22sh8",
@@ -58021,7 +58021,7 @@
         "audit:reviewed",
         "topic:noun-time-months"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "b5bellazox",
@@ -58042,7 +58042,7 @@
         "topic:masc-consonant",
         "topic:noun-time-days-periods"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "dmds1ataaw",
@@ -58063,7 +58063,7 @@
         "topic:masc-consonant",
         "topic:noun-time-days-periods"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "vdmuuz7ozq",
@@ -58084,7 +58084,7 @@
         "topic:masc-consonant",
         "topic:noun-time-days-periods"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "kpscphg0bi",
@@ -58105,7 +58105,7 @@
         "topic:masc-consonant",
         "topic:noun-time-days-periods"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "hwpige4nqc",
@@ -58126,7 +58126,7 @@
         "topic:masc-consonant",
         "topic:noun-time-days-periods"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "dtrbrlnt7k",
@@ -58147,7 +58147,7 @@
         "topic:masc-o",
         "topic:noun-time-days-periods"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "7cm192p84m",
@@ -58168,7 +58168,7 @@
         "topic:masc-o",
         "topic:noun-time-days-periods"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "2h3rzc2x6s",
@@ -58550,7 +58550,7 @@
         "topic:fem-exceptions",
         "topic:objects-physical"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "hpiz3izlaw",
@@ -58610,7 +58610,7 @@
         "topic:fem-a",
         "topic:objects-physical"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "0kp3n4tcx0",
@@ -58710,7 +58710,7 @@
         "topic:fem-consonant",
         "topic:objects-physical"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "m8g7uv9h3o",
@@ -59010,7 +59010,7 @@
         "audit:reviewed",
         "topic:cardinal-tens-and-up"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ctd9xdzidv",
@@ -59031,7 +59031,7 @@
         "audit:reviewed",
         "topic:cardinal-tens-and-up"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "sdy4rgtwmm",
@@ -60029,7 +60029,7 @@
         "topic:masc-e",
         "topic:people-general"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "r2qjh18oon",
@@ -60095,7 +60095,7 @@
         "topic:fem-consonant",
         "topic:people-general"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "3lzqrwju25",
@@ -60183,7 +60183,7 @@
         "topic:people-general",
         "topic:family-groups-terms"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "fb4v0olqo7",
@@ -60227,7 +60227,7 @@
         "topic:masc-o",
         "topic:people-general"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "e0ljw8aj5i",
@@ -60249,7 +60249,7 @@
         "topic:people-general",
         "topic:family-groups-terms"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "wk98ucmw9z",
@@ -60293,7 +60293,7 @@
         "topic:fem-a",
         "topic:people-general"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "aiktgq5j7u",
@@ -60354,7 +60354,7 @@
         "topic:masc-consonant",
         "topic:places-public-city"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "jerljir3i3",
@@ -60376,7 +60376,7 @@
         "topic:fem-a",
         "topic:places-home-buildings"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "94xmzhpqs2",
@@ -60420,7 +60420,7 @@
         "topic:fem-a",
         "topic:places-public-city"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "z4gqxgd1ln",
@@ -60442,7 +60442,7 @@
         "topic:masc-o",
         "topic:places-home-buildings"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "graetcx43j",
@@ -60486,7 +60486,7 @@
         "topic:masc-o",
         "topic:places-home-buildings"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "eqgkxdihiu",
@@ -60532,7 +60532,7 @@
         "topic:fem-abstract-suffix",
         "topic:places-public-city"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "x3fde0xia4",
@@ -60554,7 +60554,7 @@
         "topic:masc-consonant",
         "topic:places-public-city"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "3z3dcdm7iy",
@@ -66160,7 +66160,7 @@
         "topic:fem-a",
         "topic:noun-time-days-periods"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "wwclre1oia",
@@ -66512,7 +66512,7 @@
         "topic:confusable-false-friend",
         "topic:multi-sense"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "btcf40lgg6",
@@ -66653,7 +66653,7 @@
         "topic:fem-exceptions",
         "topic:people-general"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "0bnotvdld0",
@@ -66675,7 +66675,7 @@
         "topic:masc-consonant",
         "topic:people-general"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "43qxgonexo",
@@ -77811,7 +77811,7 @@
         "topic:masc-o",
         "topic:noun-time-days-periods"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "4uh4nkfock",
@@ -97795,7 +97795,7 @@
         "topic:people-family-rel",
         "topic:family-extended"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "pjffiupfcx",
@@ -97817,7 +97817,7 @@
         "topic:people-family-rel",
         "topic:family-extended"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "3ug1p1ji94",
@@ -97839,7 +97839,7 @@
         "topic:people-family-rel",
         "topic:family-extended"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "b6kbo6zieu",
@@ -97861,7 +97861,7 @@
         "topic:people-family-rel",
         "topic:family-extended"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "3ctodg5tkn",
@@ -97883,7 +97883,7 @@
         "topic:people-family-rel",
         "topic:family-extended"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "7supxyfj1b",
@@ -97905,7 +97905,7 @@
         "topic:people-family-rel",
         "topic:family-extended"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "7irr9k23b2",
@@ -97971,7 +97971,7 @@
         "topic:people-family-rel",
         "topic:family-extended"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "amig0ldofo",
@@ -97993,7 +97993,7 @@
         "topic:people-family-rel",
         "topic:family-extended"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "p3fuo2folk",
@@ -98641,7 +98641,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "dw8fkd9ui7",
@@ -98660,7 +98660,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "v0i70fm519",
@@ -98679,7 +98679,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "j738464gvg",
@@ -98698,7 +98698,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "aacmq4xqac",
@@ -98717,7 +98717,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "mmm0498x6l",
@@ -98886,7 +98886,7 @@
         "es:cabeza",
         "en:head"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "ggd276arkj",
@@ -98904,7 +98904,7 @@
         "es:cara",
         "en:face"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "upkg3ryn1f",
@@ -98922,7 +98922,7 @@
         "es:ojo",
         "en:eye"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "fnvyeqx3h1",
@@ -98940,7 +98940,7 @@
         "es:boca",
         "en:mouth"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "kjjalit51q",
@@ -98958,7 +98958,7 @@
         "es:nariz",
         "en:nose"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "imz5avafpm",
@@ -98976,7 +98976,7 @@
         "es:oreja",
         "en:ear"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "l0b13d46h0",
@@ -98994,7 +98994,7 @@
         "es:pelo",
         "en:hair"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "jpf3qzikxi",
@@ -99012,7 +99012,7 @@
         "es:mano",
         "en:hand"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "s20l43faqf",
@@ -99030,7 +99030,7 @@
         "es:brazo",
         "en:arm"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "2onu53gblp",
@@ -99048,7 +99048,7 @@
         "es:pierna",
         "en:leg"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "r2uudeylvx",
@@ -99066,7 +99066,7 @@
         "es:pie",
         "en:foot"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     },
     {
       "id": "six7naj7q2",
@@ -99084,7 +99084,7 @@
         "es:cuerpo",
         "en:body"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "supporting"
     }
   ]
 }

@@ -15,6 +15,7 @@ import { LanguageBlockCallout } from "./language-block-callout";
 // callbacks so this stays a pure view.
 export function LanguageBlockEditor({
   languageBlock,
+  zenMode = false,
   index,
   isCollapsed,
   hasPreviousBlock,
@@ -42,6 +43,7 @@ export function LanguageBlockEditor({
   onCalloutRemove,
 }: {
   languageBlock: LanguageBlock;
+  zenMode?: boolean;
   index: number;
   isCollapsed: boolean;
   hasPreviousBlock: boolean;
@@ -99,7 +101,7 @@ export function LanguageBlockEditor({
         event.stopPropagation();
         onDrop();
       }}
-      className={`relative overflow-hidden rounded-xl border bg-white transition ${
+      className={`group/language relative overflow-hidden rounded-xl border bg-white transition ${
         isCollapsed
           ? "cursor-pointer shadow-sm"
           : "cursor-pointer shadow-md shadow-stone-200/60"
@@ -117,7 +119,11 @@ export function LanguageBlockEditor({
           }`}
         />
       )}
-      <div className="flex items-center justify-between gap-2 border-b border-stone-200 bg-stone-100 px-2 py-1.5">
+      <div className={`flex items-center justify-between gap-2 border-stone-200 bg-stone-100 px-2 py-1.5 transition ${
+        zenMode
+          ? "absolute right-2 top-2 z-10 rounded-lg border opacity-0 shadow-sm group-hover/language:opacity-100 focus-within:opacity-100"
+          : "border-b"
+      }`}>
         <button
           type="button"
           draggable

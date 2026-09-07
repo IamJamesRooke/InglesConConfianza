@@ -18,6 +18,7 @@ import type { ExplanationBlock } from "@/lib/lesson-builder/types";
 // toolbar + MarkdownEditor when expanded.
 export function ExplanationBlockEditor({
   block,
+  zenMode = false,
   isCollapsed,
   onToggleCollapse,
   onDragStart,
@@ -28,6 +29,7 @@ export function ExplanationBlockEditor({
   onChange,
 }: {
   block: ExplanationBlock;
+  zenMode?: boolean;
   isCollapsed: boolean;
   onToggleCollapse: () => void;
   onDragStart: (event: DragEvent<HTMLElement>) => void;
@@ -93,7 +95,7 @@ export function ExplanationBlockEditor({
             <p className="font-semibold text-stone-900">Explanation</p>
           </div>
         )}
-        <div className="flex items-center gap-1">
+        <div className={zenMode ? "hidden" : "flex items-center gap-1"}>
           <button
             type="button"
             draggable

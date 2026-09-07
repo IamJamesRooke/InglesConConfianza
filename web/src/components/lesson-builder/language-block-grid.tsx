@@ -14,6 +14,7 @@ import type { DragReorder } from "@/lib/lesson-builder/use-drag-reorder";
 export function LanguageBlockGrid({
   lessonId,
   block,
+  zenMode = false,
   drag,
   collapsedKeys,
   spanishRefs,
@@ -35,6 +36,7 @@ export function LanguageBlockGrid({
 }: {
   lessonId: string;
   block: SentenceBlock;
+  zenMode?: boolean;
   drag: DragReorder;
   collapsedKeys: Set<string>;
   spanishRefs: RefObject<Map<string, HTMLInputElement>>;
@@ -101,6 +103,7 @@ export function LanguageBlockGrid({
           <LanguageBlockEditor
             key={languageBlock.id}
             languageBlock={languageBlock}
+            zenMode={zenMode}
             index={languageBlockIndex}
             isCollapsed={collapsedKeys.has(languageBlockKey)}
             hasPreviousBlock={Boolean(previousLanguageBlock)}

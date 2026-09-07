@@ -139,3 +139,27 @@ topic whose members are near-identical (Jaccard > 0.8) are one axis entered
 twice — a defect. `tests/curriculum-reachability.test.ts` guards this and the
 exact `{topic: [family, group-count]}` structure snapshot; both are updated
 deliberately, per batch, as a reviewed diff.
+
+## What `core` means (corrected 2026-09-07, user ruling)
+
+**`core` is FUNCTIONAL vocabulary: the minimum a learner needs to operate the
+language, restricted to what they would *not* work out unaided.**
+
+- Being high-frequency is **not** sufficient. Neither is being on a CEFR A1
+  list. Those are frequency measures; `core` is a load-bearing measure.
+- The test is twofold: (a) is it critical to functioning in the language, and
+  (b) would a learner struggle to acquire it on their own?
+- Worked contrast: **`querer` / "to want" is core** — it carries structure
+  (`querer + infinitive`, `querer que + subjunctive`) and a learner cannot
+  improvise it. **`comer` / "to eat" is not core**, however common, because it
+  is content a learner picks up for free.
+- Content vocabulary is therefore **out**, regardless of frequency: days,
+  months, colours, numbers, body parts, food, family terms, places, objects.
+  These belong at `supporting`.
+- The resulting shape is deliberate and is the shape to preserve: of the 309
+  core rows, 174 are verbs, 60 pronouns, 31 determiners, 11 adverbs,
+  11 adjectives, 8 connectors, and only 4 nouns.
+
+A "family has no core rows" reading of `inventory.json` is therefore **not by
+itself a defect**. Most noun and adjective groups should have zero core. Do not
+promote to close that gap.

@@ -412,15 +412,15 @@ Target structure:
   `coreCount` per group. Whole families have almost none: Nouns 12 core in
   483 rows, Adjectives `Comparisons` 0 in 34, Verbs `Social life & conflict`
   1 in 69, Cognates 8 in 787.
-- **Decision on "what counts as core" (recorded):** the authority is **the
-  teacher's own beginner course need**, operationalized as: a concept is core
-  if a beginner cannot hold a basic conversation about everyday life without
-  it, and it is the *plainest* way to express that meaning. Concretely — the
-  CEFR A1 functional inventory: greetings, numbers 1–20, days, months,
-  colors, family, body, food, weather, time-telling, the present tense of the
-  ~40 highest-frequency verbs, basic comparison. I am not deferring to an
-  external frequency list; frequency ranks forms, and this catalog is indexed
-  by *meaning pairs*, so a rank would not map cleanly.
+- **Decision on "what counts as core" (CORRECTED 2026-09-07 by the user, after
+  a first attempt got this wrong):** `core` is **functional** vocabulary — the
+  minimum needed to operate the language, and specifically what a learner would
+  **not** work out unaided. High frequency and CEFR-A1 membership are **not
+  sufficient**. `querer`/"to want" is core (it carries structure); `comer`/"to
+  eat" is not, however common. Days, months, colours, numbers, body parts,
+  family terms and places are content vocabulary and belong at `supporting`.
+  See `policy.md` §"What `core` means". **A group with zero core rows is
+  usually correct, not a gap — do not promote to close it.**
 - **Steps:**
   1. From `inventory.json`, list every group with `coreCount = 0` whose
      content is beginner material.
@@ -492,7 +492,7 @@ are already close to right.
 | Cognates "Identical / transparent" (367) | **Leave whole.** | It is a complete enumeration of a single teaching move ("just read it"). Splitting it would be size-driven, which the retired size rule forbids. |
 | Transformations "Prefixes" (7 groups, 17 rows) | **Merge to one `Common prefixes` group.** | Five of seven are 1–2 rows. A one-row pattern group is not browsable. |
 | Phrasal-verb rare particles (1–2 rows) | **Leave.** | The page exists to hold a particle constant; a rare particle honestly has two examples. |
-| What counts as `core` | **The A1 functional inventory of everyday conversation**, not an external frequency list. | The catalog is indexed by meaning pairs; a frequency rank over word forms does not map onto it cleanly. |
+| What counts as `core` | **Functional load-bearing vocabulary only** — what a learner cannot work out unaided. Not frequency, not A1 membership. | User ruling 2026-09-07 after the first attempt promoted 104 content rows (months, colours, numbers) and had to be reverted. `querer` yes, `comer` no. |
 | Family renames breaking `?family=` deep links | **Acceptable; no alias map.** | Leaf-bearing links already survive via `resolveCurriculumPath`; bare family links degrade to the topic view. A test pins this. |
 | Second tag system? | **No.** The axis guard is an assertion over the existing registry. | Fixes the mechanism that let the duplicate axis exist, without a parallel vocabulary. |
 

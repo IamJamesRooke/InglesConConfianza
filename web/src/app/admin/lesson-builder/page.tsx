@@ -262,13 +262,6 @@ export default function LessonBuilderPage() {
   } | null>(null);
 
   useEffect(() => {
-    const storedZenMode = window.localStorage.getItem("lesson-builder-zen-mode");
-    if (storedZenMode === "true") {
-      setIsZenMode(true);
-    }
-  }, []);
-
-  useEffect(() => {
     let isMounted = true;
 
     async function loadLessons() {
@@ -776,7 +769,6 @@ export default function LessonBuilderPage() {
   const toggleZenMode = useCallback(() => {
     setIsZenMode((current) => {
       const next = !current;
-      window.localStorage.setItem("lesson-builder-zen-mode", String(next));
 
       if (next) {
         const lessonId = activeLesson?.id ?? lessons[0]?.id;
@@ -2329,6 +2321,16 @@ export default function LessonBuilderPage() {
 
     return [
       {
+        id: "zen-mode",
+        label: isZenMode ? "Leave Zen mode" : "Enter Zen mode",
+        detail: "Focus on one lesson at learner width",
+        shortcut: "Alt+Z",
+        icon: "keyboard",
+        keywords: ["focus", "distraction free", "fullscreen"],
+        disabledReason: activeLesson ? undefined : "Select a lesson first",
+        run: toggleZenMode,
+      },
+      {
         id: "lesson-new",
         label: "Create new lesson",
         detail: currentModule
@@ -2997,6 +2999,7 @@ export default function LessonBuilderPage() {
                     {block.type === "explanation" ? (
                       <ExplanationBlockEditor
                         block={block}
+                        zenMode={isZenMode}
                         isCollapsed={isContentBlockCollapsed}
                         onToggleCollapse={() =>
                           toggleContentBlock(lesson.id, block.id)
@@ -3023,6 +3026,7 @@ export default function LessonBuilderPage() {
                       <>
                         <SentenceBlockHeader
                           block={block}
+                          zenMode={isZenMode}
                           isCollapsed={isContentBlockCollapsed}
                           issueCount={sentenceValidationIssueCount}
                           onToggleCollapse={() =>
@@ -3095,6 +3099,7 @@ export default function LessonBuilderPage() {
                           <LanguageBlockGrid
                             lessonId={lesson.id}
                             block={block}
+                            zenMode={isZenMode}
                             drag={languageDrag}
                             collapsedKeys={collapsedLanguageBlocks}
                             spanishRefs={languageBlockSpanishRefs}

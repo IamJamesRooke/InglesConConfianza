@@ -23,15 +23,17 @@ const ORDER = [
   "cognates",
 ];
 
-// Core widened 5-8% -> 5-10% on 2026-09-07 (Batch P2-8). The old band was set
-// before the noun tier had ever been curated: Nouns held 12 core rows in 483,
-// so the days, months, colours, family terms and basic places a beginner
-// course opens with were all sitting at `supporting`. Promoting the CEFR A1
-// inventory takes core to ~9%, which is the honest size of a first-tier
-// teaching set in a 4,200-row reference catalog.
+// `core` is FUNCTIONAL vocabulary: the minimum needed to operate the language,
+// and specifically the items a learner would NOT work out unaided. High
+// frequency and CEFR-A1 membership are NOT sufficient. "to want" is core (it
+// carries structure — querer que + subjunctive, querer + infinitive); "to eat"
+// is not, however common, because it is content a learner picks up for free.
+// Days, months, colours, numbers and body parts are content, not core.
+// The tier is therefore mostly verbs, pronouns, determiners, connectors and
+// modals — see the 5-8% band below, which reflects that shape deliberately.
 const ROLE_TARGETS: Record<string, [number, number]> = {
-  core: [5, 10],
-  supporting: [22, 35],
+  core: [5, 8],
+  supporting: [25, 35],
   reference: [55, 65],
   trash: [3, 6],
 };

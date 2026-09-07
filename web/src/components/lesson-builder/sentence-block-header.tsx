@@ -20,6 +20,7 @@ import type { SentenceBlock } from "@/lib/lesson-builder/types";
 // while the sentence has validation issues.
 export function SentenceBlockHeader({
   block,
+  zenMode = false,
   isCollapsed,
   issueCount,
   onToggleCollapse,
@@ -30,6 +31,7 @@ export function SentenceBlockHeader({
   onDelete,
 }: {
   block: SentenceBlock;
+  zenMode?: boolean;
   isCollapsed: boolean;
   issueCount: number;
   onToggleCollapse: () => void;
@@ -102,7 +104,7 @@ export function SentenceBlockHeader({
           </span>
         )}
       </div>
-      <div className="flex shrink-0 items-center gap-1">
+      <div className={zenMode ? "hidden" : "flex shrink-0 items-center gap-1"}>
         <button
           type="button"
           draggable
