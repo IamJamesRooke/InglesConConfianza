@@ -162,3 +162,15 @@ theme. Options (Batch 3):
 Recommend (a) first for reachability, then (b) opportunistically.
 Regenerate the 301 list from `inventory.json` → `topics[slug=verbs]
 .withinTopicGapIds`.
+
+### Batch 3 applied (2026-09-07)
+
+Neither (a) nor (b) was needed. All 301 turned out to be English
+past-tense / past-participle **form drills** (`[pasado] burn → burned/burnt`,
+`[participio] dive → dived`) that a prior coverage-maximizing pass
+(`c7c53fc2`) had tagged `pos:verb` to inflate the Verbs page count. They also
+carry a bogus `es:<english-word>` tag. Removed `pos:verb` from all 301 — they
+remain fully reachable on Past-Tense & Past-Participle Formation via
+`topic:verb-form`. Per policy, a false `pos:` tag is not a coverage solution.
+The bogus `es:` tags on English-form drills are a separate legacy issue (not
+in scope here).
