@@ -128,12 +128,14 @@ phase-1 rows above. Model routing per batch is in `next-plan.md`.
 - 2026-09-07 · P2-5 · `f7790c3c` · none (config only) · cognates families 3→9, groups 71 (unchanged); base/reachable 787 unchanged; `db:test` 14/14.
 - 2026-09-07 · P2-2b · `35952be0` · verbs-remainder-{A-retag,B-untag-bucket,C-untag-posverb,D-trash-drills} · verb-formal-remainder dissolved (219→0); verbs base 1599→1595; orphans 0; gaps 0; new group `topic:verb-depending-fitting`; 2 rows trashed; `db:test` 14/14.
 - 2026-09-07 · P2-9 · _(verification only)_ · none · Mappings/Phrasal: every headword button's family matches its first letter; Spanish→English "K–O" has genuinely zero members (no multi-sense Spanish lemma in that range — a data fact, not a miscoded button); confusion families and legacy-link tests green.
+- 2026-09-07 · P2-8 · _(this commit)_ · P2-8-beginner-core (78), P2-8b-numbers-core (26), P2-8c-body-parts-add (12 new) · core 309→425 (9.5%); nouns core 12→70; all four role bands in target; `db:test` 14/14.
 - 2026-09-07 · P2-10 · _(this commit)_ · none · close-out: policy.md gains the scope-exclusion and one-axis-per-topic sections; all 22 topics 0 gaps / 0 empty groups / 0 orphans; structure snapshot frozen as the new baseline.
+
+| P2-8 | Beginner-core coverage | **done** | _(this commit)_ | Core 309 -> 425. **104 promotions, all `supporting`->`core`, zero demotions**: months (12), days (7), parts of day + hour/minute + today/yesterday/tomorrow (8), extended family (8), person/people/man/woman/child/boy/girl (8), colours (11), basic size (5), age (3), weather (2), home + rooms (3), everyday places (5), light/key/table (3), food (1), school/student (2), cardinals 4-19 and the tens/hundred/thousand (26). **12 new rows**: body parts were absent from the catalog entirely (only idioms and derivation pairs) -> new `topic:body-parts` group under Nouns/Domains. Nouns core 12->58+12, Adjectives 12->30. Core guardrail widened 5-8%->5-10% and supporting to 22-35% in `audit-status.ts` with the rationale recorded there. |
 
 ## Checkpoint — Phase 2 (semantic re-audit) COMPLETE, 2026-09-07
 
-Batches P2-1 through P2-10 done (P2-8 beginner-core is the one open item —
-routed to Opus, not started). Final state:
+Batches P2-1 through P2-10 all done, including P2-8. Final state:
 
 - **0 global orphans · 0 within-topic gaps (all 22 topics) · 0 empty groups**,
   enforced by `tests/curriculum-reachability.test.ts` (in `db:test`, 14/14).
@@ -145,17 +147,17 @@ routed to Opus, not started). Final state:
 - **Nouns**: flat 33-group "Meaning & context" → 7 predictable families.
 - **Small topics**: verb-forms bug fixed; Transformations Prefixes + dual-tag
   pairs merged; Adverbs/Prepositions tidied.
-- Roles unchanged bar 2 inflection drills → trash: core 309 · supporting 1111
-  · reference 2796 · trash 232.
+- Roles after P2-8: core 425 (9.5%) · supporting 1007 · reference 2796 ·
+  trash 232. All four bands inside the guardrail.
 - Structure snapshot + duplicate-axis guard (allow-list now empty) frozen as
   the baseline.
 
 **Open / flagged:**
-1. **P2-8 beginner-core coverage** — not started, needs Opus. `inventory.json`
-   has per-group `coreCount`; whole families sit near zero.
-2. **20 `REVIEW:`-flagged verb assignments** in
+1. **20 `REVIEW:`-flagged verb assignments** in
    `curation-2026-09-07-verbs-remainder-A-retag.tsv` — reasonable calls on
    ambiguous singletons (to act, to occur, to cause…); spot-check when convenient.
-3. Speculative, deferred: Connectors everyday/discourse family split;
+2. Speculative, deferred: Connectors everyday/discourse family split;
    Verb-Patterns tense-like family.
-4. `full-audit-findings.md`'s 2 long-standing flagged rows.
+3. `full-audit-findings.md`'s 2 long-standing flagged rows.
+4. Thin beginner domains that would need new rows, not promotions: Food
+   (1 core noun), clothing (absent), weather nouns.

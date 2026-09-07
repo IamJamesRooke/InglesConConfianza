@@ -14,6 +14,7 @@ import type { DragEvent, MouseEvent, Ref } from "react";
 // The title bar of a lesson card: number, unsaved badge, name field, and the
 // preview / save / collapse-cycle / delete / drag-reorder controls.
 export function LessonCardHeader({
+  zenMode = false,
   lessonNumber,
   name,
   isDirty,
@@ -36,6 +37,7 @@ export function LessonCardHeader({
   onDragStart,
   onDragEnd,
 }: {
+  zenMode?: boolean;
   lessonNumber: number;
   name: string;
   isDirty: boolean;
@@ -61,7 +63,9 @@ export function LessonCardHeader({
   return (
     <header
       onClick={onHeaderClick}
-      className={`flex items-center gap-4 border-b border-border bg-[var(--surface-sunken)] px-6 py-4 ${
+      className={`flex items-center gap-4 border-b border-border px-6 py-4 ${
+        zenMode ? "bg-white/90" : "bg-[var(--surface-sunken)]"
+      } ${
         !isCollapsed ? "cursor-pointer" : ""
       }`}
     >
@@ -84,9 +88,13 @@ export function LessonCardHeader({
         onChange={(event) => onNameChange(event.target.value)}
         placeholder="Add lesson name (optional)"
         aria-label={`Name for lesson ${lessonNumber}`}
-        className="min-w-0 flex-1 rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-violet-400 focus:ring-3 focus:ring-violet-100"
+        className={`min-w-0 flex-1 bg-transparent text-stone-900 outline-none transition placeholder:text-stone-400 focus:ring-3 focus:ring-violet-100 ${
+          zenMode
+            ? "rounded-md px-2 py-1 text-lg font-semibold"
+            : "rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm focus:border-violet-400"
+        }`}
       />
-      <button
+      {!zenMode && <button
         type="button"
         onClick={onPreview}
         disabled={validationIssueCount > 0}
@@ -100,8 +108,8 @@ export function LessonCardHeader({
       >
         <Eye className="size-4" aria-hidden="true" />
         <span className="hidden lg:inline">Preview</span>
-      </button>
-      <button
+      </button>}
+      {!zenMode && <button
         type="button"
         onClick={onSave}
         disabled={saveDisabled}
@@ -113,8 +121,8 @@ export function LessonCardHeader({
         <span className="hidden lg:inline">
           {isSaving ? "Saving..." : "Save"}
         </span>
-      </button>
-      <button
+      </button>}
+      {!zenMode && <button
         type="button"
         onClick={onDuplicate}
         aria-label={`Duplicate lesson ${lessonNumber}`}
@@ -122,8 +130,8 @@ export function LessonCardHeader({
         className="flex size-9 shrink-0 items-center justify-center rounded-lg text-stone-500 transition hover:bg-stone-200 hover:text-stone-700 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-violet-200"
       >
         <Copy className="size-4" aria-hidden="true" />
-      </button>
-      <button
+      </button>}
+      {!zenMode && <button
         type="button"
         onClick={onCycleDisplayMode}
         aria-label={`Cycle lesson ${lessonNumber} display mode`}
@@ -137,8 +145,8 @@ export function LessonCardHeader({
         ) : (
           <ChevronDown className="size-4 rotate-90" aria-hidden="true" />
         )}
-      </button>
-      <button
+      </button>}
+      {!zenMode && <button
         type="button"
         onClick={onDelete}
         aria-label={`Delete lesson ${lessonNumber}`}
@@ -146,8 +154,8 @@ export function LessonCardHeader({
         className="flex size-9 shrink-0 items-center justify-center rounded-lg text-stone-400 transition hover:bg-red-50 hover:text-red-600 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-red-200"
       >
         <Trash2 className="size-4" aria-hidden="true" />
-      </button>
-      <button
+      </button>}
+      {!zenMode && <button
         type="button"
         draggable={!dragDisabled}
         disabled={dragDisabled}
@@ -159,7 +167,7 @@ export function LessonCardHeader({
       >
         <span className="hidden sm:inline">Drag to reorder</span>
         <GripVertical className="size-5" aria-hidden="true" />
-      </button>
+      </button>}
     </header>
   );
 }

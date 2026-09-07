@@ -3,11 +3,14 @@
 import {
   CheckCircle2,
   CircleAlert,
+  ChevronLeft,
+  ChevronRight,
   Command,
   FileText,
   Keyboard,
   Languages,
   Layers2,
+  Maximize2,
   Plus,
   Table2,
   X,
@@ -252,10 +255,18 @@ export default function LessonBuilderPage() {
   const bypassLessonExitWarningRef = useRef(false);
   const autosaveTimerRef = useRef<number | undefined>(undefined);
   const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
+  const [isZenMode, setIsZenMode] = useState(false);
   const [activeContentBlock, setActiveContentBlock] = useState<{
     lessonId: string;
     blockId: string;
   } | null>(null);
+
+  useEffect(() => {
+    const storedZenMode = window.localStorage.getItem("lesson-builder-zen-mode");
+    if (storedZenMode === "true") {
+      setIsZenMode(true);
+    }
+  }, []);
 
   useEffect(() => {
     let isMounted = true;
@@ -762,6 +773,22 @@ export default function LessonBuilderPage() {
     openLessonEditorNow,
   ]);
 
+  const toggleZenMode = useCallback(() => {
+    setIsZenMode((current) => {
+      const next = !current;
+      window.localStorage.setItem("lesson-builder-zen-mode", String(next));
+
+      if (next) {
+        const lessonId = activeLesson?.id ?? lessons[0]?.id;
+        if (lessonId) {
+          window.setTimeout(() => openLessonEditorNow(lessonId), 0);
+        }
+      }
+
+      return next;
+    });
+  }, [activeLesson?.id, lessons, openLessonEditorNow]);
+
   const cycleLessonDisplayMode = useCallback((lessonId: string) => {
     if (
       !collapsedLessons.has(lessonId) &&
@@ -1096,6 +1123,60 @@ export default function LessonBuilderPage() {
       }
 
       if (isCommandPaletteOpen) {
+        return;
+      }
+
+      if (
+        event.altKey &&
+        !event.ctrlKey &&
+        !event.metaKey &&
+        event.key.toLowerCase() === "z" &&
+        !event.repeat &&
+        !event.isComposing
+      ) {
+        event.preventDefault();
+        toggleZenMode();
+        return;
+      }
+
+      if (
+        isZenMode &&
+        event.altKey &&
+        !event.ctrlKey &&
+        !event.metaKey &&
+        ["1", "2", "3", "4"].includes(event.key) &&
+        !event.repeat &&
+        !event.isComposing
+      ) {
+        const sentence = activeBlock && isPracticeBlock(activeBlock)
+          ? activeBlock
+          : null;
+        if (sentence && activeLesson) {
+          event.preventDefault();
+          const fields: SentenceMarkdownFieldName[] = [
+            "promptLabel",
+            "promptText",
+            "helperText",
+            "answerFeedback",
+          ];
+          const field = fields[Number(event.key) - 1];
+          setCollapsedContentBlocks((current) => {
+            const next = new Set(current);
+            next.delete(`${activeLesson.id}-${sentence.id}`);
+            return next;
+          });
+          setActiveSentenceMarkdownField({
+            lessonId: activeLesson.id,
+            blockId: sentence.id,
+            field,
+          });
+          window.setTimeout(() => {
+            document
+              .getElementById(`sentence-field-${sentence.id}-${field}`)
+              ?.querySelector<HTMLElement>("[contenteditable='true']")
+              ?.focus();
+          }, 0);
+        }
         return;
       }
 
@@ -2430,12 +2511,105 @@ export default function LessonBuilderPage() {
           : "";
 
   return (
-    <main className="flex-1 bg-background px-4 py-8 sm:px-6 sm:py-12">
-      <div className="mx-auto flex w-full max-w-[1500px] flex-col gap-5">
-        <BuilderNav active="builder" />
+    <main
+      className={
+        isZenMode
+          ? "fixed inset-0 z-30 overflow-y-auto bg-[radial-gradient(circle_at_top,#faf8ff_0%,#f4f2f8_46%,#efedf3_100%)] px-4 py-4 sm:px-6"
+          : "flex-1 bg-background px-4 py-8 sm:px-6 sm:py-12"
+      }
+    >
+      <div
+        className={`mx-auto flex w-full flex-col gap-5 ${
+          isZenMode ? "max-w-[920px]" : "max-w-[1500px]"
+        }`}
+      >
+        {isZenMode ? (
+          <div className="sticky top-0 z-30 -mx-2 flex items-center gap-2 rounded-2xl border border-white/80 bg-white/90 px-3 py-2 shadow-lg shadow-violet-950/5 backdrop-blur-xl">
+            <button
+              type="button"
+              onClick={() =>
+                activeLessonIndex > 0 &&
+                openLessonFromCommand(moduleLessons[activeLessonIndex - 1].id)
+              }
+              disabled={activeLessonIndex <= 0}
+              aria-label="Previous lesson"
+              className="flex size-9 items-center justify-center rounded-lg text-stone-500 transition hover:bg-stone-100 disabled:opacity-25"
+            >
+              <ChevronLeft className="size-4" aria-hidden="true" />
+            </button>
+            <div className="min-w-0 flex-1 text-center">
+              <p className="truncate text-sm font-semibold text-stone-900">
+                {activeLesson?.name || "Untitled lesson"}
+              </p>
+              <p className="text-[11px] text-stone-500">
+                {currentModule?.name || "Course"} · {activeLessonNumber ?? 0} of {moduleLessons.length}
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() =>
+                activeLessonIndex >= 0 &&
+                activeLessonIndex < moduleLessons.length - 1 &&
+                openLessonFromCommand(moduleLessons[activeLessonIndex + 1].id)
+              }
+              disabled={activeLessonIndex < 0 || activeLessonIndex >= moduleLessons.length - 1}
+              aria-label="Next lesson"
+              className="flex size-9 items-center justify-center rounded-lg text-stone-500 transition hover:bg-stone-100 disabled:opacity-25"
+            >
+              <ChevronRight className="size-4" aria-hidden="true" />
+            </button>
+            <span className="mx-1 h-6 w-px bg-stone-200" aria-hidden="true" />
+            <button
+              type="button"
+              onClick={() => {
+                if (activeLesson) {
+                  setPreviewLessonId(activeLesson.id);
+                  setPreviewBlockId(null);
+                }
+              }}
+              disabled={activeLessonIssues.length > 0 || !activeLesson}
+              className="rounded-lg px-3 py-2 text-xs font-semibold text-stone-600 transition hover:bg-stone-100 disabled:opacity-30"
+            >
+              Preview
+            </button>
+            <button
+              type="button"
+              onClick={() => activeLesson && void saveLesson(activeLesson.id)}
+              disabled={!activeLessonIsDirty || saveStatus === "saving"}
+              className="rounded-lg bg-violet-600 px-3 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-violet-700 disabled:bg-stone-300"
+            >
+              {saveStatus === "saving" ? "Saving…" : activeLessonIsDirty ? "Save" : "Saved"}
+            </button>
+            <button
+              type="button"
+              onClick={toggleZenMode}
+              aria-label="Exit Zen mode"
+              title="Exit Zen mode (Alt+Z)"
+              className="flex size-9 items-center justify-center rounded-lg text-stone-500 transition hover:bg-stone-100 hover:text-stone-900"
+            >
+              <X className="size-4" aria-hidden="true" />
+            </button>
+          </div>
+        ) : (
+          <div className="flex items-end gap-4">
+            <div className="min-w-0 flex-1">
+              <BuilderNav active="builder" />
+            </div>
+            <button
+              type="button"
+              onClick={toggleZenMode}
+              disabled={!activeLesson}
+              className="mb-2 inline-flex shrink-0 items-center gap-2 rounded-lg border border-violet-200 bg-violet-50 px-3 py-2 text-sm font-semibold text-violet-800 transition hover:border-violet-300 hover:bg-violet-100 disabled:opacity-40"
+            >
+              <Maximize2 className="size-4" aria-hidden="true" />
+              Zen mode
+              <kbd className="rounded border border-violet-200 bg-white px-1.5 py-0.5 font-mono text-[10px] text-violet-600">Alt+Z</kbd>
+            </button>
+          </div>
+        )}
 
-        <div className="grid gap-5 lg:grid-cols-[15rem_minmax(0,1fr)] xl:grid-cols-[15rem_minmax(0,1fr)_19rem]">
-          <aside className="min-w-0 lg:sticky lg:top-24 lg:self-start">
+        <div className={isZenMode ? "grid" : "grid gap-5 lg:grid-cols-[15rem_minmax(0,1fr)] xl:grid-cols-[15rem_minmax(0,1fr)_19rem]"}>
+          {!isZenMode && <aside className="min-w-0 lg:sticky lg:top-24 lg:self-start">
             <ModuleRail
               modules={courseModules}
               activeId={currentModule?.id ?? null}
@@ -2526,10 +2700,10 @@ export default function LessonBuilderPage() {
                 </nav>
               )}
             </section>
-          </aside>
+          </aside>}
 
           <div className="flex min-w-0 flex-col gap-5">
-            {currentModule && (
+            {!isZenMode && currentModule && (
               <ModuleMeta
                 module={currentModule}
                 coveredConceptKeys={moduleCoveredKeys}
@@ -2538,7 +2712,7 @@ export default function LessonBuilderPage() {
               />
             )}
 
-            <p className="text-xs text-muted-foreground">
+            {!isZenMode && <p className="text-xs text-muted-foreground">
               {isLoadingLessons
                 ? "Loading saved lessons…"
                 : saveStatus === "error"
@@ -2550,13 +2724,15 @@ export default function LessonBuilderPage() {
                       : isDirty
                         ? "Unsaved changes"
                       : "Click a lesson to edit it."}
-            </p>
+            </p>}
 
-        {moduleLessons.map((lesson, lessonIndex) => {
-          const lessonNumber = lessonIndex + 1;
+        {(isZenMode && activeLesson ? [activeLesson] : moduleLessons).map((lesson) => {
+          const lessonNumber = moduleLessons.findIndex((candidate) => candidate.id === lesson.id) + 1;
           const isDragging = lessonDrag.dragged?.id === lesson.id;
-          const isLessonCollapsed = collapsedLessons.has(lesson.id);
-          const isLessonFullyCollapsed = fullyCollapsedLessons.has(lesson.id);
+          const isLessonCollapsed =
+            !isZenMode && collapsedLessons.has(lesson.id);
+          const isLessonFullyCollapsed =
+            !isZenMode && fullyCollapsedLessons.has(lesson.id);
           const isLessonEditableOnClick =
             isLessonCollapsed || isLessonFullyCollapsed;
           const lessonIsDirty = isLessonDirty(lesson.id);
@@ -2602,7 +2778,11 @@ export default function LessonBuilderPage() {
                 }
                 lessonDrag.reset();
               }}
-              className={`relative w-full overflow-hidden rounded-2xl border bg-[var(--surface)] shadow-md transition ${
+              className={`relative w-full overflow-hidden bg-[var(--surface)] transition ${
+                isZenMode
+                  ? "rounded-[1.75rem] border border-white/90 shadow-xl shadow-violet-950/8"
+                  : "rounded-2xl border shadow-md"
+              } ${
                 isLessonEditableOnClick
                   ? "cursor-pointer hover:-translate-y-0.5 hover:border-violet-300 hover:shadow-lg hover:ring-4 hover:ring-violet-100/60"
                   : "min-h-72"
@@ -2622,6 +2802,7 @@ export default function LessonBuilderPage() {
               )}
 
               <LessonCardHeader
+                zenMode={isZenMode}
                 lessonNumber={lessonNumber}
                 name={lesson.name ?? ""}
                 isDirty={lessonIsDirty}
@@ -2661,7 +2842,7 @@ export default function LessonBuilderPage() {
                 onDragEnd={lessonDrag.reset}
               />
 
-              {!isLessonFullyCollapsed && (
+              {!isZenMode && !isLessonFullyCollapsed && (
                 <LessonConceptsField
                   concepts={lesson.concepts}
                   conceptDisplays={conceptDisplays}
@@ -3142,7 +3323,7 @@ export default function LessonBuilderPage() {
         </button>
           </div>
 
-          <aside className="min-w-0 space-y-4 xl:sticky xl:top-24 xl:self-start">
+          {!isZenMode && <aside className="min-w-0 space-y-4 xl:sticky xl:top-24 xl:self-start">
             <section className="rounded-xl border border-border bg-card p-4 shadow-sm">
               <div className="flex items-center justify-between gap-3">
                 <div>
@@ -3347,7 +3528,7 @@ export default function LessonBuilderPage() {
                 </p>
               )}
             </section>
-          </aside>
+          </aside>}
         </div>
       </div>
 

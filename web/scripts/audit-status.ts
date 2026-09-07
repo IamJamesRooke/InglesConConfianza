@@ -23,9 +23,15 @@ const ORDER = [
   "cognates",
 ];
 
+// Core widened 5-8% -> 5-10% on 2026-09-07 (Batch P2-8). The old band was set
+// before the noun tier had ever been curated: Nouns held 12 core rows in 483,
+// so the days, months, colours, family terms and basic places a beginner
+// course opens with were all sitting at `supporting`. Promoting the CEFR A1
+// inventory takes core to ~9%, which is the honest size of a first-tier
+// teaching set in a 4,200-row reference catalog.
 const ROLE_TARGETS: Record<string, [number, number]> = {
-  core: [5, 8],
-  supporting: [25, 35],
+  core: [5, 10],
+  supporting: [22, 35],
   reference: [55, 65],
   trash: [3, 6],
 };

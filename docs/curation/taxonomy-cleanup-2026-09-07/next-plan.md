@@ -406,7 +406,7 @@ Target structure:
 - **Done when:** structure snapshot updated; all 14 topics `reachable ==
   base`.
 
-### Batch 8 — beginner core coverage
+### Batch 8 — beginner core coverage — **DONE**
 
 - **Scope:** `core` is 309 of 4,220. `inventory.json` already carries
   `coreCount` per group. Whole families have almost none: Nouns 12 core in

@@ -17,6 +17,8 @@ function SentenceMarkdownFieldEditor({
   markdown,
   placeholder,
   tone = "violet",
+  editorId,
+  shortcut,
   isOpen,
   onOpen,
   onClose,
@@ -26,6 +28,8 @@ function SentenceMarkdownFieldEditor({
   markdown: string;
   placeholder: string;
   tone?: "violet" | "emerald";
+  editorId: string;
+  shortcut: string;
   isOpen: boolean;
   onOpen: () => void;
   onClose: () => void;
@@ -39,6 +43,7 @@ function SentenceMarkdownFieldEditor({
   if (!isOpen && !markdown.trim()) {
     return (
       <button
+        id={editorId}
         type="button"
         onClick={onOpen}
         className={`flex min-h-11 w-full items-center justify-between gap-3 rounded-xl border border-dashed px-3 py-2 text-left transition hover:bg-white focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-current/15 ${toneClasses}`}
@@ -48,14 +53,14 @@ function SentenceMarkdownFieldEditor({
         </span>
         <span className="flex shrink-0 items-center gap-1 text-xs font-semibold">
           <Plus className="size-3.5" aria-hidden="true" />
-          Add
+          Add <kbd className="ml-1 font-mono text-[10px]">{shortcut}</kbd>
         </span>
       </button>
     );
   }
 
   return (
-    <section className={`overflow-hidden rounded-xl border ${toneClasses}`}>
+    <section id={editorId} className={`overflow-hidden rounded-xl border ${toneClasses}`}>
       <div className="flex min-h-10 items-center justify-between gap-3 px-3 py-2">
         <button
           type="button"
@@ -63,6 +68,7 @@ function SentenceMarkdownFieldEditor({
           className="min-w-0 flex-1 text-left text-[11px] font-semibold uppercase tracking-[0.12em] focus-visible:outline-none"
         >
           {label}
+          <kbd className="ml-2 font-mono text-[10px] opacity-60">{shortcut}</kbd>
         </button>
         {isOpen && (
           <button
@@ -127,6 +133,8 @@ export function SentenceMarkdownFields({
         </div>
         <SentenceMarkdownFieldEditor
           label="Label"
+          editorId={`sentence-field-${block.id}-promptLabel`}
+          shortcut="Alt+1"
           markdown={block.promptLabel}
           placeholder="For example: Tu turno"
           isOpen={activeField === "promptLabel"}
@@ -136,6 +144,8 @@ export function SentenceMarkdownFields({
         />
         <SentenceMarkdownFieldEditor
           label="Prompt"
+          editorId={`sentence-field-${block.id}-promptText`}
+          shortcut="Alt+2"
           markdown={block.promptText}
           placeholder="For example: ¿Cómo se dice “Estoy preparando”?"
           isOpen={activeField === "promptText"}
@@ -147,6 +157,8 @@ export function SentenceMarkdownFields({
       <div className="order-3 mt-3">
         <SentenceMarkdownFieldEditor
           label="Helper text"
+          editorId={`sentence-field-${block.id}-helperText`}
+          shortcut="Alt+3"
           markdown={block.helperText ?? ""}
           placeholder="For example: No hay penalización por equivocarse."
           isOpen={activeField === "helperText"}
@@ -158,6 +170,8 @@ export function SentenceMarkdownFields({
       <div className="order-4 mt-3">
         <SentenceMarkdownFieldEditor
           label="Answer feedback"
+          editorId={`sentence-field-${block.id}-answerFeedback`}
+          shortcut="Alt+4"
           markdown={block.answerFeedback ?? ""}
           placeholder="For example: Correcto. Ahora puedes usar la frase completa."
           tone="emerald"

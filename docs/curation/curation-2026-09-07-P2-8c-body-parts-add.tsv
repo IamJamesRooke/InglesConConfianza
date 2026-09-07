@@ -1,0 +1,12 @@
+[la] cabeza	head	Me duele la cabeza.	My head hurts.	core	pos:noun|topic:body-parts|gender:feminine|topic:fem-a|es:cabeza|en:head
+[la] cara	face	Ella tiene una cara amable.	She has a kind face.	core	pos:noun|topic:body-parts|gender:feminine|topic:fem-a|es:cara|en:face
+[el] ojo	eye	Tengo algo en el ojo.	I have something in my eye.	core	pos:noun|topic:body-parts|gender:masculine|topic:masc-o|es:ojo|en:eye
+[la] boca	mouth	Abre la boca, por favor.	Open your mouth, please.	core	pos:noun|topic:body-parts|gender:feminine|topic:fem-a|es:boca|en:mouth
+[la] nariz	nose	La nariz me pica.	My nose itches.	core	pos:noun|topic:body-parts|gender:feminine|topic:fem-consonant|es:nariz|en:nose
+[la] oreja	ear	El perro movió la oreja.	The dog moved its ear.	core	pos:noun|topic:body-parts|gender:feminine|topic:fem-a|es:oreja|en:ear
+[el] pelo	hair	Me corté el pelo ayer.	I cut my hair yesterday.	core	pos:noun|topic:body-parts|gender:masculine|topic:masc-o|es:pelo|en:hair
+[la] mano	hand	Levanta la mano si tienes una pregunta.	Raise your hand if you have a question.	core	pos:noun|topic:body-parts|gender:feminine|topic:fem-exceptions|es:mano|en:hand
+[el] brazo	arm	Me rompí el brazo jugando fútbol.	I broke my arm playing soccer.	core	pos:noun|topic:body-parts|gender:masculine|topic:masc-o|es:brazo|en:arm
+[la] pierna	leg	Le duele la pierna derecha.	Their right leg hurts.	core	pos:noun|topic:body-parts|gender:feminine|topic:fem-a|es:pierna|en:leg
+[el] pie	foot	Tengo una piedra en el pie.	I have a stone in my foot.	core	pos:noun|topic:body-parts|gender:masculine|topic:masc-e|es:pie|en:foot
+[el] cuerpo	body	El ejercicio es bueno para el cuerpo.	Exercise is good for the body.	core	pos:noun|topic:body-parts|gender:masculine|topic:masc-o|es:cuerpo|en:body

@@ -1106,6 +1106,11 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       },
       { collection: "topic:health", label: "Health", family: "Domains" },
       {
+        collection: "topic:body-parts",
+        label: "Body parts",
+        family: "Domains",
+      },
+      {
         collection: "topic:government-politics",
         label: "Government & Politics",
         family: "Domains",
