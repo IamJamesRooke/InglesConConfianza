@@ -129,10 +129,13 @@ phase-1 rows above. Model routing per batch is in `next-plan.md`.
 - 2026-09-07 · P2-2b · `35952be0` · verbs-remainder-{A-retag,B-untag-bucket,C-untag-posverb,D-trash-drills} · verb-formal-remainder dissolved (219→0); verbs base 1599→1595; orphans 0; gaps 0; new group `topic:verb-depending-fitting`; 2 rows trashed; `db:test` 14/14.
 - 2026-09-07 · P2-9 · _(verification only)_ · none · Mappings/Phrasal: every headword button's family matches its first letter; Spanish→English "K–O" has genuinely zero members (no multi-sense Spanish lemma in that range — a data fact, not a miscoded button); confusion families and legacy-link tests green.
 - 2026-09-07 · P2-8 · `d0086387` · P2-8-beginner-core (78), P2-8b-numbers-core (26), P2-8c-body-parts-add (12 new) · core 309→425 — **reverted below**.
+- 2026-09-07 · P2-11 · _(this commit)_ · P2-review-{trash,retag,untag} · 18 of 20 REVIEW flags confirmed; 1 dup trashed, 1 rehomed; `db:test` 14/14.
 - 2026-09-07 · P2-8 revert · _(this commit)_ · P2-8-revert-to-supporting (104), P2-8c-body-parts-supporting (12) · core 425→309; wrong criterion (frequency, not function); 12 body-part rows kept at `supporting`; guardrails restored; `db:test` 14/14.
 - 2026-09-07 · P2-10 · _(this commit)_ · none · close-out: policy.md gains the scope-exclusion and one-axis-per-topic sections; all 22 topics 0 gaps / 0 empty groups / 0 orphans; structure snapshot frozen as the new baseline.
 
 | P2-8 | Beginner-core coverage | **done (promotions reverted)** | `d0086387` + revert | First attempt promoted 104 A1-frequency rows and 12 new body-part rows to `core`. **Wrong criterion** — the user ruled that `core` is FUNCTIONAL vocabulary (what a learner cannot work out unaided), not high-frequency or A1 vocabulary: `querer` yes, `comer` no. All 116 reverted to `supporting`; core back to the original 309. The 12 body-part rows **stay** in the catalog under a new `topic:body-parts` group (Nouns/Domains) at `supporting` — body parts were genuinely absent before. Definition now recorded in `policy.md` §"What `core` means", in the Batch 8 decision, and on `ROLE_TARGETS` in `audit-status.ts`. Guardrails restored to core 5-8% / supporting 25-35%. |
+
+| P2-11 | REVIEW-flag spot-check | **done** | _(this commit)_ | Reviewed the 20 `REVIEW:`-flagged verb assignments from P2-2b. 18 confirmed. 2 changed: `acabar de hacer algo` (`q6rtb3ph2x`) → **trash** (unbracketed duplicate of the better-tagged `acabar de [hacer algo]`); `proponer pagar … por …` (`le4iu71rle`) moved Giving & Lending → Money — Buying & Selling (offering a price is commerce). |
 
 ## Checkpoint — Phase 2 (semantic re-audit) COMPLETE, 2026-09-07
 
@@ -156,11 +159,12 @@ Batches P2-1 through P2-10 all done, including P2-8. Final state:
   the baseline.
 
 **Open / flagged:**
-1. **20 `REVIEW:`-flagged verb assignments** in
+1. ~~20 `REVIEW:`-flagged verb assignments~~ — **done (P2-11)**: 18 confirmed, 2 changed.
+2. **Content-gap additions** in
    `curation-2026-09-07-verbs-remainder-A-retag.tsv` — reasonable calls on
    ambiguous singletons (to act, to occur, to cause…); spot-check when convenient.
-2. Speculative, deferred: Connectors everyday/discourse family split;
+   (`supporting`-tier `concepts:add`): clothing is absent from the catalog;
+   Food is thin. Not `core` — these are content vocabulary.
+3. Speculative, deferred: Connectors everyday/discourse family split;
    Verb-Patterns tense-like family.
-3. `full-audit-findings.md`'s 2 long-standing flagged rows.
-4. Thin beginner domains that would need new rows, not promotions: Food
-   (1 core noun), clothing (absent), weather nouns.
+4. `full-audit-findings.md`'s 2 long-standing flagged rows.

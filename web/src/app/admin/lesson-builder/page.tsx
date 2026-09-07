@@ -774,6 +774,20 @@ export default function LessonBuilderPage() {
         const lessonId = activeLesson?.id ?? lessons[0]?.id;
         if (lessonId) {
           window.setTimeout(() => openLessonEditorNow(lessonId), 0);
+          const lesson = lessons.find((candidate) => candidate.id === lessonId);
+          const firstBlock = lesson?.blocks[0];
+          if (firstBlock) {
+            setActiveContentBlock({ lessonId, blockId: firstBlock.id });
+            setCollapsedContentBlocks(
+              new Set(
+                lessons.flatMap((candidate) =>
+                  candidate.blocks
+                    .map((block) => `${candidate.id}-${block.id}`)
+                    .filter((key) => key !== `${lessonId}-${firstBlock.id}`),
+                ),
+              ),
+            );
+          }
         }
       }
 
@@ -1346,6 +1360,10 @@ export default function LessonBuilderPage() {
         );
         setOpenBlockPicker(null);
         setActiveLessonId(targetLesson.id);
+        setActiveContentBlock({
+          lessonId: targetLesson.id,
+          blockId: destinationBlock.id,
+        });
         return;
       }
 
@@ -2296,6 +2314,11 @@ export default function LessonBuilderPage() {
           : 0,
       }))
       .filter((entry) => entry.issueCount > 0) ?? [];
+  const zenBlock = activeBlock ?? activeLesson?.blocks[0] ?? null;
+  const zenBlockIndex =
+    activeLesson && zenBlock
+      ? activeLesson.blocks.findIndex((block) => block.id === zenBlock.id)
+      : -1;
   const commandTargetIssues =
     commandTarget?.blocks.reduce(
       (count, block) =>
@@ -2530,11 +2553,15 @@ export default function LessonBuilderPage() {
             <button
               type="button"
               onClick={() =>
-                activeLessonIndex > 0 &&
-                openLessonFromCommand(moduleLessons[activeLessonIndex - 1].id)
+                activeLesson &&
+                zenBlockIndex > 0 &&
+                revealContentBlock(
+                  activeLesson.id,
+                  activeLesson.blocks[zenBlockIndex - 1].id,
+                )
               }
-              disabled={activeLessonIndex <= 0}
-              aria-label="Previous lesson"
+              disabled={zenBlockIndex <= 0}
+              aria-label="Previous step"
               className="flex size-9 items-center justify-center rounded-lg text-stone-500 transition hover:bg-stone-100 disabled:opacity-25"
             >
               <ChevronLeft className="size-4" aria-hidden="true" />
@@ -2544,18 +2571,26 @@ export default function LessonBuilderPage() {
                 {activeLesson?.name || "Untitled lesson"}
               </p>
               <p className="text-[11px] text-stone-500">
-                {currentModule?.name || "Course"} · {activeLessonNumber ?? 0} of {moduleLessons.length}
+                Lesson {activeLessonNumber ?? 0} · Step {zenBlockIndex + 1} of{" "}
+                {activeLesson?.blocks.length ?? 0}
               </p>
             </div>
             <button
               type="button"
               onClick={() =>
-                activeLessonIndex >= 0 &&
-                activeLessonIndex < moduleLessons.length - 1 &&
-                openLessonFromCommand(moduleLessons[activeLessonIndex + 1].id)
+                activeLesson &&
+                zenBlockIndex >= 0 &&
+                zenBlockIndex < activeLesson.blocks.length - 1 &&
+                revealContentBlock(
+                  activeLesson.id,
+                  activeLesson.blocks[zenBlockIndex + 1].id,
+                )
               }
-              disabled={activeLessonIndex < 0 || activeLessonIndex >= moduleLessons.length - 1}
-              aria-label="Next lesson"
+              disabled={
+                zenBlockIndex < 0 ||
+                zenBlockIndex >= (activeLesson?.blocks.length ?? 0) - 1
+              }
+              aria-label="Next step"
               className="flex size-9 items-center justify-center rounded-lg text-stone-500 transition hover:bg-stone-100 disabled:opacity-25"
             >
               <ChevronRight className="size-4" aria-hidden="true" />
@@ -2889,7 +2924,7 @@ export default function LessonBuilderPage() {
 
               {!isLessonCollapsed && (
               <div className="space-y-4 p-6">
-                {lesson.blocks.length > 0 && (
+                {!isZenMode && lesson.blocks.length > 0 && (
                   <>
                     <div className="relative h-0">
                       <button
@@ -2934,6 +2969,9 @@ export default function LessonBuilderPage() {
                   </>
                 )}
                 {lesson.blocks.map((block, blockIndex) => {
+                  if (isZenMode && zenBlock && block.id !== zenBlock.id) {
+                    return null;
+                  }
                   const contentBlockKey = `${lesson.id}-${block.id}`;
                   const isContentBlockCollapsed =
                     collapsedContentBlocks.has(contentBlockKey);
