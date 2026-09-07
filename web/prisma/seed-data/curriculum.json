@@ -611,7 +611,7 @@
         "en:need",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-needing"
       ],
       "curriculumRole": "core"
     },
@@ -630,8 +630,8 @@
         "pos:verb",
         "topic:verb-pattern",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:vp-full-inf"
+        "topic:vp-full-inf",
+        "topic:verb-needing"
       ],
       "curriculumRole": "core"
     },
@@ -654,10 +654,10 @@
         "topic:multi-sense",
         "topic:verb-pattern",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:vp-full-inf",
         "topic:vp-obj-complement",
-        "topic:map-que"
+        "topic:map-que",
+        "topic:verb-needing"
       ],
       "curriculumRole": "core"
     },
@@ -722,7 +722,7 @@
         "topic:verb-formal-remainder",
         "topic:vp-full-inf"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "blyn87wx6n",
@@ -34739,7 +34739,7 @@
         "en:read",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-learning-teaching"
       ],
       "curriculumRole": "core"
     },
@@ -38559,7 +38559,8 @@
         "en:require",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-admin-legal-formal"
+        "topic:verb-admin-legal-formal",
+        "topic:verb-needing"
       ],
       "curriculumRole": "reference"
     },
@@ -39767,9 +39768,9 @@
         "cognate:ferir-to-fer",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
-        "topic:cognate-latin-root"
+        "topic:cognate-latin-root",
+        "topic:verb-deciding-considering"
       ],
       "curriculumRole": "supporting"
     },
@@ -53022,8 +53023,8 @@
         "cognate:izar-to-ize",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-transparent"
+        "topic:cognate-transparent",
+        "topic:verb-learning-teaching"
       ],
       "curriculumRole": "supporting"
     },
@@ -55871,8 +55872,8 @@
         "es:practicar",
         "en:practice",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-opaque"
+        "topic:cognate-opaque",
+        "topic:verb-learning-teaching"
       ],
       "curriculumRole": "supporting"
     },
@@ -74579,8 +74580,8 @@
         "pos:verb",
         "topic:verb-pattern",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:vp-full-inf"
+        "topic:vp-full-inf",
+        "topic:verb-deciding-considering"
       ],
       "curriculumRole": "supporting"
     },
@@ -81511,7 +81512,7 @@
         "en:need",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-needing"
       ],
       "curriculumRole": "supporting"
     },
@@ -81535,7 +81536,7 @@
         "audit:reviewed",
         "topic:verb-feelings-love-like"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "trash"
     },
     {
       "id": "t0gq5vym7f",
@@ -81556,7 +81557,7 @@
         "audit:flagged",
         "topic:verb-formal-remainder"
       ],
-      "curriculumRole": "core"
+      "curriculumRole": "trash"
     },
     {
       "id": "gpe0vp0dv6",
@@ -99172,6 +99173,23 @@
         "topic:social-expression",
         "expr:response",
         "audit:reviewed"
+      ],
+      "curriculumRole": "core"
+    },
+    {
+      "id": "xewey70uqg",
+      "spanish": "los [sustantivos] (en general)",
+      "english": "[nouns] in general",
+      "example": {
+        "spanish": "En general, me gustan los gatos.",
+        "english": "In general, I like cats."
+      },
+      "collections": [
+        "grammar:definite-article",
+        "grammar:article",
+        "topic:determiner",
+        "contrast:spanish-article-no-english",
+        "pos:determiner"
       ],
       "curriculumRole": "core"
     }

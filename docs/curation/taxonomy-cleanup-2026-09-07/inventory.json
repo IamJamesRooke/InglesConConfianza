@@ -1,14 +1,14 @@
 {
   "summary": {
-    "generatedAt": "2026-09-07T16:41:00.498Z",
+    "generatedAt": "2026-09-07T16:50:58.492Z",
     "totals": {
-      "allConcepts": 4447,
-      "nonTrash": 4220,
+      "allConcepts": 4448,
+      "nonTrash": 4218,
       "byRole": {
-        "core": 310,
+        "core": 309,
         "supporting": 1111,
-        "reference": 2799,
-        "trash": 227
+        "reference": 2798,
+        "trash": 230
       }
     },
     "globalOrphanCount": 0,
@@ -24,8 +24,8 @@
       },
       {
         "slug": "determiners",
-        "baseCount": 144,
-        "reachableCount": 144,
+        "baseCount": 145,
+        "reachableCount": 145,
         "withinTopicGapCount": 0,
         "emptyGroupCount": 0,
         "confusionGroupCount": 0
@@ -40,8 +40,8 @@
       },
       {
         "slug": "verbs",
-        "baseCount": 1807,
-        "reachableCount": 1807,
+        "baseCount": 1804,
+        "reachableCount": 1804,
         "withinTopicGapCount": 0,
         "emptyGroupCount": 0,
         "confusionGroupCount": 0
@@ -160,8 +160,8 @@
       },
       {
         "slug": "verb-patterns",
-        "baseCount": 222,
-        "reachableCount": 222,
+        "baseCount": 221,
+        "reachableCount": 221,
         "withinTopicGapCount": 0,
         "emptyGroupCount": 0,
         "confusionGroupCount": 0
@@ -357,8 +357,8 @@
       "slug": "determiners",
       "title": "Determiners",
       "baseCollection": "topic:determiner",
-      "baseCount": 144,
-      "reachableCount": 144,
+      "baseCount": 145,
+      "reachableCount": 145,
       "withinTopicGapCount": 0,
       "withinTopicGapIds": [],
       "families": [
@@ -370,9 +370,9 @@
             {
               "collection": "grammar:definite-article",
               "label": "Definite article",
-              "count": 7,
+              "count": 8,
               "confusion": false,
-              "coreCount": 6
+              "coreCount": 7
             },
             {
               "collection": "grammar:indefinite-article",
@@ -530,8 +530,8 @@
       "slug": "verbs",
       "title": "Verbs",
       "baseCollection": "pos:verb",
-      "baseCount": 1807,
-      "reachableCount": 1807,
+      "baseCount": 1804,
+      "reachableCount": 1804,
       "withinTopicGapCount": 0,
       "withinTopicGapIds": [],
       "families": [
@@ -607,6 +607,13 @@
               "collection": "topic:verb-modal-obligation",
               "label": "Modals — Obligation & Probability (must/should/have to)",
               "count": 31,
+              "confusion": false,
+              "coreCount": 3
+            },
+            {
+              "collection": "topic:verb-needing",
+              "label": "Needing & requiring (necesitar)",
+              "count": 5,
               "confusion": false,
               "coreCount": 3
             },
@@ -697,7 +704,7 @@
             {
               "collection": "topic:verb-deciding-considering",
               "label": "Deciding & Considering",
-              "count": 27,
+              "count": 29,
               "confusion": false,
               "coreCount": 0
             },
@@ -711,9 +718,9 @@
             {
               "collection": "topic:verb-learning-teaching",
               "label": "Learning & Teaching",
-              "count": 11,
+              "count": 14,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 3
             },
             {
               "collection": "topic:verb-remembering-forgetting",
@@ -760,9 +767,9 @@
             {
               "collection": "topic:verb-feelings-love-like",
               "label": "Feelings — Love & Liking",
-              "count": 14,
+              "count": 13,
               "confusion": false,
-              "coreCount": 7
+              "coreCount": 6
             },
             {
               "collection": "topic:verb-feelings-dislike-worry",
@@ -1103,9 +1110,9 @@
             {
               "collection": "topic:verb-formal-remainder",
               "label": "Formal & Rare Verbs",
-              "count": 228,
+              "count": 217,
               "confusion": false,
-              "coreCount": 8
+              "coreCount": 3
             }
           ]
         }
@@ -6110,8 +6117,8 @@
       "slug": "verb-patterns",
       "title": "Verb Patterns",
       "baseCollection": "topic:verb-pattern",
-      "baseCount": 222,
-      "reachableCount": 222,
+      "baseCount": 221,
+      "reachableCount": 221,
       "withinTopicGapCount": 0,
       "withinTopicGapIds": [],
       "families": [
@@ -6123,7 +6130,7 @@
             {
               "collection": "topic:vp-full-inf",
               "label": "verb + to + infinitive (want to go)",
-              "count": 85,
+              "count": 84,
               "confusion": false,
               "coreCount": 16
             },

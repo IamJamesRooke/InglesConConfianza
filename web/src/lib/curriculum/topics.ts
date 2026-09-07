@@ -93,6 +93,7 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       { collection: "topic:verb-modal-ability", label: "Modals — Ability & Permission", family: "Modals, time & possibility" },
       { collection: "topic:verb-modal-possibility", label: "Modals — Possibility (may/might/could)", family: "Modals, time & possibility" },
       { collection: "topic:verb-modal-obligation", label: "Modals — Obligation & Probability (must/should/have to)", family: "Modals, time & possibility" },
+      { collection: "topic:verb-needing", label: "Needing & requiring (necesitar)", family: "Modals, time & possibility" },
       { collection: "topic:verb-wishes", label: "Wishes & Hypotheticals", family: "Modals, time & possibility" },
       { collection: "topic:verb-hoping-waiting", label: "Hoping & Waiting", family: "Modals, time & possibility" },
       { collection: "topic:verb-communication-talking", label: "Communication — Talking", family: "Communication" },

@@ -63,18 +63,24 @@ inventory delta (orphans / confusion-outside / gaps).
 - facet buttons ~530 → ~280 (numbered partitions merged); every button has an
   explicit `family`.
 
-**Remaining (all flagged, none blocking):**
-1. Verbs thematic taxonomy lacks a "needing" and a "reading/writing" family —
-   `necesitar`, `leer` (core) sit in "Formal & Rare Verbs". Add the families
-   + retag.
-2. Adjectives lacks a "Word order / position" group — `dq19hl9yw6`
-   (`grammar:adjective-position`).
-3. `t0gq5vym7f` `necesitar la información específica` — questionable core,
-   recommend trash or rewrite (pre-existing `audit:flagged`).
-4. The 2 original `full-audit-findings.md` flags (definite-article headword
-   mismatch; the same `necesitar` row).
-5. Browser click-through of representative paths incl. the moved `su`
-   mapping, role filters, and the side-by-side table.
-6. Optional: a full semantic re-audit of the ~40 family display names against
-   contents (spot-checked clean; "Cognate types(1)", "How it's used(1)" are
-   thin but valid).
+**Follow-ups (Batch 9, done — commit `_(next)_`):**
+1. **done** — new "Needing & requiring (necesitar)" group under "Modals, time
+   & possibility" (5 `necesitar` senses); `leer`/`memorizar`/`practicar` →
+   Learning & Teaching; `preferir` ×2 → Deciding & Considering. All out of
+   "Formal & Rare Verbs" (228 → 218, now genuinely formal/rare cognate verbs).
+2. **done** (commit `175796a2`) — Adjectives "Word order & sentence frame".
+3. **done** — `t0gq5vym7f` trashed (garbled, redundant with `necesitar
+   información (en general)`); `nmfskm5zko` "needa" typo dup trashed.
+4. **done** — `j69jaw6dew` (garbled generic-article row) trashed; replaced by
+   a clean core concept `los [sustantivos] (en general) → [nouns] in general`
+   ("En general, me gustan los gatos. / In general, I like cats."). Both
+   original `full-audit-findings.md` flags now resolved.
+
+Core 310 → **309** net: −2 garbled rows trashed with logged reasons, +1 new
+generic-article concept. No other demotions anywhere in the cleanup.
+
+**Still open:**
+5. Browser click-through of representative paths (moved `su` mapping, role
+   filters, side-by-side table) — needs the app running.
+6. Optional: full semantic re-audit of the ~40 family display names
+   (spot-checked clean; "Cognate types(1)", "How it's used(2)" thin but valid).
