@@ -1398,6 +1398,352 @@
   width: 100%;
   text-align: center;
 }
+
+/* Authoring uses the learner canvas; these are the few controls added to it. */
+.authoring-session .lesson-stage {
+  position: relative;
+  padding-top: 88px;
+}
+.authoring-title p {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.authoring-mode-label {
+  padding: 2px 7px;
+  border-radius: 999px;
+  color: var(--primary-foreground);
+  background: var(--primary);
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.authoring-title input {
+  display: block;
+  width: min(100%, 520px);
+  margin-top: 2px;
+  border: 0;
+  border-radius: var(--radius-md);
+  color: var(--foreground);
+  background: transparent;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+  outline: none;
+}
+.authoring-title input:hover,
+.authoring-title input:focus {
+  background: var(--muted);
+  box-shadow: 0 0 0 5px var(--muted);
+}
+.authoring-save-state {
+  flex-shrink: 0;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  font-weight: 650;
+}
+.authoring-save-state.error {
+  color: var(--destructive);
+}
+.authoring-topbar-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 0 13px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  color: var(--foreground);
+  background: var(--card);
+  font-size: 13px;
+  font-weight: 700;
+}
+.authoring-topbar-action:hover {
+  background: var(--muted);
+}
+.authoring-topbar-action.primary {
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+.authoring-topbar-action:disabled {
+  opacity: 0.38;
+}
+.authoring-step-tools {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 38px;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: color-mix(in oklch, var(--card) 92%, transparent);
+  box-shadow: var(--shadow-sm);
+  transform: translateX(-50%);
+  backdrop-filter: blur(12px);
+}
+.authoring-step-tools > span {
+  padding: 0 9px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.authoring-step-tools button {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 999px;
+  color: var(--muted-foreground);
+}
+.authoring-step-tools button:hover {
+  color: var(--foreground);
+  background: var(--muted);
+}
+.authoring-step-tools button.danger:hover {
+  color: var(--destructive);
+}
+.authoring-step-tools button:disabled {
+  opacity: 0.25;
+}
+.authoring-explanation-preview,
+.authoring-inline-field {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  color: inherit;
+  text-align: inherit;
+  cursor: text;
+}
+.authoring-explanation-preview {
+  padding: 18px;
+  margin: -18px;
+}
+.authoring-explanation-preview:hover,
+.authoring-inline-field:hover {
+  background: color-mix(in oklch, var(--muted) 65%, transparent);
+  outline: 2px dashed color-mix(in oklch, var(--primary) 30%, transparent);
+}
+.authoring-explanation-preview > span,
+.authoring-inline-field > span {
+  color: var(--muted-foreground);
+  font-style: italic;
+}
+.authoring-explanation-input,
+.authoring-inline-textarea {
+  display: block;
+  width: 100%;
+  resize: none;
+  border: 0;
+  border-radius: var(--radius-xl);
+  color: var(--foreground);
+  background: color-mix(in oklch, var(--card) 88%, transparent);
+  outline: 4px solid color-mix(in oklch, var(--ring) 18%, transparent);
+}
+.authoring-explanation-input {
+  min-height: 180px;
+  padding: 20px;
+  text-align: center;
+  font: inherit;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.55;
+}
+.authoring-inline-textarea {
+  min-height: 54px;
+  padding: 12px 14px;
+  font: inherit;
+}
+.authoring-inline-eyebrow {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+}
+.authoring-inline-prompt {
+  text-align: center;
+  font-size: 23px;
+  font-weight: 550;
+  line-height: 1.5;
+}
+.authoring-source-input {
+  width: 100%;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: transparent;
+  outline: none;
+}
+.authoring-source-input:hover,
+.authoring-source-input:focus {
+  background: color-mix(in oklch, var(--card) 62%, transparent);
+  box-shadow: 0 0 0 7px color-mix(in oklch, var(--card) 62%, transparent);
+}
+.authoring-answer-details {
+  display: grid;
+  grid-column: 1 / -1;
+  gap: 12px;
+  padding: 16px;
+  margin-top: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--card);
+}
+.authoring-answer-details label {
+  display: grid;
+  gap: 5px;
+}
+.authoring-answer-details label > span:first-child {
+  color: var(--muted-foreground);
+  font-size: 11px;
+  font-weight: 700;
+}
+.authoring-answer-details input {
+  width: 100%;
+  min-height: 40px;
+  padding: 8px 10px;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-md);
+  color: var(--foreground);
+  background: var(--background);
+  outline: none;
+}
+.authoring-answer-details input:focus {
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--ring) 16%, transparent);
+}
+.authoring-answer-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.authoring-answer-row button {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: var(--radius-md);
+  color: var(--muted-foreground);
+}
+.authoring-answer-row button:hover {
+  color: var(--destructive);
+  background: var(--muted);
+}
+.authoring-details-actions {
+  display: flex;
+  gap: 8px;
+}
+.authoring-details-actions button,
+.authoring-add-piece {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 10px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-md);
+  color: var(--muted-foreground);
+  font-size: 12px;
+  font-weight: 700;
+}
+.authoring-details-actions button:hover,
+.authoring-add-piece:hover {
+  color: var(--foreground);
+  border-color: var(--primary);
+  background: var(--muted);
+}
+.authoring-details-actions button.danger:hover {
+  color: var(--destructive);
+}
+.authoring-add-piece {
+  min-height: 92px;
+  align-self: stretch;
+  border-radius: var(--radius-2xl);
+}
+.authoring-session .sentence-helper,
+.authoring-session .sentence-authored-feedback {
+  width: 100%;
+}
+.authoring-session .sentence-helper .authoring-inline-field,
+.authoring-session .sentence-helper .authoring-inline-textarea {
+  flex: 1;
+}
+.authoring-session .sentence-authored-feedback:empty {
+  display: none;
+}
+.authoring-controls .lesson-controls-inner {
+  max-width: 1120px;
+}
+.authoring-add-step {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.authoring-add-step > span {
+  margin-right: 4px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+}
+.authoring-add-step button,
+.authoring-empty-lesson button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  color: var(--foreground);
+  background: var(--card);
+  font-size: 13px;
+  font-weight: 700;
+}
+.authoring-add-step button:hover,
+.authoring-empty-lesson button:hover {
+  border-color: var(--primary);
+  background: var(--muted);
+}
+.authoring-empty-lesson {
+  display: grid;
+  gap: 24px;
+  justify-items: center;
+  color: var(--muted-foreground);
+  text-align: center;
+}
+.authoring-empty-lesson > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+@media (max-width: 760px) {
+  .authoring-save-state,
+  .authoring-topbar-action:not(.primary),
+  .authoring-add-step > span,
+  .authoring-add-step button span {
+    display: none;
+  }
+  .authoring-topbar-action {
+    padding-inline: 10px;
+  }
+  .authoring-add-step {
+    gap: 4px;
+  }
+  .authoring-add-step button {
+    width: 42px;
+    padding: 0;
+    justify-content: center;
+    font-size: 0;
+  }
+}
 .completion-seal {
   width: 68px;
   height: 68px;

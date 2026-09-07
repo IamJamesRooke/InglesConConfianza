@@ -17,7 +17,7 @@ import {
   useState,
   useSyncExternalStore,
 } from "react";
-import { PracticeMarkdown } from "@/components/practice/practice-markdown";
+import { ExplanationStep } from "@/components/practice/explanation-step";
 import { SentencePracticeCard } from "@/components/practice/sentence-practice-card";
 import {
   readProgress,
@@ -349,17 +349,7 @@ function LessonSession({
               </div>
             </div>
           ) : block?.type === "explanation" ? (
-            <div className="lesson-explanation learner-enter">
-              <span className="step-overline">
-                <span aria-hidden="true" />
-                Una idea nueva
-              </span>
-              <PracticeMarkdown
-                markdown={
-                  block.contentMarkdown || "Continúa al siguiente paso."
-                }
-              />
-            </div>
+            <ExplanationStep markdown={block.contentMarkdown} />
           ) : block?.type === "sentence" ? (
             <SentencePracticeCard
               sentence={block}

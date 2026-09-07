@@ -3,14 +3,11 @@
 import {
   CheckCircle2,
   CircleAlert,
-  ChevronLeft,
-  ChevronRight,
   Command,
   FileText,
   Keyboard,
   Languages,
   Layers2,
-  Maximize2,
   Plus,
   Table2,
   X,
@@ -37,6 +34,7 @@ import {
   type PracticeLesson,
 } from "@/components/practice/lesson-selector";
 import { LanguageBlockGrid } from "@/components/lesson-builder/language-block-grid";
+import { LessonAuthoringSession } from "@/components/lesson-builder/lesson-authoring-session";
 import { LessonCardHeader } from "@/components/lesson-builder/lesson-card-header";
 import {
   LessonConceptsField,
@@ -673,7 +671,12 @@ export default function LessonBuilderPage() {
 
   const openLessonEditorNow = useCallback(
     (lessonId: string) => {
+      setIsZenMode(true);
       setActiveSentenceMarkdownField(null);
+      const firstBlock = lessons.find((lesson) => lesson.id === lessonId)?.blocks[0];
+      setActiveContentBlock(
+        firstBlock ? { lessonId, blockId: firstBlock.id } : null,
+      );
       setCollapsedContentBlocks(
         new Set(
           lessons.flatMap((lesson) =>
@@ -912,6 +915,7 @@ export default function LessonBuilderPage() {
       return nextLessonIds;
     });
     setActiveLessonId(lessonId);
+    setIsZenMode(true);
     focusLessonName(lessonId);
   }, [activeModuleId, focusLessonName, lessons]);
 
@@ -2548,102 +2552,7 @@ export default function LessonBuilderPage() {
           isZenMode ? "max-w-[920px]" : "max-w-[1500px]"
         }`}
       >
-        {isZenMode ? (
-          <div className="sticky top-0 z-30 -mx-2 flex items-center gap-2 rounded-2xl border border-white/80 bg-white/90 px-3 py-2 shadow-lg shadow-violet-950/5 backdrop-blur-xl">
-            <button
-              type="button"
-              onClick={() =>
-                activeLesson &&
-                zenBlockIndex > 0 &&
-                revealContentBlock(
-                  activeLesson.id,
-                  activeLesson.blocks[zenBlockIndex - 1].id,
-                )
-              }
-              disabled={zenBlockIndex <= 0}
-              aria-label="Previous step"
-              className="flex size-9 items-center justify-center rounded-lg text-stone-500 transition hover:bg-stone-100 disabled:opacity-25"
-            >
-              <ChevronLeft className="size-4" aria-hidden="true" />
-            </button>
-            <div className="min-w-0 flex-1 text-center">
-              <p className="truncate text-sm font-semibold text-stone-900">
-                {activeLesson?.name || "Untitled lesson"}
-              </p>
-              <p className="text-[11px] text-stone-500">
-                Lesson {activeLessonNumber ?? 0} · Step {zenBlockIndex + 1} of{" "}
-                {activeLesson?.blocks.length ?? 0}
-              </p>
-            </div>
-            <button
-              type="button"
-              onClick={() =>
-                activeLesson &&
-                zenBlockIndex >= 0 &&
-                zenBlockIndex < activeLesson.blocks.length - 1 &&
-                revealContentBlock(
-                  activeLesson.id,
-                  activeLesson.blocks[zenBlockIndex + 1].id,
-                )
-              }
-              disabled={
-                zenBlockIndex < 0 ||
-                zenBlockIndex >= (activeLesson?.blocks.length ?? 0) - 1
-              }
-              aria-label="Next step"
-              className="flex size-9 items-center justify-center rounded-lg text-stone-500 transition hover:bg-stone-100 disabled:opacity-25"
-            >
-              <ChevronRight className="size-4" aria-hidden="true" />
-            </button>
-            <span className="mx-1 h-6 w-px bg-stone-200" aria-hidden="true" />
-            <button
-              type="button"
-              onClick={() => {
-                if (activeLesson) {
-                  setPreviewLessonId(activeLesson.id);
-                  setPreviewBlockId(null);
-                }
-              }}
-              disabled={activeLessonIssues.length > 0 || !activeLesson}
-              className="rounded-lg px-3 py-2 text-xs font-semibold text-stone-600 transition hover:bg-stone-100 disabled:opacity-30"
-            >
-              Preview
-            </button>
-            <button
-              type="button"
-              onClick={() => activeLesson && void saveLesson(activeLesson.id)}
-              disabled={!activeLessonIsDirty || saveStatus === "saving"}
-              className="rounded-lg bg-violet-600 px-3 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-violet-700 disabled:bg-stone-300"
-            >
-              {saveStatus === "saving" ? "Saving…" : activeLessonIsDirty ? "Save" : "Saved"}
-            </button>
-            <button
-              type="button"
-              onClick={toggleZenMode}
-              aria-label="Exit Zen mode"
-              title="Exit Zen mode (Alt+Z)"
-              className="flex size-9 items-center justify-center rounded-lg text-stone-500 transition hover:bg-stone-100 hover:text-stone-900"
-            >
-              <X className="size-4" aria-hidden="true" />
-            </button>
-          </div>
-        ) : (
-          <div className="flex items-end gap-4">
-            <div className="min-w-0 flex-1">
-              <BuilderNav active="builder" />
-            </div>
-            <button
-              type="button"
-              onClick={toggleZenMode}
-              disabled={!activeLesson}
-              className="mb-2 inline-flex shrink-0 items-center gap-2 rounded-lg border border-violet-200 bg-violet-50 px-3 py-2 text-sm font-semibold text-violet-800 transition hover:border-violet-300 hover:bg-violet-100 disabled:opacity-40"
-            >
-              <Maximize2 className="size-4" aria-hidden="true" />
-              Zen mode
-              <kbd className="rounded border border-violet-200 bg-white px-1.5 py-0.5 font-mono text-[10px] text-violet-600">Alt+Z</kbd>
-            </button>
-          </div>
-        )}
+        {!isZenMode && <BuilderNav active="builder" />}
 
         <div className={isZenMode ? "grid" : "grid gap-5 lg:grid-cols-[15rem_minmax(0,1fr)] xl:grid-cols-[15rem_minmax(0,1fr)_19rem]"}>
           {!isZenMode && <aside className="min-w-0 lg:sticky lg:top-24 lg:self-start">
@@ -2791,6 +2700,140 @@ export default function LessonBuilderPage() {
             lessonDrag.dropTarget?.id === lesson.id
               ? lessonDrag.dropTarget.position
               : null;
+
+          if (isZenMode) {
+            const authoredSentence =
+              zenBlock && isPracticeBlock(zenBlock) ? zenBlock : null;
+            return (
+              <LessonAuthoringSession
+                key={lesson.id}
+                lesson={lesson}
+                lessonNumber={lessonNumber}
+                moduleName={currentModule?.name ?? null}
+                stepIndex={Math.max(zenBlockIndex, 0)}
+                saveState={saveStatus}
+                isDirty={lessonIsDirty}
+                onStepChange={(index) => {
+                  const targetBlock = lesson.blocks[index];
+                  if (targetBlock) revealContentBlock(lesson.id, targetBlock.id);
+                }}
+                onClose={() => setIsZenMode(false)}
+                onRename={(name) => renameLesson(lesson.id, name)}
+                onPreview={() => {
+                  setPreviewLessonId(lesson.id);
+                  setPreviewBlockId(null);
+                }}
+                onSave={() => void saveLesson(lesson.id)}
+                onUpdateExplanation={(markdown) => {
+                  if (zenBlock?.type === "explanation") {
+                    updateExplanationBlock(lesson.id, zenBlock.id, markdown);
+                  }
+                }}
+                sentenceAuthoring={{
+                  onFieldChange: (field, value) => {
+                    if (!authoredSentence) return;
+                    if (field === "promptLabel") {
+                      updateSentencePromptLabel(lesson.id, authoredSentence.id, value);
+                    } else if (field === "promptText") {
+                      updateSentencePromptText(lesson.id, authoredSentence.id, value);
+                    } else if (field === "helperText") {
+                      updateSentenceHelperText(lesson.id, authoredSentence.id, value);
+                    } else {
+                      updateSentenceAnswerFeedback(
+                        lesson.id,
+                        authoredSentence.id,
+                        value || null,
+                      );
+                    }
+                  },
+                  onSpanishChange: (languageBlockId, value) => {
+                    if (authoredSentence) {
+                      updateSpanishPrompt(
+                        lesson.id,
+                        authoredSentence.id,
+                        languageBlockId,
+                        value,
+                      );
+                    }
+                  },
+                  onAnswerChange: (languageBlockId, answerIndex, value) => {
+                    if (authoredSentence) {
+                      updateAcceptedAnswer(
+                        lesson.id,
+                        authoredSentence.id,
+                        languageBlockId,
+                        answerIndex,
+                        value,
+                      );
+                    }
+                  },
+                  onCalloutChange: (languageBlockId, value) => {
+                    if (authoredSentence) {
+                      updateLanguageBlockCallout(
+                        lesson.id,
+                        authoredSentence.id,
+                        languageBlockId,
+                        value,
+                      );
+                    }
+                  },
+                  onAddAnswer: (languageBlockId) => {
+                    if (!authoredSentence) return;
+                    const languageBlock = authoredSentence.languageBlocks.find(
+                      (candidate) => candidate.id === languageBlockId,
+                    );
+                    addAcceptedAnswer(
+                      lesson.id,
+                      authoredSentence.id,
+                      languageBlockId,
+                      languageBlock?.acceptedAnswers.length ?? 1,
+                    );
+                  },
+                  onRemoveAnswer: (languageBlockId, answerIndex) => {
+                    if (authoredSentence) {
+                      removeAcceptedAnswer(
+                        lesson.id,
+                        authoredSentence.id,
+                        languageBlockId,
+                        answerIndex,
+                      );
+                    }
+                  },
+                  onAddLanguageBlock: () => {
+                    if (authoredSentence) {
+                      addLanguageBlock(
+                        lesson.id,
+                        authoredSentence.id,
+                        createId("lang"),
+                      );
+                    }
+                  },
+                  onRemoveLanguageBlock: (languageBlockId) => {
+                    if (authoredSentence) {
+                      deleteLanguageBlock(
+                        lesson.id,
+                        authoredSentence.id,
+                        languageBlockId,
+                      );
+                    }
+                  },
+                }}
+                onAddStep={(type) => {
+                  const insertionIndex = Math.max(zenBlockIndex + 1, 0);
+                  if (type === "explanation") {
+                    addExplanationBlock(lesson.id, insertionIndex);
+                  } else if (type === "sentence") {
+                    addSentenceBlock(lesson.id, insertionIndex);
+                  } else {
+                    addVocabularyBlock(lesson.id, insertionIndex);
+                  }
+                }}
+                onDuplicateStep={duplicateActiveContentBlock}
+                onMoveStep={moveActiveContentBlock}
+                onDeleteStep={deleteActiveContentBlock}
+              />
+            );
+          }
 
           return (
             <section

@@ -291,6 +291,24 @@
               ]
             }
           ]
+        },
+        {
+          "id": "block_ae27e38c-13c8-41a2-86a3-98e3623ec338",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_d018dbf5-c4b9-4860-8aaf-77899cb1464d",
+              "spanish": "",
+              "callout": null,
+              "acceptedAnswers": [
+                ""
+              ]
+            }
+          ]
         }
       ]
     },
