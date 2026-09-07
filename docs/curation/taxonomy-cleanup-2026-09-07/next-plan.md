@@ -263,7 +263,7 @@ straightforward sort, not a taxonomy problem.
   `inventory` adjectives `reachable == base == 413`; group count drops
   31 → ~23; structure snapshot updated.
 
-### Batch 4 — Nouns: split the 33-group flat family, resolve the nested taxonomies
+### Batch 4 — Nouns: split the 33-group flat family — **DONE**
 
 - **Scope:** `Meaning & context` — 33 groups in one unscannable list, plus two
   container/member confusions.

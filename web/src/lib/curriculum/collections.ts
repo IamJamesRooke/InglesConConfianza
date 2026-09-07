@@ -461,7 +461,7 @@ export const KNOWN_COGNATE_VALUES: ReadonlySet<string> = new Set([
 // "el/la" -> common (same form serves either gender), no gender-marked
 // article (los/las-only, or a noun with no singular article) -> invariant.
 export const KNOWN_GENDER_VALUES: ReadonlySet<string> = new Set([
-  "masculine", "feminine", "common", "neuter", "invariant",
+  "masculine", "feminine", "common", "invariant",
 ]);
 
 // Controlled vocabulary for the `degree:` facet — which kind of comparative/

@@ -165,8 +165,14 @@ const EXPECTED_FAMILY_STRUCTURE: Record<string, Array<[string, number]>> = {
     ["Latin roots — not yet sorted by stem", 1],
   ],
   nouns: [
-    ["Articles & gender", 12],
-    ["Meaning & context", 33],
+    ["Articles & gender", 11],
+    ["People & family", 5],
+    ["Places", 2],
+    ["Time & calendar", 3],
+    ["Domains", 13],
+    ["Objects & things", 3],
+    ["Abstract nouns by suffix", 5],
+    ["Other abstract nouns", 1],
   ],
   adjectives: [
     ["Adjective endings", 8],

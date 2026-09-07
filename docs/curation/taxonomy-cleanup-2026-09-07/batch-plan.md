@@ -111,8 +111,11 @@ phase-1 rows above. Model routing per batch is in `next-plan.md`.
 
 | P2-3 | Adjectives: collapse the duplicate suffix axis | **done** | _(this commit)_ | 8 MERGE ops: every `topic:adj-abs-<suffix>` folded into `topic:adj-<suffix>` (75-95pct member overlap — one axis entered twice). Suffix groups relabelled without the `ser,` prefix and moved to a new `Adjective endings` family. Themes split into `Semantic themes`; `estar (state)` / tener-idiom / word-order into `How it's used`; `Comparisons`→`Comparison`. `topic:adj-ser-general` (190 rows after merge) had its 59 theme-tagged rows untagged and is renamed `Other descriptive adjectives` (131). Families 3→5, groups 39→31. |
 
+| P2-4 | Nouns: split the flat "Meaning & context" family | **done** | _(this commit)_ | The 33-group flat family replaced by 7 predictable families: `People & family` (5), `Places` (2), `Time & calendar` (3), `Domains` (13), `Objects & things` (3), `Abstract nouns by suffix` (5), `Other abstract nouns` (1). Retired the `people-family-rel` button (measured pure container: 30 rows = 14 immediate + 10 extended + 6 groups-terms, 0 elsewhere). Kept the three money groups (`money-business`/`objects-money-business`/`business-work`, measured disjoint) and relabelled for content: Money & Finance / Business & Commerce / Work & Employment. `abstract-general` (118, no seam) renamed `Other abstract nouns`. MERGE `gender:neuter`→`gender:invariant` (1 row), removed `neuter` from `KNOWN_GENDER_VALUES`. Nouns families 2→8, groups 45→43. |
+
 ### Phase 2 ledger
 
+- 2026-09-07 · P2-4 · _(this commit)_ · P2-4-noun-merge (1 MERGE) · nouns families 2→8, groups 45→43; base/reachable 483 unchanged; `db:test` 14/14.
 - 2026-09-07 · P2-3 · _(this commit)_ · P2-3-adj-merge (8 MERGE), P2-3-adj-ser-general-untag (59) · adjectives families 3→5, groups 39→31; base/reachable 413 unchanged; `db:test` 14/14.
 - 2026-09-07 · P2-1 · `bea7ac3e` · none (tooling + tests) · no DB change; inventory counts unchanged; `db:test` 11→14 tests.
 - 2026-09-07 · P2-2a · `35b5d1be` · none (config + code) · no DB change; verbs base 1804→1599 (205 reference cognate verbs now Cognates-only); orphans 0; gaps 0; verb facet buttons −1; `db:test` 14/14.
