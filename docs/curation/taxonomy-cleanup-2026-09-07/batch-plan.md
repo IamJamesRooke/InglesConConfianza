@@ -105,7 +105,10 @@ phase-1 rows above. Model routing per batch is in `next-plan.md`.
 
 | P2-2a | Verbs: exclude reference cognates | **done** | `35b5d1be` | New declarative `baseExclusions` on a topic (`src/lib/curriculum/scope.ts` + Prisma twin in `curriculum-store.ts`). Verbs excludes `topic:cognate` rows that are not core/supporting. **No data change** — a display policy in config; every row keeps every tag. Verbs base 1804→1599; "Formal & Rare Verbs" 219→128; removed the emptied "Formal Actions — Business & Process" button. One predicate shared by page query / inventory / test so the rule cannot drift. |
 
+| P2-5 | Cognates: reorganize by part of speech | **done** | _(this commit)_ | 3 families -> 9, by POS with verb patterns split by conjugation class: `-ar/-er/-ir verb cognates`, `Noun cognates`, `Adjective cognates`, `Adverb cognates`, `Verb form endings`, `How close is it?` (transparent + opaque + false friends), `Latin roots — not yet sorted by stem`. Retired the 48-leaf `Spelling patterns` and the 1-group `Cognate types`. Family assigned by each group's dominant part of speech (measured), verb groups by infinitive class. **Code-only**, no DB change. |
+
 ### Phase 2 ledger
 
 - 2026-09-07 · P2-1 · `bea7ac3e` · none (tooling + tests) · no DB change; inventory counts unchanged; `db:test` 11→14 tests.
+- 2026-09-07 · P2-5 · _(this commit)_ · none (config only) · cognates families 3→9, groups 71 (unchanged); base/reachable 787 unchanged; `db:test` 14/14.
 - 2026-09-07 · P2-2a · `35b5d1be` · none (config + code) · no DB change; verbs base 1804→1599 (205 reference cognate verbs now Cognates-only); orphans 0; gaps 0; verb facet buttons −1; `db:test` 14/14.

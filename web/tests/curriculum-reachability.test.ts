@@ -154,9 +154,15 @@ const EXPECTED_FAMILY_STRUCTURE: Record<string, Array<[string, number]>> = {
     ["Formal & specialized", 7],
   ],
   cognates: [
-    ["Spelling patterns", 48],
-    ["Cognate types", 1],
-    ["Latin roots", 22],
+    ["-ar verb cognates (preparAR → prepare)", 6],
+    ["-er verb cognates (defendER → defend)", 6],
+    ["-ir verb cognates (decidIR → decide)", 15],
+    ["Noun cognates", 19],
+    ["Adjective cognates", 16],
+    ["Adverb cognates", 1],
+    ["Verb form endings", 4],
+    ["How close is it?", 3],
+    ["Latin roots — not yet sorted by stem", 1],
   ],
   nouns: [
     ["Articles & gender", 12],
