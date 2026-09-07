@@ -3,6 +3,7 @@ import test from "node:test";
 
 import {
   buildCurriculumFamilies,
+  canonicalFacetCollection,
   resolveCurriculumPath,
 } from "../../src/lib/curriculum/navigation";
 import { CURRICULUM_TOPICS } from "../../src/lib/curriculum/topics";
@@ -35,7 +36,7 @@ test("verbs are split into meaningful middle-level families", () => {
   assert.ok(communication.leaves.length > 5);
   assert.ok(
     communication.leaves.some(
-      (leaf) => leaf.collection === "topic:verb-communication-saying-1",
+      (leaf) => leaf.collection === "topic:verb-communication-saying",
     ),
   );
   assert.ok(families.some((family) => family.label === "Movement"));
@@ -47,14 +48,30 @@ test("a legacy single-facet link resolves to its browser path", () => {
     topic,
     "",
     "",
-    ["topic:verb-communication-saying-1"],
+    ["topic:verb-communication-saying"],
   );
 
   assert.equal(resolved.family?.label, "Communication");
   assert.equal(
     resolved.leaf?.collection,
-    "topic:verb-communication-saying-1",
+    "topic:verb-communication-saying",
   );
+});
+
+test("legacy numbered-facet deep links still resolve after the Batch 5 merge", () => {
+  // topic:map-ser-7 was merged into topic:map-ser; topic:verb-household-2-1
+  // into topic:verb-household.
+  assert.equal(canonicalFacetCollection("topic:map-ser-7"), "topic:map-ser");
+  assert.equal(
+    canonicalFacetCollection("topic:verb-household-2-1"),
+    "topic:verb-household",
+  );
+  // untouched collections pass through
+  assert.equal(
+    canonicalFacetCollection("grammar:subject-pronoun"),
+    "grammar:subject-pronoun",
+  );
+  assert.equal(canonicalFacetCollection("topic:map-quedar"), "topic:map-quedar");
 });
 
 test("dictionary-like topics use stable alphabetic families", () => {

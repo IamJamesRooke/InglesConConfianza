@@ -1,0 +1,435 @@
+MERGE	topic:verb-tobe-present-1	topic:verb-tobe-present	Batch 5: merge size-driven numbered split into one "To Be — Present (am/is/are)" group
+MERGE	topic:verb-tobe-present-2	topic:verb-tobe-present	Batch 5: merge size-driven numbered split into one "To Be — Present (am/is/are)" group
+MERGE	topic:verb-ser-idioms-1	topic:verb-ser-idioms	Batch 5: merge size-driven numbered split into one "To Be (ser) — Idioms & Uses" group
+MERGE	topic:verb-ser-idioms-2	topic:verb-ser-idioms	Batch 5: merge size-driven numbered split into one "To Be (ser) — Idioms & Uses" group
+MERGE	topic:verb-estar-idioms-1-1	topic:verb-estar-idioms	Batch 5: merge size-driven numbered split into one "To Be (estar) — Idioms & Uses" group
+MERGE	topic:verb-estar-idioms-1-2	topic:verb-estar-idioms	Batch 5: merge size-driven numbered split into one "To Be (estar) — Idioms & Uses" group
+MERGE	topic:verb-estar-idioms-2-1	topic:verb-estar-idioms	Batch 5: merge size-driven numbered split into one "To Be (estar) — Idioms & Uses" group
+MERGE	topic:verb-estar-idioms-2-2	topic:verb-estar-idioms	Batch 5: merge size-driven numbered split into one "To Be (estar) — Idioms & Uses" group
+MERGE	topic:verb-perfect-auxiliary-1	topic:verb-perfect-auxiliary	Batch 5: merge size-driven numbered split into one "Have — Perfect Auxiliary (have/has/had done)" group
+MERGE	topic:verb-perfect-auxiliary-2	topic:verb-perfect-auxiliary	Batch 5: merge size-driven numbered split into one "Have — Perfect Auxiliary (have/has/had done)" group
+MERGE	topic:verb-modal-ability-1	topic:verb-modal-ability	Batch 5: merge size-driven numbered split into one "Modals — Ability & Permission" group
+MERGE	topic:verb-modal-ability-2	topic:verb-modal-ability	Batch 5: merge size-driven numbered split into one "Modals — Ability & Permission" group
+MERGE	topic:verb-modal-obligation-1	topic:verb-modal-obligation	Batch 5: merge size-driven numbered split into one "Modals — Obligation & Probability (must/should/have to)" group
+MERGE	topic:verb-modal-obligation-2	topic:verb-modal-obligation	Batch 5: merge size-driven numbered split into one "Modals — Obligation & Probability (must/should/have to)" group
+MERGE	topic:verb-wishes-1	topic:verb-wishes	Batch 5: merge size-driven numbered split into one "Wishes & Hypotheticals" group
+MERGE	topic:verb-wishes-2	topic:verb-wishes	Batch 5: merge size-driven numbered split into one "Wishes & Hypotheticals" group
+MERGE	topic:verb-communication-talking-1	topic:verb-communication-talking	Batch 5: merge size-driven numbered split into one "Communication — Talking" group
+MERGE	topic:verb-communication-talking-2	topic:verb-communication-talking	Batch 5: merge size-driven numbered split into one "Communication — Talking" group
+MERGE	topic:verb-communication-saying-1	topic:verb-communication-saying	Batch 5: merge size-driven numbered split into one "Communication — Saying & Telling" group
+MERGE	topic:verb-communication-saying-2	topic:verb-communication-saying	Batch 5: merge size-driven numbered split into one "Communication — Saying & Telling" group
+MERGE	topic:verb-communication-other-1	topic:verb-communication-other	Batch 5: merge size-driven numbered split into one "Communication — Other" group
+MERGE	topic:verb-communication-other-2	topic:verb-communication-other	Batch 5: merge size-driven numbered split into one "Communication — Other" group
+MERGE	topic:verb-communication-formal-1	topic:verb-communication-formal	Batch 5: merge size-driven numbered split into one "Communication — Formal & Reporting" group
+MERGE	topic:verb-communication-formal-2	topic:verb-communication-formal	Batch 5: merge size-driven numbered split into one "Communication — Formal & Reporting" group
+MERGE	topic:verb-communication-naming-1	topic:verb-communication-naming	Batch 5: merge size-driven numbered split into one "Communication — Naming, Calling & Marking" group
+MERGE	topic:verb-communication-naming-2	topic:verb-communication-naming	Batch 5: merge size-driven numbered split into one "Communication — Naming, Calling & Marking" group
+MERGE	topic:verb-asking-requesting-1	topic:verb-asking-requesting	Batch 5: merge size-driven numbered split into one "Asking & Requesting" group
+MERGE	topic:verb-asking-requesting-2	topic:verb-asking-requesting	Batch 5: merge size-driven numbered split into one "Asking & Requesting" group
+MERGE	topic:verb-deciding-considering-1	topic:verb-deciding-considering	Batch 5: merge size-driven numbered split into one "Deciding & Considering" group
+MERGE	topic:verb-deciding-considering-2	topic:verb-deciding-considering	Batch 5: merge size-driven numbered split into one "Deciding & Considering" group
+MERGE	topic:verb-knowing-1	topic:verb-knowing	Batch 5: merge size-driven numbered split into one "Knowing" group
+MERGE	topic:verb-knowing-2	topic:verb-knowing	Batch 5: merge size-driven numbered split into one "Knowing" group
+MERGE	topic:verb-watching-other-1	topic:verb-watching-other	Batch 5: merge size-driven numbered split into one "Watching & Observing" group
+MERGE	topic:verb-watching-other-2	topic:verb-watching-other	Batch 5: merge size-driven numbered split into one "Watching & Observing" group
+MERGE	topic:verb-movement-going-1	topic:verb-movement-going	Batch 5: merge size-driven numbered split into one "Movement — Going" group
+MERGE	topic:verb-movement-going-2	topic:verb-movement-going	Batch 5: merge size-driven numbered split into one "Movement — Going" group
+MERGE	topic:verb-movement-arriving-passing-1	topic:verb-movement-arriving-passing	Batch 5: merge size-driven numbered split into one "Movement — Arriving & Passing" group
+MERGE	topic:verb-movement-arriving-passing-2	topic:verb-movement-arriving-passing	Batch 5: merge size-driven numbered split into one "Movement — Arriving & Passing" group
+MERGE	topic:verb-movement-leaving-1	topic:verb-movement-leaving	Batch 5: merge size-driven numbered split into one "Movement — Leaving" group
+MERGE	topic:verb-movement-leaving-2	topic:verb-movement-leaving	Batch 5: merge size-driven numbered split into one "Movement — Leaving" group
+MERGE	topic:verb-movement-directional-verbs-1	topic:verb-movement-directional-verbs	Batch 5: merge size-driven numbered split into one "Movement — Return & Direction" group
+MERGE	topic:verb-movement-directional-verbs-2	topic:verb-movement-directional-verbs	Batch 5: merge size-driven numbered split into one "Movement — Return & Direction" group
+MERGE	topic:verb-movement-directional-1	topic:verb-movement-directional	Batch 5: merge size-driven numbered split into one "Movement — Up, Down & Falling" group
+MERGE	topic:verb-movement-directional-2	topic:verb-movement-directional	Batch 5: merge size-driven numbered split into one "Movement — Up, Down & Falling" group
+MERGE	topic:verb-following-continuing-1	topic:verb-following-continuing	Batch 5: merge size-driven numbered split into one "Following & Continuing" group
+MERGE	topic:verb-following-continuing-2	topic:verb-following-continuing	Batch 5: merge size-driven numbered split into one "Following & Continuing" group
+MERGE	topic:verb-possession-having-1	topic:verb-possession-having	Batch 5: merge size-driven numbered split into one "Having (tener)" group
+MERGE	topic:verb-possession-having-2	topic:verb-possession-having	Batch 5: merge size-driven numbered split into one "Having (tener)" group
+MERGE	topic:verb-possession-obtaining-1	topic:verb-possession-obtaining	Batch 5: merge size-driven numbered split into one "Getting & Obtaining" group
+MERGE	topic:verb-possession-obtaining-2	topic:verb-possession-obtaining	Batch 5: merge size-driven numbered split into one "Getting & Obtaining" group
+MERGE	topic:verb-tomar-general-1	topic:verb-tomar-general	Batch 5: merge size-driven numbered split into one "Taking (tomar/coger)" group
+MERGE	topic:verb-tomar-general-2	topic:verb-tomar-general	Batch 5: merge size-driven numbered split into one "Taking (tomar/coger)" group
+MERGE	topic:verb-taking-removing-1-1	topic:verb-taking-removing	Batch 5: merge size-driven numbered split into one "Taking Away" group
+MERGE	topic:verb-taking-removing-1-2	topic:verb-taking-removing	Batch 5: merge size-driven numbered split into one "Taking Away" group
+MERGE	topic:verb-taking-removing-2-1	topic:verb-taking-removing	Batch 5: merge size-driven numbered split into one "Taking Away" group
+MERGE	topic:verb-taking-removing-2-2	topic:verb-taking-removing	Batch 5: merge size-driven numbered split into one "Taking Away" group
+MERGE	topic:verb-keeping-storing-1	topic:verb-keeping-storing	Batch 5: merge size-driven numbered split into one "Keeping & Storing" group
+MERGE	topic:verb-keeping-storing-2	topic:verb-keeping-storing	Batch 5: merge size-driven numbered split into one "Keeping & Storing" group
+MERGE	topic:verb-eating-drinking-1	topic:verb-eating-drinking	Batch 5: merge size-driven numbered split into one "Eating & Drinking" group
+MERGE	topic:verb-eating-drinking-2	topic:verb-eating-drinking	Batch 5: merge size-driven numbered split into one "Eating & Drinking" group
+MERGE	topic:verb-work-employment-1	topic:verb-work-employment	Batch 5: merge size-driven numbered split into one "Work & Employment" group
+MERGE	topic:verb-work-employment-2	topic:verb-work-employment	Batch 5: merge size-driven numbered split into one "Work & Employment" group
+MERGE	topic:verb-money-earning-spending-1	topic:verb-money-earning-spending	Batch 5: merge size-driven numbered split into one "Money — Earning & Spending" group
+MERGE	topic:verb-money-earning-spending-2	topic:verb-money-earning-spending	Batch 5: merge size-driven numbered split into one "Money — Earning & Spending" group
+MERGE	topic:verb-money-commerce-1	topic:verb-money-commerce	Batch 5: merge size-driven numbered split into one "Money — Buying & Selling" group
+MERGE	topic:verb-money-commerce-2	topic:verb-money-commerce	Batch 5: merge size-driven numbered split into one "Money — Buying & Selling" group
+MERGE	topic:verb-creation-hacer-1	topic:verb-creation-hacer	Batch 5: merge size-driven numbered split into one "Making & Doing (hacer)" group
+MERGE	topic:verb-creation-hacer-2	topic:verb-creation-hacer	Batch 5: merge size-driven numbered split into one "Making & Doing (hacer)" group
+MERGE	topic:verb-creation-repair-other-1	topic:verb-creation-repair-other	Batch 5: merge size-driven numbered split into one "Creating, Fixing & Changing" group
+MERGE	topic:verb-creation-repair-other-2	topic:verb-creation-repair-other	Batch 5: merge size-driven numbered split into one "Creating, Fixing & Changing" group
+MERGE	topic:verb-poner-idioms-1-1	topic:verb-poner-idioms	Batch 5: merge size-driven numbered split into one "Placing & Setting — Idioms" group
+MERGE	topic:verb-poner-idioms-1-2	topic:verb-poner-idioms	Batch 5: merge size-driven numbered split into one "Placing & Setting — Idioms" group
+MERGE	topic:verb-poner-idioms-2-1	topic:verb-poner-idioms	Batch 5: merge size-driven numbered split into one "Placing & Setting — Idioms" group
+MERGE	topic:verb-poner-idioms-2-2	topic:verb-poner-idioms	Batch 5: merge size-driven numbered split into one "Placing & Setting — Idioms" group
+MERGE	topic:verb-household-1-1	topic:verb-household	Batch 5: merge size-driven numbered split into one "Household & Objects" group
+MERGE	topic:verb-household-1-2	topic:verb-household	Batch 5: merge size-driven numbered split into one "Household & Objects" group
+MERGE	topic:verb-household-2-1	topic:verb-household	Batch 5: merge size-driven numbered split into one "Household & Objects" group
+MERGE	topic:verb-household-2-2	topic:verb-household	Batch 5: merge size-driven numbered split into one "Household & Objects" group
+MERGE	topic:verb-social-relationships-1	topic:verb-social-relationships	Batch 5: merge size-driven numbered split into one "Social Interaction & Relationships" group
+MERGE	topic:verb-social-relationships-2	topic:verb-social-relationships	Batch 5: merge size-driven numbered split into one "Social Interaction & Relationships" group
+MERGE	topic:verb-conflict-crime-1	topic:verb-conflict-crime	Batch 5: merge size-driven numbered split into one "Conflict & Crime" group
+MERGE	topic:verb-conflict-crime-2	topic:verb-conflict-crime	Batch 5: merge size-driven numbered split into one "Conflict & Crime" group
+MERGE	topic:verb-admin-legal-formal-1	topic:verb-admin-legal-formal	Batch 5: merge size-driven numbered split into one "Administrative, Legal & Formal Actions" group
+MERGE	topic:verb-admin-legal-formal-2	topic:verb-admin-legal-formal	Batch 5: merge size-driven numbered split into one "Administrative, Legal & Formal Actions" group
+MERGE	topic:verb-formal-abstract-1-1	topic:verb-formal-abstract	Batch 5: merge size-driven numbered split into one "Formal Actions — Abstract" group
+MERGE	topic:verb-formal-abstract-1-2	topic:verb-formal-abstract	Batch 5: merge size-driven numbered split into one "Formal Actions — Abstract" group
+MERGE	topic:verb-formal-abstract-2	topic:verb-formal-abstract	Batch 5: merge size-driven numbered split into one "Formal Actions — Abstract" group
+MERGE	topic:verb-formal-remainder-0	topic:verb-formal-remainder	Batch 5: merge size-driven numbered split into one "Formal & Rare Verbs" group
+MERGE	topic:verb-formal-remainder-1	topic:verb-formal-remainder	Batch 5: merge size-driven numbered split into one "Formal & Rare Verbs" group
+MERGE	topic:verb-formal-remainder-2	topic:verb-formal-remainder	Batch 5: merge size-driven numbered split into one "Formal & Rare Verbs" group
+MERGE	topic:verb-formal-remainder-3	topic:verb-formal-remainder	Batch 5: merge size-driven numbered split into one "Formal & Rare Verbs" group
+MERGE	topic:verb-formal-remainder-4	topic:verb-formal-remainder	Batch 5: merge size-driven numbered split into one "Formal & Rare Verbs" group
+MERGE	topic:verb-formal-remainder-5	topic:verb-formal-remainder	Batch 5: merge size-driven numbered split into one "Formal & Rare Verbs" group
+MERGE	topic:verb-formal-remainder-6	topic:verb-formal-remainder	Batch 5: merge size-driven numbered split into one "Formal & Rare Verbs" group
+MERGE	topic:verb-formal-remainder-7	topic:verb-formal-remainder	Batch 5: merge size-driven numbered split into one "Formal & Rare Verbs" group
+MERGE	topic:verb-formal-remainder-8	topic:verb-formal-remainder	Batch 5: merge size-driven numbered split into one "Formal & Rare Verbs" group
+MERGE	topic:verb-formal-remainder-9	topic:verb-formal-remainder	Batch 5: merge size-driven numbered split into one "Formal & Rare Verbs" group
+MERGE	topic:verb-formal-remainder-10	topic:verb-formal-remainder	Batch 5: merge size-driven numbered split into one "Formal & Rare Verbs" group
+MERGE	topic:verb-formal-remainder-11	topic:verb-formal-remainder	Batch 5: merge size-driven numbered split into one "Formal & Rare Verbs" group
+MERGE	topic:verb-formal-remainder-12	topic:verb-formal-remainder	Batch 5: merge size-driven numbered split into one "Formal & Rare Verbs" group
+MERGE	topic:verb-formal-remainder-13	topic:verb-formal-remainder	Batch 5: merge size-driven numbered split into one "Formal & Rare Verbs" group
+MERGE	topic:verb-formal-remainder-14	topic:verb-formal-remainder	Batch 5: merge size-driven numbered split into one "Formal & Rare Verbs" group
+MERGE	topic:cognate-transparent-1	topic:cognate-transparent	Batch 5: merge size-driven numbered split into one "Identical / transparent" group
+MERGE	topic:cognate-transparent-2	topic:cognate-transparent	Batch 5: merge size-driven numbered split into one "Identical / transparent" group
+MERGE	topic:cognate-transparent-3	topic:cognate-transparent	Batch 5: merge size-driven numbered split into one "Identical / transparent" group
+MERGE	topic:cognate-transparent-4	topic:cognate-transparent	Batch 5: merge size-driven numbered split into one "Identical / transparent" group
+MERGE	topic:cognate-transparent-5	topic:cognate-transparent	Batch 5: merge size-driven numbered split into one "Identical / transparent" group
+MERGE	topic:cognate-transparent-6	topic:cognate-transparent	Batch 5: merge size-driven numbered split into one "Identical / transparent" group
+MERGE	topic:cognate-transparent-7	topic:cognate-transparent	Batch 5: merge size-driven numbered split into one "Identical / transparent" group
+MERGE	topic:cognate-transparent-8	topic:cognate-transparent	Batch 5: merge size-driven numbered split into one "Identical / transparent" group
+MERGE	topic:cognate-transparent-9	topic:cognate-transparent	Batch 5: merge size-driven numbered split into one "Identical / transparent" group
+MERGE	topic:cognate-transparent-10	topic:cognate-transparent	Batch 5: merge size-driven numbered split into one "Identical / transparent" group
+MERGE	topic:cognate-transparent-11	topic:cognate-transparent	Batch 5: merge size-driven numbered split into one "Identical / transparent" group
+MERGE	topic:cognate-transparent-12	topic:cognate-transparent	Batch 5: merge size-driven numbered split into one "Identical / transparent" group
+MERGE	topic:cognate-transparent-13	topic:cognate-transparent	Batch 5: merge size-driven numbered split into one "Identical / transparent" group
+MERGE	topic:cognate-transparent-14	topic:cognate-transparent	Batch 5: merge size-driven numbered split into one "Identical / transparent" group
+MERGE	topic:cognate-transparent-15	topic:cognate-transparent	Batch 5: merge size-driven numbered split into one "Identical / transparent" group
+MERGE	topic:cognate-transparent-16	topic:cognate-transparent	Batch 5: merge size-driven numbered split into one "Identical / transparent" group
+MERGE	topic:cognate-transparent-17	topic:cognate-transparent	Batch 5: merge size-driven numbered split into one "Identical / transparent" group
+MERGE	topic:cognate-transparent-18	topic:cognate-transparent	Batch 5: merge size-driven numbered split into one "Identical / transparent" group
+MERGE	topic:cognate-transparent-19	topic:cognate-transparent	Batch 5: merge size-driven numbered split into one "Identical / transparent" group
+MERGE	topic:cognate-opaque-1	topic:cognate-opaque	Batch 5: merge size-driven numbered split into one "Looks different" group
+MERGE	topic:cognate-opaque-2	topic:cognate-opaque	Batch 5: merge size-driven numbered split into one "Looks different" group
+MERGE	topic:cognate-opaque-3	topic:cognate-opaque	Batch 5: merge size-driven numbered split into one "Looks different" group
+MERGE	topic:cognate-opaque-4	topic:cognate-opaque	Batch 5: merge size-driven numbered split into one "Looks different" group
+MERGE	topic:cognate-encia-ancia-1	topic:cognate-encia-ancia	Batch 5: merge size-driven numbered split into one "-encia/-ancia → -ence/-ance" group
+MERGE	topic:cognate-encia-ancia-2	topic:cognate-encia-ancia	Batch 5: merge size-driven numbered split into one "-encia/-ancia → -ence/-ance" group
+MERGE	topic:cognate-latin-root-1	topic:cognate-latin-root	Batch 5: merge size-driven numbered split into one "Latin roots (any)" group
+MERGE	topic:cognate-latin-root-2	topic:cognate-latin-root	Batch 5: merge size-driven numbered split into one "Latin roots (any)" group
+MERGE	topic:cognate-latin-root-3	topic:cognate-latin-root	Batch 5: merge size-driven numbered split into one "Latin roots (any)" group
+MERGE	topic:cognate-latin-root-4	topic:cognate-latin-root	Batch 5: merge size-driven numbered split into one "Latin roots (any)" group
+MERGE	topic:cognate-latin-root-5	topic:cognate-latin-root	Batch 5: merge size-driven numbered split into one "Latin roots (any)" group
+MERGE	topic:cognate-latin-root-6	topic:cognate-latin-root	Batch 5: merge size-driven numbered split into one "Latin roots (any)" group
+MERGE	topic:cognate-latin-root-7	topic:cognate-latin-root	Batch 5: merge size-driven numbered split into one "Latin roots (any)" group
+MERGE	topic:cognate-latin-root-8	topic:cognate-latin-root	Batch 5: merge size-driven numbered split into one "Latin roots (any)" group
+MERGE	topic:cognate-latin-root-9	topic:cognate-latin-root	Batch 5: merge size-driven numbered split into one "Latin roots (any)" group
+MERGE	topic:cognate-latin-root-10	topic:cognate-latin-root	Batch 5: merge size-driven numbered split into one "Latin roots (any)" group
+MERGE	topic:cognate-latin-root-11	topic:cognate-latin-root	Batch 5: merge size-driven numbered split into one "Latin roots (any)" group
+MERGE	topic:masc-o-1	topic:masc-o	Batch 5: merge size-driven numbered split into one "el, -o" group
+MERGE	topic:masc-o-2	topic:masc-o	Batch 5: merge size-driven numbered split into one "el, -o" group
+MERGE	topic:masc-o-3	topic:masc-o	Batch 5: merge size-driven numbered split into one "el, -o" group
+MERGE	topic:masc-o-4	topic:masc-o	Batch 5: merge size-driven numbered split into one "el, -o" group
+MERGE	topic:masc-o-5	topic:masc-o	Batch 5: merge size-driven numbered split into one "el, -o" group
+MERGE	topic:masc-o-6	topic:masc-o	Batch 5: merge size-driven numbered split into one "el, -o" group
+MERGE	topic:masc-o-7	topic:masc-o	Batch 5: merge size-driven numbered split into one "el, -o" group
+MERGE	topic:masc-o-8	topic:masc-o	Batch 5: merge size-driven numbered split into one "el, -o" group
+MERGE	topic:masc-consonant-1	topic:masc-consonant	Batch 5: merge size-driven numbered split into one "el, consonant" group
+MERGE	topic:masc-consonant-2	topic:masc-consonant	Batch 5: merge size-driven numbered split into one "el, consonant" group
+MERGE	topic:masc-consonant-3	topic:masc-consonant	Batch 5: merge size-driven numbered split into one "el, consonant" group
+MERGE	topic:fem-a-1	topic:fem-a	Batch 5: merge size-driven numbered split into one "la, -a" group
+MERGE	topic:fem-a-2	topic:fem-a	Batch 5: merge size-driven numbered split into one "la, -a" group
+MERGE	topic:fem-a-3	topic:fem-a	Batch 5: merge size-driven numbered split into one "la, -a" group
+MERGE	topic:fem-a-4	topic:fem-a	Batch 5: merge size-driven numbered split into one "la, -a" group
+MERGE	topic:fem-a-5	topic:fem-a	Batch 5: merge size-driven numbered split into one "la, -a" group
+MERGE	topic:fem-a-6	topic:fem-a	Batch 5: merge size-driven numbered split into one "la, -a" group
+MERGE	topic:fem-a-7	topic:fem-a	Batch 5: merge size-driven numbered split into one "la, -a" group
+MERGE	topic:fem-a-8	topic:fem-a	Batch 5: merge size-driven numbered split into one "la, -a" group
+MERGE	topic:fem-abstract-suffix-1	topic:fem-abstract-suffix	Batch 5: merge size-driven numbered split into one "la, -dad/-ción/-sión" group
+MERGE	topic:fem-abstract-suffix-2	topic:fem-abstract-suffix	Batch 5: merge size-driven numbered split into one "la, -dad/-ción/-sión" group
+MERGE	topic:fem-abstract-suffix-3	topic:fem-abstract-suffix	Batch 5: merge size-driven numbered split into one "la, -dad/-ción/-sión" group
+MERGE	topic:fem-consonant-1	topic:fem-consonant	Batch 5: merge size-driven numbered split into one "la, consonant" group
+MERGE	topic:fem-consonant-2	topic:fem-consonant	Batch 5: merge size-driven numbered split into one "la, consonant" group
+MERGE	topic:abstract-encia-ancia-1	topic:abstract-encia-ancia	Batch 5: merge size-driven numbered split into one "Abstract — -encia/-ancia" group
+MERGE	topic:abstract-encia-ancia-2	topic:abstract-encia-ancia	Batch 5: merge size-driven numbered split into one "Abstract — -encia/-ancia" group
+MERGE	topic:abstract-dad-tud-1	topic:abstract-dad-tud	Batch 5: merge size-driven numbered split into one "Abstract — -dad/-tud" group
+MERGE	topic:abstract-dad-tud-2	topic:abstract-dad-tud	Batch 5: merge size-driven numbered split into one "Abstract — -dad/-tud" group
+MERGE	topic:abstract-general-1	topic:abstract-general	Batch 5: merge size-driven numbered split into one "Abstract — General" group
+MERGE	topic:abstract-general-2	topic:abstract-general	Batch 5: merge size-driven numbered split into one "Abstract — General" group
+MERGE	topic:abstract-general-3	topic:abstract-general	Batch 5: merge size-driven numbered split into one "Abstract — General" group
+MERGE	topic:abstract-general-4	topic:abstract-general	Batch 5: merge size-driven numbered split into one "Abstract — General" group
+MERGE	topic:abstract-general-5	topic:abstract-general	Batch 5: merge size-driven numbered split into one "Abstract — General" group
+MERGE	topic:abstract-general-6	topic:abstract-general	Batch 5: merge size-driven numbered split into one "Abstract — General" group
+MERGE	topic:abstract-general-7	topic:abstract-general	Batch 5: merge size-driven numbered split into one "Abstract — General" group
+MERGE	topic:abstract-general-8	topic:abstract-general	Batch 5: merge size-driven numbered split into one "Abstract — General" group
+MERGE	topic:people-family-rel-1	topic:people-family-rel	Batch 5: merge size-driven numbered split into one "People — Family & Relationships" group
+MERGE	topic:people-family-rel-2	topic:people-family-rel	Batch 5: merge size-driven numbered split into one "People — Family & Relationships" group
+MERGE	topic:adj-ser-general-1	topic:adj-ser-general	Batch 5: merge size-driven numbered split into one "ser, general" group
+MERGE	topic:adj-ser-general-2	topic:adj-ser-general	Batch 5: merge size-driven numbered split into one "ser, general" group
+MERGE	topic:adj-ser-general-3	topic:adj-ser-general	Batch 5: merge size-driven numbered split into one "ser, general" group
+MERGE	topic:adj-ser-general-4	topic:adj-ser-general	Batch 5: merge size-driven numbered split into one "ser, general" group
+MERGE	topic:adj-ser-general-5	topic:adj-ser-general	Batch 5: merge size-driven numbered split into one "ser, general" group
+MERGE	topic:adj-ser-general-6	topic:adj-ser-general	Batch 5: merge size-driven numbered split into one "ser, general" group
+MERGE	topic:adj-ser-general-7	topic:adj-ser-general	Batch 5: merge size-driven numbered split into one "ser, general" group
+MERGE	topic:adj-ser-general-8	topic:adj-ser-general	Batch 5: merge size-driven numbered split into one "ser, general" group
+MERGE	topic:estar-adj-1	topic:estar-adj	Batch 5: merge size-driven numbered split into one "estar (state)," group
+MERGE	topic:estar-adj-2	topic:estar-adj	Batch 5: merge size-driven numbered split into one "estar (state)," group
+MERGE	topic:adj-abs-general-1	topic:adj-abs-general	Batch 5: merge size-driven numbered split into one "Abstract quality — General" group
+MERGE	topic:adj-abs-general-2	topic:adj-abs-general	Batch 5: merge size-driven numbered split into one "Abstract quality — General" group
+MERGE	topic:adj-abs-general-3	topic:adj-abs-general	Batch 5: merge size-driven numbered split into one "Abstract quality — General" group
+MERGE	topic:adj-abs-general-4	topic:adj-abs-general	Batch 5: merge size-driven numbered split into one "Abstract quality — General" group
+MERGE	topic:adj-abs-general-5	topic:adj-abs-general	Batch 5: merge size-driven numbered split into one "Abstract quality — General" group
+MERGE	topic:adj-abs-general-6	topic:adj-abs-general	Batch 5: merge size-driven numbered split into one "Abstract quality — General" group
+MERGE	topic:adj-abs-general-7	topic:adj-abs-general	Batch 5: merge size-driven numbered split into one "Abstract quality — General" group
+MERGE	topic:adj-abs-general-8	topic:adj-abs-general	Batch 5: merge size-driven numbered split into one "Abstract quality — General" group
+MERGE	topic:adj-abs-general-9	topic:adj-abs-general	Batch 5: merge size-driven numbered split into one "Abstract quality — General" group
+MERGE	topic:condition-state-1	topic:condition-state	Batch 5: merge size-driven numbered split into one "Condition / state" group
+MERGE	topic:condition-state-2	topic:condition-state	Batch 5: merge size-driven numbered split into one "Condition / state" group
+MERGE	topic:map-ser-1	topic:map-ser	Batch 5: merge size-driven numbered split into one "ser" group
+MERGE	topic:map-ser-2	topic:map-ser	Batch 5: merge size-driven numbered split into one "ser" group
+MERGE	topic:map-ser-3	topic:map-ser	Batch 5: merge size-driven numbered split into one "ser" group
+MERGE	topic:map-ser-4	topic:map-ser	Batch 5: merge size-driven numbered split into one "ser" group
+MERGE	topic:map-ser-5	topic:map-ser	Batch 5: merge size-driven numbered split into one "ser" group
+MERGE	topic:map-ser-6	topic:map-ser	Batch 5: merge size-driven numbered split into one "ser" group
+MERGE	topic:map-ser-7	topic:map-ser	Batch 5: merge size-driven numbered split into one "ser" group
+MERGE	topic:map-ser-8	topic:map-ser	Batch 5: merge size-driven numbered split into one "ser" group
+MERGE	topic:map-ser-9	topic:map-ser	Batch 5: merge size-driven numbered split into one "ser" group
+MERGE	topic:map-ser-10	topic:map-ser	Batch 5: merge size-driven numbered split into one "ser" group
+MERGE	topic:map-ser-11	topic:map-ser	Batch 5: merge size-driven numbered split into one "ser" group
+MERGE	topic:map-ser-12	topic:map-ser	Batch 5: merge size-driven numbered split into one "ser" group
+MERGE	topic:map-ser-13	topic:map-ser	Batch 5: merge size-driven numbered split into one "ser" group
+MERGE	topic:map-ser-14	topic:map-ser	Batch 5: merge size-driven numbered split into one "ser" group
+MERGE	topic:map-ser-15	topic:map-ser	Batch 5: merge size-driven numbered split into one "ser" group
+MERGE	topic:map-ser-16	topic:map-ser	Batch 5: merge size-driven numbered split into one "ser" group
+MERGE	topic:map-ser-17	topic:map-ser	Batch 5: merge size-driven numbered split into one "ser" group
+MERGE	topic:map-ser-18	topic:map-ser	Batch 5: merge size-driven numbered split into one "ser" group
+MERGE	topic:map-ser-19	topic:map-ser	Batch 5: merge size-driven numbered split into one "ser" group
+MERGE	topic:map-ser-20	topic:map-ser	Batch 5: merge size-driven numbered split into one "ser" group
+MERGE	topic:map-ser-21	topic:map-ser	Batch 5: merge size-driven numbered split into one "ser" group
+MERGE	topic:map-ser-22	topic:map-ser	Batch 5: merge size-driven numbered split into one "ser" group
+MERGE	topic:map-ser-23	topic:map-ser	Batch 5: merge size-driven numbered split into one "ser" group
+MERGE	topic:map-estar-1	topic:map-estar	Batch 5: merge size-driven numbered split into one "estar" group
+MERGE	topic:map-estar-2	topic:map-estar	Batch 5: merge size-driven numbered split into one "estar" group
+MERGE	topic:map-estar-3	topic:map-estar	Batch 5: merge size-driven numbered split into one "estar" group
+MERGE	topic:map-estar-4	topic:map-estar	Batch 5: merge size-driven numbered split into one "estar" group
+MERGE	topic:map-estar-5	topic:map-estar	Batch 5: merge size-driven numbered split into one "estar" group
+MERGE	topic:map-estar-6	topic:map-estar	Batch 5: merge size-driven numbered split into one "estar" group
+MERGE	topic:map-estar-7	topic:map-estar	Batch 5: merge size-driven numbered split into one "estar" group
+MERGE	topic:map-poner-1	topic:map-poner	Batch 5: merge size-driven numbered split into one "poner" group
+MERGE	topic:map-poner-2	topic:map-poner	Batch 5: merge size-driven numbered split into one "poner" group
+MERGE	topic:map-poner-3	topic:map-poner	Batch 5: merge size-driven numbered split into one "poner" group
+MERGE	topic:map-poner-4	topic:map-poner	Batch 5: merge size-driven numbered split into one "poner" group
+MERGE	topic:map-poner-5	topic:map-poner	Batch 5: merge size-driven numbered split into one "poner" group
+MERGE	topic:map-tener-1	topic:map-tener	Batch 5: merge size-driven numbered split into one "tener" group
+MERGE	topic:map-tener-2	topic:map-tener	Batch 5: merge size-driven numbered split into one "tener" group
+MERGE	topic:map-tener-3	topic:map-tener	Batch 5: merge size-driven numbered split into one "tener" group
+MERGE	topic:map-tener-4	topic:map-tener	Batch 5: merge size-driven numbered split into one "tener" group
+MERGE	topic:map-poder-1	topic:map-poder	Batch 5: merge size-driven numbered split into one "poder" group
+MERGE	topic:map-poder-2	topic:map-poder	Batch 5: merge size-driven numbered split into one "poder" group
+MERGE	topic:map-poder-3	topic:map-poder	Batch 5: merge size-driven numbered split into one "poder" group
+MERGE	topic:map-poder-4	topic:map-poder	Batch 5: merge size-driven numbered split into one "poder" group
+MERGE	topic:map-hacer-1	topic:map-hacer	Batch 5: merge size-driven numbered split into one "hacer" group
+MERGE	topic:map-hacer-2	topic:map-hacer	Batch 5: merge size-driven numbered split into one "hacer" group
+MERGE	topic:map-hacer-3	topic:map-hacer	Batch 5: merge size-driven numbered split into one "hacer" group
+MERGE	topic:map-hacer-4	topic:map-hacer	Batch 5: merge size-driven numbered split into one "hacer" group
+MERGE	topic:map-dar-1	topic:map-dar	Batch 5: merge size-driven numbered split into one "dar" group
+MERGE	topic:map-dar-2	topic:map-dar	Batch 5: merge size-driven numbered split into one "dar" group
+MERGE	topic:map-dar-3	topic:map-dar	Batch 5: merge size-driven numbered split into one "dar" group
+MERGE	topic:map-haber-1	topic:map-haber	Batch 5: merge size-driven numbered split into one "haber" group
+MERGE	topic:map-haber-2	topic:map-haber	Batch 5: merge size-driven numbered split into one "haber" group
+MERGE	topic:map-haber-3	topic:map-haber	Batch 5: merge size-driven numbered split into one "haber" group
+MERGE	topic:map-ir-1	topic:map-ir	Batch 5: merge size-driven numbered split into one "ir" group
+MERGE	topic:map-ir-2	topic:map-ir	Batch 5: merge size-driven numbered split into one "ir" group
+MERGE	topic:map-ir-3	topic:map-ir	Batch 5: merge size-driven numbered split into one "ir" group
+MERGE	topic:map-decir-1	topic:map-decir	Batch 5: merge size-driven numbered split into one "decir" group
+MERGE	topic:map-decir-2	topic:map-decir	Batch 5: merge size-driven numbered split into one "decir" group
+MERGE	topic:map-de-1	topic:map-de	Batch 5: merge size-driven numbered split into one "de" group
+MERGE	topic:map-de-2	topic:map-de	Batch 5: merge size-driven numbered split into one "de" group
+MERGE	topic:map-en-1	topic:map-en	Batch 5: merge size-driven numbered split into one "en" group
+MERGE	topic:map-en-2	topic:map-en	Batch 5: merge size-driven numbered split into one "en" group
+MERGE	topic:map-pedir-1	topic:map-pedir	Batch 5: merge size-driven numbered split into one "pedir" group
+MERGE	topic:map-pedir-2	topic:map-pedir	Batch 5: merge size-driven numbered split into one "pedir" group
+MERGE	topic:map-dejar-1	topic:map-dejar	Batch 5: merge size-driven numbered split into one "dejar" group
+MERGE	topic:map-dejar-2	topic:map-dejar	Batch 5: merge size-driven numbered split into one "dejar" group
+MERGE	topic:map-hablar-1	topic:map-hablar	Batch 5: merge size-driven numbered split into one "hablar" group
+MERGE	topic:map-hablar-2	topic:map-hablar	Batch 5: merge size-driven numbered split into one "hablar" group
+MERGE	topic:map-deber-1	topic:map-deber	Batch 5: merge size-driven numbered split into one "deber" group
+MERGE	topic:map-deber-2	topic:map-deber	Batch 5: merge size-driven numbered split into one "deber" group
+MERGE	topic:map-querer-1	topic:map-querer	Batch 5: merge size-driven numbered split into one "querer" group
+MERGE	topic:map-querer-2	topic:map-querer	Batch 5: merge size-driven numbered split into one "querer" group
+MERGE	topic:map-que-1	topic:map-que	Batch 5: merge size-driven numbered split into one "que" group
+MERGE	topic:map-que-2	topic:map-que	Batch 5: merge size-driven numbered split into one "que" group
+MERGE	topic:map-echar-1	topic:map-echar	Batch 5: merge size-driven numbered split into one "echar" group
+MERGE	topic:map-echar-2	topic:map-echar	Batch 5: merge size-driven numbered split into one "echar" group
+MERGE	topic:map-seguir-1	topic:map-seguir	Batch 5: merge size-driven numbered split into one "seguir" group
+MERGE	topic:map-seguir-2	topic:map-seguir	Batch 5: merge size-driven numbered split into one "seguir" group
+MERGE	topic:map-sentir-1	topic:map-sentir	Batch 5: merge size-driven numbered split into one "sentir" group
+MERGE	topic:map-sentir-2	topic:map-sentir	Batch 5: merge size-driven numbered split into one "sentir" group
+MERGE	topic:map-ver-1	topic:map-ver	Batch 5: merge size-driven numbered split into one "ver" group
+MERGE	topic:map-ver-2	topic:map-ver	Batch 5: merge size-driven numbered split into one "ver" group
+MERGE	topic:map-pasar-1	topic:map-pasar	Batch 5: merge size-driven numbered split into one "pasar" group
+MERGE	topic:map-pasar-2	topic:map-pasar	Batch 5: merge size-driven numbered split into one "pasar" group
+MERGE	topic:map-contar-1	topic:map-contar	Batch 5: merge size-driven numbered split into one "contar" group
+MERGE	topic:map-contar-2	topic:map-contar	Batch 5: merge size-driven numbered split into one "contar" group
+MERGE	topic:map-tomar-1	topic:map-tomar	Batch 5: merge size-driven numbered split into one "tomar" group
+MERGE	topic:map-tomar-2	topic:map-tomar	Batch 5: merge size-driven numbered split into one "tomar" group
+MERGE	topic:enmap-to-1	topic:enmap-to	Batch 5: merge size-driven numbered split into one "to" group
+MERGE	topic:enmap-to-2	topic:enmap-to	Batch 5: merge size-driven numbered split into one "to" group
+MERGE	topic:enmap-to-3	topic:enmap-to	Batch 5: merge size-driven numbered split into one "to" group
+MERGE	topic:enmap-to-4	topic:enmap-to	Batch 5: merge size-driven numbered split into one "to" group
+MERGE	topic:enmap-to-5	topic:enmap-to	Batch 5: merge size-driven numbered split into one "to" group
+MERGE	topic:enmap-to-6	topic:enmap-to	Batch 5: merge size-driven numbered split into one "to" group
+MERGE	topic:enmap-to-7	topic:enmap-to	Batch 5: merge size-driven numbered split into one "to" group
+MERGE	topic:enmap-for-1	topic:enmap-for	Batch 5: merge size-driven numbered split into one "for" group
+MERGE	topic:enmap-for-2	topic:enmap-for	Batch 5: merge size-driven numbered split into one "for" group
+MERGE	topic:enmap-for-3	topic:enmap-for	Batch 5: merge size-driven numbered split into one "for" group
+MERGE	topic:enmap-for-4	topic:enmap-for	Batch 5: merge size-driven numbered split into one "for" group
+MERGE	topic:enmap-for-5	topic:enmap-for	Batch 5: merge size-driven numbered split into one "for" group
+MERGE	topic:enmap-with-1	topic:enmap-with	Batch 5: merge size-driven numbered split into one "with" group
+MERGE	topic:enmap-with-2	topic:enmap-with	Batch 5: merge size-driven numbered split into one "with" group
+MERGE	topic:enmap-with-3	topic:enmap-with	Batch 5: merge size-driven numbered split into one "with" group
+MERGE	topic:enmap-of-1	topic:enmap-of	Batch 5: merge size-driven numbered split into one "of" group
+MERGE	topic:enmap-of-2	topic:enmap-of	Batch 5: merge size-driven numbered split into one "of" group
+MERGE	topic:enmap-of-3	topic:enmap-of	Batch 5: merge size-driven numbered split into one "of" group
+MERGE	topic:enmap-take-1	topic:enmap-take	Batch 5: merge size-driven numbered split into one "take" group
+MERGE	topic:enmap-take-2	topic:enmap-take	Batch 5: merge size-driven numbered split into one "take" group
+MERGE	topic:enmap-take-3	topic:enmap-take	Batch 5: merge size-driven numbered split into one "take" group
+MERGE	topic:enmap-put-1	topic:enmap-put	Batch 5: merge size-driven numbered split into one "put" group
+MERGE	topic:enmap-put-2	topic:enmap-put	Batch 5: merge size-driven numbered split into one "put" group
+MERGE	topic:enmap-put-3	topic:enmap-put	Batch 5: merge size-driven numbered split into one "put" group
+MERGE	topic:enmap-get-1	topic:enmap-get	Batch 5: merge size-driven numbered split into one "get" group
+MERGE	topic:enmap-get-2	topic:enmap-get	Batch 5: merge size-driven numbered split into one "get" group
+MERGE	topic:enmap-get-3	topic:enmap-get	Batch 5: merge size-driven numbered split into one "get" group
+MERGE	topic:enmap-go-1	topic:enmap-go	Batch 5: merge size-driven numbered split into one "go" group
+MERGE	topic:enmap-go-2	topic:enmap-go	Batch 5: merge size-driven numbered split into one "go" group
+MERGE	topic:enmap-go-3	topic:enmap-go	Batch 5: merge size-driven numbered split into one "go" group
+MERGE	topic:enmap-from-1	topic:enmap-from	Batch 5: merge size-driven numbered split into one "from" group
+MERGE	topic:enmap-from-2	topic:enmap-from	Batch 5: merge size-driven numbered split into one "from" group
+MERGE	topic:enmap-you-1	topic:enmap-you	Batch 5: merge size-driven numbered split into one "you" group
+MERGE	topic:enmap-you-2	topic:enmap-you	Batch 5: merge size-driven numbered split into one "you" group
+MERGE	topic:enmap-make-1	topic:enmap-make	Batch 5: merge size-driven numbered split into one "make" group
+MERGE	topic:enmap-make-2	topic:enmap-make	Batch 5: merge size-driven numbered split into one "make" group
+MERGE	topic:enmap-have-1	topic:enmap-have	Batch 5: merge size-driven numbered split into one "have" group
+MERGE	topic:enmap-have-2	topic:enmap-have	Batch 5: merge size-driven numbered split into one "have" group
+MERGE	topic:enmap-have-3	topic:enmap-have	Batch 5: merge size-driven numbered split into one "have" group
+MERGE	topic:enmap-set-1	topic:enmap-set	Batch 5: merge size-driven numbered split into one "set" group
+MERGE	topic:enmap-set-2	topic:enmap-set	Batch 5: merge size-driven numbered split into one "set" group
+MERGE	topic:enmap-in-1	topic:enmap-in	Batch 5: merge size-driven numbered split into one "in" group
+MERGE	topic:enmap-in-2	topic:enmap-in	Batch 5: merge size-driven numbered split into one "in" group
+MERGE	topic:enmap-give-1	topic:enmap-give	Batch 5: merge size-driven numbered split into one "give" group
+MERGE	topic:enmap-give-2	topic:enmap-give	Batch 5: merge size-driven numbered split into one "give" group
+MERGE	topic:enmap-that-1	topic:enmap-that	Batch 5: merge size-driven numbered split into one "that" group
+MERGE	topic:enmap-that-2	topic:enmap-that	Batch 5: merge size-driven numbered split into one "that" group
+MERGE	topic:enmap-keep-1	topic:enmap-keep	Batch 5: merge size-driven numbered split into one "keep" group
+MERGE	topic:enmap-keep-2	topic:enmap-keep	Batch 5: merge size-driven numbered split into one "keep" group
+MERGE	topic:enmap-at-1	topic:enmap-at	Batch 5: merge size-driven numbered split into one "at" group
+MERGE	topic:enmap-at-2	topic:enmap-at	Batch 5: merge size-driven numbered split into one "at" group
+MERGE	topic:enmap-how-1	topic:enmap-how	Batch 5: merge size-driven numbered split into one "how" group
+MERGE	topic:enmap-how-2	topic:enmap-how	Batch 5: merge size-driven numbered split into one "how" group
+MERGE	topic:enmap-what-1	topic:enmap-what	Batch 5: merge size-driven numbered split into one "what" group
+MERGE	topic:enmap-what-2	topic:enmap-what	Batch 5: merge size-driven numbered split into one "what" group
+MERGE	topic:enmap-be-1	topic:enmap-be	Batch 5: merge size-driven numbered split into one "be" group
+MERGE	topic:enmap-be-2	topic:enmap-be	Batch 5: merge size-driven numbered split into one "be" group
+MERGE	topic:enmap-be-3	topic:enmap-be	Batch 5: merge size-driven numbered split into one "be" group
+MERGE	topic:enmap-be-4	topic:enmap-be	Batch 5: merge size-driven numbered split into one "be" group
+MERGE	topic:enmap-be-5	topic:enmap-be	Batch 5: merge size-driven numbered split into one "be" group
+MERGE	topic:enmap-come-1	topic:enmap-come	Batch 5: merge size-driven numbered split into one "come" group
+MERGE	topic:enmap-come-2	topic:enmap-come	Batch 5: merge size-driven numbered split into one "come" group
+MERGE	topic:phr-be-1	topic:phr-be	Batch 5: merge size-driven numbered split into one "be" group
+MERGE	topic:phr-be-2	topic:phr-be	Batch 5: merge size-driven numbered split into one "be" group
+MERGE	topic:phr-be-3	topic:phr-be	Batch 5: merge size-driven numbered split into one "be" group
+MERGE	topic:phr-be-4	topic:phr-be	Batch 5: merge size-driven numbered split into one "be" group
+MERGE	topic:phr-be-5	topic:phr-be	Batch 5: merge size-driven numbered split into one "be" group
+MERGE	topic:phr-put-1	topic:phr-put	Batch 5: merge size-driven numbered split into one "put" group
+MERGE	topic:phr-put-2	topic:phr-put	Batch 5: merge size-driven numbered split into one "put" group
+MERGE	topic:phr-put-3	topic:phr-put	Batch 5: merge size-driven numbered split into one "put" group
+MERGE	topic:phr-take-1	topic:phr-take	Batch 5: merge size-driven numbered split into one "take" group
+MERGE	topic:phr-take-2	topic:phr-take	Batch 5: merge size-driven numbered split into one "take" group
+MERGE	topic:phr-take-3	topic:phr-take	Batch 5: merge size-driven numbered split into one "take" group
+MERGE	topic:phr-get-1	topic:phr-get	Batch 5: merge size-driven numbered split into one "get" group
+MERGE	topic:phr-get-2	topic:phr-get	Batch 5: merge size-driven numbered split into one "get" group
+MERGE	topic:phr-get-3	topic:phr-get	Batch 5: merge size-driven numbered split into one "get" group
+MERGE	topic:part-up-1	topic:part-up	Batch 5: merge size-driven numbered split into one "up" group
+MERGE	topic:part-up-2	topic:part-up	Batch 5: merge size-driven numbered split into one "up" group
+MERGE	topic:part-up-3	topic:part-up	Batch 5: merge size-driven numbered split into one "up" group
+MERGE	topic:part-up-4	topic:part-up	Batch 5: merge size-driven numbered split into one "up" group
+MERGE	topic:part-out-1	topic:part-out	Batch 5: merge size-driven numbered split into one "out" group
+MERGE	topic:part-out-2	topic:part-out	Batch 5: merge size-driven numbered split into one "out" group
+MERGE	topic:part-out-3	topic:part-out	Batch 5: merge size-driven numbered split into one "out" group
+MERGE	topic:part-out-4	topic:part-out	Batch 5: merge size-driven numbered split into one "out" group
+MERGE	topic:part-to-1	topic:part-to	Batch 5: merge size-driven numbered split into one "to" group
+MERGE	topic:part-to-2	topic:part-to	Batch 5: merge size-driven numbered split into one "to" group
+MERGE	topic:part-to-3	topic:part-to	Batch 5: merge size-driven numbered split into one "to" group
+MERGE	topic:part-to-4	topic:part-to	Batch 5: merge size-driven numbered split into one "to" group
+MERGE	topic:part-in-1	topic:part-in	Batch 5: merge size-driven numbered split into one "in" group
+MERGE	topic:part-in-2	topic:part-in	Batch 5: merge size-driven numbered split into one "in" group
+MERGE	topic:part-in-3	topic:part-in	Batch 5: merge size-driven numbered split into one "in" group
+MERGE	topic:part-on-1	topic:part-on	Batch 5: merge size-driven numbered split into one "on" group
+MERGE	topic:part-on-2	topic:part-on	Batch 5: merge size-driven numbered split into one "on" group
+MERGE	topic:part-on-3	topic:part-on	Batch 5: merge size-driven numbered split into one "on" group
+MERGE	topic:part-for-1	topic:part-for	Batch 5: merge size-driven numbered split into one "for" group
+MERGE	topic:part-for-2	topic:part-for	Batch 5: merge size-driven numbered split into one "for" group
+MERGE	topic:part-for-3	topic:part-for	Batch 5: merge size-driven numbered split into one "for" group
+MERGE	topic:part-off-1	topic:part-off	Batch 5: merge size-driven numbered split into one "off" group
+MERGE	topic:part-off-2	topic:part-off	Batch 5: merge size-driven numbered split into one "off" group
+MERGE	topic:part-of-1	topic:part-of	Batch 5: merge size-driven numbered split into one "of" group
+MERGE	topic:part-of-2	topic:part-of	Batch 5: merge size-driven numbered split into one "of" group
+MERGE	topic:part-with-1	topic:part-with	Batch 5: merge size-driven numbered split into one "with" group
+MERGE	topic:part-with-2	topic:part-with	Batch 5: merge size-driven numbered split into one "with" group
+MERGE	topic:part-from-1	topic:part-from	Batch 5: merge size-driven numbered split into one "from" group
+MERGE	topic:part-from-2	topic:part-from	Batch 5: merge size-driven numbered split into one "from" group
+MERGE	topic:morph-ish-1	topic:morph-ish	Batch 5: merge size-driven numbered split into one "-ish (tall → tallish)" group
+MERGE	topic:morph-ish-2	topic:morph-ish	Batch 5: merge size-driven numbered split into one "-ish (tall → tallish)" group
+MERGE	topic:morph-ward-1	topic:morph-ward	Batch 5: merge size-driven numbered split into one "-ward (in → inward)" group
+MERGE	topic:morph-ward-2	topic:morph-ward	Batch 5: merge size-driven numbered split into one "-ward (in → inward)" group
+MERGE	topic:morph-noun-to-adj-1	topic:morph-noun-to-adj	Batch 5: merge size-driven numbered split into one "noun → adjective" group
+MERGE	topic:morph-noun-to-adj-2	topic:morph-noun-to-adj	Batch 5: merge size-driven numbered split into one "noun → adjective" group
+MERGE	topic:morph-noun-to-adj-3	topic:morph-noun-to-adj	Batch 5: merge size-driven numbered split into one "noun → adjective" group
+MERGE	topic:morph-adj-to-noun-1	topic:morph-adj-to-noun	Batch 5: merge size-driven numbered split into one "adjective → noun" group
+MERGE	topic:morph-adj-to-noun-2	topic:morph-adj-to-noun	Batch 5: merge size-driven numbered split into one "adjective → noun" group
+MERGE	topic:morph-adj-to-noun-3	topic:morph-adj-to-noun	Batch 5: merge size-driven numbered split into one "adjective → noun" group
+MERGE	topic:morph-verb-to-noun-1	topic:morph-verb-to-noun	Batch 5: merge size-driven numbered split into one "verb → noun" group
+MERGE	topic:morph-verb-to-noun-2	topic:morph-verb-to-noun	Batch 5: merge size-driven numbered split into one "verb → noun" group
+MERGE	topic:morph-verb-to-noun-3	topic:morph-verb-to-noun	Batch 5: merge size-driven numbered split into one "verb → noun" group
+MERGE	topic:morph-noun-to-noun-1	topic:morph-noun-to-noun	Batch 5: merge size-driven numbered split into one "noun → noun" group
+MERGE	topic:morph-noun-to-noun-2	topic:morph-noun-to-noun	Batch 5: merge size-driven numbered split into one "noun → noun" group
+MERGE	topic:morph-expr-to-adv-1	topic:morph-expr-to-adv	Batch 5: merge size-driven numbered split into one "expression → adverb" group
+MERGE	topic:morph-expr-to-adv-2	topic:morph-expr-to-adv	Batch 5: merge size-driven numbered split into one "expression → adverb" group
+MERGE	topic:vf-past-d-1	topic:vf-past-d	Batch 5: merge size-driven numbered split into one "regular /d/ (played)" group
+MERGE	topic:vf-past-d-2	topic:vf-past-d	Batch 5: merge size-driven numbered split into one "regular /d/ (played)" group
+MERGE	topic:vf-past-d-3	topic:vf-past-d	Batch 5: merge size-driven numbered split into one "regular /d/ (played)" group
+MERGE	topic:vf-cut-hit-hurt-1	topic:vf-cut-hit-hurt	Batch 5: merge size-driven numbered split into one "unchanged (cut)" group
+MERGE	topic:vf-cut-hit-hurt-2	topic:vf-cut-hit-hurt	Batch 5: merge size-driven numbered split into one "unchanged (cut)" group
+MERGE	topic:vf-cut-hit-hurt-3	topic:vf-cut-hit-hurt	Batch 5: merge size-driven numbered split into one "unchanged (cut)" group
+MERGE	topic:vf-oneoff-1	topic:vf-oneoff	Batch 5: merge size-driven numbered split into one "one-off (no rhyme partner)" group
+MERGE	topic:vf-oneoff-2	topic:vf-oneoff	Batch 5: merge size-driven numbered split into one "one-off (no rhyme partner)" group
+MERGE	topic:vf-oneoff-3	topic:vf-oneoff	Batch 5: merge size-driven numbered split into one "one-off (no rhyme partner)" group
+MERGE	topic:vf-oneoff-4	topic:vf-oneoff	Batch 5: merge size-driven numbered split into one "one-off (no rhyme partner)" group
+MERGE	topic:vf-oneoff-5	topic:vf-oneoff	Batch 5: merge size-driven numbered split into one "one-off (no rhyme partner)" group
+MERGE	topic:vf-oneoff-6	topic:vf-oneoff	Batch 5: merge size-driven numbered split into one "one-off (no rhyme partner)" group
+MERGE	topic:vf-oneoff-7	topic:vf-oneoff	Batch 5: merge size-driven numbered split into one "one-off (no rhyme partner)" group
+MERGE	topic:vf-oneoff-8	topic:vf-oneoff	Batch 5: merge size-driven numbered split into one "one-off (no rhyme partner)" group
+MERGE	topic:vf-oneoff-9	topic:vf-oneoff	Batch 5: merge size-driven numbered split into one "one-off (no rhyme partner)" group
+MERGE	topic:vf-oneoff-10	topic:vf-oneoff	Batch 5: merge size-driven numbered split into one "one-off (no rhyme partner)" group
+MERGE	topic:vp-full-inf-1	topic:vp-full-inf	Batch 5: merge size-driven numbered split into one "verb + to + infinitive (want to go)" group
+MERGE	topic:vp-full-inf-2	topic:vp-full-inf	Batch 5: merge size-driven numbered split into one "verb + to + infinitive (want to go)" group
+MERGE	topic:vp-full-inf-3	topic:vp-full-inf	Batch 5: merge size-driven numbered split into one "verb + to + infinitive (want to go)" group
+MERGE	topic:vp-full-inf-4	topic:vp-full-inf	Batch 5: merge size-driven numbered split into one "verb + to + infinitive (want to go)" group
+MERGE	topic:vp-full-inf-5	topic:vp-full-inf	Batch 5: merge size-driven numbered split into one "verb + to + infinitive (want to go)" group
+MERGE	topic:vp-bare-inf-1	topic:vp-bare-inf	Batch 5: merge size-driven numbered split into one "verb + bare infinitive (let him go)" group
+MERGE	topic:vp-bare-inf-2	topic:vp-bare-inf	Batch 5: merge size-driven numbered split into one "verb + bare infinitive (let him go)" group
+MERGE	topic:vp-bare-inf-3	topic:vp-bare-inf	Batch 5: merge size-driven numbered split into one "verb + bare infinitive (let him go)" group
+MERGE	topic:vp-gerund-1	topic:vp-gerund	Batch 5: merge size-driven numbered split into one "verb + gerund (enjoy going)" group
+MERGE	topic:vp-gerund-2	topic:vp-gerund	Batch 5: merge size-driven numbered split into one "verb + gerund (enjoy going)" group
+MERGE	topic:vp-obj-complement-1	topic:vp-obj-complement	Batch 5: merge size-driven numbered split into one "object + complement (make/expect somebody to go)" group
+MERGE	topic:vp-obj-complement-2	topic:vp-obj-complement	Batch 5: merge size-driven numbered split into one "object + complement (make/expect somebody to go)" group

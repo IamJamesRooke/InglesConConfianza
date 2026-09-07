@@ -1,4 +1,20 @@
-import type { CurriculumTopic } from "@/lib/curriculum/topics";
+import { CURRICULUM_TOPICS, type CurriculumTopic } from "@/lib/curriculum/topics";
+
+// Every collection that is a facet button on some topic page.
+const ALL_FACET_COLLECTIONS = new Set(
+  CURRICULUM_TOPICS.flatMap((topic) =>
+    topic.facetButtons.map((facet) => facet.collection),
+  ),
+);
+
+// Batch 5 (2026-09-07) merged size-driven numbered facet families
+// (topic:<stem>-<N>) into one group per <stem>. Old deep links carrying a
+// numbered collection still resolve: map them to the surviving stem.
+export function canonicalFacetCollection(name: string): string {
+  if (ALL_FACET_COLLECTIONS.has(name)) return name;
+  const stem = name.match(/^(topic:.+?)(?:-\d+)+$/)?.[1];
+  return stem && ALL_FACET_COLLECTIONS.has(stem) ? stem : name;
+}
 
 export type CurriculumNavigationLeaf = {
   collection: string;

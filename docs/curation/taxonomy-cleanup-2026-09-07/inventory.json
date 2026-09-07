@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generatedAt": "2026-09-07T16:30:16.048Z",
+    "generatedAt": "2026-09-07T16:35:45.649Z",
     "totals": {
       "allConcepts": 4447,
       "nonTrash": 4220,
@@ -541,18 +541,11 @@
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:verb-tobe-present-1",
-              "label": "To Be — Present (am/is/are) (1)",
-              "count": 16,
+              "collection": "topic:verb-tobe-present",
+              "label": "To Be — Present (am/is/are)",
+              "count": 32,
               "confusion": false,
-              "coreCount": 9
-            },
-            {
-              "collection": "topic:verb-tobe-present-2",
-              "label": "To Be — Present (am/is/are) (2)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 12
+              "coreCount": 21
             },
             {
               "collection": "topic:verb-tobe-past-future",
@@ -562,46 +555,18 @@
               "coreCount": 0
             },
             {
-              "collection": "topic:verb-ser-idioms-1",
-              "label": "To Be (ser) — Idioms & Uses (1)",
-              "count": 17,
+              "collection": "topic:verb-ser-idioms",
+              "label": "To Be (ser) — Idioms & Uses",
+              "count": 33,
               "confusion": false,
               "coreCount": 4
             },
             {
-              "collection": "topic:verb-ser-idioms-2",
-              "label": "To Be (ser) — Idioms & Uses (2)",
-              "count": 16,
+              "collection": "topic:verb-estar-idioms",
+              "label": "To Be (estar) — Idioms & Uses",
+              "count": 47,
               "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-estar-idioms-1-1",
-              "label": "To Be (estar) — Idioms & Uses (1) (1)",
-              "count": 12,
-              "confusion": false,
-              "coreCount": 3
-            },
-            {
-              "collection": "topic:verb-estar-idioms-1-2",
-              "label": "To Be (estar) — Idioms & Uses (1) (2)",
-              "count": 12,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:verb-estar-idioms-2-1",
-              "label": "To Be (estar) — Idioms & Uses (2) (1)",
-              "count": 12,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-estar-idioms-2-2",
-              "label": "To Be (estar) — Idioms & Uses (2) (2)",
-              "count": 11,
-              "confusion": false,
-              "coreCount": 0
+              "coreCount": 4
             },
             {
               "collection": "topic:verb-tobe-existence-hay",
@@ -618,32 +583,18 @@
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:verb-perfect-auxiliary-1",
-              "label": "Have — Perfect Auxiliary (have/has/had done) (1)",
-              "count": 12,
+              "collection": "topic:verb-perfect-auxiliary",
+              "label": "Have — Perfect Auxiliary (have/has/had done)",
+              "count": 23,
               "confusion": false,
               "coreCount": 3
             },
             {
-              "collection": "topic:verb-perfect-auxiliary-2",
-              "label": "Have — Perfect Auxiliary (have/has/had done) (2)",
-              "count": 11,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-modal-ability-1",
-              "label": "Modals — Ability & Permission (1)",
-              "count": 19,
+              "collection": "topic:verb-modal-ability",
+              "label": "Modals — Ability & Permission",
+              "count": 38,
               "confusion": false,
               "coreCount": 6
-            },
-            {
-              "collection": "topic:verb-modal-ability-2",
-              "label": "Modals — Ability & Permission (2)",
-              "count": 19,
-              "confusion": false,
-              "coreCount": 0
             },
             {
               "collection": "topic:verb-modal-possibility",
@@ -653,32 +604,18 @@
               "coreCount": 0
             },
             {
-              "collection": "topic:verb-modal-obligation-1",
-              "label": "Modals — Obligation & Probability (must/should/have to) (1)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:verb-modal-obligation-2",
-              "label": "Modals — Obligation & Probability (must/should/have to) (2)",
-              "count": 15,
-              "confusion": false,
-              "coreCount": 2
-            },
-            {
-              "collection": "topic:verb-wishes-1",
-              "label": "Wishes & Hypotheticals (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 5
-            },
-            {
-              "collection": "topic:verb-wishes-2",
-              "label": "Wishes & Hypotheticals (2)",
-              "count": 17,
+              "collection": "topic:verb-modal-obligation",
+              "label": "Modals — Obligation & Probability (must/should/have to)",
+              "count": 31,
               "confusion": false,
               "coreCount": 3
+            },
+            {
+              "collection": "topic:verb-wishes",
+              "label": "Wishes & Hypotheticals",
+              "count": 35,
+              "confusion": false,
+              "coreCount": 8
             },
             {
               "collection": "topic:verb-hoping-waiting",
@@ -695,88 +632,46 @@
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:verb-communication-talking-1",
-              "label": "Communication — Talking (1)",
-              "count": 12,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:verb-communication-talking-2",
-              "label": "Communication — Talking (2)",
-              "count": 11,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:verb-communication-saying-1",
-              "label": "Communication — Saying & Telling (1)",
-              "count": 12,
-              "confusion": false,
-              "coreCount": 3
-            },
-            {
-              "collection": "topic:verb-communication-saying-2",
-              "label": "Communication — Saying & Telling (2)",
-              "count": 12,
+              "collection": "topic:verb-communication-talking",
+              "label": "Communication — Talking",
+              "count": 23,
               "confusion": false,
               "coreCount": 2
             },
             {
-              "collection": "topic:verb-communication-other-1",
-              "label": "Communication — Other (1)",
-              "count": 19,
+              "collection": "topic:verb-communication-saying",
+              "label": "Communication — Saying & Telling",
+              "count": 24,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 5
             },
             {
-              "collection": "topic:verb-communication-other-2",
-              "label": "Communication — Other (2)",
-              "count": 19,
+              "collection": "topic:verb-communication-other",
+              "label": "Communication — Other",
+              "count": 38,
               "confusion": false,
               "coreCount": 3
             },
             {
-              "collection": "topic:verb-communication-formal-1",
-              "label": "Communication — Formal & Reporting (1)",
-              "count": 11,
+              "collection": "topic:verb-communication-formal",
+              "label": "Communication — Formal & Reporting",
+              "count": 22,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "topic:verb-communication-formal-2",
-              "label": "Communication — Formal & Reporting (2)",
-              "count": 11,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-communication-naming-1",
-              "label": "Communication — Naming, Calling & Marking (1)",
-              "count": 11,
+              "collection": "topic:verb-communication-naming",
+              "label": "Communication — Naming, Calling & Marking",
+              "count": 22,
               "confusion": false,
               "coreCount": 1
             },
             {
-              "collection": "topic:verb-communication-naming-2",
-              "label": "Communication — Naming, Calling & Marking (2)",
-              "count": 11,
+              "collection": "topic:verb-asking-requesting",
+              "label": "Asking & Requesting",
+              "count": 26,
               "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-asking-requesting-1",
-              "label": "Asking & Requesting (1)",
-              "count": 13,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:verb-asking-requesting-2",
-              "label": "Asking & Requesting (2)",
-              "count": 13,
-              "confusion": false,
-              "coreCount": 2
+              "coreCount": 3
             },
             {
               "collection": "topic:verb-offering",
@@ -800,32 +695,18 @@
               "coreCount": 3
             },
             {
-              "collection": "topic:verb-deciding-considering-1",
-              "label": "Deciding & Considering (1)",
-              "count": 14,
+              "collection": "topic:verb-deciding-considering",
+              "label": "Deciding & Considering",
+              "count": 27,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "topic:verb-deciding-considering-2",
-              "label": "Deciding & Considering (2)",
-              "count": 13,
+              "collection": "topic:verb-knowing",
+              "label": "Knowing",
+              "count": 22,
               "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-knowing-1",
-              "label": "Knowing (1)",
-              "count": 11,
-              "confusion": false,
-              "coreCount": 2
-            },
-            {
-              "collection": "topic:verb-knowing-2",
-              "label": "Knowing (2)",
-              "count": 11,
-              "confusion": false,
-              "coreCount": 4
+              "coreCount": 6
             },
             {
               "collection": "topic:verb-learning-teaching",
@@ -856,18 +737,11 @@
               "coreCount": 2
             },
             {
-              "collection": "topic:verb-watching-other-1",
-              "label": "Watching & Observing (1)",
-              "count": 14,
+              "collection": "topic:verb-watching-other",
+              "label": "Watching & Observing",
+              "count": 28,
               "confusion": false,
               "coreCount": 1
-            },
-            {
-              "collection": "topic:verb-watching-other-2",
-              "label": "Watching & Observing (2)",
-              "count": 14,
-              "confusion": false,
-              "coreCount": 0
             },
             {
               "collection": "topic:verb-perception-hearing",
@@ -905,18 +779,11 @@
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:verb-movement-going-1",
-              "label": "Movement — Going (1)",
-              "count": 15,
+              "collection": "topic:verb-movement-going",
+              "label": "Movement — Going",
+              "count": 29,
               "confusion": false,
-              "coreCount": 4
-            },
-            {
-              "collection": "topic:verb-movement-going-2",
-              "label": "Movement — Going (2)",
-              "count": 14,
-              "confusion": false,
-              "coreCount": 7
+              "coreCount": 11
             },
             {
               "collection": "topic:verb-movement-coming",
@@ -926,58 +793,30 @@
               "coreCount": 2
             },
             {
-              "collection": "topic:verb-movement-arriving-passing-1",
-              "label": "Movement — Arriving & Passing (1)",
-              "count": 13,
+              "collection": "topic:verb-movement-arriving-passing",
+              "label": "Movement — Arriving & Passing",
+              "count": 26,
               "confusion": false,
               "coreCount": 2
             },
             {
-              "collection": "topic:verb-movement-arriving-passing-2",
-              "label": "Movement — Arriving & Passing (2)",
-              "count": 13,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-movement-leaving-1",
-              "label": "Movement — Leaving (1)",
-              "count": 12,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-movement-leaving-2",
-              "label": "Movement — Leaving (2)",
-              "count": 11,
+              "collection": "topic:verb-movement-leaving",
+              "label": "Movement — Leaving",
+              "count": 23,
               "confusion": false,
               "coreCount": 1
             },
             {
-              "collection": "topic:verb-movement-directional-verbs-1",
-              "label": "Movement — Return & Direction (1)",
-              "count": 12,
+              "collection": "topic:verb-movement-directional-verbs",
+              "label": "Movement — Return & Direction",
+              "count": 23,
               "confusion": false,
               "coreCount": 2
             },
             {
-              "collection": "topic:verb-movement-directional-verbs-2",
-              "label": "Movement — Return & Direction (2)",
-              "count": 11,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-movement-directional-1",
-              "label": "Movement — Up, Down & Falling (1)",
-              "count": 14,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-movement-directional-2",
-              "label": "Movement — Up, Down & Falling (2)",
-              "count": 13,
+              "collection": "topic:verb-movement-directional",
+              "label": "Movement — Up, Down & Falling",
+              "count": 27,
               "confusion": false,
               "coreCount": 0
             },
@@ -989,18 +828,11 @@
               "coreCount": 1
             },
             {
-              "collection": "topic:verb-following-continuing-1",
-              "label": "Following & Continuing (1)",
-              "count": 11,
+              "collection": "topic:verb-following-continuing",
+              "label": "Following & Continuing",
+              "count": 21,
               "confusion": false,
               "coreCount": 1
-            },
-            {
-              "collection": "topic:verb-following-continuing-2",
-              "label": "Following & Continuing (2)",
-              "count": 10,
-              "confusion": false,
-              "coreCount": 0
             }
           ]
         },
@@ -1010,44 +842,23 @@
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:verb-possession-having-1",
-              "label": "Having (tener) (1)",
-              "count": 16,
+              "collection": "topic:verb-possession-having",
+              "label": "Having (tener)",
+              "count": 33,
               "confusion": false,
-              "coreCount": 6
+              "coreCount": 19
             },
             {
-              "collection": "topic:verb-possession-having-2",
-              "label": "Having (tener) (2)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 13
-            },
-            {
-              "collection": "topic:verb-possession-obtaining-1",
-              "label": "Getting & Obtaining (1)",
-              "count": 12,
+              "collection": "topic:verb-possession-obtaining",
+              "label": "Getting & Obtaining",
+              "count": 23,
               "confusion": false,
               "coreCount": 3
             },
             {
-              "collection": "topic:verb-possession-obtaining-2",
-              "label": "Getting & Obtaining (2)",
-              "count": 11,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-tomar-general-1",
-              "label": "Taking (tomar/coger) (1)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-tomar-general-2",
-              "label": "Taking (tomar/coger) (2)",
-              "count": 17,
+              "collection": "topic:verb-tomar-general",
+              "label": "Taking (tomar/coger)",
+              "count": 34,
               "confusion": false,
               "coreCount": 1
             },
@@ -1080,46 +891,18 @@
               "coreCount": 0
             },
             {
-              "collection": "topic:verb-taking-removing-1-1",
-              "label": "Taking Away (1) (1)",
-              "count": 11,
+              "collection": "topic:verb-taking-removing",
+              "label": "Taking Away",
+              "count": 42,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "topic:verb-taking-removing-1-2",
-              "label": "Taking Away (1) (2)",
-              "count": 10,
+              "collection": "topic:verb-keeping-storing",
+              "label": "Keeping & Storing",
+              "count": 31,
               "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-taking-removing-2-1",
-              "label": "Taking Away (2) (1)",
-              "count": 11,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-taking-removing-2-2",
-              "label": "Taking Away (2) (2)",
-              "count": 10,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-keeping-storing-1",
-              "label": "Keeping & Storing (1)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 2
-            },
-            {
-              "collection": "topic:verb-keeping-storing-2",
-              "label": "Keeping & Storing (2)",
-              "count": 15,
-              "confusion": false,
-              "coreCount": 1
+              "coreCount": 3
             },
             {
               "collection": "topic:verb-quedar-remaining",
@@ -1150,18 +933,11 @@
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:verb-eating-drinking-1",
-              "label": "Eating & Drinking (1)",
-              "count": 13,
+              "collection": "topic:verb-eating-drinking",
+              "label": "Eating & Drinking",
+              "count": 25,
               "confusion": false,
               "coreCount": 1
-            },
-            {
-              "collection": "topic:verb-eating-drinking-2",
-              "label": "Eating & Drinking (2)",
-              "count": 12,
-              "confusion": false,
-              "coreCount": 0
             },
             {
               "collection": "topic:verb-daily-routine",
@@ -1171,46 +947,25 @@
               "coreCount": 1
             },
             {
-              "collection": "topic:verb-work-employment-1",
-              "label": "Work & Employment (1)",
-              "count": 11,
+              "collection": "topic:verb-work-employment",
+              "label": "Work & Employment",
+              "count": 22,
               "confusion": false,
               "coreCount": 1
             },
             {
-              "collection": "topic:verb-work-employment-2",
-              "label": "Work & Employment (2)",
-              "count": 11,
+              "collection": "topic:verb-money-earning-spending",
+              "label": "Money — Earning & Spending",
+              "count": 26,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 2
             },
             {
-              "collection": "topic:verb-money-earning-spending-1",
-              "label": "Money — Earning & Spending (1)",
-              "count": 13,
+              "collection": "topic:verb-money-commerce",
+              "label": "Money — Buying & Selling",
+              "count": 37,
               "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:verb-money-earning-spending-2",
-              "label": "Money — Earning & Spending (2)",
-              "count": 13,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:verb-money-commerce-1",
-              "label": "Money — Buying & Selling (1)",
-              "count": 19,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:verb-money-commerce-2",
-              "label": "Money — Buying & Selling (2)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 1
+              "coreCount": 2
             }
           ]
         },
@@ -1220,30 +975,16 @@
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:verb-creation-hacer-1",
-              "label": "Making & Doing (hacer) (1)",
-              "count": 15,
+              "collection": "topic:verb-creation-hacer",
+              "label": "Making & Doing (hacer)",
+              "count": 30,
               "confusion": false,
-              "coreCount": 9
+              "coreCount": 11
             },
             {
-              "collection": "topic:verb-creation-hacer-2",
-              "label": "Making & Doing (hacer) (2)",
-              "count": 15,
-              "confusion": false,
-              "coreCount": 2
-            },
-            {
-              "collection": "topic:verb-creation-repair-other-1",
-              "label": "Creating, Fixing & Changing (1)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-creation-repair-other-2",
-              "label": "Creating, Fixing & Changing (2)",
-              "count": 15,
+              "collection": "topic:verb-creation-repair-other",
+              "label": "Creating, Fixing & Changing",
+              "count": 31,
               "confusion": false,
               "coreCount": 0
             },
@@ -1262,60 +1003,18 @@
               "coreCount": 0
             },
             {
-              "collection": "topic:verb-poner-idioms-1-1",
-              "label": "Placing & Setting — Idioms (1) (1)",
-              "count": 14,
+              "collection": "topic:verb-poner-idioms",
+              "label": "Placing & Setting — Idioms",
+              "count": 55,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "topic:verb-poner-idioms-1-2",
-              "label": "Placing & Setting — Idioms (1) (2)",
-              "count": 14,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-poner-idioms-2-1",
-              "label": "Placing & Setting — Idioms (2) (1)",
-              "count": 14,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-poner-idioms-2-2",
-              "label": "Placing & Setting — Idioms (2) (2)",
-              "count": 13,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-household-1-1",
-              "label": "Household & Objects (1) (1)",
-              "count": 11,
+              "collection": "topic:verb-household",
+              "label": "Household & Objects",
+              "count": 43,
               "confusion": false,
               "coreCount": 1
-            },
-            {
-              "collection": "topic:verb-household-1-2",
-              "label": "Household & Objects (1) (2)",
-              "count": 11,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-household-2-1",
-              "label": "Household & Objects (2) (1)",
-              "count": 11,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-household-2-2",
-              "label": "Household & Objects (2) (2)",
-              "count": 10,
-              "confusion": false,
-              "coreCount": 0
             }
           ]
         },
@@ -1325,30 +1024,16 @@
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:verb-social-relationships-1",
-              "label": "Social Interaction & Relationships (1)",
-              "count": 14,
+              "collection": "topic:verb-social-relationships",
+              "label": "Social Interaction & Relationships",
+              "count": 27,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "topic:verb-social-relationships-2",
-              "label": "Social Interaction & Relationships (2)",
-              "count": 13,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-conflict-crime-1",
-              "label": "Conflict & Crime (1)",
-              "count": 15,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-conflict-crime-2",
-              "label": "Conflict & Crime (2)",
-              "count": 15,
+              "collection": "topic:verb-conflict-crime",
+              "label": "Conflict & Crime",
+              "count": 30,
               "confusion": false,
               "coreCount": 0
             },
@@ -1367,16 +1052,9 @@
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:verb-admin-legal-formal-1",
-              "label": "Administrative, Legal & Formal Actions (1)",
-              "count": 11,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-admin-legal-formal-2",
-              "label": "Administrative, Legal & Formal Actions (2)",
-              "count": 11,
+              "collection": "topic:verb-admin-legal-formal",
+              "label": "Administrative, Legal & Formal Actions",
+              "count": 22,
               "confusion": false,
               "coreCount": 0
             },
@@ -1409,23 +1087,9 @@
               "coreCount": 0
             },
             {
-              "collection": "topic:verb-formal-abstract-1-1",
-              "label": "Formal Actions — Abstract (1) (1)",
-              "count": 13,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-formal-abstract-1-2",
-              "label": "Formal Actions — Abstract (1) (2)",
-              "count": 12,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-formal-abstract-2",
-              "label": "Formal Actions — Abstract (2)",
-              "count": 19,
+              "collection": "topic:verb-formal-abstract",
+              "label": "Formal Actions — Abstract",
+              "count": 44,
               "confusion": false,
               "coreCount": 0
             },
@@ -1437,109 +1101,11 @@
               "coreCount": 0
             },
             {
-              "collection": "topic:verb-formal-remainder-0",
-              "label": "Formal & Rare Verbs (1)",
-              "count": 11,
+              "collection": "topic:verb-formal-remainder",
+              "label": "Formal & Rare Verbs",
+              "count": 228,
               "confusion": false,
-              "coreCount": 3
-            },
-            {
-              "collection": "topic:verb-formal-remainder-1",
-              "label": "Formal & Rare Verbs (2)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-formal-remainder-2",
-              "label": "Formal & Rare Verbs (3)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-formal-remainder-3",
-              "label": "Formal & Rare Verbs (4)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-formal-remainder-4",
-              "label": "Formal & Rare Verbs (5)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-formal-remainder-5",
-              "label": "Formal & Rare Verbs (6)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-formal-remainder-6",
-              "label": "Formal & Rare Verbs (7)",
-              "count": 15,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-formal-remainder-7",
-              "label": "Formal & Rare Verbs (8)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-formal-remainder-8",
-              "label": "Formal & Rare Verbs (9)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-formal-remainder-9",
-              "label": "Formal & Rare Verbs (10)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 3
-            },
-            {
-              "collection": "topic:verb-formal-remainder-10",
-              "label": "Formal & Rare Verbs (11)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 2
-            },
-            {
-              "collection": "topic:verb-formal-remainder-11",
-              "label": "Formal & Rare Verbs (12)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-formal-remainder-12",
-              "label": "Formal & Rare Verbs (13)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-formal-remainder-13",
-              "label": "Formal & Rare Verbs (14)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-formal-remainder-14",
-              "label": "Formal & Rare Verbs (15)",
-              "count": 10,
-              "confusion": false,
-              "coreCount": 0
+              "coreCount": 8
             }
           ]
         }
@@ -1562,165 +1128,18 @@
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:cognate-transparent-1",
-              "label": "Identical / transparent (1)",
-              "count": 20,
+              "collection": "topic:cognate-transparent",
+              "label": "Identical / transparent",
+              "count": 367,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "topic:cognate-transparent-2",
-              "label": "Identical / transparent (2)",
-              "count": 20,
+              "collection": "topic:cognate-opaque",
+              "label": "Looks different",
+              "count": 64,
               "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:cognate-transparent-3",
-              "label": "Identical / transparent (3)",
-              "count": 20,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:cognate-transparent-4",
-              "label": "Identical / transparent (4)",
-              "count": 20,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:cognate-transparent-5",
-              "label": "Identical / transparent (5)",
-              "count": 20,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:cognate-transparent-6",
-              "label": "Identical / transparent (6)",
-              "count": 20,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:cognate-transparent-7",
-              "label": "Identical / transparent (7)",
-              "count": 20,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:cognate-transparent-8",
-              "label": "Identical / transparent (8)",
-              "count": 20,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:cognate-transparent-9",
-              "label": "Identical / transparent (9)",
-              "count": 20,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:cognate-transparent-10",
-              "label": "Identical / transparent (10)",
-              "count": 20,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:cognate-transparent-11",
-              "label": "Identical / transparent (11)",
-              "count": 20,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:cognate-transparent-12",
-              "label": "Identical / transparent (12)",
-              "count": 20,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:cognate-transparent-13",
-              "label": "Identical / transparent (13)",
-              "count": 20,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:cognate-transparent-14",
-              "label": "Identical / transparent (14)",
-              "count": 20,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:cognate-transparent-15",
-              "label": "Identical / transparent (15)",
-              "count": 20,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:cognate-transparent-16",
-              "label": "Identical / transparent (16)",
-              "count": 20,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:cognate-transparent-17",
-              "label": "Identical / transparent (17)",
-              "count": 20,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:cognate-transparent-18",
-              "label": "Identical / transparent (18)",
-              "count": 20,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:cognate-transparent-19",
-              "label": "Identical / transparent (19)",
-              "count": 7,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:cognate-opaque-1",
-              "label": "Looks different (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:cognate-opaque-2",
-              "label": "Looks different (2)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:cognate-opaque-3",
-              "label": "Looks different (3)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:cognate-opaque-4",
-              "label": "Looks different (4)",
-              "count": 11,
-              "confusion": false,
-              "coreCount": 2
+              "coreCount": 4
             },
             {
               "collection": "cognate:able-to-able",
@@ -1968,16 +1387,9 @@
               "coreCount": 0
             },
             {
-              "collection": "topic:cognate-encia-ancia-1",
-              "label": "-encia/-ancia → -ence/-ance (1)",
-              "count": 12,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:cognate-encia-ancia-2",
-              "label": "-encia/-ancia → -ence/-ance (2)",
-              "count": 10,
+              "collection": "topic:cognate-encia-ancia",
+              "label": "-encia/-ancia → -ence/-ance",
+              "count": 22,
               "confusion": false,
               "coreCount": 0
             },
@@ -2045,81 +1457,11 @@
               "coreCount": 0
             },
             {
-              "collection": "topic:cognate-latin-root-1",
-              "label": "Latin roots (any) (1)",
-              "count": 20,
+              "collection": "topic:cognate-latin-root",
+              "label": "Latin roots (any)",
+              "count": 218,
               "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:cognate-latin-root-2",
-              "label": "Latin roots (any) (2)",
-              "count": 20,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:cognate-latin-root-3",
-              "label": "Latin roots (any) (3)",
-              "count": 20,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:cognate-latin-root-4",
-              "label": "Latin roots (any) (4)",
-              "count": 20,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:cognate-latin-root-5",
-              "label": "Latin roots (any) (5)",
-              "count": 20,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:cognate-latin-root-6",
-              "label": "Latin roots (any) (6)",
-              "count": 20,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:cognate-latin-root-7",
-              "label": "Latin roots (any) (7)",
-              "count": 20,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:cognate-latin-root-8",
-              "label": "Latin roots (any) (8)",
-              "count": 20,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:cognate-latin-root-9",
-              "label": "Latin roots (any) (9)",
-              "count": 20,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:cognate-latin-root-10",
-              "label": "Latin roots (any) (10)",
-              "count": 20,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:cognate-latin-root-11",
-              "label": "Latin roots (any) (11)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 2
+              "coreCount": 4
             }
           ]
         },
@@ -2317,79 +1659,16 @@
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:masc-o-1",
-              "label": "el, -o (1)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:masc-o-2",
-              "label": "el, -o (2)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:masc-o-3",
-              "label": "el, -o (3)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:masc-o-4",
-              "label": "el, -o (4)",
-              "count": 17,
+              "collection": "topic:masc-o",
+              "label": "el, -o",
+              "count": 133,
               "confusion": false,
               "coreCount": 1
             },
             {
-              "collection": "topic:masc-o-5",
-              "label": "el, -o (5)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:masc-o-6",
-              "label": "el, -o (6)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:masc-o-7",
-              "label": "el, -o (7)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:masc-o-8",
-              "label": "el, -o (8)",
-              "count": 14,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:masc-consonant-1",
-              "label": "el, consonant (1)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:masc-consonant-2",
-              "label": "el, consonant (2)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:masc-consonant-3",
-              "label": "el, consonant (3)",
-              "count": 15,
+              "collection": "topic:masc-consonant",
+              "label": "el, consonant",
+              "count": 49,
               "confusion": false,
               "coreCount": 0
             },
@@ -2408,93 +1687,23 @@
               "coreCount": 0
             },
             {
-              "collection": "topic:fem-a-1",
-              "label": "la, -a (1)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:fem-a-2",
-              "label": "la, -a (2)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:fem-a-3",
-              "label": "la, -a (3)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:fem-a-4",
-              "label": "la, -a (4)",
-              "count": 17,
+              "collection": "topic:fem-a",
+              "label": "la, -a",
+              "count": 128,
               "confusion": false,
               "coreCount": 1
             },
             {
-              "collection": "topic:fem-a-5",
-              "label": "la, -a (5)",
-              "count": 17,
+              "collection": "topic:fem-abstract-suffix",
+              "label": "la, -dad/-ción/-sión",
+              "count": 51,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "topic:fem-a-6",
-              "label": "la, -a (6)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:fem-a-7",
-              "label": "la, -a (7)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:fem-a-8",
-              "label": "la, -a (8)",
-              "count": 9,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:fem-abstract-suffix-1",
-              "label": "la, -dad/-ción/-sión (1)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:fem-abstract-suffix-2",
-              "label": "la, -dad/-ción/-sión (2)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:fem-abstract-suffix-3",
-              "label": "la, -dad/-ción/-sión (3)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:fem-consonant-1",
-              "label": "la, consonant (1)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:fem-consonant-2",
-              "label": "la, consonant (2)",
-              "count": 9,
+              "collection": "topic:fem-consonant",
+              "label": "la, consonant",
+              "count": 26,
               "confusion": false,
               "coreCount": 0
             },
@@ -2541,16 +1750,9 @@
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:abstract-encia-ancia-1",
-              "label": "Abstract — -encia/-ancia (1)",
-              "count": 15,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:abstract-encia-ancia-2",
-              "label": "Abstract — -encia/-ancia (2)",
-              "count": 8,
+              "collection": "topic:abstract-encia-ancia",
+              "label": "Abstract — -encia/-ancia",
+              "count": 23,
               "confusion": false,
               "coreCount": 0
             },
@@ -2562,16 +1764,9 @@
               "coreCount": 0
             },
             {
-              "collection": "topic:abstract-dad-tud-1",
-              "label": "Abstract — -dad/-tud (1)",
-              "count": 12,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:abstract-dad-tud-2",
-              "label": "Abstract — -dad/-tud (2)",
-              "count": 11,
+              "collection": "topic:abstract-dad-tud",
+              "label": "Abstract — -dad/-tud",
+              "count": 23,
               "confusion": false,
               "coreCount": 0
             },
@@ -2590,72 +1785,16 @@
               "coreCount": 0
             },
             {
-              "collection": "topic:abstract-general-1",
-              "label": "Abstract — General (1)",
-              "count": 16,
+              "collection": "topic:abstract-general",
+              "label": "Abstract — General",
+              "count": 118,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "topic:abstract-general-2",
-              "label": "Abstract — General (2)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:abstract-general-3",
-              "label": "Abstract — General (3)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:abstract-general-4",
-              "label": "Abstract — General (4)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:abstract-general-5",
-              "label": "Abstract — General (5)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:abstract-general-6",
-              "label": "Abstract — General (6)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:abstract-general-7",
-              "label": "Abstract — General (7)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:abstract-general-8",
-              "label": "Abstract — General (8)",
-              "count": 6,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:people-family-rel-1",
-              "label": "People — Family & Relationships (1)",
-              "count": 15,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:people-family-rel-2",
-              "label": "People — Family & Relationships (2)",
-              "count": 15,
+              "collection": "topic:people-family-rel",
+              "label": "People — Family & Relationships",
+              "count": 30,
               "confusion": false,
               "coreCount": 4
             },
@@ -2918,72 +2057,16 @@
               "coreCount": 0
             },
             {
-              "collection": "topic:adj-ser-general-1",
-              "label": "ser, general (1)",
-              "count": 16,
+              "collection": "topic:adj-ser-general",
+              "label": "ser, general",
+              "count": 116,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "topic:adj-ser-general-2",
-              "label": "ser, general (2)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:adj-ser-general-3",
-              "label": "ser, general (3)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:adj-ser-general-4",
-              "label": "ser, general (4)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:adj-ser-general-5",
-              "label": "ser, general (5)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:adj-ser-general-6",
-              "label": "ser, general (6)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:adj-ser-general-7",
-              "label": "ser, general (7)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:adj-ser-general-8",
-              "label": "ser, general (8)",
-              "count": 4,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:estar-adj-1",
-              "label": "estar (state), (1)",
-              "count": 12,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:estar-adj-2",
-              "label": "estar (state), (2)",
-              "count": 12,
+              "collection": "topic:estar-adj",
+              "label": "estar (state),",
+              "count": 24,
               "confusion": false,
               "coreCount": 1
             },
@@ -3037,81 +2120,18 @@
               "coreCount": 0
             },
             {
-              "collection": "topic:adj-abs-general-1",
-              "label": "Abstract quality — General (1)",
-              "count": 16,
+              "collection": "topic:adj-abs-general",
+              "label": "Abstract quality — General",
+              "count": 135,
               "confusion": false,
               "coreCount": 5
             },
             {
-              "collection": "topic:adj-abs-general-2",
-              "label": "Abstract quality — General (2)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:adj-abs-general-3",
-              "label": "Abstract quality — General (3)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:adj-abs-general-4",
-              "label": "Abstract quality — General (4)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:adj-abs-general-5",
-              "label": "Abstract quality — General (5)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:adj-abs-general-6",
-              "label": "Abstract quality — General (6)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:adj-abs-general-7",
-              "label": "Abstract quality — General (7)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:adj-abs-general-8",
-              "label": "Abstract quality — General (8)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:adj-abs-general-9",
-              "label": "Abstract quality — General (9)",
-              "count": 7,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:condition-state-1",
-              "label": "Condition / state (1)",
-              "count": 12,
+              "collection": "topic:condition-state",
+              "label": "Condition / state",
+              "count": 23,
               "confusion": false,
               "coreCount": 1
-            },
-            {
-              "collection": "topic:condition-state-2",
-              "label": "Condition / state (2)",
-              "count": 11,
-              "confusion": false,
-              "coreCount": 0
             },
             {
               "collection": "topic:emotion-physical-sensation",
@@ -3710,170 +2730,65 @@
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:map-estar-1",
-              "label": "estar (1)",
-              "count": 16,
+              "collection": "topic:map-estar",
+              "label": "estar",
+              "count": 107,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 13
             },
             {
-              "collection": "topic:map-estar-2",
-              "label": "estar (2)",
-              "count": 17,
+              "collection": "topic:map-dar",
+              "label": "dar",
+              "count": 53,
+              "confusion": false,
+              "coreCount": 2
+            },
+            {
+              "collection": "topic:map-decir",
+              "label": "decir",
+              "count": 36,
               "confusion": false,
               "coreCount": 5
             },
             {
-              "collection": "topic:map-estar-3",
-              "label": "estar (3)",
-              "count": 17,
+              "collection": "topic:map-de",
+              "label": "de",
+              "count": 32,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 1
             },
             {
-              "collection": "topic:map-estar-4",
-              "label": "estar (4)",
-              "count": 18,
+              "collection": "topic:map-en",
+              "label": "en",
+              "count": 30,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "topic:map-dejar",
+              "label": "dejar",
+              "count": 32,
               "confusion": false,
               "coreCount": 3
             },
             {
-              "collection": "topic:map-estar-5",
-              "label": "estar (5)",
-              "count": 18,
+              "collection": "topic:map-deber",
+              "label": "deber",
+              "count": 28,
               "confusion": false,
               "coreCount": 1
             },
             {
-              "collection": "topic:map-estar-6",
-              "label": "estar (6)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:map-estar-7",
-              "label": "estar (7)",
-              "count": 3,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:map-dar-1",
-              "label": "dar (1)",
-              "count": 18,
+              "collection": "topic:map-echar",
+              "label": "echar",
+              "count": 23,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "topic:map-dar-2",
-              "label": "dar (2)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 2
-            },
-            {
-              "collection": "topic:map-dar-3",
-              "label": "dar (3)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-decir-1",
-              "label": "decir (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:map-decir-2",
-              "label": "decir (2)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 4
-            },
-            {
-              "collection": "topic:map-de-1",
-              "label": "de (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-de-2",
-              "label": "de (2)",
-              "count": 14,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:map-en-1",
-              "label": "en (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-en-2",
-              "label": "en (2)",
-              "count": 12,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-dejar-1",
-              "label": "dejar (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:map-dejar-2",
-              "label": "dejar (2)",
-              "count": 14,
-              "confusion": false,
-              "coreCount": 2
-            },
-            {
-              "collection": "topic:map-deber-1",
-              "label": "deber (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:map-deber-2",
-              "label": "deber (2)",
-              "count": 10,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-echar-1",
-              "label": "echar (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-echar-2",
-              "label": "echar (2)",
-              "count": 5,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-contar-1",
-              "label": "contar (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-contar-2",
-              "label": "contar (2)",
-              "count": 3,
+              "collection": "topic:map-contar",
+              "label": "contar",
+              "count": 21,
               "confusion": false,
               "coreCount": 0
             },
@@ -3934,88 +2849,32 @@
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:map-hacer-1",
-              "label": "hacer (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 3
-            },
-            {
-              "collection": "topic:map-hacer-2",
-              "label": "hacer (2)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 2
-            },
-            {
-              "collection": "topic:map-hacer-3",
-              "label": "hacer (3)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:map-hacer-4",
-              "label": "hacer (4)",
-              "count": 1,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-haber-1",
-              "label": "haber (1)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 4
-            },
-            {
-              "collection": "topic:map-haber-2",
-              "label": "haber (2)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 4
-            },
-            {
-              "collection": "topic:map-haber-3",
-              "label": "haber (3)",
-              "count": 12,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:map-ir-1",
-              "label": "ir (1)",
-              "count": 13,
+              "collection": "topic:map-hacer",
+              "label": "hacer",
+              "count": 55,
               "confusion": false,
               "coreCount": 6
             },
             {
-              "collection": "topic:map-ir-2",
-              "label": "ir (2)",
-              "count": 18,
+              "collection": "topic:map-haber",
+              "label": "haber",
+              "count": 46,
+              "confusion": false,
+              "coreCount": 9
+            },
+            {
+              "collection": "topic:map-ir",
+              "label": "ir",
+              "count": 36,
+              "confusion": false,
+              "coreCount": 11
+            },
+            {
+              "collection": "topic:map-hablar",
+              "label": "hablar",
+              "count": 28,
               "confusion": false,
               "coreCount": 3
-            },
-            {
-              "collection": "topic:map-ir-3",
-              "label": "ir (3)",
-              "count": 5,
-              "confusion": false,
-              "coreCount": 2
-            },
-            {
-              "collection": "topic:map-hablar-1",
-              "label": "hablar (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 3
-            },
-            {
-              "collection": "topic:map-hablar-2",
-              "label": "hablar (2)",
-              "count": 10,
-              "confusion": false,
-              "coreCount": 0
             }
           ]
         },
@@ -4025,326 +2884,67 @@
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:map-ser-1",
-              "label": "ser (1)",
-              "count": 18,
+              "collection": "topic:map-ser",
+              "label": "ser",
+              "count": 388,
+              "confusion": false,
+              "coreCount": 18
+            },
+            {
+              "collection": "topic:map-poner",
+              "label": "poner",
+              "count": 82,
               "confusion": false,
               "coreCount": 1
             },
             {
-              "collection": "topic:map-ser-2",
-              "label": "ser (2)",
-              "count": 17,
+              "collection": "topic:map-tener",
+              "label": "tener",
+              "count": 61,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 27
             },
             {
-              "collection": "topic:map-ser-3",
-              "label": "ser (3)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-ser-4",
-              "label": "ser (4)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-ser-5",
-              "label": "ser (5)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-ser-6",
-              "label": "ser (6)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 3
-            },
-            {
-              "collection": "topic:map-ser-7",
-              "label": "ser (7)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-ser-8",
-              "label": "ser (8)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 4
-            },
-            {
-              "collection": "topic:map-ser-9",
-              "label": "ser (9)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-ser-10",
-              "label": "ser (10)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-ser-11",
-              "label": "ser (11)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-ser-12",
-              "label": "ser (12)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-ser-13",
-              "label": "ser (13)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-ser-14",
-              "label": "ser (14)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 5
-            },
-            {
-              "collection": "topic:map-ser-15",
-              "label": "ser (15)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-ser-16",
-              "label": "ser (16)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:map-ser-17",
-              "label": "ser (17)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-ser-18",
-              "label": "ser (18)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-ser-19",
-              "label": "ser (19)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-ser-20",
-              "label": "ser (20)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-ser-21",
-              "label": "ser (21)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-ser-22",
-              "label": "ser (22)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 4
-            },
-            {
-              "collection": "topic:map-ser-23",
-              "label": "ser (23)",
-              "count": 1,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-poner-1",
-              "label": "poner (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-poner-2",
-              "label": "poner (2)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:map-poner-3",
-              "label": "poner (3)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-poner-4",
-              "label": "poner (4)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-poner-5",
-              "label": "poner (5)",
-              "count": 10,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-tener-1",
-              "label": "tener (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 12
-            },
-            {
-              "collection": "topic:map-tener-2",
-              "label": "tener (2)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 7
-            },
-            {
-              "collection": "topic:map-tener-3",
-              "label": "tener (3)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 2
-            },
-            {
-              "collection": "topic:map-tener-4",
-              "label": "tener (4)",
-              "count": 7,
+              "collection": "topic:map-poder",
+              "label": "poder",
+              "count": 68,
               "confusion": false,
               "coreCount": 6
             },
             {
-              "collection": "topic:map-poder-1",
-              "label": "poder (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 4
-            },
-            {
-              "collection": "topic:map-poder-2",
-              "label": "poder (2)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:map-poder-3",
-              "label": "poder (3)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-poder-4",
-              "label": "poder (4)",
-              "count": 14,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:map-pedir-1",
-              "label": "pedir (1)",
-              "count": 18,
+              "collection": "topic:map-pedir",
+              "label": "pedir",
+              "count": 31,
               "confusion": false,
               "coreCount": 3
             },
             {
-              "collection": "topic:map-pedir-2",
-              "label": "pedir (2)",
-              "count": 13,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-querer-1",
-              "label": "querer (1)",
-              "count": 18,
+              "collection": "topic:map-querer",
+              "label": "querer",
+              "count": 33,
               "confusion": false,
               "coreCount": 3
             },
             {
-              "collection": "topic:map-querer-2",
-              "label": "querer (2)",
-              "count": 15,
+              "collection": "topic:map-que",
+              "label": "que",
+              "count": 22,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 12
             },
             {
-              "collection": "topic:map-que-1",
-              "label": "que (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 9
-            },
-            {
-              "collection": "topic:map-que-2",
-              "label": "que (2)",
-              "count": 4,
-              "confusion": false,
-              "coreCount": 3
-            },
-            {
-              "collection": "topic:map-seguir-1",
-              "label": "seguir (1)",
-              "count": 18,
+              "collection": "topic:map-seguir",
+              "label": "seguir",
+              "count": 25,
               "confusion": false,
               "coreCount": 1
             },
             {
-              "collection": "topic:map-seguir-2",
-              "label": "seguir (2)",
-              "count": 7,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-sentir-1",
-              "label": "sentir (1)",
-              "count": 18,
+              "collection": "topic:map-sentir",
+              "label": "sentir",
+              "count": 23,
               "confusion": false,
               "coreCount": 1
-            },
-            {
-              "collection": "topic:map-sentir-2",
-              "label": "sentir (2)",
-              "count": 5,
-              "confusion": false,
-              "coreCount": 0
             },
             {
               "collection": "es:quedar",
@@ -4354,32 +2954,18 @@
               "coreCount": 1
             },
             {
-              "collection": "topic:map-pasar-1",
-              "label": "pasar (1)",
-              "count": 18,
+              "collection": "topic:map-pasar",
+              "label": "pasar",
+              "count": 21,
               "confusion": false,
               "coreCount": 1
             },
             {
-              "collection": "topic:map-pasar-2",
-              "label": "pasar (2)",
-              "count": 3,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:map-tomar-1",
-              "label": "tomar (1)",
-              "count": 18,
+              "collection": "topic:map-tomar",
+              "label": "tomar",
+              "count": 23,
               "confusion": false,
               "coreCount": 1
-            },
-            {
-              "collection": "topic:map-tomar-2",
-              "label": "tomar (2)",
-              "count": 5,
-              "confusion": false,
-              "coreCount": 0
             },
             {
               "collection": "es:trabajar",
@@ -4445,18 +3031,11 @@
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:map-ver-1",
-              "label": "ver (1)",
-              "count": 17,
+              "collection": "topic:map-ver",
+              "label": "ver",
+              "count": 24,
               "confusion": false,
               "coreCount": 2
-            },
-            {
-              "collection": "topic:map-ver-2",
-              "label": "ver (2)",
-              "count": 7,
-              "confusion": false,
-              "coreCount": 0
             },
             {
               "collection": "es:volver",
@@ -4568,67 +3147,25 @@
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:enmap-at-1",
-              "label": "at (1)",
-              "count": 18,
+              "collection": "topic:enmap-at",
+              "label": "at",
+              "count": 25,
               "confusion": false,
               "coreCount": 1
             },
             {
-              "collection": "topic:enmap-at-2",
-              "label": "at (2)",
-              "count": 7,
+              "collection": "topic:enmap-be",
+              "label": "be",
+              "count": 65,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 11
             },
             {
-              "collection": "topic:enmap-be-1",
-              "label": "be (1)",
-              "count": 14,
+              "collection": "topic:enmap-come",
+              "label": "come",
+              "count": 22,
               "confusion": false,
               "coreCount": 1
-            },
-            {
-              "collection": "topic:enmap-be-2",
-              "label": "be (2)",
-              "count": 13,
-              "confusion": false,
-              "coreCount": 4
-            },
-            {
-              "collection": "topic:enmap-be-3",
-              "label": "be (3)",
-              "count": 12,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:enmap-be-4",
-              "label": "be (4)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 4
-            },
-            {
-              "collection": "topic:enmap-be-5",
-              "label": "be (5)",
-              "count": 10,
-              "confusion": false,
-              "coreCount": 2
-            },
-            {
-              "collection": "topic:enmap-come-1",
-              "label": "come (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:enmap-come-2",
-              "label": "come (2)",
-              "count": 4,
-              "confusion": false,
-              "coreCount": 0
             },
             {
               "collection": "en:ask",
@@ -4785,158 +3322,60 @@
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:enmap-for-1",
-              "label": "for (1)",
-              "count": 18,
+              "collection": "topic:enmap-for",
+              "label": "for",
+              "count": 76,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 4
             },
             {
-              "collection": "topic:enmap-for-2",
-              "label": "for (2)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:enmap-for-3",
-              "label": "for (3)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:enmap-for-4",
-              "label": "for (4)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:enmap-for-5",
-              "label": "for (5)",
-              "count": 4,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:enmap-get-1",
-              "label": "get (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:enmap-get-2",
-              "label": "get (2)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:enmap-get-3",
-              "label": "get (3)",
-              "count": 13,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:enmap-go-1",
-              "label": "go (1)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:enmap-go-2",
-              "label": "go (2)",
-              "count": 17,
+              "collection": "topic:enmap-get",
+              "label": "get",
+              "count": 49,
               "confusion": false,
               "coreCount": 2
             },
             {
-              "collection": "topic:enmap-go-3",
-              "label": "go (3)",
-              "count": 4,
+              "collection": "topic:enmap-go",
+              "label": "go",
+              "count": 37,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 4
             },
             {
-              "collection": "topic:enmap-from-1",
-              "label": "from (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 2
-            },
-            {
-              "collection": "topic:enmap-from-2",
-              "label": "from (2)",
-              "count": 15,
-              "confusion": false,
-              "coreCount": 5
-            },
-            {
-              "collection": "topic:enmap-have-1",
-              "label": "have (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:enmap-have-2",
-              "label": "have (2)",
-              "count": 17,
+              "collection": "topic:enmap-from",
+              "label": "from",
+              "count": 33,
               "confusion": false,
               "coreCount": 7
             },
             {
-              "collection": "topic:enmap-have-3",
-              "label": "have (3)",
-              "count": 2,
+              "collection": "topic:enmap-have",
+              "label": "have",
+              "count": 37,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 10
             },
             {
-              "collection": "topic:enmap-in-1",
-              "label": "in (1)",
-              "count": 18,
+              "collection": "topic:enmap-in",
+              "label": "in",
+              "count": 28,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "topic:enmap-in-2",
-              "label": "in (2)",
-              "count": 10,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:enmap-give-1",
-              "label": "give (1)",
-              "count": 18,
+              "collection": "topic:enmap-give",
+              "label": "give",
+              "count": 28,
               "confusion": false,
               "coreCount": 2
             },
             {
-              "collection": "topic:enmap-give-2",
-              "label": "give (2)",
-              "count": 10,
+              "collection": "topic:enmap-how",
+              "label": "how",
+              "count": 23,
               "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:enmap-how-1",
-              "label": "how (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 2
-            },
-            {
-              "collection": "topic:enmap-how-2",
-              "label": "how (2)",
-              "count": 5,
-              "confusion": false,
-              "coreCount": 2
+              "coreCount": 4
             },
             {
               "collection": "en:feel",
@@ -5037,51 +3476,23 @@
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:enmap-of-1",
-              "label": "of (1)",
-              "count": 18,
+              "collection": "topic:enmap-of",
+              "label": "of",
+              "count": 47,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "topic:enmap-of-2",
-              "label": "of (2)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:enmap-of-3",
-              "label": "of (3)",
-              "count": 11,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:enmap-make-1",
-              "label": "make (1)",
-              "count": 18,
+              "collection": "topic:enmap-make",
+              "label": "make",
+              "count": 32,
               "confusion": false,
               "coreCount": 1
             },
             {
-              "collection": "topic:enmap-make-2",
-              "label": "make (2)",
-              "count": 14,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:enmap-keep-1",
-              "label": "keep (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:enmap-keep-2",
-              "label": "keep (2)",
-              "count": 8,
+              "collection": "topic:enmap-keep",
+              "label": "keep",
+              "count": 26,
               "confusion": false,
               "coreCount": 1
             },
@@ -5219,74 +3630,39 @@
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:enmap-take-1",
-              "label": "take (1)",
-              "count": 18,
+              "collection": "topic:enmap-to",
+              "label": "to",
+              "count": 121,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 14
             },
             {
-              "collection": "topic:enmap-take-2",
-              "label": "take (2)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:enmap-take-3",
-              "label": "take (3)",
-              "count": 8,
+              "collection": "topic:enmap-take",
+              "label": "take",
+              "count": 44,
               "confusion": false,
               "coreCount": 1
             },
             {
-              "collection": "topic:enmap-put-1",
-              "label": "put (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:enmap-put-2",
-              "label": "put (2)",
-              "count": 18,
+              "collection": "topic:enmap-put",
+              "label": "put",
+              "count": 47,
               "confusion": false,
               "coreCount": 1
             },
             {
-              "collection": "topic:enmap-put-3",
-              "label": "put (3)",
-              "count": 11,
+              "collection": "topic:enmap-set",
+              "label": "set",
+              "count": 29,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "topic:enmap-set-1",
-              "label": "set (1)",
-              "count": 18,
+              "collection": "topic:enmap-that",
+              "label": "that",
+              "count": 28,
               "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:enmap-set-2",
-              "label": "set (2)",
-              "count": 11,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:enmap-that-1",
-              "label": "that (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 3
-            },
-            {
-              "collection": "topic:enmap-that-2",
-              "label": "that (2)",
-              "count": 10,
-              "confusion": false,
-              "coreCount": 4
+              "coreCount": 7
             },
             {
               "collection": "en:tell",
@@ -5478,53 +3854,25 @@
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:enmap-with-1",
-              "label": "with (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 6
-            },
-            {
-              "collection": "topic:enmap-with-2",
-              "label": "with (2)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 2
-            },
-            {
-              "collection": "topic:enmap-with-3",
-              "label": "with (3)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:enmap-you-1",
-              "label": "you (1)",
-              "count": 18,
+              "collection": "topic:enmap-with",
+              "label": "with",
+              "count": 54,
               "confusion": false,
               "coreCount": 8
             },
             {
-              "collection": "topic:enmap-you-2",
-              "label": "you (2)",
-              "count": 18,
+              "collection": "topic:enmap-you",
+              "label": "you",
+              "count": 36,
               "confusion": false,
-              "coreCount": 5
+              "coreCount": 13
             },
             {
-              "collection": "topic:enmap-what-1",
-              "label": "what (1)",
-              "count": 18,
+              "collection": "topic:enmap-what",
+              "label": "what",
+              "count": 21,
               "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:enmap-what-2",
-              "label": "what (2)",
-              "count": 3,
-              "confusion": false,
-              "coreCount": 2
+              "coreCount": 3
             },
             {
               "collection": "en:work",
@@ -5574,62 +3922,6 @@
               "count": 7,
               "confusion": false,
               "coreCount": 0
-            }
-          ]
-        },
-        {
-          "id": "other",
-          "label": "Other",
-          "confusion": false,
-          "groups": [
-            {
-              "collection": "topic:enmap-to-1",
-              "label": "to (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:enmap-to-2",
-              "label": "to (2)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:enmap-to-3",
-              "label": "to (3)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 3
-            },
-            {
-              "collection": "topic:enmap-to-4",
-              "label": "to (4)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 2
-            },
-            {
-              "collection": "topic:enmap-to-5",
-              "label": "to (5)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 4
-            },
-            {
-              "collection": "topic:enmap-to-6",
-              "label": "to (6)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:enmap-to-7",
-              "label": "to (7)",
-              "count": 13,
-              "confusion": false,
-              "coreCount": 3
             }
           ]
         },
@@ -5684,39 +3976,11 @@
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:phr-be-1",
-              "label": "be (1)",
-              "count": 10,
+              "collection": "topic:phr-be",
+              "label": "be",
+              "count": 58,
               "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:phr-be-2",
-              "label": "be (2)",
-              "count": 13,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:phr-be-3",
-              "label": "be (3)",
-              "count": 13,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:phr-be-4",
-              "label": "be (4)",
-              "count": 15,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:phr-be-5",
-              "label": "be (5)",
-              "count": 7,
-              "confusion": false,
-              "coreCount": 1
+              "coreCount": 2
             },
             {
               "collection": "en:come",
@@ -6020,25 +4284,11 @@
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:phr-get-1",
-              "label": "get (1)",
-              "count": 3,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:phr-get-2",
-              "label": "get (2)",
-              "count": 10,
+              "collection": "topic:phr-get",
+              "label": "get",
+              "count": 22,
               "confusion": false,
               "coreCount": 1
-            },
-            {
-              "collection": "topic:phr-get-3",
-              "label": "get (3)",
-              "count": 9,
-              "confusion": false,
-              "coreCount": 0
             },
             {
               "collection": "en:go",
@@ -6370,44 +4620,16 @@
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:phr-put-1",
-              "label": "put (1)",
-              "count": 17,
+              "collection": "topic:phr-put",
+              "label": "put",
+              "count": 42,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "topic:phr-put-2",
-              "label": "put (2)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:phr-put-3",
-              "label": "put (3)",
-              "count": 9,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:phr-take-1",
-              "label": "take (1)",
-              "count": 12,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:phr-take-2",
-              "label": "take (2)",
-              "count": 13,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:phr-take-3",
-              "label": "take (3)",
-              "count": 3,
+              "collection": "topic:phr-take",
+              "label": "take",
+              "count": 28,
               "confusion": false,
               "coreCount": 0
             },
@@ -6964,60 +5186,25 @@
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:part-in-1",
-              "label": "in (1)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:part-in-2",
-              "label": "in (2)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:part-in-3",
-              "label": "in (3)",
-              "count": 13,
+              "collection": "topic:part-in",
+              "label": "in",
+              "count": 47,
               "confusion": false,
               "coreCount": 1
             },
             {
-              "collection": "topic:part-for-1",
-              "label": "for (1)",
-              "count": 18,
+              "collection": "topic:part-for",
+              "label": "for",
+              "count": 43,
+              "confusion": false,
+              "coreCount": 4
+            },
+            {
+              "collection": "topic:part-from",
+              "label": "from",
+              "count": 21,
               "confusion": false,
               "coreCount": 2
-            },
-            {
-              "collection": "topic:part-for-2",
-              "label": "for (2)",
-              "count": 11,
-              "confusion": false,
-              "coreCount": 2
-            },
-            {
-              "collection": "topic:part-for-3",
-              "label": "for (3)",
-              "count": 14,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:part-from-1",
-              "label": "from (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:part-from-2",
-              "label": "from (2)",
-              "count": 3,
-              "confusion": false,
-              "coreCount": 1
             },
             {
               "collection": "particle:into",
@@ -7041,79 +5228,30 @@
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:part-out-1",
-              "label": "out (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:part-out-2",
-              "label": "out (2)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:part-out-3",
-              "label": "out (3)",
-              "count": 16,
+              "collection": "topic:part-out",
+              "label": "out",
+              "count": 54,
               "confusion": false,
               "coreCount": 1
             },
             {
-              "collection": "topic:part-out-4",
-              "label": "out (4)",
-              "count": 3,
+              "collection": "topic:part-on",
+              "label": "on",
+              "count": 45,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "topic:part-on-1",
-              "label": "on (1)",
-              "count": 17,
+              "collection": "topic:part-off",
+              "label": "off",
+              "count": 28,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "topic:part-on-2",
-              "label": "on (2)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:part-on-3",
-              "label": "on (3)",
-              "count": 11,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:part-off-1",
-              "label": "off (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:part-off-2",
-              "label": "off (2)",
-              "count": 10,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:part-of-1",
-              "label": "of (1)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:part-of-2",
-              "label": "of (2)",
-              "count": 9,
+              "collection": "topic:part-of",
+              "label": "of",
+              "count": 26,
               "confusion": false,
               "coreCount": 0
             },
@@ -7145,6 +5283,13 @@
           "label": "P–T",
           "confusion": false,
           "groups": [
+            {
+              "collection": "topic:part-to",
+              "label": "to",
+              "count": 63,
+              "confusion": false,
+              "coreCount": 7
+            },
             {
               "collection": "particle:through",
               "label": "through",
@@ -7181,44 +5326,16 @@
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:part-up-1",
-              "label": "up (1)",
-              "count": 18,
+              "collection": "topic:part-up",
+              "label": "up",
+              "count": 57,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "topic:part-up-2",
-              "label": "up (2)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:part-up-3",
-              "label": "up (3)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:part-up-4",
-              "label": "up (4)",
-              "count": 3,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:part-with-1",
-              "label": "with (1)",
-              "count": 11,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:part-with-2",
-              "label": "with (2)",
-              "count": 14,
+              "collection": "topic:part-with",
+              "label": "with",
+              "count": 25,
               "confusion": false,
               "coreCount": 0
             },
@@ -7228,41 +5345,6 @@
               "count": 1,
               "confusion": false,
               "coreCount": 0
-            }
-          ]
-        },
-        {
-          "id": "other",
-          "label": "Other",
-          "confusion": false,
-          "groups": [
-            {
-              "collection": "topic:part-to-1",
-              "label": "to (1)",
-              "count": 11,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:part-to-2",
-              "label": "to (2)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 3
-            },
-            {
-              "collection": "topic:part-to-3",
-              "label": "to (3)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 2
-            },
-            {
-              "collection": "topic:part-to-4",
-              "label": "to (4)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 1
             }
           ]
         }
@@ -7453,93 +5535,37 @@
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:morph-ish-1",
-              "label": "-ish (tall → tallish) (1)",
-              "count": 18,
+              "collection": "topic:morph-ish",
+              "label": "-ish (tall → tallish)",
+              "count": 23,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "topic:morph-ish-2",
-              "label": "-ish (tall → tallish) (2)",
-              "count": 5,
+              "collection": "topic:morph-ward",
+              "label": "-ward (in → inward)",
+              "count": 26,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "topic:morph-ward-1",
-              "label": "-ward (in → inward) (1)",
-              "count": 18,
+              "collection": "topic:morph-noun-to-adj",
+              "label": "noun → adjective",
+              "count": 52,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "topic:morph-ward-2",
-              "label": "-ward (in → inward) (2)",
-              "count": 8,
+              "collection": "topic:morph-adj-to-noun",
+              "label": "adjective → noun",
+              "count": 38,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "topic:morph-noun-to-adj-1",
-              "label": "noun → adjective (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:morph-noun-to-adj-2",
-              "label": "noun → adjective (2)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:morph-noun-to-adj-3",
-              "label": "noun → adjective (3)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:morph-adj-to-noun-1",
-              "label": "adjective → noun (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:morph-adj-to-noun-2",
-              "label": "adjective → noun (2)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:morph-adj-to-noun-3",
-              "label": "adjective → noun (3)",
-              "count": 2,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:morph-verb-to-noun-1",
-              "label": "verb → noun (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:morph-verb-to-noun-2",
-              "label": "verb → noun (2)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:morph-verb-to-noun-3",
-              "label": "verb → noun (3)",
-              "count": 16,
+              "collection": "topic:morph-verb-to-noun",
+              "label": "verb → noun",
+              "count": 52,
               "confusion": false,
               "coreCount": 0
             },
@@ -7586,30 +5612,16 @@
               "coreCount": 0
             },
             {
-              "collection": "topic:morph-noun-to-noun-1",
-              "label": "noun → noun (1)",
-              "count": 18,
+              "collection": "topic:morph-noun-to-noun",
+              "label": "noun → noun",
+              "count": 27,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "topic:morph-noun-to-noun-2",
-              "label": "noun → noun (2)",
-              "count": 9,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:morph-expr-to-adv-1",
-              "label": "expression → adverb (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:morph-expr-to-adv-2",
-              "label": "expression → adverb (2)",
-              "count": 6,
+              "collection": "topic:morph-expr-to-adv",
+              "label": "expression → adverb",
+              "count": 24,
               "confusion": false,
               "coreCount": 0
             },
@@ -7704,44 +5716,16 @@
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:vf-past-d-1",
-              "label": "regular /d/ (played) (1)",
-              "count": 18,
+              "collection": "topic:vf-past-d",
+              "label": "regular /d/ (played)",
+              "count": 42,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "topic:vf-past-d-2",
-              "label": "regular /d/ (played) (2)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:vf-past-d-3",
-              "label": "regular /d/ (played) (3)",
-              "count": 6,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:vf-cut-hit-hurt-1",
-              "label": "unchanged (cut) (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:vf-cut-hit-hurt-2",
-              "label": "unchanged (cut) (2)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:vf-cut-hit-hurt-3",
-              "label": "unchanged (cut) (3)",
-              "count": 10,
+              "collection": "topic:vf-cut-hit-hurt",
+              "label": "unchanged (cut)",
+              "count": 46,
               "confusion": false,
               "coreCount": 0
             },
@@ -8082,74 +6066,11 @@
               "coreCount": 0
             },
             {
-              "collection": "topic:vf-oneoff-1",
-              "label": "one-off (no rhyme partner) (1)",
-              "count": 18,
+              "collection": "topic:vf-oneoff",
+              "label": "one-off (no rhyme partner)",
+              "count": 179,
               "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:vf-oneoff-2",
-              "label": "one-off (no rhyme partner) (2)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:vf-oneoff-3",
-              "label": "one-off (no rhyme partner) (3)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:vf-oneoff-4",
-              "label": "one-off (no rhyme partner) (4)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:vf-oneoff-5",
-              "label": "one-off (no rhyme partner) (5)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:vf-oneoff-6",
-              "label": "one-off (no rhyme partner) (6)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:vf-oneoff-7",
-              "label": "one-off (no rhyme partner) (7)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:vf-oneoff-8",
-              "label": "one-off (no rhyme partner) (8)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:vf-oneoff-9",
-              "label": "one-off (no rhyme partner) (9)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:vf-oneoff-10",
-              "label": "one-off (no rhyme partner) (10)",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 1
+              "coreCount": 2
             }
           ]
         },
@@ -8193,72 +6114,23 @@
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:vp-full-inf-1",
-              "label": "verb + to + infinitive (want to go) (1)",
-              "count": 18,
+              "collection": "topic:vp-full-inf",
+              "label": "verb + to + infinitive (want to go)",
+              "count": 85,
               "confusion": false,
-              "coreCount": 4
+              "coreCount": 16
             },
             {
-              "collection": "topic:vp-full-inf-2",
-              "label": "verb + to + infinitive (want to go) (2)",
-              "count": 18,
+              "collection": "topic:vp-bare-inf",
+              "label": "verb + bare infinitive (let him go)",
+              "count": 52,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 17
             },
             {
-              "collection": "topic:vp-full-inf-3",
-              "label": "verb + to + infinitive (want to go) (3)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 4
-            },
-            {
-              "collection": "topic:vp-full-inf-4",
-              "label": "verb + to + infinitive (want to go) (4)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 4
-            },
-            {
-              "collection": "topic:vp-full-inf-5",
-              "label": "verb + to + infinitive (want to go) (5)",
-              "count": 13,
-              "confusion": false,
-              "coreCount": 3
-            },
-            {
-              "collection": "topic:vp-bare-inf-1",
-              "label": "verb + bare infinitive (let him go) (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 10
-            },
-            {
-              "collection": "topic:vp-bare-inf-2",
-              "label": "verb + bare infinitive (let him go) (2)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 5
-            },
-            {
-              "collection": "topic:vp-bare-inf-3",
-              "label": "verb + bare infinitive (let him go) (3)",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 2
-            },
-            {
-              "collection": "topic:vp-gerund-1",
-              "label": "verb + gerund (enjoy going) (1)",
-              "count": 18,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:vp-gerund-2",
-              "label": "verb + gerund (enjoy going) (2)",
-              "count": 10,
+              "collection": "topic:vp-gerund",
+              "label": "verb + gerund (enjoy going)",
+              "count": 28,
               "confusion": false,
               "coreCount": 1
             },
@@ -8291,18 +6163,11 @@
               "coreCount": 8
             },
             {
-              "collection": "topic:vp-obj-complement-1",
-              "label": "object + complement (make/expect somebody to go) (1)",
-              "count": 18,
+              "collection": "topic:vp-obj-complement",
+              "label": "object + complement (make/expect somebody to go)",
+              "count": 27,
               "confusion": false,
-              "coreCount": 4
-            },
-            {
-              "collection": "topic:vp-obj-complement-2",
-              "label": "object + complement (make/expect somebody to go) (2)",
-              "count": 9,
-              "confusion": false,
-              "coreCount": 2
+              "coreCount": 6
             },
             {
               "collection": "grammar:passive",

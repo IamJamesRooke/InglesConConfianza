@@ -43,7 +43,10 @@ justify it. Do **not** manufacture numbered `(1)/(2)/(3)` partitions for
 uniformity — those are a naming defect to fix (Batch 5), not a feature. The
 prior "subtopic-size rule" pass created many of them; where the split axis is
 arbitrary, merge back and let the group run large rather than keep a numbered
-partition.
+partition. **Retired 2026-09-07 (Batch 5, user sign-off):** all 435
+`topic:<stem>-<N>` numbered facet families merged to one `topic:<stem>` group.
+`canonicalFacetCollection()` in `navigation.ts` keeps pre-merge deep links
+resolving. Future work splits only on a meaningful seam, never for size.
 
 ## Naming
 

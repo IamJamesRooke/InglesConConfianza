@@ -1,6 +1,7 @@
 import { CurriculumTable } from "@/components/curriculum/curriculum-table";
 import { topicTitles } from "@/components/curriculum/topic-presentation";
 import {
+  canonicalFacetCollection,
   resolveCurriculumPath,
   type CurriculumNavigationFamilyWithCounts,
 } from "@/lib/curriculum/navigation";
@@ -32,6 +33,8 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
   const legacyFacets = (first(parameters.facets) ?? "")
     .split(",")
     .map((value) => value.trim())
+    .filter(Boolean)
+    .map((value) => canonicalFacetCollection(value))
     .filter((value) =>
       topic?.facetButtons.some((facet) => facet.collection === value),
     );
