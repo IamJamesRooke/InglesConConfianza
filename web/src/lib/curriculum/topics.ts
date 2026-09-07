@@ -311,6 +311,7 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       { collection: "topic:adj-ser-general", label: "ser, general", family: "Meaning & context" },
       { collection: "topic:estar-adj", label: "estar (state),", family: "Meaning & context" },
       { collection: "grammar:tener-adjective", label: "tener (idiom)", family: "How it's used" },
+      { collection: "grammar:adjective-position", label: "Word order & sentence frame", family: "How it's used" },
       { collection: "degree:comparative-er", label: "-er (harder)", family: "Comparisons" },
       { collection: "degree:superlative-est", label: "-est (hardest)", family: "Comparisons" },
       { collection: "degree:comparative-more", label: "more ___", family: "Comparisons" },
