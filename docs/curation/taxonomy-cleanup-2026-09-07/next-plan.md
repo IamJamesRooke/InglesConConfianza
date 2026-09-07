@@ -187,7 +187,7 @@ tightening.
 See the amendment above. Verbs base 1804 → 1599; the remainder bucket
 219 → 128; the empty "Formal Actions — Business & Process" button removed.
 
-### Batch 2b — Verbs: sort the 128-row remainder into themes
+### Batch 2b — Verbs: sort the 128-row remainder into themes — **DONE** (this commit)
 
 With the reference cognates gone, what is left in `topic:verb-formal-remainder`
 is ordinary everyday vocabulary that was never themed. This is now a

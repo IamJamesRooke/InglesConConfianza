@@ -313,6 +313,11 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
         family: "Modals, time & possibility",
       },
       {
+        collection: "topic:verb-depending-fitting",
+        label: "Depending, Fitting & Being Enough (depender, caber, bastar)",
+        family: "Modals, time & possibility",
+      },
+      {
         collection: "topic:verb-communication-talking",
         label: "Communication — Talking",
         family: "Communication",
@@ -600,11 +605,6 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       {
         collection: "topic:verb-formal-abstract",
         label: "Formal Actions — Abstract",
-        family: "Formal & specialized",
-      },
-      {
-        collection: "topic:verb-formal-remainder",
-        label: "Formal & Rare Verbs",
         family: "Formal & specialized",
       },
     ],

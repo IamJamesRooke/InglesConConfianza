@@ -719,7 +719,6 @@
         "pos:verb",
         "topic:verb-pattern",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:vp-full-inf"
       ],
       "curriculumRole": "trash"
@@ -758,8 +757,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:enmap-have"
+        "topic:enmap-have",
+        "topic:verb-eating-drinking"
       ],
       "curriculumRole": "supporting"
     },
@@ -17028,7 +17027,7 @@
         "pos:verb",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-following-continuing"
       ],
       "curriculumRole": "core"
     },
@@ -17050,8 +17049,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:map-de"
+        "topic:map-de",
+        "topic:verb-following-continuing"
       ],
       "curriculumRole": "supporting"
     },
@@ -17072,8 +17071,8 @@
         "topic:multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:map-de"
+        "topic:map-de",
+        "topic:verb-following-continuing"
       ],
       "curriculumRole": "supporting"
     },
@@ -17095,8 +17094,8 @@
         "topic:multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:map-de"
+        "topic:map-de",
+        "topic:verb-following-continuing"
       ],
       "curriculumRole": "reference"
     },
@@ -17117,8 +17116,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:part-up"
+        "topic:part-up",
+        "topic:verb-following-continuing"
       ],
       "curriculumRole": "supporting"
     },
@@ -17142,8 +17141,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:part-up"
+        "topic:part-up",
+        "topic:verb-following-continuing"
       ],
       "curriculumRole": "reference"
     },
@@ -17162,7 +17161,7 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-following-continuing"
       ],
       "curriculumRole": "reference"
     },
@@ -17186,9 +17185,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:part-out",
-        "topic:enmap-of"
+        "topic:enmap-of",
+        "topic:verb-following-continuing"
       ],
       "curriculumRole": "supporting"
     },
@@ -17211,9 +17210,9 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:phr-be",
-        "topic:enmap-be"
+        "topic:enmap-be",
+        "topic:verb-following-continuing"
       ],
       "curriculumRole": "supporting"
     },
@@ -17232,7 +17231,7 @@
         "en:end",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-following-continuing"
       ],
       "curriculumRole": "reference"
     },
@@ -17284,11 +17283,11 @@
         "topic:collocation",
         "coll:other",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:phr-put",
         "topic:part-to",
         "topic:enmap-to",
-        "topic:enmap-put"
+        "topic:enmap-put",
+        "topic:verb-following-continuing"
       ],
       "curriculumRole": "reference"
     },
@@ -17313,8 +17312,8 @@
         "en:do",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:enmap-with"
+        "topic:enmap-with",
+        "topic:verb-following-continuing"
       ],
       "curriculumRole": "reference"
     },
@@ -28291,7 +28290,7 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-giving-lending-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -28310,7 +28309,7 @@
         "en:manage",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-modal-ability"
       ],
       "curriculumRole": "reference"
     },
@@ -29614,7 +29613,7 @@
         "en:ship",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-giving-lending-other"
       ],
       "curriculumRole": "reference"
     },
@@ -29632,7 +29631,7 @@
         "en:forward",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-giving-lending-other"
       ],
       "curriculumRole": "reference"
     },
@@ -29649,7 +29648,7 @@
         "en:refer",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-giving-lending-other"
       ],
       "curriculumRole": "reference"
     },
@@ -29707,7 +29706,7 @@
         "en:achieve",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-possession-obtaining"
       ],
       "curriculumRole": "reference"
     },
@@ -29728,7 +29727,7 @@
         "topic:question-negation",
         "qn:modal-be-have-negation",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-modal-ability"
       ],
       "curriculumRole": "reference"
     },
@@ -29745,7 +29744,7 @@
         "en:secure",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-possession-obtaining"
       ],
       "curriculumRole": "reference"
     },
@@ -30879,7 +30878,7 @@
         "en:enough",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-depending-fitting"
       ],
       "curriculumRole": "reference"
     },
@@ -31820,9 +31819,9 @@
         "particle:on",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:part-on",
-        "topic:map-de"
+        "topic:map-de",
+        "topic:verb-depending-fitting"
       ],
       "curriculumRole": "reference"
     },
@@ -31844,9 +31843,9 @@
         "particle:on",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:part-on",
-        "topic:map-de"
+        "topic:map-de",
+        "topic:verb-depending-fitting"
       ],
       "curriculumRole": "reference"
     },
@@ -34863,7 +34862,7 @@
         "en:just",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-following-continuing"
       ],
       "curriculumRole": "reference"
     },
@@ -34963,9 +34962,9 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:part-up",
-        "topic:enmap-to"
+        "topic:enmap-to",
+        "topic:verb-social-relationships"
       ],
       "curriculumRole": "reference"
     },
@@ -35173,7 +35172,7 @@
         "topic:technology",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-technology-digital"
       ],
       "curriculumRole": "reference"
     },
@@ -35425,7 +35424,7 @@
         "en:cross",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-movement-arriving-passing"
       ],
       "curriculumRole": "reference"
     },
@@ -35528,9 +35527,9 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:part-to",
-        "topic:enmap-to"
+        "topic:enmap-to",
+        "topic:verb-deciding-considering"
       ],
       "curriculumRole": "reference"
     },
@@ -35597,9 +35596,9 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:part-for",
-        "topic:enmap-for"
+        "topic:enmap-for",
+        "topic:verb-analysis-investigation"
       ],
       "curriculumRole": "reference"
     },
@@ -36725,7 +36724,7 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-thinking-opinions"
       ],
       "curriculumRole": "reference"
     },
@@ -36792,7 +36791,7 @@
         "construction:prepositional-verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-feelings-dislike-worry"
       ],
       "curriculumRole": "reference"
     },
@@ -36861,7 +36860,7 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-possession-obtaining"
       ],
       "curriculumRole": "reference"
     },
@@ -36904,7 +36903,7 @@
         "topic:collocation",
         "coll:other",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-health-body"
       ],
       "curriculumRole": "reference"
     },
@@ -36945,8 +36944,8 @@
         "pos:verb",
         "topic:verb-pattern",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:vp-gerund"
+        "topic:vp-gerund",
+        "topic:verb-watching-other"
       ],
       "curriculumRole": "reference"
     },
@@ -37099,7 +37098,7 @@
         "en:clear",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-creation-repair-other"
       ],
       "curriculumRole": "reference"
     },
@@ -37119,7 +37118,7 @@
         "en:clear",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-money-commerce"
       ],
       "curriculumRole": "reference"
     },
@@ -38042,7 +38041,7 @@
         "en:offer",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-giving-lending-other"
       ],
       "curriculumRole": "reference"
     },
@@ -38087,9 +38086,9 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:part-for",
-        "topic:enmap-for"
+        "topic:enmap-for",
+        "topic:verb-giving-lending-other"
       ],
       "curriculumRole": "reference"
     },
@@ -38457,8 +38456,8 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:enmap-with"
+        "topic:enmap-with",
+        "topic:verb-communication-talking"
       ],
       "curriculumRole": "reference"
     },
@@ -38934,8 +38933,8 @@
         "es:aceptar",
         "en:accept",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-transparent"
+        "topic:cognate-transparent",
+        "topic:verb-deciding-considering"
       ],
       "curriculumRole": "supporting"
     },
@@ -38955,8 +38954,8 @@
         "es:adoptar",
         "en:adopt",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-transparent"
+        "topic:cognate-transparent",
+        "topic:verb-creation-repair-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -38976,8 +38975,8 @@
         "es:adaptar",
         "en:adapt",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-transparent"
+        "topic:cognate-transparent",
+        "topic:verb-creation-repair-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -39018,7 +39017,6 @@
         "es:interceptar",
         "en:intercept",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -39039,8 +39037,8 @@
         "es:cancelar",
         "en:cancel",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-transparent"
+        "topic:cognate-transparent",
+        "topic:verb-work-employment"
       ],
       "curriculumRole": "supporting"
     },
@@ -39082,8 +39080,8 @@
         "es:controlar",
         "en:control",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-transparent"
+        "topic:cognate-transparent",
+        "topic:verb-creation-repair-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -39124,8 +39122,8 @@
         "es:confirmar",
         "en:confirm",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-transparent"
+        "topic:cognate-transparent",
+        "topic:verb-communication-saying"
       ],
       "curriculumRole": "supporting"
     },
@@ -39208,7 +39206,6 @@
         "es:reformar",
         "en:reform",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -39229,7 +39226,6 @@
         "es:afirmar",
         "en:affirm",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -39272,7 +39268,6 @@
         "es:armar",
         "en:arm",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -39377,8 +39372,8 @@
         "es:insistir",
         "en:insist",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-transparent"
+        "topic:cognate-transparent",
+        "topic:verb-communication-saying"
       ],
       "curriculumRole": "supporting"
     },
@@ -39401,9 +39396,9 @@
         "particle:of",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
-        "topic:part-of"
+        "topic:part-of",
+        "topic:verb-keeping-storing"
       ],
       "curriculumRole": "supporting"
     },
@@ -39426,7 +39421,6 @@
         "particle:from",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
         "topic:part-from"
       ],
@@ -39469,8 +39463,8 @@
         "es:funcionar",
         "en:function",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-transparent"
+        "topic:cognate-transparent",
+        "topic:verb-technology-digital"
       ],
       "curriculumRole": "supporting"
     },
@@ -39553,7 +39547,6 @@
         "es:condicionar",
         "en:condition",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -39624,7 +39617,6 @@
         "cognate:mitir-to-mit",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -39696,7 +39688,6 @@
         "cognate:mitir-to-mit",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -39720,7 +39711,6 @@
         "cognate:mitir-to-mit",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -39795,10 +39785,10 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
         "topic:cognate-latin-root",
-        "topic:part-to"
+        "topic:part-to",
+        "topic:verb-communication-saying"
       ],
       "curriculumRole": "supporting"
     },
@@ -39917,7 +39907,6 @@
         "cognate:ferir-to-fer",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -39963,8 +39952,8 @@
         "es:presentar",
         "en:present",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-transparent"
+        "topic:cognate-transparent",
+        "topic:verb-work-employment"
       ],
       "curriculumRole": "supporting"
     },
@@ -39984,8 +39973,8 @@
         "es:representar",
         "en:represent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-transparent"
+        "topic:cognate-transparent",
+        "topic:verb-work-employment"
       ],
       "curriculumRole": "supporting"
     },
@@ -40005,8 +39994,8 @@
         "es:inventar",
         "en:invent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-transparent"
+        "topic:cognate-transparent",
+        "topic:verb-creation-repair-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -40047,7 +40036,6 @@
         "es:experimentar",
         "en:experiment",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -40110,7 +40098,6 @@
         "es:orientar",
         "en:orient",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -40131,8 +40118,8 @@
         "es:recomendar",
         "en:recommend",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-transparent"
+        "topic:cognate-transparent",
+        "topic:verb-deciding-considering"
       ],
       "curriculumRole": "supporting"
     },
@@ -40152,8 +40139,8 @@
         "es:depender",
         "en:depend",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-transparent"
+        "topic:cognate-transparent",
+        "topic:verb-depending-fitting"
       ],
       "curriculumRole": "supporting"
     },
@@ -40195,7 +40182,6 @@
         "es:suspender",
         "en:suspend",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -40259,7 +40245,6 @@
         "es:ascender",
         "en:ascend",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -40280,7 +40265,6 @@
         "es:descender",
         "en:descend",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -40301,7 +40285,6 @@
         "es:trascender",
         "en:transcend",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -40406,7 +40389,6 @@
         "es:deportar",
         "en:deport",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -40427,8 +40409,8 @@
         "es:responder",
         "en:respond",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-transparent"
+        "topic:cognate-transparent",
+        "topic:verb-communication-saying"
       ],
       "curriculumRole": "supporting"
     },
@@ -40491,8 +40473,8 @@
         "es:limitar",
         "en:limit",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-transparent"
+        "topic:cognate-transparent",
+        "topic:verb-creation-repair-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -40512,7 +40494,6 @@
         "es:acreditar",
         "en:credit",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -40554,8 +40535,8 @@
         "es:editar",
         "en:edit",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-transparent"
+        "topic:cognate-transparent",
+        "topic:verb-creation-repair-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -40575,7 +40556,6 @@
         "es:auditar",
         "en:audit",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -51023,8 +51003,8 @@
         "cognate:plicar-to-ply",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-latin-root"
+        "topic:cognate-latin-root",
+        "topic:verb-work-employment"
       ],
       "curriculumRole": "supporting"
     },
@@ -51090,9 +51070,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
-        "topic:cognate-latin-root"
+        "topic:cognate-latin-root",
+        "topic:verb-creation-repair-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -51203,7 +51183,6 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -51226,7 +51205,6 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -51249,7 +51227,6 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -51272,7 +51249,6 @@
         "cognate:tribuir-to-tribute",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -51294,9 +51270,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
-        "topic:cognate-latin-root"
+        "topic:cognate-latin-root",
+        "topic:verb-creation-repair-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -51383,7 +51359,6 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -51406,7 +51381,6 @@
         "cognate:ar-to-ate",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -51451,8 +51425,8 @@
         "cognate:ar-to-ate",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-transparent"
+        "topic:cognate-transparent",
+        "topic:verb-social-relationships"
       ],
       "curriculumRole": "supporting"
     },
@@ -51473,8 +51447,8 @@
         "cognate:ar-to-ate",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-transparent"
+        "topic:cognate-transparent",
+        "topic:verb-social-relationships"
       ],
       "curriculumRole": "supporting"
     },
@@ -51495,7 +51469,6 @@
         "cognate:ar-to-ate",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -51517,7 +51490,6 @@
         "cognate:ar-to-ate",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -51562,7 +51534,6 @@
         "cognate:ar-to-ate",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -51630,7 +51601,6 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -51677,7 +51647,6 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -51746,7 +51715,6 @@
         "cognate:inar-to-ine",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -51790,7 +51758,6 @@
         "cognate:inar-to-ine",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -51900,7 +51867,6 @@
         "cognate:inar-to-ine",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -51922,7 +51888,6 @@
         "cognate:inar-to-ine",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -51966,7 +51931,6 @@
         "cognate:escribir-to-scribe",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -52101,7 +52065,6 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -52124,8 +52087,8 @@
         "cognate:ificar-to-ify",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-transparent"
+        "topic:cognate-transparent",
+        "topic:verb-thinking-opinions"
       ],
       "curriculumRole": "supporting"
     },
@@ -52191,7 +52154,6 @@
         "cognate:ificar-to-ify",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -52257,7 +52219,6 @@
         "cognate:ificar-to-ify",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -52301,7 +52262,6 @@
         "cognate:ificar-to-ify",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -52323,7 +52283,6 @@
         "cognate:ificar-to-ify",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -52345,9 +52304,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
-        "topic:cognate-latin-root"
+        "topic:cognate-latin-root",
+        "topic:verb-analysis-investigation"
       ],
       "curriculumRole": "supporting"
     },
@@ -52368,9 +52327,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
-        "topic:cognate-latin-root"
+        "topic:cognate-latin-root",
+        "topic:verb-analysis-investigation"
       ],
       "curriculumRole": "supporting"
     },
@@ -52414,7 +52373,6 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -52437,7 +52395,6 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -52460,8 +52417,8 @@
         "cognate:cluir-to-clude",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-latin-root"
+        "topic:cognate-latin-root",
+        "topic:verb-keeping-storing"
       ],
       "curriculumRole": "supporting"
     },
@@ -52482,7 +52439,6 @@
         "cognate:cluir-to-clude",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -52530,7 +52486,6 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
         "topic:cognate-latin-root",
         "topic:part-to"
@@ -52554,7 +52509,6 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -52623,8 +52577,8 @@
         "cognate:ducir-to-duce",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-latin-root"
+        "topic:cognate-latin-root",
+        "topic:verb-communication-saying"
       ],
       "curriculumRole": "supporting"
     },
@@ -52645,8 +52599,8 @@
         "cognate:ducir-to-duce",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-latin-root"
+        "topic:cognate-latin-root",
+        "topic:verb-creation-repair-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -52711,7 +52665,6 @@
         "cognate:ducir-to-duce",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -52733,7 +52686,6 @@
         "cognate:ducir-to-duce",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -52755,7 +52707,6 @@
         "cognate:ducir-to-duce",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -52867,7 +52818,6 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -52979,8 +52929,8 @@
         "cognate:servar-to-serve",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-latin-root"
+        "topic:cognate-latin-root",
+        "topic:verb-work-employment"
       ],
       "curriculumRole": "supporting"
     },
@@ -53001,8 +52951,8 @@
         "cognate:izar-to-ize",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-transparent"
+        "topic:cognate-transparent",
+        "topic:verb-work-employment"
       ],
       "curriculumRole": "supporting"
     },
@@ -53133,7 +53083,6 @@
         "cognate:izar-to-ize",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -53199,7 +53148,6 @@
         "cognate:izar-to-ize",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -53221,9 +53169,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
-        "topic:cognate-latin-root"
+        "topic:cognate-latin-root",
+        "topic:verb-daily-routine"
       ],
       "curriculumRole": "supporting"
     },
@@ -53358,7 +53306,6 @@
         "cognate:hibir-to-hibit",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -53380,8 +53327,8 @@
         "cognate:cibir-to-ceive",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-latin-root"
+        "topic:cognate-latin-root",
+        "topic:verb-possession-obtaining"
       ],
       "curriculumRole": "supporting"
     },
@@ -53446,8 +53393,8 @@
         "cognate:solver-to-solve",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-latin-root"
+        "topic:cognate-latin-root",
+        "topic:verb-creation-repair-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -53490,7 +53437,6 @@
         "cognate:solver-to-solve",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -53584,7 +53530,6 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
         "topic:cognate-latin-root",
         "topic:part-of"
@@ -53608,8 +53553,8 @@
         "cognate:gerir-to-gest",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-latin-root"
+        "topic:cognate-latin-root",
+        "topic:verb-deciding-considering"
       ],
       "curriculumRole": "supporting"
     },
@@ -53674,8 +53619,8 @@
         "cognate:traer-to-tract",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-latin-root"
+        "topic:cognate-latin-root",
+        "topic:verb-feelings-love-like"
       ],
       "curriculumRole": "supporting"
     },
@@ -53741,7 +53686,6 @@
         "cognate:traer-to-tract",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -53763,7 +53707,6 @@
         "cognate:traer-to-tract",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -53785,9 +53728,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
-        "topic:cognate-latin-root"
+        "topic:cognate-latin-root",
+        "topic:verb-communication-talking"
       ],
       "curriculumRole": "supporting"
     },
@@ -53808,7 +53751,6 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -53831,9 +53773,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
-        "topic:cognate-latin-root"
+        "topic:cognate-latin-root",
+        "topic:verb-creation-hacer"
       ],
       "curriculumRole": "supporting"
     },
@@ -53854,9 +53796,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
-        "topic:cognate-latin-root"
+        "topic:cognate-latin-root",
+        "topic:verb-feelings-general"
       ],
       "curriculumRole": "supporting"
     },
@@ -53924,7 +53866,6 @@
         "cognate:hender-to-hend",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -53968,7 +53909,6 @@
         "cognate:primir-to-press",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -53990,7 +53930,6 @@
         "cognate:primir-to-press",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -54059,7 +53998,6 @@
         "cognate:ceder-to-cede",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -54174,7 +54112,6 @@
         "cognate:vertir-to-vert",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -54196,9 +54133,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
-        "topic:cognate-latin-root"
+        "topic:cognate-latin-root",
+        "topic:verb-creation-repair-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -54219,9 +54156,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
-        "topic:cognate-latin-root"
+        "topic:cognate-latin-root",
+        "topic:verb-work-employment"
       ],
       "curriculumRole": "supporting"
     },
@@ -54265,9 +54202,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
-        "topic:cognate-latin-root"
+        "topic:cognate-latin-root",
+        "topic:verb-conflict-crime"
       ],
       "curriculumRole": "supporting"
     },
@@ -54288,7 +54225,6 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -54311,9 +54247,9 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
-        "topic:cognate-latin-root"
+        "topic:cognate-latin-root",
+        "topic:verb-creation-repair-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -54358,7 +54294,6 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -54381,7 +54316,6 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -54496,7 +54430,6 @@
         "cognate:struir-to-struct",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -54518,7 +54451,6 @@
         "cognate:struir-to-struct",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -54584,7 +54516,6 @@
         "cognate:tener-to-tain",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -54606,8 +54537,8 @@
         "cognate:tener-to-tain",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-latin-root"
+        "topic:cognate-latin-root",
+        "topic:verb-keeping-storing"
       ],
       "curriculumRole": "supporting"
     },
@@ -54628,7 +54559,6 @@
         "cognate:tener-to-tain",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -54715,7 +54645,6 @@
         "cognate:tener-to-tain",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -54737,8 +54666,8 @@
         "cognate:currir-to-cur",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-latin-root"
+        "topic:cognate-latin-root",
+        "topic:verb-tobe-existence-hay"
       ],
       "curriculumRole": "supporting"
     },
@@ -54759,7 +54688,6 @@
         "cognate:currir-to-cur",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -54871,7 +54799,6 @@
         "cognate:poner-to-pose",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -54915,7 +54842,6 @@
         "cognate:poner-to-pose",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -54937,7 +54863,6 @@
         "cognate:poner-to-pose",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -54959,7 +54884,6 @@
         "cognate:poner-to-pose",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -55241,8 +55165,8 @@
         "es:admirar",
         "en:admire",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-opaque"
+        "topic:cognate-opaque",
+        "topic:verb-feelings-love-like"
       ],
       "curriculumRole": "supporting"
     },
@@ -55262,8 +55186,8 @@
         "es:inspirar",
         "en:inspire",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-opaque"
+        "topic:cognate-opaque",
+        "topic:verb-feelings-general"
       ],
       "curriculumRole": "supporting"
     },
@@ -55371,7 +55295,6 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-opaque",
         "topic:part-to"
       ],
@@ -55393,7 +55316,6 @@
         "es:conspirar",
         "en:conspire",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-opaque"
       ],
       "curriculumRole": "reference"
@@ -55540,7 +55462,6 @@
         "es:abolir",
         "en:abolish",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-opaque"
       ],
       "curriculumRole": "reference"
@@ -55603,7 +55524,6 @@
         "es:extinguir",
         "en:extinguish",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-opaque"
       ],
       "curriculumRole": "reference"
@@ -55666,7 +55586,6 @@
         "es:florecer",
         "en:flourish",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-opaque"
       ],
       "curriculumRole": "reference"
@@ -55687,8 +55606,8 @@
         "es:publicar",
         "en:publish",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-opaque"
+        "topic:cognate-opaque",
+        "topic:verb-work-employment"
       ],
       "curriculumRole": "supporting"
     },
@@ -55747,7 +55666,6 @@
         "es:espiar",
         "en:spy",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-opaque"
       ],
       "curriculumRole": "reference"
@@ -55830,8 +55748,8 @@
         "es:liberar",
         "en:release",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-opaque"
+        "topic:cognate-opaque",
+        "topic:verb-creation-repair-other"
       ],
       "curriculumRole": "supporting"
     },
@@ -55851,7 +55769,6 @@
         "es:cesar",
         "en:cease",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-opaque"
       ],
       "curriculumRole": "reference"
@@ -55914,8 +55831,8 @@
         "es:prometer",
         "en:promise",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-opaque"
+        "topic:cognate-opaque",
+        "topic:verb-communication-saying"
       ],
       "curriculumRole": "supporting"
     },
@@ -55935,7 +55852,6 @@
         "es:sacrificar",
         "en:sacrifice",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-opaque"
       ],
       "curriculumRole": "reference"
@@ -55999,7 +55915,6 @@
         "es:disminuir",
         "en:diminish",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-opaque"
       ],
       "curriculumRole": "reference"
@@ -56020,7 +55935,6 @@
         "es:barnizar",
         "en:varnish",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-opaque"
       ],
       "curriculumRole": "reference"
@@ -56063,8 +55977,8 @@
         "es:excusar",
         "en:excuse",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-opaque"
+        "topic:cognate-opaque",
+        "topic:verb-social-relationships"
       ],
       "curriculumRole": "supporting"
     },
@@ -56105,8 +56019,8 @@
         "es:confundir",
         "en:confuse",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:cognate-opaque"
+        "topic:cognate-opaque",
+        "topic:verb-thinking-opinions"
       ],
       "curriculumRole": "supporting"
     },
@@ -56126,7 +56040,6 @@
         "es:rehusar",
         "en:refuse",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-opaque"
       ],
       "curriculumRole": "reference"
@@ -56147,7 +56060,6 @@
         "es:abusar",
         "en:abuse",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-opaque"
       ],
       "curriculumRole": "reference"
@@ -56425,7 +56337,6 @@
         "cognate:struir-to-struct",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -56468,7 +56379,6 @@
         "es:rechazar",
         "en:refuse",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:cognate-opaque"
       ],
       "curriculumRole": "reference"
@@ -61820,7 +61730,7 @@
         "es:caber",
         "en:fit",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-depending-fitting"
       ],
       "curriculumRole": "reference"
     },
@@ -61838,8 +61748,8 @@
         "en:for",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:enmap-for"
+        "topic:enmap-for",
+        "topic:verb-depending-fitting"
       ],
       "curriculumRole": "reference"
     },
@@ -61857,8 +61767,8 @@
         "en:for",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:enmap-for"
+        "topic:enmap-for",
+        "topic:verb-depending-fitting"
       ],
       "curriculumRole": "reference"
     },
@@ -61876,8 +61786,8 @@
         "en:for",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:enmap-for"
+        "topic:enmap-for",
+        "topic:verb-depending-fitting"
       ],
       "curriculumRole": "reference"
     },
@@ -63413,7 +63323,7 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-social-relationships"
       ],
       "curriculumRole": "reference"
     },
@@ -63430,7 +63340,7 @@
         "es:encontrar",
         "en:find",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-thinking-opinions"
       ],
       "curriculumRole": "reference"
     },
@@ -63452,10 +63362,10 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:phr-be",
         "topic:part-in",
-        "topic:enmap-be"
+        "topic:enmap-be",
+        "topic:verb-estar-idioms"
       ],
       "curriculumRole": "reference"
     },
@@ -63473,7 +63383,7 @@
         "en:feel",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-feelings-general"
       ],
       "curriculumRole": "reference"
     },
@@ -64087,7 +63997,7 @@
         "en:show",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-communication-saying"
       ],
       "curriculumRole": "supporting"
     },
@@ -64104,7 +64014,7 @@
         "es:mostrar",
         "en:display",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-communication-saying"
       ],
       "curriculumRole": "reference"
     },
@@ -64121,7 +64031,7 @@
         "es:mostrar",
         "en:demonstrate",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-communication-saying"
       ],
       "curriculumRole": "reference"
     },
@@ -64138,7 +64048,7 @@
         "es:mostrar",
         "en:reveal",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-communication-saying"
       ],
       "curriculumRole": "reference"
     },
@@ -65459,7 +65369,7 @@
         "en:run",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-work-employment"
       ],
       "curriculumRole": "reference"
     },
@@ -65476,7 +65386,7 @@
         "es:dirigir",
         "en:lead",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-work-employment"
       ],
       "curriculumRole": "reference"
     },
@@ -65498,9 +65408,9 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:part-to",
-        "topic:enmap-to"
+        "topic:enmap-to",
+        "topic:verb-communication-saying"
       ],
       "curriculumRole": "reference"
     },
@@ -65520,7 +65430,7 @@
         "particle:toward",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-movement-directional-verbs"
       ],
       "curriculumRole": "reference"
     },
@@ -65983,7 +65893,7 @@
         "es:salvar",
         "en:save",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-loss-death"
       ],
       "curriculumRole": "reference"
     },
@@ -66000,7 +65910,7 @@
         "es:salvar",
         "en:save",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-loss-death"
       ],
       "curriculumRole": "reference"
     },
@@ -66017,7 +65927,7 @@
         "es:salvar",
         "en:overcome",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-modal-ability"
       ],
       "curriculumRole": "reference"
     },
@@ -66034,7 +65944,7 @@
         "es:salvar",
         "en:rescue",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-possession-obtaining"
       ],
       "curriculumRole": "reference"
     },
@@ -74558,8 +74468,8 @@
         "pos:verb",
         "topic:verb-pattern",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:vp-full-inf"
+        "topic:vp-full-inf",
+        "topic:verb-modal-ability"
       ],
       "curriculumRole": "supporting"
     },
@@ -74796,8 +74706,8 @@
         "pos:verb",
         "topic:verb-pattern",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:vp-full-inf"
+        "topic:vp-full-inf",
+        "topic:verb-feelings-dislike-worry"
       ],
       "curriculumRole": "supporting"
     },
@@ -74819,8 +74729,8 @@
         "pos:verb",
         "topic:verb-pattern",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:vp-gerund"
+        "topic:vp-gerund",
+        "topic:verb-feelings-dislike-worry"
       ],
       "curriculumRole": "supporting"
     },
@@ -75087,9 +74997,9 @@
         "pos:verb",
         "topic:verb-pattern",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:vp-bare-inf",
-        "topic:enmap-make"
+        "topic:enmap-make",
+        "topic:verb-asking-requesting"
       ],
       "curriculumRole": "supporting"
     },
@@ -75905,8 +75815,8 @@
         "pos:verb",
         "topic:verb-pattern",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:vp-gerund"
+        "topic:vp-gerund",
+        "topic:verb-deciding-considering"
       ],
       "curriculumRole": "supporting"
     },
@@ -75927,8 +75837,8 @@
         "pos:verb",
         "topic:verb-pattern",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:vp-gerund"
+        "topic:vp-gerund",
+        "topic:verb-feelings-love-like"
       ],
       "curriculumRole": "reference"
     },
@@ -75949,8 +75859,8 @@
         "pos:verb",
         "topic:verb-pattern",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:vp-gerund"
+        "topic:vp-gerund",
+        "topic:verb-deciding-considering"
       ],
       "curriculumRole": "reference"
     },
@@ -75971,8 +75881,8 @@
         "pos:verb",
         "topic:verb-pattern",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:vp-gerund"
+        "topic:vp-gerund",
+        "topic:verb-deciding-considering"
       ],
       "curriculumRole": "reference"
     },
@@ -76478,11 +76388,9 @@
         "form:third-person",
         "es:tratar",
         "en:try",
-        "pos:verb",
-        "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "j65rseyqdu",
@@ -77029,11 +76937,9 @@
         "form:third-person",
         "es:intentar",
         "en:try",
-        "pos:verb",
-        "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "audit:reviewed"
       ],
-      "curriculumRole": "reference"
+      "curriculumRole": "trash"
     },
     {
       "id": "obwi9y9vbu",
@@ -79037,10 +78943,8 @@
         "grammar:contraction",
         "construction:followed-by-bare-infinitive",
         "en:doesn't",
-        "pos:verb",
         "topic:verb-pattern",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:vp-bare-inf"
       ],
       "curriculumRole": "core"
@@ -79061,10 +78965,8 @@
         "grammar:contraction",
         "construction:followed-by-bare-infinitive",
         "en:didn't",
-        "pos:verb",
         "topic:verb-pattern",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
         "topic:vp-bare-inf"
       ],
       "curriculumRole": "core"
@@ -79863,8 +79765,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:part-off"
+        "topic:part-off",
+        "topic:verb-poner-turning-on"
       ],
       "curriculumRole": "supporting"
     },
@@ -79912,8 +79814,8 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder",
-        "topic:part-up"
+        "topic:part-up",
+        "topic:verb-household"
       ],
       "curriculumRole": "supporting"
     },
@@ -79937,7 +79839,7 @@
         "particle:after",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-daily-routine"
       ],
       "curriculumRole": "supporting"
     },
@@ -79960,7 +79862,7 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-remainder"
+        "topic:verb-movement-arriving-passing"
       ],
       "curriculumRole": "reference"
     },
@@ -81554,8 +81456,7 @@
         "es:necesitar",
         "en:need",
         "pos:verb",
-        "audit:flagged",
-        "topic:verb-formal-remainder"
+        "audit:flagged"
       ],
       "curriculumRole": "trash"
     },

@@ -142,7 +142,7 @@ const EXPECTED_FAMILY_STRUCTURE: Record<string, Array<[string, number]>> = {
   interrogatives: [["Question-word roles", 3]],
   verbs: [
     ["Being & existence", 5],
-    ["Modals, time & possibility", 7],
+    ["Modals, time & possibility", 8],
     ["Communication", 7],
     ["Thinking & learning", 5],
     ["Perception & feelings", 6],
@@ -151,7 +151,7 @@ const EXPECTED_FAMILY_STRUCTURE: Record<string, Array<[string, number]>> = {
     ["Daily life & work", 5],
     ["Making, changing & home", 6],
     ["Social life & conflict", 3],
-    ["Formal & specialized", 7],
+    ["Formal & specialized", 6],
   ],
   cognates: [
     ["-ar verb cognates (preparAR → prepare)", 6],

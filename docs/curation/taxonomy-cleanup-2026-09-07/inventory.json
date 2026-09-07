@@ -1,14 +1,14 @@
 {
   "summary": {
-    "generatedAt": "2026-09-07T18:37:56.066Z",
+    "generatedAt": "2026-09-07T18:54:41.119Z",
     "totals": {
       "allConcepts": 4448,
-      "nonTrash": 4218,
+      "nonTrash": 4216,
       "byRole": {
         "core": 309,
         "supporting": 1111,
-        "reference": 2798,
-        "trash": 230
+        "reference": 2796,
+        "trash": 232
       }
     },
     "globalOrphanCount": 0,
@@ -40,10 +40,10 @@
       },
       {
         "slug": "verbs",
-        "baseCount": 1599,
-        "reachableCount": 1599,
+        "baseCount": 1595,
+        "reachableCount": 1595,
         "withinTopicGapCount": 0,
-        "emptyGroupCount": 1,
+        "emptyGroupCount": 0,
         "confusionGroupCount": 0
       },
       {
@@ -530,8 +530,8 @@
       "slug": "verbs",
       "title": "Verbs",
       "baseCollection": "pos:verb",
-      "baseCount": 1599,
-      "reachableCount": 1599,
+      "baseCount": 1595,
+      "reachableCount": 1595,
       "withinTopicGapCount": 0,
       "withinTopicGapIds": [],
       "families": [
@@ -564,14 +564,14 @@
             {
               "collection": "topic:verb-estar-idioms",
               "label": "To Be (estar) — Idioms & Uses",
-              "count": 47,
+              "count": 48,
               "confusion": false,
               "coreCount": 4
             },
             {
               "collection": "topic:verb-tobe-existence-hay",
               "label": "There Is/Are (hay)",
-              "count": 19,
+              "count": 20,
               "confusion": false,
               "coreCount": 6
             }
@@ -592,7 +592,7 @@
             {
               "collection": "topic:verb-modal-ability",
               "label": "Modals — Ability & Permission",
-              "count": 38,
+              "count": 42,
               "confusion": false,
               "coreCount": 6
             },
@@ -630,6 +630,13 @@
               "count": 11,
               "confusion": false,
               "coreCount": 2
+            },
+            {
+              "collection": "topic:verb-depending-fitting",
+              "label": "Depending, Fitting & Being Enough (depender, caber, bastar)",
+              "count": 8,
+              "confusion": false,
+              "coreCount": 0
             }
           ]
         },
@@ -641,14 +648,14 @@
             {
               "collection": "topic:verb-communication-talking",
               "label": "Communication — Talking",
-              "count": 23,
+              "count": 25,
               "confusion": false,
               "coreCount": 2
             },
             {
               "collection": "topic:verb-communication-saying",
               "label": "Communication — Saying & Telling",
-              "count": 20,
+              "count": 31,
               "confusion": false,
               "coreCount": 5
             },
@@ -676,7 +683,7 @@
             {
               "collection": "topic:verb-asking-requesting",
               "label": "Asking & Requesting",
-              "count": 26,
+              "count": 27,
               "confusion": false,
               "coreCount": 3
             },
@@ -697,14 +704,14 @@
             {
               "collection": "topic:verb-thinking-opinions",
               "label": "Thinking & Opinions",
-              "count": 20,
+              "count": 24,
               "confusion": false,
               "coreCount": 3
             },
             {
               "collection": "topic:verb-deciding-considering",
               "label": "Deciding & Considering",
-              "count": 21,
+              "count": 28,
               "confusion": false,
               "coreCount": 0
             },
@@ -746,7 +753,7 @@
             {
               "collection": "topic:verb-watching-other",
               "label": "Watching & Observing",
-              "count": 27,
+              "count": 28,
               "confusion": false,
               "coreCount": 1
             },
@@ -760,21 +767,21 @@
             {
               "collection": "topic:verb-feelings-general",
               "label": "Feelings & Sensations",
-              "count": 16,
+              "count": 19,
               "confusion": false,
               "coreCount": 0
             },
             {
               "collection": "topic:verb-feelings-love-like",
               "label": "Feelings — Love & Liking",
-              "count": 13,
+              "count": 16,
               "confusion": false,
               "coreCount": 6
             },
             {
               "collection": "topic:verb-feelings-dislike-worry",
               "label": "Feelings — Dislike, Worry & Missing",
-              "count": 15,
+              "count": 18,
               "confusion": false,
               "coreCount": 0
             }
@@ -802,7 +809,7 @@
             {
               "collection": "topic:verb-movement-arriving-passing",
               "label": "Movement — Arriving & Passing",
-              "count": 26,
+              "count": 28,
               "confusion": false,
               "coreCount": 2
             },
@@ -816,7 +823,7 @@
             {
               "collection": "topic:verb-movement-directional-verbs",
               "label": "Movement — Return & Direction",
-              "count": 22,
+              "count": 23,
               "confusion": false,
               "coreCount": 2
             },
@@ -837,9 +844,9 @@
             {
               "collection": "topic:verb-following-continuing",
               "label": "Following & Continuing",
-              "count": 21,
+              "count": 34,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 2
             }
           ]
         },
@@ -858,7 +865,7 @@
             {
               "collection": "topic:verb-possession-obtaining",
               "label": "Getting & Obtaining",
-              "count": 22,
+              "count": 27,
               "confusion": false,
               "coreCount": 3
             },
@@ -886,7 +893,7 @@
             {
               "collection": "topic:verb-giving-lending-other",
               "label": "Giving & Lending — Other Verbs",
-              "count": 14,
+              "count": 20,
               "confusion": false,
               "coreCount": 0
             },
@@ -907,7 +914,7 @@
             {
               "collection": "topic:verb-keeping-storing",
               "label": "Keeping & Storing",
-              "count": 31,
+              "count": 34,
               "confusion": false,
               "coreCount": 3
             },
@@ -942,21 +949,21 @@
             {
               "collection": "topic:verb-eating-drinking",
               "label": "Eating & Drinking",
-              "count": 25,
+              "count": 26,
               "confusion": false,
               "coreCount": 1
             },
             {
               "collection": "topic:verb-daily-routine",
               "label": "Daily Routine & Self-care",
-              "count": 20,
+              "count": 22,
               "confusion": false,
               "coreCount": 1
             },
             {
               "collection": "topic:verb-work-employment",
               "label": "Work & Employment",
-              "count": 21,
+              "count": 31,
               "confusion": false,
               "coreCount": 1
             },
@@ -970,7 +977,7 @@
             {
               "collection": "topic:verb-money-commerce",
               "label": "Money — Buying & Selling",
-              "count": 33,
+              "count": 34,
               "confusion": false,
               "coreCount": 2
             }
@@ -984,14 +991,14 @@
             {
               "collection": "topic:verb-creation-hacer",
               "label": "Making & Doing (hacer)",
-              "count": 30,
+              "count": 31,
               "confusion": false,
               "coreCount": 11
             },
             {
               "collection": "topic:verb-creation-repair-other",
               "label": "Creating, Fixing & Changing",
-              "count": 23,
+              "count": 37,
               "confusion": false,
               "coreCount": 0
             },
@@ -1005,7 +1012,7 @@
             {
               "collection": "topic:verb-poner-turning-on",
               "label": "Turning On/Off (poner)",
-              "count": 3,
+              "count": 4,
               "confusion": false,
               "coreCount": 0
             },
@@ -1019,7 +1026,7 @@
             {
               "collection": "topic:verb-household",
               "label": "Household & Objects",
-              "count": 42,
+              "count": 43,
               "confusion": false,
               "coreCount": 1
             }
@@ -1033,21 +1040,21 @@
             {
               "collection": "topic:verb-social-relationships",
               "label": "Social Interaction & Relationships",
-              "count": 25,
+              "count": 30,
               "confusion": false,
               "coreCount": 0
             },
             {
               "collection": "topic:verb-conflict-crime",
               "label": "Conflict & Crime",
-              "count": 26,
+              "count": 27,
               "confusion": false,
               "coreCount": 0
             },
             {
               "collection": "topic:verb-loss-death",
               "label": "Loss & Death",
-              "count": 12,
+              "count": 14,
               "confusion": false,
               "coreCount": 1
             }
@@ -1068,14 +1075,14 @@
             {
               "collection": "topic:verb-analysis-investigation",
               "label": "Analysis & Investigation",
-              "count": 8,
+              "count": 11,
               "confusion": false,
               "coreCount": 0
             },
             {
               "collection": "topic:verb-technology-digital",
               "label": "Technology & Digital Actions",
-              "count": 2,
+              "count": 4,
               "confusion": false,
               "coreCount": 0
             },
@@ -1089,7 +1096,7 @@
             {
               "collection": "topic:verb-health-body",
               "label": "Body & Health",
-              "count": 10,
+              "count": 11,
               "confusion": false,
               "coreCount": 0
             },
@@ -1099,27 +1106,11 @@
               "count": 4,
               "confusion": false,
               "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-formal-business",
-              "label": "Formal Actions — Business & Process",
-              "count": 0,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-formal-remainder",
-              "label": "Formal & Rare Verbs",
-              "count": 128,
-              "confusion": false,
-              "coreCount": 3
             }
           ]
         }
       ],
-      "emptyGroups": [
-        "topic:verb-formal-business"
-      ],
+      "emptyGroups": [],
       "confusionGroups": []
     },
     {
@@ -1132,77 +1123,224 @@
       "withinTopicGapIds": [],
       "families": [
         {
-          "id": "spelling-patterns",
-          "label": "Spelling patterns",
+          "id": "ar-verb-cognates-preparar-prepare",
+          "label": "-ar verb cognates (preparAR → prepare)",
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:cognate-transparent",
-              "label": "Identical / transparent",
-              "count": 367,
+              "collection": "cognate:izar-to-ize",
+              "label": "-izar → -ize",
+              "count": 12,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "topic:cognate-opaque",
-              "label": "Looks different",
-              "count": 64,
-              "confusion": false,
-              "coreCount": 4
-            },
-            {
-              "collection": "cognate:able-to-able",
-              "label": "-able → -able",
-              "count": 11,
+              "collection": "cognate:ar-to-ate",
+              "label": "-ar → -ate",
+              "count": 10,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "cognate:acto-to-act",
-              "label": "-acto → -act",
-              "count": 7,
+              "collection": "cognate:ificar-to-ify",
+              "label": "-ificar → -ify",
+              "count": 10,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "cognate:al-to-al",
-              "label": "-al → -al",
-              "count": 15,
+              "collection": "cognate:inar-to-ine",
+              "label": "-inar → -ine",
+              "count": 9,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "cognate:ando-to-ing",
-              "label": "-ando → -ing",
+              "collection": "cognate:servar-to-serve",
+              "label": "servar → -serve",
+              "count": 4,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "cognate:plicar-to-ply",
+              "label": "plicar → -ply",
+              "count": 4,
+              "confusion": false,
+              "coreCount": 0
+            }
+          ]
+        },
+        {
+          "id": "er-verb-cognates-defender-defend",
+          "label": "-er verb cognates (defendER → defend)",
+          "confusion": false,
+          "groups": [
+            {
+              "collection": "cognate:tener-to-tain",
+              "label": "tener → -tain",
+              "count": 9,
+              "confusion": false,
+              "coreCount": 1
+            },
+            {
+              "collection": "cognate:poner-to-pose",
+              "label": "poner → -pose",
+              "count": 10,
+              "confusion": false,
+              "coreCount": 1
+            },
+            {
+              "collection": "cognate:traer-to-tract",
+              "label": "traer → -tract",
               "count": 6,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             },
             {
-              "collection": "cognate:ante-to-ant",
-              "label": "-ante → -ant",
-              "count": 11,
+              "collection": "cognate:ceder-to-cede",
+              "label": "ceder → -cede",
+              "count": 4,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "cognate:anza-to-ance",
-              "label": "-anza → -ance",
-              "count": 6,
+              "collection": "cognate:solver-to-solve",
+              "label": "solver → -solve",
+              "count": 3,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "cognate:ar-to-ar",
-              "label": "-ar → -ar",
+              "collection": "cognate:hender-to-hend",
+              "label": "hender/prender → -hend",
+              "count": 2,
+              "confusion": false,
+              "coreCount": 0
+            }
+          ]
+        },
+        {
+          "id": "ir-verb-cognates-decidir-decide",
+          "label": "-ir verb cognates (decidIR → decide)",
+          "confusion": false,
+          "groups": [
+            {
+              "collection": "cognate:ir-to-silent-e",
+              "label": "-ir → silent -e",
+              "count": 3,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "cognate:mitir-to-mit",
+              "label": "mitir/meter → -mit",
               "count": 8,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "cognate:ario-to-ary",
-              "label": "-ario → -ary",
-              "count": 10,
+              "collection": "cognate:ferir-to-fer",
+              "label": "ferir/frir → -fer",
+              "count": 8,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "cognate:ducir-to-duce",
+              "label": "ducir → -duce",
+              "count": 7,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "cognate:tribuir-to-tribute",
+              "label": "tribuir → -tribute",
+              "count": 3,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "cognate:struir-to-struct",
+              "label": "struir → -struct",
+              "count": 6,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "cognate:escribir-to-scribe",
+              "label": "escribir → -scribe",
+              "count": 5,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "cognate:cluir-to-clude",
+              "label": "cluir → -clude",
+              "count": 3,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "cognate:decir-to-dict",
+              "label": "decir → -dict",
+              "count": 5,
+              "confusion": false,
+              "coreCount": 1
+            },
+            {
+              "collection": "cognate:primir-to-press",
+              "label": "primir/presar → -press",
+              "count": 4,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "cognate:vertir-to-vert",
+              "label": "vertir → -vert",
+              "count": 3,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "cognate:gerir-to-gest",
+              "label": "gerir → -gest",
+              "count": 3,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "cognate:hibir-to-hibit",
+              "label": "hibir → -hibit",
+              "count": 3,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "cognate:cibir-to-ceive",
+              "label": "cibir → -ceive",
+              "count": 3,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "cognate:currir-to-cur",
+              "label": "currir → -cur",
+              "count": 2,
+              "confusion": false,
+              "coreCount": 0
+            }
+          ]
+        },
+        {
+          "id": "noun-cognates",
+          "label": "Noun cognates",
+          "confusion": false,
+          "groups": [
+            {
+              "collection": "cognate:anza-to-ance",
+              "label": "-anza → -ance",
+              "count": 6,
               "confusion": false,
               "coreCount": 0
             },
@@ -1228,13 +1366,6 @@
               "coreCount": 0
             },
             {
-              "collection": "cognate:dido-to-ded",
-              "label": "-dido → -ded",
-              "count": 3,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
               "collection": "cognate:ecto-to-ect",
               "label": "-ecto → -ect",
               "count": 11,
@@ -1249,30 +1380,9 @@
               "coreCount": 0
             },
             {
-              "collection": "cognate:ente-to-ent",
-              "label": "-ente → -ent",
-              "count": 12,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
               "collection": "cognate:es-to-s",
               "label": "-es → -s",
               "count": 6,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "cognate:ible-to-ible",
-              "label": "-ible → -ible",
-              "count": 10,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "cognate:ico-to-ic",
-              "label": "-ico → -ic",
-              "count": 13,
               "confusion": false,
               "coreCount": 0
             },
@@ -1284,58 +1394,9 @@
               "coreCount": 0
             },
             {
-              "collection": "cognate:ido-to-id",
-              "label": "-ido → -id",
-              "count": 11,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "cognate:iendo-to-ing",
-              "label": "-iendo → -ing",
-              "count": 6,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "cognate:il-to-ile",
-              "label": "-il → -ile",
-              "count": 10,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "cognate:ivo-to-ive",
-              "label": "-ivo → -ive",
-              "count": 12,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
               "collection": "cognate:ma-to-m",
               "label": "-ma → -m",
               "count": 1,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "cognate:mente-to-ly",
-              "label": "-mente → -ly",
-              "count": 15,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "cognate:orio-to-ory",
-              "label": "-orio → -ory",
-              "count": 7,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "cognate:oso-to-ous",
-              "label": "-oso → -ous",
-              "count": 10,
               "confusion": false,
               "coreCount": 0
             },
@@ -1364,34 +1425,6 @@
               "collection": "cognate:uro-ura-to-ure",
               "label": "-uro/-ura → -ure",
               "count": 12,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "cognate:izar-to-ize",
-              "label": "-izar → -ize",
-              "count": 12,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "cognate:ar-to-ate",
-              "label": "-ar → -ate",
-              "count": 10,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "cognate:ificar-to-ify",
-              "label": "-ificar → -ify",
-              "count": 10,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "cognate:inar-to-ine",
-              "label": "-inar → -ine",
-              "count": 9,
               "confusion": false,
               "coreCount": 0
             },
@@ -1431,6 +1464,118 @@
               "coreCount": 0
             },
             {
+              "collection": "cognate:ema-to-em",
+              "label": "-ema → -em",
+              "count": 3,
+              "confusion": false,
+              "coreCount": 0
+            }
+          ]
+        },
+        {
+          "id": "adjective-cognates",
+          "label": "Adjective cognates",
+          "confusion": false,
+          "groups": [
+            {
+              "collection": "cognate:able-to-able",
+              "label": "-able → -able",
+              "count": 11,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "cognate:acto-to-act",
+              "label": "-acto → -act",
+              "count": 7,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "cognate:al-to-al",
+              "label": "-al → -al",
+              "count": 15,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "cognate:ante-to-ant",
+              "label": "-ante → -ant",
+              "count": 11,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "cognate:ar-to-ar",
+              "label": "-ar → -ar",
+              "count": 8,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "cognate:ario-to-ary",
+              "label": "-ario → -ary",
+              "count": 10,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "cognate:ente-to-ent",
+              "label": "-ente → -ent",
+              "count": 12,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "cognate:ible-to-ible",
+              "label": "-ible → -ible",
+              "count": 10,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "cognate:ico-to-ic",
+              "label": "-ico → -ic",
+              "count": 13,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "cognate:ido-to-id",
+              "label": "-ido → -id",
+              "count": 11,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "cognate:il-to-ile",
+              "label": "-il → -ile",
+              "count": 10,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "cognate:ivo-to-ive",
+              "label": "-ivo → -ive",
+              "count": 12,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "cognate:orio-to-ory",
+              "label": "-orio → -ory",
+              "count": 7,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "cognate:oso-to-ous",
+              "label": "-oso → -ous",
+              "count": 10,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
               "collection": "cognate:ano-iano-to-an-ian",
               "label": "-ano/-iano → -an/-ian",
               "count": 8,
@@ -1443,6 +1588,48 @@
               "count": 5,
               "confusion": false,
               "coreCount": 0
+            }
+          ]
+        },
+        {
+          "id": "adverb-cognates",
+          "label": "Adverb cognates",
+          "confusion": false,
+          "groups": [
+            {
+              "collection": "cognate:mente-to-ly",
+              "label": "-mente → -ly",
+              "count": 15,
+              "confusion": false,
+              "coreCount": 0
+            }
+          ]
+        },
+        {
+          "id": "verb-form-endings",
+          "label": "Verb form endings",
+          "confusion": false,
+          "groups": [
+            {
+              "collection": "cognate:ando-to-ing",
+              "label": "-ando → -ing",
+              "count": 6,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "cognate:dido-to-ded",
+              "label": "-dido → -ded",
+              "count": 3,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "cognate:iendo-to-ing",
+              "label": "-iendo → -ing",
+              "count": 6,
+              "confusion": false,
+              "coreCount": 0
             },
             {
               "collection": "cognate:ado-ido-to-ed",
@@ -1450,35 +1637,28 @@
               "count": 14,
               "confusion": false,
               "coreCount": 0
-            },
-            {
-              "collection": "cognate:ema-to-em",
-              "label": "-ema → -em",
-              "count": 3,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "cognate:ir-to-silent-e",
-              "label": "-ir → silent -e",
-              "count": 3,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:cognate-latin-root",
-              "label": "Latin roots (any)",
-              "count": 218,
-              "confusion": false,
-              "coreCount": 4
             }
           ]
         },
         {
-          "id": "cognate-types",
-          "label": "Cognate types",
+          "id": "how-close-is-it",
+          "label": "How close is it?",
           "confusion": false,
           "groups": [
+            {
+              "collection": "topic:cognate-transparent",
+              "label": "Identical / transparent",
+              "count": 367,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "topic:cognate-opaque",
+              "label": "Looks different",
+              "count": 64,
+              "confusion": false,
+              "coreCount": 4
+            },
             {
               "collection": "cognate:false-friend",
               "label": "False friends",
@@ -1489,163 +1669,16 @@
           ]
         },
         {
-          "id": "latin-roots",
-          "label": "Latin roots",
+          "id": "latin-roots-not-yet-sorted-by-stem",
+          "label": "Latin roots — not yet sorted by stem",
           "confusion": false,
           "groups": [
             {
-              "collection": "cognate:tener-to-tain",
-              "label": "tener → -tain",
-              "count": 9,
+              "collection": "topic:cognate-latin-root",
+              "label": "Latin roots (any)",
+              "count": 218,
               "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "cognate:poner-to-pose",
-              "label": "poner → -pose",
-              "count": 10,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "cognate:mitir-to-mit",
-              "label": "mitir/meter → -mit",
-              "count": 8,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "cognate:ferir-to-fer",
-              "label": "ferir/frir → -fer",
-              "count": 8,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "cognate:ducir-to-duce",
-              "label": "ducir → -duce",
-              "count": 7,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "cognate:tribuir-to-tribute",
-              "label": "tribuir → -tribute",
-              "count": 3,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "cognate:struir-to-struct",
-              "label": "struir → -struct",
-              "count": 6,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "cognate:traer-to-tract",
-              "label": "traer → -tract",
-              "count": 6,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "cognate:escribir-to-scribe",
-              "label": "escribir → -scribe",
-              "count": 5,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "cognate:cluir-to-clude",
-              "label": "cluir → -clude",
-              "count": 3,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "cognate:decir-to-dict",
-              "label": "decir → -dict",
-              "count": 5,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "cognate:ceder-to-cede",
-              "label": "ceder → -cede",
-              "count": 4,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "cognate:primir-to-press",
-              "label": "primir/presar → -press",
-              "count": 4,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "cognate:vertir-to-vert",
-              "label": "vertir → -vert",
-              "count": 3,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "cognate:servar-to-serve",
-              "label": "servar → -serve",
-              "count": 4,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "cognate:solver-to-solve",
-              "label": "solver → -solve",
-              "count": 3,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "cognate:gerir-to-gest",
-              "label": "gerir → -gest",
-              "count": 3,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "cognate:hibir-to-hibit",
-              "label": "hibir → -hibit",
-              "count": 3,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "cognate:cibir-to-ceive",
-              "label": "cibir → -ceive",
-              "count": 3,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "cognate:plicar-to-ply",
-              "label": "plicar → -ply",
-              "count": 4,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "cognate:currir-to-cur",
-              "label": "currir → -cur",
-              "count": 2,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "cognate:hender-to-hend",
-              "label": "hender/prender → -hend",
-              "count": 2,
-              "confusion": false,
-              "coreCount": 0
+              "coreCount": 4
             }
           ]
         }
