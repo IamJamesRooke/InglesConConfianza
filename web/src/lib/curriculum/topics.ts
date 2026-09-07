@@ -38,8 +38,6 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       { collection: "grammar:relative-pronoun", label: "Relative" },
       { collection: "grammar:exclamative", label: "Exclamative" },
       { collection: "grammar:subordinate-subject-pronoun", label: "él → him" },
-      { collection: "topic:confusable-possessive", label: "Confusions — su/sus" },
-      { collection: "topic:confusable-pronoun-other", label: "Confusions — Other" },
     ],
   },
   {
@@ -65,8 +63,6 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       { collection: "grammar:interrogative-determiner", label: "Interrogative" },
       { collection: "grammar:relative-determiner", label: "Relative (cuyo)" },
       { collection: "grammar:negative", label: "Negative (ningún)" },
-      { collection: "topic:confusable-possessive", label: "Confusions — su/sus" },
-      { collection: "topic:confusable-determiner-other", label: "Confusions — Other" },
     ],
   },
   {
@@ -79,7 +75,6 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       { collection: "grammar:interrogative-pronoun", label: "Pronoun" },
       { collection: "grammar:interrogative-determiner", label: "Determiner" },
       { collection: "grammar:interrogative-adverb", label: "Adverb" },
-      { collection: "contrast:confusable", label: "Confusions" },
     ],
   },
   {
@@ -222,7 +217,6 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       { collection: "topic:verb-formal-remainder-12", label: "Formal & Rare Verbs (13)" },
       { collection: "topic:verb-formal-remainder-13", label: "Formal & Rare Verbs (14)" },
       { collection: "topic:verb-formal-remainder-14", label: "Formal & Rare Verbs (15)" },
-      { collection: "contrast:confusable", label: "Confusions" },
     ],
   },
   {
@@ -337,7 +331,6 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       { collection: "cognate:plicar-to-ply", label: "plicar → -ply" },
       { collection: "cognate:currir-to-cur", label: "currir → -cur" },
       { collection: "cognate:hender-to-hend", label: "hender/prender → -hend" },
-      { collection: "contrast:confusable", label: "Confusions" },
     ],
   },
   {
@@ -421,7 +414,6 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       { collection: "topic:communication-request", label: "Communication & requests" },
       { collection: "topic:sports-recreation", label: "Sports & travel" },
       { collection: "topic:event", label: "Events" },
-      { collection: "contrast:confusable", label: "Confusions" },
     ],
   },
   {
@@ -486,7 +478,6 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       { collection: "topic:weather", label: "Weather" },
       { collection: "topic:speed", label: "Speed" },
       { collection: "topic:time", label: "Time" },
-      { collection: "contrast:confusable", label: "Confusions" },
     ],
   },
   {
@@ -694,6 +685,13 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       { collection: "es:subir", label: "subir" },
       { collection: "es:pensar", label: "pensar" },
       { collection: "es:venir", label: "venir" },
+      // Common confusions — translation-choice groups that start from a Spanish
+      // form. Grouped into the "Common confusions" family by navigation.ts.
+      { collection: "topic:confusable-possessive", label: "su / sus / mi / tu — whose is it?" },
+      { collection: "topic:confusable-verb", label: "ser vs. estar, voy a, vivir" },
+      { collection: "topic:confusable-false-friend", label: "False friends (realizar, éxito, largo…)" },
+      { collection: "topic:confusable-pronoun", label: "él / lo / le / se / tú" },
+      { collection: "topic:confusable-determiner", label: "un vs. uno, algún vs. alguno, el" },
     ],
   },
   {
@@ -850,6 +848,10 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       { collection: "en:made", label: "made" },
       { collection: "en:some", label: "some" },
       { collection: "en:the", label: "the" },
+      // Common confusions — translation-choice groups that start from an English
+      // word that fans out to several Spanish forms.
+      { collection: "topic:confusable-pronoun", label: "you (tú/usted/ustedes/te), him (lo/le)" },
+      { collection: "topic:confusable-determiner", label: "un vs. uno, algún vs. alguno, el" },
     ],
   },
   {

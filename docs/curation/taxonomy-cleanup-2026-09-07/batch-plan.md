@@ -27,7 +27,7 @@ this cleanup re-examines taxonomy structure, not every concept again.
 | # | Batch | Status | Commit | Notes |
 |---|---|---|---|---|
 | 0 | Inventory tooling + policy + plan + findings | **done** | _(this commit)_ | `scripts/curriculum-inventory.ts`, `npm run curriculum:inventory` |
-| 1 | Confusion-group boundary | todo | | remove 9 "Confusions" buttons from ordinary topics; add a "Common confusions" family to both Mappings pages; tag Spanish-side confusion concepts `topic:multi-sense`, English-side `topic:en-multi-sense`; keep all grammar/topic memberships; update `facetGroup`, `exploreFamilyLabels`, `verbFamily`, `TOPIC_AUDIT_SPECS` anchors, tests. Drop the stale empty `contrast:confusable` button on Interrogatives. See `findings.md#confusion`. |
+| 1 | Confusion-group boundary | **done** | _(this commit)_ | 9 buttons removed from 7 topics; "Common confusions" family added to both Mappings pages (5 buckets: `topic:confusable-possessive` / `-pronoun` / `-determiner` / `-verb` / `-false-friend`); `-pronoun-other`/`-determiner-other` renamed to canonical; 65 concepts bucketed + given `topic:multi-sense` where Spanish-anchored; 4 non-pairs untagged from `contrast:confusable`. `confusionOutsideMappingsCount` 9 → **0**. New `navigation.ts` test enforces it. Residual: cognates gap 0→2 (`disponibilidad`/`disponible` — pre-existing `topic:cognate` with no `cognate:` pattern, exposed; → Batch 4). |
 | 2 | Global orphans (24) | todo | | time-expression phrases (`el año pasado`, `la mañana`…), comparative phrases (`más de …`, `menos …`), bare adverbials (`a casa`, `cerca de un lugar`), grammar-term rows (`tiempo pasado → past time`). Route each to an existing topic group or `trash`. See `findings.md#orphans`. |
 | 3 | Verbs within-topic gap (301) | todo | | the thematic Verbs redesign dropped the `topic:verb-other` catch-all; 301 `pos:verb` rows now reach no group. Decide: re-introduce a themed residual family vs. extend existing verb themes. Largest single item — own sub-plan. |
 | 4 | Small within-topic gaps (~45) | todo | | nouns/adjectives/adverbs/connectors/prepositions/numbers/verb-patterns/en-mappings/phrasal-root residuals from the table above — mostly a missing facet tag or a genuine one-off for "Other". See `findings.md#gaps`. |
@@ -41,4 +41,5 @@ this cleanup re-examines taxonomy structure, not every concept again.
 Append one row per applied batch: date · batch # · commit · manifests ·
 inventory delta (orphans / confusion-outside / gaps).
 
-- 2026-09-07 · Batch 0 · _(this commit)_ · — · baseline captured.
+- 2026-09-07 · Batch 0 · 4a28515a · — · baseline captured.
+- 2026-09-07 · Batch 1 · _(this commit)_ · confusion-A-collections, confusion-B-buckets, confusion-C-untag · confusion-outside-mappings 9→0 · orphans 24 (unchanged) · mappings base 1555→1586 · new cognates gap +2 (deferred to Batch 4).

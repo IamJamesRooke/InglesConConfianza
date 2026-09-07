@@ -8645,7 +8645,8 @@
         "audit:reviewed",
         "topic:estar-adj-1",
         "topic:condition-state-1",
-        "topic:map-estar-1"
+        "topic:map-estar-1",
+        "topic:confusable-false-friend"
       ],
       "curriculumRole": "supporting"
     },
@@ -23211,7 +23212,8 @@
         "topic:multi-sense",
         "audit:reviewed",
         "topic:fem-a-7",
-        "topic:abstract-general-6"
+        "topic:abstract-general-6",
+        "topic:confusable-false-friend"
       ],
       "curriculumRole": "supporting"
     },
@@ -25375,7 +25377,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:map-tener-2"
+        "topic:map-tener-2",
+        "topic:confusable-verb"
       ],
       "curriculumRole": "core"
     },
@@ -28759,7 +28762,9 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:enmap-you-2",
-        "topic:confusable-pronoun-other"
+        "topic:confusable-pronoun",
+        "topic:confusable-possessive",
+        "topic:multi-sense"
       ],
       "curriculumRole": "core"
     },
@@ -28783,7 +28788,8 @@
         "topic:determiner",
         "pos:determiner",
         "audit:reviewed",
-        "topic:confusable-possessive"
+        "topic:confusable-possessive",
+        "topic:multi-sense"
       ],
       "curriculumRole": "core"
     },
@@ -28810,7 +28816,7 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:enmap-you-2",
-        "topic:confusable-pronoun-other"
+        "topic:confusable-pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -28835,7 +28841,8 @@
         "contrast:confusable",
         "contrast:el-articulo-vs-el-pronombre",
         "audit:reviewed",
-        "topic:confusable-pronoun-other"
+        "topic:confusable-pronoun",
+        "topic:multi-sense"
       ],
       "curriculumRole": "core"
     },
@@ -28987,7 +28994,7 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:enmap-you-2",
-        "topic:confusable-pronoun-other"
+        "topic:confusable-pronoun"
       ],
       "curriculumRole": "supporting"
     },
@@ -29033,7 +29040,7 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:enmap-you-2",
-        "topic:confusable-pronoun-other"
+        "topic:confusable-pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -29077,7 +29084,7 @@
         "contrast:confusable",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:confusable-pronoun-other"
+        "topic:confusable-pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -29124,7 +29131,7 @@
         "contrast:confusable",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:confusable-pronoun-other"
+        "topic:confusable-pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -29349,7 +29356,8 @@
         "contrast:se-reflexive-vs-reciprocal",
         "contrast:confusable",
         "audit:reviewed",
-        "topic:confusable-pronoun-other"
+        "topic:confusable-pronoun",
+        "topic:multi-sense"
       ],
       "curriculumRole": "supporting"
     },
@@ -29389,7 +29397,8 @@
         "contrast:se-reflexive-vs-reciprocal",
         "contrast:confusable",
         "audit:reviewed",
-        "topic:confusable-pronoun-other"
+        "topic:confusable-pronoun",
+        "topic:multi-sense"
       ],
       "curriculumRole": "supporting"
     },
@@ -29495,7 +29504,8 @@
         "topic:en-multi-sense",
         "pos:determiner",
         "audit:reviewed",
-        "topic:confusable-determiner-other"
+        "topic:confusable-determiner",
+        "topic:confusable-pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -29542,7 +29552,7 @@
         "topic:en-multi-sense",
         "pos:determiner",
         "audit:reviewed",
-        "topic:confusable-determiner-other"
+        "topic:confusable-determiner"
       ],
       "curriculumRole": "core"
     },
@@ -29567,7 +29577,7 @@
         "topic:en-multi-sense",
         "pos:determiner",
         "audit:reviewed",
-        "topic:confusable-determiner-other"
+        "topic:confusable-determiner"
       ],
       "curriculumRole": "core"
     },
@@ -35463,7 +35473,9 @@
         "topic:abstract-quality",
         "audit:reviewed",
         "topic:masc-o-3",
-        "topic:abstract-general-4"
+        "topic:abstract-general-4",
+        "topic:confusable-false-friend",
+        "topic:multi-sense"
       ],
       "curriculumRole": "reference"
     },
@@ -38397,7 +38409,9 @@
         "topic:cognate",
         "topic:age",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:confusable-false-friend",
+        "topic:multi-sense"
       ],
       "curriculumRole": "reference"
     },
@@ -43383,7 +43397,6 @@
         "morphology:suffix-ente",
         "morphology:suffix-ent",
         "topic:cognate",
-        "contrast:confusable",
         "es:ser",
         "en:different",
         "topic:abstract-quality",
@@ -48350,7 +48363,9 @@
         "audit:reviewed",
         "topic:fem-abstract-suffix-1",
         "topic:abstract-dad-tud",
-        "topic:abstract-dad-tud-1"
+        "topic:abstract-dad-tud-1",
+        "topic:confusable-false-friend",
+        "topic:multi-sense"
       ],
       "curriculumRole": "reference"
     },
@@ -48887,7 +48902,8 @@
         "topic:multi-sense",
         "audit:reviewed",
         "topic:adj-ible",
-        "topic:map-ser-12"
+        "topic:map-ser-12",
+        "topic:confusable-false-friend"
       ],
       "curriculumRole": "reference"
     },
@@ -56671,7 +56687,6 @@
       "collections": [
         "pos:adjective",
         "grammar:ser-adjective",
-        "contrast:confusable",
         "es:ser",
         "en:unlike",
         "topic:abstract-quality",
@@ -56702,7 +56717,8 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:estar-adj-1",
-        "topic:map-estar-2"
+        "topic:map-estar-2",
+        "topic:confusable-false-friend"
       ],
       "curriculumRole": "reference"
     },
@@ -56720,7 +56736,9 @@
         "es:vivir",
         "en:live",
         "audit:reviewed",
-        "topic:verb-daily-routine"
+        "topic:verb-daily-routine",
+        "topic:confusable-verb",
+        "topic:multi-sense"
       ],
       "curriculumRole": "core"
     },
@@ -56742,7 +56760,9 @@
         "topic:phrasal-verb",
         "audit:reviewed",
         "topic:verb-daily-routine",
-        "topic:part-in-3"
+        "topic:part-in-3",
+        "topic:confusable-verb",
+        "topic:multi-sense"
       ],
       "curriculumRole": "supporting"
     },
@@ -56764,7 +56784,9 @@
         "topic:phrasal-verb",
         "audit:reviewed",
         "topic:verb-daily-routine",
-        "topic:part-with-2"
+        "topic:part-with-2",
+        "topic:confusable-verb",
+        "topic:multi-sense"
       ],
       "curriculumRole": "supporting"
     },
@@ -57296,7 +57318,8 @@
         "topic:multi-sense",
         "audit:reviewed",
         "topic:adj-ser-general-4",
-        "topic:map-ser-9"
+        "topic:map-ser-9",
+        "topic:confusable-false-friend"
       ],
       "curriculumRole": "supporting"
     },
@@ -58020,7 +58043,7 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:cardinal-1-10",
-        "topic:confusable-determiner-other"
+        "topic:confusable-determiner"
       ],
       "curriculumRole": "core"
     },
@@ -59842,7 +59865,7 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:cardinal-tens-and-up",
-        "topic:confusable-determiner-other"
+        "topic:confusable-determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -59868,7 +59891,7 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:cardinal-tens-and-up",
-        "topic:confusable-determiner-other"
+        "topic:confusable-determiner"
       ],
       "curriculumRole": "reference"
     },
@@ -67380,7 +67403,9 @@
         "gender:feminine",
         "audit:reviewed",
         "topic:fem-abstract-suffix-1",
-        "topic:places-public-city"
+        "topic:places-public-city",
+        "topic:confusable-false-friend",
+        "topic:multi-sense"
       ],
       "curriculumRole": "supporting"
     },
@@ -67404,7 +67429,9 @@
         "gender:feminine",
         "audit:reviewed",
         "topic:fem-abstract-suffix-1",
-        "topic:places-public-city"
+        "topic:places-public-city",
+        "topic:confusable-false-friend",
+        "topic:multi-sense"
       ],
       "curriculumRole": "reference"
     },
@@ -67427,7 +67454,9 @@
         "gender:feminine",
         "audit:reviewed",
         "topic:fem-a-6",
-        "topic:places-public-city"
+        "topic:places-public-city",
+        "topic:confusable-false-friend",
+        "topic:multi-sense"
       ],
       "curriculumRole": "reference"
     },
@@ -74915,7 +74944,6 @@
         "morphology:recognition",
         "morphology:suffix-less",
         "pos:adjective",
-        "contrast:confusable",
         "es:ser",
         "en:reckless",
         "topic:personality",
@@ -74937,7 +74965,6 @@
         "morphology:recognition",
         "morphology:suffix-less",
         "pos:adjective",
-        "contrast:confusable",
         "es:ser",
         "en:insignificant",
         "topic:abstract-quality",
@@ -79199,7 +79226,9 @@
         "contrast:ultimo-vs-ultimate",
         "contrast:confusable",
         "topic:cognate",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:confusable-false-friend",
+        "topic:multi-sense"
       ],
       "curriculumRole": "supporting"
     },
@@ -81632,7 +81661,8 @@
         "contrast:confusable",
         "topic:en-multi-sense",
         "pos:adverb",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:confusable-determiner"
       ],
       "curriculumRole": "core"
     },
@@ -81744,7 +81774,7 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:quant-much-many",
-        "topic:confusable-determiner-other"
+        "topic:confusable-determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -93317,7 +93347,8 @@
         "topic:determiner",
         "pos:determiner",
         "audit:reviewed",
-        "topic:confusable-possessive"
+        "topic:confusable-possessive",
+        "topic:multi-sense"
       ],
       "curriculumRole": "core"
     },
@@ -93359,7 +93390,8 @@
         "topic:determiner",
         "pos:determiner",
         "audit:reviewed",
-        "topic:confusable-possessive"
+        "topic:confusable-possessive",
+        "topic:multi-sense"
       ],
       "curriculumRole": "core"
     },
@@ -93382,7 +93414,8 @@
         "topic:en-multi-sense",
         "pos:determiner",
         "audit:reviewed",
-        "topic:confusable-possessive"
+        "topic:confusable-possessive",
+        "topic:multi-sense"
       ],
       "curriculumRole": "core"
     },
@@ -93404,7 +93437,8 @@
         "topic:determiner",
         "pos:determiner",
         "audit:reviewed",
-        "topic:confusable-possessive"
+        "topic:confusable-possessive",
+        "topic:multi-sense"
       ],
       "curriculumRole": "reference"
     },
@@ -93427,7 +93461,8 @@
         "topic:determiner",
         "pos:determiner",
         "audit:reviewed",
-        "topic:confusable-possessive"
+        "topic:confusable-possessive",
+        "topic:multi-sense"
       ],
       "curriculumRole": "core"
     },
@@ -93450,7 +93485,8 @@
         "topic:determiner",
         "pos:determiner",
         "audit:reviewed",
-        "topic:confusable-possessive"
+        "topic:confusable-possessive",
+        "topic:multi-sense"
       ],
       "curriculumRole": "supporting"
     },
@@ -93473,7 +93509,8 @@
         "topic:determiner",
         "pos:determiner",
         "audit:reviewed",
-        "topic:confusable-possessive"
+        "topic:confusable-possessive",
+        "topic:multi-sense"
       ],
       "curriculumRole": "supporting"
     },
@@ -93702,7 +93739,9 @@
         "grammar:prep-pronoun-para",
         "topic:part-for-2",
         "topic:enmap-for-3",
-        "topic:confusable-pronoun-other"
+        "topic:confusable-pronoun",
+        "topic:confusable-possessive",
+        "topic:multi-sense"
       ],
       "curriculumRole": "supporting"
     },
@@ -94377,7 +94416,8 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "grammar:indef-pronoun-quantity",
-        "topic:confusable-pronoun-other"
+        "topic:confusable-pronoun",
+        "topic:confusable-determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -94464,7 +94504,7 @@
         "grammar:demonstrative",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:confusable-pronoun-other"
+        "topic:confusable-pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -94682,7 +94722,7 @@
         "topic:en-multi-sense",
         "pos:determiner",
         "audit:reviewed",
-        "topic:confusable-pronoun-other"
+        "topic:confusable-pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -95764,7 +95804,7 @@
         "topic:multi-sense",
         "audit:reviewed",
         "topic:map-hablar-1",
-        "topic:confusable-pronoun-other"
+        "topic:confusable-pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -96209,7 +96249,8 @@
         "topic:determiner",
         "pos:determiner",
         "audit:reviewed",
-        "topic:confusable-possessive"
+        "topic:confusable-possessive",
+        "topic:multi-sense"
       ],
       "curriculumRole": "supporting"
     },
@@ -96233,7 +96274,8 @@
         "topic:en-multi-sense",
         "pos:determiner",
         "audit:reviewed",
-        "topic:confusable-possessive"
+        "topic:confusable-possessive",
+        "topic:multi-sense"
       ],
       "curriculumRole": "supporting"
     },
@@ -96256,7 +96298,8 @@
         "topic:determiner",
         "pos:determiner",
         "audit:reviewed",
-        "topic:confusable-possessive"
+        "topic:confusable-possessive",
+        "topic:multi-sense"
       ],
       "curriculumRole": "supporting"
     },
@@ -96279,7 +96322,8 @@
         "topic:determiner",
         "pos:determiner",
         "audit:reviewed",
-        "topic:confusable-possessive"
+        "topic:confusable-possessive",
+        "topic:multi-sense"
       ],
       "curriculumRole": "supporting"
     },
@@ -96407,7 +96451,8 @@
         "contrast:confusable",
         "pos:determiner",
         "audit:reviewed",
-        "topic:confusable-determiner-other"
+        "topic:confusable-determiner",
+        "topic:multi-sense"
       ],
       "curriculumRole": "core"
     },
@@ -96650,7 +96695,7 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:quant-some-any-no",
-        "topic:confusable-determiner-other"
+        "topic:confusable-determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -97385,7 +97430,8 @@
         "audit:reviewed",
         "topic:verb-movement-going",
         "topic:map-ir-1",
-        "topic:verb-movement-going-2"
+        "topic:verb-movement-going-2",
+        "topic:confusable-verb"
       ],
       "curriculumRole": "core"
     },
@@ -97439,7 +97485,8 @@
         "audit:reviewed",
         "topic:verb-movement-going",
         "topic:map-ir-1",
-        "topic:verb-movement-going-2"
+        "topic:verb-movement-going-2",
+        "topic:confusable-verb"
       ],
       "curriculumRole": "core"
     },
@@ -97519,7 +97566,8 @@
         "audit:reviewed",
         "topic:verb-tobe-present",
         "topic:map-ser-6",
-        "topic:verb-tobe-present-2"
+        "topic:verb-tobe-present-2",
+        "topic:confusable-verb"
       ],
       "curriculumRole": "core"
     },
@@ -97651,7 +97699,8 @@
         "audit:reviewed",
         "topic:verb-tobe-present",
         "topic:map-estar-2",
-        "topic:verb-tobe-present-2"
+        "topic:verb-tobe-present-2",
+        "topic:confusable-verb"
       ],
       "curriculumRole": "core"
     },
@@ -97705,7 +97754,8 @@
         "audit:reviewed",
         "topic:verb-tobe-present",
         "topic:map-estar-2",
-        "topic:verb-tobe-present-1"
+        "topic:verb-tobe-present-1",
+        "topic:confusable-verb"
       ],
       "curriculumRole": "core"
     },
@@ -98179,7 +98229,8 @@
         "topic:verb-movement-going",
         "topic:map-ir-1",
         "topic:enmap-go-3",
-        "topic:verb-movement-going-2"
+        "topic:verb-movement-going-2",
+        "topic:confusable-verb"
       ],
       "curriculumRole": "core"
     },
@@ -98235,7 +98286,8 @@
         "topic:verb-movement-going",
         "topic:map-ir-1",
         "topic:enmap-go-2",
-        "topic:verb-movement-going-2"
+        "topic:verb-movement-going-2",
+        "topic:confusable-verb"
       ],
       "curriculumRole": "core"
     },
@@ -98722,7 +98774,8 @@
         "topic:phr-be-5",
         "topic:map-ser-6",
         "topic:enmap-be-5",
-        "topic:verb-tobe-present-2"
+        "topic:verb-tobe-present-2",
+        "topic:confusable-verb"
       ],
       "curriculumRole": "core"
     },
@@ -98780,7 +98833,8 @@
         "topic:phr-be-2",
         "topic:map-ser-8",
         "topic:enmap-be-2",
-        "topic:verb-tobe-present-1"
+        "topic:verb-tobe-present-1",
+        "topic:confusable-verb"
       ],
       "curriculumRole": "core"
     },
@@ -98886,7 +98940,8 @@
         "audit:reviewed",
         "topic:adj-ser-general-7",
         "topic:adj-abs-general-8",
-        "topic:map-ser-12"
+        "topic:map-ser-12",
+        "topic:confusable-false-friend"
       ],
       "curriculumRole": "reference"
     },
@@ -98907,7 +98962,9 @@
         "gender:feminine",
         "topic:event",
         "audit:reviewed",
-        "topic:fem-a-2"
+        "topic:fem-a-2",
+        "topic:confusable-false-friend",
+        "topic:multi-sense"
       ],
       "curriculumRole": "reference"
     },
@@ -100067,7 +100124,9 @@
         "particle:out",
         "grammar:phrasal-verb",
         "topic:verb-formal-abstract-2",
-        "topic:part-out-3"
+        "topic:part-out-3",
+        "topic:confusable-false-friend",
+        "topic:multi-sense"
       ],
       "curriculumRole": "reference"
     },
@@ -100110,7 +100169,9 @@
         "contrast:confusable",
         "contrast:actualizar-vs-actualize",
         "audit:reviewed",
-        "topic:verb-technology-digital"
+        "topic:verb-technology-digital",
+        "topic:confusable-false-friend",
+        "topic:multi-sense"
       ],
       "curriculumRole": "supporting"
     },

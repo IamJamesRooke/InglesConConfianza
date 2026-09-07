@@ -63,6 +63,27 @@ test("dictionary-like topics use stable alphabetic families", () => {
 
   assert.deepEqual(
     families.map((family) => family.label),
-    ["A–E", "F–J", "P–T", "U–Z"],
+    ["A–E", "F–J", "P–T", "U–Z", "Common confusions"],
   );
+});
+
+test("confusion groups appear only on the two Mappings topics", () => {
+  for (const topic of CURRICULUM_TOPICS) {
+    const families = buildCurriculumFamilies(topic);
+    const confusion = families.find(
+      (family) => family.label === "Common confusions",
+    );
+    if (topic.slug === "mappings" || topic.slug === "en-mappings") {
+      assert.ok(confusion, `${topic.slug} should have a Common confusions family`);
+    } else {
+      assert.equal(confusion, undefined, topic.slug);
+      for (const facet of topic.facetButtons) {
+        assert.ok(
+          !facet.collection.startsWith("contrast:") &&
+            !facet.collection.startsWith("topic:confusable-"),
+          `${topic.slug} still has a confusion facet: ${facet.collection}`,
+        );
+      }
+    }
+  }
 });

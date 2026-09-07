@@ -49,6 +49,38 @@ resuming session does not re-run them. IDs are stable.
    the `mi` vs `mí` contrast (`contrast:mi-vs-mi-tilde`), a real pair, and it
    belongs in the su/sus-adjacent possessive-confusion group.
 
+### Batch 1 applied (2026-09-07)
+
+- 9 buttons removed: pronouns `topic:confusable-possessive` + `-pronoun-other`;
+  determiners `topic:confusable-possessive` + `-determiner-other`;
+  interrogatives / verbs / cognates / nouns / adjectives `contrast:confusable`.
+- `topic:confusable-pronoun-other` → `topic:confusable-pronoun`;
+  `topic:confusable-determiner-other` → `topic:confusable-determiner` (RENAME).
+- 65 confusable concepts bucketed into 5 groups
+  (`topic:confusable-{possessive,pronoun,determiner,verb,false-friend}`);
+  Spanish-anchored buckets (possessive/verb/false-friend) also got
+  `topic:multi-sense`; pronoun/determiner left on whichever Mappings direction
+  they already had (both buttons appear on both Mappings pages).
+- 4 rows untagged from `contrast:confusable` (`c3t870d60r`, `zv195eq10v`,
+  `c48b9qs6fd`, `lztdsmka37`) — plain adjectives with no `contrast:<x>-vs-<y>`,
+  i.e. not real confusion pairs.
+- `mi → my` (`i5ji4776n8`) kept in the possessive-confusion bucket (`mi` vs
+  `mí`, a real pair) as decided.
+- `leer ==> la lectura` (`6gh8d3gw7b`) deliberately left with only
+  `contrast:confusable` — it is a Transformations row, not a mapping.
+- **Follow-up (Batch 4):** cognates within-topic gap went 0→2 —
+  `1amptqkvwv [la] disponibilidad → availability` and
+  `a12miruf57 [estar] disponible → [to be] available` carry `topic:cognate`
+  with **no** `cognate:` pattern/type tag (pre-existing hole, was masked by the
+  now-removed `contrast:confusable` button). Either give them a `cognate:`
+  family or drop `topic:cognate`. They remain reachable via the Mappings
+  false-friend confusion group.
+- **Follow-up (Batch 5/6):** legacy deep links
+  `?topic=pronouns&facets=topic:confusable-possessive` (and the other 8) no
+  longer resolve to a leaf — they fall back to the topic view. Concepts are
+  reachable via the Mappings "Common confusions" family. Add redirects if the
+  old links are known to be in use.
+
 <a id="orphans"></a>
 ## Global orphans (24 non-trash, no topic base tag)
 

@@ -88,19 +88,34 @@ function verbFamily(collection: string) {
   if (/^topic:verb-(admin|analysis|technology|weather|health|formal)/u.test(collection)) {
     return "Formal & specialized";
   }
-  if (collection.startsWith("contrast:")) return "Common confusions";
   return "Other verb groups";
 }
 
+const MAPPING_TOPICS = new Set([
+  "mappings",
+  "en-mappings",
+  "phrasal-verbs-by-root",
+  "phrasal-verbs-by-particle",
+]);
+
+// Dedicated confusion / translation-choice groups live ONLY on the two
+// Mappings topics (docs/curation/taxonomy-cleanup-2026-09-07/policy.md).
+function isConfusionCollection(collection: string) {
+  return (
+    collection.startsWith("contrast:") ||
+    collection.startsWith("topic:confusable-")
+  );
+}
+
 export function facetGroup(topic: string | undefined, collection: string) {
-  if (collection.startsWith("contrast:")) return "Common confusions";
-  if (topic === "verbs") return verbFamily(collection);
   if (
-    topic === "mappings" ||
-    topic === "en-mappings" ||
-    topic === "phrasal-verbs-by-root" ||
-    topic === "phrasal-verbs-by-particle"
+    (topic === "mappings" || topic === "en-mappings") &&
+    isConfusionCollection(collection)
   ) {
+    return "Common confusions";
+  }
+  if (topic === "verbs") return verbFamily(collection);
+  if (MAPPING_TOPICS.has(topic ?? "")) {
     return "__alphabetic__";
   }
   if (topic === "nouns" || topic === "adjectives" || topic === "adverbs") {
@@ -184,7 +199,15 @@ export function buildCurriculumFamilies(
     topic.slug === "phrasal-verbs-by-root" ||
     topic.slug === "phrasal-verbs-by-particle"
   ) {
-    const order = ["A–E", "F–J", "K–O", "P–T", "U–Z", "Other"];
+    const order = [
+      "A–E",
+      "F–J",
+      "K–O",
+      "P–T",
+      "U–Z",
+      "Other",
+      "Common confusions",
+    ];
     entries.sort(
       ([left], [right]) => order.indexOf(left) - order.indexOf(right),
     );

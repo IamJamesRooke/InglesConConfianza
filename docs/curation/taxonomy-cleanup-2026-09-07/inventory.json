@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generatedAt": "2026-09-07T15:27:05.403Z",
+    "generatedAt": "2026-09-07T15:58:17.802Z",
     "totals": {
       "allConcepts": 4447,
       "nonTrash": 4225,
@@ -12,7 +12,7 @@
       }
     },
     "globalOrphanCount": 24,
-    "confusionOutsideMappingsCount": 9,
+    "confusionOutsideMappingsCount": 0,
     "topics": [
       {
         "slug": "pronouns",
@@ -20,7 +20,7 @@
         "reachableCount": 170,
         "withinTopicGapCount": 2,
         "emptyGroupCount": 0,
-        "confusionGroupCount": 2
+        "confusionGroupCount": 0
       },
       {
         "slug": "determiners",
@@ -28,15 +28,15 @@
         "reachableCount": 136,
         "withinTopicGapCount": 3,
         "emptyGroupCount": 0,
-        "confusionGroupCount": 2
+        "confusionGroupCount": 0
       },
       {
         "slug": "interrogatives",
         "baseCount": 23,
         "reachableCount": 23,
         "withinTopicGapCount": 0,
-        "emptyGroupCount": 1,
-        "confusionGroupCount": 1
+        "emptyGroupCount": 0,
+        "confusionGroupCount": 0
       },
       {
         "slug": "verbs",
@@ -44,15 +44,15 @@
         "reachableCount": 1805,
         "withinTopicGapCount": 301,
         "emptyGroupCount": 0,
-        "confusionGroupCount": 1
+        "confusionGroupCount": 0
       },
       {
         "slug": "cognates",
         "baseCount": 789,
-        "reachableCount": 789,
-        "withinTopicGapCount": 0,
+        "reachableCount": 787,
+        "withinTopicGapCount": 2,
         "emptyGroupCount": 0,
-        "confusionGroupCount": 1
+        "confusionGroupCount": 0
       },
       {
         "slug": "nouns",
@@ -60,7 +60,7 @@
         "reachableCount": 477,
         "withinTopicGapCount": 6,
         "emptyGroupCount": 0,
-        "confusionGroupCount": 1
+        "confusionGroupCount": 0
       },
       {
         "slug": "adjectives",
@@ -68,7 +68,7 @@
         "reachableCount": 408,
         "withinTopicGapCount": 7,
         "emptyGroupCount": 0,
-        "confusionGroupCount": 1
+        "confusionGroupCount": 0
       },
       {
         "slug": "adverbs",
@@ -112,11 +112,11 @@
       },
       {
         "slug": "mappings",
-        "baseCount": 1555,
-        "reachableCount": 1555,
+        "baseCount": 1586,
+        "reachableCount": 1586,
         "withinTopicGapCount": 0,
         "emptyGroupCount": 0,
-        "confusionGroupCount": 0
+        "confusionGroupCount": 5
       },
       {
         "slug": "en-mappings",
@@ -124,7 +124,7 @@
         "reachableCount": 1519,
         "withinTopicGapCount": 5,
         "emptyGroupCount": 0,
-        "confusionGroupCount": 0
+        "confusionGroupCount": 2
       },
       {
         "slug": "phrasal-verbs-by-root",
@@ -349,37 +349,12 @@
               "count": 6,
               "confusion": false,
               "coreCount": 6
-            },
-            {
-              "collection": "topic:confusable-possessive",
-              "label": "Confusions — su/sus",
-              "count": 12,
-              "confusion": true,
-              "coreCount": 5
-            },
-            {
-              "collection": "topic:confusable-pronoun-other",
-              "label": "Confusions — Other",
-              "count": 14,
-              "confusion": true,
-              "coreCount": 8
             }
           ]
         }
       ],
       "emptyGroups": [],
-      "confusionGroups": [
-        {
-          "collection": "topic:confusable-possessive",
-          "label": "Confusions — su/sus",
-          "count": 12
-        },
-        {
-          "collection": "topic:confusable-pronoun-other",
-          "label": "Confusions — Other",
-          "count": 14
-        }
-      ]
+      "confusionGroups": []
     },
     {
       "slug": "determiners",
@@ -510,37 +485,12 @@
               "count": 3,
               "confusion": false,
               "coreCount": 0
-            },
-            {
-              "collection": "topic:confusable-possessive",
-              "label": "Confusions — su/sus",
-              "count": 12,
-              "confusion": true,
-              "coreCount": 5
-            },
-            {
-              "collection": "topic:confusable-determiner-other",
-              "label": "Confusions — Other",
-              "count": 9,
-              "confusion": true,
-              "coreCount": 5
             }
           ]
         }
       ],
       "emptyGroups": [],
-      "confusionGroups": [
-        {
-          "collection": "topic:confusable-possessive",
-          "label": "Confusions — su/sus",
-          "count": 12
-        },
-        {
-          "collection": "topic:confusable-determiner-other",
-          "label": "Confusions — Other",
-          "count": 9
-        }
-      ]
+      "confusionGroups": []
     },
     {
       "slug": "interrogatives",
@@ -578,32 +528,10 @@
               "coreCount": 5
             }
           ]
-        },
-        {
-          "id": "common-confusions",
-          "label": "Common confusions",
-          "confusion": true,
-          "groups": [
-            {
-              "collection": "contrast:confusable",
-              "label": "Confusions",
-              "count": 0,
-              "confusion": true,
-              "coreCount": 0
-            }
-          ]
         }
       ],
-      "emptyGroups": [
-        "contrast:confusable"
-      ],
-      "confusionGroups": [
-        {
-          "collection": "contrast:confusable",
-          "label": "Confusions",
-          "count": 0
-        }
-      ]
+      "emptyGroups": [],
+      "confusionGroups": []
     },
     {
       "slug": "verbs",
@@ -1923,39 +1851,22 @@
               "coreCount": 0
             }
           ]
-        },
-        {
-          "id": "common-confusions",
-          "label": "Common confusions",
-          "confusion": true,
-          "groups": [
-            {
-              "collection": "contrast:confusable",
-              "label": "Confusions",
-              "count": 14,
-              "confusion": true,
-              "coreCount": 10
-            }
-          ]
         }
       ],
       "emptyGroups": [],
-      "confusionGroups": [
-        {
-          "collection": "contrast:confusable",
-          "label": "Confusions",
-          "count": 14
-        }
-      ]
+      "confusionGroups": []
     },
     {
       "slug": "cognates",
       "title": "Cognates",
       "baseCollection": "topic:cognate",
       "baseCount": 789,
-      "reachableCount": 789,
-      "withinTopicGapCount": 0,
-      "withinTopicGapIds": [],
+      "reachableCount": 787,
+      "withinTopicGapCount": 2,
+      "withinTopicGapIds": [
+        "1amptqkvwv",
+        "a12miruf57"
+      ],
       "families": [
         {
           "id": "spelling-patterns",
@@ -2698,30 +2609,10 @@
               "coreCount": 0
             }
           ]
-        },
-        {
-          "id": "common-confusions",
-          "label": "Common confusions",
-          "confusion": true,
-          "groups": [
-            {
-              "collection": "contrast:confusable",
-              "label": "Confusions",
-              "count": 13,
-              "confusion": true,
-              "coreCount": 0
-            }
-          ]
         }
       ],
       "emptyGroups": [],
-      "confusionGroups": [
-        {
-          "collection": "contrast:confusable",
-          "label": "Confusions",
-          "count": 13
-        }
-      ]
+      "confusionGroups": []
     },
     {
       "slug": "nouns",
@@ -3270,30 +3161,10 @@
               "coreCount": 0
             }
           ]
-        },
-        {
-          "id": "common-confusions",
-          "label": "Common confusions",
-          "confusion": true,
-          "groups": [
-            {
-              "collection": "contrast:confusable",
-              "label": "Confusions",
-              "count": 7,
-              "confusion": true,
-              "coreCount": 0
-            }
-          ]
         }
       ],
       "emptyGroups": [],
-      "confusionGroups": [
-        {
-          "collection": "contrast:confusable",
-          "label": "Confusions",
-          "count": 7
-        }
-      ]
+      "confusionGroups": []
     },
     {
       "slug": "adjectives",
@@ -3717,30 +3588,10 @@
               "coreCount": 0
             }
           ]
-        },
-        {
-          "id": "common-confusions",
-          "label": "Common confusions",
-          "confusion": true,
-          "groups": [
-            {
-              "collection": "contrast:confusable",
-              "label": "Confusions",
-              "count": 11,
-              "confusion": true,
-              "coreCount": 0
-            }
-          ]
         }
       ],
       "emptyGroups": [],
-      "confusionGroups": [
-        {
-          "collection": "contrast:confusable",
-          "label": "Confusions",
-          "count": 11
-        }
-      ]
+      "confusionGroups": []
     },
     {
       "slug": "adverbs",
@@ -4192,8 +4043,8 @@
       "slug": "mappings",
       "title": "Spanish-to-English Mappings",
       "baseCollection": "topic:multi-sense",
-      "baseCount": 1555,
-      "reachableCount": 1555,
+      "baseCount": 1586,
+      "reachableCount": 1586,
       "withinTopicGapCount": 0,
       "withinTopicGapIds": [],
       "families": [
@@ -4973,10 +4824,78 @@
               "coreCount": 2
             }
           ]
+        },
+        {
+          "id": "common-confusions",
+          "label": "Common confusions",
+          "confusion": true,
+          "groups": [
+            {
+              "collection": "topic:confusable-possessive",
+              "label": "su / sus / mi / tu — whose is it?",
+              "count": 14,
+              "confusion": true,
+              "coreCount": 6
+            },
+            {
+              "collection": "topic:confusable-verb",
+              "label": "ser vs. estar, voy a, vivir",
+              "count": 13,
+              "confusion": true,
+              "coreCount": 11
+            },
+            {
+              "collection": "topic:confusable-false-friend",
+              "label": "False friends (realizar, éxito, largo…)",
+              "count": 16,
+              "confusion": true,
+              "coreCount": 0
+            },
+            {
+              "collection": "topic:confusable-pronoun",
+              "label": "él / lo / le / se / tú",
+              "count": 6,
+              "confusion": true,
+              "coreCount": 3
+            },
+            {
+              "collection": "topic:confusable-determiner",
+              "label": "un vs. uno, algún vs. alguno, el",
+              "count": 1,
+              "confusion": true,
+              "coreCount": 1
+            }
+          ]
         }
       ],
       "emptyGroups": [],
-      "confusionGroups": []
+      "confusionGroups": [
+        {
+          "collection": "topic:confusable-possessive",
+          "label": "su / sus / mi / tu — whose is it?",
+          "count": 14
+        },
+        {
+          "collection": "topic:confusable-verb",
+          "label": "ser vs. estar, voy a, vivir",
+          "count": 13
+        },
+        {
+          "collection": "topic:confusable-false-friend",
+          "label": "False friends (realizar, éxito, largo…)",
+          "count": 16
+        },
+        {
+          "collection": "topic:confusable-pronoun",
+          "label": "él / lo / le / se / tú",
+          "count": 6
+        },
+        {
+          "collection": "topic:confusable-determiner",
+          "label": "un vs. uno, algún vs. alguno, el",
+          "count": 1
+        }
+      ]
     },
     {
       "slug": "en-mappings",
@@ -6063,10 +5982,42 @@
               "coreCount": 3
             }
           ]
+        },
+        {
+          "id": "common-confusions",
+          "label": "Common confusions",
+          "confusion": true,
+          "groups": [
+            {
+              "collection": "topic:confusable-pronoun",
+              "label": "you (tú/usted/ustedes/te), him (lo/le)",
+              "count": 11,
+              "confusion": true,
+              "coreCount": 7
+            },
+            {
+              "collection": "topic:confusable-determiner",
+              "label": "un vs. uno, algún vs. alguno, el",
+              "count": 10,
+              "confusion": true,
+              "coreCount": 5
+            }
+          ]
         }
       ],
       "emptyGroups": [],
-      "confusionGroups": []
+      "confusionGroups": [
+        {
+          "collection": "topic:confusable-pronoun",
+          "label": "you (tú/usted/ustedes/te), him (lo/le)",
+          "count": 11
+        },
+        {
+          "collection": "topic:confusable-determiner",
+          "label": "un vs. uno, algún vs. alguno, el",
+          "count": 10
+        }
+      ]
     },
     {
       "slug": "phrasal-verbs-by-root",
@@ -9291,60 +9242,5 @@
       ]
     }
   ],
-  "confusionOutsideMappings": [
-    {
-      "topic": "pronouns",
-      "collection": "topic:confusable-possessive",
-      "label": "Confusions — su/sus",
-      "count": 12
-    },
-    {
-      "topic": "pronouns",
-      "collection": "topic:confusable-pronoun-other",
-      "label": "Confusions — Other",
-      "count": 14
-    },
-    {
-      "topic": "determiners",
-      "collection": "topic:confusable-possessive",
-      "label": "Confusions — su/sus",
-      "count": 12
-    },
-    {
-      "topic": "determiners",
-      "collection": "topic:confusable-determiner-other",
-      "label": "Confusions — Other",
-      "count": 9
-    },
-    {
-      "topic": "interrogatives",
-      "collection": "contrast:confusable",
-      "label": "Confusions",
-      "count": 0
-    },
-    {
-      "topic": "verbs",
-      "collection": "contrast:confusable",
-      "label": "Confusions",
-      "count": 14
-    },
-    {
-      "topic": "cognates",
-      "collection": "contrast:confusable",
-      "label": "Confusions",
-      "count": 13
-    },
-    {
-      "topic": "nouns",
-      "collection": "contrast:confusable",
-      "label": "Confusions",
-      "count": 7
-    },
-    {
-      "topic": "adjectives",
-      "collection": "contrast:confusable",
-      "label": "Confusions",
-      "count": 11
-    }
-  ]
+  "confusionOutsideMappings": []
 }
