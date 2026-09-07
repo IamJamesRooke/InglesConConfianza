@@ -52,6 +52,46 @@ axis-consistency assertion to the existing registry in `collections.ts` and a
 structure-snapshot test. That is a check over the existing vocabulary, not a
 parallel classification.
 
+### Amendment (2026-09-07): topic base exclusions
+
+The verdict above survives, with one addition to the model that the original
+measurement pass missed. The Verbs page is based on `pos:verb`, and **315 of
+its 1804 rows were Latinate cognate verbs**. The ~205 at `reference` role
+(to abstain, to depose, to allude) are reference material, not teaching
+vocabulary, and they were what actually made the Verbs browser untrustworthy:
+"Formal & Rare Verbs" held 219 rows and "Formal Actions — Business & Process"
+was 14 reference cognates and nothing else.
+
+A topic may now declare `baseExclusions` — material that carries the base tag
+but does not belong in that page's browser:
+
+```ts
+baseExclusions: [
+  { collection: "topic:cognate", unlessRole: ["core", "supporting"] },
+]
+```
+
+Rationale, recorded so this is not relitigated:
+
+- It is a **display policy, not a fact about the concept**, so it belongs in
+  config, not in the data. No row is retagged. `pos:verb` stays true. A row
+  promoted to `supporting` later reappears on Verbs by itself.
+- The **role gate is essential**. 110 cognate verbs are core or supporting —
+  to prepare, to decide, to receive, to accept, to offer, to continue, to
+  include, to use, to visit, to explain. A teacher planning a lesson by theme
+  must find those on Verbs. Excluding *all* cognates would gut the page.
+- The excluded rows lose nothing: all 205 already carry a `cognate:` pattern
+  tag and stay fully reachable on Cognates.
+- **One predicate, three consumers.** `conceptInTopicScope` in
+  `src/lib/curriculum/scope.ts` and its Prisma twin in `curriculum-store.ts`
+  are called by the page query, the inventory script and the reachability
+  test, so the rule cannot drift between what the page shows and what the
+  audit measures.
+
+Result: Verbs base 1804 → 1599, "Formal & Rare Verbs" 219 → 128, global
+orphans still 0, within-topic gaps still 0. Applied in Batch P2-2a
+(commit `35b5d1be`).
+
 ## How each batch changes things
 
 - **Code-only:** moving a group between families, renaming a family or a
@@ -85,8 +125,9 @@ batch marked `escalate`.
 
 | Batch | Model | Note |
 |---|---|---|
-| 1 Tooling | Sonnet | Mechanical. Script and test additions. |
-| 2 Verb remainder | Sonnet, **manifest reviewed before apply** | Bulk semantic sorting, 219 rows. Low risk: merge-only, reviewable TSV, inventory catches losses. Do not apply unreviewed. |
+| 1 Tooling | Sonnet | **Done** (`bea7ac3e`). |
+| 2a Base exclusions | Opus | **Done** (`35b5d1be`). Touched the page query and the scope model. |
+| 2b Verb remainder | Sonnet, **manifest reviewed before apply** | Semantic sorting, now 128 rows of ordinary vocabulary. Merge-only, reviewable TSV, inventory catches losses. Do not apply unreviewed. |
 | 3 Adjectives merge | Sonnet | Decision made. Step 4's seam judgment is the only soft spot. |
 | 4 Nouns restructure | Sonnet | Design decided; mostly `family:` edits. |
 | 5 Cognates | Sonnet | Code-only regroup. |
@@ -141,41 +182,54 @@ tightening.
    --members verbs` prints readable members; the duplicate-axis guard is
    temporarily allow-listed for the adjectives pairs Batch 3 removes.
 
-### Batch 2 — Verbs: empty the mislabeled "Formal & Rare Verbs" bucket (219 rows)
+### Batch 2a — Verbs: exclude reference cognates — **DONE** (`35b5d1be`)
 
-The single most misleading name in the catalog, and it hides everyday
-vocabulary a beginner course needs.
+See the amendment above. Verbs base 1804 → 1599; the remainder bucket
+219 → 128; the empty "Formal Actions — Business & Process" button removed.
 
-- **Scope:** `topic:verb-formal-remainder`, 219 rows, 3 core.
+### Batch 2b — Verbs: sort the 128-row remainder into themes
+
+With the reference cognates gone, what is left in `topic:verb-formal-remainder`
+is ordinary everyday vocabulary that was never themed. This is now a
+straightforward sort, not a taxonomy problem.
+
+- **Scope:** `topic:verb-formal-remainder`, 128 rows.
+- **Shape of the contents** (from `--members verbs`): clusters around
+  `acabar` (13 senses), `dirigir` (5), `enviar` (4), `encontrar` (4),
+  `caber` (4), `depender` (3), plus singles — aceptar, comer, cruzar,
+  conectar, contactar, crear, editar, celebrar, cancelar, confirmar,
+  controlar, corregir, adaptar, adoptar, admirar, atraer, atrapar, apagarlo,
+  arrancar, brindar, bastar, causar, chocar con, cuidarlo, despejar,
+  disfrutar.
 - **Steps:**
-  1. `--members verbs`, filter to the bucket. Sort every row into one of:
-     - an **existing** thematic verb group — most of them fit
-       (`comer` → Eating & Drinking, `enviar` → Giving & Lending, `cruzar` →
-       Movement, `acabar`/`acabarse` → Following & Continuing, `atrapar` →
-       Possession & transfer);
-     - one of **two new groups** on a real seam: `Achieving & Managing
-       (lograr, conseguir, bastar)` and `Depending & Requiring (depender,
-       bastar, hacer falta)` — both are high-frequency and currently homeless;
-     - **not a verb** — `[alguien] no [hace algo]` / `[hizo algo]` are
-       negation patterns; untag `pos:verb`, they stay reachable on Questions &
-       Negation;
-     - **garbled** — `necesitar [hacer algo] → needa [do something]` and any
-       other malformed row → `trash` with a logged reason.
-  2. Apply as `curation-2026-09-DD-verbs-remainder-{1,2,3}.tsv`
-     (`concepts:apply`), batched ≤80 rows by target group so each is
-     independently committable.
-  3. Whatever genuinely remains formal/rare keeps the group, **renamed**
-     `Other formal & rare verbs`. If fewer than ~30 rows survive, fold them
-     into `Formal Actions — Abstract` and drop the group.
-  4. Promote to `core`, with a per-row reason, the everyday verbs this
-     surfaces (`acabar`, `enviar`, `mostrar`, `comer` senses, `lograr`,
-     `depender`, `cruzar`, `aceptar`). Promotion only — no demotions.
-- **Manifest:** `concepts:apply` ×2–3, one `roles:apply`, one small
-  `concepts:untag`, one `roles:apply` for trash.
-- **Size:** the largest batch here. 219 rows, 3–4 commits.
-- **Done when:** the bucket is under 30 rows or gone; `inventory` shows verbs
-  `reachable == base == 1804`, no new gap; `Formal & specialized` family core
-  count rises from 3.
+  1. Sort every row into an **existing** thematic verb group. Most fit:
+     `comer` → Eating & Drinking, `enviar` → Giving & Lending, `cruzar` /
+     `chocar con` / `dirigirse hacia` → Movement, `acabar`/`acabarse` →
+     Following & Continuing, `atrapar` → Getting & Obtaining, `apagarlo` →
+     Turning On/Off, `cuidarlo` → Daily Routine & Self-care, `contactar` /
+     `comunicarse con` → Communication, `crear`/`editar` → Creating, Fixing
+     & Changing.
+  2. Two **new groups** where no existing one fits, both high-frequency:
+     `Achieving & Managing (lograr, conseguir)` and `Depending, Fitting &
+     Being Enough (depender, caber, bastar)`.
+  3. **Not verbs:** `[alguien] no [hace algo]` / `[hizo algo]` are negation
+     frames. Untag `pos:verb`; both already carry `topic:verb-pattern` and
+     stay reachable on Verb Patterns. Both are `core` — verify reachability
+     after, do not change their role.
+  4. **Drill rows:** `intentar ==> intenta`, `tratar ==> trata` are inflection
+     drills, not lexical entries. Untag `pos:verb`.
+  5. **Garbled:** `necesitar [hacer algo] → needa [do something]` and any
+     other malformed row → `trash` with a logged reason.
+  6. Once empty, **delete the `Formal & Rare Verbs` button**. Then reassess the
+     `Formal & specialized` family, whose remaining groups are now tiny
+     (Technology 2, Weather/Time 4, Formal Abstract 4, Analysis 8, Health 10,
+     Admin/Legal 17) — merge the smallest into siblings or fold the family.
+- **Manifest:** `curation-2026-09-DD-verbs-remainder-{1,2}.tsv`
+  (`concepts:apply`, ≤80 rows each), one small `concepts:untag`, one
+  `roles:apply` for the garbled rows.
+- **Size:** 128 rows, 2–3 commits. Sonnet, manifest reviewed before apply.
+- **Done when:** the bucket button is gone; `inventory` shows verbs
+  `reachable == base == 1599`, no new gap; structure snapshot updated.
 
 ### Batch 3 — Adjectives: collapse the duplicate suffix axis
 
@@ -244,29 +298,57 @@ vocabulary a beginner course needs.
 - **Done when:** no Nouns family exceeds ~12 groups; `reachable == base ==
   483`; structure snapshot updated.
 
-### Batch 5 — Cognates: unmix the 48-leaf family
+### Batch 5 — Cognates: reorganize by part of speech, verbs by conjugation class
 
-- **Scope:** `Spelling patterns` holds three axes at once.
+Cognates now carries the reference verbs that Batch 2a removed from Verbs, so
+its organization matters more than it did. Today it is three families —
+`Spelling patterns` (48 groups, three different axes jammed together),
+`Cognate types` (1 group), `Latin roots` (22).
+
+**Decision (recorded).** Reorganize by **part of speech**, and split the verb
+patterns by **conjugation class**. I checked the membership: every pattern
+group is dominated by one part of speech, and every verb pattern group sits in
+one conjugation class. The axis partitions cleanly, so no group needs
+splitting — this is almost entirely `family:` string edits.
+
+Target structure:
+
+| Family | Groups | Rows |
+|---|---|---|
+| `-ar verb cognates (preparAR → prepare)` | `-izar → -ize`, `-ar → -ate`, `-ificar → -ify`, `-inar → -ine`, `servar → -serve`, `plicar → -ply` | ~49 |
+| `-er verb cognates (defendER → defend)` | `tener → -tain`, `poner → -pose`, `ceder → -cede`, `solver → -solve`, `traer → -tract`, `hender/prender → -hend` | ~34 |
+| `-ir verb cognates (decidIR → decide)` | `-ir → silent -e`, `mitir → -mit`, `ferir → -fer`, `ducir → -duce`, `tribuir → -tribute`, `struir → -struct`, `escribir → -scribe`, `cluir → -clude`, `decir → -dict`, `primir → -press`, `vertir → -vert`, `gerir → -gest`, `hibir → -hibit`, `cibir → -ceive`, `currir → -cur` | ~56 |
+| `Noun cognates` | the 22 noun suffix patterns (`-ción → -tion`, `-encia/-ancia`, `-ia → -y`, `-ista → -ist`, …) | ~190 |
+| `Adjective cognates` | the 13 adjective suffix patterns (`-oso → -ous`, `-ico → -ic`, `-able`, `-ivo → -ive`, …) | ~130 |
+| `Adverb cognates` | `-mente → -ly` | 15 |
+| `Verb form endings` | `-ando → -ing`, `-iendo → -ing`, `-ado/-ido → -ed`, `-dido → -ded` | 29 |
+| `How close is it?` | `Identical / transparent` (367), `Looks different` (64), `False friends` (10) | 441 |
+| `Latin roots — not yet sorted by stem` | `Latin roots (any)` | 218 |
+
+- **Naming requirement:** the three verb families hold only the *pattern-based*
+  cognates. The 180 verbs in `Identical / transparent` are not in them. So
+  label the last-but-one family for what it is — how close the spelling is,
+  including the "no rule needed, just read it" bulk — and do **not** imply the
+  class families are a complete enumeration of verb cognates.
 - **Steps:**
-  1. Move `topic:cognate-latin-root` ("Latin roots (any)", 218) into the
-     `Latin roots` family. 105 of its rows already sit in a stem group;
-     relabel it `Latin roots — other` and, as an optional follow-up, sort the
-     remaining ~113 into stems (`concepts:apply`, batchable by stem).
-  2. Split the rest into `Overall similarity` (`Identical / transparent` 367,
-     `Looks different` 64, and fold in `False friends` — "looks related but
-     isn't" is the same axis, retiring the 1-group `Cognate types` family) and
-     `Suffix patterns` (the ~44 `-X → -Y` groups, kept granular and unnumbered
-     because each is one clean pattern).
-  3. `-ma → -m` (1 row) and any other 1-row suffix group merge into the
-     nearest phonetic sibling, or a single `Other suffix swaps`.
-  4. Spot-check 20 rows of `Identical / transparent` (367) for mis-sweeps.
-     Decision: leave it whole — a complete enumeration of "just read it"
-     cognates is exactly what a teacher wants unsplit.
-- **Manifest:** code-only for the regroup; one tiny `collections:apply` for
-  step 3.
-- **Size:** small. 1 commit.
-- **Done when:** `reachable == base == 787`; no Cognates family mixes axes;
-  structure snapshot updated.
+  1. Assign every `cognates` facet button an explicit `family:` per the table.
+     Pure `topics.ts` edits, no DB write.
+  2. Retire the 1-group `Cognate types` family by folding `False friends` into
+     `How close is it?` — "looks related but isn't" is the same axis.
+  3. `-ma → -m` (1 row) merges into the nearest sibling or a single
+     `Other suffix swaps` group. One small `collections:apply`.
+  4. Leave `Identical / transparent` (367) whole. It is a complete enumeration
+     of one teaching move; splitting it would be size-driven, which the retired
+     size rule forbids.
+- **Optional follow-up (5b):** `Latin roots (any)` is 218 rows, 161 of them
+  verbs whose conjugation class is derivable from the infinitive ending.
+  A script could distribute them into the three class families and the noun
+  family. Worth it only if credits allow; the relabel above already delivers
+  most of the value.
+- **Manifest:** code-only for the regroup; one tiny `collections:apply`.
+- **Size:** small-to-medium, mostly config. 1–2 commits.
+- **Done when:** `reachable == base == 787`; no Cognates family mixes parts of
+  speech; structure snapshot updated.
 
 ### Batch 6 — Verbs: family names and stragglers
 
@@ -383,7 +465,12 @@ vocabulary a beginner course needs.
 
 ## Suggested order
 
-1 → 2 (×3–4) → 3 → 4 → 5 → 8-analysis → 8-apply (×5–8) → 6 → 7 → 9 → 10
+~~1~~ → ~~2a~~ → **2b** (×2–3) → 5 → 3 → 4 → 8-analysis → 8-apply (×5–8) →
+6 → 7 → 9 → 10
+
+Batches 1 and 2a are done. Batch 5 (Cognates) moved ahead of 3 and 4: the
+reference cognate verbs excluded from Verbs in 2a now land there, so its
+organization matters more than it did, and it is mostly config edits.
 
 Tooling first. Then the four batches that change what a teacher actually
 sees, biggest misdirection first. Beginner-core early enough to unblock
@@ -399,7 +486,9 @@ are already close to right.
 | "Formal & Rare Verbs" (219) | **Not a formal/rare group — it is an unsorted remainder. Distribute it.** | Its contents are `comer`, `enviar`, `cruzar`, `acabar`, `lograr`. Splitting it into invented formal sub-themes would preserve a false premise. |
 | Nouns dual family/calendar taxonomies | **Container becomes the family; retire the container button.** Do not merge. | `family-immediate`/`-extended` are strict subsets of `people-family-rel`; same for `calendar` over `noun-time-months`. A level confusion, not redundancy. |
 | Three Nouns money/business groups | **Rename, do not merge.** | Measured pairwise intersection is zero. They are three real slices with unhelpful names. |
-| Cognates "Latin roots (any)" (218) | **Move to the Latin roots family and rename `Latin roots — other`.** Distributing into stems is an optional follow-up. | 105 of 218 already sit in a stem group; the relabel delivers most of the value for none of the cost. |
+| Reference cognate verbs on the Verbs page | **Exclude them via a declarative topic `baseExclusions` rule, role-gated.** Not by untagging, and not all cognates. | 205 of 315 cognate verbs are reference material drowning the browser; the other 110 are core teaching verbs a theme-browsing teacher must find. A display policy belongs in config, keeps the data honest, and is self-maintaining on promotion. |
+| Cognates organizing axis | **Part of speech, with verbs split by conjugation class (-ar / -er / -ir).** | Measured: every pattern group is dominated by one part of speech, and every verb pattern sits in one conjugation class. The axis partitions cleanly, so it is a config change, not a re-tagging. |
+| Cognates "Latin roots (any)" (218) | **Keep as its own family, labelled "not yet sorted by stem".** Distributing it is an optional follow-up. | The relabel delivers most of the value for none of the cost; 161 of the 218 are verbs whose class a script could derive later. |
 | Cognates "Identical / transparent" (367) | **Leave whole.** | It is a complete enumeration of a single teaching move ("just read it"). Splitting it would be size-driven, which the retired size rule forbids. |
 | Transformations "Prefixes" (7 groups, 17 rows) | **Merge to one `Common prefixes` group.** | Five of seven are 1–2 rows. A one-row pattern group is not browsable. |
 | Phrasal-verb rare particles (1–2 rows) | **Leave.** | The page exists to hold a particle constant; a rare particle honestly has two examples. |
