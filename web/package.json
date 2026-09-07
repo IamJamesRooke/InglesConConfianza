@@ -32,7 +32,8 @@
     "curriculum:audit:status": "tsx scripts/audit-status.ts",
     "curriculum:apply": "tsx scripts/apply-curriculum.ts",
     "curriculum:collections:apply": "tsx scripts/apply-collection-manifest.ts",
-    "curriculum:snapshots:export": "tsx scripts/export-curriculum-snapshots.ts"
+    "curriculum:snapshots:export": "tsx scripts/export-curriculum-snapshots.ts",
+    "curriculum:inventory": "tsx scripts/curriculum-inventory.ts"
   },
   "engines": {
     "node": ">=24 <25"
