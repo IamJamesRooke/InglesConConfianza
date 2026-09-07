@@ -1499,57 +1499,57 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       {
         collection: "grammar:sentence-structure",
         label: "Everyday (and, but, or...)",
-        family: "Connector types",
+        family: "Everyday connectors",
       },
       {
         collection: "grammar:reason",
         label: "Reason",
-        family: "Connector types",
+        family: "Everyday connectors",
       },
       {
         collection: "grammar:concession",
         label: "Concession (although)",
-        family: "Connector types",
+        family: "Discourse & advanced",
       },
       {
         collection: "grammar:contrast",
         label: "Contrast",
-        family: "Connector types",
+        family: "Everyday connectors",
       },
       {
         collection: "grammar:addition",
         label: "Addition",
-        family: "Connector types",
+        family: "Everyday connectors",
       },
       {
         collection: "topic:time-connector",
         label: "Time",
-        family: "Connector types",
+        family: "Everyday connectors",
       },
       {
         collection: "grammar:discourse",
         label: "Discourse markers (that is, by the way)",
-        family: "Connector types",
+        family: "Discourse & advanced",
       },
       {
         collection: "grammar:sequence",
         label: "Sequence (then)",
-        family: "Connector types",
+        family: "Everyday connectors",
       },
       {
         collection: "grammar:conditional",
         label: "Conditional (as long as, unless)",
-        family: "Connector types",
+        family: "Discourse & advanced",
       },
       {
         collection: "grammar:correlative",
         label: "Correlative (either...or, neither...nor)",
-        family: "Connector types",
+        family: "Discourse & advanced",
       },
       {
         collection: "grammar:comparison",
         label: "Comparison (than)",
-        family: "Connector types",
+        family: "Discourse & advanced",
       },
     ],
   },
@@ -2532,12 +2532,12 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       {
         collection: "construction:be-present-participle",
         label: "progressive (to be going)",
-        family: "Sentence patterns",
+        family: "Tense & auxiliary patterns",
       },
       {
         collection: "construction:auxiliary-do",
         label: "auxiliary do (did they go?)",
-        family: "Sentence patterns",
+        family: "Tense & auxiliary patterns",
       },
       {
         collection: "construction:double-object",
@@ -2557,7 +2557,7 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       {
         collection: "grammar:going-to",
         label: "going to (future)",
-        family: "Sentence patterns",
+        family: "Tense & auxiliary patterns",
       },
     ],
   },

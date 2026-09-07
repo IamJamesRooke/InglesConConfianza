@@ -187,7 +187,10 @@ const EXPECTED_FAMILY_STRUCTURE: Record<string, Array<[string, number]>> = {
   ],
   numbers: [["Number groups", 8]],
   expressions: [["Expression groups", 7]],
-  connectors: [["Connector types", 11]],
+  connectors: [
+    ["Everyday connectors", 6],
+    ["Discourse & advanced", 5],
+  ],
   prepositions: [["Preposition groups", 5]],
   mappings: [
     ["A–E", 16],
@@ -227,8 +230,9 @@ const EXPECTED_FAMILY_STRUCTURE: Record<string, Array<[string, number]>> = {
     ["Irregular patterns", 50],
   ],
   "verb-patterns": [
-    ["Sentence patterns", 10],
+    ["Sentence patterns", 7],
     ["Verb complements", 8],
+    ["Tense & auxiliary patterns", 3],
   ],
   "questions-negation": [["Question & negative patterns", 6]],
   imperatives: [["Command types", 4]],
