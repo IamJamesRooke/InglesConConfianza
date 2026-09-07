@@ -1,0 +1,12 @@
+[el] pan	bread	Compré pan fresco esta mañana.	I bought fresh bread this morning.	supporting	pos:noun|topic:food|gender:masculine|topic:masc-consonant|es:pan|en:bread
+[el] agua	water	Necesito un vaso de agua.	I need a glass of water.	supporting	pos:noun|topic:food|gender:feminine|topic:fem-exceptions|es:agua|en:water
+[el] café	coffee	Tomo café por la mañana.	I drink coffee in the morning.	supporting	pos:noun|topic:food|gender:masculine|topic:masc-e|es:café|en:coffee
+[la] leche	milk	No queda leche en la nevera.	There's no milk left in the fridge.	supporting	pos:noun|topic:food|gender:feminine|topic:fem-exceptions|es:leche|en:milk
+[la] fruta	fruit	La fruta está en la mesa.	The fruit is on the table.	supporting	pos:noun|topic:food|gender:feminine|topic:fem-a|es:fruta|en:fruit
+[la] verdura	vegetable	Come más verdura.	Eat more vegetables.	supporting	pos:noun|topic:food|gender:feminine|topic:fem-a|es:verdura|en:vegetable
+[la] carne	meat	No como carne los viernes.	I don't eat meat on Fridays.	supporting	pos:noun|topic:food|gender:feminine|topic:fem-exceptions|es:carne|en:meat
+[el] huevo	egg	Quiero un huevo frito.	I want a fried egg.	supporting	pos:noun|topic:food|gender:masculine|topic:masc-o|es:huevo|en:egg
+[el] queso	cheese	¿Te gusta el queso?	Do you like cheese?	supporting	pos:noun|topic:food|gender:masculine|topic:masc-o|es:queso|en:cheese
+[el] arroz	rice	El arroz ya está listo.	The rice is ready.	supporting	pos:noun|topic:food|gender:masculine|topic:masc-consonant|es:arroz|en:rice
+[la] manzana	apple	Una manzana al día.	An apple a day.	supporting	pos:noun|topic:food|gender:feminine|topic:fem-a|es:manzana|en:apple
+[el] pollo	chicken	Cenamos pollo con verduras.	We had chicken with vegetables for dinner.	supporting	pos:noun|topic:food|gender:masculine|topic:masc-o|es:pollo|en:chicken

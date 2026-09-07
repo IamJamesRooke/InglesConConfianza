@@ -1,0 +1,12 @@
+[la] camisa	shirt	Me puse una camisa blanca.	I put on a white shirt.	supporting	pos:noun|topic:clothing|gender:feminine|topic:fem-a|es:camisa|en:shirt
+[los] pantalones	pants	Estos pantalones me quedan bien.	These pants fit me well.	supporting	pos:noun|topic:clothing|gender:masculine|topic:masc-consonant|es:pantalones|en:pants
+[el] zapato	shoe	Se me rompió el zapato.	My shoe broke.	supporting	pos:noun|topic:clothing|gender:masculine|topic:masc-o|es:zapato|en:shoe
+[el] vestido	dress	Ella lleva un vestido rojo.	She is wearing a red dress.	supporting	pos:noun|topic:clothing|gender:masculine|topic:masc-o|es:vestido|en:dress
+[la] falda	skirt	La falda es demasiado larga.	The skirt is too long.	supporting	pos:noun|topic:clothing|gender:feminine|topic:fem-a|es:falda|en:skirt
+[el] abrigo	coat	Hace frío, ponte el abrigo.	It's cold, put on your coat.	supporting	pos:noun|topic:clothing|gender:masculine|topic:masc-o|es:abrigo|en:coat
+[la] chaqueta	jacket	Dejé la chaqueta en el coche.	I left my jacket in the car.	supporting	pos:noun|topic:clothing|gender:feminine|topic:fem-a|es:chaqueta|en:jacket
+[el] sombrero	hat	Lleva un sombrero para el sol.	Wear a hat for the sun.	supporting	pos:noun|topic:clothing|gender:masculine|topic:masc-o|es:sombrero|en:hat
+[el] calcetín	sock	Perdí un calcetín en la lavadora.	I lost a sock in the washer.	supporting	pos:noun|topic:clothing|gender:masculine|topic:masc-consonant|es:calcetín|en:sock
+[el] suéter	sweater	Este suéter es de lana.	This sweater is wool.	supporting	pos:noun|topic:clothing|gender:masculine|topic:masc-consonant|es:suéter|en:sweater
+[la] corbata	tie	El traje necesita una corbata.	The suit needs a tie.	supporting	pos:noun|topic:clothing|gender:feminine|topic:fem-a|es:corbata|en:tie
+[el] cinturón	belt	Ajústate el cinturón.	Fasten your belt.	supporting	pos:noun|topic:clothing|gender:masculine|topic:masc-consonant|es:cinturón|en:belt

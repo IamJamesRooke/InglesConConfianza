@@ -99083,6 +99083,438 @@
         "en:body"
       ],
       "curriculumRole": "supporting"
+    },
+    {
+      "id": "46v0r01f05",
+      "spanish": "[la] camisa",
+      "english": "shirt",
+      "example": {
+        "spanish": "Me puse una camisa blanca.",
+        "english": "I put on a white shirt."
+      },
+      "collections": [
+        "pos:noun",
+        "topic:clothing",
+        "gender:feminine",
+        "topic:fem-a",
+        "es:camisa",
+        "en:shirt"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "rv3456cx2e",
+      "spanish": "[los] pantalones",
+      "english": "pants",
+      "example": {
+        "spanish": "Estos pantalones me quedan bien.",
+        "english": "These pants fit me well."
+      },
+      "collections": [
+        "pos:noun",
+        "topic:clothing",
+        "gender:masculine",
+        "topic:masc-consonant",
+        "es:pantalones",
+        "en:pants"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "j11l0cfpfu",
+      "spanish": "[el] zapato",
+      "english": "shoe",
+      "example": {
+        "spanish": "Se me rompió el zapato.",
+        "english": "My shoe broke."
+      },
+      "collections": [
+        "pos:noun",
+        "topic:clothing",
+        "gender:masculine",
+        "topic:masc-o",
+        "es:zapato",
+        "en:shoe"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "02hvut09ru",
+      "spanish": "[el] vestido",
+      "english": "dress",
+      "example": {
+        "spanish": "Ella lleva un vestido rojo.",
+        "english": "She is wearing a red dress."
+      },
+      "collections": [
+        "pos:noun",
+        "topic:clothing",
+        "gender:masculine",
+        "topic:masc-o",
+        "es:vestido",
+        "en:dress"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "530qz6bluz",
+      "spanish": "[la] falda",
+      "english": "skirt",
+      "example": {
+        "spanish": "La falda es demasiado larga.",
+        "english": "The skirt is too long."
+      },
+      "collections": [
+        "pos:noun",
+        "topic:clothing",
+        "gender:feminine",
+        "topic:fem-a",
+        "es:falda",
+        "en:skirt"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "s9onhif5uc",
+      "spanish": "[el] abrigo",
+      "english": "coat",
+      "example": {
+        "spanish": "Hace frío, ponte el abrigo.",
+        "english": "It's cold, put on your coat."
+      },
+      "collections": [
+        "pos:noun",
+        "topic:clothing",
+        "gender:masculine",
+        "topic:masc-o",
+        "es:abrigo",
+        "en:coat"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "uws8mxw10y",
+      "spanish": "[la] chaqueta",
+      "english": "jacket",
+      "example": {
+        "spanish": "Dejé la chaqueta en el coche.",
+        "english": "I left my jacket in the car."
+      },
+      "collections": [
+        "pos:noun",
+        "topic:clothing",
+        "gender:feminine",
+        "topic:fem-a",
+        "es:chaqueta",
+        "en:jacket"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "fxnp9jrm32",
+      "spanish": "[el] sombrero",
+      "english": "hat",
+      "example": {
+        "spanish": "Lleva un sombrero para el sol.",
+        "english": "Wear a hat for the sun."
+      },
+      "collections": [
+        "pos:noun",
+        "topic:clothing",
+        "gender:masculine",
+        "topic:masc-o",
+        "es:sombrero",
+        "en:hat"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "hrq9yurfkx",
+      "spanish": "[el] calcetín",
+      "english": "sock",
+      "example": {
+        "spanish": "Perdí un calcetín en la lavadora.",
+        "english": "I lost a sock in the washer."
+      },
+      "collections": [
+        "pos:noun",
+        "topic:clothing",
+        "gender:masculine",
+        "topic:masc-consonant",
+        "es:calcetín",
+        "en:sock"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "xo9p1xdyij",
+      "spanish": "[el] suéter",
+      "english": "sweater",
+      "example": {
+        "spanish": "Este suéter es de lana.",
+        "english": "This sweater is wool."
+      },
+      "collections": [
+        "pos:noun",
+        "topic:clothing",
+        "gender:masculine",
+        "topic:masc-consonant",
+        "es:suéter",
+        "en:sweater"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "l093qa2247",
+      "spanish": "[la] corbata",
+      "english": "tie",
+      "example": {
+        "spanish": "El traje necesita una corbata.",
+        "english": "The suit needs a tie."
+      },
+      "collections": [
+        "pos:noun",
+        "topic:clothing",
+        "gender:feminine",
+        "topic:fem-a",
+        "es:corbata",
+        "en:tie"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "fv8734tng4",
+      "spanish": "[el] cinturón",
+      "english": "belt",
+      "example": {
+        "spanish": "Ajústate el cinturón.",
+        "english": "Fasten your belt."
+      },
+      "collections": [
+        "pos:noun",
+        "topic:clothing",
+        "gender:masculine",
+        "topic:masc-consonant",
+        "es:cinturón",
+        "en:belt"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "vhrifh20mn",
+      "spanish": "[el] pan",
+      "english": "bread",
+      "example": {
+        "spanish": "Compré pan fresco esta mañana.",
+        "english": "I bought fresh bread this morning."
+      },
+      "collections": [
+        "pos:noun",
+        "topic:food",
+        "gender:masculine",
+        "topic:masc-consonant",
+        "es:pan",
+        "en:bread"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "n9nmh0cwk1",
+      "spanish": "[el] agua",
+      "english": "water",
+      "example": {
+        "spanish": "Necesito un vaso de agua.",
+        "english": "I need a glass of water."
+      },
+      "collections": [
+        "pos:noun",
+        "topic:food",
+        "gender:feminine",
+        "topic:fem-exceptions",
+        "es:agua",
+        "en:water"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "75is3vjqec",
+      "spanish": "[el] café",
+      "english": "coffee",
+      "example": {
+        "spanish": "Tomo café por la mañana.",
+        "english": "I drink coffee in the morning."
+      },
+      "collections": [
+        "pos:noun",
+        "topic:food",
+        "gender:masculine",
+        "topic:masc-e",
+        "es:café",
+        "en:coffee"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "1wmbqlf29b",
+      "spanish": "[la] leche",
+      "english": "milk",
+      "example": {
+        "spanish": "No queda leche en la nevera.",
+        "english": "There's no milk left in the fridge."
+      },
+      "collections": [
+        "pos:noun",
+        "topic:food",
+        "gender:feminine",
+        "topic:fem-exceptions",
+        "es:leche",
+        "en:milk"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "g1h4h8nedl",
+      "spanish": "[la] fruta",
+      "english": "fruit",
+      "example": {
+        "spanish": "La fruta está en la mesa.",
+        "english": "The fruit is on the table."
+      },
+      "collections": [
+        "pos:noun",
+        "topic:food",
+        "gender:feminine",
+        "topic:fem-a",
+        "es:fruta",
+        "en:fruit"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "7bkipm49q7",
+      "spanish": "[la] verdura",
+      "english": "vegetable",
+      "example": {
+        "spanish": "Come más verdura.",
+        "english": "Eat more vegetables."
+      },
+      "collections": [
+        "pos:noun",
+        "topic:food",
+        "gender:feminine",
+        "topic:fem-a",
+        "es:verdura",
+        "en:vegetable"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "lncnulj8wf",
+      "spanish": "[la] carne",
+      "english": "meat",
+      "example": {
+        "spanish": "No como carne los viernes.",
+        "english": "I don't eat meat on Fridays."
+      },
+      "collections": [
+        "pos:noun",
+        "topic:food",
+        "gender:feminine",
+        "topic:fem-exceptions",
+        "es:carne",
+        "en:meat"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "qj7jo4c4qp",
+      "spanish": "[el] huevo",
+      "english": "egg",
+      "example": {
+        "spanish": "Quiero un huevo frito.",
+        "english": "I want a fried egg."
+      },
+      "collections": [
+        "pos:noun",
+        "topic:food",
+        "gender:masculine",
+        "topic:masc-o",
+        "es:huevo",
+        "en:egg"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "wr98m0hmwx",
+      "spanish": "[el] queso",
+      "english": "cheese",
+      "example": {
+        "spanish": "¿Te gusta el queso?",
+        "english": "Do you like cheese?"
+      },
+      "collections": [
+        "pos:noun",
+        "topic:food",
+        "gender:masculine",
+        "topic:masc-o",
+        "es:queso",
+        "en:cheese"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "f3hbigru30",
+      "spanish": "[el] arroz",
+      "english": "rice",
+      "example": {
+        "spanish": "El arroz ya está listo.",
+        "english": "The rice is ready."
+      },
+      "collections": [
+        "pos:noun",
+        "topic:food",
+        "gender:masculine",
+        "topic:masc-consonant",
+        "es:arroz",
+        "en:rice"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "q8wxati726",
+      "spanish": "[la] manzana",
+      "english": "apple",
+      "example": {
+        "spanish": "Una manzana al día.",
+        "english": "An apple a day."
+      },
+      "collections": [
+        "pos:noun",
+        "topic:food",
+        "gender:feminine",
+        "topic:fem-a",
+        "es:manzana",
+        "en:apple"
+      ],
+      "curriculumRole": "supporting"
+    },
+    {
+      "id": "4kiz722dd0",
+      "spanish": "[el] pollo",
+      "english": "chicken",
+      "example": {
+        "spanish": "Cenamos pollo con verduras.",
+        "english": "We had chicken with vegetables for dinner."
+      },
+      "collections": [
+        "pos:noun",
+        "topic:food",
+        "gender:masculine",
+        "topic:masc-o",
+        "es:pollo",
+        "en:chicken"
+      ],
+      "curriculumRole": "supporting"
     }
   ]
 }

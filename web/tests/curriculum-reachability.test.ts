@@ -169,7 +169,7 @@ const EXPECTED_FAMILY_STRUCTURE: Record<string, Array<[string, number]>> = {
     ["People & family", 5],
     ["Places", 2],
     ["Time & calendar", 3],
-    ["Domains", 14],
+    ["Domains", 15],
     ["Objects & things", 3],
     ["Abstract nouns by suffix", 5],
     ["Other abstract nouns", 1],

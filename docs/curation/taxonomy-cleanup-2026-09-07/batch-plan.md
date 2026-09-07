@@ -129,6 +129,7 @@ phase-1 rows above. Model routing per batch is in `next-plan.md`.
 - 2026-09-07 · P2-2b · `35952be0` · verbs-remainder-{A-retag,B-untag-bucket,C-untag-posverb,D-trash-drills} · verb-formal-remainder dissolved (219→0); verbs base 1599→1595; orphans 0; gaps 0; new group `topic:verb-depending-fitting`; 2 rows trashed; `db:test` 14/14.
 - 2026-09-07 · P2-9 · _(verification only)_ · none · Mappings/Phrasal: every headword button's family matches its first letter; Spanish→English "K–O" has genuinely zero members (no multi-sense Spanish lemma in that range — a data fact, not a miscoded button); confusion families and legacy-link tests green.
 - 2026-09-07 · P2-8 · `d0086387` · P2-8-beginner-core (78), P2-8b-numbers-core (26), P2-8c-body-parts-add (12 new) · core 309→425 — **reverted below**.
+- 2026-09-07 · P2-14 · _(this commit)_ · P2-14-{clothing,food}-add · +24 supporting noun rows; new `topic:clothing` group; catalog 4460→4484; `db:test` 14/14.
 - 2026-09-07 · P2-13 · _(this commit)_ · P2-13-clear-stale-flags · audit:flagged removed from 2 already-trashed rows; Track B flagged 2→0; `db:test` 14/14.
 - 2026-09-07 · P2-12 · _(this commit)_ · none (config only) · connectors 1→2 families, verb-patterns 2→3; base/reachable unchanged; `db:test` 14/14.
 - 2026-09-07 · P2-11 · _(this commit)_ · P2-review-{trash,retag,untag} · 18 of 20 REVIEW flags confirmed; 1 dup trashed, 1 rehomed; `db:test` 14/14.
@@ -142,6 +143,8 @@ phase-1 rows above. Model routing per batch is in `next-plan.md`.
 | P2-12 | Connectors + Verb-Patterns family splits | **done** | _(this commit)_ | Connectors: the flat 11-group `Connector types` split into `Everyday connectors` (and/but/or, reason, contrast, addition, time, sequence — 6) and `Discourse & advanced` (concession, discourse markers, conditional, correlative, comparison — 5), so a beginner lesson finds the basic joiners without wading past "either…or". Verb-Patterns: `progressive`, `going to (future)` and `auxiliary do` moved out of `Sentence patterns` into a new `Tense & auxiliary patterns` family; `Sentence patterns` is now 7 genuine complementation patterns. Code-only. |
 
 | P2-13 | Clear stale audit flags | **done** | _(this commit)_ | The 2 `full-audit-findings.md` flagged `grammar:definite-article` rows were already trashed in Batch 9 and replaced with a clean generic-article concept; removed the stale `audit:flagged` tags. Track B flagged count 2→0. |
+
+| P2-14 | Content-gap additions | **done** | _(this commit)_ | Clothing was **entirely absent** from the catalog (only generic "ropa"); added 12 basic garment nouns (shirt, pants, shoe, dress, skirt, coat, jacket, hat, sock, sweater, tie, belt) under a new `topic:clothing` group (Nouns/Domains). Food had 12 rows but no actual food items — added 12 (bread, water, coffee, milk, fruit, vegetable, meat, egg, cheese, rice, apple, chicken) into the existing `topic:food` group. All at `supporting` (content vocabulary, not `core`), with real example sentences. |
 
 ## Checkpoint — Phase 2 (semantic re-audit) COMPLETE, 2026-09-07
 
