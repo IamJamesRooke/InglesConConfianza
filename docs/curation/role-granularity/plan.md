@@ -34,6 +34,20 @@ vocabulary-led.
 **Judgement, not a frequency list.** Importance is eyeballed per row against
 the tier tests above. There is no external frequency list in play.
 
+**Design decision (P3-4a, recorded): `core` carries the *entire* grammatical
+system.** The philosophy is "master the entire grammar system with a limited
+vocabulary." In this catalog the Spanish grammatical system — the full
+pronoun, determiner, connector and preposition sets, the question words, and
+the verb machinery (ser/estar/tener/ir/haber conjugation, negation, questions,
+the perfect, the modals, comparison, the change-of-state copulas) — is about
+**700 rows, ~16% of the catalog.** That is not vocabulary bloat; it is the
+size of the grammar. The "limited vocabulary" of the MVP is the ~30
+non-grammar rows that also sit in `core`. A row is grammar (→ `core`) if a
+dictionary plus the rest of the grammar cannot produce it: every function
+word, every conjugation/mood/tense pattern, every fixed construction. A row
+is vocabulary (→ `essential`/`common`/`extended`/`rare`) if a dictionary
+supplies it once the learner has the grammar.
+
 **`core` is re-scoped tighter, not rebuilt.** The Phase 1/2 `core` (309) was
 curated under "functional, can't-derive-unaided", which is nearly this tier-1
 test. ~85% of it is already grammatical-operating-system (ser/estar/tener/ir/
@@ -65,7 +79,8 @@ material is temporarily sitting in `rare`).
 | P3-2 | Trim `core` to the MVP set | Sonnet | **done** — 27 rows core→essential (20 lookupable content verbs incl. comer/comprar/leer/vender/trabajar/vivir, + the 4 kinship nouns). Core 309→282. |
 | P3-3a | Grammar rows common→core | Sonnet | **done** (`030054bb`) — 166 rows: the full determiner/connector systems + ser/estar/haber/ir/poder/deber machinery. Core 282→448. |
 | P3-3b | Build `essential` from `common` | Sonnet | **done** — 362 rows: everyday verbs, people/family/body/place/time nouns, basic adjectives, cardinals 5-100, days, everyday adverbs. Essential 27→389. |
-| P3-4 | Split `extended` out of `rare` | Sonnet, signal-assisted | — |
+| P3-4a | Rescue grammar stranded in rare/common → core | Sonnet | **done** (`459bfeea`) — 279 rows (pronouns, prepositions, connectors, determiners, modal/copula verbs). Core 448→727. |
+| P3-4b | Split `extended` out of `rare` | Sonnet | **done** — 1616 rows rare→extended (everything not a transparent cognate, paradigm drill, or bare mapping anchor). |
 | P3-5 | Boundary review, guardrail retune, docs, memory | Sonnet | — |
 
 ### P3-1 detail
@@ -80,13 +95,13 @@ material is temporarily sitting in `rare`).
 - `src/lib/curriculum/scope.ts`: `unlessRole` on the Verbs cognate exclusion currently lists `["core","supporting"]` — update to the new set that means "teachable" (`["core","essential","common"]` initially, revisit after P3-4).
 - Mechanical role manifest, then `npm run curriculum:snapshots:export -- --apply`, `db:verify`, `db:test`.
 
-### Provisional guardrail bands (tune in P3-5)
+### Guardrail bands (set P3-4, tuned to the real shape)
 
-| Tier | Target % |
-|---|---|
-| `core` | 4–7 |
-| `essential` | 8–14 |
-| `common` | 28–38 |
-| `extended` | 18–28 |
-| `rare` | 20–30 |
-| `trash` | 3–6 |
+| Tier | Target % | Actual |
+|---|---|---|
+| `core` | 13–19 | 16.2 |
+| `essential` | 7–12 | 8.7 |
+| `common` | 9–16 | 12.1 |
+| `extended` | 30–42 | 36.0 |
+| `rare` | 18–28 | 21.8 |
+| `trash` | 3–6 | 5.2 |
