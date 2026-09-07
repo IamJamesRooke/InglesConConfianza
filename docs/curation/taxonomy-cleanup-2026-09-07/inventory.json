@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generatedAt": "2026-09-07T16:24:33.195Z",
+    "generatedAt": "2026-09-07T16:30:16.048Z",
     "totals": {
       "allConcepts": 4447,
       "nonTrash": 4220,
@@ -40,8 +40,8 @@
       },
       {
         "slug": "verbs",
-        "baseCount": 1806,
-        "reachableCount": 1806,
+        "baseCount": 1807,
+        "reachableCount": 1807,
         "withinTopicGapCount": 0,
         "emptyGroupCount": 0,
         "confusionGroupCount": 0
@@ -530,8 +530,8 @@
       "slug": "verbs",
       "title": "Verbs",
       "baseCollection": "pos:verb",
-      "baseCount": 1806,
-      "reachableCount": 1806,
+      "baseCount": 1807,
+      "reachableCount": 1807,
       "withinTopicGapCount": 0,
       "withinTopicGapIds": [],
       "families": [
@@ -1019,16 +1019,16 @@
             {
               "collection": "topic:verb-possession-having-2",
               "label": "Having (tener) (2)",
-              "count": 16,
+              "count": 17,
               "confusion": false,
-              "coreCount": 12
+              "coreCount": 13
             },
             {
               "collection": "topic:verb-possession-obtaining-1",
               "label": "Getting & Obtaining (1)",
-              "count": 11,
+              "count": 12,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 3
             },
             {
               "collection": "topic:verb-possession-obtaining-2",
@@ -1481,9 +1481,9 @@
             {
               "collection": "topic:verb-formal-remainder-6",
               "label": "Formal & Rare Verbs (7)",
-              "count": 16,
+              "count": 15,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 0
             },
             {
               "collection": "topic:verb-formal-remainder-7",
