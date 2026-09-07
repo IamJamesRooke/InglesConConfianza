@@ -2727,7 +2727,7 @@
         "topic:map-decir",
         "topic:enmap-that"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "6mwi5bt3ax",
@@ -2753,7 +2753,7 @@
         "topic:map-decir",
         "topic:enmap-in"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "1x6wkh4a4p",
@@ -2777,7 +2777,7 @@
         "topic:map-decir",
         "topic:enmap-that"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "2kr0ohl0n5",
@@ -2801,7 +2801,7 @@
         "topic:map-decir",
         "topic:enmap-put"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "z3umj7sj0q",
@@ -2846,7 +2846,7 @@
         "topic:map-decir",
         "topic:enmap-to"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "mx0rz2zmur",
@@ -4136,7 +4136,7 @@
         "topic:map-dar",
         "topic:enmap-that"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "3oei2t1rkw",
@@ -5876,7 +5876,7 @@
         "audit:reviewed",
         "topic:map-poner"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "tr18eklsol",
@@ -8147,7 +8147,7 @@
         "topic:map-estar",
         "topic:enmap-how"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "f5h0hvcv1d",
@@ -8229,7 +8229,7 @@
         "topic:enmap-be",
         "topic:verb-estar-idioms"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "grd35t3yb8",
@@ -8318,7 +8318,7 @@
         "topic:enmap-be",
         "topic:verb-estar-idioms"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "p76va4jmyy",
@@ -8350,7 +8350,7 @@
         "topic:enmap-be",
         "topic:verb-estar-idioms"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "0v47ifpsxd",
@@ -8475,7 +8475,7 @@
         "topic:map-estar",
         "topic:verb-estar-idioms"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "i906c8x5c2",
@@ -8628,7 +8628,7 @@
         "topic:enmap-be",
         "topic:verb-estar-idioms"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "x9rvf35d7y",
@@ -8685,7 +8685,7 @@
         "topic:enmap-be",
         "topic:verb-estar-idioms"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "6ywiv1c0l5",
@@ -8717,7 +8717,7 @@
         "topic:enmap-be",
         "topic:verb-estar-idioms"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "nfursmvnpb",
@@ -8744,7 +8744,7 @@
         "topic:enmap-be",
         "topic:verb-estar-idioms"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "km539emf2l",
@@ -8963,7 +8963,7 @@
         "topic:map-estar",
         "topic:verb-estar-idioms"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "vf8v3tcztr",
@@ -8984,7 +8984,7 @@
         "topic:map-estar",
         "topic:verb-estar-idioms"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "i2sih4q1lh",
@@ -9005,7 +9005,7 @@
         "topic:map-estar",
         "topic:verb-estar-idioms"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "9qzgymygsa",
@@ -9026,7 +9026,7 @@
         "topic:map-estar",
         "topic:verb-estar-idioms"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "69tvlt4ak1",
@@ -10016,7 +10016,7 @@
         "topic:verb-tobe-existence-hay",
         "topic:map-haber"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "c9mgqdsqvo",
@@ -10059,7 +10059,7 @@
         "topic:verb-tobe-existence-hay",
         "topic:map-haber"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "4pgifzt26u",
@@ -10134,7 +10134,7 @@
         "topic:map-haber",
         "topic:map-deber"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "ofxncx6grm",
@@ -10159,7 +10159,7 @@
         "topic:map-poder",
         "topic:map-haber"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "hx7cadgvj9",
@@ -10212,7 +10212,7 @@
         "topic:map-haber",
         "topic:map-ir"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "1qz4qeh9oi",
@@ -11129,7 +11129,7 @@
         "topic:map-de",
         "topic:enmap-in"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "2iiyjrogmc",
@@ -11305,7 +11305,7 @@
         "topic:enmap-for",
         "topic:enmap-go"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "omzzomx3m9",
@@ -11378,7 +11378,7 @@
         "topic:enmap-with",
         "topic:enmap-go"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "dv55nncur9",
@@ -11464,7 +11464,7 @@
         "topic:map-ir",
         "topic:enmap-go"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "vnowmg0rlw",
@@ -14084,7 +14084,7 @@
         "audit:reviewed",
         "topic:map-de"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "01gzy2c71x",
@@ -14109,7 +14109,7 @@
         "topic:enmap-of",
         "topic:enmap-in"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "bwknkus97g",
@@ -14152,7 +14152,7 @@
         "audit:reviewed",
         "topic:enmap-that"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "as4ogkvga8",
@@ -14421,7 +14421,7 @@
         "topic:verb-modal-possibility",
         "topic:map-poder"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "ltn1qfc1r6",
@@ -14445,7 +14445,7 @@
         "topic:verb-modal-possibility",
         "topic:map-poder"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "rhb07wm3u7",
@@ -14475,7 +14475,7 @@
         "topic:enmap-to",
         "topic:enmap-get"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "kdqtl39s0m",
@@ -14506,7 +14506,7 @@
         "topic:enmap-to",
         "topic:enmap-get"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "0x5jkr1aja",
@@ -14538,7 +14538,7 @@
         "topic:enmap-to",
         "topic:enmap-get"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "cl4hfx7beh",
@@ -14608,7 +14608,7 @@
         "topic:verb-modal-ability",
         "topic:map-poder"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "v2jinicnwh",
@@ -14706,7 +14706,7 @@
         "topic:map-poder",
         "topic:map-haber"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "yhchadk82l",
@@ -14734,7 +14734,7 @@
         "topic:map-poder",
         "topic:map-haber"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "3qq5q3d71a",
@@ -14760,7 +14760,7 @@
         "topic:map-haber",
         "topic:enmap-have"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "93vebts2ml",
@@ -14787,7 +14787,7 @@
         "topic:map-poder",
         "topic:map-haber"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "q0xx0fzsx3",
@@ -14811,7 +14811,7 @@
         "topic:verb-modal-ability",
         "topic:map-poder"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "dq62rzd2ga",
@@ -14836,7 +14836,7 @@
         "topic:verb-modal-ability",
         "topic:map-poder"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "43z1s233ya",
@@ -14892,7 +14892,7 @@
         "topic:map-poder",
         "topic:enmap-you"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "jdd2lebx6x",
@@ -14940,7 +14940,7 @@
         "topic:verb-modal-possibility",
         "topic:map-poder"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "oy4fp397cg",
@@ -15142,7 +15142,7 @@
         "topic:map-poder",
         "topic:enmap-have"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "tu44lpd4ms",
@@ -15407,7 +15407,7 @@
         "topic:verb-modal-ability",
         "topic:map-poder"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "3lk22b2pth",
@@ -15430,7 +15430,7 @@
         "topic:verb-modal-ability",
         "topic:map-poder"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "tlwmwkpfcj",
@@ -15452,7 +15452,7 @@
         "topic:verb-modal-ability",
         "topic:map-poder"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "278hopgdpm",
@@ -15477,7 +15477,7 @@
         "topic:map-poder",
         "topic:map-haber"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "gtr8psda9i",
@@ -15500,7 +15500,7 @@
         "topic:verb-modal-ability",
         "topic:map-poder"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "12340xb2xp",
@@ -15522,7 +15522,7 @@
         "topic:verb-modal-possibility",
         "topic:map-poder"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "9az16vn9mo",
@@ -15545,7 +15545,7 @@
         "topic:verb-modal-ability",
         "topic:map-poder"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "qvrmxadrwa",
@@ -15569,7 +15569,7 @@
         "topic:map-poder",
         "topic:enmap-have"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "nr6s42kdwg",
@@ -15593,7 +15593,7 @@
         "topic:map-poder",
         "topic:enmap-have"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "jy4xtdl0bz",
@@ -15617,7 +15617,7 @@
         "topic:map-poder",
         "topic:enmap-have"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "qzm188rl47",
@@ -15640,7 +15640,7 @@
         "topic:map-poder",
         "topic:enmap-have"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "7r5w8ljmzc",
@@ -15665,7 +15665,7 @@
         "topic:verb-modal-possibility",
         "topic:map-poder"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "k4qa6qb9oa",
@@ -19695,7 +19695,7 @@
         "grammar:concession",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "7b45x2pc78",
@@ -19947,7 +19947,7 @@
         "topic:map-deber",
         "topic:enmap-to"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "qe4q40qzw2",
@@ -19996,7 +19996,7 @@
         "topic:vp-full-inf",
         "topic:map-deber"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "f4kds6r2gr",
@@ -20047,7 +20047,7 @@
         "topic:map-deber",
         "topic:enmap-be"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "i4siv85tf9",
@@ -20173,7 +20173,7 @@
         "topic:map-deber",
         "topic:enmap-have"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "ayed7fqlj3",
@@ -20198,7 +20198,7 @@
         "topic:map-deber",
         "topic:enmap-have"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "qj3wvut2bw",
@@ -20221,7 +20221,7 @@
         "topic:verb-modal-obligation",
         "topic:map-deber"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "5qa1ueater",
@@ -20244,7 +20244,7 @@
         "topic:map-deber",
         "topic:enmap-to"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "w4ubw2gv4e",
@@ -20275,7 +20275,7 @@
         "topic:enmap-to",
         "topic:enmap-be"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "6uhgsiqvvf",
@@ -20301,7 +20301,7 @@
         "topic:map-deber",
         "topic:enmap-to"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "gxnygskyt7",
@@ -20323,7 +20323,7 @@
         "audit:reviewed",
         "topic:map-deber"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "dbgr3k3yq5",
@@ -20345,7 +20345,7 @@
         "audit:reviewed",
         "topic:map-deber"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "psh0c11c73",
@@ -24117,7 +24117,7 @@
         "topic:enmap-for",
         "topic:enmap-be"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "sz0g4jfbie",
@@ -24150,7 +24150,7 @@
         "topic:enmap-of",
         "topic:enmap-be"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "ralwup7tfh",
@@ -24263,7 +24263,7 @@
         "topic:map-ser",
         "topic:enmap-of"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "lg9p46b73r",
@@ -24766,7 +24766,7 @@
         "topic:verb-modal-obligation",
         "topic:vp-full-inf"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "2oiqu0kcxf",
@@ -24804,7 +24804,7 @@
         "pos:verb",
         "topic:verb-modal-obligation"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "hodn6daubj",
@@ -28424,7 +28424,7 @@
         "topic:enmap-you",
         "topic:confusable-pronoun"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "hdl7zq5rij",
@@ -28493,7 +28493,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "hh4dfyokmh",
@@ -28602,7 +28602,7 @@
         "topic:enmap-you",
         "topic:confusable-pronoun"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "9rsyb41dmz",
@@ -28784,7 +28784,7 @@
         "audit:reviewed",
         "topic:enmap-you"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "7poocn5na8",
@@ -28851,7 +28851,7 @@
         "audit:reviewed",
         "topic:enmap-you"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "5cest1aute",
@@ -28897,7 +28897,7 @@
         "audit:reviewed",
         "topic:enmap-you"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "zf3sq9mld5",
@@ -28942,7 +28942,7 @@
         "audit:reviewed",
         "topic:enmap-you"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "w8wzsxl8uq",
@@ -28965,7 +28965,7 @@
         "topic:confusable-pronoun",
         "topic:multi-sense"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "selhft7tbn",
@@ -28984,7 +28984,7 @@
         "topic:pronoun",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "lojl4a497b",
@@ -29006,7 +29006,7 @@
         "topic:confusable-pronoun",
         "topic:multi-sense"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "fz385c053c",
@@ -29087,7 +29087,7 @@
         "topic:pronoun",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "foy4696l7r",
@@ -30314,7 +30314,7 @@
         "en:besides",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "fzg570rb5k",
@@ -30331,7 +30331,7 @@
         "en:moreover",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "2w0dzl1mvl",
@@ -30404,7 +30404,7 @@
         "topic:time",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "xbk2rmvbe2",
@@ -30455,7 +30455,7 @@
         "grammar:discourse",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "bhlxjf47nf",
@@ -30551,7 +30551,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "u109gx9ehn",
@@ -30609,7 +30609,7 @@
         "audit:reviewed",
         "topic:location-vertical-relative"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "8a3s9ew4ih",
@@ -30796,7 +30796,7 @@
         "audit:reviewed",
         "topic:location-vertical-relative"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "aixmzqjpam",
@@ -30814,7 +30814,7 @@
         "audit:reviewed",
         "topic:location-vertical-relative"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "sk6v1ievgl",
@@ -30944,7 +30944,7 @@
         "topic:multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "21gdf6imx4",
@@ -30962,7 +30962,7 @@
         "grammar:correlative",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "5ai1ief8xm",
@@ -31149,7 +31149,7 @@
         "audit:reviewed",
         "topic:quant-other-certain-such"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "gaw97ecxke",
@@ -31168,7 +31168,7 @@
         "grammar:discourse",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "306v0y0d1m",
@@ -31327,7 +31327,7 @@
         "pos:determiner",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "17mqfzfrq1",
@@ -31875,7 +31875,7 @@
         "audit:reviewed",
         "topic:enmap-in"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "pwdq4vnqib",
@@ -31894,7 +31894,7 @@
         "audit:reviewed",
         "topic:location-path-between"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "0rg57o7g76",
@@ -31911,7 +31911,7 @@
         "en:starting",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "yhh3l4act9",
@@ -32001,7 +32001,7 @@
         "grammar:reason",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "6827l0k1ob",
@@ -32056,7 +32056,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "cboe3ncvvg",
@@ -32545,7 +32545,7 @@
         "grammar:sequence",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "yco8jcpeuc",
@@ -32579,7 +32579,7 @@
         "audit:reviewed",
         "topic:location-path-between"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "v7psmvhjff",
@@ -32597,7 +32597,7 @@
         "pos:connector",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "a6vkntbt36",
@@ -33279,7 +33279,7 @@
         "topic:quant-more-less",
         "topic:determiner"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "uqw7qo48c9",
@@ -33334,7 +33334,7 @@
         "topic:map-en",
         "topic:enmap-in"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "vvjft5svqr",
@@ -33369,7 +33369,7 @@
         "topic:quant-more-less",
         "grammar:quantifier"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "8g59ojfuw4",
@@ -33389,7 +33389,7 @@
         "audit:reviewed",
         "grammar:purpose"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "7xx1fimdtn",
@@ -33406,7 +33406,7 @@
         "en:whereas",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "3eolc3pz88",
@@ -33492,7 +33492,7 @@
         "audit:reviewed",
         "topic:quant-much-many"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "8xc9lgyn8v",
@@ -33546,7 +33546,7 @@
         "pos:connector",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "i4tdzuamg4",
@@ -33564,7 +33564,7 @@
         "pos:connector",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "lfmutd3xru",
@@ -33812,7 +33812,7 @@
         "grammar:sequence",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "hnd0boisxm",
@@ -33956,7 +33956,7 @@
         "topic:map-que",
         "topic:enmap-what"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "7izjvheben",
@@ -33977,7 +33977,7 @@
         "audit:reviewed",
         "topic:map-que"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "2f7mb9mt9a",
@@ -33997,7 +33997,7 @@
         "audit:reviewed",
         "topic:enmap-what"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "y1roq1cyk2",
@@ -34017,7 +34017,7 @@
         "audit:reviewed",
         "topic:enmap-how"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "2c2lwpddfw",
@@ -34071,7 +34071,7 @@
         "audit:reviewed",
         "topic:map-que"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "8sisf9u6zt",
@@ -34092,7 +34092,7 @@
         "audit:reviewed",
         "topic:map-que"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "b1uohuf8wn",
@@ -34429,7 +34429,7 @@
         "topic:time-connector",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "0lold5fh3d",
@@ -34447,7 +34447,7 @@
         "grammar:conditional",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "k3jg1rin0g",
@@ -34484,7 +34484,7 @@
         "audit:reviewed",
         "grammar:purpose"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "tpnbbxdlyr",
@@ -34522,7 +34522,7 @@
         "audit:reviewed",
         "topic:location-vertical-relative"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "a600jvsbhd",
@@ -34609,7 +34609,7 @@
         "topic:time-connector",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "feiqarcmnl",
@@ -35032,7 +35032,7 @@
         "audit:reviewed",
         "topic:location-vertical-relative"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "t7i1q6sopk",
@@ -35182,7 +35182,7 @@
         "en:according",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "iahuklv24k",
@@ -35202,7 +35202,7 @@
         "audit:reviewed",
         "topic:map-de"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "sl3h5gjiig",
@@ -35224,7 +35224,7 @@
         "audit:reviewed",
         "topic:part-on"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "1x5p74ftvn",
@@ -35241,7 +35241,7 @@
         "en:during",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "lbk86bzf4t",
@@ -35280,7 +35280,7 @@
         "en:throughout",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "fv4tu6n5s9",
@@ -35447,7 +35447,7 @@
         "topic:enmap-be",
         "topic:verb-estar-idioms"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "6tux1k5wdo",
@@ -35468,7 +35468,7 @@
         "audit:reviewed",
         "topic:location-path-between"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "oyxzv5jbvk",
@@ -35722,7 +35722,7 @@
         "en:also",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "avsnfusolj",
@@ -35763,7 +35763,7 @@
         "en:but",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "51ecmq207o",
@@ -35780,7 +35780,7 @@
         "en:although",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "587b29k7nw",
@@ -35799,7 +35799,7 @@
         "grammar:concession",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "s08z927piv",
@@ -35889,7 +35889,7 @@
         "topic:map-en",
         "topic:enmap-in"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "ofljcb2ew7",
@@ -35946,7 +35946,7 @@
         "en:and",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "zz67343f4y",
@@ -36053,7 +36053,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "z9teu2b4u2",
@@ -36072,7 +36072,7 @@
         "topic:time-connector",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "s2d4wcjbxo",
@@ -36090,7 +36090,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "4xvfonkewz",
@@ -36190,7 +36190,7 @@
         "audit:reviewed",
         "topic:location-path-between"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "q33oxlqbe5",
@@ -36235,7 +36235,7 @@
         "topic:map-ir",
         "topic:enmap-come"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "cecjai7o3s",
@@ -36272,7 +36272,7 @@
         "en:because",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "7c8nib1a9x",
@@ -36290,7 +36290,7 @@
         "en:because",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "v30numtk7s",
@@ -36309,7 +36309,7 @@
         "en:before",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "nzyjo4u77f",
@@ -36327,7 +36327,7 @@
         "topic:time-connector",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "w9ufp3bqk0",
@@ -36364,7 +36364,7 @@
         "en:before",
         "topic:location-vertical-relative"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "sc7ha1u7ec",
@@ -36383,7 +36383,7 @@
         "audit:reviewed",
         "topic:quant-both-all-whole"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "bmq7xav16w",
@@ -36402,7 +36402,7 @@
         "audit:reviewed",
         "topic:quant-both-all-whole"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "9ovqf1h1bo",
@@ -36422,7 +36422,7 @@
         "audit:reviewed",
         "topic:quant-both-all-whole"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "kdnvsz6v6j",
@@ -36558,7 +36558,7 @@
         "topic:part-of",
         "topic:map-ser"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "1o17mlmefy",
@@ -37905,7 +37905,7 @@
         "topic:time-connector",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "v5b7rf226u",
@@ -38119,7 +38119,7 @@
         "audit:reviewed",
         "topic:quant-other-certain-such"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "h3sv3yr9oz",
@@ -38141,7 +38141,7 @@
         "audit:reviewed",
         "topic:quant-other-certain-such"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "e40ebwunzv",
@@ -66383,7 +66383,7 @@
         "grammar:sequence",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "wyrj7k8thq",
@@ -66772,7 +66772,7 @@
         "grammar:quantifier",
         "topic:determiner"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "37lvgw6mdi",
@@ -66854,7 +66854,7 @@
         "topic:part-of",
         "topic:map-ser"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "r86rai9777",
@@ -66940,7 +66940,7 @@
         "pos:preposition",
         "topic:location-vertical-relative"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "ikbozl8fdl",
@@ -73145,7 +73145,7 @@
         "grammar:concession",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "pnonowj90v",
@@ -73209,7 +73209,7 @@
         "audit:reviewed",
         "topic:location-path-between"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "23teiayo6g",
@@ -73249,7 +73249,7 @@
         "audit:reviewed",
         "topic:location-vertical-relative"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "3gfoetx7za",
@@ -73268,7 +73268,7 @@
         "grammar:addition",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "w3ipgpiocx",
@@ -73288,7 +73288,7 @@
         "audit:reviewed",
         "topic:location-vertical-relative"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "ik8hj882al",
@@ -73308,7 +73308,7 @@
         "audit:reviewed",
         "topic:location-path-between"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "gcuz359xog",
@@ -73328,7 +73328,7 @@
         "audit:reviewed",
         "topic:location-path-between"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "asfplpbeje",
@@ -73348,7 +73348,7 @@
         "audit:reviewed",
         "topic:location-vertical-relative"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "qcw724gjde",
@@ -73583,7 +73583,7 @@
         "grammar:discourse",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "e1kkk7zc7e",
@@ -73820,7 +73820,7 @@
         "topic:location-path-between",
         "topic:morph-ward"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "l5hk1zrmge",
@@ -73842,7 +73842,7 @@
         "topic:location-path-between",
         "topic:morph-ward"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "t18qtn5yuv",
@@ -74621,7 +74621,7 @@
         "topic:vp-bare-inf",
         "topic:map-poder"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "r2y6wfhr6z",
@@ -74648,7 +74648,7 @@
         "topic:vp-bare-inf",
         "topic:map-poder"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "uwy1l647pg",
@@ -74697,7 +74697,7 @@
         "topic:vp-bare-inf",
         "topic:map-poder"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "xsdb1ynvgb",
@@ -75446,7 +75446,7 @@
         "topic:vp-full-inf",
         "topic:map-ser"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "2stpzvud5v",
@@ -75751,7 +75751,7 @@
         "topic:map-ir",
         "topic:enmap-go"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "cvw44cpv4h",
@@ -75781,7 +75781,7 @@
         "topic:map-ir",
         "topic:enmap-go"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "3jt1svnphb",
@@ -77547,7 +77547,7 @@
         "en:or",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "ke36yx8rke",
@@ -77691,7 +77691,7 @@
         "grammar:conditional",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "bcqd9ellcw",
@@ -77710,7 +77710,7 @@
         "grammar:conditional",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "p28kckplqm",
@@ -77730,7 +77730,7 @@
         "grammar:conditional",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "ms6nhszap6",
@@ -77749,7 +77749,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "tgdih9ksry",
@@ -77771,7 +77771,7 @@
         "topic:enmap-in",
         "grammar:conditional"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "k5lmf4gy2r",
@@ -79093,7 +79093,7 @@
         "topic:map-haber",
         "topic:enmap-have"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "wunmuiqosj",
@@ -79118,7 +79118,7 @@
         "topic:map-haber",
         "topic:enmap-have"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "yqiin6tdtl",
@@ -79168,7 +79168,7 @@
         "topic:verb-perfect-auxiliary",
         "topic:map-haber"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "4dtd8lj623",
@@ -79193,7 +79193,7 @@
         "topic:verb-perfect-auxiliary",
         "topic:map-haber"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "vn67aoztgf",
@@ -79218,7 +79218,7 @@
         "topic:verb-perfect-auxiliary",
         "topic:map-haber"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "8aej7jfu2y",
@@ -80033,7 +80033,7 @@
         "topic:map-deber",
         "topic:enmap-you"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "5unz3dwyz7",
@@ -80948,7 +80948,7 @@
         "audit:reviewed",
         "topic:quant-much-many"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "opdrjw467t",
@@ -80991,7 +80991,7 @@
         "audit:reviewed",
         "topic:quant-much-many"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "g990dbpmx6",
@@ -81074,7 +81074,7 @@
         "topic:quant-much-many",
         "topic:determiner"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "r1ltbyo6ue",
@@ -92143,7 +92143,7 @@
         "topic:confusable-possessive",
         "topic:multi-sense"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "29p1fsasc0",
@@ -92235,7 +92235,7 @@
         "topic:interrogative",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "lse8dx7tet",
@@ -92446,7 +92446,7 @@
         "topic:confusable-possessive",
         "topic:multi-sense"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "sqd8xxfwmx",
@@ -92472,7 +92472,7 @@
         "topic:enmap-for",
         "topic:enmap-you"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "8rtzxhe293",
@@ -92497,7 +92497,7 @@
         "topic:part-for",
         "topic:enmap-for"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "ifxzv5eot0",
@@ -92522,7 +92522,7 @@
         "topic:part-for",
         "topic:enmap-for"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "ztq4ogut83",
@@ -92548,7 +92548,7 @@
         "topic:part-for",
         "topic:enmap-for"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "hu11wt1cvb",
@@ -92574,7 +92574,7 @@
         "topic:part-for",
         "topic:enmap-for"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "ez2lt2jbq7",
@@ -92599,7 +92599,7 @@
         "topic:part-for",
         "topic:enmap-for"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "bfer5mn6yu",
@@ -92625,7 +92625,7 @@
         "topic:part-to",
         "topic:enmap-to"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "2d169mb7ai",
@@ -92652,7 +92652,7 @@
         "topic:enmap-to",
         "topic:enmap-you"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "flwdh3dbk5",
@@ -92678,7 +92678,7 @@
         "topic:part-to",
         "topic:enmap-to"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "45ejuhdox6",
@@ -92704,7 +92704,7 @@
         "topic:part-to",
         "topic:enmap-to"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "ej7gnt7lbx",
@@ -92730,7 +92730,7 @@
         "topic:part-to",
         "topic:enmap-to"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "hsqb5yui5l",
@@ -92795,7 +92795,7 @@
         "audit:reviewed",
         "grammar:indef-pronoun-person"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "rwn65j1jsu",
@@ -92817,7 +92817,7 @@
         "audit:reviewed",
         "grammar:indef-pronoun-person"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "nqv2w27jgr",
@@ -92860,7 +92860,7 @@
         "audit:reviewed",
         "grammar:indef-pronoun-thing"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "rd3a1m9q85",
@@ -92904,7 +92904,7 @@
         "audit:reviewed",
         "grammar:indef-pronoun-person"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "s0u2t5y194",
@@ -93011,7 +93011,7 @@
         "audit:reviewed",
         "grammar:indef-pronoun-place"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "3wvyjj7lp9",
@@ -93034,7 +93034,7 @@
         "audit:reviewed",
         "grammar:indef-pronoun-place"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "rz685c861j",
@@ -93056,7 +93056,7 @@
         "audit:reviewed",
         "grammar:indef-pronoun-place"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "5w0xw4xzxh",
@@ -93078,7 +93078,7 @@
         "audit:reviewed",
         "grammar:indef-pronoun-quantity"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "ml1vpgz8qf",
@@ -93098,7 +93098,7 @@
         "audit:reviewed",
         "grammar:indef-pronoun-quantity"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "fc10ci73j7",
@@ -93122,7 +93122,7 @@
         "topic:confusable-pronoun",
         "topic:confusable-determiner"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "3816wraz0i",
@@ -93141,7 +93141,7 @@
         "audit:reviewed",
         "grammar:indef-pronoun-quantity"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "limmjzeuoo",
@@ -93162,7 +93162,7 @@
         "audit:reviewed",
         "grammar:indef-pronoun-quantity"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "cwol5b7e11",
@@ -93184,7 +93184,7 @@
         "audit:reviewed",
         "grammar:indef-pronoun-quantity"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "6cnielk682",
@@ -93255,7 +93255,7 @@
         "audit:reviewed",
         "topic:enmap-that"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "ufc23a1m04",
@@ -93615,7 +93615,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "lufi47fm96",
@@ -93637,7 +93637,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "ytar943kdr",
@@ -93660,7 +93660,7 @@
         "audit:reviewed",
         "topic:enmap-that"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "a145a3y0wu",
@@ -93683,7 +93683,7 @@
         "audit:reviewed",
         "topic:enmap-that"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "u7kefn0q1x",
@@ -93706,7 +93706,7 @@
         "audit:reviewed",
         "topic:enmap-that"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "apj21ii1kp",
@@ -93729,7 +93729,7 @@
         "audit:reviewed",
         "topic:enmap-that"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "i7rkruke55",
@@ -94053,7 +94053,7 @@
         "en:mine",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "z6wn8qs99s",
@@ -94072,7 +94072,7 @@
         "en:mine",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "y0y1j3ow0v",
@@ -94091,7 +94091,7 @@
         "en:yours",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "g22u81e32h",
@@ -94110,7 +94110,7 @@
         "en:yours",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "dzve3d1qxs",
@@ -94129,7 +94129,7 @@
         "en:his",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "12j8czinec",
@@ -94148,7 +94148,7 @@
         "en:hers",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "o6i1dpuv9z",
@@ -94168,7 +94168,7 @@
         "en:theirs",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "45qotapw4p",
@@ -94188,7 +94188,7 @@
         "en:ours",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "1rw4wohjpu",
@@ -94208,7 +94208,7 @@
         "en:ours",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "7gl5vz7uo4",
@@ -94285,7 +94285,7 @@
         "en:ourselves",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "9h4yb41inv",
@@ -94312,7 +94312,7 @@
         "topic:part-to",
         "topic:enmap-to"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "unkd514ur0",
@@ -94339,7 +94339,7 @@
         "topic:part-to",
         "topic:enmap-to"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "bu8oynmlvn",
@@ -94362,7 +94362,7 @@
         "pos:determiner",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "xs6r1zkgev",
@@ -94385,7 +94385,7 @@
         "pos:determiner",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "how83ta0cg",
@@ -94404,7 +94404,7 @@
         "en:themselves",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "riyxs3nm2u",
@@ -94423,7 +94423,7 @@
         "en:each",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "hbcd9ibgfk",
@@ -94444,7 +94444,7 @@
         "topic:multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "tpr473mus1",
@@ -94467,7 +94467,7 @@
         "audit:reviewed",
         "grammar:indef-pronoun-place"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "kvxg5q1l06",
@@ -94487,7 +94487,7 @@
         "audit:reviewed",
         "grammar:indef-pronoun-quantity"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "hh9lhwdnn0",
@@ -94529,7 +94529,7 @@
         "en:yourselves",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "8ueue3hv8i",
@@ -94639,7 +94639,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "mty4hevjmw",
@@ -94661,7 +94661,7 @@
         "audit:reviewed",
         "topic:enmap-you"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "4nnw28nja8",
@@ -94683,7 +94683,7 @@
         "audit:reviewed",
         "topic:enmap-you"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "mby2xxew2o",
@@ -94703,7 +94703,7 @@
         "topic:pronoun",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "fk8uepz3o3",
@@ -94729,7 +94729,7 @@
         "topic:enmap-to",
         "topic:enmap-you"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "0xx4ewk26d",
@@ -94755,7 +94755,7 @@
         "topic:enmap-with",
         "topic:enmap-you"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "nv7alp7lve",
@@ -94780,7 +94780,7 @@
         "topic:enmap-for",
         "topic:enmap-you"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "kep0p7nw3e",
@@ -94806,7 +94806,7 @@
         "topic:enmap-to",
         "topic:enmap-you"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "6xhu16fwu6",
@@ -94832,7 +94832,7 @@
         "topic:enmap-with",
         "topic:enmap-you"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "2waliyvy7h",
@@ -94857,7 +94857,7 @@
         "topic:enmap-for",
         "topic:enmap-you"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "o3buetgjp9",
@@ -94883,7 +94883,7 @@
         "grammar:prep-pronoun-a",
         "topic:enmap-to"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "796z7mxsvp",
@@ -94934,7 +94934,7 @@
         "grammar:prep-pronoun-para",
         "topic:enmap-for"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "aq3ynjbhjm",
@@ -95056,7 +95056,7 @@
         "audit:reviewed",
         "topic:enmap-that"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "19gmw1bjnf",
@@ -95081,7 +95081,7 @@
         "audit:reviewed",
         "topic:enmap-that"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "fmrk25d923",
@@ -95100,7 +95100,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "0krp6sz3gs",
@@ -95118,7 +95118,7 @@
         "topic:pronoun",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "r3d6k4jrrn",
@@ -95657,7 +95657,7 @@
         "audit:reviewed",
         "topic:quant-more-less"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "hyu6yabjhb",
@@ -95677,7 +95677,7 @@
         "audit:reviewed",
         "topic:quant-more-less"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "a1t487o734",
@@ -95696,7 +95696,7 @@
         "audit:reviewed",
         "topic:quant-more-less"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "90mjlwoa2d",
@@ -95716,7 +95716,7 @@
         "audit:reviewed",
         "topic:quant-more-less"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "1qowmulcro",
@@ -95735,7 +95735,7 @@
         "audit:reviewed",
         "topic:quant-other-certain-such"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "15d55fv1cp",
@@ -95755,7 +95755,7 @@
         "audit:reviewed",
         "topic:quant-other-certain-such"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "65xbrzcund",
@@ -95863,7 +95863,7 @@
         "pos:determiner",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "ltn8hqdpls",
@@ -95883,7 +95883,7 @@
         "pos:determiner",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "pokaqu3651",
@@ -95903,7 +95903,7 @@
         "pos:determiner",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "cqps4njuot",
@@ -95923,7 +95923,7 @@
         "pos:determiner",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "852d6mdyn0",
@@ -96018,7 +96018,7 @@
         "audit:reviewed",
         "topic:enmap-what"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "ba183xdbf1",
@@ -96055,7 +96055,7 @@
         "audit:reviewed",
         "topic:location-vertical-relative"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "2q9z2cbaaq",
@@ -96073,7 +96073,7 @@
         "audit:reviewed",
         "topic:location-vertical-relative"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "n3549z5wwm",
@@ -96093,7 +96093,7 @@
         "topic:location-path-between",
         "topic:enmap-from"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "c3ldgsdgnc",
