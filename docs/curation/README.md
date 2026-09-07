@@ -34,6 +34,17 @@ Individual scripts (each dry-run by default, `--apply` to write):
 `trash` is the only deletion path — move a row there, never hard-delete as a
 judgement call.
 
+**Priority tiers (Phase 3, 2026-09-07):** `curriculumRole` is now
+`core / essential / common / extended / rare / trash`, a course-sequencing
+ladder. `core` = the *entire* Spanish grammatical system (all function words,
+all conjugation/mood/tense patterns) on a limited vocabulary — ~16% of the
+catalog. `essential` = the small everyday-content set an MVP still teaches.
+`common` = the course after the MVP. `extended` = later/advanced-course
+vocabulary. `rare` = transparent cognates, paradigm drills, bare mapping
+anchors. Full definitions and the migration history:
+`docs/curation/role-granularity/plan.md`. Guardrail bands in
+`web/scripts/audit-status.ts`.
+
 ## Naming
 
 Going forward: `curation-YYYY-MM-DD-<slug>.tsv`. A canonical topic spec is

@@ -216,6 +216,7 @@ export function SentencePracticeCard({
                 >
                   {authoring ? (
                     <input
+                      autoFocus={languageBlockIndex === 0}
                       value={languageBlock.spanish}
                       onChange={(event) =>
                         authoring.onSpanishChange(languageBlock.id, event.target.value)
@@ -236,7 +237,7 @@ export function SentencePracticeCard({
                       type="text"
                       data-practice-answer
                       data-authoring-field={authoring ? "answer" : undefined}
-                      autoFocus={languageBlockIndex === 0}
+                      autoFocus={!authoring && languageBlockIndex === 0}
                       value={
                         authoring
                           ? languageBlock.acceptedAnswers[0] ?? ""
@@ -255,7 +256,11 @@ export function SentencePracticeCard({
                             )
                       }
                       onKeyDown={(event) => {
-                        if (event.altKey && event.key.toLowerCase() === "h") {
+                        if (
+                          !authoring &&
+                          event.altKey &&
+                          event.key.toLowerCase() === "h"
+                        ) {
                           event.preventDefault();
                           if (
                             !correctAnswers[languageBlockIndex] ||
@@ -383,14 +388,24 @@ export function SentencePracticeCard({
                       </div>
                     </div>
                   )}
-                  {languageBlock.callout?.trim() && (
-                    <p
-                      className="answer-callout"
-                      id={`callout-${languageBlock.id}`}
-                    >
-                      {languageBlock.callout}
-                    </p>
-                  )}
+                  {languageBlock.callout?.trim() &&
+                    (authoring ? (
+                      <button
+                        type="button"
+                        className="answer-callout authoring-callout"
+                        id={`callout-${languageBlock.id}`}
+                        onClick={() => setOpenDetailsId(languageBlock.id)}
+                      >
+                        {languageBlock.callout}
+                      </button>
+                    ) : (
+                      <p
+                        className="answer-callout"
+                        id={`callout-${languageBlock.id}`}
+                      >
+                        {languageBlock.callout}
+                      </p>
+                    ))}
                 </div>
               ),
             )}

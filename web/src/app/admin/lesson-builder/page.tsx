@@ -769,35 +769,6 @@ export default function LessonBuilderPage() {
     openLessonEditorNow,
   ]);
 
-  const toggleZenMode = useCallback(() => {
-    setIsZenMode((current) => {
-      const next = !current;
-
-      if (next) {
-        const lessonId = activeLesson?.id ?? lessons[0]?.id;
-        if (lessonId) {
-          window.setTimeout(() => openLessonEditorNow(lessonId), 0);
-          const lesson = lessons.find((candidate) => candidate.id === lessonId);
-          const firstBlock = lesson?.blocks[0];
-          if (firstBlock) {
-            setActiveContentBlock({ lessonId, blockId: firstBlock.id });
-            setCollapsedContentBlocks(
-              new Set(
-                lessons.flatMap((candidate) =>
-                  candidate.blocks
-                    .map((block) => `${candidate.id}-${block.id}`)
-                    .filter((key) => key !== `${lessonId}-${firstBlock.id}`),
-                ),
-              ),
-            );
-          }
-        }
-      }
-
-      return next;
-    });
-  }, [activeLesson?.id, lessons, openLessonEditorNow]);
-
   const cycleLessonDisplayMode = useCallback((lessonId: string) => {
     if (
       !collapsedLessons.has(lessonId) &&
@@ -1137,15 +1108,14 @@ export default function LessonBuilderPage() {
       }
 
       if (
-        event.altKey &&
-        !event.ctrlKey &&
-        !event.metaKey &&
-        event.key.toLowerCase() === "z" &&
+        isZenMode &&
+        event.key === "Escape" &&
         !event.repeat &&
-        !event.isComposing
+        !event.isComposing &&
+        !isTextEntryTarget
       ) {
         event.preventDefault();
-        toggleZenMode();
+        setIsZenMode(false);
         return;
       }
 
@@ -1158,35 +1128,19 @@ export default function LessonBuilderPage() {
         !event.repeat &&
         !event.isComposing
       ) {
-        const sentence = activeBlock && isPracticeBlock(activeBlock)
-          ? activeBlock
-          : null;
-        if (sentence && activeLesson) {
-          event.preventDefault();
-          const fields: SentenceMarkdownFieldName[] = [
-            "promptLabel",
-            "promptText",
-            "helperText",
-            "answerFeedback",
-          ];
-          const field = fields[Number(event.key) - 1];
-          setCollapsedContentBlocks((current) => {
-            const next = new Set(current);
-            next.delete(`${activeLesson.id}-${sentence.id}`);
-            return next;
-          });
-          setActiveSentenceMarkdownField({
-            lessonId: activeLesson.id,
-            blockId: sentence.id,
-            field,
-          });
-          window.setTimeout(() => {
-            document
-              .getElementById(`sentence-field-${sentence.id}-${field}`)
-              ?.querySelector<HTMLElement>("[contenteditable='true']")
-              ?.focus();
-          }, 0);
-        }
+        event.preventDefault();
+        const fields = [
+          "promptLabel",
+          "promptText",
+          "helperText",
+          "answerFeedback",
+        ] as const;
+        const field = fields[Number(event.key) - 1];
+        const fieldElement = document.querySelector<HTMLElement>(
+          `[data-authoring-field="${field}"]`,
+        );
+        if (fieldElement instanceof HTMLButtonElement) fieldElement.click();
+        else fieldElement?.focus();
         return;
       }
 
@@ -1377,7 +1331,8 @@ export default function LessonBuilderPage() {
         !event.metaKey &&
         ["e", "p"].includes(event.key.toLowerCase()) &&
         !event.repeat &&
-        !event.isComposing
+        !event.isComposing &&
+        !isTextEntryTarget
       ) {
         event.preventDefault();
 
@@ -2348,16 +2303,6 @@ export default function LessonBuilderPage() {
 
     return [
       {
-        id: "zen-mode",
-        label: isZenMode ? "Leave Zen mode" : "Enter Zen mode",
-        detail: "Focus on one lesson at learner width",
-        shortcut: "Alt+Z",
-        icon: "keyboard",
-        keywords: ["focus", "distraction free", "fullscreen"],
-        disabledReason: activeLesson ? undefined : "Select a lesson first",
-        run: toggleZenMode,
-      },
-      {
         id: "lesson-new",
         label: "Create new lesson",
         detail: currentModule
@@ -2543,7 +2488,7 @@ export default function LessonBuilderPage() {
     <main
       className={
         isZenMode
-          ? "fixed inset-0 z-30 overflow-y-auto bg-[radial-gradient(circle_at_top,#faf8ff_0%,#f4f2f8_46%,#efedf3_100%)] px-4 py-4 sm:px-6"
+          ? "fixed inset-0 z-[80] overflow-hidden bg-background"
           : "flex-1 bg-background px-4 py-8 sm:px-6 sm:py-12"
       }
     >
@@ -2672,7 +2617,7 @@ export default function LessonBuilderPage() {
                       : "Click a lesson to edit it."}
             </p>}
 
-        {(isZenMode && activeLesson ? [activeLesson] : moduleLessons).map((lesson) => {
+        {(isZenMode && activeLesson ? [activeLesson] : []).map((lesson) => {
           const lessonNumber = moduleLessons.findIndex((candidate) => candidate.id === lesson.id) + 1;
           const isDragging = lessonDrag.dragged?.id === lesson.id;
           const isLessonCollapsed =

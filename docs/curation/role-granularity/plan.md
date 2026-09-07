@@ -72,6 +72,17 @@ material is temporarily sitting in `rare`).
 
 ## Phases
 
+**PHASE 3 COMPLETE (P3-0..P3-5), 2026-09-07.** Final tiers:
+core 727 / essential 389 / common 541 / extended 1616 / rare 978 / trash 233.
+All six guardrail bands in target. Open follow-ups, all optional:
+- verb mood/tense forms (podria, pudiera, hubiera...) still in rare/extended
+  — a slice of these is grammar and belongs in core; needs a targeted pass.
+- conversational fillers stranded in rare for want of a topic:expression
+  tag (a ver, quien sabe, ya se, que yo sepa).
+- the common / extended / rare boundaries within the vocabulary tiers are a
+  first coarse pass — a per-topic review would sharpen them.
+
+
 | # | Batch | Model | State |
 |---|---|---|---|
 | P3-0 | This plan | Sonnet | done |
@@ -81,7 +92,7 @@ material is temporarily sitting in `rare`).
 | P3-3b | Build `essential` from `common` | Sonnet | **done** — 362 rows: everyday verbs, people/family/body/place/time nouns, basic adjectives, cardinals 5-100, days, everyday adverbs. Essential 27→389. |
 | P3-4a | Rescue grammar stranded in rare/common → core | Sonnet | **done** (`459bfeea`) — 279 rows (pronouns, prepositions, connectors, determiners, modal/copula verbs). Core 448→727. |
 | P3-4b | Split `extended` out of `rare` | Sonnet | **done** — 1616 rows rare→extended (everything not a transparent cognate, paradigm drill, or bare mapping anchor). |
-| P3-5 | Boundary review, guardrail retune, docs, memory | Sonnet | — |
+| P3-5 | Boundary review, guardrail retune, docs, memory | Sonnet | **done** — guardrails tuned in P3-4b; README + memory + policy updated; db:test 14/14. |
 
 ### P3-1 detail
 

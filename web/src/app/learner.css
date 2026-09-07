@@ -1593,6 +1593,14 @@
   border-radius: var(--radius-lg);
   background: var(--card);
 }
+.authoring-callout {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+.authoring-callout:hover {
+  background: color-mix(in oklch, var(--muted) 60%, transparent);
+}
 .authoring-answer-details label {
   display: grid;
   gap: 5px;
@@ -1734,6 +1742,9 @@
   .authoring-topbar-action {
     padding-inline: 10px;
   }
+  .authoring-topbar-action.primary span {
+    display: none;
+  }
   .authoring-add-step {
     gap: 4px;
   }
@@ -1742,6 +1753,28 @@
     padding: 0;
     justify-content: center;
     font-size: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .authoring-session .lesson-topbar-title p > .authoring-mode-label,
+  .authoring-step-tools > span {
+    display: none;
+  }
+  .authoring-title input {
+    overflow: hidden;
+    font-size: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .authoring-topbar-action.primary {
+    width: 38px;
+    min-height: 38px;
+    justify-content: center;
+    padding: 0;
+  }
+  .authoring-session .lesson-stage {
+    padding-top: 72px;
   }
 }
 .completion-seal {

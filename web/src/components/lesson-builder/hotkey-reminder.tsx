@@ -51,10 +51,6 @@ export function HotkeyReminder({
             description="Show keyboard shortcuts"
           />
           <HotkeyReminderRow
-            keys={["Alt", "Z"]}
-            description="Enter or leave Zen mode"
-          />
-          <HotkeyReminderRow
             keys={["Alt", "1–4"]}
             description="Edit label, prompt, helper, or feedback"
           />

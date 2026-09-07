@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect } from "react";
+
 import {
   ArrowDown,
   ArrowLeft,
@@ -72,6 +74,42 @@ export function LessonAuthoringSession({
           ? "Unsaved"
           : "Saved";
 
+  useEffect(() => {
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.defaultPrevented || event.repeat || event.isComposing) return;
+
+      const target = event.target instanceof HTMLElement ? event.target : null;
+      const isTextEntry = Boolean(
+        target?.closest("input, textarea, [contenteditable='true']"),
+      );
+
+      if (event.key === "Escape" && isTextEntry) {
+        event.preventDefault();
+        target?.blur();
+        return;
+      }
+
+      if (isTextEntry) return;
+
+      if (event.key === "PageUp" && safeStepIndex > 0) {
+        event.preventDefault();
+        onStepChange(safeStepIndex - 1);
+      } else if (event.key === "PageDown" && safeStepIndex < totalSteps - 1) {
+        event.preventDefault();
+        onStepChange(safeStepIndex + 1);
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [onStepChange, safeStepIndex, totalSteps]);
+
   return (
     <section
       className="learner-theme lesson-session authoring-session"
@@ -112,7 +150,7 @@ export function LessonAuthoringSession({
           title="Try this lesson as a learner (Mod+Enter)"
         >
           <Eye size={17} aria-hidden="true" />
-          Preview
+          <span>Preview</span>
         </button>
         <button
           type="button"
@@ -122,7 +160,7 @@ export function LessonAuthoringSession({
           title="Save lesson (Mod+S)"
         >
           <Save size={17} aria-hidden="true" />
-          Save
+          <span>Save</span>
         </button>
         <span className="lesson-step-count">
           <strong>{totalSteps ? safeStepIndex + 1 : 0}</strong>

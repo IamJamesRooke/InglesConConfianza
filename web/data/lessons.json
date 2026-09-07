@@ -30,7 +30,8 @@
       "lessonIds": [
         "lesson_4c3414c0-3748-440c-8bfc-4080081caed2",
         "lesson_ee8421b5-1d47-4d7e-8f87-3f06ab28b351",
-        "lesson_b4a17caa-1e40-45b7-85ad-58cf0875179b"
+        "lesson_b4a17caa-1e40-45b7-85ad-58cf0875179b",
+        "lesson_05413958-420d-440e-bed8-e29eb9030d50"
       ]
     }
   ],
@@ -124,7 +125,7 @@
         {
           "id": "block_515212f7-0d82-4646-8516-66f42a4a1797",
           "type": "explanation",
-          "contentMarkdown": "==inglés== es ==English==\n\nEs incorrecto escribir **english** porque en inglés. Debe ser en mayúscula.&#x20;"
+          "contentMarkdown": "==inglés== es ==English==\n\nDebes escribir ==English==, no ==english==."
         },
         {
           "id": "block_11f4160d-1f2f-4308-aec5-167080dd132f",
@@ -818,6 +819,36 @@
               "callout": null,
               "acceptedAnswers": [
                 "well."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson_05413958-420d-440e-bed8-e29eb9030d50",
+      "name": null,
+      "concepts": [],
+      "blocks": [
+        {
+          "id": "block_478ee7eb-263b-438a-b11c-09466d848017",
+          "type": "explanation",
+          "contentMarkdown": "==hello== is =ASfsdfa=="
+        },
+        {
+          "id": "block_38934a6f-9b12-4c8a-ae4a-aaa3f9f5d0a7",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_c90b50a7-ea7e-409c-9826-ff1c5290ec74",
+              "spanish": "hola",
+              "callout": null,
+              "acceptedAnswers": [
+                "hello"
               ]
             }
           ]
