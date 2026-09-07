@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generatedAt": "2026-09-07T16:39:44.321Z",
+    "generatedAt": "2026-09-07T16:41:00.498Z",
     "totals": {
       "allConcepts": 4447,
       "nonTrash": 4220,
@@ -2230,6 +2230,13 @@
               "count": 13,
               "confusion": false,
               "coreCount": 6
+            },
+            {
+              "collection": "grammar:adjective-position",
+              "label": "Word order & sentence frame",
+              "count": 3,
+              "confusion": false,
+              "coreCount": 3
             }
           ]
         },
