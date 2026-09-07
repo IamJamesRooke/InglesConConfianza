@@ -81216,7 +81216,6 @@
         "es:gustar",
         "en:likes",
         "pos:verb",
-        "audit:flagged",
         "audit:reviewed",
         "topic:verb-feelings-love-like"
       ],
@@ -81237,8 +81236,7 @@
         "grammar:uncountable",
         "es:necesitar",
         "en:need",
-        "pos:verb",
-        "audit:flagged"
+        "pos:verb"
       ],
       "curriculumRole": "trash"
     },

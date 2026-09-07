@@ -129,6 +129,7 @@ phase-1 rows above. Model routing per batch is in `next-plan.md`.
 - 2026-09-07 · P2-2b · `35952be0` · verbs-remainder-{A-retag,B-untag-bucket,C-untag-posverb,D-trash-drills} · verb-formal-remainder dissolved (219→0); verbs base 1599→1595; orphans 0; gaps 0; new group `topic:verb-depending-fitting`; 2 rows trashed; `db:test` 14/14.
 - 2026-09-07 · P2-9 · _(verification only)_ · none · Mappings/Phrasal: every headword button's family matches its first letter; Spanish→English "K–O" has genuinely zero members (no multi-sense Spanish lemma in that range — a data fact, not a miscoded button); confusion families and legacy-link tests green.
 - 2026-09-07 · P2-8 · `d0086387` · P2-8-beginner-core (78), P2-8b-numbers-core (26), P2-8c-body-parts-add (12 new) · core 309→425 — **reverted below**.
+- 2026-09-07 · P2-13 · _(this commit)_ · P2-13-clear-stale-flags · audit:flagged removed from 2 already-trashed rows; Track B flagged 2→0; `db:test` 14/14.
 - 2026-09-07 · P2-12 · _(this commit)_ · none (config only) · connectors 1→2 families, verb-patterns 2→3; base/reachable unchanged; `db:test` 14/14.
 - 2026-09-07 · P2-11 · _(this commit)_ · P2-review-{trash,retag,untag} · 18 of 20 REVIEW flags confirmed; 1 dup trashed, 1 rehomed; `db:test` 14/14.
 - 2026-09-07 · P2-8 revert · _(this commit)_ · P2-8-revert-to-supporting (104), P2-8c-body-parts-supporting (12) · core 425→309; wrong criterion (frequency, not function); 12 body-part rows kept at `supporting`; guardrails restored; `db:test` 14/14.
@@ -139,6 +140,8 @@ phase-1 rows above. Model routing per batch is in `next-plan.md`.
 | P2-11 | REVIEW-flag spot-check | **done** | _(this commit)_ | Reviewed the 20 `REVIEW:`-flagged verb assignments from P2-2b. 18 confirmed. 2 changed: `acabar de hacer algo` (`q6rtb3ph2x`) → **trash** (unbracketed duplicate of the better-tagged `acabar de [hacer algo]`); `proponer pagar … por …` (`le4iu71rle`) moved Giving & Lending → Money — Buying & Selling (offering a price is commerce). |
 
 | P2-12 | Connectors + Verb-Patterns family splits | **done** | _(this commit)_ | Connectors: the flat 11-group `Connector types` split into `Everyday connectors` (and/but/or, reason, contrast, addition, time, sequence — 6) and `Discourse & advanced` (concession, discourse markers, conditional, correlative, comparison — 5), so a beginner lesson finds the basic joiners without wading past "either…or". Verb-Patterns: `progressive`, `going to (future)` and `auxiliary do` moved out of `Sentence patterns` into a new `Tense & auxiliary patterns` family; `Sentence patterns` is now 7 genuine complementation patterns. Code-only. |
+
+| P2-13 | Clear stale audit flags | **done** | _(this commit)_ | The 2 `full-audit-findings.md` flagged `grammar:definite-article` rows were already trashed in Batch 9 and replaced with a clean generic-article concept; removed the stale `audit:flagged` tags. Track B flagged count 2→0. |
 
 ## Checkpoint — Phase 2 (semantic re-audit) COMPLETE, 2026-09-07
 
@@ -161,7 +164,7 @@ Batches P2-1 through P2-10 all done, including P2-8. Final state:
 - Structure snapshot + duplicate-axis guard (allow-list now empty) frozen as
   the baseline.
 
-**Open / flagged:**
+**Open (all optional):**
 1. ~~20 `REVIEW:`-flagged verb assignments~~ — **done (P2-11)**: 18 confirmed, 2 changed.
 2. **Content-gap additions** in
    `curation-2026-09-07-verbs-remainder-A-retag.tsv` — reasonable calls on
@@ -169,4 +172,4 @@ Batches P2-1 through P2-10 all done, including P2-8. Final state:
    (`supporting`-tier `concepts:add`): clothing is absent from the catalog;
    Food is thin. Not `core` — these are content vocabulary.
 3. ~~Connectors / Verb-Patterns family splits~~ — **done (P2-12)**.
-4. `full-audit-findings.md`'s 2 long-standing flagged rows.
+4. ~~`full-audit-findings.md`'s 2 flagged rows~~ — **done (P2-13)**: were already trashed + replaced; stale flags cleared.

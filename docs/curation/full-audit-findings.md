@@ -69,4 +69,10 @@ coincidence.
   (rewrite to demonstrate generic vs. specific reference contrastively, or
   reframe entirely) rather than a mechanical fix — left both tagged
   `audit:flagged`, not `audit:reviewed`.
+- **RESOLVED 2026-09-07 (taxonomy-cleanup Batch 9 + P2-13):** both garbled
+  rows were moved to `trash` and replaced with a clean generic-article
+  concept, `los [sustantivos] (en general) → [nouns] in general`
+  ("En general, me gustan los gatos. / In general, I like cats."). The
+  stale `audit:flagged` tags were removed in P2-13. Track B flagged count
+  is now 0.
 
