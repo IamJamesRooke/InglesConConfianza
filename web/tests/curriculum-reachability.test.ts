@@ -3,7 +3,10 @@ import "dotenv/config";
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { buildCurriculumFamilies } from "../src/lib/curriculum/navigation";
+import {
+  buildCurriculumFamilies,
+  resolveCurriculumPath,
+} from "../src/lib/curriculum/navigation";
 import { CURRICULUM_TOPICS } from "../src/lib/curriculum/topics";
 import { prisma } from "../src/lib/database/prisma";
 
@@ -108,6 +111,193 @@ test("every configured facet button has at least one member concept", () => {
     }
   }
   assert.deepEqual(empty, [], `${empty.length} stale/empty groups`);
+});
+
+// --- Family-structure snapshot (Batch 1, 2026-09-07 semantic re-audit) ---
+// The exact {topic: [[family label, group count], ...]} map. Every batch that
+// re-groups families updates this deliberately, so the diff is reviewed.
+// Regenerate the current value with:
+//   npx tsx scripts/curriculum-inventory.ts --structure
+const EXPECTED_FAMILY_STRUCTURE: Record<string, Array<[string, number]>> = {
+  pronouns: [["Pronoun types", 20]],
+  determiners: [["Determiner types", 16]],
+  interrogatives: [["Question-word roles", 3]],
+  verbs: [
+    ["Being & existence", 5],
+    ["Modals, time & possibility", 7],
+    ["Communication", 7],
+    ["Thinking & learning", 5],
+    ["Perception & feelings", 6],
+    ["Movement", 8],
+    ["Possession & transfer", 12],
+    ["Daily life & work", 5],
+    ["Making, changing & home", 6],
+    ["Social life & conflict", 3],
+    ["Formal & specialized", 8],
+  ],
+  cognates: [
+    ["Spelling patterns", 48],
+    ["Cognate types", 1],
+    ["Latin roots", 22],
+  ],
+  nouns: [
+    ["Articles & gender", 12],
+    ["Meaning & context", 33],
+  ],
+  adjectives: [
+    ["Meaning & context", 31],
+    ["How it's used", 2],
+    ["Comparisons", 6],
+  ],
+  adverbs: [
+    ["Word types", 8],
+    ["Meaning & context", 5],
+  ],
+  numbers: [["Number groups", 8]],
+  expressions: [["Expression groups", 7]],
+  connectors: [["Connector types", 11]],
+  prepositions: [["Preposition groups", 7]],
+  mappings: [
+    ["A–E", 16],
+    ["F–J", 4],
+    ["P–T", 20],
+    ["U–Z", 4],
+    ["Common confusions", 5],
+  ],
+  "en-mappings": [
+    ["A–E", 24],
+    ["F–J", 21],
+    ["K–O", 21],
+    ["P–T", 31],
+    ["U–Z", 10],
+    ["Common confusions", 2],
+  ],
+  "phrasal-verbs-by-root": [
+    ["A–E", 43],
+    ["F–J", 24],
+    ["K–O", 22],
+    ["P–T", 48],
+    ["U–Z", 9],
+  ],
+  "phrasal-verbs-by-particle": [
+    ["A–E", 19],
+    ["F–J", 5],
+    ["K–O", 7],
+    ["P–T", 5],
+    ["U–Z", 3],
+  ],
+  transformations: [
+    ["Endings", 23],
+    ["Word types", 15],
+    ["Prefixes", 7],
+  ],
+  "verb-forms": [
+    ["Irregular patterns", 51],
+    ["Regular endings", 2],
+  ],
+  "verb-patterns": [
+    ["Sentence patterns", 10],
+    ["Verb complements", 8],
+  ],
+  "questions-negation": [["Question & negative patterns", 6]],
+  imperatives: [["Command types", 4]],
+  collocations: [["Verb groups", 5]],
+};
+
+test("family structure matches the reviewed snapshot", () => {
+  const actual = Object.fromEntries(
+    CURRICULUM_TOPICS.map((t) => [
+      t.slug,
+      buildCurriculumFamilies(t).map(
+        (f) => [f.label, f.leaves.length] as [string, number],
+      ),
+    ]),
+  );
+  assert.deepEqual(actual, EXPECTED_FAMILY_STRUCTURE);
+});
+
+// --- Duplicate-axis guard (Batch 1) ---
+// Two facet buttons on the same topic whose member sets are near-identical in
+// BOTH directions (Jaccard > 0.8) are one axis entered twice — the adjectives
+// `topic:adj-abs-*` vs `topic:adj-*` case. A small group fully contained in a
+// big one (Jaccard low) is a normal subset, not a duplicate, so containment is
+// deliberately not flagged. Batch 3 merges the known pairs; until then they
+// are allow-listed here.
+const DUPLICATE_AXIS_ALLOWLIST = new Set(
+  [
+    ["topic:adj-abs-oso-osa", "topic:adj-oso-osa"],
+    ["topic:adj-abs-ico-ica", "topic:adj-ico-ica"],
+    ["topic:adj-abs-ivo-iva", "topic:adj-ivo-iva"],
+    ["topic:adj-abs-able", "topic:adj-able"],
+    ["topic:adj-abs-ible", "topic:adj-ible"],
+    ["topic:adj-abs-ente", "topic:adj-ente"],
+    ["topic:adj-abs-al", "topic:adj-al"],
+    ["topic:adj-abs-general", "topic:adj-ser-general"],
+    // Transformations: surfaced by this guard on 2026-09-07. Same defect class
+    // (a suffix axis and a POS-change axis dual-tagging the same rows).
+    // Batch 7 (Transformations sweep) merges these.
+    ["topic:morph-ward", "topic:morph-expr-to-adv"],
+    ["morphology:suffix-ly", "morphology:adjective-to-adverb"],
+  ].map((pair) => pair.slice().sort().join(" ~ ")),
+);
+
+test("no two facet buttons on a topic are the same axis entered twice", () => {
+  const offenders: string[] = [];
+  for (const topic of CURRICULUM_TOPICS) {
+    const buttons = topic.facetButtons.map((f) => ({
+      collection: f.collection,
+      members: nonTrash
+        .filter(
+          (r) => r.cols.has(topic.baseCollection) && r.cols.has(f.collection),
+        )
+        .map((r) => r.id),
+    }));
+    for (let i = 0; i < buttons.length; i++) {
+      for (let j = i + 1; j < buttons.length; j++) {
+        const a = buttons[i];
+        const b = buttons[j];
+        if (a.members.length < 5 || b.members.length < 5) continue;
+        const aSet = new Set(a.members);
+        const shared = b.members.filter((id) => aSet.has(id)).length;
+        const jaccard =
+          shared / (a.members.length + b.members.length - shared);
+        if (jaccard <= 0.8) continue;
+        const key = [a.collection, b.collection].sort().join(" ~ ");
+        if (DUPLICATE_AXIS_ALLOWLIST.has(key)) continue;
+        offenders.push(
+          `${topic.slug}: ${a.collection} (${a.members.length}) ~ ${b.collection} (${b.members.length}) Jaccard ${Math.round(jaccard * 100)}%`,
+        );
+      }
+    }
+  }
+  assert.deepEqual(offenders, [], `${offenders.length} duplicate axes`);
+});
+
+// --- Deep-link family resolution (Batch 1) ---
+// A rename changes a family's slug id, breaking bare ?family=<slug> links. A
+// link that also carries a leaf must still resolve its family, because
+// resolveCurriculumPath derives the family from the leaf. This pins that so
+// later family renames stay safe.
+test("a leaf-bearing deep link resolves its family regardless of the family label", () => {
+  for (const topic of CURRICULUM_TOPICS) {
+    const families = buildCurriculumFamilies(topic);
+    for (const family of families) {
+      for (const leaf of family.leaves) {
+        const resolved = resolveCurriculumPath(
+          topic,
+          "a-slug-that-does-not-exist",
+          leaf.collection,
+          [],
+        );
+        assert.equal(
+          resolved.family?.id,
+          family.id,
+          `${topic.slug}/${leaf.collection}: family not resolved from leaf`,
+        );
+        assert.equal(resolved.leaf?.collection, leaf.collection);
+      }
+    }
+  }
 });
 
 test("family counts are distinct-concept unions, not leaf-count sums", () => {

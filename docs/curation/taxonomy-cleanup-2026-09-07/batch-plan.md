@@ -90,3 +90,19 @@ generic-article concept. No other demotions anywhere in the cleanup.
    intact. No error overlay. Screenshots in the session scratchpad.
 6. Optional: full semantic re-audit of the ~40 family display names
    (spot-checked clean; "Cognate types(1)", "How it's used(2)" thin but valid).
+
+---
+
+## Phase 2 — semantic re-audit (plan: `next-plan.md`)
+
+The frozen family→group grouping from phase-1 Batch 6 was never content-checked.
+Phase 2 does that. Batches renumbered P2-1..P2-10 to avoid colliding with the
+phase-1 rows above. Model routing per batch is in `next-plan.md`.
+
+| # | Batch | Status | Commit | Notes |
+|---|---|---|---|---|
+| P2-1 | Enabling tooling | **done** | _(this commit)_ | `curriculum-inventory.ts` gains `--members <slug>` and `--structure`. `curriculum-reachability.test.ts` gains: family-structure snapshot, duplicate-axis guard (Jaccard > 0.8, allow-list for the adjectives pairs Batch P2-3 merges), leaf-bearing deep-link family resolution. Guard surfaced 2 more dup-axis pairs in Transformations (`morph-ward`~`morph-expr-to-adv`, `suffix-ly`~`adjective-to-adverb`) — allow-listed, folded into P2-7 scope. `db:test` 14/14 green. |
+
+### Phase 2 ledger
+
+- 2026-09-07 · P2-1 · _(this commit)_ · none (tooling + tests) · no DB change; inventory counts unchanged; `db:test` 11→14 tests.

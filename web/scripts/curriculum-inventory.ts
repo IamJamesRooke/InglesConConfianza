@@ -42,6 +42,16 @@ function isConfusion(collection: string, label: string) {
   );
 }
 
+// `npm run curriculum:inventory -- --members <topic-slug>` prints every member
+// row per family -> group as `id · role · spanish -> english`, for the
+// semantic re-audit (docs/curation/taxonomy-cleanup-2026-09-07/next-plan.md).
+// `--structure` prints the {topic: [family labels + group counts]} map that the
+// family-structure snapshot test asserts.
+const MEMBERS_FLAG_INDEX = process.argv.indexOf("--members");
+const MEMBERS_TOPIC =
+  MEMBERS_FLAG_INDEX >= 0 ? process.argv[MEMBERS_FLAG_INDEX + 1] : "";
+const PRINT_STRUCTURE = process.argv.includes("--structure");
+
 async function main() {
   const rows: Row[] = (
     await prisma.curriculumConcept.findMany({
@@ -108,7 +118,11 @@ async function main() {
       confusionGroups: familyReport
         .flatMap((f) => f.groups)
         .filter((g) => g.confusion)
-        .map((g) => ({ collection: g.collection, label: g.label, count: g.count })),
+        .map((g) => ({
+          collection: g.collection,
+          label: g.label,
+          count: g.count,
+        })),
     };
   });
 
@@ -120,9 +134,7 @@ async function main() {
   const MAPPING_TOPICS = new Set(["mappings", "en-mappings"]);
   const confusionOutsideMappings = topics
     .filter((t) => !MAPPING_TOPICS.has(t.slug))
-    .flatMap((t) =>
-      t.confusionGroups.map((g) => ({ topic: t.slug, ...g })),
-    );
+    .flatMap((t) => t.confusionGroups.map((g) => ({ topic: t.slug, ...g })));
 
   const summary = {
     generatedAt: new Date().toISOString(),
@@ -148,34 +160,80 @@ async function main() {
     })),
   };
 
-  writeFileSync(
-    OUT_JSON,
-    JSON.stringify(
-      {
-        summary,
-        topics,
-        globalOrphans: globalOrphans.map((r) => ({
-          id: r.id,
-          spanish: r.spanish,
-          english: r.english,
-          role: r.curriculumRole,
-          collections: r.collections,
-        })),
-        confusionOutsideMappings,
-      },
-      null,
-      2,
-    ),
-  );
+  if (!MEMBERS_TOPIC && !PRINT_STRUCTURE)
+    writeFileSync(
+      OUT_JSON,
+      JSON.stringify(
+        {
+          summary,
+          topics,
+          globalOrphans: globalOrphans.map((r) => ({
+            id: r.id,
+            spanish: r.spanish,
+            english: r.english,
+            role: r.curriculumRole,
+            collections: r.collections,
+          })),
+          confusionOutsideMappings,
+        },
+        null,
+        2,
+      ),
+    );
+
+  if (MEMBERS_TOPIC) {
+    const topic = topics.find((t) => t.slug === MEMBERS_TOPIC);
+    if (!topic) {
+      console.error(`Unknown topic slug: ${MEMBERS_TOPIC}`);
+      process.exitCode = 1;
+      await prisma.$disconnect();
+      return;
+    }
+    console.log(`=== Members of ${topic.slug} (base ${topic.baseCount}) ===\n`);
+    for (const f of topic.families) {
+      console.log(`# ${f.label}`);
+      for (const g of f.groups) {
+        console.log(`  -- ${g.label}  (${g.collection}, ${g.count} rows)`);
+        const members = nonTrash
+          .filter((r) => has(r, topic.baseCollection) && has(r, g.collection))
+          .sort((a, b) => a.spanish.localeCompare(b.spanish));
+        for (const m of members) {
+          console.log(
+            `     ${m.id}  ${m.curriculumRole.padEnd(10)}  ${m.spanish} -> ${m.english}`,
+          );
+        }
+      }
+      console.log("");
+    }
+    await prisma.$disconnect();
+    return;
+  }
+
+  if (PRINT_STRUCTURE) {
+    const structure = Object.fromEntries(
+      topics.map((t) => [
+        t.slug,
+        t.families.map((f) => [f.label, f.groups.length] as const),
+      ]),
+    );
+    console.log(JSON.stringify(structure, null, 2));
+    await prisma.$disconnect();
+    return;
+  }
 
   console.log("=== Curriculum taxonomy inventory ===");
   console.log(JSON.stringify(summary, null, 2));
   console.log(`\nGlobal orphans (${globalOrphans.length}):`);
   for (const r of globalOrphans.slice(0, 40)) {
-    console.log(`  ${r.id}  ${r.spanish} -> ${r.english} [${r.curriculumRole}]`);
+    console.log(
+      `  ${r.id}  ${r.spanish} -> ${r.english} [${r.curriculumRole}]`,
+    );
   }
-  if (globalOrphans.length > 40) console.log(`  ... +${globalOrphans.length - 40} more`);
-  console.log(`\nConfusion groups outside the two Mappings topics (${confusionOutsideMappings.length}):`);
+  if (globalOrphans.length > 40)
+    console.log(`  ... +${globalOrphans.length - 40} more`);
+  console.log(
+    `\nConfusion groups outside the two Mappings topics (${confusionOutsideMappings.length}):`,
+  );
   for (const g of confusionOutsideMappings) {
     console.log(`  ${g.topic}: ${g.label}  (${g.collection}, ${g.count} rows)`);
   }
