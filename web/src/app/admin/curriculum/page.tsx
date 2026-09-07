@@ -1,8 +1,13 @@
 import { CurriculumTable } from "@/components/curriculum/curriculum-table";
-import { topicDescriptions, topicTitles } from "@/components/curriculum/topic-presentation";
+import { topicTitles } from "@/components/curriculum/topic-presentation";
+import {
+  resolveCurriculumPath,
+  type CurriculumNavigationFamilyWithCounts,
+} from "@/lib/curriculum/navigation";
 import { readConceptCoverage } from "@/lib/curriculum/server/coverage";
 import {
   curriculumPageSize,
+  readCurriculumNavigationCounts,
   readCurriculumPage,
 } from "@/lib/curriculum/server/curriculum-store";
 import type { CurriculumRole } from "@/lib/curriculum/types";
@@ -22,13 +27,27 @@ function first(value: string | string[] | undefined) {
 
 export default async function CurriculumPage({ searchParams }: PageProps) {
   const parameters = await searchParams;
-
   const topic = findCurriculumTopic(first(parameters.topic) ?? "");
-  const quickFacets = topic?.facetButtons ?? [];
-  const activeFacets = (first(parameters.facets) ?? "")
+  const requestedLeaf = first(parameters.leaf) ?? "";
+  const legacyFacets = (first(parameters.facets) ?? "")
     .split(",")
     .map((value) => value.trim())
-    .filter((value) => quickFacets.some((facet) => facet.collection === value));
+    .filter((value) =>
+      topic?.facetButtons.some((facet) => facet.collection === value),
+    );
+  const browse = topic
+    ? resolveCurriculumPath(
+        topic,
+        first(parameters.family) ?? "",
+        requestedLeaf,
+        legacyFacets,
+      )
+    : null;
+  const outsideFamilies = Boolean(
+    topic && first(parameters.family) === "outside-families" && !requestedLeaf,
+  );
+  const unresolvedLegacyFacets =
+    browse?.leaf || legacyFacets.length <= 1 ? [] : legacyFacets;
 
   const requestedPage = Number.parseInt(first(parameters.page) ?? "1", 10);
   const requestedRole = first(parameters.role);
@@ -48,12 +67,13 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
     sortParam === "role"
       ? sortParam
       : ("default" as const);
-
-  const taughtParam = first(parameters.taught);
+  const coverageParam = first(parameters.taught);
   const coverageFilter: CoverageFilter =
-    taughtParam === "taught" || taughtParam === "untaught"
-      ? taughtParam
+    coverageParam === "taught" || coverageParam === "untaught"
+      ? coverageParam
       : "all";
+  const search = (first(parameters.search) ?? "").trim();
+  const collection = (first(parameters.collection) ?? "").trim();
 
   const coverage = await readConceptCoverage();
   const coveredIds = [...coverage.keys()];
@@ -63,18 +83,74 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
       : coverageFilter === "untaught"
         ? ({ notIn: coveredIds } as const)
         : undefined;
+  const requiredCollections = [
+    ...(topic ? [topic.baseCollection] : []),
+    ...(browse?.leaf ? [browse.leaf.collection] : []),
+    ...unresolvedLegacyFacets,
+  ];
+  const familyCollections =
+    browse?.family && !browse.leaf
+      ? browse.family.leaves.map((leaf) => leaf.collection)
+      : [];
+  const allBrowseCollections =
+    browse?.families.flatMap((family) =>
+      family.leaves.map((leaf) => leaf.collection),
+    ) ?? [];
 
-  const curriculum = await readCurriculumPage({
-    page: Number.isFinite(requestedPage) ? requestedPage : 1,
-    search: (first(parameters.search) ?? "").trim(),
-    collection: (first(parameters.collection) ?? "").trim(),
-    role,
-    sort,
-    requireCollections: topic
-      ? [topic.baseCollection, ...activeFacets]
-      : [],
-    idFilter,
-  });
+  const [curriculum, navigationCounts] = await Promise.all([
+    readCurriculumPage({
+      page: Number.isFinite(requestedPage) ? requestedPage : 1,
+      search,
+      collection,
+      role,
+      sort,
+      requireCollections: requiredCollections,
+      anyCollections: familyCollections,
+      excludeAnyCollections: outsideFamilies ? allBrowseCollections : [],
+      idFilter,
+    }),
+    topic && browse
+      ? readCurriculumNavigationCounts({
+          baseCollection: topic.baseCollection,
+          families: browse.families,
+          search,
+          collection,
+          role,
+          idFilter,
+        })
+      : Promise.resolve(new Map<string, Set<string>>()),
+  ]);
+
+  const configuredFamilies: CurriculumNavigationFamilyWithCounts[] =
+    browse?.families.map((family) => {
+      const familyIds = new Set<string>();
+      const leaves = family.leaves.map((leaf) => {
+        const ids = navigationCounts.get(leaf.collection) ?? new Set<string>();
+        for (const id of ids) familyIds.add(id);
+        return { ...leaf, count: ids.size };
+      });
+      return { ...family, count: familyIds.size, leaves };
+    }) ?? [];
+  const mappedIds = new Set(
+    allBrowseCollections.flatMap((name) => [
+      ...(navigationCounts.get(name) ?? new Set<string>()),
+    ]),
+  );
+  const topicIds = navigationCounts.get("__topic__") ?? new Set<string>();
+  const outsideCount = [...topicIds].filter((id) => !mappedIds.has(id)).length;
+  const families = [
+    ...configuredFamilies,
+    ...(outsideCount > 0
+      ? [
+          {
+            id: "outside-families",
+            label: "Outside these families",
+            count: outsideCount,
+            leaves: [],
+          },
+        ]
+      : []),
+  ];
 
   const visibleCoverage: Record<
     string,
@@ -91,22 +167,17 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
     }
   }
 
-  return (
-    <main className="flex-1 bg-background px-6 py-8 text-foreground">
-      <div className="mx-auto max-w-[1600px]">
-        <div className="mb-6">
-          <h1 className="text-3xl font-semibold tracking-tight">
-            {topic ? topicTitles[topic.slug] ?? topic.title : "Curriculum"}
-          </h1>
-          <p className="mt-1 text-sm text-muted-foreground">
-            {topic
-              ? topicDescriptions[topic.slug] ?? topic.description
-              : "Language concepts that combine vocabulary and structure."}
-          </p>
-        </div>
+  const displayTopic = topic
+    ? topicTitles[topic.slug] ?? topic.title
+    : "All curriculum";
+  const scopeLabel = outsideFamilies
+    ? "Outside these families"
+    : browse?.leaf?.label ?? browse?.family?.label ?? displayTopic;
 
+  return (
+    <main className="flex-1 bg-background px-3 py-4 text-foreground sm:px-5 lg:px-6">
+      <div className="mx-auto max-w-[1800px]">
         <CurriculumTable
-          key={`${topic?.slug ?? ""}:${activeFacets.join(",")}:${curriculum.page}:${curriculum.totalConcepts}:${curriculum.search}:${curriculum.collection}:${curriculum.role}:${curriculum.sort}:${coverageFilter}`}
           initialConcepts={curriculum.concepts}
           totalConcepts={curriculum.totalConcepts}
           page={curriculum.page}
@@ -122,19 +193,39 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
           }}
           macrotags={CURRICULUM_TOPICS.map((entry) => ({
             slug: entry.slug,
-            title: entry.title,
+            title: topicTitles[entry.slug] ?? entry.title,
           }))}
           activeTopic={
             topic
               ? {
                   slug: topic.slug,
-                  title: topic.title,
+                  title: displayTopic,
                   baseCollection: topic.baseCollection,
                 }
               : null
           }
-          quickFacets={quickFacets}
-          activeFacets={activeFacets}
+          families={families}
+          activeFamilyId={
+            outsideFamilies ? "outside-families" : browse?.family?.id ?? ""
+          }
+          activeLeafCollection={browse?.leaf?.collection ?? ""}
+          legacyFacets={unresolvedLegacyFacets}
+          scopeLabel={scopeLabel}
+          topicCount={navigationCounts.get("__topic__")?.size ?? 0}
+          resultKey={[
+            topic?.slug ?? "",
+            outsideFamilies
+              ? "outside-families"
+              : browse?.family?.id ?? "",
+            browse?.leaf?.collection ?? "",
+            unresolvedLegacyFacets.join(","),
+            collection,
+            role,
+            coverageFilter,
+            search,
+            sort,
+            curriculum.page,
+          ].join(":")}
         />
       </div>
     </main>

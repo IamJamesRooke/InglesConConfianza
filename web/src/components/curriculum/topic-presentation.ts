@@ -1,3 +1,5 @@
+export { facetGroup } from "@/lib/curriculum/navigation";
+
 // Display copy only. Collection names and topic slugs remain canonical.
 export const topicTitles: Record<string, string> = {
   mappings: "Spanish → English",
@@ -111,27 +113,4 @@ export function presentFacet(facet: { collection: string; label: string }) {
   }
   const compact = shortLabels[collection] ?? label;
   return { label: compact, before: compact, emphasis: "", after: "", description: label };
-}
-
-export function facetGroup(topic: string | undefined, collection: string) {
-  if (collection.startsWith("contrast:")) return "Common confusions";
-  if (topic === "nouns" || topic === "adjectives" || topic === "adverbs") {
-    if (topic === "nouns" && /^topic:(masc-|fem-|common-gender-)/.test(collection)) return "Articles & gender";
-    if (collection.startsWith("topic:")) return "Meaning & context";
-    if (collection.startsWith("gender:")) return "Articles & gender";
-    if (collection.startsWith("degree:")) return "Comparisons";
-    return topic === "adjectives" ? "How it's used" : "Word types";
-  }
-  if (topic === "transformations") {
-    if (collection.startsWith("morphology:suffix-")) return "Endings";
-    if (collection.startsWith("morphology:prefix-")) return "Prefixes";
-    return "Word types";
-  }
-  if (topic === "cognates") {
-    if (["cognate:transparent", "cognate:opaque-gloss", "cognate:false-friend"].includes(collection)) return "Cognate types";
-    if (collection === "cognate:latin-root" || /-to-(tain|pose|mit|fer|duce|tribute|struct|tract|scribe|clude|dict|cede|press|vert|serve|solve|gest|hibit|ceive|ply|cur|hend)$/u.test(collection)) return "Latin roots";
-    return "Spelling patterns";
-  }
-  if (topic === "verb-forms") return collection.startsWith("sound:regular-") ? "Regular endings" : "Irregular patterns";
-  return "Explore";
 }

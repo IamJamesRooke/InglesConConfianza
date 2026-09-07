@@ -5,6 +5,7 @@ import type {
   CurriculumConcept,
   CurriculumRole,
 } from "@/lib/curriculum/types";
+import type { CurriculumNavigationFamily } from "@/lib/curriculum/navigation";
 import { isCurriculumConcept } from "@/lib/curriculum/validation";
 import { prisma } from "@/lib/database/prisma";
 
@@ -39,12 +40,12 @@ const SORT_ORDER_BY: Record<
   CurriculumSort,
   Prisma.CurriculumConceptOrderByWithRelationInput[]
 > = {
-  default: [{ curriculumRole: "asc" }, { sortOrder: "asc" }],
-  spanish: [{ spanish: "asc" }],
-  "spanish-desc": [{ spanish: "desc" }],
-  english: [{ english: "asc" }],
-  "english-desc": [{ english: "desc" }],
-  role: [{ curriculumRole: "asc" }, { spanish: "asc" }],
+  default: [{ curriculumRole: "asc" }, { sortOrder: "asc" }, { id: "asc" }],
+  spanish: [{ spanish: "asc" }, { id: "asc" }],
+  "spanish-desc": [{ spanish: "desc" }, { id: "asc" }],
+  english: [{ english: "asc" }, { id: "asc" }],
+  "english-desc": [{ english: "desc" }, { id: "asc" }],
+  role: [{ curriculumRole: "asc" }, { spanish: "asc" }, { id: "asc" }],
 };
 
 export type CurriculumPageResult = CurriculumPageFilters & {
@@ -110,10 +111,14 @@ export async function readCurriculumPage({
   role,
   sort,
   requireCollections = [],
+  anyCollections = [],
+  excludeAnyCollections = [],
   idFilter,
 }: CurriculumPageFilters & {
   page: number;
   requireCollections?: string[];
+  anyCollections?: string[];
+  excludeAnyCollections?: string[];
   // Restrict the result set to / away from a set of concept ids (used by the
   // "taught" coverage filter). Caller owns the meaning of the ids.
   idFilter?: { in: string[] } | { notIn: string[] };
@@ -134,6 +139,26 @@ export async function readCurriculumPage({
           AND: anded.map((name) => ({
             collections: { some: { collectionName: name } },
           })),
+        }
+      : {}),
+    ...(anyCollections.length > 0
+      ? {
+          collections: {
+            some: { collectionName: { in: [...new Set(anyCollections)] } },
+          },
+        }
+      : {}),
+    ...(excludeAnyCollections.length > 0
+      ? {
+          NOT: {
+            collections: {
+              some: {
+                collectionName: {
+                  in: [...new Set(excludeAnyCollections)],
+                },
+              },
+            },
+          },
         }
       : {}),
     ...(role === "all" ? {} : { curriculumRole: role }),
@@ -163,6 +188,77 @@ export async function readCurriculumPage({
     role,
     sort,
   };
+}
+
+export async function readCurriculumNavigationCounts({
+  baseCollection,
+  families,
+  search,
+  collection,
+  role,
+  idFilter,
+}: {
+  baseCollection: string;
+  families: CurriculumNavigationFamily[];
+  search: string;
+  collection: string;
+  role: CurriculumRole | "all";
+  idFilter?: { in: string[] } | { notIn: string[] };
+}) {
+  const navigationCollections = [
+    ...new Set(
+      families.flatMap((family) =>
+        family.leaves.map((leaf) => leaf.collection),
+      ),
+    ),
+  ];
+  const required = [...new Set([baseCollection, collection].filter(Boolean))];
+  const conceptWhere = {
+    ...(idFilter ? { id: idFilter } : {}),
+    ...(search
+      ? {
+          OR: [
+            { spanish: { contains: search, mode: "insensitive" as const } },
+            { english: { contains: search, mode: "insensitive" as const } },
+          ],
+        }
+      : {}),
+    ...(required.length > 0
+      ? {
+          AND: required.map((name) => ({
+            collections: { some: { collectionName: name } },
+          })),
+        }
+      : {}),
+    ...(role === "all" ? {} : { curriculumRole: role }),
+  } satisfies Prisma.CurriculumConceptWhereInput;
+  const [memberships, topicConcepts] = await Promise.all([
+    navigationCollections.length > 0
+      ? prisma.conceptCollection.findMany({
+          where: {
+            collectionName: { in: navigationCollections },
+            concept: conceptWhere,
+          },
+          select: { collectionName: true, conceptId: true },
+        })
+      : [],
+    prisma.curriculumConcept.findMany({
+      where: conceptWhere,
+      select: { id: true },
+    }),
+  ]);
+
+  const conceptIdsByCollection = new Map<string, Set<string>>();
+  conceptIdsByCollection.set(
+    "__topic__",
+    new Set(topicConcepts.map((concept) => concept.id)),
+  );
+  for (const membership of memberships) {
+    const ids = conceptIdsByCollection.get(membership.collectionName) ?? new Set();
+    ids.add(membership.conceptId);
+    conceptIdsByCollection.set(membership.collectionName, ids);
+  }
+  return conceptIdsByCollection;
 }
 
 export async function readCurriculumConcept(

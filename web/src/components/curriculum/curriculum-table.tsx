@@ -9,7 +9,6 @@ import {
   ChevronRight,
   Eye,
   Filter,
-  LayoutList,
   Menu,
   PanelLeftClose,
   PanelLeftOpen,
@@ -19,9 +18,9 @@ import {
   X,
 } from "lucide-react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useMemo, useRef, useState, useTransition } from "react";
-import { facetGroup, presentFacet, topicTitles } from "./topic-presentation";
+import { useEffect, useRef, useState, useTransition } from "react";
 
+import type { CurriculumNavigationFamilyWithCounts } from "@/lib/curriculum/navigation";
 import type {
   CurriculumConcept,
   CurriculumRole,
@@ -96,43 +95,7 @@ function updateEditableValue(
   return { ...concept, [field]: value };
 }
 
-type QuickFacet = { collection: string; label: string };
 type Macrotag = { slug: string; title: string };
-
-const topicGroups = [
-  {
-    label: "Words & grammar",
-    slugs: [
-      "pronouns",
-      "determiners",
-      "interrogatives",
-      "verbs",
-      "nouns",
-      "adjectives",
-      "adverbs",
-      "numbers",
-      "expressions",
-      "connectors",
-      "prepositions",
-    ],
-  },
-  {
-    label: "Patterns & construction",
-    slugs: [
-      "phrasal-verbs-by-root",
-      "phrasal-verbs-by-particle",
-      "verb-forms",
-      "verb-patterns",
-      "questions-negation",
-      "imperatives",
-      "collocations",
-    ],
-  },
-  {
-    label: "Mappings & word formation",
-    slugs: ["mappings", "en-mappings", "cognates", "transformations"],
-  },
-] as const;
 
 const collectionGroupLabels: Record<string, string> = {
   es: "Spanish headword",
@@ -174,34 +137,10 @@ function groupCollections(collections: string[]) {
   }, {});
 }
 
-function getFacetLabel(quickFacets: QuickFacet[]) {
-  if (quickFacets.length === 0) return "Topic filter";
-  const prefixes = new Set(
-    quickFacets.map((facet) => facet.collection.split(":", 1)[0]),
-  );
-  if (prefixes.size !== 1) return "Topic filter";
-  const prefix = [...prefixes][0];
-  return collectionGroupLabels[prefix] ?? "Topic filter";
-}
-
 const curriculumUiStorage = {
   examples: "icc-curriculum-show-examples",
   sidebar: "icc-curriculum-sidebar-open",
-  sidebarScroll: "icc-curriculum-sidebar-scroll",
-  topicSearch: "icc-curriculum-topic-search",
 } as const;
-
-function readStoredBoolean(key: string, fallback: boolean) {
-  if (typeof window === "undefined") return fallback;
-  return window.localStorage.getItem(key) === null
-    ? fallback
-    : window.localStorage.getItem(key) === "true";
-}
-
-function readStoredText(key: string) {
-  if (typeof window === "undefined") return "";
-  return window.sessionStorage.getItem(key) ?? "";
-}
 
 export function CurriculumTable({
   initialConcepts,
@@ -212,10 +151,15 @@ export function CurriculumTable({
   coverage = {},
   coverageFilter = "all",
   filters,
-  quickFacets = [],
-  activeFacets = [],
   macrotags = [],
   activeTopic = null,
+  families = [],
+  activeFamilyId = "",
+  activeLeafCollection = "",
+  legacyFacets = [],
+  scopeLabel = "All curriculum",
+  topicCount = 0,
+  resultKey = "",
 }: {
   initialConcepts: CurriculumConcept[];
   totalConcepts: number;
@@ -239,10 +183,15 @@ export function CurriculumTable({
       | "english-desc"
       | "role";
   };
-  quickFacets?: QuickFacet[];
-  activeFacets?: string[];
   macrotags?: Macrotag[];
   activeTopic?: { slug: string; title: string; baseCollection: string } | null;
+  families?: CurriculumNavigationFamilyWithCounts[];
+  activeFamilyId?: string;
+  activeLeafCollection?: string;
+  legacyFacets?: string[];
+  scopeLabel?: string;
+  topicCount?: number;
+  resultKey?: string;
 }) {
   const router = useRouter();
   const pathname = usePathname();
@@ -260,23 +209,18 @@ export function CurriculumTable({
   const [bulkDeleting, setBulkDeleting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [mappingSearch, setMappingSearch] = useState(filters.search);
-  const [topicSearch, setTopicSearch] = useState(() =>
-    readStoredText(curriculumUiStorage.topicSearch),
-  );
-  const [sidebarOpen, setSidebarOpen] = useState(() =>
-    readStoredBoolean(curriculumUiStorage.sidebar, true),
-  );
+  const [sidebarOpen, setSidebarOpen] = useState(true);
   const [mobileTopicsOpen, setMobileTopicsOpen] = useState(false);
-  const [showExamples, setShowExamples] = useState(() =>
-    readStoredBoolean(curriculumUiStorage.examples, false),
-  );
+  const [showExamples, setShowExamples] = useState(false);
   const [detailConceptId, setDetailConceptId] = useState<string | null>(null);
   const [saveFeedback, setSaveFeedback] = useState<{
     conceptId: string;
     state: "saving" | "saved" | "error";
   } | null>(null);
-  const sidebarScrollRef = useRef<HTMLElement>(null);
   const detailPanelRef = useRef<HTMLElement>(null);
+  const mobileBrowseRef = useRef<HTMLElement>(null);
+  const mobileBrowseOpenerRef = useRef<HTMLButtonElement>(null);
+  const resultsScrollRef = useRef<HTMLDivElement>(null);
   const detailOpenerRef = useRef<HTMLElement | null>(null);
   const saveFeedbackTimerRef = useRef<number | null>(null);
   const selectedCollection = filters.collection || null;
@@ -286,54 +230,73 @@ export function CurriculumTable({
   const detailConceptIndex = concepts.findIndex(
     (concept) => concept.id === detailConceptId,
   );
-  const activeFacet = quickFacets.find((facet) =>
-    activeFacets.includes(facet.collection),
+  const activeFamily = families.find((family) => family.id === activeFamilyId);
+  const configuredFamilies = families.filter(
+    (family) => family.id !== "outside-families",
   );
-  const facetLabel = getFacetLabel(quickFacets);
-  const facetGroups = new Map<string, QuickFacet[]>();
-  for (const facet of quickFacets) {
-    const group = facetGroup(activeTopic?.slug, facet.collection);
-    facetGroups.set(group, [...(facetGroups.get(group) ?? []), facet]);
-  }
-  const groupedTopics = useMemo(() => {
-    const query = topicSearch.trim().toLocaleLowerCase();
-    const bySlug = new Map(macrotags.map((tag) => [tag.slug, tag]));
-    return topicGroups
-      .map((group) => ({
-        label: group.label,
-        topics: group.slugs
-          .map((slug) => bySlug.get(slug))
-          .filter((topic): topic is Macrotag => Boolean(topic))
-          .map((topic) => ({ ...topic, title: topicTitles[topic.slug] ?? topic.title }))
-          .filter((topic) => topic.title.toLocaleLowerCase().includes(query)),
-      }))
-      .filter((group) => group.topics.length > 0);
-  }, [macrotags, topicSearch]);
+  const outsideFamily = families.find(
+    (family) => family.id === "outside-families",
+  );
+  const showFamilyLevel = configuredFamilies.length > 1;
+  const browseFamily =
+    activeFamily ?? (!showFamilyLevel ? configuredFamilies[0] : undefined);
+  const activeLeaf = browseFamily?.leaves.find(
+    (leaf) => leaf.collection === activeLeafCollection,
+  );
 
   useEffect(() => {
-    window.localStorage.setItem(
-      curriculumUiStorage.sidebar,
-      String(sidebarOpen),
-    );
-    window.localStorage.setItem(
-      curriculumUiStorage.examples,
-      String(showExamples),
-    );
-    window.sessionStorage.setItem(
-      curriculumUiStorage.topicSearch,
-      topicSearch,
-    );
-  }, [showExamples, sidebarOpen, topicSearch]);
-
-  useEffect(() => {
-    const storedPosition = Number.parseInt(
-      window.sessionStorage.getItem(curriculumUiStorage.sidebarScroll) ?? "0",
-      10,
-    );
-    if (sidebarScrollRef.current && Number.isFinite(storedPosition)) {
-      sidebarScrollRef.current.scrollTop = storedPosition;
+    const savedSidebar = window.localStorage.getItem(curriculumUiStorage.sidebar);
+    const savedExamples = window.localStorage.getItem(curriculumUiStorage.examples);
+    if (savedSidebar !== null) {
+      // Preferences load after hydration so the server and first client render match.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setSidebarOpen(savedSidebar === "true");
     }
-  }, [sidebarOpen]);
+    if (savedExamples !== null) {
+      setShowExamples(savedExamples === "true");
+    }
+  }, []);
+
+  function toggleSidebar() {
+    setSidebarOpen((open) => {
+      const next = !open;
+      window.localStorage.setItem(curriculumUiStorage.sidebar, String(next));
+      return next;
+    });
+  }
+
+  function openSidebar() {
+    setSidebarOpen(true);
+    window.localStorage.setItem(curriculumUiStorage.sidebar, "true");
+  }
+
+  function toggleExamples() {
+    setShowExamples((shown) => {
+      const next = !shown;
+      window.localStorage.setItem(curriculumUiStorage.examples, String(next));
+      return next;
+    });
+  }
+
+  useEffect(() => {
+    // Server navigation replaces this page of editable rows.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setConcepts(initialConcepts);
+  }, [initialConcepts]);
+
+  useEffect(() => {
+    // A new scope starts with a clean page selection and its first result.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setSelectedIds(new Set());
+    setDetailConceptId(null);
+    if (resultsScrollRef.current) resultsScrollRef.current.scrollTop = 0;
+  }, [resultKey]);
+
+  useEffect(() => {
+    // Back/Forward navigation must restore the submitted search value.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMappingSearch(filters.search);
+  }, [filters.search]);
 
   useEffect(() => {
     if (!detailConceptId) return;
@@ -345,6 +308,40 @@ export function CurriculumTable({
       document.body.style.overflow = previousOverflow;
     };
   }, [detailConceptId]);
+
+  useEffect(() => {
+    if (!mobileTopicsOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    mobileBrowseRef.current?.focus();
+
+    function handleMobileBrowseKeys(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        closeMobileBrowser();
+        return;
+      }
+      if (event.key !== "Tab" || !mobileBrowseRef.current) return;
+      const focusable = mobileBrowseRef.current.querySelectorAll<HTMLElement>(
+        "button:not([disabled]), select:not([disabled])",
+      );
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+
+    window.addEventListener("keydown", handleMobileBrowseKeys);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleMobileBrowseKeys);
+    };
+  }, [mobileTopicsOpen]);
 
   useEffect(() => {
     if (!detailConceptId) return;
@@ -439,8 +436,37 @@ export function CurriculumTable({
   }
 
   function selectTopic(slug: string | null) {
-    navigate({ topic: slug, facets: null });
+    navigate({
+      topic: slug,
+      family: null,
+      leaf: null,
+      facets: null,
+      collection: null,
+    });
+  }
+
+  function closeMobileBrowser() {
     setMobileTopicsOpen(false);
+    window.setTimeout(() => mobileBrowseOpenerRef.current?.focus(), 0);
+  }
+
+  function selectFamily(familyId: string | null) {
+    navigate({
+      family: familyId,
+      leaf: null,
+      facets: null,
+      collection: null,
+    });
+  }
+
+  function selectLeaf(familyId: string, collection: string | null) {
+    navigate({
+      family: familyId,
+      leaf: collection,
+      facets: null,
+      collection: null,
+    });
+    closeMobileBrowser();
   }
 
   function openDetails(conceptId: string, opener?: HTMLElement) {
@@ -477,10 +503,10 @@ export function CurriculumTable({
     setMappingSearch("");
     navigate({
       search: null,
-      facets: null,
       collection: null,
       role: null,
       taught: null,
+      ...(legacyFacets.length > 0 ? { facets: null } : {}),
     });
   }
 
@@ -537,6 +563,7 @@ export function CurriculumTable({
           : currentEditor,
       );
       markSaved(concept.id);
+      router.refresh();
     } catch {
       setError("Unable to save the concept.");
       markSaveError(concept.id);
@@ -588,6 +615,7 @@ export function CurriculumTable({
         currentEditor?.conceptId === editor.conceptId ? null : currentEditor,
       );
       markSaved(concept.id);
+      router.refresh();
     } catch {
       setError("Unable to save collections.");
       markSaveError(concept.id);
@@ -713,6 +741,58 @@ export function CurriculumTable({
     router.refresh();
   }
 
+  async function moveSelectedToTrash() {
+    if (bulkDeleting || selectedIds.size === 0) return;
+    const targets = concepts.filter((concept) => selectedIds.has(concept.id));
+    setBulkDeleting(true);
+    setError(null);
+
+    const results = await Promise.allSettled(
+      targets.map((concept) => {
+        const updatedConcept = {
+          ...concept,
+          curriculumRole: "trash" as const,
+        };
+        return fetch(
+          `/api/admin/curriculum/concepts/${encodeURIComponent(concept.id)}`,
+          {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(updatedConcept),
+          },
+        ).then((response) => {
+          if (!response.ok) throw new Error("update failed");
+          return concept.id;
+        });
+      }),
+    );
+    const updatedIds = new Set(
+      results
+        .filter(
+          (result): result is PromiseFulfilledResult<string> =>
+            result.status === "fulfilled",
+        )
+        .map((result) => result.value),
+    );
+    const failedCount = results.length - updatedIds.size;
+
+    setConcepts((currentConcepts) =>
+      currentConcepts.map((concept) =>
+        updatedIds.has(concept.id)
+          ? { ...concept, curriculumRole: "trash" }
+          : concept,
+      ),
+    );
+    setSelectedIds(new Set());
+    if (failedCount > 0) {
+      setError(
+        `Moved ${updatedIds.size} concept${updatedIds.size === 1 ? "" : "s"} to Trash; ${failedCount} failed.`,
+      );
+    }
+    setBulkDeleting(false);
+    router.refresh();
+  }
+
   async function updateRole(
     concept: CurriculumConcept,
     curriculumRole: CurriculumRole,
@@ -749,6 +829,7 @@ export function CurriculumTable({
         ),
       );
       markSaved(concept.id);
+      router.refresh();
     } catch {
       setError("Unable to save priority.");
       markSaveError(concept.id);
@@ -801,7 +882,7 @@ export function CurriculumTable({
     const relevantCollections = new Set([
       selectedCollection,
       activeTopic?.baseCollection,
-      activeFacet?.collection,
+      activeLeaf?.collection,
     ]);
     const orderedCollections = concept.collections
       .map((collection, index) => ({ collection, index }))
@@ -954,22 +1035,197 @@ export function CurriculumTable({
     );
   }
 
+  function renderBrowsePanel(mobile = false) {
+    return (
+      <div className="flex min-h-0 flex-1 flex-col">
+        <div className="border-b border-border p-3">
+          <label className="grid gap-1 text-[10px] font-semibold uppercase tracking-[0.13em] text-muted-foreground">
+            1 · Topic
+            <select
+              value={activeTopic?.slug ?? ""}
+              onChange={(event) => selectTopic(event.target.value || null)}
+              className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm font-semibold normal-case tracking-normal text-foreground outline-none focus:border-ring focus:ring-3 focus:ring-ring/20"
+            >
+              <option value="">All curriculum</option>
+              {macrotags.map((topic) => (
+                <option key={topic.slug} value={topic.slug}>
+                  {topic.title}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+
+        {activeTopic ? (
+          <>
+            {showFamilyLevel && (
+            <div className="flex min-h-0 flex-1 flex-col border-b border-border p-2">
+              <p className="px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.13em] text-muted-foreground">
+                2 · Family
+              </p>
+              <div
+                className={`${mobile ? "max-h-52" : "max-h-[32vh]"} min-h-0 space-y-0.5 overflow-y-auto overscroll-contain pr-1`}
+                aria-label={`${activeTopic.title} families`}
+              >
+                <button
+                  type="button"
+                  onClick={() => selectFamily(null)}
+                  aria-pressed={!activeFamily}
+                  className={`flex min-h-9 w-full items-center justify-between gap-2 rounded-md px-2.5 text-left text-sm transition ${
+                    !activeFamily
+                      ? "bg-primary/10 font-semibold text-primary"
+                      : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                  }`}
+                >
+                  <span>All {activeTopic.title}</span>
+                  <span className="shrink-0 text-[11px] tabular-nums opacity-70">
+                    {topicCount}
+                  </span>
+                </button>
+                {families.map((family) => (
+                  <button
+                    key={family.id}
+                    type="button"
+                    onClick={() => selectFamily(family.id)}
+                    aria-pressed={activeFamily?.id === family.id}
+                    disabled={family.count === 0}
+                    className={`flex min-h-9 w-full items-center justify-between gap-2 rounded-md px-2.5 text-left text-[13px] transition disabled:opacity-40 ${
+                      activeFamily?.id === family.id
+                        ? "bg-primary/10 font-semibold text-primary"
+                        : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                    }`}
+                  >
+                    <span>{family.label}</span>
+                    <span className="shrink-0 text-[11px] tabular-nums opacity-70">
+                      {family.count}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
+            )}
+
+            <div className="flex min-h-0 flex-1 flex-col p-2">
+              <p className="px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.13em] text-muted-foreground">
+                3 · Collection
+              </p>
+              {browseFamily ? (
+                <div
+                  className={`${mobile ? "max-h-60" : "max-h-[39vh]"} min-h-0 space-y-0.5 overflow-y-auto overscroll-contain pr-1`}
+                  aria-label={`${browseFamily.label} collections`}
+                >
+                  <button
+                    type="button"
+                    onClick={() =>
+                      showFamilyLevel
+                        ? selectLeaf(browseFamily.id, null)
+                        : selectFamily(null)
+                    }
+                    aria-pressed={!activeLeaf}
+                    className={`flex min-h-9 w-full items-center justify-between gap-2 rounded-md px-2.5 text-left text-sm transition ${
+                      !activeLeaf
+                        ? "bg-primary/10 font-semibold text-primary"
+                        : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                    }`}
+                  >
+                    <span>
+                      All{" "}
+                      {showFamilyLevel || browseFamily.id === "outside-families"
+                        ? browseFamily.label
+                        : activeTopic.title}
+                    </span>
+                    <span className="shrink-0 text-[11px] tabular-nums opacity-70">
+                      {showFamilyLevel ? browseFamily.count : topicCount}
+                    </span>
+                  </button>
+                  {browseFamily.leaves.length === 0 && (
+                    <p className="px-2 py-3 text-xs leading-relaxed text-muted-foreground">
+                      These concepts are still reachable for curation but are
+                      not assigned to one of this topic&apos;s focused collections.
+                    </p>
+                  )}
+                  {browseFamily.leaves.map((leaf) => (
+                    <button
+                      key={leaf.collection}
+                      type="button"
+                      onClick={() =>
+                        selectLeaf(browseFamily.id, leaf.collection)
+                      }
+                      aria-pressed={activeLeaf?.collection === leaf.collection}
+                      disabled={leaf.count === 0}
+                      title={leaf.collection}
+                      className={`flex min-h-9 w-full items-center justify-between gap-2 rounded-md px-2.5 text-left text-[13px] leading-snug transition disabled:opacity-40 ${
+                        activeLeaf?.collection === leaf.collection
+                          ? "bg-primary/10 font-semibold text-primary"
+                          : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                      }`}
+                    >
+                      <span>{leaf.label}</span>
+                      <span className="shrink-0 text-[11px] tabular-nums opacity-70">
+                        {leaf.count}
+                      </span>
+                    </button>
+                  ))}
+                  {!showFamilyLevel &&
+                    outsideFamily &&
+                    browseFamily.id !== "outside-families" && (
+                      <button
+                        type="button"
+                        onClick={() => selectFamily(outsideFamily.id)}
+                        className="mt-2 flex min-h-9 w-full items-center justify-between gap-2 border-t border-border px-2.5 pt-2 text-left text-xs text-muted-foreground hover:text-foreground"
+                      >
+                        <span>Outside these collections</span>
+                        <span className="tabular-nums">
+                          {outsideFamily.count}
+                        </span>
+                      </button>
+                    )}
+                </div>
+              ) : (
+                <p className="px-2 py-2 text-xs leading-relaxed text-muted-foreground">
+                  Choose a family to see its focused collections.
+                </p>
+              )}
+            </div>
+          </>
+        ) : (
+          <p className="p-4 text-sm leading-relaxed text-muted-foreground">
+            Choose a topic to browse its families and collections, or search the
+            complete curriculum.
+          </p>
+        )}
+
+        {mobile && (
+          <div className="border-t border-border p-2">
+            <button
+              type="button"
+              onClick={closeMobileBrowser}
+              className="h-10 w-full rounded-md bg-primary px-3 text-sm font-semibold text-primary-foreground"
+            >
+              View {scopeLabel}
+            </button>
+          </div>
+        )}
+      </div>
+    );
+  }
+
   return (
-    <div className="relative lg:grid lg:grid-cols-[auto_minmax(0,1fr)] lg:gap-6">
+    <div className="relative lg:grid lg:grid-cols-[auto_minmax(0,1fr)] lg:gap-4">
       <aside
         className={`${
-          sidebarOpen ? "lg:w-60" : "lg:w-14"
-        } hidden max-h-[calc(100vh-5rem)] self-start overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-[width] lg:sticky lg:top-20 lg:flex lg:flex-col`}
+          sidebarOpen ? "lg:w-72 xl:w-80" : "lg:w-14"
+        } hidden h-[calc(100vh-5rem)] min-h-[560px] self-start overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-[width] lg:sticky lg:top-16 lg:flex lg:flex-col`}
       >
         <div className="flex shrink-0 items-center justify-between border-b border-border px-3 py-3">
           {sidebarOpen && (
             <span className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-              Browse topics
+              Browse curriculum
             </span>
           )}
           <button
             type="button"
-            onClick={() => setSidebarOpen((open) => !open)}
+            onClick={toggleSidebar}
             className="inline-flex size-8 items-center justify-center rounded-md text-muted-foreground transition hover:bg-muted hover:text-foreground"
             aria-label={sidebarOpen ? "Collapse topics" : "Expand topics"}
           >
@@ -981,79 +1237,10 @@ export function CurriculumTable({
           </button>
         </div>
 
-        {sidebarOpen ? (
-          <div className="flex min-h-0 flex-1 flex-col p-2">
-            <label className="relative mb-2 block">
-              <span className="sr-only">Search topics</span>
-              <Search
-                className="pointer-events-none absolute left-2.5 top-1/2 size-3.5 -translate-y-1/2 text-muted-foreground"
-                aria-hidden="true"
-              />
-              <input
-                type="search"
-                value={topicSearch}
-                onChange={(event) => setTopicSearch(event.target.value)}
-                placeholder="Find a topic"
-                className="w-full rounded-md border border-input bg-background py-2 pl-8 pr-2 text-xs outline-none placeholder:text-muted-foreground focus:border-ring focus:ring-3 focus:ring-ring/20"
-              />
-            </label>
-            <button
-              type="button"
-              onClick={() => selectTopic(null)}
-              aria-current={!activeTopic ? "page" : undefined}
-              className={`mb-2 flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-sm font-semibold transition ${
-                !activeTopic
-                  ? "bg-primary/10 text-primary"
-                  : "text-muted-foreground hover:bg-muted hover:text-foreground"
-              }`}
-            >
-              <LayoutList className="size-4" aria-hidden="true" />
-              All curriculum
-            </button>
-            <nav
-              ref={sidebarScrollRef}
-              aria-label="Curriculum topics"
-              onScroll={(event) =>
-                window.sessionStorage.setItem(
-                  curriculumUiStorage.sidebarScroll,
-                  String(event.currentTarget.scrollTop),
-                )
-              }
-              className="min-h-0 flex-1 space-y-4 overflow-y-auto overscroll-contain pr-1"
-            >
-              {groupedTopics.map((group) => (
-                <div key={group.label}>
-                  <p className="px-3 pb-1 text-[10px] font-semibold uppercase tracking-[0.13em] text-muted-foreground/70">
-                    {group.label}
-                  </p>
-                  <div className="space-y-0.5">
-                    {group.topics.map((topic) => {
-                      const selected = activeTopic?.slug === topic.slug;
-                      return (
-                        <button
-                          key={topic.slug}
-                          type="button"
-                          onClick={() => selectTopic(topic.slug)}
-                          aria-current={selected ? "page" : undefined}
-                          className={`relative w-full rounded-lg py-1.5 pl-3 pr-2 text-left text-[13px] transition ${
-                            selected
-                              ? "bg-primary/10 font-semibold text-primary before:absolute before:inset-y-2 before:left-0 before:w-0.5 before:rounded-full before:bg-primary"
-                              : "text-muted-foreground hover:bg-muted hover:text-foreground"
-                          }`}
-                        >
-                          {topic.title}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-              ))}
-            </nav>
-          </div>
-        ) : (
+        {sidebarOpen ? renderBrowsePanel() : (
           <button
             type="button"
-            onClick={() => setSidebarOpen(true)}
+            onClick={openSidebar}
             className="m-2 inline-flex size-9 items-center justify-center rounded-lg bg-primary/10 text-primary"
             title={activeTopic?.title ?? "All curriculum"}
           >
@@ -1063,7 +1250,7 @@ export function CurriculumTable({
         )}
       </aside>
 
-      <section className="min-w-0">
+      <section className="min-w-0" aria-busy={isNavigating}>
       {error && (
         <p role="alert" className="mb-3 text-sm font-medium text-destructive">
           {error}
@@ -1072,14 +1259,15 @@ export function CurriculumTable({
 
       <div className="mb-3 lg:hidden">
         <button
+          ref={mobileBrowseOpenerRef}
           type="button"
           onClick={() => setMobileTopicsOpen((open) => !open)}
           aria-expanded={mobileTopicsOpen}
           className="flex w-full items-center justify-between rounded-xl border border-border bg-card px-4 py-3 text-sm font-semibold shadow-sm"
         >
           <span className="flex items-center gap-2">
-            <LayoutList className="size-4 text-primary" aria-hidden="true" />
-            {activeTopic ? topicTitles[activeTopic.slug] ?? activeTopic.title : "All curriculum"}
+            <Menu className="size-4 text-primary" aria-hidden="true" />
+            <span className="min-w-0 truncate">{scopeLabel}</span>
           </span>
           <ChevronRight
             className={`size-4 text-muted-foreground transition ${mobileTopicsOpen ? "rotate-90" : ""}`}
@@ -1087,39 +1275,86 @@ export function CurriculumTable({
           />
         </button>
         {mobileTopicsOpen && (
-          <div className="mt-2 max-h-80 overflow-y-auto rounded-xl border border-border bg-card p-2 shadow-lg">
+          <div className="fixed inset-0 z-50 lg:hidden" role="presentation">
+            <button
+              type="button"
+              aria-label="Close curriculum browser"
+              onClick={closeMobileBrowser}
+              className="absolute inset-0 bg-foreground/20 backdrop-blur-[1px]"
+            />
+            <aside
+              ref={mobileBrowseRef}
+              role="dialog"
+              aria-modal="true"
+              aria-label="Browse curriculum"
+              tabIndex={-1}
+              className="absolute inset-y-0 left-0 flex w-[min(92vw,24rem)] flex-col overflow-hidden border-r border-border bg-card shadow-2xl"
+            >
+              <div className="flex items-center justify-between border-b border-border px-3 py-3">
+                <span className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                  Browse curriculum
+                </span>
+                <button
+                  type="button"
+                  onClick={closeMobileBrowser}
+                  aria-label="Close curriculum browser"
+                  className="inline-flex size-9 items-center justify-center rounded-md text-muted-foreground hover:bg-muted hover:text-foreground"
+                >
+                  <X className="size-4" aria-hidden="true" />
+                </button>
+              </div>
+              {renderBrowsePanel(true)}
+            </aside>
+          </div>
+        )}
+      </div>
+
+      <div className="mb-2 flex min-h-9 flex-wrap items-end justify-between gap-2">
+        <div className="min-w-0">
+          <div className="flex flex-wrap items-center gap-1 text-xs text-muted-foreground">
             <button
               type="button"
               onClick={() => selectTopic(null)}
-              className={`w-full rounded-lg px-3 py-2 text-left text-sm font-semibold ${
-                !activeTopic ? "bg-primary/10 text-primary" : "text-muted-foreground"
-              }`}
+              className="hover:text-foreground hover:underline"
             >
-              All curriculum
+              Curriculum
             </button>
-            {groupedTopics.map((group) => (
-              <div key={group.label} className="mt-3">
-                <p className="px-3 pb-1 text-[10px] font-semibold uppercase tracking-[0.13em] text-muted-foreground/70">
-                  {group.label}
-                </p>
-                {group.topics.map((topic) => (
-                  <button
-                    key={topic.slug}
-                    type="button"
-                    onClick={() => selectTopic(topic.slug)}
-                    className={`w-full rounded-lg px-3 py-2 text-left text-sm ${
-                      activeTopic?.slug === topic.slug
-                        ? "bg-primary/10 font-semibold text-primary"
-                        : "text-muted-foreground"
-                    }`}
-                  >
-                    {topic.title}
-                  </button>
-                ))}
-              </div>
-            ))}
+            {activeTopic && (
+              <>
+                <ChevronRight className="size-3" aria-hidden="true" />
+                <button
+                  type="button"
+                  onClick={() => selectFamily(null)}
+                  className="hover:text-foreground hover:underline"
+                >
+                  {activeTopic.title}
+                </button>
+              </>
+            )}
+            {activeFamily &&
+              (showFamilyLevel || activeFamily.id === "outside-families") && (
+              <>
+                <ChevronRight className="size-3" aria-hidden="true" />
+                <button
+                  type="button"
+                  onClick={() => selectLeaf(activeFamily.id, null)}
+                  className="hover:text-foreground hover:underline"
+                >
+                  {activeFamily.label}
+                </button>
+              </>
+            )}
+            {activeLeaf && (
+              <>
+                <ChevronRight className="size-3" aria-hidden="true" />
+                <span className="text-foreground">{activeLeaf.label}</span>
+              </>
+            )}
           </div>
-        )}
+          <h1 className="mt-0.5 truncate text-xl font-semibold tracking-tight">
+            {scopeLabel}
+          </h1>
+        </div>
       </div>
 
       <form
@@ -1132,7 +1367,9 @@ export function CurriculumTable({
       >
         <div className="flex items-end gap-2 sm:col-span-2 xl:col-span-1">
           <label className="relative min-w-0 flex-1">
-            <span className="sr-only">Search Spanish or English mappings</span>
+            <span className="sr-only">
+              Search Spanish or English in {scopeLabel}
+            </span>
             <Search
               className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground"
               aria-hidden="true"
@@ -1141,7 +1378,7 @@ export function CurriculumTable({
               type="search"
               value={mappingSearch}
               onChange={(event) => setMappingSearch(event.target.value)}
-              placeholder="Search Spanish or English"
+              placeholder={`Search in ${scopeLabel}`}
               className="h-10 w-full rounded-lg border border-input bg-background py-2 pl-9 pr-9 text-sm text-foreground outline-none placeholder:text-muted-foreground focus:border-ring focus:ring-3 focus:ring-ring/20"
             />
             {mappingSearch && (
@@ -1174,7 +1411,7 @@ export function CurriculumTable({
             onChange={(event) => navigate({ role: event.target.value })}
             className="h-10 min-w-32 rounded-lg border border-input bg-background px-3 text-sm font-medium normal-case tracking-normal text-foreground outline-none focus:border-ring focus:ring-3 focus:ring-ring/20"
           >
-            <option value="all">Show all</option>
+            <option value="all">All roles (includes Trash)</option>
             {curriculumRoles.map((role) => (
               <option key={role.value} value={role.value}>
                 {role.label}
@@ -1201,52 +1438,8 @@ export function CurriculumTable({
         </label>
       </form>
 
-      {quickFacets.length > 0 && (
-        <section aria-label="Subtopics" className="mb-4 rounded-xl border border-border bg-card p-4">
-          <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-            <h2 className="text-sm font-semibold">Explore {activeTopic ? topicTitles[activeTopic.slug] ?? activeTopic.title : "subtopics"}</h2>
-            <button
-              type="button"
-              aria-pressed={activeFacets.length === 0}
-              onClick={() => navigate({ facets: null })}
-              className={`inline-flex min-h-9 items-center gap-2 rounded-md px-3 text-xs font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${activeFacets.length === 0 ? "bg-primary/10 text-primary" : "text-muted-foreground hover:bg-muted"}`}
-            >
-              {activeFacets.length === 0 && <Check className="size-3.5" aria-hidden="true" />}
-              All subtopics
-            </button>
-          </div>
-          <div className="space-y-4">
-            {[...facetGroups].map(([group, facets]) => (
-              <div key={group}>
-                {facetGroups.size > 1 && <h3 className="mb-2 text-xs font-medium text-muted-foreground">{group}</h3>}
-                <div className="grid grid-cols-2 gap-1.5 sm:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-                  {facets.map((facet) => {
-                    const display = presentFacet(facet);
-                    const selected = activeFacets.includes(facet.collection);
-                    return (
-                      <button
-                        key={facet.collection}
-                        type="button"
-                        aria-pressed={selected}
-                        aria-label={display.emphasis ? `${display.label}: ${display.description}` : display.label}
-                        title={display.description}
-                        onClick={() => navigate({ facets: selected ? null : facet.collection })}
-                        className={`flex min-h-10 items-center justify-between gap-2 rounded-md border px-2.5 py-2 text-left text-[13px] leading-snug transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${selected ? "border-primary/50 bg-primary/10 text-primary" : "border-transparent bg-muted/30 text-foreground/80 hover:border-border hover:bg-muted"}`}
-                      >
-                        <span className="min-w-0 break-words">{display.before}{display.emphasis && <strong className="font-bold text-foreground">{display.emphasis}</strong>}{display.after}</span>
-                        {selected && <Check className="size-3.5 shrink-0" aria-hidden="true" />}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
-
       {(filters.search ||
-        activeFacet ||
+        legacyFacets.length > 0 ||
         selectedCollection ||
         selectedRole !== "all" ||
         coverageFilter !== "all") && (
@@ -1256,25 +1449,44 @@ export function CurriculumTable({
             Active
           </span>
           {filters.search && (
-            <button
-              type="button"
-              onClick={() => {
-                setMappingSearch("");
-                navigate({ search: null });
-              }}
-              className="inline-flex items-center gap-1 rounded-md border border-border bg-card px-2.5 py-1 text-xs font-medium"
-            >
-              Search: {filters.search}
-              <X className="size-3" aria-hidden="true" />
-            </button>
+            <>
+              <button
+                type="button"
+                onClick={() => {
+                  setMappingSearch("");
+                  navigate({ search: null });
+                }}
+                className="inline-flex items-center gap-1 rounded-md border border-border bg-card px-2.5 py-1 text-xs font-medium"
+              >
+                Search: {filters.search}
+                <X className="size-3" aria-hidden="true" />
+              </button>
+              {activeTopic && (
+                <button
+                  type="button"
+                  onClick={() =>
+                    navigate({
+                      topic: null,
+                      family: null,
+                      leaf: null,
+                      facets: null,
+                      collection: null,
+                    })
+                  }
+                  className="px-1 py-1 text-xs font-medium text-primary underline-offset-2 hover:underline"
+                >
+                  Search all curriculum
+                </button>
+              )}
+            </>
           )}
-          {activeFacet && (
+          {legacyFacets.length > 0 && (
             <button
               type="button"
               onClick={() => navigate({ facets: null })}
               className="inline-flex items-center gap-1 rounded-md border border-border bg-card px-2.5 py-1 text-xs font-medium"
             >
-              {facetLabel}: {presentFacet(activeFacet).label}
+              Legacy filters: {legacyFacets.length}
               <X className="size-3" aria-hidden="true" />
             </button>
           )}
@@ -1362,7 +1574,7 @@ export function CurriculumTable({
           )}
           <button
             type="button"
-            onClick={() => setShowExamples((shown) => !shown)}
+            onClick={toggleExamples}
             aria-pressed={showExamples}
             className={`hidden items-center gap-1.5 rounded-md border px-2.5 py-1.5 text-xs font-semibold transition sm:inline-flex ${
               showExamples
@@ -1396,19 +1608,39 @@ export function CurriculumTable({
             </button>
             <button
               type="button"
-              onClick={() => void deleteSelected()}
+              onClick={() =>
+                selectedRole === "trash"
+                  ? void deleteSelected()
+                  : void moveSelectedToTrash()
+              }
               disabled={bulkDeleting}
-              className="inline-flex items-center gap-1.5 rounded-md bg-destructive px-3 py-1.5 text-sm font-semibold text-destructive-foreground transition hover:opacity-90 disabled:opacity-40"
+              className={`inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-semibold transition hover:opacity-90 disabled:opacity-40 ${
+                selectedRole === "trash"
+                  ? "bg-destructive text-destructive-foreground"
+                  : "bg-primary text-primary-foreground"
+              }`}
             >
               <Trash2 className="size-3.5" aria-hidden="true" />
-              {bulkDeleting ? "Deleting…" : `Delete ${selectedIds.size} selected`}
+              {bulkDeleting
+                ? selectedRole === "trash"
+                  ? "Deleting…"
+                  : "Moving…"
+                : selectedRole === "trash"
+                  ? `Delete ${selectedIds.size} selected`
+                  : `Move ${selectedIds.size} to Trash`}
             </button>
           </div>
         </div>
       )}
 
-      <div className="hidden overflow-x-auto rounded-xl border border-border bg-card shadow-sm sm:block">
-        <table className="w-full min-w-[900px] border-collapse text-left text-[13px]">
+      <div
+        ref={resultsScrollRef}
+        inert={isNavigating ? true : undefined}
+        className={`hidden max-h-[calc(100vh-15.5rem)] min-h-72 overflow-auto rounded-xl border border-border bg-card shadow-sm transition-opacity sm:block ${
+          isNavigating ? "pointer-events-none opacity-60" : ""
+        }`}
+      >
+        <table className="w-full min-w-[720px] border-collapse text-left text-[13px]">
           <thead className="sticky top-0 z-10 bg-muted text-xs text-muted-foreground shadow-[0_1px_0_var(--color-border)]">
             <tr>
               <th className="w-8 px-2 py-2">
@@ -1448,7 +1680,6 @@ export function CurriculumTable({
               {showExamples && (
                 <th className="min-w-64 px-3 py-2 font-semibold">Examples</th>
               )}
-              <th className="min-w-60 px-3 py-2 font-semibold">Collections</th>
               <th className="w-12 px-2 py-2">
                 <span className="sr-only">Actions</span>
               </th>
@@ -1531,7 +1762,6 @@ export function CurriculumTable({
                     </div>
                   </td>
                 )}
-                <td className="p-1 align-top">{renderCollections(concept)}</td>
                 <td className="p-1 pr-2 text-right align-top">
                   <button
                     type="button"
@@ -1548,7 +1778,7 @@ export function CurriculumTable({
             {concepts.length === 0 && (
               <tr className="border-t border-border">
                 <td
-                  colSpan={showExamples ? 8 : 7}
+                  colSpan={showExamples ? 7 : 6}
                   className="px-5 py-12 text-center text-sm text-muted-foreground"
                 >
                   <p>No concepts match these filters.</p>
@@ -1566,7 +1796,12 @@ export function CurriculumTable({
         </table>
       </div>
 
-      <div className="space-y-2 sm:hidden">
+      <div
+        inert={isNavigating ? true : undefined}
+        className={`space-y-2 transition-opacity sm:hidden ${
+          isNavigating ? "pointer-events-none opacity-60" : ""
+        }`}
+      >
         {concepts.map((concept) => (
           <article
             key={concept.id}
@@ -1865,15 +2100,27 @@ export function CurriculumTable({
                     Open Lesson {coverage[detailConcept.id].lessonNumber}
                   </a>
                 )}
-                <button
-                  type="button"
-                  disabled={pendingConceptId !== null}
-                  onClick={() => void deleteConcept(detailConcept)}
-                  className="ml-auto inline-flex items-center gap-1.5 rounded-md px-3 py-2 text-xs font-semibold text-destructive transition hover:bg-destructive/10 disabled:opacity-40"
-                >
-                  <Trash2 className="size-3.5" aria-hidden="true" />
-                  Delete concept
-                </button>
+                {detailConcept.curriculumRole === "trash" ? (
+                  <button
+                    type="button"
+                    disabled={pendingConceptId !== null}
+                    onClick={() => void deleteConcept(detailConcept)}
+                    className="ml-auto inline-flex items-center gap-1.5 rounded-md px-3 py-2 text-xs font-semibold text-destructive transition hover:bg-destructive/10 disabled:opacity-40"
+                  >
+                    <Trash2 className="size-3.5" aria-hidden="true" />
+                    Delete permanently
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    disabled={pendingConceptId !== null}
+                    onClick={() => void updateRole(detailConcept, "trash")}
+                    className="ml-auto inline-flex items-center gap-1.5 rounded-md px-3 py-2 text-xs font-semibold text-destructive transition hover:bg-destructive/10 disabled:opacity-40"
+                  >
+                    <Trash2 className="size-3.5" aria-hidden="true" />
+                    Move to Trash
+                  </button>
+                )}
               </section>
             </div>
           </aside>
