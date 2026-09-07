@@ -24,16 +24,18 @@ const ORDER = [
 ];
 
 // Five priority tiers (Phase 3, docs/curation/role-granularity/plan.md).
-// `core` is the MVP set: the minimum to build correct sentences given a
-// dictionary for content words — mostly verbs, pronouns, determiners,
-// connectors and the modal/auxiliary system. High frequency is NOT sufficient;
-// "querer" is core (carries structure), "comer" is not (a dictionary + the
-// grammar system covers it). Bands below are provisional until P3-3/P3-4 fill
-// `essential` and `extended` and P3-5 tunes them against the real shape.
+// `core` is the WHOLE grammatical operating system on a limited vocabulary: the
+// full pronoun / determiner / connector sets, the question words, and the verb
+// machinery (ser/estar/tener/ir/haber conjugation, negation, questions, the
+// perfect, the modals, comparison). ~10% of the catalog — the rest is
+// vocabulary at various teaching priorities. High frequency is NOT what puts a
+// row in `core`; "querer" is core (carries structure), "comer" is not (a
+// dictionary + the grammar covers it). Bands below are provisional until P3-4
+// fills `extended` and P3-5 tunes them against the real shape.
 const ROLE_TARGETS: Record<string, [number, number]> = {
-  core: [4, 7],
-  essential: [8, 14],
-  common: [26, 38],
+  core: [8, 13],
+  essential: [6, 14],
+  common: [18, 30],
   extended: [16, 28],
   rare: [18, 32],
   trash: [3, 6],
