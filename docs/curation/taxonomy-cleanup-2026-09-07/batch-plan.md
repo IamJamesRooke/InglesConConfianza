@@ -113,8 +113,11 @@ phase-1 rows above. Model routing per batch is in `next-plan.md`.
 
 | P2-4 | Nouns: split the flat "Meaning & context" family | **done** | _(this commit)_ | The 33-group flat family replaced by 7 predictable families: `People & family` (5), `Places` (2), `Time & calendar` (3), `Domains` (13), `Objects & things` (3), `Abstract nouns by suffix` (5), `Other abstract nouns` (1). Retired the `people-family-rel` button (measured pure container: 30 rows = 14 immediate + 10 extended + 6 groups-terms, 0 elsewhere). Kept the three money groups (`money-business`/`objects-money-business`/`business-work`, measured disjoint) and relabelled for content: Money & Finance / Business & Commerce / Work & Employment. `abstract-general` (118, no seam) renamed `Other abstract nouns`. MERGE `gender:neuter`→`gender:invariant` (1 row), removed `neuter` from `KNOWN_GENDER_VALUES`. Nouns families 2→8, groups 45→43. |
 
+| P2-6 | Verbs: family names & stragglers | **done** | _(this commit)_ | `Modals, time & possibility`→`Modals, wishes & possibility` (no time group ever existed; wishes/hoping/depending dominate). `Communication — Other`→`Communication — Notifying & Telling` (contents are avisar/contar/callar senses). `Analysis & Investigation` moved Formal→`Thinking & learning`. MERGE `verb-formal-abstract`→`verb-admin-legal-formal` (4 rows). `Formal & specialized`→`Specialized actions` (4 groups: admin-legal, technology, weather-time, health-body). Verb families 11→11, groups −1. |
+
 ### Phase 2 ledger
 
+- 2026-09-07 · P2-6 · _(this commit)_ · P2-6-verb-merge (1 MERGE) · verb families relabelled; groups 76→75; base/reachable 1595 unchanged; `db:test` 14/14.
 - 2026-09-07 · P2-4 · _(this commit)_ · P2-4-noun-merge (1 MERGE) · nouns families 2→8, groups 45→43; base/reachable 483 unchanged; `db:test` 14/14.
 - 2026-09-07 · P2-3 · _(this commit)_ · P2-3-adj-merge (8 MERGE), P2-3-adj-ser-general-untag (59) · adjectives families 3→5, groups 39→31; base/reachable 413 unchanged; `db:test` 14/14.
 - 2026-09-07 · P2-1 · `bea7ac3e` · none (tooling + tests) · no DB change; inventory counts unchanged; `db:test` 11→14 tests.

@@ -280,42 +280,42 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       {
         collection: "topic:verb-perfect-auxiliary",
         label: "Have — Perfect Auxiliary (have/has/had done)",
-        family: "Modals, time & possibility",
+        family: "Modals, wishes & possibility",
       },
       {
         collection: "topic:verb-modal-ability",
         label: "Modals — Ability & Permission",
-        family: "Modals, time & possibility",
+        family: "Modals, wishes & possibility",
       },
       {
         collection: "topic:verb-modal-possibility",
         label: "Modals — Possibility (may/might/could)",
-        family: "Modals, time & possibility",
+        family: "Modals, wishes & possibility",
       },
       {
         collection: "topic:verb-modal-obligation",
         label: "Modals — Obligation & Probability (must/should/have to)",
-        family: "Modals, time & possibility",
+        family: "Modals, wishes & possibility",
       },
       {
         collection: "topic:verb-needing",
         label: "Needing & requiring (necesitar)",
-        family: "Modals, time & possibility",
+        family: "Modals, wishes & possibility",
       },
       {
         collection: "topic:verb-wishes",
         label: "Wishes & Hypotheticals",
-        family: "Modals, time & possibility",
+        family: "Modals, wishes & possibility",
       },
       {
         collection: "topic:verb-hoping-waiting",
         label: "Hoping & Waiting",
-        family: "Modals, time & possibility",
+        family: "Modals, wishes & possibility",
       },
       {
         collection: "topic:verb-depending-fitting",
         label: "Depending, Fitting & Being Enough (depender, caber, bastar)",
-        family: "Modals, time & possibility",
+        family: "Modals, wishes & possibility",
       },
       {
         collection: "topic:verb-communication-talking",
@@ -329,7 +329,7 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       },
       {
         collection: "topic:verb-communication-other",
-        label: "Communication — Other",
+        label: "Communication — Notifying & Telling",
         family: "Communication",
       },
       {
@@ -580,32 +580,27 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       {
         collection: "topic:verb-admin-legal-formal",
         label: "Administrative, Legal & Formal Actions",
-        family: "Formal & specialized",
+        family: "Specialized actions",
       },
       {
         collection: "topic:verb-analysis-investigation",
         label: "Analysis & Investigation",
-        family: "Formal & specialized",
+        family: "Thinking & learning",
       },
       {
         collection: "topic:verb-technology-digital",
         label: "Technology & Digital Actions",
-        family: "Formal & specialized",
+        family: "Specialized actions",
       },
       {
         collection: "topic:verb-weather-time-duration",
         label: "Weather, Time & Duration",
-        family: "Formal & specialized",
+        family: "Specialized actions",
       },
       {
         collection: "topic:verb-health-body",
         label: "Body & Health",
-        family: "Formal & specialized",
-      },
-      {
-        collection: "topic:verb-formal-abstract",
-        label: "Formal Actions — Abstract",
-        family: "Formal & specialized",
+        family: "Specialized actions",
       },
     ],
   },

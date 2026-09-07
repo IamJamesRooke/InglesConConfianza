@@ -17254,7 +17254,7 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-formal-abstract",
+        "topic:verb-admin-legal-formal",
         "topic:part-up",
         "topic:enmap-with"
       ],
@@ -39651,7 +39651,7 @@
         "cognate:mitir-to-mit",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract",
+        "topic:verb-admin-legal-formal",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -39824,7 +39824,7 @@
         "topic:verb-formal-abstract-1",
         "topic:cognate-transparent",
         "topic:cognate-latin-root",
-        "topic:verb-formal-abstract"
+        "topic:verb-admin-legal-formal"
       ],
       "curriculumRole": "reference"
     },
@@ -40043,7 +40043,7 @@
         "es:complementar",
         "en:complement",
         "audit:reviewed",
-        "topic:verb-formal-abstract",
+        "topic:verb-admin-legal-formal",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -40149,7 +40149,7 @@
         "audit:reviewed",
         "topic:verb-formal-abstract-1",
         "topic:cognate-transparent",
-        "topic:verb-formal-abstract"
+        "topic:verb-admin-legal-formal"
       ],
       "curriculumRole": "reference"
     },
@@ -40191,7 +40191,7 @@
         "audit:reviewed",
         "topic:verb-formal-abstract-1",
         "topic:cognate-transparent",
-        "topic:verb-formal-abstract"
+        "topic:verb-admin-legal-formal"
       ],
       "curriculumRole": "reference"
     },
@@ -40419,7 +40419,7 @@
         "audit:reviewed",
         "topic:verb-formal-abstract-1",
         "topic:cognate-transparent",
-        "topic:verb-formal-abstract"
+        "topic:verb-admin-legal-formal"
       ],
       "curriculumRole": "reference"
     },
@@ -50897,7 +50897,7 @@
         "cognate:plicar-to-ply",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract",
+        "topic:verb-admin-legal-formal",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -50921,7 +50921,7 @@
         "audit:reviewed",
         "topic:verb-formal-abstract-1",
         "topic:cognate-latin-root",
-        "topic:verb-formal-abstract"
+        "topic:verb-admin-legal-formal"
       ],
       "curriculumRole": "reference"
     },
@@ -51010,7 +51010,7 @@
         "cognate:tribuir-to-tribute",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract",
+        "topic:verb-admin-legal-formal",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -51032,7 +51032,7 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-abstract",
+        "topic:verb-admin-legal-formal",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -51385,7 +51385,7 @@
         "audit:reviewed",
         "topic:verb-formal-abstract-1",
         "topic:cognate-transparent",
-        "topic:verb-formal-abstract"
+        "topic:verb-admin-legal-formal"
       ],
       "curriculumRole": "reference"
     },
@@ -51450,7 +51450,7 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-abstract",
+        "topic:verb-admin-legal-formal",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -51498,7 +51498,7 @@
         "topic:verb-formal-abstract-1",
         "topic:cognate-transparent",
         "topic:cognate-latin-root",
-        "topic:verb-formal-abstract"
+        "topic:verb-admin-legal-formal"
       ],
       "curriculumRole": "reference"
     },
@@ -51608,7 +51608,7 @@
         "cognate:inar-to-ine",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-abstract",
+        "topic:verb-admin-legal-formal",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "supporting"
@@ -51916,7 +51916,7 @@
         "topic:verb-formal-abstract-1",
         "topic:cognate-transparent",
         "topic:cognate-latin-root",
-        "topic:verb-formal-abstract"
+        "topic:verb-admin-legal-formal"
       ],
       "curriculumRole": "reference"
     },
@@ -52005,7 +52005,7 @@
         "audit:reviewed",
         "topic:verb-formal-abstract-1",
         "topic:cognate-transparent",
-        "topic:verb-formal-abstract"
+        "topic:verb-admin-legal-formal"
       ],
       "curriculumRole": "reference"
     },
@@ -52334,7 +52334,7 @@
         "audit:reviewed",
         "topic:verb-formal-abstract-1",
         "topic:cognate-latin-root",
-        "topic:verb-formal-abstract"
+        "topic:verb-admin-legal-formal"
       ],
       "curriculumRole": "reference"
     },
@@ -52623,7 +52623,7 @@
         "cognate:ir-to-silent-e",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-abstract",
+        "topic:verb-admin-legal-formal",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -52867,7 +52867,7 @@
         "cognate:izar-to-ize",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-abstract",
+        "topic:verb-admin-legal-formal",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -53157,7 +53157,7 @@
         "audit:reviewed",
         "topic:verb-formal-abstract-1",
         "topic:cognate-latin-root",
-        "topic:verb-formal-abstract"
+        "topic:verb-admin-legal-formal"
       ],
       "curriculumRole": "reference"
     },
@@ -53287,7 +53287,7 @@
         "cognate:solver-to-solve",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract",
+        "topic:verb-admin-legal-formal",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -53353,7 +53353,7 @@
         "cognate:ir-to-silent-e",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-abstract",
+        "topic:verb-admin-legal-formal",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"
@@ -53378,7 +53378,7 @@
         "topic:verb-formal-abstract-1",
         "topic:cognate-transparent",
         "topic:cognate-latin-root",
-        "topic:verb-formal-abstract"
+        "topic:verb-admin-legal-formal"
       ],
       "curriculumRole": "reference"
     },
@@ -53515,7 +53515,7 @@
         "audit:reviewed",
         "topic:verb-formal-abstract-1",
         "topic:cognate-latin-root",
-        "topic:verb-formal-abstract"
+        "topic:verb-admin-legal-formal"
       ],
       "curriculumRole": "reference"
     },
@@ -53536,7 +53536,7 @@
         "cognate:traer-to-tract",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract",
+        "topic:verb-admin-legal-formal",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -53694,7 +53694,7 @@
         "topic:verb-formal-abstract-1",
         "topic:cognate-transparent",
         "topic:cognate-latin-root",
-        "topic:verb-formal-abstract"
+        "topic:verb-admin-legal-formal"
       ],
       "curriculumRole": "reference"
     },
@@ -53717,7 +53717,7 @@
         "audit:reviewed",
         "topic:verb-formal-abstract-1",
         "topic:cognate-latin-root",
-        "topic:verb-formal-abstract"
+        "topic:verb-admin-legal-formal"
       ],
       "curriculumRole": "reference"
     },
@@ -53759,7 +53759,7 @@
         "cognate:primir-to-press",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract",
+        "topic:verb-admin-legal-formal",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "reference"
@@ -53848,7 +53848,7 @@
         "audit:reviewed",
         "topic:verb-formal-abstract-1",
         "topic:cognate-latin-root",
-        "topic:verb-formal-abstract"
+        "topic:verb-admin-legal-formal"
       ],
       "curriculumRole": "reference"
     },
@@ -53894,7 +53894,7 @@
         "audit:reviewed",
         "topic:verb-formal-abstract-1",
         "topic:cognate-latin-root",
-        "topic:verb-formal-abstract"
+        "topic:verb-admin-legal-formal"
       ],
       "curriculumRole": "reference"
     },
@@ -53918,7 +53918,7 @@
         "audit:reviewed",
         "topic:verb-formal-abstract-1",
         "topic:cognate-latin-root",
-        "topic:verb-formal-abstract"
+        "topic:verb-admin-legal-formal"
       ],
       "curriculumRole": "reference"
     },
@@ -53963,7 +53963,7 @@
         "audit:reviewed",
         "topic:verb-formal-abstract-1",
         "topic:cognate-latin-root",
-        "topic:verb-formal-abstract"
+        "topic:verb-admin-legal-formal"
       ],
       "curriculumRole": "reference"
     },
@@ -54145,7 +54145,7 @@
         "topic:verb-formal-abstract-1",
         "topic:cognate-transparent",
         "topic:cognate-latin-root",
-        "topic:verb-formal-abstract"
+        "topic:verb-admin-legal-formal"
       ],
       "curriculumRole": "reference"
     },
@@ -54213,7 +54213,7 @@
         "topic:verb-formal-abstract-1",
         "topic:cognate-transparent",
         "topic:cognate-latin-root",
-        "topic:verb-formal-abstract"
+        "topic:verb-admin-legal-formal"
       ],
       "curriculumRole": "reference"
     },
@@ -54259,7 +54259,7 @@
         "audit:reviewed",
         "topic:verb-formal-abstract-1",
         "topic:cognate-latin-root",
-        "topic:verb-formal-abstract"
+        "topic:verb-admin-legal-formal"
       ],
       "curriculumRole": "reference"
     },
@@ -54583,7 +54583,7 @@
         "audit:reviewed",
         "topic:verb-formal-abstract-1",
         "topic:cognate-latin-root",
-        "topic:verb-formal-abstract"
+        "topic:verb-admin-legal-formal"
       ],
       "curriculumRole": "reference"
     },
@@ -54628,7 +54628,7 @@
         "audit:reviewed",
         "topic:verb-formal-abstract-1",
         "topic:cognate-latin-root",
-        "topic:verb-formal-abstract"
+        "topic:verb-admin-legal-formal"
       ],
       "curriculumRole": "reference"
     },
@@ -55120,7 +55120,7 @@
         "es:retirar",
         "en:retire",
         "audit:reviewed",
-        "topic:verb-formal-abstract",
+        "topic:verb-admin-legal-formal",
         "topic:cognate-opaque"
       ],
       "curriculumRole": "reference"
@@ -55143,7 +55143,7 @@
         "audit:reviewed",
         "topic:verb-formal-abstract-1",
         "topic:cognate-opaque",
-        "topic:verb-formal-abstract"
+        "topic:verb-admin-legal-formal"
       ],
       "curriculumRole": "reference"
     },
@@ -55827,7 +55827,7 @@
         "en:use",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-formal-abstract",
+        "topic:verb-admin-legal-formal",
         "topic:cognate-opaque"
       ],
       "curriculumRole": "supporting"
@@ -56227,7 +56227,7 @@
         "en:use",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-formal-abstract",
+        "topic:verb-admin-legal-formal",
         "topic:cognate-opaque"
       ],
       "curriculumRole": "reference"
@@ -98778,7 +98778,7 @@
         "topic:phrasal-verb",
         "particle:out",
         "grammar:phrasal-verb",
-        "topic:verb-formal-abstract",
+        "topic:verb-admin-legal-formal",
         "topic:part-out",
         "topic:confusable-false-friend",
         "topic:multi-sense"
@@ -98802,7 +98802,7 @@
         "cognate:izar-to-ize",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-abstract",
+        "topic:verb-admin-legal-formal",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "reference"

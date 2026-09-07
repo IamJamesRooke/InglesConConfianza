@@ -350,7 +350,7 @@ Target structure:
 - **Done when:** `reachable == base == 787`; no Cognates family mixes parts of
   speech; structure snapshot updated.
 
-### Batch 6 — Verbs: family names and stragglers
+### Batch 6 — Verbs: family names and stragglers — **DONE**
 
 - **Scope:** the 10 thematic verb families other than the catch-all.
 - **Steps:** `--members verbs`; for each family answer: coherent branch? any
