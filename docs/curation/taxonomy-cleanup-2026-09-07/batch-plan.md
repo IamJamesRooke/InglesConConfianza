@@ -80,7 +80,13 @@ Core 310 → **309** net: −2 garbled rows trashed with logged reasons, +1 new
 generic-article concept. No other demotions anywhere in the cleanup.
 
 **Still open:**
-5. Browser click-through of representative paths (moved `su` mapping, role
-   filters, side-by-side table) — needs the app running.
+5. **done** — browser-verified against the running dev server (`:3000`):
+   `?topic=mappings&family=common-confusions&leaf=topic:confusable-possessive`
+   renders the 3-level browser with "Common confusions" → "su / sus / mi / tu
+   — whose is it?" (14 rows, correct roles, table beside the selector);
+   `?topic=verbs&family=modals-time-possibility&leaf=topic:verb-needing`
+   shows the new "Needing & requiring (necesitar)" group (5 senses) and the
+   merged single Modal groups (no `(1)/(2)`). Lesson-Builder "Taught" column
+   intact. No error overlay. Screenshots in the session scratchpad.
 6. Optional: full semantic re-audit of the ~40 family display names
    (spot-checked clean; "Cognate types(1)", "How it's used(2)" thin but valid).
