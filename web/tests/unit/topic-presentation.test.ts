@@ -34,5 +34,5 @@ test("subtopics are grouped by purpose without changing filter values", () => {
   assert.equal(facetGroup("transformations", "morphology:suffix-hood"), "Endings");
   assert.equal(facetGroup("transformations", "morphology:prefix-un"), "Prefixes");
   assert.equal(facetGroup("cognates", "cognate:plicar-to-ply"), "Latin roots");
-  assert.equal(facetGroup("nouns", "gender:masculine"), "Articles & gender");
+  assert.equal(facetGroup("nouns", "gender:invariant"), "Articles & gender");
 });

@@ -32,7 +32,7 @@ this cleanup re-examines taxonomy structure, not every concept again.
 | 3 | Verbs within-topic gap (301) | **done** | _(this commit)_ | all 301 were English past/participle **form drills** (`[participio] dive → dived`), given a false `pos:verb` by an earlier coverage-maximizing pass. Removed `pos:verb`; they stay fully reachable on Past-Tense & Past-Participle Formation via `topic:verb-form`. No themed "Other" bucket needed. Verbs gap 301 → **0**. |
 | 4 | Small within-topic gaps (~45) | **done** | _(this commit)_ | 24 rows tagged into an existing group (Pronouns indef-quantity, Determiners quant/article, Nouns time-of-day, Adjectives -ible/-able/-al, Connectors conditional, Prepositions location, en-mappings confusion); 24 rows had a **wrong base tag** removed (question sentences tagged `pos:adjective`, verb phrases tagged `pos:adverb`/`pos:connector`/`pos:number`, "let's" tagged `topic:en-multi-sense`, 7 predicate-idioms tagged `topic:phrasal-verb`, `disponible`/`disponibilidad` tagged `topic:cognate`). 5 predicate idioms added to `audit-phrasal-verbs.ts` `SWEEP_EXEMPTIONS`. **Every topic now has within-topic gap 0.** |
 | 5 | Numbered-partition & label cleanup | **done** | _(this commit)_ | user decision 2026-09-07: one group per Mappings/Phrasal headword; merge-and-accept-large on semantic-domain pages; **size rule retired**. Merged all 435 `topic:<stem>-<N>` / `-<N>-<M>` numbered facet families → one `topic:<stem>` group each (`ser (1..23)` → `ser`; `Formal & Rare Verbs (1..15)` → `Formal & Rare Verbs`; `el, -o (1..8)` → `el, -o`; …). `~250` buttons removed. Old deep links (`?facets=topic:map-ser-7`) still resolve via new `canonicalFacetCollection()` in `navigation.ts` (+ test). All gaps/orphans/counts unchanged. Still open (flagged Batch 7): Verbs lacks "needing"/"reading" families, Adjectives lacks a "word order" group — deferred to Batch 6. |
-| 6 | Explicit Family config | todo (after Batch 5 direction) | | replace name-inference in `navigation.ts` `facetGroup()` with an explicit `family` on each facet button (or a `families[]` block per topic) in `topics.ts`. Larger refactor: touches `page.tsx` requiredCollections, `readCurriculumNavigationCounts`, deep-link resolution, ~24 topics. Safer once Batch 5's grouping is settled. |
+| 6 | Explicit Family config | **done** | _(this commit)_ | every facet button in `topics.ts` now carries an explicit `family: string` (784 buttons). `navigation.ts` `buildCurriculumFamilies` groups by `facet.family` directly; deleted `verbFamily`/`alphabeticFamily`/`exploreFamilyLabels` name-inference (~140 lines). `facetGroup()` kept as a thin button lookup for the `topic-presentation` re-export. `page.tsx` / `curriculum-store.ts` unchanged (same `buildCurriculumFamilies` shape). Family labels frozen from the prior inference output — behavior identical, verified by the full test suite. **Still open (flagged):** semantic family-name audit + the Batch-7 additions (Verbs "needing"/"reading" families; Adjectives "word order" group) — see `findings.md#core`. |
 | 7 | Core complete pass | **done** | _(this commit)_ | 310 core, **no demotions in any batch** (original == final set); all reachable. Fixed 2 (`tener [número] años` missing `pos:`; `encontrar` misfiled in "Formal & Rare Verbs" → Getting & Obtaining). Flagged 4 for Batch 5/6 / user: `necesitar`/`leer` (Verbs taxonomy lacks needing/reading families), `[artículo][sustantivo][adjetivo]` (Adjectives lacks a word-order group), `necesitar la información específica` (questionable core — recommend trash/rewrite). See `findings.md#core`. |
 | 8 | Verify + regression coverage | **partly done** | _(this commit)_ | `tests/curriculum-reachability.test.ts` added to `db:test`: no global orphans, every topic concept reaches a Group, every **core** concept reaches a Group, no confusion group outside Mappings, no stale/empty group, family counts are distinct unions. `tests/unit/curriculum-navigation.test.ts` gained the confusion-boundary + legacy-link tests (Batch 1). Remaining: deep-link retention after Batch 5/6 renames; browser click-through of representative paths incl. the moved `su` mapping. |
 
@@ -48,21 +48,33 @@ inventory delta (orphans / confusion-outside / gaps).
 - 2026-09-07 · Batch 4 · c3c15ab9 · gaps-A-tag, gaps-B-untag (+ audit-phrasal-verbs.ts exemptions) · **all within-topic gaps → 0** · global orphans 0 · confusion-outside 0.
 - 2026-09-07 · Batch 8 (partial) · f875eb6f · tests/curriculum-reachability.test.ts · locks in Batches 1–4.
 - 2026-09-07 · Batch 7 · f90b32a8 · core-A-fix, core-B-untag · 310 core, 2 fixed, 4 flagged, 0 demoted.
-- 2026-09-07 · Batch 5 · _(this commit)_ · B5-merge (435 MERGE ops) · ~250 numbered facet buttons removed · size rule retired · canonicalFacetCollection() keeps old deep links working · gaps/orphans/counts unchanged.
+- 2026-09-07 · Batch 5 · db1662b3 · B5-merge (435 MERGE ops) · ~250 numbered facet buttons removed · size rule retired · canonicalFacetCollection() keeps old deep links working · gaps/orphans/counts unchanged.
+- 2026-09-07 · Batch 6 · _(this commit)_ · (code only — no manifest) · explicit `family` on 784 buttons; name-inference deleted from navigation.ts; behavior identical, 77/79 tests green (2 pre-existing lesson-content failures unrelated).
 
-## Checkpoint (2026-09-07, after Batch 7)
+## Checkpoint (2026-09-07, after Batch 6)
 
-**Done:** 0, 1, 2, 3, 4, 7, 8 (partial). Hard requirements met:
+**Done:** 0–8 (8 is code-complete; browser click-through still pending).
 - global orphans **0** · within-topic gaps **0** (every topic) · confusion
   groups outside Mappings **0** · every core concept reachable · no stale
-  groups · db:verify + 16 tests green.
-- roles unchanged except 5 metalinguistic rows → trash (Batch 2):
-  core 310 · supporting 1111 · reference 2799 · trash 227 · non-trash 4220.
+  groups · deep links survive the Batch-5 merge · `db:verify` + 11 DB tests +
+  6 nav/reachability unit tests green.
+- roles: core 310 (0 demotions) · supporting 1111 · reference 2799 · trash
+  227 (+5 metalinguistic rows, Batch 2) · non-trash 4220.
+- facet buttons ~530 → ~280 (numbered partitions merged); every button has an
+  explicit `family`.
 
-**Blocked on user:** Batch 5 (numbered partitions — conflicts with the
-standing size-rule) and, downstream of it, Batch 6 (explicit family config)
-and the rest of Batch 8 (deep-link + browser verification of renamed paths).
-
-**Not yet started within scope:** browser click-through verification of
-representative paths (incl. the moved `su` mapping); the 4 Batch-7 flags;
-the 2 pre-existing `full-audit-findings.md` flags.
+**Remaining (all flagged, none blocking):**
+1. Verbs thematic taxonomy lacks a "needing" and a "reading/writing" family —
+   `necesitar`, `leer` (core) sit in "Formal & Rare Verbs". Add the families
+   + retag.
+2. Adjectives lacks a "Word order / position" group — `dq19hl9yw6`
+   (`grammar:adjective-position`).
+3. `t0gq5vym7f` `necesitar la información específica` — questionable core,
+   recommend trash or rewrite (pre-existing `audit:flagged`).
+4. The 2 original `full-audit-findings.md` flags (definite-article headword
+   mismatch; the same `necesitar` row).
+5. Browser click-through of representative paths incl. the moved `su`
+   mapping, role filters, and the side-by-side table.
+6. Optional: a full semantic re-audit of the ~40 family display names against
+   contents (spot-checked clean; "Cognate types(1)", "How it's used(1)" are
+   thin but valid).
