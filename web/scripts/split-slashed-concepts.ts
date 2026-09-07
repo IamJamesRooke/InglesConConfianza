@@ -2,6 +2,7 @@ import "dotenv/config";
 
 import { randomBytes } from "node:crypto";
 
+import type { CurriculumRole } from "../src/lib/curriculum/types";
 import { prisma } from "../src/lib/database/prisma";
 
 const ID_ALPHABET = "0123456789abcdefghijklmnopqrstuvwxyz";
@@ -17,7 +18,7 @@ type Row = {
   english: string;
   exampleSpanish: string;
   exampleEnglish: string;
-  curriculumRole: "core" | "supporting" | "reference" | "trash";
+  curriculumRole: CurriculumRole;
   collections: { collectionName: string }[];
 };
 

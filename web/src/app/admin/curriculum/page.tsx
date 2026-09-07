@@ -57,13 +57,11 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
 
   const requestedPage = Number.parseInt(first(parameters.page) ?? "1", 10);
   const requestedRole = first(parameters.role);
-  const role: CurriculumRole | "all" =
-    requestedRole === "core" ||
-    requestedRole === "supporting" ||
-    requestedRole === "reference" ||
-    requestedRole === "trash"
-      ? requestedRole
-      : "all";
+  const role: CurriculumRole | "all" = (
+    ["core", "essential", "common", "extended", "rare", "trash"] as const
+  ).includes(requestedRole as CurriculumRole)
+    ? (requestedRole as CurriculumRole)
+    : "all";
   const sortParam = first(parameters.sort);
   const sort =
     sortParam === "spanish" ||

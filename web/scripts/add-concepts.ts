@@ -2,14 +2,14 @@ import "dotenv/config";
 
 import { randomBytes } from "node:crypto";
 
-import type { CurriculumRole } from "../src/lib/curriculum/types";
+import { curriculumRoles, type CurriculumRole } from "../src/lib/curriculum/types";
 import { prisma } from "../src/lib/database/prisma";
 import { manifestArgs, readManifestRows, runScript } from "./lib/manifest";
 
 // Manifest columns: spanish, english, exampleSpanish, exampleEnglish, role,
 // |-separated collections. Creates brand-new concept rows.
 
-const roles = new Set<CurriculumRole>(["core", "supporting", "reference", "trash"]);
+const roles = new Set<CurriculumRole>(curriculumRoles);
 
 // nanoid-style 10-char id from the alphabet the reslug migration used.
 const ID_ALPHABET = "0123456789abcdefghijklmnopqrstuvwxyz";

@@ -244,12 +244,17 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
     description:
       "Every verb, grouped by theme instead of alphabetically — communication, thinking, movement, possession, money, and more — so you can browse verbs the way you'd actually reach for them in conversation. \u201cTo be,\u201d \u201chave,\u201d and the modal verbs (poder, deber) get their own dedicated groups since their English translations swing wildly by context.",
     baseCollection: "pos:verb",
-    // Latinate cognate verbs at `reference` role (to abstain, to depose) are
-    // reference material, not teaching vocabulary. They live on the Cognates
-    // page, sorted by spelling pattern. The core/supporting ones (to prepare,
-    // to decide, to receive) are ordinary teaching verbs and stay here.
+    // Low-priority Latinate cognate verbs (to abstain, to depose) are reference
+    // material, not teaching vocabulary. They live on the Cognates page, sorted
+    // by spelling pattern. The teaching-tier ones (to prepare, to decide, to
+    // receive) stay here. NOTE: revisit after Phase 3 P3-4 — `extended` verbs
+    // that are genuine teaching targets for advanced courses may want to be
+    // added to `unlessRole`.
     baseExclusions: [
-      { collection: "topic:cognate", unlessRole: ["core", "supporting"] },
+      {
+        collection: "topic:cognate",
+        unlessRole: ["core", "essential", "common"],
+      },
     ],
     facetButtons: [
       {

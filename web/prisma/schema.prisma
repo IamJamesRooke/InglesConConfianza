@@ -9,8 +9,10 @@ datasource db {
 
 enum CurriculumRole {
   core
-  supporting
-  reference
+  essential
+  common
+  extended
+  rare
   trash
 }
 

@@ -23,18 +23,19 @@ const ORDER = [
   "cognates",
 ];
 
-// `core` is FUNCTIONAL vocabulary: the minimum needed to operate the language,
-// and specifically the items a learner would NOT work out unaided. High
-// frequency and CEFR-A1 membership are NOT sufficient. "to want" is core (it
-// carries structure — querer que + subjunctive, querer + infinitive); "to eat"
-// is not, however common, because it is content a learner picks up for free.
-// Days, months, colours, numbers and body parts are content, not core.
-// The tier is therefore mostly verbs, pronouns, determiners, connectors and
-// modals — see the 5-8% band below, which reflects that shape deliberately.
+// Five priority tiers (Phase 3, docs/curation/role-granularity/plan.md).
+// `core` is the MVP set: the minimum to build correct sentences given a
+// dictionary for content words — mostly verbs, pronouns, determiners,
+// connectors and the modal/auxiliary system. High frequency is NOT sufficient;
+// "querer" is core (carries structure), "comer" is not (a dictionary + the
+// grammar system covers it). Bands below are provisional until P3-3/P3-4 fill
+// `essential` and `extended` and P3-5 tunes them against the real shape.
 const ROLE_TARGETS: Record<string, [number, number]> = {
-  core: [5, 8],
-  supporting: [25, 35],
-  reference: [55, 65],
+  core: [4, 7],
+  essential: [8, 14],
+  common: [26, 38],
+  extended: [16, 28],
+  rare: [18, 32],
   trash: [3, 6],
 };
 

@@ -39,16 +39,31 @@ const curriculumRoles: Array<{
   label: string;
   description: string;
 }> = [
-  { value: "core", label: "Core", description: "Must be explicitly taught" },
   {
-    value: "supporting",
-    label: "Supporting",
-    description: "Broadly reusable language taught around Core",
+    value: "core",
+    label: "Core",
+    description:
+      "MVP set — the minimum to build correct sentences with a dictionary",
   },
   {
-    value: "reference",
-    label: "Reference",
-    description: "Retained, but not a current teaching target",
+    value: "essential",
+    label: "Essential",
+    description: "High-utility content vocab an MVP still teaches explicitly",
+  },
+  {
+    value: "common",
+    label: "Common",
+    description: "Standard vocab for the course after the MVP",
+  },
+  {
+    value: "extended",
+    label: "Extended",
+    description: "Real but later — formal, abstract, specialized, most phrasals",
+  },
+  {
+    value: "rare",
+    label: "Rare",
+    description: "Dictionary/drill completeness only — never explicitly taught",
   },
   {
     value: "trash",

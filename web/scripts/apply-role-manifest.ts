@@ -1,6 +1,6 @@
 import "dotenv/config";
 
-import type { CurriculumRole } from "../src/lib/curriculum/types";
+import { curriculumRoles, type CurriculumRole } from "../src/lib/curriculum/types";
 import { prisma } from "../src/lib/database/prisma";
 import {
   logRoleCounts,
@@ -11,7 +11,7 @@ import {
 
 // Manifest columns: concept-id, new role, reason. Moves concepts between tiers.
 
-const roles = new Set<CurriculumRole>(["core", "supporting", "reference", "trash"]);
+const roles = new Set<CurriculumRole>(curriculumRoles);
 
 type RoleChange = { conceptId: string; role: CurriculumRole };
 

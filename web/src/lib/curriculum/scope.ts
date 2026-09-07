@@ -5,16 +5,17 @@ import type { CurriculumRole } from "@/lib/curriculum/types";
 // that page's browser.
 //
 // The motivating case (2026-09-07): the Verbs page is based on `pos:verb`, and
-// 315 of its 1804 rows are Latinate cognate verbs. The ~205 of those at
-// `reference` role (to abstain, to depose, to allude) are reference material,
-// not teaching vocabulary — they belong on the Cognates page, where they are
-// organised by spelling pattern, and they were drowning the Verbs browser. The
-// ~110 at `core`/`supporting` (to prepare, to decide, to receive) are ordinary
-// teaching verbs and stay.
+// 315 of its 1804 rows are Latinate cognate verbs. The low-priority ones (to
+// abstain, to depose, to allude) are reference material, not teaching
+// vocabulary — they belong on the Cognates page, where they are organised by
+// spelling pattern, and they were drowning the Verbs browser. The higher-tier
+// ones (to prepare, to decide, to receive) are ordinary teaching verbs and
+// stay. The Verbs exclusion in topics.ts keeps rows whose role is `core`,
+// `essential` or `common`.
 //
 // This is a display policy, not a fact about the concept, so it lives in config
 // rather than in the data: no row is retagged, `pos:verb` stays true, and a row
-// promoted to `supporting` later reappears on Verbs automatically.
+// promoted to a teaching tier later reappears on Verbs automatically.
 //
 // One definition, three consumers: the page query (curriculum-store.ts), the
 // inventory script, and the reachability test all go through here, so the rule

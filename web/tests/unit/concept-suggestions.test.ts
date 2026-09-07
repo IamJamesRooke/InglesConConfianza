@@ -25,12 +25,12 @@ const displays = {
   support: {
     spanish: "apoyo",
     english: "support",
-    role: "supporting",
+    role: "common",
   },
   reference: {
     spanish: "referencia",
     english: "reference",
-    role: "reference",
+    role: "rare",
   },
   trash: { spanish: "basura", english: "trash", role: "trash" },
 };
@@ -94,7 +94,7 @@ test("suggestions respond only to the supplied current lesson order", () => {
 
 test("priority bands follow canonical role order with a neutral fallback", () => {
   assert.equal(conceptPriority("core").band, "high");
-  assert.equal(conceptPriority("supporting").band, "medium");
-  assert.equal(conceptPriority("reference").band, "low");
+  assert.equal(conceptPriority("common").band, "medium");
+  assert.equal(conceptPriority("rare").band, "low");
   assert.equal(conceptPriority("future-tier").band, "neutral");
 });
