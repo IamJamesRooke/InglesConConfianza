@@ -56,6 +56,11 @@ const SWEEP_EXEMPTIONS: Record<string, string> = {
   "estar [en un lugar]|to be [in a place]": "generic template row — \"[en]\" is a placeholder for any preposition, not a concrete particle",
   "quedar con [alguien]|to arrange to meet [somebody]": "\"arrange to meet\" is a full-infinitive complement; the English gloss has no surviving particle",
   "traer [algo] consigo|to have [something] with you": "\"have with you\" is a generic possession construction, not a prepositional verb",
+  "ser muy aficionado a [un equipo]|to be a big fan of [a team]": "predicate-adjective idiom (\"be a fan of\") — the noun \"fan\" carries the meaning, not a verb+particle unit (taxonomy-cleanup 2026-09-07)",
+  "[estar] junto a [alguien/algo]|[to be] next to [somebody/something]": "predicate-adjective idiom (estar + junto a), a location adjective phrase, not a phrasal verb (taxonomy-cleanup 2026-09-07)",
+  "[ser] nuevo en [un lugar]|[to be] new to [a place]": "predicate-adjective idiom (ser + nuevo en), not a phrasal verb (taxonomy-cleanup 2026-09-07)",
+  "[estar] lleno de [algo]|[to be] full of [something]": "predicate-adjective idiom (estar + lleno de), not a phrasal verb (taxonomy-cleanup 2026-09-07)",
+  "ser el blanco de [algo]|to be the target of [something]": "predicate-noun idiom (\"be the target of\"), not a verb+particle unit (taxonomy-cleanup 2026-09-07)",
 };
 
 type Row = {

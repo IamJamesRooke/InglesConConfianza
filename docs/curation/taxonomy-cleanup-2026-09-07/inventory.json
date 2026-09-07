@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generatedAt": "2026-09-07T16:20:45.305Z",
+    "generatedAt": "2026-09-07T16:24:33.195Z",
     "totals": {
       "allConcepts": 4447,
       "nonTrash": 4220,
@@ -17,16 +17,16 @@
       {
         "slug": "pronouns",
         "baseCount": 172,
-        "reachableCount": 170,
-        "withinTopicGapCount": 2,
+        "reachableCount": 172,
+        "withinTopicGapCount": 0,
         "emptyGroupCount": 0,
         "confusionGroupCount": 0
       },
       {
         "slug": "determiners",
         "baseCount": 144,
-        "reachableCount": 141,
-        "withinTopicGapCount": 3,
+        "reachableCount": 144,
+        "withinTopicGapCount": 0,
         "emptyGroupCount": 0,
         "confusionGroupCount": 0
       },
@@ -48,41 +48,41 @@
       },
       {
         "slug": "cognates",
-        "baseCount": 789,
+        "baseCount": 787,
         "reachableCount": 787,
-        "withinTopicGapCount": 2,
+        "withinTopicGapCount": 0,
         "emptyGroupCount": 0,
         "confusionGroupCount": 0
       },
       {
         "slug": "nouns",
         "baseCount": 483,
-        "reachableCount": 477,
-        "withinTopicGapCount": 6,
+        "reachableCount": 483,
+        "withinTopicGapCount": 0,
         "emptyGroupCount": 0,
         "confusionGroupCount": 0
       },
       {
         "slug": "adjectives",
-        "baseCount": 415,
-        "reachableCount": 408,
-        "withinTopicGapCount": 7,
+        "baseCount": 413,
+        "reachableCount": 413,
+        "withinTopicGapCount": 0,
         "emptyGroupCount": 0,
         "confusionGroupCount": 0
       },
       {
         "slug": "adverbs",
-        "baseCount": 128,
-        "reachableCount": 123,
-        "withinTopicGapCount": 5,
+        "baseCount": 124,
+        "reachableCount": 124,
+        "withinTopicGapCount": 0,
         "emptyGroupCount": 0,
         "confusionGroupCount": 0
       },
       {
         "slug": "numbers",
-        "baseCount": 71,
+        "baseCount": 70,
         "reachableCount": 70,
-        "withinTopicGapCount": 1,
+        "withinTopicGapCount": 0,
         "emptyGroupCount": 0,
         "confusionGroupCount": 0
       },
@@ -96,17 +96,17 @@
       },
       {
         "slug": "connectors",
-        "baseCount": 73,
-        "reachableCount": 68,
-        "withinTopicGapCount": 5,
+        "baseCount": 69,
+        "reachableCount": 69,
+        "withinTopicGapCount": 0,
         "emptyGroupCount": 0,
         "confusionGroupCount": 0
       },
       {
         "slug": "prepositions",
         "baseCount": 37,
-        "reachableCount": 35,
-        "withinTopicGapCount": 2,
+        "reachableCount": 37,
+        "withinTopicGapCount": 0,
         "emptyGroupCount": 0,
         "confusionGroupCount": 0
       },
@@ -120,24 +120,24 @@
       },
       {
         "slug": "en-mappings",
-        "baseCount": 1524,
-        "reachableCount": 1519,
-        "withinTopicGapCount": 5,
+        "baseCount": 1521,
+        "reachableCount": 1521,
+        "withinTopicGapCount": 0,
         "emptyGroupCount": 0,
         "confusionGroupCount": 2
       },
       {
         "slug": "phrasal-verbs-by-root",
-        "baseCount": 591,
+        "baseCount": 584,
         "reachableCount": 584,
-        "withinTopicGapCount": 7,
+        "withinTopicGapCount": 0,
         "emptyGroupCount": 0,
         "confusionGroupCount": 0
       },
       {
         "slug": "phrasal-verbs-by-particle",
-        "baseCount": 591,
-        "reachableCount": 591,
+        "baseCount": 584,
+        "reachableCount": 584,
         "withinTopicGapCount": 0,
         "emptyGroupCount": 0,
         "confusionGroupCount": 0
@@ -161,8 +161,8 @@
       {
         "slug": "verb-patterns",
         "baseCount": 222,
-        "reachableCount": 221,
-        "withinTopicGapCount": 1,
+        "reachableCount": 222,
+        "withinTopicGapCount": 0,
         "emptyGroupCount": 0,
         "confusionGroupCount": 0
       },
@@ -198,12 +198,9 @@
       "title": "Pronouns",
       "baseCollection": "topic:pronoun",
       "baseCount": 172,
-      "reachableCount": 170,
-      "withinTopicGapCount": 2,
-      "withinTopicGapIds": [
-        "kdnvsz6v6j",
-        "i7rkruke55"
-      ],
+      "reachableCount": 172,
+      "withinTopicGapCount": 0,
+      "withinTopicGapIds": [],
       "families": [
         {
           "id": "pronoun-types",
@@ -318,7 +315,7 @@
             {
               "collection": "grammar:indef-pronoun-quantity",
               "label": "Indefinite — Quantity",
-              "count": 10,
+              "count": 12,
               "confusion": false,
               "coreCount": 3
             },
@@ -361,13 +358,9 @@
       "title": "Determiners",
       "baseCollection": "topic:determiner",
       "baseCount": 144,
-      "reachableCount": 141,
-      "withinTopicGapCount": 3,
-      "withinTopicGapIds": [
-        "q9x6f0ze09",
-        "cwuhjz9zei",
-        "01slode9o8"
-      ],
+      "reachableCount": 144,
+      "withinTopicGapCount": 0,
+      "withinTopicGapIds": [],
       "families": [
         {
           "id": "determiner-types",
@@ -377,7 +370,7 @@
             {
               "collection": "grammar:definite-article",
               "label": "Definite article",
-              "count": 6,
+              "count": 7,
               "confusion": false,
               "coreCount": 6
             },
@@ -405,7 +398,7 @@
             {
               "collection": "topic:quant-much-many",
               "label": "Quantifier — Much & Many",
-              "count": 11,
+              "count": 12,
               "confusion": false,
               "coreCount": 2
             },
@@ -468,7 +461,7 @@
             {
               "collection": "grammar:interrogative-determiner",
               "label": "Interrogative",
-              "count": 5,
+              "count": 6,
               "confusion": false,
               "coreCount": 3
             },
@@ -1558,13 +1551,10 @@
       "slug": "cognates",
       "title": "Cognates",
       "baseCollection": "topic:cognate",
-      "baseCount": 789,
+      "baseCount": 787,
       "reachableCount": 787,
-      "withinTopicGapCount": 2,
-      "withinTopicGapIds": [
-        "1amptqkvwv",
-        "a12miruf57"
-      ],
+      "withinTopicGapCount": 0,
+      "withinTopicGapIds": [],
       "families": [
         {
           "id": "spelling-patterns",
@@ -2317,16 +2307,9 @@
       "title": "Nouns",
       "baseCollection": "pos:noun",
       "baseCount": 483,
-      "reachableCount": 477,
-      "withinTopicGapCount": 6,
-      "withinTopicGapIds": [
-        "4abmpsiu46",
-        "5c41gd4gqg",
-        "k2k4xsq191",
-        "rwj2zcgfcm",
-        "yt3bjazug3",
-        "sfunx9o2ea"
-      ],
+      "reachableCount": 483,
+      "withinTopicGapCount": 0,
+      "withinTopicGapIds": [],
       "families": [
         {
           "id": "articles-gender",
@@ -2707,7 +2690,7 @@
             {
               "collection": "topic:objects-physical",
               "label": "Objects — Physical Items",
-              "count": 9,
+              "count": 10,
               "confusion": false,
               "coreCount": 0
             },
@@ -2728,7 +2711,7 @@
             {
               "collection": "topic:noun-time-days-periods",
               "label": "Time — Days & Periods",
-              "count": 16,
+              "count": 21,
               "confusion": false,
               "coreCount": 0
             },
@@ -2868,18 +2851,10 @@
       "slug": "adjectives",
       "title": "Adjectives",
       "baseCollection": "pos:adjective",
-      "baseCount": 415,
-      "reachableCount": 408,
-      "withinTopicGapCount": 7,
-      "withinTopicGapIds": [
-        "erzwuc6ywd",
-        "ldjf9twfn1",
-        "zasp2r8vif",
-        "6rgyh7ngls",
-        "kfx1lzc2a8",
-        "f2rqqk1bhq",
-        "4465jxo8rw"
-      ],
+      "baseCount": 413,
+      "reachableCount": 413,
+      "withinTopicGapCount": 0,
+      "withinTopicGapIds": [],
       "families": [
         {
           "id": "meaning-context",
@@ -2910,14 +2885,14 @@
             {
               "collection": "topic:adj-able",
               "label": "ser, -able",
-              "count": 12,
+              "count": 13,
               "confusion": false,
               "coreCount": 0
             },
             {
               "collection": "topic:adj-ible",
               "label": "ser, -ible",
-              "count": 10,
+              "count": 11,
               "confusion": false,
               "coreCount": 0
             },
@@ -2931,7 +2906,7 @@
             {
               "collection": "topic:adj-al",
               "label": "ser, -al",
-              "count": 15,
+              "count": 16,
               "confusion": false,
               "coreCount": 0
             },
@@ -2994,7 +2969,7 @@
             {
               "collection": "topic:adj-ser-general-8",
               "label": "ser, general (8)",
-              "count": 2,
+              "count": 4,
               "confusion": false,
               "coreCount": 0
             },
@@ -3295,16 +3270,10 @@
       "slug": "adverbs",
       "title": "Adverbs",
       "baseCollection": "pos:adverb",
-      "baseCount": 128,
-      "reachableCount": 123,
-      "withinTopicGapCount": 5,
-      "withinTopicGapIds": [
-        "zcsk0uorhv",
-        "seq1qsjokh",
-        "b0zp4e4wz9",
-        "szn7fm8wsx",
-        "aqt0wb7fmf"
-      ],
+      "baseCount": 124,
+      "reachableCount": 124,
+      "withinTopicGapCount": 0,
+      "withinTopicGapIds": [],
       "families": [
         {
           "id": "word-types",
@@ -3328,7 +3297,7 @@
             {
               "collection": "grammar:intensifier",
               "label": "Intensifiers",
-              "count": 6,
+              "count": 7,
               "confusion": false,
               "coreCount": 3
             },
@@ -3419,12 +3388,10 @@
       "slug": "numbers",
       "title": "Numbers",
       "baseCollection": "pos:number",
-      "baseCount": 71,
+      "baseCount": 70,
       "reachableCount": 70,
-      "withinTopicGapCount": 1,
-      "withinTopicGapIds": [
-        "ccrgp9wvgz"
-      ],
+      "withinTopicGapCount": 0,
+      "withinTopicGapIds": [],
       "families": [
         {
           "id": "number-groups",
@@ -3566,16 +3533,10 @@
       "slug": "connectors",
       "title": "Connectors",
       "baseCollection": "pos:connector",
-      "baseCount": 73,
-      "reachableCount": 68,
-      "withinTopicGapCount": 5,
-      "withinTopicGapIds": [
-        "tgdih9ksry",
-        "j4m6nilpmp",
-        "8jzxgbdbcq",
-        "rawqer01p0",
-        "wyjcbhrfe4"
-      ],
+      "baseCount": 69,
+      "reachableCount": 69,
+      "withinTopicGapCount": 0,
+      "withinTopicGapIds": [],
       "families": [
         {
           "id": "connector-types",
@@ -3641,7 +3602,7 @@
             {
               "collection": "grammar:conditional",
               "label": "Conditional (as long as, unless)",
-              "count": 4,
+              "count": 5,
               "confusion": false,
               "coreCount": 0
             },
@@ -3670,12 +3631,9 @@
       "title": "Prepositions",
       "baseCollection": "pos:preposition",
       "baseCount": 37,
-      "reachableCount": 35,
-      "withinTopicGapCount": 2,
-      "withinTopicGapIds": [
-        "z1kohrhmbw",
-        "drk12jhvde"
-      ],
+      "reachableCount": 37,
+      "withinTopicGapCount": 0,
+      "withinTopicGapIds": [],
       "families": [
         {
           "id": "preposition-groups",
@@ -3692,7 +3650,7 @@
             {
               "collection": "topic:location-vertical-relative",
               "label": "Location — Vertical & Relative",
-              "count": 10,
+              "count": 12,
               "confusion": false,
               "coreCount": 0
             },
@@ -4599,16 +4557,10 @@
       "slug": "en-mappings",
       "title": "English-to-Spanish Mappings",
       "baseCollection": "topic:en-multi-sense",
-      "baseCount": 1524,
-      "reachableCount": 1519,
-      "withinTopicGapCount": 5,
-      "withinTopicGapIds": [
-        "8ueue3hv8i",
-        "ljza4yueup",
-        "9v6o0rhpio",
-        "j6ba7pl20y",
-        "8errr3uadz"
-      ],
+      "baseCount": 1521,
+      "reachableCount": 1521,
+      "withinTopicGapCount": 0,
+      "withinTopicGapIds": [],
       "families": [
         {
           "id": "a-e",
@@ -5017,7 +4969,7 @@
             {
               "collection": "en:if",
               "label": "if",
-              "count": 12,
+              "count": 13,
               "confusion": false,
               "coreCount": 1
             },
@@ -5689,9 +5641,9 @@
             {
               "collection": "topic:confusable-pronoun",
               "label": "you (tú/usted/ustedes/te), him (lo/le)",
-              "count": 11,
+              "count": 13,
               "confusion": true,
-              "coreCount": 7
+              "coreCount": 9
             },
             {
               "collection": "topic:confusable-determiner",
@@ -5708,7 +5660,7 @@
         {
           "collection": "topic:confusable-pronoun",
           "label": "you (tú/usted/ustedes/te), him (lo/le)",
-          "count": 11
+          "count": 13
         },
         {
           "collection": "topic:confusable-determiner",
@@ -5721,18 +5673,10 @@
       "slug": "phrasal-verbs-by-root",
       "title": "Phrasal Verbs by Root",
       "baseCollection": "topic:phrasal-verb",
-      "baseCount": 591,
+      "baseCount": 584,
       "reachableCount": 584,
-      "withinTopicGapCount": 7,
-      "withinTopicGapIds": [
-        "4hc7hecq4n",
-        "01gzy2c71x",
-        "4fpgdvwxzu",
-        "ikbozl8fdl",
-        "q8bc2trq23",
-        "c5f9nw0nq0",
-        "zjoxpuz3cv"
-      ],
+      "withinTopicGapCount": 0,
+      "withinTopicGapIds": [],
       "families": [
         {
           "id": "a-e",
@@ -6869,8 +6813,8 @@
       "slug": "phrasal-verbs-by-particle",
       "title": "Phrasal Verbs by Particle",
       "baseCollection": "topic:phrasal-verb",
-      "baseCount": 591,
-      "reachableCount": 591,
+      "baseCount": 584,
+      "reachableCount": 584,
       "withinTopicGapCount": 0,
       "withinTopicGapIds": [],
       "families": [
@@ -7022,7 +6966,7 @@
             {
               "collection": "topic:part-in-1",
               "label": "in (1)",
-              "count": 17,
+              "count": 16,
               "confusion": false,
               "coreCount": 0
             },
@@ -7113,7 +7057,7 @@
             {
               "collection": "topic:part-out-3",
               "label": "out (3)",
-              "count": 17,
+              "count": 16,
               "confusion": false,
               "coreCount": 1
             },
@@ -7162,14 +7106,14 @@
             {
               "collection": "topic:part-of-1",
               "label": "of (1)",
-              "count": 18,
+              "count": 17,
               "confusion": false,
               "coreCount": 0
             },
             {
               "collection": "topic:part-of-2",
               "label": "of (2)",
-              "count": 11,
+              "count": 9,
               "confusion": false,
               "coreCount": 0
             },
@@ -7309,7 +7253,7 @@
             {
               "collection": "topic:part-to-3",
               "label": "to (3)",
-              "count": 18,
+              "count": 16,
               "confusion": false,
               "coreCount": 2
             },
@@ -8239,11 +8183,9 @@
       "title": "Verb Patterns",
       "baseCollection": "topic:verb-pattern",
       "baseCount": 222,
-      "reachableCount": 221,
-      "withinTopicGapCount": 1,
-      "withinTopicGapIds": [
-        "4sabms9mlz"
-      ],
+      "reachableCount": 222,
+      "withinTopicGapCount": 0,
+      "withinTopicGapIds": [],
       "families": [
         {
           "id": "sentence-patterns",
@@ -8323,7 +8265,7 @@
             {
               "collection": "construction:preposition-plus-gerund",
               "label": "preposition + gerund (before going)",
-              "count": 6,
+              "count": 7,
               "confusion": false,
               "coreCount": 0
             },

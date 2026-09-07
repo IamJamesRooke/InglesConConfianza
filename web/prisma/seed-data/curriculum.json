@@ -1786,7 +1786,8 @@
         "topic:food",
         "topic:multi-sense",
         "audit:reviewed",
-        "topic:map-ser-4"
+        "topic:map-ser-4",
+        "topic:adj-ible"
       ],
       "curriculumRole": "reference"
     },
@@ -1855,7 +1856,8 @@
         "topic:food",
         "topic:multi-sense",
         "audit:reviewed",
-        "topic:map-ser-4"
+        "topic:map-ser-4",
+        "topic:adj-able"
       ],
       "curriculumRole": "reference"
     },
@@ -8637,7 +8639,6 @@
         "grammar:estar-adjective",
         "contrast:confusable",
         "morphology:suffix-able",
-        "topic:cognate",
         "es:estar",
         "en:available",
         "topic:condition-state",
@@ -11253,7 +11254,6 @@
       },
       "collections": [
         "es:hacer",
-        "pos:adverb",
         "pos:connector",
         "construction:map-de-in",
         "es:de",
@@ -14290,7 +14290,6 @@
         "en:of",
         "en:in",
         "topic:en-multi-sense",
-        "topic:phrasal-verb",
         "grammar:concession",
         "audit:reviewed",
         "topic:part-in-1",
@@ -15973,7 +15972,6 @@
         "english": "I asked if it was open."
       },
       "collections": [
-        "pos:connector",
         "en:if",
         "construction:map-si-if",
         "es:preguntar",
@@ -15992,14 +15990,14 @@
         "english": "I asked whether it was ready."
       },
       "collections": [
-        "pos:connector",
         "en:whether",
         "construction:map-si-whether",
         "register:formal",
         "es:preguntar",
         "en:ask",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "en:if"
       ],
       "curriculumRole": "reference"
     },
@@ -23237,7 +23235,6 @@
         "gender:feminine",
         "topic:abstract-quality",
         "topic:multi-sense",
-        "topic:phrasal-verb",
         "audit:reviewed",
         "topic:fem-a-7",
         "topic:abstract-general-6",
@@ -23992,7 +23989,6 @@
       },
       "collections": [
         "grammar:reflexive",
-        "pos:adverb",
         "es:sentir",
         "en:feel",
         "topic:multi-sense",
@@ -24012,7 +24008,6 @@
       },
       "collections": [
         "grammar:reflexive",
-        "pos:adverb",
         "es:sentir",
         "en:feel",
         "topic:multi-sense",
@@ -25369,7 +25364,6 @@
         "en:old",
         "grammar:age",
         "grammar:be",
-        "pos:number",
         "es:tener",
         "en:years",
         "sense:tener-edad",
@@ -26764,7 +26758,8 @@
         "topic:business-work",
         "topic:multi-sense",
         "audit:reviewed",
-        "topic:map-ser-22"
+        "topic:map-ser-22",
+        "topic:adj-al"
       ],
       "curriculumRole": "reference"
     },
@@ -27711,7 +27706,6 @@
       },
       "collections": [
         "es:venir",
-        "pos:adjective",
         "topic:social-expression",
         "es:bienvenido",
         "en:welcome",
@@ -28549,13 +28543,14 @@
         "english": "Upon returning, I called Ana."
       },
       "collections": [
-        "pos:connector",
         "construction:map-al-upon",
         "grammar:gerund",
         "es:volver",
         "en:upon",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:verb-pattern",
+        "construction:preposition-plus-gerund"
       ],
       "curriculumRole": "reference"
     },
@@ -33348,7 +33343,8 @@
         "es:día",
         "en:day",
         "pos:noun",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:noun-time-days-periods"
       ],
       "curriculumRole": "reference"
     },
@@ -33459,7 +33455,8 @@
         "es:mañana",
         "en:morning",
         "pos:noun",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:noun-time-days-periods"
       ],
       "curriculumRole": "supporting"
     },
@@ -33475,7 +33472,8 @@
         "es:tarde",
         "en:afternoon",
         "pos:noun",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:noun-time-days-periods"
       ],
       "curriculumRole": "supporting"
     },
@@ -33490,7 +33488,8 @@
       "collections": [
         "es:tarde",
         "en:evening",
-        "pos:noun"
+        "pos:noun",
+        "topic:noun-time-days-periods"
       ],
       "curriculumRole": "reference"
     },
@@ -33506,7 +33505,8 @@
         "es:noche",
         "en:night",
         "pos:noun",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:noun-time-days-periods"
       ],
       "curriculumRole": "supporting"
     },
@@ -33897,7 +33897,8 @@
         "pos:adverb",
         "es:mucho",
         "en:lot",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:intensifier"
       ],
       "curriculumRole": "reference"
     },
@@ -33915,7 +33916,8 @@
         "es:mucho",
         "en:plenty",
         "topic:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:quant-much-many"
       ],
       "curriculumRole": "reference"
     },
@@ -34092,7 +34094,6 @@
         "es:nunca",
         "en:haven't",
         "pos:verb",
-        "topic:verb-pattern",
         "topic:question-negation",
         "qn:negative-question",
         "audit:reviewed",
@@ -34982,7 +34983,8 @@
       "collections": [
         "es:solo",
         "en:single",
-        "pos:adjective"
+        "pos:adjective",
+        "topic:adj-ser-general-8"
       ],
       "curriculumRole": "reference"
     },
@@ -35501,7 +35503,6 @@
         "es:ir",
         "es:bien",
         "en:successful",
-        "pos:adverb",
         "construction:prepositional-verb",
         "en:at",
         "construction:map-en-at",
@@ -36798,7 +36799,8 @@
         "pos:preposition",
         "register:formal",
         "es:ante",
-        "en:before"
+        "en:before",
+        "topic:location-vertical-relative"
       ],
       "curriculumRole": "reference"
     },
@@ -36877,7 +36879,8 @@
         "grammar:indefinite-pronoun",
         "topic:determiner",
         "audit:reviewed",
-        "topic:quant-some-any-no"
+        "topic:quant-some-any-no",
+        "grammar:indef-pronoun-quantity"
       ],
       "curriculumRole": "supporting"
     },
@@ -36989,7 +36992,6 @@
         "pos:verb",
         "construction:prepositional-verb",
         "particle:of",
-        "topic:phrasal-verb",
         "audit:reviewed",
         "topic:verb-ser-idioms-2",
         "topic:part-of-2",
@@ -38039,7 +38041,8 @@
         "grammar:role",
         "es:ex",
         "en:former",
-        "pos:adjective"
+        "pos:adjective",
+        "topic:adj-ser-general-8"
       ],
       "curriculumRole": "reference"
     },
@@ -38875,7 +38878,6 @@
       "collections": [
         "en:that",
         "register:formal",
-        "pos:connector",
         "es:establecer",
         "en:provide",
         "topic:en-multi-sense",
@@ -48366,7 +48368,6 @@
         "morphology:suffix-idad",
         "morphology:suffix-ty",
         "morphology:suffix-ity",
-        "topic:cognate",
         "contrast:confusable",
         "es:disponibilidad",
         "en:availability",
@@ -67768,7 +67769,6 @@
         "pos:verb",
         "construction:prepositional-verb",
         "particle:of",
-        "topic:phrasal-verb",
         "audit:reviewed",
         "topic:verb-ser-idioms-2",
         "topic:part-of-2",
@@ -67840,7 +67840,6 @@
         "topic:en-multi-sense",
         "construction:prepositional-verb",
         "particle:to",
-        "topic:phrasal-verb",
         "audit:reviewed",
         "topic:estar-adj-1",
         "topic:adj-abs-general-6",
@@ -67860,7 +67859,8 @@
       "collections": [
         "es:junto",
         "en:along",
-        "pos:preposition"
+        "pos:preposition",
+        "topic:location-vertical-relative"
       ],
       "curriculumRole": "reference"
     },
@@ -67881,7 +67881,6 @@
         "topic:multi-sense",
         "construction:prepositional-verb",
         "particle:to",
-        "topic:phrasal-verb",
         "audit:reviewed",
         "topic:adj-ser-general-5",
         "topic:part-to-3",
@@ -68042,7 +68041,6 @@
         "topic:multi-sense",
         "construction:prepositional-verb",
         "particle:of",
-        "topic:phrasal-verb",
         "audit:reviewed",
         "topic:estar-adj-2",
         "topic:condition-state-2",
@@ -74718,7 +74716,8 @@
         "es:espacio",
         "en:outer",
         "pos:noun",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:objects-physical"
       ],
       "curriculumRole": "reference"
     },
@@ -76029,7 +76028,6 @@
         "grammar:command",
         "form:bare-infinitive",
         "es:hagámoslo",
-        "topic:en-multi-sense",
         "topic:imperative",
         "imp:lets",
         "en:let's",
@@ -76051,7 +76049,6 @@
         "grammar:command",
         "form:bare-infinitive",
         "es:vamos",
-        "topic:en-multi-sense",
         "topic:imperative",
         "imp:lets",
         "en:let's",
@@ -76073,7 +76070,6 @@
         "grammar:command",
         "form:bare-infinitive",
         "es:hagamos",
-        "topic:en-multi-sense",
         "topic:imperative",
         "imp:lets",
         "en:let's",
@@ -78760,7 +78756,8 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:enmap-in-2"
+        "topic:enmap-in-2",
+        "grammar:conditional"
       ],
       "curriculumRole": "reference"
     },
@@ -94783,7 +94780,8 @@
         "grammar:indefinite-pronoun",
         "topic:determiner",
         "audit:reviewed",
-        "topic:quant-both-all-whole"
+        "topic:quant-both-all-whole",
+        "grammar:indef-pronoun-quantity"
       ],
       "curriculumRole": "supporting"
     },
@@ -95581,7 +95579,8 @@
         "es:me",
         "topic:pronoun",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:confusable-pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -95624,7 +95623,8 @@
         "es:nos",
         "topic:pronoun",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:confusable-pronoun"
       ],
       "curriculumRole": "core"
     },
@@ -96275,7 +96275,8 @@
         "en:the",
         "topic:en-multi-sense",
         "pos:determiner",
-        "audit:reviewed"
+        "audit:reviewed",
+        "grammar:definite-article"
       ],
       "curriculumRole": "supporting"
     },
@@ -96870,7 +96871,8 @@
         "topic:en-multi-sense",
         "pos:determiner",
         "audit:reviewed",
-        "topic:enmap-what-2"
+        "topic:enmap-what-2",
+        "grammar:interrogative-determiner"
       ],
       "curriculumRole": "supporting"
     },
@@ -99519,7 +99521,6 @@
         "english": "Aren't you ready yet?"
       },
       "collections": [
-        "pos:adjective",
         "topic:question-negation",
         "qn:negative-question",
         "grammar:question",

@@ -150,6 +150,27 @@ from `/curriculum?role=trash` if any should stay.
   `estar lleno de`, `ser nuevo en`) — not phrasal verbs; untag
   `topic:phrasal-verb` or move to an idiom group.
 
+### Batch 4 applied (2026-09-07)
+
+All remaining within-topic gaps closed. Pattern: roughly half were a missing
+facet tag (tagged into an existing group), half were a **wrong base tag** on a
+row that already had a correct home elsewhere:
+
+- question sentences tagged `pos:adjective` (`¿No estás listo?`) → untagged
+- verb phrases tagged `pos:adverb` (`sentirse bien/mal`, `irle bien`),
+  `pos:connector` (`preguntar si`, `establecer que`), `pos:number`
+  (`tener [número] años`) → untagged
+- `let's` forms tagged `topic:en-multi-sense` → untagged (not multi-sense)
+- 7 predicate-adjective/noun idioms tagged `topic:phrasal-verb`
+  (`estar lleno de`, `ser nuevo en`, `la salida`, `a pesar de`…) → untagged;
+  the 5 "to be … particle" ones added to `audit-phrasal-verbs.ts`
+  `SWEEP_EXEMPTIONS` so the standing audit doesn't re-flag them
+- `disponible`/`disponibilidad` tagged `topic:cognate` → untagged (no shared
+  root; they are false friends, resolved in Batch 1's confusion bucket)
+
+`al volver` retagged `pos:connector` → `topic:verb-pattern` +
+`construction:preposition-plus-gerund`.
+
 <a id="verbs"></a>
 ## Verbs within-topic gap (301)
 
