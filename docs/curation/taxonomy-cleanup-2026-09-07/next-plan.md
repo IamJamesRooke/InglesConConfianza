@@ -435,7 +435,7 @@ Target structure:
   reachability test still shows every core concept reaching a group;
   `db:verify` clean. Promotions only — never demote to pass a check.
 
-### Batch 9 — Mappings and Phrasal Verbs verification
+### Batch 9 — Mappings and Phrasal Verbs verification — **DONE** (all letter-consistent; K–O absence is a data fact)
 
 - **Scope:** the four alphabetical dictionary pages. Lowest semantic need.
 - **Steps:** assert every headword button's `family` matches its first letter;
@@ -452,7 +452,7 @@ Target structure:
 - **Done when:** the letter-family assertion passes; existing
   `canonicalFacetCollection` and legacy-link tests green.
 
-### Batch 10 — close out
+### Batch 10 — close out — **DONE**
 
 - Re-run `npm run curriculum:inventory` and `npm run curriculum:audit:status`.
 - Confirm one organizing principle per topic (`policy.md` §Organizing

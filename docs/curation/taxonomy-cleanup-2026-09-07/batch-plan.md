@@ -127,3 +127,35 @@ phase-1 rows above. Model routing per batch is in `next-plan.md`.
 - 2026-09-07 · P2-2a · `35b5d1be` · none (config + code) · no DB change; verbs base 1804→1599 (205 reference cognate verbs now Cognates-only); orphans 0; gaps 0; verb facet buttons −1; `db:test` 14/14.
 - 2026-09-07 · P2-5 · `f7790c3c` · none (config only) · cognates families 3→9, groups 71 (unchanged); base/reachable 787 unchanged; `db:test` 14/14.
 - 2026-09-07 · P2-2b · `35952be0` · verbs-remainder-{A-retag,B-untag-bucket,C-untag-posverb,D-trash-drills} · verb-formal-remainder dissolved (219→0); verbs base 1599→1595; orphans 0; gaps 0; new group `topic:verb-depending-fitting`; 2 rows trashed; `db:test` 14/14.
+- 2026-09-07 · P2-9 · _(verification only)_ · none · Mappings/Phrasal: every headword button's family matches its first letter; Spanish→English "K–O" has genuinely zero members (no multi-sense Spanish lemma in that range — a data fact, not a miscoded button); confusion families and legacy-link tests green.
+- 2026-09-07 · P2-10 · _(this commit)_ · none · close-out: policy.md gains the scope-exclusion and one-axis-per-topic sections; all 22 topics 0 gaps / 0 empty groups / 0 orphans; structure snapshot frozen as the new baseline.
+
+## Checkpoint — Phase 2 (semantic re-audit) COMPLETE, 2026-09-07
+
+Batches P2-1 through P2-10 done (P2-8 beginner-core is the one open item —
+routed to Opus, not started). Final state:
+
+- **0 global orphans · 0 within-topic gaps (all 22 topics) · 0 empty groups**,
+  enforced by `tests/curriculum-reachability.test.ts` (in `db:test`, 14/14).
+- **Verbs**: base 1804→1595. Reference Latinate cognate verbs excluded via
+  `baseExclusions` (display policy, no retag). "Formal & Rare Verbs" bucket
+  dissolved. 11 families, all relabelled where the name misled.
+- **Cognates**: 3 families → 9, by part of speech, verbs split -ar/-er/-ir.
+- **Adjectives**: duplicate `topic:adj-abs-*` axis merged away; 3 families → 5.
+- **Nouns**: flat 33-group "Meaning & context" → 7 predictable families.
+- **Small topics**: verb-forms bug fixed; Transformations Prefixes + dual-tag
+  pairs merged; Adverbs/Prepositions tidied.
+- Roles unchanged bar 2 inflection drills → trash: core 309 · supporting 1111
+  · reference 2796 · trash 232.
+- Structure snapshot + duplicate-axis guard (allow-list now empty) frozen as
+  the baseline.
+
+**Open / flagged:**
+1. **P2-8 beginner-core coverage** — not started, needs Opus. `inventory.json`
+   has per-group `coreCount`; whole families sit near zero.
+2. **20 `REVIEW:`-flagged verb assignments** in
+   `curation-2026-09-07-verbs-remainder-A-retag.tsv` — reasonable calls on
+   ambiguous singletons (to act, to occur, to cause…); spot-check when convenient.
+3. Speculative, deferred: Connectors everyday/discourse family split;
+   Verb-Patterns tense-like family.
+4. `full-audit-findings.md`'s 2 long-standing flagged rows.

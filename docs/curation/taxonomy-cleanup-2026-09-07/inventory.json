@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generatedAt": "2026-09-07T18:54:41.119Z",
+    "generatedAt": "2026-09-07T19:06:11.162Z",
     "totals": {
       "allConcepts": 4448,
       "nonTrash": 4216,
@@ -578,8 +578,8 @@
           ]
         },
         {
-          "id": "modals-time-possibility",
-          "label": "Modals, time & possibility",
+          "id": "modals-wishes-possibility",
+          "label": "Modals, wishes & possibility",
           "confusion": false,
           "groups": [
             {
@@ -661,7 +661,7 @@
             },
             {
               "collection": "topic:verb-communication-other",
-              "label": "Communication — Other",
+              "label": "Communication — Notifying & Telling",
               "count": 38,
               "confusion": false,
               "coreCount": 3
@@ -735,6 +735,13 @@
               "count": 19,
               "confusion": false,
               "coreCount": 2
+            },
+            {
+              "collection": "topic:verb-analysis-investigation",
+              "label": "Analysis & Investigation",
+              "count": 11,
+              "confusion": false,
+              "coreCount": 0
             }
           ]
         },
@@ -1061,21 +1068,14 @@
           ]
         },
         {
-          "id": "formal-specialized",
-          "label": "Formal & specialized",
+          "id": "specialized-actions",
+          "label": "Specialized actions",
           "confusion": false,
           "groups": [
             {
               "collection": "topic:verb-admin-legal-formal",
               "label": "Administrative, Legal & Formal Actions",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-analysis-investigation",
-              "label": "Analysis & Investigation",
-              "count": 11,
+              "count": 21,
               "confusion": false,
               "coreCount": 0
             },
@@ -1097,13 +1097,6 @@
               "collection": "topic:verb-health-body",
               "label": "Body & Health",
               "count": 11,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:verb-formal-abstract",
-              "label": "Formal Actions — Abstract",
-              "count": 4,
               "confusion": false,
               "coreCount": 0
             }
@@ -1772,23 +1765,233 @@
             },
             {
               "collection": "gender:invariant",
-              "label": "No article",
-              "count": 17,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "gender:neuter",
-              "label": "lo (neuter)",
-              "count": 1,
+              "label": "No article / neuter lo",
+              "count": 18,
               "confusion": false,
               "coreCount": 0
             }
           ]
         },
         {
-          "id": "meaning-context",
-          "label": "Meaning & context",
+          "id": "people-family",
+          "label": "People & family",
+          "confusion": false,
+          "groups": [
+            {
+              "collection": "topic:family-immediate",
+              "label": "Family — Immediate",
+              "count": 14,
+              "confusion": false,
+              "coreCount": 4
+            },
+            {
+              "collection": "topic:family-extended",
+              "label": "Family — Extended",
+              "count": 10,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "topic:family-groups-terms",
+              "label": "Family — Groups & Terms",
+              "count": 15,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "topic:people-professions",
+              "label": "People — Professions & Roles",
+              "count": 13,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "topic:people-general",
+              "label": "People — General & Groups",
+              "count": 20,
+              "confusion": false,
+              "coreCount": 0
+            }
+          ]
+        },
+        {
+          "id": "places",
+          "label": "Places",
+          "confusion": false,
+          "groups": [
+            {
+              "collection": "topic:places-home-buildings",
+              "label": "Home & Buildings",
+              "count": 10,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "topic:places-public-city",
+              "label": "Public & City",
+              "count": 13,
+              "confusion": false,
+              "coreCount": 0
+            }
+          ]
+        },
+        {
+          "id": "time-calendar",
+          "label": "Time & calendar",
+          "confusion": false,
+          "groups": [
+            {
+              "collection": "topic:noun-time-months",
+              "label": "Months",
+              "count": 12,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "topic:noun-time-days-periods",
+              "label": "Days & Periods",
+              "count": 21,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "topic:calendar",
+              "label": "Calendar & Relative Time",
+              "count": 20,
+              "confusion": false,
+              "coreCount": 0
+            }
+          ]
+        },
+        {
+          "id": "domains",
+          "label": "Domains",
+          "confusion": false,
+          "groups": [
+            {
+              "collection": "topic:education",
+              "label": "Education",
+              "count": 20,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "topic:business-work",
+              "label": "Work & Employment",
+              "count": 20,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "topic:money-business",
+              "label": "Money & Finance",
+              "count": 11,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "topic:objects-money-business",
+              "label": "Business & Commerce",
+              "count": 12,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "topic:food",
+              "label": "Food",
+              "count": 5,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "topic:technology",
+              "label": "Technology",
+              "count": 9,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "topic:health",
+              "label": "Health",
+              "count": 7,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "topic:government-politics",
+              "label": "Government & Politics",
+              "count": 10,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "topic:crime-law",
+              "label": "Crime & Law",
+              "count": 6,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "topic:art-culture",
+              "label": "Art & Culture",
+              "count": 7,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "topic:communication-request",
+              "label": "Communication & Requests",
+              "count": 10,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "topic:sports-recreation",
+              "label": "Sports & Travel",
+              "count": 5,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "topic:event",
+              "label": "Events",
+              "count": 6,
+              "confusion": false,
+              "coreCount": 0
+            }
+          ]
+        },
+        {
+          "id": "objects-things",
+          "label": "Objects & things",
+          "confusion": false,
+          "groups": [
+            {
+              "collection": "topic:objects-physical",
+              "label": "Physical Items",
+              "count": 10,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "topic:objects-communication-media",
+              "label": "Communication & Media Objects",
+              "count": 7,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "topic:objects-misc-language",
+              "label": "Misc & Language",
+              "count": 11,
+              "confusion": false,
+              "coreCount": 0
+            }
+          ]
+        },
+        {
+          "id": "abstract-nouns-by-suffix",
+          "label": "Abstract nouns by suffix",
           "confusion": false,
           "groups": [
             {
@@ -1825,200 +2028,18 @@
               "count": 5,
               "confusion": false,
               "coreCount": 0
-            },
+            }
+          ]
+        },
+        {
+          "id": "other-abstract-nouns",
+          "label": "Other abstract nouns",
+          "confusion": false,
+          "groups": [
             {
               "collection": "topic:abstract-general",
-              "label": "Abstract — General",
+              "label": "Other abstract nouns",
               "count": 118,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:people-family-rel",
-              "label": "People — Family & Relationships",
-              "count": 30,
-              "confusion": false,
-              "coreCount": 4
-            },
-            {
-              "collection": "topic:people-professions",
-              "label": "People — Professions & Roles",
-              "count": 13,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:people-general",
-              "label": "People — General & Groups",
-              "count": 20,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:objects-money-business",
-              "label": "Objects — Money & Business",
-              "count": 12,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:objects-communication-media",
-              "label": "Objects — Communication & Media",
-              "count": 7,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:objects-physical",
-              "label": "Objects — Physical Items",
-              "count": 10,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:objects-misc-language",
-              "label": "Objects — Misc & Language",
-              "count": 11,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:noun-time-months",
-              "label": "Time — Months",
-              "count": 12,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:noun-time-days-periods",
-              "label": "Time — Days & Periods",
-              "count": 21,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:family-immediate",
-              "label": "Family — Immediate",
-              "count": 14,
-              "confusion": false,
-              "coreCount": 4
-            },
-            {
-              "collection": "topic:family-extended",
-              "label": "Family — Extended",
-              "count": 10,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:family-groups-terms",
-              "label": "Family — Groups & Terms",
-              "count": 15,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:places-home-buildings",
-              "label": "Places — Home & Buildings",
-              "count": 10,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:places-public-city",
-              "label": "Places — Public & City",
-              "count": 13,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:calendar",
-              "label": "Calendar",
-              "count": 20,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:education",
-              "label": "Education",
-              "count": 20,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:business-work",
-              "label": "Business & work",
-              "count": 20,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:money-business",
-              "label": "Money",
-              "count": 11,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:food",
-              "label": "Food",
-              "count": 5,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:technology",
-              "label": "Technology",
-              "count": 9,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:health",
-              "label": "Health",
-              "count": 7,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:government-politics",
-              "label": "Government & politics",
-              "count": 10,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:crime-law",
-              "label": "Crime & law",
-              "count": 6,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:art-culture",
-              "label": "Art & culture",
-              "count": 7,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:communication-request",
-              "label": "Communication & requests",
-              "count": 10,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:sports-recreation",
-              "label": "Sports & travel",
-              "count": 5,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:event",
-              "label": "Events",
-              "count": 6,
               "confusion": false,
               "coreCount": 0
             }
@@ -2038,161 +2059,84 @@
       "withinTopicGapIds": [],
       "families": [
         {
-          "id": "meaning-context",
-          "label": "Meaning & context",
+          "id": "adjective-endings",
+          "label": "Adjective endings",
           "confusion": false,
           "groups": [
             {
               "collection": "topic:adj-oso-osa",
-              "label": "ser, -oso/-osa",
-              "count": 9,
+              "label": "-oso/-osa (famoso, nervioso)",
+              "count": 17,
               "confusion": false,
               "coreCount": 0
             },
             {
               "collection": "topic:adj-ico-ica",
-              "label": "ser, -ico/-ica",
-              "count": 18,
+              "label": "-ico/-ica (práctico, típico)",
+              "count": 19,
               "confusion": false,
               "coreCount": 0
             },
             {
               "collection": "topic:adj-ivo-iva",
-              "label": "ser, -ivo/-iva",
-              "count": 11,
+              "label": "-ivo/-iva (activo, creativo)",
+              "count": 13,
               "confusion": false,
               "coreCount": 0
             },
             {
               "collection": "topic:adj-able",
-              "label": "ser, -able",
-              "count": 13,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:adj-ible",
-              "label": "ser, -ible",
-              "count": 11,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:adj-ente",
-              "label": "ser, -ente",
-              "count": 8,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:adj-al",
-              "label": "ser, -al",
-              "count": 16,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:adj-ano-ana",
-              "label": "ser, -ano/-ana",
-              "count": 8,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:adj-ser-general",
-              "label": "ser, general",
-              "count": 116,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:estar-adj",
-              "label": "estar (state),",
-              "count": 24,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:adj-abs-oso-osa",
-              "label": "Abstract quality — -oso/-osa",
-              "count": 12,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:adj-abs-ico-ica",
-              "label": "Abstract quality — -ico/-ica",
-              "count": 11,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:adj-abs-ivo-iva",
-              "label": "Abstract quality — -ivo/-iva",
-              "count": 13,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:adj-abs-able",
-              "label": "Abstract quality — -able",
-              "count": 13,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:adj-abs-ible",
-              "label": "Abstract quality — -ible",
-              "count": 10,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:adj-abs-ente",
-              "label": "Abstract quality — -ente",
-              "count": 11,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:adj-abs-al",
-              "label": "Abstract quality — -al",
+              "label": "-able (aceptable, notable)",
               "count": 14,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "topic:adj-abs-general",
-              "label": "Abstract quality — General",
-              "count": 135,
-              "confusion": false,
-              "coreCount": 5
-            },
-            {
-              "collection": "topic:condition-state",
-              "label": "Condition / state",
-              "count": 23,
-              "confusion": false,
-              "coreCount": 1
-            },
-            {
-              "collection": "topic:emotion-physical-sensation",
-              "label": "Emotion — Physical Sensation",
-              "count": 9,
-              "confusion": false,
-              "coreCount": 5
-            },
-            {
-              "collection": "topic:emotion-feeling",
-              "label": "Emotion — Feeling",
-              "count": 15,
+              "collection": "topic:adj-ible",
+              "label": "-ible (posible, visible)",
+              "count": 12,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "topic:personality",
-              "label": "Personality",
-              "count": 18,
+              "collection": "topic:adj-ente",
+              "label": "-ente (diferente, evidente)",
+              "count": 11,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "topic:adj-al",
+              "label": "-al (natural, general)",
+              "count": 19,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "topic:adj-ano-ana",
+              "label": "-ano/-ana (americano, cotidiano)",
+              "count": 8,
+              "confusion": false,
+              "coreCount": 0
+            }
+          ]
+        },
+        {
+          "id": "semantic-themes",
+          "label": "Semantic themes",
+          "confusion": false,
+          "groups": [
+            {
+              "collection": "topic:color",
+              "label": "Color",
+              "count": 11,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "topic:size",
+              "label": "Size",
+              "count": 8,
               "confusion": false,
               "coreCount": 0
             },
@@ -2204,16 +2148,30 @@
               "coreCount": 0
             },
             {
-              "collection": "topic:value-price",
-              "label": "Value / price",
-              "count": 12,
+              "collection": "topic:speed",
+              "label": "Speed",
+              "count": 4,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "topic:size",
-              "label": "Size",
-              "count": 8,
+              "collection": "topic:weather",
+              "label": "Weather",
+              "count": 3,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "topic:time",
+              "label": "Time",
+              "count": 7,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "topic:value-price",
+              "label": "Value / price",
+              "count": 12,
               "confusion": false,
               "coreCount": 0
             },
@@ -2232,32 +2190,32 @@
               "coreCount": 0
             },
             {
-              "collection": "topic:color",
-              "label": "Color",
-              "count": 11,
+              "collection": "topic:personality",
+              "label": "Personality",
+              "count": 18,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "topic:weather",
-              "label": "Weather",
-              "count": 3,
+              "collection": "topic:emotion-physical-sensation",
+              "label": "Emotion — Physical Sensation",
+              "count": 9,
+              "confusion": false,
+              "coreCount": 5
+            },
+            {
+              "collection": "topic:emotion-feeling",
+              "label": "Emotion — Feeling",
+              "count": 15,
               "confusion": false,
               "coreCount": 0
             },
             {
-              "collection": "topic:speed",
-              "label": "Speed",
-              "count": 4,
+              "collection": "topic:condition-state",
+              "label": "Condition / state",
+              "count": 23,
               "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "topic:time",
-              "label": "Time",
-              "count": 7,
-              "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             }
           ]
         },
@@ -2266,6 +2224,13 @@
           "label": "How it's used",
           "confusion": false,
           "groups": [
+            {
+              "collection": "topic:estar-adj",
+              "label": "estar (temporary state)",
+              "count": 24,
+              "confusion": false,
+              "coreCount": 1
+            },
             {
               "collection": "grammar:tener-adjective",
               "label": "tener (idiom)",
@@ -2283,8 +2248,8 @@
           ]
         },
         {
-          "id": "comparisons",
-          "label": "Comparisons",
+          "id": "comparison",
+          "label": "Comparison",
           "confusion": false,
           "groups": [
             {
@@ -2328,6 +2293,20 @@
               "count": 3,
               "confusion": false,
               "coreCount": 0
+            }
+          ]
+        },
+        {
+          "id": "other-descriptive-adjectives",
+          "label": "Other descriptive adjectives",
+          "confusion": false,
+          "groups": [
+            {
+              "collection": "topic:adj-ser-general",
+              "label": "Other descriptive adjectives",
+              "count": 131,
+              "confusion": false,
+              "coreCount": 1
             }
           ]
         }
@@ -2412,13 +2391,6 @@
           "label": "Meaning & context",
           "confusion": false,
           "groups": [
-            {
-              "collection": "topic:adv-time-frequency",
-              "label": "Time — Frequency",
-              "count": 9,
-              "confusion": false,
-              "coreCount": 2
-            },
             {
               "collection": "topic:adv-time-relative-day",
               "label": "Time — Relative Day",
@@ -2739,24 +2711,10 @@
             },
             {
               "collection": "grammar:purpose",
-              "label": "Purpose",
-              "count": 1,
+              "label": "Purpose, without & except",
+              "count": 3,
               "confusion": false,
               "coreCount": 1
-            },
-            {
-              "collection": "grammar:negative",
-              "label": "Without",
-              "count": 1,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "grammar:exception",
-              "label": "Except",
-              "count": 1,
-              "confusion": false,
-              "coreCount": 0
             }
           ]
         }
@@ -5598,6 +5556,13 @@
               "coreCount": 0
             },
             {
+              "collection": "morphology:prefix-common",
+              "label": "Common prefixes (un-, dis-, mis-, re-, over-, under-, fore-)",
+              "count": 17,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
               "collection": "topic:morph-noun-to-adj",
               "label": "noun → adjective",
               "count": 52,
@@ -5640,13 +5605,6 @@
               "coreCount": 0
             },
             {
-              "collection": "morphology:adjective-to-adverb",
-              "label": "adjective → adverb",
-              "count": 8,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
               "collection": "morphology:adjective-to-adjective",
               "label": "adjective → adjective",
               "count": 8,
@@ -5668,13 +5626,6 @@
               "coreCount": 0
             },
             {
-              "collection": "topic:morph-expr-to-adv",
-              "label": "expression → adverb",
-              "count": 24,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
               "collection": "morphology:expression-to-adjective",
               "label": "expression → adjective",
               "count": 1,
@@ -5685,62 +5636,6 @@
               "collection": "morphology:number-to-expression",
               "label": "number → expression",
               "count": 3,
-              "confusion": false,
-              "coreCount": 0
-            }
-          ]
-        },
-        {
-          "id": "prefixes",
-          "label": "Prefixes",
-          "confusion": false,
-          "groups": [
-            {
-              "collection": "morphology:prefix-un",
-              "label": "un- (happy → unhappy)",
-              "count": 1,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "morphology:prefix-dis",
-              "label": "dis- (connect → disconnect)",
-              "count": 2,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "morphology:prefix-mis",
-              "label": "mis- (understand → misunderstand)",
-              "count": 2,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "morphology:prefix-re",
-              "label": "re- (write → rewrite)",
-              "count": 1,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "morphology:prefix-over",
-              "label": "over- (cook → overcook)",
-              "count": 2,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "morphology:prefix-under",
-              "label": "under- (estimate → underestimate)",
-              "count": 1,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "morphology:prefix-fore",
-              "label": "fore- (see → foresee)",
-              "count": 8,
               "confusion": false,
               "coreCount": 0
             }
@@ -5760,8 +5655,8 @@
       "withinTopicGapIds": [],
       "families": [
         {
-          "id": "irregular-patterns",
-          "label": "Irregular patterns",
+          "id": "regular-endings",
+          "label": "Regular endings",
           "confusion": false,
           "groups": [
             {
@@ -5771,6 +5666,27 @@
               "confusion": false,
               "coreCount": 0
             },
+            {
+              "collection": "sound:regular-past-pronounced-t",
+              "label": "regular /t/ (watched)",
+              "count": 4,
+              "confusion": false,
+              "coreCount": 0
+            },
+            {
+              "collection": "sound:regular-past-pronounced-id",
+              "label": "regular /ɪd/ (wanted)",
+              "count": 14,
+              "confusion": false,
+              "coreCount": 0
+            }
+          ]
+        },
+        {
+          "id": "irregular-patterns",
+          "label": "Irregular patterns",
+          "confusion": false,
+          "groups": [
             {
               "collection": "topic:vf-cut-hit-hurt",
               "label": "unchanged (cut)",
@@ -6120,27 +6036,6 @@
               "count": 179,
               "confusion": false,
               "coreCount": 2
-            }
-          ]
-        },
-        {
-          "id": "regular-endings",
-          "label": "Regular endings",
-          "confusion": false,
-          "groups": [
-            {
-              "collection": "sound:regular-past-pronounced-t",
-              "label": "regular /t/ (watched)",
-              "count": 4,
-              "confusion": false,
-              "coreCount": 0
-            },
-            {
-              "collection": "sound:regular-past-pronounced-id",
-              "label": "regular /ɪd/ (wanted)",
-              "count": 14,
-              "confusion": false,
-              "coreCount": 0
             }
           ]
         }

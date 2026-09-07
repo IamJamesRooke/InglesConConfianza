@@ -112,3 +112,30 @@ Distinguish the **group** from its **concepts**:
 - Update `topics.ts` / `navigation.ts` / audit specs / tests in the same batch
   as the DB change so deep links and counts stay correct.
 - One commit per batch; snapshot + `db:verify` + `db:test` green before commit.
+
+## Topic scope exclusions (added Phase 2, 2026-09-07)
+
+A topic page is normally scoped to its `baseCollection` alone. A topic may also
+declare `baseExclusions` in `topics.ts` — material that carries the base tag
+but does not belong in that page's browser. Verbs uses this to keep
+`reference`-role Latinate cognate verbs (to abstain, to depose) off the
+teaching browser; they stay on Cognates, and the `core`/`supporting` cognate
+verbs (to prepare, to decide) remain on Verbs.
+
+- It is a **display policy**, not a fact about the concept: no row is retagged,
+  the `pos:` tag stays true, and a later role promotion restores visibility on
+  its own. Prefer it over untagging when the goal is "keep this off one page".
+- The rule lives in **one predicate**, `conceptInTopicScope` in
+  `src/lib/curriculum/scope.ts`, with a Prisma twin in `curriculum-store.ts`.
+  The page query, `curriculum-inventory.ts`, and
+  `tests/curriculum-reachability.test.ts` all call it. Never re-implement the
+  scope check anywhere else.
+
+## One organizing axis per topic (reaffirmed Phase 2)
+
+Every facet button carries an explicit `family:` string. Sibling families
+under a topic must be parallel branches of one idea. Two buttons on the same
+topic whose members are near-identical (Jaccard > 0.8) are one axis entered
+twice — a defect. `tests/curriculum-reachability.test.ts` guards this and the
+exact `{topic: [family, group-count]}` structure snapshot; both are updated
+deliberately, per batch, as a reviewed diff.
