@@ -23,28 +23,10 @@ const ORDER = [
   "cognates",
 ];
 
-// Five priority tiers (Phase 3, docs/curation/role-granularity/plan.md).
-// `core` is the WHOLE grammatical operating system on a limited vocabulary: the
-// full pronoun / determiner / connector / preposition sets, the question words,
-// the verb machinery (ser/estar/tener/ir/haber conjugation, negation, questions,
-// the perfect, the modals, comparison), and every grammatical construction
-// (verb-complementation patterns, conditionals, exclamatives, gustar-type
-// verbs). It is ~20% of the catalog — that is the size of the Spanish grammar,
-// not vocabulary bloat. The non-grammar rows in `core` are the tiny "limited
-// vocabulary" of the MVP. High frequency is NOT what puts a row in `core`;
-// "querer" is core (carries structure), "comer" is not.
-//   essential — the small everyday-content set the MVP still teaches explicitly
-//   common    — the course right after the MVP; mid-tier everyday vocabulary
-//   extended  — the pool of vocabulary for later / advanced courses
-//   rare      — transparent cognates, paradigm drills, bare mapping anchors
-const ROLE_TARGETS: Record<string, [number, number]> = {
-  core: [17, 24],
-  essential: [6, 11],
-  common: [13, 22],
-  extended: [20, 32],
-  rare: [20, 30],
-  trash: [3, 6],
-};
+// The old machine-assigned tier ladder was scrapped 2026-09-08 for a
+// hand-assigned priority ladder (P1..P5 / Unranked / Trash). There are no
+// distribution targets yet — everything starts Unranked and is ranked by hand.
+const ROLE_TARGETS: Record<string, [number, number]> = {};
 
 async function main() {
   const args = process.argv.slice(2);
@@ -60,11 +42,11 @@ async function main() {
     if (!topic) continue;
     for (const f of topic.facetButtons) {
       const total = await prisma.curriculumConcept.count({
-        where: { curriculumRole: { not: "trash" }, collections: { some: { collectionName: f.collection } } },
+        where: { curriculumRole: { not: "Trash" }, collections: { some: { collectionName: f.collection } } },
       });
       const reviewed = await prisma.curriculumConcept.count({
         where: {
-          curriculumRole: { not: "trash" },
+          curriculumRole: { not: "Trash" },
           collections: {
             some: { collectionName: f.collection },
           },
@@ -81,9 +63,9 @@ async function main() {
   console.log(`=== Full audit status ===`);
   console.log(`Track A units: ${done.length}/${units.length} fully reviewed`);
 
-  const totalConcepts = await prisma.curriculumConcept.count({ where: { curriculumRole: { not: "trash" } } });
+  const totalConcepts = await prisma.curriculumConcept.count({ where: { curriculumRole: { not: "Trash" } } });
   const reviewedConcepts = await prisma.curriculumConcept.count({
-    where: { curriculumRole: { not: "trash" }, collections: { some: { collectionName: "audit:reviewed" } } },
+    where: { curriculumRole: { not: "Trash" }, collections: { some: { collectionName: "audit:reviewed" } } },
   });
   const flaggedConcepts = await prisma.curriculumConcept.count({
     where: { collections: { some: { collectionName: "audit:flagged" } } },

@@ -121,7 +121,7 @@ async function main() {
 
   for (const pos of ["pos:noun", "pos:adjective"]) {
     const rows = await prisma.curriculumConcept.findMany({
-      where: { curriculumRole: { not: "trash" }, collections: { some: { collectionName: pos } } },
+      where: { curriculumRole: { not: "Trash" }, collections: { some: { collectionName: pos } } },
       select: { id: true, spanish: true, english: true, curriculumRole: true, collections: { select: { collectionName: true } } },
     });
     const needsTheme = rows.filter(

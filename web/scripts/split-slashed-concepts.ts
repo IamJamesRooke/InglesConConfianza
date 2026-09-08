@@ -101,7 +101,7 @@ function planFor(row: Row): Plan {
 async function main() {
   const apply = process.argv.includes("--apply");
   const rows = (await prisma.curriculumConcept.findMany({
-    where: { spanish: { contains: "/" }, curriculumRole: { not: "trash" } },
+    where: { spanish: { contains: "/" }, curriculumRole: { not: "Trash" } },
     include: { collections: { orderBy: { position: "asc" } } },
     orderBy: { sortOrder: "asc" },
   })) as Row[];

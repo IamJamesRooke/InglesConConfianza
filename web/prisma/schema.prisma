@@ -7,13 +7,16 @@ datasource db {
   provider = "postgresql"
 }
 
+// Declaration order = priority order (P1 highest). `ORDER BY curriculum_role`
+// relies on it. New rows default to Unranked and are promoted by hand.
 enum CurriculumRole {
-  core
-  essential
-  common
-  extended
-  rare
-  trash
+  P1
+  P2
+  P3
+  P4
+  P5
+  Unranked
+  Trash
 }
 
 model CurriculumConcept {
@@ -22,7 +25,7 @@ model CurriculumConcept {
   english        String              @db.Text
   exampleSpanish String              @map("example_spanish") @db.Text
   exampleEnglish String              @map("example_english") @db.Text
-  curriculumRole CurriculumRole      @map("curriculum_role")
+  curriculumRole CurriculumRole      @default(Unranked) @map("curriculum_role")
   sortOrder      Int                 @unique @map("sort_order")
   collections    ConceptCollection[]
 

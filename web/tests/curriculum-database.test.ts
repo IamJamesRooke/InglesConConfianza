@@ -256,7 +256,7 @@ test("the imported curriculum is exact and protected", async (context) => {
         where: { id: firstConcept.id },
         data: {
           curriculumRole:
-            firstConcept.curriculumRole === "core" ? "rare" : "core",
+            firstConcept.curriculumRole === "P1" ? "P5" : "P1",
         },
       });
       throw new Error("intentional rollback");
@@ -276,7 +276,7 @@ test("the imported curriculum is exact and protected", async (context) => {
         english: "temporary test",
         exampleSpanish: "Prueba temporal.",
         exampleEnglish: "Temporary test.",
-        curriculumRole: "rare",
+        curriculumRole: "P5",
         sortOrder: -1,
       },
     }),

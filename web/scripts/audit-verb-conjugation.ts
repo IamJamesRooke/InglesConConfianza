@@ -40,7 +40,7 @@ function valuesOf(tags: string[], facet: string): string[] {
 export async function auditVerbConjugation() {
   const rows = await prisma.curriculumConcept.findMany({
     where: {
-      curriculumRole: { not: "trash" },
+      curriculumRole: { not: "Trash" },
       OR: [
         { collections: { some: { collectionName: { startsWith: "sense:" } } } },
         { collections: { some: { collectionName: { startsWith: "conjugation:" } } } },

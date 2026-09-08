@@ -15,7 +15,7 @@ export type LessonConceptSuggestion = SuggestionConceptDisplay & {
   priorityBand: ConceptPriorityBand;
 };
 
-const teachableRoles = curriculumRoles.filter((role) => role !== "trash");
+const teachableRoles = curriculumRoles.filter((role) => role !== "Trash");
 
 export function conceptPriority(role?: string) {
   const index = teachableRoles.findIndex((candidate) => candidate === role);
@@ -59,7 +59,7 @@ export function suggestConceptsForLesson({
     .flatMap(([conceptId, lastSeenIndex]) => {
       if (currentConceptIds.has(conceptId)) return [];
       const display = conceptDisplays[conceptId];
-      if (!display || display.role === "trash") return [];
+      if (!display || display.role === "Trash") return [];
       return [
         {
           conceptId,

@@ -90,7 +90,7 @@ function looksLikePhrasalVerb(spanish: string, english: string, tags: string[]):
 
 export async function auditPhrasalVerbs() {
   const allConcepts = await prisma.curriculumConcept.findMany({
-    where: { curriculumRole: { not: "trash" } },
+    where: { curriculumRole: { not: "Trash" } },
     select: {
       id: true,
       spanish: true,

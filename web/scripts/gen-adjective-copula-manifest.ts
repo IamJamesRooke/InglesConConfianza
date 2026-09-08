@@ -49,7 +49,7 @@ const OTHER_COPULA: Record<string, { spanish: string; english: string }> = {
 async function main() {
   const adjs = await prisma.curriculumConcept.findMany({
     where: {
-      curriculumRole: { not: "trash" },
+      curriculumRole: { not: "Trash" },
       collections: { some: { collectionName: "pos:adjective" } },
     },
     select: { id: true, spanish: true, english: true, curriculumRole: true },

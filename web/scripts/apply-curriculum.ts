@@ -10,7 +10,7 @@ import path from "node:path";
 //   npm run curriculum:apply <manifest.tsv> [...]            # dry run
 //   npm run curriculum:apply <manifest.tsv> [...] --apply     # write the chain
 
-const ROLES = new Set(["core", "supporting", "reference", "trash"]);
+const ROLES = new Set(["P1", "P2", "P3", "P4", "P5", "Unranked", "Trash"]);
 const ID = /^[0-9a-z]{10}$/;
 
 type Kind = "concept" | "role" | "add" | "untag" | "collection";

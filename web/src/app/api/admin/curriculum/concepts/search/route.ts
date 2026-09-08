@@ -18,7 +18,7 @@ export async function GET(request: Request) {
 
   const concepts = await prisma.curriculumConcept.findMany({
     where: {
-      curriculumRole: { not: "trash" },
+      curriculumRole: { not: "Trash" },
       OR: [
         { spanish: { contains: query, mode: "insensitive" } },
         { english: { contains: query, mode: "insensitive" } },

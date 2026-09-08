@@ -5,7 +5,7 @@ async function main() {
   const big: {slug:string,label:string,collection:string,count:number}[] = [];
   for (const topic of CURRICULUM_TOPICS) {
     for (const btn of topic.facetButtons || []) {
-      const count = await prisma.curriculumConcept.count({ where: { curriculumRole: { not: "trash" }, collections: { some: { collectionName: btn.collection } } } });
+      const count = await prisma.curriculumConcept.count({ where: { curriculumRole: { not: "Trash" }, collections: { some: { collectionName: btn.collection } } } });
       if (count > 20) big.push({ slug: topic.slug, label: btn.label, collection: btn.collection, count });
     }
   }

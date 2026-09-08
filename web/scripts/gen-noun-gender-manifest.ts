@@ -74,7 +74,7 @@ const OVERRIDES: Record<string, { spanish: string; gender: string }> = {
 async function main() {
   const nouns = await prisma.curriculumConcept.findMany({
     where: {
-      curriculumRole: { not: "trash" },
+      curriculumRole: { not: "Trash" },
       collections: { some: { collectionName: "pos:noun" } },
     },
     select: { id: true, spanish: true, english: true, curriculumRole: true },

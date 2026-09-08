@@ -113,7 +113,7 @@ export async function readCoverageReport(): Promise<CoverageReport> {
       timesTaught: lessonNumbers.length,
       lessonsSinceLast: lessonCount - lastLesson,
     };
-    if (row.curriculumRole === "trash") {
+    if (row.curriculumRole === "Trash") {
       trashed.push(coveredConcept);
     } else {
       concepts.push(coveredConcept);

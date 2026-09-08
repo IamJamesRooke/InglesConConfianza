@@ -142,7 +142,7 @@ export async function auditTopic(spec: TopicAuditSpec) {
 
   const concepts = await prisma.curriculumConcept.findMany({
     where: {
-      curriculumRole: { not: "trash" },
+      curriculumRole: { not: "Trash" },
       collections: { some: { collectionName: baseCollection } },
     },
     select: {

@@ -103,7 +103,7 @@ function valuesOf(tags: string[], facet: string): string[] {
 export async function auditCognates() {
   const rows = await prisma.curriculumConcept.findMany({
     where: {
-      curriculumRole: { not: "trash" },
+      curriculumRole: { not: "Trash" },
       collections: { some: { collectionName: { startsWith: "cognate:" } } },
     },
     select: {

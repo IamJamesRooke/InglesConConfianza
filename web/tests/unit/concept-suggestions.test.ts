@@ -21,18 +21,18 @@ function lesson(id: string, conceptIds: Array<string | null>): Lesson {
 }
 
 const displays = {
-  core: { spanish: "núcleo", english: "core", role: "core" },
+  core: { spanish: "núcleo", english: "core", role: "P1" },
   support: {
     spanish: "apoyo",
     english: "support",
-    role: "common",
+    role: "P3",
   },
   reference: {
     spanish: "referencia",
     english: "reference",
-    role: "rare",
+    role: "P5",
   },
-  trash: { spanish: "basura", english: "trash", role: "trash" },
+  trash: { spanish: "basura", english: "trash", role: "Trash" },
 };
 
 test("suggestions rank cold concepts from their latest earlier appearance", () => {
@@ -93,8 +93,8 @@ test("suggestions respond only to the supplied current lesson order", () => {
 });
 
 test("priority bands follow canonical role order with a neutral fallback", () => {
-  assert.equal(conceptPriority("core").band, "high");
-  assert.equal(conceptPriority("common").band, "medium");
-  assert.equal(conceptPriority("rare").band, "low");
+  assert.equal(conceptPriority("P1").band, "high");
+  assert.equal(conceptPriority("P3").band, "medium");
+  assert.equal(conceptPriority("P5").band, "low");
   assert.equal(conceptPriority("future-tier").band, "neutral");
 });

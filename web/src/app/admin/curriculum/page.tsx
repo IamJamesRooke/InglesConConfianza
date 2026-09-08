@@ -11,7 +11,7 @@ import {
   readCurriculumNavigationCounts,
   readCurriculumPage,
 } from "@/lib/curriculum/server/curriculum-store";
-import type { CurriculumRole } from "@/lib/curriculum/types";
+import { curriculumRoles, type CurriculumRole } from "@/lib/curriculum/types";
 import {
   CURRICULUM_TOPICS,
   findCurriculumTopic,
@@ -57,9 +57,9 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
 
   const requestedPage = Number.parseInt(first(parameters.page) ?? "1", 10);
   const requestedRole = first(parameters.role);
-  const role: CurriculumRole | "all" = (
-    ["core", "essential", "common", "extended", "rare", "trash"] as const
-  ).includes(requestedRole as CurriculumRole)
+  const role: CurriculumRole | "all" = curriculumRoles.includes(
+    requestedRole as CurriculumRole,
+  )
     ? (requestedRole as CurriculumRole)
     : "all";
   const sortParam = first(parameters.sort);

@@ -55,28 +55,48 @@
   color: var(--role-foreground);
 }
 
-.role-core {
-  --role-border: oklch(0.68 0.14 155);
-  --role-background: oklch(0.92 0.075 155);
-  --role-foreground: oklch(0.31 0.11 155);
+/* Priority ladder: P1 (hot red) -> P5 (cool slate), Unranked neutral grey,
+   Trash dark red. */
+.role-P1 {
+  --role-border: oklch(0.63 0.22 27);
+  --role-background: oklch(0.93 0.055 27);
+  --role-foreground: oklch(0.42 0.19 27);
 }
 
-.role-supporting {
+.role-P2 {
+  --role-border: oklch(0.7 0.16 55);
+  --role-background: oklch(0.93 0.06 55);
+  --role-foreground: oklch(0.44 0.14 55);
+}
+
+.role-P3 {
+  --role-border: oklch(0.78 0.14 90);
+  --role-background: oklch(0.94 0.07 90);
+  --role-foreground: oklch(0.46 0.11 90);
+}
+
+.role-P4 {
   --role-border: oklch(0.68 0.13 245);
   --role-background: oklch(0.92 0.065 245);
   --role-foreground: oklch(0.31 0.11 245);
 }
 
-.role-reference {
+.role-P5 {
+  --role-border: oklch(0.7 0.05 255);
+  --role-background: oklch(0.92 0.03 255);
+  --role-foreground: oklch(0.38 0.05 255);
+}
+
+.role-Unranked {
   --role-border: oklch(0.72 0.02 260);
   --role-background: oklch(0.92 0.015 260);
   --role-foreground: oklch(0.4 0.025 260);
 }
 
-.role-trash {
-  --role-border: oklch(0.63 0.22 27);
-  --role-background: oklch(0.92 0.06 27);
-  --role-foreground: oklch(0.4 0.19 27);
+.role-Trash {
+  --role-border: oklch(0.5 0.12 20);
+  --role-background: oklch(0.88 0.04 20);
+  --role-foreground: oklch(0.34 0.13 20);
 }
 
 :root[data-theme="night"] .role-select,

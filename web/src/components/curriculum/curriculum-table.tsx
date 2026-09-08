@@ -40,33 +40,37 @@ const curriculumRoles: Array<{
   description: string;
 }> = [
   {
-    value: "core",
-    label: "Core",
-    description:
-      "MVP set — the minimum to build correct sentences with a dictionary",
+    value: "P1",
+    label: "P1",
+    description: "Highest leverage — teach first",
   },
   {
-    value: "essential",
-    label: "Essential",
-    description: "High-utility content vocab an MVP still teaches explicitly",
+    value: "P2",
+    label: "P2",
+    description: "High priority",
   },
   {
-    value: "common",
-    label: "Common",
-    description: "Standard vocab for the course after the MVP",
+    value: "P3",
+    label: "P3",
+    description: "Mid priority",
   },
   {
-    value: "extended",
-    label: "Extended",
-    description: "Real but later — formal, abstract, specialized, most phrasals",
+    value: "P4",
+    label: "P4",
+    description: "Lower priority — later in the course",
   },
   {
-    value: "rare",
-    label: "Rare",
-    description: "Dictionary/drill completeness only — never explicitly taught",
+    value: "P5",
+    label: "P5",
+    description: "Lowest — niche / completeness only",
   },
   {
-    value: "trash",
+    value: "Unranked",
+    label: "Unranked",
+    description: "Not yet triaged — the default for every row",
+  },
+  {
+    value: "Trash",
     label: "Trash",
     description: "Flagged for deletion — filter by this role and bulk delete",
   },
@@ -766,7 +770,7 @@ export function CurriculumTable({
       targets.map((concept) => {
         const updatedConcept = {
           ...concept,
-          curriculumRole: "trash" as const,
+          curriculumRole: "Trash" as const,
         };
         return fetch(
           `/api/admin/curriculum/concepts/${encodeURIComponent(concept.id)}`,
@@ -794,7 +798,7 @@ export function CurriculumTable({
     setConcepts((currentConcepts) =>
       currentConcepts.map((concept) =>
         updatedIds.has(concept.id)
-          ? { ...concept, curriculumRole: "trash" }
+          ? { ...concept, curriculumRole: "Trash" }
           : concept,
       ),
     );
@@ -1624,23 +1628,23 @@ export function CurriculumTable({
             <button
               type="button"
               onClick={() =>
-                selectedRole === "trash"
+                selectedRole === "Trash"
                   ? void deleteSelected()
                   : void moveSelectedToTrash()
               }
               disabled={bulkDeleting}
               className={`inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-semibold transition hover:opacity-90 disabled:opacity-40 ${
-                selectedRole === "trash"
+                selectedRole === "Trash"
                   ? "bg-destructive text-destructive-foreground"
                   : "bg-primary text-primary-foreground"
               }`}
             >
               <Trash2 className="size-3.5" aria-hidden="true" />
               {bulkDeleting
-                ? selectedRole === "trash"
+                ? selectedRole === "Trash"
                   ? "Deleting…"
                   : "Moving…"
-                : selectedRole === "trash"
+                : selectedRole === "Trash"
                   ? `Delete ${selectedIds.size} selected`
                   : `Move ${selectedIds.size} to Trash`}
             </button>
@@ -2115,7 +2119,7 @@ export function CurriculumTable({
                     Open Lesson {coverage[detailConcept.id].lessonNumber}
                   </a>
                 )}
-                {detailConcept.curriculumRole === "trash" ? (
+                {detailConcept.curriculumRole === "Trash" ? (
                   <button
                     type="button"
                     disabled={pendingConceptId !== null}
@@ -2129,7 +2133,7 @@ export function CurriculumTable({
                   <button
                     type="button"
                     disabled={pendingConceptId !== null}
-                    onClick={() => void updateRole(detailConcept, "trash")}
+                    onClick={() => void updateRole(detailConcept, "Trash")}
                     className="ml-auto inline-flex items-center gap-1.5 rounded-md px-3 py-2 text-xs font-semibold text-destructive transition hover:bg-destructive/10 disabled:opacity-40"
                   >
                     <Trash2 className="size-3.5" aria-hidden="true" />

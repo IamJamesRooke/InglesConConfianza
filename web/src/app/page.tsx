@@ -30,7 +30,7 @@ export default async function HomePage({
     const display = concept.conceptId
       ? conceptDisplays[concept.conceptId]
       : undefined;
-    if (!display || display.role === "trash") return null;
+    if (!display || display.role === "Trash") return null;
     return {
       id: concept.id,
       spanish: display.spanish,

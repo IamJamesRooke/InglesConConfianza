@@ -10,29 +10,34 @@ export type CurriculumConcept = {
   curriculumRole: CurriculumRole;
 };
 
-// Priority tiers for course sequencing, ordered most → least priority.
-// See docs/curation/role-granularity/plan.md.
-//   core      — the MVP set: minimum to build correct sentences with a dictionary
-//   essential — high-utility content vocab an MVP still teaches explicitly
-//   common    — standard vocab for the course after the MVP
-//   extended  — real but later (formal/abstract/specialized, most phrasal verbs)
-//   rare      — dictionary/drill completeness only, never explicitly taught
-//   trash     — malformed / duplicate / not real content
+// Priority tiers for course sequencing, ordered most → least priority. These
+// are hand-assigned, one row at a time — start everything at "Unranked" and
+// promote organically. The enum's declaration order (here and in the Postgres
+// type) is the priority order, so `ORDER BY curriculum_role` sorts correctly.
+//   P1       — highest leverage, teach first
+//   P2       — high priority
+//   P3       — mid priority
+//   P4       — lower priority, later in the course
+//   P5       — lowest, niche / completeness only
+//   Unranked — not yet triaged (the default for every row)
+//   Trash    — malformed / duplicate / not real content, staged for deletion
 export type CurriculumRole =
-  | "core"
-  | "essential"
-  | "common"
-  | "extended"
-  | "rare"
-  | "trash";
+  | "P1"
+  | "P2"
+  | "P3"
+  | "P4"
+  | "P5"
+  | "Unranked"
+  | "Trash";
 
 export const curriculumRoles: CurriculumRole[] = [
-  "core",
-  "essential",
-  "common",
-  "extended",
-  "rare",
-  "trash",
+  "P1",
+  "P2",
+  "P3",
+  "P4",
+  "P5",
+  "Unranked",
+  "Trash",
 ];
 
 export type CurriculumFile = {

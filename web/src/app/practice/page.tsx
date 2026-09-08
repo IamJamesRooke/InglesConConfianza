@@ -63,7 +63,7 @@ export default async function PracticePage({ searchParams }: PageProps) {
         )
           return [];
         const display = conceptDisplays[concept.conceptId];
-        return display && display.role !== "trash"
+        return display && display.role !== "Trash"
           ? [
               {
                 id: concept.id,

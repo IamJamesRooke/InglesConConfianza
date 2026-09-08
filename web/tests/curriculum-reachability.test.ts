@@ -39,7 +39,7 @@ test.before(async () => {
     role: r.curriculumRole,
     cols: new Set(r.collections.map((c) => c.collectionName)),
   }));
-  nonTrash = rows.filter((r) => r.role !== "trash");
+  nonTrash = rows.filter((r) => r.role !== "Trash");
 });
 
 test.after(async () => {
@@ -78,8 +78,8 @@ test("every non-trash concept in a topic reaches a Topic -> Family -> Group path
   assert.deepEqual(offenders, [], `${offenders.length} within-topic gaps`);
 });
 
-test("every core concept is reachable through a real group", () => {
-  const core = nonTrash.filter((r) => r.role === "core");
+test("every P1 concept is reachable through a real group", () => {
+  const core = nonTrash.filter((r) => r.role === "P1");
   const leavesByTopic = CURRICULUM_TOPICS.map(
     (t) =>
       [
@@ -98,7 +98,7 @@ test("every core concept is reachable through a real group", () => {
   assert.deepEqual(
     unreachable.map(label),
     [],
-    `${unreachable.length} core concepts reach no group`,
+    `${unreachable.length} P1 concepts reach no group`,
   );
 });
 

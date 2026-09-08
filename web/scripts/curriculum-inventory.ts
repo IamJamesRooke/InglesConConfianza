@@ -67,7 +67,7 @@ async function main() {
   }));
 
   const byId = new Map(rows.map((r) => [r.id, r]));
-  const nonTrash = rows.filter((r) => r.curriculumRole !== "trash");
+  const nonTrash = rows.filter((r) => r.curriculumRole !== "Trash");
   const has = (r: Row, c: string) => r.collections.includes(c);
 
   // A concept is homed when some topic's scope accepts it — base tag present
@@ -102,7 +102,7 @@ async function main() {
           label: l.label,
           count: members.length,
           confusion: isConfusion(l.collection, l.label),
-          coreCount: members.filter((m) => m.curriculumRole === "core").length,
+          p1Count: members.filter((m) => m.curriculumRole === "P1").length,
         };
       }),
     }));
@@ -145,7 +145,7 @@ async function main() {
       allConcepts: rows.length,
       nonTrash: nonTrash.length,
       byRole: Object.fromEntries(
-        ["core", "supporting", "reference", "trash"].map((role) => [
+        ["P1", "P2", "P3", "P4", "P5", "Unranked", "Trash"].map((role) => [
           role,
           rows.filter((r) => r.curriculumRole === role).length,
         ]),

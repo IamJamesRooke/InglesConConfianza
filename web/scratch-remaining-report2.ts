@@ -6,7 +6,7 @@ async function main() {
   for (const topic of CURRICULUM_TOPICS) {
     let n = 0;
     for (const btn of topic.facetButtons || []) {
-      const count = await prisma.curriculumConcept.count({ where: { curriculumRole: { not: "trash" }, collections: { some: { collectionName: topic.baseCollection } }, AND: [{collections:{some:{collectionName:btn.collection}}}] } });
+      const count = await prisma.curriculumConcept.count({ where: { curriculumRole: { not: "Trash" }, collections: { some: { collectionName: topic.baseCollection } }, AND: [{collections:{some:{collectionName:btn.collection}}}] } });
       if (count > 20) n++;
     }
     if (n>0) results.push({slug: topic.slug, count: n});

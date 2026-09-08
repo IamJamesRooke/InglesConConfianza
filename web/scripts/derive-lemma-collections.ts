@@ -155,7 +155,7 @@ async function main() {
   const enCount = new Map<string, number>();
 
   for (const concept of concepts) {
-    if (concept.curriculumRole === "trash") continue;
+    if (concept.curriculumRole === "Trash") continue;
     const formBase = concept.spanish
       .toLowerCase()
       .match(/^(?:pasado|participio) de ([a-z]+)/);

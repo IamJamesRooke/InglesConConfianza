@@ -247,13 +247,12 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
     // Low-priority Latinate cognate verbs (to abstain, to depose) are reference
     // material, not teaching vocabulary. They live on the Cognates page, sorted
     // by spelling pattern. The teaching-tier ones (to prepare, to decide, to
-    // receive) stay here. NOTE: revisit after Phase 3 P3-4 — `extended` verbs
-    // that are genuine teaching targets for advanced courses may want to be
-    // added to `unlessRole`.
+    // receive) stay here. Cognate verbs live on the Cognates page by default;
+    // ranking one P1-P3 pulls it back onto Verbs as a teaching target.
     baseExclusions: [
       {
         collection: "topic:cognate",
-        unlessRole: ["core", "essential", "common"],
+        unlessRole: ["P1", "P2", "P3"],
       },
     ],
     facetButtons: [
