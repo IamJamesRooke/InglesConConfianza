@@ -73,7 +73,7 @@ material is temporarily sitting in `rare`).
 
 ## Phases
 
-**PHASE 3 COMPLETE (P3-0..P3-6), 2026-09-07.** Final tiers:
+**PHASE 3 COMPLETE (P3-0..P3-8), 2026-09-07.** Final tiers:
 core 917 / essential 398 / common 764 / extended 1070 / rare 1102 / trash 233.
 All six guardrail bands in target. Open follow-ups, all optional:
 - the essential verb tier still carries multi-sense verbs at ~2 senses each;
