@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generatedAt": "2026-09-08T11:59:03.695Z",
+    "generatedAt": "2026-09-08T12:27:42.964Z",
     "totals": {
       "allConcepts": 4251,
       "nonTrash": 4251,
@@ -43,8 +43,16 @@
       },
       {
         "slug": "verbs",
-        "baseCount": 939,
-        "reachableCount": 939,
+        "baseCount": 725,
+        "reachableCount": 725,
+        "withinTopicGapCount": 0,
+        "emptyGroupCount": 0,
+        "confusionGroupCount": 0
+      },
+      {
+        "slug": "special-verbs",
+        "baseCount": 247,
+        "reachableCount": 247,
         "withinTopicGapCount": 0,
         "emptyGroupCount": 0,
         "confusionGroupCount": 0
@@ -533,116 +541,11 @@
       "slug": "verbs",
       "title": "Verbs",
       "baseCollection": "pos:verb",
-      "baseCount": 939,
-      "reachableCount": 939,
+      "baseCount": 725,
+      "reachableCount": 725,
       "withinTopicGapCount": 0,
       "withinTopicGapIds": [],
       "families": [
-        {
-          "id": "being-existence",
-          "label": "Being & existence",
-          "confusion": false,
-          "groups": [
-            {
-              "collection": "topic:verb-tobe-present",
-              "label": "To Be — Present (am/is/are)",
-              "count": 32,
-              "confusion": false,
-              "p1Count": 0
-            },
-            {
-              "collection": "topic:verb-tobe-past-future",
-              "label": "To Be — Past & Future (was/were/will be)",
-              "count": 3,
-              "confusion": false,
-              "p1Count": 0
-            },
-            {
-              "collection": "topic:verb-ser-idioms",
-              "label": "To Be (ser) — Idioms & Uses",
-              "count": 23,
-              "confusion": false,
-              "p1Count": 0
-            },
-            {
-              "collection": "topic:verb-estar-idioms",
-              "label": "To Be (estar) — Idioms & Uses",
-              "count": 33,
-              "confusion": false,
-              "p1Count": 0
-            },
-            {
-              "collection": "topic:verb-tobe-existence-hay",
-              "label": "There Is/Are (hay)",
-              "count": 19,
-              "confusion": false,
-              "p1Count": 0
-            }
-          ]
-        },
-        {
-          "id": "modals-wishes-possibility",
-          "label": "Modals, wishes & possibility",
-          "confusion": false,
-          "groups": [
-            {
-              "collection": "topic:verb-perfect-auxiliary",
-              "label": "Have — Perfect Auxiliary (have/has/had done)",
-              "count": 23,
-              "confusion": false,
-              "p1Count": 0
-            },
-            {
-              "collection": "topic:verb-modal-ability",
-              "label": "Modals — Ability & Permission",
-              "count": 39,
-              "confusion": false,
-              "p1Count": 0
-            },
-            {
-              "collection": "topic:verb-modal-possibility",
-              "label": "Modals — Possibility (may/might/could)",
-              "count": 15,
-              "confusion": false,
-              "p1Count": 0
-            },
-            {
-              "collection": "topic:verb-modal-obligation",
-              "label": "Modals — Obligation & Probability (must/should/have to)",
-              "count": 27,
-              "confusion": false,
-              "p1Count": 0
-            },
-            {
-              "collection": "topic:verb-needing",
-              "label": "Needing & requiring (necesitar)",
-              "count": 5,
-              "confusion": false,
-              "p1Count": 0
-            },
-            {
-              "collection": "topic:verb-wishes",
-              "label": "Wishes & Hypotheticals",
-              "count": 28,
-              "confusion": false,
-              "p1Count": 0
-            },
-            {
-              "collection": "topic:verb-hoping-waiting",
-              "label": "Hoping & Waiting",
-              "count": 7,
-              "confusion": false,
-              "p1Count": 0
-            },
-            {
-              "collection": "topic:verb-depending-fitting",
-              "label": "Depending, Fitting & Being Enough (depender, caber, bastar)",
-              "count": 5,
-              "confusion": false,
-              "p1Count": 0
-            }
-          ]
-        },
         {
           "id": "communication",
           "label": "Communication",
@@ -650,35 +553,28 @@
           "groups": [
             {
               "collection": "topic:verb-communication-talking",
-              "label": "Communication — Talking",
+              "label": "Talking",
               "count": 6,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-communication-saying",
-              "label": "Communication — Saying & Telling",
-              "count": 15,
+              "label": "Saying & Telling",
+              "count": 17,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-communication-other",
-              "label": "Communication — Notifying & Telling",
+              "label": "Informing & Reporting",
               "count": 23,
               "confusion": false,
               "p1Count": 0
             },
             {
-              "collection": "topic:verb-communication-formal",
-              "label": "Communication — Formal & Reporting",
-              "count": 2,
-              "confusion": false,
-              "p1Count": 0
-            },
-            {
               "collection": "topic:verb-communication-naming",
-              "label": "Communication — Naming, Calling & Marking",
+              "label": "Naming & Calling",
               "count": 14,
               "confusion": false,
               "p1Count": 0
@@ -689,25 +585,18 @@
               "count": 6,
               "confusion": false,
               "p1Count": 0
-            },
-            {
-              "collection": "topic:verb-offering",
-              "label": "Offering & Providing",
-              "count": 7,
-              "confusion": false,
-              "p1Count": 0
             }
           ]
         },
         {
-          "id": "thinking-learning",
-          "label": "Thinking & learning",
+          "id": "thinking-knowing",
+          "label": "Thinking & knowing",
           "confusion": false,
           "groups": [
             {
               "collection": "topic:verb-thinking-opinions",
               "label": "Thinking & Opinions",
-              "count": 14,
+              "count": 16,
               "confusion": false,
               "p1Count": 0
             },
@@ -736,13 +625,6 @@
               "collection": "topic:verb-remembering-forgetting",
               "label": "Remembering & Forgetting",
               "count": 14,
-              "confusion": false,
-              "p1Count": 0
-            },
-            {
-              "collection": "topic:verb-analysis-investigation",
-              "label": "Analysis & Investigation",
-              "count": 2,
               "confusion": false,
               "p1Count": 0
             }
@@ -783,14 +665,14 @@
             },
             {
               "collection": "topic:verb-feelings-love-like",
-              "label": "Feelings — Love & Liking",
+              "label": "Love & Liking",
               "count": 14,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-feelings-dislike-worry",
-              "label": "Feelings — Dislike, Worry & Missing",
+              "label": "Dislike, Worry & Missing",
               "count": 13,
               "confusion": false,
               "p1Count": 0
@@ -804,49 +686,35 @@
           "groups": [
             {
               "collection": "topic:verb-movement-going",
-              "label": "Movement — Going",
-              "count": 23,
-              "confusion": false,
-              "p1Count": 0
-            },
-            {
-              "collection": "topic:verb-movement-coming",
-              "label": "Movement — Coming",
-              "count": 2,
+              "label": "Going & Coming",
+              "count": 25,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-movement-arriving-passing",
-              "label": "Movement — Arriving & Passing",
+              "label": "Arriving & Passing",
               "count": 14,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-movement-leaving",
-              "label": "Movement — Leaving",
+              "label": "Leaving",
               "count": 14,
               "confusion": false,
               "p1Count": 0
             },
             {
-              "collection": "topic:verb-movement-directional-verbs",
-              "label": "Movement — Return & Direction",
-              "count": 6,
-              "confusion": false,
-              "p1Count": 0
-            },
-            {
               "collection": "topic:verb-movement-directional",
-              "label": "Movement — Up, Down & Falling",
-              "count": 12,
+              "label": "Direction — Up, Down & Back",
+              "count": 18,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-locomotion-general",
-              "label": "Movement — Walking & Running",
+              "label": "Walking & Running",
               "count": 12,
               "confusion": false,
               "p1Count": 0
@@ -881,7 +749,7 @@
             },
             {
               "collection": "topic:verb-tomar-general",
-              "label": "Taking (tomar/coger)",
+              "label": "Taking (tomar)",
               "count": 14,
               "confusion": false,
               "p1Count": 0
@@ -908,30 +776,23 @@
               "p1Count": 0
             },
             {
-              "collection": "topic:verb-removing-stealing",
-              "label": "Removing & Stealing",
-              "count": 1,
+              "collection": "topic:verb-offering",
+              "label": "Offering & Providing",
+              "count": 7,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-taking-removing",
               "label": "Taking Away",
-              "count": 21,
+              "count": 22,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-keeping-storing",
               "label": "Keeping & Storing",
-              "count": 21,
-              "confusion": false,
-              "p1Count": 0
-            },
-            {
-              "collection": "topic:verb-quedar-remaining",
-              "label": "Remaining & Staying (quedar)",
-              "count": 3,
+              "count": 24,
               "confusion": false,
               "p1Count": 0
             },
@@ -952,8 +813,8 @@
           ]
         },
         {
-          "id": "daily-life-work",
-          "label": "Daily life & work",
+          "id": "daily-life-money",
+          "label": "Daily life & money",
           "confusion": false,
           "groups": [
             {
@@ -1008,21 +869,14 @@
             {
               "collection": "topic:verb-creation-repair-other",
               "label": "Creating, Fixing & Changing",
-              "count": 13,
-              "confusion": false,
-              "p1Count": 0
-            },
-            {
-              "collection": "topic:verb-poner-placement",
-              "label": "Placing (poner)",
-              "count": 3,
+              "count": 14,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-poner-idioms",
-              "label": "Placing & Setting — Idioms",
-              "count": 9,
+              "label": "Placing & Setting (poner)",
+              "count": 12,
               "confusion": false,
               "p1Count": 0
             },
@@ -1032,17 +886,24 @@
               "count": 21,
               "confusion": false,
               "p1Count": 0
+            },
+            {
+              "collection": "topic:verb-health-body",
+              "label": "Body & Health",
+              "count": 8,
+              "confusion": false,
+              "p1Count": 0
             }
           ]
         },
         {
-          "id": "social-life-conflict",
-          "label": "Social life & conflict",
+          "id": "social-life",
+          "label": "Social life",
           "confusion": false,
           "groups": [
             {
               "collection": "topic:verb-social-relationships",
-              "label": "Social Interaction & Relationships",
+              "label": "Relationships",
               "count": 13,
               "confusion": false,
               "p1Count": 0
@@ -1060,25 +921,39 @@
               "count": 11,
               "confusion": false,
               "p1Count": 0
+            },
+            {
+              "collection": "topic:verb-admin-legal-formal",
+              "label": "Administrative, Legal & Formal",
+              "count": 11,
+              "confusion": false,
+              "p1Count": 0
             }
           ]
         },
         {
-          "id": "specialized-actions",
-          "label": "Specialized actions",
+          "id": "wanting-needing-hoping",
+          "label": "Wanting, needing & hoping",
           "confusion": false,
           "groups": [
             {
-              "collection": "topic:verb-admin-legal-formal",
-              "label": "Administrative, Legal & Formal Actions",
-              "count": 11,
+              "collection": "topic:verb-wishes",
+              "label": "Wishes & Hypotheticals",
+              "count": 28,
               "confusion": false,
               "p1Count": 0
             },
             {
-              "collection": "topic:verb-technology-digital",
-              "label": "Technology & Digital Actions",
-              "count": 1,
+              "collection": "topic:verb-hoping-waiting",
+              "label": "Hoping & Waiting",
+              "count": 7,
+              "confusion": false,
+              "p1Count": 0
+            },
+            {
+              "collection": "topic:verb-depending-fitting",
+              "label": "Needing, Depending & Fitting",
+              "count": 10,
               "confusion": false,
               "p1Count": 0
             },
@@ -1088,11 +963,87 @@
               "count": 4,
               "confusion": false,
               "p1Count": 0
+            }
+          ]
+        }
+      ],
+      "emptyGroups": [],
+      "confusionGroups": []
+    },
+    {
+      "slug": "special-verbs",
+      "title": "Special Verbs",
+      "baseCollection": "topic:verb-system",
+      "baseCount": 247,
+      "reachableCount": 247,
+      "withinTopicGapCount": 0,
+      "withinTopicGapIds": [],
+      "families": [
+        {
+          "id": "to-be-there-is",
+          "label": "To be & there is",
+          "confusion": false,
+          "groups": [
+            {
+              "collection": "topic:verb-ser-idioms",
+              "label": "To Be (ser) — Idioms & Uses",
+              "count": 33,
+              "confusion": false,
+              "p1Count": 0
             },
             {
-              "collection": "topic:verb-health-body",
-              "label": "Body & Health",
-              "count": 8,
+              "collection": "topic:verb-estar-idioms",
+              "label": "To Be (estar) — Idioms & Uses",
+              "count": 48,
+              "confusion": false,
+              "p1Count": 0
+            },
+            {
+              "collection": "topic:verb-tobe-present",
+              "label": "To Be — Conjugated Forms (am/is/are, was/were)",
+              "count": 35,
+              "confusion": false,
+              "p1Count": 0
+            },
+            {
+              "collection": "topic:verb-tobe-existence-hay",
+              "label": "There Is / Are (hay)",
+              "count": 20,
+              "confusion": false,
+              "p1Count": 0
+            }
+          ]
+        },
+        {
+          "id": "modals-auxiliaries",
+          "label": "Modals & auxiliaries",
+          "confusion": false,
+          "groups": [
+            {
+              "collection": "topic:verb-perfect-auxiliary",
+              "label": "Have — Perfect Auxiliary (have/has/had done)",
+              "count": 23,
+              "confusion": false,
+              "p1Count": 0
+            },
+            {
+              "collection": "topic:verb-modal-ability",
+              "label": "Can & Could — Ability & Permission",
+              "count": 42,
+              "confusion": false,
+              "p1Count": 0
+            },
+            {
+              "collection": "topic:verb-modal-possibility",
+              "label": "May & Might — Possibility",
+              "count": 15,
+              "confusion": false,
+              "p1Count": 0
+            },
+            {
+              "collection": "topic:verb-modal-obligation",
+              "label": "Must, Should & Have To — Obligation",
+              "count": 31,
               "confusion": false,
               "p1Count": 0
             }

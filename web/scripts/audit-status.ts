@@ -15,7 +15,7 @@ import { prisma } from "../src/lib/database/prisma";
 
 const ORDER = [
   "pronouns", "determiners", "interrogatives", "questions-negation", "imperatives",
-  "nouns", "adjectives", "adverbs", "verbs", "numbers", "connectors", "prepositions",
+  "nouns", "adjectives", "adverbs", "verbs", "special-verbs", "numbers", "connectors", "prepositions",
   "expressions", "collocations",
   "verb-patterns", "verb-forms", "transformations",
   "mappings", "en-mappings",

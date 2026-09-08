@@ -615,7 +615,7 @@
         "en:need",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-needing"
+        "topic:verb-depending-fitting"
       ],
       "curriculumRole": "Unranked"
     },
@@ -635,7 +635,7 @@
         "topic:verb-pattern",
         "audit:reviewed",
         "topic:vp-full-inf",
-        "topic:verb-needing"
+        "topic:verb-depending-fitting"
       ],
       "curriculumRole": "Unranked"
     },
@@ -661,7 +661,7 @@
         "topic:vp-full-inf",
         "topic:vp-obj-complement",
         "topic:map-que",
-        "topic:verb-needing"
+        "topic:verb-depending-fitting"
       ],
       "curriculumRole": "Unranked"
     },
@@ -939,7 +939,7 @@
         "topic:transportation",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs",
+        "topic:verb-movement-directional",
         "topic:phr-take",
         "topic:map-tomar",
         "topic:enmap-take"
@@ -4970,7 +4970,7 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-poner-placement",
+        "topic:verb-poner-idioms",
         "topic:cognate-latin-root",
         "topic:cognate-opaque",
         "topic:phr-put",
@@ -4998,7 +4998,7 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-placement",
+        "topic:verb-poner-idioms",
         "topic:phr-put",
         "topic:part-in",
         "topic:map-poner",
@@ -5025,7 +5025,7 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-placement",
+        "topic:verb-poner-idioms",
         "topic:phr-put",
         "topic:part-on",
         "topic:map-poner",
@@ -5052,7 +5052,7 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-placement",
+        "topic:verb-poner-idioms",
         "topic:phr-put",
         "topic:map-poner",
         "topic:enmap-put"
@@ -5078,7 +5078,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2",
         "topic:phr-put",
         "topic:map-poner",
         "topic:enmap-put",
@@ -5107,7 +5106,6 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2",
         "topic:phr-put",
         "topic:part-to",
         "topic:map-poner",
@@ -5133,7 +5131,7 @@
         "topic:multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-poner-placement",
+        "topic:verb-poner-idioms",
         "topic:map-poner"
       ],
       "curriculumRole": "Unranked"
@@ -5157,7 +5155,7 @@
         "topic:collocation",
         "coll:set",
         "audit:reviewed",
-        "topic:verb-poner-placement",
+        "topic:verb-poner-idioms",
         "topic:map-poner",
         "topic:enmap-set"
       ],
@@ -5186,7 +5184,6 @@
         "topic:collocation",
         "coll:set",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2",
         "topic:part-for",
         "topic:map-poner",
         "topic:enmap-for",
@@ -5324,7 +5321,6 @@
         "topic:media-communication",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2",
         "topic:map-poner",
         "topic:verb-poner-idioms"
       ],
@@ -5399,7 +5395,6 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2",
         "topic:map-poner",
         "topic:verb-poner-idioms"
       ],
@@ -5424,7 +5419,6 @@
         "pos:verb",
         "topic:verb-pattern",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2",
         "topic:vp-full-inf",
         "topic:map-poner",
         "topic:enmap-to",
@@ -5499,7 +5493,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2",
         "topic:part-up",
         "topic:map-poner",
         "topic:verb-poner-idioms"
@@ -5530,7 +5523,6 @@
         "particle:with",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-2",
         "topic:phr-get",
         "topic:part-in",
         "topic:part-with",
@@ -5562,7 +5554,6 @@
         "particle:with",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2",
         "topic:part-with",
         "topic:map-poner",
         "topic:enmap-with",
@@ -5591,7 +5582,6 @@
         "particle:at",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2",
         "topic:phr-put",
         "topic:map-poner",
         "topic:enmap-put",
@@ -5623,7 +5613,6 @@
         "topic:collocation",
         "coll:other",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2",
         "topic:phr-put",
         "topic:part-to",
         "topic:map-poner",
@@ -5652,7 +5641,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2",
         "topic:phr-put",
         "topic:part-in",
         "topic:map-poner",
@@ -5710,7 +5698,7 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-placement",
+        "topic:verb-poner-idioms",
         "topic:phr-put",
         "topic:map-poner",
         "topic:enmap-put"
@@ -5738,7 +5726,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2",
         "topic:part-up",
         "topic:map-poner",
         "topic:enmap-with",
@@ -5790,7 +5777,6 @@
         "topic:multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2",
         "topic:map-poner",
         "topic:verb-poner-idioms"
       ],
@@ -5913,7 +5899,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2",
         "topic:phr-put",
         "topic:part-off",
         "topic:map-poner",
@@ -5941,7 +5926,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1",
         "topic:phr-put",
         "topic:part-off",
         "topic:map-poner",
@@ -5969,7 +5953,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1",
         "topic:phr-put",
         "topic:map-poner",
         "topic:enmap-put",
@@ -5996,7 +5979,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1",
         "topic:phr-put",
         "topic:map-poner",
         "topic:map-dejar",
@@ -6024,7 +6006,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2",
         "topic:phr-put",
         "topic:map-poner",
         "topic:enmap-put",
@@ -6051,7 +6032,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2",
         "topic:phr-put",
         "topic:map-poner",
         "topic:enmap-put",
@@ -6078,7 +6058,6 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1",
         "topic:phr-put",
         "topic:part-out",
         "topic:map-poner",
@@ -6106,7 +6085,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2",
         "topic:phr-put",
         "topic:part-out",
         "topic:map-poner",
@@ -6134,7 +6112,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2",
         "topic:phr-put",
         "topic:part-out",
         "topic:map-poner",
@@ -6162,7 +6139,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1",
         "topic:phr-put",
         "topic:part-up",
         "topic:map-poner",
@@ -6191,7 +6167,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1",
         "topic:phr-put",
         "topic:part-up",
         "topic:map-poner",
@@ -6221,7 +6196,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1",
         "topic:phr-put",
         "topic:part-up",
         "topic:map-poner",
@@ -6251,7 +6225,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1",
         "topic:phr-put",
         "topic:map-poner",
         "topic:enmap-to",
@@ -6280,7 +6253,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1",
         "topic:phr-put",
         "topic:map-poner",
         "topic:map-hacer",
@@ -6309,7 +6281,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1",
         "topic:phr-put",
         "topic:map-poner",
         "topic:enmap-put",
@@ -6336,7 +6307,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1",
         "topic:phr-put",
         "topic:map-poner",
         "topic:enmap-put",
@@ -6365,7 +6335,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2",
         "topic:phr-put",
         "topic:map-poner",
         "topic:enmap-put",
@@ -6392,7 +6361,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1",
         "topic:phr-put",
         "topic:map-poner",
         "topic:enmap-put",
@@ -6420,7 +6388,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2",
         "topic:phr-put",
         "topic:part-in",
         "topic:map-poner",
@@ -6449,7 +6416,7 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-placement",
+        "topic:verb-poner-idioms",
         "topic:phr-put",
         "topic:map-poner",
         "topic:enmap-put"
@@ -6476,7 +6443,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1",
         "topic:phr-put",
         "topic:map-poner",
         "topic:enmap-to",
@@ -6504,7 +6470,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1",
         "topic:phr-put",
         "topic:map-poner",
         "topic:enmap-put",
@@ -6533,7 +6498,6 @@
         "particle:against",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1",
         "topic:phr-put",
         "topic:map-poner",
         "topic:enmap-put",
@@ -6617,7 +6581,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1",
         "topic:part-up",
         "topic:map-poner",
         "topic:enmap-set",
@@ -6645,7 +6608,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2",
         "topic:part-up",
         "topic:map-poner",
         "topic:enmap-set",
@@ -6673,7 +6635,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1",
         "topic:part-up",
         "topic:map-poner",
         "topic:enmap-set",
@@ -6700,7 +6661,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2",
         "topic:part-up",
         "topic:map-poner",
         "topic:enmap-set",
@@ -6728,7 +6688,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2",
         "topic:part-off",
         "topic:map-poner",
         "topic:enmap-set",
@@ -6756,7 +6715,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1",
         "topic:part-off",
         "topic:map-poner",
         "topic:enmap-set",
@@ -6784,7 +6742,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1",
         "topic:part-out",
         "topic:map-poner",
         "topic:enmap-set",
@@ -6811,7 +6768,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1",
         "topic:part-out",
         "topic:map-poner",
         "topic:enmap-set",
@@ -6838,7 +6794,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2",
         "topic:map-poner",
         "topic:enmap-set",
         "topic:verb-poner-idioms"
@@ -6864,7 +6819,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2",
         "topic:map-poner",
         "topic:enmap-set",
         "topic:verb-poner-idioms"
@@ -6890,7 +6844,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1",
         "topic:part-in",
         "topic:map-poner",
         "topic:enmap-set",
@@ -6917,7 +6870,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1",
         "topic:map-poner",
         "topic:enmap-set",
         "topic:verb-poner-idioms"
@@ -6943,7 +6895,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2",
         "topic:map-poner",
         "topic:enmap-set",
         "topic:verb-poner-idioms"
@@ -6969,7 +6920,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1",
         "topic:map-poner",
         "topic:enmap-set",
         "topic:verb-poner-idioms"
@@ -7152,7 +7102,6 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1",
         "topic:phr-put",
         "topic:map-poner",
         "topic:enmap-put",
@@ -7180,7 +7129,7 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-placement",
+        "topic:verb-poner-idioms",
         "topic:phr-be",
         "topic:part-in",
         "topic:map-estar",
@@ -7208,7 +7157,6 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1",
         "topic:map-poner",
         "topic:enmap-set",
         "topic:verb-poner-idioms"
@@ -7233,7 +7181,6 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1",
         "topic:map-poner",
         "topic:enmap-set",
         "topic:verb-poner-idioms"
@@ -7260,7 +7207,6 @@
         "topic:collocation",
         "coll:set",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1",
         "topic:map-poner",
         "topic:enmap-set",
         "topic:verb-poner-idioms"
@@ -7285,7 +7231,6 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-1",
         "topic:map-poner",
         "topic:enmap-set",
         "topic:verb-poner-idioms"
@@ -7312,7 +7257,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-poner-idioms-2",
         "topic:part-in",
         "topic:map-poner",
         "topic:enmap-set",
@@ -7363,7 +7307,7 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-poner-placement",
+        "topic:verb-poner-idioms",
         "topic:map-poner",
         "topic:enmap-set"
       ],
@@ -7392,7 +7336,7 @@
         "topic:collocation",
         "coll:take",
         "audit:reviewed",
-        "topic:verb-communication-formal",
+        "topic:verb-communication-saying",
         "topic:phr-take",
         "topic:part-of",
         "topic:map-tomar",
@@ -8051,7 +7995,8 @@
         "topic:phr-be",
         "topic:map-estar",
         "topic:enmap-be",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -8078,7 +8023,8 @@
         "topic:phr-be",
         "topic:map-estar",
         "topic:enmap-be",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -8110,7 +8056,8 @@
         "topic:phr-be",
         "topic:map-estar",
         "topic:enmap-be",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -8134,7 +8081,8 @@
         "pos:verb",
         "topic:verb-tobe-present",
         "topic:map-estar",
-        "topic:enmap-how"
+        "topic:enmap-how",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -8159,7 +8107,8 @@
         "audit:reviewed",
         "topic:verb-estar-idioms-1",
         "topic:map-estar",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -8189,7 +8138,8 @@
         "topic:phr-be",
         "topic:map-estar",
         "topic:enmap-be",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -8216,7 +8166,8 @@
         "topic:phr-be",
         "topic:map-estar",
         "topic:enmap-be",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -8305,7 +8256,8 @@
         "topic:map-estar",
         "topic:enmap-of",
         "topic:enmap-be",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -8337,7 +8289,8 @@
         "topic:enmap-of",
         "topic:enmap-in",
         "topic:enmap-be",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -8441,7 +8394,8 @@
         "audit:reviewed",
         "topic:verb-estar-idioms-1",
         "topic:map-estar",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -8462,7 +8416,8 @@
         "audit:reviewed",
         "topic:verb-estar-idioms-2",
         "topic:map-estar",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -8561,7 +8516,8 @@
         "topic:part-on",
         "topic:map-estar",
         "topic:enmap-be",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -8588,7 +8544,8 @@
         "topic:part-off",
         "topic:map-estar",
         "topic:enmap-be",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -8615,7 +8572,8 @@
         "topic:part-out",
         "topic:map-estar",
         "topic:enmap-be",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -8643,7 +8601,8 @@
         "topic:part-on",
         "topic:map-estar",
         "topic:enmap-be",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -8672,7 +8631,8 @@
         "topic:part-on",
         "topic:map-estar",
         "topic:enmap-be",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -8704,7 +8664,8 @@
         "topic:enmap-of",
         "topic:enmap-in",
         "topic:enmap-be",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -8731,7 +8692,8 @@
         "topic:phr-be",
         "topic:map-estar",
         "topic:enmap-be",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -8793,7 +8755,8 @@
         "audit:reviewed",
         "topic:verb-estar-idioms-1",
         "topic:map-estar",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -8900,7 +8863,8 @@
         "audit:reviewed",
         "topic:verb-estar-idioms-2",
         "topic:map-estar",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -8921,7 +8885,8 @@
         "audit:reviewed",
         "topic:verb-estar-idioms-2",
         "topic:map-estar",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -8942,7 +8907,8 @@
         "audit:reviewed",
         "topic:verb-estar-idioms-2",
         "topic:map-estar",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -8963,7 +8929,8 @@
         "audit:reviewed",
         "topic:verb-estar-idioms-2",
         "topic:map-estar",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -9703,7 +9670,8 @@
         "audit:reviewed",
         "topic:verb-perfect-auxiliary",
         "topic:map-haber",
-        "topic:enmap-have"
+        "topic:enmap-have",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -9728,7 +9696,8 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:verb-tobe-existence-hay",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -9754,7 +9723,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-tobe-existence-hay",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -9779,7 +9749,8 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:verb-tobe-existence-hay",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -9806,7 +9777,8 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:verb-tobe-existence-hay",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -9833,7 +9805,8 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:verb-tobe-existence-hay",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -9859,7 +9832,8 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:verb-tobe-existence-hay",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -9885,7 +9859,8 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:verb-tobe-existence-hay",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -9908,7 +9883,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-tobe-existence-hay",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -9931,7 +9907,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-tobe-existence-hay",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -9953,7 +9930,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-tobe-existence-hay",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -9974,7 +9952,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-tobe-existence-hay",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -9996,7 +9975,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-tobe-existence-hay",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -10022,7 +10002,8 @@
         "pos:verb",
         "topic:verb-perfect-auxiliary",
         "topic:map-haber",
-        "topic:enmap-you"
+        "topic:enmap-you",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -10045,7 +10026,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-perfect-auxiliary",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -10071,7 +10053,8 @@
         "pos:verb",
         "topic:verb-tobe-existence-hay",
         "topic:map-haber",
-        "topic:map-deber"
+        "topic:map-deber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -10096,7 +10079,8 @@
         "pos:verb",
         "topic:verb-tobe-existence-hay",
         "topic:map-poder",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -10122,7 +10106,8 @@
         "pos:verb",
         "topic:verb-tobe-existence-hay",
         "topic:map-haber",
-        "topic:map-ir"
+        "topic:map-ir",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -10149,7 +10134,8 @@
         "pos:verb",
         "topic:verb-tobe-existence-hay",
         "topic:map-haber",
-        "topic:map-ir"
+        "topic:map-ir",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14189,7 +14175,8 @@
         "audit:reviewed",
         "topic:verb-modal-ability",
         "topic:vp-bare-inf",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14216,7 +14203,8 @@
         "pos:verb",
         "topic:verb-modal-ability",
         "topic:vp-bare-inf",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14246,7 +14234,8 @@
         "audit:reviewed",
         "topic:verb-modal-ability",
         "topic:vp-bare-inf",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14274,7 +14263,8 @@
         "pos:verb",
         "topic:verb-modal-ability",
         "topic:vp-bare-inf",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14298,7 +14288,8 @@
         "audit:reviewed",
         "topic:verb-modal-ability",
         "topic:vp-full-inf",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14323,7 +14314,8 @@
         "audit:reviewed",
         "topic:verb-modal-ability",
         "topic:vp-full-inf",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14346,7 +14338,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-modal-possibility",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14370,7 +14363,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-modal-possibility",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14400,7 +14394,8 @@
         "topic:part-to",
         "topic:map-poder",
         "topic:enmap-to",
-        "topic:enmap-get"
+        "topic:enmap-get",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14431,7 +14426,8 @@
         "topic:part-to",
         "topic:map-poder",
         "topic:enmap-to",
-        "topic:enmap-get"
+        "topic:enmap-get",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14463,7 +14459,8 @@
         "topic:part-to",
         "topic:map-poder",
         "topic:enmap-to",
-        "topic:enmap-get"
+        "topic:enmap-get",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14486,7 +14483,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-modal-ability",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14511,7 +14509,8 @@
         "pos:verb",
         "topic:verb-modal-ability",
         "topic:vp-full-inf",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14533,7 +14532,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-modal-ability",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14561,7 +14561,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-modal-ability",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14583,7 +14584,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-modal-ability",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14606,7 +14608,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-modal-ability",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14631,7 +14634,8 @@
         "pos:verb",
         "topic:verb-modal-ability",
         "topic:map-poder",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14659,7 +14663,8 @@
         "pos:verb",
         "topic:verb-modal-ability",
         "topic:map-poder",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14685,7 +14690,8 @@
         "topic:verb-modal-possibility",
         "topic:map-poder",
         "topic:map-haber",
-        "topic:enmap-have"
+        "topic:enmap-have",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14712,7 +14718,8 @@
         "pos:verb",
         "topic:verb-modal-ability",
         "topic:map-poder",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14736,7 +14743,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-modal-ability",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14761,7 +14769,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-modal-ability",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14789,7 +14798,8 @@
         "audit:reviewed",
         "topic:verb-modal-ability",
         "topic:map-poder",
-        "topic:enmap-you"
+        "topic:enmap-you",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14817,7 +14827,8 @@
         "pos:verb",
         "topic:verb-modal-ability",
         "topic:map-poder",
-        "topic:enmap-you"
+        "topic:enmap-you",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14841,7 +14852,8 @@
         "qn:inversion-question",
         "audit:reviewed",
         "topic:verb-modal-ability",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14865,7 +14877,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-modal-possibility",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14891,7 +14904,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-modal-ability",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14923,7 +14937,8 @@
         "topic:verb-modal-ability",
         "topic:vp-bare-inf",
         "topic:map-poder",
-        "topic:enmap-you"
+        "topic:enmap-you",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14946,7 +14961,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-modal-possibility",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14968,7 +14984,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-modal-possibility",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14993,7 +15010,8 @@
         "topic:verb-modal-ability",
         "topic:phr-be",
         "topic:map-poder",
-        "topic:enmap-be"
+        "topic:enmap-be",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -15018,7 +15036,8 @@
         "topic:verb-modal-possibility",
         "topic:phr-be",
         "topic:map-poder",
-        "topic:enmap-be"
+        "topic:enmap-be",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -15044,7 +15063,8 @@
         "topic:verb-modal-ability",
         "topic:phr-be",
         "topic:map-poder",
-        "topic:enmap-be"
+        "topic:enmap-be",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -15067,7 +15087,8 @@
         "pos:verb",
         "topic:verb-modal-possibility",
         "topic:map-poder",
-        "topic:enmap-have"
+        "topic:enmap-have",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -15332,7 +15353,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-modal-ability",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -15355,7 +15377,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-modal-ability",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -15377,7 +15400,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-modal-ability",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -15402,7 +15426,8 @@
         "pos:verb",
         "topic:verb-modal-ability",
         "topic:map-poder",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -15425,7 +15450,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-modal-ability",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -15447,7 +15473,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-modal-possibility",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -15470,7 +15497,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-modal-ability",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -15494,7 +15522,8 @@
         "pos:verb",
         "topic:verb-modal-possibility",
         "topic:map-poder",
-        "topic:enmap-have"
+        "topic:enmap-have",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -15518,7 +15547,8 @@
         "pos:verb",
         "topic:verb-modal-possibility",
         "topic:map-poder",
-        "topic:enmap-have"
+        "topic:enmap-have",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -15542,7 +15572,8 @@
         "pos:verb",
         "topic:verb-modal-possibility",
         "topic:map-poder",
-        "topic:enmap-have"
+        "topic:enmap-have",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -15565,7 +15596,8 @@
         "pos:verb",
         "topic:verb-modal-possibility",
         "topic:map-poder",
-        "topic:enmap-have"
+        "topic:enmap-have",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -15590,7 +15622,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-modal-possibility",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -16089,7 +16122,7 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-quedar-remaining",
+        "topic:verb-keeping-storing",
         "topic:phr-be",
         "topic:part-in",
         "topic:enmap-be"
@@ -16114,7 +16147,7 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-quedar-remaining",
+        "topic:verb-keeping-storing",
         "topic:enmap-with"
       ],
       "curriculumRole": "Unranked"
@@ -16141,7 +16174,7 @@
         "topic:phrasal-verb",
         "topic:verb-pattern",
         "audit:reviewed",
-        "topic:verb-quedar-remaining",
+        "topic:verb-keeping-storing",
         "topic:vp-full-inf",
         "topic:part-to",
         "topic:enmap-to"
@@ -16167,7 +16200,7 @@
         "topic:multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-quedar-remaining",
+        "topic:verb-keeping-storing",
         "topic:part-in"
       ],
       "curriculumRole": "Unranked"
@@ -16214,7 +16247,7 @@
         "particle:with",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-quedar-remaining",
+        "topic:verb-keeping-storing",
         "topic:part-with",
         "topic:enmap-with",
         "topic:enmap-keep"
@@ -16242,7 +16275,7 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-quedar-remaining",
+        "topic:verb-keeping-storing",
         "topic:part-out",
         "topic:enmap-of"
       ],
@@ -16271,7 +16304,7 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-quedar-remaining",
+        "topic:verb-keeping-storing",
         "topic:phr-be",
         "topic:part-out",
         "topic:enmap-of",
@@ -16342,7 +16375,7 @@
         "particle:behind",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-quedar-remaining"
+        "topic:verb-keeping-storing"
       ],
       "curriculumRole": "Unranked"
     },
@@ -16366,7 +16399,7 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-quedar-remaining",
+        "topic:verb-keeping-storing",
         "topic:phr-be",
         "topic:part-out",
         "topic:enmap-be"
@@ -16390,7 +16423,7 @@
         "topic:multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-quedar-remaining"
+        "topic:verb-keeping-storing"
       ],
       "curriculumRole": "Unranked"
     },
@@ -16413,7 +16446,7 @@
         "particle:from",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-removing-stealing",
+        "topic:verb-taking-removing",
         "topic:part-from",
         "topic:enmap-from"
       ],
@@ -16438,7 +16471,7 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-removing-stealing",
+        "topic:verb-taking-removing",
         "topic:phr-take",
         "topic:enmap-take",
         "topic:enmap-from"
@@ -16462,7 +16495,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-2",
         "topic:part-off",
         "topic:verb-household"
       ],
@@ -16487,7 +16519,7 @@
         "particle:from",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-removing-stealing",
+        "topic:verb-taking-removing",
         "topic:part-from",
         "topic:enmap-from",
         "topic:enmap-keep"
@@ -16514,7 +16546,7 @@
         "particle:of",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-removing-stealing",
+        "topic:verb-taking-removing",
         "topic:phr-get",
         "topic:part-of",
         "topic:enmap-of",
@@ -16564,7 +16596,7 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-removing-stealing",
+        "topic:verb-taking-removing",
         "topic:phr-get",
         "topic:part-out",
         "topic:enmap-of",
@@ -16590,7 +16622,7 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-removing-stealing",
+        "topic:verb-taking-removing",
         "topic:phr-get",
         "topic:part-out",
         "topic:enmap-of",
@@ -16613,7 +16645,7 @@
         "topic:multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-removing-stealing"
+        "topic:verb-taking-removing"
       ],
       "curriculumRole": "Unranked"
     },
@@ -16666,7 +16698,7 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-removing-stealing",
+        "topic:verb-taking-removing",
         "topic:phr-take",
         "topic:part-out",
         "topic:part-on",
@@ -16688,7 +16720,6 @@
         "pos:verb",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-household-1",
         "topic:verb-household"
       ],
       "curriculumRole": "Unranked"
@@ -16708,7 +16739,6 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-household-1",
         "topic:verb-household"
       ],
       "curriculumRole": "Unranked"
@@ -16728,7 +16758,6 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-household-1",
         "topic:verb-household"
       ],
       "curriculumRole": "Unranked"
@@ -16753,7 +16782,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-1",
         "topic:part-up",
         "topic:enmap-to",
         "topic:verb-household"
@@ -16780,7 +16808,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-1",
         "topic:part-up",
         "topic:enmap-to",
         "topic:verb-household"
@@ -16804,7 +16831,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-1",
         "topic:part-up",
         "topic:verb-household"
       ],
@@ -16828,7 +16854,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-1",
         "topic:verb-household"
       ],
       "curriculumRole": "Unranked"
@@ -16848,7 +16873,6 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-household-1",
         "topic:verb-household"
       ],
       "curriculumRole": "Unranked"
@@ -16868,7 +16892,6 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-household-1",
         "topic:verb-household"
       ],
       "curriculumRole": "Unranked"
@@ -19742,7 +19765,8 @@
         "topic:verb-pattern",
         "audit:reviewed",
         "topic:verb-modal-obligation",
-        "topic:map-deber"
+        "topic:map-deber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -19769,7 +19793,8 @@
         "topic:verb-modal-obligation",
         "topic:part-to",
         "topic:map-deber",
-        "topic:enmap-to"
+        "topic:enmap-to",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -19795,7 +19820,8 @@
         "pos:verb",
         "topic:verb-modal-obligation",
         "topic:vp-bare-inf",
-        "topic:map-deber"
+        "topic:map-deber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -19820,7 +19846,8 @@
         "topic:verb-modal-obligation",
         "topic:vp-full-inf",
         "topic:map-deber",
-        "topic:enmap-to"
+        "topic:enmap-to",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -19847,7 +19874,8 @@
         "audit:reviewed",
         "topic:verb-modal-obligation",
         "topic:vp-bare-inf",
-        "topic:map-deber"
+        "topic:map-deber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -19874,7 +19902,8 @@
         "topic:verb-modal-obligation",
         "topic:vp-full-inf",
         "topic:map-deber",
-        "topic:enmap-to"
+        "topic:enmap-to",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -19898,7 +19927,8 @@
         "audit:reviewed",
         "topic:verb-modal-obligation",
         "topic:vp-full-inf",
-        "topic:map-deber"
+        "topic:map-deber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -19923,7 +19953,8 @@
         "audit:reviewed",
         "topic:verb-modal-obligation",
         "topic:vp-full-inf",
-        "topic:map-deber"
+        "topic:map-deber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -19949,7 +19980,8 @@
         "topic:verb-modal-obligation",
         "topic:phr-be",
         "topic:map-deber",
-        "topic:enmap-be"
+        "topic:enmap-be",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -19974,7 +20006,8 @@
         "topic:verb-modal-obligation",
         "topic:phr-be",
         "topic:map-deber",
-        "topic:enmap-be"
+        "topic:enmap-be",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -19998,7 +20031,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-modal-obligation",
-        "topic:map-deber"
+        "topic:map-deber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -20024,7 +20058,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-modal-obligation",
-        "topic:map-deber"
+        "topic:map-deber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -20048,7 +20083,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-modal-obligation",
-        "topic:map-deber"
+        "topic:map-deber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -20074,7 +20110,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-modal-obligation",
-        "topic:map-deber"
+        "topic:map-deber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -20100,7 +20137,8 @@
         "pos:verb",
         "topic:verb-modal-obligation",
         "topic:map-deber",
-        "topic:enmap-have"
+        "topic:enmap-have",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -20125,7 +20163,8 @@
         "pos:verb",
         "topic:verb-modal-obligation",
         "topic:map-deber",
-        "topic:enmap-have"
+        "topic:enmap-have",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -20148,7 +20187,8 @@
         "pos:verb",
         "audit:reviewed",
         "topic:verb-modal-obligation",
-        "topic:map-deber"
+        "topic:map-deber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -20171,7 +20211,8 @@
         "pos:verb",
         "topic:verb-modal-obligation",
         "topic:map-deber",
-        "topic:enmap-to"
+        "topic:enmap-to",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -20202,7 +20243,8 @@
         "topic:part-to",
         "topic:map-deber",
         "topic:enmap-to",
-        "topic:enmap-be"
+        "topic:enmap-be",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -20228,7 +20270,8 @@
         "pos:verb",
         "topic:verb-modal-obligation",
         "topic:map-deber",
-        "topic:enmap-to"
+        "topic:enmap-to",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -20338,7 +20381,8 @@
         "pos:verb",
         "audit:reviewed",
         "topic:verb-modal-obligation",
-        "topic:map-deber"
+        "topic:map-deber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -21008,7 +21052,6 @@
         "topic:multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-1",
         "topic:map-echar",
         "topic:verb-taking-removing"
       ],
@@ -21028,7 +21071,6 @@
         "topic:multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-1",
         "topic:map-echar",
         "topic:verb-taking-removing"
       ],
@@ -21055,7 +21097,6 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-1",
         "topic:part-to",
         "topic:map-echar",
         "topic:enmap-to",
@@ -21082,7 +21123,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-1",
         "topic:map-echar",
         "topic:verb-taking-removing"
       ],
@@ -21109,7 +21149,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-1",
         "topic:part-out",
         "topic:map-echar",
         "topic:enmap-of",
@@ -21138,7 +21177,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-1",
         "topic:part-out",
         "topic:map-echar",
         "topic:enmap-of",
@@ -21162,7 +21200,6 @@
         "topic:multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-1",
         "topic:map-echar",
         "topic:verb-taking-removing"
       ],
@@ -21186,7 +21223,6 @@
         "topic:multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-1",
         "topic:map-de",
         "topic:map-echar",
         "topic:verb-taking-removing"
@@ -21213,7 +21249,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-2",
         "topic:part-out",
         "topic:map-echar",
         "topic:verb-taking-removing"
@@ -21238,7 +21273,6 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-1",
         "topic:map-echar",
         "topic:verb-taking-removing"
       ],
@@ -21259,7 +21293,6 @@
         "topic:multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-1",
         "topic:map-echar",
         "topic:verb-taking-removing"
       ],
@@ -21280,7 +21313,6 @@
         "topic:multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-1",
         "topic:map-echar",
         "topic:verb-taking-removing"
       ],
@@ -21305,7 +21337,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-1",
         "topic:part-off",
         "topic:map-echar",
         "topic:enmap-give",
@@ -21330,7 +21361,6 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-1",
         "topic:phr-take",
         "topic:map-echar",
         "topic:enmap-take",
@@ -21356,7 +21386,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-1",
         "topic:map-echar",
         "topic:verb-taking-removing"
       ],
@@ -21380,7 +21409,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-2",
         "topic:part-out",
         "topic:map-echar",
         "topic:verb-taking-removing"
@@ -21410,7 +21438,6 @@
         "topic:collocation",
         "coll:take",
         "audit:reviewed",
-        "topic:verb-taking-removing-1",
         "topic:phr-take",
         "topic:map-echar",
         "topic:enmap-take",
@@ -21436,7 +21463,6 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-1",
         "topic:map-echar",
         "topic:enmap-give",
         "topic:verb-taking-removing"
@@ -21464,7 +21490,6 @@
         "particle:for",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-1",
         "topic:part-for",
         "topic:map-echar",
         "topic:enmap-for",
@@ -21490,7 +21515,6 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-1",
         "topic:phr-get",
         "topic:map-echar",
         "topic:enmap-get",
@@ -21518,7 +21542,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-1",
         "topic:part-off",
         "topic:map-echar",
         "topic:enmap-set",
@@ -21543,7 +21566,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-1",
         "topic:map-echar",
         "topic:verb-taking-removing"
       ],
@@ -22348,7 +22370,6 @@
         "particle:from",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-2",
         "topic:part-from",
         "topic:enmap-from",
         "topic:verb-taking-removing"
@@ -22369,7 +22390,6 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-2",
         "topic:phr-get",
         "topic:enmap-get",
         "topic:verb-taking-removing"
@@ -22397,7 +22417,7 @@
         "topic:collocation",
         "coll:take",
         "audit:reviewed",
-        "topic:verb-communication-formal",
+        "topic:verb-communication-saying",
         "topic:phr-take",
         "topic:part-of",
         "topic:enmap-of",
@@ -22419,7 +22439,6 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-2",
         "topic:phr-get",
         "topic:enmap-get",
         "topic:verb-taking-removing"
@@ -22442,7 +22461,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-2",
         "topic:part-out",
         "topic:verb-taking-removing"
       ],
@@ -22479,7 +22497,6 @@
         "en:release",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-2",
         "topic:verb-taking-removing"
       ],
       "curriculumRole": "Unranked"
@@ -22501,7 +22518,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-2",
         "topic:part-out",
         "topic:verb-taking-removing"
       ],
@@ -22526,7 +22542,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-2",
         "topic:phr-get",
         "topic:part-out",
         "topic:enmap-of",
@@ -22551,7 +22566,7 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs"
+        "topic:verb-movement-directional"
       ],
       "curriculumRole": "Unranked"
     },
@@ -22573,7 +22588,7 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs",
+        "topic:verb-movement-directional",
         "topic:part-out",
         "topic:enmap-go"
       ],
@@ -22595,7 +22610,7 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs",
+        "topic:verb-movement-directional",
         "topic:part-out",
         "topic:enmap-go"
       ],
@@ -22621,7 +22636,7 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs",
+        "topic:verb-movement-directional",
         "topic:phr-get",
         "topic:part-out",
         "topic:enmap-of",
@@ -22647,7 +22662,7 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs",
+        "topic:verb-movement-directional",
         "topic:part-out",
         "topic:enmap-come"
       ],
@@ -22671,7 +22686,7 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs",
+        "topic:verb-movement-directional",
         "topic:part-out"
       ],
       "curriculumRole": "Unranked"
@@ -22691,7 +22706,7 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs",
+        "topic:verb-movement-directional",
         "topic:enmap-go"
       ],
       "curriculumRole": "Unranked"
@@ -22733,7 +22748,7 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs",
+        "topic:verb-movement-directional",
         "topic:part-out",
         "topic:enmap-come"
       ],
@@ -22781,7 +22796,7 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs",
+        "topic:verb-movement-directional",
         "topic:part-out",
         "topic:enmap-with",
         "topic:enmap-go"
@@ -23797,7 +23812,8 @@
         "topic:verb-ser-idioms",
         "topic:phr-be",
         "topic:map-ser",
-        "topic:enmap-be"
+        "topic:enmap-be",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -23822,7 +23838,8 @@
         "topic:verb-ser-idioms",
         "topic:phr-be",
         "topic:map-ser",
-        "topic:enmap-be"
+        "topic:enmap-be",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -23848,7 +23865,8 @@
         "topic:verb-ser-idioms",
         "topic:phr-be",
         "topic:map-ser",
-        "topic:enmap-be"
+        "topic:enmap-be",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -23880,7 +23898,8 @@
         "topic:phr-be",
         "topic:map-ser",
         "topic:enmap-at",
-        "topic:enmap-be"
+        "topic:enmap-be",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -23911,7 +23930,8 @@
         "topic:part-from",
         "topic:map-ser",
         "topic:enmap-from",
-        "topic:enmap-be"
+        "topic:enmap-be",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -23944,7 +23964,8 @@
         "topic:part-of",
         "topic:map-ser",
         "topic:enmap-of",
-        "topic:enmap-be"
+        "topic:enmap-be",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -23974,7 +23995,8 @@
         "topic:verb-ser-idioms",
         "topic:part-to",
         "topic:map-ser",
-        "topic:enmap-to"
+        "topic:enmap-to",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -24003,7 +24025,8 @@
         "topic:part-for",
         "topic:map-ser",
         "topic:enmap-for",
-        "topic:enmap-be"
+        "topic:enmap-be",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -24033,7 +24056,8 @@
         "topic:part-for",
         "topic:map-ser",
         "topic:enmap-for",
-        "topic:enmap-be"
+        "topic:enmap-be",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -24066,7 +24090,8 @@
         "topic:part-to",
         "topic:map-ser",
         "topic:enmap-of",
-        "topic:enmap-be"
+        "topic:enmap-be",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -24096,7 +24121,8 @@
         "topic:phr-be",
         "topic:map-ser",
         "topic:enmap-at",
-        "topic:enmap-be"
+        "topic:enmap-be",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -24126,7 +24152,8 @@
         "topic:part-for",
         "topic:map-ser",
         "topic:enmap-for",
-        "topic:enmap-be"
+        "topic:enmap-be",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -24156,7 +24183,8 @@
         "topic:part-for",
         "topic:map-ser",
         "topic:enmap-for",
-        "topic:enmap-be"
+        "topic:enmap-be",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -24179,7 +24207,8 @@
         "audit:reviewed",
         "topic:verb-ser-idioms",
         "topic:map-ser",
-        "topic:enmap-of"
+        "topic:enmap-of",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -24684,7 +24713,8 @@
         "topic:verb-pattern",
         "audit:reviewed",
         "topic:verb-modal-obligation",
-        "topic:vp-full-inf"
+        "topic:vp-full-inf",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -24702,7 +24732,8 @@
         "en:used",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-modal-obligation"
+        "topic:verb-modal-obligation",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -24722,7 +24753,8 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "pos:verb",
-        "topic:verb-modal-obligation"
+        "topic:verb-modal-obligation",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -24983,7 +25015,8 @@
         "topic:verb-modal-obligation",
         "topic:vp-full-inf",
         "topic:map-tener",
-        "topic:enmap-to"
+        "topic:enmap-to",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -25004,7 +25037,8 @@
         "pos:verb",
         "audit:reviewed",
         "topic:verb-modal-obligation",
-        "topic:map-tener"
+        "topic:map-tener",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -25566,7 +25600,8 @@
         "topic:part-with",
         "topic:map-tener",
         "topic:enmap-with",
-        "topic:enmap-have"
+        "topic:enmap-have",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -25692,7 +25727,6 @@
         "en:touch",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-2",
         "topic:verb-taking-removing"
       ],
       "curriculumRole": "Unranked"
@@ -25711,7 +25745,6 @@
         "en:play",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-2",
         "topic:verb-taking-removing"
       ],
       "curriculumRole": "Unranked"
@@ -25730,7 +25763,6 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-2",
         "topic:verb-taking-removing"
       ],
       "curriculumRole": "Unranked"
@@ -25816,7 +25848,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-2",
         "topic:part-on",
         "topic:verb-household"
       ],
@@ -25836,7 +25867,6 @@
         "en:ring",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-2",
         "topic:verb-taking-removing"
       ],
       "curriculumRole": "Unranked"
@@ -25856,7 +25886,6 @@
         "en:affects",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-1",
         "topic:verb-taking-removing"
       ],
       "curriculumRole": "Unranked"
@@ -25877,7 +25906,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-2",
         "topic:part-on",
         "topic:verb-taking-removing"
       ],
@@ -25901,7 +25929,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-2",
         "topic:part-up",
         "topic:verb-taking-removing"
       ],
@@ -26915,7 +26942,7 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-coming",
+        "topic:verb-movement-going",
         "topic:part-to",
         "topic:enmap-to",
         "topic:enmap-come"
@@ -26942,7 +26969,7 @@
         "particle:from",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-coming",
+        "topic:verb-movement-going",
         "topic:part-from",
         "topic:enmap-from",
         "topic:enmap-come"
@@ -26970,7 +26997,7 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-coming",
+        "topic:verb-movement-going",
         "topic:phr-be",
         "topic:part-from",
         "topic:enmap-from",
@@ -26998,7 +27025,7 @@
         "particle:with",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-coming",
+        "topic:verb-movement-going",
         "topic:part-with",
         "topic:enmap-with",
         "topic:enmap-come"
@@ -27023,7 +27050,7 @@
         "pos:verb",
         "topic:verb-pattern",
         "audit:reviewed",
-        "topic:verb-movement-coming",
+        "topic:verb-movement-going",
         "topic:vp-full-inf",
         "topic:enmap-come"
       ],
@@ -27048,7 +27075,7 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-coming",
+        "topic:verb-movement-going",
         "topic:part-in",
         "topic:enmap-come"
       ],
@@ -27100,7 +27127,7 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-coming",
+        "topic:verb-movement-going",
         "topic:phr-be",
         "topic:part-on",
         "topic:enmap-be"
@@ -27125,7 +27152,7 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-coming",
+        "topic:verb-movement-going",
         "topic:enmap-come"
       ],
       "curriculumRole": "Unranked"
@@ -27148,7 +27175,7 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-coming",
+        "topic:verb-movement-going",
         "topic:enmap-come"
       ],
       "curriculumRole": "Unranked"
@@ -27174,7 +27201,7 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-coming",
+        "topic:verb-movement-going",
         "topic:part-to",
         "topic:enmap-to",
         "topic:enmap-come"
@@ -27531,7 +27558,8 @@
         "topic:map-tener",
         "topic:map-ver",
         "topic:enmap-to",
-        "topic:enmap-be"
+        "topic:enmap-be",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -27780,7 +27808,7 @@
         "particle:to",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs",
+        "topic:verb-movement-directional",
         "topic:part-to",
         "topic:enmap-to"
       ],
@@ -27805,7 +27833,7 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs",
+        "topic:verb-movement-directional",
         "topic:enmap-come"
       ],
       "curriculumRole": "Unranked"
@@ -27831,7 +27859,7 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs",
+        "topic:verb-movement-directional",
         "topic:enmap-to",
         "topic:enmap-go"
       ],
@@ -27939,7 +27967,7 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs"
+        "topic:verb-movement-directional"
       ],
       "curriculumRole": "Unranked"
     },
@@ -27963,7 +27991,7 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs"
+        "topic:verb-movement-directional"
       ],
       "curriculumRole": "Unranked"
     },
@@ -27986,7 +28014,7 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs"
+        "topic:verb-movement-directional"
       ],
       "curriculumRole": "Unranked"
     },
@@ -28210,7 +28238,8 @@
         "en:manage",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-modal-ability"
+        "topic:verb-modal-ability",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -29608,7 +29637,8 @@
         "topic:question-negation",
         "qn:modal-be-have-negation",
         "audit:reviewed",
-        "topic:verb-modal-ability"
+        "topic:verb-modal-ability",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -29927,7 +29957,7 @@
         "particle:back",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs",
+        "topic:verb-movement-directional",
         "topic:enmap-come"
       ],
       "curriculumRole": "Unranked"
@@ -29950,7 +29980,7 @@
         "particle:back",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs",
+        "topic:verb-movement-directional",
         "topic:enmap-go"
       ],
       "curriculumRole": "Unranked"
@@ -29969,7 +29999,7 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs"
+        "topic:verb-movement-directional"
       ],
       "curriculumRole": "Unranked"
     },
@@ -30218,7 +30248,8 @@
         "pos:verb",
         "audit:reviewed",
         "topic:verb-ser-idioms",
-        "topic:map-ser"
+        "topic:map-ser",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -30238,7 +30269,8 @@
         "pos:verb",
         "audit:reviewed",
         "topic:verb-ser-idioms",
-        "topic:map-ser"
+        "topic:map-ser",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -30383,7 +30415,8 @@
         "pos:verb",
         "topic:verb-estar-idioms-1",
         "topic:map-estar",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -30552,7 +30585,8 @@
         "pos:verb",
         "audit:reviewed",
         "topic:verb-ser-idioms",
-        "topic:map-ser"
+        "topic:map-ser",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -30925,7 +30959,8 @@
         "pos:verb",
         "audit:reviewed",
         "topic:verb-ser-idioms",
-        "topic:map-ser"
+        "topic:map-ser",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -30986,7 +31021,8 @@
         "pos:verb",
         "audit:reviewed",
         "topic:verb-ser-idioms",
-        "topic:map-ser"
+        "topic:map-ser",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -32400,7 +32436,8 @@
         "topic:phr-be",
         "topic:map-estar",
         "topic:enmap-be",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -32464,7 +32501,8 @@
         "pos:verb",
         "audit:reviewed",
         "topic:verb-ser-idioms",
-        "topic:map-ser"
+        "topic:map-ser",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -32571,7 +32609,8 @@
         "pos:verb",
         "audit:reviewed",
         "topic:verb-ser-idioms",
-        "topic:map-ser"
+        "topic:map-ser",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -32591,7 +32630,8 @@
         "pos:verb",
         "audit:reviewed",
         "topic:verb-ser-idioms",
-        "topic:map-ser"
+        "topic:map-ser",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -33423,7 +33463,7 @@
         "particle:back",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs",
+        "topic:verb-movement-directional",
         "topic:enmap-come"
       ],
       "curriculumRole": "Unranked"
@@ -34714,7 +34754,6 @@
         "topic:technology",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-household-2",
         "topic:verb-household"
       ],
       "curriculumRole": "Unranked"
@@ -34735,7 +34774,7 @@
         "topic:technology",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-technology-digital"
+        "topic:verb-creation-repair-other"
       ],
       "curriculumRole": "Unranked"
     },
@@ -35017,7 +35056,8 @@
         "topic:phr-be",
         "topic:map-estar",
         "topic:enmap-be",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -35067,7 +35107,8 @@
         "topic:part-with",
         "topic:map-estar",
         "topic:enmap-with",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -35161,7 +35202,7 @@
         "audit:reviewed",
         "topic:part-for",
         "topic:enmap-for",
-        "topic:verb-analysis-investigation"
+        "topic:verb-thinking-opinions"
       ],
       "curriculumRole": "Unranked"
     },
@@ -35561,7 +35602,7 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs",
+        "topic:verb-movement-directional",
         "topic:part-in"
       ],
       "curriculumRole": "Unranked"
@@ -36091,7 +36132,8 @@
         "audit:reviewed",
         "topic:verb-ser-idioms",
         "topic:part-of",
-        "topic:map-ser"
+        "topic:map-ser",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -37341,7 +37383,8 @@
         "pos:verb",
         "audit:reviewed",
         "topic:verb-ser-idioms",
-        "topic:map-ser"
+        "topic:map-ser",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -37715,7 +37758,8 @@
         "pos:verb",
         "audit:reviewed",
         "topic:verb-ser-idioms",
-        "topic:map-ser"
+        "topic:map-ser",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -37760,7 +37804,7 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-formal",
+        "topic:verb-communication-saying",
         "topic:part-up",
         "topic:enmap-to"
       ],
@@ -37806,7 +37850,8 @@
         "pos:verb",
         "audit:reviewed",
         "topic:verb-ser-idioms",
-        "topic:map-ser"
+        "topic:map-ser",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -38082,7 +38127,7 @@
         "pos:verb",
         "audit:reviewed",
         "topic:verb-admin-legal-formal",
-        "topic:verb-needing"
+        "topic:verb-depending-fitting"
       ],
       "curriculumRole": "Unranked"
     },
@@ -38519,7 +38564,7 @@
         "es:encriptar",
         "en:encrypt",
         "audit:reviewed",
-        "topic:verb-technology-digital",
+        "topic:verb-creation-repair-other",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "Unranked"
@@ -38687,7 +38732,7 @@
         "es:informar",
         "en:inform",
         "audit:reviewed",
-        "topic:verb-communication-formal",
+        "topic:verb-communication-saying",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "Unranked"
@@ -38769,7 +38814,6 @@
         "es:alarmar",
         "en:alarm",
         "audit:reviewed",
-        "topic:verb-household-1",
         "topic:cognate-transparent",
         "topic:verb-household"
       ],
@@ -38987,7 +39031,7 @@
         "en:function",
         "audit:reviewed",
         "topic:cognate-transparent",
-        "topic:verb-technology-digital"
+        "topic:verb-creation-repair-other"
       ],
       "curriculumRole": "Unranked"
     },
@@ -39007,7 +39051,7 @@
         "es:mencionar",
         "en:mention",
         "audit:reviewed",
-        "topic:verb-communication-formal",
+        "topic:verb-communication-saying",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "Unranked"
@@ -39116,7 +39160,7 @@
         "cognate:mitir-to-mit",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-communication-formal",
+        "topic:verb-communication-saying",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -39163,7 +39207,7 @@
         "cognate:mitir-to-mit",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-communication-formal",
+        "topic:verb-communication-saying",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -39333,7 +39377,7 @@
         "cognate:ferir-to-fer",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-communication-formal",
+        "topic:verb-communication-saying",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -39538,7 +39582,7 @@
         "es:comentar",
         "en:comment",
         "audit:reviewed",
-        "topic:verb-communication-formal",
+        "topic:verb-communication-saying",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "Unranked"
@@ -39828,7 +39872,7 @@
         "es:reportar",
         "en:report",
         "audit:reviewed",
-        "topic:verb-communication-formal",
+        "topic:verb-communication-saying",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "Unranked"
@@ -39849,7 +39893,7 @@
         "es:transportar",
         "en:transport",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs",
+        "topic:verb-movement-directional",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "Unranked"
@@ -50701,7 +50745,7 @@
         "cognate:ar-to-ate",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-communication-formal",
+        "topic:verb-communication-saying",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "Unranked"
@@ -50723,7 +50767,7 @@
         "cognate:ar-to-ate",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-analysis-investigation",
+        "topic:verb-thinking-opinions",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "Unranked"
@@ -50810,7 +50854,7 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-communication-formal",
+        "topic:verb-communication-saying",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -51100,7 +51144,7 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-analysis-investigation",
+        "topic:verb-thinking-opinions",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -51209,7 +51253,7 @@
         "cognate:inar-to-ine",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-analysis-investigation",
+        "topic:verb-thinking-opinions",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "Unranked"
@@ -51231,7 +51275,7 @@
         "cognate:inar-to-ine",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-analysis-investigation",
+        "topic:verb-thinking-opinions",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "Unranked"
@@ -51317,7 +51361,7 @@
         "cognate:escribir-to-scribe",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-communication-formal",
+        "topic:verb-communication-saying",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "Unranked"
@@ -51404,7 +51448,7 @@
         "cognate:escribir-to-scribe",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-communication-formal",
+        "topic:verb-communication-saying",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "Unranked"
@@ -51517,7 +51561,7 @@
         "cognate:ificar-to-ify",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-analysis-investigation",
+        "topic:verb-thinking-opinions",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "Unranked"
@@ -51583,7 +51627,7 @@
         "cognate:ificar-to-ify",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-analysis-investigation",
+        "topic:verb-thinking-opinions",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "Unranked"
@@ -51605,7 +51649,7 @@
         "cognate:ificar-to-ify",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-analysis-investigation",
+        "topic:verb-thinking-opinions",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "Unranked"
@@ -51714,7 +51758,7 @@
         "audit:reviewed",
         "topic:cognate-transparent",
         "topic:cognate-latin-root",
-        "topic:verb-analysis-investigation"
+        "topic:verb-thinking-opinions"
       ],
       "curriculumRole": "Unranked"
     },
@@ -51737,7 +51781,7 @@
         "audit:reviewed",
         "topic:cognate-transparent",
         "topic:cognate-latin-root",
-        "topic:verb-analysis-investigation"
+        "topic:verb-thinking-opinions"
       ],
       "curriculumRole": "Unranked"
     },
@@ -52203,7 +52247,7 @@
         "cognate:transparent",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-communication-formal",
+        "topic:verb-communication-saying",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -52248,7 +52292,7 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-communication-formal",
+        "topic:verb-communication-saying",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -52512,7 +52556,7 @@
         "cognate:izar-to-ize",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-analysis-investigation",
+        "topic:verb-thinking-opinions",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "Unranked"
@@ -52534,7 +52578,7 @@
         "cognate:izar-to-ize",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-technology-digital",
+        "topic:verb-creation-repair-other",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "Unranked"
@@ -52600,7 +52644,7 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-analysis-investigation",
+        "topic:verb-thinking-opinions",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -53359,7 +53403,7 @@
         "cognate:primir-to-press",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-communication-formal",
+        "topic:verb-communication-saying",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "Unranked"
@@ -53770,7 +53814,7 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-analysis-investigation",
+        "topic:verb-thinking-opinions",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],
@@ -53987,7 +54031,7 @@
         "cognate:plicar-to-ply",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-communication-formal",
+        "topic:verb-communication-saying",
         "topic:cognate-latin-root"
       ],
       "curriculumRole": "Unranked"
@@ -54075,7 +54119,8 @@
         "cognate:latin-root",
         "audit:reviewed",
         "topic:cognate-latin-root",
-        "topic:verb-tobe-existence-hay"
+        "topic:verb-tobe-existence-hay",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -55092,7 +55137,7 @@
         "es:escanear",
         "en:scan",
         "audit:reviewed",
-        "topic:verb-technology-digital",
+        "topic:verb-creation-repair-other",
         "topic:cognate-opaque"
       ],
       "curriculumRole": "Unranked"
@@ -55698,7 +55743,7 @@
         "es:consignar",
         "en:transfer",
         "audit:reviewed",
-        "topic:verb-communication-formal",
+        "topic:verb-communication-saying",
         "topic:cognate-transparent"
       ],
       "curriculumRole": "Unranked"
@@ -60295,7 +60340,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-perfect-auxiliary",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -60446,7 +60492,6 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-1",
         "topic:part-off",
         "topic:verb-household"
       ],
@@ -60468,7 +60513,6 @@
         "en:shut",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-1",
         "topic:verb-household"
       ],
       "curriculumRole": "Unranked"
@@ -60489,7 +60533,6 @@
         "en:fade",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-1",
         "topic:verb-household"
       ],
       "curriculumRole": "Unranked"
@@ -60694,7 +60737,7 @@
         "en:find",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-analysis-investigation",
+        "topic:verb-thinking-opinions",
         "topic:part-out"
       ],
       "curriculumRole": "Unranked"
@@ -60712,7 +60755,7 @@
         "es:averiguar",
         "en:check",
         "audit:reviewed",
-        "topic:verb-analysis-investigation"
+        "topic:verb-thinking-opinions"
       ],
       "curriculumRole": "Unranked"
     },
@@ -60729,7 +60772,7 @@
         "es:averiguar",
         "en:investigate",
         "audit:reviewed",
-        "topic:verb-analysis-investigation"
+        "topic:verb-thinking-opinions"
       ],
       "curriculumRole": "Unranked"
     },
@@ -60904,7 +60947,6 @@
         "es:bajar",
         "en:download",
         "audit:reviewed",
-        "topic:verb-household-1",
         "topic:verb-household"
       ],
       "curriculumRole": "Unranked"
@@ -61502,7 +61544,6 @@
         "es:cerrar",
         "en:close",
         "audit:reviewed",
-        "topic:verb-household-1",
         "topic:verb-household"
       ],
       "curriculumRole": "Unranked"
@@ -61523,7 +61564,6 @@
         "en:block",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-1",
         "topic:part-off",
         "topic:verb-household"
       ],
@@ -61542,7 +61582,6 @@
         "es:cerrar",
         "en:close",
         "audit:reviewed",
-        "topic:verb-household-1",
         "topic:verb-household"
       ],
       "curriculumRole": "Unranked"
@@ -61563,7 +61602,6 @@
         "en:log",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-1",
         "topic:part-out",
         "topic:verb-household"
       ],
@@ -62483,7 +62521,6 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-2",
         "topic:part-on",
         "topic:verb-household"
       ],
@@ -62502,7 +62539,6 @@
         "es:encender",
         "en:light",
         "audit:reviewed",
-        "topic:verb-household-2",
         "topic:verb-household"
       ],
       "curriculumRole": "Unranked"
@@ -62521,7 +62557,6 @@
         "en:start",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-household-2",
         "topic:verb-household"
       ],
       "curriculumRole": "Unranked"
@@ -62539,7 +62574,6 @@
         "es:encender",
         "en:spark",
         "audit:reviewed",
-        "topic:verb-household-2",
         "topic:verb-household"
       ],
       "curriculumRole": "Unranked"
@@ -62620,7 +62654,8 @@
         "topic:phr-be",
         "topic:part-in",
         "topic:enmap-be",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -62789,7 +62824,6 @@
         "es:guardar",
         "en:save",
         "audit:reviewed",
-        "topic:verb-household-2",
         "topic:verb-household"
       ],
       "curriculumRole": "Unranked"
@@ -62998,7 +63032,6 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-2",
         "topic:phr-put",
         "topic:enmap-put",
         "topic:verb-household"
@@ -63021,7 +63054,6 @@
         "en:insert",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-2",
         "topic:verb-household"
       ],
       "curriculumRole": "Unranked"
@@ -63043,7 +63075,6 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-2",
         "topic:phr-get",
         "topic:enmap-get",
         "topic:verb-household"
@@ -63066,7 +63097,6 @@
         "en:involve",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-2",
         "topic:part-in",
         "topic:verb-household"
       ],
@@ -63088,7 +63118,6 @@
         "en:interfere",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-2",
         "topic:part-in",
         "topic:verb-household"
       ],
@@ -63110,7 +63139,6 @@
         "en:fit",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-2",
         "topic:verb-household"
       ],
       "curriculumRole": "Unranked"
@@ -63132,7 +63160,6 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-2",
         "topic:phr-get",
         "topic:enmap-get",
         "topic:verb-household"
@@ -63156,7 +63183,6 @@
         "topic:en-multi-sense",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-2",
         "topic:phr-get",
         "topic:enmap-get",
         "topic:verb-household"
@@ -63194,7 +63220,6 @@
         "en:for",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-household-2",
         "topic:enmap-for",
         "topic:verb-household"
       ],
@@ -63687,7 +63712,7 @@
         "topic:collocation",
         "coll:other",
         "audit:reviewed",
-        "topic:verb-communication-formal"
+        "topic:verb-communication-saying"
       ],
       "curriculumRole": "Unranked"
     },
@@ -63837,7 +63862,6 @@
         "en:upload",
         "topic:multi-sense",
         "audit:reviewed",
-        "topic:verb-household-2",
         "topic:verb-household"
       ],
       "curriculumRole": "Unranked"
@@ -64162,7 +64186,6 @@
         "en:for",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-household-1",
         "topic:enmap-for",
         "topic:verb-household"
       ],
@@ -64241,7 +64264,7 @@
         "en:write",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-communication-formal"
+        "topic:verb-communication-saying"
       ],
       "curriculumRole": "Unranked"
     },
@@ -64347,7 +64370,7 @@
         "es:apuntar",
         "en:record",
         "audit:reviewed",
-        "topic:verb-communication-formal"
+        "topic:verb-communication-saying"
       ],
       "curriculumRole": "Unranked"
     },
@@ -64685,7 +64708,7 @@
         "particle:toward",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs"
+        "topic:verb-movement-directional"
       ],
       "curriculumRole": "Unranked"
     },
@@ -65035,7 +65058,7 @@
         "en:break",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-movement-directional-verbs"
+        "topic:verb-movement-directional"
       ],
       "curriculumRole": "Unranked"
     },
@@ -65182,7 +65205,8 @@
         "es:salvar",
         "en:overcome",
         "audit:reviewed",
-        "topic:verb-modal-ability"
+        "topic:verb-modal-ability",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -65298,7 +65322,6 @@
         "es:tirar",
         "en:throw",
         "audit:reviewed",
-        "topic:verb-taking-removing-2",
         "topic:verb-taking-removing"
       ],
       "curriculumRole": "Unranked"
@@ -65316,7 +65339,6 @@
         "es:tirar",
         "en:pull",
         "audit:reviewed",
-        "topic:verb-taking-removing-2",
         "topic:verb-taking-removing"
       ],
       "curriculumRole": "Unranked"
@@ -65337,7 +65359,6 @@
         "en:throw",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-2",
         "topic:verb-taking-removing"
       ],
       "curriculumRole": "Unranked"
@@ -65355,7 +65376,6 @@
         "es:tirar",
         "en:waste",
         "audit:reviewed",
-        "topic:verb-taking-removing-2",
         "topic:verb-taking-removing"
       ],
       "curriculumRole": "Unranked"
@@ -65376,7 +65396,6 @@
         "particle:toward",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-taking-removing-2",
         "topic:verb-taking-removing"
       ],
       "curriculumRole": "Unranked"
@@ -66277,7 +66296,8 @@
         "audit:reviewed",
         "topic:verb-ser-idioms",
         "topic:part-of",
-        "topic:map-ser"
+        "topic:map-ser",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -67010,7 +67030,8 @@
         "topic:verb-estar-idioms-1",
         "topic:morph-adj-to-noun",
         "topic:map-estar",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -67082,7 +67103,8 @@
         "topic:verb-estar-idioms-1",
         "topic:morph-adj-to-noun",
         "topic:map-estar",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -67223,7 +67245,8 @@
         "topic:verb-estar-idioms-2",
         "topic:morph-adj-to-noun",
         "topic:map-estar",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -67313,7 +67336,8 @@
         "topic:verb-estar-idioms-1",
         "topic:morph-verb-to-noun",
         "topic:map-estar",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -68743,7 +68767,8 @@
         "pos:verb",
         "topic:verb-modal-ability",
         "topic:morph-noun-to-adj",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -69044,7 +69069,8 @@
         "pos:verb",
         "topic:verb-modal-ability",
         "topic:morph-noun-to-adj",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -69330,7 +69356,8 @@
         "topic:verb-estar-idioms-1",
         "topic:morph-adj-to-noun",
         "topic:map-estar",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -69356,7 +69383,8 @@
         "topic:verb-estar-idioms-2",
         "topic:morph-adj-to-noun",
         "topic:map-estar",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -69405,7 +69433,8 @@
         "topic:verb-estar-idioms-2",
         "topic:morph-adj-to-noun",
         "topic:map-estar",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -69604,7 +69633,8 @@
         "topic:verb-estar-idioms-2",
         "topic:morph-adj-to-noun",
         "topic:map-estar",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -70806,7 +70836,8 @@
         "topic:verb-estar-idioms-2",
         "topic:morph-ish",
         "topic:map-estar",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -70881,7 +70912,8 @@
         "topic:verb-estar-idioms-1",
         "topic:morph-ish",
         "topic:map-estar",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -70908,7 +70940,8 @@
         "topic:verb-estar-idioms-2",
         "topic:morph-ish",
         "topic:map-estar",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -71309,7 +71342,8 @@
         "topic:verb-estar-idioms-1",
         "topic:morph-adj-to-noun",
         "topic:map-estar",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -71400,7 +71434,8 @@
         "topic:verb-estar-idioms-2",
         "topic:morph-adj-to-noun",
         "topic:map-estar",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -72346,7 +72381,8 @@
         "pos:verb",
         "topic:verb-estar-idioms-1",
         "topic:map-estar",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -73028,7 +73064,8 @@
         "audit:reviewed",
         "topic:verb-estar-idioms-1",
         "topic:map-estar",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -73050,7 +73087,8 @@
         "audit:reviewed",
         "topic:verb-estar-idioms-1",
         "topic:map-estar",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -73686,7 +73724,8 @@
         "topic:verb-pattern",
         "audit:reviewed",
         "topic:vp-full-inf",
-        "topic:verb-modal-ability"
+        "topic:verb-modal-ability",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -73832,7 +73871,8 @@
         "audit:reviewed",
         "topic:verb-tobe-present",
         "topic:vp-full-inf",
-        "topic:map-ser"
+        "topic:map-ser",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -74044,7 +74084,8 @@
         "pos:verb",
         "topic:verb-modal-ability",
         "topic:vp-bare-inf",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -74071,7 +74112,8 @@
         "pos:verb",
         "topic:verb-modal-ability",
         "topic:vp-bare-inf",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -74120,7 +74162,8 @@
         "pos:verb",
         "topic:verb-modal-possibility",
         "topic:vp-bare-inf",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -74293,7 +74336,7 @@
         "pos:verb",
         "topic:verb-pattern",
         "audit:reviewed",
-        "topic:verb-movement-coming",
+        "topic:verb-movement-going",
         "topic:vp-bare-inf",
         "topic:enmap-come"
       ],
@@ -74869,7 +74912,8 @@
         "audit:reviewed",
         "topic:verb-ser-idioms",
         "topic:vp-full-inf",
-        "topic:map-ser"
+        "topic:map-ser",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -75313,7 +75357,8 @@
         "topic:verb-pattern",
         "audit:reviewed",
         "topic:verb-ser-idioms",
-        "topic:map-ser"
+        "topic:map-ser",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -75338,7 +75383,7 @@
         "pos:verb",
         "topic:verb-pattern",
         "audit:reviewed",
-        "topic:verb-quedar-remaining",
+        "topic:verb-keeping-storing",
         "topic:phr-get",
         "topic:enmap-get"
       ],
@@ -75563,7 +75608,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-tobe-present",
-        "topic:map-estar"
+        "topic:map-estar",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -75997,7 +76043,8 @@
         "pos:verb",
         "audit:reviewed",
         "topic:verb-ser-idioms",
-        "topic:map-ser"
+        "topic:map-ser",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -76017,7 +76064,8 @@
         "pos:verb",
         "audit:reviewed",
         "topic:verb-ser-idioms",
-        "topic:map-ser"
+        "topic:map-ser",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -76171,7 +76219,8 @@
         "topic:phr-be",
         "topic:map-estar",
         "topic:enmap-be",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -76850,7 +76899,8 @@
         "audit:reviewed",
         "topic:verb-perfect-auxiliary",
         "topic:map-haber",
-        "topic:enmap-you"
+        "topic:enmap-you",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -76873,7 +76923,8 @@
         "topic:multi-sense",
         "audit:reviewed",
         "topic:verb-perfect-auxiliary",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -76896,7 +76947,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-perfect-auxiliary",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -76921,7 +76973,8 @@
         "pos:verb",
         "topic:verb-perfect-auxiliary",
         "topic:map-haber",
-        "topic:enmap-have"
+        "topic:enmap-have",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -76946,7 +76999,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-perfect-auxiliary",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -76973,8 +77027,9 @@
         "topic:verb-pattern",
         "audit:reviewed",
         "pos:verb",
-        "topic:verb-tobe-past-future",
-        "topic:map-estar"
+        "topic:verb-tobe-present",
+        "topic:map-estar",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -77041,7 +77096,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-perfect-auxiliary",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -77066,7 +77122,8 @@
         "pos:verb",
         "topic:verb-perfect-auxiliary",
         "topic:map-haber",
-        "topic:enmap-have"
+        "topic:enmap-have",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -77091,7 +77148,8 @@
         "pos:verb",
         "topic:verb-perfect-auxiliary",
         "topic:map-haber",
-        "topic:enmap-have"
+        "topic:enmap-have",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -77116,7 +77174,8 @@
         "pos:verb",
         "audit:reviewed",
         "topic:verb-perfect-auxiliary",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -77141,7 +77200,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-perfect-auxiliary",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -77166,7 +77226,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-perfect-auxiliary",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -77191,7 +77252,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-perfect-auxiliary",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -77306,7 +77368,8 @@
         "topic:verb-modal-obligation",
         "topic:vp-full-inf",
         "topic:map-tener",
-        "topic:enmap-to"
+        "topic:enmap-to",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -77358,7 +77421,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-tobe-existence-hay",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -77386,7 +77450,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-tobe-existence-hay",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -77412,7 +77477,8 @@
         "audit:reviewed",
         "pos:verb",
         "topic:verb-tobe-existence-hay",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -77484,7 +77550,6 @@
         "pos:verb",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-household-1",
         "topic:part-off",
         "topic:verb-household"
       ],
@@ -77627,7 +77692,8 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:verb-tobe-present",
-        "topic:map-estar"
+        "topic:map-estar",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -77654,8 +77720,9 @@
         "qn:inversion-question",
         "audit:reviewed",
         "pos:verb",
-        "topic:verb-tobe-past-future",
-        "topic:map-estar"
+        "topic:verb-tobe-present",
+        "topic:map-estar",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -77680,8 +77747,9 @@
         "topic:multi-sense",
         "audit:reviewed",
         "pos:verb",
-        "topic:verb-tobe-past-future",
-        "topic:map-estar"
+        "topic:verb-tobe-present",
+        "topic:map-estar",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -77912,7 +77980,8 @@
         "pos:verb",
         "topic:verb-modal-ability",
         "topic:vp-bare-inf",
-        "topic:map-poder"
+        "topic:map-poder",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -77942,7 +78011,8 @@
         "topic:verb-modal-obligation",
         "topic:vp-bare-inf",
         "topic:map-deber",
-        "topic:enmap-you"
+        "topic:enmap-you",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -77971,7 +78041,8 @@
         "topic:verb-estar-idioms-2",
         "topic:vp-bare-inf",
         "topic:map-estar",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -78002,7 +78073,8 @@
         "topic:verb-estar-idioms-2",
         "topic:vp-bare-inf",
         "topic:map-estar",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -78032,7 +78104,8 @@
         "topic:verb-modal-obligation",
         "topic:vp-bare-inf",
         "topic:map-deber",
-        "topic:enmap-you"
+        "topic:enmap-you",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -79107,7 +79180,7 @@
         "en:need",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-needing"
+        "topic:verb-depending-fitting"
       ],
       "curriculumRole": "Unranked"
     },
@@ -92378,7 +92451,8 @@
         "audit:reviewed",
         "topic:verb-tobe-present",
         "topic:map-ser",
-        "topic:confusable-verb"
+        "topic:confusable-verb",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -92403,7 +92477,8 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:verb-tobe-present",
-        "topic:map-ser"
+        "topic:map-ser",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -92428,7 +92503,8 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:verb-tobe-present",
-        "topic:map-ser"
+        "topic:map-ser",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -92453,7 +92529,8 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:verb-tobe-present",
-        "topic:map-ser"
+        "topic:map-ser",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -92478,7 +92555,8 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:verb-tobe-present",
-        "topic:map-ser"
+        "topic:map-ser",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -92506,7 +92584,8 @@
         "audit:reviewed",
         "topic:verb-tobe-present",
         "topic:map-estar",
-        "topic:confusable-verb"
+        "topic:confusable-verb",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -92531,7 +92610,8 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:verb-tobe-present",
-        "topic:map-estar"
+        "topic:map-estar",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -92559,7 +92639,8 @@
         "audit:reviewed",
         "topic:verb-tobe-present",
         "topic:map-estar",
-        "topic:confusable-verb"
+        "topic:confusable-verb",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -92584,7 +92665,8 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:verb-tobe-present",
-        "topic:map-estar"
+        "topic:map-estar",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -92609,7 +92691,8 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:verb-tobe-present",
-        "topic:map-estar"
+        "topic:map-estar",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -92758,7 +92841,8 @@
         "audit:reviewed",
         "topic:verb-perfect-auxiliary",
         "topic:map-haber",
-        "topic:enmap-have"
+        "topic:enmap-have",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -92784,7 +92868,8 @@
         "audit:reviewed",
         "topic:verb-perfect-auxiliary",
         "topic:map-haber",
-        "topic:enmap-have"
+        "topic:enmap-have",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -92808,7 +92893,8 @@
         "topic:multi-sense",
         "audit:reviewed",
         "topic:verb-perfect-auxiliary",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -92834,7 +92920,8 @@
         "audit:reviewed",
         "topic:verb-perfect-auxiliary",
         "topic:map-haber",
-        "topic:enmap-have"
+        "topic:enmap-have",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -92860,7 +92947,8 @@
         "audit:reviewed",
         "topic:verb-perfect-auxiliary",
         "topic:map-haber",
-        "topic:enmap-have"
+        "topic:enmap-have",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -92887,7 +92975,8 @@
         "topic:verb-pattern",
         "audit:reviewed",
         "topic:verb-tobe-present",
-        "topic:map-estar"
+        "topic:map-estar",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -92912,7 +93001,8 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:verb-tobe-present",
-        "topic:map-estar"
+        "topic:map-estar",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -92937,7 +93027,8 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:verb-tobe-present",
-        "topic:map-estar"
+        "topic:map-estar",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -92962,7 +93053,8 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:verb-tobe-present",
-        "topic:map-estar"
+        "topic:map-estar",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -92987,7 +93079,8 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:verb-tobe-present",
-        "topic:map-estar"
+        "topic:map-estar",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -93149,7 +93242,8 @@
         "audit:reviewed",
         "topic:verb-tobe-present",
         "topic:map-ser",
-        "topic:enmap-from"
+        "topic:enmap-from",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -93175,7 +93269,8 @@
         "audit:reviewed",
         "topic:verb-tobe-present",
         "topic:map-ser",
-        "topic:enmap-from"
+        "topic:enmap-from",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -93201,7 +93296,8 @@
         "audit:reviewed",
         "topic:verb-tobe-present",
         "topic:map-ser",
-        "topic:enmap-from"
+        "topic:enmap-from",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -93227,7 +93323,8 @@
         "audit:reviewed",
         "topic:verb-tobe-present",
         "topic:map-ser",
-        "topic:enmap-from"
+        "topic:enmap-from",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -93253,7 +93350,8 @@
         "audit:reviewed",
         "topic:verb-tobe-present",
         "topic:map-ser",
-        "topic:enmap-from"
+        "topic:enmap-from",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -93541,7 +93639,8 @@
         "topic:phr-be",
         "topic:map-ser",
         "topic:enmap-be",
-        "topic:confusable-verb"
+        "topic:confusable-verb",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -93568,7 +93667,8 @@
         "topic:verb-tobe-present",
         "topic:phr-be",
         "topic:map-ser",
-        "topic:enmap-be"
+        "topic:enmap-be",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -93598,7 +93698,8 @@
         "topic:phr-be",
         "topic:map-ser",
         "topic:enmap-be",
-        "topic:confusable-verb"
+        "topic:confusable-verb",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -93625,7 +93726,8 @@
         "topic:verb-tobe-present",
         "topic:phr-be",
         "topic:map-ser",
-        "topic:enmap-be"
+        "topic:enmap-be",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -93652,7 +93754,8 @@
         "topic:verb-tobe-present",
         "topic:phr-be",
         "topic:map-ser",
-        "topic:enmap-be"
+        "topic:enmap-be",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -93676,7 +93779,8 @@
         "topic:time",
         "audit:reviewed",
         "topic:verb-tobe-present",
-        "topic:map-ser"
+        "topic:map-ser",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -94189,7 +94293,8 @@
         "en:isn't",
         "audit:reviewed",
         "topic:verb-ser-idioms",
-        "topic:map-ser"
+        "topic:map-ser",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -94211,7 +94316,8 @@
         "en:aren't",
         "audit:reviewed",
         "topic:verb-ser-idioms",
-        "topic:map-ser"
+        "topic:map-ser",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -94234,7 +94340,8 @@
         "audit:reviewed",
         "topic:verb-estar-idioms-2",
         "topic:map-estar",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -94257,7 +94364,8 @@
         "audit:reviewed",
         "topic:verb-estar-idioms-2",
         "topic:map-estar",
-        "topic:verb-estar-idioms"
+        "topic:verb-estar-idioms",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -94280,7 +94388,8 @@
         "en:hasn't",
         "audit:reviewed",
         "topic:verb-perfect-auxiliary",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -94303,7 +94412,8 @@
         "en:hadn't",
         "audit:reviewed",
         "topic:verb-perfect-auxiliary",
-        "topic:map-haber"
+        "topic:map-haber",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -94390,7 +94500,8 @@
         "en:is",
         "audit:reviewed",
         "topic:verb-tobe-present",
-        "topic:map-ser"
+        "topic:map-ser",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -94411,7 +94522,8 @@
         "en:are",
         "audit:reviewed",
         "topic:verb-tobe-present",
-        "topic:map-estar"
+        "topic:map-estar",
+        "topic:verb-system"
       ],
       "curriculumRole": "Unranked"
     },
@@ -94565,7 +94677,6 @@
         "es:cerrar",
         "en:close",
         "audit:reviewed",
-        "topic:verb-household-1",
         "topic:verb-household"
       ],
       "curriculumRole": "Unranked"
@@ -94588,7 +94699,6 @@
         "es:cerrar",
         "en:close",
         "audit:reviewed",
-        "topic:verb-household-1",
         "topic:verb-household"
       ],
       "curriculumRole": "Unranked"
@@ -94611,7 +94721,6 @@
         "es:cerrar",
         "en:close",
         "audit:reviewed",
-        "topic:verb-household-2",
         "topic:verb-household"
       ],
       "curriculumRole": "Unranked"
@@ -94635,7 +94744,6 @@
         "es:cerrar",
         "en:close",
         "audit:reviewed",
-        "topic:verb-household-2",
         "topic:verb-household"
       ],
       "curriculumRole": "Unranked"
@@ -94659,7 +94767,6 @@
         "es:cerrar",
         "en:close",
         "audit:reviewed",
-        "topic:verb-household-2",
         "topic:verb-household"
       ],
       "curriculumRole": "Unranked"
@@ -94892,7 +94999,7 @@
         "contrast:confusable",
         "contrast:actualizar-vs-actualize",
         "audit:reviewed",
-        "topic:verb-technology-digital",
+        "topic:verb-creation-repair-other",
         "topic:confusable-false-friend",
         "topic:multi-sense"
       ],
@@ -94936,7 +95043,7 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-analysis-investigation",
+        "topic:verb-thinking-opinions",
         "topic:cognate-transparent",
         "topic:cognate-latin-root"
       ],

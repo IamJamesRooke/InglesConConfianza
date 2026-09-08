@@ -242,369 +242,96 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
     slug: "verbs",
     title: "Verbs",
     description:
-      "Every verb, grouped by theme instead of alphabetically — communication, thinking, movement, possession, money, and more — so you can browse verbs the way you'd actually reach for them in conversation. \u201cTo be,\u201d \u201chave,\u201d and the modal verbs (poder, deber) get their own dedicated groups since their English translations swing wildly by context.",
+      "Plain, everyday verbs grouped by theme instead of alphabetically — communication, thinking, movement, possession, money, and more — so you can browse them the way you'd actually reach for them in conversation. The copula/modal machinery (to be, to have, can, must) lives on the Special Verbs page; cognate verbs on Cognates; phrasal verbs on the two Phrasal Verbs pages.",
     baseCollection: "pos:verb",
-    // The Verbs page is single-word, non-cognate verbs only. Cognate verbs
-    // (to prepare, to abstain) live on the Cognates page, grouped by spelling
-    // pattern; phrasal / prepositional verbs (to look for, to turn on) live on
-    // the two Phrasal Verbs pages, grouped by root and by particle. Both
-    // exclusions are unconditional — those rows always belong on their own page.
+    // The Verbs page is plain lexical verbs only. Three unconditional
+    // exclusions send the rest to their own pages: `topic:verb-system` (ser /
+    // estar / haber / hay / modals) -> Special Verbs; `topic:cognate` ->
+    // Cognates (by spelling pattern); `topic:phrasal-verb` -> the two Phrasal
+    // Verbs pages (by root, by particle).
     baseExclusions: [
-      {
-        collection: "topic:cognate",
-        unlessRole: [],
-      },
-      {
-        collection: "topic:phrasal-verb",
-        unlessRole: [],
-      },
+      { collection: "topic:verb-system", unlessRole: [] },
+      { collection: "topic:cognate", unlessRole: [] },
+      { collection: "topic:phrasal-verb", unlessRole: [] },
     ],
     facetButtons: [
-      {
-        collection: "topic:verb-tobe-present",
-        label: "To Be — Present (am/is/are)",
-        family: "Being & existence",
-      },
-      {
-        collection: "topic:verb-tobe-past-future",
-        label: "To Be — Past & Future (was/were/will be)",
-        family: "Being & existence",
-      },
-      {
-        collection: "topic:verb-ser-idioms",
-        label: "To Be (ser) — Idioms & Uses",
-        family: "Being & existence",
-      },
-      {
-        collection: "topic:verb-estar-idioms",
-        label: "To Be (estar) — Idioms & Uses",
-        family: "Being & existence",
-      },
-      {
-        collection: "topic:verb-tobe-existence-hay",
-        label: "There Is/Are (hay)",
-        family: "Being & existence",
-      },
-      {
-        collection: "topic:verb-perfect-auxiliary",
-        label: "Have — Perfect Auxiliary (have/has/had done)",
-        family: "Modals, wishes & possibility",
-      },
-      {
-        collection: "topic:verb-modal-ability",
-        label: "Modals — Ability & Permission",
-        family: "Modals, wishes & possibility",
-      },
-      {
-        collection: "topic:verb-modal-possibility",
-        label: "Modals — Possibility (may/might/could)",
-        family: "Modals, wishes & possibility",
-      },
-      {
-        collection: "topic:verb-modal-obligation",
-        label: "Modals — Obligation & Probability (must/should/have to)",
-        family: "Modals, wishes & possibility",
-      },
-      {
-        collection: "topic:verb-needing",
-        label: "Needing & requiring (necesitar)",
-        family: "Modals, wishes & possibility",
-      },
-      {
-        collection: "topic:verb-wishes",
-        label: "Wishes & Hypotheticals",
-        family: "Modals, wishes & possibility",
-      },
-      {
-        collection: "topic:verb-hoping-waiting",
-        label: "Hoping & Waiting",
-        family: "Modals, wishes & possibility",
-      },
-      {
-        collection: "topic:verb-depending-fitting",
-        label: "Depending, Fitting & Being Enough (depender, caber, bastar)",
-        family: "Modals, wishes & possibility",
-      },
-      {
-        collection: "topic:verb-communication-talking",
-        label: "Communication — Talking",
-        family: "Communication",
-      },
-      {
-        collection: "topic:verb-communication-saying",
-        label: "Communication — Saying & Telling",
-        family: "Communication",
-      },
-      {
-        collection: "topic:verb-communication-other",
-        label: "Communication — Notifying & Telling",
-        family: "Communication",
-      },
-      {
-        collection: "topic:verb-communication-formal",
-        label: "Communication — Formal & Reporting",
-        family: "Communication",
-      },
-      {
-        collection: "topic:verb-communication-naming",
-        label: "Communication — Naming, Calling & Marking",
-        family: "Communication",
-      },
-      {
-        collection: "topic:verb-asking-requesting",
-        label: "Asking & Requesting",
-        family: "Communication",
-      },
-      {
-        collection: "topic:verb-offering",
-        label: "Offering & Providing",
-        family: "Communication",
-      },
-      {
-        collection: "topic:verb-thinking-opinions",
-        label: "Thinking & Opinions",
-        family: "Thinking & learning",
-      },
-      {
-        collection: "topic:verb-deciding-considering",
-        label: "Deciding & Considering",
-        family: "Thinking & learning",
-      },
-      {
-        collection: "topic:verb-knowing",
-        label: "Knowing",
-        family: "Thinking & learning",
-      },
-      {
-        collection: "topic:verb-learning-teaching",
-        label: "Learning & Teaching",
-        family: "Thinking & learning",
-      },
-      {
-        collection: "topic:verb-remembering-forgetting",
-        label: "Remembering & Forgetting",
-        family: "Thinking & learning",
-      },
-      {
-        collection: "topic:verb-seeing-ver",
-        label: "Seeing",
-        family: "Perception & feelings",
-      },
-      {
-        collection: "topic:verb-watching-other",
-        label: "Watching & Observing",
-        family: "Perception & feelings",
-      },
-      {
-        collection: "topic:verb-perception-hearing",
-        label: "Hearing & Listening",
-        family: "Perception & feelings",
-      },
-      {
-        collection: "topic:verb-feelings-general",
-        label: "Feelings & Sensations",
-        family: "Perception & feelings",
-      },
-      {
-        collection: "topic:verb-feelings-love-like",
-        label: "Feelings — Love & Liking",
-        family: "Perception & feelings",
-      },
-      {
-        collection: "topic:verb-feelings-dislike-worry",
-        label: "Feelings — Dislike, Worry & Missing",
-        family: "Perception & feelings",
-      },
-      {
-        collection: "topic:verb-movement-going",
-        label: "Movement — Going",
-        family: "Movement",
-      },
-      {
-        collection: "topic:verb-movement-coming",
-        label: "Movement — Coming",
-        family: "Movement",
-      },
-      {
-        collection: "topic:verb-movement-arriving-passing",
-        label: "Movement — Arriving & Passing",
-        family: "Movement",
-      },
-      {
-        collection: "topic:verb-movement-leaving",
-        label: "Movement — Leaving",
-        family: "Movement",
-      },
-      {
-        collection: "topic:verb-movement-directional-verbs",
-        label: "Movement — Return & Direction",
-        family: "Movement",
-      },
-      {
-        collection: "topic:verb-movement-directional",
-        label: "Movement — Up, Down & Falling",
-        family: "Movement",
-      },
-      {
-        collection: "topic:verb-locomotion-general",
-        label: "Movement — Walking & Running",
-        family: "Movement",
-      },
-      {
-        collection: "topic:verb-following-continuing",
-        label: "Following & Continuing",
-        family: "Movement",
-      },
-      {
-        collection: "topic:verb-possession-having",
-        label: "Having (tener)",
-        family: "Possession & transfer",
-      },
-      {
-        collection: "topic:verb-possession-obtaining",
-        label: "Getting & Obtaining",
-        family: "Possession & transfer",
-      },
-      {
-        collection: "topic:verb-tomar-general",
-        label: "Taking (tomar/coger)",
-        family: "Possession & transfer",
-      },
-      {
-        collection: "topic:verb-dar-giving",
-        label: "Giving (dar)",
-        family: "Possession & transfer",
-      },
-      {
-        collection: "topic:verb-dar-idioms",
-        label: "Giving (dar) — Idioms",
-        family: "Possession & transfer",
-      },
-      {
-        collection: "topic:verb-giving-lending-other",
-        label: "Giving & Lending — Other Verbs",
-        family: "Possession & transfer",
-      },
-      {
-        collection: "topic:verb-removing-stealing",
-        label: "Removing & Stealing",
-        family: "Possession & transfer",
-      },
-      {
-        collection: "topic:verb-taking-removing",
-        label: "Taking Away",
-        family: "Possession & transfer",
-      },
-      {
-        collection: "topic:verb-keeping-storing",
-        label: "Keeping & Storing",
-        family: "Possession & transfer",
-      },
-      {
-        collection: "topic:verb-quedar-remaining",
-        label: "Remaining & Staying (quedar)",
-        family: "Possession & transfer",
-      },
-      {
-        collection: "topic:verb-carrying",
-        label: "Carrying",
-        family: "Possession & transfer",
-      },
-      {
-        collection: "topic:verb-bringing",
-        label: "Bringing",
-        family: "Possession & transfer",
-      },
-      {
-        collection: "topic:verb-eating-drinking",
-        label: "Eating & Drinking",
-        family: "Daily life & work",
-      },
-      {
-        collection: "topic:verb-daily-routine",
-        label: "Daily Routine & Self-care",
-        family: "Daily life & work",
-      },
-      {
-        collection: "topic:verb-work-employment",
-        label: "Work & Employment",
-        family: "Daily life & work",
-      },
-      {
-        collection: "topic:verb-money-earning-spending",
-        label: "Money — Earning & Spending",
-        family: "Daily life & work",
-      },
-      {
-        collection: "topic:verb-money-commerce",
-        label: "Money — Buying & Selling",
-        family: "Daily life & work",
-      },
-      {
-        collection: "topic:verb-creation-hacer",
-        label: "Making & Doing (hacer)",
-        family: "Making, changing & home",
-      },
-      {
-        collection: "topic:verb-creation-repair-other",
-        label: "Creating, Fixing & Changing",
-        family: "Making, changing & home",
-      },
-      {
-        collection: "topic:verb-poner-placement",
-        label: "Placing (poner)",
-        family: "Making, changing & home",
-      },
-      {
-        collection: "topic:verb-poner-idioms",
-        label: "Placing & Setting — Idioms",
-        family: "Making, changing & home",
-      },
-      {
-        collection: "topic:verb-household",
-        label: "Household & Objects",
-        family: "Making, changing & home",
-      },
-      {
-        collection: "topic:verb-social-relationships",
-        label: "Social Interaction & Relationships",
-        family: "Social life & conflict",
-      },
-      {
-        collection: "topic:verb-conflict-crime",
-        label: "Conflict & Crime",
-        family: "Social life & conflict",
-      },
-      {
-        collection: "topic:verb-loss-death",
-        label: "Loss & Death",
-        family: "Social life & conflict",
-      },
-      {
-        collection: "topic:verb-admin-legal-formal",
-        label: "Administrative, Legal & Formal Actions",
-        family: "Specialized actions",
-      },
-      {
-        collection: "topic:verb-analysis-investigation",
-        label: "Analysis & Investigation",
-        family: "Thinking & learning",
-      },
-      {
-        collection: "topic:verb-technology-digital",
-        label: "Technology & Digital Actions",
-        family: "Specialized actions",
-      },
-      {
-        collection: "topic:verb-weather-time-duration",
-        label: "Weather, Time & Duration",
-        family: "Specialized actions",
-      },
-      {
-        collection: "topic:verb-health-body",
-        label: "Body & Health",
-        family: "Specialized actions",
-      },
+      // Communication
+      { collection: "topic:verb-communication-talking", label: "Talking", family: "Communication" },
+      { collection: "topic:verb-communication-saying", label: "Saying & Telling", family: "Communication" },
+      { collection: "topic:verb-communication-other", label: "Informing & Reporting", family: "Communication" },
+      { collection: "topic:verb-communication-naming", label: "Naming & Calling", family: "Communication" },
+      { collection: "topic:verb-asking-requesting", label: "Asking & Requesting", family: "Communication" },
+      // Thinking & knowing
+      { collection: "topic:verb-thinking-opinions", label: "Thinking & Opinions", family: "Thinking & knowing" },
+      { collection: "topic:verb-deciding-considering", label: "Deciding & Considering", family: "Thinking & knowing" },
+      { collection: "topic:verb-knowing", label: "Knowing", family: "Thinking & knowing" },
+      { collection: "topic:verb-learning-teaching", label: "Learning & Teaching", family: "Thinking & knowing" },
+      { collection: "topic:verb-remembering-forgetting", label: "Remembering & Forgetting", family: "Thinking & knowing" },
+      // Perception & feelings
+      { collection: "topic:verb-seeing-ver", label: "Seeing", family: "Perception & feelings" },
+      { collection: "topic:verb-watching-other", label: "Watching & Observing", family: "Perception & feelings" },
+      { collection: "topic:verb-perception-hearing", label: "Hearing & Listening", family: "Perception & feelings" },
+      { collection: "topic:verb-feelings-general", label: "Feelings & Sensations", family: "Perception & feelings" },
+      { collection: "topic:verb-feelings-love-like", label: "Love & Liking", family: "Perception & feelings" },
+      { collection: "topic:verb-feelings-dislike-worry", label: "Dislike, Worry & Missing", family: "Perception & feelings" },
+      // Movement
+      { collection: "topic:verb-movement-going", label: "Going & Coming", family: "Movement" },
+      { collection: "topic:verb-movement-arriving-passing", label: "Arriving & Passing", family: "Movement" },
+      { collection: "topic:verb-movement-leaving", label: "Leaving", family: "Movement" },
+      { collection: "topic:verb-movement-directional", label: "Direction — Up, Down & Back", family: "Movement" },
+      { collection: "topic:verb-locomotion-general", label: "Walking & Running", family: "Movement" },
+      { collection: "topic:verb-following-continuing", label: "Following & Continuing", family: "Movement" },
+      // Possession & transfer
+      { collection: "topic:verb-possession-having", label: "Having (tener)", family: "Possession & transfer" },
+      { collection: "topic:verb-possession-obtaining", label: "Getting & Obtaining", family: "Possession & transfer" },
+      { collection: "topic:verb-tomar-general", label: "Taking (tomar)", family: "Possession & transfer" },
+      { collection: "topic:verb-dar-giving", label: "Giving (dar)", family: "Possession & transfer" },
+      { collection: "topic:verb-dar-idioms", label: "Giving (dar) — Idioms", family: "Possession & transfer" },
+      { collection: "topic:verb-giving-lending-other", label: "Giving & Lending — Other Verbs", family: "Possession & transfer" },
+      { collection: "topic:verb-offering", label: "Offering & Providing", family: "Possession & transfer" },
+      { collection: "topic:verb-taking-removing", label: "Taking Away", family: "Possession & transfer" },
+      { collection: "topic:verb-keeping-storing", label: "Keeping & Storing", family: "Possession & transfer" },
+      { collection: "topic:verb-carrying", label: "Carrying", family: "Possession & transfer" },
+      { collection: "topic:verb-bringing", label: "Bringing", family: "Possession & transfer" },
+      // Daily life & money
+      { collection: "topic:verb-eating-drinking", label: "Eating & Drinking", family: "Daily life & money" },
+      { collection: "topic:verb-daily-routine", label: "Daily Routine & Self-care", family: "Daily life & money" },
+      { collection: "topic:verb-work-employment", label: "Work & Employment", family: "Daily life & money" },
+      { collection: "topic:verb-money-earning-spending", label: "Money — Earning & Spending", family: "Daily life & money" },
+      { collection: "topic:verb-money-commerce", label: "Money — Buying & Selling", family: "Daily life & money" },
+      // Making, changing & home
+      { collection: "topic:verb-creation-hacer", label: "Making & Doing (hacer)", family: "Making, changing & home" },
+      { collection: "topic:verb-creation-repair-other", label: "Creating, Fixing & Changing", family: "Making, changing & home" },
+      { collection: "topic:verb-poner-idioms", label: "Placing & Setting (poner)", family: "Making, changing & home" },
+      { collection: "topic:verb-household", label: "Household & Objects", family: "Making, changing & home" },
+      { collection: "topic:verb-health-body", label: "Body & Health", family: "Making, changing & home" },
+      // Social life
+      { collection: "topic:verb-social-relationships", label: "Relationships", family: "Social life" },
+      { collection: "topic:verb-conflict-crime", label: "Conflict & Crime", family: "Social life" },
+      { collection: "topic:verb-loss-death", label: "Loss & Death", family: "Social life" },
+      { collection: "topic:verb-admin-legal-formal", label: "Administrative, Legal & Formal", family: "Social life" },
+      // Wanting, needing & hoping
+      { collection: "topic:verb-wishes", label: "Wishes & Hypotheticals", family: "Wanting, needing & hoping" },
+      { collection: "topic:verb-hoping-waiting", label: "Hoping & Waiting", family: "Wanting, needing & hoping" },
+      { collection: "topic:verb-depending-fitting", label: "Needing, Depending & Fitting", family: "Wanting, needing & hoping" },
+      { collection: "topic:verb-weather-time-duration", label: "Weather, Time & Duration", family: "Wanting, needing & hoping" },
+    ],
+  },
+  {
+    slug: "special-verbs",
+    title: "Special Verbs",
+    description:
+      "The grammatical verb machinery, kept separate from the thematic Verbs page because its English translations swing wildly by context: the two verbs for “to be” (ser and estar), “there is / there are” (hay), “to have” as the perfect auxiliary, and the modals (can, could, may, must, should, have to).",
+    baseCollection: "topic:verb-system",
+    facetButtons: [
+      { collection: "topic:verb-ser-idioms", label: "To Be (ser) — Idioms & Uses", family: "To be & there is" },
+      { collection: "topic:verb-estar-idioms", label: "To Be (estar) — Idioms & Uses", family: "To be & there is" },
+      { collection: "topic:verb-tobe-present", label: "To Be — Conjugated Forms (am/is/are, was/were)", family: "To be & there is" },
+      { collection: "topic:verb-tobe-existence-hay", label: "There Is / Are (hay)", family: "To be & there is" },
+      { collection: "topic:verb-perfect-auxiliary", label: "Have — Perfect Auxiliary (have/has/had done)", family: "Modals & auxiliaries" },
+      { collection: "topic:verb-modal-ability", label: "Can & Could — Ability & Permission", family: "Modals & auxiliaries" },
+      { collection: "topic:verb-modal-possibility", label: "May & Might — Possibility", family: "Modals & auxiliaries" },
+      { collection: "topic:verb-modal-obligation", label: "Must, Should & Have To — Obligation", family: "Modals & auxiliaries" },
     ],
   },
   {

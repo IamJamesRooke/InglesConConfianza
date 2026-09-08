@@ -33,7 +33,7 @@ test("verbs are split into meaningful middle-level families", () => {
     (family) => family.label === "Communication",
   )!;
 
-  assert.ok(communication.leaves.length > 5);
+  assert.ok(communication.leaves.length >= 5);
   assert.ok(
     communication.leaves.some(
       (leaf) => leaf.collection === "topic:verb-communication-saying",

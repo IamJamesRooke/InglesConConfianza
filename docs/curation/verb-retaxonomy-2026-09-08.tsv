@@ -1,0 +1,25 @@
+# Verb re-taxonomy after the Special Verbs split (2026-09-08).
+# Consolidate the thematic verb leaves now that the page is ~690 rows.
+# Columns: MERGE <from> <into> <reason>
+
+# --- retired numbered partitions (navigation already merges these) ---
+MERGE	topic:verb-household-1	topic:verb-household	retired numbered split
+MERGE	topic:verb-household-2	topic:verb-household	retired numbered split
+MERGE	topic:verb-taking-removing-1	topic:verb-taking-removing	retired numbered split
+MERGE	topic:verb-taking-removing-2	topic:verb-taking-removing	retired numbered split
+MERGE	topic:verb-poner-idioms-1	topic:verb-poner-idioms	retired numbered split
+MERGE	topic:verb-poner-idioms-2	topic:verb-poner-idioms	retired numbered split
+
+# --- thematic consolidation (tiny groups fold into their nearest neighbour) ---
+MERGE	topic:verb-analysis-investigation	topic:verb-thinking-opinions	2 survivors after cognate exclusion
+MERGE	topic:verb-communication-formal	topic:verb-communication-saying	2 survivors after cognate exclusion
+MERGE	topic:verb-movement-coming	topic:verb-movement-going	2 survivors; "Going & Coming"
+MERGE	topic:verb-movement-directional-verbs	topic:verb-movement-directional	merge return/direction into up-down-falling
+MERGE	topic:verb-removing-stealing	topic:verb-taking-removing	1 survivor (all quitar)
+MERGE	topic:verb-quedar-remaining	topic:verb-keeping-storing	3 survivors
+MERGE	topic:verb-technology-digital	topic:verb-creation-repair-other	1 survivor
+MERGE	topic:verb-poner-placement	topic:verb-poner-idioms	3 survivors; one "Placing & Setting" group
+MERGE	topic:verb-needing	topic:verb-depending-fitting	merge into "Needing, Depending & Fitting"
+
+# --- Special Verbs: one conjugated-forms group for ser/estar ---
+MERGE	topic:verb-tobe-past-future	topic:verb-tobe-present	3 rows; single "conjugated forms" group
