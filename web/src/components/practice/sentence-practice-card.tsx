@@ -42,7 +42,6 @@ export function SentencePracticeCard({
   );
   const [isFeedbackVisible, setIsFeedbackVisible] = useState(false);
   const [helpedBlockIndex, setHelpedBlockIndex] = useState<number | null>(null);
-  const [activeBlockIndex, setActiveBlockIndex] = useState(0);
   const [openDetailsId, setOpenDetailsId] = useState<string | null>(null);
   const [authoringView, setAuthoringView] = useState<"question" | "hint" | "success">("question");
   const [showOptionalMenu, setShowOptionalMenu] = useState(false);
@@ -69,17 +68,6 @@ export function SentencePracticeCard({
     helpedBlockIndex === null &&
     sentence.languageBlocks.length > 0 &&
     correctAnswers.every(Boolean);
-
-  // A single hint control serves the whole sentence: help the blank the learner
-  // is in, or the first one still unanswered.
-  const hintTargetIndex = !correctAnswers[activeBlockIndex]
-    ? activeBlockIndex
-    : correctAnswers.findIndex((isCorrect) => !isCorrect);
-  const canShowHint = !isComplete && hintTargetIndex >= 0;
-  const hintCallout =
-    hintTargetIndex >= 0
-      ? sentence.languageBlocks[hintTargetIndex]?.callout?.trim() ?? ""
-      : "";
 
   const clearHelpTimer = useCallback(() => {
     if (helpTimerRef.current !== null) {
@@ -115,7 +103,7 @@ export function SentencePracticeCard({
         setHelpedBlockIndex(null);
         helpTimerRef.current = null;
         inputRefs.current[languageBlockIndex]?.focus();
-      }, 2500);
+      }, 3500);
     },
     [clearHelpTimer, helpedBlockIndex, sentence.languageBlocks],
   );
@@ -282,9 +270,29 @@ export function SentencePracticeCard({
                       }}
                     />
                   ) : (
-                    <span className="answer-source">{languageBlock.spanish}</span>
+                    <span className="answer-source">
+                      {languageBlock.spanish}
+                      {correctAnswers[languageBlockIndex] &&
+                        helpedBlockIndex !== languageBlockIndex && (
+                          <Check
+                            className="answer-source-check"
+                            size={16}
+                            strokeWidth={3.5}
+                            aria-hidden="true"
+                          />
+                        )}
+                    </span>
                   )}
                   <div className="answer-field">
+                    {!authoring && (
+                      <span className="answer-field-sizer" aria-hidden="true">
+                        {(languageBlock.spanish.trim().length >=
+                        (languageBlock.acceptedAnswers[0]?.trim().length ?? 0)
+                          ? languageBlock.spanish
+                          : languageBlock.acceptedAnswers[0]
+                        )?.trim() || languageBlock.spanish}
+                      </span>
+                    )}
                     <input
                       ref={(element) => {
                         inputRefs.current[languageBlockIndex] = element;
@@ -335,9 +343,6 @@ export function SentencePracticeCard({
                           }
                         }
                       }}
-                      onFocus={() =>
-                        !authoring && setActiveBlockIndex(languageBlockIndex)
-                      }
                       aria-label={`Traducción de ${languageBlock.spanish || `bloque ${languageBlockIndex + 1}`}`}
                       autoComplete="off"
                       autoCapitalize="off"
@@ -352,13 +357,7 @@ export function SentencePracticeCard({
                       }
                       className={`answer-input ${helpedBlockIndex === languageBlockIndex ? "showing-hint" : ""}`}
                     />
-                    {!authoring &&
-                    correctAnswers[languageBlockIndex] &&
-                    helpedBlockIndex !== languageBlockIndex ? (
-                      <span className="answer-correct-mark" aria-hidden="true">
-                        <Check size={18} strokeWidth={2.75} />
-                      </span>
-                    ) : authoring ? (
+                    {authoring && (
                       <button
                         type="button"
                         onClick={() =>
@@ -375,7 +374,7 @@ export function SentencePracticeCard({
                         <Lightbulb size={17} aria-hidden="true" />
                         <span>Answers &amp; hint</span>
                       </button>
-                    ) : null}
+                    )}
                     <span className="sr-only" role="status">
                       {helpedBlockIndex === languageBlockIndex
                         ? `Pista: ${languageBlock.acceptedAnswers[0]}`
@@ -459,6 +458,25 @@ export function SentencePracticeCard({
                       {languageBlock.callout}
                     </button>
                   )}
+                  {!authoring && languageBlock.callout?.trim() && (
+                    <p className="answer-note">
+                      <Info size={13} aria-hidden="true" />
+                      <span>{languageBlock.callout}</span>
+                    </p>
+                  )}
+                  {!authoring &&
+                    !correctAnswers[languageBlockIndex] &&
+                    helpedBlockIndex !== languageBlockIndex && (
+                      <button
+                        type="button"
+                        className="answer-hint-toggle"
+                        onClick={() => showHelp(languageBlockIndex)}
+                        aria-label={`Mostrar la respuesta de ${languageBlock.spanish || `bloque ${languageBlockIndex + 1}`}`}
+                        title="Mostrar la respuesta (Alt+H)"
+                      >
+                        <Lightbulb size={15} aria-hidden="true" />
+                      </button>
+                    )}
                 </div>
               ),
             )}
@@ -472,26 +490,15 @@ export function SentencePracticeCard({
               </button>
             )}
           </div>
-          {!authoring && canShowHint && (
-            <div className="sentence-hint">
-              <button
-                type="button"
-                className="answer-hint"
-                onClick={() => showHelp(hintTargetIndex)}
-                title="Mostrar pista (Alt+H)"
-              >
-                <Lightbulb size={19} aria-hidden="true" />
-                <span>Ver una pista</span>
-              </button>
-              {hintCallout && <p className="sentence-hint-note">{hintCallout}</p>}
-            </div>
-          )}
           {!authoring && isComplete && !hasFeedback && (
-            <p className="sentence-success" aria-live="polite">
+            <p
+              className="sentence-success"
+              aria-live="polite"
+              aria-label="¡Correcto!"
+            >
               <span className="sentence-success-mark" aria-hidden="true">
-                <Check size={20} strokeWidth={3} />
+                <Check size={24} strokeWidth={3.25} />
               </span>
-              <span>¡Perfecto!</span>
             </p>
           )}
         </>

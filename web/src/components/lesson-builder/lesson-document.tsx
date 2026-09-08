@@ -11,10 +11,53 @@ import {
 
 import { LessonConceptsField, type ConceptDisplayLookup } from "@/components/lesson-builder/lesson-concepts-field";
 import { EditablePracticeMarkdown } from "@/components/practice/practice-markdown";
+import { focusSlideWritingField } from "@/lib/lesson-builder/focus";
 import { useDragReorder } from "@/lib/lesson-builder/use-drag-reorder";
 import type { Lesson, LessonConcept, SentenceBlock } from "@/lib/lesson-builder/types";
 
 export type DocumentBlockType = "explanation" | "sentence" | "vocabulary";
+
+type CaretOrigin =
+  | { kind: "field"; el: HTMLInputElement | HTMLTextAreaElement; start: number; end: number }
+  | { kind: "editable"; el: HTMLElement; textOffset: number }
+  | { kind: "other"; el: HTMLElement };
+
+// Caret position inside a contentEditable expressed as a character offset from
+// its start, so it survives the field being re-rendered while the chooser is open.
+function caretTextOffset(root: HTMLElement): number {
+  const selection = window.getSelection();
+  if (!selection || selection.rangeCount === 0) return 0;
+  const range = selection.getRangeAt(0);
+  if (!root.contains(range.startContainer)) return 0;
+  const measure = range.cloneRange();
+  measure.selectNodeContents(root);
+  measure.setEnd(range.startContainer, range.startOffset);
+  return measure.toString().length;
+}
+
+function setCaretAtOffset(root: HTMLElement, target: number) {
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+  let seen = 0;
+  for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+    const length = node.textContent?.length ?? 0;
+    if (seen + length >= target) {
+      const range = document.createRange();
+      range.setStart(node, Math.max(0, Math.min(length, target - seen)));
+      range.collapse(true);
+      const selection = window.getSelection();
+      selection?.removeAllRanges();
+      selection?.addRange(range);
+      return;
+    }
+    seen += length;
+  }
+  const end = document.createRange();
+  end.selectNodeContents(root);
+  end.collapse(false);
+  const selection = window.getSelection();
+  selection?.removeAllRanges();
+  selection?.addRange(end);
+}
 
 type Props = {
   lesson: Lesson;
@@ -37,32 +80,63 @@ type Props = {
   onDuplicateBlock: (blockId: string) => void;
   onMoveBlock: (blockId: string, direction: -1 | 1) => void;
   onReorderBlock: (draggedId: string, targetId: string, position: "before" | "after") => void;
+  onDone: () => void;
+  onAddLesson: () => void;
   onUndoDeletion: () => void;
 };
 
 const BLOCK_TYPES: { type: DocumentBlockType; label: string; key: string }[] = [
-  { type: "explanation", label: "Note", key: "N" },
-  { type: "sentence", label: "Fill-in-the-blank", key: "F" },
-  { type: "vocabulary", label: "Word list", key: "W" },
+  { type: "explanation", label: "Explanation", key: "E" },
+  { type: "sentence", label: "Sentence", key: "S" },
+  { type: "vocabulary", label: "Vocabulary table", key: "V" },
 ];
 
 export function LessonDocument(props: Props) {
   const [activeBlock, setActiveBlock] = useState<string | null>(null);
-  const [insertAt, setInsertAt] = useState<number | null>(() => props.lesson.blocks.length === 0 ? 0 : null);
+  const [insertAt, setInsertAt] = useState<number | null>(null);
   const [insertChoice, setInsertChoice] = useState(0);
-  const [focusAfterAdd, setFocusAfterAdd] = useState<string | null>(null);
+  // The chooser only grabs focus when the teacher opened it (Ctrl/⌘+Enter or the
+  // "+" button). The one shown on an empty lesson must not pull focus off the
+  // title.
+  const [insertFocus, setInsertFocus] = useState(false);
+  const focusAfterAdd = useRef<string | null>(null);
+  const caretOrigin = useRef<CaretOrigin | null>(null);
   const drag = useDragReorder({ axis: "y", mode: "nested" });
   const dragScope = props.lesson.id;
 
   useEffect(() => {
-    if (!focusAfterAdd) return;
-    const frame = requestAnimationFrame(() => {
-      const block = document.querySelector<HTMLElement>(`[data-document-block="${focusAfterAdd}"]`);
-      block?.querySelector<HTMLElement>("[contenteditable='true'], input, textarea")?.focus();
-      setFocusAfterAdd(null);
-    });
-    return () => cancelAnimationFrame(frame);
-  }, [focusAfterAdd, props.lesson.blocks]);
+    if (!focusAfterAdd.current) return;
+    focusSlideWritingField(focusAfterAdd.current);
+    focusAfterAdd.current = null;
+  }, [props.lesson.blocks]);
+
+  function captureCaretOrigin() {
+    const el = document.activeElement;
+    if (!(el instanceof HTMLElement)) { caretOrigin.current = null; return; }
+    if (el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement) {
+      caretOrigin.current = { kind: "field", el, start: el.selectionStart ?? 0, end: el.selectionEnd ?? 0 };
+      return;
+    }
+    if (el.isContentEditable) {
+      caretOrigin.current = { kind: "editable", el, textOffset: caretTextOffset(el) };
+      return;
+    }
+    caretOrigin.current = { kind: "other", el };
+  }
+
+  function restoreCaretOrigin() {
+    const origin = caretOrigin.current;
+    caretOrigin.current = null;
+    if (!origin || !document.contains(origin.el)) return;
+    origin.el.focus();
+    if (origin.kind === "field") {
+      try { origin.el.setSelectionRange(origin.start, origin.end); } catch { /* unsupported input type */ }
+      return;
+    }
+    if (origin.kind === "editable") {
+      setCaretAtOffset(origin.el, origin.textOffset);
+    }
+  }
 
   function recommendedChoice(index: number) {
     const previous = props.lesson.blocks[index - 1];
@@ -70,37 +144,61 @@ export function LessonDocument(props: Props) {
   }
 
   function openInsert(index: number) {
+    captureCaretOrigin();
     setInsertChoice(recommendedChoice(index));
     setInsertAt(index);
+    setInsertFocus(true);
+  }
+
+  function closeInsert() {
+    setInsertAt(null);
+    setInsertFocus(false);
+    restoreCaretOrigin();
   }
 
   function add(type: DocumentBlockType, index: number) {
-    setFocusAfterAdd(props.onAddBlock(type, index));
+    caretOrigin.current = null;
+    focusAfterAdd.current = props.onAddBlock(type, index);
     setInsertAt(null);
+    setInsertFocus(false);
   }
+
+  // Ctrl/⌘+Enter: open the slide chooser after the active slide.
+  function openInsertAfterActive() {
+    const index = props.lesson.blocks.findIndex((block) => block.id === activeBlock);
+    openInsert(index >= 0 ? index + 1 : props.lesson.blocks.length);
+  }
+
 
   return (
     <div className="lesson-document">
-      <div className="lesson-document-tags">
-        <LessonConceptsField
-          variant="compact"
-          label="Covers"
-          concepts={props.lesson.concepts}
-          conceptDisplays={props.conceptDisplays}
-          onAdd={props.onAddConcept}
-          onRemove={props.onRemoveConcept}
-          onRelabel={props.onRelabelConcept}
-        />
-      </div>
-
       <div
         className="lesson-document-body"
         onKeyDown={(event) => {
-          if ((event.ctrlKey || event.metaKey) && event.key === "Enter") {
-            const blockIndex = props.lesson.blocks.findIndex((block) => block.id === activeBlock);
-            event.preventDefault();
-            event.stopPropagation();
-            openInsert(blockIndex >= 0 ? blockIndex + 1 : props.lesson.blocks.length);
+          // Alt-based, so nothing collides with browser Ctrl/⌘ shortcuts (save,
+          // history, address bar, paste…). event.code, not event.key, so Mac
+          // Option+letter (which composes ´å∂…) still resolves.
+          if (!event.altKey || event.ctrlKey || event.metaKey || event.nativeEvent.isComposing || event.defaultPrevented) return;
+          const at = () => {
+            const i = props.lesson.blocks.findIndex((block) => block.id === activeBlock);
+            return i >= 0 ? i + 1 : props.lesson.blocks.length;
+          };
+          const stop = () => { event.preventDefault(); event.stopPropagation(); };
+          if (event.code === "Enter" || event.code === "NumpadEnter") {
+            if (event.shiftKey) { stop(); props.onDone(); }
+            else if (insertAt === null) { stop(); openInsertAfterActive(); }
+          } else if (event.shiftKey) {
+            return;
+          } else if (event.code === "Digit1") {
+            stop(); add("explanation", at());
+          } else if (event.code === "Digit2") {
+            stop(); add("sentence", at());
+          } else if (event.code === "Digit3") {
+            stop(); add("vocabulary", at());
+          } else if (event.code === "KeyD") {
+            stop(); props.onDone();
+          } else if (event.code === "KeyL") {
+            stop(); props.onAddLesson();
           }
         }}
       >
@@ -124,21 +222,23 @@ export function LessonDocument(props: Props) {
               drag.reset();
             }}
             onKeyDownCapture={(event) => {
-              if (event.key === "Escape" && event.target !== event.currentTarget) {
-                event.preventDefault();
-                event.stopPropagation();
-                event.currentTarget.focus();
-              }
+              if (event.key !== "Escape" || event.target === event.currentTarget) return;
+              // Let the insertion chooser handle its own Escape.
+              if (insertAt === index || (event.target as HTMLElement).closest?.(".lesson-document-insert-choices")) return;
+              event.preventDefault();
+              event.stopPropagation();
+              const actions = event.currentTarget.querySelector<HTMLElement>(".lesson-document-block-chrome button");
+              (actions ?? event.currentTarget).focus();
             }}
           >
-            <span className="lesson-document-block-number" aria-hidden="true">{index + 1}</span>
             <InsertControl
               open={insertAt === index}
+              autoFocusOnOpen={insertFocus}
               selected={insertChoice}
               onSelected={setInsertChoice}
-              onToggle={() => insertAt === index ? setInsertAt(null) : openInsert(index)}
+              onToggle={() => insertAt === index ? closeInsert() : openInsert(index)}
               onAdd={(type) => add(type, index)}
-              onClose={() => setInsertAt(null)}
+              onClose={closeInsert}
             />
 
             {block.type === "explanation" ? (
@@ -167,14 +267,15 @@ export function LessonDocument(props: Props) {
               />
             )}
 
-            <div className="lesson-document-block-chrome" aria-label={`Actions for item ${index + 1}`}>
-              <button type="button" title="Duplicate" aria-label={`Duplicate item ${index + 1}`} onClick={() => props.onDuplicateBlock(block.id)}><Copy size={13} /></button>
-              <button type="button" className="danger" title="Delete" aria-label={`Delete item ${index + 1}`} onClick={() => props.onDeleteBlock(block.id)}><Trash2 size={13} /></button>
+
+            <div className="lesson-document-block-chrome" aria-label={`Actions for slide ${index + 1}`}>
+              <button type="button" title="Duplicate" aria-label={`Duplicate slide ${index + 1}`} onClick={() => props.onDuplicateBlock(block.id)}><Copy size={13} /></button>
+              <button type="button" className="danger" title="Delete" aria-label={`Delete slide ${index + 1}`} onClick={() => props.onDeleteBlock(block.id)}><Trash2 size={13} /></button>
               <button
                 type="button"
                 className="lesson-document-block-handle"
                 draggable
-                aria-label={`Reorder item ${index + 1}`}
+                aria-label={`Reorder slide ${index + 1}`}
                 title="Drag to reorder"
                 onDragStart={(event) => drag.dragStart(event, dragScope, block.id)}
                 onDragEnd={drag.reset}
@@ -189,18 +290,33 @@ export function LessonDocument(props: Props) {
           </div>
         ))}
 
-        {props.lesson.blocks.length === 0 && (
-          <div className="lesson-document-empty"><strong>What should learners see first?</strong><span>Most lessons begin with a short explanation.</span></div>
-        )}
-        <InsertControl
-          open={insertAt === props.lesson.blocks.length}
-          end
-          selected={insertChoice}
-          onSelected={setInsertChoice}
-          onToggle={() => insertAt === props.lesson.blocks.length ? setInsertAt(null) : openInsert(props.lesson.blocks.length)}
-          onAdd={(type) => add(type, props.lesson.blocks.length)}
-          onClose={() => setInsertAt(null)}
-        />
+        <div className="lesson-document-tail">
+          <InsertControl
+            open={insertAt === props.lesson.blocks.length}
+            inline={props.lesson.blocks.length === 0}
+            label="Add slide"
+            autoFocusOnOpen={props.lesson.blocks.length === 0 ? false : insertFocus}
+            selected={insertChoice}
+            onSelected={setInsertChoice}
+            onToggle={() => insertAt === props.lesson.blocks.length ? closeInsert() : openInsert(props.lesson.blocks.length)}
+            onAdd={(type) => add(type, props.lesson.blocks.length)}
+            onClose={closeInsert}
+          />
+        </div>
+
+        <div className="lesson-document-tags">
+          <LessonConceptsField
+            variant="compact"
+            label="Covers"
+            concepts={props.lesson.concepts}
+            conceptDisplays={props.conceptDisplays}
+            coversFor={props.lesson.id}
+            onAdd={props.onAddConcept}
+            onRemove={props.onRemoveConcept}
+            onRelabel={props.onRelabelConcept}
+          />
+        </div>
+
         {props.undoDeletionLabel && (
           <button type="button" className="lesson-document-undo" onClick={props.onUndoDeletion}>
             <Undo2 size={14} /> {props.undoDeletionLabel} — Undo
@@ -211,9 +327,11 @@ export function LessonDocument(props: Props) {
   );
 }
 
-function InsertControl({ open, end = false, selected, onSelected, onToggle, onAdd, onClose }: {
+function InsertControl({ open, label, inline = false, autoFocusOnOpen = true, selected, onSelected, onToggle, onAdd, onClose }: {
   open: boolean;
-  end?: boolean;
+  label?: string;
+  inline?: boolean;
+  autoFocusOnOpen?: boolean;
   selected: number;
   onSelected: (index: number) => void;
   onToggle: () => void;
@@ -221,10 +339,11 @@ function InsertControl({ open, end = false, selected, onSelected, onToggle, onAd
   onClose: () => void;
 }) {
   const buttons = useRef<(HTMLButtonElement | null)[]>([]);
+  const showChoices = open || inline;
 
   useEffect(() => {
-    if (open) requestAnimationFrame(() => buttons.current[selected]?.focus());
-  }, [open, selected]);
+    if (showChoices && autoFocusOnOpen) requestAnimationFrame(() => buttons.current[selected]?.focus());
+  }, [showChoices, autoFocusOnOpen, selected]);
 
   function handleKey(event: KeyboardEvent<HTMLDivElement>) {
     if (event.key === "Escape") {
@@ -250,12 +369,14 @@ function InsertControl({ open, end = false, selected, onSelected, onToggle, onAd
   }
 
   return (
-    <div className={`lesson-document-insert ${end ? "end" : ""}`}>
-      <button type="button" onClick={onToggle} aria-expanded={open}>
-        <Plus size={13} /> {end ? "Add a note, exercise, or word list" : <span className="sr-only">Insert here</span>}
-      </button>
-      {open && (
-        <div className="lesson-document-insert-choices" role="toolbar" aria-label="Choose the next item" onKeyDown={handleKey}>
+    <div className={`lesson-document-insert${label ? " labelled" : ""}${inline ? " inline" : ""}`}>
+      {!inline && (
+        <button type="button" onClick={onToggle} aria-expanded={open}>
+          <Plus size={13} /> {label ?? <span className="sr-only">Insert slide here</span>}
+        </button>
+      )}
+      {showChoices && (
+        <div className="lesson-document-insert-choices" role="toolbar" aria-label="Choose the first slide" onKeyDown={handleKey}>
           {BLOCK_TYPES.map((choice, index) => (
             <button
               key={choice.type}
@@ -265,7 +386,7 @@ function InsertControl({ open, end = false, selected, onSelected, onToggle, onAd
               onFocus={() => onSelected(index)}
               onClick={() => onAdd(choice.type)}
             >
-              {choice.label}
+              {choice.label} <kbd>{choice.key}</kbd>
             </button>
           ))}
         </div>
@@ -293,16 +414,50 @@ function SentenceDocument({ block, active, onUpdateSentence, onUpdateSpanish, on
   const [focusCalloutId, setFocusCalloutId] = useState<string | null>(null);
   const [focusAlternativePieceId, setFocusAlternativePieceId] = useState<string | null>(null);
   const [draftSpanish, setDraftSpanish] = useState("");
-  const spanishRefs = useRef(new Map<string, HTMLInputElement>());
-  const englishRefs = useRef(new Map<string, HTMLInputElement>());
+  const spanishRefs = useRef(new Map<string, HTMLTextAreaElement>());
+  const englishRefs = useRef(new Map<string, HTMLTextAreaElement>());
+  const committingRef = useRef(false);
   const isTable = block.layout === "vocabulary_table";
   const isEmpty = block.languageBlocks.every((piece) => !piece.spanish.trim() && !(piece.acceptedAnswers[0] ?? "").trim());
   const lastPiece = block.languageBlocks.at(-1);
   const lastPieceComplete = !lastPiece || (Boolean(lastPiece.spanish.trim()) && Boolean(lastPiece.acceptedAnswers[0]?.trim()));
   const showTrailingPiece = lastPieceComplete && (active || block.languageBlocks.length === 0);
 
-  function handleSpanishKey(event: KeyboardEvent<HTMLInputElement>, index: number) {
-    if (event.key !== "Tab") return;
+  type Piece = SentenceBlock["languageBlocks"][number];
+  function addHint(piece: Piece) {
+    if (piece.callout !== null) return;
+    setFocusCalloutId(piece.id);
+    onUpdateCallout(piece.id, "");
+  }
+  function addAlternative(piece: Piece) {
+    setFocusAlternativePieceId(piece.id);
+    onAddAnswer(piece.id);
+  }
+
+  // Alt+H hint · Alt+A alternative · Alt+Backspace delete — from either field of
+  // a piece. event.code, not event.key, so Mac Option+letter (´å∂…) still resolves.
+  function handlePieceActionKey(event: KeyboardEvent<HTMLTextAreaElement>, piece: Piece) {
+    if (!event.altKey || event.ctrlKey || event.metaKey || event.shiftKey || event.nativeEvent.isComposing) return false;
+    if (event.code === "KeyH") { event.preventDefault(); addHint(piece); return true; }
+    if (event.code === "KeyA") { event.preventDefault(); addAlternative(piece); return true; }
+    if (event.code === "Backspace") { event.preventDefault(); onDeletePiece(piece.id); return true; }
+    return false;
+  }
+
+  // Plain Enter never splits a sentence piece / table row. Ctrl/⌘+Enter is left
+  // alone so it can bubble to the "next slide" handler.
+  function blockNewline(event: KeyboardEvent<HTMLTextAreaElement>) {
+    if (event.key === "Enter" && !event.nativeEvent.isComposing && !event.ctrlKey && !event.metaKey) {
+      event.preventDefault();
+      return true;
+    }
+    return false;
+  }
+
+  function handleSpanishKey(event: KeyboardEvent<HTMLTextAreaElement>, index: number) {
+    if (blockNewline(event)) return;
+    if (handlePieceActionKey(event, block.languageBlocks[index])) return;
+    if (event.key !== "Tab" || event.nativeEvent.isComposing) return;
     if (event.shiftKey) {
       if (index > 0) { event.preventDefault(); englishRefs.current.get(block.languageBlocks[index - 1].id)?.focus(); }
       return;
@@ -311,8 +466,10 @@ function SentenceDocument({ block, active, onUpdateSentence, onUpdateSpanish, on
     englishRefs.current.get(block.languageBlocks[index].id)?.focus();
   }
 
-  function handleEnglishKey(event: KeyboardEvent<HTMLInputElement>, index: number) {
-    if (event.key !== "Tab") return;
+  function handleEnglishKey(event: KeyboardEvent<HTMLTextAreaElement>, index: number) {
+    if (blockNewline(event)) return;
+    if (handlePieceActionKey(event, block.languageBlocks[index])) return;
+    if (event.key !== "Tab" || event.nativeEvent.isComposing) return;
     if (event.shiftKey) {
       event.preventDefault();
       spanishRefs.current.get(block.languageBlocks[index].id)?.focus();
@@ -324,33 +481,54 @@ function SentenceDocument({ block, active, onUpdateSentence, onUpdateSpanish, on
       return;
     }
     const piece = block.languageBlocks[index];
-    if (piece.spanish.trim() && (piece.acceptedAnswers[0] ?? "").trim()) {
+    const trailing = document.getElementById(`trailing-${block.id}`);
+    if (trailing && piece.spanish.trim() && (piece.acceptedAnswers[0] ?? "").trim()) {
       event.preventDefault();
-      document.getElementById(`trailing-${block.id}`)?.focus();
+      trailing.focus();
     }
   }
 
-  function commitTrailing(value: string) {
-    if (!value) { setDraftSpanish(""); return; }
+  // Persist the trailing draft as a real piece exactly once, on an explicit
+  // move (Tab) or on blur — never on every keystroke, so rapid typing and IME
+  // composition are safe. Returns the new piece id.
+  function commitTrailingDraft(): string | null {
+    const value = draftSpanish.trim();
+    if (!value || committingRef.current) return null;
+    committingRef.current = true;
     const id = onAddPiece();
     onUpdateSpanish(id, value);
     setDraftSpanish("");
-    requestAnimationFrame(() => spanishRefs.current.get(id)?.focus());
+    window.setTimeout(() => { committingRef.current = false; }, 0);
+    return id;
+  }
+
+  function handleTrailingKey(event: KeyboardEvent<HTMLTextAreaElement>) {
+    if (blockNewline(event)) return;
+    if (event.key !== "Tab" || event.nativeEvent.isComposing) return;
+    if (event.shiftKey) {
+      const previous = block.languageBlocks.at(-1);
+      if (previous) { event.preventDefault(); englishRefs.current.get(previous.id)?.focus(); }
+      return;
+    }
+    if (!draftSpanish.trim()) return; // empty trailing → ordinary Tab leaves the sentence
+    event.preventDefault();
+    const id = commitTrailingDraft();
+    if (id) requestAnimationFrame(() => englishRefs.current.get(id)?.focus());
   }
 
   return (
-    <section className={`lesson-document-sentence ${isTable ? "table" : ""}`} aria-label={isTable ? "Vocabulary table" : "Sentence practice"}>
+    <section className={`lesson-document-sentence ${isTable ? "table" : ""}`} aria-label={isTable ? "Vocabulary table" : "Sentence"}>
       {isEmpty && <p className="lesson-document-sentence-guide">{isTable ? "Type a Spanish word, press Tab, type its English meaning. Tab again starts the next row." : "Type the Spanish, press Tab, type the English answer, press Tab to add another blank."}</p>}
       {showPrompt && <textarea autoFocus={!block.promptText} className="lesson-document-prompt" value={block.promptText} rows={1} placeholder={isTable ? "Instruction above the word list…" : "Instruction above the exercise…"} onChange={(event) => onUpdateSentence("promptText", event.target.value)} />}
       <div className="lesson-document-pieces">
         {block.languageBlocks.map((piece, index) => (
           <div key={piece.id} className={`lesson-document-piece ${activePiece === piece.id ? "active" : ""}`} onFocus={() => setActivePiece(piece.id)}>
-            <input ref={(element) => { if (element) spanishRefs.current.set(piece.id, element); else spanishRefs.current.delete(piece.id); }} value={piece.spanish} onChange={(event) => onUpdateSpanish(piece.id, event.target.value)} onKeyDown={(event) => handleSpanishKey(event, index)} placeholder="español" lang="es" aria-label={`${isTable ? "Row" : "Sentence piece"} ${index + 1} Spanish`} />
-            <input ref={(element) => { if (element) englishRefs.current.set(piece.id, element); else englishRefs.current.delete(piece.id); }} value={piece.acceptedAnswers[0] ?? ""} onChange={(event) => onUpdateAnswer(piece.id, 0, event.target.value)} onKeyDown={(event) => handleEnglishKey(event, index)} placeholder="English" lang="en" aria-label={`${isTable ? "Row" : "Sentence piece"} ${index + 1} English`} />
+            <textarea rows={1} data-field="spanish" ref={(element) => { if (element) spanishRefs.current.set(piece.id, element); else spanishRefs.current.delete(piece.id); }} value={piece.spanish} onChange={(event) => onUpdateSpanish(piece.id, event.target.value)} onKeyDown={(event) => handleSpanishKey(event, index)} placeholder="español" lang="es" aria-label={`${isTable ? "Row" : "Sentence piece"} ${index + 1} Spanish`} />
+            <textarea rows={1} data-field="english" ref={(element) => { if (element) englishRefs.current.set(piece.id, element); else englishRefs.current.delete(piece.id); }} value={piece.acceptedAnswers[0] ?? ""} onChange={(event) => onUpdateAnswer(piece.id, 0, event.target.value)} onKeyDown={(event) => handleEnglishKey(event, index)} placeholder="English" lang="en" aria-label={`${isTable ? "Row" : "Sentence piece"} ${index + 1} English`} />
             {piece.callout !== null && <label className="lesson-document-annotation"><span>Hint shown to student</span><input autoFocus={focusCalloutId === piece.id} value={piece.callout} onBlur={() => setFocusCalloutId(null)} onChange={(event) => onUpdateCallout(piece.id, event.target.value)} placeholder="A small clue the student sees…" /></label>}
             {activePiece === piece.id && <div className="lesson-document-piece-actions">
-              {piece.callout === null && <button type="button" onClick={() => { setFocusCalloutId(piece.id); onUpdateCallout(piece.id, ""); }}>+ hint</button>}
-              <button type="button" onClick={() => { setFocusAlternativePieceId(piece.id); onAddAnswer(piece.id); }}>+ another accepted answer</button>
+              {piece.callout === null && <button type="button" onClick={() => addHint(piece)}>+ hint</button>}
+              <button type="button" onClick={() => addAlternative(piece)}>+ another accepted answer</button>
               <button type="button" className="danger" onClick={() => onDeletePiece(piece.id)}>delete</button>
             </div>}
             {piece.acceptedAnswers.slice(1).map((answer, offset) => {
@@ -359,7 +537,7 @@ function SentenceDocument({ block, active, onUpdateSentence, onUpdateSpanish, on
             })}
           </div>
         ))}
-        {showTrailingPiece && <div className="lesson-document-piece trailing"><input id={`trailing-${block.id}`} value={draftSpanish} onChange={(event) => { setDraftSpanish(event.target.value); commitTrailing(event.target.value); }} placeholder={isTable ? "Add Spanish row…" : "Continue in Spanish…"} lang="es" aria-label={isTable ? "Add vocabulary row in Spanish" : "Add sentence piece in Spanish"} /><span aria-hidden="true">{isTable ? "Tab to add English" : "Tab to add English"}</span></div>}
+        {showTrailingPiece && <div className="lesson-document-piece trailing"><textarea rows={1} data-field="spanish" id={`trailing-${block.id}`} value={draftSpanish} onChange={(event) => setDraftSpanish(event.target.value)} onKeyDown={handleTrailingKey} onBlur={() => commitTrailingDraft()} placeholder={isTable ? "Add a row…" : "Add another blank…"} lang="es" aria-label={isTable ? "New row, Spanish" : "New sentence piece, Spanish"} /><span aria-hidden="true">Tab to add the English</span></div>}
       </div>
       {(showHelper || block.answerFeedback !== null) && <div className="lesson-document-slide-notes">
         {showHelper && <label className="lesson-document-annotation"><span>Help on request</span><textarea autoFocus={!block.helperText} value={block.helperText} onChange={(event) => onUpdateSentence("helperText", event.target.value)} placeholder="Shown when the student asks for help…" /></label>}

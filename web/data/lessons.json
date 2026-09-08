@@ -10,10 +10,198 @@
           "id": "lesson_concept_0d675d54-bf50-4c1a-89e9-ec302a05668f",
           "conceptId": "w7bu9jslac",
           "label": "querer [algo]"
+        },
+        {
+          "id": "lesson_concept_8e305130-fc14-4362-8a06-5e8a3c9db535",
+          "conceptId": "1qz4qeh9oi",
+          "label": "hacer [una tarea o actividad]"
         }
       ],
-      "lessonIds": []
+      "lessonIds": [
+        "lesson_b9c75a0c-2132-434f-b1b5-bdfcd960f941"
+      ]
     }
   ],
-  "lessons": []
+  "lessons": [
+    {
+      "id": "lesson_b9c75a0c-2132-434f-b1b5-bdfcd960f941",
+      "name": "I want to be able to do it.",
+      "concepts": [
+        {
+          "id": "lesson_concept_1f9323d4-4162-4f78-b151-09df23197e1e",
+          "conceptId": "mxguwwzrxk",
+          "label": "poder [hacer algo]"
+        },
+        {
+          "id": "lesson_concept_ad3809b6-ab94-4c10-8b5e-fc876d2eaa4f",
+          "conceptId": "xd9c671eit",
+          "label": "lo"
+        },
+        {
+          "id": "lesson_concept_95db488c-84f6-4bee-8576-5e3ecd42e84f",
+          "conceptId": "1qz4qeh9oi",
+          "label": "hacer [una tarea o actividad]"
+        },
+        {
+          "id": "lesson_concept_9bf67800-3310-45d0-bf97-93df7e1a2511",
+          "conceptId": "df1fa2p3xy",
+          "label": "querer [hacer algo]"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "block_44770182-cbf9-4a70-b1bf-6ff87e0b5d42",
+          "type": "explanation",
+          "contentMarkdown": "[[es:hacer ]]es [[en:to do]]"
+        },
+        {
+          "id": "block_ccc59236-bd82-4ca3-bd15-a29a971e9d98",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_7b444e41-0d58-44b9-b1b2-c37e92e15edc",
+              "spanish": "hacer",
+              "callout": null,
+              "acceptedAnswers": [
+                "to do"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_af0ecb32-660e-4c5c-b5f6-a2d783ce8e12",
+          "type": "explanation",
+          "contentMarkdown": "[[es:hacerlo]] es [[en:to do it]], tres palabras"
+        },
+        {
+          "id": "block_9e40ada1-4a19-4f58-b4a9-0bbbf94f9315",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_96aedf26-4e1e-4cf3-90aa-14ec288ddebf",
+              "spanish": "hacerlo",
+              "callout": null,
+              "acceptedAnswers": [
+                "to do it"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_a3e4e623-77e4-404d-8ee3-689626715485",
+          "type": "explanation",
+          "contentMarkdown": "[[es:quiero]] es [[en:I want]]"
+        },
+        {
+          "id": "block_d260f228-c69c-4f37-b88b-3f0fb8fde1c1",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_5db43b6f-1149-41b5-864f-6743a1b0dee4",
+              "spanish": "quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_3bd356a1-49ee-48d1-88e7-57816cf367d2",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_2fb845c9-4a9c-4791-b85c-d1c757ae343d",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ]
+            },
+            {
+              "id": "lang_b3784f06-abc7-4470-8d2b-e3f82a48e399",
+              "spanish": "hacerlo.",
+              "callout": null,
+              "acceptedAnswers": [
+                "to do it."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_c70802e8-7d24-4af4-993c-1cca192f31e1",
+          "type": "explanation",
+          "contentMarkdown": "[[es:poder]] es [[en:to be able]]"
+        },
+        {
+          "id": "block_fa45c6e0-4195-44b3-aecf-4971b97f0598",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_cfcfd68b-7320-457f-a23e-6cc00ba6447b",
+              "spanish": "poder",
+              "callout": null,
+              "acceptedAnswers": [
+                "to be able"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_3322ae84-cbe3-454a-860b-aace1fc75846",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_c9d8b04e-7746-42d1-99eb-ec6c8e5f92dc",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ]
+            },
+            {
+              "id": "lang_8bcb4fa9-4615-4a02-b946-917853f385ec",
+              "spanish": "poder",
+              "callout": null,
+              "acceptedAnswers": [
+                "to be able"
+              ]
+            },
+            {
+              "id": "lang_a92893a6-1240-45e6-a03c-5188d3510345",
+              "spanish": "hacerlo.",
+              "callout": null,
+              "acceptedAnswers": [
+                "to do it."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

@@ -134,18 +134,28 @@ export default function LessonBuilderPage() {
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "s") {
+      const cmd = event.ctrlKey || event.metaKey;
+      const alt = event.altKey && !event.ctrlKey && !event.metaKey;
+      if (cmd && !event.altKey && event.key.toLowerCase() === "s") {
         event.preventDefault();
         void saveAll();
-      } else if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") {
+      } else if (alt && !event.shiftKey && event.code === "KeyK") {
         event.preventDefault();
         document.getElementById("lesson-library-search-input")?.focus();
-      } else if ((event.ctrlKey || event.metaKey) && !event.shiftKey && event.key.toLowerCase() === "z") {
+      } else if (cmd && !event.altKey && !event.shiftKey && event.key.toLowerCase() === "z") {
         event.preventDefault();
         dispatch({ type: "UNDO" });
-      } else if ((event.ctrlKey || event.metaKey) && (event.key.toLowerCase() === "r" || (event.shiftKey && event.key.toLowerCase() === "z"))) {
+      } else if (cmd && !event.altKey && event.shiftKey && event.key.toLowerCase() === "z") {
         event.preventDefault();
         dispatch({ type: "REDO" });
+      } else if (alt && event.shiftKey && event.code === "KeyL") {
+        event.preventDefault();
+        const target = modulesRef.current.at(-1);
+        if (!target) return;
+        const lessonId = createId("lesson");
+        dispatch({ type: "CREATE_LESSON", lessonId });
+        updateModules(modulesRef.current.map((module) => module.id === target.id ? { ...module, lessonIds: [...module.lessonIds, lessonId] } : module));
+        requestAnimationFrame(() => document.querySelector<HTMLInputElement>(`[data-lesson-title="${lessonId}"]`)?.focus());
       }
     };
     document.addEventListener("keydown", handleKeyDown);

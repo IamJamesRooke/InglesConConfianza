@@ -409,13 +409,18 @@ export function LessonDashboard({
                   )}
                 </div>
               </div>
-              <ConceptPills concepts={selected.concepts} />
               <progress
                 className="module-progress"
                 aria-label="Progreso del módulo"
                 value={moduleCompleted}
                 max={moduleAvailable.length || 1}
               />
+              {selected.concepts.length > 0 && (
+                <div className="module-learn">
+                  <p className="learner-eyebrow">Nuevo en este módulo</p>
+                  <ConceptPills concepts={selected.concepts} compact />
+                </div>
+              )}
               <ol className="lesson-list">
                 {selected.lessons.map((lesson) => (
                   <LessonRow
@@ -587,7 +592,7 @@ function LessonRow({
         <span className="lesson-meta">
           {available && (
             <>
-              <Clock3 size={13} aria-hidden="true" /> Aprox.{" "}
+              <Clock3 size={13} aria-hidden="true" />{" "}
               {lessonMinutes(lesson.stepCount)} min
             </>
           )}

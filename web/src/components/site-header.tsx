@@ -9,6 +9,7 @@ import { useState } from "react";
 
 const internalLinks = [
   { href: "/admin/lesson-builder", label: "Lessons" },
+  { href: "/admin/lesson-builder/coverage", label: "Coverage" },
   { href: "/admin/curriculum", label: "Curriculum" },
 ];
 
@@ -19,6 +20,13 @@ export function SiteHeader() {
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
     if (href === "/admin") return pathname === href;
+    // "Lessons" owns the builder itself and its course/module views, but not the
+    // sibling Coverage page.
+    if (href === "/admin/lesson-builder") {
+      return pathname === href
+        || pathname.startsWith("/admin/lesson-builder/course")
+        || pathname.startsWith("/admin/lesson-builder/modules");
+    }
     return pathname === href || pathname.startsWith(`${href}/`);
   };
   const isAdmin = pathname.startsWith("/admin");

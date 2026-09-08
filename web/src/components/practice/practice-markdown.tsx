@@ -161,6 +161,9 @@ export function EditablePracticeMarkdown({
 }) {
   const [renderedMarkdown, setRenderedMarkdown] = useState(markdown);
   const [hasSelection, setHasSelection] = useState(false);
+  // Sticky language mode: what a fresh keystroke gets wrapped in.
+  const [typingMode, setTypingMode] = useState<"es" | "en" | null>(null);
+  const typingModeRef = useRef<"es" | "en" | null>(null);
   const editingRef = useRef(false);
   const rootRef = useRef<HTMLDivElement>(null);
   const savedRangeRef = useRef<Range | null>(null);
@@ -168,6 +171,138 @@ export function EditablePracticeMarkdown({
   useEffect(() => {
     if (!editingRef.current) setRenderedMarkdown(markdown);
   }, [markdown]);
+
+  function endTypingMode() {
+    typingModeRef.current = null;
+    setTypingMode(null);
+  }
+
+  // The <mark data-language> the caret currently sits in, if any.
+  function caretMark(): HTMLElement | null {
+    const root = rootRef.current;
+    const selection = window.getSelection();
+    if (!root || !selection || selection.rangeCount === 0) return null;
+    let node: Node | null = selection.getRangeAt(0).startContainer;
+    while (node && node !== root) {
+      if (node instanceof HTMLElement && node.tagName === "MARK" && node.dataset.language) return node;
+      node = node.parentNode;
+    }
+    return null;
+  }
+
+  function unwrapMarksInRange(range: Range) {
+    const root = rootRef.current;
+    if (!root) return;
+    for (const mark of Array.from(root.querySelectorAll("mark[data-language]"))) {
+      if (!range.intersectsNode(mark)) continue;
+      const parent = mark.parentNode;
+      while (mark.firstChild) parent?.insertBefore(mark.firstChild, mark);
+      parent?.removeChild(mark);
+    }
+  }
+
+  function wrapRange(range: Range, language: "es" | "en") {
+    const mark = document.createElement("mark");
+    mark.dataset.language = language;
+    try {
+      range.surroundContents(mark);
+    } catch {
+      const contents = range.extractContents();
+      mark.append(contents);
+      range.insertNode(mark);
+    }
+    return mark;
+  }
+
+  function placeCaretAfter(node: Node) {
+    const spacer = document.createTextNode("​");
+    node.parentNode?.insertBefore(spacer, node.nextSibling);
+    const caret = document.createRange();
+    caret.setStart(spacer, 1);
+    caret.collapse(true);
+    const selection = window.getSelection();
+    selection?.removeAllRanges();
+    selection?.addRange(caret);
+  }
+
+  // ⌥E / ⌥S / ⌥N — set the language you're about to type. With a selection, mark
+  // it once instead of entering sticky mode.
+  function setLanguageMode(next: "es" | "en" | null) {
+    const root = rootRef.current;
+    const selection = window.getSelection();
+    if (!root || !selection || selection.rangeCount === 0) return;
+    const range = selection.getRangeAt(0);
+
+    if (!range.collapsed) {
+      if (next) {
+        const mark = wrapRange(range, next);
+        placeCaretAfter(mark);
+      } else {
+        unwrapMarksInRange(range);
+      }
+      onChange(serializeEditableMarkdown(root));
+      root.focus();
+      return;
+    }
+
+    // Caret is in a word (no selection): mark that whole word.
+    if (next) {
+      const word = wordAroundCaret(range);
+      if (word && !word.collapsed) {
+        const mark = wrapRange(word, next);
+        placeCaretAfter(mark);
+        onChange(serializeEditableMarkdown(root));
+        endTypingMode();
+        root.focus();
+        return;
+      }
+    }
+
+    const current = caretMark();
+    if (next === null) {
+      if (current) placeCaretAfter(current);
+      endTypingMode();
+      root.focus();
+      return;
+    }
+    if (current?.dataset.language === next) {
+      // already inside a matching mark — just make the mode explicit
+      typingModeRef.current = next;
+      setTypingMode(next);
+      return;
+    }
+    if (current) placeCaretAfter(current);
+    const mark = document.createElement("mark");
+    mark.dataset.language = next;
+    mark.textContent = "​";
+    const at = selection.getRangeAt(0);
+    at.insertNode(mark);
+    const caret = document.createRange();
+    caret.setStart(mark.firstChild as Text, 1);
+    caret.collapse(true);
+    selection.removeAllRanges();
+    selection.addRange(caret);
+    typingModeRef.current = next;
+    setTypingMode(next);
+    root.focus();
+  }
+
+  function wordAroundCaret(range: Range): Range | null {
+    const node = range.startContainer;
+    if (node.nodeType !== Node.TEXT_NODE) return null;
+    const text = node.textContent ?? "";
+    const offset = range.startOffset;
+    const isWord = (character: string) => /[\p{L}\p{M}\p{N}'’-]/u.test(character);
+    let start = offset;
+    let end = offset;
+    while (start > 0 && isWord(text[start - 1])) start -= 1;
+    while (end < text.length && isWord(text[end])) end += 1;
+    if (start === end) return null;
+    const word = document.createRange();
+    word.setStart(node, start);
+    word.setEnd(node, end);
+    return word;
+  }
 
   function rememberSelection() {
     const selection = window.getSelection();
@@ -186,7 +321,7 @@ export function EditablePracticeMarkdown({
     setHasSelection(true);
   }
 
-  function formatSelection(format: "es" | "en" | "bold" | "clear") {
+  function formatSelection(format: "bold" | "clear") {
     const root = rootRef.current;
     const range = savedRangeRef.current;
     if (!root || !range || range.collapsed) return;
@@ -194,32 +329,15 @@ export function EditablePracticeMarkdown({
     const selection = window.getSelection();
     selection?.removeAllRanges();
     selection?.addRange(range);
-
     if (format === "bold") {
       document.execCommand("bold");
-    } else if (format === "clear") {
-      document.execCommand("removeFormat");
     } else {
-      const mark = document.createElement("mark");
-      mark.dataset.language = format;
-      try {
-        range.surroundContents(mark);
-      } catch {
-        const contents = range.extractContents();
-        mark.append(contents);
-        range.insertNode(mark);
-      }
-      const neutralCaret = document.createTextNode("\u200B");
-      mark.after(neutralCaret);
-      const caret = document.createRange();
-      caret.setStart(neutralCaret, 1);
-      caret.collapse(true);
-      selection?.removeAllRanges();
-      selection?.addRange(caret);
+      document.execCommand("removeFormat");
+      const live = selection?.getRangeAt(0);
+      if (live) unwrapMarksInRange(live);
     }
 
-    const nextMarkdown = serializeEditableMarkdown(root);
-    onChange(nextMarkdown);
+    onChange(serializeEditableMarkdown(root));
     savedRangeRef.current = null;
     setHasSelection(false);
     root.focus();
@@ -254,55 +372,73 @@ export function EditablePracticeMarkdown({
             selection?.addRange(range);
           }
         }}
-        onMouseUp={rememberSelection}
-        onKeyUp={rememberSelection}
+        onMouseUp={() => { rememberSelection(); endTypingMode(); }}
+        onKeyUp={(event) => {
+          rememberSelection();
+          // Sticky mode ends the moment the caret leaves its mark (arrowing out).
+          if (typingModeRef.current && event.key.startsWith("Arrow")) {
+            const mark = caretMark();
+            if (!mark || mark.dataset.language !== typingModeRef.current) endTypingMode();
+          }
+        }}
         onInput={(event) => {
           event.currentTarget.removeAttribute("data-empty");
           onChange(serializeEditableMarkdown(event.currentTarget));
         }}
         onBlur={(event) => {
           if (event.relatedTarget instanceof HTMLElement && event.relatedTarget.closest(".authoring-format-menu")) return;
-          const nextMarkdown = serializeEditableMarkdown(event.currentTarget);
+          endTypingMode();
+          const root = event.currentTarget;
+          const nextMarkdown = serializeEditableMarkdown(root);
+          // Anything the browser parked outside the managed content node (a stray
+          // text node or block from a caret that escaped) would otherwise sit
+          // beside the re-rendered content as a visible duplicate.
+          for (const node of Array.from(root.childNodes)) {
+            if (node.nodeType === Node.TEXT_NODE || (node instanceof HTMLElement && !node.classList.contains("practice-markdown-content"))) {
+              node.remove();
+            }
+          }
           editingRef.current = false;
           setHasSelection(false);
           setRenderedMarkdown(nextMarkdown);
           onChange(nextMarkdown);
         }}
         onKeyDown={(event) => {
-          if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.code === "Digit1") {
-            event.preventDefault();
-            formatSelection("es");
-            return;
-          }
-          if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.code === "Digit2") {
-            event.preventDefault();
-            formatSelection("en");
-            return;
-          }
-          if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.code === "Digit0") {
-            event.preventDefault();
-            formatSelection("clear");
-            return;
+          // ⌥Q Spanish · ⌥W neutral · ⌥E English — the language you're typing in.
+          if (event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.nativeEvent.isComposing) {
+            if (event.code === "KeyQ") { event.preventDefault(); event.stopPropagation(); setLanguageMode("es"); return; }
+            if (event.code === "KeyW") { event.preventDefault(); event.stopPropagation(); setLanguageMode(null); return; }
+            if (event.code === "KeyE") { event.preventDefault(); event.stopPropagation(); setLanguageMode("en"); return; }
           }
           if ((event.ctrlKey || event.metaKey) && !event.shiftKey && event.key.toLowerCase() === "b") {
             event.preventDefault();
             formatSelection("bold");
             return;
           }
+          if (event.key === "Enter") {
+            endTypingMode();
+            return;
+          }
           if (event.key === "Escape") {
             event.preventDefault();
+            if (typingModeRef.current) { endTypingMode(); return; }
             event.currentTarget.blur();
           }
         }}
       >
-        <PracticeMarkdown markdown={renderedMarkdown} variant={variant} />
+        <PracticeMarkdown key={renderedMarkdown} markdown={renderedMarkdown} variant={variant} />
       </div>
+      {typingMode && (
+        <span className="authoring-mode-badge" data-language={typingMode} aria-hidden="true">
+          {typingMode === "es" ? "Spanish" : "English"} <kbd>{typingMode === "es" ? "⌥Q" : "⌥E"}</kbd>
+        </span>
+      )}
       {showSelectionMenu && hasSelection && (
         <div className="authoring-format-menu" role="toolbar" aria-label="Format selected text">
-          <FormatButton label="Español" shortcut="⇧1" className="spanish" onFormat={() => formatSelection("es")} />
-          <FormatButton label="English" shortcut="⇧2" className="english" onFormat={() => formatSelection("en")} />
-          <FormatButton label="Bold" shortcut="B" onFormat={() => formatSelection("bold")} />
-          <FormatButton label="Clear" shortcut="⇧0" onFormat={() => formatSelection("clear")} />
+          <FormatButton label="Español" shortcut="⌥Q" className="spanish" onFormat={() => setLanguageMode("es")} />
+          <FormatButton label="English" shortcut="⌥E" className="english" onFormat={() => setLanguageMode("en")} />
+          <FormatButton label="Bold" shortcut="⌘B" onFormat={() => formatSelection("bold")} />
+          <FormatButton label="Clear" shortcut="⌥W" onFormat={() => formatSelection("clear")} />
         </div>
       )}
     </div>
@@ -322,12 +458,26 @@ function FormatButton({ label, shortcut, className = "", onFormat }: { label: st
   );
 }
 
+const BLOCK_TAGS = /^(?:p|div|h[1-6]|ol|ul|li|blockquote|pre|section)$/i;
+
 function serializeEditableMarkdown(root: HTMLElement) {
   const contentEl = root.querySelector<HTMLElement>(".practice-markdown-content");
   // If the caret escaped the (empty) content block, typed text is a sibling of
   // it under the root — serialize from the root so nothing is dropped.
   const content = contentEl && contentEl.childNodes.length > 0 ? contentEl : root;
-  const blocks = Array.from(content.childNodes)
+  const childNodes = Array.from(content.childNodes);
+
+  // An explanation that started empty has no <p> wrapper: marks and text sit
+  // directly in the container. Treat that whole run as one paragraph instead of
+  // one block per inline node (which put every marked word on its own line).
+  const hasBlockChild = childNodes.some(
+    (node) => node instanceof HTMLElement && BLOCK_TAGS.test(node.tagName),
+  );
+  if (!hasBlockChild) {
+    return serializeInlineNodes(content).trim();
+  }
+
+  const blocks = childNodes
     .flatMap((node) => serializeBlockNode(node))
     .filter(Boolean);
   return blocks.join("\n\n").trim();
@@ -373,6 +523,7 @@ function serializeInlineNode(node: Node): string {
   const content = serializeInlineNodes(node);
   switch (node.tagName.toLowerCase()) {
     case "mark":
+      if (!content.trim()) return content; // an abandoned language toggle
       return node.dataset.language === "es"
         ? `[[es:${content}]]`
         : node.dataset.language === "en"

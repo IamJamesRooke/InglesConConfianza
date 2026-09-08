@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Baloo_2, Geist } from "next/font/google";
 import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
+// Imported here rather than @import'd from globals.css so the dev server tracks
+// its changes for hot reload.
+import "./learner.css";
 
 const geist = Geist({
   subsets: ["latin"],

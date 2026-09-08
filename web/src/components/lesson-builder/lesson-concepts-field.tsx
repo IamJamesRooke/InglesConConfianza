@@ -3,7 +3,7 @@
 import { Plus, Snowflake, X } from "lucide-react";
 import { useEffect, useId, useRef, useState, type Ref } from "react";
 
-import { ConceptQuickEdit } from "@/components/lesson-builder/concept-quick-edit";
+import { ConceptQuickEdit, type ConceptDraft } from "@/components/lesson-builder/concept-quick-edit";
 import { conceptKey } from "@/lib/lesson-builder/lesson-file";
 import type { LessonConceptSuggestion } from "@/lib/lesson-builder/concept-suggestions";
 import type { LessonConcept } from "@/lib/lesson-builder/types";
@@ -37,6 +37,8 @@ export function LessonConceptsField({
   conceptDisplays = {},
   suggestions = [],
   onDisplayChange,
+  coversFor,
+  onAdvance,
 }: {
   concepts: LessonConcept[];
   onAdd: (concept: LessonConcept) => void;
@@ -54,6 +56,11 @@ export function LessonConceptsField({
     conceptId: string,
     display: ConceptDisplayLookup[string],
   ) => void;
+  // Marks this as a lesson's "Covers" setup field: tags the input for the
+  // title → covers focus hop, and `onAdvance` fires when Enter is pressed on an
+  // empty field to move on to the lesson body.
+  coversFor?: string;
+  onAdvance?: () => void;
 }) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<ConceptResult[]>([]);
@@ -158,7 +165,7 @@ export function LessonConceptsField({
       className={
         variant === "inline" || variant === "compact"
           ? ""
-          : "border-b border-border bg-[var(--surface-sunken)] px-6 py-3"
+          : "border-b border-border bg-card px-6 py-3"
       }
     >
       {suggestions.length > 0 && (
@@ -192,8 +199,8 @@ export function LessonConceptsField({
           </div>
         </div>
       )}
-      <div className={`flex flex-wrap items-center ${variant === "compact" ? "gap-1" : "gap-1.5"}`}>
-        <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-stone-500">
+      <div className={variant === "compact" ? "lesson-concepts-row" : "flex flex-wrap items-center gap-1.5"}>
+        <span className={variant === "compact" ? "lesson-concepts-label" : "text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground"}>
           {label}
         </span>
         {concepts.map((concept) => {
@@ -201,47 +208,65 @@ export function LessonConceptsField({
           const display = concept.conceptId
             ? localDisplays[concept.conceptId] ?? conceptDisplays[concept.conceptId]
             : undefined;
+          const applySaved = (draft: ConceptDraft) => {
+            if (!concept.conceptId) return;
+            const nextDisplay = { spanish: draft.spanish, english: draft.english, role: draft.role };
+            setLocalDisplays((current) => ({ ...current, [concept.conceptId!]: nextDisplay }));
+            onDisplayChange?.(concept.conceptId, nextDisplay);
+            onRelabel(concept.id, draft.spanish);
+          };
+          const isCoverageField = Boolean(coveredConceptKeys);
+          const roleToken = (display?.role ?? "").replace(/[^A-Za-z0-9]/g, "");
+          const chipTone = isCoverageField
+            ? (met ? "is-covered" : "is-uncovered")
+            : concept.conceptId
+              ? `role-${roleToken || "Unranked"}`
+              : "is-freehand";
           return (
           <span
             key={concept.id}
-            className={`group inline-flex items-center ${variant === "compact" ? "gap-1 rounded border border-stone-200 bg-stone-50 px-1.5 py-0.5" : "gap-2 rounded-xl border px-3 py-1.5"} text-xs ${
-              variant === "compact"
-                ? "text-stone-600"
-                : met
-                ? "border-green-300 bg-green-50 text-green-800"
-                : concept.conceptId
-                  ? "border-violet-200 bg-violet-50 text-violet-800"
-                  : "border-stone-300 bg-white text-stone-600"
-            }`}
+            className={variant === "compact"
+              ? `lesson-concept-chip ${chipTone}`
+              : `group inline-flex items-center gap-2 rounded-xl border px-3 py-1.5 text-xs ${
+                  met
+                    ? "border-[color-mix(in_oklch,var(--success)_45%,var(--border))] bg-[color-mix(in_oklch,var(--success)_12%,var(--card))] text-[var(--success-foreground)]"
+                    : concept.conceptId
+                      ? "border-border bg-muted text-foreground"
+                      : "border-dashed border-border bg-transparent text-muted-foreground"
+                }`}
             title={
-              met
-                ? "Covered by a lesson in this module"
+              isCoverageField
+                ? (met ? "A lesson in this module teaches this" : "Not yet taught in this module")
                 : concept.conceptId
-                  ? undefined
+                  ? `Priority: ${display?.role ?? "Unranked"} — click to edit`
                   : "Not linked to the curriculum"
             }
           >
             {variant === "compact" ? (
-              <span className="font-medium">
-                {display?.spanish ?? concept.label}
-              </span>
+              concept.conceptId ? (
+                <ConceptQuickEdit
+                  conceptId={concept.conceptId}
+                  className="lesson-concept-label"
+                  onSaved={applySaved}
+                  onDeleted={() => onRemove(concept.id)}
+                >
+                  {display ? (
+                    <span className="lesson-concept-stack">
+                      <strong>{display.english}</strong>
+                      <span>{display.spanish}</span>
+                    </span>
+                  ) : (
+                    <span>{concept.label}</span>
+                  )}
+                </ConceptQuickEdit>
+              ) : (
+                <span className="lesson-concept-label">{concept.label}</span>
+              )
             ) : concept.conceptId ? (
               <ConceptQuickEdit
                 conceptId={concept.conceptId}
                 className="hover:underline"
-                onSaved={(draft) => {
-                  const nextDisplay = {
-                    spanish: draft.spanish,
-                    english: draft.english,
-                    role: draft.role,
-                  };
-                  setLocalDisplays((current) => ({
-                    ...current,
-                    [concept.conceptId!]: nextDisplay,
-                  }));
-                  onDisplayChange?.(concept.conceptId!, nextDisplay);
-                  onRelabel(concept.id, draft.spanish);
-                }}
+                onSaved={applySaved}
                 onDeleted={() => onRemove(concept.id)}
               >
                 <span className="grid text-left leading-tight">
@@ -265,16 +290,17 @@ export function LessonConceptsField({
               type="button"
               onClick={() => onRemove(concept.id)}
               aria-label={`Remove ${concept.label}`}
-              className={`text-current/60 transition hover:text-red-600 ${variant === "compact" ? "opacity-0 group-hover:opacity-100 focus-visible:opacity-100" : ""}`}
+              className={variant === "compact" ? "lesson-concept-remove" : "text-current/60 transition hover:text-[var(--destructive)]"}
             >
               <X className="size-3" aria-hidden="true" />
             </button>
           </span>
           );
         })}
-        <div className={`${variant === "compact" ? "min-w-28 max-w-56" : "relative min-w-40 flex-1"}`}>
+        <div className={`${variant === "compact" ? "relative min-w-28 max-w-56" : "relative min-w-40 flex-1"}`}>
           <input
             ref={inputRef}
+            data-covers-for={coversFor}
             type="text"
             value={query}
             role="combobox"
@@ -320,19 +346,21 @@ export function LessonConceptsField({
                 setHighlight((current) => Math.max(current - 1, 0));
                 return;
               }
-              if (event.key === "Enter") {
+              if (event.key === "Enter" && !event.nativeEvent.isComposing) {
                 event.preventDefault();
                 const chosen = open ? visibleResults[highlight] : undefined;
                 if (chosen) {
                   addFromResult(chosen);
-                } else {
+                } else if (query.trim()) {
                   addFreehand();
+                } else {
+                  onAdvance?.();
                 }
               }
             }}
             className={variant === "compact"
-              ? "w-full rounded border border-dashed border-stone-300 bg-transparent px-1.5 py-0.5 text-xs text-stone-700 outline-none placeholder:text-stone-400 focus:border-solid focus:border-stone-400"
-              : "w-full rounded-md border border-stone-300 bg-white px-2.5 py-1.5 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-violet-400 focus:ring-3 focus:ring-violet-100"}
+              ? "lesson-concept-add"
+              : "w-full rounded-md border border-input bg-card px-2.5 py-1.5 text-sm text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-3 focus:ring-ring/30"}
           />
           {open && visibleResults.length > 0 && (
             <ul
@@ -350,18 +378,18 @@ export function LessonConceptsField({
                     onMouseEnter={() => setHighlight(index)}
                     onClick={() => addFromResult(result)}
                     className={`flex w-full items-center justify-between gap-3 px-3 py-1.5 text-left transition ${
-                      index === highlight ? "bg-violet-50" : "hover:bg-muted"
+                      index === highlight ? "bg-accent" : "hover:bg-muted"
                     }`}
                   >
                     <span className="grid min-w-0 text-left leading-tight">
-                      <span className="truncate font-semibold text-stone-900">
+                      <span className="truncate font-semibold text-foreground">
                         {result.english}
                       </span>
-                      <span className="mt-0.5 truncate text-xs text-stone-500">
+                      <span className="mt-0.5 truncate text-xs text-muted-foreground">
                         {result.spanish}
                       </span>
                     </span>
-                    <span className="shrink-0 text-[10px] font-semibold uppercase tracking-wide text-stone-400">
+                    <span className="shrink-0 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
                       {result.curriculumRole}
                     </span>
                   </button>
