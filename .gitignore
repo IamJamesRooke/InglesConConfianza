@@ -1,3 +1,5 @@
 # Proprietary curriculum and source material
 /private/
 .obsidian
+# local DB safety backups (canonical backup is web/prisma/seed-data/*.json, committed)
+/backups/db/
