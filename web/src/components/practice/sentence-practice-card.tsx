@@ -5,7 +5,10 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 import type { SentenceBlock } from "@/lib/lesson-builder/types";
 import { normalizeAnswer } from "@/lib/lesson-builder/utils";
-import { PracticeMarkdown } from "./practice-markdown";
+import {
+  EditablePracticeMarkdown,
+  PracticeMarkdown,
+} from "./practice-markdown";
 
 export type SentenceAuthoringProps = {
   onFieldChange: (
@@ -40,6 +43,11 @@ export function SentencePracticeCard({
   const [isFeedbackVisible, setIsFeedbackVisible] = useState(false);
   const [helpedBlockIndex, setHelpedBlockIndex] = useState<number | null>(null);
   const [openDetailsId, setOpenDetailsId] = useState<string | null>(null);
+  const [authoringView, setAuthoringView] = useState<"question" | "hint" | "success">("question");
+  const [showOptionalMenu, setShowOptionalMenu] = useState(false);
+  const [visibleOptionalFields, setVisibleOptionalFields] = useState(() =>
+    new Set<"promptLabel" | "helperText" | "answerFeedback">(),
+  );
   const inputRefs = useRef<Array<HTMLInputElement | null>>([]);
   const helpTimerRef = useRef<number | null>(null);
   const hasFeedback = Boolean(sentence.answerFeedback?.trim());
@@ -173,7 +181,22 @@ export function SentencePracticeCard({
     <div
       className={`sentence-practice learner-enter ${isSingleLanguageBlock ? "single-answer" : ""} ${isVocabulary ? "vocabulary-practice" : ""}`}
     >
-      {(sentence.promptLabel.trim() || authoring) && (
+      {authoring && (
+        <div className="authoring-practice-view" aria-label="Learner state shown on the canvas">
+          <span>Learner sees</span>
+          {(["question", "hint", "success"] as const).map((view) => (
+            <button
+              key={view}
+              type="button"
+              className={authoringView === view ? "active" : ""}
+              onClick={() => setAuthoringView(view)}
+            >
+              {view === "question" ? "Question" : view === "hint" ? "Hint" : "Success"}
+            </button>
+          ))}
+        </div>
+      )}
+      {(sentence.promptLabel.trim() || (authoring && visibleOptionalFields.has("promptLabel"))) && (
         <div className="sentence-prompt-label">
           {authoring ? (
             <InlineMarkdownField
@@ -426,7 +449,7 @@ export function SentencePracticeCard({
         </p>
       )}
 
-      {(sentence.helperText?.trim() || authoring) && (
+      {(sentence.helperText?.trim() || (authoring && (authoringView === "hint" || visibleOptionalFields.has("helperText")))) && (
         <aside className="sentence-helper">
           <Info size={17} aria-hidden="true" />
           {authoring ? (
@@ -444,7 +467,7 @@ export function SentencePracticeCard({
       )}
 
       <div className="sentence-authored-feedback" aria-live="polite">
-        {authoring ? (
+        {authoring && (authoringView === "success" || sentence.answerFeedback?.trim() || visibleOptionalFields.has("answerFeedback")) ? (
           <InlineMarkdownField
             value={sentence.answerFeedback ?? ""}
             placeholder="Add feedback shown after a correct answer…"
@@ -459,6 +482,20 @@ export function SentencePracticeCard({
           />
         ) : null}
       </div>
+      {authoring && (
+        <div className="authoring-add-to-slide">
+          <button type="button" onClick={() => setShowOptionalMenu((open) => !open)}>
+            <Plus size={15} aria-hidden="true" /> Add to slide
+          </button>
+          {showOptionalMenu && (
+            <div className="authoring-optional-menu">
+              <button type="button" onClick={() => { setVisibleOptionalFields((current) => new Set(current).add("promptLabel")); setShowOptionalMenu(false); window.setTimeout(() => document.querySelector<HTMLElement>('[data-authoring-field="promptLabel"]')?.focus(), 0); }}>Short label</button>
+              <button type="button" onClick={() => { setVisibleOptionalFields((current) => new Set(current).add("helperText")); setAuthoringView("hint"); setShowOptionalMenu(false); window.setTimeout(() => document.querySelector<HTMLElement>('[data-authoring-field="helperText"]')?.focus(), 0); }}>Helper text</button>
+              <button type="button" onClick={() => { setVisibleOptionalFields((current) => new Set(current).add("answerFeedback")); setAuthoringView("success"); setShowOptionalMenu(false); window.setTimeout(() => document.querySelector<HTMLElement>('[data-authoring-field="answerFeedback"]')?.focus(), 0); }}>Success feedback</button>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }
@@ -476,41 +513,14 @@ function InlineMarkdownField({
   fieldName: "promptLabel" | "promptText" | "helperText" | "answerFeedback";
   onChange: (value: string) => void;
 }) {
-  const [editing, setEditing] = useState(false);
-
-  if (editing) {
-    return (
-      <textarea
-        autoFocus
-        value={value}
-        onChange={(event) => onChange(event.target.value)}
-        onBlur={() => setEditing(false)}
-        onKeyDown={(event) => {
-          if (event.key === "Escape") {
-            event.preventDefault();
-            event.currentTarget.blur();
-          }
-        }}
-        placeholder={placeholder}
-        aria-label={placeholder}
-        data-authoring-field={fieldName}
-        className={`authoring-inline-textarea authoring-inline-${variant}`}
-      />
-    );
-  }
-
   return (
-    <button
-      type="button"
-      onClick={() => setEditing(true)}
-      data-authoring-field={fieldName}
-      className={`authoring-inline-field authoring-inline-${variant}`}
-    >
-      {value.trim() ? (
-        <PracticeMarkdown markdown={value} variant={variant} />
-      ) : (
-        <span>{placeholder}</span>
-      )}
-    </button>
+    <EditablePracticeMarkdown
+      markdown={value}
+      onChange={onChange}
+      placeholder={placeholder}
+      ariaLabel={placeholder}
+      fieldName={fieldName}
+      variant={variant}
+    />
   );
 }

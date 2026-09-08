@@ -43,80 +43,60 @@ export function HotkeyReminder({
 
         <div className="space-y-2">
           <HotkeyReminderRow
-            keys={["Mod", "K"]}
+            keys={["Ctrl/Cmd", "K"]}
             description="Open command palette"
           />
           <HotkeyReminderRow
-            keys={["Alt", "K"]}
-            description="Show keyboard shortcuts"
-          />
-          <HotkeyReminderRow
-            keys={["Alt", "1–4"]}
-            description="Edit label, prompt, helper, or feedback"
-          />
-          <HotkeyReminderRow
-            keys={["Alt", "N"]}
+            keys={["Ctrl/Cmd", "Shift", "N"]}
             description="Create a new lesson"
           />
           <HotkeyReminderRow
-            keys={["Alt", "E"]}
-            description="Append an explanation block"
+            keys={["Ctrl/Cmd", "Shift", "A"]}
+            description="Open the Add slide menu"
           />
           <HotkeyReminderRow
-            keys={["Alt", "P"]}
-            description="Append a sentence block"
+            keys={["PageUp / PageDown"]}
+            description="Move between lesson setup and slides"
           />
           <HotkeyReminderRow
-            keys={["Alt", "↑ / ↓"]}
-            description="Open the previous or next block"
-          />
-          <HotkeyReminderRow
-            keys={["Alt", "M"]}
-            description="Toggle active lesson collapsed form"
-          />
-          <HotkeyReminderRow
-            keys={["Ctrl", "Alt", "M"]}
-            description="Toggle all lesson collapsed forms"
-          />
-          <HotkeyReminderRow
-            keys={["Mod", "Enter"]}
+            keys={["Ctrl/Cmd", "Enter"]}
             description="Preview the active lesson"
           />
           <HotkeyReminderRow
-            keys={["Mod", "S"]}
+            keys={["Ctrl/Cmd", "S"]}
             description="Save the active lesson"
           />
           <HotkeyReminderRow
-            keys={["Mod", "Shift", "D"]}
+            keys={["Ctrl/Cmd", "Shift", "D"]}
             description="Duplicate the focused block"
           />
           <HotkeyReminderRow
-            keys={["Mod", "Shift", "↑ / ↓"]}
+            keys={["Ctrl/Cmd", "Shift", "↑ / ↓"]}
             description="Move the focused block"
           />
           <HotkeyReminderRow
-            keys={["Mod", "Z"]}
+            keys={["Ctrl/Cmd", "Shift", "1 / 2"]}
+            description="Mark selected text Spanish or English"
+          />
+          <HotkeyReminderRow
+            keys={["Ctrl/Cmd", "B"]}
+            description="Bold selected text"
+          />
+          <HotkeyReminderRow
+            keys={["Ctrl/Cmd", "Shift", "0"]}
+            description="Clear selected formatting"
+          />
+          <HotkeyReminderRow
+            keys={["Ctrl/Cmd", "Z"]}
             description="Undo a structural edit"
           />
           <HotkeyReminderRow
-            keys={["Mod", "Shift", "Z"]}
+            keys={["Ctrl/Cmd", "Shift", "Z"]}
             description="Redo a structural edit"
           />
           <HotkeyReminderRow
-            keys={["Delete"]}
-            description="Delete the focused block"
-          />
-          <HotkeyReminderRow
-            keys={["F2"]}
-            description="Rename the active lesson"
-          />
-          <HotkeyReminderRow
-            keys={["Alt", "S"]}
-            description="Save the active lesson"
-          />
-          <HotkeyReminderRow
             keys={["Esc"]}
-            description="Finish editing an explanation"
+            description="Finish editing or close the current menu"
           />
         </div>
       </div>

@@ -238,6 +238,18 @@ Do not use the International Phonetic Alphabet in learner-facing lessons. Requir
 - Use strong visual hierarchy: large target phrases, bold patterns, clear input fields, and short feedback.
 - Prefer a little visual energy over a cold academic interface, while keeping the screen uncluttered.
 
+## Teacher authoring experience
+
+- Treat the Lesson Builder as a course binder: modules contain visible lesson summaries, and the teacher should be able to understand the course without opening several dashboards.
+- The authoring canvas should reuse the learner presentation. Teaching text is edited where the learner will see it, with no raw markup or unexplained generated labels.
+- Begin every lesson with a teacher-only setup step for its name, module placement, and concepts covered. End with a review of the learner completion state and any incomplete authored content.
+- Use “slide” in teacher-facing language. “Block” is an implementation detail and should not be required vocabulary for a teacher.
+- Support the complete authoring workflow from the keyboard, while retaining visible buttons for every action. Display shortcuts beside the actions they trigger and keep one canonical shortcut definition wherever possible.
+- Keep optional labels, hints, alternatives, and success feedback out of the canvas until the teacher asks to add or inspect them.
+- Preserve the teacher's position when they preview or reopen a lesson, and focus the first useful field after creating content.
+- Use distinct semantic highlighting for Spanish and English inside mixed-language explanations. Color supports recognition but must not be the only signal of meaning.
+- The current authoring target is desktop web. Optimize screen space and keyboard flow there before introducing mobile authoring behavior.
+
 ## Current implementation boundary
 
 - Text interaction comes first.

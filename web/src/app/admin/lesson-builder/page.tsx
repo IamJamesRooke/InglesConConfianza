@@ -12,7 +12,6 @@ import {
   Table2,
   X,
 } from "lucide-react";
-import { BuilderNav } from "@/components/lesson-builder/builder-nav";
 import { ModuleMeta } from "@/components/lesson-builder/module-meta";
 import { ModuleRail } from "@/components/lesson-builder/module-rail";
 import {
@@ -29,6 +28,7 @@ import {
   type BuilderCommand,
 } from "@/components/lesson-builder/command-palette";
 import { HotkeyReminder } from "@/components/lesson-builder/hotkey-reminder";
+import { LessonLibrary } from "@/components/lesson-builder/lesson-library";
 import {
   LessonSelector,
   type PracticeLesson,
@@ -457,7 +457,7 @@ export default function LessonBuilderPage() {
 
   // Debounced autosave for lesson bodies. Module structure autosaves on its own
   // path; this covers block/sentence/answer edits so a long authoring session
-  // never depends on remembering Alt+S. A pristine brand-new lesson (no name, no
+  // never depends on remembering a save shortcut. A pristine brand-new lesson (no name, no
   // blocks) is left alone until the user gives it substance.
   useEffect(() => {
     if (isLoadingLessons || pendingLessonExitId || saveStatus === "saving") {
@@ -673,7 +673,16 @@ export default function LessonBuilderPage() {
     (lessonId: string) => {
       setIsZenMode(true);
       setActiveSentenceMarkdownField(null);
-      const firstBlock = lessons.find((lesson) => lesson.id === lessonId)?.blocks[0];
+      const lesson = lessons.find((candidate) => candidate.id === lessonId);
+      let rememberedBlockId: string | null = null;
+      try {
+        rememberedBlockId = window.localStorage.getItem(`icc-authoring-position:${lessonId}`);
+      } catch {
+        // The first slide remains available when browser storage is blocked.
+      }
+      const firstBlock =
+        lesson?.blocks.find((block) => block.id === rememberedBlockId) ??
+        lesson?.blocks[0];
       setActiveContentBlock(
         firstBlock ? { lessonId, blockId: firstBlock.id } : null,
       );
@@ -866,15 +875,16 @@ export default function LessonBuilderPage() {
     lessons,
   ]);
 
-  const createLessonNow = useCallback(() => {
+  const createLessonNow = useCallback((targetModuleId?: string) => {
     const lessonId = createId("lesson");
+    const destinationModuleId = targetModuleId ?? activeModuleId;
 
     dispatch({ type: "CREATE_LESSON", lessonId });
     // New lessons go into the module currently open in the builder.
     setCourseModules((current) =>
       current.map((module, index) =>
-        module.id === activeModuleId ||
-        (!activeModuleId && index === current.length - 1)
+        module.id === destinationModuleId ||
+        (!destinationModuleId && index === current.length - 1)
           ? { ...module, lessonIds: [...module.lessonIds, lessonId] }
           : module,
       ),
@@ -909,6 +919,19 @@ export default function LessonBuilderPage() {
     createLessonNow,
     lessons,
   ]);
+
+  const createLessonInModule = useCallback((moduleId: string) => {
+    const openLesson = lessons.find(
+      (lesson) => !collapsedLessons.has(lesson.id),
+    );
+    const create = () => {
+      setActiveModuleId(moduleId);
+      window.history.replaceState(null, "", `/admin/lesson-builder?module=${moduleId}`);
+      createLessonNow(moduleId);
+    };
+    if (openLesson && !confirmDiscardLessonChanges(openLesson.id, create)) return;
+    create();
+  }, [collapsedLessons, confirmDiscardLessonChanges, createLessonNow, lessons]);
 
   const duplicateLesson = useCallback((lessonId: string) => {
     const duplicateId = createId("lesson");
@@ -1093,6 +1116,31 @@ export default function LessonBuilderPage() {
 
       if (
         usesMod &&
+        event.shiftKey &&
+        !event.altKey &&
+        event.key.toLowerCase() === "n" &&
+        !event.repeat &&
+        !event.isComposing
+      ) {
+        event.preventDefault();
+        createLesson();
+        return;
+      }
+
+      if (
+        !isZenMode &&
+        !isTextEntryTarget &&
+        event.key === "?" &&
+        !event.repeat &&
+        !event.isComposing
+      ) {
+        event.preventDefault();
+        setIsHotkeyReminderOpen(true);
+        return;
+      }
+
+      if (
+        usesMod &&
         !event.altKey &&
         event.key.toLowerCase() === "k" &&
         !event.repeat &&
@@ -1104,18 +1152,6 @@ export default function LessonBuilderPage() {
       }
 
       if (isCommandPaletteOpen) {
-        return;
-      }
-
-      if (
-        isZenMode &&
-        event.key === "Escape" &&
-        !event.repeat &&
-        !event.isComposing &&
-        !isTextEntryTarget
-      ) {
-        event.preventDefault();
-        setIsZenMode(false);
         return;
       }
 
@@ -1930,15 +1966,19 @@ export default function LessonBuilderPage() {
     [courseModules],
   );
 
-  function patchActiveModule(patch: Partial<LessonModule>) {
+  function patchModule(moduleId: string, patch: Partial<LessonModule>) {
     const isNameEdit =
       Object.keys(patch).length === 1 && Object.hasOwn(patch, "name");
     commitCourseModules(
       courseModules.map((module) =>
-        module.id === currentModule?.id ? { ...module, ...patch } : module,
+        module.id === moduleId ? { ...module, ...patch } : module,
       ),
-      isNameEdit ? { coalesceKey: `name:${currentModule?.id}` } : undefined,
+      isNameEdit ? { coalesceKey: `name:${moduleId}` } : undefined,
     );
+  }
+
+  function patchActiveModule(patch: Partial<LessonModule>) {
+    if (currentModule) patchModule(currentModule.id, patch);
   }
 
   const undoCourseModules = useCallback(() => {
@@ -2079,6 +2119,30 @@ export default function LessonBuilderPage() {
     // The lesson <section> may unmount on this move, so its onDragEnd (which
     // normally clears the drag) can be lost — clear it here too.
     lessonDrag.reset();
+  }
+
+  function moveLessonWithinModule(
+    moduleId: string,
+    index: number,
+    direction: -1 | 1,
+  ) {
+    const targetModule = courseModules.find((candidate) => candidate.id === moduleId);
+    const target = index + direction;
+    if (!targetModule || target < 0 || target >= targetModule.lessonIds.length) return;
+    const lessonIds = [...targetModule.lessonIds];
+    [lessonIds[index], lessonIds[target]] = [lessonIds[target], lessonIds[index]];
+    commitCourseModules(
+      courseModules.map((candidate) =>
+        candidate.id === moduleId ? { ...candidate, lessonIds } : candidate,
+      ),
+    );
+  }
+
+  function openLessonFromLibrary(moduleId: string, lessonId: string) {
+    setActiveModuleId(moduleId);
+    window.history.replaceState(null, "", `/admin/lesson-builder?module=${moduleId}`);
+    openLessonEditorNow(lessonId);
+    setActiveLessonId(lessonId);
   }
 
   function selectModule(moduleId: string) {
@@ -2247,6 +2311,11 @@ export default function LessonBuilderPage() {
       ),
     );
     setActiveContentBlock({ lessonId, blockId });
+    try {
+      window.localStorage.setItem(`icc-authoring-position:${lessonId}`, blockId);
+    } catch {
+      // Position memory is optional; authoring still works without storage.
+    }
     focusContentBlock(lessonId, blockId);
   }
 
@@ -2308,7 +2377,7 @@ export default function LessonBuilderPage() {
         detail: currentModule
           ? `In ${currentModule.name || "Untitled module"}`
           : undefined,
-        shortcut: "Alt+N",
+        shortcut: "Ctrl/Cmd+Shift+N",
         icon: "lesson",
         keywords: ["new", "create", "author"],
         run: createLesson,
@@ -2336,7 +2405,6 @@ export default function LessonBuilderPage() {
         id: "add-explanation",
         label: "Add explanation block",
         detail: commandTarget ? `After the focused block in ${targetLabel}` : undefined,
-        shortcut: "Alt+E",
         icon: "explanation",
         disabledReason: commandTarget ? undefined : "Select a lesson first",
         run: () => addCommandBlock("explanation"),
@@ -2345,7 +2413,6 @@ export default function LessonBuilderPage() {
         id: "add-sentence",
         label: "Add practice block",
         detail: commandTarget ? `After the focused block in ${targetLabel}` : undefined,
-        shortcut: "Alt+P",
         icon: "sentence",
         disabledReason: commandTarget ? undefined : "Select a lesson first",
         run: () => addCommandBlock("sentence"),
@@ -2370,7 +2437,7 @@ export default function LessonBuilderPage() {
         id: "lesson-preview",
         label: "Preview active lesson",
         detail: targetLabel,
-        shortcut: "Mod+Enter",
+        shortcut: "Ctrl/Cmd+Enter",
         icon: "open",
         disabledReason: !commandTarget
           ? "Select a lesson first"
@@ -2383,7 +2450,7 @@ export default function LessonBuilderPage() {
         id: "lesson-save",
         label: "Save active lesson",
         detail: targetLabel,
-        shortcut: "Mod+S",
+        shortcut: "Ctrl/Cmd+S",
         icon: "save",
         disabledReason: !commandTarget
           ? "Select a lesson first"
@@ -2396,7 +2463,7 @@ export default function LessonBuilderPage() {
         id: "block-duplicate",
         label: "Duplicate focused block",
         detail: blockLabel,
-        shortcut: "Mod+Shift+D",
+        shortcut: "Ctrl/Cmd+Shift+D",
         icon: "open",
         disabledReason: activeBlock ? undefined : "Focus a block first",
         run: duplicateActiveContentBlock,
@@ -2405,7 +2472,7 @@ export default function LessonBuilderPage() {
         id: "block-move-up",
         label: "Move focused block up",
         detail: blockLabel,
-        shortcut: "Mod+Shift+↑",
+        shortcut: "Ctrl/Cmd+Shift+↑",
         icon: "open",
         disabledReason: activeBlock ? undefined : "Focus a block first",
         run: () => moveActiveContentBlock(-1),
@@ -2414,7 +2481,7 @@ export default function LessonBuilderPage() {
         id: "block-move-down",
         label: "Move focused block down",
         detail: blockLabel,
-        shortcut: "Mod+Shift+↓",
+        shortcut: "Ctrl/Cmd+Shift+↓",
         icon: "open",
         disabledReason: activeBlock ? undefined : "Focus a block first",
         run: () => moveActiveContentBlock(1),
@@ -2432,7 +2499,7 @@ export default function LessonBuilderPage() {
         id: "undo-structure",
         label: "Undo structural edit",
         detail: "Blocks, language blocks, or module structure",
-        shortcut: "Mod+Z",
+        shortcut: "Ctrl/Cmd+Z",
         icon: "open",
         disabledReason:
           lessonCanUndo || (courseCanUndo && !hasUnsavedNewLesson)
@@ -2448,7 +2515,7 @@ export default function LessonBuilderPage() {
         id: "redo-structure",
         label: "Redo structural edit",
         detail: "Session history for block edits",
-        shortcut: "Mod+Shift+Z",
+        shortcut: "Ctrl/Cmd+Shift+Z",
         icon: "open",
         disabledReason: lessonCanRedo
           ? undefined
@@ -2460,17 +2527,20 @@ export default function LessonBuilderPage() {
       {
         id: "keyboard-help",
         label: "Show keyboard shortcuts",
-        shortcut: "Alt+K",
+        shortcut: "?",
         icon: "keyboard",
         run: () => setIsHotkeyReminderOpen(true),
       },
-      ...moduleLessons.map((lesson, index) => ({
+      ...lessons.map((lesson, index) => ({
         id: `open-${lesson.id}`,
         label: `Open Lesson ${index + 1}`,
         detail: lesson.name || "Untitled lesson",
         icon: "open" as const,
         keywords: [lesson.name ?? "", "lesson", String(index + 1)],
-        run: () => openLessonFromCommand(lesson.id),
+        run: () => {
+          const owner = courseModules.find((module) => module.lessonIds.includes(lesson.id));
+          if (owner) openLessonFromLibrary(owner.id, lesson.id);
+        },
       })),
     ];
   })();
@@ -2494,12 +2564,40 @@ export default function LessonBuilderPage() {
     >
       <div
         className={`mx-auto flex w-full flex-col gap-5 ${
-          isZenMode ? "max-w-[920px]" : "max-w-[1500px]"
+          isZenMode ? "max-w-[920px]" : "max-w-[1100px]"
         }`}
       >
-        {!isZenMode && <BuilderNav active="builder" />}
-
-        <div className={isZenMode ? "grid" : "grid gap-5 lg:grid-cols-[15rem_minmax(0,1fr)] xl:grid-cols-[15rem_minmax(0,1fr)_19rem]"}>
+        {!isZenMode && (
+          <LessonLibrary
+            modules={courseModules}
+            lessons={lessons}
+            conceptDisplays={conceptDisplays}
+            saveLabel={
+              isLoadingLessons
+                ? "Loading…"
+                : saveStatus === "error" || courseSaveState === "error"
+                  ? "Save failed"
+                  : saveStatus === "saving" || courseSaveState === "saving"
+                    ? "Saving…"
+                    : "All changes saved"
+            }
+            onOpenLesson={openLessonFromLibrary}
+            onNewLesson={createLessonInModule}
+            onPreviewLesson={(lessonId) => {
+              setPreviewLessonId(lessonId);
+              setPreviewBlockId(null);
+            }}
+            onDuplicateLesson={duplicateLesson}
+            onDeleteLesson={(lessonId) => void deleteLesson(lessonId)}
+            onAddModule={addModuleNow}
+            onDeleteModule={deleteModuleNow}
+            onMoveModule={reorderModule}
+            onMoveLesson={moveLessonWithinModule}
+            onMoveLessonToModule={moveLessonToModule}
+            onChangeModule={patchModule}
+          />
+        )}
+        <div className={isZenMode ? "grid" : "hidden"}>
           {!isZenMode && <aside className="min-w-0 lg:sticky lg:top-24 lg:self-start">
             <ModuleRail
               modules={courseModules}
@@ -2662,7 +2760,15 @@ export default function LessonBuilderPage() {
                   const targetBlock = lesson.blocks[index];
                   if (targetBlock) revealContentBlock(lesson.id, targetBlock.id);
                 }}
-                onClose={() => setIsZenMode(false)}
+                onDone={() => {
+                  if (!lessonIsDirty) {
+                    setIsZenMode(false);
+                    return;
+                  }
+                  void saveLesson(lesson.id).then((saved) => {
+                    if (saved) setIsZenMode(false);
+                  });
+                }}
                 onRename={(name) => renameLesson(lesson.id, name)}
                 onPreview={() => {
                   setPreviewLessonId(lesson.id);
@@ -2763,14 +2869,47 @@ export default function LessonBuilderPage() {
                     }
                   },
                 }}
+                conceptEditor={
+                  <LessonConceptsField
+                    variant="inline"
+                    concepts={lesson.concepts}
+                    conceptDisplays={conceptDisplays}
+                    suggestions={conceptSuggestions}
+                    onDisplayChange={(conceptId, display) =>
+                      setConceptDisplays((current) => ({
+                        ...current,
+                        [conceptId]: display,
+                      }))
+                    }
+                    onAdd={(concept) => dispatch({
+                      type: "ADD_LESSON_CONCEPT",
+                      lessonId: lesson.id,
+                      concept,
+                    })}
+                    onRemove={(lessonConceptId) => dispatch({
+                      type: "REMOVE_LESSON_CONCEPT",
+                      lessonId: lesson.id,
+                      lessonConceptId,
+                    })}
+                    onRelabel={(lessonConceptId, label) => dispatch({
+                      type: "RELABEL_LESSON_CONCEPT",
+                      lessonId: lesson.id,
+                      lessonConceptId,
+                      label,
+                    })}
+                    inputRef={(element) => registerLessonConceptRef(lesson.id, element)}
+                  />
+                }
                 onAddStep={(type) => {
                   const insertionIndex = Math.max(zenBlockIndex + 1, 0);
                   if (type === "explanation") {
                     addExplanationBlock(lesson.id, insertionIndex);
                   } else if (type === "sentence") {
                     addSentenceBlock(lesson.id, insertionIndex);
-                  } else {
+                  } else if (type === "vocabulary") {
                     addVocabularyBlock(lesson.id, insertionIndex);
+                  } else {
+                    addTeachingPair(lesson.id, insertionIndex);
                   }
                 }}
                 onDuplicateStep={duplicateActiveContentBlock}
@@ -3338,23 +3477,9 @@ export default function LessonBuilderPage() {
           );
         })}
 
-        <button
-          type="button"
-          onClick={createLesson}
-          title="Create new lesson (Alt+N)"
-          className="group flex min-h-40 w-full items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-stone-300 bg-white px-6 text-lg font-semibold text-stone-700 shadow-sm transition hover:border-violet-400 hover:bg-violet-50 hover:text-violet-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-violet-200"
-        >
-          <span className="flex size-10 items-center justify-center rounded-full bg-stone-100 transition group-hover:bg-violet-100">
-            <Plus className="size-5" aria-hidden="true" />
-          </span>
-          Create new lesson
-          <kbd className="rounded-md border border-stone-200 bg-stone-100 px-2 py-1 text-xs font-semibold text-stone-500">
-            Alt+N
-          </kbd>
-        </button>
           </div>
 
-          {!isZenMode && <aside className="min-w-0 space-y-4 xl:sticky xl:top-24 xl:self-start">
+          {!isZenMode && <aside className="hidden min-w-0 space-y-4 xl:sticky xl:top-24 xl:self-start">
             <section className="rounded-xl border border-border bg-card p-4 shadow-sm">
               <div className="flex items-center justify-between gap-3">
                 <div>
@@ -3567,7 +3692,7 @@ export default function LessonBuilderPage() {
         type="button"
         onClick={() => setIsCommandPaletteOpen(true)}
         aria-label="Open command palette"
-        title="Command palette (Mod+K)"
+        title="Command palette (Ctrl/Cmd+K)"
         className="fixed bottom-5 right-5 z-40 flex size-12 items-center justify-center rounded-full border border-border bg-popover text-popover-foreground shadow-lg transition hover:-translate-y-0.5 hover:bg-muted focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/30"
       >
         <Keyboard className="size-5" aria-hidden="true" />

@@ -8,9 +8,7 @@ import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
 
 const internalLinks = [
-  { href: "/admin", label: "Studio" },
-  { href: "/admin/lesson-builder", label: "Lesson Builder" },
-  { href: "/admin/lesson-builder/coverage", label: "Coverage" },
+  { href: "/admin/lesson-builder", label: "Lessons" },
   { href: "/admin/curriculum", label: "Curriculum" },
 ];
 
@@ -48,17 +46,19 @@ export function SiteHeader() {
   const pathname = usePathname();
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [theme, setTheme] = useState(() => {
-    if (typeof window === "undefined") {
-      return "default";
-    }
+  const [theme, setTheme] = useState("default");
 
+  useEffect(() => {
+    let storedTheme = "default";
     try {
-      return window.localStorage.getItem("icc-theme") ?? "default";
+      storedTheme = window.localStorage.getItem("icc-theme") ?? "default";
     } catch {
-      return "default";
+      // The default theme remains usable when storage is blocked.
     }
-  });
+    if (storedTheme === "default") return;
+    const timer = window.setTimeout(() => setTheme(storedTheme), 0);
+    return () => window.clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -76,7 +76,9 @@ export function SiteHeader() {
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
     if (href === "/admin") return pathname === href;
-    if (href === "/admin/lesson-builder") return pathname === href;
+    if (href === "/admin/lesson-builder") {
+      return pathname === href || pathname.startsWith(`${href}/`);
+    }
     return pathname === href || pathname.startsWith(`${href}/`);
   };
   const isAdmin = pathname.startsWith("/admin");
@@ -103,7 +105,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-border bg-[var(--header)]/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3">
         <Link
-          href="/admin"
+          href="/admin/lesson-builder"
           className="flex min-w-0 items-center gap-2.5 font-semibold text-foreground"
           onClick={() => setIsMenuOpen(false)}
         >
