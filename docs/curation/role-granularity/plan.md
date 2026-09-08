@@ -94,6 +94,7 @@ All six guardrail bands in target. Open follow-ups, all optional:
 | P3-5 | Boundary review, guardrail retune, docs, memory | Sonnet | **done** — guardrails tuned; README + memory + policy updated. |
 | P3-6 | Verb-Pattern / Q&N / Imperative / passive grammar → core | Sonnet | **done** — 136 rows. Core 727→863. |
 | P3-7 | Stranded function words + conversational expressions | Sonnet | **done** — 17 function words → core; 17 conversational expressions → essential + `topic:social-expression`. |
+| P3-9 | Grammar-sentence leaks + conversational frames | Sonnet | **done** — 11 imperative/do-support example sentences essential/common→core; 9 fixed question frames (¿qué hora es?, ¿cómo se llama?) kept essential + tagged `topic:social-expression`. |
 | P3-8 | Per-tier boundary review | Sonnet | **done** — verb-form + `==>` drills common→rare (177); grammar constructions common→core (37+); everyday vocab common→essential (111); secondary verb senses essential→common (105); mid-tier vocab extended→common (475). Bands retuned. |
 
 ### P3-1 detail

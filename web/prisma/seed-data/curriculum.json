@@ -2680,7 +2680,8 @@
         "expr:greeting",
         "audit:reviewed",
         "topic:map-decir",
-        "topic:enmap-how"
+        "topic:enmap-how",
+        "expr:idiom"
       ],
       "curriculumRole": "essential"
     },
@@ -11565,7 +11566,9 @@
         "en:what",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:enmap-what"
+        "topic:enmap-what",
+        "topic:social-expression",
+        "expr:idiom"
       ],
       "curriculumRole": "essential"
     },
@@ -12838,7 +12841,9 @@
         "audit:reviewed",
         "topic:part-of",
         "topic:enmap-of",
-        "topic:enmap-what"
+        "topic:enmap-what",
+        "topic:social-expression",
+        "expr:idiom"
       ],
       "curriculumRole": "essential"
     },
@@ -12860,7 +12865,9 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:enmap-how"
+        "topic:enmap-how",
+        "topic:social-expression",
+        "expr:idiom"
       ],
       "curriculumRole": "essential"
     },
@@ -13313,7 +13320,9 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:map-pasar",
-        "topic:enmap-what"
+        "topic:enmap-what",
+        "topic:social-expression",
+        "expr:idiom"
       ],
       "curriculumRole": "essential"
     },
@@ -13610,7 +13619,9 @@
         "audit:reviewed",
         "topic:part-of",
         "topic:enmap-of",
-        "topic:enmap-what"
+        "topic:enmap-what",
+        "topic:social-expression",
+        "expr:idiom"
       ],
       "curriculumRole": "essential"
     },
@@ -16104,7 +16115,9 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:enmap-how"
+        "topic:enmap-how",
+        "topic:social-expression",
+        "expr:idiom"
       ],
       "curriculumRole": "essential"
     },
@@ -26719,7 +26732,9 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:enmap-how"
+        "topic:enmap-how",
+        "topic:social-expression",
+        "expr:idiom"
       ],
       "curriculumRole": "essential"
     },
@@ -77906,7 +77921,9 @@
         "en:what",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:enmap-what"
+        "topic:enmap-what",
+        "topic:social-expression",
+        "expr:idiom"
       ],
       "curriculumRole": "essential"
     },
@@ -98050,7 +98067,7 @@
         "audit:reviewed",
         "topic:verb-eating-drinking"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "4e8vpd4tbg",
@@ -98072,7 +98089,7 @@
         "audit:reviewed",
         "topic:verb-eating-drinking"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "zkkcxirv4g",
@@ -98254,7 +98271,7 @@
         "audit:reviewed",
         "topic:verb-eating-drinking"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "7zuboxokm5",
@@ -98275,7 +98292,7 @@
         "audit:reviewed",
         "topic:verb-eating-drinking"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "1m68s37p22",
@@ -98363,7 +98380,7 @@
         "audit:reviewed",
         "topic:verb-eating-drinking"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "aq0gtmpie2",
@@ -98385,7 +98402,7 @@
         "audit:reviewed",
         "topic:verb-knowing"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "core"
     },
     {
       "id": "362prshjtp",
@@ -98496,7 +98513,7 @@
         "topic:verb-household-1",
         "topic:verb-household"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "core"
     },
     {
       "id": "zw81jy10ge",
@@ -98519,7 +98536,7 @@
         "topic:verb-household-1",
         "topic:verb-household"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "core"
     },
     {
       "id": "g1jufpr1jo",
@@ -98542,7 +98559,7 @@
         "topic:verb-household-2",
         "topic:verb-household"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "q98pxxzqf3",
@@ -98566,7 +98583,7 @@
         "topic:verb-household-2",
         "topic:verb-household"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "pdc3u4lu4a",
@@ -98657,7 +98674,7 @@
         "topic:verb-seeing-ver",
         "topic:map-ver"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "core"
     },
     {
       "id": "z99o7eirt0",
