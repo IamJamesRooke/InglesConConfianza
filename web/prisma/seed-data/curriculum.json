@@ -128,7 +128,7 @@
         "audit:reviewed",
         "topic:map-querer"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "dnwd7gmll5",
@@ -147,7 +147,7 @@
         "audit:reviewed",
         "topic:map-querer"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "9h3jno3320",
@@ -247,7 +247,7 @@
         "topic:verb-feelings-love-like",
         "topic:map-querer"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "p2ddtuwn9m",
@@ -342,7 +342,7 @@
         "audit:reviewed",
         "topic:map-querer"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "rr28vy1oq0",
@@ -364,7 +364,7 @@
         "audit:reviewed",
         "topic:map-querer"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "7xvappewlv",
@@ -388,7 +388,7 @@
         "topic:map-que",
         "topic:enmap-what"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "8st8uc3ose",
@@ -410,7 +410,7 @@
         "audit:reviewed",
         "topic:map-querer"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "j6x3otw9pi",
@@ -433,7 +433,7 @@
         "topic:map-querer",
         "topic:enmap-how"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "9tdm1v0loz",
@@ -534,7 +534,7 @@
         "topic:map-decir",
         "topic:map-querer"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "2w91gd6yc7",
@@ -764,7 +764,7 @@
         "topic:enmap-have",
         "topic:verb-eating-drinking"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "39jd5tl1td",
@@ -941,7 +941,7 @@
         "topic:verb-eating-drinking",
         "topic:map-tomar"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "ggqsaeyv8u",
@@ -964,7 +964,7 @@
         "topic:map-tomar",
         "topic:enmap-take"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "gb1zklln37",
@@ -989,7 +989,7 @@
         "topic:map-tomar",
         "topic:enmap-make"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "2hxj5syqcm",
@@ -1037,7 +1037,7 @@
         "topic:map-tomar",
         "topic:enmap-take"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "ghaurw9ils",
@@ -1077,7 +1077,7 @@
         "topic:verb-eating-drinking",
         "topic:enmap-have"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "oieith38tf",
@@ -1637,7 +1637,7 @@
         "audit:reviewed",
         "topic:fem-a"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "g2nzrxh5ae",
@@ -1704,7 +1704,7 @@
         "audit:reviewed",
         "topic:fem-a"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "00axi6sqac",
@@ -1818,7 +1818,7 @@
         "topic:masc-consonant",
         "topic:people-professions"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ldjf9twfn1",
@@ -1908,7 +1908,7 @@
         "topic:map-hablar",
         "topic:enmap-to"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "qgnveu0pox",
@@ -1989,7 +1989,7 @@
         "topic:map-hablar",
         "topic:enmap-with"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "pfr7szkobd",
@@ -2037,7 +2037,7 @@
         "topic:verb-communication-talking",
         "topic:map-hablar"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "tiss70p00o",
@@ -2143,7 +2143,7 @@
         "topic:part-up",
         "topic:map-hablar"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "t817imxlpf",
@@ -2394,7 +2394,7 @@
         "topic:common-gender-other-roles",
         "topic:map-hablar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "e1plhjrtby",
@@ -2418,7 +2418,7 @@
         "topic:map-ser",
         "topic:map-hablar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "d587f3ftw9",
@@ -2568,7 +2568,7 @@
         "topic:verb-communication-saying",
         "topic:map-decir"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "a7tobu5j5o",
@@ -2592,7 +2592,7 @@
         "topic:verb-communication-saying",
         "topic:map-decir"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "du61aoc74y",
@@ -2616,7 +2616,7 @@
         "topic:verb-communication-saying",
         "topic:map-decir"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "kwqo05li9i",
@@ -2637,7 +2637,7 @@
         "topic:verb-communication-saying",
         "topic:map-decir"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "0uwakesgf2",
@@ -2682,7 +2682,7 @@
         "topic:map-decir",
         "topic:enmap-how"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "4pmy3sue86",
@@ -2826,7 +2826,7 @@
         "audit:reviewed",
         "topic:map-decir"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "h9qi6jkdmp",
@@ -3218,7 +3218,7 @@
         "topic:map-dar",
         "topic:enmap-to"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "y78uyi9c5c",
@@ -3296,7 +3296,7 @@
         "topic:verb-dar-giving",
         "topic:map-dar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "z1hv68g2f4",
@@ -3316,7 +3316,7 @@
         "topic:verb-dar-giving",
         "topic:map-dar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "5zyk11qlrm",
@@ -3339,7 +3339,7 @@
         "topic:map-dar",
         "topic:map-contar"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "n79sjn044t",
@@ -3401,7 +3401,7 @@
         "topic:verb-dar-giving",
         "topic:map-dar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "qrb7i9y47p",
@@ -3421,7 +3421,7 @@
         "topic:verb-dar-giving",
         "topic:map-dar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "6oqdoh7ax7",
@@ -3441,7 +3441,7 @@
         "topic:verb-dar-giving",
         "topic:map-dar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "yaznk7a47n",
@@ -3465,7 +3465,7 @@
         "topic:map-dar",
         "topic:enmap-take"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "nx9vadk8zr",
@@ -3485,7 +3485,7 @@
         "topic:verb-dar-idioms",
         "topic:map-dar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "jpaidkfhw8",
@@ -3507,7 +3507,7 @@
         "topic:verb-work-employment",
         "topic:map-dar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "gbxjc99tyx",
@@ -3632,7 +3632,7 @@
         "topic:verb-dar-idioms",
         "topic:map-dar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "47jjg9x6gu",
@@ -3654,7 +3654,7 @@
         "topic:map-dar",
         "topic:enmap-make"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "l6c2h7kj9j",
@@ -3676,7 +3676,7 @@
         "topic:map-dar",
         "topic:enmap-make"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "b1tjm939pm",
@@ -3698,7 +3698,7 @@
         "topic:map-dar",
         "topic:enmap-make"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "xz843dw8lb",
@@ -3717,7 +3717,7 @@
         "topic:verb-dar-idioms",
         "topic:map-dar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "blmsaecd0u",
@@ -3765,7 +3765,7 @@
         "topic:map-dar",
         "topic:enmap-make"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "29l8pgm5cm",
@@ -3784,7 +3784,7 @@
         "topic:verb-dar-giving",
         "topic:map-dar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "24de35h6nw",
@@ -3810,7 +3810,7 @@
         "topic:map-dar",
         "topic:enmap-give"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "6r69ejgtqp",
@@ -4013,7 +4013,7 @@
         "topic:enmap-with",
         "topic:enmap-give"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "3yjxjrevpn",
@@ -4064,7 +4064,7 @@
         "topic:verb-dar-giving",
         "topic:map-dar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ryokdbzs7y",
@@ -4170,7 +4170,7 @@
         "topic:common-gender-other-roles",
         "topic:map-dar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "lnjk7w9ssw",
@@ -4271,7 +4271,7 @@
         "topic:verb-eating-drinking",
         "topic:map-pedir"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "akiq3fgnfg",
@@ -4318,7 +4318,7 @@
         "topic:map-pedir",
         "topic:enmap-from"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "1g3jfa9eo7",
@@ -4351,7 +4351,7 @@
         "topic:enmap-to",
         "topic:enmap-for"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "kdt4ocawe0",
@@ -4458,7 +4458,7 @@
         "topic:verb-asking-requesting",
         "topic:map-pedir"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "chlit99d2v",
@@ -4558,7 +4558,7 @@
         "topic:verb-asking-requesting",
         "topic:map-pedir"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ka5uny00ga",
@@ -5023,7 +5023,7 @@
         "topic:map-poner",
         "topic:enmap-put"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "zm3v8qtrgj",
@@ -5050,7 +5050,7 @@
         "topic:map-poner",
         "topic:enmap-put"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "5bq8gctf3g",
@@ -5076,7 +5076,7 @@
         "topic:map-poner",
         "topic:enmap-put"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "u8ocx1l1ad",
@@ -5103,7 +5103,7 @@
         "topic:enmap-put",
         "topic:verb-poner-idioms"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "7462tgsu12",
@@ -5134,7 +5134,7 @@
         "topic:enmap-put",
         "topic:verb-poner-idioms"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "3ysg9glgjj",
@@ -5155,7 +5155,7 @@
         "topic:verb-poner-placement",
         "topic:map-poner"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "xy9ovfmmwc",
@@ -5299,7 +5299,7 @@
         "topic:part-on",
         "topic:map-poner"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "4gnnj2lqzl",
@@ -5347,7 +5347,7 @@
         "topic:map-poner",
         "topic:verb-poner-idioms"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "wsy0zl0ir1",
@@ -5399,7 +5399,7 @@
         "topic:verb-bringing",
         "topic:map-poner"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "a1p4uhtcxu",
@@ -5449,7 +5449,7 @@
         "topic:enmap-to",
         "topic:verb-poner-idioms"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "zq5mq3d7ig",
@@ -5587,7 +5587,7 @@
         "topic:enmap-with",
         "topic:verb-poner-idioms"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "lc4ekh76su",
@@ -5813,7 +5813,7 @@
         "topic:map-poner",
         "topic:verb-poner-idioms"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "fiwt4lp6h7",
@@ -5837,7 +5837,7 @@
         "topic:masc-o",
         "topic:map-poner"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "3az2z3o8xh",
@@ -5909,7 +5909,7 @@
         "topic:map-poner",
         "topic:map-de"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "yq888yksqh",
@@ -6022,7 +6022,7 @@
         "topic:enmap-put",
         "topic:verb-poner-idioms"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "jf2aw2elxh",
@@ -6076,7 +6076,7 @@
         "topic:enmap-put",
         "topic:verb-poner-idioms"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "zn5lcx080u",
@@ -7050,7 +7050,7 @@
         "topic:map-decir",
         "topic:enmap-to"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "ehmy6i5qti",
@@ -7073,7 +7073,7 @@
         "topic:verb-communication-saying",
         "topic:map-decir"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "oi3ndfk0qf",
@@ -7097,7 +7097,7 @@
         "topic:map-decir",
         "topic:map-contar"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "wv4hem1a62",
@@ -7126,7 +7126,7 @@
         "topic:map-contar",
         "topic:enmap-that"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "66ib6vkhnq",
@@ -7152,7 +7152,7 @@
         "topic:enmap-to",
         "topic:enmap-give"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "klmbnws5k3",
@@ -7177,7 +7177,7 @@
         "topic:enmap-put",
         "topic:verb-poner-idioms"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "bz9j3yr4at",
@@ -7232,7 +7232,7 @@
         "topic:enmap-set",
         "topic:verb-poner-idioms"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "usqslj38q0",
@@ -7257,7 +7257,7 @@
         "topic:enmap-set",
         "topic:verb-poner-idioms"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "vuz1ghifyr",
@@ -7309,7 +7309,7 @@
         "topic:enmap-set",
         "topic:verb-poner-idioms"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "a2i51axsd5",
@@ -7386,7 +7386,7 @@
         "topic:map-poner",
         "topic:enmap-set"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "tc6g9iudcp",
@@ -7442,7 +7442,7 @@
         "topic:map-tomar",
         "topic:enmap-take"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "y5m2967r1t",
@@ -7477,7 +7477,7 @@
         "audit:reviewed",
         "topic:verb-learning-teaching"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "s85ujijsq3",
@@ -7498,7 +7498,7 @@
         "topic:verb-learning-teaching",
         "topic:vp-obj-complement"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "7eejr5fjd4",
@@ -7536,7 +7536,7 @@
         "audit:reviewed",
         "topic:verb-learning-teaching"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "0ftendy74s",
@@ -7578,7 +7578,7 @@
         "topic:part-to",
         "topic:enmap-to"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "5f0wqk4dj5",
@@ -7669,7 +7669,7 @@
         "topic:part-from",
         "topic:enmap-from"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "70esj4z10e",
@@ -7692,7 +7692,7 @@
         "audit:reviewed",
         "topic:verb-perception-hearing"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "is9jng7ihx",
@@ -7790,7 +7790,7 @@
         "topic:vp-obj-complement",
         "topic:enmap-for"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "t8a1fhkjvh",
@@ -7810,7 +7810,7 @@
         "audit:reviewed",
         "topic:verb-hoping-waiting"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "4fpkte1t8z",
@@ -7828,7 +7828,7 @@
         "audit:reviewed",
         "topic:verb-hoping-waiting"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "0h3qydzurd",
@@ -7914,7 +7914,7 @@
         "topic:verb-hoping-waiting",
         "topic:vp-obj-complement"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "q9ob63pkzh",
@@ -8267,7 +8267,7 @@
         "topic:enmap-to",
         "topic:enmap-be"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "mdayqm9som",
@@ -8295,7 +8295,7 @@
         "topic:map-estar",
         "topic:enmap-be"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "d495hfe6co",
@@ -8388,7 +8388,7 @@
         "topic:enmap-to",
         "topic:enmap-be"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "afevkeg23w",
@@ -8510,7 +8510,7 @@
         "topic:map-estar",
         "topic:enmap-be"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "97xjph1sfx",
@@ -8530,7 +8530,7 @@
         "topic:adj-ser-general",
         "topic:map-estar"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "a12miruf57",
@@ -8554,7 +8554,7 @@
         "topic:map-estar",
         "topic:confusable-false-friend"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "vx5dkts0j1",
@@ -8771,7 +8771,7 @@
         "audit:reviewed",
         "topic:map-estar"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "8ayvn6jpi6",
@@ -8843,7 +8843,7 @@
         "topic:estar-adj",
         "topic:map-estar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "jo1ruoxv9h",
@@ -8910,7 +8910,7 @@
         "topic:adj-ser-general",
         "topic:map-estar"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "vfjhy0rgs4",
@@ -8930,7 +8930,7 @@
         "topic:emotion-feeling",
         "topic:map-estar"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "sk7qkjn915",
@@ -8949,7 +8949,7 @@
         "audit:reviewed",
         "topic:map-estar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "myuguvt6ul",
@@ -9104,7 +9104,7 @@
         "audit:reviewed",
         "topic:verb-feelings-dislike-worry"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "871apuo78w",
@@ -9125,7 +9125,7 @@
         "topic:adj-ser-general",
         "topic:map-ser"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "160kt5bnxh",
@@ -9170,7 +9170,7 @@
         "topic:people-general",
         "topic:common-gender-other-roles"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "m2w116dh9a",
@@ -9186,7 +9186,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "5ym0n1ham4",
@@ -9203,7 +9203,7 @@
         "audit:reviewed",
         "topic:verb-feelings-dislike-worry"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "swyolg0a4s",
@@ -9220,7 +9220,7 @@
         "audit:reviewed",
         "topic:verb-feelings-dislike-worry"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "6xmbf44uey",
@@ -9274,7 +9274,7 @@
         "audit:reviewed",
         "topic:verb-feelings-dislike-worry"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "6wu6m8g0qn",
@@ -9321,7 +9321,7 @@
         "audit:reviewed",
         "topic:verb-feelings-dislike-worry"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "yy9028sj68",
@@ -9400,7 +9400,7 @@
         "audit:reviewed",
         "topic:verb-money-earning-spending"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "bz7tv4xn1k",
@@ -9434,7 +9434,7 @@
         "audit:reviewed",
         "topic:verb-money-earning-spending"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "evibiw8ufb",
@@ -9452,7 +9452,7 @@
         "audit:reviewed",
         "topic:verb-money-earning-spending"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "82ydmvggbd",
@@ -9470,7 +9470,7 @@
         "audit:reviewed",
         "topic:verb-money-earning-spending"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "53ak6stp8u",
@@ -9516,7 +9516,7 @@
         "topic:masc-exceptions",
         "topic:people-professions"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ivazb37oky",
@@ -9536,7 +9536,7 @@
         "audit:reviewed",
         "topic:fem-a"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "1uo0obtd8h",
@@ -9744,7 +9744,7 @@
         "expr:greeting",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "rvo8g5gv94",
@@ -10287,7 +10287,7 @@
         "topic:map-hacer",
         "topic:enmap-make"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "cycrgcf78l",
@@ -10312,7 +10312,7 @@
         "topic:map-hacer",
         "topic:enmap-make"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "y19rhj9ey3",
@@ -10353,7 +10353,7 @@
         "audit:reviewed",
         "topic:map-hacer"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "smz7y58q4p",
@@ -10375,7 +10375,7 @@
         "topic:map-hacer",
         "topic:enmap-for"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "r5ljpq5toy",
@@ -10418,7 +10418,7 @@
         "audit:reviewed",
         "topic:map-hacer"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "1xa5alb94l",
@@ -10438,7 +10438,7 @@
         "audit:reviewed",
         "topic:map-hacer"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "02s3tysyuj",
@@ -10459,7 +10459,7 @@
         "audit:reviewed",
         "topic:map-hacer"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "c0zsrdafq1",
@@ -10480,7 +10480,7 @@
         "audit:reviewed",
         "topic:map-hacer"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "lxhfegmolo",
@@ -10544,7 +10544,7 @@
         "topic:map-hacer",
         "topic:enmap-for"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "o6ai5zj4rm",
@@ -10690,7 +10690,7 @@
         "topic:verb-creation-hacer",
         "topic:map-hacer"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "mu7bumpulx",
@@ -10740,7 +10740,7 @@
         "topic:verb-offering",
         "topic:map-hacer"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "1vzkonyjt2",
@@ -10857,7 +10857,7 @@
         "topic:verb-conflict-crime",
         "topic:map-hacer"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "vuq3vxf107",
@@ -10878,7 +10878,7 @@
         "topic:verb-creation-hacer",
         "topic:map-hacer"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "hk3p7tmczh",
@@ -10904,7 +10904,7 @@
         "topic:map-hacer",
         "topic:enmap-get"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "gmw4l9fuma",
@@ -10948,7 +10948,7 @@
         "audit:reviewed",
         "topic:map-hacer"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "n46cr84foo",
@@ -10975,7 +10975,7 @@
         "topic:map-hacer",
         "topic:enmap-of"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "itj86iyuab",
@@ -11068,7 +11068,7 @@
         "topic:verb-creation-hacer",
         "topic:map-hacer"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "b8k9avr7st",
@@ -11090,7 +11090,7 @@
         "topic:verb-creation-hacer",
         "topic:map-hacer"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "69iqgmw2nb",
@@ -11508,7 +11508,7 @@
         "audit:reviewed",
         "topic:verb-communication-naming"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "wbogepd2hz",
@@ -11547,7 +11547,7 @@
         "expr:greeting",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "8uhr5m0dkf",
@@ -11567,7 +11567,7 @@
         "audit:reviewed",
         "topic:enmap-what"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "9701k29zz9",
@@ -11585,7 +11585,7 @@
         "audit:reviewed",
         "topic:verb-communication-naming"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "zanvhwodyn",
@@ -11603,7 +11603,7 @@
         "audit:reviewed",
         "topic:verb-communication-naming"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "oh2mhln5f2",
@@ -11621,7 +11621,7 @@
         "audit:reviewed",
         "topic:verb-communication-naming"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ryd2rbiwn8",
@@ -11692,7 +11692,7 @@
         "audit:reviewed",
         "topic:verb-communication-naming"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "hkwmzoq48t",
@@ -11765,7 +11765,7 @@
         "topic:verb-movement-arriving-passing",
         "topic:enmap-at"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "g8o1myn1jr",
@@ -11787,7 +11787,7 @@
         "topic:verb-movement-arriving-passing",
         "topic:part-in"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "bioalll4vj",
@@ -11877,7 +11877,7 @@
         "audit:reviewed",
         "topic:verb-movement-arriving-passing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "7n967goat0",
@@ -11921,7 +11921,7 @@
         "audit:reviewed",
         "topic:verb-movement-arriving-passing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "bptzo9fcux",
@@ -11940,7 +11940,7 @@
         "audit:reviewed",
         "topic:verb-movement-arriving-passing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ovzll1ynso",
@@ -11983,7 +11983,7 @@
         "audit:reviewed",
         "topic:fem-a"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "3vjeid1zyd",
@@ -12010,7 +12010,7 @@
         "topic:enmap-to",
         "topic:enmap-take"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "ev8gdc8deh",
@@ -12045,7 +12045,7 @@
         "audit:reviewed",
         "topic:verb-carrying"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "d8gypldglm",
@@ -12067,7 +12067,7 @@
         "topic:verb-carrying",
         "topic:enmap-for"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "x765otzaij",
@@ -12089,7 +12089,7 @@
         "topic:verb-carrying",
         "topic:enmap-for"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "px5me164ly",
@@ -12156,7 +12156,7 @@
         "topic:enmap-with",
         "topic:enmap-get"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "za3b558g1u",
@@ -12223,7 +12223,7 @@
         "topic:verb-movement-leaving",
         "topic:enmap-give"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "kliqfbzr2f",
@@ -12317,7 +12317,7 @@
         "topic:verb-communication-other",
         "topic:vp-obj-complement"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "ggm7pz4s38",
@@ -12434,7 +12434,7 @@
         "topic:verb-communication-other",
         "topic:vp-obj-complement"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "4of879pazj",
@@ -12498,7 +12498,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "jd4xjwg557",
@@ -12535,7 +12535,7 @@
         "audit:reviewed",
         "topic:verb-locomotion-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "9q3ezcaa3k",
@@ -12730,7 +12730,7 @@
         "audit:reviewed",
         "topic:adj-ser-general"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "id2e6gz2kt",
@@ -12772,7 +12772,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "vydnn6gthe",
@@ -12840,7 +12840,7 @@
         "topic:enmap-of",
         "topic:enmap-what"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "824fssdui6",
@@ -12862,7 +12862,7 @@
         "audit:reviewed",
         "topic:enmap-how"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "d8bx694ejf",
@@ -12934,7 +12934,7 @@
         "audit:reviewed",
         "topic:abstract-general"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "fe9o47t8x2",
@@ -13006,7 +13006,7 @@
         "audit:reviewed",
         "topic:verb-watching-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "zm2w4r32ri",
@@ -13118,7 +13118,7 @@
         "topic:verb-movement-arriving-passing",
         "topic:map-pasar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "6w6meulfin",
@@ -13145,7 +13145,7 @@
         "topic:map-pasar",
         "topic:enmap-with"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "k09413s3pa",
@@ -13168,9 +13168,11 @@
         "audit:reviewed",
         "topic:part-in",
         "topic:map-pasar",
-        "topic:enmap-come"
+        "topic:enmap-come",
+        "topic:social-expression",
+        "expr:warning-command"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "l7ges29sjn",
@@ -13313,7 +13315,7 @@
         "topic:map-pasar",
         "topic:enmap-what"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "uuq5sdflxk",
@@ -13385,7 +13387,7 @@
         "topic:verb-movement-arriving-passing",
         "topic:map-pasar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "lptgwusb5o",
@@ -13408,7 +13410,7 @@
         "topic:map-pasar",
         "topic:enmap-go"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "sjlvvxcwpy",
@@ -13428,7 +13430,7 @@
         "audit:reviewed",
         "topic:map-pasar"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "zcxqshq3iu",
@@ -13451,7 +13453,7 @@
         "topic:noun-time-days-periods",
         "topic:map-pasar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "9jo5861xgs",
@@ -13610,7 +13612,7 @@
         "topic:enmap-of",
         "topic:enmap-what"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "isr1jrl9yx",
@@ -13674,7 +13676,7 @@
         "audit:reviewed",
         "topic:verb-thinking-opinions"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "4vuklzq5ed",
@@ -13782,7 +13784,7 @@
         "audit:reviewed",
         "topic:verb-loss-death"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "umiayx5iyo",
@@ -13800,7 +13802,7 @@
         "audit:reviewed",
         "topic:verb-loss-death"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "fddpehe9zi",
@@ -13860,7 +13862,7 @@
         "audit:reviewed",
         "topic:map-estar"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "s9leem6i29",
@@ -13878,7 +13880,7 @@
         "audit:reviewed",
         "topic:verb-loss-death"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "irkqfrah8h",
@@ -13972,7 +13974,7 @@
         "audit:reviewed",
         "topic:verb-loss-death"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "frwznw3neu",
@@ -14017,7 +14019,7 @@
         "topic:people-professions",
         "topic:common-gender-other-roles"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "3f5fh22xm8",
@@ -14037,7 +14039,7 @@
         "audit:reviewed",
         "topic:verb-feelings-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "zr2o52sx7y",
@@ -14054,7 +14056,7 @@
         "audit:reviewed",
         "topic:verb-feelings-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "iake34eucs",
@@ -14072,7 +14074,7 @@
         "audit:reviewed",
         "topic:verb-feelings-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "4ufi7f1zmi",
@@ -14223,7 +14225,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "32lecsnkbn",
@@ -15101,7 +15103,7 @@
         "topic:map-poder",
         "topic:enmap-be"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "wew9sag3jl",
@@ -15127,7 +15129,7 @@
         "topic:map-poder",
         "topic:enmap-be"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "mwqsbens4h",
@@ -15800,7 +15802,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "j4m6nilpmp",
@@ -15881,7 +15883,7 @@
         "audit:reviewed",
         "topic:verb-giving-lending-other"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "v6af13c50w",
@@ -15952,7 +15954,7 @@
         "audit:reviewed",
         "topic:verb-giving-lending-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "x9hgaascge",
@@ -16044,7 +16046,7 @@
         "audit:reviewed",
         "topic:masc-o"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "bwmfe9nhs1",
@@ -16064,7 +16066,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "398l0y1m6b",
@@ -16104,7 +16106,7 @@
         "audit:reviewed",
         "topic:enmap-how"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "lqk4xtsbz1",
@@ -16173,7 +16175,7 @@
         "topic:part-in",
         "topic:enmap-be"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "op3olm4hh3",
@@ -16196,7 +16198,7 @@
         "topic:verb-quedar-remaining",
         "topic:enmap-with"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "zl1e6hnb04",
@@ -16471,7 +16473,7 @@
         "audit:reviewed",
         "topic:verb-quedar-remaining"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "m5t33xosbe",
@@ -16496,7 +16498,7 @@
         "topic:part-from",
         "topic:enmap-from"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "sogja55oo0",
@@ -16522,7 +16524,7 @@
         "topic:enmap-take",
         "topic:enmap-from"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "6u7a74ndy9",
@@ -16599,7 +16601,7 @@
         "topic:enmap-of",
         "topic:enmap-get"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "ag32yiat6v",
@@ -16694,7 +16696,7 @@
         "audit:reviewed",
         "topic:verb-removing-stealing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "snogejtps3",
@@ -16790,7 +16792,7 @@
         "topic:verb-household-1",
         "topic:verb-household"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "nokrvtmufq",
@@ -16810,7 +16812,7 @@
         "topic:verb-household-1",
         "topic:verb-household"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "0ngr08140i",
@@ -16930,7 +16932,7 @@
         "topic:verb-household-1",
         "topic:verb-household"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "4wrjursav6",
@@ -16950,7 +16952,7 @@
         "topic:verb-household-1",
         "topic:verb-household"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "lv3d9lcju3",
@@ -16995,7 +16997,7 @@
         "audit:reviewed",
         "topic:fem-a"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "tri8batgjl",
@@ -17018,7 +17020,7 @@
         "audit:reviewed",
         "topic:fem-abstract-suffix"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "quixxkzli3",
@@ -17104,7 +17106,7 @@
         "topic:map-de",
         "topic:verb-following-continuing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "fzb5re8glc",
@@ -17170,7 +17172,7 @@
         "audit:reviewed",
         "topic:verb-following-continuing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "pfhho20nqb",
@@ -17240,7 +17242,7 @@
         "audit:reviewed",
         "topic:verb-following-continuing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "68ly0bl6ba",
@@ -17340,7 +17342,7 @@
         "audit:reviewed",
         "topic:verb-conflict-crime"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "897t46ipdb",
@@ -17364,7 +17366,7 @@
         "audit:reviewed",
         "topic:map-estar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "wvqg9y8xx3",
@@ -17441,7 +17443,7 @@
         "audit:reviewed",
         "topic:verb-movement-leaving"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "dcbjy0grcq",
@@ -17459,7 +17461,7 @@
         "audit:reviewed",
         "topic:verb-movement-leaving"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "dvjojvxntx",
@@ -17816,7 +17818,7 @@
         "topic:verb-movement-directional",
         "topic:map-en"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "cnqk3msdez",
@@ -17834,7 +17836,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "7a3ugond7f",
@@ -17853,7 +17855,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "e8nzmbgdqf",
@@ -17875,7 +17877,7 @@
         "topic:verb-movement-directional",
         "topic:enmap-make"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "2zhbl574oh",
@@ -17942,7 +17944,7 @@
         "audit:reviewed",
         "topic:verb-movement-directional"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "jv7jdxmfpj",
@@ -18120,7 +18122,7 @@
         "topic:verb-knowing",
         "topic:map-haber"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "vjb5yapkmy",
@@ -18187,7 +18189,7 @@
         "audit:reviewed",
         "topic:verb-knowing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "bb7fukdi26",
@@ -18287,7 +18289,7 @@
         "topic:people-professions",
         "topic:common-gender-other-roles"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "hpdisj6u7v",
@@ -18373,7 +18375,7 @@
         "topic:verb-knowing",
         "topic:map-dar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "g0guw4apm0",
@@ -18398,7 +18400,7 @@
         "topic:map-dar",
         "topic:enmap-make"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "7onkppih6a",
@@ -18485,7 +18487,7 @@
         "audit:reviewed",
         "topic:verb-possession-obtaining"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "85utp3uzux",
@@ -18502,7 +18504,7 @@
         "audit:reviewed",
         "topic:verb-possession-obtaining"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "hr7gsp7wkj",
@@ -18699,7 +18701,7 @@
         "topic:phr-get",
         "topic:enmap-get"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "rtc3heix8c",
@@ -18718,7 +18720,7 @@
         "audit:reviewed",
         "topic:verb-possession-obtaining"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ylgvepe6wi",
@@ -18769,7 +18771,7 @@
         "topic:part-on",
         "topic:enmap-get"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "eb73rheyc0",
@@ -18812,7 +18814,7 @@
         "topic:verb-communication-other",
         "topic:map-contar"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "pjr9m3okp5",
@@ -18836,7 +18838,7 @@
         "topic:map-contar",
         "topic:enmap-that"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ic3fla1k1p",
@@ -18957,7 +18959,7 @@
         "topic:map-contar",
         "topic:enmap-have"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "vjzoqo7829",
@@ -18977,7 +18979,7 @@
         "topic:verb-communication-other",
         "topic:map-contar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "55k48ap3p8",
@@ -19098,7 +19100,7 @@
         "topic:abstract-general",
         "topic:map-contar"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "16jugpou1c",
@@ -19147,7 +19149,7 @@
         "topic:masc-consonant",
         "topic:map-contar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "kloirpjzvx",
@@ -19329,7 +19331,7 @@
         "audit:reviewed",
         "topic:masc-o"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "jws4jrf0cx",
@@ -19349,7 +19351,7 @@
         "topic:value-price",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "txighmsxc2",
@@ -19495,7 +19497,7 @@
         "audit:reviewed",
         "topic:verb-thinking-opinions"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "8wzfds4amd",
@@ -19519,7 +19521,7 @@
         "topic:verb-thinking-opinions",
         "topic:part-in"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "2egwnfg7jz",
@@ -19585,7 +19587,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "nkzffs81a6",
@@ -19610,7 +19612,7 @@
         "topic:verb-thinking-opinions",
         "topic:map-poder"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ar5ze0bqlr",
@@ -19657,7 +19659,7 @@
         "audit:reviewed",
         "topic:verb-thinking-opinions"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "thr50jalym",
@@ -19682,7 +19684,7 @@
         "topic:map-hacer",
         "topic:enmap-make"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "v2kt4g9974",
@@ -20374,7 +20376,7 @@
         "topic:masc-consonant",
         "topic:map-deber"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "z34w2rwul0",
@@ -20398,7 +20400,7 @@
         "topic:masc-consonant",
         "topic:map-deber"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "bhh5lkxsvd",
@@ -20419,7 +20421,7 @@
         "topic:verb-modal-obligation",
         "topic:map-deber"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "yxm2eedy90",
@@ -20460,7 +20462,7 @@
         "topic:verb-keeping-storing",
         "topic:map-dejar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "egh1emsv3k",
@@ -20481,7 +20483,7 @@
         "topic:verb-keeping-storing",
         "topic:map-dejar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "e7nedtjuof",
@@ -20636,7 +20638,7 @@
         "topic:map-de",
         "topic:map-dejar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "cz1u7ybmyj",
@@ -20703,7 +20705,7 @@
         "topic:verb-keeping-storing",
         "topic:map-dejar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "9bd5m6jcab",
@@ -20845,7 +20847,7 @@
         "topic:verb-keeping-storing",
         "topic:map-dejar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "qk02mephc9",
@@ -21111,7 +21113,7 @@
         "topic:map-echar",
         "topic:verb-taking-removing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ycynxw1m3v",
@@ -21245,7 +21247,7 @@
         "topic:map-echar",
         "topic:verb-taking-removing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "0yil0wwbgv",
@@ -21270,7 +21272,7 @@
         "topic:map-echar",
         "topic:verb-taking-removing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "15xrsrpy46",
@@ -21321,7 +21323,7 @@
         "topic:map-echar",
         "topic:verb-taking-removing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "kpe00fplij",
@@ -21342,7 +21344,7 @@
         "topic:map-echar",
         "topic:verb-taking-removing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ve8mmxlgrz",
@@ -21363,7 +21365,7 @@
         "topic:map-echar",
         "topic:verb-taking-removing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "9bhhgek1hg",
@@ -21415,7 +21417,7 @@
         "topic:enmap-take",
         "topic:verb-taking-removing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "84y1p0do9w",
@@ -21520,7 +21522,7 @@
         "topic:enmap-give",
         "topic:verb-taking-removing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "c5032rvam7",
@@ -21575,7 +21577,7 @@
         "topic:enmap-get",
         "topic:verb-taking-removing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "roc4s41s10",
@@ -21707,7 +21709,7 @@
         "audit:reviewed",
         "topic:verb-remembering-forgetting"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "o8w71qqdrb",
@@ -21727,7 +21729,7 @@
         "topic:verb-remembering-forgetting",
         "topic:vp-obj-complement"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "ea80tvxv9q",
@@ -21745,7 +21747,7 @@
         "audit:reviewed",
         "topic:verb-remembering-forgetting"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "yj9f1tet8b",
@@ -21766,7 +21768,7 @@
         "audit:reviewed",
         "topic:verb-remembering-forgetting"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "pxkiokdofk",
@@ -21828,7 +21830,7 @@
         "audit:reviewed",
         "topic:verb-remembering-forgetting"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "q7ljlxwqf2",
@@ -21849,7 +21851,7 @@
         "topic:masc-o",
         "topic:abstract-general"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "bymophjmwd",
@@ -21927,7 +21929,7 @@
         "audit:reviewed",
         "topic:verb-conflict-crime"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "61rt52kj37",
@@ -21969,7 +21971,7 @@
         "audit:reviewed",
         "topic:verb-conflict-crime"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "muc3ps9ei8",
@@ -21987,7 +21989,7 @@
         "audit:reviewed",
         "topic:verb-conflict-crime"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "bam70vmtu8",
@@ -22007,7 +22009,7 @@
         "audit:reviewed",
         "topic:masc-o"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ko06kydn82",
@@ -22027,7 +22029,7 @@
         "audit:reviewed",
         "topic:masc-o"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "tjrnsl8268",
@@ -22048,7 +22050,7 @@
         "audit:reviewed",
         "topic:masc-consonant"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "3wtzllym25",
@@ -22188,7 +22190,7 @@
         "audit:reviewed",
         "topic:part-out"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "tb9cpc7ypj",
@@ -22211,7 +22213,7 @@
         "audit:reviewed",
         "topic:verb-knowing"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "32xfxi2fjv",
@@ -22364,7 +22366,7 @@
         "topic:multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "9dj6rqtp3w",
@@ -22384,7 +22386,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "we4uinxfyx",
@@ -22432,7 +22434,7 @@
         "topic:enmap-from",
         "topic:verb-taking-removing"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "wefybdb64a",
@@ -22482,7 +22484,7 @@
         "topic:enmap-of",
         "topic:enmap-take"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "w1s5ow6rtn",
@@ -22503,7 +22505,7 @@
         "topic:enmap-get",
         "topic:verb-taking-removing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "8t1oov9cqo",
@@ -22525,7 +22527,7 @@
         "topic:part-out",
         "topic:verb-taking-removing"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "9ockg94eza",
@@ -22543,7 +22545,7 @@
         "audit:reviewed",
         "topic:verb-deciding-considering"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "2a7hnhmtu6",
@@ -22561,7 +22563,7 @@
         "topic:verb-taking-removing-2",
         "topic:verb-taking-removing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "6xu8gu7squ",
@@ -22678,7 +22680,7 @@
         "topic:part-out",
         "topic:enmap-go"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "r68cdfj171",
@@ -22706,7 +22708,7 @@
         "topic:enmap-of",
         "topic:enmap-get"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "y13ekw81d8",
@@ -22773,7 +22775,7 @@
         "topic:verb-movement-directional-verbs",
         "topic:enmap-go"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "gn6wgqx5vo",
@@ -22792,7 +22794,7 @@
         "audit:reviewed",
         "topic:verb-money-commerce"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "hbm575ua4b",
@@ -22838,7 +22840,7 @@
         "topic:verb-social-relationships",
         "topic:enmap-with"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "ezq7209l2y",
@@ -22915,7 +22917,7 @@
         "topic:abstract-general",
         "topic:confusable-false-friend"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "4hc7hecq4n",
@@ -22978,7 +22980,7 @@
         "topic:verb-following-continuing",
         "topic:map-seguir"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "6fi09q216i",
@@ -23025,7 +23027,7 @@
         "topic:verb-following-continuing",
         "topic:map-seguir"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "ukd87mv2pz",
@@ -23045,7 +23047,7 @@
         "topic:verb-following-continuing",
         "topic:map-seguir"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "na5kdv5rje",
@@ -23065,7 +23067,7 @@
         "topic:verb-following-continuing",
         "topic:map-seguir"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "89g0nxntpb",
@@ -23582,7 +23584,7 @@
         "topic:verb-feelings-general",
         "topic:map-sentir"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "421wv4rocg",
@@ -23604,7 +23606,7 @@
         "audit:reviewed",
         "topic:map-sentir"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "3qtux13rre",
@@ -23674,7 +23676,7 @@
         "audit:reviewed",
         "topic:map-sentir"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "b0zp4e4wz9",
@@ -23693,7 +23695,7 @@
         "audit:reviewed",
         "topic:map-sentir"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "o6vs3cstlt",
@@ -23750,7 +23752,7 @@
         "topic:map-tener",
         "topic:map-sentir"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "wbo46b952m",
@@ -24328,7 +24330,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "f601zyn02o",
@@ -24348,7 +24350,7 @@
         "topic:adj-ser-general",
         "topic:map-ser"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "cpp3wx8ltt",
@@ -24388,7 +24390,7 @@
         "topic:emotion-feeling",
         "topic:map-ser"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "5uh9uw98kl",
@@ -24408,7 +24410,7 @@
         "topic:adj-ser-general",
         "topic:map-ser"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "mxhymxu0dx",
@@ -24428,7 +24430,7 @@
         "topic:adj-ser-general",
         "topic:map-ser"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "yft1hv038t",
@@ -24568,7 +24570,7 @@
         "audit:reviewed",
         "topic:verb-communication-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "8pzhwaykz8",
@@ -24636,7 +24638,7 @@
         "audit:reviewed",
         "topic:verb-communication-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "0a33zqj9ql",
@@ -24762,7 +24764,7 @@
         "adv:habitual",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "30rrpal2u2",
@@ -24891,7 +24893,7 @@
         "audit:reviewed",
         "topic:verb-deciding-considering"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "be41h3a6k4",
@@ -24908,7 +24910,7 @@
         "audit:reviewed",
         "topic:verb-deciding-considering"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ptmw5b6egl",
@@ -25228,7 +25230,7 @@
         "topic:emotion-physical-sensation",
         "topic:map-tener"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "3t5jjwz0t5",
@@ -25261,7 +25263,7 @@
         "topic:enmap-of",
         "topic:enmap-be"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "hi6i8bgabk",
@@ -25388,7 +25390,7 @@
         "topic:emotion-physical-sensation",
         "topic:map-tener"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "960sk4aws1",
@@ -25826,7 +25828,7 @@
         "topic:verb-taking-removing-2",
         "topic:verb-taking-removing"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "er9xiz8dqv",
@@ -25845,7 +25847,7 @@
         "topic:verb-taking-removing-2",
         "topic:verb-taking-removing"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "ykm7fr9btb",
@@ -25951,7 +25953,7 @@
         "topic:verb-taking-removing-2",
         "topic:verb-taking-removing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "bzurrkgjau",
@@ -25971,7 +25973,7 @@
         "topic:verb-taking-removing-1",
         "topic:verb-taking-removing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "jocx4z0vrr",
@@ -26082,7 +26084,7 @@
         "topic:verb-work-employment",
         "topic:enmap-at"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "edf5jy4zrf",
@@ -26130,7 +26132,7 @@
         "topic:verb-work-employment",
         "topic:part-on"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "55moihfqeu",
@@ -26156,7 +26158,7 @@
         "topic:part-for",
         "topic:enmap-for"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "ezz9e68yjj",
@@ -26206,7 +26208,7 @@
         "audit:reviewed",
         "topic:verb-work-employment"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "57q3yd0rpd",
@@ -26297,7 +26299,7 @@
         "audit:reviewed",
         "topic:verb-work-employment"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "em4gm5945w",
@@ -26364,7 +26366,7 @@
         "audit:reviewed",
         "topic:masc-exceptions"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ue1j1fbu66",
@@ -26385,7 +26387,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "6rgyh7ngls",
@@ -26450,7 +26452,7 @@
         "topic:cognate-latin-root",
         "topic:cognate-opaque"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "nrtrolt1b0",
@@ -26475,7 +26477,7 @@
         "topic:part-from",
         "topic:enmap-from"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "9ntay6p4fs",
@@ -26515,7 +26517,7 @@
         "audit:reviewed",
         "topic:verb-bringing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "p3nun0nd0p",
@@ -26557,7 +26559,7 @@
         "audit:reviewed",
         "topic:verb-bringing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "zzhshorqxj",
@@ -26576,7 +26578,7 @@
         "audit:reviewed",
         "topic:verb-bringing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "idex89b72k",
@@ -26595,7 +26597,7 @@
         "audit:reviewed",
         "topic:verb-bringing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "yv532a42h2",
@@ -26615,7 +26617,7 @@
         "topic:verb-bringing",
         "topic:enmap-with"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "m1qskewn43",
@@ -26719,7 +26721,7 @@
         "audit:reviewed",
         "topic:enmap-how"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "16pwsfcg7n",
@@ -26979,7 +26981,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "vqbg70cy5y",
@@ -27352,7 +27354,7 @@
         "expr:greeting",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "xm8mzt42ci",
@@ -27393,7 +27395,7 @@
         "topic:verb-seeing-ver",
         "topic:map-ver"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "y2yln6q4sp",
@@ -27445,7 +27447,7 @@
         "topic:vp-obj-complement",
         "topic:map-ver"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "4l5ip3gcjx",
@@ -27544,7 +27546,7 @@
         "topic:verb-seeing-ver",
         "topic:map-ver"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "r8h281yx98",
@@ -27945,7 +27947,7 @@
         "topic:enmap-to",
         "topic:enmap-go"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "8zwhpsdgt7",
@@ -28225,7 +28227,7 @@
         "audit:reviewed",
         "topic:verb-watching-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "vzbnervzfr",
@@ -28268,7 +28270,7 @@
         "audit:reviewed",
         "topic:verb-conflict-crime"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "my5u2xb3bf",
@@ -28285,7 +28287,7 @@
         "audit:reviewed",
         "topic:verb-giving-lending-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "hzhx6yw5qb",
@@ -28322,7 +28324,7 @@
         "audit:reviewed",
         "topic:verb-modal-ability"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "kfalstjcfy",
@@ -29269,7 +29271,7 @@
         "audit:reviewed",
         "topic:verb-remembering-forgetting"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "h01pvfsqvs",
@@ -29289,7 +29291,7 @@
         "audit:reviewed",
         "topic:verb-remembering-forgetting"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "o6fe83ho4h",
@@ -29309,7 +29311,7 @@
         "topic:verb-remembering-forgetting",
         "topic:map-hacer"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "90l7vci1mc",
@@ -29328,7 +29330,7 @@
         "audit:reviewed",
         "topic:verb-remembering-forgetting"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "y2sbyu4a5b",
@@ -29367,7 +29369,7 @@
         "audit:reviewed",
         "topic:verb-watching-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "9ievaodr1f",
@@ -29411,7 +29413,7 @@
         "audit:reviewed",
         "topic:verb-possession-obtaining"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ykeh4ro7pq",
@@ -29428,7 +29430,7 @@
         "audit:reviewed",
         "topic:verb-conflict-crime"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "rdxs81dzm7",
@@ -29445,7 +29447,7 @@
         "audit:reviewed",
         "topic:verb-conflict-crime"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "npbo00x4un",
@@ -29507,7 +29509,7 @@
         "audit:reviewed",
         "topic:verb-giving-lending-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "r8h4m5ktu7",
@@ -29524,7 +29526,7 @@
         "audit:reviewed",
         "topic:verb-money-commerce"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "mnougxf39m",
@@ -29543,7 +29545,7 @@
         "audit:reviewed",
         "topic:verb-giving-lending-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "xnmxa18y4p",
@@ -29626,7 +29628,7 @@
         "audit:reviewed",
         "topic:verb-giving-lending-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ietq3i884j",
@@ -29644,7 +29646,7 @@
         "audit:reviewed",
         "topic:verb-giving-lending-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "1j4lftiq84",
@@ -29661,7 +29663,7 @@
         "audit:reviewed",
         "topic:verb-giving-lending-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "qu672qzcw4",
@@ -29719,7 +29721,7 @@
         "audit:reviewed",
         "topic:verb-possession-obtaining"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "5hed68eq4q",
@@ -29757,7 +29759,7 @@
         "audit:reviewed",
         "topic:verb-possession-obtaining"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "v72o9g7yjw",
@@ -29793,7 +29795,7 @@
         "audit:reviewed",
         "topic:verb-keeping-storing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "1vh5rntj16",
@@ -29811,7 +29813,7 @@
         "audit:reviewed",
         "topic:verb-keeping-storing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "e8u3dl9hno",
@@ -29829,7 +29831,7 @@
         "audit:reviewed",
         "topic:verb-keeping-storing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "69nlpxinr8",
@@ -29890,7 +29892,7 @@
         "topic:phr-get",
         "topic:enmap-get"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "1pgc6cfhvt",
@@ -29907,7 +29909,7 @@
         "audit:reviewed",
         "topic:verb-possession-obtaining"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "3zg7nxwm6d",
@@ -29927,7 +29929,7 @@
         "topic:verb-money-commerce",
         "topic:enmap-make"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "j84bvckgfu",
@@ -29944,7 +29946,7 @@
         "audit:reviewed",
         "topic:verb-possession-obtaining"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "g54z8h8ci6",
@@ -29962,7 +29964,7 @@
         "audit:reviewed",
         "topic:verb-eating-drinking"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "9vw489mt1w",
@@ -30101,7 +30103,7 @@
         "audit:reviewed",
         "topic:verb-movement-directional-verbs"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "at6h8seokt",
@@ -30377,7 +30379,7 @@
         "topic:verb-ser-idioms",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ffr5aig4sd",
@@ -30397,7 +30399,7 @@
         "topic:verb-ser-idioms",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "f28jremh1h",
@@ -30520,7 +30522,7 @@
         "audit:reviewed",
         "topic:verb-wishes"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "45izdwmxbd",
@@ -30542,7 +30544,7 @@
         "topic:map-estar",
         "topic:verb-estar-idioms"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "3c8uaa6qwh",
@@ -30724,7 +30726,7 @@
         "topic:verb-ser-idioms",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "jl3egs4efk",
@@ -30745,7 +30747,7 @@
         "topic:verb-communication-talking",
         "topic:map-hablar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "joavbehrli",
@@ -30785,7 +30787,7 @@
         "audit:reviewed",
         "topic:verb-daily-routine"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "56dupg98qa",
@@ -30879,7 +30881,7 @@
         "audit:reviewed",
         "topic:verb-work-employment"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "75py7jmtq1",
@@ -30897,7 +30899,7 @@
         "audit:reviewed",
         "topic:verb-depending-fitting"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "gw00aci88b",
@@ -31008,7 +31010,7 @@
         "audit:reviewed",
         "topic:estar-adj"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "3iomqnzseh",
@@ -31058,7 +31060,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "nuca0ssha7",
@@ -31097,7 +31099,7 @@
         "topic:verb-ser-idioms",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "gss6t797jr",
@@ -31118,7 +31120,7 @@
         "topic:verb-feelings-general",
         "topic:map-sentir"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "9zwpouaz61",
@@ -31158,7 +31160,7 @@
         "topic:verb-ser-idioms",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "wha5r4jqwd",
@@ -31541,7 +31543,7 @@
         "audit:reviewed",
         "topic:enmap-how"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "iina5o4u5x",
@@ -31884,7 +31886,7 @@
         "audit:reviewed",
         "topic:verb-work-employment"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "20iwl9s0r5",
@@ -31979,7 +31981,7 @@
         "topic:verb-communication-talking",
         "topic:map-hablar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "rle284p40k",
@@ -32010,7 +32012,7 @@
         "audit:reviewed",
         "topic:verb-communication-naming"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "jdnb164lv0",
@@ -32717,7 +32719,7 @@
         "topic:verb-communication-talking",
         "topic:map-hablar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "fyziw2rb12",
@@ -32737,7 +32739,7 @@
         "topic:verb-ser-idioms",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "5lw85u2wbp",
@@ -32859,7 +32861,7 @@
         "topic:verb-ser-idioms",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "g2cfgdbyi3",
@@ -32879,7 +32881,7 @@
         "topic:verb-ser-idioms",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "506goyjb09",
@@ -32897,7 +32899,7 @@
         "audit:reviewed",
         "topic:verb-daily-routine"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "2xrg55t6l0",
@@ -32918,7 +32920,7 @@
         "topic:verb-feelings-general",
         "topic:map-sentir"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "khu76rod2i",
@@ -32953,7 +32955,7 @@
         "audit:reviewed",
         "topic:noun-time-days-periods"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "rf7wttxz5x",
@@ -33065,7 +33067,7 @@
         "audit:reviewed",
         "topic:noun-time-days-periods"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "4abmpsiu46",
@@ -33082,7 +33084,7 @@
         "audit:reviewed",
         "topic:noun-time-days-periods"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "yt3bjazug3",
@@ -33098,7 +33100,7 @@
         "pos:noun",
         "topic:noun-time-days-periods"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "rwj2zcgfcm",
@@ -33115,7 +33117,7 @@
         "audit:reviewed",
         "topic:noun-time-days-periods"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "qeasfm79hz",
@@ -33345,7 +33347,7 @@
         "audit:reviewed",
         "topic:verb-eating-drinking"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "7nzdyaq2x1",
@@ -33549,7 +33551,7 @@
         "topic:map-tomar",
         "topic:enmap-take"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "o2ms964cwz",
@@ -34144,7 +34146,7 @@
         "audit:reviewed",
         "topic:enmap-what"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "dhxw09o9vs",
@@ -34162,7 +34164,7 @@
         "audit:reviewed",
         "topic:enmap-how"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "skmppmerju",
@@ -34427,7 +34429,7 @@
         "audit:reviewed",
         "topic:verb-wishes"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "vk5arw3nk6",
@@ -34500,7 +34502,7 @@
         "audit:reviewed",
         "topic:verb-movement-leaving"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "wmzhjqoerd",
@@ -34574,7 +34576,7 @@
         "audit:reviewed",
         "topic:verb-daily-routine"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "f2rqqk1bhq",
@@ -34662,7 +34664,7 @@
         "audit:reviewed",
         "topic:verb-movement-arriving-passing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "97h5zo76ab",
@@ -34964,7 +34966,7 @@
         "audit:reviewed",
         "topic:verb-wishes"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "fywyjd1hm5",
@@ -35012,7 +35014,7 @@
         "audit:reviewed",
         "topic:fem-exceptions"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "gdwcgcevlo",
@@ -35158,7 +35160,7 @@
         "audit:reviewed",
         "topic:verb-wishes"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "of2xl1evmv",
@@ -35179,7 +35181,7 @@
         "topic:verb-household-2",
         "topic:verb-household"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "36f58l84gt",
@@ -35391,7 +35393,7 @@
         "en:later",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "jyt07gvckk",
@@ -35451,7 +35453,7 @@
         "audit:reviewed",
         "topic:verb-movement-arriving-passing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "j1gh57080u",
@@ -35575,7 +35577,7 @@
         "audit:reviewed",
         "topic:verb-deciding-considering"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "pw4jhrqiyg",
@@ -35701,7 +35703,7 @@
         "audit:reviewed",
         "topic:emotion-feeling"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "489z76bx0v",
@@ -36651,7 +36653,7 @@
         "audit:reviewed",
         "topic:verb-work-employment"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "lp0ljdtgp7",
@@ -36669,7 +36671,7 @@
         "audit:reviewed",
         "topic:verb-creation-repair-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "1rwj0kt7f8",
@@ -36728,7 +36730,7 @@
         "audit:reviewed",
         "topic:verb-thinking-opinions"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "fkhe36qwae",
@@ -36772,7 +36774,7 @@
         "topic:verb-dar-idioms",
         "topic:map-dar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "huqjh8qslq",
@@ -36885,7 +36887,7 @@
         "audit:reviewed",
         "topic:verb-possession-obtaining"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "bijorvfnjq",
@@ -36905,7 +36907,7 @@
         "audit:reviewed",
         "topic:verb-movement-leaving"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "t3k0bkap2f",
@@ -36948,7 +36950,7 @@
         "audit:reviewed",
         "topic:verb-learning-teaching"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "egrvgcm5hc",
@@ -37008,7 +37010,7 @@
         "audit:reviewed",
         "topic:verb-creation-repair-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ujl7eyvp2d",
@@ -37027,7 +37029,7 @@
         "audit:reviewed",
         "topic:verb-money-commerce"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "qz9uttqvu2",
@@ -37046,7 +37048,7 @@
         "audit:reviewed",
         "topic:masc-o"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "t9r1fus19d",
@@ -37068,7 +37070,7 @@
         "topic:verb-movement-leaving",
         "topic:map-hacer"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "girpyfruhi",
@@ -37105,7 +37107,7 @@
         "en:clear",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "xwfttsrbm4",
@@ -37123,7 +37125,7 @@
         "audit:reviewed",
         "topic:verb-creation-repair-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "j1hw054qpy",
@@ -37143,7 +37145,7 @@
         "audit:reviewed",
         "topic:verb-money-commerce"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "6zh1auaslg",
@@ -37160,7 +37162,7 @@
         "en:current",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "7iwln9ycmm",
@@ -37296,7 +37298,7 @@
         "audit:reviewed",
         "topic:fem-a"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "pnq1l83rfn",
@@ -37337,7 +37339,7 @@
         "audit:reviewed",
         "topic:map-estar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "fp17uyuvne",
@@ -37360,7 +37362,7 @@
         "audit:reviewed",
         "topic:map-tener"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "30ci3kgq5t",
@@ -37377,7 +37379,7 @@
         "topic:condition-state",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "nsmzkj2dfj",
@@ -37545,7 +37547,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "8qkzde6rm4",
@@ -37585,7 +37587,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ho25hdai9c",
@@ -37699,7 +37701,7 @@
         "en:latest",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "crw3ztzb94",
@@ -37842,7 +37844,7 @@
         "topic:verb-ser-idioms",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ja8ns0grc2",
@@ -37860,7 +37862,7 @@
         "topic:age",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "m83xfkgld1",
@@ -38026,7 +38028,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "1bp41aco7p",
@@ -38046,7 +38048,7 @@
         "audit:reviewed",
         "topic:verb-offering"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "foeoch6ql5",
@@ -38065,7 +38067,7 @@
         "audit:reviewed",
         "topic:verb-giving-lending-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "2p5ynjsevh",
@@ -38216,7 +38218,7 @@
         "topic:verb-ser-idioms",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "y4dvxsy81n",
@@ -38307,7 +38309,7 @@
         "topic:verb-ser-idioms",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "3nibgk2dqk",
@@ -38370,7 +38372,7 @@
         "audit:reviewed",
         "topic:verb-money-earning-spending"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "u9zbsje4u6",
@@ -38412,7 +38414,7 @@
         "audit:reviewed",
         "topic:verb-offering"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "21ip23zino",
@@ -38481,7 +38483,7 @@
         "topic:enmap-with",
         "topic:verb-communication-talking"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "5ci6qn0ar4",
@@ -38627,7 +38629,7 @@
         "audit:reviewed",
         "topic:verb-money-commerce"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "s4lg9gxq68",
@@ -38647,7 +38649,7 @@
         "audit:reviewed",
         "topic:verb-giving-lending-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ez3zsvb5bs",
@@ -44530,7 +44532,7 @@
         "topic:masc-o",
         "topic:abstract-general"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "2efxip9shx",
@@ -54815,7 +54817,7 @@
         "topic:masc-o",
         "topic:cognate-opaque"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "pnr1qwchct",
@@ -56013,7 +56015,7 @@
         "topic:map-estar",
         "topic:confusable-false-friend"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "aawalesw7o",
@@ -56081,7 +56083,7 @@
         "topic:confusable-verb",
         "topic:multi-sense"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "rd4s3p0ahf",
@@ -56447,7 +56449,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "9vkg3r79l9",
@@ -56468,7 +56470,7 @@
         "topic:adj-ico-ica",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "iqsip03gt7",
@@ -56489,7 +56491,7 @@
         "topic:adj-ico-ica",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "il1qcnb04w",
@@ -56659,7 +56661,7 @@
         "topic:adj-ser-general",
         "topic:map-ser"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "zogyll26ke",
@@ -56699,7 +56701,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "p71stevmcf",
@@ -56812,7 +56814,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "eumyulu0a5",
@@ -56832,7 +56834,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "s5rh58dybq",
@@ -56894,7 +56896,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "0ni6dh7b5l",
@@ -56961,7 +56963,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "vjesp1jbub",
@@ -57001,7 +57003,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ifvh58e7u9",
@@ -57064,7 +57066,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "nq399jkhun",
@@ -57127,7 +57129,7 @@
         "topic:estar-adj",
         "topic:map-estar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "3kvxnmbfe5",
@@ -57206,7 +57208,7 @@
         "topic:estar-adj",
         "topic:map-estar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "uzeqfh2cbl",
@@ -57227,7 +57229,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "l71xfacivn",
@@ -57247,7 +57249,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "c78n36azdg",
@@ -57267,7 +57269,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "b1u0tt59t0",
@@ -58604,7 +58606,7 @@
         "topic:fem-exceptions",
         "topic:objects-physical"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "0n0ar2glgf",
@@ -58624,7 +58626,7 @@
         "topic:fem-exceptions",
         "topic:objects-physical"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "lajv8m56q4",
@@ -58664,7 +58666,7 @@
         "topic:fem-a",
         "topic:objects-physical"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ja9mynizmv",
@@ -58765,7 +58767,7 @@
         "topic:fem-consonant",
         "topic:objects-physical"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "8d89ksf4c0",
@@ -58785,7 +58787,7 @@
         "topic:masc-o",
         "topic:objects-money-business"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "mr5xljej8s",
@@ -58988,7 +58990,7 @@
         "adv:possibility",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "b6sllrim7m",
@@ -59797,7 +59799,7 @@
         "topic:people-family-rel",
         "topic:family-immediate"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "j7296c3d60",
@@ -59841,7 +59843,7 @@
         "topic:people-family-rel",
         "topic:family-immediate"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "y3kxfgic1c",
@@ -59863,7 +59865,7 @@
         "topic:people-family-rel",
         "topic:family-groups-terms"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "f1n3f66q0x",
@@ -59885,7 +59887,7 @@
         "topic:people-family-rel",
         "topic:family-groups-terms"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "19ya004i8h",
@@ -59929,7 +59931,7 @@
         "topic:people-family-rel",
         "topic:family-immediate"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "zzhyif0y93",
@@ -59951,7 +59953,7 @@
         "topic:people-family-rel",
         "topic:family-groups-terms"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "1afwz1es4v",
@@ -59973,7 +59975,7 @@
         "topic:people-family-rel",
         "topic:family-groups-terms"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "92y2a0e1y5",
@@ -60041,7 +60043,7 @@
         "topic:people-family-rel",
         "topic:family-immediate"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "za4fiubic9",
@@ -60085,7 +60087,7 @@
         "topic:people-general",
         "topic:family-groups-terms"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "26sqfogn1d",
@@ -60107,7 +60109,7 @@
         "topic:people-general",
         "topic:family-groups-terms"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "e03ov1snu4",
@@ -60151,7 +60153,7 @@
         "topic:people-general",
         "topic:family-groups-terms"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "c4vjzclfbe",
@@ -60173,7 +60175,7 @@
         "topic:people-general",
         "topic:family-groups-terms"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "829mnuv3af",
@@ -60195,7 +60197,7 @@
         "topic:people-general",
         "topic:family-groups-terms"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "5cbtxjya9w",
@@ -60239,7 +60241,7 @@
         "topic:people-general",
         "topic:family-groups-terms"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "0ytjmo9vca",
@@ -60305,7 +60307,7 @@
         "topic:people-general",
         "topic:family-groups-terms"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "j48zuk79f7",
@@ -60432,7 +60434,7 @@
         "topic:masc-consonant",
         "topic:places-home-buildings"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ikrf0t6hcc",
@@ -60498,7 +60500,7 @@
         "topic:fem-abstract-suffix",
         "topic:places-home-buildings"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "7w31zud2ye",
@@ -60542,7 +60544,7 @@
         "topic:masc-o",
         "topic:places-public-city"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "m0woso3bh0",
@@ -60610,7 +60612,7 @@
         "topic:map-en",
         "topic:enmap-at"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "3j18tf1yhr",
@@ -60728,7 +60730,7 @@
         "expr:politeness",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "p81hj5z5ld",
@@ -60745,7 +60747,7 @@
         "expr:apology",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "4blzjcf3qz",
@@ -60760,9 +60762,10 @@
         "es:disculpe",
         "en:excuse",
         "expr:apology",
-        "audit:reviewed"
+        "audit:reviewed",
+        "expr:politeness"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "0u1ebaante",
@@ -60779,7 +60782,7 @@
         "expr:apology",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "tbbig44xx6",
@@ -60796,7 +60799,7 @@
         "expr:politeness",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "gbgjnn5rhj",
@@ -60813,7 +60816,7 @@
         "expr:politeness",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "tpnkufeuit",
@@ -60831,7 +60834,7 @@
         "expr:politeness",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "hwdyiqf0pm",
@@ -60850,7 +60853,7 @@
         "audit:reviewed",
         "topic:map-de"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "b1nubjxiqh",
@@ -60943,7 +60946,7 @@
         "audit:reviewed",
         "topic:verb-feelings-dislike-worry"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "uc3biyl1if",
@@ -60960,7 +60963,7 @@
         "audit:reviewed",
         "topic:verb-feelings-dislike-worry"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "v9e6hk1qoa",
@@ -61134,7 +61137,7 @@
         "audit:reviewed",
         "topic:verb-deciding-considering"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "dzpf9yqfk0",
@@ -61175,7 +61178,7 @@
         "audit:reviewed",
         "topic:verb-creation-repair-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "q9zbgkk8yk",
@@ -61192,7 +61195,7 @@
         "audit:reviewed",
         "topic:verb-creation-repair-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "hx40f5mh59",
@@ -61209,7 +61212,7 @@
         "audit:reviewed",
         "topic:verb-creation-repair-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "nk3mx4ovzj",
@@ -61229,7 +61232,7 @@
         "topic:phr-get",
         "topic:enmap-get"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "7p36ly7jyy",
@@ -61323,7 +61326,7 @@
         "audit:reviewed",
         "topic:verb-communication-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "dt5zczywaz",
@@ -61361,7 +61364,7 @@
         "audit:reviewed",
         "topic:verb-communication-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "lulzol5k19",
@@ -61378,7 +61381,7 @@
         "audit:reviewed",
         "topic:verb-communication-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "1fuuisjsfo",
@@ -61439,7 +61442,7 @@
         "audit:reviewed",
         "topic:verb-movement-directional"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "60j5r1u055",
@@ -61481,7 +61484,7 @@
         "topic:verb-household-1",
         "topic:verb-household"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "vrgb6w3s8v",
@@ -61520,7 +61523,7 @@
         "audit:reviewed",
         "topic:verb-movement-directional"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "v6f48guuvb",
@@ -61579,7 +61582,7 @@
         "audit:reviewed",
         "topic:verb-possession-obtaining"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "n01pzhcp0p",
@@ -61596,7 +61599,7 @@
         "audit:reviewed",
         "topic:verb-depending-fitting"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "2h41m9g49b",
@@ -61615,7 +61618,7 @@
         "topic:enmap-for",
         "topic:verb-depending-fitting"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "qwu0of4uv5",
@@ -61634,7 +61637,7 @@
         "topic:enmap-for",
         "topic:verb-depending-fitting"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "gltra9r0tv",
@@ -61653,7 +61656,7 @@
         "topic:enmap-for",
         "topic:verb-depending-fitting"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "p9d0sm7xt2",
@@ -61713,7 +61716,7 @@
         "audit:reviewed",
         "topic:verb-creation-repair-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "1c10sdwf8m",
@@ -61733,7 +61736,7 @@
         "topic:phr-get",
         "topic:enmap-get"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "t40gce06y2",
@@ -61751,7 +61754,7 @@
         "audit:reviewed",
         "topic:verb-carrying"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "t8qj2utyn9",
@@ -61769,7 +61772,7 @@
         "audit:reviewed",
         "topic:verb-carrying"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "d5wk0wunlt",
@@ -61787,7 +61790,7 @@
         "audit:reviewed",
         "topic:verb-money-commerce"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "4iyr2ixs50",
@@ -61805,7 +61808,7 @@
         "audit:reviewed",
         "topic:verb-money-commerce"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "jjln6naurj",
@@ -61823,7 +61826,7 @@
         "audit:reviewed",
         "topic:verb-carrying"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "idq8drq64m",
@@ -61891,7 +61894,7 @@
         "audit:reviewed",
         "topic:verb-carrying"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ekfnmwolxk",
@@ -61909,7 +61912,7 @@
         "audit:reviewed",
         "topic:verb-conflict-crime"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "258notkgdg",
@@ -61928,7 +61931,7 @@
         "audit:reviewed",
         "topic:verb-carrying"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "aglyv4d8zx",
@@ -61947,7 +61950,7 @@
         "audit:reviewed",
         "topic:verb-carrying"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "7ckfdreaoe",
@@ -61997,7 +62000,7 @@
         "topic:verb-carrying",
         "topic:enmap-to"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "0mxnpd7krx",
@@ -62098,7 +62101,7 @@
         "topic:verb-household-1",
         "topic:verb-household"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "1k43tn2tg5",
@@ -62154,7 +62157,7 @@
         "topic:verb-household-1",
         "topic:verb-household"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "vaxrphuc47",
@@ -62193,7 +62196,7 @@
         "audit:reviewed",
         "topic:verb-money-commerce"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "gq5djwrawm",
@@ -62210,7 +62213,7 @@
         "audit:reviewed",
         "topic:verb-money-commerce"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "vb0be6c64h",
@@ -62230,7 +62233,7 @@
         "topic:phr-get",
         "topic:enmap-get"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "y3q7db5o7c",
@@ -62247,7 +62250,7 @@
         "audit:reviewed",
         "topic:verb-money-commerce"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "faqcrnung3",
@@ -62267,7 +62270,7 @@
         "topic:phr-take",
         "topic:enmap-take"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "r0b8fwymx2",
@@ -62285,7 +62288,7 @@
         "audit:reviewed",
         "topic:verb-tomar-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ht05bqf0zg",
@@ -62323,7 +62326,7 @@
         "audit:reviewed",
         "topic:verb-tomar-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "zrzt4f88zv",
@@ -62343,7 +62346,7 @@
         "topic:phr-take",
         "topic:enmap-take"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "zkrc7g5j4s",
@@ -62361,7 +62364,7 @@
         "audit:reviewed",
         "topic:verb-tomar-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "zo1bmih61v",
@@ -62379,7 +62382,7 @@
         "audit:reviewed",
         "topic:verb-tomar-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "g976gj0kj7",
@@ -62441,7 +62444,7 @@
         "audit:reviewed",
         "topic:verb-tomar-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "2lv3x5lyra",
@@ -62459,7 +62462,7 @@
         "audit:reviewed",
         "topic:verb-tomar-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "06myksilk1",
@@ -62499,7 +62502,7 @@
         "audit:reviewed",
         "topic:verb-tomar-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "h5hnajl1et",
@@ -62517,7 +62520,7 @@
         "audit:reviewed",
         "topic:verb-tomar-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "g8xlqd0im0",
@@ -62560,7 +62563,7 @@
         "audit:reviewed",
         "topic:verb-tomar-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "7xz1ir7spt",
@@ -62615,7 +62618,7 @@
         "audit:reviewed",
         "topic:verb-locomotion-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "yjqeu46wjo",
@@ -62632,7 +62635,7 @@
         "audit:reviewed",
         "topic:verb-locomotion-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "cb76eu618e",
@@ -62650,7 +62653,7 @@
         "audit:reviewed",
         "topic:verb-locomotion-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "1wrulf5p6q",
@@ -62738,7 +62741,7 @@
         "audit:reviewed",
         "topic:verb-social-relationships"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "kova6764iw",
@@ -62826,7 +62829,7 @@
         "topic:verb-feelings-dislike-worry",
         "topic:enmap-to"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "b29ry1lt3n",
@@ -62861,7 +62864,7 @@
         "audit:reviewed",
         "topic:verb-daily-routine"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "j3k1bs0v53",
@@ -62878,7 +62881,7 @@
         "audit:reviewed",
         "topic:verb-daily-routine"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "fds16n18cd",
@@ -62922,7 +62925,7 @@
         "audit:reviewed",
         "topic:verb-daily-routine"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "fdh8vgmuvf",
@@ -62962,7 +62965,7 @@
         "audit:reviewed",
         "topic:verb-daily-routine"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "nk2i3367g9",
@@ -62980,7 +62983,7 @@
         "audit:reviewed",
         "topic:verb-daily-routine"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "abycyirnp6",
@@ -63017,7 +63020,7 @@
         "topic:verb-deciding-considering",
         "topic:enmap-to"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ooo5pxwt1y",
@@ -63035,7 +63038,7 @@
         "audit:reviewed",
         "topic:verb-wishes"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "pwk8rwyqxo",
@@ -63052,7 +63055,7 @@
         "audit:reviewed",
         "topic:verb-wishes"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "eeqa5shfq0",
@@ -63114,7 +63117,7 @@
         "topic:verb-household-2",
         "topic:verb-household"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "tk7obpumjc",
@@ -63133,7 +63136,7 @@
         "topic:verb-household-2",
         "topic:verb-household"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "jgf787l3a9",
@@ -63151,7 +63154,7 @@
         "topic:verb-household-2",
         "topic:verb-household"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ytf51bteap",
@@ -63206,7 +63209,7 @@
         "audit:reviewed",
         "topic:verb-thinking-opinions"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "bmeoatx5uw",
@@ -63249,7 +63252,7 @@
         "audit:reviewed",
         "topic:verb-feelings-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "rfz1qo5i8n",
@@ -63286,7 +63289,7 @@
         "topic:phr-get",
         "topic:enmap-get"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "rvq2d8l5eq",
@@ -63320,7 +63323,7 @@
         "audit:reviewed",
         "topic:verb-money-earning-spending"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "4dots3x0dv",
@@ -63383,7 +63386,7 @@
         "topic:verb-keeping-storing",
         "topic:enmap-keep"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "3u7kob7n30",
@@ -63401,7 +63404,7 @@
         "topic:verb-household-2",
         "topic:verb-household"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "v1xen0we5r",
@@ -63462,7 +63465,7 @@
         "audit:reviewed",
         "topic:verb-keeping-storing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "5x31mxhcwq",
@@ -63496,7 +63499,7 @@
         "audit:reviewed",
         "topic:verb-money-commerce"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "fsiaz32aji",
@@ -63513,7 +63516,7 @@
         "audit:reviewed",
         "topic:verb-social-relationships"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "krz97g2k8a",
@@ -63554,7 +63557,7 @@
         "audit:reviewed",
         "topic:verb-conflict-crime"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "9a1cfj0hhj",
@@ -63571,7 +63574,7 @@
         "audit:reviewed",
         "topic:verb-conflict-crime"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "n59cs066v8",
@@ -63588,7 +63591,7 @@
         "audit:reviewed",
         "topic:verb-conflict-crime"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "8on4ssnvkm",
@@ -63807,7 +63810,7 @@
         "topic:enmap-for",
         "topic:verb-household"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "oshtugnaxs",
@@ -63824,7 +63827,7 @@
         "audit:reviewed",
         "topic:verb-loss-death"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "vrgsv4wzfo",
@@ -63845,7 +63848,7 @@
         "topic:verb-loss-death",
         "topic:enmap-to"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "wkajwgr1vb",
@@ -63880,7 +63883,7 @@
         "audit:reviewed",
         "topic:verb-communication-saying"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "w5bg13n1o0",
@@ -63897,7 +63900,7 @@
         "audit:reviewed",
         "topic:verb-communication-saying"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "72un3vv3hn",
@@ -63914,7 +63917,7 @@
         "audit:reviewed",
         "topic:verb-communication-saying"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "93aj677j3n",
@@ -63973,7 +63976,7 @@
         "topic:verb-remembering-forgetting",
         "topic:enmap-for"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "xt44tlzdyx",
@@ -64011,7 +64014,7 @@
         "audit:reviewed",
         "topic:verb-money-earning-spending"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "xe9qmpnpef",
@@ -64142,7 +64145,7 @@
         "audit:reviewed",
         "topic:verb-conflict-crime"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "bby0sovznk",
@@ -64161,7 +64164,7 @@
         "topic:verb-conflict-crime",
         "topic:enmap-give"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "caf1qnikua",
@@ -64178,7 +64181,7 @@
         "audit:reviewed",
         "topic:verb-conflict-crime"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "op2g7f5we1",
@@ -64198,7 +64201,7 @@
         "topic:verb-conflict-crime",
         "topic:enmap-for"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "m1opppp4s5",
@@ -64239,7 +64242,7 @@
         "audit:reviewed",
         "topic:verb-conflict-crime"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "espkmj03d4",
@@ -64339,7 +64342,7 @@
         "audit:reviewed",
         "topic:verb-creation-repair-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "9cyb4wa5a3",
@@ -64405,7 +64408,7 @@
         "audit:reviewed",
         "topic:verb-movement-directional"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "sao8m0fmzs",
@@ -64449,7 +64452,7 @@
         "topic:verb-household-2",
         "topic:verb-household"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "5b4zdy92e4",
@@ -64490,7 +64493,7 @@
         "audit:reviewed",
         "topic:verb-movement-directional"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "i4yza7s44d",
@@ -64550,7 +64553,7 @@
         "audit:reviewed",
         "topic:verb-movement-directional"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "evssaeefeq",
@@ -64569,7 +64572,7 @@
         "audit:reviewed",
         "topic:verb-movement-directional"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "i0nrqvquwp",
@@ -64637,7 +64640,7 @@
         "audit:reviewed",
         "topic:verb-movement-directional"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "vcu1zud7v6",
@@ -64755,7 +64758,7 @@
         "topic:phr-be",
         "topic:enmap-be"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "kxzo7hrvsf",
@@ -64775,7 +64778,7 @@
         "topic:enmap-for",
         "topic:verb-household"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ilhsuo6j13",
@@ -64792,7 +64795,7 @@
         "audit:reviewed",
         "topic:verb-locomotion-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "v8tjp3s2k0",
@@ -64941,7 +64944,7 @@
         "topic:verb-communication-naming",
         "topic:enmap-to"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "tbicbtr0u6",
@@ -64958,7 +64961,7 @@
         "audit:reviewed",
         "topic:verb-communication-formal"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "zg737wtrp2",
@@ -64999,7 +65002,7 @@
         "audit:reviewed",
         "topic:verb-social-relationships"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "6zok4qn7s1",
@@ -65019,7 +65022,7 @@
         "topic:verb-social-relationships",
         "topic:enmap-to"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "yfiloyn264",
@@ -65036,7 +65039,7 @@
         "audit:reviewed",
         "topic:verb-communication-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "0jgdkhwoy1",
@@ -65055,7 +65058,7 @@
         "topic:verb-communication-other",
         "topic:enmap-keep"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "8et9s26o6q",
@@ -65075,7 +65078,7 @@
         "topic:verb-communication-other",
         "topic:map-hacer"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "fkr7q6ehdp",
@@ -65092,7 +65095,7 @@
         "audit:reviewed",
         "topic:verb-social-relationships"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "h4e5zg4qih",
@@ -65129,7 +65132,7 @@
         "audit:reviewed",
         "topic:verb-social-relationships"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "gx8qvdgggd",
@@ -65170,7 +65173,7 @@
         "audit:reviewed",
         "topic:verb-social-relationships"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "1w53owbdde",
@@ -65235,7 +65238,7 @@
         "audit:reviewed",
         "topic:verb-work-employment"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "sw4rfj6xiz",
@@ -65252,7 +65255,7 @@
         "audit:reviewed",
         "topic:verb-work-employment"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "jx30cy0knp",
@@ -65313,7 +65316,7 @@
         "audit:reviewed",
         "topic:verb-watching-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ilvyid32a1",
@@ -65331,7 +65334,7 @@
         "audit:reviewed",
         "topic:verb-watching-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "9hg67ws4uf",
@@ -65349,7 +65352,7 @@
         "audit:reviewed",
         "topic:verb-bringing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "gld2us3kz8",
@@ -65366,7 +65369,7 @@
         "audit:reviewed",
         "topic:verb-watching-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "nam9b22zd9",
@@ -65405,7 +65408,7 @@
         "audit:reviewed",
         "topic:verb-watching-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "vg4oykxghk",
@@ -65424,7 +65427,7 @@
         "topic:verb-watching-other",
         "topic:enmap-for"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "yg6xltanht",
@@ -65446,7 +65449,7 @@
         "topic:map-hacer",
         "topic:enmap-make"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "w93c07l74k",
@@ -65463,7 +65466,7 @@
         "audit:reviewed",
         "topic:verb-communication-naming"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "9j908ncq6v",
@@ -65480,7 +65483,7 @@
         "audit:reviewed",
         "topic:verb-communication-naming"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "od7ue4t4a8",
@@ -65497,7 +65500,7 @@
         "audit:reviewed",
         "topic:verb-communication-naming"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "hkmhxwijiw",
@@ -65514,7 +65517,7 @@
         "audit:reviewed",
         "topic:verb-communication-naming"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "vb4hrz9umj",
@@ -65531,7 +65534,7 @@
         "audit:reviewed",
         "topic:verb-social-relationships"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "x3aciqvw7q",
@@ -65548,7 +65551,7 @@
         "audit:reviewed",
         "topic:verb-communication-naming"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "977cxas6wl",
@@ -65587,7 +65590,7 @@
         "audit:reviewed",
         "topic:verb-movement-leaving"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "5fj4e797ml",
@@ -65604,7 +65607,7 @@
         "audit:reviewed",
         "topic:verb-movement-leaving"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "bqha0lt3ra",
@@ -65646,7 +65649,7 @@
         "audit:reviewed",
         "topic:verb-movement-directional-verbs"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "zzwblkhtbk",
@@ -65663,7 +65666,7 @@
         "audit:reviewed",
         "topic:verb-money-commerce"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "spmns9bg07",
@@ -65680,7 +65683,7 @@
         "audit:reviewed",
         "topic:verb-money-commerce"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "72hxaia566",
@@ -65719,7 +65722,7 @@
         "audit:reviewed",
         "topic:verb-money-commerce"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "hqusqt34k6",
@@ -65759,7 +65762,7 @@
         "audit:reviewed",
         "topic:verb-loss-death"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "jfmjm99m19",
@@ -65776,7 +65779,7 @@
         "audit:reviewed",
         "topic:verb-loss-death"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "jtxyzlj6nv",
@@ -65793,7 +65796,7 @@
         "audit:reviewed",
         "topic:verb-modal-ability"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "si6tzlf06j",
@@ -65810,7 +65813,7 @@
         "audit:reviewed",
         "topic:verb-possession-obtaining"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "y2s6dt7bku",
@@ -65827,7 +65830,7 @@
         "audit:reviewed",
         "topic:verb-daily-routine"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "372sudzh0b",
@@ -65928,7 +65931,7 @@
         "topic:verb-taking-removing-2",
         "topic:verb-taking-removing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "qbmtcey423",
@@ -65967,7 +65970,7 @@
         "topic:verb-taking-removing-2",
         "topic:verb-taking-removing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "qdhjj8exwl",
@@ -66006,7 +66009,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "hszvzaxmcv",
@@ -66024,7 +66027,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "ntzn66pmxo",
@@ -66043,7 +66046,7 @@
         "pos:adverb",
         "topic:adv-time-relative-day"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "ywmu9udgpo",
@@ -66061,7 +66064,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "dicbiznsu7",
@@ -66079,7 +66082,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "uqb2qipaq0",
@@ -66098,7 +66101,7 @@
         "pos:adverb",
         "topic:adv-time-relative-day"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "0wlhrfyp5n",
@@ -66116,7 +66119,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "6uqtv5ndip",
@@ -66134,7 +66137,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "0nw2v2tg59",
@@ -66153,7 +66156,7 @@
         "pos:adverb",
         "topic:adv-time-relative-day"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "3d0ts98lfb",
@@ -66252,7 +66255,7 @@
         "audit:reviewed",
         "topic:masc-o"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "chyzg2k9qg",
@@ -66272,7 +66275,7 @@
         "audit:reviewed",
         "topic:masc-o"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "7wxq9lkzoj",
@@ -66312,7 +66315,7 @@
         "expr:politeness",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "onjiqwdl11",
@@ -66333,7 +66336,7 @@
         "topic:phr-take",
         "topic:enmap-take"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "18bu6m7ec4",
@@ -66352,7 +66355,7 @@
         "expr:warning-command",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "rrxe7cd85d",
@@ -66546,7 +66549,7 @@
         "topic:confusable-false-friend",
         "topic:multi-sense"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "btcf40lgg6",
@@ -66572,7 +66575,7 @@
         "topic:confusable-false-friend",
         "topic:multi-sense"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ofcx4vhmey",
@@ -66597,7 +66600,7 @@
         "topic:confusable-false-friend",
         "topic:multi-sense"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "lqxcb4tfpm",
@@ -66620,7 +66623,7 @@
         "topic:masc-o",
         "topic:places-home-buildings"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "8q88rkk01h",
@@ -66643,7 +66646,7 @@
         "topic:masc-o",
         "topic:places-home-buildings"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "2tpq2h0jq0",
@@ -66665,7 +66668,7 @@
         "topic:fem-consonant",
         "topic:people-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "g2ecn2oi1k",
@@ -66709,7 +66712,7 @@
         "topic:masc-consonant",
         "topic:people-general"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "43qxgonexo",
@@ -66731,7 +66734,7 @@
         "topic:masc-consonant",
         "topic:people-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "lafn6elemf",
@@ -66753,7 +66756,7 @@
         "topic:fem-consonant",
         "topic:people-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "fxu8bkwlng",
@@ -66997,7 +67000,7 @@
         "topic:part-to",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "3zfrre4tig",
@@ -67109,7 +67112,7 @@
         "topic:estar-adj",
         "topic:map-estar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "py3amhoaz5",
@@ -67130,7 +67133,7 @@
         "topic:estar-adj",
         "topic:map-estar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "q8bc2trq23",
@@ -67154,7 +67157,7 @@
         "topic:part-of",
         "topic:map-estar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "fvrw94ns16",
@@ -67176,7 +67179,7 @@
         "topic:estar-adj",
         "topic:map-estar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "4z8q6xymuc",
@@ -67221,7 +67224,7 @@
         "topic:fem-a",
         "topic:noun-time-days-periods"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "jqzuvvlrry",
@@ -69354,7 +69357,7 @@
         "topic:morph-noun-to-adj",
         "topic:map-poder"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "4vywr55ohv",
@@ -69397,7 +69400,7 @@
         "audit:reviewed",
         "topic:morph-noun-to-adj"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "vhzsq8ln7r",
@@ -69503,7 +69506,7 @@
         "audit:reviewed",
         "topic:morph-noun-to-adj"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "wqfpw1yjuw",
@@ -69698,7 +69701,7 @@
         "audit:reviewed",
         "topic:morph-noun-to-adj"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "n0mnwwtyqk",
@@ -70236,7 +70239,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "a1lq9l1vf6",
@@ -70344,7 +70347,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "ds2ffdqwke",
@@ -70633,7 +70636,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "g0z0ex17eh",
@@ -70661,7 +70664,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "890ikntj2i",
@@ -71002,7 +71005,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "8f830wa18p",
@@ -71028,7 +71031,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "ntdw54v6qp",
@@ -72957,7 +72960,7 @@
         "topic:map-estar",
         "topic:verb-estar-idioms"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "1o0c5wmcm6",
@@ -72997,7 +73000,7 @@
         "topic:transformation",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "nkpg4i354h",
@@ -73077,7 +73080,7 @@
         "topic:transformation",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "r3sb4uczgh",
@@ -73099,7 +73102,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "mgr9j9xqox",
@@ -73263,7 +73266,7 @@
         "audit:reviewed",
         "topic:verb-creation-repair-other"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "em6f63veig",
@@ -73790,7 +73793,7 @@
         "audit:reviewed",
         "topic:objects-physical"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "p33186aae6",
@@ -74037,7 +74040,7 @@
         "topic:morph-ward",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "c48b9qs6fd",
@@ -74058,7 +74061,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "zv195eq10v",
@@ -74103,7 +74106,7 @@
         "audit:reviewed",
         "topic:map-estar"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "qt9aqatj4f",
@@ -74960,7 +74963,7 @@
         "topic:verb-social-relationships",
         "topic:vp-full-inf"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "e3tv0u3qze",
@@ -75755,7 +75758,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "qldej05yfp",
@@ -76002,7 +76005,7 @@
         "topic:map-hacer",
         "topic:enmap-have"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "pl5xxt5y4g",
@@ -76867,7 +76870,7 @@
         "audit:reviewed",
         "topic:map-decir"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "ftrvt6qd6t",
@@ -77048,7 +77051,7 @@
         "audit:reviewed",
         "topic:map-tener"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "klmzk7d2nc",
@@ -77476,7 +77479,7 @@
         "audit:reviewed",
         "topic:map-hacer"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "w7w8ly9haz",
@@ -77905,7 +77908,7 @@
         "audit:reviewed",
         "topic:enmap-what"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "05558aoht5",
@@ -78012,7 +78015,7 @@
         "audit:reviewed",
         "topic:enmap-at"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "d7uycdog37",
@@ -78200,7 +78203,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "t5atviywgi",
@@ -78257,7 +78260,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "d6zpr2z5kx",
@@ -78277,7 +78280,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "nuuwniplla",
@@ -78302,7 +78305,7 @@
         "topic:confusable-false-friend",
         "topic:multi-sense"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "7mjxt0orjk",
@@ -78437,7 +78440,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "nibfz58mag",
@@ -78459,7 +78462,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "uzrso1e91g",
@@ -78481,7 +78484,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "asuexbkbn6",
@@ -78503,7 +78506,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "st2b3nnbcx",
@@ -78629,7 +78632,7 @@
         "audit:reviewed",
         "topic:verb-wishes"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "2xqn998l77",
@@ -78648,7 +78651,7 @@
         "audit:reviewed",
         "topic:verb-wishes"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "8hhxabswez",
@@ -78855,7 +78858,7 @@
         "topic:verb-feelings-love-like",
         "topic:map-querer"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "dy3hauy404",
@@ -78880,7 +78883,7 @@
         "topic:verb-feelings-love-like",
         "topic:map-querer"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "v7y40xtgb3",
@@ -80428,7 +80431,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "ye7rmbmbov",
@@ -80452,7 +80455,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "fyshadppn5",
@@ -80476,7 +80479,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "2fyfjvb91s",
@@ -80500,7 +80503,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "f62p62zg7o",
@@ -80524,7 +80527,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "89nkgjqxfi",
@@ -80548,7 +80551,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "r4n8t7puv8",
@@ -80572,7 +80575,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "8wgwtlo4yb",
@@ -80596,7 +80599,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "dq19hl9yw6",
@@ -80901,7 +80904,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "frpegdhmhi",
@@ -80921,7 +80924,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "v3kumwf8dl",
@@ -81569,7 +81572,7 @@
         "topic:phr-be",
         "topic:enmap-be"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "gtp0cakjyi",
@@ -81594,7 +81597,7 @@
         "topic:phr-be",
         "topic:enmap-be"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "sia3vl9zuh",
@@ -81619,7 +81622,7 @@
         "topic:phr-be",
         "topic:enmap-be"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "284324xwnq",
@@ -81752,7 +81755,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "3090ckncp7",
@@ -81775,7 +81778,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "ahk4e41zi4",
@@ -81850,7 +81853,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "vlkscuc232",
@@ -81874,7 +81877,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "t4ok9k51qs",
@@ -82437,7 +82440,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "6ftt9jzrxo",
@@ -82462,7 +82465,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "1w4k9d2e4d",
@@ -82538,7 +82541,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "yktvtrhk80",
@@ -82564,7 +82567,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "p85salreqo",
@@ -82637,7 +82640,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "xkyb2vua4e",
@@ -82662,7 +82665,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "4ou8sxbjxk",
@@ -82827,7 +82830,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "0j5tjt1o7j",
@@ -82852,7 +82855,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "iiysx4yx7o",
@@ -82876,7 +82879,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "hub84vedvz",
@@ -82950,7 +82953,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "tewh0c95pd",
@@ -82976,7 +82979,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "w5f9hb62bj",
@@ -82998,7 +83001,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "1yx8y3hhk6",
@@ -83022,7 +83025,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "19hpxwpcr5",
@@ -83316,7 +83319,7 @@
         "audit:reviewed",
         "topic:enmap-come"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "xdkhmkos1t",
@@ -83340,7 +83343,7 @@
         "audit:reviewed",
         "topic:enmap-come"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "zfuqam5zu5",
@@ -83365,7 +83368,7 @@
         "audit:reviewed",
         "topic:vf-cut-hit-hurt"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "i8kazlyawi",
@@ -83390,7 +83393,7 @@
         "audit:reviewed",
         "topic:vf-cut-hit-hurt"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "okfppdbnlq",
@@ -83513,7 +83516,7 @@
         "audit:reviewed",
         "topic:vf-cut-hit-hurt"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "5rcenaxbna",
@@ -83537,7 +83540,7 @@
         "audit:reviewed",
         "topic:vf-cut-hit-hurt"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "79go7y7jek",
@@ -83747,7 +83750,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "mll3xsnqqe",
@@ -83769,7 +83772,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "4dqnbf4tkp",
@@ -83791,7 +83794,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "y1b6i0a0r9",
@@ -83908,7 +83911,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "hx302e3tcv",
@@ -83933,7 +83936,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "vbydhdzdnz",
@@ -83955,7 +83958,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "63bn9ar4z7",
@@ -83979,7 +83982,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "wrzqjzrsm5",
@@ -84071,7 +84074,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "l6tfbrakge",
@@ -84094,7 +84097,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "tmxr4tm85t",
@@ -84117,7 +84120,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "6v3xi2a089",
@@ -84140,7 +84143,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "lqkjvqvga0",
@@ -84216,7 +84219,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "20ehjgbq4l",
@@ -84242,7 +84245,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "d0ezvwcw54",
@@ -84267,7 +84270,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "ec8kcymom7",
@@ -84292,7 +84295,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "zmnamkbq3b",
@@ -84317,7 +84320,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "nl08qe1e3q",
@@ -84342,7 +84345,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "biczrdqgdd",
@@ -84552,7 +84555,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "q58n1n7mzx",
@@ -84576,7 +84579,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "1kn03k7sbs",
@@ -84642,7 +84645,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "5jivy1ob66",
@@ -84666,7 +84669,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "dqljw2g3fb",
@@ -84818,7 +84821,7 @@
         "topic:phr-get",
         "topic:enmap-get"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "8k1ayyt6pc",
@@ -84843,7 +84846,7 @@
         "topic:phr-get",
         "topic:enmap-get"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "3r70xx9t9s",
@@ -84870,7 +84873,7 @@
         "topic:phr-get",
         "topic:enmap-get"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "67l6z8efvd",
@@ -84969,7 +84972,7 @@
         "audit:reviewed",
         "topic:enmap-give"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "iblqv731gx",
@@ -84995,7 +84998,7 @@
         "topic:vf-oneoff",
         "topic:enmap-give"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "l3jqtqp7we",
@@ -85019,7 +85022,7 @@
         "topic:vf-oneoff",
         "topic:enmap-go"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "j75hzql7s8",
@@ -85045,7 +85048,7 @@
         "topic:vf-oneoff",
         "topic:enmap-go"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "h8v7gva74y",
@@ -85117,7 +85120,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "8wyni4z4jb",
@@ -85141,7 +85144,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "jwdtzs5t6a",
@@ -85258,7 +85261,7 @@
         "topic:vf-oneoff",
         "topic:enmap-have"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "rv6qhto601",
@@ -85283,7 +85286,7 @@
         "topic:vf-oneoff",
         "topic:enmap-have"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "9dwskqsjd0",
@@ -85307,7 +85310,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "51u4l72zq4",
@@ -85331,7 +85334,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "ngp2txs8sl",
@@ -85404,7 +85407,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "fu3jtwrv5c",
@@ -85428,7 +85431,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "h89xcjotmg",
@@ -85452,7 +85455,7 @@
         "audit:reviewed",
         "topic:vf-cut-hit-hurt"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "tyke6c3ns2",
@@ -85476,7 +85479,7 @@
         "audit:reviewed",
         "topic:vf-cut-hit-hurt"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "frxrx8cy18",
@@ -85502,7 +85505,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "6uheo5toci",
@@ -85528,7 +85531,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "ingp6lcqb4",
@@ -85552,7 +85555,7 @@
         "audit:reviewed",
         "topic:vf-cut-hit-hurt"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "m4t3vxqpl6",
@@ -85576,7 +85579,7 @@
         "audit:reviewed",
         "topic:vf-cut-hit-hurt"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "96jj8crcsn",
@@ -85603,7 +85606,7 @@
         "topic:vf-oneoff",
         "topic:enmap-keep"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "rn03b9v8rd",
@@ -85630,7 +85633,7 @@
         "topic:vf-oneoff",
         "topic:enmap-keep"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "32syierhkp",
@@ -85841,7 +85844,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "m31kpazbri",
@@ -85866,7 +85869,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "5vg8sjndmp",
@@ -86246,7 +86249,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "ypd727s6hq",
@@ -86270,7 +86273,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "3n6i16wyag",
@@ -86296,7 +86299,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "5yfrmfazp0",
@@ -86322,7 +86325,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "92ealprsbd",
@@ -86347,7 +86350,7 @@
         "audit:reviewed",
         "topic:vf-cut-hit-hurt"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "dxb9jzinrq",
@@ -86372,7 +86375,7 @@
         "audit:reviewed",
         "topic:vf-cut-hit-hurt"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "lno5ht42qg",
@@ -86530,7 +86533,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "jx4ejh8c5y",
@@ -86554,7 +86557,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "lmc3z7ehft",
@@ -86581,7 +86584,7 @@
         "topic:vf-oneoff",
         "topic:enmap-make"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "pekpg8dy8k",
@@ -86608,7 +86611,7 @@
         "topic:vf-oneoff",
         "topic:enmap-make"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "op7475igzu",
@@ -86632,7 +86635,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "gwo4msr8kw",
@@ -86656,7 +86659,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "ddtalrf2sa",
@@ -86679,7 +86682,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "7j4xptyx41",
@@ -86702,7 +86705,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "b1ncaq30tj",
@@ -86796,7 +86799,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "mrzig8vrnw",
@@ -86822,7 +86825,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "vc6r566gjh",
@@ -87005,7 +87008,7 @@
         "topic:phr-put",
         "topic:enmap-put"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "smpiiw148l",
@@ -87032,7 +87035,7 @@
         "topic:phr-put",
         "topic:enmap-put"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "9pqsf0ud6d",
@@ -87103,7 +87106,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "ror87had0q",
@@ -87126,7 +87129,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "lkgs5vybk7",
@@ -87236,7 +87239,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "tgo1val9xh",
@@ -87260,7 +87263,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "rxho2fn8fn",
@@ -87330,7 +87333,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "d9oxjrwfue",
@@ -87352,7 +87355,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "oiferzi4zi",
@@ -87375,7 +87378,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "ur7p71snqp",
@@ -87398,7 +87401,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "b1jlkc3n60",
@@ -87471,7 +87474,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "12lrm1b61l",
@@ -87495,7 +87498,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "6xhxr8sb7k",
@@ -87518,7 +87521,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "fu4c8t7dei",
@@ -87541,7 +87544,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "k1zeafjyeu",
@@ -87616,7 +87619,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "as3d3fjuw7",
@@ -87641,7 +87644,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "zui5vgopk6",
@@ -87667,7 +87670,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "mon6vzw35r",
@@ -87693,7 +87696,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "8iwzc12hm2",
@@ -87719,7 +87722,7 @@
         "topic:vf-cut-hit-hurt",
         "topic:enmap-set"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "9lle2cpep8",
@@ -87745,7 +87748,7 @@
         "topic:vf-cut-hit-hurt",
         "topic:enmap-set"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "yz9g9ykdb9",
@@ -87833,7 +87836,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "l2oheg8sdo",
@@ -87857,7 +87860,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "9mq6n0oaz0",
@@ -88307,7 +88310,7 @@
         "audit:reviewed",
         "topic:vf-past-d"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "denchpjziw",
@@ -88332,7 +88335,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "sgfwcsau8u",
@@ -88355,7 +88358,7 @@
         "audit:reviewed",
         "topic:vf-past-d"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "c96ukshr12",
@@ -88451,7 +88454,7 @@
         "audit:reviewed",
         "topic:vf-cut-hit-hurt"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "6x86xzkbvv",
@@ -88475,7 +88478,7 @@
         "audit:reviewed",
         "topic:vf-cut-hit-hurt"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "n093iw4nyk",
@@ -88499,7 +88502,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "jt1vowte8p",
@@ -88523,7 +88526,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "q0in967hnc",
@@ -88618,7 +88621,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "ijdt2nva2a",
@@ -88641,7 +88644,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "gbic14c1bl",
@@ -88698,7 +88701,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "gv0nkhlrgg",
@@ -88723,7 +88726,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "48mt7mqm4p",
@@ -89183,7 +89186,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "p4y3ag42a9",
@@ -89208,7 +89211,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "u0upjdj9xz",
@@ -89419,7 +89422,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "zj8o7ga6sq",
@@ -89444,7 +89447,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "v3pmktibjc",
@@ -89948,7 +89951,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "nor2ipti14",
@@ -89974,7 +89977,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "rao69o1r3o",
@@ -90065,7 +90068,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "35c23mmb2d",
@@ -90087,7 +90090,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "m863lmpf46",
@@ -90110,7 +90113,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "fw8iz6u8gk",
@@ -90133,7 +90136,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "4zgjpzcib1",
@@ -90800,7 +90803,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "1f7hocq26j",
@@ -90822,7 +90825,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "rgbzp5u6k1",
@@ -90893,7 +90896,7 @@
         "topic:phr-take",
         "topic:enmap-take"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "bn0ps9sz3h",
@@ -90920,7 +90923,7 @@
         "topic:phr-take",
         "topic:enmap-take"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "l33gheat0q",
@@ -90945,7 +90948,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "uxgsk3ka13",
@@ -90970,7 +90973,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "j17yzfti0u",
@@ -91040,7 +91043,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "radt5ut6yj",
@@ -91066,7 +91069,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "vxo4j1a99j",
@@ -91092,7 +91095,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "gryg1an0ql",
@@ -91118,7 +91121,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "fpythnuffg",
@@ -91228,7 +91231,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "2uoub5ekex",
@@ -91252,7 +91255,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "5j51i47696",
@@ -91391,7 +91394,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "2xxvvzpd57",
@@ -91416,7 +91419,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "eianbt0bry",
@@ -91438,7 +91441,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "4sihxpdhzg",
@@ -91462,7 +91465,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "qwug2xfbtt",
@@ -91485,7 +91488,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "0wg3chrr3d",
@@ -91508,7 +91511,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "2xpg1fnglt",
@@ -91800,7 +91803,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "a0584flbmr",
@@ -91823,7 +91826,7 @@
         "topic:verb-form",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "ywshdrwtq9",
@@ -91929,7 +91932,7 @@
         "audit:reviewed",
         "topic:vf-oneoff"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "rare"
     },
     {
       "id": "nf5qq29oke",
@@ -96014,7 +96017,7 @@
         "en:where",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "1x0l3hgmx7",
@@ -96032,7 +96035,7 @@
         "en:where",
         "audit:reviewed"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "core"
     },
     {
       "id": "omyzn9d5h2",
@@ -97651,7 +97654,7 @@
         "topic:confusable-false-friend",
         "topic:multi-sense"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "jgorbdcn4l",
@@ -97959,7 +97962,7 @@
         "topic:people-family-rel",
         "topic:family-extended"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "oqgvl7r1yh",
@@ -97981,7 +97984,7 @@
         "topic:people-family-rel",
         "topic:family-extended"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "omi0kcbcjp",
@@ -98047,7 +98050,7 @@
         "audit:reviewed",
         "topic:verb-eating-drinking"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "4e8vpd4tbg",
@@ -98069,7 +98072,7 @@
         "audit:reviewed",
         "topic:verb-eating-drinking"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "zkkcxirv4g",
@@ -98251,7 +98254,7 @@
         "audit:reviewed",
         "topic:verb-eating-drinking"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "7zuboxokm5",
@@ -98272,7 +98275,7 @@
         "audit:reviewed",
         "topic:verb-eating-drinking"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "1m68s37p22",
@@ -98360,7 +98363,7 @@
         "audit:reviewed",
         "topic:verb-eating-drinking"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "aq0gtmpie2",
@@ -98539,7 +98542,7 @@
         "topic:verb-household-2",
         "topic:verb-household"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "q98pxxzqf3",
@@ -98563,7 +98566,7 @@
         "topic:verb-household-2",
         "topic:verb-household"
       ],
-      "curriculumRole": "essential"
+      "curriculumRole": "common"
     },
     {
       "id": "pdc3u4lu4a",
@@ -99152,7 +99155,7 @@
         "es:pantalones",
         "en:pants"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "j11l0cfpfu",
@@ -99188,7 +99191,7 @@
         "es:vestido",
         "en:dress"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "530qz6bluz",
@@ -99206,7 +99209,7 @@
         "es:falda",
         "en:skirt"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "s9onhif5uc",
@@ -99224,7 +99227,7 @@
         "es:abrigo",
         "en:coat"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "uws8mxw10y",
@@ -99242,7 +99245,7 @@
         "es:chaqueta",
         "en:jacket"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "fxnp9jrm32",
@@ -99260,7 +99263,7 @@
         "es:sombrero",
         "en:hat"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "hrq9yurfkx",
@@ -99278,7 +99281,7 @@
         "es:calcetín",
         "en:sock"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "xo9p1xdyij",
@@ -99296,7 +99299,7 @@
         "es:suéter",
         "en:sweater"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "l093qa2247",
@@ -99314,7 +99317,7 @@
         "es:corbata",
         "en:tie"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "fv8734tng4",
@@ -99332,7 +99335,7 @@
         "es:cinturón",
         "en:belt"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "vhrifh20mn",
@@ -99440,7 +99443,7 @@
         "es:verdura",
         "en:vegetable"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "lncnulj8wf",
@@ -99458,7 +99461,7 @@
         "es:carne",
         "en:meat"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "qj7jo4c4qp",
@@ -99476,7 +99479,7 @@
         "es:huevo",
         "en:egg"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "wr98m0hmwx",
@@ -99494,7 +99497,7 @@
         "es:queso",
         "en:cheese"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "f3hbigru30",
@@ -99512,7 +99515,7 @@
         "es:arroz",
         "en:rice"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "q8wxati726",
@@ -99530,7 +99533,7 @@
         "es:manzana",
         "en:apple"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     },
     {
       "id": "4kiz722dd0",
@@ -99548,7 +99551,7 @@
         "es:pollo",
         "en:chicken"
       ],
-      "curriculumRole": "common"
+      "curriculumRole": "essential"
     }
   ]
 }

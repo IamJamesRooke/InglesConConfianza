@@ -74,10 +74,12 @@ material is temporarily sitting in `rare`).
 ## Phases
 
 **PHASE 3 COMPLETE (P3-0..P3-6), 2026-09-07.** Final tiers:
-core 880 / essential 406 / common 495 / extended 1545 / rare 925 / trash 233.
+core 917 / essential 398 / common 764 / extended 1070 / rare 1102 / trash 233.
 All six guardrail bands in target. Open follow-ups, all optional:
-- the common / extended / rare boundaries within the vocabulary tiers are a
-  first coarse pass — a per-topic review would sharpen them.
+- the essential verb tier still carries multi-sense verbs at ~2 senses each;
+  a stricter MVP would keep only the single base sense.
+- extended / rare within the specialized vocabulary is still a rule-based
+  split; a per-topic human pass would sharpen the edges.
 
 
 | # | Batch | Model | State |
@@ -91,7 +93,8 @@ All six guardrail bands in target. Open follow-ups, all optional:
 | P3-4b | Split `extended` out of `rare` | Sonnet | **done** — 1616 rows rare→extended (everything not a transparent cognate, paradigm drill, or bare mapping anchor). |
 | P3-5 | Boundary review, guardrail retune, docs, memory | Sonnet | **done** — guardrails tuned; README + memory + policy updated. |
 | P3-6 | Verb-Pattern / Q&N / Imperative / passive grammar → core | Sonnet | **done** — 136 rows. Core 727→863. |
-| P3-7 | Stranded function words + conversational expressions | Sonnet | **done** — 17 bare function words (con, si, entonces, después, hasta, para que, aún, ya, quizá) → core; 17 conversational expressions (quién sabe, a ver, desde luego, ¡Adelante!, Hasta luego) → essential + tagged `topic:social-expression` so they reach the Expressions page. |
+| P3-7 | Stranded function words + conversational expressions | Sonnet | **done** — 17 function words → core; 17 conversational expressions → essential + `topic:social-expression`. |
+| P3-8 | Per-tier boundary review | Sonnet | **done** — verb-form + `==>` drills common→rare (177); grammar constructions common→core (37+); everyday vocab common→essential (111); secondary verb senses essential→common (105); mid-tier vocab extended→common (475). Bands retuned. |
 
 ### P3-1 detail
 
@@ -105,13 +108,13 @@ All six guardrail bands in target. Open follow-ups, all optional:
 - `src/lib/curriculum/scope.ts`: `unlessRole` on the Verbs cognate exclusion currently lists `["core","supporting"]` — update to the new set that means "teachable" (`["core","essential","common"]` initially, revisit after P3-4).
 - Mechanical role manifest, then `npm run curriculum:snapshots:export -- --apply`, `db:verify`, `db:test`.
 
-### Guardrail bands (tuned to the real shape, P3-6)
+### Guardrail bands (tuned to the real shape, P3-8)
 
 | Tier | Target % | Actual |
 |---|---|---|
-| `core` | 15–22 | 19.2 |
-| `essential` | 7–12 | 8.7 |
-| `common` | 8–15 | 11.0 |
-| `extended` | 28–40 | 34.6 |
-| `rare` | 18–28 | 21.2 |
+| `core` | 17–24 | 20.5 |
+| `essential` | 6–11 | 8.9 |
+| `common` | 13–22 | 17.0 |
+| `extended` | 20–32 | 23.9 |
+| `rare` | 20–30 | 24.6 |
 | `trash` | 3–6 | 5.2 |

@@ -26,22 +26,23 @@ const ORDER = [
 // Five priority tiers (Phase 3, docs/curation/role-granularity/plan.md).
 // `core` is the WHOLE grammatical operating system on a limited vocabulary: the
 // full pronoun / determiner / connector / preposition sets, the question words,
-// and the verb machinery (ser/estar/tener/ir/haber conjugation, negation,
-// questions, the perfect, the modals, comparison). It is ~16% of the catalog —
-// that is the size of the Spanish grammar, not vocabulary bloat. The ~30
-// non-grammar rows in `core` are the "limited vocabulary" of the MVP. High
-// frequency is NOT what puts a row in `core`; "querer" is core (carries
-// structure), "comer" is not (a dictionary + the grammar covers it).
+// the verb machinery (ser/estar/tener/ir/haber conjugation, negation, questions,
+// the perfect, the modals, comparison), and every grammatical construction
+// (verb-complementation patterns, conditionals, exclamatives, gustar-type
+// verbs). It is ~20% of the catalog — that is the size of the Spanish grammar,
+// not vocabulary bloat. The non-grammar rows in `core` are the tiny "limited
+// vocabulary" of the MVP. High frequency is NOT what puts a row in `core`;
+// "querer" is core (carries structure), "comer" is not.
 //   essential — the small everyday-content set the MVP still teaches explicitly
-//   common    — the course right after the MVP
-//   extended  — the large pool of vocabulary for later / advanced courses
+//   common    — the course right after the MVP; mid-tier everyday vocabulary
+//   extended  — the pool of vocabulary for later / advanced courses
 //   rare      — transparent cognates, paradigm drills, bare mapping anchors
 const ROLE_TARGETS: Record<string, [number, number]> = {
-  core: [15, 22],
-  essential: [7, 12],
-  common: [8, 15],
-  extended: [28, 40],
-  rare: [18, 28],
+  core: [17, 24],
+  essential: [6, 11],
+  common: [13, 22],
+  extended: [20, 32],
+  rare: [20, 30],
   trash: [3, 6],
 };
 
