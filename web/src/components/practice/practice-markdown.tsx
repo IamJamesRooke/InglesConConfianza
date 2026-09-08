@@ -190,15 +190,20 @@ export function EditablePracticeMarkdown({
     return null;
   }
 
-  function unwrapMarksInRange(range: Range) {
-    const root = rootRef.current;
-    if (!root) return;
-    for (const mark of Array.from(root.querySelectorAll("mark[data-language]"))) {
-      if (!range.intersectsNode(mark)) continue;
-      const parent = mark.parentNode;
-      while (mark.firstChild) parent?.insertBefore(mark.firstChild, mark);
-      parent?.removeChild(mark);
+  function clearLanguageInRange(range: Range) {
+    const fragment = range.extractContents();
+    for (const mark of Array.from(fragment.querySelectorAll("mark[data-language]"))) {
+      mark.replaceWith(...Array.from(mark.childNodes));
     }
+    const inserted = Array.from(fragment.childNodes);
+    range.insertNode(fragment);
+    if (!inserted.length) return;
+    const selection = window.getSelection();
+    const restored = document.createRange();
+    restored.setStartBefore(inserted[0]);
+    restored.setEndAfter(inserted[inserted.length - 1]);
+    selection?.removeAllRanges();
+    selection?.addRange(restored);
   }
 
   function wrapRange(range: Range, language: "es" | "en") {
@@ -238,7 +243,7 @@ export function EditablePracticeMarkdown({
         const mark = wrapRange(range, next);
         placeCaretAfter(mark);
       } else {
-        unwrapMarksInRange(range);
+        clearLanguageInRange(range);
       }
       onChange(serializeEditableMarkdown(root));
       root.focus();
@@ -321,20 +326,21 @@ export function EditablePracticeMarkdown({
     setHasSelection(true);
   }
 
-  function formatSelection(format: "bold" | "clear") {
+  function formatSelection(format: "bold" | "italic" | "clear", useSavedRange = false) {
     const root = rootRef.current;
-    const range = savedRangeRef.current;
-    if (!root || !range || range.collapsed) return;
-
     const selection = window.getSelection();
+    const range = useSavedRange ? savedRangeRef.current : selection?.rangeCount ? selection.getRangeAt(0) : null;
+    if (!root || !range || !root.contains(range.commonAncestorContainer)) return;
     selection?.removeAllRanges();
     selection?.addRange(range);
     if (format === "bold") {
       document.execCommand("bold");
+    } else if (format === "italic") {
+      document.execCommand("italic");
     } else {
       document.execCommand("removeFormat");
       const live = selection?.getRangeAt(0);
-      if (live) unwrapMarksInRange(live);
+      if (live && !live.collapsed) clearLanguageInRange(live);
     }
 
     onChange(serializeEditableMarkdown(root));
@@ -415,6 +421,11 @@ export function EditablePracticeMarkdown({
             formatSelection("bold");
             return;
           }
+          if ((event.ctrlKey || event.metaKey) && !event.shiftKey && event.key.toLowerCase() === "i") {
+            event.preventDefault();
+            formatSelection("italic");
+            return;
+          }
           if (event.key === "Enter") {
             endTypingMode();
             return;
@@ -422,7 +433,7 @@ export function EditablePracticeMarkdown({
           if (event.key === "Escape") {
             event.preventDefault();
             if (typingModeRef.current) { endTypingMode(); return; }
-            event.currentTarget.blur();
+            event.currentTarget.closest("[data-document-block]")?.querySelector<HTMLElement>(".lesson-document-block-chrome summary")?.focus();
           }
         }}
       >
@@ -430,15 +441,16 @@ export function EditablePracticeMarkdown({
       </div>
       {typingMode && (
         <span className="authoring-mode-badge" data-language={typingMode} aria-hidden="true">
-          {typingMode === "es" ? "Spanish" : "English"} <kbd>{typingMode === "es" ? "⌥Q" : "⌥E"}</kbd>
+          {typingMode === "es" ? "Spanish" : "English"} <kbd>{typingMode === "es" ? "Alt Q" : "Alt E"}</kbd>
         </span>
       )}
       {showSelectionMenu && hasSelection && (
         <div className="authoring-format-menu" role="toolbar" aria-label="Format selected text">
-          <FormatButton label="Español" shortcut="⌥Q" className="spanish" onFormat={() => setLanguageMode("es")} />
-          <FormatButton label="English" shortcut="⌥E" className="english" onFormat={() => setLanguageMode("en")} />
-          <FormatButton label="Bold" shortcut="⌘B" onFormat={() => formatSelection("bold")} />
-          <FormatButton label="Clear" shortcut="⌥W" onFormat={() => formatSelection("clear")} />
+          <FormatButton label="Español" shortcut="Alt Q" className="spanish" onFormat={() => setLanguageMode("es")} />
+          <FormatButton label="English" shortcut="Alt E" className="english" onFormat={() => setLanguageMode("en")} />
+          <FormatButton label="Bold" shortcut="Ctrl/⌘ B" onFormat={() => formatSelection("bold", true)} />
+          <FormatButton label="Italic" shortcut="Ctrl/⌘ I" onFormat={() => formatSelection("italic", true)} />
+          <FormatButton label="Clear" shortcut="Alt W" onFormat={() => formatSelection("clear", true)} />
         </div>
       )}
     </div>

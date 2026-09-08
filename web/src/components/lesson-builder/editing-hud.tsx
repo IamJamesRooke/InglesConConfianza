@@ -13,17 +13,6 @@ function Row({ children }: { children: ReactNode }) {
   return <div className="editing-hud-row">{children}</div>;
 }
 
-const addRow = (
-  <Row>
-    add <kbd>⌥1</kbd> Explanation <kbd>⌥2</kbd> Sentence <kbd>⌥3</kbd> Vocab table · <kbd>⌥D</kbd> done · <kbd>⌥L</kbd> lesson
-  </Row>
-);
-const pieceRow = (
-  <Row>
-    <kbd>⌥H</kbd> hint · <kbd>⌥A</kbd> alt answer · <kbd>⌥⌫</kbd> delete blank
-  </Row>
-);
-
 export function EditingHud({ context, lessonLabel }: Props) {
   const kind = context.kind;
 
@@ -36,30 +25,13 @@ export function EditingHud({ context, lessonLabel }: Props) {
       body = <Row>Type to search the curriculum · <kbd>⏎</kbd> to add</Row>;
       break;
     case "explanation":
-      body = (
-        <>
-          <Row><kbd>⌥Q</kbd> Spanish · <kbd>⌥W</kbd> neutral · <kbd>⌥E</kbd> English</Row>
-          {addRow}
-        </>
-      );
+      body = <Row><kbd>Alt Enter</kbd> next slide · <kbd>Alt Q/W/E</kbd> Spanish / neutral / English</Row>;
       break;
     case "sentence-es":
-      body = (
-        <>
-          <Row><kbd>Tab</kbd> → English</Row>
-          {pieceRow}
-          {addRow}
-        </>
-      );
+      body = <Row><kbd>Tab</kbd> English · <kbd>Alt Enter</kbd> next slide</Row>;
       break;
     case "sentence-en":
-      body = (
-        <>
-          <Row><kbd>Tab</kbd> next blank · <kbd>⇧Tab</kbd> back</Row>
-          {pieceRow}
-          {addRow}
-        </>
-      );
+      body = <Row><kbd>Tab</kbd> next blank · <kbd>Shift Tab</kbd> back · <kbd>Alt Enter</kbd> next slide</Row>;
       break;
     case "chooser":
       body = <Row><kbd>↑↓</kbd> choose · <kbd>⏎</kbd> add · <kbd>Esc</kbd> cancel</Row>;

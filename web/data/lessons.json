@@ -18,7 +18,9 @@
         }
       ],
       "lessonIds": [
-        "lesson_b9c75a0c-2132-434f-b1b5-bdfcd960f941"
+        "lesson_b9c75a0c-2132-434f-b1b5-bdfcd960f941",
+        "lesson_297bc8ca-6aac-4c7a-9fd1-fbf60e34f83f",
+        "lesson_e0ca7e8f-0cbe-429d-a358-dd81099967c7"
       ]
     }
   ],
@@ -153,9 +155,9 @@
           "id": "block_fa45c6e0-4195-44b3-aecf-4971b97f0598",
           "type": "sentence",
           "promptLabel": "",
-          "promptText": "",
-          "helperText": "",
-          "answerFeedback": null,
+          "promptText": "afasfsafasfs",
+          "helperText": "asfasfsaf",
+          "answerFeedback": "afasfsafsadf",
           "languageBlocks": [
             {
               "id": "lang_cfcfd68b-7320-457f-a23e-6cc00ba6447b",
@@ -197,6 +199,292 @@
               "callout": null,
               "acceptedAnswers": [
                 "to do it."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson_297bc8ca-6aac-4c7a-9fd1-fbf60e34f83f",
+      "name": "I think I am going to be able to do it, but...",
+      "concepts": [
+        {
+          "id": "lesson_concept_13bd9732-8c49-49e3-86b5-02f2907474d3",
+          "conceptId": "rh4yfb08hn",
+          "label": "voy a [hacer algo]"
+        },
+        {
+          "id": "lesson_concept_f8b1bb40-ef4f-451b-a13d-fb37f2b6b6be",
+          "conceptId": "wd6uku1ojd",
+          "label": "creer que [algo es cierto]"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "block_0b7b360d-9350-48dd-9e4d-6b136b8c63ca",
+          "type": "explanation",
+          "contentMarkdown": "[[es:voy a]] es [[en:I am going]]"
+        },
+        {
+          "id": "block_66e31a82-f6c2-4e48-b323-745f05f0198c",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_611b73e4-1ba4-464e-872d-d4bf534bce3d",
+              "spanish": "voy a",
+              "callout": null,
+              "acceptedAnswers": [
+                "I am going"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_1d3124fd-d98b-4e30-b791-8f651534894b",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_5e84c364-cdf7-421e-a87f-551d6ee9659c",
+              "spanish": "Voy a",
+              "callout": null,
+              "acceptedAnswers": [
+                "I am going"
+              ]
+            },
+            {
+              "id": "lang_d7a95107-62bd-4787-ba74-57cfa79d3ea4",
+              "spanish": "hacerlo.",
+              "callout": null,
+              "acceptedAnswers": [
+                "to do it."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_fd376ee7-db17-46c4-9b13-ebad324744be",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_050f509b-2ca7-4cfa-ad13-788bdbf3554b",
+              "spanish": "Voy a",
+              "callout": null,
+              "acceptedAnswers": [
+                "I am going"
+              ]
+            },
+            {
+              "id": "lang_939fa63b-b6c1-4ed4-a82c-5bb36efb843e",
+              "spanish": "poder",
+              "callout": null,
+              "acceptedAnswers": [
+                "to be able"
+              ]
+            },
+            {
+              "id": "lang_73006410-d1bf-436f-ac50-a46f5ad21237",
+              "spanish": "hacerlo.",
+              "callout": null,
+              "acceptedAnswers": [
+                "to do it."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_3c348c68-a46a-4672-80ad-0a9ce3d0ce7c",
+          "type": "explanation",
+          "contentMarkdown": "[[es:creo que]] es [[en:I think]]"
+        },
+        {
+          "id": "block_f62dc871-2d84-436e-b209-7ad5c657c061",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_2569c3db-681f-41d3-990b-738c43114e21",
+              "spanish": "creo que",
+              "callout": null,
+              "acceptedAnswers": [
+                "I think"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_e224edf7-9486-48fa-9b6f-024a62a50a7b",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_0c0e196d-53ad-45bc-9c49-8a7a739cd9dc",
+              "spanish": "Creo que",
+              "callout": null,
+              "acceptedAnswers": [
+                "I think"
+              ]
+            },
+            {
+              "id": "lang_c91abb7d-3739-43c2-8ffc-517dcd1708fe",
+              "spanish": "quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ]
+            },
+            {
+              "id": "lang_4d7acd21-5aa6-4c4e-bea2-76de631317fa",
+              "spanish": "hacerlo.",
+              "callout": null,
+              "acceptedAnswers": [
+                "to do it."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_6e047b7c-8126-4a9d-9698-f3d0bbf0086c",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_7296de90-1e15-4bc6-874e-cf763c9bcc66",
+              "spanish": "Creo que",
+              "callout": null,
+              "acceptedAnswers": [
+                "I think"
+              ]
+            },
+            {
+              "id": "lang_a9ca4f09-2090-4999-a321-bc5bdbcf8d1e",
+              "spanish": "voy a",
+              "callout": null,
+              "acceptedAnswers": [
+                "I'm going"
+              ]
+            },
+            {
+              "id": "lang_88ff86dc-bb75-4b7a-87d5-f24ce7516b1f",
+              "spanish": "poder",
+              "callout": null,
+              "acceptedAnswers": [
+                "to be able"
+              ]
+            },
+            {
+              "id": "lang_e1c518dd-ebef-431f-9add-bdb81d0a947c",
+              "spanish": "hacerlo",
+              "callout": null,
+              "acceptedAnswers": [
+                "to do it"
+              ]
+            },
+            {
+              "id": "lang_3a9f255b-0c34-4f7a-aac2-46635d04809a",
+              "spanish": "hoy, ",
+              "callout": "COMA!",
+              "acceptedAnswers": [
+                "today, "
+              ]
+            },
+            {
+              "id": "lang_2d89d7c3-7262-4cda-aa9f-d921fb29f4a5",
+              "spanish": "pero",
+              "callout": null,
+              "acceptedAnswers": [
+                "but"
+              ]
+            },
+            {
+              "id": "lang_73dc62e3-003a-4a01-91d6-2f2e69ad7b65",
+              "spanish": "no estoy",
+              "callout": null,
+              "acceptedAnswers": [
+                "I'm not"
+              ]
+            },
+            {
+              "id": "lang_c325db2e-2394-48ac-adad-a48abe5f4105",
+              "spanish": "seguro.",
+              "callout": null,
+              "acceptedAnswers": [
+                "sure."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson_e0ca7e8f-0cbe-429d-a358-dd81099967c7",
+      "name": "I want to buy something.",
+      "concepts": [],
+      "blocks": [
+        {
+          "id": "block_0bceb265-af41-4766-bb00-66fcfb304b87",
+          "type": "explanation",
+          "contentMarkdown": "comprar es to buy"
+        },
+        {
+          "id": "block_7bf5f324-3202-4e55-bbde-2d677bbeeb10",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_3f82c0e3-21af-4df3-b070-57cc87149793",
+              "spanish": "quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ]
+            },
+            {
+              "id": "lang_9ba271fa-324d-49d7-b309-5518386e8ea7",
+              "spanish": "comprar",
+              "callout": null,
+              "acceptedAnswers": [
+                "to buy"
+              ]
+            },
+            {
+              "id": "lang_7334b0e0-748f-468d-b394-a632677d4fce",
+              "spanish": "algo",
+              "callout": null,
+              "acceptedAnswers": [
+                "something"
+              ]
+            },
+            {
+              "id": "lang_f2e581ab-4212-44db-a8cd-3ac61416c6d9",
+              "spanish": "ahora",
+              "callout": null,
+              "acceptedAnswers": [
+                "now"
               ]
             }
           ]

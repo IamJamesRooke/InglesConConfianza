@@ -226,6 +226,24 @@ test("undoable reducer: consecutive edits to one field coalesce into a single st
   assert.equal(s.present[0].name, "A");
 });
 
+test("undoable reducer: leaving and revisiting a field starts a new history step", () => {
+  let s = undoableLessonsReducer(initialUndoableLessons, { type: "SET_LESSONS", lessons: baseLessons() });
+  s = undoableLessonsReducer(s, { type: "RENAME_LESSON", lessonId: "lesson_a", name: "First visit" });
+  s = undoableLessonsReducer(s, { type: "END_HISTORY_GROUP" });
+  s = undoableLessonsReducer(s, { type: "RENAME_LESSON", lessonId: "lesson_a", name: "Second visit" });
+  s = undoableLessonsReducer(s, { type: "UNDO" });
+  assert.equal(s.present[0].name, "First visit");
+});
+
+test("undoable reducer: different sentence fields do not share one history step", () => {
+  let s = undoableLessonsReducer(initialUndoableLessons, { type: "SET_LESSONS", lessons: baseLessons() });
+  s = undoableLessonsReducer(s, { type: "UPDATE_SENTENCE_BLOCK", lessonId: "lesson_a", sentenceBlockId: "b1", patch: { promptText: "Prompt" } });
+  s = undoableLessonsReducer(s, { type: "UPDATE_SENTENCE_BLOCK", lessonId: "lesson_a", sentenceBlockId: "b1", patch: { helperText: "Help" } });
+  s = undoableLessonsReducer(s, { type: "UNDO" });
+  assert.equal((s.present[0].blocks[0] as SentenceBlock).promptText, "Prompt");
+  assert.equal((s.present[0].blocks[0] as SentenceBlock).helperText, "");
+});
+
 test("lesson concepts add / remove", () => {
   let lessons = m.addLessonConcept(baseLessons(), "lesson_a", {
     id: "lc1",

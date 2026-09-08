@@ -236,7 +236,7 @@ export function LessonConceptsField({
                 }`}
             title={
               isCoverageField
-                ? (met ? "A lesson in this module teaches this" : "Not yet taught in this module")
+                ? (met ? "Referenced by a lesson in this module" : "Not yet referenced by a lesson in this module")
                 : concept.conceptId
                   ? `Priority: ${display?.role ?? "Unranked"} — click to edit`
                   : "Not linked to the curriculum"

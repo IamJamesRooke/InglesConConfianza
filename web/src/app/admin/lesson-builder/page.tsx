@@ -14,6 +14,16 @@ type SaveState = "loading" | "idle" | "saving" | "saved" | "error";
 type Deletion =
   | { kind: "slide"; lessonId: string; block: LessonBlock; index: number }
   | { kind: "piece"; lessonId: string; blockId: string; piece: LanguageBlock; index: number };
+type PreviewOrigin = {
+  element: HTMLElement | null;
+  inputSelection: [number, number] | null;
+  range: Range | null;
+  scrollY: number;
+};
+
+function isTextEditingTarget(target: EventTarget | null) {
+  return target instanceof HTMLElement && Boolean(target.closest("input, textarea, [contenteditable='true']"));
+}
 
 export default function LessonBuilderPage() {
   const [history, dispatch] = useReducer(undoableLessonsReducer, initialUndoableLessons);
@@ -33,6 +43,7 @@ export default function LessonBuilderPage() {
   const lessonSaveTimer = useRef<number | undefined>(undefined);
   const courseSaveTimer = useRef<number | undefined>(undefined);
   const saveChain = useRef<Promise<void>>(Promise.resolve());
+  const previewOrigin = useRef<PreviewOrigin | null>(null);
 
   useEffect(() => { lessonsRef.current = lessons; }, [lessons]);
   useEffect(() => { modulesRef.current = modules; }, [modules]);
@@ -112,14 +123,14 @@ export default function LessonBuilderPage() {
   }, [saveLesson, saveModules]);
 
   useEffect(() => {
-    if (saveState === "loading" || !dirtyLessons.length) return;
+    if (saveState === "loading" || saveState === "error" || !dirtyLessons.length) return;
     window.clearTimeout(lessonSaveTimer.current);
     lessonSaveTimer.current = window.setTimeout(() => { void saveAll(); }, 1200);
     return () => window.clearTimeout(lessonSaveTimer.current);
   }, [dirtyLessons, saveAll, saveState]);
 
   useEffect(() => {
-    if (saveState === "loading" || !modulesDirty || hasUnsavedNewLesson) return;
+    if (saveState === "loading" || saveState === "error" || !modulesDirty || hasUnsavedNewLesson) return;
     window.clearTimeout(courseSaveTimer.current);
     courseSaveTimer.current = window.setTimeout(() => { void saveAll(); }, 500);
     return () => window.clearTimeout(courseSaveTimer.current);
@@ -142,10 +153,10 @@ export default function LessonBuilderPage() {
       } else if (alt && !event.shiftKey && event.code === "KeyK") {
         event.preventDefault();
         document.getElementById("lesson-library-search-input")?.focus();
-      } else if (cmd && !event.altKey && !event.shiftKey && event.key.toLowerCase() === "z") {
+      } else if (cmd && !event.altKey && !event.shiftKey && event.key.toLowerCase() === "z" && !isTextEditingTarget(event.target)) {
         event.preventDefault();
         dispatch({ type: "UNDO" });
-      } else if (cmd && !event.altKey && event.shiftKey && event.key.toLowerCase() === "z") {
+      } else if (cmd && !event.altKey && event.shiftKey && event.key.toLowerCase() === "z" && !isTextEditingTarget(event.target)) {
         event.preventDefault();
         dispatch({ type: "REDO" });
       } else if (alt && event.shiftKey && event.code === "KeyL") {
@@ -313,6 +324,38 @@ export default function LessonBuilderPage() {
     dispatch({ type: "MOVE_CONTENT_BLOCK", lessonId, draggedId: blockId, targetId: target.id, position: direction < 0 ? "before" : "after" });
   }
 
+  function openPreview(lessonId: string) {
+    const element = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const inputSelection = element instanceof HTMLInputElement || element instanceof HTMLTextAreaElement
+      ? [element.selectionStart ?? 0, element.selectionEnd ?? 0] as [number, number]
+      : null;
+    const selection = window.getSelection();
+    const range = element?.isContentEditable && selection?.rangeCount
+      ? selection.getRangeAt(0).cloneRange()
+      : null;
+    previewOrigin.current = { element, inputSelection, range, scrollY: window.scrollY };
+    setPreviewLessonId(lessonId);
+  }
+
+  function closePreview() {
+    setPreviewLessonId(null);
+    requestAnimationFrame(() => {
+      const origin = previewOrigin.current;
+      previewOrigin.current = null;
+      if (!origin) return;
+      window.scrollTo({ top: origin.scrollY, behavior: "auto" });
+      if (!origin.element || !document.contains(origin.element)) return;
+      origin.element.focus({ preventScroll: true });
+      if (origin.inputSelection && (origin.element instanceof HTMLInputElement || origin.element instanceof HTMLTextAreaElement)) {
+        origin.element.setSelectionRange(...origin.inputSelection);
+      } else if (origin.range) {
+        const selection = window.getSelection();
+        selection?.removeAllRanges();
+        selection?.addRange(origin.range);
+      }
+    });
+  }
+
   const previewLesson = lessons.find((lesson) => lesson.id === previewLessonId);
   const preview: PracticeLesson | null = previewLesson ? {
     id: previewLesson.id,
@@ -325,15 +368,15 @@ export default function LessonBuilderPage() {
     blocks: previewLesson.blocks,
   } : null;
 
-  const saveLabel = saveState === "loading" ? "Loading…" : saveState === "saving" ? "Saving…" : saveState === "error" ? "Save failed — retry with Ctrl+S" : isDirty ? "Unsaved changes" : "All changes saved";
+  const saveLabel = saveState === "loading" ? "Loading…" : saveState === "saving" ? "Saving…" : saveState === "error" ? "Save failed" : isDirty ? "Unsaved changes" : "All changes saved";
 
   return <main className="lesson-builder-page flex-1 bg-background px-4 py-3 sm:px-6 sm:py-4">
     <div className="mx-auto w-full max-w-[1180px]">
       <LessonLibrary
-        modules={modules} lessons={lessons} conceptDisplays={conceptDisplays} saveLabel={saveLabel}
+        modules={modules} lessons={lessons} conceptDisplays={conceptDisplays} saveLabel={saveLabel} saveFailed={saveState === "error"}
         canUndo={history.past.length > 0} canRedo={history.future.length > 0}
-        onUndo={() => dispatch({ type: "UNDO" })} onRedo={() => dispatch({ type: "REDO" })}
-        onNewLesson={createLesson} onPreviewLesson={setPreviewLessonId} onDuplicateLesson={duplicateLesson} onDeleteLesson={(id) => void deleteLesson(id)}
+        onUndo={() => dispatch({ type: "UNDO" })} onRedo={() => dispatch({ type: "REDO" })} onRetrySave={() => void saveAll()}
+        onNewLesson={createLesson} onPreviewLesson={openPreview} onDuplicateLesson={duplicateLesson} onDeleteLesson={(id) => void deleteLesson(id)}
         onAddModule={addModule} onDeleteModule={deleteModule} onMoveModule={moveModule} onMoveLesson={moveLessonWithinModule} onDropLesson={moveLessonToPosition} onMoveLessonToModule={moveLessonToModule} onChangeModule={patchModule}
         onRenameLesson={(lessonId, name) => dispatch({ type: "RENAME_LESSON", lessonId, name })}
         onAddLessonConcept={(lessonId, concept: LessonConcept) => dispatch({ type: "ADD_LESSON_CONCEPT", lessonId, concept })}
@@ -350,9 +393,9 @@ export default function LessonBuilderPage() {
         onDuplicateBlock={(lessonId, blockId) => dispatch({ type: "DUPLICATE_CONTENT_BLOCK", lessonId, blockId })}
         onMoveBlock={moveBlock}
         onReorderBlock={(lessonId, draggedId, targetId, position) => dispatch({ type: "MOVE_CONTENT_BLOCK", lessonId, draggedId, targetId, position })}
-        deletionUndo={deletionUndo} onUndoDeletion={undoDeletion}
+        deletionUndo={deletionUndo} onUndoDeletion={undoDeletion} onEndHistoryGroup={() => dispatch({ type: "END_HISTORY_GROUP" })}
       />
     </div>
-    {preview && <LessonSelector lessons={[preview]} initialLessonId={preview.id} onCloseLesson={() => setPreviewLessonId(null)} />}
+    {preview && <LessonSelector lessons={[preview]} initialLessonId={preview.id} onCloseLesson={closePreview} />}
   </main>;
 }

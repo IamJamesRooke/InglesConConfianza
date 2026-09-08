@@ -2146,7 +2146,7 @@
 .lesson-library-move-module { max-width: 140px; margin-right: 2px; border: 0; border-radius: 5px; background: transparent; color: var(--muted-foreground); font-size: 10px; outline: none; }
 .lesson-library-move-module:hover { background: var(--muted); color: var(--foreground); }
 .lesson-library-row-icons { display: inline-flex; align-items: center; gap: 1px; margin-left: 4px; }
-.lesson-library-row-icons > .lesson-library-try { color: color-mix(in oklch, var(--primary) 78%, var(--muted-foreground)); }
+.lesson-library-row-icons > .lesson-library-try { display: inline-flex; width: auto; height: 28px; align-items: center; gap: 5px; color: color-mix(in oklch, var(--primary) 78%, var(--muted-foreground)); }
 .lesson-library-row-icons > .lesson-library-try:hover { background: color-mix(in oklch, var(--primary) 12%, transparent); color: var(--primary); }
 .lesson-library-row-icons > button { display: grid; width: 28px; height: 28px; place-items: center; border-radius: 5px; color: var(--muted-foreground); }
 .lesson-library-row-icons > button:hover { background: var(--muted); color: var(--foreground); }
@@ -2183,6 +2183,20 @@
 .lesson-library-add-module:hover { color: var(--primary); }
 .lesson-library-add-module { width: fit-content; padding-left: 3px; }
 .lesson-library-add-lesson { margin: 6px 0 2px; border-top: 1px solid var(--muted); color: color-mix(in oklch, var(--muted-foreground) 78%, transparent); }
+.lesson-library-retry { padding: 4px 8px; border-radius: 5px; background: var(--destructive); color: var(--destructive-foreground, white); font-size: 11px; font-weight: 750; }
+.lesson-actions { position: relative; color: var(--muted-foreground); font-size: 11px; }
+.lesson-actions > summary { padding: 6px 8px; border-radius: 5px; cursor: pointer; list-style: none; font-weight: 650; }
+.lesson-actions > summary::-webkit-details-marker { display: none; }
+.lesson-actions > summary:hover, .lesson-actions[open] > summary { background: var(--muted); color: var(--foreground); }
+.lesson-actions-menu { position: absolute; z-index: 50; top: calc(100% + 3px); right: 0; display: grid; min-width: 190px; gap: 2px; padding: 6px; border: 1px solid var(--border); border-radius: 8px; background: var(--popover, var(--card)); box-shadow: 0 12px 30px color-mix(in oklch, var(--foreground) 16%, transparent); }
+.lesson-actions-menu button, .lesson-actions-menu label { display: flex; min-height: 30px; align-items: center; padding: 5px 7px; border-radius: 5px; text-align: left; font-size: 11px; font-weight: 650; }
+.lesson-actions-menu button:hover:not(:disabled) { background: var(--muted); color: var(--foreground); }
+.lesson-actions-menu button:disabled { opacity: .35; }
+.lesson-actions-menu .danger { color: var(--destructive); }
+.lesson-actions-menu label { display: grid; gap: 4px; color: var(--muted-foreground); }
+.lesson-actions-menu select { min-height: 28px; border: 1px solid var(--border); border-radius: 5px; background: var(--background); color: var(--foreground); }
+.lesson-actions-confirm { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; padding: 5px; font-size: 11px; }
+.lesson-actions-confirm > :first-child { grid-column: 1 / -1; }
 .lesson-library-first-lesson {
   display: grid;
   place-items: center;
@@ -2283,6 +2297,9 @@
   opacity: 0;
   transition: opacity .1s;
 }
+.lesson-document-block-chrome .lesson-actions > summary { padding: 4px 6px; font-size: 10px; }
+.lesson-document-block-chrome .lesson-actions-menu { top: 0; right: 100%; }
+.lesson-document-block-handle { gap: 5px; cursor: grab; }
 .lesson-document-block:hover > .lesson-document-block-chrome,
 .lesson-document-block:focus-within > .lesson-document-block-chrome { opacity: 1; }
 .lesson-document-block-chrome > button {
@@ -2301,7 +2318,7 @@
 .lesson-document-block.drop-before { box-shadow: inset 0 2px 0 var(--primary); }
 .lesson-document-block.drop-after { box-shadow: inset 0 -2px 0 var(--primary); }
 .lesson-document-piece-actions { display: flex; gap: 6px; min-height: 17px; }
-.lesson-document-piece-actions button { color: var(--muted-foreground); font-size: 9px; font-weight: 650; }
+.lesson-document-piece-actions button { color: var(--muted-foreground); font-size: 11px; font-weight: 650; }
 .lesson-document-piece-actions button:hover { color: var(--foreground); text-decoration: underline; }
 .lesson-document-piece-actions .danger { color: var(--destructive); }
 .lesson-document-insert { height: 7px; }
@@ -2329,6 +2346,9 @@
 .lesson-document-insert-choices kbd { margin-left: 4px; color: color-mix(in oklch, var(--muted-foreground) 70%, transparent); font: 600 9px ui-monospace, monospace; }
 .lesson-document-insert-choices > span { margin-left: auto; color: var(--muted-foreground); font-size: 9px; }
 .lesson-document-sentence { padding-block: 0; }
+.lesson-document-options { width: fit-content; margin-top: 4px; color: var(--muted-foreground); font-size: 11px; }
+.lesson-document-options > summary { cursor: pointer; font-weight: 650; }
+.lesson-document-options[open] .lesson-document-add-note { max-height: none; margin-top: 4px; overflow: visible; opacity: 1; }
 
 /* Sentence pieces flow like words — each sized to its own content and wrapping
    to the next line when the row is full. */

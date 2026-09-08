@@ -323,7 +323,8 @@ export type UndoableLessons = {
 export type UndoableAction =
   | LessonsAction
   | { type: "UNDO" }
-  | { type: "REDO" };
+  | { type: "REDO" }
+  | { type: "END_HISTORY_GROUP" };
 
 const HISTORY_LIMIT = 100;
 
@@ -347,6 +348,7 @@ function coalesceKey(action: LessonsAction): string | null {
     fields.languageBlockId,
     fields.lessonConceptId,
     fields.answerIndex,
+    fields.patch && Object.keys(fields.patch as object).sort().join(","),
   ].join(":");
 }
 
@@ -361,6 +363,9 @@ export function undoableLessonsReducer(
   state: UndoableLessons,
   action: UndoableAction,
 ): UndoableLessons {
+  if (action.type === "END_HISTORY_GROUP") {
+    return state.lastKey === null ? state : { ...state, lastKey: null };
+  }
   if (action.type === "UNDO") {
     if (state.past.length === 0) return state;
     return {
