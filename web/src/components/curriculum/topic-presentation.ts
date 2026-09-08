@@ -6,7 +6,6 @@ export const topicTitles: Record<string, string> = {
   "en-mappings": "English → Spanish",
   "phrasal-verbs-by-root": "Phrasal verbs · verb",
   "phrasal-verbs-by-particle": "Phrasal verbs · particle",
-  transformations: "Word building",
   "verb-forms": "Past forms",
   "verb-patterns": "Verb patterns",
   "questions-negation": "Questions & negatives",
@@ -15,14 +14,18 @@ export const topicTitles: Record<string, string> = {
 };
 
 export const topicDescriptions: Record<string, string> = {
-  transformations: "Build new words with endings and prefixes. The bold letters show the pattern.",
-  cognates: "Explore shared roots, spelling patterns, and false friends across Spanish and English.",
-  "verb-forms": "Explore regular endings and irregular past forms by sound pattern.",
+  cognates:
+    "Explore shared roots, spelling patterns, and false friends across Spanish and English.",
+  "verb-forms":
+    "Explore regular endings and irregular past forms by sound pattern.",
   "verb-patterns": "See how verbs combine with the words that follow them.",
   mappings: "Choose a Spanish word to explore its English meanings in context.",
-  "en-mappings": "Choose an English word to explore its Spanish meanings in context.",
-  "phrasal-verbs-by-root": "Choose a verb to explore its combinations with particles.",
-  "phrasal-verbs-by-particle": "Choose a particle to explore the phrasal verbs that use it.",
+  "en-mappings":
+    "Choose an English word to explore its Spanish meanings in context.",
+  "phrasal-verbs-by-root":
+    "Choose a verb to explore its combinations with particles.",
+  "phrasal-verbs-by-particle":
+    "Choose a particle to explore the phrasal verbs that use it.",
 };
 
 const shortLabels: Record<string, string> = {
@@ -71,8 +74,10 @@ const shortLabels: Record<string, string> = {
   "construction:followed-by-bare-infinitive": "let him go",
   "construction:followed-by-gerund": "enjoy going",
   "construction:allows-full-infinitive-or-gerund": "start to go / start going",
-  "construction:allows-bare-infinitive-or-present-participle": "saw him go / going",
-  "construction:allows-full-infinitive-or-bare-infinitive": "help him go / to go",
+  "construction:allows-bare-infinitive-or-present-participle":
+    "saw him go / going",
+  "construction:allows-full-infinitive-or-bare-infinitive":
+    "help him go / to go",
   "construction:somebody-bare-infinitive": "make her go",
   "construction:somebody-doing-something": "caught him going",
   "construction:have-something-done": "have something done",
@@ -89,17 +94,28 @@ const shortLabels: Record<string, string> = {
 
 export function presentFacet(facet: { collection: string; label: string }) {
   const { collection, label } = facet;
-  if (collection === "degree:comparative-er" || collection === "degree:superlative-est") {
+  if (
+    collection === "degree:comparative-er" ||
+    collection === "degree:superlative-est"
+  ) {
     const ending = collection === "degree:comparative-er" ? "er" : "est";
-    return { label: `hard${ending}`, before: "hard", emphasis: ending, after: "", description: label };
+    return {
+      label: `hard${ending}`,
+      before: "hard",
+      emphasis: ending,
+      after: "",
+      description: label,
+    };
   }
   const affix = collection.match(/^morphology:(suffix|prefix)-(.+)$/u);
   const example = label.match(/\([^()]*→\s*([^()]+)\)$/u);
   if (affix && example) {
     const word = example[1].trim().replace(/^(the|to) /u, "");
-    const ending = affix[2].split("-").find((part) =>
-      affix[1] === "suffix" ? word.endsWith(part) : word.startsWith(part),
-    );
+    const ending = affix[2]
+      .split("-")
+      .find((part) =>
+        affix[1] === "suffix" ? word.endsWith(part) : word.startsWith(part),
+      );
     if (ending) {
       const start = affix[1] === "suffix" ? word.length - ending.length : 0;
       return {
@@ -112,5 +128,11 @@ export function presentFacet(facet: { collection: string; label: string }) {
     }
   }
   const compact = shortLabels[collection] ?? label;
-  return { label: compact, before: compact, emphasis: "", after: "", description: label };
+  return {
+    label: compact,
+    before: compact,
+    emphasis: "",
+    after: "",
+    description: label,
+  };
 }

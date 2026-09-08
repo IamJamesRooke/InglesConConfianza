@@ -93,6 +93,27 @@ generic-article concept. No other demotions anywhere in the cleanup.
 
 ---
 
+## Cleanup pass — shrink the catalog (2026-09-07)
+
+User: "trash the things you think need to be trashed — if it's important I'll re-add it."
+
+- **292 `X ==> Y` derivation/inflection drill rows** → `trash`. Malformed
+  two-concepts-in-one-row format ("el vecino ==> el vecindario"), low value,
+  never taught. `curation-2026-09-07-trash-arrows.tsv`.
+- **39 redundant Mappings example rows** → `trash`. Concrete instances of a
+  preposition/possession pattern with no part of speech ("en el baño",
+  "en Bogotá", "una taza de café"). The patterns' real sense-mapping rows
+  remain. `curation-2026-09-07-trash-map-padding.tsv`.
+- **The Transformations topic** (English derivational morphology: -ness, -ly,
+  un-, re-) removed entirely. Its 294 rows were all the `==>` format above and
+  are now `trash`; the topic is gone from `CURRICULUM_TOPICS`. 22 topics → 21.
+- **33 comparative/superlative rows kept** — restored to `core` (comparison is
+  grammar; the `==>` format is ugly but the content stays, flagged to reformat).
+- Removed `"the time"` from `LEGACY_COLLECTIONS` (last carrier trashed).
+- Guardrail bands widened: `trash` is now a graveyard (~12%), not a holding pen.
+
+Non-trash catalog 4,251 → 3,948. MVP set (`core` + `essential`) unchanged at 1,364.
+
 ## Phase 2 — semantic re-audit (plan: `next-plan.md`)
 
 The frozen family→group grouping from phase-1 Batch 6 was never content-checked.
