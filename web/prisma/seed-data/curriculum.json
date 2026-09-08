@@ -1794,7 +1794,7 @@
         "topic:masc-consonant",
         "topic:abstract-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "qm6or4amql",
@@ -9707,7 +9707,7 @@
         "topic:masc-o",
         "topic:abstract-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ugaflsdk03",
@@ -11715,7 +11715,7 @@
         "audit:reviewed",
         "topic:fem-a"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "fj5mrpoqkv",
@@ -14216,7 +14216,7 @@
         "topic:masc-o",
         "topic:abstract-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "yome0dqotg",
@@ -21885,7 +21885,7 @@
         "topic:masc-o",
         "topic:abstract-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "2afxzimfwm",
@@ -24852,7 +24852,7 @@
         "adv:habitual",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "core"
     },
     {
       "id": "xhm0xh7x5i",
@@ -24870,7 +24870,7 @@
         "adv:habitual",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "core"
     },
     {
       "id": "kp75v3jgay",
@@ -30673,7 +30673,7 @@
         "pos:adverb",
         "topic:adv-time-relative-day"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "p5528lcbf2",
@@ -30691,7 +30691,7 @@
         "audit:reviewed",
         "topic:adv-time-now-and-timing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "core"
     },
     {
       "id": "vk183kq4k6",
@@ -30876,7 +30876,7 @@
         "grammar:intensifier",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "core"
     },
     {
       "id": "5oksfbyy9k",
@@ -31043,7 +31043,7 @@
         "audit:reviewed",
         "topic:estar-adj"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "n47hpbwe7i",
@@ -31093,7 +31093,7 @@
         "audit:reviewed",
         "topic:adj-ser-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "r2a8013xq8",
@@ -31451,7 +31451,7 @@
         "audit:reviewed",
         "topic:adv-time-relative-day"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "core"
     },
     {
       "id": "3ov21pqb58",
@@ -32125,7 +32125,7 @@
         "grammar:interrogative-adverb",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "core"
     },
     {
       "id": "0t9g2lohg7",
@@ -32787,7 +32787,7 @@
         "adv:degree",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "core"
     },
     {
       "id": "86ogukorla",
@@ -32837,7 +32837,7 @@
         "audit:reviewed",
         "topic:adj-ser-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "k2cbtbb9an",
@@ -32855,7 +32855,7 @@
         "audit:reviewed",
         "topic:adj-ser-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "6rm2kx5c4o",
@@ -33028,7 +33028,7 @@
         "audit:reviewed",
         "topic:adv-time-relative-day"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ozs312yyzn",
@@ -33065,7 +33065,7 @@
         "audit:reviewed",
         "topic:adv-time-relative-day"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "k2k4xsq191",
@@ -33151,7 +33151,7 @@
         "audit:reviewed",
         "topic:adv-time-relative-day"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "w6bnljz9zs",
@@ -33186,7 +33186,7 @@
         "audit:reviewed",
         "topic:adv-time-relative-day"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "sk2u1fvotp",
@@ -33204,7 +33204,7 @@
         "audit:reviewed",
         "topic:adv-time-relative-day"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "aaz55zvczl",
@@ -33238,7 +33238,7 @@
         "audit:reviewed",
         "topic:adv-time-relative-day"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "yk8mablp0c",
@@ -33256,7 +33256,7 @@
         "audit:reviewed",
         "topic:adv-time-relative-day"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "v2bifwqn7l",
@@ -33292,7 +33292,7 @@
         "audit:reviewed",
         "topic:adv-time-relative-day"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "sdjzwrjzji",
@@ -33402,7 +33402,7 @@
         "adv:degree",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "core"
     },
     {
       "id": "efzsdnarz6",
@@ -33802,7 +33802,7 @@
         "pos:adverb",
         "topic:adv-time-now-and-timing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "lcz2539dyj",
@@ -34295,7 +34295,7 @@
         "audit:reviewed",
         "topic:adj-ser-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "tidi1ymaul",
@@ -34607,7 +34607,7 @@
         "pos:adjective",
         "topic:adj-ser-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "core"
     },
     {
       "id": "map0ad7rwe",
@@ -34799,7 +34799,7 @@
         "grammar:frequency-adverb",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ecnxsk18jb",
@@ -34817,7 +34817,7 @@
         "grammar:frequency-adverb",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "k2awm82sbn",
@@ -34835,7 +34835,7 @@
         "grammar:frequency-adverb",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "sdju2vvodp",
@@ -34853,7 +34853,7 @@
         "grammar:frequency-adverb",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "59sy6jp2jo",
@@ -34944,7 +34944,7 @@
         "audit:reviewed",
         "topic:adv-time-now-and-timing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "core"
     },
     {
       "id": "2b50xdv2ra",
@@ -35350,7 +35350,7 @@
         "audit:reviewed",
         "topic:adv-time-now-and-timing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ucq0kj4623",
@@ -35368,7 +35368,7 @@
         "audit:reviewed",
         "topic:adv-time-now-and-timing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "i4lcwbw8pd",
@@ -35737,7 +35737,7 @@
         "audit:reviewed",
         "topic:adj-ico-ica"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "gjot4oxazn",
@@ -36038,7 +36038,7 @@
         "audit:reviewed",
         "topic:adj-ser-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "core"
     },
     {
       "id": "36avddqr7m",
@@ -37104,7 +37104,7 @@
         "audit:reviewed",
         "topic:adj-ser-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "weed7b2306",
@@ -37413,7 +37413,7 @@
         "audit:reviewed",
         "topic:adj-ente"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "8w5qasxh42",
@@ -37455,7 +37455,7 @@
         "audit:reviewed",
         "topic:adj-ser-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "core"
     },
     {
       "id": "gotkvix6h4",
@@ -37494,7 +37494,7 @@
         "audit:reviewed",
         "topic:adj-ser-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "bck2ng1flr",
@@ -58357,7 +58357,7 @@
         "topic:fem-a",
         "topic:objects-communication-media"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "cx21gif0mc",
@@ -58377,7 +58377,7 @@
         "topic:masc-o",
         "topic:objects-money-business"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "tb4pl8tpv6",
@@ -58439,7 +58439,7 @@
         "topic:masc-o",
         "topic:objects-money-business"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "n4uu5aergm",
@@ -58459,7 +58459,7 @@
         "topic:masc-consonant",
         "topic:objects-money-business"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "4iu89gjrym",
@@ -58561,7 +58561,7 @@
         "topic:fem-a",
         "topic:objects-misc-language"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "w163e394kz",
@@ -58581,7 +58581,7 @@
         "topic:fem-a",
         "topic:objects-misc-language"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "kb60ft9vlh",
@@ -58721,7 +58721,7 @@
         "topic:fem-a",
         "topic:objects-communication-media"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "tgg4f3gsz3",
@@ -58741,7 +58741,7 @@
         "topic:fem-a",
         "topic:objects-communication-media"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "1ngo1jbzh2",
@@ -58843,7 +58843,7 @@
         "topic:masc-o",
         "topic:objects-money-business"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "g1yh4vj4da",
@@ -58863,7 +58863,7 @@
         "topic:fem-a",
         "topic:objects-money-business"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "wjxfz4hww7",
@@ -58883,7 +58883,7 @@
         "topic:fem-a",
         "topic:objects-money-business"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "ezf2ocstyu",
@@ -58935,7 +58935,7 @@
         "en:third",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "sgvxuylgfs",
@@ -58970,7 +58970,7 @@
         "en:quarter",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "h1w3xoe5v0",
@@ -60645,7 +60645,7 @@
         "audit:reviewed",
         "pos:adverb"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "itbjcq4mo3",
@@ -60943,7 +60943,7 @@
         "audit:reviewed",
         "topic:adv-time-now-and-timing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "3csk0n8wv5",
@@ -66788,7 +66788,7 @@
         "adv:degree",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "6ph12ct0c1",
@@ -66805,7 +66805,7 @@
         "en:hardly",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "4owlerryxw",
@@ -67052,7 +67052,7 @@
         "audit:reviewed",
         "topic:adj-ser-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "core"
     },
     {
       "id": "u1f7kuozok",
@@ -73916,7 +73916,7 @@
         "audit:reviewed",
         "topic:morph-ward"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "na9c6zc7g3",
@@ -73938,7 +73938,7 @@
         "audit:reviewed",
         "topic:morph-ward"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "i1wqgc6i2p",
@@ -73961,7 +73961,7 @@
         "topic:location",
         "topic:transformation"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "nglcabemco",
@@ -73984,7 +73984,7 @@
         "topic:location",
         "topic:transformation"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "kcwee5uzri",
@@ -78069,7 +78069,7 @@
         "en:almost",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "fkw0rhnl5g",
@@ -78141,7 +78141,7 @@
         "en:almost",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "k70eg8dyji",
@@ -78239,7 +78239,7 @@
         "pos:adverb",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "0nfltazrdk",
@@ -96166,7 +96166,7 @@
         "audit:reviewed",
         "topic:adj-ser-general"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "common"
     },
     {
       "id": "rh4yfb08hn",
