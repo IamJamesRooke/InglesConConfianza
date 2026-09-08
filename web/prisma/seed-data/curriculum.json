@@ -450,9 +450,11 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:map-querer"
+        "topic:map-querer",
+        "topic:social-expression",
+        "expr:response"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "essential"
     },
     {
       "id": "5jgulxtbag",
@@ -551,9 +553,11 @@
         "en:anytime",
         "topic:multi-sense",
         "audit:reviewed",
-        "topic:map-querer"
+        "topic:map-querer",
+        "topic:social-expression",
+        "expr:response"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "essential"
     },
     {
       "id": "oysek8zs4j",
@@ -3351,9 +3355,11 @@
         "en:matter",
         "topic:multi-sense",
         "audit:reviewed",
-        "topic:map-dar"
+        "topic:map-dar",
+        "topic:social-expression",
+        "expr:idiom"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "essential"
     },
     {
       "id": "xxwtx8g012",
@@ -3371,9 +3377,11 @@
         "es:me",
         "topic:multi-sense",
         "audit:reviewed",
-        "topic:map-dar"
+        "topic:map-dar",
+        "topic:social-expression",
+        "expr:idiom"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "essential"
     },
     {
       "id": "ukz1l748d8",
@@ -22295,9 +22303,11 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:map-que"
+        "topic:map-que",
+        "topic:social-expression",
+        "expr:idiom"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "essential"
     },
     {
       "id": "kafdnl1n7j",
@@ -22314,9 +22324,11 @@
         "en:who",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:social-expression",
+        "expr:idiom"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "essential"
     },
     {
       "id": "ugu6mryvd1",
@@ -22331,9 +22343,11 @@
         "grammar:fixed-expression",
         "es:ya",
         "topic:multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:social-expression",
+        "expr:response"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "essential"
     },
     {
       "id": "g4s8ww83pl",
@@ -24452,9 +24466,11 @@
         "en:big",
         "topic:multi-sense",
         "audit:reviewed",
-        "topic:map-ser"
+        "topic:map-ser",
+        "topic:social-expression",
+        "expr:idiom"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "essential"
     },
     {
       "id": "0pj00hx6vk",
@@ -27546,9 +27562,11 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:map-ver"
+        "topic:map-ver",
+        "topic:social-expression",
+        "expr:idiom"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "essential"
     },
     {
       "id": "kxen1brnbt",
@@ -27565,9 +27583,11 @@
         "en:we",
         "topic:multi-sense",
         "audit:reviewed",
-        "topic:map-ver"
+        "topic:map-ver",
+        "topic:social-expression",
+        "expr:idiom"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "essential"
     },
     {
       "id": "9rd5kxnrcp",
@@ -27586,9 +27606,11 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:map-ver",
-        "topic:enmap-you"
+        "topic:enmap-you",
+        "topic:social-expression",
+        "expr:idiom"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "essential"
     },
     {
       "id": "6vpv4m0g02",
@@ -30243,9 +30265,11 @@
         "en:come",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:enmap-come"
+        "topic:enmap-come",
+        "topic:social-expression",
+        "expr:warning-command"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "essential"
     },
     {
       "id": "rh92u94gb4",
@@ -30260,9 +30284,11 @@
         "en:go",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:enmap-go"
+        "topic:enmap-go",
+        "topic:social-expression",
+        "expr:warning-command"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "essential"
     },
     {
       "id": "zeorvyamau",
@@ -30385,9 +30411,11 @@
         "es:alto",
         "en:stop",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:social-expression",
+        "expr:warning-command"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "essential"
     },
     {
       "id": "8b641cek21",
@@ -30421,7 +30449,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "1vi4oe10ip",
@@ -30436,7 +30464,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "xymr8kc90t",
@@ -30472,7 +30500,7 @@
         "adv:degree",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "core"
     },
     {
       "id": "9gk6xesysy",
@@ -30676,7 +30704,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "2s5vxvtzad",
@@ -31243,7 +31271,7 @@
         "audit:reviewed",
         "topic:enmap-with"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "kg63snjtds",
@@ -32019,9 +32047,11 @@
         "en:of",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:enmap-of"
+        "topic:enmap-of",
+        "topic:social-expression",
+        "expr:response"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "essential"
     },
     {
       "id": "oo26n3eya6",
@@ -32036,9 +32066,11 @@
         "es:hasta",
         "en:see",
         "topic:en-multi-sense",
-        "audit:reviewed"
+        "audit:reviewed",
+        "topic:social-expression",
+        "expr:farewell"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "essential"
     },
     {
       "id": "2i2eb7xpzj",
@@ -32561,7 +32593,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "7c8rxvmsnl",
@@ -32660,9 +32692,11 @@
         "audit:reviewed",
         "topic:phr-get",
         "topic:map-ser",
-        "topic:enmap-get"
+        "topic:enmap-get",
+        "topic:social-expression",
+        "expr:warning-command"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "essential"
     },
     {
       "id": "ws6aqyp5xd",
@@ -32719,7 +32753,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "5i08zx64uf",
@@ -33580,7 +33614,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "p3ekkb7u3j",
@@ -33688,7 +33722,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "dzhyd6xsd6",
@@ -34337,7 +34371,7 @@
         "topic:multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "rare"
+      "curriculumRole": "core"
     },
     {
       "id": "4lsz5atrxx",
@@ -34911,7 +34945,7 @@
         "audit:reviewed",
         "topic:adv-time-now-and-timing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "core"
     },
     {
       "id": "q60j06yhe9",
@@ -35012,7 +35046,7 @@
         "en:here",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "core"
     },
     {
       "id": "ytz0ph603p",
@@ -36346,7 +36380,7 @@
         "pos:adverb",
         "topic:adv-time-now-and-timing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "core"
     },
     {
       "id": "z1kohrhmbw",
@@ -37886,7 +37920,7 @@
         "audit:reviewed",
         "topic:adv-time-now-and-timing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "core"
     },
     {
       "id": "nlhs6bn2mk",
@@ -58972,7 +59006,7 @@
         "adv:possibility",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "core"
     },
     {
       "id": "x788022mpy",
@@ -58989,7 +59023,7 @@
         "adv:possibility",
         "audit:reviewed"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "core"
     },
     {
       "id": "03cqmjtz6k",
@@ -96036,7 +96070,7 @@
         "audit:reviewed",
         "topic:adv-time-now-and-timing"
       ],
-      "curriculumRole": "extended"
+      "curriculumRole": "core"
     },
     {
       "id": "erxz8fgsnr",

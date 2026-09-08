@@ -74,10 +74,8 @@ material is temporarily sitting in `rare`).
 ## Phases
 
 **PHASE 3 COMPLETE (P3-0..P3-6), 2026-09-07.** Final tiers:
-core 863 / essential 389 / common 495 / extended 1553 / rare 951 / trash 233.
+core 880 / essential 406 / common 495 / extended 1545 / rare 925 / trash 233.
 All six guardrail bands in target. Open follow-ups, all optional:
-- conversational fillers stranded in rare for want of a topic:expression
-  tag (a ver, quien sabe, ya se, que yo sepa).
 - the common / extended / rare boundaries within the vocabulary tiers are a
   first coarse pass — a per-topic review would sharpen them.
 
@@ -92,7 +90,8 @@ All six guardrail bands in target. Open follow-ups, all optional:
 | P3-4a | Rescue grammar stranded in rare/common → core | Sonnet | **done** (`459bfeea`) — 279 rows (pronouns, prepositions, connectors, determiners, modal/copula verbs). Core 448→727. |
 | P3-4b | Split `extended` out of `rare` | Sonnet | **done** — 1616 rows rare→extended (everything not a transparent cognate, paradigm drill, or bare mapping anchor). |
 | P3-5 | Boundary review, guardrail retune, docs, memory | Sonnet | **done** — guardrails tuned; README + memory + policy updated. |
-| P3-6 | Verb-Pattern / Q&N / Imperative / passive grammar → core | Sonnet | **done** — 136 rows: the Verb Patterns, Questions & Negation, and Imperatives topic content was still in the vocab tiers. Core 727→863. |
+| P3-6 | Verb-Pattern / Q&N / Imperative / passive grammar → core | Sonnet | **done** — 136 rows. Core 727→863. |
+| P3-7 | Stranded function words + conversational expressions | Sonnet | **done** — 17 bare function words (con, si, entonces, después, hasta, para que, aún, ya, quizá) → core; 17 conversational expressions (quién sabe, a ver, desde luego, ¡Adelante!, Hasta luego) → essential + tagged `topic:social-expression` so they reach the Expressions page. |
 
 ### P3-1 detail
 
