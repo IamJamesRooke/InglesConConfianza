@@ -14,26 +14,12 @@ import { prisma } from "../src/lib/database/prisma";
 //   npm run curriculum:audit:status -- --n=25  # next 25
 
 const ORDER = [
-  "pronouns",
-  "determiners",
-  "interrogatives",
-  "questions-negation",
-  "imperatives",
-  "nouns",
-  "adjectives",
-  "adverbs",
-  "verbs",
-  "numbers",
-  "connectors",
-  "prepositions",
-  "expressions",
-  "collocations",
-  "verb-patterns",
-  "verb-forms",
-  "mappings",
-  "en-mappings",
-  "phrasal-verbs-by-root",
-  "phrasal-verbs-by-particle",
+  "pronouns", "determiners", "interrogatives", "questions-negation", "imperatives",
+  "nouns", "adjectives", "adverbs", "verbs", "numbers", "connectors", "prepositions",
+  "expressions", "collocations",
+  "verb-patterns", "verb-forms", "transformations",
+  "mappings", "en-mappings",
+  "phrasal-verbs-by-root", "phrasal-verbs-by-particle",
   "cognates",
 ];
 
@@ -51,17 +37,13 @@ const ORDER = [
 //   common    — the course right after the MVP; mid-tier everyday vocabulary
 //   extended  — the pool of vocabulary for later / advanced courses
 //   rare      — transparent cognates, paradigm drills, bare mapping anchors
-// Bands are % of the FULL catalog (trash included). `trash` ran ~5% through
-// Phase 1-3; the 2026-09-07 cleanup pass (==> derivation drills, Mappings
-// padding, the retired Transformations topic) pushed it to ~12% and it is now
-// a graveyard, not a holding pen — the wide band reflects that.
 const ROLE_TARGETS: Record<string, [number, number]> = {
-  core: [18, 25],
+  core: [17, 24],
   essential: [6, 11],
-  common: [14, 22],
+  common: [13, 22],
   extended: [20, 32],
-  rare: [14, 24],
-  trash: [4, 16],
+  rare: [20, 30],
+  trash: [3, 6],
 };
 
 async function main() {
@@ -70,14 +52,7 @@ async function main() {
   const nArg = args.find((a) => a.startsWith("--n="));
   const n = nArg ? Number.parseInt(nArg.slice(4), 10) : 10;
 
-  type Unit = {
-    slug: string;
-    title: string;
-    collection: string;
-    label: string;
-    total: number;
-    reviewed: number;
-  };
+  type Unit = { slug: string; title: string; collection: string; label: string; total: number; reviewed: number };
   const units: Unit[] = [];
 
   for (const slug of ORDER) {
@@ -85,10 +60,7 @@ async function main() {
     if (!topic) continue;
     for (const f of topic.facetButtons) {
       const total = await prisma.curriculumConcept.count({
-        where: {
-          curriculumRole: { not: "trash" },
-          collections: { some: { collectionName: f.collection } },
-        },
+        where: { curriculumRole: { not: "trash" }, collections: { some: { collectionName: f.collection } } },
       });
       const reviewed = await prisma.curriculumConcept.count({
         where: {
@@ -99,74 +71,42 @@ async function main() {
           AND: { collections: { some: { collectionName: "audit:reviewed" } } },
         },
       });
-      units.push({
-        slug,
-        title: topic.title,
-        collection: f.collection,
-        label: f.label,
-        total,
-        reviewed,
-      });
+      units.push({ slug, title: topic.title, collection: f.collection, label: f.label, total, reviewed });
     }
   }
 
   const done = units.filter((u) => u.total > 0 && u.reviewed >= u.total);
-  const incomplete = units.filter(
-    (u) => !(u.total > 0 && u.reviewed >= u.total),
-  );
+  const incomplete = units.filter((u) => !(u.total > 0 && u.reviewed >= u.total));
 
   console.log(`=== Full audit status ===`);
   console.log(`Track A units: ${done.length}/${units.length} fully reviewed`);
 
-  const totalConcepts = await prisma.curriculumConcept.count({
-    where: { curriculumRole: { not: "trash" } },
-  });
+  const totalConcepts = await prisma.curriculumConcept.count({ where: { curriculumRole: { not: "trash" } } });
   const reviewedConcepts = await prisma.curriculumConcept.count({
-    where: {
-      curriculumRole: { not: "trash" },
-      collections: { some: { collectionName: "audit:reviewed" } },
-    },
+    where: { curriculumRole: { not: "trash" }, collections: { some: { collectionName: "audit:reviewed" } } },
   });
   const flaggedConcepts = await prisma.curriculumConcept.count({
     where: { collections: { some: { collectionName: "audit:flagged" } } },
   });
-  console.log(
-    `Track B concepts: ${reviewedConcepts}/${totalConcepts} reviewed (${((reviewedConcepts / totalConcepts) * 100).toFixed(1)}%)`,
-  );
-  console.log(
-    `Flagged for user review: ${flaggedConcepts} (see full-audit-findings.md)`,
-  );
+  console.log(`Track B concepts: ${reviewedConcepts}/${totalConcepts} reviewed (${((reviewedConcepts / totalConcepts) * 100).toFixed(1)}%)`);
+  console.log(`Flagged for user review: ${flaggedConcepts} (see full-audit-findings.md)`);
 
   console.log(`\n=== Role distribution vs. guardrail ===`);
-  const roles = await prisma.curriculumConcept.groupBy({
-    by: ["curriculumRole"],
-    _count: true,
-  });
+  const roles = await prisma.curriculumConcept.groupBy({ by: ["curriculumRole"], _count: true });
   const grandTotal = roles.reduce((s, r) => s + r._count, 0);
   for (const r of roles) {
     const pct = (r._count / grandTotal) * 100;
     const target = ROLE_TARGETS[r.curriculumRole];
-    const flag =
-      target && (pct < target[0] || pct > target[1])
-        ? "  <-- outside target range"
-        : "";
-    console.log(
-      `  ${r.curriculumRole}\t${r._count}\t${pct.toFixed(1)}%${target ? ` (target ${target[0]}-${target[1]}%)` : ""}${flag}`,
-    );
+    const flag = target && (pct < target[0] || pct > target[1]) ? "  <-- outside target range" : "";
+    console.log(`  ${r.curriculumRole}\t${r._count}\t${pct.toFixed(1)}%${target ? ` (target ${target[0]}-${target[1]}%)` : ""}${flag}`);
   }
 
-  console.log(
-    `\n=== Next ${showAll ? "all" : n} incomplete units (in priority order) ===`,
-  );
-  for (const u of showAll ? incomplete : incomplete.slice(0, n)) {
-    console.log(
-      `[ ] ${u.title} / \`${u.collection}\` — ${u.label} (${u.reviewed}/${u.total} reviewed)`,
-    );
+  console.log(`\n=== Next ${showAll ? "all" : n} incomplete units (in priority order) ===`);
+  for (const u of (showAll ? incomplete : incomplete.slice(0, n))) {
+    console.log(`[ ] ${u.title} / \`${u.collection}\` — ${u.label} (${u.reviewed}/${u.total} reviewed)`);
   }
   if (!showAll && incomplete.length > n) {
-    console.log(
-      `... and ${incomplete.length - n} more incomplete units (--all to see all, --n=N for a different count)`,
-    );
+    console.log(`... and ${incomplete.length - n} more incomplete units (--all to see all, --n=N for a different count)`);
   }
 }
 main().then(() => prisma.$disconnect());

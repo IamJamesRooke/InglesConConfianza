@@ -315,6 +315,7 @@ export const LEGACY_COLLECTIONS: ReadonlySet<string> = new Set([
   "texture",
   "that is",
   "that said",
+  "the time",
   "then again",
   "there are",
   "there is",

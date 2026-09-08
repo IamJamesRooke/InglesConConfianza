@@ -221,6 +221,10 @@ const EXPECTED_FAMILY_STRUCTURE: Record<string, Array<[string, number]>> = {
     ["P–T", 5],
     ["U–Z", 3],
   ],
+  transformations: [
+    ["Endings", 23],
+    ["Word types", 14],
+  ],
   "verb-forms": [
     ["Regular endings", 3],
     ["Irregular patterns", 50],

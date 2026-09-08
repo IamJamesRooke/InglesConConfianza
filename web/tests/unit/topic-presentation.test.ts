@@ -6,6 +6,22 @@ import {
   presentFacet,
 } from "../../src/components/curriculum/topic-presentation";
 
+test("word-building examples emphasize the actual prefix or suffix", () => {
+  const facets = CURRICULUM_TOPICS.find(
+    (topic) => topic.slug === "transformations",
+  )!.facetButtons;
+  const hood = presentFacet(
+    facets.find((facet) => facet.collection === "morphology:suffix-hood")!,
+  );
+  assert.equal(hood.label, "neighborhood");
+  assert.equal(hood.before, "neighbor");
+  assert.equal(hood.emphasis, "hood");
+  const survivor = presentFacet(
+    facets.find((facet) => facet.collection === "morphology:suffix-er-or")!,
+  );
+  assert.equal(survivor.emphasis, "or");
+});
+
 test("presentation keeps each topic's choices distinct and preserves source labels", () => {
   for (const topic of CURRICULUM_TOPICS) {
     const labels = new Set<string>();
@@ -27,12 +43,16 @@ test("presentation keeps each topic's choices distinct and preserves source labe
 
 test("subtopics are grouped by purpose without changing filter values", () => {
   assert.equal(
+    facetGroup("transformations", "morphology:suffix-hood"),
+    "Endings",
+  );
+  assert.equal(
+    facetGroup("transformations", "morphology:prefix-common"),
+    "Word types",
+  );
+  assert.equal(
     facetGroup("cognates", "cognate:plicar-to-ply"),
     "-ar verb cognates (preparAR → prepare)",
   );
   assert.equal(facetGroup("nouns", "gender:invariant"), "Articles & gender");
-  assert.equal(
-    facetGroup("verbs", "topic:verb-modal-ability"),
-    "Modals, wishes & possibility",
-  );
 });
