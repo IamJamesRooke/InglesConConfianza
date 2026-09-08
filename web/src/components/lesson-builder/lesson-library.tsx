@@ -165,6 +165,7 @@ export function LessonLibrary({
                     const status = issues > 0 ? "Needs attention" : lesson.blocks.length === 0 || lesson.concepts.length === 0 || !lesson.name?.trim() ? "Draft" : "Ready";
                     return (
                       <article key={lesson.id} className="lesson-library-row">
+                        <div className="lesson-library-row-head">
                         <button type="button" className="lesson-library-open" onClick={() => onOpenLesson(module.id, lesson.id)}>
                           <span className="lesson-library-number">{courseLessonIndex + 1}</span>
                           <span className="lesson-library-summary">
@@ -186,8 +187,9 @@ export function LessonLibrary({
                           </div>}
                         </div>
                         <button type="button" className="lesson-library-content-toggle" aria-expanded={expandedLessons.has(lesson.id)} onClick={() => setExpandedLessons((current) => { const next = new Set(current); if (next.has(lesson.id)) next.delete(lesson.id); else next.add(lesson.id); return next; })}>
-                          {expandedLessons.has(lesson.id) ? "Hide content" : "Show content"}
+                          {expandedLessons.has(lesson.id) ? "Hide" : "Show"}
                         </button>
+                        </div>
                         {expandedLessons.has(lesson.id) && <LessonBlockPreviewList blocks={lesson.blocks} />}
                       </article>
                     );
