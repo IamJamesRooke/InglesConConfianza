@@ -1208,6 +1208,7 @@ export default function LessonBuilderPage() {
 
       if (
         usesMod &&
+        !isZenMode &&
         !event.altKey &&
         event.key === "Enter" &&
         !event.repeat &&
@@ -2295,7 +2296,6 @@ export default function LessonBuilderPage() {
 
   function deleteActiveContentBlock() {
     if (!activeLesson || !activeBlock) return;
-    if (!window.confirm("Delete this content block?")) return;
     deleteContentBlock(activeLesson.id, activeBlock.id);
   }
 
@@ -2437,7 +2437,6 @@ export default function LessonBuilderPage() {
         id: "lesson-preview",
         label: "Preview active lesson",
         detail: targetLabel,
-        shortcut: "Ctrl/Cmd+Enter",
         icon: "open",
         disabledReason: !commandTarget
           ? "Select a lesson first"

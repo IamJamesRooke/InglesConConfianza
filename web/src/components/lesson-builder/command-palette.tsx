@@ -113,7 +113,7 @@ export function CommandPalette({
       role="dialog"
       aria-modal="true"
       aria-labelledby="builder-command-palette-title"
-      className="fixed inset-0 z-50 flex items-start justify-center bg-stone-950/35 p-3 pt-[12vh] sm:p-6"
+      className="fixed inset-0 z-[120] flex items-start justify-center bg-stone-950/35 p-3 pt-[12vh] sm:p-6"
       onMouseDown={(event) => {
         if (event.target === event.currentTarget) {
           onClose();

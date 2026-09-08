@@ -107,6 +107,8 @@ export function LessonAuthoringSession({
         event.preventDefault(); setOpenMenu("add");
       } else if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key.toLowerCase() === "o") {
         event.preventDefault(); setOpenMenu("outline");
+      } else if ((event.ctrlKey || event.metaKey) && !event.shiftKey && event.key === "Enter") {
+        event.preventDefault(); setOpenMenu("add");
       } else if (event.key === "?" && !isTextEntry) {
         event.preventDefault(); setShowKeyboardHelp(true);
       }
@@ -164,7 +166,7 @@ export function LessonAuthoringSession({
                 <button type="button" onClick={() => { onMoveStep(-1); setOpenMenu(null); }} disabled={safeStepIndex === 0}>Move earlier <kbd>{shortcutKey}⇧↑</kbd></button>
                 <button type="button" onClick={() => { onMoveStep(1); setOpenMenu(null); }} disabled={safeStepIndex === totalSteps - 1}>Move later <kbd>{shortcutKey}⇧↓</kbd></button>
                 <button type="button" onClick={() => { onDuplicateStep(); setOpenMenu(null); }}><Copy size={15} /> Duplicate <kbd>{shortcutKey}⇧D</kbd></button>
-                <button type="button" className="danger" onClick={() => { onDeleteStep(); setOpenMenu(null); }}><Trash2 size={15} /> Delete</button>
+                <button type="button" className="danger" onClick={() => { onDeleteStep(); setOpenMenu(null); }}><Trash2 size={15} /> Delete slide</button>
               </div>}
             </div>}
             <div className="authoring-menu-anchor">
@@ -218,7 +220,7 @@ function LessonEnding({ lesson, issues, onVisitIssue, onPreview }: { lesson: Les
 }
 
 function KeyboardHelp({ shortcutKey, onClose }: { shortcutKey: string; onClose: () => void }) {
-  const rows = [["Tab / Shift Tab", "Move through fields"], ["PageUp / PageDown", "Previous or next slide"], [`${shortcutKey} K`, "Find any action or lesson"], [`${shortcutKey} S`, "Save now"], [`${shortcutKey} Enter`, "Try the lesson"], [`${shortcutKey} Shift A`, "Add a slide"], [`${shortcutKey} Shift O`, "Open lesson outline"], [`${shortcutKey} Shift 1 / 2`, "Mark selected text Spanish or English"], [`${shortcutKey} B`, "Bold selected text"], [`${shortcutKey} Shift 0`, "Clear selected formatting"], ["Escape", "Finish editing or close a menu"]];
+  const rows = [["Tab / Shift Tab", "Move through fields"], ["PageUp / PageDown", "Previous or next slide"], [`${shortcutKey} K`, "Find any action or lesson"], [`${shortcutKey} S`, "Save now"], [`${shortcutKey} Enter`, "Add the next slide"], [`${shortcutKey} Shift A`, "Add a slide"], [`${shortcutKey} Shift O`, "Open lesson outline"], [`${shortcutKey} Shift 1 / 2`, "Mark selected text Spanish or English"], [`${shortcutKey} B`, "Bold selected text"], [`${shortcutKey} Shift 0`, "Clear selected formatting"], ["Escape", "Finish editing or close a menu"]];
   return <div className="authoring-help-backdrop" role="dialog" aria-modal="true" aria-label="Keyboard shortcuts" onMouseDown={(event) => event.target === event.currentTarget && onClose()}><div className="authoring-help-dialog"><div><span><List size={18} /> Keyboard shortcuts</span><button type="button" autoFocus onClick={onClose} aria-label="Close"><X size={18} /></button></div>{rows.map(([keys, label]) => <p key={keys}><span>{label}</span><kbd>{keys}</kbd></p>)}</div></div>;
 }
 

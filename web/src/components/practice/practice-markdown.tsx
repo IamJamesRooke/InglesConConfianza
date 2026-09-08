@@ -206,6 +206,13 @@ export function EditablePracticeMarkdown({
         mark.append(contents);
         range.insertNode(mark);
       }
+      const neutralCaret = document.createTextNode("\u200B");
+      mark.after(neutralCaret);
+      const caret = document.createRange();
+      caret.setStart(neutralCaret, 1);
+      caret.collapse(true);
+      selection?.removeAllRanges();
+      selection?.addRange(caret);
     }
 
     const nextMarkdown = serializeEditableMarkdown(root);
@@ -341,7 +348,7 @@ function serializeInlineNodes(node: ParentNode) {
 }
 
 function serializeInlineNode(node: Node): string {
-  if (node.nodeType === Node.TEXT_NODE) return node.textContent ?? "";
+  if (node.nodeType === Node.TEXT_NODE) return (node.textContent ?? "").replaceAll("\u200B", "");
   if (!(node instanceof HTMLElement)) return "";
 
   const content = serializeInlineNodes(node);

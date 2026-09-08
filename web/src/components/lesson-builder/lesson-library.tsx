@@ -24,6 +24,7 @@ import {
 } from "@/components/lesson-builder/lesson-concepts-field";
 import type { Lesson, LessonModule } from "@/lib/lesson-builder/types";
 import { getSentenceValidationIssueCount } from "@/lib/lesson-builder/utils";
+import { LessonBlockPreviewList } from "@/components/lesson-builder/lesson-block-preview";
 
 export function LessonLibrary({
   modules,
@@ -62,6 +63,7 @@ export function LessonLibrary({
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
   const [settingsModuleId, setSettingsModuleId] = useState<string | null>(null);
   const [openLessonMenu, setOpenLessonMenu] = useState<string | null>(null);
+  const [expandedLessons, setExpandedLessons] = useState<Set<string>>(new Set());
   const lessonById = useMemo(
     () => new Map(lessons.map((lesson) => [lesson.id, lesson])),
     [lessons],
@@ -183,6 +185,10 @@ export function LessonLibrary({
                             <button type="button" className="danger" onClick={() => { onDeleteLesson(lesson.id); setOpenLessonMenu(null); }}><Trash2 size={14} /> Delete</button>
                           </div>}
                         </div>
+                        <button type="button" className="lesson-library-content-toggle" aria-expanded={expandedLessons.has(lesson.id)} onClick={() => setExpandedLessons((current) => { const next = new Set(current); if (next.has(lesson.id)) next.delete(lesson.id); else next.add(lesson.id); return next; })}>
+                          {expandedLessons.has(lesson.id) ? "Hide content" : "Show content"}
+                        </button>
+                        {expandedLessons.has(lesson.id) && <LessonBlockPreviewList blocks={lesson.blocks} />}
                       </article>
                     );
                   })}

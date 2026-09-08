@@ -49,6 +49,8 @@ export function SentencePracticeCard({
     new Set<"promptLabel" | "helperText" | "answerFeedback">(),
   );
   const inputRefs = useRef<Array<HTMLInputElement | null>>([]);
+  const spanishInputRefs = useRef<Array<HTMLInputElement | null>>([]);
+  const pendingNewPieceFocus = useRef(false);
   const helpTimerRef = useRef<number | null>(null);
   const hasFeedback = Boolean(sentence.answerFeedback?.trim());
   const correctAnswers = sentence.languageBlocks.map(
@@ -123,6 +125,12 @@ export function SentencePracticeCard({
     return () => window.clearTimeout(timer);
   }, [authoring, sentence.id]);
 
+  useEffect(() => {
+    if (!authoring || !pendingNewPieceFocus.current) return;
+    pendingNewPieceFocus.current = false;
+    spanishInputRefs.current.at(-1)?.focus();
+  }, [authoring, sentence.languageBlocks.length]);
+
   function updatePreviewAnswer(answer: string, languageBlockIndex: number) {
     if (helpedBlockIndex === languageBlockIndex) {
       clearHelpTimer();
@@ -180,6 +188,7 @@ export function SentencePracticeCard({
   return (
     <div
       className={`sentence-practice learner-enter ${isSingleLanguageBlock ? "single-answer" : ""} ${isVocabulary ? "vocabulary-practice" : ""}`}
+      tabIndex={authoring ? -1 : undefined}
     >
       {authoring && (
         <div className="authoring-practice-view" aria-label="Learner state shown on the canvas">
@@ -239,6 +248,7 @@ export function SentencePracticeCard({
                 >
                   {authoring ? (
                     <input
+                      ref={(element) => { spanishInputRefs.current[languageBlockIndex] = element; }}
                       autoFocus={languageBlockIndex === 0}
                       value={languageBlock.spanish}
                       onChange={(event) =>
@@ -248,6 +258,16 @@ export function SentencePracticeCard({
                       data-authoring-field="spanish"
                       placeholder="Spanish prompt…"
                       aria-label="Spanish prompt"
+                      onKeyDown={(event) => {
+                        if (!authoring || event.key !== "Tab") return;
+                        if (event.shiftKey && languageBlockIndex > 0) {
+                          event.preventDefault();
+                          inputRefs.current[languageBlockIndex - 1]?.focus();
+                        } else if (!event.shiftKey) {
+                          event.preventDefault();
+                          inputRefs.current[languageBlockIndex]?.focus();
+                        }
+                      }}
                     />
                   ) : (
                     <span className="answer-source">{languageBlock.spanish}</span>
@@ -279,6 +299,16 @@ export function SentencePracticeCard({
                             )
                       }
                       onKeyDown={(event) => {
+                        if (authoring && event.key === "Tab") {
+                          event.preventDefault();
+                          if (event.shiftKey) spanishInputRefs.current[languageBlockIndex]?.focus();
+                          else if (languageBlockIndex < sentence.languageBlocks.length - 1) spanishInputRefs.current[languageBlockIndex + 1]?.focus();
+                          else if (languageBlock.spanish.trim() && (languageBlock.acceptedAnswers[0] ?? "").trim()) {
+                            pendingNewPieceFocus.current = true;
+                            authoring.onAddLanguageBlock();
+                          } else event.currentTarget.closest<HTMLElement>(".sentence-practice")?.focus();
+                          return;
+                        }
                         if (
                           !authoring &&
                           event.altKey &&
@@ -399,15 +429,13 @@ export function SentencePracticeCard({
                         >
                           <Plus size={15} aria-hidden="true" /> Alternative
                         </button>
-                        {sentence.languageBlocks.length > 1 && (
                           <button
                             type="button"
                             className="danger"
                             onClick={() => authoring.onRemoveLanguageBlock(languageBlock.id)}
                           >
-                            <Trash2 size={15} aria-hidden="true" /> Remove piece
+                            <Trash2 size={15} aria-hidden="true" /> Delete sentence piece
                           </button>
-                        )}
                       </div>
                     </div>
                   )}
@@ -444,9 +472,15 @@ export function SentencePracticeCard({
           </div>
         </>
       ) : (
-        <p className="rounded-lg border border-dashed border-border bg-background px-4 py-6 text-center text-sm font-medium text-destructive">
-          Esta práctica todavía no está disponible.
-        </p>
+        authoring ? (
+          <button type="button" className="authoring-add-piece" autoFocus onClick={() => { pendingNewPieceFocus.current = true; authoring.onAddLanguageBlock(); }}>
+            <Plus size={18} aria-hidden="true" /> Add the first sentence piece
+          </button>
+        ) : (
+          <p className="rounded-lg border border-dashed border-border bg-background px-4 py-6 text-center text-sm font-medium text-destructive">
+            Esta práctica todavía no está disponible.
+          </p>
+        )
       )}
 
       {(sentence.helperText?.trim() || (authoring && (authoringView === "hint" || visibleOptionalFields.has("helperText")))) && (

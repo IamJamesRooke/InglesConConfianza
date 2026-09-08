@@ -60,7 +60,7 @@ export function HotkeyReminder({
           />
           <HotkeyReminderRow
             keys={["Ctrl/Cmd", "Enter"]}
-            description="Preview the active lesson"
+            description="Open Add next slide"
           />
           <HotkeyReminderRow
             keys={["Ctrl/Cmd", "S"]}

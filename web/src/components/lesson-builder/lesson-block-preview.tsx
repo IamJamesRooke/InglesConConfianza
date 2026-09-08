@@ -1,6 +1,6 @@
 "use client";
 
-import { OverviewMarkdown } from "@/components/lesson-builder/overview-markdown";
+import { PracticeMarkdown } from "@/components/practice/practice-markdown";
 import type { LessonBlock } from "@/lib/lesson-builder/types";
 
 // The read-only block summary shown when a lesson is collapsed to its
@@ -23,34 +23,16 @@ export function LessonBlockPreviewList({ blocks }: { blocks: LessonBlock[] }) {
             {block.type === "explanation" ? (
               <div className="space-y-0 text-sm leading-5 text-foreground">
                 {block.contentMarkdown.trim() ? (
-                  <OverviewMarkdown markdown={block.contentMarkdown} />
+                  <PracticeMarkdown markdown={block.contentMarkdown} />
                 ) : (
                   <p>Empty explanation</p>
                 )}
               </div>
             ) : (
-              <div className="text-sm text-foreground">
-                <p className="font-semibold">
-                  {block.languageBlocks
-                    .map((languageBlock) => languageBlock.spanish.trim())
-                    .filter(Boolean)
-                    .join(
-                      block.layout === "vocabulary_table" ? ", " : " ",
-                    ) || "Empty Spanish prompt"}
-                </p>
-                <p className="text-muted-foreground italic">
-                  {block.languageBlocks
-                    .map(
-                      (languageBlock) =>
-                        languageBlock.acceptedAnswers
-                          .find((answer) => answer.trim())
-                          ?.trim() ?? "",
-                    )
-                    .filter(Boolean)
-                    .join(
-                      block.layout === "vocabulary_table" ? ", " : " ",
-                    ) || "No answer"}
-                </p>
+              <div className="space-y-1 text-sm text-foreground">
+                {block.languageBlocks.map((piece) => <div key={piece.id} className="grid grid-cols-[1fr_auto_1fr] gap-3"><strong>{piece.spanish || "Empty Spanish"}</strong><span aria-hidden="true">→</span><span>{piece.acceptedAnswers[0] || "No answer"}</span>{piece.callout && <small className="col-span-3 text-muted-foreground">Hint: {piece.callout}</small>}{piece.acceptedAnswers.length > 1 && <small className="col-span-3 text-muted-foreground">Also accepts: {piece.acceptedAnswers.slice(1).join(", ")}</small>}</div>)}
+                {block.helperText && <p className="text-muted-foreground">Helper: {block.helperText}</p>}
+                {block.answerFeedback && <p className="text-muted-foreground">Success: {block.answerFeedback}</p>}
               </div>
             )}
           </div>
