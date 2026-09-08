@@ -149,7 +149,7 @@ const EXPECTED_FAMILY_STRUCTURE: Record<string, Array<[string, number]>> = {
     ["Movement", 8],
     ["Possession & transfer", 12],
     ["Daily life & work", 5],
-    ["Making, changing & home", 6],
+    ["Making, changing & home", 5],
     ["Social life & conflict", 3],
     ["Specialized actions", 4],
   ],

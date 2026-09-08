@@ -4,17 +4,17 @@ import type { CurriculumRole } from "@/lib/curriculum/types";
 // declare exclusions: material that carries the base tag but does not belong in
 // that page's browser.
 //
-// The motivating case (2026-09-07): the Verbs page is based on `pos:verb`, and
-// 315 of its 1804 rows are Latinate cognate verbs. The low-priority ones (to
-// abstain, to depose, to allude) are reference material, not teaching
-// vocabulary — they belong on the Cognates page, where they are organised by
-// spelling pattern, and they were drowning the Verbs browser. The higher-tier
-// ones (to prepare, to decide, to receive) are ordinary teaching verbs and
-// stay. The Verbs exclusion in topics.ts keeps rows ranked P1-P3.
+// The motivating case: the Verbs page is based on `pos:verb`, but ~315 of its
+// rows are Latinate cognate verbs (to abstain, to depose) and ~552 are phrasal
+// / prepositional verbs (to look for, to turn on). Both have their own pages —
+// Cognates (grouped by spelling pattern) and the two Phrasal Verbs pages
+// (grouped by root and by particle) — and both were drowning the plain-verb
+// browser. `topics.ts` excludes `topic:cognate` and `topic:phrasal-verb` from
+// the Verbs topic unconditionally (`unlessRole: []`).
 //
 // This is a display policy, not a fact about the concept, so it lives in config
-// rather than in the data: no row is retagged, `pos:verb` stays true, and a row
-// promoted to a teaching tier later reappears on Verbs automatically.
+// rather than in the data: no row is retagged, `pos:verb` stays true. An
+// exclusion with a non-empty `unlessRole` keeps rows at those priorities.
 //
 // One definition, three consumers: the page query (curriculum-store.ts), the
 // inventory script, and the reachability test all go through here, so the rule

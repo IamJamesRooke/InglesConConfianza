@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generatedAt": "2026-09-08T11:40:55.934Z",
+    "generatedAt": "2026-09-08T11:59:03.695Z",
     "totals": {
       "allConcepts": 4251,
       "nonTrash": 4251,
@@ -43,8 +43,8 @@
       },
       {
         "slug": "verbs",
-        "baseCount": 1484,
-        "reachableCount": 1484,
+        "baseCount": 939,
+        "reachableCount": 939,
         "withinTopicGapCount": 0,
         "emptyGroupCount": 0,
         "confusionGroupCount": 0
@@ -533,8 +533,8 @@
       "slug": "verbs",
       "title": "Verbs",
       "baseCollection": "pos:verb",
-      "baseCount": 1484,
-      "reachableCount": 1484,
+      "baseCount": 939,
+      "reachableCount": 939,
       "withinTopicGapCount": 0,
       "withinTopicGapIds": [],
       "families": [
@@ -560,14 +560,14 @@
             {
               "collection": "topic:verb-ser-idioms",
               "label": "To Be (ser) — Idioms & Uses",
-              "count": 33,
+              "count": 23,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-estar-idioms",
               "label": "To Be (estar) — Idioms & Uses",
-              "count": 48,
+              "count": 33,
               "confusion": false,
               "p1Count": 0
             },
@@ -595,7 +595,7 @@
             {
               "collection": "topic:verb-modal-ability",
               "label": "Modals — Ability & Permission",
-              "count": 42,
+              "count": 39,
               "confusion": false,
               "p1Count": 0
             },
@@ -609,7 +609,7 @@
             {
               "collection": "topic:verb-modal-obligation",
               "label": "Modals — Obligation & Probability (must/should/have to)",
-              "count": 31,
+              "count": 27,
               "confusion": false,
               "p1Count": 0
             },
@@ -623,21 +623,21 @@
             {
               "collection": "topic:verb-wishes",
               "label": "Wishes & Hypotheticals",
-              "count": 29,
+              "count": 28,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-hoping-waiting",
               "label": "Hoping & Waiting",
-              "count": 11,
+              "count": 7,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-depending-fitting",
               "label": "Depending, Fitting & Being Enough (depender, caber, bastar)",
-              "count": 7,
+              "count": 5,
               "confusion": false,
               "p1Count": 0
             }
@@ -651,42 +651,42 @@
             {
               "collection": "topic:verb-communication-talking",
               "label": "Communication — Talking",
-              "count": 24,
+              "count": 6,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-communication-saying",
               "label": "Communication — Saying & Telling",
-              "count": 24,
+              "count": 15,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-communication-other",
               "label": "Communication — Notifying & Telling",
-              "count": 38,
+              "count": 23,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-communication-formal",
               "label": "Communication — Formal & Reporting",
-              "count": 6,
+              "count": 2,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-communication-naming",
               "label": "Communication — Naming, Calling & Marking",
-              "count": 22,
+              "count": 14,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-asking-requesting",
               "label": "Asking & Requesting",
-              "count": 27,
+              "count": 6,
               "confusion": false,
               "p1Count": 0
             },
@@ -707,21 +707,21 @@
             {
               "collection": "topic:verb-thinking-opinions",
               "label": "Thinking & Opinions",
-              "count": 22,
+              "count": 14,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-deciding-considering",
               "label": "Deciding & Considering",
-              "count": 20,
+              "count": 16,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-knowing",
               "label": "Knowing",
-              "count": 22,
+              "count": 14,
               "confusion": false,
               "p1Count": 0
             },
@@ -735,14 +735,14 @@
             {
               "collection": "topic:verb-remembering-forgetting",
               "label": "Remembering & Forgetting",
-              "count": 19,
+              "count": 14,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-analysis-investigation",
               "label": "Analysis & Investigation",
-              "count": 4,
+              "count": 2,
               "confusion": false,
               "p1Count": 0
             }
@@ -756,28 +756,28 @@
             {
               "collection": "topic:verb-seeing-ver",
               "label": "Seeing",
-              "count": 11,
+              "count": 8,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-watching-other",
               "label": "Watching & Observing",
-              "count": 27,
+              "count": 17,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-perception-hearing",
               "label": "Hearing & Listening",
-              "count": 9,
+              "count": 4,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-feelings-general",
               "label": "Feelings & Sensations",
-              "count": 17,
+              "count": 11,
               "confusion": false,
               "p1Count": 0
             },
@@ -791,7 +791,7 @@
             {
               "collection": "topic:verb-feelings-dislike-worry",
               "label": "Feelings — Dislike, Worry & Missing",
-              "count": 18,
+              "count": 13,
               "confusion": false,
               "p1Count": 0
             }
@@ -805,56 +805,56 @@
             {
               "collection": "topic:verb-movement-going",
               "label": "Movement — Going",
-              "count": 29,
+              "count": 23,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-movement-coming",
               "label": "Movement — Coming",
-              "count": 11,
+              "count": 2,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-movement-arriving-passing",
               "label": "Movement — Arriving & Passing",
-              "count": 28,
+              "count": 14,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-movement-leaving",
               "label": "Movement — Leaving",
-              "count": 21,
+              "count": 14,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-movement-directional-verbs",
               "label": "Movement — Return & Direction",
-              "count": 23,
+              "count": 6,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-movement-directional",
               "label": "Movement — Up, Down & Falling",
-              "count": 27,
+              "count": 12,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-locomotion-general",
               "label": "Movement — Walking & Running",
-              "count": 17,
+              "count": 12,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-following-continuing",
               "label": "Following & Continuing",
-              "count": 33,
+              "count": 12,
               "confusion": false,
               "p1Count": 0
             }
@@ -868,84 +868,84 @@
             {
               "collection": "topic:verb-possession-having",
               "label": "Having (tener)",
-              "count": 32,
+              "count": 25,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-possession-obtaining",
               "label": "Getting & Obtaining",
-              "count": 25,
+              "count": 20,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-tomar-general",
               "label": "Taking (tomar/coger)",
-              "count": 34,
+              "count": 14,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-dar-giving",
               "label": "Giving (dar)",
-              "count": 20,
+              "count": 11,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-dar-idioms",
               "label": "Giving (dar) — Idioms",
-              "count": 19,
+              "count": 12,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-giving-lending-other",
               "label": "Giving & Lending — Other Verbs",
-              "count": 19,
+              "count": 11,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-removing-stealing",
               "label": "Removing & Stealing",
-              "count": 8,
+              "count": 1,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-taking-removing",
               "label": "Taking Away",
-              "count": 42,
+              "count": 21,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-keeping-storing",
               "label": "Keeping & Storing",
-              "count": 30,
+              "count": 21,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-quedar-remaining",
               "label": "Remaining & Staying (quedar)",
-              "count": 11,
+              "count": 3,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-carrying",
               "label": "Carrying",
-              "count": 19,
+              "count": 11,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-bringing",
               "label": "Bringing",
-              "count": 16,
+              "count": 8,
               "confusion": false,
               "p1Count": 0
             }
@@ -959,35 +959,35 @@
             {
               "collection": "topic:verb-eating-drinking",
               "label": "Eating & Drinking",
-              "count": 26,
+              "count": 14,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-daily-routine",
               "label": "Daily Routine & Self-care",
-              "count": 21,
+              "count": 13,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-work-employment",
               "label": "Work & Employment",
-              "count": 23,
+              "count": 10,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-money-earning-spending",
               "label": "Money — Earning & Spending",
-              "count": 25,
+              "count": 21,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-money-commerce",
               "label": "Money — Buying & Selling",
-              "count": 34,
+              "count": 18,
               "confusion": false,
               "p1Count": 0
             }
@@ -1001,42 +1001,35 @@
             {
               "collection": "topic:verb-creation-hacer",
               "label": "Making & Doing (hacer)",
-              "count": 30,
+              "count": 28,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-creation-repair-other",
               "label": "Creating, Fixing & Changing",
-              "count": 18,
+              "count": 13,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-poner-placement",
               "label": "Placing (poner)",
-              "count": 9,
-              "confusion": false,
-              "p1Count": 0
-            },
-            {
-              "collection": "topic:verb-poner-turning-on",
-              "label": "Turning On/Off (poner)",
-              "count": 4,
+              "count": 3,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-poner-idioms",
               "label": "Placing & Setting — Idioms",
-              "count": 55,
+              "count": 9,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-household",
               "label": "Household & Objects",
-              "count": 43,
+              "count": 21,
               "confusion": false,
               "p1Count": 0
             }
@@ -1050,21 +1043,21 @@
             {
               "collection": "topic:verb-social-relationships",
               "label": "Social Interaction & Relationships",
-              "count": 25,
+              "count": 13,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-conflict-crime",
               "label": "Conflict & Crime",
-              "count": 24,
+              "count": 19,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-loss-death",
               "label": "Loss & Death",
-              "count": 14,
+              "count": 11,
               "confusion": false,
               "p1Count": 0
             }
@@ -1078,7 +1071,7 @@
             {
               "collection": "topic:verb-admin-legal-formal",
               "label": "Administrative, Legal & Formal Actions",
-              "count": 15,
+              "count": 11,
               "confusion": false,
               "p1Count": 0
             },
@@ -1099,7 +1092,7 @@
             {
               "collection": "topic:verb-health-body",
               "label": "Body & Health",
-              "count": 10,
+              "count": 8,
               "confusion": false,
               "p1Count": 0
             }

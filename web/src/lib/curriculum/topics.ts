@@ -244,15 +244,19 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
     description:
       "Every verb, grouped by theme instead of alphabetically — communication, thinking, movement, possession, money, and more — so you can browse verbs the way you'd actually reach for them in conversation. \u201cTo be,\u201d \u201chave,\u201d and the modal verbs (poder, deber) get their own dedicated groups since their English translations swing wildly by context.",
     baseCollection: "pos:verb",
-    // Low-priority Latinate cognate verbs (to abstain, to depose) are reference
-    // material, not teaching vocabulary. They live on the Cognates page, sorted
-    // by spelling pattern. The teaching-tier ones (to prepare, to decide, to
-    // receive) stay here. Cognate verbs live on the Cognates page by default;
-    // ranking one P1-P3 pulls it back onto Verbs as a teaching target.
+    // The Verbs page is single-word, non-cognate verbs only. Cognate verbs
+    // (to prepare, to abstain) live on the Cognates page, grouped by spelling
+    // pattern; phrasal / prepositional verbs (to look for, to turn on) live on
+    // the two Phrasal Verbs pages, grouped by root and by particle. Both
+    // exclusions are unconditional — those rows always belong on their own page.
     baseExclusions: [
       {
         collection: "topic:cognate",
-        unlessRole: ["P1", "P2", "P3"],
+        unlessRole: [],
+      },
+      {
+        collection: "topic:phrasal-verb",
+        unlessRole: [],
       },
     ],
     facetButtons: [
@@ -549,11 +553,6 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
       {
         collection: "topic:verb-poner-placement",
         label: "Placing (poner)",
-        family: "Making, changing & home",
-      },
-      {
-        collection: "topic:verb-poner-turning-on",
-        label: "Turning On/Off (poner)",
         family: "Making, changing & home",
       },
       {
