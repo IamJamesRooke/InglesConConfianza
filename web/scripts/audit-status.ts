@@ -37,10 +37,10 @@ const ORDER = [
 //   extended  — the large pool of vocabulary for later / advanced courses
 //   rare      — transparent cognates, paradigm drills, bare mapping anchors
 const ROLE_TARGETS: Record<string, [number, number]> = {
-  core: [13, 19],
+  core: [15, 22],
   essential: [7, 12],
-  common: [9, 16],
-  extended: [30, 42],
+  common: [8, 15],
+  extended: [28, 40],
   rare: [18, 28],
   trash: [3, 6],
 };
