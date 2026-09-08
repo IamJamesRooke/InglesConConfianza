@@ -40,7 +40,8 @@ vocabulary." In this catalog the Spanish grammatical system — the full
 pronoun, determiner, connector and preposition sets, the question words, and
 the verb machinery (ser/estar/tener/ir/haber conjugation, negation, questions,
 the perfect, the modals, comparison, the change-of-state copulas) — is about
-**700 rows, ~16% of the catalog.** That is not vocabulary bloat; it is the
+**860 rows, ~19% of the catalog** (it grew as the Verb-Pattern / Q&N / Imperative
+content was consolidated in P3-6). That is not vocabulary bloat; it is the
 size of the grammar. The "limited vocabulary" of the MVP is the ~30
 non-grammar rows that also sit in `core`. A row is grammar (→ `core`) if a
 dictionary plus the rest of the grammar cannot produce it: every function
@@ -72,7 +73,7 @@ material is temporarily sitting in `rare`).
 
 ## Phases
 
-**PHASE 3 COMPLETE (P3-0..P3-5), 2026-09-07.** Final tiers:
+**PHASE 3 COMPLETE (P3-0..P3-6), 2026-09-07.** Final tiers:
 core 863 / essential 389 / common 495 / extended 1553 / rare 951 / trash 233.
 All six guardrail bands in target. Open follow-ups, all optional:
 - conversational fillers stranded in rare for want of a topic:expression
@@ -105,13 +106,13 @@ All six guardrail bands in target. Open follow-ups, all optional:
 - `src/lib/curriculum/scope.ts`: `unlessRole` on the Verbs cognate exclusion currently lists `["core","supporting"]` — update to the new set that means "teachable" (`["core","essential","common"]` initially, revisit after P3-4).
 - Mechanical role manifest, then `npm run curriculum:snapshots:export -- --apply`, `db:verify`, `db:test`.
 
-### Guardrail bands (set P3-4, tuned to the real shape)
+### Guardrail bands (tuned to the real shape, P3-6)
 
 | Tier | Target % | Actual |
 |---|---|---|
-| `core` | 13–19 | 16.2 |
+| `core` | 15–22 | 19.2 |
 | `essential` | 7–12 | 8.7 |
-| `common` | 9–16 | 12.1 |
-| `extended` | 30–42 | 36.0 |
-| `rare` | 18–28 | 21.8 |
+| `common` | 8–15 | 11.0 |
+| `extended` | 28–40 | 34.6 |
+| `rare` | 18–28 | 21.2 |
 | `trash` | 3–6 | 5.2 |
