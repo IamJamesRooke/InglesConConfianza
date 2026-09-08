@@ -1,6 +1,6 @@
 # Backlog
 
-> Last updated: 2026-09-04. Curriculum migration is complete. PostgreSQL is the canonical curriculum store; Lesson Builder remains JSON-backed. The completed build narrative lives in the [project timeline](history/project-timeline.md).
+> Last updated: 2026-09-08. Curriculum migration is complete. PostgreSQL is the canonical curriculum store; Lesson Builder remains JSON-backed. The completed build narrative lives in the [project timeline](history/project-timeline.md).
 
 ## Current objective
 
@@ -28,7 +28,11 @@ Begin Module 1 when obvious structural problems are gone, role definitions are b
 
 ## Phase 2: Module 1
 
-### Presentation scaffold
+Author lessons by hand in the document-based Lesson Builder and improve the workflow from observed friction. Do not require the live course to preserve the retired presentation fixture's lesson count, names, or module shape.
+
+### Archived presentation scaffold
+
+These completed steps record the scaffold that validated the learner shell. Its fixed 17-lesson content was retired on September 8 when deliberate hand authoring began.
 
 - [x] Create a real three-lesson onboarding sequence that teaches the Practice interaction through a first conversation.
 - [x] Complete a 17-lesson presentation course spanning onboarding, Fundamentals I, full infinitives, and everyday plans.

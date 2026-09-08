@@ -241,6 +241,7 @@ Do not use the International Phonetic Alphabet in learner-facing lessons. Requir
 ## Teacher authoring experience
 
 - Treat the Lesson Builder as a course binder: modules contain visible lesson summaries, and the teacher should be able to understand the course without opening several dashboards.
+- Expand every lesson in an open module by default and let the teacher edit the visible teaching document directly. Do not require a separate or full-screen editing mode.
 - The authoring canvas should reuse the learner presentation. Teaching text is edited where the learner will see it, with no raw markup or unexplained generated labels.
 - Begin every lesson with a teacher-only setup step for its name, module placement, and concepts covered. End with a review of the learner completion state and any incomplete authored content.
 - Use “slide” in teacher-facing language. “Block” is an implementation detail and should not be required vocabulary for a teacher.

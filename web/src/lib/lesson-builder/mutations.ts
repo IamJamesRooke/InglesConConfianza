@@ -254,6 +254,20 @@ export function deleteContentBlock(
   }));
 }
 
+export function restoreContentBlock(
+  lessons: Lesson[],
+  lessonId: string,
+  block: Lesson["blocks"][number],
+  insertionIndex: number,
+): Lesson[] {
+  return mapLesson(lessons, lessonId, (lesson) => ({
+    ...lesson,
+    blocks: lesson.blocks.some((candidate) => candidate.id === block.id)
+      ? lesson.blocks
+      : lesson.blocks.toSpliced(insertionIndex, 0, block),
+  }));
+}
+
 export function duplicateContentBlock(
   lessons: Lesson[],
   lessonId: string,
@@ -363,6 +377,21 @@ export function deleteLanguageBlock(
     languageBlocks: block.languageBlocks.filter(
       (languageBlock) => languageBlock.id !== languageBlockId,
     ),
+  }));
+}
+
+export function restoreLanguageBlock(
+  lessons: Lesson[],
+  lessonId: string,
+  sentenceBlockId: string,
+  languageBlock: LanguageBlock,
+  insertionIndex: number,
+): Lesson[] {
+  return mapSentenceBlock(lessons, lessonId, sentenceBlockId, (block) => ({
+    ...block,
+    languageBlocks: block.languageBlocks.some((candidate) => candidate.id === languageBlock.id)
+      ? block.languageBlocks
+      : block.languageBlocks.toSpliced(insertionIndex, 0, languageBlock),
   }));
 }
 

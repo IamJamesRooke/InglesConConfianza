@@ -1,7 +1,7 @@
 import { normalizeLessonMarkdown } from "@/lib/lesson-builder/markdown";
 
 const inlineMarkdownPattern =
-  /(\\?<kbd>[^<]+?\\?<\/kbd>|==[^=]+==|\*\*[^*]+?\*\*|__[^_]+?__|\*[^*\s][^*]*\*|_[^_\s][^_]*_)/gu;
+  /(\[\[(?:es|en):[^\]]+\]\]|\\?<kbd>[^<]+?\\?<\/kbd>|==[^=]+==|\*\*[^*]+?\*\*|__[^_]+?__|\*[^*\s][^*]*\*|_[^_\s][^_]*_)/gu;
 
 export function OverviewMarkdown({ markdown }: { markdown: string }) {
   const lines = normalizeLessonMarkdown(markdown)
@@ -20,6 +20,16 @@ export function OverviewMarkdown({ markdown }: { markdown: string }) {
 
 function renderInlineMarkdown(text: string) {
   return text.split(inlineMarkdownPattern).map((part, partIndex) => {
+    const languageMatch = /^\[\[(es|en):([^\]]+)\]\]$/u.exec(part);
+
+    if (languageMatch) {
+      return (
+        <mark key={`${part}-${partIndex}`} data-language={languageMatch[1]}>
+          {languageMatch[2]}
+        </mark>
+      );
+    }
+
     const keyboardShortcutMatch = /^\\?<kbd>([^<]+?)\\?<\/kbd>$/u.exec(part);
 
     if (keyboardShortcutMatch) {

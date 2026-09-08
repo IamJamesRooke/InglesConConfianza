@@ -1,4 +1,6 @@
-# Lesson Builder: final core-writing handoff for SOL
+# Lesson Builder: archived Zen-mode handoff
+
+> Superseded on September 8, 2026 by [Lesson Builder as an editable teaching document](lesson-builder-document-editor.md). Keep this file as design history; Zen mode is no longer the authoring direction.
 
 ## Assignment
 

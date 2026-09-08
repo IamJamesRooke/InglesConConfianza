@@ -259,6 +259,14 @@ are recorded in [the student experience log](../design/student-experience.md).
 The in-app browser was unavailable during this pass, so responsive visual and
 interactive validation remain explicitly open rather than being reported as done.
 
+## September 8: Turn the lesson overview into the editor
+
+Real lesson writing showed that the separate Zen authoring session added distance from the teaching script. The Lesson Builder now opens modules as continuous editable documents: lesson titles and covered concepts lead into inline explanations, Spanish-to-English sentence pieces, and vocabulary tables. Optional learner instructions, context hints, accepted alternatives, helper text, and success messages stay quiet until used. Lessons and slides retain reorder, duplication, preview, autosave, and targeted deletion recovery without leaving the course overview.
+
+The follow-up pass made that document usable from a blank course. Module information stays compact and visible, empty modules explain the explanation → sentence → repeat rhythm, new lessons open directly into the three available item types, and contextual instructions teach Spanish → Tab → English entry and language marking. A keyboard-help modal keeps the full shortcut reference available without occupying the writing surface. The large Markdown editor, floating authoring menus, browser confirmations, and the remaining Zen components were removed.
+
+The fixed 17-lesson presentation fixture had served its purpose and was replaced by the owner's manually authored course. Its content-specific regression test was retired in favor of checking structural integrity and unique IDs without prescribing lesson content. From this point, real lesson authoring drives small improvements to the Builder as friction appears.
+
 ## The next chapter
 
 The project now moves through two connected phases.

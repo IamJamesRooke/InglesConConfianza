@@ -1,5 +1,7 @@
 import type {
+  LanguageBlock,
   Lesson,
+  LessonBlock,
   LessonConcept,
   SentenceBlock,
 } from "@/lib/lesson-builder/types";
@@ -62,6 +64,7 @@ export type LessonsAction =
       layout?: "sentence" | "vocabulary_table";
     }
   | { type: "DELETE_CONTENT_BLOCK"; lessonId: string; blockId: string }
+  | { type: "RESTORE_CONTENT_BLOCK"; lessonId: string; block: LessonBlock; insertionIndex: number }
   | { type: "DUPLICATE_CONTENT_BLOCK"; lessonId: string; blockId: string }
   | {
       type: "MOVE_CONTENT_BLOCK";
@@ -94,6 +97,7 @@ export type LessonsAction =
       sentenceBlockId: string;
       languageBlockId: string;
     }
+  | { type: "RESTORE_LANGUAGE_BLOCK"; lessonId: string; sentenceBlockId: string; languageBlock: LanguageBlock; insertionIndex: number }
   | {
       type: "UPDATE_LANGUAGE_BLOCK";
       lessonId: string;
@@ -199,6 +203,13 @@ export function lessonsReducer(
         action.lessonId,
         action.blockId,
       );
+    case "RESTORE_CONTENT_BLOCK":
+      return mutations.restoreContentBlock(
+        lessons,
+        action.lessonId,
+        action.block,
+        action.insertionIndex,
+      );
     case "DUPLICATE_CONTENT_BLOCK":
       return mutations.duplicateContentBlock(
         lessons,
@@ -238,6 +249,14 @@ export function lessonsReducer(
         action.lessonId,
         action.sentenceBlockId,
         action.languageBlockId,
+      );
+    case "RESTORE_LANGUAGE_BLOCK":
+      return mutations.restoreLanguageBlock(
+        lessons,
+        action.lessonId,
+        action.sentenceBlockId,
+        action.languageBlock,
+        action.insertionIndex,
       );
     case "UPDATE_LANGUAGE_BLOCK":
       return mutations.updateLanguageBlock(

@@ -148,6 +148,7 @@ export function EditablePracticeMarkdown({
   ariaLabel,
   fieldName,
   variant = "explanation",
+  showSelectionMenu = true,
 }: {
   markdown: string;
   onChange: (markdown: string) => void;
@@ -155,6 +156,7 @@ export function EditablePracticeMarkdown({
   ariaLabel: string;
   fieldName?: string;
   variant?: PracticeMarkdownVariant;
+  showSelectionMenu?: boolean;
 }) {
   const [renderedMarkdown, setRenderedMarkdown] = useState(markdown);
   const [hasSelection, setHasSelection] = useState(false);
@@ -280,7 +282,7 @@ export function EditablePracticeMarkdown({
       >
         <PracticeMarkdown markdown={renderedMarkdown} variant={variant} />
       </div>
-      {hasSelection && (
+      {showSelectionMenu && hasSelection && (
         <div className="authoring-format-menu" role="toolbar" aria-label="Format selected text">
           <FormatButton label="Español" shortcut="⇧1" className="spanish" onFormat={() => formatSelection("es")} />
           <FormatButton label="English" shortcut="⇧2" className="english" onFormat={() => formatSelection("en")} />

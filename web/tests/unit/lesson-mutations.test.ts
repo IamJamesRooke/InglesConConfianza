@@ -168,6 +168,22 @@ test("moveLanguageBlock reorders within its sentence block", () => {
   );
 });
 
+test("targeted deletion restore preserves edits made after deletion", () => {
+  const removedBlock = baseLessons()[0].blocks[0];
+  let lessons = m.deleteContentBlock(baseLessons(), "lesson_a", "b1");
+  lessons = m.renameLesson(lessons, "lesson_b", "Written afterwards");
+  lessons = m.restoreContentBlock(lessons, "lesson_a", removedBlock, 0);
+  assert.equal(lessons[1].name, "Written afterwards");
+  assert.equal(lessons[0].blocks[0].id, "b1");
+
+  const removedPiece = (lessons[0].blocks[0] as SentenceBlock).languageBlocks[0];
+  lessons = m.deleteLanguageBlock(lessons, "lesson_a", "b1", "l1");
+  lessons = m.renameLesson(lessons, "lesson_b", "Still here");
+  lessons = m.restoreLanguageBlock(lessons, "lesson_a", "b1", removedPiece, 0);
+  assert.equal(lessons[1].name, "Still here");
+  assert.equal((lessons[0].blocks[0] as SentenceBlock).languageBlocks[0].id, "l1");
+});
+
 test("reducer dispatches through to the matching mutation", () => {
   const after = lessonsReducer(baseLessons(), {
     type: "UPDATE_SENTENCE_BLOCK",

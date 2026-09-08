@@ -46,7 +46,7 @@ export function LessonConceptsField({
   // When given, a chip whose concept key is in this set renders green ("met" —
   // some lesson in the module covers it). Used by the module Key concepts field.
   coveredConceptKeys?: Set<string>;
-  variant?: "block" | "inline";
+  variant?: "block" | "inline" | "compact";
   inputRef?: Ref<HTMLInputElement>;
   conceptDisplays?: ConceptDisplayLookup;
   suggestions?: LessonConceptSuggestion[];
@@ -156,7 +156,7 @@ export function LessonConceptsField({
   return (
     <div
       className={
-        variant === "inline"
+        variant === "inline" || variant === "compact"
           ? ""
           : "border-b border-border bg-[var(--surface-sunken)] px-6 py-3"
       }
@@ -192,7 +192,7 @@ export function LessonConceptsField({
           </div>
         </div>
       )}
-      <div className="flex flex-wrap items-center gap-1.5">
+      <div className={`flex flex-wrap items-center ${variant === "compact" ? "gap-1" : "gap-1.5"}`}>
         <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-stone-500">
           {label}
         </span>
@@ -204,8 +204,10 @@ export function LessonConceptsField({
           return (
           <span
             key={concept.id}
-            className={`inline-flex items-center gap-2 rounded-xl border px-3 py-1.5 text-xs ${
-              met
+            className={`inline-flex items-center ${variant === "compact" ? "gap-1 rounded-md border-0 bg-transparent px-1 py-0.5" : "gap-2 rounded-xl border px-3 py-1.5"} text-xs ${
+              variant === "compact"
+                ? "text-stone-600"
+                : met
                 ? "border-green-300 bg-green-50 text-green-800"
                 : concept.conceptId
                   ? "border-violet-200 bg-violet-50 text-violet-800"
@@ -219,7 +221,11 @@ export function LessonConceptsField({
                   : "Not linked to the curriculum"
             }
           >
-            {concept.conceptId ? (
+            {variant === "compact" ? (
+              <span className="font-medium">
+                {display?.spanish ?? concept.label}
+              </span>
+            ) : concept.conceptId ? (
               <ConceptQuickEdit
                 conceptId={concept.conceptId}
                 className="hover:underline"
@@ -266,7 +272,7 @@ export function LessonConceptsField({
           </span>
           );
         })}
-        <div className="relative min-w-40 flex-1">
+        <div className={`${variant === "compact" ? "min-w-28 max-w-56" : "relative min-w-40 flex-1"}`}>
           <input
             ref={inputRef}
             type="text"
@@ -277,8 +283,8 @@ export function LessonConceptsField({
             aria-autocomplete="list"
             placeholder={
               concepts.length === 0
-                ? "Type a concept, e.g. querer, poder, hablar…"
-                : "Add another…"
+                ? variant === "compact" ? "Add concept…" : "Type a concept, e.g. querer, poder, hablar…"
+                : variant === "compact" ? "+ concept" : "Add another…"
             }
             onFocus={() => setOpen(true)}
             onBlur={() => {
@@ -324,13 +330,17 @@ export function LessonConceptsField({
                 }
               }
             }}
-            className="w-full rounded-md border border-stone-300 bg-white px-2.5 py-1.5 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-violet-400 focus:ring-3 focus:ring-violet-100"
+            className={variant === "compact"
+              ? "w-full border-0 border-b border-transparent bg-transparent px-1 py-0.5 text-xs text-stone-700 outline-none placeholder:text-stone-400 focus:border-violet-300"
+              : "w-full rounded-md border border-stone-300 bg-white px-2.5 py-1.5 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-violet-400 focus:ring-3 focus:ring-violet-100"}
           />
           {open && visibleResults.length > 0 && (
             <ul
               id={listboxId}
               role="listbox"
-              className="absolute left-0 top-full z-30 mt-1 max-h-64 w-[min(28rem,80vw)] overflow-auto rounded-lg border border-border bg-popover py-1 text-sm shadow-xl"
+              className={variant === "compact"
+                ? "mt-1 max-h-48 w-[min(28rem,80vw)] overflow-auto border-l border-border py-1 pl-2 text-sm"
+                : "absolute left-0 top-full z-30 mt-1 max-h-64 w-[min(28rem,80vw)] overflow-auto rounded-lg border border-border bg-popover py-1 text-sm shadow-xl"}
             >
               {visibleResults.map((result, index) => (
                 <li key={result.id} role="option" aria-selected={index === highlight}>
@@ -360,7 +370,9 @@ export function LessonConceptsField({
             </ul>
           )}
           {open && query.trim().length >= 2 && visibleResults.length === 0 && (
-            <div className="absolute left-0 top-full z-30 mt-1 w-[min(28rem,80vw)] rounded-lg border border-border bg-popover px-3 py-2 text-sm shadow-xl">
+            <div className={variant === "compact"
+              ? "mt-1 w-[min(28rem,80vw)] border-l border-border px-2 py-1 text-xs"
+              : "absolute left-0 top-full z-30 mt-1 w-[min(28rem,80vw)] rounded-lg border border-border bg-popover px-3 py-2 text-sm shadow-xl"}>
               <p className="text-muted-foreground">
                 {searchState === "loading"
                   ? "Searching..."
