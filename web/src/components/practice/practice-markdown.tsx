@@ -28,6 +28,7 @@ const inlineMarkdownPattern =
 
 type PracticeMarkdownVariant =
   | "explanation"
+  | "document"
   | "eyebrow"
   | "prompt"
   | "helper"
@@ -238,6 +239,20 @@ export function EditablePracticeMarkdown({
         className={`authoring-wysiwyg authoring-wysiwyg-${variant}`}
         onFocus={() => {
           editingRef.current = true;
+          // When the rendered markdown is empty, `PracticeMarkdown` outputs an
+          // empty `.practice-markdown-content` block. Browsers drop the caret in
+          // the contentEditable root instead of inside it, so typed characters
+          // land as a sibling of that block — leaving it behind as a stray blank
+          // line (and losing the text on serialize). Anchor the caret inside it.
+          const content = rootRef.current?.querySelector<HTMLElement>(".practice-markdown-content");
+          if (content && content.childNodes.length === 0) {
+            const range = document.createRange();
+            range.selectNodeContents(content);
+            range.collapse(true);
+            const selection = window.getSelection();
+            selection?.removeAllRanges();
+            selection?.addRange(range);
+          }
         }}
         onMouseUp={rememberSelection}
         onKeyUp={rememberSelection}
@@ -308,8 +323,10 @@ function FormatButton({ label, shortcut, className = "", onFormat }: { label: st
 }
 
 function serializeEditableMarkdown(root: HTMLElement) {
-  const content =
-    root.querySelector<HTMLElement>(".practice-markdown-content") ?? root;
+  const contentEl = root.querySelector<HTMLElement>(".practice-markdown-content");
+  // If the caret escaped the (empty) content block, typed text is a sibling of
+  // it under the root — serialize from the root so nothing is dropped.
+  const content = contentEl && contentEl.childNodes.length > 0 ? contentEl : root;
   const blocks = Array.from(content.childNodes)
     .flatMap((node) => serializeBlockNode(node))
     .filter(Boolean);
@@ -485,10 +502,7 @@ function renderInlineMarkdown(text: string) {
 
     if (part.startsWith("==") && part.endsWith("==")) {
       nodes.push(
-        <mark
-          key={`${part}-${partIndex}`}
-          className="-mx-0.5 box-decoration-clone rounded-md bg-amber-200 px-0.5 py-0.5 font-bold text-stone-950"
-        >
+        <mark key={`${part}-${partIndex}`} className="practice-highlight">
           {renderInlineMarkdown(part.slice(2, -2))}
         </mark>,
       );

@@ -1,6 +1,6 @@
 "use client";
 
-import { Copy, Eye, Keyboard, Plus, Search, Trash2, X } from "lucide-react";
+import { ChevronDown, ChevronRight, Copy, Eye, Keyboard, Play, Plus, Redo2, Search, Trash2, Undo2, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState, type DragEvent } from "react";
 
@@ -10,6 +10,7 @@ import type { Lesson, LessonConcept, LessonModule } from "@/lib/lesson-builder/t
 
 type Props = {
   modules: LessonModule[]; lessons: Lesson[]; conceptDisplays: ConceptDisplayLookup; saveLabel: string;
+  canUndo: boolean; canRedo: boolean; onUndo: () => void; onRedo: () => void;
   onNewLesson: (moduleId: string) => string; onPreviewLesson: (lessonId: string) => void;
   onDuplicateLesson: (lessonId: string) => void; onDeleteLesson: (lessonId: string) => void;
   onAddModule: () => void; onDeleteModule: (moduleId: string) => void;
@@ -35,6 +36,7 @@ type Props = {
   onDeleteBlock: (lessonId: string, blockId: string) => void;
   onDuplicateBlock: (lessonId: string, blockId: string) => void;
   onMoveBlock: (lessonId: string, blockId: string, direction: -1 | 1) => void;
+  onReorderBlock: (lessonId: string, draggedId: string, targetId: string, position: "before" | "after") => void;
   deletionUndo: { lessonId: string; label: string } | null; onUndoDeletion: () => void;
 };
 
@@ -42,7 +44,6 @@ export function LessonLibrary(props: Props) {
   const [query, setQuery] = useState("");
   const [showKeyboardHelp, setShowKeyboardHelp] = useState(false);
   const [collapsedLessons, setCollapsedLessons] = useState<Set<string>>(new Set());
-  const [lessonActions, setLessonActions] = useState<string | null>(null);
   const [confirmDelete, setConfirmDelete] = useState<string | null>(null);
   const [dragged, setDragged] = useState<{ moduleId: string; lessonId: string } | null>(null);
   const keyboardHelpButtonRef = useRef<HTMLButtonElement>(null);
@@ -86,6 +87,10 @@ export function LessonLibrary(props: Props) {
           <kbd>Ctrl K</kbd>
         </label>
         <span className="lesson-library-counts">{props.modules.length} modules · {props.lessons.length} lessons · {totalSlides} items</span>
+        <span className="lesson-library-history">
+          <button type="button" onClick={props.onUndo} disabled={!props.canUndo} suppressHydrationWarning aria-label="Undo" title="Undo (Ctrl+Z)"><Undo2 size={14} /></button>
+          <button type="button" onClick={props.onRedo} disabled={!props.canRedo} suppressHydrationWarning aria-label="Redo" title="Redo (Ctrl+Shift+Z)"><Redo2 size={14} /></button>
+        </span>
         <span className="lesson-library-save">{props.saveLabel}</span>
         <button ref={keyboardHelpButtonRef} type="button" className="lesson-library-keyboard-help" aria-expanded={showKeyboardHelp} onClick={() => setShowKeyboardHelp(true)}><Keyboard size={14} /> Keyboard help</button>
         <Link href="/course"><Eye size={14} /> Preview</Link>
@@ -127,29 +132,38 @@ export function LessonLibrary(props: Props) {
                 {visibleLessons.map((lesson) => {
                   const lessonIndex = moduleLessons.findIndex((item) => item.id === lesson.id);
                   const lessonCollapsed = collapsedLessons.has(lesson.id);
-                  const actionsOpen = lessonActions === lesson.id;
                   const lessonDeleteKey = `lesson:${lesson.id}`;
                   return (
                     <article key={lesson.id} className={`lesson-library-row ${dragged?.lessonId === lesson.id ? "dragging" : ""}`} onDragOver={(event) => { if (dragged) event.preventDefault(); }} onDrop={(event) => drop(event, module.id, lessonIndex, true)}>
                       <div className="lesson-library-row-head">
                         <LessonDragHandle lessonNumber={lessonIndex + 1} onDragStart={(event) => startDrag(event, module.id, lesson.id)} onDragEnd={() => setDragged(null)} />
+                        <button type="button" className="lesson-library-collapse" aria-expanded={!lessonCollapsed} aria-label={lessonCollapsed ? "Expand lesson" : "Collapse lesson"} onClick={() => setCollapsedLessons((current) => toggleSet(current, lesson.id))}>
+                          {lessonCollapsed ? <ChevronRight size={16} aria-hidden="true" /> : <ChevronDown size={16} aria-hidden="true" />}
+                        </button>
                         <input data-lesson-title={lesson.id} className="lesson-library-title-input" value={lesson.name ?? ""} onChange={(event) => props.onRenameLesson(lesson.id, event.target.value)} placeholder="Name this lesson…" aria-label={`Lesson ${lessonIndex + 1} title`} />
                         <span className="lesson-library-slide-count">{lesson.blocks.length} items</span>
-                        <button type="button" className="lesson-library-try" onClick={() => props.onPreviewLesson(lesson.id)}>Try</button>
-                        <button type="button" className="lesson-library-actions-toggle" aria-expanded={actionsOpen} onClick={() => setLessonActions(actionsOpen ? null : lesson.id)}>Actions</button>
-                        <button type="button" className="lesson-library-content-toggle" onClick={() => setCollapsedLessons((current) => toggleSet(current, lesson.id))}>{lessonCollapsed ? "Show" : "Hide"}</button>
+                        {props.modules.length > 1 && (
+                          <select className="lesson-library-move-module" value={module.id} aria-label="Move lesson to module" onChange={(event) => props.onMoveLessonToModule(lesson.id, event.target.value)}>
+                            {props.modules.map((item) => <option key={item.id} value={item.id}>{item.name ?? "Untitled module"}</option>)}
+                          </select>
+                        )}
+                        <span className="lesson-library-row-icons">
+                          <button type="button" className="lesson-library-try" title="Preview this lesson" aria-label="Preview this lesson" onClick={() => props.onPreviewLesson(lesson.id)}><Play size={14} aria-hidden="true" /></button>
+                          <button type="button" title="Duplicate lesson" aria-label="Duplicate lesson" onClick={() => props.onDuplicateLesson(lesson.id)}><Copy size={14} aria-hidden="true" /></button>
+                          {confirmDelete === lessonDeleteKey ? (
+                            <span className="lesson-library-delete-confirm">
+                              <button type="button" className="danger" onClick={() => { props.onDeleteLesson(lesson.id); setConfirmDelete(null); }}>Delete</button>
+                              <button type="button" onClick={() => setConfirmDelete(null)}>Cancel</button>
+                            </span>
+                          ) : (
+                            <button type="button" className="danger" title="Delete lesson" aria-label="Delete lesson" onClick={() => setConfirmDelete(lessonDeleteKey)}><Trash2 size={14} aria-hidden="true" /></button>
+                          )}
+                        </span>
                       </div>
-                      {actionsOpen && <div className="lesson-library-inline-actions">
-                        <button type="button" onClick={() => props.onDuplicateLesson(lesson.id)}><Copy size={12} /> Duplicate</button>
-                        <button type="button" disabled={lessonIndex === 0} onClick={() => props.onMoveLesson(module.id, lessonIndex, -1)}>Earlier</button>
-                        <button type="button" disabled={lessonIndex === moduleLessons.length - 1} onClick={() => props.onMoveLesson(module.id, lessonIndex, 1)}>Later</button>
-                        {props.modules.length > 1 && <label><span>Module</span><select value={module.id} onChange={(event) => props.onMoveLessonToModule(lesson.id, event.target.value)}>{props.modules.map((item) => <option key={item.id} value={item.id}>{item.name}</option>)}</select></label>}
-                        {confirmDelete === lessonDeleteKey ? <span className="lesson-inline-confirm">Delete this lesson? <button type="button" className="danger" onClick={() => { props.onDeleteLesson(lesson.id); setConfirmDelete(null); }}>Yes</button><button type="button" onClick={() => setConfirmDelete(null)}>Cancel</button></span> : <button type="button" className="danger" onClick={() => setConfirmDelete(lessonDeleteKey)}><Trash2 size={12} /> Delete</button>}
-                      </div>}
                       {!lessonCollapsed && <LessonDocument
                         lesson={lesson} conceptDisplays={props.conceptDisplays} undoDeletionLabel={props.deletionUndo?.lessonId === lesson.id ? props.deletionUndo.label : null}
                         onAddConcept={(concept) => props.onAddLessonConcept(lesson.id, concept)} onRemoveConcept={(id) => props.onRemoveLessonConcept(lesson.id, id)} onRelabelConcept={(id, label) => props.onRelabelLessonConcept(lesson.id, id, label)}
-                        onUpdateExplanation={(blockId, markdown) => props.onUpdateExplanation(lesson.id, blockId, markdown)} onUpdateSentence={(blockId, field, value) => props.onUpdateSentence(lesson.id, blockId, field, value)} onUpdateSpanish={(blockId, pieceId, value) => props.onUpdateSpanish(lesson.id, blockId, pieceId, value)} onUpdateAnswer={(blockId, pieceId, answerIndex, value) => props.onUpdateAnswer(lesson.id, blockId, pieceId, answerIndex, value)} onUpdateCallout={(blockId, pieceId, value) => props.onUpdateCallout(lesson.id, blockId, pieceId, value)} onAddAnswer={(blockId, pieceId) => props.onAddAnswer(lesson.id, blockId, pieceId)} onRemoveAnswer={(blockId, pieceId, answerIndex) => props.onRemoveAnswer(lesson.id, blockId, pieceId, answerIndex)} onAddPiece={(blockId) => props.onAddPiece(lesson.id, blockId)} onDeletePiece={(blockId, pieceId) => props.onDeletePiece(lesson.id, blockId, pieceId)} onAddBlock={(type, index) => props.onAddBlock(lesson.id, type, index)} onDeleteBlock={(blockId) => props.onDeleteBlock(lesson.id, blockId)} onDuplicateBlock={(blockId) => props.onDuplicateBlock(lesson.id, blockId)} onMoveBlock={(blockId, direction) => props.onMoveBlock(lesson.id, blockId, direction)} onUndoDeletion={props.onUndoDeletion}
+                        onUpdateExplanation={(blockId, markdown) => props.onUpdateExplanation(lesson.id, blockId, markdown)} onUpdateSentence={(blockId, field, value) => props.onUpdateSentence(lesson.id, blockId, field, value)} onUpdateSpanish={(blockId, pieceId, value) => props.onUpdateSpanish(lesson.id, blockId, pieceId, value)} onUpdateAnswer={(blockId, pieceId, answerIndex, value) => props.onUpdateAnswer(lesson.id, blockId, pieceId, answerIndex, value)} onUpdateCallout={(blockId, pieceId, value) => props.onUpdateCallout(lesson.id, blockId, pieceId, value)} onAddAnswer={(blockId, pieceId) => props.onAddAnswer(lesson.id, blockId, pieceId)} onRemoveAnswer={(blockId, pieceId, answerIndex) => props.onRemoveAnswer(lesson.id, blockId, pieceId, answerIndex)} onAddPiece={(blockId) => props.onAddPiece(lesson.id, blockId)} onDeletePiece={(blockId, pieceId) => props.onDeletePiece(lesson.id, blockId, pieceId)} onAddBlock={(type, index) => props.onAddBlock(lesson.id, type, index)} onDeleteBlock={(blockId) => props.onDeleteBlock(lesson.id, blockId)} onDuplicateBlock={(blockId) => props.onDuplicateBlock(lesson.id, blockId)} onMoveBlock={(blockId, direction) => props.onMoveBlock(lesson.id, blockId, direction)} onReorderBlock={(draggedId, targetId, position) => props.onReorderBlock(lesson.id, draggedId, targetId, position)} onUndoDeletion={props.onUndoDeletion}
                       />}
                     </article>
                   );
@@ -192,6 +206,8 @@ function KeyboardHelpDialog({ onClose }: { onClose: () => void }) {
       <div><dt>Ctrl/⌘ + Shift + 1</dt><dd>Mark selected text Spanish</dd></div>
       <div><dt>Ctrl/⌘ + Shift + 2</dt><dd>Mark selected text English</dd></div>
       <div><dt>Ctrl/⌘ + Shift + 0</dt><dd>Clear selected formatting</dd></div>
+      <div><dt>Ctrl/⌘ + Z</dt><dd>Undo</dd></div>
+      <div><dt>Ctrl/⌘ + Shift + Z</dt><dd>Redo</dd></div>
       <div><dt>Escape</dt><dd>Leave a field or close this help</dd></div>
       <div><dt>Ctrl/⌘ + S</dt><dd>Save now</dd></div>
     </dl>

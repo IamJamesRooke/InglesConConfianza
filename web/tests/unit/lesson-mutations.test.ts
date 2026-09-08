@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 
 import * as m from "../../src/lib/lesson-builder/mutations";
-import { lessonsReducer } from "../../src/lib/lesson-builder/reducer";
+import { lessonsReducer, undoableLessonsReducer, initialUndoableLessons } from "../../src/lib/lesson-builder/reducer";
 import type { Lesson, SentenceBlock } from "../../src/lib/lesson-builder/types";
 
 function sentenceBlock(overrides: Partial<SentenceBlock> = {}): SentenceBlock {
@@ -199,6 +199,31 @@ test("reducer SET_LESSONS replaces wholesale", () => {
     lessonsReducer(baseLessons(), { type: "SET_LESSONS", lessons: [] }),
     [],
   );
+});
+
+test("undoable reducer: delete then UNDO restores, REDO re-applies", () => {
+  let s = undoableLessonsReducer(initialUndoableLessons, { type: "SET_LESSONS", lessons: baseLessons() });
+  assert.equal(s.past.length, 0);
+  s = undoableLessonsReducer(s, { type: "DELETE_CONTENT_BLOCK", lessonId: "lesson_a", blockId: "b1" });
+  assert.equal(s.present[0].blocks.length, 0);
+  assert.equal(s.past.length, 1);
+  s = undoableLessonsReducer(s, { type: "UNDO" });
+  assert.equal(s.present[0].blocks.length, 1);
+  assert.equal(s.future.length, 1);
+  s = undoableLessonsReducer(s, { type: "REDO" });
+  assert.equal(s.present[0].blocks.length, 0);
+});
+
+test("undoable reducer: consecutive edits to one field coalesce into a single step", () => {
+  let s = undoableLessonsReducer(initialUndoableLessons, { type: "SET_LESSONS", lessons: baseLessons() });
+  s = undoableLessonsReducer(s, { type: "DELETE_CONTENT_BLOCK", lessonId: "lesson_a", blockId: "b1" });
+  const afterStructural = s.past.length;
+  s = undoableLessonsReducer(s, { type: "RENAME_LESSON", lessonId: "lesson_a", name: "a" });
+  s = undoableLessonsReducer(s, { type: "RENAME_LESSON", lessonId: "lesson_a", name: "ab" });
+  s = undoableLessonsReducer(s, { type: "RENAME_LESSON", lessonId: "lesson_a", name: "abc" });
+  assert.equal(s.past.length, afterStructural + 1);
+  s = undoableLessonsReducer(s, { type: "UNDO" });
+  assert.equal(s.present[0].name, "A");
 });
 
 test("lesson concepts add / remove", () => {

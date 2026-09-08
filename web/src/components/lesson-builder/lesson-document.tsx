@@ -1,6 +1,6 @@
 "use client";
 
-import { Copy, Plus, Trash2, Undo2 } from "lucide-react";
+import { Copy, GripVertical, Plus, Trash2, Undo2 } from "lucide-react";
 import {
   useEffect,
   useRef,
@@ -11,6 +11,7 @@ import {
 
 import { LessonConceptsField, type ConceptDisplayLookup } from "@/components/lesson-builder/lesson-concepts-field";
 import { EditablePracticeMarkdown } from "@/components/practice/practice-markdown";
+import { useDragReorder } from "@/lib/lesson-builder/use-drag-reorder";
 import type { Lesson, LessonConcept, SentenceBlock } from "@/lib/lesson-builder/types";
 
 export type DocumentBlockType = "explanation" | "sentence" | "vocabulary";
@@ -35,21 +36,23 @@ type Props = {
   onDeleteBlock: (blockId: string) => void;
   onDuplicateBlock: (blockId: string) => void;
   onMoveBlock: (blockId: string, direction: -1 | 1) => void;
+  onReorderBlock: (draggedId: string, targetId: string, position: "before" | "after") => void;
   onUndoDeletion: () => void;
 };
 
 const BLOCK_TYPES: { type: DocumentBlockType; label: string; key: string }[] = [
-  { type: "explanation", label: "Explanation", key: "E" },
-  { type: "sentence", label: "Sentence", key: "S" },
-  { type: "vocabulary", label: "Vocabulary table", key: "V" },
+  { type: "explanation", label: "Note", key: "N" },
+  { type: "sentence", label: "Fill-in-the-blank", key: "F" },
+  { type: "vocabulary", label: "Word list", key: "W" },
 ];
 
 export function LessonDocument(props: Props) {
   const [activeBlock, setActiveBlock] = useState<string | null>(null);
   const [insertAt, setInsertAt] = useState<number | null>(() => props.lesson.blocks.length === 0 ? 0 : null);
   const [insertChoice, setInsertChoice] = useState(0);
-  const [confirmDelete, setConfirmDelete] = useState<string | null>(null);
   const [focusAfterAdd, setFocusAfterAdd] = useState<string | null>(null);
+  const drag = useDragReorder({ axis: "y", mode: "nested" });
+  const dragScope = props.lesson.id;
 
   useEffect(() => {
     if (!focusAfterAdd) return;
@@ -78,15 +81,17 @@ export function LessonDocument(props: Props) {
 
   return (
     <div className="lesson-document">
-      <LessonConceptsField
-        variant="compact"
-        label="Covers"
-        concepts={props.lesson.concepts}
-        conceptDisplays={props.conceptDisplays}
-        onAdd={props.onAddConcept}
-        onRemove={props.onRemoveConcept}
-        onRelabel={props.onRelabelConcept}
-      />
+      <div className="lesson-document-tags">
+        <LessonConceptsField
+          variant="compact"
+          label="Covers"
+          concepts={props.lesson.concepts}
+          conceptDisplays={props.conceptDisplays}
+          onAdd={props.onAddConcept}
+          onRemove={props.onRemoveConcept}
+          onRelabel={props.onRelabelConcept}
+        />
+      </div>
 
       <div
         className="lesson-document-body"
@@ -102,10 +107,22 @@ export function LessonDocument(props: Props) {
         {props.lesson.blocks.map((block, index) => (
           <div
             key={block.id}
-            className="lesson-document-block"
+            className={`lesson-document-block${drag.dragged?.id === block.id ? " dragging" : ""}${
+              drag.dropTarget?.id === block.id ? ` drop-${drag.dropTarget.position}` : ""
+            }`}
             data-document-block={block.id}
             tabIndex={-1}
             onFocusCapture={() => setActiveBlock(block.id)}
+            onDragOver={(event) => drag.dragOver(event, dragScope, block.id)}
+            onDrop={(event) => {
+              if (!drag.dragged) return;
+              event.preventDefault();
+              event.stopPropagation();
+              if (drag.dragged && drag.dropTarget && drag.dragged.id !== drag.dropTarget.id) {
+                props.onReorderBlock(drag.dragged.id, drag.dropTarget.id, drag.dropTarget.position);
+              }
+              drag.reset();
+            }}
             onKeyDownCapture={(event) => {
               if (event.key === "Escape" && event.target !== event.currentTarget) {
                 event.preventDefault();
@@ -114,6 +131,7 @@ export function LessonDocument(props: Props) {
               }
             }}
           >
+            <span className="lesson-document-block-number" aria-hidden="true">{index + 1}</span>
             <InsertControl
               open={insertAt === index}
               selected={insertChoice}
@@ -127,17 +145,17 @@ export function LessonDocument(props: Props) {
               <section className="lesson-document-explanation" aria-label={`Explanation ${index + 1}`}>
                 <EditablePracticeMarkdown
                   markdown={block.contentMarkdown}
-                  placeholder="Type an explanation…"
+                  placeholder=""
                   ariaLabel={`Explanation ${index + 1}`}
                   fieldName={`explanation-${block.id}`}
-                  showSelectionMenu={false}
+                  variant="document"
                   onChange={(markdown) => props.onUpdateExplanation(block.id, markdown)}
                 />
-                {!block.contentMarkdown.trim() && <p className="lesson-document-explanation-guide">Type normally. Select Spanish words and press Ctrl/⌘ + Shift + 1; select English words and press Ctrl/⌘ + Shift + 2.</p>}
               </section>
             ) : (
               <SentenceDocument
                 block={block}
+                active={activeBlock === block.id}
                 onUpdateSentence={(field, value) => props.onUpdateSentence(block.id, field, value)}
                 onUpdateSpanish={(pieceId, value) => props.onUpdateSpanish(block.id, pieceId, value)}
                 onUpdateAnswer={(pieceId, answerIndex, value) => props.onUpdateAnswer(block.id, pieceId, answerIndex, value)}
@@ -149,18 +167,24 @@ export function LessonDocument(props: Props) {
               />
             )}
 
-            <div className="lesson-document-block-actions" aria-label={`Actions for item ${index + 1}`}>
-              <button type="button" onClick={() => props.onDuplicateBlock(block.id)}><Copy size={12} /> Duplicate</button>
-              <button type="button" disabled={index === 0} onClick={() => props.onMoveBlock(block.id, -1)}>Earlier</button>
-              <button type="button" disabled={index === props.lesson.blocks.length - 1} onClick={() => props.onMoveBlock(block.id, 1)}>Later</button>
-              {confirmDelete === block.id ? (
-                <span className="lesson-inline-confirm">
-                  Delete? <button type="button" className="danger" onClick={() => { props.onDeleteBlock(block.id); setConfirmDelete(null); }}>Yes</button>
-                  <button type="button" onClick={() => setConfirmDelete(null)}>Cancel</button>
-                </span>
-              ) : (
-                <button type="button" className="danger" onClick={() => setConfirmDelete(block.id)}><Trash2 size={12} /> Delete</button>
-              )}
+            <div className="lesson-document-block-chrome" aria-label={`Actions for item ${index + 1}`}>
+              <button type="button" title="Duplicate" aria-label={`Duplicate item ${index + 1}`} onClick={() => props.onDuplicateBlock(block.id)}><Copy size={13} /></button>
+              <button type="button" className="danger" title="Delete" aria-label={`Delete item ${index + 1}`} onClick={() => props.onDeleteBlock(block.id)}><Trash2 size={13} /></button>
+              <button
+                type="button"
+                className="lesson-document-block-handle"
+                draggable
+                aria-label={`Reorder item ${index + 1}`}
+                title="Drag to reorder"
+                onDragStart={(event) => drag.dragStart(event, dragScope, block.id)}
+                onDragEnd={drag.reset}
+                onKeyDown={(event) => {
+                  if (event.key === "ArrowUp" && index > 0) { event.preventDefault(); props.onMoveBlock(block.id, -1); }
+                  if (event.key === "ArrowDown" && index < props.lesson.blocks.length - 1) { event.preventDefault(); props.onMoveBlock(block.id, 1); }
+                }}
+              >
+                <GripVertical size={14} />
+              </button>
             </div>
           </div>
         ))}
@@ -228,7 +252,7 @@ function InsertControl({ open, end = false, selected, onSelected, onToggle, onAd
   return (
     <div className={`lesson-document-insert ${end ? "end" : ""}`}>
       <button type="button" onClick={onToggle} aria-expanded={open}>
-        <Plus size={13} /> {end ? "Add to lesson" : <span className="sr-only">Insert here</span>}
+        <Plus size={13} /> {end ? "Add a note, exercise, or word list" : <span className="sr-only">Insert here</span>}
       </button>
       {open && (
         <div className="lesson-document-insert-choices" role="toolbar" aria-label="Choose the next item" onKeyDown={handleKey}>
@@ -241,18 +265,18 @@ function InsertControl({ open, end = false, selected, onSelected, onToggle, onAd
               onFocus={() => onSelected(index)}
               onClick={() => onAdd(choice.type)}
             >
-              {choice.label} <kbd>{choice.key}</kbd>
+              {choice.label}
             </button>
           ))}
-          <span>Arrows choose · Enter adds · Esc closes</span>
         </div>
       )}
     </div>
   );
 }
 
-function SentenceDocument({ block, onUpdateSentence, onUpdateSpanish, onUpdateAnswer, onUpdateCallout, onAddAnswer, onRemoveAnswer, onAddPiece, onDeletePiece }: {
+function SentenceDocument({ block, active, onUpdateSentence, onUpdateSpanish, onUpdateAnswer, onUpdateCallout, onAddAnswer, onRemoveAnswer, onAddPiece, onDeletePiece }: {
   block: SentenceBlock;
+  active: boolean;
   onUpdateSentence: (field: "promptText" | "helperText" | "answerFeedback", value: string | null) => void;
   onUpdateSpanish: (pieceId: string, value: string) => void;
   onUpdateAnswer: (pieceId: string, answerIndex: number, value: string) => void;
@@ -274,7 +298,8 @@ function SentenceDocument({ block, onUpdateSentence, onUpdateSpanish, onUpdateAn
   const isTable = block.layout === "vocabulary_table";
   const isEmpty = block.languageBlocks.every((piece) => !piece.spanish.trim() && !(piece.acceptedAnswers[0] ?? "").trim());
   const lastPiece = block.languageBlocks.at(-1);
-  const showTrailingPiece = !lastPiece || (Boolean(lastPiece.spanish.trim()) && Boolean(lastPiece.acceptedAnswers[0]?.trim()));
+  const lastPieceComplete = !lastPiece || (Boolean(lastPiece.spanish.trim()) && Boolean(lastPiece.acceptedAnswers[0]?.trim()));
+  const showTrailingPiece = lastPieceComplete && (active || block.languageBlocks.length === 0);
 
   function handleSpanishKey(event: KeyboardEvent<HTMLInputElement>, index: number) {
     if (event.key !== "Tab") return;
@@ -315,40 +340,44 @@ function SentenceDocument({ block, onUpdateSentence, onUpdateSpanish, onUpdateAn
 
   return (
     <section className={`lesson-document-sentence ${isTable ? "table" : ""}`} aria-label={isTable ? "Vocabulary table" : "Sentence practice"}>
-      {isEmpty && <p className="lesson-document-sentence-guide">{isTable ? "Type Spanish, press Tab, then type English. Tab starts the next row." : "Type the Spanish prompt, press Tab, type the English answer, then press Tab to continue."}</p>}
-      {showPrompt && <textarea autoFocus={!block.promptText} className="lesson-document-prompt" value={block.promptText} rows={1} placeholder={isTable ? "Optional table instruction…" : "Optional learner instruction…"} onChange={(event) => onUpdateSentence("promptText", event.target.value)} />}
+      {isEmpty && <p className="lesson-document-sentence-guide">{isTable ? "Type a Spanish word, press Tab, type its English meaning. Tab again starts the next row." : "Type the Spanish, press Tab, type the English answer, press Tab to add another blank."}</p>}
+      {showPrompt && <textarea autoFocus={!block.promptText} className="lesson-document-prompt" value={block.promptText} rows={1} placeholder={isTable ? "Instruction above the word list…" : "Instruction above the exercise…"} onChange={(event) => onUpdateSentence("promptText", event.target.value)} />}
       <div className="lesson-document-pieces">
         {block.languageBlocks.map((piece, index) => (
           <div key={piece.id} className={`lesson-document-piece ${activePiece === piece.id ? "active" : ""}`} onFocus={() => setActivePiece(piece.id)}>
             <input ref={(element) => { if (element) spanishRefs.current.set(piece.id, element); else spanishRefs.current.delete(piece.id); }} value={piece.spanish} onChange={(event) => onUpdateSpanish(piece.id, event.target.value)} onKeyDown={(event) => handleSpanishKey(event, index)} placeholder="español" lang="es" aria-label={`${isTable ? "Row" : "Sentence piece"} ${index + 1} Spanish`} />
             <input ref={(element) => { if (element) englishRefs.current.set(piece.id, element); else englishRefs.current.delete(piece.id); }} value={piece.acceptedAnswers[0] ?? ""} onChange={(event) => onUpdateAnswer(piece.id, 0, event.target.value)} onKeyDown={(event) => handleEnglishKey(event, index)} placeholder="English" lang="en" aria-label={`${isTable ? "Row" : "Sentence piece"} ${index + 1} English`} />
-            {piece.callout !== null && <label className="lesson-document-annotation"><span>Context hint</span><input autoFocus={focusCalloutId === piece.id} value={piece.callout} onBlur={() => setFocusCalloutId(null)} onChange={(event) => onUpdateCallout(piece.id, event.target.value)} placeholder="A small clue the learner sees…" /></label>}
+            {piece.callout !== null && <label className="lesson-document-annotation"><span>Hint shown to student</span><input autoFocus={focusCalloutId === piece.id} value={piece.callout} onBlur={() => setFocusCalloutId(null)} onChange={(event) => onUpdateCallout(piece.id, event.target.value)} placeholder="A small clue the student sees…" /></label>}
             {activePiece === piece.id && <div className="lesson-document-piece-actions">
               {piece.callout === null && <button type="button" onClick={() => { setFocusCalloutId(piece.id); onUpdateCallout(piece.id, ""); }}>+ hint</button>}
-              <button type="button" onClick={() => { setFocusAlternativePieceId(piece.id); onAddAnswer(piece.id); }}>+ alternative</button>
+              <button type="button" onClick={() => { setFocusAlternativePieceId(piece.id); onAddAnswer(piece.id); }}>+ another accepted answer</button>
               <button type="button" className="danger" onClick={() => onDeletePiece(piece.id)}>delete</button>
             </div>}
             {piece.acceptedAnswers.slice(1).map((answer, offset) => {
               const answerIndex = offset + 1;
-              return <label key={answerIndex} className="lesson-document-annotation alternative"><span>Also accepted</span><input autoFocus={focusAlternativePieceId === piece.id && answerIndex === piece.acceptedAnswers.length - 1} value={answer} onBlur={() => setFocusAlternativePieceId(null)} onChange={(event) => onUpdateAnswer(piece.id, answerIndex, event.target.value)} /><button type="button" aria-label="Remove alternative" onClick={() => onRemoveAnswer(piece.id, answerIndex)}>×</button></label>;
+              return <label key={answerIndex} className="lesson-document-annotation alternative"><span>Also accept</span><input autoFocus={focusAlternativePieceId === piece.id && answerIndex === piece.acceptedAnswers.length - 1} value={answer} onBlur={() => setFocusAlternativePieceId(null)} onChange={(event) => onUpdateAnswer(piece.id, answerIndex, event.target.value)} /><button type="button" aria-label="Remove alternative" onClick={() => onRemoveAnswer(piece.id, answerIndex)}>×</button></label>;
             })}
           </div>
         ))}
         {showTrailingPiece && <div className="lesson-document-piece trailing"><input id={`trailing-${block.id}`} value={draftSpanish} onChange={(event) => { setDraftSpanish(event.target.value); commitTrailing(event.target.value); }} placeholder={isTable ? "Add Spanish row…" : "Continue in Spanish…"} lang="es" aria-label={isTable ? "Add vocabulary row in Spanish" : "Add sentence piece in Spanish"} /><span aria-hidden="true">{isTable ? "Tab to add English" : "Tab to add English"}</span></div>}
       </div>
       {(showHelper || block.answerFeedback !== null) && <div className="lesson-document-slide-notes">
-        {showHelper && <label className="lesson-document-annotation"><span>Helper text</span><textarea autoFocus={!block.helperText} value={block.helperText} onChange={(event) => onUpdateSentence("helperText", event.target.value)} placeholder="Help available during practice…" /></label>}
-        {block.answerFeedback !== null && <label className="lesson-document-annotation"><span>Success</span><textarea autoFocus={focusNewSuccess} value={block.answerFeedback} onBlur={() => setFocusNewSuccess(false)} onChange={(event) => onUpdateSentence("answerFeedback", event.target.value)} placeholder="A quiet congratulations…" /></label>}
+        {showHelper && <label className="lesson-document-annotation"><span>Help on request</span><textarea autoFocus={!block.helperText} value={block.helperText} onChange={(event) => onUpdateSentence("helperText", event.target.value)} placeholder="Shown when the student asks for help…" /></label>}
+        {block.answerFeedback !== null && <label className="lesson-document-annotation"><span>After correct answer</span><textarea autoFocus={focusNewSuccess} value={block.answerFeedback} onBlur={() => setFocusNewSuccess(false)} onChange={(event) => onUpdateSentence("answerFeedback", event.target.value)} placeholder="A short message after they get it right…" /></label>}
       </div>}
       <div className="lesson-document-add-note">
         {!showPrompt && <button type="button" onClick={() => setShowPrompt(true)}>+ instruction</button>}
-        {!showHelper && <button type="button" onClick={() => setShowHelper(true)}>+ helper</button>}
-        {block.answerFeedback === null && <button type="button" onClick={() => { setFocusNewSuccess(true); onUpdateSentence("answerFeedback", ""); }}>+ success</button>}
+        {!showHelper && <button type="button" onClick={() => setShowHelper(true)}>+ help on request</button>}
+        {block.answerFeedback === null && <button type="button" onClick={() => { setFocusNewSuccess(true); onUpdateSentence("answerFeedback", ""); }}>+ after-correct message</button>}
       </div>
     </section>
   );
 }
 
 export function LessonDragHandle({ lessonNumber, onDragStart, onDragEnd }: { lessonNumber: number; onDragStart: (event: DragEvent<HTMLButtonElement>) => void; onDragEnd: () => void }) {
-  return <button type="button" draggable onDragStart={onDragStart} onDragEnd={onDragEnd} className="lesson-document-drag lesson-library-number" aria-label={`Drag lesson ${lessonNumber} to reorder`} title="Drag lesson">{lessonNumber}</button>;
+  return (
+    <button type="button" draggable onDragStart={onDragStart} onDragEnd={onDragEnd} className="lesson-document-drag lesson-library-number" aria-label={`Drag lesson ${lessonNumber} to reorder`} title="Drag to reorder lesson">
+      <GripVertical size={16} aria-hidden="true" />
+    </button>
+  );
 }

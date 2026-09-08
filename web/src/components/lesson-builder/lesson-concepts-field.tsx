@@ -204,7 +204,7 @@ export function LessonConceptsField({
           return (
           <span
             key={concept.id}
-            className={`inline-flex items-center ${variant === "compact" ? "gap-1 rounded-md border-0 bg-transparent px-1 py-0.5" : "gap-2 rounded-xl border px-3 py-1.5"} text-xs ${
+            className={`group inline-flex items-center ${variant === "compact" ? "gap-1 rounded border border-stone-200 bg-stone-50 px-1.5 py-0.5" : "gap-2 rounded-xl border px-3 py-1.5"} text-xs ${
               variant === "compact"
                 ? "text-stone-600"
                 : met
@@ -265,7 +265,7 @@ export function LessonConceptsField({
               type="button"
               onClick={() => onRemove(concept.id)}
               aria-label={`Remove ${concept.label}`}
-              className="text-current/60 transition hover:text-red-600"
+              className={`text-current/60 transition hover:text-red-600 ${variant === "compact" ? "opacity-0 group-hover:opacity-100 focus-visible:opacity-100" : ""}`}
             >
               <X className="size-3" aria-hidden="true" />
             </button>
@@ -331,7 +331,7 @@ export function LessonConceptsField({
               }
             }}
             className={variant === "compact"
-              ? "w-full border-0 border-b border-transparent bg-transparent px-1 py-0.5 text-xs text-stone-700 outline-none placeholder:text-stone-400 focus:border-violet-300"
+              ? "w-full rounded border border-dashed border-stone-300 bg-transparent px-1.5 py-0.5 text-xs text-stone-700 outline-none placeholder:text-stone-400 focus:border-solid focus:border-stone-400"
               : "w-full rounded-md border border-stone-300 bg-white px-2.5 py-1.5 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-violet-400 focus:ring-3 focus:ring-violet-100"}
           />
           {open && visibleResults.length > 0 && (

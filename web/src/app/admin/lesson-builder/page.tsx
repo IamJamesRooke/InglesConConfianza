@@ -6,7 +6,7 @@ import type { DocumentBlockType } from "@/components/lesson-builder/lesson-docum
 import { LessonLibrary } from "@/components/lesson-builder/lesson-library";
 import type { ConceptDisplayLookup } from "@/components/lesson-builder/lesson-concepts-field";
 import { LessonSelector, type PracticeLesson } from "@/components/practice/lesson-selector";
-import { lessonsReducer } from "@/lib/lesson-builder/reducer";
+import { undoableLessonsReducer, initialUndoableLessons } from "@/lib/lesson-builder/reducer";
 import type { LanguageBlock, Lesson, LessonBlock, LessonConcept, LessonFile, LessonModule } from "@/lib/lesson-builder/types";
 import { createId, normalizeLessons } from "@/lib/lesson-builder/utils";
 
@@ -16,7 +16,8 @@ type Deletion =
   | { kind: "piece"; lessonId: string; blockId: string; piece: LanguageBlock; index: number };
 
 export default function LessonBuilderPage() {
-  const [lessons, dispatch] = useReducer(lessonsReducer, []);
+  const [history, dispatch] = useReducer(undoableLessonsReducer, initialUndoableLessons);
+  const lessons = history.present;
   const [modules, setModules] = useState<LessonModule[]>([]);
   const [conceptDisplays, setConceptDisplays] = useState<ConceptDisplayLookup>({});
   const [saveState, setSaveState] = useState<SaveState>("loading");
@@ -139,6 +140,12 @@ export default function LessonBuilderPage() {
       } else if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") {
         event.preventDefault();
         document.getElementById("lesson-library-search-input")?.focus();
+      } else if ((event.ctrlKey || event.metaKey) && !event.shiftKey && event.key.toLowerCase() === "z") {
+        event.preventDefault();
+        dispatch({ type: "UNDO" });
+      } else if ((event.ctrlKey || event.metaKey) && (event.key.toLowerCase() === "r" || (event.shiftKey && event.key.toLowerCase() === "z"))) {
+        event.preventDefault();
+        dispatch({ type: "REDO" });
       }
     };
     document.addEventListener("keydown", handleKeyDown);
@@ -314,6 +321,8 @@ export default function LessonBuilderPage() {
     <div className="mx-auto w-full max-w-[1180px]">
       <LessonLibrary
         modules={modules} lessons={lessons} conceptDisplays={conceptDisplays} saveLabel={saveLabel}
+        canUndo={history.past.length > 0} canRedo={history.future.length > 0}
+        onUndo={() => dispatch({ type: "UNDO" })} onRedo={() => dispatch({ type: "REDO" })}
         onNewLesson={createLesson} onPreviewLesson={setPreviewLessonId} onDuplicateLesson={duplicateLesson} onDeleteLesson={(id) => void deleteLesson(id)}
         onAddModule={addModule} onDeleteModule={deleteModule} onMoveModule={moveModule} onMoveLesson={moveLessonWithinModule} onDropLesson={moveLessonToPosition} onMoveLessonToModule={moveLessonToModule} onChangeModule={patchModule}
         onRenameLesson={(lessonId, name) => dispatch({ type: "RENAME_LESSON", lessonId, name })}
@@ -329,7 +338,9 @@ export default function LessonBuilderPage() {
         onRemoveAnswer={(lessonId, sentenceBlockId, languageBlockId, answerIndex) => dispatch({ type: "REMOVE_ACCEPTED_ANSWER", lessonId, sentenceBlockId, languageBlockId, answerIndex })}
         onAddPiece={addPiece} onDeletePiece={deletePiece} onAddBlock={addBlock} onDeleteBlock={deleteBlock}
         onDuplicateBlock={(lessonId, blockId) => dispatch({ type: "DUPLICATE_CONTENT_BLOCK", lessonId, blockId })}
-        onMoveBlock={moveBlock} deletionUndo={deletionUndo} onUndoDeletion={undoDeletion}
+        onMoveBlock={moveBlock}
+        onReorderBlock={(lessonId, draggedId, targetId, position) => dispatch({ type: "MOVE_CONTENT_BLOCK", lessonId, draggedId, targetId, position })}
+        deletionUndo={deletionUndo} onUndoDeletion={undoDeletion}
       />
     </div>
     {preview && <LessonSelector lessons={[preview]} initialLessonId={preview.id} onCloseLesson={() => setPreviewLessonId(null)} />}
