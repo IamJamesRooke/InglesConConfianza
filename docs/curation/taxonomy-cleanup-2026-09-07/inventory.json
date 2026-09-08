@@ -1,13 +1,13 @@
 {
   "summary": {
-    "generatedAt": "2026-09-07T19:40:22.483Z",
+    "generatedAt": "2026-09-08T02:54:51.082Z",
     "totals": {
       "allConcepts": 4484,
       "nonTrash": 4251,
       "byRole": {
-        "core": 309,
-        "supporting": 1147,
-        "reference": 2795,
+        "core": 941,
+        "supporting": 0,
+        "reference": 0,
         "trash": 233
       }
     },
@@ -88,8 +88,8 @@
       },
       {
         "slug": "expressions",
-        "baseCount": 35,
-        "reachableCount": 35,
+        "baseCount": 61,
+        "reachableCount": 61,
         "withinTopicGapCount": 0,
         "emptyGroupCount": 0,
         "confusionGroupCount": 0
@@ -212,133 +212,133 @@
               "label": "Subject",
               "count": 11,
               "confusion": false,
-              "coreCount": 8
+              "coreCount": 11
             },
             {
               "collection": "grammar:direct-object-pronoun",
               "label": "Direct object",
               "count": 13,
               "confusion": false,
-              "coreCount": 9
+              "coreCount": 13
             },
             {
               "collection": "grammar:indirect-object-pronoun",
               "label": "Indirect object",
               "count": 12,
               "confusion": false,
-              "coreCount": 9
+              "coreCount": 12
             },
             {
               "collection": "grammar:prep-pronoun-con",
               "label": "Prepositional — con",
               "count": 10,
               "confusion": false,
-              "coreCount": 8
+              "coreCount": 10
             },
             {
               "collection": "grammar:prep-pronoun-para",
               "label": "Prepositional — para",
               "count": 10,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 10
             },
             {
               "collection": "grammar:prep-pronoun-a",
               "label": "Prepositional — a",
               "count": 10,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 10
             },
             {
               "collection": "grammar:possessive-determiner",
               "label": "Possessive (det)",
               "count": 18,
               "confusion": false,
-              "coreCount": 5
+              "coreCount": 18
             },
             {
               "collection": "grammar:possessive-pronoun",
               "label": "Possessive (pron)",
               "count": 10,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 10
             },
             {
               "collection": "grammar:reflexive-pronoun",
               "label": "Reflexive",
               "count": 9,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 9
             },
             {
               "collection": "grammar:reciprocal-pronoun",
               "label": "Reciprocal",
               "count": 2,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 2
             },
             {
               "collection": "grammar:demonstrative-determiner",
               "label": "Demonstrative (det)",
               "count": 12,
               "confusion": false,
-              "coreCount": 8
+              "coreCount": 12
             },
             {
               "collection": "grammar:demonstrative-pronoun",
               "label": "Demonstrative (pron)",
               "count": 9,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 9
             },
             {
               "collection": "grammar:indef-pronoun-person",
               "label": "Indefinite — Person",
               "count": 6,
               "confusion": false,
-              "coreCount": 3
+              "coreCount": 6
             },
             {
               "collection": "grammar:indef-pronoun-thing",
               "label": "Indefinite — Thing",
               "count": 3,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 3
             },
             {
               "collection": "grammar:indef-pronoun-place",
               "label": "Indefinite — Place",
               "count": 4,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 4
             },
             {
               "collection": "grammar:indef-pronoun-quantity",
               "label": "Indefinite — Quantity",
               "count": 12,
               "confusion": false,
-              "coreCount": 3
+              "coreCount": 12
             },
             {
               "collection": "grammar:interrogative-pronoun",
               "label": "Interrogative",
               "count": 6,
               "confusion": false,
-              "coreCount": 4
+              "coreCount": 6
             },
             {
               "collection": "grammar:relative-pronoun",
               "label": "Relative",
               "count": 8,
               "confusion": false,
-              "coreCount": 4
+              "coreCount": 8
             },
             {
               "collection": "grammar:exclamative",
               "label": "Exclamative",
               "count": 2,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 2
             },
             {
               "collection": "grammar:subordinate-subject-pronoun",
@@ -372,70 +372,70 @@
               "label": "Definite article",
               "count": 8,
               "confusion": false,
-              "coreCount": 7
+              "coreCount": 8
             },
             {
               "collection": "grammar:indefinite-article",
               "label": "Indefinite article",
               "count": 4,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 4
             },
             {
               "collection": "grammar:demonstrative-determiner",
               "label": "Demonstrative",
               "count": 12,
               "confusion": false,
-              "coreCount": 8
+              "coreCount": 12
             },
             {
               "collection": "grammar:possessive-determiner",
               "label": "Possessive",
               "count": 18,
               "confusion": false,
-              "coreCount": 5
+              "coreCount": 18
             },
             {
               "collection": "topic:quant-much-many",
               "label": "Quantifier — Much & Many",
               "count": 12,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 12
             },
             {
               "collection": "topic:quant-little-few",
               "label": "Quantifier — Little & Few",
               "count": 12,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 12
             },
             {
               "collection": "topic:quant-more-less",
               "label": "Quantifier — More & Less",
               "count": 11,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 11
             },
             {
               "collection": "topic:quant-both-all-whole",
               "label": "Quantifier — Both, All & Whole",
               "count": 9,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 9
             },
             {
               "collection": "topic:quant-some-any-no",
               "label": "Quantifier — Some, Any & No",
               "count": 11,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 11
             },
             {
               "collection": "topic:quant-other-certain-such",
               "label": "Quantifier — Other, Certain & Such",
               "count": 8,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 8
             },
             {
               "collection": "topic:cardinal-1-10",
@@ -463,21 +463,21 @@
               "label": "Interrogative",
               "count": 6,
               "confusion": false,
-              "coreCount": 3
+              "coreCount": 6
             },
             {
               "collection": "grammar:relative-determiner",
               "label": "Relative (cuyo)",
               "count": 4,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 4
             },
             {
               "collection": "grammar:negative",
               "label": "Negative (ningún)",
               "count": 3,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 3
             }
           ]
         }
@@ -504,21 +504,21 @@
               "label": "Pronoun",
               "count": 9,
               "confusion": false,
-              "coreCount": 6
+              "coreCount": 9
             },
             {
               "collection": "grammar:interrogative-determiner",
               "label": "Determiner",
               "count": 6,
               "confusion": false,
-              "coreCount": 3
+              "coreCount": 6
             },
             {
               "collection": "grammar:interrogative-adverb",
               "label": "Adverb",
               "count": 10,
               "confusion": false,
-              "coreCount": 5
+              "coreCount": 10
             }
           ]
         }
@@ -545,35 +545,35 @@
               "label": "To Be — Present (am/is/are)",
               "count": 32,
               "confusion": false,
-              "coreCount": 21
+              "coreCount": 32
             },
             {
               "collection": "topic:verb-tobe-past-future",
               "label": "To Be — Past & Future (was/were/will be)",
               "count": 3,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 3
             },
             {
               "collection": "topic:verb-ser-idioms",
               "label": "To Be (ser) — Idioms & Uses",
               "count": 33,
               "confusion": false,
-              "coreCount": 4
+              "coreCount": 22
             },
             {
               "collection": "topic:verb-estar-idioms",
               "label": "To Be (estar) — Idioms & Uses",
               "count": 48,
               "confusion": false,
-              "coreCount": 4
+              "coreCount": 30
             },
             {
               "collection": "topic:verb-tobe-existence-hay",
               "label": "There Is/Are (hay)",
               "count": 20,
               "confusion": false,
-              "coreCount": 6
+              "coreCount": 19
             }
           ]
         },
@@ -587,28 +587,28 @@
               "label": "Have — Perfect Auxiliary (have/has/had done)",
               "count": 23,
               "confusion": false,
-              "coreCount": 3
+              "coreCount": 23
             },
             {
               "collection": "topic:verb-modal-ability",
               "label": "Modals — Ability & Permission",
               "count": 42,
               "confusion": false,
-              "coreCount": 6
+              "coreCount": 36
             },
             {
               "collection": "topic:verb-modal-possibility",
               "label": "Modals — Possibility (may/might/could)",
               "count": 15,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 14
             },
             {
               "collection": "topic:verb-modal-obligation",
               "label": "Modals — Obligation & Probability (must/should/have to)",
               "count": 31,
               "confusion": false,
-              "coreCount": 3
+              "coreCount": 26
             },
             {
               "collection": "topic:verb-needing",
@@ -622,14 +622,14 @@
               "label": "Wishes & Hypotheticals",
               "count": 33,
               "confusion": false,
-              "coreCount": 8
+              "coreCount": 17
             },
             {
               "collection": "topic:verb-hoping-waiting",
               "label": "Hoping & Waiting",
               "count": 11,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 3
             },
             {
               "collection": "topic:verb-depending-fitting",
@@ -664,7 +664,7 @@
               "label": "Communication — Notifying & Telling",
               "count": 38,
               "confusion": false,
-              "coreCount": 3
+              "coreCount": 6
             },
             {
               "collection": "topic:verb-communication-formal",
@@ -678,21 +678,21 @@
               "label": "Communication — Naming, Calling & Marking",
               "count": 22,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 0
             },
             {
               "collection": "topic:verb-asking-requesting",
               "label": "Asking & Requesting",
               "count": 27,
               "confusion": false,
-              "coreCount": 3
+              "coreCount": 4
             },
             {
               "collection": "topic:verb-offering",
               "label": "Offering & Providing",
               "count": 8,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 3
             }
           ]
         },
@@ -706,28 +706,28 @@
               "label": "Thinking & Opinions",
               "count": 24,
               "confusion": false,
-              "coreCount": 3
+              "coreCount": 4
             },
             {
               "collection": "topic:verb-deciding-considering",
               "label": "Deciding & Considering",
               "count": 28,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 6
             },
             {
               "collection": "topic:verb-knowing",
               "label": "Knowing",
               "count": 22,
               "confusion": false,
-              "coreCount": 6
+              "coreCount": 7
             },
             {
               "collection": "topic:verb-learning-teaching",
               "label": "Learning & Teaching",
               "count": 14,
               "confusion": false,
-              "coreCount": 3
+              "coreCount": 1
             },
             {
               "collection": "topic:verb-remembering-forgetting",
@@ -755,14 +755,14 @@
               "label": "Seeing",
               "count": 11,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 4
             },
             {
               "collection": "topic:verb-watching-other",
               "label": "Watching & Observing",
               "count": 28,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 7
             },
             {
               "collection": "topic:verb-perception-hearing",
@@ -776,21 +776,21 @@
               "label": "Feelings & Sensations",
               "count": 19,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 2
             },
             {
               "collection": "topic:verb-feelings-love-like",
               "label": "Feelings — Love & Liking",
               "count": 16,
               "confusion": false,
-              "coreCount": 6
+              "coreCount": 7
             },
             {
               "collection": "topic:verb-feelings-dislike-worry",
               "label": "Feelings — Dislike, Worry & Missing",
               "count": 18,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             }
           ]
         },
@@ -804,28 +804,28 @@
               "label": "Movement — Going",
               "count": 29,
               "confusion": false,
-              "coreCount": 11
+              "coreCount": 29
             },
             {
               "collection": "topic:verb-movement-coming",
               "label": "Movement — Coming",
               "count": 11,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 4
             },
             {
               "collection": "topic:verb-movement-arriving-passing",
               "label": "Movement — Arriving & Passing",
               "count": 28,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 3
             },
             {
               "collection": "topic:verb-movement-leaving",
               "label": "Movement — Leaving",
               "count": 23,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 3
             },
             {
               "collection": "topic:verb-movement-directional-verbs",
@@ -846,7 +846,7 @@
               "label": "Movement — Walking & Running",
               "count": 17,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 0
             },
             {
               "collection": "topic:verb-following-continuing",
@@ -867,21 +867,21 @@
               "label": "Having (tener)",
               "count": 33,
               "confusion": false,
-              "coreCount": 19
+              "coreCount": 23
             },
             {
               "collection": "topic:verb-possession-obtaining",
               "label": "Getting & Obtaining",
               "count": 27,
               "confusion": false,
-              "coreCount": 3
+              "coreCount": 7
             },
             {
               "collection": "topic:verb-tomar-general",
               "label": "Taking (tomar/coger)",
               "count": 34,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 0
             },
             {
               "collection": "topic:verb-dar-giving",
@@ -895,7 +895,7 @@
               "label": "Giving (dar) — Idioms",
               "count": 19,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 2
             },
             {
               "collection": "topic:verb-giving-lending-other",
@@ -923,14 +923,14 @@
               "label": "Keeping & Storing",
               "count": 34,
               "confusion": false,
-              "coreCount": 3
+              "coreCount": 9
             },
             {
               "collection": "topic:verb-quedar-remaining",
               "label": "Remaining & Staying (quedar)",
               "count": 11,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 2
             },
             {
               "collection": "topic:verb-carrying",
@@ -944,7 +944,7 @@
               "label": "Bringing",
               "count": 17,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 0
             }
           ]
         },
@@ -958,35 +958,35 @@
               "label": "Eating & Drinking",
               "count": 26,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 6
             },
             {
               "collection": "topic:verb-daily-routine",
               "label": "Daily Routine & Self-care",
               "count": 22,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 0
             },
             {
               "collection": "topic:verb-work-employment",
               "label": "Work & Employment",
               "count": 31,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 0
             },
             {
               "collection": "topic:verb-money-earning-spending",
               "label": "Money — Earning & Spending",
               "count": 26,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 3
             },
             {
               "collection": "topic:verb-money-commerce",
               "label": "Money — Buying & Selling",
               "count": 35,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 0
             }
           ]
         },
@@ -1000,7 +1000,7 @@
               "label": "Making & Doing (hacer)",
               "count": 31,
               "confusion": false,
-              "coreCount": 11
+              "coreCount": 13
             },
             {
               "collection": "topic:verb-creation-repair-other",
@@ -1035,7 +1035,7 @@
               "label": "Household & Objects",
               "count": 43,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 5
             }
           ]
         },
@@ -1056,14 +1056,14 @@
               "label": "Conflict & Crime",
               "count": 27,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             },
             {
               "collection": "topic:verb-loss-death",
               "label": "Loss & Death",
               "count": 14,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 0
             }
           ]
         },
@@ -1077,7 +1077,7 @@
               "label": "Administrative, Legal & Formal Actions",
               "count": 21,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 3
             },
             {
               "collection": "topic:verb-technology-digital",
@@ -1188,7 +1188,7 @@
               "label": "traer → -tract",
               "count": 6,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 0
             },
             {
               "collection": "cognate:ceder-to-cede",
@@ -1650,7 +1650,7 @@
               "label": "Looks different",
               "count": 64,
               "confusion": false,
-              "coreCount": 4
+              "coreCount": 3
             },
             {
               "collection": "cognate:false-friend",
@@ -1671,7 +1671,7 @@
               "label": "Latin roots (any)",
               "count": 218,
               "confusion": false,
-              "coreCount": 4
+              "coreCount": 3
             }
           ]
         }
@@ -1698,7 +1698,7 @@
               "label": "el, -o",
               "count": 144,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 0
             },
             {
               "collection": "topic:masc-consonant",
@@ -1712,7 +1712,7 @@
               "label": "el, -e",
               "count": 22,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 0
             },
             {
               "collection": "topic:masc-exceptions",
@@ -1726,7 +1726,7 @@
               "label": "la, -a",
               "count": 140,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 0
             },
             {
               "collection": "topic:fem-abstract-suffix",
@@ -1747,7 +1747,7 @@
               "label": "la, exceptions to -a",
               "count": 19,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 0
             },
             {
               "collection": "topic:common-gender-professions",
@@ -1768,7 +1768,7 @@
               "label": "No article / neuter lo",
               "count": 18,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             }
           ]
         },
@@ -1782,7 +1782,7 @@
               "label": "Family — Immediate",
               "count": 14,
               "confusion": false,
-              "coreCount": 4
+              "coreCount": 0
             },
             {
               "collection": "topic:family-extended",
@@ -2055,7 +2055,7 @@
               "label": "Other abstract nouns",
               "count": 118,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             }
           ]
         }
@@ -2180,7 +2180,7 @@
               "label": "Time",
               "count": 7,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             },
             {
               "collection": "topic:value-price",
@@ -2222,14 +2222,14 @@
               "label": "Emotion — Feeling",
               "count": 15,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             },
             {
               "collection": "topic:condition-state",
               "label": "Condition / state",
               "count": 23,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 2
             }
           ]
         },
@@ -2250,7 +2250,7 @@
               "label": "tener (idiom)",
               "count": 13,
               "confusion": false,
-              "coreCount": 6
+              "coreCount": 7
             },
             {
               "collection": "grammar:adjective-position",
@@ -2320,7 +2320,7 @@
               "label": "Other descriptive adjectives",
               "count": 131,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 11
             }
           ]
         }
@@ -2361,35 +2361,35 @@
               "label": "Intensifiers",
               "count": 7,
               "confusion": false,
-              "coreCount": 3
+              "coreCount": 5
             },
             {
               "collection": "grammar:interrogative-adverb",
               "label": "Interrogative",
               "count": 10,
               "confusion": false,
-              "coreCount": 5
+              "coreCount": 10
             },
             {
               "collection": "adv:possibility",
               "label": "Possibility (maybe, apparently)",
               "count": 6,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 3
             },
             {
               "collection": "adv:degree",
               "label": "Degree / approximation (almost, barely, somewhat)",
               "count": 7,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 3
             },
             {
               "collection": "adv:habitual",
               "label": "Habitual (soler)",
               "count": 3,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 3
             },
             {
               "collection": "grammar:addition",
@@ -2410,21 +2410,21 @@
               "label": "Time — Relative Day",
               "count": 17,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             },
             {
               "collection": "topic:adv-time-now-and-timing",
               "label": "Time — Now & Timing",
               "count": 18,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 6
             },
             {
               "collection": "topic:location",
               "label": "Place",
               "count": 14,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 2
             },
             {
               "collection": "topic:cognate",
@@ -2519,8 +2519,8 @@
       "slug": "expressions",
       "title": "Expressions",
       "baseCollection": "topic:social-expression",
-      "baseCount": 35,
-      "reachableCount": 35,
+      "baseCount": 61,
+      "reachableCount": 61,
       "withinTopicGapCount": 0,
       "withinTopicGapIds": [],
       "families": [
@@ -2532,9 +2532,9 @@
             {
               "collection": "expr:politeness",
               "label": "Politeness",
-              "count": 7,
+              "count": 8,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             },
             {
               "collection": "expr:greeting",
@@ -2553,28 +2553,28 @@
             {
               "collection": "expr:response",
               "label": "Response words",
-              "count": 5,
+              "count": 9,
               "confusion": false,
               "coreCount": 2
             },
             {
               "collection": "expr:farewell",
               "label": "Farewells",
-              "count": 2,
+              "count": 3,
               "confusion": false,
               "coreCount": 0
             },
             {
               "collection": "expr:warning-command",
               "label": "Warnings & commands",
-              "count": 3,
+              "count": 8,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 2
             },
             {
               "collection": "expr:idiom",
               "label": "Idioms & fixed phrases",
-              "count": 9,
+              "count": 26,
               "confusion": false,
               "coreCount": 0
             }
@@ -2603,42 +2603,42 @@
               "label": "Everyday (and, but, or...)",
               "count": 9,
               "confusion": false,
-              "coreCount": 6
+              "coreCount": 9
             },
             {
               "collection": "grammar:reason",
               "label": "Reason",
               "count": 10,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 10
             },
             {
               "collection": "grammar:contrast",
               "label": "Contrast",
               "count": 3,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 3
             },
             {
               "collection": "grammar:addition",
               "label": "Addition",
               "count": 4,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 4
             },
             {
               "collection": "topic:time-connector",
               "label": "Time",
               "count": 9,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 9
             },
             {
               "collection": "grammar:sequence",
               "label": "Sequence (then)",
               "count": 4,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 4
             }
           ]
         },
@@ -2652,35 +2652,35 @@
               "label": "Concession (although)",
               "count": 12,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 12
             },
             {
               "collection": "grammar:discourse",
               "label": "Discourse markers (that is, by the way)",
               "count": 10,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 10
             },
             {
               "collection": "grammar:conditional",
               "label": "Conditional (as long as, unless)",
               "count": 5,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 5
             },
             {
               "collection": "grammar:correlative",
               "label": "Correlative (either...or, neither...nor)",
               "count": 5,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 5
             },
             {
               "collection": "grammar:comparison",
               "label": "Comparison (than)",
               "count": 2,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 2
             }
           ]
         }
@@ -2707,35 +2707,35 @@
               "label": "Time",
               "count": 8,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 8
             },
             {
               "collection": "topic:location-vertical-relative",
               "label": "Location — Vertical & Relative",
               "count": 12,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 12
             },
             {
               "collection": "topic:location-path-between",
               "label": "Location — Path & Between",
               "count": 11,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 11
             },
             {
               "collection": "construction:map-segun-according-to",
               "label": "According to",
               "count": 3,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 3
             },
             {
               "collection": "grammar:purpose",
               "label": "Purpose, without & except",
               "count": 3,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 3
             }
           ]
         }
@@ -2762,49 +2762,49 @@
               "label": "estar",
               "count": 107,
               "confusion": false,
-              "coreCount": 13
+              "coreCount": 45
             },
             {
               "collection": "topic:map-dar",
               "label": "dar",
               "count": 53,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 6
             },
             {
               "collection": "topic:map-decir",
               "label": "decir",
               "count": 36,
               "confusion": false,
-              "coreCount": 5
+              "coreCount": 11
             },
             {
               "collection": "topic:map-de",
               "label": "de",
               "count": 32,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 4
             },
             {
               "collection": "topic:map-en",
               "label": "en",
               "count": 30,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 3
             },
             {
               "collection": "topic:map-dejar",
               "label": "dejar",
               "count": 32,
               "confusion": false,
-              "coreCount": 3
+              "coreCount": 11
             },
             {
               "collection": "topic:map-deber",
               "label": "deber",
               "count": 28,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 24
             },
             {
               "collection": "topic:map-echar",
@@ -2825,28 +2825,28 @@
               "label": "caer",
               "count": 17,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 2
             },
             {
               "collection": "es:esperar",
               "label": "esperar",
               "count": 17,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 4
             },
             {
               "collection": "es:con",
               "label": "con",
               "count": 18,
               "confusion": false,
-              "coreCount": 6
+              "coreCount": 10
             },
             {
               "collection": "es:a",
               "label": "a",
               "count": 19,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 11
             },
             {
               "collection": "es:conocer",
@@ -2860,7 +2860,7 @@
               "label": "creer",
               "count": 17,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 3
             },
             {
               "collection": "es:cargar",
@@ -2881,21 +2881,21 @@
               "label": "hacer",
               "count": 55,
               "confusion": false,
-              "coreCount": 6
+              "coreCount": 13
             },
             {
               "collection": "topic:map-haber",
               "label": "haber",
               "count": 46,
               "confusion": false,
-              "coreCount": 9
+              "coreCount": 45
             },
             {
               "collection": "topic:map-ir",
               "label": "ir",
               "count": 36,
               "confusion": false,
-              "coreCount": 11
+              "coreCount": 31
             },
             {
               "collection": "topic:map-hablar",
@@ -2916,49 +2916,49 @@
               "label": "ser",
               "count": 388,
               "confusion": false,
-              "coreCount": 18
+              "coreCount": 44
             },
             {
               "collection": "topic:map-poner",
               "label": "poner",
               "count": 82,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 4
             },
             {
               "collection": "topic:map-tener",
               "label": "tener",
               "count": 61,
               "confusion": false,
-              "coreCount": 27
+              "coreCount": 34
             },
             {
               "collection": "topic:map-poder",
               "label": "poder",
               "count": 68,
               "confusion": false,
-              "coreCount": 6
+              "coreCount": 49
             },
             {
               "collection": "topic:map-pedir",
               "label": "pedir",
               "count": 31,
               "confusion": false,
-              "coreCount": 3
+              "coreCount": 4
             },
             {
               "collection": "topic:map-querer",
               "label": "querer",
               "count": 33,
               "confusion": false,
-              "coreCount": 3
+              "coreCount": 13
             },
             {
               "collection": "topic:map-que",
               "label": "que",
               "count": 22,
               "confusion": false,
-              "coreCount": 12
+              "coreCount": 19
             },
             {
               "collection": "topic:map-seguir",
@@ -2972,42 +2972,42 @@
               "label": "sentir",
               "count": 23,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 3
             },
             {
               "collection": "es:quedar",
               "label": "quedar",
               "count": 20,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 4
             },
             {
               "collection": "topic:map-pasar",
               "label": "pasar",
               "count": 21,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 2
             },
             {
               "collection": "topic:map-tomar",
               "label": "tomar",
               "count": 23,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 0
             },
             {
               "collection": "es:trabajar",
               "label": "trabajar",
               "count": 18,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 0
             },
             {
               "collection": "es:por",
               "label": "por",
               "count": 16,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 7
             },
             {
               "collection": "es:salir",
@@ -3021,21 +3021,21 @@
               "label": "saber",
               "count": 17,
               "confusion": false,
-              "coreCount": 4
+              "coreCount": 5
             },
             {
               "collection": "es:si",
               "label": "si",
               "count": 14,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 8
             },
             {
               "collection": "es:parecer",
               "label": "parecer",
               "count": 15,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 6
             },
             {
               "collection": "es:subir",
@@ -3049,7 +3049,7 @@
               "label": "pensar",
               "count": 14,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 3
             }
           ]
         },
@@ -3063,28 +3063,28 @@
               "label": "ver",
               "count": 24,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 4
             },
             {
               "collection": "es:volver",
               "label": "volver",
               "count": 18,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 3
             },
             {
               "collection": "es:valer",
               "label": "valer",
               "count": 16,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             },
             {
               "collection": "es:venir",
               "label": "venir",
               "count": 15,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 4
             }
           ]
         },
@@ -3098,14 +3098,14 @@
               "label": "su / sus / mi / tu — whose is it?",
               "count": 14,
               "confusion": true,
-              "coreCount": 6
+              "coreCount": 14
             },
             {
               "collection": "topic:confusable-verb",
               "label": "ser vs. estar, voy a, vivir",
               "count": 13,
               "confusion": true,
-              "coreCount": 11
+              "coreCount": 10
             },
             {
               "collection": "topic:confusable-false-friend",
@@ -3119,7 +3119,7 @@
               "label": "él / lo / le / se / tú",
               "count": 6,
               "confusion": true,
-              "coreCount": 3
+              "coreCount": 6
             },
             {
               "collection": "topic:confusable-determiner",
@@ -3179,70 +3179,70 @@
               "label": "at",
               "count": 25,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 3
             },
             {
               "collection": "topic:enmap-be",
               "label": "be",
               "count": 65,
               "confusion": false,
-              "coreCount": 11
+              "coreCount": 32
             },
             {
               "collection": "topic:enmap-come",
               "label": "come",
               "count": 22,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 4
             },
             {
               "collection": "en:ask",
               "label": "ask",
               "count": 18,
               "confusion": false,
-              "coreCount": 5
+              "coreCount": 6
             },
             {
               "collection": "en:could",
               "label": "could",
               "count": 16,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 15
             },
             {
               "collection": "en:bring",
               "label": "bring",
               "count": 14,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 0
             },
             {
               "collection": "en:as",
               "label": "as",
               "count": 13,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 6
             },
             {
               "collection": "en:catch",
               "label": "catch",
               "count": 13,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             },
             {
               "collection": "en:agree",
               "label": "agree",
               "count": 11,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 3
             },
             {
               "collection": "en:eat",
               "label": "eat",
               "count": 10,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 0
             },
             {
               "collection": "en:drink",
@@ -3256,49 +3256,49 @@
               "label": "bad",
               "count": 8,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             },
             {
               "collection": "en:been",
               "label": "been",
               "count": 10,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 8
             },
             {
               "collection": "en:care",
               "label": "care",
               "count": 9,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             },
             {
               "collection": "en:are",
               "label": "are",
               "count": 12,
               "confusion": false,
-              "coreCount": 9
+              "coreCount": 12
             },
             {
               "collection": "en:after",
               "label": "after",
               "count": 12,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 6
             },
             {
               "collection": "en:cost",
               "label": "cost",
               "count": 9,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 2
             },
             {
               "collection": "en:believe",
               "label": "believe",
               "count": 9,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             },
             {
               "collection": "en:count",
@@ -3312,7 +3312,7 @@
               "label": "even",
               "count": 8,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 6
             },
             {
               "collection": "en:break",
@@ -3326,21 +3326,21 @@
               "label": "able",
               "count": 7,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 5
             },
             {
               "collection": "en:become",
               "label": "become",
               "count": 8,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 2
             },
             {
               "collection": "en:all",
               "label": "all",
               "count": 9,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 3
             }
           ]
         },
@@ -3354,105 +3354,105 @@
               "label": "for",
               "count": 76,
               "confusion": false,
-              "coreCount": 4
+              "coreCount": 22
             },
             {
               "collection": "topic:enmap-get",
               "label": "get",
               "count": 49,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 11
             },
             {
               "collection": "topic:enmap-go",
               "label": "go",
               "count": 37,
               "confusion": false,
-              "coreCount": 4
+              "coreCount": 18
             },
             {
               "collection": "topic:enmap-from",
               "label": "from",
               "count": 33,
               "confusion": false,
-              "coreCount": 7
+              "coreCount": 8
             },
             {
               "collection": "topic:enmap-have",
               "label": "have",
               "count": 37,
               "confusion": false,
-              "coreCount": 10
+              "coreCount": 27
             },
             {
               "collection": "topic:enmap-in",
               "label": "in",
               "count": 28,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 9
             },
             {
               "collection": "topic:enmap-give",
               "label": "give",
               "count": 28,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 3
             },
             {
               "collection": "topic:enmap-how",
               "label": "how",
               "count": 23,
               "confusion": false,
-              "coreCount": 4
+              "coreCount": 11
             },
             {
               "collection": "en:feel",
               "label": "feel",
               "count": 20,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 3
             },
             {
               "collection": "en:it",
               "label": "it",
               "count": 18,
               "confusion": false,
-              "coreCount": 3
+              "coreCount": 11
             },
             {
               "collection": "en:fall",
               "label": "fall",
               "count": 17,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             },
             {
               "collection": "en:is",
               "label": "is",
               "count": 16,
               "confusion": false,
-              "coreCount": 6
+              "coreCount": 16
             },
             {
               "collection": "en:if",
               "label": "if",
               "count": 13,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 7
             },
             {
               "collection": "en:her",
               "label": "her",
               "count": 9,
               "confusion": false,
-              "coreCount": 6
+              "coreCount": 9
             },
             {
               "collection": "en:good",
               "label": "good",
               "count": 9,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 2
             },
             {
               "collection": "en:finish",
@@ -3466,7 +3466,7 @@
               "label": "him",
               "count": 7,
               "confusion": false,
-              "coreCount": 5
+              "coreCount": 7
             },
             {
               "collection": "en:hard",
@@ -3487,7 +3487,7 @@
               "label": "hear",
               "count": 8,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 2
             },
             {
               "collection": "en:hold",
@@ -3508,63 +3508,63 @@
               "label": "of",
               "count": 47,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 8
             },
             {
               "collection": "topic:enmap-make",
               "label": "make",
               "count": 32,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 2
             },
             {
               "collection": "topic:enmap-keep",
               "label": "keep",
               "count": 26,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 3
             },
             {
               "collection": "en:leave",
               "label": "leave",
               "count": 18,
               "confusion": false,
-              "coreCount": 3
+              "coreCount": 4
             },
             {
               "collection": "en:look",
               "label": "look",
               "count": 17,
               "confusion": false,
-              "coreCount": 3
+              "coreCount": 4
             },
             {
               "collection": "en:let",
               "label": "let",
               "count": 11,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 6
             },
             {
               "collection": "en:like",
               "label": "like",
               "count": 17,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 11
             },
             {
               "collection": "en:on",
               "label": "on",
               "count": 13,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 3
             },
             {
               "collection": "en:open",
               "label": "open",
               "count": 14,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 0
             },
             {
               "collection": "en:know",
@@ -3578,7 +3578,7 @@
               "label": "one",
               "count": 10,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 2
             },
             {
               "collection": "en:old",
@@ -3592,14 +3592,14 @@
               "label": "must",
               "count": 11,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 10
             },
             {
               "collection": "en:may",
               "label": "may",
               "count": 9,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 7
             },
             {
               "collection": "en:next",
@@ -3613,14 +3613,14 @@
               "label": "lose",
               "count": 7,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 0
             },
             {
               "collection": "en:lend",
               "label": "lend",
               "count": 7,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             },
             {
               "collection": "en:own",
@@ -3641,14 +3641,14 @@
               "label": "many",
               "count": 7,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 3
             },
             {
               "collection": "en:made",
               "label": "made",
               "count": 4,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 2
             }
           ]
         },
@@ -3662,21 +3662,21 @@
               "label": "to",
               "count": 121,
               "confusion": false,
-              "coreCount": 14
+              "coreCount": 49
             },
             {
               "collection": "topic:enmap-take",
               "label": "take",
               "count": 44,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 0
             },
             {
               "collection": "topic:enmap-put",
               "label": "put",
               "count": 47,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 2
             },
             {
               "collection": "topic:enmap-set",
@@ -3690,21 +3690,21 @@
               "label": "that",
               "count": 28,
               "confusion": false,
-              "coreCount": 7
+              "coreCount": 20
             },
             {
               "collection": "en:tell",
               "label": "tell",
               "count": 19,
               "confusion": false,
-              "coreCount": 3
+              "coreCount": 2
             },
             {
               "collection": "en:there",
               "label": "there",
               "count": 20,
               "confusion": false,
-              "coreCount": 4
+              "coreCount": 17
             },
             {
               "collection": "en:turn",
@@ -3718,35 +3718,35 @@
               "label": "pay",
               "count": 15,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 0
             },
             {
               "collection": "en:speak",
               "label": "speak",
               "count": 14,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 3
             },
             {
               "collection": "en:say",
               "label": "say",
               "count": 14,
               "confusion": false,
-              "coreCount": 3
+              "coreCount": 4
             },
             {
               "collection": "en:see",
               "label": "see",
               "count": 15,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 4
             },
             {
               "collection": "en:think",
               "label": "think",
               "count": 14,
               "confusion": false,
-              "coreCount": 3
+              "coreCount": 4
             },
             {
               "collection": "en:talk",
@@ -3760,28 +3760,28 @@
               "label": "them",
               "count": 11,
               "confusion": false,
-              "coreCount": 7
+              "coreCount": 11
             },
             {
               "collection": "en:stop",
               "label": "stop",
               "count": 11,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 3
             },
             {
               "collection": "en:start",
               "label": "start",
               "count": 13,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 2
             },
             {
               "collection": "en:somebody",
               "label": "somebody",
               "count": 9,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 5
             },
             {
               "collection": "en:run",
@@ -3795,14 +3795,14 @@
               "label": "so",
               "count": 9,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 8
             },
             {
               "collection": "en:send",
               "label": "send",
               "count": 9,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 0
             },
             {
               "collection": "en:power",
@@ -3823,28 +3823,28 @@
               "label": "this",
               "count": 10,
               "confusion": false,
-              "coreCount": 3
+              "coreCount": 5
             },
             {
               "collection": "en:then",
               "label": "then",
               "count": 7,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 4
             },
             {
               "collection": "en:request",
               "label": "request",
               "count": 7,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 2
             },
             {
               "collection": "en:show",
               "label": "show",
               "count": 8,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 0
             },
             {
               "collection": "en:slow",
@@ -3865,14 +3865,14 @@
               "label": "some",
               "count": 7,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 7
             },
             {
               "collection": "en:the",
               "label": "the",
               "count": 7,
               "confusion": false,
-              "coreCount": 6
+              "coreCount": 7
             }
           ]
         },
@@ -3886,49 +3886,49 @@
               "label": "with",
               "count": 54,
               "confusion": false,
-              "coreCount": 8
+              "coreCount": 12
             },
             {
               "collection": "topic:enmap-you",
               "label": "you",
               "count": 36,
               "confusion": false,
-              "coreCount": 13
+              "coreCount": 35
             },
             {
               "collection": "topic:enmap-what",
               "label": "what",
               "count": 21,
               "confusion": false,
-              "coreCount": 3
+              "coreCount": 9
             },
             {
               "collection": "en:work",
               "label": "work",
               "count": 19,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 0
             },
             {
               "collection": "en:want",
               "label": "want",
               "count": 13,
               "confusion": false,
-              "coreCount": 3
+              "coreCount": 8
             },
             {
               "collection": "en:use",
               "label": "use",
               "count": 10,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             },
             {
               "collection": "en:would",
               "label": "would",
               "count": 10,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 8
             },
             {
               "collection": "en:white",
@@ -3942,7 +3942,7 @@
               "label": "who",
               "count": 6,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 4
             },
             {
               "collection": "en:wear",
@@ -3963,14 +3963,14 @@
               "label": "you (tú/usted/ustedes/te), him (lo/le)",
               "count": 13,
               "confusion": true,
-              "coreCount": 9
+              "coreCount": 13
             },
             {
               "collection": "topic:confusable-determiner",
               "label": "un vs. uno, algún vs. alguno, el",
               "count": 10,
               "confusion": true,
-              "coreCount": 5
+              "coreCount": 8
             }
           ]
         }
@@ -4008,14 +4008,14 @@
               "label": "be",
               "count": 58,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 23
             },
             {
               "collection": "en:come",
               "label": "come",
               "count": 17,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 2
             },
             {
               "collection": "en:ask",
@@ -4036,7 +4036,7 @@
               "label": "agree",
               "count": 6,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             },
             {
               "collection": "en:eat",
@@ -4190,14 +4190,14 @@
               "label": "belong",
               "count": 1,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             },
             {
               "collection": "en:depend",
               "label": "depend",
               "count": 3,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             },
             {
               "collection": "en:appear",
@@ -4316,14 +4316,14 @@
               "label": "get",
               "count": 22,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 3
             },
             {
               "collection": "en:go",
               "label": "go",
               "count": 19,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 7
             },
             {
               "collection": "en:give",
@@ -4428,7 +4428,7 @@
               "label": "found",
               "count": 1,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             },
             {
               "collection": "en:fit",
@@ -4540,7 +4540,7 @@
               "label": "made",
               "count": 3,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 2
             },
             {
               "collection": "en:listen",
@@ -4568,7 +4568,7 @@
               "label": "let",
               "count": 1,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             },
             {
               "collection": "en:mean",
@@ -4841,7 +4841,7 @@
               "label": "seem",
               "count": 1,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             },
             {
               "collection": "en:pass",
@@ -5092,7 +5092,7 @@
               "label": "about",
               "count": 17,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 3
             },
             {
               "collection": "particle:down",
@@ -5106,14 +5106,14 @@
               "label": "at",
               "count": 13,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 2
             },
             {
               "collection": "particle:by",
               "label": "by",
               "count": 7,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             },
             {
               "collection": "particle:around",
@@ -5127,7 +5127,7 @@
               "label": "along",
               "count": 4,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             },
             {
               "collection": "particle:apart",
@@ -5155,7 +5155,7 @@
               "label": "across",
               "count": 2,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             },
             {
               "collection": "particle:aside",
@@ -5169,7 +5169,7 @@
               "label": "against",
               "count": 2,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             },
             {
               "collection": "particle:behind",
@@ -5225,7 +5225,7 @@
               "label": "for",
               "count": 43,
               "confusion": false,
-              "coreCount": 4
+              "coreCount": 9
             },
             {
               "collection": "topic:part-from",
@@ -5246,7 +5246,7 @@
               "label": "forward",
               "count": 3,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             }
           ]
         },
@@ -5260,28 +5260,28 @@
               "label": "out",
               "count": 54,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 4
             },
             {
               "collection": "topic:part-on",
               "label": "on",
               "count": 45,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 6
             },
             {
               "collection": "topic:part-off",
               "label": "off",
               "count": 28,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             },
             {
               "collection": "topic:part-of",
               "label": "of",
               "count": 26,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 5
             },
             {
               "collection": "particle:over",
@@ -5295,7 +5295,7 @@
               "label": "like",
               "count": 5,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             },
             {
               "collection": "particle:onto",
@@ -5316,7 +5316,7 @@
               "label": "to",
               "count": 63,
               "confusion": false,
-              "coreCount": 7
+              "coreCount": 12
             },
             {
               "collection": "particle:through",
@@ -5358,14 +5358,14 @@
               "label": "up",
               "count": 57,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             },
             {
               "collection": "topic:part-with",
               "label": "with",
               "count": 25,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 1
             },
             {
               "collection": "particle:under",
@@ -6083,49 +6083,49 @@
               "label": "verb + to + infinitive (want to go)",
               "count": 84,
               "confusion": false,
-              "coreCount": 16
+              "coreCount": 74
             },
             {
               "collection": "topic:vp-bare-inf",
               "label": "verb + bare infinitive (let him go)",
               "count": 52,
               "confusion": false,
-              "coreCount": 17
+              "coreCount": 50
             },
             {
               "collection": "topic:vp-gerund",
               "label": "verb + gerund (enjoy going)",
               "count": 28,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 26
             },
             {
               "collection": "construction:preposition-plus-gerund",
               "label": "preposition + gerund (before going)",
               "count": 7,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 7
             },
             {
               "collection": "construction:go-ing",
               "label": "go + gerund (go shopping)",
               "count": 3,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 3
             },
             {
               "collection": "topic:vp-obj-complement",
               "label": "object + complement (make/expect somebody to go)",
               "count": 27,
               "confusion": false,
-              "coreCount": 6
+              "coreCount": 17
             },
             {
               "collection": "grammar:passive",
               "label": "passive (something is needed)",
               "count": 9,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 7
             }
           ]
         },
@@ -6139,14 +6139,14 @@
               "label": "either, same meaning (start to go / start going)",
               "count": 12,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 10
             },
             {
               "collection": "construction:allows-bare-infinitive-or-present-participle",
               "label": "perception verbs (saw him go / saw him going)",
               "count": 10,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 9
             },
             {
               "collection": "construction:allows-full-infinitive-or-bare-infinitive",
@@ -6160,35 +6160,35 @@
               "label": "verb + somebody + bare infinitive (make her go)",
               "count": 4,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 3
             },
             {
               "collection": "construction:somebody-doing-something",
               "label": "verb + somebody + gerund (caught him going)",
               "count": 2,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 2
             },
             {
               "collection": "construction:have-something-done",
               "label": "have something done (causative)",
               "count": 3,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 2
             },
             {
               "collection": "construction:get-something-done",
               "label": "get something done (causative)",
               "count": 2,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 2
             },
             {
               "collection": "construction:double-object",
               "label": "double object (give somebody something)",
               "count": 11,
               "confusion": false,
-              "coreCount": 3
+              "coreCount": 7
             }
           ]
         },
@@ -6202,21 +6202,21 @@
               "label": "progressive (to be going)",
               "count": 3,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 3
             },
             {
               "collection": "construction:auxiliary-do",
               "label": "auxiliary do (did they go?)",
               "count": 19,
               "confusion": false,
-              "coreCount": 8
+              "coreCount": 17
             },
             {
               "collection": "grammar:going-to",
               "label": "going to (future)",
               "count": 11,
               "confusion": false,
-              "coreCount": 8
+              "coreCount": 11
             }
           ]
         }
@@ -6243,42 +6243,42 @@
               "label": "Negation — regular verbs (don't, doesn't, didn't)",
               "count": 5,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 5
             },
             {
               "collection": "qn:modal-be-have-negation",
               "label": "Negation — modal/be/have (can't, isn't, haven't)",
               "count": 20,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 19
             },
             {
               "collection": "qn:do-support-question",
               "label": "Questions — regular verbs (do, does, did)",
               "count": 8,
               "confusion": false,
-              "coreCount": 2
+              "coreCount": 8
             },
             {
               "collection": "qn:inversion-question",
               "label": "Questions — modal/be/have (Can you...? Are you...?)",
               "count": 18,
               "confusion": false,
-              "coreCount": 9
+              "coreCount": 18
             },
             {
               "collection": "qn:negative-question",
               "label": "Negative questions (Don't you...? Isn't it...?)",
               "count": 7,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 7
             },
             {
               "collection": "qn:emphatic",
               "label": "Emphatic (I DO like it)",
               "count": 3,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 3
             }
           ]
         }
@@ -6305,28 +6305,28 @@
               "label": "Affirmative — tú (informal)",
               "count": 7,
               "confusion": false,
-              "coreCount": 1
+              "coreCount": 7
             },
             {
               "collection": "imp:affirmative-formal",
               "label": "Affirmative — usted/ustedes (formal)",
               "count": 5,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 5
             },
             {
               "collection": "imp:negative",
               "label": "Negative (don't...)",
               "count": 3,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 3
             },
             {
               "collection": "imp:lets",
               "label": "Let's — nosotros",
               "count": 6,
               "confusion": false,
-              "coreCount": 0
+              "coreCount": 6
             }
           ]
         }
