@@ -26,40 +26,66 @@ export default async function HomePage({
     (): Record<string, ConceptDisplay> => ({}),
   );
 
-  function displayConcept(concept: LessonConcept) {
-    const display = concept.conceptId
-      ? conceptDisplays[concept.conceptId]
-      : undefined;
-    if (!display || display.role === "Trash") return null;
-    return {
-      id: concept.id,
-      spanish: display.spanish,
-      english: display.english,
-    };
+  // Universal learner rule: a concept is only shown where it is introduced for
+  // the first time (in curriculum order). Review appearances are hidden — the
+  // full "everything covered" view lives in the lesson builder.
+  const introduced = new Set<string>();
+
+  function firstSightingConcepts(concepts: LessonConcept[]) {
+    const result: { id: string; spanish: string; english: string }[] = [];
+    for (const concept of concepts) {
+      const display = concept.conceptId
+        ? conceptDisplays[concept.conceptId]
+        : undefined;
+      if (!display || display.role === "Trash") continue;
+      if (!concept.conceptId || introduced.has(concept.conceptId)) continue;
+      introduced.add(concept.conceptId);
+      result.push({
+        id: concept.id,
+        spanish: display.spanish,
+        english: display.english,
+      });
+    }
+    return result;
   }
 
   const modules =
-    course?.modules.map((module) => ({
-      id: module.id,
-      name: module.name,
-      kind: module.kind,
-      lessonCount: module.lessonCount,
-      concepts: module.keyConcepts
-        .map(displayConcept)
-        .filter((concept) => concept !== null),
-      lessons: module.lessons.map((lesson) => ({
+    course?.modules.map((module) => {
+      const seenBeforeModule = new Set(introduced);
+      const lessons = module.lessons.map((lesson) => ({
         id: lesson.id,
         lessonNumber: lesson.lessonNumber,
         moduleLessonNumber: lesson.moduleLessonNumber,
         name: lesson.name,
-        previewText:
-          lessonOutcome(lesson.blocks)?.spanish || lesson.previewText,
+        previewText: lessonOutcome(lesson.blocks)?.spanish || lesson.previewText,
         stepCount: lesson.blocks.length,
-        concepts: lesson.concepts
-          .map(displayConcept)
-          .filter((concept) => concept !== null),
-      })),
-    })) ?? [];
+        concepts: firstSightingConcepts(lesson.concepts),
+      }));
+      const moduleConcepts = module.keyConcepts
+        .flatMap((concept) => {
+          const display = concept.conceptId
+            ? conceptDisplays[concept.conceptId]
+            : undefined;
+          if (!display || display.role === "Trash") return [];
+          if (!concept.conceptId || seenBeforeModule.has(concept.conceptId))
+            return [];
+          return [
+            {
+              id: concept.id,
+              spanish: display.spanish,
+              english: display.english,
+            },
+          ];
+        });
+      return {
+        id: module.id,
+        name: module.name,
+        kind: module.kind,
+        lessonCount: module.lessonCount,
+        concepts: moduleConcepts,
+        lessons,
+      };
+    }) ?? [];
 
   return (
     <LessonDashboard modules={modules} initialModuleId={initialModuleId} />

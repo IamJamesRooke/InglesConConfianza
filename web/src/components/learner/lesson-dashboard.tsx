@@ -99,6 +99,12 @@ export function LessonDashboard({
       progress[lesson.id]?.lastOpenedAt ||
       progress[lesson.id]?.completedAt,
   );
+  const nextModuleIndex = nextModule ? modules.indexOf(nextModule) : -1;
+  const nextModuleReady =
+    nextModule?.lessons.filter((lesson) => lesson.stepCount > 0) ?? [];
+  const nextModuleDone = nextModuleReady.filter(
+    (lesson) => progress[lesson.id]?.completedAt,
+  ).length;
 
   function resetLesson(lesson: LearnerLesson) {
     setResetTarget({
@@ -129,10 +135,9 @@ export function LessonDashboard({
         {nextLesson ? (
           <section
             className="course-feature learner-enter"
-            aria-labelledby="next-lesson-title"
+            aria-label="Tu próxima lección"
           >
             <div className="course-feature-content">
-              <p className="learner-eyebrow">Inglés para la vida real</p>
               <h1>
                 {hasActivity ? (
                   <>
@@ -146,29 +151,24 @@ export function LessonDashboard({
                   </>
                 )}
               </h1>
-              <p className="course-promise">
-                Aprende paso a paso y construye frases que puedes usar desde hoy.
-              </p>
+              {!hasActivity && (
+                <p className="course-promise">
+                  Aprende paso a paso y construye frases que puedes usar desde
+                  hoy.
+                </p>
+              )}
+              {nextLesson.concepts.length > 0 &&
+                !progress[nextLesson.id]?.completedAt && (
+                <div className="featured-learn">
+                  <p className="learner-eyebrow">Vas a aprender</p>
+                  <ConceptPills
+                    concepts={nextLesson.concepts}
+                    compact
+                    max={4}
+                  />
+                </div>
+              )}
               <div className="featured-lesson">
-                <p className="featured-lesson-label">
-                  {courseComplete
-                    ? "Vuelve a practicar"
-                    : progress[nextLesson.id]?.lastOpenedAt
-                      ? "Continúa donde estabas"
-                      : completed
-                        ? "Tu siguiente lección"
-                        : "Tu primera lección"}
-                </p>
-                <h2 id="next-lesson-title">
-                  {nextLesson.name || `Lección ${nextLesson.lessonNumber}`}
-                </h2>
-                <p className="feature-meta">
-                  <Clock3 size={15} aria-hidden="true" />
-                  {lessonMinutes(nextLesson.stepCount)} min
-                  <span aria-hidden="true">·</span>
-                  {moduleLabel(modules, modules.indexOf(nextModule!))}
-                </p>
-                <ConceptPills concepts={nextLesson.concepts} compact />
                 <Link
                   href={`/practice?lesson=${encodeURIComponent(nextLesson.id)}`}
                   className="learner-button primary"
@@ -182,19 +182,64 @@ export function LessonDashboard({
                         : "Empezar mi primera lección"}
                   <ArrowRight size={18} aria-hidden="true" />
                 </Link>
+                <p className="feature-meta">
+                  {nextModule && (
+                    <span className="feature-meta-lesson">
+                      {moduleLabel(modules, nextModuleIndex)} · Lección{" "}
+                      {nextLesson.moduleLessonNumber}
+                    </span>
+                  )}
+                  <strong lang="en">
+                    {nextLesson.name || `Lección ${nextLesson.lessonNumber}`}
+                  </strong>
+                  <span aria-hidden="true">·</span>
+                  <Clock3 size={14} aria-hidden="true" />
+                  {lessonMinutes(nextLesson.stepCount)} min
+                </p>
               </div>
             </div>
-            <div className="course-feature-demo" aria-hidden="true">
-              <p>Una idea útil</p>
-              <div className="demo-phrase">
-                <strong>I can speak English.</strong>
-                <span>Puedo hablar inglés.</span>
+            {hasActivity && nextModule ? (
+              <div
+                className="course-feature-demo course-progress-panel"
+                aria-hidden="true"
+              >
+                <p className="demo-label">
+                  {moduleLabel(modules, nextModuleIndex)}
+                </p>
+                <p className="progress-panel-module">
+                  {nextModule.name || moduleLabel(modules, nextModuleIndex)}
+                </p>
+                <div className="progress-panel-bar">
+                  <span
+                    style={{
+                      width: `${
+                        nextModuleReady.length
+                          ? Math.round(
+                              (nextModuleDone / nextModuleReady.length) * 100,
+                            )
+                          : 0
+                      }%`,
+                    }}
+                  />
+                </div>
+                <p className="progress-panel-count">
+                  <strong>{nextModuleDone}</strong> de {nextModuleReady.length}{" "}
+                  lecciones
+                </p>
               </div>
-              <div className="demo-confidence">
-                <Check size={18} strokeWidth={2.5} />
-                <span>Ya lo puedes decir</span>
+            ) : (
+              <div className="course-feature-demo" aria-hidden="true">
+                <div className="demo-phrase">
+                  <p className="demo-label">Vas a poder decir</p>
+                  <strong lang="en">
+                    {nextLesson.name || "I can speak English."}
+                  </strong>
+                  <span lang="es">
+                    {nextLesson.previewText || "Puedo hablar inglés."}
+                  </span>
+                </div>
               </div>
-            </div>
+            )}
           </section>
         ) : (
           <section className="course-empty">
@@ -471,23 +516,30 @@ export function LessonDashboard({
 function ConceptPills({
   concepts,
   compact = false,
+  max,
 }: {
   concepts: LearnerConcept[];
   compact?: boolean;
+  max?: number;
 }) {
   if (concepts.length === 0) return null;
+  const shown = max ? concepts.slice(0, max) : concepts;
+  const overflow = concepts.length - shown.length;
 
   return (
     <div
       className={`learner-concepts ${compact ? "compact" : ""}`}
       aria-label="Lo que vas a aprender"
     >
-      {concepts.map((concept) => (
+      {shown.map((concept) => (
         <span className="learner-concept" key={concept.id}>
           <strong lang="en">{concept.english}</strong>
           <span lang="es">{concept.spanish}</span>
         </span>
       ))}
+      {overflow > 0 && (
+        <span className="learner-concept-more">+{overflow}</span>
+      )}
     </div>
   );
 }

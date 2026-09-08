@@ -1,84 +1,24 @@
 "use client";
 
-import { Menu, Palette, Settings, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { BrandMark } from "@/components/brand-mark";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const internalLinks = [
   { href: "/admin/lesson-builder", label: "Lessons" },
   { href: "/admin/curriculum", label: "Curriculum" },
 ];
 
-const themeOptions = [
-  {
-    value: "default",
-    label: "Confianza",
-    swatches: [
-      "oklch(0.48 0.18 265)",
-      "oklch(0.68 0.12 185)",
-      "oklch(0.74 0.14 80)",
-    ],
-  },
-  {
-    value: "purple",
-    label: "Violeta",
-    swatches: [
-      "oklch(0.5 0.2 295)",
-      "oklch(0.68 0.15 335)",
-      "oklch(0.72 0.13 210)",
-    ],
-  },
-  {
-    value: "night",
-    label: "Noche",
-    swatches: [
-      "oklch(0.72 0.14 250)",
-      "oklch(0.76 0.13 205)",
-      "oklch(0.18 0.055 275)",
-    ],
-  },
-];
-
 export function SiteHeader() {
   const pathname = usePathname();
-  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [theme, setTheme] = useState("default");
-
-  useEffect(() => {
-    let storedTheme = "default";
-    try {
-      storedTheme = window.localStorage.getItem("icc-theme") ?? "default";
-    } catch {
-      // The default theme remains usable when storage is blocked.
-    }
-    if (storedTheme === "default") return;
-    const timer = window.setTimeout(() => setTheme(storedTheme), 0);
-    return () => window.clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    document.documentElement.dataset.theme = theme;
-  }, [theme]);
-
-  function updateTheme(nextTheme: string) {
-    setTheme(nextTheme);
-    try {
-      window.localStorage.setItem("icc-theme", nextTheme);
-    } catch {
-      // Theme selection still works when persistent storage is unavailable.
-    }
-  }
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
     if (href === "/admin") return pathname === href;
-    if (href === "/admin/lesson-builder") {
-      return pathname === href || pathname.startsWith(`${href}/`);
-    }
     return pathname === href || pathname.startsWith(`${href}/`);
   };
   const isAdmin = pathname.startsWith("/admin");
@@ -86,19 +26,7 @@ export function SiteHeader() {
   if (pathname === "/practice") return null;
 
   if (!isAdmin) {
-    return (
-      <>
-        <LearnerHeader onOpenTheme={() => setIsSettingsOpen(true)} />
-        {isSettingsOpen && (
-          <ThemeDialog
-            theme={theme}
-            onChange={updateTheme}
-            onClose={() => setIsSettingsOpen(false)}
-            learner
-          />
-        )}
-      </>
-    );
+    return <LearnerHeader />;
   }
 
   return (
@@ -115,11 +43,9 @@ export function SiteHeader() {
 
         <div className="hidden items-center gap-2 lg:flex">
           <InternalNav isActive={isActive} />
-          <SettingsButton onClick={() => setIsSettingsOpen(true)} />
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
-          <SettingsButton onClick={() => setIsSettingsOpen(true)} />
           <button
             type="button"
             onClick={() => setIsMenuOpen((isOpen) => !isOpen)}
@@ -154,19 +80,11 @@ export function SiteHeader() {
           </div>
         </div>
       )}
-
-      {isSettingsOpen && (
-        <ThemeDialog
-          theme={theme}
-          onChange={updateTheme}
-          onClose={() => setIsSettingsOpen(false)}
-        />
-      )}
     </header>
   );
 }
 
-function LearnerHeader({ onOpenTheme }: { onOpenTheme: () => void }) {
+function LearnerHeader() {
   return (
     <header className="learner-theme learner-header">
       <a href="#main-content" className="learner-skip">
@@ -178,103 +96,16 @@ function LearnerHeader({ onOpenTheme }: { onOpenTheme: () => void }) {
           className="learner-brand"
           aria-label="Inglés con Confianza"
         >
-          <BrandMark size={40} />
+          <BrandMark size={38} />
           <span className="learner-brand-name">
-            Inglés con <strong>Confianza<span aria-hidden="true">.</span></strong>
+            <span className="brand-pre">Inglés con</span>
+            <span className="brand-word">
+              Confianza<span aria-hidden="true" className="brand-dot">.</span>
+            </span>
           </span>
         </Link>
-        <button
-          type="button"
-          className="learner-theme-switcher"
-          onClick={onOpenTheme}
-          aria-label="Cambiar tema"
-        >
-          <Palette size={18} aria-hidden="true" />
-          <span>Tema</span>
-        </button>
       </div>
     </header>
-  );
-}
-
-function ThemeDialog({
-  theme,
-  onChange,
-  onClose,
-  learner = false,
-}: {
-  theme: string;
-  onChange: (theme: string) => void;
-  onClose: () => void;
-  learner?: boolean;
-}) {
-  useEffect(() => {
-    const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") onClose();
-    };
-    document.addEventListener("keydown", closeOnEscape);
-    return () => document.removeEventListener("keydown", closeOnEscape);
-  }, [onClose]);
-
-  return (
-    <div
-      className="fixed inset-0 z-50 flex items-start justify-end bg-black/25 p-4 sm:p-6"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="settings-title"
-      onMouseDown={(event) => {
-        if (event.target === event.currentTarget) onClose();
-      }}
-    >
-      <div className="w-full max-w-sm rounded-xl border border-border bg-popover p-5 text-popover-foreground shadow-xl">
-        <div className="mb-5 flex items-center justify-between gap-3">
-          <h2 id="settings-title" className="text-lg font-semibold">
-            {learner ? "Elige tu estilo" : "Settings"}
-          </h2>
-          <button
-            type="button"
-            onClick={onClose}
-            autoFocus
-            aria-label={learner ? "Cerrar" : "Close settings"}
-            title={learner ? "Cerrar" : "Close"}
-            className="flex size-8 items-center justify-center rounded-md text-muted-foreground transition hover:bg-muted hover:text-foreground"
-          >
-            <X className="size-4" aria-hidden="true" />
-          </button>
-        </div>
-
-        <p className="mb-2 text-sm font-medium text-muted-foreground">
-          {learner ? "Tema" : "Theme"}
-        </p>
-        <div className="grid gap-2">
-          {themeOptions.map((themeOption) => (
-            <button
-              key={themeOption.value}
-              type="button"
-              onClick={() => onChange(themeOption.value)}
-              aria-pressed={theme === themeOption.value}
-              className={`flex items-center justify-between gap-3 rounded-lg border px-3 py-2 text-left text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/30 ${
-                theme === themeOption.value
-                  ? "border-primary bg-primary/10 text-foreground"
-                  : "border-border hover:bg-muted"
-              }`}
-            >
-              <span>{themeOption.label}</span>
-              <span className="flex shrink-0 items-center gap-1">
-                {themeOption.swatches.map((swatch) => (
-                  <span
-                    key={swatch}
-                    aria-hidden="true"
-                    className="size-4 rounded-full border border-black/10"
-                    style={{ background: swatch }}
-                  />
-                ))}
-              </span>
-            </button>
-          ))}
-        </div>
-      </div>
-    </div>
   );
 }
 
@@ -302,20 +133,6 @@ function InternalNav({
         </Link>
       ))}
     </nav>
-  );
-}
-
-function SettingsButton({ onClick }: { onClick: () => void }) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      aria-label="Open settings"
-      title="Settings"
-      className="flex size-10 items-center justify-center rounded-lg text-muted-foreground transition hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/40"
-    >
-      <Settings className="size-5" aria-hidden="true" />
-    </button>
   );
 }
 

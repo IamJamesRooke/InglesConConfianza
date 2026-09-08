@@ -3,167 +3,17 @@
   "modules": [
     {
       "id": "module_e4d56384-dde5-46ba-a5cf-21509fd17d3f",
-      "name": "Fundamentals I",
+      "name": "Module I",
       "kind": "course",
       "keyConcepts": [
         {
-          "id": "lesson_concept_5693a620-2027-49a2-8e05-fadb46a60578",
+          "id": "lesson_concept_0d675d54-bf50-4c1a-89e9-ec302a05668f",
           "conceptId": "w7bu9jslac",
           "label": "querer [algo]"
         }
       ],
-      "lessonIds": [
-        "lesson_206bf1b2-3149-441c-ae8c-87ea65168efc"
-      ]
+      "lessonIds": []
     }
   ],
-  "lessons": [
-    {
-      "id": "lesson_206bf1b2-3149-441c-ae8c-87ea65168efc",
-      "name": "Hello",
-      "concepts": [
-        {
-          "id": "lesson_concept_96c5c244-2cdb-4404-93af-c666fa8bb154",
-          "conceptId": "w7bu9jslac",
-          "label": "querer [algo]"
-        }
-      ],
-      "blocks": [
-        {
-          "id": "block_aaec6cf4-f2a4-4a36-a541-4f4ed6cef8c6",
-          "type": "explanation",
-          "contentMarkdown": "[[es:hablar]] es [[en:to speak]]"
-        },
-        {
-          "id": "block_7599f113-5764-4ef2-a3dd-46440804af77",
-          "type": "sentence",
-          "promptLabel": "",
-          "promptText": "",
-          "helperText": "",
-          "answerFeedback": null,
-          "languageBlocks": [
-            {
-              "id": "lang_685631b6-b45b-49fa-8d49-94597a9ab540",
-              "spanish": "Quiero",
-              "callout": null,
-              "acceptedAnswers": [
-                "I want"
-              ]
-            },
-            {
-              "id": "lang_159e6b3b-67ab-4294-8d78-a046030c0173",
-              "spanish": "hablar",
-              "callout": null,
-              "acceptedAnswers": [
-                "to speak"
-              ]
-            },
-            {
-              "id": "lang_cfaee33a-a680-4a5e-a072-caf5b4eea86e",
-              "spanish": "contigo.",
-              "callout": null,
-              "acceptedAnswers": [
-                "with you."
-              ]
-            }
-          ]
-        },
-        {
-          "id": "block_504eea2b-97e2-4693-af71-2669c6fc375c",
-          "type": "explanation",
-          "contentMarkdown": "poder es to be able"
-        },
-        {
-          "id": "block_aad451c8-cf19-4a0b-bd61-6f241d045788",
-          "type": "sentence",
-          "promptLabel": "",
-          "promptText": "",
-          "helperText": "",
-          "answerFeedback": null,
-          "languageBlocks": [
-            {
-              "id": "lang_aa6a4ec7-c814-41cb-9408-cf999ce1bd9f",
-              "spanish": "quiero",
-              "callout": null,
-              "acceptedAnswers": [
-                "I want"
-              ]
-            },
-            {
-              "id": "lang_b7b748b7-04f2-4f8d-b74d-0f14267d7056",
-              "spanish": "poder",
-              "callout": null,
-              "acceptedAnswers": [
-                "to be able"
-              ]
-            },
-            {
-              "id": "lang_3c075580-7586-4344-910a-90b2e9f9979d",
-              "spanish": "hablar",
-              "callout": null,
-              "acceptedAnswers": [
-                "to speak"
-              ]
-            },
-            {
-              "id": "lang_596b1020-71e0-48fd-810e-7005912f417f",
-              "spanish": "contigo",
-              "callout": null,
-              "acceptedAnswers": [
-                "with you"
-              ]
-            },
-            {
-              "id": "lang_c1987c7d-2f62-4fec-bc98-84516cc1066e",
-              "spanish": "hoy",
-              "callout": null,
-              "acceptedAnswers": [
-                "today"
-              ]
-            },
-            {
-              "id": "lang_d98f377a-0c14-4fee-9ef9-619b2c5ed765",
-              "spanish": "porque",
-              "callout": null,
-              "acceptedAnswers": [
-                "beceause"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "block_564f29e5-1784-445d-bb51-4e45b6a6c9b0",
-          "type": "sentence",
-          "layout": "vocabulary_table",
-          "promptLabel": "",
-          "promptText": "",
-          "helperText": "",
-          "answerFeedback": null,
-          "languageBlocks": [
-            {
-              "id": "lang_3144cf09-6105-4c3c-be16-ed49b7d89a41",
-              "spanish": "quiero",
-              "callout": null,
-              "acceptedAnswers": [
-                "I want"
-              ]
-            },
-            {
-              "id": "lang_35baf20d-0ca8-4b9a-aaaa-3431daa1382d",
-              "spanish": "necesito",
-              "callout": null,
-              "acceptedAnswers": [
-                "I need"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "block_0def39e2-9c96-473f-997f-7b354a470050",
-          "type": "explanation",
-          "contentMarkdown": "sfasfasfsafd"
-        }
-      ]
-    }
-  ]
+  "lessons": []
 }
