@@ -7991,7 +7991,6 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-estar-idioms-1",
         "topic:phr-be",
         "topic:map-estar",
         "topic:enmap-be",
@@ -8019,7 +8018,6 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-estar-idioms-1",
         "topic:phr-be",
         "topic:map-estar",
         "topic:enmap-be",
@@ -8052,7 +8050,6 @@
         "topic:en-multi-sense",
         "topic:verb-pattern",
         "audit:reviewed",
-        "topic:verb-estar-idioms-1",
         "topic:phr-be",
         "topic:map-estar",
         "topic:enmap-be",
@@ -8105,7 +8102,6 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-1",
         "topic:map-estar",
         "topic:verb-estar-idioms",
         "topic:verb-system"
@@ -8134,7 +8130,6 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-1",
         "topic:phr-be",
         "topic:map-estar",
         "topic:enmap-be",
@@ -8162,7 +8157,6 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-2",
         "topic:phr-be",
         "topic:map-estar",
         "topic:enmap-be",
@@ -8250,7 +8244,6 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-1",
         "topic:phr-be",
         "topic:part-of",
         "topic:map-estar",
@@ -8282,7 +8275,6 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-1",
         "topic:phr-be",
         "topic:part-of",
         "topic:map-estar",
@@ -8379,8 +8371,8 @@
     },
     {
       "id": "8pa5w8lhu0",
-      "spanish": "estar bien",
-      "english": "to be okay",
+      "spanish": "[estar] bien",
+      "english": "[to be] okay",
       "example": {
         "spanish": "Ahora estoy bien.",
         "english": "I am okay now."
@@ -8389,20 +8381,18 @@
         "grammar:adjective-state",
         "es:estar",
         "en:okay",
-        "pos:verb",
         "topic:multi-sense",
         "audit:reviewed",
-        "topic:verb-estar-idioms-1",
         "topic:map-estar",
-        "topic:verb-estar-idioms",
-        "topic:verb-system"
+        "pos:adjective",
+        "topic:estar-adj"
       ],
       "curriculumRole": "Unranked"
     },
     {
       "id": "bvwjgfiqzf",
-      "spanish": "estar mal",
-      "english": "to be unwell",
+      "spanish": "[estar] mal",
+      "english": "[to be] unwell",
       "example": {
         "spanish": "Hoy estoy mal.",
         "english": "I am unwell today."
@@ -8412,12 +8402,10 @@
         "es:estar",
         "en:unwell",
         "topic:multi-sense",
-        "pos:verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-2",
         "topic:map-estar",
-        "topic:verb-estar-idioms",
-        "topic:verb-system"
+        "pos:adjective",
+        "topic:estar-adj"
       ],
       "curriculumRole": "Unranked"
     },
@@ -8494,8 +8482,8 @@
     },
     {
       "id": "vx5dkts0j1",
-      "spanish": "estar encendido",
-      "english": "to be on",
+      "spanish": "[estar] encendido",
+      "english": "[to be] on",
       "example": {
         "spanish": "La luz está encendida.",
         "english": "The light is on."
@@ -8506,25 +8494,23 @@
         "en:on",
         "topic:multi-sense",
         "topic:en-multi-sense",
-        "pos:verb",
         "grammar:phrasal-verb",
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-2",
         "topic:phr-be",
         "topic:part-on",
         "topic:map-estar",
         "topic:enmap-be",
-        "topic:verb-estar-idioms",
-        "topic:verb-system"
+        "pos:adjective",
+        "topic:estar-adj"
       ],
       "curriculumRole": "Unranked"
     },
     {
       "id": "fbhhwzgo6j",
-      "spanish": "estar apagado",
-      "english": "to be off",
+      "spanish": "[estar] apagado",
+      "english": "[to be] off",
       "example": {
         "spanish": "La luz está apagada.",
         "english": "The light is off."
@@ -8534,18 +8520,16 @@
         "es:estar",
         "en:off",
         "topic:multi-sense",
-        "pos:verb",
         "grammar:phrasal-verb",
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-1",
         "topic:phr-be",
         "topic:part-off",
         "topic:map-estar",
         "topic:enmap-be",
-        "topic:verb-estar-idioms",
-        "topic:verb-system"
+        "pos:adjective",
+        "topic:estar-adj"
       ],
       "curriculumRole": "Unranked"
     },
@@ -8567,7 +8551,6 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-2",
         "topic:phr-be",
         "topic:part-out",
         "topic:map-estar",
@@ -8596,7 +8579,6 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-1",
         "topic:phr-be",
         "topic:part-on",
         "topic:map-estar",
@@ -8626,7 +8608,6 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-2",
         "topic:phr-be",
         "topic:part-on",
         "topic:map-estar",
@@ -8657,7 +8638,6 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-1",
         "topic:phr-be",
         "topic:part-of",
         "topic:map-estar",
@@ -8688,7 +8668,6 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-2",
         "topic:phr-be",
         "topic:map-estar",
         "topic:enmap-be",
@@ -8753,7 +8732,6 @@
         "topic:multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-1",
         "topic:map-estar",
         "topic:verb-estar-idioms",
         "topic:verb-system"
@@ -8861,7 +8839,6 @@
         "topic:multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-2",
         "topic:map-estar",
         "topic:verb-estar-idioms",
         "topic:verb-system"
@@ -8870,8 +8847,8 @@
     },
     {
       "id": "vf8v3tcztr",
-      "spanish": "estar sentado",
-      "english": "to be sitting",
+      "spanish": "[estar] sentado",
+      "english": "[to be] sitting",
       "example": {
         "spanish": "Ana está sentada.",
         "english": "Ana is sitting."
@@ -8881,12 +8858,10 @@
         "es:estar",
         "en:sitting",
         "topic:multi-sense",
-        "pos:verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-2",
         "topic:map-estar",
-        "topic:verb-estar-idioms",
-        "topic:verb-system"
+        "pos:adjective",
+        "topic:estar-adj"
       ],
       "curriculumRole": "Unranked"
     },
@@ -8905,7 +8880,6 @@
         "topic:multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-2",
         "topic:map-estar",
         "topic:verb-estar-idioms",
         "topic:verb-system"
@@ -8914,8 +8888,8 @@
     },
     {
       "id": "9qzgymygsa",
-      "spanish": "estar mal",
-      "english": "to be wrong",
+      "spanish": "[estar] mal",
+      "english": "[to be] wrong",
       "example": {
         "spanish": "Eso está mal.",
         "english": "That is wrong."
@@ -8925,12 +8899,10 @@
         "es:estar",
         "en:wrong",
         "topic:multi-sense",
-        "pos:verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-2",
         "topic:map-estar",
-        "topic:verb-estar-idioms",
-        "topic:verb-system"
+        "pos:adjective",
+        "topic:estar-adj"
       ],
       "curriculumRole": "Unranked"
     },
@@ -30234,8 +30206,8 @@
     },
     {
       "id": "2w0dzl1mvl",
-      "spanish": "ser alto",
-      "english": "to be tall",
+      "spanish": "[ser] alto",
+      "english": "[to be] tall",
       "example": {
         "spanish": "Mateo es alto.",
         "english": "Mateo is tall."
@@ -30245,18 +30217,17 @@
         "es:ser",
         "en:tall",
         "topic:multi-sense",
-        "pos:verb",
         "audit:reviewed",
-        "topic:verb-ser-idioms",
         "topic:map-ser",
-        "topic:verb-system"
+        "pos:adjective",
+        "topic:size"
       ],
       "curriculumRole": "Unranked"
     },
     {
       "id": "ffr5aig4sd",
-      "spanish": "ser alto",
-      "english": "to be high",
+      "spanish": "[ser] alto",
+      "english": "[to be] high",
       "example": {
         "spanish": "El muro es alto.",
         "english": "The wall is high."
@@ -30266,11 +30237,10 @@
         "es:ser",
         "en:high",
         "topic:multi-sense",
-        "pos:verb",
         "audit:reviewed",
-        "topic:verb-ser-idioms",
         "topic:map-ser",
-        "topic:verb-system"
+        "pos:adjective",
+        "topic:size"
       ],
       "curriculumRole": "Unranked"
     },
@@ -30413,7 +30383,6 @@
         "topic:multi-sense",
         "audit:reviewed",
         "pos:verb",
-        "topic:verb-estar-idioms-1",
         "topic:map-estar",
         "topic:verb-estar-idioms",
         "topic:verb-system"
@@ -30571,8 +30540,8 @@
     },
     {
       "id": "2s5vxvtzad",
-      "spanish": "ser bajo",
-      "english": "to be low",
+      "spanish": "[ser] bajo",
+      "english": "[to be] low",
       "example": {
         "spanish": "El precio es bajo.",
         "english": "The price is low."
@@ -30582,11 +30551,10 @@
         "es:ser",
         "en:low",
         "topic:multi-sense",
-        "pos:verb",
         "audit:reviewed",
-        "topic:verb-ser-idioms",
         "topic:map-ser",
-        "topic:verb-system"
+        "pos:adjective",
+        "topic:size"
       ],
       "curriculumRole": "Unranked"
     },
@@ -31007,8 +30975,8 @@
     },
     {
       "id": "rqwcklpzgf",
-      "spanish": "ser cierto",
-      "english": "to be true",
+      "spanish": "[ser] cierto",
+      "english": "[to be] true",
       "example": {
         "spanish": "Es cierto.",
         "english": "It is true."
@@ -31018,11 +30986,10 @@
         "es:ser",
         "en:true",
         "topic:multi-sense",
-        "pos:verb",
         "audit:reviewed",
-        "topic:verb-ser-idioms",
         "topic:map-ser",
-        "topic:verb-system"
+        "pos:adjective",
+        "topic:condition-state"
       ],
       "curriculumRole": "Unranked"
     },
@@ -32432,7 +32399,6 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-2",
         "topic:phr-be",
         "topic:map-estar",
         "topic:enmap-be",
@@ -32487,8 +32453,8 @@
     },
     {
       "id": "fyziw2rb12",
-      "spanish": "ser fuerte",
-      "english": "to be strong",
+      "spanish": "[ser] fuerte",
+      "english": "[to be] strong",
       "example": {
         "spanish": "Es un olor fuerte.",
         "english": "It is a strong smell."
@@ -32498,11 +32464,10 @@
         "es:ser",
         "en:strong",
         "topic:multi-sense",
-        "pos:verb",
         "audit:reviewed",
-        "topic:verb-ser-idioms",
         "topic:map-ser",
-        "topic:verb-system"
+        "pos:adjective",
+        "topic:condition-state"
       ],
       "curriculumRole": "Unranked"
     },
@@ -32616,8 +32581,8 @@
     },
     {
       "id": "g2cfgdbyi3",
-      "spanish": "ser malo",
-      "english": "to be bad/evil",
+      "spanish": "[ser] malo",
+      "english": "[to be] bad/evil",
       "example": {
         "spanish": "El villano es malo.",
         "english": "The villain is evil."
@@ -32627,11 +32592,10 @@
         "es:ser",
         "en:bad/evil",
         "topic:multi-sense",
-        "pos:verb",
         "audit:reviewed",
-        "topic:verb-ser-idioms",
         "topic:map-ser",
-        "topic:verb-system"
+        "pos:adjective",
+        "topic:personality"
       ],
       "curriculumRole": "Unranked"
     },
@@ -35052,7 +35016,6 @@
         "en:be",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-2",
         "topic:phr-be",
         "topic:map-estar",
         "topic:enmap-be",
@@ -35103,7 +35066,6 @@
         "particle:with",
         "topic:phrasal-verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-1",
         "topic:part-with",
         "topic:map-estar",
         "topic:enmap-with",
@@ -39401,7 +39363,6 @@
         "cognate:ferir-to-fer",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1",
         "topic:cognate-transparent",
         "topic:cognate-latin-root",
         "topic:verb-admin-legal-formal"
@@ -39727,7 +39688,6 @@
         "es:extender",
         "en:extend",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1",
         "topic:cognate-transparent",
         "topic:verb-admin-legal-formal"
       ],
@@ -39769,7 +39729,6 @@
         "es:ofender",
         "en:offend",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1",
         "topic:cognate-transparent",
         "topic:verb-admin-legal-formal"
       ],
@@ -39997,7 +39956,6 @@
         "es:corresponder",
         "en:correspond",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1",
         "topic:cognate-transparent",
         "topic:verb-admin-legal-formal"
       ],
@@ -50499,7 +50457,6 @@
         "cognate:plicar-to-ply",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1",
         "topic:cognate-latin-root",
         "topic:verb-admin-legal-formal"
       ],
@@ -50963,7 +50920,6 @@
         "cognate:ar-to-ate",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1",
         "topic:cognate-transparent",
         "topic:verb-admin-legal-formal"
       ],
@@ -51075,7 +51031,6 @@
         "cognate:transparent",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1",
         "topic:cognate-transparent",
         "topic:cognate-latin-root",
         "topic:verb-admin-legal-formal"
@@ -51493,7 +51448,6 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1",
         "topic:cognate-transparent",
         "topic:cognate-latin-root",
         "topic:verb-admin-legal-formal"
@@ -51583,7 +51537,6 @@
         "cognate:ificar-to-ify",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1",
         "topic:cognate-transparent",
         "topic:verb-admin-legal-formal"
       ],
@@ -51912,7 +51865,6 @@
         "cognate:cluir-to-clude",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1",
         "topic:cognate-latin-root",
         "topic:verb-admin-legal-formal"
       ],
@@ -52735,7 +52687,6 @@
         "cognate:hibir-to-hibit",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1",
         "topic:cognate-latin-root",
         "topic:verb-admin-legal-formal"
       ],
@@ -52955,7 +52906,6 @@
         "cognate:transparent",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1",
         "topic:cognate-transparent",
         "topic:cognate-latin-root",
         "topic:verb-admin-legal-formal"
@@ -53093,7 +53043,6 @@
         "cognate:traer-to-tract",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1",
         "topic:cognate-latin-root",
         "topic:verb-admin-legal-formal"
       ],
@@ -53271,7 +53220,6 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1",
         "topic:cognate-transparent",
         "topic:cognate-latin-root",
         "topic:verb-admin-legal-formal"
@@ -53295,7 +53243,6 @@
         "cognate:hender-to-hend",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1",
         "topic:cognate-latin-root",
         "topic:verb-admin-legal-formal"
       ],
@@ -53426,7 +53373,6 @@
         "cognate:ceder-to-cede",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1",
         "topic:cognate-latin-root",
         "topic:verb-admin-legal-formal"
       ],
@@ -53472,7 +53418,6 @@
         "cognate:ceder-to-cede",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1",
         "topic:cognate-latin-root",
         "topic:verb-admin-legal-formal"
       ],
@@ -53496,7 +53441,6 @@
         "cognate:ceder-to-cede",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1",
         "topic:cognate-latin-root",
         "topic:verb-admin-legal-formal"
       ],
@@ -53541,7 +53485,6 @@
         "cognate:vertir-to-vert",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1",
         "topic:cognate-latin-root",
         "topic:verb-admin-legal-formal"
       ],
@@ -53722,7 +53665,6 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1",
         "topic:cognate-transparent",
         "topic:cognate-latin-root",
         "topic:verb-admin-legal-formal"
@@ -53790,7 +53732,6 @@
         "cognate:latin-root",
         "cognate:transparent",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1",
         "topic:cognate-transparent",
         "topic:cognate-latin-root",
         "topic:verb-admin-legal-formal"
@@ -53837,7 +53778,6 @@
         "cognate:struir-to-struct",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1",
         "topic:cognate-latin-root",
         "topic:verb-admin-legal-formal"
       ],
@@ -54162,7 +54102,6 @@
         "cognate:poner-to-pose",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1",
         "topic:cognate-latin-root",
         "topic:verb-admin-legal-formal"
       ],
@@ -54207,7 +54146,6 @@
         "cognate:poner-to-pose",
         "cognate:latin-root",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1",
         "topic:cognate-latin-root",
         "topic:verb-admin-legal-formal"
       ],
@@ -54722,7 +54660,6 @@
         "es:expirar",
         "en:expire",
         "audit:reviewed",
-        "topic:verb-formal-abstract-1",
         "topic:cognate-opaque",
         "topic:verb-admin-legal-formal"
       ],
@@ -67026,12 +66963,8 @@
         "topic:multi-sense",
         "topic:transformation",
         "audit:reviewed",
-        "pos:verb",
-        "topic:verb-estar-idioms-1",
         "topic:morph-adj-to-noun",
-        "topic:map-estar",
-        "topic:verb-estar-idioms",
-        "topic:verb-system"
+        "topic:map-estar"
       ],
       "curriculumRole": "Unranked"
     },
@@ -67099,12 +67032,8 @@
         "topic:multi-sense",
         "topic:transformation",
         "audit:reviewed",
-        "pos:verb",
-        "topic:verb-estar-idioms-1",
         "topic:morph-adj-to-noun",
-        "topic:map-estar",
-        "topic:verb-estar-idioms",
-        "topic:verb-system"
+        "topic:map-estar"
       ],
       "curriculumRole": "Unranked"
     },
@@ -67241,12 +67170,8 @@
         "topic:multi-sense",
         "topic:transformation",
         "audit:reviewed",
-        "pos:verb",
-        "topic:verb-estar-idioms-2",
         "topic:morph-adj-to-noun",
-        "topic:map-estar",
-        "topic:verb-estar-idioms",
-        "topic:verb-system"
+        "topic:map-estar"
       ],
       "curriculumRole": "Unranked"
     },
@@ -67332,12 +67257,8 @@
         "topic:en-multi-sense",
         "topic:transformation",
         "audit:reviewed",
-        "pos:verb",
-        "topic:verb-estar-idioms-1",
         "topic:morph-verb-to-noun",
-        "topic:map-estar",
-        "topic:verb-estar-idioms",
-        "topic:verb-system"
+        "topic:map-estar"
       ],
       "curriculumRole": "Unranked"
     },
@@ -68764,11 +68685,8 @@
         "topic:en-multi-sense",
         "topic:transformation",
         "audit:reviewed",
-        "pos:verb",
-        "topic:verb-modal-ability",
         "topic:morph-noun-to-adj",
-        "topic:map-poder",
-        "topic:verb-system"
+        "topic:map-poder"
       ],
       "curriculumRole": "Unranked"
     },
@@ -69066,11 +68984,8 @@
         "topic:en-multi-sense",
         "topic:transformation",
         "audit:reviewed",
-        "pos:verb",
-        "topic:verb-modal-ability",
         "topic:morph-noun-to-adj",
-        "topic:map-poder",
-        "topic:verb-system"
+        "topic:map-poder"
       ],
       "curriculumRole": "Unranked"
     },
@@ -69352,12 +69267,8 @@
         "topic:multi-sense",
         "topic:transformation",
         "audit:reviewed",
-        "pos:verb",
-        "topic:verb-estar-idioms-1",
         "topic:morph-adj-to-noun",
-        "topic:map-estar",
-        "topic:verb-estar-idioms",
-        "topic:verb-system"
+        "topic:map-estar"
       ],
       "curriculumRole": "Unranked"
     },
@@ -69379,12 +69290,8 @@
         "topic:multi-sense",
         "topic:transformation",
         "audit:reviewed",
-        "pos:verb",
-        "topic:verb-estar-idioms-2",
         "topic:morph-adj-to-noun",
-        "topic:map-estar",
-        "topic:verb-estar-idioms",
-        "topic:verb-system"
+        "topic:map-estar"
       ],
       "curriculumRole": "Unranked"
     },
@@ -69429,12 +69336,8 @@
         "topic:multi-sense",
         "topic:transformation",
         "audit:reviewed",
-        "pos:verb",
-        "topic:verb-estar-idioms-2",
         "topic:morph-adj-to-noun",
-        "topic:map-estar",
-        "topic:verb-estar-idioms",
-        "topic:verb-system"
+        "topic:map-estar"
       ],
       "curriculumRole": "Unranked"
     },
@@ -69629,12 +69532,8 @@
         "topic:multi-sense",
         "topic:transformation",
         "audit:reviewed",
-        "pos:verb",
-        "topic:verb-estar-idioms-2",
         "topic:morph-adj-to-noun",
-        "topic:map-estar",
-        "topic:verb-estar-idioms",
-        "topic:verb-system"
+        "topic:map-estar"
       ],
       "curriculumRole": "Unranked"
     },
@@ -70832,12 +70731,8 @@
         "topic:multi-sense",
         "topic:transformation",
         "audit:reviewed",
-        "pos:verb",
-        "topic:verb-estar-idioms-2",
         "topic:morph-ish",
-        "topic:map-estar",
-        "topic:verb-estar-idioms",
-        "topic:verb-system"
+        "topic:map-estar"
       ],
       "curriculumRole": "Unranked"
     },
@@ -70908,12 +70803,8 @@
         "topic:multi-sense",
         "topic:transformation",
         "audit:reviewed",
-        "pos:verb",
-        "topic:verb-estar-idioms-1",
         "topic:morph-ish",
-        "topic:map-estar",
-        "topic:verb-estar-idioms",
-        "topic:verb-system"
+        "topic:map-estar"
       ],
       "curriculumRole": "Unranked"
     },
@@ -70936,12 +70827,8 @@
         "topic:multi-sense",
         "topic:transformation",
         "audit:reviewed",
-        "pos:verb",
-        "topic:verb-estar-idioms-2",
         "topic:morph-ish",
-        "topic:map-estar",
-        "topic:verb-estar-idioms",
-        "topic:verb-system"
+        "topic:map-estar"
       ],
       "curriculumRole": "Unranked"
     },
@@ -71338,12 +71225,8 @@
         "topic:multi-sense",
         "topic:transformation",
         "audit:reviewed",
-        "pos:verb",
-        "topic:verb-estar-idioms-1",
         "topic:morph-adj-to-noun",
-        "topic:map-estar",
-        "topic:verb-estar-idioms",
-        "topic:verb-system"
+        "topic:map-estar"
       ],
       "curriculumRole": "Unranked"
     },
@@ -71430,12 +71313,8 @@
         "topic:multi-sense",
         "topic:transformation",
         "audit:reviewed",
-        "pos:verb",
-        "topic:verb-estar-idioms-2",
         "topic:morph-adj-to-noun",
-        "topic:map-estar",
-        "topic:verb-estar-idioms",
-        "topic:verb-system"
+        "topic:map-estar"
       ],
       "curriculumRole": "Unranked"
     },
@@ -72378,11 +72257,7 @@
         "topic:en-multi-sense",
         "topic:transformation",
         "audit:reviewed",
-        "pos:verb",
-        "topic:verb-estar-idioms-1",
-        "topic:map-estar",
-        "topic:verb-estar-idioms",
-        "topic:verb-system"
+        "topic:map-estar"
       ],
       "curriculumRole": "Unranked"
     },
@@ -73062,7 +72937,6 @@
         "topic:multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-1",
         "topic:map-estar",
         "topic:verb-estar-idioms",
         "topic:verb-system"
@@ -73085,7 +72959,6 @@
         "topic:multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-1",
         "topic:map-estar",
         "topic:verb-estar-idioms",
         "topic:verb-system"
@@ -75589,31 +75462,6 @@
       "curriculumRole": "Unranked"
     },
     {
-      "id": "715ron2lud",
-      "spanish": "estar ==> está",
-      "english": "to be ==> is",
-      "example": {
-        "spanish": "La forma es «está».",
-        "english": "The form is “is.”"
-      },
-      "collections": [
-        "construction:verb-forms",
-        "morphology:inflection",
-        "form:third-person-irregular",
-        "form:third-person",
-        "es:estar",
-        "en:is",
-        "topic:multi-sense",
-        "topic:en-multi-sense",
-        "audit:reviewed",
-        "pos:verb",
-        "topic:verb-tobe-present",
-        "topic:map-estar",
-        "topic:verb-system"
-      ],
-      "curriculumRole": "Unranked"
-    },
-    {
       "id": "cb15a9bkk6",
       "spanish": "tener permiso para [hacer algo]",
       "english": "to be permitted to [do something]",
@@ -76215,7 +76063,6 @@
         "topic:en-multi-sense",
         "pos:verb",
         "audit:reviewed",
-        "topic:verb-estar-idioms-1",
         "topic:phr-be",
         "topic:map-estar",
         "topic:enmap-be",
@@ -78038,7 +77885,6 @@
         "topic:verb-pattern",
         "audit:reviewed",
         "pos:verb",
-        "topic:verb-estar-idioms-2",
         "topic:vp-bare-inf",
         "topic:map-estar",
         "topic:verb-estar-idioms",
@@ -78070,7 +77916,6 @@
         "qn:modal-be-have-negation",
         "audit:reviewed",
         "pos:verb",
-        "topic:verb-estar-idioms-2",
         "topic:vp-bare-inf",
         "topic:map-estar",
         "topic:verb-estar-idioms",
@@ -94284,7 +94129,6 @@
         "english": "She isn't a doctor, she's a nurse."
       },
       "collections": [
-        "pos:verb",
         "topic:question-negation",
         "qn:modal-be-have-negation",
         "grammar:negative",
@@ -94292,9 +94136,7 @@
         "es:ser",
         "en:isn't",
         "audit:reviewed",
-        "topic:verb-ser-idioms",
-        "topic:map-ser",
-        "topic:verb-system"
+        "topic:map-ser"
       ],
       "curriculumRole": "Unranked"
     },
@@ -94307,7 +94149,6 @@
         "english": "They aren't from here, they're from Chile."
       },
       "collections": [
-        "pos:verb",
         "topic:question-negation",
         "qn:modal-be-have-negation",
         "grammar:negative",
@@ -94315,9 +94156,7 @@
         "es:ser",
         "en:aren't",
         "audit:reviewed",
-        "topic:verb-ser-idioms",
-        "topic:map-ser",
-        "topic:verb-system"
+        "topic:map-ser"
       ],
       "curriculumRole": "Unranked"
     },
@@ -94330,7 +94169,6 @@
         "english": "I wasn't ready when you arrived."
       },
       "collections": [
-        "pos:verb",
         "topic:question-negation",
         "qn:modal-be-have-negation",
         "grammar:negative",
@@ -94338,10 +94176,7 @@
         "es:estar",
         "en:wasn't",
         "audit:reviewed",
-        "topic:verb-estar-idioms-2",
-        "topic:map-estar",
-        "topic:verb-estar-idioms",
-        "topic:verb-system"
+        "topic:map-estar"
       ],
       "curriculumRole": "Unranked"
     },
@@ -94354,7 +94189,6 @@
         "english": "They weren't home last night."
       },
       "collections": [
-        "pos:verb",
         "topic:question-negation",
         "qn:modal-be-have-negation",
         "grammar:negative",
@@ -94362,10 +94196,7 @@
         "es:estar",
         "en:weren't",
         "audit:reviewed",
-        "topic:verb-estar-idioms-2",
-        "topic:map-estar",
-        "topic:verb-estar-idioms",
-        "topic:verb-system"
+        "topic:map-estar"
       ],
       "curriculumRole": "Unranked"
     },
@@ -94378,7 +94209,6 @@
         "english": "She hasn't arrived yet."
       },
       "collections": [
-        "pos:verb",
         "topic:question-negation",
         "qn:modal-be-have-negation",
         "grammar:negative",
@@ -94387,9 +94217,7 @@
         "es:haber",
         "en:hasn't",
         "audit:reviewed",
-        "topic:verb-perfect-auxiliary",
-        "topic:map-haber",
-        "topic:verb-system"
+        "topic:map-haber"
       ],
       "curriculumRole": "Unranked"
     },
@@ -94402,7 +94230,6 @@
         "english": "I hadn't finished the homework when they arrived."
       },
       "collections": [
-        "pos:verb",
         "topic:question-negation",
         "qn:modal-be-have-negation",
         "grammar:negative",
@@ -94411,9 +94238,7 @@
         "es:haber",
         "en:hadn't",
         "audit:reviewed",
-        "topic:verb-perfect-auxiliary",
-        "topic:map-haber",
-        "topic:verb-system"
+        "topic:map-haber"
       ],
       "curriculumRole": "Unranked"
     },
@@ -94492,16 +94317,13 @@
         "english": "Is she a doctor or a nurse?"
       },
       "collections": [
-        "pos:verb",
         "topic:question-negation",
         "qn:inversion-question",
         "grammar:question",
         "es:ser",
         "en:is",
         "audit:reviewed",
-        "topic:verb-tobe-present",
-        "topic:map-ser",
-        "topic:verb-system"
+        "topic:map-ser"
       ],
       "curriculumRole": "Unranked"
     },
@@ -94514,16 +94336,13 @@
         "english": "Are they ready to leave?"
       },
       "collections": [
-        "pos:verb",
         "topic:question-negation",
         "qn:inversion-question",
         "grammar:question",
         "es:estar",
         "en:are",
         "audit:reviewed",
-        "topic:verb-tobe-present",
-        "topic:map-estar",
-        "topic:verb-system"
+        "topic:map-estar"
       ],
       "curriculumRole": "Unranked"
     },

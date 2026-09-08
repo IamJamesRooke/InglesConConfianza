@@ -1,0 +1,17 @@
+# Un-bracketed copula+adjective rows that were mis-tagged pos:verb.
+# Bracket the copula, add pos:adjective + a semantic group; the untag manifest
+# then removes pos:verb / topic:verb-system / the ser|estar-idioms tags.
+# id	spanish	english	role	extra(|-sep)	reason
+2w0dzl1mvl	[ser] alto	[to be] tall	Unranked	pos:adjective|topic:size	copula+adjective predicate
+ffr5aig4sd	[ser] alto	[to be] high	Unranked	pos:adjective|topic:size	copula+adjective predicate
+2s5vxvtzad	[ser] bajo	[to be] low	Unranked	pos:adjective|topic:size	copula+adjective predicate
+fyziw2rb12	[ser] fuerte	[to be] strong	Unranked	pos:adjective|topic:condition-state	copula+adjective predicate
+rqwcklpzgf	[ser] cierto	[to be] true	Unranked	pos:adjective|topic:condition-state	copula+adjective predicate
+g2cfgdbyi3	[ser] malo	[to be] bad/evil	Unranked	pos:adjective|topic:personality	copula+adjective predicate
+fbhhwzgo6j	[estar] apagado	[to be] off	Unranked	pos:adjective|topic:estar-adj	copula+adjective predicate
+vx5dkts0j1	[estar] encendido	[to be] on	Unranked	pos:adjective|topic:estar-adj	copula+adjective predicate
+vf8v3tcztr	[estar] sentado	[to be] sitting	Unranked	pos:adjective|topic:estar-adj	copula+adjective predicate
+9qzgymygsa	[estar] mal	[to be] wrong	Unranked	pos:adjective|topic:estar-adj	copula+adjective predicate
+bvwjgfiqzf	[estar] mal	[to be] unwell	Unranked	pos:adjective|topic:estar-adj	copula+adjective predicate
+8pa5w8lhu0	[estar] bien	[to be] okay	Unranked	pos:adjective|topic:estar-adj	copula+adjective predicate
+715ron2lud	estar ==> está	to be ==> is	Unranked	topic:transformation	orphan derivation row; home on Transformations

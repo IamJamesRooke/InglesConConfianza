@@ -1,16 +1,16 @@
 {
   "summary": {
-    "generatedAt": "2026-09-08T12:27:42.964Z",
+    "generatedAt": "2026-09-08T12:40:30.155Z",
     "totals": {
-      "allConcepts": 4251,
-      "nonTrash": 4251,
+      "allConcepts": 4250,
+      "nonTrash": 4250,
       "byRole": {
         "P1": 0,
         "P2": 0,
         "P3": 0,
         "P4": 0,
         "P5": 0,
-        "Unranked": 4251,
+        "Unranked": 4250,
         "Trash": 0
       }
     },
@@ -51,8 +51,8 @@
       },
       {
         "slug": "special-verbs",
-        "baseCount": 247,
-        "reachableCount": 247,
+        "baseCount": 210,
+        "reachableCount": 210,
         "withinTopicGapCount": 0,
         "emptyGroupCount": 0,
         "confusionGroupCount": 0
@@ -75,8 +75,8 @@
       },
       {
         "slug": "adjectives",
-        "baseCount": 413,
-        "reachableCount": 413,
+        "baseCount": 425,
+        "reachableCount": 425,
         "withinTopicGapCount": 0,
         "emptyGroupCount": 0,
         "confusionGroupCount": 0
@@ -123,16 +123,16 @@
       },
       {
         "slug": "mappings",
-        "baseCount": 1586,
-        "reachableCount": 1586,
+        "baseCount": 1585,
+        "reachableCount": 1585,
         "withinTopicGapCount": 0,
         "emptyGroupCount": 0,
         "confusionGroupCount": 5
       },
       {
         "slug": "en-mappings",
-        "baseCount": 1521,
-        "reachableCount": 1521,
+        "baseCount": 1520,
+        "reachableCount": 1520,
         "withinTopicGapCount": 0,
         "emptyGroupCount": 0,
         "confusionGroupCount": 2
@@ -974,8 +974,8 @@
       "slug": "special-verbs",
       "title": "Special Verbs",
       "baseCollection": "topic:verb-system",
-      "baseCount": 247,
-      "reachableCount": 247,
+      "baseCount": 210,
+      "reachableCount": 210,
       "withinTopicGapCount": 0,
       "withinTopicGapIds": [],
       "families": [
@@ -987,21 +987,21 @@
             {
               "collection": "topic:verb-ser-idioms",
               "label": "To Be (ser) — Idioms & Uses",
-              "count": 33,
+              "count": 25,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-estar-idioms",
               "label": "To Be (estar) — Idioms & Uses",
-              "count": 48,
+              "count": 26,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-tobe-present",
               "label": "To Be — Conjugated Forms (am/is/are, was/were)",
-              "count": 35,
+              "count": 32,
               "confusion": false,
               "p1Count": 0
             },
@@ -1022,14 +1022,14 @@
             {
               "collection": "topic:verb-perfect-auxiliary",
               "label": "Have — Perfect Auxiliary (have/has/had done)",
-              "count": 23,
+              "count": 21,
               "confusion": false,
               "p1Count": 0
             },
             {
               "collection": "topic:verb-modal-ability",
               "label": "Can & Could — Ability & Permission",
-              "count": 42,
+              "count": 40,
               "confusion": false,
               "p1Count": 0
             },
@@ -2014,8 +2014,8 @@
       "slug": "adjectives",
       "title": "Adjectives",
       "baseCollection": "pos:adjective",
-      "baseCount": 413,
-      "reachableCount": 413,
+      "baseCount": 425,
+      "reachableCount": 425,
       "withinTopicGapCount": 0,
       "withinTopicGapIds": [],
       "families": [
@@ -2097,7 +2097,7 @@
             {
               "collection": "topic:size",
               "label": "Size",
-              "count": 8,
+              "count": 11,
               "confusion": false,
               "p1Count": 0
             },
@@ -2153,7 +2153,7 @@
             {
               "collection": "topic:personality",
               "label": "Personality",
-              "count": 18,
+              "count": 19,
               "confusion": false,
               "p1Count": 0
             },
@@ -2174,7 +2174,7 @@
             {
               "collection": "topic:condition-state",
               "label": "Condition / state",
-              "count": 23,
+              "count": 25,
               "confusion": false,
               "p1Count": 0
             }
@@ -2188,7 +2188,7 @@
             {
               "collection": "topic:estar-adj",
               "label": "estar (temporary state)",
-              "count": 24,
+              "count": 30,
               "confusion": false,
               "p1Count": 0
             },
@@ -2694,8 +2694,8 @@
       "slug": "mappings",
       "title": "Spanish-to-English Mappings",
       "baseCollection": "topic:multi-sense",
-      "baseCount": 1586,
-      "reachableCount": 1586,
+      "baseCount": 1585,
+      "reachableCount": 1585,
       "withinTopicGapCount": 0,
       "withinTopicGapIds": [],
       "families": [
@@ -2707,7 +2707,7 @@
             {
               "collection": "topic:map-estar",
               "label": "estar",
-              "count": 107,
+              "count": 106,
               "confusion": false,
               "p1Count": 0
             },
@@ -3111,8 +3111,8 @@
       "slug": "en-mappings",
       "title": "English-to-Spanish Mappings",
       "baseCollection": "topic:en-multi-sense",
-      "baseCount": 1521,
-      "reachableCount": 1521,
+      "baseCount": 1520,
+      "reachableCount": 1520,
       "withinTopicGapCount": 0,
       "withinTopicGapIds": [],
       "families": [
@@ -3376,7 +3376,7 @@
             {
               "collection": "en:is",
               "label": "is",
-              "count": 16,
+              "count": 15,
               "confusion": false,
               "p1Count": 0
             },

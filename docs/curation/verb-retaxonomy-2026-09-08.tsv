@@ -23,3 +23,8 @@ MERGE	topic:verb-needing	topic:verb-depending-fitting	merge into "Needing, Depen
 
 # --- Special Verbs: one conjugated-forms group for ser/estar ---
 MERGE	topic:verb-tobe-past-future	topic:verb-tobe-present	3 rows; single "conjugated forms" group
+
+# --- follow-up (2026-09-08): leftover numbered partitions ---
+MERGE	topic:verb-estar-idioms-1	topic:verb-estar-idioms	retired numbered split
+MERGE	topic:verb-estar-idioms-2	topic:verb-estar-idioms	retired numbered split
+DELETE	topic:verb-formal-abstract-1	orphaned cognate-verb bucket, no facet button, all rows on Cognates
