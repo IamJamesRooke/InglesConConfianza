@@ -66,6 +66,11 @@ export type LessonFile = {
   lessons: Lesson[];
 };
 
+export type ConceptDisplayLookup = Record<
+  string,
+  { spanish: string; english: string; role?: string }
+>;
+
 // The pre-modules file shape, still read from disk until the first v2 write.
 export type LessonFileV1 = {
   version: 1;

@@ -3,6 +3,7 @@ import test from "node:test";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { LessonDashboard } from "../../src/components/learner/lesson-dashboard";
+import { PracticeMarkdown } from "../../src/components/practice/practice-markdown";
 
 const lesson = {
   id: "hello",
@@ -60,4 +61,21 @@ test("the empty course gives learners a meaningful state without authoring instr
   );
   assert.match(html, /Nos vemos pronto/);
   assert.doesNotMatch(html, /\/practice\?|\/admin|Lesson Builder/);
+});
+
+test("practice markdown keeps the established paragraph and inline fixtures", () => {
+  const html = renderToStaticMarkup(createElement(PracticeMarkdown, {
+    markdown: "First line\nsecond line\n\n**bold** and *italic* [[es:hola]] [[en:hello]]",
+  }));
+  assert.match(html, /<p[^>]*>First line<\/p><p[^>]*>second line<\/p>/);
+  assert.match(html, /<strong[^>]*>bold<\/strong>/);
+  assert.match(html, /<em[^>]*>italic<\/em>/);
+  assert.match(html, /data-language="es"[^>]*>hola<\/mark>/);
+  assert.match(html, /data-language="en"[^>]*>hello<\/mark>/);
+});
+
+test("an empty explanation renders an empty markdown content container", () => {
+  const html = renderToStaticMarkup(createElement(PracticeMarkdown, { markdown: "" }));
+  assert.match(html, /^<div class="practice-markdown-content /);
+  assert.doesNotMatch(html, /<p/);
 });

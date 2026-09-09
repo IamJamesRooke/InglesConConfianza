@@ -6,7 +6,10 @@ import { useEffect, useId, useRef, useState, type Ref } from "react";
 import { ConceptQuickEdit, type ConceptDraft } from "@/components/lesson-builder/concept-quick-edit";
 import { conceptKey } from "@/lib/lesson-builder/lesson-file";
 import type { LessonConceptSuggestion } from "@/lib/lesson-builder/concept-suggestions";
-import type { LessonConcept } from "@/lib/lesson-builder/types";
+import type {
+  ConceptDisplayLookup,
+  LessonConcept,
+} from "@/lib/lesson-builder/types";
 import { createId } from "@/lib/lesson-builder/utils";
 
 type ConceptResult = {
@@ -16,10 +19,7 @@ type ConceptResult = {
   curriculumRole: string;
 };
 
-export type ConceptDisplayLookup = Record<
-  string,
-  { spanish: string; english: string; role?: string }
->;
+export type { ConceptDisplayLookup } from "@/lib/lesson-builder/types";
 
 // The quick "concepts covered" field under a lesson title. Type to search the
 // curriculum; pick a match (keeps its id for coverage tracking) or press Enter

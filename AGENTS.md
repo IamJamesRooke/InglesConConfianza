@@ -18,6 +18,7 @@ Migration is complete. Do not recreate the retired Markdown source trees, build 
 - `web/prisma/schema.prisma` models the PostgreSQL curriculum database.
 - `web/src/lib/curriculum/server/` owns curriculum reads and writes.
 - `web/data/lessons.json` remains the Lesson Builder store until the owner expands PostgreSQL scope.
+- `docs/engineering/code-map.md` is the short starting map for routine feature maintenance.
 
 ## Curriculum boundaries
 

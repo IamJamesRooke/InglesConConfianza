@@ -4,7 +4,11 @@ import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 // Imported here rather than @import'd from globals.css so the dev server tracks
 // its changes for hot reload.
-import "./learner.css";
+import "../styles/learner-foundations-home.css";
+import "../styles/practice-base.css";
+import "../styles/authoring-base.css";
+import "../styles/lesson-library-document.css";
+import "../styles/practice-responsive-overrides.css";
 
 const geist = Geist({
   subsets: ["latin"],

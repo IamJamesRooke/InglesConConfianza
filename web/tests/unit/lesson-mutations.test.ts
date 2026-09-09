@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 
 import * as m from "../../src/lib/lesson-builder/mutations";
-import { lessonsReducer, undoableLessonsReducer, initialUndoableLessons } from "../../src/lib/lesson-builder/reducer";
+import { lessonsReducer } from "../../src/lib/lesson-builder/reducer";
 import type { Lesson, SentenceBlock } from "../../src/lib/lesson-builder/types";
 
 function sentenceBlock(overrides: Partial<SentenceBlock> = {}): SentenceBlock {
@@ -66,17 +66,19 @@ test("duplicateLesson inserts a deep copy after its source", () => {
   ];
 
   const next = m.duplicateLesson(lessons, "lesson_a", "lesson_copy");
-  assert.deepEqual(next.map((lesson) => lesson.id), [
-    "lesson_a",
-    "lesson_copy",
-    "lesson_b",
-  ]);
+  assert.deepEqual(
+    next.map((lesson) => lesson.id),
+    ["lesson_a", "lesson_copy", "lesson_b"],
+  );
   assert.equal(next[1].name, "A useful lesson (copy)");
   assert.notEqual(next[1].concepts[0].id, lessons[0].concepts[0].id);
   const originalBlock = lessons[0].blocks[0] as SentenceBlock;
   const copiedBlock = next[1].blocks[0] as SentenceBlock;
   assert.notEqual(copiedBlock.id, originalBlock.id);
-  assert.notEqual(copiedBlock.languageBlocks[0].id, originalBlock.languageBlocks[0].id);
+  assert.notEqual(
+    copiedBlock.languageBlocks[0].id,
+    originalBlock.languageBlocks[0].id,
+  );
 });
 
 test("moveLesson reorders with before/after and adjusts for removal", () => {
@@ -87,11 +89,19 @@ test("moveLesson reorders with before/after and adjusts for removal", () => {
     blocks: [],
   }));
   assert.deepEqual(
-    m.moveLesson(lessons, { draggedId: "a", targetId: "c", position: "after" }).map((l) => l.id),
+    m
+      .moveLesson(lessons, { draggedId: "a", targetId: "c", position: "after" })
+      .map((l) => l.id),
     ["b", "c", "a"],
   );
   assert.deepEqual(
-    m.moveLesson(lessons, { draggedId: "c", targetId: "a", position: "before" }).map((l) => l.id),
+    m
+      .moveLesson(lessons, {
+        draggedId: "c",
+        targetId: "a",
+        position: "before",
+      })
+      .map((l) => l.id),
     ["c", "a", "b"],
   );
 });
@@ -176,12 +186,16 @@ test("targeted deletion restore preserves edits made after deletion", () => {
   assert.equal(lessons[1].name, "Written afterwards");
   assert.equal(lessons[0].blocks[0].id, "b1");
 
-  const removedPiece = (lessons[0].blocks[0] as SentenceBlock).languageBlocks[0];
+  const removedPiece = (lessons[0].blocks[0] as SentenceBlock)
+    .languageBlocks[0];
   lessons = m.deleteLanguageBlock(lessons, "lesson_a", "b1", "l1");
   lessons = m.renameLesson(lessons, "lesson_b", "Still here");
   lessons = m.restoreLanguageBlock(lessons, "lesson_a", "b1", removedPiece, 0);
   assert.equal(lessons[1].name, "Still here");
-  assert.equal((lessons[0].blocks[0] as SentenceBlock).languageBlocks[0].id, "l1");
+  assert.equal(
+    (lessons[0].blocks[0] as SentenceBlock).languageBlocks[0].id,
+    "l1",
+  );
 });
 
 test("reducer dispatches through to the matching mutation", () => {
@@ -199,49 +213,6 @@ test("reducer SET_LESSONS replaces wholesale", () => {
     lessonsReducer(baseLessons(), { type: "SET_LESSONS", lessons: [] }),
     [],
   );
-});
-
-test("undoable reducer: delete then UNDO restores, REDO re-applies", () => {
-  let s = undoableLessonsReducer(initialUndoableLessons, { type: "SET_LESSONS", lessons: baseLessons() });
-  assert.equal(s.past.length, 0);
-  s = undoableLessonsReducer(s, { type: "DELETE_CONTENT_BLOCK", lessonId: "lesson_a", blockId: "b1" });
-  assert.equal(s.present[0].blocks.length, 0);
-  assert.equal(s.past.length, 1);
-  s = undoableLessonsReducer(s, { type: "UNDO" });
-  assert.equal(s.present[0].blocks.length, 1);
-  assert.equal(s.future.length, 1);
-  s = undoableLessonsReducer(s, { type: "REDO" });
-  assert.equal(s.present[0].blocks.length, 0);
-});
-
-test("undoable reducer: consecutive edits to one field coalesce into a single step", () => {
-  let s = undoableLessonsReducer(initialUndoableLessons, { type: "SET_LESSONS", lessons: baseLessons() });
-  s = undoableLessonsReducer(s, { type: "DELETE_CONTENT_BLOCK", lessonId: "lesson_a", blockId: "b1" });
-  const afterStructural = s.past.length;
-  s = undoableLessonsReducer(s, { type: "RENAME_LESSON", lessonId: "lesson_a", name: "a" });
-  s = undoableLessonsReducer(s, { type: "RENAME_LESSON", lessonId: "lesson_a", name: "ab" });
-  s = undoableLessonsReducer(s, { type: "RENAME_LESSON", lessonId: "lesson_a", name: "abc" });
-  assert.equal(s.past.length, afterStructural + 1);
-  s = undoableLessonsReducer(s, { type: "UNDO" });
-  assert.equal(s.present[0].name, "A");
-});
-
-test("undoable reducer: leaving and revisiting a field starts a new history step", () => {
-  let s = undoableLessonsReducer(initialUndoableLessons, { type: "SET_LESSONS", lessons: baseLessons() });
-  s = undoableLessonsReducer(s, { type: "RENAME_LESSON", lessonId: "lesson_a", name: "First visit" });
-  s = undoableLessonsReducer(s, { type: "END_HISTORY_GROUP" });
-  s = undoableLessonsReducer(s, { type: "RENAME_LESSON", lessonId: "lesson_a", name: "Second visit" });
-  s = undoableLessonsReducer(s, { type: "UNDO" });
-  assert.equal(s.present[0].name, "First visit");
-});
-
-test("undoable reducer: different sentence fields do not share one history step", () => {
-  let s = undoableLessonsReducer(initialUndoableLessons, { type: "SET_LESSONS", lessons: baseLessons() });
-  s = undoableLessonsReducer(s, { type: "UPDATE_SENTENCE_BLOCK", lessonId: "lesson_a", sentenceBlockId: "b1", patch: { promptText: "Prompt" } });
-  s = undoableLessonsReducer(s, { type: "UPDATE_SENTENCE_BLOCK", lessonId: "lesson_a", sentenceBlockId: "b1", patch: { helperText: "Help" } });
-  s = undoableLessonsReducer(s, { type: "UNDO" });
-  assert.equal((s.present[0].blocks[0] as SentenceBlock).promptText, "Prompt");
-  assert.equal((s.present[0].blocks[0] as SentenceBlock).helperText, "");
 });
 
 test("lesson concepts add / remove", () => {

@@ -64,7 +64,12 @@ export type LessonsAction =
       layout?: "sentence" | "vocabulary_table";
     }
   | { type: "DELETE_CONTENT_BLOCK"; lessonId: string; blockId: string }
-  | { type: "RESTORE_CONTENT_BLOCK"; lessonId: string; block: LessonBlock; insertionIndex: number }
+  | {
+      type: "RESTORE_CONTENT_BLOCK";
+      lessonId: string;
+      block: LessonBlock;
+      insertionIndex: number;
+    }
   | { type: "DUPLICATE_CONTENT_BLOCK"; lessonId: string; blockId: string }
   | {
       type: "MOVE_CONTENT_BLOCK";
@@ -97,7 +102,13 @@ export type LessonsAction =
       sentenceBlockId: string;
       languageBlockId: string;
     }
-  | { type: "RESTORE_LANGUAGE_BLOCK"; lessonId: string; sentenceBlockId: string; languageBlock: LanguageBlock; insertionIndex: number }
+  | {
+      type: "RESTORE_LANGUAGE_BLOCK";
+      lessonId: string;
+      sentenceBlockId: string;
+      languageBlock: LanguageBlock;
+      insertionIndex: number;
+    }
   | {
       type: "UPDATE_LANGUAGE_BLOCK";
       lessonId: string;
@@ -306,101 +317,4 @@ export function lessonsReducer(
       return exhaustiveCheck;
     }
   }
-}
-
-// Undo/redo history over `lessonsReducer`. Consecutive edits to the same text
-// field (typing) coalesce into one history step; structural edits (add / delete
-// / duplicate / move a block) each get their own step. Loading a lesson file
-// (`SET_LESSONS`) clears the history.
-
-export type UndoableLessons = {
-  past: Lesson[][];
-  present: Lesson[];
-  future: Lesson[][];
-  lastKey: string | null;
-};
-
-export type UndoableAction =
-  | LessonsAction
-  | { type: "UNDO" }
-  | { type: "REDO" }
-  | { type: "END_HISTORY_GROUP" };
-
-const HISTORY_LIMIT = 100;
-
-const COALESCING_ACTIONS = new Set([
-  "UPDATE_EXPLANATION_BLOCK",
-  "UPDATE_SENTENCE_BLOCK",
-  "UPDATE_LANGUAGE_BLOCK",
-  "UPDATE_ACCEPTED_ANSWER",
-  "RENAME_LESSON",
-  "RELABEL_LESSON_CONCEPT",
-]);
-
-function coalesceKey(action: LessonsAction): string | null {
-  if (!COALESCING_ACTIONS.has(action.type)) return null;
-  const fields = action as Record<string, unknown>;
-  return [
-    action.type,
-    fields.lessonId,
-    fields.blockId,
-    fields.sentenceBlockId,
-    fields.languageBlockId,
-    fields.lessonConceptId,
-    fields.answerIndex,
-    fields.patch && Object.keys(fields.patch as object).sort().join(","),
-  ].join(":");
-}
-
-export const initialUndoableLessons: UndoableLessons = {
-  past: [],
-  present: [],
-  future: [],
-  lastKey: null,
-};
-
-export function undoableLessonsReducer(
-  state: UndoableLessons,
-  action: UndoableAction,
-): UndoableLessons {
-  if (action.type === "END_HISTORY_GROUP") {
-    return state.lastKey === null ? state : { ...state, lastKey: null };
-  }
-  if (action.type === "UNDO") {
-    if (state.past.length === 0) return state;
-    return {
-      past: state.past.slice(0, -1),
-      present: state.past[state.past.length - 1],
-      future: [state.present, ...state.future],
-      lastKey: null,
-    };
-  }
-  if (action.type === "REDO") {
-    if (state.future.length === 0) return state;
-    return {
-      past: [...state.past, state.present],
-      present: state.future[0],
-      future: state.future.slice(1),
-      lastKey: null,
-    };
-  }
-
-  const present = lessonsReducer(state.present, action);
-  if (present === state.present) return state;
-
-  if (action.type === "SET_LESSONS") {
-    return { past: [], present, future: [], lastKey: null };
-  }
-
-  const key = coalesceKey(action);
-  if (key !== null && key === state.lastKey && state.past.length > 0) {
-    return { ...state, present, future: [], lastKey: key };
-  }
-
-  return {
-    past: [...state.past, state.present].slice(-HISTORY_LIMIT),
-    present,
-    future: [],
-    lastKey: key,
-  };
 }

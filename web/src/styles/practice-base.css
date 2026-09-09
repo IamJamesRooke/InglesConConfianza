@@ -1,0 +1,59 @@
+/* Lesson explanation, sentence builder, and bilingual highlights are defined
+   once, in the consolidated "Practice" section further down this file. */
+.lesson-explanation > div {
+  display: grid;
+  gap: 14px;
+}
+.lesson-explanation > div > * {
+  margin: 0;
+}
+.lesson-controls {
+  flex-shrink: 0;
+  padding: 18px 32px max(18px, env(safe-area-inset-bottom));
+  transition: background 200ms;
+}
+.lesson-controls-inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: auto;
+}
+.lesson-feedback {
+  flex: 1;
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+.lesson-position {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted-foreground);
+}
+.sentence-practice {
+  width: 100%;
+}
+.sentence-prompt {
+  margin: 0 auto;
+}
+.answer-piece {
+  min-width: 0;
+}
+.answer-input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  transition:
+    border-color 160ms,
+    background 160ms,
+    box-shadow 160ms;
+}
+.answer-hint {
+  display: inline-flex;
+  align-items: center;
+}
+.lesson-celebration {
+  max-width: 680px;
+  width: 100%;
+  text-align: center;
+}
+

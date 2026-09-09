@@ -1,4 +1,5 @@
-import { CURRICULUM_TOPICS, type CurriculumTopic } from "@/lib/curriculum/topics";
+import { CURRICULUM_TOPICS } from "@/lib/curriculum/topics";
+import type { CurriculumTopic } from "@/lib/curriculum/topic-types";
 
 // Every collection that is a facet button on some topic page.
 const ALL_FACET_COLLECTIONS = new Set(

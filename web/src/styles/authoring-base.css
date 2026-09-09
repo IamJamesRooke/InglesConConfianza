@@ -1,0 +1,694 @@
+/* Authoring uses the learner canvas; these are the few controls added to it. */
+.authoring-session .lesson-stage {
+  position: relative;
+  padding-top: 88px;
+}
+.authoring-title p {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.authoring-mode-label {
+  padding: 2px 7px;
+  border-radius: 999px;
+  color: var(--primary-foreground);
+  background: var(--primary);
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.authoring-title input {
+  display: block;
+  width: min(100%, 520px);
+  margin-top: 2px;
+  border: 0;
+  border-radius: var(--radius-md);
+  color: var(--foreground);
+  background: transparent;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+  outline: none;
+}
+.authoring-title input:hover,
+.authoring-title input:focus {
+  background: var(--muted);
+  box-shadow: 0 0 0 5px var(--muted);
+}
+.authoring-save-state {
+  flex-shrink: 0;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  font-weight: 650;
+}
+.authoring-save-state.error {
+  color: var(--destructive);
+}
+.authoring-topbar-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 0 13px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  color: var(--foreground);
+  background: var(--card);
+  font-size: 13px;
+  font-weight: 700;
+}
+.authoring-topbar-action:hover {
+  background: var(--muted);
+}
+.authoring-topbar-action.primary {
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+.authoring-topbar-action:disabled {
+  opacity: 0.38;
+}
+.authoring-step-tools {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 38px;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: color-mix(in oklch, var(--card) 92%, transparent);
+  box-shadow: var(--shadow-sm);
+  transform: translateX(-50%);
+  backdrop-filter: blur(12px);
+}
+.authoring-step-tools > span {
+  padding: 0 9px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.authoring-step-tools button {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 999px;
+  color: var(--muted-foreground);
+}
+.authoring-step-tools button:hover {
+  color: var(--foreground);
+  background: var(--muted);
+}
+.authoring-step-tools button.danger:hover {
+  color: var(--destructive);
+}
+.authoring-step-tools button:disabled {
+  opacity: 0.25;
+}
+.authoring-wysiwyg {
+  position: relative;
+  width: 100%;
+  color: inherit;
+  text-align: inherit;
+  cursor: text;
+  outline: none;
+}
+.authoring-wysiwyg:focus {
+  outline: none;
+}
+.authoring-wysiwyg:has(.practice-markdown-content:empty)::before {
+  display: block;
+  color: var(--muted-foreground);
+  font-style: italic;
+  content: attr(data-placeholder);
+}
+.authoring-wysiwyg:has(.practice-markdown-content:empty)
+  .practice-markdown-content {
+  min-height: 1lh;
+}
+/* Caret escaped into the root: don't let the empty block reserve a blank line. */
+.authoring-wysiwyg:not(:has(.practice-markdown-content:only-child))
+  .practice-markdown-content:empty {
+  min-height: 0;
+}
+.authoring-wysiwyg:not(:has(.practice-markdown-content:only-child))::before {
+  display: none;
+}
+.authoring-wysiwyg-explanation:has(.practice-markdown-content:empty)::before {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.authoring-wysiwyg-eyebrow:has(.practice-markdown-content:empty)::before {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.authoring-wysiwyg-prompt:has(.practice-markdown-content:empty)::before {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+.authoring-wysiwyg-helper:has(.practice-markdown-content:empty)::before {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.authoring-wysiwyg-feedback:has(.practice-markdown-content:empty)::before {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.55;
+}
+.authoring-source-input {
+  width: 100%;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: transparent;
+  outline: none;
+}
+.authoring-source-input:hover,
+.authoring-source-input:focus {
+  background: color-mix(in oklch, var(--card) 62%, transparent);
+  box-shadow: 0 0 0 7px color-mix(in oklch, var(--card) 62%, transparent);
+}
+.authoring-answer-details {
+  display: grid;
+  grid-column: 1 / -1;
+  gap: 12px;
+  padding: 16px;
+  margin-top: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--card);
+}
+.authoring-callout {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+.authoring-callout:hover {
+  background: color-mix(in oklch, var(--muted) 60%, transparent);
+}
+.authoring-answer-details label {
+  display: grid;
+  gap: 5px;
+}
+.authoring-answer-details label > span:first-child {
+  color: var(--muted-foreground);
+  font-size: 11px;
+  font-weight: 700;
+}
+.authoring-answer-details input {
+  width: 100%;
+  min-height: 40px;
+  padding: 8px 10px;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-md);
+  color: var(--foreground);
+  background: var(--background);
+  outline: none;
+}
+.authoring-answer-details input:focus {
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--ring) 16%, transparent);
+}
+.authoring-answer-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.authoring-answer-row button {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: var(--radius-md);
+  color: var(--muted-foreground);
+}
+.authoring-answer-row button:hover {
+  color: var(--destructive);
+  background: var(--muted);
+}
+.authoring-details-actions {
+  display: flex;
+  gap: 8px;
+}
+.authoring-details-actions button,
+.authoring-add-piece {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 10px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-md);
+  color: var(--muted-foreground);
+  font-size: 12px;
+  font-weight: 700;
+}
+.authoring-details-actions button:hover,
+.authoring-add-piece:hover {
+  color: var(--foreground);
+  border-color: var(--primary);
+  background: var(--muted);
+}
+.authoring-details-actions button.danger:hover {
+  color: var(--destructive);
+}
+.authoring-add-piece {
+  min-height: 92px;
+  align-self: stretch;
+  border-radius: var(--radius-2xl);
+}
+.authoring-session .sentence-helper,
+.authoring-session .sentence-authored-feedback {
+  width: 100%;
+}
+.authoring-session .sentence-helper .authoring-wysiwyg {
+  flex: 1;
+}
+.authoring-session .sentence-authored-feedback:empty {
+  display: none;
+}
+.authoring-controls .lesson-controls-inner {
+  max-width: 1120px;
+}
+.authoring-add-step {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.authoring-add-step > span {
+  margin-right: 4px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+}
+.authoring-add-step button,
+.authoring-empty-lesson button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  color: var(--foreground);
+  background: var(--card);
+  font-size: 13px;
+  font-weight: 700;
+}
+.authoring-add-step button:hover,
+.authoring-empty-lesson button:hover {
+  border-color: var(--primary);
+  background: var(--muted);
+}
+.authoring-empty-lesson {
+  display: grid;
+  gap: 24px;
+  justify-items: center;
+  color: var(--muted-foreground);
+  text-align: center;
+}
+.authoring-empty-lesson > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+@media (max-width: 760px) {
+  .authoring-save-state,
+  .authoring-topbar-action:not(.primary),
+  .authoring-add-step > span,
+  .authoring-add-step button span {
+    display: none;
+  }
+  .authoring-topbar-action {
+    padding-inline: 10px;
+  }
+  .authoring-topbar-action.primary span {
+    display: none;
+  }
+  .authoring-add-step {
+    gap: 4px;
+  }
+  .authoring-add-step button {
+    width: 42px;
+    padding: 0;
+    justify-content: center;
+    font-size: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .authoring-session .lesson-topbar-title p > .authoring-mode-label,
+  .authoring-step-tools > span {
+    display: none;
+  }
+  .authoring-title input {
+    overflow: hidden;
+    font-size: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .authoring-topbar-action.primary {
+    width: 38px;
+    min-height: 38px;
+    justify-content: center;
+    padding: 0;
+  }
+  .authoring-session .lesson-stage {
+    padding-top: 72px;
+  }
+}
+
+/* Desktop lesson authoring: the learner canvas is the editor. */
+.authoring-session {
+  z-index: 90;
+  background: var(--muted);
+}
+.authoring-session .authoring-topbar {
+  gap: 16px;
+  padding-block: 16px;
+}
+.authoring-session .lesson-stage {
+  padding: 48px 40px;
+}
+.authoring-session .authoring-title p {
+  display: block;
+  gap: 0;
+}
+.authoring-session .authoring-title input {
+  margin-top: 0;
+  font-size: 16px;
+}
+.authoring-save-state {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: 0;
+  background: transparent;
+}
+.authoring-save-state:not(:disabled):hover {
+  color: var(--foreground);
+}
+@keyframes authoring-spin {
+  to { transform: rotate(360deg); }
+}
+.authoring-spin {
+  animation: authoring-spin 1s linear infinite;
+}
+.authoring-wysiwyg-shell {
+  position: relative;
+  width: 100%;
+}
+.authoring-wysiwyg:focus-visible {
+  border-radius: 6px;
+  box-shadow: 0 0 0 4px color-mix(in oklch, var(--primary) 12%, transparent);
+}
+/* Sticky language-mode indicator, top-right of the explanation editor. */
+.authoring-mode-badge {
+  position: absolute;
+  top: -9px;
+  right: 4px;
+  z-index: 6;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 750;
+  box-shadow: 0 2px 8px color-mix(in oklch, var(--foreground) 14%, transparent);
+}
+.authoring-mode-badge[data-language="es"] { background: #c60b1e; color: #fff; }
+.authoring-mode-badge[data-language="en"] { background: #00247d; color: #fff; }
+.authoring-mode-badge kbd {
+  padding: 0 3px;
+  border-radius: 3px;
+  background: rgb(255 255 255 / 24%);
+  font: 650 9px ui-monospace, monospace;
+}
+.authoring-format-menu {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 12px);
+  z-index: 20;
+  display: flex;
+  gap: 3px;
+  padding: 5px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  box-shadow: 0 10px 30px color-mix(in oklch, var(--foreground) 16%, transparent);
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+.authoring-format-menu button {
+  min-height: 31px;
+  padding: 0 10px;
+  border-radius: 7px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  font-weight: 700;
+}
+.authoring-format-menu kbd { margin-left: 4px; opacity: .6; font: 700 9px ui-monospace, monospace; }
+.authoring-format-menu button:hover { background: var(--muted); }
+.authoring-format-menu button.spanish { background: color-mix(in oklch, var(--lesson-hl-es) 16%, var(--card)); color: var(--lesson-hl-es); }
+.authoring-format-menu button.english { background: color-mix(in oklch, var(--lesson-hl-en) 16%, var(--card)); color: var(--lesson-hl-en); }
+.authoring-controls {
+  padding: 13px 32px;
+}
+.authoring-controls .lesson-controls-inner {
+  max-width: 1180px;
+  gap: 18px;
+}
+.authoring-nav-button,
+.authoring-add-button,
+.authoring-icon-action,
+.authoring-position-button {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border-radius: 8px;
+  color: var(--muted-foreground);
+  font-size: 13px;
+  font-weight: 700;
+}
+.authoring-nav-button { min-width: 110px; }
+.authoring-nav-button:hover:not(:disabled),
+.authoring-icon-action:hover,
+.authoring-position-button:hover { background: var(--muted); color: var(--foreground); }
+.authoring-nav-button:disabled { opacity: .32; }
+.authoring-footer-center {
+  display: grid;
+  flex: 1;
+  justify-items: center;
+  gap: 4px;
+}
+.authoring-position-button { min-height: 28px; padding: 0 8px; }
+.authoring-key-hint { color: var(--muted-foreground); font-size: 11px; }
+.authoring-key-hint kbd,
+.authoring-popover kbd,
+.authoring-help-dialog kbd {
+  padding: 2px 5px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--muted);
+  color: var(--muted-foreground);
+  font: 600 10px/1.2 ui-monospace, monospace;
+}
+.authoring-key-hint button { font-weight: 800; text-decoration: underline; }
+.authoring-footer-actions { display: flex; align-items: center; gap: 8px; }
+.authoring-icon-action { width: 42px; border: 1px solid var(--border); }
+.authoring-add-button { padding: 0 13px; border: 1px solid var(--border); background: var(--card); }
+.authoring-add-button:hover { border-color: var(--muted-foreground); background: var(--muted); }
+.authoring-next-button { min-width: 146px !important; }
+.authoring-menu-anchor { position: relative; }
+.authoring-popover {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  z-index: 30;
+  overflow: hidden;
+  min-width: 240px;
+  padding: 7px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+  box-shadow: 0 18px 45px color-mix(in oklch, var(--foreground) 18%, transparent);
+  color: var(--foreground);
+}
+.authoring-popover-title {
+  padding: 6px 9px 9px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.authoring-outline { left: 50%; width: 410px; max-height: 58vh; overflow-y: auto; transform: translateX(-50%); }
+.authoring-outline button {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 24px 16px 1fr;
+  align-items: center;
+  gap: 7px;
+  padding: 9px;
+  border-radius: 7px;
+  color: var(--muted-foreground);
+  text-align: left;
+  font-size: 12px;
+}
+.authoring-outline button:hover,
+.authoring-outline button.active { background: color-mix(in oklch, var(--primary) 9%, var(--card)); color: var(--primary); }
+.authoring-outline button > span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.authoring-action-menu { right: 0; }
+.authoring-action-menu button {
+  display: flex;
+  width: 100%;
+  min-height: 38px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 9px;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 650;
+  text-align: left;
+}
+.authoring-action-menu button kbd { margin-left: auto; }
+.authoring-action-menu button:hover:not(:disabled) { background: var(--muted); }
+.authoring-action-menu button:disabled { opacity: .35; }
+.authoring-action-menu button.danger { color: var(--destructive); }
+.authoring-add-menu { right: 0; width: 330px; }
+.authoring-add-menu > button {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 24px 1fr;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: left;
+}
+.authoring-add-menu > button:hover,
+.authoring-add-menu > button:focus-visible { background: color-mix(in oklch, var(--primary) 9%, var(--card)); outline: none; }
+.authoring-add-menu strong,
+.authoring-add-menu small { display: block; }
+.authoring-add-menu strong { font-size: 13px; }
+.authoring-add-menu small { margin-top: 2px; color: var(--muted-foreground); font-size: 11px; }
+.authoring-popover-hint { padding: 9px 9px 4px; border-top: 1px solid var(--muted); color: var(--muted-foreground); font-size: 11px; }
+.authoring-empty-lesson > button { border-style: solid; background: var(--card); }
+.authoring-ending h1 { font-size: 30px; font-weight: 750; }
+.authoring-ending > p:not(.completion-status) { margin: 10px auto 0; color: var(--muted-foreground); }
+.authoring-ending .completion-seal { background: color-mix(in oklch, var(--success) 14%, var(--card)); color: var(--success-foreground); }
+.authoring-ending-issues {
+  display: grid;
+  width: min(100%, 520px);
+  gap: 4px;
+  margin: 25px auto;
+  padding: 16px;
+  border: 1px solid color-mix(in oklch, var(--hint) 45%, var(--border));
+  border-radius: 10px;
+  background: color-mix(in oklch, var(--hint) 16%, var(--card));
+  text-align: left;
+}
+.authoring-ending-issues button { display: flex; align-items: center; justify-content: space-between; padding: 7px 0; color: color-mix(in oklch, var(--hint) 72%, black); font-size: 13px; }
+.authoring-ending-ready { display: flex; justify-content: center; gap: 7px; color: var(--success-foreground) !important; }
+.authoring-ending .completion-action { margin: 25px auto 0; }
+.authoring-help-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: color-mix(in oklch, var(--foreground) 28%, transparent);
+}
+.authoring-help-dialog { width: 470px; padding: 18px; border: 1px solid var(--border); border-radius: 14px; background: var(--card); box-shadow: 0 22px 60px color-mix(in oklch, var(--foreground) 22%, transparent); }
+.authoring-help-dialog > div { display: flex; justify-content: space-between; margin-bottom: 10px; font-weight: 750; }
+.authoring-help-dialog > div span { display: flex; gap: 8px; align-items: center; }
+.authoring-help-dialog p { display: flex; align-items: center; justify-content: space-between; min-height: 40px; border-top: 1px solid var(--border); font-size: 13px; }
+.authoring-practice-view {
+  position: absolute;
+  top: -62px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: color-mix(in oklch, var(--card) 86%, transparent);
+  color: var(--muted-foreground);
+  transform: translateX(-50%);
+  backdrop-filter: blur(8px);
+}
+.authoring-practice-view > span { padding: 0 7px; font-size: 10px; font-weight: 700; text-transform: uppercase; }
+.authoring-practice-view button { padding: 6px 8px; border-radius: 6px; font-size: 11px; font-weight: 700; }
+.authoring-practice-view button.active { background: color-mix(in oklch, var(--primary) 9%, var(--card)); color: var(--primary); }
+.authoring-session .sentence-practice { position: relative; }
+.authoring-add-to-slide { position: relative; display: flex; justify-content: center; margin-top: 22px; }
+.authoring-add-to-slide > button { display: inline-flex; align-items: center; gap: 5px; padding: 7px 9px; border-radius: 7px; color: var(--muted-foreground); font-size: 11px; font-weight: 700; }
+.authoring-add-to-slide > button:hover { background: var(--border); color: var(--foreground); }
+.authoring-optional-menu { position: absolute; bottom: calc(100% + 5px); z-index: 10; width: 170px; padding: 5px; border: 1px solid var(--border); border-radius: 9px; background: var(--card); box-shadow: 0 10px 30px color-mix(in oklch, var(--foreground) 16%, transparent); }
+.authoring-optional-menu button { display: block; width: 100%; padding: 8px; border-radius: 6px; text-align: left; font-size: 12px; }
+.authoring-optional-menu button:hover { background: color-mix(in oklch, var(--primary) 9%, var(--card)); }
+
+.authoring-lesson-setup {
+  width: min(100%, 760px);
+  text-align: center;
+}
+.authoring-setup-icon {
+  display: grid;
+  width: 50px;
+  height: 50px;
+  place-items: center;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: color-mix(in oklch, var(--primary) 9%, var(--card));
+  color: var(--primary);
+}
+.authoring-setup-eyebrow {
+  color: var(--muted-foreground);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.authoring-lesson-setup > h1 {
+  margin-top: 6px;
+  color: var(--foreground);
+  font-size: 30px;
+  font-weight: 750;
+}
+.authoring-setup-module { margin-top: 4px; color: var(--muted-foreground); font-size: 13px; }
+.authoring-setup-concepts {
+  margin-top: 32px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--card);
+  text-align: left;
+  box-shadow: 0 8px 30px color-mix(in oklch, var(--foreground) 8%, transparent);
+}
+.authoring-setup-concepts h2 { font-size: 17px; font-weight: 750; }
+.authoring-setup-concepts > div:first-child > p { margin: 5px 0 18px; color: var(--muted-foreground); font-size: 13px; }
+.authoring-setup-concepts input { min-height: 42px; }
+.authoring-setup-note { margin-top: 13px; color: color-mix(in oklch, var(--hint) 72%, black); font-size: 12px; }
+

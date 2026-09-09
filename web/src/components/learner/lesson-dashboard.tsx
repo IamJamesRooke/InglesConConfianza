@@ -8,12 +8,18 @@ import {
   CheckCheck,
   Clock3,
   MessageCircle,
-  Play,
   RotateCcw,
   SkipForward,
 } from "lucide-react";
 import Link from "next/link";
 import { useRef, useState, useSyncExternalStore } from "react";
+
+import { ConceptPills } from "@/components/learner/concept-pills";
+import { LessonRow } from "@/components/learner/lesson-row";
+import type {
+  LearnerLesson,
+  LearnerModule,
+} from "@/components/learner/types";
 import {
   nextLessonToStudy,
   readProgress,
@@ -22,32 +28,8 @@ import {
   skipLesson,
   skipLessons,
   subscribeToProgress,
-  type LessonProgressEntry,
 } from "@/lib/learner/progress";
 import { lessonMinutes } from "@/lib/learner/presentation";
-
-type LearnerLesson = {
-  id: string;
-  lessonNumber: number;
-  moduleLessonNumber: number;
-  name: string | null;
-  previewText: string;
-  stepCount: number;
-  concepts: LearnerConcept[];
-};
-type LearnerConcept = {
-  id: string;
-  spanish: string;
-  english: string;
-};
-type LearnerModule = {
-  id: string;
-  name: string | null;
-  kind: "course" | "onboarding";
-  lessonCount: number;
-  concepts: LearnerConcept[];
-  lessons: LearnerLesson[];
-};
 
 function moduleLabel(modules: LearnerModule[], index: number) {
   return modules[index]?.kind === "onboarding"
@@ -515,133 +497,5 @@ export function LessonDashboard({
         </div>
       )}
     </main>
-  );
-}
-
-function ConceptPills({
-  concepts,
-  compact = false,
-  max,
-}: {
-  concepts: LearnerConcept[];
-  compact?: boolean;
-  max?: number;
-}) {
-  if (concepts.length === 0) return null;
-  const shown = max ? concepts.slice(0, max) : concepts;
-  const overflow = concepts.length - shown.length;
-
-  return (
-    <div
-      className={`learner-concepts ${compact ? "compact" : ""}`}
-      aria-label="Lo que vas a aprender"
-    >
-      {shown.map((concept) => (
-        <span className="learner-concept" key={concept.id}>
-          <strong lang="en">{concept.english}</strong>
-          <span lang="es">{concept.spanish}</span>
-        </span>
-      ))}
-      {overflow > 0 && (
-        <span className="learner-concept-more">+{overflow}</span>
-      )}
-    </div>
-  );
-}
-
-function LessonRow({
-  lesson,
-  progress,
-  isNext,
-  onSkip,
-  onReset,
-}: {
-  lesson: LearnerLesson;
-  progress?: LessonProgressEntry;
-  isNext: boolean;
-  onSkip: () => void;
-  onReset: () => void;
-}) {
-  const complete = Boolean(progress?.completedAt);
-  const hasProgress = Boolean(progress?.completedAt || progress?.lastOpenedAt);
-  const available = lesson.stepCount > 0;
-  const state = complete
-    ? "Completada"
-    : available
-      ? progress?.lastOpenedAt
-        ? "En curso"
-        : ""
-      : "Próximamente";
-  const content = (
-    <>
-      <span className="lesson-number" aria-hidden="true">
-        {complete ? (
-          <Check size={19} />
-        ) : (
-          String(lesson.moduleLessonNumber).padStart(2, "0")
-        )}
-      </span>
-      <span className="lesson-copy">
-        <strong>{lesson.name || `Lección ${lesson.lessonNumber}`}</strong>
-        <span>
-          {available
-            ? lesson.previewText
-            : "Una nueva conversación, muy pronto."}
-        </span>
-        {available && <ConceptPills concepts={lesson.concepts} compact />}
-        <span className="lesson-meta">
-          {available && (
-            <>
-              <Clock3 size={13} aria-hidden="true" />{" "}
-              {lessonMinutes(lesson.stepCount)} min
-            </>
-          )}
-          {state && <span className="lesson-state">{state}</span>}
-          {isNext && !state && (
-            <span className="lesson-state">Empieza aquí</span>
-          )}
-        </span>
-      </span>
-      {available && (
-        <span className="lesson-action" aria-hidden="true">
-          {complete ? (
-            <RotateCcw size={17} />
-          ) : (
-            <Play size={17} fill={isNext ? "currentColor" : "none"} />
-          )}
-        </span>
-      )}
-    </>
-  );
-  return (
-    <li
-      className={`lesson-row ${complete ? "complete" : ""} ${isNext ? "next" : ""} ${!available ? "unavailable" : ""}`}
-    >
-      <div className="lesson-row-layout">
-        {available ? (
-          <Link href={`/practice?lesson=${encodeURIComponent(lesson.id)}`}>
-            {content}
-          </Link>
-        ) : (
-          <div className="lesson-row-content">{content}</div>
-        )}
-        {available && (
-          <div className="lesson-progress-options">
-            {!complete && (
-              <button type="button" onClick={onSkip} className="progress-option">
-                <SkipForward size={14} aria-hidden="true" />
-                Omitir
-              </button>
-            )}
-            {hasProgress && (
-              <button type="button" onClick={onReset} className="progress-option">
-                <RotateCcw size={14} aria-hidden="true" />
-                Reiniciar
-              </button>
-            )}
-          </div>
-        )}
-      </div>
-    </li>
   );
 }

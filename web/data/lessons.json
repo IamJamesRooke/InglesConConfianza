@@ -20,7 +20,7 @@
       "lessonIds": [
         "lesson_b9c75a0c-2132-434f-b1b5-bdfcd960f941",
         "lesson_297bc8ca-6aac-4c7a-9fd1-fbf60e34f83f",
-        "lesson_e0ca7e8f-0cbe-429d-a358-dd81099967c7"
+        "lesson_6286d0a1-b814-45bf-8557-c7e15dfebd4b"
       ]
     }
   ],
@@ -438,17 +438,58 @@
       ]
     },
     {
-      "id": "lesson_e0ca7e8f-0cbe-429d-a358-dd81099967c7",
-      "name": "I want to buy something.",
-      "concepts": [],
-      "blocks": [
+      "id": "lesson_6286d0a1-b814-45bf-8557-c7e15dfebd4b",
+      "name": "I need to go to the store.",
+      "concepts": [
         {
-          "id": "block_0bceb265-af41-4766-bb00-66fcfb304b87",
-          "type": "explanation",
-          "contentMarkdown": "comprar es to buy"
+          "id": "lesson_concept_9fb52235-3428-4a90-9fdf-cc622f240d51",
+          "conceptId": "wyhk5xpxou",
+          "label": "necesitar [algo]"
         },
         {
-          "id": "block_7bf5f324-3202-4e55-bbde-2d677bbeeb10",
+          "id": "lesson_concept_19e81b02-1439-40d0-982a-008ac09485b5",
+          "conceptId": "1eotkqfnjg",
+          "label": "necesitar [hacer algo]"
+        },
+        {
+          "id": "lesson_concept_38be9daa-0796-43fd-b0ba-05b7e6998988",
+          "conceptId": "y4njcsmrzn",
+          "label": "comprar [algo]"
+        },
+        {
+          "id": "lesson_concept_0f7f44fa-e5df-4cea-978b-610d2b554f53",
+          "conceptId": "ikrf0t6hcc",
+          "label": "[la] tienda"
+        },
+        {
+          "id": "lesson_concept_1fd261e3-58d6-431a-b100-471d83937582",
+          "conceptId": "2iiyjrogmc",
+          "label": "ir a [un lugar]"
+        },
+        {
+          "id": "lesson_concept_e02a72de-a60b-4acf-8627-f154b9e95ee9",
+          "conceptId": "wsttz3une0",
+          "label": "a [un lugar]"
+        },
+        {
+          "id": "lesson_concept_5c56445c-5ab8-4731-b76d-56aef06c50e4",
+          "conceptId": "nqv2w27jgr",
+          "label": "algo"
+        },
+        {
+          "id": "lesson_concept_0184ff15-e82e-4bda-970d-6ea934447082",
+          "conceptId": "wjbh6m5ek1",
+          "label": "porque"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "block_f25e8232-4768-4c9b-8b96-1e7d6ec1b02c",
+          "type": "explanation",
+          "contentMarkdown": "[[es:necesito]] es [[en:I need]]"
+        },
+        {
+          "id": "block_c1107731-14f1-46a3-a69a-ee31d199c92c",
           "type": "sentence",
           "promptLabel": "",
           "promptText": "",
@@ -456,15 +497,82 @@
           "answerFeedback": null,
           "languageBlocks": [
             {
-              "id": "lang_3f82c0e3-21af-4df3-b070-57cc87149793",
-              "spanish": "quiero",
+              "id": "lang_c3dd5836-931f-43d6-9df9-80b296a5de9e",
+              "spanish": "necesito",
               "callout": null,
               "acceptedAnswers": [
-                "I want"
+                "I need"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_8de76d64-cf27-4a9e-bc63-b242516f9416",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_83aa623e-0514-4b96-b79d-7149051bc230",
+              "spanish": "Necesito",
+              "callout": null,
+              "acceptedAnswers": [
+                "I need"
               ]
             },
             {
-              "id": "lang_9ba271fa-324d-49d7-b309-5518386e8ea7",
+              "id": "lang_63edb058-9a38-4856-99c6-f8f2b808cfae",
+              "spanish": "hacerlo.",
+              "callout": null,
+              "acceptedAnswers": [
+                "to do it."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_9c5f4ba3-294b-4757-8197-efa82aff69f4",
+          "type": "explanation",
+          "contentMarkdown": "[[es:comprar]] es [[en:to buy]]"
+        },
+        {
+          "id": "block_00e9a609-0899-4b06-9bec-d892af7fa60f",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_0bc2be4c-04cd-4830-8094-81bd71689cd6",
+              "spanish": "comprar",
+              "callout": null,
+              "acceptedAnswers": [
+                "to buy"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_a5701ef3-663b-4789-84e3-a08a4ad9fdf0",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_45f0e9b1-c288-4492-9b9d-152d0f8afd34",
+              "spanish": "Necesito",
+              "callout": null,
+              "acceptedAnswers": [
+                "I need"
+              ]
+            },
+            {
+              "id": "lang_f7f94292-1a3c-44bf-a53c-4f10214b38b8",
               "spanish": "comprar",
               "callout": null,
               "acceptedAnswers": [
@@ -472,19 +580,174 @@
               ]
             },
             {
-              "id": "lang_7334b0e0-748f-468d-b394-a632677d4fce",
-              "spanish": "algo",
+              "id": "lang_39f58001-427e-43f1-a51b-8e6d81e50f6f",
+              "spanish": "algo.",
               "callout": null,
               "acceptedAnswers": [
-                "something"
+                "something."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_0cf8a6e9-7638-4373-b496-b7686e44b915",
+          "type": "explanation",
+          "contentMarkdown": "[[es:ir]] es [[en:to go]]"
+        },
+        {
+          "id": "block_6f689d41-212b-48bf-8830-088d5214db13",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_3a380fb8-6e7c-48c0-b246-d05a3354b0fe",
+              "spanish": "ir",
+              "callout": null,
+              "acceptedAnswers": [
+                "to go"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_12b84654-7d71-44b1-8aed-6d02496beff4",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_39ebfea8-b4f1-4d80-8be5-39fd8ae2ac2d",
+              "spanish": "Necesito",
+              "callout": null,
+              "acceptedAnswers": [
+                "I need"
               ]
             },
             {
-              "id": "lang_f2e581ab-4212-44db-a8cd-3ac61416c6d9",
-              "spanish": "ahora",
+              "id": "lang_9eed133b-57bc-4fea-a5a4-a77ffa770251",
+              "spanish": "ir.",
               "callout": null,
               "acceptedAnswers": [
-                "now"
+                "to go."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_f6fb9304-5cf8-4d95-ad6b-ed852b2e51d5",
+          "type": "explanation",
+          "contentMarkdown": "[[es:a la tienda]] es [[en:to the store]]"
+        },
+        {
+          "id": "block_66d757ac-8905-495d-89c0-7fe69953fac6",
+          "type": "sentence",
+          "layout": "vocabulary_table",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_bf3312f3-37e5-4438-81ba-af33ce8d71c6",
+              "spanish": "a",
+              "callout": null,
+              "acceptedAnswers": [
+                "to"
+              ]
+            },
+            {
+              "id": "lang_f035246f-1491-482a-8f14-aa116aa70d9c",
+              "spanish": "la",
+              "callout": null,
+              "acceptedAnswers": [
+                "the"
+              ]
+            },
+            {
+              "id": "lang_fa8d129f-7c6c-49cc-b388-82fe0ee0c0d2",
+              "spanish": "tienda",
+              "callout": null,
+              "acceptedAnswers": [
+                "store"
+              ]
+            },
+            {
+              "id": "lang_7cf9c3ba-56f1-433b-bb76-d1810b0bb307",
+              "spanish": "a la tienda",
+              "callout": null,
+              "acceptedAnswers": [
+                "to the store"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_742e1730-3db2-4c15-a483-364394c376e1",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_f50c064b-09f0-4953-aa43-98b335be53eb",
+              "spanish": "Necesito",
+              "callout": null,
+              "acceptedAnswers": [
+                "I need"
+              ]
+            },
+            {
+              "id": "lang_52888fbe-a7c4-4921-b7fc-d35cfb00ede7",
+              "spanish": "ir",
+              "callout": null,
+              "acceptedAnswers": [
+                "to go"
+              ]
+            },
+            {
+              "id": "lang_2a2ad633-ef39-4367-90a9-9debaa37b385",
+              "spanish": "a la tienda",
+              "callout": null,
+              "acceptedAnswers": [
+                "to the store"
+              ]
+            },
+            {
+              "id": "lang_6f40f6b1-c7c4-421c-8f94-ba5e83991925",
+              "spanish": "porque",
+              "callout": null,
+              "acceptedAnswers": [
+                "because"
+              ]
+            },
+            {
+              "id": "lang_752276c9-b187-4cae-8047-3a319ae9fd25",
+              "spanish": "quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ]
+            },
+            {
+              "id": "lang_d194af5e-d64a-4293-8612-94f59c85f40a",
+              "spanish": "comprar",
+              "callout": null,
+              "acceptedAnswers": [
+                "to buy"
+              ]
+            },
+            {
+              "id": "lang_886010e7-a0e6-400b-8d20-5f4884f585ab",
+              "spanish": "algo.",
+              "callout": null,
+              "acceptedAnswers": [
+                "something."
               ]
             }
           ]
