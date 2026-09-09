@@ -119,12 +119,6 @@ export function KeyboardHelpDialog({ onClose }: { onClose: () => void }) {
         </div>
         <div>
           <dt>
-            <kbd>Alt</kbd> <kbd>K</kbd>
-          </dt>
-          <dd>Jump to search</dd>
-        </div>
-        <div>
-          <dt>
             <kbd>Ctrl</kbd>/<kbd>⌘</kbd> <kbd>S</kbd>
           </dt>
           <dd>Save now (it also autosaves)</dd>
@@ -182,7 +176,7 @@ const KEYBOARD_ROWS: Key[][] = [
     { k: "G" },
     { k: "H", act: "hint" },
     { k: "J" },
-    { k: "K", act: "search" },
+    { k: "K" },
     { k: "L", act: "add lesson" },
     { k: "Enter", act: "add slide", w: 1.8 },
   ],

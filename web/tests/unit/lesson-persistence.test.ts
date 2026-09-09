@@ -38,7 +38,6 @@ function moduleWith(...lessonIds: string[]): LessonModule {
   return {
     id: "module-1",
     name: "Module 1",
-    keyConcepts: [],
     lessonIds,
   };
 }

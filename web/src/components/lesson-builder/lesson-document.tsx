@@ -1,6 +1,6 @@
 "use client";
 
-import { GripVertical, Undo2 } from "lucide-react";
+import { Copy, GripVertical, Trash2, Undo2 } from "lucide-react";
 import { useEffect, useRef, useState, type DragEvent } from "react";
 
 import { LessonConceptsField, type ConceptDisplayLookup } from "@/components/lesson-builder/lesson-concepts-field";
@@ -197,6 +197,19 @@ export function LessonDocument(props: Props) {
           }
         }}
       >
+        <div className="lesson-document-tags">
+          <LessonConceptsField
+            variant="compact"
+            label=""
+            concepts={props.lesson.concepts}
+            conceptDisplays={props.conceptDisplays}
+            coversFor={props.lesson.id}
+            onAdd={props.onAddConcept}
+            onRemove={props.onRemoveConcept}
+            onRelabel={props.onRelabelConcept}
+          />
+        </div>
+
         {props.lesson.blocks.map((block, index) => (
           <div
             key={block.id}
@@ -223,7 +236,7 @@ export function LessonDocument(props: Props) {
               if ((event.target as HTMLElement).closest?.(".authoring-wysiwyg")) return;
               event.preventDefault();
               event.stopPropagation();
-              const actions = event.currentTarget.querySelector<HTMLElement>(".lesson-document-block-chrome summary");
+              const actions = event.currentTarget.querySelector<HTMLElement>(".lesson-document-block-chrome button");
               (actions ?? event.currentTarget).focus();
             }}
           >
@@ -265,16 +278,9 @@ export function LessonDocument(props: Props) {
 
 
             <div className="lesson-document-block-chrome">
-              <details className="lesson-actions">
-                <summary aria-label={`Actions for slide ${index + 1}`}>Actions</summary>
-                <div className="lesson-actions-menu">
-                  <button type="button" disabled={index === 0} onClick={() => props.onMoveBlock(block.id, -1)}>Move slide earlier</button>
-                  <button type="button" disabled={index === props.lesson.blocks.length - 1} onClick={() => props.onMoveBlock(block.id, 1)}>Move slide later</button>
-                  <button type="button" onClick={() => props.onDuplicateBlock(block.id)}>Duplicate slide</button>
-                  <button type="button" className="danger" onClick={() => props.onDeleteBlock(block.id)}>Delete slide</button>
-                  <button type="button" className="lesson-document-block-handle" draggable aria-label={`Drag slide ${index + 1} to reorder`} onDragStart={(event) => drag.dragStart(event, dragScope, block.id)} onDragEnd={drag.reset}><GripVertical size={13} /> Drag to reorder</button>
-                </div>
-              </details>
+              <button type="button" className="lesson-document-block-handle" draggable aria-label={`Drag slide ${index + 1} to reorder`} title="Drag to reorder" onDragStart={(event) => drag.dragStart(event, dragScope, block.id)} onDragEnd={drag.reset}><GripVertical size={14} aria-hidden="true" /></button>
+              <button type="button" onClick={() => props.onDuplicateBlock(block.id)} aria-label={`Duplicate slide ${index + 1}`} title="Duplicate slide"><Copy size={14} aria-hidden="true" /></button>
+              <button type="button" className="danger" onClick={() => props.onDeleteBlock(block.id)} aria-label={`Delete slide ${index + 1}`} title="Delete slide"><Trash2 size={14} aria-hidden="true" /></button>
             </div>
           </div>
         ))}
@@ -290,19 +296,6 @@ export function LessonDocument(props: Props) {
             onToggle={() => insertAt === props.lesson.blocks.length ? closeInsert() : openInsert(props.lesson.blocks.length)}
             onAdd={(type) => add(type, props.lesson.blocks.length)}
             onClose={closeInsert}
-          />
-        </div>
-
-        <div className="lesson-document-tags">
-          <LessonConceptsField
-            variant="compact"
-            label="Covers"
-            concepts={props.lesson.concepts}
-            conceptDisplays={props.conceptDisplays}
-            coversFor={props.lesson.id}
-            onAdd={props.onAddConcept}
-            onRemove={props.onRemoveConcept}
-            onRelabel={props.onRelabelConcept}
           />
         </div>
 

@@ -6,7 +6,6 @@ import { lessonsReducer } from "../../src/lib/lesson-builder/reducer";
 import {
   conceptKey,
   moduleContainingLesson,
-  moduleCoveredConceptKeys,
   normalizeModule,
   parseLessonFile,
   reconcileLessonFile,
@@ -300,7 +299,6 @@ function fileWith(moduleLessonIds: string[][], lessonIds: string[]): LessonFile 
     modules: moduleLessonIds.map((ids, i) => ({
       id: `m${i + 1}`,
       name: `Module ${i + 1}`,
-      keyConcepts: [],
       lessonIds: ids,
     })),
     lessons: lessonIds.map((id) => lesson(id)),
@@ -325,18 +323,19 @@ test("moduleContainingLesson finds the owning module or undefined", () => {
   assert.equal(moduleContainingLesson(file, "ghost"), undefined);
 });
 
-test("normalizeModule fills keyConcepts and drops legacy fields", () => {
+test("normalizeModule drops legacy fields", () => {
   const legacy = {
     id: "m1",
     name: "M",
     promise: "old",
     finalSentence: { spanish: "s", english: "e" },
+    keyConcepts: [{ id: "k", conceptId: null, label: "old" }],
     lessonIds: ["a"],
   } as never;
   const norm = normalizeModule(legacy);
-  assert.deepEqual(norm.keyConcepts, []);
   assert.ok(!("promise" in norm));
   assert.ok(!("finalSentence" in norm));
+  assert.ok(!("keyConcepts" in norm));
 });
 
 test("conceptKey: id when linked, lowercased trimmed label otherwise", () => {
@@ -344,19 +343,8 @@ test("conceptKey: id when linked, lowercased trimmed label otherwise", () => {
   assert.equal(conceptKey({ conceptId: null, label: "  Salsa Dancing " }), "salsa dancing");
 });
 
-test("moduleCoveredConceptKeys only counts lessons in the module", () => {
-  const lessons: Lesson[] = [
-    { ...lesson("a"), concepts: [{ id: "x", conceptId: "c-q", label: "querer" }] },
-    { ...lesson("b"), concepts: [{ id: "y", conceptId: null, label: "Freehand" }] },
-    { ...lesson("c"), concepts: [{ id: "z", conceptId: "c-h", label: "hablar" }] },
-  ];
-  const byId = new Map(lessons.map((l) => [l.id, l]));
-  const keys = moduleCoveredConceptKeys({ lessonIds: ["a", "b"] }, byId);
-  assert.deepEqual([...keys].sort(), ["c-q", "freehand"]);
-});
-
 test("parseLessonFile round-trips a v2 file and normalizes its modules", () => {
   const parsed = parseLessonFile(fileWith([["a"]], ["a"]));
   assert.equal(parsed.version, 2);
-  assert.deepEqual(parsed.modules[0].keyConcepts, []);
+  assert.deepEqual(parsed.modules[0].lessonIds, ["a"]);
 });

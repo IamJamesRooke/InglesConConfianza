@@ -83,9 +83,6 @@ export default function LessonBuilderPage() {
       if (cmd && !event.altKey && event.key.toLowerCase() === "s") {
         event.preventDefault();
         void save();
-      } else if (alt && !event.shiftKey && event.code === "KeyK") {
-        event.preventDefault();
-        document.getElementById("lesson-library-search-input")?.focus();
       } else if (
         cmd &&
         !event.altKey &&
@@ -177,7 +174,6 @@ export default function LessonBuilderPage() {
       {
         id: createId("module"),
         name: `Module ${modules.length + 1}`,
-        keyConcepts: [],
         lessonIds: [],
       },
     ]);

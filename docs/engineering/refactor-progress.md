@@ -188,3 +188,32 @@ Run against an **isolated** copy: `rsync` of the working tree to `/data/icc-veri
 ## Committed
 
 2026-09-09 — tasks A–H, the code map, this log, and the `AGENTS.md` pointer committed to `master` and pushed in one commit ("Refactor into smaller, agent-scoped units (A–H)"). The pre-existing uncommitted `web/data/lessons.json` content edit (a lesson swapped for "I need to go to the store.") and the earlier B/C practice-surface changes that were already in the working tree went in with the same commit. The `codex-wip-during-revert` stash was left untouched.
+
+## Session 2026-09-09 (pm) — lesson-builder chrome declutter + polish
+
+Interactive design pass over the builder and the learner practice card, driven by screenshots. Quick log — the CSS here is expected to get a cleanup pass in a few days.
+
+**Practice card (`sentence-practice-card.tsx`, `practice-responsive-overrides.css`)**
+- Per-blank hint lightbulb now renders only for the focused blank (new `focusedBlockIndex` state), not every blank at once. Small fade-in.
+
+**Module concepts — removed entirely.** `keyConcepts` dropped from `LessonModule`, `CourseModuleSummary`, `LearnerModule`, the course PUT validator, `lesson-file.ts` (validation/normalize/`emptyModule`), `add-concepts` seeds, the home page + learner dashboard ("Nuevo en este módulo"), and the one array in `data/lessons.json`. `moduleCoveredConceptKeys` helper deleted; `conceptKey` kept. Tests updated (course / lesson-builder-logic / lesson-persistence). It was a bad idea; recoverable from history if ever wanted.
+
+**Builder chrome → icons, no popups (`lesson-library.tsx`, `lesson-document.tsx`, `keyboard-help.tsx`)**
+- Top utility bar: search box + `Alt K` shortcut + "N modules · N lessons · N items" + "All changes saved" text all removed. Only undo/redo (and a fail-only Retry) remain.
+- Module row: added a collapse chevron (collapsed = lesson headers only), removed the "Actions" dropdown → ↑ / ↓ / 🗑 icons top-right, inline delete confirm. Removed the module lesson/item count text.
+- Lesson row: "Actions" dropdown gone → play (icon-only) / duplicate / delete icons, inline delete confirm. Move-earlier/later and move-to-module dropped (drag handles cover reorder). Removed the "N items" count.
+- Slide/block: "Actions" dropdown gone → drag-grip / duplicate / delete icons in the right gutter.
+- "Add lesson" restyled as a flush row; "Add module" restyled as a full-width dashed placeholder.
+
+**Builder block styling (`lesson-library-document.css`, `sentence-editor.tsx`)**
+- Hover / focus-within lift: `translateY(-2px)` + shadow only, no colour change. Left accent bar is focus-within only now. `:has()` rule so only the pointed-at block is raised when another holds focus.
+- Explanation blocks: on lift, the grey (`--muted`) fills the whole block and the inner box border/bg dissolve so it reads as one surface.
+- At rest a sentence block collapses to its content: the "add another blank" stub, the options row (the `▼ Options` disclosure is gone), the instruction/prompt line, and the slide-notes are all `display:none` until hover/focus-within.
+- Instruction/prompt restyled as an uppercase primary eyebrow.
+- Slide-notes coloured by type via `data-note`: help = amber (`--hint`), after-correct = teal (`--success`) — left bar + tint + label + underline.
+- Straight `::before` hairline between exercise blocks (replaces the `border-top` that bent around the radius). Tightened block padding, inter-block gap, piece row gap, and the Spanish/English line spacing.
+- Vocabulary table: content-sized columns (`minmax(84px, max-content) 1fr`) in a `width: max-content` grid (cap 460px) so English sits right after the longest term instead of ~300px away; lighter row rules.
+
+**Checks:** `tsc --noEmit` clean · `test:unit` 84/0 · `lint` 0 errors (2 pre-existing script warnings) · `build` pass. No browser pass — visual, iterated live with the owner.
+
+**Committed:** 2026-09-09 — this batch + this log entry, one commit to `master`. `codex-wip-during-revert` stash still untouched.

@@ -7,28 +7,17 @@ function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
-function isKeyConcept(value: unknown): boolean {
-  return (
-    isRecord(value) &&
-    typeof value.id === "string" &&
-    (value.conceptId === null || typeof value.conceptId === "string") &&
-    typeof value.label === "string"
-  );
-}
-
 function isModulePayload(value: unknown): value is LessonModule {
   return (
     isRecord(value) &&
     typeof value.id === "string" &&
     (value.name === null || typeof value.name === "string") &&
-    Array.isArray(value.keyConcepts) &&
-    value.keyConcepts.every(isKeyConcept) &&
     Array.isArray(value.lessonIds) &&
     value.lessonIds.every((id) => typeof id === "string")
   );
 }
 
-// The whole module structure — names, key concepts, and each module's ordered
+// The whole module structure — names and each module's ordered
 // lessonIds. The Course view sends this on every change. The
 // lesson bodies are untouched; reconcile then re-orders `lessons` to match.
 export async function PUT(request: Request) {

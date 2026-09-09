@@ -200,9 +200,11 @@ export function LessonConceptsField({
         </div>
       )}
       <div className={variant === "compact" ? "lesson-concepts-row" : "flex flex-wrap items-center gap-1.5"}>
-        <span className={variant === "compact" ? "lesson-concepts-label" : "text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground"}>
-          {label}
-        </span>
+        {label && (
+          <span className={variant === "compact" ? "lesson-concepts-label" : "text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground"}>
+            {label}
+          </span>
+        )}
         {concepts.map((concept) => {
           const met = coveredConceptKeys?.has(conceptKey(concept)) ?? false;
           const display = concept.conceptId

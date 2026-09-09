@@ -1,14 +1,13 @@
 "use client";
 
-import { ChevronDown, ChevronRight, Keyboard, Play, Plus, Redo2, Search, Undo2 } from "lucide-react";
+import { ArrowDown, ArrowUp, ChevronDown, ChevronRight, Copy, Keyboard, Play, Plus, Redo2, Trash2, Undo2 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState, type DragEvent } from "react";
 
 import { EditingHud } from "@/components/lesson-builder/editing-hud";
-import { LessonConceptsField, type ConceptDisplayLookup } from "@/components/lesson-builder/lesson-concepts-field";
+import { type ConceptDisplayLookup } from "@/components/lesson-builder/lesson-concepts-field";
 import { KeyboardHelpDialog } from "@/components/lesson-builder/keyboard-help";
 import { LessonDocument, LessonDragHandle, type DocumentBlockType } from "@/components/lesson-builder/lesson-document";
 import { focusSlideWritingField } from "@/lib/lesson-builder/focus";
-import { conceptKey } from "@/lib/lesson-builder/lesson-file";
 import { useFocusContext } from "@/lib/lesson-builder/use-focus-context";
 import type { Lesson, LessonConcept, LessonModule } from "@/lib/lesson-builder/types";
 
@@ -45,15 +44,13 @@ type Props = {
 };
 
 export function LessonLibrary(props: Props) {
-  const [query, setQuery] = useState("");
   const [showKeyboardHelp, setShowKeyboardHelp] = useState(false);
   const [collapsedLessons, setCollapsedLessons] = useState<Set<string>>(new Set());
+  const [collapsedModules, setCollapsedModules] = useState<Set<string>>(new Set());
   const [confirmDelete, setConfirmDelete] = useState<string | null>(null);
   const [dragged, setDragged] = useState<{ moduleId: string; lessonId: string } | null>(null);
   const keyboardHelpButtonRef = useRef<HTMLButtonElement>(null);
   const lessonById = useMemo(() => new Map(props.lessons.map((lesson) => [lesson.id, lesson])), [props.lessons]);
-  const normalizedQuery = query.trim().toLocaleLowerCase();
-  const totalSlides = props.lessons.reduce((sum, lesson) => sum + lesson.blocks.length, 0);
 
   const focus = useFocusContext();
   const hudLessonLabel = useMemo(() => {
@@ -111,17 +108,10 @@ export function LessonLibrary(props: Props) {
   return (
     <section className="lesson-library" aria-label="Course lessons">
       <header className="lesson-library-utility">
-        <label className="lesson-library-search">
-          <Search size={15} />
-          <input id="lesson-library-search-input" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Find lesson or concept" aria-label="Find a lesson or concept" />
-          <kbd>Alt K</kbd>
-        </label>
-        <span className="lesson-library-counts">{props.modules.length} modules · {props.lessons.length} lessons · {totalSlides} items</span>
         <span className="lesson-library-history">
           <button type="button" onClick={props.onUndo} disabled={!props.canUndo} suppressHydrationWarning aria-label="Undo" title="Undo (Ctrl+Z)"><Undo2 size={14} /></button>
           <button type="button" onClick={props.onRedo} disabled={!props.canRedo} suppressHydrationWarning aria-label="Redo" title="Redo (Ctrl+Shift+Z)"><Redo2 size={14} /></button>
         </span>
-        <span className="lesson-library-save">{props.saveLabel}</span>
         {props.saveFailed && <button type="button" className="lesson-library-retry" onClick={props.onRetrySave}>Retry save</button>}
       </header>
       <button
@@ -141,43 +131,37 @@ export function LessonLibrary(props: Props) {
       <div className="lesson-library-modules">
         {props.modules.map((module, moduleIndex) => {
           const moduleLessons = module.lessonIds.map((id) => lessonById.get(id)).filter((lesson): lesson is Lesson => Boolean(lesson));
-          const visibleLessons = moduleLessons.filter((lesson) => !normalizedQuery || lesson.name?.toLocaleLowerCase().includes(normalizedQuery) || lesson.concepts.some((concept) => concept.label.toLocaleLowerCase().includes(normalizedQuery)));
-          if (normalizedQuery && !visibleLessons.length) return null;
-          const referencedInModule = new Set(moduleLessons.flatMap((lesson) => lesson.concepts.map(conceptKey)));
+          const moduleCollapsed = collapsedModules.has(module.id);
+          const moduleDeleteKey = `module:${module.id}`;
 
           return (
             <section key={module.id} className="lesson-library-module" onDragOver={(event) => { if (dragged) event.preventDefault(); }} onDrop={(event) => { if (!moduleLessons.length) drop(event, module.id, 0); }}>
               <div className="lesson-library-module-meta">
                 <div className="lesson-library-module-line">
+                  <button type="button" className="lesson-library-collapse" aria-expanded={!moduleCollapsed} aria-label={moduleCollapsed ? "Expand module" : "Collapse module"} onClick={() => setCollapsedModules((current) => toggleSet(current, module.id))}>
+                    {moduleCollapsed ? <ChevronRight size={16} aria-hidden="true" /> : <ChevronDown size={16} aria-hidden="true" />}
+                  </button>
                   <input className="lesson-library-module-title" value={module.name ?? ""} onChange={(event) => props.onChangeModule(module.id, { name: event.target.value || null })} placeholder="Untitled module" aria-label={`Module ${moduleIndex + 1} name`} />
-                  <span>{moduleLessons.length} lessons · {moduleLessons.reduce((sum, lesson) => sum + lesson.blocks.length, 0)} items</span>
-                  <details className="lesson-actions">
-                    <summary>Actions</summary>
-                    <div className="lesson-actions-menu">
-                      <button type="button" disabled={moduleIndex === 0} onClick={() => props.onMoveModule(moduleIndex, -1)}>Move module earlier</button>
-                      <button type="button" disabled={moduleIndex === props.modules.length - 1} onClick={() => props.onMoveModule(moduleIndex, 1)}>Move module later</button>
-                      {confirmDelete === `module:${module.id}` ? (
-                        <span className="lesson-actions-confirm">Delete module and move its lessons? <button type="button" className="danger" onClick={() => { props.onDeleteModule(module.id); setConfirmDelete(null); }}>Yes</button><button type="button" onClick={() => setConfirmDelete(null)}>Cancel</button></span>
-                      ) : <button type="button" className="danger" disabled={props.modules.length === 1} onClick={() => setConfirmDelete(`module:${module.id}`)}>Delete module…</button>}
-                    </div>
-                  </details>
+                  {confirmDelete === moduleDeleteKey ? (
+                    <span className="lesson-library-module-controls lesson-inline-confirm">
+                      <span>Delete module and move its lessons?</span>
+                      <button type="button" className="danger" onClick={() => { props.onDeleteModule(module.id); setConfirmDelete(null); }}>Delete</button>
+                      <button type="button" onClick={() => setConfirmDelete(null)}>Cancel</button>
+                    </span>
+                  ) : (
+                    <span className="lesson-library-module-controls">
+                      <button type="button" disabled={moduleIndex === 0} onClick={() => props.onMoveModule(moduleIndex, -1)} aria-label="Move module earlier" title="Move module earlier"><ArrowUp size={15} aria-hidden="true" /></button>
+                      <button type="button" disabled={moduleIndex === props.modules.length - 1} onClick={() => props.onMoveModule(moduleIndex, 1)} aria-label="Move module later" title="Move module later"><ArrowDown size={15} aria-hidden="true" /></button>
+                      <button type="button" className="danger lesson-library-module-delete" disabled={props.modules.length === 1} onClick={() => setConfirmDelete(moduleDeleteKey)} aria-label="Delete module" title="Delete module"><Trash2 size={15} aria-hidden="true" /></button>
+                    </span>
+                  )}
                 </div>
-                <LessonConceptsField
-                  variant="compact"
-                  label="Module concepts"
-                  concepts={module.keyConcepts}
-                  conceptDisplays={props.conceptDisplays}
-                  coveredConceptKeys={referencedInModule}
-                  onAdd={(concept) => props.onChangeModule(module.id, { keyConcepts: [...module.keyConcepts, concept] })}
-                  onRemove={(id) => props.onChangeModule(module.id, { keyConcepts: module.keyConcepts.filter((concept) => concept.id !== id) })}
-                  onRelabel={(id, label) => props.onChangeModule(module.id, { keyConcepts: module.keyConcepts.map((concept) => concept.id === id ? { ...concept, label } : concept) })}
-                />
               </div>
 
               <div className="lesson-library-list">
-                {visibleLessons.map((lesson) => {
+                {moduleLessons.map((lesson) => {
                   const lessonIndex = moduleLessons.findIndex((item) => item.id === lesson.id);
-                  const lessonCollapsed = collapsedLessons.has(lesson.id);
+                  const lessonCollapsed = moduleCollapsed || collapsedLessons.has(lesson.id);
                   const lessonDeleteKey = `lesson:${lesson.id}`;
                   return (
                     <article key={lesson.id} data-lesson-row={lesson.id} className={`lesson-library-row ${dragged?.lessonId === lesson.id ? "dragging" : ""}`} onDragOver={(event) => { if (dragged) event.preventDefault(); }} onDrop={(event) => drop(event, module.id, lessonIndex, true)}>
@@ -203,20 +187,19 @@ export function LessonLibrary(props: Props) {
                           placeholder="Name this lesson…"
                           aria-label={`Lesson ${lessonIndex + 1} title`}
                         />
-                        <span className="lesson-library-slide-count">{lesson.blocks.length} items</span>
-                        <span className="lesson-library-row-icons">
-                          <button type="button" className="lesson-library-try" onMouseDown={(event) => event.preventDefault()} onClick={() => props.onPreviewLesson(lesson.id)}><Play size={13} aria-hidden="true" /> Try lesson</button>
-                          <details className="lesson-actions">
-                            <summary>Actions</summary>
-                            <div className="lesson-actions-menu">
-                              <button type="button" disabled={lessonIndex === 0} onClick={() => props.onMoveLesson(module.id, lessonIndex, -1)}>Move earlier</button>
-                              <button type="button" disabled={lessonIndex === moduleLessons.length - 1} onClick={() => props.onMoveLesson(module.id, lessonIndex, 1)}>Move later</button>
-                              {props.modules.length > 1 && <label>Move to module<select value={module.id} onChange={(event) => props.onMoveLessonToModule(lesson.id, event.target.value)}>{props.modules.map((item) => <option key={item.id} value={item.id}>{item.name ?? "Untitled module"}</option>)}</select></label>}
-                              <button type="button" onClick={() => props.onDuplicateLesson(lesson.id)}>Duplicate lesson</button>
-                              {confirmDelete === lessonDeleteKey ? <span className="lesson-actions-confirm">Delete lesson? <button type="button" className="danger" onClick={() => { props.onDeleteLesson(lesson.id); setConfirmDelete(null); }}>Yes</button><button type="button" onClick={() => setConfirmDelete(null)}>Cancel</button></span> : <button type="button" className="danger" onClick={() => setConfirmDelete(lessonDeleteKey)}>Delete lesson…</button>}
-                            </div>
-                          </details>
-                        </span>
+                        {confirmDelete === lessonDeleteKey ? (
+                          <span className="lesson-library-row-icons lesson-inline-confirm">
+                            <span>Delete lesson?</span>
+                            <button type="button" className="danger" onClick={() => { props.onDeleteLesson(lesson.id); setConfirmDelete(null); }}>Delete</button>
+                            <button type="button" onClick={() => setConfirmDelete(null)}>Cancel</button>
+                          </span>
+                        ) : (
+                          <span className="lesson-library-row-icons">
+                            <button type="button" className="lesson-library-try" onMouseDown={(event) => event.preventDefault()} onClick={() => props.onPreviewLesson(lesson.id)} aria-label="Try lesson" title="Try lesson"><Play size={14} aria-hidden="true" /></button>
+                            <button type="button" onClick={() => props.onDuplicateLesson(lesson.id)} aria-label="Duplicate lesson" title="Duplicate lesson"><Copy size={14} aria-hidden="true" /></button>
+                            <button type="button" className="danger" onClick={() => setConfirmDelete(lessonDeleteKey)} aria-label="Delete lesson" title="Delete lesson"><Trash2 size={14} aria-hidden="true" /></button>
+                          </span>
+                        )}
                       </div>
                       {!lessonCollapsed && <LessonDocument
                         lesson={lesson} conceptDisplays={props.conceptDisplays} undoDeletionLabel={props.deletionUndo?.lessonId === lesson.id ? props.deletionUndo.label : null}
@@ -226,7 +209,7 @@ export function LessonLibrary(props: Props) {
                     </article>
                   );
                 })}
-                {moduleLessons.length === 0 ? <div className="lesson-library-first-lesson">
+                {moduleCollapsed ? null : moduleLessons.length === 0 ? <div className="lesson-library-first-lesson">
                   <button type="button" onClick={() => startLesson(module.id)}><Plus size={15} /> Create lesson <kbd>Alt Shift L</kbd></button>
                   <span>Everything saves automatically.</span>
                 </div> : (

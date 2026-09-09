@@ -46,16 +46,12 @@ export type LanguageBlock = {
 
 export type LessonBlock = ExplanationBlock | SentenceBlock;
 
-// A module groups lessons into one learner-facing unit. `keyConcepts` are the
-// curriculum concepts the module intends to teach (authored the same way as a
-// lesson's `concepts`); a key concept is "met" when some lesson in the module
-// covers it. Modules and lessons both live in data/lessons.json (nothing about
-// lessons is in Postgres).
+// A module groups lessons into one learner-facing unit. Modules and lessons
+// both live in data/lessons.json (nothing about lessons is in Postgres).
 export type LessonModule = {
   id: string;
   name: string | null;
   kind?: "course" | "onboarding";
-  keyConcepts: LessonConcept[];
   lessonIds: string[];
 };
 

@@ -6,10 +6,9 @@ import { readLessonFile } from "@/lib/lesson-builder/server/lesson-store";
 export async function GET() {
   try {
     const lessonFile = await readLessonFile();
-    const conceptIds = [
-      ...lessonFile.modules.flatMap((module) => module.keyConcepts),
-      ...lessonFile.lessons.flatMap((lesson) => lesson.concepts),
-    ].flatMap((concept) => (concept.conceptId ? [concept.conceptId] : []));
+    const conceptIds = lessonFile.lessons
+      .flatMap((lesson) => lesson.concepts)
+      .flatMap((concept) => (concept.conceptId ? [concept.conceptId] : []));
     const conceptDisplays = await readConceptDisplays(conceptIds).catch(() => ({}));
 
     return NextResponse.json({ ...lessonFile, conceptDisplays });

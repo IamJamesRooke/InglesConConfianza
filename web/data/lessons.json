@@ -5,18 +5,6 @@
       "id": "module_e4d56384-dde5-46ba-a5cf-21509fd17d3f",
       "name": "Module I",
       "kind": "course",
-      "keyConcepts": [
-        {
-          "id": "lesson_concept_0d675d54-bf50-4c1a-89e9-ec302a05668f",
-          "conceptId": "w7bu9jslac",
-          "label": "querer [algo]"
-        },
-        {
-          "id": "lesson_concept_8e305130-fc14-4362-8a06-5e8a3c9db535",
-          "conceptId": "1qz4qeh9oi",
-          "label": "hacer [una tarea o actividad]"
-        }
-      ],
       "lessonIds": [
         "lesson_b9c75a0c-2132-434f-b1b5-bdfcd960f941",
         "lesson_297bc8ca-6aac-4c7a-9fd1-fbf60e34f83f",

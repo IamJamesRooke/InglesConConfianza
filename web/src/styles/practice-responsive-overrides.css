@@ -311,6 +311,13 @@
   background: color-mix(in oklch, var(--hint) 22%, var(--card));
   box-shadow: 0 1px 4px color-mix(in oklch, var(--foreground) 12%, transparent);
   transition: background 140ms, transform 140ms;
+  animation: answer-hint-toggle-in 140ms ease-out;
+}
+@keyframes answer-hint-toggle-in {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
 }
 .answer-hint-toggle svg {
   color: var(--hint);

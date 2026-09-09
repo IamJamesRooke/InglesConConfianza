@@ -397,12 +397,6 @@ export function LessonDashboard({
                 value={moduleCompleted}
                 max={moduleAvailable.length || 1}
               />
-              {selected.concepts.length > 0 && (
-                <div className="module-learn">
-                  <p className="learner-eyebrow">Nuevo en este módulo</p>
-                  <ConceptPills concepts={selected.concepts} compact />
-                </div>
-              )}
               <ol className="lesson-list">
                 {selected.lessons.map((lesson) => (
                   <LessonRow

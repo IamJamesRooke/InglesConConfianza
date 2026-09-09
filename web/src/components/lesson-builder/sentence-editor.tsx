@@ -388,7 +388,7 @@ export function SentenceEditor({
       {(showHelper || block.answerFeedback !== null) && (
         <div className="lesson-document-slide-notes">
           {showHelper && (
-            <label className="lesson-document-annotation">
+            <label className="lesson-document-annotation" data-note="help">
               <span>Help on request</span>
               <textarea
                 autoFocus={!block.helperText}
@@ -407,7 +407,7 @@ export function SentenceEditor({
             </label>
           )}
           {block.answerFeedback !== null && (
-            <label className="lesson-document-annotation">
+            <label className="lesson-document-annotation" data-note="success">
               <span>After correct answer</span>
               <textarea
                 autoFocus={focusNewSuccess}
@@ -427,8 +427,7 @@ export function SentenceEditor({
         </div>
       )}
       {(!showPrompt || !showHelper || block.answerFeedback === null) && (
-        <details className="lesson-document-options">
-          <summary>Options</summary>
+        <div className="lesson-document-options">
           <div className="lesson-document-add-note">
             {!showPrompt && (
               <button type="button" onClick={() => setShowPrompt(true)}>
@@ -452,7 +451,7 @@ export function SentenceEditor({
               </button>
             )}
           </div>
-        </details>
+        </div>
       )}
     </section>
   );

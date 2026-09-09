@@ -25,6 +25,5 @@ export type LearnerModule = {
   name: string | null;
   kind: "course" | "onboarding";
   lessonCount: number;
-  concepts: LearnerConcept[];
   lessons: LearnerLesson[];
 };

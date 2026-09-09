@@ -16,6 +16,7 @@ export function SentencePracticeCard({
   );
   const [isFeedbackVisible, setIsFeedbackVisible] = useState(false);
   const [helpedBlockIndex, setHelpedBlockIndex] = useState<number | null>(null);
+  const [focusedBlockIndex, setFocusedBlockIndex] = useState<number | null>(null);
   const inputRefs = useRef<Array<HTMLInputElement | null>>([]);
   const helpTimerRef = useRef<number | null>(null);
   const hasFeedback = Boolean(sentence.answerFeedback?.trim());
@@ -183,6 +184,12 @@ export function SentencePracticeCard({
                           languageBlockIndex,
                         )
                       }
+                      onFocus={() => setFocusedBlockIndex(languageBlockIndex)}
+                      onBlur={() =>
+                        setFocusedBlockIndex((current) =>
+                          current === languageBlockIndex ? null : current,
+                        )
+                      }
                       onKeyDown={(event) => {
                         if (event.altKey && event.key.toLowerCase() === "h") {
                           event.preventDefault();
@@ -215,7 +222,8 @@ export function SentencePracticeCard({
                       <span>{languageBlock.callout}</span>
                     </p>
                   )}
-                  {!correctAnswers[languageBlockIndex] &&
+                  {focusedBlockIndex === languageBlockIndex &&
+                    !correctAnswers[languageBlockIndex] &&
                     helpedBlockIndex !== languageBlockIndex && (
                       <button
                         type="button"

@@ -18,10 +18,9 @@ export default async function HomePage({
   const initialModuleId =
     typeof parameters.module === "string" ? parameters.module : null;
   const course = await readCourseSummary();
-  const conceptIds = [
-    ...course.modules.flatMap((module) => module.keyConcepts),
-    ...course.lessons.flatMap((lesson) => lesson.concepts),
-  ].flatMap((concept) => (concept.conceptId ? [concept.conceptId] : []));
+  const conceptIds = course.lessons
+    .flatMap((lesson) => lesson.concepts)
+    .flatMap((concept) => (concept.conceptId ? [concept.conceptId] : []));
   const conceptDisplays = await readConceptDisplays(conceptIds).catch(
     (): Record<string, ConceptDisplay> => ({}),
   );
@@ -51,7 +50,6 @@ export default async function HomePage({
 
   const modules =
     course?.modules.map((module) => {
-      const seenBeforeModule = new Set(introduced);
       const lessons = module.lessons.map((lesson) => ({
         id: lesson.id,
         lessonNumber: lesson.lessonNumber,
@@ -61,28 +59,11 @@ export default async function HomePage({
         stepCount: lesson.blocks.length,
         concepts: firstSightingConcepts(lesson.concepts),
       }));
-      const moduleConcepts = module.keyConcepts
-        .flatMap((concept) => {
-          const display = concept.conceptId
-            ? conceptDisplays[concept.conceptId]
-            : undefined;
-          if (!display || display.role === "Trash") return [];
-          if (!concept.conceptId || seenBeforeModule.has(concept.conceptId))
-            return [];
-          return [
-            {
-              id: concept.id,
-              spanish: display.spanish,
-              english: display.english,
-            },
-          ];
-        });
       return {
         id: module.id,
         name: module.name,
         kind: module.kind,
         lessonCount: module.lessonCount,
-        concepts: moduleConcepts,
         lessons,
       };
     }) ?? [];

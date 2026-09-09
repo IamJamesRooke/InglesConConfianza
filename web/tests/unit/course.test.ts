@@ -6,7 +6,6 @@ import {
   isLessonFile,
   isLessonModule,
   migrateV1ToV2,
-  moduleCoveredConceptKeys,
   parseLessonFile,
   reconcileLessonFile,
   moduleContainingLesson,
@@ -31,7 +30,6 @@ function fileWith(moduleLessonIds: string[][], lessons: string[]): LessonFile {
     modules: moduleLessonIds.map((lessonIds, index) => ({
       id: `m${index + 1}`,
       name: `Module ${index + 1}`,
-      keyConcepts: [],
       lessonIds,
     })),
     lessons: lessons.map((id) => lesson(id)),
@@ -77,8 +75,8 @@ test("a pre-Key-Concepts module still parses and is normalized", () => {
   };
   assert.ok(isLessonModule(legacy.modules[0]));
   const parsed = parseLessonFile(legacy);
-  assert.deepEqual(parsed.modules[0].keyConcepts, []);
   assert.ok(!("promise" in parsed.modules[0]));
+  assert.ok(!("keyConcepts" in parsed.modules[0]));
 });
 
 test("module kind accepts onboarding and rejects unknown values", () => {
@@ -86,29 +84,15 @@ test("module kind accepts onboarding and rejects unknown values", () => {
     id: "welcome",
     name: "Empieza aquí",
     kind: "onboarding",
-    keyConcepts: [],
     lessonIds: [],
   };
   assert.ok(isLessonModule(onboarding));
   assert.equal(isLessonModule({ ...onboarding, kind: "private" }), false);
 });
 
-test("moduleCoveredConceptKeys unions the module's lesson concepts", () => {
-  const lessons = [
-    lesson("a", [concept("c-querer", "querer"), concept(null, "Freehand One")]),
-    lesson("b", [concept("c-poder", "poder")]),
-    lesson("c", [concept("c-hablar", "hablar")]), // not in the module
-  ];
-  const lessonById = new Map(lessons.map((l) => [l.id, l]));
-  const keys = moduleCoveredConceptKeys({ lessonIds: ["a", "b"] }, lessonById);
-
-  assert.ok(keys.has("c-querer"));
-  assert.ok(keys.has("c-poder"));
-  assert.ok(keys.has("freehand one")); // freehand matches on lowercased label
-  assert.ok(!keys.has("c-hablar"));
-
-  assert.ok(keys.has(conceptKey(concept("c-querer", "querer"))));
-  assert.ok(keys.has(conceptKey(concept(null, "  FREEHAND one "))));
+test("conceptKey: id when linked, lowercased trimmed label otherwise", () => {
+  assert.equal(conceptKey(concept("c-querer", "querer")), "c-querer");
+  assert.equal(conceptKey(concept(null, "  FREEHAND one ")), "freehand one");
 });
 
 test("isLessonFile enforces the ordering invariant", () => {

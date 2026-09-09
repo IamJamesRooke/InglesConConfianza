@@ -22,7 +22,6 @@ export type CourseModuleSummary = {
   id: string;
   name: string | null;
   kind: "course" | "onboarding";
-  keyConcepts: LessonConcept[];
   lessonCount: number;
   explanationCount: number;
   practiceCount: number;
@@ -96,7 +95,6 @@ export async function readCourseSummary(): Promise<CourseSummary> {
       id: module.id,
       name: module.name,
       kind: module.kind ?? "course",
-      keyConcepts: module.keyConcepts,
       lessonCount: lessons.length,
       explanationCount: lessons.reduce(
         (total, lesson) => total + lesson.explanationCount,
