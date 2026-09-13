@@ -54,6 +54,11 @@
 .lesson-celebration {
   max-width: 680px;
   width: 100%;
+  padding: clamp(2.25rem, 4vw, 3.5rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  background: var(--card);
+  box-shadow: var(--shadow-lg);
   text-align: center;
 }
 

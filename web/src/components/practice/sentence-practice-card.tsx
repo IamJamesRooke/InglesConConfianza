@@ -3,7 +3,11 @@ import { Check, Info, Lightbulb } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { PracticeMarkdown } from "@/components/practice/practice-markdown";
 import type { SentenceBlock } from "@/lib/lesson-builder/types";
-import { normalizeAnswer } from "@/lib/lesson-builder/utils";
+import {
+  diffChars,
+  normalizeAnswer,
+  pickClosestAnswer,
+} from "@/lib/lesson-builder/utils";
 export function SentencePracticeCard({
   sentence,
   onCompletionChange,
@@ -177,6 +181,7 @@ export function SentencePracticeCard({
                       type="text"
                       data-practice-answer
                       autoFocus={languageBlockIndex === 0}
+                      readOnly={helpedBlockIndex === languageBlockIndex}
                       value={answers[languageBlockIndex] ?? ""}
                       onChange={(event) =>
                         updatePreviewAnswer(
@@ -222,12 +227,44 @@ export function SentencePracticeCard({
                       <span>{languageBlock.callout}</span>
                     </p>
                   )}
+                  {helpedBlockIndex !== languageBlockIndex &&
+                    normalizeAnswer(answers[languageBlockIndex] ?? "") &&
+                    !correctAnswers[languageBlockIndex] && (
+                      <p className="answer-diff" aria-live="polite">
+                        {diffChars(
+                          answers[languageBlockIndex] ?? "",
+                          pickClosestAnswer(
+                            answers[languageBlockIndex] ?? "",
+                            languageBlock.acceptedAnswers,
+                          ),
+                        ).map((part, partIndex) =>
+                          part.type === "equal" ? (
+                            <span key={partIndex}>{part.value}</span>
+                          ) : part.type === "insert" ? (
+                            <ins
+                              key={partIndex}
+                              className="answer-diff-insert"
+                            >
+                              {part.value}
+                            </ins>
+                          ) : (
+                            <del
+                              key={partIndex}
+                              className="answer-diff-delete"
+                            >
+                              {part.value}
+                            </del>
+                          ),
+                        )}
+                      </p>
+                    )}
                   {focusedBlockIndex === languageBlockIndex &&
                     !correctAnswers[languageBlockIndex] &&
                     helpedBlockIndex !== languageBlockIndex && (
                       <button
                         type="button"
                         className="answer-hint-toggle"
+                        onMouseDown={(event) => event.preventDefault()}
                         onClick={() => showHelp(languageBlockIndex)}
                         aria-label={`Mostrar la respuesta de ${languageBlock.spanish || `bloque ${languageBlockIndex + 1}`}`}
                         title="Mostrar la respuesta (Alt+H)"

@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowDown, ArrowUp, ChevronDown, ChevronRight, Copy, Keyboard, Play, Plus, Redo2, Trash2, Undo2 } from "lucide-react";
+import { ArrowDown, ArrowUp, ChevronDown, ChevronRight, Copy, GripVertical, Keyboard, List, Play, Plus, Redo2, Trash2, Undo2 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState, type DragEvent } from "react";
 
 import { EditingHud } from "@/components/lesson-builder/editing-hud";
@@ -14,10 +14,11 @@ import type { Lesson, LessonConcept, LessonModule } from "@/lib/lesson-builder/t
 type Props = {
   modules: LessonModule[]; lessons: Lesson[]; conceptDisplays: ConceptDisplayLookup; saveLabel: string; saveFailed: boolean;
   canUndo: boolean; canRedo: boolean; onUndo: () => void; onRedo: () => void; onRetrySave: () => void;
-  onNewLesson: (moduleId: string) => string; onPreviewLesson: (lessonId: string) => void;
+  onNewLesson: (moduleId: string, insertionIndex?: number) => string; onPreviewLesson: (lessonId: string) => void;
   onDuplicateLesson: (lessonId: string) => void; onDeleteLesson: (lessonId: string) => void;
   onAddModule: () => void; onDeleteModule: (moduleId: string) => void;
   onMoveModule: (index: number, direction: -1 | 1) => void;
+  onReorderModule: (draggedModuleId: string, targetModuleId: string) => void;
   onMoveLesson: (moduleId: string, index: number, direction: -1 | 1) => void;
   onDropLesson: (lessonId: string, moduleId: string, insertionIndex: number) => void;
   onMoveLessonToModule: (lessonId: string, moduleId: string) => void;
@@ -45,12 +46,37 @@ type Props = {
 
 export function LessonLibrary(props: Props) {
   const [showKeyboardHelp, setShowKeyboardHelp] = useState(false);
+  const [showJump, setShowJump] = useState(false);
   const [collapsedLessons, setCollapsedLessons] = useState<Set<string>>(new Set());
   const [collapsedModules, setCollapsedModules] = useState<Set<string>>(new Set());
   const [confirmDelete, setConfirmDelete] = useState<string | null>(null);
   const [dragged, setDragged] = useState<{ moduleId: string; lessonId: string } | null>(null);
+  const [draggedModule, setDraggedModule] = useState<string | null>(null);
   const keyboardHelpButtonRef = useRef<HTMLButtonElement>(null);
+  const jumpButtonRef = useRef<HTMLButtonElement>(null);
   const lessonById = useMemo(() => new Map(props.lessons.map((lesson) => [lesson.id, lesson])), [props.lessons]);
+
+  function jumpToLesson(lessonId: string) {
+    setShowJump(false);
+    setCollapsedLessons((current) => {
+      if (!current.has(lessonId)) return current;
+      const next = new Set(current);
+      next.delete(lessonId);
+      return next;
+    });
+    const home = props.modules.find((module) => module.lessonIds.includes(lessonId));
+    if (home) {
+      setCollapsedModules((current) => {
+        if (!current.has(home.id)) return current;
+        const next = new Set(current);
+        next.delete(home.id);
+        return next;
+      });
+    }
+    requestAnimationFrame(() => {
+      document.querySelector(`[data-lesson-row="${lessonId}"]`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
 
   const focus = useFocusContext();
   const hudLessonLabel = useMemo(() => {
@@ -83,8 +109,21 @@ export function LessonLibrary(props: Props) {
     setDragged(null);
   }
 
-  function startLesson(moduleId: string) {
-    const lessonId = props.onNewLesson(moduleId);
+  function startModuleDrag(event: DragEvent<HTMLButtonElement>, moduleId: string) {
+    event.dataTransfer.effectAllowed = "move";
+    event.dataTransfer.setData("text/plain", moduleId);
+    setDraggedModule(moduleId);
+  }
+
+  function dropModule(event: DragEvent<HTMLElement>, targetModuleId: string) {
+    event.preventDefault();
+    if (!draggedModule) return;
+    props.onReorderModule(draggedModule, targetModuleId);
+    setDraggedModule(null);
+  }
+
+  function startLesson(moduleId: string, insertionIndex?: number) {
+    const lessonId = props.onNewLesson(moduleId, insertionIndex);
     requestAnimationFrame(() => {
       document.querySelector<HTMLInputElement>(`[data-lesson-title="${lessonId}"]`)?.focus();
     });
@@ -105,12 +144,61 @@ export function LessonLibrary(props: Props) {
     return () => document.removeEventListener("keydown", onKey);
   }, []);
 
+  useEffect(() => {
+    if (!showJump) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setShowJump(false);
+    };
+    const onPointerDown = (event: MouseEvent) => {
+      if (!(event.target instanceof Node)) return;
+      if (jumpButtonRef.current?.parentElement?.contains(event.target)) return;
+      setShowJump(false);
+    };
+    document.addEventListener("keydown", onKey);
+    document.addEventListener("mousedown", onPointerDown);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.removeEventListener("mousedown", onPointerDown);
+    };
+  }, [showJump]);
+
   return (
     <section className="lesson-library" aria-label="Course lessons">
       <header className="lesson-library-utility">
+        <span className="lesson-library-save" role="status" aria-live="polite">{props.saveLabel}</span>
         <span className="lesson-library-history">
           <button type="button" onClick={props.onUndo} disabled={!props.canUndo} suppressHydrationWarning aria-label="Undo" title="Undo (Ctrl+Z)"><Undo2 size={14} /></button>
           <button type="button" onClick={props.onRedo} disabled={!props.canRedo} suppressHydrationWarning aria-label="Redo" title="Redo (Ctrl+Shift+Z)"><Redo2 size={14} /></button>
+        </span>
+        <span className="lesson-library-jump">
+          <button
+            ref={jumpButtonRef}
+            type="button"
+            aria-expanded={showJump}
+            aria-label="Jump to a lesson"
+            title="Jump to a lesson"
+            onClick={() => setShowJump((open) => !open)}
+          >
+            <List size={14} aria-hidden="true" />
+          </button>
+          {showJump && (
+            <div className="lesson-library-jump-panel" role="menu" aria-label="Jump to a lesson">
+              {props.modules.map((module) => (
+                <div key={module.id} className="lesson-library-jump-group">
+                  <span className="lesson-library-jump-module">{module.name?.trim() || "Untitled module"}</span>
+                  {module.lessonIds.map((lessonId, index) => {
+                    const lesson = lessonById.get(lessonId);
+                    if (!lesson) return null;
+                    return (
+                      <button key={lessonId} type="button" role="menuitem" onClick={() => jumpToLesson(lessonId)}>
+                        {index + 1}. {lesson.name?.trim() || "Untitled lesson"}
+                      </button>
+                    );
+                  })}
+                </div>
+              ))}
+            </div>
+          )}
         </span>
         {props.saveFailed && <button type="button" className="lesson-library-retry" onClick={props.onRetrySave}>Retry save</button>}
       </header>
@@ -135,9 +223,20 @@ export function LessonLibrary(props: Props) {
           const moduleDeleteKey = `module:${module.id}`;
 
           return (
-            <section key={module.id} className="lesson-library-module" onDragOver={(event) => { if (dragged) event.preventDefault(); }} onDrop={(event) => { if (!moduleLessons.length) drop(event, module.id, 0); }}>
+            <section
+              key={module.id}
+              className={`lesson-library-module${draggedModule === module.id ? " dragging" : ""}`}
+              onDragOver={(event) => { if (dragged || draggedModule) event.preventDefault(); }}
+              onDrop={(event) => {
+                if (draggedModule) { dropModule(event, module.id); return; }
+                if (!moduleLessons.length) drop(event, module.id, 0);
+              }}
+            >
               <div className="lesson-library-module-meta">
                 <div className="lesson-library-module-line">
+                  <button type="button" className="lesson-library-module-drag" draggable aria-label={`Drag module ${moduleIndex + 1} to reorder`} title="Drag to reorder module" onDragStart={(event) => startModuleDrag(event, module.id)} onDragEnd={() => setDraggedModule(null)}>
+                    <GripVertical size={15} aria-hidden="true" />
+                  </button>
                   <button type="button" className="lesson-library-collapse" aria-expanded={!moduleCollapsed} aria-label={moduleCollapsed ? "Expand module" : "Collapse module"} onClick={() => setCollapsedModules((current) => toggleSet(current, module.id))}>
                     {moduleCollapsed ? <ChevronRight size={16} aria-hidden="true" /> : <ChevronDown size={16} aria-hidden="true" />}
                   </button>
@@ -163,7 +262,15 @@ export function LessonLibrary(props: Props) {
                   const lessonIndex = moduleLessons.findIndex((item) => item.id === lesson.id);
                   const lessonCollapsed = moduleCollapsed || collapsedLessons.has(lesson.id);
                   const lessonDeleteKey = `lesson:${lesson.id}`;
-                  return (
+                  return [
+                    !moduleCollapsed && (
+                      <div key={`insert-${lesson.id}`} className="lesson-library-insert">
+                        <button type="button" onClick={() => startLesson(module.id, lessonIndex)}>
+                          <Plus size={11} aria-hidden="true" />
+                          <span className="sr-only">Insert a lesson here</span>
+                        </button>
+                      </div>
+                    ),
                     <article key={lesson.id} data-lesson-row={lesson.id} className={`lesson-library-row ${dragged?.lessonId === lesson.id ? "dragging" : ""}`} onDragOver={(event) => { if (dragged) event.preventDefault(); }} onDrop={(event) => drop(event, module.id, lessonIndex, true)}>
                       <div className="lesson-library-row-head">
                         <LessonDragHandle lessonNumber={lessonIndex + 1} onDragStart={(event) => startDrag(event, module.id, lesson.id)} onDragEnd={() => setDragged(null)} />
@@ -206,11 +313,11 @@ export function LessonLibrary(props: Props) {
                         onAddConcept={(concept) => props.onAddLessonConcept(lesson.id, concept)} onRemoveConcept={(id) => props.onRemoveLessonConcept(lesson.id, id)} onRelabelConcept={(id, label) => props.onRelabelLessonConcept(lesson.id, id, label)}
                         onUpdateExplanation={(blockId, markdown) => props.onUpdateExplanation(lesson.id, blockId, markdown)} onUpdateSentence={(blockId, field, value) => props.onUpdateSentence(lesson.id, blockId, field, value)} onUpdateSpanish={(blockId, pieceId, value) => props.onUpdateSpanish(lesson.id, blockId, pieceId, value)} onUpdateAnswer={(blockId, pieceId, answerIndex, value) => props.onUpdateAnswer(lesson.id, blockId, pieceId, answerIndex, value)} onUpdateCallout={(blockId, pieceId, value) => props.onUpdateCallout(lesson.id, blockId, pieceId, value)} onAddAnswer={(blockId, pieceId) => props.onAddAnswer(lesson.id, blockId, pieceId)} onRemoveAnswer={(blockId, pieceId, answerIndex) => props.onRemoveAnswer(lesson.id, blockId, pieceId, answerIndex)} onAddPiece={(blockId) => props.onAddPiece(lesson.id, blockId)} onDeletePiece={(blockId, pieceId) => props.onDeletePiece(lesson.id, blockId, pieceId)} onAddBlock={(type, index) => props.onAddBlock(lesson.id, type, index)} onDeleteBlock={(blockId) => props.onDeleteBlock(lesson.id, blockId)} onDuplicateBlock={(blockId) => props.onDuplicateBlock(lesson.id, blockId)} onMoveBlock={(blockId, direction) => props.onMoveBlock(lesson.id, blockId, direction)} onReorderBlock={(draggedId, targetId, position) => props.onReorderBlock(lesson.id, draggedId, targetId, position)} onDone={() => collapse(lesson.id)} onAddLesson={() => startLesson(module.id)} onUndoDeletion={props.onUndoDeletion} onEndHistoryGroup={props.onEndHistoryGroup}
                       />}
-                    </article>
-                  );
+                    </article>,
+                  ];
                 })}
                 {moduleCollapsed ? null : moduleLessons.length === 0 ? <div className="lesson-library-first-lesson">
-                  <button type="button" onClick={() => startLesson(module.id)}><Plus size={15} /> Create lesson <kbd>Alt Shift L</kbd></button>
+                  <button type="button" onClick={() => startLesson(module.id)}><Plus size={15} /> Create lesson <kbd>Ctrl Alt Shift L</kbd></button>
                   <span>Everything saves automatically.</span>
                 </div> : (
                   <button type="button" className="lesson-library-add-lesson" onClick={() => startLesson(module.id)}><Plus size={14} /> Add lesson</button>

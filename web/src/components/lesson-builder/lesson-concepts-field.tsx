@@ -369,39 +369,43 @@ export function LessonConceptsField({
               id={listboxId}
               role="listbox"
               className={variant === "compact"
-                ? "mt-1 max-h-48 w-[min(28rem,80vw)] overflow-auto border-l border-border py-1 pl-2 text-sm"
+                ? "absolute left-0 top-full z-30 mt-1 max-h-48 w-[min(28rem,80vw)] overflow-auto rounded-lg border border-border bg-popover py-1 pl-2 text-sm shadow-xl"
                 : "absolute left-0 top-full z-30 mt-1 max-h-64 w-[min(28rem,80vw)] overflow-auto rounded-lg border border-border bg-popover py-1 text-sm shadow-xl"}
             >
               {visibleResults.map((result, index) => (
+                // A plain div, not a button: keyboard selection is driven entirely
+                // by the input's arrow keys / Enter (see onKeyDown below), and
+                // onMouseDown already blocks these from taking focus on click — a
+                // focusable descendant here would violate role="option" semantics
+                // (axe: no-focusable-content) without adding any real capability.
                 <li key={result.id} role="option" aria-selected={index === highlight}>
-                  <button
-                    type="button"
+                  <div
                     onMouseDown={(event) => event.preventDefault()}
                     onMouseEnter={() => setHighlight(index)}
                     onClick={() => addFromResult(result)}
                     className={`flex w-full items-center justify-between gap-3 px-3 py-1.5 text-left transition ${
-                      index === highlight ? "bg-accent" : "hover:bg-muted"
+                      index === highlight ? "bg-accent text-accent-foreground" : "hover:bg-muted"
                     }`}
                   >
                     <span className="grid min-w-0 text-left leading-tight">
-                      <span className="truncate font-semibold text-foreground">
+                      <span className={`truncate font-semibold ${index === highlight ? "" : "text-foreground"}`}>
                         {result.english}
                       </span>
-                      <span className="mt-0.5 truncate text-xs text-muted-foreground">
+                      <span className={`mt-0.5 truncate text-xs ${index === highlight ? "opacity-90" : "text-muted-foreground"}`}>
                         {result.spanish}
                       </span>
                     </span>
-                    <span className="shrink-0 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+                    <span className={`shrink-0 text-[10px] font-semibold uppercase tracking-wide ${index === highlight ? "opacity-90" : "text-muted-foreground"}`}>
                       {result.curriculumRole}
                     </span>
-                  </button>
+                  </div>
                 </li>
               ))}
             </ul>
           )}
           {open && query.trim().length >= 2 && visibleResults.length === 0 && (
             <div className={variant === "compact"
-              ? "mt-1 w-[min(28rem,80vw)] border-l border-border px-2 py-1 text-xs"
+              ? "absolute left-0 top-full z-30 mt-1 w-[min(28rem,80vw)] rounded-lg border border-border bg-popover px-2 py-1 text-xs shadow-xl"
               : "absolute left-0 top-full z-30 mt-1 w-[min(28rem,80vw)] rounded-lg border border-border bg-popover px-3 py-2 text-sm shadow-xl"}>
               <p className="text-muted-foreground">
                 {searchState === "loading"
@@ -410,6 +414,11 @@ export function LessonConceptsField({
                     ? "Concept search unavailable."
                     : "No linked concept found. Press Enter to add an unlinked label."}
               </p>
+              {searchState === "idle" && (
+                <p className="mt-1 text-muted-foreground/70">
+                  Tip: search the infinitive (e.g. &ldquo;creer&rdquo;, not &ldquo;creo&rdquo;).
+                </p>
+              )}
             </div>
           )}
         </div>

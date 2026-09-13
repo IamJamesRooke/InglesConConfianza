@@ -1,0 +1,155 @@
+import { expect, test } from "@playwright/test";
+import { readFileSync } from "node:fs";
+
+import { uxCheckLessonsPath } from "../../playwright.config";
+
+// Regression guard for the Lesson Builder's keyboard-driven authoring path.
+// Recreates a small but representative lesson (explanation tagging,
+// multi-piece cumulative sentences, a callout/hint, concept search) purely
+// via keyboard, the way a teacher would, then asserts the persisted JSON and
+// cleans up. This replaces the manual "recreate a lesson by hand" dogfood
+// pass for regression purposes — reserve manual browser sessions for new
+// scenarios, not re-checking this one.
+
+function readLessons() {
+  let raw: string;
+  try {
+    raw = readFileSync(uxCheckLessonsPath, "utf8");
+  } catch {
+    return { lessons: [] };
+  }
+  return JSON.parse(raw) as {
+    lessons: Array<{
+      id: string;
+      name: string;
+      concepts: Array<{ conceptId: string | null; label: string }>;
+      blocks: Array<{
+        type: string;
+        contentMarkdown?: string;
+        languageBlocks?: Array<{
+          spanish: string;
+          callout: string | null;
+          acceptedAnswers: string[];
+        }>;
+      }>;
+    }>;
+  };
+}
+
+// Waits for focus to actually land on the expected field before typing.
+// Playwright fires synthetic key events faster than a real hand ever
+// could, so typing right after a Tab/Enter that triggers a React re-render
+// (a new blank piece mounting, a chooser opening) can race the DOM update
+// and land in the field that's about to lose focus instead.
+async function waitForFocusedField(page: import("@playwright/test").Page, field: string) {
+  await page.waitForFunction(
+    (f) => (document.activeElement as HTMLElement | null)?.dataset.field === f,
+    field,
+  );
+}
+
+test("keyboard-only lesson authoring produces the expected structure", async ({
+  page,
+}) => {
+  await page.goto("/admin/lesson-builder");
+  await expect(page.getByText(/All changes saved|Loading/)).toBeVisible();
+
+  const before = readLessons();
+  const beforeCount = before.lessons.length;
+
+  // Open the first module's "Add lesson" (or "Create lesson" when the
+  // module starts empty) and author entirely by keyboard.
+  await page.getByRole("button", { name: /^(Add|Create) lesson/ }).first().click();
+  const title = page.locator("[data-lesson-title]").last();
+  await title.fill("UX smoke: voy a poder");
+  await title.press("Enter");
+
+  // Explanation slide: plain text, tag spans with Ctrl+Alt+Q / Ctrl+Alt+E —
+  // never raw [[es:]]/[[en:]] syntax. Ctrl+Alt, not Alt alone, since plain
+  // Alt+letter is commonly grabbed by Linux window managers.
+  await page.keyboard.type("voy a");
+  await page.keyboard.press("Shift+Home");
+  await page.keyboard.press("Control+Alt+q");
+  await page.keyboard.press("End");
+  await page.keyboard.type(" es I am going");
+  await page.keyboard.press("Shift+Control+ArrowLeft");
+  await page.keyboard.press("Shift+Control+ArrowLeft");
+  await page.keyboard.press("Shift+Control+ArrowLeft");
+  await page.keyboard.press("Control+Alt+e");
+
+  // First sentence slide: single piece. The block-type chooser needs a beat
+  // to mount and grab focus before it can react to the type-selection key.
+  const chooser = page.locator('[role="toolbar"][aria-label="Choose the first slide"]');
+  await page.keyboard.press("Control+Alt+Enter");
+  await chooser.waitFor();
+  await page.keyboard.press("s");
+  await waitForFocusedField(page, "spanish");
+  await page.keyboard.type("voy a");
+  await page.keyboard.press("Tab");
+  await waitForFocusedField(page, "english");
+  await page.keyboard.type("I am going");
+
+  // Second sentence slide: two pieces, plus a hint via Ctrl+Alt+H (no mouse).
+  await page.keyboard.press("Control+Alt+Enter");
+  await chooser.waitFor();
+  await page.keyboard.press("s");
+  await waitForFocusedField(page, "spanish");
+  await page.keyboard.type("Voy a");
+  await page.keyboard.press("Tab");
+  await waitForFocusedField(page, "english");
+  await page.keyboard.type("I am going");
+  await page.keyboard.press("Tab");
+  await waitForFocusedField(page, "spanish");
+  await page.keyboard.type("poder");
+  await page.keyboard.press("Tab");
+  await waitForFocusedField(page, "english");
+  await page.keyboard.type("to be able");
+  await page.keyboard.press("Control+Alt+h");
+  await page.waitForFunction(
+    () => (document.activeElement as HTMLElement | null)?.closest(".lesson-document-annotation") !== null,
+  );
+  await page.keyboard.type("stem-changing");
+
+  // Concept search: infinitive form should resolve to a linked concept.
+  const conceptInput = page.locator('[data-lesson-row] input[placeholder="Add concept…"], [data-lesson-row] input[placeholder="+ concept"]').last();
+  await conceptInput.click();
+  await conceptInput.fill("poder");
+  await page.locator('[role="option"]').first().waitFor({ timeout: 5000 });
+  await page.keyboard.press("Enter");
+
+  await page.keyboard.press("Control+s");
+  await expect(page.getByText("All changes saved")).toBeVisible({ timeout: 5000 });
+
+  const after = readLessons();
+  const created = after.lessons.find((l) => l.name === "UX smoke: voy a poder");
+  expect(created, "created lesson should be persisted").toBeTruthy();
+  expect(after.lessons.length).toBe(beforeCount + 1);
+
+  expect(created!.blocks[0]).toMatchObject({
+    type: "explanation",
+    contentMarkdown: "[[es:voy a]] es [[en:I am going]]",
+  });
+  const pieces = (blockIndex: number) =>
+    created!.blocks[blockIndex].languageBlocks!.map(
+      ({ spanish, callout, acceptedAnswers }) => ({ spanish, callout, acceptedAnswers }),
+    );
+  expect(pieces(1)).toEqual([
+    { spanish: "voy a", callout: null, acceptedAnswers: ["I am going"] },
+  ]);
+  expect(pieces(2)).toEqual([
+    { spanish: "Voy a", callout: null, acceptedAnswers: ["I am going"] },
+    { spanish: "poder", callout: "stem-changing", acceptedAnswers: ["to be able"] },
+  ]);
+  expect(created!.concepts.length).toBe(1);
+  expect(created!.concepts[0].conceptId).not.toBeNull();
+
+  // Clean up: delete the lesson we created so the fixture data stays clean.
+  const row = page.locator(`[data-lesson-row="${created!.id}"]`);
+  await row.getByRole("button", { name: "Delete lesson" }).click();
+  await row.getByRole("button", { name: "Delete", exact: true }).click();
+  await page.keyboard.press("Control+s");
+  await expect(page.getByText("All changes saved")).toBeVisible({ timeout: 5000 });
+
+  const final = readLessons();
+  expect(final.lessons.length).toBe(beforeCount);
+});

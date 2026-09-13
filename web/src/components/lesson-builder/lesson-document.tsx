@@ -132,9 +132,14 @@ export function LessonDocument(props: Props) {
     }
   }
 
+  // Recommend continuing with whatever type the previous slide was — lessons
+  // are usually one explanation followed by a run of several sentence slides,
+  // not a strict alternation — and default to an explanation to open a lesson.
   function recommendedChoice(index: number) {
     const previous = props.lesson.blocks[index - 1];
-    return previous?.type === "explanation" ? 1 : 0;
+    if (!previous) return 0;
+    if (previous.type === "explanation") return 0;
+    return previous.layout === "vocabulary_table" ? 2 : 1;
   }
 
   function openInsert(index: number) {
@@ -170,10 +175,13 @@ export function LessonDocument(props: Props) {
         className="lesson-document-body"
         onBlurCapture={props.onEndHistoryGroup}
         onKeyDown={(event) => {
-          // Alt-based, so nothing collides with browser Ctrl/⌘ shortcuts (save,
-          // history, address bar, paste…). event.code, not event.key, so Mac
-          // Option+letter (which composes ´å∂…) still resolves.
-          if (!event.altKey || event.ctrlKey || event.metaKey || event.nativeEvent.isComposing || event.defaultPrevented) return;
+          // Ctrl+Alt, not Alt alone: plain Alt+letter is commonly grabbed by
+          // Linux window managers (app-launch/switch binds) before the page
+          // ever sees the keydown, and Ctrl+letter alone collides with the
+          // browser (save, history, address bar, paste…) — Ctrl+Alt is free
+          // of both in practice. event.code, not event.key, so Mac
+          // Ctrl+Option+letter (which composes ´å∂…) still resolves.
+          if (!event.altKey || !event.ctrlKey || event.metaKey || event.nativeEvent.isComposing || event.defaultPrevented) return;
           const at = () => {
             const i = props.lesson.blocks.findIndex((block) => block.id === activeBlock);
             return i >= 0 ? i + 1 : props.lesson.blocks.length;

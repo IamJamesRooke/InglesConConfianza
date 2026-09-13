@@ -55,41 +55,43 @@
 }
 
 /* Priority ladder: P1 (hot red) -> P5 (cool slate), Unranked neutral grey,
-   Trash dark red. */
+   Trash dark red. Foreground lightness values are tuned so the chip's
+   secondary (opacity: .68) line still clears WCAG AA 4.5:1 against the
+   chip's color-mixed background — verified in tests/ux/accessibility.spec.ts. */
 .role-P1 {
   --role-border: oklch(0.63 0.22 27);
   --role-background: oklch(0.93 0.055 27);
-  --role-foreground: oklch(0.42 0.19 27);
+  --role-foreground: oklch(0.38 0.19 27);
 }
 
 .role-P2 {
   --role-border: oklch(0.7 0.16 55);
   --role-background: oklch(0.93 0.06 55);
-  --role-foreground: oklch(0.44 0.14 55);
+  --role-foreground: oklch(0.34 0.14 55);
 }
 
 .role-P3 {
   --role-border: oklch(0.78 0.14 90);
   --role-background: oklch(0.94 0.07 90);
-  --role-foreground: oklch(0.46 0.11 90);
+  --role-foreground: oklch(0.31 0.11 90);
 }
 
 .role-P4 {
   --role-border: oklch(0.68 0.13 245);
   --role-background: oklch(0.92 0.065 245);
-  --role-foreground: oklch(0.31 0.11 245);
+  --role-foreground: oklch(0.3 0.11 245);
 }
 
 .role-P5 {
   --role-border: oklch(0.7 0.05 255);
   --role-background: oklch(0.92 0.03 255);
-  --role-foreground: oklch(0.38 0.05 255);
+  --role-foreground: oklch(0.3 0.05 255);
 }
 
 .role-Unranked {
   --role-border: oklch(0.72 0.02 260);
   --role-background: oklch(0.92 0.015 260);
-  --role-foreground: oklch(0.4 0.025 260);
+  --role-foreground: oklch(0.3 0.025 260);
 }
 
 .role-Trash {
@@ -107,39 +109,43 @@
   --role-foreground: var(--foreground);
 }
 
-/* Confianza — neutral greys carry the UI; one blue accent, teal for "done",
-   gold for focus/highlights. Neutrals are near-zero chroma so surfaces never
-   stack up as "blue on blue". */
+/* Confianza — vivid indigo-violet primary with a real coral accent (not a
+   pastel wash). Neutrals still carry visible color instead of settling to
+   near-achromatic grey, so structural chrome (borders, muted surfaces, page
+   background) doesn't read as flat/washed out even where no badge or button
+   is present. */
 :root {
-  --background: oklch(0.964 0.002 260);
-  --foreground: oklch(0.25 0.006 260);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.25 0.006 260);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.25 0.006 260);
-  --primary: oklch(0.48 0.15 255);
+  --background: oklch(0.95 0.028 285);
+  --foreground: oklch(0.22 0.012 265);
+  --card: oklch(0.995 0.006 285);
+  --card-foreground: oklch(0.22 0.012 265);
+  --popover: oklch(0.995 0.006 285);
+  --popover-foreground: oklch(0.22 0.012 265);
+  --primary: oklch(0.56 0.26 285);
   --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.922 0.004 260);
-  --secondary-foreground: oklch(0.35 0.008 260);
-  --muted: oklch(0.945 0.003 260);
-  --muted-foreground: oklch(0.5 0.008 260);
-  --accent: oklch(0.93 0.055 85);
-  --accent-foreground: oklch(0.45 0.11 74);
-  --destructive: oklch(0.55 0.21 18);
-  --border: oklch(0.885 0.004 260);
-  --input: oklch(0.845 0.005 260);
-  --ring: oklch(0.7 0.13 80);
-  --surface: oklch(0.964 0.002 260);
-  --surface-raised: oklch(1 0 0);
-  --surface-sunken: oklch(0.945 0.003 260);
-  --header: oklch(0.975 0.002 260);
-  --success: oklch(0.58 0.1 185);
-  --success-foreground: oklch(0.42 0.09 190);
-  --hint: oklch(0.78 0.15 82);
+  --secondary: oklch(0.9 0.025 285);
+  --secondary-foreground: oklch(0.3 0.02 270);
+  --muted: oklch(0.91 0.022 285);
+  /* .49, not .5 — a hair darker for margin against light surfaces generally;
+     verified in tests/ux/accessibility.spec.ts. */
+  --muted-foreground: oklch(0.46 0.02 270);
+  --accent: oklch(0.7 0.19 35);
+  --accent-foreground: oklch(0.26 0.1 30);
+  --destructive: oklch(0.6 0.22 35);
+  --border: oklch(0.65 0.05 285);
+  --input: oklch(0.6 0.055 285);
+  --ring: oklch(0.62 0.24 285);
+  --surface: oklch(0.95 0.028 285);
+  --surface-raised: oklch(0.995 0.006 285);
+  --surface-sunken: oklch(0.91 0.022 285);
+  --header: oklch(0.96 0.03 285);
+  --success: oklch(0.62 0.17 152);
+  --success-foreground: oklch(0.32 0.15 152);
+  --hint: oklch(0.8 0.19 82);
   --priority-high: oklch(0.59 0.16 150);
   --priority-medium: oklch(0.58 0.17 250);
   --priority-low: oklch(0.55 0.035 270);
-  --chart-1: oklch(0.48 0.15 255);
+  --chart-1: oklch(0.55 0.22 285);
   --chart-2: oklch(0.62 0.1 185);
   --chart-3: oklch(0.74 0.13 80);
   --chart-4: oklch(0.63 0.18 18);
@@ -150,21 +156,21 @@
   --shadow-lg: 0 16px 40px oklch(0.2 0.01 260 / 0.1), 0 4px 12px oklch(0.2 0.01 260 / 0.06);
   --sidebar: oklch(0.955 0.018 85);
   --sidebar-foreground: oklch(0.2 0.025 260);
-  --sidebar-primary: oklch(0.48 0.15 255);
+  --sidebar-primary: oklch(0.55 0.22 285);
   --sidebar-primary-foreground: oklch(0.99 0.01 85);
   --sidebar-accent: oklch(0.91 0.06 185);
   --sidebar-accent-foreground: oklch(0.24 0.07 195);
   --sidebar-border: oklch(0.88 0.018 85);
-  --sidebar-ring: oklch(0.62 0.13 255);
+  --sidebar-ring: oklch(0.62 0.19 285);
   /* Bilingual ink: Spanish-flag red for español, Union-Jack navy for English.
      Used for the sentence-builder labels and the [[es:]]/[[en:]] highlights. */
-  --lesson-hl-es: oklch(0.46 0.17 25);
-  --lesson-hl-en: oklch(0.35 0.15 262);
+  --lesson-hl-es: oklch(0.52 0.22 25);
+  --lesson-hl-en: oklch(0.42 0.2 270);
 }
 
 .dark {
-  --lesson-hl-es: oklch(0.72 0.16 30);
-  --lesson-hl-en: oklch(0.7 0.13 260);
+  --lesson-hl-es: oklch(0.72 0.19 30);
+  --lesson-hl-en: oklch(0.72 0.17 270);
 }
 
 .concept-suggestion {
@@ -225,28 +231,31 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: oklch(0.16 0.014 285);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
+  --primary: oklch(0.72 0.19 285);
+  --primary-foreground: oklch(0.14 0.02 285);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
+  --accent: oklch(0.32 0.13 35);
+  --accent-foreground: oklch(0.9 0.11 35);
+  --destructive: oklch(0.7 0.2 35);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+  --ring: oklch(0.62 0.17 285);
   --surface: oklch(0.205 0 0);
   --surface-raised: oklch(0.245 0 0);
   --surface-sunken: oklch(0.165 0 0);
   --header: oklch(0.245 0 0);
+  --success: oklch(0.72 0.17 152);
+  --success-foreground: oklch(0.88 0.13 152);
+  --hint: oklch(0.8 0.19 82);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);

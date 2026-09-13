@@ -295,6 +295,9 @@
   border-color: var(--hint);
   background: color-mix(in oklch, var(--hint) 14%, var(--card));
   font-style: normal;
+  caret-color: transparent;
+  cursor: default;
+  user-select: none;
 }
 /* Per-blank hint: a small lightbulb badge on the block's top-right corner… */
 .answer-hint-toggle {
@@ -346,6 +349,34 @@
   flex-shrink: 0;
   margin-top: 2px;
   color: var(--hint);
+}
+/* Shows the learner's answer against the closest accepted answer, character
+   by character, once they step away from an incorrect-but-nonempty field. */
+.answer-diff {
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--muted-foreground);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+.answer-diff-insert {
+  padding: 0 2px;
+  border-radius: 4px;
+  color: var(--accent-foreground);
+  background: var(--accent);
+  text-decoration: none;
+}
+.answer-diff-delete {
+  color: var(--destructive);
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  opacity: 0.75;
 }
 /* Authoring canvas keeps its inline "Answers & hint" button. */
 .answer-hint {
@@ -409,16 +440,17 @@
   max-width: 36rem;
   margin: 22px auto 0;
   padding: 16px 18px;
-  border: 0;
+  border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  color: var(--secondary-foreground);
-  background: var(--secondary);
+  color: var(--foreground);
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
   font-size: 16px;
   line-height: 1.6;
 }
 .sentence-helper > svg {
   margin-top: 3px;
-  color: var(--muted-foreground);
+  color: var(--primary);
 }
 .sentence-helper :is(p, li) {
   font-size: 16px;
@@ -431,10 +463,16 @@
   text-align: center;
   color: var(--success-foreground);
 }
+.sentence-authored-feedback:has(p) {
+  padding: 14px 20px;
+  border: 1px solid color-mix(in oklch, var(--success) 30%, var(--border));
+  border-radius: var(--radius-lg);
+  background: color-mix(in oklch, var(--success) 14%, var(--card));
+}
 .sentence-authored-feedback p {
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.6;
-  font-weight: 550;
+  font-weight: 700;
 }
 .lesson-controls {
   min-height: 88px;
@@ -468,7 +506,7 @@
   justify-self: end;
   border-radius: var(--radius-lg);
   font-family: var(--lesson-display);
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 700;
 }
 .lesson-controls .learner-button.awaiting-answer {
@@ -493,7 +531,7 @@
 .lesson-session .completion-seal {
   color: var(--success-foreground);
   background: color-mix(in oklch, var(--success) 15%, var(--card));
-  box-shadow: 0 0 0 7px var(--secondary);
+  box-shadow: 0 0 0 7px color-mix(in oklch, var(--success) 6%, var(--card));
 }
 .lesson-session .lesson-celebration .learner-eyebrow {
   color: var(--primary);
@@ -589,7 +627,7 @@
   }
   .lesson-controls .learner-button {
     min-width: 160px;
-    font-size: 13px;
+    font-size: 17px;
     padding-inline: 14px;
   }
   .lesson-feedback {

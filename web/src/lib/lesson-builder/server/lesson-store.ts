@@ -18,7 +18,11 @@ export {
   reconcileLessonFile,
 } from "@/lib/lesson-builder/lesson-file";
 
-const lessonsFilePath = path.join(process.cwd(), "data", "lessons.json");
+// Overridable so the UX-check harness (tests/ux/) can point at an isolated
+// fixture file instead of the real course data — see playwright.config.ts.
+const lessonsFilePath =
+  process.env.LESSON_BUILDER_DATA_PATH ??
+  path.join(process.cwd(), "data", "lessons.json");
 
 let mutationQueue = Promise.resolve();
 

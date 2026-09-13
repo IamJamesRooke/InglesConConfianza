@@ -15,7 +15,13 @@
 
 # next.js
 /.next/
+/.next-ux-check/
 /out/
+
+# playwright / ux-check
+/test-results/
+/playwright-report/
+/blob-report/
 
 # production
 /build

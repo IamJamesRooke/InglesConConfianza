@@ -263,9 +263,13 @@ export function EditablePracticeMarkdown({
           onChange(nextMarkdown);
         }}
         onKeyDown={(event) => {
+          // Ctrl+Alt, not Alt alone: plain Alt+letter is commonly grabbed by
+          // Linux window managers (app-launch/switch binds) before the page
+          // ever sees the keydown, and Ctrl+letter alone collides with the
+          // browser — Ctrl+Alt is free of both in practice.
           if (
             event.altKey &&
-            !event.ctrlKey &&
+            event.ctrlKey &&
             !event.metaKey &&
             !event.shiftKey &&
             !event.nativeEvent.isComposing

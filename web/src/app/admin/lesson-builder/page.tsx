@@ -79,7 +79,10 @@ export default function LessonBuilderPage() {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       const cmd = event.ctrlKey || event.metaKey;
-      const alt = event.altKey && !event.ctrlKey && !event.metaKey;
+      // Ctrl+Alt, not Alt alone: plain Alt+letter is commonly grabbed by
+      // Linux window managers (app-launch/switch binds) before the page
+      // ever sees the keydown.
+      const alt = event.altKey && event.ctrlKey && !event.metaKey;
       if (cmd && !event.altKey && event.key.toLowerCase() === "s") {
         event.preventDefault();
         void save();
@@ -205,6 +208,16 @@ export default function LessonBuilderPage() {
     const next = [...modules];
     [next[index], next[target]] = [next[target], next[index]];
     updateModules(next);
+  }
+
+  function reorderModule(draggedId: string, targetId: string) {
+    if (draggedId === targetId) return;
+    const without = modules.filter((module) => module.id !== draggedId);
+    const targetIndex = without.findIndex((module) => module.id === targetId);
+    if (targetIndex < 0) return;
+    const dragged = modules.find((module) => module.id === draggedId);
+    if (!dragged) return;
+    updateModules(without.toSpliced(targetIndex, 0, dragged));
   }
 
   function moveLessonWithinModule(
@@ -414,6 +427,7 @@ export default function LessonBuilderPage() {
           onAddModule={addModule}
           onDeleteModule={deleteModule}
           onMoveModule={moveModule}
+          onReorderModule={reorderModule}
           onMoveLesson={moveLessonWithinModule}
           onDropLesson={moveLessonToPosition}
           onMoveLessonToModule={moveLessonToModule}

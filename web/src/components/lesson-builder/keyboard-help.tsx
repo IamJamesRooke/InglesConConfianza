@@ -52,8 +52,9 @@ export function KeyboardHelpDialog({ onClose }: { onClose: () => void }) {
         </div>
         <div>
           <dt>
-            <kbd>Alt</kbd> <kbd>Q</kbd> · <kbd>Alt</kbd> <kbd>W</kbd> ·{" "}
-            <kbd>Alt</kbd> <kbd>E</kbd>
+            <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>Q</kbd> · <kbd>Ctrl</kbd>{" "}
+            <kbd>Alt</kbd> <kbd>W</kbd> · <kbd>Ctrl</kbd> <kbd>Alt</kbd>{" "}
+            <kbd>E</kbd>
           </dt>
           <dd>
             In an explanation: type in Spanish · neutral · English. With text
@@ -62,7 +63,8 @@ export function KeyboardHelpDialog({ onClose }: { onClose: () => void }) {
         </div>
         <div>
           <dt>
-            <kbd>Alt</kbd> <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd>
+            <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>1</kbd> <kbd>2</kbd>{" "}
+            <kbd>3</kbd>
           </dt>
           <dd>
             Add an Explanation / Sentence / Vocabulary table after the current
@@ -71,20 +73,20 @@ export function KeyboardHelpDialog({ onClose }: { onClose: () => void }) {
         </div>
         <div>
           <dt>
-            <kbd>Alt</kbd> <kbd>Enter</kbd>
+            <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>Enter</kbd>
           </dt>
           <dd>Open the slide chooser after this slide</dd>
         </div>
         <div>
           <dt>
-            <kbd>Alt</kbd> <kbd>D</kbd>
+            <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>D</kbd>
           </dt>
           <dd>Finish this lesson (collapse it)</dd>
         </div>
         <div>
           <dt>
-            <kbd>Alt</kbd> <kbd>L</kbd> · <kbd>Alt</kbd> <kbd>Shift</kbd>{" "}
-            <kbd>L</kbd>
+            <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>L</kbd> · <kbd>Ctrl</kbd>{" "}
+            <kbd>Alt</kbd> <kbd>Shift</kbd> <kbd>L</kbd>
           </dt>
           <dd>Add a lesson here · start a whole new lesson</dd>
         </div>
@@ -96,8 +98,9 @@ export function KeyboardHelpDialog({ onClose }: { onClose: () => void }) {
         </div>
         <div>
           <dt>
-            <kbd>Alt</kbd> <kbd>H</kbd> · <kbd>Alt</kbd> <kbd>A</kbd> ·{" "}
-            <kbd>Alt</kbd> <kbd>Backspace</kbd>
+            <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>H</kbd> · <kbd>Ctrl</kbd>{" "}
+            <kbd>Alt</kbd> <kbd>A</kbd> · <kbd>Ctrl</kbd> <kbd>Alt</kbd>{" "}
+            <kbd>Backspace</kbd>
           </dt>
           <dd>
             On a sentence blank: add a hint · add an accepted answer · delete
@@ -168,7 +171,7 @@ const KEYBOARD_ROWS: Key[][] = [
     { k: "P" },
   ],
   [
-    { k: "Alt", act: "hold for commands", w: 2 },
+    { k: "Ctrl Alt", act: "hold for commands", w: 2 },
     { k: "A", act: "alt answer" },
     { k: "S" },
     { k: "D", act: "done" },

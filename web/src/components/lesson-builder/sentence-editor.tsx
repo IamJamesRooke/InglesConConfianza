@@ -80,15 +80,19 @@ export function SentenceEditor({
     onAddAnswer(piece.id);
   }
 
-  // Alt+H hint · Alt+A alternative · Alt+Backspace delete — from either field of
-  // a piece. event.code, not event.key, so Mac Option+letter (´å∂…) still resolves.
+  // Ctrl+Alt+H hint · Ctrl+Alt+A alternative · Ctrl+Alt+Backspace delete —
+  // from either field of a piece. Ctrl+Alt, not Alt alone: plain Alt+letter
+  // is commonly grabbed by Linux window managers before the page ever sees
+  // the keydown, and Ctrl+letter alone collides with the browser — Ctrl+Alt
+  // is free of both in practice. event.code, not event.key, so Mac
+  // Ctrl+Option+letter (´å∂…) still resolves.
   function handlePieceActionKey(
     event: KeyboardEvent<HTMLTextAreaElement>,
     piece: Piece,
   ) {
     if (
       !event.altKey ||
-      event.ctrlKey ||
+      !event.ctrlKey ||
       event.metaKey ||
       event.shiftKey ||
       event.nativeEvent.isComposing

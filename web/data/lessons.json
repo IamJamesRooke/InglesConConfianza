@@ -8,8 +8,14 @@
       "lessonIds": [
         "lesson_b9c75a0c-2132-434f-b1b5-bdfcd960f941",
         "lesson_297bc8ca-6aac-4c7a-9fd1-fbf60e34f83f",
-        "lesson_6286d0a1-b814-45bf-8557-c7e15dfebd4b"
+        "lesson_6286d0a1-b814-45bf-8557-c7e15dfebd4b",
+        "lesson_8c3aad32-3ebd-43df-a4df-94eb25609065"
       ]
+    },
+    {
+      "id": "module_5274a691-59bb-4c07-bcd3-d6dc8e134039",
+      "name": "Module 2",
+      "lessonIds": []
     }
   ],
   "lessons": [
@@ -736,6 +742,52 @@
               "callout": null,
               "acceptedAnswers": [
                 "something."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson_8c3aad32-3ebd-43df-a4df-94eb25609065",
+      "name": "I want to eate",
+      "concepts": [],
+      "blocks": [
+        {
+          "id": "block_a7b7b12a-08c8-42f3-9449-e979a5594de3",
+          "type": "explanation",
+          "contentMarkdown": "[[es:comer]] es [[en:to eat]]"
+        },
+        {
+          "id": "block_04043212-5e63-4496-a16f-aaa4f651f90b",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_8edff80a-cbef-4f4a-9b1f-46f4e4bc52f6",
+              "spanish": "quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ]
+            },
+            {
+              "id": "lang_d27170dd-bb3d-4ed8-bc62-f0faa887585f",
+              "spanish": "comer",
+              "callout": "TO EAT",
+              "acceptedAnswers": [
+                "to eat"
+              ]
+            },
+            {
+              "id": "lang_1e6c3edf-1df1-4b0d-8f61-02a7971fefa9",
+              "spanish": "sadf",
+              "callout": "asdfsad",
+              "acceptedAnswers": [
+                "sdafsdf"
               ]
             }
           ]

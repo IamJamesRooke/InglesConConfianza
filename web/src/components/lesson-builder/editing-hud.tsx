@@ -19,22 +19,22 @@ export function EditingHud({ context, lessonLabel }: Props) {
   let body: ReactNode;
   switch (kind) {
     case "title":
-      body = <Row><kbd>⏎</kbd> start writing</Row>;
+      body = <Row><kbd>Enter</kbd> start writing</Row>;
       break;
     case "covers":
-      body = <Row>Type to search the curriculum · <kbd>⏎</kbd> to add</Row>;
+      body = <Row>Type to search the curriculum · <kbd>Enter</kbd> to add</Row>;
       break;
     case "explanation":
-      body = <Row><kbd>Alt Enter</kbd> next slide · <kbd>Alt Q/W/E</kbd> Spanish / neutral / English</Row>;
+      body = <Row><kbd>Ctrl Alt Enter</kbd> next slide · <kbd>Ctrl Alt Q/W/E</kbd> Spanish / neutral / English</Row>;
       break;
     case "sentence-es":
-      body = <Row><kbd>Tab</kbd> English · <kbd>Alt Enter</kbd> next slide</Row>;
+      body = <Row><kbd>Tab</kbd> English · <kbd>Ctrl Alt H</kbd> hint · <kbd>Ctrl Alt Enter</kbd> next slide</Row>;
       break;
     case "sentence-en":
-      body = <Row><kbd>Tab</kbd> next blank · <kbd>Shift Tab</kbd> back · <kbd>Alt Enter</kbd> next slide</Row>;
+      body = <Row><kbd>Tab</kbd> next blank · <kbd>Ctrl Alt H</kbd> hint · <kbd>Ctrl Alt A</kbd> alt. answer · <kbd>Ctrl Alt Enter</kbd> next slide</Row>;
       break;
     case "chooser":
-      body = <Row><kbd>↑↓</kbd> choose · <kbd>⏎</kbd> add · <kbd>Esc</kbd> cancel</Row>;
+      body = <Row><kbd>↑↓</kbd> choose · <kbd>Enter</kbd> add · <kbd>Esc</kbd> cancel</Row>;
       break;
     default:
       return null;

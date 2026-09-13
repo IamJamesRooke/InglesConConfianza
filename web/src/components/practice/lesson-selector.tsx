@@ -374,14 +374,7 @@ function LessonSession({
             >
               <ArrowLeft size={20} aria-hidden="true" />
             </button>
-            <div className="lesson-feedback" role="status">
-              {sentenceComplete && (
-                <>
-                  <Check size={20} aria-hidden="true" />
-                  <span>¡Muy bien!</span>
-                </>
-              )}
-            </div>
+            <div className="lesson-feedback" role="status" />
             <button
               type="button"
               className={`learner-button ${sentenceComplete ? "success" : "primary"} ${block?.type === "sentence" && !sentenceComplete ? "awaiting-answer" : ""}`}
