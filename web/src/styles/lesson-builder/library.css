@@ -1,0 +1,652 @@
+/* Lesson library: the page frame around the module/lesson list — header
+   utility bar, module cards, lesson rows, row-level insert control, and the
+   empty/first-lesson states. See document.css for the editor surface that
+   opens inside a lesson row, sentence.css/explanation.css for slide content,
+   and keyboard-help.css for the shortcuts dialog launched from here. */
+.lesson-library {
+  display: grid;
+  gap: 22px;
+}
+.lesson-library-modules {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+}
+.lesson-library-module {
+  overflow: visible;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
+}
+.lesson-library-collapse {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 7px;
+  color: var(--muted-foreground);
+}
+.lesson-library-collapse:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-library-list {
+  border-top: 1px solid var(--border);
+}
+.lesson-library-row {
+  position: relative;
+  display: block;
+  border-bottom: 1px solid var(--border);
+}
+.lesson-library-row-head {
+  display: flex;
+  min-height: 72px;
+  align-items: stretch;
+}
+.lesson-library-row:last-child {
+  border-bottom: 0;
+}
+/* Thin hover strip between lesson rows (and before the first one) — click
+   the "+" to insert a new lesson at that exact position, instead of always
+   appending at the end and dragging it up into place. */
+.lesson-library-insert {
+  position: relative;
+  height: 1px;
+  opacity: 0;
+  transition: opacity 0.12s;
+}
+.lesson-library-insert:hover,
+.lesson-library-insert:focus-within {
+  opacity: 1;
+}
+.lesson-library-insert > button {
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 18px;
+  padding: 0 5px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--muted-foreground);
+  transform: translateX(-50%);
+}
+.lesson-library-insert > button:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+/* Collapsed to the icon's own width at rest (no reserved space for the
+   text); the wrapper itself is only visible on hover/focus already, so this
+   is purely about the label not popping in with a hard display toggle. */
+.lesson-library-insert-label {
+  overflow: hidden;
+  max-width: 0;
+  opacity: 0;
+  font-size: 10px;
+  font-weight: 650;
+  white-space: nowrap;
+  transition: max-width 0.14s ease, opacity 0.14s ease;
+}
+.lesson-library-insert:hover .lesson-library-insert-label,
+.lesson-library-insert:focus-within .lesson-library-insert-label,
+.lesson-library-insert > button:focus-visible .lesson-library-insert-label {
+  max-width: 80px;
+  opacity: 1;
+}
+.lesson-library-number {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--muted);
+  color: var(--muted-foreground);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+/* The lesson library is also the editor. At rest it reads like a document;
+   controls become stronger only around the passage receiving attention. */
+.lesson-library-row-head {
+  align-items: center;
+  padding: 11px 16px;
+  gap: 9px;
+}
+.lesson-library-title-input {
+  min-width: 0;
+  flex: 1;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--foreground);
+  font-size: 15px;
+  font-weight: 750;
+  outline: none;
+}
+.lesson-library-title-input:hover {
+  background: color-mix(in oklch, var(--muted) 48%, transparent);
+}
+.lesson-library-title-input:focus {
+  background: var(--background);
+  box-shadow: 0 0 0 2px color-mix(in oklch, var(--primary) 22%, transparent);
+}
+.lesson-library-try {
+  padding: 6px 8px;
+  border-radius: 6px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  font-weight: 700;
+}
+.lesson-library-try:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+/* The lesson row's own drag handle (doubles as the row number badge via
+   .lesson-library-number) — not the slide drag handle in document.css. */
+.lesson-document-drag {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  cursor: grab;
+  place-items: center;
+}
+.lesson-document-drag:hover,
+.lesson-document-drag:focus-visible {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-library-row.dragging {
+  opacity: 0.45;
+}
+
+/* Compact document authoring. The page keeps module context visible while the
+   lesson content itself behaves like a quiet sheet of paper. */
+.lesson-builder-page {
+  background: var(--muted);
+}
+/* Children must shrink with the document viewport, not impose their intrinsic
+   input widths on the grid track. */
+.lesson-library {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+  padding-bottom: 16px;
+}
+.lesson-library-utility {
+  display: flex;
+  min-height: 42px;
+  align-items: center;
+  gap: 10px;
+  padding: 0 3px 10px;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
+.lesson-library-utility > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 6px;
+  border-radius: 5px;
+  color: var(--muted-foreground);
+  font-weight: 700;
+}
+.lesson-library-utility > a:hover,
+.lesson-library-utility > a:focus-visible {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-library-history {
+  display: inline-flex;
+  gap: 2px;
+  margin-left: auto;
+}
+.lesson-library-history button {
+  display: grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border-radius: 6px;
+  color: var(--muted-foreground);
+}
+.lesson-library-history button:hover:not(:disabled) {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-library-history button:disabled {
+  opacity: 0.3;
+}
+.lesson-library-save {
+  white-space: nowrap;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  align-self: center;
+}
+.lesson-library-modules {
+  gap: 12px;
+}
+.lesson-library-module {
+  overflow: visible;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px color-mix(in oklch, var(--foreground) 8%, transparent);
+}
+.lesson-library-module-meta {
+  display: grid;
+  gap: 5px;
+  padding: 8px 16px;
+  border-bottom: 2px solid var(--primary);
+  background: color-mix(in oklch, var(--primary) 16%, var(--muted));
+}
+.lesson-library-module-line {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.lesson-library-module-title {
+  min-width: 150px;
+  max-width: 430px;
+  flex: 1;
+  padding: 2px 3px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--foreground);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  outline: none;
+}
+.lesson-library-module-title:focus {
+  background: var(--card);
+  box-shadow: 0 0 0 2px color-mix(in oklch, var(--primary) 18%, transparent);
+}
+.lesson-library-module-line > span {
+  color: var(--muted-foreground);
+  font-size: 10px;
+  white-space: nowrap;
+}
+.lesson-library-module-delete {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  margin-left: 4px;
+  border-radius: 5px;
+  color: var(--muted-foreground);
+}
+.lesson-library-module-delete:hover:not(:disabled) {
+  background: color-mix(in oklch, var(--destructive) 12%, transparent);
+  color: var(--destructive);
+}
+.lesson-library-module-delete:disabled {
+  opacity: 0.28;
+}
+.lesson-library-module-controls {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-left: auto;
+}
+.lesson-library-module-controls.lesson-inline-confirm {
+  gap: 6px;
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+.lesson-library-module-controls.lesson-inline-confirm > button {
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-weight: 650;
+}
+.lesson-library-module-controls.lesson-inline-confirm > button:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-library-module-controls button {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  color: var(--muted-foreground);
+  font-size: 10px;
+  font-weight: 650;
+}
+.lesson-library-module-controls button:hover:not(:disabled) {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-library-module-controls button:disabled {
+  opacity: 0.28;
+}
+.lesson-library-module-controls .danger,
+.lesson-inline-confirm .danger {
+  color: var(--destructive);
+}
+.lesson-library-module-meta > div:last-child {
+  min-height: 22px;
+}
+.lesson-library-module-meta > div:last-child > span:first-child {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+/* Indented so lessons read as subordinate to their module header, not as
+   siblings of the same visual weight — no rule line, just the offset. */
+.lesson-library-list {
+  border-top: 0;
+}
+.lesson-library-row {
+  border-bottom: 1px solid var(--border);
+}
+.lesson-library-row-head {
+  min-height: 44px;
+  padding: 5px 14px 5px 28px;
+  gap: 3px;
+}
+.lesson-library-number {
+  display: grid;
+  width: 24px;
+  height: 28px;
+  place-items: center;
+  padding: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: color-mix(in oklch, var(--muted-foreground) 55%, transparent);
+  cursor: grab;
+}
+.lesson-library-number:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-library-number:active {
+  cursor: grabbing;
+}
+.lesson-library-collapse {
+  display: grid;
+  width: 24px;
+  height: 28px;
+  place-items: center;
+  border-radius: 5px;
+  color: var(--muted-foreground);
+}
+.lesson-library-collapse:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-library-module.dragging {
+  opacity: 0.45;
+}
+.lesson-library-title-input {
+  margin-left: 4px;
+  font-size: 14px;
+  font-weight: 720;
+}
+.lesson-library-row-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
+  margin-left: 4px;
+}
+.lesson-library-row-icons > .lesson-library-try {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  color: color-mix(in oklch, var(--primary) 78%, var(--muted-foreground));
+}
+.lesson-library-row-icons.lesson-inline-confirm {
+  gap: 5px;
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+.lesson-library-row-icons.lesson-inline-confirm > button {
+  display: inline-flex;
+  width: auto;
+  height: 26px;
+  align-items: center;
+  padding: 0 8px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 650;
+}
+.lesson-library-row-icons.lesson-inline-confirm > button:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-library-row-icons.lesson-inline-confirm > button.danger {
+  color: var(--destructive);
+}
+.lesson-library-row-icons > .lesson-library-try:hover {
+  background: color-mix(in oklch, var(--primary) 12%, transparent);
+  color: var(--primary);
+}
+.lesson-library-row-icons > button {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 5px;
+  color: var(--muted-foreground);
+}
+.lesson-library-row-icons > button:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-library-row-icons > button.danger:hover {
+  background: color-mix(in oklch, var(--destructive) 12%, transparent);
+  color: var(--destructive);
+}
+.lesson-inline-confirm {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--muted-foreground);
+  font-size: 10px;
+}
+.lesson-inline-confirm button {
+  padding: 3px 5px;
+  border-radius: 4px;
+  font-weight: 750;
+}
+.lesson-library-add-lesson,
+.lesson-library-add-module {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  font-weight: 650;
+}
+/* A sibling of the module card, not a child — a compact, left-aligned
+   text+icon action with a modest gap from the card above it, not a
+   full-width boxed footer bar. */
+.lesson-library-add-lesson {
+  width: fit-content;
+  margin: 8px 0 0;
+  padding: 4px 2px;
+  border-radius: 5px;
+}
+.lesson-library-add-lesson:hover {
+  color: var(--primary);
+}
+/* Adds a whole new module card — a dashed placeholder the width of the column. */
+.lesson-library-add-module {
+  justify-content: center;
+  width: 100%;
+  min-height: 40px;
+  margin-top: 10px;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+}
+.lesson-library-add-module:hover {
+  border-color: var(--primary);
+  background: color-mix(in oklch, var(--primary) 6%, transparent);
+  color: var(--primary);
+}
+.lesson-library-retry {
+  padding: 4px 8px;
+  border-radius: 5px;
+  background: var(--destructive);
+  color: var(--destructive-foreground, white);
+  font-size: 11px;
+  font-weight: 750;
+}
+.lesson-library-first-lesson {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 8px;
+  padding: 26px 22px;
+  text-align: center;
+}
+.lesson-library-first-lesson > button {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  gap: 7px;
+  padding: 0 14px;
+  border-radius: 6px;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font-size: 12px;
+  font-weight: 700;
+}
+.lesson-library-first-lesson > span {
+  color: var(--muted-foreground);
+  font-size: 10px;
+}
+.lesson-library-first-lesson kbd,
+.lesson-library-add-lesson kbd {
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: color-mix(in oklch, currentColor 16%, transparent);
+  font:
+    650 9px ui-monospace,
+    monospace;
+}
+.lesson-library-first-lesson > button kbd {
+  background: color-mix(in oklch, var(--primary-foreground) 22%, transparent);
+  color: inherit;
+}
+
+@media (max-width: 850px) {
+  .lesson-library-utility {
+    flex-wrap: wrap;
+  }
+  .lesson-library-save {
+    margin-left: 0;
+  }
+  .lesson-library-module-controls {
+    flex-shrink: 0;
+  }
+}
+
+/* Theme slice: make the binder visibly structured while keeping the actual
+   writing sheet quiet. These selectors intentionally live after the older
+   compact-document layer so the semantic theme is not diluted by its pale
+   color-mixes. */
+.lesson-library-utility {
+  min-height: 48px;
+  padding: 7px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--foreground);
+  background: var(--card);
+}
+.lesson-library-save {
+  color: var(--foreground);
+  font-size: 13px;
+  font-weight: 750;
+}
+.lesson-library-history button {
+  color: var(--muted-foreground);
+}
+.lesson-library-history button:hover:not(:disabled) {
+  color: var(--foreground);
+  background: var(--muted);
+}
+
+.lesson-library-module {
+  border: 1px solid color-mix(in oklch, var(--primary) 30%, var(--border));
+  border-radius: 14px;
+  background: var(--surface-writing);
+}
+.lesson-library-module-meta {
+  border-bottom: 0;
+  border-radius: 13px 13px 0 0;
+  background: var(--brand-primary-hover);
+}
+.lesson-library-module-title {
+  color: var(--primary-foreground);
+  font-size: 20px;
+}
+.lesson-library-module-line > span,
+.lesson-library-module-meta .lesson-library-collapse,
+.lesson-library-module-meta .lesson-library-module-controls button {
+  color: color-mix(in oklch, var(--primary-foreground) 82%, transparent);
+}
+.lesson-library-module-meta .lesson-library-collapse:hover,
+.lesson-library-module-meta
+  .lesson-library-module-controls
+  button:hover:not(:disabled) {
+  color: var(--primary-foreground);
+  background: color-mix(in oklch, var(--primary-foreground) 17%, transparent);
+}
+.lesson-library-module-title:focus {
+  color: var(--ink-deep);
+  background: var(--surface-writing);
+  box-shadow: 0 0 0 4px color-mix(in oklch, var(--primary) 42%, transparent);
+}
+.lesson-library-module-meta .lesson-library-module-delete,
+.lesson-library-module-meta .lesson-library-module-controls .danger {
+  color: #ffd9df;
+}
+.lesson-library-module-meta .lesson-library-module-delete:hover:not(:disabled),
+.lesson-library-module-meta
+  .lesson-library-module-controls
+  .danger:hover:not(:disabled) {
+  color: var(--destructive-foreground);
+  background: var(--destructive);
+}
+
+.lesson-library-row-head {
+  background: color-mix(
+    in oklch,
+    var(--background) 48%,
+    var(--surface-writing)
+  );
+}
+.lesson-library-row:focus-within > .lesson-library-row-head {
+  background: color-mix(in oklch, var(--primary) 8%, var(--surface-writing));
+}
+.lesson-library-title-input {
+  padding-inline: 7px;
+}
+.lesson-library-title-input:focus {
+  background: var(--surface-writing);
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--primary) 28%, transparent);
+}
+.lesson-library-row-icons > .lesson-library-try {
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+.lesson-library-row-icons > .lesson-library-try:hover {
+  color: var(--primary-foreground);
+  background: var(--brand-primary-hover);
+}
+.lesson-library-add-module {
+  min-height: 46px;
+  border: 2px solid var(--primary);
+  color: var(--primary-foreground);
+  background: var(--primary);
+  font-size: 13px;
+  font-weight: 750;
+}
+.lesson-library-add-module:hover {
+  border-color: var(--brand-primary-hover);
+  color: var(--primary-foreground);
+  background: var(--brand-primary-hover);
+}

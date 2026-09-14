@@ -1,0 +1,161 @@
+/* Lesson-completion screen (LessonSelector), plus the shared app-level
+   loading/error states (app/loading.tsx, app/error.tsx, practice/loading.tsx).
+   Not part of the lesson-builder admin UI — split out of the old
+   lesson-library-document.css bundle, which had accumulated these unrelated
+   learner/app-shell rules alongside the builder's own styles. */
+.completion-seal {
+  width: 68px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto 18px;
+}
+.completion-status {
+  color: var(--success-foreground);
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 34px;
+}
+.completion-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 34px;
+}
+.completion-next {
+  display: grid;
+  gap: 16px;
+  justify-items: center;
+  width: 100%;
+}
+.completion-next h2 {
+  color: var(--foreground);
+  font-size: 23px;
+  font-weight: 750;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+.completion-concepts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+.completion-concept {
+  display: grid;
+  gap: 5px;
+  min-width: 190px;
+  padding: 15px 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--card);
+  text-align: center;
+}
+.completion-concept strong {
+  color: var(--foreground);
+  font-size: 17px;
+  line-height: 1.3;
+}
+.completion-concept span {
+  color: var(--muted-foreground);
+  font-size: 13px;
+  line-height: 1.35;
+}
+.completion-action {
+  display: inline-flex;
+  height: 52px;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted-foreground);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--card);
+  gap: 9px;
+  min-width: 128px;
+  padding-inline: 20px;
+  font-size: 14px;
+  font-weight: 800;
+  transition:
+    color 160ms,
+    border-color 160ms,
+    background 160ms,
+    transform 160ms;
+}
+.completion-action:hover {
+  color: var(--foreground);
+  border-color: color-mix(in oklch, var(--primary) 35%, var(--border));
+  background: var(--muted);
+  transform: translateY(-1px);
+}
+.completion-action.primary {
+  color: var(--primary-foreground);
+  border-color: var(--primary);
+  background: var(--primary);
+}
+.completion-action.quiet {
+  color: var(--muted-foreground);
+  border-color: transparent;
+  background: transparent;
+}
+.completion-review {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  padding-inline: 20px;
+  color: var(--secondary-foreground);
+  border-radius: 999px;
+  background: var(--secondary);
+  font-size: 14px;
+  font-weight: 750;
+}
+.lesson-loading {
+  min-height: 100dvh;
+  display: grid;
+  place-content: center;
+  font-size: 15px;
+}
+.learner-loading {
+  min-height: 70dvh;
+  padding-block: 48px;
+}
+.learner-loading .loading-line {
+  height: 20px;
+  width: 200px;
+  background: var(--muted);
+  margin-bottom: 20px;
+  border-radius: var(--radius-sm);
+}
+.learner-loading .loading-feature {
+  height: 290px;
+  background: var(--muted);
+  margin-bottom: 36px;
+}
+.learner-loading .loading-row {
+  height: 85px;
+  border-block: 1px solid var(--border);
+  margin-top: 12px;
+}
+.learner-error {
+  min-height: 70dvh;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 20px;
+  padding: 32px;
+  text-align: center;
+}
+.learner-error h1 {
+  font-size: 26px;
+  font-weight: 700;
+}
+.learner-error p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted-foreground);
+  max-width: 400px;
+}

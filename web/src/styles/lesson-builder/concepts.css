@@ -1,0 +1,110 @@
+/* Concept chips (LessonConceptsField) — one consistent pill for concept
+   chips, the "add concept" field, and the priority-role/coverage variants. */
+.lesson-concepts-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+}
+.lesson-concepts-label {
+  color: var(--muted-foreground);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.lesson-concept-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  min-height: 24px;
+  padding: 2px 3px 2px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card);
+  color: var(--foreground);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.lesson-concept-label:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+/* English on top (prominent), Spanish beneath (secondary). */
+.lesson-concept-stack {
+  display: grid;
+  text-align: left;
+  line-height: 1.12;
+}
+.lesson-concept-stack strong {
+  font-size: 11px;
+  font-weight: 700;
+}
+.lesson-concept-stack span {
+  font-size: 9px;
+  font-weight: 500;
+  opacity: 0.68;
+}
+.lesson-concept-remove {
+  display: grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  color: currentColor;
+  opacity: 0;
+}
+.lesson-concept-chip:hover .lesson-concept-remove,
+.lesson-concept-remove:focus-visible {
+  opacity: 0.6;
+}
+.lesson-concept-remove:hover {
+  opacity: 1;
+  background: color-mix(in oklch, currentColor 15%, transparent);
+}
+
+/* Curriculum priority tier (lesson "Covers"): a quiet neutral chip with a
+   thin left accent in the role color, not a full-perimeter colored badge —
+   the tier stays legible without shouting over the sentence content. Role
+   classes are applied dynamically as `role-${roleToken}`. */
+.lesson-concept-chip[class*="role-"] {
+  padding-left: 6px;
+  border-color: var(--border);
+  border-left: 3px solid var(--role-border, var(--border));
+  background: var(--card);
+  color: var(--foreground);
+}
+
+/* Coverage state (module concepts). */
+.lesson-concept-chip.is-covered {
+  border-color: color-mix(in oklch, var(--success) 45%, var(--border));
+  background: color-mix(in oklch, var(--success) 12%, var(--card));
+  color: var(--success-foreground);
+}
+.lesson-concept-chip.is-uncovered {
+  border-style: dashed;
+  color: var(--muted-foreground);
+}
+
+.lesson-concept-add {
+  min-height: 24px;
+  min-width: 92px;
+  padding: 0 8px;
+  border: 1px dashed
+    color-mix(in oklch, var(--muted-foreground) 42%, transparent);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--foreground);
+  font-size: 11px;
+  outline: none;
+}
+.lesson-concept-add::placeholder {
+  color: var(--muted-foreground);
+}
+.lesson-concept-add:focus {
+  border-style: solid;
+  border-color: var(--muted-foreground);
+}

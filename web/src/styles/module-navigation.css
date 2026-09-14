@@ -2,7 +2,7 @@
    modules without every module's lessons living in the DOM at once. Owned
    exclusively by module-navigator.tsx / lesson-library.tsx; do not add
    authoring/practice rules here, and do not duplicate selectors already
-   defined in lesson-library-document.css or authoring-base.css. */
+   defined in src/styles/lesson-builder/*.css or authoring-base.css. */
 
 .lesson-library-with-navigator {
   display: flex;
@@ -12,7 +12,7 @@
 }
 
 /* The document column (.lesson-library-modules, defined in
-   lesson-library-document.css) is a flex sibling of .module-navigator here.
+   src/styles/lesson-builder/library.css) is a flex sibling of .module-navigator here.
    Flex items default to flex-basis:auto/flex-grow:0, so without an explicit
    grow rule this column's width tracks its own content's intrinsic size
    instead of filling the space beside the fixed-width sidebar — a short

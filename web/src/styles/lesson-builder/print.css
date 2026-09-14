@@ -1,0 +1,24 @@
+/* Print/PDF export of the lesson editor: strip pure-authoring chrome that
+   means nothing on paper — insert-slide controls, add-pair/add-row actions,
+   hint edit affordances (a saved hint's own text still prints, just not its
+   edit controls), the empty trailing draft pair, and the undo control.
+   Scoped to elements this surface owns; module/lesson-level chrome is a
+   separate component's responsibility. */
+@media print {
+  .lesson-document-insert,
+  .lesson-document-add-pair,
+  .lesson-document-add-row,
+  .lesson-document-piece.trailing,
+  .lesson-document-undo {
+    display: none !important;
+  }
+  .lesson-document-prompt:placeholder-shown {
+    display: none !important;
+  }
+  .lesson-document-hint-pill.editing > button {
+    display: none !important;
+  }
+  .lesson-document-block {
+    break-inside: avoid;
+  }
+}

@@ -1,0 +1,115 @@
+/* SlideInsertControl: the hover-revealed seam between slides (and after the
+   last one) used to insert an Explanation/Sentence/Table block. */
+
+/* Zero reserved control space at rest: the container's resting height is
+   ordinary compact inter-slide spacing, not a height chosen to fit a hidden
+   line or hidden buttons. Hover or focus-within reveals the line AND the
+   actions together, expanding flow height only while revealed; leaving
+   collapses it again. Coarse pointers/touch get the same expanded,
+   always-visible state since there's no hover to reveal it there. */
+.lesson-document-insert {
+  position: relative;
+  display: grid;
+  height: 4px;
+  overflow: hidden;
+  place-items: center;
+  transition: height 0.1s ease;
+}
+.lesson-document-insert:hover,
+.lesson-document-insert:focus-within,
+.lesson-document-insert.labelled {
+  height: 26px;
+  overflow: visible;
+}
+.lesson-document-insert::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: 50%;
+  height: 1px;
+  background: var(--border);
+  opacity: 0;
+}
+.lesson-document-insert:hover::before,
+.lesson-document-insert:focus-within::before,
+.lesson-document-insert.labelled::before {
+  opacity: 0.6;
+}
+.lesson-document-insert-actions {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  opacity: 0;
+}
+.lesson-document-insert:hover .lesson-document-insert-actions,
+.lesson-document-insert:focus-within .lesson-document-insert-actions,
+.lesson-document-insert.labelled .lesson-document-insert-actions {
+  opacity: 1;
+}
+.lesson-document-insert-actions > span {
+  margin-right: 4px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  font-weight: 700;
+}
+.lesson-document-insert-actions button {
+  display: inline-flex;
+  min-width: 30px;
+  min-height: 20px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 2px 6px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: var(--muted-foreground);
+  background: var(--surface-writing);
+  font-size: 10px;
+  font-weight: 650;
+  line-height: 1;
+}
+.lesson-document-insert-actions button > span {
+  white-space: nowrap;
+}
+.lesson-document-insert-actions button:hover,
+.lesson-document-insert-actions button:focus-visible {
+  border-color: var(--primary);
+  color: var(--primary);
+  outline: none;
+}
+/* Key badges and the Esc cue render only when the palette was opened by
+   keyboard (Ctrl+Alt+Enter) — an ordinary hover reveal never sets
+   `focusPalette`, so it never prints these. */
+.lesson-document-insert-key {
+  padding: 0 3px;
+  border: 1px solid color-mix(in oklch, var(--muted-foreground) 45%, transparent);
+  border-radius: 3px;
+  color: var(--muted-foreground);
+  font: 650 9px ui-monospace, monospace;
+  line-height: 1.4;
+}
+.lesson-document-insert-actions button:hover .lesson-document-insert-key,
+.lesson-document-insert-actions button:focus-visible .lesson-document-insert-key {
+  border-color: color-mix(in oklch, var(--primary) 55%, transparent);
+  color: var(--primary);
+}
+.lesson-document-insert-actions > .lesson-document-insert-escape {
+  margin-left: 2px;
+  color: var(--muted-foreground);
+  font-size: 10px;
+  font-weight: 500;
+}
+@media (hover: none), (pointer: coarse) {
+  .lesson-document-insert {
+    height: 26px;
+  }
+  .lesson-document-insert-actions {
+    opacity: 1;
+  }
+  .lesson-document-insert::before {
+    opacity: 0.6;
+  }
+}
