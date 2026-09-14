@@ -93,12 +93,12 @@ test("keyboard-only lesson authoring produces the expected structure", async ({
   await title.fill("UX smoke: voy a poder");
   await title.press("Enter");
 
-  // Explanation slide: plain text, tag spans with Ctrl+Alt+Q / Ctrl+Alt+E —
+  // Explanation slide: plain text, tag spans with Ctrl+Alt+S / Ctrl+Alt+E —
   // never raw [[es:]]/[[en:]] syntax. Ctrl+Alt, not Alt alone, since plain
   // Alt+letter is commonly grabbed by Linux window managers.
   await page.keyboard.type("voy a");
   await page.keyboard.press("Shift+Home");
-  await page.keyboard.press("Control+Alt+q");
+  await page.keyboard.press("Control+Alt+s");
   await page.keyboard.press("End");
   await page.keyboard.type(" es I am going");
   await page.keyboard.press("Shift+Control+ArrowLeft");
@@ -184,6 +184,71 @@ test("keyboard-only lesson authoring produces the expected structure", async ({
   expect(created!.concepts[0].conceptId).not.toBeNull();
 
   // Clean up: delete the lesson we created so the fixture data stays clean.
+  const row = page.locator(`[data-lesson-row="${created!.id}"]`);
+  await row.locator("[data-lesson-delete-trigger]").click();
+  await row.getByRole("button", { name: "Delete", exact: true }).click();
+  await expect(row).toHaveCount(0);
+  await expect.poll(() => readLessons().lessons.length).toBe(beforeCount);
+});
+
+// §1c: the quiet "Ctrl Alt Enter · next slide" cue only ever labels the
+// active slide, and steps aside the instant the insert chooser opens for
+// that lesson so it never competes with the chooser UI.
+test("next-slide cue only marks the active slide and hides while the insert chooser is open", async ({
+  page,
+}) => {
+  await page.addInitScript(() => {
+    try {
+      window.localStorage.removeItem("lesson-builder:next-slide-uses");
+    } catch {
+      /* ignore */
+    }
+  });
+  await page.goto("/admin/lesson-builder");
+  await expect(page.getByText(/All changes saved|Loading/)).toBeVisible();
+
+  const before = readLessons();
+  const beforeCount = before.lessons.length;
+
+  await page
+    .getByRole("button", { name: /^(Add|Create) lesson/ })
+    .first()
+    .click();
+  const title = page.locator("[data-lesson-title]").last();
+  await title.fill("UX smoke: next-slide cue");
+  await title.press("Enter");
+
+  const activeCue = page.locator(
+    '.lesson-document-block[data-active="true"] .lesson-document-next-cue',
+  );
+  await expect(activeCue).toBeVisible();
+
+  // A second slide makes the first one inactive — the cue must not follow it.
+  await page.keyboard.press("Control+Alt+Enter");
+  await waitForPaletteFocus(page);
+  await page.keyboard.press("e");
+  await expect(
+    page.locator(
+      '.lesson-document-block[data-active="false"] .lesson-document-next-cue',
+    ),
+  ).toHaveCount(0);
+  await expect(activeCue).toBeVisible();
+
+  // Opening the chooser again hides the cue for this lesson entirely.
+  await page.keyboard.press("Control+Alt+Enter");
+  await waitForPaletteFocus(page);
+  await expect(page.locator(".lesson-document-next-cue")).toHaveCount(0);
+  await page.keyboard.press("Escape");
+
+  await page.keyboard.press("Control+s");
+  await expect(page.getByText("All changes saved")).toBeVisible({
+    timeout: 5000,
+  });
+
+  const created = readLessons().lessons.find(
+    (l) => l.name === "UX smoke: next-slide cue",
+  );
+  expect(created, "created lesson should be persisted").toBeTruthy();
   const row = page.locator(`[data-lesson-row="${created!.id}"]`);
   await row.locator("[data-lesson-delete-trigger]").click();
   await row.getByRole("button", { name: "Delete", exact: true }).click();

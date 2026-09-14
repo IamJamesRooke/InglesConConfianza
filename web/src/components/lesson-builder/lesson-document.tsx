@@ -65,11 +65,30 @@ type Props = {
   onAddLesson: () => void;
 };
 
+// Learnability: the inline "next slide" cue (§1c) fades away once a teacher
+// has clearly learned the chord, and never shows on narrow viewports where
+// there's no room for it.
+const NEXT_SLIDE_USES_KEY = "lesson-builder:next-slide-uses";
+const NEXT_SLIDE_CUE_MAX_USES = 5;
+const NEXT_SLIDE_CUE_MIN_WIDTH = 700;
+
+function readNextSlideUses(): number {
+  try {
+    return Number(window.localStorage.getItem(NEXT_SLIDE_USES_KEY)) || 0;
+  } catch {
+    return 0;
+  }
+}
+
 export function LessonDocument(props: Props) {
   const actions = useLessonBuilder();
   const lessonId = props.lesson.id;
   const [activeBlock, setActiveBlock] = useState<string | null>(null);
   const [insertAt, setInsertAt] = useState<number | null>(null);
+  const [nextSlideUses, setNextSlideUses] = useState(readNextSlideUses);
+  const [narrowViewport, setNarrowViewport] = useState(
+    () => typeof window !== "undefined" && window.innerWidth < NEXT_SLIDE_CUE_MIN_WIDTH,
+  );
   const focusAfterAdd = useRef<string | null>(null);
   const caretOrigin = useRef<CaretOrigin | null>(null);
   const exitingBlock = useRef<string | null>(null);
@@ -78,6 +97,28 @@ export function LessonDocument(props: Props) {
   const dragScope = lessonId;
   const undoDeletionLabel =
     actions.deletionUndo?.lessonId === lessonId ? actions.deletionUndo.label : null;
+  const showNextSlideCue =
+    nextSlideUses < NEXT_SLIDE_CUE_MAX_USES && !narrowViewport;
+
+  useEffect(() => {
+    function updateWidth() {
+      setNarrowViewport(window.innerWidth < NEXT_SLIDE_CUE_MIN_WIDTH);
+    }
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
+
+  function recordNextSlideUse() {
+    setNextSlideUses((count) => {
+      const next = count + 1;
+      try {
+        window.localStorage.setItem(NEXT_SLIDE_USES_KEY, String(next));
+      } catch {
+        /* storage unavailable (private mode, quota) — cue just won't fade */
+      }
+      return next;
+    });
+  }
 
   useEffect(() => {
     if (!focusAfterAdd.current) return;
@@ -205,22 +246,15 @@ export function LessonDocument(props: Props) {
           // of both in practice. event.code, not event.key, so Mac
           // Ctrl+Option+letter (which composes ´å∂…) still resolves.
           if (!event.altKey || !event.ctrlKey || event.metaKey || event.nativeEvent.isComposing || event.defaultPrevented) return;
-          const at = () => {
-            const i = props.lesson.blocks.findIndex((block) => block.id === activeBlock);
-            return i >= 0 ? i + 1 : props.lesson.blocks.length;
-          };
           const stop = () => { event.preventDefault(); event.stopPropagation(); };
           if (event.code === "Enter" || event.code === "NumpadEnter") {
-            if (event.shiftKey) { stop(); props.onDone(); }
-            else if (insertAt === null) { stop(); openInsertAfterActive(); }
+            if (!event.shiftKey && insertAt === null) {
+              stop();
+              openInsertAfterActive();
+              recordNextSlideUse();
+            }
           } else if (event.shiftKey) {
             return;
-          } else if (event.code === "Digit1") {
-            stop(); add("explanation", at());
-          } else if (event.code === "Digit2") {
-            stop(); add("sentence", at());
-          } else if (event.code === "Digit3") {
-            stop(); add("vocabulary", at());
           } else if (event.code === "KeyD") {
             stop(); props.onDone();
           } else if (event.code === "KeyL") {
@@ -305,6 +339,13 @@ export function LessonDocument(props: Props) {
                 onActivate={() => setActiveBlock(block.id)}
                 onExit={() => exitBlock(block.id)}
               />
+            )}
+            {activeBlock === block.id && showNextSlideCue && insertAt === null && (
+              <span className="lesson-document-next-cue" aria-hidden="true">
+                <kbd>Ctrl</kbd>
+                <kbd>Alt</kbd>
+                <kbd>Enter</kbd> next slide
+              </span>
             )}
             </div>
           </Fragment>

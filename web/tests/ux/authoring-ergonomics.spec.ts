@@ -58,10 +58,10 @@ test("explanation toolbar preserves editing context and sentence pairs stay disc
   await expect(toolbar).toBeVisible();
   await expect(
     toolbar.getByRole("button", { name: /Spanish/ }),
-  ).toHaveAttribute("title", "Spanish (Ctrl Alt Q)");
+  ).toHaveAttribute("title", "Spanish (Ctrl Alt S)");
   await expect(toolbar.getByRole("button", { name: /Normal/ })).toHaveAttribute(
     "title",
-    "Normal (Ctrl Alt W)",
+    "Normal (Ctrl Alt N)",
   );
 
   // The toolbar is in the ordinary keyboard tab order and returning to the

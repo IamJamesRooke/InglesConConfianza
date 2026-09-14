@@ -509,7 +509,9 @@ export function LessonLibrary(props: Props) {
                               <LessonDocument
                                 lesson={lesson}
                                 onDone={() => collapse(lesson.id)}
-                                onAddLesson={() => startLesson(module.id)}
+                                onAddLesson={() =>
+                                  startLesson(module.id, lessonIndex + 1)
+                                }
                               />
                             )}
                           </article>,
@@ -521,8 +523,7 @@ export function LessonLibrary(props: Props) {
                             type="button"
                             onClick={() => startLesson(module.id)}
                           >
-                            <Plus size={15} /> Create lesson{" "}
-                            <kbd>Ctrl Alt Shift L</kbd>
+                            <Plus size={15} /> Create lesson
                           </button>
                           <span>Everything saves automatically.</span>
                         </div>

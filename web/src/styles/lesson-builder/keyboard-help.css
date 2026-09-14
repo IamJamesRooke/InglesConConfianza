@@ -65,26 +65,43 @@
   font-size: 11px;
 }
 
-.lesson-library-help dl {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2px 24px;
+.lesson-library-help-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   padding: 6px 20px 18px;
+}
+.lesson-library-help-body section h3 {
+  margin: 10px 0 2px;
+  color: var(--muted-foreground);
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.lesson-library-help-body section:first-child h3 {
+  margin-top: 0;
+}
+
+.lesson-library-help dl {
+  display: flex;
+  flex-direction: column;
 }
 .lesson-library-help dl > div {
   display: grid;
-  grid-template-columns: minmax(140px, auto) 1fr;
+  grid-template-columns: max-content 1fr;
   align-items: baseline;
-  gap: 10px;
+  gap: 6px 14px;
   padding: 6px 0;
   border-bottom: 1px solid var(--border);
-  font-size: 11px;
+  font-size: 13px;
 }
 .lesson-library-help dt {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 3px;
   align-items: center;
+  white-space: nowrap;
   color: var(--foreground);
 }
 .lesson-library-help dd {
@@ -101,7 +118,7 @@
     inset 0 0 0 1px var(--border);
   color: var(--foreground);
   font:
-    650 10px ui-monospace,
+    650 11px ui-monospace,
     monospace;
   text-align: center;
 }
@@ -133,8 +150,35 @@
   color: inherit;
 }
 
-@media (max-width: 850px) {
-  .lesson-library-help dl {
-    grid-template-columns: 1fr;
-  }
+.lesson-library-help-keymap {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  max-height: 110px;
+  margin: 10px 0 2px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: var(--muted);
+}
+.lesson-library-help-keymap-row {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+}
+.lesson-library-help-keymap-key {
+  display: grid;
+  place-items: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 4px;
+  border-radius: 4px;
+  background: var(--card);
+  box-shadow: inset 0 0 0 1px var(--border);
+  color: var(--muted-foreground);
+  font: 650 10px ui-monospace, monospace;
+}
+.lesson-library-help-keymap-key[data-active="true"] {
+  background: color-mix(in oklch, var(--primary) 16%, var(--card));
+  box-shadow: inset 0 0 0 1px var(--primary);
+  color: var(--primary);
 }

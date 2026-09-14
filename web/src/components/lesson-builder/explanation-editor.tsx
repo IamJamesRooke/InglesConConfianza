@@ -323,13 +323,13 @@ export function EditablePracticeMarkdown({
             !event.shiftKey &&
             !event.nativeEvent.isComposing
           ) {
-            if (event.code === "KeyQ") {
+            if (event.code === "KeyS") {
               event.preventDefault();
               event.stopPropagation();
               setLanguageMode("es");
               return;
             }
-            if (event.code === "KeyW") {
+            if (event.code === "KeyN") {
               event.preventDefault();
               event.stopPropagation();
               setLanguageMode(null);
@@ -389,7 +389,7 @@ export function EditablePracticeMarkdown({
           aria-hidden="true"
         >
           {typingMode === "es" ? "Spanish" : "English"}{" "}
-          <kbd>{typingMode === "es" ? "Ctrl Alt Q" : "Ctrl Alt E"}</kbd>
+          <kbd>{typingMode === "es" ? "Ctrl Alt S" : "Ctrl Alt E"}</kbd>
         </span>
       )}
       {showSelectionMenu && isActive && (
@@ -409,7 +409,7 @@ export function EditablePracticeMarkdown({
         >
           <FormatButton
             label="Spanish"
-            shortcut="Ctrl Alt Q"
+            shortcut="Ctrl Alt S"
             className="spanish"
             pressed={typingMode === "es"}
             onFormat={() => applyLanguage("es")}
@@ -423,7 +423,7 @@ export function EditablePracticeMarkdown({
           />
           <FormatButton
             label="Normal"
-            shortcut="Ctrl Alt W"
+            shortcut="Ctrl Alt N"
             onFormat={applyNormalText}
           />
           <FormatButton

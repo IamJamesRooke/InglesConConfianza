@@ -73,7 +73,7 @@ non-typing target, so the WM-collision risk doesn't apply the same way).
 |---|---|---|
 | Lesson title (collapsed row) | `Enter` | Focus jumps into writing: the first slide's field, creating an explanation slide if the lesson has none. |
 | Explanation (focused) | `Enter` | New paragraph (native contentEditable behavior). |
-| Explanation (focused) | `Ctrl Alt Q` / `Ctrl Alt W` / `Ctrl Alt E` | Mark current word / clear caret's typing mode / mark as Spanish / English. With a selection: wraps it in `<mark data-language="es\|en">`; with a collapsed caret: marks the word around it, or arms "typing mode" so subsequently typed text is marked live. |
+| Explanation (focused) | `Ctrl Alt S` / `Ctrl Alt N` / `Ctrl Alt E` | Mark as Spanish / neutral / English. With a selection: wraps it in `<mark data-language="es\|en">`; with a collapsed caret: marks the word around it, or arms "typing mode" so subsequently typed text is marked live. Memorable letters (Spanish/Neutral/English) — chosen over the old adjacent `Q`/`W`/`E` on purpose. |
 | Explanation (selection active) | Floating format toolbar (`Spanish` / `English` / `Normal` / `B` / `I`) | Same actions as the shortcuts, mouse-driven; shown only while `isActive` and there is a live/saved selection. |
 | Explanation (focused) | `Ctrl/⌘ B`, `Ctrl/⌘ I` | Bold / italic via `document.execCommand`. |
 | Explanation (focused) | `Escape` | If a typing mode is armed, clears it first (one Escape = one step back); otherwise finishes editing and calls `onExit` (bubbles to slide-level exit). |
@@ -90,45 +90,62 @@ non-typing target, so the WM-collision risk doesn't apply the same way).
 | Instruction field | `Escape` | Blank → collapses the field back to the "Add instruction" button; non-blank → exits the slide like other fields. |
 | Slide (focused container, not a nested field) | `Enter` / `Space` | Enters editing: focuses the slide's first writing field. |
 | Slide (focused container) | `Escape` | Exits editing back to the container (`exitBlock`), which then refocuses the slide wrapper itself (not the lesson row). |
-| Slide (anywhere inside, via the shared document-body handler) | `Ctrl Alt Enter` | Opens the insert chooser positioned after the active slide (or at the end, if none active). |
-| Insert chooser (open) | `Ctrl Alt 1` / `2` / `3` | Insert Explanation / Sentence / Vocabulary table directly after the active slide, without opening the chooser UI. |
+| Slide (anywhere inside, via the shared document-body handler) | `Ctrl Alt Enter` | Opens the insert chooser positioned after the active slide (or at the end, if none active). Also counts one use toward `lesson-builder:next-slide-uses` (§5's inline cue fades after 5). |
 | Insert chooser (open, focus inside it) | `E` / `S` / `T` | Pick that type immediately (only while focus is inside the open chooser). |
 | Insert chooser (open, focus inside it) | `←/→/↑/↓` | Move focus between the three choice buttons (wraps). |
 | Insert chooser (open) | `Escape` | Closes the chooser and restores the caret to wherever it was before the chooser opened. |
 | Insert chooser (open) | click outside | Closes the chooser (pointerdown listener on `document`, ignores clicks inside `.lesson-document-insert`). |
 | Slide (any) | `Ctrl Alt ArrowUp` / `ArrowDown` | Move the active slide up/down. |
 | Slide (any) | `Ctrl Alt D` | Finish this lesson: collapses its row. |
-| Slide (any) | `Ctrl Alt Shift D` | Same, but via the doc-body handler's Enter+Shift path — see `lesson-document.tsx`: `Ctrl Alt Shift Enter` finishes the lesson (`onDone`) instead of opening the insert chooser. |
-| Slide (any) | `Ctrl Alt L` | Add a new lesson in the current module (focuses its title). |
-| Slide (any) | `Ctrl Alt Shift L` | Start a brand-new lesson at the end of the last module (page-level listener, works from anywhere, not slide-scoped). |
+| Slide (any) | `Ctrl Alt L` | Add a new lesson in the current module, right after this one (focuses its title). |
 | Lesson row (any) | `Ctrl/⌘ Z` / `Ctrl/⌘ Shift Z` | Undo / redo (page-level; disabled while the event target is itself a text-editing target, so it doesn't fight native field undo). |
-| Lesson row (any) | `Ctrl/⌘ S` | Save now (autosave also runs independently). |
+| Lesson row (any) | `Ctrl/⌘ S` | Save now (autosave also runs independently). Not advertised in the help dialog (§4) — autosave is the story — but it still works. |
 | Module navigator drag-handle button (focused) | `Alt ArrowUp` / `Alt ArrowDown` | Reorder that module up/down (plain Alt is safe here — a single non-typing button, not a global page listener). |
 | Anywhere in the builder | `Ctrl/⌘ .` | Toggle the keyboard-help dialog. |
 | Keyboard-help dialog (open) | `Escape` | Closes it and restores focus to whatever was focused before it opened. |
 
 ## 4. Shortcut table (as shown in `keyboard-help.tsx`)
 
+A teacher needs to know **six things** to write a whole lesson; everything
+else is optional power-user territory. The dialog reflects that split with
+two labelled sections — this table mirrors it exactly, in the same order.
+
+### Writing a lesson
+
 | Keys | Behaviour |
 |---|---|
 | `Enter` | From the title: start writing. In an explanation: new paragraph. |
-| `Ctrl Alt Q` · `Ctrl Alt W` · `Ctrl Alt E` | In an explanation: type in Spanish · neutral · English. With text selected, marks it. |
-| `Ctrl Alt 1` `2` `3` | Add an Explanation / Sentence / Vocabulary table after the current slide. |
-| `Ctrl Alt Enter` | Open insert choices after this slide — Explanation, Sentence (focused first), Table; press `E`/`S`/`T` to pick. |
+| `Tab` / `Shift Tab` | Spanish → English → next pair. |
+| `Ctrl Alt Enter` | Open insert choices after this slide, then `E`/`S`/`T` to pick Explanation, Sentence, or Table. |
+| `Ctrl/⌘ B` · `Ctrl/⌘ I` | Bold / italic. |
+| `Ctrl/⌘ Z` · `Ctrl/⌘ Shift Z` | Undo / redo. |
+| `Esc` | Close the nested tool / leave the slide. |
+
+A compact QWERTY graphic (`KeyboardMap` in `keyboard-help.tsx`) follows this
+section, highlighting only the keys used above (`Tab`, `Ctrl`, `Alt`,
+`Enter`, `E`/`S`/`T`, `B`, `I`, `Z`, `Esc`) so a teacher can visually locate
+them without reading the table.
+
+### More
+
+| Keys | Behaviour |
+|---|---|
+| `Ctrl Alt S` · `Ctrl Alt E` · `Ctrl Alt N` | In an explanation: mark as Spanish · English · neutral. With text selected, marks it. |
 | `Ctrl Alt ↑` `↓` | Move the active slide up or down. |
 | `Ctrl Alt D` | Finish this lesson (collapse it). |
-| `Ctrl Alt L` · `Ctrl Alt Shift L` | Add a lesson here · start a whole new lesson. |
-| `Tab` / `Shift Tab` | Move between Spanish, English, and active tools. |
-| `Alt ↓` · `/` · `Ctrl Alt Backspace` | On a sentence pair: jump to its hint · separate alternative English answers in the same field · delete the pair. |
-| `Ctrl/⌘ B` / `I` | Bold or italic. |
-| `Ctrl/⌘ Z` · `Shift Z` | Undo · redo. |
-| `Ctrl/⌘ S` | Save now (it also autosaves). |
-| `Esc` | Close a nested tool first; otherwise leave slide editing. |
+| `Ctrl Alt L` | Add a new lesson right after this one. |
+| `Alt ↓` | On a sentence pair: open its hint. |
+| `Ctrl Alt Backspace` | Delete the pair. |
 
-This table is authoritative for what the teacher is told. If a shortcut in
-section 3 isn't here (e.g. `Ctrl Alt Shift Enter` to finish a lesson,
-`Ctrl/⌘ .` itself), it exists in code but isn't advertised — treat that as a
-gap to reconcile, not as license to invent more undocumented shortcuts.
+This table is authoritative for what the teacher is told. `Ctrl/⌘ S` (save
+now) and `Ctrl/⌘ .` (this dialog) exist in code but are deliberately not
+advertised here — autosave is the story for the former, and the latter is
+how you got here. The insert chooser's `E`/`S`/`T` key badges, and `/` as
+the literal separator between accepted English alternatives in the same
+field, are covered inline where they're used rather than in this dialog.
+`Ctrl Alt Q` / `W` (old Spanish/neutral marks), `Ctrl Alt 1`/`2`/`3` (direct
+add), and `Ctrl Alt Shift L` (page-level new lesson) were retired in the
+1d shortcut diet — see §9.
 
 ## 5. Visual rules (current)
 
@@ -168,6 +185,18 @@ not from any proposal doc's aspirations.
   fully visible. `.lesson-library-insert`'s button is a real, always-
   `visibility: visible` element (only its text label hides at rest) since
   it has no equivalent keyboard-reveal path to gate on.
+- **Inline next-action cue**: since the HUD bar's removal left nothing
+  telling a first-time teacher how to continue after a slide,
+  `.lesson-document-next-cue` (in `lesson-document.tsx`/`document.css`)
+  renders `Ctrl Alt Enter · next slide` absolutely positioned at the active
+  slide's bottom-right (`right: 8px; bottom: -14px`), 11px,
+  `var(--muted-foreground)`, `opacity: 0.8`, `pointer-events: none` — it
+  reserves no layout space. Rendered only on the block with
+  `data-active="true"`, hidden while that lesson's insert chooser is open
+  (`insertAt !== null`), and hidden under 700px viewport width. Learnability
+  fade: each successful `Ctrl Alt Enter` increments
+  `localStorage["lesson-builder:next-slide-uses"]`; once that reaches 5 the
+  cue stops rendering for good (storage access wrapped in try/catch).
 - **Explanation slide**: a grey card — `background: var(--muted)`, `border:
   0`, `border-radius: 6px`, no min-height, padding-driven sizing. No focus
   glow of its own; the slide-level blue bar carries the focus signal.
@@ -268,9 +297,9 @@ statically or spin up their own isolated server against a throwaway file.
 | 0e | AGENTS.md "Lesson builder task protocol" section | Sonnet | done |
 | 1a | One lesson open at a time: collapse all on load except `?lesson=` / last-edited; opening one folds the others | Sonnet | todo |
 | 1b | Calmer resting palette for sentence slides (owner A/B with screenshots) | Sonnet | todo |
-| 1c | One quiet next-action cue under the active slide (`Ctrl Alt Enter · next slide`) | Sonnet | todo |
-| 1d | Shortcut diet: essentials vs power tier; unify chooser letters with global add chords | Sonnet | todo |
-| 1e | Keyboard help dialog: two tiers, even columns | Haiku | todo |
+| 1c | One quiet next-action cue under the active slide (`Ctrl Alt Enter · next slide`) | Sonnet | done |
+| 1d | Shortcut diet: essentials vs power tier; unify chooser letters with global add chords | Sonnet | done |
+| 1e | Keyboard help dialog: two tiers, even columns | Haiku | done |
 | 1f | "Covers" concept chips: plain pills, priority as a dot | Haiku | done |
 | 1g | Hint input shown only on demand, not on every activated pair | Haiku | todo |
 | 1h | Make both insert controls (between slides and between lessons) discoverable at rest — they currently collapse to a hairline | Haiku | done |

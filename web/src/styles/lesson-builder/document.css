@@ -165,3 +165,32 @@
   width: 4px;
   background: var(--primary);
 }
+
+/* Inline next-action cue (§1c): a quiet reminder on the active slide only.
+   Absolutely positioned so it never reserves layout space — the owner
+   rejected persistent chrome here. Fades away by usage count and hides on
+   narrow viewports (see lesson-document.tsx). */
+.lesson-document-next-cue {
+  position: absolute;
+  right: 8px;
+  bottom: -14px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  opacity: 0.8;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.lesson-document-next-cue kbd {
+  padding: 0 3px;
+  border-radius: 3px;
+  background: var(--muted);
+  font: 650 10px ui-monospace, monospace;
+}
+@media (max-width: 699px) {
+  .lesson-document-next-cue {
+    display: none;
+  }
+}
