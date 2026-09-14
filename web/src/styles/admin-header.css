@@ -1,0 +1,52 @@
+/* Admin/builder site header — dark navy variant (H1). Scoped to
+   `.admin-header`, owned exclusively by site-header.tsx. Reuses existing
+   tokens (--ink-deep for the navy surface, --primary-foreground for white
+   text) rather than introducing or mutating semantic tokens; does not
+   touch the learner header, favicon, or global theme. */
+
+.admin-header {
+  --admin-header-fg: var(--primary-foreground);
+  /* Muted-light label/inactive-link color. Same oklch value the app's own
+     .dark theme already uses for --muted-foreground (globals.css) — i.e. a
+     tone this design system already tuned for readable muted text on a
+     dark surface — borrowed here rather than duplicated as a fresh color.
+     Verified contrast against --ink-deep (#17213a): ~6.15:1, passing WCAG
+     AA (4.5:1) for normal text. */
+  --admin-header-fg-muted: oklch(0.708 0 0);
+  --admin-header-hover-wash: color-mix(in oklch, white 12%, transparent);
+  --admin-header-active-wash: color-mix(in oklch, white 18%, transparent);
+
+  background: var(--ink-deep);
+  color: var(--admin-header-fg);
+}
+
+.admin-header-brand {
+  color: var(--admin-header-fg);
+}
+
+.admin-header-badge {
+  padding: 2px 8px;
+  border-radius: 999px;
+  color: var(--admin-header-fg-muted);
+  background: var(--admin-header-hover-wash);
+}
+
+.admin-header-nav-link {
+  color: var(--admin-header-fg-muted);
+}
+.admin-header-nav-link:hover {
+  color: var(--admin-header-fg);
+  background: var(--admin-header-hover-wash);
+}
+.admin-header-nav-link-active {
+  color: var(--admin-header-fg);
+  background: var(--admin-header-active-wash);
+}
+
+.admin-header-menu-button {
+  color: var(--admin-header-fg-muted);
+}
+.admin-header-menu-button:hover {
+  color: var(--admin-header-fg);
+  background: var(--admin-header-hover-wash);
+}

@@ -1,5 +1,5 @@
 import AxeBuilder from "@axe-core/playwright";
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./fixtures";
 
 // Mechanical accessibility + click-target audit for the Lesson Builder.
 // Fails only on critical/serious axe violations (moderate/minor are printed,
@@ -70,7 +70,7 @@ test("lesson builder page has no serious/critical accessibility violations", asy
 
   // Clean up the seed lesson regardless of outcome.
   const row = page.locator("[data-lesson-row]").last();
-  await row.getByRole("button", { name: "Delete lesson" }).click();
+  await row.locator("[data-lesson-delete-trigger]").click();
   await row.getByRole("button", { name: "Delete", exact: true }).click();
   await page.keyboard.press("Control+s");
   await page.getByText("All changes saved").waitFor({ timeout: 5000 }).catch(() => {});

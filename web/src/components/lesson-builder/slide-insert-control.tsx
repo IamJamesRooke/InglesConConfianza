@@ -5,14 +5,18 @@ import { useEffect, useRef, type KeyboardEvent } from "react";
 
 export type DocumentBlockType = "explanation" | "sentence" | "vocabulary";
 
+// Order and initial focus are an owner-approved contract: Explanation,
+// Sentence, Table — Sentence (index 1) is the one that gets focus when the
+// palette opens via keyboard, since it's the most common insert.
 const BLOCK_TYPES: {
   type: DocumentBlockType;
   label: string;
   icon: typeof Table2;
+  key: string;
 }[] = [
-  { type: "vocabulary", label: "Table", icon: Table2 },
-  { type: "sentence", label: "Sentence", icon: Languages },
-  { type: "explanation", label: "Explanation", icon: AlignLeft },
+  { type: "explanation", label: "Explanation", icon: AlignLeft, key: "e" },
+  { type: "sentence", label: "Sentence", icon: Languages, key: "s" },
+  { type: "vocabulary", label: "Table", icon: Table2, key: "t" },
 ];
 
 type Props = {
@@ -47,10 +51,19 @@ export function SlideInsertControl({
     if (event.key === "ArrowRight" || event.key === "ArrowDown") {
       event.preventDefault();
       buttons.current[(Math.max(0, current) + 1) % BLOCK_TYPES.length]?.focus();
-    } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+      return;
+    }
+    if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
       event.preventDefault();
       buttons.current[(Math.max(0, current) - 1 + BLOCK_TYPES.length) % BLOCK_TYPES.length]?.focus();
+      return;
     }
+    // E/S/T insert immediately, but only here — this handler only runs
+    // while focus is inside the open palette itself, never while typing
+    // content elsewhere on the slide.
+    if (event.ctrlKey || event.metaKey || event.altKey || event.nativeEvent.isComposing) return;
+    const choice = BLOCK_TYPES.find((entry) => entry.key === event.key.toLowerCase());
+    if (choice) { event.preventDefault(); onAdd(choice.type); }
   }
 
   return (
@@ -70,15 +83,17 @@ export function SlideInsertControl({
               ref={(element) => { buttons.current[index] = element; }}
               type="button"
               aria-label={`${choice.label} — ${insertionLabel}`}
-              title={`${choice.label} — ${insertionLabel}`}
+              title={`${choice.label} — ${insertionLabel} (${choice.key.toUpperCase()})`}
               onMouseDown={(event) => event.preventDefault()}
               onClick={() => onAdd(choice.type)}
             >
               <Icon size={15} aria-hidden="true" />
               <span>{choice.label}</span>
+              {focusPalette && <kbd className="lesson-document-insert-key" aria-hidden="true">{choice.key.toUpperCase()}</kbd>}
             </button>
           );
         })}
+        {focusPalette && <span className="lesson-document-insert-escape" aria-hidden="true">Esc</span>}
       </div>
     </div>
   );

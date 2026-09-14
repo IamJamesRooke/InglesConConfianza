@@ -248,19 +248,6 @@ export function LessonDocument(props: Props) {
           }
         }}
       >
-        <div className="lesson-document-tags">
-          <LessonConceptsField
-            variant="compact"
-            label=""
-            concepts={props.lesson.concepts}
-            conceptDisplays={props.conceptDisplays}
-            coversFor={props.lesson.id}
-            onAdd={props.onAddConcept}
-            onRemove={props.onRemoveConcept}
-            onRelabel={props.onRelabelConcept}
-          />
-        </div>
-
         {props.lesson.blocks.map((block, index) => (
           <Fragment key={block.id}>
             <SlideInsertControl
@@ -349,10 +336,23 @@ export function LessonDocument(props: Props) {
         <div className="lesson-document-tail">
           <SlideInsertControl
             insertionLabel="Insert at lesson end"
-            labelled
+            labelled={props.lesson.blocks.length === 0}
             focusPalette={insertAt === props.lesson.blocks.length}
             onAdd={(type) => add(type, props.lesson.blocks.length)}
             onClose={closeInsert}
+          />
+        </div>
+
+        <div className="lesson-document-tags">
+          <LessonConceptsField
+            variant="compact"
+            label=""
+            concepts={props.lesson.concepts}
+            conceptDisplays={props.conceptDisplays}
+            coversFor={props.lesson.id}
+            onAdd={props.onAddConcept}
+            onRemove={props.onRemoveConcept}
+            onRelabel={props.onRelabelConcept}
           />
         </div>
 

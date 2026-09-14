@@ -40,7 +40,6 @@ export function KeyboardHelpDialog({ onClose }: { onClose: () => void }) {
           <X size={17} />
         </button>
       </header>
-      <KeyboardMap />
       <dl>
         <div>
           <dt>
@@ -75,7 +74,10 @@ export function KeyboardHelpDialog({ onClose }: { onClose: () => void }) {
           <dt>
             <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>Enter</kbd>
           </dt>
-          <dd>Focus the three direct insert actions after this slide</dd>
+          <dd>
+            Open insert choices after this slide — Explanation, Sentence
+            (focused first), Table; press <kbd>E</kbd>/<kbd>S</kbd>/<kbd>T</kbd> to pick
+          </dd>
         </div>
         <div>
           <dt>
@@ -104,13 +106,12 @@ export function KeyboardHelpDialog({ onClose }: { onClose: () => void }) {
         </div>
         <div>
           <dt>
-            <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>H</kbd> · <kbd>Ctrl</kbd>{" "}
-            <kbd>Alt</kbd> <kbd>A</kbd> · <kbd>Ctrl</kbd> <kbd>Alt</kbd>{" "}
-            <kbd>Backspace</kbd>
+            <kbd>Alt</kbd> <kbd>↓</kbd> · <kbd>/</kbd> · <kbd>Ctrl</kbd>{" "}
+            <kbd>Alt</kbd> <kbd>Backspace</kbd>
           </dt>
           <dd>
-            On a sentence blank: add a hint · add an accepted answer · delete
-            the blank
+            On a sentence pair: jump to its hint · separate alternative
+            English answers in the same field · delete the pair
           </dd>
         </div>
         <div>
@@ -145,87 +146,5 @@ export function KeyboardHelpDialog({ onClose }: { onClose: () => void }) {
         </button>
       </footer>
     </dialog>
-  );
-}
-
-type Key = { k: string; act?: string; w?: number };
-const KEYBOARD_ROWS: Key[][] = [
-  [
-    { k: "Esc", act: "leave field", w: 1.6 },
-    { k: "1", act: "Explanation" },
-    { k: "2", act: "Sentence" },
-    { k: "3", act: "Vocab table" },
-    { k: "4" },
-    { k: "5" },
-    { k: "6" },
-    { k: "7" },
-    { k: "8" },
-    { k: "9" },
-    { k: "0" },
-  ],
-  [
-    { k: "Tab", act: "next field", w: 1.6 },
-    { k: "Q", act: "Spanish" },
-    { k: "W", act: "neutral" },
-    { k: "E", act: "English" },
-    { k: "R" },
-    { k: "T" },
-    { k: "Y" },
-    { k: "U" },
-    { k: "I" },
-    { k: "O" },
-    { k: "P" },
-  ],
-  [
-    { k: "Ctrl Alt", act: "hold for commands", w: 2 },
-    { k: "A", act: "alt answer" },
-    { k: "S" },
-    { k: "D", act: "done" },
-    { k: "F" },
-    { k: "G" },
-    { k: "H", act: "hint" },
-    { k: "J" },
-    { k: "K" },
-    { k: "L", act: "add lesson" },
-    { k: "Enter", act: "add slide", w: 1.8 },
-  ],
-  [
-    { k: "Shift", act: "hold", w: 2.4 },
-    { k: "Z", act: "undo" },
-    { k: "X" },
-    { k: "C" },
-    { k: "V" },
-    { k: "B", act: "bold" },
-    { k: "N" },
-    { k: "M" },
-    { k: "," },
-    { k: ".", act: "shortcuts" },
-    { k: "/" },
-  ],
-  [{ k: "Space", w: 7 }, { k: "←" }, { k: "↑ ↓" }, { k: "→" }],
-];
-
-function KeyboardMap() {
-  return (
-    <div
-      className="lesson-kbd-map"
-      role="img"
-      aria-label="Keyboard shortcut map"
-    >
-      {KEYBOARD_ROWS.map((row, rowIndex) => (
-        <div key={rowIndex} className="lesson-kbd-row">
-          {row.map((key, keyIndex) => (
-            <span
-              key={keyIndex}
-              className={`lesson-kbd-key${key.act ? " is-active" : ""}`}
-              style={{ flexGrow: key.w ?? 1 }}
-            >
-              <span className="lesson-kbd-cap">{key.k}</span>
-              {key.act && <span className="lesson-kbd-act">{key.act}</span>}
-            </span>
-          ))}
-        </div>
-      ))}
-    </div>
   );
 }

@@ -31,9 +31,8 @@ export function composeSentenceParts(
 
 // Resting presentation is teaching content only: composed Spanish/English
 // (plus any authored instruction). Hints are an editing-only affordance —
-// they surface as yellow pills in the active tool row (sentence-editor.tsx's
-// hint list), never here, so a learner-facing screenshot never leaks
-// authoring metadata.
+// they surface as a pill next to the selected pair in sentence-editor.tsx,
+// never here, so a learner-facing screenshot never leaks authoring metadata.
 export function SentencePresentation({ block }: { block: SentenceBlock }) {
   const spanish = composeSentenceParts(block.languageBlocks, "spanish");
   const english = composeSentenceParts(block.languageBlocks, "english");

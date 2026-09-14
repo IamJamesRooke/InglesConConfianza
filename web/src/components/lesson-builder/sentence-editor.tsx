@@ -1,12 +1,15 @@
 "use client";
 
-import { Lightbulb, ListPlus, Plus, Trash2 } from "lucide-react";
+import { Plus, X } from "lucide-react";
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 
 import { SentencePresentation } from "@/components/lesson-builder/sentence-presentation";
+import { planAcceptedAnswersCommit } from "@/lib/lesson-builder/answer-commit-plan";
+import { formatAnswerEntry, parseAnswerEntry } from "@/lib/lesson-builder/answer-entry";
 import type { SentenceBlock } from "@/lib/lesson-builder/types";
 
 type Piece = SentenceBlock["languageBlocks"][number];
+type HintOrigin = { field: "spanish" | "english"; caret: number };
 
 type Props = {
   block: SentenceBlock;
@@ -26,18 +29,25 @@ type Props = {
 export function SentenceEditor(props: Props) {
   const { block, active } = props;
   const [activePiece, setActivePiece] = useState<string | null>(null);
-  const [editingHintId, setEditingHintId] = useState<string | null>(null);
-  const [editingAlternativesId, setEditingAlternativesId] = useState<string | null>(null);
   const [showInstruction, setShowInstruction] = useState(false);
+  // English alternatives edit as one local draft string (slash-delimited);
+  // stored answers are only reconciled on commit (blur/Enter/Tab/Escape), so
+  // typing never parses mid-keystroke and never touches history/persistence.
+  const [englishDraft, setEnglishDraft] = useState<Record<string, string>>({});
   const spanishRefs = useRef(new Map<string, HTMLTextAreaElement>());
   const englishRefs = useRef(new Map<string, HTMLTextAreaElement>());
   const hintInputRef = useRef<HTMLInputElement | null>(null);
+  const hintOrigin = useRef<HintOrigin | null>(null);
   const instructionButtonRef = useRef<HTMLButtonElement | null>(null);
-  const alternativeRefs = useRef(new Map<number, HTMLInputElement>());
   const focusCommittedPiece = useRef<string | null>(null);
   const isTable = block.layout === "vocabulary_table";
   const lastPiece = block.languageBlocks.at(-1);
-  const lastPieceComplete = !lastPiece || (Boolean(lastPiece.spanish.trim()) && Boolean(lastPiece.acceptedAnswers[0]?.trim()));
+  // Read the live English draft first, not just committed props — typing an
+  // answer and clicking "Add pair" with the mouse (no intervening blur/Tab)
+  // must not leave the button looking permanently disabled just because the
+  // draft hasn't committed yet.
+  const lastPieceEnglish = lastPiece ? (englishDraft[lastPiece.id] ?? lastPiece.acceptedAnswers[0] ?? "") : "";
+  const lastPieceComplete = !lastPiece || (Boolean(lastPiece.spanish.trim()) && Boolean(lastPieceEnglish.trim()));
 
   useEffect(() => {
     const id = focusCommittedPiece.current;
@@ -53,9 +63,8 @@ export function SentenceEditor(props: Props) {
     if (active) return;
     const reset = window.setTimeout(() => {
       setActivePiece(null);
-      setEditingHintId(null);
-      setEditingAlternativesId(null);
       setShowInstruction(false);
+      setEnglishDraft({});
     }, 0);
     return () => window.clearTimeout(reset);
   }, [active]);
@@ -64,72 +73,67 @@ export function SentenceEditor(props: Props) {
     return piece.spanish.trim() || `${isTable ? "row" : "pair"} ${index + 1}`;
   }
 
-  function openHint(piece: Piece) {
-    props.onActivate();
-    setActivePiece(piece.id);
-    setEditingAlternativesId(null);
-    setEditingHintId(piece.id);
-    if (piece.callout === null) props.onUpdateCallout(piece.id, "");
-    requestAnimationFrame(() => hintInputRef.current?.focus());
+  // Reconciles the local draft into the stored accepted-answers array by
+  // diffing against the current committed values, so an unedited field never
+  // dispatches a single mutation (no history noise, no eager rewriting of
+  // already-well-formed data). A fully cleared field maps back to a single
+  // empty slot — the same "no answer yet" shape a freshly created pair uses.
+  function commitEnglishDraft(piece: Piece, raw?: string) {
+    const draft = raw ?? englishDraft[piece.id];
+    if (draft === undefined) return;
+    const parsed = parseAnswerEntry(draft);
+    const next = parsed.length > 0 ? parsed : [""];
+    for (const op of planAcceptedAnswersCommit(piece.acceptedAnswers, next)) {
+      if (op.kind === "update") props.onUpdateAnswer(piece.id, op.index, op.value);
+      else if (op.kind === "append") { props.onAddAnswer(piece.id); props.onUpdateAnswer(piece.id, op.index, op.value); }
+      else props.onRemoveAnswer(piece.id, op.index);
+    }
+    setEnglishDraft((prev) => {
+      if (!(piece.id in prev)) return prev;
+      const copy = { ...prev };
+      delete copy[piece.id];
+      return copy;
+    });
+  }
+
+  // Reads live state, not stale props: Spanish and the hint are already
+  // bound directly to props (every keystroke commits), but English is
+  // buffered locally, so the draft (falling back to the committed answers
+  // only when there's no in-progress draft) is the only reliable source.
+  function isPieceBlank(piece: Piece) {
+    const english = englishDraft[piece.id] ?? formatAnswerEntry(piece.acceptedAnswers);
+    return !piece.spanish.trim() && parseAnswerEntry(english).length === 0 && !piece.callout?.trim();
+  }
+
+  // Exiting the sentence editor (real Escape exit, not a nested tool like
+  // the hint input) prunes any pair left entirely blank — e.g. one created
+  // via "Add pair" and then abandoned — without touching partially filled
+  // pairs or deleting the slide itself.
+  function exitEditing() {
+    for (const piece of block.languageBlocks) {
+      if (isPieceBlank(piece)) props.onDeletePiece(piece.id);
+    }
+    props.onExit();
   }
 
   function closeHint(piece: Piece) {
     if (!piece.callout?.trim()) props.onUpdateCallout(piece.id, null);
-    setEditingHintId(null);
-    requestAnimationFrame(() => spanishRefs.current.get(piece.id)?.focus());
   }
 
-  function removeHint(piece: Piece) {
-    props.onUpdateCallout(piece.id, null);
-    setEditingHintId(null);
-    requestAnimationFrame(() => spanishRefs.current.get(piece.id)?.focus());
+  function focusHint(piece: Piece, origin: HintOrigin) {
+    hintOrigin.current = origin;
+    if (activePiece !== piece.id) setActivePiece(piece.id);
+    requestAnimationFrame(() => hintInputRef.current?.focus());
   }
 
-  function openAlternatives(piece: Piece) {
-    setEditingHintId(null);
-    setEditingAlternativesId(piece.id);
-    if (piece.acceptedAnswers.length === 1) props.onAddAnswer(piece.id);
-    requestAnimationFrame(() => alternativeRefs.current.get(1)?.focus());
-  }
-
-  function addAlternative(piece: Piece) {
-    const index = piece.acceptedAnswers.length;
-    props.onAddAnswer(piece.id);
-    requestAnimationFrame(() => alternativeRefs.current.get(index)?.focus());
-  }
-
-  function removeAlternative(piece: Piece, answerIndex: number) {
-    props.onRemoveAnswer(piece.id, answerIndex);
-    requestAnimationFrame(() => englishRefs.current.get(piece.id)?.focus());
-  }
-
-  function splitSemicolonSegments(line: string): string[] {
-    return line.split(/(?<!\\);/).map((part) => part.replace(/\\;/g, ";").trim()).filter(Boolean);
-  }
-
-  function commitSemicolonAlternatives(piece: Piece) {
-    const first = piece.acceptedAnswers[0] ?? "";
-    const split = splitSemicolonSegments(first);
-    if (split.length <= 1) {
-      const normalized = split[0] ?? first.replace(/\\;/g, ";");
-      if (normalized !== first) props.onUpdateAnswer(piece.id, 0, normalized);
-      return;
-    }
-    props.onUpdateAnswer(piece.id, 0, split[0]);
-    split.slice(1).forEach((answer, offset) => {
-      const index = offset + 1;
-      if (index >= piece.acceptedAnswers.length) props.onAddAnswer(piece.id);
-      props.onUpdateAnswer(piece.id, index, answer);
+  function returnFromHint(piece: Piece) {
+    const origin = hintOrigin.current;
+    hintOrigin.current = null;
+    const ref = origin?.field === "english" ? englishRefs.current.get(piece.id) : spanishRefs.current.get(piece.id);
+    requestAnimationFrame(() => {
+      ref?.focus();
+      if (origin && ref) ref.setSelectionRange(origin.caret, origin.caret);
     });
-    setEditingAlternativesId(piece.id);
-  }
-
-  function handlePieceActionKey(event: KeyboardEvent<HTMLTextAreaElement>, piece: Piece) {
-    if (!event.altKey || !event.ctrlKey || event.metaKey || event.shiftKey || event.nativeEvent.isComposing) return false;
-    if (event.code === "KeyH") { event.preventDefault(); openHint(piece); return true; }
-    if (event.code === "KeyA") { event.preventDefault(); openAlternatives(piece); return true; }
-    if (event.code === "Backspace") { event.preventDefault(); props.onDeletePiece(piece.id); return true; }
-    return false;
   }
 
   function blockNewline(event: KeyboardEvent<HTMLTextAreaElement>) {
@@ -140,40 +144,87 @@ export function SentenceEditor(props: Props) {
     return false;
   }
 
+  function handleHintShortcut(event: KeyboardEvent<HTMLTextAreaElement>, piece: Piece, field: "spanish" | "english") {
+    if (event.nativeEvent.isComposing) return false;
+    if (!event.altKey || event.key !== "ArrowDown" || event.ctrlKey || event.metaKey || event.shiftKey) return false;
+    event.preventDefault();
+    focusHint(piece, { field, caret: event.currentTarget.selectionStart ?? 0 });
+    return true;
+  }
+
+  function handleDeleteShortcut(event: KeyboardEvent<HTMLTextAreaElement>, piece: Piece) {
+    if (!event.altKey || !event.ctrlKey || event.metaKey || event.shiftKey || event.nativeEvent.isComposing) return false;
+    if (event.code === "Backspace") { event.preventDefault(); props.onDeletePiece(piece.id); return true; }
+    return false;
+  }
+
   function handleSpanishKey(event: KeyboardEvent<HTMLTextAreaElement>, index: number) {
+    const piece = block.languageBlocks[index];
     if (event.key === "Escape" && !event.nativeEvent.isComposing) {
-      event.preventDefault(); event.stopPropagation(); props.onExit(); return;
+      event.preventDefault(); event.stopPropagation(); exitEditing(); return;
     }
+    if (handleHintShortcut(event, piece, "spanish")) return;
     if (blockNewline(event)) return;
-    if (handlePieceActionKey(event, block.languageBlocks[index])) return;
+    if (handleDeleteShortcut(event, piece)) return;
     if (event.key !== "Tab" || event.nativeEvent.isComposing) return;
     if (event.shiftKey) {
       if (index > 0) { event.preventDefault(); englishRefs.current.get(block.languageBlocks[index - 1].id)?.focus(); }
       return;
     }
     event.preventDefault();
-    englishRefs.current.get(block.languageBlocks[index].id)?.focus();
+    englishRefs.current.get(piece.id)?.focus();
   }
 
   function handleEnglishKey(event: KeyboardEvent<HTMLTextAreaElement>, index: number) {
     const piece = block.languageBlocks[index];
     if (event.key === "Escape" && !event.nativeEvent.isComposing) {
-      event.preventDefault(); event.stopPropagation(); commitSemicolonAlternatives(piece); props.onExit(); return;
+      event.preventDefault(); event.stopPropagation();
+      commitEnglishDraft(piece, event.currentTarget.value);
+      exitEditing();
+      return;
     }
-    if (event.key === "Enter" && event.shiftKey && !event.ctrlKey && !event.metaKey && !event.nativeEvent.isComposing) {
-      event.preventDefault(); openAlternatives(piece); return;
+    if (handleHintShortcut(event, piece, "english")) return;
+    if (blockNewline(event)) {
+      commitEnglishDraft(piece, event.currentTarget.value);
+      return;
     }
-    if (blockNewline(event)) return;
-    if (handlePieceActionKey(event, piece)) return;
+    if (handleDeleteShortcut(event, piece)) return;
     if (event.key !== "Tab" || event.nativeEvent.isComposing) return;
-    if (event.shiftKey) { event.preventDefault(); spanishRefs.current.get(piece.id)?.focus(); }
-    else if (index < block.languageBlocks.length - 1) { event.preventDefault(); spanishRefs.current.get(block.languageBlocks[index + 1].id)?.focus(); }
+    const raw = event.currentTarget.value;
+    if (event.shiftKey) {
+      event.preventDefault();
+      commitEnglishDraft(piece, raw);
+      spanishRefs.current.get(piece.id)?.focus();
+      return;
+    }
+    const isLast = index === block.languageBlocks.length - 1;
+    if (isLast) {
+      commitEnglishDraft(piece, raw);
+      const complete = Boolean(piece.spanish.trim()) && parseAnswerEntry(raw).length > 0;
+      if (complete) { event.preventDefault(); createPair(); }
+      // Incomplete trailing pair: don't preventDefault — Tab continues to
+      // the next real focusable element (the Add-pair button/tools) instead
+      // of creating another blank pair or trapping the keyboard here.
+      return;
+    }
+    event.preventDefault();
+    commitEnglishDraft(piece, raw);
+    spanishRefs.current.get(block.languageBlocks[index + 1].id)?.focus();
+  }
+
+  // Bypasses the `lastPieceComplete` prop-derived guard — callers that have
+  // already established completeness from a value fresher than props (the
+  // Tab handler below, mid-commit) must not be blocked by stale props from
+  // before their own just-dispatched commit has re-rendered.
+  function createPair() {
+    const id = props.onAddPiece();
+    focusCommittedPiece.current = id;
   }
 
   function addPair() {
     if (!lastPieceComplete) return;
-    const id = props.onAddPiece();
-    focusCommittedPiece.current = id;
+    if (lastPiece) commitEnglishDraft(lastPiece);
+    createPair();
   }
 
   if (!active && !isTable) {
@@ -184,19 +235,10 @@ export function SentenceEditor(props: Props) {
     );
   }
 
-  const selectedPiece = block.languageBlocks.find((piece) => piece.id === activePiece) ?? null;
-  const hintPiece = block.languageBlocks.find((piece) => piece.id === editingHintId) ?? null;
-  const alternativesPiece = block.languageBlocks.find((piece) => piece.id === editingAlternativesId) ?? null;
-
   return (
     <section className={`lesson-document-sentence editing ${isTable ? "vocab-table" : ""}`} aria-label={isTable ? "Vocabulary table" : "Sentence"}>
       {active && <div className="lesson-document-active-tools" role="toolbar" aria-label="Active sentence tools">
         {!block.promptText.trim() && !showInstruction && <button ref={instructionButtonRef} type="button" onClick={() => setShowInstruction(true)}>Add instruction</button>}
-        {selectedPiece && <>
-          <button type="button" aria-label={`${selectedPiece.callout === null ? "Add" : "Edit"} hint for ${pieceLabel(selectedPiece)}`} title={selectedPiece.callout === null ? "Add hint" : "Edit hint"} onClick={() => openHint(selectedPiece)}><Lightbulb size={13} aria-hidden="true" /></button>
-          <button type="button" aria-label={`Alternatives for ${pieceLabel(selectedPiece)}${selectedPiece.acceptedAnswers.length > 1 ? ` (${selectedPiece.acceptedAnswers.length - 1})` : ""}`} title="Alternatives" onClick={() => openAlternatives(selectedPiece)}><ListPlus size={13} aria-hidden="true" />{selectedPiece.acceptedAnswers.length > 1 && <span>{selectedPiece.acceptedAnswers.length - 1}</span>}</button>
-          <button type="button" className="danger" aria-label={`Delete ${isTable ? "row" : "pair"} ${pieceLabel(selectedPiece)}`} title={`Delete ${isTable ? "row" : "pair"}`} onClick={() => props.onDeletePiece(selectedPiece.id)}><Trash2 size={13} aria-hidden="true" /></button>
-        </>}
       </div>}
 
       {!active && block.promptText.trim() ? (
@@ -216,14 +258,13 @@ export function SentenceEditor(props: Props) {
               if (!event.currentTarget.value.trim()) {
                 setShowInstruction(false);
                 requestAnimationFrame(() => instructionButtonRef.current?.focus());
-              } else props.onExit();
+              } else exitEditing();
             }
           }}
         />
       )}
 
       <div className={`lesson-document-sentence-body ${isTable ? "vocab-table" : ""}`}>
-        {isTable && <div className="lesson-document-language-key vocab-table" aria-hidden="true"><span data-language="es">Spanish</span><span data-language="en">English</span></div>}
         <div className="lesson-document-pieces">
           {block.languageBlocks.map((piece, index) => (
             <div key={piece.id} className="lesson-document-pair">
@@ -232,54 +273,57 @@ export function SentenceEditor(props: Props) {
                   <textarea rows={1} data-field="spanish" ref={(element) => { if (element) spanishRefs.current.set(piece.id, element); else spanishRefs.current.delete(piece.id); }} value={piece.spanish} onChange={(event) => props.onUpdateSpanish(piece.id, event.target.value)} onKeyDown={(event) => handleSpanishKey(event, index)} placeholder="Type in Spanish" lang="es" aria-label={`${isTable ? "Row" : "Sentence piece"} ${index + 1} Spanish`} />
                 </div>
                 <div className="lesson-document-language-field" data-language="en">
-                  <textarea rows={1} data-field="english" ref={(element) => { if (element) englishRefs.current.set(piece.id, element); else englishRefs.current.delete(piece.id); }} value={piece.acceptedAnswers[0] ?? ""} onChange={(event) => props.onUpdateAnswer(piece.id, 0, event.target.value)} onKeyDown={(event) => handleEnglishKey(event, index)} onBlur={() => commitSemicolonAlternatives(piece)} placeholder="Write in English" lang="en" aria-label={`${isTable ? "Row" : "Sentence piece"} ${index + 1} English. Separate alternatives with a semicolon, or use a backslash before one to type it literally.`} />
+                  <textarea
+                    rows={1}
+                    data-field="english"
+                    ref={(element) => { if (element) englishRefs.current.set(piece.id, element); else englishRefs.current.delete(piece.id); }}
+                    value={englishDraft[piece.id] ?? formatAnswerEntry(piece.acceptedAnswers)}
+                    onChange={(event) => setEnglishDraft((prev) => ({ ...prev, [piece.id]: event.target.value }))}
+                    onKeyDown={(event) => handleEnglishKey(event, index)}
+                    onBlur={(event) => commitEnglishDraft(piece, event.currentTarget.value)}
+                    placeholder="Write in English"
+                    lang="en"
+                    aria-label={`${isTable ? "Row" : "Sentence piece"} ${index + 1} English. Separate alternatives with a slash, or use a backslash before one to type it literally.`}
+                  />
                 </div>
               </div>
+              <button
+                type="button"
+                className="lesson-document-pair-delete"
+                aria-label={`Delete ${isTable ? "row" : "pair"} ${pieceLabel(piece, index)}`}
+                title={`Delete ${isTable ? "row" : "pair"}`}
+                onClick={() => props.onDeletePiece(piece.id)}
+              >
+                <X size={11} aria-hidden="true" />
+              </button>
+              {activePiece === piece.id ? (
+                <input
+                  type="text"
+                  className="lesson-document-hint-pill-input"
+                  ref={hintInputRef}
+                  value={piece.callout ?? ""}
+                  onChange={(event) => props.onUpdateCallout(piece.id, event.target.value)}
+                  onBlur={() => closeHint(piece)}
+                  onKeyDown={(event) => {
+                    if (event.nativeEvent.isComposing) return;
+                    if (event.key === "Enter") { event.preventDefault(); event.currentTarget.blur(); return; }
+                    if (event.key === "Escape") {
+                      event.preventDefault(); event.stopPropagation();
+                      closeHint(piece);
+                      returnFromHint(piece);
+                    }
+                  }}
+                  placeholder="Hint"
+                  aria-label={`Hint for ${pieceLabel(piece)}`}
+                />
+              ) : piece.callout?.trim() ? (
+                <span className="lesson-document-hint-pill" aria-label={`Hint for ${pieceLabel(piece)}`}>{piece.callout}</span>
+              ) : null}
             </div>
           ))}
           {active && <button type="button" className={isTable ? "lesson-document-add-row" : "lesson-document-add-pair"} disabled={!lastPieceComplete} onClick={addPair}><Plus size={12} aria-hidden="true" /> Add {isTable ? "row" : "pair"}</button>}
         </div>
       </div>
-
-      {block.languageBlocks.some((piece) => piece.callout !== null) && !hintPiece && (
-        <div className="lesson-document-hint-list" aria-label="Authored hints">
-          {block.languageBlocks.filter((piece) => piece.callout !== null).map((piece) => (
-            <button key={piece.id} type="button" className="lesson-document-hint-pill" onClick={() => openHint(piece)}><span>{pieceLabel(piece)}:</span> {piece.callout}</button>
-          ))}
-        </div>
-      )}
-
-      {active && hintPiece && (
-        <div className="lesson-document-context-editor" aria-label={`Hint for ${pieceLabel(hintPiece)}`} onBlur={(event) => {
-          if (event.currentTarget.contains(event.relatedTarget as Node | null)) return;
-          if (!hintPiece.callout?.trim()) props.onUpdateCallout(hintPiece.id, null);
-          setEditingHintId(null);
-        }}>
-          <label htmlFor={`hint-${hintPiece.id}`}>Hint for “{pieceLabel(hintPiece)}”</label>
-          <input id={`hint-${hintPiece.id}`} ref={hintInputRef} value={hintPiece.callout ?? ""} onChange={(event) => props.onUpdateCallout(hintPiece.id, event.target.value)} onKeyDown={(event) => { if (event.key === "Escape") { event.preventDefault(); event.stopPropagation(); closeHint(hintPiece); } }} placeholder="A small clue the student sees…" />
-          <button type="button" className="danger" onMouseDown={(event) => event.preventDefault()} onClick={() => removeHint(hintPiece)}>Remove hint</button>
-        </div>
-      )}
-
-      {active && alternativesPiece && (
-        <div className="lesson-document-context-editor" aria-label={`Alternatives for ${pieceLabel(alternativesPiece)}`} onBlur={(event) => {
-          if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
-            for (let index = alternativesPiece.acceptedAnswers.length - 1; index >= 1; index -= 1)
-              if (!alternativesPiece.acceptedAnswers[index]?.trim()) props.onRemoveAnswer(alternativesPiece.id, index);
-            setEditingAlternativesId(null);
-          }
-        }}>
-          <span>Alternatives for “{pieceLabel(alternativesPiece)}”</span>
-          {alternativesPiece.acceptedAnswers.slice(1).map((answer, offset) => {
-            const answerIndex = offset + 1;
-            return <div className="lesson-document-alternative" key={answerIndex}>
-              <input ref={(element) => { if (element) alternativeRefs.current.set(answerIndex, element); else alternativeRefs.current.delete(answerIndex); }} value={answer} aria-label={`Alternative ${answerIndex} for ${pieceLabel(alternativesPiece)}`} onChange={(event) => props.onUpdateAnswer(alternativesPiece.id, answerIndex, event.target.value)} onKeyDown={(event) => { if (event.key === "Escape") { event.preventDefault(); event.stopPropagation(); setEditingAlternativesId(null); requestAnimationFrame(() => englishRefs.current.get(alternativesPiece.id)?.focus()); } }} />
-              <button type="button" aria-label={`Remove alternative ${answerIndex}`} onClick={() => removeAlternative(alternativesPiece, answerIndex)}>×</button>
-            </div>;
-          })}
-          <button type="button" onClick={() => addAlternative(alternativesPiece)}>Add alternative</button>
-        </div>
-      )}
     </section>
   );
 }

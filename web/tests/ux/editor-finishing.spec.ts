@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./fixtures";
 
 test("sentence rest composition, hint tools, Escape, and explanation tools stay in flow", async ({ page }) => {
   await page.goto("/admin/lesson-builder");
@@ -31,8 +31,8 @@ test("sentence rest composition, hint tools, Escape, and explanation tools stay 
   await english.nth(1).fill("to do it.");
 
   await spanish.first().focus();
-  await sentence.getByRole("button", { name: /Add hint for/ }).click();
-  const hint = sentence.getByRole("textbox", { name: "Hint for “Quiero”" });
+  await page.keyboard.press("Alt+ArrowDown");
+  const hint = sentence.getByRole("textbox", { name: "Hint for Quiero" });
   await hint.fill("desire");
   await hint.press("Escape");
   await expect(spanish.first()).toBeFocused();

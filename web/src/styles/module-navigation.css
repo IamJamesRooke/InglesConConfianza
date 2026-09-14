@@ -11,6 +11,19 @@
   width: 100%;
 }
 
+/* The document column (.lesson-library-modules, defined in
+   lesson-library-document.css) is a flex sibling of .module-navigator here.
+   Flex items default to flex-basis:auto/flex-grow:0, so without an explicit
+   grow rule this column's width tracks its own content's intrinsic size
+   instead of filling the space beside the fixed-width sidebar — a short
+   module (e.g. just a collapsed header) visibly shrinks the whole document
+   column. Owned here because the flex arrangement, not the column's internal
+   presentation, is this file's rule. */
+.lesson-library-with-navigator > .lesson-library-modules {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
 .module-navigator {
   flex: 0 0 260px;
   align-self: flex-start;
@@ -42,6 +55,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
+  min-width: 0;
   padding: 6px 10px;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -51,6 +65,17 @@
 
 .module-navigator-search input {
   flex: 1;
+  /* A flex item's automatic min-width is its min-content size, and for a
+     text/search <input> with no explicit `size` that floor comes from the
+     UA's default intrinsic width (Chromium: ~size=20 worth of characters,
+     well over 100px) — not the placeholder text. flex:1 alone does not
+     override this, so without this the input refuses to shrink past that
+     floor and spills out past the sidebar's right edge at narrow widths,
+     inflating document.scrollWidth even though .module-navigator itself
+     still reports the "correct" (stretched) width. This was the actual
+     390px horizontal-overflow root cause, present even before any lesson
+     exists — not a missing global overflow-x:hidden or a font-size issue. */
+  min-width: 0;
   border: 0;
   outline: none;
   background: none;
@@ -132,15 +157,6 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-}
-
-.module-navigator-row-count {
-  flex: 0 0 auto;
-  padding: 1px 6px;
-  border-radius: 999px;
-  background: color-mix(in oklch, currentColor 14%, transparent);
-  font-size: 11px;
-  font-weight: 700;
 }
 
 .module-navigator-empty {
@@ -248,13 +264,27 @@
 }
 
 @media (max-width: 900px) {
+  /* Flipping to column swaps the flex axes: align-items:flex-start (set
+     above for row mode, so the sticky sidebar doesn't stretch to the
+     document column's height) now governs the CROSS axis, which is
+     horizontal in column mode — so without an override here both direct
+     children shrink to their own content width instead of filling the
+     column, independent of flex-basis/flex-grow (that only controls the
+     main/vertical axis once stacked). This is the root cause behind S1's
+     "persists at half-width" report: a short module (all lessons
+     collapsed, or empty) made the shrink visible, but the underlying bug
+     reproduces at this breakpoint for ANY content, short or long. */
   .lesson-library-with-navigator {
     flex-direction: column;
+    align-items: stretch;
   }
   .module-navigator {
     position: static;
     flex: 1 1 auto;
     max-height: 320px;
+    width: 100%;
+  }
+  .lesson-library-with-navigator > .lesson-library-modules {
     width: 100%;
   }
 }

@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./fixtures";
 import { readFileSync } from "node:fs";
 
 import { uxCheckLessonsPath } from "../../playwright.config";
@@ -51,6 +51,29 @@ async function waitForFocusedField(
   );
 }
 
+// The Ctrl+Alt+Enter insertion palette auto-focuses its Sentence button, but
+// only once React has mounted/focused it — wait for real focus inside the
+// palette's own group rather than assuming a fixed settle time.
+async function waitForPaletteFocus(page: import("@playwright/test").Page) {
+  await page.waitForFunction(
+    () =>
+      (document.activeElement as HTMLElement | null)?.closest(
+        ".lesson-document-insert-actions",
+      ) !== null,
+  );
+}
+
+// Alt+ArrowDown focuses the selected pair's hint pill-input — wait for real
+// focus inside it before typing.
+async function waitForHintFocus(page: import("@playwright/test").Page) {
+  await page.waitForFunction(
+    () =>
+      (document.activeElement as HTMLElement | null)?.closest(
+        ".lesson-document-hint-pill-input",
+      ) !== null,
+  );
+}
+
 test("keyboard-only lesson authoring produces the expected structure", async ({
   page,
 }) => {
@@ -83,13 +106,10 @@ test("keyboard-only lesson authoring produces the expected structure", async ({
   await page.keyboard.press("Shift+Control+ArrowLeft");
   await page.keyboard.press("Control+Alt+e");
 
-  // First sentence slide: single piece. The block-type chooser needs a beat
-  // to mount and grab focus before it can react to the type-selection key.
-  const chooser = page.locator(
-    '[role="toolbar"][aria-label="Choose a slide type"]',
-  );
+  // First sentence slide: single piece. The insertion palette needs a beat
+  // to mount and auto-focus Sentence before it can react to the E/S/T key.
   await page.keyboard.press("Control+Alt+Enter");
-  await chooser.waitFor();
+  await waitForPaletteFocus(page);
   await page.keyboard.press("s");
   await waitForFocusedField(page, "spanish");
   await page.keyboard.type("voy a");
@@ -97,9 +117,9 @@ test("keyboard-only lesson authoring produces the expected structure", async ({
   await waitForFocusedField(page, "english");
   await page.keyboard.type("I am going");
 
-  // Second sentence slide: two pieces, plus a hint via Ctrl+Alt+H (no mouse).
+  // Second sentence slide: two pieces, plus a hint via Alt+ArrowDown (no mouse).
   await page.keyboard.press("Control+Alt+Enter");
-  await chooser.waitFor();
+  await waitForPaletteFocus(page);
   await page.keyboard.press("s");
   await waitForFocusedField(page, "spanish");
   await page.keyboard.type("Voy a");
@@ -112,13 +132,8 @@ test("keyboard-only lesson authoring produces the expected structure", async ({
   await page.keyboard.press("Tab");
   await waitForFocusedField(page, "english");
   await page.keyboard.type("to be able");
-  await page.keyboard.press("Control+Alt+h");
-  await page.waitForFunction(
-    () =>
-      (document.activeElement as HTMLElement | null)?.closest(
-        ".lesson-document-hint-pill.editing",
-      ) !== null,
-  );
+  await page.keyboard.press("Alt+ArrowDown");
+  await waitForHintFocus(page);
   await page.keyboard.type("stem-changing");
 
   // Concept search: infinitive form should resolve to a linked concept.
@@ -170,7 +185,7 @@ test("keyboard-only lesson authoring produces the expected structure", async ({
 
   // Clean up: delete the lesson we created so the fixture data stays clean.
   const row = page.locator(`[data-lesson-row="${created!.id}"]`);
-  await row.getByRole("button", { name: "Delete lesson" }).click();
+  await row.locator("[data-lesson-delete-trigger]").click();
   await row.getByRole("button", { name: "Delete", exact: true }).click();
   await expect(row).toHaveCount(0);
   await expect.poll(() => readLessons().lessons.length).toBe(beforeCount);

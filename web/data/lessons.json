@@ -8,14 +8,16 @@
       "lessonIds": [
         "lesson_b9c75a0c-2132-434f-b1b5-bdfcd960f941",
         "lesson_297bc8ca-6aac-4c7a-9fd1-fbf60e34f83f",
-        "lesson_6286d0a1-b814-45bf-8557-c7e15dfebd4b"
+        "lesson_6286d0a1-b814-45bf-8557-c7e15dfebd4b",
+        "lesson_4a5a5d2b-275b-4d96-9e6c-d0d765b9554e",
+        "lesson_928a7747-554d-4f17-84ed-318ca663ed41"
       ]
     },
     {
-      "id": "module_5274a691-59bb-4c07-bcd3-d6dc8e134039",
+      "id": "module_6d5cead0-46c8-4b4d-b1ae-4d2e76b01c7d",
       "name": "Module 2",
       "lessonIds": [
-        "lesson_928a7747-554d-4f17-84ed-318ca663ed41"
+        "lesson_a0db5793-42cf-4877-b9c5-481f6c410326"
       ]
     }
   ],
@@ -88,40 +90,6 @@
               "callout": null,
               "acceptedAnswers": [
                 "to do it"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "block_d97b839f-b1cc-47a8-bea9-e25d1b5e017e",
-          "type": "sentence",
-          "promptLabel": "",
-          "promptText": "",
-          "helperText": "",
-          "answerFeedback": null,
-          "languageBlocks": [
-            {
-              "id": "lang_e8051362-4a62-41c3-83f8-cea03624f320",
-              "spanish": "hablar",
-              "callout": null,
-              "acceptedAnswers": [
-                "to speak"
-              ]
-            },
-            {
-              "id": "lang_9921feb0-2ea7-4e5e-86f8-e9fee928953f",
-              "spanish": "correr",
-              "callout": null,
-              "acceptedAnswers": [
-                "to run"
-              ]
-            },
-            {
-              "id": "lang_cc176fce-a765-43ec-a733-4e1d57d7fb8c",
-              "spanish": "intentar",
-              "callout": null,
-              "acceptedAnswers": [
-                "to try"
               ]
             }
           ]
@@ -261,6 +229,22 @@
               "callout": null,
               "acceptedAnswers": [
                 "to be able"
+              ]
+            },
+            {
+              "id": "lang_90bbbffc-71ec-4e00-8eec-cebff8387fa3",
+              "spanish": "poder",
+              "callout": null,
+              "acceptedAnswers": [
+                "to be able"
+              ]
+            },
+            {
+              "id": "lang_f2b1f3cb-1f51-4183-8ed6-24e448df11fa",
+              "spanish": "hablar",
+              "callout": "asdfasfd",
+              "acceptedAnswers": [
+                "to speak"
               ]
             }
           ]
@@ -851,6 +835,54 @@
       ]
     },
     {
+      "id": "lesson_4a5a5d2b-275b-4d96-9e6c-d0d765b9554e",
+      "name": "I'm hungry",
+      "concepts": [],
+      "blocks": [
+        {
+          "id": "block_7d0ac410-c387-4185-a7f9-968700bb54fd",
+          "type": "explanation",
+          "contentMarkdown": "[[es:tengo hambre]] es [[en:I'm hungry]]"
+        },
+        {
+          "id": "block_9d105b45-63e7-4be2-924b-5cf109826bf4",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_90a30889-95ab-49f1-85cd-f8821445c6b1",
+              "spanish": "Tengo hambre.",
+              "callout": "\"Estoy hambriento\"",
+              "acceptedAnswers": [
+                "I'm hungry.",
+                "I am hungry."
+              ]
+            },
+            {
+              "id": "lang_6c928f80-bfb2-48c5-898a-d3b2e77da989",
+              "spanish": "Tengo mucha hambre.",
+              "callout": "Estoy muy hambriento.",
+              "acceptedAnswers": [
+                "I'm very hungry.",
+                "I am very hungry."
+              ]
+            },
+            {
+              "id": "lang_692c4363-26d8-4522-9ede-9751caf6cae1",
+              "spanish": "",
+              "callout": null,
+              "acceptedAnswers": [
+                ""
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "lesson_928a7747-554d-4f17-84ed-318ca663ed41",
       "name": "I want to buy it.",
       "concepts": [],
@@ -993,6 +1025,137 @@
               "callout": null,
               "acceptedAnswers": [
                 "now"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson_a0db5793-42cf-4877-b9c5-481f6c410326",
+      "name": "I want to eat.",
+      "concepts": [
+        {
+          "id": "lesson_concept_7da05753-af37-4907-b616-aaecefd57fde",
+          "conceptId": "blyn87wx6n",
+          "label": "comer [algo]"
+        },
+        {
+          "id": "lesson_concept_e903212a-9f24-4c9a-b967-4906985d2960",
+          "conceptId": "ghaurw9ils",
+          "label": "beber [algo]"
+        },
+        {
+          "id": "lesson_concept_87d890a1-6b44-4867-bcd7-180e719c3e8f",
+          "conceptId": "uidyeso1gn",
+          "label": "tomar [una bebida]"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "block_817f4356-2c6e-4c5a-a48d-e073142312ee",
+          "type": "explanation",
+          "contentMarkdown": "[[es:comer]] es [[en:to eat]]"
+        },
+        {
+          "id": "block_47ae978b-fe53-45f5-92d8-4d251f75dd15",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_426c4158-26e7-48d3-913b-44abe9088a6d",
+              "spanish": "comer",
+              "callout": null,
+              "acceptedAnswers": [
+                "to eat"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_4e6de588-6f36-4869-8824-082601a813af",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "Todo a la vez.",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_56a9839c-7d1d-4f90-9689-7ce20c362d80",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ]
+            },
+            {
+              "id": "lang_4352238e-3ceb-4b6e-b966-4ca01abcf8ef",
+              "spanish": "comer",
+              "callout": null,
+              "acceptedAnswers": [
+                "to eat"
+              ]
+            },
+            {
+              "id": "lang_27f9dfd2-a336-475e-94d2-1b407a989533",
+              "spanish": "algo",
+              "callout": null,
+              "acceptedAnswers": [
+                "something"
+              ]
+            },
+            {
+              "id": "lang_fdca3d15-390f-4b40-9cd5-1201b86978ee",
+              "spanish": "ahora.",
+              "callout": null,
+              "acceptedAnswers": [
+                "now."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_39017260-02cd-460e-b991-f6da30354941",
+          "type": "sentence",
+          "layout": "vocabulary_table",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_086e166f-7393-4667-8eb7-ac5086f202b5",
+              "spanish": "comer",
+              "callout": null,
+              "acceptedAnswers": [
+                "to eat"
+              ]
+            },
+            {
+              "id": "lang_c62094eb-2220-462e-9f14-c156e579d370",
+              "spanish": "beber / tomar",
+              "callout": null,
+              "acceptedAnswers": [
+                "to drink"
+              ]
+            },
+            {
+              "id": "lang_7cdf8f06-6213-4422-9fb0-12e9dfb2c073",
+              "spanish": "almorzar",
+              "callout": null,
+              "acceptedAnswers": [
+                "to have lunch"
+              ]
+            },
+            {
+              "id": "lang_9e105e23-541d-41a2-8321-3c0a570783e7",
+              "spanish": "desayunar",
+              "callout": null,
+              "acceptedAnswers": [
+                "to have breakfast"
               ]
             }
           ]

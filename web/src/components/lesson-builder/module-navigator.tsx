@@ -345,10 +345,29 @@ export function ModuleNavigator({
                 type="button"
                 className="module-navigator-row-drag"
                 draggable
-                aria-label={`Drag to reorder ${module.name?.trim() || "module"}`}
-                title="Drag to reorder"
+                aria-label={`Drag to reorder ${module.name?.trim() || "module"}, or press Alt+ArrowUp / Alt+ArrowDown to move it`}
+                title="Drag to reorder (Alt+↑ / Alt+↓)"
                 onDragStart={(event) => startDrag(event, module.id)}
                 onDragEnd={() => setDraggedModuleId(null)}
+                onKeyDown={(event) => {
+                  if (!event.altKey) return;
+                  const index = modules.indexOf(module);
+                  if (event.key === "ArrowUp" && index > 0) {
+                    event.preventDefault();
+                    // Same-node reorder, not focus-follows-selection: React
+                    // keys this <li> by module.id, so after the array
+                    // reorders it's the same DOM button that moves — focus
+                    // stays put with no extra bookkeeping, letting repeated
+                    // presses keep walking the list.
+                    onReorderModule(module.id, modules[index - 1].id);
+                  } else if (
+                    event.key === "ArrowDown" &&
+                    index < modules.length - 1
+                  ) {
+                    event.preventDefault();
+                    onReorderModule(modules[index + 1].id, module.id);
+                  }
+                }}
               >
                 <GripVertical size={13} aria-hidden="true" />
               </button>
@@ -362,9 +381,6 @@ export function ModuleNavigator({
               >
                 <span className="module-navigator-row-name">
                   {module.name?.trim() || "Untitled module"}
-                </span>
-                <span className="module-navigator-row-count">
-                  {module.lessonIds.length}
                 </span>
                 {module.id === activeModuleId && (
                   <ChevronRight size={14} aria-hidden="true" />

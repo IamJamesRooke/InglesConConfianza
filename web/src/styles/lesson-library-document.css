@@ -88,6 +88,7 @@
 }
 .lesson-library-modules {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 16px;
 }
 .lesson-library-module {
@@ -245,10 +246,11 @@
   top: -9px;
   left: 50%;
   z-index: 4;
-  display: grid;
-  width: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   height: 18px;
-  place-items: center;
+  padding: 0 5px;
   border: 1px solid var(--border);
   border-radius: 999px;
   background: var(--card);
@@ -258,6 +260,24 @@
 .lesson-library-insert > button:hover {
   background: var(--muted);
   color: var(--foreground);
+}
+/* Collapsed to the icon's own width at rest (no reserved space for the
+   text); the wrapper itself is only visible on hover/focus already, so this
+   is purely about the label not popping in with a hard display toggle. */
+.lesson-library-insert-label {
+  overflow: hidden;
+  max-width: 0;
+  opacity: 0;
+  font-size: 10px;
+  font-weight: 650;
+  white-space: nowrap;
+  transition: max-width 0.14s ease, opacity 0.14s ease;
+}
+.lesson-library-insert:hover .lesson-library-insert-label,
+.lesson-library-insert:focus-within .lesson-library-insert-label,
+.lesson-library-insert > button:focus-visible .lesson-library-insert-label {
+  max-width: 80px;
+  opacity: 1;
 }
 .lesson-library-open {
   display: grid;
@@ -569,9 +589,6 @@
   background: var(--card);
   padding: 14px 26px 18px 67px;
 }
-.lesson-document > div:first-child {
-  margin-bottom: 12px;
-}
 .lesson-document-body {
   position: relative;
   max-width: 850px;
@@ -734,6 +751,7 @@
    together as a unit — the hint stays visually with its pair instead of
    collecting in one strip disconnected from which pair it belongs to. */
 .lesson-document-pair {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -832,16 +850,14 @@
 .lesson-builder-page {
   background: var(--muted);
 }
-/* Room to scroll the last lesson clear of the fixed editing HUD / help FAB. */
+/* Children must shrink with the document viewport, not impose their intrinsic
+   input widths on the grid track. The old fixed HUD/FAB no longer needs a
+   reserved blank scroll region below the last lesson. */
 .lesson-library {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 12px;
-  padding-bottom: 110px;
-}
-@media (max-width: 900px) {
-  .lesson-library {
-    padding-bottom: 150px;
-  }
+  padding-bottom: 16px;
 }
 .lesson-library-utility {
   display: flex;
@@ -986,39 +1002,6 @@
   background: var(--muted);
   color: var(--foreground);
 }
-.lesson-library-help-fab {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  z-index: 40;
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  height: 38px;
-  padding: 0 12px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: var(--background);
-  color: var(--muted-foreground);
-  box-shadow: 0 6px 20px color-mix(in oklch, var(--foreground) 16%, transparent);
-}
-.lesson-library-help-fab kbd {
-  min-width: 17px;
-  padding: 1px 5px;
-  border-radius: 4px;
-  background: var(--muted);
-  box-shadow: inset 0 0 0 1px var(--border);
-  color: var(--foreground);
-  font:
-    650 10px ui-monospace,
-    monospace;
-  text-align: center;
-}
-.lesson-library-help-fab:hover,
-.lesson-library-help-fab:focus-visible {
-  color: var(--foreground);
-  border-color: var(--muted-foreground);
-}
 .lesson-library-help {
   width: min(720px, calc(100vw - 32px));
   max-height: min(650px, calc(100vh - 48px));
@@ -1088,56 +1071,6 @@
   color: var(--muted-foreground);
   font-size: 11px;
   font-weight: 500;
-}
-
-.lesson-kbd-map {
-  display: grid;
-  gap: 4px;
-  margin: 16px 20px 6px;
-  padding: 12px 12px 10px;
-  border-radius: 8px;
-  background: var(--muted);
-  box-shadow: inset 0 0 0 1px var(--border);
-}
-.lesson-kbd-row {
-  display: flex;
-  gap: 4px;
-}
-.lesson-kbd-key {
-  display: flex;
-  flex: 1 1 0;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1px;
-  min-width: 0;
-  min-height: 34px;
-  padding: 3px 2px;
-  border-radius: 5px;
-  background: var(--card);
-  box-shadow:
-    0 1px 0 var(--border),
-    inset 0 0 0 1px var(--border);
-  color: color-mix(in oklch, var(--muted-foreground) 78%, transparent);
-}
-.lesson-kbd-cap {
-  font:
-    650 10px ui-monospace,
-    monospace;
-  white-space: nowrap;
-}
-.lesson-kbd-key.is-active {
-  background: color-mix(in oklch, var(--primary) 12%, var(--card));
-  box-shadow:
-    0 1px 0 color-mix(in oklch, var(--primary) 35%, var(--border)),
-    inset 0 0 0 1px color-mix(in oklch, var(--primary) 40%, transparent);
-  color: var(--primary);
-}
-.lesson-kbd-act {
-  font-size: 8px;
-  font-weight: 650;
-  line-height: 1.1;
-  text-align: center;
 }
 
 .lesson-library-help dl {
@@ -1218,7 +1151,7 @@
 .lesson-library-module-meta {
   display: grid;
   gap: 5px;
-  padding: 13px 16px 12px;
+  padding: 8px 16px;
   border-bottom: 2px solid var(--primary);
   background: color-mix(in oklch, var(--primary) 16%, var(--muted));
 }
@@ -1523,14 +1456,16 @@
   font-size: 11px;
   font-weight: 650;
 }
-/* Sits directly under the last lesson row, inside the module card. */
+/* Now a sibling of the module card, not a child — a compact, left-aligned
+   text+icon action with a modest gap from the card above it, not a
+   full-width boxed footer bar. */
 .lesson-library-add-lesson {
-  width: 100%;
-  min-height: 34px;
-  padding: 0 16px;
+  width: fit-content;
+  margin: 8px 0 0;
+  padding: 4px 2px;
+  border-radius: 5px;
 }
 .lesson-library-add-lesson:hover {
-  background: color-mix(in oklch, var(--primary) 6%, transparent);
   color: var(--primary);
 }
 /* Adds a whole new module card — a dashed placeholder the width of the column. */
@@ -1679,9 +1614,10 @@
 .lesson-document-body {
   max-width: 880px;
 }
-/* "Covers" sits at the end of the document, just above the add-slide bar. */
+/* "Covers" sits at the very end of the document, after the last slide and
+   its tail insertion control. */
 .lesson-document-tags {
-  margin: 0 0 10px;
+  margin: 4px 0 0;
 }
 
 .lesson-document-block {
@@ -1697,48 +1633,10 @@
     transform 0.12s ease,
     box-shadow 0.12s ease;
 }
-/* Lift the block being pointed at — or worked in — so it's unmistakable which
-   one has focus. No colour change: just a pop off the page. */
-.lesson-document-block:hover,
-.lesson-document-block:focus-within {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px color-mix(in oklch, var(--foreground) 12%, transparent);
-}
 @media (prefers-reduced-motion: reduce) {
   .lesson-document-block {
     transition: none;
   }
-  .lesson-document-block:hover,
-  .lesson-document-block:focus-within {
-    transform: none;
-  }
-}
-/* Explanation blocks already sit on a grey box — on lift, spread that grey to
-   fill the whole block so the raised card reads as one surface. */
-.lesson-document-block:has(.lesson-document-explanation):hover,
-.lesson-document-block:has(.lesson-document-explanation):focus-within {
-  background: var(--muted);
-}
-.lesson-document-block:has(.lesson-document-explanation):hover
-  .lesson-document-explanation,
-.lesson-document-block:has(.lesson-document-explanation):focus-within
-  .lesson-document-explanation {
-  border-color: transparent;
-  background: transparent;
-}
-/* While the pointer is over one block, only that block stays lifted — a block
-   that merely holds focus drops back so two never look active at once. */
-.lesson-document-body:has(.lesson-document-block:hover)
-  .lesson-document-block:focus-within:not(:hover) {
-  transform: none;
-  box-shadow: none;
-  background: transparent;
-}
-.lesson-document-body:has(.lesson-document-block:hover)
-  .lesson-document-block:focus-within:not(:hover)
-  .lesson-document-explanation {
-  border-color: var(--border);
-  background: var(--muted);
 }
 /* No extra hairline "thread" between blocks any more — the insert control
    sitting right there already marks the boundary, so a second divider line
@@ -1785,10 +1683,7 @@
 .lesson-document-explanation
   .authoring-wysiwyg-explanation:has(.practice-markdown-content:empty)::before {
   text-align: left;
-  font-size: 14px;
-  font-weight: 450;
   font-style: normal;
-  line-height: 1.58;
 }
 .lesson-document-explanation .practice-markdown-content {
   text-align: left !important;
@@ -1796,30 +1691,24 @@
 .lesson-document-explanation .practice-markdown-content > * {
   margin-block: 0 3px !important;
 }
-.lesson-document-explanation .practice-markdown-content :is(p, li, h1, h2, h3) {
+.lesson-document-explanation .practice-markdown-content :is(p, li) {
   color: var(--foreground);
-  font-size: 14px !important;
-  font-weight: 450 !important;
-  line-height: 1.58 !important;
   letter-spacing: 0 !important;
 }
 .lesson-document-explanation .practice-markdown-content :is(ol, ul) {
-  font-size: 14px !important;
-  font-weight: 450 !important;
-  line-height: 1.58 !important;
   text-align: left;
 }
 .lesson-document-explanation mark[data-language="es"] {
   padding: 0;
   background: transparent;
   color: var(--lesson-hl-es);
-  font-weight: 700;
+  font-weight: 600;
 }
 .lesson-document-explanation mark[data-language="en"] {
   padding: 0;
   background: transparent;
   color: var(--lesson-hl-en);
-  font-weight: 700;
+  font-weight: 400;
 }
 .lesson-document-sentence-guide {
   margin: 2px 5px 4px 0;
@@ -1916,6 +1805,28 @@
   color: var(--primary);
   outline: none;
 }
+/* Key badges and the Esc cue render only when the palette was opened by
+   keyboard (Ctrl+Alt+Enter) — an ordinary hover reveal never sets
+   `focusPalette`, so it never prints these. */
+.lesson-document-insert-key {
+  padding: 0 3px;
+  border: 1px solid color-mix(in oklch, var(--muted-foreground) 45%, transparent);
+  border-radius: 3px;
+  color: var(--muted-foreground);
+  font: 650 9px ui-monospace, monospace;
+  line-height: 1.4;
+}
+.lesson-document-insert-actions button:hover .lesson-document-insert-key,
+.lesson-document-insert-actions button:focus-visible .lesson-document-insert-key {
+  border-color: color-mix(in oklch, var(--primary) 55%, transparent);
+  color: var(--primary);
+}
+.lesson-document-insert-actions > .lesson-document-insert-escape {
+  margin-left: 2px;
+  color: var(--muted-foreground);
+  font-size: 10px;
+  font-weight: 500;
+}
 @media (hover: none), (pointer: coarse) {
   .lesson-document-insert {
     height: 26px;
@@ -1929,6 +1840,11 @@
 }
 .lesson-document-sentence {
   padding-block: 0;
+}
+/* Small, fixed starting gap after a vocabulary table — not the blanket
+   16-20px every slide used to carry regardless of content. */
+.lesson-document-sentence.vocab-table {
+  margin-bottom: 8px;
 }
 /* At rest the block is just its content. The "add another blank" stub only
    appears while a field in this sentence is actually focused (mid-editing,
@@ -1996,24 +1912,19 @@
   color: var(--foreground);
   font-weight: 750;
 }
-/* The vocabulary table is one modest-width aligned structure — a single
-   bordered box with subtle row separators — not a stack of individually
-   rounded, separately-bordered cards. Row/card chrome (border, radius,
-   background) moves here, onto the shared container; each row keeps only
-   a thin bottom rule. */
+/* The vocabulary table is one modest-width aligned structure — content-sized,
+   with faint neutral row separators, not a bordered/rounded card. */
 .lesson-document-sentence.vocab-table .lesson-document-pieces {
   width: max-content;
-  max-width: 460px;
+  max-width: min(460px, 100%);
   gap: 0;
-  padding: 2px 0;
-  border: 1px solid color-mix(in oklch, var(--primary) 18%, var(--border));
-  border-radius: 8px;
-  background: color-mix(in oklch, var(--background) 38%, var(--surface-writing));
 }
 .lesson-document-sentence.vocab-table .lesson-document-piece {
   position: relative;
   width: 100%;
-  grid-template-columns: minmax(84px, max-content) 1fr;
+  /* Every row uses the same column split; intrinsic sizing per row made
+     the English column wander when Spanish phrases had different lengths. */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0 18px;
   padding: 4px 26px 4px 10px;
   border: 0;
@@ -2039,56 +1950,10 @@
    row is shorter, so top:2px already clears the row's own padding without
    a table-specific position. */
 
-.lesson-document-tail {
-  margin-top: 12px;
-  padding-top: 8px;
-  border-top: 1px solid var(--border);
-}
-
-/* Editing HUD — context-sensitive shortcut/action bar, fixed to the bottom. */
-/* Bottom status bar: context shortcuts on the left, persistent actions on the
-   right, one row. */
-/* Small context-hint box, stacked just above the keyboard-help button. */
-.editing-hud {
-  position: fixed;
-  right: 20px;
-  bottom: 66px;
-  z-index: 46;
-  display: grid;
-  gap: 2px;
-  max-width: min(440px, calc(100vw - 40px));
-  padding: 8px 12px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: var(--card);
-  box-shadow: 0 10px 30px
-    color-mix(in oklch, var(--foreground) 16%, transparent);
-  font-size: 11px;
-  text-align: right;
-}
-.editing-hud-row {
-  color: var(--muted-foreground);
-  line-height: 1.5;
-}
-.editing-hud kbd {
-  min-width: 13px;
-  padding: 1px 4px;
-  border-radius: 4px;
-  background: color-mix(in oklch, var(--foreground) 12%, transparent);
-  color: var(--foreground);
-  font:
-    650 9.5px ui-monospace,
-    monospace;
-  text-align: center;
-}
-@media (max-width: 820px) {
-  .editing-hud {
-    left: 8px;
-    right: 8px;
-    max-width: none;
-    text-align: left;
-  }
-}
+/* No border-top/extra margin here any more — the tail's SlideInsertControl
+   is the same component used between slides and already supplies its own
+   hover-revealed line; a static divider on top of it was a second, always-
+   visible line stacked above the hover-only one. */
 
 /* One consistent pill for concept chips, the "add concept" field, and the
    Add-slide bar buttons. */
@@ -2158,15 +2023,15 @@
   background: color-mix(in oklch, currentColor 15%, transparent);
 }
 
-/* Curriculum priority tier (lesson "Covers"), via the shared role-* vars. */
+/* Curriculum priority tier (lesson "Covers"): a quiet neutral chip with a
+   thin left accent in the role color, not a full-perimeter colored badge —
+   the tier stays legible without shouting over the sentence content. */
 .lesson-concept-chip[class*="role-"] {
-  border-color: var(--role-border, var(--border));
-  background: color-mix(
-    in oklch,
-    var(--role-background, var(--card)) 55%,
-    var(--card)
-  );
-  color: var(--role-foreground, var(--foreground));
+  padding-left: 6px;
+  border-color: var(--border);
+  border-left: 3px solid var(--role-border, var(--border));
+  background: var(--card);
+  color: var(--foreground);
 }
 
 /* Coverage state (module concepts). */
@@ -2236,61 +2101,44 @@
    writing sheet quiet. These selectors intentionally live after the older
    compact-document layer so the semantic theme is not diluted by its pale
    color-mixes. */
-.lesson-builder-page {
-  background:
-    radial-gradient(
-      circle at 8% 0%,
-      color-mix(in oklch, var(--accent) 13%, transparent),
-      transparent 24rem
-    ),
-    linear-gradient(
-      180deg,
-      color-mix(in oklch, var(--primary) 8%, var(--background)),
-      var(--background) 24rem
-    );
-}
-
 .lesson-library-utility {
   min-height: 48px;
   padding: 7px 12px;
-  border: 0;
+  border: 1px solid var(--border);
   border-radius: 12px;
-  color: var(--primary-foreground);
-  background: var(--primary);
-  box-shadow: 0 7px 18px color-mix(in oklch, var(--primary) 24%, transparent);
+  color: var(--foreground);
+  background: var(--card);
 }
 .lesson-library-save,
 .lesson-library-utility .lesson-library-counts {
-  color: var(--primary-foreground);
+  color: var(--foreground);
   font-size: 13px;
   font-weight: 750;
 }
 .lesson-library-history button,
 .lesson-library-jump > button {
-  color: color-mix(in oklch, var(--primary-foreground) 82%, transparent);
+  color: var(--muted-foreground);
 }
 .lesson-library-history button:hover:not(:disabled),
 .lesson-library-jump > button:hover,
 .lesson-library-jump > button[aria-expanded="true"] {
-  color: var(--primary-foreground);
-  background: color-mix(in oklch, var(--primary-foreground) 18%, transparent);
+  color: var(--foreground);
+  background: var(--muted);
 }
 
 .lesson-library-module {
   border: 1px solid color-mix(in oklch, var(--primary) 30%, var(--border));
   border-radius: 14px;
   background: var(--surface-writing);
-  box-shadow: 0 10px 28px color-mix(in oklch, var(--ink-deep) 11%, transparent);
 }
 .lesson-library-module-meta {
-  padding-block: 15px 14px;
   border-bottom: 0;
   border-radius: 13px 13px 0 0;
   background: var(--brand-primary-hover);
 }
 .lesson-library-module-title {
   color: var(--primary-foreground);
-  font-size: 19px;
+  font-size: 20px;
 }
 .lesson-library-module-line > span,
 .lesson-library-module-meta .lesson-library-collapse,
@@ -2324,7 +2172,6 @@
 }
 
 .lesson-library-row-head {
-  min-height: 52px;
   background: color-mix(
     in oklch,
     var(--background) 48%,
@@ -2335,9 +2182,7 @@
   background: color-mix(in oklch, var(--primary) 8%, var(--surface-writing));
 }
 .lesson-library-title-input {
-  min-height: 34px;
   padding-inline: 7px;
-  font-size: 15px;
 }
 .lesson-library-title-input:focus {
   background: var(--surface-writing);
@@ -2374,7 +2219,7 @@
   right: 4px;
   z-index: 3;
   display: flex;
-  gap: 2px;
+  gap: 4px;
   opacity: 0;
 }
 .lesson-document-block:hover > .lesson-document-block-actions,
@@ -2430,10 +2275,17 @@
    larger one took visibly more height per line. */
 .lesson-document-explanation
   .authoring-wysiwyg-explanation:has(.practice-markdown-content:empty)::before,
-.lesson-document-explanation .practice-markdown-content :is(p, li, h1, h2, h3),
-.lesson-document-explanation .practice-markdown-content :is(ol, ul) {
-  font-size: 14px !important;
-  line-height: 1.45 !important;
+.lesson-document-explanation .practice-markdown-content :is(p, li, ol, ul) {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+}
+/* Modestly heavier than body text, not the bold weight this used to share
+   with paragraphs — headings still read as headings inside an explanation. */
+.lesson-document-explanation .practice-markdown-content :is(h1, h2, h3) {
+  font-size: 16px !important;
+  font-weight: 650 !important;
+  line-height: 1.5 !important;
 }
 .lesson-sentence-presentation {
   padding: 0 5px;
@@ -2450,16 +2302,18 @@
 }
 .lesson-sentence-composed {
   margin: 0;
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: 400;
   line-height: 1.2;
   overflow-wrap: anywhere;
 }
 .lesson-sentence-composed[lang="es"] {
   color: var(--lesson-hl-es);
-  font-weight: 750;
+  font-weight: 600;
 }
 .lesson-sentence-composed[lang="en"] {
   color: var(--lesson-hl-en);
+  font-weight: 400;
 }
 .lesson-sentence-phrase {
   white-space: normal;
@@ -2534,22 +2388,6 @@
   background: var(--surface-writing);
   box-shadow: 0 0 0 3px color-mix(in oklch, var(--primary) 24%, transparent);
 }
-.lesson-library-add-lesson {
-  width: fit-content;
-  min-height: 42px;
-  margin: 9px 16px;
-  padding-inline: 13px;
-  border: 1px solid var(--primary);
-  border-radius: 8px;
-  color: var(--primary);
-  background: var(--surface-writing);
-  font-size: 12px;
-  font-weight: 750;
-}
-.lesson-library-add-lesson:hover {
-  color: var(--primary-foreground);
-  background: var(--primary);
-}
 .lesson-library-add-module {
   min-height: 46px;
   border: 2px solid var(--primary);
@@ -2563,74 +2401,23 @@
   color: var(--primary-foreground);
   background: var(--brand-primary-hover);
 }
-.lesson-library-help-fab {
-  min-height: 44px;
-  border-color: color-mix(in oklch, var(--hint) 70%, var(--ink-deep));
-  color: var(--hint-foreground);
-  background: var(--hint);
-  box-shadow: 0 7px 20px color-mix(in oklch, var(--hint) 30%, transparent);
-}
-.lesson-library-help-fab:hover,
-.lesson-library-help-fab:focus-visible {
-  border-color: var(--ink-deep);
-  color: var(--hint-foreground);
-  background: color-mix(in oklch, var(--hint) 88%, white);
-}
-.lesson-library-help-fab kbd {
-  color: var(--hint-foreground);
-  background: color-mix(in oklch, var(--hint-foreground) 12%, transparent);
-  box-shadow: inset 0 0 0 1px
-    color-mix(in oklch, var(--hint-foreground) 35%, transparent);
-}
-.editing-hud {
-  border-color: var(--ink-deep);
-  color: var(--primary-foreground);
-  background: var(--ink-deep);
-}
-.editing-hud-row {
-  color: color-mix(in oklch, var(--primary-foreground) 82%, transparent);
-}
-.editing-hud kbd {
-  color: var(--ink-deep);
-  background: var(--hint);
-}
 
-/* One quiet "Spanish / English" key per sentence group instead of repeating
-   the pair on every single phrase card — plain, sentence-case, and neutral
-   (not colored/uppercase) since the cards' own red/blue ink already carries
-   that distinction; this key only needs to teach the pattern once. For a
-   sentence group the two fields stack vertically inside every card, so the
-   key sits beside the row of cards as a matching two-line stack (labels
-   aria-hidden — each field keeps its own distinct aria-label/lang
-   regardless of this label, so the association survives wrapping). The
-   vocabulary table really does have two side-by-side columns, so there the
-   key stays above, horizontal, sized to the table's own column widths. */
+/* No visible "Spanish / English" column key any more — the cards' own
+   red/blue ink already carries that distinction, and each field keeps its
+   own accessible name (aria-label/lang) regardless. */
 .lesson-document-sentence-body {
   display: flex;
   align-items: flex-start;
   gap: 10px;
 }
+/* Centered as a content-sized block (align-items: center on a full-width
+   column centers the max-content pieces list without stretching it into a
+   left-hung table), superseding the previous left alignment. */
 .lesson-document-sentence-body.vocab-table {
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 4px;
-  width: fit-content;
-}
-.lesson-document-language-key {
-  display: grid;
-  flex: none;
-  gap: 2px;
-  padding-top: 4px;
-  color: var(--muted-foreground);
-  font-size: 10px;
-  font-weight: 650;
-}
-.lesson-document-language-key.vocab-table {
-  width: max-content;
-  max-width: 460px;
-  grid-template-columns: minmax(84px, max-content) 1fr;
-  gap: 0 18px;
-  padding: 0 10px;
+  width: 100%;
 }
 
 .lesson-document-language-field {
@@ -2661,7 +2448,8 @@
   outline: none;
   background: transparent;
   font: inherit;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 400;
   line-height: 1.2;
   resize: none;
   field-sizing: content;
@@ -2670,10 +2458,11 @@
 }
 .lesson-document-language-field[data-language="es"] > textarea {
   color: var(--lesson-hl-es);
-  font-weight: 750;
+  font-weight: 600;
 }
 .lesson-document-language-field[data-language="en"] > textarea {
   color: var(--lesson-hl-en);
+  font-weight: 400;
 }
 /* A neutral, un-tinted placeholder — otherwise it inherits this field's own
    red/blue ink color at reduced opacity, reading as authored (if muted)
@@ -2718,76 +2507,105 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   color: var(--hint-foreground);
-  background: var(--hint);
+  background: var(--state-help-soft);
   font-size: 11px;
   font-weight: 700;
   text-align: left;
 }
-.lesson-document-hint-pill:hover {
-  background: color-mix(in oklch, var(--hint) 85%, var(--foreground));
-}
-.lesson-document-hint-pill:focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 1px;
-}
-.lesson-document-hint-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-  margin-top: 6px;
-}
-.lesson-document-hint-list .lesson-document-hint-pill span {
-  font-weight: 800;
-}
-.lesson-document-context-editor {
-  display: flex;
-  width: min(100%, 620px);
-  align-items: center;
-  gap: 6px;
-  margin-top: 7px;
-  padding: 7px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--surface-writing);
-  flex-wrap: wrap;
+/* A direct pill-shaped hint input beside the selected pair/row instead of a
+   click-to-open dialog — same rounded/yellow language as the rest-state
+   hint pill, sized to content so it never stretches the Spanish/English
+   fields it sits outside of. Shared by both table rows and sentence pairs.
+   Pale yellow at rest (not gray) so an empty, freshly-selected hint reads
+   the same as an authored one, just waiting for text. */
+/* `width: auto` here (not a fixed ch value) is load-bearing: an explicit
+   width defeats `field-sizing: content`'s intrinsic sizing, which is what
+   was clipping longer authored hints ("Estoy hambriento" rendering as only
+   "Estoy h" — exactly the old fixed 8ch). min-width keeps a sane click
+   target for an empty/short hint; max-width caps growth so a long hint
+   never stretches into the Spanish/English columns, with a responsive
+   ceiling for narrow viewports. Native input scrolling keeps the caret
+   visible once content exceeds max-width. */
+.lesson-document-hint-pill-input {
+  width: auto;
+  min-width: 8ch;
+  max-width: min(220px, 60vw);
+  field-sizing: content;
+  padding: 2px 10px;
+  border: 1px solid color-mix(in oklch, var(--hint) 55%, transparent);
+  border-radius: 999px;
+  background: var(--state-help-soft);
+  color: var(--hint-foreground);
   font-size: 11px;
+  font-weight: 650;
 }
-.lesson-document-context-editor > label,
-.lesson-document-context-editor > span {
+.lesson-document-hint-pill-input::placeholder {
+  color: color-mix(in oklch, var(--hint-foreground) 55%, transparent);
+  font-weight: 500;
+}
+.lesson-document-hint-pill-input:focus {
+  outline: none;
+  border-color: var(--hint);
+  background: color-mix(in oklch, var(--hint) 16%, var(--state-help-soft));
+}
+/* Small X attached to the pair's own corner, outside the Spanish/English
+   text — replaces the old detached toolbar trash button. Zero reserved
+   space at rest (absolutely positioned, opacity 0); appears on hover or
+   keyboard focus of the pair, or unconditionally on touch/coarse pointers
+   where there's no hover to reveal it. Distinct in scale/placement from the
+   whole-slide trash icon in the block's own corner cluster. */
+.lesson-document-pair-delete {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  z-index: 2;
+  display: grid;
+  width: 16px;
+  height: 16px;
+  place-items: center;
+  border-radius: 999px;
+  box-shadow: 0 0 0 1px var(--border);
   color: var(--muted-foreground);
-  font-weight: 700;
+  background: var(--card);
+  opacity: 0;
 }
-.lesson-document-context-editor input {
-  min-width: 12rem;
-  min-height: 28px;
-  flex: 1;
-  padding-inline: 7px;
-  border: 1px solid var(--border);
-  border-radius: 5px;
-  background: var(--background);
-  color: var(--foreground);
+.lesson-document-pair:hover > .lesson-document-pair-delete,
+.lesson-document-pair:focus-within > .lesson-document-pair-delete,
+.lesson-document-pair-delete:focus-visible {
+  opacity: 1;
 }
-.lesson-document-context-editor button {
-  min-height: 26px;
-  padding-inline: 7px;
-  border-radius: 5px;
-  color: var(--muted-foreground);
-  font-weight: 700;
+.lesson-document-pair-delete:hover,
+.lesson-document-pair-delete:focus-visible {
+  box-shadow: none;
+  outline: 2px solid var(--destructive);
+  outline-offset: 1px;
+  color: var(--destructive-foreground);
+  background: var(--destructive);
 }
-.lesson-document-context-editor button:hover {
-  background: var(--muted);
-  color: var(--foreground);
+@media (hover: none), (pointer: coarse) {
+  .lesson-document-pair-delete {
+    opacity: 1;
+  }
 }
-.lesson-document-context-editor button.danger:hover {
-  color: var(--destructive);
+.lesson-document-sentence.vocab-table .lesson-document-pair {
+  position: relative;
 }
-.lesson-document-alternative {
-  display: flex;
-  min-width: min(100%, 20rem);
-  flex: 1;
-  gap: 3px;
+.lesson-document-sentence.vocab-table .lesson-document-pair > .lesson-document-hint-pill,
+.lesson-document-sentence.vocab-table .lesson-document-pair > .lesson-document-hint-pill-input {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  margin-left: 10px;
+  transform: translateY(-50%);
 }
-
+@media (max-width: 700px) {
+  .lesson-document-sentence.vocab-table .lesson-document-pair > .lesson-document-hint-pill,
+  .lesson-document-sentence.vocab-table .lesson-document-pair > .lesson-document-hint-pill-input {
+    position: static;
+    margin: 2px 0 0;
+    transform: none;
+  }
+}
 /* A short, quiet text action — no dashed box, no verbose label — that sits
    beside the last pair as a flex item alongside the cards (not a block
    sibling below them), so it drops to its own line only when there's
