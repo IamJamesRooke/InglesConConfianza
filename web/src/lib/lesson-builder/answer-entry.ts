@@ -2,8 +2,7 @@
  * Pure helpers for the sentence editor's single-field English-alternatives
  * entry (`formatAnswerEntry` for display, `parseAnswerEntry` for commit).
  * No React, no DOM, no lesson-store coupling — see
- * docs/design/sentence-editor-workflow-contract.md for the authoring
- * contract this implements.
+ * docs/design/lesson-builder.md for the authoring contract this implements.
  *
  * Delimiter: the canonical, authored-facing separator is ` / ` (slash with
  * surrounding spaces). A bare, unescaped `;` is ALSO accepted as a split

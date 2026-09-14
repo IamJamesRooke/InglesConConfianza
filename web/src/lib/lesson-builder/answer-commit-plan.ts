@@ -5,7 +5,7 @@
  * calls (update/append/remove by index) needed to reconcile them — so an
  * unedited field produces zero operations (no history noise, no eager
  * rewriting), and a shrink/grow only touches the indices that actually
- * changed. See docs/design/sentence-editor-workflow-contract.md.
+ * changed. See docs/design/lesson-builder.md.
  */
 
 export type AnswerCommitOp =

@@ -12,6 +12,7 @@ import {
 import type { DocumentBlockType } from "@/components/lesson-builder/lesson-document";
 import { LessonLibrary } from "@/components/lesson-builder/lesson-library";
 import { LessonSelector } from "@/components/practice/lesson-selector";
+import type { LessonBuilderActions } from "@/lib/lesson-builder/builder-context";
 import {
   initialUndoableLessons,
   undoableLessonsReducer,
@@ -19,7 +20,6 @@ import {
 import type {
   LanguageBlock,
   LessonBlock,
-  LessonConcept,
   LessonModule,
 } from "@/lib/lesson-builder/types";
 import { useLessonPersistence } from "@/lib/lesson-builder/use-lesson-persistence";
@@ -135,41 +135,54 @@ export default function LessonBuilderPage() {
     setModules(next);
   }
 
-  function createLesson(moduleId: string) {
-    const lessonId = createId("lesson");
-    dispatch({ type: "CREATE_LESSON", lessonId });
-    updateModules(
-      modules.map((module) =>
-        module.id === moduleId
-          ? { ...module, lessonIds: [...module.lessonIds, lessonId] }
-          : module,
-      ),
-    );
-    return lessonId;
-  }
+  const createLesson = useCallback(
+    (moduleId: string) => {
+      const lessonId = createId("lesson");
+      dispatch({ type: "CREATE_LESSON", lessonId });
+      updateModules(
+        modules.map((module) =>
+          module.id === moduleId
+            ? { ...module, lessonIds: [...module.lessonIds, lessonId] }
+            : module,
+        ),
+      );
+      return lessonId;
+    },
+    [modules],
+  );
 
-  function duplicateLesson(lessonId: string) {
-    const duplicateId = createId("lesson");
-    dispatch({ type: "DUPLICATE_LESSON", lessonId, duplicateId });
-    updateModules(
-      modules.map((module) => {
-        const index = module.lessonIds.indexOf(lessonId);
-        return index < 0
-          ? module
-          : {
-              ...module,
-              lessonIds: module.lessonIds.toSpliced(index + 1, 0, duplicateId),
-            };
-      }),
-    );
-  }
+  const duplicateLesson = useCallback(
+    (lessonId: string) => {
+      const duplicateId = createId("lesson");
+      dispatch({ type: "DUPLICATE_LESSON", lessonId, duplicateId });
+      updateModules(
+        modules.map((module) => {
+          const index = module.lessonIds.indexOf(lessonId);
+          return index < 0
+            ? module
+            : {
+                ...module,
+                lessonIds: module.lessonIds.toSpliced(
+                  index + 1,
+                  0,
+                  duplicateId,
+                ),
+              };
+        }),
+      );
+    },
+    [modules],
+  );
 
-  async function deleteLesson(lessonId: string) {
-    const result = await deletePersistedLesson(lessonId);
-    if (!result) return;
-    dispatch({ type: "DELETE_LESSON", lessonId });
-    updateModules(result.modules);
-  }
+  const deleteLesson = useCallback(
+    async (lessonId: string) => {
+      const result = await deletePersistedLesson(lessonId);
+      if (!result) return;
+      dispatch({ type: "DELETE_LESSON", lessonId });
+      updateModules(result.modules);
+    },
+    [deletePersistedLesson],
+  );
 
   function addModule() {
     updateModules([
@@ -220,30 +233,6 @@ export default function LessonBuilderPage() {
     updateModules(without.toSpliced(targetIndex, 0, dragged));
   }
 
-  function moveLessonWithinModule(
-    moduleId: string,
-    index: number,
-    direction: -1 | 1,
-  ) {
-    const target = index + direction;
-    updateModules(
-      modules.map((module) => {
-        if (
-          module.id !== moduleId ||
-          target < 0 ||
-          target >= module.lessonIds.length
-        )
-          return module;
-        const lessonIds = [...module.lessonIds];
-        [lessonIds[index], lessonIds[target]] = [
-          lessonIds[target],
-          lessonIds[index],
-        ];
-        return { ...module, lessonIds };
-      }),
-    );
-  }
-
   function moveLessonToPosition(
     lessonId: string,
     moduleId: string,
@@ -290,33 +279,34 @@ export default function LessonBuilderPage() {
     );
   }
 
-  function addBlock(
-    lessonId: string,
-    type: DocumentBlockType,
-    insertionIndex: number,
-  ) {
-    const blockId = createId("block");
-    if (type === "explanation") {
+  const addBlock = useCallback(
+    (lessonId: string, type: DocumentBlockType, insertionIndex: number) => {
+      const blockId = createId("block");
+      if (type === "explanation") {
+        dispatch({
+          type: "ADD_EXPLANATION_BLOCK",
+          lessonId,
+          insertionIndex,
+          blockId,
+        });
+        return blockId;
+      }
       dispatch({
-        type: "ADD_EXPLANATION_BLOCK",
+        type: "ADD_SENTENCE_BLOCK",
         lessonId,
         insertionIndex,
         blockId,
+        languageBlockId: createId("lang"),
+        ...(type === "vocabulary"
+          ? { layout: "vocabulary_table" as const }
+          : {}),
       });
       return blockId;
-    }
-    dispatch({
-      type: "ADD_SENTENCE_BLOCK",
-      lessonId,
-      insertionIndex,
-      blockId,
-      languageBlockId: createId("lang"),
-      ...(type === "vocabulary" ? { layout: "vocabulary_table" as const } : {}),
-    });
-    return blockId;
-  }
+    },
+    [],
+  );
 
-  function addPiece(lessonId: string, blockId: string) {
+  const addPiece = useCallback((lessonId: string, blockId: string) => {
     const languageBlockId = createId("lang");
     dispatch({
       type: "ADD_LANGUAGE_BLOCK",
@@ -325,40 +315,46 @@ export default function LessonBuilderPage() {
       languageBlockId,
     });
     return languageBlockId;
-  }
+  }, []);
 
-  function deleteBlock(lessonId: string, blockId: string) {
-    const lesson = lessons.find((candidate) => candidate.id === lessonId);
-    const index =
-      lesson?.blocks.findIndex((block) => block.id === blockId) ?? -1;
-    const block = lesson?.blocks[index];
-    if (!block) return;
-    deletionRef.current = { kind: "slide", lessonId, block, index };
-    setDeletionUndo({ lessonId, label: "Slide deleted" });
-    dispatch({ type: "DELETE_CONTENT_BLOCK", lessonId, blockId });
-  }
+  const deleteBlock = useCallback(
+    (lessonId: string, blockId: string) => {
+      const lesson = lessons.find((candidate) => candidate.id === lessonId);
+      const index =
+        lesson?.blocks.findIndex((block) => block.id === blockId) ?? -1;
+      const block = lesson?.blocks[index];
+      if (!block) return;
+      deletionRef.current = { kind: "slide", lessonId, block, index };
+      setDeletionUndo({ lessonId, label: "Slide deleted" });
+      dispatch({ type: "DELETE_CONTENT_BLOCK", lessonId, blockId });
+    },
+    [lessons],
+  );
 
-  function deletePiece(lessonId: string, blockId: string, pieceId: string) {
-    const block = lessons
-      .find((lesson) => lesson.id === lessonId)
-      ?.blocks.find((candidate) => candidate.id === blockId);
-    if (!block || block.type !== "sentence") return;
-    const index = block.languageBlocks.findIndex(
-      (piece) => piece.id === pieceId,
-    );
-    const piece = block.languageBlocks[index];
-    if (!piece) return;
-    deletionRef.current = { kind: "piece", lessonId, blockId, piece, index };
-    setDeletionUndo({ lessonId, label: "Sentence piece deleted" });
-    dispatch({
-      type: "DELETE_LANGUAGE_BLOCK",
-      lessonId,
-      sentenceBlockId: blockId,
-      languageBlockId: pieceId,
-    });
-  }
+  const deletePiece = useCallback(
+    (lessonId: string, blockId: string, pieceId: string) => {
+      const block = lessons
+        .find((lesson) => lesson.id === lessonId)
+        ?.blocks.find((candidate) => candidate.id === blockId);
+      if (!block || block.type !== "sentence") return;
+      const index = block.languageBlocks.findIndex(
+        (piece) => piece.id === pieceId,
+      );
+      const piece = block.languageBlocks[index];
+      if (!piece) return;
+      deletionRef.current = { kind: "piece", lessonId, blockId, piece, index };
+      setDeletionUndo({ lessonId, label: "Sentence piece deleted" });
+      dispatch({
+        type: "DELETE_LANGUAGE_BLOCK",
+        lessonId,
+        sentenceBlockId: blockId,
+        languageBlockId: pieceId,
+      });
+    },
+    [lessons],
+  );
 
-  function undoDeletion() {
+  const undoDeletion = useCallback(() => {
     const deleted = deletionRef.current;
     if (!deleted) return;
     if (deleted.kind === "slide")
@@ -378,22 +374,140 @@ export default function LessonBuilderPage() {
       });
     deletionRef.current = null;
     setDeletionUndo(null);
-  }
+  }, []);
 
-  function moveBlock(lessonId: string, blockId: string, direction: -1 | 1) {
-    const lesson = lessons.find((candidate) => candidate.id === lessonId);
-    const index =
-      lesson?.blocks.findIndex((block) => block.id === blockId) ?? -1;
-    const target = lesson?.blocks[index + direction];
-    if (!target) return;
-    dispatch({
-      type: "MOVE_CONTENT_BLOCK",
-      lessonId,
-      draggedId: blockId,
-      targetId: target.id,
-      position: direction < 0 ? "before" : "after",
-    });
-  }
+  const moveBlock = useCallback(
+    (lessonId: string, blockId: string, direction: -1 | 1) => {
+      const lesson = lessons.find((candidate) => candidate.id === lessonId);
+      const index =
+        lesson?.blocks.findIndex((block) => block.id === blockId) ?? -1;
+      const target = lesson?.blocks[index + direction];
+      if (!target) return;
+      dispatch({
+        type: "MOVE_CONTENT_BLOCK",
+        lessonId,
+        draggedId: blockId,
+        targetId: target.id,
+        position: direction < 0 ? "before" : "after",
+      });
+    },
+    [lessons],
+  );
+
+  const builderActions: LessonBuilderActions = useMemo(
+    () => ({
+      conceptDisplays,
+      deletionUndo,
+      newLesson: createLesson,
+      previewLesson: openPreview,
+      duplicateLesson,
+      deleteLesson: (lessonId) => void deleteLesson(lessonId),
+      renameLesson: (lessonId, name) =>
+        dispatch({ type: "RENAME_LESSON", lessonId, name }),
+      addLessonConcept: (lessonId, concept) =>
+        dispatch({ type: "ADD_LESSON_CONCEPT", lessonId, concept }),
+      removeLessonConcept: (lessonId, lessonConceptId) =>
+        dispatch({ type: "REMOVE_LESSON_CONCEPT", lessonId, lessonConceptId }),
+      relabelLessonConcept: (lessonId, lessonConceptId, label) =>
+        dispatch({
+          type: "RELABEL_LESSON_CONCEPT",
+          lessonId,
+          lessonConceptId,
+          label,
+        }),
+      updateExplanation: (lessonId, blockId, contentMarkdown) =>
+        dispatch({
+          type: "UPDATE_EXPLANATION_BLOCK",
+          lessonId,
+          blockId,
+          contentMarkdown,
+        }),
+      updateSentence: (lessonId, sentenceBlockId, field, value) =>
+        dispatch({
+          type: "UPDATE_SENTENCE_BLOCK",
+          lessonId,
+          sentenceBlockId,
+          patch: { [field]: value },
+        }),
+      updateSpanish: (lessonId, sentenceBlockId, languageBlockId, spanish) =>
+        dispatch({
+          type: "UPDATE_LANGUAGE_BLOCK",
+          lessonId,
+          sentenceBlockId,
+          languageBlockId,
+          patch: { spanish },
+        }),
+      updateAnswer: (
+        lessonId,
+        sentenceBlockId,
+        languageBlockId,
+        answerIndex,
+        value,
+      ) =>
+        dispatch({
+          type: "UPDATE_ACCEPTED_ANSWER",
+          lessonId,
+          sentenceBlockId,
+          languageBlockId,
+          answerIndex,
+          value,
+        }),
+      updateCallout: (lessonId, sentenceBlockId, languageBlockId, callout) =>
+        dispatch({
+          type: "UPDATE_LANGUAGE_BLOCK",
+          lessonId,
+          sentenceBlockId,
+          languageBlockId,
+          patch: { callout },
+        }),
+      addAnswer: (lessonId, sentenceBlockId, languageBlockId) =>
+        dispatch({
+          type: "ADD_ACCEPTED_ANSWER",
+          lessonId,
+          sentenceBlockId,
+          languageBlockId,
+        }),
+      removeAnswer: (lessonId, sentenceBlockId, languageBlockId, answerIndex) =>
+        dispatch({
+          type: "REMOVE_ACCEPTED_ANSWER",
+          lessonId,
+          sentenceBlockId,
+          languageBlockId,
+          answerIndex,
+        }),
+      addPiece,
+      deletePiece,
+      addBlock,
+      deleteBlock,
+      duplicateBlock: (lessonId, blockId) =>
+        dispatch({ type: "DUPLICATE_CONTENT_BLOCK", lessonId, blockId }),
+      moveBlock,
+      reorderBlock: (lessonId, draggedId, targetId, position) =>
+        dispatch({
+          type: "MOVE_CONTENT_BLOCK",
+          lessonId,
+          draggedId,
+          targetId,
+          position,
+        }),
+      undoDeletion,
+      endHistoryGroup: () => dispatch({ type: "END_HISTORY_GROUP" }),
+    }),
+    [
+      conceptDisplays,
+      deletionUndo,
+      createLesson,
+      openPreview,
+      duplicateLesson,
+      deleteLesson,
+      addPiece,
+      deletePiece,
+      addBlock,
+      deleteBlock,
+      moveBlock,
+      undoDeletion,
+    ],
+  );
 
   const saveLabel =
     saveState === "loading"
@@ -412,7 +526,7 @@ export default function LessonBuilderPage() {
         <LessonLibrary
           modules={modules}
           lessons={lessons}
-          conceptDisplays={conceptDisplays}
+          builder={builderActions}
           saveLabel={saveLabel}
           saveFailed={saveState === "error"}
           canUndo={history.past.length > 0}
@@ -420,141 +534,13 @@ export default function LessonBuilderPage() {
           onUndo={() => dispatch({ type: "UNDO" })}
           onRedo={() => dispatch({ type: "REDO" })}
           onRetrySave={() => void retrySave()}
-          onNewLesson={createLesson}
-          onPreviewLesson={openPreview}
-          onDuplicateLesson={duplicateLesson}
-          onDeleteLesson={(id) => void deleteLesson(id)}
           onAddModule={addModule}
           onDeleteModule={deleteModule}
           onMoveModule={moveModule}
           onReorderModule={reorderModule}
-          onMoveLesson={moveLessonWithinModule}
           onDropLesson={moveLessonToPosition}
           onMoveLessonToModule={moveLessonToModule}
           onChangeModule={patchModule}
-          onRenameLesson={(lessonId, name) =>
-            dispatch({ type: "RENAME_LESSON", lessonId, name })
-          }
-          onAddLessonConcept={(lessonId, concept: LessonConcept) =>
-            dispatch({ type: "ADD_LESSON_CONCEPT", lessonId, concept })
-          }
-          onRemoveLessonConcept={(lessonId, lessonConceptId) =>
-            dispatch({
-              type: "REMOVE_LESSON_CONCEPT",
-              lessonId,
-              lessonConceptId,
-            })
-          }
-          onRelabelLessonConcept={(lessonId, lessonConceptId, label) =>
-            dispatch({
-              type: "RELABEL_LESSON_CONCEPT",
-              lessonId,
-              lessonConceptId,
-              label,
-            })
-          }
-          onUpdateExplanation={(lessonId, blockId, contentMarkdown) =>
-            dispatch({
-              type: "UPDATE_EXPLANATION_BLOCK",
-              lessonId,
-              blockId,
-              contentMarkdown,
-            })
-          }
-          onUpdateSentence={(lessonId, sentenceBlockId, field, value) =>
-            dispatch({
-              type: "UPDATE_SENTENCE_BLOCK",
-              lessonId,
-              sentenceBlockId,
-              patch: { [field]: value },
-            })
-          }
-          onUpdateSpanish={(
-            lessonId,
-            sentenceBlockId,
-            languageBlockId,
-            spanish,
-          ) =>
-            dispatch({
-              type: "UPDATE_LANGUAGE_BLOCK",
-              lessonId,
-              sentenceBlockId,
-              languageBlockId,
-              patch: { spanish },
-            })
-          }
-          onUpdateAnswer={(
-            lessonId,
-            sentenceBlockId,
-            languageBlockId,
-            answerIndex,
-            value,
-          ) =>
-            dispatch({
-              type: "UPDATE_ACCEPTED_ANSWER",
-              lessonId,
-              sentenceBlockId,
-              languageBlockId,
-              answerIndex,
-              value,
-            })
-          }
-          onUpdateCallout={(
-            lessonId,
-            sentenceBlockId,
-            languageBlockId,
-            callout,
-          ) =>
-            dispatch({
-              type: "UPDATE_LANGUAGE_BLOCK",
-              lessonId,
-              sentenceBlockId,
-              languageBlockId,
-              patch: { callout },
-            })
-          }
-          onAddAnswer={(lessonId, sentenceBlockId, languageBlockId) =>
-            dispatch({
-              type: "ADD_ACCEPTED_ANSWER",
-              lessonId,
-              sentenceBlockId,
-              languageBlockId,
-            })
-          }
-          onRemoveAnswer={(
-            lessonId,
-            sentenceBlockId,
-            languageBlockId,
-            answerIndex,
-          ) =>
-            dispatch({
-              type: "REMOVE_ACCEPTED_ANSWER",
-              lessonId,
-              sentenceBlockId,
-              languageBlockId,
-              answerIndex,
-            })
-          }
-          onAddPiece={addPiece}
-          onDeletePiece={deletePiece}
-          onAddBlock={addBlock}
-          onDeleteBlock={deleteBlock}
-          onDuplicateBlock={(lessonId, blockId) =>
-            dispatch({ type: "DUPLICATE_CONTENT_BLOCK", lessonId, blockId })
-          }
-          onMoveBlock={moveBlock}
-          onReorderBlock={(lessonId, draggedId, targetId, position) =>
-            dispatch({
-              type: "MOVE_CONTENT_BLOCK",
-              lessonId,
-              draggedId,
-              targetId,
-              position,
-            })
-          }
-          deletionUndo={deletionUndo}
-          onUndoDeletion={undoDeletion}
-          onEndHistoryGroup={() => dispatch({ type: "END_HISTORY_GROUP" })}
         />
       </div>
       {preview && (

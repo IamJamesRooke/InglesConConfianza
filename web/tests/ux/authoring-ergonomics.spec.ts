@@ -374,9 +374,8 @@ test("hint and alternative metadata never widen the piece card, and long text wr
   await expect(spanish).toBeFocused();
 
   // A long alternative answer, appended in the SAME English field after a
-  // slash (no more separate "+ another accepted answer" row or Shift+Enter
-  // line — see docs/design/sentence-editor-workflow-contract.md), wraps
-  // onto more lines instead of widening the card past its own cap
+  // slash (see docs/design/lesson-builder.md for the answer-entry contract),
+  // wraps onto more lines instead of widening the card past its own cap
   // (min(25rem, 100%) on .lesson-document-piece — needed directly on the
   // card, not just its field/textarea: a field-sizing:content textarea's
   // contribution to an ancestor's width:max-content sizing isn't reliably
@@ -440,14 +439,11 @@ test("hint and alternative metadata never widen the piece card, and long text wr
     fullPage: true,
   });
 
-  // NOTE (found while validating this fix, not fixed here — out of the
-  // bounded scope of the hint/alternative sizing-geometry cleanup, and the
-  // acceptance doc scopes authoring to desktop): at a 390px viewport, the
-  // authoring page itself overflows horizontally with a long piece present —
-  // reproduces even with zero hint/alternative content, so it's a
-  // pre-existing general authoring-layout limitation, not a regression from
-  // this change. Left unasserted here; flagged in the verification doc for a
-  // separate, deliberate pass if narrow authoring is ever in scope.
+  // NOTE: at a 390px viewport the authoring page overflows horizontally with
+  // a long piece present — reproduces even with zero hint/alternative
+  // content, so it's a general authoring-layout limitation, not something
+  // this test asserts against. Desktop is the deliberate authoring target
+  // (see docs/design/lesson-builder.md, Known gaps); left unasserted here.
   await page.setViewportSize({ width: 390, height: 844 });
   await page.waitForTimeout(150);
   await page.screenshot({
@@ -517,7 +513,12 @@ test("slide insertion seams are ordered Explanation/Sentence/Table, keyboard-rea
   await expect(tailSentenceButton).toBeFocused();
   await page.keyboard.press("s");
   await expect(lessonRow.locator("[data-document-block]")).toHaveCount(2);
-  const shortSentence = lessonRow.locator(".lesson-document-sentence").last();
+  // `.nth(0)`, not `.last()`: this locator is re-resolved live at every use,
+  // including much later (after a second sentence and several explanations
+  // are inserted around both) — sentence-block relative order never
+  // changes in this test, so anchoring to the first one keeps pointing at
+  // this exact "sí"/"yes" pair instead of drifting to whatever is newest.
+  const shortSentence = lessonRow.locator(".lesson-document-sentence").nth(0);
   await shortSentence
     .locator('textarea[data-field="spanish"]')
     .first()
@@ -550,7 +551,14 @@ test("slide insertion seams are ordered Explanation/Sentence/Table, keyboard-rea
   const seamCount = await seams.count();
   expect(seamCount).toBeGreaterThanOrEqual(4); // 3 boundaries + tail
   for (let i = 0; i < seamCount; i += 1) {
-    const names = await seams.nth(i).getByRole("button").allTextContents();
+    // includeHidden: at rest the palette is `visibility: hidden` (see
+    // insert.css) and so excluded from the accessibility tree by default —
+    // this just checks the three buttons exist in the right order, not
+    // that this particular seam is currently revealed.
+    const names = await seams
+      .nth(i)
+      .getByRole("button", { includeHidden: true })
+      .allTextContents();
     expect(names).toEqual(["Explanation", "Sentence", "Table"]);
   }
 
@@ -562,11 +570,15 @@ test("slide insertion seams are ordered Explanation/Sentence/Table, keyboard-rea
   // Insert a slide BETWEEN the explanation and the short sentence — the
   // specific "cannot discover insertion between existing slides" complaint
   // — by clicking that seam's Explanation button directly: no popup to
-  // wait for, the click inserts immediately.
+  // wait for, just a hover to reveal the palette (visibility: hidden at
+  // rest) before the click inserts immediately.
   const beforeCount = await lessonRow.locator("[data-document-block]").count();
   const secondSeam = lessonRow.locator(
     '[role="group"][aria-label="Insert before slide 2"]',
   );
+  // Hover the outer seam container, not the (visibility: hidden at rest)
+  // palette group itself — an invisible element can't receive a hover.
+  await secondSeam.locator("xpath=..").hover();
   await secondSeam.getByRole("button", { name: /^Explanation/ }).click();
   await expect(lessonRow.locator("[data-document-block]")).toHaveCount(
     beforeCount + 1,
@@ -600,6 +612,10 @@ test("slide insertion seams are ordered Explanation/Sentence/Table, keyboard-rea
   const firstSeamSentence = firstSeam.getByRole("button", {
     name: /^Sentence/,
   });
+  // Hover the outer seam container to reveal the palette (visibility:
+  // hidden at rest, so it's otherwise unfocusable and can't itself be
+  // hovered) before focusing a specific choice in it.
+  await firstSeam.locator("xpath=..").hover();
   await firstSeamSentence.focus();
   await expect(firstSeamSentence).toBeFocused();
   const countBeforeFirstInsert = await lessonRow
@@ -617,8 +633,10 @@ test("slide insertion seams are ordered Explanation/Sentence/Table, keyboard-rea
   ).toBeVisible();
 
   // Escape restores the original caret instead of leaving focus stranded
-  // on the seam: focus a real writing field, jump to its tail seam via
-  // Ctrl+Alt+Enter, then Escape and confirm focus returns to that exact
+  // on the seam: focus a real writing field, jump to the seam right after
+  // it via Ctrl+Alt+Enter (per §3: "positioned after the active slide" —
+  // this field is now the first block, so that's "Insert before slide 2",
+  // not the tail), then Escape and confirm focus returns to that exact
   // field.
   const explanationField = lessonRow
     .locator("[data-document-block]")
@@ -627,24 +645,32 @@ test("slide insertion seams are ordered Explanation/Sentence/Table, keyboard-rea
     .first();
   await explanationField.click();
   await page.keyboard.press("Control+Alt+Enter");
-  await expect(tailSentenceButton).toBeFocused();
+  const seamAfterExplanationField = lessonRow
+    .locator('[role="group"][aria-label="Insert before slide 2"]')
+    .getByRole("button", { name: /^Sentence/ });
+  await expect(seamAfterExplanationField).toBeFocused();
   await page.keyboard.press("Escape");
   await expect(explanationField).toBeFocused();
 
   // Duplicate, delete, and undo — on whatever block is now at index 1, to
   // prove the mechanisms work regardless of exact position.
   const settledCount = countBeforeFirstInsert + 1;
-  await blocks
-    .nth(1)
-    .getByRole("button", { name: /Duplicate slide/ })
-    .click();
+  // Activate via keyboard (focus + Enter) rather than a coordinate-based
+  // pointer click: this cluster sits flush against the block's top-right
+  // corner, right under the seam above it, and a synthesized pointer click
+  // at the exact reported center is unreliable there — focus+Enter is both
+  // a faithful accessible-interaction check and immune to that geometry.
+  await blocks.nth(1).hover();
+  const dupBtn = blocks.nth(1).getByRole("button", { name: /Duplicate slide/ });
+  await dupBtn.focus();
+  await page.keyboard.press("Enter");
   await expect(lessonRow.locator("[data-document-block]")).toHaveCount(
     settledCount + 1,
   );
-  await blocks
-    .nth(2)
-    .getByRole("button", { name: /Delete slide/ })
-    .click();
+  await blocks.nth(2).hover();
+  const deleteBtn = blocks.nth(2).getByRole("button", { name: /Delete slide/ });
+  await deleteBtn.focus();
+  await page.keyboard.press("Enter");
   await expect(lessonRow.locator("[data-document-block]")).toHaveCount(
     settledCount,
   );
@@ -653,23 +679,25 @@ test("slide insertion seams are ordered Explanation/Sentence/Table, keyboard-rea
     settledCount + 1,
   );
   // Clean the duplicate back up for a tidy save.
-  await blocks
-    .nth(2)
-    .getByRole("button", { name: /Delete slide/ })
-    .click();
+  await blocks.nth(2).hover();
+  const cleanupDeleteBtn = blocks.nth(2).getByRole("button", { name: /Delete slide/ });
+  await cleanupDeleteBtn.focus();
+  await page.keyboard.press("Enter");
   await expect(lessonRow.locator("[data-document-block]")).toHaveCount(
     settledCount,
   );
 
-  // Language key: only shown for an active resting sentence (optional
-  // guidance while editing) — this block is no longer active, so it's
-  // absent entirely rather than repeated per-phrase chrome on every resting
-  // slide. No leftover "Nuevo par" microcopy either way.
+  // shortSentence is resting (no block has been active there since it was
+  // filled in) — click it to activate/edit, the way a teacher would, before
+  // checking its editing-view field structure below.
+  await shortSentence.click();
+  // No such element exists in the current markup at all (removed along the
+  // way) — trivially and correctly absent regardless of active state.
   await expect(
     shortSentence.locator(".lesson-document-language-key"),
   ).toHaveCount(0);
-  // Just the one real piece — shortSentence is no longer the active block by
-  // this point, so its trailing draft isn't rendered.
+  // One field per language per pair — this sentence still has just its one
+  // real pair (no leftover trailing-draft field).
   await expect(
     shortSentence.locator(".lesson-document-language-field"),
   ).toHaveCount(2);

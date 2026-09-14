@@ -3,20 +3,16 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import test from "node:test";
 
-// S2 follow-up: module keyboard reorder was removed along with the
-// displayed-module drag handle, then restored on the EXISTING sidebar
-// drag handle (module-navigator.tsx) via Alt+ArrowUp/Alt+ArrowDown, reusing
-// the existing onReorderModule(draggedId, targetId) callback — no new
-// callback, no new visible controls.
+// Module keyboard reorder (Alt+ArrowUp/Alt+ArrowDown on the sidebar drag
+// handle in module-navigator.tsx) reuses the existing
+// onReorderModule(draggedId, targetId) callback — no separate callback, no
+// separate visible controls.
 //
-// onReorderModule's actual implementation lives in page.tsx (outside this
-// track's ownership) and isn't exported as a pure function, so it's
-// reproduced here verbatim from page.tsx's `reorderModule` (read at the
-// time this test was written) to verify the *argument convention* the
-// keyboard handler uses actually produces the intended adjacent swap. If
-// page.tsx's implementation changes shape, this reproduction may drift —
-// that risk is accepted for a same-semantics pure-logic check with no
-// import path across the ownership boundary.
+// onReorderModule's implementation lives in page.tsx and isn't exported as a
+// pure function, so it's reproduced here verbatim from page.tsx's
+// `reorderModule` to verify the *argument convention* the keyboard handler
+// uses actually produces the intended adjacent swap. If page.tsx's
+// implementation changes shape, this reproduction may drift out of sync.
 function reorderModule<T extends { id: string }>(
   modules: T[],
   draggedId: string,

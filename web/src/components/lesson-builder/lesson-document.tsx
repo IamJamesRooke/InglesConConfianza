@@ -3,16 +3,17 @@
 import { Copy, GripVertical, Trash2, Undo2 } from "lucide-react";
 import { Fragment, useEffect, useRef, useState, type DragEvent } from "react";
 
-import { LessonConceptsField, type ConceptDisplayLookup } from "@/components/lesson-builder/lesson-concepts-field";
+import { LessonConceptsField } from "@/components/lesson-builder/lesson-concepts-field";
 import { EditablePracticeMarkdown } from "@/components/lesson-builder/explanation-editor";
 import { SentenceEditor } from "@/components/lesson-builder/sentence-editor";
 import {
   SlideInsertControl,
   type DocumentBlockType,
 } from "@/components/lesson-builder/slide-insert-control";
+import { useLessonBuilder } from "@/lib/lesson-builder/builder-context";
 import { focusSlideWritingField } from "@/lib/lesson-builder/focus";
 import { useDragReorder } from "@/lib/lesson-builder/use-drag-reorder";
-import type { Lesson, LessonConcept } from "@/lib/lesson-builder/types";
+import type { Lesson } from "@/lib/lesson-builder/types";
 
 export type { DocumentBlockType } from "@/components/lesson-builder/slide-insert-control";
 
@@ -60,32 +61,13 @@ function setCaretAtOffset(root: HTMLElement, target: number) {
 
 type Props = {
   lesson: Lesson;
-  conceptDisplays: ConceptDisplayLookup;
-  undoDeletionLabel: string | null;
-  onAddConcept: (concept: LessonConcept) => void;
-  onRemoveConcept: (conceptId: string) => void;
-  onRelabelConcept: (conceptId: string, label: string) => void;
-  onUpdateExplanation: (blockId: string, markdown: string) => void;
-  onUpdateSentence: (blockId: string, field: "promptText" | "helperText" | "answerFeedback", value: string | null) => void;
-  onUpdateSpanish: (blockId: string, pieceId: string, value: string) => void;
-  onUpdateAnswer: (blockId: string, pieceId: string, answerIndex: number, value: string) => void;
-  onUpdateCallout: (blockId: string, pieceId: string, value: string | null) => void;
-  onAddAnswer: (blockId: string, pieceId: string) => void;
-  onRemoveAnswer: (blockId: string, pieceId: string, answerIndex: number) => void;
-  onAddPiece: (blockId: string) => string;
-  onDeletePiece: (blockId: string, pieceId: string) => void;
-  onAddBlock: (type: DocumentBlockType, insertionIndex: number) => string;
-  onDeleteBlock: (blockId: string) => void;
-  onDuplicateBlock: (blockId: string) => void;
-  onMoveBlock: (blockId: string, direction: -1 | 1) => void;
-  onReorderBlock: (draggedId: string, targetId: string, position: "before" | "after") => void;
   onDone: () => void;
   onAddLesson: () => void;
-  onUndoDeletion: () => void;
-  onEndHistoryGroup: () => void;
 };
 
 export function LessonDocument(props: Props) {
+  const actions = useLessonBuilder();
+  const lessonId = props.lesson.id;
   const [activeBlock, setActiveBlock] = useState<string | null>(null);
   const [insertAt, setInsertAt] = useState<number | null>(null);
   const focusAfterAdd = useRef<string | null>(null);
@@ -93,7 +75,9 @@ export function LessonDocument(props: Props) {
   const exitingBlock = useRef<string | null>(null);
   const bodyRef = useRef<HTMLDivElement | null>(null);
   const drag = useDragReorder({ axis: "y", mode: "nested" });
-  const dragScope = props.lesson.id;
+  const dragScope = lessonId;
+  const undoDeletionLabel =
+    actions.deletionUndo?.lessonId === lessonId ? actions.deletionUndo.label : null;
 
   useEffect(() => {
     if (!focusAfterAdd.current) return;
@@ -156,7 +140,7 @@ export function LessonDocument(props: Props) {
 
   function add(type: DocumentBlockType, index: number) {
     caretOrigin.current = null;
-    const blockId = props.onAddBlock(type, index);
+    const blockId = actions.addBlock(lessonId, type, index);
     focusAfterAdd.current = blockId;
     setActiveBlock(blockId);
     setInsertAt(null);
@@ -187,10 +171,10 @@ export function LessonDocument(props: Props) {
         <button type="button" draggable aria-label={`Drag slide ${index + 1} to reorder`} title="Drag to reorder" onDragStart={(event) => drag.dragStart(event, dragScope, block.id)} onDragEnd={drag.reset}>
           <GripVertical size={13} aria-hidden="true" />
         </button>
-        <button type="button" aria-label={`Duplicate slide ${index + 1}`} title="Duplicate slide" onClick={() => props.onDuplicateBlock(block.id)}>
+        <button type="button" aria-label={`Duplicate slide ${index + 1}`} title="Duplicate slide" onClick={() => actions.duplicateBlock(lessonId, block.id)}>
           <Copy size={13} aria-hidden="true" />
         </button>
-        <button type="button" className="danger" aria-label={`Delete slide ${index + 1}`} title="Delete slide" onClick={() => props.onDeleteBlock(block.id)}>
+        <button type="button" className="danger" aria-label={`Delete slide ${index + 1}`} title="Delete slide" onClick={() => actions.deleteBlock(lessonId, block.id)}>
           <Trash2 size={13} aria-hidden="true" />
         </button>
       </div>
@@ -204,7 +188,7 @@ export function LessonDocument(props: Props) {
         ref={bodyRef}
         className="lesson-document-body"
         onBlurCapture={(event) => {
-          props.onEndHistoryGroup();
+          actions.endHistoryGroup();
           const next = event.relatedTarget;
           if (!(next instanceof Node) || !event.currentTarget.contains(next)) {
             requestAnimationFrame(() => {
@@ -242,9 +226,9 @@ export function LessonDocument(props: Props) {
           } else if (event.code === "KeyL") {
             stop(); props.onAddLesson();
           } else if (event.code === "ArrowUp" && activeBlock) {
-            stop(); props.onMoveBlock(activeBlock, -1);
+            stop(); actions.moveBlock(lessonId, activeBlock, -1);
           } else if (event.code === "ArrowDown" && activeBlock) {
-            stop(); props.onMoveBlock(activeBlock, 1);
+            stop(); actions.moveBlock(lessonId, activeBlock, 1);
           }
         }}
       >
@@ -282,7 +266,7 @@ export function LessonDocument(props: Props) {
                 event.preventDefault();
                 event.stopPropagation();
                 if (drag.dragged && drag.dropTarget && drag.dragged.id !== drag.dropTarget.id) {
-                  props.onReorderBlock(drag.dragged.id, drag.dropTarget.id, drag.dropTarget.position);
+                  actions.reorderBlock(lessonId, drag.dragged.id, drag.dropTarget.id, drag.dropTarget.position);
                 }
                 drag.reset();
               }}
@@ -310,23 +294,16 @@ export function LessonDocument(props: Props) {
                   fieldName={`explanation-${block.id}`}
                   variant="document"
                   onExit={() => exitBlock(block.id)}
-                  onChange={(markdown) => props.onUpdateExplanation(block.id, markdown)}
+                  onChange={(markdown) => actions.updateExplanation(lessonId, block.id, markdown)}
                 />
               </section>
             ) : (
               <SentenceEditor
+                lessonId={lessonId}
                 block={block}
                 active={activeBlock === block.id}
                 onActivate={() => setActiveBlock(block.id)}
                 onExit={() => exitBlock(block.id)}
-                onUpdateSentence={(field, value) => props.onUpdateSentence(block.id, field, value)}
-                onUpdateSpanish={(pieceId, value) => props.onUpdateSpanish(block.id, pieceId, value)}
-                onUpdateAnswer={(pieceId, answerIndex, value) => props.onUpdateAnswer(block.id, pieceId, answerIndex, value)}
-                onUpdateCallout={(pieceId, value) => props.onUpdateCallout(block.id, pieceId, value)}
-                onAddAnswer={(pieceId) => props.onAddAnswer(block.id, pieceId)}
-                onRemoveAnswer={(pieceId, answerIndex) => props.onRemoveAnswer(block.id, pieceId, answerIndex)}
-                onAddPiece={() => props.onAddPiece(block.id)}
-                onDeletePiece={(pieceId) => props.onDeletePiece(block.id, pieceId)}
               />
             )}
             </div>
@@ -348,17 +325,17 @@ export function LessonDocument(props: Props) {
             variant="compact"
             label=""
             concepts={props.lesson.concepts}
-            conceptDisplays={props.conceptDisplays}
-            coversFor={props.lesson.id}
-            onAdd={props.onAddConcept}
-            onRemove={props.onRemoveConcept}
-            onRelabel={props.onRelabelConcept}
+            conceptDisplays={actions.conceptDisplays}
+            coversFor={lessonId}
+            onAdd={(concept) => actions.addLessonConcept(lessonId, concept)}
+            onRemove={(id) => actions.removeLessonConcept(lessonId, id)}
+            onRelabel={(id, label) => actions.relabelLessonConcept(lessonId, id, label)}
           />
         </div>
 
-        {props.undoDeletionLabel && (
-          <button type="button" className="lesson-document-undo" onClick={props.onUndoDeletion}>
-            <Undo2 size={14} /> {props.undoDeletionLabel} — Undo
+        {undoDeletionLabel && (
+          <button type="button" className="lesson-document-undo" onClick={actions.undoDeletion}>
+            <Undo2 size={14} /> {undoDeletionLabel} — Undo
           </button>
         )}
       </div>

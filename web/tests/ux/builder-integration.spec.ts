@@ -57,6 +57,15 @@ test("keyboard writing preserves alternatives and hints and prunes abandoned pai
   await expect(explanation).toBeFocused();
   await page.keyboard.type("Tengo hambre es I'm hungry.");
   await page.keyboard.press("Control+Alt+Enter");
+  // Ctrl+Alt+Enter focuses the tail seam's Sentence button via a
+  // requestAnimationFrame scheduled in SlideInsertControl, not
+  // synchronously — wait for that focus to actually land before pressing
+  // "s"; otherwise "s" can race ahead of the rAF and land back on the
+  // explanation field instead of the seam group, silently typing an "s"
+  // instead of inserting a sentence.
+  await expect(
+    row.getByRole("button", { name: "Sentence — Insert at lesson end" }),
+  ).toBeFocused();
   await page.keyboard.press("s");
   const sentence = row.locator(".lesson-document-sentence").last();
   const spanish = sentence.locator('textarea[data-field="spanish"]');
@@ -115,6 +124,11 @@ test("table presentation stays centered and compact through hint editing", async
   const explanation = row.getByRole("textbox", { name: "Explanation 1" });
   await explanation.fill("Comer es to eat.");
   await page.keyboard.press("Control+Alt+Enter");
+  // See the other test in this file: the seam's Sentence button focus is
+  // rAF-scheduled, not synchronous — wait for it before pressing "t".
+  await expect(
+    row.getByRole("button", { name: "Sentence — Insert at lesson end" }),
+  ).toBeFocused();
   await page.keyboard.press("t");
   const table = row.getByRole("region", { name: "Vocabulary table", exact: true });
   const spanish = table.locator('textarea[data-field="spanish"]');

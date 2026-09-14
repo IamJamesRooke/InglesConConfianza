@@ -3,18 +3,14 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import test from "node:test";
 
-// Structure-only regression coverage for the next-round S2/S3/S4 fixes.
-//
 // lesson-library.tsx has a top-level `import "@/styles/module-navigation.css"`
-// side-effect import (pre-existing, not added this round), which plain
-// node:test/tsx can't resolve outside Next.js's webpack pipeline — there is
-// no CSS-import stub already set up for this test runner (confirmed:
-// module-navigation.test.ts only renders ModuleNavigator, which has no CSS
-// import, so it doesn't hit this). Rather than add a module loader/mock
-// just for this pass (out of the bounded scope), these are SOURCE-level
-// checks against the component's own source text, not rendered-DOM checks.
-// They verify the same structural facts a render would, at lower fidelity —
-// flagged explicitly in the handoff, not claimed as more than they are.
+// side-effect import, which plain node:test/tsx can't resolve outside
+// Next.js's webpack pipeline — there is no CSS-import stub set up for this
+// test runner (module-navigation.test.ts only renders ModuleNavigator, which
+// has no CSS import, so it doesn't hit this). Rather than add a module
+// loader/mock just for this file, these are SOURCE-level checks against the
+// component's own source text, not rendered-DOM checks. They verify the same
+// structural facts a render would, at lower fidelity.
 
 const SOURCE_PATH = path.join(
   __dirname,

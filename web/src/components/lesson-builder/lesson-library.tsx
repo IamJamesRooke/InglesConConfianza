@@ -21,24 +21,22 @@ import {
 import { LessonHeaderActions } from "@/components/lesson-builder/lesson-header-actions";
 import { ModuleNavigator } from "@/components/lesson-builder/module-navigator";
 import "@/styles/module-navigation.css";
-import { type ConceptDisplayLookup } from "@/components/lesson-builder/lesson-concepts-field";
 import { KeyboardHelpDialog } from "@/components/lesson-builder/keyboard-help";
 import {
   LessonDocument,
   LessonDragHandle,
-  type DocumentBlockType,
 } from "@/components/lesson-builder/lesson-document";
+import {
+  LessonBuilderProvider,
+  type LessonBuilderActions,
+} from "@/lib/lesson-builder/builder-context";
 import { focusSlideWritingField } from "@/lib/lesson-builder/focus";
-import type {
-  Lesson,
-  LessonConcept,
-  LessonModule,
-} from "@/lib/lesson-builder/types";
+import type { Lesson, LessonModule } from "@/lib/lesson-builder/types";
 
 type Props = {
   modules: LessonModule[];
   lessons: Lesson[];
-  conceptDisplays: ConceptDisplayLookup;
+  builder: LessonBuilderActions;
   saveLabel: string;
   saveFailed: boolean;
   canUndo: boolean;
@@ -46,15 +44,10 @@ type Props = {
   onUndo: () => void;
   onRedo: () => void;
   onRetrySave: () => void;
-  onNewLesson: (moduleId: string, insertionIndex?: number) => string;
-  onPreviewLesson: (lessonId: string) => void;
-  onDuplicateLesson: (lessonId: string) => void;
-  onDeleteLesson: (lessonId: string) => void;
   onAddModule: () => void;
   onDeleteModule: (moduleId: string) => void;
   onMoveModule: (index: number, direction: -1 | 1) => void;
   onReorderModule: (draggedModuleId: string, targetModuleId: string) => void;
-  onMoveLesson: (moduleId: string, index: number, direction: -1 | 1) => void;
   onDropLesson: (
     lessonId: string,
     moduleId: string,
@@ -62,70 +55,6 @@ type Props = {
   ) => void;
   onMoveLessonToModule: (lessonId: string, moduleId: string) => void;
   onChangeModule: (moduleId: string, patch: Partial<LessonModule>) => void;
-  onRenameLesson: (lessonId: string, name: string) => void;
-  onAddLessonConcept: (lessonId: string, concept: LessonConcept) => void;
-  onRemoveLessonConcept: (lessonId: string, conceptId: string) => void;
-  onRelabelLessonConcept: (
-    lessonId: string,
-    conceptId: string,
-    label: string,
-  ) => void;
-  onUpdateExplanation: (
-    lessonId: string,
-    blockId: string,
-    markdown: string,
-  ) => void;
-  onUpdateSentence: (
-    lessonId: string,
-    blockId: string,
-    field: "promptText" | "helperText" | "answerFeedback",
-    value: string | null,
-  ) => void;
-  onUpdateSpanish: (
-    lessonId: string,
-    blockId: string,
-    pieceId: string,
-    value: string,
-  ) => void;
-  onUpdateAnswer: (
-    lessonId: string,
-    blockId: string,
-    pieceId: string,
-    answerIndex: number,
-    value: string,
-  ) => void;
-  onUpdateCallout: (
-    lessonId: string,
-    blockId: string,
-    pieceId: string,
-    value: string | null,
-  ) => void;
-  onAddAnswer: (lessonId: string, blockId: string, pieceId: string) => void;
-  onRemoveAnswer: (
-    lessonId: string,
-    blockId: string,
-    pieceId: string,
-    answerIndex: number,
-  ) => void;
-  onAddPiece: (lessonId: string, blockId: string) => string;
-  onDeletePiece: (lessonId: string, blockId: string, pieceId: string) => void;
-  onAddBlock: (
-    lessonId: string,
-    type: DocumentBlockType,
-    insertionIndex: number,
-  ) => string;
-  onDeleteBlock: (lessonId: string, blockId: string) => void;
-  onDuplicateBlock: (lessonId: string, blockId: string) => void;
-  onMoveBlock: (lessonId: string, blockId: string, direction: -1 | 1) => void;
-  onReorderBlock: (
-    lessonId: string,
-    draggedId: string,
-    targetId: string,
-    position: "before" | "after",
-  ) => void;
-  deletionUndo: { lessonId: string; label: string } | null;
-  onUndoDeletion: () => void;
-  onEndHistoryGroup: () => void;
 };
 
 export function LessonLibrary(props: Props) {
@@ -173,8 +102,7 @@ export function LessonLibrary(props: Props) {
       openModule(home.id);
     }
     requestAnimationFrame(() => {
-      // data-document-block is LessonDocument's own per-slide anchor
-      // (owned by lesson-ux) — read-only reuse, no changes to that file.
+      // data-document-block is LessonDocument's own per-slide anchor.
       const target = blockId
         ? document.querySelector(`[data-document-block="${blockId}"]`)
         : document.querySelector(`[data-lesson-row="${lessonId}"]`);
@@ -229,7 +157,7 @@ export function LessonLibrary(props: Props) {
   }
 
   function startLesson(moduleId: string, insertionIndex?: number) {
-    const lessonId = props.onNewLesson(moduleId, insertionIndex);
+    const lessonId = props.builder.newLesson(moduleId, insertionIndex);
     requestAnimationFrame(() => {
       document
         .querySelector<HTMLInputElement>(`[data-lesson-title="${lessonId}"]`)
@@ -242,8 +170,7 @@ export function LessonLibrary(props: Props) {
       if (!open) {
         // Remember whatever had focus (the Ctrl+. keypress's target, or the
         // header menu's "Keyboard shortcuts" entry) so Escape/close can
-        // return it there — no fixed trigger button to focus back onto
-        // now that the floating FAB is gone (S4).
+        // return it there — there's no fixed trigger button to focus back onto.
         lastFocusedBeforeHelpRef.current =
           document.activeElement instanceof HTMLElement
             ? document.activeElement
@@ -290,6 +217,7 @@ export function LessonLibrary(props: Props) {
   }, []);
 
   return (
+    <LessonBuilderProvider value={props.builder}>
     <section className="lesson-library" aria-label="Course lessons">
       <header className="lesson-library-utility">
         <span
@@ -480,12 +408,12 @@ export function LessonLibrary(props: Props) {
                                 className="lesson-library-title-input"
                                 value={lesson.name ?? ""}
                                 onChange={(event) =>
-                                  props.onRenameLesson(
+                                  props.builder.renameLesson(
                                     lesson.id,
                                     event.target.value,
                                   )
                                 }
-                                onBlur={props.onEndHistoryGroup}
+                                onBlur={props.builder.endHistoryGroup}
                                 onKeyDown={(event) => {
                                   if (
                                     event.key !== "Enter" ||
@@ -499,7 +427,7 @@ export function LessonLibrary(props: Props) {
                                   focusSlideWritingField(
                                     first
                                       ? first.id
-                                      : props.onAddBlock(
+                                      : props.builder.addBlock(
                                           lesson.id,
                                           "explanation",
                                           0,
@@ -517,7 +445,7 @@ export function LessonLibrary(props: Props) {
                                     className="danger"
                                     data-lesson-delete-confirm={lesson.id}
                                     onClick={() => {
-                                      props.onDeleteLesson(lesson.id);
+                                      props.builder.deleteLesson(lesson.id);
                                       setConfirmDelete(null);
                                     }}
                                   >
@@ -548,7 +476,7 @@ export function LessonLibrary(props: Props) {
                                       event.preventDefault()
                                     }
                                     onClick={() =>
-                                      props.onPreviewLesson(lesson.id)
+                                      props.builder.previewLesson(lesson.id)
                                     }
                                     aria-label="Preview lesson"
                                     title="Preview lesson"
@@ -561,7 +489,7 @@ export function LessonLibrary(props: Props) {
                                       lesson.name?.trim() || "Untitled lesson"
                                     }
                                     onDuplicate={() =>
-                                      props.onDuplicateLesson(lesson.id)
+                                      props.builder.duplicateLesson(lesson.id)
                                     }
                                     onRequestDelete={() => {
                                       setConfirmDelete(lessonDeleteKey);
@@ -580,127 +508,8 @@ export function LessonLibrary(props: Props) {
                             {!lessonCollapsed && (
                               <LessonDocument
                                 lesson={lesson}
-                                conceptDisplays={props.conceptDisplays}
-                                undoDeletionLabel={
-                                  props.deletionUndo?.lessonId === lesson.id
-                                    ? props.deletionUndo.label
-                                    : null
-                                }
-                                onAddConcept={(concept) =>
-                                  props.onAddLessonConcept(lesson.id, concept)
-                                }
-                                onRemoveConcept={(id) =>
-                                  props.onRemoveLessonConcept(lesson.id, id)
-                                }
-                                onRelabelConcept={(id, label) =>
-                                  props.onRelabelLessonConcept(
-                                    lesson.id,
-                                    id,
-                                    label,
-                                  )
-                                }
-                                onUpdateExplanation={(blockId, markdown) =>
-                                  props.onUpdateExplanation(
-                                    lesson.id,
-                                    blockId,
-                                    markdown,
-                                  )
-                                }
-                                onUpdateSentence={(blockId, field, value) =>
-                                  props.onUpdateSentence(
-                                    lesson.id,
-                                    blockId,
-                                    field,
-                                    value,
-                                  )
-                                }
-                                onUpdateSpanish={(blockId, pieceId, value) =>
-                                  props.onUpdateSpanish(
-                                    lesson.id,
-                                    blockId,
-                                    pieceId,
-                                    value,
-                                  )
-                                }
-                                onUpdateAnswer={(
-                                  blockId,
-                                  pieceId,
-                                  answerIndex,
-                                  value,
-                                ) =>
-                                  props.onUpdateAnswer(
-                                    lesson.id,
-                                    blockId,
-                                    pieceId,
-                                    answerIndex,
-                                    value,
-                                  )
-                                }
-                                onUpdateCallout={(blockId, pieceId, value) =>
-                                  props.onUpdateCallout(
-                                    lesson.id,
-                                    blockId,
-                                    pieceId,
-                                    value,
-                                  )
-                                }
-                                onAddAnswer={(blockId, pieceId) =>
-                                  props.onAddAnswer(lesson.id, blockId, pieceId)
-                                }
-                                onRemoveAnswer={(
-                                  blockId,
-                                  pieceId,
-                                  answerIndex,
-                                ) =>
-                                  props.onRemoveAnswer(
-                                    lesson.id,
-                                    blockId,
-                                    pieceId,
-                                    answerIndex,
-                                  )
-                                }
-                                onAddPiece={(blockId) =>
-                                  props.onAddPiece(lesson.id, blockId)
-                                }
-                                onDeletePiece={(blockId, pieceId) =>
-                                  props.onDeletePiece(
-                                    lesson.id,
-                                    blockId,
-                                    pieceId,
-                                  )
-                                }
-                                onAddBlock={(type, index) =>
-                                  props.onAddBlock(lesson.id, type, index)
-                                }
-                                onDeleteBlock={(blockId) =>
-                                  props.onDeleteBlock(lesson.id, blockId)
-                                }
-                                onDuplicateBlock={(blockId) =>
-                                  props.onDuplicateBlock(lesson.id, blockId)
-                                }
-                                onMoveBlock={(blockId, direction) =>
-                                  props.onMoveBlock(
-                                    lesson.id,
-                                    blockId,
-                                    direction,
-                                  )
-                                }
-                                onReorderBlock={(
-                                  draggedId,
-                                  targetId,
-                                  position,
-                                ) =>
-                                  props.onReorderBlock(
-                                    lesson.id,
-                                    draggedId,
-                                    targetId,
-                                    position,
-                                  )
-                                }
                                 onDone={() => collapse(lesson.id)}
                                 onAddLesson={() => startLesson(module.id)}
-                                onUndoDeletion={props.onUndoDeletion}
-                                onEndHistoryGroup={props.onEndHistoryGroup}
                               />
                             )}
                           </article>,
@@ -721,11 +530,9 @@ export function LessonLibrary(props: Props) {
                     </div>
                   </section>
                   {moduleLessons.length > 0 && (
-                    // Outside the module card — S3: an always-visible, compact,
+                    // Outside the module card: an always-visible, compact,
                     // left-aligned control, not a boxed full-width in-card
-                    // footer. Restyle requested from Track E via
-                    // /tmp/next-round-css-contract.md (existing class name kept,
-                    // moved position in the DOM).
+                    // footer.
                     <button
                       type="button"
                       className="lesson-library-add-lesson"
@@ -741,6 +548,7 @@ export function LessonLibrary(props: Props) {
       </div>
 
     </section>
+    </LessonBuilderProvider>
   );
 }
 

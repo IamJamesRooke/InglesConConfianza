@@ -5,9 +5,13 @@ import { renderToStaticMarkup } from "react-dom/server";
 
 import { SlideInsertControl } from "../../src/components/lesson-builder/slide-insert-control";
 import { SentenceEditor } from "../../src/components/lesson-builder/sentence-editor";
+import {
+  LessonBuilderProvider,
+  type LessonBuilderActions,
+} from "../../src/lib/lesson-builder/builder-context";
 import type { SentenceBlock } from "../../src/lib/lesson-builder/types";
 
-// D2: the lesson tail must behave exactly like a mid-document insertion seam
+// The lesson tail must behave exactly like a mid-document insertion seam
 // (hover/focus-reveal, no persistent "Add slide" row) once the lesson has at
 // least one slide — only an empty lesson keeps the always-visible, labelled
 // form. Regression: the tail control used to hardcode `labelled`.
@@ -90,26 +94,51 @@ function tableBlock(pieces: SentenceBlock["languageBlocks"], layout: SentenceBlo
 const noop = () => {};
 const noopPiece = () => "";
 
+const stubBuilderActions: LessonBuilderActions = {
+  conceptDisplays: {},
+  deletionUndo: null,
+  newLesson: () => "",
+  previewLesson: noop,
+  duplicateLesson: noop,
+  deleteLesson: noop,
+  renameLesson: noop,
+  addLessonConcept: noop,
+  removeLessonConcept: noop,
+  relabelLessonConcept: noop,
+  updateExplanation: noop,
+  updateSentence: noop,
+  updateSpanish: noop,
+  updateAnswer: noop,
+  updateCallout: noop,
+  addAnswer: noop,
+  removeAnswer: noop,
+  addPiece: noopPiece,
+  deletePiece: noop,
+  addBlock: () => "",
+  deleteBlock: noop,
+  duplicateBlock: noop,
+  moveBlock: noop,
+  reorderBlock: noop,
+  undoDeletion: noop,
+  endHistoryGroup: noop,
+};
+
 function renderTable(block: SentenceBlock, active: boolean) {
   return renderToStaticMarkup(
-    createElement(SentenceEditor, {
-      block,
-      active,
-      onActivate: noop,
-      onExit: noop,
-      onUpdateSentence: noop,
-      onUpdateSpanish: noop,
-      onUpdateAnswer: noop,
-      onUpdateCallout: noop,
-      onAddAnswer: noop,
-      onRemoveAnswer: noop,
-      onAddPiece: noopPiece,
-      onDeletePiece: noop,
+    LessonBuilderProvider({
+      value: stubBuilderActions,
+      children: createElement(SentenceEditor, {
+        lessonId: "lesson-1",
+        block,
+        active,
+        onActivate: noop,
+        onExit: noop,
+      }),
     }),
   );
 }
 
-// D4: English alternatives render as one slash-joined field (no separate
+// English alternatives render as one slash-joined field (no separate
 // alternatives button/count/panel), and no lightbulb "Add hint" affordance
 // remains anywhere in the active toolbar.
 test("sentence editing shows all accepted answers joined in one field, no alternatives/lightbulb chrome", () => {
@@ -153,7 +182,7 @@ test("sentence editing shows a hint pill only for an unselected pair with an aut
   assert.equal(pillCount, 1, "only the pair with an authored hint should render a pill");
 });
 
-// D3: no visible "Spanish"/"English" column headings, at rest or in edit —
+// No visible "Spanish"/"English" column headings, at rest or in edit —
 // the vocabulary table always renders through the same structural branch
 // (gated on layout, not on `active`), so one check with active=false covers
 // true document rest.
@@ -167,7 +196,7 @@ test("vocabulary table never renders a visible Spanish/English column heading", 
   assert.doesNotMatch(editHtml, />English</);
 });
 
-// D4: table rest presentation shows an authored hint as a plain text pill
+// Table rest presentation shows an authored hint as a plain text pill
 // tied to its row, and shows nothing (no blank/reserved slot) for rows
 // without one — never an always-present third column.
 test("vocabulary table rest shows a hint pill only for rows with an authored hint", () => {

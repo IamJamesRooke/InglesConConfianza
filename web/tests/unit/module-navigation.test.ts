@@ -206,12 +206,11 @@ test("result count is bounded even for a query that matches broadly", () => {
 // fragments ("que", "h") from other lessons. Reproduced against the actual
 // searchModuleNavigator with a fixture modeling the real lesson content
 // (a sentence block split into "Necesito" / "ir a la tienda" / "porque"
-// blanks) — the function itself returns exactly one, correct match. See
-// /tmp/module-navigation-final.md for the full writeup: the verified,
-// fixable defect found alongside this was a duplicate React `key` (field +
-// lesson + blockId collided whenever one block had two matches of the same
-// field), which is the actual mechanism by which React can show a stale
-// sibling's content — fixed by switching to a plain per-render index key.
+// blanks) — the function itself returns exactly one, correct match. The
+// actual defect was a duplicate React `key` (field + lesson + blockId
+// collided whenever one block had two matches of the same field), which is
+// the mechanism by which React can show a stale sibling's content — fixed by
+// switching to a plain per-render index key.
 function realisticStoreLessonFixture(): { modules: LessonModule[]; lessons: Lesson[] } {
   const modules: LessonModule[] = [
     { id: "m1", name: "Module I", lessonIds: ["l1", "l2", "l3"] },

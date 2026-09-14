@@ -6,28 +6,38 @@ import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 import { SentencePresentation } from "@/components/lesson-builder/sentence-presentation";
 import { planAcceptedAnswersCommit } from "@/lib/lesson-builder/answer-commit-plan";
 import { formatAnswerEntry, parseAnswerEntry } from "@/lib/lesson-builder/answer-entry";
+import { useLessonBuilder } from "@/lib/lesson-builder/builder-context";
 import type { SentenceBlock } from "@/lib/lesson-builder/types";
 
 type Piece = SentenceBlock["languageBlocks"][number];
 type HintOrigin = { field: "spanish" | "english"; caret: number };
 
 type Props = {
+  lessonId: string;
   block: SentenceBlock;
   active: boolean;
   onActivate: () => void;
   onExit: () => void;
-  onUpdateSentence: (field: "promptText" | "helperText" | "answerFeedback", value: string | null) => void;
-  onUpdateSpanish: (pieceId: string, value: string) => void;
-  onUpdateAnswer: (pieceId: string, answerIndex: number, value: string) => void;
-  onUpdateCallout: (pieceId: string, value: string | null) => void;
-  onAddAnswer: (pieceId: string) => void;
-  onRemoveAnswer: (pieceId: string, answerIndex: number) => void;
-  onAddPiece: () => string;
-  onDeletePiece: (pieceId: string) => void;
 };
 
 export function SentenceEditor(props: Props) {
-  const { block, active } = props;
+  const { lessonId, block, active } = props;
+  const actions = useLessonBuilder();
+  const boundActions = {
+    onUpdateSentence: (field: "promptText" | "helperText" | "answerFeedback", value: string | null) =>
+      actions.updateSentence(lessonId, block.id, field, value),
+    onUpdateSpanish: (pieceId: string, value: string) =>
+      actions.updateSpanish(lessonId, block.id, pieceId, value),
+    onUpdateAnswer: (pieceId: string, answerIndex: number, value: string) =>
+      actions.updateAnswer(lessonId, block.id, pieceId, answerIndex, value),
+    onUpdateCallout: (pieceId: string, value: string | null) =>
+      actions.updateCallout(lessonId, block.id, pieceId, value),
+    onAddAnswer: (pieceId: string) => actions.addAnswer(lessonId, block.id, pieceId),
+    onRemoveAnswer: (pieceId: string, answerIndex: number) =>
+      actions.removeAnswer(lessonId, block.id, pieceId, answerIndex),
+    onAddPiece: () => actions.addPiece(lessonId, block.id),
+    onDeletePiece: (pieceId: string) => actions.deletePiece(lessonId, block.id, pieceId),
+  };
   const [activePiece, setActivePiece] = useState<string | null>(null);
   const [showInstruction, setShowInstruction] = useState(false);
   // English alternatives edit as one local draft string (slash-delimited);
@@ -84,9 +94,9 @@ export function SentenceEditor(props: Props) {
     const parsed = parseAnswerEntry(draft);
     const next = parsed.length > 0 ? parsed : [""];
     for (const op of planAcceptedAnswersCommit(piece.acceptedAnswers, next)) {
-      if (op.kind === "update") props.onUpdateAnswer(piece.id, op.index, op.value);
-      else if (op.kind === "append") { props.onAddAnswer(piece.id); props.onUpdateAnswer(piece.id, op.index, op.value); }
-      else props.onRemoveAnswer(piece.id, op.index);
+      if (op.kind === "update") boundActions.onUpdateAnswer(piece.id, op.index, op.value);
+      else if (op.kind === "append") { boundActions.onAddAnswer(piece.id); boundActions.onUpdateAnswer(piece.id, op.index, op.value); }
+      else boundActions.onRemoveAnswer(piece.id, op.index);
     }
     setEnglishDraft((prev) => {
       if (!(piece.id in prev)) return prev;
@@ -111,13 +121,13 @@ export function SentenceEditor(props: Props) {
   // pairs or deleting the slide itself.
   function exitEditing() {
     for (const piece of block.languageBlocks) {
-      if (isPieceBlank(piece)) props.onDeletePiece(piece.id);
+      if (isPieceBlank(piece)) boundActions.onDeletePiece(piece.id);
     }
     props.onExit();
   }
 
   function closeHint(piece: Piece) {
-    if (!piece.callout?.trim()) props.onUpdateCallout(piece.id, null);
+    if (!piece.callout?.trim()) boundActions.onUpdateCallout(piece.id, null);
   }
 
   function focusHint(piece: Piece, origin: HintOrigin) {
@@ -130,10 +140,15 @@ export function SentenceEditor(props: Props) {
     const origin = hintOrigin.current;
     hintOrigin.current = null;
     const ref = origin?.field === "english" ? englishRefs.current.get(piece.id) : spanishRefs.current.get(piece.id);
-    requestAnimationFrame(() => {
-      ref?.focus();
-      if (origin && ref) ref.setSelectionRange(origin.caret, origin.caret);
-    });
+    // Synchronous, unlike focusHint's rAF: the Spanish/English fields are
+    // already mounted the whole time the hint pill is open (only the pill
+    // itself is conditionally rendered), so the ref is valid immediately —
+    // no need to wait a frame. Deferring this via rAF let a fast follow-up
+    // keystroke (e.g. Tab right after Escape) race ahead of the focus
+    // restore and land on whatever had focus in between, silently losing
+    // the keystroke's effect.
+    ref?.focus();
+    if (origin && ref) ref.setSelectionRange(origin.caret, origin.caret);
   }
 
   function blockNewline(event: KeyboardEvent<HTMLTextAreaElement>) {
@@ -154,7 +169,7 @@ export function SentenceEditor(props: Props) {
 
   function handleDeleteShortcut(event: KeyboardEvent<HTMLTextAreaElement>, piece: Piece) {
     if (!event.altKey || !event.ctrlKey || event.metaKey || event.shiftKey || event.nativeEvent.isComposing) return false;
-    if (event.code === "Backspace") { event.preventDefault(); props.onDeletePiece(piece.id); return true; }
+    if (event.code === "Backspace") { event.preventDefault(); boundActions.onDeletePiece(piece.id); return true; }
     return false;
   }
 
@@ -217,7 +232,7 @@ export function SentenceEditor(props: Props) {
   // Tab handler below, mid-commit) must not be blocked by stale props from
   // before their own just-dispatched commit has re-rendered.
   function createPair() {
-    const id = props.onAddPiece();
+    const id = boundActions.onAddPiece();
     focusCommittedPiece.current = id;
   }
 
@@ -251,7 +266,7 @@ export function SentenceEditor(props: Props) {
           rows={1}
           placeholder="Add an instruction…"
           aria-label="Optional learner instruction"
-          onChange={(event) => props.onUpdateSentence("promptText", event.target.value)}
+          onChange={(event) => boundActions.onUpdateSentence("promptText", event.target.value)}
           onKeyDown={(event) => {
             if (event.key === "Escape" && !event.nativeEvent.isComposing) {
               event.preventDefault(); event.stopPropagation();
@@ -270,7 +285,7 @@ export function SentenceEditor(props: Props) {
             <div key={piece.id} className="lesson-document-pair">
               <div className={`lesson-document-piece ${activePiece === piece.id ? "active" : ""}`} onFocus={() => setActivePiece(piece.id)}>
                 <div className="lesson-document-language-field" data-language="es">
-                  <textarea rows={1} data-field="spanish" ref={(element) => { if (element) spanishRefs.current.set(piece.id, element); else spanishRefs.current.delete(piece.id); }} value={piece.spanish} onChange={(event) => props.onUpdateSpanish(piece.id, event.target.value)} onKeyDown={(event) => handleSpanishKey(event, index)} placeholder="Type in Spanish" lang="es" aria-label={`${isTable ? "Row" : "Sentence piece"} ${index + 1} Spanish`} />
+                  <textarea rows={1} data-field="spanish" ref={(element) => { if (element) spanishRefs.current.set(piece.id, element); else spanishRefs.current.delete(piece.id); }} value={piece.spanish} onChange={(event) => boundActions.onUpdateSpanish(piece.id, event.target.value)} onKeyDown={(event) => handleSpanishKey(event, index)} placeholder="Type in Spanish" lang="es" aria-label={`${isTable ? "Row" : "Sentence piece"} ${index + 1} Spanish`} />
                 </div>
                 <div className="lesson-document-language-field" data-language="en">
                   <textarea
@@ -292,7 +307,7 @@ export function SentenceEditor(props: Props) {
                 className="lesson-document-pair-delete"
                 aria-label={`Delete ${isTable ? "row" : "pair"} ${pieceLabel(piece, index)}`}
                 title={`Delete ${isTable ? "row" : "pair"}`}
-                onClick={() => props.onDeletePiece(piece.id)}
+                onClick={() => boundActions.onDeletePiece(piece.id)}
               >
                 <X size={11} aria-hidden="true" />
               </button>
@@ -302,7 +317,7 @@ export function SentenceEditor(props: Props) {
                   className="lesson-document-hint-pill-input"
                   ref={hintInputRef}
                   value={piece.callout ?? ""}
-                  onChange={(event) => props.onUpdateCallout(piece.id, event.target.value)}
+                  onChange={(event) => boundActions.onUpdateCallout(piece.id, event.target.value)}
                   onBlur={() => closeHint(piece)}
                   onKeyDown={(event) => {
                     if (event.nativeEvent.isComposing) return;
