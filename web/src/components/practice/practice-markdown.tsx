@@ -9,7 +9,10 @@ const inlineMarkdownPattern =
   /(\[\[(?:es|en):[^\]]+\]\]|\\?<kbd>[^<]+?\\?<\/kbd>|==[^=]+==|\*\*[^*]+?\*\*|__[^_]+?__|\*[^*\s][^*]*\*|_[^_\s][^_]*_)/gu;
 
 export type PracticeMarkdownVariant =
-  "explanation" | "document" | "eyebrow" | "prompt" | "helper" | "feedback";
+  | "explanation"
+  | "document"
+  | "eyebrow"
+  | "prompt";
 
 export function PracticeMarkdown({
   markdown,
@@ -26,9 +29,7 @@ export function PracticeMarkdown({
       className={`practice-markdown-content ${
         isExplanation
           ? "space-y-4 text-center text-foreground"
-          : variant === "feedback"
-            ? "space-y-2 text-center"
-            : "space-y-2 text-left"
+          : "space-y-2 text-left"
       }`}
     >
       {blocks.map((block, blockIndex) => {
@@ -44,9 +45,7 @@ export function PracticeMarkdown({
               ? "text-sm font-semibold uppercase tracking-[0.2em]"
               : variant === "prompt"
                 ? "text-2xl font-semibold leading-tight sm:text-3xl"
-                : variant === "feedback"
-                  ? "text-lg font-semibold leading-7 sm:text-xl"
-                  : "text-sm font-semibold leading-5.5";
+                : "text-sm font-semibold leading-5.5";
 
           return (
             <HeadingTag
@@ -102,9 +101,7 @@ export function PracticeMarkdown({
             ? "text-sm font-medium uppercase tracking-[0.2em]"
             : variant === "prompt"
               ? "text-2xl font-semibold leading-tight sm:text-3xl"
-              : variant === "feedback"
-                ? "text-lg font-semibold leading-7 sm:text-xl sm:leading-8"
-                : "text-sm font-medium leading-5.5";
+              : "text-sm font-medium leading-5.5";
 
         return (
           <p

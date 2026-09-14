@@ -33,7 +33,9 @@ export function focusSlideWritingField(
         ? slide.querySelector<HTMLElement>(".lesson-document-prompt")
         : null;
     const target =
-      prompt ?? slide.querySelector<HTMLElement>(WRITING_FIELD_SELECTOR);
+      prompt ??
+      slide.querySelector<HTMLElement>("[data-field='spanish']") ??
+      slide.querySelector<HTMLElement>(WRITING_FIELD_SELECTOR);
     // preventScroll so the caret placement doesn't fight the smooth scroll.
     target?.focus({ preventScroll: true });
   });

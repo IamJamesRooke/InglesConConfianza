@@ -47,7 +47,7 @@ The expanded view is a compact, read-only teaching script:
 - Show every slide in order with its number and type.
 - Render full explanation text with its formatting, no line clamping or raw markup.
 - Render sentence pieces as aligned Spanish → English pairs, preserving their order and boundaries. Show vocabulary pairs as rows.
-- Include authored instructions, helper text, context hints, accepted alternatives, and success feedback with quiet labels. Empty optional fields take no space.
+- Keep the optional learner instruction directly above every sentence/table, with context hints and accepted alternatives available beside their pair. The retired sentence-level helper-text and after-correct values remain file-compatible but have no authoring or learner UI.
 - Provide an accessible Edit action per slide that opens that exact slide in Zen mode. Returning restores the expanded lesson and library scroll position.
 - Allow several lessons to remain expanded, with one **Show all content / Hide all content** control. Use natural page scrolling, not a separate scrollbar per lesson.
 
@@ -63,12 +63,12 @@ Each arrow is one Tab press. No menu, hint button, plus button, or extra Enter i
 
 Define the field behavior explicitly:
 
-| Location | Tab | Shift+Tab |
-| --- | --- | --- |
-| Spanish field | English answer in the same piece | Previous piece’s English answer; on the first piece, leave the writing sequence |
-| English field with a following piece | Following piece’s Spanish field | Same piece’s Spanish field |
-| Final English field in a completed pair | Show one new empty pair and focus its Spanish field | Same piece’s Spanish field |
-| Empty trailing pair | Spanish goes to English; Tab from its empty English exits to slide controls | Return through the existing fields |
+| Location                                | Tab                                                                         | Shift+Tab                                                                       |
+| --------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| Spanish field                           | English answer in the same piece                                            | Previous piece’s English answer; on the first piece, leave the writing sequence |
+| English field with a following piece    | Following piece’s Spanish field                                             | Same piece’s Spanish field                                                      |
+| Final English field in a completed pair | Show one new empty pair and focus its Spanish field                         | Same piece’s Spanish field                                                      |
+| Empty trailing pair                     | Spanish goes to English; Tab from its empty English exits to slide controls | Return through the existing fields                                              |
 
 Implementation details:
 
@@ -110,19 +110,19 @@ The active scope is the topmost dialog/menu, then text editor or sentence compos
 
 Use a small primary vocabulary:
 
-| Keys | Action |
-| --- | --- |
-| Tab / Shift+Tab | Follow the writing sequence or move between ordinary controls |
-| Ctrl/Cmd+K | Open visible, focused commands from any authoring field |
-| Ctrl/Cmd+Enter | Finish the current writing moment and open Add next slide |
-| PageUp / PageDown | Navigate Setup, slides, and Ending when no menu/dialog owns the key |
-| Escape | Close one layer or leave text editing, preserving content |
-| Ctrl/Cmd+S | Save now |
-| Ctrl/Cmd+Z | Undo text while writing; undo structure from the slide surface |
-| Ctrl/Cmd+Shift+Z | Redo in the same scope |
-| Ctrl/Cmd+Shift+1 / 2 | Mark selected text Spanish / English |
-| Ctrl/Cmd+Shift+0 | Clear selected inline formatting |
-| Ctrl/Cmd+B | Standard bold behavior in the text editor |
+| Keys                 | Action                                                              |
+| -------------------- | ------------------------------------------------------------------- |
+| Tab / Shift+Tab      | Follow the writing sequence or move between ordinary controls       |
+| Ctrl/Cmd+K           | Open visible, focused commands from any authoring field             |
+| Ctrl/Cmd+Enter       | Finish the current writing moment and open Add next slide           |
+| PageUp / PageDown    | Navigate Setup, slides, and Ending when no menu/dialog owns the key |
+| Escape               | Close one layer or leave text editing, preserving content           |
+| Ctrl/Cmd+S           | Save now                                                            |
+| Ctrl/Cmd+Z           | Undo text while writing; undo structure from the slide surface      |
+| Ctrl/Cmd+Shift+Z     | Redo in the same scope                                              |
+| Ctrl/Cmd+Shift+1 / 2 | Mark selected text Spanish / English                                |
+| Ctrl/Cmd+Shift+0     | Clear selected inline formatting                                    |
+| Ctrl/Cmd+B           | Standard bold behavior in the text editor                           |
 
 **Intentional change:** Ctrl/Cmd+Enter currently launches preview. Replace that binding consistently with Add next slide. Preview remains a visible **Try lesson** action and a searchable command. Do not leave both handlers active.
 

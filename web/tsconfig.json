@@ -36,7 +36,15 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts",
     ".next-ux-check/types/**/*.ts",
-    ".next-ux-check/dev/types/**/*.ts"
+    ".next-ux-check/dev/types/**/*.ts",
+    ".next-ux-build-check/types/**/*.ts",
+    ".next-ux-build-check/dev/types/**/*.ts",
+    ".next-build-verify/types/**/*.ts",
+    ".next-build-verify/dev/types/**/*.ts",
+    ".next-ux-check2/types/**/*.ts",
+    ".next-ux-check2/dev/types/**/*.ts",
+    ".next-verify-owner/types/**/*.ts",
+    ".next-verify-owner/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

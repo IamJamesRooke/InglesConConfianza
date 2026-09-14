@@ -59,7 +59,10 @@ function serializeInlineNodes(node: ParentNode) {
 }
 
 function serializeInlineNode(node: Node): string {
-  if (node.nodeType === Node.TEXT_NODE) return (node.textContent ?? "").replaceAll("\u200B", "");
+  if (node.nodeType === Node.TEXT_NODE)
+    return (node.textContent ?? "")
+      .replaceAll("\u200B", "")
+      .replaceAll("\u00A0", " ");
   if (!(node instanceof HTMLElement)) return "";
 
   const content = serializeInlineNodes(node);

@@ -23,6 +23,7 @@ export function EditablePracticeMarkdown({
   showSelectionMenu?: boolean;
 }) {
   const [renderedMarkdown, setRenderedMarkdown] = useState(markdown);
+  const [isActive, setIsActive] = useState(false);
   const [hasSelection, setHasSelection] = useState(false);
   const [typingMode, setTypingMode] = useState<"es" | "en" | null>(null);
   const typingModeRef = useRef<"es" | "en" | null>(null);
@@ -163,14 +164,28 @@ export function EditablePracticeMarkdown({
       !root ||
       !selection ||
       selection.rangeCount === 0 ||
-      selection.isCollapsed ||
       !root.contains(selection.anchorNode)
     ) {
-      setHasSelection(false);
       return;
     }
     savedRangeRef.current = selection.getRangeAt(0).cloneRange();
-    setHasSelection(true);
+    setHasSelection(!selection.isCollapsed);
+  }
+  function restoreSelection() {
+    const root = rootRef.current;
+    const selection = window.getSelection();
+    const saved = savedRangeRef.current;
+    if (
+      !root ||
+      !selection ||
+      !saved ||
+      !root.contains(saved.commonAncestorContainer)
+    )
+      return false;
+    root.focus({ preventScroll: true });
+    selection.removeAllRanges();
+    selection.addRange(saved.cloneRange());
+    return true;
   }
   function formatSelection(
     format: "bold" | "italic" | "clear",
@@ -178,8 +193,11 @@ export function EditablePracticeMarkdown({
   ) {
     const root = rootRef.current;
     const selection = window.getSelection();
+    if (useSavedRange && !restoreSelection()) return;
     const range = useSavedRange
-      ? savedRangeRef.current
+      ? window.getSelection()?.rangeCount
+        ? window.getSelection()!.getRangeAt(0)
+        : null
       : selection?.rangeCount
         ? selection.getRangeAt(0)
         : null;
@@ -195,9 +213,50 @@ export function EditablePracticeMarkdown({
       if (live && !live.collapsed) clearLanguageInRange(live);
     }
     onChange(serializeExplanation(root));
-    savedRangeRef.current = null;
-    setHasSelection(false);
     root.focus();
+    rememberSelection();
+  }
+  function applyLanguage(language: "es" | "en" | null) {
+    if (!restoreSelection()) return;
+    setLanguageMode(language);
+    rememberSelection();
+  }
+  function applyNormalText() {
+    if (!restoreSelection()) return;
+    const selection = window.getSelection();
+    const range = selection?.rangeCount ? selection.getRangeAt(0) : null;
+    if (!range) return;
+    if (range.collapsed) {
+      const current = caretMark();
+      if (current) placeCaretAfter(current);
+      // removeFormat does not reliably clear the browser's collapsed-caret
+      // typing state, so explicitly toggle active inline commands off first.
+      for (const command of ["bold", "italic"])
+        if (document.queryCommandState(command)) document.execCommand(command);
+      document.execCommand("removeFormat");
+      endTypingMode();
+      rootRef.current?.focus();
+      rememberSelection();
+      return;
+    }
+    formatSelection("clear");
+  }
+  function finishEditing(root: HTMLDivElement) {
+    endTypingMode();
+    const nextMarkdown = serializeExplanation(root);
+    for (const node of Array.from(root.childNodes))
+      if (
+        node.nodeType === Node.TEXT_NODE ||
+        (node instanceof HTMLElement &&
+          !node.classList.contains("practice-markdown-content"))
+      )
+        node.remove();
+    editingRef.current = false;
+    savedRangeRef.current = null;
+    setIsActive(false);
+    setHasSelection(false);
+    setRenderedMarkdown(nextMarkdown);
+    onChange(nextMarkdown);
   }
   return (
     <div className="authoring-wysiwyg-shell">
@@ -213,6 +272,7 @@ export function EditablePracticeMarkdown({
         className={`authoring-wysiwyg authoring-wysiwyg-${variant}`}
         onFocus={() => {
           editingRef.current = true;
+          setIsActive(true);
           const content = rootRef.current?.querySelector<HTMLElement>(
             ".practice-markdown-content",
           );
@@ -247,20 +307,7 @@ export function EditablePracticeMarkdown({
             event.relatedTarget.closest(".authoring-format-menu")
           )
             return;
-          endTypingMode();
-          const root = event.currentTarget;
-          const nextMarkdown = serializeExplanation(root);
-          for (const node of Array.from(root.childNodes))
-            if (
-              node.nodeType === Node.TEXT_NODE ||
-              (node instanceof HTMLElement &&
-                !node.classList.contains("practice-markdown-content"))
-            )
-              node.remove();
-          editingRef.current = false;
-          setHasSelection(false);
-          setRenderedMarkdown(nextMarkdown);
-          onChange(nextMarkdown);
+          finishEditing(event.currentTarget);
         }}
         onKeyDown={(event) => {
           // Ctrl+Alt, not Alt alone: plain Alt+letter is commonly grabbed by
@@ -343,26 +390,42 @@ export function EditablePracticeMarkdown({
           aria-hidden="true"
         >
           {typingMode === "es" ? "Spanish" : "English"}{" "}
-          <kbd>{typingMode === "es" ? "Alt Q" : "Alt E"}</kbd>
+          <kbd>{typingMode === "es" ? "Ctrl Alt Q" : "Ctrl Alt E"}</kbd>
         </span>
       )}
-      {showSelectionMenu && hasSelection && (
+      {showSelectionMenu && isActive && (
         <div
           className="authoring-format-menu"
           role="toolbar"
-          aria-label="Format selected text"
+          aria-label="Format explanation text"
+          data-has-selection={hasSelection ? "true" : "false"}
+          onBlur={(event) => {
+            if (
+              event.relatedTarget instanceof HTMLElement &&
+              event.relatedTarget.closest(".authoring-wysiwyg-shell")
+            )
+              return;
+            if (rootRef.current) finishEditing(rootRef.current);
+          }}
         >
           <FormatButton
-            label="Español"
-            shortcut="Alt Q"
+            label="Spanish"
+            shortcut="Ctrl Alt Q"
             className="spanish"
-            onFormat={() => setLanguageMode("es")}
+            pressed={typingMode === "es"}
+            onFormat={() => applyLanguage("es")}
           />
           <FormatButton
             label="English"
-            shortcut="Alt E"
+            shortcut="Ctrl Alt E"
             className="english"
-            onFormat={() => setLanguageMode("en")}
+            pressed={typingMode === "en"}
+            onFormat={() => applyLanguage("en")}
+          />
+          <FormatButton
+            label="Normal"
+            shortcut="Ctrl Alt W"
+            onFormat={applyNormalText}
           />
           <FormatButton
             label="Bold"
@@ -374,11 +437,6 @@ export function EditablePracticeMarkdown({
             shortcut="Ctrl/⌘ I"
             onFormat={() => formatSelection("italic", true)}
           />
-          <FormatButton
-            label="Clear"
-            shortcut="Alt W"
-            onFormat={() => formatSelection("clear", true)}
-          />
         </div>
       )}
     </div>
@@ -388,17 +446,21 @@ function FormatButton({
   label,
   shortcut,
   className = "",
+  pressed,
   onFormat,
 }: {
   label: string;
   shortcut: string;
   className?: string;
+  pressed?: boolean;
   onFormat: () => void;
 }) {
   return (
     <button
       type="button"
       className={className}
+      aria-pressed={pressed}
+      title={`${label} (${shortcut})`}
       onMouseDown={(event) => event.preventDefault()}
       onClick={onFormat}
     >

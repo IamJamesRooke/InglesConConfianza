@@ -32,7 +32,9 @@ export type SentenceBlock = {
   layout?: "sentence" | "vocabulary_table";
   promptLabel: string;
   promptText: string;
+  /** @deprecated Retained for lesson-file compatibility; intentionally inert in authoring and practice UI. */
   helperText: string;
+  /** @deprecated Retained for lesson-file compatibility; normal success UI replaces authored feedback. */
   answerFeedback: string | null;
   languageBlocks: LanguageBlock[];
 };

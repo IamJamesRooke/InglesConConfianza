@@ -1,5 +1,8 @@
 /* The Lesson Builder landing page reads like a course binder. */
-.lesson-library { display: grid; gap: 22px; }
+.lesson-library {
+  display: grid;
+  gap: 22px;
+}
 .lesson-library-header {
   display: flex;
   align-items: end;
@@ -8,11 +11,34 @@
   padding-bottom: 22px;
   border-bottom: 1px solid var(--border);
 }
-.lesson-library-eyebrow { color: var(--muted-foreground); font-size: 11px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
-.lesson-library-header h1 { margin-top: 5px; font-size: 30px; font-weight: 750; letter-spacing: -.02em; }
-.lesson-library-header > div:first-child > p:last-child { margin-top: 6px; color: var(--muted-foreground); font-size: 13px; }
-.lesson-library-header-actions { display: flex; align-items: center; gap: 8px; }
-.lesson-library-header-actions > span { margin-right: 6px; color: var(--muted-foreground); font-size: 11px; }
+.lesson-library-eyebrow {
+  color: var(--muted-foreground);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+.lesson-library-header h1 {
+  margin-top: 5px;
+  font-size: 30px;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+}
+.lesson-library-header > div:first-child > p:last-child {
+  margin-top: 6px;
+  color: var(--muted-foreground);
+  font-size: 13px;
+}
+.lesson-library-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.lesson-library-header-actions > span {
+  margin-right: 6px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
 .lesson-library-header-actions button,
 .lesson-library-header-actions a {
   display: inline-flex;
@@ -28,7 +54,9 @@
   font-weight: 700;
 }
 .lesson-library-header-actions button:hover,
-.lesson-library-header-actions a:hover { background: var(--muted); }
+.lesson-library-header-actions a:hover {
+  background: var(--muted);
+}
 .lesson-library-search {
   display: flex;
   min-height: 48px;
@@ -41,17 +69,74 @@
   color: var(--muted-foreground);
   box-shadow: var(--shadow-sm);
 }
-.lesson-library-search input { min-width: 0; flex: 1; color: var(--foreground); background: transparent; outline: none; font-size: 14px; }
-.lesson-library-search kbd { padding: 3px 6px; border: 1px solid var(--border); border-radius: 5px; background: var(--muted); font: 600 10px ui-monospace, monospace; }
-.lesson-library-modules { display: grid; gap: 16px; }
-.lesson-library-module { overflow: visible; border: 1px solid var(--border); border-radius: 14px; background: var(--card); box-shadow: var(--shadow-sm); }
-.lesson-library-module-header { display: flex; min-height: 76px; align-items: center; gap: 12px; padding: 13px 16px; }
-.lesson-library-collapse { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 7px; color: var(--muted-foreground); }
-.lesson-library-collapse:hover { background: var(--muted); color: var(--foreground); }
-.lesson-library-module-name { min-width: 0; flex: 1; }
-.lesson-library-module-name h2 { overflow: hidden; color: var(--foreground); font-size: 17px; font-weight: 750; text-overflow: ellipsis; white-space: nowrap; }
-.lesson-library-module-name p { margin-top: 3px; color: var(--muted-foreground); font-size: 11px; }
-.lesson-library-module-actions { display: flex; gap: 7px; }
+.lesson-library-search input {
+  min-width: 0;
+  flex: 1;
+  color: var(--foreground);
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+}
+.lesson-library-search kbd {
+  padding: 3px 6px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: var(--muted);
+  font:
+    600 10px ui-monospace,
+    monospace;
+}
+.lesson-library-modules {
+  display: grid;
+  gap: 16px;
+}
+.lesson-library-module {
+  overflow: visible;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
+}
+.lesson-library-module-header {
+  display: flex;
+  min-height: 76px;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 16px;
+}
+.lesson-library-collapse {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 7px;
+  color: var(--muted-foreground);
+}
+.lesson-library-collapse:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-library-module-name {
+  min-width: 0;
+  flex: 1;
+}
+.lesson-library-module-name h2 {
+  overflow: hidden;
+  color: var(--foreground);
+  font-size: 17px;
+  font-weight: 750;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.lesson-library-module-name p {
+  margin-top: 3px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
+.lesson-library-module-actions {
+  display: flex;
+  gap: 7px;
+}
 .lesson-library-module-actions button {
   display: inline-flex;
   min-height: 36px;
@@ -63,28 +148,98 @@
   font-size: 12px;
   font-weight: 700;
 }
-.lesson-library-module-actions button:hover { background: var(--muted); }
-.lesson-library-module-actions button.primary { border-color: var(--primary); background: var(--primary); color: var(--primary-foreground); }
-.lesson-library-module-settings { display: grid; grid-template-columns: 1fr 260px; gap: 18px; padding: 18px 62px; border-top: 1px solid var(--border); background: var(--muted); }
-.lesson-library-module-settings > label { display: grid; gap: 5px; }
-.lesson-library-module-settings > label > span { color: var(--muted-foreground); font-size: 11px; font-weight: 700; }
+.lesson-library-module-actions button:hover {
+  background: var(--muted);
+}
+.lesson-library-module-actions button.primary {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+.lesson-library-module-settings {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 18px;
+  padding: 18px 62px;
+  border-top: 1px solid var(--border);
+  background: var(--muted);
+}
+.lesson-library-module-settings > label {
+  display: grid;
+  gap: 5px;
+}
+.lesson-library-module-settings > label > span {
+  color: var(--muted-foreground);
+  font-size: 11px;
+  font-weight: 700;
+}
 .lesson-library-module-settings input,
-.lesson-library-module-settings select { min-height: 39px; padding: 7px 9px; border: 1px solid var(--border); border-radius: 7px; background: var(--background); font-size: 13px; outline: none; }
-.lesson-library-module-settings > div:nth-child(3) { grid-column: 1 / -1; }
-.lesson-library-module-danger { display: flex; grid-column: 1 / -1; gap: 7px; }
-.lesson-library-module-danger button { display: inline-flex; align-items: center; gap: 5px; padding: 7px 9px; border-radius: 6px; color: var(--muted-foreground); font-size: 11px; }
-.lesson-library-module-danger button:hover:not(:disabled) { background: var(--muted); color: var(--foreground); }
-.lesson-library-module-danger button:last-child { margin-left: auto; color: var(--destructive); }
-.lesson-library-module-danger button:disabled { opacity: .3; }
-.lesson-library-list { border-top: 1px solid var(--border); }
-.lesson-library-row { position: relative; display: block; border-bottom: 1px solid var(--border); }
-.lesson-library-row-head { display: flex; min-height: 72px; align-items: stretch; }
-.lesson-library-row:last-child { border-bottom: 0; }
+.lesson-library-module-settings select {
+  min-height: 39px;
+  padding: 7px 9px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--background);
+  font-size: 13px;
+  outline: none;
+}
+.lesson-library-module-settings > div:nth-child(3) {
+  grid-column: 1 / -1;
+}
+.lesson-library-module-danger {
+  display: flex;
+  grid-column: 1 / -1;
+  gap: 7px;
+}
+.lesson-library-module-danger button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 9px;
+  border-radius: 6px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
+.lesson-library-module-danger button:hover:not(:disabled) {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-library-module-danger button:last-child {
+  margin-left: auto;
+  color: var(--destructive);
+}
+.lesson-library-module-danger button:disabled {
+  opacity: 0.3;
+}
+.lesson-library-list {
+  border-top: 1px solid var(--border);
+}
+.lesson-library-row {
+  position: relative;
+  display: block;
+  border-bottom: 1px solid var(--border);
+}
+.lesson-library-row-head {
+  display: flex;
+  min-height: 72px;
+  align-items: stretch;
+}
+.lesson-library-row:last-child {
+  border-bottom: 0;
+}
 /* Thin hover strip between lesson rows (and before the first one) — click
    the "+" to insert a new lesson at that exact position, instead of always
    appending at the end and dragging it up into place. */
-.lesson-library-insert { position: relative; height: 1px; opacity: 0; transition: opacity .12s; }
-.lesson-library-insert:hover, .lesson-library-insert:focus-within { opacity: 1; }
+.lesson-library-insert {
+  position: relative;
+  height: 1px;
+  opacity: 0;
+  transition: opacity 0.12s;
+}
+.lesson-library-insert:hover,
+.lesson-library-insert:focus-within {
+  opacity: 1;
+}
 .lesson-library-insert > button {
   position: absolute;
   top: -9px;
@@ -100,158 +255,679 @@
   color: var(--muted-foreground);
   transform: translateX(-50%);
 }
-.lesson-library-insert > button:hover { background: var(--muted); color: var(--foreground); }
-.lesson-library-open { display: grid; min-width: 0; flex: 1; grid-template-columns: 36px minmax(0, 1fr) auto 20px; align-items: center; gap: 13px; padding: 12px 16px 12px 20px; text-align: left; }
-.lesson-library-open:hover { background: color-mix(in oklch, var(--muted) 55%, transparent); }
-.lesson-library-number { display: grid; width: 32px; height: 32px; place-items: center; border-radius: 8px; background: var(--muted); color: var(--muted-foreground); font-size: 12px; font-weight: 750; }
-.lesson-library-summary { min-width: 0; }
-.lesson-library-summary strong { display: block; overflow: hidden; color: var(--foreground); font-size: 14px; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
-.lesson-library-summary small { display: block; overflow: hidden; margin-top: 5px; color: var(--muted-foreground); font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
-.lesson-library-status { padding: 4px 8px; border-radius: 999px; font-size: 10px; font-weight: 750; }
-.lesson-library-status.ready { background: color-mix(in oklch, var(--success) 14%, var(--card)); color: var(--success-foreground); }
-.lesson-library-status.attention { background: color-mix(in oklch, var(--hint) 20%, var(--card)); color: color-mix(in oklch, var(--hint) 72%, black); }
-.lesson-library-status.draft { background: var(--muted); color: var(--muted-foreground); }
-.lesson-library-row-menu { position: relative; display: grid; place-items: center; padding-right: 12px; }
-.lesson-library-row-menu > button { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 7px; color: var(--muted-foreground); }
-.lesson-library-row-menu > button:hover { background: var(--muted); color: var(--foreground); }
-.lesson-library-row-menu > div { position: absolute; top: 52px; right: 12px; z-index: 20; width: 170px; padding: 5px; border: 1px solid var(--border); border-radius: 9px; background: var(--popover); box-shadow: 0 12px 35px color-mix(in oklch, var(--foreground) 18%, transparent); }
-.lesson-library-content-toggle { align-self: center; margin-right: 20px; border: 0; background: transparent; color: var(--muted-foreground); font-size: 12px; font-weight: 600; }
-.lesson-library-content-toggle:hover { color: var(--foreground); text-decoration: underline; }
-.lesson-text-preview { display: block; padding: 8px 24px 10px 68px; border-top: 1px solid var(--border); background: var(--card); font-size: 12px; line-height: 1.25; }
-.lesson-preview-slide { min-width: 0; padding: 3px 0; }
-.lesson-preview-explanation { margin: 0; color: var(--foreground); font-weight: 500; }
-.lesson-preview-explanation mark { padding: 0 3px; border-radius: 3px; font-weight: 700; }
-.lesson-preview-explanation mark[data-language="es"] { background: color-mix(in oklch, var(--lesson-hl-es) 16%, var(--card)); color: var(--lesson-hl-es); }
-.lesson-preview-explanation mark[data-language="en"] { background: color-mix(in oklch, var(--lesson-hl-en) 16%, var(--card)); color: var(--lesson-hl-en); }
-.lesson-preview-sentence { display: flex; min-width: 0; flex-direction: column; align-items: flex-start; gap: 0; padding-left: 12px; }
-.lesson-preview-sentence strong { display: block; color: var(--foreground); font-size: 12px; font-weight: 700; }
-.lesson-preview-sentence > span { display: block; color: var(--muted-foreground); font-size: 12px; }
-.lesson-preview-sentence small { color: var(--muted-foreground); font-size: 10px; font-style: italic; line-height: 1.2; }
-.lesson-preview-vocabulary { display: flex; flex-wrap: wrap; gap: 3px 24px; padding-left: 12px; }
-.lesson-preview-vocabulary > div { width: min(180px, 100%); }
-.lesson-preview-vocabulary > div { display: flex; flex-direction: column; align-items: flex-start; }
-.lesson-preview-vocabulary strong { color: var(--foreground); font-size: 12px; }
-.lesson-preview-vocabulary span { color: var(--muted-foreground); font-size: 12px; }
-.lesson-text-empty { margin: 0; color: var(--muted-foreground); }
-.lesson-library-row-menu > div button { display: flex; width: 100%; min-height: 34px; align-items: center; gap: 7px; padding: 0 8px; border-radius: 6px; font-size: 11px; font-weight: 650; }
-.lesson-library-row-menu > div button:hover:not(:disabled) { background: var(--muted); }
-.lesson-library-row-menu > div button:disabled { opacity: .3; }
-.lesson-library-row-menu > div button.danger { color: var(--destructive); }
-.lesson-library-move-to { display: grid; gap: 4px; padding: 8px; border-top: 1px solid var(--border); color: var(--muted-foreground); font-size: 10px; font-weight: 700; }
-.lesson-library-move-to select { min-height: 32px; padding: 4px 6px; border: 1px solid var(--border); border-radius: 6px; background: var(--background); color: var(--foreground); font-size: 11px; }
-.lesson-library-empty { display: flex; min-height: 100px; align-items: center; justify-content: center; gap: 9px; color: var(--muted-foreground); font-size: 13px; }
-.lesson-library-empty button { color: var(--primary); font-weight: 700; }
-.lesson-library-no-results { display: grid; min-height: 140px; place-items: center; align-content: center; gap: 8px; border: 1px dashed var(--border); border-radius: 12px; color: var(--muted-foreground); font-size: 13px; }
+.lesson-library-insert > button:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-library-open {
+  display: grid;
+  min-width: 0;
+  flex: 1;
+  grid-template-columns: 36px minmax(0, 1fr) auto 20px;
+  align-items: center;
+  gap: 13px;
+  padding: 12px 16px 12px 20px;
+  text-align: left;
+}
+.lesson-library-open:hover {
+  background: color-mix(in oklch, var(--muted) 55%, transparent);
+}
+.lesson-library-number {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--muted);
+  color: var(--muted-foreground);
+  font-size: 12px;
+  font-weight: 750;
+}
+.lesson-library-summary {
+  min-width: 0;
+}
+.lesson-library-summary strong {
+  display: block;
+  overflow: hidden;
+  color: var(--foreground);
+  font-size: 14px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.lesson-library-summary small {
+  display: block;
+  overflow: hidden;
+  margin-top: 5px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.lesson-library-status {
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 750;
+}
+.lesson-library-status.ready {
+  background: color-mix(in oklch, var(--success) 14%, var(--card));
+  color: var(--success-foreground);
+}
+.lesson-library-status.attention {
+  background: color-mix(in oklch, var(--hint) 20%, var(--card));
+  color: color-mix(in oklch, var(--hint) 72%, black);
+}
+.lesson-library-status.draft {
+  background: var(--muted);
+  color: var(--muted-foreground);
+}
+.lesson-library-row-menu {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding-right: 12px;
+}
+.lesson-library-row-menu > button {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 7px;
+  color: var(--muted-foreground);
+}
+.lesson-library-row-menu > button:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-library-row-menu > div {
+  position: absolute;
+  top: 52px;
+  right: 12px;
+  z-index: 20;
+  width: 170px;
+  padding: 5px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--popover);
+  box-shadow: 0 12px 35px
+    color-mix(in oklch, var(--foreground) 18%, transparent);
+}
+.lesson-library-content-toggle {
+  align-self: center;
+  margin-right: 20px;
+  border: 0;
+  background: transparent;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  font-weight: 600;
+}
+.lesson-library-content-toggle:hover {
+  color: var(--foreground);
+  text-decoration: underline;
+}
+.lesson-text-preview {
+  display: block;
+  padding: 8px 24px 10px 68px;
+  border-top: 1px solid var(--border);
+  background: var(--card);
+  font-size: 12px;
+  line-height: 1.25;
+}
+.lesson-preview-slide {
+  min-width: 0;
+  padding: 3px 0;
+}
+.lesson-preview-explanation {
+  margin: 0;
+  color: var(--foreground);
+  font-weight: 500;
+}
+.lesson-preview-explanation mark {
+  padding: 0 3px;
+  border-radius: 3px;
+  font-weight: 700;
+}
+.lesson-preview-explanation mark[data-language="es"] {
+  background: color-mix(in oklch, var(--lesson-hl-es) 16%, var(--card));
+  color: var(--lesson-hl-es);
+}
+.lesson-preview-explanation mark[data-language="en"] {
+  background: color-mix(in oklch, var(--lesson-hl-en) 16%, var(--card));
+  color: var(--lesson-hl-en);
+}
+.lesson-preview-sentence {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  padding-left: 12px;
+}
+.lesson-preview-sentence strong {
+  display: block;
+  color: var(--foreground);
+  font-size: 12px;
+  font-weight: 700;
+}
+.lesson-preview-sentence > span {
+  display: block;
+  color: var(--muted-foreground);
+  font-size: 12px;
+}
+.lesson-preview-sentence small {
+  color: var(--muted-foreground);
+  font-size: 10px;
+  font-style: italic;
+  line-height: 1.2;
+}
+.lesson-preview-vocabulary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px 24px;
+  padding-left: 12px;
+}
+.lesson-preview-vocabulary > div {
+  width: min(180px, 100%);
+}
+.lesson-preview-vocabulary > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.lesson-preview-vocabulary strong {
+  color: var(--foreground);
+  font-size: 12px;
+}
+.lesson-preview-vocabulary span {
+  color: var(--muted-foreground);
+  font-size: 12px;
+}
+.lesson-text-empty {
+  margin: 0;
+  color: var(--muted-foreground);
+}
+.lesson-library-row-menu > div button {
+  display: flex;
+  width: 100%;
+  min-height: 34px;
+  align-items: center;
+  gap: 7px;
+  padding: 0 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 650;
+}
+.lesson-library-row-menu > div button:hover:not(:disabled) {
+  background: var(--muted);
+}
+.lesson-library-row-menu > div button:disabled {
+  opacity: 0.3;
+}
+.lesson-library-row-menu > div button.danger {
+  color: var(--destructive);
+}
+.lesson-library-move-to {
+  display: grid;
+  gap: 4px;
+  padding: 8px;
+  border-top: 1px solid var(--border);
+  color: var(--muted-foreground);
+  font-size: 10px;
+  font-weight: 700;
+}
+.lesson-library-move-to select {
+  min-height: 32px;
+  padding: 4px 6px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--background);
+  color: var(--foreground);
+  font-size: 11px;
+}
+.lesson-library-empty {
+  display: flex;
+  min-height: 100px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  color: var(--muted-foreground);
+  font-size: 13px;
+}
+.lesson-library-empty button {
+  color: var(--primary);
+  font-weight: 700;
+}
+.lesson-library-no-results {
+  display: grid;
+  min-height: 140px;
+  place-items: center;
+  align-content: center;
+  gap: 8px;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  color: var(--muted-foreground);
+  font-size: 13px;
+}
 
 /* The lesson library is also the editor. At rest it reads like a document;
    controls become stronger only around the passage receiving attention. */
-.lesson-library-row-head { align-items: center; padding: 11px 16px; gap: 9px; }
-.lesson-library-title-input { min-width: 0; flex: 1; border-radius: 5px; background: transparent; color: var(--foreground); font-size: 15px; font-weight: 750; outline: none; }
-.lesson-library-title-input:hover { background: color-mix(in oklch, var(--muted) 48%, transparent); }
-.lesson-library-title-input:focus { background: var(--background); box-shadow: 0 0 0 2px color-mix(in oklch, var(--primary) 22%, transparent); }
-.lesson-library-slide-count { color: var(--muted-foreground); font-size: 11px; }
-.lesson-library-try { padding: 6px 8px; border-radius: 6px; color: var(--muted-foreground); font-size: 11px; font-weight: 700; }
-.lesson-library-try:hover { background: var(--muted); color: var(--foreground); }
-.lesson-document-drag { display: grid; width: 32px; height: 32px; cursor: grab; place-items: center; }
-.lesson-document-drag:hover, .lesson-document-drag:focus-visible { background: var(--muted); color: var(--foreground); }
-.lesson-library-row.dragging { opacity: .45; }
-.lesson-document { border-top: 1px solid var(--border); background: var(--card); padding: 14px 26px 18px 67px; }
-.lesson-document > div:first-child { margin-bottom: 12px; }
-.lesson-document-body { position: relative; max-width: 850px; }
-.lesson-document-block { position: relative; padding: 3px 24px 3px 9px; border-radius: 7px; }
-.lesson-document-block:focus-within { background: var(--muted); box-shadow: inset 2px 0 color-mix(in oklch, var(--primary) 22%, var(--border)); }
-.lesson-document-block-tools { position: absolute; z-index: 5; top: 5px; right: 1px; opacity: 0; }
-.lesson-document-block:hover > .lesson-document-block-tools, .lesson-document-block:focus-within > .lesson-document-block-tools { opacity: 1; }
-.lesson-document-block-tools > button, .lesson-document-piece-options { display: grid; width: 25px; height: 25px; place-items: center; border-radius: 5px; color: var(--muted-foreground); }
-.lesson-document-block-tools > button:hover, .lesson-document-piece-options:hover { background: var(--muted); color: var(--foreground); }
-.lesson-document-menu, .lesson-document-piece-menu, .lesson-document-insert-menu { position: absolute; z-index: 30; min-width: 170px; padding: 5px; border: 1px solid var(--border); border-radius: 8px; background: var(--popover); box-shadow: 0 12px 30px color-mix(in oklch, var(--foreground) 16%, transparent); }
-.lesson-document-menu { top: 27px; right: 0; }
-.lesson-document-menu button, .lesson-document-piece-menu button, .lesson-document-insert-menu button { display: flex; width: 100%; min-height: 32px; align-items: center; gap: 6px; padding: 0 8px; border-radius: 5px; text-align: left; font-size: 11px; font-weight: 650; }
-.lesson-document-menu button:hover:not(:disabled), .lesson-document-piece-menu button:hover, .lesson-document-insert-menu button:hover { background: var(--muted); }
-.lesson-document-menu button:disabled { opacity: .35; }
-.lesson-document-menu .danger, .lesson-document-piece-menu .danger { color: var(--destructive); }
-.lesson-document-explanation { min-height: 30px; font-size: 13px; line-height: 1.45; }
-.lesson-document-explanation-preview { display: block; width: 100%; min-height: 30px; padding: 4px 2px; color: var(--foreground); text-align: left; }
-.lesson-document-explanation-preview > span { color: var(--muted-foreground); font-style: italic; }
-.lesson-document-explanation-preview p + p { margin-top: 5px; }
-.lesson-document-explanation-preview mark[data-language="es"] { padding: 1px 3px; border-radius: 3px; background: color-mix(in oklch, var(--lesson-hl-es) 16%, var(--card)); color: var(--lesson-hl-es); }
-.lesson-document-explanation-preview mark[data-language="en"] { padding: 1px 3px; border-radius: 3px; background: color-mix(in oklch, var(--lesson-hl-en) 16%, var(--card)); color: var(--lesson-hl-en); }
-.lesson-document-explanation .lesson-markdown-editor { padding: 5px 0 10px; border: 0; background: transparent; box-shadow: none; }
-.lesson-document-explanation .lesson-markdown-content { min-height: 56px !important; padding: 8px 2px !important; font-size: 13px; line-height: 1.55; }
-.lesson-document-prompt { display: block; width: 100%; min-height: 20px; margin-bottom: 2px; resize: vertical; border: 0; background: transparent; color: var(--primary); font-size: 10.5px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; outline: none; }
-.lesson-document-prompt::placeholder { color: transparent; }
-/* Instruction only shows while the block is hovered or being edited. */
-.lesson-document-sentence:not(:hover):not(:focus-within) .lesson-document-prompt { display: none; }
-.lesson-document-sentence:focus-within .lesson-document-prompt::placeholder, .lesson-document-prompt:hover::placeholder { color: var(--muted-foreground); }
-.lesson-document-pieces { display: flex; flex-wrap: wrap; gap: 4px 18px; }
-.lesson-document-piece { position: relative; display: grid; min-width: 145px; grid-template-columns: minmax(120px, auto); padding: 2px 4px 4px; border-radius: 5px; }
-.lesson-document-piece > input { min-width: 110px; width: 100%; border: 0; border-radius: 3px; background: transparent; outline: none; font-size: 12px; line-height: 1.45; }
-.lesson-document-piece > input:first-child { color: var(--foreground); font-weight: 750; }
-.lesson-document-piece > input:nth-child(2) { color: var(--muted-foreground); }
-.lesson-document-piece > input:focus { background: var(--card); box-shadow: 0 1px 0 var(--border); }
-.lesson-document-piece.active { background: var(--muted); }
-.lesson-document-piece-options { position: absolute; top: 3px; right: -23px; }
-.lesson-document-piece-menu { top: 28px; right: -18px; }
-.lesson-document-piece.trailing { opacity: .35; }
-.lesson-document-piece.trailing:focus-within, .lesson-document-piece.trailing:hover { opacity: 1; }
-.lesson-document-piece.trailing > span { color: var(--muted-foreground); font-size: 11px; }
-.lesson-document-sentence.table .lesson-document-pieces { display: grid; max-width: 580px; grid-template-columns: 1fr; gap: 0; }
-.lesson-document-sentence.table .lesson-document-piece { grid-template-columns: minmax(160px, 1fr) minmax(160px, 1fr); gap: 20px; border-bottom: 1px solid var(--border); }
-.lesson-document-sentence.table .lesson-document-piece > .lesson-document-annotation, .lesson-document-sentence.table .lesson-document-piece > .lesson-document-piece-options, .lesson-document-sentence.table .lesson-document-piece > .lesson-document-piece-menu { grid-column: 1 / -1; }
-.lesson-document-annotation { display: grid; grid-template-columns: 78px minmax(0, 1fr) auto; align-items: center; gap: 7px; margin-top: 3px; color: var(--muted-foreground); font-size: 10px; font-style: italic; }
-.lesson-document-annotation span { font-style: normal; font-weight: 750; }
-.lesson-document-annotation input, .lesson-document-annotation textarea { min-height: 25px; resize: vertical; border: 0; border-bottom: 1px dotted var(--border); background: transparent; outline: none; font-size: 11px; }
-.lesson-document-slide-notes { display: grid; max-width: 620px; gap: 5px; margin-top: 6px; }
-/* Authoring notes only surface while the block is hovered or being edited. */
-.lesson-document-sentence:not(:hover):not(:focus-within) .lesson-document-slide-notes { display: none; }
-.lesson-document-slide-notes .lesson-document-annotation {
-  grid-template-columns: 92px minmax(0, 1fr) auto;
-  padding: 4px 9px;
-  border-left: 2px solid var(--border);
-  border-radius: 0 6px 6px 0;
+.lesson-library-row-head {
+  align-items: center;
+  padding: 11px 16px;
+  gap: 9px;
 }
-.lesson-document-slide-notes .lesson-document-annotation > span { font-style: normal; }
-.lesson-document-annotation[data-note="help"] {
-  border-left-color: var(--hint);
-  background: color-mix(in oklch, var(--hint) 9%, transparent);
+.lesson-library-title-input {
+  min-width: 0;
+  flex: 1;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--foreground);
+  font-size: 15px;
+  font-weight: 750;
+  outline: none;
 }
-.lesson-document-annotation[data-note="help"] > span { color: color-mix(in oklch, var(--hint) 72%, var(--foreground)); }
-.lesson-document-annotation[data-note="success"] {
-  border-left-color: var(--success);
-  background: color-mix(in oklch, var(--success) 9%, transparent);
+.lesson-library-title-input:hover {
+  background: color-mix(in oklch, var(--muted) 48%, transparent);
 }
-.lesson-document-annotation[data-note="success"] > span { color: color-mix(in oklch, var(--success) 68%, var(--foreground)); }
-.lesson-document-annotation[data-note="help"] textarea { border-bottom-color: color-mix(in oklch, var(--hint) 40%, transparent); }
-.lesson-document-annotation[data-note="success"] textarea { border-bottom-color: color-mix(in oklch, var(--success) 40%, transparent); }
-.lesson-document-slide-notes .lesson-document-annotation textarea { color: var(--foreground); }
-/* Collapsed to nothing until the sentence is hovered/focused — no reserved gap. */
-.lesson-document-add-note {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 10px;
-  max-height: 0;
-  overflow: hidden;
+.lesson-library-title-input:focus {
+  background: var(--background);
+  box-shadow: 0 0 0 2px color-mix(in oklch, var(--primary) 22%, transparent);
+}
+.lesson-library-slide-count {
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
+.lesson-library-try {
+  padding: 6px 8px;
+  border-radius: 6px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  font-weight: 700;
+}
+.lesson-library-try:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-document-drag {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  cursor: grab;
+  place-items: center;
+}
+.lesson-document-drag:hover,
+.lesson-document-drag:focus-visible {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-library-row.dragging {
+  opacity: 0.45;
+}
+.lesson-document {
+  border-top: 1px solid var(--border);
+  background: var(--card);
+  padding: 14px 26px 18px 67px;
+}
+.lesson-document > div:first-child {
+  margin-bottom: 12px;
+}
+.lesson-document-body {
+  position: relative;
+  max-width: 850px;
+}
+.lesson-document-block {
+  position: relative;
+  padding: 3px 24px 3px 9px;
+  border-radius: 7px;
+}
+.lesson-document-block:focus-within {
+  background: var(--muted);
+  box-shadow: inset 2px 0 color-mix(in oklch, var(--primary) 22%, var(--border));
+}
+.lesson-document-block-tools {
+  position: absolute;
+  z-index: 5;
+  top: 5px;
+  right: 1px;
   opacity: 0;
-  transition: max-height .12s ease, opacity .12s ease, margin-top .12s ease;
 }
-.lesson-document-sentence:hover .lesson-document-add-note,
-.lesson-document-sentence:focus-within .lesson-document-add-note { max-height: 44px; margin-top: 3px; opacity: 1; }
-.lesson-document-add-note button, .lesson-document-undo { color: var(--muted-foreground); font-size: 10px; font-weight: 650; }
-.lesson-document-insert { position: relative; height: 8px; opacity: 0; transition: opacity .12s; }
-.lesson-document-insert:hover, .lesson-document-insert:focus-within, .lesson-document-insert.end { opacity: 1; }
-.lesson-document-insert > button { position: absolute; z-index: 4; top: -9px; left: -28px; display: flex; height: 24px; align-items: center; gap: 5px; padding: 0 5px; border-radius: 5px; background: var(--card); color: var(--muted-foreground); font-size: 10px; font-weight: 700; }
-.lesson-document-insert.end { height: 34px; margin-top: 7px; }
-.lesson-document-insert.end > button { position: static; }
-.lesson-document-insert-menu { top: 17px; left: -28px; }
-.lesson-document-undo { display: inline-flex; align-items: center; gap: 5px; padding: 5px; border-radius: 5px; }
-.lesson-document-undo:hover { background: var(--muted); color: var(--foreground); }
+.lesson-document-block:hover > .lesson-document-block-tools,
+.lesson-document-block:focus-within > .lesson-document-block-tools {
+  opacity: 1;
+}
+.lesson-document-block-tools > button,
+.lesson-document-piece-options {
+  display: grid;
+  width: 25px;
+  height: 25px;
+  place-items: center;
+  border-radius: 5px;
+  color: var(--muted-foreground);
+}
+.lesson-document-block-tools > button:hover,
+.lesson-document-piece-options:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-document-menu,
+.lesson-document-piece-menu,
+.lesson-document-insert-menu {
+  position: absolute;
+  z-index: 30;
+  min-width: 170px;
+  padding: 5px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--popover);
+  box-shadow: 0 12px 30px
+    color-mix(in oklch, var(--foreground) 16%, transparent);
+}
+.lesson-document-menu {
+  top: 27px;
+  right: 0;
+}
+.lesson-document-menu button,
+.lesson-document-piece-menu button,
+.lesson-document-insert-menu button {
+  display: flex;
+  width: 100%;
+  min-height: 32px;
+  align-items: center;
+  gap: 6px;
+  padding: 0 8px;
+  border-radius: 5px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 650;
+}
+.lesson-document-menu button:hover:not(:disabled),
+.lesson-document-piece-menu button:hover,
+.lesson-document-insert-menu button:hover {
+  background: var(--muted);
+}
+.lesson-document-menu button:disabled {
+  opacity: 0.35;
+}
+.lesson-document-menu .danger,
+.lesson-document-piece-menu .danger {
+  color: var(--destructive);
+}
+.lesson-document-explanation {
+  min-height: 30px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.lesson-document-explanation-preview {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  padding: 4px 2px;
+  color: var(--foreground);
+  text-align: left;
+}
+.lesson-document-explanation-preview > span {
+  color: var(--muted-foreground);
+  font-style: italic;
+}
+.lesson-document-explanation-preview p + p {
+  margin-top: 5px;
+}
+.lesson-document-explanation-preview mark[data-language="es"] {
+  padding: 1px 3px;
+  border-radius: 3px;
+  background: color-mix(in oklch, var(--lesson-hl-es) 16%, var(--card));
+  color: var(--lesson-hl-es);
+}
+.lesson-document-explanation-preview mark[data-language="en"] {
+  padding: 1px 3px;
+  border-radius: 3px;
+  background: color-mix(in oklch, var(--lesson-hl-en) 16%, var(--card));
+  color: var(--lesson-hl-en);
+}
+.lesson-document-explanation .lesson-markdown-editor {
+  padding: 5px 0 10px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.lesson-document-explanation .lesson-markdown-content {
+  min-height: 56px !important;
+  padding: 8px 2px !important;
+  font-size: 13px;
+  line-height: 1.55;
+}
+.lesson-document-prompt {
+  display: block;
+  width: min(100%, 620px);
+  min-height: 1lh;
+  margin-bottom: 3px;
+  padding: 2px 8px;
+  resize: none;
+  field-sizing: content;
+  border: 1px dashed transparent;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--foreground);
+  font-size: 14px;
+  font-weight: 550;
+  line-height: 1.5;
+  outline: none;
+}
+.lesson-document-prompt::placeholder {
+  color: var(--muted-foreground);
+  opacity: 0.82;
+}
+.lesson-document-prompt:hover {
+  border-color: var(--border);
+  background: color-mix(
+    in oklch,
+    var(--background) 42%,
+    var(--surface-writing)
+  );
+}
+.lesson-document-prompt:focus {
+  border-color: var(--primary);
+  background: var(--surface-writing);
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--primary) 22%, transparent);
+}
+.lesson-document-pieces {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 4px 18px;
+}
+/* One flex-wrap item per pair, so a pair and its own hint annotation wrap
+   together as a unit — the hint stays visually with its pair instead of
+   collecting in one strip disconnected from which pair it belongs to. */
+.lesson-document-pair {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  max-width: 100%;
+}
+.lesson-document-piece {
+  position: relative;
+  display: grid;
+  min-width: 145px;
+  grid-template-columns: minmax(120px, auto);
+  padding: 2px 4px 4px;
+  border-radius: 5px;
+}
+.lesson-document-piece > input {
+  min-width: 110px;
+  width: 100%;
+  border: 0;
+  border-radius: 3px;
+  background: transparent;
+  outline: none;
+  font-size: 12px;
+  line-height: 1.45;
+}
+.lesson-document-piece > input:first-child {
+  color: var(--foreground);
+  font-weight: 750;
+}
+.lesson-document-piece > input:nth-child(2) {
+  color: var(--muted-foreground);
+}
+.lesson-document-piece > input:focus {
+  background: var(--card);
+  box-shadow: 0 1px 0 var(--border);
+}
+.lesson-document-piece.active {
+  background: var(--muted);
+}
+.lesson-document-piece-options {
+  position: absolute;
+  top: 3px;
+  right: -23px;
+}
+.lesson-document-piece-menu {
+  top: 28px;
+  right: -18px;
+}
+/* Quiet via the placeholder's own muted-foreground color (already applied
+   by .lesson-document-language-field > textarea::placeholder), not via
+   opacity — opacity on the whole piece multiplies through onto that
+   already-muted text and can drop it below the WCAG contrast minimum
+   depending on what's behind it (this surfaced once resting pairs became
+   borderless/transparent, though the risk existed earlier too). */
+.lesson-document-piece.trailing > span {
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
+.lesson-document-sentence.vocab-table .lesson-document-pieces {
+  display: grid;
+  max-width: 580px;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+.lesson-document-sentence.vocab-table .lesson-document-piece {
+  grid-template-columns: minmax(160px, 1fr) minmax(160px, 1fr);
+  gap: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.lesson-document-sentence.vocab-table
+  .lesson-document-piece
+  > .lesson-document-piece-options,
+.lesson-document-sentence.vocab-table
+  .lesson-document-piece
+  > .lesson-document-piece-menu {
+  grid-column: 1 / -1;
+}
+.lesson-document-undo {
+  color: var(--muted-foreground);
+  font-size: 10px;
+  font-weight: 650;
+}
+/* Collapsed to a thin seam at rest — not just visually quiet but taking
+   almost no vertical space — and only expands to fit the actual button on
+   hover/focus/while its own chooser is open. Hiding the button with
+   opacity alone (a previous pass) kept its full height reserved in the
+   layout, which just swapped "a visible button" for "an equally tall
+   blank gap" — no real space was recovered. The button itself is
+   positioned absolute and stays interactive (not display:none) even while
+   the strip is collapsed, so its hover/focus target still exists — a
+   keyboard user tabbing to it, or a mouse hovering that seam, expands the
+   strip and reveals it; display:none would have made it truly
+   unreachable by keyboard. Between slides this is a small icon-only "+"
+   (no repeated "Add slide" text at every seam); the exact position lives
+   in its aria-label/title. Only the tail control (nothing below it to
+   give scale) stays always visible at full height — it's the single,
+   low-frequency "how do I add a slide" affordance, not a repeated
+   fixture, and an empty/just-finished lesson needs it discoverable
+   without hovering blind over an unmarked sliver. */
+.lesson-document-insert {
+  position: relative;
+  height: 6px;
+  margin: 0;
+}
+.lesson-document-insert:hover,
+.lesson-document-insert:focus-within,
+.lesson-document-insert.open {
+  height: 20px;
+}
+.lesson-document-insert > button {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--muted-foreground);
+  font-size: 10px;
+  font-weight: 650;
+  opacity: 0;
+}
+.lesson-document-insert:hover > button,
+.lesson-document-insert:focus-within > button,
+.lesson-document-insert.open > button,
+.lesson-document-insert > button:focus-visible {
+  opacity: 1;
+}
+.lesson-document-insert > button:has(span) {
+  position: static;
+  top: auto;
+  left: auto;
+  transform: none;
+  width: auto;
+  height: auto;
+  padding: 1px 7px;
+  border-radius: 6px;
+  opacity: 1;
+}
+.lesson-document-insert:has(> button:has(span)) {
+  height: auto;
+}
+.lesson-document-insert > button:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--muted);
+}
+.lesson-document-insert-menu {
+  top: 17px;
+  left: -28px;
+}
+.lesson-document-undo {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+  border-radius: 5px;
+}
+.lesson-document-undo:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
 
 /* Compact document authoring. The page keeps module context visible while the
    lesson content itself behaves like a quiet sheet of paper. */
-.lesson-builder-page { background: var(--muted); }
+.lesson-builder-page {
+  background: var(--muted);
+}
 /* Room to scroll the last lesson clear of the fixed editing HUD / help FAB. */
-.lesson-library { display: grid; gap: 12px; padding-bottom: 110px; }
-@media (max-width: 900px) { .lesson-library { padding-bottom: 150px; } }
+.lesson-library {
+  display: grid;
+  gap: 12px;
+  padding-bottom: 110px;
+}
+@media (max-width: 900px) {
+  .lesson-library {
+    padding-bottom: 150px;
+  }
+}
 .lesson-library-utility {
   display: flex;
   min-height: 42px;
@@ -269,7 +945,9 @@
   border-radius: 7px;
   box-shadow: none;
 }
-.lesson-library-utility .lesson-library-search input { font-size: 12px; }
+.lesson-library-utility .lesson-library-search input {
+  font-size: 12px;
+}
 .lesson-library-utility > a {
   display: inline-flex;
   align-items: center;
@@ -280,16 +958,50 @@
   font-weight: 700;
 }
 .lesson-library-utility > a:hover,
-.lesson-library-utility > a:focus-visible { background: var(--muted); color: var(--foreground); }
-.lesson-library-counts { white-space: nowrap; }
-.lesson-library-history { display: inline-flex; gap: 2px; margin-left: auto; }
-.lesson-library-history button { display: grid; width: 26px; height: 26px; place-items: center; border-radius: 6px; color: var(--muted-foreground); }
-.lesson-library-history button:hover:not(:disabled) { background: var(--muted); color: var(--foreground); }
-.lesson-library-history button:disabled { opacity: .3; }
-.lesson-library-jump { position: relative; display: inline-flex; }
-.lesson-library-jump > button { display: grid; width: 26px; height: 26px; place-items: center; border-radius: 6px; color: var(--muted-foreground); }
+.lesson-library-utility > a:focus-visible {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-library-counts {
+  white-space: nowrap;
+}
+.lesson-library-history {
+  display: inline-flex;
+  gap: 2px;
+  margin-left: auto;
+}
+.lesson-library-history button {
+  display: grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border-radius: 6px;
+  color: var(--muted-foreground);
+}
+.lesson-library-history button:hover:not(:disabled) {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-library-history button:disabled {
+  opacity: 0.3;
+}
+.lesson-library-jump {
+  position: relative;
+  display: inline-flex;
+}
+.lesson-library-jump > button {
+  display: grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border-radius: 6px;
+  color: var(--muted-foreground);
+}
 .lesson-library-jump > button:hover,
-.lesson-library-jump > button[aria-expanded="true"] { background: var(--muted); color: var(--foreground); }
+.lesson-library-jump > button[aria-expanded="true"] {
+  background: var(--muted);
+  color: var(--foreground);
+}
 .lesson-library-jump-panel {
   position: absolute;
   right: 0;
@@ -304,16 +1016,21 @@
   border: 1px solid var(--border);
   border-radius: 10px;
   background: var(--popover);
-  box-shadow: 0 10px 30px color-mix(in oklch, var(--foreground) 16%, transparent);
+  box-shadow: 0 10px 30px
+    color-mix(in oklch, var(--foreground) 16%, transparent);
 }
-.lesson-library-jump-group { display: grid; grid-template-columns: 1fr; gap: 2px; }
+.lesson-library-jump-group {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px;
+}
 .lesson-library-jump-module {
   padding: 2px 6px;
   color: var(--muted-foreground);
   font-size: 10px;
   font-weight: 750;
   text-transform: uppercase;
-  letter-spacing: .06em;
+  letter-spacing: 0.06em;
 }
 .lesson-library-jump-group button {
   padding: 5px 6px;
@@ -325,9 +1042,19 @@
   white-space: nowrap;
 }
 .lesson-library-jump-group button:hover,
-.lesson-library-jump-group button:focus-visible { background: var(--muted); }
-.lesson-library-save { white-space: nowrap; color: var(--muted-foreground); font-size: 12px; align-self: center; }
-.lesson-library-shortcuts { white-space: nowrap; color: color-mix(in oklch, var(--muted-foreground) 72%, transparent); }
+.lesson-library-jump-group button:focus-visible {
+  background: var(--muted);
+}
+.lesson-library-save {
+  white-space: nowrap;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  align-self: center;
+}
+.lesson-library-shortcuts {
+  white-space: nowrap;
+  color: color-mix(in oklch, var(--muted-foreground) 72%, transparent);
+}
 .lesson-library-keyboard-help {
   display: inline-flex;
   align-items: center;
@@ -340,7 +1067,10 @@
 }
 .lesson-library-keyboard-help:hover,
 .lesson-library-keyboard-help:focus-visible,
-.lesson-library-keyboard-help[aria-expanded="true"] { background: var(--muted); color: var(--foreground); }
+.lesson-library-keyboard-help[aria-expanded="true"] {
+  background: var(--muted);
+  color: var(--foreground);
+}
 .lesson-library-help-fab {
   position: fixed;
   right: 20px;
@@ -364,11 +1094,16 @@
   background: var(--muted);
   box-shadow: inset 0 0 0 1px var(--border);
   color: var(--foreground);
-  font: 650 10px ui-monospace, monospace;
+  font:
+    650 10px ui-monospace,
+    monospace;
   text-align: center;
 }
 .lesson-library-help-fab:hover,
-.lesson-library-help-fab:focus-visible { color: var(--foreground); border-color: var(--muted-foreground); }
+.lesson-library-help-fab:focus-visible {
+  color: var(--foreground);
+  border-color: var(--muted-foreground);
+}
 .lesson-library-help {
   width: min(720px, calc(100vw - 32px));
   max-height: min(650px, calc(100vh - 48px));
@@ -378,24 +1113,81 @@
   border-radius: 12px;
   background: var(--card);
   color: var(--foreground);
-  box-shadow: 0 24px 70px color-mix(in oklch, var(--foreground) 24%, transparent);
+  box-shadow: 0 24px 70px
+    color-mix(in oklch, var(--foreground) 24%, transparent);
   overflow: auto;
 }
-.lesson-library-help:not([open]) { display: none; }
-.lesson-library-help[open] { display: grid; }
-.lesson-library-help::backdrop { background: color-mix(in oklch, var(--foreground) 45%, transparent); backdrop-filter: blur(2px); }
-.lesson-library-help > header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 20px 15px; border-bottom: 1px solid var(--border); }
-.lesson-library-help > header span { color: var(--muted-foreground); font-size: 9px; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
-.lesson-library-help > header h2 { margin-top: 2px; font-size: 20px; font-weight: 760; }
-.lesson-library-help > header button { display: grid; width: 32px; height: 32px; place-items: center; border-radius: 6px; color: var(--muted-foreground); }
+.lesson-library-help:not([open]) {
+  display: none;
+}
+.lesson-library-help[open] {
+  display: grid;
+}
+.lesson-library-help::backdrop {
+  background: color-mix(in oklch, var(--foreground) 45%, transparent);
+  backdrop-filter: blur(2px);
+}
+.lesson-library-help > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px 15px;
+  border-bottom: 1px solid var(--border);
+}
+.lesson-library-help > header span {
+  color: var(--muted-foreground);
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.lesson-library-help > header h2 {
+  margin-top: 2px;
+  font-size: 20px;
+  font-weight: 760;
+}
+.lesson-library-help > header button {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: 6px;
+  color: var(--muted-foreground);
+}
 .lesson-library-help > header button:hover,
-.lesson-library-help > header button:focus-visible { background: var(--muted); color: var(--foreground); }
-.lesson-library-help > header h2 { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
-.lesson-library-help > header h2 kbd { font-size: 11px; }
-.lesson-kbd-or { color: var(--muted-foreground); font-size: 11px; font-weight: 500; }
+.lesson-library-help > header button:focus-visible {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-library-help > header h2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+.lesson-library-help > header h2 kbd {
+  font-size: 11px;
+}
+.lesson-kbd-or {
+  color: var(--muted-foreground);
+  font-size: 11px;
+  font-weight: 500;
+}
 
-.lesson-kbd-map { display: grid; gap: 4px; margin: 16px 20px 6px; padding: 12px 12px 10px; border-radius: 8px; background: var(--muted); box-shadow: inset 0 0 0 1px var(--border); }
-.lesson-kbd-row { display: flex; gap: 4px; }
+.lesson-kbd-map {
+  display: grid;
+  gap: 4px;
+  margin: 16px 20px 6px;
+  padding: 12px 12px 10px;
+  border-radius: 8px;
+  background: var(--muted);
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+.lesson-kbd-row {
+  display: flex;
+  gap: 4px;
+}
 .lesson-kbd-key {
   display: flex;
   flex: 1 1 0;
@@ -408,38 +1200,106 @@
   padding: 3px 2px;
   border-radius: 5px;
   background: var(--card);
-  box-shadow: 0 1px 0 var(--border), inset 0 0 0 1px var(--border);
+  box-shadow:
+    0 1px 0 var(--border),
+    inset 0 0 0 1px var(--border);
   color: color-mix(in oklch, var(--muted-foreground) 78%, transparent);
 }
-.lesson-kbd-cap { font: 650 10px ui-monospace, monospace; white-space: nowrap; }
+.lesson-kbd-cap {
+  font:
+    650 10px ui-monospace,
+    monospace;
+  white-space: nowrap;
+}
 .lesson-kbd-key.is-active {
   background: color-mix(in oklch, var(--primary) 12%, var(--card));
-  box-shadow: 0 1px 0 color-mix(in oklch, var(--primary) 35%, var(--border)), inset 0 0 0 1px color-mix(in oklch, var(--primary) 40%, transparent);
+  box-shadow:
+    0 1px 0 color-mix(in oklch, var(--primary) 35%, var(--border)),
+    inset 0 0 0 1px color-mix(in oklch, var(--primary) 40%, transparent);
   color: var(--primary);
 }
-.lesson-kbd-act { font-size: 8px; font-weight: 650; line-height: 1.1; text-align: center; }
+.lesson-kbd-act {
+  font-size: 8px;
+  font-weight: 650;
+  line-height: 1.1;
+  text-align: center;
+}
 
-.lesson-library-help dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px 24px; padding: 6px 20px 18px; }
-.lesson-library-help dl > div { display: grid; grid-template-columns: minmax(140px, auto) 1fr; align-items: baseline; gap: 10px; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 11px; }
-.lesson-library-help dt { display: flex; flex-wrap: wrap; gap: 3px; align-items: center; color: var(--foreground); }
-.lesson-library-help dd { color: var(--muted-foreground); }
+.lesson-library-help dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px 24px;
+  padding: 6px 20px 18px;
+}
+.lesson-library-help dl > div {
+  display: grid;
+  grid-template-columns: minmax(140px, auto) 1fr;
+  align-items: baseline;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 11px;
+}
+.lesson-library-help dt {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  align-items: center;
+  color: var(--foreground);
+}
+.lesson-library-help dd {
+  color: var(--muted-foreground);
+}
 .lesson-library-help kbd,
 .lesson-library-help > footer kbd {
   min-width: 16px;
   padding: 1px 5px;
   border-radius: 4px;
   background: var(--card);
-  box-shadow: 0 1px 0 var(--border), inset 0 0 0 1px var(--border);
+  box-shadow:
+    0 1px 0 var(--border),
+    inset 0 0 0 1px var(--border);
   color: var(--foreground);
-  font: 650 10px ui-monospace, monospace;
+  font:
+    650 10px ui-monospace,
+    monospace;
   text-align: center;
 }
-.lesson-library-help dd kbd { box-shadow: inset 0 0 0 1px var(--border); }
-.lesson-library-help > footer { display: flex; justify-content: flex-end; padding: 12px 20px; border-top: 1px solid var(--border); background: var(--muted); }
-.lesson-library-help > footer button { display: inline-flex; align-items: center; gap: 6px; min-height: 32px; padding: 0 12px; border-radius: 6px; background: var(--primary); color: var(--primary-foreground); font-size: 11px; font-weight: 750; }
-.lesson-library-help > footer button kbd { background: color-mix(in oklch, var(--primary-foreground) 22%, transparent); box-shadow: none; color: inherit; }
-.lesson-library-modules { gap: 12px; }
-.lesson-library-module { overflow: visible; border-radius: 10px; box-shadow: 0 1px 3px color-mix(in oklch, var(--foreground) 8%, transparent); }
+.lesson-library-help dd kbd {
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+.lesson-library-help > footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px 20px;
+  border-top: 1px solid var(--border);
+  background: var(--muted);
+}
+.lesson-library-help > footer button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 0 12px;
+  border-radius: 6px;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font-size: 11px;
+  font-weight: 750;
+}
+.lesson-library-help > footer button kbd {
+  background: color-mix(in oklch, var(--primary-foreground) 22%, transparent);
+  box-shadow: none;
+  color: inherit;
+}
+.lesson-library-modules {
+  gap: 12px;
+}
+.lesson-library-module {
+  overflow: visible;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px color-mix(in oklch, var(--foreground) 8%, transparent);
+}
 .lesson-library-module-meta {
   display: grid;
   gap: 5px;
@@ -447,7 +1307,11 @@
   border-bottom: 2px solid var(--primary);
   background: color-mix(in oklch, var(--primary) 16%, var(--muted));
 }
-.lesson-library-module-line { display: flex; align-items: center; gap: 9px; }
+.lesson-library-module-line {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
 .lesson-library-module-title {
   min-width: 150px;
   max-width: 430px;
@@ -459,11 +1323,18 @@
   color: var(--foreground);
   font-size: 18px;
   font-weight: 800;
-  letter-spacing: -.01em;
+  letter-spacing: -0.01em;
   outline: none;
 }
-.lesson-library-module-title:focus { background: var(--card); box-shadow: 0 0 0 2px color-mix(in oklch, var(--primary) 18%, transparent); }
-.lesson-library-module-line > span { color: var(--muted-foreground); font-size: 10px; white-space: nowrap; }
+.lesson-library-module-title:focus {
+  background: var(--card);
+  box-shadow: 0 0 0 2px color-mix(in oklch, var(--primary) 18%, transparent);
+}
+.lesson-library-module-line > span {
+  color: var(--muted-foreground);
+  font-size: 10px;
+  white-space: nowrap;
+}
 .lesson-library-module-delete {
   display: grid;
   place-items: center;
@@ -473,12 +1344,33 @@
   border-radius: 5px;
   color: var(--muted-foreground);
 }
-.lesson-library-module-delete:hover:not(:disabled) { background: color-mix(in oklch, var(--destructive) 12%, transparent); color: var(--destructive); }
-.lesson-library-module-delete:disabled { opacity: .28; }
-.lesson-library-module-controls { display: flex; align-items: center; gap: 3px; margin-left: auto; }
-.lesson-library-module-controls.lesson-inline-confirm { gap: 6px; font-size: 11px; color: var(--muted-foreground); }
-.lesson-library-module-controls.lesson-inline-confirm > button { padding: 4px 8px; border-radius: 5px; font-weight: 650; }
-.lesson-library-module-controls.lesson-inline-confirm > button:hover { background: var(--muted); color: var(--foreground); }
+.lesson-library-module-delete:hover:not(:disabled) {
+  background: color-mix(in oklch, var(--destructive) 12%, transparent);
+  color: var(--destructive);
+}
+.lesson-library-module-delete:disabled {
+  opacity: 0.28;
+}
+.lesson-library-module-controls {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-left: auto;
+}
+.lesson-library-module-controls.lesson-inline-confirm {
+  gap: 6px;
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+.lesson-library-module-controls.lesson-inline-confirm > button {
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-weight: 650;
+}
+.lesson-library-module-controls.lesson-inline-confirm > button:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
 .lesson-library-module-controls button,
 .lesson-library-inline-actions button,
 .lesson-library-inline-actions label {
@@ -492,47 +1384,190 @@
   font-weight: 650;
 }
 .lesson-library-module-controls button:hover:not(:disabled),
-.lesson-library-inline-actions button:hover:not(:disabled) { background: var(--muted); color: var(--foreground); }
+.lesson-library-inline-actions button:hover:not(:disabled) {
+  background: var(--muted);
+  color: var(--foreground);
+}
 .lesson-library-module-controls button:disabled,
-.lesson-library-inline-actions button:disabled { opacity: .28; }
+.lesson-library-inline-actions button:disabled {
+  opacity: 0.28;
+}
 .lesson-library-module-controls .danger,
 .lesson-library-inline-actions .danger,
-.lesson-inline-confirm .danger { color: var(--destructive); }
-.lesson-library-module-meta > div:last-child { min-height: 22px; }
+.lesson-inline-confirm .danger {
+  color: var(--destructive);
+}
+.lesson-library-module-meta > div:last-child {
+  min-height: 22px;
+}
 .lesson-library-module-meta > div:last-child > span:first-child,
-.lesson-document > div:first-child > div > span:first-child { font-size: 9px; letter-spacing: .1em; }
+.lesson-document > div:first-child > div > span:first-child {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
 /* Indented so lessons read as subordinate to their module header, not as
    siblings of the same visual weight — no rule line, just the offset. */
-.lesson-library-list { border-top: 0; }
-.lesson-library-row { border-bottom: 1px solid var(--border); }
-.lesson-library-row-head { min-height: 44px; padding: 5px 14px 5px 28px; gap: 3px; }
-.lesson-library-number { display: grid; width: 24px; height: 28px; place-items: center; padding: 0; border-radius: 5px; background: transparent; color: color-mix(in oklch, var(--muted-foreground) 55%, transparent); cursor: grab; }
-.lesson-library-number:hover { background: var(--muted); color: var(--foreground); }
-.lesson-library-number:active { cursor: grabbing; }
-.lesson-library-collapse { display: grid; width: 24px; height: 28px; place-items: center; border-radius: 5px; color: var(--muted-foreground); }
-.lesson-library-collapse:hover { background: var(--muted); color: var(--foreground); }
-.lesson-library-module-drag { display: grid; width: 24px; height: 28px; place-items: center; padding: 0; border-radius: 5px; background: transparent; color: color-mix(in oklch, var(--muted-foreground) 55%, transparent); cursor: grab; }
-.lesson-library-module-drag:hover { background: var(--muted); color: var(--foreground); }
-.lesson-library-module-drag:active { cursor: grabbing; }
-.lesson-library-module.dragging { opacity: .45; }
-.lesson-library-title-input { margin-left: 4px; font-size: 14px; font-weight: 720; }
-.lesson-library-slide-count { margin-right: 6px; color: var(--muted-foreground); font-size: 10px; white-space: nowrap; }
-.lesson-library-move-module { max-width: 140px; margin-right: 2px; border: 0; border-radius: 5px; background: transparent; color: var(--muted-foreground); font-size: 10px; outline: none; }
-.lesson-library-move-module:hover { background: var(--muted); color: var(--foreground); }
-.lesson-library-row-icons { display: inline-flex; align-items: center; gap: 1px; margin-left: 4px; }
-.lesson-library-row-icons > .lesson-library-try { display: grid; width: 28px; height: 28px; place-items: center; color: color-mix(in oklch, var(--primary) 78%, var(--muted-foreground)); }
-.lesson-library-row-icons.lesson-inline-confirm { gap: 5px; font-size: 11px; color: var(--muted-foreground); }
-.lesson-library-row-icons.lesson-inline-confirm > button { display: inline-flex; width: auto; height: 26px; align-items: center; padding: 0 8px; border-radius: 5px; font-size: 11px; font-weight: 650; }
-.lesson-library-row-icons.lesson-inline-confirm > button:hover { background: var(--muted); color: var(--foreground); }
-.lesson-library-row-icons.lesson-inline-confirm > button.danger { color: var(--destructive); }
-.lesson-library-row-icons > .lesson-library-try:hover { background: color-mix(in oklch, var(--primary) 12%, transparent); color: var(--primary); }
-.lesson-library-row-icons > button { display: grid; width: 28px; height: 28px; place-items: center; border-radius: 5px; color: var(--muted-foreground); }
-.lesson-library-row-icons > button:hover { background: var(--muted); color: var(--foreground); }
-.lesson-library-row-icons > button.danger:hover { background: color-mix(in oklch, var(--destructive) 12%, transparent); color: var(--destructive); }
-.lesson-library-delete-confirm { display: inline-flex; align-items: center; gap: 4px; padding: 0 4px; }
-.lesson-library-delete-confirm button { padding: 3px 7px; border-radius: 4px; font-size: 10px; font-weight: 700; }
-.lesson-library-delete-confirm .danger { background: var(--destructive); color: var(--card); }
-.lesson-library-delete-confirm button:not(.danger) { color: var(--muted-foreground); }
+.lesson-library-list {
+  border-top: 0;
+}
+.lesson-library-row {
+  border-bottom: 1px solid var(--border);
+}
+.lesson-library-row-head {
+  min-height: 44px;
+  padding: 5px 14px 5px 28px;
+  gap: 3px;
+}
+.lesson-library-number {
+  display: grid;
+  width: 24px;
+  height: 28px;
+  place-items: center;
+  padding: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: color-mix(in oklch, var(--muted-foreground) 55%, transparent);
+  cursor: grab;
+}
+.lesson-library-number:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-library-number:active {
+  cursor: grabbing;
+}
+.lesson-library-collapse {
+  display: grid;
+  width: 24px;
+  height: 28px;
+  place-items: center;
+  border-radius: 5px;
+  color: var(--muted-foreground);
+}
+.lesson-library-collapse:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-library-module-drag {
+  display: grid;
+  width: 24px;
+  height: 28px;
+  place-items: center;
+  padding: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: color-mix(in oklch, var(--muted-foreground) 55%, transparent);
+  cursor: grab;
+}
+.lesson-library-module-drag:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-library-module-drag:active {
+  cursor: grabbing;
+}
+.lesson-library-module.dragging {
+  opacity: 0.45;
+}
+.lesson-library-title-input {
+  margin-left: 4px;
+  font-size: 14px;
+  font-weight: 720;
+}
+.lesson-library-slide-count {
+  margin-right: 6px;
+  color: var(--muted-foreground);
+  font-size: 10px;
+  white-space: nowrap;
+}
+.lesson-library-move-module {
+  max-width: 140px;
+  margin-right: 2px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--muted-foreground);
+  font-size: 10px;
+  outline: none;
+}
+.lesson-library-move-module:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-library-row-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
+  margin-left: 4px;
+}
+.lesson-library-row-icons > .lesson-library-try {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  color: color-mix(in oklch, var(--primary) 78%, var(--muted-foreground));
+}
+.lesson-library-row-icons.lesson-inline-confirm {
+  gap: 5px;
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+.lesson-library-row-icons.lesson-inline-confirm > button {
+  display: inline-flex;
+  width: auto;
+  height: 26px;
+  align-items: center;
+  padding: 0 8px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 650;
+}
+.lesson-library-row-icons.lesson-inline-confirm > button:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-library-row-icons.lesson-inline-confirm > button.danger {
+  color: var(--destructive);
+}
+.lesson-library-row-icons > .lesson-library-try:hover {
+  background: color-mix(in oklch, var(--primary) 12%, transparent);
+  color: var(--primary);
+}
+.lesson-library-row-icons > button {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 5px;
+  color: var(--muted-foreground);
+}
+.lesson-library-row-icons > button:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-library-row-icons > button.danger:hover {
+  background: color-mix(in oklch, var(--destructive) 12%, transparent);
+  color: var(--destructive);
+}
+.lesson-library-delete-confirm {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 4px;
+}
+.lesson-library-delete-confirm button {
+  padding: 3px 7px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+}
+.lesson-library-delete-confirm .danger {
+  background: var(--destructive);
+  color: var(--card);
+}
+.lesson-library-delete-confirm button:not(.danger) {
+  color: var(--muted-foreground);
+}
 .lesson-library-inline-actions {
   display: flex;
   min-height: 34px;
@@ -542,10 +1577,28 @@
   border-top: 1px dotted var(--border);
   background: var(--muted);
 }
-.lesson-library-inline-actions label { margin-left: auto; }
-.lesson-library-inline-actions select { max-width: 170px; border: 0; background: transparent; color: var(--foreground); outline: none; }
-.lesson-inline-confirm { display: inline-flex; align-items: center; gap: 3px; color: var(--muted-foreground); font-size: 10px; }
-.lesson-inline-confirm button { padding: 3px 5px; border-radius: 4px; font-weight: 750; }
+.lesson-library-inline-actions label {
+  margin-left: auto;
+}
+.lesson-library-inline-actions select {
+  max-width: 170px;
+  border: 0;
+  background: transparent;
+  color: var(--foreground);
+  outline: none;
+}
+.lesson-inline-confirm {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--muted-foreground);
+  font-size: 10px;
+}
+.lesson-inline-confirm button {
+  padding: 3px 5px;
+  border-radius: 4px;
+  font-weight: 750;
+}
 .lesson-library-add-lesson,
 .lesson-library-add-module {
   display: flex;
@@ -579,20 +1632,92 @@
   background: color-mix(in oklch, var(--primary) 6%, transparent);
   color: var(--primary);
 }
-.lesson-library-retry { padding: 4px 8px; border-radius: 5px; background: var(--destructive); color: var(--destructive-foreground, white); font-size: 11px; font-weight: 750; }
-.lesson-actions { position: relative; color: var(--muted-foreground); font-size: 11px; }
-.lesson-actions > summary { padding: 6px 8px; border-radius: 5px; cursor: pointer; list-style: none; font-weight: 650; }
-.lesson-actions > summary::-webkit-details-marker { display: none; }
-.lesson-actions > summary:hover, .lesson-actions[open] > summary { background: var(--muted); color: var(--foreground); }
-.lesson-actions-menu { position: absolute; z-index: 50; top: calc(100% + 3px); right: 0; display: grid; min-width: 190px; gap: 2px; padding: 6px; border: 1px solid var(--border); border-radius: 8px; background: var(--popover, var(--card)); box-shadow: 0 12px 30px color-mix(in oklch, var(--foreground) 16%, transparent); }
-.lesson-actions-menu button, .lesson-actions-menu label { display: flex; min-height: 30px; align-items: center; padding: 5px 7px; border-radius: 5px; text-align: left; font-size: 11px; font-weight: 650; }
-.lesson-actions-menu button:hover:not(:disabled) { background: var(--muted); color: var(--foreground); }
-.lesson-actions-menu button:disabled { opacity: .35; }
-.lesson-actions-menu .danger { color: var(--destructive); }
-.lesson-actions-menu label { display: grid; gap: 4px; color: var(--muted-foreground); }
-.lesson-actions-menu select { min-height: 28px; border: 1px solid var(--border); border-radius: 5px; background: var(--background); color: var(--foreground); }
-.lesson-actions-confirm { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; padding: 5px; font-size: 11px; }
-.lesson-actions-confirm > :first-child { grid-column: 1 / -1; }
+.lesson-library-retry {
+  padding: 4px 8px;
+  border-radius: 5px;
+  background: var(--destructive);
+  color: var(--destructive-foreground, white);
+  font-size: 11px;
+  font-weight: 750;
+}
+.lesson-actions {
+  position: relative;
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
+.lesson-actions > summary {
+  padding: 6px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  list-style: none;
+  font-weight: 650;
+}
+.lesson-actions > summary::-webkit-details-marker {
+  display: none;
+}
+.lesson-actions > summary:hover,
+.lesson-actions[open] > summary {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-actions-menu {
+  position: absolute;
+  z-index: 50;
+  top: calc(100% + 3px);
+  right: 0;
+  display: grid;
+  min-width: 190px;
+  gap: 2px;
+  padding: 6px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--popover, var(--card));
+  box-shadow: 0 12px 30px
+    color-mix(in oklch, var(--foreground) 16%, transparent);
+}
+.lesson-actions-menu button,
+.lesson-actions-menu label {
+  display: flex;
+  min-height: 30px;
+  align-items: center;
+  padding: 5px 7px;
+  border-radius: 5px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 650;
+}
+.lesson-actions-menu button:hover:not(:disabled) {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-actions-menu button:disabled {
+  opacity: 0.35;
+}
+.lesson-actions-menu .danger {
+  color: var(--destructive);
+}
+.lesson-actions-menu label {
+  display: grid;
+  gap: 4px;
+  color: var(--muted-foreground);
+}
+.lesson-actions-menu select {
+  min-height: 28px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: var(--background);
+  color: var(--foreground);
+}
+.lesson-actions-confirm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  padding: 5px;
+  font-size: 11px;
+}
+.lesson-actions-confirm > :first-child {
+  grid-column: 1 / -1;
+}
 .lesson-library-first-lesson {
   display: grid;
   place-items: center;
@@ -601,24 +1726,62 @@
   padding: 26px 22px;
   text-align: center;
 }
-.lesson-library-first-lesson > button { display: inline-flex; min-height: 32px; align-items: center; gap: 7px; padding: 0 14px; border-radius: 6px; background: var(--primary); color: var(--primary-foreground); font-size: 12px; font-weight: 700; }
-.lesson-library-first-lesson > span { color: var(--muted-foreground); font-size: 10px; }
+.lesson-library-first-lesson > button {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  gap: 7px;
+  padding: 0 14px;
+  border-radius: 6px;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font-size: 12px;
+  font-weight: 700;
+}
+.lesson-library-first-lesson > span {
+  color: var(--muted-foreground);
+  font-size: 10px;
+}
 .lesson-library-first-lesson kbd,
 .lesson-library-add-lesson kbd {
   padding: 1px 5px;
   border-radius: 4px;
   background: color-mix(in oklch, currentColor 16%, transparent);
-  font: 650 9px ui-monospace, monospace;
+  font:
+    650 9px ui-monospace,
+    monospace;
 }
-.lesson-library-first-lesson > button kbd { background: color-mix(in oklch, var(--primary-foreground) 22%, transparent); color: inherit; }
+.lesson-library-first-lesson > button kbd {
+  background: color-mix(in oklch, var(--primary-foreground) 22%, transparent);
+  color: inherit;
+}
 
-.lesson-document { padding: 9px 40px 13px 52px; border-top: 1px solid var(--border); background: var(--card); }
-.lesson-document-body { max-width: 880px; }
+.lesson-document {
+  padding: 9px 40px 13px 52px;
+  border-top: 1px solid var(--border);
+  background: var(--card);
+}
+.lesson-document-body {
+  max-width: 880px;
+}
 /* "Covers" sits at the end of the document, just above the add-slide bar. */
-.lesson-document-tags { margin: 0 0 10px; }
+.lesson-document-tags {
+  margin: 0 0 10px;
+}
 
-
-.lesson-document-block { position: relative; padding: 1px 8px; border-radius: 6px; outline: none; transition: transform .12s ease, box-shadow .12s ease; }
+.lesson-document-block {
+  position: relative;
+  /* The insert-slide control above this block is now a normal-flow "+ Add
+     slide" text button, not a floating circle that used to sit flush
+     against this padding's edge — it needs no extra top air to avoid
+     collision any more, so padding stays minimal here. */
+  padding: 2px 8px;
+  border-radius: 6px;
+  outline: none;
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease;
+}
 /* Lift the block being pointed at — or worked in — so it's unmistakable which
    one has focus. No colour change: just a pop off the page. */
 .lesson-document-block:hover,
@@ -627,9 +1790,13 @@
   box-shadow: 0 6px 18px color-mix(in oklch, var(--foreground) 12%, transparent);
 }
 @media (prefers-reduced-motion: reduce) {
-  .lesson-document-block { transition: none; }
+  .lesson-document-block {
+    transition: none;
+  }
   .lesson-document-block:hover,
-  .lesson-document-block:focus-within { transform: none; }
+  .lesson-document-block:focus-within {
+    transform: none;
+  }
 }
 /* Explanation blocks already sit on a grey box — on lift, spread that grey to
    fill the whole block so the raised card reads as one surface. */
@@ -637,37 +1804,30 @@
 .lesson-document-block:has(.lesson-document-explanation):focus-within {
   background: var(--muted);
 }
-.lesson-document-block:has(.lesson-document-explanation):hover .lesson-document-explanation,
-.lesson-document-block:has(.lesson-document-explanation):focus-within .lesson-document-explanation {
+.lesson-document-block:has(.lesson-document-explanation):hover
+  .lesson-document-explanation,
+.lesson-document-block:has(.lesson-document-explanation):focus-within
+  .lesson-document-explanation {
   border-color: transparent;
   background: transparent;
 }
 /* While the pointer is over one block, only that block stays lifted — a block
    that merely holds focus drops back so two never look active at once. */
-.lesson-document-body:has(.lesson-document-block:hover) .lesson-document-block:focus-within:not(:hover) {
+.lesson-document-body:has(.lesson-document-block:hover)
+  .lesson-document-block:focus-within:not(:hover) {
   transform: none;
   box-shadow: none;
   background: transparent;
 }
-.lesson-document-body:has(.lesson-document-block:hover) .lesson-document-block:focus-within:not(:hover) .lesson-document-explanation {
+.lesson-document-body:has(.lesson-document-block:hover)
+  .lesson-document-block:focus-within:not(:hover)
+  .lesson-document-explanation {
   border-color: var(--border);
   background: var(--muted);
 }
-/* Hairline only between two exercise blocks — Note cards separate themselves. */
-.lesson-document-block:not(:has(.lesson-document-explanation)) + .lesson-document-block:not(:has(.lesson-document-explanation)) {
-  margin-top: 4px;
-  padding-top: 4px;
-}
-/* Straight full-width hairline between two exercise blocks — drawn as a line,
-   not a border, so the block's rounded corners don't bend it. */
-.lesson-document-block:not(:has(.lesson-document-explanation)) + .lesson-document-block:not(:has(.lesson-document-explanation))::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  border-top: 1px solid var(--border);
-}
+/* No extra hairline "thread" between blocks any more — the insert control
+   sitting right there already marks the boundary, so a second divider line
+   plus its own margin/padding was redundant separator chrome. */
 .lesson-document-block::after {
   content: "";
   position: absolute;
@@ -677,21 +1837,23 @@
   width: 2px;
   border-radius: 2px;
   background: transparent;
-  transition: background .1s;
+  transition: background 0.1s;
 }
-.lesson-document-block:focus-within::after { background: color-mix(in oklch, var(--primary) 32%, var(--border)); }
-.lesson-document-body:has(.lesson-document-block:hover) .lesson-document-block:focus-within:not(:hover)::after { background: transparent; }
+.lesson-document-block:focus-within::after {
+  background: color-mix(in oklch, var(--primary) 32%, var(--border));
+}
+.lesson-document-body:has(.lesson-document-block:hover)
+  .lesson-document-block:focus-within:not(:hover)::after {
+  background: transparent;
+}
 .lesson-document-explanation {
-  min-height: 28px;
   margin-block: 2px;
-  padding: 5px 9px;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: var(--muted);
   font-size: 14px;
-  line-height: 1.55;
+  line-height: 1.45;
 }
-.lesson-document-explanation .authoring-wysiwyg-shell { width: 100%; }
+.lesson-document-explanation .authoring-wysiwyg-shell {
+  width: 100%;
+}
 .lesson-document-explanation .authoring-wysiwyg {
   min-height: 20px;
   padding: 0;
@@ -701,16 +1863,24 @@
   outline: none;
 }
 .lesson-document-explanation .authoring-wysiwyg:focus,
-.lesson-document-explanation .authoring-wysiwyg:focus-visible { outline: none; box-shadow: none; }
-.lesson-document-explanation .authoring-wysiwyg-document:has(.practice-markdown-content:empty)::before {
+.lesson-document-explanation .authoring-wysiwyg:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+.lesson-document-explanation
+  .authoring-wysiwyg-document:has(.practice-markdown-content:empty)::before {
   text-align: left;
   font-size: 14px;
   font-weight: 450;
   font-style: normal;
   line-height: 1.58;
 }
-.lesson-document-explanation .practice-markdown-content { text-align: left !important; }
-.lesson-document-explanation .practice-markdown-content > * { margin-block: 0 3px !important; }
+.lesson-document-explanation .practice-markdown-content {
+  text-align: left !important;
+}
+.lesson-document-explanation .practice-markdown-content > * {
+  margin-block: 0 3px !important;
+}
 .lesson-document-explanation .practice-markdown-content :is(p, li, h1, h2, h3) {
   color: var(--foreground);
   font-size: 14px !important;
@@ -718,10 +1888,30 @@
   line-height: 1.58 !important;
   letter-spacing: 0 !important;
 }
-.lesson-document-explanation .practice-markdown-content :is(ol, ul) { font-size: 14px !important; font-weight: 450 !important; line-height: 1.58 !important; text-align: left; }
-.lesson-document-explanation mark[data-language="es"] { padding: 0; background: transparent; color: var(--lesson-hl-es); font-weight: 700; }
-.lesson-document-explanation mark[data-language="en"] { padding: 0; background: transparent; color: var(--lesson-hl-en); font-weight: 700; }
-.lesson-document-sentence-guide { margin: 2px 5px 4px 0; color: var(--muted-foreground); font-size: 9px; line-height: 1.4; }
+.lesson-document-explanation .practice-markdown-content :is(ol, ul) {
+  font-size: 14px !important;
+  font-weight: 450 !important;
+  line-height: 1.58 !important;
+  text-align: left;
+}
+.lesson-document-explanation mark[data-language="es"] {
+  padding: 0;
+  background: transparent;
+  color: var(--lesson-hl-es);
+  font-weight: 700;
+}
+.lesson-document-explanation mark[data-language="en"] {
+  padding: 0;
+  background: transparent;
+  color: var(--lesson-hl-en);
+  font-weight: 700;
+}
+.lesson-document-sentence-guide {
+  margin: 2px 5px 4px 0;
+  color: var(--muted-foreground);
+  font-size: 9px;
+  line-height: 1.4;
+}
 .lesson-document-block-chrome {
   position: absolute;
   z-index: 6;
@@ -732,11 +1922,17 @@
   align-items: center;
   gap: 2px;
   opacity: 0;
-  transition: opacity .1s;
+  transition: opacity 0.1s;
 }
 .lesson-document-block:hover > .lesson-document-block-chrome,
-.lesson-document-block:focus-within > .lesson-document-block-chrome { opacity: 1; }
-.lesson-document-body:has(.lesson-document-block:hover) .lesson-document-block:focus-within:not(:hover) > .lesson-document-block-chrome { opacity: 0; }
+.lesson-document-block:focus-within > .lesson-document-block-chrome {
+  opacity: 1;
+}
+.lesson-document-body:has(.lesson-document-block:hover)
+  .lesson-document-block:focus-within:not(:hover)
+  > .lesson-document-block-chrome {
+  opacity: 0;
+}
 .lesson-document-block-chrome > button {
   display: grid;
   width: 22px;
@@ -745,25 +1941,41 @@
   border-radius: 4px;
   color: var(--muted-foreground);
 }
-.lesson-document-block-chrome > button:hover { background: color-mix(in oklch, var(--foreground) 10%, transparent); color: var(--foreground); }
-.lesson-document-block-chrome > .danger:hover { color: var(--destructive); }
-.lesson-document-block-handle { cursor: grab; }
-.lesson-document-block-handle:active { cursor: grabbing; }
-.lesson-document-block.dragging { opacity: .4; }
-.lesson-document-block.drop-before { box-shadow: inset 0 2px 0 var(--primary); }
-.lesson-document-block.drop-after { box-shadow: inset 0 -2px 0 var(--primary); }
-.lesson-document-piece-actions { display: flex; gap: 6px; min-height: 17px; }
-.lesson-document-piece-actions button { color: var(--muted-foreground); font-size: 11px; font-weight: 650; }
-.lesson-document-piece-actions button:hover { color: var(--foreground); text-decoration: underline; }
-.lesson-document-piece-actions .danger { color: var(--destructive); }
-.lesson-document-insert { height: 3px; }
-.lesson-document-insert.end { height: auto; min-height: 30px; margin-top: 4px; }
-.lesson-document-insert > button { left: -24px; background: var(--card); font-size: 9px; }
+.lesson-document-block-chrome > button:hover {
+  background: color-mix(in oklch, var(--foreground) 10%, transparent);
+  color: var(--foreground);
+}
+.lesson-document-block-chrome > .danger:hover {
+  color: var(--destructive);
+}
+.lesson-document-block-handle {
+  cursor: grab;
+}
+.lesson-document-block-handle:active {
+  cursor: grabbing;
+}
+.lesson-document-block.dragging {
+  opacity: 0.4;
+}
+.lesson-document-block.drop-before {
+  box-shadow: inset 0 2px 0 var(--primary);
+}
+.lesson-document-block.drop-after {
+  box-shadow: inset 0 -2px 0 var(--primary);
+}
+.lesson-document-piece-actions {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  display: flex;
+  gap: 2px;
+  min-height: 17px;
+}
 .lesson-document-insert-choices {
   position: absolute;
   z-index: 40;
-  top: 14px;
-  left: -24px;
+  top: 28px;
+  left: 0;
   display: flex;
   min-height: 33px;
   align-items: center;
@@ -772,27 +1984,75 @@
   border: 1px solid var(--border);
   border-radius: 8px;
   background: var(--popover, var(--card));
-  box-shadow: 0 12px 30px color-mix(in oklch, var(--foreground) 16%, transparent);
+  box-shadow: 0 12px 30px
+    color-mix(in oklch, var(--foreground) 16%, transparent);
 }
-.lesson-document-insert.end .lesson-document-insert-choices { top: 32px; left: 0; }
-.lesson-document-insert-choices button { padding: 5px 7px; border-radius: 4px; color: var(--muted-foreground); font-size: 10px; font-weight: 700; }
-.lesson-document-insert-choices button.selected,
-.lesson-document-insert-choices button:focus-visible { background: var(--card); color: var(--foreground); box-shadow: 0 0 0 1px var(--border); outline: none; }
-.lesson-document-insert-choices kbd { margin-left: 4px; color: color-mix(in oklch, var(--muted-foreground) 70%, transparent); font: 600 9px ui-monospace, monospace; }
-.lesson-document-insert-choices > span { margin-left: auto; color: var(--muted-foreground); font-size: 9px; }
-.lesson-document-sentence { padding-block: 0; }
-.lesson-document-options { width: fit-content; color: var(--muted-foreground); font-size: 11px; }
-/* At rest the block is just its content. The "add another blank" stub and the
-   options row only appear while the block is hovered or being edited. */
-.lesson-document-sentence:not(:hover):not(:focus-within) .lesson-document-piece.trailing,
-.lesson-document-sentence:not(:hover):not(:focus-within) .lesson-document-options {
+.lesson-document-insert-choices button {
+  padding: 5px 7px;
+  border-radius: 4px;
+  color: var(--muted-foreground);
+  font-size: 10px;
+  font-weight: 700;
+}
+.lesson-document-insert-choices button.selected {
+  background: var(--card);
+  color: var(--foreground);
+  box-shadow: 0 0 0 1px var(--border);
+}
+/* Focus gets its own ring, separate from the "selected" fill below — a
+   keyboard user should always be able to tell "this is where my keyboard
+   focus is" apart from "this is what Enter would add right now", even
+   though in this component they're normally the same option. */
+.lesson-document-insert-choices button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+}
+.lesson-document-insert-choices kbd {
+  margin-left: 4px;
+  color: color-mix(in oklch, var(--muted-foreground) 70%, transparent);
+  font:
+    600 9px ui-monospace,
+    monospace;
+}
+.lesson-document-insert-choices > span {
+  margin-left: auto;
+  color: var(--muted-foreground);
+  font-size: 9px;
+}
+.lesson-document-sentence {
+  padding-block: 0;
+}
+/* At rest the block is just its content. The "add another blank" stub only
+   appears while a field in this sentence is actually focused (mid-editing,
+   using Tab to continue) — not on mere mouse hover, which used to show this
+   ghost card at full opacity right next to the quiet "+ Add pair" button:
+   two competing invitations to add a pair instead of one. */
+.lesson-document-sentence:not(:focus-within) .lesson-document-piece.trailing {
   display: none;
 }
 
 /* Sentence pieces flow like words — each sized to its own content and wrapping
    to the next line when the row is full. */
-.lesson-document-pieces { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 2px 15px; }
-.lesson-document-piece { min-width: 0; width: max-content; max-width: 100%; grid-template-columns: auto; padding: 0 4px; }
+.lesson-document-pieces {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2px 15px;
+}
+.lesson-document-piece {
+  min-width: 0;
+  width: max-content;
+  /* Caps overall card growth to roughly the language field's own cap
+     (min(24rem, 100%)) plus this padding. Needed here, not just on the
+     field/textarea below: a field-sizing:content textarea's contribution to
+     an ancestor's own width:max-content sizing isn't reliably clamped by
+     the textarea's or its wrapper's own max-width (verified directly —
+     both stayed clamped individually while this card kept growing past
+     them), so the card needs its own explicit ceiling. */
+  max-width: min(25rem, 100%);
+  grid-template-columns: auto;
+  padding: 0 4px;
+}
 .lesson-document-piece > textarea {
   width: auto;
   min-width: 2.5ch;
@@ -812,53 +2072,79 @@
   overflow-wrap: anywhere;
   field-sizing: content;
 }
-.lesson-document-piece > textarea:first-of-type { color: var(--foreground); font-weight: 750; }
-.lesson-document-piece > textarea:nth-of-type(2) { color: var(--muted-foreground); margin-top: -1px; }
-.lesson-document-piece > textarea:focus { background: var(--card); box-shadow: 0 1px 0 var(--border); }
-.lesson-document-piece.trailing > textarea { color: var(--foreground); font-weight: 750; }
-/* The vocabulary table keeps aligned columns — sized to the terms, not spread
-   across the whole width. */
-.lesson-document-sentence.table .lesson-document-pieces { width: max-content; max-width: 460px; }
-.lesson-document-sentence.table .lesson-document-piece {
+.lesson-document-piece > textarea:first-of-type {
+  color: var(--foreground);
+  font-weight: 750;
+}
+.lesson-document-piece > textarea:nth-of-type(2) {
+  color: var(--muted-foreground);
+  margin-top: -1px;
+}
+.lesson-document-piece > textarea:focus {
+  background: var(--card);
+  box-shadow: 0 1px 0 var(--border);
+}
+.lesson-document-piece.trailing > textarea {
+  color: var(--foreground);
+  font-weight: 750;
+}
+/* The vocabulary table is one modest-width aligned structure — a single
+   bordered box with subtle row separators — not a stack of individually
+   rounded, separately-bordered cards. Row/card chrome (border, radius,
+   background) moves here, onto the shared container; each row keeps only
+   a thin bottom rule. */
+.lesson-document-sentence.vocab-table .lesson-document-pieces {
+  width: max-content;
+  max-width: 460px;
+  gap: 0;
+  padding: 2px 0;
+  border: 1px solid color-mix(in oklch, var(--primary) 18%, var(--border));
+  border-radius: 8px;
+  background: color-mix(in oklch, var(--background) 38%, var(--surface-writing));
+}
+.lesson-document-sentence.vocab-table .lesson-document-piece {
+  position: relative;
   width: 100%;
   grid-template-columns: minmax(84px, max-content) 1fr;
   gap: 0 18px;
-  padding: 2px 4px;
+  padding: 4px 26px 4px 10px;
+  border: 0;
+  border-radius: 0;
   border-bottom: 1px solid color-mix(in oklch, var(--border) 60%, transparent);
+  background: transparent;
 }
-.lesson-document-sentence.table .lesson-document-piece:last-of-type { border-bottom: 0; }
-.lesson-document-sentence.table .lesson-document-piece.trailing { border-bottom: 0; }
-.lesson-document-sentence.table .lesson-document-piece > textarea { max-width: 100%; margin-top: 0; }
+.lesson-document-sentence.vocab-table .lesson-document-piece.active {
+  border-color: color-mix(in oklch, var(--border) 60%, transparent);
+  background: color-mix(in oklch, var(--primary) 6%, transparent);
+}
+.lesson-document-sentence.vocab-table .lesson-document-pair:last-of-type .lesson-document-piece {
+  border-bottom: 0;
+}
+.lesson-document-sentence.vocab-table .lesson-document-piece.trailing {
+  border-bottom: 0;
+}
+.lesson-document-sentence.vocab-table .lesson-document-piece > textarea {
+  max-width: 100%;
+  margin-top: 0;
+}
+/* Same single top-right tool cluster as the sentence layout — the table
+   row is shorter, so top:2px already clears the row's own padding without
+   a table-specific position. */
 
 /* Persistent bottom bar: every slide type with its shortcut, plus Done. */
 /* A single "Add slide" button closes out the document; between-slide inserts and
    the editing HUD cover the rest. */
-.lesson-document-tail { margin-top: 12px; padding-top: 8px; border-top: 1px solid var(--border); }
+.lesson-document-tail {
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
 /* Empty lesson: the picker is its own contained panel, no bare hairline above it. */
 .lesson-document-tail:has(.lesson-document-insert.inline) {
   margin-top: 10px;
   padding-top: 0;
   border-top: 0;
 }
-.lesson-document-insert.labelled { position: static; height: auto; opacity: 1; }
-.lesson-document-insert.labelled > button {
-  position: static;
-  left: auto;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  min-height: 26px;
-  padding: 0 10px;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: var(--card);
-  color: var(--foreground);
-  font-size: 11px;
-  font-weight: 650;
-}
-.lesson-document-insert.labelled > button:hover { background: var(--muted); }
-.lesson-document-insert.labelled .lesson-document-insert-choices { top: 34px; left: 0; }
-
 /* Empty lesson: the slide-type picker sits inline, centered — no prompt text,
    no toggle button. */
 .lesson-document-insert.inline {
@@ -912,36 +2198,51 @@
   border: 1px solid var(--border);
   border-radius: 12px;
   background: var(--card);
-  box-shadow: 0 10px 30px color-mix(in oklch, var(--foreground) 16%, transparent);
+  box-shadow: 0 10px 30px
+    color-mix(in oklch, var(--foreground) 16%, transparent);
   font-size: 11px;
   text-align: right;
 }
-.editing-hud-scope {
+.editing-hud-row {
   color: var(--muted-foreground);
-  font-size: 9px;
-  font-weight: 750;
-  letter-spacing: .06em;
-  text-transform: uppercase;
+  line-height: 1.5;
 }
-.editing-hud-row { color: var(--muted-foreground); line-height: 1.5; }
 .editing-hud kbd {
   min-width: 13px;
   padding: 1px 4px;
   border-radius: 4px;
   background: color-mix(in oklch, var(--foreground) 12%, transparent);
   color: var(--foreground);
-  font: 650 9.5px ui-monospace, monospace;
+  font:
+    650 9.5px ui-monospace,
+    monospace;
   text-align: center;
 }
 @media (max-width: 820px) {
-  .editing-hud { left: 8px; right: 8px; max-width: none; text-align: left; }
+  .editing-hud {
+    left: 8px;
+    right: 8px;
+    max-width: none;
+    text-align: left;
+  }
 }
-
 
 /* One consistent pill for concept chips, the "add concept" field, and the
    Add-slide bar buttons. */
-.lesson-concepts-row { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; }
-.lesson-concepts-label { color: var(--muted-foreground); font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; }
+.lesson-concepts-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+}
+.lesson-concepts-label {
+  color: var(--muted-foreground);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
 
 .lesson-concept-chip {
   display: inline-flex;
@@ -957,11 +2258,25 @@
   font-weight: 600;
   line-height: 1.2;
 }
-.lesson-concept-label:hover { text-decoration: underline; cursor: pointer; }
+.lesson-concept-label:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
 /* English on top (prominent), Spanish beneath (secondary). */
-.lesson-concept-stack { display: grid; text-align: left; line-height: 1.12; }
-.lesson-concept-stack strong { font-size: 11px; font-weight: 700; }
-.lesson-concept-stack span { font-size: 9px; font-weight: 500; opacity: .68; }
+.lesson-concept-stack {
+  display: grid;
+  text-align: left;
+  line-height: 1.12;
+}
+.lesson-concept-stack strong {
+  font-size: 11px;
+  font-weight: 700;
+}
+.lesson-concept-stack span {
+  font-size: 9px;
+  font-weight: 500;
+  opacity: 0.68;
+}
 .lesson-concept-remove {
   display: grid;
   place-items: center;
@@ -972,13 +2287,22 @@
   opacity: 0;
 }
 .lesson-concept-chip:hover .lesson-concept-remove,
-.lesson-concept-remove:focus-visible { opacity: .6; }
-.lesson-concept-remove:hover { opacity: 1; background: color-mix(in oklch, currentColor 15%, transparent); }
+.lesson-concept-remove:focus-visible {
+  opacity: 0.6;
+}
+.lesson-concept-remove:hover {
+  opacity: 1;
+  background: color-mix(in oklch, currentColor 15%, transparent);
+}
 
 /* Curriculum priority tier (lesson "Covers"), via the shared role-* vars. */
 .lesson-concept-chip[class*="role-"] {
   border-color: var(--role-border, var(--border));
-  background: color-mix(in oklch, var(--role-background, var(--card)) 55%, var(--card));
+  background: color-mix(
+    in oklch,
+    var(--role-background, var(--card)) 55%,
+    var(--card)
+  );
   color: var(--role-foreground, var(--foreground));
 }
 
@@ -988,35 +2312,606 @@
   background: color-mix(in oklch, var(--success) 12%, var(--card));
   color: var(--success-foreground);
 }
-.lesson-concept-chip.is-uncovered { border-style: dashed; color: var(--muted-foreground); }
+.lesson-concept-chip.is-uncovered {
+  border-style: dashed;
+  color: var(--muted-foreground);
+}
 
 .lesson-concept-add {
   min-height: 24px;
   min-width: 92px;
   padding: 0 8px;
-  border: 1px dashed color-mix(in oklch, var(--muted-foreground) 42%, transparent);
+  border: 1px dashed
+    color-mix(in oklch, var(--muted-foreground) 42%, transparent);
   border-radius: 6px;
   background: transparent;
   color: var(--foreground);
   font-size: 11px;
   outline: none;
 }
-.lesson-concept-add::placeholder { color: var(--muted-foreground); }
-.lesson-concept-add:focus { border-style: solid; border-color: var(--muted-foreground); }
+.lesson-concept-add::placeholder {
+  color: var(--muted-foreground);
+}
+.lesson-concept-add:focus {
+  border-style: solid;
+  border-color: var(--muted-foreground);
+}
 
 @media (max-width: 850px) {
-  .lesson-library-utility { flex-wrap: wrap; }
-  .lesson-library-utility .lesson-library-search { width: 100%; }
-  .lesson-library-save { margin-left: 0; }
-  .lesson-library-shortcuts { display: none; }
-  .lesson-library-help dl { grid-template-columns: 1fr; }
-  .lesson-library-module-controls { flex-shrink: 0; }
-  .lesson-document { padding-left: 20px; padding-right: 12px; }
-  .lesson-document-block { padding-right: 26px; }
-  .lesson-document-block-chrome { top: 3px; right: 1px; flex-direction: row; gap: 1px; }
-  .lesson-library-inline-actions { flex-wrap: wrap; padding-left: 15px; }
-  .lesson-document-insert-choices { flex-wrap: wrap; }
-  .lesson-document-insert-choices > span { width: 100%; margin-left: 7px; }
+  .lesson-library-utility {
+    flex-wrap: wrap;
+  }
+  .lesson-library-utility .lesson-library-search {
+    width: 100%;
+  }
+  .lesson-library-save {
+    margin-left: 0;
+  }
+  .lesson-library-shortcuts {
+    display: none;
+  }
+  .lesson-library-help dl {
+    grid-template-columns: 1fr;
+  }
+  .lesson-library-module-controls {
+    flex-shrink: 0;
+  }
+  .lesson-document {
+    padding-left: 20px;
+    padding-right: 12px;
+  }
+  .lesson-document-block {
+    padding-right: 26px;
+  }
+  .lesson-document-block-chrome {
+    top: 3px;
+    right: 1px;
+    flex-direction: row;
+    gap: 1px;
+  }
+  .lesson-library-inline-actions {
+    flex-wrap: wrap;
+    padding-left: 15px;
+  }
+  .lesson-document-insert-choices {
+    flex-wrap: wrap;
+  }
+  .lesson-document-insert-choices > span {
+    width: 100%;
+    margin-left: 7px;
+  }
+}
+
+/* Theme slice: make the binder visibly structured while keeping the actual
+   writing sheet quiet. These selectors intentionally live after the older
+   compact-document layer so the semantic theme is not diluted by its pale
+   color-mixes. */
+.lesson-builder-page {
+  background:
+    radial-gradient(
+      circle at 8% 0%,
+      color-mix(in oklch, var(--accent) 13%, transparent),
+      transparent 24rem
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in oklch, var(--primary) 8%, var(--background)),
+      var(--background) 24rem
+    );
+}
+
+.lesson-library-utility {
+  min-height: 48px;
+  padding: 7px 12px;
+  border: 0;
+  border-radius: 12px;
+  color: var(--primary-foreground);
+  background: var(--primary);
+  box-shadow: 0 7px 18px color-mix(in oklch, var(--primary) 24%, transparent);
+}
+.lesson-library-save,
+.lesson-library-utility .lesson-library-counts {
+  color: var(--primary-foreground);
+  font-size: 13px;
+  font-weight: 750;
+}
+.lesson-library-history button,
+.lesson-library-jump > button {
+  color: color-mix(in oklch, var(--primary-foreground) 82%, transparent);
+}
+.lesson-library-history button:hover:not(:disabled),
+.lesson-library-jump > button:hover,
+.lesson-library-jump > button[aria-expanded="true"] {
+  color: var(--primary-foreground);
+  background: color-mix(in oklch, var(--primary-foreground) 18%, transparent);
+}
+
+.lesson-library-module {
+  border: 1px solid color-mix(in oklch, var(--primary) 30%, var(--border));
+  border-radius: 14px;
+  background: var(--surface-writing);
+  box-shadow: 0 10px 28px color-mix(in oklch, var(--ink-deep) 11%, transparent);
+}
+.lesson-library-module-meta {
+  padding-block: 15px 14px;
+  border-bottom: 0;
+  border-radius: 13px 13px 0 0;
+  background: var(--brand-primary-hover);
+}
+.lesson-library-module-title {
+  color: var(--primary-foreground);
+  font-size: 19px;
+}
+.lesson-library-module-line > span,
+.lesson-library-module-meta .lesson-library-collapse,
+.lesson-library-module-meta .lesson-library-module-drag,
+.lesson-library-module-meta .lesson-library-module-controls button {
+  color: color-mix(in oklch, var(--primary-foreground) 82%, transparent);
+}
+.lesson-library-module-meta .lesson-library-collapse:hover,
+.lesson-library-module-meta .lesson-library-module-drag:hover,
+.lesson-library-module-meta
+  .lesson-library-module-controls
+  button:hover:not(:disabled) {
+  color: var(--primary-foreground);
+  background: color-mix(in oklch, var(--primary-foreground) 17%, transparent);
+}
+.lesson-library-module-title:focus {
+  color: var(--ink-deep);
+  background: var(--surface-writing);
+  box-shadow: 0 0 0 4px color-mix(in oklch, var(--primary) 42%, transparent);
+}
+.lesson-library-module-meta .lesson-library-module-delete,
+.lesson-library-module-meta .lesson-library-module-controls .danger {
+  color: #ffd9df;
+}
+.lesson-library-module-meta .lesson-library-module-delete:hover:not(:disabled),
+.lesson-library-module-meta
+  .lesson-library-module-controls
+  .danger:hover:not(:disabled) {
+  color: var(--destructive-foreground);
+  background: var(--destructive);
+}
+
+.lesson-library-row-head {
+  min-height: 52px;
+  background: color-mix(
+    in oklch,
+    var(--background) 48%,
+    var(--surface-writing)
+  );
+}
+.lesson-library-row:focus-within > .lesson-library-row-head {
+  background: color-mix(in oklch, var(--primary) 8%, var(--surface-writing));
+}
+.lesson-library-title-input {
+  min-height: 34px;
+  padding-inline: 7px;
+  font-size: 15px;
+}
+.lesson-library-title-input:focus {
+  background: var(--surface-writing);
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--primary) 28%, transparent);
+}
+.lesson-library-row-icons > .lesson-library-try {
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+.lesson-library-row-icons > .lesson-library-try:hover {
+  color: var(--primary-foreground);
+  background: var(--brand-primary-hover);
+}
+.lesson-document {
+  padding-block: 16px 20px;
+  background: var(--surface-writing);
+}
+.lesson-document-block {
+  padding-block: 2px;
+}
+.lesson-document-block:focus-within::after {
+  width: 4px;
+  background: var(--primary);
+}
+.lesson-document-block:has(.lesson-document-explanation):hover,
+.lesson-document-block:has(.lesson-document-explanation):focus-within {
+  background: var(--muted);
+}
+/* A clean, content-driven writing surface — no oversized min-height forcing
+   a one-line note into an ~80px box, no border/shadow at rest. A light
+   gray semantic surface (the same --muted token used for hover elsewhere)
+   is enough to read as a distinct "note" area without a border; the
+   block-level focus indicator (::after) already marks which slide is
+   active in blue, so this card doesn't need its own dimensional change on
+   focus either. */
+.lesson-document-explanation {
+  min-height: 0;
+  padding: 6px 9px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--muted);
+}
+/* Same type scale as the sentence/vocabulary fields (14px / 1.45) — this
+   used to force 16px/1.65, so an explanation slide and the sentence slide
+   right next to it read at two different sizes for no real reason, and the
+   larger one took visibly more height per line. */
+.lesson-document-explanation
+  .authoring-wysiwyg-document:has(.practice-markdown-content:empty)::before,
+.lesson-document-explanation .practice-markdown-content :is(p, li, h1, h2, h3),
+.lesson-document-explanation .practice-markdown-content :is(ol, ul) {
+  font-size: 14px !important;
+  line-height: 1.45 !important;
+}
+.lesson-document-pieces {
+  /* Modest, consistent gap — column gap between pairs on the same row,
+     row gap between wrapped rows. No justify-content here, so pairs never
+     distribute/stretch to fill the row like table columns; each one is
+     exactly as wide as its own longest field (width: max-content on
+     .lesson-document-piece) and sits left-aligned next to the last. */
+  gap: 3px 10px;
+}
+.lesson-document-piece {
+  /* Resting: no card box at all — just the Spanish/English text, aligned
+     by spacing (padding/gap), not a bordered container. Right padding
+     still reserves a gutter for the delete icon so it never sits on top of
+     typed text (it used to overlap the last letters of a longer word like
+     "comprar") even though there's no border to visually anchor it to
+     anymore. */
+  padding: 1px 20px 1px 5px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+}
+/* Active is the one state that gets a visible card — a clear, accessible
+   focus treatment plus the contextual tools (hint/delete), rather than
+   every resting pair carrying box chrome it doesn't need. */
+.lesson-document-piece.active {
+  border-color: var(--primary);
+  background: color-mix(in oklch, var(--primary) 7%, var(--surface-writing));
+}
+.lesson-document-piece > textarea {
+  min-height: 1lh;
+  padding-inline: 4px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+.lesson-document-piece > textarea:first-of-type {
+  color: var(--lesson-hl-es);
+}
+.lesson-document-piece > textarea:nth-of-type(2) {
+  color: var(--lesson-hl-en);
+}
+.lesson-document-piece > textarea:focus {
+  background: var(--surface-writing);
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--primary) 24%, transparent);
+}
+/* One contextual tool area per pair (hint + delete together), not icons
+   scattered at two separate corners — only visible while the pair is
+   focused/active (a pair with a saved hint keeps just the hint toggle
+   showing even when inactive, so authors can see at a glance which pairs
+   already have one). Reachable by Tab, not a hover-only affordance, so it
+   doesn't repeat the invisible-insert-control bug fixed elsewhere in this
+   file. */
+.lesson-document-piece-actions button {
+  display: grid;
+  width: 18px;
+  height: 18px;
+  place-items: center;
+  border-radius: 999px;
+  color: var(--muted-foreground);
+}
+.lesson-document-piece-actions button:hover {
+  color: var(--primary);
+  background: color-mix(in oklch, var(--primary) 12%, transparent);
+}
+.lesson-document-piece-actions button.has-hint {
+  color: var(--hint-foreground);
+  background: var(--hint);
+}
+.lesson-document-piece-actions button.has-hint:hover {
+  background: color-mix(in oklch, var(--hint) 80%, var(--foreground));
+}
+.lesson-document-piece-delete:hover {
+  color: var(--destructive);
+  background: color-mix(in oklch, var(--destructive) 10%, transparent);
+}
+.lesson-document-insert-choices button.selected {
+  color: var(--primary-foreground);
+  background: var(--primary);
+  box-shadow: none;
+}
+.lesson-document-insert-choices button:focus-visible {
+  outline: 2px solid var(--primary-foreground);
+  outline-offset: -3px;
+}
+.lesson-library-add-lesson {
+  width: fit-content;
+  min-height: 42px;
+  margin: 9px 16px;
+  padding-inline: 13px;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  color: var(--primary);
+  background: var(--surface-writing);
+  font-size: 12px;
+  font-weight: 750;
+}
+.lesson-library-add-lesson:hover {
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+.lesson-library-add-module {
+  min-height: 46px;
+  border: 2px solid var(--primary);
+  color: var(--primary-foreground);
+  background: var(--primary);
+  font-size: 13px;
+  font-weight: 750;
+}
+.lesson-library-add-module:hover {
+  border-color: var(--brand-primary-hover);
+  color: var(--primary-foreground);
+  background: var(--brand-primary-hover);
+}
+.lesson-library-help-fab {
+  min-height: 44px;
+  border-color: color-mix(in oklch, var(--hint) 70%, var(--ink-deep));
+  color: var(--hint-foreground);
+  background: var(--hint);
+  box-shadow: 0 7px 20px color-mix(in oklch, var(--hint) 30%, transparent);
+}
+.lesson-library-help-fab:hover,
+.lesson-library-help-fab:focus-visible {
+  border-color: var(--ink-deep);
+  color: var(--hint-foreground);
+  background: color-mix(in oklch, var(--hint) 88%, white);
+}
+.lesson-library-help-fab kbd {
+  color: var(--hint-foreground);
+  background: color-mix(in oklch, var(--hint-foreground) 12%, transparent);
+  box-shadow: inset 0 0 0 1px
+    color-mix(in oklch, var(--hint-foreground) 35%, transparent);
+}
+.editing-hud {
+  border-color: var(--ink-deep);
+  color: var(--primary-foreground);
+  background: var(--ink-deep);
+}
+.editing-hud-row {
+  color: color-mix(in oklch, var(--primary-foreground) 82%, transparent);
+}
+.editing-hud kbd {
+  color: var(--ink-deep);
+  background: var(--hint);
+}
+
+/* One quiet "Spanish / English" key per sentence group instead of repeating
+   the pair on every single phrase card — plain, sentence-case, and neutral
+   (not colored/uppercase) since the cards' own red/blue ink already carries
+   that distinction; this key only needs to teach the pattern once. For a
+   sentence group the two fields stack vertically inside every card, so the
+   key sits beside the row of cards as a matching two-line stack (labels
+   aria-hidden — each field keeps its own distinct aria-label/lang
+   regardless of this label, so the association survives wrapping). The
+   vocabulary table really does have two side-by-side columns, so there the
+   key stays above, horizontal, sized to the table's own column widths. */
+.lesson-document-sentence-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.lesson-document-sentence-body.vocab-table {
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: fit-content;
+  margin-inline: auto;
+}
+.lesson-document-language-key {
+  display: grid;
+  flex: none;
+  gap: 2px;
+  padding-top: 4px;
+  color: var(--muted-foreground);
+  font-size: 10px;
+  font-weight: 650;
+}
+.lesson-document-language-key.vocab-table {
+  width: max-content;
+  max-width: 460px;
+  grid-template-columns: minmax(84px, max-content) 1fr;
+  gap: 0 18px;
+  padding: 0 10px;
+}
+
+.lesson-document-language-field {
+  display: grid;
+  /* No row/column gap between grid items — irrelevant with one child each,
+     but set explicitly so nothing here can ever reintroduce a gap. */
+  gap: 0;
+  width: max-content;
+  max-width: 100%;
+}
+.lesson-document-language-field > textarea {
+  width: auto;
+  min-width: 3ch;
+  max-width: min(24rem, 100%);
+  /* Exactly one line tall at rest, not 1.55× — that extra 0.55 of a line
+     was reserving visible dead space above/below the text. Also tightened
+     line-height itself (was 1.45): with two of these stacked, Spanish
+     directly above English, generous leading on each line reads as a gap
+     between them, not just roomy text — field-sizing: content still grows
+     both properly for real multi-line content (a wrapped sentence, or a
+     Shift+Enter/semicolon second answer). */
+  min-height: 1lh;
+  margin: 0;
+  padding: 0 4px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 4px;
+  outline: none;
+  background: transparent;
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.2;
+  resize: none;
+  field-sizing: content;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.lesson-document-language-field[data-language="es"] > textarea {
+  color: var(--lesson-hl-es);
+  font-weight: 750;
+}
+.lesson-document-language-field[data-language="en"] > textarea {
+  color: var(--lesson-hl-en);
+}
+/* A neutral, un-tinted placeholder — otherwise it inherits this field's own
+   red/blue ink color at reduced opacity, reading as authored (if muted)
+   Spanish or English rather than plain guidance text. */
+.lesson-document-language-field > textarea::placeholder {
+  color: var(--muted-foreground);
+  font-weight: 400;
+  opacity: 1;
+}
+/* A single focus signal, not two nested ones: the card itself already gets
+   a clear .active border + background shift (see .lesson-document-piece),
+   so this field only needs a background lift, not its own box-shadow ring
+   pressed close against the card's own border a few px away. */
+.lesson-document-language-field > textarea:focus {
+  background: var(--surface-writing);
+}
+.lesson-document-sentence.vocab-table .lesson-document-language-field {
+  width: 100%;
+}
+.lesson-document-sentence.vocab-table .lesson-document-language-field > textarea {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* A hint renders in its own annotation region directly under its pair — a
+   sibling of .lesson-document-piece inside .lesson-document-pair, not a
+   child of the card, so it never contributes to the card's own shrink-wrap
+   width. At rest it's plain authored text (the existing
+   --hint/--hint-foreground theme tokens, already used for the
+   keyboard-help FAB — no new palette), no visible label prefix, no
+   floating remove control; a long hint truncates rather than stretching
+   this pair's own footprint — clicking or activating it by keyboard swaps
+   it into an editable input, where the full text is reachable by
+   scrolling/selecting even past the visual truncation width. */
+.lesson-document-hint-pill {
+  display: block;
+  max-width: 240px;
+  padding: 2px 10px;
+  border: 0;
+  border-radius: 999px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--hint-foreground);
+  background: var(--hint);
+  font-size: 11px;
+  font-weight: 700;
+  text-align: left;
+}
+.lesson-document-hint-pill:hover {
+  background: color-mix(in oklch, var(--hint) 85%, var(--foreground));
+}
+.lesson-document-hint-pill:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+}
+.lesson-document-hint-pill.editing {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.lesson-document-hint-pill.editing input {
+  min-width: 4ch;
+  max-width: 200px;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  field-sizing: content;
+}
+.lesson-document-hint-pill.editing input::placeholder {
+  color: color-mix(in oklch, var(--hint-foreground) 65%, transparent);
+  font-weight: 500;
+}
+/* The remove control only needs to exist while editing — a resting pill
+   removes it by editing the text down to empty, same as any other field. */
+.lesson-document-hint-pill.editing > button {
+  display: grid;
+  width: 15px;
+  height: 15px;
+  flex: none;
+  place-items: center;
+  border-radius: 999px;
+  color: var(--hint-foreground);
+  font-size: 12px;
+  line-height: 1;
+}
+.lesson-document-hint-pill.editing > button:hover {
+  background: color-mix(in oklch, var(--hint-foreground) 20%, transparent);
+}
+
+/* A short, quiet text action — no dashed box, no verbose label — that sits
+   beside the last pair as a flex item alongside the cards (not a block
+   sibling below them), so it drops to its own line only when there's
+   genuinely no room, instead of always claiming a blank band underneath. */
+.lesson-document-add-pair {
+  display: inline-flex;
+  min-height: 26px;
+  align-items: center;
+  align-self: center;
+  padding: 2px 8px;
+  border: 0;
+  border-radius: 6px;
+  color: var(--primary);
+  background: transparent;
+  font-size: 11px;
+  font-weight: 650;
+}
+.lesson-document-add-pair:hover:not(:disabled) {
+  background: color-mix(in oklch, var(--primary) 10%, transparent);
+}
+.lesson-document-add-pair:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+}
+.lesson-document-add-pair:disabled {
+  color: var(--muted-foreground);
+  opacity: 0.6;
+}
+/* The vocabulary-table equivalent lives below the table's own box, as a
+   plain footer action rather than a boxed row inside it. */
+.lesson-document-add-row {
+  /* Centered as one group with the table above it, not left-hung under a
+     centered box. */
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  min-height: 24px;
+  margin: 4px auto 0;
+  padding: 2px 4px;
+  border: 0;
+  border-radius: 6px;
+  color: var(--primary);
+  background: transparent;
+  font-size: 11px;
+  font-weight: 650;
+}
+.lesson-document-add-row:hover:not(:disabled) {
+  background: color-mix(in oklch, var(--primary) 10%, transparent);
+}
+.lesson-document-add-row:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+}
+.lesson-document-add-row:disabled {
+  color: var(--muted-foreground);
+  opacity: 0.6;
 }
 .completion-seal {
   width: 68px;
@@ -1175,3 +3070,35 @@
   max-width: 400px;
 }
 
+/* Print/PDF export of the lesson editor: strip pure-authoring chrome that
+   means nothing on paper — insert-slide controls, drag/duplicate/delete
+   icons, add-pair/add-row actions, hint add/edit affordances (a saved
+   hint's own text still prints, just not its edit controls), the empty
+   trailing draft pair, and instructional guide copy. This was previously
+   unset entirely, so every one of these authoring-only elements printed
+   right alongside the real teaching content — a large, avoidable
+   contributor to how many pages a lesson takes up on paper. Scoped to
+   elements this track owns; module/lesson-level chrome is a separate
+   component's responsibility. */
+@media print {
+  .lesson-document-insert,
+  .lesson-document-block-chrome,
+  .lesson-document-add-pair,
+  .lesson-document-add-row,
+  .lesson-document-piece-actions,
+  .lesson-document-piece-delete,
+  .lesson-document-piece.trailing,
+  .lesson-document-sentence-guide,
+  .lesson-document-undo {
+    display: none !important;
+  }
+  .lesson-document-prompt:placeholder-shown {
+    display: none !important;
+  }
+  .lesson-document-hint-pill.editing > button {
+    display: none !important;
+  }
+  .lesson-document-block {
+    break-inside: avoid;
+  }
+}

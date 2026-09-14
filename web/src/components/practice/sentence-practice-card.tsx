@@ -11,19 +11,23 @@ import {
 export function SentencePracticeCard({
   sentence,
   onCompletionChange,
+  initialAnswers,
+  onAnswersChange,
 }: {
   sentence: SentenceBlock;
   onCompletionChange?: (isComplete: boolean) => void;
+  initialAnswers?: string[];
+  onAnswersChange?: (answers: string[]) => void;
 }) {
   const [answers, setAnswers] = useState<string[]>(() =>
-    sentence.languageBlocks.map(() => ""),
+    sentence.languageBlocks.map((_, index) => initialAnswers?.[index] ?? ""),
   );
-  const [isFeedbackVisible, setIsFeedbackVisible] = useState(false);
   const [helpedBlockIndex, setHelpedBlockIndex] = useState<number | null>(null);
-  const [focusedBlockIndex, setFocusedBlockIndex] = useState<number | null>(null);
+  const [focusedBlockIndex, setFocusedBlockIndex] = useState<number | null>(
+    null,
+  );
   const inputRefs = useRef<Array<HTMLInputElement | null>>([]);
   const helpTimerRef = useRef<number | null>(null);
-  const hasFeedback = Boolean(sentence.answerFeedback?.trim());
   const correctAnswers = sentence.languageBlocks.map(
     (languageBlock, languageBlockIndex) => {
       const currentAnswer = normalizeAnswer(answers[languageBlockIndex] ?? "");
@@ -45,34 +49,20 @@ export function SentencePracticeCard({
       helpTimerRef.current = null;
     }
   }, []);
+  // Reveals a hint as a diff of the learner's own attempt against the
+  // closest accepted answer — never rewrites what they typed. Auto-hides
+  // after a few seconds, or as soon as they type again (see
+  // updatePreviewAnswer), whichever comes first.
   const showHelp = useCallback(
     (languageBlockIndex: number) => {
       clearHelpTimer();
-      setAnswers((currentAnswers) => {
-        const nextAnswers = [...currentAnswers];
-        if (
-          helpedBlockIndex !== null &&
-          helpedBlockIndex !== languageBlockIndex
-        )
-          nextAnswers[helpedBlockIndex] = "";
-        nextAnswers[languageBlockIndex] =
-          sentence.languageBlocks[languageBlockIndex]?.acceptedAnswers[0] ?? "";
-        return nextAnswers;
-      });
       setHelpedBlockIndex(languageBlockIndex);
-      setIsFeedbackVisible(false);
       helpTimerRef.current = window.setTimeout(() => {
-        setAnswers((currentAnswers) => {
-          const nextAnswers = [...currentAnswers];
-          nextAnswers[languageBlockIndex] = "";
-          return nextAnswers;
-        });
         setHelpedBlockIndex(null);
         helpTimerRef.current = null;
-        inputRefs.current[languageBlockIndex]?.focus();
       }, 3500);
     },
-    [clearHelpTimer, helpedBlockIndex, sentence.languageBlocks],
+    [clearHelpTimer],
   );
   useEffect(() => {
     onCompletionChange?.(isComplete);
@@ -95,6 +85,7 @@ export function SentencePracticeCard({
     const nextAnswers = [...answers];
     nextAnswers[languageBlockIndex] = answer;
     setAnswers(nextAnswers);
+    onAnswersChange?.(nextAnswers);
     const languageBlock = sentence.languageBlocks[languageBlockIndex];
     const isCorrect =
       Boolean(normalizeAnswer(answer)) &&
@@ -107,22 +98,6 @@ export function SentencePracticeCard({
         () => inputRefs.current[languageBlockIndex + 1]?.focus(),
         0,
       );
-    const allAnswersCorrect = sentence.languageBlocks.every(
-      (currentBlock, currentBlockIndex) => {
-        const currentAnswer = normalizeAnswer(
-          nextAnswers[currentBlockIndex] ?? "",
-        );
-        return (
-          Boolean(currentAnswer) &&
-          currentBlock.acceptedAnswers.some(
-            (acceptedAnswer) =>
-              normalizeAnswer(acceptedAnswer) === currentAnswer,
-          )
-        );
-      },
-    );
-    if (allAnswersCorrect && hasFeedback) setIsFeedbackVisible(true);
-    else if (!allAnswersCorrect) setIsFeedbackVisible(false);
   }
   const isSingleLanguageBlock = sentence.languageBlocks.length === 1;
   const isVocabulary = sentence.layout === "vocabulary_table";
@@ -181,7 +156,6 @@ export function SentencePracticeCard({
                       type="text"
                       data-practice-answer
                       autoFocus={languageBlockIndex === 0}
-                      readOnly={helpedBlockIndex === languageBlockIndex}
                       value={answers[languageBlockIndex] ?? ""}
                       onChange={(event) =>
                         updatePreviewAnswer(
@@ -190,12 +164,21 @@ export function SentencePracticeCard({
                         )
                       }
                       onFocus={() => setFocusedBlockIndex(languageBlockIndex)}
-                      onBlur={() =>
+                      onBlur={(event) => {
+                        if (
+                          isVocabulary &&
+                          event.relatedTarget instanceof HTMLElement &&
+                          event.relatedTarget.classList.contains(
+                            "answer-hint-toggle",
+                          )
+                        )
+                          return;
                         setFocusedBlockIndex((current) =>
                           current === languageBlockIndex ? null : current,
-                        )
-                      }
+                        );
+                      }}
                       onKeyDown={(event) => {
+                        if (event.nativeEvent.isComposing) return;
                         if (event.altKey && event.key.toLowerCase() === "h") {
                           event.preventDefault();
                           if (
@@ -203,6 +186,37 @@ export function SentencePracticeCard({
                             helpedBlockIndex === languageBlockIndex
                           )
                             showHelp(languageBlockIndex);
+                          return;
+                        }
+                        if (
+                          event.key === "Enter" &&
+                          !event.ctrlKey &&
+                          !event.metaKey &&
+                          !event.altKey &&
+                          !event.shiftKey &&
+                          !correctAnswers[languageBlockIndex]
+                        ) {
+                          event.preventDefault();
+                          showHelp(languageBlockIndex);
+                          return;
+                        }
+                        if (
+                          event.key === "Tab" &&
+                          !event.shiftKey &&
+                          !event.ctrlKey &&
+                          !event.metaKey &&
+                          !event.altKey &&
+                          !correctAnswers[languageBlockIndex]
+                        ) {
+                          // Block forward Tab past a wrong/incomplete answer
+                          // rather than just revealing the hint and letting
+                          // focus move on anyway — without this the hint
+                          // reveal itself unmounts the very hint-toggle
+                          // button focus was about to land on, and the
+                          // learner could Tab straight past an unanswered
+                          // blank. Shift+Tab (above) stays unrestricted.
+                          event.preventDefault();
+                          showHelp(languageBlockIndex);
                         }
                       }}
                       aria-label={`Traducción de ${languageBlock.spanish || `bloque ${languageBlockIndex + 1}`}`}
@@ -213,6 +227,16 @@ export function SentencePracticeCard({
                       lang="en"
                       className={`answer-input ${helpedBlockIndex === languageBlockIndex ? "showing-hint" : ""}`}
                     />
+                    {isVocabulary &&
+                      correctAnswers[languageBlockIndex] &&
+                      helpedBlockIndex !== languageBlockIndex && (
+                        <span
+                          className="answer-completed-text"
+                          aria-hidden="true"
+                        >
+                          {answers[languageBlockIndex]}
+                        </span>
+                      )}
                     <span className="sr-only" role="status">
                       {helpedBlockIndex === languageBlockIndex
                         ? `Pista: ${languageBlock.acceptedAnswers[0]}`
@@ -227,37 +251,29 @@ export function SentencePracticeCard({
                       <span>{languageBlock.callout}</span>
                     </p>
                   )}
-                  {helpedBlockIndex !== languageBlockIndex &&
-                    normalizeAnswer(answers[languageBlockIndex] ?? "") &&
-                    !correctAnswers[languageBlockIndex] && (
-                      <p className="answer-diff" aria-live="polite">
-                        {diffChars(
+                  {helpedBlockIndex === languageBlockIndex && (
+                    <p className="answer-diff" aria-live="polite">
+                      {diffChars(
+                        answers[languageBlockIndex] ?? "",
+                        pickClosestAnswer(
                           answers[languageBlockIndex] ?? "",
-                          pickClosestAnswer(
-                            answers[languageBlockIndex] ?? "",
-                            languageBlock.acceptedAnswers,
-                          ),
-                        ).map((part, partIndex) =>
-                          part.type === "equal" ? (
-                            <span key={partIndex}>{part.value}</span>
-                          ) : part.type === "insert" ? (
-                            <ins
-                              key={partIndex}
-                              className="answer-diff-insert"
-                            >
-                              {part.value}
-                            </ins>
-                          ) : (
-                            <del
-                              key={partIndex}
-                              className="answer-diff-delete"
-                            >
-                              {part.value}
-                            </del>
-                          ),
-                        )}
-                      </p>
-                    )}
+                          languageBlock.acceptedAnswers,
+                        ),
+                      ).map((part, partIndex) =>
+                        part.type === "equal" ? (
+                          <span key={partIndex}>{part.value}</span>
+                        ) : part.type === "insert" ? (
+                          <ins key={partIndex} className="answer-diff-insert">
+                            {part.value}
+                          </ins>
+                        ) : (
+                          <del key={partIndex} className="answer-diff-delete">
+                            {part.value}
+                          </del>
+                        ),
+                      )}
+                    </p>
+                  )}
                   {focusedBlockIndex === languageBlockIndex &&
                     !correctAnswers[languageBlockIndex] &&
                     helpedBlockIndex !== languageBlockIndex && (
@@ -265,6 +281,12 @@ export function SentencePracticeCard({
                         type="button"
                         className="answer-hint-toggle"
                         onMouseDown={(event) => event.preventDefault()}
+                        onFocus={() => setFocusedBlockIndex(languageBlockIndex)}
+                        onBlur={() =>
+                          setFocusedBlockIndex((current) =>
+                            current === languageBlockIndex ? null : current,
+                          )
+                        }
                         onClick={() => showHelp(languageBlockIndex)}
                         aria-label={`Mostrar la respuesta de ${languageBlock.spanish || `bloque ${languageBlockIndex + 1}`}`}
                         title="Mostrar la respuesta (Alt+H)"
@@ -276,9 +298,10 @@ export function SentencePracticeCard({
               ),
             )}
           </div>
-          {isComplete && !hasFeedback && (
+          {isComplete && (
             <p
               className="sentence-success"
+              role="status"
               aria-live="polite"
               aria-label="¡Correcto!"
             >
@@ -293,20 +316,6 @@ export function SentencePracticeCard({
           Esta práctica todavía no está disponible.
         </p>
       )}
-      {sentence.helperText?.trim() && (
-        <aside className="sentence-helper">
-          <Info size={17} aria-hidden="true" />
-          <PracticeMarkdown markdown={sentence.helperText} variant="helper" />
-        </aside>
-      )}
-      <div className="sentence-authored-feedback" aria-live="polite">
-        {hasFeedback && isFeedbackVisible ? (
-          <PracticeMarkdown
-            markdown={sentence.answerFeedback ?? ""}
-            variant="feedback"
-          />
-        ) : null}
-      </div>
     </div>
   );
 }

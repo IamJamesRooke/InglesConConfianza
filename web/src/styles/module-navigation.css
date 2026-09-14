@@ -1,0 +1,259 @@
+/* Module navigator — compact, searchable module list that scales to 100+
+   modules without every module's lessons living in the DOM at once. Owned
+   exclusively by module-navigator.tsx / lesson-library.tsx; do not add
+   authoring/practice rules here, and do not duplicate selectors already
+   defined in lesson-library-document.css or authoring-base.css. */
+
+.lesson-library-with-navigator {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  width: 100%;
+}
+
+.module-navigator {
+  flex: 0 0 260px;
+  align-self: flex-start;
+  position: sticky;
+  top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: calc(100vh - 24px);
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--card);
+  /* No overflow:hidden here on purpose — this box owns the border/radius,
+     but clipping it would also clip the search input's focus ring and any
+     future menu that needs to escape the box. Scrolling is instead confined
+     to the list itself (.module-navigator-list/-results, overflow-y: auto
+     below), which stays inset by the box's own padding so nothing needs to
+     be clipped at the rounded corners. */
+}
+
+.module-navigator-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.module-navigator-search {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--muted-foreground);
+  background: var(--muted);
+}
+
+.module-navigator-search input {
+  flex: 1;
+  border: 0;
+  outline: none;
+  background: none;
+  color: var(--foreground);
+  font-size: 13px;
+}
+
+.module-navigator-add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-md);
+  color: var(--primary);
+  background: none;
+  font-size: 13px;
+  font-weight: 700;
+}
+.module-navigator-add:hover {
+  background: var(--muted);
+}
+
+.module-navigator-list,
+.module-navigator-results {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-y: auto;
+}
+
+.module-navigator-list li {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.module-navigator-list li.dragging {
+  opacity: 0.5;
+}
+
+.module-navigator-row-drag {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  color: var(--muted-foreground);
+  cursor: grab;
+}
+
+.module-navigator-row {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 7px 8px;
+  border-radius: var(--radius-md);
+  color: var(--foreground);
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+}
+.module-navigator-row:hover {
+  background: var(--muted);
+}
+.module-navigator-row.active {
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+
+.module-navigator-row-name {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.module-navigator-row-count {
+  flex: 0 0 auto;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: color-mix(in oklch, currentColor 14%, transparent);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.module-navigator-empty {
+  padding: 8px;
+  color: var(--muted-foreground);
+  font-size: 13px;
+}
+
+.module-navigator-result {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 2px;
+  padding: 8px;
+  border-radius: var(--radius-md);
+  text-align: left;
+}
+.module-navigator-result:hover {
+  background: var(--muted);
+}
+.module-navigator-result-breadcrumb {
+  color: var(--muted-foreground);
+  font-size: 11px;
+  font-weight: 700;
+}
+.module-navigator-result-title .module-navigator-result-breadcrumb {
+  color: var(--foreground);
+  font-size: 13px;
+}
+.module-navigator-result-field {
+  align-self: flex-start;
+  padding: 0 5px;
+  border-radius: 4px;
+  color: var(--muted-foreground);
+  background: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.module-navigator-excerpt {
+  overflow: hidden;
+  color: var(--foreground);
+  font-size: 12px;
+  line-height: 1.4;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.module-navigator-excerpt mark {
+  padding: 0 1px;
+  border-radius: 2px;
+  color: inherit;
+  background: color-mix(in oklch, var(--primary) 22%, transparent);
+  font-weight: 700;
+}
+
+/* Move-lesson-to-module control (rendered inline in the lesson row's icon
+   group in lesson-library.tsx) — additive only, does not touch the shared
+   .lesson-library-row-icons rule it sits inside of. */
+.lesson-library-move-select {
+  height: 28px;
+  padding: 0 6px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--muted-foreground);
+  background: var(--card);
+  font-size: 12px;
+}
+
+/* Additive polish for the existing save indicator / retry button — compound
+   selectors (base class + our class) so this wins on specificity regardless
+   of stylesheet import order, without editing lesson-library-document.css's
+   own rules. */
+.lesson-library-save.module-navigator-save-quiet {
+  opacity: 0.7;
+  font-size: 12px;
+  font-weight: 500;
+}
+.lesson-library-retry.module-navigator-retry-emphasis {
+  border: 1px solid var(--destructive);
+  color: var(--destructive);
+  font-weight: 700;
+}
+
+/* Keyboard-shortcuts launcher: quieter and smaller than the shared FAB
+   default, and deliberately off the authored yellow hint-pill color so it
+   doesn't read as lesson content. Click target stays >=40px. */
+.lesson-library-help-fab.module-navigator-hud-launcher {
+  min-width: 40px;
+  min-height: 40px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  color: var(--muted-foreground);
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
+}
+.lesson-library-help-fab.module-navigator-hud-launcher:hover,
+.lesson-library-help-fab.module-navigator-hud-launcher:focus-visible {
+  color: var(--foreground);
+  background: var(--muted);
+}
+.lesson-library-help-fab.module-navigator-hud-launcher kbd {
+  color: inherit;
+  background: none;
+}
+
+@media (max-width: 900px) {
+  .lesson-library-with-navigator {
+    flex-direction: column;
+  }
+  .module-navigator {
+    position: static;
+    flex: 1 1 auto;
+    max-height: 320px;
+    width: 100%;
+  }
+}

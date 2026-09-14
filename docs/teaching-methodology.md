@@ -8,6 +8,7 @@ When the owner explains a teaching principle, lesson behavior, or preferred stud
 
 - The initial learner is a Spanish-speaking adult, with Latin American Spanish as the default context.
 - Learner-facing explanations and UI should be in clear, natural Latin American Spanish.
+- All admin interface chrome is English: navigation, buttons, field labels, placeholders, tooltips, accessibility labels, status messages, and errors. Learner interface chrome, including the homepage and practice, is Latin American Spanish. Authored bilingual teaching content, English targets, and curriculum records retain their language; this boundary does not authorize translating stored content. Shared components must distinguish admin controls from learner presentation.
 - Use the `tú` form when speaking directly to one learner.
 - English remains the target language being produced, so English answers, examples, and target forms should remain visible where they are being taught.
 - Do not use grammatical terminology with the student unless it is absolutely necessary for the task. Terms such as “present participle” belong in teacher and course-design documentation, not in the learner-facing lesson.

@@ -6,14 +6,13 @@ import type { FocusContext } from "@/lib/lesson-builder/use-focus-context";
 
 type Props = {
   context: FocusContext;
-  lessonLabel: string | null;
 };
 
 function Row({ children }: { children: ReactNode }) {
   return <div className="editing-hud-row">{children}</div>;
 }
 
-export function EditingHud({ context, lessonLabel }: Props) {
+export function EditingHud({ context }: Props) {
   const kind = context.kind;
 
   let body: ReactNode;
@@ -31,7 +30,7 @@ export function EditingHud({ context, lessonLabel }: Props) {
       body = <Row><kbd>Tab</kbd> English · <kbd>Ctrl Alt H</kbd> hint · <kbd>Ctrl Alt Enter</kbd> next slide</Row>;
       break;
     case "sentence-en":
-      body = <Row><kbd>Tab</kbd> next blank · <kbd>Ctrl Alt H</kbd> hint · <kbd>Ctrl Alt A</kbd> alt. answer · <kbd>Ctrl Alt Enter</kbd> next slide</Row>;
+      body = <Row><kbd>Tab</kbd> next blank · <kbd>Shift Enter</kbd> another answer · <kbd>Ctrl Alt H</kbd> hint · <kbd>Ctrl Alt Enter</kbd> next slide</Row>;
       break;
     case "chooser":
       body = <Row><kbd>↑↓</kbd> choose · <kbd>Enter</kbd> add · <kbd>Esc</kbd> cancel</Row>;
@@ -42,7 +41,6 @@ export function EditingHud({ context, lessonLabel }: Props) {
 
   return (
     <div className="editing-hud" role="region" aria-label="Editing shortcuts">
-      {lessonLabel && <div className="editing-hud-scope">{lessonLabel}</div>}
       {body}
     </div>
   );

@@ -38,7 +38,7 @@ export function SiteHeader() {
   }
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-[var(--header)]/95 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-border bg-header/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3">
         <Link
           href="/admin/lesson-builder"
@@ -46,7 +46,12 @@ export function SiteHeader() {
           onClick={() => setIsMenuOpen(false)}
         >
           <BrandMark size={32} />
-          <span className="min-w-0 leading-tight">Inglés con Confianza <span className="text-xs font-medium text-muted-foreground">Admin</span></span>
+          <span className="flex min-w-0 items-center gap-2 leading-tight">
+            <span className="truncate">Inglés con Confianza</span>
+            <span className="shrink-0 rounded-full bg-muted px-2 py-0.5 text-[10px] font-semibold tracking-wide text-muted-foreground uppercase">
+              Admin
+            </span>
+          </span>
         </Link>
 
         <div className="hidden items-center gap-2 lg:flex">

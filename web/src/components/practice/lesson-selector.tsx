@@ -95,6 +95,9 @@ function LessonSession({
       : resumeStepIndex(lesson.blocks, readProgress()[lesson.id]),
   );
   const [sentenceComplete, setSentenceComplete] = useState(false);
+  const [draftAnswers, setDraftAnswers] = useState<Record<string, string[]>>(
+    {},
+  );
   const [completionCursor, setCompletionCursor] = useState(() =>
     lessons.findIndex((item) => item.id === lesson.id),
   );
@@ -173,10 +176,8 @@ function LessonSession({
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
       if (event.defaultPrevented) return;
+      if (event.isComposing) return;
       const target = event.target instanceof HTMLElement ? event.target : null;
-      const textEntry = target?.closest(
-        "input, textarea, [contenteditable='true']",
-      );
       if (event.key === "Escape") {
         event.preventDefault();
         close();
@@ -203,19 +204,16 @@ function LessonSession({
         }
         return;
       }
-      if (
-        event.key === "PageUp" ||
-        (event.key === "ArrowLeft" &&
-          (!textEntry || (target instanceof HTMLInputElement && !target.value)))
-      ) {
+      // Arrow keys never drive slide navigation, in or out of a field — they
+      // stay reserved for normal caret movement and for focus/scroll on
+      // whatever control the user is on. Only PageUp/PageDown and the
+      // visible prev/next buttons change slides from the keyboard.
+      if (event.key === "PageUp") {
         event.preventDefault();
         previous();
         return;
       }
-      if (
-        event.key === "PageDown" ||
-        (event.key === "ArrowRight" && !textEntry)
-      ) {
+      if (event.key === "PageDown") {
         event.preventDefault();
         advance();
         return;
@@ -354,6 +352,13 @@ function LessonSession({
             <SentencePracticeCard
               sentence={block}
               onCompletionChange={setSentenceComplete}
+              initialAnswers={draftAnswers[block.id]}
+              onAnswersChange={(answers) =>
+                setDraftAnswers((current) => ({
+                  ...current,
+                  [block.id]: answers,
+                }))
+              }
             />
           ) : null}
         </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { Copy, GripVertical, Trash2, Undo2 } from "lucide-react";
-import { useEffect, useRef, useState, type DragEvent } from "react";
+import { Fragment, useEffect, useRef, useState, type DragEvent } from "react";
 
 import { LessonConceptsField, type ConceptDisplayLookup } from "@/components/lesson-builder/lesson-concepts-field";
 import { EditablePracticeMarkdown } from "@/components/lesson-builder/explanation-editor";
@@ -155,6 +155,22 @@ export function LessonDocument(props: Props) {
     restoreCaretOrigin();
   }
 
+  // A click anywhere outside the open chooser (its trigger or its choices
+  // popover) closes it — otherwise it stays open until Escape or a choice,
+  // which reads as broken once a teacher clicks past it into another slide.
+  useEffect(() => {
+    if (insertAt === null) return;
+    function handlePointerDown(event: PointerEvent) {
+      const target = event.target as HTMLElement | null;
+      if (target?.closest(".lesson-document-insert")) return;
+      setInsertAt(null);
+      setInsertFocus(false);
+      caretOrigin.current = null;
+    }
+    document.addEventListener("pointerdown", handlePointerDown);
+    return () => document.removeEventListener("pointerdown", handlePointerDown);
+  }, [insertAt]);
+
   function add(type: DocumentBlockType, index: number) {
     caretOrigin.current = null;
     focusAfterAdd.current = props.onAddBlock(type, index);
@@ -219,37 +235,16 @@ export function LessonDocument(props: Props) {
         </div>
 
         {props.lesson.blocks.map((block, index) => (
-          <div
-            key={block.id}
-            className={`lesson-document-block${drag.dragged?.id === block.id ? " dragging" : ""}${
-              drag.dropTarget?.id === block.id ? ` drop-${drag.dropTarget.position}` : ""
-            }`}
-            data-document-block={block.id}
-            tabIndex={-1}
-            onFocusCapture={() => setActiveBlock(block.id)}
-            onDragOver={(event) => drag.dragOver(event, dragScope, block.id)}
-            onDrop={(event) => {
-              if (!drag.dragged) return;
-              event.preventDefault();
-              event.stopPropagation();
-              if (drag.dragged && drag.dropTarget && drag.dragged.id !== drag.dropTarget.id) {
-                props.onReorderBlock(drag.dragged.id, drag.dropTarget.id, drag.dropTarget.position);
-              }
-              drag.reset();
-            }}
-            onKeyDownCapture={(event) => {
-              if (event.key !== "Escape" || event.target === event.currentTarget) return;
-              // Let nested controls and the explanation editor handle Escape.
-              if (insertAt === index || (event.target as HTMLElement).closest?.(".lesson-document-insert-choices")) return;
-              if ((event.target as HTMLElement).closest?.(".authoring-wysiwyg")) return;
-              event.preventDefault();
-              event.stopPropagation();
-              const actions = event.currentTarget.querySelector<HTMLElement>(".lesson-document-block-chrome button");
-              (actions ?? event.currentTarget).focus();
-            }}
-          >
+          <Fragment key={block.id}>
+            {/* A sibling of the slide, not its first child — sitting in
+                the gap between two slides instead of inside either one's
+                own box. Nested inside the block, its hover-expanded state
+                visually read as part of that slide's own card (the "+"
+                appearing to float inside the note's colored background);
+                as a true sibling it only ever occupies the seam. */}
             <SlideInsertControl
               open={insertAt === index}
+              insertLabel={`Insert a slide before slide ${index + 1}`}
               autoFocusOnOpen={insertFocus}
               selected={insertChoice}
               onSelected={setInsertChoice}
@@ -257,7 +252,34 @@ export function LessonDocument(props: Props) {
               onAdd={(type) => add(type, index)}
               onClose={closeInsert}
             />
-
+            <div
+              className={`lesson-document-block${drag.dragged?.id === block.id ? " dragging" : ""}${
+                drag.dropTarget?.id === block.id ? ` drop-${drag.dropTarget.position}` : ""
+              }`}
+              data-document-block={block.id}
+              tabIndex={-1}
+              onFocusCapture={() => setActiveBlock(block.id)}
+              onDragOver={(event) => drag.dragOver(event, dragScope, block.id)}
+              onDrop={(event) => {
+                if (!drag.dragged) return;
+                event.preventDefault();
+                event.stopPropagation();
+                if (drag.dragged && drag.dropTarget && drag.dragged.id !== drag.dropTarget.id) {
+                  props.onReorderBlock(drag.dragged.id, drag.dropTarget.id, drag.dropTarget.position);
+                }
+                drag.reset();
+              }}
+              onKeyDownCapture={(event) => {
+                if (event.key !== "Escape" || event.target === event.currentTarget) return;
+                // Let nested controls and the explanation editor handle Escape.
+                if (insertAt === index || (event.target as HTMLElement).closest?.(".lesson-document-insert-choices")) return;
+                if ((event.target as HTMLElement).closest?.(".authoring-wysiwyg")) return;
+                event.preventDefault();
+                event.stopPropagation();
+                const actions = event.currentTarget.querySelector<HTMLElement>(".lesson-document-block-chrome button");
+                (actions ?? event.currentTarget).focus();
+              }}
+            >
             {block.type === "explanation" ? (
               <section className="lesson-document-explanation" aria-label={`Explanation ${index + 1}`}>
                 <EditablePracticeMarkdown
@@ -290,7 +312,8 @@ export function LessonDocument(props: Props) {
               <button type="button" onClick={() => props.onDuplicateBlock(block.id)} aria-label={`Duplicate slide ${index + 1}`} title="Duplicate slide"><Copy size={14} aria-hidden="true" /></button>
               <button type="button" className="danger" onClick={() => props.onDeleteBlock(block.id)} aria-label={`Delete slide ${index + 1}`} title="Delete slide"><Trash2 size={14} aria-hidden="true" /></button>
             </div>
-          </div>
+            </div>
+          </Fragment>
         ))}
 
         <div className="lesson-document-tail">

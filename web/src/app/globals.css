@@ -7,8 +7,16 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  /* Registered so site-header.tsx can use the plain `bg-header/95` utility
+     instead of `bg-[var(--header)]/95` — that arbitrary-value-plus-opacity
+     combination triggers a Lightning CSS parser bug (corrupts the
+     synthesized color-mix variable name, breaking the whole build). Opacity
+     modifiers on a properly registered theme color don't hit that path. */
+  --color-header: var(--header);
   --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
   --font-heading: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -101,47 +109,62 @@
 }
 
 .dark .role-select {
-  --role-background: color-mix(
-    in oklch,
-    var(--role-border) 22%,
-    var(--card)
-  );
+  --role-background: color-mix(in oklch, var(--role-border) 22%, var(--card));
   --role-foreground: var(--foreground);
 }
 
-/* Confianza — vivid indigo-violet primary with a real coral accent (not a
-   pastel wash). Neutrals still carry visible color instead of settling to
-   near-achromatic grey, so structural chrome (borders, muted surfaces, page
-   background) doesn't read as flat/washed out even where no badge or button
-   is present. */
+/* Confianza semantic theme. Components consume these purpose-based tokens;
+   the aliases below keep Tailwind/shadcn primitives on the same palette. */
 :root {
-  --background: oklch(0.95 0.028 285);
-  --foreground: oklch(0.22 0.012 265);
-  --card: oklch(0.995 0.006 285);
-  --card-foreground: oklch(0.22 0.012 265);
-  --popover: oklch(0.995 0.006 285);
-  --popover-foreground: oklch(0.22 0.012 265);
-  --primary: oklch(0.56 0.26 285);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.9 0.025 285);
-  --secondary-foreground: oklch(0.3 0.02 270);
-  --muted: oklch(0.91 0.022 285);
-  /* .49, not .5 — a hair darker for margin against light surfaces generally;
-     verified in tests/ux/accessibility.spec.ts. */
-  --muted-foreground: oklch(0.46 0.02 270);
-  --accent: oklch(0.7 0.19 35);
-  --accent-foreground: oklch(0.26 0.1 30);
-  --destructive: oklch(0.6 0.22 35);
-  --border: oklch(0.65 0.05 285);
-  --input: oklch(0.6 0.055 285);
-  --ring: oklch(0.62 0.24 285);
-  --surface: oklch(0.95 0.028 285);
-  --surface-raised: oklch(0.995 0.006 285);
-  --surface-sunken: oklch(0.91 0.022 285);
-  --header: oklch(0.96 0.03 285);
-  --success: oklch(0.62 0.17 152);
-  --success-foreground: oklch(0.32 0.15 152);
-  --hint: oklch(0.8 0.19 82);
+  --brand-primary: #2448c8;
+  --brand-primary-hover: #18379f;
+  --brand-on-primary: #ffffff;
+  --brand-accent: #c82d49;
+  --brand-accent-hover: #a8233f;
+  --brand-on-accent: #ffffff;
+  --state-success: #087a50;
+  --state-success-soft: #e6f7ef;
+  --state-on-success: #ffffff;
+  --state-help: #f5b82e;
+  --state-help-soft: #fff4cf;
+  --state-on-help: #382600;
+  --state-danger: #861331;
+  --state-danger-soft: #fce8ec;
+  --canvas-warm: #f7f7f4;
+  --surface-writing: #ffffff;
+  --surface-subtle: #eef0f4;
+  --ink-deep: #17213a;
+  --ink-muted: #566174;
+  --line-strong: #8291ae;
+
+  --background: var(--canvas-warm);
+  --foreground: var(--ink-deep);
+  --card: var(--surface-writing);
+  --card-foreground: var(--ink-deep);
+  --popover: var(--surface-writing);
+  --popover-foreground: var(--ink-deep);
+  --primary: var(--brand-primary);
+  --primary-foreground: var(--brand-on-primary);
+  --secondary: #e7edfb;
+  --secondary-foreground: #223661;
+  --muted: var(--surface-subtle);
+  --muted-foreground: var(--ink-muted);
+  --accent: var(--brand-accent);
+  --accent-foreground: var(--brand-on-accent);
+  --destructive: var(--state-danger);
+  --destructive-foreground: #ffffff;
+  --border: #b8c2d8;
+  --input: var(--line-strong);
+  --ring: var(--brand-primary);
+  --surface: var(--canvas-warm);
+  --surface-raised: var(--surface-writing);
+  --surface-sunken: var(--surface-subtle);
+  --header: #eaf0ff;
+  --success: var(--state-success);
+  --success-foreground: #07563b;
+  --success-contrast: var(--state-on-success);
+  --hint: var(--state-help);
+  --hint-foreground: var(--state-on-help);
   --priority-high: oklch(0.59 0.16 150);
   --priority-medium: oklch(0.58 0.17 250);
   --priority-low: oklch(0.55 0.035 270);
@@ -151,9 +174,12 @@
   --chart-4: oklch(0.63 0.18 18);
   --chart-5: oklch(0.58 0.11 150);
   --radius: 0.625rem;
-  --shadow-sm: 0 1px 2px oklch(0.2 0.01 260 / 0.06), 0 1px 3px oklch(0.2 0.01 260 / 0.05);
-  --shadow-md: 0 4px 12px oklch(0.2 0.01 260 / 0.08), 0 2px 4px oklch(0.2 0.01 260 / 0.05);
-  --shadow-lg: 0 16px 40px oklch(0.2 0.01 260 / 0.1), 0 4px 12px oklch(0.2 0.01 260 / 0.06);
+  --shadow-sm:
+    0 1px 2px oklch(0.2 0.01 260 / 0.06), 0 1px 3px oklch(0.2 0.01 260 / 0.05);
+  --shadow-md:
+    0 4px 12px oklch(0.2 0.01 260 / 0.08), 0 2px 4px oklch(0.2 0.01 260 / 0.05);
+  --shadow-lg:
+    0 16px 40px oklch(0.2 0.01 260 / 0.1), 0 4px 12px oklch(0.2 0.01 260 / 0.06);
   --sidebar: oklch(0.955 0.018 85);
   --sidebar-foreground: oklch(0.2 0.025 260);
   --sidebar-primary: oklch(0.55 0.22 285);
@@ -181,7 +207,8 @@
   gap: 10px;
   min-width: 230px;
   padding: 9px 11px;
-  border: 1px solid color-mix(in oklch, var(--concept-priority) 45%, var(--border));
+  border: 1px solid
+    color-mix(in oklch, var(--concept-priority) 45%, var(--border));
   border-radius: var(--radius-lg);
   color: var(--foreground);
   background: color-mix(in oklch, var(--concept-priority) 9%, var(--card));

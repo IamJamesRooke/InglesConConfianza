@@ -113,18 +113,28 @@
 .practice-markdown-content mark.spanish,
 .practice-markdown-content mark[data-language="es"] {
   color: var(--lesson-hl-es);
-  border-bottom-color: color-mix(in oklch, var(--lesson-hl-es) 45%, transparent);
+  border-bottom-color: color-mix(
+    in oklch,
+    var(--lesson-hl-es) 45%,
+    transparent
+  );
 }
 .learner-theme mark.english,
 .learner-theme mark[data-language="en"],
 .practice-markdown-content mark.english,
 .practice-markdown-content mark[data-language="en"] {
   color: var(--lesson-hl-en);
-  border-bottom-color: color-mix(in oklch, var(--lesson-hl-en) 45%, transparent);
+  border-bottom-color: color-mix(
+    in oklch,
+    var(--lesson-hl-en) 45%,
+    transparent
+  );
 }
 
 /* --- Sentence builder: one calm card, blanks flow left-to-right --- */
-.sentence-practice,
+.sentence-practice {
+  max-width: 44rem;
+}
 .sentence-practice.vocabulary-practice {
   max-width: 44rem;
 }
@@ -196,12 +206,15 @@
   padding: clamp(26px, 4vw, 38px);
 }
 .vocabulary-practice .answer-grid {
-  width: min(36rem, 100%);
+  width: min(42rem, 100%);
 }
 .lesson-session .vocabulary-practice .answer-piece,
 .lesson-session .single-answer .answer-piece {
   flex: none;
   width: 100%;
+}
+.lesson-session .vocabulary-practice .answer-piece {
+  max-width: none;
 }
 /* The Spanish word anchors each blank — Spanish-flag red, reads like a heading. */
 .answer-source,
@@ -289,15 +302,45 @@
   border-color: color-mix(in oklch, var(--primary) 55%, var(--border));
   background: color-mix(in oklch, var(--primary) 7%, var(--card));
 }
-/* Peeking at the answer via a hint — tinted like the yellow hint system. */
+/* A hint is showing (as a diff below) — tint the field, but it stays
+   editable so a learner can correct their attempt without losing it. */
 .answer-input.showing-hint {
-  color: color-mix(in oklch, var(--hint) 82%, black);
   border-color: var(--hint);
   background: color-mix(in oklch, var(--hint) 14%, var(--card));
-  font-style: normal;
-  caret-color: transparent;
-  cursor: default;
-  user-select: none;
+}
+/* Shows the learner's own attempt against the closest accepted answer,
+   character by character — only while a hint is explicitly requested. */
+.answer-diff {
+  position: absolute;
+  top: calc(100% - 2px);
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  margin-top: 0;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--muted-foreground);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-align: center;
+  pointer-events: none;
+  box-shadow: var(--shadow-md);
+}
+.answer-diff-insert {
+  padding: 0 2px;
+  border-radius: 4px;
+  color: var(--accent-foreground);
+  background: var(--accent);
+  text-decoration: none;
+}
+.answer-diff-delete {
+  color: var(--destructive);
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  opacity: 0.75;
 }
 /* Per-blank hint: a small lightbulb badge on the block's top-right corner… */
 .answer-hint-toggle {
@@ -313,7 +356,9 @@
   border-radius: 999px;
   background: color-mix(in oklch, var(--hint) 22%, var(--card));
   box-shadow: 0 1px 4px color-mix(in oklch, var(--foreground) 12%, transparent);
-  transition: background 140ms, transform 140ms;
+  transition:
+    background 140ms,
+    transform 140ms;
   animation: answer-hint-toggle-in 140ms ease-out;
 }
 @keyframes answer-hint-toggle-in {
@@ -349,34 +394,6 @@
   flex-shrink: 0;
   margin-top: 2px;
   color: var(--hint);
-}
-/* Shows the learner's answer against the closest accepted answer, character
-   by character, once they step away from an incorrect-but-nonempty field. */
-.answer-diff {
-  width: 100%;
-  margin-top: 8px;
-  padding: 8px 12px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--card);
-  color: var(--muted-foreground);
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  text-align: center;
-}
-.answer-diff-insert {
-  padding: 0 2px;
-  border-radius: 4px;
-  color: var(--accent-foreground);
-  background: var(--accent);
-  text-decoration: none;
-}
-.answer-diff-delete {
-  color: var(--destructive);
-  text-decoration: line-through;
-  text-decoration-thickness: 2px;
-  opacity: 0.75;
 }
 /* Authoring canvas keeps its inline "Answers & hint" button. */
 .answer-hint {
@@ -429,50 +446,9 @@
   width: 44px;
   height: 44px;
   border-radius: 999px;
-  color: var(--primary-foreground);
-  background: var(--primary);
+  color: var(--success-contrast);
+  background: var(--success);
   box-shadow: 0 0 0 5px var(--card);
-}
-.sentence-helper {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  max-width: 36rem;
-  margin: 22px auto 0;
-  padding: 16px 18px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  color: var(--foreground);
-  background: var(--card);
-  box-shadow: var(--shadow-sm);
-  font-size: 16px;
-  line-height: 1.6;
-}
-.sentence-helper > svg {
-  margin-top: 3px;
-  color: var(--primary);
-}
-.sentence-helper :is(p, li) {
-  font-size: 16px;
-  line-height: 1.6;
-}
-.sentence-authored-feedback {
-  min-height: 32px;
-  max-width: 36rem;
-  margin: 18px auto 0;
-  text-align: center;
-  color: var(--success-foreground);
-}
-.sentence-authored-feedback:has(p) {
-  padding: 14px 20px;
-  border: 1px solid color-mix(in oklch, var(--success) 30%, var(--border));
-  border-radius: var(--radius-lg);
-  background: color-mix(in oklch, var(--success) 14%, var(--card));
-}
-.sentence-authored-feedback p {
-  font-size: 18px;
-  line-height: 1.6;
-  font-weight: 700;
 }
 .lesson-controls {
   min-height: 88px;
@@ -706,6 +682,285 @@
   }
   .course-footer {
     font-size: 10px;
+  }
+}
+
+/* Representative learner surface for the shared semantic theme. Keep the
+   canvas neutral and let the dark primary navigation carry the hierarchy. */
+.lesson-session {
+  background: var(--background);
+}
+.lesson-topbar {
+  color: var(--primary-foreground);
+  background: linear-gradient(
+    110deg,
+    var(--brand-primary-hover),
+    var(--primary)
+  );
+  box-shadow: 0 8px 24px color-mix(in oklch, var(--primary) 28%, transparent);
+}
+.lesson-topbar-title p,
+.lesson-topbar-title h1,
+.lesson-step-count,
+.lesson-step-count strong {
+  color: var(--primary-foreground);
+}
+.lesson-topbar-title p,
+.lesson-step-count {
+  opacity: 0.84;
+}
+.lesson-topbar .learner-icon-button {
+  border-color: color-mix(in oklch, var(--primary-foreground) 38%, transparent);
+  color: var(--primary-foreground);
+  background: color-mix(in oklch, var(--primary-foreground) 12%, transparent);
+}
+.lesson-topbar .learner-icon-button:hover {
+  color: var(--primary-foreground);
+  background: color-mix(in oklch, var(--primary-foreground) 22%, transparent);
+}
+.lesson-topbar .lesson-top-progress,
+.lesson-session .lesson-top-progress::-webkit-progress-bar {
+  background: color-mix(in oklch, var(--primary-foreground) 24%, transparent);
+}
+.lesson-session .lesson-top-progress::-webkit-progress-value,
+.lesson-session .lesson-top-progress::-moz-progress-bar {
+  background: var(--primary-foreground);
+}
+.lesson-explanation,
+.answer-grid,
+.lesson-celebration {
+  border: 1px solid color-mix(in oklch, var(--primary) 28%, var(--border));
+  background: var(--surface-writing);
+  box-shadow: 0 18px 42px color-mix(in oklch, var(--ink-deep) 14%, transparent);
+}
+.answer-input {
+  background: var(--surface-writing);
+}
+.answer-input:focus {
+  border-color: var(--primary);
+  outline-color: color-mix(in oklch, var(--primary) 25%, transparent);
+}
+.answer-hint-toggle,
+.answer-hint {
+  border-color: color-mix(in oklch, var(--hint) 72%, var(--ink-deep));
+  color: var(--hint-foreground);
+  background: var(--hint);
+}
+.answer-hint-toggle svg,
+.answer-hint svg {
+  color: var(--hint-foreground);
+  fill: transparent;
+}
+.lesson-controls.ready {
+  border-color: var(--success);
+  background: var(--state-success-soft);
+}
+.lesson-session .learner-button.primary:hover {
+  background: var(--brand-primary-hover);
+}
+.lesson-session .learner-button.success {
+  color: var(--success-contrast);
+  background: var(--success);
+}
+
+/* Completion keeps the existing flow, but gives the two essential signals—
+   success and returning home—clear visual weight at every viewport size. */
+.lesson-session .lesson-celebration {
+  max-width: 36rem;
+  padding: clamp(2rem, 4vw, 3rem);
+}
+.lesson-session .completion-seal {
+  width: 92px;
+  height: 92px;
+  margin-bottom: 20px;
+  color: var(--success-contrast);
+  background: var(--success);
+  box-shadow: 0 0 0 8px
+    color-mix(in oklch, var(--success) 16%, var(--surface-writing));
+}
+.lesson-session .completion-seal svg {
+  width: 46px;
+  height: 46px;
+}
+.lesson-session .completion-status {
+  margin-bottom: 22px;
+  color: var(--foreground);
+  font-family: var(--lesson-display);
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 1.9rem);
+  font-weight: 850;
+  line-height: 1.2;
+  letter-spacing: 0.045em;
+}
+.lesson-session .completion-actions {
+  margin-top: 22px;
+}
+.lesson-session .completion-action {
+  min-width: 148px;
+  border-radius: var(--radius-lg);
+}
+.lesson-session .completion-action.quiet {
+  color: var(--primary-foreground);
+  border-color: var(--primary);
+  background: var(--primary);
+  box-shadow: 0 3px 0 color-mix(in oklch, var(--primary) 72%, var(--ink-deep));
+}
+.lesson-session .completion-action.quiet:hover {
+  color: var(--primary-foreground);
+  border-color: var(--brand-primary-hover);
+  background: var(--brand-primary-hover);
+}
+.lesson-session .completion-action:focus-visible {
+  outline: 3px solid color-mix(in oklch, var(--primary) 32%, transparent);
+  outline-offset: 3px;
+}
+
+/* Vocabulary tables are reference-like scan rows, not four oversized
+   sentence cards. These rules are deliberately scoped away from ordinary
+   sentence activities. */
+.lesson-session .vocabulary-practice .answer-grid {
+  gap: 0;
+  padding: 10px 18px;
+}
+.lesson-session .vocabulary-practice .answer-piece {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(12rem, 1.1fr);
+  align-items: center;
+  gap: 8px 18px;
+  min-height: 62px;
+  padding: 9px 4px;
+  border-bottom: 1px solid var(--border);
+}
+.lesson-session .vocabulary-practice .answer-piece:last-child {
+  border-bottom: 0;
+}
+.lesson-session .vocabulary-practice .answer-source {
+  min-width: 0;
+  margin: 0;
+  color: var(--foreground);
+  font-family: var(--lesson-display);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.lesson-session .vocabulary-practice .answer-source-check {
+  color: var(--success);
+}
+.lesson-session .vocabulary-practice .answer-field-sizer {
+  max-width: none;
+  min-width: 0;
+  padding: 8px 38px 8px 12px;
+  font-size: 1.05rem;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+.lesson-session .vocabulary-practice .answer-input {
+  min-height: 42px;
+  padding: 8px 38px 8px 12px;
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+.lesson-session .vocabulary-practice .answer-piece:focus-within .answer-field {
+  transform: none;
+}
+.lesson-session .vocabulary-practice .answer-piece.correct .answer-input {
+  border-color: transparent;
+  color: var(--foreground);
+  background: transparent;
+  box-shadow: none;
+}
+.lesson-session .vocabulary-practice .answer-completed-text {
+  position: absolute;
+  inset: 0;
+  display: block;
+  min-height: 42px;
+  padding: 9px 12px;
+  color: var(--foreground);
+  font-family: var(--lesson-display);
+  font-size: 1.05rem;
+  font-weight: 650;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.lesson-session
+  .vocabulary-practice
+  .answer-piece.correct
+  .answer-field:not(:focus-within)
+  .answer-input {
+  opacity: 0;
+}
+.lesson-session
+  .vocabulary-practice
+  .answer-piece.correct
+  .answer-field:focus-within
+  .answer-completed-text {
+  visibility: hidden;
+}
+.lesson-session .vocabulary-practice :is(.answer-note, .answer-diff) {
+  grid-column: 2;
+  margin-top: 0;
+}
+.lesson-session .vocabulary-practice .answer-note {
+  color: var(--hint-foreground);
+  background: var(--state-help-soft);
+}
+.lesson-session .vocabulary-practice .answer-hint-toggle {
+  top: 50%;
+  right: 9px;
+  width: 30px;
+  height: 30px;
+  transform: translateY(-50%);
+}
+.lesson-session .vocabulary-practice .answer-hint-toggle:hover {
+  transform: translateY(-50%) scale(1.05);
+}
+.lesson-session .vocabulary-practice .answer-hint-toggle:focus-visible {
+  outline: 3px solid color-mix(in oklch, var(--hint) 38%, transparent);
+  outline-offset: 2px;
+}
+@media (max-width: 480px) {
+  .lesson-session .lesson-celebration {
+    padding: 28px 20px;
+  }
+  .lesson-session .completion-seal {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 18px;
+  }
+  .lesson-session .completion-seal svg {
+    width: 40px;
+    height: 40px;
+  }
+  .lesson-session .completion-status {
+    margin-bottom: 18px;
+    font-size: 1.35rem;
+  }
+  .lesson-session .completion-actions {
+    width: 100%;
+    margin-top: 18px;
+  }
+  .lesson-session .completion-action {
+    width: min(100%, 15rem);
+  }
+  .lesson-session .vocabulary-practice .answer-grid {
+    padding: 8px 14px;
+  }
+  .lesson-session .vocabulary-practice .answer-piece {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 5px;
+    min-height: 0;
+    padding: 11px 2px;
+  }
+  .lesson-session .vocabulary-practice .answer-source {
+    padding-right: 4px;
+  }
+  .lesson-session .vocabulary-practice .answer-field-sizer {
+    min-height: 42px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .lesson-session .vocabulary-practice :is(.answer-note, .answer-diff) {
+    grid-column: 1;
   }
 }
 @media (prefers-reduced-motion: reduce) {

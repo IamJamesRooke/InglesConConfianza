@@ -14,6 +14,7 @@ const BLOCK_TYPES: { type: DocumentBlockType; label: string; key: string }[] = [
 type Props = {
   open: boolean;
   label?: string;
+  insertLabel?: string;
   inline?: boolean;
   autoFocusOnOpen?: boolean;
   selected: number;
@@ -25,7 +26,13 @@ type Props = {
 
 export function SlideInsertControl({
   open,
+  // No default label: between-slide inserts are icon-only (a repeated
+  // "+ Add slide" phrase at every seam reads as distracting noise once
+  // there are more than one or two slides) — the exact position lives in
+  // insertLabel's aria-label/title instead. Only the tail control passes
+  // an explicit label, since it's the one genuinely standalone case.
   label,
+  insertLabel,
   inline = false,
   autoFocusOnOpen = true,
   selected,
@@ -69,19 +76,25 @@ export function SlideInsertControl({
 
   return (
     <div
-      className={`lesson-document-insert${label ? " labelled" : ""}${inline ? " inline" : ""}`}
+      className={`lesson-document-insert${inline ? " inline" : ""}${open ? " open" : ""}`}
     >
       {!inline && (
-        <button type="button" onClick={onToggle} aria-expanded={open}>
-          <Plus size={13} />{" "}
-          {label ?? <span className="sr-only">Insert slide here</span>}
+        <button
+          type="button"
+          onClick={onToggle}
+          aria-expanded={open}
+          aria-label={insertLabel}
+          title={insertLabel}
+        >
+          <Plus size={13} aria-hidden="true" />
+          {label && <span>{label}</span>}
         </button>
       )}
       {showChoices && (
         <div
           className="lesson-document-insert-choices"
           role="toolbar"
-          aria-label="Choose the first slide"
+          aria-label="Choose a slide type"
           onKeyDown={handleKey}
         >
           {BLOCK_TYPES.map((choice, index) => (

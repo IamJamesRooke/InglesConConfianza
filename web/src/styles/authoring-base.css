@@ -160,17 +160,6 @@
   font-weight: 600;
   line-height: 1.25;
 }
-.authoring-wysiwyg-helper:has(.practice-markdown-content:empty)::before {
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.4;
-}
-.authoring-wysiwyg-feedback:has(.practice-markdown-content:empty)::before {
-  text-align: center;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1.55;
-}
 .authoring-source-input {
   width: 100%;
   border: 0;
@@ -272,16 +261,6 @@
   min-height: 92px;
   align-self: stretch;
   border-radius: var(--radius-2xl);
-}
-.authoring-session .sentence-helper,
-.authoring-session .sentence-authored-feedback {
-  width: 100%;
-}
-.authoring-session .sentence-helper .authoring-wysiwyg {
-  flex: 1;
-}
-.authoring-session .sentence-authored-feedback:empty {
-  display: none;
 }
 .authoring-controls .lesson-controls-inner {
   max-width: 1120px;
@@ -408,7 +387,9 @@
   color: var(--foreground);
 }
 @keyframes authoring-spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 .authoring-spin {
   animation: authoring-spin 1s linear infinite;
@@ -436,27 +417,35 @@
   font-weight: 750;
   box-shadow: 0 2px 8px color-mix(in oklch, var(--foreground) 14%, transparent);
 }
-.authoring-mode-badge[data-language="es"] { background: #c60b1e; color: #fff; }
-.authoring-mode-badge[data-language="en"] { background: #00247d; color: #fff; }
+.authoring-mode-badge[data-language="es"] {
+  background: var(--lesson-hl-es);
+  color: var(--primary-foreground);
+}
+.authoring-mode-badge[data-language="en"] {
+  background: var(--lesson-hl-en);
+  color: var(--primary-foreground);
+}
 .authoring-mode-badge kbd {
   padding: 0 3px;
   border-radius: 3px;
   background: rgb(255 255 255 / 24%);
-  font: 650 9px ui-monospace, monospace;
+  font:
+    650 9px ui-monospace,
+    monospace;
 }
 .authoring-format-menu {
   position: absolute;
-  left: 50%;
-  bottom: calc(100% + 12px);
+  left: 0;
+  top: calc(100% + 7px);
   z-index: 20;
   display: flex;
   gap: 3px;
   padding: 5px;
   border: 1px solid var(--border);
   border-radius: 10px;
-  background: var(--card);
-  box-shadow: 0 10px 30px color-mix(in oklch, var(--foreground) 16%, transparent);
-  transform: translateX(-50%);
+  background: var(--surface-writing);
+  box-shadow: 0 10px 30px
+    color-mix(in oklch, var(--foreground) 16%, transparent);
   white-space: nowrap;
 }
 .authoring-format-menu button {
@@ -467,10 +456,32 @@
   font-size: 12px;
   font-weight: 700;
 }
-.authoring-format-menu kbd { margin-left: 4px; opacity: .6; font: 700 9px ui-monospace, monospace; }
-.authoring-format-menu button:hover { background: var(--muted); }
-.authoring-format-menu button.spanish { background: color-mix(in oklch, var(--lesson-hl-es) 16%, var(--card)); color: var(--lesson-hl-es); }
-.authoring-format-menu button.english { background: color-mix(in oklch, var(--lesson-hl-en) 16%, var(--card)); color: var(--lesson-hl-en); }
+.authoring-format-menu kbd {
+  margin-left: 4px;
+  opacity: 1;
+  font:
+    700 9px ui-monospace,
+    monospace;
+}
+.authoring-format-menu button:hover {
+  background: var(--muted);
+}
+.authoring-format-menu button.spanish {
+  background: color-mix(in oklch, var(--lesson-hl-es) 16%, var(--card));
+  color: var(--lesson-hl-es);
+}
+.authoring-format-menu button.english {
+  background: color-mix(in oklch, var(--lesson-hl-en) 16%, var(--card));
+  color: var(--lesson-hl-en);
+}
+.authoring-format-menu button:focus-visible {
+  outline: 3px solid color-mix(in oklch, var(--primary) 32%, transparent);
+  outline-offset: 1px;
+}
+.authoring-format-menu button[aria-pressed="true"] {
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
 .authoring-controls {
   padding: 13px 32px;
 }
@@ -492,19 +503,32 @@
   font-size: 13px;
   font-weight: 700;
 }
-.authoring-nav-button { min-width: 110px; }
+.authoring-nav-button {
+  min-width: 110px;
+}
 .authoring-nav-button:hover:not(:disabled),
 .authoring-icon-action:hover,
-.authoring-position-button:hover { background: var(--muted); color: var(--foreground); }
-.authoring-nav-button:disabled { opacity: .32; }
+.authoring-position-button:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.authoring-nav-button:disabled {
+  opacity: 0.32;
+}
 .authoring-footer-center {
   display: grid;
   flex: 1;
   justify-items: center;
   gap: 4px;
 }
-.authoring-position-button { min-height: 28px; padding: 0 8px; }
-.authoring-key-hint { color: var(--muted-foreground); font-size: 11px; }
+.authoring-position-button {
+  min-height: 28px;
+  padding: 0 8px;
+}
+.authoring-key-hint {
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
 .authoring-key-hint kbd,
 .authoring-popover kbd,
 .authoring-help-dialog kbd {
@@ -513,15 +537,38 @@
   border-radius: 4px;
   background: var(--muted);
   color: var(--muted-foreground);
-  font: 600 10px/1.2 ui-monospace, monospace;
+  font:
+    600 10px/1.2 ui-monospace,
+    monospace;
 }
-.authoring-key-hint button { font-weight: 800; text-decoration: underline; }
-.authoring-footer-actions { display: flex; align-items: center; gap: 8px; }
-.authoring-icon-action { width: 42px; border: 1px solid var(--border); }
-.authoring-add-button { padding: 0 13px; border: 1px solid var(--border); background: var(--card); }
-.authoring-add-button:hover { border-color: var(--muted-foreground); background: var(--muted); }
-.authoring-next-button { min-width: 146px !important; }
-.authoring-menu-anchor { position: relative; }
+.authoring-key-hint button {
+  font-weight: 800;
+  text-decoration: underline;
+}
+.authoring-footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.authoring-icon-action {
+  width: 42px;
+  border: 1px solid var(--border);
+}
+.authoring-add-button {
+  padding: 0 13px;
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+.authoring-add-button:hover {
+  border-color: var(--muted-foreground);
+  background: var(--muted);
+}
+.authoring-next-button {
+  min-width: 146px !important;
+}
+.authoring-menu-anchor {
+  position: relative;
+}
 .authoring-popover {
   position: absolute;
   bottom: calc(100% + 12px);
@@ -532,7 +579,8 @@
   border: 1px solid var(--border);
   border-radius: 12px;
   background: var(--card);
-  box-shadow: 0 18px 45px color-mix(in oklch, var(--foreground) 18%, transparent);
+  box-shadow: 0 18px 45px
+    color-mix(in oklch, var(--foreground) 18%, transparent);
   color: var(--foreground);
 }
 .authoring-popover-title {
@@ -540,10 +588,16 @@
   color: var(--muted-foreground);
   font-size: 11px;
   font-weight: 800;
-  letter-spacing: .06em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
-.authoring-outline { left: 50%; width: 410px; max-height: 58vh; overflow-y: auto; transform: translateX(-50%); }
+.authoring-outline {
+  left: 50%;
+  width: 410px;
+  max-height: 58vh;
+  overflow-y: auto;
+  transform: translateX(-50%);
+}
 .authoring-outline button {
   display: grid;
   width: 100%;
@@ -557,9 +611,18 @@
   font-size: 12px;
 }
 .authoring-outline button:hover,
-.authoring-outline button.active { background: color-mix(in oklch, var(--primary) 9%, var(--card)); color: var(--primary); }
-.authoring-outline button > span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.authoring-action-menu { right: 0; }
+.authoring-outline button.active {
+  background: color-mix(in oklch, var(--primary) 9%, var(--card));
+  color: var(--primary);
+}
+.authoring-outline button > span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.authoring-action-menu {
+  right: 0;
+}
 .authoring-action-menu button {
   display: flex;
   width: 100%;
@@ -572,11 +635,22 @@
   font-weight: 650;
   text-align: left;
 }
-.authoring-action-menu button kbd { margin-left: auto; }
-.authoring-action-menu button:hover:not(:disabled) { background: var(--muted); }
-.authoring-action-menu button:disabled { opacity: .35; }
-.authoring-action-menu button.danger { color: var(--destructive); }
-.authoring-add-menu { right: 0; width: 330px; }
+.authoring-action-menu button kbd {
+  margin-left: auto;
+}
+.authoring-action-menu button:hover:not(:disabled) {
+  background: var(--muted);
+}
+.authoring-action-menu button:disabled {
+  opacity: 0.35;
+}
+.authoring-action-menu button.danger {
+  color: var(--destructive);
+}
+.authoring-add-menu {
+  right: 0;
+  width: 330px;
+}
 .authoring-add-menu > button {
   display: grid;
   width: 100%;
@@ -588,16 +662,44 @@
   text-align: left;
 }
 .authoring-add-menu > button:hover,
-.authoring-add-menu > button:focus-visible { background: color-mix(in oklch, var(--primary) 9%, var(--card)); outline: none; }
+.authoring-add-menu > button:focus-visible {
+  background: color-mix(in oklch, var(--primary) 9%, var(--card));
+  outline: none;
+}
 .authoring-add-menu strong,
-.authoring-add-menu small { display: block; }
-.authoring-add-menu strong { font-size: 13px; }
-.authoring-add-menu small { margin-top: 2px; color: var(--muted-foreground); font-size: 11px; }
-.authoring-popover-hint { padding: 9px 9px 4px; border-top: 1px solid var(--muted); color: var(--muted-foreground); font-size: 11px; }
-.authoring-empty-lesson > button { border-style: solid; background: var(--card); }
-.authoring-ending h1 { font-size: 30px; font-weight: 750; }
-.authoring-ending > p:not(.completion-status) { margin: 10px auto 0; color: var(--muted-foreground); }
-.authoring-ending .completion-seal { background: color-mix(in oklch, var(--success) 14%, var(--card)); color: var(--success-foreground); }
+.authoring-add-menu small {
+  display: block;
+}
+.authoring-add-menu strong {
+  font-size: 13px;
+}
+.authoring-add-menu small {
+  margin-top: 2px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
+.authoring-popover-hint {
+  padding: 9px 9px 4px;
+  border-top: 1px solid var(--muted);
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
+.authoring-empty-lesson > button {
+  border-style: solid;
+  background: var(--card);
+}
+.authoring-ending h1 {
+  font-size: 30px;
+  font-weight: 750;
+}
+.authoring-ending > p:not(.completion-status) {
+  margin: 10px auto 0;
+  color: var(--muted-foreground);
+}
+.authoring-ending .completion-seal {
+  background: color-mix(in oklch, var(--success) 14%, var(--card));
+  color: var(--success-foreground);
+}
 .authoring-ending-issues {
   display: grid;
   width: min(100%, 520px);
@@ -609,9 +711,23 @@
   background: color-mix(in oklch, var(--hint) 16%, var(--card));
   text-align: left;
 }
-.authoring-ending-issues button { display: flex; align-items: center; justify-content: space-between; padding: 7px 0; color: color-mix(in oklch, var(--hint) 72%, black); font-size: 13px; }
-.authoring-ending-ready { display: flex; justify-content: center; gap: 7px; color: var(--success-foreground) !important; }
-.authoring-ending .completion-action { margin: 25px auto 0; }
+.authoring-ending-issues button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 0;
+  color: color-mix(in oklch, var(--hint) 72%, black);
+  font-size: 13px;
+}
+.authoring-ending-ready {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  color: var(--success-foreground) !important;
+}
+.authoring-ending .completion-action {
+  margin: 25px auto 0;
+}
 .authoring-help-backdrop {
   position: fixed;
   inset: 0;
@@ -620,10 +736,34 @@
   place-items: center;
   background: color-mix(in oklch, var(--foreground) 28%, transparent);
 }
-.authoring-help-dialog { width: 470px; padding: 18px; border: 1px solid var(--border); border-radius: 14px; background: var(--card); box-shadow: 0 22px 60px color-mix(in oklch, var(--foreground) 22%, transparent); }
-.authoring-help-dialog > div { display: flex; justify-content: space-between; margin-bottom: 10px; font-weight: 750; }
-.authoring-help-dialog > div span { display: flex; gap: 8px; align-items: center; }
-.authoring-help-dialog p { display: flex; align-items: center; justify-content: space-between; min-height: 40px; border-top: 1px solid var(--border); font-size: 13px; }
+.authoring-help-dialog {
+  width: 470px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--card);
+  box-shadow: 0 22px 60px
+    color-mix(in oklch, var(--foreground) 22%, transparent);
+}
+.authoring-help-dialog > div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-weight: 750;
+}
+.authoring-help-dialog > div span {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.authoring-help-dialog p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 40px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+}
 .authoring-practice-view {
   position: absolute;
   top: -62px;
@@ -639,16 +779,68 @@
   transform: translateX(-50%);
   backdrop-filter: blur(8px);
 }
-.authoring-practice-view > span { padding: 0 7px; font-size: 10px; font-weight: 700; text-transform: uppercase; }
-.authoring-practice-view button { padding: 6px 8px; border-radius: 6px; font-size: 11px; font-weight: 700; }
-.authoring-practice-view button.active { background: color-mix(in oklch, var(--primary) 9%, var(--card)); color: var(--primary); }
-.authoring-session .sentence-practice { position: relative; }
-.authoring-add-to-slide { position: relative; display: flex; justify-content: center; margin-top: 22px; }
-.authoring-add-to-slide > button { display: inline-flex; align-items: center; gap: 5px; padding: 7px 9px; border-radius: 7px; color: var(--muted-foreground); font-size: 11px; font-weight: 700; }
-.authoring-add-to-slide > button:hover { background: var(--border); color: var(--foreground); }
-.authoring-optional-menu { position: absolute; bottom: calc(100% + 5px); z-index: 10; width: 170px; padding: 5px; border: 1px solid var(--border); border-radius: 9px; background: var(--card); box-shadow: 0 10px 30px color-mix(in oklch, var(--foreground) 16%, transparent); }
-.authoring-optional-menu button { display: block; width: 100%; padding: 8px; border-radius: 6px; text-align: left; font-size: 12px; }
-.authoring-optional-menu button:hover { background: color-mix(in oklch, var(--primary) 9%, var(--card)); }
+.authoring-practice-view > span {
+  padding: 0 7px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.authoring-practice-view button {
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.authoring-practice-view button.active {
+  background: color-mix(in oklch, var(--primary) 9%, var(--card));
+  color: var(--primary);
+}
+.authoring-session .sentence-practice {
+  position: relative;
+}
+.authoring-add-to-slide {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 22px;
+}
+.authoring-add-to-slide > button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 9px;
+  border-radius: 7px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  font-weight: 700;
+}
+.authoring-add-to-slide > button:hover {
+  background: var(--border);
+  color: var(--foreground);
+}
+.authoring-optional-menu {
+  position: absolute;
+  bottom: calc(100% + 5px);
+  z-index: 10;
+  width: 170px;
+  padding: 5px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--card);
+  box-shadow: 0 10px 30px
+    color-mix(in oklch, var(--foreground) 16%, transparent);
+}
+.authoring-optional-menu button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  text-align: left;
+  font-size: 12px;
+}
+.authoring-optional-menu button:hover {
+  background: color-mix(in oklch, var(--primary) 9%, var(--card));
+}
 
 .authoring-lesson-setup {
   width: min(100%, 760px);
@@ -668,7 +860,7 @@
   color: var(--muted-foreground);
   font-size: 11px;
   font-weight: 800;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 .authoring-lesson-setup > h1 {
@@ -677,7 +869,11 @@
   font-size: 30px;
   font-weight: 750;
 }
-.authoring-setup-module { margin-top: 4px; color: var(--muted-foreground); font-size: 13px; }
+.authoring-setup-module {
+  margin-top: 4px;
+  color: var(--muted-foreground);
+  font-size: 13px;
+}
 .authoring-setup-concepts {
   margin-top: 32px;
   padding: 24px;
@@ -687,8 +883,20 @@
   text-align: left;
   box-shadow: 0 8px 30px color-mix(in oklch, var(--foreground) 8%, transparent);
 }
-.authoring-setup-concepts h2 { font-size: 17px; font-weight: 750; }
-.authoring-setup-concepts > div:first-child > p { margin: 5px 0 18px; color: var(--muted-foreground); font-size: 13px; }
-.authoring-setup-concepts input { min-height: 42px; }
-.authoring-setup-note { margin-top: 13px; color: color-mix(in oklch, var(--hint) 72%, black); font-size: 12px; }
-
+.authoring-setup-concepts h2 {
+  font-size: 17px;
+  font-weight: 750;
+}
+.authoring-setup-concepts > div:first-child > p {
+  margin: 5px 0 18px;
+  color: var(--muted-foreground);
+  font-size: 13px;
+}
+.authoring-setup-concepts input {
+  min-height: 42px;
+}
+.authoring-setup-note {
+  margin-top: 13px;
+  color: color-mix(in oklch, var(--hint) 72%, black);
+  font-size: 12px;
+}

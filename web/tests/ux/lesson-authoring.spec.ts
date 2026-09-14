@@ -41,7 +41,10 @@ function readLessons() {
 // could, so typing right after a Tab/Enter that triggers a React re-render
 // (a new blank piece mounting, a chooser opening) can race the DOM update
 // and land in the field that's about to lose focus instead.
-async function waitForFocusedField(page: import("@playwright/test").Page, field: string) {
+async function waitForFocusedField(
+  page: import("@playwright/test").Page,
+  field: string,
+) {
   await page.waitForFunction(
     (f) => (document.activeElement as HTMLElement | null)?.dataset.field === f,
     field,
@@ -59,7 +62,10 @@ test("keyboard-only lesson authoring produces the expected structure", async ({
 
   // Open the first module's "Add lesson" (or "Create lesson" when the
   // module starts empty) and author entirely by keyboard.
-  await page.getByRole("button", { name: /^(Add|Create) lesson/ }).first().click();
+  await page
+    .getByRole("button", { name: /^(Add|Create) lesson/ })
+    .first()
+    .click();
   const title = page.locator("[data-lesson-title]").last();
   await title.fill("UX smoke: voy a poder");
   await title.press("Enter");
@@ -79,7 +85,9 @@ test("keyboard-only lesson authoring produces the expected structure", async ({
 
   // First sentence slide: single piece. The block-type chooser needs a beat
   // to mount and grab focus before it can react to the type-selection key.
-  const chooser = page.locator('[role="toolbar"][aria-label="Choose the first slide"]');
+  const chooser = page.locator(
+    '[role="toolbar"][aria-label="Choose a slide type"]',
+  );
   await page.keyboard.press("Control+Alt+Enter");
   await chooser.waitFor();
   await page.keyboard.press("s");
@@ -106,19 +114,28 @@ test("keyboard-only lesson authoring produces the expected structure", async ({
   await page.keyboard.type("to be able");
   await page.keyboard.press("Control+Alt+h");
   await page.waitForFunction(
-    () => (document.activeElement as HTMLElement | null)?.closest(".lesson-document-annotation") !== null,
+    () =>
+      (document.activeElement as HTMLElement | null)?.closest(
+        ".lesson-document-hint-pill.editing",
+      ) !== null,
   );
   await page.keyboard.type("stem-changing");
 
   // Concept search: infinitive form should resolve to a linked concept.
-  const conceptInput = page.locator('[data-lesson-row] input[placeholder="Add concept…"], [data-lesson-row] input[placeholder="+ concept"]').last();
+  const conceptInput = page
+    .locator(
+      '[data-lesson-row] input[placeholder="Add concept…"], [data-lesson-row] input[placeholder="+ concept"]',
+    )
+    .last();
   await conceptInput.click();
   await conceptInput.fill("poder");
   await page.locator('[role="option"]').first().waitFor({ timeout: 5000 });
   await page.keyboard.press("Enter");
 
   await page.keyboard.press("Control+s");
-  await expect(page.getByText("All changes saved")).toBeVisible({ timeout: 5000 });
+  await expect(page.getByText("All changes saved")).toBeVisible({
+    timeout: 5000,
+  });
 
   const after = readLessons();
   const created = after.lessons.find((l) => l.name === "UX smoke: voy a poder");
@@ -131,14 +148,22 @@ test("keyboard-only lesson authoring produces the expected structure", async ({
   });
   const pieces = (blockIndex: number) =>
     created!.blocks[blockIndex].languageBlocks!.map(
-      ({ spanish, callout, acceptedAnswers }) => ({ spanish, callout, acceptedAnswers }),
+      ({ spanish, callout, acceptedAnswers }) => ({
+        spanish,
+        callout,
+        acceptedAnswers,
+      }),
     );
   expect(pieces(1)).toEqual([
     { spanish: "voy a", callout: null, acceptedAnswers: ["I am going"] },
   ]);
   expect(pieces(2)).toEqual([
     { spanish: "Voy a", callout: null, acceptedAnswers: ["I am going"] },
-    { spanish: "poder", callout: "stem-changing", acceptedAnswers: ["to be able"] },
+    {
+      spanish: "poder",
+      callout: "stem-changing",
+      acceptedAnswers: ["to be able"],
+    },
   ]);
   expect(created!.concepts.length).toBe(1);
   expect(created!.concepts[0].conceptId).not.toBeNull();
@@ -147,9 +172,6 @@ test("keyboard-only lesson authoring produces the expected structure", async ({
   const row = page.locator(`[data-lesson-row="${created!.id}"]`);
   await row.getByRole("button", { name: "Delete lesson" }).click();
   await row.getByRole("button", { name: "Delete", exact: true }).click();
-  await page.keyboard.press("Control+s");
-  await expect(page.getByText("All changes saved")).toBeVisible({ timeout: 5000 });
-
-  const final = readLessons();
-  expect(final.lessons.length).toBe(beforeCount);
+  await expect(row).toHaveCount(0);
+  await expect.poll(() => readLessons().lessons.length).toBe(beforeCount);
 });

@@ -37,11 +37,11 @@ Use a simple Spanish/English table with understated alignment or rules. Click an
 
 ### Hints and congratulations
 
-The active sentence reveals faint inline actions for context hint, helper text, success message, and accepted alternatives. Piece-specific actions target the selected pair explicitly. Empty optional fields take no space.
+Every sentence and vocabulary block keeps a quiet optional instruction field immediately above its pairs. The active sentence reveals inline actions for context hints and accepted alternatives. Piece-specific actions target the selected pair explicitly. The retired sentence-level helper-text and after-correct fields remain storage-compatible but are intentionally absent from the UI.
 
 Adding an option opens a small inline annotation beneath its owner and focuses it. Existing authored annotations remain visible as quiet, editable secondary text with a small label identifying their learner state. Context hints stay adjacent to their piece; help and success text remain distinguishable because learners encounter them at different times. Closing an unused empty annotation removes its placeholder.
 
-“Almost invisible” applies to the controls, not to authored teaching content. Keyboard focus reveals the same controls as hover. Keep lesson completion as the existing generated learner state; the current data model supports sentence success messages, not a custom lesson-ending message. Separate lesson-ending customization would need a further decision.
+“Almost invisible” applies to the controls, not to authored teaching content. Keyboard focus reveals the same controls as hover. Keep lesson completion and per-answer success as generated learner states; teachers use a following explanation slide when they need a custom message.
 
 ### Moving and recovery
 
@@ -70,9 +70,9 @@ Audit autosave for editing several lessons before earlier requests finish, reord
 
 - Open a module and immediately read every lesson; edit any visible passage without opening another editing surface.
 - Create an explanation, a multi-piece sentence, and a table with the keyboard; reload and recover exact content, boundaries, formatting, and order.
-- Add and revise a context hint, helper text, alternative answer, and success message without interrupting the primary Tab flow.
+- Add and revise an optional instruction, context hint, and alternative answer without interrupting the primary Tab flow.
 - Edit two lessons rapidly, reorder them while changes save, and verify no stale response loses text or changes course order. A failed save remains clearly recoverable.
 - Drag a long lesson within/across modules, cancel a drag, and perform equivalent keyboard moves without losing drafts or text selection behavior.
 - Delete a slide, type elsewhere, and undo deletion without reverting that typing.
-- Try the current draft as a learner: formatting, sentence-piece boundaries, table behavior, help, accepted answers, success feedback, and slide sequence match the authored intent. Closing preview restores the caret and scroll position.
+- Try the current draft as a learner: formatting, sentence-piece boundaries, table behavior, answer reveal, accepted answers, generated success, and slide sequence match the authored intent. Closing preview restores the caret and scroll position.
 - At rest, the page still resembles the supplied simple expanded lesson, with no permanent forest of controls. No Zen launch or alternate editing path remains.
