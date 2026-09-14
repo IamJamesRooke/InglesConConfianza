@@ -15,7 +15,7 @@
 
 # next.js
 /.next/
-/.next-ux-check/
+/.next-ux-check*/
 /out/
 
 # playwright / ux-check

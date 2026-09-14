@@ -13,10 +13,11 @@ import path from "node:path";
 // is actively authoring lessons in the real app. Requires the curriculum
 // database to be reachable (`npm run db:up`) for concept search, which is
 // read-only here and shared safely.
-const UX_CHECK_PORT = 3100;
+// Overridable so parallel agent worktrees can each run their own isolated server.
+const UX_CHECK_PORT = Number(process.env.UX_CHECK_PORT ?? 3100);
 export const uxCheckLessonsPath = path.join(
   os.tmpdir(),
-  "iccf-ux-check-lessons.json",
+  `iccf-ux-check-lessons-${UX_CHECK_PORT}.json`,
 );
 
 export default defineConfig({
@@ -36,7 +37,7 @@ export default defineConfig({
     timeout: 60_000,
     env: {
       LESSON_BUILDER_DATA_PATH: uxCheckLessonsPath,
-      UX_CHECK_DIST_DIR: ".next-ux-check",
+      UX_CHECK_DIST_DIR: `.next-ux-check-${UX_CHECK_PORT}`,
     },
   },
   globalSetup: "./tests/ux/global-setup.ts",
