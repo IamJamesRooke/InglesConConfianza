@@ -343,6 +343,13 @@ test("ModuleNavigator renders all 100 modules in browse mode without throwing", 
       onSelectLesson: () => {},
       onAddModule: () => {},
       onReorderModule: () => {},
+      saveLabel: "All changes saved",
+      saveFailed: false,
+      canUndo: false,
+      canRedo: false,
+      onUndo: () => {},
+      onRedo: () => {},
+      onRetrySave: () => {},
     }),
   );
   assert.ok(markup.includes("Module 0"));
@@ -362,6 +369,13 @@ test("ModuleNavigator marks the active module row", () => {
       onSelectLesson: () => {},
       onAddModule: () => {},
       onReorderModule: () => {},
+      saveLabel: "All changes saved",
+      saveFailed: false,
+      canUndo: false,
+      canRedo: false,
+      onUndo: () => {},
+      onRedo: () => {},
+      onRetrySave: () => {},
     }),
   );
   assert.ok(markup.includes('class="module-navigator-row active"'));

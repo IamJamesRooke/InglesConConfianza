@@ -97,6 +97,12 @@ export function LessonDocument(props: Props) {
   const dragScope = lessonId;
   const undoDeletionLabel =
     actions.deletionUndo?.lessonId === lessonId ? actions.deletionUndo.label : null;
+  // Drives which single seam shows its "+" signpost at rest (§5, item A) —
+  // the one immediately after the active slide. That same seam also carries
+  // the "next slide · Ctrl Alt Enter" cue text (round 2, item 2): rendered
+  // by SlideInsertControl itself, not here, so it lives on the seam's own
+  // hairline instead of overlapping the following slide's content.
+  const activeBlockIndex = props.lesson.blocks.findIndex((block) => block.id === activeBlock);
   const showNextSlideCue =
     nextSlideUses < NEXT_SLIDE_CUE_MAX_USES && !narrowViewport;
 
@@ -271,6 +277,8 @@ export function LessonDocument(props: Props) {
             <SlideInsertControl
               insertionLabel={`Insert before slide ${index + 1}`}
               focusPalette={insertAt === index}
+              afterActive={activeBlockIndex >= 0 && index === activeBlockIndex + 1}
+              showNextSlideCue={showNextSlideCue && insertAt === null}
               onAdd={(type) => add(type, index)}
               onClose={closeInsert}
             />
@@ -340,13 +348,6 @@ export function LessonDocument(props: Props) {
                 onExit={() => exitBlock(block.id)}
               />
             )}
-            {activeBlock === block.id && showNextSlideCue && insertAt === null && (
-              <span className="lesson-document-next-cue" aria-hidden="true">
-                <kbd>Ctrl</kbd>
-                <kbd>Alt</kbd>
-                <kbd>Enter</kbd> next slide
-              </span>
-            )}
             </div>
           </Fragment>
         ))}
@@ -356,6 +357,8 @@ export function LessonDocument(props: Props) {
             insertionLabel="Insert at lesson end"
             labelled={props.lesson.blocks.length === 0}
             focusPalette={insertAt === props.lesson.blocks.length}
+            afterActive={activeBlockIndex === props.lesson.blocks.length - 1 && activeBlockIndex >= 0}
+            showNextSlideCue={showNextSlideCue && insertAt === null}
             onAdd={(type) => add(type, props.lesson.blocks.length)}
             onClose={closeInsert}
           />

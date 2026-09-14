@@ -93,9 +93,14 @@ test("(source) keyboard reorder lives on the existing drag-handle button, uses o
   assert.ok(source.includes('"ArrowDown"'));
   assert.ok(source.includes("onReorderModule(module.id, modules[index - 1].id)"));
   assert.ok(source.includes("onReorderModule(modules[index + 1].id, module.id)"));
-  // No new icon import (e.g. ArrowUp/ArrowDown/ChevronUp) — same GripVertical
-  // handle, no new visible arrow buttons.
-  assert.match(source, /^import \{ ChevronRight, GripVertical, Plus, Search \} from "lucide-react";/m);
+  // No new icon import for the reorder feature itself (e.g. ArrowUp/
+  // ArrowDown/ChevronUp) — same GripVertical handle, no new visible arrow
+  // buttons. Redo2/Undo2 are present for the unrelated save-status footer
+  // row (round 2, item E), not for reordering.
+  assert.match(
+    source,
+    /^import \{ ChevronRight, GripVertical, Plus, Redo2, Search, Undo2 \} from "lucide-react";/m,
+  );
 });
 
 test("(source) drag handle's accessible name/help mentions the keyboard shortcut", () => {

@@ -1,16 +1,21 @@
 /* SlideInsertControl: the hover-revealed seam between slides (and after the
    last one) used to insert an Explanation/Sentence/Table block.
 
-   At rest: a 4px gap with zero reserved layout space. A 20px "+" circle
-   signpost (`::after`, container-level so it's really visible) sits in the
-   left gutter at opacity 0.45; the actual action palette is fully hidden
-   (`opacity: 0; visibility: hidden; pointer-events: none`) and so cannot be
-   hit-tested or tabbed to at rest. Hover/focus-within/`.labelled`/`.open`
-   expand the control to 26px, show the horizontal line, and reveal the full
-   action palette at full opacity, visible and interactive. `.open` is set
-   from React when the palette was focused via keyboard (Ctrl+Alt+Enter),
-   since the rAF-scheduled `.focus()` needs the button already visible. On
-   touch, expanded and always-visible (no hover needed). */
+   At rest: a 4px gap with zero reserved layout space, and no "+" signpost
+   at all — a ten-slide lesson used to show an unbroken ladder of eleven
+   dots down the left gutter, one per seam, which is exactly the "chrome
+   everywhere" the rest of this doc argues against. The one exception is
+   `[data-after-active="true"]` (set in lesson-document.tsx on the seam
+   immediately following `data-active="true"`): it shows the "+" circle at
+   rest, pairing with the `Ctrl Alt Enter · next slide` cue on that same
+   slide as the one always-visible next-action affordance. Every seam still
+   reveals its "+" and the full action palette
+   (`opacity: 0; visibility: hidden; pointer-events: none` at rest, so it
+   cannot be hit-tested or tabbed to) on hover/focus-within/`.labelled`/
+   `.open`. `.open` is set from React when the palette was focused via
+   keyboard (Ctrl+Alt+Enter), since the rAF-scheduled `.focus()` needs the
+   button already visible. On touch, expanded and always-visible (no hover
+   needed). */
 .lesson-document-insert {
   position: relative;
   display: grid;
@@ -26,6 +31,20 @@
   height: 26px;
   overflow: visible;
 }
+/* The after-active seam's "next slide" cue (round 2, item 2 — moved off the
+   active block itself, where it overlapped the following slide's content)
+   needs a little more rest height than the bare "+" signpost to hold a
+   line of text without clipping. Higher-specificity hover/focus/open
+   variants below guarantee the normal 26px reveal still wins over this
+   regardless of stylesheet order. */
+.lesson-document-insert[data-cue="true"] {
+  height: 18px;
+}
+.lesson-document-insert[data-cue="true"]:hover,
+.lesson-document-insert[data-cue="true"]:focus-within,
+.lesson-document-insert[data-cue="true"].open {
+  height: 26px;
+}
 .lesson-document-insert::before {
   content: "";
   position: absolute;
@@ -38,7 +57,8 @@
 }
 .lesson-document-insert:hover::before,
 .lesson-document-insert:focus-within::before,
-.lesson-document-insert.labelled::before {
+.lesson-document-insert.labelled::before,
+.lesson-document-insert[data-cue="true"]::before {
   opacity: 0.6;
 }
 /* "+" signpost: 20px circle in the left gutter, container-level (not on the
@@ -62,17 +82,29 @@
   font-size: 14px;
   font-weight: 600;
   line-height: 1;
-  opacity: 0.45;
+  opacity: 0;
   pointer-events: none;
+  transition: opacity 0.12s ease;
 }
 .lesson-document-insert:hover::after,
 .lesson-document-insert:focus-within::after,
 .lesson-document-insert.labelled::after,
-.lesson-document-insert.open::after {
+.lesson-document-insert.open::after,
+.lesson-document-insert[data-after-active="true"]::after {
   opacity: 1;
+}
+@media (max-width: 850px) {
+  /* .lesson-document's own left padding shrinks to 20px under this
+     breakpoint (document.css) — keep the circle inside that indent instead
+     of the wider-viewport -28px, which would hang 8px off the card's own
+     left edge. */
+  .lesson-document-insert::after {
+    left: -14px;
+  }
 }
 .lesson-document-insert-actions {
   position: relative;
+  grid-area: 1 / 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -81,6 +113,44 @@
   visibility: hidden;
   pointer-events: none;
   transition: opacity 0.1s ease;
+}
+/* "next slide" cue text: shares the actions' own grid cell (so revealing
+   the palette on hover swaps cleanly in place, not stacked above/below it)
+   but is left-aligned rather than centered — it reads as a continuation of
+   the "+" circle just to its left in the gutter, not as a second centered
+   row. Rest-only: hidden the moment the real palette reveals, and under
+   the same narrow-viewport cutoff the old block-level cue used. */
+.lesson-document-insert-cue {
+  grid-area: 1 / 1;
+  justify-self: start;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 2px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.lesson-document-insert-cue-label::after {
+  content: "·";
+  margin-left: 4px;
+}
+.lesson-document-insert-cue kbd {
+  padding: 0 3px;
+  border-radius: 3px;
+  background: var(--muted);
+  font: 650 10px ui-monospace, monospace;
+}
+.lesson-document-insert[data-cue="true"]:hover .lesson-document-insert-cue,
+.lesson-document-insert[data-cue="true"]:focus-within .lesson-document-insert-cue,
+.lesson-document-insert[data-cue="true"].open .lesson-document-insert-cue {
+  display: none;
+}
+@media (max-width: 699px) {
+  .lesson-document-insert-cue {
+    display: none;
+  }
 }
 .lesson-document-insert:hover .lesson-document-insert-actions,
 .lesson-document-insert:focus-within .lesson-document-insert-actions,

@@ -173,45 +173,71 @@ not from any proposal doc's aspirations.
   the block itself (`background: transparent` is forced for hover/focus/
   active states alike). Primary blue is the only focus color used anywhere
   in the builder; the red/blue language-ink accents (below) are never used
-  for focus.
+  for focus. This bar used to also light up on plain `:focus-within`
+  (`.lesson-document-block:focus-within::after`) — that rule is gone (round
+  2, item B). It was the cause of the owner-reported "stray full-height
+  blue line": `exitBlock`'s own `.focus()` call (Escape) moves DOM focus
+  onto the block wrapper itself, which kept `:focus-within` matched — and
+  therefore this bar lit — on a slide the teacher no longer considered
+  "active," persisting after clicking a pair, pressing Escape, and
+  scrolling away. `[data-active="true"]::after` is now the only thing that
+  paints this bar.
 - **Hover-reveal chrome cluster**: the drag/duplicate/delete icon cluster
   (`.lesson-document-block-actions`) sits absolutely positioned top-right,
   `opacity: 0` at rest, `opacity: 1` on slide `:hover` or `:focus-within`
   (always visible on touch/coarse pointers via a `(hover: none)` media
   query). Not tied to entering editing.
-- **Insert "+" controls are discoverable at rest, but the palette itself is
-  never invisibly hit-testable**: both `.lesson-document-insert` (between/
-  after slides) and `.lesson-library-insert` (between lesson rows) show a
-  20px circle "+" signpost at rest with `opacity: 0.45`, positioned
-  absolutely in the left gutter (slides) or centered (lessons) so no flow
-  space is reserved — for slides this is `.lesson-document-insert::after`,
-  a container-level pseudo-element with `pointer-events: none` (it's a cue;
-  hovering the seam, not the circle specifically, reveals the real
-  palette). The actual action palette (`.lesson-document-insert-actions`,
-  three buttons) is `opacity: 0; visibility: hidden; pointer-events: none`
-  at rest — `visibility`, not just `opacity`, so an unrevealed palette can
-  never intercept a click meant for a neighboring slide, and is correctly
-  absent from the accessibility tree and tab order. Hover, `:focus-within`,
-  `.labelled` (empty-lesson tail), or `.open` (set from React when the
-  palette was focused via `Ctrl+Alt+Enter`'s `requestAnimationFrame`
-  focus — needed since that focus call requires the button already
-  visible) reveal it at full opacity/visibility/pointer-events, alongside
-  the horizontal seam line. On touch (`@media (hover: none)`), always
-  fully visible. `.lesson-library-insert`'s button is a real, always-
-  `visibility: visible` element (only its text label hides at rest) since
-  it has no equivalent keyboard-reveal path to gate on.
-- **Inline next-action cue**: since the HUD bar's removal left nothing
-  telling a first-time teacher how to continue after a slide,
-  `.lesson-document-next-cue` (in `lesson-document.tsx`/`document.css`)
-  renders `Ctrl Alt Enter · next slide` absolutely positioned at the active
-  slide's bottom-right (`right: 8px; bottom: -14px`), 11px,
-  `var(--muted-foreground)`, `opacity: 0.8`, `pointer-events: none` — it
-  reserves no layout space. Rendered only on the block with
-  `data-active="true"`, hidden while that lesson's insert chooser is open
-  (`insertAt !== null`), and hidden under 700px viewport width. Learnability
-  fade: each successful `Ctrl Alt Enter` increments
+- **Insert "+" controls show nothing at rest, except one seam** (round 2,
+  item A — tightened from the earlier "discoverable at rest everywhere"
+  rule, which read as a ladder of dots down the whole left gutter on a
+  ten-slide lesson): `.lesson-document-insert::after`, the 20px circle "+"
+  signpost, sits at `opacity: 0` by default and is revealed only via
+  `[data-after-active="true"]` — set in `lesson-document.tsx` on the one
+  seam immediately following the block with `data-active="true"` (computed
+  from `activeBlockIndex`). That same seam also carries the `next slide ·
+  Ctrl Alt Enter` cue text (see below), so a teacher always has exactly one
+  lit next-step affordance, never zero and never a whole column of them.
+  Every seam still reveals its "+" and the
+  full action palette (`.lesson-document-insert-actions`, three buttons,
+  `opacity: 0; visibility: hidden; pointer-events: none` at rest — so it
+  cannot be hit-tested or tabbed to) on hover/`:focus-within`/`.labelled`
+  (empty-lesson tail)/`.open` (set from React when the palette was focused
+  via `Ctrl+Alt+Enter`'s `requestAnimationFrame` focus — needed since that
+  focus call requires the button already visible), alongside the
+  horizontal seam line. On touch (`@media (hover: none)`), always fully
+  visible. Under 850px viewport width the circle's rest position (`left`)
+  is pulled in to match `.lesson-document`'s own narrower left padding, so
+  it stays inside the document's left indent instead of hanging off the
+  card's edge. `.lesson-library-insert` (between lesson rows) follows the
+  same "nothing at rest" rule at the container level (`opacity: 0`, full
+  opacity only on `:hover`/`:focus-within`, always visible on touch) — it
+  has no single "after the active thing" seam to light up, since lesson
+  rows don't have a slide-level active concept.
+- **Inline next-action cue lives on the after-active seam, not the block**
+  (round 2, item 2 — moved off the active block itself): since the HUD
+  bar's removal left nothing telling a first-time teacher how to continue
+  after a slide, a cue used to render via `.lesson-document-next-cue`,
+  absolutely positioned at the active block's own bottom-right — which
+  overlapped the following slide's content (its `kbd` badges sat half
+  covered by the next card). It's now `.lesson-document-insert-cue`
+  (`slide-insert-control.tsx`/`insert.css`), rendered *inside* the one seam
+  that already shows the "+" signpost at rest — the seam immediately after
+  the active slide (`data-after-active="true"`, §5 item A). That seam grows
+  to `18px` at rest (up from the bare signpost's `4px`) to hold the text,
+  shares the actions palette's own grid cell (`grid-area: 1 / 1`) so
+  revealing the palette on hover swaps cleanly in place, and is
+  left-aligned (`justify-self: start`) rather than centered, reading as a
+  continuation of the "+" circle just to its left. Text order is `next
+  slide · Ctrl Alt Enter` (label, then the three `kbd` badges), muted
+  11px, `pointer-events: none`. Hidden the moment that seam's own palette
+  reveals (hover/`:focus-within`/`.open`) or the lesson's insert chooser is
+  open anywhere (`insertAt !== null`, passed down as the `showNextSlideCue`
+  prop), and hidden under 700px viewport width (both a JS gate on the prop
+  and a `@media (max-width: 699px)` backstop in CSS). Learnability fade:
+  each successful `Ctrl Alt Enter` increments
   `localStorage["lesson-builder:next-slide-uses"]`; once that reaches 5 the
-  cue stops rendering for good (storage access wrapped in try/catch).
+  cue stops rendering for good (storage access wrapped in try/catch) —
+  unchanged from before, just relocated.
 - **Explanation slide**: a grey card — `background: var(--muted)`, `border:
   0`, `border-radius: 6px`, no min-height, padding-driven sizing. No focus
   glow of its own; the slide-level blue bar carries the focus signal.
@@ -227,15 +253,25 @@ not from any proposal doc's aspirations.
   `background: transparent` — ink only, no fill. (The learner-facing preview
   surface, `.lesson-preview-explanation mark`, does add a faint 16% tinted
   background — that's the practice/preview treatment, not the authoring one.)
-  **Pending owner A/B (§9, 1b)**: a calmer *resting*-only palette variant
-  exists behind a single delimited block in `sentence.css` (comment `/* 1b:
-  calmer resting palette */`), currently enabled — Spanish
-  `color: var(--foreground); font-weight: 600`, English
-  `color: var(--muted-foreground); font-weight: 400`, scoped to
-  `.lesson-document-sentence.resting` only. Editing fields, explanation
-  marks, and the learner preview are untouched and keep red/blue ink. Owner
-  has not yet chosen between this and the original red/blue resting
-  treatment — revert by commenting out that one block.
+  This is the *editing*-field/explanation-mark treatment; resting sentence
+  presentation and vocabulary-table rows use a different, settled palette
+  (below).
+- **Resting pair typography** (round 2, item C — owner-decided, no longer an
+  A/B): Spanish `color: var(--foreground); font-weight: 600; font-size:
+  16px`, English `color: var(--muted-foreground); font-style: italic;
+  font-weight: 400; font-size: 15px`, with 6px between pairs and 2px
+  between a pair's own two lines. Applies to `.lesson-document-sentence
+  .resting .lesson-sentence-composed[lang="es"|"en"]` and, for consistency,
+  to a vocabulary table's own unfocused rows — vocabulary tables never get
+  the `.resting` class (there's no separate resting/editing presentation
+  for a table, per `sentence-editor.tsx`), so the equivalent selector is
+  `.lesson-document-sentence.vocab-table .lesson-document-piece:not(.active)
+  .lesson-document-language-field[data-language="es"|"en"] > textarea` —
+  note the full descendant chain through `.lesson-document-language-field`,
+  not a `.lesson-document-piece > textarea` direct-child selector, since the
+  textarea is nested inside that field wrapper, not a direct child of the
+  piece. Editing fields, explanation marks, and the active vocab-table row
+  keep the always-on red/blue ink from the bullet above.
 - **Hint input shown only on demand**: an empty hint no longer renders
   under every active pair. The input (`.lesson-document-hint-pill-input`)
   renders only when the pair already has a stored hint (`piece.callout !==
@@ -255,6 +291,35 @@ not from any proposal doc's aspirations.
 - **Placeholders are neutral**: language-field placeholders are explicitly
   `var(--muted-foreground)`, not inherited red/blue at reduced opacity —
   unwritten guidance must not look like authored (if faint) content.
+- **Collapsed lesson row chrome** (round 2, item D): the drag/duplicate/
+  delete/preview cluster (`.lesson-library-row-icons`) is `opacity: 0` at
+  rest, `opacity: 1` on that row's `:hover`/`:focus-within`, always visible
+  under `(hover: none)` — opacity only, not `visibility`, so Tab still
+  reaches every control regardless of hover state. The Play/preview button
+  (`.lesson-library-try`) is a ghost icon at rest (`color: var(--primary);
+  background: transparent`, no fill) and fills solid
+  (`background: var(--primary); color: var(--primary-foreground)`) only on
+  hover/`:focus-visible`. aria-labels and the inline delete-confirm are
+  unchanged.
+- **Save status + undo/redo live in the left rail** (round 2, item E): the
+  old full-width `.lesson-library-utility` header card above the module
+  list is gone. The status text, undo/redo buttons, and (when
+  `saveFailed`) "Retry save" now render as a footer row
+  (`.module-navigator-status-row`) inside `ModuleNavigator`, under "Add
+  module" — muted 12px status on the left, undo/redo icons on the right,
+  `role="status"`/`aria-live="polite"` and button `title`s unchanged.
+  `LessonLibrary` just forwards `saveLabel`/`saveFailed`/`canUndo`/
+  `canRedo`/`onUndo`/`onRedo`/`onRetrySave` through as props; it no longer
+  renders any of this itself.
+- **Quiet module header** (round 2, item F, behind `/* F: quiet module
+  header */ … /* end F */` in `library.css`, placed after the older
+  "theme slice" section so it wins on cascade order at equal specificity):
+  no fill, `var(--foreground)` on a plain/transparent background, the
+  title input at 20px/700 with a 1px `var(--border)` bottom hairline
+  instead of the filled primary-blue bar the theme-slice section still
+  defines underneath it. The delete-module icon is a ghost icon (muted,
+  destructive fill only on hover) at the right. Reversible: comment out
+  the `F` block to fall back to the filled-blue header.
 
 ## 6. Owner decisions & rejected ideas
 
@@ -339,3 +404,4 @@ statically or spin up their own isolated server against a throwaway file.
 | 1f | "Covers" concept chips: plain pills, priority as a dot | Haiku | done |
 | 1g | Hint input shown only on demand, not on every activated pair | Haiku | done |
 | 1h | Make both insert controls (between slides and between lessons) discoverable at rest — they currently collapse to a hairline | Haiku | done |
+| R2 | Round-2 calm pass: seam "+" ladder → single after-active seam, fix stray full-height blue line, settle resting pair/vocab-table typography, quiet collapsed row chrome, move save status + undo/redo into the left rail, quiet module header | Sonnet | done |

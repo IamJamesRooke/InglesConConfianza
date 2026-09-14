@@ -23,6 +23,15 @@ type Props = {
   insertionLabel: string;
   labelled?: boolean;
   focusPalette?: boolean;
+  /** This is the seam immediately after the active slide — the one seam
+   * that shows its "+" signpost at rest (see insert.css). */
+  afterActive?: boolean;
+  /** Whether the learnability fade (5 uses)/narrow-viewport gate currently
+   * allows the "next slide" cue to show at all. Only rendered when this
+   * seam is also `afterActive` — round 2, item 2: moved off the block
+   * itself (where it overlapped the following slide) onto this seam's own
+   * hairline. */
+  showNextSlideCue?: boolean;
   onAdd: (type: DocumentBlockType) => void;
   onClose: () => void;
 };
@@ -31,9 +40,12 @@ export function SlideInsertControl({
   insertionLabel,
   labelled = false,
   focusPalette = false,
+  afterActive = false,
+  showNextSlideCue = false,
   onAdd,
   onClose,
 }: Props) {
+  const showCue = afterActive && showNextSlideCue;
   const buttons = useRef<(HTMLButtonElement | null)[]>([]);
 
   useEffect(() => {
@@ -69,6 +81,8 @@ export function SlideInsertControl({
   return (
     <div
       className={`lesson-document-insert${labelled ? " labelled" : ""}${focusPalette ? " open" : ""}`}
+      data-after-active={afterActive ? "true" : undefined}
+      data-cue={showCue ? "true" : undefined}
     >
       <div
         className="lesson-document-insert-actions"
@@ -97,6 +111,14 @@ export function SlideInsertControl({
         })}
         {focusPalette && <span className="lesson-document-insert-escape" aria-hidden="true">Esc</span>}
       </div>
+      {showCue && (
+        <span className="lesson-document-insert-cue" aria-hidden="true">
+          <span className="lesson-document-insert-cue-label">next slide</span>
+          <kbd>Ctrl</kbd>
+          <kbd>Alt</kbd>
+          <kbd>Enter</kbd>
+        </span>
+      )}
     </div>
   );
 }

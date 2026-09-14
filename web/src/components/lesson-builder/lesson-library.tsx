@@ -5,9 +5,7 @@ import {
   ChevronRight,
   Play,
   Plus,
-  Redo2,
   Trash2,
-  Undo2,
 } from "lucide-react";
 import {
   Fragment,
@@ -299,46 +297,6 @@ export function LessonLibrary(props: Props) {
   return (
     <LessonBuilderProvider value={props.builder}>
     <section className="lesson-library" aria-label="Course lessons">
-      <header className="lesson-library-utility">
-        <span
-          className="lesson-library-save module-navigator-save-quiet"
-          role="status"
-          aria-live="polite"
-        >
-          {props.saveLabel}
-        </span>
-        <span className="lesson-library-history">
-          <button
-            type="button"
-            onClick={props.onUndo}
-            disabled={!props.canUndo}
-            suppressHydrationWarning
-            aria-label="Undo"
-            title="Undo (Ctrl+Z)"
-          >
-            <Undo2 size={14} />
-          </button>
-          <button
-            type="button"
-            onClick={props.onRedo}
-            disabled={!props.canRedo}
-            suppressHydrationWarning
-            aria-label="Redo"
-            title="Redo (Ctrl+Shift+Z)"
-          >
-            <Redo2 size={14} />
-          </button>
-        </span>
-        {props.saveFailed && (
-          <button
-            type="button"
-            className="lesson-library-retry module-navigator-retry-emphasis"
-            onClick={props.onRetrySave}
-          >
-            Retry save
-          </button>
-        )}
-      </header>
       {showKeyboardHelp && <KeyboardHelpDialog onClose={closeKeyboardHelp} />}
 
       <div className="lesson-library-with-navigator">
@@ -350,6 +308,13 @@ export function LessonLibrary(props: Props) {
           onSelectLesson={jumpToLesson}
           onAddModule={props.onAddModule}
           onReorderModule={props.onReorderModule}
+          saveLabel={props.saveLabel}
+          saveFailed={props.saveFailed}
+          canUndo={props.canUndo}
+          canRedo={props.canRedo}
+          onUndo={props.onUndo}
+          onRedo={props.onRedo}
+          onRetrySave={props.onRetrySave}
         />
         <div className="lesson-library-modules">
           {props.modules

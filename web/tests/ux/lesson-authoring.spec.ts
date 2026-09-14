@@ -191,10 +191,14 @@ test("keyboard-only lesson authoring produces the expected structure", async ({
   await expect.poll(() => readLessons().lessons.length).toBe(beforeCount);
 });
 
-// §1c: the quiet "Ctrl Alt Enter · next slide" cue only ever labels the
-// active slide, and steps aside the instant the insert chooser opens for
-// that lesson so it never competes with the chooser UI.
-test("next-slide cue only marks the active slide and hides while the insert chooser is open", async ({
+// Round 2, item 2: the quiet "next slide · Ctrl Alt Enter" cue used to be
+// absolutely positioned off the active block's own bottom edge, which
+// overlapped the following slide's content. It now renders on the one seam
+// immediately after the active slide (the same seam that shows the "+"
+// signpost at rest, §5 item A) — labelling wherever Ctrl+Alt+Enter will
+// actually insert, and stepping aside the instant that seam's own chooser
+// opens so it never competes with the chooser UI.
+test("next-slide cue only marks the seam after the active slide and hides while the insert chooser is open", async ({
   page,
 }) => {
   await page.addInitScript(() => {
@@ -218,26 +222,32 @@ test("next-slide cue only marks the active slide and hides while the insert choo
   await title.fill("UX smoke: next-slide cue");
   await title.press("Enter");
 
-  const activeCue = page.locator(
-    '.lesson-document-block[data-active="true"] .lesson-document-next-cue',
-  );
-  await expect(activeCue).toBeVisible();
+  const lessonRow = page.locator("[data-lesson-row]").last();
+  const cueLabel = ".lesson-document-insert-cue";
+  // With one (active) block, the tail seam is the one after it.
+  const tailCue = lessonRow.locator(`.lesson-document-tail ${cueLabel}`);
+  await expect(tailCue).toBeVisible();
+  await expect(tailCue).toContainText("next slide");
+  await expect(lessonRow.locator(cueLabel)).toHaveCount(1);
 
-  // A second slide makes the first one inactive — the cue must not follow it.
+  // A second slide (inserted at the tail) becomes active in its place — the
+  // cue must follow it to the new tail seam, not stay on the seam between
+  // the two slides.
   await page.keyboard.press("Control+Alt+Enter");
   await waitForPaletteFocus(page);
   await page.keyboard.press("e");
+  await expect(lessonRow.locator(`.lesson-document-tail ${cueLabel}`)).toBeVisible();
   await expect(
-    page.locator(
-      '.lesson-document-block[data-active="false"] .lesson-document-next-cue',
-    ),
+    lessonRow
+      .locator('.lesson-document-insert:has([aria-label="Insert before slide 2"])')
+      .locator(cueLabel),
   ).toHaveCount(0);
-  await expect(activeCue).toBeVisible();
+  await expect(lessonRow.locator(cueLabel)).toHaveCount(1);
 
   // Opening the chooser again hides the cue for this lesson entirely.
   await page.keyboard.press("Control+Alt+Enter");
   await waitForPaletteFocus(page);
-  await expect(page.locator(".lesson-document-next-cue")).toHaveCount(0);
+  await expect(lessonRow.locator(cueLabel)).toHaveCount(0);
   await page.keyboard.press("Escape");
 
   await page.keyboard.press("Control+s");

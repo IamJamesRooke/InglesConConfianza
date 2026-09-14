@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronRight, GripVertical, Plus, Search } from "lucide-react";
+import { ChevronRight, GripVertical, Plus, Redo2, Search, Undo2 } from "lucide-react";
 import { useState, type DragEvent } from "react";
 
 import type { Lesson, LessonModule } from "@/lib/lesson-builder/types";
@@ -237,6 +237,16 @@ type Props = {
   onSelectLesson: (lessonId: string, blockId?: string) => void;
   onAddModule: () => void;
   onReorderModule: (draggedModuleId: string, targetModuleId: string) => void;
+  /** E: save status + undo/redo, moved here from the retired full-width
+   * `.lesson-library-utility` header bar — a small footer row under
+   * "Add module" instead of its own big card. */
+  saveLabel: string;
+  saveFailed: boolean;
+  canUndo: boolean;
+  canRedo: boolean;
+  onUndo: () => void;
+  onRedo: () => void;
+  onRetrySave: () => void;
 };
 
 export function ModuleNavigator({
@@ -247,6 +257,13 @@ export function ModuleNavigator({
   onSelectLesson,
   onAddModule,
   onReorderModule,
+  saveLabel,
+  saveFailed,
+  canUndo,
+  canRedo,
+  onUndo,
+  onRedo,
+  onRetrySave,
 }: Props) {
   const [query, setQuery] = useState("");
   const [draggedModuleId, setDraggedModuleId] = useState<string | null>(null);
@@ -403,6 +420,49 @@ export function ModuleNavigator({
           <span>Add module</span>
         </button>
       )}
+
+      {/* E: save status + undo/redo footer, replacing the retired full-width
+          `.lesson-library-utility` header card. */}
+      <div className="module-navigator-status-row">
+        <span
+          className="module-navigator-save"
+          role="status"
+          aria-live="polite"
+        >
+          {saveLabel}
+        </span>
+        <span className="module-navigator-history">
+          <button
+            type="button"
+            onClick={onUndo}
+            disabled={!canUndo}
+            suppressHydrationWarning
+            aria-label="Undo"
+            title="Undo (Ctrl+Z)"
+          >
+            <Undo2 size={14} />
+          </button>
+          <button
+            type="button"
+            onClick={onRedo}
+            disabled={!canRedo}
+            suppressHydrationWarning
+            aria-label="Redo"
+            title="Redo (Ctrl+Shift+Z)"
+          >
+            <Redo2 size={14} />
+          </button>
+        </span>
+        {saveFailed && (
+          <button
+            type="button"
+            className="module-navigator-retry"
+            onClick={onRetrySave}
+          >
+            Retry save
+          </button>
+        )}
+      </div>
     </nav>
   );
 }

@@ -99,12 +99,24 @@ test("direct seam actions insert at exact boundaries without overlay", async ({ 
   expect(restBox && restBox.height <= 8).toBeTruthy();
   await expect(middle.locator(".lesson-document-insert-actions")).toHaveCSS("opacity", "0");
   // At rest the palette must be neither visible nor hit-testable — only the
-  // container-level "+" signpost (::after) is actually visible.
+  // container-level "+" signpost (::after) is actually visible, and then
+  // only on the one seam immediately after the active slide (§5, item A).
+  // This "middle" seam sits BEFORE the active slide (the just-inserted
+  // sentence, last block), so its own "+" stays hidden at rest.
   await expect(middle.locator(".lesson-document-insert-actions")).toHaveCSS("visibility", "hidden");
   const restLineOpacity = await middle.evaluate((element) => getComputedStyle(element, "::before").opacity);
   expect(Number(restLineOpacity)).toBe(0);
   const restSignpostOpacity = await middle.evaluate((element) => getComputedStyle(element, "::after").opacity);
-  expect(Number(restSignpostOpacity)).toBeGreaterThan(0);
+  expect(Number(restSignpostOpacity)).toBe(0);
+
+  // The tail seam, right after the active (just-inserted) slide, is the one
+  // seam that DOES show its "+" at rest — no hover/focus needed.
+  const tailAfterActive = row.locator(".lesson-document-tail .lesson-document-insert");
+  await expect(tailAfterActive).toHaveAttribute("data-after-active", "true");
+  const tailSignpostOpacity = await tailAfterActive.evaluate(
+    (element) => getComputedStyle(element, "::after").opacity,
+  );
+  expect(Number(tailSignpostOpacity)).toBeGreaterThan(0);
 
   await middle.hover();
   await page.waitForTimeout(150); // let the 0.1s height transition settle

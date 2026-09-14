@@ -65,7 +65,11 @@
   }
 }
 /* No hairline "thread" between blocks — the insert control sitting right
-   there already marks the boundary. */
+   there already marks the boundary. Only the active slide paints this bar
+   (see [data-active="true"]::after below) — it used to also light up on
+   plain :focus-within, which stayed lit after Escape moved DOM focus onto
+   the block wrapper itself (exitBlock's own .focus() call), painting a
+   stray blue line on a slide the teacher no longer considered "active". */
 .lesson-document-block::after {
   content: "";
   position: absolute;
@@ -76,13 +80,6 @@
   border-radius: 2px;
   background: transparent;
   transition: background 0.1s;
-}
-.lesson-document-block:focus-within::after {
-  background: color-mix(in oklch, var(--primary) 32%, var(--border));
-}
-.lesson-document-body:has(.lesson-document-block:hover)
-  .lesson-document-block:focus-within:not(:hover)::after {
-  background: transparent;
 }
 .lesson-document-block.dragging {
   opacity: 0.4;
@@ -166,31 +163,8 @@
   background: var(--primary);
 }
 
-/* Inline next-action cue (§1c): a quiet reminder on the active slide only.
-   Absolutely positioned so it never reserves layout space — the owner
-   rejected persistent chrome here. Fades away by usage count and hides on
-   narrow viewports (see lesson-document.tsx). */
-.lesson-document-next-cue {
-  position: absolute;
-  right: 8px;
-  bottom: -14px;
-  display: flex;
-  align-items: center;
-  gap: 3px;
-  color: var(--muted-foreground);
-  font-size: 11px;
-  opacity: 0.8;
-  pointer-events: none;
-  white-space: nowrap;
-}
-.lesson-document-next-cue kbd {
-  padding: 0 3px;
-  border-radius: 3px;
-  background: var(--muted);
-  font: 650 10px ui-monospace, monospace;
-}
-@media (max-width: 699px) {
-  .lesson-document-next-cue {
-    display: none;
-  }
-}
+/* Inline next-action cue: moved onto the after-active seam itself (round 2,
+   item 2) — see `.lesson-document-insert-cue` in insert.css. It used to
+   live here, absolutely positioned off the active block's own bottom edge,
+   but that overlapped the following slide's content (the kbd badges sat
+   half-covered by the next explanation card). */

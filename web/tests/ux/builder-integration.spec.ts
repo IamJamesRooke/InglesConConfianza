@@ -89,8 +89,12 @@ test("keyboard writing preserves alternatives and hints and prunes abandoned pai
   await expect(rest).toBeVisible();
   await expect(rest.locator('[lang="en"]')).toHaveText("I'm hungry.");
   await expect(rest).not.toContainText("Estoy hambriento");
-  await expect(rest.locator('[lang="en"]')).toHaveCSS("font-size", "16px");
+  // Resting typography (§5, item C): Spanish 16px/600, English 15px/400
+  // italic — not a matched pair of sizes.
+  await expect(rest.locator('[lang="es"]')).toHaveCSS("font-size", "16px");
   await expect(rest.locator('[lang="es"]')).toHaveCSS("font-weight", "600");
+  await expect(rest.locator('[lang="en"]')).toHaveCSS("font-size", "15px");
+  await expect(rest.locator('[lang="en"]')).toHaveCSS("font-style", "italic");
   await expect(page.getByText("All changes saved", { exact: true })).toBeVisible();
   await page.screenshot({ path: testInfo.outputPath("sentence-rest.png"), fullPage: true });
   await page.reload();

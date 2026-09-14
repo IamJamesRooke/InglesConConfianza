@@ -226,19 +226,57 @@
   font-size: 12px;
 }
 
-/* Additive polish for the existing save indicator / retry button — compound
-   selectors (base class + our class) so this wins on specificity regardless
-   of stylesheet import order, without editing lesson-library-document.css's
-   own rules. */
-.lesson-library-save.module-navigator-save-quiet {
-  opacity: 0.7;
-  font-size: 12px;
-  font-weight: 500;
+/* E: save status + undo/redo, moved out of the retired full-width
+   `.lesson-library-utility` header card into a quiet footer row under
+   "Add module" here in the left rail. */
+.module-navigator-status-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
 }
-.lesson-library-retry.module-navigator-retry-emphasis {
+.module-navigator-save {
+  overflow: hidden;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.module-navigator-history {
+  display: inline-flex;
+  flex-shrink: 0;
+  gap: 2px;
+  margin-left: auto;
+}
+.module-navigator-history button {
+  display: grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border-radius: var(--radius-md);
+  color: var(--muted-foreground);
+}
+.module-navigator-history button:hover:not(:disabled) {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.module-navigator-history button:disabled {
+  opacity: 0.3;
+}
+.module-navigator-retry {
+  flex-shrink: 0;
+  padding: 4px 8px;
   border: 1px solid var(--destructive);
+  border-radius: var(--radius-md);
   color: var(--destructive);
-  font-weight: 700;
+  font-size: 11px;
+  font-weight: 750;
+}
+.module-navigator-retry:hover {
+  color: var(--destructive-foreground, white);
+  background: var(--destructive);
 }
 
 /* Keyboard-shortcuts launcher: quieter and smaller than the shared FAB

@@ -190,56 +190,6 @@
   gap: 12px;
   padding-bottom: 16px;
 }
-.lesson-library-utility {
-  display: flex;
-  min-height: 42px;
-  align-items: center;
-  gap: 10px;
-  padding: 0 3px 10px;
-  border-bottom: 1px solid var(--border);
-  color: var(--muted-foreground);
-  font-size: 11px;
-}
-.lesson-library-utility > a {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 5px 6px;
-  border-radius: 5px;
-  color: var(--muted-foreground);
-  font-weight: 700;
-}
-.lesson-library-utility > a:hover,
-.lesson-library-utility > a:focus-visible {
-  background: var(--muted);
-  color: var(--foreground);
-}
-.lesson-library-history {
-  display: inline-flex;
-  gap: 2px;
-  margin-left: auto;
-}
-.lesson-library-history button {
-  display: grid;
-  width: 26px;
-  height: 26px;
-  place-items: center;
-  border-radius: 6px;
-  color: var(--muted-foreground);
-}
-.lesson-library-history button:hover:not(:disabled) {
-  background: var(--muted);
-  color: var(--foreground);
-}
-.lesson-library-history button:disabled {
-  opacity: 0.3;
-}
-.lesson-library-save {
-  white-space: nowrap;
-  color: var(--muted-foreground);
-  font-size: 12px;
-  align-self: center;
-}
 .lesson-library-modules {
   gap: 12px;
 }
@@ -398,18 +348,36 @@
   font-size: 14px;
   font-weight: 720;
 }
+/* D: quiet row chrome — the drag/duplicate/delete/preview cluster is noise
+   on a collapsed row when nothing is being acted on. Opacity only (not
+   visibility), so Tab still reaches every control; the row's own :hover/
+   :focus-within brings it to full opacity, same pattern as the slide-level
+   .lesson-document-block-actions cluster. Always visible on touch, where
+   there's no hover to reveal it. */
 .lesson-library-row-icons {
   display: inline-flex;
   align-items: center;
   gap: 1px;
   margin-left: 4px;
+  opacity: 0;
+  transition: opacity 0.12s ease;
+}
+.lesson-library-row:hover .lesson-library-row-icons,
+.lesson-library-row:focus-within .lesson-library-row-icons {
+  opacity: 1;
+}
+@media (hover: none), (pointer: coarse) {
+  .lesson-library-row-icons {
+    opacity: 1;
+  }
 }
 .lesson-library-row-icons > .lesson-library-try {
   display: grid;
   width: 28px;
   height: 28px;
   place-items: center;
-  color: color-mix(in oklch, var(--primary) 78%, var(--muted-foreground));
+  color: var(--primary);
+  background: transparent;
 }
 .lesson-library-row-icons.lesson-inline-confirm {
   gap: 5px;
@@ -500,14 +468,6 @@
   background: color-mix(in oklch, var(--primary) 6%, transparent);
   color: var(--primary);
 }
-.lesson-library-retry {
-  padding: 4px 8px;
-  border-radius: 5px;
-  background: var(--destructive);
-  color: var(--destructive-foreground, white);
-  font-size: 11px;
-  font-weight: 750;
-}
 .lesson-library-first-lesson {
   display: grid;
   place-items: center;
@@ -547,12 +507,6 @@
 }
 
 @media (max-width: 850px) {
-  .lesson-library-utility {
-    flex-wrap: wrap;
-  }
-  .lesson-library-save {
-    margin-left: 0;
-  }
   .lesson-library-module-controls {
     flex-shrink: 0;
   }
@@ -562,27 +516,6 @@
    writing sheet quiet. These selectors intentionally live after the older
    compact-document layer so the semantic theme is not diluted by its pale
    color-mixes. */
-.lesson-library-utility {
-  min-height: 48px;
-  padding: 7px 12px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  color: var(--foreground);
-  background: var(--card);
-}
-.lesson-library-save {
-  color: var(--foreground);
-  font-size: 13px;
-  font-weight: 750;
-}
-.lesson-library-history button {
-  color: var(--muted-foreground);
-}
-.lesson-library-history button:hover:not(:disabled) {
-  color: var(--foreground);
-  background: var(--muted);
-}
-
 .lesson-library-module {
   border: 1px solid color-mix(in oklch, var(--primary) 30%, var(--border));
   border-radius: 14px;
@@ -643,13 +576,12 @@
   background: var(--surface-writing);
   box-shadow: 0 0 0 3px color-mix(in oklch, var(--primary) 28%, transparent);
 }
-.lesson-library-row-icons > .lesson-library-try {
+/* D: ghost preview button — icon-only in primary blue, filled only on
+   hover/focus, not a permanently-filled pill (see the base rule above). */
+.lesson-library-row-icons > .lesson-library-try:hover,
+.lesson-library-row-icons > .lesson-library-try:focus-visible {
   color: var(--primary-foreground);
   background: var(--primary);
-}
-.lesson-library-row-icons > .lesson-library-try:hover {
-  color: var(--primary-foreground);
-  background: var(--brand-primary-hover);
 }
 .lesson-library-add-module {
   min-height: 46px;
@@ -664,3 +596,47 @@
   color: var(--primary-foreground);
   background: var(--brand-primary-hover);
 }
+
+/* F: quiet module header — reversible; comment out this block to restore
+   the filled primary-blue module header bar above. Reads as a plain
+   document title (foreground text, hairline rule) instead of a second
+   large blue block competing with the navigator's own active-module pill. */
+.lesson-library-module-meta {
+  border-bottom: 1px solid var(--border);
+  border-radius: 13px 13px 0 0;
+  background: transparent;
+}
+.lesson-library-module-title {
+  color: var(--foreground);
+  font-size: 20px;
+  font-weight: 700;
+}
+.lesson-library-module-line > span,
+.lesson-library-module-meta .lesson-library-collapse,
+.lesson-library-module-meta .lesson-library-module-controls button {
+  color: var(--muted-foreground);
+}
+.lesson-library-module-meta .lesson-library-collapse:hover,
+.lesson-library-module-meta
+  .lesson-library-module-controls
+  button:hover:not(:disabled) {
+  color: var(--foreground);
+  background: var(--muted);
+}
+.lesson-library-module-title:focus {
+  color: var(--foreground);
+  background: var(--card);
+  box-shadow: 0 0 0 2px color-mix(in oklch, var(--primary) 22%, transparent);
+}
+.lesson-library-module-meta .lesson-library-module-delete,
+.lesson-library-module-meta .lesson-library-module-controls .danger {
+  color: var(--muted-foreground);
+}
+.lesson-library-module-meta .lesson-library-module-delete:hover:not(:disabled),
+.lesson-library-module-meta
+  .lesson-library-module-controls
+  .danger:hover:not(:disabled) {
+  color: var(--destructive-foreground);
+  background: var(--destructive);
+}
+/* end F */

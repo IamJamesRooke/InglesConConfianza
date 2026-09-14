@@ -224,16 +224,26 @@
   font-weight: 400;
 }
 
-/* 1b: calmer resting palette */
+/* C: resting pair typography — the owner-decided calm treatment (was 1b's
+   A/B trial, now folded in as the settled rule). Only the *resting*
+   presentation (this slide not active) reads this way; editing fields
+   (above) and explanation marks keep the red/blue language ink. */
+.lesson-document-sentence.resting .lesson-sentence-presentation {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
 .lesson-document-sentence.resting .lesson-sentence-composed[lang="es"] {
   color: var(--foreground);
   font-weight: 600;
+  font-size: 16px;
 }
 .lesson-document-sentence.resting .lesson-sentence-composed[lang="en"] {
   color: var(--muted-foreground);
+  font-style: italic;
   font-weight: 400;
+  font-size: 15px;
 }
-/* end 1b */
 .lesson-sentence-phrase {
   white-space: normal;
 }
@@ -578,4 +588,30 @@
 .lesson-document-add-row:disabled {
   color: var(--muted-foreground);
   opacity: 0.6;
+}
+
+/* C: vocabulary-table rows never get the `.resting` class (the table has
+   no separate resting/editing presentation), so bring their own unfocused
+   ("not this row") typography in line with the resting sentence rule above
+   instead of leaving them on the always-on red/blue ink. The active row
+   keeps that ink — only rest state changes. */
+.lesson-document-sentence.vocab-table .lesson-document-pieces {
+  gap: 6px 0;
+}
+.lesson-document-sentence.vocab-table
+  .lesson-document-piece:not(.active)
+  .lesson-document-language-field[data-language="es"]
+  > textarea {
+  color: var(--foreground);
+  font-weight: 600;
+  font-size: 16px;
+}
+.lesson-document-sentence.vocab-table
+  .lesson-document-piece:not(.active)
+  .lesson-document-language-field[data-language="en"]
+  > textarea {
+  color: var(--muted-foreground);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 15px;
 }
