@@ -20,7 +20,7 @@ test("sidebar shows module names without a lesson-count badge", async ({
 }) => {
   await page.goto("/admin/lesson-builder");
   await page
-    .getByRole("button", { name: /^(Add|Create) lesson/ })
+    .getByRole("button", { name: /^(Add|Create) lesson$/ })
     .first()
     .click();
   const title = page.locator("[data-lesson-title]").last();
@@ -38,7 +38,7 @@ test("modules have no collapse chevron, lessons keep theirs", async ({
 }) => {
   await page.goto("/admin/lesson-builder");
   await page
-    .getByRole("button", { name: /^(Add|Create) lesson/ })
+    .getByRole("button", { name: /^(Add|Create) lesson$/ })
     .first()
     .click();
   const title = page.locator("[data-lesson-title]").last();
@@ -63,7 +63,7 @@ test("modules have no collapse chevron, lessons keep theirs", async ({
 test("sidebar search still selects a module/lesson", async ({ page }) => {
   await page.goto("/admin/lesson-builder");
   await page
-    .getByRole("button", { name: /^(Add|Create) lesson/ })
+    .getByRole("button", { name: /^(Add|Create) lesson$/ })
     .first()
     .click();
   const title = page.locator("[data-lesson-title]").last();
@@ -101,7 +101,7 @@ test("document column width is stable across empty, short, and populated modules
   expect(emptyBox).not.toBeNull();
 
   // Populate it with a lesson (long content).
-  await page.getByRole("button", { name: /^(Add|Create) lesson/ }).click();
+  await page.getByRole("button", { name: /^(Add|Create) lesson$/ }).click();
   const title = page.locator("[data-lesson-title]").last();
   await title.fill("UX smoke: width stability, a fairly long lesson title");
   await title.press("Enter");

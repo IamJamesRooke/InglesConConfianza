@@ -43,7 +43,7 @@ test("explanation toolbar preserves editing context and sentence pairs stay disc
 }) => {
   await page.goto("/admin/lesson-builder");
   await page
-    .getByRole("button", { name: /^(Add|Create) lesson/ })
+    .getByRole("button", { name: /^(Add|Create) lesson$/ })
     .first()
     .click();
 
@@ -271,7 +271,7 @@ test("no module-level collapse control; sidebar search opens one lesson without 
   );
 
   await page
-    .getByRole("button", { name: /^(Add|Create) lesson/ })
+    .getByRole("button", { name: /^(Add|Create) lesson$/ })
     .first()
     .click();
   const titleOne = page.locator("[data-lesson-title]").last();
@@ -279,7 +279,7 @@ test("no module-level collapse control; sidebar search opens one lesson without 
   const lessonOneId = await titleOne.getAttribute("data-lesson-title");
 
   await page
-    .getByRole("button", { name: /^(Add|Create) lesson/ })
+    .getByRole("button", { name: /^(Add|Create) lesson$/ })
     .first()
     .click();
   const titleTwo = page.locator("[data-lesson-title]").last();
@@ -329,7 +329,7 @@ test("hint and alternative metadata never widen the piece card, and long text wr
 }) => {
   await page.goto("/admin/lesson-builder");
   await page
-    .getByRole("button", { name: /^(Add|Create) lesson/ })
+    .getByRole("button", { name: /^(Add|Create) lesson$/ })
     .first()
     .click();
   await page.locator("[data-lesson-title]").last().fill("UX smoke: long pair");
@@ -488,7 +488,7 @@ test("slide insertion seams are ordered Explanation/Sentence/Table, keyboard-rea
 }) => {
   await page.goto("/admin/lesson-builder");
   await page
-    .getByRole("button", { name: /^(Add|Create) lesson/ })
+    .getByRole("button", { name: /^(Add|Create) lesson$/ })
     .first()
     .click();
   await page
@@ -768,7 +768,7 @@ test("a semicolon in the English field commits as separate accepted answers on b
 }) => {
   await page.goto("/admin/lesson-builder");
   await page
-    .getByRole("button", { name: /^(Add|Create) lesson/ })
+    .getByRole("button", { name: /^(Add|Create) lesson$/ })
     .first()
     .click();
   await page
@@ -859,4 +859,110 @@ test("a semicolon in the English field commits as separate accepted answers on b
       ),
     )
     .toBe(false);
+});
+
+// Regression for item 1 of the walkthrough friction log: Escape moves DOM
+// focus onto the `.lesson-document-block` wrapper (activeBlock cleared) —
+// Ctrl+Alt+Enter from there used to silently target nothing, and the very
+// next keystroke (the letter picking a slide type) typed into whatever
+// field regained focus instead of opening the chooser.
+test("Escape then Ctrl Alt Enter still opens the insert chooser and inserts after that slide", async ({
+  page,
+}) => {
+  await page.goto("/admin/lesson-builder");
+  await page.getByRole("button", { name: /^(Add|Create) lesson$/ }).first().click();
+  const title = page.locator("[data-lesson-title]").last();
+  await title.fill("UX smoke: escape then insert");
+  await title.press("Enter");
+
+  const row = page.locator("[data-lesson-row]").last();
+  const explanation = row.getByRole("textbox", { name: "Explanation 1" });
+  await explanation.fill("A short explanation");
+
+  // Escape from the field lands focus on the slide wrapper, not any field.
+  await page.keyboard.press("Escape");
+  await expect(row.locator("[data-document-block]").first()).toBeFocused();
+
+  const countBefore = await row.locator("[data-document-block]").count();
+  await page.keyboard.press("Control+Alt+Enter");
+  await waitForPaletteFocus(page);
+  await page.keyboard.press("t");
+
+  await expect(row.locator("[data-document-block]")).toHaveCount(
+    countBefore + 1,
+  );
+  // Inserted right after the explanation, not typed as garbage into it.
+  await expect(explanation).toHaveText("A short explanation");
+  await expect(
+    row
+      .locator("[data-document-block]")
+      .nth(1)
+      .getByRole("region", { name: "Vocabulary table" }),
+  ).toBeVisible();
+});
+
+// Regression for items 5 and 6 of the walkthrough fixes: Ctrl Alt P previews
+// the open lesson from any field in its row, and closing the preview must
+// return focus (and caret position) to that exact field rather than
+// dropping it onto `<body>`.
+test("Ctrl Alt P previews the lesson, and closing it returns focus to the field it opened from (or the title, when that field is gone)", async ({
+  page,
+}) => {
+  await page.goto("/admin/lesson-builder");
+  await page.getByRole("button", { name: /^(Add|Create) lesson$/ }).first().click();
+  const title = page.locator("[data-lesson-title]").last();
+  await title.fill("UX smoke: preview focus return");
+  await title.press("Enter");
+
+  const row = page.locator("[data-lesson-row]").last();
+
+  // Case 1: an explanation field. `EditablePracticeMarkdown`'s contentEditable
+  // stays mounted regardless of its "active" state, so this is the case
+  // where the exact origin element — and its caret — really can be restored.
+  const explanation = row.getByRole("textbox", { name: "Explanation 1" });
+  await explanation.fill("Hola mundo");
+  await explanation.click();
+  await explanation.evaluate((el) => {
+    const content = el.querySelector(".practice-markdown-content") ?? el;
+    const range = document.createRange();
+    range.setStart(content.firstChild ?? content, 3);
+    range.collapse(true);
+    const selection = window.getSelection();
+    selection?.removeAllRanges();
+    selection?.addRange(range);
+  });
+
+  await page.keyboard.press("Control+Alt+p");
+  const previewDialog = page.getByRole("dialog");
+  await expect(previewDialog).toBeVisible();
+  await previewDialog
+    .getByRole("button", { name: "Volver a mis lecciones" })
+    .click();
+  await expect(previewDialog).toHaveCount(0);
+  // Not <body> (the original bug) and not merely "focused" — the exact
+  // field, proving the origin (not just a generic fallback) came back.
+  await expect(explanation).toBeFocused();
+
+  // Case 2: a Spanish sentence-pair field. Its textarea is conditionally
+  // rendered only while its block is `active` (`sentence-editor.tsx`'s
+  // resting/editing split) — moving focus into the preview overlay blurs
+  // the block, which deactivates it and unmounts that exact textarea before
+  // the dialog even closes. The origin element is gone by the time restore
+  // runs, so the documented fallback — the lesson's title input, never
+  // `<body>` — is the correct, verified outcome here, not a compromise.
+  await page.keyboard.press("Control+Alt+Enter");
+  await waitForPaletteFocus(page);
+  await page.keyboard.press("s");
+  const sentence = row.locator(".lesson-document-sentence").last();
+  const spanish = sentence.locator('textarea[data-field="spanish"]').first();
+  await spanish.fill("Quiero hacerlo");
+  await spanish.click();
+
+  await page.keyboard.press("Control+Alt+p");
+  await expect(previewDialog).toBeVisible();
+  await previewDialog
+    .getByRole("button", { name: "Volver a mis lecciones" })
+    .click();
+  await expect(previewDialog).toHaveCount(0);
+  await expect(title).toBeFocused();
 });

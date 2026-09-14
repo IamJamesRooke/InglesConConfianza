@@ -86,7 +86,7 @@ test("keyboard-only lesson authoring produces the expected structure", async ({
   // Open the first module's "Add lesson" (or "Create lesson" when the
   // module starts empty) and author entirely by keyboard.
   await page
-    .getByRole("button", { name: /^(Add|Create) lesson/ })
+    .getByRole("button", { name: /^(Add|Create) lesson$/ })
     .first()
     .click();
   const title = page.locator("[data-lesson-title]").last();
@@ -215,7 +215,7 @@ test("next-slide cue only marks the seam after the active slide and hides while 
   const beforeCount = before.lessons.length;
 
   await page
-    .getByRole("button", { name: /^(Add|Create) lesson/ })
+    .getByRole("button", { name: /^(Add|Create) lesson$/ })
     .first()
     .click();
   const title = page.locator("[data-lesson-title]").last();

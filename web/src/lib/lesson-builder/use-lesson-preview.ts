@@ -76,29 +76,41 @@ export function capturePreviewOrigin(
   };
 }
 
+// `fallback` is consulted only when the original element is gone (e.g. the
+// row it lived in was removed/replaced) — it lets a caller name a stand-in
+// target (the lesson's title input) instead of leaving focus wherever the
+// browser defaults to when a focused element is removed from the DOM
+// (`<body>`).
 export function restorePreviewOrigin(
   origin: PreviewOrigin,
   platform: LessonPreviewPlatform,
+  fallback?: () => HTMLElement | null,
 ) {
   platform.scrollTo(origin.scrollY);
-  if (!origin.element || !platform.contains(origin.element)) return;
+  const originStillLive = origin.element !== null && platform.contains(origin.element);
+  const target = originStillLive ? origin.element : (fallback?.() ?? null);
+  if (!target) return;
+  if (!originStillLive && !platform.contains(target)) return;
 
-  platform.focus(origin.element);
-  if (origin.inputSelection) {
-    platform.setInputSelection(origin.element, origin.inputSelection);
-  } else if (origin.range) {
-    platform.restoreRange(origin.range);
+  platform.focus(target);
+  if (originStillLive && target) {
+    if (origin.inputSelection) {
+      platform.setInputSelection(target, origin.inputSelection);
+    } else if (origin.range) {
+      platform.restoreRange(origin.range);
+    }
   }
 }
 
 export function schedulePreviewOriginReturn(
   originRef: { current: PreviewOrigin | null },
   platform: LessonPreviewPlatform,
+  fallback?: () => HTMLElement | null,
 ) {
   platform.requestFrame(() => {
     const origin = originRef.current;
     originRef.current = null;
-    if (origin) restorePreviewOrigin(origin, platform);
+    if (origin) restorePreviewOrigin(origin, platform, fallback);
   });
 }
 
@@ -141,9 +153,16 @@ export function useLessonPreview(
   );
 
   const closePreview = useCallback(() => {
+    const previewedLessonId = previewLessonId;
     setPreviewLessonId(null);
-    schedulePreviewOriginReturn(originRef, platform);
-  }, [platform]);
+    schedulePreviewOriginReturn(originRef, platform, () =>
+      previewedLessonId
+        ? document.querySelector<HTMLElement>(
+            `[data-lesson-title="${previewedLessonId}"]`,
+          )
+        : null,
+    );
+  }, [platform, previewLessonId]);
 
   const preview = useMemo(
     () => buildLessonPreview(lessons, previewLessonId),

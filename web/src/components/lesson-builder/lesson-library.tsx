@@ -63,6 +63,7 @@ type Props = {
   onUndo: () => void;
   onRedo: () => void;
   onRetrySave: () => void;
+  onFlushSave: () => void;
   onAddModule: () => void;
   onDeleteModule: (moduleId: string) => void;
   onMoveModule: (index: number, direction: -1 | 1) => void;
@@ -87,6 +88,18 @@ export function LessonLibrary(props: Props) {
     lessonId: string;
   } | null>(null);
   const lastFocusedBeforeHelpRef = useRef<HTMLElement | null>(null);
+  // One-shot: set just before opening a lesson whose very next render should
+  // jump straight into writing (item 8 — Enter on a collapsed title). State,
+  // not a ref, because it's read during render (JSX below) and a ref can't
+  // be read or written there. `LessonDocument` reports back via
+  // `clearFocusOnMount` once consumed, so a later plain re-open (chevron
+  // click) of the same lesson doesn't replay the jump.
+  const [focusOnOpenLessonId, setFocusOnOpenLessonId] = useState<string | null>(
+    null,
+  );
+  const clearFocusOnMount = useCallback(() => {
+    setFocusOnOpenLessonId(null);
+  }, []);
   const lessonById = useMemo(
     () => new Map(props.lessons.map((lesson) => [lesson.id, lesson])),
     [props.lessons],
@@ -111,6 +124,18 @@ export function LessonLibrary(props: Props) {
     setOpenLessonId(lessonId);
     writeLastLesson(lessonId);
   }, []);
+
+  // Item 8: Enter on a collapsed lesson's title expands it AND moves focus
+  // into writing (creating an explanation if the lesson has none) — the
+  // same jump a brand-new lesson gets. `focusOnOpenLessonIdRef` is set first
+  // so the render that mounts this lesson's `LessonDocument` sees it.
+  const openLessonForWriting = useCallback(
+    (lessonId: string) => {
+      setFocusOnOpenLessonId(lessonId);
+      openLesson(lessonId);
+    },
+    [openLesson],
+  );
 
   // The "remembered/first" fallback, scoped to one module: the last-opened
   // lesson if it happens to belong to this module, else the module's first
@@ -184,16 +209,18 @@ export function LessonLibrary(props: Props) {
     });
   }
 
+  const { onFlushSave } = props;
   const collapse = useCallback(
     (lessonId: string) => {
       openLesson(null);
+      onFlushSave();
       requestAnimationFrame(() =>
         document
           .querySelector<HTMLInputElement>(`[data-lesson-title="${lessonId}"]`)
           ?.focus(),
       );
     },
-    [openLesson],
+    [openLesson, onFlushSave],
   );
 
   const toggleLesson = useCallback(
@@ -269,8 +296,54 @@ export function LessonLibrary(props: Props) {
     requestAnimationFrame(() => lastFocusedBeforeHelpRef.current?.focus());
   }
 
+  // Item 3: Ctrl Alt L adds a lesson from anywhere on the page — not just
+  // from inside the currently open lesson's own document — since it's also
+  // the only keyboard path to create the very first lesson in an empty
+  // module (there is no open lesson, and no document keydown handler, to
+  // catch it from). Inserted after the open lesson if there is one,
+  // otherwise at the end of the active module.
+  function addLessonFromAnywhere() {
+    if (openLessonId) {
+      const home = props.modules.find((module) =>
+        module.lessonIds.includes(openLessonId),
+      );
+      if (home) {
+        startLesson(home.id, home.lessonIds.indexOf(openLessonId) + 1);
+        return;
+      }
+    }
+    if (activeModuleId) startLesson(activeModuleId);
+  }
+  // The document keydown effect below subscribes once ([] deps, like the
+  // Ctrl/⌘+. handler it lives beside) — read the latest closure through a
+  // ref rather than resubscribing on every render. The ref is updated in an
+  // effect (every commit, no deps) rather than during render itself, since
+  // refs may not be written while rendering.
+  const addLessonFromAnywhereRef = useRef(addLessonFromAnywhere);
+  useEffect(() => {
+    addLessonFromAnywhereRef.current = addLessonFromAnywhere;
+  });
+
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
+      if (event.isComposing) return;
+      // Ignore the concept typeahead (combobox/listbox) and any open dialog
+      // (keyboard-help, the concept quick-edit) — they own their own keys.
+      const target = event.target instanceof HTMLElement ? event.target : null;
+      if (target?.closest('[role="combobox"], [role="listbox"], [role="dialog"]')) {
+        return;
+      }
+      if (
+        event.code === "KeyL" &&
+        event.ctrlKey &&
+        event.altKey &&
+        !event.metaKey &&
+        !event.shiftKey
+      ) {
+        event.preventDefault();
+        addLessonFromAnywhereRef.current();
+        return;
+      }
       if (
         !(event.ctrlKey || event.metaKey) ||
         event.altKey ||
@@ -407,6 +480,10 @@ export function LessonLibrary(props: Props) {
                           builder={props.builder}
                           onToggle={toggleLesson}
                           onCollapse={collapse}
+                          onOpenForWriting={openLessonForWriting}
+                          focusOnOpenLessonId={focusOnOpenLessonId}
+                          onFocusOnMountHandled={clearFocusOnMount}
+                          onFlushSave={onFlushSave}
                           onStartDrag={startDrag}
                           onDragEnd={endDrag}
                           onDrop={drop}

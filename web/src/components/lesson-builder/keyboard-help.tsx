@@ -167,7 +167,17 @@ export function KeyboardHelpDialog({ onClose }: { onClose: () => void }) {
               <dt>
                 <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>L</kbd>
               </dt>
-              <dd>Add a new lesson right after this one</dd>
+              <dd>
+                Add a new lesson — works from anywhere on the page, even an
+                empty module. Goes right after the open lesson, or at the end
+                of the module.
+              </dd>
+            </div>
+            <div>
+              <dt>
+                <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>P</kbd>
+              </dt>
+              <dd>Preview this lesson, from anywhere inside its row</dd>
             </div>
             <div>
               <dt>
@@ -179,7 +189,10 @@ export function KeyboardHelpDialog({ onClose }: { onClose: () => void }) {
               <dt>
                 <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>Backspace</kbd>
               </dt>
-              <dd>Delete the pair</dd>
+              <dd>
+                On a sentence pair: delete the pair. On a lesson&apos;s
+                title: delete the lesson (confirm still required)
+              </dd>
             </div>
           </dl>
         </section>

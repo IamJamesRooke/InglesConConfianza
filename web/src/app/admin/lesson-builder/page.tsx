@@ -77,18 +77,28 @@ export default function LessonBuilderPage() {
     saveState,
     isDirty,
     conceptDisplays,
-    save,
     retrySave,
+    flush: flushSave,
     deleteLesson: deletePersistedLesson,
   } = useLessonPersistence({ currentCourse, onInitialLoad });
   const { preview, openPreview, closePreview } = useLessonPreview(lessons);
+  // Preview reads a snapshot of `lessons` at open time — flush any pending
+  // idle-debounced save first so the file on disk isn't left behind while
+  // the teacher previews (item 9's "navigation to preview" flush point).
+  const previewLessonWithFlush = useCallback(
+    (lessonId: string) => {
+      flushSave();
+      openPreview(lessonId);
+    },
+    [flushSave, openPreview],
+  );
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       const cmd = event.ctrlKey || event.metaKey;
       if (cmd && !event.altKey && event.key.toLowerCase() === "s") {
         event.preventDefault();
-        void save();
+        flushSave();
       } else if (
         cmd &&
         !event.altKey &&
@@ -111,22 +121,28 @@ export default function LessonBuilderPage() {
     };
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [save]);
+  }, [flushSave]);
 
   const updateModules = useCallback((next: LessonModule[]) => {
     setModules(next);
   }, []);
 
   const createLesson = useCallback(
-    (moduleId: string) => {
+    (moduleId: string, insertionIndex?: number) => {
       const lessonId = createId("lesson");
       dispatch({ type: "CREATE_LESSON", lessonId });
       updateModules(
-        modules.map((module) =>
-          module.id === moduleId
-            ? { ...module, lessonIds: [...module.lessonIds, lessonId] }
-            : module,
-        ),
+        modules.map((module) => {
+          if (module.id !== moduleId) return module;
+          const index =
+            insertionIndex === undefined
+              ? module.lessonIds.length
+              : Math.max(0, Math.min(insertionIndex, module.lessonIds.length));
+          return {
+            ...module,
+            lessonIds: module.lessonIds.toSpliced(index, 0, lessonId),
+          };
+        }),
       );
       return lessonId;
     },
@@ -400,7 +416,7 @@ export default function LessonBuilderPage() {
       conceptDisplays,
       deletionUndo,
       newLesson: createLesson,
-      previewLesson: openPreview,
+      previewLesson: previewLessonWithFlush,
       duplicateLesson,
       deleteLesson: (lessonId) => void deleteLesson(lessonId),
       renameLesson: (lessonId, name) =>
@@ -498,7 +514,7 @@ export default function LessonBuilderPage() {
       conceptDisplays,
       deletionUndo,
       createLesson,
-      openPreview,
+      previewLessonWithFlush,
       duplicateLesson,
       deleteLesson,
       addPiece,
@@ -535,6 +551,7 @@ export default function LessonBuilderPage() {
           onUndo={() => dispatch({ type: "UNDO" })}
           onRedo={() => dispatch({ type: "REDO" })}
           onRetrySave={() => void retrySave()}
+          onFlushSave={flushSave}
           onAddModule={addModule}
           onDeleteModule={deleteModule}
           onMoveModule={moveModule}

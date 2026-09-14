@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronDown, ChevronRight, Play, Plus } from "lucide-react";
-import { memo, type DragEvent } from "react";
+import { memo, useState, type DragEvent, type KeyboardEvent } from "react";
 
 import {
   LessonDocument,
@@ -23,6 +23,10 @@ type Props = {
   builder: LessonBuilderActions;
   onToggle: (lessonId: string) => void;
   onCollapse: (lessonId: string) => void;
+  onOpenForWriting: (lessonId: string) => void;
+  focusOnOpenLessonId: string | null;
+  onFocusOnMountHandled: () => void;
+  onFlushSave: () => void;
   onStartDrag: (
     event: DragEvent<HTMLButtonElement>,
     moduleId: string,
@@ -59,6 +63,10 @@ function LessonRowImpl({
   builder,
   onToggle,
   onCollapse,
+  onOpenForWriting,
+  focusOnOpenLessonId,
+  onFocusOnMountHandled,
+  onFlushSave,
   onStartDrag,
   onDragEnd,
   onDrop,
@@ -67,6 +75,39 @@ function LessonRowImpl({
   onCancelDeleteConfirm,
 }: Props) {
   const lessonDeleteKey = `lesson:${lesson.id}`;
+  // Tracks which control opened the inline "Delete lesson?" confirm, so Esc
+  // (item 4) returns focus to the right place: the title for the
+  // Ctrl Alt Backspace path, the trigger icon for the mouse path.
+  const [deleteConfirmOrigin, setDeleteConfirmOrigin] = useState<"title" | "icon">("icon");
+
+  function focusTitle() {
+    document.querySelector<HTMLInputElement>(`[data-lesson-title="${lesson.id}"]`)?.focus();
+  }
+
+  function requestDeleteFromTitle() {
+    setDeleteConfirmOrigin("title");
+    onRequestDeleteConfirm(lessonDeleteKey);
+    requestAnimationFrame(() =>
+      document
+        .querySelector<HTMLButtonElement>(`[data-lesson-delete-confirm="${lesson.id}"]`)
+        ?.focus(),
+    );
+  }
+
+  function handleDeleteConfirmKeyDown(event: KeyboardEvent<HTMLSpanElement>) {
+    if (event.key !== "Escape" || event.nativeEvent.isComposing) return;
+    event.preventDefault();
+    onCancelDeleteConfirm();
+    requestAnimationFrame(() => {
+      if (deleteConfirmOrigin === "title") {
+        focusTitle();
+      } else {
+        document
+          .querySelector<HTMLButtonElement>(`[data-lesson-delete-trigger="${lesson.id}"]`)
+          ?.focus();
+      }
+    });
+  }
 
   return (
     <>
@@ -87,6 +128,31 @@ function LessonRowImpl({
           if (dragInProgress) event.preventDefault();
         }}
         onDrop={(event) => onDrop(event, moduleId, lessonIndex, true)}
+        onBlurCapture={(event) => {
+          // Item 9: flush any pending idle-debounced save the moment focus
+          // actually leaves this lesson's row (not just its document body —
+          // moving between the title and a slide field is still "in" it).
+          const next = event.relatedTarget;
+          if (!(next instanceof Node) || !event.currentTarget.contains(next)) {
+            onFlushSave();
+          }
+        }}
+        onKeyDown={(event) => {
+          // Ctrl Alt P (item 5): preview this lesson from anywhere inside
+          // its row, same as clicking the Play button. event.code, not
+          // event.key, matching the rest of the Ctrl+Alt scheme.
+          if (
+            event.code === "KeyP" &&
+            event.ctrlKey &&
+            event.altKey &&
+            !event.metaKey &&
+            !event.shiftKey &&
+            !event.nativeEvent.isComposing
+          ) {
+            event.preventDefault();
+            builder.previewLesson(lesson.id);
+          }
+        }}
       >
         <div className="lesson-library-row-head">
           <LessonDragHandle
@@ -114,10 +180,29 @@ function LessonRowImpl({
             onChange={(event) => builder.renameLesson(lesson.id, event.target.value)}
             onBlur={builder.endHistoryGroup}
             onKeyDown={(event) => {
-              if (event.key !== "Enter" || event.nativeEvent.isComposing) return;
+              if (event.nativeEvent.isComposing) return;
+              if (
+                event.code === "Backspace" &&
+                event.ctrlKey &&
+                event.altKey &&
+                !event.metaKey &&
+                !event.shiftKey
+              ) {
+                // Ctrl Alt Backspace (item 4): open this row's own inline
+                // "Delete lesson?" confirm, focused on Delete.
+                event.preventDefault();
+                requestDeleteFromTitle();
+                return;
+              }
+              if (event.key !== "Enter") return;
               event.preventDefault();
               // Enter from the title goes straight to writing — the first
-              // explanation, creating one if needed.
+              // explanation, creating one if needed — whether the lesson was
+              // already open or still collapsed (item 8).
+              if (!isOpen) {
+                onOpenForWriting(lesson.id);
+                return;
+              }
               const first = lesson.blocks[0];
               focusSlideWritingField(
                 first ? first.id : builder.addBlock(lesson.id, "explanation", 0),
@@ -127,7 +212,10 @@ function LessonRowImpl({
             aria-label={`Lesson ${lessonIndex + 1} title`}
           />
           {confirmingDelete ? (
-            <span className="lesson-library-row-icons lesson-inline-confirm">
+            <span
+              className="lesson-library-row-icons lesson-inline-confirm"
+              onKeyDown={handleDeleteConfirmKeyDown}
+            >
               <span>Delete lesson?</span>
               <button
                 type="button"
@@ -144,13 +232,17 @@ function LessonRowImpl({
                 type="button"
                 onClick={() => {
                   onCancelDeleteConfirm();
-                  requestAnimationFrame(() =>
-                    document
-                      .querySelector<HTMLButtonElement>(
-                        `[data-lesson-delete-trigger="${lesson.id}"]`,
-                      )
-                      ?.focus(),
-                  );
+                  requestAnimationFrame(() => {
+                    if (deleteConfirmOrigin === "title") {
+                      focusTitle();
+                    } else {
+                      document
+                        .querySelector<HTMLButtonElement>(
+                          `[data-lesson-delete-trigger="${lesson.id}"]`,
+                        )
+                        ?.focus();
+                    }
+                  });
                 }}
               >
                 Cancel
@@ -173,6 +265,7 @@ function LessonRowImpl({
                 lessonName={lesson.name?.trim() || "Untitled lesson"}
                 onDuplicate={() => builder.duplicateLesson(lesson.id)}
                 onRequestDelete={() => {
+                  setDeleteConfirmOrigin("icon");
                   onRequestDeleteConfirm(lessonDeleteKey);
                   requestAnimationFrame(() =>
                     document
@@ -190,7 +283,8 @@ function LessonRowImpl({
           <LessonDocument
             lesson={lesson}
             onDone={() => onCollapse(lesson.id)}
-            onAddLesson={() => onStartLessonAt(moduleId, lessonIndex + 1)}
+            focusOnMount={focusOnOpenLessonId === lesson.id}
+            onFocusOnMountHandled={onFocusOnMountHandled}
           />
         )}
       </article>

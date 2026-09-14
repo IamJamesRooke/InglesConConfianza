@@ -28,7 +28,7 @@ for (const width of [1280, 900, 390]) {
       expect(overflow.scrollWidth, JSON.stringify(overflow)).toBeLessThanOrEqual(width + 1);
     };
     await measure();
-    await page.getByRole("button", { name: /^(Add|Create) lesson/ }).last().click();
+    await page.getByRole("button", { name: /^(Add|Create) lesson$/ }).last().click();
     const title = page.locator("[data-lesson-title]").last();
     await title.fill("Short");
     await title.press("Enter");
@@ -47,7 +47,7 @@ for (const width of [1280, 900, 390]) {
 
 test("keyboard writing preserves alternatives and hints and prunes abandoned pairs on Escape", async ({ page }, testInfo) => {
   await page.goto("/admin/lesson-builder");
-  await page.getByRole("button", { name: /^(Add|Create) lesson/ }).first().click();
+  await page.getByRole("button", { name: /^(Add|Create) lesson$/ }).first().click();
   const title = page.locator("[data-lesson-title]").last();
   await title.fill("Integration: hungry");
   const id = await title.getAttribute("data-lesson-title");
@@ -119,7 +119,7 @@ test("keyboard writing preserves alternatives and hints and prunes abandoned pai
 
 test("table presentation stays centered and compact through hint editing", async ({ page }, testInfo) => {
   await page.goto("/admin/lesson-builder");
-  await page.getByRole("button", { name: /^(Add|Create) lesson/ }).first().click();
+  await page.getByRole("button", { name: /^(Add|Create) lesson$/ }).first().click();
   const title = page.locator("[data-lesson-title]").last();
   await title.fill("Integration: vocabulary");
   const id = await title.getAttribute("data-lesson-title");

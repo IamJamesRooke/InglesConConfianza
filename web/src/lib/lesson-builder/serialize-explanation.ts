@@ -58,6 +58,18 @@ function serializeInlineNodes(node: ParentNode) {
   return Array.from(node.childNodes).map(serializeInlineNode).join("");
 }
 
+// Wraps `content` in `open`/`close` delimiters, but keeps leading/trailing
+// whitespace outside them \u2014 `** text**`/`* text*` etc. are not valid
+// CommonMark emphasis and silently fail to parse back, dropping the mark on
+// the very next render. A wrapper that is all whitespace (or empty) is
+// returned untouched: there's nothing to emphasize.
+export function wrapTrimmed(content: string, open: string, close: string): string {
+  const match = /^(\s*)([\s\S]*?)(\s*)$/.exec(content);
+  const [, lead, core, trail] = match ?? ["", "", content, ""];
+  if (!core) return content;
+  return `${lead}${open}${core}${close}${trail}`;
+}
+
 function serializeInlineNode(node: Node): string {
   if (node.nodeType === Node.TEXT_NODE)
     return (node.textContent ?? "")
@@ -70,16 +82,16 @@ function serializeInlineNode(node: Node): string {
     case "mark":
       if (!content.trim()) return content;
       return node.dataset.language === "es"
-        ? `[[es:${content}]]`
+        ? wrapTrimmed(content, "[[es:", "]]")
         : node.dataset.language === "en"
-          ? `[[en:${content}]]`
-          : `==${content}==`;
+          ? wrapTrimmed(content, "[[en:", "]]")
+          : wrapTrimmed(content, "==", "==");
     case "strong":
     case "b":
-      return `**${content}**`;
+      return wrapTrimmed(content, "**", "**");
     case "em":
     case "i":
-      return `*${content}*`;
+      return wrapTrimmed(content, "*", "*");
     case "kbd":
       return `<kbd>${content}</kbd>`;
     case "br":

@@ -2,7 +2,7 @@ import { expect, test } from "./fixtures";
 
 test("sentence rest composition, hint tools, Escape, and explanation tools stay in flow", async ({ page }) => {
   await page.goto("/admin/lesson-builder");
-  await page.getByRole("button", { name: /^(Add|Create) lesson/ }).first().click();
+  await page.getByRole("button", { name: /^(Add|Create) lesson$/ }).first().click();
   await page.locator("[data-lesson-title]").last().fill("UX smoke: editor finishing A");
   await page.keyboard.press("Enter");
 
@@ -78,7 +78,7 @@ test("sentence rest composition, hint tools, Escape, and explanation tools stay 
 
 test("direct seam actions insert at exact boundaries without overlay", async ({ page }) => {
   await page.goto("/admin/lesson-builder");
-  await page.getByRole("button", { name: /^(Add|Create) lesson/ }).first().click();
+  await page.getByRole("button", { name: /^(Add|Create) lesson$/ }).first().click();
   await page.locator("[data-lesson-title]").last().fill("UX smoke: editor finishing B");
   await page.keyboard.press("Enter");
 

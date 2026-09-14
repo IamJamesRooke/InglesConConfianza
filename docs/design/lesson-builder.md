@@ -71,7 +71,11 @@ non-typing target, so the WM-collision risk doesn't apply the same way).
 
 | Context | Keys | Behaviour |
 |---|---|---|
-| Lesson title (collapsed row) | `Enter` | Focus jumps into writing: the first slide's field, creating an explanation slide if the lesson has none. |
+| Lesson title (any row, open or collapsed) | `Enter` | Focus jumps into writing: the first slide's field, creating an explanation slide if the lesson has none. If the lesson was collapsed, it expands first — the jump into writing happens either way. |
+| Lesson title (any row) | `Ctrl Alt Backspace` | Opens that row's inline "Delete lesson?" confirm, focused on Delete. `Enter` confirms; `Escape` cancels and returns focus to the title. (The pair-level `Ctrl Alt Backspace` inside a sentence/vocabulary field keeps its own separate meaning — delete that pair — see below.) |
+| Anywhere on the page (not the concept typeahead or an open dialog) | `Ctrl Alt L` | Add a new lesson: right after the currently open lesson if one is open, otherwise at the end of the active module. Works with zero lessons in the module — the only keyboard path to create the very first lesson. Focuses the new title. |
+| Anywhere inside a lesson row | `Ctrl Alt P` | Preview that lesson, same as clicking its Play button. |
+| Sentence/Vocabulary block, before the pairs | `Tab` / `Shift Tab` | Native DOM tab order, not a handler: `Shift Tab` from pair 1's Spanish field reaches the "Add instruction" button (or the instruction field, if already shown); `Tab` from the instruction field reaches pair 1's Spanish field. |
 | Explanation (focused) | `Enter` | New paragraph (native contentEditable behavior). |
 | Explanation (focused) | `Ctrl Alt S` / `Ctrl Alt N` / `Ctrl Alt E` | Mark as Spanish / neutral / English. With a selection: wraps it in `<mark data-language="es\|en">`; with a collapsed caret: marks the word around it, or arms "typing mode" so subsequently typed text is marked live. Memorable letters (Spanish/Neutral/English) — chosen over the old adjacent `Q`/`W`/`E` on purpose. |
 | Explanation (selection active) | Floating format toolbar (`Spanish` / `English` / `Normal` / `B` / `I`) | Same actions as the shortcuts, mouse-driven; shown only while `isActive` and there is a live/saved selection. |
@@ -90,19 +94,27 @@ non-typing target, so the WM-collision risk doesn't apply the same way).
 | Instruction field | `Escape` | Blank → collapses the field back to the "Add instruction" button; non-blank → exits the slide like other fields. |
 | Slide (focused container, not a nested field) | `Enter` / `Space` | Enters editing: focuses the slide's first writing field. |
 | Slide (focused container) | `Escape` | Exits editing back to the container (`exitBlock`), which then refocuses the slide wrapper itself (not the lesson row). |
-| Slide (anywhere inside, via the shared document-body handler) | `Ctrl Alt Enter` | Opens the insert chooser positioned after the active slide (or at the end, if none active). Also counts one use toward `lesson-builder:next-slide-uses` (§5's inline cue fades after 5). |
+| Slide (anywhere inside, via the shared document-body handler) | `Ctrl Alt Enter` | Opens the insert chooser positioned after the active slide (or at the end, if none active). Also counts one use toward `lesson-builder:next-slide-uses` (§5's inline cue fades after 5). Resolves its target slide as `activeBlock` if set, else the `[data-document-block]` ancestor of `event.target` — so it also works right after `Escape` (DOM focus on the block wrapper, `activeBlock` cleared) or after a click that landed on the wrapper rather than a field, not only while focus is still inside a real field. |
 | Insert chooser (open, focus inside it) | `E` / `S` / `T` | Pick that type immediately (only while focus is inside the open chooser). |
 | Insert chooser (open, focus inside it) | `←/→/↑/↓` | Move focus between the three choice buttons (wraps). |
 | Insert chooser (open) | `Escape` | Closes the chooser and restores the caret to wherever it was before the chooser opened. |
 | Insert chooser (open) | click outside | Closes the chooser (pointerdown listener on `document`, ignores clicks inside `.lesson-document-insert`). |
 | Slide (any) | `Ctrl Alt ArrowUp` / `ArrowDown` | Move the active slide up/down. |
-| Slide (any) | `Ctrl Alt D` | Finish this lesson: collapses its row. |
-| Slide (any) | `Ctrl Alt L` | Add a new lesson in the current module, right after this one (focuses its title). |
+| Slide (any) | `Ctrl Alt D` | Finish this lesson: collapses its row. Flushes any pending idle-debounced save immediately (§9 item R4). |
 | Lesson row (any) | `Ctrl/⌘ Z` / `Ctrl/⌘ Shift Z` | Undo / redo (page-level; disabled while the event target is itself a text-editing target, so it doesn't fight native field undo). |
-| Lesson row (any) | `Ctrl/⌘ S` | Save now (autosave also runs independently). Not advertised in the help dialog (§4) — autosave is the story — but it still works. |
+| Lesson row (any) | `Ctrl/⌘ S` | Save now: flushes any pending idle-debounced save immediately (autosave also runs independently). Not advertised in the help dialog (§4) — autosave is the story — but it still works. |
 | Module navigator drag-handle button (focused) | `Alt ArrowUp` / `Alt ArrowDown` | Reorder that module up/down (plain Alt is safe here — a single non-typing button, not a global page listener). |
 | Anywhere in the builder | `Ctrl/⌘ .` | Toggle the keyboard-help dialog. |
 | Keyboard-help dialog (open) | `Escape` | Closes it and restores focus to whatever was focused before it opened. |
+
+**Autosave timing** (`use-lesson-persistence.ts`): the lesson-body save is
+an *idle* debounce, not a throttle — every edit restarts a 2000ms window,
+so a save only fires once the teacher has actually paused, never mid-word.
+It's flushed immediately (bypassing the wait) on: collapsing a lesson
+(`Ctrl Alt D` or the chevron), focus leaving a lesson's row entirely,
+`Ctrl/⌘ S`, `beforeunload`, and opening Preview. The module/course-order
+save (lesson order, module names) is a separate, shorter 500ms debounce,
+unaffected by this.
 
 ## 4. Shortcut table (as shown in `keyboard-help.tsx`)
 
@@ -133,9 +145,10 @@ them without reading the table.
 | `Ctrl Alt S` · `Ctrl Alt E` · `Ctrl Alt N` | In an explanation: mark as Spanish · English · neutral. With text selected, marks it. |
 | `Ctrl Alt ↑` `↓` | Move the active slide up or down. |
 | `Ctrl Alt D` | Finish this lesson (collapse it). |
-| `Ctrl Alt L` | Add a new lesson right after this one. |
+| `Ctrl Alt L` | Add a new lesson — works from anywhere, even an empty module. Goes after the open lesson, or at the end of the module. |
+| `Ctrl Alt P` | Preview this lesson, from anywhere inside its row. |
 | `Alt ↓` | On a sentence pair: open its hint. |
-| `Ctrl Alt Backspace` | Delete the pair. |
+| `Ctrl Alt Backspace` | On a sentence pair: delete the pair. On a lesson's title: delete the lesson (confirm still required). |
 
 This table is authoritative for what the teacher is told. `Ctrl/⌘ S` (save
 now) and `Ctrl/⌘ .` (this dialog) exist in code but are deliberately not
@@ -406,3 +419,4 @@ statically or spin up their own isolated server against a throwaway file.
 | 1h | Make both insert controls (between slides and between lessons) discoverable at rest — they currently collapse to a hairline | Haiku | done |
 | R2 | Round-2 calm pass: seam "+" ladder → single after-active seam, fix stray full-height blue line, settle resting pair/vocab-table typography, quiet collapsed row chrome, move save status + undo/redo into the left rail, quiet module header | Sonnet | done |
 | R3 | Typing latency in a large, many-lesson module: measured with Playwright (12-slide lesson + 30 collapsed siblings), found every keystroke re-rendered every collapsed row (not the open lesson's own slides, which were already isolated per-block); extracted a memoized `LessonRow` (`lesson-library-row.tsx`) and stabilized the callbacks it depends on (`useCallback` on module-move handlers in `page.tsx`, a `lessonsRef` for `deleteBlock`/`deletePiece`/`moveBlock` so they don't need `[lessons]`) — off-field DOM mutation records per keystroke dropped ~5x (≈2300 → ≈450) | Sonnet | done |
+| R4 | Walkthrough fixes 1–9 | Sonnet | done |

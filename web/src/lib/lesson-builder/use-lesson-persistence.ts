@@ -275,20 +275,38 @@ export function useLessonPersistence({
     [queue],
   );
 
+  // Flushes any pending debounce and saves immediately if there's anything
+  // to save — used for the explicit "don't wait" moments (collapsing a
+  // lesson, leaving its row, Ctrl/⌘ S, unload, opening preview) so a save
+  // never silently waits out the idle window past one of those points.
+  // Reads dirtiness straight off the queue/ref (both stable identities) so
+  // this callback itself never goes stale.
+  const flush = useCallback(() => {
+    window.clearTimeout(lessonSaveTimer.current);
+    window.clearTimeout(courseSaveTimer.current);
+    if (queue.isDirty(courseRef.current)) void save();
+  }, [queue, save]);
+
+  // Idle debounce, not a throttle: every edit (a new `currentCourse.lessons`
+  // identity from the reducer) restarts the 2000ms window, so the save only
+  // fires once the teacher has actually paused — never mid-word. The
+  // explicit flush points above are what keep that from ever meaning "my
+  // work sat unsaved for a while."
   useEffect(() => {
     if (
       saveState === "loading" ||
       saveState === "error" ||
       !dirtyState.dirtyLessons
     ) {
+      window.clearTimeout(lessonSaveTimer.current);
       return;
     }
     window.clearTimeout(lessonSaveTimer.current);
     lessonSaveTimer.current = window.setTimeout(() => {
       void save();
-    }, 1200);
+    }, 2000);
     return () => window.clearTimeout(lessonSaveTimer.current);
-  }, [dirtyState.dirtyLessons, save, saveState]);
+  }, [currentCourse.lessons, dirtyState.dirtyLessons, save, saveState]);
 
   useEffect(() => {
     if (
@@ -313,10 +331,13 @@ export function useLessonPersistence({
 
   useEffect(() => {
     if (!dirtyState.isDirty) return;
-    const warn = (event: BeforeUnloadEvent) => event.preventDefault();
+    const warn = (event: BeforeUnloadEvent) => {
+      flush();
+      event.preventDefault();
+    };
     window.addEventListener("beforeunload", warn);
     return () => window.removeEventListener("beforeunload", warn);
-  }, [dirtyState.isDirty]);
+  }, [dirtyState.isDirty, flush]);
 
   const deleteLesson = useCallback(
     (lessonId: string) => queue.delete(courseRef.current, lessonId),
@@ -329,6 +350,7 @@ export function useLessonPersistence({
     conceptDisplays,
     save,
     retrySave: save,
+    flush,
     deleteLesson,
   };
 }

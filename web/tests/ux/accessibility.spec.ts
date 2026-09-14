@@ -17,7 +17,7 @@ test("lesson builder page has no serious/critical accessibility violations", asy
   // Seed one lesson with a concept chip so priority-chip markup (and the
   // color-contrast rule this once caught) is actually present in the scan —
   // an empty course would otherwise skip that surface entirely.
-  await page.getByRole("button", { name: /^(Add|Create) lesson/ }).first().click();
+  await page.getByRole("button", { name: /^(Add|Create) lesson$/ }).first().click();
   const title = page.locator("[data-lesson-title]").last();
   await title.fill("ux-check: a11y seed");
 

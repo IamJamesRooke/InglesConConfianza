@@ -1,7 +1,7 @@
 "use client";
 
 import { AlignLeft, Languages, Table2 } from "lucide-react";
-import { useEffect, useRef, type KeyboardEvent } from "react";
+import { useLayoutEffect, useRef, type KeyboardEvent } from "react";
 
 export type DocumentBlockType = "explanation" | "sentence" | "vocabulary";
 
@@ -48,8 +48,19 @@ export function SlideInsertControl({
   const showCue = afterActive && showNextSlideCue;
   const buttons = useRef<(HTMLButtonElement | null)[]>([]);
 
-  useEffect(() => {
-    if (focusPalette) requestAnimationFrame(() => buttons.current[1]?.focus());
+  // Focus synchronously before paint (the `.open` class that makes the
+  // palette visible lands in this same commit) so a fast keystroke right
+  // after Ctrl Alt Enter — e.g. immediately typing "T" — lands on the
+  // Sentence button, not wherever focus was before. The old
+  // `requestAnimationFrame`-only focus left a gap where a quick typist's
+  // next keydown fired before the frame ran. Kept as a fallback in case the
+  // synchronous focus doesn't stick (e.g. the button isn't focusable yet).
+  useLayoutEffect(() => {
+    if (!focusPalette) return;
+    buttons.current[1]?.focus();
+    if (document.activeElement !== buttons.current[1]) {
+      requestAnimationFrame(() => buttons.current[1]?.focus());
+    }
   }, [focusPalette]);
 
   function handleKey(event: KeyboardEvent<HTMLDivElement>) {

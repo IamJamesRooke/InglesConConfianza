@@ -155,7 +155,14 @@ function LessonSession({
 
   useEffect(() => {
     const priorOverflow = document.body.style.overflow;
-    const previousFocus = document.activeElement;
+    // When a caller passes `onCloseLesson` (the Lesson Builder's preview),
+    // that caller already owns capture/restore of the originating focus via
+    // `useLessonPreview` (with a lesson-title fallback) — capturing it again
+    // here raced that mechanism and could leave focus on `<body>` when the
+    // loser of the race targeted an element that had already been removed.
+    // Plain learner navigation (no `onCloseLesson`) has no such owner, so it
+    // keeps doing this itself.
+    const previousFocus = onCloseLesson ? null : document.activeElement;
     document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = priorOverflow;
@@ -163,7 +170,7 @@ function LessonSession({
         previousFocus.focus();
       }
     };
-  }, []);
+  }, [onCloseLesson]);
 
   useEffect(() => {
     contentRef.current?.scrollTo({ top: 0 });

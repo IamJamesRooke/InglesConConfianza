@@ -62,7 +62,14 @@ function setCaretAtOffset(root: HTMLElement, target: number) {
 type Props = {
   lesson: Lesson;
   onDone: () => void;
-  onAddLesson: () => void;
+  // Set for exactly one render — the one where this lesson just opened via
+  // Enter on its (previously collapsed) title (item 8) — so the very first
+  // Enter always jumps into writing, whether the lesson was already open or
+  // not. Resolved once the document has actually mounted (so its slides
+  // exist in the DOM to focus), then reported back via
+  // `onFocusOnMountHandled` so the caller can clear its one-shot ref.
+  focusOnMount?: boolean;
+  onFocusOnMountHandled?: () => void;
 };
 
 // Learnability: the inline "next slide" cue (§1c) fades away once a teacher
@@ -131,6 +138,20 @@ export function LessonDocument(props: Props) {
     focusSlideWritingField(focusAfterAdd.current);
     focusAfterAdd.current = null;
   }, [props.lesson.blocks]);
+
+  // Mount-only: a lesson that just opened via Enter-on-title (item 8) jumps
+  // straight into writing, same as a brand-new lesson.
+  useEffect(() => {
+    if (!props.focusOnMount) return;
+    const first = props.lesson.blocks[0];
+    focusSlideWritingField(
+      first ? first.id : actions.addBlock(lessonId, "explanation", 0),
+    );
+    props.onFocusOnMountHandled?.();
+    // Runs once, on mount, deliberately — this is a one-shot reaction to how
+    // the lesson was opened, not to any prop that changes afterward.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   function captureCaretOrigin() {
     const el = document.activeElement;
@@ -204,8 +225,19 @@ export function LessonDocument(props: Props) {
   }
 
   // Ctrl/⌘+Enter moves to the direct insertion actions after the active slide.
-  function openInsertAfterActive() {
-    const index = props.lesson.blocks.findIndex((block) => block.id === activeBlock);
+  // `activeBlock` is only set while DOM focus sits *inside* a slide's field —
+  // Escape (or a click on the block wrapper itself) moves focus onto the
+  // wrapper and clears it, so falling back to `activeBlock` alone silently
+  // targeted nothing. Resolve the slide from wherever focus actually is.
+  function resolveTargetBlockId(target: EventTarget | null): string | null {
+    if (activeBlock) return activeBlock;
+    const el = target instanceof HTMLElement ? target : null;
+    return el?.closest<HTMLElement>("[data-document-block]")?.dataset.documentBlock ?? null;
+  }
+
+  function openInsertAfterActive(target: EventTarget | null) {
+    const targetBlockId = resolveTargetBlockId(target);
+    const index = props.lesson.blocks.findIndex((block) => block.id === targetBlockId);
     openInsert(index >= 0 ? index + 1 : props.lesson.blocks.length);
   }
 
@@ -256,15 +288,13 @@ export function LessonDocument(props: Props) {
           if (event.code === "Enter" || event.code === "NumpadEnter") {
             if (!event.shiftKey && insertAt === null) {
               stop();
-              openInsertAfterActive();
+              openInsertAfterActive(event.target);
               recordNextSlideUse();
             }
           } else if (event.shiftKey) {
             return;
           } else if (event.code === "KeyD") {
             stop(); props.onDone();
-          } else if (event.code === "KeyL") {
-            stop(); props.onAddLesson();
           } else if (event.code === "ArrowUp" && activeBlock) {
             stop(); actions.moveBlock(lessonId, activeBlock, -1);
           } else if (event.code === "ArrowDown" && activeBlock) {
@@ -313,7 +343,23 @@ export function LessonDocument(props: Props) {
                 drag.reset();
               }}
               onKeyDown={(event) => {
-                if (event.target === event.currentTarget && (event.key === "Enter" || event.key === " ")) {
+                // Plain Enter/Space enters editing — but Ctrl+Alt+Enter is a
+                // different, more specific shortcut (open the insert
+                // chooser, handled by the document-body handler below) and
+                // must not be swallowed here. This exact collision was why
+                // Ctrl+Alt+Enter silently failed right after Escape: DOM
+                // focus lands on this wrapper, `event.key` is still "Enter"
+                // regardless of modifiers, so this branch used to fire
+                // first, call `preventDefault()`, and refocus the writing
+                // field — leaving the body handler's `defaultPrevented`
+                // guard nothing to do.
+                if (
+                  event.target === event.currentTarget &&
+                  (event.key === "Enter" || event.key === " ") &&
+                  !event.ctrlKey &&
+                  !event.altKey &&
+                  !event.metaKey
+                ) {
                   event.preventDefault();
                   setActiveBlock(block.id);
                   requestAnimationFrame(() => focusSlideWritingField(block.id));
