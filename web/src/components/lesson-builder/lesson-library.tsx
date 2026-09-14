@@ -1,14 +1,9 @@
 "use client";
 
-import {
-  ChevronDown,
-  ChevronRight,
-  Play,
-  Plus,
-  Trash2,
-} from "lucide-react";
+import { Plus, Trash2 } from "lucide-react";
 import {
   Fragment,
+  useCallback,
   useEffect,
   useMemo,
   useRef,
@@ -16,19 +11,14 @@ import {
   type DragEvent,
 } from "react";
 
-import { LessonHeaderActions } from "@/components/lesson-builder/lesson-header-actions";
 import { ModuleNavigator } from "@/components/lesson-builder/module-navigator";
 import "@/styles/module-navigation.css";
 import { KeyboardHelpDialog } from "@/components/lesson-builder/keyboard-help";
-import {
-  LessonDocument,
-  LessonDragHandle,
-} from "@/components/lesson-builder/lesson-document";
+import { LessonRow } from "@/components/lesson-builder/lesson-library-row";
 import {
   LessonBuilderProvider,
   type LessonBuilderActions,
 } from "@/lib/lesson-builder/builder-context";
-import { focusSlideWritingField } from "@/lib/lesson-builder/focus";
 import type { Lesson, LessonModule } from "@/lib/lesson-builder/types";
 
 // The single open-lesson id survives reloads so a teacher returns to where
@@ -114,10 +104,13 @@ export function LessonLibrary(props: Props) {
     : (props.modules[0]?.id ?? null);
 
   // Sets the single open lesson and remembers it for next time (§1a).
-  function openLesson(lessonId: string | null) {
+  // Stable identity (no deps) so it — and everything built on it below —
+  // stays safe to hand to the memoized LessonRow without forcing every
+  // collapsed row to re-render on each keystroke elsewhere in the lesson.
+  const openLesson = useCallback((lessonId: string | null) => {
     setOpenLessonId(lessonId);
     writeLastLesson(lessonId);
-  }
+  }, []);
 
   // The "remembered/first" fallback, scoped to one module: the last-opened
   // lesson if it happens to belong to this module, else the module's first
@@ -191,57 +184,70 @@ export function LessonLibrary(props: Props) {
     });
   }
 
-  function collapse(lessonId: string) {
-    openLesson(null);
-    requestAnimationFrame(() =>
-      document
-        .querySelector<HTMLInputElement>(`[data-lesson-title="${lessonId}"]`)
-        ?.focus(),
-    );
-  }
+  const collapse = useCallback(
+    (lessonId: string) => {
+      openLesson(null);
+      requestAnimationFrame(() =>
+        document
+          .querySelector<HTMLInputElement>(`[data-lesson-title="${lessonId}"]`)
+          ?.focus(),
+      );
+    },
+    [openLesson],
+  );
 
-  function toggleLesson(lessonId: string) {
-    if (openLessonId === lessonId) collapse(lessonId);
-    else openLesson(lessonId);
-  }
+  const toggleLesson = useCallback(
+    (lessonId: string) => {
+      if (openLessonId === lessonId) collapse(lessonId);
+      else openLesson(lessonId);
+    },
+    [openLessonId, collapse, openLesson],
+  );
 
-  function startDrag(
-    event: DragEvent<HTMLButtonElement>,
-    moduleId: string,
-    lessonId: string,
-  ) {
-    event.dataTransfer.effectAllowed = "move";
-    event.dataTransfer.setData("text/plain", lessonId);
-    setDragged({ moduleId, lessonId });
-  }
+  const startDrag = useCallback(
+    (event: DragEvent<HTMLButtonElement>, moduleId: string, lessonId: string) => {
+      event.dataTransfer.effectAllowed = "move";
+      event.dataTransfer.setData("text/plain", lessonId);
+      setDragged({ moduleId, lessonId });
+    },
+    [],
+  );
 
-  function drop(
-    event: DragEvent<HTMLElement>,
-    moduleId: string,
-    targetIndex: number,
-    usePointer = false,
-  ) {
-    event.preventDefault();
-    if (!dragged) return;
-    const bounds = event.currentTarget.getBoundingClientRect();
-    const after = usePointer && event.clientY >= bounds.top + bounds.height / 2;
-    props.onDropLesson(
-      dragged.lessonId,
-      moduleId,
-      targetIndex + (after ? 1 : 0),
-    );
-    setDragged(null);
-  }
+  const endDrag = useCallback(() => setDragged(null), []);
 
-  function startLesson(moduleId: string, insertionIndex?: number) {
-    const lessonId = props.builder.newLesson(moduleId, insertionIndex);
-    openLesson(lessonId);
-    requestAnimationFrame(() => {
-      document
-        .querySelector<HTMLInputElement>(`[data-lesson-title="${lessonId}"]`)
-        ?.focus();
-    });
-  }
+  const { onDropLesson } = props;
+  const drop = useCallback(
+    (
+      event: DragEvent<HTMLElement>,
+      moduleId: string,
+      targetIndex: number,
+      usePointer = false,
+    ) => {
+      event.preventDefault();
+      if (!dragged) return;
+      const bounds = event.currentTarget.getBoundingClientRect();
+      const after = usePointer && event.clientY >= bounds.top + bounds.height / 2;
+      onDropLesson(dragged.lessonId, moduleId, targetIndex + (after ? 1 : 0));
+      setDragged(null);
+    },
+    [dragged, onDropLesson],
+  );
+
+  const startLesson = useCallback(
+    (moduleId: string, insertionIndex?: number) => {
+      const lessonId = props.builder.newLesson(moduleId, insertionIndex);
+      openLesson(lessonId);
+      requestAnimationFrame(() => {
+        document
+          .querySelector<HTMLInputElement>(`[data-lesson-title="${lessonId}"]`)
+          ?.focus();
+      });
+    },
+    [props.builder, openLesson],
+  );
+
+  const requestDeleteConfirm = useCallback((key: string) => setConfirmDelete(key), []);
+  const cancelDeleteConfirm = useCallback(() => setConfirmDelete(null), []);
 
   function toggleKeyboardHelp() {
     setShowKeyboardHelp((open) => {
@@ -388,180 +394,27 @@ export function LessonLibrary(props: Props) {
                     </div>
 
                     <div className="lesson-library-list">
-                      {moduleLessons.map((lesson) => {
-                        const lessonIndex = moduleLessons.findIndex(
-                          (item) => item.id === lesson.id,
-                        );
-                        const lessonCollapsed = openLessonId !== lesson.id;
-                        const lessonDeleteKey = `lesson:${lesson.id}`;
-                        return [
-                          <div
-                            key={`insert-${lesson.id}`}
-                            className="lesson-library-insert"
-                          >
-                            <button
-                              type="button"
-                              aria-label="Add lesson here"
-                              onClick={() =>
-                                startLesson(module.id, lessonIndex)
-                              }
-                            >
-                              <Plus size={11} aria-hidden="true" />
-                              <span className="lesson-library-insert-label">
-                                Add lesson
-                              </span>
-                            </button>
-                          </div>,
-                          <article
-                            key={lesson.id}
-                            data-lesson-row={lesson.id}
-                            className={`lesson-library-row ${dragged?.lessonId === lesson.id ? "dragging" : ""}`}
-                            onDragOver={(event) => {
-                              if (dragged) event.preventDefault();
-                            }}
-                            onDrop={(event) =>
-                              drop(event, module.id, lessonIndex, true)
-                            }
-                          >
-                            <div className="lesson-library-row-head">
-                              <LessonDragHandle
-                                lessonNumber={lessonIndex + 1}
-                                onDragStart={(event) =>
-                                  startDrag(event, module.id, lesson.id)
-                                }
-                                onDragEnd={() => setDragged(null)}
-                              />
-                              <button
-                                type="button"
-                                className="lesson-library-collapse"
-                                aria-expanded={!lessonCollapsed}
-                                aria-label={
-                                  lessonCollapsed
-                                    ? "Expand lesson"
-                                    : "Collapse lesson"
-                                }
-                                onClick={() => toggleLesson(lesson.id)}
-                              >
-                                {lessonCollapsed ? (
-                                  <ChevronRight size={16} aria-hidden="true" />
-                                ) : (
-                                  <ChevronDown size={16} aria-hidden="true" />
-                                )}
-                              </button>
-                              <input
-                                data-lesson-title={lesson.id}
-                                className="lesson-library-title-input"
-                                value={lesson.name ?? ""}
-                                onChange={(event) =>
-                                  props.builder.renameLesson(
-                                    lesson.id,
-                                    event.target.value,
-                                  )
-                                }
-                                onBlur={props.builder.endHistoryGroup}
-                                onKeyDown={(event) => {
-                                  if (
-                                    event.key !== "Enter" ||
-                                    event.nativeEvent.isComposing
-                                  )
-                                    return;
-                                  event.preventDefault();
-                                  // Enter from the title goes straight to writing — the
-                                  // first explanation, creating one if needed.
-                                  const first = lesson.blocks[0];
-                                  focusSlideWritingField(
-                                    first
-                                      ? first.id
-                                      : props.builder.addBlock(
-                                          lesson.id,
-                                          "explanation",
-                                          0,
-                                        ),
-                                  );
-                                }}
-                                placeholder="Name this lesson…"
-                                aria-label={`Lesson ${lessonIndex + 1} title`}
-                              />
-                              {confirmDelete === lessonDeleteKey ? (
-                                <span className="lesson-library-row-icons lesson-inline-confirm">
-                                  <span>Delete lesson?</span>
-                                  <button
-                                    type="button"
-                                    className="danger"
-                                    data-lesson-delete-confirm={lesson.id}
-                                    onClick={() => {
-                                      props.builder.deleteLesson(lesson.id);
-                                      setConfirmDelete(null);
-                                    }}
-                                  >
-                                    Delete
-                                  </button>
-                                  <button
-                                    type="button"
-                                    onClick={() => {
-                                      setConfirmDelete(null);
-                                      requestAnimationFrame(() =>
-                                        document
-                                          .querySelector<HTMLButtonElement>(
-                                            `[data-lesson-delete-trigger="${lesson.id}"]`,
-                                          )
-                                          ?.focus(),
-                                      );
-                                    }}
-                                  >
-                                    Cancel
-                                  </button>
-                                </span>
-                              ) : (
-                                <span className="lesson-library-row-icons">
-                                  <button
-                                    type="button"
-                                    className="lesson-library-try"
-                                    onMouseDown={(event) =>
-                                      event.preventDefault()
-                                    }
-                                    onClick={() =>
-                                      props.builder.previewLesson(lesson.id)
-                                    }
-                                    aria-label="Preview lesson"
-                                    title="Preview lesson"
-                                  >
-                                    <Play size={14} aria-hidden="true" />
-                                  </button>
-                                  <LessonHeaderActions
-                                    lessonId={lesson.id}
-                                    lessonName={
-                                      lesson.name?.trim() || "Untitled lesson"
-                                    }
-                                    onDuplicate={() =>
-                                      props.builder.duplicateLesson(lesson.id)
-                                    }
-                                    onRequestDelete={() => {
-                                      setConfirmDelete(lessonDeleteKey);
-                                      requestAnimationFrame(() =>
-                                        document
-                                          .querySelector<HTMLButtonElement>(
-                                            `[data-lesson-delete-confirm="${lesson.id}"]`,
-                                          )
-                                          ?.focus(),
-                                      );
-                                    }}
-                                  />
-                                </span>
-                              )}
-                            </div>
-                            {!lessonCollapsed && (
-                              <LessonDocument
-                                lesson={lesson}
-                                onDone={() => collapse(lesson.id)}
-                                onAddLesson={() =>
-                                  startLesson(module.id, lessonIndex + 1)
-                                }
-                              />
-                            )}
-                          </article>,
-                        ];
-                      })}
+                      {moduleLessons.map((lesson, lessonIndex) => (
+                        <LessonRow
+                          key={lesson.id}
+                          lesson={lesson}
+                          lessonIndex={lessonIndex}
+                          moduleId={module.id}
+                          isOpen={openLessonId === lesson.id}
+                          isDragged={dragged?.lessonId === lesson.id}
+                          dragInProgress={dragged !== null}
+                          confirmingDelete={confirmDelete === `lesson:${lesson.id}`}
+                          builder={props.builder}
+                          onToggle={toggleLesson}
+                          onCollapse={collapse}
+                          onStartDrag={startDrag}
+                          onDragEnd={endDrag}
+                          onDrop={drop}
+                          onStartLessonAt={startLesson}
+                          onRequestDeleteConfirm={requestDeleteConfirm}
+                          onCancelDeleteConfirm={cancelDeleteConfirm}
+                        />
+                      ))}
                       {moduleLessons.length === 0 && (
                         <div className="lesson-library-first-lesson">
                           <button

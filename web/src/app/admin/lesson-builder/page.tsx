@@ -48,6 +48,16 @@ export default function LessonBuilderPage() {
     initialUndoableLessons,
   );
   const lessons = history.present;
+  // Read by deleteBlock/deletePiece/moveBlock below so those callbacks can
+  // stay referentially stable (no `[lessons]` dep) across a typing session —
+  // they still see the current lessons at call time, just via a ref instead
+  // of a closure captured at the callback's last re-creation. Updated in an
+  // effect (never during render) and only ever read from event handlers
+  // that run later.
+  const lessonsRef = useRef(lessons);
+  useEffect(() => {
+    lessonsRef.current = lessons;
+  }, [lessons]);
   const [modules, setModules] = useState<LessonModule[]>([]);
   const [deletionUndo, setDeletionUndo] = useState<{
     lessonId: string;
@@ -103,9 +113,9 @@ export default function LessonBuilderPage() {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [save]);
 
-  function updateModules(next: LessonModule[]) {
+  const updateModules = useCallback((next: LessonModule[]) => {
     setModules(next);
-  }
+  }, []);
 
   const createLesson = useCallback(
     (moduleId: string) => {
@@ -120,7 +130,7 @@ export default function LessonBuilderPage() {
       );
       return lessonId;
     },
-    [modules],
+    [modules, updateModules],
   );
 
   const duplicateLesson = useCallback(
@@ -143,7 +153,7 @@ export default function LessonBuilderPage() {
         }),
       );
     },
-    [modules],
+    [modules, updateModules],
   );
 
   const deleteLesson = useCallback(
@@ -153,10 +163,14 @@ export default function LessonBuilderPage() {
       dispatch({ type: "DELETE_LESSON", lessonId });
       updateModules(result.modules);
     },
-    [deletePersistedLesson],
+    [deletePersistedLesson, updateModules],
   );
 
-  function addModule() {
+  // `modules` (unlike `lessons`) only changes on structural moves, never on
+  // typing — so wrapping these in useCallback keeps their identity stable
+  // across a typing session, which the memoized LessonRow (lesson-library-row.tsx)
+  // relies on to skip re-rendering collapsed rows on every keystroke.
+  const addModule = useCallback(() => {
     updateModules([
       ...modules,
       {
@@ -165,91 +179,105 @@ export default function LessonBuilderPage() {
         lessonIds: [],
       },
     ]);
-  }
+  }, [modules, updateModules]);
 
-  function deleteModule(moduleId: string) {
-    if (modules.length === 1) return;
-    const index = modules.findIndex((module) => module.id === moduleId);
-    const removed = modules[index];
-    const destination = modules[index > 0 ? index - 1 : 1];
-    if (!removed || !destination) return;
-    updateModules(
-      modules
-        .filter((module) => module.id !== moduleId)
-        .map((module) =>
-          module.id === destination.id
-            ? {
-                ...module,
-                lessonIds: [...module.lessonIds, ...removed.lessonIds],
-              }
-            : module,
-        ),
-    );
-  }
-
-  function moveModule(index: number, direction: -1 | 1) {
-    const target = index + direction;
-    if (target < 0 || target >= modules.length) return;
-    const next = [...modules];
-    [next[index], next[target]] = [next[target], next[index]];
-    updateModules(next);
-  }
-
-  function reorderModule(draggedId: string, targetId: string) {
-    if (draggedId === targetId) return;
-    const without = modules.filter((module) => module.id !== draggedId);
-    const targetIndex = without.findIndex((module) => module.id === targetId);
-    if (targetIndex < 0) return;
-    const dragged = modules.find((module) => module.id === draggedId);
-    if (!dragged) return;
-    updateModules(without.toSpliced(targetIndex, 0, dragged));
-  }
-
-  function moveLessonToPosition(
-    lessonId: string,
-    moduleId: string,
-    insertionIndex: number,
-  ) {
-    const source = modules.find((module) =>
-      module.lessonIds.includes(lessonId),
-    );
-    const sourceIndex = source?.lessonIds.indexOf(lessonId) ?? -1;
-    updateModules(
-      modules.map((module) => {
-        const without = module.lessonIds.filter((id) => id !== lessonId);
-        if (module.id !== moduleId) return { ...module, lessonIds: without };
-        const at =
-          source?.id === moduleId && sourceIndex < insertionIndex
-            ? insertionIndex - 1
-            : insertionIndex;
-        return {
-          ...module,
-          lessonIds: without.toSpliced(
-            Math.max(0, Math.min(at, without.length)),
-            0,
-            lessonId,
+  const deleteModule = useCallback(
+    (moduleId: string) => {
+      if (modules.length === 1) return;
+      const index = modules.findIndex((module) => module.id === moduleId);
+      const removed = modules[index];
+      const destination = modules[index > 0 ? index - 1 : 1];
+      if (!removed || !destination) return;
+      updateModules(
+        modules
+          .filter((module) => module.id !== moduleId)
+          .map((module) =>
+            module.id === destination.id
+              ? {
+                  ...module,
+                  lessonIds: [...module.lessonIds, ...removed.lessonIds],
+                }
+              : module,
           ),
-        };
-      }),
-    );
-  }
+      );
+    },
+    [modules, updateModules],
+  );
 
-  function moveLessonToModule(lessonId: string, moduleId: string) {
-    const destination = modules.find((module) => module.id === moduleId);
-    moveLessonToPosition(
-      lessonId,
-      moduleId,
-      destination?.lessonIds.length ?? 0,
-    );
-  }
+  const moveModule = useCallback(
+    (index: number, direction: -1 | 1) => {
+      const target = index + direction;
+      if (target < 0 || target >= modules.length) return;
+      const next = [...modules];
+      [next[index], next[target]] = [next[target], next[index]];
+      updateModules(next);
+    },
+    [modules, updateModules],
+  );
 
-  function patchModule(moduleId: string, patch: Partial<LessonModule>) {
-    updateModules(
-      modules.map((module) =>
-        module.id === moduleId ? { ...module, ...patch } : module,
-      ),
-    );
-  }
+  const reorderModule = useCallback(
+    (draggedId: string, targetId: string) => {
+      if (draggedId === targetId) return;
+      const without = modules.filter((module) => module.id !== draggedId);
+      const targetIndex = without.findIndex((module) => module.id === targetId);
+      if (targetIndex < 0) return;
+      const dragged = modules.find((module) => module.id === draggedId);
+      if (!dragged) return;
+      updateModules(without.toSpliced(targetIndex, 0, dragged));
+    },
+    [modules, updateModules],
+  );
+
+  const moveLessonToPosition = useCallback(
+    (lessonId: string, moduleId: string, insertionIndex: number) => {
+      const source = modules.find((module) =>
+        module.lessonIds.includes(lessonId),
+      );
+      const sourceIndex = source?.lessonIds.indexOf(lessonId) ?? -1;
+      updateModules(
+        modules.map((module) => {
+          const without = module.lessonIds.filter((id) => id !== lessonId);
+          if (module.id !== moduleId) return { ...module, lessonIds: without };
+          const at =
+            source?.id === moduleId && sourceIndex < insertionIndex
+              ? insertionIndex - 1
+              : insertionIndex;
+          return {
+            ...module,
+            lessonIds: without.toSpliced(
+              Math.max(0, Math.min(at, without.length)),
+              0,
+              lessonId,
+            ),
+          };
+        }),
+      );
+    },
+    [modules, updateModules],
+  );
+
+  const moveLessonToModule = useCallback(
+    (lessonId: string, moduleId: string) => {
+      const destination = modules.find((module) => module.id === moduleId);
+      moveLessonToPosition(
+        lessonId,
+        moduleId,
+        destination?.lessonIds.length ?? 0,
+      );
+    },
+    [modules, moveLessonToPosition],
+  );
+
+  const patchModule = useCallback(
+    (moduleId: string, patch: Partial<LessonModule>) => {
+      updateModules(
+        modules.map((module) =>
+          module.id === moduleId ? { ...module, ...patch } : module,
+        ),
+      );
+    },
+    [modules, updateModules],
+  );
 
   const addBlock = useCallback(
     (lessonId: string, type: DocumentBlockType, insertionIndex: number) => {
@@ -289,23 +317,22 @@ export default function LessonBuilderPage() {
     return languageBlockId;
   }, []);
 
-  const deleteBlock = useCallback(
-    (lessonId: string, blockId: string) => {
-      const lesson = lessons.find((candidate) => candidate.id === lessonId);
-      const index =
-        lesson?.blocks.findIndex((block) => block.id === blockId) ?? -1;
-      const block = lesson?.blocks[index];
-      if (!block) return;
-      deletionRef.current = { kind: "slide", lessonId, block, index };
-      setDeletionUndo({ lessonId, label: "Slide deleted" });
-      dispatch({ type: "DELETE_CONTENT_BLOCK", lessonId, blockId });
-    },
-    [lessons],
-  );
+  const deleteBlock = useCallback((lessonId: string, blockId: string) => {
+    const lesson = lessonsRef.current.find(
+      (candidate) => candidate.id === lessonId,
+    );
+    const index =
+      lesson?.blocks.findIndex((block) => block.id === blockId) ?? -1;
+    const block = lesson?.blocks[index];
+    if (!block) return;
+    deletionRef.current = { kind: "slide", lessonId, block, index };
+    setDeletionUndo({ lessonId, label: "Slide deleted" });
+    dispatch({ type: "DELETE_CONTENT_BLOCK", lessonId, blockId });
+  }, []);
 
   const deletePiece = useCallback(
     (lessonId: string, blockId: string, pieceId: string) => {
-      const block = lessons
+      const block = lessonsRef.current
         .find((lesson) => lesson.id === lessonId)
         ?.blocks.find((candidate) => candidate.id === blockId);
       if (!block || block.type !== "sentence") return;
@@ -323,7 +350,7 @@ export default function LessonBuilderPage() {
         languageBlockId: pieceId,
       });
     },
-    [lessons],
+    [],
   );
 
   const undoDeletion = useCallback(() => {
@@ -350,7 +377,9 @@ export default function LessonBuilderPage() {
 
   const moveBlock = useCallback(
     (lessonId: string, blockId: string, direction: -1 | 1) => {
-      const lesson = lessons.find((candidate) => candidate.id === lessonId);
+      const lesson = lessonsRef.current.find(
+        (candidate) => candidate.id === lessonId,
+      );
       const index =
         lesson?.blocks.findIndex((block) => block.id === blockId) ?? -1;
       const target = lesson?.blocks[index + direction];
@@ -363,7 +392,7 @@ export default function LessonBuilderPage() {
         position: direction < 0 ? "before" : "after",
       });
     },
-    [lessons],
+    [],
   );
 
   const builderActions: LessonBuilderActions = useMemo(

@@ -18,6 +18,16 @@ const SOURCE_PATH = path.join(
 );
 const source = readFileSync(SOURCE_PATH, "utf8");
 
+// Per-row markup (title input, collapse toggle, insert-lesson button, delete
+// confirm) was extracted into a memoized LessonRow (lesson-library-row.tsx)
+// so that typing inside one lesson doesn't force every other collapsed row
+// in the active module to re-render — see docs/design/lesson-builder.md.
+const ROW_SOURCE_PATH = path.join(
+  __dirname,
+  "../../src/components/lesson-builder/lesson-library-row.tsx",
+);
+const rowSource = readFileSync(ROW_SOURCE_PATH, "utf8");
+
 test("(source) no displayed module-header drag handle or its dead handlers remain", () => {
   assert.ok(!source.includes("lesson-library-module-drag"));
   assert.ok(!source.includes("startModuleDrag"));
@@ -53,9 +63,9 @@ test("(source) empty-module create-lesson prompt is untouched (still in-card, st
 });
 
 test("(source) between-lesson insert control carries a visible label, not screen-reader-only", () => {
-  assert.ok(source.includes("lesson-library-insert-label"));
-  assert.ok(!source.includes("Insert a lesson here"));
-  assert.ok(!source.includes('className="sr-only"'));
+  assert.ok(rowSource.includes("lesson-library-insert-label"));
+  assert.ok(!rowSource.includes("Insert a lesson here"));
+  assert.ok(!rowSource.includes('className="sr-only"'));
 });
 
 test("(source) floating keyboard-help FAB button and its ref are gone", () => {
@@ -75,7 +85,7 @@ test("(source) a same-page bridge event lets an external menu trigger the same d
 test("(source) module delete, module title input, and lesson collapse markup are preserved", () => {
   assert.ok(source.includes('aria-label="Delete module"'));
   assert.ok(source.includes("lesson-library-module-title"));
-  assert.ok(source.includes("Collapse lesson"));
+  assert.ok(rowSource.includes("Collapse lesson"));
 });
 
 test("(source) site-header.tsx exposes a matching keyboard-shortcuts menu entry, scoped to the Lesson Builder", () => {
