@@ -147,13 +147,27 @@ not from any proposal doc's aspirations.
   `opacity: 0` at rest, `opacity: 1` on slide `:hover` or `:focus-within`
   (always visible on touch/coarse pointers via a `(hover: none)` media
   query). Not tied to entering editing.
-- **Insert "+" controls are hover/focus-reveal, not always-visible**: both
-  `.lesson-document-insert` (between/after slides) and `.lesson-library-insert`
-  (between lesson rows) collapse to a 1–4px hairline at rest and expand only
-  on hover, `:focus-within`, or (for the slide one) when `.labelled` is set
-  for an empty lesson's first insert point. Any older doc describing these
-  as permanently-visible circles is describing a since-changed design —
-  the code today is reveal-on-interaction.
+- **Insert "+" controls are discoverable at rest, but the palette itself is
+  never invisibly hit-testable**: both `.lesson-document-insert` (between/
+  after slides) and `.lesson-library-insert` (between lesson rows) show a
+  20px circle "+" signpost at rest with `opacity: 0.45`, positioned
+  absolutely in the left gutter (slides) or centered (lessons) so no flow
+  space is reserved — for slides this is `.lesson-document-insert::after`,
+  a container-level pseudo-element with `pointer-events: none` (it's a cue;
+  hovering the seam, not the circle specifically, reveals the real
+  palette). The actual action palette (`.lesson-document-insert-actions`,
+  three buttons) is `opacity: 0; visibility: hidden; pointer-events: none`
+  at rest — `visibility`, not just `opacity`, so an unrevealed palette can
+  never intercept a click meant for a neighboring slide, and is correctly
+  absent from the accessibility tree and tab order. Hover, `:focus-within`,
+  `.labelled` (empty-lesson tail), or `.open` (set from React when the
+  palette was focused via `Ctrl+Alt+Enter`'s `requestAnimationFrame`
+  focus — needed since that focus call requires the button already
+  visible) reveal it at full opacity/visibility/pointer-events, alongside
+  the horizontal seam line. On touch (`@media (hover: none)`), always
+  fully visible. `.lesson-library-insert`'s button is a real, always-
+  `visibility: visible` element (only its text label hides at rest) since
+  it has no equivalent keyboard-reveal path to gate on.
 - **Explanation slide**: a grey card — `background: var(--muted)`, `border:
   0`, `border-radius: 6px`, no min-height, padding-driven sizing. No focus
   glow of its own; the slide-level blue bar carries the focus signal.
@@ -236,8 +250,6 @@ statically or spin up their own isolated server against a throwaway file.
 
 ## 8. Known gaps
 
-- `.lesson-library-insert` (the "add a lesson here" control between lesson
-  rows) is still hover/focus-only, not discoverable by a first-time glance.
 - The authoring page overflows horizontally at a 390px viewport when a long
   sentence piece is present; desktop is the deliberate current target (see
   §6), so this is unfixed by design for now, not unnoticed.
@@ -251,14 +263,14 @@ statically or spin up their own isolated server against a throwaway file.
 |---|---|---|---|
 | 0a | Consolidate design docs into this file | Sonnet | done |
 | 0b | Split `lesson-library-document.css` into per-component files, prune unused selectors and `!important`s, drop process comments | Sonnet | todo |
-| 0c | `LessonBuilderContext` to replace the LessonLibrary→LessonDocument→SentenceEditor prop chain | Sonnet | todo |
-| 0d | Sweep process/history comments ("Track E", "S3", "/tmp/…", "owned by lesson-ux") from lesson-builder code | Haiku | todo |
+| 0c | `LessonBuilderContext` to replace the LessonLibrary→LessonDocument→SentenceEditor prop chain | Sonnet | done |
+| 0d | Sweep process/history comments ("Track E", "S3", "/tmp/…", "owned by lesson-ux") from lesson-builder code | Haiku | done |
 | 0e | AGENTS.md "Lesson builder task protocol" section | Sonnet | done |
 | 1a | One lesson open at a time: collapse all on load except `?lesson=` / last-edited; opening one folds the others | Sonnet | todo |
 | 1b | Calmer resting palette for sentence slides (owner A/B with screenshots) | Sonnet | todo |
 | 1c | One quiet next-action cue under the active slide (`Ctrl Alt Enter · next slide`) | Sonnet | todo |
 | 1d | Shortcut diet: essentials vs power tier; unify chooser letters with global add chords | Sonnet | todo |
 | 1e | Keyboard help dialog: two tiers, even columns | Haiku | todo |
-| 1f | "Covers" concept chips: plain pills, priority as a dot | Haiku | todo |
+| 1f | "Covers" concept chips: plain pills, priority as a dot | Haiku | done |
 | 1g | Hint input shown only on demand, not on every activated pair | Haiku | todo |
-| 1h | Make both insert controls (between slides and between lessons) discoverable at rest — they currently collapse to a hairline | Haiku | todo |
+| 1h | Make both insert controls (between slides and between lessons) discoverable at rest — they currently collapse to a hairline | Haiku | done |

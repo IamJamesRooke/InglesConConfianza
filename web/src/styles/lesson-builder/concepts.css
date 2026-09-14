@@ -18,35 +18,29 @@
 .lesson-concept-chip {
   display: inline-flex;
   align-items: center;
-  gap: 2px;
-  min-height: 24px;
-  padding: 2px 3px 2px 8px;
+  gap: 6px;
+  padding: 2px 8px;
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 999px;
   background: var(--card);
   color: var(--foreground);
-  font-size: 11px;
-  font-weight: 600;
-  line-height: 1.2;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.3;
 }
 .lesson-concept-label:hover {
   text-decoration: underline;
   cursor: pointer;
 }
-/* English on top (prominent), Spanish beneath (secondary). */
-.lesson-concept-stack {
-  display: grid;
-  text-align: left;
-  line-height: 1.12;
-}
-.lesson-concept-stack strong {
-  font-size: 11px;
-  font-weight: 700;
-}
-.lesson-concept-stack span {
-  font-size: 9px;
-  font-weight: 500;
-  opacity: 0.68;
+/* Priority indicator: a 6px dot before the label for curriculum role. */
+.lesson-concept-chip[class*="role-"]::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--role-border, var(--border));
+  flex-shrink: 0;
 }
 .lesson-concept-remove {
   display: grid;
@@ -66,17 +60,9 @@
   background: color-mix(in oklch, currentColor 15%, transparent);
 }
 
-/* Curriculum priority tier (lesson "Covers"): a quiet neutral chip with a
-   thin left accent in the role color, not a full-perimeter colored badge —
-   the tier stays legible without shouting over the sentence content. Role
-   classes are applied dynamically as `role-${roleToken}`. */
-.lesson-concept-chip[class*="role-"] {
-  padding-left: 6px;
-  border-color: var(--border);
-  border-left: 3px solid var(--role-border, var(--border));
-  background: var(--card);
-  color: var(--foreground);
-}
+/* Curriculum priority tier indicator: a 6px dot before the label (added via
+   ::before pseudo-element above). Role classes are applied dynamically as
+   `role-${roleToken}`. */
 
 /* Coverage state (module concepts). */
 .lesson-concept-chip.is-covered {

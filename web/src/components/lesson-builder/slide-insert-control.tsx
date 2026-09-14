@@ -67,7 +67,9 @@ export function SlideInsertControl({
   }
 
   return (
-    <div className={`lesson-document-insert${labelled ? " labelled" : ""}`}>
+    <div
+      className={`lesson-document-insert${labelled ? " labelled" : ""}${focusPalette ? " open" : ""}`}
+    >
       <div
         className="lesson-document-insert-actions"
         role="group"

@@ -47,7 +47,7 @@ test("sentence rest composition, hint tools, Escape, and explanation tools stay 
   await expect(resting.getByRole("button")).toHaveCount(0);
   await expect(resting.locator(".lesson-document-hint-pill")).toHaveCount(0);
 
-  // E1: drag/duplicate/delete icons are hidden at rest (nothing focused, nothing
+  // Drag/duplicate/delete icons are hidden at rest (nothing focused, nothing
   // hovered), revealed on slide hover, no permanent text toolbar. The sentence
   // block itself holds focus right after Escape (by design), so check the
   // explanation block, which nothing has touched since.
@@ -70,7 +70,7 @@ test("sentence rest composition, hint tools, Escape, and explanation tools stay 
   const sentenceBox = await row.locator("[data-document-block]").nth(1).boundingBox();
   expect(toolsBox && sentenceBox && toolsBox.y + toolsBox.height <= sentenceBox.y).toBeTruthy();
 
-  // E2: no permanently visible shortcut strings; Bold/Italic show as B/I with full accessible names.
+  // No permanently visible shortcut strings; Bold/Italic show as B/I with full accessible names.
   await expect(formatTools.locator("kbd")).toHaveCount(0);
   await expect(formatTools.getByRole("button", { name: "Bold" })).toHaveText("B");
   await expect(formatTools.getByRole("button", { name: "Italic" })).toHaveText("I");
@@ -84,19 +84,27 @@ test("direct seam actions insert at exact boundaries without overlay", async ({ 
 
   const row = page.locator("[data-lesson-row]").last();
   const tail = row.locator(".lesson-document-tail");
+  // At rest the palette is `visibility: hidden` (not hit-testable); hover
+  // the seam first, the way a real pointer user would, to reveal it.
+  await tail.hover();
   await tail.getByRole("button", { name: "Sentence — Insert at lesson end" }).click();
   await expect(row.locator("[data-document-block]")).toHaveCount(2);
 
   const middle = row.locator(".lesson-document-insert").nth(1);
 
-  // E4: zero reserved control space at rest — no line, no icons/labels, minimal height.
+  // Zero reserved control space at rest — no line, no icons/labels, minimal height.
   await page.mouse.move(0, 0);
   const restBox = await middle.boundingBox();
   console.log("SEAM REST HEIGHT", restBox?.height);
   expect(restBox && restBox.height <= 8).toBeTruthy();
   await expect(middle.locator(".lesson-document-insert-actions")).toHaveCSS("opacity", "0");
+  // At rest the palette must be neither visible nor hit-testable — only the
+  // container-level "+" signpost (::after) is actually visible.
+  await expect(middle.locator(".lesson-document-insert-actions")).toHaveCSS("visibility", "hidden");
   const restLineOpacity = await middle.evaluate((element) => getComputedStyle(element, "::before").opacity);
   expect(Number(restLineOpacity)).toBe(0);
+  const restSignpostOpacity = await middle.evaluate((element) => getComputedStyle(element, "::after").opacity);
+  expect(Number(restSignpostOpacity)).toBeGreaterThan(0);
 
   await middle.hover();
   await page.waitForTimeout(150); // let the 0.1s height transition settle
@@ -104,6 +112,7 @@ test("direct seam actions insert at exact boundaries without overlay", async ({ 
   console.log("SEAM HOVER HEIGHT", hoverBox?.height);
   expect(hoverBox && hoverBox.height > restBox!.height).toBeTruthy();
   await expect(middle.locator(".lesson-document-insert-actions")).toHaveCSS("opacity", "1");
+  await expect(middle.locator(".lesson-document-insert-actions")).toHaveCSS("visibility", "visible");
   const hoverLineOpacity = await middle.evaluate((element) => getComputedStyle(element, "::before").opacity);
   expect(Number(hoverLineOpacity)).toBeGreaterThan(0);
   await expect(middle.getByRole("button")).toHaveCount(3);
@@ -117,6 +126,10 @@ test("direct seam actions insert at exact boundaries without overlay", async ({ 
   const middleTable = middle.getByRole("button", {
     name: "Table — Insert before slide 2",
   });
+  // Hover to reveal the palette again — a visibility:hidden element cannot
+  // take focus, so this mirrors how a pointer user reaches it before
+  // tabbing/clicking into a specific choice.
+  await middle.hover();
   await middleTable.focus();
   const previousBox = await row.locator("[data-document-block]").nth(0).boundingBox();
   const paletteBox = await middle.locator(".lesson-document-insert-actions").boundingBox();
@@ -128,11 +141,14 @@ test("direct seam actions insert at exact boundaries without overlay", async ({ 
   await expect(row.locator("[data-document-block]").nth(1).getByRole("region", { name: "Vocabulary table" })).toBeVisible();
 
   const firstSeam = row.locator(".lesson-document-insert").first();
+  await firstSeam.hover();
   await firstSeam.getByRole("button", { name: "Explanation — Insert before slide 1" }).click();
   await expect(row.locator("[data-document-block]")).toHaveCount(4);
   await expect(row.locator("[data-document-block]").first().locator(".lesson-document-explanation")).toBeVisible();
 
+  // Palette buttons exist per seam regardless of rest-state visibility —
+  // count them in the accessibility tree including hidden nodes.
   for (const seam of await row.locator(".lesson-document-insert").all()) {
-    await expect(seam.getByRole("button")).toHaveCount(3);
+    await expect(seam.getByRole("button", { includeHidden: true })).toHaveCount(3);
   }
 });

@@ -240,7 +240,7 @@ export function LessonConceptsField({
               isCoverageField
                 ? (met ? "Referenced by a lesson in this module" : "Not yet referenced by a lesson in this module")
                 : concept.conceptId
-                  ? `Priority: ${display?.role ?? "Unranked"} — click to edit`
+                  ? (display?.spanish ? `${display.spanish} — Priority: ${display?.role ?? "Unranked"}` : `Priority: ${display?.role ?? "Unranked"}`)
                   : "Not linked to the curriculum"
             }
           >
@@ -252,14 +252,7 @@ export function LessonConceptsField({
                   onSaved={applySaved}
                   onDeleted={() => onRemove(concept.id)}
                 >
-                  {display ? (
-                    <span className="lesson-concept-stack">
-                      <strong>{display.english}</strong>
-                      <span>{display.spanish}</span>
-                    </span>
-                  ) : (
-                    <span>{concept.label}</span>
-                  )}
+                  {display?.english ?? concept.label}
                 </ConceptQuickEdit>
               ) : (
                 <span className="lesson-concept-label">{concept.label}</span>

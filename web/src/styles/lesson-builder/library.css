@@ -47,9 +47,11 @@
 .lesson-library-row:last-child {
   border-bottom: 0;
 }
-/* Thin hover strip between lesson rows (and before the first one) — click
+/* Thin seam between lesson rows (and before the first one) — click
    the "+" to insert a new lesson at that exact position, instead of always
-   appending at the end and dragging it up into place. */
+   appending at the end and dragging it up into place. At rest, a 20px circle
+   "+" button is visible with reduced opacity; on hover/focus, full opacity
+   and the text label appears. On touch, always fully visible. */
 .lesson-library-insert {
   position: relative;
   height: 1px;
@@ -62,41 +64,53 @@
 }
 .lesson-library-insert > button {
   position: absolute;
-  top: -9px;
+  top: -10px;
   left: 50%;
   z-index: 4;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 4px;
-  height: 18px;
-  padding: 0 5px;
+  width: 20px;
+  height: 20px;
+  padding: 0;
   border: 1px solid var(--border);
-  border-radius: 999px;
+  border-radius: 50%;
   background: var(--card);
   color: var(--muted-foreground);
   transform: translateX(-50%);
+  opacity: 0.45;
+  transition: opacity 0.12s ease;
+}
+.lesson-library-insert:hover > button,
+.lesson-library-insert:focus-within > button,
+.lesson-library-insert > button:focus-visible {
+  opacity: 1;
 }
 .lesson-library-insert > button:hover {
   background: var(--muted);
   color: var(--foreground);
 }
-/* Collapsed to the icon's own width at rest (no reserved space for the
-   text); the wrapper itself is only visible on hover/focus already, so this
-   is purely about the label not popping in with a hard display toggle. */
+/* Hide label at rest; show on hover/focus. Use display instead of max-width
+   to avoid reserving any layout space. */
 .lesson-library-insert-label {
-  overflow: hidden;
-  max-width: 0;
-  opacity: 0;
+  display: none;
   font-size: 10px;
   font-weight: 650;
   white-space: nowrap;
-  transition: max-width 0.14s ease, opacity 0.14s ease;
 }
 .lesson-library-insert:hover .lesson-library-insert-label,
 .lesson-library-insert:focus-within .lesson-library-insert-label,
 .lesson-library-insert > button:focus-visible .lesson-library-insert-label {
-  max-width: 80px;
-  opacity: 1;
+  display: inline;
+}
+@media (hover: none), (pointer: coarse) {
+  .lesson-library-insert {
+    opacity: 1;
+  }
+  .lesson-library-insert > button {
+    opacity: 1;
+  }
 }
 .lesson-library-number {
   display: grid;

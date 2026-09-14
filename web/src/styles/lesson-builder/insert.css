@@ -1,23 +1,28 @@
 /* SlideInsertControl: the hover-revealed seam between slides (and after the
-   last one) used to insert an Explanation/Sentence/Table block. */
+   last one) used to insert an Explanation/Sentence/Table block.
 
-/* Zero reserved control space at rest: the container's resting height is
-   ordinary compact inter-slide spacing, not a height chosen to fit a hidden
-   line or hidden buttons. Hover or focus-within reveals the line AND the
-   actions together, expanding flow height only while revealed; leaving
-   collapses it again. Coarse pointers/touch get the same expanded,
-   always-visible state since there's no hover to reveal it there. */
+   At rest: a 4px gap with zero reserved layout space. A 20px "+" circle
+   signpost (`::after`, container-level so it's really visible) sits in the
+   left gutter at opacity 0.45; the actual action palette is fully hidden
+   (`opacity: 0; visibility: hidden; pointer-events: none`) and so cannot be
+   hit-tested or tabbed to at rest. Hover/focus-within/`.labelled`/`.open`
+   expand the control to 26px, show the horizontal line, and reveal the full
+   action palette at full opacity, visible and interactive. `.open` is set
+   from React when the palette was focused via keyboard (Ctrl+Alt+Enter),
+   since the rAF-scheduled `.focus()` needs the button already visible. On
+   touch, expanded and always-visible (no hover needed). */
 .lesson-document-insert {
   position: relative;
   display: grid;
   height: 4px;
-  overflow: hidden;
+  overflow: visible;
   place-items: center;
   transition: height 0.1s ease;
 }
 .lesson-document-insert:hover,
 .lesson-document-insert:focus-within,
-.lesson-document-insert.labelled {
+.lesson-document-insert.labelled,
+.lesson-document-insert.open {
   height: 26px;
   overflow: visible;
 }
@@ -36,6 +41,36 @@
 .lesson-document-insert.labelled::before {
   opacity: 0.6;
 }
+/* "+" signpost: 20px circle in the left gutter, container-level (not on the
+   palette) so it stays genuinely visible while the palette itself is
+   hidden at rest. Purely a visual cue — pointer-events: none — hovering the
+   seam (not the circle specifically) is what reveals the real palette. */
+.lesson-document-insert::after {
+  content: "+";
+  position: absolute;
+  left: -28px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--muted-foreground);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  opacity: 0.45;
+  pointer-events: none;
+}
+.lesson-document-insert:hover::after,
+.lesson-document-insert:focus-within::after,
+.lesson-document-insert.labelled::after,
+.lesson-document-insert.open::after {
+  opacity: 1;
+}
 .lesson-document-insert-actions {
   position: relative;
   display: flex;
@@ -43,11 +78,17 @@
   justify-content: center;
   gap: 3px;
   opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.1s ease;
 }
 .lesson-document-insert:hover .lesson-document-insert-actions,
 .lesson-document-insert:focus-within .lesson-document-insert-actions,
-.lesson-document-insert.labelled .lesson-document-insert-actions {
+.lesson-document-insert.labelled .lesson-document-insert-actions,
+.lesson-document-insert.open .lesson-document-insert-actions {
   opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 .lesson-document-insert-actions > span {
   margin-right: 4px;
@@ -108,8 +149,13 @@
   }
   .lesson-document-insert-actions {
     opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
   .lesson-document-insert::before {
     opacity: 0.6;
+  }
+  .lesson-document-insert::after {
+    opacity: 1;
   }
 }
