@@ -40,3 +40,14 @@ Migration is complete. Do not recreate the retired Markdown source trees, build 
 - Keep Lesson Builder persistence separate from the curriculum database until the owner explicitly changes that boundary.
 - Treat security as part of design and testing. Record only controls that were actually implemented and verified.
 - Keep changes within the requested scope and preserve unrelated user work in a dirty worktree.
+
+## Lesson builder task protocol
+
+- Before touching the Lesson Builder, read `docs/engineering/code-map.md` and `docs/design/lesson-builder.md` first — and nothing else in `docs/design/` unless a specific question sends you there.
+- Where `docs/design/lesson-builder.md` and the actual code disagree, the code wins; treat the mismatch as a doc bug to fix, not a code bug.
+- Never edit `web/data/lessons.json` by hand, and never point a test, script, or manual check at the owner's `localhost:3000` — that is live authoring data.
+- Verify with: `npm run test:unit` (scope with `-- tests/unit/<file>.test.ts` when possible), `npx eslint <touched files>`, `npx tsc --noEmit`, `npm run build`, and `npm run ux:check` (Playwright; runs its own dev server on an isolated port against a throwaway lessons file — safe anytime). A pre-existing timing flake around concept search in `tests/ux/authoring-ergonomics.spec.ts` is known; a clean rerun is not a regression signal.
+- Do not commit unless the user explicitly asks.
+- When you finish a task, update its row in the Roadmap table and the Known gaps section of `docs/design/lesson-builder.md` before reporting done.
+- Keep changes inside `web/src/components/lesson-builder`, `web/src/lib/lesson-builder`, `web/src/app/admin/lesson-builder`, and `web/src/styles` unless the task explicitly asks you to touch other areas.
+- Report back briefly: what changed, which checks you ran and their results, and any remaining friction or follow-up worth flagging.
