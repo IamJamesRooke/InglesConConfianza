@@ -287,16 +287,6 @@ export function ModuleNavigator({
             aria-label="Search lessons, phrases, or concepts"
           />
         </div>
-        <button
-          type="button"
-          className="module-navigator-add"
-          onClick={onAddModule}
-          aria-label="Add module"
-          title="Add module"
-        >
-          <Plus size={14} aria-hidden="true" />
-          <span>Add module</span>
-        </button>
       </div>
 
       {searching ? (
@@ -383,6 +373,19 @@ export function ModuleNavigator({
             </li>
           ))}
         </ul>
+      )}
+
+      {!searching && (
+        <button
+          type="button"
+          className="module-navigator-add"
+          onClick={onAddModule}
+          aria-label="Add module"
+          title="Add module"
+        >
+          <Plus size={13} aria-hidden="true" />
+          <span>Add module</span>
+        </button>
       )}
     </nav>
   );

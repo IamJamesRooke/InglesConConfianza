@@ -1,118 +1,85 @@
 "use client";
 
-import { Plus } from "lucide-react";
+import { AlignLeft, Languages, Table2 } from "lucide-react";
 import { useEffect, useRef, type KeyboardEvent } from "react";
 
 export type DocumentBlockType = "explanation" | "sentence" | "vocabulary";
 
-const BLOCK_TYPES: { type: DocumentBlockType; label: string; key: string }[] = [
-  { type: "explanation", label: "Explanation", key: "E" },
-  { type: "sentence", label: "Sentence", key: "S" },
-  { type: "vocabulary", label: "Vocabulary table", key: "V" },
+const BLOCK_TYPES: {
+  type: DocumentBlockType;
+  label: string;
+  icon: typeof Table2;
+}[] = [
+  { type: "vocabulary", label: "Table", icon: Table2 },
+  { type: "sentence", label: "Sentence", icon: Languages },
+  { type: "explanation", label: "Explanation", icon: AlignLeft },
 ];
 
 type Props = {
-  open: boolean;
-  label?: string;
-  insertLabel?: string;
-  inline?: boolean;
-  autoFocusOnOpen?: boolean;
-  selected: number;
-  onSelected: (index: number) => void;
-  onToggle: () => void;
+  insertionLabel: string;
+  labelled?: boolean;
+  focusPalette?: boolean;
   onAdd: (type: DocumentBlockType) => void;
   onClose: () => void;
 };
 
 export function SlideInsertControl({
-  open,
-  // No default label: between-slide inserts are icon-only (a repeated
-  // "+ Add slide" phrase at every seam reads as distracting noise once
-  // there are more than one or two slides) — the exact position lives in
-  // insertLabel's aria-label/title instead. Only the tail control passes
-  // an explicit label, since it's the one genuinely standalone case.
-  label,
-  insertLabel,
-  inline = false,
-  autoFocusOnOpen = true,
-  selected,
-  onSelected,
-  onToggle,
+  insertionLabel,
+  labelled = false,
+  focusPalette = false,
   onAdd,
   onClose,
 }: Props) {
   const buttons = useRef<(HTMLButtonElement | null)[]>([]);
-  const showChoices = open || inline;
 
   useEffect(() => {
-    if (showChoices && autoFocusOnOpen)
-      requestAnimationFrame(() => buttons.current[selected]?.focus());
-  }, [showChoices, autoFocusOnOpen, selected]);
+    if (focusPalette) requestAnimationFrame(() => buttons.current[1]?.focus());
+  }, [focusPalette]);
 
   function handleKey(event: KeyboardEvent<HTMLDivElement>) {
+    const current = buttons.current.indexOf(document.activeElement as HTMLButtonElement);
     if (event.key === "Escape") {
       event.preventDefault();
+      event.stopPropagation();
       onClose();
       return;
     }
     if (event.key === "ArrowRight" || event.key === "ArrowDown") {
       event.preventDefault();
-      onSelected((selected + 1) % BLOCK_TYPES.length);
-      return;
-    }
-    if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+      buttons.current[(Math.max(0, current) + 1) % BLOCK_TYPES.length]?.focus();
+    } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
       event.preventDefault();
-      onSelected((selected - 1 + BLOCK_TYPES.length) % BLOCK_TYPES.length);
-      return;
-    }
-    const directChoice = BLOCK_TYPES.find(
-      (choice) => choice.key.toLowerCase() === event.key.toLowerCase(),
-    );
-    if (directChoice) {
-      event.preventDefault();
-      onAdd(directChoice.type);
+      buttons.current[(Math.max(0, current) - 1 + BLOCK_TYPES.length) % BLOCK_TYPES.length]?.focus();
     }
   }
 
   return (
-    <div
-      className={`lesson-document-insert${inline ? " inline" : ""}${open ? " open" : ""}`}
-    >
-      {!inline && (
-        <button
-          type="button"
-          onClick={onToggle}
-          aria-expanded={open}
-          aria-label={insertLabel}
-          title={insertLabel}
-        >
-          <Plus size={13} aria-hidden="true" />
-          {label && <span>{label}</span>}
-        </button>
-      )}
-      {showChoices && (
-        <div
-          className="lesson-document-insert-choices"
-          role="toolbar"
-          aria-label="Choose a slide type"
-          onKeyDown={handleKey}
-        >
-          {BLOCK_TYPES.map((choice, index) => (
+    <div className={`lesson-document-insert${labelled ? " labelled" : ""}`}>
+      <div
+        className="lesson-document-insert-actions"
+        role="group"
+        aria-label={insertionLabel}
+        onKeyDown={handleKey}
+      >
+        {labelled && <span>Add slide</span>}
+        {BLOCK_TYPES.map((choice, index) => {
+          const Icon = choice.icon;
+          return (
             <button
               key={choice.type}
-              ref={(element) => {
-                buttons.current[index] = element;
-              }}
+              ref={(element) => { buttons.current[index] = element; }}
               type="button"
-              className={selected === index ? "selected" : ""}
-              onFocus={() => onSelected(index)}
+              aria-label={`${choice.label} — ${insertionLabel}`}
+              title={`${choice.label} — ${insertionLabel}`}
+              onMouseDown={(event) => event.preventDefault()}
               onClick={() => onAdd(choice.type)}
             >
-              {choice.label} <kbd>{choice.key}</kbd>
+              <Icon size={15} aria-hidden="true" />
+              <span>{choice.label}</span>
             </button>
-          ))}
-        </div>
-      )}
+          );
+        })}
+      </div>
     </div>
   );
 }

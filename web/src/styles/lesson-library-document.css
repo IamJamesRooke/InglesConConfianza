@@ -576,15 +576,6 @@
   position: relative;
   max-width: 850px;
 }
-.lesson-document-block {
-  position: relative;
-  padding: 3px 24px 3px 9px;
-  border-radius: 7px;
-}
-.lesson-document-block:focus-within {
-  background: var(--muted);
-  box-shadow: inset 2px 0 color-mix(in oklch, var(--primary) 22%, var(--border));
-}
 .lesson-document-block-tools {
   position: absolute;
   z-index: 5;
@@ -823,82 +814,6 @@
   color: var(--muted-foreground);
   font-size: 10px;
   font-weight: 650;
-}
-/* Collapsed to a thin seam at rest — not just visually quiet but taking
-   almost no vertical space — and only expands to fit the actual button on
-   hover/focus/while its own chooser is open. Hiding the button with
-   opacity alone (a previous pass) kept its full height reserved in the
-   layout, which just swapped "a visible button" for "an equally tall
-   blank gap" — no real space was recovered. The button itself is
-   positioned absolute and stays interactive (not display:none) even while
-   the strip is collapsed, so its hover/focus target still exists — a
-   keyboard user tabbing to it, or a mouse hovering that seam, expands the
-   strip and reveals it; display:none would have made it truly
-   unreachable by keyboard. Between slides this is a small icon-only "+"
-   (no repeated "Add slide" text at every seam); the exact position lives
-   in its aria-label/title. Only the tail control (nothing below it to
-   give scale) stays always visible at full height — it's the single,
-   low-frequency "how do I add a slide" affordance, not a repeated
-   fixture, and an empty/just-finished lesson needs it discoverable
-   without hovering blind over an unmarked sliver. */
-.lesson-document-insert {
-  position: relative;
-  height: 6px;
-  margin: 0;
-}
-.lesson-document-insert:hover,
-.lesson-document-insert:focus-within,
-.lesson-document-insert.open {
-  height: 20px;
-}
-.lesson-document-insert > button {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  width: 18px;
-  height: 18px;
-  padding: 0;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: var(--card);
-  color: var(--muted-foreground);
-  font-size: 10px;
-  font-weight: 650;
-  opacity: 0;
-}
-.lesson-document-insert:hover > button,
-.lesson-document-insert:focus-within > button,
-.lesson-document-insert.open > button,
-.lesson-document-insert > button:focus-visible {
-  opacity: 1;
-}
-.lesson-document-insert > button:has(span) {
-  position: static;
-  top: auto;
-  left: auto;
-  transform: none;
-  width: auto;
-  height: auto;
-  padding: 1px 7px;
-  border-radius: 6px;
-  opacity: 1;
-}
-.lesson-document-insert:has(> button:has(span)) {
-  height: auto;
-}
-.lesson-document-insert > button:hover {
-  border-color: var(--primary);
-  color: var(--primary);
-  background: var(--muted);
-}
-.lesson-document-insert-menu {
-  top: 17px;
-  left: -28px;
 }
 .lesson-document-undo {
   display: inline-flex;
@@ -1868,7 +1783,7 @@
   box-shadow: none;
 }
 .lesson-document-explanation
-  .authoring-wysiwyg-document:has(.practice-markdown-content:empty)::before {
+  .authoring-wysiwyg-explanation:has(.practice-markdown-content:empty)::before {
   text-align: left;
   font-size: 14px;
   font-weight: 450;
@@ -1912,48 +1827,6 @@
   font-size: 9px;
   line-height: 1.4;
 }
-.lesson-document-block-chrome {
-  position: absolute;
-  z-index: 6;
-  top: 4px;
-  right: -28px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  opacity: 0;
-  transition: opacity 0.1s;
-}
-.lesson-document-block:hover > .lesson-document-block-chrome,
-.lesson-document-block:focus-within > .lesson-document-block-chrome {
-  opacity: 1;
-}
-.lesson-document-body:has(.lesson-document-block:hover)
-  .lesson-document-block:focus-within:not(:hover)
-  > .lesson-document-block-chrome {
-  opacity: 0;
-}
-.lesson-document-block-chrome > button {
-  display: grid;
-  width: 22px;
-  height: 22px;
-  place-items: center;
-  border-radius: 4px;
-  color: var(--muted-foreground);
-}
-.lesson-document-block-chrome > button:hover {
-  background: color-mix(in oklch, var(--foreground) 10%, transparent);
-  color: var(--foreground);
-}
-.lesson-document-block-chrome > .danger:hover {
-  color: var(--destructive);
-}
-.lesson-document-block-handle {
-  cursor: grab;
-}
-.lesson-document-block-handle:active {
-  cursor: grabbing;
-}
 .lesson-document-block.dragging {
   opacity: 0.4;
 }
@@ -1963,61 +1836,96 @@
 .lesson-document-block.drop-after {
   box-shadow: inset 0 -2px 0 var(--primary);
 }
-.lesson-document-piece-actions {
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  display: flex;
-  gap: 2px;
-  min-height: 17px;
+/* Zero reserved control space at rest: the container's resting height is
+   ordinary compact inter-slide spacing (the same rhythm as any block-to-
+   block gap), not a height chosen to fit a hidden line or hidden buttons.
+   Hover or focus-within reveals the line AND the three actions together,
+   expanding flow height only while revealed; leaving collapses it again.
+   Coarse pointers/touch get the same expanded, always-visible state since
+   there's no hover to reveal it there. */
+.lesson-document-insert {
+  position: relative;
+  display: grid;
+  height: 4px;
+  overflow: hidden;
+  place-items: center;
+  transition: height 0.1s ease;
 }
-.lesson-document-insert-choices {
+.lesson-document-insert:hover,
+.lesson-document-insert:focus-within,
+.lesson-document-insert.labelled {
+  height: 26px;
+  overflow: visible;
+}
+.lesson-document-insert::before {
+  content: "";
   position: absolute;
-  z-index: 40;
-  top: 28px;
-  left: 0;
+  left: 12px;
+  right: 12px;
+  top: 50%;
+  height: 1px;
+  background: var(--border);
+  opacity: 0;
+}
+.lesson-document-insert:hover::before,
+.lesson-document-insert:focus-within::before,
+.lesson-document-insert.labelled::before {
+  opacity: 0.6;
+}
+.lesson-document-insert-actions {
+  position: relative;
   display: flex;
-  min-height: 33px;
   align-items: center;
-  gap: 4px;
-  padding: 5px 7px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--popover, var(--card));
-  box-shadow: 0 12px 30px
-    color-mix(in oklch, var(--foreground) 16%, transparent);
+  justify-content: center;
+  gap: 3px;
+  opacity: 0;
 }
-.lesson-document-insert-choices button {
-  padding: 5px 7px;
-  border-radius: 4px;
+.lesson-document-insert:hover .lesson-document-insert-actions,
+.lesson-document-insert:focus-within .lesson-document-insert-actions,
+.lesson-document-insert.labelled .lesson-document-insert-actions {
+  opacity: 1;
+}
+.lesson-document-insert-actions > span {
+  margin-right: 4px;
   color: var(--muted-foreground);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
 }
-.lesson-document-insert-choices button.selected {
-  background: var(--card);
-  color: var(--foreground);
-  box-shadow: 0 0 0 1px var(--border);
-}
-/* Focus gets its own ring, separate from the "selected" fill below — a
-   keyboard user should always be able to tell "this is where my keyboard
-   focus is" apart from "this is what Enter would add right now", even
-   though in this component they're normally the same option. */
-.lesson-document-insert-choices button:focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 1px;
-}
-.lesson-document-insert-choices kbd {
-  margin-left: 4px;
-  color: color-mix(in oklch, var(--muted-foreground) 70%, transparent);
-  font:
-    600 9px ui-monospace,
-    monospace;
-}
-.lesson-document-insert-choices > span {
-  margin-left: auto;
+.lesson-document-insert-actions button {
+  display: inline-flex;
+  min-width: 30px;
+  min-height: 20px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 2px 6px;
+  border: 1px solid transparent;
+  border-radius: 6px;
   color: var(--muted-foreground);
-  font-size: 9px;
+  background: var(--surface-writing);
+  font-size: 10px;
+  font-weight: 650;
+  line-height: 1;
+}
+.lesson-document-insert-actions button > span {
+  white-space: nowrap;
+}
+.lesson-document-insert-actions button:hover,
+.lesson-document-insert-actions button:focus-visible {
+  border-color: var(--primary);
+  color: var(--primary);
+  outline: none;
+}
+@media (hover: none), (pointer: coarse) {
+  .lesson-document-insert {
+    height: 26px;
+  }
+  .lesson-document-insert-actions {
+    opacity: 1;
+  }
+  .lesson-document-insert::before {
+    opacity: 0.6;
+  }
 }
 .lesson-document-sentence {
   padding-block: 0;
@@ -2131,55 +2039,10 @@
    row is shorter, so top:2px already clears the row's own padding without
    a table-specific position. */
 
-/* Persistent bottom bar: every slide type with its shortcut, plus Done. */
-/* A single "Add slide" button closes out the document; between-slide inserts and
-   the editing HUD cover the rest. */
 .lesson-document-tail {
   margin-top: 12px;
   padding-top: 8px;
   border-top: 1px solid var(--border);
-}
-/* Empty lesson: the picker is its own contained panel, no bare hairline above it. */
-.lesson-document-tail:has(.lesson-document-insert.inline) {
-  margin-top: 10px;
-  padding-top: 0;
-  border-top: 0;
-}
-/* Empty lesson: the slide-type picker sits inline, centered — no prompt text,
-   no toggle button. */
-.lesson-document-insert.inline {
-  position: static;
-  height: auto;
-  opacity: 1;
-  display: flex;
-  justify-content: center;
-}
-.lesson-document-insert.inline .lesson-document-insert-choices {
-  position: static;
-  min-height: 0;
-  gap: 3px;
-  padding: 5px;
-  border: 1px solid var(--border);
-  border-radius: 11px;
-  background: var(--muted);
-  box-shadow: none;
-}
-.lesson-document-insert.inline .lesson-document-insert-choices::before {
-  content: "Add a slide";
-  align-self: center;
-  padding: 0 8px 0 6px;
-  color: var(--muted-foreground);
-  font-size: 11px;
-  font-weight: 700;
-}
-.lesson-document-insert.inline .lesson-document-insert-choices button {
-  padding: 6px 11px;
-  border-radius: 8px;
-  font-size: 12px;
-}
-.lesson-document-insert.inline .lesson-document-insert-choices button:hover {
-  background: var(--card);
-  color: var(--foreground);
 }
 
 /* Editing HUD — context-sensitive shortcut/action bar, fixed to the bottom. */
@@ -2363,22 +2226,9 @@
   .lesson-document-block {
     padding-right: 26px;
   }
-  .lesson-document-block-chrome {
-    top: 3px;
-    right: 1px;
-    flex-direction: row;
-    gap: 1px;
-  }
   .lesson-library-inline-actions {
     flex-wrap: wrap;
     padding-left: 15px;
-  }
-  .lesson-document-insert-choices {
-    flex-wrap: wrap;
-  }
-  .lesson-document-insert-choices > span {
-    width: 100%;
-    margin-left: 7px;
   }
 }
 
@@ -2506,15 +2356,59 @@
   background: var(--surface-writing);
 }
 .lesson-document-block {
-  padding-block: 2px;
+  /* Right side keeps a permanent horizontal gutter for the slide-action
+     icons below — reserved space, but width only, never height, so content
+     never runs underneath them regardless of hover/focus state. */
+  padding: 0 54px 0 8px;
 }
-.lesson-document-block:focus-within::after {
+.lesson-document-block[data-active="false"]:hover,
+.lesson-document-block[data-active="false"]:focus-within,
+.lesson-document-block[data-active="true"] {
+  transform: none;
+  box-shadow: none;
+  background: transparent;
+}
+.lesson-document-block-actions {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  z-index: 3;
+  display: flex;
+  gap: 2px;
+  opacity: 0;
+}
+.lesson-document-block:hover > .lesson-document-block-actions,
+.lesson-document-block:focus-within > .lesson-document-block-actions {
+  opacity: 1;
+}
+.lesson-document-block-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  color: var(--muted-foreground);
+  background: var(--surface-writing);
+}
+.lesson-document-block-actions button:hover,
+.lesson-document-block-actions button:focus-visible {
+  color: var(--foreground);
+  background: var(--muted);
+  outline: none;
+}
+.lesson-document-block-actions button.danger:hover,
+.lesson-document-block-actions button.danger:focus-visible {
+  color: var(--destructive);
+}
+@media (hover: none), (pointer: coarse) {
+  .lesson-document-block-actions {
+    opacity: 1;
+  }
+}
+.lesson-document-block[data-active="true"]::after {
   width: 4px;
   background: var(--primary);
-}
-.lesson-document-block:has(.lesson-document-explanation):hover,
-.lesson-document-block:has(.lesson-document-explanation):focus-within {
-  background: var(--muted);
 }
 /* A clean, content-driven writing surface — no oversized min-height forcing
    a one-line note into an ~80px box, no border/shadow at rest. A light
@@ -2535,11 +2429,67 @@
    right next to it read at two different sizes for no real reason, and the
    larger one took visibly more height per line. */
 .lesson-document-explanation
-  .authoring-wysiwyg-document:has(.practice-markdown-content:empty)::before,
+  .authoring-wysiwyg-explanation:has(.practice-markdown-content:empty)::before,
 .lesson-document-explanation .practice-markdown-content :is(p, li, h1, h2, h3),
 .lesson-document-explanation .practice-markdown-content :is(ol, ul) {
   font-size: 14px !important;
   line-height: 1.45 !important;
+}
+.lesson-sentence-presentation {
+  padding: 0 5px;
+}
+.lesson-sentence-presentation-instruction {
+  margin-bottom: 1px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+}
+.lesson-sentence-presentation-empty {
+  color: var(--muted-foreground);
+  font-size: 13px;
+  font-style: italic;
+}
+.lesson-sentence-composed {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+.lesson-sentence-composed[lang="es"] {
+  color: var(--lesson-hl-es);
+  font-weight: 750;
+}
+.lesson-sentence-composed[lang="en"] {
+  color: var(--lesson-hl-en);
+}
+.lesson-sentence-phrase {
+  white-space: normal;
+}
+.lesson-document-active-tools {
+  display: flex;
+  min-height: 22px;
+  align-items: center;
+  gap: 3px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+.lesson-document-active-tools button {
+  display: inline-flex;
+  min-height: 20px;
+  align-items: center;
+  gap: 3px;
+  padding-inline: 6px;
+  border-radius: 5px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  font-weight: 700;
+}
+.lesson-document-active-tools button:hover,
+.lesson-document-active-tools button:focus-visible {
+  color: var(--foreground);
+  background: var(--surface-writing);
+}
+.lesson-document-active-tools .danger:hover {
+  color: var(--destructive);
 }
 .lesson-document-pieces {
   /* Modest, consistent gap — column gap between pairs on the same row,
@@ -2556,7 +2506,7 @@
      typed text (it used to overlap the last letters of a longer word like
      "comprar") even though there's no border to visually anchor it to
      anymore. */
-  padding: 1px 20px 1px 5px;
+  padding: 1px 5px;
   border: 1px solid transparent;
   border-radius: 8px;
   background: transparent;
@@ -2583,45 +2533,6 @@
 .lesson-document-piece > textarea:focus {
   background: var(--surface-writing);
   box-shadow: 0 0 0 3px color-mix(in oklch, var(--primary) 24%, transparent);
-}
-/* One contextual tool area per pair (hint + delete together), not icons
-   scattered at two separate corners — only visible while the pair is
-   focused/active (a pair with a saved hint keeps just the hint toggle
-   showing even when inactive, so authors can see at a glance which pairs
-   already have one). Reachable by Tab, not a hover-only affordance, so it
-   doesn't repeat the invisible-insert-control bug fixed elsewhere in this
-   file. */
-.lesson-document-piece-actions button {
-  display: grid;
-  width: 18px;
-  height: 18px;
-  place-items: center;
-  border-radius: 999px;
-  color: var(--muted-foreground);
-}
-.lesson-document-piece-actions button:hover {
-  color: var(--primary);
-  background: color-mix(in oklch, var(--primary) 12%, transparent);
-}
-.lesson-document-piece-actions button.has-hint {
-  color: var(--hint-foreground);
-  background: var(--hint);
-}
-.lesson-document-piece-actions button.has-hint:hover {
-  background: color-mix(in oklch, var(--hint) 80%, var(--foreground));
-}
-.lesson-document-piece-delete:hover {
-  color: var(--destructive);
-  background: color-mix(in oklch, var(--destructive) 10%, transparent);
-}
-.lesson-document-insert-choices button.selected {
-  color: var(--primary-foreground);
-  background: var(--primary);
-  box-shadow: none;
-}
-.lesson-document-insert-choices button:focus-visible {
-  outline: 2px solid var(--primary-foreground);
-  outline-offset: -3px;
 }
 .lesson-library-add-lesson {
   width: fit-content;
@@ -2701,10 +2612,9 @@
 }
 .lesson-document-sentence-body.vocab-table {
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 4px;
   width: fit-content;
-  margin-inline: auto;
 }
 .lesson-document-language-key {
   display: grid;
@@ -2820,40 +2730,62 @@
   outline: 2px solid var(--primary);
   outline-offset: 1px;
 }
-.lesson-document-hint-pill.editing {
+.lesson-document-hint-list {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   gap: 4px;
+  margin-top: 6px;
 }
-.lesson-document-hint-pill.editing input {
-  min-width: 4ch;
-  max-width: 200px;
-  border: 0;
-  outline: none;
-  background: transparent;
-  color: inherit;
-  font: inherit;
-  field-sizing: content;
+.lesson-document-hint-list .lesson-document-hint-pill span {
+  font-weight: 800;
 }
-.lesson-document-hint-pill.editing input::placeholder {
-  color: color-mix(in oklch, var(--hint-foreground) 65%, transparent);
-  font-weight: 500;
+.lesson-document-context-editor {
+  display: flex;
+  width: min(100%, 620px);
+  align-items: center;
+  gap: 6px;
+  margin-top: 7px;
+  padding: 7px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-writing);
+  flex-wrap: wrap;
+  font-size: 11px;
 }
-/* The remove control only needs to exist while editing — a resting pill
-   removes it by editing the text down to empty, same as any other field. */
-.lesson-document-hint-pill.editing > button {
-  display: grid;
-  width: 15px;
-  height: 15px;
-  flex: none;
-  place-items: center;
-  border-radius: 999px;
-  color: var(--hint-foreground);
-  font-size: 12px;
-  line-height: 1;
+.lesson-document-context-editor > label,
+.lesson-document-context-editor > span {
+  color: var(--muted-foreground);
+  font-weight: 700;
 }
-.lesson-document-hint-pill.editing > button:hover {
-  background: color-mix(in oklch, var(--hint-foreground) 20%, transparent);
+.lesson-document-context-editor input {
+  min-width: 12rem;
+  min-height: 28px;
+  flex: 1;
+  padding-inline: 7px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: var(--background);
+  color: var(--foreground);
+}
+.lesson-document-context-editor button {
+  min-height: 26px;
+  padding-inline: 7px;
+  border-radius: 5px;
+  color: var(--muted-foreground);
+  font-weight: 700;
+}
+.lesson-document-context-editor button:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-document-context-editor button.danger:hover {
+  color: var(--destructive);
+}
+.lesson-document-alternative {
+  display: flex;
+  min-width: min(100%, 20rem);
+  flex: 1;
+  gap: 3px;
 }
 
 /* A short, quiet text action — no dashed box, no verbose label — that sits
@@ -3082,11 +3014,8 @@
    component's responsibility. */
 @media print {
   .lesson-document-insert,
-  .lesson-document-block-chrome,
   .lesson-document-add-pair,
   .lesson-document-add-row,
-  .lesson-document-piece-actions,
-  .lesson-document-piece-delete,
   .lesson-document-piece.trailing,
   .lesson-document-sentence-guide,
   .lesson-document-undo {

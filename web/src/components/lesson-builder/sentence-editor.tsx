@@ -1,17 +1,19 @@
 "use client";
 
-import { Lightbulb, Trash2 } from "lucide-react";
+import { Lightbulb, ListPlus, Plus, Trash2 } from "lucide-react";
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 
+import { SentencePresentation } from "@/components/lesson-builder/sentence-presentation";
 import type { SentenceBlock } from "@/lib/lesson-builder/types";
+
+type Piece = SentenceBlock["languageBlocks"][number];
 
 type Props = {
   block: SentenceBlock;
   active: boolean;
-  onUpdateSentence: (
-    field: "promptText" | "helperText" | "answerFeedback",
-    value: string | null,
-  ) => void;
+  onActivate: () => void;
+  onExit: () => void;
+  onUpdateSentence: (field: "promptText" | "helperText" | "answerFeedback", value: string | null) => void;
   onUpdateSpanish: (pieceId: string, value: string) => void;
   onUpdateAnswer: (pieceId: string, answerIndex: number, value: string) => void;
   onUpdateCallout: (pieceId: string, value: string | null) => void;
@@ -21,39 +23,21 @@ type Props = {
   onDeletePiece: (pieceId: string) => void;
 };
 
-export function SentenceEditor({
-  block,
-  active,
-  onUpdateSentence,
-  onUpdateSpanish,
-  onUpdateAnswer,
-  onUpdateCallout,
-  onAddAnswer,
-  onRemoveAnswer,
-  onAddPiece,
-  onDeletePiece,
-}: Props) {
+export function SentenceEditor(props: Props) {
+  const { block, active } = props;
   const [activePiece, setActivePiece] = useState<string | null>(null);
   const [editingHintId, setEditingHintId] = useState<string | null>(null);
-  const [draftSpanish, setDraftSpanish] = useState("");
+  const [editingAlternativesId, setEditingAlternativesId] = useState<string | null>(null);
+  const [showInstruction, setShowInstruction] = useState(false);
   const spanishRefs = useRef(new Map<string, HTMLTextAreaElement>());
   const englishRefs = useRef(new Map<string, HTMLTextAreaElement>());
-  const hintRefs = useRef(new Map<string, HTMLInputElement>());
-  const committingRef = useRef(false);
-  const composingTrailingRef = useRef(false);
+  const hintInputRef = useRef<HTMLInputElement | null>(null);
+  const instructionButtonRef = useRef<HTMLButtonElement | null>(null);
+  const alternativeRefs = useRef(new Map<number, HTMLInputElement>());
   const focusCommittedPiece = useRef<string | null>(null);
   const isTable = block.layout === "vocabulary_table";
-  const isEmpty = block.languageBlocks.every(
-    (piece) =>
-      !piece.spanish.trim() && !(piece.acceptedAnswers[0] ?? "").trim(),
-  );
   const lastPiece = block.languageBlocks.at(-1);
-  const lastPieceComplete =
-    !lastPiece ||
-    (Boolean(lastPiece.spanish.trim()) &&
-      Boolean(lastPiece.acceptedAnswers[0]?.trim()));
-  const showTrailingPiece =
-    lastPieceComplete && (active || block.languageBlocks.length === 0);
+  const lastPieceComplete = !lastPiece || (Boolean(lastPiece.spanish.trim()) && Boolean(lastPiece.acceptedAnswers[0]?.trim()));
 
   useEffect(() => {
     const id = focusCommittedPiece.current;
@@ -65,478 +49,236 @@ export function SentenceEditor({
     focusCommittedPiece.current = null;
   }, [block.languageBlocks]);
 
-  type Piece = SentenceBlock["languageBlocks"][number];
-  // A hint renders as a resting pill (plain authored text, no edit chrome)
-  // until clicked or activated by keyboard, then swaps to an editable input
-  // — "disclosure", not an always-open text field. Newly added hints start
-  // straight in the editing state since there's nothing to show yet.
-  function addHint(piece: Piece) {
-    if (piece.callout !== null) return;
-    setEditingHintId(piece.id);
-    onUpdateCallout(piece.id, "");
+  useEffect(() => {
+    if (active) return;
+    const reset = window.setTimeout(() => {
+      setActivePiece(null);
+      setEditingHintId(null);
+      setEditingAlternativesId(null);
+      setShowInstruction(false);
+    }, 0);
+    return () => window.clearTimeout(reset);
+  }, [active]);
+
+  function pieceLabel(piece: Piece, index = block.languageBlocks.indexOf(piece)) {
+    return piece.spanish.trim() || `${isTable ? "row" : "pair"} ${index + 1}`;
   }
-  // Removing a hint or alternative answer used to leave focus on whatever
-  // button just unmounted — the browser falls back to <body>, silently
-  // dropping keyboard users out of the piece they were editing. Return focus
-  // to that piece's Spanish field instead, since it's always present.
-  function removeHint(piece: Piece) {
-    onUpdateCallout(piece.id, null);
+
+  function openHint(piece: Piece) {
+    props.onActivate();
+    setActivePiece(piece.id);
+    setEditingAlternativesId(null);
+    setEditingHintId(piece.id);
+    if (piece.callout === null) props.onUpdateCallout(piece.id, "");
+    requestAnimationFrame(() => hintInputRef.current?.focus());
+  }
+
+  function closeHint(piece: Piece) {
+    if (!piece.callout?.trim()) props.onUpdateCallout(piece.id, null);
     setEditingHintId(null);
     requestAnimationFrame(() => spanishRefs.current.get(piece.id)?.focus());
   }
-  // The hint toggle button stays on the pair card (so it's reachable right
-  // where the pair is), but the pill itself renders in an annotation region
-  // right under that same pair (see renderHint below) — a sibling of the
-  // card, not a child of it, so a long hint can't widen or reshape the
-  // card's own shrink-wrap sizing. Toggling an existing hint opens it for
-  // editing instead of creating a duplicate.
-  function toggleHint(piece: Piece) {
-    if (piece.callout === null) {
-      addHint(piece);
-      return;
-    }
-    setEditingHintId(piece.id);
-    requestAnimationFrame(() => hintRefs.current.get(piece.id)?.focus());
+
+  function removeHint(piece: Piece) {
+    props.onUpdateCallout(piece.id, null);
+    setEditingHintId(null);
+    requestAnimationFrame(() => spanishRefs.current.get(piece.id)?.focus());
   }
-  // Alternate accepted answers now live as extra lines in the same English
-  // field (Shift+Enter, or this shortcut, adds one) instead of separate
-  // "+ another accepted answer" rows — see handleEnglishAnswerChange, which
-  // reconciles the field's lines back into the acceptedAnswers array.
-  function addAnswerLine(piece: Piece) {
-    onAddAnswer(piece.id);
-    requestAnimationFrame(() => {
-      const field = englishRefs.current.get(piece.id);
-      if (!field) return;
-      field.focus();
-      field.setSelectionRange(field.value.length, field.value.length);
-    });
+
+  function openAlternatives(piece: Piece) {
+    setEditingHintId(null);
+    setEditingAlternativesId(piece.id);
+    if (piece.acceptedAnswers.length === 1) props.onAddAnswer(piece.id);
+    requestAnimationFrame(() => alternativeRefs.current.get(1)?.focus());
   }
-  function handleEnglishAnswerChange(piece: Piece, rawValue: string) {
-    const lines = rawValue.split("\n");
-    const current = piece.acceptedAnswers.length;
-    for (let i = current; i < lines.length; i += 1) onAddAnswer(piece.id);
-    for (let i = current - 1; i >= lines.length; i -= 1)
-      onRemoveAnswer(piece.id, i);
-    lines.forEach((line, index) => onUpdateAnswer(piece.id, index, line));
+
+  function addAlternative(piece: Piece) {
+    const index = piece.acceptedAnswers.length;
+    props.onAddAnswer(piece.id);
+    requestAnimationFrame(() => alternativeRefs.current.get(index)?.focus());
   }
-  // A semicolon is a second, inline way to add an accepted answer, without
-  // reaching for Shift+Enter — "I want to buy; I wanna buy" becomes two
-  // accepted answers. Runs on blur (an explicit "I'm done with this field"
-  // moment), never on every keystroke, so ";" can still be typed mid-word
-  // without the field jumping around underneath the teacher. A literal
-  // semicolon that must survive as one answer is written "\;" — documented
-  // in the field's own aria-label below.
+
+  function removeAlternative(piece: Piece, answerIndex: number) {
+    props.onRemoveAnswer(piece.id, answerIndex);
+    requestAnimationFrame(() => englishRefs.current.get(piece.id)?.focus());
+  }
+
   function splitSemicolonSegments(line: string): string[] {
-    return line
-      .split(/(?<!\\);/)
-      .map((part) => part.replace(/\\;/g, ";").trim())
-      .filter((part) => part.length > 0);
+    return line.split(/(?<!\\);/).map((part) => part.replace(/\\;/g, ";").trim()).filter(Boolean);
   }
+
   function commitSemicolonAlternatives(piece: Piece) {
-    const expanded = piece.acceptedAnswers.flatMap((line) =>
-      splitSemicolonSegments(line),
-    );
-    const next = expanded.length > 0 ? expanded : [""];
-    const current = piece.acceptedAnswers;
-    if (
-      next.length === current.length &&
-      next.every((value, index) => value === current[index])
-    )
+    const first = piece.acceptedAnswers[0] ?? "";
+    const split = splitSemicolonSegments(first);
+    if (split.length <= 1) {
+      const normalized = split[0] ?? first.replace(/\\;/g, ";");
+      if (normalized !== first) props.onUpdateAnswer(piece.id, 0, normalized);
       return;
-    for (let i = current.length; i < next.length; i += 1) onAddAnswer(piece.id);
-    for (let i = current.length - 1; i >= next.length; i -= 1)
-      onRemoveAnswer(piece.id, i);
-    next.forEach((value, index) => onUpdateAnswer(piece.id, index, value));
+    }
+    props.onUpdateAnswer(piece.id, 0, split[0]);
+    split.slice(1).forEach((answer, offset) => {
+      const index = offset + 1;
+      if (index >= piece.acceptedAnswers.length) props.onAddAnswer(piece.id);
+      props.onUpdateAnswer(piece.id, index, answer);
+    });
+    setEditingAlternativesId(piece.id);
   }
 
-  // Ctrl+Alt+H hint · Ctrl+Alt+A alternative · Ctrl+Alt+Backspace delete —
-  // from either field of a piece. Ctrl+Alt, not Alt alone: plain Alt+letter
-  // is commonly grabbed by Linux window managers before the page ever sees
-  // the keydown, and Ctrl+letter alone collides with the browser — Ctrl+Alt
-  // is free of both in practice. event.code, not event.key, so Mac
-  // Ctrl+Option+letter (´å∂…) still resolves.
-  function handlePieceActionKey(
-    event: KeyboardEvent<HTMLTextAreaElement>,
-    piece: Piece,
-  ) {
-    if (
-      !event.altKey ||
-      !event.ctrlKey ||
-      event.metaKey ||
-      event.shiftKey ||
-      event.nativeEvent.isComposing
-    )
-      return false;
-    if (event.code === "KeyH") {
-      event.preventDefault();
-      toggleHint(piece);
-      return true;
-    }
-    if (event.code === "KeyA") {
-      event.preventDefault();
-      addAnswerLine(piece);
-      return true;
-    }
-    if (event.code === "Backspace") {
-      event.preventDefault();
-      onDeletePiece(piece.id);
-      return true;
-    }
+  function handlePieceActionKey(event: KeyboardEvent<HTMLTextAreaElement>, piece: Piece) {
+    if (!event.altKey || !event.ctrlKey || event.metaKey || event.shiftKey || event.nativeEvent.isComposing) return false;
+    if (event.code === "KeyH") { event.preventDefault(); openHint(piece); return true; }
+    if (event.code === "KeyA") { event.preventDefault(); openAlternatives(piece); return true; }
+    if (event.code === "Backspace") { event.preventDefault(); props.onDeletePiece(piece.id); return true; }
     return false;
   }
 
-  // Plain Enter never splits a sentence piece / table row. Ctrl/⌘+Enter is left
-  // alone so it can bubble to the "next slide" handler.
   function blockNewline(event: KeyboardEvent<HTMLTextAreaElement>) {
-    if (
-      event.key === "Enter" &&
-      !event.nativeEvent.isComposing &&
-      !event.ctrlKey &&
-      !event.metaKey &&
-      !event.altKey
-    ) {
+    if (event.key === "Enter" && !event.nativeEvent.isComposing && !event.ctrlKey && !event.metaKey && !event.altKey) {
       event.preventDefault();
       return true;
     }
     return false;
   }
 
-  function handleSpanishKey(
-    event: KeyboardEvent<HTMLTextAreaElement>,
-    index: number,
-  ) {
+  function handleSpanishKey(event: KeyboardEvent<HTMLTextAreaElement>, index: number) {
+    if (event.key === "Escape" && !event.nativeEvent.isComposing) {
+      event.preventDefault(); event.stopPropagation(); props.onExit(); return;
+    }
     if (blockNewline(event)) return;
     if (handlePieceActionKey(event, block.languageBlocks[index])) return;
     if (event.key !== "Tab" || event.nativeEvent.isComposing) return;
     if (event.shiftKey) {
-      if (index > 0) {
-        event.preventDefault();
-        englishRefs.current.get(block.languageBlocks[index - 1].id)?.focus();
-      }
+      if (index > 0) { event.preventDefault(); englishRefs.current.get(block.languageBlocks[index - 1].id)?.focus(); }
       return;
     }
     event.preventDefault();
     englishRefs.current.get(block.languageBlocks[index].id)?.focus();
   }
 
-  function handleEnglishKey(
-    event: KeyboardEvent<HTMLTextAreaElement>,
-    index: number,
-  ) {
-    // Shift+Enter is the one place a real newline is allowed: it starts a
-    // new accepted-answer line in this same field instead of opening a
-    // separate "+ another accepted answer" row.
-    if (
-      event.key === "Enter" &&
-      event.shiftKey &&
-      !event.ctrlKey &&
-      !event.metaKey &&
-      !event.nativeEvent.isComposing
-    )
-      return;
-    if (blockNewline(event)) return;
-    if (handlePieceActionKey(event, block.languageBlocks[index])) return;
-    if (event.key !== "Tab" || event.nativeEvent.isComposing) return;
-    if (event.shiftKey) {
-      event.preventDefault();
-      spanishRefs.current.get(block.languageBlocks[index].id)?.focus();
-      return;
-    }
-    if (index < block.languageBlocks.length - 1) {
-      event.preventDefault();
-      spanishRefs.current.get(block.languageBlocks[index + 1].id)?.focus();
-      return;
-    }
+  function handleEnglishKey(event: KeyboardEvent<HTMLTextAreaElement>, index: number) {
     const piece = block.languageBlocks[index];
-    const trailing = document.getElementById(`trailing-${block.id}`);
-    if (
-      trailing &&
-      piece.spanish.trim() &&
-      (piece.acceptedAnswers[0] ?? "").trim()
-    ) {
-      event.preventDefault();
-      trailing.focus();
+    if (event.key === "Escape" && !event.nativeEvent.isComposing) {
+      event.preventDefault(); event.stopPropagation(); commitSemicolonAlternatives(piece); props.onExit(); return;
     }
-  }
-
-  // Persist the trailing draft as a real piece on its first real input. IME
-  // text waits for compositionend, and the guard prevents duplicate pieces.
-  function commitTrailingDraft(rawValue = draftSpanish): string | null {
-    const value = rawValue.trim();
-    if (!value || committingRef.current) return null;
-    committingRef.current = true;
-    const id = onAddPiece();
-    onUpdateSpanish(id, value);
-    setDraftSpanish("");
-    focusCommittedPiece.current = id;
-    window.setTimeout(() => {
-      committingRef.current = false;
-    }, 0);
-    return id;
+    if (event.key === "Enter" && event.shiftKey && !event.ctrlKey && !event.metaKey && !event.nativeEvent.isComposing) {
+      event.preventDefault(); openAlternatives(piece); return;
+    }
+    if (blockNewline(event)) return;
+    if (handlePieceActionKey(event, piece)) return;
+    if (event.key !== "Tab" || event.nativeEvent.isComposing) return;
+    if (event.shiftKey) { event.preventDefault(); spanishRefs.current.get(piece.id)?.focus(); }
+    else if (index < block.languageBlocks.length - 1) { event.preventDefault(); spanishRefs.current.get(block.languageBlocks[index + 1].id)?.focus(); }
   }
 
   function addPair() {
     if (!lastPieceComplete) return;
-    const id = onAddPiece();
+    const id = props.onAddPiece();
     focusCommittedPiece.current = id;
   }
 
-  function handleTrailingKey(event: KeyboardEvent<HTMLTextAreaElement>) {
-    if (blockNewline(event)) return;
-    if (event.key !== "Tab" || event.nativeEvent.isComposing) return;
-    if (event.shiftKey) {
-      const previous = block.languageBlocks.at(-1);
-      if (previous) {
-        event.preventDefault();
-        englishRefs.current.get(previous.id)?.focus();
-      }
-      return;
-    }
-    if (!draftSpanish.trim()) return; // empty trailing → ordinary Tab leaves the sentence
-    event.preventDefault();
-    const id = commitTrailingDraft();
-    if (id) requestAnimationFrame(() => englishRefs.current.get(id)?.focus());
-  }
-
-  // Renders as a resting pill (plain authored text, truncated rather than
-  // stretching this pair's own footprint) until clicked or activated by
-  // keyboard, then swaps to an editable input — the click/focus itself is
-  // the "disclosure" of the full text, since an input can be scrolled/
-  // selected into even where the pill's resting width can't grow.
-  function renderHint(piece: Piece, index: number) {
-    if (piece.callout === null) return null;
-    const pieceLabel =
-      piece.spanish.trim() || `${isTable ? "row" : "pair"} ${index + 1}`;
-    const editing = editingHintId === piece.id || piece.callout === "";
-    return editing ? (
-      <div id={`hint-${piece.id}`} className="lesson-document-hint-pill editing">
-        <input
-          ref={(element) => {
-            if (element) hintRefs.current.set(piece.id, element);
-            else hintRefs.current.delete(piece.id);
-          }}
-          autoFocus
-          value={piece.callout}
-          onBlur={(event) => {
-            setEditingHintId(null);
-            if (!event.currentTarget.value.trim())
-              onUpdateCallout(piece.id, null);
-          }}
-          onChange={(event) => onUpdateCallout(piece.id, event.target.value)}
-          onKeyDown={(event) => {
-            if (event.key === "Enter" || event.key === "Escape") {
-              event.stopPropagation();
-              event.currentTarget.blur();
-            }
-          }}
-          placeholder="A small clue the student sees…"
-          aria-label={`Editing hint for ${pieceLabel}`}
-        />
-        <button
-          type="button"
-          aria-label="Remove hint"
-          // Without this, the mousedown here blurs the input first — the
-          // blur handler above then exits editing mode and swaps this
-          // whole button out for the resting pill before the click can
-          // land on it, so "Remove hint" silently did nothing.
-          onMouseDown={(event) => event.preventDefault()}
-          onClick={() => removeHint(piece)}
-        >
-          ×
-        </button>
-      </div>
-    ) : (
-      <button
-        type="button"
-        id={`hint-${piece.id}`}
-        className="lesson-document-hint-pill"
-        onClick={() => setEditingHintId(piece.id)}
-        aria-label={`Hint for ${pieceLabel}: ${piece.callout}. Activate to edit.`}
-      >
-        {piece.callout}
-      </button>
+  if (!active && !isTable) {
+    return (
+      <section className="lesson-document-sentence resting" aria-label="Sentence">
+        <SentencePresentation block={block} />
+      </section>
     );
   }
 
+  const selectedPiece = block.languageBlocks.find((piece) => piece.id === activePiece) ?? null;
+  const hintPiece = block.languageBlocks.find((piece) => piece.id === editingHintId) ?? null;
+  const alternativesPiece = block.languageBlocks.find((piece) => piece.id === editingAlternativesId) ?? null;
+
   return (
-    <section
-      className={`lesson-document-sentence ${isTable ? "vocab-table" : ""}`}
-      aria-label={isTable ? "Vocabulary table" : "Sentence"}
-    >
-      {isEmpty && (
-        <p className="lesson-document-sentence-guide">
-          {isTable
-            ? "Type a Spanish word, press Tab, type its English meaning. Tab again starts the next row."
-            : "Type the Spanish, press Tab, type the English answer, press Tab to add another blank."}
-        </p>
-      )}
-      {(active || block.promptText.trim()) && (
+    <section className={`lesson-document-sentence editing ${isTable ? "vocab-table" : ""}`} aria-label={isTable ? "Vocabulary table" : "Sentence"}>
+      {active && <div className="lesson-document-active-tools" role="toolbar" aria-label="Active sentence tools">
+        {!block.promptText.trim() && !showInstruction && <button ref={instructionButtonRef} type="button" onClick={() => setShowInstruction(true)}>Add instruction</button>}
+        {selectedPiece && <>
+          <button type="button" aria-label={`${selectedPiece.callout === null ? "Add" : "Edit"} hint for ${pieceLabel(selectedPiece)}`} title={selectedPiece.callout === null ? "Add hint" : "Edit hint"} onClick={() => openHint(selectedPiece)}><Lightbulb size={13} aria-hidden="true" /></button>
+          <button type="button" aria-label={`Alternatives for ${pieceLabel(selectedPiece)}${selectedPiece.acceptedAnswers.length > 1 ? ` (${selectedPiece.acceptedAnswers.length - 1})` : ""}`} title="Alternatives" onClick={() => openAlternatives(selectedPiece)}><ListPlus size={13} aria-hidden="true" />{selectedPiece.acceptedAnswers.length > 1 && <span>{selectedPiece.acceptedAnswers.length - 1}</span>}</button>
+          <button type="button" className="danger" aria-label={`Delete ${isTable ? "row" : "pair"} ${pieceLabel(selectedPiece)}`} title={`Delete ${isTable ? "row" : "pair"}`} onClick={() => props.onDeletePiece(selectedPiece.id)}><Trash2 size={13} aria-hidden="true" /></button>
+        </>}
+      </div>}
+
+      {!active && block.promptText.trim() ? (
+        <p className="lesson-sentence-presentation-instruction">{block.promptText}</p>
+      ) : (block.promptText.trim() || showInstruction) && (
         <textarea
+          autoFocus={showInstruction && !block.promptText}
           className="lesson-document-prompt"
           value={block.promptText}
           rows={1}
           placeholder="Add an instruction…"
           aria-label="Optional learner instruction"
-          onChange={(event) => onUpdateSentence("promptText", event.target.value)}
+          onChange={(event) => props.onUpdateSentence("promptText", event.target.value)}
+          onKeyDown={(event) => {
+            if (event.key === "Escape" && !event.nativeEvent.isComposing) {
+              event.preventDefault(); event.stopPropagation();
+              if (!event.currentTarget.value.trim()) {
+                setShowInstruction(false);
+                requestAnimationFrame(() => instructionButtonRef.current?.focus());
+              } else props.onExit();
+            }
+          }}
         />
       )}
-      {(block.languageBlocks.length > 0 || showTrailingPiece) && (
-        <div className={`lesson-document-sentence-body ${isTable ? "vocab-table" : ""}`}>
-          {/* Real table headings always stay (they're structural). For a
-              sentence, the fields' own top/bottom order inside each card is
-              already the non-color, always-present cue — this key is just
-              optional guidance shown while actively editing, not repeated
-              chrome on every resting slide. */}
-          {(isTable || active) && (
-            <div
-              className={`lesson-document-language-key ${isTable ? "vocab-table" : ""}`}
-              aria-hidden="true"
-            >
-              <span data-language="es">Spanish</span>
-              <span data-language="en">English</span>
-            </div>
-          )}
-          <div className="lesson-document-pieces">
-            {block.languageBlocks.map((piece, index) => (
-              <div key={piece.id} className="lesson-document-pair">
-                <div
-                  className={`lesson-document-piece ${activePiece === piece.id ? "active" : ""}`}
-                  onFocus={() => setActivePiece(piece.id)}
-                >
-                  <div className="lesson-document-language-field" data-language="es">
-                    <textarea
-                      rows={1}
-                      data-field="spanish"
-                      ref={(element) => {
-                        if (element) spanishRefs.current.set(piece.id, element);
-                        else spanishRefs.current.delete(piece.id);
-                      }}
-                      value={piece.spanish}
-                      onChange={(event) =>
-                        onUpdateSpanish(piece.id, event.target.value)
-                      }
-                      onKeyDown={(event) => handleSpanishKey(event, index)}
-                      placeholder="Type in Spanish"
-                      lang="es"
-                      aria-label={`${isTable ? "Row" : "Sentence piece"} ${index + 1} Spanish`}
-                    />
-                  </div>
-                  <div className="lesson-document-language-field" data-language="en">
-                    <textarea
-                      rows={1}
-                      data-field="english"
-                      ref={(element) => {
-                        if (element) englishRefs.current.set(piece.id, element);
-                        else englishRefs.current.delete(piece.id);
-                      }}
-                      value={piece.acceptedAnswers.join("\n")}
-                      onChange={(event) =>
-                        handleEnglishAnswerChange(piece, event.target.value)
-                      }
-                      onKeyDown={(event) => handleEnglishKey(event, index)}
-                      onBlur={() => commitSemicolonAlternatives(piece)}
-                      placeholder="Write in English"
-                      lang="en"
-                      aria-label={`${isTable ? "Row" : "Sentence piece"} ${index + 1} English${piece.acceptedAnswers.length > 1 ? `, ${piece.acceptedAnswers.length} accepted answers` : ""}. Separate accepted answers with a semicolon, or use a backslash before one to type it literally.`}
-                    />
-                  </div>
-                  {(activePiece === piece.id || piece.callout !== null) && (
-                    <div className="lesson-document-piece-actions">
-                      <button
-                        type="button"
-                        className={piece.callout !== null ? "has-hint" : ""}
-                        aria-expanded={piece.callout !== null}
-                        aria-controls={`hint-${piece.id}`}
-                        aria-label={piece.callout === null ? "Add a hint" : "Edit hint"}
-                        title={piece.callout === null ? "Add a hint (Ctrl Alt H)" : "Edit hint"}
-                        onClick={() => toggleHint(piece)}
-                      >
-                        <Lightbulb size={13} aria-hidden="true" />
-                      </button>
-                      {activePiece === piece.id && (
-                        <button
-                          type="button"
-                          className="lesson-document-piece-delete"
-                          aria-label={isTable ? "Delete row" : "Delete pair"}
-                          title="Delete (Ctrl Alt Backspace)"
-                          onClick={() => onDeletePiece(piece.id)}
-                        >
-                          <Trash2 size={12} aria-hidden="true" />
-                        </button>
-                      )}
-                    </div>
-                  )}
-                </div>
-                {renderHint(piece, index)}
-              </div>
-            ))}
-            {showTrailingPiece && (
-              <div className="lesson-document-piece trailing">
+
+      <div className={`lesson-document-sentence-body ${isTable ? "vocab-table" : ""}`}>
+        {isTable && <div className="lesson-document-language-key vocab-table" aria-hidden="true"><span data-language="es">Spanish</span><span data-language="en">English</span></div>}
+        <div className="lesson-document-pieces">
+          {block.languageBlocks.map((piece, index) => (
+            <div key={piece.id} className="lesson-document-pair">
+              <div className={`lesson-document-piece ${activePiece === piece.id ? "active" : ""}`} onFocus={() => setActivePiece(piece.id)}>
                 <div className="lesson-document-language-field" data-language="es">
-                  <textarea
-                    rows={1}
-                    data-field="spanish"
-                    id={`trailing-${block.id}`}
-                    value={draftSpanish}
-                    onChange={(event) => {
-                      const value = event.target.value;
-                      setDraftSpanish(value);
-                      if (!composingTrailingRef.current && value.trim())
-                        commitTrailingDraft(value);
-                    }}
-                    onCompositionStart={() => {
-                      composingTrailingRef.current = true;
-                    }}
-                    onCompositionEnd={(event) => {
-                      composingTrailingRef.current = false;
-                      if (event.currentTarget.value.trim())
-                        commitTrailingDraft(event.currentTarget.value);
-                    }}
-                    onKeyDown={handleTrailingKey}
-                    placeholder={
-                      isTable ? "Type a word" : "Type the next part"
-                    }
-                    lang="es"
-                    aria-label={
-                      isTable ? "New row, Spanish" : "New sentence piece, Spanish"
-                    }
-                  />
+                  <textarea rows={1} data-field="spanish" ref={(element) => { if (element) spanishRefs.current.set(piece.id, element); else spanishRefs.current.delete(piece.id); }} value={piece.spanish} onChange={(event) => props.onUpdateSpanish(piece.id, event.target.value)} onKeyDown={(event) => handleSpanishKey(event, index)} placeholder="Type in Spanish" lang="es" aria-label={`${isTable ? "Row" : "Sentence piece"} ${index + 1} Spanish`} />
                 </div>
-                <span aria-hidden="true">Tab to add the English</span>
+                <div className="lesson-document-language-field" data-language="en">
+                  <textarea rows={1} data-field="english" ref={(element) => { if (element) englishRefs.current.set(piece.id, element); else englishRefs.current.delete(piece.id); }} value={piece.acceptedAnswers[0] ?? ""} onChange={(event) => props.onUpdateAnswer(piece.id, 0, event.target.value)} onKeyDown={(event) => handleEnglishKey(event, index)} onBlur={() => commitSemicolonAlternatives(piece)} placeholder="Write in English" lang="en" aria-label={`${isTable ? "Row" : "Sentence piece"} ${index + 1} English. Separate alternatives with a semicolon, or use a backslash before one to type it literally.`} />
+                </div>
               </div>
-            )}
-            {!isTable && active && (
-              <button
-                type="button"
-                className="lesson-document-add-pair"
-                disabled={!lastPieceComplete}
-                title={
-                  lastPieceComplete
-                    ? "Add another Spanish and English pair"
-                    : "Finish the current Spanish and English pair first"
-                }
-                onClick={addPair}
-              >
-                + Add pair
-              </button>
-            )}
-          </div>
+            </div>
+          ))}
+          {active && <button type="button" className={isTable ? "lesson-document-add-row" : "lesson-document-add-pair"} disabled={!lastPieceComplete} onClick={addPair}><Plus size={12} aria-hidden="true" /> Add {isTable ? "row" : "pair"}</button>}
+        </div>
+      </div>
+
+      {block.languageBlocks.some((piece) => piece.callout !== null) && !hintPiece && (
+        <div className="lesson-document-hint-list" aria-label="Authored hints">
+          {block.languageBlocks.filter((piece) => piece.callout !== null).map((piece) => (
+            <button key={piece.id} type="button" className="lesson-document-hint-pill" onClick={() => openHint(piece)}><span>{pieceLabel(piece)}:</span> {piece.callout}</button>
+          ))}
         </div>
       )}
-      {isTable && (
-        <button
-          type="button"
-          className="lesson-document-add-row"
-          disabled={!lastPieceComplete}
-          title={
-            lastPieceComplete
-              ? "Add another vocabulary row"
-              : "Finish the current row first"
+
+      {active && hintPiece && (
+        <div className="lesson-document-context-editor" aria-label={`Hint for ${pieceLabel(hintPiece)}`} onBlur={(event) => {
+          if (event.currentTarget.contains(event.relatedTarget as Node | null)) return;
+          if (!hintPiece.callout?.trim()) props.onUpdateCallout(hintPiece.id, null);
+          setEditingHintId(null);
+        }}>
+          <label htmlFor={`hint-${hintPiece.id}`}>Hint for “{pieceLabel(hintPiece)}”</label>
+          <input id={`hint-${hintPiece.id}`} ref={hintInputRef} value={hintPiece.callout ?? ""} onChange={(event) => props.onUpdateCallout(hintPiece.id, event.target.value)} onKeyDown={(event) => { if (event.key === "Escape") { event.preventDefault(); event.stopPropagation(); closeHint(hintPiece); } }} placeholder="A small clue the student sees…" />
+          <button type="button" className="danger" onMouseDown={(event) => event.preventDefault()} onClick={() => removeHint(hintPiece)}>Remove hint</button>
+        </div>
+      )}
+
+      {active && alternativesPiece && (
+        <div className="lesson-document-context-editor" aria-label={`Alternatives for ${pieceLabel(alternativesPiece)}`} onBlur={(event) => {
+          if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+            for (let index = alternativesPiece.acceptedAnswers.length - 1; index >= 1; index -= 1)
+              if (!alternativesPiece.acceptedAnswers[index]?.trim()) props.onRemoveAnswer(alternativesPiece.id, index);
+            setEditingAlternativesId(null);
           }
-          onClick={addPair}
-        >
-          + Add row
-        </button>
+        }}>
+          <span>Alternatives for “{pieceLabel(alternativesPiece)}”</span>
+          {alternativesPiece.acceptedAnswers.slice(1).map((answer, offset) => {
+            const answerIndex = offset + 1;
+            return <div className="lesson-document-alternative" key={answerIndex}>
+              <input ref={(element) => { if (element) alternativeRefs.current.set(answerIndex, element); else alternativeRefs.current.delete(answerIndex); }} value={answer} aria-label={`Alternative ${answerIndex} for ${pieceLabel(alternativesPiece)}`} onChange={(event) => props.onUpdateAnswer(alternativesPiece.id, answerIndex, event.target.value)} onKeyDown={(event) => { if (event.key === "Escape") { event.preventDefault(); event.stopPropagation(); setEditingAlternativesId(null); requestAnimationFrame(() => englishRefs.current.get(alternativesPiece.id)?.focus()); } }} />
+              <button type="button" aria-label={`Remove alternative ${answerIndex}`} onClick={() => removeAlternative(alternativesPiece, answerIndex)}>×</button>
+            </div>;
+          })}
+          <button type="button" onClick={() => addAlternative(alternativesPiece)}>Add alternative</button>
+        </div>
       )}
     </section>
   );

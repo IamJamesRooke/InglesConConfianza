@@ -1,11 +1,8 @@
 "use client";
 
 import {
-  ArrowDown,
-  ArrowUp,
   ChevronDown,
   ChevronRight,
-  Copy,
   GripVertical,
   Keyboard,
   List,
@@ -18,6 +15,7 @@ import {
 import { useEffect, useMemo, useRef, useState, type DragEvent } from "react";
 
 import { EditingHud } from "@/components/lesson-builder/editing-hud";
+import { LessonHeaderActions } from "@/components/lesson-builder/lesson-header-actions";
 import { ModuleNavigator } from "@/components/lesson-builder/module-navigator";
 import "@/styles/module-navigation.css";
 import { type ConceptDisplayLookup } from "@/components/lesson-builder/lesson-concepts-field";
@@ -491,10 +489,23 @@ export function LessonLibrary(props: Props) {
                     type="button"
                     className="lesson-library-module-drag"
                     draggable
-                    aria-label={`Drag module ${moduleIndex + 1} to reorder`}
-                    title="Drag to reorder module"
+                    aria-label={`Drag module ${moduleIndex + 1} to reorder, or press Alt+ArrowUp / Alt+ArrowDown to move it`}
+                    title="Drag to reorder module (Alt+↑ / Alt+↓)"
                     onDragStart={(event) => startModuleDrag(event, module.id)}
                     onDragEnd={() => setDraggedModule(null)}
+                    onKeyDown={(event) => {
+                      if (!event.altKey) return;
+                      if (event.key === "ArrowUp" && moduleIndex > 0) {
+                        event.preventDefault();
+                        props.onMoveModule(moduleIndex, -1);
+                      } else if (
+                        event.key === "ArrowDown" &&
+                        moduleIndex < props.modules.length - 1
+                      ) {
+                        event.preventDefault();
+                        props.onMoveModule(moduleIndex, 1);
+                      }
+                    }}
                   >
                     <GripVertical size={15} aria-hidden="true" />
                   </button>
@@ -548,24 +559,6 @@ export function LessonLibrary(props: Props) {
                     </span>
                   ) : (
                     <span className="lesson-library-module-controls">
-                      <button
-                        type="button"
-                        disabled={moduleIndex === 0}
-                        onClick={() => props.onMoveModule(moduleIndex, -1)}
-                        aria-label="Move module earlier"
-                        title="Move module earlier"
-                      >
-                        <ArrowUp size={15} aria-hidden="true" />
-                      </button>
-                      <button
-                        type="button"
-                        disabled={moduleIndex === props.modules.length - 1}
-                        onClick={() => props.onMoveModule(moduleIndex, 1)}
-                        aria-label="Move module later"
-                        title="Move module later"
-                      >
-                        <ArrowDown size={15} aria-hidden="true" />
-                      </button>
                       <button
                         type="button"
                         className="danger lesson-library-module-delete"
@@ -675,6 +668,7 @@ export function LessonLibrary(props: Props) {
                             <button
                               type="button"
                               className="danger"
+                              data-lesson-delete-confirm={lesson.id}
                               onClick={() => {
                                 props.onDeleteLesson(lesson.id);
                                 setConfirmDelete(null);
@@ -684,7 +678,16 @@ export function LessonLibrary(props: Props) {
                             </button>
                             <button
                               type="button"
-                              onClick={() => setConfirmDelete(null)}
+                              onClick={() => {
+                                setConfirmDelete(null);
+                                requestAnimationFrame(() =>
+                                  document
+                                    .querySelector<HTMLButtonElement>(
+                                      `[data-lesson-delete-trigger="${lesson.id}"]`,
+                                    )
+                                    ?.focus(),
+                                );
+                              }}
                             >
                               Cancel
                             </button>
@@ -696,52 +699,30 @@ export function LessonLibrary(props: Props) {
                               className="lesson-library-try"
                               onMouseDown={(event) => event.preventDefault()}
                               onClick={() => props.onPreviewLesson(lesson.id)}
-                              aria-label="Try lesson"
-                              title="Try lesson"
+                              aria-label="Preview lesson"
+                              title="Preview lesson"
                             >
                               <Play size={14} aria-hidden="true" />
                             </button>
-                            <button
-                              type="button"
-                              onClick={() => props.onDuplicateLesson(lesson.id)}
-                              aria-label="Duplicate lesson"
-                              title="Duplicate lesson"
-                            >
-                              <Copy size={14} aria-hidden="true" />
-                            </button>
-                            {props.modules.length > 1 && (
-                              <select
-                                className="lesson-library-move-select"
-                                value=""
-                                onChange={(event) => {
-                                  if (!event.target.value) return;
-                                  props.onMoveLessonToModule(
-                                    lesson.id,
-                                    event.target.value,
-                                  );
-                                }}
-                                aria-label={`Move "${lesson.name?.trim() || "this lesson"}" to another module`}
-                                title="Move to module"
-                              >
-                                <option value="">Move to…</option>
-                                {props.modules
-                                  .filter((other) => other.id !== module.id)
-                                  .map((other) => (
-                                    <option key={other.id} value={other.id}>
-                                      {other.name?.trim() || "Untitled module"}
-                                    </option>
-                                  ))}
-                              </select>
-                            )}
-                            <button
-                              type="button"
-                              className="danger"
-                              onClick={() => setConfirmDelete(lessonDeleteKey)}
-                              aria-label="Delete lesson"
-                              title="Delete lesson"
-                            >
-                              <Trash2 size={14} aria-hidden="true" />
-                            </button>
+                            <LessonHeaderActions
+                              lessonId={lesson.id}
+                              lessonName={
+                                lesson.name?.trim() || "Untitled lesson"
+                              }
+                              onDuplicate={() =>
+                                props.onDuplicateLesson(lesson.id)
+                              }
+                              onRequestDelete={() => {
+                                setConfirmDelete(lessonDeleteKey);
+                                requestAnimationFrame(() =>
+                                  document
+                                    .querySelector<HTMLButtonElement>(
+                                      `[data-lesson-delete-confirm="${lesson.id}"]`,
+                                    )
+                                    ?.focus(),
+                                );
+                              }}
+                            />
                           </span>
                         )}
                       </div>

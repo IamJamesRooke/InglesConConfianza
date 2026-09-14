@@ -13,6 +13,7 @@ export function EditablePracticeMarkdown({
   fieldName,
   variant = "explanation",
   showSelectionMenu = true,
+  onExit,
 }: {
   markdown: string;
   onChange: (markdown: string) => void;
@@ -21,6 +22,7 @@ export function EditablePracticeMarkdown({
   fieldName?: string;
   variant?: PracticeMarkdownVariant;
   showSelectionMenu?: boolean;
+  onExit?: () => void;
 }) {
   const [renderedMarkdown, setRenderedMarkdown] = useState(markdown);
   const [isActive, setIsActive] = useState(false);
@@ -364,16 +366,13 @@ export function EditablePracticeMarkdown({
           }
           if (event.key === "Escape") {
             event.preventDefault();
+            event.stopPropagation();
             if (typingModeRef.current) {
               endTypingMode();
               return;
             }
-            event.currentTarget
-              .closest("[data-document-block]")
-              ?.querySelector<HTMLElement>(
-                ".lesson-document-block-chrome summary",
-              )
-              ?.focus();
+            finishEditing(event.currentTarget);
+            onExit?.();
           }
         }}
       >
@@ -428,12 +427,14 @@ export function EditablePracticeMarkdown({
             onFormat={applyNormalText}
           />
           <FormatButton
-            label="Bold"
+            label="B"
+            ariaLabel="Bold"
             shortcut="Ctrl/⌘ B"
             onFormat={() => formatSelection("bold", true)}
           />
           <FormatButton
-            label="Italic"
+            label="I"
+            ariaLabel="Italic"
             shortcut="Ctrl/⌘ I"
             onFormat={() => formatSelection("italic", true)}
           />
@@ -444,12 +445,14 @@ export function EditablePracticeMarkdown({
 }
 function FormatButton({
   label,
+  ariaLabel,
   shortcut,
   className = "",
   pressed,
   onFormat,
 }: {
   label: string;
+  ariaLabel?: string;
   shortcut: string;
   className?: string;
   pressed?: boolean;
@@ -459,12 +462,13 @@ function FormatButton({
     <button
       type="button"
       className={className}
+      aria-label={ariaLabel}
       aria-pressed={pressed}
-      title={`${label} (${shortcut})`}
+      title={`${ariaLabel ?? label} (${shortcut})`}
       onMouseDown={(event) => event.preventDefault()}
       onClick={onFormat}
     >
-      {label} <kbd>{shortcut}</kbd>
+      {label}
     </button>
   );
 }

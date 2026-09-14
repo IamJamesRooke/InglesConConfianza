@@ -434,34 +434,22 @@
     monospace;
 }
 .authoring-format-menu {
-  position: absolute;
-  left: 0;
-  top: calc(100% + 7px);
-  z-index: 20;
+  position: static;
   display: flex;
+  width: fit-content;
+  max-width: 100%;
   gap: 3px;
-  padding: 5px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: var(--surface-writing);
-  box-shadow: 0 10px 30px
-    color-mix(in oklch, var(--foreground) 16%, transparent);
-  white-space: nowrap;
+  margin-top: 4px;
+  flex-wrap: wrap;
 }
 .authoring-format-menu button {
-  min-height: 31px;
-  padding: 0 10px;
-  border-radius: 7px;
+  min-height: 22px;
+  min-width: 22px;
+  padding: 0 7px;
+  border-radius: 6px;
   color: var(--muted-foreground);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-}
-.authoring-format-menu kbd {
-  margin-left: 4px;
-  opacity: 1;
-  font:
-    700 9px ui-monospace,
-    monospace;
 }
 .authoring-format-menu button:hover {
   background: var(--muted);

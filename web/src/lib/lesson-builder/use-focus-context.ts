@@ -28,7 +28,7 @@ function readContext(): FocusContext {
     row?.dataset.lessonRow ??
     null;
 
-  if (el.closest(".lesson-document-insert-choices")) return { kind: "chooser", lessonId };
+  if (el.closest(".lesson-document-insert-actions")) return { kind: "chooser", lessonId };
   if (el.hasAttribute("data-lesson-title")) return { kind: "title", lessonId };
   if (el.hasAttribute("data-covers-for")) return { kind: "covers", lessonId };
   if (el.closest(".lesson-document-explanation, .authoring-wysiwyg")) return { kind: "explanation", lessonId };

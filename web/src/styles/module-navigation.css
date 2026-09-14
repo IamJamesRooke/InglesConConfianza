@@ -59,16 +59,17 @@
 }
 
 .module-navigator-add {
-  display: flex;
+  display: inline-flex;
+  align-self: flex-start;
   align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 7px 10px;
-  border: 1px dashed var(--border);
+  gap: 5px;
+  margin-top: 2px;
+  padding: 5px 7px;
+  border: none;
   border-radius: var(--radius-md);
   color: var(--primary);
   background: none;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
 }
 .module-navigator-add:hover {

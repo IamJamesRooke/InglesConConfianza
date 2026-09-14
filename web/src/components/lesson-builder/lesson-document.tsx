@@ -88,13 +88,10 @@ type Props = {
 export function LessonDocument(props: Props) {
   const [activeBlock, setActiveBlock] = useState<string | null>(null);
   const [insertAt, setInsertAt] = useState<number | null>(null);
-  const [insertChoice, setInsertChoice] = useState(0);
-  // The chooser only grabs focus when the teacher opened it (Ctrl/⌘+Enter or the
-  // "+" button). The one shown on an empty lesson must not pull focus off the
-  // title.
-  const [insertFocus, setInsertFocus] = useState(false);
   const focusAfterAdd = useRef<string | null>(null);
   const caretOrigin = useRef<CaretOrigin | null>(null);
+  const exitingBlock = useRef<string | null>(null);
+  const bodyRef = useRef<HTMLDivElement | null>(null);
   const drag = useDragReorder({ axis: "y", mode: "nested" });
   const dragScope = props.lesson.id;
 
@@ -132,26 +129,13 @@ export function LessonDocument(props: Props) {
     }
   }
 
-  // Recommend continuing with whatever type the previous slide was — lessons
-  // are usually one explanation followed by a run of several sentence slides,
-  // not a strict alternation — and default to an explanation to open a lesson.
-  function recommendedChoice(index: number) {
-    const previous = props.lesson.blocks[index - 1];
-    if (!previous) return 0;
-    if (previous.type === "explanation") return 0;
-    return previous.layout === "vocabulary_table" ? 2 : 1;
-  }
-
   function openInsert(index: number) {
     captureCaretOrigin();
-    setInsertChoice(recommendedChoice(index));
     setInsertAt(index);
-    setInsertFocus(true);
   }
 
   function closeInsert() {
     setInsertAt(null);
-    setInsertFocus(false);
     restoreCaretOrigin();
   }
 
@@ -164,7 +148,6 @@ export function LessonDocument(props: Props) {
       const target = event.target as HTMLElement | null;
       if (target?.closest(".lesson-document-insert")) return;
       setInsertAt(null);
-      setInsertFocus(false);
       caretOrigin.current = null;
     }
     document.addEventListener("pointerdown", handlePointerDown);
@@ -173,23 +156,63 @@ export function LessonDocument(props: Props) {
 
   function add(type: DocumentBlockType, index: number) {
     caretOrigin.current = null;
-    focusAfterAdd.current = props.onAddBlock(type, index);
+    const blockId = props.onAddBlock(type, index);
+    focusAfterAdd.current = blockId;
+    setActiveBlock(blockId);
     setInsertAt(null);
-    setInsertFocus(false);
   }
 
-  // Ctrl/⌘+Enter: open the slide chooser after the active slide.
+  function exitBlock(blockId: string) {
+    exitingBlock.current = blockId;
+    setActiveBlock(null);
+    requestAnimationFrame(() => {
+      document
+        .querySelector<HTMLElement>(`[data-document-block="${blockId}"]`)
+        ?.focus({ preventScroll: true });
+    });
+  }
+
+  // Ctrl/⌘+Enter moves to the direct insertion actions after the active slide.
   function openInsertAfterActive() {
     const index = props.lesson.blocks.findIndex((block) => block.id === activeBlock);
     openInsert(index >= 0 ? index + 1 : props.lesson.blocks.length);
+  }
+
+  // Upper-right icon cluster: drag handle, duplicate, delete — reveals on
+  // slide hover or focus-within, not tied to entering editing. No text
+  // labels in the flow; accessible names carry the slide number instead.
+  function renderSlideActions(block: Lesson["blocks"][number], index: number) {
+    return (
+      <div className="lesson-document-block-actions">
+        <button type="button" draggable aria-label={`Drag slide ${index + 1} to reorder`} title="Drag to reorder" onDragStart={(event) => drag.dragStart(event, dragScope, block.id)} onDragEnd={drag.reset}>
+          <GripVertical size={13} aria-hidden="true" />
+        </button>
+        <button type="button" aria-label={`Duplicate slide ${index + 1}`} title="Duplicate slide" onClick={() => props.onDuplicateBlock(block.id)}>
+          <Copy size={13} aria-hidden="true" />
+        </button>
+        <button type="button" className="danger" aria-label={`Delete slide ${index + 1}`} title="Delete slide" onClick={() => props.onDeleteBlock(block.id)}>
+          <Trash2 size={13} aria-hidden="true" />
+        </button>
+      </div>
+    );
   }
 
 
   return (
     <div className="lesson-document">
       <div
+        ref={bodyRef}
         className="lesson-document-body"
-        onBlurCapture={props.onEndHistoryGroup}
+        onBlurCapture={(event) => {
+          props.onEndHistoryGroup();
+          const next = event.relatedTarget;
+          if (!(next instanceof Node) || !event.currentTarget.contains(next)) {
+            requestAnimationFrame(() => {
+              const focused = document.activeElement;
+              if (!focused || !bodyRef.current?.contains(focused)) setActiveBlock(null);
+            });
+          }
+        }}
         onKeyDown={(event) => {
           // Ctrl+Alt, not Alt alone: plain Alt+letter is commonly grabbed by
           // Linux window managers (app-launch/switch binds) before the page
@@ -218,6 +241,10 @@ export function LessonDocument(props: Props) {
             stop(); props.onDone();
           } else if (event.code === "KeyL") {
             stop(); props.onAddLesson();
+          } else if (event.code === "ArrowUp" && activeBlock) {
+            stop(); props.onMoveBlock(activeBlock, -1);
+          } else if (event.code === "ArrowDown" && activeBlock) {
+            stop(); props.onMoveBlock(activeBlock, 1);
           }
         }}
       >
@@ -236,19 +263,9 @@ export function LessonDocument(props: Props) {
 
         {props.lesson.blocks.map((block, index) => (
           <Fragment key={block.id}>
-            {/* A sibling of the slide, not its first child — sitting in
-                the gap between two slides instead of inside either one's
-                own box. Nested inside the block, its hover-expanded state
-                visually read as part of that slide's own card (the "+"
-                appearing to float inside the note's colored background);
-                as a true sibling it only ever occupies the seam. */}
             <SlideInsertControl
-              open={insertAt === index}
-              insertLabel={`Insert a slide before slide ${index + 1}`}
-              autoFocusOnOpen={insertFocus}
-              selected={insertChoice}
-              onSelected={setInsertChoice}
-              onToggle={() => insertAt === index ? closeInsert() : openInsert(index)}
+              insertionLabel={`Insert before slide ${index + 1}`}
+              focusPalette={insertAt === index}
               onAdd={(type) => add(type, index)}
               onClose={closeInsert}
             />
@@ -257,8 +274,21 @@ export function LessonDocument(props: Props) {
                 drag.dropTarget?.id === block.id ? ` drop-${drag.dropTarget.position}` : ""
               }`}
               data-document-block={block.id}
-              tabIndex={-1}
-              onFocusCapture={() => setActiveBlock(block.id)}
+              data-active={activeBlock === block.id ? "true" : "false"}
+              tabIndex={activeBlock === block.id ? -1 : 0}
+              onFocusCapture={(event) => {
+                if (event.target === event.currentTarget && exitingBlock.current === block.id) {
+                  exitingBlock.current = null;
+                  return;
+                }
+                setActiveBlock(block.id);
+              }}
+              onClick={(event) => {
+                if (activeBlock === block.id) return;
+                if ((event.target as HTMLElement).closest("button, input, textarea, [contenteditable='true']")) return;
+                setActiveBlock(block.id);
+                requestAnimationFrame(() => focusSlideWritingField(block.id));
+              }}
               onDragOver={(event) => drag.dragOver(event, dragScope, block.id)}
               onDrop={(event) => {
                 if (!drag.dragged) return;
@@ -269,17 +299,21 @@ export function LessonDocument(props: Props) {
                 }
                 drag.reset();
               }}
-              onKeyDownCapture={(event) => {
-                if (event.key !== "Escape" || event.target === event.currentTarget) return;
-                // Let nested controls and the explanation editor handle Escape.
-                if (insertAt === index || (event.target as HTMLElement).closest?.(".lesson-document-insert-choices")) return;
-                if ((event.target as HTMLElement).closest?.(".authoring-wysiwyg")) return;
-                event.preventDefault();
-                event.stopPropagation();
-                const actions = event.currentTarget.querySelector<HTMLElement>(".lesson-document-block-chrome button");
-                (actions ?? event.currentTarget).focus();
+              onKeyDown={(event) => {
+                if (event.target === event.currentTarget && (event.key === "Enter" || event.key === " ")) {
+                  event.preventDefault();
+                  setActiveBlock(block.id);
+                  requestAnimationFrame(() => focusSlideWritingField(block.id));
+                  return;
+                }
+                if (event.key === "Escape" && event.target !== event.currentTarget) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                  exitBlock(block.id);
+                }
               }}
             >
+            {renderSlideActions(block, index)}
             {block.type === "explanation" ? (
               <section className="lesson-document-explanation" aria-label={`Explanation ${index + 1}`}>
                 <EditablePracticeMarkdown
@@ -288,6 +322,7 @@ export function LessonDocument(props: Props) {
                   ariaLabel={`Explanation ${index + 1}`}
                   fieldName={`explanation-${block.id}`}
                   variant="document"
+                  onExit={() => exitBlock(block.id)}
                   onChange={(markdown) => props.onUpdateExplanation(block.id, markdown)}
                 />
               </section>
@@ -295,6 +330,8 @@ export function LessonDocument(props: Props) {
               <SentenceEditor
                 block={block}
                 active={activeBlock === block.id}
+                onActivate={() => setActiveBlock(block.id)}
+                onExit={() => exitBlock(block.id)}
                 onUpdateSentence={(field, value) => props.onUpdateSentence(block.id, field, value)}
                 onUpdateSpanish={(pieceId, value) => props.onUpdateSpanish(block.id, pieceId, value)}
                 onUpdateAnswer={(pieceId, answerIndex, value) => props.onUpdateAnswer(block.id, pieceId, answerIndex, value)}
@@ -305,26 +342,15 @@ export function LessonDocument(props: Props) {
                 onDeletePiece={(pieceId) => props.onDeletePiece(block.id, pieceId)}
               />
             )}
-
-
-            <div className="lesson-document-block-chrome">
-              <button type="button" className="lesson-document-block-handle" draggable aria-label={`Drag slide ${index + 1} to reorder`} title="Drag to reorder" onDragStart={(event) => drag.dragStart(event, dragScope, block.id)} onDragEnd={drag.reset}><GripVertical size={14} aria-hidden="true" /></button>
-              <button type="button" onClick={() => props.onDuplicateBlock(block.id)} aria-label={`Duplicate slide ${index + 1}`} title="Duplicate slide"><Copy size={14} aria-hidden="true" /></button>
-              <button type="button" className="danger" onClick={() => props.onDeleteBlock(block.id)} aria-label={`Delete slide ${index + 1}`} title="Delete slide"><Trash2 size={14} aria-hidden="true" /></button>
-            </div>
             </div>
           </Fragment>
         ))}
 
         <div className="lesson-document-tail">
           <SlideInsertControl
-            open={insertAt === props.lesson.blocks.length}
-            inline={props.lesson.blocks.length === 0}
-            label="Add slide"
-            autoFocusOnOpen={props.lesson.blocks.length === 0 ? false : insertFocus}
-            selected={insertChoice}
-            onSelected={setInsertChoice}
-            onToggle={() => insertAt === props.lesson.blocks.length ? closeInsert() : openInsert(props.lesson.blocks.length)}
+            insertionLabel="Insert at lesson end"
+            labelled
+            focusPalette={insertAt === props.lesson.blocks.length}
             onAdd={(type) => add(type, props.lesson.blocks.length)}
             onClose={closeInsert}
           />

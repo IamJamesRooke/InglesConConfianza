@@ -33,7 +33,7 @@ export function EditingHud({ context }: Props) {
       body = <Row><kbd>Tab</kbd> next blank · <kbd>Shift Enter</kbd> another answer · <kbd>Ctrl Alt H</kbd> hint · <kbd>Ctrl Alt Enter</kbd> next slide</Row>;
       break;
     case "chooser":
-      body = <Row><kbd>↑↓</kbd> choose · <kbd>Enter</kbd> add · <kbd>Esc</kbd> cancel</Row>;
+      body = <Row><kbd>←→</kbd> move · <kbd>Enter</kbd> insert · <kbd>Esc</kbd> return</Row>;
       break;
     default:
       return null;

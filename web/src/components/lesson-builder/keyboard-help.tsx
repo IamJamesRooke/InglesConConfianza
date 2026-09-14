@@ -75,7 +75,13 @@ export function KeyboardHelpDialog({ onClose }: { onClose: () => void }) {
           <dt>
             <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>Enter</kbd>
           </dt>
-          <dd>Open the slide chooser after this slide</dd>
+          <dd>Focus the three direct insert actions after this slide</dd>
+        </div>
+        <div>
+          <dt>
+            <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>↑</kbd> <kbd>↓</kbd>
+          </dt>
+          <dd>Move the active slide up or down</dd>
         </div>
         <div>
           <dt>
@@ -94,7 +100,7 @@ export function KeyboardHelpDialog({ onClose }: { onClose: () => void }) {
           <dt>
             <kbd>Tab</kbd> / <kbd>⇧</kbd> <kbd>Tab</kbd>
           </dt>
-          <dd>Move between Spanish, English, and the next blank</dd>
+          <dd>Move between Spanish, English, and active tools</dd>
         </div>
         <div>
           <dt>
@@ -130,7 +136,7 @@ export function KeyboardHelpDialog({ onClose }: { onClose: () => void }) {
           <dt>
             <kbd>Esc</kbd>
           </dt>
-          <dd>Leave a field, or close this help</dd>
+          <dd>Close a nested tool first; otherwise leave slide editing</dd>
         </div>
       </dl>
       <footer>
