@@ -13,7 +13,9 @@ import type { DocumentBlockType } from "@/components/lesson-builder/lesson-docum
 import { LessonLibrary } from "@/components/lesson-builder/lesson-library";
 import { LessonSelector } from "@/components/practice/lesson-selector";
 import type { LessonBuilderActions } from "@/lib/lesson-builder/builder-context";
+import { focusSlideWritingField } from "@/lib/lesson-builder/focus";
 import {
+  findRestoredFocusTarget,
   initialUndoableLessons,
   undoableLessonsReducer,
 } from "@/lib/lesson-builder/history";
@@ -69,6 +71,28 @@ export default function LessonBuilderPage() {
     () => ({ lessons, modules }),
     [lessons, modules],
   );
+
+  // Item 7: undoing a slide/pair deletion used to leave DOM focus stranded
+  // on <body>. `findRestoredFocusTarget` is pure, so it can preview what
+  // undo *would* restore before we actually dispatch it, then schedule a
+  // focus call for whatever came back — a slide's own writing field, or one
+  // specific pair's Spanish field. Reads `history` via a ref (same pattern
+  // as `lessonsRef` below) so the callback identity stays stable rather
+  // than changing on every keystroke.
+  const historyRef = useRef(history);
+  useEffect(() => {
+    historyRef.current = history;
+  }, [history]);
+  const performUndo = useCallback(() => {
+    const current = historyRef.current;
+    const next = undoableLessonsReducer(current, { type: "UNDO" });
+    if (next === current) return;
+    const target = findRestoredFocusTarget(current.present, next.present);
+    dispatch({ type: "UNDO" });
+    if (target?.kind === "block") focusSlideWritingField(target.blockId);
+    else if (target?.kind === "piece")
+      focusSlideWritingField(target.blockId, { pieceId: target.pieceId });
+  }, []);
   const onInitialLoad = useCallback((course: typeof currentCourse) => {
     dispatch({ type: "SET_LESSONS", lessons: course.lessons });
     setModules(course.modules);
@@ -107,7 +131,7 @@ export default function LessonBuilderPage() {
         !isTextEditingTarget(event.target)
       ) {
         event.preventDefault();
-        dispatch({ type: "UNDO" });
+        performUndo();
       } else if (
         cmd &&
         !event.altKey &&
@@ -121,7 +145,7 @@ export default function LessonBuilderPage() {
     };
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [flushSave]);
+  }, [flushSave, performUndo]);
 
   const updateModules = useCallback((next: LessonModule[]) => {
     setModules(next);
@@ -432,12 +456,13 @@ export default function LessonBuilderPage() {
           lessonConceptId,
           label,
         }),
-      updateExplanation: (lessonId, blockId, contentMarkdown) =>
+      updateExplanation: (lessonId, blockId, contentMarkdown, options) =>
         dispatch({
           type: "UPDATE_EXPLANATION_BLOCK",
           lessonId,
           blockId,
           contentMarkdown,
+          boundary: options?.boundary,
         }),
       updateSentence: (lessonId, sentenceBlockId, field, value) =>
         dispatch({
@@ -548,7 +573,7 @@ export default function LessonBuilderPage() {
           saveFailed={saveState === "error"}
           canUndo={history.past.length > 0}
           canRedo={history.future.length > 0}
-          onUndo={() => dispatch({ type: "UNDO" })}
+          onUndo={performUndo}
           onRedo={() => dispatch({ type: "REDO" })}
           onRetrySave={() => void retrySave()}
           onFlushSave={flushSave}

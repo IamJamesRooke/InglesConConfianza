@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 
 import {
+  findRestoredFocusTarget,
   initialUndoableLessons,
   undoableLessonsReducer,
   type UndoableAction,
@@ -179,4 +180,136 @@ test("history retains only the latest 100 document snapshots", () => {
     });
   }
   assert.equal(earliestReachable.present.length, historyLessons().length + 5);
+});
+
+test("edits to the same field only coalesce within a 1000ms window", (t) => {
+  t.mock.timers.enable({ apis: ["Date"] });
+  try {
+    let state = reduce([{ type: "SET_LESSONS", lessons: historyLessons() }]);
+    state = undoableLessonsReducer(state, {
+      type: "RENAME_LESSON",
+      lessonId: "lesson_a",
+      name: "O",
+    });
+    t.mock.timers.tick(500);
+    state = undoableLessonsReducer(state, {
+      type: "RENAME_LESSON",
+      lessonId: "lesson_a",
+      name: "On",
+    });
+    // Still within the window — coalesces with the previous edit.
+    assert.equal(state.past.length, 1);
+
+    t.mock.timers.tick(1500);
+    state = undoableLessonsReducer(state, {
+      type: "RENAME_LESSON",
+      lessonId: "lesson_a",
+      name: "One",
+    });
+    // Past the window — starts a new step even though it's the same field.
+    assert.equal(state.past.length, 2);
+    assert.equal(state.present[0].name, "One");
+  } finally {
+    t.mock.timers.reset();
+  }
+});
+
+function explanationLessons(): Lesson[] {
+  return [
+    {
+      id: "lesson_a",
+      name: "A",
+      concepts: [],
+      blocks: [
+        { id: "explanation_a", type: "explanation", contentMarkdown: "" },
+      ],
+    },
+  ];
+}
+
+test("a formatting op is its own undo step, isolated from surrounding typing", () => {
+  // Simulates: type a sentence, bold a word (boundary edit to the same
+  // field/action type as plain typing), type another sentence. Target:
+  // three undo steps, not one merged step.
+  const edited = reduce([
+    { type: "SET_LESSONS", lessons: explanationLessons() },
+    {
+      type: "UPDATE_EXPLANATION_BLOCK",
+      lessonId: "lesson_a",
+      blockId: "explanation_a",
+      contentMarkdown: "First sentence.",
+    },
+    {
+      type: "UPDATE_EXPLANATION_BLOCK",
+      lessonId: "lesson_a",
+      blockId: "explanation_a",
+      contentMarkdown: "First sentence. **bold**",
+      boundary: true,
+    },
+    {
+      type: "UPDATE_EXPLANATION_BLOCK",
+      lessonId: "lesson_a",
+      blockId: "explanation_a",
+      contentMarkdown: "First sentence. **bold** Second sentence.",
+    },
+  ]);
+
+  assert.equal(edited.past.length, 3);
+  const block = edited.present[0].blocks[0];
+  assert.equal(
+    block.type === "explanation" ? block.contentMarkdown : null,
+    "First sentence. **bold** Second sentence.",
+  );
+
+  // The boundary step (the bold) is undoable on its own — undoing once only
+  // removes the trailing "Second sentence." addition, not the bold too.
+  const undone = undoableLessonsReducer(edited, { type: "UNDO" });
+  const undoneBlock = undone.present[0].blocks[0];
+  assert.equal(
+    undoneBlock.type === "explanation" ? undoneBlock.contentMarkdown : null,
+    "First sentence. **bold**",
+  );
+});
+
+test("findRestoredFocusTarget reports a restored slide", () => {
+  const before = reduce([
+    { type: "SET_LESSONS", lessons: historyLessons() },
+    {
+      type: "DELETE_CONTENT_BLOCK",
+      lessonId: "lesson_a",
+      blockId: "sentence_a",
+    },
+  ]).present;
+  const after = historyLessons();
+
+  const target = findRestoredFocusTarget(before, after);
+  assert.deepEqual(target, { kind: "block", blockId: "sentence_a" });
+});
+
+test("findRestoredFocusTarget reports a restored pair", () => {
+  const lessons = historyLessons();
+  const withoutPiece: Lesson[] = lessons.map((lesson) =>
+    lesson.id === "lesson_a"
+      ? {
+          ...lesson,
+          blocks: lesson.blocks.map((block) =>
+            block.type === "sentence"
+              ? { ...block, languageBlocks: [] }
+              : block,
+          ),
+        }
+      : lesson,
+  );
+
+  const target = findRestoredFocusTarget(withoutPiece, lessons);
+  assert.deepEqual(target, {
+    kind: "piece",
+    blockId: "sentence_a",
+    pieceId: "language_a",
+  });
+});
+
+test("findRestoredFocusTarget returns null when nothing was restored", () => {
+  const lessons = historyLessons();
+  assert.equal(findRestoredFocusTarget(lessons, lessons), null);
 });

@@ -16,7 +16,10 @@ export function EditablePracticeMarkdown({
   onExit,
 }: {
   markdown: string;
-  onChange: (markdown: string) => void;
+  // `boundary: true` marks a formatting op or a paragraph break so the undo
+  // history never coalesces it with the plain typing before/after it (see
+  // lib/lesson-builder/history.ts).
+  onChange: (markdown: string, options?: { boundary?: boolean }) => void;
   placeholder: string;
   ariaLabel: string;
   fieldName?: string;
@@ -32,6 +35,10 @@ export function EditablePracticeMarkdown({
   const editingRef = useRef(false);
   const rootRef = useRef<HTMLDivElement>(null);
   const savedRangeRef = useRef<Range | null>(null);
+  // Set on Enter's keydown, consumed by the very next input event (the
+  // paragraph split it produces) — a paragraph break is its own undo
+  // boundary, never coalesced with the typing before or after it.
+  const nextInputIsBoundaryRef = useRef(false);
   useEffect(() => {
     if (!editingRef.current) setRenderedMarkdown(markdown);
   }, [markdown]);
@@ -118,7 +125,7 @@ export function EditablePracticeMarkdown({
     if (!range.collapsed) {
       if (next) placeCaretAfter(wrapRange(range, next));
       else clearLanguageInRange(range);
-      onChange(serializeExplanation(root));
+      onChange(serializeExplanation(root), { boundary: true });
       root.focus();
       return;
     }
@@ -126,7 +133,7 @@ export function EditablePracticeMarkdown({
       const word = wordAroundCaret(range);
       if (word && !word.collapsed) {
         placeCaretAfter(wrapRange(word, next));
-        onChange(serializeExplanation(root));
+        onChange(serializeExplanation(root), { boundary: true });
         endTypingMode();
         root.focus();
         return;
@@ -205,6 +212,10 @@ export function EditablePracticeMarkdown({
         : null;
     if (!root || !range || !root.contains(range.commonAncestorContainer))
       return;
+    // A real (non-collapsed) selection is the "apply to this text" case; a
+    // collapsed caret is the "arm/disarm typing mode" case (ordinary
+    // word-processor Ctrl+B behavior) and must be left alone below.
+    const hadSelection = !range.collapsed;
     selection?.removeAllRanges();
     selection?.addRange(range);
     if (format === "bold") document.execCommand("bold");
@@ -214,7 +225,20 @@ export function EditablePracticeMarkdown({
       const live = selection?.getRangeAt(0);
       if (live && !live.collapsed) clearLanguageInRange(live);
     }
-    onChange(serializeExplanation(root));
+    if (hadSelection && format !== "clear") {
+      // Chrome/Firefox both carry the just-applied inline style forward as
+      // "next typed character" state even after formatting a real
+      // selection, which is why bolding two words used to bold the rest of
+      // the sentence as the teacher kept typing. Collapse to the end of
+      // what we just formatted, then explicitly re-toggle the command off
+      // if the browser still reports it "on" for the (now empty) caret —
+      // execCommand on a collapsed selection only flips the pending-typing
+      // flag, it doesn't touch any existing text.
+      const current = window.getSelection();
+      current?.collapseToEnd();
+      if (document.queryCommandState(format)) document.execCommand(format);
+    }
+    onChange(serializeExplanation(root), { boundary: true });
     root.focus();
     rememberSelection();
   }
@@ -301,7 +325,12 @@ export function EditablePracticeMarkdown({
         }}
         onInput={(event) => {
           event.currentTarget.removeAttribute("data-empty");
-          onChange(serializeExplanation(event.currentTarget));
+          const boundary = nextInputIsBoundaryRef.current;
+          nextInputIsBoundaryRef.current = false;
+          onChange(
+            serializeExplanation(event.currentTarget),
+            boundary ? { boundary: true } : undefined,
+          );
         }}
         onBlur={(event) => {
           if (
@@ -362,6 +391,7 @@ export function EditablePracticeMarkdown({
           }
           if (event.key === "Enter") {
             endTypingMode();
+            nextInputIsBoundaryRef.current = true;
             return;
           }
           if (event.key === "Escape") {

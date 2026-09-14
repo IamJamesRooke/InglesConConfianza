@@ -75,6 +75,15 @@
   color: var(--muted-foreground);
 }
 
+/* Item 6: a freehand concept (no conceptId, so not backed by the curriculum
+   database) reads as dashed — same visual language as "uncovered" above,
+   distinct from every role-based (DB-backed) chip's solid border. The
+   explanatory `title` lives on the chip itself in lesson-concepts-field.tsx. */
+.lesson-concept-chip.is-freehand {
+  border-style: dashed;
+  color: var(--muted-foreground);
+}
+
 .lesson-concept-add {
   min-height: 24px;
   min-width: 92px;

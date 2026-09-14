@@ -338,6 +338,7 @@ test("ModuleNavigator renders all 100 modules in browse mode without throwing", 
     createElement(ModuleNavigator, {
       modules,
       lessons,
+      conceptDisplays: {},
       activeModuleId: "module_0",
       onSelectModule: () => {},
       onSelectLesson: () => {},
@@ -364,6 +365,7 @@ test("ModuleNavigator marks the active module row", () => {
     createElement(ModuleNavigator, {
       modules,
       lessons,
+      conceptDisplays: {},
       activeModuleId: "module_5",
       onSelectModule: () => {},
       onSelectLesson: () => {},

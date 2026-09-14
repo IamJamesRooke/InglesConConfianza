@@ -73,6 +73,7 @@ non-typing target, so the WM-collision risk doesn't apply the same way).
 |---|---|---|
 | Lesson title (any row, open or collapsed) | `Enter` | Focus jumps into writing: the first slide's field, creating an explanation slide if the lesson has none. If the lesson was collapsed, it expands first — the jump into writing happens either way. |
 | Lesson title (any row) | `Ctrl Alt Backspace` | Opens that row's inline "Delete lesson?" confirm, focused on Delete. `Enter` confirms; `Escape` cancels and returns focus to the title. (The pair-level `Ctrl Alt Backspace` inside a sentence/vocabulary field keeps its own separate meaning — delete that pair — see below.) |
+| Lesson title (any row) | `Ctrl Alt ArrowUp` / `ArrowDown` | Moves the lesson one position up/down within its module; at the module boundary, moves it into the end (up) or start (down) of the adjacent module. The row keeps focus on its title, and the module navigator re-selects whichever module the lesson landed in. Reuses the existing lesson-move plumbing (`moveLesson`/`onDropLesson`) — no new API (§9 item R5). |
 | Anywhere on the page (not the concept typeahead or an open dialog) | `Ctrl Alt L` | Add a new lesson: right after the currently open lesson if one is open, otherwise at the end of the active module. Works with zero lessons in the module — the only keyboard path to create the very first lesson. Focuses the new title. |
 | Anywhere inside a lesson row | `Ctrl Alt P` | Preview that lesson, same as clicking its Play button. |
 | Sentence/Vocabulary block, before the pairs | `Tab` / `Shift Tab` | Native DOM tab order, not a handler: `Shift Tab` from pair 1's Spanish field reaches the "Add instruction" button (or the instruction field, if already shown); `Tab` from the instruction field reaches pair 1's Spanish field. |
@@ -144,6 +145,7 @@ them without reading the table.
 |---|---|
 | `Ctrl Alt S` · `Ctrl Alt E` · `Ctrl Alt N` | In an explanation: mark as Spanish · English · neutral. With text selected, marks it. |
 | `Ctrl Alt ↑` `↓` | Move the active slide up or down. |
+| `Ctrl Alt ↑` `↓` (from a lesson's title) | Move the lesson within its module, or across a module boundary at the top/bottom of the list. |
 | `Ctrl Alt D` | Finish this lesson (collapse it). |
 | `Ctrl Alt L` | Add a new lesson — works from anywhere, even an empty module. Goes after the open lesson, or at the end of the module. |
 | `Ctrl Alt P` | Preview this lesson, from anywhere inside its row. |
@@ -333,6 +335,14 @@ not from any proposal doc's aspirations.
   defines underneath it. The delete-module icon is a ghost icon (muted,
   destructive fill only on hover) at the right. Reversible: comment out
   the `F` block to fall back to the filled-blue header.
+- **Freehand "Covers" concepts render dashed** (§9 item R5): a concept chip
+  with no `conceptId` (typed and accepted but not matched to anything in the
+  curriculum database) gets `border-style: dashed` — `.lesson-concept-chip.is-freehand`
+  in `concepts.css`, the same visual language as the module Key Concepts
+  field's `is-uncovered` state — plus `title="Not in the curriculum —
+  coverage won't count it"` on the chip. Nothing else about it changes: no
+  color shift, no icon, and it still isn't clickable (no `ConceptQuickEdit`,
+  since there's no database row to edit).
 
 ## 6. Owner decisions & rejected ideas
 
@@ -390,6 +400,11 @@ statically or spin up their own isolated server against a throwaway file.
   documented pre-existing timing flake around the concept-search box
   (`getByPlaceholder("Search lessons, phrases, or concepts…")`) — a rerun
   clearing it without code changes is not a regression signal.
+- **Known flake**: `web/tests/ux/editor-finishing.spec.ts`'s seam-boundary
+  pixel check (`direct seam actions insert at exact boundaries without
+  overlay`) failed once during R5 verification on a pixel-rounding race,
+  then passed cleanly on its own in isolation and in a full clean rerun —
+  unrelated to R5's changes (none of which touch seam layout).
 
 ## 8. Known gaps
 
@@ -420,3 +435,4 @@ statically or spin up their own isolated server against a throwaway file.
 | R2 | Round-2 calm pass: seam "+" ladder → single after-active seam, fix stray full-height blue line, settle resting pair/vocab-table typography, quiet collapsed row chrome, move save status + undo/redo into the left rail, quiet module header | Sonnet | done |
 | R3 | Typing latency in a large, many-lesson module: measured with Playwright (12-slide lesson + 30 collapsed siblings), found every keystroke re-rendered every collapsed row (not the open lesson's own slides, which were already isolated per-block); extracted a memoized `LessonRow` (`lesson-library-row.tsx`) and stabilized the callbacks it depends on (`useCallback` on module-move handlers in `page.tsx`, a `lessonsRef` for `deleteBlock`/`deletePiece`/`moveBlock` so they don't need `[lessons]`) — off-field DOM mutation records per keystroke dropped ~5x (≈2300 → ≈450) | Sonnet | done |
 | R4 | Walkthrough fixes 1–9 | Sonnet | done |
+| R5 | Walkthrough-2 fixes | Sonnet | done |

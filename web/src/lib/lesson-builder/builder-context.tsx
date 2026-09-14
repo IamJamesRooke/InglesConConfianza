@@ -28,6 +28,7 @@ export type LessonBuilderActions = {
     lessonId: string,
     blockId: string,
     markdown: string,
+    options?: { boundary?: boolean },
   ) => void;
   updateSentence: (
     lessonId: string,

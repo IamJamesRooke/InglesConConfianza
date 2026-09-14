@@ -241,7 +241,7 @@ export function LessonConceptsField({
                 ? (met ? "Referenced by a lesson in this module" : "Not yet referenced by a lesson in this module")
                 : concept.conceptId
                   ? (display?.spanish ? `${display.spanish} — Priority: ${display?.role ?? "Unranked"}` : `Priority: ${display?.role ?? "Unranked"}`)
-                  : "Not linked to the curriculum"
+                  : "Not in the curriculum — coverage won't count it"
             }
           >
             {variant === "compact" ? (

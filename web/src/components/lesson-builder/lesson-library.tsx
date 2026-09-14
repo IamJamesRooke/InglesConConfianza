@@ -19,6 +19,7 @@ import {
   LessonBuilderProvider,
   type LessonBuilderActions,
 } from "@/lib/lesson-builder/builder-context";
+import { focusSlideWritingField } from "@/lib/lesson-builder/focus";
 import type { Lesson, LessonModule } from "@/lib/lesson-builder/types";
 
 // The single open-lesson id survives reloads so a teacher returns to where
@@ -201,11 +202,23 @@ export function LessonLibrary(props: Props) {
     if (home) setSelectedModuleId(home.id);
     openLesson(lessonId);
     requestAnimationFrame(() => {
-      // data-document-block is LessonDocument's own per-slide anchor.
-      const target = blockId
-        ? document.querySelector(`[data-document-block="${blockId}"]`)
-        : document.querySelector(`[data-lesson-row="${lessonId}"]`);
-      target?.scrollIntoView({ behavior: "smooth", block: "start" });
+      // Item 5: a search result used to only scroll the lesson into view,
+      // leaving focus in the search box — a keyboard-only teacher had to
+      // Tab/click in by hand. Now it activates the matched slide and
+      // focuses its writing field (or the title, for a title hit).
+      if (blockId) {
+        // data-document-block is LessonDocument's own per-slide anchor.
+        document
+          .querySelector(`[data-document-block="${blockId}"]`)
+          ?.scrollIntoView({ behavior: "smooth", block: "start" });
+        focusSlideWritingField(blockId);
+        return;
+      }
+      const titleField = document.querySelector<HTMLInputElement>(
+        `[data-lesson-title="${lessonId}"]`,
+      );
+      titleField?.scrollIntoView({ behavior: "smooth", block: "start" });
+      titleField?.focus();
     });
   }
 
@@ -258,6 +271,57 @@ export function LessonLibrary(props: Props) {
       setDragged(null);
     },
     [dragged, onDropLesson],
+  );
+
+  // Item 2: Ctrl Alt ArrowUp/Down from a lesson's title moves it one
+  // position within its module, or — at the module boundary — into the
+  // end/start of the adjacent module. Reuses `onDropLesson`
+  // (`moveLessonToPosition` in page.tsx) rather than adding a new API: a
+  // same-module move is just a reorder within it, a cross-module move is
+  // an insertion at the destination's end (moving up) or start (moving
+  // down). Title rows only render for the active module (see the
+  // `.filter` below), so `home.id` is always the current `activeModuleId`
+  // when this fires — no extra bookkeeping needed to detect "did it move
+  // to a different module," a plain id comparison is enough.
+  const { modules: propModules } = props;
+  const moveLessonKeyboard = useCallback(
+    (lessonId: string, direction: -1 | 1) => {
+      const homeIndex = propModules.findIndex((module) =>
+        module.lessonIds.includes(lessonId),
+      );
+      if (homeIndex < 0) return;
+      const home = propModules[homeIndex];
+      const position = home.lessonIds.indexOf(lessonId);
+      const withinModule = position + direction;
+      let destinationModuleId = home.id;
+      let insertionIndex: number;
+      if (withinModule < 0 || withinModule >= home.lessonIds.length) {
+        const adjacentIndex = homeIndex + direction;
+        if (adjacentIndex < 0 || adjacentIndex >= propModules.length) return;
+        const adjacent = propModules[adjacentIndex];
+        destinationModuleId = adjacent.id;
+        // Destination doesn't contain this lesson yet, so its lessonIds
+        // array is already in "final" terms — no off-by-one to correct for.
+        insertionIndex = direction === -1 ? adjacent.lessonIds.length : 0;
+      } else {
+        // `moveLessonToPosition` (page.tsx) reads insertionIndex as a
+        // position in the module's *original* (pre-removal) lessonIds
+        // array — it only subtracts 1 itself when the source sits before
+        // that index. Moving backward, the target index is already before
+        // the source, so it's used as-is; moving forward, we have to name
+        // the original index one past where the lesson should land so that
+        // same internal subtraction lands it exactly on `withinModule`.
+        insertionIndex = direction > 0 ? withinModule + 1 : withinModule;
+      }
+      onDropLesson(lessonId, destinationModuleId, insertionIndex);
+      if (destinationModuleId !== home.id) setSelectedModuleId(destinationModuleId);
+      requestAnimationFrame(() => {
+        document
+          .querySelector<HTMLInputElement>(`[data-lesson-title="${lessonId}"]`)
+          ?.focus();
+      });
+    },
+    [propModules, onDropLesson],
   );
 
   const startLesson = useCallback(
@@ -382,6 +446,7 @@ export function LessonLibrary(props: Props) {
         <ModuleNavigator
           modules={props.modules}
           lessons={props.lessons}
+          conceptDisplays={props.builder.conceptDisplays}
           activeModuleId={activeModuleId}
           onSelectModule={openModule}
           onSelectLesson={jumpToLesson}
@@ -488,6 +553,7 @@ export function LessonLibrary(props: Props) {
                           onDragEnd={endDrag}
                           onDrop={drop}
                           onStartLessonAt={startLesson}
+                          onMoveLesson={moveLessonKeyboard}
                           onRequestDeleteConfirm={requestDeleteConfirm}
                           onCancelDeleteConfirm={cancelDeleteConfirm}
                         />

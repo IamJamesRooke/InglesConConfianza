@@ -308,7 +308,7 @@ export function SentenceEditor(props: Props) {
       <div className={`lesson-document-sentence-body ${isTable ? "vocab-table" : ""}`}>
         <div className="lesson-document-pieces">
           {block.languageBlocks.map((piece, index) => (
-            <div key={piece.id} className="lesson-document-pair">
+            <div key={piece.id} className="lesson-document-pair" data-piece={piece.id}>
               <div className={`lesson-document-piece ${activePiece === piece.id ? "active" : ""}`} onFocus={() => setActivePiece(piece.id)}>
                 <div className="lesson-document-language-field" data-language="es">
                   <textarea rows={1} data-field="spanish" ref={(element) => { if (element) spanishRefs.current.set(piece.id, element); else spanishRefs.current.delete(piece.id); }} value={piece.spanish} onChange={(event) => boundActions.onUpdateSpanish(piece.id, event.target.value)} onKeyDown={(event) => handleSpanishKey(event, index)} placeholder="Type in Spanish" lang="es" aria-label={`${isTable ? "Row" : "Sentence piece"} ${index + 1} Spanish`} />

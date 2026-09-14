@@ -40,6 +40,7 @@ type Props = {
     usePointer?: boolean,
   ) => void;
   onStartLessonAt: (moduleId: string, insertionIndex?: number) => void;
+  onMoveLesson: (lessonId: string, direction: -1 | 1) => void;
   onRequestDeleteConfirm: (key: string) => void;
   onCancelDeleteConfirm: () => void;
 };
@@ -71,6 +72,7 @@ function LessonRowImpl({
   onDragEnd,
   onDrop,
   onStartLessonAt,
+  onMoveLesson,
   onRequestDeleteConfirm,
   onCancelDeleteConfirm,
 }: Props) {
@@ -181,6 +183,21 @@ function LessonRowImpl({
             onBlur={builder.endHistoryGroup}
             onKeyDown={(event) => {
               if (event.nativeEvent.isComposing) return;
+              if (
+                event.ctrlKey &&
+                event.altKey &&
+                !event.metaKey &&
+                !event.shiftKey &&
+                (event.code === "ArrowUp" || event.code === "ArrowDown")
+              ) {
+                // Ctrl Alt ArrowUp/Down (item 2): move this lesson within
+                // its module, or across a module boundary at the top/
+                // bottom of the list — see moveLessonKeyboard in
+                // lesson-library.tsx.
+                event.preventDefault();
+                onMoveLesson(lesson.id, event.code === "ArrowUp" ? -1 : 1);
+                return;
+              }
               if (
                 event.code === "Backspace" &&
                 event.ctrlKey &&

@@ -69,6 +69,10 @@ export function ConceptQuickEdit({
   const [error, setError] = useState<string | null>(null);
   const [newTag, setNewTag] = useState("");
   const [vocab, setVocab] = useState<Array<{ name: string; count: number }>>([]);
+  // Bumped by the "Retry" button to re-run the load effect below even
+  // though `form` is still null (its own dependency wouldn't otherwise
+  // change on a failed load).
+  const [loadAttempt, setLoadAttempt] = useState(0);
 
   useEffect(() => {
     if (!open) return;
@@ -92,7 +96,10 @@ export function ConceptQuickEdit({
     return () => {
       live = false;
     };
-  }, [open, form, conceptId, vocab.length]);
+    // loadAttempt is otherwise unused inside — it exists purely so "Retry"
+    // (which clears `error` and bumps this) re-runs the fetch above, since
+    // `form` staying null after a failed load wouldn't otherwise change.
+  }, [open, form, conceptId, vocab.length, loadAttempt]);
 
   function patch<K extends keyof ConceptDraft>(key: K, value: ConceptDraft[K]) {
     setForm((current) => (current ? { ...current, [key]: value } : current));
@@ -210,7 +217,29 @@ export function ConceptQuickEdit({
             </h2>
 
             {!form ? (
-              <p className="mt-4 text-sm text-muted-foreground">Loading…</p>
+              error ? (
+                // The load failed — this used to be unreachable because the
+                // error text was rendered only in the `form`-truthy branch
+                // below, so a failed fetch left the popover stuck on
+                // "Loading…" forever with no way out but closing it.
+                <div className="mt-4 space-y-3">
+                  <p role="alert" className="text-sm font-medium text-red-600">
+                    {error}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setError(null);
+                      setLoadAttempt((attempt) => attempt + 1);
+                    }}
+                    className="rounded-lg bg-primary px-3 py-1.5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:opacity-90"
+                  >
+                    Retry
+                  </button>
+                </div>
+              ) : (
+                <p className="mt-4 text-sm text-muted-foreground">Loading…</p>
+              )
             ) : (
               <>
                 <div className="mt-3 space-y-2.5">

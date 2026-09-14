@@ -3,7 +3,11 @@
 import { ChevronRight, GripVertical, Plus, Redo2, Search, Undo2 } from "lucide-react";
 import { useState, type DragEvent } from "react";
 
-import type { Lesson, LessonModule } from "@/lib/lesson-builder/types";
+import type {
+  ConceptDisplayLookup,
+  Lesson,
+  LessonModule,
+} from "@/lib/lesson-builder/types";
 
 export type ModuleNavigatorMatchField =
   | "module-title"
@@ -95,6 +99,7 @@ export function searchModuleNavigator(
   modules: LessonModule[],
   lessons: Lesson[],
   query: string,
+  conceptDisplays: ConceptDisplayLookup = {},
 ): ModuleNavigatorSearchResult[] {
   const foldedQuery = foldForSearch(query.trim());
   if (!foldedQuery) return [];
@@ -134,16 +139,34 @@ export function searchModuleNavigator(
       }
 
       for (const concept of lesson.concepts) {
+        // `concept.label` is whatever was stored when the concept was
+        // tagged — the Spanish headword for a curriculum-linked concept, or
+        // freehand text — while a linked concept's English gloss only lives
+        // in `conceptDisplays` (fetched client-side, never persisted on the
+        // lesson). Match against both so a query in either language finds
+        // an already-tagged concept, matching the placeholder's promise.
+        const display = concept.conceptId
+          ? conceptDisplays[concept.conceptId]
+          : undefined;
         const label = concept.label ?? "";
-        const match = findMatch(label, foldedQuery);
+        const match =
+          findMatch(label, foldedQuery) ??
+          findMatch(display?.english, foldedQuery) ??
+          findMatch(display?.spanish, foldedQuery);
         if (match) {
+          const excerptSource =
+            findMatch(label, foldedQuery) !== null
+              ? label
+              : (findMatch(display?.english, foldedQuery) !== null
+                  ? display?.english
+                  : display?.spanish) ?? label;
           contentHits.push({
             module: courseModule,
             lesson,
             blockId: null,
             field: "concept",
             isTitleHit: false,
-            excerpt: buildExcerpt(label, match),
+            excerpt: buildExcerpt(excerptSource, match),
           });
         }
       }
@@ -232,6 +255,7 @@ const FIELD_LABEL: Record<ModuleNavigatorMatchField, string> = {
 type Props = {
   modules: LessonModule[];
   lessons: Lesson[];
+  conceptDisplays: ConceptDisplayLookup;
   activeModuleId: string | null;
   onSelectModule: (moduleId: string) => void;
   onSelectLesson: (lessonId: string, blockId?: string) => void;
@@ -252,6 +276,7 @@ type Props = {
 export function ModuleNavigator({
   modules,
   lessons,
+  conceptDisplays,
   activeModuleId,
   onSelectModule,
   onSelectLesson,
@@ -267,7 +292,7 @@ export function ModuleNavigator({
 }: Props) {
   const [query, setQuery] = useState("");
   const [draggedModuleId, setDraggedModuleId] = useState<string | null>(null);
-  const results = searchModuleNavigator(modules, lessons, query);
+  const results = searchModuleNavigator(modules, lessons, query, conceptDisplays);
   const searching = query.trim().length > 0;
 
   function startDrag(event: DragEvent<HTMLButtonElement>, moduleId: string) {

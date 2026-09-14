@@ -382,7 +382,7 @@ export function LessonDocument(props: Props) {
                   fieldName={`explanation-${block.id}`}
                   variant="document"
                   onExit={() => exitBlock(block.id)}
-                  onChange={(markdown) => actions.updateExplanation(lessonId, block.id, markdown)}
+                  onChange={(markdown, options) => actions.updateExplanation(lessonId, block.id, markdown, options)}
                 />
               </section>
             ) : (
