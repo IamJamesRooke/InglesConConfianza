@@ -289,7 +289,10 @@ test("no module-level collapse control; sidebar search opens one lesson without 
   const rowOne = page.locator(`[data-lesson-row="${lessonOneId}"]`);
   const rowTwo = page.locator(`[data-lesson-row="${lessonTwoId}"]`);
 
-  await rowOne.getByRole("button", { name: "Collapse lesson" }).click();
+  // Strict single-open (§1a): creating lesson two opened it and, in the
+  // same stroke, folded lesson one automatically — no second click needed.
+  await expect(rowOne.locator(".lesson-document")).toHaveCount(0);
+  await expect(rowTwo.locator(".lesson-document")).toBeVisible();
   await rowTwo.getByRole("button", { name: "Collapse lesson" }).click();
   await expect(rowOne.locator(".lesson-document")).toHaveCount(0);
   await expect(rowTwo.locator(".lesson-document")).toHaveCount(0);

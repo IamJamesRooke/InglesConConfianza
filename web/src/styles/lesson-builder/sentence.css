@@ -223,6 +223,17 @@
   color: var(--lesson-hl-en);
   font-weight: 400;
 }
+
+/* 1b: calmer resting palette */
+.lesson-document-sentence.resting .lesson-sentence-composed[lang="es"] {
+  color: var(--foreground);
+  font-weight: 600;
+}
+.lesson-document-sentence.resting .lesson-sentence-composed[lang="en"] {
+  color: var(--muted-foreground);
+  font-weight: 400;
+}
+/* end 1b */
 .lesson-sentence-phrase {
   white-space: normal;
 }
@@ -431,6 +442,28 @@
   border-color: var(--hint);
   background: color-mix(in oklch, var(--hint) 16%, var(--state-help-soft));
 }
+/* Hint-on-demand (§1g): a quiet 18px circular affordance beside the active
+   pair only, shown instead of an unrequested empty hint field. Same footprint
+   whether resting or hovered so it never shifts neighboring layout. */
+.lesson-document-hint-add {
+  display: grid;
+  width: 18px;
+  height: 18px;
+  place-items: center;
+  border: 0;
+  border-radius: 999px;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+.lesson-document-hint-add:hover,
+.lesson-document-hint-add:focus-visible {
+  color: var(--hint-foreground);
+  background: var(--state-help-soft);
+}
+.lesson-document-hint-add:focus-visible {
+  outline: 2px solid var(--hint);
+  outline-offset: 1px;
+}
 /* Small X attached to the pair's own corner, outside the Spanish/English
    text. Zero reserved space at rest (absolutely positioned, opacity 0);
    appears on hover or keyboard focus of the pair, or unconditionally on
@@ -472,7 +505,8 @@
   position: relative;
 }
 .lesson-document-sentence.vocab-table .lesson-document-pair > .lesson-document-hint-pill,
-.lesson-document-sentence.vocab-table .lesson-document-pair > .lesson-document-hint-pill-input {
+.lesson-document-sentence.vocab-table .lesson-document-pair > .lesson-document-hint-pill-input,
+.lesson-document-sentence.vocab-table .lesson-document-pair > .lesson-document-hint-add {
   position: absolute;
   left: 100%;
   top: 50%;
@@ -481,7 +515,8 @@
 }
 @media (max-width: 700px) {
   .lesson-document-sentence.vocab-table .lesson-document-pair > .lesson-document-hint-pill,
-  .lesson-document-sentence.vocab-table .lesson-document-pair > .lesson-document-hint-pill-input {
+  .lesson-document-sentence.vocab-table .lesson-document-pair > .lesson-document-hint-pill-input,
+  .lesson-document-sentence.vocab-table .lesson-document-pair > .lesson-document-hint-add {
     position: static;
     margin: 2px 0 0;
     transform: none;

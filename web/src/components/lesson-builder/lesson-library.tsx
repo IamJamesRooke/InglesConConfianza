@@ -33,6 +33,37 @@ import {
 import { focusSlideWritingField } from "@/lib/lesson-builder/focus";
 import type { Lesson, LessonModule } from "@/lib/lesson-builder/types";
 
+// The single open-lesson id survives reloads so a teacher returns to where
+// they left off (§1a "Lesson focus" — see docs/design/lesson-builder.md).
+// Wrapped in try/catch: private browsing / storage-disabled contexts must
+// degrade to "no memory," never throw.
+const LAST_LESSON_KEY = "lesson-builder:last-lesson";
+
+function readLastLesson(): string | null {
+  try {
+    return window.localStorage.getItem(LAST_LESSON_KEY);
+  } catch {
+    return null;
+  }
+}
+
+function writeLastLesson(lessonId: string | null) {
+  try {
+    if (lessonId) window.localStorage.setItem(LAST_LESSON_KEY, lessonId);
+    else window.localStorage.removeItem(LAST_LESSON_KEY);
+  } catch {
+    /* storage unavailable — nothing to remember for next time */
+  }
+}
+
+function readLessonParam(): string | null {
+  try {
+    return new URLSearchParams(window.location.search).get("lesson");
+  } catch {
+    return null;
+  }
+}
+
 type Props = {
   modules: LessonModule[];
   lessons: Lesson[];
@@ -59,9 +90,9 @@ type Props = {
 
 export function LessonLibrary(props: Props) {
   const [showKeyboardHelp, setShowKeyboardHelp] = useState(false);
-  const [collapsedLessons, setCollapsedLessons] = useState<Set<string>>(
-    new Set(),
-  );
+  // Strict single-open: at most one lesson is expanded at a time across the
+  // whole builder (§1a). `null` means every lesson is collapsed.
+  const [openLessonId, setOpenLessonId] = useState<string | null>(null);
   const [confirmDelete, setConfirmDelete] = useState<string | null>(null);
   const [dragged, setDragged] = useState<{
     moduleId: string;
@@ -84,23 +115,75 @@ export function LessonLibrary(props: Props) {
     ? selectedModuleId
     : (props.modules[0]?.id ?? null);
 
-  function openModule(moduleId: string) {
-    setSelectedModuleId(moduleId);
+  // Sets the single open lesson and remembers it for next time (§1a).
+  function openLesson(lessonId: string | null) {
+    setOpenLessonId(lessonId);
+    writeLastLesson(lessonId);
   }
 
+  // The "remembered/first" fallback, scoped to one module: the last-opened
+  // lesson if it happens to belong to this module, else the module's first
+  // (still-existing) lesson.
+  function pickLessonForModule(module: LessonModule | undefined): string | null {
+    if (!module) return null;
+    const stored = readLastLesson();
+    if (stored && lessonById.has(stored) && module.lessonIds.includes(stored)) {
+      return stored;
+    }
+    return module.lessonIds.find((id) => lessonById.has(id)) ?? null;
+  }
+
+  function openModule(moduleId: string) {
+    setSelectedModuleId(moduleId);
+    const target = props.modules.find((candidate) => candidate.id === moduleId);
+    if (!target) return;
+    // Leave the open lesson alone if it already belongs to this module —
+    // only reassign when actually switching into a module that doesn't
+    // contain the currently open lesson.
+    if (openLessonId && target.lessonIds.includes(openLessonId)) return;
+    openLesson(pickLessonForModule(target));
+  }
+
+  // On first load, open exactly one lesson: the `?lesson=` URL param, else
+  // the remembered last-opened lesson, else the active module's first
+  // lesson (§1a). Guarded to run once, and only once real data has arrived
+  // (props.saveLabel stays "Loading…" until then).
+  const initializedOpenLessonRef = useRef(false);
+  useEffect(() => {
+    if (initializedOpenLessonRef.current || props.saveLabel === "Loading…") {
+      return;
+    }
+    initializedOpenLessonRef.current = true;
+    const paramLesson = readLessonParam();
+    let target: string | null =
+      paramLesson && lessonById.has(paramLesson) ? paramLesson : null;
+    let home = target
+      ? props.modules.find((module) => module.lessonIds.includes(target!))
+      : undefined;
+    if (!target) {
+      const stored = readLastLesson();
+      if (stored && lessonById.has(stored)) {
+        target = stored;
+        home = props.modules.find((module) => module.lessonIds.includes(stored));
+      }
+    }
+    if (!target) {
+      home = props.modules[0];
+      target = pickLessonForModule(home);
+    }
+    if (home) setSelectedModuleId(home.id);
+    openLesson(target);
+    // Runs once (guarded above); re-running on every dependency change would
+    // fight a teacher's own subsequent open/close actions.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.saveLabel, props.modules, lessonById]);
+
   function jumpToLesson(lessonId: string, blockId?: string) {
-    setCollapsedLessons((current) => {
-      if (!current.has(lessonId)) return current;
-      const next = new Set(current);
-      next.delete(lessonId);
-      return next;
-    });
     const home = props.modules.find((module) =>
       module.lessonIds.includes(lessonId),
     );
-    if (home) {
-      openModule(home.id);
-    }
+    if (home) setSelectedModuleId(home.id);
+    openLesson(lessonId);
     requestAnimationFrame(() => {
       // data-document-block is LessonDocument's own per-slide anchor.
       const target = blockId
@@ -110,13 +193,8 @@ export function LessonLibrary(props: Props) {
     });
   }
 
-
   function collapse(lessonId: string) {
-    setCollapsedLessons((current) => {
-      const next = new Set(current);
-      next.add(lessonId);
-      return next;
-    });
+    openLesson(null);
     requestAnimationFrame(() =>
       document
         .querySelector<HTMLInputElement>(`[data-lesson-title="${lessonId}"]`)
@@ -125,7 +203,8 @@ export function LessonLibrary(props: Props) {
   }
 
   function toggleLesson(lessonId: string) {
-    setCollapsedLessons((current) => toggleSet(current, lessonId));
+    if (openLessonId === lessonId) collapse(lessonId);
+    else openLesson(lessonId);
   }
 
   function startDrag(
@@ -158,6 +237,7 @@ export function LessonLibrary(props: Props) {
 
   function startLesson(moduleId: string, insertionIndex?: number) {
     const lessonId = props.builder.newLesson(moduleId, insertionIndex);
+    openLesson(lessonId);
     requestAnimationFrame(() => {
       document
         .querySelector<HTMLInputElement>(`[data-lesson-title="${lessonId}"]`)
@@ -347,7 +427,7 @@ export function LessonLibrary(props: Props) {
                         const lessonIndex = moduleLessons.findIndex(
                           (item) => item.id === lesson.id,
                         );
-                        const lessonCollapsed = collapsedLessons.has(lesson.id);
+                        const lessonCollapsed = openLessonId !== lesson.id;
                         const lessonDeleteKey = `lesson:${lesson.id}`;
                         return [
                           <div
@@ -551,11 +631,4 @@ export function LessonLibrary(props: Props) {
     </section>
     </LessonBuilderProvider>
   );
-}
-
-function toggleSet(current: Set<string>, id: string) {
-  const next = new Set(current);
-  if (next.has(id)) next.delete(id);
-  else next.add(id);
-  return next;
 }

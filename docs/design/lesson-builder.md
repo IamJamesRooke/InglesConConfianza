@@ -152,6 +152,21 @@ add), and `Ctrl Alt Shift L` (page-level new lesson) were retired in the
 Pulled from `web/src/styles/lesson-library-document.css` as it stands today,
 not from any proposal doc's aspirations.
 
+- **Lesson focus**: strict single-open — at most one lesson is expanded
+  across the whole builder at a time (`lesson-library.tsx`'s `openLessonId`
+  state, replacing the old `collapsedLessons: Set<string>` model). On load,
+  exactly one lesson opens: the `?lesson=<id>` URL param if it names a
+  lesson that still exists, else `localStorage["lesson-builder:last-lesson"]`
+  if it still exists, else the active module's first lesson. Expanding any
+  lesson (chevron, title-row `Enter`, `jumpToLesson` from the navigator or
+  search, creating a lesson, `Ctrl Alt L`) collapses whichever other lesson
+  was open; collapsing the open one ("Finish"/`Ctrl Alt D`/chevron) leaves
+  none open. The open lesson id is written to `localStorage` on every
+  change (including back to `null`), so "Finish" also clears the memory,
+  not just the screen. Switching modules in the navigator opens that
+  module's own remembered-or-first lesson by the same rule, but only when
+  the currently open lesson doesn't already belong to the module being
+  switched to. All storage access is wrapped in try/catch.
 - **Slide focus indicator**: a `4px` solid `var(--primary)` left bar
   (`.lesson-document-block[data-active="true"]::after`) is the *only* focus
   signal at the slide level — no background tint, no border, no shadow on
@@ -212,6 +227,27 @@ not from any proposal doc's aspirations.
   `background: transparent` — ink only, no fill. (The learner-facing preview
   surface, `.lesson-preview-explanation mark`, does add a faint 16% tinted
   background — that's the practice/preview treatment, not the authoring one.)
+  **Pending owner A/B (§9, 1b)**: a calmer *resting*-only palette variant
+  exists behind a single delimited block in `sentence.css` (comment `/* 1b:
+  calmer resting palette */`), currently enabled — Spanish
+  `color: var(--foreground); font-weight: 600`, English
+  `color: var(--muted-foreground); font-weight: 400`, scoped to
+  `.lesson-document-sentence.resting` only. Editing fields, explanation
+  marks, and the learner preview are untouched and keep red/blue ink. Owner
+  has not yet chosen between this and the original red/blue resting
+  treatment — revert by commenting out that one block.
+- **Hint input shown only on demand**: an empty hint no longer renders
+  under every active pair. The input (`.lesson-document-hint-pill-input`)
+  renders only when the pair already has a stored hint (`piece.callout !==
+  null`) or the teacher just asked for one on this pair (local
+  `hintRequested` state in `sentence-editor.tsx`, set by `Alt ArrowDown` or
+  by clicking the pair's lightbulb button). That lightbulb
+  (`.lesson-document-hint-add`, 18px circular, `lucide-react` `Lightbulb`,
+  `aria-label="Add hint to <pair label>"`) appears only beside the active
+  pair when it has no hint yet. Blur/Escape on an empty hint input clears
+  `hintRequested` and sets `callout` back to `null`, same as before. An
+  existing non-empty hint still renders as the read-only pill when its pair
+  isn't active, and as the input when it is.
 - **Sentence field focus**: a `box-shadow` ring in primary blue on the
   individual textarea, layered on top of the pair's own `.active` border —
   intentionally one visual system (border = which pair, ring = which field),
@@ -295,11 +331,11 @@ statically or spin up their own isolated server against a throwaway file.
 | 0c | `LessonBuilderContext` to replace the LessonLibrary→LessonDocument→SentenceEditor prop chain | Sonnet | done |
 | 0d | Sweep process/history comments ("Track E", "S3", "/tmp/…", "owned by lesson-ux") from lesson-builder code | Haiku | done |
 | 0e | AGENTS.md "Lesson builder task protocol" section | Sonnet | done |
-| 1a | One lesson open at a time: collapse all on load except `?lesson=` / last-edited; opening one folds the others | Sonnet | todo |
-| 1b | Calmer resting palette for sentence slides (owner A/B with screenshots) | Sonnet | todo |
+| 1a | One lesson open at a time: collapse all on load except `?lesson=` / last-edited; opening one folds the others | Sonnet | done |
+| 1b | Calmer resting palette for sentence slides (owner A/B with screenshots) | Sonnet | awaiting owner |
 | 1c | One quiet next-action cue under the active slide (`Ctrl Alt Enter · next slide`) | Sonnet | done |
 | 1d | Shortcut diet: essentials vs power tier; unify chooser letters with global add chords | Sonnet | done |
 | 1e | Keyboard help dialog: two tiers, even columns | Haiku | done |
 | 1f | "Covers" concept chips: plain pills, priority as a dot | Haiku | done |
-| 1g | Hint input shown only on demand, not on every activated pair | Haiku | todo |
+| 1g | Hint input shown only on demand, not on every activated pair | Haiku | done |
 | 1h | Make both insert controls (between slides and between lessons) discoverable at rest — they currently collapse to a hairline | Haiku | done |

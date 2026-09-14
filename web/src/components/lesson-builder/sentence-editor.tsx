@@ -1,6 +1,6 @@
 "use client";
 
-import { Plus, X } from "lucide-react";
+import { Lightbulb, Plus, X } from "lucide-react";
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 
 import { SentencePresentation } from "@/components/lesson-builder/sentence-presentation";
@@ -39,6 +39,11 @@ export function SentenceEditor(props: Props) {
     onDeletePiece: (pieceId: string) => actions.deletePiece(lessonId, block.id, pieceId),
   };
   const [activePiece, setActivePiece] = useState<string | null>(null);
+  // The hint input is clutter when it appears on every pair unasked (§1g) —
+  // it only renders once the teacher explicitly asks for one on this pair
+  // (Alt+ArrowDown or the lightbulb button), or the pair already has a
+  // stored hint.
+  const [hintRequested, setHintRequested] = useState<string | null>(null);
   const [showInstruction, setShowInstruction] = useState(false);
   // English alternatives edit as one local draft string (slash-delimited);
   // stored answers are only reconciled on commit (blur/Enter/Tab/Escape), so
@@ -75,6 +80,7 @@ export function SentenceEditor(props: Props) {
       setActivePiece(null);
       setShowInstruction(false);
       setEnglishDraft({});
+      setHintRequested(null);
     }, 0);
     return () => window.clearTimeout(reset);
   }, [active]);
@@ -127,13 +133,33 @@ export function SentenceEditor(props: Props) {
   }
 
   function closeHint(piece: Piece) {
-    if (!piece.callout?.trim()) boundActions.onUpdateCallout(piece.id, null);
+    if (!piece.callout?.trim()) {
+      boundActions.onUpdateCallout(piece.id, null);
+      setHintRequested((current) => (current === piece.id ? null : current));
+    }
   }
 
   function focusHint(piece: Piece, origin: HintOrigin) {
     hintOrigin.current = origin;
+    setHintRequested(piece.id);
     if (activePiece !== piece.id) setActivePiece(piece.id);
     requestAnimationFrame(() => hintInputRef.current?.focus());
+  }
+
+  // The lightbulb button has no text caret of its own to remember, so it
+  // hands focusHint the currently-focused field in this pair (falling back
+  // to the end of the Spanish field) as the place Escape should return to.
+  function requestHint(piece: Piece) {
+    const englishField = englishRefs.current.get(piece.id);
+    const spanishField = spanishRefs.current.get(piece.id);
+    const focused = document.activeElement;
+    if (focused === englishField) {
+      focusHint(piece, { field: "english", caret: englishField?.selectionStart ?? 0 });
+    } else if (focused === spanishField) {
+      focusHint(piece, { field: "spanish", caret: spanishField?.selectionStart ?? 0 });
+    } else {
+      focusHint(piece, { field: "spanish", caret: piece.spanish.length });
+    }
   }
 
   function returnFromHint(piece: Piece) {
@@ -311,28 +337,39 @@ export function SentenceEditor(props: Props) {
               >
                 <X size={11} aria-hidden="true" />
               </button>
-              {activePiece === piece.id ? (
-                <input
-                  type="text"
-                  className="lesson-document-hint-pill-input"
-                  ref={hintInputRef}
-                  value={piece.callout ?? ""}
-                  onChange={(event) => boundActions.onUpdateCallout(piece.id, event.target.value)}
-                  onBlur={() => closeHint(piece)}
-                  onKeyDown={(event) => {
-                    if (event.nativeEvent.isComposing) return;
-                    if (event.key === "Enter") { event.preventDefault(); event.currentTarget.blur(); return; }
-                    if (event.key === "Escape") {
-                      event.preventDefault(); event.stopPropagation();
-                      closeHint(piece);
-                      returnFromHint(piece);
-                    }
-                  }}
-                  placeholder="Hint"
-                  aria-label={`Hint for ${pieceLabel(piece)}`}
-                />
-              ) : piece.callout?.trim() ? (
-                <span className="lesson-document-hint-pill" aria-label={`Hint for ${pieceLabel(piece)}`}>{piece.callout}</span>
+              {piece.callout !== null || hintRequested === piece.id ? (
+                activePiece === piece.id ? (
+                  <input
+                    type="text"
+                    className="lesson-document-hint-pill-input"
+                    ref={hintInputRef}
+                    value={piece.callout ?? ""}
+                    onChange={(event) => boundActions.onUpdateCallout(piece.id, event.target.value)}
+                    onBlur={() => closeHint(piece)}
+                    onKeyDown={(event) => {
+                      if (event.nativeEvent.isComposing) return;
+                      if (event.key === "Enter") { event.preventDefault(); event.currentTarget.blur(); return; }
+                      if (event.key === "Escape") {
+                        event.preventDefault(); event.stopPropagation();
+                        closeHint(piece);
+                        returnFromHint(piece);
+                      }
+                    }}
+                    placeholder="Hint"
+                    aria-label={`Hint for ${pieceLabel(piece)}`}
+                  />
+                ) : piece.callout?.trim() ? (
+                  <span className="lesson-document-hint-pill" aria-label={`Hint for ${pieceLabel(piece)}`}>{piece.callout}</span>
+                ) : null
+              ) : activePiece === piece.id ? (
+                <button
+                  type="button"
+                  className="lesson-document-hint-add"
+                  aria-label={`Add hint to ${pieceLabel(piece)}`}
+                  onClick={() => requestHint(piece)}
+                >
+                  <Lightbulb size={18} aria-hidden="true" />
+                </button>
               ) : null}
             </div>
           ))}
