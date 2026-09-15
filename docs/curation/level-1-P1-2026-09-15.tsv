@@ -1,82 +1,44 @@
-concept-id	role	reason
-o25n43wg3o	P1	Level 1 spine (docs/curation/level-1.md): yo → I
+# Level 1 spine (docs/curation/level-1.md), 2026-09-15. Format: concept id, new role, rationale. Only rows that were Unranked; hand-set levels untouched.
 hh9lhwdnn0	P1	Level 1 spine (docs/curation/level-1.md): hablar sin pronombre de sujeto → to speak (subject dropped)
 608c3yq7i6	P1	Level 1 spine (docs/curation/level-1.md): tú → you
 d6oilpcif8	P1	Level 1 spine (docs/curation/level-1.md): usted → you
-9rsyb41dmz	P1	Level 1 spine (docs/curation/level-1.md): me → me
-5ajqekseb3	P1	Level 1 spine (docs/curation/level-1.md): te → you
 i5ji4776n8	P1	Level 1 spine (docs/curation/level-1.md): mi → my
 ozvruwn0tu	P1	Level 1 spine (docs/curation/level-1.md): mis → my
 63ojew9r4f	P1	Level 1 spine (docs/curation/level-1.md): tu → your
 7gl5vz7uo4	P1	Level 1 spine (docs/curation/level-1.md): tus → your
 ovnw5edm1p	P1	Level 1 spine (docs/curation/level-1.md): con → with
-lse8dx7tet	P1	Level 1 spine (docs/curation/level-1.md): conmigo → with me
-rnldlhmpop	P1	Level 1 spine (docs/curation/level-1.md): contigo → with you
 dyi2yg06hb	P1	Level 1 spine (docs/curation/level-1.md): para mí → for me
 sqd8xxfwmx	P1	Level 1 spine (docs/curation/level-1.md): para ti → for you
-w7bu9jslac	P1	Level 1 spine (docs/curation/level-1.md): querer [algo] → to want [something]
-df1fa2p3xy	P1	Level 1 spine (docs/curation/level-1.md): querer [hacer algo] → to want [to do something]
-wyhk5xpxou	P1	Level 1 spine (docs/curation/level-1.md): necesitar [algo] → to need [something]
-1eotkqfnjg	P1	Level 1 spine (docs/curation/level-1.md): necesitar [hacer algo] → to need [to do something]
 wwwc8jugby	P1	Level 1 spine (docs/curation/level-1.md): tener [algo] → to have [something]
-p1ga7e8bhn	P1	Level 1 spine (docs/curation/level-1.md): tengo [algo] → I have [something]
-mwpgnk4gb9	P1	Level 1 spine (docs/curation/level-1.md): tienes [algo] → you have [something]
 7s7vnrgxud	P1	Level 1 spine (docs/curation/level-1.md): tener que [hacer algo] → to have to [do something]
-yye01uov38	P1	Level 1 spine (docs/curation/level-1.md): tengo que [hacer algo] → I have to [do something]
-kjllit1qgt	P1	Level 1 spine (docs/curation/level-1.md): tienes que [hacer algo] → you have to [do something]
 9jt3xxrxse	P1	Level 1 spine (docs/curation/level-1.md): gustaría [hacer algo] → would like to [do something]
 fr2zv8cgr5	P1	Level 1 spine (docs/curation/level-1.md): gustaría [algo] → would like [something]
-dvodf0y7wx	P1	Level 1 spine (docs/curation/level-1.md): quisiera [algo] → would like [something]
-dnwd7gmll5	P1	Level 1 spine (docs/curation/level-1.md): quisiera [hacer algo] → would like [to do something]
 1uo0obtd8h	P1	Level 1 spine (docs/curation/level-1.md): gustarle [algo] a [alguien] → [somebody] likes [something]
 mowb8a6hvx	P1	Level 1 spine (docs/curation/level-1.md): gustarle [hacer algo] a [alguien] → [somebody] likes to [do something]
-3wtzllym25	P1	Level 1 spine (docs/curation/level-1.md): saber [algo] → to know [something]
 manx93glfl	P1	Level 1 spine (docs/curation/level-1.md): saber que [algo] → to know that [something]
 ahq54carab	P1	Level 1 spine (docs/curation/level-1.md): saber si [algo] → to know whether [something]
 lr3gy47etf	P1	Level 1 spine (docs/curation/level-1.md): querer saber si [alguien] [hace algo] → to want to know if [somebody] [does something]
-mxguwwzrxk	P1	Level 1 spine (docs/curation/level-1.md): poder [hacer algo] → to be able [to do something]
 0zuw37lnfv	P1	Level 1 spine (docs/curation/level-1.md): poder [hacer algo] (capacidad) → can [do something]
-b5c13zo3bg	P1	Level 1 spine (docs/curation/level-1.md): soy [algo] → I am [something]
-0rv1zmpu5c	P1	Level 1 spine (docs/curation/level-1.md): eres [algo] → you are [something]
-n8ahr1jble	P1	Level 1 spine (docs/curation/level-1.md): soy [adjetivo] → I am [adjective]
-hfip8vre8c	P1	Level 1 spine (docs/curation/level-1.md): eres [adjetivo] → you are [adjective]
-iy31grrg95	P1	Level 1 spine (docs/curation/level-1.md): soy de [un lugar] → I am from [a place]
-6zy7d60lhd	P1	Level 1 spine (docs/curation/level-1.md): eres de [un lugar] → you are from [a place]
-93wmoiwink	P1	Level 1 spine (docs/curation/level-1.md): estoy [en un estado o lugar] → I am [somewhere or feeling something]
-0k44vohfn6	P1	Level 1 spine (docs/curation/level-1.md): estás [en un estado o lugar] → you are [somewhere or feeling something]
 nqyror4j5f	P1	Level 1 spine (docs/curation/level-1.md): estar [en un estado] → to be [in a state]
 obf74hel79	P1	Level 1 spine (docs/curation/level-1.md): estar [en un lugar] → to be [in a place]
 38d1kfif1b	P1	Level 1 spine (docs/curation/level-1.md): ir a [hacer algo] → to be going [to do something]
-rh4yfb08hn	P1	Level 1 spine (docs/curation/level-1.md): voy a [hacer algo] → I am going [to do something]
-0lbant78ng	P1	Level 1 spine (docs/curation/level-1.md): vas a [hacer algo] → you are going [to do something]
-2iiyjrogmc	P1	Level 1 spine (docs/curation/level-1.md): ir a [un lugar] → to go to [a place]
-opdzad1zrx	P1	Level 1 spine (docs/curation/level-1.md): voy a [un lugar] → I am going to [a place]
-vlfntsr6mm	P1	Level 1 spine (docs/curation/level-1.md): vas a [un lugar] → you are going to [a place]
 k9y5vq9p06	P1	Level 1 spine (docs/curation/level-1.md): ir a casa → to go home
 nuo847x66j	P1	Level 1 spine (docs/curation/level-1.md): hay [algo singular] → there is [something singular]
 54mbh87vk1	P1	Level 1 spine (docs/curation/level-1.md): hay [cosas plurales] → there are [plural things]
 cp5hmttaq2	P1	Level 1 spine (docs/curation/level-1.md): hay [algo singular] → there's [something singular]
-1qz4qeh9oi	P1	Level 1 spine (docs/curation/level-1.md): hacer [una tarea o actividad] → to do [a task or activity]
 qt9aqatj4f	P1	Level 1 spine (docs/curation/level-1.md): hacer → to do
 v6srxq2n55	P1	Level 1 spine (docs/curation/level-1.md): hacer → do
 m9dfm9pbq2	P1	Level 1 spine (docs/curation/level-1.md): hacer [algo creado o preparado] → to make [something]
-xd9c671eit	P1	Level 1 spine (docs/curation/level-1.md): lo → it
-m3zbdhcenj	P1	Level 1 spine (docs/curation/level-1.md): la → it
 laabqgv17t	P1	Level 1 spine (docs/curation/level-1.md): ello → it
-nqv2w27jgr	P1	Level 1 spine (docs/curation/level-1.md): algo → something
-tzymzgnepe	P1	Level 1 spine (docs/curation/level-1.md): [la] cosa → thing
 qxku96zu9e	P1	Level 1 spine (docs/curation/level-1.md): y → and
 eiiegq2s5o	P1	Level 1 spine (docs/curation/level-1.md): o → or
 s08z927piv	P1	Level 1 spine (docs/curation/level-1.md): pero → but
-wjbh6m5ek1	P1	Level 1 spine (docs/curation/level-1.md): porque → because
-v3wnwpk0qj	P1	Level 1 spine (docs/curation/level-1.md): si → if
 9qaylitnlb	P1	Level 1 spine (docs/curation/level-1.md): que (cláusula) → that
 71u0miv5rm	P1	Level 1 spine (docs/curation/level-1.md): cuando (conector) → when
 u109gx9ehn	P1	Level 1 spine (docs/curation/level-1.md): así que → so
 rakstubyz7	P1	Level 1 spine (docs/curation/level-1.md): entonces → then
 gdwcgcevlo	P1	Level 1 spine (docs/curation/level-1.md): aquí → here
 wyrj7k8thq	P1	Level 1 spine (docs/curation/level-1.md): allí → there
-rf7wttxz5x	P1	Level 1 spine (docs/curation/level-1.md): hoy → today
 uklvuftocv	P1	Level 1 spine (docs/curation/level-1.md): mañana → tomorrow
 44tis0284q	P1	Level 1 spine (docs/curation/level-1.md): ahora → now
 fv4tu6n5s9	P1	Level 1 spine (docs/curation/level-1.md): más tarde → later
@@ -90,8 +52,6 @@ u7zp2lujp0	P1	Level 1 spine (docs/curation/level-1.md): los → the
 4j1nc0c9o9	P1	Level 1 spine (docs/curation/level-1.md): las → the
 8jv3otkqa7	P1	Level 1 spine (docs/curation/level-1.md): un → a
 zravwibucz	P1	Level 1 spine (docs/curation/level-1.md): una → a
-7rngt9gu3p	P1	Level 1 spine (docs/curation/level-1.md): algún [sustantivo] → some [noun]
-1gq5hjnrzn	P1	Level 1 spine (docs/curation/level-1.md): alguna [sustantivo] → some [noun]
 8xn53vk9eu	P1	Level 1 spine (docs/curation/level-1.md): unos → some
 0tty2mfina	P1	Level 1 spine (docs/curation/level-1.md): este → this
 7hfg12h8br	P1	Level 1 spine (docs/curation/level-1.md): esta → this
@@ -100,3 +60,6 @@ dt2cwfu58n	P1	Level 1 spine (docs/curation/level-1.md): ese → that
 19ebbd6l4z	P1	Level 1 spine (docs/curation/level-1.md): esa → that
 tvm9cf1n1l	P1	Level 1 spine (docs/curation/level-1.md): eso → that
 m7x949wtjj	P1	Level 1 spine (docs/curation/level-1.md): más [sustantivo] → more [noun]
+othawv9u0f	P1	Level 1 spine (docs/curation/level-1.md): ser [identidad] → to be [an identity]
+46elg5u15i	P1	Level 1 spine (docs/curation/level-1.md): [ser] [adjetivo] → [to be] [adjective]
+2z3yhpg9ve	P1	Level 1 spine (docs/curation/level-1.md): ser de [un lugar] → to be from [a place]

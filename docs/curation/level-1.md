@@ -5,9 +5,21 @@ negation, no third person, no past. Chosen by linguistic utility, not CEFR. Ques
 negation open Level 2; social expressions (*please, thank you*) live in a vocabulary band.
 
 **Unit:** an *item* is one thing to learn; the rows under it are the database evidence.
+**Infinitive only (owner, 2026-09-15):** concepts are stored as infinitives (*tener*, *tener que
+[hacer algo]*), never as *tengo / tienes*. The conjugated paradigm rows that exist from
+earlier work stay `Unranked`; the lesson shows the form, the infinitive row carries the level.
 **Storage:** every row listed here gets `curriculumRole = P1` (= Level 1). Nothing else
 changes; all other rows stay `Unranked` until the owner promotes them while building
-lessons. **Status: nothing applied.** Manifest: `level-1-P1-2026-09-15.tsv` (dry-run only).
+lessons. Levels are the existing enum: P1–P5 = Level 1–5 (no migration; extend later if needed).
+
+**Merge with the owner's hand-set levels (2026-09-15):** the live DB already had 35 rows
+at P1 set by hand while authoring. 25 of them are in this list; the other 10 are kept as
+the owner's call and are Level 1 too: `gbsx4jxjdu` decir que → say that ·
+`wd6uku1ojd` creer que → think that · `96zmjpedzq` nos → us · `mbu3bynmc3` lo → him ·
+`7poocn5na8` la → her · `5cest1aute` los → them · `zf3sq9mld5` las → them ·
+`wsttz3une0` a [un lugar] → to [a place] · `5c41gd4gqg` día → day · `vk5arw3nk6` sí → yes.
+The manifest only touches rows that were `Unranked` (76 rows); no hand-set level is
+ever overwritten. Owner's P2–P5 rows (20) are untouched.
 
 ## You and me — 8 items
 
@@ -24,8 +36,8 @@ lessons. **Status: nothing applied.** Manifest: `level-1-P1-2026-09-15.tsv` (dry
 
 9. **want** — `w7bu9jslac` querer [algo] · `df1fa2p3xy` querer [hacer algo]
 10. **need** — `wyhk5xpxou` necesitar [algo] · `1eotkqfnjg` necesitar [hacer algo]
-11. **have** — `wwwc8jugby` tener [algo] · `p1ga7e8bhn` tengo · `mwpgnk4gb9` tienes
-12. **have to** — `7s7vnrgxud` tener que · `yye01uov38` tengo que · `kjllit1qgt` tienes que
+11. **have** — `wwwc8jugby` tener [algo]
+12. **have to** — `7s7vnrgxud` tener que [hacer algo]
 13. **would like** — `9jt3xxrxse` gustaría [hacer] · `fr2zv8cgr5` gustaría [algo] · `dvodf0y7wx` quisiera [algo] · `dnwd7gmll5` quisiera [hacer]
 14. **like** — `1uo0obtd8h` me gusta [algo] → I like · `mowb8a6hvx` me gusta [hacer] → I like to
 15. **know** — `3wtzllym25` saber [algo] · `manx93glfl` saber que · `ahq54carab` saber si · `lr3gy47etf` querer saber si
@@ -34,11 +46,11 @@ lessons. **Status: nothing applied.** Manifest: `level-1-P1-2026-09-15.tsv` (dry
 
 16. **be able** — `mxguwwzrxk` poder → to be able to (constructible form)
 17. **can** — `0zuw37lnfv` puedo → can (the surprise, right after 16)
-18. **I am / you are** (ser) — `b5c13zo3bg` soy · `0rv1zmpu5c` eres · `n8ahr1jble` soy [adjetivo] · `hfip8vre8c` eres [adjetivo] · `iy31grrg95` soy de · `6zy7d60lhd` eres de
-19. **I am / you are** (estar) — `93wmoiwink` estoy · `0k44vohfn6` estás · `nqyror4j5f` estar [estado] · `obf74hel79` estar [lugar]
+18. **be** (ser) — `othawv9u0f` ser [identidad] → be [a teacher] · `46elg5u15i` [ser] [adjetivo] → be [adjective] · `2z3yhpg9ve` ser de → be from
+19. **be** (estar) — `nqyror4j5f` estar [en un estado] → be [tired] · `obf74hel79` estar [en un lugar] → be [at home]
 20. **ser and estar → one *be*** — rule; GAP (needs a rule row)
-21. **I'm going to / you're going to** — `38d1kfif1b` ir a [hacer] · `rh4yfb08hn` voy a · `0lbant78ng` vas a
-22. **I'm going / you're going** (somewhere) — `2iiyjrogmc` ir a [un lugar] · `opdzad1zrx` voy a · `vlfntsr6mm` vas a · `k9y5vq9p06` ir a casa → go home
+21. **going to** — `38d1kfif1b` ir a [hacer algo] → be going to
+22. **go** (somewhere) — `2iiyjrogmc` ir a [un lugar] → go to · `k9y5vq9p06` ir a casa → go home
 23. **there is / there are** — `nuo847x66j` hay → there is · `54mbh87vk1` hay → there are · `cp5hmttaq2` there's
 24. **I'm / you're / it's / there's** — contractions; rows above carry them; GAP (one rule row)
 
@@ -81,7 +93,7 @@ lessons. **Status: nothing applied.** Manifest: `level-1-P1-2026-09-15.tsv` (dry
 
 ---
 
-**58 items · ~105 rows · 5 rule rows to add** (items 20, 24, 38, 39, 41 — one row each,
+**58 items · ~90 rows (infinitives only) · 5 rule rows to add** (items 20, 24, 38, 39, 41 — one row each,
 `grammar:rule`, so the checklist can tick them like any other item).
 
 ## Already covered by the three existing lessons
