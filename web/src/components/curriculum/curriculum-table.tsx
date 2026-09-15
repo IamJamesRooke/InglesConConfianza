@@ -29,10 +29,11 @@ import {
 import { useCurriculumEditing } from "@/components/curriculum/use-curriculum-editing";
 import { useCurriculumNavigation } from "@/components/curriculum/use-curriculum-navigation";
 import type { CurriculumNavigationFamilyWithCounts } from "@/lib/curriculum/navigation";
-import type {
-  CurriculumConcept,
-  CurriculumLevel,
-  CurriculumRole,
+import {
+  roleForLevel,
+  type CurriculumConcept,
+  type CurriculumLevel,
+  type CurriculumRole,
 } from "@/lib/curriculum/types";
 
 type Macrotag = { slug: string; title: string };
@@ -113,6 +114,7 @@ export function CurriculumTable({
     saveCollectionEditor,
     deleteConcept,
     updateRole,
+    applyInlineLevel,
     toggleSelected,
     toggleSelectAllVisible,
     deleteSelected,
@@ -176,6 +178,38 @@ export function CurriculumTable({
   const activeLeaf = browseFamily?.leaves.find(
     (leaf) => leaf.collection === activeLeafCollection,
   );
+
+  // Set level in place: Alt+1..5 sets Level 1..5, Alt+0 sets Unranked, on
+  // whichever row is focused (exactly one row checked) or open in the detail
+  // panel. Alt+digit doesn't collide with any Lesson Builder shortcut (those
+  // are all Ctrl+Alt+<key> or Alt+ArrowUp/Down) or a browser default.
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent) {
+      if (!event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) {
+        return;
+      }
+      if (!/^[0-5]$/.test(event.key)) return;
+      const target = event.target;
+      if (
+        target instanceof HTMLElement &&
+        (target.tagName === "INPUT" ||
+          target.tagName === "TEXTAREA" ||
+          target.isContentEditable)
+      ) {
+        return;
+      }
+      const targetId =
+        selectedIds.size === 1 ? [...selectedIds][0] : detailConceptId;
+      if (!targetId) return;
+      event.preventDefault();
+      const role: CurriculumRole =
+        event.key === "0" ? "Unranked" : roleForLevel(Number(event.key) as CurriculumLevel);
+      void applyInlineLevel(targetId, role);
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedIds, detailConceptId, applyInlineLevel]);
 
   useEffect(() => {
     const savedSidebar = window.localStorage.getItem(curriculumUiStorage.sidebar);

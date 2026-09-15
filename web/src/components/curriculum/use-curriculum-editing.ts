@@ -9,6 +9,7 @@ import {
   type ActiveCollectionEditor,
   type ActiveEditor,
 } from "@/components/curriculum/curriculum-row-editor";
+import { setCurriculumLevelInline } from "@/lib/curriculum/server/set-level-inline";
 import type { CurriculumConcept, CurriculumRole } from "@/lib/curriculum/types";
 
 type SaveFeedback = {
@@ -277,6 +278,42 @@ export function useCurriculumEditing({
     }
   }
 
+  // The Alt+0..5 "set level in place" shortcut: same optimistic-update /
+  // save-feedback shape as updateRole, but goes through the server action so
+  // the change is also logged to docs/curation/applied/inline-levels.tsv and
+  // the seed-data snapshots are re-exported immediately.
+  async function applyInlineLevel(
+    conceptId: string,
+    curriculumRole: CurriculumRole,
+  ) {
+    const concept = concepts.find((candidate) => candidate.id === conceptId);
+    if (!concept || pendingConceptId || concept.curriculumRole === curriculumRole) {
+      return;
+    }
+
+    setPendingConceptId(concept.id);
+    markSaving(concept.id);
+    setError(null);
+
+    try {
+      const result = await setCurriculumLevelInline(conceptId, curriculumRole);
+      if (!result.ok) throw new Error(result.error);
+
+      setConcepts((currentConcepts) =>
+        currentConcepts.map((candidate) =>
+          candidate.id === concept.id ? { ...candidate, curriculumRole } : candidate,
+        ),
+      );
+      markSaved(concept.id);
+      router.refresh();
+    } catch {
+      setError("Unable to set the level.");
+      markSaveError(concept.id);
+    } finally {
+      setPendingConceptId(null);
+    }
+  }
+
   function toggleSelected(conceptId: string) {
     setSelectedIds((current) => {
       const next = new Set(current);
@@ -418,6 +455,7 @@ export function useCurriculumEditing({
     saveCollectionEditor,
     deleteConcept,
     updateRole,
+    applyInlineLevel,
     toggleSelected,
     toggleSelectAllVisible,
     deleteSelected,
